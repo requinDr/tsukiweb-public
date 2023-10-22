@@ -17,7 +17,7 @@ A roadmap is available here https://github.com/requinDr/tsukiweb-public/wiki
 
 ## Contributing
 Anyone wanting to contribute can download the project and follow the roadmap, or do something else entirely.  
-You can find our [contributing guidelines here](https://github.com/requinDr/tsukihime-port/blob/8fe8fd2b2b43d6f5cb3aa8ad3260254a33978fc1/CONTRIBUTING.md)
+You can find our [contributing guidelines here](https://github.com/requinDr/tsukiweb-public/blob/main/CONTRIBUTING.md)
 
 ## Project technologies
 - React (Vite)
