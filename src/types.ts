@@ -87,7 +87,7 @@ export type FcNodeAttrs = {
   col: number
   from: string[]
   dy?: number
-  y?: number
+  align?: string
 }
 
 export type FcSceneAttrs = FcNodeAttrs & {
