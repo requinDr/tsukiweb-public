@@ -1,0 +1,217 @@
+@use 'partials/_components';
+
+#config-layout {
+    section {
+        @extend %menu-container;
+        display: flex;
+        flex-direction: column;
+        font-size: 1.2em;
+        overflow-x: hidden;
+        flex: 1;
+
+        .sub {
+            margin-top: 1em;
+            padding: .8em;
+            border-left: 1px solid cyan;
+            background-color: #00ffff0a;
+
+            .title {
+                color: cyan;
+            }
+
+            .config {
+                border-bottom: 0 !important;
+            }
+
+            .config:not(:last-of-type) {
+                border-bottom: 1px solid var(--separator) !important;
+            }
+        }
+
+        .config {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            align-items: center;
+            padding-block: .8em;
+
+            &:not(:nth-last-child(2)) {
+                border-bottom: 1px solid var(--separator);
+            }
+
+            .config-name {
+                margin-left: min(4%, 1em);
+            }
+            .config-actions {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1em;
+            }
+            .desc {
+                font-size: .7em;
+                color: #969696;
+                border: 1px solid #26ffff3b;
+                padding: .2em 1em;
+                border-radius: 4px;
+                display: flex;
+                align-items: center;
+                gap: 0.6em;
+            }
+
+            .config-btns {
+                flex: 1;
+                display: flex;
+                gap: 4px;
+                flex-wrap: wrap;
+
+                .config-btn {
+                    padding: .2em;
+                    background-color: transparent;
+                    transition: .2s ease-in-out;
+                    border-radius: 8px;
+                    text-transform: uppercase;
+                    min-width: min(100px, 100%);
+                    text-align: center;
+        
+                    &:hover, &.active {
+                        background-color: var(--active);
+                    }
+                    &:focus-visible {
+                        outline: 3px solid var(--focus);
+                    }
+                }
+            }
+
+            .config-range {
+                flex: 1;
+                display: flex;
+                gap: .6em;
+                align-items: center;
+                min-height: 36.45px; // height of buttons
+
+                input[type="range"] {
+                    appearance: none;
+                    width: min(320px, 100%);
+                    height: 1px;
+                    background: #225975;
+                    cursor: pointer;
+                    border: 0;
+                    border-radius: 8px;
+        
+                    &::-webkit-slider-thumb {
+                        appearance: none;
+                        width: 20px;
+                        height: 20px;
+                        border-radius: 50%; 
+                        background: var(--active);
+
+                        &:hover {
+                            background: var(--active-hover);
+                        }
+                    }
+        
+                    &::-moz-range-thumb {
+                        width: 20px;
+                        height: 20px;
+                        border-radius: 50%;
+                        background: var(--active);
+                        border: 0;
+
+                        &:hover {
+                            background: var(--active-hover);
+                        }
+                    }
+                }
+                .icon {
+                    display: flex;
+                }
+                .mute {
+                    display: flex;
+                    transition: .2s ease-in-out;
+                    margin-left: .8em;
+                    border-radius: 4px;
+                    padding: 0.2em;
+                    color: #266a7e;
+
+                    &:hover, &:focus-visible {
+                        color: var(--active);
+                    }
+                }
+            }
+
+            .erase {
+                color: #bc2525;
+    
+                &.config-btn:hover, &.config-btn:focus-visible {
+                    background-color: rgb(255 0 0 / 28%);
+                }
+            }
+        }
+
+        .keyMap {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            align-items: center;
+            padding-block: .8em;
+
+            &:not(:last-of-type) {
+                border-bottom: 1px solid var(--separator) !important;
+            }
+
+            .action {
+                grid-column: 1;
+                margin-left: min(4%, 1em);
+            }
+            .keyItem {
+                grid-column: 2;
+                margin-block: 4px;
+                .info {
+                    opacity: 0.3;
+                }
+            }
+        }
+
+        .reset {
+            margin-top: 1em;
+            align-self: flex-end;
+        }
+    }
+
+    @media (max-width: 768px) {
+        section {
+            .config {
+                grid-template-columns: 1fr;
+                row-gap: 0.4em;
+                padding-block: 1em;
+
+                .config-name {
+                    font-size: .9em;
+                    margin-bottom: .2em;
+                }
+                .config-actions {
+                    flex-direction: column;
+                    flex-wrap: nowrap;
+                    .config-btns {
+                        gap: 0.6em;
+                        .config-btn {
+                            min-width: clamp(80px, 26%, 100px);
+                        }
+                    }
+                }
+            }
+
+            .keyMap {
+                grid-template-columns: 1fr;
+                row-gap: 0.4em;
+                padding-block: 1em;
+
+                .action {
+                    font-size: .9em;
+                    margin-bottom: .2em;
+                }
+                .keyItem {
+                    grid-column: 1;
+                }
+            }
+        }
+    }
+}

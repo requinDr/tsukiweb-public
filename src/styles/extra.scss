@@ -1,0 +1,64 @@
+@use 'partials/_components';
+
+#extra {
+    section {
+        @extend %menu-container;
+        margin-bottom: max(1em, 3vh);
+
+        .page-link {
+            all: unset;
+            text-decoration: none;
+            transition: var(--transition);
+            user-select: none;
+            text-shadow: 0 0 4px #d0d3e1;
+            position: relative;
+            border-bottom: 1px solid transparent;
+            padding-top: 4px;
+            padding-bottom: 0;
+        
+            display: block;
+            font-size: clamp(1.4em, 6vmin, 1.6em);
+            width: max-content;
+
+            &:hover {
+                cursor: pointer;
+                color: rgb(10, 164, 171);
+                text-shadow: 0 0 4px #005aff;
+                border-color: initial;
+                padding-top: 0;
+                padding-bottom: 4px;
+            }
+        }
+    }
+
+    #extra-gallery {
+        .page-link {
+            float: left;
+            margin-right: 2em;
+        }
+        .gallery-previews {
+            display: flex;
+            overflow-x: hidden;
+            gap: 8px;
+
+            img, .placeholder {
+                display: block;
+                aspect-ratio: 4/3;
+                width: 100%;
+            }
+            img {
+                min-width: 80px;
+                transition: .2s ease-out;
+                background-color: #0e98cb59;
+            }
+            .placeholder {
+                border: 1px solid #004347;
+            }
+        }
+    }
+
+    #extra-scenes {
+        pointer-events: none;
+        opacity: .5;
+    }
+}

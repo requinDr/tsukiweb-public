@@ -1,0 +1,99 @@
+@use 'partials/transitions' as *;
+@use 'partials/components';
+@use 'game/layer-text';
+@use 'game/layer-menu';
+@use 'game/layer-save-config';
+@use 'game/layer-history';
+@use 'game/layer-skip';
+
+:root {
+    --text-color: #e7e7e7;
+    --read-text-color: #c5e1ff;
+    --transition-time: 0.2s;
+    --transition: all var(--transition-time) ease-out;
+}
+
+.window {
+    color: var(--text-color);
+    display: flex;
+    font-size: 1.1em;
+    font-family: var(--font), sans-serif;
+    
+    .dash {
+        text-decoration: line-through;
+    }
+
+    .layer {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+    }
+    #layer-graphics {
+        z-index: 0;
+    }
+    #layer-text {
+        @extend %layer-text;
+    }
+    #layer-choices {
+        z-index: 3;
+        background-color: #0006;
+
+        .choices-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+            max-width: 600px;
+            margin-inline: auto;
+            gap: 1.2em;
+        }
+        .choice {
+            @extend %info-box;
+            padding: .5em 1em;
+            font-size: clamp(0.92em, 3.6vmin, 1.25em);
+            transition: all 0.2s ease-in-out;
+            margin-inline: 8px;
+
+            &:hover, &:focus-visible {
+                box-shadow: var(--selected-shadow);
+            }
+        }
+    }
+
+    #layer-menu {
+        @extend %layer-menu;
+    }
+    #layer-save, #layer-config {
+        @extend %layer-save-config;
+    }
+    #layer-history {
+        @extend %layer-history;
+    }
+    #skip-layer {
+        @extend %layer-skip;
+    }
+
+    .menu-button {
+        all: unset;
+        display: none;
+    }
+    // mobile screens
+    @media not all and (hover: hover) and (pointer: fine) {
+        .menu-button {
+            display: flex;
+            position: absolute;
+            bottom: 4vmin;
+            right: 0;
+            z-index: 3;
+            background-color: rgb(14 79 187);
+            padding: 16px 4px;
+            border-radius: 8px 0 0 8px;
+            opacity: .5;
+            transition: var(--transition);
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+}

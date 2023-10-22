@@ -1,0 +1,164 @@
+// background
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@mixin scroll($prefix, $from, $to) {
+  @keyframes #{$prefix}scroll {
+    from {
+      -webkit-mask-position: $from;
+      mask-position: $from;
+    }
+    to {
+      -webkit-mask-position: $to;
+      mask-position: $to;
+    }
+  }
+
+  animation-name: #{$prefix}scroll;
+}
+
+$size: 25px;
+@mixin shutter($prefix, $from, $to) {
+  @keyframes #{$prefix}shutter {
+      from {
+          mask-position: 0 0, $from;
+          -webkit-mask-position: 0 0, $from
+      }
+      to {
+          mask-position: 0 0, $to;
+          -webkit-mask-position: 0 0, $to;
+      }
+  }
+
+  animation-name: #{$prefix}shutter;
+}
+
+*[fade-in], *[fade-out] {
+  animation-duration: var(--transition-time); // var --transition-time changed in inline css
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+*[fade-out="crossfade"] { animation-name: fadeOut }
+*[fade-in ="crossfade"] { animation-name: fadeIn  }
+img[for-mask], *[for-mask] > img {
+  -webkit-mask-image: var(--from-image),var(--to-image);
+  mask-image: var(--from-image),var(--to-image);
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  -webkit-mask-composite: destination-in;
+  mask-composite: intersect;
+}
+
+*[fade-out="lmaskcross"], *[fade-in="lmaskcross"],
+*[fade-out="rmaskcross"], *[fade-in="rmaskcross"],
+*[fade-out="lscroll"], *[fade-in="lscroll"],
+*[fade-out="rscroll"], *[fade-in="rscroll"],
+*[fade-out="tscroll"], *[fade-in="tscroll"],
+*[fade-out="bscroll"], *[fade-in="bscroll"] {
+  $linear-gradient:
+      linear-gradient(to right, #fff 20%, transparent 40%, transparent 60%, #fff 80%),
+      linear-gradient(to bottom, #fff 20%, transparent 40%, transparent 60%, #fff 80%);
+  mask-image: $linear-gradient;
+  -webkit-mask-image: $linear-gradient;
+  mask-size: 500% 500%;
+  -webkit-mask-size: 500% 500%;
+}
+
+*[fade-out="lmaskcross"],
+*[fade-out="lscroll"] { @include scroll("lo", left, center) }
+*[fade-in="lmaskcross"],
+*[fade-in="lscroll"] { @include scroll("li", center, right) }
+
+*[fade-out="rmaskcross"],
+*[fade-out="rscroll"] { @include scroll("ro", right, center) }
+*[fade-in="rmaskcross"],
+*[fade-in="rscroll"] { @include scroll("ri", center, left) }
+
+*[fade-out="tscroll"] { @include scroll("to", top, center) }
+*[fade-in="tscroll"] { @include scroll("ti", center, bottom) }
+
+*[fade-out="bscroll"] { @include scroll("bo", bottom, center) }
+*[fade-in="bscroll"] { @include scroll("bi", center, top) }
+
+*[fade-out="lshutter"], *[fade-in="lshutter"],
+*[fade-out="rshutter"], *[fade-in="rshutter"],
+*[fade-out="lcartain"], *[fade-in="lcartain"],
+*[fade-out="rcartain"], *[fade-in="rcartain"] {
+  $linear-gradients:
+      linear-gradient(to right, transparent 50%, #fff 50%),
+      linear-gradient(to right, transparent 50%, #fff 50%);
+  mask-image: $linear-gradients;
+  -webkit-mask-image: $linear-gradients;
+  mask-size: $size*2 100%, $size*2 100%;
+  -webkit-mask-size: $size*2 100%, $size*2 100%;
+  mask-repeat: repeat;
+  -webkit-mask-repeat: repeat;
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+}
+
+*[fade-out="tshutter"], *[fade-in="tshutter"],
+*[fade-out="bshutter"], *[fade-in="bshutter"],
+*[fade-out="tcartain"], *[fade-in="tcartain"],
+*[fade-out="bcartain"], *[fade-in="bcartain"] {
+  $linear-gradients:
+      linear-gradient(to bottom, transparent 50%, #fff 50%),
+      linear-gradient(to bottom, transparent 50%, #fff 50%);
+  mask-image: $linear-gradients;
+  -webkit-mask-image: $linear-gradients;
+  mask-size: 100% $size*2, 100% $size*2;
+  -webkit-mask-size: 100% $size*2, 100% $size*2;
+  mask-repeat: repeat;
+  -webkit-mask-repeat: repeat;
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+}
+
+*[fade-out="lshutter"],
+*[fade-out="lcartain"] { @include shutter('lo', ($size 0), ($size * 2 0)); }
+
+*[fade-in="lshutter"],
+*[fade-in="lcartain"] { @include shutter('li', (0 0), ($size 0)); }
+
+*[fade-out="rshutter"],
+*[fade-out="rcartain"] { @include shutter('ro', ($size 0), (0 0)); }
+
+*[fade-in="rshutter"],
+*[fade-in="rcartain"] { @include shutter('ri', ($size*2 0), ($size 0)); }
+
+
+*[fade-out="tshutter"],
+*[fade-out="tcartain"] { @include shutter('to', (0 $size), (0 $size * 2)); }
+
+*[fade-in="tshutter"],
+*[fade-in="tcartain"] { @include shutter('ti', (0 0), (0 $size)); }
+
+
+*[fade-out="bshutter"],
+*[fade-out="bcartain"] { @include shutter('bo', (0 $size), (0 0)); }
+
+*[fade-in="bshutter"],
+*[fade-in="bcartain"] { @include shutter('bi', (0 $size*2), (0 $size)); }
+
+
+*.quake {
+  animation-duration: var(--quake-time);
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  @keyframes quake {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(calc(-1 * var(--quake-x)), calc(-1 * var(--quake-y))); }
+    75% { transform: translate(var(--quake-x), var(--quake-y)); }
+    100% { transform: translate(0, 0); }
+  }
+  animation-name: quake;
+}

@@ -1,0 +1,91 @@
+%layer-menu {
+    --panel-trans-time: 0.4s;
+    z-index: -1;
+    background-color: rgb(0 42 87 / 40%);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+    opacity: 0;
+    display: flex;
+    justify-content: flex-end;
+    transition: var(--transition);
+    transition-property: opacity, z-index;
+    // when hiding, wait before starting the transition
+    transition-delay: calc(var(--panel-trans-time) - var(--transition-time));
+    overflow: hidden;
+    border-block: 12px solid #002373;
+
+    &.show {
+        z-index: 4;
+        opacity: 1;
+        transition-delay: 0s;
+
+        .menu-container {
+            right: 5vw;
+        }
+    }
+
+    $width: clamp(150px, 50vmin, 210px);
+    .menu-container {
+        position: absolute;
+        right: calc($width * -1);
+        height: 100%;
+        width: $width;
+        transition: all var(--panel-trans-time) ease-out;
+        display: flex;
+        align-items: center;
+        padding-block: 1.4em;
+        background-image: linear-gradient(226deg, #051c4b, #00357c);
+
+        menu {
+            height: min(100%, 660px);
+            flex: 1;
+            display: flex;
+            row-gap: .8em;
+            flex-direction: column;
+            font-size: clamp(1em, 4.6vmin, 1.2em);
+            padding: 1em;
+            overflow-y: auto;
+        }
+
+        button, a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: var(--transition);
+            user-select: none;
+            display: flex;
+            align-items: center;
+
+            &:hover, &:focus-visible {
+                color: rgb(10 164 171);
+                text-shadow: 1px 0 5px rgb(14 79 187), 1px 0 6px rgba(28, 147, 147, 0.5215686275);
+                text-decoration: underline;
+            }
+        }
+        .action-icons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px;
+            margin-top: auto;
+            padding-top: 1em;
+            width: 100%;
+
+            button {
+                border-radius: 2px;
+                padding: 4px;
+                color: rgb(176 209 229);
+                background-color: rgb(1 17 27 / 60%);
+                justify-content: center;
+
+                &:hover, &:focus-visible {
+                    color: rgb(245 249 251);
+                    background-color: rgb(1 17 27 / 60%);
+                    text-decoration: none;
+                }
+            }
+
+            .quick {
+                font-size: 1rem;
+            }
+        }
+    }
+}

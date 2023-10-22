@@ -1,0 +1,257 @@
+@use 'partials/particles';
+
+#title-menu {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    padding: 1em;
+
+    .logo {
+        display: flex;
+        margin: 1em;
+        justify-content: center;
+        flex: 8;
+        min-height: 0;
+        position: relative;
+
+        .moon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: min(600px, 70vmax);
+            height: min(600px, 70vmax);
+            filter: drop-shadow(0 0 12px rgb(228,255,255));
+            -webkit-mask-image: radial-gradient(ellipse 100% 100% at 70% 60%, rgba(0, 0, 0, 0.6) 30%, transparent 45%);
+            mask-image: radial-gradient(ellipse 100% 100% at 70% 60%, rgba(0, 0, 0, 0.6) 30%, transparent 45%);
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+            -webkit-mask-position: 400px 140px;
+            mask-position: 400px 140px;
+            opacity: 0.4;
+            transition: all 1.6s;
+            transition-timing-function: cubic-bezier(0.25, 0.1, 0.16, 1.0);
+        }
+
+        img {
+            height: 100%;
+            width: min(94%, 400px);
+            object-fit: contain;
+        }
+        .tsuki-logo {
+            z-index: 1;
+        }
+    }
+
+    $spacing: 14px;
+    %top-actions {
+        transition: var(--transition);
+        position: absolute;
+        top: 0;
+        margin-top: $spacing;
+        height: 40px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover, &:focus-visible {
+            box-shadow: var(--selected-shadow);
+        }
+    }
+    .info-icon {
+        @extend %top-actions;
+        right: $spacing * 2;
+        font-size: 1.4em;
+        padding: 4pt;
+        aspect-ratio: 1;
+    }
+
+    .pwa-install {
+        @extend %top-actions;
+        right: 40 + $spacing * 3;
+        background-image: linear-gradient(to right, #07162f,#0d346d,#07162f);
+        outline: 1px solid #005299;
+        padding: 4px;
+
+        span {
+            margin: 4px 8px 4px 4px;
+        }
+        img {
+            height: 100%;
+        }
+    }
+
+    .menu {
+        flex: 1;
+        margin-bottom: max(5vh, 1em);
+        width: min(800px, 100%);
+        font-size: 1.4em;
+
+        .first-row, .second-row {
+            display: flex;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            flex-direction: row;
+            row-gap: 4px;
+            column-gap: 2em;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .first-row {
+            .extra {
+                display: none;
+            }
+        }
+        .second-row {
+            margin-top: 1em;
+            font-size: .7em;
+        }
+
+        .menu-item {
+            all: unset;
+            text-decoration: none;
+            transition: var(--transition);
+            user-select: none;
+            text-shadow: 0 0 8px #d0d3e1;
+            position: relative;
+            border-bottom: 1px solid transparent;
+            padding-top: 6px;
+            padding-bottom: 0;
+
+            &:hover, &:focus-visible {
+                cursor: pointer;
+                color: rgb(10 164 171);
+                text-shadow: 0 0 6px #005aff;
+                border-color: initial;
+                padding-top: 0;
+                padding-bottom: 6px;
+            }
+            &.disabled, &:disabled {
+                pointer-events: none;
+                opacity: .4;
+                text-shadow: 0 0 2px #d0d3e1;
+            }
+        }
+    }
+
+    // One column, mobile portrait
+    @media (max-width: 810px), ((orientation: landscape) and (max-height: 420px)) {
+        .menu {
+            .first-row, .second-row {
+                flex-direction: column;
+                align-items: center;
+            }
+            .first-row {
+                margin-top: 1em;
+                .extra {
+                    display: block;
+                }
+            }
+            .second-row {
+                display: none;
+            }
+        }
+    }
+    // Two columns, mobile landscape
+    @media (max-height: 420px) and (orientation: landscape) {
+        flex-direction: row;
+        .logo {
+            flex: 1;
+            max-height: 85%;
+
+            img {
+                height: auto;
+            }
+        }
+        .menu {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.overlay {
+    .modal {
+        max-height: 70vh;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .title-modal {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        gap: 4em;
+        font-size: 1.1em;
+        flex-grow: 1;
+
+        .infos {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            font-size: 1.06em;
+            line-height: 1.6em;
+
+            & > div {
+                border-radius: 4px;
+                padding: 12px;
+                background-color: rgba(0, 0, 0, 0.3);
+            }
+            code {
+                margin-left: 12px;
+            }
+        }
+        .tsuki-remake {
+            display: flex;
+            flex-direction: column;
+            gap: .6em;
+
+            img {
+                display: block;
+                width: 100%;
+                min-width: 0;
+                object-fit: contain;
+            }
+        }
+    }
+
+    @media screen and (max-width: 520px) {
+        .title-modal {
+            grid-template-columns: 1fr;
+            gap: 1em;
+
+            .tsuki-remake {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    }
+}
+
+
+/** Disclaimer **/
+#disclaimer {
+    &.page {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #000206;
+    }
+    .box {
+        max-width: 680px;
+        text-align: center;
+        border: 1px solid #00628b;
+        padding: 2em;
+        margin: 1em;
+
+        p {
+            font-size: clamp(.92em, 3.6vmin, 1.25em);
+            line-height: clamp(1.52em, 4.6vmin, 1.6em);
+            text-shadow: #000 1px 1px 1px, #000 -1px 1px 1px, #000 -1px -1px 1px, #000 1px -1px 1px;
+            letter-spacing: 1px;
+        }
+    }
+}

@@ -1,0 +1,196 @@
+@use 'partials/_components';
+
+#saves-layout {
+    font-size: 1rem;
+    display: grid;
+    grid-template-areas:
+        "title title"
+        "list info"
+        "buttons buttons";
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: min-content 1fr min-content;
+    column-gap: 12px;
+
+    .page-title {
+        grid-area: title;
+    }
+    .saves {
+        @extend %menu-container;
+        grid-area: list;
+        display: flex;
+        flex-direction: column;
+        overflow-x: hidden;
+        letter-spacing: 1px;
+        padding-bottom: 80px;
+
+        .save-container {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            transition: all .2s ease-out;
+            min-height: clamp(84px, 25%, 100px);
+            overflow: hidden;
+            font-size: 1.1em;
+            padding-block: 4px;
+
+            &:not(:last-of-type) {
+                border-bottom: 1px solid var(--separator);
+            }
+
+            &.create, &.import {
+                min-height: clamp(36px, 25%, 50px);
+                justify-content: center;
+                align-items: center;
+                font-size: 1.4em;
+
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            .deta {
+                padding: 1em;
+                min-width: 0;
+                width: 100%;
+
+                .date {
+                    display: flex;
+                    column-gap: .6em;
+                    flex-flow: wrap;
+                }
+                .line {
+                    font-style: italic;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    max-width: 60ch;
+                    color: #9d9d9d;
+                }
+            }
+
+            .graphics {
+                height: 100%;
+                font-size: 30%;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                inset: 0;
+                transition: .2s;
+                margin-block: 4px;
+            }
+
+            &.active::after {
+                box-shadow: var(--selected-shadow);
+            }
+
+            &[quick-save]::before {
+                position: absolute;
+                bottom: 4px;
+                right: 0;
+                content: "Quick Save";
+                font-size: 80%;
+                font-style: italic;
+                background-color: rgb(37 43 57);
+                color: #5297a7;
+                padding: 0.1em 0.5em 0.1em 1.5em;
+                clip-path: polygon(1.5em 0%, 100% 0, 100% 100%, 0 100%);
+            }
+        }
+    }
+
+    .info {
+        @extend %menu-container;
+        grid-area: info;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        font-size: 1.1em;
+        gap: 1em;
+
+        .graphics {
+            width: 100%;
+            height: 100%;
+            flex: 1;
+            filter: brightness(0.8);
+        }
+
+        .deta {
+            display: flex;
+            flex-direction: column;
+
+            .actions {
+                align-self: flex-end;
+                display: flex;
+                margin-top: .6em;
+
+                button {
+                    padding: .2em 1em;
+                    opacity: .8;
+                    display: flex;
+                    align-items: center;
+
+                    &:hover {
+                        color: #0fbbd5;
+                        opacity: 1;
+                    }
+                }
+
+                button:not(:last-of-type) {
+                    border-right: 1px solid var(--separator);
+                }
+            }
+        }
+    }
+
+    .save-buttons {
+        grid-area: buttons;
+    }
+
+    .graphics {
+        aspect-ratio: 4/3;
+
+        div.bg img.blur {
+            filter: blur(20px);
+        }
+    }
+
+    @media screen and (max-width: 720px) and (orientation: portrait) {
+        grid-template-areas:
+            "title"
+            "info"
+            "list"
+            "buttons";
+        grid-template-columns: 1fr;
+        grid-template-rows: min-content 120px 1fr min-content;
+
+        .info {
+            flex-direction: row;
+            .graphics {
+                display: none;
+            }
+            .deta {
+                display: block;
+
+                .actions {
+                    position: absolute;
+                    bottom: 0;
+                    padding-bottom: 12px;
+                    background-color: inherit;
+                }
+            }
+        }
+
+        .saves {
+            margin-top: 12px;
+        }
+    }
+
+    @media screen and (max-height: 480px) and (orientation: landscape) {
+        grid-template-areas:
+            "list title"
+            "list info"
+            "list buttons";
+    }
+}

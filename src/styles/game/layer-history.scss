@@ -1,0 +1,50 @@
+@use 'layer-text';
+
+%layer-history {
+    z-index: -1;
+    opacity: 0;
+    transition: var(--transition);
+    &.show {
+        z-index: 100;
+        opacity: 1;
+        background: #000000d6;
+        backdrop-filter: blur(2px);
+    }
+
+    #history {
+        position: absolute;
+        background: none;
+        overflow-y: scroll;
+        width: 98%;
+        height: calc(100% - 40px);
+        padding-bottom: 30vh;
+        inset: 0;
+        margin-inline: auto;
+        border-radius: 5px;
+        @extend %layer-text;
+    }
+    footer {
+        position: fixed;
+        bottom: 0;
+        height: 40px;
+        width: 100%;
+        background: rgb(0 35 115);
+        display: flex;
+        align-items: center;
+        padding: 0 2em;
+        box-shadow: 0 -1px 2px #00000059;
+        z-index: 2;
+
+        button {
+            color: var(--text-color);
+            transition: var(--transition);
+            margin-left: auto;
+
+            &:hover, &:focus-visible {
+                color: rgb(10 164 171);
+                text-shadow: 1px 0 5px rgb(14 79 187), 1px 0 6px rgba(28, 147, 147, 0.5215686275);
+                text-decoration: underline;
+            }
+        }
+    }
+}

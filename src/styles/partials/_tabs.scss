@@ -1,0 +1,33 @@
+.tabs {
+    border-bottom: 2px solid var(--active);
+    display: flex;
+    flex-direction: row;
+    padding-inline: 1em;
+    overflow-x: auto;
+
+    .tab {
+        padding: .3em min(1.2em, 4vw);
+        background-color: transparent;
+        transition: .2s ease-in-out;
+        border-radius: 6px 6px 0 0;
+        font-size: 1.1em;
+        border: 2px solid transparent;
+        border-bottom: 0;
+        white-space: nowrap;
+
+        &:hover, &.active:hover {
+            background-color: var(--active);
+        }
+        &:focus-visible {
+            background-color: var(--focus);
+        }
+
+        &.active {
+            border-color: var(--active);
+            background-color: rgb(4 45 64 / 45%);
+        }
+        &:focus-visible.active {
+            background-color: var(--focus);
+        }
+    }
+}

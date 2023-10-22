@@ -1,0 +1,12 @@
+%layer-save-config {
+    z-index: -1;
+    opacity: 0;
+    transition: var(--transition);
+    display: flex;
+    &.show {
+        z-index: 100;
+        opacity: 1;
+        backdrop-filter: blur(1px);
+        background-image: linear-gradient(0deg, hsla(215, 100%, 5.98%, 0.8) 0%, hsl(208.21deg 98.13% 12.39% / 80%) 100%);
+    }
+}

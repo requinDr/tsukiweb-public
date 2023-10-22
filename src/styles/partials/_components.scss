@@ -1,0 +1,17 @@
+%menu-container {
+    background-color: var(--menu-container);
+    box-shadow: var(--menu-shadow);
+    position: relative;
+    padding: 1em;
+}
+%info-box {
+    color: #ffffffe8;
+    background-color: #010e2470;
+    border: 1px solid #00628b;
+    backdrop-filter: blur(1em);
+    -webkit-backdrop-filter: blur(1em);
+
+    @supports not (backdrop-filter: blur(1em)) {
+        background-color: #000000d1;
+    }
+}

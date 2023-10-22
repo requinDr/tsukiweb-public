@@ -1,0 +1,51 @@
+@use 'partials/_components';
+
+#gallery {
+    .gallery-container {
+        @extend %menu-container;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: .6em;
+        overflow-y: scroll;
+        height: inherit;
+        align-content: start;
+        flex: 1;
+
+        a {
+            overflow: hidden;
+            height: max-content;
+            display: table; // don't ask why, firefox makes no sense
+
+            &:hover img {
+                transform: scale(1.1);
+            }
+        }
+        img, .placeholder {
+            display: block;
+            aspect-ratio: 4/3;
+            width: 100%;
+        }
+        img {
+            transition: .2s ease-out;
+            background-color: #0e98cb59;
+        }
+        .placeholder {
+            border: 1px solid #004347;
+        }
+        .blur img {
+            filter: blur(30px);
+            transition: .3s ease-out;
+            transition-delay: .6s;
+
+            &:hover {
+                filter: blur(0);
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .gallery-container {
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        }
+    }
+}

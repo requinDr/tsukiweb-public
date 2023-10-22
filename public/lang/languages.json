@@ -1,0 +1,10 @@
+{
+  "jp": {
+    "display-name": "日本語"
+  },
+  "en-mm": {
+    "display-name": "English",
+    "authors": "mirror moon",
+    "lang-file": "en-mm.json"
+  }
+}
