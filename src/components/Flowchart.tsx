@@ -160,14 +160,14 @@ export const Flowchart = memo(({back}: Props)=> {
   viewBox[2] -= viewBox[0]
   viewBox[3] -= viewBox[1]
 
-  return <div style={{overflow:"scroll"}}>
+  return <div className="flowchart">
     <svg viewBox={viewBox.join(" ")}
       version="1.1"
       xmlns="http://www.w3.org/2000/svg">
       <defs>
         <rect
-            style={{fill:'#787878', stroke:'#000000',
-                    strokeWidth:0.3, strokeLinejoin: 'round'}}
+            style={{fill:'rgb(67 67 67)', stroke:'rgb(115 115 115)',
+                    strokeWidth: 0.4, strokeLinejoin: 'round'}}
             id="fc-scene-outline-rect"
             width={SCENE_WIDTH}
             height={SCENE_HEIGHT}
