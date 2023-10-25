@@ -73,7 +73,7 @@ class FcScene extends FcNode {
         transform={`translate(${this.x},${this.y})`}>
         <use href="#fc-scene-outline-rect"/>
         { this.graph &&
-          <foreignObject x={-SCENE_WIDTH/2} y={-SCENE_HEIGHT/2} width={SCENE_WIDTH} height={SCENE_HEIGHT}>
+          <foreignObject x={-SCENE_WIDTH/2} y={-SCENE_HEIGHT/2} width={SCENE_WIDTH} height={SCENE_HEIGHT} clipPath="url(#fc-scene-clip)">
             <div className="graphics">
               {graphicElements(this.graph, {}, 'sd')}
             </div>
@@ -172,8 +172,12 @@ export const Flowchart = memo(({back}: Props)=> {
             width={SCENE_WIDTH}
             height={SCENE_HEIGHT}
             x={-SCENE_WIDTH/2}
-            y={-SCENE_HEIGHT/2} />
+            y={-SCENE_HEIGHT/2}
+            rx={SCENE_HEIGHT/10} />
       </defs>
+      <clipPath id="fc-scene-clip">
+        <use href="#fc-scene-outline-rect"/>
+      </clipPath>
       {tree.map(node=> node.render())}
     </svg>
     {/*<FlowchartSVG/>*/}
