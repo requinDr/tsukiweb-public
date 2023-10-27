@@ -3,14 +3,34 @@ import { Fragment, memo, useState } from "react"
 import '../styles/flowchart.scss'
 import { Graphics, SceneName } from "../types"
 import { SCENE_ATTRS } from "../utils/constants"
-import { getSceneTitle } from "../utils/scriptUtils"
-import { Bbcode } from "../utils/Bbcode"
+import { isScene } from "../utils/scriptUtils"
 import { graphicElements } from "./GraphicsComponent"
+import { settings } from "../utils/variables"
 
 const SCENE_WIDTH = 27
 const SCENE_HEIGHT = 18
 const COLUMN_WIDTH = SCENE_WIDTH+3
 const DY = 3
+
+function getPreviousScenes(tree: Map<string, FcNodeParams|FcNode>, scene: string): string[] {
+  const currNode = tree.get(scene)
+  if (!currNode)
+    throw Error(`unknown flowchart node ${scene}`)
+  const from = currNode.from
+  const result = []
+  for (const node of from) {
+    if (node instanceof FcScene)
+      result.push(node.id)
+    else if (node instanceof FcNode)
+      result.push(...getPreviousScenes(tree, node.id))
+    else if (isScene(node))
+      result.push(node)
+    else
+      result.push(...getPreviousScenes(tree, node))
+  }
+  return result
+  //TODO used to determine if a scene must be displayed (greyed out) if it hasn't been seen yet. (i.e., yes if one of the previous scenes has been seen)
+}
 
 class FcNode {
   column: number;
@@ -67,19 +87,29 @@ class FcScene extends FcNode {
   get height()  { return SCENE_HEIGHT }
 
   render() {
+    let content
+    if (!settings.completedScenes.includes(this.id))
+      content = <use href="#fc-scene-hidden"/>
+    else if (!this.graph)
+      content = <>
+        <use href="#fc-scene-background" />
+        <text className="fc-scene-title">{this.id}</text>
+      </>
+    else
+      content = <foreignObject x={-SCENE_WIDTH/2} y={-SCENE_HEIGHT/2}
+        width={SCENE_WIDTH} height={SCENE_HEIGHT}>
+        <div className="graphics">
+          {graphicElements(this.graph, {}, 'sd')}
+        </div>
+      </foreignObject>
+    
     return <Fragment key={this.id}>
       {super.render()}
       <g className="fc-scene" id={this.id}
-        transform={`translate(${this.x},${this.y})`}>
-        <use href="#fc-scene-outline-rect"/>
-        { this.graph &&
-          <foreignObject x={-SCENE_WIDTH/2} y={-SCENE_HEIGHT/2} width={SCENE_WIDTH} height={SCENE_HEIGHT} clipPath="url(#fc-scene-clip)">
-            <div className="graphics">
-              {graphicElements(this.graph, {}, 'sd')}
-            </div>
-          </foreignObject>
-        || <text className="fc-scene-title">{this.id}</text>
-        }
+        transform={`translate(${this.x},${this.y})`}
+        clipPath="url(#fc-scene-clip)">
+        {content}
+        <use href="#fc-scene-outline"/>
       </g>
     </Fragment>
   }
@@ -165,18 +195,32 @@ export const Flowchart = memo(({back}: Props)=> {
       version="1.1"
       xmlns="http://www.w3.org/2000/svg">
       <defs>
-        <rect
-            style={{fill:'rgb(67 67 67)', stroke:'rgb(115 115 115)',
-                    strokeWidth: 0.4, strokeLinejoin: 'round'}}
-            id="fc-scene-outline-rect"
-            width={SCENE_WIDTH}
-            height={SCENE_HEIGHT}
-            x={-SCENE_WIDTH/2}
-            y={-SCENE_HEIGHT/2}
-            rx={SCENE_HEIGHT/10} />
+        <radialGradient id="hidden-scene-gradient">
+            <stop offset="0%" stop-color="black" />
+            <stop offset="50%" stop-color="#111" />
+            <stop offset="95%" stop-color="#222" />
+        </radialGradient>
+        <rect id="fc-scene-outline"
+            fill="transparent" stroke="rgb(115 115 115)"
+            style={{strokeWidth: 0.4, strokeLinejoin: 'round'}}
+            width={SCENE_WIDTH} height={SCENE_HEIGHT}
+            x={-SCENE_WIDTH/2} y={-SCENE_HEIGHT/2} rx={SCENE_HEIGHT/10} />
+        <rect id="fc-scene-background"
+            fill="rgb(67 67 67)"
+            width={SCENE_WIDTH} height={SCENE_HEIGHT}
+            x={-SCENE_WIDTH/2} y={-SCENE_HEIGHT/2} />
+        <g id="fc-scene-hidden">
+          <rect width={SCENE_WIDTH} height={SCENE_HEIGHT}
+              x={-SCENE_WIDTH/2} y={-SCENE_HEIGHT/2}
+              fill="url(#hidden-scene-gradient)" />
+          <line x1={-SCENE_WIDTH/2} y1={-SCENE_HEIGHT/2} stroke="black"
+                x2={ SCENE_WIDTH/2} y2={ SCENE_HEIGHT/2} strokeWidth={0.4}/>
+          <line x1={-SCENE_WIDTH/2} y1={ SCENE_HEIGHT/2} stroke="black"
+                x2={ SCENE_WIDTH/2} y2={-SCENE_HEIGHT/2} strokeWidth={0.4}/>
+        </g>
       </defs>
       <clipPath id="fc-scene-clip">
-        <use href="#fc-scene-outline-rect"/>
+        <use href="#fc-scene-outline"/>
       </clipPath>
       {tree.map(node=> node.render())}
     </svg>
