@@ -181,27 +181,33 @@ type Props = {
 }
 export const Flowchart = memo(({back}: Props)=> {
   const [tree] = useState<FcNode[]>(createTree)
-  const viewBox = tree.reduce((vb, node)=> [
+  const [left, top, right, bottom] = tree.reduce((vb, node)=> [
     Math.min(vb[0], node.left),
     Math.min(vb[1], node.top),
     Math.max(vb[2], node.right),
     Math.max(vb[3], node.bottom),
   ], [Number.MAX_VALUE, Number.MAX_VALUE, 0, 0])
-  viewBox[2] -= viewBox[0]
-  viewBox[3] -= viewBox[1]
+  const width = right - left
+  const height = bottom - top
+  const minWidth  = `${width/8}rem`
+  const minHeight = `${height/8}rem`
+  const maxWidth = `${100 * width / (2 * COLUMN_WIDTH)}%` // minimum 2 scenes visible
+  const maxHeight = `${100 * height / (4 * (SCENE_HEIGHT + DY*2))}%` // minimum 4 scenes visible
 
   return <div className="flowchart">
-    <svg viewBox={viewBox.join(" ")}
+    <svg viewBox={`${left} ${top} ${width} ${height}`}
+      style={{minWidth: minWidth, maxWidth: maxWidth,
+              minHeight: minHeight, maxHeight: maxHeight}}
       version="1.1"
       xmlns="http://www.w3.org/2000/svg">
       <defs>
         <radialGradient id="hidden-scene-gradient">
-            <stop offset="0%" stop-color="black" />
-            <stop offset="50%" stop-color="#111" />
-            <stop offset="95%" stop-color="#222" />
+            <stop offset="0%" stopColor="black" />
+            <stop offset="50%" stopColor="#111" />
+            <stop offset="95%" stopColor="#222" />
         </radialGradient>
         <rect id="fc-scene-outline"
-            fill="transparent" stroke="rgb(115 115 115)"
+            fill="none" stroke="rgb(115 115 115)"
             style={{strokeWidth: 0.4, strokeLinejoin: 'round'}}
             width={SCENE_WIDTH} height={SCENE_HEIGHT}
             x={-SCENE_WIDTH/2} y={-SCENE_HEIGHT/2} rx={SCENE_HEIGHT/10} />
