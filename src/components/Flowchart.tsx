@@ -73,7 +73,7 @@ class FcScene extends FcNode {
         transform={`translate(${this.x},${this.y})`}>
         <use href="#fc-scene-outline-rect"/>
         { this.graph &&
-          <foreignObject x={-SCENE_WIDTH/2} y={-SCENE_HEIGHT/2} width={SCENE_WIDTH} height={SCENE_HEIGHT}>
+          <foreignObject x={-SCENE_WIDTH/2} y={-SCENE_HEIGHT/2} width={SCENE_WIDTH} height={SCENE_HEIGHT} clipPath="url(#fc-scene-clip)">
             <div className="graphics">
               {graphicElements(this.graph, {}, 'sd')}
             </div>
@@ -160,20 +160,24 @@ export const Flowchart = memo(({back}: Props)=> {
   viewBox[2] -= viewBox[0]
   viewBox[3] -= viewBox[1]
 
-  return <div style={{overflow:"scroll"}}>
+  return <div className="flowchart">
     <svg viewBox={viewBox.join(" ")}
       version="1.1"
       xmlns="http://www.w3.org/2000/svg">
       <defs>
         <rect
-            style={{fill:'#787878', stroke:'#000000',
-                    strokeWidth:0.3, strokeLinejoin: 'round'}}
+            style={{fill:'rgb(67 67 67)', stroke:'rgb(115 115 115)',
+                    strokeWidth: 0.4, strokeLinejoin: 'round'}}
             id="fc-scene-outline-rect"
             width={SCENE_WIDTH}
             height={SCENE_HEIGHT}
             x={-SCENE_WIDTH/2}
-            y={-SCENE_HEIGHT/2} />
+            y={-SCENE_HEIGHT/2}
+            rx={SCENE_HEIGHT/10} />
       </defs>
+      <clipPath id="fc-scene-clip">
+        <use href="#fc-scene-outline-rect"/>
+      </clipPath>
       {tree.map(node=> node.render())}
     </svg>
     {/*<FlowchartSVG/>*/}
