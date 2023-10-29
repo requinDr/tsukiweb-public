@@ -17,6 +17,22 @@
          stroke-linejoin: round;
          fill: rgb(179 179 179);
       }
+
+      &:hover {
+         .graphics {
+            filter: brightness(1.1);
+            cursor: pointer;
+         }
+      }
+   }
+   #fc-scene-outline {
+      stroke-width: 0.4;
+      stroke-linejoin: round;
+      fill: none;
+      stroke: rgb(115 115 115);
+   }
+   #fc-scene-background {
+      fill: rgb(67 67 67);
    }
    .fc-link {
       fill: none;

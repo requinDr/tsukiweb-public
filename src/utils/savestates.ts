@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import { FaSave } from "react-icons/fa"
 import { notifyObservers } from "./Observer";
 import { SAVE_EXT } from "./constants";
-import { PageContent, PageType, RecursivePartial } from "../types";
+import { LabelName, PageContent, PageType, RecursivePartial } from "../types";
 
 //##############################################################################
 //#                                 SAVESTATES                                 #
@@ -237,6 +237,16 @@ export function getLastSave(): SaveState|undefined {
 export function blankSaveState() : Readonly<SaveState> {
   return {
     context: defaultGameContext,
+    progress: defaultProgress
+  }
+}
+
+export function loadScene(label: LabelName) : Readonly<SaveState> {
+  return {
+    context: {
+      ...defaultGameContext,
+      label: label
+    },
     progress: defaultProgress
   }
 }
