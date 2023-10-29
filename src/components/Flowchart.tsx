@@ -1,11 +1,13 @@
 
 import { Fragment, memo, useState } from "react"
 import '../styles/flowchart.scss'
-import { Graphics, SceneName } from "../types"
+import { Graphics, LabelName, SceneName } from "../types"
 import { SCENE_ATTRS } from "../utils/constants"
 import { isScene } from "../utils/scriptUtils"
 import { graphicElements } from "./GraphicsComponent"
 import { settings } from "../utils/variables"
+import { loadScene, loadSaveState } from "../utils/savestates"
+import { SCREEN, displayMode } from "../utils/display"
 
 const SCENE_WIDTH = 27
 const SCENE_HEIGHT = 18
@@ -75,6 +77,13 @@ class FcNode {
   }
 }
 
+const playScene = (scene: LabelName) => {
+  if (settings.completedScenes.includes(scene) || import.meta.env.DEV) {
+    loadSaveState(loadScene(scene))
+    displayMode.screen = SCREEN.WINDOW
+  }
+}
+
 class FcScene extends FcNode {
   graph: Graphics|undefined
   constructor(id: SceneName, column: number, from: FcNode[], alignedNode?: FcNode, graph ?: Graphics) {
@@ -107,6 +116,7 @@ class FcScene extends FcNode {
       {super.render()}
       <g className="fc-scene" id={this.id}
         transform={`translate(${this.x},${this.y})`}
+        onClick={() => playScene(this.id as LabelName)}
         clipPath="url(#fc-scene-clip)">
         {content}
         <use href="#fc-scene-outline"/>
@@ -202,23 +212,20 @@ export const Flowchart = memo(({back}: Props)=> {
       xmlns="http://www.w3.org/2000/svg">
       <defs>
         <radialGradient id="hidden-scene-gradient">
-            <stop offset="0%" stopColor="black" />
-            <stop offset="50%" stopColor="#111" />
-            <stop offset="95%" stopColor="#222" />
+          <stop offset="0%" stopColor="black" />
+          <stop offset="50%" stopColor="#111" />
+          <stop offset="95%" stopColor="#222" />
         </radialGradient>
         <rect id="fc-scene-outline"
-            fill="none" stroke="rgb(115 115 115)"
-            style={{strokeWidth: 0.4, strokeLinejoin: 'round'}}
-            width={SCENE_WIDTH} height={SCENE_HEIGHT}
-            x={-SCENE_WIDTH/2} y={-SCENE_HEIGHT/2} rx={SCENE_HEIGHT/10} />
+          width={SCENE_WIDTH} height={SCENE_HEIGHT}
+          x={-SCENE_WIDTH/2} y={-SCENE_HEIGHT/2} rx={SCENE_HEIGHT/10} />
         <rect id="fc-scene-background"
-            fill="rgb(67 67 67)"
-            width={SCENE_WIDTH} height={SCENE_HEIGHT}
-            x={-SCENE_WIDTH/2} y={-SCENE_HEIGHT/2} />
+          width={SCENE_WIDTH} height={SCENE_HEIGHT}
+          x={-SCENE_WIDTH/2} y={-SCENE_HEIGHT/2} />
         <g id="fc-scene-hidden">
           <rect width={SCENE_WIDTH} height={SCENE_HEIGHT}
-              x={-SCENE_WIDTH/2} y={-SCENE_HEIGHT/2}
-              fill="url(#hidden-scene-gradient)" />
+            x={-SCENE_WIDTH/2} y={-SCENE_HEIGHT/2}
+            fill="url(#hidden-scene-gradient)" />
           <line x1={-SCENE_WIDTH/2} y1={-SCENE_HEIGHT/2} stroke="black"
                 x2={ SCENE_WIDTH/2} y2={ SCENE_HEIGHT/2} strokeWidth={0.4}/>
           <line x1={-SCENE_WIDTH/2} y1={ SCENE_HEIGHT/2} stroke="black"
