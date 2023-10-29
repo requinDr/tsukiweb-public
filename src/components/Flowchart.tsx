@@ -9,8 +9,9 @@ import { settings } from "../utils/variables"
 
 const SCENE_WIDTH = 27
 const SCENE_HEIGHT = 18
-const COLUMN_WIDTH = SCENE_WIDTH+3
+const COLUMN_WIDTH = SCENE_WIDTH + 3
 const DY = 3
+const OVERLAP_BREAK_LENGTH = 2
 
 function getPreviousScenes(tree: Map<string, FcNodeParams|FcNode>, scene: string): string[] {
   const currNode = tree.get(scene)
@@ -37,13 +38,14 @@ class FcNode {
   y: number;
   id: string;
   from: FcNode[];
-  constructor(id: string, column: number, from: FcNode[], alignedNode?: FcNode) {
+  cutAt?: number
+  constructor(id: string, column: number, from: FcNode[], alignedNode?: FcNode, cutAt?: number) {
     this.id = id
     this.column = column
     this.from = from
     this.y = alignedNode ? alignedNode.top
            : from.reduce((yMax, node)=> Math.max(node.bottom, yMax), 0) + DY*2
-
+    this.cutAt = cutAt
   }
 
   get x()       { return this.column * COLUMN_WIDTH }
@@ -70,15 +72,24 @@ class FcNode {
           path += ` V ${turnY}`
         path +=` H ${this.x} V ${yEnd}`
       }
-      return <path key={id} className="fc-link" id={id} d={path}/>
+      if (this.cutAt != undefined) {
+        const totalLength = (yEnd - yStart) + Math.abs(this.x - node.x)
+        const bl = OVERLAP_BREAK_LENGTH
+        const cutLength = this.cutAt * DY
+        const lengths = [totalLength - cutLength - bl/2, bl, cutLength - bl/2]
+        return <path key={id} className="fc-link" id={id} d={path}
+                     style={{strokeDasharray: lengths.join(' ')}}/>
+      } else {
+        return <path key={id} className="fc-link" id={id} d={path}/>
+      }
     })
   }
 }
 
 class FcScene extends FcNode {
   graph: Graphics|undefined
-  constructor(id: SceneName, column: number, from: FcNode[], alignedNode?: FcNode, graph ?: Graphics) {
-    super(id, column, from, alignedNode)
+  constructor(id: SceneName, column: number, from: FcNode[], alignedNode?: FcNode, graph ?: Graphics, cutAt?: number) {
+    super(id, column, from, alignedNode, cutAt)
     this.y += SCENE_HEIGHT/2
     this.graph = graph
   }
@@ -130,11 +141,13 @@ class FcNodeParams {
   column: number
   from: string[]
   align: string|undefined
-  constructor(id: string, column: number, from: string[], align?: string) {
+  cutAt: number|undefined
+  constructor(id: string, column: number, from: string[], align?: string, cutAt?: number) {
     this.id = id
     this.column = column
     this.from = from
     this.align = align
+    this.cutAt = cutAt
   }
   build(nodes: Map<string, FcNode|FcNodeParams>) {
     const parentNodes = this.from.map(getNode.bind(null, nodes))
@@ -142,18 +155,18 @@ class FcNodeParams {
     nodes.set(this.id, this.construct(parentNodes, alignedNode))
   }
   construct(parentNodes: FcNode[], alignedNode: FcNode|undefined) {
-    return new FcNode(this.id, this.column, parentNodes, alignedNode)
+    return new FcNode(this.id, this.column, parentNodes, alignedNode, this.cutAt)
   }
 }
 
 class FcSceneParams extends FcNodeParams {
   graph: Graphics|undefined
-  constructor(id: SceneName, column: number, from: string[], align?: string, graph?: Graphics) {
-    super(id, column, from, align)
+  constructor(id: SceneName, column: number, from: string[], align?: string, graph?: Graphics, cutAt?: number) {
+    super(id, column, from, align, cutAt)
     this.graph = graph
   }
   construct(parentNodes: FcNode[], alignedNode: FcNode|undefined) {
-    return new FcScene(this.id as SceneName, this.column, parentNodes, alignedNode, this.graph)
+    return new FcScene(this.id as SceneName, this.column, parentNodes, alignedNode, this.graph, this.cutAt)
   }
 }
 
@@ -161,12 +174,12 @@ function createTree() {
   let tree = new Map<string, FcNodeParams|FcNode>()
   Object.entries(SCENE_ATTRS.scenes).forEach(([id, {fc}])=> {
     if (fc) {
-      let {col, from, align, graph} = fc
-      tree.set(id, new FcSceneParams(id as SceneName, col, from, align, graph))
+      let {col, from, align, graph, cutAt} = fc
+      tree.set(id, new FcSceneParams(id as SceneName, col, from, align, graph, cutAt))
     }
   })
-  Object.entries(SCENE_ATTRS["fc-nodes"]??{}).forEach(([id, {col, from, align}])=> {
-    tree.set(id, new FcNodeParams(id, col, from, align))
+  Object.entries(SCENE_ATTRS["fc-nodes"]??{}).forEach(([id, {col, from, align, cutAt}])=> {
+    tree.set(id, new FcNodeParams(id, col, from, align, cutAt))
   })
   for (const node of tree.values()) {
     if (node instanceof FcNodeParams) {
