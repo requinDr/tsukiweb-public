@@ -206,7 +206,7 @@ function splitText(text: string) {
   }
   return instructions
 }
-const textLineRegexp = /^[`\-―─\[「\s]/
+const textLineRegexp = /^[`\-―─\[「『\s]/
 export const isTextLine = textLineRegexp.test.bind(textLineRegexp)
 
 export function extractInstructions(line: string) {
