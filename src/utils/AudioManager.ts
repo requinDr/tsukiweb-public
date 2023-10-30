@@ -314,8 +314,8 @@ export const audio = new AudioManager()
 audio.setSoundIdToPath((id)=> {
   let match
   if ((match = /^se(?<id>\d+)$/.exec(id)) != null) {
-    const se = match.groups?.['id'] ?? 0
-    return audioSePath(se)
+    const se = match.groups?.['id'] ?? '0'
+    return audioSePath(parseInt(se)+1)
   }
   else if ((match = /^"\*(?<id>\d+)"$/.exec(id)) != null) {
     const track = match.groups?.['id'] ?? 0
