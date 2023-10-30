@@ -86,7 +86,7 @@ export type VarName = NumVarName | StrVarName
 export type FcNodeAttrs = {
   col: number
   from: string[]
-  dy?: number
+  cutAt?: number
   align?: string
 }
 
