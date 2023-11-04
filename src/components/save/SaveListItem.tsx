@@ -12,14 +12,14 @@ type SaveListItemProps = {
 }
 const SaveListItem = ({id, saveState, onSelect, focusedSave, ...props}: SaveListItemProps)=> {
   const date = new Date(saveState.date as number)
-  
+  const monochrome = saveState.context.monochrome
   return (
     <button className={`save-container ${id==focusedSave ? "active" : ""}`}
       onClick={onSelect.bind(null, id)}
       {...(id==QUICK_SAVE_ID ? {'quick-save':''} : {})}
       {...props}>
       
-      <div className={`graphics ${saveState.context.monochrome ? "monochrome" : ""}`}>
+      <div className={`graphics ${monochrome ? "monochrome" : ""}`} {...(monochrome ? {style: {background: monochrome}} : {})}>
         {graphicElements(saveState.graphics ?? saveState.context.graphics ?? {bg: ""}, {}, 'sd')}
       </div>
 

@@ -11,9 +11,10 @@ type SaveDetailsProps = {
 }
 const SaveDetails = ({id, saveState, deleteSave, ...props}: SaveDetailsProps)=> {
   const [phaseTitle, phaseDay] = saveState ? savePhaseTexts(saveState) : ["", ""]
+  const monochrome = saveState?.context.monochrome
   return (
     <div className="info" {...props}>
-      <div className="graphics">
+      <div className={`graphics ${monochrome ? "monochrome" : ""}`} {...(monochrome ? {style: {background: monochrome}} : {})}>
         {graphicElements(saveState?.graphics ?? saveState?.context.graphics ?? {bg:"notreg"}, {}, settings.resolution)}
       </div>
       
