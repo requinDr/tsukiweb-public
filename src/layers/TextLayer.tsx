@@ -133,7 +133,7 @@ const TextLayer = memo(({...props}: Props) => {
         </Fragment>)}
 
         {lastLine ?
-          <BBTypeWriter key={lines.length}
+          <BBTypeWriter key={history.length*100 + lines.length}
             charDelay={immediate ? 0 : settings.textSpeed}
             text={lastLine}
             hideTag="hide"
