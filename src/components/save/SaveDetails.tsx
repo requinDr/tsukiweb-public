@@ -4,6 +4,7 @@ import { graphicElements } from "../GraphicsComponent"
 import { savePhaseTexts } from "../SavesLayout"
 import { settings } from "../../utils/variables"
 import { BsDownload, BsTrash } from "react-icons/bs"
+import { CSSProperties } from "react"
 
 type SaveDetailsProps = {
   id?: number, saveState?: SaveState, deleteSave: (id: number)=>void,
@@ -12,9 +13,12 @@ type SaveDetailsProps = {
 const SaveDetails = ({id, saveState, deleteSave, ...props}: SaveDetailsProps)=> {
   const [phaseTitle, phaseDay] = saveState ? savePhaseTexts(saveState) : ["", ""]
   const monochrome = saveState?.context.monochrome
+
   return (
     <div className="info" {...props}>
-      <div className={`graphics ${monochrome ? "monochrome" : ""}`} {...(monochrome ? {style: {background: monochrome}} : {})}>
+      <div
+        className={`graphics ${monochrome ? "monochrome" : ""}`}
+        style={{'--monochrome-color': monochrome} as CSSProperties}>
         {graphicElements(saveState?.graphics ?? saveState?.context.graphics ?? {bg:"notreg"}, {}, settings.resolution)}
       </div>
       

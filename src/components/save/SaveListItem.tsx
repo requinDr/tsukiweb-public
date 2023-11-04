@@ -1,3 +1,4 @@
+import { CSSProperties } from "react"
 import strings from "../../utils/lang"
 import { QUICK_SAVE_ID, SaveState } from "../../utils/savestates"
 import { graphicElements } from "../GraphicsComponent"
@@ -13,13 +14,17 @@ type SaveListItemProps = {
 const SaveListItem = ({id, saveState, onSelect, focusedSave, ...props}: SaveListItemProps)=> {
   const date = new Date(saveState.date as number)
   const monochrome = saveState.context.monochrome
+  const isQuickSave = id === QUICK_SAVE_ID
+
   return (
     <button className={`save-container ${id==focusedSave ? "active" : ""}`}
       onClick={onSelect.bind(null, id)}
-      {...(id==QUICK_SAVE_ID ? {'quick-save':''} : {})}
+      {...(isQuickSave ? {'quick-save':''} : {})}
       {...props}>
       
-      <div className={`graphics ${monochrome ? "monochrome" : ""}`} {...(monochrome ? {style: {background: monochrome}} : {})}>
+      <div
+        className={`graphics ${monochrome ? "monochrome" : ""}`}
+        style={{'--monochrome-color': monochrome} as CSSProperties}>
         {graphicElements(saveState.graphics ?? saveState.context.graphics ?? {bg: ""}, {}, 'sd')}
       </div>
 
