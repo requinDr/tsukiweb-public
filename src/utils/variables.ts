@@ -116,6 +116,7 @@ const [gameContext, resetContext, defaultGameContext] = resettable(deepFreeze({
     r : "",
   },
   monochrome: "",
+  textPrefix: "",
 }))
 //_______________________________script variables_______________________________
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

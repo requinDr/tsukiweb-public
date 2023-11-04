@@ -2,7 +2,7 @@ import { useEffect, useState, memo, Fragment } from "react"
 import moonIcon from '../assets/icons/icon_moon.svg'
 import pageIcon from '../assets/icons/icon_bars.svg'
 import { preprocessText, resettable } from "../utils/utils"
-import { settings } from "../utils/variables"
+import { gameContext, settings } from "../utils/variables"
 import { observe, useObserved, useObserver } from "../utils/Observer"
 import history from "../utils/history"
 import { SCREEN, displayMode } from "../utils/display"
@@ -60,10 +60,13 @@ export const commands = {
   '@'  : onBreakChar,
   '\\' : onBreakChar,
   '`'  : (text:string, _: string, onFinish: VoidFunction)=> {
-    appendText(preprocessText(text))
-    if (text == '\n') // line breaks are displayed instantly
-      return;
-
+    if (text == '\n') { // line breaks are displayed instantly
+      appendText('\n')
+      return
+    }
+    text = preprocessText(gameContext.textPrefix + text)
+    appendText(text)
+    
     scriptInterface.onFinish = ()=> {
       scriptInterface.onFinish = undefined,
       scriptInterface.fastForward = false
@@ -74,6 +77,9 @@ export const commands = {
         scriptInterface.fastForward = true;
       }
     }
+  },
+  'textcolor': (color: string, _: string)=> {
+    gameContext.textPrefix = `[color=${color}]`
   }
 }
 
@@ -93,6 +99,8 @@ const TextLayer = memo(({...props}: Props) => {
   useEffect(()=> {
     if (glyph) {
       scriptInterface.onFinish?.()
+      if (!displayMode.text)
+        displayMode.text = true
     }
   }, [glyph])
 

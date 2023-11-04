@@ -227,6 +227,8 @@ export function extractInstructions(line: string) {
     instructions.push(...splitText(line))
   } else if (line.startsWith('!')) {
     instructions.push(...splitText(line)) // '!w' are handled as inline commands
+  } else if (line.startsWith('#')) {
+    instructions.push({ cmd: 'textcolor', arg: line })
   } else {
     //remove comments (text after ';' outside "")
     let commentIdx = -1
