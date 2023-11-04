@@ -120,8 +120,8 @@
     },
     "redirected-images": { },
     "words": {
-      "fin": {"bg": "#ffffff", "center": "[center][color=black][font=serif]Fin"},
-      "end": {"bg": "#ffffff", "bottom": "[right][color=black][font=serif]END"}
+      "fin": {"bg": "#ffffff", "center": "[center][noline][color=black][font=serif]Fin"},
+      "end": {"bg": "#ffffff", "bottom": "[right][noline][color=black][font=serif]END"}
     }
   },
   "audio": {
@@ -311,7 +311,7 @@
     {"center": "[center][font=serif][i]ゲームディレクター/[left=3/]奈須きのこ"},
     {"center": "[center][font=serif][i]製作総指揮/[left=3/]武内崇"},
     {"center": "[center][font=serif][i][left=5/]製作/[left=3/]TYPE-MOON"},
-    {"bottom": "[right][font=serif][color=black][copy/] 2000 TYPE-MOON All right reserved.", "delay": 21500, "bg": "#ffffff"}
+    {"bottom": "[right][font=serif][noline][color=black][copy/] 2000 TYPE-MOON All right reserved.", "delay": 21500, "bg": "#ffffff"}
   ],
   "yes": "Yes",
   "no": "No",
