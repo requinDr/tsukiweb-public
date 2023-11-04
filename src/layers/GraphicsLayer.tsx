@@ -326,21 +326,22 @@ export const GraphicsLayer = memo(function({...props}: Record<string, any>) {
   }, [])
 
 //......... compute properties .........
-  let style, className;
-  ({style, className, ...props} = props);
-  style = {
-    ...style,
-    ...(monoChrome ? {background: monoChrome} : {}),
-    ...(quake ? {
-      '--quake-x': `${quakeEffect.x}pt`,
-      '--quake-y': `${quakeEffect.y}pt`,
-      '--quake-time': `${quakeEffect.duration}ms`
-    } : {})
-  }
+  let style, className
+  ({style, className, ...props} = props)
+  style = { ...style }
+  
   const classList = className?.trim().split("") ?? []
   classList.push('layer', 'graphics')
-  if (quake) classList.push('quake')
-  if (monoChrome) classList.push("monochrome")
+  if (quake) {
+    classList.push('quake')
+    style['--quake-x'] = `${quakeEffect.x}pt`
+    style['--quake-y'] = `${quakeEffect.y}pt`
+    style['--quake-time'] = `${quakeEffect.duration}ms`
+  }
+  if (monoChrome) {
+    classList.push("monochrome")
+    style['--monochrome-color'] = monoChrome
+  }
 //............... render ...............
   return (
     <div className={classList.join(' ')} {...props}

@@ -211,6 +211,8 @@ main {
         }
     }
     &.monochrome {
+        background: var(--monochrome-color);
+
         div {
             filter: grayscale(1);
         }
