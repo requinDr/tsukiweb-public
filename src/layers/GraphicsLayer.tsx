@@ -2,7 +2,7 @@ import { memo, useCallback, useRef, useState } from "react";
 import { gameContext, settings } from "../utils/variables";
 import { observe, useObserved, useObserver } from "../utils/Observer";
 import { SCREEN, displayMode } from "../utils/display";
-import { Graphics, SpritePos, preloadImage } from "../components/GraphicsComponent";
+import { GraphicsElement, SpritePos, preloadImage } from "../components/GraphicsComponent";
 import { objectMatch, resettable, splitFirst, splitLast, useTraceUpdate } from "../utils/utils";
 import { wordImage } from "../utils/lang";
 
@@ -194,7 +194,7 @@ function processQuake(arg: string, cmd: string, onFinish: VoidFunction) {
 function processMonocro(color: string) {
   if (color == "off")
     color = ""
-  gameContext.monochrome = color
+  gameContext.graphics.monochrome = color
 }
 
 const commands = {
@@ -270,16 +270,16 @@ const SpriteGraphics = memo(({pos}: {pos: Exclude<SpritePos, 'bg'>})=> {
   //useTraceUpdate(pos, {pos, currImg, prevImg, fadeTime, effect, imgLoaded})
 
   if (!imgLoaded || prevImg == currImg)
-    return <Graphics key={prevImg} pos={pos} image={prevImg}/>
+    return <GraphicsElement key={prevImg} pos={pos} image={prevImg}/>
 
   return <>
     {fadeTime > 0 &&
-      <Graphics key={prevImg} pos={pos} image={prevImg} fadeOut={effect}
+      <GraphicsElement key={prevImg} pos={pos} image={prevImg} fadeOut={effect}
                 fadeTime={fadeTime} toImg={currImg}
                 onAnimationEnd={endTransition}/>
     }
     {(fadeTime == 0 || effect != "") &&
-      <Graphics key={currImg} pos={pos} image={currImg} fadeIn={effect}
+      <GraphicsElement key={currImg} pos={pos} image={currImg} fadeIn={effect}
                 fadeTime={fadeTime} onAnimationEnd={endTransition}/>
     }
   </>
@@ -296,7 +296,7 @@ const BackgroundGraphics = memo(()=> {
 
   const img = bgTransition ? prevImg : currImg
   return (
-    <Graphics key={img} pos='bg' image={img} {...{'bg-align': bgAlign}}/>
+    <GraphicsElement key={img} pos='bg' image={img} {...{'bg-align': bgAlign}}/>
   )
 })
 
@@ -308,7 +308,7 @@ const ForegroundGraphics = memo(()=> {
 
   //useTraceUpdate('fg', {bgAlign, img, duration, effect, imgLoaded, randId})
   return (imgLoaded && duration > 0 && effect != "") ? (
-    <Graphics key={img} pos='bg' image={img} fadeTime={duration} fadeIn={effect}
+    <GraphicsElement key={img} pos='bg' image={img} fadeTime={duration} fadeIn={effect}
               onAnimationEnd={endTransition} {...{'bg-align': bgAlign}}/>
   ) : <></>
 })
@@ -318,7 +318,7 @@ const ForegroundGraphics = memo(()=> {
 export const GraphicsLayer = memo(function({...props}: Record<string, any>) {
 
   const [quake] = useObserved(quakeEffect, 'duration', (d)=>d!=0)
-  const [monoChrome] = useObserved(gameContext, 'monochrome')
+  const [monoChrome] = useObserved(gameContext.graphics, 'monochrome')
 
 //........ animation callbacks .........
   const onQuakeEnd = useCallback(()=> {

@@ -4,7 +4,7 @@ import '../styles/flowchart.scss'
 import { Graphics, LabelName, SceneName } from "../types"
 import { SCENE_ATTRS } from "../utils/constants"
 import { isScene } from "../utils/scriptUtils"
-import { graphicElements } from "./GraphicsComponent"
+import { GraphicsGroup } from "./GraphicsComponent"
 import { settings } from "../utils/variables"
 import { loadScene, loadSaveState } from "../utils/savestates"
 import { SCREEN, displayMode } from "../utils/display"
@@ -115,13 +115,12 @@ class FcScene extends FcNode {
         <use href="#fc-scene-background" />
         <text className="fc-scene-title">{this.id}</text>
       </>
-    else
+    else {
       content = <foreignObject x={-SCENE_WIDTH/2} y={-SCENE_HEIGHT/2}
         width={SCENE_WIDTH} height={SCENE_HEIGHT}>
-        <div className="graphics">
-          {graphicElements(this.graph, {}, 'sd')}
-        </div>
+        <GraphicsGroup images={this.graph} resolution="sd"/>
       </foreignObject>
+    }
     
     return <Fragment key={this.id}>
       {super.render()}
