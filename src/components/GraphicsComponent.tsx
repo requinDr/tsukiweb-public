@@ -1,21 +1,23 @@
-import { memo, useCallback } from "react";
-import { gameContext, settings } from "../utils/variables";
+import { CSSProperties, memo, useCallback } from "react";
+import { settings } from "../utils/variables";
 import { imageUrl, } from "../utils/lang";
 import { findImageObjectByName } from "../utils/gallery";
 import { splitFirst, useTraceUpdate } from "../utils/utils";
 import { bb } from "../utils/Bbcode";
+import { Graphics as GraphicsType } from "../types";
 
-export type SpritePos = keyof typeof gameContext.graphics
+type DivProps = React.ComponentPropsWithoutRef<"div">
 
-const POSITIONS: Array<SpritePos> = Object.keys(gameContext.graphics) as Array<SpritePos>
+const POSITIONS = ['bg', 'l', 'c', 'r'] as const
+export type SpritePos = typeof POSITIONS[number]
 
 function isImage(str: string) {
   const c = str.charAt(0)
   return c != '#' && c != '$'
 }
 
-export function graphicElement(pos: SpritePos, image: string,
-    props: Record<string, any> = {}, resolution=settings.resolution) {
+function graphicElement(pos: SpritePos, image: string,
+    props: DivProps = {}, resolution=settings.resolution) {
 
   image = image || ((pos=="bg") ? "#000000" : "#00000000")
   const isColor = image.startsWith('#')
@@ -73,15 +75,38 @@ export async function preloadImage(src:string, resolution=settings.resolution): 
   }
 }
 
-export function graphicElements(images: Partial<Record<SpritePos, string>>,
-                        attrs?: Partial<Record<SpritePos, Record<string,any>>>|
-                                ((pos:SpritePos)=>Record<string,any>), resolution=settings.resolution) {
-return POSITIONS.map(pos => images[pos] && graphicElement(pos,
-  images[pos] as string, {
-    key: images[pos]||pos,
-    ...(typeof attrs == 'function' ? attrs(pos) : attrs?.[pos] ?? {})
-  }, resolution))
-}
+type GraphicsGroupProps = {
+  images: GraphicsType
+  spriteAttrs?: Partial<Record<SpritePos, DivProps>> | ((pos:SpritePos)=>DivProps)
+  resolution?: typeof settings.resolution
+} & DivProps
+
+export const GraphicsGroup = memo(({images, spriteAttrs,
+    resolution = settings.resolution, ...props}: GraphicsGroupProps)=> {
+  const monochrome = images.monochrome ?? ""
+  let {style, className, ...attrs} = props
+  const classes = ['graphics']
+  if (monochrome) {
+    classes.push('monochrome')
+    if (!style)
+      style = {}
+    style = {
+      ...style,
+      ...{'--monochrome-color': monochrome}
+    }
+  }
+  if (className)
+    classes.push(className)
+  return <div className={classes.join(' ')} style={style} {...attrs}>
+    {POSITIONS.map(pos => images[pos] && graphicElement(pos,
+      images[pos] as string, {
+        key: images[pos]||pos,
+        ...(typeof spriteAttrs == 'function' ? spriteAttrs(pos)
+            : spriteAttrs?.[pos] ?? {})
+      }, resolution))
+    }
+  </div>
+})
 
 //##############################################################################
 //#                                 COMPONENTS                                 #
@@ -102,13 +127,14 @@ type Props = {
     { fadeIn: string, fadeOut?: undefined, toImg?: undefined } |
     { fadeOut: string, fadeIn?: undefined, toImg: string }
   )
-)) & Record<string, any>
+)) & DivProps
 
-export const Graphics = memo(({pos, image, resolution=settings.resolution,
+export const GraphicsElement = memo(({pos, image, resolution=settings.resolution,
     fadeTime=0, fadeIn=undefined, fadeOut=undefined, toImg=undefined,
     onAnimationEnd=undefined, ...props} : Props)=> {
 
-  //useTraceUpdate(`graph[${pos}]`, {pos, image, resolution, fadeTime, fadeIn, fadeOut, toImg, onAnimationEnd, ...props})
+  //useTraceUpdate(`graph[${pos}]`, {pos, image, resolution, fadeTime, fadeIn,
+  //                                 fadeOut, toImg, onAnimationEnd, ...props})
 
 //____________________________________image_____________________________________
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -146,7 +172,7 @@ export const Graphics = memo(({pos, image, resolution=settings.resolution,
         style: {
           '--from-image': `url(${imageUrl(image)})`,
           '--to-image': `url(${imageUrl(toImg)})`
-        }
+        } as CSSProperties
       }
     }
 
@@ -154,7 +180,7 @@ export const Graphics = memo(({pos, image, resolution=settings.resolution,
 
 //____________________________________render____________________________________
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-  const {style: baseStyle = {}, ...baseAttrs} = (imageProps || {})  as Record<string, any>
+  const {style: baseStyle = {}, ...baseAttrs} = (imageProps || {})  as DivProps
   const {style: insertStyle = {}, ...insertAttrs} = props
   return <>
     {maskProps != undefined && graphicElement(pos, image, maskProps, resolution)}

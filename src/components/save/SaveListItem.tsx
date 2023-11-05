@@ -1,7 +1,6 @@
-import { CSSProperties } from "react"
 import strings from "../../utils/lang"
 import { QUICK_SAVE_ID, SaveState } from "../../utils/savestates"
-import { graphicElements } from "../GraphicsComponent"
+import { GraphicsGroup } from "../GraphicsComponent"
 import SaveSummary from "./SaveSummary"
 
 type SaveListItemProps = {
@@ -13,7 +12,6 @@ type SaveListItemProps = {
 }
 const SaveListItem = ({id, saveState, onSelect, focusedSave, ...props}: SaveListItemProps)=> {
   const date = new Date(saveState.date as number)
-  const monochrome = saveState.context.monochrome
   const isQuickSave = id === QUICK_SAVE_ID
 
   return (
@@ -21,12 +19,7 @@ const SaveListItem = ({id, saveState, onSelect, focusedSave, ...props}: SaveList
       onClick={onSelect.bind(null, id)}
       {...(isQuickSave ? {'quick-save':''} : {})}
       {...props}>
-      
-      <div
-        className={`graphics ${monochrome ? "monochrome" : ""}`}
-        style={{'--monochrome-color': monochrome} as CSSProperties}>
-        {graphicElements(saveState.graphics ?? saveState.context.graphics ?? {bg: ""}, {}, 'sd')}
-      </div>
+      <GraphicsGroup images={saveState.graphics ?? saveState.context.graphics ?? {bg: ""}} resolution="sd"/>
 
       <div className="deta">
         <time dateTime={date.toISOString()} className="date">

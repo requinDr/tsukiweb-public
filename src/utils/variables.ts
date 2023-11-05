@@ -1,4 +1,4 @@
-import { ViewRatio, NumVarName, StrVarName, VarName, LabelName, RouteName, RouteDayName } from "../types"
+import { ViewRatio, NumVarName, StrVarName, VarName, LabelName, RouteName, RouteDayName, Graphics } from "../types"
 import { observe, observeChildren } from "./Observer"
 import { TEXT_SPEED } from "./constants"
 import { SCREEN, displayMode } from "./display"
@@ -114,8 +114,8 @@ const [gameContext, resetContext, defaultGameContext] = resettable(deepFreeze({
     l : "",
     c : "",
     r : "",
-  },
-  monochrome: "",
+    monochrome: "",
+  } as Required<Graphics>,
   textPrefix: "",
 }))
 //_______________________________script variables_______________________________

@@ -1,3 +1,5 @@
+import { SpritePos } from "./components/GraphicsComponent"
+
 export type PageType = 'text'|'choice'|'skip'|'phase'
 export type PageContent<T extends PageType> =
   T extends 'text' ? { text: string } :
@@ -12,11 +14,8 @@ export type PageArgs<T extends PageType> =
   T extends 'phase' ? [] :
   never
 
-export type Graphics = {
-  bg?: string
-  l ?: string
-  c ?: string
-  r ?: string
+export type Graphics = PartialRecord<SpritePos, string> & {
+  monochrome ?: string
 }
 
 export type Choice = {
