@@ -7,7 +7,7 @@ You can play the latest realease online here: [https://holofield.fr/tsukiweb](ht
 The Progressive Web App (PWA) can be installed from the title screen using chromium-based browsers (_e.g._, chrome, edge, opera).
 
 To download the source code and run the game locally, follow the steps below:
-1) install [`node.js`](https://nodejs.org/en/download) (version `14.18` or later is required)
+1) install [`node.js`](https://nodejs.org/en/download) (version `18 / 20+` is required)
 2) Install project dependencies with `npm i`
 3) Start the localhost with `npm start`
 4) Open your browser at the localhost address specified in the output of the previous command
