@@ -5,6 +5,7 @@ import { SCREEN, displayMode } from "../utils/display";
 import { GraphicsElement, SpritePos, preloadImage } from "../components/GraphicsComponent";
 import { objectMatch, resettable, splitFirst, splitLast, useTraceUpdate } from "../utils/utils";
 import { wordImage } from "../utils/lang";
+import { extractInstructions } from "../utils/scriptUtils";
 
 const [transition, resetTransition] = resettable({
   effect: "",
@@ -163,17 +164,28 @@ function processImageCmd(arg: string, cmd: string, onFinish: VoidFunction) {
     case 'bg': [image, type] = splitLast(arg, ',') as [string, string]; break
     case 'cl': [pos, type] = arg.split(','); break
     case 'ld':
-      [pos, arg] = splitFirst(arg, ',') as [string, string]
-      [image, type] = splitLast(arg, ',') as [string, string]
+      let arg1
+      [pos, arg1] = splitFirst(arg, ',') as [string, string]
+      [image, type] = splitLast(arg1, ',') as [string, string]
       break
     default : throw Error(`unknown image command ${cmd} ${arg}`)
   }
-  // get image
-  if (image)
-    image = extractImage(image)
-  type = type?.replace('%', '')
 
-  return applyChange(pos as SpritePos, image, type, onFinish)
+  type = type.replace('%', '')
+  //check if text line starts right after command
+  const match = /\W/.exec(type)
+  if (match) {
+    const secondInstrLength = type.length - match.index
+    return [
+      {cmd, arg: arg.substring(0, arg.length - secondInstrLength)},
+      ...extractInstructions(type.substring(type.length - secondInstrLength))
+    ]
+  } else {
+    // get image
+    if (image)
+      image = extractImage(image)
+    return applyChange(pos as SpritePos, image, type, onFinish)
+  }
 }
 
 function processQuake(arg: string, cmd: string, onFinish: VoidFunction) {
