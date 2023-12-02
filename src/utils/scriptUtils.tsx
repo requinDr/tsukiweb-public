@@ -4,6 +4,20 @@ import strings, { credits, scenesDir, waitLanguageLoad } from "./lang";
 import { subTextCount } from "./utils";
 import { getGameVariable } from "./variables";
 
+function preProcessScript(lines: string[]) {
+  //TODO remove this function after preprocessing the scripts to add this line on all scene files
+  const firstTextIndex = lines.findIndex(isTextLine)
+  const prefixLines = lines.slice(0, firstTextIndex)
+  const prefix = []
+  if (prefixLines.findIndex(line => line.startsWith('monocro')) == -1) {
+    prefix.push("monocro off")
+  }
+
+  if (prefix.length > 0) {
+    lines.unshift(...prefix)
+  }
+}
+
 //##############################################################################
 //#                           FETCH SCENES / BLOCKS                            #
 //##############################################################################
@@ -42,7 +56,8 @@ export async function fetchScene(sceneId: string): Promise<string[] | undefined>
 
   //split data on \n
   const result = script?.split(/\r?\n/).filter(line => line.length > 0);
-
+  if (result)
+    preProcessScript(result)
   return result;
 }
 
