@@ -4,7 +4,7 @@
     .gallery-container {
         @extend %menu-container;
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(min(160px, 100%), 1fr));
         gap: .6em;
         overflow-y: scroll;
         height: inherit;
@@ -30,7 +30,8 @@
             background-color: #0e98cb59;
         }
         .placeholder {
-            border: 1px solid #004347;
+            border: 1px solid #004f87;
+            background-color: rgb(0 0 0 / 40%);
         }
         .blur img {
             filter: blur(30px);
@@ -40,12 +41,6 @@
             &:hover {
                 filter: blur(0);
             }
-        }
-    }
-
-    @media (max-width: 768px) {
-        .gallery-container {
-            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
         }
     }
 }
