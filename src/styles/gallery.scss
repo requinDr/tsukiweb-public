@@ -4,7 +4,7 @@
     .gallery-container {
         @extend %menu-container;
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(min(160px, 100%), 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(min(150px, 100%), 1fr));
         gap: .6em;
         overflow-y: scroll;
         height: inherit;
