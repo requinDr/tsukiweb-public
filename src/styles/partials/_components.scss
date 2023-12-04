@@ -2,7 +2,12 @@
     background-color: var(--menu-container);
     box-shadow: var(--menu-shadow);
     position: relative;
-    padding: 1em;
+    padding: 1rem;
+    
+    @media all and (hover: hover) and (pointer: fine) {
+        scrollbar-gutter: stable;
+        padding-right: calc(1rem - var(--scrollbar-width));
+    }
 }
 %info-box {
     color: #ffffffe8;

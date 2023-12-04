@@ -5,7 +5,7 @@
         @extend %menu-container;
         display: flex;
         flex-direction: column;
-        font-size: 1.2em;
+        font-size: 1.1rem;
         overflow-x: hidden;
         flex: 1;
 
@@ -32,7 +32,8 @@
             display: grid;
             grid-template-columns: 1fr 2fr;
             align-items: center;
-            padding-block: .8em;
+            padding-block: .6em;
+            min-height: 60px;
 
             &:not(:nth-last-child(2)) {
                 border-bottom: 1px solid var(--separator);
@@ -60,14 +61,14 @@
             .config-btns {
                 flex: 1;
                 display: flex;
-                gap: 4px;
+                gap: 8px;
                 flex-wrap: wrap;
 
                 .config-btn {
-                    padding: .2em;
+                    padding: .2rem .4rem;
                     background-color: transparent;
                     transition: .2s ease-in-out;
-                    border-radius: 8px;
+                    border-radius: 6px;
                     text-transform: uppercase;
                     min-width: min(100px, 100%);
                     text-align: center;
@@ -173,6 +174,18 @@
         .reset {
             margin-top: 1em;
             align-self: flex-end;
+
+            .reset-btn {
+                color: var(--text-color);
+                padding: 0.3em 2em;
+                font-size: clamp(0.86rem, 3.5vmin, 1rem);
+                background-color: hsl(44deg 90% 25%);
+                border-radius: 4px;
+
+                &:hover {
+                    background-color: hsl(44deg 90% 15%);
+                }
+            }
         }
     }
 

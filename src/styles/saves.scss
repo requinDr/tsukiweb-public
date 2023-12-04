@@ -9,7 +9,7 @@
         "buttons buttons";
     grid-template-columns: 3fr 1fr;
     grid-template-rows: min-content 1fr min-content;
-    column-gap: 12px;
+    column-gap: 2rem;
 
     .page-title {
         grid-area: title;
@@ -125,21 +125,18 @@
                 align-self: flex-end;
                 display: flex;
                 margin-top: .6em;
+                gap: 4px;
 
                 button {
-                    padding: .2em 1em;
+                    padding: .4em .8em;
                     opacity: .8;
                     display: flex;
                     align-items: center;
 
                     &:hover {
-                        color: #0fbbd5;
+                        box-shadow: var(--selected-shadow);
                         opacity: 1;
                     }
-                }
-
-                button:not(:last-of-type) {
-                    border-right: 1px solid var(--separator);
                 }
             }
         }
