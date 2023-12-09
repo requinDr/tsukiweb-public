@@ -33,7 +33,6 @@
         transition: all var(--panel-trans-time) ease-out;
         display: flex;
         align-items: center;
-        padding-block: 1.4em;
         background-image: linear-gradient(226deg, #051c4b, #00357c);
 
         menu {
@@ -43,7 +42,7 @@
             row-gap: .8em;
             flex-direction: column;
             font-size: clamp(1em, 4.6vmin, 1.2em);
-            padding: 1em;
+            padding: 1.4em 1em;
             overflow-y: auto;
         }
 

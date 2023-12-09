@@ -116,7 +116,7 @@ export const ConfigButtons = ({title, desc, btns, property, conf, updateValue}: 
 
 export const ResetBtn = ({onClick}: {onClick: ()=> void}) => (
   <div className="reset">
-    <button className="menu-btn reset" onClick={onClick}>
+    <button className="reset-btn" onClick={onClick}>
       {strings.config.reset}
     </button>
   </div>

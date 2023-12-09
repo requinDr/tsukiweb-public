@@ -1,30 +1,38 @@
 .tabs {
-    border-bottom: 2px solid var(--active);
     display: flex;
     flex-direction: row;
     padding-inline: 1em;
     overflow-x: auto;
 
     .tab {
-        padding: .3em min(1.2em, 4vw);
+        padding: .5em min(1.6em, 6vw);
         background-color: transparent;
         transition: .2s ease-in-out;
-        border-radius: 6px 6px 0 0;
-        font-size: 1.1em;
-        border: 2px solid transparent;
-        border-bottom: 0;
+        border-radius: 8px 8px 0 0;
+        font-size: 1.1rem;
         white-space: nowrap;
 
         &:hover, &.active:hover {
             background-color: var(--active);
+            color: var(--text);
         }
         &:focus-visible {
             background-color: var(--focus);
         }
 
         &.active {
-            border-color: var(--active);
+            color: rgb(18 215 223);
             background-color: rgb(4 45 64 / 45%);
+            position: relative;
+
+            &:after {
+                content: "\1F319";
+                position: absolute;
+                right: 4px;
+                bottom: 4px;
+                font-size: 0.8em;
+                filter: grayscale(1);
+            }
         }
         &:focus-visible.active {
             background-color: var(--focus);
