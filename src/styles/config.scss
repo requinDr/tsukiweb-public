@@ -6,7 +6,8 @@
         display: flex;
         flex-direction: column;
         font-size: 1.1rem;
-        overflow-x: hidden;
+        min-height: 0;
+        overflow-y: auto;
         flex: 1;
 
         .sub {
@@ -34,6 +35,7 @@
             align-items: center;
             padding-block: .6em;
             min-height: 60px;
+            flex: none;
 
             &:not(:nth-last-child(2)) {
                 border-bottom: 1px solid var(--separator);
