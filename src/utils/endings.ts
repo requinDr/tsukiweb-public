@@ -50,8 +50,8 @@ export type OsieteEnding = Ending<"osiete">
 
 
 export const endings = {
-  ark_good    : new Ed("s53a", "ark" , "13b", "good"  , "ark_f02" ) as RouteEnding,
-  ark_true    : new Ed("s52a", "ark" , "13a", "true"  , "ark_f03" ) as RouteEnding,
+  ark_good    : new Ed("s53a", "ark" , "13b", "good"  , "ark_f03" ) as RouteEnding,
+  ark_true    : new Ed("s52a", "ark" , "13a", "true"  , "ark_f02" ) as RouteEnding,
   ciel_good   : new Ed("s308", "cel" , "13b", "good"  , "cel_e07a") as RouteEnding,
   ciel_true   : new Ed("s310", "cel" , "13a", "true"  , "cel_f02" ) as RouteEnding,
   akiha_good  : new Ed("s384", "aki" , "13b", "normal", "aki_f01" ) as RouteEnding,
