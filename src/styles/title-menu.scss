@@ -40,47 +40,47 @@
             width: min(94%, 400px);
             object-fit: contain;
         }
-        .tsuki-logo {
-            z-index: 1;
-        }
     }
 
     $spacing: 14px;
-    %top-actions {
-        transition: var(--transition);
+    .top-actions {
         position: absolute;
-        top: 0;
-        margin-top: $spacing;
+        top: $spacing;
+        right: 40px;
         height: 40px;
-        box-sizing: border-box;
         display: flex;
-        align-items: center;
-        justify-content: center;
+        flex-direction: row;
+        gap: $spacing;
 
-        &:hover, &:focus-visible {
-            box-shadow: var(--selected-shadow);
+        .info-icon, .pwa-install {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+            &:hover, &:focus-visible {
+                box-shadow: var(--selected-shadow);
+            }
         }
-    }
-    .info-icon {
-        @extend %top-actions;
-        right: $spacing * 2;
-        font-size: 1.4em;
-        padding: 4pt;
-        aspect-ratio: 1;
-    }
 
-    .pwa-install {
-        @extend %top-actions;
-        right: 40 + $spacing * 3;
-        background-image: linear-gradient(to right, #07162f,#0d346d,#07162f);
-        outline: 1px solid #005299;
-        padding: 4px;
-
-        span {
-            margin: 4px 8px 4px 4px;
-        }
-        img {
+        .info-icon {
+            font-size: 1.4em;
+            padding: 4pt;
+            aspect-ratio: 1;
             height: 100%;
+            width: 100%;
+        }
+        .pwa-install {
+            background-image: linear-gradient(to right, #07162f,#0d346d);
+            padding: 4px 8px;
+            flex-direction: row;
+            gap: 4px;
+    
+            span {
+                margin: 4px;
+            }
+            img {
+                height: 100%;
+            }
         }
     }
 
@@ -140,6 +140,27 @@
         }
     }
 
+    // One column
+    @media (max-width: 810px) and (min-height: 420px), (orientation: portrait) {
+        .top-actions {
+            right: $spacing;
+            width: 40px;
+            height: unset;
+            flex-direction: column-reverse;
+            align-items: center;
+
+            .pwa-install {
+                padding: 8px 4px;
+                flex-direction: column;
+                span {
+                    writing-mode: vertical-lr;
+                }
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
     // One column, mobile portrait
     @media (max-width: 810px), ((orientation: landscape) and (max-height: 420px)) {
         .menu {

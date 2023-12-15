@@ -180,34 +180,36 @@ const TitleMenuScreen = () => {
         }
       </nav>
 
-      {showPWAButton &&
+      <div className='top-actions'>
+        {showPWAButton &&
+          <motion.button
+            className="pwa-install"
+            aria-label="install PWA"
+            onClick={installPWA}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{
+              delay: 0.8,
+              duration: 1,
+            }} >
+            <span>{strings.title.install}</span>
+            <img src={pwaIcon} alt="PWA icon" draggable={false}/>
+          </motion.button>
+        }
+
         <motion.button
-          className="pwa-install"
-          aria-label="install PWA"
-          onClick={installPWA}
+          className="info-icon"
+          aria-label="show information modal"
+          onClick={()=>setShow(true)}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{
-            delay: 0.8,
+            delay: 0.6,
             duration: 1,
           }} >
-          <span>{strings.title.install}</span>
-          <img src={pwaIcon} alt="PWA icon" draggable={false}/>
+          <HiOutlineInformationCircle/>
         </motion.button>
-      }
-
-      <motion.button
-        className="info-icon"
-        aria-label="show information modal"
-        onClick={()=>setShow(true)}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{
-          delay: 0.6,
-          duration: 1,
-        }} >
-        <HiOutlineInformationCircle/>
-      </motion.button>
+      </div>
     </motion.div>
   )
 }
