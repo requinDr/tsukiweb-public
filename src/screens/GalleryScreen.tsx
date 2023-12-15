@@ -55,9 +55,9 @@ const GalleryScreen = () => {
 
           <Fancybox className='gallery-container'
             options={{
-              Thumbs: false,
               Toolbar: false,
-            }}>
+              Thumbs: false,
+            } as any}>
             {images.map(({src_hd, src_thumb, ...image}) =>
               <React.Fragment key={image.img}>
                 {src_thumb === defaultThumbnail ?

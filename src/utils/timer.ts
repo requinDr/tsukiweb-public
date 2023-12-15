@@ -44,18 +44,18 @@ export default class Timer {
   stop() {
     if (this.timeout) {
       if (this.loop)
-        clearInterval(this.timeout)
+        clearInterval(this.timeout as NodeJS.Timeout)
       else
-        clearTimeout(this.timeout)
+        clearTimeout(this.timeout as NodeJS.Timeout)
     }
   }
 
   pause() {
     if (this.timeout) {
       if (this.loop) {
-        clearInterval(this.timeout)
+        clearInterval(this.timeout as NodeJS.Timeout)
       } else {
-        clearTimeout(this.timeout)
+        clearTimeout(this.timeout as NodeJS.Timeout)
         const elapsed_time = Date.now() - (this.timestamp as number)
         this.time -= elapsed_time
       }
@@ -66,9 +66,9 @@ export default class Timer {
   cancel() {
     if (this.timeout) {
       if (this.loop) {
-        clearInterval(this.timeout)
+        clearInterval(this.timeout as NodeJS.Timeout)
       } else {
-        clearTimeout(this.timeout)
+        clearTimeout(this.timeout as NodeJS.Timeout)
       }
       this.timeout = 0
     }
@@ -78,7 +78,7 @@ export default class Timer {
   {
     if (this.timeout) {
       if (!this.loop) {
-        clearTimeout(this.timeout)
+        clearTimeout(this.timeout as NodeJS.Timeout)
         this.timeout = 0
       }
       queueMicrotask(this.callback) // calls callback as soon as the processor is free
