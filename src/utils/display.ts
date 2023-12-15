@@ -22,7 +22,7 @@ let graphics: boolean = false;
 let savesVariant: 'save'|'load'|'' = '';
 let config: boolean = false;
 
-export const displayMode = {
+export const displayMode: { [key: string]: any } = {
   screen: SCREEN.TITLE,
   menu: false as boolean,
   bgAlignment: 'center' as ('top' | 'center' | 'bottom'),

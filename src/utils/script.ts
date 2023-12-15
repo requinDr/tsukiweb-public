@@ -291,7 +291,7 @@ export async function processLine(line: string) {
 function createPageIfNeeded() {
   const {index, label} = gameContext
   if (isScene(label) && (index == 0 || sceneLines[index-1].endsWith('\\') ||
-      (history.last?.page?.contentType != "text" ?? true))) {
+      (history.last?.page?.contentType != "text" || true))) {
     history.onPageBreak("text", "")
   }
 }
