@@ -1,0 +1,39 @@
+#page-crash {
+    overflow: clip;
+    
+    .page-content {
+        height: unset;
+        text-align: center;
+        max-width: 600px;
+        font-size: 1.1rem;
+        align-items: center;
+    }
+
+    h1 {
+        color: var(--text);
+        font-size: 4em;
+        letter-spacing: -2px;
+        font-weight: 800;
+        margin-block-start: 0;
+        margin-block-end: 0;
+    }
+    h2 {
+        letter-spacing: -1px;
+        font-size: 2em;
+        margin-block-start: 0;
+        margin-block-end: 1em;
+        font-weight: 700;
+    }
+
+    p {
+        text-wrap: balance;
+    }
+
+    details {
+        p {
+            text-align: left;
+            height: 200px;
+            overflow-y: auto;
+        }
+    }
+}
