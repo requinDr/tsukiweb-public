@@ -3,7 +3,7 @@ import { ConfigButtons, ConfigItem, ResetBtn } from "../ConfigLayout"
 import { defaultSettings, settings } from "../../utils/variables"
 import { deepAssign, negative } from "../../utils/utils"
 import strings, { useLanguageRefresh } from "../../utils/lang"
-import { FaVolumeMute, FaVolumeOff, FaVolumeUp } from "react-icons/fa"
+import { MdOutlineVolumeOff, MdOutlineVolumeUp, MdVolumeMute } from "react-icons/md"
 
 const ConfigAudioTab = () => {
   useLanguageRefresh()
@@ -43,7 +43,7 @@ const ConfigAudioTab = () => {
       {(Object.keys(conf.volume) as Array<keyof typeof volumeNames>).map(key=>
         <ConfigItem key={key} title={volumeNames[key]}>
           <div className="config-range">
-          <span className="icon"><FaVolumeOff /></span>
+          <span className="icon"><MdOutlineVolumeOff /></span>
             <input
               type="range"
               min={0}
@@ -54,11 +54,11 @@ const ConfigAudioTab = () => {
                 const sign = negative(conf.volume[key]) ? -1 : 1
                 updateSubValue('volume', key, sign * parseInt(e.target.value))
               }} />
-            <span className="icon"><FaVolumeUp /></span>
+            <span className="icon"><MdOutlineVolumeUp /></span>
 
             <button className="mute"
               onClick={()=> updateSubValue('volume', key, -conf.volume[key])}>
-              {negative(conf.volume[key]) ? <FaVolumeMute aria-label="mute" /> : <FaVolumeUp aria-label="unmute" />}
+              {negative(conf.volume[key]) ? <MdVolumeMute aria-label="mute" /> : <MdOutlineVolumeUp aria-label="unmute" />}
             </button>
           </div>
         </ConfigItem>

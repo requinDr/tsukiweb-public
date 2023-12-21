@@ -1,90 +1,155 @@
 %layer-menu {
-    --panel-trans-time: 0.4s;
-    z-index: -1;
-    background-color: rgb(0 42 87 / 40%);
-    backdrop-filter: blur(1px);
-    -webkit-backdrop-filter: blur(1px);
-    opacity: 0;
-    display: flex;
-    justify-content: flex-end;
-    transition: var(--transition);
-    transition-property: opacity, z-index;
-    // when hiding, wait before starting the transition
-    transition-delay: calc(var(--panel-trans-time) - var(--transition-time));
-    overflow: hidden;
-    border-block: 12px solid #002373;
+  --panel-trans-time: 0.4s;
+  z-index: -1;
+  background-color: rgb(0 36 87 / 50%);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+  opacity: 0;
+  display: flex;
+  justify-content: flex-end;
+  transition: var(--transition);
+  transition-property: opacity, z-index;
+  // when hiding, wait before starting the transition
+  transition-delay: calc(var(--panel-trans-time) - var(--transition-time));
+  overflow: hidden;
+  border-block: 12px solid #002373;
 
-    &.show {
-        z-index: 4;
-        opacity: 1;
-        transition-delay: 0s;
+  &.show {
+    z-index: 4;
+    opacity: 1;
+    transition-delay: 0s;
 
-        .menu-container {
-            right: 5vw;
-        }
-    }
-
-    $width: clamp(150px, 50vmin, 210px);
     .menu-container {
-        position: absolute;
-        right: calc($width * -1);
-        height: 100%;
-        width: $width;
-        transition: all var(--panel-trans-time) ease-out;
-        display: flex;
-        align-items: center;
-        background-image: linear-gradient(226deg, #051c4b, #00357c);
-
-        menu {
-            height: min(100%, 660px);
-            flex: 1;
-            display: flex;
-            row-gap: .8em;
-            flex-direction: column;
-            font-size: clamp(1em, 4.6vmin, 1.2em);
-            padding: 1.4em 1em;
-            overflow-y: auto;
-        }
-
-        button, a {
-            color: var(--text-color);
-            text-decoration: none;
-            transition: var(--transition);
-            user-select: none;
-            display: flex;
-            align-items: center;
-
-            &:hover, &:focus-visible {
-                color: rgb(10 164 171);
-                text-shadow: 1px 0 5px rgb(14 79 187), 1px 0 6px rgba(28, 147, 147, 0.5215686275);
-                text-decoration: underline;
-            }
-        }
-        .action-icons {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 6px;
-            margin-top: auto;
-            padding-top: 1em;
-            width: 100%;
-
-            button {
-                border-radius: 2px;
-                padding: 4px;
-                color: rgb(176 209 229);
-                background-color: rgb(1 17 27 / 60%);
-                justify-content: center;
-
-                &:hover, &:focus-visible {
-                    color: rgb(245 249 251);
-                    background-color: rgb(1 17 27 / 60%);
-                    text-decoration: none;
-                }
-            }
-
-            .quick {
-                font-size: 1rem;
-            }
-        }
+      right: 0;
     }
+  }
+
+  $width: clamp(220px, 50vmin, 320px);
+  .menu-container {
+    position: absolute;
+    right: calc($width * -1);
+    height: 100%;
+    width: $width;
+    transition: all var(--panel-trans-time) ease-out;
+    display: flex;
+    align-items: center;
+    // background-image: linear-gradient(226deg, #051c4b, #00357c);
+    background-image: linear-gradient(226deg, rgb(7 5 75), rgb(0 123 124 / 75%));
+    -webkit-mask-image: linear-gradient(to right, transparent, black 2em);
+    mask-image: linear-gradient(to right, transparent, black 2em);
+    backdrop-filter: contrast(1.5) blur(1em);
+
+    menu {
+      height: 100%;
+      flex: 1;
+      display: grid;
+      grid-template-rows: 1fr 2fr 1fr;
+      font-size: clamp(1em, 4.8vmin, 1.3em);
+      padding: 1em;
+      margin-left: 2em;
+      overflow-y: auto;
+      max-width: 240px;
+    }
+
+    button,
+    a {
+      color: var(--text-color);
+      text-decoration: none;
+      transition: var(--transition);
+      user-select: none;
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+    .top {
+      grid-row: 1;
+      min-height: 60px;
+    }
+    .layer-btns {
+      grid-row: 2;
+      display: flex;
+      row-gap: 0.8em;
+      flex-direction: column;
+
+      .layer-btn {
+        &:hover, &:focus-visible {
+          color: rgb(10 164 171);
+          text-shadow: 1px 0 5px rgb(14 79 187), 1px 0 6px rgba(28, 147, 147, 0.5);
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: -5px;
+          left: 0;
+          width: 0;
+          height: 1px;
+          transition: var(--transition);
+          transition-delay: 0.1s;
+          opacity: 0.1;
+        }
+
+        &:hover, &:focus-visible {
+          &::after {
+            width: 100%;
+            background-image: linear-gradient(
+              to right,
+              rgb(10, 164, 171) 75%,
+              #0a9eab00
+            );
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    .action-btns {
+      grid-row: 3;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: auto;
+      padding-top: 1em;
+      width: 100%;
+
+      button {
+        border-radius: 2px;
+        padding: 4px;
+        color: rgb(176 209 229);
+        background-color: rgb(1 17 27 / 60%);
+        justify-content: center;
+        outline-color: var(--active);
+
+        &:hover,
+        &:focus-visible {
+          color: rgb(245 249 251);
+          background-color: rgb(1 17 27 / 60%);
+          outline: 1px solid var(--active);
+        }
+      }
+
+      .quick {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .top-ornament, .bottom-ornament {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0.5;
+    width: clamp(220px, 60vmin, 350px);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 8em);
+    mask-image: linear-gradient(to right, transparent, black 8em);
+  }
+  .top-ornament {
+    top: 0;
+    right: 0;
+    z-index: 1;
+  }
+  .bottom-ornament {
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    rotate: 180deg;
+  }
 }
