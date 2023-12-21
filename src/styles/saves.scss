@@ -128,10 +128,11 @@
                 gap: 4px;
 
                 button {
-                    padding: .4em .8em;
-                    opacity: .8;
+                    padding: 4px 16px;
+                    opacity: 0.8;
                     display: flex;
                     align-items: center;
+                    font-size: 1.3em;
 
                     &:hover {
                         box-shadow: var(--selected-shadow);

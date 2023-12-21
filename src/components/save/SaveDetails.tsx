@@ -2,7 +2,7 @@ import { Tooltip } from "react-tooltip"
 import { SaveState, exportSave } from "../../utils/savestates"
 import { GraphicsGroup } from "../GraphicsComponent"
 import { savePhaseTexts } from "../SavesLayout"
-import { BsDownload, BsTrash } from "react-icons/bs"
+import { MdDeleteOutline, MdOutlineFileDownload } from "react-icons/md"
 
 type SaveDetailsProps = {
   id?: number, saveState?: SaveState, deleteSave: (id: number)=>void,
@@ -24,11 +24,11 @@ const SaveDetails = ({id, saveState, deleteSave, ...props}: SaveDetailsProps)=> 
             <Tooltip id="tooltip" className="tooltip" delayShow={800} />
             <button onClick={deleteSave.bind(null, id)}
               data-tooltip-id="tooltip" data-tooltip-content="Delete">
-              <BsTrash />
+              <MdDeleteOutline />
             </button>
             <button onClick={() => exportSave([id])}
               data-tooltip-id="tooltip" data-tooltip-content="Download">
-              <BsDownload />
+              <MdOutlineFileDownload />
             </button>
           </div>
         </div>

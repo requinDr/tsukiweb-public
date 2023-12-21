@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react"
 import { addEventListener, isFullscreen, toggleFullscreen } from "../utils/utils"
-import { FaCompressArrowsAlt, FaExpandArrowsAlt, FaFastForward, FaVolumeMute, FaVolumeUp } from "react-icons/fa"
+import { MdFastForward, MdFullscreen, MdFullscreenExit, MdOutlineVolumeOff, MdOutlineVolumeUp, MdPlayArrow } from "react-icons/md"
 import { gameContext, settings } from "../utils/variables"
 import { quickLoad, quickSave } from "../utils/savestates"
 import { useObserved } from "../utils/Observer"
@@ -8,6 +8,7 @@ import script from "../utils/script"
 import { displayMode, SCREEN } from "../utils/display"
 import strings from "../utils/lang"
 import ParticlesComponent from "../components/ParticlesComponent"
+import Ornament from "../assets/images/ornament.webp"
 
 /**
  * TODO
@@ -89,32 +90,35 @@ const MenuLayer = () => {
   return (
     <div className={`layer ${display ? "show" : ""}`} id="layer-menu">
       <ParticlesComponent />
-
+      <img src={Ornament} alt="ornament" className="bottom-ornament" />
+      <img src={Ornament} alt="ornament" className="top-ornament" />
+      
       <nav className="menu-container" ref={menuRef}>
         <menu>
-          <button onClick={graphicMode}>
-            {strings.menu["graphics"]}
-          </button>
-          <button onClick={historyMode}>
-            {strings.menu["history"]}
-          </button>
-          <button onClick={saveMode}>
-            {strings.menu["save"]}
-          </button>
-          <button onClick={loadMode}>
-            {strings.menu["load"]}
-          </button>
-          <button onClick={configMode}>
-            {strings.menu["config"]}
-          </button>
-          <button onClick={autoPlay}>
-            {strings.menu["auto-play"]}
-          </button>
-          <button onClick={title}>
-            {strings.menu["title"]}
-          </button>
+          <div className="top" />
 
-          <div className="action-icons">
+          <div className="layer-btns">
+            <button onClick={graphicMode} className="layer-btn">
+              {strings.menu["graphics"]}
+            </button>
+            <button onClick={historyMode} className="layer-btn">
+              {strings.menu["history"]}
+            </button>
+            <button onClick={saveMode} className="layer-btn">
+              {strings.menu["save"]}
+            </button>
+            <button onClick={loadMode} className="layer-btn">
+              {strings.menu["load"]}
+            </button>
+            <button onClick={configMode} className="layer-btn">
+              {strings.menu["config"]}
+            </button>
+            <button onClick={title} className="layer-btn">
+              {strings.menu["title"]}
+            </button>
+          </div>
+
+          <div className="action-btns">
             <button onClick={quickSave} className="quick">
               {strings.menu["q-save"]}
             </button>
@@ -122,13 +126,16 @@ const MenuLayer = () => {
               {strings.menu["q-load"]}
             </button>
             <button onClick={toggleVolume} aria-label="mute/unmute">
-              {mute ? <FaVolumeMute /> : <FaVolumeUp />}
+              {mute ? <MdOutlineVolumeOff /> : <MdOutlineVolumeUp />}
             </button>
             <button onClick={toggleFullscreen} aria-label="toggle fullscreen">
-              {fullscreen ? <FaCompressArrowsAlt /> : <FaExpandArrowsAlt />}
+              {fullscreen ? <MdFullscreenExit /> : <MdFullscreen />}
+            </button>
+            <button onClick={autoPlay} aria-label="auto play" title={strings.menu["auto-play"]}>
+              <MdPlayArrow />
             </button>
             <button onClick={fastForwardScene} aria-label="skip scene" title={strings.menu["ffw"]}>
-              <FaFastForward />
+              <MdFastForward />
             </button>
           </div>
         </menu>

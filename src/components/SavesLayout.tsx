@@ -1,14 +1,12 @@
 import { ChangeEvent, MouseEvent, useEffect, useState } from "react"
 import { SCREEN, displayMode } from "../utils/display"
-import { bb, noBb } from "../utils/Bbcode"
-import { SceneName } from "../types"
+import { noBb } from "../utils/Bbcode"
 import { SAVE_EXT } from "../utils/constants"
-import { SaveState, QUICK_SAVE_ID, deleteSaveState, getSaveState, listSaveStates, loadSaveState, storeCurrentState, addSavesChangeListener, removeSavesChangeListener, exportSave, loadSaveFiles } from "../utils/savestates"
-import { getSceneTitle } from "../utils/scriptUtils"
-import { BsFileEarmarkArrowUp, BsPlusCircle } from "react-icons/bs"
+import { SaveState, QUICK_SAVE_ID, deleteSaveState, getSaveState, listSaveStates, loadSaveState, storeCurrentState, addSavesChangeListener, removeSavesChangeListener, loadSaveFiles } from "../utils/savestates"
 import strings, { phaseTexts } from "../utils/lang"
 import SaveListItem from "./save/SaveListItem"
 import SaveDetails from "./save/SaveDetails"
+import { MdAddCircleOutline, MdUploadFile } from "react-icons/md"
 
 //##############################################################################
 //#                               TOOL FUNCTIONS                               #
@@ -99,7 +97,7 @@ const SavesLayer = ({variant, back}: Props) => {
             onMouseEnter={setFocusedSave.bind(null, 1)}
             onMouseLeave={setFocusedSave.bind(null, undefined)}
           >
-            <BsPlusCircle />
+            <MdAddCircleOutline />
           </button>
         : <>
           <label htmlFor="import"
@@ -110,7 +108,7 @@ const SavesLayer = ({variant, back}: Props) => {
             onPointerEnter={setFocusedSave.bind(null, 2)}
             onMouseEnter={setFocusedSave.bind(null, 2)}
           >
-            <BsFileEarmarkArrowUp />
+            <MdUploadFile />
           </label>
           <input type="file" id="import" onChange={importSaves}
             onContextMenu={importSaves}
