@@ -108,6 +108,13 @@
             position: relative;
             -webkit-tap-highlight-color: transparent;
 
+            // Hover area
+            &::before {
+                content: "";
+                position: absolute;
+                inset: -6px;
+            }
+
             &::after {
                 content: "";
                 position: absolute;
@@ -125,6 +132,11 @@
                 color: rgb(10 164 171);
                 text-shadow: 0 0 6px #005aff;
                 transform: translateY(-6px);
+
+                &::before {
+                    top: 0;
+                    bottom: -12px;
+                }
 
                 &::after {
                     width: 100%;
