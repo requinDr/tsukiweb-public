@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import tsukiLogo from "../assets/images/tsukihime-logo.webp"
 import moon from "../assets/images/moon.webp"
 import tsukiR from "../assets/images/tsukihime_blue_glass_cover.webp"
-import { HiOutlineInformationCircle } from 'react-icons/hi'
 import '../styles/title-menu.scss'
 import ParticlesComponent from '../components/ParticlesComponent'
 import { SCREEN, displayMode, useScreenAutoNavigate } from '../utils/display'
@@ -15,8 +14,7 @@ import { APP_VERSION } from '../utils/constants'
 import strings, { useLanguageRefresh } from '../utils/lang'
 import { bb } from '../utils/Bbcode'
 import { useObserved } from '../utils/Observer'
-
-const pwaIcon = "icons/icon_128.webp"
+import { MdGetApp, MdInfoOutline } from 'react-icons/md'
 
 type BeforeInstallPromptEvent = Event & {prompt: ()=>Promise<{outcome: any}>}
 
@@ -184,7 +182,7 @@ const TitleMenuScreen = () => {
         {showPWAButton &&
           <motion.button
             className="pwa-install"
-            aria-label="install PWA"
+            aria-label={strings.title.install}
             onClick={installPWA}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -192,8 +190,7 @@ const TitleMenuScreen = () => {
               delay: 0.8,
               duration: 1,
             }} >
-            <span>{strings.title.install}</span>
-            <img src={pwaIcon} alt="PWA icon" draggable={false}/>
+            <MdGetApp />
           </motion.button>
         }
 
@@ -207,7 +204,7 @@ const TitleMenuScreen = () => {
             delay: 0.6,
             duration: 1,
           }} >
-          <HiOutlineInformationCircle/>
+          <MdInfoOutline />
         </motion.button>
       </div>
     </motion.div>
