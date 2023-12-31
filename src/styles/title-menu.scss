@@ -50,7 +50,7 @@
         height: 40px;
         display: flex;
         flex-direction: row;
-        gap: $spacing;
+        gap: calc($spacing / 2);
 
         .info-icon, .pwa-install {
             display: flex;
@@ -62,25 +62,12 @@
             }
         }
 
-        .info-icon {
+        .info-icon, .pwa-install {
             font-size: 1.4em;
             padding: 4pt;
             aspect-ratio: 1;
             height: 100%;
             width: 100%;
-        }
-        .pwa-install {
-            background-image: linear-gradient(to right, #07162f,#0d346d);
-            padding: 4px 8px;
-            flex-direction: row;
-            gap: 4px;
-    
-            span {
-                margin: 4px;
-            }
-            img {
-                height: 100%;
-            }
         }
     }
 
@@ -97,7 +84,7 @@
             text-transform: uppercase;
             letter-spacing: 3px;
             flex-direction: row;
-            row-gap: 4px;
+            row-gap: 6px;
             column-gap: 2em;
             justify-content: center;
             align-items: flex-start;
@@ -108,7 +95,7 @@
             }
         }
         .second-row {
-            margin-top: 1em;
+            margin-top: 1.2em;
             font-size: .7em;
         }
 
@@ -119,18 +106,36 @@
             user-select: none;
             text-shadow: 0 0 8px #d0d3e1;
             position: relative;
-            border-bottom: 1px solid transparent;
-            padding-top: 6px;
-            padding-bottom: 0;
             -webkit-tap-highlight-color: transparent;
+
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+                width: 100%;
+                height: 1px;
+                transition: var(--transition);
+                transition-delay: 0.1s;
+                opacity: 0.1;
+            }
 
             &:hover, &:focus-visible {
                 cursor: pointer;
                 color: rgb(10 164 171);
                 text-shadow: 0 0 6px #005aff;
-                border-color: initial;
-                padding-top: 0;
-                padding-bottom: 6px;
+                transform: translateY(-6px);
+
+                &::after {
+                    width: 100%;
+                    background-image: linear-gradient(
+                        to right,
+                        #0a9eab00,
+                        rgb(10, 164, 171) 50%,
+                        #0a9eab00
+                    );
+                    opacity: 1;
+                }
             }
             &.disabled, &:disabled {
                 pointer-events: none;
@@ -148,17 +153,6 @@
             height: unset;
             flex-direction: column-reverse;
             align-items: center;
-
-            .pwa-install {
-                padding: 8px 4px;
-                flex-direction: column;
-                span {
-                    writing-mode: vertical-lr;
-                }
-                img {
-                    width: 100%;
-                }
-            }
         }
     }
     // One column, mobile portrait
