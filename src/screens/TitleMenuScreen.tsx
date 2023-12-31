@@ -181,7 +181,7 @@ const TitleMenuScreen = () => {
       <div className='top-actions'>
         {showPWAButton &&
           <motion.button
-            className="pwa-install"
+            className="action-icon"
             aria-label={strings.title.install}
             onClick={installPWA}
             initial={{ opacity: 0 }}
@@ -195,7 +195,7 @@ const TitleMenuScreen = () => {
         }
 
         <motion.button
-          className="info-icon"
+          className="action-icon"
           aria-label="show information modal"
           onClick={()=>setShow(true)}
           initial={{ opacity: 0 }}
