@@ -2,8 +2,6 @@
 The goal is to provide an accessible modern way of reading an old, beautiful story.  
 
 ## Installation
-You can play the latest realease online here: [https://holofield.fr/tsukiweb](https://holofield.fr/tsukiweb).
-
 The Progressive Web App (PWA) can be installed from the title screen using chromium-based browsers (_e.g._, chrome, edge, opera).
 
 To download the source code and run the game locally, follow the steps below:
