@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import tsukiLogo from "../assets/images/tsukihime-logo.webp"
 import moon from "../assets/images/moon.webp"
@@ -7,7 +7,7 @@ import '../styles/title-menu.scss'
 import ParticlesComponent from '../components/ParticlesComponent'
 import { SCREEN, displayMode, useScreenAutoNavigate } from '../utils/display'
 import { motion } from 'framer-motion'
-import { blankSaveState, getLastSave, hasSaveStates, loadSaveFiles, loadSaveState } from '../utils/savestates'
+import { blankSaveState, getLastSave, hasSaveStates, loadSaveFiles, loadSaveState, loadScene } from '../utils/savestates'
 import history from '../utils/history'
 import Modal from 'react-modal';
 import { APP_VERSION } from '../utils/constants'
@@ -15,6 +15,8 @@ import strings, { useLanguageRefresh } from '../utils/lang'
 import { bb } from '../utils/Bbcode'
 import { useObserved } from '../utils/Observer'
 import { MdGetApp, MdInfoOutline } from 'react-icons/md'
+import { settings } from '../utils/variables'
+import { endings } from '../utils/endings'
 
 type BeforeInstallPromptEvent = Event & {prompt: ()=>Promise<{outcome: any}>}
 
@@ -38,6 +40,7 @@ const TitleMenuScreen = () => {
   useScreenAutoNavigate(SCREEN.TITLE)
   const [show, setShow] = useState(false)
   const [showPWAButton] = useObserved(sync, 'installPWAEvent', e=>e!=undefined)
+  const [page, setPage] = useState(0)
   useLanguageRefresh()
 
   function newGame() {
@@ -59,6 +62,34 @@ const TitleMenuScreen = () => {
       displayMode.screen = SCREEN.WINDOW
     }
   }
+
+  function playEClipse() {
+    loadSaveState(loadScene("eclipse"))
+    displayMode.screen = SCREEN.WINDOW
+  }
+
+  const allEndingsSeen = useMemo(()=> {
+    return Object.values(endings).every(e=>e.seen)
+  }, [settings.completedScenes])
+
+  const ExtraMenu = () => (
+    <>
+      <Link to={SCREEN.GALLERY} className="menu-item">
+        {strings.extra.gallery}
+      </Link>
+      <Link to={SCREEN.ENDINGS} className="menu-item">
+        {strings.extra.endings}
+      </Link>
+      <Link to="#" className="menu-item disabled" aria-disabled>
+        {strings.extra.scenes}
+      </Link>
+      {allEndingsSeen &&
+      <button className="menu-item" aria-disabled onClick={playEClipse}>
+        {strings.extra.eclipse}
+      </button>
+      }
+    </>
+  )
 
   return (
     <motion.div
@@ -139,6 +170,7 @@ const TitleMenuScreen = () => {
       </div>
 
       <nav className="menu">
+        {page === 0 ? <>
         <div className='first-row'>
           <button className='menu-item' onClick={newGame}>
             {strings.title.start}
@@ -158,23 +190,25 @@ const TitleMenuScreen = () => {
             {strings.title.config}
           </Link>
 
-          <Link to={SCREEN.EXTRA} className='menu-item extra'>
-            {strings.title.extra}
-          </Link>
+          <button className='menu-item extra' onClick={()=>setPage(1)}>
+            {strings.title.extra} {">"}
+          </button>
         </div>
 
         {hasSaveStates() &&
         <div className='second-row'>
-          <Link to={SCREEN.GALLERY} className="menu-item">
-            {strings.extra.gallery}
-          </Link>
-          <Link to={SCREEN.ENDINGS} className="menu-item">
-            {strings.extra.endings}
-          </Link>
-          <Link to="#" className="menu-item disabled" aria-disabled>
-            {strings.extra.scenes}
-          </Link>
+          <ExtraMenu />
         </div>
+        }
+        </> : <>
+          <div className='first-row'>
+            <ExtraMenu />
+
+            <button className='menu-item' onClick={()=>setPage(0)}>
+              {"<"}  {strings.back}
+            </button>
+          </div>
+        </>
         }
       </nav>
 
