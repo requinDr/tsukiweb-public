@@ -155,7 +155,8 @@
   "extra": {
     "gallery": "ギヤラリー",
     "endings": "Endings",
-    "scenes": "Scenes"
+    "scenes": "Scenes",
+    "eclipse": "Eclipse"
   },
   "config": {
     "on": "On",

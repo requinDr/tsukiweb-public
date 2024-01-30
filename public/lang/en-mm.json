@@ -145,7 +145,8 @@
   "extra": {
     "gallery": "Gallery",
     "endings": "Endings",
-    "scenes": "Scenes"
+    "scenes": "Scenes",
+    "eclipse": "Eclipse"
   },
   "config": {
     "on": "On",

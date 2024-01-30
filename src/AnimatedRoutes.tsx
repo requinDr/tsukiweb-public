@@ -15,7 +15,6 @@ import { ViewRatio } from "./types";
 import { Slide, ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import './styles/App.scss'
-import ExtraScreen from "./screens/ExtraScreen";
 import EndingsScreen from "./screens/EndingsScreen";
 import FlowchartScreen from "./screens/FlowchartScreen";
 
@@ -57,7 +56,6 @@ const AnimatedRoutes = () => {
             <Route path="/title" element={<TitleMenuScreen />} />
             <Route path="/window" element={<Window />} />
             <Route path="/config" element={<ConfigScreen />} />
-            <Route path="/extra" element={<ExtraScreen />} />
             <Route path="/extra/gallery" element={<GalleryScreen />} />
             <Route path="/extra/endings" element={<EndingsScreen />} />
             <Route path="/extra/scenes" element={<FlowchartScreen />} />

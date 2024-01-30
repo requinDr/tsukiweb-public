@@ -32,18 +32,6 @@ const EndingsScreen = () => {
               return <div key={index} className="ending" />
             }
           })}
-
-          {import.meta.env.DEV &&
-          <EndingComponent ending={{
-            char: 'others',
-            image: 'ark_e06a',
-            name: 'Eclipse',
-            day: "fin",
-            type: 'normal',
-            scene: "eclipse",
-            seen: true
-          }} />
-          }
           </div>
 
           <div className="badendings-list">

@@ -8,7 +8,6 @@ export enum SCREEN {
   WINDOW = "/window",
   CONFIG = "/config",
   LOAD = "/load",
-  EXTRA = "/extra",
   GALLERY = "/extra/gallery",
   ENDINGS = "/extra/endings",
   SCENES = "/extra/scenes"
