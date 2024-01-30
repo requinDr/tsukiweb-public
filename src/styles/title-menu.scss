@@ -154,6 +154,19 @@
                 opacity: .4;
                 text-shadow: 0 0 2px #d0d3e1;
             }
+
+            &.attention {
+                color: rgb(10 164 171);
+                text-shadow: 0 0 6px #005aff;
+
+                span {
+                    rotate: 23deg;
+                    float: inline-end;
+                    position: absolute;
+                    right: -16px;
+                    top: 0;
+                }
+            }
         }
     }
 
