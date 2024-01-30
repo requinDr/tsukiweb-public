@@ -84,8 +84,10 @@ const TitleMenuScreen = () => {
         {strings.extra.scenes}
       </Link>
       {allEndingsSeen &&
-      <button className="menu-item" aria-disabled onClick={playEClipse}>
+      <button className={`menu-item ${settings.completedScenes.includes("eclipse") ? "" : "attention"}`}
+        onClick={playEClipse}>
         {strings.extra.eclipse}
+        {!settings.completedScenes.includes("eclipse") && <span> !</span>}
       </button>
       }
     </>
