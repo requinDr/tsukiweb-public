@@ -1,6 +1,6 @@
 # Port of the original Tsukihime story to React
 
-Find how to start the project on your computer in [README.md](https://github.com/requinDr/tsukihime-port/blob/main/README.md)  
+Find how to start the project on your computer in [README.md](https://github.com/requinDr/tsukiweb-public/blob/main/README.md)  
 We welcome all contributions.
 
 ## Guidelines
@@ -16,5 +16,5 @@ We welcome all contributions.
 10) The preprocess of the original script should be limited to what would apply to a maximum of Ponscript VN.
 
 ## Code
-- indent is 2 spaces for `.tsx` files.
-- layers are toggled using context. They are moved from back to front using CSS property `z-index`.
+- In-game layers are toggled using context. They are moved from back to front using CSS property `z-index`.
+- Assets have been separated from the repo.
