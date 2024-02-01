@@ -1,7 +1,7 @@
 {
   "id": "tsukihime-web",
   "name": "Tsukihime - Blue Blue Glass Moon, Under The Crimson Air",
-  "description": "Tsukihime is a visual novel published in 2000.",
+  "description": "Enjoy the story of Tsukihime in your browser.",
   "short_name": "Tsukihime",
   "start_url": "./title",
   "scope": "./",
@@ -28,6 +28,28 @@
     {
       "src": "icons/icon.svg",
       "sizes": "512x512"
+    }
+  ],
+  "categories": [
+    "games",
+    "entertainment"
+  ],
+  "file_handlers": [
+    {
+      "action": "/config?tab=Advanced",
+      "accept": {
+        "text/plain": [
+          ".thfull"
+        ]
+      }
+    },
+    {
+      "action": "/load",
+      "accept": {
+        "text/plain": [
+          ".thweb"
+        ]
+      }
     }
   ]
 }
