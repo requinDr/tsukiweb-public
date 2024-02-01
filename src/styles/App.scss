@@ -145,6 +145,7 @@ button {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 0.2em;
+  grid-area: page-title;
 }
 main {
   display: flex;

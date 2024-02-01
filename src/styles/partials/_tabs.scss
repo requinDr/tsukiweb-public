@@ -1,15 +1,22 @@
 .tabs {
+    grid-area: tabs;
     display: flex;
     flex-direction: row;
-    padding-inline: 1em;
+    padding-right: 1em;
     overflow-x: auto;
+    margin-bottom: 8px;
+
+    @media screen and (orientation: landscape) and (max-height: 480px) {
+        flex-direction: column;
+        margin-bottom: 0;
+    }
 
     .tab {
         padding: .5em min(1.6em, 6vw);
         background-color: transparent;
         transition: .2s ease-in-out;
-        border-radius: 8px 8px 0 0;
-        font-size: 1.1rem;
+        border-radius: 4px;
+        font-size: 1rem;
         white-space: nowrap;
 
         &:hover, &.active:hover {
