@@ -225,7 +225,7 @@
 
     .title-modal {
         display: grid;
-        grid-template-columns: 3fr 1fr;
+        grid-template-columns: 1fr auto;
         gap: 4em;
         font-size: 1.1em;
         flex-grow: 1;
@@ -234,21 +234,25 @@
             display: flex;
             flex-direction: column;
             gap: 12px;
-            line-height: 1.6rem;
 
-            & > div {
-                border-radius: 4px;
-                padding: 12px;
-                background-color: rgba(0, 0, 0, 0.3);
-            }
             code {
-                margin-left: 12px;
+                background-color: var(--f-spinner-color-1);
+                padding: 4px 8px;
+                width: fit-content;
             }
         }
         .tsuki-remake {
-            display: flex;
-            flex-direction: column;
-            gap: .6em;
+            display: grid;
+            grid-template-areas: "promo";
+            font-size: .9em;
+            max-width: 180px;
+            margin-block: auto;
+            border-radius: 4px;
+            overflow: hidden;
+
+            & > * {
+                grid-area: promo;
+            }
 
             img {
                 display: block;
@@ -256,17 +260,22 @@
                 min-width: 0;
                 object-fit: contain;
             }
+
+            div {
+                margin-top: auto;
+                padding: 8px;
+                background-color: var(--focus);
+            }
         }
     }
 
-    @media screen and (max-width: 520px) {
+    @media screen and (max-width: 580px) {
         .title-modal {
             grid-template-columns: 1fr;
             gap: 1em;
 
             .tsuki-remake {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
+                margin-inline: auto;
             }
         }
     }
