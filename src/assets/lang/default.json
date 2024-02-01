@@ -144,10 +144,10 @@
     "extra": "Extra",
     "about": {
       "port": "This is a web version of [b]月姫[/b], a visual novel published on 2000 by TYPE-MOON.",
-      "project": "Project available on $0GitHub$1. Contributions are welcome.",
+      "project": "The project is available on $0GitHub$1. Add a star if you like it! Contributions are welcome.",
       "feedback": "Send your feedback or report a bug $0here$1.",
       "data": "No data collected, everything is stored in your browser. Manage your data $0here$1.",
-      "remake": "Support by buying the remake $0月姫 -A piece of blue glass moon$1.",
+      "remake": "Consider buying the remake $0月姫 -A piece of blue glass moon$1.",
       "close": "close"
     },
     "install": "Install"

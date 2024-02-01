@@ -12,7 +12,7 @@ import Ornament from "../assets/images/ornament.webp"
 
 /**
  * TODO
- * - scène suivante
+ * - Go to next scene
  */
 const MenuLayer = () => {
 

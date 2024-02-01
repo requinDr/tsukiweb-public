@@ -120,7 +120,7 @@ const TitleMenuScreen = () => {
             <div>
               {bb(strings.title.about.project
                 .replace('$0', "[url='https://github.com/requinDr/tsukiweb-public']")
-                .replace('$1', "[/url]"))} <br/>
+                .replace('$1', "[/url]"))}
             </div>
 
             <div>
@@ -140,9 +140,9 @@ const TitleMenuScreen = () => {
 
           <div className='tsuki-remake'>
             <img src={tsukiR} alt="tsukihime remake logo" className="logo" draggable={false} />
-            <span>{bb(strings.title.about.remake
+            <div>{bb(strings.title.about.remake
                     .replace('$0', "[url='http://typemoon.com/products/tsukihime/']")
-                    .replace('$1', "[/url]"))}</span>
+                    .replace('$1', "[/url]"))}</div>
           </div>
         </div>
 
