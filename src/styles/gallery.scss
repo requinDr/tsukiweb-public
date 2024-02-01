@@ -6,18 +6,11 @@
             display: grid;
             grid-template-columns: 180px 1fr;
             grid-template-areas:
-                "title content"
+                "page-title content"
                 "tabs content"
                 "back content";
             grid-template-rows: auto 1fr auto;
 
-            .page-title {
-                grid-area: title;
-            }
-            .tabs {
-                grid-area: tabs;
-                flex-direction: column;
-            }
             .gallery-container {
                 grid-area: content;
             }
