@@ -1,15 +1,45 @@
 @use 'partials/_components';
 
 #gallery {
+    @media screen and (orientation: landscape) and (max-height: 480px) {
+        main {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            grid-template-areas:
+                "title content"
+                "tabs content"
+                "back content";
+            grid-template-rows: auto 1fr auto;
+
+            .page-title {
+                grid-area: title;
+            }
+            .tabs {
+                grid-area: tabs;
+                flex-direction: column;
+            }
+            .gallery-container {
+                grid-area: content;
+            }
+            .back-button {
+                grid-area: back;
+            }
+        }
+    }
+
     .gallery-container {
         @extend %menu-container;
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(min(150px, 100%), 1fr));
-        gap: .6em;
+        grid-template-columns: repeat(auto-fill, minmax(min(160px, 100%), 1fr));
+        gap: 8px;
         overflow-y: scroll;
         height: inherit;
         align-content: start;
         flex: 1;
+
+        @media (max-width: 480px) or (max-height: 480px) {
+            grid-template-columns: repeat(auto-fill, minmax(min(100px, 100%), 1fr));
+        }
 
         a {
             overflow: hidden;

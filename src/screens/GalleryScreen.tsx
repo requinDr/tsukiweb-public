@@ -45,10 +45,9 @@ const GalleryScreen = () => {
       initial={{opacity: 0}}
       animate={{opacity: 1}}
       exit={{opacity: 0}}>
-      <div className="page-content">
-        <h2 className="page-title">{strings.extra.gallery}</h2>
-        
+      <div className="page-content">        
         <main>
+          <h2 className="page-title">{strings.extra.gallery}</h2>
           <TabsComponent tabs={Object.keys(GALLERY_IMAGES) as Array<CharacterId>}
             selected={selected} setSelected={setSelected}
             textModifier={text => strings.characters[text as CharacterId]} />
@@ -71,9 +70,9 @@ const GalleryScreen = () => {
               </React.Fragment>
             )}
           </Fancybox>
+
+          <Link to={SCREEN.TITLE} className="menu-btn back-button">{strings.back}</Link>
         </main>
-        
-        <Link to={SCREEN.TITLE} className="menu-btn back-button">{strings.back}</Link>
       </div>
     </motion.div>
   )

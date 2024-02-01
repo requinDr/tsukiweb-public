@@ -171,6 +171,7 @@ main {
 .back-button {
   align-self: flex-start;
   margin-top: clamp(.8rem, 4vmin, 1rem);
+  width: fit-content;
 }
 
 /* Overlay */

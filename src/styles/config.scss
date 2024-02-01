@@ -1,6 +1,30 @@
 @use 'partials/_components';
 
 #config-layout {
+    @media screen and (orientation: landscape) and (max-height: 480px) {
+        display: grid;
+        grid-template-columns: 180px 1fr;
+        grid-template-areas:
+            "title content"
+            "tabs content"
+            "back content";
+        grid-template-rows: auto 1fr auto;
+
+        .page-title {
+            grid-area: title;
+        }
+        .tabs {
+            grid-area: tabs;
+            flex-direction: column;
+        }
+        section {
+            grid-area: content;
+        }
+        .back-button {
+            grid-area: back;
+        }
+    }
+
     section {
         @extend %menu-container;
         display: flex;
