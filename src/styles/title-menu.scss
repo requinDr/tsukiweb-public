@@ -283,7 +283,7 @@
 
 
 /** Disclaimer **/
-#disclaimer {
+#redirect {
     &.page {
         display: flex;
         justify-content: center;
@@ -291,17 +291,72 @@
         background-color: #000206;
     }
     .box {
-        max-width: 680px;
+        max-width: 760px;
         text-align: center;
         border: 1px solid #00628b;
         padding: 2em;
         margin: 1em;
+        min-width: 0;
+        text-wrap: balance;
 
         p {
             font-size: clamp(.92em, 3.6vmin, 1.25em);
             line-height: clamp(1.52em, 4.6vmin, 1.6em);
             text-shadow: #000 1px 1px 1px, #000 -1px 1px 1px, #000 -1px -1px 1px, #000 1px -1px 1px;
             letter-spacing: 1px;
+        }
+    }
+
+    h1 {
+        font-size: clamp(1.8em, 5.5vmin, 2.5em);
+        margin-bottom: 1em;
+    }
+
+    .groups {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        align-items: left;
+        margin-block: 2em;
+        font-size: clamp(.92em, 3.6vmin, 1.25em);
+    }
+    .group {
+        display: grid;
+        grid-template-columns: 40px auto;
+        gap: 1em;
+
+        & > div {
+            font-size: 1.1em;
+            font-weight: bold;
+            border-radius: 50%;
+            border: 1px solid #00628b;
+            height: 40px;
+            width: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    hr {
+        border: 0;
+        height: 1px;
+        background-color: #00628b;
+    }
+
+    button {
+        all: unset;
+        cursor: pointer;
+        padding: 8px 16px;
+        border-radius: 4px;
+        background-color: #00628b;
+        color: #fff;
+        transition: var(--transition);
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+
+        &:hover, &:focus-visible {
+            background-color: #005a7a;
         }
     }
 }
