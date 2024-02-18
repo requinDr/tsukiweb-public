@@ -60,7 +60,7 @@ const RedirectScreen = () => {
           <div className='group'>
             <div>2</div>
             <span>
-              Got to the new address <a href="https://tsukiweb.holofield.fr/config?tab=Advanced">
+              Go to the new address <a href="https://tsukiweb.holofield.fr/config?tab=Advanced">
               https://tsukiweb.holofield.fr
             </a>
             </span>
