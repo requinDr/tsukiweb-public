@@ -197,11 +197,10 @@ const TitleMenuScreen = () => {
           </button>
         </div>
 
-        {hasSaveStates() &&
         <div className='second-row'>
           <ExtraMenu />
         </div>
-        }
+        
         </> : <>
           <div className='first-row'>
             <ExtraMenu />
