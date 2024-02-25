@@ -136,6 +136,7 @@
                 filter: grayscale(0);
                 opacity: 1;
                 cursor: pointer;
+                -webkit-tap-highlight-color: transparent;
             }
         }
 
