@@ -1,8 +1,9 @@
 import { motion } from "framer-motion"
 import '../styles/saves.scss'
 import { SCREEN, displayMode, useScreenAutoNavigate } from "../utils/display"
-import { useLanguageRefresh } from "../utils/lang"
+import strings, { useLanguageRefresh } from "../utils/lang"
 import { Flowchart } from "../components/Flowchart"
+import { Link } from "react-router-dom"
 
 const FlowchartScreen = () => {
   useScreenAutoNavigate(SCREEN.SCENES)
@@ -19,6 +20,13 @@ const FlowchartScreen = () => {
       animate={{opacity: 1}}
       exit={{opacity: 0}}>
       <div className="page-content">
+        <div className="header">
+          <Link to={SCREEN.TITLE} className="menu-btn">
+            {strings.back}
+          </Link>
+          <div>Currently WIP</div>
+        </div>
+
         <Flowchart back={back}/>
       </div>
     </motion.div>

@@ -227,34 +227,36 @@ export const Flowchart = memo(({back}: Props)=> {
   const maxWidth = `${100 * width / (2 * COLUMN_WIDTH)}%` // minimum 2 scenes visible
   const maxHeight = `${100 * height / (4 * (SCENE_HEIGHT + DY*2))}%` // minimum 4 scenes visible
 
-  return <div className="flowchart">
-    <svg viewBox={`${left} ${top} ${width} ${height}`}
-      style={{minWidth: minWidth, maxWidth: maxWidth,
-              minHeight: minHeight, maxHeight: maxHeight}}
-      version="1.1"
-      xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <radialGradient id="hidden-scene-gradient">
-          <stop offset="0%" stopColor="black" />
-          <stop offset="50%" stopColor="#111" />
-          <stop offset="95%" stopColor="#222" />
-        </radialGradient>
-        <rect id="fc-scene-outline" {...SCENE_RECT_ATTRS} rx={SCENE_HEIGHT/10} />
-        <rect id="fc-scene-background" {...SCENE_RECT_ATTRS} />
-        <g id="fc-scene-hidden">
-          <rect {...SCENE_RECT_ATTRS} rx={SCENE_HEIGHT/10} fill="url(#hidden-scene-gradient)" />
-          <line x1={-SCENE_WIDTH/2} y1={-SCENE_HEIGHT/2} stroke="black"
-                x2={ SCENE_WIDTH/2} y2={ SCENE_HEIGHT/2} strokeWidth={0.4}/>
-          <line x1={-SCENE_WIDTH/2} y1={ SCENE_HEIGHT/2} stroke="black"
-                x2={ SCENE_WIDTH/2} y2={-SCENE_HEIGHT/2} strokeWidth={0.4}/>
-          <rect {...SCENE_RECT_ATTRS} rx={SCENE_HEIGHT/10} />
-        </g>
-      </defs>
-      <clipPath id="fc-scene-clip">
-        <use href="#fc-scene-outline"/>
-      </clipPath>
-      {tree.map(node=> node.render())}
-    </svg>
-    {/*<FlowchartSVG/>*/}
-  </div>
+  return (
+    <div className="flowchart">
+      <svg viewBox={`${left} ${top} ${width} ${height}`}
+        style={{minWidth: minWidth, maxWidth: maxWidth,
+                minHeight: minHeight, maxHeight: maxHeight}}
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="hidden-scene-gradient">
+            <stop offset="0%" stopColor="black" />
+            <stop offset="50%" stopColor="#111" />
+            <stop offset="95%" stopColor="#222" />
+          </radialGradient>
+          <rect id="fc-scene-outline" {...SCENE_RECT_ATTRS} rx={SCENE_HEIGHT/10} />
+          <rect id="fc-scene-background" {...SCENE_RECT_ATTRS} />
+          <g id="fc-scene-hidden">
+            <rect {...SCENE_RECT_ATTRS} rx={SCENE_HEIGHT/10} fill="url(#hidden-scene-gradient)" />
+            <line x1={-SCENE_WIDTH/2} y1={-SCENE_HEIGHT/2} stroke="black"
+                  x2={ SCENE_WIDTH/2} y2={ SCENE_HEIGHT/2} strokeWidth={0.4}/>
+            <line x1={-SCENE_WIDTH/2} y1={ SCENE_HEIGHT/2} stroke="black"
+                  x2={ SCENE_WIDTH/2} y2={-SCENE_HEIGHT/2} strokeWidth={0.4}/>
+            <rect {...SCENE_RECT_ATTRS} rx={SCENE_HEIGHT/10} />
+          </g>
+        </defs>
+        <clipPath id="fc-scene-clip">
+          <use href="#fc-scene-outline"/>
+        </clipPath>
+        {tree.map(node=> node.render())}
+      </svg>
+      {/*<FlowchartSVG/>*/}
+    </div>
+  )
 })

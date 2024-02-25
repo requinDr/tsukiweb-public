@@ -2,6 +2,17 @@
    .page-content {
       padding: 0;
    }
+
+   .header {
+      position: sticky;
+      top: 0;
+      padding: 4px 8px;
+      display: flex;
+      gap: 8px;
+      background-color: var(--focus);
+      border-radius: 0 0 4px 4px;
+   }
+
    .flowchart {
       overflow: auto;
       padding: 1em;

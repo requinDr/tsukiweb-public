@@ -81,7 +81,7 @@ const TitleMenuScreen = () => {
       <Link to={SCREEN.ENDINGS} className="menu-item">
         {strings.extra.endings}
       </Link>
-      <Link to="#" className="menu-item disabled" aria-disabled>
+      <Link to={SCREEN.SCENES} className="menu-item">
         {strings.extra.scenes}
       </Link>
       {allEndingsSeen &&
