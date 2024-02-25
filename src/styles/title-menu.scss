@@ -226,29 +226,46 @@
     .title-modal {
         display: grid;
         grid-template-columns: 1fr auto;
+        align-content: start;
         gap: 4em;
-        font-size: 1.1em;
         flex-grow: 1;
 
         .infos {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-
-            code {
-                background-color: var(--f-spinner-color-1);
+            .top {
+                display: flex;
+                gap: 16px;
+                align-items: center;
+                border: 1px solid #0f759b;
+                background-color: rgba(22, 201, 251, 0.2);
+                border-radius: 4px;
                 padding: 4px 8px;
-                width: fit-content;
+                margin-bottom: 16px;
+
+                a {
+                    display: flex;
+                }
+                .copy-link {
+                    &:hover {
+                        box-shadow: var(--selected-shadow);
+                    }
+                }
+            }
+
+            .content {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                margin-inline: 8px;
+                font-size: 1.1em;
             }
         }
         .tsuki-remake {
             display: grid;
             grid-template-areas: "promo";
-            font-size: .9em;
             max-width: 180px;
-            margin-block: auto;
             border-radius: 4px;
             overflow: hidden;
+            background-color: var(--focus);
 
             & > * {
                 grid-area: promo;
@@ -264,7 +281,7 @@
             div {
                 margin-top: auto;
                 padding: 8px;
-                background-color: var(--focus);
+                background-color: inherit;
             }
         }
     }

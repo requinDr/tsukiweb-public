@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { Dispatch, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import tsukiLogo from "../assets/images/tsukihime-logo.webp"
 import moon from "../assets/images/moon.webp"
@@ -14,9 +14,10 @@ import { APP_VERSION } from '../utils/constants'
 import strings, { useLanguageRefresh } from '../utils/lang'
 import { bb } from '../utils/Bbcode'
 import { useObserved } from '../utils/Observer'
-import { MdGetApp, MdInfoOutline } from 'react-icons/md'
+import { MdGetApp, MdInfoOutline, MdLink } from 'react-icons/md'
 import { settings } from '../utils/variables'
 import { endings } from '../utils/endings'
+import { toast } from 'react-toastify'
 
 type BeforeInstallPromptEvent = Event & {prompt: ()=>Promise<{outcome: any}>}
 
@@ -38,9 +39,9 @@ async function installPWA() {
 
 const TitleMenuScreen = () => {
   useScreenAutoNavigate(SCREEN.TITLE)
-  const [show, setShow] = useState(false)
+  const [show, setShow] = useState<boolean>(false)
   const [showPWAButton] = useObserved(sync, 'installPWAEvent', e=>e!=undefined)
-  const [page, setPage] = useState(0)
+  const [page, setPage] = useState<number>(0)
   useLanguageRefresh()
 
   function newGame() {
@@ -102,54 +103,7 @@ const TitleMenuScreen = () => {
 
       <ParticlesComponent />
 
-      <Modal
-        isOpen={show}
-        shouldCloseOnOverlayClick={true}
-        onRequestClose={()=>setShow(false)}
-        closeTimeoutMS={200}
-        className="modal"
-        overlayClassName="overlay"
-        ariaHideApp={false}
-      >
-        <div className='title-modal'>
-          <div className='infos'>
-            <div>
-              {bb(strings.title.about.port)}
-            </div>
-
-            <div>
-              {bb(strings.title.about.project
-                .replace('$0', "[url='https://github.com/requinDr/tsukiweb-public']")
-                .replace('$1', "[/url]"))}
-            </div>
-
-            <div>
-              {bb(strings.title.about.feedback
-                .replace('$0', "[url='https://forms.gle/MJorV8oNbnKo22469']")
-                .replace('$1', "[/url]"))}
-            </div>
-
-            <div>
-              {bb(strings.title.about.data
-                .replace('$0', "[url='/config?tab=Advanced']")
-                .replace('$1', "[/url]"))}
-            </div>
-
-            <code>v{APP_VERSION}</code>
-          </div>
-
-          <div className='tsuki-remake'>
-            <img src={tsukiR} alt="tsukihime remake logo" className="logo" draggable={false} />
-            <div>{bb(strings.title.about.remake
-                    .replace('$0', "[url='http://typemoon.com/products/tsukihime/']")
-                    .replace('$1', "[/url]"))}</div>
-          </div>
-        </div>
-
-        <button className='menu-btn close-btn' onClick={()=>setShow(false)}>
-          {strings.title.about.close}
-        </button>
-      </Modal>
+      <ModalInfo show={show} setShow={setShow} />
 
       <div className="logo">
         <motion.img src={moon} alt="moon" draggable={false} className='moon'
@@ -172,36 +126,38 @@ const TitleMenuScreen = () => {
       </div>
 
       <nav className="menu">
-        {page === 0 ? <>
-        <div className='first-row'>
-          <button className='menu-item' onClick={newGame}>
-            {strings.title.start}
-          </button>
+        {page === 0 ?
+        <>
+          <div className='first-row'>
+            <button className='menu-item' onClick={newGame}>
+              {strings.title.start}
+            </button>
 
-          {hasSaveStates() &&
-          <button className='menu-item' onClick={continueGame}>
-            {strings.title.resume}
-          </button>
-          }
+            {hasSaveStates() &&
+            <button className='menu-item' onClick={continueGame}>
+              {strings.title.resume}
+            </button>
+            }
 
-          <Link to={SCREEN.LOAD} className="menu-item">
-            {strings.title.load}
-          </Link>
+            <Link to={SCREEN.LOAD} className="menu-item">
+              {strings.title.load}
+            </Link>
 
-          <Link to={SCREEN.CONFIG} className="menu-item">
-            {strings.title.config}
-          </Link>
+            <Link to={SCREEN.CONFIG} className="menu-item">
+              {strings.title.config}
+            </Link>
 
-          <button className='menu-item extra' onClick={()=>setPage(1)}>
-            {strings.title.extra} {">"}
-          </button>
-        </div>
+            <button className='menu-item extra' onClick={()=>setPage(1)}>
+              {strings.title.extra} {">"}
+            </button>
+          </div>
 
-        <div className='second-row'>
-          <ExtraMenu />
-        </div>
-        
-        </> : <>
+          <div className='second-row'>
+            <ExtraMenu />
+          </div>
+        </>
+        :
+        <>
           <div className='first-row'>
             <ExtraMenu />
 
@@ -247,3 +203,80 @@ const TitleMenuScreen = () => {
 }
 
 export default TitleMenuScreen
+
+type ModalInfoProps = {
+  show: boolean
+  setShow: Dispatch<boolean>
+}
+const ModalInfo = ({show, setShow}: ModalInfoProps) => {
+  const copyCurrentUrl = () => {
+    navigator.clipboard.writeText(window.location.href)
+    toast("Page URL copied to clipboard", {
+      toastId: "copy-url",
+      type: "info",
+      autoClose: 2000,
+      closeButton: false,
+      pauseOnHover: false,
+    })
+  }
+
+  return (
+    <Modal
+      isOpen={show}
+      shouldCloseOnOverlayClick={true}
+      onRequestClose={()=>setShow(false)}
+      closeTimeoutMS={200}
+      className="modal"
+      overlayClassName="overlay"
+      ariaHideApp={false}
+    >
+      <div className='title-modal'>
+        <div className='infos'>
+          <div className='top'>
+            <div>v{APP_VERSION}</div>
+            <a href="https://github.com/requinDr/tsukiweb-public" target="_blank" rel="noreferrer">
+              <img src="https://img.shields.io/github/stars/requinDr/tsukiweb-public?style=social" alt="stars" />
+            </a>
+            <MdLink title='Copy link' className='copy-link'
+              onClick={copyCurrentUrl} />
+          </div>
+
+          <div className='content'>
+            <div>
+              {bb(strings.title.about.port)}
+            </div>
+
+            <div>
+              {bb(strings.title.about.project
+                .replace('$0', "[url='https://github.com/requinDr/tsukiweb-public']")
+                .replace('$1', "[/url]"))}
+            </div>
+
+            <div>
+              {bb(strings.title.about.feedback
+                .replace('$0', "[url='https://forms.gle/MJorV8oNbnKo22469']")
+                .replace('$1', "[/url]"))}
+            </div>
+
+            <div>
+              {bb(strings.title.about.data
+                .replace('$0', "[url='/config?tab=Advanced']")
+                .replace('$1', "[/url]"))}
+            </div>
+          </div>
+        </div>
+
+        <div className='tsuki-remake'>
+          <img src={tsukiR} alt="tsukihime remake logo" className="logo" draggable={false} />
+          <div>{bb(strings.title.about.remake
+                  .replace('$0', "[url='http://typemoon.com/products/tsukihime/']")
+                  .replace('$1', "[/url]"))}</div>
+        </div>
+      </div>
+
+      <button className='menu-btn close-btn' onClick={()=>setShow(false)}>
+        {strings.title.about.close}
+      </button>
+    </Modal>
+  )
+}
