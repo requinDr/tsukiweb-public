@@ -55,11 +55,11 @@ const AnimatedRoutes = () => {
             <Route path="/disclaimer" element={<DisclaimerScreen />} />
             <Route path="/title" element={<TitleMenuScreen />} />
             <Route path="/window" element={<Window />} />
+            <Route path="/load" element={<LoadScreen />} />
             <Route path="/config" element={<ConfigScreen />} />
             <Route path="/extra/gallery" element={<GalleryScreen />} />
             <Route path="/extra/endings" element={<EndingsScreen />} />
             <Route path="/extra/scenes" element={<FlowchartScreen />} />
-            <Route path="/load" element={<LoadScreen />} />
           </Routes>
         </AnimatePresence>
       </div>

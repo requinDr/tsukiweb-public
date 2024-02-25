@@ -163,8 +163,18 @@
                     rotate: 23deg;
                     float: inline-end;
                     position: absolute;
-                    right: -16px;
+                    right: -14px;
                     top: 0;
+                    animation: scale-up-down infinite 1.6s;
+
+                    @keyframes scale-up-down {
+                        0%, 100% {
+                            transform: scale(1);
+                        }
+                        50% {
+                            transform: scale(1.2);
+                        }
+                    }
                 }
             }
         }
