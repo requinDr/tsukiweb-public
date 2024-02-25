@@ -87,8 +87,7 @@
                     padding: .2rem .4rem;
                     background-color: transparent;
                     transition: .2s ease-in-out;
-                    border-radius: 6px;
-                    text-transform: uppercase;
+                    border-radius: 4px;
                     min-width: min(100px, 100%);
                     text-align: center;
         
@@ -198,11 +197,11 @@
                 color: var(--text-color);
                 padding: 0.3em 2em;
                 font-size: clamp(0.86rem, 3.5vmin, 1rem);
-                background-color: hsl(44deg 90% 25%);
-                border-radius: 4px;
+                background-color: var(--menu-container);
+                box-shadow: var(--menu-shadow);
 
                 &:hover {
-                    background-color: hsl(44deg 90% 15%);
+                    box-shadow: var(--selected-shadow);
                 }
             }
         }

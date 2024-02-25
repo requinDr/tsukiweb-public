@@ -30,17 +30,6 @@
         &.active {
             color: rgb(18 215 223);
             background-color: rgb(4 45 64 / 45%);
-            position: relative;
-
-            &:after {
-                content: "\1F319";
-                position: absolute;
-                right: 4px;
-                top: 11px;
-                bottom: 0;
-                font-size: 0.8em;
-                filter: grayscale(1);
-            }
         }
         &:focus-visible.active {
             background-color: var(--focus);
