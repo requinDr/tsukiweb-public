@@ -1,11 +1,12 @@
 import { TSForceType, deepAssign, jsonDiff, requestJSONs, textFileUserDownload } from "./utils";
-import { defaultGameContext, defaultProgress, gameContext, progress } from "./variables";
+import { defaultGameContext, defaultProgress, gameContext, progress, settings } from "./variables";
 import history from './history';
 import { toast } from "react-toastify";
 import { FaSave } from "react-icons/fa"
 import { notifyObservers } from "./Observer";
 import { SAVE_EXT } from "./constants";
 import { LabelName, PageContent, PageType, RecursivePartial } from "../types";
+import { SCREEN, displayMode } from "./display";
 
 //##############################################################################
 //#                                 SAVESTATES                                 #
@@ -332,4 +333,11 @@ export async function loadSaveFiles(saves?: string[] | FileList | undefined | nu
     return [id, save] as [number, SaveState]
   }))
   return true
+}
+
+export const playScene = (scene: LabelName) => {
+  if (settings.completedScenes.includes(scene)) {
+    loadSaveState(loadScene(scene))
+    displayMode.screen = SCREEN.WINDOW
+  }
 }

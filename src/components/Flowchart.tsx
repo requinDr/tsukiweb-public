@@ -6,7 +6,7 @@ import { SCENE_ATTRS } from "../utils/constants"
 import { isScene } from "../utils/scriptUtils"
 import { GraphicsGroup } from "./GraphicsComponent"
 import { settings } from "../utils/variables"
-import { loadScene, loadSaveState } from "../utils/savestates"
+import { loadScene, loadSaveState, playScene } from "../utils/savestates"
 import { SCREEN, displayMode } from "../utils/display"
 
 const SCENE_WIDTH = 27
@@ -92,13 +92,6 @@ class FcNode {
         return <path key={id} className="fc-link" id={id} d={path}/>
       }
     })
-  }
-}
-
-const playScene = (scene: LabelName) => {
-  if (settings.completedScenes.includes(scene)) {
-    loadSaveState(loadScene(scene))
-    displayMode.screen = SCREEN.WINDOW
   }
 }
 

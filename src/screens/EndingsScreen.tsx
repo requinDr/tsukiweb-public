@@ -8,6 +8,7 @@ import { noBb } from '../utils/Bbcode'
 import { RouteEnding, endings, osiete } from '../utils/endings'
 import { Tooltip } from 'react-tooltip'
 import ReactDOMServer from 'react-dom/server';
+import { playScene } from '../utils/savestates'
 
 // settings.completedScenes.push("s521")
 const EndingsScreen = () => {
@@ -44,6 +45,7 @@ const EndingsScreen = () => {
                     src={chalkboard}
                     alt={`Bad Ending ${ending.scene}`}
                     draggable={false}
+                    onClick={() => playScene(ending.scene)}
                     data-tooltip-id="osiete"
                     data-tooltip-html={ReactDOMServer.renderToStaticMarkup(
                     <div>
