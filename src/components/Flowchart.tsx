@@ -15,6 +15,13 @@ const COLUMN_WIDTH = SCENE_WIDTH + 3
 const DY = 3
 const OVERLAP_BREAK_LENGTH = 2
 
+const SCENE_RECT_ATTRS = {
+  width: SCENE_WIDTH,
+  height: SCENE_HEIGHT,
+  x: -SCENE_WIDTH/2,
+  y: -SCENE_HEIGHT/2
+} 
+
 function getPreviousScenes(tree: Map<string, FcNodeParams|FcNode>, scene: string): string[] {
   const currNode = tree.get(scene)
   if (!currNode)
@@ -108,18 +115,23 @@ class FcScene extends FcNode {
 
   render() {
     let content
-    if (!settings.completedScenes.includes(this.id))
+    let completed = settings.completedScenes.includes(this.id)
+    if (!completed)
       content = <use href="#fc-scene-hidden"/>
     else if (!this.graph)
       content = <>
         <use href="#fc-scene-background" />
         <text className="fc-scene-title">{this.id}</text>
+        <use href="#fc-scene-outline"/>
       </>
     else {
-      content = <foreignObject x={-SCENE_WIDTH/2} y={-SCENE_HEIGHT/2}
-        width={SCENE_WIDTH} height={SCENE_HEIGHT}>
-        <GraphicsGroup images={this.graph} resolution="sd"/>
-      </foreignObject>
+      content = <>
+        <foreignObject x={-SCENE_WIDTH/2} y={-SCENE_HEIGHT/2}
+          width={SCENE_WIDTH} height={SCENE_HEIGHT}>
+          <GraphicsGroup images={this.graph} resolution="sd" lazy={true} />
+        </foreignObject>
+        <use href="#fc-scene-outline"/>
+      </>
     }
     
     return <Fragment key={this.id}>
@@ -129,7 +141,6 @@ class FcScene extends FcNode {
         onClick={() => playScene(this.id as LabelName)}
         clipPath="url(#fc-scene-clip)">
         {content}
-        <use href="#fc-scene-outline"/>
       </g>
     </Fragment>
   }
@@ -228,20 +239,15 @@ export const Flowchart = memo(({back}: Props)=> {
           <stop offset="50%" stopColor="#111" />
           <stop offset="95%" stopColor="#222" />
         </radialGradient>
-        <rect id="fc-scene-outline"
-          width={SCENE_WIDTH} height={SCENE_HEIGHT}
-          x={-SCENE_WIDTH/2} y={-SCENE_HEIGHT/2} rx={SCENE_HEIGHT/10} />
-        <rect id="fc-scene-background"
-          width={SCENE_WIDTH} height={SCENE_HEIGHT}
-          x={-SCENE_WIDTH/2} y={-SCENE_HEIGHT/2} />
+        <rect id="fc-scene-outline" {...SCENE_RECT_ATTRS} rx={SCENE_HEIGHT/10} />
+        <rect id="fc-scene-background" {...SCENE_RECT_ATTRS} />
         <g id="fc-scene-hidden">
-          <rect width={SCENE_WIDTH} height={SCENE_HEIGHT}
-            x={-SCENE_WIDTH/2} y={-SCENE_HEIGHT/2}
-            fill="url(#hidden-scene-gradient)" />
+          <rect {...SCENE_RECT_ATTRS} rx={SCENE_HEIGHT/10} fill="url(#hidden-scene-gradient)" />
           <line x1={-SCENE_WIDTH/2} y1={-SCENE_HEIGHT/2} stroke="black"
                 x2={ SCENE_WIDTH/2} y2={ SCENE_HEIGHT/2} strokeWidth={0.4}/>
           <line x1={-SCENE_WIDTH/2} y1={ SCENE_HEIGHT/2} stroke="black"
                 x2={ SCENE_WIDTH/2} y2={-SCENE_HEIGHT/2} strokeWidth={0.4}/>
+          <rect {...SCENE_RECT_ATTRS} rx={SCENE_HEIGHT/10} />
         </g>
       </defs>
       <clipPath id="fc-scene-clip">

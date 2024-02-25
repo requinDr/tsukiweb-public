@@ -49,12 +49,22 @@
       stroke-width: 0.264583;
    }
 }
-#fc-scene-outline {
+
+#fc-scene-outline,
+#fc-scene-hidden rect:last-of-type {
    stroke-width: 0.6;
    stroke-linejoin: round;
    fill: none;
+}
+
+#fc-scene-hidden rect:last-of-type {
    stroke: rgb(115 115 115);
 }
+
+#fc-scene-outline {
+   stroke: #1187c5;
+}
+
 #fc-scene-background {
    fill: rgb(67 67 67);
 }

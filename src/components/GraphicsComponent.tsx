@@ -17,7 +17,7 @@ function isImage(str: string) {
 }
 
 function graphicElement(pos: SpritePos, image: string,
-    props: DivProps = {}, resolution=settings.resolution) {
+    props: DivProps = {}, resolution=settings.resolution, lazy = false) {
 
   image = image || ((pos=="bg") ? "#000000" : "#00000000")
   const isColor = image.startsWith('#')
@@ -37,7 +37,7 @@ function graphicElement(pos: SpritePos, image: string,
     const alt = `[[sprite:${image}]]`
     const blur = findImageObjectByName(image)?.sensitive && settings.blurThumbnails
     imageElement = <img src={imgUrl} alt={alt} draggable={false}
-      className={blur ? "blur" : ""}
+      className={blur ? "blur" : ""} {...(lazy ? {loading: "lazy"} : {})}
     />
   }
   if (text) {
@@ -78,11 +78,12 @@ export async function preloadImage(src:string, resolution=settings.resolution): 
 type GraphicsGroupProps = {
   images: GraphicsType
   spriteAttrs?: Partial<Record<SpritePos, DivProps>> | ((pos:SpritePos)=>DivProps)
-  resolution?: typeof settings.resolution
+  resolution?: typeof settings.resolution,
+  lazy?: boolean,
 } & DivProps
 
 export const GraphicsGroup = memo(({images, spriteAttrs,
-    resolution = settings.resolution, ...props}: GraphicsGroupProps)=> {
+    resolution = settings.resolution, lazy=false, ...props}: GraphicsGroupProps)=> {
   const monochrome = images.monochrome ?? ""
   let {style, className, ...attrs} = props
   const classes = ['graphics']
@@ -103,7 +104,7 @@ export const GraphicsGroup = memo(({images, spriteAttrs,
         key: images[pos]||pos,
         ...(typeof spriteAttrs == 'function' ? spriteAttrs(pos)
             : spriteAttrs?.[pos] ?? {})
-      }, resolution))
+      }, resolution, lazy))
     }
   </div>
 })
