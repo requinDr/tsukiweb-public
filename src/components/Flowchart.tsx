@@ -96,7 +96,7 @@ class FcNode {
 }
 
 const playScene = (scene: LabelName) => {
-  if (settings.completedScenes.includes(scene) || import.meta.env.DEV) {
+  if (settings.completedScenes.includes(scene)) {
     loadSaveState(loadScene(scene))
     displayMode.screen = SCREEN.WINDOW
   }

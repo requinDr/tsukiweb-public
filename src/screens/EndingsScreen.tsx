@@ -39,13 +39,18 @@ const EndingsScreen = () => {
             <Tooltip id="osiete" place="top" className="tooltip" />
             {Object.values(osiete).map((ending, index)=>
               <div key={index} className={`badending ${ending?.seen ? 'seen' : ''}`}>
-                {ending?.seen ? <img src={chalkboard} alt={`Bad Ending ${ending.scene}`} draggable={false}
-                                  data-tooltip-id="osiete"
-                                  data-tooltip-html={ReactDOMServer.renderToStaticMarkup(
-                                  <div>
-                                    {ending.name && <>{noBb(ending.name)}<br /></>}
-                                    Day: {ending.day}
-                                  </div>)} />
+                {ending?.seen ?
+                  <img
+                    src={chalkboard}
+                    alt={`Bad Ending ${ending.scene}`}
+                    draggable={false}
+                    data-tooltip-id="osiete"
+                    data-tooltip-html={ReactDOMServer.renderToStaticMarkup(
+                    <div>
+                      {ending.name && <>{noBb(ending.name)}<br /></>}
+                      {ending.day && <>Day: {ending.day}<br /></>}
+                      {ending.scene}
+                    </div>)} />
                 : <img src={chalkboard} alt="Bad Ending" draggable={false} />
                 }
               </div>
