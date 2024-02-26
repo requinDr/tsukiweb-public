@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom"
 import styles from "../../styles/components/button.module.scss"
 
-
 interface PropsButton {
 	onClick: ()=>void
 }
@@ -15,6 +14,9 @@ type Props = {
 	[key: string]: any
 } & (PropsButton | PropsLink)
 
+/**
+ * A button or Link already styled
+ */
 const MenuButton = ({children, onClick, to, className, ...props}: Props) => {
 	const button = onClick ? (
 		<button

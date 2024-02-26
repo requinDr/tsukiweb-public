@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 import { GALLERY_IMAGES, GalleryImg } from '../utils/gallery'
 import strings, { imageUrl, useLanguageRefresh } from '../utils/lang'
 import { SCREEN, useScreenAutoNavigate } from '../utils/display'
-import TabsComponent from '../components/TabsComponent'
+import TabsComponent from '../components/molecules/TabsComponent'
 import MenuButton from '../components/atoms/MenuButton'
 
 type CharacterId = keyof typeof GALLERY_IMAGES
@@ -48,8 +48,10 @@ const GalleryScreen = () => {
       <div className="page-content">        
         <main>
           <h2 className="page-title">{strings.extra.gallery}</h2>
-          <TabsComponent tabs={Object.keys(GALLERY_IMAGES) as Array<CharacterId>}
-            selected={selected} setSelected={setSelected}
+          <TabsComponent
+            tabs={Object.keys(GALLERY_IMAGES) as Array<CharacterId>}
+            selected={selected}
+            setSelected={setSelected}
             textModifier={text => strings.characters[text as CharacterId]} />
 
           <Fancybox className='gallery-container'

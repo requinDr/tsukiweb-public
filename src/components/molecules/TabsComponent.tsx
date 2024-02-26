@@ -1,3 +1,5 @@
+import styles from "../../styles/components/tabs.module.scss"
+
 type TabsProps = {
   tabs: any[],
   selected: string,
@@ -5,8 +7,11 @@ type TabsProps = {
   textModifier?: (text: string) => string
 }
 
+/**
+ * Tabs with a default style applied
+ */
 const TabsComponent = ({ tabs, selected, setSelected, textModifier }: TabsProps) => (
-  <div className="tabs">
+  <div className={styles.tabs}>
     {tabs.map(value =>
       <TabBtn key={value}
         text={textModifier ? textModifier(value) : value}
@@ -26,7 +31,7 @@ type TabBtnProps = {
 }
 
 const TabBtn = ({text, active, onClick}: TabBtnProps) => (
-  <button className={`tab ${active ? 'active' : ''}`}
+  <button className={`${styles.tab} ${active ? styles.active : ''}`}
     onClick={onClick}>
     {text}
   </button>

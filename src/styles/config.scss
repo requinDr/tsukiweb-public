@@ -192,18 +192,6 @@
         .reset {
             margin-top: 1em;
             align-self: flex-end;
-
-            .reset-btn {
-                color: var(--text-color);
-                padding: 0.3em 2em;
-                font-size: clamp(0.86rem, 3.5vmin, 1rem);
-                background-color: var(--menu-container);
-                box-shadow: var(--menu-shadow);
-
-                &:hover {
-                    box-shadow: var(--selected-shadow);
-                }
-            }
         }
     }
 

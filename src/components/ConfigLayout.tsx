@@ -5,7 +5,7 @@ import ConfigAudioTab from './config/ConfigAudioTab'
 import ConfigAdvancedTab from '../components/config/ConfigAdvancedTab'
 import ConfigControlsTab from '../components/config/ConfigControlsTab'
 import strings, { useLanguageRefresh } from '../utils/lang'
-import TabsComponent from '../components/TabsComponent'
+import TabsComponent from './molecules/TabsComponent'
 import { SCREEN } from '../utils/display'
 import MenuButton from './atoms/MenuButton'
 
@@ -49,8 +49,10 @@ const ConfigLayout = ({back, selectedTab, setUrl, page}: Props) => {
     <main id="config-layout">
       <h2 className="page-title">{strings.menu.config}</h2>
 
-      <TabsComponent tabs={tabs}
-        selected={activeTab} setSelected={setActiveTab} />
+      <TabsComponent
+        tabs={tabs}
+        selected={activeTab}
+        setSelected={setActiveTab} />
 
       {tabComponents[activeTab]}
 
@@ -117,8 +119,8 @@ export const ConfigButtons = ({title, desc, btns, property, conf, updateValue}: 
 
 export const ResetBtn = ({onClick}: {onClick: ()=> void}) => (
   <div className="reset">
-    <button className="reset-btn" onClick={onClick}>
+    <MenuButton onClick={onClick}>
       {strings.config.reset}
-    </button>
+    </MenuButton>
   </div>
 )
