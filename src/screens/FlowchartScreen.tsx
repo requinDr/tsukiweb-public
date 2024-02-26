@@ -3,7 +3,7 @@ import '../styles/saves.scss'
 import { SCREEN, displayMode, useScreenAutoNavigate } from "../utils/display"
 import strings, { useLanguageRefresh } from "../utils/lang"
 import { Flowchart } from "../components/Flowchart"
-import { Link } from "react-router-dom"
+import MenuButton from "../components/atoms/MenuButton"
 
 const FlowchartScreen = () => {
   useScreenAutoNavigate(SCREEN.SCENES)
@@ -21,9 +21,9 @@ const FlowchartScreen = () => {
       exit={{opacity: 0}}>
       <div className="page-content">
         <div className="header">
-          <Link to={SCREEN.TITLE} className="menu-btn">
+          <MenuButton to={SCREEN.TITLE}>
             {strings.back}
-          </Link>
+          </MenuButton>
           <div>Currently WIP</div>
         </div>
 

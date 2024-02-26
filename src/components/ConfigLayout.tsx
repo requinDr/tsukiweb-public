@@ -7,6 +7,7 @@ import ConfigControlsTab from '../components/config/ConfigControlsTab'
 import strings, { useLanguageRefresh } from '../utils/lang'
 import TabsComponent from '../components/TabsComponent'
 import { SCREEN } from '../utils/display'
+import MenuButton from './atoms/MenuButton'
 
 enum Tabs {
   game = "Game",
@@ -53,9 +54,9 @@ const ConfigLayout = ({back, selectedTab, setUrl, page}: Props) => {
 
       {tabComponents[activeTab]}
 
-      <button className="menu-btn back-button" onClick={back.bind(null)}>
+      <MenuButton onClick={back.bind(null)} className="back-button">
         {strings.back}
-      </button>
+      </MenuButton>
     </main>
   )
 }

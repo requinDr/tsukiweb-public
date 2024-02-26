@@ -154,21 +154,6 @@ main {
   min-height: 0;
 }
 
-.menu-btn {
-  color: var(--text-color);
-  padding: 0.3em 2em;
-  font-size: clamp(0.86rem, 3.5vmin, 1rem);
-  background-color: var(--menu-container);
-  box-shadow: var(--menu-shadow);
-  transition: .2s;
-
-  &:hover,
-  &:focus-visible {
-    box-shadow: var(--selected-shadow);
-    text-decoration: none;
-  }
-}
-
 .back-button {
   align-self: flex-start;
   margin-top: clamp(.8rem, 4vmin, 1rem);

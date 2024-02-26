@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import '../styles/endings.scss'
 import { motion } from 'framer-motion'
 import strings, { imageUrl, useLanguageRefresh } from '../utils/lang'
@@ -9,6 +8,7 @@ import { RouteEnding, endings, osiete } from '../utils/endings'
 import { Tooltip } from 'react-tooltip'
 import ReactDOMServer from 'react-dom/server';
 import { playScene } from '../utils/savestates'
+import MenuButton from '../components/atoms/MenuButton'
 
 // settings.completedScenes.push("s521")
 const EndingsScreen = () => {
@@ -60,7 +60,9 @@ const EndingsScreen = () => {
           </div>
         </main>
 
-        <Link to={SCREEN.TITLE} className="menu-btn back-button">{strings.back}</Link>
+        <MenuButton to={SCREEN.TITLE} className="back-button">
+          {strings.back}
+        </MenuButton>
       </div>
     </motion.div>
   )

@@ -9,6 +9,7 @@ import { strings, phaseTexts } from '../utils/lang';
 import { PageContent } from '../types';
 import { getSceneTitle } from '../utils/scriptUtils';
 import { Bbcode, bb } from '../utils/Bbcode';
+import MenuButton from '../components/atoms/MenuButton';
 
 const PageElement = memo(({saveState, onLoad}: {saveState: SaveState, onLoad: (ss: SaveState)=>void})=> {
   if (saveState.page == undefined)
@@ -57,7 +58,9 @@ const PageElement = memo(({saveState, onLoad}: {saveState: SaveState, onLoad: (s
   <>
     <hr {...{"page-type": contentType}}/>
     {saveState &&
-      <button className="menu-btn load" onClick={onLoad.bind(null,saveState)}>{strings.history.load}</button>
+      <MenuButton onClick={onLoad.bind(null,saveState)} className='load'>
+        {strings.history.load}
+      </MenuButton>
     }
     {displayContent}
   </>

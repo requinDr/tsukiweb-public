@@ -7,6 +7,7 @@ import strings, { phaseTexts } from "../utils/lang"
 import SaveListItem from "./save/SaveListItem"
 import SaveDetails from "./save/SaveDetails"
 import { MdAddCircleOutline, MdUploadFile } from "react-icons/md"
+import MenuButton from "./atoms/MenuButton"
 
 //##############################################################################
 //#                               TOOL FUNCTIONS                               #
@@ -129,9 +130,9 @@ const SavesLayer = ({variant, back}: Props) => {
 
       <SaveDetails id={focusedId} saveState={focusedSave} deleteSave={deleteSave}/>
       <div className="save-buttons">
-        <button className="menu-btn back-button" onClick={back.bind(null, false)}>
+        <MenuButton onClick={back.bind(null, false)} className="back-button">
           {strings.back}
-        </button>
+        </MenuButton>
       </div>
     </main>
   )

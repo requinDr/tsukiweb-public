@@ -18,6 +18,7 @@ import { MdGetApp, MdInfoOutline, MdLink } from 'react-icons/md'
 import { settings } from '../utils/variables'
 import { endings } from '../utils/endings'
 import { toast } from 'react-toastify'
+import MenuButton from '../components/atoms/MenuButton'
 
 type BeforeInstallPromptEvent = Event & {prompt: ()=>Promise<{outcome: any}>}
 
@@ -274,9 +275,9 @@ const ModalInfo = ({show, setShow}: ModalInfoProps) => {
         </div>
       </div>
 
-      <button className='menu-btn close-btn' onClick={()=>setShow(false)}>
+      <MenuButton onClick={()=>setShow(false)} className="close-btn">
         {strings.title.about.close}
-      </button>
+      </MenuButton>
     </Modal>
   )
 }

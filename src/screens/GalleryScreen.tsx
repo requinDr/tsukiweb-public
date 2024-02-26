@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
 import Fancybox from "../components/Fancybox"
 import '../styles/gallery.scss'
 import { settings } from '../utils/variables'
@@ -8,6 +7,7 @@ import { GALLERY_IMAGES, GalleryImg } from '../utils/gallery'
 import strings, { imageUrl, useLanguageRefresh } from '../utils/lang'
 import { SCREEN, useScreenAutoNavigate } from '../utils/display'
 import TabsComponent from '../components/TabsComponent'
+import MenuButton from '../components/atoms/MenuButton'
 
 type CharacterId = keyof typeof GALLERY_IMAGES
 type GalleryItem = GalleryImg & {src_thumb: string, src_hd: string}
@@ -71,7 +71,9 @@ const GalleryScreen = () => {
             )}
           </Fancybox>
 
-          <Link to={SCREEN.TITLE} className="menu-btn back-button">{strings.back}</Link>
+          <MenuButton to={SCREEN.TITLE} className="back-button">
+            {strings.back}
+          </MenuButton>
         </main>
       </div>
     </motion.div>
