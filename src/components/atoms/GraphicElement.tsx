@@ -1,11 +1,10 @@
+import { DivProps } from "../../types";
 import { bb } from "../../utils/Bbcode";
 import { findImageObjectByName } from "../../utils/gallery";
 import { imageUrl } from "../../utils/lang";
 import { splitFirst } from "../../utils/utils";
 import { settings } from "../../utils/variables";
 import { SpritePos } from "../molecules/GraphicsGroup";
-
-type DivProps = React.ComponentPropsWithoutRef<"div">
 
 type Props = {
 	pos: SpritePos

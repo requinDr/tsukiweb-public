@@ -92,3 +92,5 @@ export type FcNodeAttrs = {
 export type FcSceneAttrs = FcNodeAttrs & {
   graph: Graphics
 }
+
+export type DivProps = React.ComponentPropsWithoutRef<"div">

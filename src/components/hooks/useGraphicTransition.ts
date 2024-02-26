@@ -1,14 +1,9 @@
 import { useState, useRef, useCallback } from "react";
 import { useObserver } from "../../utils/Observer";
-import { resettable, splitFirst } from "../../utils/utils";
+import { splitFirst } from "../../utils/utils";
 import { gameContext } from "../../utils/variables";
 import { SpritePos, preloadImage } from "../molecules/GraphicsGroup";
-
-const [transition, resetTransition] = resettable({
-  effect: "",
-  duration: 0,
-  pos: "a" as SpritePos|'a',
-})
+import { transition } from "../../utils/graphics";
 
 type GraphicTransitionResult = {
   img: string;

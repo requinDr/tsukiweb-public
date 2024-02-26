@@ -6,7 +6,7 @@ import { gameContext, settings } from "../utils/variables"
 import { observe, useObserved, useObserver } from "../utils/Observer"
 import history from "../utils/history"
 import { SCREEN, displayMode } from "../utils/display"
-import { PageContent } from "../types"
+import { DivProps, PageContent } from "../types"
 import { BBTypeWriter, Bbcode } from "../utils/Bbcode"
 
 const icons: Record<"moon"|"page", string> = {
@@ -87,9 +87,9 @@ export const commands = {
 //#                                 COMPONENT                                  #
 //##############################################################################
 
-type Props = { } & React.ComponentPropsWithoutRef<"div">
+type Props = { } & DivProps
 
-const TextLayer = memo(({...props}: Props) => {
+const TextLayer = ({...props}: Props) => {
 
   const [ display ] = useObserved(displayMode, 'text')
   const [ lines, setLines ] = useState<string[]>([])
@@ -145,6 +145,6 @@ const TextLayer = memo(({...props}: Props) => {
       </div>
     </div>
   )
-})
+}
 
-export default TextLayer
+export default memo(TextLayer)

@@ -2,9 +2,7 @@ import { memo } from "react"
 import { settings } from "../../utils/variables"
 import GraphicElement from "../atoms/GraphicElement"
 import { imageUrl } from "../../utils/lang"
-import { Graphics as GraphicsType } from "../../types";
-
-type DivProps = React.ComponentPropsWithoutRef<"div">
+import { DivProps, Graphics as GraphicsType } from "../../types";
 
 const POSITIONS = ['bg', 'l', 'c', 'r'] as const
 export type SpritePos = typeof POSITIONS[number]

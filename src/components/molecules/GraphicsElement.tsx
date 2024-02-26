@@ -3,8 +3,7 @@ import { imageUrl } from "../../utils/lang"
 import { settings } from "../../utils/variables"
 import GraphicElement from "../atoms/GraphicElement"
 import { SpritePos } from "./GraphicsGroup"
-
-type DivProps = React.ComponentPropsWithoutRef<"div">
+import { DivProps } from "../../types"
 
 type Props = {
   pos: SpritePos
@@ -90,7 +89,7 @@ const GraphicsElement = ({
 					pos={pos}
 					image={image}
 					resolution={resolution}
-					{...maskProps}
+					props={maskProps}
 				/>
 			}
 
@@ -99,7 +98,7 @@ const GraphicsElement = ({
 					pos={pos}
 					image={image}
 					resolution={resolution}
-					{...{
+					props={{
 						style: {...baseStyle, ...insertStyle},
 						...baseAttrs,
 						...insertAttrs
