@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import Fancybox from "../components/Fancybox"
+import { Fragment, useEffect, useState } from 'react'
+import Fancybox from "../components/molecules/Fancybox"
 import '../styles/gallery.scss'
 import { settings } from '../utils/variables'
 import { motion } from 'framer-motion'
@@ -60,7 +60,7 @@ const GalleryScreen = () => {
               Thumbs: false,
             } as any}>
             {images.map(({src_hd, src_thumb, ...image}) =>
-              <React.Fragment key={image.img}>
+              <Fragment key={image.img}>
                 {src_thumb === defaultThumbnail ?
                   <div className="placeholder" />
                 :
@@ -69,7 +69,7 @@ const GalleryScreen = () => {
                     <img src={src_thumb} alt={`event ${image.img}`} draggable={false} />
                   </a>
                 }
-              </React.Fragment>
+              </Fragment>
             )}
           </Fancybox>
 
