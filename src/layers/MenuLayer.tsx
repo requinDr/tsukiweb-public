@@ -15,7 +15,6 @@ import Ornament from "../assets/images/ornament.webp"
  * - Go to next scene
  */
 const MenuLayer = () => {
-
   const menuRef = useRef<HTMLDivElement>(null)
   const [mute] = useObserved(settings.volume, 'master', (vol)=>vol<0)
   const [fullscreen, setFullscreen] = useState<boolean>(isFullscreen())

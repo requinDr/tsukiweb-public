@@ -1,71 +1,12 @@
-import { Fragment, memo, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { addEventListener } from "../utils/utils";
 import { displayMode, isViewAnyOf } from '../utils/display';
 import { SaveState, loadSaveState } from "../utils/savestates";
 import { useObserved, useObserver, } from '../utils/Observer';
 import history from '../utils/history';
 import script from '../utils/script';
-import { strings, phaseTexts } from '../utils/lang';
-import { PageContent } from '../types';
-import { getSceneTitle } from '../utils/scriptUtils';
-import { Bbcode, bb } from '../utils/Bbcode';
-import MenuButton from '../components/atoms/MenuButton';
-
-const PageElement = memo(({saveState, onLoad}: {saveState: SaveState, onLoad: (ss: SaveState)=>void})=> {
-  if (saveState.page == undefined)
-    return <></>
-  const {contentType, ...content} = saveState.page
-  let displayContent
-  switch(contentType) {
-    case "text" :
-      const {text} = content as PageContent<"text">
-      displayContent = text.split('\n').map((line, i) =>
-        <Fragment key={i}>
-          {i > 0 && <br/>}
-          <Bbcode text={line}/>
-        </Fragment>
-      )
-      break
-    case "choice":
-      const {choices, selected} = content as PageContent<"choice">  
-      displayContent = <>{choices.map(({str, index})=>
-        <Fragment key={index}>{index > 0 && <br/>}
-          <span className={`choice ${index==selected ? 'selected' : ''}`} key={index}>
-            {str}
-          </span>
-        </Fragment>
-      )}</>
-      break
-    case "skip" :
-      const {scene} = content as PageContent<"skip">
-      const sceneTitle = getSceneTitle(scene)??""
-      displayContent = <span className='skip'>
-        {bb(strings.history.skipped.replace('$0', sceneTitle))}
-      </span>
-      break
-    case "phase" :
-      const {route, routeDay, day} = saveState.context.phase ?? {}
-      const [phaseTitle, phaseDay] = phaseTexts(route ?? "", routeDay ?? "", day ?? 0)
-      displayContent = <span className='phase'>
-        {phaseTitle && bb(phaseTitle)}
-        {phaseDay && <><br/>{bb(phaseDay)}</>}
-      </span>
-      break
-    default :
-      throw Error(`Unknown page type ${contentType}`)
-  }
-  return (
-  <>
-    <hr {...{"page-type": contentType}}/>
-    {saveState &&
-      <MenuButton onClick={onLoad.bind(null,saveState)} className='load'>
-        {strings.history.load}
-      </MenuButton>
-    }
-    {displayContent}
-  </>
-  )
-})
+import { strings } from '../utils/lang';
+import PageElement from '../components/molecules/PageElement';
 
 type Props = {
   [key: string] : any // other properties to apply to the root 'div' element of the component
@@ -136,12 +77,14 @@ const HistoryLayer = (props: Props) => {
     setDisplay(false)
     loadSaveState(saveState)
   }
+
   const {className, ...otherProps} = props
   const classList = ["layer"]
   if (display)
     classList.push("show")
   if (className)
     classList.push(className)
+
   return (
     <div className={classList.join(' ')} {...otherProps} ref={rootRef} id="layer-history">
       <div id="history" ref={historyRef}>
@@ -154,7 +97,9 @@ const HistoryLayer = (props: Props) => {
       </div>
 
       <footer>
-        <button onClick={() => setDisplay(false)}>{strings.history.close}</button>
+        <button onClick={() => setDisplay(false)}>
+          {strings.history.close}
+        </button>
       </footer>
     </div>
   )

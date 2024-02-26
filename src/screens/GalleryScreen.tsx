@@ -3,13 +3,12 @@ import Fancybox from "../components/molecules/Fancybox"
 import '../styles/gallery.scss'
 import { settings } from '../utils/variables'
 import { motion } from 'framer-motion'
-import { GALLERY_IMAGES, GalleryImg } from '../utils/gallery'
+import { CharacterId, GALLERY_IMAGES, GalleryImg } from '../utils/gallery'
 import strings, { imageUrl, useLanguageRefresh } from '../utils/lang'
 import { SCREEN, useScreenAutoNavigate } from '../utils/display'
 import TabsComponent from '../components/molecules/TabsComponent'
 import MenuButton from '../components/atoms/MenuButton'
 
-type CharacterId = keyof typeof GALLERY_IMAGES
 type GalleryItem = GalleryImg & {src_thumb: string, src_hd: string}
 
 const defaultThumbnail = imageUrl("notreg", "thumb")
@@ -49,7 +48,7 @@ const GalleryScreen = () => {
         <main>
           <h2 className="page-title">{strings.extra.gallery}</h2>
           <TabsComponent
-            tabs={Object.keys(GALLERY_IMAGES) as Array<CharacterId>}
+            tabs={Object.keys(GALLERY_IMAGES)}
             selected={selected}
             setSelected={setSelected}
             textModifier={text => strings.characters[text as CharacterId]} />

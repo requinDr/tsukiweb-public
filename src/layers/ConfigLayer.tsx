@@ -1,7 +1,6 @@
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef } from "react"
 import { displayMode } from "../utils/display"
-import { addEventListener } from "../utils/utils"
-import { useObserved, useObserver } from '../utils/Observer';
+import { useObserved } from '../utils/Observer';
 import ConfigLayout from "../components/ConfigLayout";
 
 
@@ -20,7 +19,10 @@ const ConfigLayer = () => {
   }, [display])
   
   return (
-    <div className={`layer ${display ? "show" : ""}`} ref={rootRef} id="layer-config">
+    <div
+      id="layer-config"
+      className={`layer ${display ? "show" : ""}`}
+      ref={rootRef}>
       <div className="page-content">
         <ConfigLayout back={back} />
       </div>

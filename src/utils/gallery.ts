@@ -1,7 +1,12 @@
 
-type CharacterId = keyof typeof GALLERY_IMAGES
-export type GalleryImg = {img: string, sensitive: boolean}
-export const GALLERY_IMAGES = {
+export type CharacterId = "ark"|"cel"|"aki"|"koha"|"his"|"others"
+
+export type GalleryImg = {
+  img: string,
+  sensitive: boolean
+}
+
+export const GALLERY_IMAGES: Record<CharacterId, GalleryImg[]> = {
   ark: [
     {img: "ark_e01", sensitive: false},
     {img: "ark_e02", sensitive: false},
@@ -32,7 +37,7 @@ export const GALLERY_IMAGES = {
     {img: "ark_h11", sensitive: true},
     {img: "ark_h12", sensitive: true},
     {img: "ark_h13", sensitive: true}
-  ] as GalleryImg[],
+  ],
   cel: [
     {img: "cel_e01", sensitive: false},
     {img: "cel_e02a", sensitive: false},
@@ -71,7 +76,7 @@ export const GALLERY_IMAGES = {
     {img: "cel_h10", sensitive: true},
     {img: "cel_h11a", sensitive: true},
     {img: "cel_h11b", sensitive: true}
-  ] as GalleryImg[],  
+  ],  
   aki: [
     {img: "aki_e01", sensitive: false},
     {img: "aki_e01b", sensitive: false},
@@ -103,7 +108,7 @@ export const GALLERY_IMAGES = {
     {img: "aki_h13", sensitive: true},
     {img: "aki_h14", sensitive: false},
     {img: "aki_h15", sensitive: true}
-  ] as GalleryImg[],  
+  ],  
   koha: [
     {img: "koha_e01a", sensitive: false},
     {img: "koha_e01b", sensitive: false},
@@ -130,7 +135,7 @@ export const GALLERY_IMAGES = {
     {img: "koha_h10", sensitive: true},
     {img: "koha_h10b", sensitive: true},
     {img: "koha_h11", sensitive: true}
-  ] as GalleryImg[],  
+  ],  
   his: [
     {img: "his_e01", sensitive: false},
     {img: "his_e01b", sensitive: false},
@@ -166,7 +171,7 @@ export const GALLERY_IMAGES = {
     {img: "his_h14", sensitive: true},
     {img: "his_h15", sensitive: true},
     {img: "his_h16", sensitive: true}
-  ] as GalleryImg[],  
+  ],  
   others: [
     {img: "ao_01", sensitive: false},
     {img: "ao_02", sensitive: false},
@@ -178,7 +183,7 @@ export const GALLERY_IMAGES = {
     {img: "stk_e01d", sensitive: false},
     {img: "stk_e02", sensitive: false},
     {img: "stk_e03", sensitive: false}
-  ] as GalleryImg[]
+  ]
 }
 
 // Function to find an image object in the GALLERY_IMAGES object based on a partial image name
