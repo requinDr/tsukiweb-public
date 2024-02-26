@@ -2,13 +2,19 @@ import { SpritePos } from "../components/molecules/GraphicsGroup";
 import { observe } from "./Observer";
 import { displayMode } from "./display";
 import { wordImage } from "./lang";
-import { splitFirst, objectMatch, resettable } from "./utils";
+import { extractInstructions } from "./scriptUtils";
+import { splitFirst, objectMatch, resettable, splitLast } from "./utils";
 import { settings, gameContext } from "./variables";
 
 export const [transition, resetTransition] = resettable({
   effect: "",
   duration: 0,
   pos: "a" as SpritePos|'a',
+})
+
+export const [quakeEffect, resetQuake] = resettable({
+  x: 0, y: 0,
+  duration: 0,
 })
 
 export function endTransition() {
@@ -69,7 +75,6 @@ export function getTransition(type: string, skipTransition = false) {
 }
 
 export function applyChange(pos: SpritePos, image: string, type: string, onFinish: VoidFunction) {
-
   let change = setSprite(pos as SpritePos, image)
 
   if (pos == 'bg' && !change && objectMatch(gameContext.graphics, {l: "", c: "", r: ""}))
@@ -118,4 +123,86 @@ export function setSprite(pos: SpritePos|'a', image: string): boolean {
   } else {
     return false
   }
+}
+
+/**
+ * Move background up or down
+ */
+export function moveBg(direction: "up"|"down") {
+  const positions: Array<typeof displayMode.bgAlignment>
+      = ["top", "center", "bottom"]
+  let index = positions.indexOf(displayMode.bgAlignment)
+  if (direction == "down" && index < 2) index++
+  else if(direction == "up" && index > 0) index--
+  displayMode.bgAlignment = positions[index]
+}
+
+
+//_______________________________script commands________________________________
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+function processImageCmd(arg: string, cmd: string, onFinish: VoidFunction) {
+  let pos:string = 'bg',
+      image:string = '',
+      type:string = ''
+
+  switch(cmd) {
+    case 'bg': [image, type] = splitLast(arg, ',') as [string, string]; break
+    case 'cl': [pos, type] = arg.split(','); break
+    case 'ld':
+      let arg1
+      [pos, arg1] = splitFirst(arg, ',') as [string, string]
+      [image, type] = splitLast(arg1, ',') as [string, string]
+      break
+    default : throw Error(`unknown image command ${cmd} ${arg}`)
+  }
+
+  type = type.replace('%', '')
+  //check if text line starts right after command
+  const match = /\W/.exec(type)
+  if (match) {
+    const secondInstrLength = type.length - match.index
+    return [
+      {cmd, arg: arg.substring(0, arg.length - secondInstrLength)},
+      ...extractInstructions(type.substring(type.length - secondInstrLength))
+    ]
+  } else {
+    // get image
+    if (image)
+      image = extractImage(image)
+    return applyChange(pos as SpritePos, image, type, onFinish)
+  }
+}
+
+function processQuake(arg: string, cmd: string, onFinish: VoidFunction) {
+  const [ampl, duration] = arg.split(',').map(x=>parseInt(x))
+  switch(cmd) {
+    case 'quakex' : quakeEffect.x = ampl; break
+    case 'quakey' : quakeEffect.y = ampl; break
+  }
+  quakeEffect.duration = duration;
+  observe(quakeEffect, "duration", ()=> {
+    quakeEffect.x = 0
+    quakeEffect.y = 0
+    onFinish()
+  }, { filter: (d: number)=> d == 0, once: true })
+  return { next: ()=> { quakeEffect.duration = 0 } }
+}
+
+function processMonocro(color: string) {
+  if (color == "off")
+    color = ""
+  gameContext.graphics.monochrome = color
+}
+
+const commands = {
+  'bg' : processImageCmd,
+  'ld' : processImageCmd,
+  'cl' : processImageCmd,
+  'quakex'  : processQuake,
+  'quakey'  : processQuake,
+  'monocro' : processMonocro, //TODO : crossfade ?
+}
+
+export {
+  commands
 }

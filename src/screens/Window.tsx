@@ -5,7 +5,7 @@ import HistoryLayer from '../layers/HistoryLayer';
 import ChoicesLayer from '../layers/ChoicesLayer';
 import MenuLayer from '../layers/MenuLayer';
 import TextLayer from '../layers/TextLayer';
-import GraphicsLayer, { moveBg } from '../layers/GraphicsLayer';
+import GraphicsLayer from '../layers/GraphicsLayer';
 import KeyMap, { inGameKeymap } from '../utils/KeyMap';
 import script from '../utils/script';
 import { gameContext } from '../utils/variables';
@@ -21,6 +21,7 @@ import { SCREEN, displayMode, isViewAnyOf, useScreenAutoNavigate } from '../util
 import { KeysMatching } from '../types';
 import { useLanguageRefresh } from '../utils/lang';
 import ConfigLayer from '../layers/ConfigLayer';
+import { moveBg } from '../utils/graphics';
 
 //##############################################################################
 //#                                USER INPUTS                                 #

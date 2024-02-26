@@ -23,10 +23,10 @@ function preProcessScript(lines: string[]) {
 //##############################################################################
 
 const LOGIC_FILE = 'scene0.txt';
+
 /*
  * Fetch and split the script into lines
  */
-
 export function creditsScript(insertEndOfPlay: boolean = false): string[] {
   return [
     'play "*10"',

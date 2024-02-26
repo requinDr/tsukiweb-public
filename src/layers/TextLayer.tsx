@@ -1,91 +1,20 @@
 import { useEffect, useState, memo, Fragment } from "react"
 import moonIcon from '../assets/icons/icon_moon.svg'
 import pageIcon from '../assets/icons/icon_bars.svg'
-import { preprocessText, resettable } from "../utils/utils"
-import { gameContext, settings } from "../utils/variables"
+import { settings } from "../utils/variables"
 import { observe, useObserved, useObserver } from "../utils/Observer"
 import history from "../utils/history"
 import { SCREEN, displayMode } from "../utils/display"
-import { DivProps, PageContent } from "../types"
+import { DivProps } from "../types"
 import { BBTypeWriter, Bbcode } from "../utils/Bbcode"
+import { resetSI, scriptInterface } from "../utils/text"
 
-const icons: Record<"moon"|"page", string> = {
+export const icons: Record<"moon"|"page", string> = {
   "moon": moonIcon,
   "page": pageIcon
 }
 
-const [scriptInterface, resetSI] = resettable({
-  text: "" as string,
-  glyph: undefined as keyof typeof icons|undefined,
-  fastForward: false as boolean,
-  onFinish: undefined as VoidFunction|undefined
-})
-
 observe(displayMode, 'screen', resetSI, {filter: s => s != SCREEN.WINDOW})
-
-
-history.addListener(()=> {
-  scriptInterface.text = ""
-  scriptInterface.glyph = undefined
-})
-
-function appendText(text: string) {
-  const lastPage = history.last.page as PageContent<"text">
-  lastPage.text += text
-  scriptInterface.text = lastPage.text
-  scriptInterface.glyph = undefined
-}
-
-function onBreakChar(_: string, cmd: string, onFinish: VoidFunction) {
-  let delay = 0
-  switch(cmd) {
-    case '@' :
-      scriptInterface.glyph = "moon"
-      delay = settings.autoClickDelay
-      break
-    case '\\' :
-      scriptInterface.glyph = "page"
-      delay = settings.nextPageDelay
-      break
-    default : throw Error(`unknown break char ${cmd}`)
-  }
-  return { next: ()=> {
-    scriptInterface.glyph = undefined
-    onFinish()
-  }, autoPlayDelay: delay}
-}
-
-export const commands = {
-  'br' : appendText.bind(null, "\n"),
-  '@'  : onBreakChar,
-  '\\' : onBreakChar,
-  '`'  : (text:string, _: string, onFinish: VoidFunction)=> {
-    if (text == '\n') { // line breaks are displayed instantly
-      appendText('\n')
-      return
-    }
-    text = preprocessText(gameContext.textPrefix + text)
-    appendText(text)
-    
-    scriptInterface.onFinish = ()=> {
-      scriptInterface.onFinish = undefined,
-      scriptInterface.fastForward = false
-      onFinish()
-    }
-    return {
-      next: () => {
-        scriptInterface.fastForward = true;
-      }
-    }
-  },
-  'textcolor': (color: string, _: string)=> {
-    gameContext.textPrefix = `[color=${color}]`
-  }
-}
-
-//##############################################################################
-//#                                 COMPONENT                                  #
-//##############################################################################
 
 type Props = { } & DivProps
 
