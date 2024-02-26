@@ -54,22 +54,19 @@ export function extractImage(image: string) {
 export function getTransition(type: string, skipTransition = false) {
   let duration = 0
   let effect = type
+  let speed: string|null
 
-  if (effect.startsWith('type_'))
+  if (effect.startsWith('type_')) {
     effect = effect.substring('type_'.length)
-
-  const index = effect.lastIndexOf('_')
-  if (index !== -1) {
-    if (!skipTransition) {
-      let speed = effect.substring(index+1)
-      switch(speed) {
-        case 'slw': duration = 1500; break
-        case 'mid': duration = 800; break
-        case 'fst': duration = 400; break
-        default : throw Error(`Ill-formed effect '${effect}'`)
-      }
+  }
+  [effect, speed] = splitLast(effect, '_')
+  if (speed != null && !skipTransition) {
+    switch(speed) {
+      case 'slw': duration = 1500; break
+      case 'mid': duration =  800; break
+      case 'fst': duration =  400; break
+      default : throw Error(`Ill-formed effect '${type}'`)
     }
-    effect = effect.substring(0, index)
   }
   return {effect, duration}
 }

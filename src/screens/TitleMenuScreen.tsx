@@ -5,13 +5,13 @@ import moon from "../assets/images/moon.webp"
 import tsukiR from "../assets/images/tsukihime_blue_glass_cover.webp"
 import '../styles/title-menu.scss'
 import ParticlesComponent from '../components/molecules/ParticlesComponent'
-import { SCREEN, displayMode, useScreenAutoNavigate } from '../utils/display'
+import { SCREEN, displayMode } from '../utils/display'
 import { motion } from 'framer-motion'
 import { blankSaveState, getLastSave, hasSaveStates, loadSaveFiles, loadSaveState, loadScene } from '../utils/savestates'
 import history from '../utils/history'
 import Modal from 'react-modal';
 import { APP_VERSION } from '../utils/constants'
-import strings, { useLanguageRefresh } from '../utils/lang'
+import strings from '../utils/lang'
 import { bb } from '../utils/Bbcode'
 import { useObserved } from '../utils/Observer'
 import { MdGetApp, MdInfoOutline, MdLink } from 'react-icons/md'
@@ -19,6 +19,8 @@ import { settings } from '../utils/variables'
 import { endings } from '../utils/endings'
 import { toast } from 'react-toastify'
 import MenuButton from '../components/atoms/MenuButton'
+import { useLanguageRefresh } from '../components/hooks/useLanguageRefresh'
+import { useScreenAutoNavigate } from '../components/hooks/useScreenAutoNavigate'
 
 type BeforeInstallPromptEvent = Event & {prompt: ()=>Promise<{outcome: any}>}
 

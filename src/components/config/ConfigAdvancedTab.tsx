@@ -3,10 +3,11 @@ import { ConfigButtons, ConfigItem, ResetBtn } from "../ConfigLayout"
 import { defaultSettings, settings } from "../../utils/variables"
 import { deepAssign, jsonDiff, requestJSONs, textFileUserDownload } from "../../utils/utils"
 import { SaveState, clearSaveStates, listSaveStates, restoreSaveStates } from "../../utils/savestates"
-import strings, { addLang, languages, useLanguageRefresh } from "../../utils/lang"
+import strings, { addLang, languages } from "../../utils/lang"
 import { RecursivePartial } from "../../types"
 import { RxExternalLink } from 'react-icons/rx'
 import { toast } from "react-toastify"
+import { useLanguageRefresh } from "../hooks/useLanguageRefresh"
 
 function twoDigits(n: number) {
   return n.toString().padStart(2, '0')

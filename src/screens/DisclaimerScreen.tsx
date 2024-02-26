@@ -2,8 +2,9 @@ import { useEffect } from 'react'
 import '../styles/title-menu.scss'
 import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
-import strings, { useLanguageRefresh } from '../utils/lang'
+import strings from '../utils/lang'
 import { bb } from '../utils/Bbcode'
+import { useLanguageRefresh } from '../components/hooks/useLanguageRefresh'
 
 const DisclaimerScreen = () => {
   const navigate = useNavigate()

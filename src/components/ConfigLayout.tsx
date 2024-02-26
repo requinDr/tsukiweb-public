@@ -4,10 +4,11 @@ import ConfigGameTab from './config/ConfigGameTab'
 import ConfigAudioTab from './config/ConfigAudioTab'
 import ConfigAdvancedTab from '../components/config/ConfigAdvancedTab'
 import ConfigControlsTab from '../components/config/ConfigControlsTab'
-import strings, { useLanguageRefresh } from '../utils/lang'
+import strings from '../utils/lang'
 import TabsComponent from './molecules/TabsComponent'
 import { SCREEN } from '../utils/display'
 import MenuButton from './atoms/MenuButton'
+import { useLanguageRefresh } from './hooks/useLanguageRefresh'
 
 enum Tabs {
   game = "Game",

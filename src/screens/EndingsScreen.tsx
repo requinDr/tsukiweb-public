@@ -1,7 +1,7 @@
 import '../styles/endings.scss'
 import { motion } from 'framer-motion'
-import strings, { imageUrl, useLanguageRefresh } from '../utils/lang'
-import { SCREEN, useScreenAutoNavigate } from '../utils/display'
+import strings, { imageUrl } from '../utils/lang'
+import { SCREEN } from '../utils/display'
 import chalkboard from '../assets/images/chalkboard.webp'
 import { noBb } from '../utils/Bbcode'
 import { RouteEnding, endings, osiete } from '../utils/endings'
@@ -9,6 +9,8 @@ import { Tooltip } from 'react-tooltip'
 import ReactDOMServer from 'react-dom/server';
 import { playScene } from '../utils/savestates'
 import MenuButton from '../components/atoms/MenuButton'
+import { useLanguageRefresh } from '../components/hooks/useLanguageRefresh'
+import { useScreenAutoNavigate } from '../components/hooks/useScreenAutoNavigate'
 
 // settings.completedScenes.push("s521")
 const EndingsScreen = () => {

@@ -4,10 +4,12 @@ import '../styles/gallery.scss'
 import { settings } from '../utils/variables'
 import { motion } from 'framer-motion'
 import { CharacterId, GALLERY_IMAGES, GalleryImg } from '../utils/gallery'
-import strings, { imageUrl, useLanguageRefresh } from '../utils/lang'
-import { SCREEN, useScreenAutoNavigate } from '../utils/display'
+import strings, { imageUrl } from '../utils/lang'
+import { SCREEN } from '../utils/display'
 import TabsComponent from '../components/molecules/TabsComponent'
 import MenuButton from '../components/atoms/MenuButton'
+import { useLanguageRefresh } from '../components/hooks/useLanguageRefresh'
+import { useScreenAutoNavigate } from '../components/hooks/useScreenAutoNavigate'
 
 type GalleryItem = GalleryImg & {src_thumb: string, src_hd: string}
 

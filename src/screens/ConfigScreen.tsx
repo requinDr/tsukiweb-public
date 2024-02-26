@@ -1,8 +1,9 @@
 import '../styles/config.scss'
-import { SCREEN, displayMode, useScreenAutoNavigate } from '../utils/display'
+import { SCREEN, displayMode } from '../utils/display'
 import { motion } from 'framer-motion'
-import { useLanguageRefresh } from '../utils/lang'
 import ConfigLayout from '../components/ConfigLayout'
+import { useScreenAutoNavigate } from '../components/hooks/useScreenAutoNavigate'
+import { useLanguageRefresh } from '../components/hooks/useLanguageRefresh'
 
 const ConfigScreen = () => {
   useScreenAutoNavigate(SCREEN.CONFIG)

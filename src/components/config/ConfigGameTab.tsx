@@ -5,7 +5,8 @@ import { ViewRatio } from "../../types"
 import { TEXT_SPEED } from "../../utils/constants"
 import { addEventListener, deepAssign, isFullscreen, toggleFullscreen } from "../../utils/utils"
 import { FaMinus, FaPlus } from "react-icons/fa"
-import strings, { useLanguageRefresh } from "../../utils/lang"
+import strings from "../../utils/lang"
+import { useLanguageRefresh } from "../hooks/useLanguageRefresh"
 
 const ConfigGameTab = () => {
   useLanguageRefresh()

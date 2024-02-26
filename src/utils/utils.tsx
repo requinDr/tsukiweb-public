@@ -352,25 +352,3 @@ export function isIterable(obj: any): obj is Iterable<any> {
 }
 
 export function TSForceType<T>(_v: any): asserts _v is T {}
-
-//##############################################################################
-//#                                   DEBUG                                    #
-//##############################################################################
-
-export function useTraceUpdate(before: string, props: Record<string, any>) {
-  const prev = useRef(props);
-  useEffect(() => {
-    const changedProps = Object.entries(props).reduce((ps, [k, v]) => {
-      if (prev.current[k] !== v) {
-        ps[k] = [prev.current[k], v];
-      }
-      return ps;
-    }, {} as Record<string, any>);
-    if (Object.keys(changedProps).length > 0) {
-        console.debug(before, 'Changed props:', changedProps);
-      } else {
-      console.debug(before, 'No changed props');
-    }
-    prev.current = props;
-  });
-}

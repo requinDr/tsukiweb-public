@@ -1,7 +1,8 @@
 import { Fragment, useRef } from "react"
 import { KeymapKeyFilter, inGameKeymap } from "../../utils/KeyMap"
-import strings, { useLanguageRefresh } from "../../utils/lang"
+import strings from "../../utils/lang"
 import { bb } from "../../utils/Bbcode"
+import { useLanguageRefresh } from "../hooks/useLanguageRefresh"
 
 type KeyMapEntry = [string, typeof inGameKeymap[keyof typeof inGameKeymap]]
 

@@ -1,8 +1,9 @@
 import { motion } from "framer-motion"
 import '../styles/saves.scss'
 import SavesLayout from "../components/SavesLayout"
-import { SCREEN, displayMode, useScreenAutoNavigate } from "../utils/display"
-import { useLanguageRefresh } from "../utils/lang"
+import { SCREEN, displayMode } from "../utils/display"
+import { useLanguageRefresh } from "../components/hooks/useLanguageRefresh"
+import { useScreenAutoNavigate } from "../components/hooks/useScreenAutoNavigate"
 
 const LoadScreen = () => {
   useScreenAutoNavigate(SCREEN.LOAD)

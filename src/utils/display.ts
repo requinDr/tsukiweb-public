@@ -194,17 +194,6 @@ export function isViewAnyOf(...views: Array<typeof displayMode.currentView>) {
   return views.includes(displayMode.currentView)
 }
 
-export function useScreenAutoNavigate(currentScreen: SCREEN) {
-  const navigate = useNavigate()
-  useEffect(()=> {
-    displayMode.screen = currentScreen
-    observe(displayMode, 'screen', navigate,
-        { filter: (s)=> s != currentScreen })
-    return unobserve.bind(null, displayMode, 'screen', navigate) as VoidFunction
-  }, [])
-}
-
-
 //##############################################################################
 //#                                   DEBUG                                    #
 //##############################################################################

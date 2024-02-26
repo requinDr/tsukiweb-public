@@ -17,11 +17,12 @@ import { HiMenu } from 'react-icons/hi';
 import GestureHandler from '../utils/touch';
 import { toast } from 'react-toastify';
 import { useObserved } from '../utils/Observer';
-import { SCREEN, displayMode, isViewAnyOf, useScreenAutoNavigate } from '../utils/display';
+import { SCREEN, displayMode, isViewAnyOf } from '../utils/display';
 import { KeysMatching } from '../types';
-import { useLanguageRefresh } from '../utils/lang';
 import ConfigLayer from '../layers/ConfigLayer';
 import { moveBg } from '../utils/graphics';
+import { useLanguageRefresh } from '../components/hooks/useLanguageRefresh';
+import { useScreenAutoNavigate } from '../components/hooks/useScreenAutoNavigate';
 
 //##############################################################################
 //#                                USER INPUTS                                 #

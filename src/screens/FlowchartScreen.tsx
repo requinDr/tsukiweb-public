@@ -1,9 +1,11 @@
 import { motion } from "framer-motion"
 import '../styles/saves.scss'
-import { SCREEN, displayMode, useScreenAutoNavigate } from "../utils/display"
-import strings, { useLanguageRefresh } from "../utils/lang"
+import { SCREEN, displayMode } from "../utils/display"
+import strings from "../utils/lang"
 import { Flowchart } from "../components/Flowchart"
 import MenuButton from "../components/atoms/MenuButton"
+import { useLanguageRefresh } from "../components/hooks/useLanguageRefresh"
+import { useScreenAutoNavigate } from "../components/hooks/useScreenAutoNavigate"
 
 const FlowchartScreen = () => {
   useScreenAutoNavigate(SCREEN.SCENES)
