@@ -1,9 +1,10 @@
+import { Dispatch, SetStateAction } from "react"
 import styles from "../../styles/components/tabs.module.scss"
 
 type TabsProps = {
   tabs: any[],
   selected: string,
-  setSelected: React.Dispatch<React.SetStateAction<any>>,
+  setSelected: Dispatch<SetStateAction<any>>,
   textModifier?: (text: string) => string
 }
 

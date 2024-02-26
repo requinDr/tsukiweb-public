@@ -103,6 +103,11 @@ const ConfigAdvancedTab = () => {
     })
   }
 
+  const reset = () => {
+    const defaultConf = deepAssign(structuredClone(conf), defaultSettings, {extend: false})
+    setConf(defaultConf)
+  }
+
   return (
     <section>
       <ConfigButtons
@@ -174,10 +179,7 @@ const ConfigAdvancedTab = () => {
         </div>
       </ConfigItem>
 
-      <ResetBtn onClick={() => {
-        const defaultConf = deepAssign(structuredClone(conf), defaultSettings, {extend: false})
-        setConf(defaultConf)
-      }} />
+      <ResetBtn onClick={reset} />
     </section>
   )
 }

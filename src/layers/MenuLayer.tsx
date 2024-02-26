@@ -7,7 +7,7 @@ import { useObserved } from "../utils/Observer"
 import script from "../utils/script"
 import { displayMode, SCREEN } from "../utils/display"
 import strings from "../utils/lang"
-import ParticlesComponent from "../components/ParticlesComponent"
+import ParticlesComponent from "../components/molecules/ParticlesComponent"
 import Ornament from "../assets/images/ornament.webp"
 
 /**

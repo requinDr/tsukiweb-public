@@ -4,7 +4,7 @@ import tsukiLogo from "../assets/images/tsukihime-logo.webp"
 import moon from "../assets/images/moon.webp"
 import tsukiR from "../assets/images/tsukihime_blue_glass_cover.webp"
 import '../styles/title-menu.scss'
-import ParticlesComponent from '../components/ParticlesComponent'
+import ParticlesComponent from '../components/molecules/ParticlesComponent'
 import { SCREEN, displayMode, useScreenAutoNavigate } from '../utils/display'
 import { motion } from 'framer-motion'
 import { blankSaveState, getLastSave, hasSaveStates, loadSaveFiles, loadSaveState, loadScene } from '../utils/savestates'
