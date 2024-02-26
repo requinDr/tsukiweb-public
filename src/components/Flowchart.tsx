@@ -4,10 +4,9 @@ import '../styles/flowchart.scss'
 import { Graphics, LabelName, SceneName } from "../types"
 import { SCENE_ATTRS } from "../utils/constants"
 import { isScene } from "../utils/scriptUtils"
-import { GraphicsGroup } from "./GraphicsComponent"
 import { settings } from "../utils/variables"
-import { loadScene, loadSaveState, playScene } from "../utils/savestates"
-import { SCREEN, displayMode } from "../utils/display"
+import { playScene } from "../utils/savestates"
+import GraphicsGroup from "./molecules/GraphicsGroup"
 
 const SCENE_WIDTH = 27
 const SCENE_HEIGHT = 18

@@ -1,4 +1,4 @@
-import { SpritePos } from "./components/GraphicsComponent"
+import { SpritePos } from "./components/molecules/GraphicsGroup"
 
 export type PageType = 'text'|'choice'|'skip'|'phase'
 export type PageContent<T extends PageType> =

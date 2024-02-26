@@ -1,8 +1,8 @@
 import { Tooltip } from "react-tooltip"
 import { SaveState, exportSave } from "../../utils/savestates"
-import { GraphicsGroup } from "../GraphicsComponent"
 import { savePhaseTexts } from "../SavesLayout"
 import { MdDeleteOutline, MdOutlineFileDownload } from "react-icons/md"
+import GraphicsGroup from "../molecules/GraphicsGroup"
 
 type SaveDetailsProps = {
   id?: number, saveState?: SaveState, deleteSave: (id: number)=>void,

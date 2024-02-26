@@ -1,6 +1,6 @@
 import strings from "../../utils/lang"
 import { QUICK_SAVE_ID, SaveState } from "../../utils/savestates"
-import { GraphicsGroup } from "../GraphicsComponent"
+import GraphicsGroup from "../molecules/GraphicsGroup"
 import SaveSummary from "./SaveSummary"
 
 type SaveListItemProps = {
