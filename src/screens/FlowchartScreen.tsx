@@ -26,7 +26,7 @@ const FlowchartScreen = () => {
           <MenuButton to={SCREEN.TITLE}>
             {strings.back}
           </MenuButton>
-          <div>Currently WIP</div>
+          <div>WIP, use only to replay not to progress the story</div>
         </div>
 
         <Flowchart back={back}/>
