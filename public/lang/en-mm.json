@@ -160,7 +160,7 @@
     "volume-track": "Music volume",
     "volume-se": "SFX volume",
     "track-source": "Track Source",
-    "auto-mute": "Mute when switching tab (experimental)",
+    "auto-mute": "Mute when switching tab",
     "ratio": "Display ratio",
     "ratio-auto": "Auto",
     "ratio-4-3": "4:3",
