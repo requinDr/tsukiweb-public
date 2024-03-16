@@ -1,5 +1,4 @@
 import { Dispatch, useMemo, useState } from 'react'
-import { Link } from 'react-router-dom'
 import tsukiLogo from "../assets/images/tsukihime-logo.webp"
 import moon from "../assets/images/moon.webp"
 import tsukiR from "../assets/images/tsukihime_blue_glass_cover.webp"
@@ -21,6 +20,7 @@ import { toast } from 'react-toastify'
 import MenuButton from '../components/atoms/MenuButton'
 import { useLanguageRefresh } from '../components/hooks/useLanguageRefresh'
 import { useScreenAutoNavigate } from '../components/hooks/useScreenAutoNavigate'
+import TitleMenuButton from '../components/atoms/TitleMenuButton'
 
 type BeforeInstallPromptEvent = Event & {prompt: ()=>Promise<{outcome: any}>}
 
@@ -72,27 +72,28 @@ const TitleMenuScreen = () => {
     displayMode.screen = SCREEN.WINDOW
   }
 
-  const allEndingsSeen = useMemo(()=> {
-    return Object.values(endings).every(e=>e.seen)
+  const [allEndingsSeen, eclipseSeen] = useMemo(()=> {
+    const allEndingsSeen = Object.values(endings).every(e=>e.seen)
+    const eclipseSeen = settings.completedScenes.includes("eclipse")
+    return [allEndingsSeen, eclipseSeen]
   }, [settings.completedScenes])
 
   const ExtraMenu = () => (
     <>
-      <Link to={SCREEN.GALLERY} className="menu-item">
+      <TitleMenuButton to={SCREEN.GALLERY}>
         {strings.extra.gallery}
-      </Link>
-      <Link to={SCREEN.ENDINGS} className="menu-item">
+      </TitleMenuButton>
+      <TitleMenuButton to={SCREEN.ENDINGS}>
         {strings.extra.endings}
-      </Link>
-      <Link to={SCREEN.SCENES} className="menu-item">
+      </TitleMenuButton>
+      <TitleMenuButton to={SCREEN.SCENES}>
         {strings.extra.scenes}
-      </Link>
+      </TitleMenuButton>
       {allEndingsSeen &&
-      <button className={`menu-item ${settings.completedScenes.includes("eclipse") ? "" : "attention"}`}
-        onClick={playEClipse}>
+      <TitleMenuButton onClick={playEClipse}
+        attention={!eclipseSeen}>
         {strings.extra.eclipse}
-        {!settings.completedScenes.includes("eclipse") && <span> !</span>}
-      </button>
+      </TitleMenuButton>
       }
     </>
   )
@@ -132,27 +133,29 @@ const TitleMenuScreen = () => {
         {page === 0 ?
         <>
           <div className='first-row'>
-            <button className='menu-item' onClick={newGame}>
+            <TitleMenuButton onClick={newGame}>
               {strings.title.start}
-            </button>
+            </TitleMenuButton>
 
             {hasSaveStates() &&
-            <button className='menu-item' onClick={continueGame}>
+            <TitleMenuButton onClick={continueGame}>
               {strings.title.resume}
-            </button>
+            </TitleMenuButton>
             }
 
-            <Link to={SCREEN.LOAD} className="menu-item">
+            <TitleMenuButton to={SCREEN.LOAD}>
               {strings.title.load}
-            </Link>
+            </TitleMenuButton>
 
-            <Link to={SCREEN.CONFIG} className="menu-item">
+            <TitleMenuButton to={SCREEN.CONFIG}>
               {strings.title.config}
-            </Link>
+            </TitleMenuButton>
 
-            <button className='menu-item extra' onClick={()=>setPage(1)}>
+            <TitleMenuButton onClick={()=>setPage(1)}
+              className="extra"
+              attention={allEndingsSeen && !eclipseSeen}>
               {strings.title.extra} {">"}
-            </button>
+            </TitleMenuButton>
           </div>
 
           <div className='second-row'>
