@@ -266,7 +266,7 @@ const ModalInfo = ({show, setShow}: ModalInfoProps) => {
 
             <div>
               {bb(strings.title.about.data
-                .replace('$0', "[url='/config?tab=Advanced']")
+                .replace('$0', "[url='/config?tab=advanced']")
                 .replace('$1', "[/url]"))}
             </div>
           </div>
