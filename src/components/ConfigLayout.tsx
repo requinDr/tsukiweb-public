@@ -5,16 +5,16 @@ import ConfigAudioTab from './config/ConfigAudioTab'
 import ConfigAdvancedTab from '../components/config/ConfigAdvancedTab'
 import ConfigControlsTab from '../components/config/ConfigControlsTab'
 import strings from '../utils/lang'
-import TabsComponent from './molecules/TabsComponent'
+import TabsComponent, { Tab } from './molecules/TabsComponent'
 import { SCREEN } from '../utils/display'
 import MenuButton from './atoms/MenuButton'
 import { useLanguageRefresh } from './hooks/useLanguageRefresh'
 
 enum Tabs {
-  game = "Game",
-  audio = "Audio",
-  controls = "Controls",
-  advanced = "Advanced",
+  game = "game",
+  audio = "audio",
+  controls = "controls",
+  advanced = "advanced",
 }
 
 const tabComponents = {
@@ -27,24 +27,28 @@ const tabComponents = {
 type Props = {
   back: ()=>void,
   selectedTab?: Tabs,
-  setUrl?: (activeTab: string)=>void,
+  setSelectedTab?: (activeTab: string)=>void,
   page?: string,
 }
 
-const ConfigLayout = ({back, selectedTab, setUrl, page}: Props) => {
+const ConfigLayout = ({back, selectedTab, setSelectedTab, page}: Props) => {
   const [activeTab, setActiveTab] = useState(selectedTab || Tabs.game)
   useLanguageRefresh()
 
   useEffect(()=> {
     if (!Object.hasOwn(tabComponents, activeTab))
       setActiveTab(Tabs.game)
-    else if (setUrl)
-      setUrl(activeTab)
+    else if (setSelectedTab)
+    setSelectedTab(activeTab)
   }, [activeTab])
 
-  const tabs = page === SCREEN.CONFIG
-                ? Object.values(Tabs)
-                : Object.values(Tabs).filter(t => t !== Tabs.advanced)
+  const tabs: Tab[] = [
+    {label: strings.config['tab-game'], value: Tabs.game},
+    {label: strings.config['tab-audio'], value: Tabs.audio},
+    {label: strings.config['tab-controls'], value: Tabs.controls},
+  ]
+  if (page === SCREEN.CONFIG)
+    tabs.push({label: strings.config['tab-advanced'], value: Tabs.advanced})
 
   return (
     <main id="config-layout">

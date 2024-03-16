@@ -1,23 +1,27 @@
 import { Dispatch, SetStateAction } from "react"
 import styles from "../../styles/components/tabs.module.scss"
 
+export type Tab = {
+  label: string,
+  value: string
+}
+
 type TabsProps = {
-  tabs: any[],
+  tabs: Tab[],
   selected: string,
-  setSelected: Dispatch<SetStateAction<any>>,
-  textModifier?: (text: string) => string
+  setSelected: Dispatch<SetStateAction<any>>
 }
 
 /**
  * Tabs with a default style applied
  */
-const TabsComponent = ({ tabs, selected, setSelected, textModifier }: TabsProps) => (
+const TabsComponent = ({ tabs, selected, setSelected }: TabsProps) => (
   <div className={styles.tabs}>
-    {tabs.map(value =>
-      <TabBtn key={value}
-        text={textModifier ? textModifier(value) : value}
-        active={selected === value}
-        onClick={() => setSelected(value)} />
+    {tabs.map(tab =>
+      <TabBtn key={tab.value}
+        text={tab.label}
+        active={selected === tab.value}
+        onClick={() => setSelected(tab.value)} />
     )}
   </div>
 )

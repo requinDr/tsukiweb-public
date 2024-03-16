@@ -6,10 +6,11 @@ import { motion } from 'framer-motion'
 import { CharacterId, GALLERY_IMAGES, GalleryImg } from '../utils/gallery'
 import strings, { imageUrl } from '../utils/lang'
 import { SCREEN } from '../utils/display'
-import TabsComponent from '../components/molecules/TabsComponent'
+import TabsComponent, { Tab } from '../components/molecules/TabsComponent'
 import MenuButton from '../components/atoms/MenuButton'
 import { useLanguageRefresh } from '../components/hooks/useLanguageRefresh'
 import { useScreenAutoNavigate } from '../components/hooks/useScreenAutoNavigate'
+import useQueryParam from '../components/hooks/useQueryParam'
 
 type GalleryItem = GalleryImg & {src_thumb: string, src_hd: string}
 
@@ -18,13 +19,13 @@ const defaultThumbnail = imageUrl("notreg", "thumb")
 const GalleryScreen = () => {
   useScreenAutoNavigate(SCREEN.GALLERY)
   useLanguageRefresh()
-  const [selected, setSelected] = useState<CharacterId>("ark")
+  const [selectedTab, setSelectedTab] = useQueryParam<CharacterId>("tab", "ark")
   const [images, setImages] = useState<GalleryItem[]>([])
 
   useEffect(()=> {
-    let imagesTmp: any[] = GALLERY_IMAGES[selected]
+    let imagesTmp: any[] = GALLERY_IMAGES[selectedTab]
     if (imagesTmp == undefined)
-      throw Error(`unknown character ${selected}`)
+      throw Error(`unknown character ${selectedTab}`)
     
     imagesTmp = imagesTmp.map((image: GalleryImg) => {
       const name = `event/${image.img}`
@@ -38,7 +39,12 @@ const GalleryScreen = () => {
     setImages(imagesTmp)
 
     document.querySelector('.gallery-container')?.scrollTo(0, 0)
-  }, [selected])
+  }, [selectedTab])
+
+  const tabs: Tab[] = Object.keys(GALLERY_IMAGES).map(char => ({
+    label: strings.characters[char as CharacterId],
+    value: char
+  }))
 
   return (
     <motion.div
@@ -50,10 +56,10 @@ const GalleryScreen = () => {
         <main>
           <h2 className="page-title">{strings.extra.gallery}</h2>
           <TabsComponent
-            tabs={Object.keys(GALLERY_IMAGES)}
-            selected={selected}
-            setSelected={setSelected}
-            textModifier={text => strings.characters[text as CharacterId]} />
+            tabs={tabs}
+            selected={selectedTab}
+            setSelected={setSelectedTab}
+          />
 
           <Fancybox className='gallery-container'
             options={{

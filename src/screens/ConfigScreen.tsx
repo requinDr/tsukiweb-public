@@ -4,16 +4,12 @@ import { motion } from 'framer-motion'
 import ConfigLayout from '../components/ConfigLayout'
 import { useScreenAutoNavigate } from '../components/hooks/useScreenAutoNavigate'
 import { useLanguageRefresh } from '../components/hooks/useLanguageRefresh'
+import useQueryParam from '../components/hooks/useQueryParam'
 
 const ConfigScreen = () => {
   useScreenAutoNavigate(SCREEN.CONFIG)
   useLanguageRefresh()
-  const urlParams = new URLSearchParams(window.location.search)
-
-  const setUrl = (activeTab: string) => {
-    const baseUrl = window.location.origin + window.location.pathname
-    window.history.replaceState({}, "", `${baseUrl}?tab=${activeTab}`)
-  }
+  const [selectedTab, setSelectedTab] = useQueryParam("tab", "game")
 
   function back() {
     displayMode.screen = SCREEN.TITLE
@@ -27,8 +23,8 @@ const ConfigScreen = () => {
       <div className="page-content">
         <ConfigLayout
           back={back}
-          selectedTab={urlParams.get("tab") as any}
-          setUrl={setUrl}
+          selectedTab={selectedTab as any}
+          setSelectedTab={setSelectedTab}
           page={SCREEN.CONFIG} />
       </div>
     </motion.div>
