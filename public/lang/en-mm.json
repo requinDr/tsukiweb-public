@@ -18,8 +18,8 @@
       "[i]9[sup]th[/sup] day | October 29 (Fri.)",
       "[i]10[sup]th[/sup] day | October 30 (Sat.)",
       "[i]11[sup]th[/sup] day | October 1 (Sun.)",
-      "[i]12[sup]th[/sup] day | October 2 (Mon.)",
-      "[i]13[sup]th[/sup] day | October 3 (Tue.)"
+      "[i]12[sup]th[/sup] day | November 2 (Mon.)",
+      "[i]13[sup]th[/sup] day | November 3 (Tue.)"
     ],
     
     "routes": {
@@ -230,7 +230,7 @@
     "toast-load-fail": "Could not restore progress",
     "toast-autoplay-stop": "Auto-play stopped",
     "toast-ffw-stop": "Fast-Forward stopped",
-    "toast-hscene-waning": "You are about to read an H-scene. Beware of your surroundings."
+    "toast-hscene-waning": "You are about to read a scene with mature content."
   },
   "menu": {
     "graphics": "Graphics",
@@ -258,8 +258,8 @@
     "others": "Others"
   },
   "credits": [
-    {"center": ["[center][font=serif]Panning / [left=15]Takeuchi Takashi",
-                "[center][font=serif][hide]Panning / [/][left=15]Nasu Kinoko"]},
+    {"center": ["[center][font=serif]Planning / [left=15]Takeuchi Takashi",
+                "[center][font=serif][hide]Planning / [/][left=15]Nasu Kinoko"]},
     {"center": ["",
                 "[right][font=serif]Creator / Scenario Writer / Scenario Programmer /",
                 "[right][font=serif]Nasu Kinoko"]},

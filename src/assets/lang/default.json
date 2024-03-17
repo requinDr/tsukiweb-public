@@ -18,8 +18,8 @@
       "[i]9[sup]th[/sup] day|October 29 (Fri.)",
       "[i]10[sup]th[/sup] day|October 30 (Sat.)",
       "[i]11[sup]th[/sup] day|October 1 (Sun.)",
-      "[i]12[sup]th[/sup] day|October 2 (Mon.)",
-      "[i]13[sup]th[/sup] day|October 3 (Tue.)"
+      "[i]12[sup]th[/sup] day|November 2 (Mon.)",
+      "[i]13[sup]th[/sup] day|November 3 (Tue.)"
     ],
     
     "routes": {
@@ -240,7 +240,7 @@
     "toast-load-fail": "ロードは失敗しました",
     "toast-autoplay-stop": "オートモードを停止しました",
     "toast-ffw-stop": "早送りを停止しました",
-    "toast-hscene-waning": "エロのシーンを読むところです。気を付けてください。"
+    "toast-hscene-waning": "エロのシーンを読むところです。"
   },
   "menu": {
     "graphics": "グラフィック",
