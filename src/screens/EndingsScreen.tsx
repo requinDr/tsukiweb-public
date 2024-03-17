@@ -79,17 +79,19 @@ const EndingComponent = ({ending:{char, image, name, day, type}}: {ending: Route
         src={imageUrl(`event/${image}`, 'thumb')}
         alt={name} draggable={false} />
       
-      <div className="ending-name">
-        {noBb(strings.scenario.routes[char][day])}
-      </div>
-      
-      <div className="ending-bottom">
-        <div>
-          {strings.characters[char]}
+      <div className="ending-desc">
+        <div className="ending-name">
+          {noBb(strings.scenario.routes[char][day])}
         </div>
+        
+        <div className="ending-bottom">
+          <div>
+            {strings.characters[char]}
+          </div>
 
-        <div className="ending-type">
-          {type}
+          <div className="ending-type">
+            ({type})
+          </div>
         </div>
       </div>
     </div>

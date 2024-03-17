@@ -3,14 +3,14 @@
 #endings {
     main {
         display: grid;
-        grid-template-columns: 1fr 180px;
+        grid-template-columns: 1fr 220px;
         gap: 2rem;
     }
 
     .endings-list {
         @extend %menu-container;
         display: grid;
-        grid-template-columns: repeat(2, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(min(400px, 100%), 1fr));
         isolation: isolate;
         min-width: 0;
         gap: 20px;
@@ -88,17 +88,18 @@
                 aspect-ratio: 4/3;
                 background-color: #1a353f59;
             }
-            .ending-name {
-                margin: 16px;
-                font-size: 1.1em;
-            }
-            .ending-bottom {
-                position: absolute;
-                right: 8px;
-                bottom: 8px;
-                display: flex;
-                gap: 8px;
-                font-size: .9em;
+            .ending-desc {
+                    margin: 16px;
+                .ending-name {
+                    font-size: 1.2em;
+                    line-height: 1;
+                }
+                .ending-bottom {
+                    display: flex;
+                    gap: 6px;
+                    font-size: .9em;
+                    opacity: 0.5;
+                }
             }
         }
     }
@@ -147,8 +148,6 @@
 
     @media (max-width: 900px) {
         .endings-list {
-            grid-template-columns: 1fr;
-
             .ending {
                 height: 100px;
             }
