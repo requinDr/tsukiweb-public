@@ -1,5 +1,5 @@
 import { JSONObject, JSONPrimitive, RecursivePartial } from "../types"
-import { ReactElement, ReactNode, useEffect, useRef } from "react"
+import { ReactElement, ReactNode } from "react"
 
 //##############################################################################
 //#                            OBJECTS MANIPULATION                            #

@@ -1,7 +1,4 @@
-
-import { useNavigate } from "react-router-dom";
-import { notifyObservers, observe, unobserve } from "./Observer";
-import { useEffect } from "react";
+import { notifyObservers, observe } from "./Observer";
 
 export enum SCREEN {
   TITLE = "/title",

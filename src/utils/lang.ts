@@ -1,10 +1,9 @@
 import { TSForceType, deepAssign } from "./utils"
 import { defaultSettings, settings } from "./variables"
 import defaultStrings from '../assets/lang/default.json'
-import { observe, useObserver } from "./Observer"
+import { observe } from "./Observer"
 import { APP_VERSION, ASSETS_PATH, SCENE_ATTRS } from "./constants"
 import { RouteName, RouteDayName } from "../types"
-import { useReducer } from "react"
 import { closeBB } from "./Bbcode"
 const LANG_DIR = `${import.meta.env.BASE_URL}lang/`
 const LANGUAGES_LIST_URL = `${LANG_DIR}languages.json`
