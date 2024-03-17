@@ -24,7 +24,9 @@ release
 *.sln
 *.sw?
 public/CD/desktop.ini
-script-convert/*
+script-convert/full-script.txt
+script-convert/scenes
+script-convert/stralias.json
 public/.htaccess
 static
 .htaccess
