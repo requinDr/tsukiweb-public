@@ -32,6 +32,16 @@
             transition: all 1.6s;
             transition-timing-function: cubic-bezier(0.25, 0.1, 0.16, 1.0);
         }
+        .neco-arc {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: min(600px, 70vmax);
+            height: min(300px, 70vmax);
+            opacity: 0.4;
+            object-position: right;
+        }
 
         img {
             height: 100%;
@@ -71,8 +81,8 @@
 
     .menu {
         flex: 1;
-        margin-bottom: max(5vh, 1em);
-        width: min(800px, 100%);
+        margin-bottom: 6vh;
+        width: min(860px, 100%);
         font-size: 1.4em;
         z-index: 1;
 
@@ -83,7 +93,7 @@
             letter-spacing: 3px;
             flex-direction: row;
             row-gap: 6px;
-            column-gap: 2em;
+            column-gap: 2.2em;
             justify-content: center;
             align-items: flex-start;
         }
@@ -93,7 +103,7 @@
             }
         }
         .second-row {
-            margin-top: 1.2em;
+            margin-top: 1.4em;
             font-size: .7em;
         }
 
