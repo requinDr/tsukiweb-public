@@ -47,7 +47,7 @@ const EndingsScreen = () => {
                     src={chalkboard}
                     alt={`Bad Ending ${ending.scene}`}
                     draggable={false}
-                    onClick={() => playScene(ending.scene)}
+                    onClick={() => playScene(ending.scene, false)}
                     data-tooltip-id="osiete"
                     data-tooltip-html={ReactDOMServer.renderToStaticMarkup(
                     <div>
