@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react"
 import { addEventListener, isFullscreen, toggleFullscreen } from "../utils/utils"
 import { MdFastForward, MdFullscreen, MdFullscreenExit, MdOutlineVolumeOff, MdOutlineVolumeUp, MdPlayArrow } from "react-icons/md"
-import { gameContext, settings } from "../utils/variables"
+import { gameContext, gameSession, settings } from "../utils/variables"
 import { quickLoad, quickSave } from "../utils/savestates"
 import { useObserved } from "../utils/Observer"
 import script from "../utils/script"
@@ -103,12 +103,14 @@ const MenuLayer = () => {
             <button onClick={historyMode} className="layer-btn">
               {strings.menu["history"]}
             </button>
-            <button onClick={saveMode} className="layer-btn">
-              {strings.menu["save"]}
-            </button>
-            <button onClick={loadMode} className="layer-btn">
-              {strings.menu["load"]}
-            </button>
+            { gameSession.continueScript && <>
+              <button onClick={saveMode} className="layer-btn">
+                {strings.menu["save"]}
+              </button>
+              <button onClick={loadMode} className="layer-btn">
+                {strings.menu["load"]}
+              </button>
+            </>}
             <button onClick={configMode} className="layer-btn">
               {strings.menu["config"]}
             </button>
@@ -118,12 +120,14 @@ const MenuLayer = () => {
           </div>
 
           <div className="action-btns">
-            <button onClick={quickSave} className="quick">
-              {strings.menu["q-save"]}
-            </button>
-            <button onClick={quickLoad} className="quick">
-              {strings.menu["q-load"]}
-            </button>
+            { gameSession.continueScript && <>
+              <button onClick={quickSave} className="quick">
+                {strings.menu["q-save"]}
+              </button>
+              <button onClick={quickLoad} className="quick">
+                {strings.menu["q-load"]}
+              </button>
+            </>}
             <button onClick={toggleVolume} aria-label="mute/unmute">
               {mute ? <MdOutlineVolumeOff /> : <MdOutlineVolumeUp />}
             </button>

@@ -8,7 +8,7 @@ import history from "./history"
 import { SCENE_ATTRS } from "./constants"
 import Timer, { commands as timerCommands } from "./timer"
 import { checkIfCondition, creditsScript, extractInstructions, fetchFBlock, fetchScene, getSceneTitle, isScene, isTextLine } from "./scriptUtils"
-import { commands as variableCommands, gameContext, settings } from "./variables"
+import { commands as variableCommands, gameContext, settings, gameSession } from "./variables"
 import { toast } from "react-toastify"
 import { SCREEN, displayMode } from "./display"
 import strings, { phaseTexts } from "./lang"
@@ -387,7 +387,9 @@ async function loadLabel(label: LabelName|"") {
 
 function onSceneEnd(label = gameContext.label, nextLabel:LabelName|undefined=undefined) {
   console.log(`ending ${label}`)
-  if (isScene(label)) {
+  if (!gameSession.continueScript) {
+    window.history.back(); // return to previous screen
+  } else if (isScene(label)) {
     // add scene to completed scenes
     if (!settings.completedScenes.includes(label))
       settings.completedScenes.push(label)

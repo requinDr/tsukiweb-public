@@ -130,18 +130,19 @@ const [progress, resetProgress, defaultProgress] = resettable(deepFreeze({
   },
   flags: new Array<string>(),
 }))
-const [temp, resetTemp] = resettable({ // temporaty variables (do not need to be saved)
+const [gameSession, resetGameSession] = resettable({ // temporaty variables (not to be saved saved)
   rockending: -1, // written, but never read in the script.
   flushcount: 0,  //used in for loops in the script
+  continueScript: true, // false if the game must go back to the previous menu once the scene ends
 })
 
-export { gameContext, defaultGameContext, progress, defaultProgress, temp }
+export { gameContext, defaultGameContext, progress, defaultProgress, gameSession }
 window.addEventListener('load', ()=> {
   observe(displayMode, 'screen', (screen)=> {
     if (screen != SCREEN.WINDOW) {
       resetContext()
       resetProgress()
-      resetTemp()
+      resetGameSession()
     }
   })
 })
@@ -248,8 +249,8 @@ function getVarLocation(fullName: VarName): [any, string] {
     throw Error(`Ill-formed variable name in 'mov' command: "${fullName}"`)
   let name = fullName.substring(1)
   let parent
-  if (name in temp) {
-    parent = temp
+  if (name in gameSession) {
+    parent = gameSession
   }
   else if (name.startsWith("phase")) {
     parent = phaseProxy
@@ -328,4 +329,4 @@ declare global {
 window.settings = settings
 window.progress = progress
 window.g = window.gameContext = gameContext
-window.temp_vars = temp
+window.session_vars = gameSession

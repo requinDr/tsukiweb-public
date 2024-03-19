@@ -1,5 +1,5 @@
 import { TSForceType, deepAssign, jsonDiff, requestJSONs, textFileUserDownload } from "./utils";
-import { defaultGameContext, defaultProgress, gameContext, progress, settings } from "./variables";
+import { defaultGameContext, defaultProgress, gameContext, gameSession, progress, settings } from "./variables";
 import history from './history';
 import { toast } from "react-toastify";
 import { FaSave } from "react-icons/fa"
@@ -335,9 +335,10 @@ export async function loadSaveFiles(saves?: string[] | FileList | undefined | nu
   return true
 }
 
-export const playScene = (scene: LabelName) => {
+export function playScene(scene: LabelName, continueScript: boolean = true) {
   if (settings.completedScenes.includes(scene)) {
     loadSaveState(loadScene(scene))
+    gameSession.continueScript = continueScript
     displayMode.screen = SCREEN.WINDOW
   }
 }

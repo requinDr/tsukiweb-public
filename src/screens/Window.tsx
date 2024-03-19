@@ -8,7 +8,7 @@ import TextLayer from '../layers/TextLayer';
 import GraphicsLayer from '../layers/GraphicsLayer';
 import KeyMap, { inGameKeymap } from '../utils/KeyMap';
 import script from '../utils/script';
-import { gameContext } from '../utils/variables';
+import { gameContext, gameSession } from '../utils/variables';
 import { quickSave, quickLoad, loadSaveState } from "../utils/savestates";
 import SkipLayer from '../layers/SkipLayer';
 import SavesLayer from '../layers/SavesLayer';
@@ -36,11 +36,11 @@ const keyMap = new KeyMap(inGameKeymap, (action, evt, ...args)=> {
     case "page_nav" : page_nav(args[0], evt); break
     case "history"  : toggleView('history'); break
     case "graphics" : toggleView('graphics'); break
-    case "load"     : toggleView('load'); break
-    case "save"     : toggleView('save'); break
+    case "load"     : gameSession.continueScript && toggleView('load'); break
+    case "save"     : gameSession.continueScript && toggleView('save'); break
     case "config"   : toggleView('config'); break
-    case "q_save"   : quickSave(); break
-    case "q_load"   : quickLoad(); break
+    case "q_save"   : gameSession.continueScript && quickSave(); break
+    case "q_load"   : gameSession.continueScript && quickLoad(); break
     case "bg_move"  : moveBg(args[0]); break
   }
 })
