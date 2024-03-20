@@ -125,7 +125,12 @@ const ConfigAdvancedTab = () => {
       <ConfigButtons
         title={strings.config.language}
         desc={strings["translation-desc"] &&
-          <>{strings["translation-desc"]} <a href={strings["translation-url"]} target="_blank"><RxExternalLink /></a></>}
+          <>
+            {strings["translation-desc"]} <a href={strings["translation-url"]} target="_blank">
+              <RxExternalLink />
+            </a>
+          </>
+        }
         btns={[
           ...Object.entries(languages).map(([id, {"display-name": dispName}])=> {
             return {text: dispName, value: id}
