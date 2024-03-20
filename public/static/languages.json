@@ -5,11 +5,12 @@
   "en-mm": {
     "display-name": "English",
     "authors": "mirror moon",
-    "lang-file": "en-mm.json"
+    "dir": "en-mm"
   },
   "it-riffour": {
     "display-name": "Italiano",
     "authors": "Riffour",
-    "lang-file": "it-riffour.json"
+    "dir": "it-riffour",
+    "fallback": "en-mm"
   }
 }
