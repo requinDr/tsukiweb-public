@@ -5,9 +5,9 @@ import { deepAssign, jsonDiff, requestJSONs, textFileUserDownload } from "../../
 import { SaveState, clearSaveStates, listSaveStates, restoreSaveStates } from "../../utils/savestates"
 import strings, { addLang, languages } from "../../utils/lang"
 import { RecursivePartial } from "../../types"
-import { RxExternalLink } from 'react-icons/rx'
 import { toast } from "react-toastify"
 import { useLanguageRefresh } from "../hooks/useLanguageRefresh"
+import { MdOpenInNew } from "react-icons/md"
 
 function twoDigits(n: number) {
   return n.toString().padStart(2, '0')
@@ -127,7 +127,7 @@ const ConfigAdvancedTab = () => {
         desc={strings["translation-desc"] &&
           <>
             {strings["translation-desc"]} <a href={strings["translation-url"]} target="_blank">
-              <RxExternalLink />
+              <MdOpenInNew />
             </a>
           </>
         }
