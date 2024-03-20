@@ -6,5 +6,10 @@
     "display-name": "English",
     "authors": "mirror moon",
     "lang-file": "en-mm.json"
+  },
+  "it-riffour": {
+    "display-name": "Italian",
+    "authors": "Riffour",
+    "lang-file": "it-riffour.json"
   }
 }

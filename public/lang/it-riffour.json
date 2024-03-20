@@ -1,0 +1,317 @@
+{
+  "locale": "it-IT",
+  "translation-name": "Riffour",
+  "translation-desc": "Italian translation by riffour.",
+  "translation-url": "https://riffourtranslations.wordpress.com/2018/11/30/tsukihime-traduzione-italiana/",
+
+  "scenario": {
+    "scenes-dir": "./italian/scenes",
+    "days": [
+      "[i]1[sup]°[/sup] giorno | 21 ottobre (GIO)",
+      "[i]2[sup]°[/sup] giorno | 22 ottobre (VEN)",
+      "[i]3[sup]°[/sup] giorno | 23 ottobre (SAB)",
+      "[i]4[sup]°[/sup] giorno | 24 ottobre (DOM)",
+      "[i]5[sup]°[/sup] giorno | 25 ottobre (LUN)",
+      "[i]6[sup]°[/sup] giorno | 26 ottobre (MAR)",
+      "[i]7[sup]°[/sup] giorno | 27 ottobre (MER)",
+      "[i]8[sup]°[/sup] giorno | 28 ottobre (GIO)",
+      "[i]9[sup]°[/sup] giorno | 29 ottobre (VEN)",
+      "[i]10[sup]°[/sup] giorno | 30 ottobre (SAB)",
+      "[i]11[sup]°[/sup] giorno | 31 ottobre (DOM)",
+      "[i]12[sup]°[/sup] giorno | 1 novembre (LUN)",
+      "[i]13[sup]°[/sup] giorno | 2 novembre (MAR)"
+    ],
+    
+    "routes": {
+      "aki" : {
+        "03a": "[b][i]3 / Impulso d'Inversione III",
+        "03b": "[b][i]3 / Oscuro Segno di Bacio",
+        "04a": "[b][i]4 / Cicatrice Oscura I",
+        "05a": "[b][i]5 / Sogno Tranquillo",
+        "06a": "[b][i]6 / Sogno Profondo",
+        "07a": "[b][i]7 / Cicatrice Profonda II",
+        "08a": "[b][i]8 / Sogno Pomeridiano",
+        "09a": "[b][i]9 / Demone Succhiasangue",
+        "10a": "[b][i]10 / Notte Soffocante",
+        "11a": "[b][i]11 / Telescopio",
+        "12a": "[b][i]12 / Un Finale",
+        "13a": "[b][i]Sonnellino Pomeridiano",
+        "13b": "[b][i]Cannaiola Lontana"
+      },
+      "ark": {
+        "01a": "[b][i]1 / Impulso d'Inversione I",
+        "02a": "[b][i]2 / Impulso d'Inversione II",
+        "03a": "[b][i]3 / La Bestia Nera I",
+        "04a": "[b][i]4 / La Bestia Nera II",
+        "05a": "[b][i]5 / Marchio Blu del Peccato",
+        "06a": "[b][i]6 / Ochi della Percezione della Morte I",
+        "07a": "[b][i]7 / Ochi della Percezione della Morte II",
+        "08a": "[b][i]8 / Morte",
+        "09a": "[b][i]9 / Luna Rosso Cremisi I",
+        "10a": "[b][i]10 / Luna Rosso Cremisi II",
+        "11a": "[b][i]11 / Notte Selvaggia",
+        "11b": "[b][i]Crema",
+        "12a": "[b][i]12 / Il Mondo della Luna",
+        "13a": "[b][i]Principessa della Luna",
+        "13b": "[b][i]Luna all'Alba"
+      },
+      "cel": {
+        "05a": "[b][i]5 / Residuo Rosso",
+        "06a": "[b][i]6 / Arco nel Cielo I",
+        "07a": "[b][i]7 / Arco nel Cielo II",
+        "08a": "[b][i]8 / (Morte)",
+        "09a": "[b][i]9 / Guscio Abbandonato di Cicala",
+        "09b": "[b][i]9 / Kurayamitsuki",
+        "10a": "[b][i]10 / Residuo Rosso II",
+        "11a": "[b][i]11 / Miraggio (I)",
+        "11b": "[b][i]11 / Insomnia",
+        "12a": "[b][i]12 / Pietra Infinita",
+        "13a": "[b][i]Azzuro Cielo",
+        "13b": "[b][i]Sole"
+      },
+      "his": {
+        "04a": "[b][i]4 / Giardino d'Infanzia",
+        "05a": "[b][i]5 / Killer I",
+        "06a": "[b][i]6 / Killer II",
+        "07a": "[b][i]7 / Graffio Trasparente",
+        "07b": "[b][i]7 / Shikiller",
+        "08a": "[b][i]8 / \"Morte\"",
+        "09a": "[b][i]9 / Corpo Incandescente I",
+        "10a": "[b][i]10 / Corpo Incandescente II",
+        "11a": "[b][i]11 / Corpo Incandescente III",
+        "12a": "[b][i]12 / Sogno a Occhi Aperti",
+        "13a": "[b][i]13 / Bozzolo Dorato",
+        "14a": "[b][i]Luna di Mezzogiorno",
+        "14b": "[b][i]Sogni di Sole"
+      },
+      "koha": {
+        "05a": "[b][i]5 / Caino I",
+        "06a": "[b][i]6 / Caino II",
+        "06b": "[b][i]6 / Visione Futura, Morte Futura",
+        "07a": "[b][i]7 / Male ad Ogni Angolo I",
+        "08a": "[b][i]8 / Male ad Ogni Angolo II",
+        "09a": "[b][i]9 / Origami",
+        "10a": "[b][i]10 / Ciocche di Capelli",
+        "11a": "[b][i]11 / Nanaya",
+        "12a": "[b][i]SOGNI DI SOLE"
+      },
+      "others": {
+        "pro": "[b][i]un prologo",
+        "epi": "[i]un epilogo"
+      }
+    },
+
+    "scenes": {
+      "openning": {"title": "[b][i]Prologue - Glass Moon"},
+      "eclipse": {"title": "[b][i]Epilogue"},
+      "ending": {"title": "[b][i]Credits"}
+    },
+
+    "dead-end": "Dead end",
+    "osiete": "Ciel's lesson"
+  },
+  "images": {
+    "redirect-ids": {
+      "en-mm": {
+        "thumb": "./image_thumb/$.webp",
+        "sd":"./italian/image/$.webp",
+        "hd": "./italian/image_x2/$.webp"
+      }
+    },
+    "redirected-images": {
+      "tachi/osiete": "it-riffour"
+    }
+  },
+  "disclaimer": [
+    "This is a web version of [i]Tsukihime[/i], a visual novel published on 2000 by Type-Moon.",
+    "The game contains adult content and is intended for mature audiences only."
+  ],
+  "title": {
+    "start": "Nuova Partita",
+    "resume": "Riprendi",
+    "load": "Carica",
+    "config": "Configurazione",
+    "extra": "Extra",
+    "about": {
+      "port": "This is a web version of [i]Tsukihime[/i], a visual novel published on 2000 by Type-Moon.",
+      "project": "The project is available on $0GitHub$1. Add a star if you like it! Contributions are welcome.",
+      "feedback": "Send your feedback or report a bug $0here$1.",
+      "data": "No data collected, everything is stored in your browser. Manage your data $0here$1.",
+      "remake": "Consider buying the remake $0Tsukihime - A piece of blue glass moon$1.",
+      "close": "close"
+    },
+    "install": "Install"
+  },
+  "extra": {
+    "gallery": "Galleria",
+    "endings": "Lista dei Finali",
+    "scenes": "Scenes",
+    "eclipse": "Eclipse"
+  },
+  "config": {
+    "on": "On",
+    "off": "Off",
+    "reset": "Reset",
+    "tab-game": "Game",
+    "tab-audio": "Audio",
+    "tab-controls": "controls",
+    "tab-advanced": "Advanced",
+    "volume-master": "General volume",
+    "volume-track": "Music volume",
+    "volume-se": "SFX volume",
+    "track-source": "Track Source",
+    "auto-mute": "Mute when switching tab",
+    "ratio": "Display ratio",
+    "ratio-auto": "Auto",
+    "ratio-4-3": "4:3",
+    "ratio-16-9": "16:9",
+    "text-speed": "Text display speed",
+    "text-speed-low": "Slow",
+    "text-speed-med": "Medium",
+    "text-speed-high": "Fast",
+    "text-speed-instant": "Instant",
+    "auto-play-delay-text": "Auto-play text delay: $0s",
+    "auto-play-delay-page": "Auto-play page delay: $0s",
+    "adult-title": "Adult",
+    "adult-blur": "Blur thumbnails",
+    "adult-warn": "Warn me when I enter an H scene",
+    "quality": "Quality",
+    "quality-sd": "640\u00D7480",
+    "quality-hd": "1280\u00D7960",
+    "fullscreen": "Fullscreen",
+    "language": "Language",
+    "data": "Data storage",
+    "data-export": "Export",
+    "data-import": "Import",
+    "data-erase": "Erase",
+    "data-erase-warning": "This will delete all saves, reset all settings and progress. Are you sure?",
+    "data-erase-confirm": "All data have been deleted. If you leave this website without making any change to the settings and without starting a new game, no data will remain stored on your computer",
+    "controls": {
+      "next": "Next",
+      "history": "Show/hide History",
+      "back": "Close current view / Display menu",
+      "bg_move": "Move background image",
+      "auto_play" : "Auto-play",
+      "page_nav": "Navigate to next / previous page",
+      "load": "Open load panel",
+      "save": "Open save panel",
+      "q_save": "Quick-save",
+      "q_load": "Quick-load",
+      "config": "Open config panel",
+      "_hold": "[i](Hold)"
+    }
+  },
+  "endings": {
+    "normal": "Normal",
+    "good": "Good",
+    "true": "True",
+    "osiete": "Teach-me, Ciel-sensei"
+  },
+  "saves": {
+    "title-load": "Load",
+    "title-save": "Save",
+    "create": "Create",
+    "export": "Export",
+    "delete": "Delete",
+    "delete-warning": "Are you sure you want to delete this save ?",
+    "overwrite-warning": "Are you sure you want to overwrite this save?",
+    "quick-save": "Quick Save"
+  },
+  "game": {
+    "skip-named": [
+      "You have already seen the scene",
+      "Do you want to skip it?"
+    ],
+    "skip-unnamed": "You have already seen this scene. Do you want to skip it?",
+    "toast-qsave": "Progress has been saved",
+    "toast-qload": "Progress restored",
+    "toast-load": "Progress restored",
+    "toast-save-fail": "Could not save progress",
+    "toast-load-fail": "Could not restore progress",
+    "toast-autoplay-stop": "Auto-play stopped",
+    "toast-ffw-stop": "Fast-Forward stopped",
+    "toast-hscene-waning": "You are about to read a scene with mature content."
+  },
+  "menu": {
+    "graphics": "Graphics",
+    "history": "History",
+    "save": "Save",
+    "load": "Load",
+    "config": "Config",
+    "auto-play": "Auto-Play",
+    "ffw": "Fast forward",
+    "title": "Title",
+    "q-save": "Q. save",
+    "q-load": "Q. load"
+  },
+  "history": {
+    "load": "Load",
+    "close": "Close",
+    "skipped": "Skipped scene $0."
+  },
+  "characters": {
+    "aki": "Akiha",
+    "ark": "Arcueid",
+    "cel": "Ciel",
+    "his": "Hisui",
+    "koha": "Kohaku",
+    "others": "Others"
+  },
+  "credits": [
+    {"center": ["[center][font=serif]Planning / [left=15]Takeuchi Takashi",
+                "[center][font=serif][hide]Planning / [/][left=15]Nasu Kinoko"]},
+    {"center": ["",
+                "[right][font=serif]Creatore / Scenario / Programmazione Scenario /",
+                "[right][font=serif]Nasu Kinoko"]},
+    {"bottom": ["[right][font=serif]Assistente Programmazione Scenario/[hide]OKSG",
+                "[right][font=serif]OKSG"]},
+    {"center": ["",
+                "[right][font=serif]Character Design / Artwork / CG /",
+                "[right][font=serif]Takeuchi Takashi"]},
+    {"bottom": ["[right][font=serif]Assistente CG / [hide]Fumicchi",
+                "[right][font=serif]Fumicchi"]},
+    {"center": ["[center][font=serif]Sfondi / [left=15]",
+                "[center][font=serif][hide]Sfondi / [/][left=15]Kuki Mamoru",
+                "[center][font=serif][hide]Sfondi / [/][left=15]Takeuchi Takashi"]},
+    {"top": ["[left][font=serif]Programmazione / Fotografia /",
+             "[center][font=serif]Seibei"]},
+    {"top": ["[left][font=serif]Compositore / Arrangiamento / Effeti Sonori",
+             "[center][font=serif]KEITA HAGA"]},
+    {"bottom": ["[right][font=serif]Ringraziamenti Speciali / [left=8/]",
+                "[right][font=serif][left=8]Takahashi Naoki",
+                "[right][font=serif][left=8]B46"]},
+    {"bottom": ["[right][font=serif]Ringraziamenti Speciali / [left=8/]",
+                "[right][font=serif][left=8]OKSG",
+                "[right][font=serif][left=8]SUBTLE",
+                "[right][font=serif][left=8]Kirihara Kojima",
+                "[right][font=serif][left=8]Hayashi Youko",
+                "[right][font=serif][size=80%](Titoli Omessi)"]},
+    {"bottom": ["[right][font=serif]Playtesters /[left=3/][left=12]Uetsugi Hiroyoshi",
+                "[right][font=serif][left=12]EDF Sakata",
+                "[right][font=serif][left=12]K-1",
+                "[right][font=serif][left=12]Shiten",
+                "[right][font=serif][left=12]Derocchi",
+                "[right][font=serif][left=12]NOCKy"]},
+    {"bottom": ["[right][font=serif]Playtesters /[left=3/][left=12]B46",
+                "[right][font=serif][left=12]Mikage",
+                "[right][font=serif][left=12]Yamaguchi Tarou",
+                "[right][font=serif][left=12]Yamazaki Seiji",
+                "",""]},
+    {"bottom": ["[right][font=serif]Playtesters /[left=15]",
+                "[right][font=serif]TUTTO LO STAFF DI TYPE-MOON",
+                "","","",""]},
+    {"center": "[center][font=serif]Direttore Creativo /[left=3/]Nasu Kinoko"},
+    {"center": "[center][font=serif]Direttore di Produzione /[left=3/]Takeuchi Takashi"},
+    {"center": "[center][font=serif][left=5/]Prodotto da /[left=3/]TYPE-MOON"},
+
+    {"center": ["","","",
+    "[center][font=serif][left=12]Traduzione Italiana /[/][left=8]Riffour"], "delay":4300},
+
+    {"center":"[center][font=serif]Grazie per aver giocato", "delay":4300},
+    {"bottom": "[right][font=serif][noline][color=black][copy/] 2000 TYPE-MOON All right reserved.", "delay": 21500, "bg": "#ffffff"}
+  ],
+  "yes": "Yes",
+  "no": "No",
+  "ok": "Ok",
+  "back": "Back"
+}
