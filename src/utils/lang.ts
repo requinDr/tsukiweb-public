@@ -15,6 +15,7 @@ const LANGUAGES_LIST_URL = `${LANG_DIR}languages.json`
 export type LangCode = string
 
 type LangDesc = {
+  "locale": string
   "display-name": string
   "lang-file"?: string
   fallback?: LangCode
@@ -31,21 +32,25 @@ type TextImage = {
   { bottom: string|string[], top?: never, center?: never }
 )
 
-export type LangFile = typeof defaultStrings & {
+export type LangGameFile = typeof defaultStrings & {
   scenario: {
     days: string[],
     routes: Record<RouteName, Record<RouteDayName, string>>,
     scenes: typeof SCENE_ATTRS.scenes
   },
+  credits: (TextImage & {delay?: number})[]
+}
+
+export type LangFile = LangGameFile & typeof defaultStrings & {
   images: {
     "redirect-ids": Record<string, ImageRedirect<`${string}\$${string}`>>,
     "redirected-images": Record<string, string|ImageRedirect<string>>,
     "words": Record<string, TextImage>
   },
-  credits: (TextImage & {delay?: number})[]
 }
 
 let langDesc: LangDesc = {
+  "locale": "",
   "display-name": ""
 }
 export const languages: Record<LangCode, LangDesc> = { }

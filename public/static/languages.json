@@ -1,13 +1,16 @@
 {
   "jp": {
+    "locale": "ja-JP",
     "display-name": "日本語"
   },
   "en-mm": {
+    "locale": "en-US",
     "display-name": "English",
     "authors": "mirror moon",
     "dir": "en-mm"
   },
   "it-riffour": {
+    "locale": "it-IT",
     "display-name": "Italiano",
     "authors": "Riffour",
     "dir": "it-riffour",
