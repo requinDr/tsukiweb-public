@@ -1,7 +1,10 @@
 {
-  "translation-name": "mirror moon",
-  "translation-desc": "English translation by mirror moon.",
-  "translation-url": "http://mirrormoon.org/projects/complete/tsukihime/",
+  "translation": {
+    "name": "mirror moon",
+    "desc": "English translation by mirror moon.",
+    "url": "http://mirrormoon.org/projects/complete/tsukihime/",
+    "vndb": "https://vndb.org/r341"
+  }, 
   
   "images": {
     "redirect-ids": {

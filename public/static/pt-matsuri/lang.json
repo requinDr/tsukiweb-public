@@ -1,21 +1,21 @@
 {
   "translation": {
-    "name": "Riffour",
-    "desc": "Italian translation by riffour.",
-    "url": "https://riffourtranslations.wordpress.com/2018/11/30/tsukihime-traduzione-italiana/",
-    "vndb": "https://vndb.org/r68615"
+    "name": "Matsuri Fansub",
+    "desc": "Portuguese translation by Matsuri Fansub",
+    "url": "https://matsurifansub.blogspot.com/p/blog-page.html",
+    "vndb": "https://vndb.org/r46958"
   },
-
+  
   "images": {
     "redirect-ids": {
-      "it-riffour": {
+      "en-mm": {
         "thumb": 0,
         "sd":"./image/$.webp",
         "hd": "./image_x2/$.webp"
       }
     },
     "redirected-images": {
-      "tachi/osiete": "it-riffour"
+      "tachi/osiete": "en-mm"
     }
   },
   "disclaimer": [
@@ -23,10 +23,10 @@
     "The game contains adult content and is intended for mature audiences only."
   ],
   "title": {
-    "start": "Nuova Partita",
-    "resume": "Riprendi",
-    "load": "Carica",
-    "config": "Configurazione",
+    "start": "New Game",
+    "resume": "Continue",
+    "load": "Load",
+    "config": "Config",
     "extra": "Extra",
     "about": {
       "port": "This is a web version of [i]Tsukihime[/i], a visual novel published on 2000 by Type-Moon.",
@@ -39,8 +39,8 @@
     "install": "Install"
   },
   "extra": {
-    "gallery": "Galleria",
-    "endings": "Lista dei Finali",
+    "gallery": "Gallery",
+    "endings": "Endings",
     "scenes": "Scenes",
     "eclipse": "Eclipse"
   },
