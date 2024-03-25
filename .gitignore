@@ -28,6 +28,6 @@ script-convert/full-script.txt
 script-convert/scenes
 script-convert/stralias.json
 public/.htaccess
-static/*
-!static/*/*.json
+public/static/*
+!public/static/*/*.json
 .htaccess
