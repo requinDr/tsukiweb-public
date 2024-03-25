@@ -23,10 +23,10 @@
     "The game contains adult content and is intended for mature audiences only."
   ],
   "title": {
-    "start": "New Game",
+    "start": "Começar jogo",
     "resume": "Continue",
-    "load": "Load",
-    "config": "Config",
+    "load": "Carregar Jogo",
+    "config": "Opções",
     "extra": "Extra",
     "about": {
       "port": "This is a web version of [i]Tsukihime[/i], a visual novel published on 2000 by Type-Moon.",
@@ -39,8 +39,8 @@
     "install": "Install"
   },
   "extra": {
-    "gallery": "Gallery",
-    "endings": "Endings",
+    "gallery": "Galeria de Imagens",
+    "endings": "Lista de Finais",
     "scenes": "Scenes",
     "eclipse": "Eclipse"
   },
@@ -133,7 +133,7 @@
     "history": "History",
     "save": "Save",
     "load": "Load",
-    "config": "Config",
+    "config": "Opções",
     "auto-play": "Auto-Play",
     "ffw": "Fast forward",
     "title": "Title",
@@ -156,5 +156,5 @@
   "yes": "Yes",
   "no": "No",
   "ok": "Ok",
-  "back": "Back"
+  "back": "Voltar"
 }
