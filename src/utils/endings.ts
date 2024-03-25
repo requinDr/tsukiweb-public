@@ -1,7 +1,7 @@
 import { CharId, PartialRecord, RouteDayName, SceneName } from "../types"
 import { SCENE_ATTRS } from "./constants"
-import strings from "./lang"
-import { settings } from "./variables"
+import { strings } from "../translation/lang"
+import { settings } from "./settings"
 
 type EndType = "normal"|"true"|"good"|"osiete"
 

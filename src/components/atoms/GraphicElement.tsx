@@ -1,9 +1,9 @@
 import { DivProps } from "../../types";
 import { bb } from "../../utils/Bbcode";
 import { findImageObjectByName } from "../../utils/gallery";
-import { imageUrl } from "../../utils/lang";
+import { imageSrc } from "../../translation/assets";
 import { splitFirst } from "../../utils/utils";
-import { settings } from "../../utils/variables";
+import { settings } from "../../utils/settings";
 import { SpritePos } from "../molecules/GraphicsGroup";
 
 type Props = {
@@ -31,7 +31,7 @@ const GraphicElement = ({ pos, image, resolution = settings.resolution, lazy = f
       ...attrs,
     };
   } else {
-    const imgUrl = imageUrl(image, resolution)
+    const imgUrl = imageSrc(image, resolution)
     const alt = `[[sprite:${image}]]`
     const blur = findImageObjectByName(image)?.sensitive && settings.blurThumbnails
     imageElement = (

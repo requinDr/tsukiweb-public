@@ -1,6 +1,7 @@
 import { PageContent } from "../types"
 import { preprocessText, resettable } from "./utils"
-import { settings, gameContext } from "./variables"
+import { gameContext } from "./variables"
+import { settings } from "./settings"
 import history from "../utils/history"
 import { icons } from "../layers/TextLayer"
 

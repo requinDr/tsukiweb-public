@@ -1,9 +1,9 @@
 import { Dispatch, useState } from "react"
 import { MdTranslate } from "react-icons/md"
-import strings, { languages } from "../../utils/lang"
+import { strings, languages } from "../../translation/lang"
 import MenuButton from "../atoms/MenuButton"
 import Modal from "../atoms/Modal"
-import { settings } from "../../utils/variables"
+import { settings } from "../../utils/settings"
 import { deepAssign } from "../../utils/utils"
 
 const TranslationSwitch = () => {

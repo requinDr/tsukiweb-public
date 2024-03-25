@@ -1,6 +1,6 @@
 import { useReducer } from "react";
 import { useObserver } from "../../utils/Observer";
-import { strings } from "../../utils/lang";
+import { strings } from "../../translation/lang";
 
 /**
  * To use in components.
@@ -8,5 +8,5 @@ import { strings } from "../../utils/lang";
  */
 export function useLanguageRefresh() {
   const [_updateNum, forceUpdate] = useReducer(x => (x + 1) % 100, 0);
-  useObserver(forceUpdate, strings, 'translation-name')
+  useObserver(forceUpdate, strings, 'id')
 }

@@ -1,5 +1,6 @@
 import { TSForceType, deepAssign, jsonDiff, requestJSONs, textFileUserDownload } from "./utils";
-import { defaultGameContext, defaultProgress, gameContext, gameSession, progress, settings } from "./variables";
+import { defaultGameContext, defaultProgress, gameContext, gameSession, progress, } from "./variables";
+import { settings } from "./settings"
 import history from './history';
 import { toast } from "react-toastify";
 import { FaSave } from "react-icons/fa"
@@ -7,12 +8,13 @@ import { notifyObservers } from "./Observer";
 import { SAVE_EXT } from "./constants";
 import { LabelName, PageContent, PageType, RecursivePartial } from "../types";
 import { SCREEN, displayMode } from "./display";
+import { StoredJSON } from "./storage";
 
 //##############################################################################
 //#                                 SAVESTATES                                 #
 //##############################################################################
 
-const STORAGE_KEY = "savestates"
+const savesStorage = new StoredJSON<Iterable<[SaveStateId, SaveState]>>("savestates", false)
 
 export const QUICK_SAVE_ID: SaveStateId = 0
 
@@ -32,17 +34,16 @@ const saveStates = new Map<SaveStateId, SaveState>()
 const listeners = new Array<VoidFunction>()
 
 {
-  const restored = localStorage.getItem(STORAGE_KEY)
+  const restored = savesStorage.get()
   if (restored)
-    restoreSaveStates(JSON.parse(restored))
+    restoreSaveStates(restored)
 }
 
 //________________________________Local storage_________________________________
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 function updateLocalStorage() {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(
-    Array.from(saveStates.entries())))
+  savesStorage.set(Array.from(saveStates.entries()))
 }
 
 /**

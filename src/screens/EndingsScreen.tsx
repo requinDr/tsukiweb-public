@@ -1,6 +1,7 @@
 import '../styles/endings.scss'
 import { motion } from 'framer-motion'
-import strings, { imageUrl } from '../utils/lang'
+import { strings } from '../translation/lang'
+import { imageSrc } from '../translation/assets'
 import { SCREEN } from '../utils/display'
 import chalkboard from '../assets/images/chalkboard.webp'
 import { noBb } from '../utils/Bbcode'
@@ -76,7 +77,7 @@ const EndingComponent = ({ending:{char, image, name, day, type}}: {ending: Route
   return (
     <div className={`ending ${char}`}>
       <img className="ending-img"
-        src={imageUrl(`event/${image}`, 'thumb')}
+        src={imageSrc(`event/${image}`, 'thumb')}
         alt={name} draggable={false} />
       
       <div className="ending-desc">

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
 import { ConfigButtons, ConfigItem, ResetBtn } from "../ConfigLayout"
-import { defaultSettings, settings } from "../../utils/variables"
+import { defaultSettings, settings } from "../../utils/settings"
 import { deepAssign, negative } from "../../utils/utils"
-import strings from "../../utils/lang"
+import { strings } from "../../translation/lang"
 import { MdOutlineVolumeOff, MdOutlineVolumeUp, MdVolumeMute } from "react-icons/md"
 import { useLanguageRefresh } from "../hooks/useLanguageRefresh"
 

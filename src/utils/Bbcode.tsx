@@ -87,7 +87,7 @@ export const defaultBBcodeDict: Record<string, TagTranslator> = {
   'font': (_, content, arg, props)=> styled('span', content, {fontFamily: arg}, props),
   'color' : (_, content, arg, props)=> styled('span', content, {color: arg}, props),
   'opacity': (_, content, arg, props)=> styled('span', content, {opacity: arg}, props),
-  'noline': (_, content, arg, props)=> styled('span', content, {textShadow: "none"}, props),
+  'noline': (_, content, _a, props)=> styled('span', content, {textShadow: "none"}, props),
   'hide': (_, content, _a, props)=> styled('span', content, {visibility: "hidden"}, props),
   'center': align,
   'left': align,

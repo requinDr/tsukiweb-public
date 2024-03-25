@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
 import { ConfigButtons, ConfigItem, ResetBtn } from "../ConfigLayout"
-import { defaultSettings, settings } from "../../utils/variables"
+import { defaultSettings, settings } from "../../utils/settings"
 import { deepAssign, jsonDiff, requestJSONs, textFileUserDownload } from "../../utils/utils"
 import { SaveState, clearSaveStates, listSaveStates, restoreSaveStates } from "../../utils/savestates"
-import strings, { addLang, languages } from "../../utils/lang"
+import { strings, languages } from "../../translation/lang"
 import { RecursivePartial } from "../../types"
 import { toast } from "react-toastify"
 import { useLanguageRefresh } from "../hooks/useLanguageRefresh"
@@ -86,22 +86,6 @@ const ConfigAdvancedTab = () => {
         alert(strings.config["data-erase-confirm"])
       }, 10) // leave room for asynchronous callbacks (if any) to complete
     }
-  }
-
-  const createTranslation = () => {
-    alert("Not yet implemented")
-    return
-    const id = ""
-    const displayName = ""
-    const fallback = ""
-    const authors = ""
-    const langFile = ""
-    addLang(id, {
-      "display-name": displayName,
-      ...(fallback ? {fallback} : {}),
-      ...(authors ? {authors} : {}),
-      "lang-file": langFile
-    })
   }
 
   const reset = () => {

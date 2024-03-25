@@ -1,6 +1,7 @@
 import { SceneName } from "../types";
 import { SCENE_ATTRS } from "./constants";
-import strings, { credits, scenesDir, waitLanguageLoad } from "./lang";
+import { strings, waitLanguageLoad } from "../translation/lang"
+import { credits, scenesDir } from "../translation/assets";
 import { subTextCount } from "./utils";
 import { getGameVariable } from "./variables";
 

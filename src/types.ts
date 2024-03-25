@@ -45,7 +45,7 @@ export type KeysMatching<T extends object, V> = {
 }[keyof T];
 
 export type RecursivePartial<T> = T|{
-  [P in keyof T]?: RecursivePartial<T[P]>
+  [P in keyof T]?: T[P] extends string|number|boolean|null ? T[P] : RecursivePartial<T[P]>
 }
 export type PartialRecord<K extends keyof any, T> = {
   [P in K]?: T

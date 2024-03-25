@@ -46,12 +46,12 @@ export function deepAssign<Td extends Record<string,any>, Ts extends Record<stri
   opts: {extend: false, morphTypes: false, clone?: false}): Td; // only update values
 export function deepAssign<Td extends Record<string,any>, Ts extends Record<keyof Td, Ts[keyof Td]>>(dest: Td, src: Readonly<Ts>,
   opts: {extend: false, morphTypes?: true, clone?: false}): {[K in keyof Td] : Ts[K]}; // update values and types
+//TODO add types for clean = true
+export function deepAssign<Td extends Record<string,any>, Ts extends Record<string, any>>(dest: Td, src: Readonly<Ts>,
+  opts?: {extend?: boolean, morphTypes?: boolean, clone?: boolean, clean?: boolean}): Record<string, any>
 
 export function deepAssign<Td extends Record<string,any>, Ts extends Record<string, any>>(dest: Td, src: Readonly<Ts>,
-  opts?: {extend?: boolean, morphTypes?: boolean, clone?: boolean}): Record<string, any>
-
-export function deepAssign<Td extends Record<string,any>, Ts extends Record<string, any>>(dest: Td, src: Readonly<Ts>,
-    {extend = true, morphTypes = true, clone = false} = {}): Record<string, any> {
+    {extend = true, morphTypes = true, clone = false, clean = false} = {}): Record<string, any> {
   const res = clone ? {} : dest as Record<string, any>
   for (const p of Object.getOwnPropertyNames(src)) {
     let create = false
@@ -85,7 +85,7 @@ export function deepAssign<Td extends Record<string,any>, Ts extends Record<stri
         throw Error(`cannot deep-assign ${p as string}:${srcType}`)
     }
   }
-  if (clone) {
+  if (clone && !clean) {
     for (const p of Object.getOwnPropertyNames(dest)) {
       if (!Object.hasOwn(src, p)) {
         if (isPrimitive(dest[p]))
@@ -96,6 +96,13 @@ export function deepAssign<Td extends Record<string,any>, Ts extends Record<stri
           res[p] = deepAssign({}, dest[p], {extend, morphTypes, clone: false})
         else
           throw Error(`cannot clone ${p as string}:${dest[p].constructor}`)
+      }
+    }
+  }
+  else if (clean && !clone) {
+    for (const p of Object.getOwnPropertyNames(dest)) {
+      if (!Object.hasOwn(src, p)) {
+        delete res[p]
       }
     }
   }
@@ -266,6 +273,16 @@ export function isDigit(str: string, index: number = 0) {
 
 export function negative(n: number) {
   return !Object.is(Math.abs(n), n)
+}
+
+export async function fetchJson(input: URL | RequestInfo, init?: RequestInit) {
+  const response = await fetch(input, init)
+  if (!response.ok) {
+    return Promise.reject(
+      `Error ${response.status} fetching resource "${input}". Message:\n${response.statusText}`)
+  } else {
+    return await response.json() as Promise<JSONObject>
+  }
 }
 
 /**

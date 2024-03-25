@@ -4,7 +4,7 @@ import '../styles/flowchart.scss'
 import { Graphics, LabelName, SceneName } from "../types"
 import { SCENE_ATTRS } from "../utils/constants"
 import { isScene } from "../utils/scriptUtils"
-import { settings } from "../utils/variables"
+import { settings } from "../utils/settings"
 import { playScene } from "../utils/savestates"
 import GraphicsGroup from "./molecules/GraphicsGroup"
 

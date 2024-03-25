@@ -1,7 +1,7 @@
 import { motion } from "framer-motion"
 import '../styles/saves.scss'
 import { SCREEN, displayMode } from "../utils/display"
-import strings from "../utils/lang"
+import { strings } from "../translation/lang"
 import { Flowchart } from "../components/Flowchart"
 import MenuButton from "../components/atoms/MenuButton"
 import { useLanguageRefresh } from "../components/hooks/useLanguageRefresh"

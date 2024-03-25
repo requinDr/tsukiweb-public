@@ -1,10 +1,12 @@
 {
-  "translation-name": "original",
-  "translation-desc": "",
-  "translation-url": "",
+  "translation": {
+    "name": "original",
+    "desc": "",
+    "url": "",
+    "vndb": ""
+  },
 
   "scenario": {
-    "scenes-dir": "./scenes",
     "days": [
       "[i]1[sup]st[/sup] day|October 21 (Thur.)",
       "[i]2[sup]nd[/sup] day|October 22 (Fri.)",

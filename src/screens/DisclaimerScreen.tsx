@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import '../styles/title-menu.scss'
 import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
-import strings from '../utils/lang'
+import { strings } from '../translation/lang'
 import { bb } from '../utils/Bbcode'
 import { useLanguageRefresh } from '../components/hooks/useLanguageRefresh'
 

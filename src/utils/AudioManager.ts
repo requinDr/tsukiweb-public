@@ -1,8 +1,9 @@
 import { observe } from "./Observer"
 import { displayMode, SCREEN } from "./display"
-import { audioSePath, audioTrackPath } from "./lang"
+import { audioSePath, audioTrackPath } from "../translation/assets"
 import { TSForceType } from "./utils"
-import { settings, gameContext } from "./variables"
+import { gameContext } from "./variables"
+import { settings } from "./settings"
 
 //##############################################################################
 //#                             AudioManager class                             #

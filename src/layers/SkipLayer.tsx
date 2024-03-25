@@ -3,7 +3,8 @@ import { displayMode } from "../utils/display"
 import { useObserver } from "../utils/Observer"
 import script from "../utils/script"
 import { bb } from "../utils/Bbcode"
-import strings from "../utils/lang"
+import { strings } from "../translation/lang"
+import { splitFirst } from "../utils/utils"
 
 const SkipLayer = () => {
   const [display, setDisplay] = useState<boolean>(false)

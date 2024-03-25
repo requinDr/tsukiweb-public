@@ -1,10 +1,11 @@
 import { Fragment, useEffect, useState } from 'react'
 import Fancybox from "../components/molecules/Fancybox"
 import '../styles/gallery.scss'
-import { settings } from '../utils/variables'
+import { settings } from '../utils/settings'
 import { motion } from 'framer-motion'
 import { CharacterId, GALLERY_IMAGES, GalleryImg } from '../utils/gallery'
-import strings, { imageUrl } from '../utils/lang'
+import { strings } from "../translation/lang"
+import { imageSrc } from '../translation/assets'
 import { SCREEN } from '../utils/display'
 import TabsComponent, { Tab } from '../components/molecules/TabsComponent'
 import MenuButton from '../components/atoms/MenuButton'
@@ -14,7 +15,7 @@ import useQueryParam from '../components/hooks/useQueryParam'
 
 type GalleryItem = GalleryImg & {src_thumb: string, src_hd: string}
 
-const defaultThumbnail = imageUrl("notreg", "thumb")
+let defaultThumbnail: string | null = null
 
 const GalleryScreen = () => {
   useScreenAutoNavigate(SCREEN.GALLERY)
@@ -26,11 +27,14 @@ const GalleryScreen = () => {
     let imagesTmp: any[] = GALLERY_IMAGES[selectedTab]
     if (imagesTmp == undefined)
       throw Error(`unknown character ${selectedTab}`)
+
+    if (!defaultThumbnail)
+      defaultThumbnail = imageSrc("notreg", "thumb")
     
     imagesTmp = imagesTmp.map((image: GalleryImg) => {
       const name = `event/${image.img}`
       const [thumb, hd] = settings.eventImages.includes(name) || window.unlock
-                  ? [imageUrl(name, 'thumb'), imageUrl(name, 'hd')]
+                  ? [imageSrc(name, 'thumb'), imageSrc(name, 'hd')]
                   : [defaultThumbnail, undefined]
 
       return {...image, src_thumb: thumb, src_hd: hd}

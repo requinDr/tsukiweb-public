@@ -1,7 +1,7 @@
 import { memo } from "react"
-import { settings } from "../../utils/variables"
+import { settings } from "../../utils/settings"
 import GraphicElement from "../atoms/GraphicElement"
-import { imageUrl } from "../../utils/lang"
+import { imageSrc } from "../../translation/assets"
 import { DivProps, Graphics as GraphicsType } from "../../types";
 
 const POSITIONS = ['bg', 'l', 'c', 'r'] as const
@@ -15,7 +15,7 @@ export async function preloadImage(src:string, resolution=settings.resolution): 
       const img = new Image()
       img.onload = resolve as VoidFunction
       img.onerror = img.onabort = reject
-      img.src = imageUrl(src, resolution)
+      img.src = imageSrc(src, resolution)
     })
   }
 }

@@ -1,92 +1,8 @@
-import { ViewRatio, NumVarName, StrVarName, VarName, LabelName, RouteName, RouteDayName, Graphics } from "../types"
-import { observe, observeChildren } from "./Observer"
-import { TEXT_SPEED } from "./constants"
+import { NumVarName, StrVarName, VarName, LabelName, RouteName, RouteDayName, Graphics } from "../types"
+import { observe } from "./Observer"
 import { SCREEN, displayMode } from "./display"
 import { endings } from "./endings"
-import { LangCode, LangFile } from "./lang"
-import { deepFreeze, deepAssign, jsonDiff, objectsEqual, resettable } from "./utils"
-
-//##############################################################################
-//#                           APP-RELATED VARIABLES                            #
-//##############################################################################
-
-//___________________________________settings___________________________________
-// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-const SETTINGS_STORAGE_KEY = "settings"
-export const defaultSettings = deepFreeze({
-  // scene settings
-  textSpeed: TEXT_SPEED.normal,
-  autoClickDelay: 500,
-  nextPageDelay: 2500,
-  fastForwardDelay: 5,
-  enableSceneSkip: true, // ask to skip scenes
-  preventUnreadSkip: false, // [not implemented]
-  // graphics settings
-  font: "Ubuntu", // [not implemented]
-  textPanelOpacity: 0.5, // [not implemented]
-  resolution: "hd" as keyof LangFile["images"]["redirect-ids"][string],
-  language: "en-mm" as LangCode,
-  fixedRatio: ViewRatio.unconstrained,
-  // H-related settings
-  blurThumbnails: true,
-  warnHScenes: false,
-  // audio settings
-  volume: {
-    master: 5,
-    track: 10,
-    se: 10,
-  },
-  trackSource: 'everafter' as keyof LangFile["audio"]["track-sources"],
-  autoMute: true,
-  // saved progress
-  eventImages: new Array<string>(),
-  completedScenes: new Array<string>(),
-})
-
-// load from file
-let savedSettings = (()=>{
-  const fileContent = localStorage.getItem(SETTINGS_STORAGE_KEY)
-  if (fileContent && fileContent.length > 0)
-    return JSON.parse(fileContent)
-  else return {}
-})()
-export const settings = deepAssign(defaultSettings, savedSettings, {clone: true})
-// deep-copy savedSettings
-
-let savePostPoneTimeoutId: NodeJS.Timeout|0 = 0
-
-function saveSettings() {
-  if (savePostPoneTimeoutId) {
-    savePostPoneTimeoutId = 0
-    clearTimeout(savePostPoneTimeoutId)
-  }
-  settings.completedScenes.sort()
-  const diff = jsonDiff(settings, defaultSettings)
-  if (!objectsEqual(diff, savedSettings, false)) {
-    savedSettings = diff
-    if (Object.keys(diff).length == 0)
-      localStorage.removeItem(SETTINGS_STORAGE_KEY)
-    else
-      localStorage.setItem(SETTINGS_STORAGE_KEY, JSON.stringify(savedSettings))
-  }
-}
-
-function postPoneSaveSettings() {
-  if (savePostPoneTimeoutId == 0) {
-    savePostPoneTimeoutId = setTimeout(saveSettings, 0)
-  }
-}
-
-for (const key of Reflect.ownKeys(settings)) {
-  const k = key as keyof typeof settings
-  if (typeof settings[k] == "object")
-    observeChildren(settings, k, postPoneSaveSettings)
-  else {
-    observe(settings, k, postPoneSaveSettings)
-  }
-}
-
-//TODO clean unused settings from previous versions
+import { deepFreeze, deepAssign, resettable } from "./utils"
 
 //##############################################################################
 //#                             SCENARIO VARIABLES                             #
@@ -326,7 +242,6 @@ declare global {
     [key: string]: any
   }
 }
-window.settings = settings
 window.progress = progress
 window.g = window.gameContext = gameContext
 window.session_vars = gameSession

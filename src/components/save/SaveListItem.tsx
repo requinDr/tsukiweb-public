@@ -1,4 +1,4 @@
-import strings from "../../utils/lang"
+import { getLocale, strings } from "../../translation/lang"
 import { QUICK_SAVE_ID, SaveState } from "../../utils/savestates"
 import GraphicsGroup from "../molecules/GraphicsGroup"
 import SaveSummary from "./SaveSummary"
@@ -23,7 +23,7 @@ const SaveListItem = ({id, saveState, onSelect, focusedSave, ...props}: SaveList
 
       <div className="deta">
         <time dateTime={date.toISOString()} className="date">
-          <b>{date.toLocaleDateString(strings.locale)}</b> {date.toLocaleTimeString(strings.locale)}
+          <b>{date.toLocaleDateString(getLocale())}</b> {date.toLocaleTimeString(getLocale())}
         </time>
 
         <div className="line">

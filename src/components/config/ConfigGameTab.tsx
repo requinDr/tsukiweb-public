@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react"
 import { ConfigButtons, ConfigItem, ResetBtn } from "../ConfigLayout"
-import { defaultSettings, settings } from "../../utils/variables"
+import { defaultSettings, settings } from "../../utils/settings"
 import { ViewRatio } from "../../types"
 import { TEXT_SPEED } from "../../utils/constants"
 import { addEventListener, deepAssign, isFullscreen, toggleFullscreen } from "../../utils/utils"
 import { FaMinus, FaPlus } from "react-icons/fa"
-import strings from "../../utils/lang"
+import { getLocale, strings } from "../../translation/lang"
 import { useLanguageRefresh } from "../hooks/useLanguageRefresh"
 
 const ConfigGameTab = () => {
@@ -35,7 +35,7 @@ const ConfigGameTab = () => {
     value: typeof conf[T]
   ) => setConf(prev => ({ ...prev, [key]: value }))
   
-  const numFormat = new Intl.NumberFormat(strings.locale, { maximumSignificantDigits: 3 })
+  const numFormat = new Intl.NumberFormat(getLocale(), { maximumSignificantDigits: 3 })
   const msToS = (ms: number)=> {
     return numFormat.format(ms/1000)
   }

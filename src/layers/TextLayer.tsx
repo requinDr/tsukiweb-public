@@ -1,7 +1,7 @@
 import { useEffect, useState, memo, Fragment } from "react"
 import moonIcon from '../assets/icons/icon_moon.svg'
 import pageIcon from '../assets/icons/icon_bars.svg'
-import { settings } from "../utils/variables"
+import { settings } from "../utils/settings"
 import { observe, useObserved, useObserver } from "../utils/Observer"
 import history from "../utils/history"
 import { SCREEN, displayMode } from "../utils/display"

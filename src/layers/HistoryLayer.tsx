@@ -5,7 +5,7 @@ import { SaveState, loadSaveState } from "../utils/savestates";
 import { useObserved, useObserver, } from '../utils/Observer';
 import history from '../utils/history';
 import script from '../utils/script';
-import { strings } from '../utils/lang';
+import { strings } from '../translation/lang';
 import PageElement from '../components/molecules/PageElement';
 
 type Props = {

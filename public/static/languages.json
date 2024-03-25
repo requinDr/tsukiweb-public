@@ -10,6 +10,7 @@
     "display-name": "English",
     "authors": "mirror moon",
     "dir": "./en-mm",
+    "fallback": "jp",
     "last-update": "2024-03-23"
   },
   "it-riffour": {

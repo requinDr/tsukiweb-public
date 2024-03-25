@@ -9,7 +9,7 @@ import ConfigScreen from './screens/ConfigScreen';
 import LoadScreen from "./screens/LoadScreen";
 import DisclaimerScreen from "./screens/DisclaimerScreen";
 import { useObserver } from "./utils/Observer";
-import { settings } from "./utils/variables";
+import { settings } from "./utils/settings";
 import { useState } from "react";
 import { ViewRatio } from "./types";
 import { Slide, ToastContainer } from "react-toastify";

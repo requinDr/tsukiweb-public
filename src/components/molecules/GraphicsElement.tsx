@@ -1,6 +1,6 @@
 import { memo, useCallback, CSSProperties } from "react"
-import { imageUrl } from "../../utils/lang"
-import { settings } from "../../utils/variables"
+import { imageSrc } from "../../translation/assets"
+import { settings } from "../../utils/settings"
 import GraphicElement from "../atoms/GraphicElement"
 import { SpritePos } from "./GraphicsGroup"
 import { DivProps } from "../../types"
@@ -70,8 +70,8 @@ const GraphicsElement = ({
       return {
         'for-mask': "",
         style: {
-          '--from-image': `url(${imageUrl(image)})`,
-          '--to-image': `url(${imageUrl(toImg)})`
+          '--from-image': `url(${imageSrc(image)})`,
+          '--to-image': `url(${imageSrc(toImg)})`
         } as CSSProperties
       }
     }

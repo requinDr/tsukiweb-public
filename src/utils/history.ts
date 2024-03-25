@@ -1,6 +1,9 @@
 import { Choice, PageArgs, PageContent, PageType, SceneName } from "../types"
 import { HISTORY_MAX_PAGES } from "./constants"
 import { SaveState, createSaveState } from "./savestates"
+import { StoredJSON } from "./storage"
+
+const historyStorage = new StoredJSON<SaveState[]>("history", true)
 
 class History {
   private pages: SaveState[]
@@ -198,17 +201,17 @@ class History {
    * Save the history in the session storage
    */
   saveSession() {
-    const jsonString = JSON.stringify(this.pages)
-    sessionStorage.setItem("history", jsonString);
+    historyStorage.set(this.pages)
   }
 
   /**
    * restore the history from the session storage
    */
   restoreSession() {
-    const saved = sessionStorage.getItem("history")
+    historyStorage.get()
+    const saved = historyStorage.get()
     if (saved) {
-      this.pages.splice(0, this.pages.length, ...JSON.parse(saved))
+      this.pages.splice(0, this.pages.length, ...saved)
       this.clean()
       this.onChange()
     }

@@ -1,10 +1,11 @@
 import { SpritePos } from "../components/molecules/GraphicsGroup";
 import { observe } from "./Observer";
 import { displayMode } from "./display";
-import { wordImage } from "./lang";
+import { wordImage } from "../translation/assets";
 import { extractInstructions } from "./scriptUtils";
 import { splitFirst, objectMatch, resettable, splitLast } from "./utils";
-import { settings, gameContext } from "./variables";
+import { gameContext } from "./variables";
+import { settings } from "./settings"
 
 export const [transition, resetTransition] = resettable({
   effect: "",
