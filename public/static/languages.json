@@ -1,19 +1,31 @@
 {
   "jp": {
     "locale": "ja-JP",
-    "display-name": "日本語"
+    "display-name": "日本語",
+    "dir": "./jp",
+    "last-update": "2024-03-23"
   },
   "en-mm": {
     "locale": "en-US",
     "display-name": "English",
     "authors": "mirror moon",
-    "dir": "en-mm"
+    "dir": "./en-mm",
+    "last-update": "2024-03-23"
   },
   "it-riffour": {
     "locale": "it-IT",
     "display-name": "Italiano",
     "authors": "Riffour",
-    "dir": "it-riffour",
+    "dir": "./it-riffour",
+    "last-update": "2024-03-23",
+    "fallback": "en-mm"
+  },
+  "pt-matsuri": {
+    "locale": "pt-BR",
+    "display-name": "Português",
+    "authors": "Matsuri Fansub",
+    "dir": "./pt-matsuri",
+    "last-update": "2024-03-23",
     "fallback": "en-mm"
   }
 }
