@@ -108,9 +108,9 @@ const ConfigAdvancedTab = () => {
 
       <ConfigButtons
         title={strings.config.language}
-        desc={strings["translation-desc"] &&
+        desc={strings.translation.desc &&
           <>
-            {strings["translation-desc"]} <a href={strings["translation-url"]} target="_blank">
+            {strings.translation.desc} <a href={strings.translation.url} target="_blank">
               <MdOpenInNew />
             </a>
           </>
