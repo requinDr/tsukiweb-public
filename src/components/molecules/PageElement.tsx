@@ -53,7 +53,7 @@ const PageElement = ({saveState, onLoad}: {saveState: SaveState, onLoad: (ss: Sa
   }
   return (
   <>
-    <hr {...{"page-type": contentType}}/>
+    <hr {...{"page-type": contentType}} />
     {saveState &&
       <MenuButton onClick={onLoad.bind(null,saveState)} className='load'>
         {strings.history.load}

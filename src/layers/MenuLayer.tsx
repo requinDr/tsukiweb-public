@@ -11,14 +11,9 @@ import { strings } from "../translation/lang"
 import ParticlesComponent from "../components/molecules/ParticlesComponent"
 import Ornament from "../assets/images/ornament.webp"
 
-/**
- * TODO
- * - Go to next scene
- */
+
 const MenuLayer = () => {
   const menuRef = useRef<HTMLDivElement>(null)
-  const [mute] = useObserved(settings.volume, 'master', (vol)=>vol<0)
-  const [fullscreen, setFullscreen] = useState<boolean>(isFullscreen())
   const [display] = useObserved(displayMode, 'menu')
 
   useEffect(()=> {
@@ -35,12 +30,6 @@ const MenuLayer = () => {
     }
     return addEventListener({event: 'mousedown', handler: handleClick})
   })
-
-  useEffect(()=> {
-    return addEventListener({event: 'fullscreenchange', handler: ()=> {
-      setFullscreen(isFullscreen())
-    }})
-  }, [])
 
   const graphicMode = () => {
     displayMode.graphics = !displayMode.graphics;
@@ -67,23 +56,8 @@ const MenuLayer = () => {
     displayMode.config = true
   }
 
-  const autoPlay = () => {
-    displayMode.menu = false
-    script.autoPlay = true
-  }
-
   const title = () => {
     displayMode.screen = SCREEN.TITLE
-    displayMode.menu = false
-  }
-
-  const toggleVolume = () => {
-    settings.volume.master = - settings.volume.master
-  }
-
-  const fastForwardScene = ()=> {
-    const currLabel = gameContext.label
-    script.fastForward((_l, _i, label)=> label != currLabel)
     displayMode.menu = false
   }
 
@@ -104,7 +78,7 @@ const MenuLayer = () => {
             <button onClick={historyMode} className="layer-btn">
               {strings.menu["history"]}
             </button>
-            { gameSession.continueScript && <>
+            {gameSession.continueScript && <>
               <button onClick={saveMode} className="layer-btn">
                 {strings.menu["save"]}
               </button>
@@ -120,28 +94,7 @@ const MenuLayer = () => {
             </button>
           </div>
 
-          <div className="action-btns">
-            { gameSession.continueScript && <>
-              <button onClick={quickSave} className="quick">
-                {strings.menu["q-save"]}
-              </button>
-              <button onClick={quickLoad} className="quick">
-                {strings.menu["q-load"]}
-              </button>
-            </>}
-            <button onClick={toggleVolume} aria-label="mute/unmute">
-              {mute ? <MdOutlineVolumeOff /> : <MdOutlineVolumeUp />}
-            </button>
-            <button onClick={toggleFullscreen} aria-label="toggle fullscreen">
-              {fullscreen ? <MdFullscreenExit /> : <MdFullscreen />}
-            </button>
-            <button onClick={autoPlay} aria-label="auto play" title={strings.menu["auto-play"]}>
-              <MdPlayArrow />
-            </button>
-            <button onClick={fastForwardScene} aria-label="skip scene" title={strings.menu["ffw"]}>
-              <MdFastForward />
-            </button>
-          </div>
+          <ActionsButtons />
         </menu>
       </nav>
     </div>
@@ -149,3 +102,55 @@ const MenuLayer = () => {
 }
 
 export default MenuLayer
+
+/**
+ * TODO
+ * - Go to next scene
+ */
+const ActionsButtons = () => {
+  const [mute] = useObserved(settings.volume, 'master', (vol)=>vol<0)
+  const [fullscreen, setFullscreen] = useState<boolean>(isFullscreen())
+
+  useEffect(()=> {
+    return addEventListener({event: 'fullscreenchange', handler: ()=> {
+      setFullscreen(isFullscreen())
+    }})
+  }, [])
+
+  const toggleVolume = () => {
+    settings.volume.master = - settings.volume.master
+  }
+  const fastForwardScene = ()=> {
+    const currLabel = gameContext.label
+    script.fastForward((_l, _i, label)=> label != currLabel)
+    displayMode.menu = false
+  }
+  const autoPlay = () => {
+    displayMode.menu = false
+    script.autoPlay = true
+  }
+  return (
+    <div className="action-btns">
+      {gameSession.continueScript && <>
+        <button onClick={quickSave} className="quick">
+          {strings.menu["q-save"]}
+        </button>
+        <button onClick={quickLoad} className="quick">
+          {strings.menu["q-load"]}
+        </button>
+      </>}
+      <button onClick={toggleVolume} aria-label="mute/unmute">
+        {mute ? <MdOutlineVolumeOff /> : <MdOutlineVolumeUp />}
+      </button>
+      <button onClick={toggleFullscreen} aria-label="toggle fullscreen">
+        {fullscreen ? <MdFullscreenExit /> : <MdFullscreen />}
+      </button>
+      <button onClick={autoPlay} aria-label="auto play" title={strings.menu["auto-play"]}>
+        <MdPlayArrow />
+      </button>
+      <button onClick={fastForwardScene} aria-label="skip scene" title={strings.menu["ffw"]}>
+        <MdFastForward />
+      </button>
+    </div>
+  )
+}

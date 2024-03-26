@@ -70,7 +70,6 @@ const TextLayer = ({...props}: Props) => {
             rootSuffix={glyphNode}/>
         : glyphNode
         }
-        
       </div>
     </div>
   )

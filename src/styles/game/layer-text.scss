@@ -38,12 +38,28 @@
         border: 0;
         height: 2px;
         background-image: linear-gradient(90deg, #1b9ab900 0%, #1b9ab9 50%, #1b9ab900 100%);
-        margin: 1.4em 0;
-        width: 120%;
-        margin-left: -10%;
+        margin: 5em 10% 1.4em;
+        width: 100%;
+        position: relative;
+        overflow: visible;
 
         &[page-type="phase"] {
-            background-image: linear-gradient(90deg, #1b9ab900 0%, #afb91b 50%, #1b9ab900 100%);
+            background-image: linear-gradient(90deg,
+                #1b9ab900 0%,
+                #00aed9 30%,
+                #fff 50%,
+                #00aed9 70%,
+                #1b9ab900 100%
+            );
+            height: 4px;
+            &::after {
+                content: attr(data-label);
+                position: absolute;
+                bottom: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+                font-size: 0.8em;
+            }
         }
     }
     .load {

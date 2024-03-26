@@ -20,20 +20,18 @@
     transition-delay: 0s;
 
     .menu-container {
-      right: 0;
+      transform: translateX(0);
     }
   }
 
   $width: clamp(220px, 50vmin, 320px);
   .menu-container {
-    position: absolute;
-    right: calc($width * -1);
+    transform: translateX(calc($width));
     height: 100%;
     width: $width;
     transition: all var(--panel-trans-time) ease-out;
     display: flex;
     align-items: center;
-    // background-image: linear-gradient(226deg, #051c4b, #00357c);
     background-image: linear-gradient(226deg, rgb(7 5 75), rgb(0 123 124 / 75%));
     -webkit-mask-image: linear-gradient(to right, transparent, black 2em);
     mask-image: linear-gradient(to right, transparent, black 2em);
