@@ -13,23 +13,19 @@
 		flex: 8;
 		min-height: 0;
 		position: relative;
+		isolation: isolate;
+
+		img {
+			object-fit: contain;
+			z-index: 1;
+		}
 
 		.moon {
 			position: absolute;
 			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			width: min(600px, 70vmax);
-			height: min(600px, 70vmax);
-			filter: drop-shadow(0 0 12px rgb(228,255,255));
-			-webkit-mask-image: radial-gradient(ellipse 100% 100% at 70% 60%, rgba(0, 0, 0, 0.6) 30%, transparent 45%);
-			mask-image: radial-gradient(ellipse 100% 100% at 70% 60%, rgba(0, 0, 0, 0.6) 30%, transparent 45%);
-			-webkit-mask-repeat: no-repeat;
-			mask-repeat: no-repeat;
-			-webkit-mask-position: 400px 140px;
-			mask-position: 400px 140px;
-			opacity: 0.4;
-			transition: all 1.6s;
+			width: min(600px, 70vmin);
+			height: min(600px, 70vmin);
+			filter: drop-shadow(0 0 12px white);
 			transition-timing-function: cubic-bezier(0.25, 0.1, 0.16, 1.0);
 		}
 		.neco-arc {
@@ -42,11 +38,9 @@
 			opacity: 0.4;
 			object-position: right;
 		}
-
-		img {
+		.tsuki-logo {
 			height: 100%;
-			width: min(94%, 400px);
-			object-fit: contain;
+			width: min(70vmin, 400px);
 		}
 	}
 
@@ -56,7 +50,6 @@
 		position: absolute;
 		top: $spacing;
 		right: $icon-size;
-		height: $icon-size;
 		display: flex;
 		flex-direction: row;
 		gap: calc($icon-size / 4);
@@ -70,9 +63,10 @@
 
 			font-size: 1.4em;
 			padding: 4pt;
-			aspect-ratio: 1;
-			height: 100%;
-			width: 100%;
+			width: $icon-size;
+			height: $icon-size;
+			border-radius: 6px;
+			background-color: #005675;
 
 			&:hover, &:focus-visible {
 				box-shadow: var(--selected-shadow);
@@ -193,10 +187,7 @@
 	@media (max-width: 810px) and (min-height: 420px), (orientation: portrait) {
 		.top-actions {
 			right: $spacing;
-			width: $icon-size;
-			height: unset;
 			flex-direction: column-reverse;
-			align-items: center;
 		}
 	}
 	// One column, mobile portrait
@@ -224,7 +215,7 @@
 			flex: 1;
 			max-height: 85%;
 
-			img {
+			.tsuki-logo {
 				height: auto;
 			}
 		}

@@ -1,3 +1,4 @@
+import { memo } from "react"
 import styles from "../../styles/components/particles.module.scss"
 
 const ParticlesComponent = () => {
@@ -12,4 +13,4 @@ const ParticlesComponent = () => {
   )
 }
 
-export default ParticlesComponent
+export default memo(ParticlesComponent)

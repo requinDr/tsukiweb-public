@@ -106,11 +106,11 @@ const TitleMenuScreen = () => {
 
       <div className="logo">
         <motion.img src={img.src} alt={img.alt} draggable={false} className={img.className}
-          initial={{ left: "46%", opacity: 0.9}}
-          animate={{ left: "50%", opacity: 0.5, WebkitMaskPosition: [100, 0] }}
+          initial={{ opacity: 0.9, transform: "translateY(-42%) scale(0.9)" }}
+          animate={{ opacity: 0.5, transform: "translateY(-50%) scale(1)" }}
           transition={{
             delay: 0,
-            duration: 0,
+            duration: 1,
           }} />
         <motion.img
           src={tsukiLogo} alt="tsukihime logo"
