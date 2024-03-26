@@ -144,7 +144,7 @@ function page_nav(direction: "prev"|"next", event?: KeyboardEvent) {
         loadSaveState(ss)
       break
     case "next":
-      if (!script.isFastForward) {
+      if (!script.isFastForward && isViewAnyOf("text", "graphics")) {
         const currLabel = gameContext.label
         script.fastForward((_l, _i, label)=>{
           return script.getOffsetLine(-1)?.endsWith('\\')
