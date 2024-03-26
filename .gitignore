@@ -15,7 +15,6 @@ release
 
 # Editor directories and files
 .vscode/*
-!.vscode/extensions.json
 .idea
 .DS_Store
 *.suo
@@ -23,11 +22,8 @@ release
 *.njsproj
 *.sln
 *.sw?
-public/CD/desktop.ini
-script-convert/full-script.txt
-script-convert/scenes
-script-convert/stralias.json
+script-convert/*
+!script-convert/script-convert.js
 public/.htaccess
 public/static/*
-!public/static/*/*.json
-.htaccess
+!public/static/**/*.json
