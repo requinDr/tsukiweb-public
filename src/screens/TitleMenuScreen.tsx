@@ -5,7 +5,6 @@ import necoArcBand from "../assets/images/neco-arc-band.gif"
 import necoArcRage from "../assets/images/neco-arc-rage.gif"
 import moon from "../assets/images/moon.webp"
 import '../styles/title-menu.scss'
-import ParticlesComponent from '../components/molecules/ParticlesComponent'
 import { SCREEN, displayMode } from '../utils/display'
 import { motion } from 'framer-motion'
 import { blankSaveState, getLastSave, hasSaveStates, loadSaveFiles, loadSaveState, loadScene } from '../utils/savestates'
@@ -20,6 +19,7 @@ import TitleMenuButton from '../components/atoms/TitleMenuButton'
 import AppInfo from '../components/title-menu/AppInfo'
 import TranslationSwitch from '../components/title-menu/TranslationSwitch'
 import usePWA from '../components/hooks/usePWA'
+import Particles from '@ui-core/components/Particles'
 
 const TitleMenuScreen = () => {
   useScreenAutoNavigate(SCREEN.TITLE)
@@ -102,7 +102,7 @@ const TitleMenuScreen = () => {
       animate={{opacity: 1}}
       exit={{opacity: 0}}>
 
-      <ParticlesComponent />
+      <Particles />
 
       <div className="logo">
         <motion.img src={img.src} alt={img.alt} draggable={false} className={img.className}

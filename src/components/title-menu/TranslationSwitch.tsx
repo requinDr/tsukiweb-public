@@ -1,10 +1,10 @@
 import { Dispatch, useState } from "react"
 import { MdTranslate } from "react-icons/md"
 import { strings, languages } from "../../translation/lang"
-import MenuButton from "../atoms/MenuButton"
-import Modal from "../atoms/Modal"
 import { settings } from "../../utils/settings"
 import { deepAssign } from "../../utils/utils"
+import MenuButton from "@ui-core/components/MenuButton"
+import Modal from "@ui-core/components/Modal"
 
 const TranslationSwitch = () => {
   const [show, setShow] = useState<boolean>(false)

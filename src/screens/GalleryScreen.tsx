@@ -7,11 +7,11 @@ import { CharacterId, GALLERY_IMAGES, GalleryImg } from '../utils/gallery'
 import { strings } from "../translation/lang"
 import { imageSrc } from '../translation/assets'
 import { SCREEN } from '../utils/display'
-import TabsComponent, { Tab } from '../components/molecules/TabsComponent'
-import MenuButton from '../components/atoms/MenuButton'
 import { useLanguageRefresh } from '../components/hooks/useLanguageRefresh'
 import { useScreenAutoNavigate } from '../components/hooks/useScreenAutoNavigate'
 import useQueryParam from '../components/hooks/useQueryParam'
+import MenuButton from '@ui-core/components/MenuButton'
+import TabsComponent, { Tab } from '@ui-core/components/TabsComponent'
 
 type GalleryItem = GalleryImg & {src_thumb: string, src_hd: string}
 

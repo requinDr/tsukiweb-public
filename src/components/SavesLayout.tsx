@@ -8,7 +8,7 @@ import { phaseTexts } from "../translation/assets"
 import SaveListItem from "./save/SaveListItem"
 import SaveDetails from "./save/SaveDetails"
 import { MdAddCircleOutline, MdUploadFile } from "react-icons/md"
-import MenuButton from "./atoms/MenuButton"
+import MenuButton from "@ui-core/components/MenuButton"
 
 //##############################################################################
 //#                               TOOL FUNCTIONS                               #

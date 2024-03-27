@@ -1,7 +1,7 @@
 import { memo } from "react"
-import styles from "../../styles/components/particles.module.scss"
+import styles from "../styles/particles.module.scss"
 
-const ParticlesComponent = () => {
+const Particles = () => {
   return (
     <div className={styles.particles}>
       {Array.from({ length: 100 }, (_, index) =>
@@ -13,4 +13,4 @@ const ParticlesComponent = () => {
   )
 }
 
-export default memo(ParticlesComponent)
+export default memo(Particles)

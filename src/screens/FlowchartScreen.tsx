@@ -3,10 +3,10 @@ import '../styles/saves.scss'
 import { SCREEN, displayMode } from "../utils/display"
 import { strings } from "../translation/lang"
 import { Flowchart } from "../components/Flowchart"
-import MenuButton from "../components/atoms/MenuButton"
 import { useLanguageRefresh } from "../components/hooks/useLanguageRefresh"
 import { useScreenAutoNavigate } from "../components/hooks/useScreenAutoNavigate"
-import FixedFooter from "../components/atoms/FixedFooter"
+import FixedFooter from "@ui-core/components/FixedFooter"
+import MenuButton from "@ui-core/components/MenuButton"
 
 const FlowchartScreen = () => {
   useScreenAutoNavigate(SCREEN.SCENES)

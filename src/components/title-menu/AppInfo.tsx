@@ -4,9 +4,9 @@ import { toast } from "react-toastify"
 import { bb } from "../../utils/Bbcode"
 import { APP_VERSION } from "../../utils/constants"
 import { strings } from "../../translation/lang"
-import MenuButton from "../atoms/MenuButton"
-import Modal from "../atoms/Modal"
 import tsukiR from "../../assets/images/tsukihime_blue_glass_cover.webp"
+import MenuButton from "@ui-core/components/MenuButton"
+import Modal from "@ui-core/components/Modal"
 
 const AppInfo = () => {
   const [show, setShow] = useState<boolean>(false)

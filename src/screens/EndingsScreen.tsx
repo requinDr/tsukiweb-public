@@ -9,7 +9,7 @@ import { RouteEnding, endings, osiete } from '../utils/endings'
 import { Tooltip } from 'react-tooltip'
 import ReactDOMServer from 'react-dom/server';
 import { playScene } from '../utils/savestates'
-import MenuButton from '../components/atoms/MenuButton'
+import MenuButton from '../ui-core/components/MenuButton'
 import { useLanguageRefresh } from '../components/hooks/useLanguageRefresh'
 import { useScreenAutoNavigate } from '../components/hooks/useScreenAutoNavigate'
 

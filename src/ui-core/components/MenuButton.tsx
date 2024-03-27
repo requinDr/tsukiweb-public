@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import styles from "../../styles/components/button.module.scss"
+import styles from "../styles/button.module.scss"
 
 interface PropsButton {
 	onClick: ()=>void

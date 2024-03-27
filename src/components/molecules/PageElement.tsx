@@ -5,7 +5,7 @@ import { strings } from "../../translation/lang"
 import { phaseTexts } from "../../translation/assets"
 import { SaveState } from "../../utils/savestates"
 import { getSceneTitle } from "../../utils/scriptUtils"
-import MenuButton from "../atoms/MenuButton"
+import MenuButton from "@ui-core/components/MenuButton"
 
 const PageElement = ({saveState, onLoad}: {saveState: SaveState, onLoad: (ss: SaveState)=>void})=> {
   if (saveState.page == undefined)

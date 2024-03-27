@@ -1,4 +1,4 @@
-import styles from '../../styles/components/fixedfooter.module.scss';
+import styles from '../styles/fixedfooter.module.scss';
 
 type Props = {
 	children?: React.ReactNode

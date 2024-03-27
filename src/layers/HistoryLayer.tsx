@@ -7,8 +7,8 @@ import history from '../utils/history';
 import script from '../utils/script';
 import { strings } from '../translation/lang';
 import PageElement from '../components/molecules/PageElement';
-import MenuButton from '../components/atoms/MenuButton';
-import FixedFooter from '../components/atoms/FixedFooter';
+import FixedFooter from '@ui-core/components/FixedFooter';
+import MenuButton from '@ui-core/components/MenuButton';
 
 type Props = {
   [key: string] : any // other properties to apply to the root 'div' element of the component

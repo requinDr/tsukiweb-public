@@ -5,10 +5,10 @@ import ConfigAudioTab from './config/ConfigAudioTab'
 import ConfigAdvancedTab from '../components/config/ConfigAdvancedTab'
 import ConfigControlsTab from '../components/config/ConfigControlsTab'
 import { strings } from '../translation/lang'
-import TabsComponent, { Tab } from './molecules/TabsComponent'
 import { SCREEN } from '../utils/display'
-import MenuButton from './atoms/MenuButton'
 import { useLanguageRefresh } from './hooks/useLanguageRefresh'
+import MenuButton from '@ui-core/components/MenuButton'
+import TabsComponent, { Tab } from '@ui-core/components/TabsComponent'
 
 enum Tabs {
   game = "game",

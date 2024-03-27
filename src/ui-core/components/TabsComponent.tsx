@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction } from "react"
-import styles from "../../styles/components/tabs.module.scss"
+import styles from "../styles/tabs.module.scss"
 
 export type Tab = {
   label: string,

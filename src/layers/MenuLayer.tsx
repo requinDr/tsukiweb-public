@@ -8,8 +8,8 @@ import { useObserved } from "../utils/Observer"
 import script from "../utils/script"
 import { displayMode, SCREEN } from "../utils/display"
 import { strings } from "../translation/lang"
-import ParticlesComponent from "../components/molecules/ParticlesComponent"
 import Ornament from "../assets/images/ornament.webp"
+import Particles from "@ui-core/components/Particles"
 
 
 const MenuLayer = () => {
@@ -63,7 +63,7 @@ const MenuLayer = () => {
 
   return (
     <div className={`layer ${display ? "show" : ""}`} id="layer-menu">
-      <ParticlesComponent />
+      <Particles />
       <img src={Ornament} alt="ornament" className="bottom-ornament" />
       <img src={Ornament} alt="ornament" className="top-ornament" />
       

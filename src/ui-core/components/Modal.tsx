@@ -1,5 +1,5 @@
 import ReactModal from "react-modal";
-import styles from '../../styles/components/modal.module.scss';
+import styles from '../styles/modal.module.scss';
 
 type Props = {
 	show: boolean;
