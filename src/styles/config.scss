@@ -89,7 +89,10 @@
                     transition: .2s ease-in-out;
                     border-radius: 4px;
                     min-width: min(100px, 100%);
-                    text-align: center;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 6px;
         
                     &:hover, &.active {
                         background-color: var(--active);

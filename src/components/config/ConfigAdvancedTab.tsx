@@ -7,7 +7,8 @@ import { strings, languages } from "../../translation/lang"
 import { RecursivePartial } from "../../types"
 import { toast } from "react-toastify"
 import { useLanguageRefresh } from "../hooks/useLanguageRefresh"
-import { MdOpenInNew } from "react-icons/md"
+import { MdTranslate } from "react-icons/md"
+import ModalLanguageSelection from "./ModalLanguageSelection"
 
 function twoDigits(n: number) {
   return n.toString().padStart(2, '0')
@@ -19,6 +20,7 @@ type Savefile = {
 }
 
 const ConfigAdvancedTab = () => {
+  const [show, setShow] = useState<boolean>(false)
 
   const [conf, setConf] = useState(deepAssign({
     resolution: undefined,
@@ -106,25 +108,16 @@ const ConfigAdvancedTab = () => {
         updateValue={updateValue}
       />
 
-      <ConfigButtons
-        title={strings.config.language}
-        desc={strings.translation.desc &&
-          <>
-            {strings.translation.desc} <a href={strings.translation.url} target="_blank">
-              <MdOpenInNew />
-            </a>
-          </>
-        }
-        btns={[
-          ...Object.entries(languages).map(([id, {"display-name": dispName}])=> {
-            return {text: dispName, value: id}
-          }),
-          //{text: <FaPlus/>, onSelect: createTranslation}
-        ]}
-        property="language"
-        conf={conf}
-        updateValue={updateValue}
-      />
+      <ConfigItem title={strings.config.language}>
+        <div className="config-btns">
+          <button
+            className={`config-btn`}
+            onClick={()=>setShow(true)}>
+            <MdTranslate /> {languages[settings.language]["display-name"]}...
+          </button>
+        </div>
+      </ConfigItem>
+      <ModalLanguageSelection show={show} setShow={setShow} />
 
       <div className="sub">
         <div className="title">{strings.config["adult-title"]}</div>

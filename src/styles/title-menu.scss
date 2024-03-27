@@ -323,6 +323,26 @@
 			box-shadow: var(--selected-shadow);
 		}
 	}
+
+	.translation-details {
+		padding: 1em;
+		line-height: 1.6;
+
+		.title {
+			font-weight: 600;
+			font-size: 1.2em;
+		}
+
+		.line {
+			a {
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				display: block;
+				max-width: min-content;
+			}
+		}
+	}
 }
 
 
