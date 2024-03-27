@@ -161,9 +161,9 @@ const TitleMenuScreen = () => {
           <div className='first-row'>
             <ExtraMenu />
 
-            <button className='menu-item' onClick={()=>setPage(0)}>
+            <TitleMenuButton onClick={()=>setPage(0)}>
               {"<"}  {strings.back}
-            </button>
+            </TitleMenuButton>
           </div>
         </>
         }

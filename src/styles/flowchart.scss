@@ -1,11 +1,8 @@
 #scenes {
-   .page-content {
-      padding: 0;
-   }
+   overflow: auto;
 
    .flowchart {
-      overflow: auto;
-      padding: 1em;
+      padding-bottom: 60px;
    }
    .fc-scene {
       .fc-scene-title {
