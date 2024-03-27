@@ -6,10 +6,10 @@
   "dependencies": {
     "@fancyapps/ui": "^5.0.35",
     "@types/jest": "^29.5.12",
-    "@types/node": "^20.11.28",
-    "@types/react": "^18.2.66",
+    "@types/node": "^20.11.30",
+    "@types/react": "^18.2.72",
     "@types/react-dom": "^18.2.22",
-    "framer-motion": "^11.0.14",
+    "framer-motion": "^11.0.22",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-error-boundary": "^4.0.13",
@@ -35,7 +35,7 @@
   "devDependencies": {
     "@types/react-modal": "^3.16.3",
     "@vitejs/plugin-react": "^4.2.1",
-    "typescript": "^5.4.2",
-    "vite": "^5.1.6"
+    "typescript": "^5.4.3",
+    "vite": "^5.2.6"
   }
 }
