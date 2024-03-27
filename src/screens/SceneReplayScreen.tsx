@@ -14,10 +14,9 @@ const SceneReplayScreen = () => {
 	}, [sceneId])
 
 	const startSceneReplay = () => {
-		console.log(sceneId)
-		// if (!sceneId) return
-		
-    playScene(sceneId as LabelName, { continueScript: false, viewedOnly: false })
+		const sceneIdTmp = sceneId as LabelName
+		window.history.replaceState(null, '', '/scenes')
+		playScene(sceneIdTmp, { continueScript: false, viewedOnly: false })
 	}
 
   return (
