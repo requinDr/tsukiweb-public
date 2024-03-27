@@ -14,6 +14,7 @@ import './styles/App.scss'
 import EndingsScreen from "./screens/EndingsScreen";
 import FlowchartScreen from "./screens/FlowchartScreen";
 import AppLayout from "./layouts/AppLayout";
+import SceneReplayScreen from "screens/SceneReplayScreen";
 
 
 const AnimatedRoutes = () => {
@@ -34,9 +35,14 @@ const AnimatedRoutes = () => {
           <Route path="/window" element={<Window />} />
           <Route path="/load" element={<LoadScreen />} />
           <Route path="/config" element={<ConfigScreen />} />
-          <Route path="/extra/gallery" element={<GalleryScreen />} />
-          <Route path="/extra/endings" element={<EndingsScreen />} />
-          <Route path="/extra/scenes" element={<FlowchartScreen />} />
+          <Route path="/extra">
+            <Route path="gallery" element={<GalleryScreen />} />
+            <Route path="endings" element={<EndingsScreen />} />
+            <Route path="scenes">
+              <Route index element={<FlowchartScreen />} />
+              <Route path=":sceneId" element={<SceneReplayScreen />} />
+            </Route>
+          </Route>
         </Routes>
       </AnimatePresence>
     </AppLayout>

@@ -64,8 +64,6 @@ const MenuLayer = () => {
   return (
     <div className={`layer ${display ? "show" : ""}`} id="layer-menu">
       <Particles />
-      <img src={Ornament} alt="ornament" className="bottom-ornament" />
-      <img src={Ornament} alt="ornament" className="top-ornament" />
       
       <nav className="menu-container" ref={menuRef}>
         <menu>
@@ -97,6 +95,9 @@ const MenuLayer = () => {
           <ActionsButtons />
         </menu>
       </nav>
+
+      <img src={Ornament} alt="ornament" className="bottom-ornament" />
+      <img src={Ornament} alt="ornament" className="top-ornament" />
     </div>
   )
 }
@@ -131,6 +132,11 @@ const ActionsButtons = () => {
   }
   return (
     <div className="action-btns">
+      {!gameSession.continueScript && <>
+        <div className="replaying">
+          Currently reading {gameContext.label}
+        </div>
+      </>}
       {gameSession.continueScript && <>
         <button onClick={quickSave} className="quick">
           {strings.menu["q-save"]}

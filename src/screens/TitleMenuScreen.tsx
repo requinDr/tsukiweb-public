@@ -7,7 +7,7 @@ import moon from "../assets/images/moon.webp"
 import '../styles/title-menu.scss'
 import { SCREEN, displayMode } from '../utils/display'
 import { motion } from 'framer-motion'
-import { blankSaveState, getLastSave, hasSaveStates, loadSaveFiles, loadSaveState, loadScene } from '../utils/savestates'
+import { blankSaveState, getLastSave, hasSaveStates, loadSaveFiles, loadSaveState, playScene, viewedScene } from '../utils/savestates'
 import history from '../utils/history'
 import { strings } from "../translation/lang"
 import { MdGetApp } from 'react-icons/md'
@@ -65,13 +65,12 @@ const TitleMenuScreen = () => {
   }
 
   function playEClipse() {
-    loadSaveState(loadScene("eclipse"))
-    displayMode.screen = SCREEN.WINDOW
+    playScene("eclipse", {continueScript: true, viewedOnly: false})
   }
 
   const [allEndingsSeen, eclipseSeen] = useMemo(()=> {
     const allEndingsSeen = Object.values(endings).every(e=>e.seen)
-    const eclipseSeen = settings.completedScenes.includes("eclipse")
+    const eclipseSeen = viewedScene("eclipse")
     return [allEndingsSeen, eclipseSeen]
   }, [settings.completedScenes])
 

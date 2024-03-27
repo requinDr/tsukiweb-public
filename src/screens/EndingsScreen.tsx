@@ -13,7 +13,7 @@ import MenuButton from '../ui-core/components/MenuButton'
 import { useLanguageRefresh } from '../components/hooks/useLanguageRefresh'
 import { useScreenAutoNavigate } from '../components/hooks/useScreenAutoNavigate'
 
-// settings.completedScenes.push("s521")
+
 const EndingsScreen = () => {
   useScreenAutoNavigate(SCREEN.ENDINGS)
   useLanguageRefresh()
@@ -48,7 +48,7 @@ const EndingsScreen = () => {
                     src={chalkboard}
                     alt={`Bad Ending ${ending.scene}`}
                     draggable={false}
-                    onClick={() => playScene(ending.scene, false)}
+                    onClick={() => playScene(ending.scene, {continueScript: false })}
                     data-tooltip-id="osiete"
                     data-tooltip-html={ReactDOMServer.renderToStaticMarkup(
                     <div>

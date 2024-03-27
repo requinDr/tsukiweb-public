@@ -336,10 +336,28 @@ export async function loadSaveFiles(saves?: string[] | FileList | undefined | nu
   return true
 }
 
-export function playScene(scene: LabelName, continueScript: boolean = true) {
-  if (settings.completedScenes.includes(scene)) {
-    loadSaveState(loadScene(scene))
-    gameSession.continueScript = continueScript
-    displayMode.screen = SCREEN.WINDOW
+/**
+ * Return if the specified scene has been viewed by the player.
+ */
+export function viewedScene(scene: LabelName): boolean {
+  return settings.completedScenes.includes(scene)
+}
+
+/**
+ * Play the specified scene
+ * @param scene scene to play
+ * @param continueScript if true, the script will continue to the next scene. Default is true.
+ * @param viewedOnly if true, the scene will only be played if it has been viewed by the player. Default is true.
+ */
+export function playScene(scene: LabelName, {
+  continueScript = true,
+  viewedOnly = true
+}) {
+  if (viewedOnly && !viewedScene(scene)) {
+    return
   }
+
+  loadSaveState(loadScene(scene))
+  gameSession.continueScript = continueScript
+  displayMode.screen = SCREEN.WINDOW
 }

@@ -130,7 +130,7 @@ class FcScene extends FcNode {
       {super.render()}
       <g className="fc-scene" id={this.id}
         transform={`translate(${this.x},${this.y})`}
-        onClick={() => playScene(this.id as LabelName, false)}
+        onClick={() => playScene(this.id as LabelName, { continueScript: false })}
         // TODO: continueScript = true if using the flowchart to navigate to previous scene (not yet implemented)
         clipPath="url(#fc-scene-clip)">
         {content}

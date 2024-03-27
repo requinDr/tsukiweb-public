@@ -26,6 +26,7 @@
 
   $width: clamp(220px, 50vmin, 320px);
   .menu-container {
+    will-change: transform;
     transform: translateX(calc($width));
     height: 100%;
     width: $width;
@@ -98,6 +99,12 @@
           }
         }
       }
+    }
+
+    .replaying {
+      font-size: 1rem;
+      grid-column: 1 / -1;
+      margin-bottom: 8px;
     }
 
     .action-btns {
