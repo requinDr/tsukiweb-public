@@ -25,6 +25,7 @@
     0px 0px 90px 0px rgba(0, 180, 255, 0.8) inset;
   --separator: rgba(255, 255, 255, 0.1);
   --scrollbar-width: 8px;
+  --page-width: max(1400px, 60%);
 }
 
 * {
@@ -122,7 +123,7 @@ button {
   display: flex;
 }
 .page-content {
-  max-width: max(1400px, 60%);
+  max-width: var(--page-width);
   max-height: max(1080px, 60%);
   margin-inline: auto;
   padding: clamp(.8rem, 1.6vmin, 1.2rem);

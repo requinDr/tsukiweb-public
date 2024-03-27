@@ -142,7 +142,6 @@
   },
   "history": {
     "load": "Load",
-    "close": "Close",
     "skipped": "Skipped scene $0."
   },
   "characters": {
@@ -156,5 +155,6 @@
   "yes": "Yes",
   "no": "No",
   "ok": "Ok",
-  "back": "Back"
+  "back": "Back",
+  "close": "Close"
 }

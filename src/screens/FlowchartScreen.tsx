@@ -6,6 +6,7 @@ import { Flowchart } from "../components/Flowchart"
 import MenuButton from "../components/atoms/MenuButton"
 import { useLanguageRefresh } from "../components/hooks/useLanguageRefresh"
 import { useScreenAutoNavigate } from "../components/hooks/useScreenAutoNavigate"
+import FixedFooter from "../components/atoms/FixedFooter"
 
 const FlowchartScreen = () => {
   useScreenAutoNavigate(SCREEN.SCENES)
@@ -22,14 +23,14 @@ const FlowchartScreen = () => {
       animate={{opacity: 1}}
       exit={{opacity: 0}}>
       <div className="page-content">
-        <div className="header">
-          <MenuButton to={SCREEN.TITLE}>
-            {strings.back}
-          </MenuButton>
-        </div>
-
         <Flowchart back={back}/>
       </div>
+
+      <FixedFooter>
+        <MenuButton to={SCREEN.TITLE}>
+          {strings.back}
+        </MenuButton>
+      </FixedFooter>
     </motion.div>
   )
 }

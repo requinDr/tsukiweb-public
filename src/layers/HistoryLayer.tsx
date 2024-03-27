@@ -7,6 +7,8 @@ import history from '../utils/history';
 import script from '../utils/script';
 import { strings } from '../translation/lang';
 import PageElement from '../components/molecules/PageElement';
+import MenuButton from '../components/atoms/MenuButton';
+import FixedFooter from '../components/atoms/FixedFooter';
 
 type Props = {
   [key: string] : any // other properties to apply to the root 'div' element of the component
@@ -89,18 +91,18 @@ const HistoryLayer = (props: Props) => {
     <div className={classList.join(' ')} {...otherProps} ref={rootRef} id="layer-history">
       <div id="history" ref={historyRef}>
         <div className="text-container">
-          {/* lignes des pages précédentes */}
+          {/* previous pages lines */}
           {Array.from(history, (page, i) =>
             <PageElement key={i} saveState={page} onLoad={onClick} />
           )}
         </div>
       </div>
 
-      <footer>
-        <button onClick={() => setDisplay(false)}>
-          {strings.history.close}
-        </button>
-      </footer>
+      <FixedFooter>
+        <MenuButton onClick={() => setDisplay(false)}>
+          {strings.close}
+        </MenuButton>
+      </FixedFooter>
     </div>
   )
 }
