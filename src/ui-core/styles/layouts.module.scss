@@ -1,0 +1,75 @@
+.pageContent {
+  max-width: var(--page-width);
+  max-height: max(1080px, 60%);
+  margin-inline: auto;
+  padding: clamp(.8rem, 1.6vmin, 1.2rem);
+  height: inherit;
+  width: inherit;
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  align-self: center;
+}
+
+.pageTitle {
+  font-size: clamp(2.2rem, 8vmin, 3rem);
+  letter-spacing: -1px;
+  margin-block: 0;
+  font-family: "Times New Roman", "Times-Roman", serif;
+  font-weight: 700;
+  background: linear-gradient(180deg, #99bccf 0%, #71c1dc 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.2em;
+  grid-area: page-title;
+}
+.content {
+	grid-area: content;
+	display: flex;
+	min-height: 0;
+}
+.backButton {
+	grid-area: back;
+  align-self: flex-start;
+  margin-top: clamp(.8rem, 4vmin, 1rem);
+  width: fit-content;
+}
+
+.pageTabsLayout {
+	main {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-areas:
+				"page-title"
+				"tabs"
+				"content"
+				"back-button";
+		grid-template-rows: auto auto 1fr auto;
+	}
+
+	@media screen and (orientation: landscape) and (max-height: 480px) {
+		main {
+			grid-template-columns: 180px 1fr;
+			grid-template-areas:
+					"page-title content"
+					"tabs content"
+					"back content";
+			grid-template-rows: auto 1fr auto;
+		}
+	}
+}
+
+.pageSection {
+	background-color: var(--menu-container);
+	box-shadow: var(--menu-shadow);
+	position: relative;
+	padding: 1rem;
+	overflow-y: auto;
+	flex-grow: 1;
+
+	@media (hover: hover) and (pointer: fine) {
+		scrollbar-gutter: stable;
+    padding-right: calc(1rem - var(--scrollbar-width));
+	}
+}
