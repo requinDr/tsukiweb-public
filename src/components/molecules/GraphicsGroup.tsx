@@ -54,7 +54,10 @@ const GraphicsGroup = ({
         <GraphicElement key={images[pos]||pos}
           pos={pos}
           image={images[pos] as string} {...(typeof spriteAttrs == 'function' ? spriteAttrs(pos)
-              : spriteAttrs?.[pos] ?? {})} resolution={resolution} lazy={lazy} />
+              : spriteAttrs?.[pos] ?? {})}
+          resolution={resolution}
+          lazy={lazy}
+        />
       )}
     </div>
   )

@@ -19,7 +19,11 @@ const SaveListItem = ({id, saveState, onSelect, focusedSave, ...props}: SaveList
       onClick={onSelect.bind(null, id)}
       {...(isQuickSave ? {'quick-save':''} : {})}
       {...props}>
-      <GraphicsGroup images={saveState.graphics ?? saveState.context.graphics ?? {bg: ""}} resolution="sd"/>
+      <GraphicsGroup
+        images={saveState.graphics ?? saveState.context.graphics ?? {bg: ""}}
+        resolution="sd"
+        lazy={true}
+      />
 
       <div className="deta">
         <time dateTime={date.toISOString()} className="date">
