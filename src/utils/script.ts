@@ -408,7 +408,6 @@ function onSceneEnd(label = gameContext.label, nextLabel:LabelName|undefined=und
 
 function warnHScene() {
   toast(strings.game["toast-hscene-waning"], {
-    autoClose: 6000,
     toastId: "hscene-warning",
   })
 }

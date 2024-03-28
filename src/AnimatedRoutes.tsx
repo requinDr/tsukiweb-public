@@ -25,6 +25,9 @@ const AnimatedRoutes = () => {
       <ToastContainer
         transition={Slide}
         position="bottom-right"
+        autoClose={3000}
+        closeButton={false}
+        pauseOnFocusLoss={false}
         theme="dark" />
       
       <AnimatePresence mode="wait">

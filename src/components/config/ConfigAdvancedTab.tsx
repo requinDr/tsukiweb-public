@@ -66,13 +66,11 @@ const ConfigAdvancedTab = () => {
       }
 
       toast("Your data has been loaded", {
-        autoClose: 3000,
         toastId: "loaded-data",
         type: "success",
       })
     } catch (e) {
       toast("Failed to load data", {
-        autoClose: 3000,
         toastId: "failed-data",
         type: "error",
       })
