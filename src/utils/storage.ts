@@ -6,11 +6,24 @@ export class StoredValue<T> {
   private stringify: (v: T) => string;
   private parse: (v: string) => T;
 
-  constructor(name: string, session: boolean, stringify: (v: T)=> string, parse: (v: string)=> T) {
+  constructor(name: string, session: boolean,
+      stringify: (v: T)=> string, parse: (v: string)=> T,
+      onBlur?: ()=>(T|null)) {
     this.name = name
     this.storage = session ? sessionStorage : localStorage
     this.stringify = stringify
     this.parse = parse
+
+    if (onBlur) {
+      document.addEventListener("visibilitychange", ()=> {
+        if (document.visibilityState == "hidden") {
+          const obj = onBlur()
+          if (obj) {
+            this.set(obj)
+          }
+        }
+      })
+    }
   }
 
   set(value: T) {
@@ -34,7 +47,7 @@ export class StoredValue<T> {
 }
 
 export class StoredJSON<T> extends StoredValue<T> {
-  constructor(name: string, session: boolean) {
-    super(name, session, JSON.stringify, JSON.parse)
+  constructor(name: string, session: boolean, onBlur?: ()=>(T|null)) {
+    super(name, session, JSON.stringify, JSON.parse, onBlur)
   }
 }

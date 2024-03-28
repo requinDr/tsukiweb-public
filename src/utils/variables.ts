@@ -2,6 +2,7 @@ import { NumVarName, StrVarName, VarName, LabelName, RouteName, RouteDayName, Gr
 import { observe } from "./Observer"
 import { SCREEN, displayMode } from "./display"
 import { endings } from "./endings"
+import { StoredJSON } from "./storage"
 import { deepFreeze, deepAssign, resettable } from "./utils"
 
 //##############################################################################
@@ -32,7 +33,7 @@ const [gameContext, resetContext, defaultGameContext] = resettable(deepFreeze({
     r : "",
     monochrome: "",
   } as Required<Graphics>,
-  textPrefix: "",
+  textPrefix: "", // used to add bbcode before text lines (for e.g., color or alignement)
 }))
 //_______________________________script variables_______________________________
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -46,11 +47,18 @@ const [progress, resetProgress, defaultProgress] = resettable(deepFreeze({
   },
   flags: new Array<string>(),
 }))
+
 const [gameSession, resetGameSession] = resettable({ // temporaty variables (not to be saved saved)
   rockending: -1, // written, but never read in the script.
   flushcount: 0,  //used in for loops in the script
   continueScript: true, // false if the game must go back to the previous menu once the scene ends
 })
+const gameSessionStorage = new StoredJSON("gameSession", true, ()=> {
+  return gameSession
+})
+if (gameSessionStorage.exists()) {
+  deepAssign(gameSession, gameSessionStorage.get()!)
+}
 
 export { gameContext, defaultGameContext, progress, defaultProgress, gameSession }
 window.addEventListener('load', ()=> {
@@ -59,6 +67,7 @@ window.addEventListener('load', ()=> {
       resetContext()
       resetProgress()
       resetGameSession()
+      gameSessionStorage.delete()
     }
   })
 })

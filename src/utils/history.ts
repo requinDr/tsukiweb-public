@@ -208,7 +208,6 @@ class History {
    * restore the history from the session storage
    */
   restoreSession() {
-    historyStorage.get()
     const saved = historyStorage.get()
     if (saved) {
       this.pages.splice(0, this.pages.length, ...saved)
