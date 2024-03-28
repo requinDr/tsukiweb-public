@@ -27,9 +27,6 @@ const GalleryScreen = () => {
     let imagesTmp: any[] = GALLERY_IMAGES[selectedTab]
     if (imagesTmp == undefined)
       throw Error(`unknown character ${selectedTab}`)
-
-    if (!defaultThumbnail)
-      defaultThumbnail = imageSrc("notreg", "thumb")
     
     imagesTmp = imagesTmp.map((image: GalleryImg) => {
       const name = `event/${image.img}`
@@ -69,6 +66,7 @@ const GalleryScreen = () => {
             options={{
               Toolbar: false,
               Thumbs: false,
+              closeButton: false,
             } as any}>
             {images.map(({src_hd, src_thumb, ...image}) =>
               <Fragment key={image.img}>
@@ -77,7 +75,12 @@ const GalleryScreen = () => {
                 :
                   <a href={src_hd} data-fancybox="gallery"
                     className={image.sensitive && settings.blurThumbnails ? 'blur' : ''}>
-                    <img src={src_thumb} alt={`event ${image.img}`} draggable={false} />
+                    <img
+                      src={src_thumb}
+                      alt={`event ${image.img}`}
+                      draggable={false}
+                      fetchPriority={image.sensitive && settings.blurThumbnails ? 'low' : 'auto'}
+                    />
                   </a>
                 }
               </Fragment>
