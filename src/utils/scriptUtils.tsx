@@ -72,18 +72,27 @@ async function fetchBlock(label: string): Promise<string[]> {
     return [];
   start = script.indexOf('\n', start + 1) + 1;
   
-  let endRegexp = new RegExp(`^\\*(?!skip)(?!${label}_\\d)`, 'm')
-  let end = script.substring(start).search(endRegexp);
-  end = (end == -1) ? script.length : start + end;
-
-  return script.substring(start, end)
-    .split(/\r?\n/)
-    .filter(line => line.length > 0 && !line.startsWith('*'));
+  const nextLabelRegexp = new RegExp(`^\\*(?!skip)(?!${label}_\\d)(?<label>\\w+\\b)`, 'm')
+  const nextLabelMatch = nextLabelRegexp.exec(script.substring(start))
+  let text
+  if (nextLabelMatch) {
+    // add `goto *next_label' in case it is missing at the end of the block
+    const nextLabel = nextLabelMatch.groups!['label']
+    text = script.substring(start, start + nextLabelMatch.index) + `goto *${nextLabel}`
+  } else {
+    text = script.substring(start)
+  }
+  
+  return text.split(/\r?\n/).filter(
+    line => line.length > 0 && !line.startsWith('*')
+  );
 }
+
 const ignoredFBlockLines = [
   "gosub *regard_update",
   "!sd"
 ];
+
 const osieteRE = /[`"][^`"]+[`"],\s*(?<label>\*f5\d{2}),\s*[`"][^`"]+[`"],\s*\*endofplay/
 export async function fetchFBlock(label: string): Promise<string[]> {
   const afterScene = /^skip\d+a?$/.test(label);
