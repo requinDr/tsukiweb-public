@@ -1,6 +1,11 @@
 @use 'partials/_components';
 
 #gallery {
+    .gallery-transition {
+        position: relative;
+        overflow: hidden;
+    }
+
     .gallery-container {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(min(160px, 100%), 1fr));

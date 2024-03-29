@@ -8,11 +8,20 @@ type Props = {
 	setSelectedTab: (selected: any) => void
 	children: any
 	backButton: any
+	[key: string]: any
 }
-const PageTabsLayout = ({title, tabs, selectedTab, setSelectedTab, children, backButton}: Props) => {
+const PageTabsLayout = ({
+	title,
+	tabs,
+	selectedTab,
+	setSelectedTab,
+	children,
+	backButton,
+	...props
+}: Props) => {
 
 	return (
-		<div className={`${styles.pageContent} ${styles.pageTabsLayout}`}>        
+		<div className={`${styles.pageContent} ${styles.pageTabsLayout}`} {...props}>
 			<main>
 				<h2 className={styles.pageTitle}>{title}</h2>
 
@@ -26,7 +35,7 @@ const PageTabsLayout = ({title, tabs, selectedTab, setSelectedTab, children, bac
 					{children}
 				</div>
 
-				<div className={backButton}>
+				<div className={styles.backButton}>
 					{backButton}
 				</div>
 			</main>

@@ -7,6 +7,7 @@ import { addEventListener, deepAssign, isFullscreen, toggleFullscreen } from "..
 import { FaMinus, FaPlus } from "react-icons/fa"
 import { getLocale, strings } from "../../translation/lang"
 import { useLanguageRefresh } from "../hooks/useLanguageRefresh"
+import PageSection from "@ui-core/layouts/PageSection"
 
 const ConfigGameTab = () => {
   useLanguageRefresh()
@@ -41,7 +42,7 @@ const ConfigGameTab = () => {
   }
 
   return (
-    <section>
+    <PageSection>
       <ConfigButtons
         title={strings.config.ratio}
         btns={[
@@ -114,7 +115,7 @@ const ConfigGameTab = () => {
         const defaultConf = deepAssign(structuredClone(conf), defaultSettings, {extend: false})
         setConf(defaultConf)
       }} />
-    </section>
+    </PageSection>
   )
 }
 

@@ -7,8 +7,9 @@ import { strings, languages } from "../../translation/lang"
 import { RecursivePartial } from "../../types"
 import { toast } from "react-toastify"
 import { useLanguageRefresh } from "../hooks/useLanguageRefresh"
-import { MdTranslate } from "react-icons/md"
+import { MdDeleteForever, MdDownload, MdFileUpload, MdTranslate } from "react-icons/md"
 import ModalLanguageSelection from "./ModalLanguageSelection"
+import PageSection from "@ui-core/layouts/PageSection"
 
 function twoDigits(n: number) {
   return n.toString().padStart(2, '0')
@@ -94,7 +95,7 @@ const ConfigAdvancedTab = () => {
   }
 
   return (
-    <section>
+    <PageSection>
       <ConfigButtons
         title={strings.config.quality}
         btns={[
@@ -146,22 +147,22 @@ const ConfigAdvancedTab = () => {
         <div className="config-btns">
           <button className="config-btn"
             onClick={exportData}>
-              {strings.config["data-export"]}
+            <MdDownload /> {strings.config["data-export"]}
           </button>
           <button className="config-btn"
             onClick={importData.bind(null, false)}
             onContextMenu={importData.bind(null, true)}>
-            {strings.config["data-import"]}
+            <MdFileUpload /> {strings.config["data-import"]}
           </button>
           <button className="config-btn erase"
             onClick={eraseData}>
-            {strings.config["data-erase"]}
+            <MdDeleteForever /> {strings.config["data-erase"]}
           </button>
         </div>
       </ConfigItem>
 
       <ResetBtn onClick={reset} />
-    </section>
+    </PageSection>
   )
 }
 

@@ -24,7 +24,6 @@
   --selected-shadow: 0px 0px 0px 1px rgb(0, 200, 255) inset,
     0px 0px 90px 0px rgba(0, 180, 255, 0.8) inset;
   --separator: rgba(255, 255, 255, 0.1);
-  --scrollbar-width: 8px;
   --page-width: max(1400px, 60%);
 }
 
@@ -156,7 +155,6 @@ main {
 }
 
 .back-button {
-  align-self: flex-start;
   margin-top: clamp(.8rem, 4vmin, 1rem);
   width: fit-content;
 }

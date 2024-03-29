@@ -23,9 +23,7 @@ const ConfigLayer = () => {
       id="layer-config"
       className={`layer ${display ? "show" : ""}`}
       ref={rootRef}>
-      <div className="page-content">
-        <ConfigLayout back={back} />
-      </div>
+      <ConfigLayout back={back} />
     </div>
   )
 }

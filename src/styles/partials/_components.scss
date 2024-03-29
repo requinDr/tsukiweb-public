@@ -5,8 +5,7 @@
     padding: 1rem;
     
     @media all and (hover: hover) and (pointer: fine) {
-        scrollbar-gutter: stable;
-        padding-right: calc(1rem - var(--scrollbar-width));
+        scrollbar-gutter: stable both-edges;
     }
 }
 %info-box {

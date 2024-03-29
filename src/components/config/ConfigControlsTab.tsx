@@ -3,6 +3,7 @@ import { KeymapKeyFilter, inGameKeymap } from "../../utils/KeyMap"
 import { strings } from "../../translation/lang"
 import { bb } from "../../utils/Bbcode"
 import { useLanguageRefresh } from "../hooks/useLanguageRefresh"
+import PageSection from "@ui-core/layouts/PageSection"
 
 type KeyMapEntry = [string, typeof inGameKeymap[keyof typeof inGameKeymap]]
 
@@ -23,7 +24,7 @@ const ConfigControlsTab = () => {
             .filter(([action, _])=> Object.hasOwn(controlStrings, action))
             .map(convertAction))
   return (
-    <section>
+    <PageSection>
       {keymap.current.map(([action, keys], i)=> 
         <div key={i} className="keyMap">
           <div className="action">{bb(controlStrings[action])}</div>
@@ -45,7 +46,7 @@ const ConfigControlsTab = () => {
           )}
         </div>
       )}
-    </section>
+    </PageSection>
   )
 }
 

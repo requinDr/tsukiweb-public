@@ -20,13 +20,11 @@ const ConfigScreen = () => {
       initial={{opacity: 0}}
       animate={{opacity: 1}}
       exit={{opacity: 0}}>
-      <div className="page-content">
-        <ConfigLayout
-          back={back}
-          selectedTab={selectedTab as any}
-          setSelectedTab={setSelectedTab}
-          page={SCREEN.CONFIG} />
-      </div>
+      <ConfigLayout
+        back={back}
+        selectedTab={selectedTab as any}
+        setSelectedTab={setSelectedTab}
+        page={SCREEN.CONFIG} />
     </motion.div>
   )
 }

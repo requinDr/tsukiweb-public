@@ -5,6 +5,7 @@ import { deepAssign, negative } from "../../utils/utils"
 import { strings } from "../../translation/lang"
 import { MdOutlineVolumeOff, MdOutlineVolumeUp, MdVolumeMute } from "react-icons/md"
 import { useLanguageRefresh } from "../hooks/useLanguageRefresh"
+import PageSection from "@ui-core/layouts/PageSection"
 
 const ConfigAudioTab = () => {
   useLanguageRefresh()
@@ -40,7 +41,7 @@ const ConfigAudioTab = () => {
   }
 
   return (
-    <section>
+    <PageSection>
       {(Object.keys(conf.volume) as Array<keyof typeof volumeNames>).map(key=>
         <ConfigItem key={key} title={volumeNames[key]}>
           <div className="config-range">
@@ -91,7 +92,7 @@ const ConfigAudioTab = () => {
         const defaultConf = deepAssign(structuredClone(conf), defaultSettings, {extend: false})
         setConf(defaultConf)
       }} />
-    </section>
+    </PageSection>
   )
 }
 

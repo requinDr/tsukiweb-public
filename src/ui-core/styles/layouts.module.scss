@@ -30,9 +30,9 @@
 	min-height: 0;
 }
 .backButton {
-	grid-area: back;
+	grid-area: back-button;
   align-self: flex-start;
-  margin-top: clamp(.8rem, 4vmin, 1rem);
+  // margin-top: clamp(.8rem, 4vmin, 1rem);
   width: fit-content;
 }
 
@@ -54,7 +54,7 @@
 			grid-template-areas:
 					"page-title content"
 					"tabs content"
-					"back content";
+					"back-button content";
 			grid-template-rows: auto 1fr auto;
 		}
 	}
@@ -67,9 +67,5 @@
 	padding: 1rem;
 	overflow-y: auto;
 	flex-grow: 1;
-
-	@media (hover: hover) and (pointer: fine) {
-		scrollbar-gutter: stable;
-    padding-right: calc(1rem - var(--scrollbar-width));
-	}
+	scrollbar-gutter: stable both-edges;
 }

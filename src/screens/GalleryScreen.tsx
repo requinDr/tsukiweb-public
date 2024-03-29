@@ -2,7 +2,7 @@ import { Fragment, useMemo } from 'react'
 import Fancybox from "../components/molecules/Fancybox"
 import '../styles/gallery.scss'
 import { settings } from '../utils/settings'
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, Variants, motion } from 'framer-motion'
 import { CharacterId, GALLERY_IMAGES, GalleryImg } from '../utils/gallery'
 import { strings } from "../translation/lang"
 import { imageSrc } from '../translation/assets'
@@ -19,7 +19,7 @@ type GalleryItem = GalleryImg & {src_thumb: string, src_hd: string}
 
 let defaultThumbnail: string | null = null
 
-const container = {
+const container: Variants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
@@ -84,6 +84,7 @@ const GalleryScreen = () => {
               Thumbs: false,
               closeButton: false,
             }}>
+            <div className='gallery-transition'>
             <AnimatePresence mode="popLayout">
               <motion.div
                 key={selectedTab}
@@ -102,7 +103,7 @@ const GalleryScreen = () => {
                   </Fragment>
                 )}
               </motion.div>
-            </AnimatePresence>
+            </AnimatePresence></div>
           </Fancybox>
         </PageSection>
       </PageTabsLayout>

@@ -21,14 +21,14 @@ const MenuButton = ({children, onClick, to, className, ...props}: Props) => {
 	const button = onClick ? (
 		<button
 			onClick={onClick}
-			className={`${styles.menuBtn} menu-btn ${className}`}
+			className={`${styles.menuBtn} menu-btn ${className || ""}`}
 			{...props}>
 			{children}
 		</button>
 	) : (
 		<Link
 			to={to}
-			className={`${styles.menuBtn} menu-btn ${className}`}
+			className={`${styles.menuBtn} menu-btn ${className || ""}`}
 			{...props}>
 			{children}
 		</Link>

@@ -8,7 +8,8 @@ import { strings } from '../translation/lang'
 import { SCREEN } from '../utils/display'
 import { useLanguageRefresh } from './hooks/useLanguageRefresh'
 import MenuButton from '@ui-core/components/MenuButton'
-import TabsComponent, { Tab } from '@ui-core/components/TabsComponent'
+import { Tab } from '@ui-core/components/TabsComponent'
+import PageTabsLayout from '@ui-core/layouts/PageTabsLayout'
 
 enum Tabs {
   game = "game",
@@ -51,20 +52,19 @@ const ConfigLayout = ({back, selectedTab, setSelectedTab, page}: Props) => {
     tabs.push({label: strings.config['tab-advanced'], value: Tabs.advanced})
 
   return (
-    <main id="config-layout">
-      <h2 className="page-title">{strings.menu.config}</h2>
-
-      <TabsComponent
-        tabs={tabs}
-        selected={activeTab}
-        setSelected={setActiveTab} />
-
+    <PageTabsLayout
+      id="config-layout"
+      title={strings.menu.config}
+      tabs={tabs}
+      selectedTab={activeTab}
+      setSelectedTab={setActiveTab}
+      backButton={
+        <MenuButton onClick={back.bind(null)} className="back-button">
+          {strings.back}
+        </MenuButton>
+      }>
       {tabComponents[activeTab]}
-
-      <MenuButton onClick={back.bind(null)} className="back-button">
-        {strings.back}
-      </MenuButton>
-    </main>
+    </PageTabsLayout>
   )
 }
 
