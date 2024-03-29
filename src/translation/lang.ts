@@ -96,7 +96,7 @@ async function loadTranslation(id: TranslationId): Promise<typeof strings> {
     fetchJson(`${path}/lang.json`).then(json => insertDirectory(json, dir)),
     fetchJson(`${path}/game.json`).then(json => insertDirectory(json, dir)),
   ])
-  const result = fallback ? await loadTranslation(fallback) : {} as typeof strings
+  const result = fallback ? await loadTranslation(fallback) : {} as StringsType
 
   result.id = id
   if (!Object.hasOwn(result, 'lastUpdate') || lastUpdate > result.lastUpdate)
@@ -108,7 +108,7 @@ async function loadTranslation(id: TranslationId): Promise<typeof strings> {
   return result
 }
 
-async function updateTranslation() {
+async function updateTranslations() {
   deepAssign(languages, await fetchJson(LANGUAGES_LIST_URL))
   languagesStorage.set(languages)
   let id: TranslationId | undefined = settings.language
@@ -118,7 +118,7 @@ async function updateTranslation() {
     lastUpdate = desc["last-update"] > lastUpdate ? desc["last-update"] : lastUpdate
     id = desc.fallback
   }
-  if (strings.lastUpdate && lastUpdate > strings.lastUpdate) {
+  if (strings.id != id || !strings.lastUpdate || lastUpdate > strings.lastUpdate) {
     updateLanguage(settings.language, true)
   }
 }
@@ -187,23 +187,27 @@ export function addLanguage(id: TranslationId, description: LangDesc) {
 //#                               ON-LOAD LOGIC                                #
 //##############################################################################
 
+let languagesLoaded = false
+
 if (!languagesStorage.exists()) {
-  fetchJson(LANGUAGES_LIST_URL).then(json=> {
-    deepAssign(languages, json)
-    languagesStorage.set(languages)
+  updateTranslations().then(()=> {
+    languagesLoaded = true
   })
 } else {
-  updateTranslation() // update languages.json in the background
+  languagesLoaded = true
+  updateTranslations() // update languages.json in the background
 }
+
+// update strings when language changes and when window loads
 window.addEventListener('load', ()=> {
   observe(settings, 'language', updateLanguage)
-  if (!Object.hasOwn(strings, 'id') || strings.id != settings.language)
-    updateLanguage(settings.language)
-  else {
-    langSelection.ready = true
+  if (languagesLoaded) {
+    if (!Object.hasOwn(strings, 'id') || strings.id != settings.language)
+      updateLanguage(settings.language)
+    else
+      langSelection.ready = true
   }
 })
 
 
 window.strings = strings
-// update strings when language changes and when window loads
