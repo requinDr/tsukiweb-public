@@ -9,6 +9,7 @@ import SaveListItem from "./save/SaveListItem"
 import SaveDetails from "./save/SaveDetails"
 import { MdAddCircleOutline, MdUploadFile } from "react-icons/md"
 import MenuButton from "@ui-core/components/MenuButton"
+import PageSection from "@ui-core/layouts/PageSection"
 
 //##############################################################################
 //#                               TOOL FUNCTIONS                               #
@@ -89,7 +90,7 @@ const SavesLayer = ({variant, back}: Props) => {
   return (
     <main id="saves-layout">
       <h2 className="page-title">{title}</h2>
-      <div className="saves">
+      <PageSection className="saves">
         {variant === "save" ?
           <button
             className={`save-container create ${focusedId === 1 ? "active" : ""}`}
@@ -127,7 +128,7 @@ const SavesLayer = ({variant, back}: Props) => {
             onMouseEnter={setFocusedSave.bind(null, id)}
           />
         )}
-      </div>
+      </PageSection>
 
       <SaveDetails id={focusedId} saveState={focusedSave} deleteSave={deleteSave}/>
       <div className="save-buttons">

@@ -3,6 +3,7 @@ import { SaveState, exportSave } from "../../utils/savestates"
 import { savePhaseTexts } from "../SavesLayout"
 import { MdDeleteOutline, MdOutlineFileDownload } from "react-icons/md"
 import GraphicsGroup from "../molecules/GraphicsGroup"
+import PageSection from "@ui-core/layouts/PageSection"
 
 type SaveDetailsProps = {
   id?: number, saveState?: SaveState, deleteSave: (id: number)=>void,
@@ -12,7 +13,7 @@ const SaveDetails = ({id, saveState, deleteSave, ...props}: SaveDetailsProps)=> 
   const [phaseTitle, phaseDay] = saveState ? savePhaseTexts(saveState) : ["", ""]
 
   return (
-    <div className="info" {...props}>
+    <PageSection className="info" {...props}>
       <GraphicsGroup images={saveState?.graphics ?? saveState?.context.graphics ?? {bg:"notreg"}} />
       
       {id != undefined && saveState != undefined &&
@@ -33,7 +34,7 @@ const SaveDetails = ({id, saveState, deleteSave, ...props}: SaveDetailsProps)=> 
           </div>
         </div>
       }
-    </div>
+    </PageSection>
   )
 }
 

@@ -3,19 +3,17 @@
 #endings {
     main {
         display: grid;
-        grid-template-columns: 1fr 220px;
-        gap: 2rem;
+        grid-template-columns: 1fr 230px;
+        gap: 1rem;
     }
 
     .endings-list {
-        @extend %menu-container;
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(min(400px, 100%), 1fr));
         isolation: isolate;
         min-width: 0;
         gap: 20px;
         place-content: start;
-        overflow-y: auto;
 
         .ending {
             display: flex;
@@ -109,10 +107,10 @@
         gap: 1em;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(32px, 1fr));
-        flex-grow: 1;
         place-content: flex-start;
         overflow-y: auto;
         min-height: 30vh;
+        justify-items: center;
 
         h3 {
             all: unset;

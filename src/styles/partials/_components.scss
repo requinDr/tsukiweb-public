@@ -3,10 +3,7 @@
     box-shadow: var(--menu-shadow);
     position: relative;
     padding: 1rem;
-    
-    @media all and (hover: hover) and (pointer: fine) {
-        scrollbar-gutter: stable both-edges;
-    }
+    scrollbar-gutter: stable both-edges;
 }
 %info-box {
     color: #ffffffe8;

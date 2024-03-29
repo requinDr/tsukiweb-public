@@ -12,6 +12,7 @@ import { playScene } from '../utils/savestates'
 import MenuButton from '../ui-core/components/MenuButton'
 import { useLanguageRefresh } from '../components/hooks/useLanguageRefresh'
 import { useScreenAutoNavigate } from '../components/hooks/useScreenAutoNavigate'
+import PageSection from '@ui-core/layouts/PageSection'
 
 
 const EndingsScreen = () => {
@@ -28,7 +29,7 @@ const EndingsScreen = () => {
         <h2 className="page-title">{strings.extra.endings}</h2>
         
         <main>
-          <div className="endings-list">
+          <PageSection className="endings-list">
           {Object.values(endings).map((ending, index) => {
             if (ending.seen || window.unlock) {
               return <EndingComponent ending={ending} key={index} />
@@ -36,9 +37,9 @@ const EndingsScreen = () => {
               return <div key={index} className="ending" />
             }
           })}
-          </div>
+          </PageSection>
 
-          <div className="badendings-list">
+          <PageSection className="badendings-list">
             <h3>{strings.endings.osiete}</h3>
             <Tooltip id="osiete" place="top" className="tooltip" />
             {Object.values(osiete).map((ending, index)=>
@@ -60,7 +61,7 @@ const EndingsScreen = () => {
                 }
               </div>
             )}
-          </div>
+          </PageSection>
         </main>
 
         <MenuButton to={SCREEN.TITLE} className="back-button">
