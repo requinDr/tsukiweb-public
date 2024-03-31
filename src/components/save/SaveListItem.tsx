@@ -21,7 +21,7 @@ const SaveListItem = ({id, saveState, onSelect, focusedSave, ...props}: SaveList
       {...props}>
       <GraphicsGroup
         images={saveState.graphics ?? saveState.context.graphics ?? {bg: ""}}
-        resolution="sd"
+        resolution="thumb"
         lazy={true}
       />
 

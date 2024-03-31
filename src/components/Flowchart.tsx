@@ -120,7 +120,7 @@ class FcScene extends FcNode {
       content = <>
         <foreignObject x={-SCENE_WIDTH/2} y={-SCENE_HEIGHT/2}
           width={SCENE_WIDTH} height={SCENE_HEIGHT}>
-          <GraphicsGroup images={this.graph} resolution="sd" lazy={true} />
+          <GraphicsGroup images={this.graph} resolution="thumb" lazy={true} />
         </foreignObject>
         <use href="#fc-scene-outline"/>
       </>
