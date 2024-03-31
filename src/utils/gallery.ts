@@ -34,6 +34,7 @@ export const GALLERY_IMAGES: Record<CharacterId, GalleryImg[]> = {
     {img: "ark_h08", sensitive: true},
     {img: "ark_h09", sensitive: true},
     {img: "ark_h10", sensitive: true},
+    {img: "ark_h10b", sensitive: true},
     {img: "ark_h11", sensitive: true},
     {img: "ark_h12", sensitive: true},
     {img: "ark_h13", sensitive: true}
