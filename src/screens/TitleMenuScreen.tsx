@@ -1,8 +1,5 @@
 import { useMemo, useState } from 'react'
 import tsukiLogo from "../assets/images/tsukihime-logo.webp"
-import necoArcDance from "../assets/images/neco-arc-dance.gif"
-import necoArcBand from "../assets/images/neco-arc-band.gif"
-import necoArcRage from "../assets/images/neco-arc-rage.gif"
 import moon from "../assets/images/moon.webp"
 import '../styles/title-menu.scss'
 import { SCREEN, displayMode } from '../utils/display'
@@ -21,28 +18,17 @@ import TranslationSwitch from '../components/title-menu/TranslationSwitch'
 import usePWA from '../components/hooks/usePWA'
 import Particles from '@ui-core/components/Particles'
 
+const img = {
+  src: moon,
+  alt: "moon",
+  className: "moon"
+}
+
 const TitleMenuScreen = () => {
   useScreenAutoNavigate(SCREEN.TITLE)
   const { hasPWAcapability, installPWA } = usePWA()
   const [page, setPage] = useState<number>(0)
   useLanguageRefresh()
-
-  const img = useMemo(()=> {
-    const bg = new Image()
-    const isAprilFirst = new Date().getMonth() === 3 && new Date().getDate() === 1
-    //show weird cats 1% of the time except on April 1st where the odds are higher
-    if (Math.random() < (isAprilFirst ? 0.6 : 0.01)) {
-      const necoArc = [necoArcDance, necoArcBand, necoArcRage][Math.floor(Math.random() * 3)]
-      bg.src = necoArc
-      bg.alt = "neco-arc...?"
-      bg.className = "neco-arc"
-    } else {
-      bg.src = moon
-      bg.alt = "the moon"
-      bg.className = "moon"
-    }
-    return bg
-  }, [])
 
   function newGame() {
     history.clear()
