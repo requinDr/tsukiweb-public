@@ -228,7 +228,7 @@ function centerOpenning(lines) {
 
 function addContext({graphics = null, track = null, waveloop = null, monocro = null}, _label, lines) {
     lines.unshift(';---added context above---')
-    if (graphics != null) {
+    if (graphics) {
         if (graphics.bg)
             lines.unshift(`bg ${graphics.bg},%type_nowaitdisp`)
         if (graphics.l)
@@ -239,7 +239,7 @@ function addContext({graphics = null, track = null, waveloop = null, monocro = n
             lines.unshift(`ld r,${graphics.l},%type_nowaitdisp`)
     }
     if (track != null)
-        lines.unshift(track == "stop" ? "playstop" : `play ${track}`)
+        lines.unshift(track == '' ? "playstop" : `play ${track}`)
     if (waveloop != null)
         lines.unshift(waveloop == '' ? 'wavestop' : `waveloop ${waveloop}`)
     if (monocro != null)
@@ -323,11 +323,11 @@ function extractContexts(lines) {
 
 function getParentContext(label, tree, end_contexts, start_context, report) {
     if (!tree.has(label)) {
-        return createNeutralContext();
+        return copyContext(start_context);
     }
     const parent_scenes = tree.get(label).parent_nodes.map(node => node.scene)
     if (parent_scenes.length == 0) {
-        return createNeutralContext();
+        return copyContext(start_context);
     }
     let context = null
     const parent_contexts = parent_scenes.map(scene => end_contexts.get(scene))
@@ -397,7 +397,7 @@ function postProcess(scenes, report) {
             }
         }
     }
-    // TODO delete unreferenced scenes, if any
+    //TODO process scenes in order, use added start context when calculating end context
 }
 
 export {
