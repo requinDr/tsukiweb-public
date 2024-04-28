@@ -39,6 +39,7 @@ const AnimatedRoutes = () => {
           <Route path="/load" element={<LoadScreen />} />
           <Route path="/config" element={<ConfigScreen />} />
           <Route path="/extra">
+            <Route index element={<Navigate to=".." />} />
             <Route path="gallery" element={<GalleryScreen />} />
             <Route path="endings" element={<EndingsScreen />} />
             <Route path="scenes">
