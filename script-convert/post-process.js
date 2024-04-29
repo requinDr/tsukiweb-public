@@ -105,8 +105,14 @@ function contextUnion(ctx1, ctx2) {
     }
 }
 
-//##############################################################################
-//#region                      Fixes for all script files
+function isContextFull(ctx) {
+    const {graphics: {bg, l, c, r}, track, waveloop, monocro} = ctx
+    return bg != null && l != null && c != null && r != null
+        && track != null && waveloop != null && monocro != null;
+}
+
+//#endregion ###################################################################
+//#region                          General fixes
 //##############################################################################
 
 /**
@@ -196,8 +202,8 @@ function splitInstructions(lines) {
     lines.splice(0, lines.length, ...result)
 }
 
-//##############################################################################
-//#region                            Specific fixes
+//#endregion ###################################################################
+//#region                         Specific fixes
 //##############################################################################
 
 /**
@@ -205,24 +211,24 @@ function splitInstructions(lines) {
  * @param {Array<string>} lines 
  */
 function centerOpenning(lines) {
-    let textLines = Array.from(lines.filter(([i, line])=> {
+    let textLines = Array.from(Array.from(lines.entries()).filter(([_i, line])=> {
         if(!isTextLine(line))
-            return false // include only text lines
+            return false; // include only text lines
         if (line.startsWith('`'))
-            line = line.substring(1)
-        line = line.trimStart()
+            line = line.substring(1);
+        line = line.trimStart();
         if (['-', '─'].includes(line.charAt(0)))
-            return false //lines that start with '---' stay left-aligned
-    }))
-    textLines.pop() // remove last text line from process
+            return false; //lines that start with '---' stay left-aligned
+        return true;
+    }));
 
     // add [center] on remaining text lines
     for (let [i, line] of textLines) {
-        let prefix = line.startsWith('`') ? '`' : ''
+        let prefix = line.startsWith('`') ? '`' : '';
         if (prefix == '`')
-            line = line.substring(1)
-        line = line.trimStart()
-        textLines[i] = `${prefix}[center]${line}`
+            line = line.substring(1);
+        line = line.trimStart();
+        lines[i] = `${prefix}[center]${line}`;
     }
 }
 
@@ -250,13 +256,12 @@ function addContext({graphics = null, track = null, waveloop = null, monocro = n
  */
 const specificFixes = {
     'openning': (_label, lines) => {
-        lines.unshift(`bg #000000,%type_nowaitdisp`)
         centerOpenning(lines)
     },
 }
 
-//##############################################################################
-//#                               Context check                                #
+//#endregion ###################################################################
+//#region                         Context check
 //##############################################################################
 
 function extractContexts(lines) {
@@ -321,30 +326,49 @@ function extractContexts(lines) {
     };
 }
 
-function getParentContext(label, tree, end_contexts, start_context, report) {
-    if (!tree.has(label)) {
-        return copyContext(start_context);
+function getEndContext(label, tree, end_contexts, start_contexts, report) {
+    let end_context = end_contexts.get(label);
+    if (isContextFull(end_context)) {
+        return end_context;
     }
-    const parent_scenes = tree.get(label).parent_nodes.map(node => node.scene)
-    if (parent_scenes.length == 0) {
-        return copyContext(start_context);
-    }
-    let context = null
-    const parent_contexts = parent_scenes.map(scene => end_contexts.get(scene))
-    for (let ctx of parent_contexts) {
-        ctx = contextUnion(start_context, ctx) // replace with start context when not null
-        if (context == null) {
-            context = ctx;
-        } else if (!contextEqual(ctx, context)) {
-            report.conflicts.scenes[label] = [...parent_contexts]
-            break
-        }
-    }
-    return context
+    end_context = contextUnion(end_context, getStartContext(label, tree, end_contexts, start_contexts, report))
+    end_contexts.set(label, end_context)
+    return end_context
 }
 
-//##############################################################################
-//#                                    Main                                    #
+function getStartContext(label, tree, end_contexts, start_contexts, report) {
+    let start_context = start_contexts.get(label)
+    if (isContextFull(start_context)) {
+        return start_context;
+    }
+    const parent_scenes = tree.get(label)?.parent_nodes.map(node => node.scene) ?? []
+    if (parent_scenes.length == 0) {
+        start_context = contextUnion(start_context, createNeutralContext());
+    } else {
+        const parent_contexts = parent_scenes.map(scene =>
+            contextUnion(start_context,
+                         getEndContext(scene, tree, end_contexts, start_contexts, report)
+            )
+        )
+        let context = parent_contexts[0]
+        for (let ctx of parent_contexts.slice(1)) {
+            if (!contextEqual(ctx, context)) {
+                report.conflicts.scenes[label] = [...parent_contexts]
+                break
+            }
+        }
+        start_context = context
+    }
+    let end_context = end_contexts.get(label);
+    if (!isContextFull(end_context)) {
+        end_context = contextUnion(end_context, start_context);
+        end_contexts.set(label, end_context);
+    }
+    return start_context;
+}
+
+//#endregion ###################################################################
+//#region                              Main
 //##############################################################################
 
 /**
@@ -375,7 +399,7 @@ function postProcess(scenes, report) {
             endContexts.set(label, end)
         }
     }
-    const tree = getFlowchart(scenes, {'openning': {before: ['f20']}})
+    const tree = getFlowchart(scenes, {'openning': {before: ['f20']}, 'eclipse': {}})
 
     report.conflicts = {
         info: "Conflicts when deducting start contexts",
@@ -385,21 +409,20 @@ function postProcess(scenes, report) {
         info: "contexts applied to scenes",
         scenes: {}
     }
-    for (const [label, {file, lines}] of scenes.entries()) {
-        if (file != LOGIC_FILE) {
-            const startContext = startContexts.get(label);
-            const parentContext = getParentContext(label, tree, endContexts, startContext, report);
-            let appliedContext = contextUnion(startContext, parentContext);
-            appliedContext = contextDiff(startContext, appliedContext);
-            if (Object.getOwnPropertyNames(appliedContext).length > 0) {
-                addContext(appliedContext, label, lines)
-                report.appliedContexts.scenes[label] = appliedContext
-            }
+    for (const label of tree.keys()) {
+        const startContext = startContexts.get(label);
+        let appliedContext = getStartContext(label, tree, endContexts, startContexts, report);
+        appliedContext = contextDiff(startContext, appliedContext);
+        if (Object.getOwnPropertyNames(appliedContext).length > 0) {
+            addContext(appliedContext, label, scenes.get(label).lines);
+            report.appliedContexts.scenes[label] = appliedContext;
         }
     }
     //TODO process scenes in order, use added start context when calculating end context
 }
 
+//#endregion
+
 export {
-    postProcess
+    postProcess 
 }

@@ -29,6 +29,13 @@ class TreeNode {
         this.child_nodes = [];
         /** @type {Array<TreeNode>} */
         this.parent_nodes = [];
+        /** @type {number} */
+        this._index = -1
+    }
+    get index() {
+        if (this._index == -1)
+            this._index = this.parent_nodes.reduce((i, node)=> Math.max(i, node.index), 0)
+        return this._index
     }
     /**
      * @param {string} name 
@@ -104,15 +111,16 @@ function getFlowchart(script, noLogicScenes = {}) {
         }
     }
     /** @type {Map<string, TreeNode>} */
-    const scenesTree = new Map()
+    const scenes = []
     for (const [name, node] of nodes.entries()) {
         if (!node.scene) {
             node.delete()
         } else {
-            scenesTree.set(node.scene, node)
+            scenes.push([node.scene, node])
         }
     }
-    return scenesTree
+    scenes.sort(([, n1], [, n2])=> n1.index - n2.index)
+    return new Map(scenes)
 }
 
 export {
