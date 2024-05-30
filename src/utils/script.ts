@@ -128,6 +128,9 @@ function processPhase(dir: "l"|"r") {
   }
   history.onPageBreak("phase")
   return [
+    ...extractInstructions(`playstop`),
+    ...extractInstructions(`wavestop`),
+    ...extractInstructions(`monocro off`),
     ...extractInstructions(`bg ${bg},%type_${dir}cartain_fst`),
     ...(texts.map(extractInstructions).flat()),
     {cmd: "click", arg: Math.max(1000, settings.nextPageDelay).toString()},
