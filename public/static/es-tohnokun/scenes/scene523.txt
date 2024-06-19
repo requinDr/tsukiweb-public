@@ -1,0 +1,29 @@
+monocro off
+wavestop
+;---added context above---
+bg "image\bg\bg_06c.jpg",%type_nowaitdisp
+play "*7"
+!w1000
+cl c,%type_lcartain_mid
+ld r,":a;image\tachi\cel_t20.jpg",%type_tshutter_mid
+` …… La clase de la tercera hora fue una triste historia.@
+` Fuiste espléndido al tratar de resolver todo por tu cuenta, pero parece que las cosas no salieron como deseabas.@
+` Consulta a tu confiable Senpai, y por favor ábrete paso a través de este problema.\
+` ----¡Y!@
+` Para los Tohno-kuns que vinieron aquí por alguna otra razón.@
+` Desafortunadamente, aunque estabas tan cerca del clímax, tus lazos con Ciel-san no eran lo suficientemente profundos.@
+` Debo pedirte que retrocedas.@
+` Por favor retrocede un largo tiempo, y hazte buen amigo de Ciel-san.@
+` Hay muchos momentos en los que puedes hacer esto, pero el más importante es el que sucede durante la sexta noche.\
+` Tohno-kun, cuando se trataba de escoger entre Ciel-san o Arcueid, ¿escogiste a esa est**ida mujer?@
+br
+` Éste es el resultado.@
+` Si has aprendido tu lección, por favor regresa a la noche del sexto día y piensa de nuevo a quién deberías escoger.@
+br
+br
+br
+br
+` ……………… ¿¡De acuerdo!?\
+bg #000000,%type_crossfade_mid
+playstop
+return

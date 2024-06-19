@@ -1,0 +1,33 @@
+monocro off
+wavestop
+play "*3"
+;---added context above---
+bg "image\bg\bg_06a.jpg",%type_nowaitdisp
+` ¿Está buscando a alguien en el pasillo?@ Senpai camina de un lado a otro.@
+` …… Viéndola con calma, parece que no tuviese nada que ver con mi salón.\
+`"…… Como siempre, no la entiendo para nada.@ ¿Qué demonios está haciendo?"@
+` Me quedo en mi pupitre y la observo.@
+` Senpai cruza sus brazos como pensando en algo, y mira fijamente a los estudiantes que pasan.\
+`"Tal vez perdió algo."@
+` …… Suena raro que una estudiante de tercer año pierda algo en el pasillo de segundo año, pero estamos hablando de la siempre errante Senpai.@
+br
+` ----¿Huh?@
+` Senpai entra a mi salón de clases repentinamente.@
+` Camina directamente hacia mí.\
+ld c,":a;image\tachi\cel_t10a.jpg",%type_lshutter_fst
+`"¡Tohno-kun!"@
+`"¡!"@
+` Y de repente me grita.@
+`"¿Q, qué sucede, Senpai?@ No he hecho nada malo como para hacerte enfadar."@
+`"Sin excusas.@ Sólo ven acá, por favor."\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_11a.jpg",%type_lcartain_mid
+` Ella hala mi brazo y me arrastra hasta el pasillo.@
+`"O, oye, Senpai, ¿qué estás haciendo tan repentinamente?@ ¿¡No estabas buscando algo!?"@
+ld c,":a;image\tachi\cel_t10a.jpg",%type_crossfade_fst
+`"¡Está bien, sólo quédate ahí!"@
+cl c,%type_lshutter_mid
+`"……"@
+` Bajo la intensidad de Senpai, rápidamente llamo la atención.@ Y como ayer, Senpai comienza a olfatearme.@
+`"…… ¿Um, Senpai……?"\
+return

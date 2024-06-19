@@ -1,0 +1,26 @@
+monocro off
+wavestop
+play "*2"
+;---added context above---
+bg "image\bg\bg_34a.jpg",%type_nowaitdisp
+`"Hey.@ Buenos días, Akiha."@
+ld l,":a;image\tachi\aki_t01a.jpg",%type_crossfade_fst
+`"---Buenos días, Nii-san."@
+ld r,":a;image\tachi\koha_t02.jpg",%type_crossfade_fst
+`"Buenos días, Shiki-san.@ El desayuno está listo en el comedor.@ Por favor coma."@
+` En contraste con Akiha, Kohaku-san me saluda con una alegre sonrisa.\
+`"Ah, muchas gracias… Parece que estás tomando tu té para después de la comida.@ ¿Ya terminaste de desayunar, Akiha?"@
+ld l,":a;image\tachi\aki_t03a.jpg",%type_crossfade_fst
+`"Por supuesto.@ No me importa cuándo te levantas, Nii-san, pero por favor al menos deja algo de tiempo para el desayuno.@ Desayunar después de las siete es una señal de falta de elegancia."@
+`"…… Pienso que desayunar a las siete es bastante normal.@ ¿A qué hora te levantas, Akiha?"@
+ld l,":a;image\tachi\aki_t18a.jpg",%type_crossfade_fst
+`"Me levanto a las cinco de la mañana.@ ¿Qué hay con eso?"@
+`"………"@
+` …… Guau.@ No sé por qué se levanta tan temprano, pero resultó ser una hora tan perfecta para levantarse que no tengo espacio para replicar.\
+ld l,":a;image\tachi\aki_t03a.jpg",%type_crossfade_fst
+`"Además, tu escuela está a treinta minutos de aquí caminando, ¿no?@ Por favor no llegues tarde a una escuela que está tan cerca.@ Sería una vergüenza."@
+`"…… Urgh."@
+cl a,%type_crossfade_fst
+` Las palabras de Akiha están llenas de espinas que me apuñalan.@
+` Pero como dice la verdad, no hay espacio para un contra argumento.\
+return

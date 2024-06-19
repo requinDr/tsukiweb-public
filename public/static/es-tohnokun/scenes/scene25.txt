@@ -1,0 +1,86 @@
+monocro off
+wavestop
+;---added context above---
+bg "image\bg\bg_06a.jpg",%type_nowaitdisp
+play "*3"
+` Me quedo en el salón de clases.@
+` Mi almuerzo cambia cada día, de acuerdo a mi estado de ánimo.@
+` Algunos días, el almuerzo es preparado para mí.@ En otros, se me puede antojar algo de udon y cambio al almuerzo escolar.@ Cuando una comida es simplemente demasiado problemática, voy a la tienda y compro algo de leche y pan.@
+` Hoy no pedí un almuerzo.@ Ya que no voy a regresar con los Arima, rechacé la oferta esta mañana.@
+` En consecuencia, no tendré nada para comer si me quedo en el salón de clases.@
+` Tendré que ir a la cafetería, aunque no tenga ganas.@
+`"Así que a esto se reduce todo."@
+` Dejo el salón con algo de exasperación.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_50.jpg",%type_lcartain_mid
+` La cafetería está repleta, como siempre.@ Una larga fila de gente esperando sus órdenes se ha formado.@
+` Me uno a la fila y ordeno udon de chikara.@
+` Mirando alrededor de la cafetería, ubico un rostro familiar en una de las mesas de atrás.@
+ld c,":a;image\tachi\ari_t05.jpg",%type_crossfade_fst
+`"¡Hey, Tohno!@ ¡Por acá!"@
+` Arihiko agita su brazo vigorosamente.@
+cl c,%type_crossfade_fst
+br
+`"……"@
+` Me duele la cabeza.@
+` Pero no hay más asientos vacíos, así que no tengo más opción que caminar hacia la mesa donde está sentado mi amigo.\
+bg #000000,%type_lshutter_fst
+bg "image\bg\bg_50.jpg",%type_lshutter_fst
+ld c,":a;image\tachi\ari_t01.jpg",%type_lshutter_fst
+`"¡Cielos!@ ¡Llegas tarde, Tohno!@ Te dije que hoy teníamos un invitado especial así que has debido llegar aquí más temprano."@
+` A pesar de sus palabras, Arihiko está solo.@
+`"Entonces, Arihiko, ¿quién es este invitado especial?"@
+ld c,":a;image\tachi\ari_t02.jpg",%type_crossfade_fst
+`"Ah… se deshizo de mí.@ Dijo que estaba ocupada con algo hoy.@ Dijo que vendría la próxima vez."@
+`"Hmph… te abandonó, ¿eh?@ Entonces, ¿este invitado es una chica?"@
+ld c,":a;image\tachi\ari_t01.jpg",%type_crossfade_fst
+`"Sí, es una senpai que he estado ligando.@ Bueno, ella es popular con todos, supongo que no se podía evitar."@
+` Yendo directo al punto, Arihiko bebe ruidosamente su udon de curry.\
+` Él parece persistente, pero al mismo tiempo, no lo es.@ Ésa es una de las cosas buenas acerca de él.\
+bg #000000,%type_lshutter_mid
+!w1000
+bg "image\bg\bg_50.jpg",%type_lshutter_mid
+`"Entonces, ¿cuál fue la verdadera razón?"@
+ld c,":a;image\tachi\ari_t04.jpg",%type_nowaitdisp
+`"¿Huh?@ ¿Qué quieres decir?"@
+`"La razón por la que llegaste temprano esta mañana.@ No eres la clase de persona que viene temprano a la escuela sólo porque se levanta temprano, Arihiko-kun."@
+` Interrogo a Arihiko mientras me siento a su lado, comiendo mi udon de chikara.@
+`"Hmm."@
+` Arihiko da una respuesta no comprometedora mientras bebe su sopa ruidosamente.\
+`"¿Vas a volver a tu verdadera casa hoy, Tohno?"@
+`"Sí, voy a… espera, ¿ya no te lo había dicho?"@
+`"Nah.@ El maestro me lo dijo."@
+` Arihiko continúa devorando su udon de curry sin mirar en mi dirección.@
+`"Pensé, '¡Tal vez Tohno estará muy deprimido!' así que decidí venir a echar un vistazo."@
+`"…… Ya veo.@ ¿Y tu veredicto?"@
+`"Muy decepcionante.@ No valió la pena levantarse temprano por eso."@
+cl c,%type_crossfade_fst
+`"Tienes demasiado tiempo libre, Arihiko," Concluyo, mientras doy un mordisco a la blanca torta de arroz en mi udon de chikara.\
+` …… Ése es el tipo de persona que es Arihiko.@
+` Hoy es el día en que regreso a la casa de mi verdadera familia, volviendo de la casa de la familia adoptiva que me crió.@
+` Arihiko debe haberlo escuchado en algún lugar y vino temprano a la escuela porque estaba preocupado por mí.\
+`"…… Arihiko, creo que tu apariencia no te hace justicia.@ Eres muy sentimental en lo profundo."@
+ld c,":a;image\tachi\ari_t02.jpg",%type_nowaitdisp
+`"Je, je… Si el siempre melancólico Tohno me dice eso, tal vez es lo que soy."@
+` Arihiko traga ruidosamente sus tallarines.@
+ld c,":a;image\tachi\ari_t01.jpg",%type_crossfade_fst
+`"Entonces hombre, ¿qué está pasando en realidad?"@
+`"¿Qué quieres decir?"@
+`"Has estado viviendo con los Arima desde la escuela primaria, ¿cierto?@ Ya han pasado ocho años.@ Tu papá básicamente te ha desheredado.@ ¿Por qué te pide que regreses ahora?"\
+`"No me 'desheredó'.@ Sólo me botó de la casa por alguna razón."@
+`"Tohno-kun, si hubo alguna vez una familia que botó a su hijo de la casa 'por alguna razón', eso no es una tragedia, es una comedia.@ Pero es tan aburrida, ni siquiera es graciosa."@
+` Arihiko extiende sus brazos y se encoge de hombros.@
+` Negarse siempre a ser serio es una de las cualidades fáciles de entender de Arihiko.@
+`"…… Sí, supongo que tienes razón.@ Si eres botado de la casa, reír es todo lo que puedes hacer en realidad."\
+`"Y entonces dijo alguna frase trillada como, '¡No vuelvas a poner un pie en esta casa!' o algo así, ¿correcto?@ Eso es lo que la gente llamaría desheredación.@ Ahora que lo pienso, nunca he escuchado por qué fuiste desheredado."@
+`"……"@
+` …… ¿Quién sabe?@
+` Eso es algo que yo también quisiera saber.@
+`"Bueno, si no quieres hablar sobre eso, no tienes que hacerlo."@
+cl c,%type_crossfade_fst
+` Agarrando su tazón con ambas manos, Arihiko toma lo que queda de su caliente sopa de curry.@
+` La hora del almuerzo es corta.@
+` Imitando a Arihiko, decido terminar rápidamente mi udon de chikara.\
+bg #000000,%type_crossfade_mid
+playstop
+return

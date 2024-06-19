@@ -1,0 +1,346 @@
+monocro off
+wavestop
+play "*1"
+;---added context above---
+bg "image\bg\bg_40c.jpg",%type_nowaitdisp
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"Gracias a la buena voluntad de Makihisa-sama, Nee-san recibió entrenamiento en farmacia.@
+` Hasta el fallecimiento de Makihisa-sama, también estuvo involucrada en el mantenimiento de su salud."@
+` El rostro de Hisui vuelve a su habitual falta de expresión y me dice cosas por las que ni siquiera he preguntado.\
+wave se0
+bg #9c0120,%type_crossfade_fst
+bg "image\bg\bg_40c.jpg",%type_crossfade_fst
+`"¡Gh…………!"@
+` Un dolor agudo recorre mi cabeza.@
+br
+` Aunque estoy sufriendo tanto, ella parece estar atendiéndome sin siquiera mover una pestaña.@
+br
+` …… Bueno, eso es de esperarse.@
+` Yo soy el que sufre, no ella.@
+` Si ella actuase como si sintiese dolor o tuviese una expresión sombría, sería problemático.\
+wave se0
+bg #9c0120,%type_crossfade_fst
+bg "image\bg\bg_40c.jpg",%type_crossfade_fst
+`"¡Gh----!"@
+`"Shiki-sama, ¿aún siente dolor?"@
+`"---Disculpa Hisui."@
+`"Sí, ¿qué desea?"@
+`"Eres una molestia, por favor vete.@ No puedo dormir contigo aquí."@
+ld c,":a;image\tachi\his_t05.jpg",%type_crossfade_fst
+`"----Entiendo, entonces por favor discúlpeme.@ Si necesita algo, por favor llámeme."@
+cl c,%type_lshutter_mid
+` Hisui deja la habitación.@
+br
+` Con eso, me relajo de verdad.@
+` Mi dolor de cabeza también se debilita, y tal vez pueda dormir ahora.\
+bg #000000,%type_crossfade_slw
+!w1000
+playstop
+bg "image\bg\bg_40c.jpg",%type_crossfade_mid
+waveloop se10
+` ……@
+` …………\
+` ………………@
+` ……………………@
+` …………………………@
+` ………………………………@
+` ……………………………………\
+` Noc-noc.@ La puerta se abre.@
+br
+ld c,":a;image\tachi\aki_t12b.jpg",%type_lshutter_mid
+`"---Discúlpame, Nii-san.@ ¿Estás despierto?"@
+`"…… Sí, estoy despierto.@ ¿Necesitas algo, Akiha?"@
+`"No, escuché que estabas descansando debido a tu anemia, así que vine a ver cómo estabas."@
+` Ella me observa mientras descanso en la cama.@
+` Una suave mirada que me dice que está preocupada.@
+br
+` …… Para ser sincero, es terriblemente fastidiosa.\
+`"Estoy bien.@ No fue tan malo, por eso estoy descansando aquí solo.@ Regresa a tu habitación, Akiha."@
+ld c,":a;image\tachi\aki_t21b.jpg",%type_crossfade_fst
+`"---Nii-san, ¿qué estás diciendo?@
+` Ya es hora de cenar.@ Vine aquí para decirte eso."\
+` …… ¿Cena……?@
+` Oh, ¿ya es hora?@
+` Pero no tengo mucha hambre, y no tengo ganas de comer nada.@
+br
+`"No tengo apetito, me saltaré la cena.@ Estoy bien, así que lárgate por hoy.@ No me siento bien."\
+ld c,":a;image\tachi\aki_t12b.jpg",%type_crossfade_fst
+`"…… Entiendo.@ Por favor descansa.@ Pero Nii-san, si estás despierto, por favor enciende las luces de tu habitación.@ Tus ojos se estropearán en la oscuridad."@
+`"---Estoy bien.@ Puedo relajarme de esta manera."@
+`"………………"@
+cl c,%type_lshutter_mid
+` Aunque sus ojos me dicen que quiere decir algo más, ella deja la habitación.\
+`"………………"@
+` Estoy tan irritado.@
+` Las reacciones de Hisui, los ojos preocupados de Akiha, todos parecen tratarme como algo frágil.@
+br
+` ¿Esto no es lo de siempre?@
+` No es que esté tosiendo sangre o chupando sangre, ¿por qué no pueden simplemente dejarme en paz?\
+br
+` ----Aprieto.@
+br
+` En la oscuridad, me escucho apretar los dientes.@
+`"…………"@
+` Se me están crispando los nervios, eso lo sé.@
+` Si permanezco despierto, me deprimiré por completo.@
+` No estoy cansado, pero tengo que dormir.\
+wavestop
+bg #000000,%type_crossfade_slw
+!w1000
+play "*6"
+bg "image\bg\bg_40c.jpg",%type_nowaitdisp
+monocro #0000ff
+bg "image\bg\bg_46a.jpg",%type_nowaitdisp
+bg "image\bg\bg_33d.jpg",%type_nowaitdisp
+bg "image\bg\bg_48d.jpg",%type_nowaitdisp
+bg "image\bg\bg_32d.jpg",%type_nowaitdisp
+bg "image\bg\bg_47.jpg",%type_nowaitdisp
+bg "image\bg\bg_22c.jpg",%type_nowaitdisp
+bg "image\bg\bg_24c.jpg",%type_nowaitdisp
+bg "image\bg\bg_25b.jpg",%type_crossfade_fst
+wave se0
+br
+br
+br
+br
+br
+br
+` Salgo a la calle principal.@
+` La fecha cambió hace unos dos minutos.@
+!w1000
+\
+br
+br
+br
+br
+br
+br
+` Domingo a medianoche.@
+` Nadie está transitando las calles.@
+!w1000
+\
+br
+br
+br
+br
+br
+` ¿Me equivoqué de hora?@
+` Si salía a caminar una hora antes, no hubiese tenido que esforzarme tanto.@
+!w1000
+\
+br
+br
+br
+br
+br
+br
+` Arrastrando, caminando.@
+` Lo que hace este sonido de arrastre,
+` no son mis pasos,
+` sino algo más.\
+br
+br
+br
+br
+br
+br
+` La hora fue correcta.@
+` Si salía a caminar una hora antes, nunca habría podido de caminar de esta manera.\
+br
+br
+br
+br
+br
+br
+` Arrastrando,
+` Sujetando el cabello de la mujer con una mano, sigo caminando.@
+` Cabello largo.@ Escogí a esta mujer, porque se parecía a Akiha.@ No por su rostro, sino porque me gustaba su cabello.\
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_31b.jpg",%type_crossfade_fst
+` Suelto su cabello.@
+` Inconsciente, ella cae al suelo.@
+` No la asesiné.@
+` No cené, así que quiero hacerla lo más apetitosa posible.@
+` He escuchado en algún lugar que la sangre de los muertos es fría y sabe terrible.\
+` No tengo quejas respecto a su inmaculado cuello.@
+` Sujetando mi cuchillo con una mano, acerco más mi boca---
+playstop
+bg #000000,%type_nowaitdisp
+monocro off
+` Después de ver ese sueño, me despierto.@
+`"¡-----!"@
+` Despierto de mi sueño y mi mente comienza a aclararse.@
+` Mi garganta está horriblemente seca y todo mi cuerpo se siente excitado.\
+`"¿Qué---clase de sueño……"@
+` estaba teniendo?@
+` No puedo creerlo.@
+` Salir de noche, dejar inconsciente a una mujer que no conozco, y arrastrarla hacia un callejón.\
+` Eso está totalmente mal.@
+` Ya que sucedió en un sueño, está bien, pero tendría que estar loco para hacer eso en la realidad.\
+` Mis jadeos llenan la habitación.@
+` Tengo que recobrar el aliento.@
+` Frotando mis ojos, respiro profundamente.@
+` …… Después de eso, no creo que pueda volver a dormir.@
+` Encendiendo la luz y decido leer un libro hasta que amanezca.\
+monocro #ff00ff
+bg "image\bg\ima_10b.jpg",%type_crossfade_mid
+br
+br
+br
+br
+br
+br
+br
+` Mis ojos, gradualmente,\
+monocro #0000ff
+bg "image\bg\bg_31b.jpg",%type_crossfade_fst
+br
+br
+br
+br
+br
+br
+br
+` se acostumbran a la oscuridad.\
+monocro off
+bg "image\bg\bg_31b.jpg",%type_crossfade_fst
+`"-----------Qué……"@
+` Me quedo sin aliento.@
+` Ésta no es mi habitación.@
+` Un callejón trasero.@
+` Cuchillo en mano.@
+` Frente a mí,
+` yace inconsciente una mujer que no conozco.\
+wave se0
+`"Ha-----------"@
+` Qué,
+` ¿Qué estoy haciendo?@
+br
+` ¿Esto no es un sueño?\
+` ¿Esto no es lo que soñé antes?\
+wave se0
+`"----------"@
+` Tiene que ser un sueño.@
+` Porque nunca antes he querido hacer semejante cosa.@
+` Atacar a una mujer que no conozco,
+` pasar mi cuchillo a lo largo de las "líneas" que recorren todo este flexible cuerpo,
+` queriendo ver la roja, roja sangre saliendo de los pedazos cortados, de ninguna manera----¿de ninguna manera?\
+wave se0
+` Sí, no hay manera de que quiera hacer eso.@
+` Pero, sin razón alguna---estoy pensando, que tengo que hacerlo.\
+wave se0
+br
+` Despedázala.@
+wave se0
+` Despedázala.@
+wave se0
+` Despedázala.@
+wave se0
+` Despedázala.@
+wave se0
+br
+` Si hago eso,
+` puedo liberarme y convertirme en algo que no puede ser sometido por nadie.@
+br
+` Ahora que lo pienso,
+` alguien me dijo algo como eso anteriormente.\
+br
+br
+br
+br
+br
+br
+br
+` ---Eres igual.@ Tú, al igual que yo, terminarás como un asesino, Tohno Shiki.\
+wave se0
+`"………… llate!"@
+br
+` ---Sólo admítelo, asesino.@
+`   Tu impulso de inversión no es nada más que lo que deseas---
+br
+`"¡Cá…… llate!"\
+wave se0
+` Pero, ¿qué es esto?@
+` ¿Qué rayos es esto?@
+` ¿Por qué estoy haciendo esto?\
+` Y aun después de percatarme de esto, ¿por qué sigo tratando de presionar su cuello con mi cuchillo?\
+wave se0
+` Si esto no es un sueño, y si es la realidad,
+` ¿no significa que estoy loco, como ya lo había pensado?\
+wave se0
+`"----Mm."@
+br
+` Sus párpados se mueven.@
+` Ella comienza a abrir sus ojos.@
+` Antes de eso,
+` tengo que cortarla en pedazos, o yo---\
+`"Ah."@
+br
+` Mi cuchillo se mueve.@
+` Pero eso es,
+br
+`"…… ¿Quién eres?"@
+` Puedo escuchar su voz.@
+` Ella de repente se percata del cuchillo junto a su garganta.\
+br
+`"Kya---"@
+`"¡AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH!"\
+bg #000000,%type_lcartain_fst
+bg "image\bg\bg_25b.jpg",%type_lcartain_fst
+waveloop se1
+` Su grito es ahogado por mis chillidos.@
+` Chillando.@ Como una sirena dañada, continúo chillando mientras corro.\
+bg #000000,%type_lcartain_fst
+bg "image\bg\bg_22c.jpg",%type_lcartain_fst
+` Respiro rápidamente.@
+` Mis dedos tiemblan.@
+` Mi mente se ha quedado en blanco.@
+` Pero logro retirar mi cuchillo y correr antes de cortarla.@
+br
+` Pero, si ella hubiese gritado frente a mí,
+br
+` yo la habría----\
+`"¡Ja, ja, jaja, jajajajaja………!"@
+br
+` Aterrador.@
+` Eso es aterrador.\
+` Más aterrador que cualquiera de las cosas que han sucedido hasta ahora.\
+bg #000000,%type_lcartain_fst
+bg "image\bg\bg_32d.jpg",%type_lcartain_fst
+` Medio riendo, medio jadeando, corro.@
+` Está siguiéndome.@
+` Se abalanza sobre mi espalda.@
+` Sin importar cuánto corra---no puedo escapar de mi propio miedo.\
+bg #000000,%type_lcartain_fst
+bg "image\bg\bg_33d.jpg",%type_lcartain_mid
+bg "image\bg\bg_40d.jpg",%type_lcartain_mid
+` *jadeo* *jadeo* *jadeo*
+` Entro volando a mi habitación e intento asegurar la puerta.@
+` Me esfuerzo, pero no puedo lograrlo.\
+` Las yemas de mis dedos.@
+` Las yemas de mis dedos tiemblan alocadamente.@ Se trata sólo de deslizar una simple pieza de metal, pero no puedo hacerlo.\
+` *jadeo* *jadeo* *jadeo*
+` Estoy asustado.@
+` Si no aseguro la puerta rápidamente, entrará.\
+` Alguna cosa desconocida entrará.\
+`"¡Gh…………!"@
+` Tengo que, asegurar la puerta.@
+` No puedo permitirle entrar a esta habitación.\
+` No puedo permitirle dejar esta habitación.\
+` ¿Pero por qué?@
+` No lo sé.@
+` No lo sé, pero sigo intentando asegurar la puerta salvajemente.\
+wavestop
+` Intento asegurar la puerta toda la noche.@
+` Pero sin importar cuánto me esfuerce, ni siquiera puedo asegurar la puerta.\
+br
+br
+br
+br
+br
+br
+` Es entonces cuando me doy cuenta.@
+` He estado loco todo el tiempo.\
+bg #000000,%type_crossfade_mid
+!w3000
+return

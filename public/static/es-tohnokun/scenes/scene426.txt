@@ -1,0 +1,154 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_11d.jpg",%type_nowaitdisp
+` ---Incluso antes de que termine el sonido de ese paso, entro en acción.@
+br
+`"¡Aquí---------!"@
+br
+` La voz de Akiha es una mezcla de malicia y placer.@
+` Disfrutando la tensión de la batalla, ella sonríe al mirar en mi dirección.@
+`"---------"@
+` Ese descuido es mi única oportunidad y su única razón para perder.\
+`"No es suficiente, Nii-san.@ ¡Sin importar lo rápido que seas, te ves cada vez más claro mientras te acercas a mí-----!"@
+` Su voz está llena de placer.@
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\bg_11d.jpg",%type_nowaitdisp
+` Sus ojos logran ubicarme.@
+` Entonces, el resto es simple.@
+` No seré capaz de alcanzarla, porque evaporará mis brazos y piernas, y caeré al suelo.@
+br
+` -----Bueno,
+` eso es, sólo si puede fijar sus ojos sobre mí hasta que esté totalmente quemado.\
+bg #000000,%type_lcartain_fst
+` Mi vista se invierte.@
+`"----------¿Eh?"@
+` Su voz está llena de sorpresa.@
+` En ese mismo instante, el cabello rojo que iba a quemar mis brazos y piernas se desvanecece.@
+` Es afortunado que el pasillo sea sólo una línea recta.@
+` Akiha, quien pensó que sólo podía atacarla directamente, no pudo verme subir por la pared y saltar hacia el techo.\
+` Avanzando por la pared como una araña, mis pies tocan el techo sólo una vez.@
+` No es que en verdad pueda ser una araña.@
+` Al girar mi cuerpo, sólo estoy usando el techo como un punto de apoyo.@
+br
+` La distancia es bastante buena.@
+` Antes de que mi cuerpo caiga, uso mis piernas para saltar del techo.\
+bg "image\bg\bg_11d.jpg",%type_tshutter_fst
+`"¿Uh, eh------?"@
+` La mirada de Akiha se desvía hacia arriba, y la sensación ardiente regresa a mis brazos y piernas.@
+` La sensación desaparece en un brazo y una pierna.@
+` Probablemente ya no existen.@
+` Pero, ya no me hacen falta.@
+` Mi cuerpo tiene la velocidad que necesita.@
+` De esta manera----
+quakey 3,50
+br
+`"¿¡Kyaa--------!?"@
+br
+` Colisiono con Akiha.\
+bg #000000,%type_nowaitdisp
+`"¡Por qué, tú--------!"@
+` Akiha levanta su cabeza.@
+` Al estar tan cerca de ella, puede encontrarme fácilmente y desintegrar mi cuerpo.@
+bg "image\bg\ima_14.jpg",%type_lshutter_fst
+br
+` Así que,
+` antes de que eso suceda, la corto en pedazos.@
+br
+` Ese delicado cuello.@ Lo corto horizontalmente a través de sus palpitantes venas.@
+` Sin hacer diferenciación alguna entre su piel, sus músculos, sus arterias, sus huesos,!w1500 sin piedad o compasión,!w1500 como deshojando una azucena,!w1500 sin ningún dolor resplandeciente.\
+monocro #ff0000
+bg "image\bg\bg_11d.jpg",%type_lshutter_mid
+play "*9"
+br
+br
+br
+br
+br
+br
+br
+` Un ruido sordo.\
+` Sobre el duro suelo, cae algo que tiene la forma de una bola de boliche.@
+` Todo ha terminado.@ Sus desorientados ojos están mirando la pared del pasillo, y probablemente seguirán haciéndolo por toda la eternidad.\
+br
+`"¿Eso es lo último que viste?"@
+br
+` Con sus ojos más abajo que los de un perro o un gato, ella fija su mirada sobre la sucia pared.@
+` Oscuridad por todas partes.@ Morir viendo este escenario, es como un mal chiste.@
+br
+`"…… ¿El viejo no te enseñó que matar por placer es frívolo, Akiha?"@
+br
+` …… Bueno, eso habría sido inútil.@ Tohno Makihisa era frívolo, así que era inevitable que ella se echase a perder así.\
+`"…… Qué lástima.@ Aunque eras tan talentosa, el fuego que te daba forma era demasiado débil."@
+br
+` Es por eso que pude matarla tan fácilmente.@
+` Cosas inútiles, como disfrutar matar.@
+` Tú lo hiciste, y por eso moriste.@
+` En este lugar, totalmente sola.@
+` Por siempre sola, mirando esa pared que nunca es vista por nadie, sin siquiera sentir la agonía final de la muerte.@
+br
+`"…………………… Ja."@
+br
+` Hmph.@
+` A pesar de que es mi hermana, se ve tan patética.\
+`"-----------Ahh."@
+` Mi detenida respiración se reanuda.@
+` Mi cuerpo quemado siente la fuerza fluyendo en su interior una vez más.@
+` …… Porque Kohaku-san murió, mi cuerpo estaba perdiendo su fuerza.@
+` Pero ya que Akiha ha muerto, parece que estoy volviendo a la normalidad.@
+` Bueno, en primer lugar,
+` este cuerpo, esta cabeza, este corazón, aun si los acepto y vivo, no hay nada-------\
+` *jadeo*---*jadeo*----*jadeo*----
+` Mi respiración regresa.\
+` Mi brazo y pierna entumecidos parece que aún conservan su forma.@
+` En el suelo, la sangre de Akiha finalmente comienza a derramarse.@
+`"Aah----------ah."@
+` Arrastrándome hasta la pared, logro levantarme sobre una pierna.@
+` Abro la ventana y aire fresco fluye hacia adentro.@
+` El frío viento sopla a través del ardiente pasillo.\
+`"-------Aja.@ Jajaja, ja."@
+` Este viento se siente extremadamente bien.@
+` Enfría mi ardiente cuerpo y mi dolor de cabeza cesa.@
+`"----Jaja…… ja…… ah----"@
+`  ¿Entonces por qué?@
+` Sólo mis pensamientos, como si mi cabeza se vaciara.@ Todo se siente igual, y mi visión no regresa del mundo rojo en el que me encuentro.\
+bg "image\bg\ima_01.jpg",%type_crossfade_fst
+` ------Sobre mi cabeza está la luna carmesí.@
+br
+` Recuerdo ese sueño en particular.@
+` La luna mirando con desprecio al asesino.@
+` Incluso en esa ocasión, era una luna hermosa, ¿entonces por qué?@
+` ¿Por qué no puede iluminarme de igual manera esta noche?@
+br
+` -----Como una serpiente.@
+br
+` Como un inflamado ojo rojo, me mira fijamente.@
+` Observa.@ El ojo rojo me desprecia intensamente.\
+` Rojo.@ Rojo, rojo, ojo rojo.@
+`"…… Ja…… jaja…… Ahora lo entiendo----"@
+` Eso lo aclaró todo.@
+` Lo que Akiha estaba mirando en sus últimos momentos no era la pared.@
+` Estaba mirando a Nanaya Shiki, quien se acercaba para cortar su cuello mecánicamente.@
+`"…… Ya veo.@ Entonces----no va a desaparecer, ¿verdad?"@
+` Entonces, la luna siempre será roja.@
+` En sus ojos, el asesino aún está ardiendo.@
+` Eso no puede ser borrado.\
+` Por eso, a pesar de que todo ha terminado, no tengo adónde ir.@
+` Perdí a Kohaku-san, incluso maté a Akiha.@
+` En verdad no hay lugar al que pueda ir.@
+` Todo propósito, incluyendo mi identidad, ha desaparecido.@
+` A pesar de eso, mi única pierna cojea por el pasillo.@
+br
+` ----El cielo sobre mi cabeza aún tiene ese ojo gigante.@
+br
+` Bajo la mirada constante de Akiha, Nanaya Shiki se va a algún lugar.\
+bg #000000,%type_crossfade_mid
+monocro off
+playstop
+!w4000
+cl a,%type_waitdisp
+bg "image\word\end.jpg",%type_crossfade_slw
+resettimer
+waittimer 3000
+return

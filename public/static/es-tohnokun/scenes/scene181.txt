@@ -1,0 +1,76 @@
+monocro off
+waveloop se1
+playstop
+;---added context above---
+bg "image\event\ark_h03.jpg",%type_nowaitdisp
+` ----No puedo hacerlo.@
+` No puedo hacer algo que ella no quiere, de nuevo.@
+` Una vez, sucumbí ante este dolor de cabeza y la asesiné.@
+br
+` Por eso, nunca más.@
+` No puedo rendirme ante mis deseos y hacer llorar a Arcueid.@ Aun si este dolor de cabeza me destroza, no lo haré----\
+bg #ffffff,%type_crossfade_mid
+wavestop
+bg "image\bg\bg_31b.jpg",%type_crossfade_fst
+play "*9"
+`"¡Ha----ah!"@
+` Me aparto de su cuerpo.@
+` El dolor de cabeza desaparece y mi corazón vuelve a la normalidad.@
+` Los impulsos que hacían estragos en mi corazón también han desaparecido y finalmente empiezo a comprender lo que acabo de hacer.\
+`"----¿Qué----he…"@
+` No puedo creerlo.@
+` Pero el recuerdo es demasiado claro.@
+` Cómo la empujé hacia abajo.@
+` Cómo la asfixié y sostuve mi cuchillo sobre ella.@
+` …… y las deshonrosas cosas que hice después.\
+`"------"@
+` No sé qué decir.@
+` Arcueid ajusta su ropa y se levanta.@
+` Yo----no sé cómo disculparme.@
+` Sólo decir que lo siento… ¿cómo puede eso compensarlo?@
+`"----Arcueid, yo----"@
+ld c,":a;image\tachi\ark_t10.jpg",%type_crossfade_fst
+`"No te preocupes por eso…… Soy yo quien debería disculparse."@
+` Ella aparta la vista incómodamente.\
+`"¿Qué--qué estás diciendo?@ Fui yo el que hizo algo equivocado.@ Si sólo----hubiese sido más fuerte, eso nunca habría sucedido."@
+ld c,":a;image\tachi\ark_t17.jpg",%type_crossfade_fst
+`"No.@ No creo que fuese algo que hubieses podido resistir, porque viste mis 'Ojos Místicos'."@
+`"¿Eh----?@ ¿Ojos Místicos?@ ¿Como los ojos de Nrvnqsr……?"\
+ld c,":a;image\tachi\ark_t10.jpg",%type_crossfade_fst
+`"…… Exactamente.@ No estaba cuerda entonces.@ Estaba tan sedienta, que no podía controlarme.@
+` Por eso----encontré algunos Muertos, e intenté mantener alejado ese impulso reemplazándolo por el deseo de destruir.@
+` En ese momento, fui incapaz de contenerme----y por eso viste mis Ojos Místicos cuando viniste."@
+`"…… Ciertamente me sentí extraño desde que vi tus ojos dorados----pero eso no tiene nada que ver.@ Yo, con mi propia voluntad--"\
+`"No, estás equivocado.@
+` Shiki, mis Ojos Místicos de Encantamiento cautivan completamente a cualquiera mire hacia ellos.@ …… Creo que por eso comenzaste a sentir todos esos deseos sexuales."@
+`"--Eso----no puede ser cierto."@
+` Porque, aunque no estuviese bajo su control.@
+` Ella, podría, gustarme.\
+`"En fin, todo esto fue debido a mi falta de cuidado.@ …… Lo siento, Shiki.@ Manipulé tu cuerpo sin considerar tus sentimientos."@
+cl c,%type_crossfade_fst
+` Su mirada se aleja mientras dice esto.@
+` …… Que se disculpe conmigo de esta manera hiere mi corazón.@
+` Porque no sentí que estaba siendo manipulado, en absoluto.@
+` Más bien----parece que utilicé eso para obedecer a mi propia lujuria.\
+`"Arcueid, yo----"@
+ld c,":a;image\tachi\ark_t17.jpg",%type_crossfade_fst
+`"No te disculpes.@ …… Shiki, todo esto fue un accidente.@ Lo olvidaré, así que por favor tú también olvídalo.@ Creo que así es mejor para ambos."@
+cl c,%type_lshutter_mid
+` Diciendo eso, ella comienza a caminar silenciosamente.\
+`"…… ¿Arcueid……?"@
+ld c,":a;image\tachi\ark_t22.jpg",%type_crossfade_fst
+`"----Creo que es suficiente por esta noche.@ Acabo de matar a todos estos Muertos, probablemente sea inútil buscar más."@
+`"…… Está bien pero, ¿qué hacemos con esa montaña de cadáveres?@ Si alguien la encuentra, habrá problemas."@
+`"No hay necesidad de preocuparse.@ Una vez que algo se convierte en vampiro y muere, no deja rastro.@ Aquellos que rehusaron volver a la Tierra se convierten en ceniza y se van con el viento una vez que mueren.@ Regresarán y se dispersarán por sí mismos dentro de un rato."\
+cl c,%type_lshutter_mid
+` Sin voltear, ella desaparece del callejón con pasos débiles.@
+`"………………"@
+` No puedo detenerla ahora.@
+` Aún tengo la sensación de Arcueid en ambas manos.\
+`"----Idiota.@ Qué estúpido idiota soy."@
+` Me quejo de mí mismo.@
+` En el callejón que se convirtió en un escenario de tragedia, levanto la mirada hacia la luna con remordimiento.\
+bg #000000,%type_crossfade_slw
+playstop
+!w3000
+return

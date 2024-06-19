@@ -1,0 +1,20 @@
+monocro off
+wavestop
+;---added context above---
+bg "image\bg\bg_06b.jpg",%type_nowaitdisp
+play "*9"
+!w1000
+cl c,%type_lcartain_mid
+ld c,":a;image\tachi\cel_t20.jpg",%type_tshutter_mid
+` Haz alcanzado el Final Verdadero de Akiha.@ Buen trabajo.@
+br
+` Cada heroína (con una excepción) tiene dos tipos diferentes de finales.@
+` Normalmente, son llamados "Final Verdadero" y "Final Bueno", pero los de Akiha-san son llamados "Final Normal" y "Final Verdadero".@
+br
+` La ruta de Akiha-san es diferente a las demás porque el nivel de afección de Akiha-san hacia ti no determina el final que obtienes.\
+` Bien, entonces, muchas gracias por jugar hasta este punto.@
+br
+` Veámonos de nuevo en algún lugar dentro de Tsukihime.\
+bg #000000,%type_crossfade_mid
+playstop
+return

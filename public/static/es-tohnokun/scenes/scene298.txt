@@ -1,0 +1,63 @@
+monocro off
+wavestop
+;---added context above---
+bg "image\bg\bg_02a.jpg",%type_nowaitdisp
+play "*4"
+br
+` ---Salto hacia atrás instantáneamente.@
+br
+bg #000000,%type_lshutter_fst
+` Sólo con saltar ligeramente hacia trás,
+` incremento muchos metros la distancia entre nosotros.\
+`"¿Eh-----?"@
+` El que está sorprendido soy yo.@
+` Con su arma aún dispuesta, Senpai me persigue sin emoción alguna.@ "¡----!"@
+` Corro hacia la entrada frontal de la escuela.@
+` Mi cuerpo se siente casi aterradoramente ligero.@
+` Corro como si cortara a través el viento.@
+br
+` Aunque la capacidad atlética de Senpai exceda por mucho la de un humano, no puede perseguirme si poseo esta ventaja----\
+bg "image\bg\bg_03c.jpg",%type_lshutter_mid
+wave se5
+monocro #0000ff
+bg "image\bg\bg_03c.jpg",%type_crossfade_fst
+monocro off
+bg "image\bg\bg_03c.jpg",%type_crossfade_fst
+` ----Y entonces.@
+br
+` Mi cuerpo se detiene repentinamente.@
+` Sin importar cuánto intente moverme hacia adelante, mis piernas no se mueven en lo más mínimo.\
+`"-----Qué--"@
+` Cuando volteo, hay una espada clavada justo ahí.@
+` Una delgada espada parecida a un clavo perfora el suelo junto a mis pies.@
+` La espada está perforando mi sombra, lo cual parece ser la razón por la que no puedo levantar mis piernas del suelo.\
+`"¿Por qué…… tú……!"@
+` Concentro toda mi fuerza en mis piernas.@
+` Pero sin importar cuánto me esfuerce, no se mueven siquiera un milímetro.@
+br
+` ---Y allí.@
+br
+ld c,":a;image\tachi\cel_t06c.jpg",%type_lshutter_mid
+`"Qué descuidado.@ Si querías escapar, apuesto que había una mejor manera de hacerlo."@
+` La miembro de la Agencia de Entierros apodada "Arco" aparece.\
+`"Sen---pai."@
+`"No puedo dejarte ir porque tu cuerpo ya se ha transformado en el de un vampiro.@ Aquí---exorcizaré esa alma."@
+cl c,%type_crossfade_mid
+br
+` El sonido de pasos.@
+` Como el sonido de un criminal condenado dando los trece pasos hacia la horca.\
+bg #000000,%type_crossfade_mid
+`"---Adiós.@ Al menos, con esto---"@
+` Ella habla con una voz suave, casi inaudible.@ Fija la punta del arma sobre mi corazón y hala el gatillo.@
+br
+` Una breve explosión.\
+`"G---hu."@
+` Toso sangre.@
+` Después de un destello de luz que parece volar mi cerebro en pedazos,
+` dentro de mi ser en desaparición, veo mi alma, siendo esparcida, como las páginas, de un libro viejo.\
+playstop
+cl a,%type_waitdisp
+bg "image\word\end.jpg",%type_crossfade_slw
+resettimer
+waittimer 3000
+return

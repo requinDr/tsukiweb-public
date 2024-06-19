@@ -1,0 +1,115 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\ima_01.jpg",%type_crossfade_mid
+play "*7"
+br
+br
+br
+br
+br
+br
+` ----Y entonces,
+` abrazo el cuerpo de Akiha por delante.\
+` ---De ninguna manera podría matarla.@
+br
+`"…… Quiero que vivas."@
+` Akiha ladea su cabeza inquisitivamente.@
+`"Sin importar en qué te conviertas---sigo queriendo que vivas, Akiha."@
+` Mi lágrimas no pueden ser detenidas.@
+` Akiha me devuelve el abrazo alegremente---y muerde mi cuello.\
+`"¡¡-----!!"@
+` Duele.@
+` Pero no es un acto para succionar mi sangre.@
+` Es sólo un primitivo acto de morder.\
+`"A-Akiha."@
+` Akiha muerde mi cuello frenéticamente.@
+` Desgarra la carne, y mis huesos están siendo destruidos poco a poco.@
+` Akiha no tiene inteligencia.@
+` No sabe quién la está abrazando, o cuál es el significado de un abrazo.@
+br
+` Akiha no es diferente a una bestia con forma humana.@
+` Pero aun así----\
+`"---Aun así…… quiero que vivas."@
+br
+` …… ¿Está mal desear semejante cosa?@
+` ¿Es un crimen desear que siga con vida a pesar de que va por ahí matando gente?@
+` Aun si Akiha dice que no puede soportar semejante cosa, quiero que la soporte y la supere.\
+` Pero.@
+` Eso es---sólo un deseo egoísta.\
+`"----Pero, hicimos una promesa."@
+` Akiha no me suelta.@
+` Aún abrazándola, coloco mi cuchillo sobre la "línea" de Akiha.\
+br
+` ---Si alguien va a matarte tarde o temprano, entonces…
+br
+`"No dejaré que nadie te lastime."@
+br
+` ----El cuchillo, sin sonido alguno,
+`   y probablemente sin dolor,
+br
+`"Porque yo soy el único para ti."@
+br
+` ----Finaliza la vida de Akiha con delicadeza.\
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_54a.jpg",%type_crossfade_fst
+` Las hojas otoñales caen.@
+` Akiha yace sobre el suelo rojo.@
+` El cabello extendido en el suelo es negro.@ Ondula vigorosamente sobre las hojas rojas.@
+` Su rostro es apacible, como si soñase felizmente.\
+`"----------"@
+` Un evento ha terminado.@
+` Cuando era niño.@
+` La felicidad cuando nos reuníamos aquí y corríamos alrededor de este patio.@
+` El brillo de las estrellas que observábamos juntos.@
+br
+` Hace sólo unos días.@
+` Todo lo que platicamos en este lugar.\
+bg "image\event\aki_e03.jpg",%type_crossfade_mid
+br
+br
+br
+br
+br
+` ----Nii-san, estoy feliz de que hayas vuelto.@
+` …… Sólo quiero que tengas eso en mente.\
+bg #000000,%type_crossfade_mid
+bg "image\bg\ima_01.jpg",%type_crossfade_mid
+` En algún punto, comencé a mirar fijamente la luna.@
+` …… Mi cuerpo está frío.@
+` Mi mente se siente mareada, como si estuviese a punto de quedarme dormido.\
+` …… Tengo sueño.@
+` Siento que si durmiese ahora, podría soñar que todo esto fue un sueño.@
+br
+` Pero sería sólo un sueño, y algún día, tendría que despertar.@
+` Siento que incluso yo soy sólo parte de este sueño.@
+br
+` ¿O todo fue un sueño efímero desde el principio?@
+` De ser así, por favor…
+` Déjame seguir durmiendo y nunca me despiertes.\
+`"---------Ja, ja."@
+br
+` En el cielo, la azul, azul luna de cristal.@
+` La alta cortina de árboles y el aplauso de la lluvia de hojas carmesí.@
+br
+`"Jaja, ja------"@
+br
+` Estoy triste, pero todo lo que sale es risa.\
+` La noche es profunda.@
+` Hay un sereno silencio a mi alrededor, que golpea mis tímpanos como un aplauso ensordecedor.@
+` Mi visión se distorsiona y se estrecha.@
+` …… Parece que es hora de bajar la cortina.@
+` La cortina de árboles da vueltas y vueltas.@
+br
+` Como si
+` todo en este circo
+` fuese artificial.\
+bg #000000,%type_crossfade_slw
+playstop
+!w2000
+cl a,%type_waitdisp
+bg "image\word\end.jpg",%type_crossfade_slw
+resettimer
+waittimer 3000
+return

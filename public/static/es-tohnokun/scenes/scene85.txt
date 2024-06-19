@@ -1,0 +1,68 @@
+monocro off
+wavestop
+play "*6"
+;---added context above---
+bg "image\bg\bg_19d.jpg",%type_nowaitdisp
+` ---Mientras Arcueid no pueda moverse, ir afuera ciegamente sería peligroso.@
+br
+`"…………"@
+` Sujetando el cuchillo con una mano, contengo la respiración.@
+` Arcueid está en silencio también.@ Parece estar teniendo cuidado de lo que está a su alrededor.\
+` El piso de abajo es ruidoso.@
+` Quizás el impacto despertó a los huéspedes y tal vez se están quejando con el personal del hotel.@
+` Todavía son las cuatro de la mañana, pero aun así, el ruido es tan escandaloso como el de un festival.@
+br
+` ---Incluso eso queda en silencio pocos minutos después.\
+wave se0
+` El ruido desaparece.@
+` Un silencio enfermizo.@
+bg #000000,%type_nowaitdisp
+playstop
+`"¡------!"@
+` Las luces se apagan.@
+` Al mimo tiempo,
+wave se4
+wave se4
+wave se4
+wave se4
+` el sonido de incontables cosas golpeando la puerta.\
+`"¿Estás preparado, Shiki?"@
+` Arcueid susurra en la oscuridad.\
+`"…… ¿Preparado, para qué?"@
+` Ni siquiera tengo que preguntarle.\
+wave se4
+!w1200
+!w1200
+wave se4
+wave se4
+!w1200
+wave se4
+!w1200
+wave se4
+!w1200
+wave se4
+!w1000
+wave se9
+br
+` ---Si quedarme aquí fue un error…
+` Entonces esa pregunta también fue un error.@
+` Volteo hacia la puerta, hacia el sonido que hace ésta al romperse.@
+`"--------"@
+` Ningún sonido escapa de mi boca.@
+` Al darme la vuelta, brillantes dientes blancos llenan mi visión.\
+bg #ffffff,%type_crossfade_fst
+` Como gigantes fauces, capaces de tragarme entero.@
+` Por alguna razón, puedo decir con calma que son las fauces de un tiburón.\
+bg "image\bg\ima_12.jpg",%type_lshutter_fst
+` Sangre fresca se derrama por todas partes.@
+` Con un ruido sordo, lo que queda de mi cuerpo cae al piso.@
+` Lo que cae es mi cabeza.@
+` Todo por debajo de mi rostro ha sido consumido en un solo mordisco.@
+br
+` Ésa    es la última escena     que veo en mi vida.\
+bg #000000,%type_crossfade_mid
+cl a,%type_waitdisp
+bg "image\word\end.jpg",%type_crossfade_slw
+resettimer
+waittimer 3000
+return

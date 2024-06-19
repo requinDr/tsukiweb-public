@@ -1,0 +1,22 @@
+wavestop
+play "*6"
+;---added context above---
+monocro #0000ff
+bg "image\bg\bg_33d.jpg",%type_nowaitdisp
+` ------Tiene que estar en el ala oeste del segundo piso.\
+bg #000000,%type_lcartain_fst
+bg "image\bg\bg_40d.jpg",%type_tshutter_fst
+`"------"@
+` …… Si debo decirlo, nunca me he sentido tan estúpido en toda mi vida.@
+` En el ala oeste del segundo piso sólo está mi habitación, y casi todas las otras están vacías.@
+` Está en el mismo piso, pero la habitación de Akiha es la exactamente opuesta a la mía, en el ala este----\
+bg #000000,%type_lshutter_fst
+` Corro a lo largo del pasillo.@
+` El acalorado ambiente y la sensación premonitoria parecen extenderse como cristal sobre la oscuridad de la noche.@
+br
+` ----*jadeo*, *jadeo*, *jadeo*.@
+br
+` Respirando con fuerza, corro por el pasillo.@
+` …… Me duele la espalda.@
+` Esta terrible sensación en el aire se hace más pesada mientras me acerco a la habitación de Akiha.\
+return

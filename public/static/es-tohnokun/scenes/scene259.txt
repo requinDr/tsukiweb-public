@@ -1,0 +1,593 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_52.jpg",%type_lcartain_fst
+` Rodeada por la noche, Arcueid recorre la calle.@
+` Mira directamente hacia adelante, con su cabello dorado ondulando sobre su blanca figura.@
+` Se asemeja horriblemente a la primera vez que la vi.@
+` No, o quizás…
+` Quizás es como la vez en que se enfrentó a Nrvnqsr.@
+br
+` …… Por alguna razón tengo un mal presentimiento sobre esto.\
+`"¡Oye, Arcueid!"@
+ld c,":a;image\tachi\ark_t22.jpg",%type_crossfade_fst
+`"------"@
+` Arcueid continúa caminando sin darse la vuelta.@
+`"Quiero hablar contigo.@ Al menos puedes decirme qué vas a hacer."@
+`"------"@
+` Por supuesto, Arcueid sólo continúa caminando sin voltear.@
+` …… Sería miserable dejar esto como está.@
+` Decido seguirla silenciosamente por ahora.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_26a.jpg",%type_lcartain_fst
+` Los pasos hacen eco a través del aire nocturno.@
+br
+` ---Y entonces,
+` Arcueid se detiene repentinamente y voltear.@
+ld c,":a;image\tachi\ark_t07.jpg",%type_crossfade_fst
+`"No me sigas.@ ¿No entiendes que es incómodo que una persona normal como tú me esté siguiendo?"@
+`"---Entonces dime qué vas a hacer y me iré."@
+ld c,":a;image\tachi\ark_t06.jpg",%type_crossfade_fst
+`"…… No te concierne, así que déjame en paz."@
+` Arcueid camina a pasos largos una vez más.@
+cl c,%type_lshutter_fst
+` …… Mierda.@
+` Parece que nuestro silencioso recorrido continuará.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_25b.jpg",%type_lcartain_mid
+` Cuando nos acercamos a la calle principal, Arcueid se detiene en seco.@
+ld c,":a;image\tachi\ark_t22.jpg",%type_lshutter_fst
+play "*4"
+`"---Lo encontré."@
+`"¿Eh……… ?"@
+` Su voz es fría, como la de una persona totalmente distinta.@
+`"----Ah."@
+` …… Un escalofrío sube por mi columna.@
+` Incluso desde atrás, puedo sentir la hostilidad manifestándose en ella.\
+`"Arcueid---¿Qué, estás--"@
+` Ni siquiera puedo terminar.@
+` Lo que ella pretende hacer está muy claro y no hace falta decirlo.@
+` Sin duda alguna, no hay nada más que la pura e inadulterada intención de matar.\
+`"Oye---¿¡Qué estás, pensando……!?"@
+`"----"@
+` Arcueid no responde.@
+` Tiene sus ojos fijos sobre un hombre con traje de empresario que camina por aquí.\
+ld c,":a;image\tachi\ark_t06.jpg",%type_crossfade_fst
+`"Shiki.@ Quítate los lentes y mira a esa persona."@
+`"Esa persona---¿te refieres a ese empresario?"@
+`"Apresúrate.@ Si quieres saber qué estoy haciendo, deja las preguntas para más tarde."@
+`"----De acuerdo.@ No me gusta mirar en la ciudad, pero---"@
+cl c,%type_crossfade_fst
+\
+bg "image\bg\bg_25b.jpg",%type_crossfade_mid
+monocro #ff00ff
+` Me quito mis lentes.@
+`"…… Gah."@
+` Intantáneamente, surge un ligero dolor de cabeza.@
+` A cambio del dolor, puedo ver "líneas" recorriendo las paredes y el suelo.\
+bg "image\bg\bg_25b.jpg",%type_lshutter_slw
+monocro off
+ld c,":a;image\tachi\ark_t01b.jpg",%type_crossfade_fst
+`"Otra pregunta, Shiki.@ ¿Sólo ves "puntos" sobre las cosas vivientes, ¿cierto?"@
+`"¿Eh---?@ Sí, eso parece ser verdad.@ Cosas como edificios sólo tienen líneas."@
+` …… Los vi durante la estadía en ese hotel, pero a cambio de un dolor de cabeza que casi me hace desmayarme.@
+`"Correcto, ya que eres un ser viviente, no puedes comprender la muerte de los objetos inanimados.@
+` Por lo tanto, para "ver" la muerte de los objetos inanimados, primero debes conectarte a un circuito de la misma orientación que ellos.@ Para "ver" tienes que "comprenderlos" primero.\
+ld c,":a;image\tachi\ark_t06.jpg",%type_crossfade_fst
+`"Entonces otra pregunta.@ Shiki, ¿cómo se ve esa persona para ti?"\
+cl c,%type_crossfade_fst
+`"¿----?"@
+` Será lo mismo de siempre---
+ld c,":a;image\tachi\man_t03.jpg",%type_lshutter_mid
+`"¿¡----!?"@
+` Sin pensar, retrocedo.\
+` …… ¿Qué es eso?@
+` Ciertamente, todos lo humanos tienen "líneas" sobre ellos.@
+` Pero sólo tienen cantidades numerables que parecen seguir patrones geométricos.@
+br
+` Pero---¿qué es eso?@
+` Hay "líneas" recorriéndolo por completo.@ Hay "líneas" sobre todo su cuerpo, como vasos sanguíneos… tantas que no puedo siquiera distinguir su apariencia.\
+`"----Gah."@
+` Quiero vomitar.@
+` Esas, "líneas" negras----garabatos que toman forma humana… A lo largo de todo su ser, puedo ver "puntos negros" de los cuales pareciera fluir sangre---
+cl c,%type_lshutter_slw
+ld c,":a;image\tachi\ark_t06.jpg",%type_crossfade_fst
+`"Shiki, ¿cómo se ve?@ Esperaba que viese normal para ti."@
+`"------"@
+` No puedo responder.@
+` En este momento---requiero de toda mi fuerza sólo para no vomitar.\
+`"---Ya veo.@ Qué desafortunado que puedas ver la muerte incluso sobre esa cosa."@
+`"Sí…… no es, normal, pero…… aún, puedo ver, las líneas……"@
+ld c,":a;image\tachi\ark_t07.jpg",%type_crossfade_fst
+`"Lo sabía---puedes matar incluso a Los Muertos.@ El hecho de que no tengan vida no tiene importancia para ti.@ Algo que se mueve, algo que puede romperse, puedes detenerlo completamente y sin excepción---Eres todo un monstruo, Shiki."@
+`"Eh-----"\
+ld c,":a;image\tachi\ark_t22.jpg",%type_crossfade_fst
+`"Como viste, ya no puedes llamar humana a esa cosa.@ Es un vampiro que engaña a la muerte al succionar la sangre de otras personas."@
+` Arcueid acelera sus pasos.@
+` Camina directamente hacia el hombre.\
+`"Oye, Arcueid---"@
+`"¡Quédate ahí Shiki!"@
+` ¿Se percató de que Arcueid estaba allí?@ El hombre comienza a correr hacia un callejón trasero.@
+` Arcueid camina silenciosamente.@
+` Bajo la luz de la luna, ella desaparece dentro de ese callejón.\
+cl c,%type_lshutter_fst
+bg #000000,%type_lshutter_fst
+monocro #ff00ff
+bg "image\bg\bg_25b.jpg",%type_lshutter_slw
+br
+` ---Palpitar.@
+br
+` El sonido de mis latidos se siente terriblemente cercano.@
+` Ni siquiera estamos a altas horas de la noche.@
+` Aunque estoy en medio del bullicioso distrito comercial, no puedo sentir a nadie aparte de mí.\
+br
+` ---PALPITAR.@
+br
+` Mis lentes---tengo que ponerme mis lentes.@
+` Si no lo hago, veré cosas terribles.\
+` Veré algo tan terrible que todo lo que he visto hasta ahora no será nada en comparación.\
+br
+` ---Pal, pi, tar.@
+br
+` Mi cuerpo no se mueve.@
+` Mis ojos que pueden ver esta mezcolanza de mundo miran hacia ese callejón con fascinación.\
+playstop
+`"------"@
+waveloop se1
+` De repente, todo sonido se desvanece.@
+!w500
+` Y la presencia de otras personas,
+!w500
+` el sonido del viento,
+!w500
+` y el olor de la suciedad.@
+br
+` Todo se congela.\
+br
+br
+br
+br
+br
+br
+br
+` ------GI\
+` Bajo la congelada luna.@
+` Unos ruidos bizarros en el otro lado de la pared.\
+br
+br
+br
+br
+br
+br
+br
+` ------GO.\
+br
+br
+` No hay manera de que pueda verlo,
+` no puedo escuchar nada.\
+br
+br
+br
+br
+br
+br
+br
+` ------Un sonido repugnante\
+br
+br
+br
+br
+` Pero puedo verlo.@
+` Mis ojos definitivamente ven el sonido de la muerte al colisionar con la muerte.\
+monocro #ff0000
+bg "image\bg\bg_25b.jpg",%type_lshutter_mid
+`"Gah----"@
+` Mi visión se torna carmesí.@
+` ¿Por qué---mis ojos ven "la muerte", algo que no debería poder ser visto?@
+`"----"@
+` Mis lentes.@ Tengo que ponerme mis lentes o enloqueceré.@
+br
+` Retengo la masa que se eleva en mi garganta y uso mi temblorosa mano para ponerme mis lentes.\
+wavestop
+monocro off
+bg #ffffff,%type_crossfade_fst
+bg "image\bg\bg_25b.jpg",%type_crossfade_fst
+` El sonido y la luz regresan.@
+` Ahora que estoy calmado, echo un vistazo alrededor y no veo nada fuera de lo ordinario en el distrito comercial.@
+` El bullicio de muchas personas que caminan.@
+` El brillo de la decorada ventana de una tienda y el sonido de los motores de los autos.\
+` Estoy jadeando excesivamente.@
+br
+` Difícilmente puedo respirar.@
+` Aunque me puse mis lentes, aún puedo sentir un persistente residuo de esa "muerte" y eso me hace enfermar.\
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+` Arcueid sale del callejón.@
+` No hay siquiera un rastro de su hostilidad previa y parece estar de buen humor.@
+br
+`"¿Ar---cueid……?"@
+ld c,":a;image\tachi\ark_t03.jpg",%type_crossfade_fst
+`"¿Huh?@ Oh, ya veo.@ Supongo que en verdad te quedaste aquí."@
+`"Quedarme aquí, tú……"@
+` No puedo irme a casa después de ver algo como eso.\
+ld c,":a;image\tachi\ark_t13.jpg",%type_crossfade_fst
+`"¿Huh, qué sucede, Shiki?@ No te ves muy animado."@
+`"---No te preocupes por eso, es sólo mi anemia.@
+` Más importante aún Arcueid, ¿qué fue todo eso?"@
+` Miro a Arcueid mientras agarro sus brazos.\
+ld c,":a;image\tachi\ark_t14.jpg",%type_crossfade_fst
+`"Qu---Shiki, ¿qué estás haciendo tan repentinamente?@ Si estás herido, puedo llevarte a tu casa."@
+`"No gracias, estoy bien, dime qué era esa persona.@ ¡Me has mostrado todo esto, si ahora dices que no tiene nada que ver conmigo, te golpearé, Arcueid……!"@
+` Me acerco a ella, ignorando el hecho de que apenas puedo respirar.\
+ld c,":a;image\tachi\ark_t06.jpg",%type_crossfade_fst
+`"-------"@
+` La expresión de Arcueid se torna seria instantáneamente.@
+` Pero, no tengo intención de retractarme.@
+` Después de un breve duelo de miradas, ella suelta un suspiro.@
+ld c,":a;image\tachi\ark_t14.jpg",%type_crossfade_fst
+`"Bien, eres terriblemente persistente, Shiki."@
+`"………………… Bueno perdóname por ser tan persistente."@
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"Idiota, eso fue un cumplido.@
+` --Entonces, ¿vamos a otro lugar para hablar?"\
+`"¿Otro lugar?@ ¿Por qué?"@
+ld c,":a;image\tachi\ark_t03.jpg",%type_crossfade_fst
+`"Quieres que te hable sobre eso, ¿cierto?@ Aquí no, vamos de vuelta al parque.@ Shiki, ¿puedes caminar?"@
+`"Oh…… N, no te burles de mí.@ Esta anemia es una cosa de todos los días."@
+cl c,%type_lshutter_mid
+` "Awwww," dice Arcueid con pesar mientras sonríe y comienza a caminar.@
+` Camino tras ella y me resisto a desmayarme.\
+bg #000000,%type_lcartain_slw
+bg "image\bg\bg_28b.jpg",%type_lcartain_slw
+play "*2"
+ld c,":a;image\tachi\ark_t01a.jpg",%type_lshutter_mid
+`"Bueno, como deseas, Shiki, hablemos de cualquier cosa.@ Si quieres preguntar algo, siéntete libre."@
+`"Entonces preguntaré, pero ¿qué era ese sujeto de antes?@ Dijiste que era un vampiro, ¿era él a quien perseguías?"@
+ld c,":a;image\tachi\ark_t01b.jpg",%type_crossfade_fst
+`"No, ciertamente era una parte de mi objetivo, pero devolver a Los Muertos a la tumba no es mi meta.@ Solamente lo atrapé porque era un subordinado de mi 'enemigo'.@
+` Si lo dejase en paz, mataría a más personas para incrementar su poder."\
+`"…… Arcueid.@ Um, ¿podrías explicarlo de modo que pueda entenderlo?@ Ni siquiera sé si ese sujeto era humano o no."@
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"Oh.@ Supongo que en realidad nunca te hablé detalladamente sobre los vampiros.@ Nrvnqsr era una especie de aberración dentro de la raza de los vampiros, así que no tuve necesidad de explicarlo en esa ocasión."@
+`"¿……?@ ¿Qué es un vampiro normal entonces?"\
+`"Me refiero al tipo de vampiro que todos ustedes conocen.@ Ser inmortal, nunca envejecer, succionar sangre humana, transformar humanos en vampiros, ser destruido por la luz solar, todo eso.@
+` Mi 'enemigo' es ese viejo tipo de vampiro."@
+`"…… Um, ¿entonces quieres decir que este 'enemigo' tuyo es quien está detrás de todos los asesinatos en serie recientes?"@
+ld c,":a;image\tachi\ark_t06.jpg",%type_crossfade_fst
+`"…… Supongo.@ Pero la muerte de todas esas personas al ser chupada su sangre debe ser obra de "Los Muertos", como el que viste hace poco.@
+` Shiki, recuerdas cómo el cuerpo de Nrvnqsr estaba hecho de todos esos familiares, ¿cierto?"\
+`"---Sí, no es exactamente algo que pueda olvidar con facilidad."@
+ld c,":a;image\tachi\ark_t02.jpg",%type_crossfade_fst
+`"Los Muertos son así.@ Cuando a los humanos les chupa la sangre un vampiro, también pueden recibir un poco de la sangre del vampiro.@
+` Mueren, pero permanecen en este mundo como sirvientes del vampiro.@ Son llamados Los Muertos y son como los familiares del vampiro.@
+` Ah, tal vez sea más fácil de entender si uso la palabra zombi.@ Es más parecido a la crencia vudú en Haiti donde el dios-serpiente blanca Damballah es invocado para controlar un cadáver, pero digamos simplemente que un cadáver que se mueve es un zombi, ¿de acuerdo?"@
+br
+` ---Sí, puedo visualizarlo mejor de esa manera.\
+`"Entiendo, ¿entonces ese hombre fue asesinado por un vampiro, quien lo utiliza como un zombi?"@
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+` "Sí, sí," Arcueid asiente felizmente.@
+`"---Pero aún estoy confundido.@ ¿Por qué haría eso un vampiro?@
+` Matar personas---y controlarlas en lugar de permitirles morir, qué mal gusto."\
+ld c,":a;image\tachi\ark_t02.jpg",%type_crossfade_fst
+`"Tienes razón, esos vampiros tienen mal gusto.@ Pero eso es algo que sólo los Apóstoles Muertos hacen.@ Los que han sido vampiros desde el principio no hacen semejantes cosas."@
+br
+`"¿----?"@
+` ¿Vampiros desde el principio ……?\
+` @
+br
+`"---Ya recuerdo.@ Dijiste que hay dos tipos de vampiros, los que eran vampiros originalmente, y los que solían ser humanos.@
+` …… Cuando escuché eso anteriormente, se quedó atorado en mi cabeza, pensé que era un poco raro.@ Entonces, ¿exactamente a qué te refieres con aquellos que no eran vampiros originalmente?"\
+`"Simple, estoy diciendo que los Apóstoles Muertos solían ser humanos.@ Obtuvieron la inmortalidad a través de la hechiceria o se convirtieron en sirvientes de los Verdaderos Ancestros que succionaron su sangre.@
+` …… Shiki, dijiste que era de mal gusto utilizar humanos asesinados, pero eso es lo de menos.@ Hay otros vampiros que inventan juegos peores."@
+`"---¿Un juego---qué es eso?@ ¿¡Ustedes matan por diversión, y usan los cadáveres como juguetes……!?"\
+`"…… No negaré eso.@
+` Para los vampiros, "entretenimiento" es lo mismo que respirar.@ Para aquellos fueron humanos pero obtuvieron una inmortalidad imperfecta, su más grande enemigo es el aburrimiento.@
+` Para empezar, no tenían una razón para volverse inmortales, y por eso, una vez que obtuvieron la inmortalidad, perdieron todo tipo de codicia.@
+` Su meta era la propia inmortalidad; supongo que simplemente, así son las cosas."\
+`"---¿Quieren jugar porque están aburridos?@ No seas ridícula.@ ¿No es suficiente que no envejezcan o mueran?@ ¿En verdad necesitan algo más?"\
+`"Eso es lo que dije, obtuvieron todo lo que deseaban.@ Después de eso, la existencia no tiene significado.@
+` Tan pronto como alguien se percata de que no tiene valor---que su vida está detenida, el significado de su existencia también desaparece.@
+` Inmortalidad es también otra palabra para muerte.\
+` Entonces empezaron a debilitarse y comenzaron a crear su propio entretenimiento, como para decirse a sí mismos que podrían divertirse mientras viviesen.@ ---Ése es su comienzo.\
+ld c,":a;image\tachi\ark_t01b.jpg",%type_crossfade_fst
+`"Copian a los humanos y se ven a sí mismos en un juego como reyes de un castillo expandiendo su territorio.@
+` Supongo que podrías llamarlo un país de Los Muertos.@ Parece que obtuvieron más placer por eso de lo que esperaban."@
+br
+` …… Ella habla como si se estuviese refiriendo a otras personas.@
+` Arcueid debería ser uno de ésos, pero ciertamente no parece que tenga esa clase de pasatiempo.\
+`"Bien, cambiaremos de tema pero, los Apóstoles Muertos eran humanos originalmente.@
+` Unos pocos se convirtieron en vampiros a través de su propia investigación mágica, pero la mayoría eran humanos a los que les fue chupada la sangre.@
+` Son inmortales, pero no pueden perdurar por siempre.@ Sólo pueden ser inmortales si beben la sangre de otros.@
+` ¿No dije que su inmortalidad es imperfecta?@ Si no pueden alimentarse de humanos entonces su inmortalidad termina."\
+`"Pero, si se alimentasen de humanos libremente, entonces la existencia de "vampiros" sería revelada.@ Y aunque no lo hicieran, simplemente al existir, distorsionan el mundo a su alrededor.@ Eso atraería la atención de los agentes de La Iglesia, como Ciel."@
+`"…… Um, ¿entonces quieres decir que los vampiros no pueden hacer lo que quieran?"\
+`"Sí, si rompiesen su acuerdo con La Iglesia y se moviesen libremente, serían descubiertos y aniquilados inmediatamente.@
+` Así que la mayoría de los Apóstoles Muertos crean subordinados que pueden traerles sangre mientras ellos duermen.@
+` Al succionar sangre y darle al cadáver un poco de su propia sangre, crean esbirros que hacen el trabajo por ellos.@ A éstos simplemente los llamamos 'Los Muertos'."\
+`"…… Hmm…… ¿Entonces lo que mataste anteriormente era algo como un soldado de los Apóstoles Muertos?"@
+ld c,":a;image\tachi\ark_t02.jpg",%type_crossfade_fst
+`"Más un títere que un soldado.@ Los Apóstoles Muertos controlan los cadáveres al omitir el proceso de conversión en vampiro.@ Los Muertos están completamente conectados a su padre vampiro.@
+` Para sobrevivir, atacan a otros para comer su carne, pero más de la mitad de esa energía va hacia su amo.@
+` Como una abeja reina alimentada por las abejas obreras, los Apóstoles Muertos pueden usar a Los Muertos para incrementar su poder mientras duermen."\
+ld c,":a;image\tachi\ark_t06.jpg",%type_crossfade_fst
+`"…… Mi 'enemigo' no puede ser encontrado fácilmente porque está usando a un montón de Los Muertos.@
+` Él sólo ensucia sus manos una vez.@ Después de eso, simplemente controla a Los Muertos mientras duerme y expande su territorio.@
+` ---Dicen que muchos cuerpos son encontrados en los supuestos asesinatos en serie, pero en realidad ésos son sólo fracasos.@
+` Para ser sincera, hay más de cien víctimas en esta ciudad.@
+` Pero sólo una pequeña cantidad, las que son descubiertas, son las víctimas de las noticias."\
+playstop
+cl a,%type_crossfade_fst
+`"Qué----"@
+br
+` ¿Más de cien---?@
+` ¿Le han chupado la sangre a tantos?@
+` Y todas esas personas chupan la sangre de otras y las convierten en monstruos como ellos, como esa errante cosa sin vida de antes---\
+`"……… Eso es ridículo."@
+` Hace tres días.@
+` Recuerdo cómo todas esas personas en el hotel fueron asesinadas sin razón.@
+` Yo estaba ahí pero no lo vi, así que sólo puedo visualizarlo y no puedo decir con certeza qué tipo de violencia fue.@
+` Sigue siendo lo mismo.@
+` No puedo encontrarle sentido a la existencia de vampiros que succionan sangre humana, sólo para incrementar su territorio.\
+` ---Simplemente,
+` sin razón, sin siquiera reconocimiento, si alguien cercano a mí muriese de esa manera, ¿cómo actuaría yo?@
+` No quiero imaginarlo, pero sólo por un instante…@
+` Imagino a Akiha siendo drenada de sangre y desechada como basura.@
+br
+`"K----"@
+` Lo que me hace enfurecer---es que este peor escenario podría suceder en cualquier momento en esta ciudad y yo no tenía siquiera una pista sobre ello.\
+ld c,":a;image\tachi\ark_t10.jpg",%type_crossfade_fst
+`"Sabía que te enfurecerías, Shiki.@
+` …… No quería hablar de eso, porque para la presa---para ustedes, es una maldad injustificable.@
+` Esto no es algo que quieras escuchar, ¿cierto?"@
+`"…… Cierto.@ Después de escuchar esto, ya no sé qué hacer."@
+` …… Es cierto.@
+` De ninguna manera podría vivir en paz como hasta ahora, sabiendo que alguien que conozco podría ser una víctima mañana.@
+` Ya que me enteré de esto,
+` tengo que combatir a este vampiro al igual que lo hice con Nrvnqsr.\
+bg #000000,%type_crossfade_fst
+bg "image\event\nero_e04.jpg",%type_crossfade_mid
+`"…………… Mald--"@
+br
+` Semejante pelea.@
+` ¿Tengo que volver a pelear de esa manera cuando aquello casi me hizo enloquecer?\
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_28b.jpg",%type_crossfade_fst
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+play "*9"
+`"Oh, Shiki, tienes esa cara de nuevo.@
+` Puedes relajarte.@ Aunque los enemigos declarados de los vampiros no tienen presencia en este país, yo estoy aquí.@
+` ¿No dije anteriormente que mi propósito es ejecutar vampiros?"@
+` No sé adónde se fue esa pesada atmósfera pero, Arcueid se muestra alegre instantáneamente.\
+`"Sí, lo recuerdo.@ …… Pero, tú también eres un vampiro, ¿no?@ ¿Por qué te alías con nosotros los humanos?"@
+`"En realidad no me estoy aliando con ustedes, estoy haciendo esto porque no tengo nada más que hacer."@
+`"¿----?"@
+` ¿No tiene nada más que hacer?@ Todavía no la entiendo.@
+`"Bueno, eso hace que los Apóstoles Muertos vayan tras de mí, pero tú derrotaste a Nrvnqsr, quien estaba persiguiéndome, ¿cierto, Shiki?"\
+ld c,":a;image\tachi\ark_t08.jpg",%type_crossfade_fst
+`"Así que ahora puedo regresar al plan original y derrotar a mi 'enemigo'.@
+` Puedes volver a tu vida normal ahora, y no tienes que asociarte más conmigo."@
+` Ella sonríe como si estuviese feliz por algo.\
+`"……………"@
+ld c,":a;image\tachi\ark_t03.jpg",%type_crossfade_fst
+`"¿Shiki?@ ¿Por qué tienes esa cara de preocupación otra vez?"@
+`"Porque estoy preocupado.@ Esto es algo que involucra a la ciudad en la que vivo."@
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"Dije que no debías preocuparte.@ En dos o tres días todo habrá terminado, y no habrá más víctimas."@
+br
+` Sí, sinceramente, no quiero estar involucrado.@
+` ---Pero, decir eso…
+` ¿No debería yo, el que vive en esta ciudad, decir eso en lugar de Arcueid?\
+`"…… Arcueid.@ Um, ¿puedo hacerte una pregunta?@ Este 'enemigo' del que hablas, ¿es fuerte?"@
+`"Bueno, debería ser muchas veces superior al Muerto de hace poco.@ No lo he conocido en esta ocasión, pero ha estado latente durante ocho años así que tal vez sea un Clase Cinco en este momento."@
+`"…… ¿Clase Cinco?@ No entiendo pero, ¿significa que es más fuerte que Nrvnqsr?"@
+`"Para nada.@ Nrvnqsr era especial.@ Era un vampiro puro y supremo que sería dificil de derrotar incluso con todo mi poder.@ Comparado con él, este enemigo es bastante débil."\
+`"----Oh.@ Entonces no hay manera de que puedas ser derrotada."@
+` Respiro aliviado.@
+ld c,":a;image\tachi\ark_t03.jpg",%type_crossfade_fst
+`"Hm, ¿quién sabe?@ Hace unos días no era un problema, pero ahora me estoy recuperando.@ La posibilidad de que él tenga más poder que yo es en realidad alta."@
+`"…… ¿Recuperándote?@ ¿Estás enferma o algo así, Arcueid?"@
+`"Sí, todavía sufro los efectos de cuando me mataste y no creo que vaya a estar bien por al menos unos días más."@
+`"----Ah."@
+` Es cierto--la razón por la que Arcueid está débil… es mi culpa y la de nadie más.\
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"Pero está bien.@ Lo derrotaré aunque me cueste la vida, así que no necesitas preocuparte por esta ciudad."@
+`"…… Idiota, es por ti por quien estoy preocupado."@
+ld c,":a;image\tachi\ark_t11.jpg",%type_crossfade_fst
+`"¿Eh?@ ¿Por qué estás preocupado por mí, Shiki?"@
+` Sus ojos muestran verdadera confusión.\
+` …… Bueno, claro que estoy preocupado.@
+` Me sentí aliviado al escuchar que este enemigo era más débil que Nrvnqsr, porque pensé que no habría ninguna posibilidad de que Arcueid fuese derrotada.@
+` Arcueid…
+` No quiero siquiera imaginarme a Arcueid siendo lastimada.\
+`"………………"@
+` En verdad es raro.@
+` ¿Por qué---por qué no puedo dejarla sola?@
+` Ciertamente cargo con la responsabilidad de haberla matado.@ También me siento culpable de que ella esté débil por esa razón.@
+` Pero, aunque no fuese así, aún no podría dejarla sola.\
+` ---Ya lo había pensado, pero……
+` como esperaba, esto podría no tener nada que ver con la lógica.@
+` …… Más que el miedo a la posibilidad de mi propia muerte…
+` El deseo de ayudar a Arcueid es mucho más fuerte.\
+`"Sobre lo que hablamos antes, Arcueid."@
+`"¿Sobre qué?"@
+`"Ya sabes, sobre si era aliado de Senpai o tuyo."@
+ld c,":a;image\tachi\ark_t06.jpg",%type_crossfade_fst
+`"Espera, por favor escúchame.@
+` Sabes, um---ciertamente no tienes nada de sentido común, eres egoísta y difícil de manejar."@
+ld c,":a;image\tachi\ark_t05b.jpg",%type_crossfade_fst
+` Arcueid me mira con una amarga expresión.@
+` Ignorándola, dejo salir mis verdaderos sentimientos.\
+cl a,%type_crossfade_fst
+`"…… Pero, bueno, ciertamente no es aburrido estar contigo.@ Tú me agradas.@
+` Así que, ¿puedo acompañarte hasta que derrotes a este enemigo? …… Quiero decir que, no seré aliado de Senpai, sino tuyo…"@
+` Echo un vistazo al rostro de Arcueid.@
+ld c,":a;image\tachi\ark_t12.jpg",%type_crossfade_fst
+`"------¿En serio?"@
+` Parece muy sorprendida y me devuelve la mirada con vacilación.\
+`"…… Bueno, sí.@ Incluso yo pienso que hay algo mal en mí, pero ya soy parte de esto.@ Y, no puedo pasar por alto los problemas que están ocurriendo en la ciudad en que yo vivo."@
+`"Entonces, quieres decir---"@
+`"Sí.@ Si aún estás débil, y si dices que necesitas mi poder, trabajaré contigo.@
+` …… Um, podría ser sólo una carga, pero…"\
+ld c,":a;image\tachi\ark_t09.jpg",%type_crossfade_fst
+`"¡Sí---!@ ¡Si me ayudas, no hay nada que no podamos hacer---!"@
+` …… Su rostro sonríe alegremente y parece extremadamente feliz.@
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"Pero, ¿no hay problema?@ Shiki, puede que tengas que enfrentar a la muerte nuevamente."@
+`"Estoy preparado.@ Y, creo que ésa es la razón por la que tengo estos ojos.@
+` ----Cuando era niño, alguien me dijo esto.@
+` Que si tengo el poder que otros no, debería hacer cosas que otros no pueden.@ Creo que ésta es esa clase de situación."\
+ld c,":a;image\tachi\ark_t03.jpg",%type_crossfade_fst
+`"¿Oh?@ …… No conozco muy bien tus circunstancias."@
+ld c,":a;image\tachi\ark_t08.jpg",%type_crossfade_fst
+`"Pero, eso suena bien."@
+` …… Arcueid está de un increíble buen humor.@
+` Y estar con ella también me pone de buen humor.\
+playstop
+`"Pero, ¿qué hacemos ahora?@ ¿Quieres ir a buscar a más de Los Muertos como antes?"@
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"Sí, creo que es todo lo que podemos hacer por ahora.@ El anterior fue el duodécimo, no creo que haya muchos más.@ El padre vampiro tendrá que salir una vez que todos sean destruidos, así que tenemos que cazar a los restantes por ahora.@
+` ¿Está bien?", pregunta ella.\
+`"Cualquier cosa está bien, yo sólo estoy contigo.@ Si tú mandas, entonces yo obedezco.@ --Bueno, ¿comenzamos de nuevo?"@
+`"Ah, no, ya fue suficiente por esta noche.@ Ellos normalmente siguen una ruta predeterminada, y los otros Muertos probablemente no saldrán esta noche.@
+` Ya que han disminuido en número, no creo que él los vaya a dejar salir a todos al mismo tiempo."@
+`"---¿Oh en serio?@ Pero, ¿no significa que este 'enemigo' intentará esconder a Los Muertos de ti, Arcueid?"\
+`"Básicamente.@ Pero ya que este 'enemigo' es un vampiro, necesita robar sangre y energía de otros.@
+` Por lo tanto, aunque sabe que los estoy buscando, tiene que enviar a Los Muertos para obtener el mínimo de sangre que necesita."@
+br
+` ---*suspiro*@
+` Entonces, el mínimo de Muertos que envió era ese hombre, eh.\
+`"Así que, seguir buscando esta noche sería inútil, o eso creo."@
+`"…… Bueno, no me importa.@ Pero es tedioso."@
+`"Sí, cazar vampiros es un trabajo tedioso.@ Tenemos que encontrar el ataúd del 'enemigo' en algún lugar de esta ciudad, así que no será fácil."@
+cl c,%type_lshutter_mid
+` Arcueid suelta mi mano y salta hacia atrás suavemente.\
+`"¿Arcueid……?"@
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"Despidámonos por esta noche.@ Nos veremos mañana.@
+` Con sus pasos como de baile, ella me observa mientras se aleja aun más.\
+`"Mañana---espera, ¿¡dónde deberíamos encontrarnos……!?"@
+ld c,":a;image\tachi\ark_t08.jpg",%type_crossfade_fst
+`"Aquí está bien.@ La hora---sí, alrededor de las diez en punto estará bien."@
+` Con una sonrisa, ella hace esa promesa.\
+`"Buenas noches, Shiki.@ ¡Te veré aquí mañana!"@
+` Y,
+` agitando su mano, Arcueid desaparece.\
+cl c,%type_lshutter_mid
+bg #000000,%type_crossfade_slw
+bg "image\bg\bg_32d.jpg",%type_lcartain_slw
+` ---Regreso a la mansión.@
+` Son más o menos la una y treinta de la mañana.@
+` La mansión está completamente oscura.@
+br
+`"……… Esto no puede ser bueno."@
+` Coloco mi mano sobre la verja de la mansión.@
+` Ka-chang.@
+` Una sólida cadena la mantiene cerrada.@
+br
+`"---Demonios.@ No debería cortar esto."@
+` Pienso un poco.@
+` Entonces, decido trepar por encima de la verja.\
+bg "image\bg\bg_48d.jpg",%type_lcartain_mid
+` …… Estoy exhausto.@
+` Después de colarme por encima del muro como un ladrón, camino silenciosamente hasta la entrada.@
+` La verja estaba cerrada, pero la puerta no lo está.@
+`"…… Debe haber sido Hisui."@
+` Suelto un suspiro de agradecimiento.@
+br
+` Para no despertar a Akiha, Kohaku-san o Hisui, avanzo a hurtadillas por la mansión.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_40d.jpg",%type_lcartain_mid
+`"------Fiu."@
+` Soltando una respiración, me acuesto sobre mi cama.@
+`"………………"@
+` Mi promesa con Arcueid.@
+` Quizás sea el destino, pero te has enredado en problemas nuevamente, Tohno Shiki.@
+br
+`"----¿Pude evitarlo?@ Simplemente no puedo dejarla sola."@
+` ¿O tal vez no quería dejarla sola?@
+`"Bueno…… Arcueid ciertamente me gusta."@
+` ¿Pero eso, es amor?@
+` No entiendo mis propios sentimientos.\
+` De todos modos, parece que estaré ayudando a Arcueid una vez más a partir de mañana.@
+` Así que por ahora, no debería pensar en nada aparte de dormir bien por esta noche----\
+bg #000000,%type_crossfade_slw
+!w2000
+bg "image\bg\bg_40d.jpg",%type_lshutter_mid
+br
+` ---No puedo dormir.@
+` Si cierro los ojos, muchas cosas vienen a mi mente.@
+` Sobre Arcueid.@
+` Sobre ese vampiro merodeando las calles.@
+` …… Sobre la Senpai vestida de negro.\
+`"----"@
+` …… No puedo dormir.@
+` En momentos como éste, leer es bueno.@
+` Sé que había un libro que estaba leyendo antes----\
+bg #000000,%type_crossfade_slw
+bg "image\bg\cmo_15.jpg",%type_crossfade_slw
+waveloop se10
+br
+br
+br
+br
+br
+br
+br
+`   El primer sentimiento fue uno más bien de lástima.@
+!w1000
+\
+br
+` No de furia, ni de desesperación.@
+` Simplemente, pensé que todo frente a mis ojos era lamentable.@ (Por supuesto, la cosa más lamentable soy yo.)\
+` Vida que se extingue sin límite.@
+` Vida diaria que se desvanece sin límite.@
+` Tiempo que es olvidado sin límite.@
+br
+` Todos caen.@
+` Y aun así todos luchan desesperadamente para seguir existiendo, y cuando juzgan que eso no es posible, continúan reproduciéndose.@
+` Reproducción contínua.@
+` Al final, incluso eso muere, pero no hay compensación.\
+` Por supuesto, no son aquellos que mueren los que no son recompensados.@
+` No teníamos esperanza para empezar.@
+` Lo que no es recompensado son los intentos.@
+` El noble deseo, el anhelo por la eternidad que todos desean pero no pueden conseguir.@
+br
+` No tengo absolutamente ningún interés en las cosas que mueren.@
+` Si pudiese ver la muerte y entenderla, tal vez tendría un poco de interés.\
+br
+` Una repetición casi imposible de medir, pero este deseo se sigue repitiendo.@
+` Pensé en reemplazar este casi cómico ciclo de deseos por una cosa pura.@
+br
+` No hay necesidad de declarar el método.@
+` Un deseo se convierte en un resultado después de ser concedido.@
+br
+` Viví únicamente por esa razón.@
+` Eso no podría ser denominado "convicción".@
+` Simplemente, la primera palabra que aprendí resultó ser "eternidad".\
+bg #000000,%type_crossfade_slw
+bg "image\bg\cmo_10.jpg",%type_crossfade_slw
+` …… ¿Oh?@ ¿Así que pretendes conseguir la eternidad más cercana a ti?\
+` Claro que no.@ Ellos simplemente son una especie que envejece con más lentitud y es más resistente la muerte.@ Me convertiré en uno de ellos sólo porque este cuerpo ha alcanzado su límite.@ Si he de ir aun más lejos, me tomará tiempo en este cuerpo.\
+` Es irónico que tú, el que persigue la eternidad, se apresure con las cosas.@
+` ¿Así que planeas irte de aquí mañana?\
+` Dejaré la Agencia de Entierros en tus manos.@ En primer lugar, hay sólo un asiento vacío en el clero.@ Usé toda la herencia de mi padre para llegar así de lejos, por lo que ya es hora de que renuncie.\
+` …… Bueno, está bien.@ Así que vas a completar tu teoría mágica.@ No tengo intención de irme de aquí, y no puedo vivir contigo.@ Bueno, afortunadamente, soy una mujer.@ Rápidamente daré a luz a un niño y le diré todo sobre ti.\
+` ¿Oh?@ ¿Qué le dirás, Narbarek?\
+` Veamos.@ Le diré algo como--Después de unos cien años, un nuevo Apóstol Muerto aparecerá.@ No tiene caso prestarle atención, así que ignóralo.\
+` No, no necesitarás esperar cien años.@ Al igual que aquí, subiré a la cima rápidamente.@ Este cuerpo se convertirá en el más supremo de los vampiros, así que diez años serán suficientes.\
+` Qué tontería.@ Aunque se trate de ti, necesitarías al menos cien años si comienzas de nuevo desde Los Muertos.@ La intensidad del mundo de ellos no es tan agradable como la nuestra.\
+` Usando métodos directos, entonces tendrías razón.@
+` Pero si me convierto en el vampiro más fuerte desde el principio, las reglas de su mundo no se aplicarán a mí.\
+` …… ¿Qué quieres decir con eso?\
+` Es simple.@
+` Como sacerdotisa de La Iglesia, ciertamente sabes que los poderes de un Apóstol Muerto son afectados por el Verdadero Ancestro que succionó su sangre.@
+` Por lo tanto---la solución es muy simple.@
+br
+br
+` Si deseo convertirme en el más fuerte de los Apóstoles Muertos,
+` esta sangre mía,
+` debe ser succionada por el más fuerte de los Verdaderos Ancestros---\
+wavestop
+bg #000000,%type_crossfade_slw
+!w3000
+return

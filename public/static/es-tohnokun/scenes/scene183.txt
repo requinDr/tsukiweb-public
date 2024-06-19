@@ -1,0 +1,136 @@
+mov $phasebg,"image\bg\bg_31b.jpg"
+mov $phasetitle_a,":a;image\word\PARK_10A.PNG"
+mov $phasetitle_b,":a;image\word\day_10.png"
+gosub *left_phase
+bg #ffffff,%type_crossfade_mid
+bg "image\bg\bg_40a.jpg",%type_crossfade_mid
+play "*9"
+` ----Amaneció.@
+` Abro mis ojos y me pongo los lentes junto a mi cama.@
+` Al mirar por la ventana, veo un despejado cielo azul.@
+br
+`"………………"@
+` Aunque una mañana perfecta me saluda, no puedo evitar sentirme deprimido.@
+` No necesito preguntarme por qué.@
+` Lo que sucedió anoche con Arcueid está pegado al fondo de mi mente, y la culpa que lo acompaña me preocupa.\
+`"…… Ella dijo que debíamos olvidarlo----pero no puedo olvidar semejante cosa."@
+` Miro mis manos.@
+` Estos dedos aún recuerdan cómo se sentía Arcueid.@
+` Incluso ahora recuerdo la textura de su piel y su fría temperatura corporal.@
+` No estaba pensando en nada en ese momento, pero ahora lo entiendo todo.\
+` Después de hacer semejante cosa.@
+` Arcueid dijo que lo olvidásemos y fingiésemos que nunca sucedió.@ Pero aunque me arrepiento totalmente, no puedo olvidarlo siquiera en lo más mínimo.@
+` Lo que lamento es no haber sido capaz de controlarme entonces.@
+br
+` Si no la hubiese tocado como un animal, si la tocaba más como un humano, ¿qué habría----\
+br
+` ----Lo sabía.@
+br
+` No enloquecí por mirar sus ojos dorados.@
+` No me percaté, pero fui cautivado por ella hace mucho tiempo.@
+br
+` Darme cuenta de semejante cosa justo ahora----\
+bg #000000,%type_lcartain_slw
+bg "image\bg\bg_34a.jpg",%type_lcartain_slw
+` La mañana en la mansión Tohno es la misma de siempre.@
+` Hisui viene a despertarme.@ Akiha y Kohaku-san están en la sala de estar, y nos saludamos brevemente antes de ir a la escuela.@
+br
+` Lo mismo de siempre.@
+` Pero me siento tan vacío, ni siquiera puedo responder apropiadamente cuando me hablan, y dejo la mansión distraídamente.\
+bg #000000,%type_lcartain_slw
+!w1000
+bg "image\bg\bg_01a.jpg",%type_lcartain_slw
+` Todos los estudiantes que atraviesan la entrada se ven alegres.@
+br
+`"Oh cierto.@ Hoy es sábado."@
+` Mi sentido del tiempo ha desaparecido totalmente desde que Arcueid entró en mi vida.@
+` Cuando nos conocimos era viernes.@
+` Hace una semana, en la mañana, ella estaba esperándome en la intersección frente a la escuela.\
+`"…… Estaba sonriendo, creo."@
+` Ahora que lo pienso, ella estaba sonriendo.@
+` Aunque estaba esperando al que la asesinó, estaba esperando al asesino Tohno Shiki con emoción en sus ojos.@
+br
+`"…… ¿Me pregunto por qué?@ Si aparece esta noche, quizás se lo pregunte."@
+` Después de pensar en voz alta, mi espíritu se hunde aun más.@
+` Ella probablemente no irá al parque.@
+` La sensación de que anoche fue nuestro último encuentro da vueltas en mi mente.\
+` Mi corazón se siente pesado y todo lo demás simplemente se siente vacío.@
+` Puede que nunca más vuelva a verla.@ El arrepentimiento cuelga a mi alrededor como una cadena de plomo----\
+bg #000000,%type_lcartain_slw
+bg "image\bg\bg_06a.jpg",%type_lcartain_slw
+` Me siento en mi pupitre.@
+` Faltan unos cinco minutos para la tutoría.@
+` Miro hacia afuera inexpresivamente, sin querer hacer nada.@
+ld c,":a;image\tachi\ari_t01.jpg",%type_lshutter_fst
+`"Hola, delincuente.@ Faltaste a clases ayer.@ ¿Qué demonios estabas haciendo, Tohno-kun?"@
+`"…………"@
+` Dejo salir un pesado suspiro.@
+` Normalmente lo haría, pero hoy no tengo ganas de hablar con Arihiko, en absoluto.\
+ld c,":a;image\tachi\ari_t03.jpg",%type_crossfade_fst
+`"…… ¿Qué pasa contigo?@ No te ves nada feliz.@ No viniste a la escuela ayer y ahora regresas deprimido.@ Si actúas de esa manera, la escuela no es divertida."@
+` Arihiko deja caer sus hombros exageradamente.@
+br
+`"-----Arihiko.@ Lo siento pero, ¿puedes dejarme en paz hoy?@ Si no estoy aquí, siempre puedes hablar con Senpai.@ De hecho, ¿no es mejor para ti?"@
+`"¿Huh----?@ ¿Senpai?@ No conozco a ningún estudiante de tercer año."\
+`"…… ¿Qué estás diciendo?@ Ciel-senpai está en tercer año, no en segundo.@ …… Bueno, a veces podrías pensar que es más joven, pero Senpai es una senpai después de todo."@
+`"¿Shiel-Senpai?@ …… ¿Quién es ésa?@ ¿Hay algún estudiante extranjero en nuestra escuela?"@
+` Arihiko ladea su cabeza seriamente, pensativo.\
+`"¿Qué estás diciendo? Senpai es japonesa……"@
+br
+` No, espera.@
+` Nadie dijo que ella fuese japonesa.@
+br
+`"…… Bueno, nadie dijo que lo fuese, pero todos la llamaban Ciel-senpai."\
+`"Eso es lo que digo, ¿quién es esta senpai?@ ¿Qué sucede Tohno, estás enfermo o algo así?"@
+` No puedo escuchar sus bromas.@
+cl c,%type_crossfade_fst
+\
+`"Qué………………"@
+` Es cierto.@ ¿Por qué no me percaté de una inconsistencia tan obvia?@
+` Ciel no es un nombre japonés, en absoluto.@
+` Aunque la conozco, ni siquiera sé su nombre completo.@ Ni siquiera sé en qué clase está.@
+br
+` Para comenzar,
+` cuando la vi por primera vez, ¿por qué sentí que la conocía desde hace mucho tiempo……?\
+`"¡------!"@
+` Mi silla traquetea al levantarme rápidamente.@
+ld c,":a;image\tachi\ari_t03.jpg",%type_crossfade_fst
+`"¿?@ ¿Qué sudece, Tohno?@ Estás actuando muy extraño."@
+`"Voy a la oficina.@ Lo siento pero, por favor di que estoy aquí durante la asistencia."@
+cl c,%type_crossfade_fst
+` Dándole la espalda a Arihiko cuya cabeza está ladeada por la confusión, salgo corriendo del salón.\
+bg #000000,%type_lcartain_mid
+!w1000
+` Reviso la lista de tercer año buscando el nombre Ciel, pero como esperaba, éste no se ve por ningún lado.\
+` Para asegurarme, pregunto a los maestros en la oficina, pero ninguno de ellos recuerda a Ciel-senpai.\
+!w1000
+bg "image\bg\bg_06a.jpg",%type_crossfade_mid
+` El fin de las clases.@
+` Como es sábado, justo después de la tutoría todos mis compañeros se dispersan y salen corriendo del salón.@
+br
+`"----"@
+` Finalmente es sábado, pero no tengo ganas de hacer nada.@
+` Sintiéndome como Los Muertos, camino a casa por mi cuenta.\
+bg #000000,%type_lcartain_slw
+!w1000
+bg "image\bg\bg_33b.jpg",%type_lcartain_slw
+ld c,":a;image\tachi\his_t01.jpg",%type_lshutter_fst
+`"Bienvenido a casa, Shiki-sama."@
+` Hisui me saluda al regresar.@
+` Aunque me ha esperado todo este tiempo, ni siquiera puedo devolver un saludo y voy a mi habitación.\
+bg #000000,%type_lcartain_slw
+!w1000
+bg "image\bg\bg_40c.jpg",%type_crossfade_mid
+` ----Después de la cena, regreso a mi habitación.@
+` Ya casi es la hora de mi promesa con Arcueid.@
+`"…… ¿Me voy?"@
+` Ni siquiera sé si ella vendrá.@
+` Pero aun así, juré nunca volver a romper una promesa, así que debo ir.\
+bg #000000,%type_lcartain_slw
+bg "image\bg\bg_29b.jpg",%type_lcartain_slw
+playstop
+` Llego al parque poco antes de las diez.@
+` No hay absolutamente nadie aquí.@
+` Sentado en el banco, observo el reloj y espero que Arcueid venga.@
+br
+return

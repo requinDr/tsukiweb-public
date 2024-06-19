@@ -1,0 +1,51 @@
+monocro off
+wavestop
+play "*2"
+;---added context above---
+bg "image\bg\bg_34a.jpg",%type_nowaitdisp
+`"Buen día, Kohaku-san.@ Hoy es un bello día."@
+ld r,":a;image\tachi\koha_t05.jpg",%type_lshutter_mid
+`"Sí.@ Buenos días, Shiki-san."@
+` Kohaku-san da su ordinario saludo matutino con una sonrisa en su rostro.\
+ld r,":a;image\tachi\koha_t03.jpg",%type_crossfade_fst
+`"¿Durmió bien anoche?@ Me preocupaba que pudiese sentirse incómodo, quedándonse en una mansión desconocida y todo eso."@
+`"Ah, no, no hubo problemas.@  Solía vivir aquí, después de todo, y ahora te tengo a ti para cuidarme, Kohaku-san."@
+ld r,":a;image\tachi\koha_t05.jpg",%type_crossfade_fst
+`"Oh, es muy bueno en esto, Shiki-san."@
+`"¿Eh?@ No, sólo estoy diciendo lo que pienso… ¿en qué soy bueno?"@
+` Kohaku-san sólo me mira, sonriendo.@
+cl r,%type_crossfade_fst
+` …… Por alguna razón, me siento avergonzado cuando ella me mira directamente, así que desvío la mirada hacia un lado.\
+br
+` ---Y entonces.@
+br
+ld c,":a;image\tachi\aki_t02.jpg",%type_crossfade_fst
+` --Me percato de otra fija mirada, una que ha estado silenciosamente sobre mí por un rato.@
+cl c,%type_crossfade_fst
+`"Ah… hola."@
+` Agito mi mano ligeramente para saludarla.@
+` Akiha continúa mirándome fijamente… o quizás, ferozmente sería una mejor palabra.\
+`"Bien… um… buenos días, Akiha."@
+ld l,":a;image\tachi\aki_t18a.jpg",%type_crossfade_fst
+`"¿Oh?@ No tienes que forzarte a saludarme.@ Por favor, adelante, ignórame.@ Después de todo, parece que prefieres disfrutar la mañana con Kohaku."@
+`"Uuh…"@
+` Las palabras de Akiha duelen.@
+` …… No es que tuviese la intención de ignorarla.@ Simplemente le dije hola a Kohaku-san…\
+ld r,":a;image\tachi\koha_t02.jpg",%type_crossfade_fst
+`"Por favor no juegue demasiado con Shiki-san, Akiha-sama.@ No tenemos mucho tiempo, y Shiki-san aún no ha terminado su desayuno."@
+ld l,":a;image\tachi\aki_t03a.jpg",%type_crossfade_fst
+`"Bueno, la culpa es de Nii-san por despertar tarde, ¿no?@ Está recibiendo lo que se merece por dejar todo para hacerlo apresuradamente en la mañana."@
+`"¡Hmph!" Akiha se siente superior.@
+` …… Parece que olvidarme de saludarla es otro punto del cual está poco impresionada, sumado a su molestia por mi tardía llegada.\
+`"Um… Kohaku-san.@ ¿Está listo mi desayuno?"@
+ld r,":a;image\tachi\koha_t03.jpg",%type_crossfade_fst
+`"Sí, lo he dejado en el comedor.@ Por favor, coma relajadamente."\
+ld l,":a;image\tachi\aki_t18a.jpg",%type_crossfade_fst
+`"Eso no podrá ser, Kohaku.@ Nii-san no tiene tiempo para desayunar a esta hora."@
+`"Hey, escucha, Akiha.@ Son sólo las siete, así que tengo algo de tiempo.@ De aquí a la escuela es una fácil caminata de treinta minutos, así que puedo tomármelo con calma por al menos diez minutos, ¿cierto?"@
+`"¿Estás diciendo que vas a terminar tu desayuno en sólo diez minutos?@ No eres algún perro hambriento, y si vas a desayunar, quisiera que te tomaras tu tiempo."@
+`"------"@
+` Las palabras de Akiha en verdad tienen espinas.\
+cl a,%type_crossfade_fst
+\
+return

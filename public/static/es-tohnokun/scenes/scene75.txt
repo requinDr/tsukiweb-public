@@ -1,0 +1,291 @@
+monocro off
+wavestop
+play "*9"
+;---added context above---
+bg "image\bg\bg_31a.jpg",%type_nowaitdisp
+`"------Ja… jaja…"@
+` No puedo evitar reír.@
+` …… Pero no todo es malo.@
+` Si la persona que maté ha vuelto a la vida, eso significa que en realidad no he matado a nadie, ¿cierto?@
+` Bueno, supongo que el hecho de que "maté" a alguien permanece, pero ella aún está viva.@
+br
+` ---Y eso es algo por lo que sinceramente debería estar feliz---\
+` Sí.@ Con esto, debería ser capaz de regresar a mi vida normal.@
+` Una vida normal de estudiante, como la que tenía hasta ahora.@
+` …… Bueno, a cambio de eso, parece que he sido acorralado por esta extraña persona, pero podría considerarse que esto es extremadamente mejor que convertirse en un asesino.\
+`"…… De acuerdo, me he tranquilizado.@ Si tienes algo que decir, escucharé: quejas, resentimientos, lo que sea.@ Habla todo lo que quieras."@
+`"Sí, tengo muchas cosas que decirte… pero eres raro."@
+ld c,":a;image\tachi\ark_t11.jpg",%type_crossfade_fst
+`"Simplemente estoy aceptando todo ahora.@ Se podría decir que he desarrollado una resistencia a cosas extrañas como ésta."@
+` Aunque no creo que sea de mucha ayuda en este caso.\
+ld c,":a;image\tachi\ark_t03.jpg",%type_crossfade_fst
+`"Hmph……"@
+` Ella me mira fijamente.@
+` No es una mirada maliciosa.@
+br
+` …… Es extraño.@ Pensaba que vengarte de alguien que te ha hecho daño era una de las reglas comunes del mundo.@
+` Entonces, ella debería estar tratando de matarme, pero---\
+`"--¿Qué estás mirando?@ Estás aquí para cobrar venganza, ¿cierto?@ Entonces--"@
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"Sí, se supone que debo matarte como venganza, en teoría.@ Te mataré si en verdad así lo quieres, pero si no entonces lo pasaré por alto, por ahora.@ No es muy eficiente de esa manera."@
+` Ella me mira directamente.\
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"¡Entonces!@ ¿Lo lamentas?"@
+`"----¿Eh?"@
+` Quedo pasmado por un momento.@
+` Las cosas que dice están tan… fuera de lugar.\
+`"Te estoy preguntando si lamentas haberme matado.@
+` Verás, estoy pensando en perdonarte de ser así.@
+` Además, tengo la sensación de que eres un mentiroso bastante malo para ser humano."@
+`"¿Lamentarlo---yo?"@
+`"Sip.@ Si te disculpas conmigo, me conformaré con eso."\
+br
+` ---Esto es increíble.@
+br
+` ¿Qué es tan increíble?@
+` No que la persona que asesiné me esté perdonando, sino que… su voz suene tan amable.\
+ld c,":a;image\tachi\ark_t16.jpg",%type_crossfade_fst
+`"¡Oye!@ Tienes que responder cuando alguien te pregunta seriamente, ¿sabes?@ Vamos, apresúrate y responde.@ No podemos continuar hasta que aclaremos si lo lamentas o no."@
+` Ella está enfadada.\
+cl c,%type_crossfade_fst
+` ---¿Que si lo lamento, pregunta ella?@
+` Eso se sobreentiende---\
+br
+`"…… Sí, me arrepiento de ello.@ Sin importar cuál fuese la razón, asesiné a alguien."@
+br
+` Sin piedad o razón.@ Asesiné sólo para mí mismo.@
+br
+`"…… Me arrepiento del hecho de haber matado a alguien.@ Pero más importante aún, fuiste tú a quien asesiné, así que---"\
+` …… Es mentira que todo está bien si ella está viva.@
+` Es un hecho que la asesiné.@
+` Es la máxima violación; la violencia más grande posible.@
+br
+`"Así que---puedes vengarte de mí--Pensé que era natural que estuvieses aquí para cobrar venganza."@
+br
+` …… Dejo caer mi cabeza, murmurando, como si estuviese confesándome.\
+ld c,":a;image\tachi\ark_t09.jpg",%type_crossfade_fst
+`"---Ya veo.@ Hmm.@ No eres una mala persona."@
+` Ella sonríe.@
+` A pesar de llamarse a sí misma 'vampiro', tiene un rostro muy sincero.@
+br
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"Lo he decidido.@ Voy a hacer que me ayudes."@
+`"¿Eh-----?"@
+` ¿Ayudarla?@ ¿De qué está hablando?\
+`"…… Oye.@ ¿Qué quieres decir con ayudarte?"@
+`"Es simple.@ Voy a hacer que me ayudes a lidiar con el vampiro que se ha asentado en esta ciudad."@
+br
+`"¿----?"@
+` …… Espera, me estoy confundiendo cada vez más.@
+br
+`"¿Lidiar con vampiros?@ Pero tú eres un---"@
+`"Oh, no, no.@ Soy un vampiro, pero el vampiro en esta ciudad es de una clase totalmente diferente.@
+` Tú vives aquí, ¿no?@ Entonces debes saber sobre los asesinatos que han estado ocurriendo últimamente, ¿cierto?"@
+`"Sí, una buena cantidad de gente ya ha sido asesinada… oye, espera."\
+` …… Ahora recuerdo.@
+` Ahora que lo pienso, a todas las víctimas del asesino les fue extraída la sangre o algo así, ¿cierto?@
+br
+`"No me digas que----"@
+`"Exactamente.@ Incluso las noticias están diciendo cosas como 'el trabajo de un vampiro' ¿verdad?@ Es gracioso; obviamente saben qué tipo de criatura lo está haciendo, pero nadie anda por ahí tratando de exterminarlo.@ Por eso no tengo más opción que hacerlo por ellos."@
+`"Espera, pero---los vampiros no existen."\
+ld c,":a;image\tachi\ark_t04.jpg",%type_crossfade_fst
+`"¡Hmph!"@
+` Ella baja sus cejas para mostrar su molestia.@
+` …… Oh, es cierto.@
+` Hay una persona no identificada parada frente a mí afirmando ser un vampiro.\
+`"---No entiendo muy bien, pero lo que estás tratando de decir es que estás en esta ciudad para exterminar vampiros, ¿cierto…?"@
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"Correcto, pero antes de que pudiese, fui atacada por un asesino desconocido.@
+` Sí, eso en verdad me sorprendió.@ Fue un perfecto ataque sorpresa y fui cortada en diecisiete pedazos sin oportunidad de hacer nada."@
+`"Ugh----"@
+` Ya veo.@ Debe referirse a mí.\
+ld c,":a;image\tachi\ark_t06.jpg",%type_crossfade_fst
+`"Es cierto.@ Hasta que estuve totalmente recuperada, en verdad estaba planeando matarte, ¿sabes?@ Fue la primera vez que alguien me avergonzaba de esa manera.@ Y, se necesitó cerca del ochenta por ciento de mi poder para recuperarme totalmente."@
+ld c,":a;image\tachi\ark_t07.jpg",%type_crossfade_fst
+`"Pero más importante aún, realmente duele, duele mucho.@
+` Fue tan doloroso que pensé que enloquecería.@ Sin embargo, el dolor era tan grande, que restauraba mi cordura.@
+` ¿Sabes lo que es experimentar eso una y otra vez durante toda una noche?"@
+br
+`"…………"@
+` No lo sé.@
+` De hecho, no quiero saberlo.\
+ld c,":a;image\tachi\ark_t06.jpg",%type_crossfade_fst
+`"Entonces, llena de odio, salí a buscarte.@ Estaba tan agitada que ni siquiera me preocupaba por el vampiro, la razón principal por la que estoy aquí.@ Sabía que eras un estudiante, por eso esperé por ti en aquel lugar."@
+`"…… No entiendo.@ Si me odiabas tanto, ¿por qué me estás perdonando?"\
+`"---Veamos… simplemente, me calmé después de un rato.@
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+` Ya había usado un montón de poder, y pensé que sería más eficiente usarte como escudo que matarte."@
+`"…… Espera.@ Acabas de decir algo muy malo para mí."@
+`"¿Eh?@ ¿Dije algo así?"@
+`"Dijiste que ibas a usarme como escudo."\
+ld c,":a;image\tachi\ark_t04.jpg",%type_crossfade_fst
+`"Por supuesto.@ Ya te perdoné, pero ésos son sólo mis sentimientos personales.@ Tienes que expiar tu asesinato a través de acciones, no sólo con emociones, ¿cierto?"@
+`"---Bueno, aun si me lo pides…"\
+ld c,":a;image\tachi\ark_t16.jpg",%type_crossfade_fst
+`"¿Qué pasa contigo?@ No puedo saber cuándo eres sincero y cuándo no.@ Déjame repetirlo de nuevo: tú me mataste.@ Probablemente no puedes imaginarlo, pero se requiere de mucha energía para regenerarte una vez que has sido asesinado.@
+` Bueno, en realidad, no hubiese sido gran cosa si simplemente me hubieses matado, pero la manera en que me mataste fue algo que nunca había visto antes.@ No podía sanar las heridas, así que no tuve más opción que rehacer las partes de mi cuerpo.@ Es por eso que se necesitó tanta energía para revivirme---"\
+` Ella parece furiosa.@
+` …… Parece que está recuperando su ira olvidada mientras habla.\
+`"¡En fin, estoy débil ahora!@ Creo que podré recuperarme después de dos noches, pero si el enemigo ataca antes de eso, estaré en peligro.@
+` Es por eso que, por ahora, haré que seas mi escudo."@
+`"¿Harás que yo lo haga---?@ ¿Qué crees que haces, decidiendo todo por tu cuenta?"@
+`"¿Qué?@ Todo esto es tu culpa para empezar, así que ¿no es lo menos que podrías esperar?"@
+ld c,":a;image\tachi\ark_t06.jpg",%type_crossfade_fst
+`"¿O no estás arrepentido después de todo?"@
+cl c,%type_crossfade_fst
+` Ella me mira directamente con ojos sinceros.\
+`"……… Uhh."@
+` Esto es injusto.@
+` Arrepentido o no, usar esos ojos es injusto.@
+` …… Es injusto que tenga ojos tan puros como ésos cuando afirma ser un vampiro---
+br
+`"Yo… um---"@
+` Sin encontrar una respuesta, levanto la mirada.\
+playstop
+`"…… ¿Huh?"@
+br
+` …… ¿Qué es eso?@
+` Hay algo raro ahí, en el espacio entre los edificios.@
+br
+`"Espera.@ ¿Qué es eso?"@
+` Me levanto y camino.@
+` Camino hacia el centro del callejón, y finalmente comprendo de qué se trata.\
+play "*6"
+` Un ave de color azul.@
+` Un cuervo para ser preciso.@
+br
+` …… Un cuervo… azul.@
+` Esa cosa de mal augurio que vi hace dos noches---\
+ld c,":a;image\tachi\ark_t07.jpg",%type_crossfade_fst
+`"---Oh, rayos…"@
+` La chica murmura.@
+br
+` El cuervo simplemente nos observa.@
+br
+`"Cielos, gracias a tu lentitud, él nos encontró."@
+` La chica mira hacia la entrada del callejón.@
+`"¿Nos encontró?@ ¿Quién?"@
+cl c,%type_nowaitdisp
+` Dirijo mi mirada hacia la entrada del callejón.@
+br
+` -----Entonces.\
+`"¡-----!"@
+` Doy un paso hacia atrás, sobresaltado.@
+` Antes de darme cuenta, un perro ha aparecido en el estrecho camino que da hacia el callejón.@
+bg #000000,%type_crossfade_mid
+ld c,":a;image\tachi\kemo_t01.jpg",%type_crossfade_fst
+` Tiene cuatro fuertes patas y un cuello tenso como un marco de acero.@
+` Esa forma, lejos por mucho de la de un humano, es una hecha exclusivamente para cazar.\
+` …… No necesita recurrir a la intimidación verbal.@
+` La mayoría de los humanos se pondrían nerviosos sólo al mirar a esa clase de bestia "cazadora".@
+` Somos formas de vida similares, pero él inspira respeto por su capacidad atlética desalentadoramente superior.\
+bg "image\bg\bg_31a.jpg",%type_crossfade_mid
+`"…… ¿Un perro… negro?"@
+br
+` ---Comienzo a temblar.@
+br
+` …… El perro negro mirando en nuestra dirección no es pequeño como uno callejero.@
+` Tan grande como un Pastor Alemán o un Doberman, se queda parado ahí, amenazándonos.\
+ld c,":a;image\tachi\ark_t05c.jpg",%type_crossfade_fst
+`"………"@
+` La chica no dice nada, pero mira al perro con ojos desinteresados.@
+cl c,%type_nowaitdisp
+\
+` Entonces…
+` De repente, el perro negro salta.@
+` No, está corriendo, pero con una velocidad que hace parecer que está saltando.@
+br
+`"------¿Eh?"@
+br
+` No puedo hacer nada.@
+` El perro negro salta directamente hacia mi garganta.\
+` Puedo verlo.@
+` Puedo ver su cuerpo negro moviéndose hacia mí, pero ni siquiera tengo tiempo para pensar en evadirlo.\
+bg #000000,%type_nowaitdisp
+quakex 4,100
+` ¡Bam!@
+br
+` Siento un impacto sobre mi cuerpo.@
+`"¡Guh-----!"@
+` Fui golpeado con fuerza desde un costado.@
+` No fue el perro negro.@
+br
+` Parece que la chica me empujó antes de que pudiese destrozar mi garganta.@
+` Con un simple movimiento, como alguien lanzando una pelota, ella me arroja contra la pared usando una sola mano.\
+wave se4
+`"¡-----!"@
+` Con un tremendo "¡bam!", caigo sobre mi trasero.@
+bg "image\bg\bg_31a.jpg",%type_nowaitdisp
+`"¡Por qué… tú!@ ¿¡Qué rayos estás haciendo!?"@
+`"¡Olvídalo, mantén los ojos al frente!"@
+` La chica grita.@
+` Yo observo---Habiendo perdido rastro de mí, su objetivo, el perro negro salta hacia la pared.@
+` Pegándose a la pared como una lagartija, salta de nuevo.@
+` Rebota de la pared hacia mí.@
+` El recorrido del perro es como un relámpago negro.\
+ld c,":a;image\tachi\kemo_t02.jpg",%type_nowaitdisp
+`"¡---!"@
+` Es demasiado rápido; no puedo reaccionar.@
+` El perro negro abre su hocico, lleno de dientes y saliva.@ Esta vez, se dispone a morder mi tráquea----\
+`"¡Kuh……!"@
+bg #000000,%type_nowaitdisp
+` Cierro mis ojos.@
+` Los dientes del perro se hunden dentro de mi garganta.@
+` Pero en ese instante,
+` el perro suelta un aullido y me libera.\
+bg "image\bg\bg_31a.jpg",%type_nowaitdisp
+`"¿Eh---?"@
+br
+` ---Es… imposible.@
+br
+` El perro negro suelta un grito y salta directamente hacia arriba.@
+` No hay nada ahí pero, sin embargo, el perro vuela alto hacia el cielo por sí mismo.@
+` Y justo así---el perro negro, después de subir muchos metros hacia el cielo, suelta un grito y cae de vuelta hacia el cemento.@
+br
+` No, para ser mas preciso, fue golpeado contra el cemento.\
+playstop
+`"----¿Qué fue eso?"@
+ld c,":a;image\tachi\ark_t07.jpg",%type_crossfade_fst
+`"Cielos, acabas de hacerme desperdiciar más de mi energía."@
+cl c,%type_crossfade_fst
+` La chica se acerca tranquilamente al perro negro.@
+` Está aplastado contra el cemento como una flor exprimida.\
+`"---Menuda birria de familiar.@ …… Supongo que era algún tipo de explorador."@
+` El perro negro se transforma en algún tipo de substancia parecida al alquitrán, y es absorvido por el cemento.\
+ld c,":a;image\tachi\ark_t06.jpg",%type_crossfade_fst
+`"…… Se derritió… no, tal vez sólo se esté disolviendo.@ ----No puede ser.@ No hay manera de que Chaos esté en un lugar como éste."@
+` Arrojando un largo suspiro, ella se acerca a mí.\
+play "*1"
+ld c,":a;image\tachi\ark_t03.jpg",%type_crossfade_fst
+`"¿Oh?@ No pareces estar herido, entonces no hay problema."@
+` …… Ella está murmurando algo.@
+` Mi garganta---Todavía puedo sentir los dientes del perro hundiéndose en ella.\
+`"Oye---¿Qué era esa cosa?"@
+`"Un familiar de un vampiro enemigo.@ Fuimos descubiertos porque no estabas siendo claro."@
+`"Descubiertos---quieres decir… ¿por ese vampiro enemigo que mencionaste?"@
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"Sí, esto no es bueno.@ Parece que en verdad voy a necesitarte como escudo ahora."@
+` Ella lo dice tan relajadamente, y con una sonrisa.\
+`"¡De---deja de decir cosas tan locas, idiota!@ ¡Tú me viste!@ ¿¡Qué crees que puedo hacer!?@ ¡Estás mucho mejor por tu cuenta…!"@
+`"En realidad no.@ Con el poder que utilicé para protegerte, ahora de verdad estoy vacía."@
+`"¿¡Qué---!?"@
+` ¿Qué rayos?@
+` Agradezco que me haya ayudado entonces, pero aun así---
+`"…… No puedo hacerlo.@ No puedo.@ No tengo el poder para deshacerme de algo como eso.@ Lo siento, pero ni siquiera puedo ser un escudo."\
+ld c,":a;image\tachi\ark_t02.jpg",%type_crossfade_fst
+`"----Mentiroso.@ Tú me mataste.@ ¿Por qué mentirías después de hacer algo como eso?"@
+`"Eso fue---"@
+br
+` Eso fue algo que ni yo mismo entiendo.@
+br
+`"---No.@ Mira, no puedo hacerlo.@ Soy sólo un humano normal.@ No puedo ayudarte."@
+ld c,":a;image\tachi\ark_t04.jpg",%type_crossfade_fst
+`"…… Mentira.@ Todo lo que tienes que hacer es montar guardia mientras yo duermo, nada más.@ Puedes hacer al menos eso sin problemas, ¿cierto?"\
+`"Eso es---"@
+cl c,%type_nowaitdisp
+br
+` Ella mira directamente hacia mí.@
+` …… Por alguna razón, esos ojos me están debilitando.@
+` Yo---
+br
+return

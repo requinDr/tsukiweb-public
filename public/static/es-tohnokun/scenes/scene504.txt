@@ -1,0 +1,861 @@
+monocro off
+wavestop
+playstop
+bg "image\bg\bg_17b.jpg",%type_nowaitdisp
+;---added context above---
+`"…… Um…… Senpai, si piensas que son una molestia, entonces por favor quítatelos."@
+`"¿Eso crees?@ Bueno, no tienen ninguna prescripción, así que podrían ser un molestia pero, ¿estará bien que me los quite?"@
+`"………………………………"@
+` Está haciendo una tormenta en un vaso de agua, así que decido decirle directamente.@
+`"No tienes que preocuparte por cosas extrañas……@ Um, vas a pasar por tantos problemas de todas formas-----"@
+`"Ah-------"@
+` Senpai reacciona con calma.@
+`"Sí…… Es verdad.@ Entonces por favor espera en la habitación."@
+` …… Escucho girar el pomo de la puerta y el sonido del agua cayendo dentro de la ducha.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_18c.jpg",%type_lcartain_mid
+play "*5"
+`"……………"@
+` Tirándome sobre la cama, me observo a mí mismo.@
+` En verdad estoy erecto sin importar lo que esté pensando.\
+` Senpai dijo que sería mejor que otra persona lo hiciera.@
+` No dijo el método directamente, pero puedo ver más o menos cuál será basado en la forma en que está actuando.\
+`"----Hm."@
+` En el instante en que lo pienso, mi corazón salta.@
+br
+`"Maldición. ¿qué estoy pensando?"@
+` Intento tranquilizarme sacudiendo mi cabeza.@
+` Ciel-senpai dijo que era sólo un método para suprimir a Roa, así que no tiene ningún significado sexual.@
+` La consciencia de Roa está en calma ahora, así que no puedo estar excitado.\
+`"…… Tranquilízate, tranquilízate."@
+` Lo repito una y otra vez como un mantra.@
+` Mientras hago eso, Ciel-senpai sale del baño.\
+bg "image\event\cel_h03a.jpg",%type_lshutter_mid
+`"------"@
+` Me quedo con la boca abierta.@
+` Ciel-senpai entra a la habitación de manera impactante, vistiendo sólo camisa y bragas.\
+`"¡Se, Senpai!@ ¿¡Po, po, po, por qué estás vestida de esa manera………!?"@
+` Agito mis brazos sorprendido mientras Ciel-senpai muestra una avergonzada sonrisa.\
+`"Um, ¿es tan extraño?@ Me vestí así para ayudarte."@
+`"¿A-ayudar?@ ¿¡Con qué!?"@
+`"…… Um, me esforcé para ayudarte a estar más excitado……"@
+` Ciel-senpai murmura una respuesta.\
+`"-----"@
+` No tengo palabras.@
+` Al verse observada con sorpresa, Ciel-senpai aparta la vista nerviosamente.@
+`"…… Lo siento.@ Supongo que debí haber sabido que no me veo nada atractiva vestida de esta manera."@
+`"¿¡Qué-qué estás diciendo!?@ ¡Claro que te ves atractiva con eso!"@
+` Respondo instantáneamente, y me percato de que hablé demasiado.\
+`"Oh---um, bueno, um, estoy, agradecido por eso, pero…"@
+` …… Esa ropa no es buena, Senpai.@
+` A este paso, enloqueceré antes que Roa.\
+`"¿Tohno-kun?"@
+`"-----"@
+` Aparto la vista de Ciel-senpai.@
+` El contorno de sus hombros bajo esa camisa blanca.@
+` El color de su intrigante ropa interior.@
+` Sus tiernos muslos.@
+` Mirarlos directamente me hace perder el control.@
+br
+` …… Sé que su intención es excitarme para refrescarme, pero aun así---\
+`"Senpai, creo que deberíamos parar.@ No tengo tanta confianza."@
+`"Por favor no te preocupes.@ Escuché que los varones son bastante sensibles, y por eso creo que puedo refrescarte."@
+`"Uh, no, no me refería a eso con lo de no tener confianza."@
+` Quise decir que no creo que pueda contenerme.\
+`"Entonces, comencemos, Tohno-kun."@
+`"¿Qué, qué……?"@
+`"¿Puedes quitarte los pantalones?@ Está bien si sólo bajas la cremallera y lo sacas."@
+`"Ah----uh."@
+` Senpai está lista.@
+` Y no parece estar tan avergonzada al respecto.\
+`"…… Senpai…… um, ¿no estás avergonzada?"@
+`"Bueno, estoy un poco nerviosa, pero tu cuerpo no durará mucho más si no hacemos nada.@
+` Lo estoy viendo simplemente como extirpar un grano."@
+`"Un grano…… Ésa es una expresión bastante directa."\
+`"Oh, Tohno-kun.@ Mientras hago esto, por favor no observes demasiado.@ No puedo concentrarme con gente observándome."@
+` Diciendo eso, Ciel-senpai se acerca más.@
+` Yo---me confundo más mientras Ciel-senpai permanece tranquila.\
+`"Espera, deberíamos parar.@
+` Esto está mal.@ Senpai, yo todavía---"@
+` quiero hacerlo todo, pero no quiero hacerlo por una razón como ésta.\
+`"Tohno-kun.@ Tengo que dejarte aquí mañana en la mañana.@
+` Éste es el único tiempo que tengo contigo, ¿cierto?@ Si no hago esto ahora mismo, estará así todo el tiempo que esté fuera."@
+`"Es…… cierto."@
+`"Sí.@ Está bien, así que por favor siéntate ahí.@ No soy experta, pero haré mi mejor esfuerzo."\
+` Con sus mejillas sonrojándose débilmente, ella mira directamente hacia mí.@
+` …… Ya veo.@ Senpai también está avergonzada.@
+` Ella se preparó para esto, así que no puedo quedarme aquí preocupándome por tonterías.\
+`"…… Comprendo.@ Um, ¿está bien así?"@
+` Bajo mi cremallera y mi ropa interior.@
+` Al ver mi asta totalmente erecta, Ciel-senpai repentinamente se congela.\
+`"…… ¿Senpai……?@ Um, ¿deberíamos parar después de todo?"@
+`"¡N-no, no es eso!@ Sólo estaba pensando que éste en verdad eres tú."@
+` Respirando profundamente, Ciel-senpai camina hacia mí.\
+`"Um, por favor mira hacia el techo, Tohno-kun."@
+` Su cuerpo desaparece de mi vista.@
+` Ciel-senpai se sienta entre mis separadas piernas.@
+` Encara mi asta tan cercanamente que puedo sentir su respiración sobre mí.\
+bg #000000,%type_lshutter_fst
+bg "image\bg\bg_18c.jpg",%type_lshutter_fst
+` …… Sus dedos me tocan.@
+` Con una mano, ella toma sus vacilantes dedos y los desliza por mi longitud.@
+`"Tohno-kun, ¿cómo se siente?@ Dime cuando se sienta bien."@
+`"------"@
+` No puedo responder a eso.@
+` …… ¿Cómo puedo decirlo?@ Me siento algo culpable.@
+` Ella me toca con vacilación, como abrazando algo frágil.\
+`"…………… Mm."@
+` Sólo con eso.@
+` Sólo está tocándome, pero mi mente está enloqueciendo.@
+` Mi mente está enloqueciendo, pero mi asta no siente nada en absoluto.\
+`"Hm…… estás un poco más duro que antes……"@
+` Diciendo esto, ella envuelve sus delicados dedos a mi alrededor.\
+` …… Parece que lo que está haciendo no se siente bien, ya que mi herramienta no ha soltado nada todavía.@
+` Tan seco como estoy, Senpai continúa intentando "tranquilizarme".@
+` …… Esta incómoda y desagradable sensación continúa por unos minutos.\
+` Sus dedos, originalmente ligeros y vacilantes, ahora me sujetan con más fuerza.@
+` Aunque sólo está moviéndose arriba y abajo, lo hace con un agarre más firme.\
+`"…… Qué raro…… ¿por qué no está haciendo nada, Tohno-kun?"@
+` Ella suena preocupada.@
+` Mi mente está a punto de enloquecer sólo por escuchar su voz.\
+` Ser acariciado por los dedos de Senpai se siente bien, pero está lejos de hacerme eyacular.@
+` Pero más que eso, en este momento---mientras mejor se sienten los dedos de Ciel-senpai, más quiero envolver mis brazos a su alrededor.\
+`"Mm……"@
+` Su voz se llena más de calor.@
+` Podría ser porque esté avergonzada, o esforzándose mucho para acariciarme, pero su respiración en verdad se siente más caliente.\
+`"N…… ha, ah…… m, mm……"@
+` Puedo escuchar su respiración haciéndoe más salvaje.@
+` Entonces me percato de que ahora está usando ambas manos.\
+`"…… Haa…… ha…… h, ha…… ah."@
+` Con ambas manos, ella abraza cuidadosamente mi miembro.@
+` Probablemente sea a causa de su esmerado trabajo, pero finalmente comienzo a sentir algo de placer.\
+` Una chispa sube por mi columna.@
+` Pero no es por los dedos de Ciel-senpai.@
+` Solamente el hecho de que está esforzándose tanto me está excitando más que su toque.\
+`"Ha, m, m----"@
+` Su voz se hace más silenciosa.@
+` Entonces---
+br
+`"¿¡Gh----!?"@
+br
+` Un placer diferente a la sensación de toque previa me hace arquear mi espalda.\
+`"…… M, mm, ah---"@
+` Su voz parece más dificultosa ahora.@
+` Suena como si estuviese teniendo dificultad para respirar.@
+` Pero la respiración que siento es caliente y cercana a mí.@
+` Y más que eso---mi seca asta está comenzando a mojarse.\
+`"Ah, m---"@
+` …… Su aliento se hace aun más caliente.@
+`"Oye, ¿¡Senpai……!?"@
+` Incapaz de resistir la tentación, miro hacia abajo sin pensar.\
+bg #000000,%type_lshutter_fst
+bg "image\event\cel_h04a.jpg",%type_lshutter_fst
+`"------"@
+` Mi mente se queda en blanco.\
+` Eso es lo que está causando los escalofríos de placer.@
+` Mi endurecida y punzante asta.@
+` Los delicados dedos envueltos a su alrededor.@
+` El rostro lo bastante cerca como para respirar sobre mí.\
+` Y,
+` La roja lengua lamiéndome como si tuviese mente propia.\
+`"N, m, ha, n……"@
+` Con los ojos cerrados, ella gira su lengua con entusiasmo alrededor de mi cumbre.@
+` La sensación de su lengua está en nivel totalmente diferente a la de sus dedos.\
+` …… Esto es malo.@
+` Si veo esta tipo de cosa mi mente también se excitará.@
+` En realidad, ya estoy demasiado excitado, hinchándome aun más como si tratase de escapar de su agarre.\
+`"¿¡M---!?"@
+` Ciel se aparta sorprendida, pero rápidamente envuelve sus dedos a mi alrededor una vez más.@
+` …… Comienzo a animarme aun más.@
+` Una fina y pagajosa línea fluye de mi punta, y ella la limpia con su dedo.@
+` Entonces empapa mi miembro con ésta.@
+` Su roja lengua me lame una vez más.\
+`"Tohno, ku, n---"@
+` Sus palabras son cortadas por suaves lamidos.@
+` Desde sus labios, una línea de saliva se forma entre ella y yo.\
+`"Ah----"@
+` Esto es malo.@
+` En serio, verla de esta manera va a enloquecerme.\
+bg #000000,%type_lshutter_fst
+bg "image\bg\bg_18c.jpg",%type_lshutter_fst
+`"¡Senpai, detente……!@ ¡Si continúas haciendo esto, enloqueceré antes de dejarlo salir……!"@
+`"N…… no, Tohno-kun.@ No importa.@ Tenemos que continuar."@
+` Otra sensación se dispara a través de mí.@
+` Su lengua ha lamido la parte trasera de mi asta.\
+`"…… ¡Detengámonos……!@ ¡No seré capaz de contenerme de esta manera……!"@
+`"Por favor no te contengas.@
+` Si liberas lo que está dentro de ti, podrás tranquilizarte."@
+`"¡Pero no puedo, porque se trata de ti……!@ Esta bien, detengámonos Senpai…… Sé que está mal decir eso después de que has llegado tan lejos, ¡pero no puedo tranquilizarme si tú haces esto……!"\
+`"Por favor no te preocupes por mí.@ En verdad… no… me… importa."@
+` Diciendo esto, continúa acariciándome con su lengua.\
+`"----¡Ah!"@
+` Dejo salir un pequeño jadeo.@
+` …… Si ella piensa que esto es sólo una tarea, supongo que también tengo que verlo de esa manera.@
+` Intentando no mirarla, hago mi mejor esfuerzo para concentrarme en dejarlo salir.\
+bg #000000,%type_lshutter_fst
+bg "image\event\cel_h04a.jpg",%type_lshutter_fst
+`"Ah……… m, mm---"@
+` Puedo escuchar sus pequeñas respiraciones.@
+` Su lengua se siente como si tratase de saborear todo de mí,
+` y sus cautivadores dedos me torturan implacablemente.@
+br
+` El sonido de mis latidos y la respiración de Ciel-senpai hacen eco a través de la habitación.\
+` Tanto placer.@
+` Estoy siendo asaltado por tanta sensación que normalmente ya habría acabado, pero mi asta aún no está respondiendo en absoluto.@
+` Me humedecí por un rato anteriormente, pero ahora estoy de vuelta a una simple erección.\
+`"N…… m, ha, haa…… ah………"@
+` …… La respiración de Ciel-senpai se hace aun más fuerte.@
+` Tal vez sentí que iba a dejarlo salir en aquel momento porque vi el rostro de Senpai, y no a causa del placer.\
+`"Mhaa…… ahh……… ah…… ahn………"@
+`"…… ¿Senpai?"@
+` Suena tan adolorida, bajo la vista hacia ella.@
+` El cuerpo de Senpai está sacudiéndose.@
+` Quizás sea porque ha estado en el mismo lugar por tanto tiempo, o porque es difícil hacerlo en esa posición, pero parece agitada.\
+`"Senpai, ¿esta es posición demasiado complicada para ti?@ Parece que estás incómoda."@
+`"Eh---¿por qué dices eso?"@
+`"Bueno, estás respirando con mucha fuerza…… Si es muy difícil para ti, ¿deberíamos parar?"\
+`"Eh…… no, no me fata el aliento porque sea difícil…… pero tienes razón, me moveré.@
+` Parece que tampoco estás sintiendo nada."@
+` Parece un poco disgustada.\
+`"…… Oye."@
+br
+` Ella no parece entender que estuaba sintiendo más que suficiente anteriormente.@
+br
+`"Entonces súbete a la cama.@ Estuviste arrodillada en el piso por tanto tiempo, apuesto que te duelen las rodillas."@
+`"Eh--oh, sí.@ Haré eso.@ Por favor aparta la vista."@
+`"¿………?"\
+` No entiendo muy bien por qué, pero aparto la vista.@
+bg #000000,%type_lshutter_fst
+bg "image\bg\bg_18c.jpg",%type_lshutter_fst
+` Ciel-senpai se sube a la cama y me dice que mire hacia el techo nuevamente.\
+`"…… Senpai.@ Pienso que se sentiría mejor si pudiese mirarte la cara… ¿en verdad tengo que mirar hacia el techo?"@
+`"¡Po-por supuesto!@ ¡S-si me ves de esta manera, moriré!"@
+`"¿Morir?---¿por qué?@ Si en verdad no es nada más que extirpar un grano, entonces no debería importar que te vea."@
+`"Um---bueno, es verdad, pero……"@
+` Su sonrojo se profundiza y me dice que simplemente mire hacia el techo.\
+`"------"@
+` En cuatro patas, Ciel-senpai se extiende hacia mi entrepierna.@
+`"………………"@
+` Le echo un vistazo mientras lo hace.@
+` …… Su cuerpo se ve aun más caliente que antes.@
+` No sé por qué exactamente, pero por alguna razón, la piel sobre su muslo está pintada de rojo y reflejando la luz.\
+br
+` ¿……?@ ¿Reflejando…… eh?\
+`"-----Oh."@
+` Mi mente se estremece al percaterme de qué se trata.@
+`"---Senpai, espera."@
+`"Mm…… ¿qué, qué…… sucede, Tohno-kun?"@
+`"Sólo… acuéstate."@
+`"¡Eh----kyaa!"@
+` La empujo hacia abajo sobre la cama.\
+bg #000000,%type_lshutter_fst
+bg "image\event\cel_h05a.jpg",%type_lshutter_fst
+`"Ah-----"@
+` Su rostro se pone tieso.@
+`"…… Senpai.@ ¿Por qué estás mojada ahí abajo?"@
+`"Ah---Ah."@
+` El rostro de Ciel-senpai se torna rojo.\
+`"…… Hmm.@ Dijiste que no era nada, ¿entonces por qué estás así?@
+` Empapaste tus bragas, e incluso tu pierna está goteando."@
+`"N--no---no, eso es sólo---"@
+` Ciel-senpai se sonroja más brillantemente mientras tartamudea.\
+`"¿No?@ ¿Qué es entonces?"@
+` Coloco mi palma sobre su muslo.@
+`"¡N---!"@
+` Su cuerpo entero se sacude.@
+` Cuando me aparto, una línea pegajosa se forma entre mi mano y su muslo.\
+`"¡N---no……!@ ¡No, por favor no mires, Tohno-kun……!"@
+` Está tan avergonzada que prácticamente está llorando.@
+` Pero esta clase de reacción es tan linda, me hace querer provocarla más.\
+`"De acuerdo, no miraré si me dices que no lo haga, pero al menos dime por qué estás así antes de hacerme apartar la vista.@
+` Miraré hacia el techo si me dices eso."@
+`"¿Por qué?@ ¿Cómo---puedo decir semejante cosa?"@
+`"¿No puedes decirlo?@ Bien, entonces supongo que tendré que preguntarle a tu cuerpo."@
+` Coloco mi mano sobre su muslo nuevamente.@
+` Entonces, siguiendo el meloso rastro de jugos, muevo mis dedos hacia la coyuntura entre sus muslos.\
+`"¡Nah…………!"@
+` Sus caderas retroceden instintivamente.@
+`"Guau.@ Estás muy mojada.@
+` Fue bastante egoista de tu parte sentirte tan bien mientras yo me preocupaba por no poder acabar.@
+` …… Ya veo.@ Te divertías provocándome."@
+`"¡N, no--!@ En verdad estaba tratando de ayudarte a tranquilizarte, pero no reaccionabas en absoluto, así que---"\
+`"¿Así que?"@
+` Presiono con mi dedo índice.@
+` Presiono a través de sus empapadas bragas y dentro de sus melosos pliegues.@
+`"¡Ah…………!"@
+` Ella grita de vergüenza.@
+` Esa voz.@
+` Al ver ese rostro, y escuchar esa voz, mi corazón comienza a latir aun más rápidamente.\
+`"Vamos, responde.@ ¿Por qué tu cuerpo está reaccionando de esta manera, Senpai?"@
+`"…… Yo…… comencé a sentirme caliente mientras te tocaba---y yo misma pensé que era extraño, pero mi mente se quedó en blanco, y---"@
+`"¿Usaste tu lengua y me lamiste como si fuese una chupeta?"@
+`"¡------!"@
+` Su rostro se torna tan rojo que parece estar en llamas.\
+`"¡Pero, yo no hice nada……!@ Sólo tocarte me calentó, y---"@
+`"¿Mojaste totalmente tus bragas?@
+` Eres más pervertida de lo que pensé, Ciel-senpai."@
+`"¡To… Tohno-kun!@ ¡Estás siendo cruel!@ ¡Te lo dije, así que por favor deja de mirar……!"\
+` Escuchar su voz me convence.@
+` Sonrojarse y excitarse tanto sólo por tocarme.@
+` Con razón todo lo anterior no funcionó.@
+` Tiene que ser ella.@
+` Más que las puntas de sus dedos o su lengua, ver su rostro es lo que me hace sentir más placer.\
+`"…… Senpai.@ Tengo que poseerte."@
+`"¿Eh---Tohno-kun?"@
+`"Finalmentelo lo entendá.@ Sin importar lo que hagas, si no puedo ver tu cara, no sirve.@
+` No lo sentiré a menos que seas tú.@
+` Probablemente no seré capaz de acabar a menos que lo esté haciendo contigo, Senpai."\
+`"Um…… me halagas, pero---"@
+`"¡No tiene nada que ver con Roa!@ Aunque él no existiera, aún querría hacer el amor contigo.@
+` Al estar---al estar solo contigo con lo linda que eres, simplemente no puedo contenerme."\
+`"------"@
+` Ciel-senpai me mira sorprendida.@
+` Su timidez parece desvanecerse.\
+`"Tohno-kun…… ¿hablas en serio?"@
+`"¿Crees que bromearía sobre esto?@ …… Pero, si no quieres, entonces me detendré.@ No quiero hacer nada que te lastime."@
+`"Ah----"@
+` Después de una breve y radiante sonrisa, repentinamente parece deprimida y aparta la vista.\
+`"Yo…… también quiero hacerlo contigo, Tohno-kun.@
+` …… Pero, ¿estará bien?@ Siempre me he contenido pero, ¿no es diferente para ti?@
+` Incluso tu cuerpo, es sólo la influencia de Roa excitándote---"@
+`"Idiota-Yo soy quien se ha estado conteniendo.@ Todo este tiempo, siempre he querido tocarte, Senpai."\
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_18c.jpg",%type_crossfade_fst
+`"¡N----!"@
+` Antes de que pueda replicar, sello sus labios con los míos.@
+` Respirando salvajemente, exploramos nuestros labios.@ Primero con un contacto tentativo, luego mezclándonos vorazmente.\
+`"Ha, ahh, aha----"@
+` La resiración de Ciel-senpai.@
+` Su cuerpo ya está ardiendo de pasión, parece que no tendré que hacer nada para prepararla.\
+`"Tohno, kun."@
+`"…… Senpai.@ Voy a desvestirte ahora."@
+` Desprendo su camisa y bragas de ella.@
+` La belleza pura de su cuerpo desnudo debajo de mí es suficiente para hacer que mi cerebro se derrita.\
+` Su piel brillando con el sudor.@
+` Sus tensos y perfectos pezones pequeños.@
+` Sus firmes y considerables senos, estremeciéndose con cada pesada respiración que ella toma.@
+` Y, debajo de eso.@
+` Su rosada hendidura ya está empapada, su hinchado montículo refleja la luz.\
+`"…… ¿Qué es esto?@ ¿Ya estás tan excitada, Senpai?"@
+` Con la punta de mi dedo, acaricio suavemente su capullo.@
+`"¡Ahua………!"@
+` Al ser tocada en la parte más sensible de su cuerpo, ella salta en respuesta.\
+`"¡N, nah, gg---!"@
+` Mientras muevo un dedo a su alrededor, deslizo un segundo dentro de ella.@
+` Una húmeda sensación.@
+` Está empapada por dentro también.@
+` Estando así, no tendría ningún problema para entrar en ella en este momento.\
+`"---Senpai, voy a ponerlo adentro, ¿de acuerdo?"@
+`"Ah---s, sí, pero, Tohno-kun."@
+` Hablando con una voz vacilante.@
+` Ciel-senpai me mira directamente a los ojos.@
+`"…… ¿Puedes…… por favor dejar de llamarme Senpai?@ Quiero que me llames simplemente Ciel."@
+` Al pedir eso, sus ojos rebosan de lágrimas.\
+`"---De acuerdo.@ Entonces, voy a ponerlo adentro.@ Levanta un poco las piernas, Ciel."@
+`"D---de acuerdo."@
+` …… Ella levanta sus piernas de la cama.@
+` Sosteniéndolas con mis manos, tomo suavemente mi asta y la coloco cuidadosamente dentro de Senpai…… Ciel.\
+bg "image\event\cel_h06a.jpg",%type_crossfade_fst
+`"¡Nah--------!"@
+` El sonido de carne contra carne tortura mis oídos al entrar en ella.@
+` Estirando, empujando.@
+` Siento que presiono entre dos gruesas paredes al empujar dentro de ella.\
+` La sensación,
+` De mezclarse, es increíblemente buena.@
+` Incluso sólo este pequeño movimiento envía fuertes ondas de placer que recorren mi cuerpo.\
+`"¡Hn…… dentro, estás dentro de mí……!"@
+` Mientras sondeo sus profundidades, Ciel grita.@
+` Retrocedo, y entonces entro una vez más.@
+`"¡Agh……!@ Ah, ahn, ahn----"@
+` Sus dulces y cortos suspiros.@
+` Hago sólo pequeños movimientos, como si coordinara con su respiración.@
+` Se siente como si la golpeara con algo pesado---\
+`"¡N, nah, ah---!@ ¡Tohno-kun, asom----broso!"@
+` Tal vez porque mi asta está más erecta de lo normal, pareciera que estuviese entrando a la fuerza en lugar de sólo entrando.@
+` Ciel es tan, estrecha.@
+` Me aprieta con tanta fuerza que siento que podría desgarrarme si intento sacarlo.\
+` *jadeo*, *jadeo*, *jadeo*, *jadeo*----!@
+br
+` Pero continúo.@
+` En ritmo con su salvaje respiración, empujo dentro de ella una y otra vez.\
+`"Ah----nh, haa, ah----"@
+` Suena casi como si estuviese llorando.@
+` Sonrojándose vigorosamente, ella intenta resisitir la vergüenza y el placer.\
+`"Ha, ahn, ahah, aah---ah--"@
+` El cuerpo de Ciel oscila.@
+` Coloco mis manos sobre sus temblorosos senos.@
+` Los exprimo mientras muevo mis caderas.@
+` Su firmeza se siente muy bien.@
+` Acaricio sus pezones con mis dedos y lentamente llevo mi lengua hacia ellos.\
+`"N---Tohno-kun, eso es bueno---"@
+` Una reacción diferente a las anteriores.@
+` Parece que es muy sensible en ese lugar.@
+` Quiero escuchar su voz frenarse así de nuevo, así que lamo con más fuerza.@
+`"¡Ah---Tohno-kun, con suavidad---!"@
+` Difícilmente puedo escucharla.@
+` Mi respiración alcanza un tono febril.\
+` Simplemente me muevo.@
+` El pasaje de Ciel es tan caliente, siento que que me derrito en su interior.@
+` Mi cuerpo ya está en el borde.@ Podría explotar ahora mismo.\
+` ¡ah---haa, aahh, ah---!@
+br
+` Pero continúo empujando dentro de ella.@
+` No es momento para contenerme.@
+` No lo es, pero, si pudiese…… quisiera estar conectado con ella por siempre.\
+`"¡N, nah, hah, aha, ahn----!"@
+` Ella me aprieta con aun más firmeza.@
+` La apasionada voz de Ciel,
+` sus ojos al borde de las lágrimas,
+` no quiero soltarla.\
+`"Ci, el---sólo, un poco más---"@
+`"¡S---sí, Tohno-kun, más duro---!"@
+` Difícilmente puedo entenderla.@
+` Coordinando nuestros latidos, empujo dentro de ella con todo mi poder.@
+` Y entonces,
+` finalmente llego a lo más profundo.\
+`"¡Hua, ugah, ooh……!"@
+` ¿Duele?@ Ella se tensa a mi alrededor.@
+` Continúa apretando mi asta, la parte más sensible de mi cuerpo.@
+` Los ojos de Ciel están rebosantes de lágrimas.@
+` Pero no parece que esté sufriendo.@
+` Yo, sólo siento amor por esos ojos en este momento.\
+`"¡Ciel, te amo, Ciel………!"@
+` ---En verdad, no entiendo.@
+` Mi mente está completamente apagada.@ Ésas son las únicas palabras que puedo siquiera comprender.@
+`"¡Sí--yo, también te amo----!"@
+` La voz de Ciel golpea el centro de mi cerebro.@
+` Y, ésa es la gota que derrama el vaso.@
+`"¡Voy a---acabar……!"@
+` Desde mis caderas,
+` desde mi centro, pasión líquida comienza retumbar.\
+`"¡----!"@
+` Apresuradamente me aparto del cuerpo de Ciel.@
+bg #ffffff,%type_crossfade_fst
+` Un calambre se eleva desde mis testículos.@
+` Y abruptamente, mi sémen sale disparado, saliendo más como gelatina que como fluído.\
+bg "image\bg\bg_18c.jpg",%type_lshutter_mid
+`"Ha-----ah."@
+` Respiro pesadamente.@
+` Desplomado sobre la cama, inhalo aire.@
+`"Estoy---agotado."@
+` Me siento tan exhausto como si hubiese corrido un maratón.\
+` Pero, más que mi cansancio, sentí un gran placer en el cuerpo de Ciel.@
+` Sólo recordarlo me hace perder el sentido.\
+`"Oh.@ Ciel---"@
+` Me levanto y miro hacia ella.@
+`"…… ¿Hu, h?"@
+` Es un poco sorprendente.@
+` Pensé que también estaría saboreando la sensación, pero parece increíblemente llena de energía.\
+`"Ciel…… um, ¿no estás cansada?"@
+`"Eh…… um, ¿estás cansado……?"@
+` Parece sorprendida, ya que cubre su boca con su mano.\
+`"Ya veo---Ciel, ciertamente no te moviste mucho.@ Supongo que soy el único que está cansado--"@
+` Suspiro y caigo de vuelta a la cama.@
+`"Pero, no tuve problema para liberarlo todo.@ Gracias Ciel, dormiré profundamente ahora."@
+`"Sí……… eso es, verdad."@
+` …… Ella no suena muy feliz.\
+`"…… ¿Qué?@ ¿Sucede algo malo?"@
+`"Bueno, um---sólo estaba pensando que te ensuciaste ahí."@
+`"Oh----"@
+` Ahora que lo pienso, tiene razón.@
+` Cielos, supongo que no tengo sensibilidad en absoluto.\
+`"L, lo siento.@ ¿Puedo usar un pañuelo o algo así?"@
+`"Oh, yo lo limpiaré.@ Sólo acuéstate."@
+`"……… ¿E, en serio?@ Gracias."@
+` No sé qué está pensando, pero me acuesto.\
+` *suspiro----*
+` Respiro profundamente.@
+` Ahora que me he tranquilizado, puedo dormir profundamente.@
+`"¿N-----?"@
+` Me sacudo ante una repentina explosión de placer.@
+` Ciel está limpiándome con un pañuelo.\
+`"Ah---"@
+` Se siente bien.@
+` En verdad disfruto la sensación de sus dedos sobre el pañuelo.@
+` Lentamente, ella me limpia.@
+` Era bastante denso, así que es probablemente una tarea difícil.@
+` Está limpiándome cuidadosa y diligentemente.\
+`"……………… Uh."@
+` …… Los hombres en verdad son como bestias salvajes.@
+` Sólo al ser tocado por Ciel, comienzo a endurecerme de nuevo.\
+`"-----"@
+` No puedo.@ No puedo.@
+` Me pido a mí mismo tranquilizarme.@
+br
+` ----Y entonces,
+br
+` Un escalofrío recorre mi columna.@
+` Mi desinflado miembro se hace más largo.@
+` No sólo por sus dedos; también…… la sensación de su lengua hace que se levante una vez más..\
+`"¡Oye, Senpai……!"@
+` Levanto la vista sin pensar.@
+` Ahí----
+` La visión de lo que Cie está haciendo me hace mirarla con asombro.@
+` Usando su lengua, ella lame el sémen aún colgando de mí.\
+`"Ah----"@
+` Esta sensación.@
+` La sensación de su lengua recorriéndome…… y el hecho de que está lamiendo el semen sobre mí.@
+br
+` Sólo por eso, estoy totalmente endurecido una vez más.\
+`"Ah----Oye, Cie, l---"@
+` Absorta en acariciarme, Ciel no escucha una palabra de lo que digo.@
+` Los ardientes movimientos de su lengua.@
+` Sus dedos me acarician arriba y abajo y comienzo a derramar líquido.\
+`"…… Hombre, pero si acabo de eyacular---!"@
+` Me molesta un poco la facilidad con la que me excito.@
+` Pero, ¿puede evitarse?@
+` ¿Sería algún hombre capaz de resistir esas amables y apasionadas caricias?@
+` Pero, más que eso---¿Por qué Ciel está llegando tan lejos para hacerme feliz……?\
+bg "image\bg\bg_18c.jpg",%type_crossfade_mid
+`"……… Oh."@
+` Me doy cuenta.@
+` Tal vez, pero, ella debe estar---\
+`"Ciel.@ Um, no me digas, ¿no lograste acabar……?"@
+`"----"@
+` Ella se aparta de mí y, sonrojándose vigorosaamente, hace un asentimiento.\
+`"TEntonces, entonces me levantaste de nuevo para, um………"@
+br
+` Ella quiere otra ronda, supongo……@
+br
+`"…… Ciel, ¿no pudiste acabar?"@
+`"…… No.@ Um, yo, quiero estar contigo de nuevo, Tohno-kun."@
+` Mirando hacia abajo, se sonroja hasta las puntas de sus orejas.\
+`"------"@
+` Me golpea con mucha fuerza.@
+` Habiendo escuchado eso, no, habiéndole hecho decir eso, estoy un poco avergonzado.\
+`"…… Tienes razón.@ Esto no es suficiente para mí tampoco.@
+` No podremos vernos después de mañana, así que debería estar contigo tanto como pueda.@
+` Si hacemos esto hasta que me desmaye, mi cuerpo probablemente estará tranquilo por un largo tiempo."@
+`"Puede ser verdad…… pero Tohno-kun, suenas rudo."\
+`"¿Qué?@ ¿No eras tú la que querías más?@ Podemos detenernos si no quieres hacerlo."@
+`"¡Oh--no, um--p, perdón!"@
+` Avergonzada, se disculpa con todo su poder.\
+`"Perdona, estaba bromeando.@ Estando tan enérgico, también te deseo.@
+` Pero en verdad estoy cansado, así que ¿puedes ponerte arriba?"@
+`"¿¿Eh---arriba, arriba de ti??"@
+`"Sí.@ No puedo moverme mucho, así que es turno esta vez."@
+` Es lo que suele conocerse como una "vaquera".@
+`"Um--¿así?"@
+` Sobre sus manos y rodillas, como un gato, ella se acerca y se posiciona sobre mí..\
+`"…… Guau, qué buena vista."@
+` Desde este ángulo, puedo ver cada parte de los gloriosos senos de Ciel.@
+bg #000000,%type_crossfade_fst
+bg "image\event\cel_h07a.jpg",%type_lshutter_fst
+`"¡N, ah----!"@
+` Apartando la vista, Ciel desciende sobre mí.@
+` Una sensación húmeda.@
+` Sin ninguna resistencia, ella me acepta.\
+`"Oh---está dentro."@
+`"Sí está dentro.@ Estaba dentro antes, ¿cierto?"@
+` Tan pronto como digo eso, ella se sonroja aun más.@
+` …… No puedo decir si es fácil de avergonzar o muy extrovertida.\
+`"¿Puedes moverte?@ Puedes comenzar lentamente si quieres, y cuando te acostumbres, puedes ir más rápido."@
+`"D, de acuerdo---"@
+` Ella comienza a moverse con vacilación arriba y abajo.@
+br
+` Un lento y dulce ritmo.@
+` ¿Es suficiente para complacerla?@ Ya está respirando pesadamente.\
+`"Mm…… oh, ah, oh----"@
+` Lentamente comienza a hacer movimientos más grandes.@
+` Derrama sus cálidos jugos sobre mí.@
+` Nuestros genitales están bañados de fluídos pegajosos.\
+`"N, nah, ah, ahn, ahn---!"@
+` El sonido de carne contra carne contra fluído.@
+` Probablemente porque no estoy moviéndome esta vez, nada más que placer fluye hacia mi cerebro.\
+` …… Pero, sólo permanecer así es aburrido, así que decido moverme también.@
+` Las caderas de Ciel se elevan, y caen.@
+` Igualando su ritmo, levanto mis caderas.@
+`"¿¡Hya-----!?"@
+` La sensación de su peso sobre mí.@
+` Siento que estoy penetrando hasta su estómago.\
+`"¡¡Ah, ha…… oh, aaooooh………!!"@
+` Ciel gime escandalosamente.@
+` Pero no deja de deslizarse arriba y abajo, y yo continúo igualando su ritmo.\
+`"Ah, muy…… bueno, Tohno-kun, maravi, lloso--!"@
+` Su espalda se arquea de placer.@
+` Es tan salvaje que parece que pudiese doblarse por la mitad.\
+`"…… ¡Mm, ah, oh, hua…… ah, ngg, ah……!"@
+` Verla tan animada hace que mi respiración también se haga más salvaje.@
+` Pero penetrar en esta posición es más agotador.\
+`"----"@
+` Mis brazos no están haciendo nada.@
+` Coloco uno sobre su pierna, y el otro sobre su cadera.@
+`"Mm--se siente, muy, bi, bie--n……!"@
+` El cuerpo de Ciel se sacude como si buscara más placer.@
+` Sus bien desarrollados pechos y su cabello negro ondean al ritmo del movimiento de sus caderas.\
+` Sintiendo su aliento caliente sobre mí, muevo la mano sobre su cadera hacia su trasero.@
+` Suavemente, sujeto su suave pero firme nalga.@
+`"Ah…… ahn, nmm………"@
+` Su expresión cambia.@
+` Es una reacción un poco diferente a la anterior.@
+` Con una palma aún sobre su cadera, llevo mi dedo hasta su trasero.\
+` Entre esas amplias colinas, mi dedo se desliza a través de la suave, suave piel.@
+` Y se entierra entre sus nalgas, cubriendo ligeramente su otra abertura.\
+`"¿¡K, ah---!?"@
+` Su espalda se arquea y ahoga un grito.@
+` Y se tensa alrededor de mi asta aun más que antes.\
+`"Ciel…… ¿eres tan sensible?"@
+`"Ah---bueno, cuando lo tocas, me siento un poco extraña----"@
+`"¿Oh?@ …… ¿Se siente extraño, Ciel-san?"@
+` Deslizo mi dedo adentro.@
+` Sólo un poco, sólo medio camino más allá de la uña.\
+`"------¡Huaaa……!"@
+` Pero ella responde más a esto que a cualquiera de mis otras caricias.@
+`"Ah…… ah, gg---Tohno-kun, por favor, detén eso."@
+` Está respirando tan pesadamente que difícilmente puedo entenderla.@
+` Sus mejillas no están rojas sólo porque está caliente, debe estar avergonzada de que le hayan hecho eso.\
+`"……………"@
+` También me siento excitado.@
+` Inconscientemente, sólo quiero provocarla.\
+bg "image\bg\bg_18b.jpg",%type_crossfade_fst
+`"Ya veo, te gusta ahí, ¿eh?@ Debiste decírmelo antes."@
+`"¿Eh---Tohno-kun……?"@
+`"Vamos a cambiar.@ Yo me moveré esta vez."@
+` Me aparto de ella y me levanto.\
+`"Ciel, coloca tus manos y rodillas sobre la cama."@
+`"…… Um…… ¿así?"@
+` Ella se para en cuatro.@
+` Sus jugos gotean casi sin parar.\
+` Está derramándose hasta sus tobillos.\
+`"Hm---En verdad eres interminable, Ciel.@ Estabas empapada antes, pero aún está goteando."@
+` Comenzando por su tobillo,
+` lamo los jugos de su cuerpo.\
+`"Ha…… mm, Shiki-ku… por favor, no, hagas eso."@
+`"¿Por qué?@ Tú lo hiciste conmigo, Ciel.@ Esto es simplemente… retribución."@
+`"N……… hah……… ah."@
+` Desde su tobillo hasta su rodilla.@
+` Detrás de su rodilla, trazando una hélice con mi lengua hasta su muslo, y entonces desde su muslo hasta el brote rosado entre sus piernas.\
+`"¡…………!"@
+` Sus caderas retroceden.@
+` Persiguiéndola, pongo mi boca justo entre sus muslos.@
+` Introduzco mi lengua.@
+` Sin vacilación, muevo mi lengua alrededor dentro de su cálido y húmedo agujero.@
+` Y bebo los jugos que se derraman.\
+`"No---eso, eso es, sucio."@
+` La voz de Ciel tiembla.@
+` Su voz está mezclada con vergüenza y placer, y parece que ni siquiera sabe lo que está diciendo.\
+`"No es nada sucio.@ Esto es lo que nos hizo sentir tan bien.@ ¿O estabas fingiendo?"@
+` Deteniendo mi beso, llevo mi dedo hasta su hendidura.@
+`"Huaa----ah, se---siente, bien."@
+`"Ya veo.@ Pero, creo que te sientes mucho mejor aquí que ahí, Ciel."\
+` Arriba entre sus piernas.@
+` Usando la mano empapada en sus jugos, separo sus nalgas.@
+` Con sus propios fluídos, cubro completamente el área alrededor de su ano.\
+`"¡N---!@ Tohno-kun, no me digas que, vas a……"@
+`"Correcto.@ Escuché que es mejor no apretar los dientes, porque duele menos si respiras por la boca."@
+`"¡Oye----Tohno-kun idiota!@ ¡No me, toques ahí---ah!"@
+` Sosteniéndome de ella mientras intenta escapar, entierro mi rostro entre sus nalgas.@
+` Sosteniéndola con firmeza, lamo su palpitante ano.@
+` Apenas rozando la superficie externa.\
+`"¡Ha, n---!@ ¡Ah, aha, aaooh, oh……!"@
+` Ella deja de intentar escapar.@
+`"En verdad te gusta esto, ¿no Ciel?"@
+`"No--Tohno-kun, por favor… no me… lamas… ahí---"\
+` Escuchar eso sólo me hace querer hacerlo más.@
+` Sólo lamí el exterior al principio, pero esta vez coloco mi lengua dentro.@
+` Trabajando esmeradamente, mojo su ano con sus propios jugos y mi saliva.\
+`"¡N---!@ ¡Haah, ahn, aaa………!"@
+` Habiendo reaccionado con tanta fuerza sólo con la punta de mi lengua, casi tengo miedo de ver qué podría suceder después.@
+` Pero, he llegado tan lejos… no puedo parar ahora.@
+` AY más que eso, quiero saber cómo se siente.\
+`"---Bueno, supongo que ya es hora."@
+` Coloco mi asta justo sobre su abertura.@
+`"¡-----!"@
+` El cuerpo de Ciel se estremece.@
+` Sosteniéndola con firmeza, lo deslizo dentro de ella.\
+bg #000000,%type_crossfade_fst
+bg "image\event\cel_h08a.jpg",%type_crossfade_fst
+` Se siente completamente diferente.@
+` Ella se tensa a mi alrededor, su mucho más pequeño agujero resiste mi avance.@
+` Gradualmente empujo más profundamente, forzando mi entrada.\
+`"¡Nah, aaaaaaa----!"@
+` Ciel prácticamente grita.@
+` Es natural.@ Este agujero no fue diseñado para recibir a un hombre.@
+` Dolor, y otra sensación, probablemente están mezclándose dentro de ella.\
+`"----Gg."@
+` Pero también es estrecha aquí.@
+` Me empujo lentamente hacia dentro mientras se tensa a mi alrededor, como resistiendo el objeto extraño deslizándose dentro de ella.@
+br
+` La presión a mi alrededor es enorme.@
+` Lucho para separar las paredes que no deberían ser abiertas.@
+` Es lo mismo para mí--estoy sintiendo más dolor que placer.\
+`"Ah, huaa, ah, ah---"@
+` Su voz elevándose frenéticamente.@
+`"---Estre… cha---"@
+` Sin rendirme, empujo más duro.@
+` …… Pero, tal vez porque la lubriqué con mi saliva y sus jugos, una vez que la punta está dentro… se hace más fácil de lo que pensaba introducir el resto.\
+`"¡Gua---ha, no, algo tan grande, no, cabrá………!"@
+` Gotas de sudor sobre su frente.@
+` …… Debe ser porque estoy entrando a la fuerza en un agujero tan pequeño.@
+` Ella debe sentirlo el doble que yo.\
+`"¡Ah, uh, oh, oh, aaa---!"@
+` Ella se estrecha aun más.@
+` "Estrecha" no sirve para describir esto.@
+` La presión se incrementa a mi alrededor mil veces, como para castigarme por entrar en ella de esta manera.\
+`"---K---ha, ha, hah."@
+` Me quedo sin aliento aliento.@
+` Duele.@ Duele, pero esta----estrangulación también es placer.\
+`"Asombroso…… Ésta es, la primera vez----tu culo es tan bueno, Ciel."@
+` Siento que no entrará de nuevo si lo saco demasiado rápido, así que retrocedo levemente y empujo hacia dentro de nuevo.@
+` Sólo un poco.@ Saco, y meto.@
+` Y eso me permite entrar un poco más, así que retrocedo sólo un poco, y entonces empujo de vuelta.@
+` …… Repito el ciclo una y otra vez.\
+`"¡Mm, mm, mm----, ha………!"@
+` Mi voz se escapa mientras penetro.@
+`"Ah, haa, Tohno… kun, haa, oh………!"@
+` Ciel está igual.@
+` Ya que el placer comienza a vencer al dolor, ella comienza a aceptarme.\
+`"¡Mm, ah, haa, ah, ah, ah………!"@
+` Sólo un poco.@
+br
+`"¡Ah---n, se siente bien, Tohno-kun…………!"@
+` Sólo un poco.@
+br
+`"Huaa…… ah, aah, ah---más, Toh, no, kun."@
+` Sólo un poco.@
+br
+`"Ah, nn, mm, ah----Tohno, am, nn--Tohno-kun, más profundo, más---"@
+` Yo también.\
+`"¡Más profundo, más profundo---!"@
+` He alcanzado mi límite.\
+`"Ciel, yo---"@
+`"---¡No, no…… no te, dejaré, acabar, ahora……!"@
+br
+` ---¡Ggh!@
+br
+` Mi retirada es detenida.@
+` Ella se estrecha a mi alrededor como una abrazadera de hierro.@
+` No puedo salirme.@
+` Sólo puedo moverme un poco.@
+` Estoy al borde de eyacular, pero ella no me lo permite.\
+`"¿Por qué…… tú……!"@
+` Empujo una vez más.\
+` Mi asta penetra más profundamente.\
+bg "image\event\cel_h11a.jpg",%type_crossfade_fst
+`"¡N, ah-----!"@
+` Los brazos de Ciel caen.@
+` Como si no le quedase fuerza, ella levanta sus caderas mientras cae sobre la cama.@
+br
+` Aun así---no dejo de moverme.\
+`"---Ah, aah, Tohno-kun, estás dentro, tan profundo."@
+` Ciel aprieta las sábanas como resistiendo el placer.@
+`"Gg----"@
+` También intento resisitir el calor acumulado dentro de mí.@
+` Conteniéndome, penetro más profundamente.\
+` Ya me he introducido todo el camino hasta la base.@
+` Siento que estoy casi en su estómago.\
+`"Hu-----ng, nah, ahn----"@
+br
+` Una vez.@
+br
+`"No, no---no puedo, soportarlo más----"@
+br
+` Dos veces.@
+br
+`"¡Ah---nah, n, nn, nn-----!"@
+br
+` Tres veces.\
+` El cuerpo de Ciel se estrecha.@
+` Éste en verdad es el final.@
+` Estoy ahí también.@
+` Tengo que salirme de ella.\
+`"----¡Tohno-kun, adentro, hazlo dentro de mí---!"@
+` Su voz es suplicante.@
+`"---"@
+` En lugar de sacarlo, penetro más profundamente dentro de ella.\
+`"¡Ngg-----!"@
+` Ella arquea su espalda.@
+` Sus mano aprietan las sábanas frenéticamente, sus extremidades se tensan ferozmente.@
+` El cuerpo de Ciel se estrecha a mi alrededor como si planeara no soltarme jamás.@
+br
+` Yo sólo, deseaba todo de ella.\
+`"----¡Voy a, acabar, Ciel!"@
+`"¡S, sí……!@ ¡Acaba, por favor acaba, Tohno-kun!"\
+` Empujo más duro que nunca.@
+` ¡Pum!@ La sensación me asalta.@
+` La sensación de salir a chorros es tan intensa, casi siento que estoy liberando magma caliente dentro de ella.\
+bg "image\event\cel_h09a.jpg",%type_crossfade_fst
+`"¡Ah---aha, ahh---yo, yo-----!"@
+br
+` Chorros.@ Chorros.@ Chorros.@
+` Una y otra vez, no se detiene con sólo unas pocas veces.@
+` Simplemente continúo disparando dentro de ella.\
+`"Ah-----ha, ah."@
+` El cuerpo de Ciel comienza a ceder.@
+` Mientras aprieta las sábanas, una línea de lágrimas se forma alrededor de sus ojos.\
+`"--------"@
+` Ciel se desploma sobre la cama.@
+`"Ts-----"@
+` Aunque está desplomada, la firmeza de su trasero no desaparece.@
+` Logro sacar mi herramienta con un largo y pesado sonido.@
+br
+` Tan pronto como lo hago,
+` una gran cantidad de mi semen fluye fuera de ella.\
+br
+`"----N----Shiki-----kun----"@
+br
+` Ella jadea mi nombre.@
+` …… Al igual que yo llamé a Senpai, "Ciel".@
+` Al final, ella me llamó por mi primer nombre.\
+bg #ffffff,%type_crossfade_mid
+playstop
+bg "image\bg\bg_18b.jpg",%type_crossfade_fst
+`"----A, ahhh."@
+` Finalmente, su estrechez disminuye.@
+` Retrocedo.@
+` Una línea pegajosa nos conecta.@
+` Al mismo tiempo, semen está goteando de su ano.\
+` …… ¿Cómo puedo decirlo?@
+` Bueno---aunque es la primera vez que he tenido sexo con ella, me percato de que puede que haya hecho demasiado.\
+`"Ciel----¿Estás, bien?"@
+`"…… Mi culo, me duele."@
+`"Ya-ya veo…… Lo siento, eres demasiado linda, quería provocarte."@
+`"…… No.@ No me engañarás con eso."@
+br
+` Acostada, ella me mira ferozmente.\
+`"…… ¿Qué quieres decir?@ También te gustó, al final.@ Yo también sentí dolor, sabes.@
+` Ciel, siempre estás moviendo esa pesada arma de un lado a otro pero, ¿entrenaste los músculos de tu culo también?"@
+`"¿¡Qué, qué estás diciendo, Tohno-kun!?"@
+` Ciel se levanta y me golpea en la cabeza.\
+`"¡Auch!@ ¡Qué violenta!"@
+` Levanto mis manos en protesta.@
+` Ciel suelta un suspiro.@
+`"…… Cielos, no me dejarás siquiera saborear el momento.@ No podremos vernos después de esta mañana, ¿no puedes valorar el ambiente un poco más?"@
+`"…… Es verdad, pero fuimos bastante salvajes.@ ¿Tomamos una ducha y cambiamos las sábanas?"@
+` Ciel reacciona como si acabase de darse cuenta de eso ahora.\
+`"¡Ti-tienes razón!@ ¡Entonces, iré a tomar una ducha……!"@
+` Ciel corre hacia el baño.\
+`"-----Ja, jaja."@
+` Comienzo reír.@
+` Estoy cargando una bomba llamada Roa, pero ni siquiera me siento preocupado por eso ahora.@
+br
+` …… La persona que pensé haber perdido tantas veces está aquí conmigo ahora.@
+` Mientras ella esté aquí, no hay nada de que preocuparse.\
+` La abracé en la escuela.@
+` Pero eso fue más por tristeza que por amor.@
+br
+` Pero esto es diferente.@
+` Esto es solamente amor.@
+` La amo tanto; casi quiero que simplemente se quede aquí.\
+bg #000000,%type_lshutter_fst
+bg "image\bg\bg_18b.jpg",%type_lshutter_fst
+` …… Al final, ambos terminamos en la cama, mirando fijamente el techo sin dormir.@
+br
+` Si decía algo, estaba seguro de que no la dejaría ir.@
+` Así que, sin hablar, simplemente sentí su respiración y su calidez junto a la mía.@
+` Cuando llegó la mañana, ella dejó la cama.\
+bg "image\bg\bg_18a.jpg",%type_lshutter_fst
+ld c,":a;image\tachi\cel_t01b.jpg",%type_crossfade_fst
+`"Me voy.@ Volveré tan pronto como pueda, así que por favor no dejes el apartamento, ¿de acuerdo?"@
+br
+` Parece que compró suficiente comida para dos semanas.@
+` Haré a un lado el hecho de que la mayor parte parece ser curry.\
+`"Por favor no te escapes con alguna callejera mientras no estoy.@ Soy muy celosa."@
+cl c,%type_lshutter_slw
+` Ella dice algo atemorizante con una profunda sonrisa, y sale del apartamento.@
+br
+` Son menos de las cinco en punto de la mañana.@
+` Fue así como comenzó el último lunes de octubre.@
+bg #000000,%type_crossfade_mid
+!w3000
+return

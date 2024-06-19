@@ -1,0 +1,170 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_50.jpg",%type_nowaitdisp
+`"…… No puedo dejar las cosas como están.@ "¡Senpai, oye!"@
+` Corro tras ella.@
+bg #000000,%type_lcartain_fst
+bg "image\bg\bg_05a.jpg",%type_lcartain_fst
+play "*2"
+ld c,":a;image\tachi\cel_t12.jpg",%type_lshutter_mid
+`"¿Oh?@ Tohno-kun, la quinta hora ya va a comenzar.@ Deberías volver a clases."@
+`"Idiota, es igual para ti.@ ¿Por que estás aquí afuera en el patio---"@
+` …… Ya veo.@
+` Sólo está fingiendo ser una estudiante, así que en realidad no necesita asistir a clases.\
+ld c,":a;image\tachi\cel_t03.jpg",%type_crossfade_fst
+`"Jeje, es cierto.@ También llegaré tarde a la quinta hora.@ Pensaba saltarme el resto de las clases, pero tal vez debería asistir después de todo."@
+` Senpai sonríe felizmente.@
+`"…… ¿Senpai?@ No me digas, ¿has estado tomando clases……?"@
+ld c,":a;image\tachi\cel_t10a.jpg",%type_crossfade_fst
+`"¡Por supuesto!@ ¡Si no, no estaría vestida de esta forma!"@
+` …… Parece bastante molesta.\
+`"----Ja, jaja."@
+`"Oye, ¿¡qué es tan gracioso, Tohno-kun!?"@
+`"No, es sólo que---estás feliz y a la vez molesta, sabía que en verdad eras Ciel-senpai después de todo."@
+` En verdad estoy feliz.\
+ld c,":a;image\tachi\cel_t08.jpg",%type_crossfade_fst
+`"…… ¿Huh?@ Yo soy yo pero, ¿por qué eso te haría reír, Tohno-kun?"@
+`"Ah, no es nada.@
+` Más importante aún, Senpai.@ Acerca de, um.@ Arcueid---"@
+ld c,":a;image\tachi\cel_t07a.jpg",%type_crossfade_fst
+\
+`"---Ugh."@
+` En un destello, Senpai me dirige una mirada con ojos carentes de emoción.@
+` …… Es difícil decirlo.@ Es difícil decirlo pero, es por esto que vine tras ella.\
+`"…… Por favor escúchame sin molestarte.@ Me dijiste que me detuviese, pero simplemente no puedo dejar en paz a ese vampiro."@
+ld c,":a;image\tachi\cel_t06a.jpg",%type_crossfade_fst
+` …… Uh-oh.@ Sus ojos sin emoción parecen teñirse de furia.\
+`"…… En fin, no puedo ignorar a ese vampiro.@ Pero rompí con Arcueid por lo de ayer, y no puedo hacer nada sin ayuda.@
+` Así que---si estás buscando al vampiro, ¿puedo ayudarte?"@
+br
+` …… Senpai está en silencio.@
+` Entonces respira profundamente.@
+ld c,":a;image\tachi\cel_t04.jpg",%type_crossfade_mid
+`"Me niego."@
+` Y dice eso con una sonrisa.\
+`"¿Te niegas?@ ¿¡Por qué!?"@
+ld c,":a;image\tachi\cel_t10a.jpg",%type_crossfade_fst
+`"¡Por supuesto!@ Tohno-kun, ¿¡no recuerdas que casi fuiste asesinado por ella!?@
+` Cazar vampiros significa estar en constante peligro de muerte.@ ¡No te permitiré involucrarte en semejante cosa, Tohno-kun!"@
+`"---¡Lo sé, pero estoy diciendo que estoy preparado para eso!@ Puede que no parezca, pero he experimentado muchas situaciones cercanas a la muerte.@ ¡Al menos puedo protegerme a mí mismo!"\
+ld c,":a;image\tachi\cel_t08.jpg",%type_crossfade_fst
+`"…… Um, Tohno-kun.@ ¿Cómo puedes decir eso?@
+` Admito que tienes muy buena capacidad atlética.@ Aunque tu constitución es débil, tu cuerpo en sí es excelente."@
+` Dejando caer sus hombros, Senpai dice algo muy sorprendente.@
+`"…… ¿E, en serio?"@
+` La tensión parece desaparecer, y dejo escapar eso como respuesta.\
+`"Sí.@ Tohno-kun, te desnudaste cuando pasaste la noche en mi casa.@ Te vi entonces.@ Músculos firmes y nada de blandura.@
+` Estabas lejos, pero pensé que tu cuerpo estaba muy bien formado."@
+`"…… Desnudo-----Pero, no me desnudé."@
+`"¿Lo olvidaste?@ Tohno-kun, ¿no te cambiaste antes de entrar al baño?"@
+` Ah, es cierto.@
+` Ciertamente me quité la ropa y ella la lavó por mí---\
+`"Senpai, no sabía que te gustaba espiar a las personas que se están cambiando."@
+ld c,":a;image\tachi\cel_t11.jpg",%type_crossfade_fst
+`"---Eh, no, eso fue, sólo un accidente, yo, lo vi por casualidad, y tenía curiosidad, y pensé que tal vez estaría bien…"@
+` Su rostro se torna rojo brillante mientras tartamudea sus excusas.@
+` …… Supongo que está recordando lo que vio en esa ocasión.\
+ld c,":a;image\tachi\cel_t08b.jpg",%type_crossfade_fst
+`"¡Cielos, mira!@ Sin importar cuán bueno sea tu cuerpo Tohno-kun, la gente ordinaria no puede enfrentarse a los vampiros."@
+` Oh, es por eso que no quiere que pelee.@
+cl c,%type_crossfade_fst
+\
+`"Ya veo.@ Entonces, no hay ningún problema."@
+` Me quito mis lentes.@
+br
+bg "image\bg\bg_05b.jpg",%type_crossfade_mid
+br
+` Saco mi cuchillo.@
+bg #9c0120,%type_crossfade_fst
+bg "image\bg\bg_05b.jpg",%type_crossfade_fst
+br
+` Mi dolor de cabeza comienza a avivarse.@
+` Resistiéndolo, corto una "línea" adecuada sobre un árbol cercano.\
+bg "image\bg\bg_05a.jpg",%type_crossfade_fst
+ld c,":a;image\tachi\cel_t09.jpg",%type_crossfade_fst
+`"Tohno-kun, eso---"@
+`"…… Así es.@ Lo siento, pero mis ojos no son normales.@
+` Arcueid me dijo que puedo ver la 'muerte' de las cosas, y que son llamados Ojos Místicos de Percepción Mortal o algo así."@
+` Sus ojos se ensanchan al asimilar todo esto.\
+ld c,":a;image\tachi\cel_t07a.jpg",%type_crossfade_fst
+`"--Ya, veo.@ Entonces lo que es especial no es el cuchillo, sino tú, Tohno-kun."@
+`"…… No es especial.@ Es sólo un efecto secundario de un accidente que tuve."@
+`"---Por eso ella estaba tan interesada en ti.@ Tus ojos tienen demasiado poder para un solo individuo."@
+` Ella parece quedarse sin energía repentinamente.\
+ld c,":a;image\tachi\cel_t09.jpg",%type_crossfade_fst
+`"…… Ciertamente, con ese tipo de poder, es más peligroso dejarte solo Tohno-kun.@
+` Y aunque me negara, probablemente buscarías al vampiro por tu cuenta, y él---no podría darse el lujo de ignorarte."@
+`"¿Senpai……?@ ¿Quieres decir---"\
+ld c,":a;image\tachi\cel_t08.jpg",%type_crossfade_fst
+`"Sí.@ No quiero que te involucres, pero es demasiado tarde.@ No puedo seguir negando que tienes alguna conexión con todo esto."@
+`"Entonces, ¿está bien si vamos tras ese vampiro juntos?"@
+ld c,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
+`"Sí.@ Estoy preparada para hacer eso."@
+` Senpai extiende una mano.@
+` Pero puedo sentir que es diferente a cuando estrechamos nuestras manos en la cafetería.\
+`"-----"@
+` Tomo su mano, por supuesto.@
+` Nuestras manos se encuentran brevemente y el apretón finaliza.@
+br
+ld c,":a;image\tachi\cel_t03.jpg",%type_crossfade_fst
+`"Ahora somos un equipo.@ Estoy contando contigo Tohno-kun, así que por favor cuenta conmigo.@
+` A partir de ahora, ambos cazaremos al vampiro de esta ciudad."@
+` Ella habla con una dulce sonrisa.@
+` Mientras asiento en silencio, la campana suena, indicando el final de la hora del almuerzo.\
+ld c,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
+`"Después de clases, por favor ve a la habitación de la ceremonia del té.@ Podremos hablar más entonces."@
+cl c,%type_lshutter_fst
+` Senpai corre hacia el edificio escolar.@
+` Estoy retrasado también, así que hago lo mismo.\
+bg #000000,%type_lcartain_mid
+playstop
+!w1000
+bg "image\bg\bg_06b.jpg",%type_crossfade_slw
+` La tutoría de fin de clases ha terminado.@
+` Mis conversadores compañeros se levantan de sus asientos.@
+` Normalmente me quedo hasta que haya pasado el caos, pero hoy me levanto junto a los demás.\
+bg #000000,%type_lcartain_fst
+bg "image\bg\bg_11b.jpg",%type_lcartain_fst
+` Salgo rápidamente del salón.@
+` Me dirijo hacia la habitación de la ceremonia del té.@
+` Mucho ha sucedido entre Senpai y yo, pero todo resultó muy bien.@
+` Me alegra poder ayudarla, y puedo sentirme más seguro que peleando por mi cuenta.@
+br
+` Pero, más que eso---estoy emocionado sólo por tener la oportunidad de estar con Senpai una vez más.\
+br
+` Respiro con dificultad----
+br
+` Corro hacia la habitación de la ceremonia del té.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_09b.jpg",%type_lcartain_mid
+` No hay nadie aquí.@
+` Parece que ella aún no ha venido.@
+br
+` …… *jadeo*…… *jadeo*.@
+br
+` …… Creo que me emocioné demasiado.@
+` Me siento sobre la alfombrilla tatami y recobro el aliento.\
+br
+` …… *jadeo*…… *jadeo*…… *jadeo*.@
+br
+` Mi acalorado cuerpo no se enfría tan fácilmente.@
+` Jadeo dolorosamente por aire.@
+` Mi cuerpo está bañado en sudor, y me siento terrible.\
+br
+` Mis jadeos llenan el aire.@
+br
+` Hay---algo raro.@
+` He estado descansando por un rato, pero mi respiración está empeorando.@
+` En primer lugar, ¿por qué mi cuerpo está cansado después de correr sólo esta pequeña distancia……?\
+monocro #ff0000
+bg "image\bg\bg_09b.jpg",%type_crossfade_fst
+play "*4"
+quakey 2,100
+br
+`"---¿¡Gah!?"@
+br
+` De repente,
+` dolor llena mi pecho.\
+return

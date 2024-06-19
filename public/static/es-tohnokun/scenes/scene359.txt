@@ -1,0 +1,513 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_04.jpg",%type_nowaitdisp
+` …… No tengo ninguna razón para ello.@
+` Pero tengo la vaga sensación de que ella podría ser la persona capaz de ayudarme con mis problemas.@
+br
+`"-----"@
+` No hay tiempo para pensar.@
+` Ya no puedo soportar seguir reservándome esto.@
+`"¡Perdón, ve tú primero, Arihiko!"@
+ld c,":a;image\tachi\ari_t03.jpg",%type_crossfade_fst
+`"¿Huh?@ ¿Que vaya primero?@ ¿¡Adónde vas, Tohno!?"\
+bg #000000,%type_lcartain_fst
+bg "image\bg\bg_05a.jpg",%type_lcartain_fst
+play "*1"
+` …… Finalmente, logro que ella me acompañe a la parte trasera de la escuela, tan forzosamente que no sería extraño que se enojase conmigo.@
+` La quinta hora ya ha comenzado.\
+ld c,":a;image\tachi\cel_t08.jpg",%type_crossfade_fst
+`"Cielos, arrastrarme a un lugar como éste… ¿qué sucede, Tohno-kun?"@
+` …… Senpai está más asombrada que molesta.@
+`"Lo siento, Senpai.@ Pero, quería oír más sobre lo que estabas diciendo anteriormente."@
+`"Lo que estaba diciendo… ¿te refieres al asesino en serie?"@
+`"Sí, eso.@ Sobre la persona que no siente que un crimen es un crimen.@ ¿Estás diciendo que asesina gente de manera inconsciente?"@
+` …… Por ejemplo.@
+` Si tu intención es dormir, pero en lugar de eso sales a cometer asesinatos.\
+ld c,":a;image\tachi\cel_t09.jpg",%type_crossfade_fst
+`"Oye, eso duele, Tohno-kun.@ Te responderé, así que suéltame, por favor."@
+`"Oh---Lo siento."@
+cl a,%type_crossfade_fst
+` La suelto.@
+` …… Parece que me emocioné demasiado.\
+ld c,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
+`"Está bien.@ En fin, estabas preguntando si el asesino podría estar matando de manera inconsciente, ¿no?"@
+`"Sí---En verdad quiero saberlo."@
+ld c,":a;image\tachi\cel_t12.jpg",%type_crossfade_fst
+`"Bueno, no lo sé, porque no soy el asesino."@
+`"¡Qué---sí, es verdad, Senpai, pero…!"\
+ld c,":a;image\tachi\cel_t04.jpg",%type_crossfade_fst
+`"Sí, fue sólo una broma.@ Ya que parecías tan serio, Tohno-kun, decidí ser un poco traviesa por un momento."@
+`"…… Senpai, no juegues conmigo.@ Estoy hablando en serio."@
+ld c,":a;image\tachi\cel_t03.jpg",%type_crossfade_fst
+`"Sí, así parece.@ Pero, ¿por qué?@ El asesino en serie no es nada que te concierna, ¿verdad, Tohno-kun?"@
+`"Eso----"\
+ld c,":a;image\tachi\cel_t06a.jpg",%type_crossfade_fst
+`"¿Sí?@ ¿De qué se trata?"@
+` …… Eso es.@
+`"Si---si te dijera que soy el asesino, ¿qué harías?"@
+` Finalmente lo digo.@
+ld c,":a;image\tachi\cel_t05.jpg",%type_crossfade_fst
+` Pero,
+` el rostro de Senpai se ilumina como si hubiese dicho el chiste más gracioso, y ríe a carcajadas.\
+`"Senpai, no estoy bromeando, yo---"@
+play "*8"
+ld c,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
+`"Sí, sé que hablas en serio.@ Pero, por eso es gracioso.@ Porque el asesino normalmente no viene a pedir ayuda por ser el asesino."@
+`"Senpai-----"@
+ld c,":a;image\tachi\cel_t03.jpg",%type_crossfade_fst
+`"Entonces preguntaré.@ ¿Por qué piensas eso, Tohno-kun?"@
+`"Porque---recientemente, he estado actuando… extraño.@ Sé la razón.@ Probablemente fui mordido por un vampiro."@
+` …… Lo digo con franqueza, como si fuese un eufemismo.\
+ld c,":a;image\tachi\cel_t07a.jpg",%type_crossfade_fst
+`"---Por favor, continúa."@
+`"…… Desde entonces, todo ha sido extraño.@ De repente siento que no soy yo mismo, y tengo sueños en los que asesino gente.@
+` Anoche, aunque sólo pretendía dormir, parece que salí.@ Y tuve un sueño en el que asesiné a alguien, y succioné sangre."@
+`"------"@
+` Senpai no dice nada, sólo me observa.\
+`"…… Mi padre tenía personalidades múltiples.@ Quizás yo no lo sepa pero, podría haber un asesino en mí.@ Aunque no tengo manera de averiguarlo---"@
+ld c,":a;image\tachi\cel_t08.jpg",%type_crossfade_fst
+`"Entonces por eso viniste a preguntar si el asesino era inconsciente de sus acciones."@
+` Senpai suspira asombrada.\
+`"Um, si en verdad fueses el asesino, no serías inconsciente de ti mismo.@ El hecho de que lo estés viendo en tus sueños lo hace un acto consciente.@
+` Pero más importante aún, es sólo un sueño.@ No sé de qué estás preocupado pero, Tohno-kun es Tohno-kun."@
+cl a,%type_crossfade_fst
+`"-----"@
+` …… Me alegra escuchar eso, pero…@
+` No tengo razón para creer en las palabras de Senpai.\
+ld c,":a;image\tachi\cel_t03.jpg",%type_crossfade_fst
+` Ella suspira.@
+`"Te debes estar sintiendo muy nervioso, Tohno-kun."@
+cl a,%type_crossfade_fst
+br
+` Diciendo eso,
+` Senpai palmea mi cabeza.\
+ld c,":a;image\tachi\cel_t04.jpg",%type_crossfade_fst
+`"---Está bien.@ No tienes nada de que preocuparte, Tohno-kun.@ Yo misma te lo garantizo, así que definitivamente no hay ningún problema."@
+`"Ah----sí."@
+` …… Automáticamente, asiento en absoluta concordancia.@
+` Aun sabiendo que sólo será mientras ella haga esto, me siento relajado.@
+` Como si envolviesen mi nerviosismo, las manos de Senpai son agradables.\
+bg #000000,%type_crossfade_mid
+playstop
+!w2000
+bg "image\bg\bg_06b.jpg",%type_lcartain_mid
+` La escuela ya ha terminado.@
+` La relación entre Akiha y yo me tenía confundido, pero el día de hoy está por terminar.@
+br
+`"…… Hora de ir a casa."@
+` Debería buscar a Akiha para regresar a nuestra mansión.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_24b.jpg",%type_lcartain_mid
+play "*1"
+` Camino a casa junto con Akiha.@
+` …… Al igual que en el almuerzo, nos quedamos callados tan pronto como nos quedamos solos.@
+br
+` ---Quiero hablar con Akiha, pero me siento avergonzado al mirarla.@
+br
+`"…… Hombre, no parezco un estudiante de secundaria."@
+ld c,":a;image\tachi\aki_t13a.jpg",%type_crossfade_fst
+`"¿…?@ ¿Dijiste algo, Nii-san?"@
+`"Oh---no, no es nada, sólo hablaba conmigo mismo."@
+cl a,%type_crossfade_fst
+br
+` …… *suspiro*@
+` En serio, ¿qué demonios estoy haciendo?\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_22b.jpg",%type_lcartain_mid
+` Alcanzamos la larga colina.@
+` Una vez que la subamos, estaremos frente a nuestra mansión.@
+br
+ld c,":a;image\tachi\aki_t01a.jpg",%type_crossfade_fst
+`"Nii-san.@ Quisiera preguntarte una cosa antes de llegar a casa."@
+` Los pies de Akiha se detienen y me mira directamente.@
+`"-----"@
+` El tipo de silencio que nos acompañaba ha desaparecido.@
+` Akiha me mira seriamente.\
+`"Adelante, ¿qué me quieres preguntar?"@
+ld c,":a;image\tachi\aki_t12a.jpg",%type_crossfade_fst
+`"…… Um… te lo pregunté antes, pero, ¿qué piensas de Ciel?"@
+`"----¿Qué, eso de nuevo?@ No pienso nada de ella.@ Es sólo mi senpai.@ Aunque, es una senpai de confianza a la que puedo hablarle de cualquier cosa."@
+ld c,":a;image\tachi\aki_t16a.jpg",%type_crossfade_fst
+`"…… Ya veo.@ Parecía que algo te estaba molestando; lo de esta mañana también fue resultado de eso, ¿no?"@
+`"-----"@
+` …… Estoy sorprendido.@
+` Akiha sabía que estaba preocupado por el problema.\
+`"Akiha… ¿lo notaste?"@
+ld c,":a;image\tachi\aki_t06.jpg",%type_crossfade_fst
+`"Por supuesto.@ Somos hermanos.@ Puedo saber cuándo estás deprimido, Nii-san.@
+` Entonces, ¿por qué no fuiste a hablar conmigo?@ ¿Confías más en esa mujer que en mí?"@
+`"¿¡M---me viste hablar con Senpai…!?"\
+ld c,":a;image\tachi\aki_t05a.jpg",%type_crossfade_fst
+`"Sí.@ Difícilmente podía creer lo que veía y escuchaba.@ ¡Tú, siendo tan sincero delante de esa persona!"@
+cl a,%type_crossfade_fst
+` Con un "hmph", Akiha se da la vuelta.@
+`"…… No es así.@ No hablé contigo o con Kohaku-san, porque---"@
+` No quería hablarles sobre mi cuerpo y hacer que me odiasen.\
+ld c,":a;image\tachi\aki_t03a.jpg",%type_crossfade_fst
+`"¿Por qué razón?@ Si hay algo que quieras decir, por favor dilo."@
+`"¿Eres estúpida?@ ¡No me preocuparía tanto si pudiese decirlo!@ Hablé con Senpai porque ustedes son importantes para mí.@ No porque no les tenga confianza ni nada parecido."@
+ld c,":a;image\tachi\aki_t07.jpg",%type_crossfade_fst
+`"¡No quiero escuchar tales excusas!"\
+`"Bien, lo diré sin rodeos.@
+` Esa persona no es apropiada para ti.@ Por favor, no te acerques más a ella.@ Es por tu bien."@
+`"Qué----"@
+` Es tan repentino que me quedo sin palabras.\
+`"Akiha.@ ¿Estás diciendo que la gente ordinaria no es compañía apropiada para los de la casa Tohno?"@
+`"…………"@
+` Akiha no responde.@
+` Su silencio indica un sí.\
+`"---Ya veo.@ Bueno, eres la líder de la casa Tohno.@ Estás diciendo que la familia y el linaje son importantes, como lo decía el viejo, ¿cierto?"@
+ld c,":a;image\tachi\aki_t12a.jpg",%type_crossfade_fst
+`"…… Nii-san, eso es…"@
+`"Está bien.@ En realidad no me estoy quejando.@ Soy el que te dejó sola en esa casa.@ Originalmente, era yo quien debía ser críado de esa manera.@ Así que, no estoy hablando mal de ti."@
+ld c,":a;image\tachi\aki_t17a.jpg",%type_crossfade_fst
+`"…………"@
+`"Pero, no puedo dejar pasar lo que acabas de decir.@ No sabes nada sobre Senpai, así que no digas que es inapropiada."\
+cl a,%type_crossfade_fst
+` Mirando hacia abajo, Akiha no dice nada.@
+` Por un rato, permanecemos en silencio.@
+br
+`"…… Tú no…"@
+`"¿Eh---?"@
+ld c,":a;image\tachi\aki_t10.jpg",%type_crossfade_fst
+`"¡Nii-san, tú no sabes nada sobre la casa Tohno, no digas cosas tan egoístas!"@
+` Gritando dolorosamente, Akiha se aparta de mí.\
+ld c,":a;image\tachi\aki_t14.jpg",%type_crossfade_fst
+`"---En fin, no debes acercarte a esa persona.@ Ella no es como nosotros.@ Si te le acercas más, serás tú quien sufrirá."@
+cl a,%type_lshutter_fst
+` Akiha sube la colina corriendo.@
+br
+`"---¿Qué significa eso?"@
+` Todo lo que puedo hacer es seguirla con la vista, horrorizado.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_32b.jpg",%type_lcartain_mid
+` Regreso a la mansión.@
+` Aunque normalmente entro al vestíbulo sin pensar, en este momento es difícil entrar.@
+` …… He hecho enojar a Akiha muchas veces desde que volví a la mansión.@
+` Pero, estaba verdaderamente furiosa en la colina.@
+` Por primera vez, enfurecí a Akiha de verdad, y la hice sonar muy lastimada.\
+`"…………"@
+` No creo que importe quién estaba equivocado.@
+` Estoy seguro de que con el tiempo Akiha se calmará y explicará por qué no le agrada Ciel-senpai.@
+br
+`"…… Podría pasear un poco por el jardín."@
+` Si entro a la mansión, podría encontrarme con Akiha, así que caminaré un rato por el jardín.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_42b.jpg",%type_lcartain_mid
+`"¿Huh?@ ¿Kohaku-san?"@
+` Es Kohaku-san.@
+` Parece que no me ha visto, y se está dirigiendo hacia el bosque.@
+br
+` No me ha visto.@
+` No sé qué está haciendo, pero desaparece dentro del bosque.@
+`"¿?"@
+` Tengo curiosidad, así que la seguiré.\
+playstop
+bg #000000,%type_lshutter_mid
+bg "image\bg\bg_54b.jpg",%type_lshutter_mid
+` Parece que hay un pequeño claro en el lugar al que Kohaku-san se dirigía.@
+`"……… ¿Hay un claro ahí……?"@
+` Ladeando mi cabeza, intento recordar, pero por alguna razón, mi memoria es un poco vaga.@
+` En el bosque de la mansión, puedo ver un claro como si los árboles hubiesen sido cortados en ese lugar.\
+` ---No, "puedo ver" no es correcto.@
+br
+` Si caminase por aquí normalmente, probablemente nunca lo notaría.@
+` Si Kohaku-san no hubiese pasado por aquí, tan escondido entre los árboles circundantes como está, nunca lo habría notado aunque hubiese vivido aquí toda mi vida.\
+`"…… ¿Hay un claro ahí?@ …… De ser así, probablemente jugábamos ahí cuando éramos niños."@
+` Sin exagerar, no recuerdo haber jugado alguna vez con Akiha en el claro.\
+br
+` ----Siento que nunca, he estado ahí, anteriormente.@
+br
+`"…………"@
+` Después de pensarlo un poco, decido entrar al claro.\
+bg #000000,%type_lshutter_mid
+bg "image\bg\bg_53.jpg",%type_lshutter_mid
+` …… El claro no me impresiona como algo fuera de lo ordinario.@
+` No hay señal de Kohaku-san, quien entró antes que yo.@
+br
+`"Qué es esto---es sólo un espacio vacío."@
+br
+` Camino hacia el centro del claro.@
+` Este claro en verdad es sólo un espacio vacío.@
+` El terreno perfectamente nivelado.@
+` El profundo bosque cercando el área.\
+bg #ffffff,%type_nowaitdisp
+bg "image\bg\bg_53.jpg",%type_nowaitdisp
+wave se0
+` La voz de las cigarras.@
+` Y la fuerte luz solar del verano que se siente como si pudiese disolver------\
+bg #ffffff,%type_nowaitdisp
+bg "image\bg\bg_53.jpg",%type_nowaitdisp
+br
+`"¿Eh…………?"@
+` ¿Verano, luz solar---?@
+br
+bg #ffffff,%type_nowaitdisp
+bg "image\bg\bg_53.jpg",%type_nowaitdisp
+wave se0
+`"Au----auch……"@
+` La herida en mi pecho comienza a doler.@
+`        Como / Puñaladas.@
+` Este dolor  / se siente como  / un cuchillo de cocina apuñalando mi pecho.\
+bg #ffffff,%type_crossfade_mid
+waveloop se1
+br
+br
+` Chiiirp.@ Chirp Chirp.@
+!w750
+` Chiiirp.@ Chirp Chirp.@
+!w750
+` Chiiirp.@ Chirp Chirp-----
+!w750
+br
+` ----En algún lugar, puedo escuchar la voz de las cigarras.@
+br
+` Pero, estamos en otoño.\
+br
+` ----El sol del verano que baña todo de blanco.@
+br
+` Las columnas de nubes veraniegas en el cielo lejano.@
+` Prácticamente puedo ver las voces.@
+` Junto a mis pies, hay corazas desechadas de cigarras.@
+` Coraza desechada.@ La coraza desechada--de alguien.\
+br
+br
+br
+`"----………"@
+br
+` Tercero.@
+` La coraza desechada del tercer niño.@
+` El tercer niño que ya no recuerdo.\
+bg "image\bg\cmo_06b.jpg",%type_crossfade_mid
+br
+br
+br
+br
+br
+` …… La sombra de alguien agachado.@
+` Los pasos de la joven Akiha aproximándose.@
+` Nubes arriba en el vacío.@ Cigarras en el cielo azul.\
+br
+br
+br
+br
+br
+`   Simplemente estaba, en un trance.@
+`   Akiha habría sido asesinada.@
+`   Eso era todo lo que sabía.\
+br
+br
+br
+br
+br
+`   Simplemente, corrí.@
+`   Eso era todo lo que comprendía.@
+`   Y en cuanto al peligro que corría,
+`   ni siquiera llegué a considerarlo.\
+br
+br
+br
+br
+br
+br
+`   Quería proteger a Akiha,
+`   y simplemente tomé su lugar.\
+br
+br
+br
+br
+br
+br
+br
+`   En la distancia.@
+`   La voz de las cigarras.\
+br
+br
+br
+br
+br
+br
+` ---Después de eso.@
+`   Mi cuerpo, que murió al ser perforado su pecho.@
+br
+br
+br
+br
+`   Y una figura que mira mi cadáver conmocionada.@
+`   La figura de un tercer niño-----\
+bg #ffffff,%type_crossfade_mid
+bg "image\bg\bg_53.jpg",%type_crossfade_fst
+`"Ua---gh."@
+` Me duele el pecho.@
+` Me siento enfermo.@
+` La herida en mi pecho debería haberse cerrado hace mucho, ¿por qué duele ahora?\
+bg #9c0120,%type_crossfade_fst
+bg "image\bg\ima_13.jpg",%type_nowaitdisp
+` Mi pecho, se rompe.@
+` La vieja herida se abre, y una corriente carmesí fluye hacia afuera.@
+br
+` ----¿Qué es esto?@
+` Mi herida, no ha sanado en absoluto.\
+br
+` Duele.@
+`   Estoy asustado.@
+br
+` ----Me siento mareado.@
+br
+`    Esto es,
+`       el impulso de la muerte.\
+bg #000000,%type_crossfade_mid
+` La consciencia se desvanece.@
+` Mi herida duele.@
+br
+` Escucho un ruido sordo cuando mi cuerpo cae al suelo.\
+wavestop
+bg #ffffff,%type_crossfade_mid
+!w4000
+bg "image\bg\bg_40c.jpg",%type_crossfade_slw
+play "*1"
+` …… Puedo escuchar voces hablando.@
+br
+`"Akiha-sama, ¿no va a llamar a un doctor?"@
+`"No seas estúpida, Hisui.@ ¡De ninguna manera podría hacer eso, porque la herida de Nii-san no es normal…!"\
+` …… Akiha   y   Hisui están hablando.@
+` Ésta  es la   habitación de SHIKI.@
+` Parece   que   estoy  durmiendo  en la cama.@
+br
+` Planeaba decir "¡Hola!" y salir de la cama, pero no puedo moverme en absoluto.@
+` Mi pecho ya no duele, pero mi cuerpo está tan pesado como el plomo.@
+` Solamente puedo mover mis ojos y mi boca.\
+ld l,":a;image\tachi\aki_t11b.jpg",%type_crossfade_fst
+`"¿Qué rayos estabas pensando, Hisui?@ ¡A Nii-san no se le debe permitir ir a ese lugar, tú lo sabes…!"@
+ld r,":a;image\tachi\his_t21b.jpg",%type_crossfade_fst
+`"Por favor…… Perdóneme."@
+`"Esto no puede resolverse con disculpas.@ Fuiste asignada al servicio de Nii-san para evitar este tipo de situación.@ ¿¡Qué estabas haciendo…!?"\
+` En total contraste con su conducta habitual, Akiha desahoga toda su furia.@
+` En comparación, Hisui está aceptando el regaño, mirando hacia abajo.@
+br
+` …… No estoy seguro de cómo surgió todo esto.@
+` Pero al menos puedo decir que a Hisui le están gritando por mi culpa.\
+ld l,":a;image\tachi\aki_t10b.jpg",%type_crossfade_fst
+`"Respóndeme, Hisui.@ ¿Por qué Nii-san fue a ese lugar?"@
+` Hisui no responde la pregunta de Akiha.@
+` La atmófera entre ellas se está volviendo pesada.@
+` Mordiendo su labio, Akiha da un paso hacia Hisui.@
+br
+` …… Incluso yo puedo entender que está a punto de levantar una mano en su contra.@
+` Estoy seguro de que Hisui también lo sabe, pero sólo mira hacia abajo, aceptándolo.\
+playstop
+`"----Espera, Akiha."@
+ld l,":a;image\tachi\aki_t17b.jpg",%type_crossfade_fst
+`"Nii-san--¿¡estás despierto!?"@
+`"Sí, fuiste tan escandalosa que desperté."@
+`"Ah…………"@
+ld l,":a;image\tachi\aki_t05b.jpg",%type_crossfade_fst
+` Akiha aparta la vista incómodamente.\
+`"Sabes que no deberías desahogarte con Hisui.@ No conozco las circunstancias, pero esto tiene que ver con mi desmayo, ¿cierto?@ No es su culpa, me desmayé por mi cuenta."@
+` Hago un gran esfuerzo, y de alguna manera logro levantar la mitad superior de mi cuerpo.@
+br
+` Pero eso es todo lo que logro, y no creo que pueda moverme ni una pulgada más.@
+` Pero ya que Hisui está deprimida, tengo que forzarme a actuar lo más saludablemente posible.\
+`"…… Sinceramente, pelearte por mí.@ Aunque pareces adulta, todavía eres una niña."@
+ld l,":a;image\tachi\aki_t14b.jpg",%type_crossfade_fst
+play "*8"
+`"Pero----estuviste inconsciente mucho tiempo, Nii-san.@ Fueron más de cinco horas, y nada como esto había sucedido antes.@ ¿Qué habría hecho yo si nunca despertabas…!"\
+`"Idiota, no digas cosas como ésas.@ Fue sólo mi anemia… ¿Eh?@ ¿Ya son las diez en punto?"@
+ld l,":a;image\tachi\aki_t12b.jpg",%type_crossfade_fst
+`"…… Sí.@ Nii-san, estuviste inconsciente toda la noche."@
+` Akiha habla con vacilación.@
+`"------"@
+` La fuerza escapa de mi cuerpo.\
+`"…… Cielos.@ No me había desmayado por tanto tiempo desde la escuela primaria.@ Sí, solía desmayarme todo el tiempo en ese entonces.@ No estaba acostumbrado a los Arima y mi mente siempre estaba bajo estrés."@
+` Pareciera que aún estuviese soñando, tal vez sea un efecto secundario del ataque de anemia.\
+`"…… Recuerdo que los Arima eran buenas personas; me trataron como si fuese su propio hijo."@
+` ---Keiko-san era estricta pero considerada, y siempre me trataba como si fuese su hijo.@
+` "…… Por eso, pensé que debía convertirme en su verdadero hijo."\
+ld l,":a;image\tachi\aki_t23b.jpg",%type_crossfade_fst
+`"Nii-san, no te esfuerces.@ Ésta es la mansión Tohno.@ ¡No tienes que seguir creyendo eso…!"@
+`"----Lo sé.@
+` Pero, durante mucho tiempo, pensé de esa manera.@ Desde el principio, siempre pensé eso.@
+` …… Los Arima, y tú, son todos buenas personas, así que, fue muy difícil---"@
+br
+` …… ¿Qué estoy diciendo?@
+` Miro inexpresivamente hacia el techo, reviviendo recuerdos de hace mucho tiempo.\
+`"…… Por favor no te extenúes, Nii-san.@ Sólo has estado aquí por una semana.@ Debes estar cansado."@
+`"--¿En serio?@ Bueno, estoy cansado, pero…"@
+`"¿Verdad?@ Entonces, por favor descansa por esta noche.@ Ya que tu cuerpo es más débil que el de la mayoría, si no te tomas un día de descanso de vez en cuando, te desmayarás como lo hiciste hoy."@
+` Akiha me mira seriamente.\
+`"…………"@
+` …… Ciertamente, es justo como ella dice.@
+` Olvidarme de todo.@
+` A menos que descanse sin pensar en vampiros o en mí mismo, en verdad perderé la cordura.\
+`"…… Tienes razón.@ Como dices, descansaré tranquilamente por hoy."@
+` Diciendo eso, me acuesto nuevamente.@
+ld l,":a;image\tachi\aki_t12b.jpg",%type_crossfade_fst
+`"¿En serio…?@ ¿No volverás a escabullirte de tu habitación más tarde?"@
+`"¿Qué es eso?@ ¿Soy tan poco fiable?"@
+` …… Supongo que sí.@
+` Dejé a Akiha sola todo este tiempo.\
+`"Hisui, dile a Kohaku que Nii-san está despierto.@ Nii-san, ¿vas a cenar?"@
+`"…… Ya veo.@ Bueno, discúlpame con Kohaku-san, pero no tengo ganas de comer."@
+`"…… Comprendo.@ Bien, Hisui, por favor infórmale a Kohaku."@
+` Aún deprimida, Hisui asiente y deja la habitación.\
+cl a,%type_crossfade_fst
+ld c,":a;image\tachi\aki_t12b.jpg",%type_crossfade_fst
+`"Bueno, Nii-san.@ Por favor duerme por esta noche."@
+` Akiha habla con un tono muy amable.@
+br
+` Pero, dormir…
+` Me temo que si duermo, veré esa pesadilla.@
+br
+`"No, yo---"@
+`"Por favor, Nii-san.@ ¿No dijiste que me complacerías, sólo por hoy…?"@
+` Los ojos de Akiha me están rogando.@
+` …… Desde el fondo de su corazón, Akiha está muy preocupada por mí.\
+`"De acuerdo.@ Dormiré tranquilamente."@
+`"…… Sí.@ Gracias."@
+`"Tonta.@ ¿Por qué me agradeces?@ Debería ser yo quien te agradezca."@
+` …… ¿Me agradeces?@
+` Aunque te abandoné durante ocho años, fuiste tú quien me pidió que regresara a esta mansión.\
+`"---Akiha.@ Yo… lamento todo lo que pasó.@ Soy egoísta, y nunca pensé en ti.@ Pero, de ahora en adelante…"@
+`"Está bien.@ Por favor no cambies, Nii-san.@
+` Y, debería ser yo quien se disculpe.@ Por favor, no te disculpes conmigo.@ Si lo haces, me sentiré como una persona horrible."\
+` Akiha toma mi mano, con lágrimas acumulándose en sus ojos.@
+` …… No entiendo.@
+` Por qué Akiha está diciendo semejantes cosas.@
+` O por qué repite tanto "lo siento".\
+`"…… Estoy, cansado.@ Dormiré un poco."@
+`"---Sí.@ Buenas noches, Nii-san."\
+bg #000000,%type_crossfade_slw
+playstop
+!w2000
+play "*7"
+` …… La herida en mi pecho duele.@
+` El tercer niño.@
+` …… Probablemente, es el niño que fue adoptado hace diez años, y murió poco tiempo después.@
+br
+` Un caluroso día de verano.@
+` La figura de un niño ensangrentado.@
+` El mundo de Tohno Shiki, lleno de malos augurios.\
+` ---Palpitar.@
+br
+` Pero, es tan tranquilo.@
+br
+` ---Palpitar.@
+br
+` Me siento a gusto.@
+br
+` ---Palpitar.@
+br
+` Los latidos de Akiha están muy cerca.\
+br
+` ---Palpitar.@
+br
+` Es muy tranquilo.@
+br
+` --Palpitar.@
+br
+` Y por primera vez en días, duermo con tranquilidad, libre de pesadillas.\
+playstop
+!w4000
+return

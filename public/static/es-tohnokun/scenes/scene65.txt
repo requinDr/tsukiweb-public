@@ -1,0 +1,407 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_06a.jpg",%type_crossfade_mid
+` Quinta hora.@
+` Sintiéndome soñoliento en la clase de estudios clásicos, mi mirada se desvía hacia fuera de la ventana.@
+br
+` ----Y,
+br
+` un cuervo está posado sobre la terraza del salón.\
+`"-----"@
+` No el cuervo azul de anoche, sino uno ordinario de color negro.@
+` Con sus negros ojos, el cuervo mira fijamente hacia dentro del salón a través de la ventana de cristal.@
+` Es verdad que es inusual que un ave se pose ahí, pero no es que sea un gran evento.\
+bg #ffffff,%type_crossfade_fst
+bg "image\bg\bg_06a.jpg",%type_crossfade_mid
+wave se0
+`"Ah----"@
+` De repente, viene a mí.@
+` Mi visión se torna blanca gradualmente mientras mi sentido del equilibrio enloquece.\
+bg #ffffff,%type_crossfade_fst
+bg "image\bg\bg_06a.jpg",%type_crossfade_mid
+`"---"@
+` Mi campo de visión se balancea.@
+` Se siente como si algo se estuviese acumulando detrás de mi cabeza, y mi cerebro se siente pesado.\
+`"…… Mierda."@
+` Conozco esta sensación.@ Es la precursora a un ataque de anemia.@
+` La sangre que se ha estado acumulando dentro de los vasos sanguíneos en mi cerebro forma coágulos negros y se mueve como lodo dentro de mi cabeza, haciendo que mi visión se oscurezca.@
+br
+` Si tuviese que describirlo, diría que se siente como si la oscuridad fuese empujada de mi cerebro hacia fuera a través de mis ojos.\
+bg #ffffff,%type_crossfade_fst
+bg "image\bg\bg_06a.jpg",%type_crossfade_mid
+bg #000000,%type_crossfade_slw
+` ---Esto es malo… normalmente no me desmayo a la mitad de una clase, pero…\
+br
+` Hurgando en un mundo de oscuridad, uso a ciegas mi pupitre como soporte.@
+br
+` Incluso eso se vuelve inútil…
+` No puedo poner nada de fuerza en mis dedos.@
+` Todo lo que puedo hacer ahora es caer al piso---\
+!w1000
+bg "image\bg\bg_06a.jpg",%type_nowaitdisp
+play "*3"
+`"Disculpe, Sensei."@
+br
+` ---Y,
+br
+` algo me golpea bruscamente en la espalda.\
+ld r,":a;image\tachi\ari_t04.jpg",%type_nowaitdisp
+`"Tohno se ve bastante mal, quisiera llevarlo a la enfermería."@
+`"----Arihiko."@
+br
+` En algún punto, Arihiko a venido hacia mí.@
+br
+`"¿En verdad se está sintiendo mal, Tohno?"@
+` Puedo escuchar la voz del maestro desde su atril.\
+`"No, creo que estaré bi---"@
+ld r,":a;image\tachi\ari_t01.jpg",%type_crossfade_fst
+`"Hombre, está totalmente fuera de sí.@ ¿No sería mejor para él salir temprano?"@
+br
+` …… Arihiko hace esta ofensiva declaración escandalosamente.\
+`"Ya veo.@ Si usted lo dice, Inui, entonces no hay equivocación al respecto.@ Kunifuji-sensei ya me ha hablado sobre la salud de Tohno.@ Tohno si se siente mal, puede ir a descansar en la enfermería o salir temprano."@
+` …… Cielos.@ No sé qué pasa con él.@
+br
+` Parece que el maestro de estudios clásicos tiene completa confianza en lo que dice Arihiko.\
+ld r,":a;image\tachi\ari_t04.jpg",%type_crossfade_fst
+`"Vamos, ya te puedes ir.@ Tu rostro está pálido y todo, pero nadie va a saber que te sientes mal hasta que lo digas, ¿sabes?"@
+` Arihiko palmea mi espalda malhumoradamente.@
+`"…… Me iré temprano entonces, Sensei."@
+` El maestro de estudios clásicos asiente solemnemente.\
+`"…… Perdón por hacerte preocupar sin necesidad, Arihiko."@
+ld r,":a;image\tachi\ari_t01.jpg",%type_crossfade_fst
+`"No te preocupes por eso.@ Hemos sido inseparables desde la escuela media; puedo saber cuándo estás a punto de desmayarte por la anemia."@
+cl r,%type_crossfade_fst
+` Arihiko se dirige de vuelta a su asiento.@
+` Expresando mi gratitud con una mirada, arrastro mi pesado cuerpo fuera de la clase.\
+bg #000000,%type_lcartain_slw
+bg "image\bg\bg_01a.jpg",%type_lcartain_slw
+` ---Dejo la escuela.@
+` Hubiese sido mejor acostarme en la enfermería, pero a esta hora, la escuela habrá cerrado para cuando despierte.@
+` Siendo ése el caso, decido que mejor iré a acostarme de vuelta en la mansión, aunque eso signifique que deba extenuarme.\
+`"…… Fiu.@ Creo que me estoy sintiendo un poco mejor."@
+` Respiro el aire de afuera y me siento un poco rejuvenecido.@
+br
+` …… Cielos.@ Estoy sorprendido de mi propio cuerpo.\
+` Ocho años atrás.@
+` El precio de recuperarme de esa herida casi fatal fue hacerme propenso a repentinas anemias.@
+br
+` Cuando dejé el hospital por primera vez, esto sucedía al menos una vez al día.@ Desmayarme por mareos se convirtió en una rutina diaria para mí.@
+` Después de un tiempo, probablemente porque mi cuerpo había crecido, los espontáneos mareos y anemias se hicieron cada vez más raros.@
+` Pero de vez en cuando, algunas cosas disparan ataques de mareo, y todavía llego a perder la consciencia.@
+` Hoy fui afortunado de que Arihiko me atrapara.@ Normalmente termino desmayado en el piso.@
+` *suspiro*@
+` Respirando lenta y profundamente, dejo entrar aire fresco en mis pulmones.@
+` Puedo sentir que la sangre estancada en el centro de mi cabeza comienza a fluir de nuevo, así que me alejo de la escuela.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_25a.jpg",%type_lcartain_mid
+` Giro hacia la calle principal.@
+` Una vez que la atraviese y deje el distrito residencial, estaré en una ruta directa hacia la mansión Tohno.@
+bg #ffffff,%type_crossfade_mid
+bg "image\bg\bg_25a.jpg",%type_crossfade_mid
+br
+`"--Agh."@
+` …… Mierda.@
+` Parece que aún no me he recuperado por completo.@
+` Al poner mi mano sobre mi frente, me doy cuenta de que está más caliente de lo normal.\
+`"……"@
+` No voy a hacerme ningún bien fatigándome aquí hasta desmayarme a un lado de la vía.@
+`"---Supongo que no puede evitarse."@
+` Disgustado conmigo mismo, me recuesto sobre la barandilla de seguridad.@
+` Descansaré un poco hasta que logre tranquilizarme.\
+bg #000000,%type_lshutter_mid
+bg "image\bg\bg_25a.jpg",%type_lshutter_mid
+playstop
+` …… No tengo mucho que hacer, así que miro alrededor de la calle perezosamente.@
+br
+` Es poco más de mediodía en un día de semana, pero la calle está llena de transeúntes.@
+` Multitud de personas caminando.@
+` Personas anónimás sin personalidades caminan hacia adelante, sin siquiera echar un vistazo a la gente caminando a su lado.@
+` Aunque hay tantas personas reunidas aquí en esta multitud, en este mismo espacio, sólo ven una cosa.\
+` Cada quien es su propio personaje principal, y viven el día sólo desde esa perspectiva.@
+` Y así, sin interactuar con nadie más, cada uno termina su día por sí mismo.\
+br
+` ---De cierto modo, se podría decir que es algo muy solitario.@
+`"……"@
+br
+` Empiezo a tener pensamientos melancólicos, quizás como resultado de mi fiebre.@
+`"---Supongo que iré a casa ahora."@
+` Me siento más calmado, y todo lo que estoy haciendo aquí es perder el tiempo con pensamientos sin sentido.@
+` Levantándome de la barandilla, retomo mi camino hacia la mansión para poder descansar allá.@
+br
+br
+br
+!w1000
+` ---Es así, hasta que la veo.\
+bg #000000,%type_crossfade_mid
+bg "image\event\ark_e01.jpg",%type_crossfade_mid
+wave se0
+` Casualmente.@
+` Todo lo que hice fue dirigir mi mirada casualmente hacia la multitud, pero mi visión se congela.\
+br
+` ---Palpitar.@
+br
+` Cabello dorado y ojos rojos.@
+` Su ropa es blanca, como si fuese un símbolo de ella misma.@
+wave se0
+br
+` ---Palpitar.@
+br
+` Mi pulso se acelera.@
+` Mi venas y arterias entran en acción.@
+` Mis nervios se desgarran, uno tras otro.@ Mi médula espinal enloquece, como si estuviese a punto de saltar fuera de mi espalda.\
+wave se0
+br
+` ---Palpitar.@
+br
+` La chica caminando entre la multitud es simplemente… hermosa.@
+`"------"@
+` El distante mareo regresa a mí.@
+` Mi consciencia flota, y cae.\
+wave se0
+br
+` ----Palpitar.@
+br
+` No-no puedo respirar.@
+` Las yemas de mis dedos tiemblan.@ La sangre no está alcanzándolas.@
+` Todo mi cuerpo se siente frío, como si estuviese congelándome hasta la muerte.\
+wave se0
+br
+` ----PALPITAR.@
+br
+` Mi corazón late aceleradamente, impulsándome a apresurarme.@
+`"¡Ah--ah!"@
+` No puedo soportarlo más y palabras incomprensibles escapan de mi boca.\
+wave se0
+` -----No puedo pensar.@
+` Mi cerebro sólo me dice una palabra.@
+br
+` ----PAL-PI-TAR.@
+br
+` Sólo una palabra repitiéndose en mi cerebro.@
+` Ella.@
+` Esa chica.@
+` Voy a----\
+bg #ffffff,%type_crossfade_fst
+bg "image\bg\bg_25a.jpg",%type_crossfade_fst
+` *jadeo* *jadeo* *jadeo*@
+br
+` Me siento enfermo.@
+` No puedo respirar.@
+` Me duele respirar.@
+` Por alguna razón, no puedo recordar cómo respirar correctamente.\
+wave se0
+` *jadeo* *jadeo* *jadeo*@
+br
+` Mi garganta está ardiendo.@
+` Mis ojos están a punto de estallar.@
+` Mis palmas están empapadas.@
+` Me siento tan frío--pero estoy bañado en sudor.\
+wave se0
+` *jadeo* *jadeo* *jadeo*@
+` …… Tengo que seguirla.@
+` Tengo que seguir a esa chica.@
+` Perseguirla, ir tras ella, y hablar con ella.@
+` Mis congelados pies comienzan a moverse.@
+br
+` Mi respiración es entrecortada, como la de una bestia.@
+br
+` Persigo a la chica de blanco.\
+wave se0
+bg "image\bg\bg_27a.jpg",%type_crossfade_mid
+ld c,":a;image\tachi\ark_t22.jpg",%type_crossfade_fst
+` *jadeo* *jadeo* *jadeo*@
+br
+` La chica camina lentamente.@
+` No se percata de que la estoy siguiendo.@
+br
+`"Ha----ah."@
+br
+` Si corro tras ella ahora, puedo hablar con ella.@
+` Hablar con ella, y preguntarle su nombre…\
+`"Ja----aja, ja."@
+br
+` ---¿Preguntarle su nombre?@
+` ¿A quién engaño?@
+` Sé muy bien que eso no es lo que quiero hacer.@
+` …… Sé, pero no sé.@
+` Parece que quiero hacer algo más.@
+` Pero no puedo poner "lo que quiero hacer" en palabras exactas.@
+br
+` El interior de mi cabeza está nublado, como una nube de lluvia.\
+bg "image\bg\bg_23a.jpg",%type_crossfade_mid
+ld c,":a;image\tachi\ark_t22.jpg",%type_crossfade_fst
+`"-------"@
+br
+` Mi garganta está… caliente.@
+` No puedo respirar.@
+` Pero, ¿y qué?@
+` Es natural, ¿cierto?@ Acabo de ver a esa excelente mujer… sería de mala educación no emocionarse, ¿no?@
+` ¿Detenerla y preguntarle su nombre?@
+` ¡Ja!@ No digas tonterías.@ No soy un niño, después de todo.@
+` No lo entiendo completamente, pero sólo hay una cosa que debo hacer.\
+` Camino con mis manos dentro de mis bolsillos.@
+` Mis dedos sienten el acero.@
+br
+`"Ku----huhh.@ Jeje."@
+` Qué afortunado.@
+` Todas las herramientas están aquí.\
+` …… Ella camina.@
+` Dejo mucho espacio entre nosotros.@
+` Para que ella no se percate.@ Para que las otras personas a nuestro alrededor no sospechen.@
+` Ella y yo somos completos desconocidos.@
+` Por eso debo hacer mi mejor esfuerzo para que seguirla se vea natural.\
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_12a.jpg",%type_crossfade_fst
+` …… Ella entra a un edificio de departamentos.@
+` Yo no entro todavía, sólo observo desde afuera.@
+` Ella toma el ascensor.@
+` Éste se detiene en el sexto piso.@
+br
+` Reviso los buzones de correo en el primer piso.@
+` Hay cinco buzones para el sexto piso.@ Toco uno de ellos y experimento una sensación aguda.@
+` Puedo olerlo.@
+` No puedo equivocarme.@
+` Su habitación es la tercera del sexto piso.\
+br
+br
+` Entro al ascensor y presiono el número seis.\
+bg #000000,%type_crossfade_mid
+` Estoy emocionado.@
+` Sujeto fuertemente el cuchillo en mi bolsillo dentro del pequeño ascensor.@
+` Ella está muy cerca.@
+` Sólo un poco más, y podré         la.@
+` Ah, sólo pensar en eso me hace sentir extático--
+` Mi cuerpo entero se siente como un órgano sexual justo antes del orgasmo.\
+` Me bajo del ascensor.@
+` El pasillo del sexto piso está vacío.@
+` Esto es bueno.@
+` ¡Rápida----rápidamente!@ Quiero hacerlo.\
+bg "image\bg\bg_13a.jpg",%type_crossfade_mid
+br
+br
+` ----Llego al frente de la habitación número tres.\
+` Estoy a punto de presionar el timbre cuando me detengo.@
+` Estos lentes me estorban.@
+` No puedo hacer lo que he venido a hacer si los tengo puestos.@
+br
+` ---Es una promesa, Shiki.@
+` Nunca debes cortar esas líneas desconsideradamente---
+br
+`"……"@
+` Tiempo atrás, una mujer me dijo semejante cosa.@
+` Pero en este momento, ni su nombre ni su rostro vienen a mi mente.@
+` Lentamente, me quito mis lentes.\
+bg #000000,%type_crossfade_mid
+waveloop se1
+br
+` Puedo ver las líneas negras.@
+` Y no sólo ellas.@
+` ¿Le ha sucedido algo a mis ojos?@
+` Aparte de esas abominables líneas, puedo ver 'puntos', como agujeros negros.@ Una incontable cantidad de ellos.@
+br
+` No me reconozco.@
+` Qué estoy tratando de hacer.@
+` Por qué estoy tratando de hacer esto.@
+br
+` ¿Qué quiere hacer Tohno Shiki-----con esa chica?\
+br
+` No lo sé.@
+` Aún sin saber, presiono el timbre.\
+bg "image\bg\bg_14d.jpg",%type_crossfade_fst
+`"¿Sí---?"@
+` Escucho la voz detrás de la puerta, y ésta se abre un poco.@
+` En ese instante------me deslizo a través de ésta.\
+`"Eh----"@
+` Dice la chica.@
+` No, ella intenta decir.@
+` Nunca podrá terminar lo que intentaba decir.@
+` Porque la corté en pedazos antes de que pudiese.\
+bg #000000,%type_nowaitdisp
+bg "image\bg\ima_14.jpg",%type_crossfade_fst
+` En ese instante, me deslizo a través de la puerta.@
+` En menos de un segundo, trazo el cuchillo a través de las líneas a lo largo del cuerpo de la chica.@
+` Apuñalando.@
+!w500
+` Acuchillando.@
+!w500
+` Perforando.@
+!w500
+` Clavando.@
+!w500
+` Partiendo en pedazos.@
+br
+` Completa y definitivamente, yo la 'asesino'.\
+` Las líneas negras que la dividen en diecisiete pedazos.@
+` A través del cuello, detrás de la cabeza, desde el ojo derecho hasta los labios, antebrazo derecho, brazo derecho, dedo anular derecho, codo izquierdo, pulgar izquierdo, dedo medio izquierdo, seno izquierdo, desde la costilla hasta el corazón, desde el estómago hasta el abdomen en dos lugares, íngle izquierda, muslo izquierdo, pierna izquierda, dedo del pié izquierdo, todos ellos.@
+` Al pasar a través de ella,
+` en menos de un segundo.@
+br
+` Verdaderamente, en un instante, por completo.@
+br
+` Yo la "desarmo" en diecisiete pedazos de carne.\
+bg #000000,%type_crossfade_fst
+wavestop
+bg "image\bg\ima_13.jpg",%type_crossfade_mid
+play "*4"
+`"---¿Eh?"@
+` Puedo escuchar una voz increíblemente tonta.@
+` No se siente que la voz esté viniendo de mi propia garganta.@
+br
+` Mareo.@
+br
+` Los pedazos cortados de la chica yacen frente a mis ojos.@
+` Hay sangre roja sobre todo el piso de madera, como un cubo de agua volcado.\
+br
+` El asfixiante olor de la sangre.@
+` Los cortes son muy limpios, así que sus entrañas no se derraman.@
+` Sólo el color rojo se extiende a lo largo del suelo.@
+` Qué extraño.@
+` No hay nada en la habitación.@ Nada a excepción de los miembros dispersos de la chica y yo, parado ahí, pasmado.\
+`"---Qué---"@
+br
+` Un mar de sangre roja se extiende sobre el piso.@
+` En mis manos, sostengo mi cuchillo, el arma asesina.@
+br
+`"Ella está----muerta."@
+br
+` Claro que lo está.@
+` No sería humana si estuviese viva.\
+`"¿Por----qué?"@
+br
+` No hay nada que preguntar.@
+` Acabo de hacerlo con mis propias manos.@
+` Con mis propias manos, limpia e instantáneamente, corté en pedazos a esta chica que ni siquiera conozco.\
+br
+`"¿Yo----la maté?"@
+br
+` Sí, no puede haber equivocación.@
+` ¿O estoy equivocado?@
+br
+` No hay razón para que yo haga semejante cosa.@
+` Es por eso que es un error.@ Tiene que ser un error.\
+` Pero, en primer lugar, no tengo motivo.@
+` Es por eso que es un error.@ Tiene que ser un error.\
+monocro #ff0000
+bg #000000,%type_crossfade_fst
+bg "image\bg\ima_13.jpg",%type_crossfade_mid
+br
+` ---La roja sangre fluye por todo el piso.@
+br
+` Lentamente, la oscura tinta roja se desliza alrededor de mis pies.\
+`"……… ¡Ah!"@
+` Sorprendido, levanto mi zapato, pero es demasiado tarde.@
+br
+` Como alquitrán, su sangre forma un hilo conectando el charco en el piso con mi pie.@
+`"---------"@
+` Es… rojo… sangre…
+` El color que odio, sigue fluyendo incluso ahora.@ Todo porque la corté en pedazos.\
+`"---No fui yo."@
+` Sí.@ Tiene que ser un error.@
+br
+` Un error.@ Un error.@ Probablemente un error, definitivamente un error.@
+` Esto es.@
+` Esto es, Esto es, Esto es, Esto es, Esto es Esto es Esto es Esto es Esto es Esto es----
+br
+return

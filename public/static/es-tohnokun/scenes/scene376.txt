@@ -1,0 +1,84 @@
+wavestop
+playstop
+;---added context above---
+monocro #ff0000
+bg "image\bg\bg_54d.jpg",%type_nowaitdisp
+` ----No hay tiempo que perder.@
+` Tengo que matarlo antes de que sanen sus heridas, o me asesinará.@
+br
+` Tomo un respiro forzado,
+` y animo a mi cansado cuerpo a perseguir a SHIKI.\
+bg #000000,%type_lcartain_mid
+monocro off
+bg #9c0120,%type_crossfade_fst
+bg "image\bg\bg_54d.jpg",%type_crossfade_fst
+` Jadeos-----
+br
+` Mi respiración hace eco en el oscuro bosque.@
+` En esta oscuridad, el rastro de sangre parece alumbrar el camino.@
+` De ninguna manera dejaré escapar a SHIKI ahora.@
+` La pregunta es, ¿podrá mi cuerpo sobrevivir lo suficiente?\
+` Respirado pesadamente,
+` corro mientras me tambaleo de un lado a otro.@
+` Siento mi cuchillo en mi mano izquierda.@
+` La sensación del cuchillo sujetado con firmeza por mi mano es lo único que impide que me desmaye.@
+br
+`"¿Acaso…… se dirige hacia el patio?"@
+br
+` Parece que el rastro de sangre lleva hacia el patio.@
+` Hace ocho años.@
+` El lugar donde Nanaya Shiki fue asesinado por Tohno SHIKI.@
+` …… Ahora que lo pienso, no hay mejor lugar para terminar con nuestro encuentro.\
+`"-----De acuerdo SHIKI, voy a…"@
+` Matarte.@
+wave se6
+quakex 2,200
+bg "image\bg\ima_13b.jpg",%type_lshutter_fst
+br
+br
+br
+br
+br
+` Todo se torna rojo.\
+`"Gu-------ugh."@
+` Sangre sale de mi cuerpo junto con mi respiración.@
+` Sangre sale a borbotones de mi corazón.@
+` Comienzo a desmayarme y----caigo al suelo.@
+`"¿Qué----?"@
+` No entiendo.@
+` Simplemente siento dolor y ardor en todas partes.\
+`"-----Qué demo…"@
+` Miro mi espalda.@
+` Ahí, veo numerosas espadas clavadas como alas.@
+` Me atraviesan y se inclinan hacia el cielo.@
+` Eso significa…
+` Esta herida es fatal.@
+`"¿Por qué-----?"@
+` No entiendo.@
+` No es que estas espadas viniesen volando hacia mí.@
+` Simplemente parecieron brotar de mi interior.\
+` El sonido de sangre goteando.@
+` Gotea de las espadas en mi cuerpo.@
+` La sangre no es mía---
+br
+`"----Oh, es aquella sangre."@
+br
+` …… La sangre que se derramó sobre mí cuando corté a SHIKI.@
+` Aún estaba en mi pecho.@
+` …… Qué error tan estúpido.@
+` Sabía que las espadas rojas estaban hechas de su sangre---así que tener su sangre sobre mí es como pedirle que me apuñale fatalmente cuando lo desee.\
+bg "image\bg\ima_01.jpg",%type_crossfade_slw
+`"------Ah."@
+` Comienzo a desvanecerme.@
+` Miro hacia el cielo dentro de mi propio charco de sangre.@
+br
+` La luna distante.@
+` Noche oscura, árboles altos.@
+` Estoy enfrentando la misma muerte sin sentido que una vez viví.\
+bg #000000,%type_crossfade_slw
+!w2000
+cl a,%type_waitdisp
+bg "image\word\end.jpg",%type_crossfade_slw
+resettimer
+waittimer 3000
+return

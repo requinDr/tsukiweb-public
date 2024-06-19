@@ -1,0 +1,626 @@
+wavestop
+playstop
+;---added context above---
+monocro #ff0000
+bg "image\bg\bg_14d.jpg",%type_crossfade_fst
+` ¿Pero qué hay de malo en esto?@
+br
+` Mal mal mal mal.@
+` Mal mal mal mal.@
+` La asesiné.@ ¿Eso está mal?@
+` No la asesiné.@ ¿Eso está mal?@
+br
+` ¡No, todo eso está totalmente mal---!\
+` Está mal, mal, mal, mal,
+` mal, mal, mal, malmal,
+` mal, mal, mal, malmalmal,
+` mal, mal, mal, malmalmalmal,
+` malmalmal, malmalmalmal, malmalmalmalmal, malmalmalmalmalmal, malmalmalmalmalmalmal, malmalmalmalmalmalmamal, malmalmalmalmalmalmalmalmalmalmalmalmalmalmalmalmalmalmalmalmalmalmalmal-----\
+`"…… M… al."@
+br
+` No, no, eso está mal.@
+br
+`"Estoy diciendo---que está mal."@
+br
+` No puede ser.@ Simplemente no puede ser.@
+br
+`"¡Mal!@ ---¡Mal, mal, mal, malmalmal…!@ ¡No la conozco!@ ¡Es sólo una desconocida que vi caminando por la calle……!@ ¡Ves!@ ¿¡No se te hace extraño, Shiki…!?@ ¡Es una completa desconocida!@ ¿¡Por qué tendría que matarla…!?"\
+` No hay respuesta para mis gritos.@
+` Además, la razón es clara.@
+br
+` Desde el momento en que la vi, sólo pude pensar en una cosa.@
+`"Yo------"@
+br
+`        Sí, yo----\
+br
+br
+br
+br
+br
+br
+br
+br
+`             Tohno Shiki     quería  matar a esa chica.\
+` Eso es lo que quería entonces.@
+` Sólo que, estaba tan enlodado el interior de mi cerebro, y no lo transformé en palabras.\
+`"¡M-----al!"@
+br
+` Siento ganas de vomitar.@
+br
+`"Uh, uggg, uh."@
+br
+` El contenido de mi estómago se eleva.@
+br
+`"¡Ah, aaah, ah!"@
+br
+` El carmesí está penetrando en mis globos oculares.@
+br
+`"¡Aaaaaaaaah----!"@
+` Salgo corriendo.@
+br
+` No pienso ni por un momento en que podría ser visto, o en esconder el cuerpo.@
+br
+` Sólo quiero escapar de aquí.@
+` Medio enloquecido, huyo del desconocido apartamento--\
+bg #000000,%type_crossfade_slw
+monocro off
+playstop
+bg "image\bg\bg_28a.jpg",%type_crossfade_slw
+`"¡Guuh---burgh!"@
+` Mi ácido estomacal se eleva en mi garganta.@
+` Vomito todo de vuelta.@
+` Mi comida, mis jugos gástricos, todo, mientras lloro.\
+` ¡*jadeo*, *jadeo*, *jadeo*, *jadeo*…!@
+br
+` No queda nada dentro de mi estómago.@
+` Pero mi cuerpo continúa forzándome a vomitar, como si tratara de deshacer lo que ha ocurrido y regresarme a una vida normal.@
+br
+` …… *jadeo*… *jadeo*… *jadeo*… *jadeo*…@
+br
+` Dolor.@
+` Duele, como si mis entrañas ardieran.@
+` Las lágrimás no se detienen, y mi cuerpo cae al piso como una pila de basura.\
+`"¡Ah, guh----gu, guguh, guh!"@
+br
+` Continúo llorando.@
+br
+` …… Asesiné a alguien.@
+` La asesiné sin razón, sin piedad.@ Como destrozando una muñeca.\
+br
+` ---¿Qué fue todo eso?@
+br
+` Por qué me sentí de esa manera,
+` Por qué la maté,
+` Incluso ahora, no puedo encontrar una razón.@
+br
+`"----Es mentira."@
+br
+` No---es demasiado raro para ser verdad.@
+` Lo que acaba de suceder podría no ser real.@ Entonces es sólo uno de esos sueños que tengo cuando me desmayo---\
+`"----Es mentira."@
+br
+` Además, ¿cómo puede alguien cortar en pedazos a otra persona sólo con un cuchillo?@
+` Lo leí en un libro una vez.@
+` Toma un día entero de arduo trabajo cortar a alguien en pedazos, aun cuando se utiliza una sierra.@
+` Por eso no hay manera de que haya podido hacer semejante cosa sólo con un cuchillo.@
+` Esas "líneas" nunca existieron en primer lugar.@ Todo fue sólo un engaño en el que he caído----
+`"----Es mentira."\
+br
+bg #9c0120,%type_crossfade_fst
+bg "image\bg\bg_28a.jpg",%type_crossfade_fst
+br
+`"Guh---ffpt."@
+br
+` Jugo gástrico gotea de mis labios.@
+` Cayendo de mi boca, goteando sobre mi quijada.@
+` Mezclado con los jugos hay algo rojo.@
+` Mi garganta probablemente está sangrando porque mi estómago sigue tratando de vomitar aunque no queda nada en su interior.@
+br
+`"A…… u----"@
+br
+` Duele.@
+` Es por eso que esto…
+` Esto no es un sueño, sólo me estoy mintiendo.\
+br
+` Sí, de hecho, lo entiendo todo.@
+br
+` Yo la deseaba.@ Sólo mirarla me excitaba.@
+` Cuando la corté en pedazos, fue tan emocionante que casi eyaculé.@
+` Estos ojos también.@
+` Si sabía que estas "líneas" podían cortar en pedazos las cosas como si fuesen papel…
+` Debí haber comprendido que incluso una persona podía ser fácilmente cortada en pedazos como lo hice con ella.@
+` He llevado una vida normal sin siquiera pensar en algo como eso.@
+` ---Si en verdad soy la clase de persona que podría matar fácilmente cualquier cosa…
+br
+` Entonces debí haberme sacado estos ojos o haber vivido sin mirar a nadie.\
+`"…… Lo siento, Sensei."@
+` ---Lo siento mucho.@
+br
+` Ni siquiera una promesa tan simple,
+br
+` fui capaz de mantener----\
+`"------"@
+` Pero no me preocupo por mí.@
+` Asesiné a esa persona.@
+` La vida de esa persona hasta ahora.@
+` La gente alrededor de esa persona,
+` el futuro que esa persona había soñado,
+` todo---destruído por un extraño.@
+br
+` Aun si me arrepiento, no puedo ser perdonado.@
+` Aun si pido disculpas, no puedo ser perdonado.@
+br
+`"¿Me he----vuelto loco?"\
+` No lo sé.@
+` No queda siquiera un rastro de aquel impulso.@
+` Pero si---ese impulso viniese de nuevo, ¿qué sucedería conmigo?@
+` El pensamiento de contenerme nunca cruzó mi mente.@
+` Ni siquiera consideré intentar detenerme.@
+`"Mata a esta chica."@
+` Parecía lo más lógico que hacer y lo llevé a cabo; entonces no hay nada que pueda hacer.\
+` Por lo tanto la respuesta es simple.@
+` Debo estar loco.@
+br
+` ----Probablemente he estado loco desde hace ocho años, cuando milagrosamente volví a la vida después de un accidente fatal.\
+bg #000000,%type_crossfade_mid
+!w2000
+bg "image\bg\bg_28b.jpg",%type_crossfade_mid
+br
+br
+br
+br
+br
+br
+` -------Tengo… frío.@
+` El sol se ocultó sin que yo me percatase.@
+br
+` -------¿Qué hora es?@
+` No lo sé.@
+` Mis tímpanos están llenos de ruido, como una TV con estática.\
+br
+br
+br
+br
+` Estática.@  Estática.@  Estática.\
+` El sonido no se detiene.@ Hace un frío terrible.@
+br
+` Si permanezco----sentado así en este banco, creo que voy a morir.\
+br
+br
+br
+br
+br
+br
+br
+br
+` Estática, estática, estática\
+` No siento nada.@
+` No me preocupa ese repetitivo sonido o el congelante frío.\
+` Mi cuerpo está tiritando.@
+` Puede ser a causa del frío, o por la inquietud, o por el miedo, o por arrepentimiento.@
+` No puedo decir cuál.@
+` He asesinado a alguien, y no puedo explicar por qué lo hice sin razón alguna.@
+br
+` ---Qué broma.@
+` No hay razón, por eso no hay manera de que pueda explicarlo.\
+` La asesiné solamente porque sentí deseos de matarla.@
+` Semejante razón es demencia.\
+` …… Sí, sería tan fácil si simplemente estuviese loco.@
+` Pero mi corazón aún mantiene la cordura.@
+` Es sólo porque aún estoy cuerdo que puedo sentir este entumecimiento.\
+br
+br
+br
+br
+br
+br
+br
+br
+br
+br
+br
+` Estáticaestáticaestática.\
+` El cuchillo aún está en mi mano.@
+` Resolver esto quitándome la vida, es bastante fácil.@
+` Pero no puedo hacerlo.@
+` Aún estoy cuerdo, así que no puedo hacerlo.@
+` Mi corazón teme la muerte,
+` Y en algún lugar de mi corazón, sé que hacer eso no solucionará esto---ni expiará mi pecado.@
+br
+` El ruido continúa.@
+` La temperatura de mi cuerpo continúa cayendo en picada.\
+br
+br
+br
+br
+br
+` ---No puedo suicidarme.@
+` Pero si dejo las cosas como están, desapareceré.@
+br
+` …… Tal vez eso sea lo mejor.@
+` Aun si un asesino como yo sobrevive…\
+bg #000000,%type_crossfade_slw
+!w1000
+br
+br
+br
+` Si yo\
+!w2000
+br
+br
+br
+br
+br
+` rápidamente\
+!w2000
+br
+br
+br
+br
+br
+br
+br
+` muero\
+!w2000
+br
+br
+br
+br
+br
+br
+br
+br
+` de esta manera…\
+!w2000
+`"¿Tohno… kun?"@
+` De repente, mi nombre es pronunciado.\
+`"---------"@
+` Levanto mi cabeza.@
+` Ahí está Senpai----se siente como décadas desde la última vez que la vi.\
+bg "image\bg\bg_28b.jpg",%type_crossfade_slw
+play "*1"
+ld c,":a;image\tachi\cel_t13.jpg",%type_crossfade_mid
+`"¿Qué estás haciendo sentado aquí afuera bajo la lluvia?"@
+`"…… Llu… via."@
+` …… Ah, ya veo.@
+` Ese ruido de estática era el sonido de la lluvia.@
+br
+` Con razón hace frío.@
+` Ahora puedo ver que estoy completamente mojado y congelándome.@
+br
+`"Oh, ni siquiera tienes un paraguas.@ Vas a coger un resfriado de esa manera, Tohno-kun."\
+` …… La voz de Senpai es tan dolorosa.@
+` Fue hace sólo pocas horas cuando la escuché por última vez, pero ahora---suena tan distante.@
+`"¿Tohno-kun?@ ¿Puedes escucharme…?"@
+`"Nn---ah, sí.@ No sería tan malo coger un resfriado."@
+` Simplemente respondo sin pensar.@
+`"¡Eso no!@ Cogerás más que un resfriado con una lluvia como ésta, aunque estemos en octubre---"@
+` Su oración se corta al ella tocarme.\
+`"¿¡Cuánto tiempo has estado así, Tohno-kun…!?@ ¡Estás tan frío!"@
+cl a,%type_crossfade_fst
+` Senpai hala mi brazo y me fuerza a levantarme del banco.\
+`"Te prestaré mi paraguas, así que apresúrate, ve a casa, y haz algo respecto a tu cuerpo.@ Será un asunto de vida o muerte si no te calientas rápidamente."@
+`"…… Ah, sí.@ Pero no puedo ir a casa.@ Ya no puedo ir a ningún lugar."@
+br
+` …… No puedo ir a casa después de hacer algo como eso.@
+br
+` No creo que quede algún lugar donde pueda descansar ahora.\
+ld c,":a;image\tachi\cel_t13.jpg",%type_crossfade_fst
+`"-------"@
+` Senpai me mira fijamente.@
+`"---Ya veo.@ Entonces vayamos de vuelta a mi apartamento.@ Está más cerca que tu casa, así que es perfecto."@
+` Senpai tira de mi brazo.@
+cl a,%type_crossfade_mid
+`"…………"@
+` No puedo sacudírmela.@
+` No puedo pensar en nada por ahora, y---la calidez de Senpai es la única cosa segura en este mundo donde todo se siente entumecido.\
+bg #000000,%type_crossfade_slw
+bg "image\bg\bg_16a.jpg",%type_crossfade_slw
+bg #000000,%type_crossfade_slw
+bg "image\bg\bg_18c.jpg",%type_crossfade_slw
+` …… La casa de Senpai es un apartamento común de una sola habitación en un edificio de dos pisos.@
+` Un muy pequeño y apretado apartamento del tamaño de seis alfombrillas tatami y una cocina.@
+` Como es de esperarse de Senpai, la habitación es elegante.@ Ese hecho trivial relaja un poco mis entumecidos nervios.\
+ld c,":a;image\tachi\cel_t07a.jpg",%type_crossfade_fst
+`"Toma, por favor sécate con esto."@
+` Ella me entrega una toalla de baño.@
+`"Lo siento, no tengo ninguna ropa que te quede.@ Por favor confórmate con esto por ahora.@ Iré a preparar algo caliente para que bebas ahora mismo."@
+cl a,%type_crossfade_fst
+br
+` …… Senpai se retira hacia la cocina.@
+` Me quedo solo en la elegante habitación.\
+`"-------"@
+` Nunca imaginé venir a la habitación de una chica de esta manera.@
+` La casa de una chica.@
+` …… La habitación de una chica.@
+` Una habitación en la cual entré por la fuerza y asesiné a una chica.@
+`"¡-------!"@
+` Siento ganas de vomitar.@
+` ¿Qué---estoy haciendo aquí?@
+` En semejante lugar.@
+` No tengo absolutamente ningún derecho a recibir la hospitalidad de Senpai en este lugar.\
+ld c,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
+`"Gracias por esperar.@ Aquí tie---, ¡Tohno-kun!"@
+ld c,":a;image\tachi\cel_t08.jpg",%type_crossfade_fst
+`"¡Tienes que secarte, rápidamente!"@
+` Senpai me regaña mientras comienza a frotar mi cabeza con la toalla de baño.@
+ld c,":a;image\tachi\cel_t10a.jpg",%type_crossfade_fst
+`"Mira, tu camisa también está toda mojada.@ Tienes que quitártela.@ ¡Podría darte pulmonía de esta manera!"@
+` Una muy feroz Senpai deshace los botones de mi camisa.\
+` Repentinamente, sus dedos se detienen.@
+ld c,":a;image\tachi\cel_t08.jpg",%type_crossfade_fst
+`"…… Um… er."@
+` Senpai le echa una larga y dura mirada a mi pecho.@
+`"…… Ésta es una herida sanada, ¿cierto?"@
+` …… Ah, debe estar sorprendida de ver la vieja herida en mi pecho.@
+` Las marcas parecidas a quemaduras están justo en la mitad de mi pecho.@ Debe estar sorprendida de verlas porque ella no sabía.@
+`"…… Sí.@ Estoy bien.@ Ya han pasado ocho años."@
+ld c,":a;image\tachi\cel_t03.jpg",%type_crossfade_fst
+`"Ya veo.@ …… Gracias al cielo.@ Si esta herida fuese la razón de tu extraño comportamiento, tendría que llevarte al hospital inmediatamente."@
+` Senpai muestra una débil y dulce sonrisa.@
+` …… Una punzada.@
+` Cuando veo su sonriente rostro, me duele el pecho.\
+`"…… Está bien.@ Puedo hacerlo por mi cuenta, así que déjame solo."@
+`"De acuerdo.@ Te traeré algo de té entonces.@ Oh, si te quitas la camisa, por favor usa esa sábana de allá y caliéntate."@
+cl a,%type_crossfade_fst
+`"…………"@
+` Seco mis pantalones con la toalla de baño.@
+` Pero aun así, mis pantalones todavía están mojados.@ La sábana va a empaparse si me cubro con ella.@
+` Me quito la camisa, y envuelvo la parte superior de mi cuerpo con la toalla.\
+ld c,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
+`"Ah, ¿ya terminaste de secarte?@ Entonces bebamos algo de té."@
+` Senpai se sienta, sosteniendo un juego de té.@
+ld c,":a;image\tachi\cel_t03.jpg",%type_crossfade_fst
+`"Por favor siéntate también, Tohno-kun.@ No puedo estar tranquila si permaneces de pie."@
+`"…………"@
+` Hago lo que se me pide y me siento.@
+` Senpai sirve algo de té inglés y me lo entrega.@
+cl a,%type_crossfade_fst
+`"--------"@
+`"…………"@
+` Ninguno de nosotros dice nada.@
+` Senpai bebe su té inglés como si no notara mi presencia.@
+` Siguiendo el ejemplo de Senpai, bebo un poco también.\
+br
+` ----Está caliente.@
+br
+` Tan caliente que quema mi lengua.@ El calor me devuelve el pulso.@
+` Siento que mi corazón, cerebro, y todos mis otros órganos que se detuvieron, comienzan a moverse un poco nuevamente.\
+` Senpai no dice nada.@
+` No pasa mucho tiempo para que la taza de té quede vacía.@
+` Senpai naturalmente rellena la taza con más té.\
+`"……… Ah."@
+` Tengo la sensación de que tengo que decir algo.@
+ld c,":a;image\tachi\cel_t12.jpg",%type_crossfade_fst
+`"Tohno-kun."@
+`"¡------!"@
+` Me estremezco por el susto.@
+`"Voy a salir por un momento.@ ¿Puedo contar contigo para vigilar la casa?"@
+`"Ah… s-sí.@ No hay problema."@
+ld c,":a;image\tachi\cel_t04.jpg",%type_crossfade_fst
+`"Muy bien, entonces la dejaré en tus manos.@ Regreso enseguida, así que no hagas nada extraño."@
+cl a,%type_lshutter_fst
+` Me pregunto que tan seria es ella.@ Sonriendo mientras habla, Senpai se retira.\
+` -----.@
+` Estoy solo de nuevo.@
+` La calidez que sentí hasta hace un momento está enfriándose rápidamente.\
+` …… Senpai no me preguntó nada.@
+` Ella trae a alguien como yo a su apartamento y cuida de mí como si fuese lo más natural.@
+` …… Aunque no me di cuenta.@
+` La calidez del té, la elegancia de la habitación.@
+` Lo que es muchas, muchas veces más confortante que esas cosas,
+` es tener a alguien a mi lado.\
+`"¡Kuh……!"@
+` Me duele el pecho.@
+` Hace poco tiempo, prefería estar sólo, sin sentir nada.@
+` Pero ahora, me puse nervioso sólo por su ausencia.@
+` Quiero gritar como si me hubiese vuelto loco.@
+br
+` …… Cuánta arrogancia.@
+` Soy un asesino, después de todo.@
+` No tengo ningún derecho a la amabilidad de Senpai.@
+` Pero estoy deseando egoístamente que Senpai rápidamente, rápidamente regrese a casa-----
+!w5000
+ld c,":a;image\tachi\cel_t01a.jpg",%type_lshutter_fst
+`"Estoy de vuelta, Tohno-kun.@ Gracias por vigilar el lugar."@
+`"---Sen… pai."@
+` Parece que Senpai ha comprado toda clase de cosas.@
+` Hay muchas bolsas de plástico colgando de sus manos.\
+`"Veamos… por favor viste esto por ahora.@ Es barato, pero es mejor que ropa mojada.@ Por cierto, el baño ya debe estar listo.@ Deberías sentirte un poco mejor después de relajarte ahí dentro por un rato."@
+cl a,%type_crossfade_fst
+`"……… ¿Eh?"@
+` Senpai prepara todo elegantemente.@
+` Mi cambio de ropa, un baño…
+` …… Esta persona es.@
+` Aunque no hay necesidad de hacer estas cosas, por una persona como yo.\
+`"…… Está bien, Senpai.@ Me voy a casa.@ No puedo causarte más problemas."@
+ld c,":a;image\tachi\cel_t12.jpg",%type_crossfade_fst
+`"¿Qué estás diciendo, Tohno-kun?@ Dijiste que no puedes ir a casa, ¿cierto?@ ¡Ya he comprado comida para dos, así que por favor sé responsable!"@
+`"¿Responsable---?@ ¿Senpai?@"
+`"Por favor caliéntate, come la cena, y recomponte antes de ir a casa.@ Si vas a casa con una cara como ésa, estaré tan preocupada que no podré dormir."@
+`"--------"@
+` Me duele el pecho.@
+` Felicidad.@ Estoy tan feliz que estoy a punto de llorar, pero por otro lado, tengo miedo de su bondad.\
+`"…… ¿Por qué?"@
+ld c,":a;image\tachi\cel_t03.jpg",%type_crossfade_fst
+`"¿Sí?@ ¿Qué pasa, Tohno-kun?"@
+`"…… ¿Por qué llegas tan lejos, Senpai?@ Yo---no tengo ningún derecho a ser tratado amablemente por ti."@
+` ---Asesiné a alguien.@
+br
+` No puedo tener a alguien cuidando de mí.@
+br
+`"…… No tengo esperanza.@ Cometí un error muy grave justo entonces, y escapé sin asumir responsabilidad.@ Incluso estaba considerando morir---"\
+br
+br
+br
+br
+br
+br
+` ---Estoy tratando de aferrarme a Senpai.\
+` Ese pecado.@
+` La vida que tomé con mis propias manos.@
+` Estoy tratando de convertirlo en algo que no sucedió, en mi mente.@
+`"…… El error que cometí es imperdonable… no, no creo que deba ser perdonado.@ Por eso no tengo esperanza.@ No tengo derecho a ser tratado bien por ti en este lugar, Senpai."\
+ld c,":a;image\tachi\cel_t12.jpg",%type_crossfade_fst
+` Senpai suspira.@
+`"…… Parece que estás convencido de que eres una mala persona, Tohno-kun," responde ella con simpleza.@
+` Senpai comprendió la verdad que descansa profundamente dentro de mí.\
+ld c,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
+`"Pero eso sólo muestra que no tienes confianza en tus propias acciones.@
+` Sabes que cometiste un error, pero no entiendes si es bueno o malo.@ Es por eso que no tienes más opción que acorralarte en un rincón hasta que las cosas se hagan claras para ti."@
+`"----No, eso es----"@
+cl a,%type_crossfade_fst
+\
+` …… No lo sé.@
+` Pero sí, estoy asimilando el hecho de que lo hice, pero todavía no entiendo por qué.@
+` Asesiné a alguien, y eso me hace una mala persona.@
+` Tal vez sólo he estado forzándome a tomar el papel de un villano mientras intento confirmar dónde encaja mi pecado---\
+ld c,":a;image\tachi\cel_t12.jpg",%type_crossfade_fst
+`"No sé cuál sea tu error, y para ser sincera, no me importa.@
+` Dices que no tienes derecho a la amabilidad, pero ése es sólo tu punto de vista.@
+` No estoy siendo amable contigo por tu bien, así que por favor no te preocupes por eso."\
+ld c,":a;image\tachi\cel_t08.jpg",%type_crossfade_fst
+`"…… Bueno, quiero decir, que estoy haciendo esto porque quiero.@
+` No tiene nada que ver con tus circunstancias.@ Puede que sea una molestia para ti, pero por favor considérate capturado por una senpai egoísta y date por vencido."@
+ld c,":a;image\tachi\cel_t04.jpg",%type_crossfade_mid
+` Diciendo esto, Senpai sonríe.@
+` Esa dulce, protectora y débil sonrisa.\
+bg #000000,%type_crossfade_slw
+playstop
+bg "image\bg\bg_18b.jpg",%type_crossfade_slw
+play "*9"
+br
+` Puedo escuchar el sonido de la lluvia.@
+br
+` …… Al final, no pude sacudirme la amabilidad de Senpai después de todo.@
+` Ella me deja usar el baño y prepara una pijama para mí.@
+` Me invita a cenar, me presta una cama porque está lloviendo afuera, y estoy a punto de quedarme dormido de esta manera.\
+`"-------"@
+` Mi garganta se siente bloqueada.@
+` Senpai ha cuidado tanto de mí que mis sentidos se sienten entumecidos.@
+` Durante la cena, ella habló alegremente como siempre lo hace.@
+` Trató todos los temás usuales, sobre la escuela, sobre las muchas tiendas en el distrito comercial, y así sucesivamente.\
+` …… Y aunque no pude dar siquiera una respuesta apropiada, cada vez que respondía, sentía que un poco de mí regresaba.@
+` Ahora, estoy durmiendo en la cama de Senpai, y no puedo dejar de pensar en Senpai, que está durmiendo en el piso.\
+br
+br
+` ---Qué giro de eventos.@
+` Asesiné a alguien hace sólo horas y ahora me estoy excitando como un estudiante normal.@
+` Mis sentidos en verdad se sienten entumecidos.@
+` No pensé que podría volver a verme bañado en felicidad.\
+`"…………"@
+` No puedo dormir, así que miro alrededor.@
+` No sé qué debería hacer a partir de ahora.@
+br
+` Puedo escuchar el sonido del aguacero de afuera.@
+br
+`"Vas a llegar tarde mañana si no te apresuras y duermes, Tohno-kun."@
+`"---Senpai, ¿estás despierta?"@
+`"Sí, no puedo dormir hasta que tú lo hagas.@ Soy una chica, después de todo."\
+`"…… Lo siento.@ Dormiré en la cocina entonces."@
+`"Oh, ¿cuántas veces tengo que decírtelo?@ Cogiste un resfriado, así que no puedes dormir en un lugar como la cocina.@ Estoy bien, por favor apresúrate y olvida los pensamientos desagradables para que puedas dormir."@
+`"-----Pensamientos desagradables."@
+` …… Eso es imposible.@
+` Eso no es algo que pueda olvidar---es algo que no debería olvidar.@
+` Sea cual fuere la razón, asesiné a alguien.@
+` Olvidar a la persona que asesiné sería un pecado mucho más allá de lo imaginable.\
+`"…… No.@ No puedo simplemente encubrir mis pecados, Senpai.@ No puedo olvidarlos, y no lo voy a intentar.@
+` …… Pero gracias.@ En verdad me ayudaste con toda clase de cosas el día de hoy.@ Pude haber muerto de haberme quedado de esa manera."@
+` Eso sería escapar.@
+` Si en verdad pienso que cometí un error, no debería negarlo.\
+`"¿Pecados, dices?@ Parece que tu error es algo inimaginable para mí."@
+` Senpai habla con una alegre voz, como si estuviese diciendo una broma.\
+`"Pero no existe tal cosa como un humano que no comete pecados.@
+` No es que el mundo esté dividido entre pecadores e inocentes.@
+` Mientras estés vivo, cometerás errores.@
+` …… Es triste, pero es inevitable.@ Vivir es igual a desgastarse.@
+` Somos solamente seres que influencian a otras cosas mientras nos desvanecemos lentamente."\
+`"…… ¿Qué?@ ¿Entonces estás diciendo que no podemos ser salvados?@ No me gusta esa historia sobre cómo todos cometen errores."@
+`"…… Sí, supongo que no podemos ser salvados si ése fuese el caso.@
+` Pero puedes expiar tus pecados.@ Sólo hay personas que pueden y personas que no pueden expiar sus pecados.@
+` Pienso que los que no tienen salvación son aquellos que no pueden expiar sus pecados."@
+br
+` …… Por alguna razón, la voz de Senpai suena muy triste.\
+`"Pero tú puedes expiar tus pecados, Tohno-kun.@ No sé qué clase de error cometiste, pero eres del tipo de persona que puede expiar sus pecados.@
+` Si estás demásiado preocupado para dormir, entonces sólo piensa en cómo vivirás y expiarás tus pecados de ahora en adelante.@
+` Es algo muy difícil de decidir, así que tu cerebro de seguro se cansará, y te dormirás de inmediato."@
+` No sé que tan seria es ella, ya que parece estar agregando bromás a la mezcla.\
+`"…… Puedo expiar mis pecados, ¿eh?@ Pero Senpai, mi error es definitivamente uno que no puede ser expiado.@ Eso es algo que puedo asegurar."@
+`"Ajaja, es cierto.@ Sin importar qué forma tome, el pecado no puede ser expiado.@
+` Si lastimas a alguien, el pecado no desaparece aunque sanes la herida, ¿cierto?@
+` Sin importar cuánto te esfuerces, no puedes borrar los errores que has cometido.\
+` Pienso que expiar no se trata de los resultados, sino del proceso.@
+` A eso me refiero con aquellos que pueden expiar y aquellos que no pueden.@ Es por eso que tú eres el tipo de persona que puede expiar sus pecados."\
+`"…… No entiendo.@ Soy una persona terrible.@ No soy la gran persona que piensas que soy."@
+`"Eso puedo verlo fácilmente.@ Estaba muy conmovida entonces.@ Tienes una herida terrible en tu pecho, ¿cierto?"@
+`"¿Eh…?@ Sí, pero ¿qué hay con eso?"@
+`"Debes haber tenido un accidente muy serio para tener una cicatriz como ésa… las cicatrices tienden a distorsionar tu mente.@ Una herida de ese tamaño que no desaparece está un poco fuera de lo ordinario."\
+`"Pero eres una persona muy natural.@ Cualquiera que pueda llevar una vida normal con esa clase de herida puede estar orgulloso de su propia fortaleza.@ Debes haber tenido una niñez muy apropiada."@
+` Satisfecha, Senpai concluye sus reflexiones y queda en silencio.@
+` Puedo escuchar incluso su respiración si agudizo mis oídos.\
+`"…… ¿Estás dormida, Senpai?"@
+` No hay respuesta.@
+` Sólo puedo escuchar el sonido de la lluvia de afuera.@
+`"…… ¿Expiar mis pecados, eh?"@
+` Un castigo apropiado para el pecado que he cometido.@
+` Supongo que mañana encontrarán el cuerpo de la chica que asesiné, y habrá una nueva historia sobre un asesino en serie en las noticias.@
+` No puedo ni comenzar a contar las cosas que perderé cuando eso suceda.@
+` Seguramente será problemático para Akiha, y nunca podré volver a hablar con Senpai de esta manera.@
+`"…………"\
+` Pero si eso expiase mi pecado, entonces no tengo más opción que aceptarlo.@
+` Si puedo expiar mi pecado con eso---entonces podría haber salvación en algún lugar.@
+`"Haa----aahhhh."@
+` Me siento un poco más soñoliento.@
+` No sé qué sucederá mañana.@
+` No lo sé, pero si puedo ser perdonado…
+` Hasta el momento en que mi pecado sea descubierto, hasta el momento en que sea confrontado con mi pecado…
+` Desearía poder seguir llevando este tipo de vida.\
+playstop
+bg #000000,%type_crossfade_slw
+!w1000
+` …… Fuoomp.@
+` …… Sssh.@
+br
+`"…… Nn."@
+br
+` …… Hay un ruido que viene de cerca.@
+` No tengo ganas de despertar en absoluto, pero abro los ojos perezosamente como reacción al ruido.\
+bg "image\event\cel_e03a.jpg",%type_crossfade_slw
+` -----Senpai se está cambiando.@
+br
+` Todavía estamos a mitad de la noche.@ No hay luz entrando por la ventana.@
+` Tal vez la lluvia se detuvo; hay mucho silencio ahora.@
+br
+` Senpai se está quitando la ropa.\
+`"………"@
+` Qué lástima.@
+` Si no estuviese en un profundo estado de arrepentimiento a causa del asesinato que he cometido, o medio dormido, podría ser capaz de apreciar lo atractiva que se ve Senpai.@ Sin embargo, en este momento, mi cabeza no parece funcionar correctamente.\
+` Los ojos de Senpai parecen faltos de vida.@
+` Más importante aún, hay algo extraño.@
+br
+` ----¿Qué----es eso?@
+bg "image\event\cel_e03b.jpg",%type_crossfade_fst
+br
+`"…………"@
+` Hay extrañas magulladuras sobre sus brazos.@
+` …… No, no son magulladuras, son como tatuajes.\
+br
+br
+br
+br
+br
+br
+br
+` …… Hay… algo… que no está bien… en todo esto.\
+bg #9c0120,%type_crossfade_fst
+bg "image\event\cel_e03b.jpg",%type_crossfade_fst
+`"………"@
+br
+` Me siento adormilado de nuevo.@
+` Creo que… un montón de cosas están desordenadas alrededor de los pies de Senpai.@
+br
+` Pero eso es todo.@
+` Caigo en un profundo sueño.\
+bg #000000,%type_crossfade_slw
+!w3000
+return

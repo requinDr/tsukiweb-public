@@ -1,0 +1,23 @@
+monocro off
+wavestop
+play "*2"
+;---added context above---
+bg "image\bg\bg_06a.jpg",%type_nowaitdisp
+br
+` -----Sé que Yumizuka estaba sonriendo ayer.@
+br
+` No pensé que podría tener tener semejante expresión, decir "bai-bai", y entonces huir de casa.\
+`"---Sensei."@
+`"¿Qué sucede, Tohno?@ ¿Tiene una pregunta?"@
+`"Sí.@ ¿Es verdad que un estudiante de nuestra clase ha huido de casa?"@
+`"Hrm------"@
+` Instantáneamente, el aire en el salón se solidifica.@
+` El maestro frunce el ceño, y entonces, con una complicada expresión, inclina su cabeza en asentimiento.\
+`"Sí, eso es lo nos dijeron los padres de Yumizuka Satsuki.@ Yumizuka no fue a casa anoche, pero la han estado buscando, y estoy seguro de que ya la han encontrado."@
+` Diciendo eso, el maestro se retira.@
+br
+` El salón se vuelve ruidoso de nuevo.@
+` Tengo un mal presentimiento sobre esto.@
+` …… Es muy pesada.@ Una sensación terrible, como si mi cuerpo estuviese atado a esta silla.\
+bg #000000,%type_lcartain_mid
+return

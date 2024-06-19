@@ -1,0 +1,52 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg #000000,%type_crossfade_mid
+` ----Revisaré el callejón en que ella estaba anoche.@
+` Si está huyendo de la gente, es el único lugar que me viene a la mente.\
+bg "image\bg\bg_30b.jpg",%type_lcartain_mid
+` Aún no tengo control sobre mi respiración.@
+` Corro con toda mi fuerza desde el parque.@
+` Mi corazón grita por el excesivo esfuerzo.@
+` Ignorándolo, continúo corriendo para encontrarla lo más pronto posible.\
+bg "image\bg\bg_31b.jpg",%type_lcartain_mid
+`"----¡Arcueid!"@
+` Tan pronto como llego al callejón, grito su nombre.@
+`"¿Estás aquí, no?@ ¡Sal, Arcueid……!"@
+` Bajo la luz de la luna, mi solitaria voz hace eco en el callejón.@
+`"…… ¡Arcueid……!@ ¡Por favor, sal……!"\
+br
+br
+br
+br
+br
+` …… No hay respuesta.@
+` Sólo hay una vacía soledad.\
+`"¡Maldición…………!"@
+` Arcueid no está aquí.@
+` Entonces ¿adónde más puedo ir?@
+br
+` No puedo encontrarla corriendo sin rumbo fijo.@
+` A este paso nunca----nunca la veré de nuevo.\
+`"------"@
+` No, aún no he terminado.@
+` Aún no he cumplido mi promesa con Arcueid.@
+br
+` La promesa de ayudarla a derrotar al vampiro, y la promesa de vernos esta noche para poder pelear juntos.\
+`"…… Pro…… mesa……"@
+` …… Es cierto.@ Nuestra promesa aún persiste.@
+` Aunque sólo uno lo haga, yo----aunque sólo yo lo haga, cumpliré nuestra promesa.\
+bg #000000,%type_lcartain_slw
+bg "image\bg\bg_29b.jpg",%type_lcartain_slw
+` Regreso al parque.@
+` Nuestra promesa aún persiste aquí.@
+` Nuestra promesa incumplida aún persiste esta noche.@
+br
+` ----Entonces,
+` Si no puedo romper esta promesa, y si ella también piensa que es importante,
+br
+` Arcueid volverá.@
+` Sólo puedo seguir creyendo en ella y esperar aquí.\
+bg #000000,%type_crossfade_slw
+return

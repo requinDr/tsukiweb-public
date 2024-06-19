@@ -1,0 +1,25 @@
+monocro off
+wavestop
+play "*2"
+;---added context above---
+bg "image\bg\bg_34a.jpg",%type_nowaitdisp
+` …… Sí.@
+` He decidido no tener ningún arrepentimiento, y no quiero que Kohaku-san se preocupe por mí.@
+`"Estoy a favor.@ No voy a rechazar mi propia fiesta de bienvenida, ¿cierto?"\
+ld l,":a;image\tachi\koha_t03b.jpg",%type_crossfade_fst
+`"¡Está decidido!@ Bien, entonces yo prepararé la comida.@ Hisui-chan---¿puedes ocuparte de mi trabajo por hoy?"@
+ld r,":a;image\tachi\his_t02.jpg",%type_crossfade_fst
+`"No hay problema.@ Barrer el vestíbulo y el ala este, ¿no?"@
+ld r,":a;image\tachi\aki_t04b.jpg",%type_crossfade_fst
+`"Bien, y entonces yo… ¿qué debería hacer, Kohaku?"@
+ld l,":a;image\tachi\koha_t05b.jpg",%type_crossfade_fst
+`"Akiha-sama y Shiki-san deberían descansar en sus habitaciones.@ Prepararé la cena temprano para hacer tiempo para la fiesta, si necesitan hacer algo, por favor traten de estar listos para entonces, ¿de acuerdo?"\
+cl a,%type_lshutter_mid
+` Kohaku-san entra a la cocina, Hisui sale al patio.@
+ld c,":a;image\tachi\aki_t08b.jpg",%type_crossfade_fst
+`"De acuerdo, iré a mi habitación."@
+cl a,%type_lshutter_mid
+playstop
+br
+` Entonces.@ ¿Qué debería hacer?@
+return

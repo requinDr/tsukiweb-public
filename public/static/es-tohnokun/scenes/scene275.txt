@@ -1,0 +1,11 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_01a.jpg",%type_nowaitdisp
+`"……"@
+` No, tengo la sensación de que no podré ver a Senpai si espero aquí.@
+` Si Senpai no tiene deseos de verme, se irá tan pronto como me vea.@
+` Debería ir al salón primero y pensar en qué hacer.\
+bg #000000,%type_lcartain_mid
+return

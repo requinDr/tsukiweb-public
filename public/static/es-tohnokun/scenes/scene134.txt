@@ -1,0 +1,52 @@
+monocro off
+wavestop
+play "*3"
+;---added context above---
+bg "image\bg\bg_11a.jpg",%type_nowaitdisp
+ld c,":a;image\tachi\cel_t07a.jpg",%type_crossfade_fst
+`"----Ah."@
+` Que ella me mire de esa manera--me hace recordar mi sueño.@
+`"¿Tohno-kun?@ ¿Qué sucede?@ Tu cara se está poniendo roja."@
+`"N, no es nada.@ Sólo, tuve un mal sueño.@ No me siento muy bien."@
+` Pienso que soy sincero al no decir que me siento perfectamente bien.\
+`"……… ¿Tohno-kun?"@
+` Ella me mira con una expresión muy seria.@
+`"…… ¿Senpai……?"@
+` Estoy perplejo.@ Siento como si Senpai leyese mi mente, y recuerdo más y más del sueño de anoche.@
+ld c,":a;image\tachi\cel_t12.jpg",%type_crossfade_fst
+`"Tohno-kun, dijiste que tuviste un mal sueño.@ ¿Qué significa eso?"@
+`"No significa nada, y no es nada de tu incumbencia.@ No te preocupes por eso, y dime qué estás haciendo."\
+ld c,":a;image\tachi\cel_t08.jpg",%type_crossfade_fst
+`"¡Sí me incumbe!@ Tohno-kun, no dormiste bien anoche, ¿cierto?"@
+`"----¿Eh?"@
+` Bueno--tiene razón pero.@
+`"…… Senpai, ¿cómo sabes eso?"@
+ld c,":a;image\tachi\cel_t12.jpg",%type_crossfade_fst
+`"Porque tu cara está toda roja.@ No sé si estás enfermo, pero no te ves bien, Tohno-kun."@
+`"Oh--ya veo."@
+` Me sorprendí por un momento.@
+` Ella supuso correctamente lo de anoche, así que pensé--\
+ld c,":a;image\tachi\cel_t07a.jpg",%type_crossfade_fst
+`"Sobre ese sueño, Tohno-kun.@ Por favor dime qué tipo de sueño fue."@
+` …… Senpai me pregunta de nuevo, no se ha dado por vencida.@
+`"…… Bien.@ En realidad no es gran cosa.@ Sólo que…… Um, tú estuviste en él, un poco."@
+br
+` Respondo sin entusiasmo.@
+br
+` Repentinamente,
+ld c,":a;image\tachi\cel_t10d.jpg",%type_crossfade_fst
+`"¿¡Yo, yo estuve en él!?"@
+` Senpai se enfurece.\
+`"Um…… ¿Senpai?"@
+ld c,":a;image\tachi\cel_t09b.jpg",%type_crossfade_fst
+`"……………………"@
+` Rápidamente, Senpai se aleja un paso y me mira fijamente.@
+`"…………"@
+cl c,%type_lshutter_mid
+` Senpai parece querer decir algo más, pero hace una rápida reverencia y se va corriendo.\
+`"¿………?"@
+` Ladeo mi cabeza confundido.@
+` Entonces, la campanada de la tutoría hace eco en el pasillo.\
+bg #000000,%type_crossfade_mid
+!w1000
+return

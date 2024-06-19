@@ -1,0 +1,62 @@
+monocro off
+wavestop
+;---added context above---
+play "*3"
+bg "image\bg\bg_19b.jpg",%type_lcartain_mid
+ld c,":a;image\tachi\ark_t01a.jpg",%type_lshutter_mid
+`"Esta habitación es bastante agradable.@ No tendría problema para pasar la noche aquí."@
+` Arcueid mira alrededor de la habitación de hotel.@
+`"-----"@
+` No tengo nada que decir por ahora.\
+`"Mi apartamento probablemente ya ha sido descubierto, así que vamos a escondernos aquí por esta noche.@ Oh, no tienes que preocuparte por el dinero.@ Soy rica, así que serás mi invitado."@
+` Hablando alegremente, Arcueid cierra las cortinas.@
+` También apaga las luces y la habitación se torna tan oscura como la noche.\
+` Yo suspiro.@
+`"…… ¿Qué estás pensando, Arcueid?"@
+ld c,":a;image\tachi\ark_t03.jpg",%type_crossfade_fst
+`"Estoy pensando en toda clase de cosas."@
+`"No, no me refiero a eso---"@
+br
+` Estoy preguntando por qué has alquilado en un hotel de clase alta, no uno barato--y por qué alquilaste el último piso entero.\
+`"………"@
+` Intento decir eso, pero me detengo.@
+` En este momento, mi trabajo es cuidar a este supuesto vampiro y nada más.@ No voy a hacer ninguna pregunta inútil.@
+`"---No, olvídalo.@ Haz lo que quieras."@
+ld c,":a;image\tachi\ark_t08.jpg",%type_crossfade_fst
+`"Eres extraño, Shiki, te enfadaste de repente y ahora te quedas callado.@ Simplemente no te entiendo."@
+` Arcueid descansa sobre la cama, sonriendo como si se estuviese divirtiendo.@
+\
+`"Voy a dormir hasta que se ponga el sol.@ Será mejor que duermas mientras tengas la oportunidad.@
+` Los vampiros no se mueven durante el día, así que montarás guardia de verdad durante la noche."@
+`"…… ¿Te das cuenta de que acabas de decir algo que contradice tu existencia por completo?"@
+`"Oh, para mí no hay problema---oh, creo que estoy casi en mi límite.@ Buenas noches, Shiki.@ Despiértame cuando se ponga el sol."@
+cl c,%type_lshutter_mid
+`"¡O--oye!"@
+`"-------"@
+` Como una máquina cuyo poder es desconectado, Arcueid se queda dormida repentinamente.\
+`"Ha-----"@
+` Está tan… indefensa.@
+`"…… En este momento, podría escapar si así lo quisiera."@
+` Me forzó a venir con ella, después de todo.@ Podría escapar fácilmente ahora.@
+` …… Y ya no tengo ese impulso, pero…
+br
+`"Ya te he matado una vez, pero…"@
+br
+` ¿Cómo es capaz de quedarse dormida así a pesar de eso?@
+`"………"@
+` Miro el rostro de Arcueid mientras duerme sobre la cama.@
+` …… Su amplio pecho sube y baja.@ Parece que está respirando.@
+` Pero su cuerpo no se mueve en absoluto.@
+` Es como si el aire a su alrededor se hubiese detenido.@ Hay tanta tranquilidad que hasta yo podría dejar de moverme.@
+br
+` ----Qué sueño tan apacible.@
+br
+` Tan vulnerable como si tuviese absoluta confianza en mí, aunque apenas acabemos de conocernos.\
+`"---Es tan estúpida."@
+` …… Es tan estúpidamente sincera que podría empezar a preocuparme.@
+` Pero aparte de eso, éste es un momento decisivo.@
+` Éste muy bien podría ser el punto de no retorno para Tohno Shiki.@
+` Yo----
+br
+playstop
+return

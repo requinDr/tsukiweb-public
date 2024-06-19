@@ -1,0 +1,25 @@
+monocro off
+wavestop
+play "*9"
+;---added context above---
+bg "image\bg\bg_19d.jpg",%type_nowaitdisp
+` …… Es sospechoso.@
+` Hay algo muy sospechoso en que ella diga "no voy a romperlos".\
+`"--Ni siquiera un vistazo.@ Conozco tus ridículos poderes, después de verte en ese callejón.@ ¿Qué haría si los destruyeras por accidente?"@
+ld c,":a;image\tachi\ark_t16.jpg",%type_crossfade_fst
+`"¡Oye!@ ¿Qué quieres decir con 'ridículos poderes'?@ Déjame decirte, en términos de fortaleza fuera del combate, tú eres más fuerte que yo.@ Yo no rompo las cosas al azar."@
+` Diciendo eso, Arcueid extiende sus manos como si fuese a tomarlos por la fuerza.@
+br
+` …… Su actitud se hace cada vez más y más sospechosa.\
+cl c,%type_lshutter_mid
+` Salto de la cama para alejarme de ella.@
+ld c,":a;image\tachi\ark_t06.jpg",%type_crossfade_fst
+`"Oye, estás escapando."@
+`"Por supuesto.@ Te lo diré ahora: no voy a entregar estos lentes.@ Aunque sólo haya una posibilidad en un millón de que los rompas, son irremplazables para mí.@ Después de todo, fuiste tú quien dijo que no podría seguir cuerdo sin estos lentes.@ ¿Quieres que me vuelva loco?"\
+ld c,":a;image\tachi\ark_t03.jpg",%type_crossfade_fst
+`"¿Huh?@ N… no, no es eso."@
+` …… Arcueid obviamente está tratando de no mirarme.@
+cl c,%type_crossfade_fst
+`"--Vamos, Arcueid.@
+` No sé qué estás planeando, pero si pierdo estos lentes, no estaré en posición de ayudarte.@ Si tuviese que ver esas líneas 24 horas al día, creo que moriría por el dolor de cabeza antes de volverme loco."\
+return

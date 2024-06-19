@@ -1,0 +1,113 @@
+monocro off
+wavestop
+play "*3"
+;---added context above---
+bg #000000,%type_lcartain_slw
+bg "image\bg\bg_27a.jpg",%type_lcartain_mid
+play "*3"
+` El clima es grandioso así que decido ir al parque.@
+` Podemos relajarnos ahí e ir a otro lugar más apropiado más tarde.\
+bg "image\bg\bg_28a.jpg",%type_lcartain_mid
+` Entramos al parque.@
+` Aún es plena mañana pero hay mucha gente de mi edad aquí.\
+ld c,":a;image\tachi\ark_t01a.jpg",%type_lshutter_mid
+`"Hm, hay mucha gente aquí durante el día.@ Nos hemos visto mucho aquí, pero parece un lugar totalmente distinto."@
+` Arcueid parece estar de buen humor.@
+` Sólo planeaba caminar alrededor del parque, pero no parece estar insatisfecha.\
+`"Oh, hay una tienda en un lugar como éste.@ Shiki, ¿qué venden ahí?"@
+` Arcueid señala con emoción el puesto de un vendedor.@
+` El camino desde la fuente lleva a un puesto de helados sobre ruedas.\
+`"Es un vendedor de helados fuera de temporada.@ Las cosas frías no son buenas para el cuerpo, así que deberíamos dejarlo pasar por ahora." Detengo la pregunta de Arcueid antes de que la haga.@
+ld c,":a;image\tachi\ark_t11.jpg",%type_crossfade_fst
+` Sin importar cuán infeliz sea la cara que ponga, creo que comer helado en otoño no sería nada bueno.\
+` ----Pero, ¿qué es esta extraña sensación?@
+` Me siento raro sólo al caminar, siento que todos nos observan……\
+ld c,":a;image\tachi\ark_t03.jpg",%type_crossfade_fst
+`"Oye Shiki, ¿conoces a todas estas personas?"@
+`"No, sólo conozco a una persona que faltaría a la escuela para pasar el tiempo de esa manera.@ ¿Por qué?"@
+`"Hm, un montón de gente parece estar mirándonos, por eso pensé que tal vez los conocías."@
+`"…… Ya veo.@ Entonces eso era lo que se sentía extraño."\
+` Ahora lo entiendo.@
+` Sólo estaba dando vueltas para encontrar un buen sitio sobre el pasto para sentarnos, pero todos nos están lanzando miradas.@
+` No es necesario decirlo pero, están mirando a Arcueid, no a mí.\
+` He estado haciendo mi mejor esfuerzo para no ser consciente de ello, pero Arcueid es increíblemente hermosa.@ Y caminar en el parque es simplemente pedir que la miren.@
+br
+` Todos los chicos que están matando el tiempo en el parque comienzan a mirar hacia ella.@
+` …… Por alguna razón, me siento enojado.\
+`"Arcueid, vamos a otro sitio."@
+` Tomando su mano, tiro de ella mientras camino hacia la parte trasera del parque.@
+bg "image\bg\bg_29a.jpg",%type_lcartain_mid
+` En el lugar donde solemos reunirnos hay mucha menos gente que frente a la fuente.@
+` …… Esto debería ser un poco mejor a lo anterior, por lo menos.\
+`"Mataremos el tiempo aquí por un rato.@ Voy a buscar algo para beber, ¿quieres algo en especial?"@
+` Suelto su mano y volteo hacia ella.\
+ld c,":a;image\tachi\ark_t14.jpg",%type_crossfade_fst
+`"U…… um, ¿agua está bien?"@
+`"Seguro.@ Siéntate en aquel banco…… si algún sujeto comienza a hablarte, simplemente no lo escuches."@
+` Diciendo eso, corro hacia una máquina expendedora cercana.\
+bg #000000,%type_lshutter_fst
+bg "image\bg\bg_29a.jpg",%type_lshutter_fst
+` Aunque ya es más de mediodía, no dejamos el parque.@
+` …… No estoy seguro de por qué, pero Arcueid ha estado en silencio desde que vinimos aquí.@
+` Ni siquiera ha bebido el agua que le traje, y sólo mira alrededor del parque sin hacer nada.\
+` Observamos las bandadas de palomas alrededor del parque y las figuras de los niños que corren felizmente acompañados por sus madres.\
+ld c,":a;image\tachi\ark_t14.jpg",%type_crossfade_fst
+`"Oye, Shiki."@
+`"¿Hm?@ ¿Ya te aburriste de no hacer nada?@ Podemos ir a algún sitio y conseguir algo para comer si quieres."@
+`"No, no es eso…… Sólo me preguntaba sobre lo que ocurrió antes."@
+`"¿……?"@
+` ¿Antes?@ …… ¿De qué está hablando?\
+`"No entiendo.@ ¿A qué te refieres?"@
+`"Estoy hablando de cuando tomaste mi mano.@ Hemos entrado en contacto antes, pero siempre hubo una razón.@ Pero ahora, no hubo razón alguna, así que me preguntaba qué había sido eso."@
+`"¿Qué fue eso?----Ciertamente no hubo una razón ni nada parecido."\
+` Diciendo eso, me confundo también.@
+` …… Ahora que lo pienso, la arrastré conmigo naturalmente y sin razón.@
+` Dicho eso, ni siquiera entiendo por qué.\
+`"En realidad no importa.@ No es la gran cosa.@ Algo repentino como eso, es simplemente humano."@
+ld c,":a;image\tachi\ark_t03.jpg",%type_crossfade_fst
+`"Ya veo.@ Habiendo hecho tantas cosas sin razón alguna… ciertamente has hecho un montón de cosas inútiles."@
+` Arcueid responde, asombrada.\
+ld c,":a;image\tachi\ark_t01b.jpg",%type_crossfade_fst
+`"Oye Shiki.@ Está un poco fuera de lugar pero, ¿alguna vez tuviste una época como ésa?"@
+` Ella en verdad está preguntando cosas al azar.@
+` Está mirando hacia los niños que juegan, así que probablemente está preguntando sobre eso.\
+`"…… Hmm, tal vez.@ Jugaba mucho cuando era niño, pero solamente dentro de la mansión.@ Apenas jugué alguna vez en un parque como éste."@
+br
+` …… Es cierto.@ Mis únicos compañeros de juego eran Akiha y los otros.@ Nunca jugué con personas desconocidas como estos niños.@
+br
+` Podría decirse que yo era…
+` Un niño que llevaba una vida aislada.\
+`"¿Qué hay de ti, Arcueid?@ …… Um, no tienes que hablar de eso si no quieres."@
+` …… Um, si los vampiros no tienen niñez, preguntarle sería grosero.\
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"Sí.@ Como piensas, nunca tuve una niñez.@ Mientras era débil como individuo, simplemente dormía, y despertaba sólo cuando mi existencia estaba en su punto máximo.@
+` Por eso pensé que era extraño.@ La infancia y la vejez son épocas tan inútiles, ¿por qué ustedes se las ingenian para vivir durante ellas?"@
+` Casi parece estar preguntándose a sí misma.\
+`"…… ¿Arcueid?"@
+`"No es nada.@ Es la primera vez que paso el tiempo sin hacer nada, así que mis pensamientos parecen estar funcionando mal."@
+cl c,%type_crossfade_fst
+` Diciendo eso, Arcueid se levanta del banco.@
+` Me levanto con ella.@
+` …… Bueno, ya hemos estado bajo el sol por unas dos horas, probablemente deberíamos ir a la ciudad.\
+`"----Oh, si esto era tedioso debiste habérmelo dicho."@
+ld c,":a;image\tachi\ark_t03.jpg",%type_crossfade_fst
+`"Hm, tal vez sea tedioso, pero no fue aburrido.@
+` Incluso estaba pensando que me gustaría pasar más tiempo aquí si se trata de esta clase de tedio pero, ¿no te agradó?"@
+`"¿Eh……?"\
+` …… Es cierto, aunque fue tranquilo, no fue aburrido.@
+` Ahora que lo pienso, pasar el tiempo tomando el sol con Arcueid es algo bastante raro.\
+`"----Es cierto, no fue malo en absoluto.@ Pero, busquemos algo para comer.@ No he comido nada desde esta mañana, así que tengo mucha hambre."@
+` Diciendo eso, comenzamos a salir del parque.\
+`"Hm------"@
+` Por un breve momento, pensé en sostener su mano pero me detuve de inmediato.@
+` No hubo razón para ello antes, así que se sintió natural hacerlo.@
+` Pero ahora que tengo una razón, sostener su mano parece muy insensato.\
+` …… Ser insensato significa que percatarme de ello es el resultado de pensamientos nada puros.@
+br
+`"Estoy lleno de teorías el día de hoy."@
+br
+` Cielos.@ Justo como dice Arcueid, ciertamente hago un montón de cosas inútiles.\
+bg #000000,%type_lcartain_slw
+playstop
+!w1000
+return

@@ -1,0 +1,32 @@
+monocro off
+wavestop
+play "*3"
+;---added context above---
+bg "image\bg\bg_06a.jpg",%type_nowaitdisp
+` Senpai no puede estar enojada por algo aparte del incidente de esta mañana.@
+` …… Senpai no parecía enfadada esta mañana, pero si está enfadada, probablemente no debería ir a verla.\
+`"…… Sí, tal vez debería ir a la cafetería hoy."@
+`"Sí, haz eso.@ Vamos, apresúrate.@ Sólo hay suficiente espacio para la mitad de las personas que usan la cafetería."@
+` Arihiko me toma del brazo y me arrastra.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_50.jpg",%type_lcartain_mid
+` Me siento junto a Arihiko y como mi almuerzo.@
+` La cafetería de mi escuela tiene una televisión, y ya sea bueno o malo para nuestra educación, se reproducen las noticias matutinas que fueron grabadas esta mañana.@
+` En todo caso, las noticias que están mostrando hablan sobre un cliente borracho que apuñaló a muerte a un empleado de una tienda de comida rápida, algo que me hace no desear ir a una tienda de comida rápida al menos por unos días.\
+ld c,":a;image\tachi\ari_t04.jpg",%type_crossfade_fst
+`"En qué mundo tan peligroso vivimos.@ Indiscriminados asesinos en serie, gente borracha apuñalando gente.@ Un hombre ya ni siquiera puede sentirse seguro vagando durante la noche."@
+` Arihiko parece estar viendo seriamente las noticias.\
+`"…… Bueno, ciertamente es peligroso.@ Pero al menos esos asesinatos en serie no volverán a ocurrir,  así que las cosas deberían ser somo siempre."@
+`"¿Oh en serio?@ ¿Capturaron al asesino en serie?"@
+`"No, no lo han capturado…"@
+br
+` ---Pero Nrvnqsr ya no está en este mundo.@
+br
+` Así que el estúpido titular de las matanzas del vampiro moderno ya no debería aparecer en las noticias y no habrá más de esos asesinatos sin sentido.\
+`"En fin, esos terribles incidentes no seguirán ocurriendo; no habrá más víctimas, y las calles volverán a la normalidad."@
+`"Hmmmh, no lo sabía.@ Supongo que debería ver las noticias más a menudo."@
+` Poniendo una cara forzada, Arihiko ve las noticias seriamente.\
+bg #000000,%type_lcartain_mid
+playstop
+!w1000
+return

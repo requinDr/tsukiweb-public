@@ -1,0 +1,22 @@
+monocro off
+wavestop
+play "*3"
+;---added context above---
+bg "image\bg\bg_04.jpg",%type_nowaitdisp
+`"Es un amigo mío de la escuela media--¿Akiha?"@
+`"¿Sí?@ ¿Qué sucede, Nii-san?"@
+`"Pareces haberte calmado mucho.@ Como si toda tu confusión en la cafetería nunca hubiese ocurrido."@
+ld c,":a;image\tachi\aki_t01a.jpg",%type_crossfade_fst
+`"----¿Qué intentas decir, Nii-san?"@
+`"No, sólo estaba pensando… tal vez ¿estabas fingiendo ingenuidad anteriormente?"@
+` Hay una gran posibilidad de que ése sea el caso.@
+` Ahora que lo pienso, no había razón para que Akiha estuviese parada estúpidamente en medio de la multitud.\
+ld c,":a;image\tachi\aki_t18a.jpg",%type_crossfade_fst
+`"¿Oh?@ Nii-san, ¿eso es lo que piensas de mí?"@
+` Akiha me mira de la cabeza a los pies.@
+` …… Lo sabía.@ Ella sólo estaba actuando para engañarme.@
+ld c,":a;image\tachi\aki_t21.jpg",%type_crossfade_fst
+`"Sí, por favor imagina lo que quieras.@ No es que tuviese la intención de hacerte preocupar."@
+` Ella infla su pecho y pone mala cara.\
+cl c,%type_crossfade_fst
+return

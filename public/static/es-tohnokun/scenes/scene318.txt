@@ -1,0 +1,130 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_34a.jpg",%type_nowaitdisp
+` Para ser sincero, Kohaku-san tiene el trabajo más difícil porque tiene que preparar el festín para los cuatro.@
+` No creo que pueda ser de mucha ayuda cocinando, pero iré a ver a Kohaku-san.@
+br
+bg #000000,%type_lshutter_fst
+bg "image\bg\bg_35.jpg",%type_lshutter_fst
+` La cocina ya se ha convertido en un campo de batalla.@
+` Sobre cada mesa hay una montaña de ingredientes, y siento el impulso de darme la vuelta e irme tan pronto como entro.\
+ld c,":a;image\tachi\koha_t02.jpg",%type_lshutter_fst
+`"Shiki-san, ¿hay algo que pueda hacer por usted?"@
+` Kohaku-san asoma su cabeza.@
+`"…… No, estaba pensando que tal vez podría ayudar o algo----"@
+` Pero, parece que he entrado a un mundo en el que no debería estar.@
+ld c,":a;image\tachi\koha_t01a.jpg",%type_crossfade_fst
+`"Ah, eso sería muy útil.@ Para ser sincera, estaba pensando en ir a pedirle algo de ayuda."@
+`"¿E, en serio……?@ Pero, en realidad no tengo habilidad para la cocina, así que no estoy seguro de que pueda ayudar, Kohaku-san."\
+ld c,":a;image\tachi\koha_t05.jpg",%type_crossfade_fst
+`"En absoluto, es algo que cualquiera puede hacer.@ Venga, por favor deme una mano."@
+cl c,%type_lshutter_mid
+` Kohaku-san toma mi mano y me lleva con ella.@
+`"…………"@
+` Sin entender bien lo que está sucediendo, termino ayudando a Kohaku-san.\
+bg #000000,%type_rshutter_fst
+bg "image\bg\bg_35.jpg",%type_rshutter_fst
+` …… Después de tranquilizarme un poco, me percato de que la cocina ciertamente es muy pequeña para una mansión tan grande.@
+` Probablemente tenían una cocina mucho más grande cuando había mucha gente viviendo en la mansión, pero sólo para Akiha, Hisui, Kohaku-san y yo, tenían preparada esta cocina más pequeña.@
+br
+ld c,":a;image\tachi\koha_t02.jpg",%type_crossfade_fst
+`"Tenga, por favor lave sus manos y use este delantal."@
+` Debe ser el reflejo de los gustos de alguien, no sé de quién, pero ella me entrega un delantal que tiene impresas las palabras "Persona Silenciosa e Intratable".\
+`"Le dejaré comenzar con una tarea simple, Shiki-san.@ Cuando termine con ésta, tengo otra sólo para usted."@
+cl c,%type_lshutter_fst
+` Kohaku-san está de buen humor.@
+` ----Primero, tengo que quitarle las conchas a todos estos camarones.\
+` Chic, chic, chic.@
+` El sonido de un cuchillo golpeando ligeramente la tabla de cocina.@
+` Nnnnn~.@
+` El tarareo de Kohaku-san llena la cocina.\
+` ……@
+` …………@
+` ………………@
+` Debe estar inmersa en cocinar, porque no dice mucho.@
+` Y yo, en verdad estoy disfrutando pelar los camarones, y continúo quitando la piel.@
+bg #000000,%type_crossfade_fst
+bg "image\event\his_e01.jpg",%type_crossfade_fst
+`"------"@
+` …… Esto en verdad trae de vuelta viejos recuerdos.@
+` Antes del incidente, y antes de dejar la mansión, jugué muchas veces con Kohaku-san y Akiha de esta manera.\
+` Éramos jóvenes entonces, y ni siquiera pensábamos en que éramos del género opuesto.\
+` Simplemente estábamos en esta espaciosa mansión, y todo lo que conocíamos era la contínua diversión de todos los días.@
+` Jugábamos tanto, y olvidábamos todas las cosas que nos molestaban.@
+` …… O quizás.@
+` Quizás, para olvidar el molesto pasado, intentábamos pasar nuestros días divirtiéndonos tanto como pudiésemos.\
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_35.jpg",%type_crossfade_fst
+ld c,":a;image\tachi\koha_t01a.jpg",%type_crossfade_fst
+`"Shiki-san, en verdad le ha cogido gusto a pelar esos camarones, ¿no?"@
+`"¿Eh?@ No, en realidad no, ¿por qué preguntas?"@
+ld c,":a;image\tachi\koha_t05.jpg",%type_crossfade_fst
+`"Porque parece que se está divirtiendo mucho.@ Hisui-chan siempre tenía las cejas tan arrugadas cuando terminaba."@
+`"¿En serio?@ Estoy sorprendido.@ Ella parece el tipo de persona que lo haría sin quejarse."@
+ld c,":a;image\tachi\koha_t18.jpg",%type_crossfade_fst
+`"Sí, por alguna razón, Hisui-chan es mala cocinando.@ Pero es muy buena limpiando y ordenando cosas."@
+`"¿En serio?@ Siempre tuve la sensación de que Hisui y tú podían hacer cualquier cosa."\
+ld c,":a;image\tachi\koha_t02.jpg",%type_crossfade_fst
+`"Si eso fuese verdad sería muy feliz.@ Pero Hisui-chan y yo somos bastante normales, así que también tenemos nuestras fallas.@
+` El sentido del gusto de Hisui-chan es un poco extraño, así que cuando cocina cosas que ella considera deliciosas, tienen un sabor muy extraño para Akiha-sama o para mí."@
+` Ya veo, entonces es por eso que Hisui no cocina.@
+` El sentido del gusto de Hisui es un poco raro; y Kohaku-san…… me pregunto cuál es su falla.\
+`"…… Bueno, ahora que lo pienso, Hisui y tú son algo distintas.@
+` Kohaku-san, en aquel entonces tú siempre eras alegre, mientras que Hisui permanecía en la mansión."@
+`"Oh, ¿me veía tan alegre?@ Pensé que yo siempre los estaba viendo a ustedes."@
+`"Sí, lo recuerdo.@ Siempre corrías a todas partes con nosotros, pero nos decías que dejásemos de hacer cosas peligrosas y nos cuidabas."\
+play "*9"
+` …… Ah, en verdad lo recuerdo.@
+` Jugábamos a las escondidas en el patio de la mansión.\
+` Nos esforzábamos tanto para atrapar a la carpa de mi viejo en la laguna.\
+`"Oye, ¿recuerdas aquella vez, cuando salimos por la verja de la mansión?@
+` No sabíamos cómo regresar, así que terminaste llamando a la mansión y uno de los sirvientes tuvo que venir a recogernos."@
+ld c,":a;image\tachi\koha_t03.jpg",%type_crossfade_fst
+`"Sí, y después de eso Makihisa-sama lo regañó mucho.@ Todos estaban jugando con usted, pero por alguna razón terminó siendo el único regañado.@ Hicimos muchas cosas, pero al final, usted siempre nos salvaba a Akiha-sama y a mí de meternos en problemas."@
+br
+` Ella ríe tontamente mientras habla en voz alta con nostalgia.\
+`"…… ¿Qué es esto?@ Hablando de viejos tiempos, ahora sí siento que he vuelto a casa."@
+` Es cierto.@
+` No tengo muchos recuerdos de esta mansión, pero hablar sinceramente de aquellos tiempos me hace sentir nostálgico.@
+` Pero, no sólo tengo recuerdos felices.\
+`"…… Pero, traté muy mal a Hisui."@
+` …… Esa chica que estuvo siempre en un rincón de mi corazón.@
+` Al final, nunca pude tener una verdadera conversación con esa chica tras la ventana.@
+`"…… Esa chica, siempre nos estaba observando desde la ventana.@ Siempre, me afectaba.@ Ese rostro solitario mirando hacia abajo, siempre pensé que sería grandioso que ella pudiese salir a jugar."@
+` Pero aun así, antes de irme de la mansión, ella me dio ese regalo de despedida.\
+`"Es cierto.@ Siempre fue tímida, incluso entonces, así que nunca supe qué estaba pensando.@ Siempre pensé que, si Hisui-chan fuese feliz, no me importaría lo que sucediese conmigo."@
+`"¿Oh?@ Kohaku-san, en verdad eres una buena hermana mayor."@
+` Me siento feliz, así que doy una respuesta como ésa.@
+br
+`"Ah."@
+br
+` De repente,
+` con un sonido corto, Kohaku-san levanta su mano.@
+` Puedo ver que cortó su dedo con el cuchillo de cocina.\
+playstop
+`"¡Ko, Kohaku-san, tu dedo……!"@
+`"¿Eh?"@
+` Después de decirle eso, parece haberse percatado de que cortó su dedo.@
+ld c,":a;image\tachi\koha_t07.jpg",%type_crossfade_fst
+`"Ah, es verdad."@
+`"¿Es verdad?@ Oye, ¿¡Kohaku-san!?"@
+` No puedo creer esto.@
+` Incluso yo puedo ver que la cortada es muy profunda, pero Kohaku-san aún no reacciona.\
+`"Qué embarazoso.@ Y se supone que soy una buena chef.@ ¡Ajaja!"@
+` Kohaku ríe como siempre.@
+`"¡Esto no es asunto de risa.@ Tenemos que tratarla de inmediato……!"@
+`"Está bien.@ No va a matarme ni nada parecido."@
+`"¿Pero no te duele?@ ¡Es una cortada terrible!"\
+`"No, en absoluto.@ Si pienso que no duele, entonces no dolerá.@ Si pienso que no es mi dedo, y que es sólo el dedo de alguna muñeca, entonces no sentiré dolor, ¿verdad?"@
+`"Qué----"@
+` Con una sonrisa, Kohaku-san dice algo bastante bizarro.@
+` Bueno, estoy seguro de que si piensas de esa manera, no dolerá tanto, pero no puedes deshacerte de todo el dolor.\
+`"¡Mira, ve a tratar tu herida!@ ¡Soy un poco débil cuando veo sangre, y si tengo un ataque de anemia aquí mismo, será tu culpa, Kohaku-san……!"@
+`"Ya veo, debería encargarme de ello inmediatamente.@ Bien Shiki-san, entonces discúlpeme un momento."@
+cl c,%type_lshutter_mid
+` Mantiene su sonrisa todo el tiempo, y haciendo una reverencia con su cabeza, deja la cocina.\
+bg #000000,%type_tcartain_mid
+!w2000
+return

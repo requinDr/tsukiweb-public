@@ -1,0 +1,119 @@
+mov $phasebg,"image\bg\cmo_14.jpg"
+mov $phasetitle_a,":a;image\word\PARK_11A.PNG"
+mov $phasetitle_b,":a;image\word\day_12.png"
+gosub *left_phase
+bg "image\bg\bg_40a.jpg",%type_crossfade_slw
+` Me despierto con el sonido de la voz de Hisui.@
+` Desde entonces----al volver a la mansión, debo haber subido a mi habitación de alguna manera y quedarme dormido.\
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"Shiki-sama, ¿no se siente bien?"@
+`"----No, estoy bien."@
+` Respondiendo, me siento en la cama.@
+br
+` …… Estoy casi asombrado de mí mismo.@
+` Ni siquiera tengo ganas de hablar, pero mi cuerpo intenta comenzar el día como siempre.\
+`"¿Desayuno?@ Estaré abajo pronto."@
+ld c,":a;image\tachi\his_t04.jpg",%type_crossfade_fst
+`"……… Sí.@ Estaré esperando."@
+` Pareciendo como si quisiera decir otra cosa, Hisui deja la habitación.@
+` Me cambio de ropa y me dirijo hacia la sala de estar.\
+bg #000000,%type_lcartain_slw
+bg "image\bg\bg_34a.jpg",%type_lcartain_slw
+` Akiha y Kohaku están ahí.@
+`"Buen día."@
+` Dando mi saludo habitual, voy al comedor.@
+` Desayuno y regreso a la sala de estar.@
+` Me siento en el sofá y observo el reloj.\
+ld c,":a;image\tachi\aki_t17a.jpg",%type_crossfade_fst
+`"…… ¿Nii-san?@ Um, sabes que tienes escuela hoy, ¿no?"@
+`"¿Hm----?@ Sí, es cierto.@ Supongo que debería ir a la escuela."@
+` Lo olvidé.@
+` No tenía ganas de hacer nada, y pensé que seguiría viviendo como una coraza vacía.\
+`"…… Aún tengo mi vida como Tohno Shiki.@ Si no tengo nada que hacer, no dolerá ir a la escuela."@
+`"¿Nii-san……?"@
+` Akiha me mira nerviosamente.@
+cl c,%type_crossfade_fst
+` …… Hablar es simplemente una molestia.@
+br
+` Sin decir nada, voy a la escuela.\
+bg #000000,%type_crossfade_slw
+bg "image\bg\bg_06a.jpg",%type_lcartain_slw
+` El tiempo pasa tranquilamente.@
+` Asisto a mis lecciones con vaciedad.@
+` El sonido de la tiza.@
+` Sin pensar, anoto en mis apuntes lo que está escrito en la pizarra.@
+br
+` Miro por la ventana y hacia el patio trasero.@
+` Claro que no hay nadie ahí.\
+`"------"@
+` ----¿Qué estoy haciendo?@
+` Asisto tranquilamente a mis lecciones.@
+` No la busco y simplemente regreso a mi vida normal.\
+`"------"@
+` Pero, no tengo manera de buscar a Arcueid.@
+` Se fue por su cuenta, así que probablemente no tengo ninguna posibilidad de encontrarla.@
+br
+` Es por eso que…
+` En verdad he perdido a Arcueid---.\
+br
+` *crac*@
+br
+`"…………"@
+` Un sonido encima de mi pupitre.@
+` …… Ah, no es nada.@
+` Sólo estaba sujetando mi lápiz con tanta fuerza que rompí otro.\
+bg #000000,%type_lshutter_mid
+bg "image\bg\bg_06a.jpg",%type_lshutter_mid
+wave se2
+` Las clases terminan.@
+` En la conmoción del salón, permanezco sentado.@
+br
+`"Tohno, ¿puede venir aquí un momento?"@
+` Mi maestro de matemáticas alza la voz desde el atril.@
+`"----Sí, ¿qué desea?"@
+` Respondo y camino hacia él.\
+`"Tohno, ¿no ha sido su comportamiento reciente un poco descontrolado?@ He recibido información de que ha estado saliendo de noche.@ ¿Le suena familiar?"@
+`"…… Sí.@ Los últimos días, he tenido cosas que hacer en la ciudad durante la noche."@
+`"----Ya veo."@
+` Mi maestro de matemáticas----bueno, también es mi maestro guía----parece algo preocupado, y luego se ve un poco apenado.\
+`"Sé que no es el tipo de estudiante que vaga por las noches, pero la facultad ha expresado su preocupación.@ Parece que el director del consejo estudiantil desea hablar con usted.@
+` Por favor vaya al salón del consejo estudiantil después de clases.@ Sólo considérese desafortunado y sopórtelo."@
+` Diciendo adiós, el maestro deja el salón de clases.\
+bg #000000,%type_lcartain_slw
+!w1000
+bg "image\bg\bg_08a.jpg",%type_lcartain_slw
+` Después de la escuela.@
+` Paso por el salón del consejo estudiantil, pero el maestro no está.@
+` …… Ahora que recuerdo, ese maestro también es un consejero del equipo de gimnasia.@
+` Probablemente no vendrá hasta que finalice la práctica.\
+`"------"@
+` Me siento en una silla y espero lealmente.@
+`"………… Kk."@
+` Muerdo mi labio.@
+` Sé que no es momento para estar haciendo esto.@
+` Lo sé, pero no hay nada que pueda hacer.\
+` Afuera de la ventana, la puesta del sol pinta el cielo de bermellón.@
+` Puedo escuchar a los clubes practicando afuera y a los estudiantes hablando mientras van a casa.@
+` En medio de todo, este salón es el único lugar en silencio.\
+` …… Esto me enfurece.@
+` ¿Por qué estoy aquí?@
+` No puedo hacer nada.@
+` Estoy furioso por mi impotencia.@
+` Pero, no tengo manera de resolver esto yo mismo, así que al final, lo único que puedo hacer es aceptar con vaciedad todo lo que se me dice.\
+`"…… ¿Qué estoy haciendo?"@
+` No hay respuesta.@
+` Simplemente me siento en el vacío salón escuchando los sonidos de afuera.\
+bg #000000,%type_crossfade_slw
+bg "image\bg\bg_08b.jpg",%type_crossfade_mid
+` Tic.@
+` La segunda aguja del reloj resuena, diciéndome que ya son las siete de la noche.@
+` Nadie viene.@
+` La escuela cierra a las seis y todos los maestros se van a las seis y media, así que no queda nadie en los terrenos de la escuela.\
+`"…… Supongo que se olvidaron de mí."@
+` Me levanto de mi silla.@
+` Después de meditar por tanto tiempo, mi cabeza comienza a aclararse un poco.\
+` Estuve pensando todo este tiempo.@
+` Sobre qué debería hacer, y a qué debería darle prioridad.@
+` Desde aquí, debería----
+br
+return

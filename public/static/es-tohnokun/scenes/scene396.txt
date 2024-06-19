@@ -1,0 +1,195 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_40a.jpg",%type_nowaitdisp
+` Comienzo a respirar con fuerza.@
+` …… No me moveré.@
+` En este momento, si cualquier cosa…
+` Si cualquier cosa se moviese ahora---sería como admitir que estoy loco, y eso me asusta.@
+` Puede que mi cerebro se haya entumecido.@
+` Si permanezco así---pienso estúpidamente que la tormenta terminará----
+wave se0
+bg #000000,%type_crossfade_fst
+` Mi mundo entero comienza a titilar.@
+bg #9c0120,%type_crossfade_fst
+` Como la sirena de una patrulla, todo gira, rojo y negro.@
+wave se0
+bg #000000,%type_crossfade_mid
+`"Ah-------"@
+` Mi    cabeza    duele.@
+bg #9c0120,%type_crossfade_mid
+`"Estoy cansado---simplemente estoy cansado, eso es todo."@
+` Me digo    eso    a mí mismo.@
+wave se0
+bg #000000,%type_crossfade_slw
+` Caigo    sobre la cama.\
+!w2000
+bg "image\bg\bg_40c.jpg",%type_crossfade_fst
+!w3000
+wave se3
+`"Shiki-sama, ¿ha regresado?"@
+` …… Una voz como la de Hisui me despierta.@
+`"Shiki-sama, por favor discúlpeme."@
+` …… Alguien entra a mi habitación.@
+` Pero, duele demasiado.@
+wave se0
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_40c.jpg",%type_crossfade_fst
+` No puedo distinguir quién es.\
+`"Por favor perdóneme.@ No me percaté de que había regresado, así que no pude saludarle en la puerta."@
+`"…… No, está, bien así---déjame solo, por favor."@
+`"Shiki-sama, ¿se siente enfermo?"@
+`"---Ah.@ En realidad no…"@
+` …… lo sé.@ No puedo terminar mi oración.@
+`"…… Perdona.@ Me siento----mal.@ Quiero, dormir, ¿hay, alguna, medicina?"@
+`"Sí, iré a buscar un poco."\
+!w2000
+ld c,":a;image\tachi\his_t18.jpg",%type_crossfade_fst
+`"Gracias por esperar.@ Por favor beba esto."@
+`"Gracias, como siempre, y disculpa."@
+` Con ojos que no pueden ver muy bien, tomo el agua y la medicina en polvo que Hisui me trajo.@
+` Por alguna razón, hay dos tipos de medicina.@
+` …… No me importa, pongo ambas en mi boca y bebo el agua.@
+ld c,":a;image\tachi\his_t29.jpg",%type_crossfade_fst
+` Aparentemente funciona rápido; ya comienzo a sentirme adormilado.\
+`"…… Voy a dormir.@ Hasta mañana----"@
+`"No se preocupe, nadie va a molestarlo, Shiki-sama."@
+` Hisui suelta una risita, y siento que se retira.@
+bg #000000,%type_crossfade_fst
+` Mi consciencia comienza a flotar.@
+br
+` ---Voy a dormir.@
+` Me duele mucho la cabeza---ni siquiera me importa tener esos malos sueños o no.\
+!w4000
+mov $phasebg,"image\bg\cmo_14.jpg"
+mov $phasetitle_a,":a;image\word\PHIS_07B.PNG"
+mov $phasetitle_b,":a;image\word\day_07.png"
+gosub *left_phase
+!w1000
+bg "image\bg\bg_25b.jpg",%type_tshutter_mid
+play "*6"
+` ---Estoy en la ciudad envuelta por la noche.@
+br
+` Llegué aquí de alguna manera.@
+` ¿Esto es un sueño?@ De ser así, ¿por qué estoy aquí?@
+`"-------"@
+` No, la razón es obvia.@
+` Estoy en las calles en medio de la noche debido al asesino---para buscar y encontrar al asesino.\
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_27b.jpg",%type_crossfade_fst
+` Vago sin rumbo fijo.@
+` ¿Me pregunto qué tan tarde es?@
+br
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_26a.jpg",%type_crossfade_fst
+` …… No veo a nadie sospechoso.\
+br
+bg "image\bg\bg_12b.jpg",%type_crossfade_fst
+` …… No tiene caso venir aquí.@
+br
+bg "image\bg\bg_24c.jpg",%type_crossfade_fst
+` …… No veo ninguna señal del asesino.\
+bg "image\bg\bg_25b.jpg",%type_crossfade_fst
+`"---------"@
+` …… Mis piernas se hacen pesadas.@
+` Por alguna razón, todo se siente irreal.@
+` La atmósfera se está haciendo más débil.@
+` El tiempo se está degradando.@
+` La sensación de las personas a mi alrededor se hace terriblemente surrealista.@
+br
+bg "image\bg\bg_30b.jpg",%type_crossfade_fst
+` …… Pero el sentido del olfato se siente real.@
+` El olor que tira de mis fosas nasales.@
+` Viene flotando de aquel lugar.\
+bg #000000,%type_crossfade_fst
+monocro #ff0000
+bg "image\bg\bg_31b.jpg",%type_nowaitdisp
+br
+` ----Ésa fue la última parada.@
+br
+` Al igual que en mi sueño de anoche, el cadáver de alguien que no conozco está allí en el callejón trasero.\
+` Es una mujer.@ Su rostro está hecho pedazos desde su quijada hasta su nariz, y ya no puedo decir si es hermosa o no.@
+` La sangre que fluye es increíblemente pegajosa, y me recuerda más a la gelatina roja que a un líquido.@
+` Sus órganos internos salen de su cuerpo como los tentáculos de un pulpo.@ La masa rosa de órganos muertos brilla y parece cálida.@
+br
+` Frente a ese cadáver,
+` una figura verdaderamente negra está agachada, y parece estar llorando.\
+`""-------¿¡Quién eres tú!?""@
+` Nuestras voces coinciden.@
+` Le pregunto quién es, y él pregunta quién soy al voltear.@
+`""Yo soy----""@
+`"Un asesino." …… ¿Pero cuál de los dos dijo eso?@
+br
+bg #000000,%type_crossfade_fst
+` Bueno, después de todo, esto es un sueño.@
+` Así que me entretengo un poco, y con muy poca esperanza, digo que soy el asesino.\
+playstop
+bg "image\bg\bg_31b.jpg",%type_crossfade_fst
+waveloop se1
+`"¿Eh---------?"@
+` La oscura figura ladea su cabeza, confundida.@
+` El hombre agachado frente al cadáver me mira, como si tratase de compararnos.@
+` Durante ese momento,
+` en ese vacío, tengo la certeza.@
+`"--------Jeh."@
+` Una risa escapa de mi garganta.@
+` Este hombre es un farsante.@
+` La confundida figura frente al cadáver, y yo, que no siento nada.@
+` Si preguntas cuál de nosotros es más parecido a un asesino, la respuesta es simple.\
+`"…… ¿Eres tú?"@
+` Dice el hombre, con una voz temblorosa.@
+` Ahogo mi risa, y naturalmente, como si le diese un apretón de manos, clavo mi cuchillo en su pecho.@
+br
+` ---------¿Eh?@
+br
+` Una voz muestra su sorpresa.@
+` Aunque está a punto de ser asesinado, es tan lento que no se mueve.@ Me enferma que este sujeto se llamase a sí mismo un asesino.\
+bg "image\bg\ima_12.jpg",%type_lshutter_fst
+` Vomito mientras lo rebano.@
+` Como un muñeco de papel, es reducido a pedazos.\
+` Como si derramase un cubo lleno de agua, su sangre pinta mi cuerpo de carmesí, de pies a cabeza.@
+br
+` Gotea y gotea, gotea y gotea.@
+br
+` Su sangre gotea de mi cabello.\
+bg "image\bg\bg_31b.jpg",%type_crossfade_fst
+` Suelto una profunda respiración.@
+br
+` Frente a mis ojos hay un nuevo cadáver.@
+` En mis manos está mi humeante cuchillo.@
+` El asesino está muerto, y la ciudad está a salvo de nuevo.\
+br
+br
+br
+br
+br
+br
+` ---Pero aún quedo yo.\
+` Aunque la ciudad vuelva a la normalidad, yo sigo estando afectado.@
+br
+` El asesino aún existe.@
+br
+`"………… Vamos a casa."@
+` Sí, debería ir a casa.@
+` Afectado como estoy, debería volver a la mansión.@
+` Nada ha cambiado.@
+` Viviré normalmente como Tohno Shiki, y continuaré con la pesadilla de noche.\
+br
+` ---Ciertamente, no es nada.@
+br
+` No es que el sueño vaya a dejar de hacerse realidad, simplemente no volveré a despertar de mi sueño.@
+monocro off
+bg "image\bg\ima_18.jpg",%type_crossfade_fst
+br
+` Creo que escuché a una niña reír entre dientes.@
+` Pero es sólo un asunto trivial.@
+` Tengo que ir a dormir, y esperar que mi sueño continúe mañana en la noche----\
+bg #000000,%type_crossfade_mid
+wavestop
+!w3000
+cl a,%type_waitdisp
+bg "image\word\end.jpg",%type_crossfade_slw
+resettimer
+waittimer 3000
+return

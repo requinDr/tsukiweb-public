@@ -1,0 +1,34 @@
+monocro off
+;---added context above---
+wave se2
+bg "image\bg\bg_06b.jpg",%type_nowaitdisp
+play "*3"
+ld c,":a;image\tachi\osiete.png",%type_lcartain_mid
+!w1000
+cl c,%type_lcartain_mid
+ld r,":a;image\tachi\cel_t20.jpg",%type_tshutter_mid
+` ¡Gracias por esperar!@
+` Bienvenido al rincón de respuestas de Ciel-sensei.@
+` ¡Debido a la demanda popular, ésta es una lección adicional (la número dos)!\
+` …… Oh cielos, Akiha-san es como un monstruo.@
+` Quizás se estuvo reservando algo que tenía en contra de Tohno-kun todo este tiempo, pero se ha vuelto totalmente loca.@
+ld l,":a;image\tachi\ark_t31a.jpg",%type_lshutter_fst
+br
+`"No lo creo.@ Eso no es nada."\
+` Sí, sí, no recuerdo haberle preguntado nada a una alienígena como tú.@
+` Las heroínas que ni siquiera aparecen deberían quedarse calladas.@
+br
+ld l,":a;image\tachi\ark_t30.jpg",%type_lshutter_fst
+`"…… ¡Unyaa!@ Fui tratada así hasta el último momento.@ ¿Quieres comer Ramen?"\
+cl l,%type_lshutter_fst
+` ----Bien, entonces.@
+` Esta vez, la causa fue tu falta de cuidado, Tohno-kun.@
+` SHIKI-kun te demostró que ese método no iba a funcionar, pero lo repetiste de todas formas, ¿verdad?@
+` Tendrás que repetir el examen, así que por favor retrocede e inténtalo de nuevo.\
+` ----Después de esto, finalmente será el fin.@
+br
+` Esta será la lección final.@
+` ¡Muchas gracias por prestar atención hasta ahora!\
+bg #000000,%type_crossfade_mid
+playstop
+return

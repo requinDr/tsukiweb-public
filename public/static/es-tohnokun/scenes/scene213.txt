@@ -1,0 +1,110 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_40b.jpg",%type_nowaitdisp
+` …… Es cierto, ella me ha estado cuidando desde ayer.@ Si tengo tiempo para tontear, debería ir a ayudar a Kohaku-san.@
+`"Supongo que está barriendo en el jardín."@
+` Si sólo se trata de barrer el jardín, incluso yo puedo ayudar con eso.@
+` Me mentalizo, y me dirijo hacia el jardín.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_42b.jpg",%type_lcartain_mid
+play "*3"
+ld c,":a;image\tachi\koha_t06.jpg",%type_lshutter_mid
+`"Oh, bienvenido a casa, Shiki-san."@
+` Kohaku-san me mira con una tierna sonrisa.@
+`"Gracias.@ ¿Estás barriendo el jardín tú sola?"@
+`"Sí.@ El jardinero tardará otros tres días en venir, por eso pensé que debía poner en orden estas hojas caídas."@
+` Kohaku-san sostiene la escoba de bambú con ambas manos.@ Pareciera que en verdad estuviese divirtiéndose.@
+` Limpiar este enorme espacio por sí sola debería ser una enorme labor.\
+`"Eres grandiosa, Kohaku-san.@ Yo me quejaría si tuviese que barrer todo este jardín."@
+`"Oh no, no es así en absoluto.@ Es mi labor, debo hacerla para poner comida en la mesa.@ Por eso debo reprimir mis lágrimas y barrer este jardín.@ ¡Ajaja!"@
+` Kohaku-san ríe y muestra una sonrisa libre de preocupaciones.@
+` Ella ciertamente es alegre.\
+`"Además, hago algunas cosas en el jardín, así que cuando no estoy ocupada, siempre le echo un ojo al jardín."@
+`"¿Eh……?@ ¿'Haces cosas'?@ ¿Cómo qué?"@
+`"Bueno, veamos.@ Desde que era niña, me ha gustado sembrar flores.@ He reunido tantos tipos de flores por capricho que parece más una jungla que un macizo."\
+cl c,%type_crossfade_fst
+`"Ajaja," Kohaku-san ríe alegremente una vez más.@
+` …… Pero no lo sabía.@ Raramente vengo aquí, así que no me percaté, pero supongo que he visto algo parecido a un jardín de flores desde el segundo piso.\
+`"Ya veo.@ ¿Te gusta la jardinería, Kohaku-san?@ ¿Qué tipo de flores?"@
+ld c,":a;image\tachi\koha_t01a.jpg",%type_crossfade_fst
+`"Bueno, muchos tipos.@ Pero la mayoría son campanillas."@
+`"Oh, ¿campanillas?@ Me parece una elección apropiada."@
+`"¿En serio?@ Siempre pensé que no hacían juego con el ambiente de la mansión…"@
+`"No, la mansión no.@ Quiero decir que te sientan bien, Kohaku-san.@ Las campanillas son muy bonitas dentro de su simplicidad."\
+ld c,":a;image\tachi\koha_t18.jpg",%type_crossfade_fst
+`"Shiki-san, creo que me malinterpretó.@ Las que están en el jardín son campanillas coreanas.@ Son un poco peligrosas."@
+` Kohaku-san ríe como si algo fuese muy gracioso.@
+`"¿En serio?@ Pero las campanillas coreanas siguen siendo campanillas, ¿cierto?"\
+ld c,":a;image\tachi\koha_t02.jpg",%type_crossfade_fst
+`"Sí.@ También es conocida como berenjena loca o datura.@ Las flores pueden ser convertidas en un anestésico.@ El primer anestésico general del mundo, Tsuusensan, fue hecho en Japón con campanillas coreanas como su principal ingrediente activo.@ Si lo bebe por accidente, le causará peligrosas alucinaciones, así que por favor sea cuidadoso, Shiki-san."@
+br
+` …… Um, en realidad no creo que vaya a beber las flores "por accidente", Kohaku-san.\
+`"También quería plantar algunos cactus y otras linduras como ésas, pero Akiha-sama estuvo vehementemente en contra y tuve que parar.@ En verdad es lamentable decirle todas estas cosas pero no poder mostrárselas."@
+cl c,%type_crossfade_fst
+` Diciendo eso, ella toma la escoba nuevamente.@
+`"…… Ya veo.@ ¿Entonces barres el jardín porque te gustan las flores y esas cosas?"@
+ld c,":a;image\tachi\koha_t06.jpg",%type_crossfade_fst
+`"No, ésa no es la verdadera razón.@ En realidad, soy terrible limpiando dentro de la mansión.@ No sé por qué, pero parece que siempre rompo algo."\
+`"¿Huh?"@
+`"Parece que tiendo a romper o dañar la cosa más valiosa de cada habitación.@ Bueno, no lo hago a propósito, ¿cierto?@ Pero Hisui-chan me dijo, 'Nee-san, tal vez deberías dedicarte sólo a las finanzas y a la cocina.' ¡Qué cruel de su parte!"@
+` Kohaku-san continúa sonriendo mientras aparenta estar molesta.@
+` Pero----esto es muy diferente a la primera impresión que tuve de ella.\
+`"…… No querrás decir… Kohaku-san, ¿acaso eres torpe?"@
+` Mi declaración es más una reacción involuntaria que una pregunta directa.@
+` Kohaku-san gruñe decepcionada.@
+`"¿Usted también lo dice, Shiki-san?@ Hisui-chan es muy cruel y me dice, 'Nee-san, eres demasiado lenta', mientras que Akiha-sama se burla de mí y me dice, 'No estás siendo lo suficientemente cuidadosa.'
+` ¡No me equivoco porque quiera hacerlo!@ ¡Ellas son tan crueles!"@
+`"…… Es cierto.@ No hay muchas personas que se equivoquen porque quieran hacerlo."@
+` No sabía qué decir, así que intenté ser un poco neutral.\
+`"¡Es cierto!@ ¡La intención es lo que cuenta, por eso creo que deberían pasarlo por alto si me equivoco diez o veinte veces!"@
+cl c,%type_crossfade_fst
+` Kohaku-san comienza a barrer rápidamente las hojas.@
+` ---Bueno, no vine aquí para estorbarle.\
+`"Kohaku-san, ¿hay otra escoba?"@
+ld c,":a;image\tachi\koha_t06.jpg",%type_crossfade_fst
+`"Sí, hay muchas en el cobertizo.@ ¿Para qué va a utilizarla?"@
+`"No, sólo pensé que también barrería algunas hojas."@
+` La escoba de Kohaku-san se congela.@
+ld c,":a;image\tachi\koha_t03.jpg",%type_crossfade_fst
+`"----Eso no, Shiki-san.@ Si hace eso, me metería en problemas."@
+`"¿Meterte en problemas?@ Quién te metería en----bueno, supongo que en realidad sólo hay una persona que lo haría."@
+`"Sí."@
+` Kohaku-san asiente rápidamente.\
+`"No te preocupes.@ Lo haré porque quiero hacerlo.@ Así que Akiha no tiene razón para quejarse.@ Si Akiha tiene alguna queja, me tendrá que culpar a mí, no a ti."@
+`"Oh, eso es cierto."@
+`"¿Verdad?@ Entonces relájate.@ Además, es más divertido si ambos lo hacemos."@
+ld c,":a;image\tachi\koha_t01a.jpg",%type_crossfade_fst
+`"…… Um.@ Shiki-san, parece que no comprende a la Señora Akiha.@ Si usted hace eso, ella se enfadaría por otra razón, o eso creo."@
+`"…… No entiendo pero, ¿estás diciendo que va a enojarse sin importar qué suceda?"\
+ld c,":a;image\tachi\koha_t18.jpg",%type_crossfade_fst
+`"Ajaja, así es.@ Así que por favor no se preocupe por barrer."@
+` Aún sonriendo, Kohaku-san dice esto directamente.@
+`"…… Oh.@ Sin importar qué suceda, Akiha se enojará contigo.@ Entonces no quiero causarte ningún problema.@ Lo siento, perdóname por ser tan descuidado."@
+`"No, no fue descuidado.@ Estoy muy feliz de que quisiera ayudarme."@
+` Aunque dice eso con su alegre sonrisa, me siento mal porque en verdad quería ayudarla.@
+br
+` Suspiro.@
+` Kohaku-san mira mi rostro con alegría.\
+ld c,":a;image\tachi\koha_t01a.jpg",%type_crossfade_fst
+`"Shiki-san, ¿en verdad deseaba ayudarme?"@
+`"Sí, siempre que no te meta en problemas…"@
+`"Entonces, ¿vamos a otro lugar?@ Akiha-sama nos encontrará aquí, creo que sería mejor si barremos detrás de la mansión."@
+`"¿Detrás…… en el patio trasero?"@
+`"Sí.@ Akiha-sama nunca nos encontrará ahí, así que podemos barrer todo lo que queramos.@
+` Aquí tiene," Kohaku-san me entrega la escoba que tenía en sus manos.\
+`"Iré al cobertizo a buscar otra escoba, por favor adelántese, Shiki-sama.@ Y por favor no permita que Hisui-chan o Akiha-sama lo vean en el camino, ¿de acuerdo?"@
+cl c,%type_lshutter_mid
+` ¡Trot trot trot!@ Kohaku-san corre con veloces y ligeros pasos.@
+br
+` ---En verdad parece una niña traviesa.@
+br
+` Antes de darme cuenta, una sonrisa arruga mis labios.@
+` Akiha y Hisui no parecen ser muy bromistas, así que la alegría de Kohaku-san es bastante encantadora.\
+`"¡Muy bien, hagamos esto----!"@
+` Sujetando la escoba que Kohaku-san estaba usando anteriormente, camino furtivamente hacia el jardín detrás de la mansión.\
+bg #000000,%type_lcartain_mid
+playstop
+!w2000
+return

@@ -1,0 +1,274 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_04.jpg",%type_nowaitdisp
+` …… No, no hay razón para ello.@
+` ¿Qué podría hacer Ciel si le hablo sobre mis sueños?@
+` Ese sueño.@
+` Si soy yo quien sueña con matar gente, entonces debería ser el único capaz de resolver ese problema.@
+ld c,":a;image\tachi\ari_t03.jpg",%type_crossfade_fst
+`"Oye, Tohno, no tenemos mucho tiempo."@
+`"------Lo sé, no lo lograremos a menos que corramos, ¿cierto?"@
+` Diciendo eso, comienzo a correr hacia nuestro salón de clases.\
+bg #000000,%type_lcartain_mid
+!w2000
+play "*1"
+bg "image\bg\bg_06b.jpg",%type_tshutter_mid
+` ----------La escuela ya ha terminado.@
+br
+` La relación entre Akiha y yo me tenía confundido, pero el día de hoy está por terminar.@
+`"------¿Debería ir a casa?"@
+` Debería buscar a Akiha para regresar a nuestra mansión.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_24b.jpg",%type_lcartain_mid
+` Camino a casa junto con Akiha.@
+` …… Al igual que en el almuerzo, nos quedamos callados tan pronto como nos quedamos solos.@
+br
+` ---Quiero hablar con Akiha, pero me siento avergonzado al mirarla.@
+br
+`"…… Hombre, no parezco un estudiante de secundaria."@
+ld c,":a;image\tachi\aki_t12a.jpg",%type_crossfade_fst
+`"¿…?@ ¿Dijiste algo, Nii-san?"@
+`"Oh---no, no es nada, sólo hablaba conmigo mismo."@
+cl c,%type_crossfade_fst
+` …… *suspiro*@
+` En serio, ¿qué demonios estoy haciendo?\
+bg "image\bg\bg_22b.jpg",%type_lcartain_mid
+` Alcanzamos la larga colina.@
+` Una vez que la subamos, estaremos frente a nuestra mansión.@
+ld c,":a;image\tachi\aki_t01a.jpg",%type_crossfade_fst
+`"Nii-san.@ Quisiera preguntarte una cosa antes de llegar a casa."@
+` Los pies de Akiha se detienen y me mira directamente.@
+`"-----"@
+` El tipo de silencio que nos acompañaba ha desaparecido.@
+` Akiha me mira seriamente.\
+`"Adelante, ¿qué me quieres preguntar?"@
+ld c,":a;image\tachi\aki_t12a.jpg",%type_crossfade_fst
+`"Si no quieres responder, está bien pero-----¿hay alguna cosa que me estés ocultando, Nii-san?"@
+`"¿Huh-------?"@
+` La pregunta es tan abrupta que me detengo en seco.\
+`"Um…… ¿De qué estás hablando?"@
+` Decido actuar como si no supiera de qué está hablando.@
+ld c,":a;image\tachi\aki_t02.jpg",%type_crossfade_fst
+`"¿Qué?@ Eso es lo que pregunto.@ Has estado actuando muy extraño estos últimos días.@ Puedo notarlo fácilmente porque vivimos juntos."@
+` Akiha me mira como si pudiese leer mi mente.@
+`"--------Uhh."@
+` …… No, no hay manera de que pueda mentirle sin que me descubra.\
+`"…… Entonces sí estás escondiendo algo.@
+` ¿Es por eso que no te has estado sintiendo bien últimamente, como esta mañana?@ No sé qué te está preocupando pero, ¿es tan malo que tienes que esconderlo?"@
+`"--------"@
+` …… Estoy sorprendido.@
+` Akiha sabía que estaba preocupado por el problema.@
+`"Akiha…… ¿lo notaste?"@
+ld c,":a;image\tachi\aki_t21.jpg",%type_crossfade_fst
+`"Por supuesto.@ Somos hermanos.@ Puedo saber cuándo estás deprimido, Nii-san.@ Pero siempre te reservas el problema y ni siquiera nos pides ayuda."\
+`"!!@-------No puedo pedirte ayuda-----"@
+` Nunca podría hacer eso.@
+br
+` Decirle que sueño con asesinar todas las noches.@
+` Y que no sé si es real o sólo un sueño, y que las víctimas de la realidad son iguales a las de mi sueño.@
+` No puedo decirle que yo, Tohno Shiki, podría ser un asesino, y que tenga cuidado en la noche.\
+ld c,":a;image\tachi\aki_t12a.jpg",%type_crossfade_fst
+`"Nii-san.@ Somos hermanos, ¿cierto?@ Entonces, por favor confía un poco en mí.@ No sólo yo, Kohaku y Hisui también están preocupadas por ti.@
+` Si es un problema que no puedes solucionar por ti mismo, te ayudaremos con gusto, así que, por favor háblanos al respecto."@
+`"Akiha----------"@
+cl c,%type_crossfade_fst
+` Akiha sólo me mira fijamente.@
+` …… Sus ojos están llenos sólo de preocupación.@
+` Akiha no se está quejando de que le ocultase algo, está tratando de ayudarme a solucionar mi problema.\
+`"………… N-"@
+br
+` Es por eso que no puedo decirle.@
+` Yo---el hermano de Tohno Akiha podría ser un asesino---Esas palabras nunca podrían salir de mi boca.@
+br
+`"No digas estupideces.@ No estoy escondiendo nada y no tengo ningún problema.@
+` No me estuve sintiendo bien recientemente porque no estaba acostumbrado a la vida en la mansión-----"@
+ld c,":a;image\tachi\aki_t03a.jpg",%type_crossfade_fst
+`"……………"@
+` Akiha me mira con enfado.\
+`"¿A----Akiha?"@
+`"Entiendo.@ No me escucharás aun después de todo lo que dije.@ Si no puedes confiar en mí, ni en Kohaku o Hisui, entonces no hay nada más que quiera decirte."@
+ld c,":a;image\tachi\aki_t05a.jpg",%type_crossfade_fst
+` Akiha exhala y aparta la vista.\
+`"No, te equivocas, Akiha.@ No es que no les tenga confianza, sino-----"@
+ld c,":a;image\tachi\aki_t07.jpg",%type_crossfade_fst
+`"¡No quiero escuchar tus excusas!@ ¡¡Si te gustan tanto los secretos, entonces haz lo que quieras!!"@
+cl c,%type_lshutter_fst
+` Akiha me grita y sube la colina corriendo.\
+` ------No puedo perseguirla.@
+br
+` Aunque la persiguiese, no sería capaz de decirle nada.@
+` …… Entonces, eso significa,
+` que sin importar lo que suceda, no les tengo la suficiente confianza.\
+bg #000000,%type_crossfade_mid
+!w2000
+bg "image\bg\bg_40c.jpg",%type_tshutter_mid
+` La cena ha terminado y es hora de ir a la cama.@
+` Akiha me ignoró durante la cena y durante el té posterior.@ Aún debe estar enojada por la conversación que tuvimos en la colina.@
+` …… Esta vez, no parece que su enojo vaya a desaparecer en cuestión de días.@
+br
+`"No, así es mejor para mí."@
+` ------Sí, ya no puedo temerle más a mis sueños.@
+` No le pedí ayuda a Ciel-senpai y rechacé la ayuda de Akiha, porque he decidido que resolveré esto por mi cuenta.\
+`"Para probar que yo, Tohno Shiki, no soy el asesino-----"@
+` Sólo puedo pensar en una manera de hacer eso.\
+playstop
+bg #000000,%type_crossfade_mid
+bg "image\bg\bg_40d.jpg",%type_crossfade_mid
+` Apago las luces de mi habitación y meto el cuchillo en mi bolsillo.@
+`"……… Vamos."@
+` Dejo la habitación, tratando de no hacer ruido.@
+br
+bg #000000,%type_crossfade_mid
+` Para comprobar si soy el asesino o no.@
+` …… Ni siquiera tengo que pensarlo.@
+` Simplemente tengo buscar de noche en la ciudad y encontrar al asesino que no soy yo------\
+!w2000
+wave se0
+bg "image\bg\bg_25b.jpg",%type_crossfade_mid
+` Dejo salir un profundo respiro.@
+br
+` ----------Camino por la ciudad cubierta por la noche.\
+br
+` Meto una mano en mi bolsillo y siento el cuchillo en las yemas de mis dedos mientras camino por la ciudad.\
+wave se0
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_26a.jpg",%type_crossfade_mid
+play "*6"
+` *jadeo*-----*jadeo*
+br
+` -------Respiro silenciosamente mientras camino.@
+` Tratando de no llamar la atención.@
+` Miro a las personas que pasan cerca mientras oculto mi presencia.\
+wave se0
+bg #000000,%type_crossfade_mid
+bg "image\bg\bg_27b.jpg",%type_crossfade_mid
+br
+` *jadeo*------*jadeo*, *jadeo*.@
+br
+` --------Estoy buscando al asesino.@
+` Alguien será atacado esta noche.@ Él está buscando una nueva víctima.@
+` Por ejemplo, una chica con largo cabello negro.@
+` Una chica de mi edad sería lo mejor.@
+` No es necesario mencionar la belleza de sus manos y pies, pero la belleza de su cuello debería ser considerada.@
+` Al final, todo cuenta en ese preciso lugar.\
+wave se0
+bg #000000,%type_crossfade_mid
+bg "image\bg\bg_30b.jpg",%type_crossfade_mid
+` *j-jadeo*, *jadeo*, *jadeo*.@
+br
+` --------Busco al asesino.@
+br
+` …… Sé que no lo encontraré fácilmente.@
+` Sé por mis sueños que la presa perfecta es difícil de encontrar.\
+wave se0
+` *jadeo*…… *jadeo*…… *jadeo*
+br
+` P… e… r…o
+` Esta noche, esta ciudad me aburre.@
+` No puedo encontrar a mi PRESA.@
+` Me estoy enfureciendo.@ Mi objetivo era encontrar a alguien, o matar a alguien, o algo así.\
+`"------------Ha…"@
+br
+` Contendré la respiración.@
+` Me aferraré a mi cuchillo.@
+` Debería concentrarme, para poder responder a la muerte en cualquier momento.\
+wave se0
+bg #000000,%type_crossfade_mid
+bg "image\bg\bg_31b.jpg",%type_crossfade_mid
+` Jadeo más y más.@
+br
+` ---Busco al ASESINO.@
+br
+wave se0
+` Pero no puedo encontrarlo.@
+` Sólo el tiempo pasa.@
+` *jadeo*, *jadeo*.@
+wave se0
+` Se desborda, se agudiza, es usada, y gastada, y sobre el tiempo se yergue, y cambia de forma y-------\
+wave se0
+bg #ffffff,%type_crossfade_fst
+monocro #ff0000
+bg "image\bg\bg_31b.jpg",%type_crossfade_fst
+waveloop se1
+` Frente a mí yace la presa de esta noche.@
+br
+` Mis jadeos llenan el aire.@
+br
+` Es el cadáver de una mujer.@
+` En mi mano está un cuchillo.@ La sangre roja sobre mi cuchillo gotea hacia el suelo.@
+br
+` --------¿Por qué?@
+` Estaba buscando al asesino, pero de pronto, el cadáver de una mujer está justo frente a mí.\
+bg #ffffff,%type_crossfade_fst
+bg "image\bg\bg_31b.jpg",%type_crossfade_fst
+` *jadeo*, *jadeo*, *jadeo*, *jadeo*.@
+` Mi respiración se sale de control.@
+` Un cadáver frente a mí.@
+` Un cuchillo ensangrentado en mi mano.\
+br
+br
+br
+br
+br
+br
+br
+` --------------No entiendo.\
+` Cuándo, en qué momento, qué hice.@
+` ¿Le sucedió algo a mi mente?@
+` Sí, como…
+` se desborda, se agudiza, es usada, y gastada, y sobre el tiempo se yergue, y cambia de forma, cambia su significado, se libera, explota, y se ilumina.@
+` En esa ruta.@
+` La teoría de la consciencia evolutiva y el significado.@
+` Pero una parte importante se ha perdido.\
+br
+br
+` ¿Desde cuando.@
+br
+br
+` Yo.@
+br
+br
+` Me convertí.@
+br
+br
+` En el otro "yo"?\
+` ---------Ya veo.@
+` No era necesario que te diese un empujón, Shiki.\
+` Detrás de mí,
+` viene una voz.@
+br
+` Una fuerte respiración.@
+br
+` Me doy la vuelta.@
+` Ahí.@
+ld c,":a;image\tachi\hal_t01.jpg",%type_crossfade_fst
+cl c,%type_crossfade_fst
+br
+` Alguien que nunca antes he visto, pero que se parece a mí, está parado ahí.\
+` ------No se puede evitar si ya estás averiado.@
+`  Adiós, Shiki.@ Quería jugar contigo un poco más.\
+wave se5
+bg "image\bg\ima_12b.jpg",%type_crossfade_fst
+` Slash.@ Soy cortado con un cuchillo.@
+br
+` Duele.@
+` Es gracioso.@
+` Es profundo.@
+` ¡Es grandioso!\
+`"Ja------jaja, ja."@
+` Comienzo a desmayarme.@
+` De esa manera, en ese estado ambiguo, fui asesinado.@
+` …… Estoy feliz, en cierto modo.@
+` Tohno Shiki fue asesinado por el asesino.@
+` Eso comprueba que yo no era el asesino.\
+playstop
+bg #000000,%type_crossfade_mid
+monocro off
+!w2000
+cl a,%type_waitdisp
+bg "image\word\end.jpg",%type_crossfade_slw
+resettimer
+waittimer 3000
+return

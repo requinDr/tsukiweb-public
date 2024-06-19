@@ -1,0 +1,97 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_32d.jpg",%type_lcartain_mid
+play "*6"
+` …… Subo por la colina residencial y llego a las cercanías de la mansión.@
+` Son alrededor de las dos de la mañana.@
+` Como esperaba, soy totalmente asaltado por soñolencia.\
+`"…… Me pregunto si ella va estar bien."@
+` Estoy preocupado por el aspecto que tenía cuando nos separamos.@
+` No parecía ser dolor por su herida, pero---\
+`"Hm…… mierda, la verja frontal está cerrada."@
+` Es natural, pero aun así está cerrada.@
+br
+` …… Si trepo sobre el muro como ayer, las alarmas probablemente se dispararán.@
+`"…… Demonios…… ¿esta mansión no tiene una puerta trasera o algo así?"\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_47.jpg",%type_lcartain_mid
+` …… Camino alrededor del perimetro de la mansión.@
+` En fin, hay algo parecido a una puerta trasera, pero está cerrada y no puedo entrar.@
+` Probablemente no es posible forzar mi entrada a través del jardín.\
+`"…… Demonios.@ Si esto continúa así tendré que pasar la noche aquí afuera……"@
+` Quiero evitar eso si es posible.@
+` Le gente no pasa cerca de la mansión, así que después de ponerse el sol sólo hay una profunda oscuridad alrededor.@
+` Caminar por aquí a estas horas me da escalofríos.\
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_47.jpg",%type_crossfade_fst
+`"¿Hm?"@
+br
+` ¿Qué es eso?@
+` Se siente como si hubiese alguien merodeando en las sombras no iluminadas por las farolas.\
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\bg_47.jpg",%type_nowaitdisp
+br
+` ---Pal,pitar.@
+br
+` Mi corazón detiene mi respiración.@
+` Mi sangre se acelera a lo largo de mi cuerpo, esta sensación---\
+br
+br
+br
+br
+br
+br
+br
+` Ciertamente, hay alguien parado ahí.@
+` La figura se acerca más y más.\
+br
+` Pasos.@
+br
+` El sonido de secos pasos alcanza mis oídos.\
+br
+` ----Pal, pitar.@
+br
+` Tengo un mal presentimiento sobre esto.@
+` Escalofríos suben por mi columna.\
+`"----"@
+` La figura se acerca.@
+` De pronto----las farolas estallan escandalosamente.@
+bg #000000,%type_nowaitdisp
+` La luna está tapada por las nubes.@
+` El mundo entero se convierte en oscuridad instantáneamente.@
+br
+`"¡!"@
+br
+` ----¡Palpitar………!@
+` Mis latidos dan saltos, como previniéndome de la muerte.@
+` Quizás estaba cansado después de recorrer el perímetro de la mansión durante tanto tiempo.@
+` Mi cuerpo tuvo una reacción demasiado lenta cuando intenté saltar hacia atrás.\
+bg #9c0120,%type_nowaitdisp
+wave se5
+bg #000000,%type_nowaitdisp
+` Un cuchillo atravesando la oscuridad.@
+` El sonido de la carne sobre mi corazón siendo cortada.@
+br
+bg "image\bg\ima_13.jpg",%type_lshutter_fst
+`"¿Ah---eh?"@
+br
+` ---No, entiendo.@
+br
+` Sólo… que… hay un cuchillo, clavado en mi pecho.\
+bg "image\bg\bg_47.jpg",%type_crossfade_fst
+ld c,":a;image\tachi\roa_t07b.jpg",%type_crossfade_fst
+bg "image\bg\bg_47.jpg",%type_crossfade_fst
+` Las nubes se apartan por un breve momento e iluminan la oscura figura.\
+br
+`"Ah----"@
+` Una misteriosa figura totalmente envuelta en vendajes.@
+` Eso es… lo último que veo.\
+playstop
+bg #000000,%type_crossfade_slw
+cl a,%type_waitdisp
+bg "image\word\end.jpg",%type_crossfade_slw
+resettimer
+waittimer 3000
+return

@@ -1,0 +1,94 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_40b.jpg",%type_nowaitdisp
+` …… Es cierto.@ Ella me ha estado cuidando desde ayer, y si tengo tiempo para tontear, debería ir a ayudar a Hisui.\
+bg #000000,%type_lshutter_fst
+bg "image\bg\bg_46b.jpg",%type_lshutter_mid
+play "*1"
+` ---Bien, entonces.@
+` Hisui dijo que estaría limpiando la mansión, ¿pero dónde podría estar?@
+br
+bg #000000,%type_lshutter_fst
+bg "image\bg\bg_33b.jpg",%type_lshutter_fst
+` Bajo al vestíbulo.@
+` No estaba en el pasillo del segundo piso, ¿quizás está en la sala de estar?@
+br
+bg "image\bg\bg_34c.jpg",%type_lshutter_mid
+` …… No está aquí.\
+br
+bg "image\bg\bg_35.jpg",%type_lshutter_mid
+` ………… Ni aquí.@
+br
+bg "image\bg\bg_46b.jpg",%type_lshutter_mid
+` ……………… Ni aquí.@
+br
+bg #000000,%type_lshutter_mid
+` …………………… Ni aquí.\
+bg "image\bg\bg_33b.jpg",%type_lshutter_mid
+` No está en ningún lugar del primer piso.@
+` Sólo me falta buscar en las cerradas salas de recreación, las habitaciones de huéspedes, y el salón donde está Akiha.@
+`"…… Supongo que está en el segundo piso entonces."@
+` Es una gran mansión, probablemente hay un montón de lugares que no he revisado.@
+` Mentalizándome, comienzo a subir las escaleras.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_46b.jpg",%type_lcartain_mid
+playstop
+` Subo las escaleras y echo un vistazo hacia el pasillo.@
+` Y entonces,
+` veo la silueta de Hisui parada junto a la ventana en el ala este de la mansión.\
+bg #000000,%type_lcartain_mid
+bg "image\event\his_e04.jpg",%type_crossfade_mid
+play "*9"
+`"Hisu--"@
+` Mi voz muere en mi garganta.@
+` En medio del pasillo.@
+` Bajo el crepúsculo, entre luz y sombra, Hisui está parada inmóvil.\
+`"------"@
+` …… No puedo… hablar.@
+` Algo respecto a ella parece… peligroso.@
+br
+` Hisui está rezagada en la oscuridad de esta mansión de estilo occidental.@
+` Parece tan increíblemente hermosa; pero al mismo tiempo, un escalofrío me recorre, como si estuviese viendo un fantasma.@
+br
+` Ella ni siquiera mueve un dedo.@ Simplemente mira hacia afuera de la ventana.@
+`"------"@
+` Esa ventana.@
+` ¿Es la misma ventana desde la que nos observaba en aquel entonces?\
+`"Hisu----i"@
+` No puedo hacer nada más que observar con fascinación.@
+` Estoy tan atónito que no puedo hablar, o siquiera parpadear.@ Sólo puedo observarla.@
+br
+` ----Y entonces.@
+` Sus ojos, todavía como los de una muñeca, repentinamente giran hacia mí.\
+`"Shiki-sama, ¿hay algún problema?"@
+`"Ah---no, nada, yo sólo, um……"@
+`"¿?"@
+` Hisui ladea su cabeza con curiosidad.@
+` Eso parece romper el misterioso hechizo bajo el que yo estaba.\
+`"Estaba buscándote porque tenía algo de tiempo libre y pensé en ofrecerte una mano.@ Por alguna razón, no podía encontrarte, pero lo logré."@
+`" …… Ya veo.@ Pero Shiki-sama, no hay necesidad de que haga eso.@ Por favor regrese a su habitación."@
+`"Hmmm………"@
+` Pensé que resultaría de esta manera, Hisui no quiere que haga ningún trabajo.\
+`"Pero Hisui, no tengo nada que hacer.@ No me gusta estar sin hacer nada, por eso pensé que debía ayudar."@
+`"Shiki-sama, puede decir eso, pero ya no hay ningún trabajo en el que pueda asistirme.@ Lo único que falta es ordenar el dormitorio de Akiha.@
+` Ningún varón tiene permiso para entrar al dormitorio de Akiha.@ Ni siquiera usted, Shiki-sama."@
+`"Hmmmm…………"@
+` Bueno, eso definitivamente es verdad.@
+` …… Pero, es un poco cruel.@ Ella no tenía que enfatizar esa última parte.\
+`"Por favor discúlpeme, tengo que finalizar mis labores."@
+bg "image\bg\bg_46b.jpg",%type_crossfade_mid
+` Sus pasos hacen eco en el aire y entra a la habitación de Akiha.@
+`"…………… Cielos."@
+` No puedo entrar a la habitación de una chica sólo porque tengo tiempo libre.@
+`"…… Oh bueno, supongo que regresaré a mi habitación."@
+` Enciendo mis talones.@
+` Antes de eso, me da curiosidad la ventana desde la que Hisui estaba viendo hacia afuera.@
+`"Huh---ésa en el patio, ¿no es Kohaku-san?"@
+` Se puede ver todo el patio desde esta ventana.@
+` ¿Hisui estaba mirando el patio desde esta ventana al igual que lo hacía cuando era niña……?\
+bg #000000,%type_crossfade_mid
+playstop
+!w2000
+return

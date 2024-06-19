@@ -1,0 +1,75 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_06a.jpg",%type_nowaitdisp
+` ---Me quedaré en el salón de clases.@
+br
+` Senpai no estará ahí sin importar adonde vaya.@ Sin importar lo que haga, ella no regresará---\
+bg #000000,%type_lshutter_slw
+bg "image\bg\bg_06b.jpg",%type_lshutter_slw
+` La tutoría de fin de clases ha terminado.@
+` Mis conversadores compañeros abandonan sus asientos.@
+` Después de observarlos inexpresivamente, dejo mi asiento para regresar a la mansión.\
+` ---De vuelta a la mansión.@
+` Pero no es que habrá algo allá si regreso.@
+br
+bg #000000,%type_crossfade_fst
+monocro #ffff00
+bg "image\event\cel_e05a.jpg",%type_crossfade_fst
+monocro off
+bg "image\bg\bg_06b.jpg",%type_crossfade_fst
+`"…………"@
+` Sé que no puedo alcanzarla, pero no puedo darme por vencido.@
+`"Maldición---¿qué demonios debería hacer……!"@
+br
+` Expresando mis pensamientos vigorosamente, dejo el salón.\
+bg "image\bg\bg_11b.jpg",%type_lcartain_mid
+` …… Levanto la mirada y me encuentro frente a la habitación de la ceremonia del té.@
+` Sé que ella no va a estar aquí, pero mis piernas caminan por sí solas.\
+bg "image\bg\bg_09b.jpg",%type_lcartain_mid
+`"-------Ha."@
+` Por supuesto, no hay nadie aquí.@
+` No estaba esperando nada, pero cuando soy golpeado con tanta fuerza, mi visión parece oscilar.@
+br
+bg #ffffff,%type_crossfade_fst
+bg "image\bg\bg_09b.jpg",%type_crossfade_fst
+` El mundo comienza a girar a mi alrededor.\
+play "*4"
+bg #ffffff,%type_nowaitdisp
+br
+br
+br
+br
+br
+br
+br
+`     Instantáneamente, sucede.\
+bg "image\bg\bg_09b.jpg",%type_nowaitdisp
+quakey 1,100
+` El suelo se sacude.@
+` Pienso que es un gran terremoto---pero me doy cuenta de que no sentí el movimiento del suelo, sino el impacto de mi cuerpo al golpear el piso.\
+`"¿Ah----eh?"@
+` No puedo hablar bien.@
+br
+` Jadeos.@
+` Las jadeantes respiraciones sólo pueden ser mías.@
+` Pero no me siento mal.@
+` Es más bien como si no sintiese nada, como si no pudiese sentir en absoluto.\
+` El sonido de unas respiraciones frenéticas.@
+br
+` Aunque no estoy agotado, mi garganta jadea por aire dolorosamente.@
+` No siento nada.@
+` Siento que el cuerpo aquí desplomado no es mío.\
+` El sonido de jadeos.@
+br
+` Algo es---raro.@
+` Mientras respiro salvajemente en el piso, sangre se esparce sobre las alfombrillas tatami----\
+monocro #ff0000
+quakey 1,100
+`"----Gah."@
+br
+` De repente,
+` un dolor punzante llena mi pecho.\
+monocro off
+return

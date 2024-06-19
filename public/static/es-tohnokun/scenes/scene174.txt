@@ -1,0 +1,64 @@
+monocro off
+wavestop
+;---added context above---
+bg "image\bg\bg_56.jpg",%type_nowaitdisp
+play "*1"
+` …… Es cierto.@
+` He estado ayudando a Arcueid a buscar a este "enemigo", pero ni siquiera sé qué clase de sujeto es.@
+br
+`"Entonces preguntaré.@ Arcueid, tu 'enemigo', ¿qué tipo de vampiro es?@ Lo has estado persiguiendo todo este tiempo, así que conoces su apariencia, ¿no?"@
+ld c,":a;image\tachi\ark_t10.jpg",%type_crossfade_fst
+`"Bueno----yo----"@
+` Arcueid aparta la vista.\
+`"¿Qué sucede?@ ¿No acabas de decir que no me ocultarías nada?"@
+ld c,":a;image\tachi\ark_t14.jpg",%type_crossfade_fst
+`"Sí, pero por favor escucha sin enfadarte.@
+` Fue muy recientemente que me enteré de que el vampiro estaba aquí.@ Vine tan pronto como supe que el 'enemigo' estaba en esta ciudad de este país, pero nunca lo he visto.@
+` Para ser sincera, no sé nada sobre el 'enemigo' en esta ocasión."@
+`"¿No sabes nada?----¿No reconociste a Nrvnqsr a primera vista?"\
+`"Nrvnqsr era famoso, y nunca cambiaba su apariencia.@
+` Aunque el 'enemigo' que estoy persiguiendo no es un vampiro fuerte, sus características abarcan un amplio espectro y no tengo idea de sus especialidades o rasgos en esta ocasión.@
+` Lo siento mucho Shiki---pero esto en verdad es todo lo que puedo decirte."@
+br
+` …… Sé que no está mintiendo.@ Lo sé, pero aun así, siento como si ella escondiese algo.@
+` Algo como----\
+`"Está bien.@ No puedes evitarlo si no sabes.@
+` Pero----al menos conoces el nombre de este 'enemigo', ¿cierto?"@
+cl c,%type_crossfade_fst
+`"¿N----nombre?"@
+`"Sí, su nombre."@
+` Cabizbaja, Arcueid queda en silencio.@
+` No puede decirme su nombre por alguna razón, y está preocupada.@
+br
+` Bueno, eso supuse, de todas formas.\
+ld c,":a;image\tachi\ark_t05c.jpg",%type_crossfade_fst
+`"----Su nombre."@
+` Frialdad.@
+` Rápidamente, siento un frío tan grande que parece que pudiese congelar todo el lugar.@
+br
+`"Shiki, su nombre es……"@
+` Arcueid no tiene ningún problema para decirlo.@
+br
+`"…… Su nombre es Michael.@ Michael Roa Valdamjong.@
+` Conocido como Uroboros, un Apóstol Muerto que solía ser humano."@
+` Ella habla mientras sigue mirando hacia abajo.@
+` Enemistad pura, como si estuviese escupiendo sangre.@
+cl c,%type_crossfade_fst
+\
+`"Arcueid, tú----"@
+`"------"@
+` Sus hombros se están sacudiendo.@
+` Parece que está intentando contenerse para no iniciar un alboroto.@
+`"…… Lo siento.@ No debí haber preguntado.@ Está bien, sólo olvídalo."@
+` Arcueid niega ligeramente con su cabeza.@
+` Como intentando decir que nunca podría olvidar.@
+br
+` Un período de silencio tiene lugar a continuación.\
+`"------Lo siento."@
+` Arcueid dice esto, aún mirando hacia abajo.@
+`"----Mm."@
+` Doy una respuesta evasiva.@ Ambos nos levantamos automáticamente de nuestros asientos y dejamos el restaurante.\
+bg #000000,%type_lcartain_mid
+playstop
+!w2000
+return

@@ -1,0 +1,41 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\event\ark_e05b.jpg",%type_lshutter_mid
+play "*4"
+` ---Escucho un chirrido.\
+br
+` Su helada mano sobre mi hombro y su baja temperatura corporal son tan frías que escucho un rechinante ruido congelante.\
+` El sonido no viene de ningun parte a mi alrededor.@
+` Es sólo que mi cuerpo se está congelando por el frío que penetra profundamente a través de las partes que ella toca.@
+` En otras palabras, el sonido viene de mi interior.@
+` Mi corazón, mis entrañas, mi cerebro, están rechinando.\
+`"--------Ah."@
+` Justo como una célula cancerígena.@
+` Rápida e ilimitadamente, sin orden ni inteligencia.@
+` Violándome de adentro hacia afuera.\
+bg "image\bg\ima_13.jpg",%type_crossfade_fst
+`"------Ar,"@
+` …… No puedo sentir su respiración.@
+` Como una bestia hambrienta, simplemente muerde mi cuello.@
+` Al mismo tiempo----
+monocro #ff0000
+` Desciendo a un ilimitado infierno de dolor, como si mis nervios estuviesen siendo desgarrados uno por uno.\
+`"----cueid----"@
+` Mi mente en llamas logra pronunciar esa última palabra.\
+` Duele.@
+` d, u, e, l, e   t, a, n, t, o   q, u, e
+` m, e,
+` h, a, c, e
+` d, e, s, a, p, a, r, e, c, e, r.@
+!w2000
+\
+playstop
+bg #ffffff,%type_crossfade_mid
+monocro off
+cl a,%type_waitdisp
+bg "image\word\end.jpg",%type_crossfade_slw
+resettimer
+waittimer 3000
+return

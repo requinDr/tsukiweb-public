@@ -1,0 +1,252 @@
+monocro off
+wavestop
+play "*2"
+;---added context above---
+bg "image\bg\bg_34a.jpg",%type_nowaitdisp
+` …… No, no estoy de humor para eso.@
+` Sé que Kohaku-san sólo quiere hacerme sentir bien, pero no puedo olvidar a Yumizuka en este momento.@
+br
+bg "image\bg\ima_13.jpg",%type_crossfade_fst
+` Los últimos dos días.@
+` Después de haber visto tanta sangre de otras personas, no puedo ser bienvenido por ellas.\
+bg "image\bg\bg_34a.jpg",%type_crossfade_fst
+playstop
+`"Lo siento.@ Me hace muy feliz que me lo pidan, pero no estoy de humor en este momento----"@
+br
+wave se0
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_34a.jpg",%type_crossfade_fst
+` ---Palpitar.@ Palpitar.@
+br
+`"¿Hu----h?"@
+wave se0
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_34a.jpg",%type_crossfade_fst
+br
+` ------Mi cabeza está palpitando.@
+` De repente.@
+wave se0
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_34a.jpg",%type_crossfade_fst
+br
+` ---Palpitar.@ Palpitar.@
+br
+` Me siento, muy mareado.\
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_34a.jpg",%type_crossfade_fst
+bg #000000,%type_crossfade_mid
+`"¿Shiki-sama---?"@
+` Hisui dice mi nombre con vacilación.@
+` …… Hisui parece haber notado el repentino mareo del que ni Akiha ni Kohaku-san se percataron, y que yo mismo apenas noté.@
+` Pero eso no impide que el mareo empeore.@
+br
+` Un ruido sordo.@
+` Al igual que una marioneta sin cuerdas, caigo al suelo.\
+`"¡Shiki-sama, resista, Shiki-sama……!"@
+` La voz de Hisui se hace distante.@
+` …… Ah, en verdad soy patético.@
+` Sólo al pensar en lo que sucedió con Yumizuka, pierdo la consciencia de esta manera----\
+!w2500
+bg "image\bg\bg_40c.jpg",%type_crossfade_mid
+play "*1"
+`"Ah-----"@
+` Cuando despierto, estoy acostado en mi habitación.@
+` Mientras dormía, Akiha debe haber estado cuidando de mí, porque está ahí frente a mí.@
+br
+`"¿Aki, ha?"@
+ld c,":a;image\tachi\aki_t01b.jpg",%type_crossfade_mid
+`"¿Nii-san?@ Finalmente despertaste."@
+` Akiha se relaja visiblemente.@
+`"Yo…… es cierto, debo haberme desmayado por la anemia otra vez."@
+ld c,":a;image\tachi\aki_t04b.jpg",%type_crossfade_fst
+`"Sí.@ Dormiste durante unas siete horas, Nii-san."@
+`"---En serio.@ Últimamente no he estado durmiendo lo suficiente, ésa podría ser la razón.@ …… Lo siento.@ Te he causado problemas de nuevo."\
+ld c,":a;image\tachi\aki_t01b.jpg",%type_crossfade_fst
+`"¿Qué estás diciendo?@ Tu condición médica no es tu culpa, ¿cierto?@ Es natural que cuide de mi propio hermano, Nii-san.@ Oírte decir que eres un problema para mí, en realidad es más molesto que cuidar de ti."@
+`"…… Ya veo.@ Bueno, entonces no diré gracias.@ Es algo natural, porque somos hermanos."@
+`"Bueno, si puedes decir todo eso, supongo que debes estar muy bien."@
+` Diciendo eso, ella toma mi temperatura.@
+` Treinta y siete grados centígrados.@ Es sólo un grado más de lo normal.\
+ld c,":a;image\tachi\aki_t16b.jpg",%type_crossfade_fst
+`"…… Aún me siento un poco nerviosa, pero te ves bien, así que supongo que estará bien dejarte solo.@ Estaré en mi habitación."@
+`"¿……?@ ¿Qué, Akiha?"@
+ld c,":a;image\tachi\aki_t04b.jpg",%type_crossfade_fst
+`"Por favor agradécele a Hisui.@ Ella fue quien se preocupó por ti todo este tiempo."@
+cl c,%type_lshutter_mid
+` Después de desearme buena salud, ella deja la habitación.\
+`"…… ¿Hisui…… fue la que se preocupó por mí?"@
+` Ahora que lo pienso, escuché su voz antes de desmayarme.@
+` Aunque estoy seguro de que Akiha y Kohaku-san deben haber dicho algo, la voz de Hisui fue la única que oí venir hacia mí.@
+br
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_40c.jpg",%type_crossfade_fst
+` Comienzo a marearme.@
+`"……… Supongo que aún no estoy perfectamente bien."@
+` Respiro profundamente.@
+` Mi día libre terminó antes de darme cuenta.@
+` …… Bueno, si Hisui me estuvo cuidando todo el día, supongo que no es algo malo----\
+bg #000000,%type_crossfade_mid
+playstop
+!w2000
+bg #ffffff,%type_crossfade_slw
+bg "image\bg\bg_45c.jpg",%type_crossfade_mid
+play "*7"
+br
+br
+br
+br
+` ---Algo parece… muy familiar.\
+` Una vieja habitación de estilo japonés.@
+` Una oscura habitación.\
+br
+br
+br
+br
+br
+br
+` ---Eso significa,
+` que es un recuerdo extremadamente viejo.\
+` Cuando era muy joven, no estaba acostumbrado a las nuevas personas que me recibieron, así que me encerré en mi habitación.@
+br
+` Nada me importaba; no quería hablar con nadie.@
+` Siempre, siempre solo; quería estar envuelto en una cuna de mis recuerdos felices.\
+` Aunque sabía que para mí ya no habría nada parecido, quería seguir haciéndolo.\
+` Noc noc, sonó la puerta.@
+`"…… ¿Quién es?"@
+`"Soy yo."@
+` Ah, ella vino de nuevo.@
+` Esa chica como de mi edad estaba llamando a la puerta otra vez.@
+`"SHIKI-chan, vamos a jugar.@ Vas a ponerte mohoso si te quedas en un lugar como ése."@
+`"No quiero.@ No me gusta ir afuera."@
+` Abrazando mis rodillas, me acurruqué en un rincón de la oscura habitación.\
+bg "image\bg\ima_06.jpg",%type_crossfade_fst
+` …… Esa chica vino todos los días.@
+` Siempre tocaba la puerta, nunca se cansaba de hacerlo.@
+` Nunca quiso sacarme a la fuerza, así que no abría la puerta, sólo continuaba diciendo mi nombre.\
+`"¿Por qué no sales?"@
+br
+` Porque afuera no hay nadie que conozca.@ Afuera todos me odian.@
+br
+`"Eso no es verdad.@ Todos quieren agradarte, SHIKI-kun."@
+br
+` Sí.@ Eso lo sabía, pero no podía creerlo.@ Porque mi padre salió, y---\
+br
+br
+br
+br
+br
+` Y.@
+` Fue hecho pedazos.\
+`"…… Ya veo.@ Con razón no puedes confiar en nadie."@
+br
+` Sí, por eso siempre me quedaré aquí.@ No quiero que ocurran más cosas aterradoras.@
+br
+`"Pero, estarás solo todo el tiempo.@ Estar solo no es divertido."@
+br
+` Aunque no sea divertido, es mejor que estar asustado.\
+`"Eso, eso no es nada divertido.@ Entonces, SHIKI-chan, puedes creer en mí."@
+br
+` …… Dices que puedo creer en ti.@ Eso está al revés.@ Normalmente, la gente dice "creo en ti", ¿no?@
+br
+`"¡No hay problema!@ ¡SHIKI-chan, puedes confiar en mí y salir!@
+br
+` …… Bien, pero, creer, ¿en qué debería creer?\
+`"Simple.@ Aun si todos te odian, yo te seguiré queriendo, SHIKI-chan.@ Siempre vengo a buscarte para jugar porque me agradas."@
+br
+` ……… ¿Afuera es, divertido?@
+br
+`"¡Sí!@ ¡Es mucho, mucho más divertido que estar solo-----!"@
+bg #ffffff,%type_crossfade_slw
+playstop
+!w3000
+mov $phasebg,"image\bg\bg_30a.jpg"
+mov $phasetitle_a,":a;image\word\PHIS_05A.PNG"
+mov $phasetitle_b,":a;image\word\day_05.png"
+gosub *left_phase
+bg #ffffff,%type_crossfade_fst
+bg "image\bg\bg_40a.jpg",%type_crossfade_mid
+play "*2"
+` ---Una luz brillante inunda mi consciencia.@
+` Al abrir los ojos, la luz matutina brilla a través de la ventana.@
+`"……… Nnn."@
+` Despierto de mi sueño.@
+` …… No lo recuerdo bien, pero recuerdo vagamente haber tenido un sueño.@
+` Fue muy nostálgico.@
+` Ese olor---¿era el olor del tatami?\
+`"Shiki-sama, ¿está despierto?"@
+` Noc noc.@ Escucho la voz de Hisui.@
+`"Sí, estoy despierto, puedes entrar."@
+ld c,":a;image\tachi\his_t16.jpg",%type_lshutter_mid
+`"Sí.@ Por favor discúlpeme."@
+` Con una reverencia, Hisui entra a la habitación.\
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"Shiki-sama, ¿cómo se siente?@ Si se siente mal, por favor no dude en decírmelo."@
+` Hisui me observa acostado sobre la cama.@
+` …… Parece que aún está preocupada por mi desmayo tan repentino de ayer.\
+`"Estoy bien, no tengo nada malo.@ Me desmayé ayer porque me he estado forzando recientemente, pero no volverá a suceder."@
+` Yumizuka---el vampiro ya no existe.@
+` Por lo tanto, ya no tendré que caminar de noche por la calles, como lo hice estos últimos días.@
+ld c,":a;image\tachi\his_t07.jpg",%type_crossfade_fst
+`"Si usted lo dice, entonces---"@
+` No sé de qué más está preocupada, pero me mira con nerviosismo.@
+`"----Bueno, gracias por preocuparte por mí."@
+` Salto de la cama.\
+`"Como puedes ver, estoy bien.@ Me cambiaré rápidamente, por favor ve a la sala de estar antes que yo."@
+` Hisui aún me mira con una expresión que indica que quiere decir algo más.@
+` Pero, esa mirada desaparece.@
+ld c,":a;image\tachi\his_t04.jpg",%type_crossfade_fst
+`"…… Como desee.@ Bien, entonces por favor discúlpeme."@
+cl c,%type_lshutter_mid
+` Hisui deja mi cambio de ropa y sale de la habitación.\
+`"…… ¿Qué fue todo eso?@ ¿Me veo tan pálido?"@
+` Mi reflejo en el cristal de la ventana parece bastante normal para mí.@
+` En fin, debería apresurarme, cambiarme, y dirigirme hacia la sala de estar.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_34a.jpg",%type_lcartain_mid
+` Voy a la sala de estar y veo a Hisui parada ahí.@
+` Akiha ya ha desayunado, y ahora está bebiendo té.@ Kohaku-san parece estar en la cocina.\
+ld c,":a;image\tachi\aki_t04a.jpg",%type_lshutter_mid
+`"Buenos días, Nii-san.@ Parece que te has recuperado."@
+` En contraste conmigo, ella parece muy calmada y serena.@
+`"Sí, buenos días Akiha.@ Perdón por haber sido una carga anoche."@
+`"…… Nii-san, no hagas que lo repita.@ No lo consideré una carga, y si debes agradecerle a alguien, agradécele a Hisui."@
+` Ella cierra sus ojos con descontento.\
+cl c,%type_crossfade_fst
+`"----Ya veo."@
+` Esas palabras me recuerdan que aún no le he dado las gracias a Hisui.@
+`"…… Hisui.@ Es un poco tarde pero, gracias por lo que hiciste ayer.@ Mi cuerpo es problemático, así que lamento haberte causado tantos problemas."@
+ld c,":a;image\tachi\his_t04.jpg",%type_crossfade_fst
+`"No, soy yo quien debería disculparse.@ No estaba atenta a su condición."@
+` Hisui se inclina.@
+`"No, en verdad es mi culpa.@ No necesitas disculparte."\
+ld c,":a;image\tachi\his_t17.jpg",%type_crossfade_fst
+`"Pero proteger su salud es mi deber.@ Es mi culpa por sugerir cosas sin pensar en su salud."@
+`"………… Uh."@
+` Esa sugerencia, debe referirse a la fiesta de bienvenida de anoche.@
+` De hecho, fue sugerencia de Kohaku-san, y Hisui sólo estuvo de acuerdo.\
+`"Eso no tiene nada que ver, así que---"@
+ld c,":a;image\tachi\aki_t04a.jpg",%type_crossfade_fst
+`"Nii-san, esto está comenzando a perder el sentido.@ Si Hisui dice que es así, entonces que así sea."@
+` Akiha se levanta del sofá.@
+`"Bueno, ya es hora, así que me disculpo.@ Nii-san, ¿puedes ir al comedor a comer tu desayuno?"@
+`"Qu…… Claro que voy a desayunar."@
+`"El desayuno ya está preparado.@ Son casi las siete y media, deberías apresurarte o llegarás tarde."@
+cl c,%type_lshutter_mid
+` Akiha sale caminando con elegancia de la sala.\
+ld c,":a;image\tachi\his_t04.jpg",%type_crossfade_fst
+`"Shiki-sama, por favor coma.@ Como dijo Akiha-sama, no tiene mucho tiempo."@
+`"…… Cierto.@ Iré al comedor."\
+bg #000000,%type_lshutter_mid
+!w1000
+bg "image\bg\bg_48a.jpg",%type_lshutter_mid
+` Desayuno y voy a la entrada de la mansión.@
+` Hisui fue a buscar mi maletín, y lo tiene cuando llego aquí.@
+`"Volveré justo después de la escuela, así que debería estar en casa como a las cuatro.@ Oh, y no tienes que esperarme aquí."@
+ld c,":a;image\tachi\his_t04.jpg",%type_crossfade_fst
+`"Entiendo.@ Shiki-sama, por favor tenga cuidado en el camino."@
+`"Gracias.@ Ya me voy, Hisui."@
+ld c,":a;image\tachi\his_t16.jpg",%type_crossfade_fst
+` Despidiéndome de la inclinada Hisui con una mano, me voy corriendo.\
+bg #000000,%type_lcartain_mid
+playstop
+return

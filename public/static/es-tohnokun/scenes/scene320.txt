@@ -1,0 +1,147 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_34a.jpg",%type_nowaitdisp
+` …… Supongo que si intentase ayudar a Hisui simplemente le estorbaría.@
+` Ya que Akiha está en casa para variar, supongo que pasaré el tiempo hablando con ella.\
+bg #000000,%type_lcartain_mid
+play "*3"
+bg "image\bg\bg_46a.jpg",%type_lcartain_mid
+wave se3
+`"Akiha, ¿estás aquí?"@
+`"¿¡Eh---Ni, Nii-san…!?"@
+` Apresurados sonidos pueden escucharse adentro.@
+`"Sólo quería hablar un rato, si no hay problema."@
+`"Ah---sí, por favor, entra."@
+` Coloco mi mano sobre el pomo.@
+` Ahora que lo pienso, es la primera vez que vengo a la habitación de Akiha.@
+`"……… Hmm."@
+` Abro la puerta un poco nervioso.\
+bg "image\bg\bg_36a.jpg",%type_lshutter_mid
+`"Uh---"@
+` …… Supongo que la habitación es exactamente lo que esperaba.\
+ld c,":a;image\tachi\aki_t16b.jpg",%type_crossfade_fst
+`"¿De qué se trata, Nii-san?@ ¿Es algo importante, como para que vengas a mi habitación?"@
+`"Nah, en absoluto; sólo sentí ganas de hablar un rato.@ Si estás ocupada, puedo regresar más tarde."@
+ld c,":a;image\tachi\aki_t08b.jpg",%type_crossfade_fst
+`"…… Bueno, estoy ocupada, pero… puedo posponer eso y hacer tiempo para hablar contigo."@
+` Akiha cierra el cuaderno sobre su escritorio.\
+`"Oh, ¿estabas haciendo deberes?@ Entonces debería irme; no debería interrumpir tus estudios."@
+ld c,":a;image\tachi\aki_t04b.jpg",%type_crossfade_mid
+`"No, estaba a punto de comenzar, así que puedo dejarlo para esta noche.@
+` Está bien, por favor siéntate.@ Haré algo de té."@
+`"Muy bien, gracias, pero no quiero té.@ No quisiera estropear mi apetito el día de hoy."@
+ld c,":a;image\tachi\aki_t16b.jpg",%type_crossfade_fst
+`"Ah, e-es verdad… Entonces, haré lo mismo."\
+cl a,%type_crossfade_fst
+` Akiha se siente en la silla de su escritorio.@
+` Me dejo caer sobre una silla apropiada, y echo un vistazo alrededor de la habitación de Akiha.@
+` Es una habitación asombrosa, pero claro que no es mi tipo de lugar.@
+` Ni siquiera he podido adaptarme a mi propia habitación, aunque sólo tiene una cama y un escritorio; si me hubiesen dado una habitación engalanada como ésta, podría haber huido.\
+`"Oye, Akiha."@
+ld c,":a;image\tachi\aki_t12b.jpg",%type_crossfade_fst
+`"¿Sí?@ ¿Qué quieres?"@
+`"Um, es sólo algo que me estado preguntando por un tiempo.@ ¿Por qué me pediste que volviera?@ El viejo murió, y aunque soy el hijo mayor, eso no parece razón suficiente."@
+ld c,":a;image\tachi\aki_t21b.jpg",%type_crossfade_fst
+`"¿Qué quieres decir con que no es razón suficiente?@ Éste es tu hogar, es natural que regreses aquí.@
+` No es necesaria ninguna razón."\
+`"Bueno, es verdad, pero… ¿no me guardas rencor?@ Te dejé aquí durante ocho años."@
+ld c,":a;image\tachi\aki_t03b.jpg",%type_crossfade_fst
+`"Sí, por supuesto que guardo rencor.@ Fue culpa de papá que fueses enviado a vivir con los Arima, pero lo que en verdad me enfureció fue que no me enviases ni una sola carta durante ese tiempo."@
+`"Uh---no, eso fue…"\
+ld c,":a;image\tachi\aki_t07b.jpg",%type_crossfade_fst
+`"¿Eso fue qué?@ Vamos, Nii-san, ¿¡qué te pasa!?@ ¡Vienes aquí para recordarme cosas que casi he olvidado!@ ¿Disfrutas tanto hacerme enfadar?"@
+`"¡No!@ Claro que no lo hice para hacerte enfadar.@ Sobre las cartas, no te escribí porque el viejo me prohibió hacerlo, así que---"@
+ld c,":a;image\tachi\aki_t06b.jpg",%type_crossfade_fst
+`"¡Eso lo sé!@ ¡Estoy molesta porque lo mencionaste!"@
+`"---Ah.@ Lo siento, sólo preguntaba.@ No debí haberlo mencionado."\
+ld c,":a;image\tachi\aki_t05b.jpg",%type_crossfade_fst
+`"Ciertamente.@ Por favor no hables de asuntos tan triviales."@
+` Con un sonido de fastidio, Akiha aparta la vista.@
+` …… En serio, ¿qué estoy haciendo?@
+` Después de tomarme la molestia de venir a hablar con Akiha, ¿por qué estoy hablando sobre cosas de tan poca importancia?\
+ld c,":a;image\tachi\aki_t18b.jpg",%type_crossfade_fst
+`"Bueno, supongo que es propio de ti arrastrar por siempre estos asuntos tan insignificantes.@
+` Kohaku también lo dijo, ¿cierto?@ Ésta es tu casa.@ Deberías estar más relajado."@
+`"Sí… creo que me acostumbraré, gradualmente.@ Pero---"@
+`"¿Pero, qué?"@
+`"Bueno, no, es sólo que… no hay nostalgia.@ Recuerdo mi vida en la mansión, pero estoy confundido, porque nada de esto concuerda con mis recuerdos.@
+` Bueno, supongo que es natural porque estuve fuera durante ocho años."\
+ld c,":a;image\tachi\aki_t23b.jpg",%type_crossfade_fst
+`"¿Hm?@ ¿Por qué tienes esa expresión?@ Como dije, no tengo nada en contra de la mansión.@ No te preocupes, no quiero irme ni nada parecido."@
+`"Ah---sí.@ Me alegra, pero…"@
+cl a,%type_crossfade_fst
+` Akiha aparta la vista por alguna razón.\
+ld c,":a;image\tachi\aki_t17b.jpg",%type_crossfade_fst
+`"Nii-san, también olvidé hacerte una pregunta.@ Es… acerca de tu herida por el accidente de hace ocho años…"@
+`"¿Hm?@ La herida del accidente… ¿te refieres a, la herida en mi pecho?"@
+`"Sí.@ Kohaku dijo que aún no ha sanado por completo, pero… ¿todavía te da problemas?"\
+`"Hm… No lo sé.@ La herida en sí sanó hace mucho tiempo, pero algunos órganos inestables fueron dañados.@ Escuché que algunos sanarían con el tiempo, y que otros seguirían siendo inestables.@
+` …… Supongo que mi anemia incesante es el resultado de eso, además del daño emocional provocado por el accidente."@
+cl a,%type_crossfade_fst
+`"¿Aún sientes… um, dolor, Nii-san?"@
+` Akiha murmura una pregunta, sin mirarme a la cara.\
+`"…… Nah, ya no duele.@ Sólo me siento un poco mareado cuando despierto, nada peor que eso."@
+` Bueno, quizás duele ocasionalmente a mitad del invierno.@
+`"El mareo ha disminuido últimamente, y estoy seguro de que la anemia desaparecerá en pocos años.@
+` En fin, no es nada para preocuparse.@ Hay gente allá fuera con heridas de las que tardarán viente años en recuperarse, así que mi herida no es nada en comparación."\
+` Akiha no dice nada, y sigue mirando hacia otro lado.@
+`"…………………"@
+` Demonios.@
+` La atmósfera se ha vuelto pesada de nuevo.@
+`"…………………"@
+` Akiha está completamente inmóvil.@
+`"¿………………?"@
+` Por alguna razón, parece antinatural.\
+`"Oye, ¿¡Akiha!?"@
+ld c,":a;image\tachi\aki_t19c.jpg",%type_crossfade_fst
+`"Ah---¿Nii-san?"@
+` Akiha levanta la vista.@
+` Carece de toda vitalidad, como si hubiese estado desmayada hasta ahora.\
+`"¿Qué sucede, te sientes mal?@ De ser así, deberías acostarte.@ Iré de vuelta a mi habitación."@
+`"Nn---no, no es eso.@ Sólo estaba…… escuchándote, y recordando el pasado---"@
+cl a,%type_crossfade_fst
+` El cuerpo de Akiha tiembla.@
+` Casi cae de su silla, pero permanece en ella de alguna manera.\
+ld c,":a;image\tachi\aki_t20b.jpg",%type_crossfade_fst
+` Respira entrecortadamente.@
+`"Akiha, en verdad estás actuando extraño.@ Deberías acostarte."@
+ld c,":a;image\tachi\aki_t12b.jpg",%type_crossfade_mid
+`"---No, estoy bien.@ También me mareo fácilmente, aunque no tanto como tú.@
+` …… Estaba pensando en el accidente de hace ocho años.@ Tu herida era tan profunda, y había tanta sangre saliendo de ella---por eso me sentí tan mal."\
+`"…… Ya veo.@ Pero trata de no extenuarte.@ Si te sientes mal, por favor dímelo."@
+ld c,":a;image\tachi\aki_t04b.jpg",%type_crossfade_fst
+`"Por supuesto.@ Haría eso aunque no me lo dijeses.@ Estoy bien; a diferencia del tuyo, mi mareo es únicamente mental."@
+` Akiha me responde con claridad, totalmente recuperada.\
+bg #000000,%type_tshutter_fst
+bg "image\bg\bg_36a.jpg",%type_bshutter_fst
+ld c,":a;image\tachi\aki_t04b.jpg",%type_crossfade_fst
+`"Ya casi es hora, ¿no?@ Kohaku nos llamará pronto, así que deberías volver a tu habitación."@
+`"Ahh, ¿ya son las cinco en punto?@ …… Bien, iré a mi habitación, pero Akiha, no te fuerces.@ No te hace ningún bien quedarte callada cuando estás sufriendo."@
+ld c,":a;image\tachi\aki_t08b.jpg",%type_crossfade_fst
+`"¿Oh?@ No es normal que te preocupes tanto por mí, Nii-san.@ Quizás debería hacer esto de vez en cuando."@
+`"Tonta.@ Es sólo algo ocasional.@ Nos vemos luego."\
+cl a,%type_crossfade_fst
+playstop
+` Abro la puerta.@
+` La habitación de Akiha está en lo profundo del ala este, a unos cincuenta metros de mi habitación en lo profundo del ala oeste.@
+ld c,":a;image\tachi\aki_t17b.jpg",%type_crossfade_fst
+`"Ah---Nii-san."@
+`"¿Hm?@ ¿Qué sucede?@ ¿Olvidaste algo?"@
+ld c,":a;image\tachi\aki_t12b.jpg",%type_crossfade_fst
+`"No, no es eso, pero………"\
+` Akiha queda en silencio, incapaz de hallar las palabras adecuadas.@
+` Pero los ojos que me observan---
+br
+`"…… Perdona.@ No es nada."@
+br
+` ---parecen estar disculpándose conmigo.\
+ld c,":a;image\tachi\aki_t04b.jpg",%type_crossfade_fst
+`"Te veré más tarde en el comedor.@ Hoy no me enfadaré sin importar lo que hagas, así que no te preocupes."@
+`"Ahh, eso es un alivio.@ Ya que Kohaku-san nos preparó un festín, estaba esperando que hoy pudiésemos olvidar los modales en la mesa."@
+cl a,%type_crossfade_fst
+` Con eso, dejo la habitación de Akiha.\
+bg #000000,%type_lcartain_mid
+!w2000
+return

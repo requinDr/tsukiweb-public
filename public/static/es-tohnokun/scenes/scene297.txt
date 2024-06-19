@@ -1,0 +1,437 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_27b.jpg",%type_nowaitdisp
+` Pero, quiero verla.@
+` Quiero escuchar la voz de Ciel-senpai.@
+` La única con quien puedo hablar, la única que me escuchará.@
+` Si ella está conmigo, puedo permanecer como Tohno Shiki.\
+bg #000000,%type_crossfade_mid
+bg "image\bg\bg_27b.jpg",%type_crossfade_fst
+`"………………"@
+` Giro el disco.@
+` Después de tres repiques, escucho a alguien tomar el auricular y la voz de Ciel-senpai.@
+br
+`"¿Hola?@ ¿Quién es?"@
+`"………………"@
+` Es extraño.@
+` Su voz parece… tan cálida.\
+`"¿Hola?@ Oye, ¿puedes escucharme?"@
+` Su inquisitiva voz.@
+` Sólo he estado ahí una vez, pero puedo imaginarla sosteniendo el teléfono en su habitación.\
+`"……………………"@
+` No puedo hablar.@
+` No sé qué decir.@
+` Sabía que no debía llamar.@ No puedo involucrar a esta persona.@
+` Debería--simplemente colgar sin decir nada.\
+`"¿Tohno-kun?@ ¿Eres tú, Tohno-kun?"@
+br
+`"Ah----------"@
+` Al escuchar mi nombre, repentinamente quiero llorar.@
+br
+`"……… Sí."@
+` Dejo salir una respuesta.@
+`"Ah, sabía que eras tú, Tohno-kun.@ ¿Por qué estás llamando tan tarde?"\
+`"………………"@
+` Me digo a mí mismo que me detenga.@
+` Me digo a mí mismo que invente alguna excusa, le diga que la veré mañana y cuelgue.@
+` Pero, parece que no puedo hacer eso.@
+`"Senpai, yo, creo que no voy a lograrlo."@
+` Hablo con una voz que se apaga.@
+`"----¿Tohno-kun?"@
+` Suena como si su voz se hubiese congelado.\
+`"Tohno-kun, ¿qué quieres decir?@ ¿Qué sucede?"@
+`"----Quiero decir, que no puedo lograrlo.@
+` Intenté resisitirlo.@ Pero, fue inútil.@ Como dijo él, parece que, soy sólo un asesino."@
+br
+` Y uno bastante malo.@
+` Incluso ahora, si bajo la guardia, quiero pasar mi cuchillo por la garganta de Akiha o la de Hisui.@
+` No sólo cualquier persona de la calle, sino personas cercanas a mí--Mi cordura se está desmoronando, he llegado al punto de pensar semejantes cosas.\
+`"…… ¿Qué debería hacer?@ No puedo suicidarme.@ Nunca me han enseñado cómo suicidarme."@
+`"…… Y, ¿dónde estás ahora?"@
+`"En el parque.@ Quería ir adonde no hubiese gente, pero hay muchas casas cerca.@ Estoy, enloqueciendo."@
+`"…… Entiendo.@ Partiré hacia la escuela, veámonos allá.@ No hay casas cerca, así que será tranquilo, ¿no?"@
+`"---Es cierto---en la escuela, no habrá nadie."@
+`"¿De acuerdo?@ Por favor espera en los terrenos de la escuela."@
+br
+` La línea se corta.\
+`"-----"@
+` Salgo de la cabina telefónica.@
+` Senpai---Puedo ver a Ciel-senpai.@
+` No creo que algo vaya a cambiar cuando la vea, pero aun así quiero verla.@
+br
+`"----Gha, agh."@
+` Mi cuerpo comienza a calentarse de nuevo.@
+` Esperando no encontrarme con nadie en el camino a la escuela, dejo el parque con pasos inseguros.\
+bg #000000,%type_lcartain_slw
+bg "image\bg\bg_01c.jpg",%type_lcartain_slw
+` La escuela está en absoluto silencio.@
+` No hay casas cerca, así que hay mucha tranquilidad por aquí.@
+br
+` *jadeo*----*jadeo*, *jadeo*---
+` Me quito mis lentes y corto la cerradura sobre la verja de la escuela con mi cuchillo.\
+`"Ah."@
+` …… No puedo creerlo.@
+` Incluso sin pensar en ello, parece que metí el cuchillo en mi bolsillo.@
+br
+` Probablemente,
+` para que en cualquier momento, pudiese matar a alguien.\
+bg "image\bg\bg_02a.jpg",%type_crossfade_slw
+`"Ha………… ah."@
+` Caigo sobre mis rodillas tan pronto como llego a los terrenos de la escuela.@
+` Evito caer al suelo usando ambas manos.\
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\bg_02a.jpg",%type_nowaitdisp
+`"……………………"@
+` Todo mi cuerpo está caliente.@
+` Pero, ya no siento que no soy yo mismo.@
+` Probablemente,
+br
+` al violar a Kohaku-san,
+br
+` el impulso disminuyó momentáneamente.\
+`"----Gg."@
+` Una masa se eleva en mi garganta.@
+` Mi boca siente un amargo sabor.@
+` No he comido nada hoy, así que todo lo que puedo vomitar es ácido estomacal.@
+br
+`"Kohaku---san."@
+` No es algo que pueda ser perdonado con una simple disculpa.@
+` Así que, no puedo disculparme.@
+` ¿Cómo podré mostrarle mi arrepentimiento de ahora en adelante?\
+` Esa conversación de hace tantos días.@
+` Ciel-senpai me ayudó cuando estaba en las profundidades de la desesperación después de asesinar a Arcueid.@
+` Esa persona---me dijo que no hay personas que pecan y personas que no pecan, sino únicamente personas que pueden y personas que no pueden expiar sus pecados.@
+br
+` Pero, ¿qué debería hacer yo?@
+` El pecado que cometí, la mente herida, ¿puede ser expiado----\
+monocro #0000ff
+bg "image\bg\bg_02a.jpg",%type_crossfade_fst
+`"¿---?"@
+` Repentinamente oscurece más.@
+` El sonido de unos pasos.@
+` No me percaté porque estaba boca abajo, pero alguien viene.@
+` Bajo la luz de la luna.@
+` ¿Oscureció el cielo con su sombra esa persona?\
+`"¿Estás tratando de arrepentirte, Tohno-kun?"@
+br
+` Ciel-senpai pregunta con una fría voz.@
+br
+`"----Senpai."@
+` …… Ella, en verdad vino.@
+` Quiero ver su rostro, así que levanto mi cabeza como si mirase hacia el cielo nocturno.@
+monocro off
+bg "image\event\cel_e06a.jpg",%type_crossfade_slw
+br
+`"----¿Eh?"@
+br
+` ---Pero esto.\
+bg "image\event\cel_e06b.jpg",%type_tscroll_slw
+br
+br
+br
+br
+br
+br
+br
+` ---Ésta no es,
+`   la Ciel que conozco.\
+waveloop se1
+` Tiene el tatuaje de una cruz sobre sus brazos desnudos.@
+` Sus ojos fríos, como si mirase a alguien que ni siquiera conoce.@
+` …… Senpai porta una extraña arma con un aura de frialdad que no le sienta.\
+`"-------Ah."@
+` …… La conozco.@
+` Dentro de mi cerebro, sé qué arma es ésta.@ Tiene que ser---la llamada Séptima Escritura Sagrada, una de las apócrifas que nunca deben ser retiradas de su lugar de descanso.@
+br
+`"¿Sen---pai?"@
+`"Como esperaba, eras Roa después de todo, Tohno-kun."@
+` Con sus fríos ojos,
+` Senpai habla con una voz que es igualmente fría.\
+`"----"@
+` Comienzo a sentir un escalofrío en mi columna.@
+` Sin razón alguna.@ No, mis instintos y mi cerebro trabajan a toda su capacidad para advertirme del peligro, y salto hacia atrás.@
+br
+`"------"@
+` Aún con la boca cerrada, ella da un paso hacia mí con esa amenazadora arma.@
+` …… No hay aberturas en su defensa, en absoluto.\
+` Si huyo precipitadamente,
+` si le doy la espalda, sé que esa cosa perforará mi corazón y desapareceré sin la posibilidad de volver a reencarnar.@
+br
+` …… Aunque ni siquiera tengo ese conocimiento en mis recuerdos.\
+`"---¿Por qué?@ Yo sólo---"@
+` Yo sólo… quería ver a Senpai otra vez.@
+br
+`"Comprendo.@ Roa ya está emergiendo, ¿cierto?@ Entonces ya es demasiado tarde."@
+` Ligeramente,
+` ella da otro sencillo paso hacia adelante.@
+br
+` Esa figura parece----\
+`"---¿Qué estás haciendo, Senpai?@
+` Pareciera que---fueses, a matarme."@
+`"-----"@
+` Ella no responde.@
+` Sólo me mira fijamente como si estuviese intentando decidir hacia dónde puede apuntar para matarme rápidamente.\
+`"---Sen, pai."@
+` Ella va en serio.@
+` En serio, planea matarme.@
+br
+` ---Un rechinar.@
+` Mis nervios sienten la muerte inminente frente a mí.@
+` Mi columna está gritando y mi nuca se está entumeciendo.@
+br
+` Pero---más que este miedo a la muerte,
+` no puedo creer que esta persona esté diciendo semejantes cosas.\
+`"----¿Por qué?"@
+` No lo sé.@
+`"Senpai, dijiste que te quedaste aquí por mi bien."@
+`"------"@
+` Con un espasmo,
+` las piernas de Senpai se detienen.@
+br
+` Ella me dirige la mirada y sonríe.\
+`"Tu bondad en verdad es un raro tesoro.@ Es bueno confiar en las personas, pero si hubieses sido un poco más sereno y lo hubieses pensado con claridad, tal vez podrías haber escapado."@
+`"Eh---"@
+`"Primero que nada, ¿nunca te preguntaste por qué vine a esta escuela?@
+` No lo hice sólo porque quería, ¿sabes?"\
+`"------¿Sen, pai?"@
+`"Sabías que mi objetivo era destruir a 'La Serpiente'---Roa.@
+` Vine a esta escuela porque sabía que el huésped reencarnado de Roa estaba aquí.@ Pero como no estaba segura, necesitaba examinar la situación por un tiempo."\
+wavestop
+`"Espera un minuto, ¿qué rayos estás---"@
+` ¿Qué está balbuceando ella?@
+` No lo sé.@
+` En verdad no puedo entender de qué está hablando.@
+` Ella ignora mi desconcierto y continúa hablando.\
+play "*9"
+`"…… Te lo dije antes, Tohno-kun.@ Roa tiene requerimientos para la familia en la que decide reencarnar.@
+` Si lo piensas bien, sólo tienes que buscar a las familias con esas características.@ Cuando sabes eso, encontrarlo es muy sencillo.@
+` Con un poco de investigación, es fácil encontrar familias con habilidades especiales en su linaje.@ En esta ciudad, sólo hay una familia que cumple con los requerimientos de Roa.@
+` Así que---supe desde el principio quién era Roa."\
+`"-----Qué--"@
+` Es extraño.@
+` Si lo sabía desde el principio, pudo haberlo matado o capturado en ese momento……@
+` ¿Desde el principio?@
+` ¿Ella sabía, quién era……?\
+`"Sí.@ Mira, ¿no te das cuenta hora?@
+` Sabes, Tohno-kun.@ Vine a esta escuela para capturarte desde un principio."@
+br
+`"--------------"@
+` Espera.@
+` Sólo quiero, que, ella, espere.\
+`"Pero, había un pequeño error.@
+` …… Estaba observándote desde lejos para no estimular al Roa dentro de ti, pero concluí que podías no ser el nuevo huésped reencarnado de Roa.@
+` Pero, el hijo mayor de la familia Tohno tenía que ser en quien Roa reencarnase.@ No hay equivocación en eso, así que el error debías ser tú, Tohno-kun."@
+` Ciel-senpai habla con practicidad.@
+` Yo---no puedo decir nada.\
+`"Examinando la situación, fuiste herido fatalmente hace ocho años y adoptado por tus parientes.@
+` Lo que sucedió después fue exactamente como dijo Tohno SHIKI hace dos noches.@
+` No sé qué sucedió en la familia Tohno ocho años atrás, pero tú fuiste asesinado por ese niño llamado SHIKI.@ No, en realidad tu vida fue robada.@
+` Como resultado, quedaste conectado a SHIKI, quien era el huésped de Roa."\
+` Una voz directa, sin emoción.@
+` No conozco a esta Ciel-senpai.@
+` ¿O ésta…
+` ¿Ésta es la verdadera Ciel, y la persona que conocí hasta ahora era simplemente----\
+`"Hasta ahora, debes haber vivido momentos en que la memoria de Roa fluía hacia ti a través de SHIKI.@
+` Él es un vampiro que ha manipulado la cosa sin forma llamada alma.@ Para Roa, ustedes dos, quienes compartían una vida, eran una doble existencia finamente elaborada.\
+`"Por eso---cuando el cuerpo de SHIKI fue destruído, Roa no necesitó reencarnar.@ Porque aún tenía un lugar hacia donde correr: tú."@
+` Frío.@
+` Como si odiase a su enemigo, ella me detesta.\
+`"Pero, todo ha terminado ahora.@ No estaba preparada para acabar con esto tan repentinamente aquella noche, pero esta noche es diferente.@
+` Soy muy afortunada en cierto modo.@ Si Arcueid destruía a Roa, probablemente habría reencarnado de nuevo."@
+` …… No puedo.@ Creer esto.@
+` Eso---eso…
+`"----Eso no es, verdad."\
+`"Adelante, por favor continúa negándolo y haciéndote el tonto.@ Eso facilita mi trabajo.@ Pero---"@
+br
+` Un traqueteo metálico proviene del arma.@
+br
+`"Eso no cambia el hecho de que puedo acabarte fácilmente sin importar lo que hagas, Roa."\
+`"-------"@
+` Su jocosa voz me hace comprender finalmente.@
+` …… No está mintiendo.@
+` …… Sus ojos no están mirando hacia "mí".\
+` …… Sus sentimientos no tenían nada que ver "conmigo" desde el principio.\
+`"…… ¿Qué es esto?@
+` Entonces, entonces desde el principio, ¿siempre me viste como Roa?@
+` Senpai.@ ¡Ser mi amiga y todo eso fue simplemente……………!"@
+br
+` ---No puedo decirlo.@
+` No puedo terminar la oración.@
+` Si lo hago, siento que todo se convertirá en una mentira en ese instante.\
+`"Por supuesto.@ Después de que SHIKI fue destruído, sólo permanecí en la escuela porque Roa no había desaparecido.@ Ya que Roa estaba estudiando aquí, era más conveniente quedarme."\
+br
+` Nunca me iría dejándote aquí.@
+br
+` Senpai me dijo eso con una sonrisa.@
+` Eso no fue, por mi bien.@
+` Ella se quedó aquí sólo para buscar al Roa que sobrevivió.@ Es la única razón por la que me dio su número telefónico.\
+`"----Ja."@
+bg #000000,%type_crossfade_fst
+monocro #ffffff
+bg "image\event\cel_e01.jpg",%type_crossfade_fst
+` Entonces, eso también.@
+br
+`"Jaja---"@
+br
+bg "image\event\cel_e02a.jpg",%type_crossfade_fst
+` Y aquellas veces, también.@
+br
+`"Jaja----ja."@
+br
+bg "image\event\cel_e03a.jpg",%type_crossfade_fst
+` Y cuando me salvó aquella noche, también.@
+br
+`"Ah……… ja, ja."@
+bg "image\event\cel_e05b.jpg",%type_crossfade_fst
+br
+` Y, esos ojos tristes, también.@
+bg #000000,%type_crossfade_fst
+\
+monocro off
+bg "image\bg\bg_02a.jpg",%type_crossfade_fst
+`"Jaja---ja."@
+` …… Correcto Shiki, no significan absolutamente nada.@ Esos recuerdos---no son nada en absoluto.\
+` Pensé que la amaba.@
+` Y que ella también me amaba.@
+` …… Buena broma.@
+` Todo fue sólo una ilusión sacada de alguna obra.@
+br
+` ----Todo aquello.@
+` Todo fue un cuento de hadas hecho de mentiras---\
+`"---Entiendo.@ Pero, Senpai.@
+` ¿Cómo sabías que Roa aún estaba vivo?@ ¿Cómo, cómo supiste que Roa reencarnó en este Tohno Shiki?"@
+ld c,":a;image\tachi\cel_t06c.jpg",%type_crossfade_mid
+`"Por supuesto que lo sabía.@ Porque se trata de mí misma." Senpai dice algo que no puedo entender.\
+`"…… ¿Sobre ti misma……?"@
+ld c,":a;image\tachi\cel_t15.jpg",%type_crossfade_mid
+`"Sí.@ Fui yo quien buscó a la familia Tohno y la escogió para el nuevo huésped.@
+` …… Bueno, no podía saber que la consciencia de Roa había "aparecido" a menos que ésta despertase, así que no es un recuerdo muy útil."@
+`"Senpai, ¿qué---estás diciendo?"\
+`"¿Qué estoy diciendo?@ Es una vieja historia.@
+` Una historia de hace ocho años, sobre una chica como tú que no sabía nada.\
+` Tenía dieciseis años cuando ese impulso comenzó a contaminarla.@
+` …… Pero antes de eso, no había nada.@ Ella no tenía ningún poder especial como tú, Tohno-kun.@ En verdad tenía una vida normal sin saber nada.\
+`"Ayudando a su padre, yendo a la escuela.@
+` Era terrible para despertar temprano pero siempre ayudaba con la tienda en la noche.@ Ella en verdad pensaba que heredaría el trabajo de su padre."@
+bg #ffffff,%type_nowaitdisp
+bg "image\bg\cmo_11.jpg",%type_nowaitdisp
+bg "image\bg\bg_02a.jpg",%type_nowaitdisp
+`"Eh---"@
+` Justo ahora.@
+` Un escenario que nunca he visto pasa rápidamente por mi cabeza… pero en realidad, siento que lo he visto en algún lugar.@
+` Su historia---se siente muy similar a ese sueño que tuve.\
+ld c,":a;image\tachi\cel_t15.jpg",%type_crossfade_mid
+`"Pero, su sueño no se cumplió.@ Con sus propias manos, ella destruyó la felicidad que estaba ahí naturalmente.@
+` Porque era el huésped reencarnado de Roa."\
+`"Su cuerpo poseía grandes habilidades y Roa estaba complacido.@
+` Ella se esforzó mucho para resisitirlo igual que tú, pero fue inútil.@ Al final, bebió la sangre de su padre y de su madre, y lentamente asesino a la gente del pueblo.@
+` Esa niña, quizás enloqueció en ese momento."\
+`"Tú comprendes, ¿verdad, Tohno-kun?@
+` No puedes detenerlo.@ "Detente" o "No deberías" ni siquiera entran en tus pensamientos.@
+` ¿No es extraño?@ ---A pesar de que tienes tu consciencia intacta."@
+`"Se---n, pai.@ No me digas, que esa historia es,"@
+`"Pero esa pesadilla llegó pronto a su final.@ Esa mujer de blanco vino y perforó su corazón."\
+br
+br
+br
+br
+br
+` ---Sí, lo sé.@
+` Entonces esa chica murió, y Roa reencarnó como Tohno SHIKI.@
+` Pero, eso es.\
+`"Pero, esa chica, no pudo permanecer muerta."@
+` Tranquilamente.@
+` Casi riendo, ella dice esto.\
+`"Su cadáver fue llevado a La Iglesia y preservado como una muestra de un vampiro que regresó a la forma humana.@
+` ……  Pero, gracias a no sé qué clase de destino, su cuerpo era especial, y tenía una habilidad anormal para revivir.@
+` Un día, hace tres años, aunque no debía hacerlo, ella volvió de la muerte.@
+` …… Es extraño, ¿no?@ Aunque era sólo una coraza desechada por el alma de Roa, volvió a la vida.\
+`"Después de eso, las cosas fueron… complicadas.@ La Iglesia vio a la niña como herejía y la asesinó, pero sin importar cuántas veces la mataban, ella no moría.@
+ld c,":a;image\tachi\cel_t07c.jpg",%type_crossfade_mid
+` …… Lo siento pero, ¿puedo quejarme un poco?@ Esa chica, sufrió un mes entero de vida solamente siendo asesinada.@ Día tras día, sin siquiera un momento de descanso, ella volvía a la vida sólo para ser asesinada una vez más.@ Todos los días, todo el día."@
+playstop
+cl c,%type_crossfade_fst
+\
+`"……………… Qué…"@
+` Un cuerpo que no puede morir.@
+` Carne que volverá a su estado original sin importar qué suceda.@
+` Roa, el vampiro reencarnado como Tohno SHIKI, dijo eso respecto a esta persona.\
+` …… Parecía tan doloroso.@
+` Senpai sanaba sin importar qué tipo de herida recibiese, pero cada herida hacía que su rostro se retorciese de dolor.@
+` ¿Eso, todos los días?@
+` ¿Todos los días, todo el día sin pausa alguna, viviendo para ser asesinada y regresar de nuevo……?\
+ld c,":a;image\tachi\cel_t15.jpg",%type_crossfade_mid
+`"Y entonces, la gente de La Iglesia finalmente comprendió que esto era demasiado extraño.\
+` Todos los problemas con los que nadie puede lidiar o resolver son enviados al lugar llamado la Agencia de Entierros.@
+` Ahí, le enseñaron lo que sucedió con ella.\
+`"…… En resumen, ella era una contradicción.@
+` Era una humana nacida como Roa.@ Aunque la personalidad de sus primeros quince años era suya, el nombre de su alma era Roa.@
+` Era ella misma y a la vez era Roa.@
+` Por lo tanto, es una contradicción que la chica llamada Roa esté muerta cuando Roa está vivo.@
+` La descendencia de la existencia llamada Roa…… esta hija de Roa no puede morir antes que él."\
+`"Siempre que haya aunque sea un pequeño error en este mundo, el propio mundo lo corregirá para preservarse a sí mismo.@
+` Así que--esa chica, mientras el alma de Roa siga existiendo, existirá por toda la eternidad.@ Nadie aparte del propio mundo puede "reparar" el error automáticamente.\
+`"El clero dijo que la niña estaba ' fuera del ciclo'.@ Mientras Roa viva, estará detenida por siempre.@
+` No puede morir por vejez porque no puede envejecer, y aunque fuese reducida a cenizas, el tiempo se revertiría a sí mismo para devolverla a su estado original."\
+`"Semejante monstruo… normalmente habría sido sellado para siempre, pero ella casualmente heredó el conocimiento mágico de Roa.@
+` El clero de la Agencia de Entierros dijo que sería útil y la introdujeron a La Iglesia.\
+`"Cinco años después.@ Ella decidió desechar su nombre y vivir como alguien que caza vampiros.@
+` ---Yo puedo saber dónde existe el alma de Roa, incluso mejor que su propia creadora, Arcueid.@
+` La razón… ni siquiera tengo que decírtela, ¿cierto?"\
+`"------"@
+` Cierto, no es necesario decirlo.@
+` Pero, no quiero admitir semejante cosa.\
+`"Lo dije antes, Tohno-kun.@ La meta de Ciel es una y sólo una."@
+br
+` --Quiero morir como humana--
+br
+` No entendí lo que significaban esas palabras entonces.@
+` Pero ahora.@
+` Ahora---¿puedo entenderlo al menos un poco?\
+`"----No puedo."@
+` Es casi lamentable, pero no puedo.@
+` No puedo entender ese sentimiento de desear la muerte.@ Mientras esté vivo---pensaré en querer morir, pero nunca será mi verdadera intención.@
+br
+` Pero, eso es todo lo que Senpai desea.@
+` Una manera de pensar que fue transformada en eso.@
+` Una vida que te hace desear solamente eso.\
+` Aún no lo conozco.@
+` Con mis propias manos.@
+` No conozco el dolor de matar a las personas cercanas a mí con mis propias manos, incluso estando consciente.@
+` …… Y no quiero conocerlo nunca.@
+` Pero esta persona lo ha vivido.@
+` Entonces---¿es por eso que quiere morir?\
+`"Eso…… eso está mal."@
+`"No lo está.@ Simplemente quiero morir como humana."@
+` Su voz suena fría.\
+`"……………… Yo…"@
+` …… Solamente puedo asentir.@
+` Su deseo,
+` y su dolor, los comprendo.\
+`"………… No quiero eso."@
+` No me gusta mi destino ni el deseo de Ciel.@ No quiero pensar que ésta es la realidad.@
+br
+` Pero, el tiempo no espera por nadie.@
+` Con un traqueteo metálico,
+` la agente llamada Ciel avanza para asesinarme.\
+bg #000000,%type_lshutter_fst
+bg "image\bg\bg_02a.jpg",%type_lshutter_fst
+` Como diciendo que no hay necesidad de hablar más,
+` las manos de Ciel levantan esa arma.\
+` La Séptima Escritura Sagrada.@
+` El arma que La Iglesia creó para negar la reencarnación.@ Un principio bíblico inscrito con cada posible inculpación de crítica a la reencarnación.@
+` Un objeto que es escritura y a la vez apócrifa.@ Un arma, y una escritura al mismo tiempo.@
+br
+` Si soy golpeado por eso, mi alma será dispersada y devuelta a la nada.\
+`"------"@
+` La bayoneta se eleva.@
+` La punta viene hacia mí.@
+` Pero lentamente.@
+` Tratándose de Ciel---debería ser capaz de perforarme sin que pueda siquiera percatarme de qué sucedió.\
+`"Ah----"@
+` No hay tiempo para pensar.@
+` Yo----
+br
+return

@@ -1,0 +1,256 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_47.jpg",%type_lcartain_mid
+` …… Subo por la colina residencial y llego a las cercanías de la mansión.@
+` Son alrededor de las dos de la mañana.@
+` Como esperaba, soy totalmente asaltado por soñolencia.@
+br
+`"…… Me pregunto si ella va a estar bien."@
+` Estoy preocupado por el aspecto que tenía cuando nos separamos.@
+` No parecía ser dolor por su herida, pero---\
+`"¿Hm?"@
+br
+` ¿Qué es eso?@
+` Siento que hay alguien merodeando en las sombras no iluminadas por las farolas.\
+bg #000000,%type_nowaitdisp
+bg "image\bg\bg_47.jpg",%type_nowaitdisp
+br
+wave se0
+` ---Pal,pitar.@
+br
+` Mi corazón detiene mi respiración.@
+` Mi sangre se acelera a lo largo de mi cuerpo, esta sensación----\
+br
+` Ciertamente, hay alguien parado ahí.@
+` La figura se acerca más y más.@
+br
+` Pasos.@
+` El sonido de secos pasos alcanza mis oídos.\
+br
+wave se0
+` ----Pal, pitar.@
+br
+` Tengo un mal presentimiento sobre esto.@
+` Escalofríos suben por mi columna.\
+`"----"@
+` La figura se acerca.@
+` De pronto----las farolas estallan escandalosamente.@
+bg #000000,%type_nowaitdisp
+` La luna está tapada por las nubes.@
+` El mundo entero se convierte en oscuridad instantáneamente.@
+br
+`"¡!"@
+`      ¡Pal, pitar………!@
+br
+` Mis latidos dan saltos, como previniéndome de la muerte.@
+` Salto hacia atrás sin razón aparente.\
+bg "image\bg\ima_14.jpg",%type_crossfade_fst
+` Una cuchilla atraviesa la oscuridad.@
+` Ya que no pude evadirla por completo, mis lentes son rozados por ésta.@
+` Caen al suelo con un traqueteo.\
+`"¿Quién---"@
+` En el instante en que empiezo a decir "eres tú?",
+` Las nubes se apartan por un breve momento e iluminan la oscura figura.\
+bg #000000,%type_crossfade_fst
+ld c,":a;image\tachi\roa_t07a.jpg",%type_crossfade_fst
+`"Qué----"@
+` Un hombre totalmente envuelto en vendajes está sosteniendo un cuchillo.@
+\
+cl c,%type_lshutter_fst
+` El hombre vendado viene a atacarme de nuevo.@
+` Rápidamente levanto mi cuchillo y lo detengo.@
+bg "image\bg\ima_14.jpg",%type_lshutter_fst
+waveloop se1
+br
+` Dos rajas de luz se disparan la una contra la otra.@
+`"¡----!"@
+` No puedo, pensar con calma.@
+` El hecho de estar siendo atacado hace que mi mente entre pánico.\
+` ¡Clang!@ ¡Clang!@ Chispas salen volando cuando nuestros cuchillos chocan, y se esparcen en la oscuridad.@
+`"Kk---"@
+` Todavía no puedo calmarme.@
+` No es porque esté siendo atacado.@
+br
+` Clang---.@
+` Agito mi cuchillo para neutralizar al que me ataca desde todo ángulo.\
+`"Por qué----"@
+` Lo sorprendente es que,
+` mi cuerpo está deteniendo por completo todos los ataques en esta oscuridad y sin pausa.\
+`"¿Mi cuerpo se está moviendo por sí mismo---?"@
+` No, no es eso.@
+` Todo lo que mis brazos están haciendo,
+` es perseguir las líneas y puntos que puedo ver en la oscuridad sin mis lentes.@
+br
+` Eso es todo lo que puedo ver, así que agito mi cuchillo a través del aire oscuro, persiguiendo esas líneas.@
+` Como resultado, el cuchillo del hombre vendado está simplemente deteniendo al mío.@
+` En otras palabras,
+` No me estoy defendiendo, él se está defendiendo de mí.\
+br
+` ----¡Puedo ganar……!@
+br
+` No sé quién es, pero no hay duda.@
+` Lo estoy superando por mucho.@
+` Mi sangre enloquece a causa de mi ventaja.@
+` Ganaré.@ Soy, más fuerte que él.@
+` Porque soy más fuerte.@ Porque está tratando de matarme, ¿¡no estoy simplemente devolviendo el favor----!?\
+wave se11
+` Clang.@ Clang.@
+` El sonido de metal contra metal hace eco en el aire y lo obligo a retroceder hacia el muro de la mansión.\
+waveloop se1
+`"¡----!"@
+` Ahí.@
+` Fijo mis ojos sobre la "línea" en su pecho y empujo mi cuchillo hacia adelante.@
+monocro #ff0000
+bg "image\bg\cmo_06.jpg",%type_crossfade_fst
+br
+` ----Momentáneamente.@
+` Por alguna razón veo a un chico pintado de sangre y el rostro de Akiha llorando----\
+monocro off
+bg #000000,%type_crossfade_fst
+`"¡Gh!"@
+` Hago retroceder mi cuchillo antes de la culminación.\
+br
+br
+br
+br
+br
+br
+` ---Qué, estoy, tratando de matar a alguien, por qué---\
+bg #9c0120,%type_crossfade_fst
+bg #000000,%type_crossfade_fst
+` Mi cabeza.@
+` Me duele la cabeza.@
+` Mis piernas se tambalean y me hacen retroceder.@
+` Mientras lo hago,
+` vacío el contenido de mi estómago.@
+br
+` Mi pecho comienza a picar.@
+br
+` Me duela la cabeza, la vieja herida en mi pecho arde.@
+` Mis ojos, se sienten como si fuesen a salirse de sus órbitas----\
+`"¡Haa----ah, agh---!"@
+` No puedo parar de vomitar.@
+` El vomito salpica por todo el asfalto.@
+` Y allí,
+` el hombre vendado viene por mí con su cuchillo.\
+bg "image\bg\ima_14.jpg",%type_lshutter_fst
+br
+`"¡-----!"@
+br
+wave se11
+` ¡Clang!@ Otra colisión.@
+` Mi cuchillo se dispara hacia el suyo.@
+` Esta vez, en verdad me defiendo.@
+` Sé hacia dónde está apuntando.@ Ya que lo sé, lo bloqueo una vez más con otro ruido metálico.\
+wave se11
+br
+` ¡Clang!@ ¡Clang!@ ¡Clang!@
+br
+wave se11
+` A pesar de no poder ver su cuchillo debido a su velocidad, de alguna manera logro bloquearlo una y otra vez.@
+` La razón por la que puedo defenderme es simple.@
+waveloop se1
+` Porque, su objetivo son las "líneas" sobre mi cuerpo.@
+br
+` Sé hacia dónde está apuntando y puedo entender más que nadie que permitirle cortarlas significaría una muerte instantánea, por eso tengo que defenderlas.\
+` No, espera.@
+br
+` …… ¿Está apuntando---hacia mis líneas?\
+`"------Ah."@
+` Es exactamente lo opuesto a lo anterior.@
+` Eso significa,
+` no me digas que, él.@
+br
+` ----Ku.@
+br
+` El hombre vendado sonríe en la ocuridad.\
+` ---Pal, pi, tar.@
+br
+` El ritmo de mi corazón se sale de control.@
+` Sintiendo un miedo indescriptible, me tambaleo hacia atrás.@
+` Él no me persigue.@ Simplemente sonríe.@
+` Sus ojos inyectados de sangre parecen estar diciendo "¿Así que finalmente te diste cuenta?" mientras se burla de mí con su sonrisa.@
+br
+`"¿Tú puedes----verlas?"@
+` Sí.@
+` Él también, puede ver las "líneas"----\
+br
+br
+br
+br
+br
+br
+` Entonces,
+` También, puede matar con un solo golpe---\
+br
+` ----Ku.@
+br
+` El hombre ríe.@
+` Se acerca mientras ríe.@
+` Yo---junto con los dedos que sujetan el cuchillo, tiemblo incontrolablemente.@
+br
+bg #9c0120,%type_crossfade_fst
+` Corte.@ Corte.@ Corte.@ El sonido de la carne siendo perforada por una cuchilla resuena tres veces.@
+` Y entonces, un ruido sordo, el sonido de un cuerpo que golpea el muro.\
+bg #000000,%type_lshutter_fst
+wavestop
+`"¿Eh---?"@
+br
+` ---No puedo comprender la situación.@
+br
+` El hombre vendado repentinamente fue perforado por tres tubos parecidos a lanzas.@
+` No sólo perforado, clavado al muro.@
+` Como un insecto pegado en una colección de bichos.\
+br
+`"---ESTÁS ESTORBANDO."@
+br
+` Su voz rechina terriblemente.@
+` Al mismo tiempo---las tres lanzas se encienden como velas y lo envuelven en llamas.@
+br
+`"¡AAAAAaAAAaaaaAaAAAh!"@
+br
+` Una voz angustiosa en el remolino de llamas.@
+` En la oscuridad, la escena se ve menos cruel, y casi hermosa.\
+br
+`"¡AAAAAAAAAAH!"@
+br
+` El hombre vendado---no, los vendajes ya están quemados, su piel se puede ver.@
+` Envuelto en llamas, el hombre me mira fijamente.@
+` Sus ojos inyectados de sangre, llenos sólo de intención asesina.@
+` Sus ojos negros como armas se empeñan en maldecir a Tohno Shiki.\
+`"-----Qué…"@
+` Pasmado, sólo puedo observar.@
+` Él huye hacia la distancia, aún envuelto en llamas.\
+bg "image\bg\ima_18.jpg",%type_crossfade_mid
+` ---La luna vuelve a emerger.@
+` Después de esas llamas, y esa voz maldiciendo, todo regresa al silencio de antes.@
+`"----"@
+` Caigo sobre mis rodillas y me apoyo del muro.\
+` Levanto la mirada hacia el cielo.@
+` En la dirección de donde vinieron volando esas lanzas, alguien está parado, alto y lejos.@
+bg "image\event\cel_e04.jpg",%type_crossfade_fst
+`"-----"@
+` Muy lejos.@
+` Parada tranquilamente sobre la cima de la farola, veo una figura familiar.\
+`"…… ¿Eh?"@
+` Ropajes como los de un sacerdote de otro país.@
+` Sujetadas fuertemente por su mano, largas espadas parecidas a clavos.@
+` Inexpresivos ojos pálidos.@ Azul, ojos azul cielo.@
+`"…… ¿Sen…… pai?"@
+` Bajo la luz de la luna, sólo puedo distinguir la silueta.@
+` Pero, parece asemejarse a Senpai.\
+`"------"@
+` Nuestros ojos se encuentran.@
+` La figura parada sobre la farola repentinamente desaparece como un fantasma.@
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_47.jpg",%type_crossfade_mid
+`"Ah-----"@
+` Me dejo caer bruscamente.@
+` ¿Es alivio porque mi dolor de cabeza se está desvaneciendo o sólo la desaparición de toda esta tensión?@
+br
+` Apoyando mi espalda contra el muro, comienzo a quedarme dormido-----.\
+bg #000000,%type_crossfade_slw
+!w3000
+return

@@ -1,0 +1,98 @@
+monocro off
+wavestop
+play "*1"
+;---added context above---
+bg "image\bg\bg_28b.jpg",%type_nowaitdisp
+` El tiempo es lo único que pasa.@
+` Una noche tranquila.@
+` Completamente distinta a la de anteayer; no hay una sola nube en el cielo.@
+` La brillante y pura luz de luna ilumina el parque y a Arcueid.\
+`"…… Luz de luna……"@
+` Si hubiese sido así de brillante en aquella ocasión, tal vez podría haber visto el rostro del hombre vendado…… espera un minuto…
+br
+`"¡Ah----------!"@
+br
+` Salto del banco.\
+ld c,":a;image\tachi\ark_t12.jpg",%type_lshutter_fst
+`"¿¡Shiki!?@ ¿Qué sucede, viste a Los Muertos?"@
+` Arcueid se apresura hacia mí.@
+`"No, no es eso---olvidé algo muy importante."@
+` En verdad fue descuidado de mi parte.@
+` Fui atacado pero lo olvidé por completo hasta ahora.\
+`"Arcueid.@ Fui atacado hace dos noches por una persona extraña."@
+ld c,":a;image\tachi\ark_t13.jpg",%type_crossfade_fst
+`"¿Eh?@ ¿Una persona extraña?@ ¿De qué tipo?"@
+`"Bueno, eso es----"@
+cl c,%type_crossfade_fst
+br
+` Me tranquilizo y describo tan claramente como puedo lo que sucedió hace dos noches.\
+playstop
+bg #000000,%type_lshutter_fst
+bg "image\bg\bg_28b.jpg",%type_lshutter_fst
+`"…… Sí, así fue como sucedió------"@
+` Concluyendo mi explicación, leo la expresión de Arcueid.@
+ld c,":a;image\tachi\ark_t07.jpg",%type_crossfade_fst
+` Desde que comencé hasta ahora, su mirada permaneció aguda y sin ninguna amabilidad.\
+`"¿Qué fue todo eso Arcueid?@ Ese hombre vendado, y esa persona con esos ropajes como de sacerdote, ¿son enemigos tuyos?"@
+`"…… Sí.@ Ambos son 'enemigos'.@ No sé quién o qué sea ese hombre vendado, pero esa mujer con ropajes Católicos, tengo una idea sobre ella."@
+` Ella estrecha sus ojos como si estuviese de mal humor.@
+` No, parece estar más irritada que de mal humor.\
+play "*9"
+`"Puede que conozca a la persona que te ayudó, Shiki.@ …… Rayos.@ Si en verdad se trata de ella, probablemente será capaz de encontrar al enemigo antes que yo."@
+` Ella muerde su labio con furia.@
+`"Espera un minuto.@ No dije que esa persona fuese una mujer."\
+ld c,":a;image\tachi\ark_t01b.jpg",%type_crossfade_fst
+`"No, no hay equivocación.@ Esa mujer es el único agente que posee autoridad para cazar herejes por sí sola y utiliza Llaves Negras que combinan el Rito de Cremación y el Efecto Coraza de Acero."@
+` Su irritabilidad es casi como hostilidad.@
+` Incluso cuando hablaba de Nrvnqsr, su voz nunca estuvo saturada de emoción hasta este punto.\
+`"…… Arcueid.@ Um, esa persona que me ayudó, ¿es un vampiro……?"@
+ld c,":a;image\tachi\ark_t06.jpg",%type_crossfade_fst
+`"No, no es eso----es cierto, aún tengo que hablarte sobre otra cosa que es muy importante."\
+ld c,":a;image\tachi\ark_t02.jpg",%type_crossfade_fst
+`"Creo que lo expliqué antes, pero los vampiros como el que hizo su guarida en esta ciudad convierten a los humanos en sus subordinados y expanden su territorio.@ Al mismo tiempo, hacen su máximo esfuerzo para ocultar su existencia.@
+` Aparecen algunas víctimas, pero ellos utilizan diversas técnicas de hechicería para hacer que las cosas no parezcan fuera de lo ordinario.@
+` ¿Sabes por qué?"\
+`"…… Bueno, es porque los humanos no son estúpidos.@ Si descubren que monstruos como ésos existen donde ellos viven, los atacarán.@ Aunque los humanos son débiles, tienen cosas como la policía, así que podrían ser capaces de hacer algo."@
+`"---Bueno, supongo que es verdad, pero la policía es sólo un grupo que impone la ley sobre los humanos.@ Nosotros no los consideramos en absoluto.@
+` Pero, es correcto decir que los vampiros ocultan su presencia debido a su instinto de autoconservación."\
+`"Shiki, existe un enemigo natural de los vampiros.@ Un grupo de algo como asesinos profesionales que ahora tienen el balance de poder a su favor.@
+` …… Es verdad para otras especies transcendentes, pero especialmente para los vampiros, que es fatal revelarse a sí mismos.@
+` Aun si un vampiro crea un reino secreto en una aldea en algún lugar de las montañas lejos de toda civilización, este enemigo natural definitivamente lo notará si las víctimas siguen incrementándose.\
+` Los vampiros explotan a los humanos en secreto, por ninguna otra razón que la autoconservación.@
+` Los vampiros esconden los cadáveres de sus víctimas, no por miedo a que la sociedad humana se entere, sino por miedo a que estos enemigos naturales los descubran."@
+`"…… ¿Huh?@ ¿El enemigo natural de los vampiros?@ Otro grupo más de monstruos que no conozco."@
+br
+` Un sujeto normal como yo sólo quiere que todas estas cosas antinaturales dejen de aparecer.\
+ld c,":a;image\tachi\ark_t07.jpg",%type_crossfade_fst
+`"¿Qué estás diciendo?@ Sus enemigos naturales son sin duda alguna ustedes los humanos."@
+`"¿-----?@ ¿Enemigos naturales, nosotros?"@
+ld c,":a;image\tachi\ark_t06.jpg",%type_crossfade_fst
+`"Sí.@ Hace mucho tiempo, los humanos usaron muchos tipos de hechicería, lo oculto, ceremonias mágicas para crear una organización y comenzaron a eliminar primates diferentes a los humanos.@
+` La mayor de éstas es el Cristianismo---el orgullo de El Vaticano, los Exorcistas.@ La Iglesia Católica siempre vio a los "no humanos" como impurezas, pero los vampiros son considerados los más peligrosos."@
+` "Hay muchos grupos religiosos en el mundo, pero la Iglesia Católica ve a los vampiros con más hostilidad que el resto.@
+` Sabes, es casi una obsesión.@ Son tan dementes, ni siquiera yo quisiera involucrarme con ellos."@
+` Arcueid deja salir un suspiro.\
+ld c,":a;image\tachi\ark_t02.jpg",%type_crossfade_fst
+`"La que te ayudó es una miembro de una selecta organización que caza herejes.@
+` Este grupo, la Agencia de Entierros, es parte de La Iglesia.@ Utilizan su propia fuerza en lugar de la ley para lidiar con contradicciones al Cristianismo.@ Estos exorcistas ocultos son más parecidos a asesinos profesionales."@
+`"…………"@
+` ¿Sacerdotes que van por ahí exterminando vampiros, eh?@
+` Es tan apropiado, no estoy muy seguro de qué decir.\
+`"¿Entonces no son como nosotros?@ Si esta Agencia de Entierros es un grupo cuyo propósito también es cazar vampiros, ¿no podemos buscar juntos?"@
+ld c,":a;image\tachi\ark_t04.jpg",%type_crossfade_fst
+`"----Eso no funcionará.@ Para ellos, es suficiente que alguien sea un vampiro.@ Para ellos, los primates no humanos son simplemente "Maldad".@ No les importa que chupen sangre o no.@
+` Esta exorcista puede incluso haber venido aquí para sellarme y no para combatir al vampiro que vive en esta ciudad."\
+cl c,%type_lshutter_fst
+playstop
+` Sonando irritada, Arcueid comienza a caminar de un lado a otro nuevamente.\
+`"………………"@
+` Las cosas se han vuelto bastante complicadas.@
+` El enemigo de Arcueid es buscado por un vampiro, y por un grupo que caza vampiros.\
+`"…… ¿Qué es esto?@ ¿Eso significa que ella está totalmente sola?"@
+` Pensado en voz alta, observo a Arcueid caminar de un lado a otro.@
+br
+` Bajo la blanca luz de la luna,
+` Arcueid parece estar bailando un solitario vals.\
+bg #000000,%type_lshutter_fst
+playstop
+return

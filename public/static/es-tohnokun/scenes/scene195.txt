@@ -1,0 +1,16 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_08b.jpg",%type_nowaitdisp
+` ----Debería buscar a Arcueid.@
+br
+` Sin importar cuán imposible pueda parecer, sin importar cuán inútil parezca, es todo en lo que puedo pensar.@
+` Seguiré buscando hasta que la encuentre.@
+` No puedo dejarla sola, y no puedo permitirle----ajustar cuentas con Roa por sí sola.\
+`"----Muy bien."@
+` Estoy decidido.@
+` No puedo perder más tiempo aquí.@
+` Tengo que adentrarme en la ciudad de inmediato, y aunque signifique buscar una aguja en un pajar, tengo que encontrar a Arcueid----\
+bg #000000,%type_lcartain_mid
+return

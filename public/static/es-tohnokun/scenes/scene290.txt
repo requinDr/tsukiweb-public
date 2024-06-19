@@ -1,0 +1,19 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_29b.jpg",%type_nowaitdisp
+`"---Lo siento, pero, no puedo sentir nada especial por ti."@
+` Respondo con claridad mientras la miro directamente a los ojos.\
+ld c,":a;image\tachi\stk_t09.jpg",%type_crossfade_fst
+`"----Ya… veo."@
+` …… La voz y el cuerpo de Yumizuka tiemblan.@
+`"…………"@
+` …… No puedo pensar en nada más para decir.@
+` Tal vez esto me hace una persona horrible, pero son mis verdaderos sentimientos.@
+` Nunca sentí nada especial por mi compañera de clases Yumizuka Satsuki.@
+` Sólo estoy aquí porque lo que sucedió hace dos días en el camino a casa me dejó una gran impresión, no podía simplemente olvidarlo---\
+ld c,":a;image\tachi\stk_t08.jpg",%type_crossfade_fst
+`"…… Sí, lo sabía.@ Supongo que por eso las cosas resultaron de esta manera.@ …… Está bien.@ Ya que dices eso, también seré honesta conmigo misma, Shiki-kun."\
+cl c,%type_crossfade_fst
+return

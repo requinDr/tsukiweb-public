@@ -1,0 +1,121 @@
+monocro off
+wavestop
+play "*1"
+;---added context above---
+bg "image\bg\bg_31a.jpg",%type_nowaitdisp
+`"Yo---"@
+br
+` No hay manera de que pueda ayudarla.@
+` Casi fui asesinado sólo por ese perro negro.@ Si voy con ella, de seguro moriré.@
+br
+`"---No puedo hacer algo como eso.@ Sería un suicidio."@
+` Logro mirar hacia ella y responder, temblando.\
+ld c,":a;image\tachi\ark_t06.jpg",%type_crossfade_fst
+` Ella me mira con desagrado.@
+`"¿Suicidio?@ ¿Por qué?@ Con tus habilidades para matar, pensaría que no tienes nada que temer."@
+`"Eso fue diferente.@
+` Lo siento, pero soy sólo un estudiante normal, no algún tipo de monstruo como un vampiro.@ Un estudiante normal no puede cooperar con una persona como tú."@
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"¿Oh?@ ¿Los estudiantes normales cortan en pedazos a chicas que ni siquiera conocen?"@
+`"----Ah."@
+` Me siento debilitado por su comentario.\
+`"…… Pero eso fue especial.@ Nunca antes me había sentido de esa manera, y he llevado una vida normal---"@
+playstop
+`"¡Aahh suficiente, cállate!"@
+ld c,":a;image\tachi\ark_t23.jpg",%type_lshutter_fst
+wave se0
+`"Eh---"@
+` Las pupilas en esos ojos rojos se abren.@
+` Inmediatamente, la sensación que ella exuda cambia.@
+br
+` La sensación de escalofrío es increíble.@
+` Creo que mi corazón podría dejar de latir sólo a causa de su feroz mirada.\
+monocro #ff0000
+`"No me malinterpretes.@ Tú me mataste.@ Te estoy salvando y no arrancándote la cabeza sólo porque podrías ser útil."\
+br
+wave se0
+` Mi cuello se siente entumecido, como si alguien estuviese hundiendo lentamente una cuchilla en él.@
+`"-----"@
+wave se0
+` Mi garganta, que estaba tan caliente hasta hace un momento, está enfriándose rápidamente.\
+` El aire que respiro se siente pesado.@
+` Como si el aire a mi alrededor se estuviese congelando… tengo un sensación de confinamiento que casi me hace desmayarme.@
+wave se0
+` Un opresivo sentimiento lleno de desesperación, como si el propio mundo estuviese mirándome con ferocidad.@
+br
+wave se0
+` Toda esa sensación de pesadez se condensa y se mete dentro de mi cerebro como una bala.\
+bg #ffffff,%type_crossfade_fst
+wave se0
+`"¿Ah-----eh?"@
+br
+` Todo se torna blanco.@
+` Una sensación desagradable.@ Dolor, como si alguien hubiese abierto un agujero en mi cráneo y estuviese vertiendo alcohol dentro.@
+` Es la única forma de describir esta sensación.\
+wave se0
+`"Gah-------"@
+br
+` Ni siquiera puedo gritar.@
+` Los sonidos escapando de mi boca ya no son humanos.\
+wave se0
+`"A---guhh."@
+br
+` Mi corazón se está destrozando.@
+` Mis recuerdos se desmoronan.@
+` Ella sólo me está mirando ferozmente, pero siento que está alcanzando el interior de mi cráneo y amasando mi cerebro con sus manos desnudas.@
+wave se0
+` Si esto continúa, voy a quedar vacío----\
+wave se0
+`"Deten----te."@
+br
+` Es todo lo que puedo decir antes de perder la cordura.@
+` De repente---la invasiva sensación dentro de mi cabeza desaparece.@
+monocro off
+play "*1"
+bg "image\bg\bg_31a.jpg",%type_crossfade_fst
+`"Hha---aghh."@
+` Liberado del aura opresiva, me abrazo a mí mismo.@
+br
+` ---Aún estoy vivo.@
+br
+` No estoy muerto.@
+` Aún estoy vivo y respirando.@
+br
+` ---Siento que estoy a punto llorar.@
+` Sentir tan profunda emoción por una cosa tan simple es algo que no había experimentado hasta ahora---\
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"¿Qué te pareció?@ Tal vez ahora entiendas un poco mejor tu posición."@
+`"-------"@
+` …… ¿Crees que puedo entender eso?@
+` Todo lo que puedo hacer es mirar hacia arriba, temblar y apretar mis dientes.\
+ld c,":a;image\tachi\ark_t06.jpg",%type_crossfade_fst
+`"Sólo hay dos opciones.@ Cooperas conmigo, o no lo haces.@
+` Simple, ¿no?@ Todo lo que te estoy preguntando es si quieres vivir o morir."@
+`"H------"@
+` Mi voz no funciona correctamente.@
+` Sólo mis instintos básicos de supervivencia me ayudan a evitar la muerte al responder con un asentimiento.@
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"Muy bien.@ Entonces nuestro contrato ha sido establecido."@
+` ¿Adónde se fue toda esa furia de hace un momento?@
+` Hablando con un tono de alegría, ella extiende su mano hacia mí.\
+`"Supongo que finalmente puedo presentarme.@
+br
+` Soy Arcueid---hmm… mi apellido es muy largo, así que sólo Arcueid está bien por ahora.@ Soy un vampiro de la clase de los Verdaderos Ancestros.@ ¿Qué hay de ti?"@
+` Suelto un pesado suspiro ante su presentación sin precedentes.@
+` …… Es un suspiro de resignación, evidencia de que he decidido aceptar esta situación sin sentido.\
+`"Soy Tohno Shiki.@ Tristemente, soy sólo un estudiante común.@ …… Lo he dicho antes pero, en realidad no voy a ser de mucha utilidad."@
+` Tomando su---la mano de Arcueid, me levanto.@
+` Ella me dirige una larga y dura mirada, y entonces me ofrece su mano de nuevo.@
+ld c,":a;image\tachi\ark_t09.jpg",%type_crossfade_fst
+br
+`"Es un placer conocerte, Shiki.@
+` Haré que asumas responsabilidad por matarme."@
+` Arcueid sonríe abiertamente mientras extiende su mano izquierda.@
+` …… Hay toda clase de responsabilidades en este mundo, pero ésta probablemente sea la primera y última vez que una persona asume su responsabilidad ayudando a alguien que esa misma persona asesinó.@
+`"…… ¡Maldición!@ Haz lo que quieras."@
+` Pero no hay nada más que pueda hacer.@
+` Extiendo mi mano izquierda de mala gana y doy un apretón de manos a la mujer de blanco que afirma ser un vampiro.\
+bg #000000,%type_lcartain_slw
+!w1500
+playstop
+return

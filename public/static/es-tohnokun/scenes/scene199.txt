@@ -1,0 +1,1449 @@
+mov $phasebg,"image\bg\ima_01.jpg"
+mov $phasetitle_a,":a;image\word\PARK_12A.PNG"
+mov $phasetitle_b,":a;image\word\day_12.png"
+gosub *left_phase
+bg "image\bg\bg_32c.jpg",%type_lcartain_mid
+waveloop se1
+` Aún sosteniéndome, Senpai se dirige directamente hacia mi mansión.@
+` …… No sé qué está planeando, pero no puede ser bueno.@
+` Con un cuchillo aún incrustado en mi pecho, no hay duda de que mi muerte está cerca.@
+` Si Akiha me ve de esta manera, no sólo se preocupará------\
+`"------"@
+` …… Maldición, no puedo hablar.@
+` Quiero decirle que se detenga, pero sólo puedo jadear por aire.\
+`"Por favor tranquilízate Tohno-kun.@ …… Está bien, estoy segura de que tu hermana puede ayudar."@
+`"------"@
+` …… ¿Ayudar?@ Eso es imposible, Senpai.@
+` Fui apuñalado en el pecho y ni siquiera puedo moverme.@
+` …… No hay nadie que pueda ayudar a una persona a punto de morir de esta manera.\
+`"No, sí es posible.@ ¡De otro modo aquello no tendría ningún sentido……!@ Mira, si tu hermana no te ayudaba, habrías muerto hace ocho años.@
+` ¡Por eso----sé que aún podemos lograrlo……!"@
+br
+` …… Sus palabras, son tan directas, difícilmente puedo entender.\
+`"------"@
+br
+` …… Senpai, ¿qué quieres----
+br
+`"¡Cielos, por favor guarda silencio de una vez!@ ¡Si hablas más, quizás no podamos ayudarte!"@
+` Ella tiene una cara increíblemente seria y enojada.@
+` …… Me siento terrible, así que cierro mis ojos.\
+br
+` ………… Bueno, de cualquier forma.@
+` …………………… Está comenzando.@
+`                            a hacerse difícil.@
+`            permanecer despierto.@
+`                                  Así que\
+wavestop
+bg #ffffff,%type_crossfade_mid
+play "*9"
+!w3000
+bg "image\bg\cmo_05.jpg",%type_crossfade_mid
+br
+` ----Siempre fui un intruso para mi familia.@
+br
+` Desde temprana edad, siempre pensé eso.@
+` Desde el momento en que fui adoptado de la familia Tohno por la familia Arima.@
+` No, en realidad, mucho antes de eso, era un intruso para mi familia.\
+` Nunca me pregunté siquiera por qué.@
+` Antes de darme cuenta, estaba solo.@ Habían personas a mi alrededor actuando como mis padres así que me esforcé para actuar como el hijo de éstas.\
+` Creo que la casa con la vieja habitación de tatami fue mi primera casa.@
+` Desde ahí, después de cierto incidente, fui llevado a una gran mansión de estilo occidental.@
+` …… Había un hermano y una hermana como de mí edad, y nos hicimos buenos amigos, creo.\
+` Pero siempre hubo un muro entre el padre de ellos y yo.@
+br
+` …… Pero aun así, nos esforzamos mucho para ser como una verdadera familia.@
+` Aunque no teníamos relación de sangre, intentábamos creer que éramos una familia.\
+` Pero, eso terminó abruptamente.@
+` Después de un gran accidente, fui llevado a un hospital.@
+` Nadie vino a verme y mis ojos se hicieron anormales.@
+` Hasta entonces estuve solo, y al final estaba solo.@
+` Pensé que tal vez debía desaparecer de esa manera.@
+br
+` Hasta que conocí a esa maga que era tan hermosa como el cielo azul sobre mi cabeza.\
+bg #ffffff,%type_crossfade_mid
+playstop
+bg "image\bg\bg_40c.jpg",%type_crossfade_mid
+play "*8"
+` …………………………………………………………
+` …………………………………………… Un sueño,
+` nostálgico.\
+`"¿Estoy----vivo?"@
+` Hablo con el vacío.@
+` Parece que no puedo levantar ni un dedo, pero al menos puedo hablar claramente.@
+` Mi mente está lo suficientemente clara como para entender que estoy en mi habitación.\
+ld c,":a;image\tachi\aki_t17b.jpg",%type_lshutter_mid
+`"…… ¿Nii-san?@ ¿Estás despierto?"@
+`"Akiha---¿estás ahí?"@
+` Akiha está parada junto a la cama; aparentemente ha cuidado de mí.@
+`"Akiha, tú---"@
+` Miro a Akiha sin saber qué sucedió.@
+` Ella aparta la vista nerviosamente.\
+cl c,%type_crossfade_fst
+`"…… Mi…… esta herida, es…"@
+` No puedo decir que él---que SHIKI la causó.@
+` En primer lugar, ¿cómo reaccionó ella cuando llegué con esta herida?@
+` Creo que normalmente, se enviaría al hospital a alguien con un cuchillo en el pecho……\
+`"Akiha, um----"@
+ld c,":a;image\tachi\aki_t12b.jpg",%type_crossfade_fst
+`"…… Está bien.@ Esa persona me explicó la mayoría de las circunstancias."@
+`"…… Esa persona…… ¿te refieres a Senpai?"@
+` Aún mirando hacia abajo, Akiha asiente.@
+`"……………"@
+` …… Estoy más confundido.@
+` ¿Exactamente qué le dijo Senpai a Akiha como "la mayoría de las circunstancias"……?\
+`"…………… Hmph."@
+` Esto no es bueno.@ Sin saber qué le dijo Senpai, no puedo preguntarle algo equivocado.@
+`"Um…… Akiha, ¿dónde está Senpai?"\
+`"Si te refieres a esa persona, está descansando en la sala de estar.@ …… Normalmente no permitiría que semejante persona se quedase en la casa, pero ella te ha ayudado.@ Así que no puedo tratarla mal."@
+br
+` ---Mientras habla,
+` su expresión se torna más severa.\
+ld c,":a;image\tachi\aki_t01b.jpg",%type_crossfade_fst
+`"Nii-san.@ La herida en tu pecho fue causada por SHIKI, ¿verdad?"@
+` Directamente,
+` Akiha va directamente al grano.\
+`"A, Akiha, tú---"@
+`"¿No lo dije anteriormente?@ Esa persona me explicó la mayoría de las circunstancias.@ …… Aunque, habría comprendido la situación sólo con mirarte."@
+`"----"@
+` Mis palabras… se atoran en mi garganta.@
+` Akiha---suena como si hubiese sabido de SHIKI desde el principio.@
+`"Akiha, tú…… respecto a SHIKI---"\
+`"…… Sí, lo sé.@ Desde el principio, estaba al tanto de todo y te pedí que regresaras a la mansión."@
+` De pronto soy asaltado por mareos, como si un martillo acabara de golpear mi cabeza.@
+`"…… E, espera un minuto.@ ¿Qué quieres decir con que estabas al tanto de todo?@ Yo…… sinceramente no sé qué está sucediendo.@
+` Ciertamente, había otro niño con nosotros en aquel entonces, pero cuando te pregunté----"@
+br
+` Dijiste que no había un tercer niño.\
+ld c,":a;image\tachi\aki_t12b.jpg",%type_crossfade_fst
+`"…… Lo siento.@ Todo lo que hecho es mentirte.@ …… Incluso sobre esto…… Sabía que resultaría de esta manera, pero te mentí todo este tiempo y te engañé."@
+`"¿Me engañaste?@ …… Entonces, ¿sí existía el tercer niño?@ Pero, ¿por qué desapareció repentinamente?"\
+cl c,%type_crossfade_fst
+` …… Sí, en verdad no puedo recordar.@
+` El tercer niño…… Recuerdo que yo siempre jugaba con otro niño de mi edad.@
+` Akiha a veces se escabullía cuando su padre no estaba viendo y venía a jugar con nosotros.@
+` Pero, ¿cómo es posible que no recuerde?@
+` Cosas como por qué desapareció.@
+` O cómo su nombre SHIKI era igual al mío.@
+br
+` Sí, claramente---lo he olvidado todo.\
+`"…… No sé.@ Lo único que recuerdo es eso----"@
+br
+` La escena que vi en el patio.@
+` Desde que regresé, ese caluroso día de verano flota en mi mente como una ilusión.@
+` Akiha está ahí, yo estoy ahí.@
+` Y frente a mí está el cadáver ensangrentado de otro chico.\
+`"------Ah."@
+br
+` Sí, SHIKI lo dijo.@
+` "Te hice pagar por matarme," dijo él.@
+` Entonces, eso significa----\
+`"Ese sueño----¿yo, en verdad--"@
+br
+` lo asesiné?@
+` ¿Es por eso que él desapareció de repente y yo convenientemente olvidé todos esos malos recuerdos?\
+`"Akiha, yo----"@
+ld c,":a;image\tachi\aki_t01b.jpg",%type_crossfade_fst
+`"No, estás equivocado.@ Tú no asesinaste a nadie.@ Tohno Makihisa…… nuestro padre te ordenó pensar de esa manera."@
+`"¿Mi…… viejo lo hizo?"@
+` …… Ahora entiendo menos.@
+` ¿Por qué mi viejo me ordenaría hacer algo como eso?\
+`"…… Akiha.@ Dijiste que estabas al tanto de todo cuando me pediste que regresara.@
+` ¿Qué quieres decir?@ ¿Tú----sabías lo de hace ocho años, sobre SHIKI, sobre todo?"@
+ld c,":a;image\tachi\aki_t12b.jpg",%type_crossfade_fst
+`"…… Sí.@ No quería que recordases a SHIKI, Nii-san.@ Si era posible, quería que lo olvidases para siempre.@
+` …… Pero todo ha terminado.@
+` Desde el principio----era imposible esconderlo."@
+` Diciendo eso, ella muestra una sonrisa auto compasiva.@
+` Me mira a los ojos y comienza a hablar de nuevo.\
+ld c,":a;image\tachi\aki_t01b.jpg",%type_crossfade_fst
+`"…… Nii-san.@ Esa persona te dijo que la sangre Tohno es especial, ¿cierto?@ Puede que no lo creas pero, hay sangre no humana en el linaje Tohno.@ …… Al menos eso es lo que Papá me decía desde que era niña.@
+` Por supuesto, al principio no lo creía.@ Pero, sucedió algo que me hizo creerlo.@
+` …… Ese incidente, fue cuando fuiste asesinado por SHIKI ocho años atrás."@
+cl c,%type_crossfade_fst
+\
+`"…… ¿Asesinado?@ …… ¿yo, por SHIKI……?"@
+` Akiha asiente en silencio.@
+` …… Pero, es extraño.@
+` Es lo exactamente opuesto.@
+` SHIKI era el que estaba ensangrentado en el suelo …… ¿¡y no fue él quien dijo "te hice pagar por matarme"……!?\
+ld c,":a;image\tachi\aki_t12b.jpg",%type_crossfade_fst
+`"…… A medida que las personas de la familia Tohno envejecemos, la "sangre inhumana" dentro de nosotros se incrementa.@
+` Esta sangre no es nada bueno.@
+` Creo que el tipo de sangre mezclada de la familia Tohno incrementa en gran medida los instintos, y me hace pensar que es simplemente la sangre de una bestia.\
+` Si a la parte humana la llamas razón, los instintos de la sangre no humana dominan sobre la razón."\
+`"…………… Akiha, eso es……"@
+`"…… Lo sé.@ Sé que no puedes creerlo porque es muy repentino, así que por favor permanece callado por ahora."@
+br
+` ----No,
+` conozco a alguien exactamente así.@
+` Incluso ahora, si pudiese moverme libremente y evitar a SHIKI, saldría volando de aquí y la buscaría.\
+ld c,":a;image\tachi\aki_t01b.jpg",%type_crossfade_fst
+`"Sin embargo, el final llega para los miembros de la familia Tohno a medida que envejecen.@
+` …… No hay ningún antecedente de 'inversión' durante la niñez como la que tuvo SHIKI.@
+` La sangre en la familia Tohno varía de individuo en individuo.@
+` Existen aquellos cuya apariencia no cambiará y aquellos cuya apariencia sí lo hará.@
+` ----SHIKI fue un caso típico de la segunda categoría."\
+`"La segunda…… ¿su apariencia cambió……?"@
+`"…… Sí.@ No comprendo por qué enloqueció a una edad tan temprana.@
+` Pero él se invirtió sin ninguna advertencia.@ Cuando eso ocurrió, él te atacó, Nii-san."@
+`"¿SHIKI…… me atacó……?"@
+br
+` Palpitar.@
+` La vieja herida en mi pecho duele.\
+`"Sucedió en ese patio.@ Fuiste apuñalado en el pecho y estabas al borde de la muerte cuando Papá vino y detuvo a SHIKI.@
+` …… Para detener a SHIKI que había enloquecido, solamente podía matarlo.@
+` Es obligación del líder de la casa Tohno encargarse de los miembros de la familia que se han invertido.@
+` Por lo tanto----el SHIKI ensangrentado que viste probablemente sea el resultado del trabajo de Papá."\
+`"--------"@
+` No puedo recordar.\
+` Había algo más.@ Siento que había algo más importante que no puedo recordar.\
+ld c,":a;image\tachi\aki_t12b.jpg",%type_crossfade_fst
+`"…… Después, te recuperaste milagrosamente.@ Y como recuerdas, fuiste llevado al hospital y te fue dicho que estuviste en un gran accidente."\
+`"----"@
+`"…… Por esa razón, desde entonces educada para ser la sucesora de la familia Tohno, aunque era la segunda hija.@
+` Una vez "invertido", SHIKI ya no podía ser el sucesor, así que el único familiar de sangre restante debía ser escogido."\
+` …… Ya veo.@
+` Por eso Akiha tuvo que llevar el enorme peso de convertirse en la sucesora…… ¿huh?\
+`"Akiha.@ Eso es… raro.@ Dijiste que fue SHIKI quien se invirtió, ¿no?@
+` Entonces----¿yo no soy normal?"@
+ld c,":a;image\tachi\aki_t13b.jpg",%type_crossfade_fst
+`"…… Estoy sorprendida.@ Nii-san, ¿creiste todo esto……?"@
+`"----Oye.@ Tú no mentirías de esa manera…… Bueno, estoy acostumbrado a este tipo de conversación.@
+` ¡M, más importante aún!@ Te estoy preguntando si esto no es un poco extraño, Akiha."\
+ld c,":a;image\tachi\aki_t12b.jpg",%type_crossfade_fst
+`"Supongo que tienes razón.@ …… Pero Nii-san, no hay nada equivocado en la historia, así que ¿podemos dejar de discutir esto……?"@
+`"----No, Akiha.@
+` Lo siento pero, averiguar sobre SHIKI es importante para mí.@ Él es mi enemigo y también el de ella, no puedo simplemente ignorarlo.@
+` Así que----debo saber la verdad.@ No puedo conservar ningún rastro de duda.@
+` ¿Por qué él está vivo si el viejo lo mató, y por qué----olvidé algo tan importante?@
+` Por favor.@ Responde, Akiha."\
+`"…… Es simple.@ Había una razón por la que no podías suceder a la familia Tohno.@
+` Incluso eso lo olvidaste, ¿verdad Nii-san?@
+` …… Desearía que esa ilusión continuase por siempre."\
+`"…… ¿Akiha……?"@
+ld c,":a;image\tachi\aki_t01b.jpg",%type_crossfade_fst
+`"………… Nii-san, tú no eres parte de la familia Tohno.@ Debido a un capricho de Papá, te adoptó porque tenías el mismo nombre que su hijo, SHIKI."\
+br
+br
+` ------------, ¿eh?\
+`"…… Tú, yo, y SHIKI.@ Fuimos criados como verdaderos hermanos.@
+` Tú y SHIKI eran muy buenos amigos, casi lo suficiente para hacer que mi corazón infantil sintiese celos.@
+` Pero, después de lo sucedido a SHIKI, todo fue por mal camino.@
+` SHIKI fue eliminado en secreto, pero el hijo mayor de la casa Tohno no podía ser asesinado.@
+` La familia Tohno tiene una posición importante en la sociedad, ¿no?@ Así que…… no podían decirle a la sociedad que el heredero de la familia desapareció de repente."\
+`"Entonces Papá tuvo una idea.@
+` Tratar a Nii-san, quien casi fue asesinado por SHIKI, como Tohno Shiki y convertir a SHIKI en el hijo adoptado que murió en un accidente.@
+` ----En otras palabras, intercambiaste lugares con SHIKI.@
+` El asesinado siguió viviendo, y el que asesinó murió.@ Ésa es tu relación con SHIKI."\
+br
+br
+br
+br
+` Ja------------ja.\
+`"…… ¿Entonces qué es esto?@ No soy tu hermano, ni siquiera soy un miembro de la familia Tohno----"@
+` Por supuesto, tampoco un miembro de la familia Arima.\
+br
+br
+br
+br
+br
+` Entonces, ¿de dónde----provengo?\
+ld c,":a;image\tachi\aki_t23b.jpg",%type_crossfade_fst
+`"…… Lo siento…… Nadie puede responder eso ahora.@
+` Nii-san----el niño llamado Shiki está muerto.@
+` El niño llamado Shiki murió hace ocho años.@
+` No en terminos de vida, sino en términos de existencia.@ Nombre, pasado, familia, incluso recuerdos; nada de eso permanece en ningún lugar.@
+` Intercambiaste lugares con Tohno SHIKI ocho años atrás…… Papá se deshizo de todo."\
+br
+br
+br
+br
+br
+br
+` -----------ja.\
+ld c,":a;image\tachi\aki_t12b.jpg",%type_crossfade_fst
+`"Es por eso que…… fuiste adoptado por la familia Arima.@
+` Para mantener las apariencias, el hijo mayor de la familia Tohno debía estar vivo.@
+` Sin embargo, ya que no tienes relación de sangre no puedes ser el heredero.@
+` Alegando que tu cuerpo fue debilitado por el accidente, fuiste entregado al cuidado de la familia Arima.@ …… Él me ordenó no permitir que volvieses a acercarte a la mansión."@
+` …… La voz de Akiha está temblando.@
+cl c,%type_crossfade_fst
+` Se ve deprimida, y actúa como si estuviese resistiendo algo.@
+` …… Sé que debe sentirse terriblemente culpable.\
+br
+` ----Pero no pretendo culparla.@
+br
+` Puede hacerme sentir mejor que ella se sienta así, pero----aún hay algo que necesito preguntar.\
+`"…… No.@ Todavía hay dos cosas que necesito aclarar.@ Por favor sigue hablando, Akiha.@ Hay algunas cosas que aún no entiendo completamente."@
+ld c,":a;image\tachi\aki_t17b.jpg",%type_crossfade_fst
+`"----¿Nii, san?"\
+`"Primero.@
+` Entiendo que no soy un miembro de la familia Tohno.@ Pero eso nos lleva a otra pregunta.@
+` …… Dijiste que los miembros de la familia Tohno son especiales.@ Pero la verdad es que yo también tengo algo extraño.@
+` Senpai dijo que se debía a que era un miembro de la familia Tohno, así que estaba convencido.@ Pero, no soy un miembro de la familia Tohno, ¿cierto?@
+` Entonces, ¿qué significa todo eso?"\
+ld c,":a;image\tachi\aki_t12b.jpg",%type_crossfade_fst
+`"…… No lo sé.@ Ciertamente Papá no parecía una persona que adoptaría a alguien por capricho----puede que haya alguna razón por la cual te adoptó, Nii-san."@
+`"Ya veo…… bueno, en realidad no me importa saber de qué familia provengo.@ Así que no hay necesidad de preocuparse por eso, Akiha.@
+` Y, um.@ Siempre pensé que era afortunado de estar vivo.@ Era una herida realmente fatal, ¿no?@ Estoy lo suficientemente feliz sólo por estar vivo."@
+br
+` Sí.@ Y más que eso, el problema es----\
+`"Y segundo.@ ¿Por qué SHIKI está vivo?"@
+` La miro ferozmente.@
+` Inconscientemente dejo que algo de hostilidad se muestre en mis ojos al mirarla.\
+ld c,":a;image\tachi\aki_t23b.jpg",%type_crossfade_fst
+`"…… Nii-san…… eso……"@
+`"Es extraño que aún esté vivo.@
+` SHIKI sucumbió ante su sangre Tohno e hizo esta supuesta inversión, ¿cierto?@ Y entonces me asesinó y fue eliminado por el viejo.@
+` Entonces----no debería estar vivo."@
+`"------Eso----um."\
+`"Sólo hay una posibilidad.@ De la misma forma en que yo me recuperé, él debe haberse recuperado.@
+` …… Bueno, tal vez mi viejo no lo mató.@
+` Después de todo, sin importar lo loco que estaba, se trataba de su hijo.@ Quizás no lo mató y lo escondió de la vista de todos.@ Al igual que yo, que fui enviado al hospital."@
+br
+` Akiha no responde.@
+` …… Parece que no estoy equivocado.\
+`"…… Ya veo.@ El viejo probablemente pretendía que volviese a SHIKI a la mansión cuando recobrase la cordura."@
+`"Eso…… eso no es----"@
+` ¿Verdad?@ Pero ella no puede decirlo.@
+` Sólo mira silenciosamente hacia abajo.@
+cl c,%type_crossfade_fst
+\
+`"…… Está bien.@ No es culpa tuya, o del viejo.@ Por supuesto, tampoco de SHIKI.@
+` Todo eso simplemente sucedió.@ Fue sólo mala suerte que un sujeto demente del extranjero entrase en SHIKI.@
+` Dijiste que todo se salió de control, pero eso es todo lo que sucedió."@
+br
+` Akiha no responde.\
+br
+` ----Estoy un poco cansado.@
+br
+` Para ser sincero, no quería saber nada sobre mí.@
+` Más que eso, tengo que encontrar a Arcueid ahora mismo.\
+`"…… Akiha.@ Estoy un poco cansado.@ Voy a dormir, ¿podrías irte, por favor?"@
+ld c,":a;image\tachi\aki_t12b.jpg",%type_crossfade_fst
+`"…………… Sí, si tu lo dices, Nii-san."@
+` Akiha se dirige hacia la puerta.@
+cl c,%type_lshutter_mid
+br
+`"----Akiha."@
+` Todavía tengo que preguntar una cosa más, así que la llamo.\
+ld c,":a;image\tachi\aki_t01b.jpg",%type_crossfade_fst
+`"¿Qué quieres, Nii-san?"@
+`"Sí.@ …… ¿Por qué me pediste que regresara?@ Ni siquiera soy tu verdadero hermano."@
+ld c,":a;image\tachi\aki_t23b.jpg",%type_crossfade_fst
+`"…… Por favor no digas cosas tan absurdas.@
+` Tú eres mi único Nii-san.@
+` Ahora y en aquel entonces, aun si lo olvidaste, desde que éramos pequeños----para Tohno Akiha, tú eres mi único Nii-san, Shiki."@
+cl c,%type_lshutter_mid
+br
+` Akiha cierra la puerta al salir de mi habitación.\
+bg #000000,%type_lshutter_mid
+bg "image\bg\bg_40c.jpg",%type_lshutter_mid
+`"……………"@
+` Cuando ella se ha ido, finalmente me percato de mi situación.@
+br
+` Son poco más de las diez.@
+` Han pasado tres horas desde que SHIKI----no, desde que Roa me atacó en la escuela.\
+` Aún no puedo moverme en absoluto.@
+` Siento que mi cuerpo es un robot a control remoto.@
+` Mi mente está funcionando y no siento ningún dolor, pero no puedo mover mis brazos o piernas.\
+` *suspiro*@
+` Respiro profundamente para tranquilizarme.@
+` No puedo moverme porque estoy tratando de mover cosas grandes como mis brazos o piernas.@
+` Comenzaré por lo pequeño.@
+` Como el meñique de mi mano derecha.@ Me concentro en tratar de moverlo.\
+`"--------Ggah."@
+` Enfoco todo el poder de mi cuerpo sobre mi meñique.@
+` Mi cuerpo entero comienza a sudar.@
+` Después de unos minutos, finalmente muevo mi meñique.\
+` Es sólo mi meñique, pero pone en marcha al resto.@
+` Como si forzara a mis nervios a recordar el sentido del movimiento, voy desde mi dedo anular, hacia mi palma, hacia mi codo, hacia mi brazo, y hacia mi hombro hasta que incremento las partes de mi cuerpo capaces de moverse.@
+br
+` Empiezo a jadear.@
+br
+` Mientras más me muevo, más dolor me llena.@
+` Ya veo----no sentía ningún dolor porque mi cuerpo estaba entumecido.@
+` Restaurar mis nervios de esta manera hace que el dolor regrese al mismo tiempo.\
+`"¡G…… ah……!"@
+` Dulces punzadas en mi frente.@
+` Dolor se dispara a través de mi cuerpo como incontables cuchillas.@
+` Pero si no puedo moverme por mi cuenta, no podré dejar mi habitación.@
+br
+` Dejar mi habitación, ir a la ciudad, ir a la escuela.@
+` No podré encontrar a Arcueid.\
+`"¡Gah----argh……!"@
+` Resistiendo las ganas de vomitar, levanto la parte superior de mi cuerpo.@
+` …… Tendría que hacer mi máximo esfuerzo sólo para caminar en este estado, pero no me importa.@
+` En primer lugar, es un milagro que esté vivo después de que Roa me apuñalara en el pecho.@ Si deseara más suerte, el destino probablemente me castigaría.@
+br
+` Miro la herida de cuchillo sobre mi pecho.@
+` ----Y,
+` no veo el punto que indica la muerte en ninguna parte de mi pecho.\
+`"¿……………?"@
+` Me tranquilizo ligeramente.@
+` Ahora que lo pienso----si él hubiese golpeado el punto de muerte, yo habría muerto instantáneamente.@
+` Ni siquiera el inmortal cuerpo monstruoso de Nrvnqsr pudo escapar de eso.@
+` Así que no hay manera de que alguien como yo saliese con vida.@
+br
+`"----¿Quizás lo que él ve es diferente?"@
+` Mientras medito esto,
+` escucho una suave llamada a la puerta y Senpai entra a la habitación.\
+ld c,":a;image\tachi\cel_t10b.jpg",%type_lshutter_fst
+`"----¿¡To, Tohno-kun!?@ Te dijeron que descansaras, ¿¡por qué estás levantado……!?"@
+cl c,%type_lshutter_fst
+` Ella camina hacia mi cama vigorosamente.@
+`"……………………"@
+` Por ahora, la observo en silencio.\
+ld c,":a;image\tachi\cel_t07b.jpg",%type_crossfade_fst
+`"¿……?@ ¿Qué pasa, Tohno-kun?@ ¿Hay algo en mi cara?"@
+`"No, es sólo que no estás usando tus lentes…"@
+ld c,":a;image\tachi\cel_t01b.jpg",%type_crossfade_fst
+`"Sí, es una lástima.@ Los tuyos y los míos hacían un muy buen conjunto."@
+` …… Al verla sonreír en un momento así, no puedo evitar pensar que Senpai siempre será Senpai.@
+` Aunque está vistiendo esos ropajes de sacerdote y puede pelear a la par con Roa, siempre será la Senpai que conozco.\
+`"…… Gracias.@ Me salvaste una vez más."@
+`"Sí, con ésta son tres.@ No seguiré dándote una mano así que por favor sé más cuidadoso."@
+`"…… Ya veo.@ Entendido, estaré preparado.@ La próxima vez me aseguraré de atraparlo antes de que me atrape."@
+` Después de decirle eso, Senpai mira directamente hacia mí.\
+ld c,":a;image\tachi\cel_t07b.jpg",%type_crossfade_fst
+`"Tohno-kun…… no me digas que aún no has aprendido de la experiencia."@
+`"…… Oye.@ Soy la víctima aquí, ¿por qué tendría que aprender?@ Fue él quien me ataco, no puedo hacer nada al respecto."@
+`"Es verdad…… pero Tohno-kun, ciertamente estás decidido a finalizar esto."\
+`"……………………"@
+` No respondo.@
+` No sé si estoy decidido a finalizar esto como ella dice.@
+` Es sólo que----no puedo quedarme sentado sin hacer nada en este momento.\
+`"----Senpai, tengo una pregunta si estás de acuerdo."@
+`"…… No.@ Pero aunque me niegue, de todas formas no te detendrías.@
+ld c,":a;image\tachi\cel_t01b.jpg",%type_crossfade_fst
+` Muy bien.@ Si eso te tranquiliza, es un buen precio a pagar.@ Entonces, vamos a hablar."@
+` Senpai se sienta en la silla en la que Akiha estaba anteriormente.@
+` …… Pensé que intentaría detenerme de inmediato, pero no sé qué está pensando.\
+`"Entonces preguntaré.@ Ese sujeto de antes era Roa, ¿cierto?"@
+ld c,":a;image\tachi\cel_t07b.jpg",%type_crossfade_fst
+`"…… Sí.@ Ése es su huésped en esta ocasión.@ El mismo Tohno SHIKI que robó tu vida hace ocho años.@ …… ¿Akiha-san te lo dijo?"@
+`"Sí, me lo dijo.@ …… ¿Eres amiga de ella o algo así, Senpai?@ Aunque ella parece odiarte."\
+ld c,":a;image\tachi\cel_t01b.jpg",%type_crossfade_fst
+`"Sí, soy odiada.@ Ella desprecia mi trabajo como cazadora de herejes, y parece que tampoco le agrado.@ Um, parece ser un odio bastante excepcional."@
+` …… Asombrosamente, ella dice todo esto con una sonrisa.\
+`"----Oh.@ Bueno, ése es otro asunto.@
+` De vuelta a Roa, ¿su guarida está en nuestra escuela?"@
+`"…… No puedo decirlo con exactitud, pero parece que el edificio escolar es su guarida.@ Creo que comenzó a moverse por su cuenta porque Arcueid eliminó a todos sus Muertos."\
+`"………………"@
+` En otras palabras, Arcueid aún no lo ha encontrado.@
+` De ser así----aún tengo oportunidad de encontrarla.\
+ld c,":a;image\tachi\cel_t07b.jpg",%type_crossfade_fst
+`"¿Tohno-kun?"@
+`"Uh---nada.@ Pero ¿por qué se asentaría en mi escuela?@
+` …… No, en primer lugar, se ve más como SHIKI que como Roa.@ No parecía un vampiro en absoluto.@ ¿Qué significa eso?"\
+ld c,":a;image\tachi\cel_t01b.jpg",%type_crossfade_fst
+`"Significa que la fuente de su personalidad es SHIKI.@ Por supuesto que no actúa como un vampiro."@
+`"¿……?@ Espera, SHIKI es el huésped de Roa, ¿no?@ Entonces su personalidad es la de Roa, ¿no debería comenzar a actuar menos humano……?"\
+ld c,":a;image\tachi\cel_t07b.jpg",%type_crossfade_fst
+`"…… No, en absoluto.@
+` Escucha, Tohno-kun.@ El cuerpo en que Roa se reencarna es educado como una persona diferente con una personalidad diferente.@ A menos que madure como humano, no podrá usar su inteligencia como Roa hasta que Roa despierte.@
+` Pero cuando Roa despierta dentro de él, los principios de Roa siguen a los del huésped."@
+`"¿Entonces ese sujeto es indudablemente SHIKI, y no hay absolutamente nada de la personalidad de Roa?"\
+`"…… Sí.@ En cierta forma, Roa ya no existe.@ Lo que existe es la conceptualización del deseo de Roa de obtener la inmortalidad.@
+` Lo preocupante es la constante acumulación de voluntades, historia y conocimiento mágico; todo es parte de esta maléfica conceptualización.@
+` Mientras pueda continuar su tésis sobre la inmortalidad, a Roa no le importa nada de lo que él mismo haga.\
+`"Roa incrementa sus Muertos, pero es más parecido al instinto de 'procrear' en una especie.@ El verdadero deseo de SHIKI y lo que Roa realmente quiere hacer son dos cosas totalmente distintas.\
+`"…… Lo que SHIKI… realmente desea……"@
+`"Sí.@ Probablemente, su deseo de matarte es mucho mayor que cualquier conciliación con Arcueid."@
+`"------¿Qué…?"@
+` No entiendo en absoluto lo que ella intenta decir.\
+`"¿Por qué querría matarme?"@
+`"…… Hmm, es difícil decirlo pero, SHIKI piensa que tú lo mataste."@
+`"¿Qué quieres decir?@ Soy yo quien fue asesinado, él lo entendió todo al revés."\
+`"Pero estás vivo, Tohno-kun, y SHIKI fue asesinado.@ Al final, te convertiste en Tohno Shiki, ¿cierto?@
+` Después de que SHIKI recibiera el castigo de la familia Tohno, tuvo una milagrosa recuperación como la tuya.@
+` Sin embargo, no tenía una casa a la cual regresar.@
+` Porque Tohno Shiki estaba vivo, y viviendo con su hermana Akiha-san."\
+`"En cierta forma----tú mataste a Tohno SHIKI.@
+` Le arrebataste el único lugar al que podía regresar.@
+` Siendo escondido por Tohno Makihisa mientras tú vivías en su lugar… sólo puedes imaginarte cómo se sentía SHIKI."@
+`"…… Para SHIKI, ¿soy solo un impostor que está usando el nombre Tohno SHIKI?"@
+`"Sí, por eso SHIKI te odia más que a nada, Tohno-kun."\
+cl c,%type_crossfade_fst
+br
+` Pero----yo no viví así porque quisiera.@
+br
+` Pero supongo que a SHIKI eso no le importa.@
+` Para él, soy el odiado impostor que le robó todo.@
+` El hombre que le robó su hogar.@
+` Vivió lleno de un odio sin disminución los últimos ocho años.@
+` …… Por eso, claro que quiere matarme.\
+`"--Pero, yo sigo siendo el asesinado, Senpai."@
+ld c,":a;image\tachi\cel_t07b.jpg",%type_crossfade_fst
+`"¿Tohno…… kun?"@
+br
+` Sí, también me han robado cosas.@
+` Ocho años atrás yo tenía nueve años.@
+` En aquel entonces, el Shiki que vivió hasta ese momento desapareció sin dejar rastro.\
+` No puedo recordar muy bien mi pasado.@
+` No tengo el deseo de conocer a mis verdaderos padres, pero ni siquiera puedo recordar ninguna valiosa memoria que pueda haber tenido.@
+br
+` Quien sea que haya sido Shiki, ya no se encuentra en ninguna parte----
+br
+`"Tohno-kun.@ No puedes pelear basado en el odio."@
+` …… Como si sintiera el peligro en mis palabras, Senpai me previene.@
+` Le digo que no sea ridícula al negar con mi cabeza.\
+`"No es eso.@ Tengo que encargarme de Roa por una razón diferente."@
+`"¿Tú no… lo odias……?"@
+`"Estaría mintiendo si digo que no, pero eso en realidad no importa.@ No puedo dejarlo en libertad, porque si hago eso, la princesa se esforzaría demasiado.@
+` Es por eso que debo ayudarla.@ Le prometí que la ayudaría hasta el final."@
+br
+` ----Es cierto.@
+` Por eso mismo no puedo estar descansando aquí.@
+` Ella siempre está----resistiendo tanto dolor, pero intenta actuar alegremente frente a mí.\
+`"…… Simplemente no puedo entender.@ ¿Por qué la apoyas tanto?@ Arcueid es un vampiro, ¿no es diferente a ti?"@
+`"----Eso no me importa.@ Todo lo que sé es que la amo.@ Eso es suficiente razón para ayudarla."@
+` Mirando los ojos de Senpai, hablo directamente.@
+cl c,%type_crossfade_fst
+` Senpai lleva una mano hacia su boca como si estuviese conmovida y se sonroja por alguna razón.\
+ld c,":a;image\tachi\cel_t07b.jpg",%type_crossfade_fst
+`"----Ya veo.@ ¿Estás diciendo que la ayudarás hasta el final, Tohno-kun?"@
+`"Sí.@ No tengo tiempo que perder.@ Si Roa está en mi escuela, tengo que partir de inmediato----"@
+` De otro modo Arcueid podría intentar combatir a Roa.@
+` Si eso sucede, su seguridad no está garantizada.@
+br
+` Por eso tengo que darle una mano.@
+` No sé de cuánta utilidad puedo ser, pero tiene que ser mejor que Arcueid por sí sola.\
+`"----Es imposible.@ Aunque pudieses moverte perfectamente, ella no es capaz de igualar a Roa en su estado actual."@
+`"¿No es capaz de igualarlo…… cómo sabes eso, Senpai?"@
+`"Un cálculo simple.@
+` Ella está tratando de suprimir el deseo de beber sangre del cual cayó víctima anteriormente.@ Esto reduce tanto su poder que no podría siquiera enfrentarse a la mitad del poder de Roa.@
+` Tu poder es menor a la mitad del poder de Roa, así que no pueden igualarlo aunque trabajen juntos.\
+`"…… En primer lugar, ellá está muy cerca de la muerte.@ Su poder es débil, y lo está usando para suprimir el impulso en su interior.@
+` Es como si nosotros nos moviésemos después de ser aplastados nuestros púlmones."@
+`"Qué------"@
+` ¿Qué quieres decir?@
+` ¿Cerca de la muerte… por qué?@
+` ¡Ciertamente estaba sufriendo, pero no parecía cercana a la muerte……!\
+`"Por supuesto, todo es porque está resistiendo el deseo de beber sangre.@ Sería más fácil si la bebiese.@
+` Pero creo que nunca lo haría, así que mientras persiga a Roa en su estado actual, está corriendo hacia la muerte."@
+`"¡Eso…… eso es simplemente, ridículo……!"@
+cl c,%type_crossfade_fst
+br
+` Me levanto de mi cama.\
+bg #ffffff,%type_crossfade_fst
+bg "image\bg\bg_40c.jpg",%type_crossfade_fst
+quakey 2,100
+` Caigo al piso instantáneamente.@
+` Sin siquiera frenar mi caída, golpeo la alfombra como un pedazo de basura.\
+`"¡Ha----ghh……!"@
+` Qué----qué débil.@
+` Arcueid está en una situación tan desesperada, pero yo----estoy tan débil que ni siquiera puedo caminar.\
+ld c,":a;image\tachi\cel_t07b.jpg",%type_crossfade_fst
+`"Por favor no te fuerces, Tohno-kun.@
+` Aunque no estás herido, prácticamente toda tu energía se ha ido.@
+` Probablemente sea la habilidad del huésped de Roa, SHIKI.@
+` Sólo al apuñalarte con un cuchillo te robó un poco de tu 'vida'."@
+`"…… ¿Mi…… vida……?"\
+`"Piensa en ello como la energía que te permite vivir.@ Es infinita, pero agotable.@
+` Es producida mientras uno vive, pero la cantidad que puede ser almacenada varía de individuo en individuo.@
+` Así que la cantidad de vida que puede ser arrebatada de un cuerpo es limitada.@
+` Antes de agotar toda la energía que hemos acumulado, extraemos más de esta fuente infinita.@
+` Y si hubiese una manera de robar toda la energía acumulada en un solo instante, la persona ni siquiera tendría la energía mínima necesaria para extraer más energía de esta fuente infinita, y toda la actividad de vida cesaría."\
+cl c,%type_crossfade_fst
+br
+br
+` …… Vida.@
+` Vida, que utiliza vida.\
+`"…… Entonces…… ¿las cosas utilizan eso para vivir……?"@
+ld c,":a;image\tachi\cel_t01b.jpg",%type_crossfade_fst
+`"Es verdad, no puedes llamarlo muerte exactamente.@ Es más parecido a un auto sin gasolina; no puede correr."@
+` Diciendo eso, ella me ayuda a levantarme y se mueve como para meterme a la cama.\
+`"…… Suficiente, no voy a acostarme."@
+`"¿Qué estás diciendo cuando ni siquiera puedes levantarte por tu cuenta?@ Si no quieres acostarte, entonces por favor permanece como estás."@
+` Ella me empuja hacia abajo y me siento en la cama forzosamente.\
+`"…… Ha…… ah."@
+` Sólo sentarme de esta manera me deja sin aliento.@
+`"--Mier----da."@
+` En este estado, no puedo llegar a la escuela.@
+` ¡Aunque pudiese ver a Arcueid, así sólo seré una carga para ella……!\
+ld c,":a;image\tachi\cel_t01b.jpg",%type_crossfade_fst
+`"No tienes que pelear más, Tohno-kun.@ Todo será resuelto en cuestión de pocos días."@
+`"¿----?@ ¿Re……  suelto, qué quieres……"@
+ld c,":a;image\tachi\cel_t07b.jpg",%type_crossfade_fst
+`"Ya que he encontrado a la reencarnación de Roa, El Vaticano…… um, nuestro cuartel general, ha aprobado mi petición.@
+` Dentro de siete días la Agencia de Entierros, bajo control directo de Su Santidad el Papa, llegará y le pondrá fin a Roa.@
+` …… Al final, sólo será otra continuación del ciclo, pero esta encarnación de Roa será eliminada."\
+cl c,%type_crossfade_fst
+` …… Siete días.@
+` ¿¡Siete días……!?@
+br
+`"…… No, no puedo esperar tanto.@ Incluso ahora Arcueid podría estar intentando ajustar cuentas con Roa.@
+` Entonces----¿¡todo habrá sido inútil……!?"@
+` Doy fuerza a mis piernas con dificultad.@
+` Engañándome al ignorar mi entrecortada respiración, me levanto de mi cama.\
+`"…… Senpai.@ Mi cuchillo, ¿dónde está?"@
+ld c,":a;image\tachi\cel_t07b.jpg",%type_crossfade_fst
+`"Yo lo tengo, pero----¿crees que voy a dártelo, Tohno-kun?"@
+`"…… No, pero no deberías conservar las cosas de otras personas, Senpai.@ ¿No es simple cortesía devolver las cosas perdidas a sus dueños?"@
+` Después de darme la razón, Senpai revisa sus bolsillos y saca mi cuchillo.\
+`"Sólo porque esta daga es tuya, la devolveré.@ ¿Pero en verdad pretendes regresar a la escuela, Tohno-kun?"@
+`"----Sí.@ Antes de que Arcueid encuentre a Roa, tengo que----"@
+br
+` matarlo.@
+` Si el objetivo de SHIKI es atraparme, no puedo escapar de una pelea a muerte de todas formas.@
+` Así que----para proteger a Arcueid, iré a matar a Roa yo mismo.\
+`"¿En tu condición?@
+` …… Simplemente no entiendo.@ Por favor dime por qué ella te obsesiona tanto.@
+` Si me lo dices, no te detendré."@
+` …… Senpai me pregunta lo mismo de antes.@
+` Su mirada es tranquila y sincera.@
+` Ella en verdad quiere saber.\
+`"----Yo----"@
+` Por qué quiero ayudarla.@
+` ¿Porque ella me gusta?@
+` ¿O porque estar con ella fue divertido?@
+` …… Sí, esas cosas también son muy importantes .@
+br
+` Pero, es más profundo que eso.@
+` Hay algo que no puedo dejar ir.\
+`"…… Porque ella está sola.@ Simplemente no puedo dejarla sola.@ Creo que ésa es la razón."@
+ld c,":a;image\tachi\cel_t06b.jpg",%type_crossfade_fst
+`"----Mientes.@ No puedes arriesgar tu vida por eso.@ Por favor responde seriamente, Tohno-kun.@ …… No puedo entender ese tipo de razón."@
+`"No, ésa en verdad es mi razón.@
+` …… Hasta ahora había estado sola, ni siquiera sabía lo que significaba divertirse.@
+` Siempre, casi estúpidamente aislada.@
+` ¿No es eso demasiado solitario?@ No permitiré una vida tan inútil.@ Así que----"\
+` Así que simplemente… quiero hacerle saber.@
+` Que hay tantas cosas que hacer en este mundo, y aunque la mayoría son inútiles y sin sentido,
+` conocerlas es parte de la diversión de estar vivo.@ Cosas que incluso un niño conoce, ----\
+`"…… Simplemente, quería decirle.@
+` Aunque ella sonríe como si se divirtiese muchísimo, quería mostrarle que cualquiera puede tener eso.@
+` Quería mostrarle una y otra vez que este mundo tiene más----aun más cosas divertidas, suficientes para hacer que cualquier dificultad parezca insignificante.@
+` Ser capaz de sentir todas las cosas normales como algo normal----yo quería hacerla feliz."@
+br
+` Para que pueda sonreír sinceramente todo el tiempo.@
+` Porque me gusta la sonrisa de Arcueid.\
+`"¿No está bien eso?@
+` Con lo poco que ha sido salvada hasta ahora; quiero hacerla muchas, muchas veces más feliz.@
+` Debo al menos equilibrar la balanza.@ En primer lugar, es tan simple ponerle fin a su soledad."@
+br
+` …… Sí, es muy simple.@
+` Sólo habla con alguien y haz lo que quieres hacer.\
+`"…… Y sé que cualquiera puede hacerlo.@ Otra persona puede hacerla feliz.@
+` Así que----ciertamente, con mi cuerpo en este lamentable estado, no tengo necesidad de actuar tan desesperadamente.@
+` Otra persona podría acabar con su soledad."@
+br
+` …… Sé eso.@
+` Lo sé, pero no todo es lógico.\
+`"----Pero no puedo.@
+` No puedo dejar que otra persona lo haga, y no puedo separarme de ella de esta manera.@
+` …… Para mí, no hay nadie más aparte de ella."@
+br
+` Porque,
+` Arcueid es la única en este mundo a quien quiero hacer feliz.\
+`"…… Amo a Arcueid."@
+` La amo como hombre, amo todo de ella.@
+br
+`"Pero más que eso, quiero hacerla feliz con mis propias manos.@
+` Para lograr eso, no me importa lo que suceda con mi vida.@ No quiero que ella muera de esta forma.@
+` ----En este momento, eso es todo, Senpai."@
+br
+` …… Sí, es todo.@
+` En este momento, ella es más valiosa para mí que mi propia vida----\
+ld c,":a;image\tachi\cel_t07b.jpg",%type_crossfade_fst
+`"…… Por favor no digas cosas tan estúpidas.@ Nadie más puede hacer eso.@
+` Parece que eres el único en este mundo que puede siquiera decir eso."@
+` Senpai se encoge de hombros después de un gran suspiro.@
+`"----Senpai."@
+ld c,":a;image\tachi\cel_t01b.jpg",%type_crossfade_fst
+`"…… Me enfurece un poco.@ Ella ya es lo suficientemente feliz."@
+` Como si estuviese desistiendo de algo,
+` Senpai habla con una voz amable.\
+br
+br
+` ----Y entonces,
+` escucho crujir a las ramas de los árboles fuera de la ventana.\
+playstop
+`"¿¡……!?"@
+`"Oh, no necesitas sorprenderte, ella sólo se estaba yendo.@ Sentí algo fuera de lugar anteriormente, supongo que era eso después de todo."@
+` Senpai echa un vistazo fuera de la ventana.\
+`"No es normal en ella darte más prioridad que a Roa.@ ----Bueno, si le daba más prioridad a Roa después de semejante discurso, habría merecido algún castigo divino."@
+`"………… ¿Eh?"@
+` Entonces, eso significa…
+` ¿Arcueid estuvo afuera de mi ventana hasta ahora?\
+`"¿¡Por qué----Arcueid vendría a mi habitación, Senpai……!?"@
+ld c,":a;image\tachi\cel_t07b.jpg",%type_crossfade_fst
+`"Vino a ver cómo estabas porque estaba preocupada por tu encuentro con Roa.@ Debe haber escuchado lo que estábamos hablando y fue tras Roa."@
+br
+` ----En otras palabras,
+`   ¿fue a ajustar cuentas con Roa?\
+`"¿¡Qué----ella fue, por qué……!?"@
+`"Por supuesto.@ Después de escuchar algo como eso, incluso yo habría hecho lo mismo.@ …… Sí, la envidio, pero la compadezco de igual manera."@
+`"----Pero, cómo----"@
+ld c,":a;image\tachi\cel_t07b.jpg",%type_crossfade_fst
+`"Quieres ayudarla, pero ella no quiere involucrarte.@
+` Así que----sólo hay una solución, ¿cierto?"@
+` Senpai actúa con tranquilidad como si hubiese sabido que esto sucedería.\
+`"Así que ahora puedes desistir, ¿cierto Tohno-kun?@ Sin importar cuánto te esfuerces no puedes alcanzarla.@ Deja el resto en mis manos, y descansa……"@
+`"----¡Ni de broma!"@
+cl c,%type_lshutter_fst
+` Me sujeto salvajemente del cuello de Senpai.@
+` Sólo eso me marea, pero no me importa.\
+`"¿¡Me preguntaste sabiendo que esto sucedería, Senpai----!?"@
+ld c,":a;image\tachi\cel_t07b.jpg",%type_crossfade_fst
+`"…… No, no sabía que la veías de esa manera.@ …… Ciertamente fue un error de mi parte."@
+` Pero su expresión no cambia.@
+` Me mira dulcemente mientras aprieto su cuello.\
+`"----------"@
+` …… Haciendo esto no logro nada.@
+` Arcueid ya se fue.@
+` Lo que debería estar haciendo no es culpar a Senpai.\
+`"----Voy tras ella.@ Llévame allá."@
+`"¿Crees que obedeceré una orden de una persona en tu condición?"@
+` Sí, claro que no lo creo.@
+`"Si no obedeces, te violaré aquí mismo."@
+ld c,":a;image\tachi\cel_t06b.jpg",%type_crossfade_fst
+`"----"@
+` Su expresión colapsa.@
+` Me lanza una mirada como si viese directamente dentro de mi corazón.@
+` Pero ahora, no puedo retractarme.\
+`"----------"@
+cl c,%type_crossfade_fst
+` Y entonces,
+` Senpai suelta otro suspiro.\
+ld c,":a;image\tachi\cel_t01b.jpg",%type_crossfade_fst
+`"Tu propuesta es intrigante, pero la pasaré por alto.@ Fue mi error, y ya he llegado muy lejos.@ Me quedaré contigo hasta la última parada."@
+` Ella se aparta de mis manos y se coloca a mi lado.@
+`"Te llevaré allá, por favor quédate tranquilo."@
+`"¿Eh----?"@
+cl c,%type_lshutter_fst
+` No tengo tiempo para sorprenderme.@
+` Haciendo un leve movimiento, ella me levanta.\
+`"Si Akiha-san nos ve intentará detenernos, ¿aplicamos el mismo método que ella?"@
+`"¿¡Eh----eh!?"@
+` Un ligero paso,
+` y salimos volando por la ventana mientras Senpai me sostiene.\
+bg #000000,%type_lcartain_mid
+!w2000
+bg "image\bg\bg_01c.jpg",%type_lcartain_mid
+` …… Llegamos a la escuela.@
+` Aunque me estaba cargando, Senpai ni siquiera se ha quedado sin aliento, y corrió tan rápidamente como si estuviese sola.\
+`"Tohno-kun, ¿puedes caminar?"@
+`"----Apenas.@ Vamos a matar a Roa, no podemos entrar de esta manera."@
+`"Es verdad.@ Entonces, por favor camina desde aquí."@
+` Senpai me devuelve al suelo.\
+`"------"@
+` Hay un misterioso silencio en la escuela.@
+` Una vez que entremos, sólo nos esperará una pelea a muerte.@
+` Me quito mis lentes después de respirar profundamente.@
+bg "image\bg\bg_01d.jpg",%type_crossfade_slw
+br
+` Mi cabeza comienza a palpitar.@
+` Además de no poder moverme por completo, me siento muy enfermo.\
+ld c,":a;image\tachi\cel_t07b.jpg",%type_crossfade_fst
+`"…… Esto no es bueno."@
+` Senpai mira hacia el cielo nocturno con una seria expresión.@
+bg "image\bg\ima_02.jpg",%type_crossfade_mid
+` Luna llena.@
+` La radiante luz de la luna ilumina los terrenos de la escuela.\
+bg "image\bg\bg_01d.jpg",%type_crossfade_fst
+`"…… ¿Qué no es bueno?"@
+ld c,":a;image\tachi\cel_t07b.jpg",%type_crossfade_fst
+`"…… Sí, se dice que los Verdaderos Ancestros originalmente provienen de la luna, por lo que obtienen mucha fuerza de ésta.@
+` Es lo mismo para Roa, como un Apóstol Muerto por debajo de los Verdaderos Ancestros, es prácticamente inmortal esta noche.@
+` …… Con las armas que tengo ahora, puede que no sea capaz de matarlo por completo."@
+` Ella aprieta sus dientes.\
+` ----¿Prácticamente inmortal?@
+` Pero eso no significa nada para mí.@
+` Si puedo acercarme.@ Aun si en el siguiente instante mi pecho es apuñalado una vez más, si puedo acercarme----puedo perforar su "muerte".\
+`"----Esta noche es muy brillante.@ Será dificil ocultarnos en la oscuridad.@
+` …… Me gustan mucho las noche de luna, pero esta noche es un poco diferente."@
+` Senpai suspira.@
+br
+` …… El pálido brillo de la luna y el helado aire nocturno.@
+` Incluso puedo ver cómo se expanden las líneas de muerte.@
+br
+`"¿En serio?@ A mí no me gustan las noches de luna."@
+`"¿Tohno-kun……?"@
+cl c,%type_crossfade_fst
+\
+br
+br
+br
+br
+br
+br
+` Rechina.@
+` Mi cerebro rechina.\
+`"…… Puedo ver todo claramente bajo la débil luz de la luna; es desagradable.@ Prefiero la fuerte luz solar que borra todo, o una verdadera oscuridad."\
+br
+br
+br
+br
+br
+br
+` Rechina.@
+` No hay dolor, pero mi cerebro comienza a rechinar.\
+`"Cielos----Parece que me volveré especialmente loco esta noche.@
+` Todo parece morir fácilmente, es como si estuviese en los desiertos de la luna."@
+br
+` ----Pero, con esto,
+` tampoco hay manera de que no acierte a la "muerte" de Roa.\
+bg "image\bg\bg_01c.jpg",%type_crossfade_mid
+` Vuelvo a ponerme los lentes.@
+` Sujetando mi cuchillo, camino hacia el edificio escolar.\
+bg "image\bg\bg_03c.jpg",%type_lcartain_mid
+` Paso a través de la entrada frontal.@
+` Incluso caminar normalmente es difícil.@
+` La distancia al edificio escolar parece increíblemente larga.\
+ld c,":a;image\tachi\cel_t01b.jpg",%type_crossfade_fst
+`"Tohno-kun, aquí nos separaremos."@
+` Senpai dice esto repentinamente.@
+`"A partir de aquí, por favor continúa por tu cuenta.@ Yo estaré haciendo otra cosa."@
+`"…… ¿Otra cosa----Senpai, vas a hacer algo?"@
+`"Mira, mi objetivo también es lidiar con Roa.@ Parece que este Roa es más fuerte que sus huéspedes previos, así que no puedo enfrentarlo directamente.@
+ld c,":a;image\tachi\cel_t07b.jpg",%type_crossfade_fst
+` Cuando tú y Arcueid sean asesinados por Roa, usaré esa oportunidad para eliminarlo."@
+` Ella lo dice directamente y con una seria expresión.\
+`"…… Pareces que estás hablando en serio, Senpai."@
+`"Sí.@ No pienso permitir que circunstancias personales vuelvan a interferir con mi trabajo.@
+` Estás peleando por ella, ¿no, Tohno-kun?@ Como ésa, yo también tengo mis razones.@ Así que de ahora en adelante----no puedo ayudarte."\
+`"Oh………… sí, gracias, Senpai.@
+` Ya que podría ser el adiós, déjame decirte que me agradaste, Senpai.@ Fue divertido pasar tiempo contigo y Arihiko hablando de cosas estúpidas."@
+ld c,":a;image\tachi\cel_t01b.jpg",%type_crossfade_fst
+`"----Sí, fue como un sueño para mí también."@
+cl c,%type_lshutter_mid
+\
+` Senpai desaparece hacia el edificio como una sombra negra.@
+`"Bueno------¿ya es hora?"@
+` Empujo este cuerpo que duele cada vez que me muevo, y corro hacia el edificio escolar.\
+bg #000000,%type_lcartain_slw
+bg "image\bg\bg_10c.jpg",%type_lcartain_slw
+play "*6"
+waveloop se1
+` …… El edificio escolar está lleno de grietas.@
+` Como si un pequeño tifón hubiese sido soltado adentro, y se hacen cada vez más grandes.@
+` Parece que la pelea entre Arcueid y Roa ya comenzó.@
+br
+`"…… ¡Arriba……!"@
+` Escupo eso mientras subo corriendo las escaleras.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_11c.jpg",%type_lcartain_mid
+` Jadeo por aire.@
+` Logro llegar al cuarto piso.@
+` Las grietas que recorren las paredes continúan por el pasillo----y van hacia el túnel que conecta los dos edificios.@
+`"¡Maldi------ción!"@
+` De alguna manera logro mover mis temblorosas piernas y corro hacia el túnel conector.\
+bg #000000,%type_lcartain_mid
+` Atravieso el pasillo y alcanzo su intersección con ese túnel.@
+br
+` ----Es la última parada.@
+br
+\
+bg "image\bg\bg_49.jpg",%type_lcartain_mid
+` En medio del túnel,
+` dos figuras se están mirando ferozmente a cierta distancia.@
+br
+` SHIKI está de pié en el extremo más alejado del túnel, totalmente expuesto.@
+br
+` Y en el centro, Arcueid está arrodillada en el piso y respirando con dificultad----\
+`"¡Arcueid----!"@
+` Comienzo a correr hacia ella,
+` pero antes de eso,
+ld c,":a;image\tachi\ark_t23.jpg",%type_lshutter_fst
+` Arcueid, aún arrodillada, me mira fijamente.@
+cl c,%type_crossfade_fst
+bg #9c0120,%type_crossfade_fst
+bg "image\bg\bg_49.jpg",%type_crossfade_fst
+\
+`"¿¡………………!?"@
+` ¿¡No puedo moverme……!?@
+` En el instante en que fija sus ojos sobre mí, mi cuerpo----como si se hubiese vuelto de piedra, ¡no se mueve en absoluto……!@
+ld c,":a;image\tachi\roa_t01a.jpg",%type_lshutter_fst
+`"----Qué horrible, sellar así a tu amigo con tus Ojos Místicos.@ Habría estado bien que lo dejases morir contigo."@
+` Jejejeje.@
+` SHIKI----no, Roa, ríe jocosamente.@
+cl c,%type_crossfade_fst
+\
+`"¿Ojos Místicos----por qué?"@
+` ¿Por qué Arcueid está usando esto sobre mí?@
+` Finalmente.@
+` Aunque finalmente logré llegar a tiempo----
+`"----¿Por qué?@
+` ¿¡Por qué, Arcueid……!?"@
+br
+` Arcueid aparta la vista de mí y la dirige hacia Roa.\
+` …… Ella no dice nada.@
+` No me dice nada.@
+` Sólo mira ferozmente al enemigo frente a ella mientras respira dolorosamente.\
+`"Por qué----por qué----"@
+` Ni siquiera puedo gritar.@
+` No a causa de sus Ojos Místicos,
+` sino porque finalmente logré llegar aquí.@ Maldiciendo mi ineficacia, mi cuerpo, el cual forcé por tanto tiempo, comienza a perder su calor.@
+br
+` Roa ríe escandalosamente al observarnos a ambos.\
+ld c,":a;image\tachi\roa_t01a.jpg",%type_crossfade_fst
+`"----Ya veo.@ ¿¡Finalmente estás preparada, Princesa!?"@
+` Roa camina pausadamente hacia Arcueid.@
+` Arcueid permanece arrodillada e inmóvil.\
+ld c,":a;image\tachi\roa_t02a.jpg",%type_crossfade_fst
+`"Vaya vaya, eres bastante bueno, Shiki.@ Parece que esta princesa va a combatirme para salvarte.@
+` Si fueses la princesa de antes, serías aterradora, pero ahora eres sólo un vampiro normal.@ Ya ni siquiera tienes el poder de un Verdadero Ancestro.@
+` ----Cielos, habría sido mejor que sucumbieses ante tus deseos."@
+`"¡Silencio!"@
+` La voz de Arcueid hace eco a lo largo del pasillo.\
+` ----¿Qué es esto?@
+` Si no es una alucinación----todo comienza a oscilar alrededor de Arcueid.\
+ld c,":a;image\tachi\roa_t05a.jpg",%type_crossfade_fst
+`"Qué----"@
+` Roa deja de caminar.@
+`"----¿Esfera Fantasma?@ ¿Aún puedes usar eso?@ Como era de esperarse de la realeza de los Verdaderos Ancestros."@
+` Roa retrocede temerosamente.\
+`"Sin embargo, no puedes ganar en mi contra.@ Porque tengo algo de lo que tú careces."@
+`"------"@
+` Arcueid detiene su respiración.@
+` Como si cesara todo movimiento para reunir toda su fuerza.\
+ld c,":a;image\tachi\roa_t04c.jpg",%type_crossfade_fst
+`"Lo sabes, ¿no?@ Correcto, es la experiencia de la muerte.@
+` Sé lo que es la muerte, pero tú no.@ Eso es lo que nos diferencia.@
+` …… Bueno, mientras algo esté vivo, no podrá experimentar la muerte.@ El único que la conoce probablemente sea un reencarnador infinito como yo."@
+br
+` …… La oscilación de los alrededores de Arcueid se hace más fuerte.\
+`"Los humanos temen instintivamente a lo desconocido.@ Incluso en razas trascendentes como los Verdaderos Ancestros, sigue siendo igual.@ Sin importar cuánto de lo oculto estudies, sin importar cuánto hayas vivido, no puedes experimentar la muerte.@
+` Ustedes obtienen mucho poder al resistirse a la muerte, pero al mismo tiempo, ésa es la fuente de su debilidad.@
+` Tú huyes de la muerte mientras que yo la acepto.@ Ésa es la diferencia entre tu naturaleza, Arcueid Brunestud, y la mía, Michel Roa Valdamjong.\
+ld c,":a;image\tachi\roa_t02a.jpg",%type_crossfade_fst
+`"Incluso ahora vivo como un humano en esta época.@ Un fantasma fuera de lugar como tú no tiene derecho a juzgarme."@
+br
+` Crac.@
+` El vidrio comienza a quebrarse a lo largo del túnel.\
+`"----Yo sé.@ Sobre la muerte.@ Sobre la oscuridad.@ ¡La nada por la que he viajado tantas veces----!@
+` Para mí, la muerte es poco más que un ritual común.@
+` Digamos que destruyes este cuerpo en este lugar.@ Aún seguiré en este mundo.@ ¿Por qué no comprendes que es inútil combatirme?"@
+` Roa separa más sus brazos.@
+` Arcueid no responde.\
+ld c,":a;image\tachi\roa_t01a.jpg",%type_crossfade_fst
+`"---De acuerdo.@ Si aún insistes en desafiarme, no te detendré.@ Tu resistencia será recompensada."@
+cl c,%type_crossfade_fst
+` Roa baja sus brazos y se agacha.@
+` Todo parece estar a punto de explotar alrededor de Arcueid.\
+`"A------"@
+` No puedo hablar.@
+` Esto no es bueno.@
+` Mi cerebro me grita.@ No debería permitir que esto suceda.@
+br
+` No sé por qué, y no tengo ninguna prueba.@
+` Simplemente, yo, como alguien que ha visto toneladas de muerte, puedo saber.@
+` Entre Roa y Arcueid.@ Cuál de los dos está más cerca de la muerte.\
+`"Al----to."@
+` …… No puedo hablar.@ No, puedo.\
+br
+` ----¡Crac!@
+br
+` El sonido del aire al desgarrarse.@
+` La deformación de los alrededores de Arcueid se propaga a lo largo del túnel.\
+playstop
+monocro #00ffff
+bg "image\bg\bg_49.jpg",%type_lshutter_fst
+` Todo el pasillo palpita.@
+` Las ventanas, las paredes, el pasillo, el edificio entero.@
+` Se convierten en ondas destructivas, como si fuesen una trituradora con decenas, centenares, miles, no, un incontable número de cuchillas.\
+ld c,":a;image\tachi\roa_t03a.jpg",%type_lshutter_fst
+`"¡Gi------!"@
+cl c,%type_bshutter_fst
+` En un instante, el cuerpo de Roa desaparece.@
+` Retorcido, rebanado, comprimido.@
+` Todo lo que queda son sus tobillos.\
+monocro off
+bg "image\bg\bg_49.jpg",%type_lshutter_fst
+` El deslizamiento del pasillo cesa.@
+` Quizás sólo duró un momento.@
+` El túnel está como antes.@
+` Todo lo que queda son los tobillos de Roa.\
+!w1000
+br
+br
+br
+br
+br
+br
+br
+`   Pero, esto no ha terminado.\
+wavestop
+`"A------"@
+br
+` Los tobillos comienzan a moverse.@
+` Comienzan a correr hacia Arcueid.@
+br
+` Mientras lo hacen,
+` con cada paso, una pierna, sus caderas, su otra pierna, su torso, sus brazos, brotan de vuelta a la vida.\
+ld c,":a;image\tachi\ark_t18.jpg",%type_crossfade_fst
+`"------"@
+` Arcueid aún está arrodillada e inmóvil.@
+` Directamente frente a ella,
+` el cuello y la cabeza de Roa vuelven a la vida.\
+`"Ar------"@
+` No pude prevenirla a tiempo.@
+` Totalmente regenerado, Roa corta su estómago.@
+` Como si cortase limpiamente a través de la "línea", sin cortes de carne, ni brotes de sangre.\
+cl c,%type_crossfade_mid
+ld c,":a;image\tachi\roa_t04a.jpg",%type_crossfade_mid
+`"----Eso estuvo cerca.@ Sabía que escoger esta noche sería lo correcto.@ Si la luna menguaba incluso en lo más mínimo, no hubiese podido regenerarme a partir de un simple tobillo."@
+`"--------"@
+`"Y princesa, no puedes recuperarte de esa herida.@ Mis garras tienen la misma habilidad que ese hombre de allá."@
+br
+` Un ruido sordo.@
+` Arcueid cae al piso.\
+ld c,":a;image\tachi\roa_t02a.jpg",%type_crossfade_mid
+`"----Éste es el poder que obtuve al experimentar la muerte.@
+` Irónicamente, yo mismo no sabía cómo utilizarlo.@ Pero él me enseñó.@ Para alguien que ha visto la muerte, percibir su forma no fue difícil."@
+cl c,%type_crossfade_fst
+` Roa alardea mientras patea a Arcueid.@
+` Su cuerpo da volteretas hacia mí.\
+`"¡Arcueid……!"@
+` Puedo moverme de nuevo.@
+br
+` ----Porque el poder detrás de sus Ojos Místicos se ha desvanecido.\
+br
+` …… Significa que su poder ya no está funcionando.\
+`"----¡Maldición!"@
+` Sacando ese pensamiento de mi mente, la sostengo cerca de mí.\
+!w500
+bg #000000,%type_crossfade_slw
+` ----Un escalofrío me recorre en el instante en que la sostengo.@
+` Su cuerpo está terriblemente frío.@
+` El único calor dentro de ella es como una vela a punto de apagarse.@
+` Roa aún está frente a nosotros.@
+` Pero, eso no me importa.@
+` En este momento----sólo quiero ayudar a Arcueid.\
+bg "image\event\ark_e07.jpg",%type_crossfade_mid
+play "*7"
+`"¡Arcueid----!"@
+` La llamo.@
+` Sus ojos cerrados se abren enérgicamente, como si despertase de un sueño.@
+`"Aja----eso fue bastante patético, ¿no?"@
+` Con la intensidad de un mezcla de colores,
+` Arcueid muestra una sonrisa forzada.\
+`"Tú…… ¿qué clase de estupideces estás diciendo?@ ¿Por qué----por qué tú----"@
+` …… No puedo hablar claramente.@
+` Quería decir algo más, algo mejor, pero mi cerebro no funciona.\
+` No puedo estar tranquilo ahora.@
+` Mientras la sostengo, la falta de calidez que persiste en su cuerpo me dice que es inútil.@
+` Si me quitase mis lentes----no hay duda de que vería algo aun más desesperanzador.@
+br
+` ----Más que cualquier otra cosa,
+` no quiero ver eso.\
+`"Por qué----por qué, por qué----"@
+` Eso es todo lo que logro decir.@
+` Exasperado,
+` la sostengo firmemente.@
+br
+` …… No hay abrazo en respuesta.@
+` A ella no le queda nada de fuerza.@
+` Todo lo que hace es sonreír felizmente.\
+`"¡No------!"@
+` Esto no puede estar pasando.\
+`"----¿Por qué----por qué----por qué lo hiciste todo tú sola……!@ ¡Somos compañeros, dijimos que nos ayudaríamos----hasta el final……!@
+`"…… Oh sí…… es cierto, sí.@ Yo…… creo que lo olvidé."@
+`"¡Cómo puedes olvidarlo……!@ Esto--esto me hace inútil.@ Dije que te ayudaría.@ Dije que definitivamente te ayudaría----pero no pude ayudar siquiera en lo más mínimo."\
+`"…… No, no es así Shiki.@ Me has ayudado más que suficiente.@ …… Es por eso… que ya… es… suficiente."@
+br
+` Cof.@
+` Ella tose sangre y sonríe dolorosamente.\
+`"…… Así que… quería… agradecerte.@ Al final, me alegra… haber podido… protegerte… de Roa."@
+`"------"@
+` Me quedo sin aliento.@
+` …… Los ojos acristalados de Arcueid no ven nada.@
+` Ni su herida, ni siquiera a Roa que aún vive.@
+br
+` …… Su tiempo.@
+` Desde que realizó aquel ataque, terminó en ese preciso instante.\
+`"Ah----s-sí.@ Gracias.@ Graci… as."@
+` No puedo.@
+` Ni siquiera puedo mentir apropiadamente.@
+br
+` …… La luz en sus ojos se está desvaneciendo.@
+` Su calor corporal rápidamente se acerca a cero.\
+br
+br
+br
+br
+br
+br
+` ----Voy a perder.@
+` ¿Voy a perderla de esta manera?\
+`"…… Ar… cueid."@
+`"----¿S, sí?"@
+`"…… Bebe mi sangre.@ ¡Si lo haces, recuperarás tu poder……!"@
+` …… Sin siquiera pensar, grito eso.@
+`"…………"@
+` Ella no responde.@
+` Pero levemente,
+br
+` niega con su cabeza.\
+`"----¿¡Por qué!?@
+` No me digas que aún tienes miedo.@ Mira, lo dijiste antes, ¿no?@ Preguntaste si podría comer aves o peces aunque tuviesen la misma inteligencia que yo.@
+` Sí lo haría.@ Si vivir dependiese de ello, lo haría.@ ¿¡No es robar cosas de otros para vivir una ley natural del mundo……!?"@
+` Eso es lo que ella dijo en aquella ocasión.\
+` ¿Entonces por qué?@
+` ¿Por qué simplemente sacude su cabeza con esos ojos conmovedores?\
+!w1000
+`"No… me gusta… hablar de 'qué tal si'."@
+` Una negación.@
+` Pero ése fue----mi argumento en aquel momento.@
+` Pero ella lo dijo antes…
+` Que le gusta jugar al 'qué tal si'.@ Porque siente que hay esperanza.\
+`"---¿En serio?@ A mí, me gustan los 'qué tal si'.@
+` Aunque signifique endulzar las cosas.@ Siento que--siempre hay… algo de esperanza…"@
+` ¿no crees?@ Pero no puedo terminar.@
+` Mi garganta está muy tensa.@
+` No puedo… hablar correctamente.\
+`"…… Es verdad…… Pero ahora, hay… otra cosa que quiero más."@
+` Con una voz vacilante, le pregunto de qué se trata.@
+`"Sí…… quiero… que me beses… Shiki…"@
+br
+` ----¿Qué?@
+` ¿Una cosa tan simple?@ ¿Está bien eso?\
+` Presiono mis labios contra los suyos.@
+` No es dulce como antes, o suave.@
+` Simplemente,
+` un beso en el que presiono mis labios contra sus fríos labios, sin ninguna calidez.@
+br
+` Después de eso,
+` ella sonríe como si estuviese extremadamente feliz.\
+`"…… Siempre… quise hacer… algo como eso."@
+`"…… ¿Oh?@ En verdad te gustan cosas extrañas."@
+`"…… Sí, pero estoy feliz.@ Sólo eso… se sintió tan bien.@ He vivido tanto tiempo… pero nunca he sido tan feliz como ahora."@
+br
+` ----Así que
+!w1000
+br
+`"En lo profundo, pensé que… tal vez… desaparecer de esta manera podría ser bueno."\
+` Después de murmurar semejante cosa,
+` todo el calor desaparece de su cuerpo.\
+playstop
+bg "image\bg\bg_49.jpg",%type_crossfade_slw
+`"¿Ar…… cueid……?"@
+` No hay respuesta.@
+` Aunque su cuerpo aún está aquí…
+` Aunque su cuerpo aún es tan suave…
+` Aunque aún recuerdo el sonido de su voz en mis oídos…
+br
+` ----Nunca más.@
+` Nada de esto volverá a suceder.\
+`"A----------"@
+` ¿Qué he estado haciendo?@
+` …… Quería hacerla feliz.@
+` Quería enseñarle tantas cosas.@
+` Quería llevarla a tantos lugares.@
+br
+` Quería estar con ella por siempre.@
+` Pero, eso nunca podrá suceder.\
+!w750
+`"----------"@
+` Ella lo hizo.@
+` Sin importar cómo lo vea, no hay nada más.@
+` Repentinamente, antes de que yo pudiese decir lo correcto, ella se apagó y murió por su cuenta.@
+` Por el resto de mi vida------no seré capaz de olvidar esto.\
+` Esta muerte.@
+` Esta calma enloquecedora.@
+` Nunca la olvidaré.\
+br
+` Tap.@
+br
+` Escucho los pasos del hombre que estuvo observando todo.@
+`"¿Terminaste, Shiki?"@
+`"Sí, ya terminó."@
+br
+` ----Respondiendo,
+` volteo hacia mi enemigo.\
+bg #000000,%type_crossfade_mid
+bg "image\bg\bg_49.jpg",%type_crossfade_mid
+play "*9"
+` Nos encaramos el uno al otro en el pasillo iluminado por la luna.@
+` Roa no se mueve del lugar donde Arcueid estaba anteriormente.@
+` Estuvo observando todo en silencio, probablemente porque sabía que estaba en una posición dominante.\
+ld c,":a;image\tachi\roa_t01a.jpg",%type_crossfade_fst
+`"No creí que aún estuvieses vivo."@
+` Roa dice esto relajadamente, como si nada hubiese sucedido.@
+br
+` ----Me quito mis lentes y preparo mi cuchillo.\
+`"Parece que los que pueden ver la muerte son buenos escapando de ella.@ No es una cuestión de la fortaleza o debilidad de tu vida.@
+` ----Sin embargo.@ Normalmente, la gente llama a eso un esfuerzo inútil."@
+`"…… Tienes derecho a decir eso.@ Tú y yo, ya hemos muerto una vez."@
+` "Exactamente," dice Roa mientras sonríe.\
+`"Aquellos que regresan de la tumba pueden entender la muerte.@ Tú y yo somos casos especiales de esa clase.@
+` He experimentado la muerte diecisiete veces antes de llegar a esto----pero tú sólo lo has hecho una vez.@ Sinceramente, ésa debe ser la diferencia entre nuestras habilidades latentes.@ Me da mucha curiosidad saber qué tipo de habilidad habría tenido si hubiese reencarnado en tu cuerpo."@
+br
+` ----Una voz fastidiosa y demasiado tranquila.@
+` Sólo escucharla hace que me duela la cabeza.\
+`"…… Tengo dos cosas que preguntarte, y una cosa que decirte."@
+` Logro decir esto mientras mi cabeza se llena de dolor.@
+ld c,":a;image\tachi\roa_t04c.jpg",%type_crossfade_fst
+`"----¿Oh?@ Muy bien, adelante."@
+` Probablemente porque tiene absoluta confianza en su posición dominante,
+` Roa responde jocosamente.\
+`"…… La primera pregunta es la más importante.@
+` Tú----¿por qué mataste a Arcueid?"@
+`"¿Por qué?@ Estaba tratando de matarme, ¿no es natural que la matase por eso?@
+ld c,":a;image\tachi\roa_t01a.jpg",%type_crossfade_fst
+` Bueno----la que yo deseaba no era esta débil princesa que vino aquí.@
+` Mi ser actual pudo haber absorbido a la princesa mientras vivía.@ Pero no tiene sentido asimilar a un Verdadero Ancestro que no es diferente a un vampiro normal.@
+` Por eso deduje que no tenía valor asimilarla, y decidí resolver el asunto.@ Incluso yo estoy decepcionado por la manera en que resultaron las cosas."@
+` Kuku.@
+` Retorciendo sus labios, el "enemigo" ríe.\
+` ----Mi cabeza, duele.@
+` Apresúrate----Tengo que matarlo lo más rápido posible.@
+` No puedo soportar que "exista" un solo segundo más.\
+`"Bien, ¿qué planeas hacer ahora?@ No me digas que piensas que puedes combatirme en esas condiciones.@ Resistir es inútil, Shiki."@
+br
+` …… Sé eso más que nadie.@
+` El mareo me hace caer sobre mis rodillas.@
+` Pero aun así----aunque ni siquiera me queda fuerza para levantarme, miro hacia él.\
+bg "image\bg\bg_49b.jpg",%type_crossfade_slw
+!w750
+ld c,":a;image\tachi\roa_t05a.jpg",%type_crossfade_fst
+`"Suficiente.@ Aunque puedas ver mi 'muerte', si no puedes tocarme no tiene sentido.@
+` Sabes, Shiki.@ Le estoy dando una calificación muy alta a tu habilidad.@
+` …… Sí, parece que la personalidad de SHIKI está desapareciendo.@ Como ya se ha vengado de ti, soy más Roa que SHIKI ahora.@
+` Bueno, eso en realidad no importa."\
+br
+` Roa da otro paso hacia adelante.\
+ld c,":a;image\tachi\roa_t01a.jpg",%type_crossfade_fst
+`"¿No es maravilloso este poder, Shiki?@
+` Deberías estar feliz.@ Probablemente somos los únicos en todo el mundo que poseemos los Ojos Místicos de Percepción Mortal.@ Sería una pena perder una habilidad tan rara, y por encima de todo, somos la misma entidad.@ Podemos entendernos mutuamente más que nadie.@
+` No hay otro compañero que pueda asegurar mi existencia como tú."\
+`"…… ¿Estás intentando pedirme que sea tu compañero?"@
+ld c,":a;image\tachi\roa_t04c.jpg",%type_crossfade_fst
+`"No, no te lo estoy pidiendo, te lo estoy permitiendo.@ No me importa lo que tú quieras.@ Eso sólo sería un estorbo.@
+` Puedes relajarte----Después de beber tu sangre y robar incluso tu alma, te convertiré en una existencia que no vacilará en usar su poder."\
+br
+br
+br
+br
+br
+br
+` ----Mis apretados dientes.@
+bg #9c0120,%type_crossfade_fst
+bg "image\bg\bg_49b.jpg",%type_crossfade_fst
+\
+`"…… Ya veo.@ Entonces, la siguiente pregunta.@
+` ¿Qué ves, líneas o puntos?@ No, lo haré más simple.@ Tú sólo puedes verla sobre las cosas vivientes, ¿cierto?@ No puedes verla sobre nada más."@
+`"…… ¿Hm?@ Por supuesto, las cosas no vivientes no tienen vida.@ Sólo las cosas vivientes tienen ese 'lugar' que indica la fuente de la vida."@
+`"----Eso pensé.@ Entiendo perfectamente, vampiro."@
+br
+` Aprieto mi cuchillo.@
+` El dolor de cabeza gobierna el interior de mi cerebro, y todo lo que puedo ver es una cosa.\
+ld c,":a;image\tachi\roa_t04a.jpg",%type_crossfade_fst
+`"…… No estás siendo claro y ésas no son palabras finales muy apropiadas…… pero, suficiente plática.@ También tengo que lidiar con la mujer de La Iglesia que se está escondiendo.@
+` ----Eres afortunado, Shiki.@ Una vez que te haga mi subordinado, tu primer oponente será esa mujer en la que confías."@
+cl c,%type_lshutter_mid
+br
+` Roa se acerca.@
+` Mi temblorosa visión no está fijada sobre su figura.\
+`"--Lo que tú y yo vemos es totalmente diferente, SHIKI."@
+br
+` Detrás de mi cabeza,
+` un interruptor se enciende.\
+`"Lo único que ves es la vida.@ No comprendes la muerte en absoluto.@ Por eso no puedes matarme, y sólo eres capaz de matar a una mujer debilitada."@
+br
+` Mi cerebro se sobrecalienta.@
+br
+`"----¿Qu… é?"\
+`"Si pudieses ver la muerte, no podrías conservar la cordura.@ Todo lo que puedes percibir es la parte que mantiene las cosas con vida.@
+` Si pudieses ver la muerte----no podrías siquiera permanecer de pié."\
+br
+br
+br
+br
+br
+` ----Un buen ejemplo, sería el mundo sobre la luna.@
+` Todo es como una desolada tierra baldía.@
+` La costura de muerte sobre todo lo que veo.@
+` Eventos del mundo que desaparecen cuando los toco.\
+`"¿Qué----estás……"@
+`"…… Ser capaz de ver la 'muerte' de las cosas significa que eres forzado a ver la incertidumbre y la fragilidad del mundo.@
+` El suelo es como si no estuviese ahí, y el cielo parece estar a punto de caer en cualquier momento."@
+`"¿De qué----de qué estás hablando?"\
+` La voz de Roa tartamudea.@
+` …… Por supuesto.@
+` Porque no puede entender en lo más mínimo lo que estoy diciendo.@
+br
+` En otras palabras----sus ojos y los míos pueden ser similares, pero son cosas completamente distintas.\
+`"----Detente.@ Esos ojos----que no me mires con esos ojos."@
+br
+` Miedo entra en la voz de Roa.@
+` Él mismo lo dijo.@
+` Los humanos temen instintivamente a lo desconocido.\
+`"…… No conoces la ilusión de que el mundo podría perecer en un instante.@
+` ----Eso es lo que significa ver la muerte.@
+` Estos ojos, este poder no es algo de lo que puedas alardear como lo hacías."\
+br
+br
+br
+br
+br
+` Sí, en aquel entonces, incluso tenía miedo de caminar.@
+` Incluso yo----si no hubiese conocido a esa persona, habría enloquecido hace mucho tiempo.\
+`"Ése es tu error, vampiro.@
+` La vida y la muerte pueden ser dos caras de una misma moneda, pero nunca se verán la una a la otra."@
+`"¡Te estoy diciendo----no me mires con esos ojos……!"@
+` El sonido de pasos corriendo.@
+` Pero, soy muchas veces más rápido.\
+br
+br
+br
+br
+br
+br
+`"----Te mostraré.@
+` Esto es lo que significa matar algo."@
+!w1000
+\
+` Diciendo eso,
+` perforo el "punto" del pasillo, que está sobre el piso.\
+monocro #ff0000
+bg "image\bg\bg_49b.jpg",%type_crossfade_fst
+` Instantáneamente----las líneas que recorren el túnel oscilan.@
+br
+`"¡Qué------!"@
+` Incluso el sonido del grito de Roa es enterrado en medio de los escombros que caen.\
+monocro off
+bg #000000,%type_crossfade_fst
+` El túnel es asesinado literalmente.@
+` Los bloques que perdieron su propósito se quiebran y se desmoronan.@
+br
+` Para Roa, debe haber sido un verdadero ataque sorpresa.@
+br
+` Empujado por la destrucción del pasillo y los escombros que colapsan, Roa cae hacia la tierra.\
+`"………………"@
+` Frente a mis ojos, el túnel se desmorona.@
+` Resistiendo el dolor en mi cabeza y el ardor en mi cuerpo, me dirijo hacia las escaleras.@
+br
+`"……………"@
+` Paso junto al cadáver de Arcueid y me apresuro hacia el patio.\
+bg "image\bg\ima_02.jpg",%type_lcartain_mid
+playstop
+` …… Bajo la luz de la luna.@
+` El patio debajo del túnel se ha convertido en un mar de escombros.@
+` En su centro, algo se mueve.@
+`"………………"@
+` En verdad es astuto al lidiar con la muerte.@
+` Empujo mi tambaleante cuerpo hacia él.\
+bg #000000,%type_lcartain_slw
+` …… En verdad se las trae.@
+` La mitad inferior del cuerpo de Roa ha desaparecido casi por completo.@
+` Pero, saliendo de abajo de los escombros, la mitad superior de su cuerpo aún se mueve, ignorando ese hecho.@
+` Esta cantidad de vida puede ser algo casi digno de respeto.\
+`"----¿Qué, fue eso?"@
+` Temblando, Roa se pregunta en voz alta.@
+` Caminando por encima de los escombros, me coloco directamente frente a él.\
+`"----Shiki."@
+` Roa levanta su cabeza para mirarme.@
+` Sus ojos prácticamente parecen rebosar de odio.\
+`"----Tú, monstruo."@
+` Su voz igualmente llena de indignante odio.@
+`"¿Quién?"@
+` Contestando, me paro frente a él.\
+` La "muerte" de Roa está un poco a la derecha de su corazón.@
+` Empujo mi cuchillo ligeramente hacia adelante.@
+` Una sensación como de perforar papel.@ Esa sensación es sin duda "la muerte".@
+br
+` Ah
+br
+` Roa suelta un pequeño grito.@
+!w500
+` …… Es alguien que ha experimentado la muerte.@ Debería conocer muy bien esta sensación.@
+`"…… No estás asustado, ¿cierto?@ Es un camino con el que estás bastante familiarizado.@ Si hay alguna diferencia, es sólo una cosa."@
+!w1000
+\
+br
+br
+br
+br
+br
+br
+br
+`"----Esta vez, no podrás regresar."@
+!w1000
+\
+bg "image\bg\ima_02.jpg",%type_crossfade_slw
+` Saco mi cuchillo y le doy la espalda a Roa.@
+` Roa aún no está muerto.@
+` Como Arcueid, alguien que ha vivido tanto como él persistirá un poco más.@
+br
+` Respiro débilmente.@
+` Mi mente oscila.@
+` Si mi cuerpo está en su límite, entonces mi cabeza está más allá de su límite.@
+` …… Arcueid incluso lo dijo,
+` que no debía forzarme a ver la muerte de las cosas no vivientes.@ Si lo hago demasiado, los vasos sanguíneos de mi cerebro se quemarán.\
+`"…………"@
+` ----Eso no me importa.@
+` Habría estado muy bien.@
+` Aunque me hubiese convertido en un vegetal, habría valido la pena detener a Roa mucho antes.@
+br
+` De esa manera, no habrías… tenido que----\
+bg #000000,%type_crossfade_mid
+bg "image\bg\bg_02b.jpg",%type_crossfade_mid
+quakey 3,100
+play "*4"
+`"¿¡………!?"@
+` Me desplomo.@ Caigo al suelo.@
+` Mis tobillos, duelen.@
+` Me doy la vuelta y veo----
+` La mitad superior de Roa que se arrastró hasta aquí.\
+`"T, tú, tú------"@
+` Con ojos inyectados de sangre, se abre paso sobre mi desplomado cuerpo.\
+`"Me desvanezco, Desaparezco, yo…… estoy, des, apar----"@
+` Sus ensangrentados brazos envuelven mi cuello.@ "Por qué, por qué, yo----desaparezco, cóMo, TÚ, mE, mATAs, TE, a Mí, a mí, mÍíÍ mÍÍÍMÍ ÍÍíí----"@
+` Abriendo su boca como una sierra, se mueve para morder mi cuello.\
+`"¡YO No… desAPAReceRé, tÚ, Y yo, ESTamos CoNECtados, VeRÁs.@ T, ú, tRAn, sFieres, Mi eXisTEncia, los VíNculos, nO pueDEN, ser… corTADOS………!"@
+br
+` ----Sus dientes
+` cavan dentro de mi cuello.\
+bg "image\bg\ima_12b.jpg",%type_lshutter_fst
+wave se6
+playstop
+`"Ah------"@
+` Se desvanece.@
+` El cuerpo de Roa se desintegra en un instante.@
+!w1000
+\
+bg "image\bg\bg_02b.jpg",%type_crossfade_fst
+ld c,":a;image\tachi\cel_t01b.jpg",%type_lshutter_fst
+`"----Sí, esto significa que fui yo quien lo mató."@
+` Senpai dice esto, con una espada en su mano y respirando felizmente----.@
+`"…… ¿Eh?"@
+` No entiendo muy bien.\
+`"Estoy diciendo que fui yo quien mató a Roa.@
+` …… Sin importar quién sea tu oponente, no deberías matar humanos.@ No eres alguien que debería venir a mi mundo.@ Así que fui yo quien lo mató."@
+` Senpai dice esto con arrogancia y coloca sus manos sobre sus caderas.\
+`"…… Senpai.@ Sólo estás encubriendo lo que pasó."@
+`"Tal vez.@ Pero es una mentira blanca, así que ¿no está bien?@ Aun si es hipocresía, ¿no da espacio para algo de esperanza?"@
+`"------"@
+br
+` Esas palabras son similares.@
+` Cuando le dije que no hablase de "qué tal si", ella respondió con algo parecido.\
+`"…… Sí, es cierto…… de alguna forma----en algún lugar, si hay esperanza, entonces."@
+br
+` ¿Cuán feliz puede ser eso?\
+cl c,%type_crossfade_slw
+`"Pero, eso no es muy importante, ¿verdad?@ ¿Estás bien Tohno-kun?@ ¿¡Fuiste mordido!?"@
+` Senpai se apresura para atenderme.@
+br
+`"------"@
+br
+` Mi consciencia se desvanece.@
+` No quiero moverme más y mi cerebro quiere descansar.\
+bg "image\bg\ima_01.jpg",%type_crossfade_mid
+`"…… kun…… Shiki………… oye…!"@
+` …… más y más lejos.\
+` Con los ojos aún abiertos,
+` con la luna de cristal sobre mi cabeza,
+` mi consciencia cesa por completo.\
+br
+br
+br
+br
+br
+` Mientras tanto,
+` en lo profundo, pienso que se parece mucho a una televisión cuando es apagada.\
+bg #000000,%type_nowaitdisp
+!w3000
+return

@@ -1,0 +1,89 @@
+monocro off
+wavestop
+play "*3"
+;---added context above---
+bg "image\bg\bg_06b.jpg",%type_nowaitdisp
+` …… Los eventos que ocurrieron durante el almuerzo aún pesan en mi mente.@
+` Estoy seguro de que puede caminar a casa sola, pero siento que debo ir a ver a Akiha.\
+bg "image\bg\bg_11b.jpg",%type_lshutter_mid
+` Camino a lo largo del pasillo iluminado por la puesta del sol.@
+` Creo que la de Akiha es la clase uno del primer año.@
+br
+bg #000000,%type_lshutter_fst
+bg "image\bg\bg_06b.jpg",%type_lshutter_fst
+` El salón de clases está en silencio.@
+` Una chica está parada sola en el desierto salón rojo.\
+playstop
+monocro #ff0000
+ld c,":a;image\tachi\aki_t01a.jpg",%type_crossfade_fst
+`"……"@
+` …… Me siento… un poco mareado.@
+` El salón teñido por el brillo del anochecer.@
+` Ahí sola, una chica con largo cabello ligeramente rojo se está preparando para irse.@
+br
+` Sin importar cómo la mire, es Akiha.@
+` ¿Entonces por qué?@ ¿Por qué siento como si estuviese viendo a una desconocida por primera vez?\
+bg "image\bg\bg_06b.jpg",%type_crossfade_mid
+monocro off
+play "*3"
+ld c,":a;image\tachi\aki_t01a.jpg",%type_crossfade_fst
+`"¿Nii-san?"@
+`"------"@
+` Al oír mi nombre, el mareo disminuye.@
+`"¿Eres---Akiha, cierto?"@
+ld c,":a;image\tachi\aki_t04a.jpg",%type_crossfade_fst
+`"¿…?@ Nii-san, ¿te estás sintiendo mal de nuevo?"@
+` Akiha me habla con su tono habitual.@
+` …… Al mirar el cabello negro de Akiha, siento que sin duda alguna, es mi hermana pequeña, Tohno Akiha.\
+`"…… Nah, no es nada.@ Vamos Akiha, es hora de regresar.@ Si no vas a hacer nada, ¿quieres caminar a casa conmigo?"@
+ld c,":a;image\tachi\aki_t09.jpg",%type_crossfade_fst
+`"Sí… si no te importa, caminemos juntos a casa."@
+` Por alguna razón, Akiha sonríe con ternura.@
+` …… Mi corazón palpita.@
+` Quizás es el mareo de antes, o quizás la rareza de ver a Akiha en mi escuela.@
+` Por alguna razón, mi corazón late con mucha más fuerza de la necesaria.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_01b.jpg",%type_lcartain_mid
+` Salgo del edificio escolar con Akiha.@
+` Cuando alcanzamos la entrada principal, veo a Senpai saludándome con su mano.@
+ld c,":a;image\tachi\cel_t03.jpg",%type_lshutter_mid
+`"Ah, finalmente viniste, Tohno-kun."@
+`"¿Huh, Senpai?@ ¿Qué estás haciendo parada aquí?"@
+ld c,":a;image\tachi\cel_t08.jpg",%type_crossfade_fst
+`"Cielos, no es que estuviese parada aquí, estaba esperándote, Tohno-kun, pero---"@
+cl a,%type_crossfade_fst
+` Senpai le echa un vistazo a Akiha.@
+` De alguna forma, con una sola mirada, comprende que Akiha y yo estamos caminando a casa juntos.\
+ld l,":a;image\tachi\cel_t03.jpg",%type_crossfade_fst
+`"Tohno-kun, ¿ella es tu hermana menor?"@
+` Senpai le lanza una mirada de soslayo a Akiha.@
+ld r,":a;image\tachi\aki_t01a.jpg",%type_crossfade_fst
+`"………………………"@
+` Akiha no dice nada.@
+` Nadie habla, pero Senpai y Akiha me dicen "Preséntame a esta persona" con sus ojos.@
+br
+` ----Ahh.@
+` Parece que va a ser un trabajo bastante agotador.\
+`"Senpai, ésta es mi hermana menor, Akiha.@ Se transfirió hoy a nuestra escuela."@
+` Akiha se inclina ante Senpai.@
+ld l,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
+`"Ya veo.@ Hola.@ Mi nombre es Ciel y soy amiga de Tohno-kun."@
+ld l,":a;image\tachi\cel_t07a.jpg",%type_crossfade_fst
+ld r,":a;image\tachi\aki_t11a.jpg",%type_crossfade_fst
+` …… ¿Qué sucede?@
+` Senpai y Akiha se miran la una a la otra, sin decir nada.\
+cl a,%type_crossfade_fst
+`"Senpai, dijiste que estabas esperándome… ¿Qué está sucediendo?"@
+ld c,":a;image\tachi\cel_t03.jpg",%type_crossfade_fst
+`"Bueno, sólo quería pasar un poco de tiempo contigo, pero---
+ld c,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
+` ---Ya es muy tarde, así que lo dejaré para otra ocasión.@ Adiós, Tohno-kun.@ Nos vemos mañana también, Akiha-san."@
+`"Adiós" dice Senpai, y se aleja de nosotros.\
+cl a,%type_lshutter_fst
+`"----Ah."@
+` Senpai se va sin darme oportunidad de detenerla.@
+ld c,":a;image\tachi\aki_t01a.jpg",%type_crossfade_fst
+`"Vamos a casa, Nii-san.@ Pronto oscurecerá."@
+` Dice Akiha, como si nada hubiese sucedido.\
+bg #000000,%type_lcartain_mid
+return

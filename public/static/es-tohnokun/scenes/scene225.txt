@@ -1,0 +1,56 @@
+monocro off
+play "*3"
+;---added context above---
+bg "image\bg\bg_03a.jpg",%type_nowaitdisp
+wave se2
+` La campana de los diez minutos repica.@
+`"--Uh-oh, llegaremos tarde.@ ¡Bueno, adiós Senpai, nos vemos luego!"@
+ld c,":a;image\tachi\cel_t04.jpg",%type_crossfade_fst
+`"Sí, iré a verte durante la hora del almuerzo."\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_06a.jpg",%type_lcartain_mid
+play "*3"
+` Entro volando a mi salón.@
+` Todavía faltan cinco minutos para las clases, así que hay mucho ruido aquí adentro.@
+br
+`"--Fiu."@
+` Respiro y me dirijo hacia mi asiento.@
+` Con tanto tiempo de sobra, no necesitaba correr en absoluto.@
+`"Hola, Duque de la Delincuencia."@
+`"………"@
+` Detrás de mí, escucho la voz que nunca ansío escuchar.\
+ld c,":a;image\tachi\ari_t01.jpg",%type_lshutter_fst
+`"¿Qué está pasando, Tohno?@ Nunca escuché que faltaras a clases.@ Es un gran problema.@ ¡Tienes que decirme cuando faltas a la escuela y vas a jugar!"@
+` Arihiko dice esas absurdas palabras con una expresión increíblemente feliz.\
+`"…… ¿Por qué tendría que decirte cuando no asisto a la escuela?"@
+`"¿No es obvio?@ Cuando no apareces, tampoco lo hace Senpai, así que es malo a menos que piense en algo por adelantado."@
+` …… ¿Qué es malo para este sujeto?\
+`"Pero en serio--¿qué sucedió?@ Desde la escuela media, has tenido anemia, pero nunca faltaste a la escuela.@ Bueno, hiciste ese truco genial muchas veces, retirándote tan pronto como llegabas."@
+`"Fue más o menos como eso.@ Llegué hasta la intersección y me sentí mal, así que regresé a casa."@
+ld c,":a;image\tachi\ari_t04.jpg",%type_crossfade_fst
+`"Hmmm… Yumizuka y tú han estado actuando como malos estudiantes últimamente."@
+`"--Bueno, soy culpable del cargo, pero …… ¿sucede algo con Yumizuka-san?"\
+ld c,":a;image\tachi\ari_t01.jpg",%type_crossfade_fst
+`"¿Ella?@ Ha estado ausente últimamente.@ Siempre fue una estudiante modelo, puede que se haya estresado por eso.@ Pero apuesto que no puede aumentar la apuesta porque tiene una mala mano."@
+`"……………"@
+` Las palabras de Arihiko son siempre… tan únicas.\
+wave se2
+` --Mientras hablamos, suena la campanada de la tutoría.@
+br
+`"Bueno, me marcho.@ Ya que faltaste el sábado, asegúrate de estudiar mucho hoy."@
+cl c,%type_lshutter_fst
+` Arihiko regresa a su asiento.\
+bg #000000,%type_lshutter_mid
+bg "image\bg\bg_06a.jpg",%type_lshutter_mid
+wave se2
+` Termina la cuarta hora y estalla el bullicio en la clase como siempre.@
+` Los chicos corren hacia la cafetería, las chicas comen sus almuerzos en sus pupitres, e Inui Arihiko está viniendo hacia mí con un emparedado en su mano.@
+br
+ld c,":a;image\tachi\ari_t02.jpg",%type_lshutter_fst
+`"¡Hey Tohno!@ Almuerzo, almuerzo."@
+`"---"\
+` …… ¿Qué debería hacer?@
+` Desde la mañana, no he tenido apetito.@ No me siento hambriento, así que tal vez no debo forzarme a comer.@
+` …… Si como, podría vomitar de nuevo y causar problemas.@ Debería---.@
+br
+return

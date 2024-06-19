@@ -1,0 +1,29 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\event\stk_e01a.jpg",%type_nowaitdisp
+` ……………… Frío.@
+` ¿Estuviste soportando todo este frío por tu cuenta, Yumizuka?@
+` Aunque dije que lo sentía----y me apiadé de ti, no comprendí tu dolor en absoluto.@
+br
+` Pero, eso ha terminado.@
+` Tohno Shiki pronto desaparecerá, y todo terminará.\
+playstop
+bg #000000,%type_crossfade_mid
+` ---Mis latidos se alejan mucho más.@
+br
+` Mi calor corporal, todo lo que está vivo, cesa.@
+` Una sensación familiar.@
+` Aquel verano, ocho años atrás, un frío de cascarón.@
+br
+` PALPITAR
+br
+` Después de gritar escandolasamente, mi corazón se detiene.@
+` Y todo.@ Todo lo que es Tohno Shiki desaparece.\
+!w3000
+cl a,%type_waitdisp
+bg "image\word\end.jpg",%type_crossfade_slw
+resettimer
+waittimer 3000
+return

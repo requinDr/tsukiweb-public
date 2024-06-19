@@ -1,0 +1,179 @@
+monocro off
+wavestop
+play "*2"
+;---added context above---
+bg "image\bg\bg_34a.jpg",%type_nowaitdisp
+` ---No, no debería hacer que Akiha y las otras se preocupen por nada de esto.@
+` Este problema---ese sueño, debería encargarme yo mismo de ello.\
+`"---Es sólo que las cosas de la escuela me tienen ocupado.@ En noviembre, será el festival escolar, y antes de eso, el festival atlético."@
+ld c,":a;image\tachi\aki_t12a.jpg",%type_crossfade_fst
+`"…… ¿En serio?@ Si es un problema escolar, no hay nada que pueda hacer para ayudarte, supongo."@
+cl c,%type_crossfade_fst
+` Akiha baja su mirada, un poco decepcionada.@
+` …… Engañar a Akiha por medio de una mentira es muy doloroso.\
+ld c,":a;image\tachi\koha_t02.jpg",%type_lshutter_mid
+`"Aquí tiene, Shiki-san.@ Gracias por esperar."@
+` Kohaku-san viene cargando un vaso sobre una bandeja.@
+`"Gracias."@
+` Usando una pajilla, bebo la soda de limón que Kohaku-san me trajo.@
+` …… Con eso, la conversación termina.@
+` La única alegre en la sala es Kohaku-san, y termino desayunando como siempre.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_48a.jpg",%type_lcartain_fst
+` Hisui camina conmigo hasta la verja para despedirme.@
+` Al igual que en la sala de estar, Hisui continúa con su silencio, poniéndome nervioso.@
+ld c,":a;image\tachi\his_t01.jpg",%type_lshutter_fst
+`"Por favor tenga cuidado en el camino, Shiki-sama."@
+`"Sí, ya me voy…… ¿Hisui?"@
+`"Sí, ¿qué desea, Shiki-sama?"@
+` Hisui me mira directamente.@
+br
+` ---¿Por qué será?@
+br
+` Al ser mirado por esos ojos puros, tengo una incómoda sensación, como si estuviese haciendo algo sucio.\
+`"…… No es nada.@ Sé cuidadosa en la casa."@
+cl c,%type_crossfade_fst
+` Con una profunda intranquilidad en mi pecho, dejo la mansión.\
+bg #000000,%type_lcartain_mid
+playstop
+!w2000
+wave se2
+bg "image\bg\bg_06a.jpg",%type_lcartain_fst
+` ---Es la hora del almuerzo.@
+` Como siempre, Arihiko faltó a la escuela.@
+br
+`"…… Iré a comer en la cafetería."@
+` Si como solo, simplemente terminaré deprimido.@
+` Si voy a comer en la cafetería llena de gente, eso debería ayudarme a desviar mi mente de las cosas.\
+bg "image\bg\bg_50.jpg",%type_lcartain_mid
+` Como esperaba, la cafetería está repleta.@
+` Después de esperar en una larga fila, compro el confiable almuerzo tipo A y camino hacia una mesa.@
+` Las voces de los estudiantes son muy altas, por lo que sólo puedo concentrarme en mi comida.@
+` Uso mi tenedor y como en silencio.@
+br
+` ----Y entonces.@
+br
+` Por un momento, veo una imagen terrible.\
+waveloop se1
+`"…… La televisión……"@
+` Miro boquiabierto el gran televisor montado sobre la pared al fondo de la cafetería.@
+` En mi escuela, graban las noticias matutinas y las reproducen durante el almuerzo.@ Mis ojos están fijados a la pantalla.@
+wave se0
+`"----No puede ser…"@
+` Miro las noticias con asombro y horror.@
+` En la televisión está ese callejón que vi anoche en mi sueño.@
+` El presentador está hablando.@
+` En la pantalla, las palabras "Novena Víctima del Asesino Vampiro" aparecen en letras sangrientas.\
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\bg_50.jpg",%type_nowaitdisp
+` Después de eso, aparece el rostro de la víctima.@
+` La mujer de cabello largo… definitivamente es la mujer que asesiné en mi sueño.@
+bg #9c0120,%type_crossfade_fst
+bg "image\bg\bg_50.jpg",%type_crossfade_fst
+`"------"@
+` Comienzo a sentirme débil.@
+`"¿Por…… qué?"@
+` Eso fue un sueño.@ Tuvo que haber sido un sueño.@
+` Pero en la realidad, la misma persona de mi sueño, en el mismo lugar de mi sueño, fue asesinada de la misma manera que en mi sueño.\
+`"El vampiro ya no debería existir."@
+` Maté a Yumizuka con mis propias manos.@
+` Esas matanzas, ya no deberían seguir ocurriendo.@
+br
+`"¿Yo----asesiné?"@
+br
+` Sí, asesiné.@
+` Justo como la vez en que maté a Yumizuka.@
+` Respirando con dificultad, anoche, esa mujer que nunca había conocido---\
+bg #000000,%type_nowaitdisp
+br
+br
+br
+br
+br
+br
+` ¿No te lo dije, Shiki-kun?@
+` Es inútil resistirlo.\
+bg "image\bg\bg_50.jpg",%type_nowaitdisp
+`"Uu---"@
+` Reteniendo el deseo de vomitar mi almuerzo, me tambaleo fuera de mi silla.@
+bg #000000,%type_lshutter_fst
+br
+` No puedo volver a clases.@
+` Por alguna razón, me hallo corriendo hacia la ciudad.\
+wavestop
+!w2000
+bg "image\bg\bg_30a.jpg",%type_lcartain_fst
+` ---Vengo al lugar que vi en mi sueño.@
+br
+` Hay muchos policías alrededor, y una cinta que dice "Límite Policial, No Cruzar" está extendida a lo largo del callejón.@
+`"---Exactamente igual."@
+` Sin duda alguna, es el lugar al que fui en mi sueño.@
+` ---No, eso no fue un sueño.@
+` Ya no puedo seguir engañándome pensando que fue un sueño.@
+`"…………"@
+` Si me quedo aquí más tiempo, los policías comenzarán a mirarme.@
+` …… No puedo volver a la escuela ahora.@ Supongo que regresaré a la mansión.\
+bg #000000,%type_lcartain_mid
+!w1000
+bg "image\bg\bg_33a.jpg",%type_lcartain_mid
+waveloop se10
+` Ya que ni siquiera son las dos en punto, Hisui no está esperando en el vestíbulo.@
+`"……………"@
+` Puedo decir que fui afortunado.@ No tengo ganas de ver a nadie ahora.@
+br
+bg #000000,%type_tshutter_mid
+bg "image\bg\bg_40a.jpg",%type_tshutter_mid
+` *suspiro*@
+` Soltando un profundo suspiro, caigo sobre mi cama.\
+bg #000000,%type_crossfade_fst
+` …… Simplemente no entiendo nada de esto.@
+` Tengo sueños en los que asesino gente.@
+` En la realidad, los mismos asesinatos han ocurrido.@
+` Hoy estoy viviendo como una persona normal.@
+` Pero estaba disfrutando al asesinar gente en mis sueños.@
+br
+br
+` ------¿Cuál de los dos…
+`      es el verdadero Tohno Shiki?\
+#ff0000
+br
+br
+` ¿En verdad tienes que preguntar?\
+#ffffff
+br
+br
+` …… Esa voz otra vez.\
+#ff0000
+br
+br
+br
+br
+` Vamos, continuemos, Shiki.\
+#ffffff
+br
+br
+br
+br
+` …… Esa voz que hace eco dentro de mi cabeza.@ Mi voz.\
+#ff0000
+br
+br
+br
+br
+br
+` La noche llega todos los días.@
+` De seguro, algún día encontraremos a la persona que deseamos, ¿cierto……?\
+#ffffff
+ld c,":a;image\tachi\aki_t09.jpg",%type_nowaitdisp
+bg "image\bg\bg_40a.jpg",%type_nowaitdisp
+wavestop
+`"¡Cállate------!"@
+` Salto de la cama.@
+` Comienzo a jadear con fuerza.@
+` Mi respiración está fuera de control.@
+` Justo ahora…
+` deseé a Akiha.@
+`"Maldición----qué rayos…"@
+` No entiendo qué me está sucediendo.@
+` Todo lo que tengo por seguro, es que si veo a Akiha o a Hisui en este momento, no sé qué podría hacerles.\
+return

@@ -1,0 +1,43 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_06b.jpg",%type_crossfade_mid
+` La última clase del día termina.@
+` No tengo ganas de regresar a la mansión inmediatamente, así que miro inexpresivamente por la ventana que da a los terrenos de la escuela.@
+` El salón de clases está teñido de naranja por la puesta del sol.@
+` Es como pintura acuarela roja, y lastima mis ojos.@
+br
+` …… No me gusta el rojo.@
+` Se siente como si penetrase profundamente detrás de mis ojos, y quiero vomitar.\
+bg "image\bg\ima_08.jpg",%type_crossfade_fst
+` Parece que soy débil contra las cosas que se parecen a la sangre.@
+` No, debería decir que soy débil contra la propia sangre.@
+` Ocho años atrás, tuve una experiencia cercana a la muerte.@
+` Estuve en un accidente en el que mi pecho fue herido y me balanceé entre la vida y la muerte durante días.@
+` Debí haber muerto instantáneamente.@ Pero, milagrosamente, sobreviví.@ Tal vez gracias al excelente tratamiento médico.@
+` Sin embargo, las heridas fueron tan severas que ni siquiera recuerdo el accidente.\
+` Ocho años atrás, cuando era un niño.@
+` Sentí un ruido sordo pasar a través de la mitad de mi pecho, y entonces me desmayé.@
+` Cuando desperté, estaba en una cama de hospital.@ Todo lo que podía recordar después de eso era el dolor y el frío.@
+br
+` No recuerdo mucho del accidente, pero incluso hoy en día, sigo teniendo la cicatriz en mi pecho.@
+` Supongo que numerosos fragmentos de vidrio perforaron mi pecho, dejando cicatrices como quemaduras ahí y en mi espalda.\
+` …… En realidad, estaba bastante sorprendido de haber sido salvado.@
+` Desde entonces, frecuentemente me desmayo a causa de un mareo parecido a la anemia, y causo muchos problemas a los demás.@
+` Tal vez fue por eso que mi viejo creyó que era inadecuado para ser el heredero de la casa Tohno y me confió a nuestros familiares.@
+br
+bg "image\bg\bg_06b.jpg",%type_crossfade_fst
+`"…… La herida en mi pecho, eh."@
+` La enorme cicatriz en medio de mi pecho, oculta de la vista por mi uniforme.\
+` Ahora que lo pienso, después de ese accidente fue cuando comencé a ver aquellas "líneas".@
+` Soy capaz de olvidarlas, gracias a los lentes que Sensei me dio.@ Pero creo que me habría vuelto completamente loco si nunca la hubiese conocido.@
+` Keiko-san---la persona que ha sido mi madre hasta ahora, dijo cuando me fui que la casa Tohno no era "normal".@
+br
+`"…… No hay problema.@ Yo mismo no soy una persona 'normal'."@
+br
+` Ajustando mis torcidos lentes, recojo mi maletín.@
+` No puedo quedarme en el salón de clases para siempre.\
+` Entonces---
+br
+return

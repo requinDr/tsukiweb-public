@@ -1,0 +1,219 @@
+monocro off
+wavestop
+bg #000000,%type_nowaitdisp
+;---added context above---
+play "*3"
+!w2000
+bg "image\bg\bg_34c.jpg",%type_rshutter_mid
+` -----Y…
+br
+` En menos de una hora, Hisui se queda dormida y Kohaku-san la lleva a su habitación con una sonrisa.\
+`"…………"@
+` No está acostumbrada al alcochol, así que mi mente se siente un poco confusa.@
+` Akiha está sentada cerca y continúa bebiendo con entusiasmo.@ No es un buen presagio para el resto de la noche.@
+`"…… Akiha, tienes mucha tolerancia al alcohol, ¿no?"@
+ld c,":a;image\tachi\aki_t26.jpg",%type_crossfade_fst
+`"¿Oh?@ Estoy bebiendo lentamente, así que lo considero normal."@
+` …… Um, ése no es el punto…
+` Estoy diciendo que está muy acostumbrada a beber para ser menor de edad.\
+ld c,":a;image\tachi\aki_t13b.jpg",%type_crossfade_fst
+`"Cielos, esa cara de nuevo.@ Por favor, al menos embriágate un poco, Nii-san.@
+` Kohaku preparó todo esto para animarte, así que no tendría sentido si no lo haces."@
+`"Ah, es cierto.@ …… Sí, tengo que agradecerle a Kohaku-san por su consideración.@ Gracias a eso, en verdad me siento un poco mejor."\
+ld c,":a;image\tachi\aki_t03b.jpg",%type_crossfade_fst
+`"¿Qué estás diciendo?@ No te ves nada feliz.@ Si el alcohol no te hace sentir mejor, ¿no hay ninguna otra opción?"@
+`"Guau, eso es un poco osado.@ Decir que no hay más opción si el alcohol no funciona… ¿no es un error?"@
+ld c,":a;image\tachi\aki_t18b.jpg",%type_crossfade_fst
+`"No se puede evitar si no deseas hablar conmigo, Nii-san.@ Si me hablases sobre lo de anoche, no recurriría a la ayuda del alcohol."@
+`"------"@
+` Ya veo.@
+` Al igual que Kohaku-san, Akiha está preocupada por mí.\
+ld c,":a;image\tachi\aki_t16b.jpg",%type_crossfade_fst
+`"Pero, no puedo preguntar, ¿cierto?@ Ya prometí no preguntar más al respecto."@
+`"…… Lo siento.@ Soy sólo una gran carga para todos."@
+ld c,":a;image\tachi\aki_t26.jpg",%type_crossfade_fst
+`"Bueno, siempre que lo entiendas está bien.@
+` ----Um, como dices, parece que estoy un poco ebria, así que iré afuera."@
+cl a,%type_lshutter_mid
+br
+` Ella dice "ebria", pero sus pasos son firmes al salir del comedor.\
+bg #000000,%type_lcartain_mid
+playstop
+bg "image\bg\bg_42b.jpg",%type_lcartain_mid
+play "*9"
+` Siguiendo a Akiha, salgo al patio para tomar aire fresco.@
+` Aún son menos de las seis en punto.@
+` El sol pinta el cielo de rojo.@
+`"…… ¿Aún no se ha puesto el sol?"@
+` No hay nadie alrededor.@
+` Pensé que Akiha estaría aquí, pero supongo que no nos encontramos.\
+`"…… ¿Ocaso rojo?"@
+` Hasta ahora, el ocaso rojo me hacía recordar a la sangre fresca.@
+` Pero hoy,
+` me recordó su última sonrisa cuando nos despedimos en el camino a casa.@
+br
+wave se0
+` …… Palpitar.@ Un dolor punzante en mi pecho.@
+br
+wave se0
+` ¿Acaso me está doliendo la cicatriz en mi pecho?@
+` ¿O mi corazón siente dolor por la pena?\
+` No puedo notar la diferencia.@
+` Sólo sé que me duele el pecho.@
+` Como si estuviese sangrando.@
+br
+wave se0
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_42b.jpg",%type_crossfade_fst
+`"Gah------"@
+` Soy asaltado por un mareo.@
+` Debido al alcohol y al dolor en mi pecho,
+` una cosa tan pequeña e insignificante me hace perder la consciencia----\
+bg #ffffff,%type_crossfade_mid
+!w2000
+` …… Mi casa está por este camino.@
+` Diciendo eso, ella tomó una ruta distinta.\
+` …… Gracias.@
+` Probablemente dijo eso porque estuve ahí para ella hasta el último momento.\
+br
+` …… Perdón.@
+` Probablemente dijo eso porque sabía que yo cargaría con esta pena a partir de entonces.\
+` …… Así que está bien olvidar.@
+br
+` Sentí que ella susurró esas palabras en mis oídos.\
+` …… ¿Eso no es una felicidad falsa?@
+` En un sueño que tuve, soñé esas palabras egoístas.\
+` Si pudiese simplemente olvidar, sería muy fácil para mí.@
+` Pero no puedo olvidar.@
+` Ella no me gustaba y tampoco la odiaba, pero,
+` creo que no debería olvidar su sonrisa.@
+` Y más que eso,
+` mientras está cicatriz permanezca en mi cuello, no puedo olvidar----\
+playstop
+!w1000
+bg "image\bg\bg_40c.jpg",%type_crossfade_mid
+play "*1"
+`"Ah-----"@
+` Cuando despierto, estoy acostado en mi habitación.@
+` Akiha debe haber estado cuidándome mientras dormía, porque está ahí frente a mí.@
+`"¿Aki, ha?"@
+ld c,":a;image\tachi\aki_t17b.jpg",%type_crossfade_fst
+`"¿Has despertado?@ Cielos, te desmayaste de repente, ¿qué sucedió Nii-san?"@
+`"Ya veo…… ¿me desmayé?"@
+ld c,":a;image\tachi\aki_t12b.jpg",%type_crossfade_fst
+`"Sí.@ Por fortuna, despertaste rápidamente.@ Lamento haberte forzado a beber de esa manera."@
+`"No, eso no tiene nada que ver.@ Me desmayé por mi cuenta."\
+cl a,%type_crossfade_fst
+` Diciendo eso, miro fijamente el techo.@
+` Mi cabeza aún está mareada, y no tengo ganas de hablar con Akiha en este momento.@
+` …… Aun así, a Akiha no parece molestarle eso y me atiende tranquilamente.\
+`"…… ¿Akiha?"@
+ld c,":a;image\tachi\aki_t01b.jpg",%type_crossfade_fst
+`"¿Sí?@ ¿Qué sucede, Nii-san?"@
+`"---Um, bueno.@ ¿Esto no es aburrido para ti?@ Estoy bien, puedes volver a tu habitación si quieres."@
+ld c,":a;image\tachi\aki_t12b.jpg",%type_crossfade_fst
+`"¿Estás diciendo que te estoy molestando?"@
+`"No, no es eso, en absoluto.@ Sólo pensé que tal vez estabas un poco aburrida."@
+ld c,":a;image\tachi\aki_t04b.jpg",%type_crossfade_fst
+`"Es aburrido, pero puedo soportarlo.@ Esto es algo que estoy haciendo por interés propio, así que no necesitas preocuparte, Nii-san."@
+br
+` Entonces----supongo que no hay problema.\
+` El tiempo pasa.@
+` Son más de las siete en punto.@
+` Siete horas desde entonces.@ ¿Akiha me ha estado atendiendo todo este tiempo?@
+` Akiha toma mi temperatura silenciosamente.@
+br
+bg #000000,%type_crossfade_mid
+monocro #ffff00
+bg "image\bg\bg_45b.jpg",%type_crossfade_mid
+` …… Ah, ahora recuerdo.@
+` Eso debe haber ocurrido hace más de ocho años.@
+` Akiha vino a cuidar de mí cuando cogí un resfriado o algo parecido.\
+` Era un resfriado terrible; incluso respirar era doloroso.@
+` La chica de cabello negro se sentó junto a mi almohada, sosteniendo mi mano y mirándome fijamente.@
+` El tatami y el shouji.@
+` El frío aire invernal.@
+` En la oscura habitación de tatami, la joven figura de Akiha, mirándome al borde de las lágrimas.\
+bg #000000,%type_crossfade_mid
+monocro off
+bg "image\bg\bg_40c.jpg",%type_crossfade_fst
+`"…… Estoy un poco aliviado."@
+ld c,":a;image\tachi\aki_t01b.jpg",%type_crossfade_fst
+`"¿Eh?@ ¿Dijiste algo Nii-san?"@
+`"…… Sí.@ Estaba pensando que hay un poco de la antigua Akiha en ti.@ En realidad no es nada, pero me hace muy feliz."@
+` Le muestro a Akiha una dulce sonrisa con tanta naturalidad que casi me sorprendo.\
+ld c,":a;image\tachi\aki_t16b.jpg",%type_crossfade_fst
+`"Está bien, pero tú no has cambiado nada Nii-san.@ Le causas muchos problemas a otros… por favor actúa más apropiadamente."@
+` Akiha aparta la vista y se queja.@
+` Al comprender que está avergonzada, comienzo a sentirme aun más feliz.\
+ld c,":a;image\tachi\aki_t13b.jpg",%type_crossfade_fst
+`"…… Cielos, ¿por qué estás sonriendo así?@ Si tienes tanta energía supongo que no necesitas que cuide de ti."@
+`"No, no es eso.@ Acabo de recordar algo de hace mucho tiempo.@ Akiha, en esa habitación de tatami----"\
+cl a,%type_crossfade_fst
+wave se0
+br
+` ----¿Habitación de tatami?@
+br
+` ¿De qué se trata todo eso?@
+` Entiendo que Akiha cuidó de mí pero, ¿por qué habrá sido en una habitación de tatami y no en mi habitación?@
+br
+` Algo.@
+` Hay algo que no está del todo bien.\
+`"Akiha.@ ¿Hay alguna habitación con tatami en esta mansión?"@
+ld c,":a;image\tachi\aki_t01b.jpg",%type_crossfade_fst
+`"No.@ No hay habitaciones japonesas en esta mansión."@
+`"Sí, tienes razón.@ No es nada.@ Sólo pensé que era raro, no te preocupes por eso."@
+ld c,":a;image\tachi\aki_t13b.jpg",%type_crossfade_fst
+`"¿Hm?@ ¿Qué es tan raro en no tener a una habitación japonesa?"@
+`"Oh, tú sabes.@ Esta mansión es tan grande, pensé que quizás habría al menos una."@
+ld c,":a;image\tachi\aki_t01b.jpg",%type_crossfade_fst
+`"Pero hay un edificio separado de estilo japonés."@
+`"¿Eh----?"@
+` ----Ahora que lo menciona, por supuesto.@
+` En medio del bosque en el jardín, había una mansión de estilo japonés.\
+ld c,":a;image\tachi\aki_t16b.jpg",%type_crossfade_fst
+`"…… Cielos, en verdad te has vuelto más enérgico.@ Creo que sólo estorbaré si me quedo aquí, así que volveré a mi habitación."@
+cl a,%type_crossfade_fst
+` Levantándose de la silla, Akiha se dispone a dejar la habitación.\
+`"Gracias, Akiha.@ Perdón por hacerte permanecer aquí todo este tiempo."@
+ld c,":a;image\tachi\aki_t04b.jpg",%type_crossfade_fst
+`"Por favor no te preocupes.@ A partir de mañana tu vida diaria será más parecida a esto."@
+cl a,%type_lcartain_mid
+`"¿………?"@
+` Después de decir algo que no entiendo muy bien, Akiha sale de la habitación.\
+bg #000000,%type_lcartain_mid
+!w1000
+bg "image\bg\bg_40d.jpg",%type_rcartain_mid
+` ----Apago las luces y descanso sobre la cama.@
+br
+` Gracias a los cuidados de Akiha, me siento más relajado.@
+` A este paso, debería ser capaz de soñar pacíficamente por primera vez en días.@
+br
+` Respiro profundamente y cierro los ojos lentamente.\
+bg #000000,%type_crossfade_mid
+monocro #ffff00
+bg "image\bg\bg_45b.jpg",%type_crossfade_mid
+` …… Justo antes de quedarme dormido,
+` el recuerdo de haber sido atendido por una joven Akiha aparece fresco en mi mente.\
+` La oscura habitación de estilo japonés donde nadie venía a verme.@
+` ¿Acaso se escapó de Makihisa?@ Akiha entró a hurtadillas y lloró mientras sostenía mi mano.@
+` "Lo siento," decía ella.@
+` No sabía por qué, pero la chica de cabello negro seguía repitiendo "lo siento" una y otra vez.\
+` ------Recuerdo.@
+br
+` A la orgullosa hija mayor de la familia Tohno que era la única que se preocupaba por mí.\
+`"………………"@
+` La chica joven llorando en la oscura habitación japonesa.@ Mordí mi lengua por la frustración, mareado por la fiebre.@
+` Me pregunto por qué estaba llorando.@
+` Si fuese por mí,
+` nunca, nunca dejaría llorar a Akiha.\
+` …… Lo siento.@
+` …… Lo siento, Shiki-nii-san.@
+br
+` Sus lágrimas era simplemente hermosas.@
+` Desde entonces, juré ser su verdadero hermano----\
+bg #000000,%type_crossfade_slw
+monocro off
+playstop
+!w2000
+return

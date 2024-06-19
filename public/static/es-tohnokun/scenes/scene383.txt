@@ -1,0 +1,73 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\ima_01.jpg",%type_crossfade_mid
+play "*7"
+` ----Y entonces,
+` abrazo a Akiha por delante.\
+` ---De ninguna manera podría matarla.@
+br
+`"…… Quiero que vivas."@
+` Akiha ladea su cabeza inquisitivamente.@
+`"Sin importar en qué te conviertas---sigo queriendo que vivas, Akiha."@
+br
+` Mis lágrimas no pueden ser detenidas.@
+` Akiha me devuelve el abrazo alegremente---y muerde mi cuello.\
+`"¡¡-----!!"@
+` Duele.@
+` Pero no es un acto para succionar mi sangre.@
+` Es sólo un primitivo acto de morder.\
+`"A-Akiha."@
+` Akiha muerde mi cuello frenéticamente.@
+` Arranca la carne, y mis huesos están siendo destruidos poco a poco.@
+` Akiha no tiene inteligencia.@
+` No sabe quién la está abrazando, o cuál es el significado de un abrazo.@
+br
+` Akiha no es diferente a una bestia con forma humana.@
+` Pero aun así----\
+`"---Aun así…… quiero que vivas."@
+` …… ¿Está mal desear semejante cosa?@
+` ¿Es un crimen desear que siga con vida a pesar de que va por ahí matando gente?@
+` Aun si Akiha dice que no puede soportar semejante cosa, quiero que lo soporte y lo supere.\
+br
+` ----Incluso si,@
+` es egoísta pensar que soy yo quien carga con el crimen.\
+`"…… Te salvaré."@
+` Fuertemente.@
+` Con todo mi poder, abrazo a Akiha.@
+`"¡¡Uh, uhhh, uhh!!"@
+` La abrazo mientras se mueve salvajemente.@
+` Un crujido.@
+` Ella quiebra el hueso de mi hombro, mordiendo a través de él.\
+`"------A, Akiha-------"@
+` Aunque uno de los huesos de mi hombro está roto, abrazo a Akiha con un brazo.@
+`"¡¡Ugh!!@ ¡¡Uhnn………!!"@
+` Akiha hace estragos.@
+` La abrazo por largo tiempo.@
+` …… ¿Será porque éste podría ser nuestro último abrazo?@
+` Nunca nadie había sido tan preciado para mí, por eso trato de recordar todo… sus latidos, su calor…\
+`"Uh…… Mm……"@
+` …… Tal vez porque comprendió que no voy a hacer nada, Akiha deja de luchar.@
+br
+` No sé cuánto tiempo estuvimos así bajo las hojas otoñales que caen.@
+` Pero Akiha se ha quedado dormida en mis brazos.\
+bg "image\bg\bg_54a.jpg",%type_crossfade_mid
+`"………………"@
+` Coloco el cuerpo de Akiha en el suelo tan suavemente como puedo.@
+` El cabello de Akiha aún es rojo.@
+` Si las palabras de SHIKI son verdad, entonces…
+` No hay manera de devolverlo a su color negro, a excepción de ese único método.\
+`"………………"@
+` Juré que la salvaría, sin importar qué sucediese.@
+` Es muy fácil salvarla.@
+` La razón por la que Akiha vive como una persona de sangre Tohno.@
+` Si el humano con el que está compartiendo su vida desaparece, podrá volver a ser la "Tohno Akiha" original.@
+` Pero eso significaría---la muerte de Tohno Shiki.\
+` No sé qué lleva a la felicidad o qué puede salvarnos.@
+` No sé si la muerte podría ser la forma de salvarla.@
+` Pero en este momento, no puedo saber cuál es la decisión correcta.@
+br
+` Yo------
+br
+return

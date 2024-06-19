@@ -1,0 +1,147 @@
+wavestop
+play "*4"
+;---added context above---
+monocro #ff0000
+bg "image\bg\bg_09b.jpg",%type_nowaitdisp
+`"¡Tsss, ah…………!"@
+` Mi cuerpo cae con estrépito.@
+`"¡Ah, ah, ah…………!"@
+` Mi cuerpo entero está convulsionando.@
+` Due, le.@
+` ¡Mi pecho, mi pecho está, ardiendo,,,,,,!\
+bg #9c0120,%type_crossfade_mid
+monocro off
+`"----,---,¡aaaah………!"@
+` Mi mente está flotando.@
+` Mis dedos se clavan a la alfombrilla tatami, llenos de dolor.@
+` Halo y rompo la alfombrilla.@
+` Pero, eso no detiene el dolor.\
+`"¡Hagh, gah, ghaaaaa……!"@
+` Dolor.@
+br
+` Dolor.@
+br
+` Dolor.@
+` Semejante dolor, es aterrador.\
+`"¡U, ugah, kuaaaa………!"@
+` No puedo soportarlo.@
+` Si dura un segundo más,
+` entonces, sería mejor, simplemente morir----!\
+br
+br
+br
+br
+br
+br
+` "Bien.@ Te concederé tu deseo, Shiki."@
+\
+`"----¿Eh?"@
+` Levanto mi cabeza del piso.@
+` Antes de eso.@
+bg #000000,%type_nowaitdisp
+playstop
+!w6000
+\
+bg "image\bg\bg_09c.jpg",%type_crossfade_slw
+` Antes de eso.@
+` Mi dolor desaparece.@
+` No siento dolor en ninguna parte.\
+` Ni siquiera me siento pesado.@
+` Ni siquiera me siento… vivo.\
+`"----"@
+` Intento decir algo, pero mi garganta no se mueve.@
+!w750
+` No hay nada.@
+!w750
+` Ningún dolor,
+!w750
+` ninguna sensación,
+!w750
+` ni siquiera, libertad.\
+`"¡-----!"@
+` No sé qué está sucediendo, así que intento levantarme.@
+br
+` Mi cuerpo ni siquiera reacciona.@
+` No es que esté atado, ni que todo mi cuerpo esté entumecido.@
+br
+` Dicho en forma de metáfora,
+` es como si mi cuerpo ya estuviese muerto, pero mi mente aún permaneciese dentro mi cuerpo por error.\
+`"------"@
+` De mis cinco sentidos, sólo mi vista aún está con vida.@
+` …… la habitación está oscura.@
+` Ya es de noche afuera.@
+`"---"@
+` No puedo mover mi rostro, así que muevo mis ojos.\
+`"---¿Oh?@ Pensé que habías desaparecido por completo, pero eres terriblemente persistente, Shiki."\
+` Puedo escuchar una voz que no debería ser capaz de escuchar.@
+`"¡----!"@
+` Miro alrededor de la habitación tanto como puedo.@
+` Ahí,
+` veo algo que no conozco.\
+ld c,":a;image\tachi\roa_t04a.jpg",%type_crossfade_fst
+`"----"@
+` ¿Quién es ése?@
+` Nunca lo he visto.@ Nunca lo he visto---pero siento que, lo he conocido desde hace mucho, mucho tiempo.\
+waveloop se1
+`"¿Qué es esto?@ Qué cruel de tu parte, Shiki.@
+` Me has estado buscando por tanto tiempo y cuando aparezco, ¿no me recuerdas?"@
+` Con una entretenida risa, me mira fijamente con ojos inyectados de sangre.\
+`"-----"@
+` Mi mente, la única cosa que aún funciona, se congela.@
+` Aún no lo ha dicho,
+` Pero---sé que es un vampiro.@
+` Que él es la "Serpiente" que Senpai y Arcueid están buscando.\
+ld c,":a;image\tachi\roa_t05a.jpg",%type_crossfade_fst
+`"…… No, te equivocas.@ Ciertamente soy el vampiro conocido como la Serpiente de Akasha.@
+` Pero para ti, no soy la Serpiente, sino más bien, SHIKI, ¿cierto?@
+ld c,":a;image\tachi\roa_t04a.jpg",%type_crossfade_fst
+` ---Hombre, qué frialdad de tu parte.@ Me haces ver estúpido por pensar en ti todos estos ocho años."\
+` ¿-----?@
+` ¿SHIKI?@
+` ¿Ocho años?@
+` ¿Qué es eso----?\
+`"---¿En verdad lo olvidaste Shiki?@
+` …… ¿Fue tan buena la hipnosis del viejo---o perdiste la memoria después de morir una vez?@
+` ¡Mierda, de una forma u otra, qué desperdicio!@
+` ¿¡Comprendes!?@ ¡Ocho años, he esperado ocho años!@ ¡He esperado por este momento en que podría robarte todo a ti, el que me asesinó!@ ¿¡Pero de qué me sirve ahora si no recuerdas!?"\
+`"-----"@
+` ¿Qué está, diciendo?@
+` ¿Yo---lo asesiné?\
+`"¡Correcto!@ Si lo has olvidado, entonces recuerda.@ Los tres estábamos siempre juntos, ¿no?@
+` En la mansión Tohno.@ Akiha, tú y yo jugábamos juntos en el jardín.@ ¡Antes de convertirme en esto aquel día, ocho años atrás!"\
+bg #ffffff,%type_crossfade_fst
+bg "image\bg\cmo_06.jpg",%type_nowaitdisp
+bg "image\bg\bg_09c.jpg",%type_nowaitdisp
+` ---No puedo, recordar.@
+` Ciertamente---parece que había otro niño con nosotros en aquel entonces.\
+ld c,":a;image\tachi\roa_t04a.jpg",%type_crossfade_fst
+`"…… ¿No puedes recordar?@ Y éramos tan buenos amigos también."@
+` Él aprieta sus dientes.@
+` Todo su cuerpo se estremece de emoción como si estuviese rebosante de furia.\
+`"---Cielos.@ ¿Yo era el único que sufría?@
+` Es terrible, Shiki.@ Fui encerrado por mi viejo todo el tiempo, pero siempre podía sentirte.@
+` Jaja.@ Porque estaba usando tu 'vida'.@ Aunque no estamos conectados por la sangre, estamos conectados por nuestras almas."\
+`"Por eso---quería que tuvieses un final terriblemente horripilante."@
+` Qué desafortunado, dice él.\
+`"Lo que quería decir es esto, Shiki.@ Soy tu hermano.@ Pero Akiha y tú parecen haber olvidado eso despiadadamente."@
+`"-----"@
+` ¿Mi…… el hermano de, Tohno Shiki………?\
+bg #000000,%type_crossfade_slw
+`"---Si has olvidado, entonces no hay nada de que hablar.@
+` Tu dolorosa muerte es la meta de este cuerpo…… la de Tohno SHIKI.@
+` Le he seguido la corriente todo este tiempo, pero es hora de bajar el telón.@
+` Incluso para mí---tener dos cuerpos con una sola vida no es muy eficiente."\
+` La voz se acerca.@
+` Seré asesinado de esta manera.@
+` …… No, digo que moriré, pero tal vez ya estoy muerto.@
+` Mis brazos y piernas no pueden moverse.@
+` Mis ojos, mis oídos, mi nariz, no funcionan.@
+br
+` Es por eso que ni siquiera hay dolor.@
+` Soy asesinado tan vagamente que ni siquiera me percato de ello.\
+wavestop
+cl a,%type_waitdisp
+bg "image\word\end.jpg",%type_crossfade_slw
+resettimer
+waittimer 3000
+return

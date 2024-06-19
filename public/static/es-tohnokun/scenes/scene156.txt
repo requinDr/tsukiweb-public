@@ -1,0 +1,286 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_29b.jpg",%type_lcartain_fst
+play "*9"
+` Probablemente se debe a todos los asesinatos recientes pero, son apenas las diez en punto y no hay nadie en el parque.@
+` La noche vacía cuelga sobre mi cabeza.@
+` Y ahí, está parada una figura blanca.\
+ld c,":a;image\tachi\ark_t16.jpg",%type_lshutter_fst
+`"¡Shiki!"@
+` Tan pronto como me ve, Arcueid me grita furiosamente.@
+`"Oye, ¿qué hora crees que es?@ ¡Llegas veinte minutos tarde!"@
+`"…………"@
+` Parece que ella vino aquí justo sobre la hora.\
+`"Sí, lo siento.@ Salí antes de las diez, pero me tomó algo de tiempo dejar la mansión sin que Akiha lo notase.@
+` Definitivamente llegaré a tiempo la próxima vez, así que por favor perdóname."@
+ld c,":a;image\tachi\ark_t04.jpg",%type_crossfade_fst
+`"---Cielos.@ No pareces darte cuenta de que iremos a matar."@
+` Arcueid prácticamente hace pucheros.@
+` ¿No me dirá que estuvo esperando desde mucho antes de la hora prometida?\
+`"Arcueid.@ ¿Desde qué hora estuviste esperando por mí?"@
+`"¿Yo?@ Vine aquí tan pronto como desperté, así que----"@
+` "Hmm," Arcueid piensa detenidamente.@
+ld c,":a;image\tachi\ark_t03.jpg",%type_crossfade_fst
+`"----Probablemente desde las siete en punto."@
+`"¿Siete?@ ¿Estuviste esperando más de tres horas?"@
+` ¿Qué rayos estaba pensando al venir tres horas más temprano?\
+`"Parece que soy extraña."@
+` Como si estuviese muy asombrada, Arcueid murmura para sí misma.@
+`"---Bueno, soy parcialmente culpable porque llegué tarde, pero tú tambien lo eres, ¿no?@ Si vienes antes de la hora acordada, claro que tendrás que esperar."@
+ld c,":a;image\tachi\ark_t04.jpg",%type_crossfade_fst
+`"Oye---eso es algo totalmente diferente.@ El hecho de que llegaste tarde no cambia."@
+`"…… Bueno, es verdad.@ Pero, ¿por qué esperaste tres horas?@ Si tenías tanto tiempo, ¿no podrías haber regresado a tu apartamento?"\
+ld c,":a;image\tachi\ark_t16.jpg",%type_crossfade_fst
+`"Yo… tampoco sé por qué.@ Era divertido por alguna razón y mientras pensaba que era agradable esperar por ti, ya eran las diez en punto."@
+`"¿?@ ¿Divertido?@ ¿Por qué?"@
+ld c,":a;image\tachi\ark_t01b.jpg",%type_crossfade_fst
+`"Quién sabe.@ ¿No dije que yo misma no lo entendía?@ …… Tal vez porque me mataste.@ En ese momento, se rompió algo que no pudo ser curado.@ Yo misma pienso que es extraño, pero no puedo entender qué está roto dentro de mí."\
+`"………… Uh."@
+` Que ella diga eso es muy preocupante.@
+` Habiéndola cortado en diecisiete pedazos, si ella dice que algo está mal, todo lo que puedo hacer es disculparme.\
+`"---Está bien.@ No tenemos mucho tiempo, no podemos desperdiciarlo hablando de cosas inútiles, Shiki."@
+` Sí, oír eso me ayuda mucho.@
+ld c,":a;image\tachi\ark_t06.jpg",%type_crossfade_fst
+`"Pero, si alguna vez te retrasas de nuevo, tendré que ir a tu casa para recogerte.@ Eres el que no pudo mantener la promesa, así que no tendrás ninguna queja, ¿cierto?"\
+`"¡Estú---de ninguna manera!@ Mantendré la promesa, pero circunstancias desafortunadas como la de hoy podrían presentarse en cualquier momento.@ ¡Si me retraso, eso es lo último que deberías hacer!@
+` ¡Mira, no vayas a mi casa ni por error.@ --¡Además, Akiha no sabe nada sobre esto, así que por favor no compliques más las cosas!"@
+ld c,":a;image\tachi\ark_t03.jpg",%type_crossfade_fst
+`"¿Hmm?@ …… ¿Akiha?@ ¿Tu hermana, la que no se parece a ti en absoluto?"@
+`"Has dicho demasiado, pero sí."\
+`"Ya veo.@ ¿Le tienes tanto miedo a tu hermanita?"@
+`"---Cállate.@ Simplemente no quiero preocuparla.@ …… En el mejor de los casos, soy una molestia para ella, así que no quiero causarle aun más cansancio."@
+`"Hmm.@ En verdad eres dulce con tu hermana, Shiki."@
+`"Básicamente soy amable con todos.@ Bueno, recientemente ha habido una excepción."@
+ld c,":a;image\tachi\ark_t08.jpg",%type_crossfade_fst
+`"¡Ajaja, ésa soy yo!"\
+`"…… Torpe como siempre.@ Eso fue un insulto, no un cumplido."@
+`"En absoluto.@ Para ti, soy una excepción, ¿cierto?@ ¿Cómo no podría gustarme eso?"@
+` Ella sonríe de nuevo.@
+` La sonrisa de una niña, alegre y despreocupada.@
+br
+`"………"@
+` Si continúo viendo eso, perderé toda mi malicia.\
+`"---De pronto me siento cansado.@
+` Empecemos a buscar al vampiro, Arcueid."@
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"Sí, ya es hora.@ Entonces comenzaremos caminando por la ciudad---"@
+ld c,":a;image\tachi\ark_t01b.jpg",%type_crossfade_fst
+`"Shiki.@ Quiero que te quites tus lentes pero, ¿no hay problema?"@
+`"¿Quitárme los lentes?@ …… ¿Por qué?"\
+`"Es difícil percibirlos sólo con mis sentidos.@
+` Puedo sentir la presencia de humanos y no humanos, pero eso no me ayudará a encontrar al vampiro.@
+` Todo lo que puedo sentir es la presencia, pero con tus ojos, puedes distinguir rápidamente entre las cosas vivas y las muertas.@ Así que sería un desperdicio no utilizar lo que tenemos, ¿cierto?"@
+br
+`"-----"@
+` …… Ciertamente puedo entender lo que está diciendo.@
+` Pero, quitarme los lentes significa---\
+`"Lo sé.@ Incluso yo pude sentir que tus ojos se hacían más fuertes estos últimos días.@ Y si continúas haciendo esto, podría no ser bueno para tu salud.@
+` Te lo pido a pesar de eso.@ Pero, la decisión es tuya, así que no voy a forzarte.@ Si crees que está bien hacerlo, quítate los lentes y sígueme."@
+cl c,%type_crossfade_fst
+\
+` …… ¿Quitarme los lentes y caminar por la ciudad?@
+` No he hecho eso desde que recibí estos lentes hace ocho años.@
+` En primer lugar, las cosas que veo sin mis lentes me dan un gran dolor de cabeza, es fácil imaginar qué sucedería si caminase así por la ciudad.@
+br
+` Pero aun así.@
+` Al igual que Arcueid quien sigue adelante aunque su herida no ha sanado, Tohno Shiki debería hacer lo mismo y pagar su deuda----\
+`"Arcueid, yo---"@
+br
+` ---Estoy bien, ¿no es sólo un dolor de cabeza?@
+` Comparado con el dolor que ella debe estar sintiendo, esto no es nada.@
+br
+`"Está bien, puedo quitarme mis lentes.@ Es un pequeño precio a pagar para facilitar nuestra búsqueda."\
+ld c,":a;image\tachi\ark_t10.jpg",%type_crossfade_fst
+`"---Ya veo.@ Entonces vamos, Shiki."@
+cl c,%type_lshutter_mid
+` Arcueid se da la vuelta y comienza a caminar.@
+` Me quito mis lentes mientras la sigo.\
+bg #000000,%type_crossfade_mid
+monocro #ff00ff
+bg "image\bg\bg_26a.jpg",%type_crossfade_mid
+` …… Sigo a Arcueid.@
+` No había caminado en un escenario tan plagado de líneas desde mi hospitalización en aquel entonces.@
+br
+`"----"@
+br
+` Extrañamente, no tengo dolor de cabeza.@
+` Parece que sólo verlas no lo causa.@
+` Lo que me hace enfermar no son las delgadas líneas en los edificios, sino ver las "líneas" sobre las personas que pasan cerca.\
+` Antes, pensaba que eran sólo líneas a través de las cuales era fácil cortar.@
+` Pero ahora sé que son la "muerte" de las cosas.@
+` Es por eso que sentí repugnancia al principio.@
+` No es que esas figuras de personas cubiertas de líneas sean repugnantes.@
+` Sólo ver---que los humanos son una existencia tan cercana a la muerte me hace sentir ganas de vomitar.\
+bg #000000,%type_lcartain_mid
+` …… Recorremos las calles nocturnas.@
+` Arcueid no dice nada, y continúa avanzando decididamente.@
+br
+` Caminamos durante horas en el centro de la ciudad.@
+` Al final, no vemos ninguna aberración o alguna persona cubierta de "muerte".\
+monocro off
+playstop
+bg "image\bg\bg_29c.jpg",%type_lcartain_mid
+ld c,":a;image\tachi\ark_t04.jpg",%type_crossfade_fst
+`"Shiki, puedes volver a ponerte tus lentes.@ Parece que sin importar cuánto busquemos esta noche, será inútil."@
+` Arcueid concluye con un suspiro.@
+bg "image\bg\bg_29b.jpg",%type_crossfade_fst
+play "*1"
+` Me pongo mis lentes.@
+` Mi visión vuelve a la normalidad y me relajo.\
+`"¿Inútil?@ ¿Está bien decidir eso tan repentinamente?@ Sólo buscamos por todas partes una vez, ¿cierto?"@
+ld c,":a;image\tachi\ark_t01b.jpg",%type_crossfade_fst
+`"No, una vez es suficiente.@ La presencia de Los Muertos tiende a persistir alrededor de un lugar.@ No he sentido ninguna presencia alrededor, así que no hay ninguno que esté activo."\
+ld c,":a;image\tachi\ark_t07.jpg",%type_crossfade_fst
+`"…… El enemigo está alerta ahora que la mayoría de sus Muertos han sido derrotados.@
+` Rayos, en verdad es un cobarde.@ Estaba tan preparada para acabar con todo esta noche, pero parece que él todavía quiere jugar a las escondidas."@
+` Arcueid muerde su labio, insatisfecha.@
+`"Parece que estás de mal humor, Arcueid."@
+`"Claro que lo estoy.@ Pasaste por tantos problemas para ayudarme, pero todo es insignificante ahora."\
+`"--Bueno, en realidad no me importa.@ Si estás tan insatisfecha, podemos salir a buscar de nuevo.@ Tal vez si me concentro más podamos encontrar algo."@
+ld c,":a;image\tachi\ark_t06.jpg",%type_crossfade_fst
+`"Eso no es bueno.@ No puedo forzarte más."@
+`"¿Forzarme?@ No me estoy forzando tanto."@
+`"Sí lo estás.@ Puede que no te des cuenta, pero si abusas más de tu cerebro, podrías terminar incapacitado."\
+`"¿……?@ ¿Incapacitado?@ ¿Quién?"@
+`"Tú.@ ---Es cierto, no sabes cómo funcionan tus ojos exactamente."@
+ld c,":a;image\tachi\ark_t02.jpg",%type_crossfade_fst
+`"Dijiste que era más fácil ver la muerte sobre las cosas vivientes que sobre las cosas no vivientes, ¿cierto?@
+` Básicamente, es un problema del sistema de circuitos de tu cerebro.@
+` La muerte de las cosas.@ Ser capaz de ver esa causa y efecto, es más parecido a leer que a ver."\
+`"…… Todo tiene una razón principal, la única fuente.@ Um, es lo mismo que un científico alemán denominó el Registro Akásico.@
+` En otras palabras, en el núcleo de todo fenómeno, hay algo que "registra todas las cosas".@ Es más una "existencia" que un registro, así que no es información.@ Simplemente existe.@ No tiene ningún propósito en y de sí mismo, o dirección alguna.@
+` Es como un torbellino fundamental del cual surgen todas las razones."\
+ld c,":a;image\tachi\ark_t06.jpg",%type_crossfade_fst
+`"Las cosas en este mundo surgieron de eso, derivaron de eso, y preservaron su forma actual.@ Tú y yo, humanos y vampiros, todos nos originamos de eso.@
+` …… Las cosas se hicieron más complejas y separadas, y no pueden regresar a esa fuente original, el principio.@ Pero entiendes que existe 'El Único', ¿cierto?@
+` Pero, sin importar que tan diferente de la gran fuente sea la forma que algo tome, sigue siendo un derivado.@ Por lo tanto, aunque sea sólo una delgada línea, hay un hilo conectándolo a la fuente."\
+ld c,":a;image\tachi\ark_t02.jpg",%type_crossfade_fst
+`"La fuente de todas las cosas, el registro que registra el principio y el final de todas las cosas.@ Estar conectado a eso significa conocer el final de todas las cosas.@
+` Originalmente, el cerebro tiene la capacidad de controlar la recepción y la transmisión, pero la mayoría de los humanos cierran todos estos circuitos excepto para sí mismos.@
+` Pero, existen personas que tienen sus circuitos abiertos de forma latente.@ Sin necesidad de usar Circuitos Mágicos, hay humanos que, a pesar de no ser de una raza transcendental, tienen el potencial para crear fenómenos transcendentales.\
+`"Los hechiceros los clasifican como psíquicos.@ Aun siendo humanos, son mutantes que nacen con Circuitos Mágicos.@
+` ---Por ejemplo, alguien que, sin ningún conocimiento de lo oculto, puede ver 'la muerte de las cosas'."@
+cl c,%type_crossfade_fst
+br
+`"------"@
+` …… Um, lo siento, Arcueid.@
+` Parece que no puedo entender este tipo de conversación, en absoluto.\
+ld c,":a;image\tachi\ark_t04.jpg",%type_crossfade_fst
+`"Está bien si no puedes entender.@
+` Pero lo que quiero decirte es que no deberías intentar ver cosas que son difíciles de ver.@
+` Probablemente, si lo quisieras, podrías ver la "muerte" de las cosas no vivientes.@
+` Pero para hacer eso, tu cerebro tiene que abrir sus circuitos desde la clasificación de las cosas vivientes hasta la clasificación de las cosas no vivientes para poder entender.@
+` ---Eso normalmente es un proceso imposible.@
+` Como resultado, tu cerebro se sobrecargará, y terminarás inutilizado."\
+cl c,%type_crossfade_fst
+`"Inútilizado---¿quieres decir que estos ojos ya no podrán percibir la muerte?"@
+ld c,":a;image\tachi\ark_t06.jpg",%type_crossfade_fst
+`"---Claro que no.@ Oye Shiki, ¿qué sucede con un motor que explota por sobrecarga?"@
+`"Va al depósito de chatarra.@ Una vez que un motor se daña, no puedes usarlo de nue----"@
+br
+` Oh, eso es.@
+` En otras palabras, el dolor de cabeza que tengo cuando veo la muerte es como el grito de un motor que está trabajando demasiado rápido.\
+`"------"@
+ld c,":a;image\tachi\ark_t02.jpg",%type_crossfade_fst
+`"¿Entiendes?@ Si puedes simplemente verla, no habrá problemas.@ Pero deja de intentar ver cosas que no puedes percibir.@ Los vasos sanguíneos de tu cerebro reventarán, y todo habrá terminado."@
+br
+` …… No tengo palabras.@
+` He estado viviendo de esta manera sin percatarme de la seriedad de todo el asunto.\
+ld c,":a;image\tachi\ark_t01b.jpg",%type_crossfade_fst
+`"En verdad debes agradecerle al hechicero que te dio esos lentes.@ La mayoría de los psíquicos usan sus habilidades sin percatarse de cuán peligrosas son y terminan discapacitándose a sí mismos.@
+` …… Bueno, esa clase de personas frecuentemente son incompatibles con la sociedad, y tal vez sea lo mejor."@
+cl c,%type_crossfade_fst
+\
+`"-----"@
+br
+` ---Pareciera que ésa fuese la razón por la que estoy aquí.@
+`   Te permitiré regresar a la vida que tenías antes.@
+br
+` Sensei dijo eso, y me dio estos lentes.@
+` …… Tengo tantas razones para agradecerle, mi corazón se estrecha.@
+` Esa persona, de tantas maneras, en verdad me salvó---\
+playstop
+bg #9c0120,%type_crossfade_fst
+bg "image\bg\bg_29b.jpg",%type_crossfade_fst
+wave se0
+`"¿H, uh---?"@
+` Tengo una, sensación aguda.@
+` No es dolor, sino algo extraño, como una picazón.@
+ld c,":a;image\tachi\ark_t03.jpg",%type_crossfade_fst
+`"¿Shiki?"@
+`"¿Qué---qué es esto?"@
+` Fue sólo por un instante, pero fue como si algo estuviese en mi pecho.@
+cl c,%type_nowaitdisp
+\
+wave se0
+`"¿Hm---?"@
+` Sin entender, meto mi mano dentro de mi camisa.@
+br
+` ---Humedad.@
+br
+waveloop se1
+bg #9c0120,%type_crossfade_fst
+bg "image\bg\bg_29b.jpg",%type_crossfade_fst
+` Algo.@
+` Algo está pegado a mi pecho, como tinta.\
+`"¿Qué es esto…… algo está, mojado?"@
+` Saco mi mano de mi camisa.@
+` Sobre mis palmas abiertas,
+bg "image\bg\ima_13b.jpg",%type_nowaitdisp
+bg "image\bg\bg_29b.jpg",%type_nowaitdisp
+` hay brillante sangre roja.@
+bg "image\bg\ima_13b.jpg",%type_nowaitdisp
+bg "image\bg\bg_29b.jpg",%type_nowaitdisp
+`"Eh------"@
+` Una punzada.@
+` Otra extraña sensación.@
+` Me toma un horriblemente largo tiempo entender que viene de la vieja cicatriz sobre mi pecho.\
+ld c,":a;image\tachi\ark_t13.jpg",%type_crossfade_fst
+`"Shiki, eso----"@
+`"Sí…… es raro.@ No duele y ni siquiera es una herida abierta----pero hay sangre por todo mi pecho."@
+br
+` Es tan, roja.@
+` Un hermoso y puro rojo que cautiva mi visión.@
+br
+`"Bueno, no duele así que debe estar bien.@ Parece haber dejado de sangrar, no hay necesidad de----"@
+ld c,":a;image\tachi\ark_t06.jpg",%type_crossfade_fst
+\
+` Arcueid mira fijamente mi mano, pasmada.@
+` No, para ser más preciso,
+` ella observa la sangre roja que cubre mi mano.@
+`"----¿Arcueid?"@
+`"--------"@
+cl c,%type_crossfade_fst
+` Arcueid no responde.@
+` Sólo, comienza a respirar con más fuerza.@
+` Jadea, jadea.@ Como tratando de soportar algún dolor.\
+`"¡Oye, Arcueid……!@ ¿Qué sucede?@ ¿¡Te duele tu herida……!?"@
+` Agarro sus hombros.@
+` ----Y entonces,
+` ella salta hacia atrás como si estuviese tratando de escapar.\
+wavestop
+ld c,":a;image\tachi\ark_t20.jpg",%type_crossfade_fst
+cl c,%type_crossfade_fst
+`"----"@
+` Ella me observa como si fuese un enemigo.@
+`"…… ¿Ar…… cueid?"@
+ld c,":a;image\tachi\ark_t07.jpg",%type_crossfade_mid
+`"¿Shi------ki?"@
+br
+` Breve, entrecortada.@ Su voz incluso contiene hostilidad.@
+br
+ld c,":a;image\tachi\ark_t10.jpg",%type_crossfade_mid
+`"Yo----nunca pensé, en eso."@
+` ¿……?@
+` Ella desvía su mirada nerviosamente.\
+`"¿Qué sucede?@ Estás actuando extraño.@ ¿Aún no te has recuperado?"@
+`"…… Quizás.@ Parece que me esforcé demasiado.@ Así que, me iré ahora."@
+`"----Ah, sí.@ Supongo que es todo por esta noche."@
+`"…… Sí.@ Te esperaré aquí mañana."@
+cl c,%type_crossfade_slw
+` Sin mirarme a los ojos, Arcueid se marcha rápidamente.\
+bg #000000,%type_crossfade_mid
+!w3000
+return

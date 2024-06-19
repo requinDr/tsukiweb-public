@@ -1,0 +1,195 @@
+mov $phasebg,"image\bg\cmo_14.jpg"
+mov $phasetitle_a,":a;image\word\PCEL_11A.PNG"
+mov $phasetitle_b,":a;image\word\day_11.png"
+gosub *left_phase
+monocro #fffff0
+bg "image\bg\bg_40e.jpg",%type_crossfade_slw
+play "*6"
+` Amanece y finalmente logro asegurar la puerta.@
+br
+` *jadeo* *jadeo* *jadeo*
+br
+` Mis bestiales jadeos llenan la habitación.@
+` Me duele la cabeza.@
+` Parece que dejé mis lentes en algún lugar.@
+` Al ver las "líneas" por toda la habitación, siento náuseas.\
+` *jadeo* *jadeo* *jadeo*
+br
+` Me siento tan enfermo que corto todas las que veo.@
+` Me siento un poco mejor.@
+` Sólo durante el instante en que despedazo las cosas mi corazón se siente a gusto.@
+` Pero mientras más corto, más sediento me pongo.\
+` *jadeo* jadeo* *jadeo*
+br
+` Sé de qué estoy sediento.@
+` Estoy sediento de todo.@
+` Todo lo que veo me está enfureciendo.\
+` Parecen miserables.@
+` No puedo perdonar que vivan inútilmente aunque tengan la muerte incorporada dentro de sí.@
+` ¿Por qué no mueren?@ Todas tienen un final del que no pueden escapar, ¿entonces por qué continúan existiendo de esa manera?@
+` Si va a terminar de cualquier forma---¿qué sentido tiene la existencia?@
+` Todo lo que veo es desagradable.\
+` Pero si cierro los ojos, todo lo que puedo recordar es la sensación de matar.@
+` La sensación de un filo duro y sin sangre,
+` uniéndose suavemente a la carne palpitante.@
+br
+` No puede haber mayor estimulación para un humano que eso.@
+` Una terrible sensación que casi me hace querer morderme la lengua.@
+` No importa si es un un sentimiento positivo o negativo.\
+` Especialmente en mi caso.@ Ya que mi primera vez fue la mejor posible, es inútil.@
+` …… Arcueid.@ El placer que sentí al dividir su cuerpo en diecisiete pedazos aún arde en mi cerebro y no desaparecerá.@
+br
+` Las hermosas partes de su cuerpo.@
+` La apariencia de un humano, pero con una tenacidad que sobrepasa por mucho a la de la gente normal.@
+` El placer que sentí por el asesinato se ha desvanecido.@ No maté a Arcueid en esa ocasión, pero debo haber matado a mi cerebro.\
+` *jadeo* *jadeo* *jadeo*
+br
+` Quiero destruir todo,
+` matar todo.@
+` Sé que está mal, pero no creo que pueda contenerlo.@
+` Mi cuerpo está lleno de emoción; estoy a punto de volverme loco.\
+`"Shiki-sama, ¿está despierto?"@
+`"¡----!"@
+` Puedo escuchar la voz de Hisui al otro lado de la puerta.\
+`"Shiki-sama, no es bueno que deje la puerta cerrada.@ Si está despierto, por favor abra la puerta."@
+`"………… ¿Abr…… ir…………?"@
+` ¿Abrir la puerta?@
+` ¿Abrir la puerta y dejar entrar a Hisui?@
+` ---Debes estar bromeando.@
+` Si eso sucediese, no sé qué haría.@
+` De esta manera---si me quedo aquí solo, acostado en la cama con las cortinas cerradas, puedo repeler los deseos que amenazan con apoderarse de mi mente.@
+` Por eso, si Hisui entra aquí, yo---\
+`"---¡Cállate!@ ¡Déjame solo!"@
+` Grito hacia la puerta.@
+`"…… ¿Shiki-sama?@ ¿No se siente bien?"@
+`"¡Dije que me dejaras solo……!@ ¡Estoy bien, así que déjame en paz……!"@
+` Si ella---entrase a esta habitación, sucedería algo que no podría deshacer.@
+br
+`"…………"@
+` Después de un profundo silencio, escucho pasos.@
+` Silenciosamente, ella se aleja de la puerta.\
+` *jadeo* *jadeo* *jadeo*
+br
+` ---Ya no hay peligro.@
+` Pensando eso, me tranquilizo sólo un poco.@
+` Debería---debería leer un libro para relajarme.\
+`"¿H---uh?"@
+` El libro que siempre estaba junto a mi almohada, no está aquí.@
+` El libro escrito en inglés …… definitivamente no puedo leerlo, pero era una manera de matar el tiempo.@
+` Lo busco pero no puedo encontrarlo.\
+bg #000000,%type_crossfade_mid
+bg "image\bg\bg_40e.jpg",%type_crossfade_mid
+` No puedo encontrarlo.@
+` Intento recordar frenéticamente cómo era la cubierta.@
+` Pero no puedo.@
+br
+` *jadeo* *jadeo* *jadeo*
+br
+`"El libro---el libro."@
+` Ahora que lo pienso,
+` ¿Por qué puse ese libro junto a mi almohada en primer lugar?\
+` No lo sé.@ Ni siquiera recuerdo haberlo traído aquí.@
+` No sé de dónde lo traje.@
+` En primer lugar---¿en verdad existió ese libro?\
+br
+br
+br
+br
+` …… Ciertamente, puede que no te hayas percatado.\
+` …… Recuerdo la irritante voz de Roa.@
+` Ese libro---su contenido.@
+` El libro que leía cuando no podía dormir.@
+` ¿Quizás sólo se trataba de un sueño en el que estaba despierto y no podía dormir?\
+br
+br
+br
+br
+br
+br
+br
+br
+` …… ¡Que ya estabas loco desde hace mucho, mucho tiempo……!\
+` Roa dijo esas palabras.@
+` SUEÑO---sueño.@
+` Pero, yo no tengo esa clase de sueños.@
+` En primer lugar, no tengo ese extraño conocimiento dentro de mí.@
+` No hay razón para que tenga ese sueño.@
+` Ése, no es mi sueño.\
+br
+br
+br
+br
+br
+br
+br
+`   Puede que no te hayas percatado.\
+`"----Cálla, te."@
+br
+` *jadeo* *jadeo* *jadeo*
+br
+` ¿Entonces qué fue eso?@
+` ¿Desde cuándo demonios comencé a tener sueños que pertenecen a otra persona?\
+br
+br
+br
+br
+br
+br
+br
+`    Tú y yo estamos conectados, Shiki.\
+`"----Cállate, estás muerto."@
+` Ya estás muerto, bastardo, así que detén tus incesantes gritos.@
+` Soy---diferente a ti.@
+` No soy un asesino.@
+` Sólo estoy confundido por todos los efectos secundarios.@
+` Ya que Ciel-senpai regresó, no me permirtiré enloquecer por algo como esto.\
+br
+br
+br
+br
+br
+br
+` ---Sí, yo también pensaba eso al principio.@
+`    Aunque ese Roa haya entrado---\
+wave se4
+`"---¡Te dije que te callaras……!"@
+quakey 4,100
+br
+` *jadeo* *jadeo* *jadeo*-----
+br
+` …… Respiro pesadamente.@
+` La luz solar me molesta mucho.@
+` Mi garganta.@ Mi garganta está tan seca, estoy a punto de volverme loco.\
+`"¡Shiki-sama……!@ ¿¡Qué está haciendo, Shiki-sama!?"@
+` Escucho la voz de Hisui al otro lado de la puerta.@
+` …… Ni siquiera puedo responder.@
+` Palabras.@ Ni siquiera puedo recordar, mis palabras.@
+br
+` Lo que llena mi cabeza,\
+bg #ffffff,%type_nowaitdisp
+bg "image\bg\bg_40e.jpg",%type_nowaitdisp
+br
+` Lo que llena mi cabeza,\
+bg #ffffff,%type_nowaitdisp
+bg "image\bg\bg_40e.jpg",%type_nowaitdisp
+br
+` es simplemente lujuria.@
+br
+` Quiero violar, violar a cualquier hembra.@
+br
+bg #ffffff,%type_nowaitdisp
+` Comienzo a desear alocadamente.\
+bg #9c0120,%type_crossfade_fst
+monocro off
+bg "image\bg\bg_40e.jpg",%type_crossfade_fst
+`"¡Uaaaaa----!"@
+wave se9
+wave se9
+wave se9
+br
+` Mi cabeza.@ Golpeo mi cabeza contra la pared.@
+` Una y otra vez, como si estuviese tratando de quebrarla.@
+` Pero aun así---el pensamiento de cortar a Hisui en pedazos no desaparece de mi cerebro.\
+` Bam.@ Bam.@ Golpeo mi cabeza contra la pared.@
+` Como si intentase competir con eso, Hisui golpea la puerta con más fuerza.\
+return

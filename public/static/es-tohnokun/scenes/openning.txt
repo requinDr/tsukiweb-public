@@ -1,0 +1,243 @@
+monocro off
+wavestop
+;---added context above---
+setwindow 18,18, 36,21, 17,17, 0, 4, 22, 1, 1, #ffffff, 0, 0, 639, 479
+windoweffect 1
+setcursor 0,":c;icon\0.bmp",0,0
+setcursor 1,":c;icon\0.bmp",0,0
+autoclick 1500
+play "*9"
+br
+br
+br
+br
+br
+br
+br
+` -------De pronto, me despierto con un espasmo.\
+br
+br
+br
+br
+br
+`[center]La noche es negra azabache.@
+`[center]Y nadie más está en la casa.\
+br
+br
+br
+br
+br
+br
+`[center]Es aterrador, estar solo en la oscuridad.@
+`[center]Así que para encontrarlos a todos, salgo hacia el jardín.\
+bg "image\bg\ima_02.jpg",%type_crossfade_mid
+!w1000
+br
+br
+br
+br
+br
+`[center]Los jardines de nuestra mansión son vastos campos verdes.@
+`[center]Rodeados por un impenetrable y denso bosque.@
+`[center]Con los árboles bloqueando la luz,
+`[center]casi como una enorme cortina.\
+br
+br
+br
+br
+br
+`[center]Como el escenario de algún teatro.@
+`[center]La cortina de árboles se abre con un sonido envolvente.@
+`[center]Me lleno de emoción, 
+`[center]anticipando el comienzo de la gran obra.\
+br
+br
+br
+br
+br
+`[center]En la distancia, escucho el sonido de ecos,
+`[center]más allá de la negra cortina de árboles.@
+`[center]Dentro del bosque,
+`[center]los sonidos de todos jugando alegremente.\
+br
+br
+br
+br
+br
+br
+`[center]La cortina aún no se abre.@
+`[center]Siendo incapaz de contenerme, 
+`[center]vago dentro de la oscuridad del bosque.\
+bg #000000,%type_crossfade_slw
+br
+br
+br
+br
+`[center]Oscuridad me rodea… 
+`[center]Una negrura tan profunda, es sofocante…
+`[center]Ni siquiera los tranquilizantes rayos de luz lunar pueden alcanzar esta profundidad.\
+br
+br
+br
+br
+br
+`[center]El aire es frío…
+`[center]Una frialdad de invierno tan profunda,
+`[center]siento que mis ojos se congelan.
+\
+br
+br
+br
+br
+br
+`[center]Por un breve momento, creí escuchar a alguien decir mi nombre,
+`[center]así que me adentro aun más en el bosque.\
+br
+br
+br
+br
+br
+`[center]Después de atravesar el velo de árboles.
+`[center]Encuentro a todos esperándome en el claro del bosque.@
+`[center]Pero, algo está mal… 
+`[center]Todos están tirados en el suelo…
+`[center]…… Todos están tirados en el suelo… en pedazos…\
+br
+br
+br
+br
+br
+br
+br
+`[center]El claro está bañado de rojo.\
+br
+br
+br
+` ---No entiendo.\
+br
+br
+br
+br
+br
+br
+`[center]Un extraño se acerca.@ 
+`[center]La expresión en su rostro dice que quiere destrozarme…\
+br
+br
+br
+br
+br
+` ---No entiendo nada…\
+br
+br
+br
+br
+br
+br
+`[center]Pero, alguien más, alquien que no conozco… se para frente a mí,
+`[center]y es destrozado en mi lugar.\
+br
+br
+br
+br
+br
+br
+br
+` ---Soy sólo un niño, así que, en verdad no entiendo.@
+\
+bg "image\bg\ima_13b.jpg",%type_crossfade_fst
+br
+br
+br
+br
+br
+`[center]¡Splash!@
+`[center]Algo cálido y húmedo golpea mi rostro.@
+`[center]Es rojo…
+`[center]Un líquido rojo, rojo como un tomate.\
+br
+br
+br
+br
+br
+`[center]La persona que fue destrozada,
+`[center]esa persona a la que llamaba "mamá",
+`[center]nunca más volvió a decir mi nombre.\
+br
+br
+br
+br
+br
+br
+br
+br
+br
+` -----En verdad no entiendo.\
+br
+br
+br
+br
+br
+br
+`[center]Pero, es simplemente tan cruel…
+`[center]Quería llorar, sentí ganas de llorar.\
+bg #000000,%type_crossfade_slw
+br
+br
+br
+br
+br
+br
+`[center]Un cálido carmesí nubla mi visión.@
+`[center]Filtrándose dentro de mis ojos.@
+`[center]Pero no me molesta en lo absoluto.@
+`[center]La solitaria luna flota sobre mí,
+`[center]siendo testigo en el cielo nocturno.\
+bg "image\bg\ima_01.jpg",%type_crossfade_slw
+br
+br
+br
+br
+br
+br
+`[center]Es extraño.@
+`[center]¿Por qué no me percaté hasta ahora?\
+br
+br
+br
+br
+br
+br
+br
+` ---Esta fría y horrible pesadilla.\
+br
+br
+br
+br
+br
+br
+br
+`[center]Sí---No lo había notado.\
+br
+br
+br
+br
+br
+br
+br
+`[center]Que esta noche…\
+br
+br
+br
+br
+br
+br
+br
+`[center]La luna es tan------hermosa----\
+playstop
+setwindow 18,18, 36,21, 17,17, 0, 4, 22, 1, 1, #aaaaaa, 0, 0, 639, 479
+windoweffect 10,300
+setcursor 0,":l/3,160,2;icon\cursor0.bmp",0,0
+setcursor 1,":l/3,160,2;icon\cursor1.bmp",0,0
+autoclick 0
+return

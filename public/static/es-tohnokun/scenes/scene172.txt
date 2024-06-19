@@ -1,0 +1,180 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_56.jpg",%type_lcartain_slw
+play "*3"
+` Ya son más de las dos, así que para aliviar mi hambre venimos a un restaurante de comida rápida.@
+br
+` …… Ni siquiera sé si ella come este tipo de comida, pero después de observar el menú por largo tiempo, Arcueid termina ordenando lo mismo que yo.\
+`"…………"@
+` Me siento frente a ella.@
+` Después de mirar alrededor rápidamente, Arcueid mete una papa frita en su boca como si fuese algo que ya hubiese hecho muchas veces.\
+`"…… Guau, pareces muy acostumbrada a esto.@ Pensé que tal vez sería tu primera vez."@
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"Sí, es la primera vez que hago esto.@ Sabía de lugares como éstos, pero sólo por medio de fuentes de información."@
+`"Sólo información…… Ya veo, ya que ves las noticias supongo que también lees revistas."\
+`"Hm, no exactamente, necesito conocimiento para encajar en la época, ¿cierto?@ Así que cuando despierto, estudio la información de la época y entonces entro en acción.@
+` Bueno, normalmente todo finaliza en pocos días y por lo general todo aquello termina siendo inútil."@
+`"¿……?"@
+` Ella dice cosas difíciles de entender de vez en cuando.@
+`"Hmm…… ¿por qué termina siendo inútil?"\
+ld c,":a;image\tachi\ark_t01b.jpg",%type_crossfade_fst
+`"Porque voy a dormir de inmediato.@ No sé cuántos años después despertaré la próxima vez, así que no puedo utilizar mucho de lo que recuerdo.@ Cuando todo termina, lo único que hago es dormir.@
+` …… Hm, pero quizás he estado algo perdida.@
+` Sólo conocía el mundo por medio de esas fuentes.@ Sabía que la gente se reunía de esta manera, pero nunca lo experimenté."\
+`"Ya veo…… Pero, ¿saber no es suficiente?@ Justo ahora, ordenaste la comida como si fuese perfectamente natural."@
+ld c,":a;image\tachi\ark_t02.jpg",%type_crossfade_fst
+`"Por supuesto.@ Estudié, y por lo tanto puedo actuar de esa forma.@
+ld c,":a;image\tachi\ark_t01b.jpg",%type_crossfade_fst
+` Pero, eso es todo.@ La experiencia es mucho mejor que la teoría.@ Aunque sepa sobre billones de cosas, es inútil si nunca las he realizado."@
+` Arcueid suspira.\
+`"¿Eso piensas……? Creo que algunas personas dicen que las teorías compensan la falta de experiencia."@
+`"Eso es algo que dicen los que sólo saben de teorías.@ …… Yo solía pensar de esa manera hasta muy recientemente."@
+` La expresión de Arcueid comienza a oscurecerse.@
+` Por alguna desconocida razón, no me gusta ver su rostro de esa manera.\
+`"¿En serio?@ Pienso que simplemente hay aquellos a quienes la teoría les puede compensar su falta de experiencia y aquellos para quienes la experiencia forja la teoría.@ Hay mucha gente allá afuera en el mundo, así que no todos son iguales."@
+ld c,":a;image\tachi\ark_t12.jpg",%type_crossfade_fst
+`"Guau, te has puesto muy serio y profundo, Shiki."@
+`"Oye, Arcueid-san.@ Tú eres la que empezó con toda la seriedad, yo sólo te estaba siguiendo la corriente.@ No mates la conversación de esa manera."@
+br
+` Um, ya que me estás diciendo todas esas cosas sobre ti.\
+ld c,":a;image\tachi\ark_t08.jpg",%type_crossfade_fst
+`"Sí, lo sé.@ Siempre me escuchas cuando quiero hablar.@ Siempre me gritas, pero me escuchas cuando es algo serio."@
+` "Ajaja," Arcueid ríe alegremente.@
+` …… Hmph.@
+` Eso es lo que ella piensa, en todo caso.@
+` Pero, creo que una sonrisa tan genuina le sienta mejor.\
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"Estaba pensando en lo que dijiste anteriormente.@ En verdad soy cerrada de mente.@ Ciertamente no puedo ver nada más después de tomar una decisión.@
+` No necesito a nadie aparte de mí.@
+` Soy la única que está en lo correcto.@ Sólo puedo pensar en esos términos.@
+` ----Es cierto.@ Hay muchos corazones allá afuera, así que hay muchas personas que pueden hacer fácilmente lo que yo no puedo."@
+` Por alguna razón se ve muy tranquila mientras reflexiona.\
+ld c,":a;image\tachi\ark_t08.jpg",%type_crossfade_fst
+`"Ah, pero, aunque reflexione al respecto, mi personalidad no cambiará.@
+` Me gusta más como soy ahora, y creo que ése es el camino correcto."@
+cl c,%type_crossfade_fst
+` Ella sonríe mientras dice esas valientes palabras.@ Entonces mira alrededor como antes y da un mordisco a su hamburguesa.\
+br
+` Mastica.@ Mastica.@
+br
+` Como para borrar cualquier imagen de ella siendo un vampiro, Arcueid mastica ruidosamente su comida chatarra.@
+`"…………"@
+` ¿Cómo es posible?@
+` Parece imposible que alguien se vea elegante al comer una hamburguesa, pero Arcueid lo hace parecer hermoso.\
+ld c,":a;image\tachi\ark_t14.jpg",%type_crossfade_fst
+`"¿Qué……?@ Me estás mirando raro.@ Ah, ¿¡no es así como se come……!?"@
+` Arcueid devuelve la hamburguesa a su bandeja apresuradamente.@
+` Luego limpia su boca con una servilleta de papel.@ Pero incluso esa acción tan simple parece muy elegante.\
+`"…… No, así es.@ Es correcto, pero es extraño.@ En tu caso, no te queda bien, así que no lo hagas."@
+` Ni siquiera sé por qué dije eso mientras mastico mi hamburguesa como una hamburguesa debe ser comida.@
+ld c,":a;image\tachi\ark_t16.jpg",%type_crossfade_fst
+`"¿Qué quieres decir con que no me queda bien?"\
+`"Es un problema de imagen.@ Esa pequeña boca tuya no es adecuada para masticar comida rápida.@ Las papas no son un problema, así que te puedes comer mi porción."@
+` Coloco mis papas fritas sobre su bandeja.@
+br
+` …… En verdad no sé qué estoy haciendo.\
+`"No las quiero.@ No tengo ganas de comer solamente papas."@
+` Después de decir eso, lleva la hamburguesa a su boca una vez más.@
+cl c,%type_crossfade_fst
+\
+` …… Debe estar preocupada por mi mirada, porque la come con más normalidad.@ Bueno, puedo vivir con eso.@
+` …… Pero ¿un vampiro come-hamburguesas?@
+` Todas las cosas vivientes necesitan nutrirse para vivir, y por eso comen.@
+` Anteriormente, Arcueid afirmó que no bebe sangre.@
+` Entonces, para nutrirse, ¿ingiere comida al igual que nosotros los humanos ordinarios……?\
+`"…… Oye, Arcueid."@
+ld c,":a;image\tachi\ark_t04.jpg",%type_crossfade_fst
+`"¿Qué quieres, bestia?"@
+`"No, no iba a criticarte.@ Sólo tengo una pregunta, si no hay problema."@
+ld c,":a;image\tachi\ark_t03.jpg",%type_crossfade_fst
+`"Claro----¿de qué se trata?"@
+`"Um, eres un vampiro, ¿cierto?@ Me preguntaba si tal vez para ti la comida… era solamente sangre."@
+ld c,":a;image\tachi\ark_t13.jpg",%type_crossfade_fst
+` Sus ojos se ensanchan.@
+` …… Lo sabía.@ Fue una pregunta grosera.@
+` Mira, incluso se está enfadando…… o tal vez no.\
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"Escucha Shiki, normalmente, no ingiero comida.@
+` Ciertamente, comer de esta manera me permite moverme a voluntad pero, más bien es una cosa mental.@
+` Para mi comer, en otras palabras, nutrirme, es un proceso diferente al tuyo.@
+` Tengo apetito, pero quizás es más parecido a la lujuria.@
+` Si no como, me irrito, pero ya que no le doy mucha prioridad, raramente ocurren impulsos de inversión."@
+cl c,%type_crossfade_fst
+\
+` Ella niega fácilmente la teoría de la sangre como comida.@
+` Sí, de eso se trata.@
+` En verdad parece estar de acuerdo con no beber sangre.\
+`"Ya veo----"@
+` Eso es bueno.@ Arcueid no es alguien que asesina humanos para alimentarse.@ En verdad es algo bueno.@
+` …… Cielos.@ Si Arcueid hubiese dicho desde el principio "Soy un vampiro que no chupa sangre humana", entonces habría aceptado ayudarla desde el…… comienzo……
+br
+`"…… ¡Oye, espera un minuto!@ ¡A eso no se le puede llamar vampiro!"\
+ld c,":a;image\tachi\ark_t01b.jpg",%type_crossfade_fst
+`"Sí se puede.@ Ni siquiera tú puedes resistirte a comer durante un día, ¿cierto?@
+` Para los vampiros que son Verdaderos Ancestros--como yo, la clase más alta de comida, la cosa que puede satisfacer más nuestros deseos es la sangre.@
+` Así que para "vivir" y "satisfacer nuestros deseos", podemos sustituir la sangre con otras cosas."@
+ld c,":a;image\tachi\ark_t06.jpg",%type_crossfade_fst
+`"Pero cuando se trata de los Apóstoles Muertos--vampiros que fueron originalmente humanos, es un asunto distinto.@ Para mantener su existencia, ellos necesitan la sangre de otros."\
+`"¿……?@ Um, ¿en otras palabras la mejor manera de satisfacer tu apetito es beber sangre?@
+` …… Pero dijiste que odiabas beber sangre.@
+` Entonces, al igual que las personas que no gustan de ciertas comidas, ¿tú odias el sabor de la sangre?"@
+` Hago una suposición como una simplificación satisfactoria para la larga explicación que ella dio.@
+br
+` Sin embargo.@
+` Parece que estuve un poco lejos de acertar.\
+playstop
+ld c,":a;image\tachi\ark_t17.jpg",%type_crossfade_fst
+`"…… No lo sé.@ No sé cómo sabe la sangre."@
+`"----¿Huh?"@
+ld c,":a;image\tachi\ark_t10.jpg",%type_crossfade_fst
+`"Te dije que no soy un vampiro completo.@ No conozco el sabor de la sangre.@ Aún no conozco eso.@
+` Todo lo que sé----es que beber sangre de humanos es rehusar reconocerlos como personas."@
+` Ella aparta la vista, sin siquiera intentar mirarme.\
+play "*9"
+`"Oye Shiki.@ ¿Qué tal si?@ ¿Qué tal si las aves o los peces tuviesen la misma inteligencia y período de vida que tú tienes?@ ¿Podrías comerlos?@ ¿Podrías justificarlo para ti mismo diciendo que sin importar cuánta inteligencia tengan, siguen siendo comida?@ ¿Y entonces comerlos?"@
+`"------No, eso es…"@
+` ¿Podría----comerlos?@
+` No lo sé.@ No sé, pero en primer lugar, intentaría comer otras cosas, cosas que no tuviesen inteligencia.\
+ld c,":a;image\tachi\ark_t01b.jpg",%type_crossfade_fst
+`"¿Ves?@ Es lo mismo.@ Es por eso que odio pensar en beber sangre.@ …… Bueno, quizás también existen gustos y disgustos como dijiste.@
+` Si pudiese, me gustaría evitar ver sangre.@
+` Pero----Sí, pero si… si los humanos no tuviesen la misma importancia, inteligencia o valores que yo, entonces tal vez bebería sangre.@
+` ¿No es providencia de la naturaleza tomar las vidas de otros para proteger la tuya?"@
+` ¿Cierto?@ Arcueid me pide que concuerde.@
+` Pero eso--aun si Arcueid lo dice, sólo puedo negarlo.@
+` …… No quiero concordar con eso.\
+`"Ciertamente puede ser verdad, pero en primer lugar, los humanos son como tú.@ …… Así que cortemos este tipo de conversación.@ No me gusta hablar de 'qué tal si'."@
+ld c,":a;image\tachi\ark_t08.jpg",%type_crossfade_fst
+`"¿En serio?@ Me gustan los 'qué tal si'.@ No saber cómo resultarán las cosas, y aun así tener esperanza al menos por ese momento."@
+cl c,%type_crossfade_fst
+br
+` Si…… qué tal si.@
+` Entonces, qué tal si----ella bebiese sangre como otros vampiros, ¿estaríamos hablando de esta manera?\
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"¿Qué sudece, Shiki?@ Tu cara se oscureció de repente.@ Ah, ¿tienes que ir al baño?"@
+`"…… Oye.@ ¿Sales con eso cuando alguien está pensando seriamente?"@
+` Suspiro.@
+` Aunque lo estoy pensando seriamente, Arcueid no parece pensar mucho en beber sangre.\
+`"Sí----no me concierne."@
+ld c,":a;image\tachi\ark_t16.jpg",%type_crossfade_fst
+`"Cielos, estás murmurando para ti mismo.@ ¡Tratar de esconder algo no es muy masculino, Shiki!"@
+` Arcueid parece un gato enojado de nuevo.\
+`"No estoy escondiendo nada.@ Además, tú eres la de todos los secretos.@ Simplemente te diviertes diciendo cosas que no puedo entender."@
+ld c,":a;image\tachi\ark_t14.jpg",%type_crossfade_fst
+`"Divertirme--No estoy tratando de hacer eso."@
+` No sé adónde se fue su mal humor, pero repentinamente se tranquiliza.@
+` Parece estar nerviosa porque he dado en el clavo.\
+`"…… ¿En serio?@ ¿En verdad te divertías al verme confundido como antes?@ ¿Te gusta provocar, o es un secreto?@
+` Bueno, somos dos formas de vida distintas, así que no me importa."@
+`"¡N, no es eso……!@ Sólo estaba tratando de responderte.@ Probablemente parece que estoy escondiendo un montón de cosas porque tú nunca preguntas……"@
+`"Hmm----entonces a lo que sea que pregunte, ¿responderás?"@
+ld c,":a;image\tachi\ark_t09.jpg",%type_crossfade_fst
+`"Sí.@ Somos un equipo después de todo."\
+cl c,%type_crossfade_fst
+` De acuerdo.@
+` Entonces como ella desea, haré preguntas para aclarar las cosas.@
+br
+playstop
+return

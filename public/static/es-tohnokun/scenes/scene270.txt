@@ -1,0 +1,180 @@
+monocro off
+wavestop
+play "*9"
+;---added context above---
+bg "image\bg\bg_27b.jpg",%type_nowaitdisp
+`"-------"@
+` Ya veo.@
+` Ciertamente, no tengo derecho a decir nada respecto a eso.@
+` No tengo derecho, pero---\
+`"¡Mira, simplemente no vayas!@ ¡Arcueid está en el parque!@
+` Sabes cuánto te detesta, ¿no?@ ¡Así que no puedo dejar que ustedes dos se encuentren!"@
+ld c,":a;image\tachi\cel_t01b.jpg",%type_crossfade_fst
+`"¿Oh?@ ¿Estás preocupado por mí?"@
+`"Por supuesto, no quiero verlas pelear.@ ¡Te lo ruego, por favor vete!"\
+`"--Oh.@ Ya veo, no estás preocupado por mí, estás preocupado por ella, ¿cierto?"@
+br
+` Mirando hacia la distancia, ella ignora completamente lo que digo.@
+br
+` …… Por alguna razón,
+` parece que está haciendo todo esto intencionalmente porque le gusta provocarme.\
+`"…… Senpai.@ No me digas, ¿aún me guardas rencor por lo de esta mañana……?"@
+` Ella sólo sonríe y no dice nada.@
+` …… Está furiosa.@
+` Ese rostro sin duda alguna guarda rencor.\
+`"…… Entiendo, todo lo de esta mañana fue mi culpa.@ Lo lamento.@
+` Así que---"@
+`"Si me dices que me vaya por eso, te daré una paliza Tohno-kun."@
+`"……… ¿Huh?"@
+`"Tohno-kun.@ Nuestra pelea aún no ha terminado.@ Parece que aún estoy molesta, así que no es fácil hablar con calma."\
+`"¿Um…… Senpai?"@
+`"Si regresaras, podríamos reconciliarnos, pero sé que eso es imposible.@
+ld c,":a;image\tachi\cel_t07b.jpg",%type_crossfade_fst
+` Así que esta conversación es inútil.@
+` No hay necesidad de que te disculpes.@ No me preocupa lo que sucedió esta mañana."@
+` Ella me mira con esos ojos que carecen de toda emoción.\
+`"Mi deber es cazar vampiros.@ Todo lo demás es trivial."@
+cl c,%type_lshutter_mid
+br
+` Senpai entra al parque caminando.@
+`"¡Oye---Senpai!"\
+bg #000000,%type_lcartain_mid
+playstop
+bg "image\bg\bg_28b.jpg",%type_lcartain_mid
+` Ella atraviesa el parque.@
+` Lógicamente, se dirige directamente hacia el lugar donde Arcueid está esperando.\
+`"Espera un minuto.@ ¿¡Por qué estás tan enojada, Senpai!?"@
+ld c,":a;image\tachi\cel_t07b.jpg",%type_lshutter_fst
+`"---No estoy enojada.@ ¿Qué hay de ti?@ Si vienes conmigo, ¿no malinterpretará ella las cosas?"@
+`"¿Malinterpretar---malinterpretar qué?"@
+`"Ella te gusta, ¿no?@ Entonces, creo que no deberías estar conmigo, su enemiga."\
+`"Qué…… no es que ella me guste……"@
+br
+` Aunque no puedo asegurarlo.@
+` No estoy seguro de lo que siento, pero estoy seguro de que ella me atrae.\
+ld c,":a;image\tachi\cel_t01b.jpg",%type_crossfade_fst
+`"En verdad no puedes mentirte a ti mismo, ¿cierto?@ Pienso que eres demasiado sincero."@
+` Por un breve instante, su máscara revela un suspiro.\
+`"Pero, ciertamente es mejor separarnos aquí.@ Ya no somos amigos, y si Arcueid nos viese---"@
+br
+`"¿Hm?@ ¿Qué sucedería, Ciel?"@
+play "*6"
+br
+`"¡----!"@
+cl c,%type_crossfade_fst
+` Ambos volteamos hacia la voz detrás de nosotros.@ Ahí vemos---a Arcueid, quien parece estar de un humor particularmente malo.\
+ld l,":a;image\tachi\ark_t05b.jpg",%type_lshutter_fst
+`"Qué sorpresa.@ Vine porque escuché la voz de Shiki y te encuentro aquí.@
+` ¿Ya no compartimos nuestra información ayer?@ No creo que tengas algo más que hacer conmigo."@
+ld r,":a;image\tachi\cel_t07b.jpg",%type_crossfade_fst
+`"Sí, no tengo nada más que hacer contigo.@ Sólo estaba aclarándole las cosas a él."\
+`"¿Oh en serio?@ ¿Pretendías robarme a mi compañero?"@
+`"…… Eso también suena bien.@ Aún te debo una por esa herida que me causaste."@
+cl c,%type_crossfade_fst
+\
+` La situación es crítica entre las dos.@
+br
+` Siendo el que está parado entre ellas, no puedo simplemente observar.@
+` …… Analizando el problema, nuestras posiciones respectivas son: Senpai, yo, y luego Arcueid.@
+` Y si ellas pelean, yo estaría justo en el medio.\
+`"Ustedes dos, ¿por qué se miran así?@ Su meta es la misma, así que tranquilícense y……"@
+ld l,":a;image\tachi\ark_t05a.jpg",%type_crossfade_fst
+`"¡Guarda silencio Shiki!"@
+ld r,":a;image\tachi\cel_t06b.jpg",%type_crossfade_fst
+`"¡Por favor guarda silencio Tohno-kun!"@
+`"-------"@
+` …… Fracasé.@
+` Traté de hablar con ellas pero no parece haber funcionado.\
+ld l,":a;image\tachi\ark_t05a.jpg",%type_crossfade_fst
+`"--Bien.@ Parece que le importas a Shiki, así que te dejaré ir.@
+` No te atacaré, así que simplemente desaparece."@
+`"…… Eso me sorprende.@ ¿Él es tan importante para ti?@
+` No pensé que Arcueid Brunestud pudiese interesarse en algo diferente a matar vampiros."\
+ld l,":a;image\tachi\ark_t05c.jpg",%type_crossfade_fst
+`"------"@
+`"Para ti, controlar a los humanos es fácil.@
+` Habría sido mejor convertirlo en tu sirviente si querías ayuda, Arcueid, pero ¿por qué no has hecho eso?"@
+ld l,":a;image\tachi\ark_t10.jpg",%type_crossfade_fst
+`"---No bromees con cosas como ésas.@ Shiki es mi compañero.@
+` Aun si no hago eso, él sigue diciendo que me ayudará."@
+` Arcueid aparta la vista nerviosamente.@
+` Esa intención homicida parace haber desaparecido.\
+`"---Arcueid.@ No me digas que, tú…"@
+ld l,":a;image\tachi\ark_t07.jpg",%type_crossfade_fst
+ld r,":a;image\tachi\cel_t07b.jpg",%type_crossfade_fst
+`"¿Tú---en verdad quieres chupar su sangre?"@
+` Cling.@
+` Desde la dirección de Senpai escucho el sonido de un metal sólido.\
+`"…… Ya veo.@ Me sorprendía que estuvieses interesada en los humanos, pero eso en realidad no importa.@
+` Si deseas la sangre de los humanos, sólo queda una cosa por hacer."@
+` Cling.@ El sonido surge de su mano.@
+` Numerosas espadas, como largos clavos, están ahí.\
+`"…… ¿¡Oye, Senpai……!?"@
+ld r,":a;image\tachi\cel_t06b.jpg",%type_crossfade_fst
+`"Tohno-kun, por favor retrocede.@
+` Justo ahora, he confirmado que ella en verdad es un vampiro.@ Aunque sea un Verdadero Ancestro que coopera con La Iglesia, una vez desee sangre, se convertirá en nuestra enemiga.@
+` Antes de que aparezcan víctimas, le pondré fin aquí."\
+ld l,":a;image\tachi\ark_t05c.jpg",%type_crossfade_fst
+`"---Ciertamente dices puras tonterías cuando la gente no te responde, Ciel.@
+` Muy bien, si quieres morir, te concederé tu deseo y te mataré.@ No es frecuente que pueda matar a la misma persona dos veces."@
+` Sus ojos arden con la intención de matar.@
+` Senpai recibe su mirada en su postura de combate, espadas en mano.\
+wave se0
+` Congelado.@
+` El aire parece congelarse, y difícilmente puedo respirar.@
+br
+` ---Esto no es bueno.@
+` En verdad van a matarse de seguir así.\
+`"…… Esperen las dos, por favor.@ ¡Dije que se tranquilicen……!"@
+` Ignorando la tensión en el aire, grito.@
+ld l,":a;image\tachi\ark_t07.jpg",%type_crossfade_fst
+ld r,":a;image\tachi\cel_t07b.jpg",%type_crossfade_fst
+`"----"@
+`"----"@
+` Por un instante, ambas se detienen.@
+cl a,%type_lshutter_fst
+\
+` Después de eso, el sonido de dos pies que patean la tierra.@
+br
+` ---Mi grito debe haber disparado el inicio.@
+br
+` Las figuras blanca y negra colisionan como si fuesen dos imanes de polaridad opuesta.\
+bg #000000,%type_lshutter_fst
+` La pelea entre ambas está más allá de mi alcance.@
+` El movimiento corporal de Arcueid no es algo que pueda seguir con mis ojos.@
+` Todo lo que puedo ver es una mancha blanca corriendo a través de la noche.@
+` Lo sorprendente es que Senpai ni siquiera retrocede al ver la velocidad de Arcueid.\
+` No es que Senpai se mueva a la asombrosa velocidad de Arcueid.@
+` Pero desvía con precisión los deslumbrantes ataques de Arcueid mientras permanece de pie.@
+br
+` Desde mi punto de vista, sus fuerzas son iguales.@
+` Sin embargo, justo como dijo Senpai, el poder de Arcueid parece ilimitado.\
+` Sin importar lo asombrosa que sea Senpai, su poder no es algo que vaya más allá de cierto punto.@
+` En contraste, el de Arcueid parece ilimitado.@
+` Al principio, Senpai la estaba abrumando, pero Arcueid la iguala rápidamente y ahora está sobrepasando sus poderes con facilidad---\
+bg "image\bg\bg_29b.jpg",%type_lcartain_fst
+quakey 4,375
+wave se4
+` La pelea se decide rápidamente.@
+` El cuerpo de Senpai vuela ligeramente por el aire y golpea el suelo rodando, como un pedazo de basura.\
+ld c,":a;image\tachi\cel_t06b.jpg",%type_lshutter_fst
+`"Ka---"@
+` Senpai suelta un grito y se levanta.@
+` Pero hacer eso es inútil.@
+wave se9
+cl c,%type_tshutter_fst
+wave se4
+` El cuerpo de Senpai parece ser disparado por un cañón invisible, vuela una vez más y golpea el suelo.@
+` Se queda allí, inmóvil.@
+` Sangre fluye a lo largo del adoquinado del parque.\
+wave se0
+`"¿Sen---pai?"@
+` No hay respuesta.@
+` Ella parece inconsciente.@
+` Arcueid corre hacia ella----sin piedad alguna, con ojos terribles aparentemente decididos a rebanar el cuello de Senpai.\
+`"------Ah."@
+` No puedo hablar.@
+` No puede haber duda de que Arcueid pretende matarla.@
+` Y Senpai no puede defenderse.@
+`"------"\
+return

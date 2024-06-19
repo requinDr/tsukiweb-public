@@ -1,0 +1,488 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_33b.jpg",%type_nowaitdisp
+` ----Iré a la habitación de mi viejo.@
+` No puedo asegurar que vaya a encontrar algo, pero podría averiguar algo sobre el linaje Tohno.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_41.jpg",%type_lcartain_mid
+play "*3"
+ld c,":a;image\tachi\his_t01.jpg",%type_lshutter_mid
+`"---, ……… Bienvenido a casa, Shiki-sama."@
+` ……… Y.@
+` Ya hay alguien en la habitación del viejo.@
+` Hisui deja la montaña de libros que estaba cargando y se inclina.@
+`"-----Hisui."@
+` …… Ella se ve como siempre.@
+` Me preocupaba verla por lo que sucedió esta mañana, pero parece que ya lo ha superado.\
+`"Me disculpo por no haber podido darle la bienvenida anteriormente.@ ---¿Puedo ayudarle en algo?"@
+`"No, sólo pensé en echarle un vistazo a la habitación de mi viejo.@
+` Si no estoy estorbando, ¿podría quedarme aquí por un momento?"@
+`"…… Sí, pero Akiha-sama tiene las llaves de los armarios y los cajones cerrados, así que no puedo abrirlos.@ ¿No hay problema?"@
+`"¿Cerrados?@ …… Está bien.@ En realidad no estoy buscando nada en particular."@
+`"¿-------?"@
+` Hisui ladea su cabeza inquisitivamente.\
+`"Voy a echar un vistazo, por favor continúa con lo que hacías.@ No quiero ser un estorbo."@
+ld c,":a;image\tachi\his_t16.jpg",%type_crossfade_fst
+`"Como desee.@ Muy bien, si necesita algo, por favor llámeme."@
+cl c,%type_crossfade_fst
+` Hisui continúa limpiando la habitación.@
+` -----Bien, entonces.@
+` Yo también debería comenzar.\
+bg #000000,%type_tshutter_mid
+bg "image\bg\bg_41.jpg",%type_bshutter_mid
+` …… Pasé poco tiempo revisando los estantes, pero me doy cuenta de que es inútil.@
+` Todos los estantes están llenos de libros, pero no hay nada sobre la familia Tohno.@
+` Lo que quiero ver es algo como mi árbol familiar o el diario de mi viejo.@
+`"…… Supongo que ese tipo de cosas están aquí……"@
+` Halo los cajones del escritorio de mi viejo.@
+` Siento que se atoran.@
+`"…… Pero están cerrados……"@
+` Si quiero la llave, tengo que hablar con Akiha.@ …… Pero por lo que dice Hisui, no creo que vaya a abrirlos para mí.\
+`"-----"@
+` Hisui no está mirando hacia acá.@
+` Hay un abrecartas sobre el escritorio.@
+` Esto es conveniente.@
+` …… Bueno, debería usar lo que está a mi alcance.@
+`"………………"@
+` Bajando un poco mis lentes, miro el escritorio.@
+`"-----Ahí."@
+` Sin hacer sonido alguno, corto la cerradura.\
+`"Hmm---sólo hay unos papeles."@
+` Dentro del cajón sólo hay un fajo de viejos papeles.@
+` Tomo una hoja.@
+br
+`"---¿Qué es esto?"@
+br
+` La letra corrida es difícil de leer.@
+` Mis ojos llegan al nombre Tohno MAKIHISA, seguido por Tohno SHIKI y Tohno AKIHA.@
+` Y después de eso,
+` veo un nombre desconocido: Nanaya.\
+playstop
+bg #000000,%type_crossfade_fst
+wave se0
+bg "image\bg\bg_41.jpg",%type_crossfade_fst
+` -------De repente.@
+` Sin razón alguna, tengo una visión de un oscuro bosque.@
+br
+bg #000000,%type_crossfade_mid
+bg "image\bg\bg_41.jpg",%type_crossfade_mid
+play "*6"
+`"Ah----"@
+` Mi vista se estrecha.@
+` Siento la sangre fluyendo detrás de mi cabeza.@
+` La fuerza desaparece de mis extremidades, y siento que no puedo respirar.\
+bg #000000,%type_crossfade_fst
+wave se0
+bg "image\bg\bg_41.jpg",%type_crossfade_fst
+` ----¿Por qué?@
+` ¿Por que de pronto es difícil respirar?@
+` No es que haya ocurrido algo.@
+` No he visto nada.@
+` ¿Entonces por qué estoy---temblando como un niño pequeño?\
+ld c,":a;image\tachi\his_t12.jpg",%type_lshutter_mid
+`"¡Shiki-sama……!"@
+` Hisui…… Hisui corre hacia mí.@
+` ---Poniendo una mano sobre un estante, de alguna manera logro permanecer de pie.\
+ld c,":a;image\tachi\his_t07.jpg",%type_crossfade_fst
+`"¡Shiki-sama!@ ¡Por favor, resista, Shiki-sama……!"@
+` La voz de Hisui está llena de preocupación.@
+` Pero su mano no me toca.@
+`"Estoy bien---sólo tengo un poco de náuseas."@
+ld c,":a;image\tachi\his_t08.jpg",%type_crossfade_fst
+`"Shiki-sama, por favor no se fuerce.@ Por favor siéntese y descanse."@
+`"…… Sí…… estoy bien, así que---"@
+` Logro aferrarme a mi consciencia.@
+` Pero aún estoy mareado.@
+br
+bg #9c0120,%type_crossfade_fst
+bg "image\bg\bg_41.jpg",%type_crossfade_fst
+` En mi parpadeante visión roja y blanca.@
+` Blanco.@
+` Veo un cuello terriblemente cálido.\
+wave se0
+`"-----Ah."@
+` Estoy cautivado.@
+` Si mi cuerpo pudiese moverse correctamente, tomaría el cuerpo de Hisui y----\
+bg #9c0120,%type_crossfade_fst
+` La visión negra de mi anemia se torna roja repentinamente.@
+` El cuello blanco, de Hisui.@
+` El sueño carmesí de anoche.@
+br
+` ----La matanza nocturna.@
+` Doloroso placer, como si mi corazón fuese a salirse por sí solo.\
+bg "image\bg\bg_41.jpg",%type_nowaitdisp
+`"¡K------!"@
+` Incapaz de soportarlo, me alejo de Hisui.@
+ld c,":a;image\tachi\his_t07.jpg",%type_crossfade_fst
+`"¿Shiki-sama……?"@
+`"No---Estoy bien---Estoy bien, así que déjame solo."@
+ld c,":a;image\tachi\his_t17.jpg",%type_crossfade_fst
+`"No puedo hacer eso cuando se ve tan enfermo.@ Por favor no se fuerce."@
+` Hisui se acerca.@ Viene para dar soporte a mi inestable cuerpo.\
+cl c,%type_crossfade_fst
+` ---Esto no es bueno.@
+`  Esto es, malo.@
+` Si ella se pone al alcance de mis manos, me temo que no sé qué haré.\
+`"Detent---Estoy, bien…… déja, me---"@
+bg #9c0120,%type_crossfade_fst
+bg "image\bg\bg_41.jpg",%type_crossfade_fst
+` Soy asaltado por mareos.@
+` Me siento muy débil.@
+` …… Pero eso está bien.@
+` Si me desmayo, entonces---no sentiré el deseo de succionar la sangre de Hisui-----\
+playstop
+wave se3
+!w1500
+ld c,":a;image\tachi\aki_t04b.jpg",%type_lshutter_mid
+`"¿Hisui?@ Sobre lo de ayer, Kohaku y Nii-san----"@
+` ¿Eh…… Aki, ha……?@
+ld c,":a;image\tachi\aki_t15b.jpg",%type_crossfade_fst
+`"¿Nii-san?@ ¿Por qué estás aquí----"@
+cl c,%type_lshutter_fst
+` Akiha viene directamente hacia mí y arranca el linaje Tohno de mis manos.@
+ld c,":a;image\tachi\aki_t11b.jpg",%type_crossfade_fst
+`"Nii-san.@ ¿Rompiste la cerradura?"@
+`"--------"@
+` Akiha me mira con enfado.@
+` Yo---peleando con mi mareo, no puedo mirarla correctamente.\
+`"…… Ya veo.@ No se puede evitar si ya lo viste.@ Lo dejaré pasar esta vez, pero prepárate para un merecido castigo la próxima vez."@
+` Akiha voltea para mirar a Hisui.@
+` …… Casi parece como si odiase a Hisui.@
+`"Ah---------"@
+` Se ve como la Akiha de aquel sueño.@
+` Una mirada que parece cercana a la malicia y el odio.@
+` Casi siento calor ardiente emanando de su cabello.@
+ld c,":a;image\tachi\aki_t11c.jpg",%type_crossfade_fst
+cl c,%type_crossfade_fst
+`"¿Eh---------?"@
+` Mi corazón omite un latido.@
+` ¿Estaba alucinando?@ Por un instante, alrededor de Akiha---creí ver algo terrible.\
+ld l,":a;image\tachi\aki_t11b.jpg",%type_crossfade_fst
+`"----Hisui, ¿qué estabas haciendo?@ El cuerpo de Nii-san es débil, así que al menos tienes que aliviar su carga mental.@
+` Pero dejaste que Nii-san entrase a la habitación de Papá, ¿no estabas pensando?"@
+ld r,":a;image\tachi\his_t21b.jpg",%type_crossfade_fst
+`"----Lo, lamento mucho."@
+ld l,":a;image\tachi\aki_t01b.jpg",%type_crossfade_fst
+`"…… Sé más cuidadosa de ahora en adelante.@ Tengo que hablar con Kohaku, dile que vaya a mi habitación inmediatamente."@
+cl l,%type_lshutter_mid
+` Akiha se retira.\
+`"…… Shiki-sama, por favor regrese a su habitación.@ No se encuentra en buen estado, por favor descanse hasta la cena."@
+` Hisui dice esto, aún mirando hacia abajo.@
+`"…… Tienes razón, iré a mi habitación.@ Perdón, Hisui.@ Por mi culpa, Akiha estaba molesta contigo."@
+ld r,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"No, fue mi culpa.@ …… Como Akiha-sama dice, aún no está acostumbrado a esta mansión.@ Hasta que se haya adaptado, no debería entrar a esta habitación."@
+`"…………………………"@
+` No sé qué decir.@
+` Aún mareado, salgo de la habitación de mi viejo.\
+bg #000000,%type_lcartain_mid
+!w2000
+bg "image\bg\bg_40c.jpg",%type_lcartain_mid
+play "*1"
+` Como mi cena solo y regreso a mi habitación.@
+` Supongo que Akiha no estuvo ahí porque aún se sentía enferma.\
+`"--------"@
+` Acostado en mi cama, suelto un gran suspiro.@
+` …… Debo estar cansado.@
+` Últimamente, tan pronto como cae la noche, me meto a la cama.@
+` Aunque hay muchas cosas en las que debería pensar, siento que nada me concierne y trato de dormir.\
+`"…… Qué raro.@ No puedo concentrarme----"@
+` Miro fijamente el techo.@
+br
+` Mis ojos comienzan a cerrarse.@
+` Nuevamente, no pienso en nada y caigo en un profundo sueño----\
+bg #000000,%type_crossfade_mid
+playstop
+!w4000
+bg "image\bg\bg_24c.jpg",%type_crossfade_fst
+bg #000000,%type_crossfade_mid
+waveloop se1
+br
+br
+!w1000
+` ----Arde.\
+br
+br
+br
+!w1000
+` ----Arde.\
+br
+br
+br
+br
+!w750
+` ----Arde.\
+br
+br
+br
+br
+br
+!w500
+` ----Mi piel está ardiendo.\
+br
+br
+br
+br
+br
+br
+!w500
+` ----No puedo dormir así.@
+`    Tengo que levantarme y beber algo de agua.\
+wavestop
+bg "image\bg\bg_25b.jpg",%type_crossfade_mid
+play "*4"
+` La ciudad nocturna.@
+` Exhalando cálidos jadeos, miro a las personas que pasan.@
+` Hay sólo dos o tres esta noche.@
+` Si es posible, quiero encontrar una chica solitaria que sea de mi edad.\
+br
+br
+br
+` ---Calor.\
+` Veo mi reflejo en el espejo.@
+` Respiro salvajemente; pareciera que tuviese una fiebre alta.\
+br
+br
+br
+br
+br
+br
+` ---Calor--No puedo soportar este ardor.\
+` …… Ahí.@
+` No necesito acercarme más.@
+` La agarro desde atrás y la dejo inconsciente.@
+br
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_31b.jpg",%type_crossfade_fst
+` La recojo y la llevo conmigo.@
+` ---Comienzo a sonreír.@
+` Lo soporté por tanto tiempo, y ahora todo ha terminado.\
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_01c.jpg",%type_crossfade_fst
+` …… Al final decido hacerlo aquí.@
+` La razón es simple.@
+` Porque, ésta era la guarida del asesino.\
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_10c.jpg",%type_crossfade_fst
+br
+br
+br
+` ---Arde.\
+` Mi respiración llena el aire.@
+` Pronto.@
+` Pronto podré saborearla.\
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_06c.jpg",%type_crossfade_fst
+` Entonces inicio mi comida.@
+` Mordiendo su cuello, chupo su sangre.\
+br
+br
+br
+br
+br
+` ---Es increíblemente dulce.\
+` La sensación es realmente aterradora.@
+` Si es así de dulce y se siente tan bien,
+` podría volverme prisionero de esta sensación, en lugar de ese asesino.\
+br
+br
+br
+br
+br
+br
+br
+` ---La noche es profunda.@ Sobre mi cabeza está el ojo plateado que es testigo de mi pecado.\
+` Con labios manchados de sangre, miro el cielo nocturno con ojos llenos de regocijo.@
+` Cabello ondulante.@
+` Arriba está el espiral del cielo.@
+` Qué hermosa luna plateada.\
+br
+br
+br
+br
+br
+br
+br
+` ---Como una serpiente.@ Observando al demonio chupasangre.\
+wavestop
+bg #000000,%type_crossfade_mid
+playstop
+!w4000
+mov $phasebg,"image\bg\ima_09.jpg"
+mov $phasetitle_a,":a;image\word\PKOHA_07A.PNG"
+mov $phasetitle_b,":a;image\word\day_07.png"
+gosub *left_phase
+bg #ffffff,%type_nowaitdisp
+!w2000
+bg "image\bg\bg_40a.jpg",%type_crossfade_mid
+waveloop se10
+`"¡------!"@
+` Salto de la cama, incapaz de seguir soportándolo.@
+`"Ah---haa, ha----ah."@
+` Resistiendo las ganas de vomitar, respiro como alguna clase de animal.\
+`"Qué------"@
+` ¿Qué rayos fue eso?@
+` Un sueño.@ Fue un sueño.@ Pero, ¿qué fue eso?@
+` Es diferente a lo que vi hace dos días.@
+` La sensación de recorrer las calles de noche.@
+` El olor de la sangre persistiendo en mi nariz.@
+` El sonido al arrastrar a esa chica que era como de mi edad.@
+br
+` ---Todo está fresco en mi memoria.\
+`"Ha, ah-------"@
+` ¿Fue algo que podría llamar placer?@
+` Era excitación pura condensada como una bala, disparada directamente hacia mi cabeza.\
+`"G---"@
+` Mi respiración se detiene sólo al pensar en ello.@
+` Entonces… quizás ese impacto podría ser algo llamado "placer".\
+`"¿Por qué tuve… esa clase de sueño…"@
+` Miro mis manos.@
+` Por supuesto, están perfectamente blancas, sin un solo rastro de sangre roja.@
+wavestop
+` Pero, por un instante,
+` vi mis manos cubiertas de rojo.\
+waveloop se1
+` ---¿Qué, tú también?@
+br
+` …… ¿Huh?@
+br
+` ---Es la primera vez que veo a un asesino aparte de mí.@
+br
+` …… Es cierto.@ Tuve esa conversación.@
+br
+` ---La misma ciudad no necesita dos asesinos.@
+`   Te entregaré este lugar.@
+br
+` …… Pero, ¿cuándo fue eso?\
+wavestop
+`"…… ¿Por qué, no puedo recordar----?"@
+` Ciertamente, siento que tuve esa conversación con alguien.@
+` Pero simplemente no puedo recordar.@
+` ¿Fue real o fue sólo un sueño vacío?@
+` Sólo recuerdo que el asesino dijo que yo era igual a él.\
+`"---Qué extraño.@ …… ¿Por qué todo…… está enredado en mi cabeza----"@
+` Hago un gran esfuerzo para recordar el sueño de anoche.@
+wave se4
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\bg_40a.jpg",%type_nowaitdisp
+`"¿¡Ga----!?"@
+` Mi cabeza palpita.@
+`"¡Agh---ah, agh………!"@
+` No puedo, recordar.@
+` Cuando intento recordar lo que sucedió ayer, siento ganas de vomitar.\
+` Estoy asustado.@
+` Me asusta el no poder recordar.@
+` Siento que…
+` Un Tohno Shiki que no conozco está matando gente, y para esconderlo, está engañando al Tohno Shiki que soy yo.@
+br
+` ----Y.@
+` Siento que hay alguien en el pasillo.@
+br
+`"¿¡Quién está ahí----!?"@
+` Grito.\
+wave se3
+` Noc.@ Noc.@
+ld c,":a;image\tachi\his_t16.jpg",%type_lshutter_mid
+play "*2"
+` "Por favor discúlpeme," dice Hisui al entrar a la habitación.@
+` Es una escena matutina normal.@
+`"Ah---------"@
+` ¿Será porque ella está actuando tan naturalmente?@
+` Mi palpitante corazón se tranquiliza instantáneamente.\
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"Buenos días, Shiki-sama."@
+`"……… ¿Hisu, i?"@
+ld c,":a;image\tachi\his_t04.jpg",%type_crossfade_fst
+`"Sí, ya es hora, así que he preparado su cambio de ropa.@ …… ¿Um, Shiki-sama?@ ¿No se siente bien?"@
+`"No, no es eso.@ Me siento bien.@ No hay ningún problema."@
+` Me levanto de la cama, como para comprobar mis palabras.\
+`"Buen día, Hisui.@ Iré a la sala de estar después de cambiarme, por favor adelántate."@
+ld c,":a;image\tachi\his_t16.jpg",%type_crossfade_fst
+`"Sí.@ Bien, entonces por favor discúlpeme."@
+cl c,%type_lshutter_fst
+` Hisui cierra la puerta silenciosamente y se retira.@
+` Después de verla marcharse, respiro profundamente.\
+`"¿Por qué me siento deprimido?"@
+` Probablemente porque me enteré de la enfermedad de mi viejo ayer.@
+` Sólo porque mis síntomas son similares a los suyos… tal vez estoy siendo paranoico.@
+`"…… Sí.@ Desde que regresé, he estado muy cansado.@ No debería pensar en ese sueño."@
+br
+` ---Bien, entonces.@
+` Son casi las siete.@
+` Al igual que ayer, debería poder disfrutar la mañana.\
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_34a.jpg",%type_lcartain_fst
+` ----Y entonces…
+` Sin pensar, entro a la sala de estar y me percato de que olvidé algo muy importante.@
+`"Oh mie-----"@
+` Me trago mis palabras.\
+` Akiha, Hisui, y Kohaku-san están en la sala de estar.@
+` Todo parece normal, pero después de lo sucedido ayer, estoy seguro de que será muy incómodo.@
+` Akiha y Hisui parecían haber llegado a un acuerdo, pero aún no he hablado con Akiha.@
+` Por la forma en que actuó ayer, estoy bastante seguro de que Akiha sigue molesta conmigo.\
+ld c,":a;image\tachi\aki_t09.jpg",%type_lshutter_fst
+`"Buenos días, Nii-san.@ ¿Dormiste bien?"@
+`"--------¿Huh?"@
+` Y.@
+` Akiha me saluda con una gran sonrisa.\
+cl c,%type_lshutter_fst
+`"¿Uh……………?"@
+` Mi mente se congela ante este evento tan inesperado.@
+` Akiha sigue parada ahí con una gran sonrisa.@
+` Está demasiado alegre, y me hace pensar que está planeando algo.\
+ld c,":a;image\tachi\his_t01.jpg",%type_lshutter_fst
+`"Shiki-sama, ¿le importaría sentarse?"@
+`"Ah…… sí, si quieres que me siente, lo haré."@
+` Miro a Akiha temerosamente mientras me siento frente a ella.@
+cl c,%type_lshutter_fst
+`"Buen día, Akiha.@ Hoy pareces estar de buen humor."@
+ld c,":a;image\tachi\aki_t08a.jpg",%type_lshutter_fst
+`"¿Eso crees?@ Ciertamente me siento mucho mejor, así que debo verme menos pálida."@
+` …… No, es mucho más que no verse pálida.\
+ld c,":a;image\tachi\aki_t09.jpg",%type_crossfade_fst
+`"En fin, primero tengo que agradecerte.@ Quería hacerlo ayer, pero me sentía algo enferma y no tuve la oportunidad."@
+` Akiha me mira directamente.@
+` No hay siquiera un rastro de la frialdad de ayer.@
+` …… También parece que la atmósfera de peligro ha desaparecido.\
+`"¿Agradecerme?@ No hice nada para merecer eso."@
+`"Eso no es verdad.@ Cuidaste de mí cuado estaba enferma, ¿cierto?@
+` Gracias a que me abrazaste, obtuve determinación.@ Estaba extremadamente feliz esa noche."@
+`"¡-------!"@
+` Ella dice algo que me atrapa totalmente con la guardia baja.@
+cl c,%type_lshutter_fst
+br
+` ----Y entonces.@
+` Siento una presión increíblemente fuerte sobre mi espalda.\
+` Miro detrás de mí.@
+ld r,":a;image\tachi\koha_t03.jpg",%type_lshutter_fst
+ld l,":a;image\tachi\his_t01.jpg",%type_lshutter_fst
+` …… Allí, Hisui y Kohaku-san me miran de una manera muy distinta a la habitual.\
+cl a,%type_lshutter_fst
+`"---Akiha.@ No digas cosas que puedan dar una impresión equivocada.@ Estabas sufriendo mucho y simplemente te di soporte, eso es todo."@
+ld c,":a;image\tachi\aki_t08a.jpg",%type_lshutter_fst
+`"¿Oh?@ ¿Supongo que envolverme con tus brazos es sólo darme soporte?"@
+` Akiha ríe tontamente.@
+` Fijamente.@ Me están mirando fijamente.@
+` Las miradas de las dos detrás de mí se hacen aun más pesadas.\
+`"---Mira.@ Estás actuando raro.@ ¿Estás disfrutando burlarte de mí?"@
+`"Sí, mucho.@ Ver tu cara de preocupación es divertido."@
+`"……………"@
+` Esto es demasiado raro.@ ¿Ésta en verdad es la personalidad de Akiha?\
+`"Tienes unos pasatiempos muy extraños.@ Me molestas en la mañana después de reprenderme la noche anterior.@
+` …… Bueno, lo imaginé desde un principio, pero en verdad debes tener algo en mi contra."@
+` Concluyo con un suspiro.@
+cl c,%type_lshutter_fst
+` De repente, Akiha desvía su mirada.\
+ld c,":a;image\tachi\aki_t13a.jpg",%type_lshutter_fst
+`"…… Lo siento mucho.@ Lo que hice ayer fue estúpido.@ Había algo mal en mí, y ya me he disculpado con Hisui---"@
+`"¿¡Te disculpaste con Hisui!?"@
+` Dejo escapar eso en mi sorpresa.@ No es sólo que se haya disculpado, sino que lo haya hecho por Hisui.@
+ld c,":a;image\tachi\aki_t21.jpg",%type_crossfade_fst
+`"---Oye.@ Nii-san, ¿qué clase de persona piensas que soy?@ Actué mal, así que era natural que me disculpase con Hisui, ¿no?"@
+` …… Cuando dice eso, tengo una vaga imagen mental de ella actuando como una señora estricta.\
+ld c,":a;image\tachi\aki_t02.jpg",%type_crossfade_fst
+`"Nii-san.@ Estás pensando en algo malo, ¿verdad?"@
+` …… Es astuta.@ Está muy feliz, pero eso no entorpece para nada su sentido de la percepción.\
+cl c,%type_lshutter_fst
+return

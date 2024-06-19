@@ -1,0 +1,86 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg #000000,%type_crossfade_mid
+bg "image\bg\bg_11b.jpg",%type_crossfade_slw
+play "*3"
+` Me apresuro hacia la habitación de la ceremonia del té.@
+` Senpai tiene su mano sobre la puerta cuando llego.\
+`"¡Senpai!"@
+ld c,":a;image\tachi\cel_t01a.jpg",%type_lshutter_fst
+`"Ah, Tohno-kun.@ ¿Ya vas a casa?"@
+`"No, quería hablar un poco contigo.@ Vas a beber algo de té ahora, ¿no?@ Estaba pensando en acompañarte."@
+ld c,":a;image\tachi\cel_t04.jpg",%type_crossfade_fst
+`"No, ya me voy a casa.@ Tengo algo que hacer, y el presupuesto del club para este mes es un poco bajo."@
+`"---Ah.@ Ya veo, todas esas pastas de té fueron compradas con dinero del club."@
+` …… Pero, ahora que lo pienso, un club que puede comprar bocadillos con su propio capital tiene que ser maravilloso.\
+ld c,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
+`"Así que no puedo hacerte compañía…… Tohno-kun, ¿tienes algún plan para después de esto?"@
+`"¿Yo?@ No, ya no."@
+`"Bien, entonces, ¿quisieras caminar conmigo hasta la entrada frontal?"@
+`"Sí, sería un placer."@
+ld c,":a;image\tachi\cel_t04.jpg",%type_crossfade_fst
+` Senpai sonríe, asiente y camina a mi lado.@
+` Decidimos caminar juntos por cinco minutos hasta llegar a la entrada de la escuela.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_01b.jpg",%type_lcartain_mid
+` Sin ninguna conversación seria entre nosotros, llegamos a la verja de la escuela.@
+`"Bien, entonces nos vemos mañana, Senpai."@
+` Levantando una mano, me voy por el camino en la dirección opuesta al de ella.\
+ld c,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
+`"Oh, por favor espera.@ Hay algo que quería preguntarte, Tohno-kun."@
+`"¿?@ ¿De qué se trata?"@
+`"Ayer, dijiste que había alguien que se parecía a mí.@ Me dio algo de curiosidad, así que quería escuchar un poco más sobre eso."@
+` Sus ojos arden de curiosidad.@
+` …… Pero para mí, aquello no es algo que quiera recordar.\
+`"…… Lo siento, no quiero hablar sobre eso.@ Fue sólo un error que cometí, no te preocupes."@
+` Aparto la vista de Senpai mientras doy una vaga excusa.@
+`"¿En serio?"@
+` Senpai finaliza su interrogatorio rápidamente.\
+ld c,":a;image\tachi\cel_t07a.jpg",%type_crossfade_fst
+`"Pero viste a esa persona a altas horas de la noche, ¿cierto?@
+` …… Tohno-kun, creo que dar paseos como ésos durante la noche es bastante peligroso.@ Esos asesinatos en serie han seguido ocurriendo, ¿sabes?@ Si te encuentras con ese asesino en serie, sería terrible, ¿no?"@
+`"…… Senpai, ¿estás preocupada porque estoy saliendo de noche?"@
+`"---Sí.@ Eres una buena persona, así que fácil engañarte y ponerte en peligro."@
+` Senpai parece estar seriamente preocupada.@
+`"-----Nn."@
+` Sí, su preocupación me hace extremadamente feliz.\
+`"Gracias, Senpai.@ Pero todo está bien, el que estaba detrás de esos incidentes se ha ido."@
+ld c,":a;image\tachi\cel_t12.jpg",%type_crossfade_fst
+`"¿Eh?@ ¿Se fue?@ ¿Qué quieres decir?"@
+` …… Mierda, Nrvnqsr es un secreto sólo entre Arcueid y yo.@
+` No puedo hablarle a Senpai sobre eso, y además, no tendría ningún sentido decirle.\
+`"Um, sí, es cierto.@ Es peligroso caminar por ahí durante la noche."@
+ld c,":a;image\tachi\cel_t07a.jpg",%type_crossfade_fst
+`"…… En fin, de ahora en adelante, por favor deja de estar saliendo de noche.@ Eres un buen estudiante."@
+`"Sí, lo sé.@ No estoy seguro de que sea un buen estudiante, pero no ya no jugaré más de noche como dices."@
+`"…………………"@
+br
+` Senpai me mira fijamente.@
+` ---¿Acaso no me cree?@ No parece convencida.\
+`"…… Entiendo.@ Entonces, lo prometo."@
+` Extiendo una mano.@
+`"Senpai, te debo una por aquella ocasión, así que haré lo que pides.@ Es una promesa."@
+ld c,":a;image\tachi\cel_t08.jpg",%type_crossfade_fst
+`"Um……………… ¿quieres, un apretón de manos?"@
+`"Sí.@ Somos un poco viejos para promesas de meñique, así que nos daremos la mano."@
+`"…………………"@
+` Después de quedarse ahí un poco perpleja, Senpai toma mi mano extendida.\
+ld c,":a;image\tachi\cel_t03.jpg",%type_crossfade_fst
+`"Entiendo.@ Es una promesa, Tohno-kun."@
+` Ella sacude mi mano arriba y abajo.@
+ld c,":a;image\tachi\cel_t02.jpg",%type_crossfade_fst
+`"Bien, entonces adiós.@ Volvamos a vernos mañana en la escuela."@
+cl c,%type_lshutter_mid
+` Envuelta por el ocaso, Senpai desaparece.@
+` Despúes de observarla marcharse, decido dirigirme a casa también.\
+bg #000000,%type_lcartain_slw
+playstop
+bg "image\bg\bg_32b.jpg",%type_lcartain_slw
+` Subo la colina y regreso a la mansión.@
+` Todavía no son las seis en punto.@
+` Falta una hora para la cena, así que mataré algo de tiempo en mi habitación---\
+bg #000000,%type_crossfade_mid
+!w2000
+return

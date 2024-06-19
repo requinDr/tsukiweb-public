@@ -1,0 +1,51 @@
+monocro off
+wavestop
+playstop
+bg #000000,%type_nowaitdisp
+;---added context above---
+!w2000
+bg "image\bg\bg_06b.jpg",%type_tshutter_mid
+play "*1"
+` La escuela termina.@
+` Voy a buscar a Akiha en los salones de primer año.@
+br
+bg "image\bg\bg_10b.jpg",%type_lcartain_fst
+` …… Pero justo cuando salgo del salón, me encuentro con ella.\
+ld c,":a;image\tachi\aki_t01a.jpg",%type_crossfade_fst
+`"Ah, Nii-san.@ ¿Vas a algún lugar?"@
+`"No, iba camino a verte.@ ¿Qué hay de ti?@ ¿Vas hacia alguna parte?"@
+ld c,":a;image\tachi\aki_t16a.jpg",%type_crossfade_fst
+`"No.@ Sólo pensé que podría ir a casa contigo, Nii-san, así que vine aquí…"@
+`"Ya veo.@ Tuvimos suerte de encontrarnos.@ Bien, entonces vámonos.@ Kohaku-san y Hisui están esperando."@
+ld c,":a;image\tachi\aki_t09.jpg",%type_crossfade_fst
+`"Tienes razón.@ Vamos a casa, Nii-san."\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_23b.jpg",%type_lcartain_mid
+`"Oh, es cierto, hay una pregunta que he estado queriendo hacerte, Akiha."@
+ld c,":a;image\tachi\aki_t12a.jpg",%type_crossfade_fst
+`"¿Una pregunta para mí…?"@
+`"Sí.@ ¿Por qué tenías ese disgusto por Senpai?@ ¿Ya la conocías, por casualidad?"@
+ld c,":a;image\tachi\aki_t01a.jpg",%type_crossfade_fst
+`"No, la vi por primera vez ayer.@ Mi disgusto por ella es simplemente psicológico, no tienes que preocuparte por eso."@
+`"¿Psicológico?@ ¿Qué quieres decir?"@
+ld c,":a;image\tachi\aki_t21.jpg",%type_crossfade_fst
+`"Que no puedo controlar lo que siento.@ Es igual a lo que sentías por papá, así que por favor no te preocupes."\
+`"---Espera, Akiha.@ El viejo sólo me desagradaba, no lo odiaba."@
+ld c,":a;image\tachi\aki_t13a.jpg",%type_crossfade_fst
+`"Yo tampoco la odio.@ …… Supongo que exageré las cosas hoy.@ Lo voy a reflexionar, por favor sé indulgente respecto a lo que ocurrió durante el almuerzo."@
+`"…… De acuerdo.@ Supongo que así está bien."\
+cl a,%type_crossfade_fst
+` …… Bueno, supongo que podría no ser un problema.@
+` Ciel-senpai aparece con frecuencia durante el almuerzo, y si la relación entre Akiha y ella fuese mala, sería un problema.@
+` A este paso, si Akiha sigue diciendo cosas como éstas, puede que Arihiko y yo no terminemos con clavos y agujas en los costados----\
+bg #000000,%type_lcartain_mid
+!w1000
+playstop
+bg "image\bg\bg_40b.jpg",%type_rcartain_mid
+`"----Ahh."@
+` Arrojo mi maletín sobre el escritorio, y me siento en la cama.@
+` Bien, ¿qué debería hacer?@
+` Parece que Akiha tiene lecciones, así que tan pronto como volvimos, se fue a algún lugar en auto.@
+` …… Es cierto, Hisui y Kohaku-san también estaban dando vueltas afanosamente.@
+br
+return

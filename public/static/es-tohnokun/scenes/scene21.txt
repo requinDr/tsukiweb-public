@@ -1,0 +1,246 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_06a.jpg",%type_lcartain_mid
+play "*3"
+` Llego a clases más temprano de lo usual.@
+` "Fiu." Camino hacia mi pupitre junto a la ventana.@
+br
+`"Buenos días, Tohno-kun."@
+` Una voz desconocida me saluda.@
+`"---¿Eh?"@
+` Me doy la vuelta, confundido.@
+ld c,":a;image\tachi\stk_t01.jpg",%type_lshutter_fst
+`"Tohno-kun, el maestro estaba buscándote.@ Dijo que quería hablarte respecto a tu casa."\
+`"Hmm… ¿Mi hogar?@ Debe ser acerca de mi mudanza."@
+` …… Debí haber terminado con las formalidades ayer.@ Quizás hay algo que olvidé hacer.@
+`"-----"@
+` La chica no se mueve, pero se queda parada ahí, mirándome.@
+`"Uh… Buenos días, Yumizuka."@
+`"Sí.@ Buenos días, Tohno-kun.@ Parece que recuerdas mi nombre."@
+br
+` Suspirando de alivio, Yumizuka Satsuki muestra una vaga sonrisa.\
+`"Puedo recordar los nombres de mis compañeros de clase, ¿sabes?@ Es sólo que no he hablado mucho contigo."@
+ld c,":a;image\tachi\stk_t03.jpg",%type_crossfade_fst
+`"Sí.@ Estaba un poco nerviosa por hablar contigo."@
+` Yumizuka sonríe de nuevo.@
+` Parece feliz por alguna razón.@
+cl c,%type_crossfade_fst
+`"……"@
+` Yumizuka continúa mirándome como si quisiera decir algo más.@
+` …… Para ser sincero, no la conozco muy bien.@ Aunque estamos en la misma clase, puedo contar las veces en que hemos hablado.\
+` Pero Yumizuka Satsuki es el centro de atención.@
+` Es frecuentemente el tema de conversación entre los chicos, y no hay ninguna clase de rumores malos sobre ella entre las chicas.@ En resumen, es la típica ídolo de la clase.@
+br
+` Naturalmente, siempre está rodeada por una multitud.@ Ella es el total opuesto de un solitario como yo.@
+` Es normal que yo pueda recordar el nombre 'Yumizuka Satsuki', pero no hay razón para que ella recuerde el nombre 'Tohno Shiki'.@ Parece que algunas molestas coincidencias se están dando el día de hoy.\
+ld c,":a;image\tachi\stk_t01.jpg",%type_crossfade_fst
+`"Tohno-kun.@ Um… ¿Puedo hacerte una pregunta?"@
+`"Mientras pueda responder, puedes hacer las preguntas que quieras."@
+`"Um… um… Disculpa si es algo personal, pero… dijiste que te estás mudando… ¿Te vas a mudar a un lugar muy lejano?"@
+` Su voz va perdiendo fuerza, como si le fuese difícil preguntar.@
+` Ella aprieta sus manos para ocultar su nerviosismo.\
+`"Sé que es repentino, pero… ¿vas a transferirte a otro lugar?"@
+`"Ah, no, no.@ Voy a cambiar de residencia, pero no de escuela.@ Mi nueva casa también está en esta ciudad, así que no es gran cosa."@
+`"Oh… eso es bueno."@
+` Yumizuka suspira de alivio.@
+`"¿…?"@
+` Qué raro.@ ¿Por qué algo como mi mudanza causaría ese tipo de reacción?\
+`"Pero… ¿vas a dejar a los Arima?"@
+`"Sí.@ Disfruté mi vida con ellos, pero no puedo depender de ellos para siempre."@
+br
+` …… ¿Huh?@
+` ¿Cómo es que Yumizuka sabe eso?@ Nadie en esta escuela debería saber que estaba viviendo con los Arima, a excepción de cierto sujeto…\
+`"¡Qué hubo, Tohno!"@
+` Desde la puerta del salón, se oye venir una voz alta y despreocupada.@
+` En el momento justo, aparece el sujeto que ha sido mi amigo desde la escuela media.@
+cl c,%type_crossfade_fst
+ld c,":a;image\tachi\ari_t01.jpg",%type_lshutter_fst
+`"¡Hey, no es ésta Yumizuka!@ No es muy frecuente verte hablando con Tohno."@
+`"…… Buen día, Inui-kun." Yumizuka aparta la vista con una respuesta nada entusiasta.@
+` …… Supongo que ella no es del tipo que le respondería bien a un sujeto como él.\
+`"¿Tohno está ligando chicas?@ ¿Qué demonios está pasando?@ Pensé que no estabas interesado en ellas?"@
+` Arihiko expresa su broma escandalosamente.@
+`"Imbécil, deja de esparcir mentiras.@ ¡Soy un tipo normal!@ Claro que estoy interesado en las chicas."@
+ld c,":a;image\tachi\ari_t02.jpg",%type_crossfade_fst
+`"¿En serio?@ ¡Bien por ti hombre!@ Aunque, en estos días, las chicas te encuentran más interesante si tienes una extraña orientación sexual.@ ¡Pero sólo te verán interesante y no llegarán más lejos!"@
+` Su infinita y alegre carcajada hace eco a través del salón.\
+` …… Dejo salir otro suspiro.@
+` Una vez más me pregunto, como lo he hecho muchas veces, cómo terminé conociendo a esta persona.@
+br
+` Su cabello teñido de naranja, orejas perforadas.@
+` Su viciosa mirada que grita que iniciará una pelea con quien sea, en cualquier momento, y su rebelde forma de vestir.@
+` Inui Arihiko es el único bandido de espíritu libre en nuestra escuela secundaria de orientación universitaria.\
+`"¿Tienes que ser tan escandaloso tan temprano en la mañana?@ Estoy deprimido por todo tipo de cosas, así que mantente alejado de mí el día de hoy, ¿de acuerdo?"@
+` Agito mis manos para ahuyentarlo.@
+ld c,":a;image\tachi\ari_t04.jpg",%type_crossfade_fst
+`"¿Deprimido?@ ¿Qué sucede, hombre?@ ¿Son 'esos' días del mes?"@
+`"…… Espera, me retracto.@ En vez de sólo por hoy, mantente alejado de mí por el resto de mi vida.@ Mi depresión sólo empeorará contigo alrededor."@
+cl c,%type_crossfade_fst
+` Ignorando a Arihiko, me dirijo de vuelta a mi pupitre.@
+` Arrojando mi maletín y tomando asiento, estiro mi espalda.\
+ld c,":a;image\tachi\ari_t01.jpg",%type_crossfade_fst
+`"Oye, no puedes ignorar a otras personas de esa manera, Tohno.@ Vas a herir a las personas con esa despreocupada actitud tuya."@
+`"Oh, eso es nuevo para mí.@ ¿No sería mejor si pudiese matarlas?@ Si puedes decirme cómo, te lo pagaré intentándolo contigo."@
+ld c,":a;image\tachi\ari_t03.jpg",%type_crossfade_fst
+`"…… Eso es frío, hombre.@ ¿No eres un poco más desagradable de lo normal esta mañana?"@
+`"¿No te dije que estoy deprimido?@ Sin contar a otras personas, definitivamente no voy a mostrar nada de amabilidad hacia ti."\
+` Arihiko suspira.@
+`"…… ¿Por qué eres cruel sólo conmigo, Tohno?@ Eres como un santo para todos los demás.@ No es justo."@
+`"¿Qué, acabas de darte cuenta?@ El mundo es injusto."@
+`"…… En verdad sólo eres cruel conmigo."@
+br
+` Arihiko suelta otro exagerado suspiro.@
+` No intenté ser particularmente frío con Arihiko.@ Ése es simplemente el tipo de relación que tenemos.\
+`"Entonces, Arihiko, ¿qué está haciendo aquí en la tutoría un cronológicamente atrasado búho nocturno que nunca se presenta hasta la segunda hora?@ Es un poco… no, es muy raro."@
+ld c,":a;image\tachi\ari_t02.jpg",%type_crossfade_fst
+`"Jaja… estaba pensando en eso también.@ Supongo que llegar a tiempo a la escuela no es sólo para cuando me da por levantarme temprano."@
+`"…… Bueno, no voy a comentar sobre tus pasatiempos pero, lo que te pregunto es por qué te despertaste temprano."@
+ld c,":a;image\tachi\ari_t01.jpg",%type_crossfade_fst
+`"¿Por qué me desperté temprano?@ Uhh… Supongo que será porque no puedo quedarme afuera hasta muy tarde desde que comenzó toda esa conmoción, así que ahora en verdad duermo de noche.@
+` Has escuchado las historias sobre ese asesino en serie, ¿no?"\
+`"…… Ya veo.@ Ahora que lo pienso, escuché algo como eso."@
+` Siento un toque de arrepentimiento por necesitar que Arihiko me lo recordase.@
+` Los pasados dos o tres días he estado debatiendo si regresar o no a la casa Tohno, así que perdí conexión con las noticias completamente.\
+`"¿Puedes recordármelo?@ Le han dado un nombre muy desagradable, como los 'Irracionales Asesinatos en Serie' o algo así."@
+ld c,":a;image\tachi\ari_t04.jpg",%type_crossfade_fst
+`"Y aún hay más.@ Hasta ahora, todas las víctimas han sido chicas jóvenes.@ ¡La octava víctima fue sólo hace dos días!@ Y para colmo, todas fueron… espera, ¿qué fue lo que les sucedió?"@
+cl c,%type_crossfade_fst
+` Arihiko ladea su cabeza en contemplación.@
+`"……"@
+` Soy un idiota por preguntarle a él.\
+ld l,":a;image\tachi\ari_t01.jpg",%type_crossfade_fst
+`"¡Sí, ahora recuerdo!@ ¡Todas las víctimas fueron cortadas en pedazos y acomodadas con un patrón o algo así!"@
+ld r,":a;image\tachi\stk_t01.jpg",%type_crossfade_fst
+`"…… No, Inui-kun.@ Todas las que fueran asesinadas perdieron un montón de sangre."@
+`"Oh sí, eso era.@ Dijeron que es algún tipo de vampiro moderno o algo así."@
+`"Hmph.@ De seguro sabes mucho sobre esto, Yumizuka-san."@
+`"En realidad no.@ Está sucediendo en esta ciudad, así que está en las noticias.@ Lo recordarías aunque no quisieras."@
+` …… Ya veo.@
+` Pensé que estaba sucediendo en una ciudad vecina… pero supongo que se ha movido hacia ésta.\
+`"Bueno, en fin, eso es lo que sucedió.@ Ni siquiera yo andaría por las calles de noche con un asesino merodeando.@ Es por eso que me he estado despertando a las siete últimamente."@
+`"…… ¿Qué, eso es todo?@ Tener una buena razón no hace buena tu historia.@ ¿Dónde está la diversión en eso?"@
+ld l,":a;image\tachi\ari_t04.jpg",%type_crossfade_fst
+`"Hombre, qué frío eres.@ ¿Qué, ya te desmayaste por la anemia esta mañana?"@
+`"Estoy bien, gracias por preguntar.@ Si estuviese anémico 24 horas al día, ya estaría muerto."@
+`"Sí, tienes razón.@ Si dices que estás bien, entonces supongo que estás bien."\
+wave se2
+!w1000
+` ---Y…
+br
+` La campana suena, interrumpiendo nuestra conversación.@
+br
+`"Oye, la clase está por comenzar.@ Apresúrate y regresa a tu asiento."@
+` Con un "Seh" Arihiko regresa a su asiento.@
+cl l,%type_lshutter_mid
+`"Te veo luego, Tohno-kun."@
+`"Ah… Sí.@ Perdón por distraerte, Yumizuka-san."@
+cl r,%type_lshutter_mid
+` Sus ligeros pasos resuenan a través del piso mientras regresa a su pupitre.\
+bg #000000,%type_lshutter_mid
+playstop
+bg "image\bg\bg_06a.jpg",%type_lshutter_mid
+` La segunda hora ha terminado.@
+` Nuestro tutor, quien es también nuestro maestro de matemáticas, me llama mientras se retira.@
+`"Tohno, a sus documentos les faltan algunos detalles.@ Por favor pase por la oficina."@
+` No debería tomar mucho tiempo, así que iré a la oficina antes de que comience la tercera hora.@
+` La oficina está en el primer piso.@
+` El salón de segundo año está en el tercer piso, pero puedo regresar antes de la tercera hora si corro.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_11a.jpg",%type_lcartain_mid
+` -----Corro.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_07a.jpg",%type_lcartain_mid
+` -----Y corro.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_10a.jpg",%type_lcartain_mid
+` -----Y co…
+wave se9
+quakex 2,250
+bg #000000,%type_nowaitdisp
+` ¿¡…!?@
+` ¡El impacto me tira al piso con un ruido sordo!@ Mi cabeza golpea algo, y el mundo da vueltas frente a mis ojos.\
+`"Ooou… Ououou…"@
+` Escucho una voz cercana.@ Es la voz de una mujer que nunca había oído antes.@
+` Parece que choqué con alguien.@
+`"Lo siento, ¿estás bien?" Aún no puedo ver muy bien mis alrededores, pero me disculpo con la persona que golpeé.\
+`"Sí, estoy bien… ¿Qué hay de ti?@ ¿Estás bien?"@
+` No hay rastro alguno de acusación en esa amable voz.@
+` No sé quien es ella, pero parece que está preocupada por mí.@
+`"Ah… Sí, también estoy bien."@
+` Sacudo mi cabeza y me levanto.@
+` Finalmente, puedo ver con claridad.\
+bg "image\bg\bg_10a.jpg",%type_crossfade_mid
+play "*2"
+ld c,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
+`"¿En verdad estás bien?@ Tu frente se está inflamando."@
+`"¿Eh…?"@
+` Siento una dolorosa picazón cuando trato de tocar mi frente con mi mano.@
+` …… Justo como ella dijo, se está formando una magnífica hinchazón.\
+ld c,":a;image\tachi\cel_t09.jpg",%type_crossfade_fst
+`"Lo siento mucho.@ No estaba prestando atención hacia donde iba.@ Tu frente debe doler mucho, ¿verdad?" La estudiante mira mi rostro con arrepentimiento.@
+` Por la formalidad con la que habló, asumí que era de primer año, pero por el color de su listón, puedo ver que es de tercer año… en otras palabras, mi senpai.@
+`"No, está bien, de verdad.@ La culpa es mía.@ Lamento haber tropezado contigo, Senpai."@
+` Inclino mi cabeza en una reverencia.\
+ld c,":a;image\tachi\cel_t12.jpg",%type_crossfade_fst
+`"Ah, ahora que lo pienso, tienes razón.@ No deberías andar corriendo por los pasillos, ¿sabes?@ Hay personas como yo distraídas mientras miran hacia el patio de abajo."@
+`"Sí, seré más cuidadoso… ¿Estás bien, Senpai?"@
+ld c,":a;image\tachi\cel_t03.jpg",%type_crossfade_fst
+`"Sí, sólo me caí.@ Fue porque corriste contra la pared mientras tratabas de evitar golpearme, Tohno-kun."@
+`"¿En serio?@ Con razón estoy viendo estrellas."@
+` Tengo suerte de salir sólo con una hinchazón después de correr hacia una pared a esa velocidad.\
+`"Perdón por eso, pero distraerse en el pasillo también es peligroso, Senpai."@
+ld c,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
+`"Sí, seré más cuidadosa."@
+` Senpai sonríe y asiente.@
+br
+`"……"@
+` Es una sonrisa sincera.\
+`"Uh… discúlpame, será mejor que me vaya."@
+` Sacudiendo el polvo de mis pantalones, comienzo a caminar hacia la oficina.@
+ld c,":a;image\tachi\cel_t07a.jpg",%type_crossfade_fst
+` Pero la estudiante mayor continúa observándome a través de sus lentes.@
+`"……"@
+` Espera, ¿quién es ella?@
+` Estaba distraído porque tropecé con ella, pero ahora que lo pienso, es hermosa.@
+` Si es tan hermosa, los estudiantes varones deberían estar hablando sobre una "belleza de tercer año que usa lentes".\
+`"Um… Ya me voy.@ Deberías regresar a tu salón también, Senpai.@
+` Ah, si sientes algún dolor, por favor ven a mi salón.@ Soy Tohno de Segundo Año, Tercera Clase.@ Yo me haré responsable."@
+` Ella asiente.@
+` …… A pesar de que es mayor que yo, es como tratar con alguien más joven.\
+ld c,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
+`"De acuerdo.@ Si sucede cualquier cosa, iré a tu salón a la hora del almuerzo.@ Recuerda, Shiki-kun, no debes correr en los pasillos."@
+`"De acuerdo, pero no deberías distraerte en los pasillos tampoco, Senpai."@
+` Con eso, agito mi mano y me retiro.\
+br
+br
+br
+` ----Espera.@
+br
+` ¿Shiki-kun?@ No le he dicho mi primer nombre.@
+` Ahora que lo pienso… ¿no dijo ella mi nombre anteriormente…?\
+`"…… ¿Huh?@ ¿Te he conocido antes, Senpai?"@
+`"¿¡Eeeh!?"@
+` Senpai grita sorprendida, y con picardía pone una cara deprimida.@
+ld c,":a;image\tachi\cel_t10a.jpg",%type_crossfade_fst
+`"¡Eres terrible, Tohno-kun!@ ¿Te has olvidado de mí?"@
+`"¿----?"@
+` ¿Olvidado?@ No, no lo creo.@ Si alguna vez me hubiese relacionado con una hermosa mujer como ella, no habría manera de que la olvidase…\
+`"…… Um…"@
+` Ella me mira con reproche.@
+` Esos ojos… estoy seguro de que… los recuerdo de alguna parte… ¿no?@
+bg #ffffff,%type_crossfade_fst
+bg "image\bg\bg_10a.jpg",%type_nowaitdisp
+` …… Pensándolo bien, intercambiamos saludos una o dos veces antes… ¿o no?\
+`"Ciel-senpai… ¿correcto?"@
+` Digo su nombre con aprensión.@
+ld c,":a;image\tachi\cel_t04.jpg",%type_crossfade_fst
+`"Sí, y me alegra que recuerdes.@ Pareces del tipo de persona que se distrae y olvida, Tohno-kun."@
+` …… No pienso que me distraigo, pero no hay nada que pueda hacer respecto al hecho de que lo olvidé.@
+`"Bien, entonces, adiós.@ Veámonos de nuevo a la hora del almuerzo."@
+` Ciel-senpai hace otra reverencia.@ La observo caminar por el pasillo.\
+bg #000000,%type_lcartain_slw
+playstop
+!w2000
+return

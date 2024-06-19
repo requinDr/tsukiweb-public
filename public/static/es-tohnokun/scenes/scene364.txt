@@ -1,0 +1,175 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_40c.jpg",%type_nowaitdisp
+`"----No puedo."@
+` No puedo ir.@
+` Las pocas cosas de las que aún puedo estar seguro.@
+` Mi vida en la escuela, Ciel como mi Senpai… no puedo perderlas.@
+`"--------"@
+` Sé que esto no puede durar para siempre.@
+` Pero aun así----no quiero perder lo que queda de mi pacífica vida.\
+bg #000000,%type_crossfade_mid
+!w1000
+bg "image\bg\bg_40d.jpg",%type_crossfade_mid
+` ----Noche.@
+br
+` La hora en que prometí ver a Senpai ya ha pasado, y volveré a tener ese sueño esta noche.@
+`"…………"@
+` No, eso no es correcto.@
+` No dependeré de la ayuda de Senpai.@ Es mi problema, así que yo mismo lo resolveré.@
+` Para poder seguir viviendo de la manera en que lo he hecho hasta ahora, tendré que ajustar cuentas con ese "asesino" yo mismo----\
+bg #000000,%type_lcartain_mid
+br
+` Para comprobar si soy un asesino o no.@
+` …… Ni siquiera tengo que pensarlo.@
+` Sólo tengo que buscar en la ciudad y encontrar al asesino que no soy yo------\
+!w2000
+wave se0
+bg "image\bg\bg_25b.jpg",%type_crossfade_mid
+` Dejo salir un profundo respiro.@
+br
+` ------Camino por la ciudad cubierta por la noche.\
+br
+` Meto una mano en mi bolsillo y siento el cuchillo en las yemas de mis dedos mientras camino por la ciudad.\
+wave se0
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_26a.jpg",%type_crossfade_mid
+play "*6"
+` *jadeo*-----*jadeo*
+br
+` -------Respiro silenciosamente mientras camino.@
+` Tratando de no llamar la atención.@
+` Miro a las personas que pasan cerca mientras oculto mi presencia.\
+wave se0
+bg #000000,%type_crossfade_mid
+bg "image\bg\bg_27b.jpg",%type_crossfade_mid
+br
+` *jadeo*------*jadeo*, *jadeo*.@
+br
+` --------Estoy buscando al asesino.@
+` Alguien será atacado esta noche.@ Él está buscando una nueva víctima.@
+` Por ejemplo, una chica con largo cabello negro.@
+` Una chica de mi edad sería lo mejor.@
+` No es necesario mencionar la belleza de sus manos y pies, pero la belleza de su cuello debería ser considerada.@
+` Al final, todo cuenta en ese preciso lugar.\
+wave se0
+bg #000000,%type_crossfade_mid
+bg "image\bg\bg_30b.jpg",%type_crossfade_mid
+` *j-jadeo*, *jadeo*, *jadeo*.@
+br
+` --------Busco al asesino.@
+br
+` …… Sé que no lo encontraré fácilmente.@
+` Sé por mis sueños que la presa perfecta es difícil de encontrar.\
+wave se0
+` *jadeo*…… *jadeo*…… *jadeo*
+br
+` P… e… r…o
+` Esta noche, esta ciudad me aburre.@
+` No puedo encontrar a mi PRESA.@
+` Me estoy enfureciendo.@ Mi objetivo era encontrar a alguien, o matar a alguien, o algo así.\
+`"------------Ha…"@
+br
+` Contendré la respiración.@
+` Me aferraré a mi cuchillo.@
+` Debería concentrarme, para poder responder a la muerte en cualquier momento.\
+wave se0
+bg #000000,%type_crossfade_mid
+bg "image\bg\bg_31b.jpg",%type_crossfade_mid
+` Jadeo más y más.@
+br
+` ---Busco al ASESINO.@
+br
+wave se0
+` Pero no puedo encontrarlo.@
+` Sólo el tiempo pasa.@
+` *jadeo*, *jadeo*.@
+wave se0
+` Se desborda, se agudiza, es usada, y gastada, y sobre el tiempo se yergue, y cambia de forma y-------\
+wave se0
+bg #ffffff,%type_crossfade_fst
+monocro #ff0000
+bg "image\bg\bg_31b.jpg",%type_crossfade_fst
+waveloop se1
+` Frente a mí yace la presa de esta noche.@
+br
+` Mis jadeos llenan el aire.@
+br
+` Es el cadáver de una mujer.@
+` En mi mano está un cuchillo.@ La sangre roja sobre mi cuchillo gotea hacia el suelo.@
+br
+` --------¿Por qué?@
+` Estaba buscando al asesino, pero de pronto, el cadáver de una mujer está justo frente a mí.\
+bg #ffffff,%type_crossfade_fst
+bg "image\bg\bg_31b.jpg",%type_crossfade_fst
+` *jadeo*, *jadeo*, *jadeo*, *jadeo*.@
+` Mi respiración se sale de control.@
+` Un cadáver frente a mí.@
+` Un cuchillo ensangrentado en mi mano.\
+br
+br
+br
+br
+br
+br
+br
+` --------------No entiendo.\
+` Cuándo, en qué momento, qué hice.@
+` ¿Le sucedió algo a mi mente?@
+` Sí, como…
+` se desborda, se agudiza, es usada, y gastada, y sobre el tiempo se yergue, y cambia de forma, cambia su significado, se libera, explota, y se ilumina.@
+` En esa ruta.@
+` La teoría de la consciencia evolutiva y el significado.@
+` Pero una parte importante se ha perdido.\
+br
+br
+` ¿Desde cuando.@
+br
+br
+` Yo.@
+br
+br
+` Me convertí.@
+br
+br
+` En el otro "yo"?\
+` ---------Ya veo.@
+` No era necesario que te diese un empujón, Shiki.\
+` Detrás de mí,
+` viene una voz.@
+br
+` Una fuerte respiración.@
+br
+` Me doy la vuelta.@
+` Ahí.@
+ld c,":a;image\tachi\hal_t01.jpg",%type_crossfade_fst
+cl c,%type_crossfade_fst
+br
+` Alguien que nunca antes he visto, pero que se parece a mí, está parado ahí.\
+` ------No se puede evitar si ya estás averiado.@
+`  Adiós, Shiki.@ Quería jugar contigo un poco más.\
+wave se5
+bg "image\bg\ima_12b.jpg",%type_crossfade_fst
+` Slash.@ Soy cortado con un cuchillo.@
+br
+` Duele.@
+` Es gracioso.@
+` Es profundo.@
+` ¡Es grandioso!\
+`"Ja------jaja, ja."@
+` Comienzo a desmayarme.@
+` De esa manera, en ese estado ambiguo, fui asesinado.@
+` …… Estoy feliz, en cierto modo.@
+` Tohno Shiki fue asesinado por el asesino.@
+` Eso comprueba que yo no era el asesino.\
+playstop
+bg #000000,%type_crossfade_mid
+monocro off
+!w2000
+cl a,%type_waitdisp
+bg "image\word\end.jpg",%type_crossfade_slw
+resettimer
+waittimer 3000
+return

@@ -1,0 +1,81 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg #000000,%type_lcartain_mid
+play "*3"
+!w500
+bg "image\bg\bg_50.jpg",%type_lcartain_mid
+` La cafetería está repleta, como siempre.@ Una larga fila de gente esperando sus órdenes se ha formado.@
+` Echando un vistazo a los estudiantes sosteniendo sus tickets, me siento en la mesa de Arihiko.\
+`"Entonces, Arihiko, ¿quién es este invitado especial?"@
+`"Uhhh… qué raro.@ Acordamos encontrarnos aquí en la cafetería.@ Espera un momento, iré a echar un vistazo."@
+` Arihiko sale corriendo, dejando su udon de curry.@
+`"……"@
+` Udon de chikara es mi elección.@
+` Espero que regrese antes de que los tallarines se estropeen.\
+bg #000000,%type_lshutter_mid
+!w500
+bg "image\bg\bg_50.jpg",%type_lcartain_mid
+ld c,":a;image\tachi\ari_t03.jpg",%type_lshutter_mid
+`"No tiene caso.@ Parece que Senpai fue a algún lugar."@
+`"¿Hmm?@ ¿Tu invitado es un senpai?"@
+`"Sí, es una chica muy agradable.@ He estado cortejándola los últimos días, y finalmente logré que accediera a comer el almuerzo juntos.@ Aparentemente hay alguien a quien quiere agradecer por algo, así que está corriendo alrededor de la escuela buscando a quien sea esta persona."@
+` *suspiro*@
+`"…… Parece que es una persona ocupada."@
+`"Sí.@ Es como uno de esos Penny Racers."@
+` Con una expresión de arrepentimiento, Arihiko divide su palillos para comer.\
+`"Bueno, supongo que no se puede hacer nada.@ En fin, itadakimasu."@
+`"Sí, itadakimasu."@
+cl c,%type_crossfade_fst
+` Comenzamos a beber ruidosamente nuestros udon.@
+br
+!w1000
+` …… ¿Y qué demonios son los Penny Racers a fin de cuentas?\
+bg #000000,%type_lshutter_fst
+bg "image\bg\bg_50.jpg",%type_lshutter_fst
+`"Entonces, ¿cuál fue la verdadera razón?"@
+ld c,":a;image\tachi\ari_t04.jpg",%type_crossfade_fst
+`"¿Huh?@ ¿Qué quieres decir?"@
+`"La razón por la que llegaste temprano esta mañana.@ No eres la clase de persona que viene temprano a la escuela sólo porque se levanta temprano, Arihiko-kun."@
+` Interrogo a Arihiko mientras me siento a su lado, comiendo mi udon de chikara.@
+`"Hmm."@
+` Arihiko da una respuesta no comprometedora mientras bebe su sopa ruidosamente.\
+`"¿Vas a volver a tu verdadera casa hoy, Tohno?"@
+`"Sí, voy a… espera, ¿ya no te lo había dicho?"@
+`"Nah.@ El maestro me lo dijo."@
+` Arihiko continúa devorando su udon de curry sin mirar en mi dirección.@
+`"Pensé, '¡Tal vez Tohno estará muy deprimido!' así que decidí venir a echar un vistazo."@
+`"…… Ya veo.@ ¿Y tu veredicto?"@
+`"Muy decepcionante.@ No valió la pena levantarse temprano por eso."@
+cl c,%type_crossfade_fst
+`"Tienes demasiado tiempo libre, Arihiko," Concluyo, mientras doy un mordisco a la blanca torta de arroz en mi udon de chikara.\
+` …… Ése es el tipo de persona que es Arihiko.@
+` Hoy es el día en que regreso a la casa de mi verdadera familia, volviendo de la casa de la familia adoptiva que me crió.@
+` Arihiko debe haberlo escuchado en algún lugar y vino temprano a la escuela porque estaba preocupado por mí.\
+`"…… Arihiko, creo que tu apariencia no te hace justicia.@ Eres muy sentimental en lo profundo."@
+ld c,":a;image\tachi\ari_t02.jpg",%type_crossfade_fst
+`"Je, je… Si el siempre melancólico Tohno me dice eso, tal vez es lo que soy."@
+` Arihiko traga ruidosamente sus tallarines.@
+ld c,":a;image\tachi\ari_t01.jpg",%type_crossfade_fst
+`"Entonces hombre, ¿qué está pasando en realidad?"@
+`"¿Qué quieres decir?"@
+`"Has estado viviendo con los Arima desde la escuela primaria, ¿cierto?@ Ya han pasado ocho años.@ Tu papá básicamente te ha desheredado.@ ¿Por qué te pide que regreses ahora?"\
+`"No me 'desheredó'.@ Sólo me botó de la casa por alguna razón."@
+`"Tohno-kun, si hubo alguna vez una familia que botó a su hijo de la casa 'por alguna razón', eso no es una tragedia, es una comedia.@ Pero es tan aburrida, ni siquiera es graciosa."@
+` Arihiko extiende sus brazos y se encoge de hombros.@
+` Negarse siempre a ser serio es una de las cualidades fáciles de entender de Arihiko.@
+`"…… Sí, supongo que tienes razón.@ Si eres botado de la casa, reír es todo lo que puedes hacer en realidad."\
+`"Y entonces dijo alguna frase trillada como, '¡No vuelvas a poner un pie en esta casa!' o algo así, ¿correcto?@ Eso es lo que la gente llamaría desheredación.@ Ahora que lo pienso, nunca he escuchado por qué fuiste desheredado."@
+`"……"@
+` …… ¿Quién sabe?@
+` Eso es algo que yo también quisiera saber.@
+`"Bueno, si no quieres hablar sobre eso, no tienes que hacerlo."@
+cl c,%type_crossfade_fst
+` Agarrando su tazón con ambas manos, Arihiko toma lo que queda de su caliente sopa de curry.@
+` La hora del almuerzo es corta.@
+` Imitando a Arihiko, decido terminar rápidamente mi udon de chikara.\
+bg #000000,%type_crossfade_mid
+playstop
+!w1000
+return

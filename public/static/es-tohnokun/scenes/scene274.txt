@@ -1,0 +1,19 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_01a.jpg",%type_nowaitdisp
+`"……"@
+` Esperaré aquí.@
+` No creo que Senpai vaya a venir… pero tal vez venga a la escuela como lo hizo ayer.\
+bg #000000,%type_lshutter_mid
+!w1000
+bg "image\bg\bg_01a.jpg",%type_lshutter_mid
+` ---Ya casi es hora.@
+br
+` Unos diez minutos antes de la tutoría, la entrada principal es cerrada.@
+`"……"@
+` Senpai no vendrá.@
+` Suspirando, me dirijo hacia el salón de clases con pasos pesados.\
+bg #000000,%type_lcartain_mid
+return

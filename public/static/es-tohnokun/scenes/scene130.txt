@@ -1,0 +1,28 @@
+monocro off
+wavestop
+play "*3"
+;---added context above---
+bg "image\bg\bg_06a.jpg",%type_nowaitdisp
+` Bueno, si está dando vueltas fuera de mi salón, tal vez quiera verme por algo.@
+br
+`"…… No entiendo.@ Ella normalmente entra sin vacilar."@
+` ¿O finalmente comprendió que es extraño que alguien de tercer año venga a un salón de segundo año?@
+br
+`"--No.@ Eso definitivamente no puede ser."@
+` Concordando conmigo mismo, voy hacia el pasillo.\
+bg "image\bg\bg_11a.jpg",%type_lcartain_mid
+`"Senpai."@
+ld c,":a;image\tachi\cel_t08.jpg",%type_lshutter_fst
+`"¿Huh--Tohno-kun?"@
+` Senpai parece bastante sorprendida de que la llamase y se queda ahí con la boca abierta.@
+`"¿Qué estás haciendo?@ Las clases están por comenzar, ¿por qué aún estás dando vueltas por aquí?"@
+`"-----"@
+` Senpai me mira con asombro, y entonces aparta la vista.\
+ld c,":a;image\tachi\cel_t12.jpg",%type_crossfade_fst
+`"¿Qué estoy haciendo?@ No es de tu incumbencia, Tohno-kun."@
+`"No--Bueno… tal vez no lo sea."@
+`"--No, estaba mintiendo.@ Sí lo es, un poco."@
+cl c,%type_lshutter_mid
+` Pensé que estaba viendo hacia otro lado, pero ella comienza a olfatearme.@
+`"…… ¿Um--Senpai……?"@
+return

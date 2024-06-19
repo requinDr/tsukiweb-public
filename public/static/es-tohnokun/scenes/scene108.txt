@@ -1,0 +1,235 @@
+mov $phasebg,"image\bg\bg_33d.jpg"
+mov $phasetitle_a,":a;image\word\PARK_05A.PNG"
+mov $phasetitle_b,":a;image\word\day_05.png"
+gosub *right_phase
+bg #ffffff,%type_crossfade_mid
+` Siento la luz solar de la mañana.@
+` Mantengo los ojos cerrados mientras trato de volver a quedarme dormido, pero la apacible luz solar continúa impulsándome a abrirlos.@
+br
+` ---Lentamente, comienzo a despertar.\
+` Una atmósfera tranquila.@
+` El aire es confortablemente frío, pero se siente agradable.@
+` Supongo que el clima será grandioso el día de hoy.@
+br
+` ---Entonces, debería levantarme e ir a la escuela.@
+br
+` Es cierto, tengo que ir a la escuela.@
+` Los últimos tres días, mi vida fue un caos y eso me hizo olvidar que soy un estudiante.\
+bg "image\bg\bg_40e.jpg",%type_crossfade_mid
+play "*2"
+`"……"@
+` Me despierto.@
+` Estoy acostado en mi cama, y mis lentes están sobre la cabecera.@
+` Me pongo mis lentes y miro alrededor.@
+bg "image\bg\bg_40a.jpg",%type_crossfade_fst
+` La luz solar entra con tanta fuerza por la ventana que casi espero escucharla fluir.\
+`"----"@
+` Respiro con calma.@
+` Lleno mis pulmones de aire fresco, y mi pecho se siente purificado.@
+` Escucho el tictac del reloj.@
+` Pequeñas aves gorjean afuera en el bosque.@
+` Permanezco en mi cálida cama, sintiendo distraídamente el relajado pasar del tiempo.\
+br
+` -----Ahh, estoy de vuelta.@
+br
+` Aunque esta mañana no tiene nada especial,
+` En este momento----siento que hay algo casi sagrado en ella.\
+`"----Gracias al cielo."@
+` En verdad es bueno.@
+` No el hecho de que estoy vivo, ni que haya sido capaz de hacer algo respecto a ese vampiro negro.@
+` Sino que, aunque estuve en semejante mundo, fui capaz de volver a mi vida normal y sentirme feliz por esta mañana.@
+br
+` ----Y entonces.@
+br
+ld c,":a;image\tachi\his_t01.jpg",%type_nowaitdisp
+`"Buenos días, Shiki-sama."\
+`"¡Uaaaaa!"@
+` Salto sobre mi cama.@
+` Ahora que veo, Hisui está parada silenciosamente al lado de mi cama.@
+`"Hi-HiHi-Hisui---"@
+`"…… Por favor discúlpeme, Shiki-sama, pero ya que no se percató de mi presencia, hablé."@
+`"Ah---bueno, quiero decir, yo también, lo siento."@
+` Hisui se inclina respetuosamente.@
+br
+` ---E-ella me sorprendió.@
+` Mi corazón aún está latiendo rápidamente.\
+`"---¿Huh?@ Pero todavía son menos de las siete en punto, Hisui."@
+`"Sí.@ Es un poco más temprano de su hora habitual de despertar, Shiki-sama."@
+`"Bueno, sí---entonces ¿por qué estás aquí, Hisui?"@
+`"Vine a despertarlo.@ Akiha-sama quiere saber qué ha estado haciendo los últimos dos días, y quería que lo llevase con ella sin importar qué."@
+`"----Ah."@
+` …… Lo olvidé.@
+` Ahora que lo pienso, falté a la escuela el sábado y estuve con Arcueid todo el domingo.\
+`"…… No me digas, ¿Akiha está enfadada…?"@
+`"No lo sé.@ Por favor confírmelo usted mismo, Shiki-sama."@
+br
+` ---La voz de Hisui suena muy fría.@
+br
+`"…… Espera un minuto.@ Antes de eso, ¿por qué estoy durmiendo en mi habitación……?"@
+`"Shiki-sama, usted regresó alrededor de las dos de la mañana.@ Nee-san lo encontró durmiendo en la entrada y lo cargó hasta su habitación."\
+cl c,%type_crossfade_fst
+`"Qué------"@
+` …… Estoy con la boca abierta.@
+` Es malo----No contactar a nadie durante dos días, regresar a mitad de la noche, y dormir en la entrada.@ ¡Estoy actuando como un borracho!@
+br
+`"----Esa mujer----tratándome como si fuese un gato----"@
+` La cara de Arcueid pasa rápidamente por mi mente.@
+` …… Pero, quizás deba estar agradecido de que me llevase tan lejos como la entrada.\
+`"---Muy bien.@ Bajaré inmediatamente.@ Umm… y, si es posible, me alegraría que intentases tranquilizarla tanto como te sea posible."@
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"----Me niego."@
+` Responde ella.@
+` …… Tal vez Hisui también esté molesta conmigo.\
+cl c,%type_crossfade_fst
+`"---"@
+` Ugh, ¿un problema tras otro?@
+` La dueña de esta mansión es Akiha, eso significa que, si Akiha está molesta, ¿nadie va a defenderme?@
+br
+` Bueno, hora de levantarse.@
+` No puedo hacer nada si me quedo en la cama.\
+bg #ffffff,%type_crossfade_fst
+bg "image\bg\bg_40a.jpg",%type_crossfade_fst
+`"¡Ts………!"@
+` A----au.@
+` Tan pronto como me levanto, dolor se dispara a lo largo de todo mi cuerpo.@
+br
+`"----¿Las heridas--de anoche?"@
+` …… Oh sí.@ Si hay algo de que sorprenderse, es del hecho de que aún estoy vivo.@
+` Aunque estaba tan herido y ensangrentado, logré despertar normalmente.@ Simplemente no es natural.\
+ld c,":a;image\tachi\his_t07.jpg",%type_crossfade_fst
+`"Shiki-sama, ésas son----"@
+` …… Qué raro.@
+` Hisui estrecha su ojos y mira hacia mí.@
+`"¿Qué, hay algo ma----"@
+` Bajo la vista hacia mi cuerpo.@
+` Y----
+br
+`"¿¡Qué, qué es esto……!?"@
+` Un patrón de manchas rojas cubre mi pijama por todas partes.@
+` Claro que ese diseño nunca estuvo ahí; es mi sangre filtrándose por todas partes.\
+`"------"@
+` Hisui se traga sus palabras.@
+` --Lo agradezco.@
+` Me permite tranquilizarme.@
+` …… La razón del sangrado es muy clara.@
+` Pero ya que no puedo decirle la razón, tengo que mentir para que no se preocupe.\
+`"Shiki-sama, su cuerpo----"@
+`"…… Estoy bien, no me duele nada.@ Mira, ¿no volví tarde anoche?@ La verdad es, que estuve en una pelea, y por eso volví tarde a casa.@
+` Estas heridas son de esa pelea, y sólo son rasguños, así que no te preocupes por ellas."@
+`"------"@
+` Los ojos de Hisui me imploran, diciendo: "Por favor no diga mentiras."@
+` Pero desde su punto de vista, probablemente no puede preguntarme nada más.@
+` …… Lo lamento, pero tendré que aferrarme a mi mentira.\
+`"Um, ¿podrías no decírselo a Akiha?@ Se molestaría mucho si escuchara que me involucro en peleas."@
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"----Sí, entiendo.@ Definitivamente, Akiha-sama no se enterará."@
+` Hisui asiente.\
+`"Gracias.@ Ah, tengo otra petición.@ ¿Tienes algún desinfectante?@ Tengo un montón de rasguños por todo el cuerpo y quiero encargarme de ellos."@
+ld c,":a;image\tachi\his_t05.jpg",%type_crossfade_fst
+`"Ah----Sí, traeré alguno de inmediato."@
+cl c,%type_lshutter_fst
+\
+`"¿……?"@
+` ¿De qué se trata?@
+` Ella de pronto parece estar incómoda.@
+` En cualquier caso, me alegra que fuese a buscarme un desinfectante.@ Una vez que lo traiga, puedo encargarme de eso yo mismo.@
+` Es sólo un ligero dolor, así que cualquier cosa que esconda la sangre estará bien.\
+bg #000000,%type_lshutter_mid
+bg "image\bg\bg_40a.jpg",%type_lshutter_mid
+ld c,":a;image\tachi\koha_t02.jpg",%type_lshutter_fst
+`"Gracias por esperar~"@
+` La que abre la puerta y entra no es Hisui, sino Kohaku-san.@ En su mano, lleva una caja con una cruz roja impresa.\
+`"¿Huh, Kohaku-san----?"@
+ld c,":a;image\tachi\koha_t01a.jpg",%type_crossfade_fst
+`"Sí, Hisui-chan me explicó la situación.@ Shiki-san, ¿salió y se involucró en una pelea?"@
+`"Ah…… no, en realidad, yo----"@
+` No puedo pensar en ninguna otra explicación.@
+ld c,":a;image\tachi\koha_t04.jpg",%type_crossfade_fst
+`"Cielos, no debería estar haciendo esas cosas.@ Está bien ser travieso, pero no debería ser violento.@ Es doloroso tanto para el que lo hace como para el que lo recibe."\
+` Doloroso para el que golpea y para el que es golpeado, eh.@
+` Las palabras de Kohaku-san me golpean con mucha fuerza.@
+br
+`"…… Sí.@ Es… cierto.@ Golpear… solamente es doloroso."@
+ld c,":a;image\tachi\koha_t01a.jpg",%type_crossfade_fst
+`"¿Verdad?@ Me decepciona que tenga esas heridas.@ Sin importar cuál sea la situación… estaré decepcionada de usted si continúa haciendo ese tipo de cosas, Shiki-san."@
+` Sus palabras penetran mi pecho con agudeza.\
+br
+` ----Profundamente dentro de mi corazón, quiero disculparme.@
+br
+` Lo siento, Kohaku-san.@
+` Probablemente----hice muchas cosas para que esté decepcionada de mí.\
+`"----Sí, soy un idiota y me arrepiento.@ Nunca volveré a hacerlo."@
+`"Siempre que lo entienda, entonces está bien.@ Voy a examinar sus heridas, por favor quítese la ropa."@
+cl c,%type_lshutter_mid
+`"----¿Eh?"@
+` Kohaku-san se acerca en silencio y agarra mi camisa.@
+` Me está pidiendo que me desnude aquí.\
+`"¡E-espera!@ No tienes que ir tan lejos.@ ¡Sólo quería poner un poco de desinfectante sobre algunos rasguños, más nada!"@
+ld c,":a;image\tachi\koha_t04.jpg",%type_crossfade_fst
+`"¿Qué está diciendo?@ Aun si dice que sólo tiene unos rasguños, no se ven tan insignificantes."@
+`"No, estoy bien.@ Puedo hacerlo yo mismo."@
+`"Eso no podrá ser.@ Los que tiene en su espalda----"@
+` Al ver las heridas sobre mi espalda, Kohaku-san se sorprende.\
+ld c,":a;image\tachi\koha_t02.jpg",%type_crossfade_fst
+`"----Qué terrible.@ ¿Se involucró en una pelea con un Doberman, Shiki-san?"@
+`"…… Sí.@ Bueno, algo parecido."@
+`"--------"@
+` Kohaku-san suspira de asombro.@
+br
+`"Cielos, ahora en verdad no puedo permitirle encargarse de eso, Shiki-san.@ Vamos, por favor apresúrese y quítese la ropa.@ ¡Con la ropa puesta, no puedo atenderlo!"@
+`"¡No, dije que puedo hacerlo yo mismo!@ ¡No son gran cosa, y no necesito estar desnudo……!"\
+ld c,":a;image\tachi\koha_t01a.jpg",%type_crossfade_fst
+`"----Ya veo.@ Debe estar avergonzado, Shiki-san."@
+` Con una sonrisa, ella intenta retirar mi pijama de todas formas.@
+br
+`"Ya estoy acostumbrada a ver su cuerpo, Shiki-san.@ Por favor sólo quítese la ropa."@
+`"…… ¿'Acostumbrada', Kohaku-san?"@
+`"Ya lo he cambiado de ropa una vez así que conozco cada detalle de su cuerpo."@
+`"¿Q-Q-Qué?"@
+`"Vamos, no tenemos mucho tiempo.@ Si se demora mucho, Akiha-sama se percatará."\
+` ----Ugh.@
+` No puedo discutir eso.@
+` Pero, desnudarme frente a Kohaku-san, es……
+br
+ld c,":a;image\tachi\koha_t03.jpg",%type_crossfade_fst
+`"…… Supongo que no se puede evitar.@ Entonces, sólo examinaré la parte superior de su cuerpo.@ De esa forma, no hay nada de qué avergonzarse, ¿cierto?"@
+` Incluso eso es avergonzante, pero supongo que es el mejor acuerdo.@
+cl c,%type_crossfade_mid
+`"………… Supongo.@ Entonces, por favor hazlo."@
+` Me siento en la cama y me quito mi camisa.\
+` Kohaku-san atiende mis heridas con pericia.@
+` Atiende cuidadosamente las heridas sobre mis brazos, hombros y espalda.@
+` El desinfectante se hunde en las heridas.@
+` Causa dolor, pero comparado con mi mareo ocasional o el dolor de mi vieja cicatriz, no es nada.@
+` Mientras aplica el desinfectante,
+ld c,":a;image\tachi\koha_t05.jpg",%type_crossfade_fst
+`"Guau, en verdad es todo un chico."@
+cl c,%type_crossfade_fst
+` Kohaku-san dice con alegría, probablemente para ayudarme a soportar todo el dolor.\
+ld c,":a;image\tachi\koha_t01a.jpg",%type_crossfade_fst
+`"Ahora tenemos que fijar esta compresa.@ Podría caerse, así que vamos a vendarla."@
+` Ella pone una compresa sobre mi magullado pecho y la envuelve con vendas.@
+ld c,":a;image\tachi\koha_t03.jpg",%type_crossfade_fst
+`"Todo listo.@ ¿Está seguro de que no quiere que atienda sus piernas?"@
+`"Sí, yo puedo hacer el resto.@ …… Gracias, Kohaku-san.@ Sé que estás ocupada y todo."@
+`"No, no.@ Por favor no se preocupe por eso.@ Entonces regresaré a la cocina.@ Cuando esté listo, por favor vaya a al comedor, ¿de acuerdo?"@
+cl c,%type_crossfade_fst
+` Kohaku-san camina hacia la puerta.\
+`"Ah, Kohaku-san."@
+ld c,":a;image\tachi\koha_t01a.jpg",%type_crossfade_fst
+`"¿Sí?"@
+`"Um----lo siento.@ Como dijiste, pelear es simplemente estúpido.@ Es sólo una gran molestia, y nada bueno resulta de ello."@
+`"------"@
+` Kohaku-san me mira con asombro y de pronto comienza a reír felizmente.\
+ld c,":a;image\tachi\koha_t05.jpg",%type_crossfade_fst
+`"Entiendo.@ Lo dejaré pasar por esta vez, ¿de acuerdo?"@
+cl c,%type_lshutter_mid
+` Ella dice eso con alegría y sale de la habitación silenciosamente.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_33a.jpg",%type_lcartain_mid
+` ---Muy bien, aquí estoy.@
+` Ahora sólo una puerta me separa de la sala de estar donde Akiha aguarda.@
+` Sin importar cuál fuese la circunstancia, no hay excusa para faltar a la escuela y no venir a casa durante dos días.\
+` Ahora--
+br
+return

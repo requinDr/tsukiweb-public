@@ -1,0 +1,39 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_40c.jpg",%type_tshutter_mid
+play "*1"
+` Me percato de que alguien está cuidando de mí.\
+ld c,":a;image\tachi\koha_t02b.jpg",%type_lshutter_mid
+`"Buenas noches.@ ¿Cómo se siente, Shiki-san?"@
+` Ella habla con su sonrisa habitual.@
+`"Ah…… Kohaku, san."@
+` De alguna manera logro hablar a través de mi entrecortada respiración.@
+ld c,":a;image\tachi\koha_t03b.jpg",%type_crossfade_fst
+`"Ah, no tiene que hablar.@ Probablemente entiendo su condición mejor que usted."@
+` Ella retira la toalla de mi frente, aún sonriendo.\
+` ---¿Lo de antes fue sólo una ilusión?@
+br
+` Kohaku-san está actuando normalmente.@ Sigue sonriendo y continúa con su interpretación de Hisui.@
+` …… Eso.@
+` ¿Voy a morir aquí sin siquiera ser capaz de quitarle esa máscara?\
+`"Akiha-sama me lo dijo todo.@ Dijo que esperaría hasta mañana, pero podría ser muy tarde para entonces.@
+` Akiha-sama parece haber perdido la capacidad para pensar claramente.@
+` Creo que no pasará de esta noche en ese estado, Shiki-san."@
+`"---------"@
+` *resollo* *resollo*
+` Las palabras de Kohaku-san son despiadadamente verdaderas.\
+ld c,":a;image\tachi\koha_t08.jpg",%type_crossfade_fst
+`"Shiki-san, lo que me dijo antes.@ Que era insensible a la muerte.@
+` ¿Sigue siendo verdad?@ ¿Va a actuar en contra de Akiha-sama inútilmente con un cuerpo como ése?"@
+`"---------¿Kohaku-san?"@
+` …… Estoy sorprendido.@
+` La voz de Kohaku-san, es completamente diferente.\
+`"…… De ninguna manera.@ Te dije que estoy en mayor afinidad con la muerte que la mayoría de la gente…… Por eso creo entender la situación en que me encuentro.@
+` Sin que me lo digas---sé que sobrevivir esta noche será extremadamente difícil."@
+`"¿Entonces no le teme a la muerte?@ Si acepta a Akiha-sama se recuperará rápidamente, pero no lo hace.@ Hay algo mal en usted."\
+`"…… Tal vez.@ Pero, creo que está bien.@ Me gusta actuar de esta manera, y amo a Akiha por quererme como soy.@
+` …… Sí, y, bueno… disfruto las cosas pequeñas, como poder hablar contigo, Kohaku-san.@
+` …… Pero siento que si me miento a mí mismo, se perdería el placer de todas esas pequeñas cosas, y eso me aterra----"@
+return

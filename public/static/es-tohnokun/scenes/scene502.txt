@@ -1,0 +1,211 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_01b.jpg",%type_lcartain_mid
+` No tengo nada que hacer, así que me apresuro y dejo la escuela.@
+` …… Ahora que lo pienso, no he dejado la escuela por la puerta principal desde la ceremonia de entrada.@
+`"Supongo que a partir de hoy éste será el camino de entrada y salida de la escuela ya que ahora vivo en la mansión…"\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_24b.jpg",%type_lcartain_mid
+` Saliendo por la puerta principal, llego a la intersección que lleva al distrito residencial.@
+` Éste es el punto donde las rutas hacia la ciudad y hacia el distrito residencial, donde está la mansión, se dividen---
+br
+play "*3"
+ld c,":a;image\tachi\stk_t01.jpg",%type_lshutter_mid
+`"Oh, es Tohno-kun."@
+` De pronto, me encuentro con Yumizuka.@
+`"Hey, es Yumizuka-san."@
+` Yumizuka-san me mira, desconcertada.\
+`"Uh… ¿Yumizuka-san?@ ¿Hay algo en mi cara?"@
+`"Um, me estaba preguntando qué hacías aquí, Tohno-kun.@ ¿Tu casa no casa en la otra dirección?"@
+`"Ah… Bueno, estaba hasta ayer, pero estaré viviendo en otro lugar a partir de hoy.@ De hoy en adelante, estaré viviendo en aquel lugar sobre la cima de la colina al final del distrito residencial."@
+ld c,":a;image\tachi\stk_t07.jpg",%type_crossfade_fst
+`"Ah, entonces sobre eso estabas hablando esta mañana."@
+` Yumizuka choca su puño contra su mano abierta como gesto de entendimiento.@
+` …… Bueno, sin intención de halagar, ese gesto me parece increíblemente lindo.\
+`"…… Así es.@ Supongo que no tiene sentido esconderlo de ti, porque ya lo sabes.@ Hoy estoy dejando a mis tutores, los Arima, y regresando a mi verdadera casa."@
+ld c,":a;image\tachi\stk_t13.jpg",%type_crossfade_fst
+`"Tu verdadera casa… ¿Te refieres a la mansión de Tohno-san?"@
+`"Sí.@ Tampoco pienso que vaya conmigo."@
+ld c,":a;image\tachi\stk_t01.jpg",%type_crossfade_fst
+`"Ya veo.@ Sí eres un príncipe sobre la cima de una colina después de todo.@
+` Era un secreto que solo Inui-kun y yo conocíamos, pero ahora supongo que todos se van a enterar."@
+` Con una débil sonrisa, Yumizuka lanza su mirada hacia la distancia.@
+` Ella mira el horizonte, como si mirase hacia la mansión Tohno, lejos en la distancia, sobre la cima de la colina.\
+`"¿Pero vas a estar bien?@ Aun si es tu casa, has estado lejos de ella por ocho años, ¿cierto?@ ¿No estás asustado, o preocupado?"@
+`"Sí.@ En realidad estoy algo preocupado.@ Para empezar nunca me gustó la mansión, y ahora se va a sentir como la casa de otra persona.@ Pero aun así---"@
+br
+` …… No puedo llevar una vida despreocupada por mí cuenta y dejar a mi hermana Akiha ahí sola.@
+` Sin importar cuán preocupado esté, tengo que regresar a la mansión.\
+`"---Al final, sigue siendo hogar.@ Pienso que regresar es simplemente natural para mí."@
+`"…… Ya veo.@ Ah, perdón por detenerte, Tohno-kun.@ Debes tener prisa, ¿no?"@
+`"No, en realidad no.@ Estaba dando un paseo en el camino a casa."@
+`"Ah… Ya veo."@
+cl a,%type_crossfade_fst
+` Por alguna razón, Yumizuka se ve triste y queda en silencio.\
+`"…… ¿Qué sucede, Yumizuka-san?@ ¿Te sientes enferma?"@
+` Rompo el silencio,
+` pero ella continúa mirando fijamente hacia abajo sin levantar su cabeza.@
+`"……"@
+` No puedo simplemente dejarla ahí, así que me quedo parado, mirándola.@
+br
+` ---Y entonces.\
+ld c,":a;image\tachi\stk_t07.jpg",%type_crossfade_fst
+`"¡U… um!"@
+`"Sí, ¿de qué se trata?"@
+`"Um… uh… estoy yendo a casa por el mismo camino que tú, hasta que alcancemos la colina…"@
+`"¿En serio?@ Entonces vayamos juntos por esa parte del camino."@
+`"…… ¿Eh?"@
+` Los ojos de Yumizuka se ensanchan y se queda tiesa por un momento.@
+ld c,":a;image\tachi\stk_t03.jpg",%type_crossfade_fst
+`"¡S… Sí!@ Tienes razón.@ Estamos regresando por el mismo camino, así que no sería extraño que fuésemos juntos por esa parte del camino, ¿¡cierto!?"@
+` Ella dice todo esto con una voz excesivamente alegre y se para justo a mi lado.\
+`"Y en el momento perfecto.@ No estoy muy familiarizado con las calles de aquí, ¿te importaría guiarme?"@
+ld c,":a;image\tachi\stk_t07.jpg",%type_crossfade_fst
+`"Claro.@ Bien, entonces vamos por esta calle.@ Es una calle trasera que te lleva todo el camino hasta la calle en la colina."\
+cl a,%type_crossfade_fst
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_23b.jpg",%type_lcartain_mid
+` ---Camino a casa mientras converso con Yumizuka.@
+br
+` Hablar con Yumizuka no es nada particularmente especial, pero es agradable de una apacible manera.@
+` …… A pesar de lo que dijo Arihiko, Yumizuka Satsuki tiene una agradable atmósfera a su alrededor, y me siento seguro estando a su lado.\
+ld c,":a;image\tachi\stk_t03.jpg",%type_crossfade_fst
+`"---Juju."@
+` Mientras hablamos, Yumizuka ríe de pronto como si hubiese recordado algo.@
+`"¿Qué pasa?@ ¿Dije algo gracioso?"@
+`"No, no es eso.@ Es que a partir de mañana, estaré tomando la misma ruta a la escuela que tú."@
+` Ella ríe, luciendo verdaderamente feliz.@
+` Ese rostro sincero y sonriente es suficiente para hacerme feliz mientras la observo.\
+cl a,%type_crossfade_fst
+` …… No lo había notado hasta ahora.@
+` Incluso haciendo a un lado su apariencia y su peculiaridad, Yumizuka Satsuki es algo linda.@
+` Lentamente estoy comenzando a entender por qué ha puesto tan nerviosos a los chicos de nuestra clase por tanto tiempo.\
+` Nuestra conversación cesa.@
+` Estoy simplemente fascinado por la sonrisa de Yumizuka y ambos quedamos en silencio.@
+` Sin decir nada, caminamos hacia el distrito residencial bajo el ocaso.@
+` De repente---\
+playstop
+bg "image\event\stk_e03.jpg",%type_crossfade_mid
+br
+`"Oye, ¿recuerdas lo que sucedió durante las vacaciones de invierno en nuestro segundo año de escuela media?"@
+br
+` Yumizuka murmura.@
+`"¿……?"@
+` Ladeo mi cabeza.@
+` Las vacaciones de invierno del segundo año de escuela media, fue cuando había solicitado quedarme en la escuela para tomar lecciones extra porque me sentía mal por quedarme con los Arima.@
+` Recuerdo lo suficiente, pero todavía no entiendo por qué ella me preguntó sobre eso.\
+`"Justo como pensé.@ Alguien como Tohno-kun nunca lo habría recordado."@
+` Decepcionada, Yumizuka deja caer sus hombros.\
+`"Habían dos cobertizos deportivos en nuestra escuela media, ¿recuerdas?@ Uno era un cobertizo nuevo usado por los clubes grandes, y el otro era uno viejo usado por los clubes más pequeños como Bádminton.@
+` El cobertizo viejo tenía un cierto problema; la puerta estaba mal alineada, por lo que habían frecuentes ocasiones en las que no se podía abrir."\
+` Cobertizo viejo… ¿Ese pequeño edificio de hormigón detrás del gimnasio…?\
+`"Ah, ese cobertizo.@ El que dejaron de usar después de que unas estudiantes quedaron atrapadas adentro."@
+`"Sí, ése mismo.@ Las estudiantes fueron unas de segundo año del club de Bádminton."@
+`"----¡Ah!"@
+br
+` Sí, algo como eso sucedió.\
+playstop
+play "*7"
+bg #000000,%type_tshutter_mid
+monocro #0000ff
+bg "image\bg\ima_06.jpg",%type_bshutter_mid
+` Fue a comienzos del año nuevo, en un frío día de invierno.@
+` Los primeros tres días del año nuevo habían pasado; había aplicado para lecciones extra y solicitado quedarme en la escuela para ayudar porque me sentía mal por quedarme con los Arima.@
+` Pero incluso eso fue sólo hasta las cinco de la tarde.@
+` Se había puesto oscuro, y fui forzado a dejar los salones porque todos los maestros estaban yendo a casa.\
+` A la mitad del invierno.@
+` Aunque sólo eran las cinco, los alrededores se habían oscurecido mucho.@
+` El reporte del clima había predicho nieve para ese día, y el frío era más severo de lo normal.@
+` Y entonces, justo cuando había decidido dirigirme directamente a casa por ese día, escuché un sonido de golpes viniendo del viejo cobertizo y fui a echar un vistazo.\
+` ---¿Hay alguien ahí?@
+br
+` Pregunté, y escuché las voces de muchas estudiantes respondiendo desde adentro del cobertizo.@
+` Habían estado atrapadas ahí durante dos horas.@ Mientras guardaban el equipo del club, cerraron la puerta a causa del frío, y ahora no se podía abrir de nuevo.@
+` No podían abrir la puerta sin importar qué hicieran, y querían que llamara a uno de los maestros.\
+` …… Pero todos los maestros se habían ido a casa.@ Y aunque fuese a llamarlos por teléfono, les tomaría por lo menos otra hora.@
+` El frío en ese día era verdaderamente terrible.@
+` En el tipo de frío que anticipa una nevada, pensé que sería cruel dejar a esas chicas atoradas en el cobertizo vistiendo sólo sus uniformes de educación física por una hora más.\
+` Después de dudarlo un poco y confirmando que nadie más estaba alrededor, me quité mis lentes y corté la "línea" sobre la puerta del cobertizo.@
+` La puerta se abrió, y unas cinco estudiantes, con los ojos rojos por el llanto, salieron---\
+bg #000000,%type_crossfade_mid
+monocro off
+bg "image\bg\bg_23b.jpg",%type_crossfade_fst
+`"…… Ahora que lo pienso, sucedió algo como eso.@
+` Pero me sorprende que lo sepas.@ La capitana del club de bádminton atrapado me dijo, 'Esto tiene relevancia en la supervivencia del club, así que no se lo digas a nadie.' Fue casi como si me estuviese amenazando."@
+`"¡Oh, Tohno-kun!@ No tenías interés en saber quiénes estaban atrapadas dentro, ¿verdad?@
+br
+` Escucha.@ Yo era uno de esos miembros del club de bádminton."@
+` Yumizuka suena como si estuviese haciendo pucheros.@
+` Eh… en otras palabras…\
+bg "image\event\stk_e03.jpg",%type_crossfade_mid
+`"---Todavía lo recuerdo bien.@ Cuando pienso en eso ahora, fue sólo estar atrapada dentro de un cobertizo, pero en ese momento, era frío y oscuro, y estaba muy preocupada.@
+` Todas pensamos que íbamos a congelarnos hasta la muerte.@
+` Mi estómago estaba gruñendo de hambre también.@ Estaba a punto de desmayarme."@
+`"Hmm… Debe haber sido duro."@
+` En verdad no puedo sentir empatía, así que doy una respuesta poco entusiasta.@
+` Indiferente, Yumizuka continúa recordando, trayendo de vuelta viejos eventos.\
+`"Y justo cuando todas estaban temblando, apareciste y preguntaste, '¿Hay alguien ahí?' con tu voz monótona habitual… y entonces la capitana se enfadó y gritó, '¿¡No puedes darte cuenta sólo con mirar!?'… ¿Recuerdas?"@
+`"Sí, lo recuerdo.@ Hubo un escandaloso ruido cuando ella arrojó un bate contra la puerta.@ Estaba muy sorprendido."@
+`"¡Es cierto!" dice Yumizuka, riendo.\
+`"Pero cuando escuchamos que todos los maestros se habían ido a casa, perdimos toda esperanza.@
+` No podíamos soportar estar ahí siquiera un minuto más, pero teníamos que afrontar la perspectiva de estar atrapadas hasta el día siguiente.@
+` Justo cuando estábamos pensando cuán miserable era el mundo, llamaste a la puerta y dijiste, 'Podría ser capaz de abrir la puerta, si pueden mantenerlo en secreto.'"@
+`"Sí.@ Y entonces escuché otro escándalo, y alguien dijo, '¡Si se abriera tan fácilmente, no estaríamos sufriendo aquí adentro!'.@ Ella estaba muy enfadada."\
+`"Ajaja.@ Sí, la capitana se sentía responsable por habernos quedado atrapadas, así que no tenía mucha paciencia disponible.@ Pero poco tiempo después, la puerta se abrió.@
+` Todas estaban felices porque los golpes con el bate de la capitana debían haber funcionado y salieron corriendo, pero yo estaba observándote, parado sin rumbo junto a la puerta."\
+` Yumizuka me mira afectuosamente.@
+` …… Pero eso sólo me incomoda.@
+` Para mí, no significó nada, así que no puedo apreciar su gratitud.\
+`"Estaba llorando con fuerza esa vez.@ Mis ojos se sentían como si se hincharan, y se veían terrible.@ ¿Qué crees que dijiste cuando me viste de esa manera?"@
+`"No lo sé.@ ¿Qué dije?"@
+` …… En verdad no recuerdo, así que pregunto, como si fuese algo que hizo otra persona.@
+` A pesar de esto, Yumizuka me sigue mirando felizmente.\
+`"Pusiste tu mano sobre mi cabeza y dijiste, 'Apresúrate y ve a casa a comer algo de Ozouni''.@ Estaba un poco avergonzada porque estaba temblando tanto a causa del frío."@
+`"……"@
+`"Hmm." Frunzo mis cejas.@
+` No sé lo que quise decir entonces.\
+`"Creo que querías que calentara mi cuerpo comiendo algo de Ozouni."@
+`"…… Ya veo.@ Fue justo después del Año Nuevo, después de todo."@
+` …… Eso suena como el estúpido tipo de cosas que yo diría.@
+` Ahora que es expuesto frente a mí de esta manera, me arrepiento de no haber elegido algo mejor para decir.\
+`"En ese entonces pensé, hay muchas personas de confianza en la escuela, pero si alguna vez en verdad necesito ser salvada, será alguien como Tohno-kun quien me salve."@
+`"Estás exagerando.@ Mira, es como cuando un pollo bebé piensa que el primer humano que ve es su madre.@ Casualmente yo te ayudé."@
+`"¡Eso no es verdad…!@ Desde entonces, en verdad creí que vendrías a ayudarme sin importar cuál fuese el problema."@
+` Su expresión es bastante decidida.\
+bg "image\bg\bg_22b.jpg",%type_tshutter_mid
+`"Estás dándome demasiado crédito, Yumizuka-san.@ No soy una persona tan fiable."@
+ld c,":a;image\tachi\stk_t07.jpg",%type_crossfade_fst
+`"Está bien.@ Eso es lo que yo creo, así que déjame seguir creyéndolo."@
+` Ella pronuncia esto mientras me mira fijamente, y estoy muy avergonzado para refutar.\
+`"--Bueno, supongo que puedes creer lo que quieras."@
+ld c,":a;image\tachi\stk_t03.jpg",%type_crossfade_fst
+`"¿Verdad?@ Así que si alguna vez estoy en un aprieto, tú vendrás a ayudarme, ¿no?"@
+` Yumizuka me pregunta, sonriendo.\
+` …… Para ser honesto, eso sería algo fastidioso.@
+` A pesar de lo que ella piensa, no soy la clase de sujeto que puede hacer cualquier cosa.@
+` No lo soy… pero cuando ella me mira con esa sonrisa, no quiero destruir la fé que tiene en mí.\
+`"Sí.@ Si está dentro de mi alcance, te ayudaré."@
+`"¡Sip!@ Gracias, Tohno-kun.@ Sé que es un poco tarde para decir esto, pero yo estaba muy feliz por lo que me dijiste en aquel entonces."@
+cl a,%type_crossfade_fst
+` Diciendo esto, Yumizuka se detiene de pronto.@
+` Naturalmente, yo también me detengo.\
+!w500
+ld c,":a;image\tachi\stk_t13.jpg",%type_crossfade_fst
+`"Siempre quise hablar contigo de esta manera, Tohno-kun."@
+br
+` En alguna parte de su voz hay una pizca de melancolía.@
+` Quizás sea a causa de la luz roja del ocaso, pero por alguna razón, Yumizuka parece solitaria.@
+br
+`"…… ¿Qué quieres decir?@ Puedes hablar conmigo en cualquier momento."@
+`"No, no puedo.@ Inui-kun está siempre a tu alrededor, y además… no puedo convertirme en alguien como tú, Tohno-kun."@
+` Con esa reservada respuesta, Yumizuka se aparta de mí.\
+ld c,":a;image\tachi\stk_t03.jpg",%type_lshutter_fst
+`"Bien, mi casa está por este camino, así que te veré mañana en la escuela."@
+`"¡Bai-bai!" Sonriendo, Yumizuka agita su mano y comienza a caminar por otra calle.\
+cl a,%type_lshutter_mid
+!w500
+bg #000000,%type_lcartain_mid
+playstop
+return

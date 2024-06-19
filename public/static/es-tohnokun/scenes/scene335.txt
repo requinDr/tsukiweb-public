@@ -1,0 +1,86 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_40b.jpg",%type_nowaitdisp
+` ---Si voy a la sala de estar, debería haber alguien ahí.@
+br
+` Tener compañía de seguro es más placentero que estar solo.\
+bg #000000,%type_lcartain_fst
+play "*3"
+bg "image\bg\bg_34c.jpg",%type_lcartain_fst
+` Entro a la sala de estar y veo a Kohaku-san.@
+ld c,":a;image\tachi\koha_t02.jpg",%type_crossfade_fst
+`"Ah, Shiki-san.@ ¿Qué puedo hacer por usted?@ La cena estará lista en una hora."@
+`"No, vine para relajarme, no para comer.@ ¿Estoy molestando?"@
+`"Oh, no, por favor entre.@ Veamos…"\
+cl a,%type_crossfade_fst
+ld c,":a;image\tachi\his_t23.jpg",%type_tshutter_mid
+`"Nee-san, respecto al edificio separado…"@
+`"Hola.@ Perdón por interrumpir, Hisui."@
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"…… Bienvenido a casa, Shiki-sama.@ Lamento no haber podido recibirlo anteriormente."@
+`"Está bien, no te preocupes por eso.@ Siento no haberte saludado cuando regresé."@
+ld c,":a;image\tachi\his_t02.jpg",%type_crossfade_fst
+`"-------"@
+` Las mejillas de Hisui se tornan un poco rojas.@
+` Poco a poco, le estoy sonsacando expresiones.@ Estoy complacido.\
+cl a,%type_crossfade_fst
+ld l,":a;image\tachi\koha_t01a.jpg",%type_crossfade_fst
+`"Qué oportuna.@ Hisui-chan, ¿podrías preparar una bebida para Shiki-san?"@
+ld r,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"Sí.@ Shiki-sama, ¿qué le gustaría beber?"@
+`"Hm.@ Ya que es antes de la cena, creo que un té sería perfecto.@ Sólo vine para charlar, no quiero ser una molestia."@
+`"Entonces, por favor espere un momento."\
+cl a,%type_crossfade_fst
+bg #000000,%type_tshutter_mid
+bg "image\bg\bg_34c.jpg",%type_bshutter_mid
+` Hisui regresa con tres tazas de té, y el tiempo pasa lenta y silenciosamente.@
+br
+`"Ah, por cierto, Hisui, ¿estabas hablando sobre el edificio separado anteriormente?"@
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"Sí.@ ¿Tiene alguna pregunta al respecto?"@
+`"Mm, no particularmente, pero Akiha dijo que ya nadie puede ir a ese lugar.@ ¿Sucedió algo ahí durante mi ausencia, por casualidad?"\
+cl a,%type_crossfade_fst
+ld c,":a;image\tachi\koha_t02b.jpg",%type_crossfade_fst
+`"No, nada parecido.@ Sólo sirve de alojamiento para sirvientes, así que no hay razón para que vaya allá, Shiki-san."@
+`"¿Alojamiento para sirvientes……?"@
+ld c,":a;image\tachi\koha_t03b.jpg",%type_crossfade_fst
+`"Sí.@ Aunque ahora sólo somos Hisui-chan y yo, hace poco habían más de diez sirvientes trabajando en la mansión.@ Ya que no hay espacio para tantas personas en la mansión, fue construido el edificio separado."\
+cl a,%type_crossfade_fst
+ld r,":a;image\tachi\his_t09.jpg",%type_crossfade_fst
+`"Nee-san---no debes hablar sobre eso."@
+ld l,":a;image\tachi\koha_t11.jpg",%type_crossfade_fst
+`"Ah."@
+cl a,%type_crossfade_fst
+` Hisui dice eso, y Kohaku-san mira alrededor con cara de culpa.@
+` …… No hay señal de Akiha.@ Kohaku-san deja salir un suspiro de alivio.\
+ld c,":a;image\tachi\koha_t04b.jpg",%type_crossfade_fst
+`"¡Shiki-san!"@
+`"Ah… Sí, ¿qué sucede…?"@
+`"…… ¡La plática que tuvimos es un secreto!"@
+` Kohaku-san sujeta fuertemente mi mano.@
+`"Ah, sí---no se lo diré a Akiha."@
+ld c,":a;image\tachi\koha_t03b.jpg",%type_crossfade_fst
+`"Sí, gracias."@
+` Kohaku-san suspira aliviada una vez más.@
+` Parece que Akiha prohíbe hablar sobre el edificio separado.\
+cl a,%type_crossfade_fst
+` ----Pero, ¿por qué?@
+` El edificio separado que solía ser el alojamiento de los sirvientes.@
+` Akiha no quiere que nadie vaya a ese lugar.\
+`"Oye, Kohaku-san.@ ¿Por cuánto tiempo ha estado en desuso el edificio separado?"@
+ld l,":a;image\tachi\koha_t11.jpg",%type_crossfade_fst
+`"Uhhh… ¿Hisui-chan?"@
+ld r,":a;image\tachi\his_t01b.jpg",%type_crossfade_fst
+`"…………"@
+` Hisui niega con la cabeza silenciosamente.@
+` Parece que ni siquiera se puede hablar de eso.@
+`"¿Qué?@ ¿Es un secreto?"\
+ld r,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"---Sí.@ Hablar sobre el edificio separado sería malo para su salud, Shiki-sama."@
+` Y con esa respuesta final, concluye la charla sobre el edificio separado.\
+bg #000000,%type_lcartain_mid
+playstop
+!w1500
+return

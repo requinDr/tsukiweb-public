@@ -1,0 +1,37 @@
+monocro off
+wavestop
+play "*2"
+;---added context above---
+bg "image\bg\bg_06a.jpg",%type_crossfade_mid
+play "*1"
+` --Aun después de la segunda hora, Yumizuka no se presentó.@
+` Sin ninguna forma de saber qué sucede, mi mal presentimiento sobre esto crece.\
+bg #000000,%type_tshutter_mid
+bg "image\bg\bg_06a.jpg",%type_bshutter_mid
+` Es la hora del almuerzo.@
+` A pesar de toda la emoción de la mañana, el salón ha regresado a su alegría de todos los días.@
+` Parece que nadie en la clase está tomando en serio la huida de Yumizuka Satsuki.@
+ld c,":a;image\tachi\ari_t01.jpg",%type_lshutter_fst
+`"Tohno, vamos a almorzar."@
+`"No te preocupes.@ No tengo ganas."@
+`"Huh, supongo que no se puede evitar.@ No te preocupes demasiado por los problemas de otras personas."\
+cl c,%type_lshutter_fst
+`"……"@
+` Los problemas de otros, ¿eh?@
+` Las palabras de Arihiko están demasiado cerca de la verdad.@
+`"¿Huh?@ ¿Hoy no estás con Inui-kun?"@
+ld c,":a;image\tachi\cel_t01a.jpg",%type_lshutter_fst
+`"…… ¿Senpai?@ ¿Qué estás haciendo en nuestro salón?"@
+`"Bueno, pensé que almorzaría con ustedes… Tohno-kun, ¿no vas a comer algo?"@
+` Senpai se sienta sobre el pupitre, mirándome ansiosamente.\
+`"No, parece que hoy no tengo apetito."@
+`"Ahh… ¿No te sientes bien?"@
+`"…… Algo así.@ No te preocupes por mí y ve al comedor.@ Arihiko probablemente ya está ahí."@
+ld c,":a;image\tachi\cel_t08.jpg",%type_crossfade_fst
+`"¡Oh, no te ves nada enérgico!@ No sé qué sucedió, pero si no almuerzas, te sentirás aun peor."@
+`"Es… verdad, pero…"\
+cl c,%type_crossfade_fst
+` Pero ya que no tengo hambre, no hay mucho que pueda hacer.@
+br
+` Yo----
+return

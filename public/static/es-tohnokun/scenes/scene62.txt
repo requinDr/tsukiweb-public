@@ -1,0 +1,16 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_06a.jpg",%type_nowaitdisp
+` Decido ir a comprar algo de pan y comerlo lentamente en mi salón de clases.@
+br
+` …… Aún quedan algunos chicos y también ese grupo cerrado de chicas.\
+`"…… ¿Huh?"@
+` Acabo de percatarme.@
+` Yumizuka Satsuki, normalmente la más llamativa de todas las chicas, no se ve por ningún lado.@
+`"…… Debe estar ausente."@
+` Debo estar muy distraído para no percatarme hasta la hora del almuerzo que uno de mis compañeros de clase ni siquiera está aquí.\
+bg #000000,%type_crossfade_mid
+!w1000
+return

@@ -1,0 +1,90 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_33a.jpg",%type_nowaitdisp
+br
+` ---No, tengo que averiguar sobre Senpai.@
+` No tengo tiempo para comer esta mañana.@
+br
+ld c,":a;image\tachi\his_t01.jpg",%type_lshutter_fst
+`"---¿Shiki-sama?"@
+` Hisui viene de la sala de estar.@
+` Debe haber regresado para ver qué me sucedió porque no aparecí después de un rato.\
+`"…… Lo siento.@ Voy a la escuela, por favor dile a Akiha que lo lamento."@
+ld c,":a;image\tachi\his_t07.jpg",%type_crossfade_fst
+`"…… Por favor espere Shiki-sama.@ No se ve bien.@ ¿Está seguro de que se siente bien……?"@
+`"---Estoy bien, sólo un pequeño dolor de cabeza.@ Bueno, me voy…… Lo siento, estoy siendo egoísta de nuevo."@
+cl a,%type_lshutter_fst
+` …… Digo algo muy egoísta y abro la puerta antes de que ella pueda responder.\
+bg #000000,%type_crossfade_slw
+bg "image\bg\bg_01a.jpg",%type_crossfade_slw
+` Llego a la entrada de la escuela.@
+` Ya que corrí desde la mansión, todavía no son siquiera las siete y media.@
+br
+`"…………"@
+` Me detengo y espero a Senpai junto a la entrada.@
+` Probablemente me veo un poco extraño para los otros estudiantes que pasan, pero no me importa mucho.\
+!w5000
+`"……………"@
+` Senpai no se presenta.@
+` Ya son más de las siete y media.\
+!w5000
+` Pasan diez minutos más.@
+` La entrada de la escuela está inundada de estudiantes que llegan.\
+!w5000
+` Faltan sólo unos cinco minutos para que la entrada cierre.@
+` Pero Senpai aún no viene.\
+`"………"@
+` Ella---podría no venir hoy.@
+` Ayer, vi todo lo que sucedió, así que ella podría no venir hoy, o mañana, o el día siguiente---
+br
+` ---Palpitar.@
+br
+`"……… Ah."@
+` Pensando eso, me siento un poco debilitado.@
+` Sacudo mi cabeza para aclararla de estos terribles pensamientos.\
+` …… Y entonces,
+` alguien me da una palmada en el hombro desde atrás.@
+br
+ld c,":a;image\tachi\cel_t07a.jpg",%type_lshutter_fst
+`"Tohno-kun, ¿qué estás haciendo aquí?"@
+`"¿¡Se, Senpai……!?"@
+`"Sí."@
+` Senpai asiente.\
+`"¿¡E, en serio……!?@ Pero ayer, tú estabas---"@
+` Mph.@
+` Antes de que pueda decirlo, Senpai coloca su mano sobre mi boca.\
+ld c,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
+`"Tohno-kun, aquí no.@ Hablemos detrás del gimnasio."@
+` Senpai tiene su sonrisa habitual mientras mantiene su mano sobre mi boca y hala mi brazo.@
+cl a,%type_lshutter_fst
+`"¡…, …!"@
+` Intento decirle que se detenga, pero no puedo hablar.@
+` Ella me hala enérgicamente.\
+bg #000000,%type_lcartain_fst
+bg "image\bg\bg_05a.jpg",%type_lcartain_fst
+play "*3"
+wave se2
+` ----La campana de la escuela repica sobre nosotros.@
+!w5000
+` …… La tutoría ha comenzado.@
+` Además, no hay nadie alrededor.@
+br
+ld c,":a;image\tachi\cel_t07a.jpg",%type_lshutter_fst
+`"Sí, nadie puede escucharnos aquí."@
+` Senpai finalmente me libera.@
+` Saltando hacia atrás, miro a Senpai directamente.\
+`"Quieres hablar sobre lo de anoche, ¿cierto?@ Si hay algo que quieras decir, por favor adelante, Tohno-kun."@
+` Senpai habla tranquilamente.@
+` Como si lo que sucedió anoche no fuese gran cosa.@
+`"¡……………!"@
+` Pero para mí sí fue gran cosa.@
+` Su actitud de ahora me hace enfurecer.\
+`"¿¡Entonces anoche, en verdad eras tú……!?"@
+`"Sí.@ Dije tu nombre en ese momento, así que es imposible seguir escondiéndolo."@
+cl c,%type_crossfade_fst
+`"¡…………!"@
+` Aprieto mis dientes.@
+` …… No esperaba una disculpa ni nada parecido, pero aun así---\
+return

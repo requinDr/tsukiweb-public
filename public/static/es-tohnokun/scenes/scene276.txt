@@ -1,0 +1,25 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_01a.jpg",%type_nowaitdisp
+`"………"@
+` No, tengo la sensación de que no veré a Senpai si espero aquí.@
+` Si Senpai no tiene deseos de verme, se irá tan pronto como me vea.@
+` …… De ser así, no vendrá a la escuela a través de la entrada frontal.@
+br
+`"…… Si acaso viene, lo hará por la entrada trasera."@
+` Corro hacia la parte trasera de la escuela con esto en mente\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_05a.jpg",%type_lcartain_mid
+` ----*suspiro*@
+` No hay nadie aquí.@
+` Ni siquiera estudiantes viniedo a la escuela por la entrada trasera.@
+` …… Pero, sigo esperando a Senpai quien de seguro no vendrá.\
+bg #000000,%type_lshutter_mid
+bg "image\bg\bg_05a.jpg",%type_lshutter_mid
+` La campana suena una vez, diciéndome que la entrada será cerrada.@
+` …… Senpai no vino.@
+` Debería regresar antes de que comience la tutoría.\
+bg #000000,%type_lcartain_mid
+return

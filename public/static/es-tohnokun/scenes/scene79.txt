@@ -1,0 +1,25 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_25a.jpg",%type_lcartain_mid
+ld c,":a;image\tachi\ark_t03.jpg",%type_crossfade_fst
+`"…… ¿Hmmm?"@
+` Mientras salimos del callejón, ella--Arcueid--frunce sus cejas y me lanza una mirada sospechosa.@
+ld c,":a;image\tachi\ark_t06.jpg",%type_crossfade_fst
+`"Oye, Shiki.@ ¿Eres un Cristiano, por casualidad?"@
+br
+` …… No tengo idea de qué está hablando ella.@
+`"¿Cris-chan…?@ ¿Qué pregunta es ésa?@ No conozco a ninguna chica que tenga un nombre como ése."\
+ld c,":a;image\tachi\ark_t03.jpg",%type_crossfade_fst
+`"Ya veo.@ Entonces debo haber entendido mal."@
+` Después de aparentemente haber tomado una decisión, ella gira hacia el distrito de oficinas.@
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"Muy bien, vamos.@ Tenemos que encontrar un lugar seguro por ahora."@
+` Arcueid comienza a caminar.@
+` "----De acuerdo."@
+br
+` No hay manera de que pueda retractarme ahora.@
+` Suspirando, camino detrás de ella.\
+bg #000000,%type_lcartain_mid
+return

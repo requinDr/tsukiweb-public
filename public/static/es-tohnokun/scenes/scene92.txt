@@ -1,0 +1,21 @@
+monocro off
+wavestop
+playstop
+bg #000000,%type_nowaitdisp
+;---added context above---
+br
+` ----es tragado.@
+br
+` Con un chapoteo, soy sumergido en la agitada y violenta ola.\
+` Una invasión opresiva.@
+` Viola, asalta, y disuelve.\
+`"--------"@
+` Carne, espíritu, alma… todo desaparece.@
+` No soy asesinado.@
+` Es más preciso decir que he sido derretido y absorbido como parte de esta ola negra.\
+` Observo al ser que soy yo desaparecer en la ola negra----\
+cl a,%type_waitdisp
+bg "image\word\end.jpg",%type_crossfade_slw
+resettimer
+waittimer 3000
+return

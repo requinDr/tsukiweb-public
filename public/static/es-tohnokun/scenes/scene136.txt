@@ -1,0 +1,95 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_32c.jpg",%type_lcartain_slw
+` Hay silencio frente la verja de la mansión.@
+` La hora es, siete en punto de la noche.@
+` Akiha debería estar de vuelta, probablemente bebiendo té en la sala de estar.\
+` ……………… *suspiro*@
+` No tengo ganas de sentarme a cenar pausadamente, pero si no regreso, Akiha y las otras seguramente se preocuparán por mí otra vez.@
+` Buscar a Arcueid tendrá que esperar hasta después de la cena.@ Me iré cuando Akiha y las demás vayan a dormir.\
+bg #000000,%type_lcartain_slw
+!w1000
+bg "image\bg\bg_40c.jpg",%type_lcartain_slw
+` ----La cena con Akiha ha terminado y me dirijo de vuelta a mi habitación.@
+` Bebí algo de té después de la cena con Kohaku-san y las otras, pero ni siquiera recuerdo de qué hablamos.@
+br
+`"----¿Dónde rayos está ella?"@
+` Mi cabeza está llena sólo de pensamientos sobre ese vampiro de cabello dorado.\
+bg #000000,%type_lcartain_slw
+bg "image\bg\bg_32c.jpg",%type_lcartain_slw
+` A las diez en punto, las luces de la mansión son apagadas.@
+` A la hora de dormir, todos vuelven a sus habitaciones, así que escapo de la mansión sin ser detectado.\
+`"…… Ella, probablemente está en la ciudad."@
+` …… No quiero pensarlo, pero la mayoría de las víctimas suelen ser encontradas en callejones.@
+` Si quiero encontrar a Arcueid----si quiero encontrar al vampiro asesino que continúa matando, tengo que buscar en las calles.\
+bg #000000,%type_lcartain_slw
+!w1000
+bg "image\bg\bg_26a.jpg",%type_lcartain_mid
+` ------*suspiro*@
+` Me siento sobre la barandilla de seguridad.@
+` Ya han pasado muchas horas.@
+` Busqué por la ciudad sin rumbo fijo, y no encontré siquiera el mas mínimo rastro de Arcueid.\
+`"………… Maldición."@
+` Es tan, frustrante.@
+` Por supuesto, sabía que no es fácil encontrar a alguien al azar en la ciudad, pero aun así me sentía optimista.@
+br
+`"¿Adónde fué……?"@
+` …… ¿Por qué?@
+` Sólo quería preguntarle sobre los asesinatos en serie, pero una vez que descubro que no puedo verla, yo----\
+`"Ah, detente.@ Detente.@ Debería simplemente detenerme."@
+` Me levanto de la barandilla y comienzo a caminar.@
+` Pronto será medianoche.@ Seguir buscando a Arcueid ciertamente es inútil.@
+`"…………"@
+` Pero, si he llegado tan lejos, puedo hacer un poco más.@
+` Hay un último lugar que necesito revisar.@ Si ella no está ahí, entonces volveré a la mansión.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_27b.jpg",%type_lcartain_mid
+` …… El parque desierto.@
+` Llego al lugar donde cooperé con Arcueid y derroté a Nrvnqsr.@
+` Habiendo buscado solamente en la ciudad, aún tengo que buscar aquí.@
+`"…… Bueno, no es que vaya a encontrar nada……"@
+` Me quejo en voz baja, y entro al parque.\
+bg "image\bg\bg_28b.jpg",%type_lcartain_mid
+` Medianoche.@
+` Como esperaba, no hay nadie aquí a estas horas de la noche.@ Con tanto silencio, se siente más bien refrescante.\
+`"…… Es cierto.@ No es que pueda encontrarla cuando me convenga."@
+` Suelto un suspiro y dejo caer mis hombros.@
+`"…… Qué estúpido.@ ¿Por qué estoy tan decepcionado?"@
+` Yo mismo no lo entiendo.@
+` Sólo una vez más----pienso que tal vez quería ver su sonrisa.\
+ld c,":a;image\tachi\ark_t08.jpg",%type_lshutter_fst
+`"Ah, ahí estás.@ Buenas noches, Shiki."@
+br
+` …… Sí, justo así.@ Un rostro tan alegre y despreocupado que hace imposible creer que pertenezca a un vampiro----
+br
+`"¿¡A,      Arcueid----!?"@
+` Sin siquiera pensar, sujeto sus hombros.@
+ld c,":a;image\tachi\ark_t12.jpg",%type_crossfade_fst
+`"¿Eh----?"@
+` Arcueid retrocede sorprendida.\
+` Sus hombros ciertamente son reales, y rápidamente retiro mis brazos.@
+cl c,%type_crossfade_fst
+\
+`"T, tú, por qué----"@
+` Aunque la persona que he estado buscando por tanto tiempo está justo frente a mí, no puedo hacer nada más que trabarme la lengua con mis palabras.@
+ld c,":a;image\tachi\ark_t03.jpg",%type_crossfade_fst
+`"¿Por qué?@ Qué raro.@ Estaba buscándote, no creo que sea una coincidencia que nos encontrásemos aquí."@
+`"Eh----¿Tú, me estabas buscando?@ ¿Por qué?"@
+ld c,":a;image\tachi\ark_t06.jpg",%type_crossfade_fst
+`"¿Por qué?----Oh, por ninguna razón."@
+` Ella dice francamente que no tiene razón para estar buscándome.\
+`"………………"@
+` …… Lo olvidé.@ Ella en verdad es como un gato en este sentido.@
+`"…… Bueno, supongo igual me sirve.@ Para ser sincero, también quería verte.@ Así que encontrarnos aquí, um----"@
+` Estaba a punto de decir que me hace muy feliz, pero ahogué esas palabras frenéticamente.\
+`"----En fin, quiero tener una conversación seria.@ Quiero hablar en otro lugar porque me siento incómodo aquí, ¿está bien?"@
+`"Claro----pero ¿hablar sobre qué?"@
+`"Ya verás.@ …… Vamos a la parte trasera del parque."@
+` Diciéndole que venga, comienzo a caminar.@
+cl c,%type_lshutter_mid
+` Ladeando su cabeza con curiosidad, ella me sigue obedientemente.\
+bg #000000,%type_lcartain_mid
+return

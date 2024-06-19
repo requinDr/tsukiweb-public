@@ -1,0 +1,53 @@
+monocro off
+wavestop
+play "*2"
+;---added context above---
+bg "image\bg\bg_40a.jpg",%type_nowaitdisp
+` ----Es verdad.@ Gracias a mi pesadilla, aún estoy un poco intranquilo.@
+` Tengo un poco de tiempo, así que debería descansar.\
+bg #000000,%type_tshutter_mid
+!w500
+bg "image\bg\bg_40a.jpg",%type_tshutter_mid
+` En algún punto, me doy cuenta de que me quedé dormido.\
+` Sacudo mi aturdida cabeza y miro alrededor.@
+br
+` Y entonces,
+ld c,":a;image\tachi\his_t01.jpg",%type_bshutter_fst
+`"Shiki-sama."@
+`"¡Uuaa!"@
+` Hisui está parada junto a mi cama, mirando mi rostro.\
+`"Qué, qué----"@
+`"Shiki-sama, ¿esto es aceptable?@ Son más de las ocho en punto."@
+`"----¿Eh?"@
+cl c,%type_crossfade_fst
+` Miro el reloj.@
+` Ciertamente, la aguja está señalando hacia las ocho.@
+`"¡Mierda, me quedé dormido……!"@
+` Salto de la cama.@
+` Nervioso, comienzo a cambiarme y entonces me percato de que Hisui todavía está aquí.\
+`"Hisui.@ Um, perdona, pero…"@
+ld c,":a;image\tachi\his_t09.jpg",%type_crossfade_fst
+`"Entiendo.@ Por favor vaya a la sala de estar esta vez."@
+cl c,%type_lshutter_fst
+` Hisui sale de mi habitación…… Sus ojos obviamente mostraban que estaba molesta.@
+`"…… Bueno, por supuesto.@  Ya había venido a despertarme, así que volver a quedarme dormido de esa manera……"@
+` Reflexionando, me cambio rápidamente.\
+bg #000000,%type_lcartain_mid
+playstop
+!w1500
+bg "image\bg\bg_01a.jpg",%type_lcartain_fst
+` …… Logro llegar a la escuela.@
+` La primera hora inició hace un rato y no hay nadie en la entrada.@
+` Suelto un suspiro mientras entro al edificio escolar.\
+bg #000000,%type_tcartain_mid
+wave se2
+!w1000
+bg "image\bg\bg_06a.jpg",%type_tshutter_mid
+play "*3"
+` ----La cuarta hora finaliza.@
+br
+` Llega el descanso del almuerzo, y la escuela se llena de ruido.@
+`"----Cierto."@
+` Akiha debería estar esperando en el patio.@
+` …… Tratándose de Akiha, probablemente hizo que Kohaku-san le preparase el almuerzo, pero debería ir a comprar algo por si acaso.\
+return

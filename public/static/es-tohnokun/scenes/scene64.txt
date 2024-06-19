@@ -1,0 +1,105 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_06a.jpg",%type_nowaitdisp
+` …… Supongo que iré a echar un vistazo en la habitación de la ceremonia del té.@
+` Estoy seguro de que ayer Senpai dijo algo sobre almorzar en ese lugar después de clases.@
+` Si Senpai esta ahí, tal vez pueda hablar con ella mientras almorzamos.@
+br
+` ---Más importante aún,
+` disfruto almorzar con Senpai, y también estoy preocupado por la historia en las noticias de esta mañana.@
+br
+`"---Muy bien."@
+` Debo golpear cuando el hierro está caliente y todo eso.@
+` Me dirijo hacia la habitación de la ceremonia del té antes de que Arihiko se percate de mi plan.\
+bg "image\bg\bg_11a.jpg",%type_lcartain_mid
+play "*3"
+` Llamo a la puerta de la habitación de la ceremonia del té.@
+` Después de una breve espera, la puerta se abre con un chirrido y Senpai asoma su cabeza.@
+ld c,":a;image\tachi\cel_t12.jpg",%type_lshutter_fst
+`"¿Huh?@ ¿Tohno-kun?"@
+` Perpleja, Senpai ladea su cabeza.@
+` No se ve molesta, pero parece que no entiende por qué vine aquí.\
+`"¿Te gustaría que almorcemos juntos, Senpai?"@
+` Sosteniendo el pan que compré en la cafetería, le digo por qué estoy aquí.@
+ld c,":a;image\tachi\cel_t08.jpg",%type_crossfade_fst
+`"¿Almorzar?@ Me alegra que me lo pidas, pero---"@
+` Senpai lo piensa, y se ve intranquila.@
+` …… Las cosas no se ven bien.@
+` Parece que Senpai no está muy interesada.@
+` Supongo que no tengo opción.@ Decido emplear una pequeña estrategia.\
+`"Traje pan de curry."@
+ld c,":a;image\tachi\cel_t05.jpg",%type_crossfade_fst
+`"¿Eh---?"@
+` El rostro de Senpai se torna brillante y alegre.@
+` …… Tenía un presentimiento sobre esto debido al almuerzo de ayer, pero me divierte su reacción.@
+`"Te daré esto en agradecimiento por el almuerzo de ayer, ¿por qué no comemos juntos?"@
+ld c,":a;image\tachi\cel_t04.jpg",%type_crossfade_fst
+`"¡Sí, por favor!@ ¡Acabo de encender la tetera!"@
+cl a,%type_lshutter_fst
+br
+` Apresuradamente, Senpai desaparece dentro.@
+` Siguiéndola, entro a la habitación de la ceremonia del té.\
+bg "image\bg\bg_09a.jpg",%type_lcartain_mid
+`"Ah……"@
+` Al entrar, se me hace obvio por qué Senpai estaba dudando.@
+` Sobre la alfombrilla tatami está una caja de almuerzo ya vacía.@
+` Parece que Senpai terminó de comer su almuerzo hace mucho.\
+ld c,":a;image\tachi\cel_t03.jpg",%type_lshutter_fst
+`"Tohno-kun, ¿quieres té verde o té inglés?"@
+`"¿Eh?@ …… Ah, té verde, por favor.@ Más importante aún, ¿ya terminaste de almorzar, Senpai?"@
+ld c,":a;image\tachi\cel_t04.jpg",%type_crossfade_fst
+`"Sí, hace un momento.@ Me quedé dormida esta mañana, no desayuné nada y estuve hambrienta toda la mañana.@ ¡Fue terrible!"@
+`"…… Ya veo.@ Bueno, no tienes que forzarte a acompañarme.@ Perdón por entrometerme.@ Comeré en mi salón, por favor tómate tu tiempo para relajarte."@
+ld c,":a;image\tachi\cel_t09.jpg",%type_crossfade_fst
+`"¿Eh---?@ ¿Quieres decir que no vas a darme nada de pan?"@
+` La tristeza de Senpai parece resonar desde el fondo de su corazón.\
+`"No, quiero decir---que debes estar satisfecha, ¿cierto, Senpai?"@
+ld c,":a;image\tachi\cel_t12.jpg",%type_crossfade_fst
+`"En absoluto.@ Estoy hambrienta."@
+` …… No parece que esté diciendo esto sólo para hacerme sentir mejor.@
+`"¿En serio?@ Bien, entonces me entrometeré… ¿En verdad estás de acuerdo con esto, Senpai?@ Sabes que el pan de nuestra cafetería es bastante voluminoso."\
+ld c,":a;image\tachi\cel_t02.jpg",%type_crossfade_fst
+`"¡No hay necesidad de preocuparse!@ Si es comida que me gusta, puedo comer ilimitadas cantidades de ésta."@
+` La tímida sonrisa de seguro no es por timidez, sino por anticipación al pan de curry.@
+`"………"@
+` …… Ella es una mujer de muchos misterios.@
+` Una persona que en estos tiempos pueda ser tan feliz por un pan de curry puede ser bastante valiosa…\
+bg #000000,%type_lshutter_mid
+!w500
+bg "image\event\cel_e02a.jpg",%type_lshutter_mid
+` Senpai come uno, yo como dos, y luego bebemos té.@
+` Arrodillándonos sobre la alfombrilla, Senpai y yo sorbemos de nuestro té.@
+` Sería grandioso si no fuese durante la hora del almuerzo en nuestra escuela, pero así es la vida.\
+`"¿Cómo es tu nueva casa, Tohno-kun?@ Parece que algo terrible sucedió esta mañana."@
+`"Hmm… sí.@ Bueno, el interior de la casa es muy elegante, pero hay unos perros callejeros verdaderamente ruidosos durante la noche.@ Supongo que también es malo que no haya TV ni habitaciones de estilo japonés, así que no hay un lugar como éste para beber té."@
+`"¿Qué, un perro callejero?@ ¿Quieres decir que lo que sucedió en tu casa no está relacionado con esos asesinatos en serie?"\
+`"En realidad no sé.@ Hay un muro muy alto alrededor de toda la mansión, y dicen que encontraron manchas de sangre sobre éste.@ Pero escucha, ahí es donde---"@
+br
+` ---Vi el perro callejero anoche.@
+` No pude decirlo.@
+br
+`"…… Hmm.@ Bueno, en fin, no tiene nada que ver con nosotros.@  Dejemos de discutir temas desagradables, ahora que finalmente encontramos una oportunidad para relajarnos."@
+`"¡En absoluto!@ Somos residentes de esta ciudad, creo que los asesinatos sí tienen algo que ver con nosotros."\
+` Sosteniendo su taza con una mano, Senpai me lanza una seria mirada.@
+`"Sí, supongo que es verdad, pero estarás bien si no sales a caminar por las calles muy entrada la noche, ¿no?@ Ya han sido asesinadas ocho personas hasta ahora, ¿cierto?@ Con esa cantidad de víctimas, la policía debería capturar al sujeto cualquier día de estos."@
+`"---¡Cielos, Shiki-kun!@ ¿No tienes ningún sentido del peligro?@ ¡Los reporteros han estado diciendo lo mismo desde que la tercera víctima fue encontrada, pero aún no lo han capturado, ¿¡cierto!?"\
+`"Hmm… Bueno, es verdad.@ Es sólo que no puedo identificarme con eso cuando le dan un subtítulo estúpido como 'El Vampiro de los Tiempos Modernos'.@ Lo siento, en verdad me lo tomé demasiado a la ligera.@ Vivimos en esta ciudad, así que debemos ser cuidadosos, ¿correcto?"@
+`"Sí.@ Me alegra que entiendas."@
+` Senpai sonríe con satisfacción.\
+`"Pero Senpai, ¿por qué lo llaman vampiro a fin de cuentas?"@
+`"Bueno, la sangre fue extraída de todos los cuerpos, ¿cierto?@ ¿No es como un vampiro?"@
+`"…… ¿En verdad lo crees?@ ¿No se dice que te conviertes en un vampiro cuando otro vampiro succiona tu sangre?@ Las víctimas están todas muertas, con los cadáveres para probarlo, así que no tienen por qué llamarlo un vampiro."@
+` Senpai ríe y asiente.@
+`"¿En verdad crees en cosas como los vampiros, Tohno-kun?"\
+`"…… Oye, sólo estoy diciendo que ésa es la manera en que las noticias lo presentan.@ Si en verdad hubiese un vampiro, como dije antes, no habrían cadáveres."@
+`"Sí, tienes razón.@ Pero, ¿puedes verlo de esta manera?@ Las personas que fueron encontradas muertas, murieron porque no pudieron convertirse en vampiros.@ Hay personas que pueden y personas que no pueden convertirse en vampiros, y aquellos que pueden convertirse en vampiros no aparecen como cadáveres después de ser atacados por uno.@ Porque aún están vivos en algún lugar."\
+`"Jaja, eso es lo que llamarías una historia de terror, Senpai."@
+`"Sí, exactamente.@ Lamento decir que la historia no tiene el toque de gracia."@
+` Riendo, Senpai sorbe de su taza.@
+br
+` Mientras sostenemos nuestra incoherente conversación, la hora del almuerzo finaliza.\
+playstop
+bg #000000,%type_lshutter_mid
+return

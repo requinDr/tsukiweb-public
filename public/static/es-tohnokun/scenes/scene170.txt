@@ -1,0 +1,77 @@
+monocro off
+wavestop
+play "*3"
+;---added context above---
+bg #000000,%type_lcartain_slw
+bg "image\bg\bg_25a.jpg",%type_lcartain_mid
+play "*3"
+` Por ahora, nos adentramos en la ciudad.@
+` Todo lo que queda es salir de la calle principal e ir al callejón vacío----\
+ld c,":a;image\tachi\ark_t01a.jpg",%type_lshutter_mid
+`"¿Huh?@ ¿Qué sucede, Shiki?"@
+`"Nada.@ Es diferente a lo normal, así que estaba un poco confundido."@
+`"¿?"@
+cl c,%type_crossfade_mid
+` Arcueid mueve su cabeza hacia un lado, desconcertada.@
+` …… Parece que ella no se da cuenta.\
+` Puedo sentir el peso de las miradas a todo mi alrededor.@
+` Sólo caminar por la calle hace que las personas a nuestro alrededor nos lancen miradas.@
+` …… No es necesario decirlo pero, probablemente sea porque Arcueid destaca mucho.\
+` Puedo notarlo en cierta medida, pero las reacciones de todos me hacen aun más consciente de ello, y es un poco preocupante.@
+` Arcueid actúa como normalmente lo hace pero, ya que no puedo evitar ser abrumado por su femineidad, parece que no puedo iniciar ninguna conversación con sentido.\
+ld c,":a;image\tachi\ark_t04.jpg",%type_crossfade_fst
+`"Hey, ¿me escuchas Shiki?@ Te estoy preguntado adónde vamos."@
+`"Espera, ya casi llegamos.@ Vamos a un lugar donde puedas relajarte."\
+bg #000000,%type_lcartain_slw
+bg "image\bg\bg_31a.jpg",%type_lcartain_slw
+br
+` ----Y llegamos al callejón.\
+`"Aquí estamos.@ La gente normalmente no pasa por aquí, así que puedes relajarte----"@
+ld c,":a;image\tachi\ark_t06.jpg",%type_crossfade_fst
+`"……………………"@
+` ¿Huh----?@
+` Su mirada repentinamente se torna cruel, casi mortal.\
+`"¿Arcueid……?@ No me digas, ¿no estás feliz con este lugar……?"@
+`"……………………"@
+` …… Parece tan furiosa que ni siquiera puede hablar.\
+`"Qué raro…… Eres un vampiro, por eso pensé que un lugar como éste te gustaría más que algún lugar lleno de gente----"@
+ld c,":a;image\tachi\ark_t07.jpg",%type_crossfade_fst
+`"¡----------!"@
+` La luz en sus ojos se agudiza.@
+` …… Esto no es bueno.@ Podría ser la primera que la he visto tan furiosa.@
+cl c,%type_crossfade_mid
+\
+` Soltando un profundo suspiro, Arcueid mira hacia arriba de nuevo.@
+ld c,":a;image\tachi\ark_t09.jpg",%type_crossfade_fst
+`"Oye, Shiki.@ ¿Qué clase de broma es ésta?"@
+`"Ah----uh."@
+` Aterradora.@ La sonrisa en su cara es muy aterradora.\
+`"No, um…… En verdad lo siento.@ Ciertamente me confundí."@
+` Junto mis manos e imploro perdón.@
+` Ella continúa sonriendo.\
+ld c,":a;image\tachi\ark_t08.jpg",%type_crossfade_fst
+`"Es cierto, en realidad no hay nada que hacer aquí.@ Lo único que podríamos hacer es repetir el momento en que nos vimos por primera vez."@
+br
+` ¿¡Cuando nos vimos por primera vez!?@ Eso significa----
+br
+`"Sí, el resultado podría ser un poco distinto al de entonces, pero también podría ser divertido, ¿cierto Shiki?"\
+br
+br
+` ----Esto es una amenaza.@
+` Ella contrataca con una sonrisa.\
+`"…… Dije que lo siento.@ Te compensaré por esto, por favor deja de sonreír así.@ Te llevaré a algún lugar mejor."@
+ld c,":a;image\tachi\ark_t11.jpg",%type_crossfade_fst
+`"¿En serio?@ Estaba poniéndome de humor para lo que dije."@
+` Parece decepcionada.\
+` …… En verdad debo reflexionar sobre mis acciones.@
+` Aunque Arcueid es un vampiro, debo haber sido bien estúpido como para llevarla a un callejón en una cita……\
+bg #000000,%type_lcartain_mid
+!w1000
+bg "image\bg\bg_25a.jpg",%type_lcartain_mid
+` Cuatro horas…
+` Apropiada para la bola de curiosidad llamada Arcueid, terminamos yendo a la tienda por departamentos frente a la estación.\
+` Parece que Arcueid me hizo traerla aquí sólo para fastidiarme, pero en alguna parte del camino, creo que comenzó a ser muy divertido para ella y recuperó la alegría.@ Fue un poco agotador, pero creo que lo pasamos muy bien.\
+bg #000000,%type_lcartain_mid
+playstop
+!w1000
+return

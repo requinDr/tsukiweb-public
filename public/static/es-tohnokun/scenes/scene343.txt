@@ -1,0 +1,71 @@
+mov $phasebg,"image\bg\bg_47.jpg"
+mov $phasetitle_a,":a;image\word\PAKI_06A.PNG"
+mov $phasetitle_b,":a;image\word\day_06.png"
+gosub *left_phase
+bg #ffffff,%type_nowaitdisp
+!w500
+bg "image\bg\bg_40a.jpg",%type_crossfade_mid
+waveloop se1
+`"¡…!"@
+` Incapaz de resistirlo, salto de la cama.@
+` Comienzo a respirar con fuerza.@
+` Presiono mi boca con una mano y resisto las ganas de vomitar.@
+`"Qu-----"@
+` ¿Qué, fue eso?@
+` Un sueño.@ Fue un sueño.@ Pero, ¿qué fue eso?@
+` ¿Por qué tuve un sueño tan terrible, de matar personas y beber su sangre?\
+` Intento recobrar el aliento.@
+` La sed en mi garganta.@
+` La sensación de morder la carne.@
+` El placer ardiendo en mi cerebro mientras mataba.@
+` …… Esas cosas, ¿por qué parecen tan reales?@
+` Incluso puedo recordar perfectamente la sensación y el sonido del corazón mientras lo arrancaba del cuerpo.\
+` Continúo jadeando vorazmente por aire.@
+` No sé si fue realmente "placer".@
+` Fue sólo excitación condensada como una bala, disparada directamente dentro de mi cabeza.@
+`"Guh…"@
+` Mi respiración se detiene al recordar.@
+` Entonces---quizás ese impacto podría ser algo llamado "placer".\
+`"¿Por qué… ese tipo de sueño…"@
+` Miro mis manos.@
+` Por supuesto, están perfectamente blancas, sin un solo rastro de sangre roja.@
+` Estoy acostado en la cama, y una fresca luz solar matutina brilla a través de la ventana.@
+br
+` …… Aquella vez.@ Aquel primer encuentro con la Yumizuka vampiro en un callejón trasero… ¿aún está en mi mente?@
+` Tal vez fue por eso que tuve un sueño tan espantoso.\
+wave se0
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\bg_40a.jpg",%type_nowaitdisp
+`"Au----"@
+` Me duele el cuello donde Yumizuka lo mordió.@
+br
+` ---Los que son mordidos por vampiros también se convierten en vampiros.@
+` Inesperadamente, esa frase común aparece dentro de mi cabeza.@
+`"…… No puede ser.@ Le estoy dando demasiadas vueltas al asunto."\
+wave se3
+` Disculpándose, Hisui entra a la habitación.@
+` La misma figura, la misma voz de siempre.@
+play "*2"
+ld c,":a;image\tachi\his_t01.jpg",%type_lshutter_mid
+`"Buenos días, Shiki-sama."@
+` Hisui habla con cortesía.@
+` Desde mi llegada, Hisui ha traído tranquilidad con ella cada mañana.@
+` Al pensar esto, el tumulto de sueños malos simplemente desaparece de mi cabeza.\
+ld c,":a;image\tachi\his_t07.jpg",%type_crossfade_fst
+`"…… ¿Shiki-sama?@ ¿Sucede algo malo?"@
+`"---Ah, no.@ Sólo quedé embelesado por un momento.@ …… Buen día, Hisui.@ Esta mañana es como todas, eh."@
+ld c,":a;image\tachi\his_t05.jpg",%type_crossfade_fst
+`"Ah---sí.@ Lamento que no sea mejor de lo normal."@
+`"No lo dije en ese sentido.@ Sólo siento que, como eres la misma de siempre, esta mañana es tan apacible como todas."@
+` ¡Muy bien!@ Con vigor, salgo de la cama.\
+`"Me cambiaré e iré a la sala de estar.@ Ya puedes irte."@
+ld c,":a;image\tachi\his_t16.jpg",%type_crossfade_fst
+`"Muy bien.@ Por favor discúlpeme."@
+cl a,%type_lshutter_mid
+` Hisui se retira y cierra la puerta tranquilamente.@
+`"Es cierto---haciendo a un lado mis estúpidos pensamientos, debería ir a la escuela…"@
+` Dominando mis pensamientos, respiro profundamente.@
+` Son diez para las siete.@
+` Al igual que ayer, hoy no tengo prisa, así que---
+br
+return

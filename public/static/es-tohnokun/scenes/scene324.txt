@@ -1,0 +1,830 @@
+monocro off
+wavestop
+;---added context above---
+play "*3"
+bg "image\bg\bg_34c.jpg",%type_lshutter_mid
+` ---La ingesta alcohólica continúa.@
+br
+` No sé cómo sucedió, pero parece que la "Fiesta de Bienvenida de Tohno Shiki" se ha convertido en una fiesta de copas.\
+` Puede que Akiha esté acostumbrada a beber licor, porque se traga su vaso como si estuviese bebiendo agua.@
+` Kohaku-san bebe lentamente mientras rellena la copa de Akiha.@
+` Noto que sus caras aún se ven normales, supongo que ellas no muestran la ebriedad en sus caras.\
+` …… Hisui se sienta en el sofá, mareada después de beber un sorbo.\
+`"…… Akiha en verdad tiene mucha tolerancia al alcohol."@
+` Mirando a la sonriente Akiha y a Kohaku-san, bebo mi vaso.@
+` Es sólo agua, ya que sólo tomé un bocado de alcohol durante el brindis.@
+` Pruebo un poco del salmón ahumado sobre la mesa.@ Es exquisito.@ En la casa Tohno, hasta los bocadillos son de primera clase.\
+`"……………… Mmm."@
+` Aunque después podría haber muchos problemas, es un momento bastante agradable.@
+` Para ser franco, la conversación entre Akiha y Kohaku-san es totalmente aburrida.@ Como si estuviesen discutiendo que el sol sale por el este y se oculta por el oeste.@
+` A pesar de eso, me parece bastante encantador verlas reír con ese tipo de conversaciones.\
+ld c,":a;image\tachi\his_t11.jpg",%type_lshutter_mid
+`"………………"@
+` Por otro lado, Hisui está sosteniendo el vaso que usó durante el brindis, y su mirada está perdida.@
+` Cada vez que aparto la vista de Hisui, el vaso se vacía un poco más.@ 
+` …… Ella también parece estar divirtiéndose.\
+cl c,%type_lshutter_fst
+` Tomo otro poco de comida disimuladamente.@
+` Soy muy débil para beber alcohol, así que prefiero comer los bocadillos.@
+` …… Y.@
+`"¿…………?"@
+` ¿Qué sucedió?@
+` Akiha se levanta y camina hacia mí.\
+ld c,":a;image\tachi\aki_t21b.jpg",%type_lshutter_fst
+`"Nii-san.@ Sólo te veo comiendo, ¿no vas a beber nada?"@
+` Akiha me mira un poco insatisfecha.\
+`"…… Mira, no me importa que te embriagues, pero no deberías tratar de hacer que otros beban a tu ritmo.@ No estoy acostumbrado a beber mucho, y si quieres beber con alguien, Kohaku-san puede-----"@
+` Intento señalar hacia Kohaku-san, pero…
+` Ella no está ahí.@ Parece que fue a la cocina para buscar más alcohol.\
+ld c,":a;image\tachi\aki_t11b.jpg",%type_crossfade_fst
+`"¡Bueno discuuulpame!@ No estoy ebria en lo más mínimo."@
+` Levantando su vaso con una mano, Akiha se inclina hacia adelante.@
+`"…… Ya veo.@ Ya que Kohaku-san no está aquí……"@
+` Supongo que se está metiendo conmigo porque no tiene a nadie con quien hablar.\
+ld c,":a;image\tachi\aki_t21b.jpg",%type_crossfade_fst
+`"Kohaku no tiene nada que ver con esto.@ Estamos hablando de la razón por la que no estás bebiendo."@
+`"…… Bueno, he estado bebiendo…"@
+`"Eso es mentira.@ Yo, no he tenido oportunidad de servirte nada.@
+` Estaba bebiendo para que pudieses relajarte, pero todo lo que has hecho es masticar la comida de Kohaku.@ Ni siquiera has bebido un solo vaso, ¿verdad?"@
+` Akiha hace pucheros.@
+` ¿Soy sólo yo o sus pasos son un poco inestables?\
+`"Akiha, tengo que preguntar, ¿estás ebria?"@
+`"No seas ridículo.@ No estoy ebria.@ Tú estarás borracho mucho antes que yo."@
+`"…… La que está borracha eres tú."@
+ld c,":a;image\tachi\aki_t11b.jpg",%type_crossfade_fst
+`"Apresúrate y termina tu vaso.@ Escucharé lo que quieras decir cuando lo termines."@
+` Ella señala mi vaso autoritariamente.@
+` Pero su dedo se está tambaleando de un lado a otro.\
+`"…… Akiha, ya te lo he dicho pero, en verdad estás ebria."@
+ld c,":a;image\tachi\aki_t07b.jpg",%type_crossfade_fst
+`"¡Cielos----!@ Eres demasiado persistente.@ ¡Te dije que no estoy ebria!"@
+cl c,%type_lshutter_fst
+` Akiha grita y se tambalea hacia atrás.@
+` …… Su propia voz hace que se maree, ¿qué parte de esto no es estar ebria?\
+`"…… Oh bueno.@ Siéntate, podemos charlar un poco, supongo."@
+` Palmeo el sofá junto a mí.@
+ld c,":a;image\tachi\aki_t13b.jpg",%type_lshutter_fst
+`"Ah…… sí, me sentaré."@
+cl c,%type_lshutter_fst
+` Akiha se sienta sobre el sofá.\
+` No sé adónde se fue toda su actitud mandona, pero, ella se sienta dócilmente.@
+`"…………………………"@
+`"…………………………"@
+` Por alguna razón, de repente no me siento cómodo.@
+`"……………… Hmm."@
+` Resignado, agarro mi vaso.@
+` Tomo un ligero trago.@
+` El extraño alcohol quema mi garganta, y no sabe nada bien.@
+` Siento que el suelo se hunde bajo mis pies, como si estuviese mareado por mi anemia.\
+`"……………"@
+` Pero, tampoco puedo decir que esto se siente mal.@
+` No debería tener problemas para terminarlo, así que bebo el resto del vaso.\
+ld c,":a;image\tachi\aki_t18b.jpg",%type_lshutter_fst
+`"…… Estoy sorprendida.@ Puedes haber dicho lo contrario, pero parece que en verdad te gusta beber, Nii-san."@
+`"¿Qué quieres decir?@ No soy un gran bebedor ni nada parecido."@
+`"Eso no es lo que parece.@ Te veías muy feliz bebiendo eso."@
+cl c,%type_lshutter_fst
+` Akiha se inclina y toma una botella de la mesa.@
+ld c,":a;image\tachi\aki_t04b.jpg",%type_lshutter_fst
+`"Voy a suavizarlo con agua, ¿o tienes alguna otra preferencia?"@
+` Akiha me sirve algo de whisky sin preguntar.@
+` El sentido común me exige que la detenga.@
+` Pero ella se ve tan feliz que echo a un lado todo mi sentido común.\
+`"…… Por favor suavízalo bastante.@ De otro modo, no podré beberlo."@
+`"Como quieras.@ Bien, entonces comencemos, ¿de acuerdo?"@
+` Akiha llena mi vaso felizmente.@
+`"………… Vaya, ni siquiera bebo tanto cuando estoy con Arihiko."@
+` Me recuesto sobre el sofá.@ Bebo el vaso con el cuello tan inclinado hacia atrás que hasta puedo ver el techo.@
+` Bebo lentamente lo que Akiha me sirvió sin separar mi boca del vaso.\
+`"---Fiu.@ Bueno, ¿estás satisfecha, princesa?"@
+` Dejo el vaso vacío sobre la mesa.@
+ld c,":a;image\tachi\aki_t08b.jpg",%type_crossfade_fst
+`"Así es como se hace.@ Tengo que quitarte puntos por no beberlo rápido, pero aun así pasaste el examen."@
+`"Eres muy estricta.@ Ése fue mi nuevo récord, ¿sabes?@ Me dijiste que bebiera, así que me forcé a hacerlo."@
+`"¿En serio?@ Es muy poco común que me hagas compañía de esta manera, Nii-san."@
+cl c,%type_lshutter_fst
+` Ella ríe entre dientes.@
+` Se sirve otro vaso, y lo bebe.\
+` -----Mi corazón late escandalosamente ante la visión de su rostro.@
+br
+` Se ve tan madura cuando está bebiendo.@
+` Cierra sus ojos e inclina su cabeza hacia atrás.@
+` Viendo a su blanca garganta tragar alcohol voluptuosamente, me olvido de la ebriedad.@
+`"-----Aaah."@
+` Akiha suelta un profundo respiro.@ El vaso está vacío.@
+` …… Bajo su aliento, dice algo para indicar que es delicioso.\
+`"………………"@
+ld c,":a;image\tachi\aki_t08b.jpg",%type_lshutter_fst
+`"¿?@ ¿Qué sucede, Nii-san.@ ¿Tengo algo en la cara?"@
+`"Ah----nada, no es nada."@
+` Sin pensar, agarro mi vaso.@
+ld c,":a;image\tachi\aki_t04b.jpg",%type_crossfade_fst
+`"¿Quieres otro?@ Esta vez, beberemos algo un poco más fuerte."@
+` Akiha vuelve a llenar los vasos.@
+` …… En realidad no quería otro vaso, pero supongo que no me hará daño.\
+cl c,%type_lshutter_fst
+`"…………………… Mmm."@
+` Tratando de imitar a Akiha, lo bebo todo de un solo trago.@
+` No era mucho alcochol, pero no debí haberlo bebido tan rápido.@
+` Mi cabeza comienza a girar y caigo de vuelta al sofá.\
+`"¿Nii-san---?@ ¿¡Estás, estás bien……!?"@
+`"Ah, estoy bien.@ Sólo me mareé un poco, pero no estoy ebrio.@ Creo que descansaré por un momento.@ Puedes seguir divirtiéndote."@
+` Acostado sobre el sofá, miro el techo distraídamente.@
+` Aunque me siento totalmente agotado, me siento increíblemente bien.\
+`"…… Lo siento.@ Yo… te forcé a beber demasiado."@
+` La voz de Akiha suena muy triste.@
+`"No, tal vez me sobrepasé un poco, pero se siente bien.@ Lo bebí porque tú lo bebías con mucho gusto.@ Pero creo que el resultado es bueno.@
+` Así que adelante, sigue bebiendo.@ Una vez que me tranquilice, te acompañaré de nuevo."@
+`"---De acuerdo.@ Si tú lo dices, esperaré hasta entonces."@
+` Escucho el sonido de algo siendo vertido.@
+` Como supuse, ella se sirve otro vaso y lo bebe.\
+`"……………………"@
+` …… Qué raro.@ Esto no es gran cosa, pero---me siento increíblemente relajado aquí.\
+`"…………………………………………………………………………………………………………………… ¡Muy bien!"@
+` Tomando un respiro, me levanto del sofá.\
+ld c,":a;image\tachi\aki_t01b.jpg",%type_lshutter_fst
+`"¿Nii-san?@ ¿Ya te sientes mejor?"@
+`"Estoy bien.@ Te haré compañía un poco más."@
+` Le entrego mi vaso.@
+` Sonriendo, ella me sirve otro trago.@ Esta vez, decido beberlo a mi propio ritmo.\
+cl c,%type_crossfade_fst
+` …… El tiempo pasa.@
+` Hisui se ha quedado dormida sobre el sofá.@
+` Kohaku-san nunca regresó de la cocina.@
+` Los únicos que estamos activos somos Akiha y yo, pero estoy bastante ebrio, así que no necesariamente diría que estoy activo.@
+` Pero aun así, quiero hacerle compañía a Akiha hasta que Kohaku-san regrese.\
+ld c,":a;image\tachi\aki_t26.jpg",%type_lshutter_fst
+`"…… Nii-san.@ Hoy eres muy amable."@
+` Akiha dice esto de repente, con una pequeña voz.@
+`"-----¿Eh?@ ¿Amable?@ ¿Yo?"@
+`"Sí.@ Normalmente, eres una persona muy fría.@ Es muy raro que actúes tan amablemente, ¿no?"@
+`"……………… ¿En serio?@ En realidad no lo sé, pero tal vez soy frío."\
+`"…… Oh, Nii-san, no te entiendes muy bien a ti mismo.@ Eres una persona muy amable, pero al mismo tiempo, eres muy frío.@
+` …… Porque no haces distinción alguna entre las personas.@ No hay nadie a quien quieras más, sin importar que te agrade o le odies.@ Nii-san, tú quieres y perdonas a todos."\
+`"…… Pero eso es muy cruel para las personas que quieren estar más cerca de ti.@ Para ti, todos son iguales.@ Yo, Kohaku, Hisui… somos iguales para ti.@
+` Eso no es amabilidad.@ Como un perro viejo que sabe que su muerte está cerca, simplemente no quieres dejar nada atrás.@
+` …… Eras así en aquel entonces, pero ahora, cómo lo digo…… pareces muy peligroso, y eso me pone nerviosa."@
+` Deprimida, Akiha continúa hablando, casi como si pensara en voz alta.@
+` Su vaso está vacío.@ Ella no lo rellena, y su suave voz hace eco en el aire.\
+`"…… Oye.@ Pensé que tal vez eras desconsiderado y muy solitario… Estaba pensando una estupidez como ésa.@
+` No hay nadie a quien aprecies más en tu corazón.@ Quizás perdiste a esa persona hace mucho tiempo.@
+` En ese entonces, pensaba que estaba bien que simplemente me quisieras.@ Al menos no había nadie a quien quisieras más, así que eso era suficiente.@
+` …… Pero ahora, eso es----"\
+cl c,%type_lshutter_fst
+ld c,":a;image\tachi\koha_t02b.jpg",%type_lshutter_fst
+`"¡Gracias por esperar!@ ¡Más comida y bebidas!"@
+` Con un sonrisa, Kohaku-san regresa.@
+cl c,%type_lshutter_fst
+ld c,":a;image\tachi\aki_t13b.jpg",%type_lshutter_fst
+`"Ah……"@
+` Akiha de repente se traga sus palabras, y con un suspiro, se sirve más alcohol.\
+ld c,":a;image\tachi\aki_t12b.jpg",%type_crossfade_fst
+`"Oye, Nii-san, por favor bebe un poco más.@ Sólo yo estoy bebiendo ahora."@
+` Tomando la botella que trajo Kohaku-san, ella vierte un poco más en mi vaso.\
+`"No, ya tuve suficiente.@ He bebido el doble de lo normal, por favor déjame descansar.@ Si bebo más, en verdad terminaré en mal estado."@
+`"¿Qué estás diciendo?@ Todavía no has bebido siquiera una botella.@ Es demasiado temprano para decir que tuviste suficiente.@ Dijiste que beberías conmigo, ¿cierto?"@
+` "Vamos," dice ella, mientras sostiene mi vaso frente a mí.@
+` Pero, en verdad estoy en mi límite.\
+cl c,%type_lshutter_fst
+ld l,":a;image\tachi\koha_t02b.jpg",%type_lshutter_fst
+`"Ya, ya, Akiha-sama.@ Tiene que entender que Shiki-san no tiene la misma tolerancia que usted, Akiha-sama.@
+` Shiki-san, debería negarse o estará en problemas.@ Akiha-sama no se embriaga sin importar cuánto beba, y si continúa bebiendo hasta que ella esté contenta, terminará bebiendo hasta el amanecer."@
+ld r,":a;image\tachi\aki_t07b.jpg",%type_lshutter_fst
+`"¡Espera un minuto, Kohaku!@ ¡Me haces parecer alguna clase de adicta al alcohol!"@
+` Furiosamente, Akiha toma otro trago.\
+cl r,%type_lshutter_fst
+` Aunque ha bebido mucho, pareciera que fuese su primer vaso.@
+` …… Sin importar lo que diga Akiha, Kohaku-san parece tener razón.\
+`"…… Lo siento, Akiha.@ En verdad tengo que parar ahora.@ Sabes que mi doctor dice que no debería beber mucho, ¿verdad?"@
+ld r,":a;image\tachi\aki_t13b.jpg",%type_lshutter_fst
+` Akiha cae en un silencio de culpa.@
+`"…… Eso, es verdad……"@
+`"No te pongas triste.@ Aún puedo hacerte compañía hasta que termines de beber.@ ¿Qué te parece?"@
+`"………………"@
+` Ella asiente, pero no parece muy satisfecha.\
+ld l,":a;image\tachi\koha_t03b.jpg",%type_crossfade_fst
+`"Bien, entonces yo le serviré sus bebidas, Akiha-sama.@ Shiki-san se quedará aquí, así que todo está bien, ¿cierto Akiha-sama?"@
+ld r,":a;image\tachi\aki_t16b.jpg",%type_crossfade_fst
+`"Eso, creo…… ciertamente es bastante raro que Nii-san me esté haciendo compañía.@ Lo dejaré pasar por esta vez."@
+cl a,%type_lshutter_fst
+` Akiha le entrega su vaso a Kohaku-san.@
+` Sonriendo, Kohaku-san le sirve otro trago a Akiha, quien comienza a sorber lentamente.\
+bg #000000,%type_lshutter_mid
+playstop
+!w1000
+bg "image\bg\bg_34b.jpg",%type_lshutter_mid
+play "*1"
+` Se ha hecho muy tarde.@
+` Hisui finalmente despertó, y hablamos de cosas sin importancia.@
+` Probablemente sea culpa del alcohol, pero no recuerdo nada de lo que hablamos.@
+` Sólo una insignificante y cálida conversación.@
+` Como no estaba acostumbrado a ese tipo de cosas, sentía una comodidad insegura, como si colgara de un hilo de seda.@
+` Tal vez sea debido a eso.@
+` Por una parte, pensé que sería agradable que esto continuase, pero por otra, quería un poco de tiempo para mí solo.\
+` Y de repente.@
+ld c,":a;image\tachi\aki_t12b.jpg",%type_lshutter_fst
+`"…… ¿Nii-san……?"@
+` Akiha me mira, con ojos llenos de ansiedad.\
+`"¿Qué sucede?@ ¿Te siente bien, Akiha?"@
+`"No…… no es eso.@ De repente me puse nerviosa.@ …… Oye, Nii-san.@ No volverás a irte, ¿verdad?"@
+`"No.@ …… No sé qué sucederá en el futuro, pero he decidido quedarme aquí por ahora."@
+` …… Al menos hasta que termine la escuela, y hasta que Akiha parezca poder arreglárselas por sí sola.@
+br
+ld c,":a;image\tachi\aki_t11b.jpg",%type_crossfade_fst
+` ---Pero.@
+` Eso implicaría que voy a irme en algún momento.\
+`"Detente, no quiero escuchar esas palabras.@ Ésta es tu casa, sin importar qué suceda, es mejor que vivas aquí, ¿cierto?"@
+cl c,%type_crossfade_fst
+` Después de decir esto, ella bebe su vaso.@
+` …… Es una visión asombrosa.@
+` Como si se tragase su intranquilidad, ella vacía su vaso.@
+` Glup, glup.@
+` Sus mejillas están levemente sonrojadas, mostrando que está mareada.\
+ld c,":a;image\tachi\aki_t26.jpg",%type_crossfade_fst
+` Akiha suspira.@
+`"…… ¿Por qué siempre me haces sentir tan nerviosa, Nii-san?"@
+` Debe estar ebria, porque me mira inexpresivamente.@
+br
+` ------.@
+` Al ver eso,
+` mi corazón comienza a latir más rápido sin razón alguna.\
+`"…… ¿Estás escuchando?@ Mientras estés aquí, estaré bien, pero tú siempre, siempre…………"@
+` Sus ojos miran directamente hacia adelante.@
+` Sus mejillas están rojas, y sus ojos vidriosos.@
+` Todo esto----parece muy erótico.\
+br
+` …… Tal vez porque también estoy ebrio.@
+` Ella es mi hermana, ¿entonces por qué----\
+`"…………………… Aki, ha."@
+`"…… N…… Nii-san, me…… siento, extraña……"@
+` Ella habla sin propósito, como si fuese otra persona.@
+` Si esto continúa, yo----\
+cl c,%type_lshutter_mid
+ld c,":a;image\tachi\koha_t02b.jpg",%type_lshutter_fst
+`"Akiha-sama, su vaso está vacío.@ Le serviré un poco más, ¿de acuerdo?"@
+`"Ah…… sí, gracias, Kohaku."@
+` Kohaku-san le sirve otra bebida, la cual bebe de inmediato.@
+cl c,%type_lshutter_fst
+br
+` -----Y entonces.@
+br
+ld c,":a;image\tachi\aki_t01b.jpg",%type_lshutter_fst
+` De pronto, Akiha se ve muy seria.@
+`"…… ¿Akiha?"@
+`"…… Qué raro, parece que estoy ebria."\
+` Ella masajea su sien con sus dedos.@
+`"¿Pareces estar ebria?@ …… Has estado ebria por un buen rato."@
+`"¿Qué estás diciendo?@ Estoy ebria, así que obviamente digo cosas sin sentido."@
+` Ella coloca su vaso sobre la mesa rápidamente.\
+`"Es extraño…… Acabo de empezar."@
+cl c,%type_lshutter_fst
+` Diciendo eso,
+` ella se desploma sobre mí.\
+`"¿¡O, oye, Akiha……!?@ ¿Qué estás----"@
+` Eso es bastante obvio.@
+`"……………… Oye."@
+` No hay respuesta.@
+` Su respiración me dice que está felizmente dormida.\
+ld c,":a;image\tachi\koha_t05b.jpg",%type_lshutter_fst
+`"¿Huh?@ Esto ciertamente es raro.@ Hace años que no veía a Akiha-sama ebria."@
+` Kohaku-san sonríe muy entretenida.@
+`"…… Kohaku-san.@ ¿Qué quieres decir?"\
+ld c,":a;image\tachi\koha_t02b.jpg",%type_crossfade_fst
+`"Bueno, Akiha-sama normalmente no se embriaga.@ Pero cuando bebe por encima de cierto límite, supongo que todo el alcohol le afecta, y se queda dormida.@ Así que para Akiha-sama, embriagarse es lo mismo que ir a dormir.@
+` No sé si es bueno o malo, pero si Akiha-sama se embriagase como la mayoría de la gente, ¿no sería atemorizante?@ Shiki-san, ¿puede imaginarse a Akiha-sama haciendo estragos?"@
+cl c,%type_lshutter_fst
+br
+` …… Kohaku-san dibuja una imagen mental muy aterradora.@
+` Decido no responder y miro el rostro dormido de Akiha.\
+` ---Akiha está durmiendo satisfactoriamente.@
+br
+` Está inclinada, con todo su cuerpo sobre el mío.@
+` Puedo sentir su respiración y el calor de su cuerpo.@
+` …… Recuerdo esa extraña sensación que tuve anteriormente.@
+` Debe haber estado totalmente ebria, porque parecía una persona completamente distinta.@
+` No puedo negar que estaba extremadamente nervioso.@
+` Tenerla durmiendo tan felizmente sobre mí me deja aturdido.\
+` Sin duda alguna, es muy hermosa.@
+` No podía creer que era mi hermana cuando la vi después de ocho años.@
+` Pero eso no significa nada.@
+` Sólo puedo pensar que verla descansar sobre mí es algo bueno.@
+` Sin duda alguna, es mi hermana.@
+` Proteger a Akiha es una de las razones por las que volví a la mansión----\
+ld c,":a;image\tachi\his_t01.jpg",%type_lshutter_fst
+`"Shiki-sama, si Akiha-sama duerme de esa manera, creo que podría coger un resfriado."@
+`"Eh---ah, es cierto.@ Es octubre, no deberíamos bajar la guardia---"@
+ld c,":a;image\tachi\his_t16.jpg",%type_crossfade_mid
+`"Llevaré a Akiha-sama a su habitación."@
+cl c,%type_lshutter_fst
+` Hisui monta a Akiha sobre sus hombros y deja la sala.@
+` Los únicos que quedamos somos Kohaku-san y yo---\
+ld c,":a;image\tachi\koha_t02b.jpg",%type_lshutter_fst
+`"Bueno, si Akiha-sama está dormida, deberíamos terminar esta fiesta.@ Me encargaré de ordenar las cosas, por favor regrese a su habitación, Shiki-san."@
+` Asiento.@
+` En realidad quiero ayudar, pero estoy muy ebrio para eso.@
+` Si ayudase en este estado, probablemente sólo estorbaría.\
+`"N…… Lo siento, Kohaku-san.@ Por favor encárgate de las cosas."@
+ld c,":a;image\tachi\koha_t03b.jpg",%type_crossfade_fst
+`"Déjemelo a mí, por favor.@ Buenas noches, Shiki-san."\
+bg #000000,%type_crossfade_mid
+playstop
+!w1000
+bg "image\bg\bg_42c.jpg",%type_lcartain_mid
+` ----Salgo al patio para aclarar un poco mi cabeza.@
+br
+` La brisa es un poco fría, y se siente bien sobre mi piel caliente.@
+bg #000000,%type_nowaitdisp
+bg "image\bg\bg_42c.jpg",%type_nowaitdisp
+`"---Esto es malo.@ En verdad bebí demasiado."@
+` Beber todo eso me dio dolor de cabeza, y empiezo a sentirme un poco mareado.@
+` …… Probablemente tendré pesadillas esta noche.@
+` Bueno, eso es algo que debo enfrentar después de beber.@
+` Akiha parecía muy feliz esta noche.@
+` Una o dos pesadillas es un pequeño precio a pagar por eso.\
+` Sentado en una silla, respiro profundamente.@
+br
+`"-------Hm."@
+br
+` La brisa nocturna sopla sobre mi piel.@
+` …… No hay nada más que silencio.@
+` Todas las otras casas están lejos de la mansión Tohno.@
+` Sentado aquí, siento que estoy en una mansión en medio del bosque, y casi olvido que soy un estudiante normal.\
+` Una vacía y débil atmósfera.@
+` Un insonoro escenario de estancamiento.@
+` El pequeño fragmento de memoria, acerca de un jardín.@
+br
+` No hay nadie allí.@
+` Ningún padre para gritarnos,
+!w750
+` nadie para atarnos o encerrarnos,
+!w750
+` ni siquiera esa persona que maldice a Tohno Shiki…
+!w750
+br
+` Hace mucho tiempo, todo fue borrado, reduciéndose a algo inútil.\
+`"----------"@
+` Pensando en esas incoherentes ideas, mis párpados comienzan a caer más y más.@
+br
+bg #000000,%type_crossfade_slw
+play "*8"
+br
+`"Shiki-san, si duerme ahí, cogerá un resfriado."@
+br
+` ---Y.@
+` Esa voz me sacude el sueño.\
+bg "image\bg\bg_42c.jpg",%type_crossfade_mid
+ld c,":a;image\tachi\koha_t12.jpg",%type_lshutter_fst
+`"…… Lo siento, Shiki-san.@ Supongo que habría sido mejor que no bebiese nada esta noche."@
+` Kohaku-san dice esto con su sonrisa habitual, mirando hacia mí.@
+` …… Creo que Kohaku-san debe haber supuesto que vine aquí para enfriar mi cuerpo.\
+`"Creo que me dejé llevar un poco.@ Sin pensar en su salud, lo forcé a hacer demasiado.@ Fue muy duro, ¿no?"@
+` Kohaku-san mantiene su distancia, apenada.@
+` …… ¿Qué es esto?@ Ésta no parece la Kohaku-san alegre de siempre.@
+` Beber fue mi decisión, así que no debería sentirse mal por eso.\
+`"…… Cielos, no pareces tú en absoluto, Kohaku-san."@
+` Miro a Kohaku-san, pero aún parece apenada, así que dirijo mi soñolienta mirada hacia el bosque.\
+cl c,%type_lshutter_fst
+`"No fue nada duro.@ Akiha estaba muy feliz, y fue divertido.@ Kohaku-san, lo estás pensando demasiado."@
+` Mirando hacia el bosque inexpresivamente, trato de hacer que mi voz suene lo más amable que me sea posible.\
+` ………@
+` …………………………@
+` …………………………………@
+` …………………………………………@
+br
+` Un breve siencio tiene lugar a continuación.@
+` De repente, como un conejo asomando su cabeza detrás de un arbusto, Kohaku-san entra en mi campo visual.\
+bg "image\event\koha_e01a.jpg",%type_crossfade_mid
+`"¿Kohaku-san?"@
+`"Ah, está despierto, Shiki-san.@ Se quedó muy callado de repente, y pensé que se había quedado dormido."@
+` Ella dice esto regañándome.@
+` Suena como si quisiera decirme que no debería dormir aquí.\
+`"…… Estoy bien, Kohaku-san.@ Estoy despierto, no te preocupes.@ Volveré a mi habitación una vez que termine de enfriarme, así que puedes volver adentro."@
+`"Mm, me niego.@ También quería enfriarme, así que le haré compañía hasta que se vaya."@
+` Con su sonrisa habitual, Kohaku-san mira las hojas caídas en el bosque con nostalgia.\
+`"…… Bueno, si eso quieres, está bien, Kohaku-san."@
+` Kohaku-san no responde, y camina sobre la hojas que se arrugan con cada paso que da.@
+` …………@
+` ………………………@
+` …………………………………@
+` ……………………………………………………@
+br
+` Otro silencio tiene lugar.\
+`"…… Gracias, Kohaku-san.@ El día de hoy fue muy divertido."@
+` Lo digo en serio.@
+`"¿Qué quiere decir?@ Lo de hoy no fue algo por lo que debería agradecernos."@
+`"…… Tal vez, pero en verdad fue divertido.@ Ahora que lo pienso, fue la primera vez que hicimos algo como eso, y finalmente me sentí como parte de la familia."@
+br
+` …… No es que no hiciésemos cosas así cuando estaba con los Arima.@ Es sólo que cuando vivía allí, nunca quería ser una molestia, y no podía concentrarme en divertirme como hoy.\
+`"¿Familia?"@
+` Ladeando su cabeza, ella pregunta con una voz suave.@
+` Por un breve instante, me pareció que Kohaku-san retiró su máscara habitual, pero vuelve a ser la de siempre.\
+`"Pero Shiki-san, mientras permanezca en la mansión, nunca tendrá la familia con la que está soñando.@
+` Todos sus parientes lo rechazaron, y su única aliada es Akiha-sama.@
+` Eso significa que su vida aquí será muy dolorosa."@
+` …… Lo que ella dice es correcto.@
+` Hace ocho años, me trataban mal, tanto como para sacarme de esta casa, así que es natural que aún piensen mal de mí.\
+`"…… Bueno, estoy preparado para eso, pero en realidad no importa.@ Akiha lo soportó por ocho años.@ Soy su hermano mayor, así que debería ser capaz de soportarlo fácilmente."@
+` Esos ocho años.@
+` Desde que era pequeña, Akiha tuvo que soportar una educación muy estricta.@
+` Comparado con eso, desagradarle a mis parientes en verdad no es mucho.\
+`"Ya veo.@ Akiha-sama es muy afortunada de tener un hermano que piense tanto en ella."@
+`"No lo sé.@ No creo que sea un buen hermano para Akiha."@
+` Aún sonriendo, ella continúa riendo tontamente@
+` …… Verla reír tanto me hace sentir un poco avergonzado.\
+`"Pero, es extraño.@ Sólo piensa en Akiha-sama y se olvida de sí mismo."@
+`"------¿Eh?"@
+`"Usted también, ha tenido una vida mala.@ Fue desheredado y expulsado, así que también debe haber vivido momentos difíciles.@
+` Y cuando finalmente comenzó a llevarse bien con la familia Arima, regresó a este lugar.@
+` Fue obligado a dejar una familia normal que le sentaba mejor, debido a un simple capricho de la casa Tohno."\
+`"……………………"@
+` Ni siquiera sé cómo responder.@
+` Esa mañana, hace tres días.@ Recuerdo la cara de Keiko-san, parada en la entrada cuando nos despedimos.@
+` No quería ver a esa persona tan firme sonreír con tanta tristeza.@
+` Como dijo Kohaku-san---dejé atrás una gran parte de mí que estaba muy apegada a ellos cuando me fui---\
+`"¿Lo ve, Shiki-san?@ No me diga que nunca pensó en eso."@
+`"------"@
+` No, eso es algo en lo que no debería pensar.@
+wave se0
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_42c.jpg",%type_crossfade_fst
+`"…… Kohaku-san…… ¿por qué estás---"@
+` Quería preguntarle por qué está diciendo todo esto ahora.@
+` Quería que Kohaku-san, Akiha y Hisui pensaran que regresé a la mansión porque lo deseaba.\
+`"Shiki-san."@
+` Escucho su voz.@
+` No puedo ignorar su voz, así que levanto la vista.\
+bg "image\event\koha_e01b.jpg",%type_crossfade_mid
+`"Usted también lo sabe.@ Habría sido más feliz si se hubiese quedado con la familia Arima."@
+br
+` ----Eso.@
+` Pero, ¿por qué ella---
+br
+`"¿Por qué?@ ¿Por qué regresó a la mansión ahora, cuando sólo hay infelicidad esperándole aquí?"@
+br
+` ---¿Por qué está diciendo eso---con esa cara al borde de las lágrimas---\
+`"……………………"@
+` No puedo responder.@
+` Sólo miro fijamente a Kohaku-san, como si estuviese en alguna clase de trance.\
+bg "image\bg\bg_42c.jpg",%type_lshutter_slw
+`"…… Qué cruel eres, me pides hablar sobre cosas muy complicadas."@
+ld c,":a;image\tachi\koha_t03b.jpg",%type_lshutter_fst
+`"Lo siento.@ Supongo que también debo estar ebria.@ Debe haber algo mal en mí, como para decir semejantes cosas."@
+` Ella está sonriendo.@
+` …… Sonreír de esa manera le hace parecer que no me ha preguntado algo tan serio.\
+`"…… Kohaku-san.@ Sobre lo que dijiste antes, ¿no es natural que regrese a mi propia casa?@ No podía dejar a Akiha sola, y no podía ser una carga para los Arima por siempre."@
+`"Entonces, ésa es su razón para regresar."@
+` Parece que Kohaku-san comprende.@
+` ---Pero, eso es una mentira.@
+` Hay otra razón---algo más importante que Akiha.\
+`"¿Shiki-san?@ ¿Qué sucede?"@
+`"…… Oh, es diferente, Kohaku-san.@ En realidad, hay otra razón importante."@
+`"¿En serio?@ ¿Quiere decir que es un secreto?"@
+`"…… No lo sé.@ No es que sea un secreto, pero es un recuerdo importante que tengo, y no quiero hablar al respecto.@
+` Tomé prestado algo cuando me fui de aquí, así que regresé para devolverlo."@
+ld c,":a;image\tachi\koha_t14.jpg",%type_crossfade_fst
+`"----------"@
+` …… Pero, parece que Hisui no lo recuerda.\
+` Me levanto de la silla.@
+`"Ya me he enfriado, así que volveré a mi habitación."@
+` Levantando una mano, salgo del patio.@
+ld c,":a;image\tachi\koha_t13.jpg",%type_crossfade_fst
+` Kohaku-san simplemente me mira, estupefacta.\
+bg #000000,%type_crossfade_mid
+playstop
+!w2000
+bg "image\bg\bg_40c.jpg",%type_lcartain_fst
+` Caigo sobre la cama.@
+` Comienzo a sentirme soñoliento, probablemente por culpa del alcohol.@
+`"……………………"@
+` Tal vez porque le dije esas palabras a Kohaku-san.@
+` Comienzo a pensar en la promesa que hice hace ocho años.\
+` ----Nunca podrás volver a esta mansión.@
+br
+` Aún recuerdo cuando mi padre me dijo esas palabras, y mis sentimientos cuando dejé mi habitación.@
+` El momento en que comprendí que estaría totalmente solo, al igual que antes de conocer a Sensei.@
+` Al verme incapaz de mantener la promesa que le hice a Sensei, supongo que quedé vacío por dentro.@
+` Pero en aquel momento, la chica con quien hablé sólo una vez.@
+` …… fue lo único que salvó la situación.@
+` No sé qué tipo de magia había en esas palabras.\
+`"Devuélvela, ¿de acuerdo?" …… Sólo esas palabras.@
+br
+` Pero para mí, esas palabras significaron mucho en aquel entonces.@
+` Yo---siempre pensé que esas palabras eran importantes.@
+` …… Bueno, aunque parece que Hisui olvidó haberlas dicho.\
+`"…… Oh bueno, no se puede evitar.@ Fue sólo una promesa que hicimos cuando éramos niños."@
+` Es una pena, pero en verdad no se puede evitar.@
+` Ocho años es un largo tiempo.@
+` Recordar una promesa de la niñez es más extraño que olvidarla, supongo.@
+`"…… Bueno, debería dormir."@
+` Respirando profundamente, cierro los ojos.@
+br
+` ----Me hundo en un profundo sueño.\
+bg #000000,%type_crossfade_mid
+!w4000
+wave se0
+bg "image\bg\bg_40d.jpg",%type_lshutter_fst
+` ---Siento el calor y mi cuerpo despierta.@
+br
+` Se está asando.@ Mi garganta está ardiendo.@ Mi sangre se está evaporando.@
+` El ardor debe estar dejando cicatrices por todas partes.\
+`"-----"@
+` Asando.@
+` No puedo pensar claramente.@
+` Siento la sucia presencia de otra persona en mi habitación.@
+` Ardiendo.@
+` Decido dejar mi habitación.\
+play "*4"
+bg "image\bg\bg_33d.jpg",%type_nowaitdisp
+!w1000
+bg "image\bg\bg_48d.jpg",%type_nowaitdisp
+!w500
+bg "image\bg\bg_47.jpg",%type_nowaitdisp
+bg "image\bg\bg_22c.jpg",%type_nowaitdisp
+bg "image\bg\bg_25b.jpg",%type_nowaitdisp
+br
+` ---El reloj dice que es más de medianoche.\
+` El ardor no se detiene.@
+`                /Confusión.@
+` Palpitar, Palpitar.@ Mi corazón palpita.@
+`                /Excitación sexual.@
+` El mundo entero palpita al unísono.@
+`                /Falsa ilusión.@
+` Ardiente.@ Carmesí.@
+`             /Tubo de escape.@
+` Explotar.@ Multiplicar.@
+`            /Las alas negras de los insectos.@
+` Es como si mis ojos,
+`              /Sangre de loco deseo.@
+` tuviesen un pulso.@
+`             /Tipo, muerte diferente.@
+\
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_30b.jpg",%type_crossfade_fst
+` Entro a la oscuridad.@
+` Mi explosivo corazón me hostiga para que avance.@
+` Más y más.@
+` Palpitar    Palpitar,
+`      Palpitar     Palpitar.@
+` El latido que hace a mi existencia insignificante en comparación.@
+` Mi corazón se duplica, quemando mi cuerpo con su feroz pulsación.@
+br
+` Ahora, es hora de cumplir su deseo…\
+bg #9c0120,%type_crossfade_fst
+bg #000000,%type_crossfade_fst
+!w1500
+bg "image\bg\ima_13b.jpg",%type_nowaitdisp
+monocro #ff0000
+bg "image\bg\bg_31b.jpg",%type_crossfade_fst
+br
+br
+br
+br
+br
+br
+` ---Y entonces,
+`  habían cadáveres de desconocidos frente a mí.\
+`"------Una, dos, tres personas……"@
+` Cuento en voz alta.@
+` Señalo a cada una con mi dedo, mi rojo dedo.@
+` No.@
+` Mis manos parecen pintadas de rojo.@
+` Por supuesto, no hay nada de pintura a mi alrededor.@
+` Lo único que hay aquí es el despellejado espagueti (con carne, por supuesto) de los tres cadáveres.@
+` En el suelo---está mi cuchillo, con la inscripción "Nanatsu Yoru".\
+`"………… Esto significa……"@
+br
+` Ni siquiera es necesario pensarlo.@
+br
+`"………… Yo, hice esto."@
+br
+` Recojo mi cuchillo.@
+br
+` …… No puedo creerlo, pero lo hecho, hecho está.@
+` Ahora que me doy cuenta, mi cuerpo ardiente se ha enfriado.@
+` Ahora que he terminado, debería volver a la mansión.\
+wave se8
+`"-------Kk.@ Alguien viene."@
+` Alguien viene hacia el callejón.@
+` Grandioso.@
+` Este lugar ya está rebosando de espagueti, y ahora tengo que hacer más salsa de carne encima de eso.\
+` Los pasos se acercan.@
+` La oscura sombra se hace un poco más clara.@
+`"------"@
+` Aprieto mi cuchillo.@
+` Esa sombra entra al callejón.\
+bg #000000,%type_nowaitdisp
+monocro off
+bg "image\bg\ima_14.jpg",%type_lcartain_fst
+` ¡Kiiin!@ El sonido de metal contra metal.@
+br
+` ----No puedo creerlo.@
+br
+` Sin ninguna advertencia, esa sombra interceptó la totalidad de mi ataque.@
+` El enemigo también usa un cuchillo.@
+` Nuestros ataques neutralizaron los golpes fatales que dirigimos hacia nuestras gargantas.\
+playstop
+bg "image\bg\bg_31b.jpg",%type_lshutter_fst
+`""-----¡Sorprendente!""@
+` Nuestras voces coinciden en la oscuridad.@
+` Guardamos nuestros cuchillos al mismo tiempo.@
+br
+`"No esperaba ver a alguien de mi clase al regresar.@ Es la primera vez que veo a un asesino."@
+br
+` Él ríe mientras dice esto.@
+` Una risa pura sin ninguna mala intención.@ Es como la risa de un boxeador que finalmente baja de peso y entra al ring para enfrentar a su mayor rival de toda la vida.@
+br
+` Probablemente,
+` tengo la misma sonrisa en mi rostro.\
+`"----Heh."@
+` Él resopla mientras se da la vuelta.@
+` Salimos caminando hacia la calle principal.@
+br
+bg #000000,%type_lcartain_fst
+play "*1"
+bg "image\bg\bg_52.jpg",%type_lcartain_fst
+`"Éste parece un buen lugar.@ Es un poco raro que dos hombre adultos hablen de pie, ¿no?"@
+` Me siento en la acera.@
+` Como si acabase de percatarse de algo, él sigue caminando… hacia la máquina expendedora.\
+`"Oye, dame algo de dinero.@ Yo no tengo nada."@
+` No soy exactamente rico en este momento, pero le doy la moneda más grande que tengo.@
+`"Siempre quise probar esto."@
+` Dice felizmente, y compra dos latas de café.@
+`"Atrápala."@
+`"De acuerdo."@
+` Atrapo el cambio y una lata de café.@
+` Él se sienta a mi lado y bebe de la lata.@
+br
+` …… Por alguna razón, pienso que esto es lo único que he estado haciendo todo el día.\
+`"…… Puaj.@ No creo que los cigarrillos y el café sean tan buenos.@ ¿Me pregunto por qué lo adultos beben estas cosas?"@
+`"Están entrenando su resistencia.@ Ser adulto es un trabajo muy duro."@
+`"Ah, ya veo.@ Eres muy listo."@
+` Él ríe entre dientes, encantado.@
+` Bebo un poco también.@
+` …… No puedo evitar estar de acuerdo con él.@ Deben ser terriblemente suicidas si quieren beber algo que sabe a veneno.\
+`"Bueno, en fin, eres un sujeto terrible.@ ¿Cómo puedes atacar la garganta de alguien tan repentinamente?"@
+`"Mira quien habla.@ Tú también tratabas de matarme."@
+`"¿En serio?@ Bueno, lo hecho, hecho está.@ Ambos estamos vivos, así que estamos a mano."@
+br
+` …… Bueno, tiene razón.@
+` Ambos tratamos de matarnos, y por eso, aunque uno de nosotros hubiese muerto, seguiríamos estando a mano.@
+` Como una competencia, eso suena correcto.\
+` A pesar de que insiste en que es desagradable, continúa bebiendo felizmente su café.@
+`"…… Bueno, no es malo una vez que te acostumbras.@ Esto se siente como una reunión de chicos malos expulsados de la sociedad."@
+` Él dice eso, matando su sonrisa.@
+`"¿En serio?@ Bueno, ¿quieres fumar?"@
+` De esa manera nos veríamos más como chicos malos.\
+`"Ah, no quiero.@ Eso adormece el cerebro.@ Si quieres permanecer puro, no deberías tomar ningún veneno."@
+`"…… Dice el sujeto que está bebiendo café."@
+`"¿Qué pasa contigo?@ Eres bastante quisquilloso para ser un asesino.@ Los humanos comen veneno todos los días, ¿pero esto no está bien?@ Tú también tienes algo de tolerancia al café, ¿cierto?"@
+` Él ríe de manera escandalosa.@
+` Siento exactamente lo mismo, así que tomo otro sorbo.\
+bg #000000,%type_lshutter_mid
+bg "image\bg\bg_52.jpg",%type_lshutter_mid
+` Hablo con él por una hora más.@
+` Divagamos sobre nada mientras miramos pasar a los autos.@
+` El tema más inútil fue probablemente el de nuestros poderes especiales.@
+` Mis ojos que pueden ver la muerte.@
+` La gran dificultad para morir de su cuerpo.@
+` Comenzamos a discutir sus principios.@
+`"…… Ya veo.@ Bueno, ¿eso significa que puedes matar los cinco sentidos?"@
+` Él dice semejante tontería.\
+`"No puedo hacer eso.@ No puedo matar algo que necesita una expresión para ser comprendido por lo impreciso que es."@
+`"En absoluto.@ Mira, si quieres matar la vista, mata los ojos.@ La audición, mata los oídos.@ Yo al menos puedo hacer eso…
+` Pero tú eres diferente.@ Puedes matar las cosas sin aplastarlas.@ En el momento en que ves esas líneas, puedes matar.@ No al objeto, sino a su significado.@
+` Por eso----algo más allá de los cinco sentidos, como el sexto sentido…… el espíritu y la emoción, deberías ser capaz de matar esas cosas también."\
+`"……………………… Hmm."@
+` …… Bueno, tiene sentido.@
+` Mis ojos son una aberración de por sí.@
+` Usar la lógica para entenderlos es un error desde el principio.@
+br
+` …… ¿Entonces también puedo matar eso?@
+` Esa aparición que vi una vez durante mi niñez.@
+` Esa cosa perturbadora, llamada Carmesí Rojo Bermellón.\
+`"Pero, eso parece difícil.@ Si hago eso, no sé por cuánto tiempo podría permanecer cuerdo."@
+`"Sí.@ Es como tratar de calcular como un dios usando la mente de un humano.@ De seguro te inutilizarías a ti mismo."@
+` Él dice esto mientras camina hacia la máquina expendedora una vez más.\
+`"Oye."@
+` Aún mirando hacia la máquina expendedora, extiende sus manos detrás de él y en mi dirección.@
+` Le arrojo una moneda, la cual atrapa habilidosamente y utiliza para comprar otra lata de café.@
+` Después de beber eso, voltea hacia mí nuevamente.@
+!w750
+br
+`"En verdad ha pasado mucho tiempo desde la última vez que hablé con otra persona."@
+!w750
+br
+` Eso es bastante raro.\
+`"…… Qué extraño, ¿estuviste varado en una isla o algo así?"@
+`"¿Huh?@ Aún estoy varado en esta isla.@ Parece que estoy desalineado con la sociedad.@ Dicen que alguien que mata gente sin razón simplemente está loco.@
+` En verdad no hay manera de que alguien como yo, que está fuera de sintonía, pueda tener una conversación con alguien en sintonía."\
+`"…… Hmm.@ ¿Entonces estamos fuera de sintonía?"@
+`"Sí.@ No es cuestión de quién lo está.@ Los que no están en sintonía con la sociedad son los que están fuera de sintonía."@
+`"¿En serio?@ Pero, tal vez la sociedad es la que está fuera de sintonía."@
+`"¿Qué quieres decir con eso?"@
+`"Exactamente lo que dije.@ ¿Acaso no acabas de decirlo?@
+` Es como la regla de la mayoría.@ Se dice que la opinión de la minoría es 'inutilizable', y es rechazada porque difiere de la opinión de la mayoría.@
+` No importa quién tiene la razón o quién está equivocado.@ Si no encajas, eres dejado fuera, tengas o no la razón.@ El término 'fuera de sintonía' no sigue reglas universales."\
+`"-----Heh, ¿estás tratando de decir que los asesinos como nosotros no somos malvados?"@
+`"…… ¿Quién sabe?@ No sé nada sobre el bien y el mal.@ Pero si lo piensas lógicamente, no somos los que estamos fuera de sintonía.@
+` …… Veamos, ¿qué tal si usamos a los boxeadores como un ejemplo?@ No tienen que ser boxeadores, pero es un ejemplo fácil de entender."\
+`"Boxeadores, su trabajo es golpear a otros.@ Pero no solo golpear.@ Reducen su peso dolorosamente, y entrenan todos los días para golpear con habilidad.@ Para golpear a otros efectivamente, para derrotar a otros con eficiencia.@ Trabajan en ello con esmero todos los días, como afilando una cuchilla.@
+` ¿Qué piensas de eso?"@
+`"…… Huh.@ Hay personas así.@ ¿Y?"\
+`"No, eso es todo.@
+` Se golpean mutuamente, pero no matan a sus oponentes.@ Claro, algunos podrían morir por accidentes, pero eso no es considerado asesinato.@ ¿No es increíble?"@
+br
+`"---¿Quieres decir que matar está bien?"@
+br
+`"No, no.@ Se supone que no deben matar.@ Pero pueden hacerlo.@ ¿No es una enorme contradicción?@ Y eso no es todo.@ El puño de un boxeador es considerado un arma, así que no tienen permitido pelear fuera del ring."\
+`"…… Es increíble.@ Si saben que el puño de un boxeador es un arma, ¿por qué existe semejante profesión en primer lugar?@ Si es un arma que puede matar, deberían abolir el boxeo.@
+` Matar está mal, matar está mal.@
+` Pero este mundo está lleno de herramientas para matar.@ Incluso la ley lo permite.@ Pero dicen que matar no está bien; esto sólo puede ser considerado caos.@ Si el sentido común es lo que la mayoría de la gente considera bueno, entonces no estamos fuera de sintonía.@
+` Si hay algo que está fuera de sintonía, es este mundo."\
+` …… A pesar de todo, no necesariamente odio el boxeo.@
+` Hay muchas profesiones, pero no hay ninguna otra en la que puedas ser tan estoico respecto a tus objetivos.@
+` Te fortaleces alejándote de todas las tentaciones.@
+` Los humanos están interesados en la fortaleza que pueden comprender fácilmente.@ Es por eso que las competiciones nunca desaparecerán.@
+` De todas estas competiciones, aquellas en que los participantes se lastiman mutuamente son las que más agradan a las personas.\
+` Admiración por el fuerte.@
+` Una mentalidad que sólo puede ser dirigida hacia la fortaleza.@
+` Probablemente sea una mente muy saludable.@
+` Ya que sujetos como él y yo sólo podemos pensar en resultados, nuestros colores pueden ser similares, pero nuestras formas deberían ser totalmente distintas.\
+` Algo en lo que puedas concentrarte y olvidarte de ti mismo.@
+` Eso no se convierte en el libre albedrío de un individuo.@
+` Aquellos que veneran la educación, aquellos que se sacrifican por el arte, aquellos que prosperan en los negocios.@
+` Si un individuo pudiese decidir eso, este mundo sería un hermoso rompecabezas que podría ser comprendido.@
+` Pero este rompecabezas está lleno de agujeros.@
+` Hay piezas perdidas, y muchas piezas no encajan.\
+`"Ya veo.@ Te gusta hablar mucho, ¿no?@ Una vez tuve un amigo así.@
+` Cómo digo esto…… bueno, él no tenía nada, y por eso, parecía que no deseaba nada.@
+` Para mí, él parecía muy aislado.@ Aislamiento es sólo otra palabra para soledad, ¿cierto?@ Es por eso que me molestaba."@
+`"…… Hmm.@ ¿No deseaba nada?@ ¿Qué hay de ti?@ ¿Hay algo que desees?"@
+`"…… No lo sé.@ Creo que solía desear algo, pero ya no puedo recordar.@ ¿Qué hay de ti?"\
+`"Todos desean algo, pero no he encontrado nada con lo que valga la pena soñar.@
+` Un fuego dentro de mí que me hizo perder la razón---esta noche fue quizás la primera vez que sentí eso."@
+`"Jajaja.@ Eso significa que también eres un asesino."@
+`"…… No lo sé.@ Aún no puedo estar seguro.@ ¿Tú qué opinas, matar es divertido?"@
+`"----¿Eres estúpido?@ Si fuese divertido, lo haría sin parar.@ No hay razón alguna.@ Una vez que comienzas, simplemente quedas enganchado."\
+` …… Ya veo.@
+` Creo que comprendo un poco.@
+` En otras palabras, no es cuestión de que te agrade o no asesinar.@ Es cuestión de dedicarte o no a esa acción una vez que matas a alguien.@
+br
+` Ésa probablemente sea la diferencia entre estar en sintonía y fuera de ella.\
+`"Oye, ¿nunca desarmaste una radio cuando eras niño?"@
+`"¿Ra Dio……?@ Nunca he matado a nadie con ese nombre."@
+`"---Cierto, gracias por ser un idiota.@ Para ser sincero, era una broma.@ Los objetos animados y los inanimados son completamente distintos.@ Tal vez personas como nosotros deberíamos ser doctores."@
+`"¿Doctores?@ Odio la medicina.@ Cuando recibes una inyección, ¿no sientes como si fueses diluido?@ Es como si te convirtieses en un títere, ¿cierto?"\
+` …… ¿Eso crees?@
+` Tengo mi propio doctor, así que tomo medicina como si no fuese nada.\
+`"-----Ahh, en verdad fue muy divertido."@
+` Él se levanta.@
+br
+` Y----con ojos vacíos, me dirige la mirada.@
+`"---Bueno.@ No necesitamos a dos de nosotros en esta ciudad, ¿cierto?@ Dos leones en una jaula tan pequeña ni siquiera podrían marcar su propio territorio."@
+` Parece que está buscando su cuchillo.@
+` El inórganico hedor del homicidio.@
+` En verdad quiere una pelea a muerte.\
+`"No deberías."@
+` Digo con bastante naturalidad.@
+`"¿Por qué?"@
+`"Bueno, como criatura viviente, eres más fuerte que yo, pero…"@
+br
+` ----Si se trata de una pelea a muerte.@
+br
+`"Soy superior a ti."\
+`"------,------"@
+` Él aprieta sus dientes.@
+` Después de una sonrisa nerviosa,
+`"¡¡Ja…… aja, aajajjaja……!!"@
+` Ríe a carcajadas.\
+`"¿Qué?@ ¿Qué es tan gracioso, asesino?"@
+` Ji ji ji, jijiji.@ El hombre continúa riendo.@
+` …… Justo cuando pensé que simplemente tendría que abandonarlo, deja de reír y mira hacia mí.@
+br
+`"----Tienes razón, ¿sabes?"@
+br
+` Diciendo eso, comienza a irse caminando.\
+`"Supongo que es una buena oportunidad.@ Ahora que alguien como tú está aquí, probablemente debería dejar la ciudad."@
+`"…… No tengo ninguna intención de tomar tu lugar."@
+`"No, no, es inútil.@ Esta noche quedaste enganchado, ¿cierto?@ Entonces mañana será lo mismo.@ No serás capaz de resistir, ni siquiera por un día.@
+` Bueno, espero que no volvamos a vernos."@
+` Levantando una mano, él desaparece.\
+`"--------"@
+` Al escuchar que no volveremos a vernos, me pongo un poco triste.@
+` Junto a mis pies, hay como diez latas de café que él bebió.@
+` En otras palabras, nunca me las va a pagar.\
+bg #000000,%type_crossfade_mid
+playstop
+bg "image\bg\bg_22c.jpg",%type_lshutter_fst
+!w1000
+bg "image\bg\bg_47.jpg",%type_lshutter_fst
+!w500
+bg "image\bg\bg_48d.jpg",%type_lshutter_fst
+bg "image\bg\bg_33d.jpg",%type_lshutter_fst
+bg "image\bg\bg_40d.jpg",%type_lshutter_fst
+` ----Regreso a mi habitación.@
+br
+` Ya casi amanece.@
+` Debería olvidarlo todo y dormir----\
+bg #000000,%type_crossfade_mid
+!w3000
+return

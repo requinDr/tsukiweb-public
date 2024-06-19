@@ -1,0 +1,85 @@
+monocro off
+wavestop
+play "*2"
+;---added context above---
+bg "image\bg\bg_40a.jpg",%type_nowaitdisp
+`"----"@
+` Echo un vistazo al reloj.@
+` Ya son más de las nueve.@
+` Llegaría tarde aunque fuese a la escuela ahora---y para ser sincero, salir con Arcueid es más divertido que ir a la escuela……\
+`"De acuerdo.@ Pasaré el día contigo.@ Pero si vamos a la ciudad durante el día, no creo lleguemos a ver algún Muerto."@
+ld c,":a;image\tachi\ark_t01b.jpg",%type_crossfade_fst
+`"Eso no me importa.@ Sólo quería dar un paseo, así que no importa que sea de día."@
+`"¿……?@ ¿Qué, no vamos a compensar lo de anoche e ir a buscar vampiros?"\
+`"Sí, claro que buscaremos esta noche.@ Pero ayudarme todo el día y la noche sería duro, así que durante el día pensé que podríamos relajarnos."@
+`"También creo que sería más divertido.@ Pero, sólo nosotros dos dando un paseo, eso es……"\
+` lo que se conoce como una cita en el mundo real.@
+` …… Tal vez no se pueda decir eso con un vampiro como Arcueid, pero supongo que me está pidiendo que la lleve afuera para divertirnos.@
+` En cuanto a mí, yo----necesito prepararme mentalmente y…\
+`"¿……?@ ¿Qué sucede, Shiki?@ Tu cara, se está enrojeciendo."@
+`"------Uh."@
+` Cubro mi rostro con mis manos y aparto la vista.@
+cl c,%type_crossfade_fst
+br
+` …… Ciertamente hemos estado solos muchas veces.@
+` Pero, fueron situaciones de emergencia, y fue más un pacto de cooperación que algo entre un hombre y una mujer.@
+` Por eso----sin importar lo hermosa que la consideraba, intentaba no notarlo.\
+` Pero, si…
+` Sin ningún peligro, sin ningún propósito, si ambos salimos a pasear, podría notar algo que nunca antes noté, y eso me hace dudar----\
+ld c,":a;image\tachi\ark_t11.jpg",%type_crossfade_fst
+`"¿Shiki?@ Oye, ¿vas a ir a la escuela después de todo……?"@
+`"…… De ninguna manera.@ Dije que lo haría, así que lo haré.@ No sé qué estás pensando, pero dar un paseo no debería ser un problema."@
+ld c,":a;image\tachi\ark_t08.jpg",%type_crossfade_fst
+`"Entonces está decidido.@ Vámonos."@
+cl c,%type_lshutter_fst
+` Ella camina hacia la ventana por la que se coló anteriormente.\
+`"Espera un minuto.@ Voy a cambiarme, ¿puedes mirar hacia afuera por un rato?"@
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"¿Qué, me llamaste?"@
+`"¡Oh, sí, no!@ Sólo ve afuera, pronto estaré ahí."@
+`"De acuerdo, esperaré afuera.@ He esperado mucho, así que no me hagas esperar más, Shiki…"@
+cl c,%type_lshutter_fst
+\
+` Ella salta por la ventana con la ligereza de un gato.@
+` Escucho el susurro de los árboles.@
+` No saltó hacia el suelo, sino por encima de las ramas de los árboles.@
+br
+` …… Con un cuerpo como ése, debe haber sido fácil entrar aquí sin ser detectada.\
+`"…… No es momento para estar impresionado.@ También tengo que salir de aquí sin que Hisui lo note."@
+` Me pongo unas ropas normales.@
+` Abriendo ligeramente la puerta, miro alrededor para asegurarme de que nadie está en el pasillo y salgo de puntillas.\
+bg #000000,%type_lcartain_mid
+playstop
+bg "image\bg\bg_32a.jpg",%type_lcartain_mid
+play "*3"
+` Afortunadamente, nadie me vio mientras salía.@
+` Arcueid está mirando hacia el otro lado mientras murmura para sí misma.@
+ld c,":a;image\tachi\ark_t22.jpg",%type_crossfade_fst
+`"Gracias por esperar.@ Anda, vamos Arcueid.@ Si nos quedamos por aquí, Kohaku-san nos encontrará."@
+ld c,":a;image\tachi\ark_t14.jpg",%type_crossfade_fst
+`"¿Eh?@ Ah, sí, deberíamos irnos."@
+` Totalmente distintas a las de antes, sus palabras parecen muy vacías.\
+`"¿Qué pasa?@ Ésta no eres tú.@ ¿Sucedió algo de nuevo mientras no estaba?"@
+`"…… No, nada en realidad."@
+` Puse énfasis en el 'de nuevo', pero sus palabras aún son huecas.@
+br
+` ----Pareciera como si estuviese planeando algo.@ Me siento algo asustado.@
+br
+`"…… ¿Te sientes enferma porque es de día?@ No tienes necesidad de forzarte a salir.@ Si es muy difícil para ti, podemos detenernos."\
+ld c,":a;image\tachi\ark_t03.jpg",%type_crossfade_fst
+`"Mmh, me siento bien ahora.@ Pero ver este muro me recordó lo de anoche."@
+`"¿……?@ ¿Lo de anoche, es decir, mientras esperabas por mí en el parque?"@
+ld c,":a;image\tachi\ark_t04.jpg",%type_crossfade_fst
+` "Sí," Arcueid asiente dócilmente.\
+ld c,":a;image\tachi\ark_t03.jpg",%type_crossfade_fst
+`"Corrí hasta aquí con toda mi fuerza y entré a escondidas a tu habitación…… pero parece extraño ahora que lo pienso.@
+` ¿Por qué estaba tan furiosa entonces?@ Era sólo una pequeña promesa."@
+` Diciendo que no comprende, Arcueid cruza sus brazos, pensativa.\
+ld c,":a;image\tachi\ark_t02.jpg",%type_crossfade_fst
+`"Ah, es cierto.@ ¿Quizás tú sí lo entiendes, Shiki?@ Siempre me dices que soy tan estúpida, tal vez puedas entender."@
+`"Oye……"@
+` Si ella no se entiende a sí misma, ¿cómo espera que yo lo haga?@
+` No hay manera de que yo entienda, pero si tengo que responder----
+br
+cl c,%type_crossfade_fst
+return

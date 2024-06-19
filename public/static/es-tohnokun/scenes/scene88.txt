@@ -1,0 +1,199 @@
+monocro off
+wavestop
+play "*9"
+;---added context above---
+bg "image\bg\bg_19d.jpg",%type_nowaitdisp
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"Hmmm.@ Supongo que debe haber una cierta presión sobre tu cerebro para que seas capaz de ver 'la muerte'… Sí, definitivamente hay algún tipo de razón para esos ojos tuyos, pero eso es todo lo que puedo decirte por ahora.@ Si tenemos la oportunidad más adelante, lo explicaré con un poco más de detalle."@
+`"Así está bien.@ No me gustan las historias largas de todas formas."@
+ld c,":a;image\tachi\ark_t08.jpg",%type_crossfade_fst
+`"¿En serio?@ Personalmente, disfruto hablar con otras personas."@
+` Arcueid muestra una sonrisa despreocupada.@
+` En verdad parece que disfruta simplemente hablar.\
+bg #000000,%type_lshutter_mid
+bg "image\bg\bg_19d.jpg",%type_rshutter_mid
+` Cae la noche.@
+` Arcueid se sienta en la cama y ambos miramos distraídamente hacia el reloj.@
+` Son más de las cuatro de la mañana.@
+` Más o menos una hora antes del amanecer.\
+`"¿Sólo una hora más?"@
+` Nada fuera de lo ordinario ha sucedido hasta ahora, y Arcueid no muestra señales de tensión.@
+` Estamos rodeados de absoluta tranquilidad.@
+` Por alguna razón, estoy empezando a creer que esta noche podría terminar de esta manera.\
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"Oye, Shiki."@
+` Arcueid me llama de nuevo.@
+`"¿Qué?@ No tengo nada más de que hablar."@
+ld c,":a;image\tachi\ark_t03.jpg",%type_crossfade_fst
+`"¿En serio?@ Pero es un desperdicio no hablar, ahora que estamos en una situación como ésta."@
+`"…… Escucha, ¿cuántas horas crees que he tenido que soportar tu habladuría sin sentido?@ Seis horas.@ Eso me está cansando más que montar guardia."@
+ld c,":a;image\tachi\ark_t04.jpg",%type_crossfade_fst
+` Arcueid me dirige una mirada de insatisfacción.\
+` ---Eso es cierto.@
+` Por alguna razón, Arcueid ha estado hablándome durante seis horas seguidas.@
+` Le dije que debería dormir si se sentía débil, pero me respondió con "es más divertido hablar", y al final, terminamos mirándonos el uno al otro y hablando durante todo ese tiempo.@
+` *suspiro*@
+` Simplemente no sé qué está pensando ella.@
+br
+` ---Gruuuuuu.@
+br
+` Para colmo, estoy hambriento.@
+` Ahora que lo pienso, mi última comida fue el desayuno, así que no he comido nada por un día entero.\
+ld c,":a;image\tachi\ark_t03.jpg",%type_crossfade_fst
+`"¿Por qué no comes algo si tienes hambre?@ Estamos en un hotel elegante, después de todo, así que puedes llamar al servicio a la habitación."@
+`"Estoy bien.@ Perdería mi sentido de la tensión si llenase mi estómago ahora.@ Más importante aún, ¿no deberías buscar algo para comer?@ Estás débil pero no estás durmiendo, así que al menos deberías comer algo."@
+`"Si no vas a comer, entonces yo tampoco.@ La comida normal es significativa a su propia manera, pero es aburrido comer sola."\
+`"¿Comida normal?@ No hay nada normal o especial en---"@
+cl c,%type_crossfade_fst
+br
+` …… Ah, espera.@
+` Arcueid es un vampiro.@ Supongo que para ella, "comida" significaría beber la sangre de alguien.@
+br
+`"---¿O acaso lo hay?@ Supongo que siendo un vampiro, normalmente no consumirías mucho aparte de sangre."\
+` No parece uno, pero Arcueid es un vampiro.@
+` Ella dice que los vampiros necesitan sangre humana para sobrevivir.@
+` Entonces---¿a cuántas personas le ha chupado la sangre y a cuántas personas ha asesinado anteriormente?\
+`"-----"@
+` Echo un rápido vistazo a su rostro.@
+` …… No puedo imaginarlo.@
+` Aunque sé que es un vampiro, por alguna razón, no puedo imaginarla succionando la sangre de alguien---\
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"¿Qué?@ ¿Hay algo en mi cara?"@
+`"¡……!"@
+` Ella intercepta mi mirada, y rápidamente aparto la vista.@
+` Arcueid continúa mirándome fijamente, y entonces suelta una risa de comprensión.\
+`"¿Tienes curiosidad?"\
+`"¿S-sobre qué?"@
+`"¿Sobre a cuántas personas le he chupado la sangre?"\
+`"Erk-----"@
+` …… Ha leído mi mente por completo.@
+br
+` La sonrisa de Arcueid se hace aun más amplia, y no me agrada.\
+cl c,%type_crossfade_fst
+`"…… Bueno, claro que tengo curiosidad.@ Te estoy ayudando, de modo que, si no supiera eso, no tendría idea de cuándo podrías cambiar de opinión e intentar atacarme."@
+` Eso en verdad sería un problema.@
+`"Ya veo, ya veo," dice Arcueid.\
+`"Bien, entonces.@ Una pregunta.@ ¿A cuántas personas he succionado hasta ahora?"@
+` Ella salta de la cama con ligereza y camina hacia la ventana.@
+`"¿A cuántas personas?@ Eso es---"@
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+` Arcueid muestra una alegre sonrisa y silenciosamente mira en mi dirección con un aire de deleite.@
+` …… Maldición, es obvio que está tratando de provocarme.@
+` Bien.@ Responderé.@
+` Veamos… deben ser…\
+`"¿Unos cientos?"@
+`"Lo siento, estás lejos."@
+ld c,":a;image\tachi\ark_t09.jpg",%type_crossfade_fst
+`"¿Entonces miles?"@
+`"Nop, te equivocas de nuevo."@
+` Arcueid ríe como si fuese muy gracioso.@
+` …… Por alguna razón, esto se siente muy frustrante.\
+`"¡Demonios!@ Entonces… bueno, dudo que sea el caso, pero… ¿decenas?"@
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"Equivocado otra vez.@ ¡Oh, por favor!@ Decenas, cientos, miles… ¿en verdad me ves como esa clase de persona?@ Eres tan cruel, eso me haría indiscriminada."@
+`"¿Estoy equivocado?@ Los vampiros son indiscriminados, ¿no?@ Incluso los humanos se ponen hambrientos sólo por estar vivos, y si fuese una cuestión de vida o muerte, tú tampoco serías quisquillosa."@
+`"Sí, es verdad, pero…"\
+ld c,":a;image\tachi\ark_t22.jpg",%type_crossfade_fst
+`"No he probado sangre en los últimos ochocientos años.@ Y nunca he asesinado a un humano ordinario."@
+br
+` ----¿Eh?@
+br
+`"Espera---¿eso es verdad?"@
+`"Es la verdad.@ Después de todo, me da miedo chupar sangre."\
+` ---¿Huh?@
+` ¿Le da miedo chupar sangre?@
+br
+`"Debes estar bromeando, ¿cierto?@ ¿Un vampiro que tiene miedo de chupar sangre?@ ¿Por qué?"@
+`"…… Supongo que soy cobarde.@ Es por eso que soy un fracaso como vampiro."@
+` Arcueid se queja mientras mira hacia el cielo nocturno desde la ventana.@
+cl c,%type_crossfade_mid
+br
+` Se mantiene de esa manera por un largo tiempo, mirando hacia el cielo.@
+` Su espalda blanca parece vaga… nublada, como si ella fuese simplemente una ilusión.\
+`"…… Ya veo, un fracaso."@
+` Susurro, y me siento aliviado.@
+` …… Por alguna razón, eso me hace feliz.@
+` Por supuesto, es natural sentirse aliviado.@
+` Porque ahora sé que la persona parada frente a mí no es algún tipo de desalmado ser maligno.@
+` Por ahora, si decido creer en lo que ella dice, no seré asesinado sin razón.\
+` Entonces, estoy a salvo.@ …… Estoy a salvo, pero siento que ésa no es la única razón por la que estoy aliviado.@
+br
+` ---Maldición, ¿qué pasa conmigo?@
+br
+` Sentirme aliviado por algo como esto… ¿cómo puedo estar feliz por algo como el fracaso de Arcueid?\
+bg #9c0120,%type_crossfade_fst
+playstop
+bg "image\bg\bg_19d.jpg",%type_crossfade_fst
+`"Ah----"@
+` De repente, siento un débil mareo.@
+br
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"¿Shiki?@ ¿Qué sucede?@ Estás sudando demasiado."@
+`"No, es sólo esta punzada de dolor en mi cabeza---"@
+` Me percato con horror de algo mientras le respondo a Arcueid.@
+bg #000000,%type_crossfade_fst
+bg "image\bg\cmo_16.jpg",%type_crossfade_fst
+` La ventana detrás de Arcueid.@
+` Más allá del cristal, en las calles de la ciudad aún sumidas en la oscuridad de la noche.@
+br
+` Un cuervo azul está mirando en mi dirección.\
+`"Ése es---"@
+` No puedo hacer más que mirar fijamente su borrosa figura a través de la ventana.@
+` Arcueid también voltea hacia la ventana.@
+`"…… ¿Nrvnqsr?"@
+br
+`"ASÍ ES.@ FINALMENTE TE HE ENCONTRADO, PRINCESA DE LOS VERDADEROS ANCESTROS."@
+br
+` Desde algún lugar,
+` una fuerza de voluntad fluye hacia dentro de la habitación.\
+` Los ojos de Arcueid están llenos de hostilidad.@
+` Fuera de la ventana, el cuervo suelta un escandaloso y desentonado grito.@
+br
+`"AQUí ES.@ VOY HACIA ALLÁ AHORA MISMO."@
+br
+bg "image\bg\ima_18.jpg",%type_crossfade_fst
+` El cuervo azul se va volando.@
+` Todo lo que queda es la oscuridad de la noche y la luna blanca.\
+bg "image\bg\bg_19d.jpg",%type_nowaitdisp
+play "*6"
+` --------De pronto
+br
+quakex 5,100
+` ¡Bum!@
+` Con un fuerte sonido, la habitación se sacude violentamente.@
+` No, para ser más preciso,
+` todo el hotel se sacudió por el impacto.\
+`"¿¡Qué demonios---!?"@
+` Me levanto de la cama.@
+ld c,":a;image\tachi\ark_t07.jpg",%type_crossfade_fst
+` Arcueid está en silencio, mordiendo su labio con una expresión de disgusto.@
+`"Arcueid, esa sacudida---"@
+`"-----"@
+` Ella no responde.\
+`"…… ¡Di algo!@ Eso no fue un terremoto, ¿verdad?"@
+` ---Si tuviese que adivinar, se sintió como si alguien hubiese estrellado un gran camión de basura contra el vestíbulo del hotel a máxima velocidad.@ Fue ese tipo de impacto.@
+`"…… ¡Arcueid!"@
+` Ella… no responde.@
+cl c,%type_crossfade_fst
+br
+` Si escucho cuidadosamente, puedo oír ruidos qu provienen de los pisos de abajo.\
+` …… El rostro de Arcueid es preocupante.@
+` Ella dijo que no tenía poder en este momento.@
+` Probablemente es por eso que no dice nada.\
+`"------"@
+` Sólo el tiempo pasa.@
+` Dos minutos.@
+` Han pasado dos minutos desde el impacto, pero el hotel está espantosamente en silencio.@
+br
+` Arcueid permanece callada e inmóvil.@
+` Sólo mordiendo su labio, como resistiendo algo.@
+` Puedo ver un hilo de sangre fluyendo lentamente desde su labio.\
+`"----Arcueid----"@
+` ¿Está preocupada?@ ¿Frustrada?@
+` Permanece inmóvil, casi como si se abrazara a sí misma, resistiendo algo.@
+br
+` Ella dijo que no saldría de la habitación.@
+` Entonces,
+` ¿Para qué estoy aquí?@
+br
+return

@@ -1,0 +1,180 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_33d.jpg",%type_nowaitdisp
+` ----Debería volver a mi habitación.@
+br
+` Las palabras de Hisui hacen eco dentro de mi cabeza.@
+` Mi pesado cuerpo se debilita más, abrumado por esas cadenas.@
+play "*6"
+wave se0
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_33d.jpg",%type_crossfade_fst
+`"…………………………"@
+` Intento subir las escaleras y mi cuerpo se detiene.@
+` …… No puedo levantar mis piernas lo suficiente.@ Parece que sólo puedo caminar.@
+`"…………………… ¿Qué es esto?"@
+` …… Oh bueno.@ Debería regresar a la cocina y pedirle a Hisui que me ofrezca su hombro----\
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_33d.jpg",%type_crossfade_fst
+quakey 2,300
+`"¿H------uh?"@
+` Comienzo a caminar y me desplomo sobre la alfombra.@
+`"-----H, hey."@
+` Ni siquiera puedo gritar.@
+` Termino de agotarme al arrastrarme con mis brazos.\
+bg "image\bg\ima_10b.jpg",%type_crossfade_mid
+!w2000
+` Tap, tap.@ Escucho pasos.@
+` Hisui viene de la cocina.@
+` …… Estoy salvado.@ Ahora Hisui puede ayudarme---
+` Tap-tap, tap-tap, tap.@
+`"…………………… No puede ser."@
+` Arrastrarme lejos de las escaleras fue contraproducente.@
+` Me he escondido en las sombras y Hisui sube las escaleras sin siquiera notarme.\
+`"………………………… Eso fue increíblemente estúpido de mi parte."@
+wave se0
+` Tan pronto como doy voz a mis pensamientos, algo me llama la atención.@
+` La sensación de algo cercano a mí.@
+br
+`"¡-----------!"@
+` Tirado en el suelo, miro detrás mí.@
+br
+` Por allá,
+` hay una figura que parece un fantasma.\
+waveloop se1
+`"----------"@
+` Entonces logro comprender mi situación.@
+` No puedo moverme.@
+` Ni siquiera puedo gritar.@
+` La oscura mansión.@
+` …… Ese "alguien" me mira como si observase a su presa.@
+` Bajo todas estas condiciones, no me sorprendería morir aquí.@
+` Esta situación parece una película de terror tan mala que casi comienzo a reír en vez de estar asustado.\
+bg #9c0120,%type_crossfade_fst
+bg "image\bg\ima_10b.jpg",%type_crossfade_fst
+`"……………… Ja, jaja."@
+` Ese "alguien" da un paso hacia mí.@
+` ¿Tengo miedo de ser asesinado?@ Mi mareo comienza a incrementarse.@
+bg #9c0120,%type_crossfade_fst
+bg "image\bg\ima_10b.jpg",%type_crossfade_fst
+`"---------"@
+` La presencia se detiene.@
+` Mira fijamente mi indefensa espalda----
+playstop
+br
+`"Shiki-san, si duerme ahí cogerá un resfriado, ¿sabe?"@
+br
+` ---y me lanza esas alegres palabras.\
+wavestop
+bg "image\bg\bg_33d.jpg",%type_tshutter_mid
+play "*3"
+`"…………………… ¿Kohaku, san?"@
+`"Sí, soy yo.@ ¿Qué sucede?"@
+` ……………… Libero mi tensión.@
+`"¿Shiki-san?@ Sinceramente, ¿qué está haciendo acostado de esa manera?"@
+` …… Su voz es muy alegre.@
+` Con eso, me relajo, y---
+bg #000000,%type_crossfade_mid
+` completamente abrumada por el mareo, mi consciencia se apaga.\
+playstop
+!w5000
+mov $phasebg,"image\bg\bg_36d.jpg"
+mov $phasetitle_a,":a;image\word\PKOHA_08A.PNG"
+mov $phasetitle_b,":a;image\word\day_08.png"
+gosub *left_phase
+bg #ffffff,%type_crossfade_mid
+bg "image\bg\bg_40a.jpg",%type_crossfade_fst
+play "*2"
+` Fuertes rayos de luz solar me hacen abrir los ojos.@ Estoy en mi habitación.@
+` Tengo puesta mi pijama y estoy acostado en la cama.\
+`"---------Es cierto, anoche."@
+` Anoche me desmayé en el vestíbulo.@
+` Hisui no se percató de que estaba ahí, y Kohaku-san vino porque escuchó algo.@
+`"…… Eso significa que Akiha fue la que salió."@
+` …… Probablemente.@ Akiha siempre ha tenido un fuerte sentido de la responsabilidad, así que debe haber salido a las calles para buscar a SHIKI.@
+`" …… Akiha.@ Le dije que me lo dejara a mí……"\
+wave se3
+`"Discúlpeme."@
+` Después de ser tocada, la puerta se abre.@
+` Kohaku-san entra cargando una toalla y una cubeta.@
+ld c,":a;image\tachi\koha_t02.jpg",%type_lshutter_mid
+`"Ah, buenos días Shiki-san.@ ¿Cómo se siente?"@
+` Kohaku-san se acerca con su sonrisa habitual.@
+`"-------"@
+` Recuerdo la conversación que tuve anoche con Hisui.@
+` Metiendo eso en un rincón de mi mente, intento mostrar mi sonrisa de siempre.\
+`"Buen día, Kohaku-san.@ Um---¿tú me cargaste hasta aquí después de lo de anoche?"@
+ld c,":a;image\tachi\koha_t03.jpg",%type_crossfade_fst
+`"¿Huh?@ ¿No recuerda, Shiki-san?@ Lo encontré desmayado en el vestíbulo y se levantó cuando lo llamé.@
+` Dijo que tuvo una buena siesta y comenzó a caminar.@ Le ofrecí mi hombro, pero caminó hasta aquí por su cuenta."@
+`"……… Oh.@ No lo recuerdo.@ Debo haber estado tan cansado que olvidé lo que hice."@
+`"¿Entonces no recuerda nada de anoche?"@
+`"…… Tal vez.@ Recuerdo haber estado en la cocina-----"@
+` …… Y escuchar sobre la conexión entre Hisui y Kohaku-san.\
+ld c,":a;image\tachi\koha_t05.jpg",%type_crossfade_fst
+`"Ajaja.@ Qué desafortunado.@ Shiki-san, estuvo disculpándose conmigo constantemente.@
+` Le pregunté por qué se disculpaba, y me repetía que era un idiota y un cabeza hueca.@
+` Shiki-san, ¿usted es un cabeza hueca?"@
+`"No, no lo creo."@
+` …… Bueno, estoy comenzando a tener la idea de que ellas piensan que mi cerebro está hecho de madera.\
+cl c,%type_crossfade_fst
+`"…… En fin, muchas gracias.@ Si hubiese dormido en las escaleras, habría cogido un resfriado, y la escuela---"@
+` ¿Huh?@ ¿Me están engañando mis ojos?@ El reloj me dice que ya son más de las diez de la mañana.\
+`"¡Ah---!@ ¿Ko, Kohaku-san, la escuela!"@
+ld c,":a;image\tachi\koha_t03.jpg",%type_crossfade_fst
+`"Sí.@ Hoy es el día del fundador de su escuela, así que tiene el día libre."@
+`"--------"@
+` Es cierto.@ Ahora que lo pienso, así es.@
+` Lo olvidé por completo porque últimamente he estado distrayéndome en la escuela.\
+`"Bueno, debería levantarme de todas formas.@ Si sigo durmiendo Akiha va a---"@
+` Me siento en la cama.@
+quakey 2,300
+`"¿Huh?-----No puedo."@
+` Mi cuerpo no se mueve.@
+` Intento impulsarme con mis brazos, pero no tienen fuerza.\
+ld c,":a;image\tachi\koha_t01a.jpg",%type_crossfade_fst
+`"Parece que aún está en mal estado.@ Tiene una ligera fiebre y se ve un poco pálido.@ Puede ser aburrido pero, por favor descanse en cama el día de hoy, Shiki-san."@
+cl c,%type_lshutter_fst
+` Kohaku-san limpia mi frente con la fría y húmeda toalla.@
+` …… Se siente bien y frío.\
+`"Hmm, parece que su fiebre ha bajado.@ No está sudando tanto y su cara se ve mucho mejor.@ Debería estar bien para la noche."@
+` Kohaku-san saca un termómetro y una almohada de hielo esmeradamente.@
+` …… Al final, me hace abrir la boca y revisa el estado de mi lengua.\
+ld c,":a;image\tachi\koha_t03.jpg",%type_lshutter_fst
+`"Bueno, traeré algo de arroz con leche de inmediato.@ Shiki-san, será mejor que hoy se comporte."@
+cl c,%type_lshutter_fst
+`"Ah---Kohaku-san."@
+ld c,":a;image\tachi\koha_t03.jpg",%type_lshutter_fst
+`"¿Sí?@ ¿Qué desea, Shiki-san?"@
+` …… Como esperaba, ella es como siempre.@
+` Su alegre sonrisa de siempre no cambia.@
+` Yo---no puedo obligarme a pensar que su sonrisa es sólo una actuación.\
+`"…… Nada.@ Espero con ansias el arroz con leche."@
+ld c,":a;image\tachi\koha_t05.jpg",%type_crossfade_fst
+`"Sí, bien, entonces discúlpeme."@
+cl c,%type_lshutter_fst
+` Kohaku-san desaparece en el pasillo, sus pasos resuenan tras ella.@
+` Observo esa figura silenciosamente.\
+bg #000000,%type_tshutter_fst
+playstop
+!w2500
+bg "image\bg\bg_40a.jpg",%type_bshutter_fst
+play "*1"
+` Llega el mediodía.@
+` Después de traer la comida, Kohaku-san regresó a sus labores.@
+` …………………… *suspiro*@
+` Estando solo, suelto un suspiro mientras pienso en mis extrañas circunstancias.@
+` …… El hecho de que soy adoptado.@
+` …… Akiha diciendo que eso no le importa.@
+` …… Hisui y Kohaku-san.@
+` …… Y el asesino que aún anda suelto.\
+` Le pregunté a Kohaku-san, pero parece que no hubo una nueva víctima en las noticias de hoy.@
+` Pero mientras SHIKI ande suelto, habrá más víctimas.@
+`"…… Si sólo este cuerpo hiciera lo que le digo, yo---"@
+` Podría detener a SHIKI.@ Vuelvo a poner mi cabeza sobre la almohada cuando comienzo a decir eso.@
+` Quizás sea porque he estado viendo esos sueños, pero estoy comenzando a tener pensamientos violentos, como SHIKI.@
+`"…… Sin importar lo que vaya a hacer, debería recuperarme primero."@
+` Cierro los ojos.\
+return

@@ -1,0 +1,168 @@
+monocro off
+wavestop
+play "*2"
+;---added context above---
+bg "image\bg\bg_34a.jpg",%type_nowaitdisp
+ld c,":a;image\tachi\aki_t01a.jpg",%type_crossfade_fst
+`"Comprendo.@ Entonces, no preguntaré más.@ Pero, por favor abstente de hacer algo como esto nuevamente.@ Nii-san, eres el hijo mayor de la familia Tohno; si no comprendes mejor tu posición, será muy preocupante."@
+`"--Oye, eso no tiene nada que ver con esto.@ Además, tú eres la sucesora de la familia Tohno, así que en realidad no importa lo que yo haga.@ Si estás tan preocupada por el futuro de la familia Tohno, deberías conseguirte un esposo apropiado para la casa Tohno."@
+ld c,":a;image\tachi\aki_t12a.jpg",%type_crossfade_fst
+`"-----"@
+` ¿……?@
+` Por alguna razón, Akiha queda en silencio.\
+`"¿Qué sucede?@ ¿Te sientes bien, Akiha?"@
+ld c,":a;image\tachi\aki_t06.jpg",%type_crossfade_fst
+`"--No es nada.@ Si tienes tiempo para preocuparte por mí, por favor préstate más atención a ti mismo.@ Tienes tu anemia crónica para preocuparte, Nii-san."@
+`"……… Hmph."@
+` …… Bueno, es verdad que me desmayo frecuentemente por anemia.\
+`"En fin, por favor no salgas solo de la mansión muy a menudo.@ La ciudad es peligrosa recientemente.@
+` Alguien como tú, que vaga por ahí aturdido, está pidiendo ser atacado por ese asesino en serie."@
+`"¿Asesino en serie?--Oh, esos asesinatos en serie."@
+br
+` Los asesinatos en serie de los que nueve víctimas fueron encontradas.@
+` La sangre fue extraída de sus cuerpos, así que lo llaman el vampiro de los días modernos, pero--\
+`"Oh, no hay problema.@ Esos incidentes, nunca volverán a ocurrir."@
+ld c,":a;image\tachi\aki_t01a.jpg",%type_crossfade_fst
+`"----¿Huh?"@
+`"Significa que el vampiro ya no está por aquí.@ Ese asesino--ya fue capturado."@
+`"¿En serio……?@ Nii-san, ¿cómo sabes eso?"@
+`"Bueno, lo vi por casualidad, pero de seguro, esas cosas no sucederán de nuevo."@
+cl c,%type_crossfade_fst
+\
+` …… Sí, al menos ya no habrá más personas asesinadas por Nrvnqsr.@
+` Esos dos días que pasé con Arcueid… sucedieron tantas cosas que en realidad no puedo decir qué está bien y qué está mal.@
+` Pero, la simple verdad permanece--puedo decir que todo fue con la mejor intención.\
+ld c,":a;image\tachi\aki_t01a.jpg",%type_crossfade_fst
+`"¿Nii-san----?@ ¿Qué sucedió?@ De repente te ves muy feliz."@
+` Akiha mira mi rostro extrañamente.@
+`"No es nada.@ Sólo sentí que finalmente todo, todo ha terminado."@
+` Una sonrisa se desliza inconscientemente sobre mis labios mientras respondo.\
+bg #000000,%type_crossfade_mid
+playstop
+!w1000
+bg "image\bg\bg_33a.jpg",%type_lcartain_mid
+` Son las siete y media.@
+` Akiha se fue veinte minutos más temprano que yo, ¡en auto!@
+` Después de comer el delicioso desayuno de Kohaku-san, decido dirigirme hacia la escuela.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_32a.jpg",%type_lcartain_mid
+` Hisui me acompaña hasta la verja, llevando mi maletín.@
+`"Bien, ya me voy.@ Gracias por acompañarme, Hisui."@
+` Hisui me entrega mi maletín silenciosamente.\
+ld c,":a;image\tachi\his_t01.jpg",%type_nowaitdisp
+`"Shiki-sama, ¿como a qué hora regresará?"@
+`"¿Tampoco confías en mí?@ Está bien.@ Definitivamente estaré de vuelta durante la tarde."@
+`"--Entiendo.@ Entonces por favor tenga cuidado en el camino."@
+` Hisui hace una profunda reverencia.@
+` Sintiéndome un poco avergonzado por eso, dejo la verja de la mansión.\
+bg #000000,%type_lcartain_fst
+bg "image\bg\bg_24a.jpg",%type_lcartain_fst
+` En la intersección sólo están las figuras de mis compañeros estudiantes de secundaria.@
+` Ninguna mujer joven sentada en la barandilla como en aquella ocasión.\
+`"--Bueno, por supuesto."@
+` Probablemente no volveré a verla jamás.@
+` Primero que nada, su objetivo era ejecutar al vampiro, y con Nrvnqsr muerto, no hay razón para que permanezca aquí por más tiempo.@
+br
+` --Sólo un poquito, en mi pecho.@
+br
+` Cosas como arrepentimiento… y afecto persistente.@
+` Es verdad que sólo trajo problemas, pero aun así…… fue divertido estar con ella.\
+`"…… ¿Qué, acaso soy estúpido?"@
+` Casi me asesinan… ¿Qué parte de eso me haría sentir afecto persistente?@
+` Las heridas de anoche aún duelen.@
+` …… Recuerda cuando casi te convertiste en la comida de Nrvnqsr.@ Ciertamente no quieres que algo como eso suceda de nuevo.@
+wave se2
+br
+` La campana de la escuela repica.@
+`"----Mierda, llegaré tarde."@
+` Sacudiéndome mis ociosos pensamientos, corro hacia la entrada de la escuela.\
+bg #000000,%type_lcartain_mid
+play "*3"
+bg "image\bg\bg_06a.jpg",%type_lcartain_mid
+` Entro volando a mi salón de clases.@
+` Faltan cinco minutos para las clases, así que hay mucho ruido aquí dentro.@
+br
+`"--Fiu."@
+` Respiro y me dirijo hacia mi asiento.@
+` Con tanto tiempo de sobra, no necesitaba correr en absoluto.@
+`"Hola, Duque de la Delincuencia."@
+`"………"@
+` Detrás de mí, escucho la voz que nunca ansío escuchar.\
+ld c,":a;image\tachi\ari_t05.jpg",%type_lshutter_fst
+`"¿Qué está pasando, Tohno?@ Nunca escuché que faltaras a clases.@ Es un gran problema.@ ¡Tienes que decirme cuando faltas a la escuela y vas a jugar!"@
+` Arihiko dice esas absurdas palabras con una expresión increíblemente feliz.\
+`"…… ¿Por qué tendría que decirte cuando no asisto a la escuela?"@
+ld c,":a;image\tachi\ari_t01.jpg",%type_crossfade_mid
+`"¿No es obvio?@ Cuando no apareces, tampoco lo hace Senpai, así que es malo a menos que piense en algo por adelantado."@
+` …… ¿Qué es malo para este sujeto?\
+`"Pero en serio--¿Qué sucedió?@ Desde la escuela media, has tenido anemia, pero nunca faltaste a la escuela.@ Bueno, usaste ese truco genial muchas veces, retirándote tan pronto como llegabas."@
+`"Algo parecido a eso.@ Llegué hasta la intersección y me sentí mal, así que volví a casa."@
+`"Hmmm… Yumizuka y tú han estado actuando como malos estudiantes últimamente."@
+`"--Bueno, soy culpable del cargo, pero…… ¿sucede algo con Yumizuka-san?"\
+`"¿Ella?@ Ha estado ausente últimamente.@ Siempre fue una estudiante modelo, y creo que puede haberse estresado.@ Pero apuesto que no puede aumentar la apuesta porque tiene una mala mano."@
+`"……………"@
+` Las palabras de Arihiko son siempre… tan únicas.\
+wave se2
+` Suena la campanada de la tutoría.@
+br
+`"Bueno, me marcho.@ Ya que faltaste el sábado, asegúrate de estudiar mucho hoy."@
+` Arihiko abandona el salón rápidamente.@
+` En otras palabras, va a faltar a clases hoy.\
+bg #000000,%type_lshutter_mid
+!w2000
+bg "image\bg\bg_06a.jpg",%type_lshutter_mid
+` Las clases de la mañana finalizan.@
+` Con la campana anunciando la hora del almuerzo, la mitad de la gente en el salón de clases desaparece.@
+`"…… Bien, entonces, ¿qué debería hacer?"@
+` Arihiko no está aquí, así que debería tomarme mi tiempo y almorzar.\
+ld c,":a;image\tachi\cel_t12.jpg",%type_lshutter_fst
+`"¿Oh?@ Tohno-kun, ¿estás solo?"@
+`"Sí----Senpai, ¿viniste aquí para comer?"@
+ld c,":a;image\tachi\cel_t07a.jpg",%type_crossfade_fst
+`"Sí, pensé en almorzar con todos y vine aquí rápidamente, pero----"@
+` Ella observa.@
+` Sin ninguna advertencia, ella mira mi rostro atentamente.@
+cl c,%type_lshutter_mid
+br
+` No sé qué está pensando, pero se acerca a mí repentinamente.\
+`"Oye--¿Se, Senpai……?"@
+` Ella está justo a mi lado.@
+` Casi a la distancia de un abrazo.@
+` Algo estaría mal con mi corazón si no estuviese latiendo rápidamente.@
+ld c,":a;image\tachi\cel_t07a.jpg",%type_crossfade_fst
+`"------"@
+` Senpai no dice nada.@
+` Sólo se para a mi lado----y olfatea.\
+`"----¿Huh?"@
+` …… ¿Qué está haciendo?@
+` Senpai entonces se aparta.@
+cl c,%type_lshutter_fst
+`"…… ¿Um, Senpai?"@
+ld c,":a;image\tachi\cel_t07a.jpg",%type_lshutter_fst
+`"Tohno-kun, ¿sucedió algo?"@
+` Me pregunta con una mirada seria.@
+` Para ser franco, no sé qué está pasando.@
+`"Algo…… uh, ¿cómo qué?"@
+ld c,":a;image\tachi\cel_t08.jpg",%type_crossfade_fst
+`"No sé.@ No sé, por eso pregunto."@
+` Ella me mira como si estuviese enfadada.\
+`"Nada--estoy como siempre.@ ¿Me veo… extraño el día de hoy?"@
+ld c,":a;image\tachi\cel_t09.jpg",%type_crossfade_fst
+`"Hmmm, tampoco estoy segura.@ Sólo se me ocurrió, quizás estaba imaginando cosas."@
+`"¿………?"@
+` Ladeo mi cabeza confundido.\
+ld c,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
+`"Bueno, ¿vamos a almorzar?@ Vas a comer en la cafetería hoy, ¿no, Tohno-kun?@ Si no nos apresuramos, todos los asientos serán ocupados."@
+`"Ah, sí.@ ¿Vas a comer en la cafetería también, Senpai?"@
+`"Sí, hoy quiero comer algo bueno."@
+` Ella sonríe y tira de mi mano mientras comienza a caminar.\
+bg #000000,%type_lcartain_slw
+` Al final, hablo con Senpai sobre el festival atlético dentro de dos semanas y el festival cultural inmediatamente posterior durante el almuerzo.@
+br
+` …… Para ser sincero, que Senpai diga "quiero comer algo bueno" y ordene curry deja una mayor impresión en mi mente que todo sobre lo que hablamos.\
+playstop
+bg "image\bg\bg_06b.jpg",%type_crossfade_slw
+` Las clases terminan al igual que la escuela.@
+` Bien, ¿qué debería hacer ahora?----
+br
+return

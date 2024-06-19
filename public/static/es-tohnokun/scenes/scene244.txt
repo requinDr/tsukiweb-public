@@ -1,0 +1,40 @@
+monocro off
+wavestop
+;---added context above---
+play "*3"
+bg "image\bg\bg_06a.jpg",%type_crossfade_mid
+wave se2
+` En el descanso del almuerzo, llega el sujeto que ni siquiera se presentó a una sola clase.@
+ld c,":a;image\tachi\ari_t05.jpg",%type_lshutter_fst
+`"¡Hey Tohno!@ ¡Comida, vamos por algo de comida!"@
+` Está feliz por algo, y es más enérgico de lo habitual.\
+`"Por supuesto, comida.@ Pero pareces estar de muy buen humor.@ ¿Sucedió algo, Arihiko?"@
+`"Sip.@ Le pregunté a Senpai si quería almorzar con nosotros, y ella se negó."@
+`"………………"@
+` Eso es raro.@
+` Con "Senpai" debe referirse a Ciel-senpai, pero este sujeto parece estar feliz cuando su ofrecimiento fue rechazado.\
+`"Oye, Arihiko, ¿tienes esa clase de gustos?"@
+ld c,":a;image\tachi\ari_t02.jpg",%type_crossfade_fst
+`"No, no, no he terminado.@ ¡¡Así que le pregunté a Senpai por qué no, y me dijo: 'Si Tohno-kun va a estar ahí, entonces no quiero ir'!!@ ¡Muajajajajajajajaja!@ ¿¡No es grandioso, Tohno!?"@
+`"……………"@
+` Qué raro.@
+` ¿Por qué he sido amigo de este sujeto desde la escuela media?\
+`"¡Hombre, ella en verdad te odia Tohno!@ ¡La pérdida de un rival es mi ganancia, así que hoy te invitaré a almorzar!"@
+` Arihiko golpea mi espalda felizmente.@
+`"…… Bueno, me alegra que me invites pero, ¿Senpai estaba enfadada conmigo?"@
+ld c,":a;image\tachi\ari_t01.jpg",%type_crossfade_fst
+`"¿N?@ …… bueno, cuando ella preguntó, '¿Tohno-kun va a estar con nosotros?' y yo asentí, su cara se puso toda roja.@ Tan pronto como escuchó tu nombre, su cara probablemente ardió de furia."@
+`"…… ¿Probablemente?@ ¿Eso no es un poco diferente, Arihiko?"@
+`"Tal vez sí.@ Tal vez no."@
+cl c,%type_crossfade_mid
+\
+` …… No se puede confiar en la historia de Arihiko.@
+` Ciertamente, Senpai parecía enojada esta mañana, pero no sé por qué lo estaría.@
+`"…… De ninguna manera, ella no pudo haber descubierto qué tipo de sueño tuve."@
+` Si pudo deducir eso a partir de nuestra conversación, podría ser una gran detective.\
+ld c,":a;image\tachi\ari_t01.jpg",%type_crossfade_fst
+`"Oye, deja de lloriquear y vamos, Tohno.@ Sólo hay suficientes asientos para la mitad de las personas que usan la cafetería."@
+`"Ah---no, yo---"@
+br
+cl c,%type_crossfade_mid
+return

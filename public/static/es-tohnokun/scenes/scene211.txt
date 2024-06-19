@@ -1,0 +1,33 @@
+monocro off
+wavestop
+;---added context above---
+playstop
+bg "image\bg\bg_25b.jpg",%type_lcartain_mid
+` …… No hay nadie alrededor.@
+` Aún habían algunas personas en el distrito comercial, pero el camino de vuelta a la mansión debería estar completamente desierto.@
+`"………"@
+` Las palabras "asesino en serie" pasan volando por mi mente.@
+` Medianoche.@ Caminando solo por la ciudad.@ Podría ser una presa fácil para semejante agresor.\
+wave se9
+`"¿¡----!?"@
+` Un sonido.@
+` En algún lugar detrás de un edificio, hay un sonido.@
+` Creo que es el sonido de alguien cayendo.@
+`"…… ¿El callejón trasero……?"@
+` El ruido se produjo sólo una vez.@
+` Un misterioso silencio me rodea.\
+wave se9
+` …… Tengo un mal presentimiento sobre esto.@
+` ¿Alguien se desmayó en el callejón trasero?@
+` ¿O acaso algo acaba de ser derribado por el viento?@
+` …… Sea lo que fuere, probablemente no debería involucrarme.@
+br
+` -----Pero.@
+` ¿Será porque estaba buscando a Yumizuka hace un momento?@ Siento que ella está ahí por alguna razón.\
+`"…… ¿Qué… debería hacer……?"@
+` No hay nadie alrededor.@
+` La única ayuda con la que puedo contar es este cuchillo que Kohaku-san me entregó esta mañana.@
+br
+` Yo-------
+br
+return

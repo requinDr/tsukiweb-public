@@ -1,0 +1,2274 @@
+monocro off
+waveloop se10
+playstop
+bg #000000,%type_nowaitdisp
+;---added context above---
+!w4000
+bg "image\bg\bg_40a.jpg",%type_crossfade_mid
+wave se3
+` …… El golpeteo comienza una vez más.@
+` Noc noc, noc noc, una y otra vez.@
+br
+`"Shiki-sama, su comida se ha enfriado."@
+` Su voz suena triste.@
+`"…… Akiha-sama y Nee-san han salido, y no regresarán hoy.@ Somos los únicos en la mansión en este momento."@
+` ¿Quiere decirme que salga de aquí?@
+`"¡Cállate……!@ Te dije que me dejaras en paz.@ ¿¡Por qué no puedes entender eso, Hisui…… !?"@
+`"--------"@
+` Escucho una voz ahogada.@
+wave se8
+` Su presencia se aleja.\
+!w5000
+wave se3
+` …… Una vez más, el golpeteo continúa.@
+br
+wave se8
+` Su presencia se aleja.@
+br
+` …… Repetimos este ciclo incontables veces.\
+`"Ha--ah, g--"@
+` …… Dolor.@
+` El hambre no es nada.@
+` Pero la sed está matando a mi ardiente cuerpo.@
+`"------------"@
+` …… ¿Qué estoy haciendo exactamente?@
+` Desplomado contra la pared, abrazando mi cuerpo averiado.\
+` La ventana cerrada, la puerta bajo llave.@
+`"----------"@
+` …… Ahora que lo pienso, hace mucho tiempo…
+` Siento que algo como esto ocurrió anteriormente.@
+br
+` ----Eso fue…
+` ¿Hace cuánto tiempo fue eso?\
+bg #000000,%type_crossfade_fst
+monocro #ffff00
+bg "image\bg\bg_45b.jpg",%type_crossfade_mid
+play "*7"
+` Cuando era sólo un niño pequeño, llevado a nuevos alrededores y no acostumbrado a las nuevas personas, me encerré en mi habitación.@
+` Lo odiaba todo y no quería hablar con nadie.@
+br
+` Durante ese tiempo, había una chica que siempre llamaba a la puerta.@
+br
+` Noc, noc, era el sonido.@
+` Cada vez que le preguntaba quién era, la voz siempre respondía "Soy yo."\
+`"SHIKI-chan, vamos a jugar.@ Te pondrás mohoso si te quedas en un lugar como ése."@
+` Le decía que no era nada de su incumbencia, y la obligaba a marcharse día tras día.\
+bg #000000,%type_crossfade_fst
+monocro off
+playstop
+bg "image\bg\bg_40b.jpg",%type_crossfade_mid
+wave se3
+` El sonido del golpeteo otra vez.@
+br
+wave se8
+` Su presencia se aleja.\
+bg #000000,%type_crossfade_fst
+monocro #ffff00
+bg "image\bg\bg_45b.jpg",%type_crossfade_mid
+play "*7"
+` …… Esa chica vino todos los días.@
+` Siempre tocaba la puerta, no se cansaba de hacerlo.@
+` Nunca me forzaba a salir, pero continuaba diciendo mi nombre sin abrir la puerta.\
+`"¿Por qué no sales?"@
+` No puedo ir afuera.@ Todos en la mansión, todos me ven como su enemigo.@
+`"Eso no es verdad.@ Todos quieren agradarte, SHIKI-chan."@
+` Pero no podía creerle.@
+` Mi propio padre creía eso, y fue asesinado por Tohno Makihisa.\
+`"…… Ya veo.@ Con razón no puedes creer en nadie."@
+` Es cierto.@ Por eso, para mí es más fácil estar solo.@
+`"Pero, vas a estar solo todo el tiempo.@ Estar solo no es divertido."@
+` No me importa.@ Esto es mejor que ser asesinado.@
+` Mejor que ser engañado.@
+` Es mejor estar solo y engañarme a mí mismo que morir.\
+`"Cielos.@ Comprendo, entonces puedes ***** en mí.@ Así podrás salir, ¿cierto?"@
+` Sus palabras de entonces.@
+` Yo… no puedo recordar exactamente cuáles fueron.@
+` Con su voz, ¿qué dijo esa chica que yo podía hacer----?\
+bg #000000,%type_crossfade_fst
+monocro off
+playstop
+bg "image\bg\bg_40b.jpg",%type_crossfade_mid
+wave se3
+` Noc noc.@ Hisui en verdad no se cansa de esto.@
+` Su sorprendente resistencia me recuerda ese suceso de mi niñez.\
+`"¿……………?"@
+` No escucho sus pasos.@
+` Parece que no se ha ido.@
+`"………… ¿Hisui?"@
+` No hay nada más que silencio al otro lado de la puerta.@
+` Hisui está parada en silencio al otro lado.@
+br
+` El tiempo pasa.@
+` La presencia de Hisui no se mueve.@ Todo lo que hace es esperar junto a la puerta.\
+`"…… ¿Por qué no va a salir, Shiki-sama?"@
+` …… Eso es obvio.@
+` Ya no puedo creer en nadie, así que prefiero estar solo.@
+` Ni Akiha ni Kohaku, ni siquiera yo puedo ser de confianza, así que encerrarme es lo único que puedo hacer.\
+` …… Sí, finalmente me doy cuenta.@
+` El asunto de Akiha en realidad podría ser algo trivial.@
+` Estoy tratando de estar solo, para poder encerrarme, porque podría ser el asesino.\
+`"…… ¿Nadie?@ ¿Está diciendo que no puede creer en nadie, Shiki-sama?"@
+` …… Correcto.@ Por eso, no hay razón para que ella se preocupe por mí.@
+` Está mal que se preocupe tanto por mí, la persona que desea sangre humana, la persona que violó su cuerpo tan violentamente.\
+`"…… Hisui.@ Vete ya.@ Para mí es más fácil estar solo.@ De esta manera no seré una carga para nadie."@
+`"Eso es mentira.@ Eso… eso no es nada divertido.@ ¡Shiki-sama, está diciendo una mentira……!"@
+` …… Su voz ciertamente suena un poco molesta.\
+`"Shiki-sama.@ ¡Si dice que no puede creer en nadie, por favor crea en mí!@
+` ¡Por favor, escúcheme sólo por ahora……!"@
+` …… Su voz… ella suena como si estuviese llorando.@
+` Debe estar muy molesta, porque lo que dice no tiene ningún sentido.@
+` ¿"Puedes creer en mí"?@ Eso está al revés.@
+` Normalmente, debería decir, "creo en ti."\
+`"……… Cielos………"@
+` Eso es simplemente absurdo.@
+` Pensé que la única que empleaba ese tipo de argumentos tan ridículos era aquella chica.\
+`"…… ¿Creer en qué?"@
+`"¡No lo sé……!@ ¡Sólo sé que… yo lo quiero, Shiki-sama, y por eso le estoy gritando de esta manera……!"@
+` Bam.@ Ella golpea más escandalosamente que nunca.@
+`"…… Shiki-sama, por favor.@ Abra la puerta.@ ¡Sé que soy inútil, pero estoy segura de que será mejor que estar solo……!"\
+bg "image\event\his_e01.jpg",%type_crossfade_mid
+!w1000
+bg "image\bg\bg_40b.jpg",%type_nowaitdisp
+play "*7"
+` Suena como si estuviese llorando.@
+` El tono es diferente, pero se siente similar a lo que esa chica me dijo en aquel entonces.\
+`"¿¡Seguirá resistiéndose……!?@ ¡Shiki-sama, está en verdadero peligro de esta manera……!@
+` ¿Por qué--por qué está actuando como en aquel entonces……!@ Prometió que cuando volviese, jugaría con todos, ¿entonces por qué……!"\
+bg "image\event\his_e01.jpg",%type_crossfade_mid
+bg "image\bg\bg_40b.jpg",%type_crossfade_mid
+` La voz llorosa de una chica joven.@
+`"Ah…………"@
+` Comienzo a recordar un poco.@
+` Es cierto.@ En ese entonces, antes de ser llevado al hospital, hice esa pequeña promesa.@
+` Pensé que volvería a la mansión cuando sanase, así que lo dije sin pensar mucho.\
+`"¡Shiki-sama---no quiero perderlo frente a mis ojos, como aquella vez……!@ Así que, por favor…… por favor, abre la puerta…… Shi, ki--"@
+` El golpeteo detrás de la puerta se detiene.@
+` Parece que Hisui se ha dejado caer al suelo, llorando.\
+bg #000000,%type_crossfade_fst
+monocro #ffff00
+bg "image\bg\bg_45b.jpg",%type_crossfade_fst
+` Esa chica que siempre me llamaba, día tras día.@
+monocro off
+bg "image\event\his_e01b.jpg",%type_crossfade_mid
+` Esa enérgica y preocupada chica que siempre estaba a mi lado.@
+br
+` ---¿Exactamente quién?@
+` En realidad, ¿quién era ella--?\
+play "*8"
+bg "image\bg\bg_40b.jpg",%type_crossfade_fst
+`"¡Hisui……!"@
+` Aunque no debería quedarme nada de fuerza, de alguna manera logro levantarme.@
+` Cada vez que me muevo, siento que me desmayo.@
+` Pero el dolor no tiene importancia ahora.@
+br
+` ----¡Hisui.@
+`     Hisui.@
+`      Hisui, Hisui, Hisui, Hisui----!\
+` Me arrastro hacia la puerta y pongo mi mano sobre la cerradura.@
+`"…… T…… ú"@
+` Mis entumecidos dedos no se mueven como les ordeno, y la cerradura es difícil de girar.@
+br
+` La cerradura finalmente gira.@
+` La puerta se abre.@
+` Frente a mí, veo la figura de Hisui.\
+bg "image\event\his_e09.jpg",%type_lshutter_mid
+`"Shiki-sama---se ve… terrible."@
+` Con lágrimas aún bajando por su rostro, Hisui me mira fijamente.@
+` Pero no me importa mi cuerpo en este momento.@
+` Más que eso, yo---\
+`"---Hisui.@ ¿Tú eres esa chica?"@
+`"………………"@
+` Hisui no responde.@
+` Su silencio no es de negación, sino de afirmación.\
+`"¿Por qué?@ ----Pensé que ella era Kohaku-san.@ Ayer incluso me dijiste que tú eras la chica dentro de la mansión."@
+`"…… Shiki-sama.@ La de ayer no era yo.@ Creo que Nee-san lo estaba ayudando porque estaba muy débil."@
+`"Eh----"@
+br
+` ----En otras palabras…… ¿La Hisui que vi ayer… era en realidad--Kohaku-san……?\
+`"…… ¿Entonces Hisui?@ ¿Tú eres la que jugaba con nosotros cuando éramos niños, y Kohaku-san es---la que siempre estaba en la mansión?"@
+`"…………"@
+`"¿Por qué……?@ No lo entiendo.@ ¿Por qué rayos están actuando como si hubiesen intercambiado papeles?"@
+`"…… Nunca tuvimos la intención de engañarlo.@ Creo que me volví más tranquila después de que fue adoptado por la familia Arima.@
+` Nee-san trató de animarme actuando muy alegremente, y entonces, gradualmente intercambiamos nuestros papeles."\
+`"¿Pero por qué…… por qué ocurrió eso……?@ Hisui…… tú siempre eras tan enérgica."@
+`"…… Eso no es verdad.@ Soy inactiva por naturaleza.@ Pero cuando usted estaba ahí, intentaba seguirlo tanto como podía."\
+`"…… Pero, nunca debí haberlo hecho.@ El accidente, lo tuvo porque yo le hice salir y lo llevé al jardín.@
+` ---Todo lo que pude hacer fue observar aterrada cómo era asesinado frente a mis ojos.@ Sólo podía observar su cuerpo bañado en sangre.@ Ni siquiera podía llorar, o pedir ayuda.@
+` …… Desde ese momento, fui incapaz de comprenderme a mí misma.@ Sin importar cómo lo intentase, no podía recordar cómo solía actuar o sonreír."\
+`"…… Cuando usted estaba muriendo, no pude hacer nada.@ Sólo podía observar.@ Era como si fuese sólo una muñeca.@
+` Por eso---pensé… que tal vez sería mejor que fuese sólo una muñeca.@ Quizás puse una maldición sobre mí misma.@
+` Antes de darme cuenta, me volví tan silenciosa como Nee-san.@
+` …… Nee-san tomó mi lugar, haciendo el trabajo que yo no podía, sonriendo porque yo no podía hacerlo."\
+`"…… Espera, Hisui.@ Qué estás diciendo, yo en verdad no---"@
+` …entiendo, es lo que quise decir.@
+`"¿Por qué dices que casi muero?@ ¿Sabes sobre el accidente de hace ocho años?"@
+`"…… Sí.@ Usted no fue herido en un accidente de tránsito.@ …… En el patio de la mansión, usted fue asesinado."@
+`"Qué----"\
+bg "image\bg\cmo_06.jpg",%type_crossfade_mid
+` Eso.@ No es.@ Correcto.@
+` Yo soy el que asesinó.@
+` Porque yo, era el que estaba observando a ese cuerpo manchado de sangre---\
+wave se0
+`"Ah……"@
+` Comienzo a sentirme mareado.@ Toda la fuerza desaparece de mis piernas, y empiezo a caer---
+br
+`"¡Shiki-sama……!@ ¡Por favor, resista……!"@
+br
+` …… En ese instante,
+` Hisui me envuelve con sus brazos para evitar que caiga.\
+bg #000000,%type_lshutter_fst
+bg "image\bg\bg_40b.jpg",%type_lshutter_fst
+`""Ah----""@
+` …… Su voz y la mía coinciden.@
+` Hisui permanece ahí, aferrándose a mí desesperadamente.@
+` Pareciera que estuviésemos abrazándonos, y Hisui está temblando.\
+`"………… Hisui."@
+` Comprendo.@
+` Comprendo que no le agrada entrar en contacto con los hombres.@
+` Incluso ahora, todo su cuerpo está temblando.\
+`"---Hisui."@
+` Pero, no puedo soltarla.@
+` La envuelvo con mis brazos.@
+` Su calidez.@ Su suave cuerpo.@
+` …… Desde que éramos niños, la chica que siempre ha cuidado de mí.@
+br
+bg #000000,%type_crossfade_fst
+bg "image\event\his_e01b.jpg",%type_crossfade_mid
+` Sí---no puede haber más dudas.\
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_40b.jpg",%type_crossfade_mid
+`"Hisui…… Finalmente, volvemos a vernos."@
+` Con mi débil cuerpo, la abrazo cerca de mí.@
+`"Ah…… Shiki… sama……"@
+` Ella no deja de temblar.@
+` Pero no me rechaza, y envuelve mi espalda con sus brazos.\
+`"…… Lo siento."@
+` No sé por qué me estoy disculpando.@
+` Simplemente siento que hay muchas cosas por las que debería disculparme con ella.@
+`"…… En absoluto.@ No necesita disculparse por nada, Shiki-sama."@
+` Respondiendo tranquilamente, ella me lleva hacia la cama.\
+bg #000000,%type_crossfade_mid
+!w2000
+play "*1"
+bg "image\bg\bg_40c.jpg",%type_crossfade_mid
+` Descanso en mi cama.@
+` Mi cuerpo se relaja un poco, porque la cama es mucho más cómoda que el piso.@
+` Hisui me cubre con una sábana limpia y trae un vaso de agua.\
+ld c,":a;image\tachi\his_t02.jpg",%type_lshutter_fst
+`"Shiki-sama, ¿puede beber por su cuenta?"@
+`"Sí, creo que puedo."@
+` Tomo el vaso de Hisui, y bebo mi primer vaso de agua del día.@
+`"Nnnh……"@
+` El agua alivia mi sed.@
+` El agua parece llenarme por completo, hasta las yemas de mis dedos.@
+` Le devuelvo el vaso a Hisui, y caigo de vuelta a la cama.\
+ld c,":a;image\tachi\his_t24.jpg",%type_crossfade_fst
+`"¿¡Shiki-sama!?"@
+`"---No, no no, no es eso.@ En realidad me siento bien, sólo me estaba relajando.@ De hecho, parece que estoy mejor de salud."@
+ld c,":a;image\tachi\his_t07.jpg",%type_crossfade_fst
+`"Shiki-sama, no me asuste así.@ No sería muy sorprendente que en verdad se desmayase en ese estado."@
+` Hisui me mira con intranquilidad en sus ojos.@
+` …… Esa mirada me hace querer agradecerle, y también me hace sentir arrepentimiento.\
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"…… ¿Shiki-sama?@ ¿Le duele algo?@ Si siente dolor, por favor no dude en decírmelo."@
+`"No, nada me duele mucho en este momento."@
+` …… Bueno, me duele la cabeza.@
+` Hisui está preocupada por mí, igual que siempre.@
+` Todo lo que he hecho en retribución es actuar estúpidamente.@
+` Sin siquiera percatarme de su absoluta devoción, todo lo que he hecho es llevar dolor a su corazón.\
+bg #000000,%type_crossfade_fst
+monocro #0000ff
+bg "image\event\his_h02.jpg",%type_crossfade_fst
+bg #000000,%type_crossfade_fst
+monocro off
+bg "image\bg\bg_40c.jpg",%type_crossfade_fst
+` Y aquella vez, cuando le hice esas cosas terribles a Hisui.@
+` …… Aunque en realidad se trataba de Kohaku-san, para mí era Hisui.@
+br
+bg #000000,%type_crossfade_fst
+monocro #0000ff
+bg "image\event\his_h14.jpg",%type_crossfade_fst
+bg #000000,%type_crossfade_fst
+monocro off
+bg "image\bg\bg_40c.jpg",%type_crossfade_fst
+` Y eso no es todo.@
+` Soñé que mataba gente, y en concordancia con eso, soñe que violaba a Hisui.\
+` …… Yo,
+` no merezco que Hisui se preocupe por mí.\
+ld c,":a;image\tachi\his_t07.jpg",%type_lshutter_mid
+`"Shiki-sama, ¿el agua no fue de su agrado……?"@
+` Niego con mi cabeza.@
+`"No es eso.@ …… Um… gracias por todo, Hisui.@ Nunca pensé que beber agua podría ayudarme tanto.@
+ld c,":a;image\tachi\his_t03.jpg",%type_crossfade_fst
+` Pero, ya es suficiente.@ No merezco ser tratado tan bien por ti."@
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"---Shiki-sama, ¿aún está diciendo eso?@ Yo sólo quiero ayudarle, no importa que lo merezca o no."\
+`"No, Hisui.@ No eres tú."@
+` …… Sí, soy yo el que tiene la culpa aquí.@
+` Hisui sólo me ofrece devoción, pero yo le pago con crueldad.@
+`"…… Si estás aquí conmigo, probablemente volveré a hacer algo horrible.@ Antes de que haga algo, por favor, vete.@ …… Te lo ruego.@ Yo--no quiero lastimarte más, Hisui."@
+ld c,":a;image\tachi\his_t17.jpg",%type_crossfade_fst
+` Hisui no dice nada.@
+` Pero tiene que comprender lo que estoy diciendo.\
+` Después de muchos segundos de silencio, parece que comprende, porque levanta su cabeza y asiente.@
+ld c,":a;image\tachi\his_t12.jpg",%type_crossfade_fst
+`"Me niego."@
+`"…… Sí, lamento que tuviese que ser de esta manera, pero…… E, espera un minuto.@ Hisui, ¿qué acabas de decir……?"@
+ld c,":a;image\tachi\his_t08.jpg",%type_crossfade_fst
+`"Dije que me niego.@
+` Esas palabras no son suficiente, y no puedo dejarlo solo.@ Hasta que me dé una razón válida, no obedeceré su orden."@
+` Hisui responde claramente.\
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"Por favor dígame la razón, Shiki-sama.@ A menos que lo haga, no me moveré un solo paso."@
+`"Qué--"@
+` Sus ojos hablan muy seriamente.@
+` Apuesto que podrá saber si digo una mentira o una excusa, y por encima de todo---no quiero mentirle.\
+`"…… Entiendo.@ Si te digo la razón, ¿te irás?"@
+`"Sí.@ Si es algo que pueda convencerme, cumpliré su orden."@
+` ……… *suspiro*@
+` Respiro profundamente.@
+` …… Mentalmente preparado, abro la boca.\
+`"Hisui, tengo sueños en los que asesino gente.@ Todas las noches, sueño que asesino a alguien que no conozco y bebo su sangre."@
+ld c,":a;image\tachi\his_t08.jpg",%type_crossfade_fst
+`"…… Tiene sueños…… ¿Debo suponer que ésa es su razón, Shiki-sama?"@
+`"…… No, la cuestión es que, no puedo saber si son sueños o no.@ Tal vez no me doy cuenta pero, podría estar matando gente en la realidad.@
+` …… Al igual que el viejo.@ Podría haber otra personalidad desconocida dentro de mí, recorriendo las calles y matando gente."\
+ld c,":a;image\tachi\his_t23.jpg",%type_crossfade_fst
+`"Shiki-sama, eso--eso es imposible.@ En este momento, está actuando como el Shiki-sama de siempre."@
+`"…… Ahora lo estoy.@ Pero a veces, tengo estos extraños pensamientos.@ Los sueños que tengo… podrían simplemente ser mis recuerdos."@
+` …… Y ciertamente, asesiné a alguien hace ocho años.@
+` De hecho, tengo el recuerdo de haber observado a ese niño manchado de sangre.\
+ld c,":a;image\tachi\his_t08.jpg",%type_crossfade_fst
+`"Shiki-sama, por favor tranquilícese.@ Pensar que es un monstruo chupasangre, ciertamente es demasiado extraño."@
+`"…… Sí, es extraño, pero no puedo reírme de ello.@ …… Hisui, tú no lo sabes, pero creo que los miembros de la familia Tohno son diferentes a las personas normales.@ El viejo tenía personalidades múltiples, e incluso Akiha--"@
+br
+` ---estaba chupando la sangre de Kohaku-san.\
+`"En fin, las personas de la familia Tohno no son normales.@ Así que tampoco soy normal.@ No puedo evitar sentir lujuria hacia ti o hacia Kohaku-san.@
+` ¡Estoy bien ahora, pero si ese dolor de cabeza regresa, seguramente---te haré algo terrible, Hisui……!"@
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"---Shiki-sama; Nee-san y yo hemos sabido todo eso desde el principio."\
+`"¿Huh……?@ ¿Lo sabían?@ ¿Qué sabían?"@
+`"Que la familia Tohno no es normal.@ No, en otras palabras, usted era el único que no lo sabía.@
+` Nee-san y yo hemos sabido eso desde que usted fue traído por primera vez a esta mansión."@
+`"------Qué…"@
+`"Pero no piense que eso es extraño.@ Nee-san y yo, también tenemos un poder que no es normal.@ Fue debido a ese poder que Makihisa-sama nos trajo aquí.@
+` En lo referente a la familia Tohno, sabemos mucho más que usted, Shiki-sama."\
+`"Ciertamente, puede decir que la sangre Tohno es anormal.@
+` Pero, Shiki-sama, eso no tiene nada que ver con usted.@ Usted no tiene personalidades múltiples como Makihisa-sama, ni es un vampiro que succiona sangre humana.@ Shiki-sama, usted es alguien más parecido a Nee-san y a mí."\
+`"…… ¿Soy, más parecido a ti……?"@
+`"Sí.@ Definitivamente no es un asesino.@ …… Por favor, confíe en mí por ahora y déjeme cuidar de usted."@
+`"…… No.@ Eso no cambia el hecho de que, um…… aún te deseo.@ Si te quedas aquí, haré algo que no podré reparar."@
+ld c,":a;image\tachi\his_t26.jpg",%type_crossfade_fst
+`"U---um, sobre ese problema, ¿me permite hacerle una pregunta……?"@
+`"¿Eh…?@ Sí, no hay problema……"@
+ld c,":a;image\tachi\his_t28.jpg",%type_crossfade_fst
+`"Um, Shiki-sama, um…… Nee-san y yo, ¿no le gustamos……?"@
+`"------¿Huh?"\
+` Hisui pregunta algo totalmente absurdo, y comienza a juguetear con sus dedos.@
+` ¿No me gustan Hisui y Kohaku-san?@
+` Nada podría estar más lejos de la verdad.\
+`"…… Mira.@ De ninguna manera podrían no gustarme.@ Siempre estoy agradecido con Kohaku-san, y contigo también…… um, siempre estoy pensando en lo agradecido que estoy contigo."@
+ld c,":a;image\tachi\his_t22.jpg",%type_crossfade_fst
+` Ella suelta la respiración que estaba conteniendo.@
+` Hisui se relaja visiblemente por alguna razón.\
+ld c,":a;image\tachi\his_t02.jpg",%type_crossfade_fst
+`"Entonces no hay problema.@ Su condición lo ha puesto bajo mucho estrés.@ Esto hizo que las cosas en su mente apareciesen en sus sueños.@ Significa que sus pensamientos son sus verdaderos sentimientos.@
+` Por lo tanto, si se siente atraído por nosotras, no es raro que se sienta de esa manera."@
+`"¡Ah…… Es verdad, pero…… !@
+` Aun así, es extraño desearlas de esta manera."\
+ld c,":a;image\tachi\his_t03.jpg",%type_crossfade_fst
+`"Sí, es un poco peligroso.@ Pero Shiki-sama, siempre lo ha resistido, ¿no?@ Entonces no va a ser un problema.@ Dice que se considera peligroso, pero usted es una persona más fuerte que eso.@
+` Si se ha contenido todo este tiempo, entonces puede seguirlo haciendo, ¿verdad?@ Además, lo hace por voluntad propia, así que es imposible que tenga personalidades múltiples."@
+`"Bueno…… Esa teoría puede ser correcta, pero……"\
+cl c,%type_crossfade_fst
+` …… No es tan simple.@
+` Pero al ver esa sonrisa llena de confianza, siento que tengo que resistir sin importar qué.\
+`"…… De acuerdo.@ Si tú lo dices, entonces, puedes estar cerca de mí.@ Trataré de mantenerme a raya tanto como me sea posible."@
+ld c,":a;image\tachi\his_t20.jpg",%type_lshutter_fst
+`"Eh----no.@ Eso… eso no es exactamente lo que quise decir…"@
+` Hisui se sonroja y mira hacia abajo.@
+`"¿Hm……?"@
+` No lo entiendo.@
+` Hisui levanta la mirada hacia mí de vez en cuando, con un complicada expresión.\
+`"¿Hisui?@ ¿Dije algo extraño?"@
+ld c,":a;image\tachi\his_t02.jpg",%type_crossfade_fst
+`"……………………"@
+` Hisui me mira fijamente.@
+`"¿--------?"@
+` Comienzo a sentirme muy incómodo.@
+` Mi corazón late más rápido bajo tensión.@ Me siento nervioso, como si estuviese a punto de ser regañado por hacer algo indebido.\
+br
+` ------Palpitar.\
+br
+` ------Palpitar.@
+br
+` ------Palpitar.@
+br
+` ------Palpitar.@
+br
+` ------Palpitar.\
+wave se0
+bg #000000,%type_crossfade_mid
+bg "image\bg\bg_40c.jpg",%type_crossfade_fst
+`"Mie--"@
+` …… Mierda.@
+` Comienzo a sentirme un poco mareado, probablemente porque estoy nervioso.@
+bg #000000,%type_crossfade_mid
+bg "image\bg\bg_40c.jpg",%type_crossfade_fst
+`"Uu…… "@
+` Mi consciencia comienza a ondular.@
+` …… Lo olvidé por completo, pero, mi cuerpo no está en condiciones de seguir hablando.@
+`"Ah…………, ------"@
+` Siento náuseas cada vez que mi corazón palpita.@
+` Hisui---odio hacerle esto, pero tal vez sea mejor que duerma en este momento----\
+ld c,":a;image\tachi\his_t17.jpg",%type_crossfade_fst
+`"¿Shiki-sama?@ ¿Está sufriendo?"@
+`"Eh…… Ah.@ Sólo… un poco.@ Pero no es nada serio, no tienes que preocuparte por eso."@
+`"…… No.@ A este paso, de seguro morirá.@ Nee-san dijo que usted, podría no llegar hasta el amanecer."@
+wave se0
+`"Qué----"\
+` Siento un escalofrío al escuchar eso.@
+` …… No es que no lo haya pensado.@
+` Cuando este cuerpo dejó de sanar.@
+` Imaginé muchas veces que mi debilitado cuerpo sólo me llevaría a la muerte.@
+br
+` Pero aun así,…
+` …… escuchar a otra persona decirlo de esa manera, me da escalofríos en la columna.\
+`"…………………"@
+` Yo… no sé qué decir.@
+` ¿Debería simplemente aceptarlo?@
+` ¿Debería negarlo?@
+`"…………………"@
+` No puedo hacer ni lo uno ni lo otro.@
+` He sentido que mi cuerpo morirá muy pronto… pero simplemente no se siente real.@
+` Es como si estuviese viendo la vida de una persona enferma en alguna clase de programa de televisión.\
+ld c,":a;image\tachi\his_t23.jpg",%type_crossfade_fst
+`"…… Akiha-sama y Nee-san salieron para salvarlo.@ …… Pero puede que no lo logren a tiempo.@ Y aunque tengan éxito, si su cuerpo se queda sin energía antes de eso, no servirá de nada."@
+`"…………… Bueno, supongo que tienes razón."@
+` No sé qué están haciendo esas dos.@
+` Hisui dice que van a salvarme pero, ¿están buscando algo que pueda curar mi enfermedad?\
+` Pero, todo ese trabajo……
+` será inútil si muero antes de que vuelvan a casa.\
+ld c,":a;image\tachi\his_t04.jpg",%type_crossfade_fst
+`"…… Pero, ¿sabe?@ Hay una manera de darle energía para que pueda vivir hasta que ellas regresen."@
+`"¿…… ?"@
+ld c,":a;image\tachi\his_t20.jpg",%type_crossfade_fst
+`"…… Por favor discúlpeme, pero si me lo permite--podré utilizar ese método."@
+` Hisui mira mi rostro con vacilación.\
+` Hisui dice que hay un método para salvarme al menos por esta noche.@
+` Si eso es verdad, no tengo razón para rechazarlo.\
+`"…… No es cuestión de permitirlo o no.@ Si puede ayudarme aunque sea un poco, entonces no tenemos opción.@ Yo mismo quisiera pedirlo."@
+ld c,":a;image\tachi\his_t02.jpg",%type_crossfade_fst
+`"---Sí.@ Entonces Shiki-sama, ¿podría por favor cerrar los ojos sólo por un momento?"@
+`"¿Cerrar los ojos?@ Bueno, claro…… ¿Así está bien?"@
+playstop
+bg #000000,%type_tshutter_fst
+`"…… Sí, está bien.@ Por favor no se mueva."\
+` Escucho sus pasos.@
+` El susurro de su ropa me dice que se está acercando más.@
+` Y entonces…
+` Algo se sube a la cama, y siento que algo toca mis labios.\
+play "*8"
+`"-------"@
+` Una tierna sensación.@
+` Siento el calor de un cuerpo humano; y deben ser los labios de Hisui.@
+br
+` ----Mi cuerpo se calienta.@
+br
+` Sus labios presionan los míos con vacilación.@
+` Esta sensación, y la de su respiración, parecen llenar mi cuerpo como una droga.\
+`"Ah----"@
+` Palpitar, Palpitar.@
+` Sólo con un beso, mi mente se queda totalmente en blanco.@
+` Estoy flotando placenteramente.@
+` Todo mi dolor, todo mi cansancio se esfuma como hielo en un día de verano.\
+`"Nn……, …… ah."@
+` …… Hisui exhala.@
+` El pequeño contacto entre nosotros comienza a hacerse más pesado.\
+`"Nn----Hisu, i"@
+` …… No sé qué estoy haciendo.@
+` Es sólo que sus labios se sienten muy bien, así que respondo con los míos.@
+`"…… Shiki…… sa--ma……"@
+` Hisui comienza a apartarse con vacilación.@
+` No quiero eso, y la atraigo más hacia mí.\
+`"Nn…… ah."@
+` Halándola, persigo sus labios.@
+`"¡Ha…… n, n……!"@
+` Hisui se resiste levemente, podría estar teniendo dificultad para respirar.@
+`"------Ha--ah."@
+` Pero no puedo detenerme.@
+` Su aliento.@ Sus labios.@ Su calidez.@ Todo se siente muy bien.\
+` Con los ojos aún cerrados, deslizo mi lengua entre sus labios.@
+`"¡N--n!"@
+` A diferencia de antes, ahora en verdad intenta apartarse.@
+` Abrazo su cuerpo para aferrarme a ella, y continúo persiguiendo su lengua.\
+`"¡A…… n, n……!"@
+` Si abro los ojos, apuesto que veré su cara de angustia.@
+` Si viese eso, la soltaría de inmediato.@
+` Y por eso,
+` continúo girando mi lengua ciegamente sobre la suya.\
+`"N…… a, a……"@
+` Nuestrás húmedas lenguas se entremezclan.@
+` Sólo la sensación de mi lengua contra la de otra persona me hace enloquecer.@
+` Sólo el hecho de que mi sensible lengua esté sintiendo la de otra persona hace que mi pensamiento racional esté a punto de explotar.@
+br
+` Y como se trata de la lengua de Hisui, se desmorona por completo.\
+`"A…… n, n…… ah……"@
+` Las rojas y enredadas lenguas continúan su baile.@
+` Aunque nuestros labios se separan, nuestras lenguas ahora son una.@
+` …… Esto no es alguna clase de metáfora.@
+` Nuestras lenguas están unidas por toda nuestra saliva.\
+br
+` ---¿Me pregunto cuánto duró eso?@
+br
+` Antes de darme cuenta, mi cuerpo está ardiendo, y Hisui está a un lado de la cama, ajustando su ropa.\
+bg "image\bg\bg_40c.jpg",%type_crossfade_fst
+` Palpitar.@
+br
+`"Ah----"@
+br
+` Palpitar.@ Palpitar.\
+br
+` Me falta el aire.@
+br
+` Palpitar, Palpitar, Palpitar.@
+br
+`"Mi…… cuerpo… se siente increíblemente…… cálido."@
+br
+` Mi corazón se acelera incontrolablemente.\
+ld c,":a;image\tachi\his_t22.jpg",%type_lshutter_fst
+` …… Hisui se para a un lado de la cama, desviando su mirada, avergonzada.@
+` Yo----no sé exactamene por qué hizo eso.@
+`"…… Hisui…… justo ahora, por qué--"@
+` ¿Por qué me besó?@
+` ¿Por qué sólo un beso me sanó mejor que cualquier medicina?@
+` No entiendo nada de eso.\
+ld c,":a;image\tachi\his_t02.jpg",%type_crossfade_fst
+`"…… Ésa es la manera en que puedo ayudarle, Shiki-sama."@
+`"Ayudarme---pero, ¿cómo?"@
+`"En realidad no lo sé.@ Es sólo que, Nee-san y yo podemos transmitir algo de nuestra energía hacia las personas que entren en contacto con nuestros cuerpos.@
+` …… Um, si intercambiamos fluidos corporales, somos capaces de reconocer a esa persona como alguien similar a nosotras, y eso nos permite compartir nuestra energía y amplificar sus poderes."\
+`"¿Qué--de qué estás hablando?"@
+`"Desde que nacimos, hemos tenido cuerpos especiales.@ No somos como la familia Tohno, sino personas especiales concebidas por personas normales.@ Makihisa-sama nos llamaba 'Sincronizadores'."@
+br
+` ----Ah.@
+` Creo que esa palabra estaba en el diario del viejo.\
+`"Makihisa-sama nos trajo aquí para suprimir su 'personalidad Tohno' que iba en aumento.@ Somos más aptas para amplificar el poder de alguien que para compartir nuestro poder.@
+` …… Makihisa-sama sincronizó su lado humano con Nee-san, y apenas pudo mantenerse cuerdo."@
+`"……………"@
+` No, ella no tiene que decirme todo esto…… pero "el intercambio de fluidos corporales", debe significar---\
+`" …… No entiendo perfectamente, pero tu cuerpo… ¿es como alguna clase de medicina o algo así……?"@
+`"Sí.@ Normalmente no tendría un efecto muy grande, pero ahora su energía es muy baja.@ Creo que con mis poderes, al menos podrá volver a su estado normal."@
+`"----Ya veo.@ Por eso me siento tan bien en este momento."@
+` Aprieto mis manos.\
+`"…… Se mueven.@ ¡Sí, puedo moverme……!"@
+` Mis articulaciones están un poco tiesas, pero puedo mover mi cuerpo a voluntad.@
+` Ser capaz de hacer algo tan simple me hace muy feliz en este momento.@
+`"¡Gra, gracias Hisui!@ ¡Parece que mi cuerpo ha vuelto a la normalidad, gracias a ti!"@
+ld c,":a;image\tachi\his_t20.jpg",%type_crossfade_fst
+` Estiro mis brazos hacia arriba.\
+` Pero, Hisui aún se ve intranquila.@ …… Ahora recuerdo.@
+` Su aliento se sentía muy bien, y forcé a Hisui a seguir besándome.\
+`"Ah…… Lo, siento.@ Tu aliento, se… sentía muy bien, así que yo--"@
+`"No, lo que sucedió fue algo bueno…… Um, creo que no hubiese podido transferir fluidos por mi cuenta."@
+` Hisui me mira, avergonzada.@
+ld c,":a;image\tachi\his_t28.jpg",%type_crossfade_fst
+`"Pero, Shiki-sama, éste es un tratamiento temporal.@ Pronto volverá a su estado original."@
+`"¿Qué----en serio?@ ¿Mi estado previo---dices que volveré a como estaba antes?"\
+` No.@ Cualquier cosa menos eso.@
+` Al ser capaz de moverme de esta manera, finalmente comprendo.@
+` Estos últimos días, mi cuerpo ha estado terriblemente enfermo.@
+` Por lo tanto, ahora que puedo moverme de nuevo, pensar que mi cuerpo puede volver a ese estado me da escalofríos en la columna.@
+`"…… ¿Qué debería hacer?@ No quiero volver a pasar por eso jamás.@ Ser como un títere con las cuerdas cortadas, sentir como si mi cabeza fuese partida en dos… Esta vez---"@
+` Antes de que mi cuerpo deje de funcionar, creo que mente se dañará primero.\
+ld c,":a;image\tachi\his_t02.jpg",%type_crossfade_fst
+`"Shiki-sama.@ Yo tampoco deseo que regrese al estado en que se encontraba.@
+` Por lo tanto…… ¿podría… compartir su cuerpo conmigo un poco más esta vez?"@
+` Con sus dedos temblando, ella dice esto mientras me mira directamente.@
+br
+` ----Mi corazón omite un latido.@
+br
+` Compartir más nuestros cuerpo significa…
+` Um, significa intercambiar nuestros fluidos corporales, es decir que----\
+`"----Es decir, um--"@
+` Hisui permanece en silencio.@
+` …… ¿Debería ser yo quien lo diga?@
+`"---En otras palabras, ¿tengo que hacer el amor contigo?"@
+ld c,":a;image\tachi\his_t21.jpg",%type_crossfade_fst
+` Hisui asiente sin palabras.\
+`"----------"@
+` Mi cara se torna carmesí instantáneamente.@
+` La idea en sí me hace feliz, pero---\
+`"---No, eso es malo.@ No puedo volver a como estaba, pero eso es malo.@ ¡Usarte de esa manera para curarme, está mal…!"@
+` Rechazo su oferta categóricamente.@
+ld c,":a;image\tachi\his_t05.jpg",%type_crossfade_fst
+`"……………"@
+` Hisui aún está en silencio.@
+` Pareciera que estuviese más herida por mis palabras que aliviada por mi negativa.\
+`"¡No, no es que no te desee……!@ Es simplemente extraño.@ Podría ayudarme, pero usar tu cuerpo de esa manera, está mal."@
+ld c,":a;image\tachi\his_t13.jpg",%type_crossfade_fst
+`"…… Lo único que está mal es usted, Shiki-sama.@ Comprendo que no me desea.@
+` Pero si no hace esto, morirá esta noche.@ ¿Cómo puede decir cosas como ésas?"\
+`"Ah---no, eso es--"@
+` …… Cierto.@
+` Es por eso que Hisui está sugiriendo este absurdo "plan".@
+` …… Hisui, quien ni siquiera puede soportar el contacto con el género opuesto, está sugiriendo esto porque mi vida está en juego.@
+` Por lo tanto---ella dice todo eso por mi bien.@
+` Está diciendo que puedo dormir con ella, sin importar que lo queramos o no---\
+`"Mald----"@
+` ¿Acaso no está bien?@
+` Yo tampoco quiero morir.@
+` Es decir, todo lo que tengo que hacer es dormir con ella, y si no me gusta eso, entonces en verdad hay algo mal en mí.\
+`"------"@
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+` Hisui me observa silenciosamente.@
+` Sus dedos aún están temblando.@
+` Con lo nervioso que estoy---ella está aun más nerviosa.@
+` Pero lo esconde, e intenta actuar normalmente.@
+` Está haciendo tanto por mí, ¿entonces por qué---\
+`"¿Hisui----tú… estás de acuerdo con esto?"@
+ld c,":a;image\tachi\his_t16b.jpg",%type_crossfade_mid
+`"…… Sí.@ Si puedo serle útil, estaré satisfecha."@
+`"---¡No!@ Eso no es lo que quise decir, um---"@
+` ¿Ella en verdad está de acuerdo con entregarle su cuerpo a alguien que no ama?@
+` Eso… no me agrada.@
+cl c,%type_crossfade_fst
+` Quiero dormir con ella.@
+` Pienso que la amo, y quiero hacer cosas por su bien.@
+` Pero son dos cosas distintas.@
+` Simplemente, no quiero dormir con ella porque no sé si Hisui me ama o no.\
+`"---¿Está bien, Hisui?@ Entregar tu cuerpo de esa manera, ¿no lo lamentarás después?"@
+ld c,":a;image\tachi\his_t26.jpg",%type_crossfade_fst
+`"…… No lo sé.@ Pero tengo sólo una petición que hacerle."@
+`"¿Petición……?"@
+ld c,":a;image\tachi\his_t02.jpg",%type_crossfade_fst
+`"Sí.@ Shiki-sama, si yo le gusto aunque sea sólo un poco, por favor---sólo por ahora, piense solamente en eso.@ Si pudiese amarme sólo por ahora---nunca lamentaría esto."@
+` …… Hisui habla, aún temblando.\
+`"-----"@
+` …… Soy estúpido.@ Nunca me había sentido tan estúpido como ahora.@
+`"--Hisui.@ Yo"@
+` …… ¿Qué quiero decir con "no quiero hacerlo si Hisui no me ama"?@ Sinceramente---no merezco decir eso.@
+`"---Ven aquí.@ Ahora mismo, en verdad te necesito."\
+cl c,%type_lshutter_mid
+` …… Hisui se acerca más.@
+` Estirando mis brazos, la traigo hacia mí.\
+`"---Pero no me malinterpretes.@ Incluso sin mi enfermedad, yo siempre---te he deseado más que a nadie todo este tiempo."@
+br
+` Entonces.@
+` Llevándola a la cama, recorro su cuerpo con mis dedos.\
+playstop
+bg #000000,%type_crossfade_mid
+` Desato su cinta y ésta susurra al caer.@
+`"Ah……"@
+` La voz de Hisui tiembla.@
+` Aparento no escucharla, y desato el cinturón de su delantal detrás de su espalda.\
+`"¿Shiki-sama?@ Um……"@
+` Hisui me mira con ojos inconscientes e intranquilos.@
+`"Hisui, ¿ésta es tu primera vez……?"@
+`"Ah…… sí.@ Por favor, perdóneme."@
+` Su voz se vuelve un susurro y sus mejillas se tornan rojo brillante.@
+` Temblando, aprieta las sábanas como para combatir su miedo.\
+`"Pero Shiki-sama, yo…… estaba estaba pensando que podría no ser necesario quitarme el delantal…"@
+` No parece que quiera quitarse la ropa y desnudarse.@
+` Me mira nerviosamente, como un conejo asustado.@
+` …… Pero eso sólo hace que mi corazón se incendie.\
+`"Nop.@ Si no te quitas la ropa, entonces no podré hacer nada.@ …… Hmm, me pregunto cómo se quita esto."@
+` Sosteniendo a Hisui desde atrás, busco algo como una cremallera.@
+` Pero parece que no puedo encontrarlo.\
+`"Oye.@ Hisui, ¿cómo te pusiste esto?@ Esto… no parece que haya forma de quitarlo."@
+`"Um…… Es una sola pieza, así que es difícil de quitar en esta posición."@
+`"…… Ya veo.@ Supongo que no se puede."@
+`"Correcto.@ Así que de esta manera, um…… quiero que usted……"@
+`"------"@
+` Ni de broma.@ Si llego tan lejos y no logro ver su cuerpo, me suicidaré.\
+`"No.@ Hisui, levántate y quítatelo.@ Si no lo haces, será un poco complicado."@
+`"Eh---ah, eh, pero, si hago eso, estaré desnuda."@
+`"Sí.@ Quiero ver tu cuerpo.@ No puedo hacerte el amor si no te quitas la ropa, me estaría perdiendo demasiado."@
+`"¿Se perdería demasiado…?@ Shiki-sama……"@
+` Ella parece preocupada.@
+` Hisui está avergonzada, pero parece que aún está tratando de seguir mis órdenes.\
+`"Ah……… S, sí."@
+` Después de considerarlo un poco, se levanta silenciosamente.@
+`"…… Shiki-sama, ¿podemos apagar las luces?"@
+`"----Hm."@
+` Eso es un gran problema.@
+` No me había percatado, pero afuera está muy oscuro.@ Si apago las luces, sólo quedará la luz de la luna para iluminar la habitación.\
+`"…… No quiero hacerlo de otro modo.@ Pero si usted insiste, seguiré sus órdenes.@ …… Aunque podría odiarlo por eso."@
+`"Ah----"@
+` …… Qué buena es.@
+` Nunca pide nada para sí misma normalmente, pero sus palabras me golpean donde soy débil.\
+`"…… Entiendo.@ Apagaré las luces, así que quítate la ropa."@
+` Apago el interruptor de la luz.@
+` Al mismo tiempo, oigo caer su ropa.@
+` Debe estar acostumbrada a esa ropa, ya que se quita su uniforme de sirvienta muy fácilmente.\
+bg "image\bg\bg_40d.jpg",%type_crossfade_fst
+play "*5"
+bg "image\event\his_h12.jpg",%type_crossfade_mid
+` La luna provee la única iluminación.@
+` No puedo ver claramente su cuerpo desnudo, y sólo puedo ver su contorno.@
+br
+` ---No.@
+` Aun así, es más que suficiente.@
+` Las curvas de su cuerpo que estaban siempre ocultas bajo su uniforme pueden ser vistas claramente ahora.\
+` Sus senos no son grandes, pero tampoco son pequeños.@ Sus montículos perfectamente formados no se ven tan suaves, pero están más o menos entre los de una chica y los de una mujer.@
+` Sus exquisitos senos son hermosos y eróticos.\
+` Su cuerpo es delgado pero no demasiado.@
+` Su fragil, delicado y aparentemente suave cuerpo.@
+` Su femineidad, normalmente escondida, ahora envuelve mis sentidos.\
+`"…… ¿Shiki-sama……?"@
+`"Ah--lo siento.@ Sólo estaba fascinado por tu belleza.@ Ahora, ven aquí, Hisui."@
+` Extiendo mi mano desde la cama.@
+` Después de vacilar brevemente, ella viene hacia la cama, mirando hacia abajo.\
+` Me siento en la cama con las piernas cruzadas.@
+` Hisui no se sube a la cama, pero permanece a un costado.@
+`"………"@
+` Hisui murmura que no sabe muy bien qué hacer.@
+`"-----"@
+` Mi corazón palpita vigorosamente.@
+` Tengo la incómoda sensación de que estoy a punto de hacerle esto a una inocente chica pura.@
+` Dejo que mi mente se entumezca, y lentamente dejo que mis dedos toquen sus brazos.\
+`"¡--!"@
+` Hisui reacciona con una sacudida.@
+` Pero intenta no reaccionar demasiado y lo soporta.\
+`"…… Hisui.@ Voy a hacerlo ahora…… ¿estás absolutamente segura de que estás de acuerdo con esto?"@
+`"…… Sí.@ Por favor… haga lo que desee.@ Por favor, ámeme."@
+`"---------"@
+` Tan pronto como escucho eso, algo se va volando.@
+` Mis preocupaciones por Hisui se desvanecen por completo.\
+bg #000000,%type_lshutter_fst
+`"¡………!"@
+` Agarro sus brazos.@
+`"¡Aah……!"@
+` Su delicado cuerpo tiembla nerviosamente.@
+` Ignoro todo eso y acaricio su cuello con mi lengua.\
+bg "image\event\his_h13.jpg",%type_crossfade_mid
+`"¡Ha--a, n--!"@
+` Hisui rueda su cabeza hacia atrás.@
+` Su cuerpo se tensa.@
+`"…… Sólo relájate.@ No iré tan rápido, así que no te preocupes."@
+` Muevo mi cara desde su cuello hasta su clavícula.@
+` Mi lengua deja un rastro pegajoso mientras viaja.\
+`"Ah…… S…… sí, relajada……"@
+` Hisui permanece quieta, como si fuese alguna clase de muñeca.@
+` Apuesto que no se moverá de esa posición a menos que la fuerce hacia la cama.@
+` Pero por ahora, esto es mejor.\
+`"…… Mm…… Hisui, tu piel sabe muy bien."@
+`"¡Ah………!"@
+` Su cuerpo tiembla.@
+` Mis palabras parecen afectarla incluso más que mi lengua bajando hacia sus senos.@
+` Pero eso ya pasó.@
+` Sosteníendola suavemente por los brazos, pongo mi lengua sobre sus senos.\
+`"…… Aah…… nn…… ah."@
+` Muevo mi húmeda lengua.@
+` Lamo su perfectamente formado seno de adentro hacia afuera.\
+`"Mmm…… Hisui, parece que no te estás sintiendo bien aquí."@
+` Diciendo eso, lamo su pezón.@
+`"¡……!"@
+` Su cuerpo se sacude.@
+` Pero ya la tengo tomada de los brazos.@ Si hay algo que ella puede hacer, es…
+`"Ah…… ah, n, no……"@
+` Ahogar su voz y apartar la vista.\
+` Giro alrededor de sus pezones con la punta de mi lengua.@
+`"¡N--ah, naah……!"@
+` Lamo alrededor.@
+` Sus rosados pezones comienzan a endurecerse.@
+`"¿Qué es esto?@ Te ves tan tranquila, pero eres muy erótica, Hisui."@
+`"…… ¡Ah…… n, no, no, soy, ……!"@
+` ---Antes de que tenga oportunidad de decirlo, chupo sus senos junto con sus pezones.\
+`"Haah----ah, mm----"@
+` Tal vez está muy avergonzada por ser llamada erótica; desesperadamente intenta contener su voz.@
+br
+` …… Pero, no es que ella sea sensible.@
+br
+` Los pezones se endurecen sólo con una pequeña estimulación.@ La parte sensible que se endurece cuando es tocada por alguien, sin importar cuánto no lo desee la mujer.@ Es el pezón, así que en realidad, Hisui no tiene nada que ver con esto.\
+`"Mmm…… Ya estás tan dura.@ En ese caso…… tal vez estará bien que use mis dientes."@
+` Muerdo.@
+`"¡Aah------!"@
+` Su quijada se levanta.@
+`"¡Shi, Shiki-sama, e, eso----ah--!"@
+` La acaricio con mi lengua después de morder.\
+`"Haa--ah, mm…… nnna…"@
+` Ella siente algo de dolor, y entonces algo de placer, y su cuerpo queda indefenso.@
+`"Qué linda.@ Tu cuerpo reacciona con sinceridad, Hisui."@
+`"Eh……"@
+` Se siente como si ella se hubiese calentado más.@
+` Tal vez no sea mi imaginación y en verdad se haya calentado más.@
+` Su piel blanca ha tomado un ligero tono rosa.\
+bg #000000,%type_crossfade_mid
+bg "image\bg\bg_40d.jpg",%type_crossfade_mid
+`"…… Muy bien, ahora vamos a……"@
+` Soltando sus brazos, la abrazo más cerca de mí.@
+`"Ah……"@
+` Hisui cae sobre la cama.@
+` Yo también me acuesto, sobre ella.\
+`"Shiki-sama…… Um."@
+`"Espera.@ Aún no le he echado un buen vistazo a tu parte más importante."@
+`"¡Eh--!@ ¡Shi, Shiki-sama, eso no es necesario, así que……!"@
+` Hisui se echa hacia atrás poco a poco.@
+` Pero mientras más lo hace, más se coloca en una posición en que puedo echarle un buen vistazo.\
+`"…… Nn,……"@
+` Entierro mi rostro en su aparentemente suave estómago.@
+` Ya que Hisui huye, soy incapaz de lamerla debajo de su ombligo, pero no me importa.@
+`"¡Ah, ooh……!"@
+` Su cuerpo se arquea hacia arriba.@
+` Con ambas manos, agarro sus senos desde abajo.\
+`"¡Aha, ah, n--!"@
+` Su voz se eleva para igualar mi ritmo.@
+`"¡Nn, n, n……!"@
+` Sus dulces gemidos.@
+` Los senos que agarré desde abajo ciertamente se sienten pequeños.@
+` Podría cubrirlos con mis manos si las abriese.@
+` Ni siquiera sobresalen más allá de mis dedos.\
+`"Ah…… mm…… n… ah, n…… n."@
+` Pellizcando sus pezones con mis dedos, continúo masajeando sus senos suavemente.@
+` Mientras Hisui se sumerge en ese ligero placer, llego a su entrepierna.\
+` …… Su delgado vello púbico.@
+` Su rojo capullo de flor.@
+` Bajo sus inchados labios, su rosada y palpitante entrada.@
+br
+` …… Y su goteante y clara miel.@
+` No pensé que lo estuviese, ya que ahogaba tanto su voz, pero parece que ya está bastante excitada.\
+`"…… Mmn."@
+` Como si la probase,
+` deslizo ligeramente mi lengua alrededor de su entrada.@
+`"¡Nn, ahh………!"@
+` Hisui arquea su espalda de placer.@
+`"Ah…… Shiki-sama…… por favor.@ No…… mire ahí."@
+` Hisui se sonroja vigorosamente.@
+`"Pero si no veo, no puedo saber.@ Mira, así no puedo hacerlo, así que muévete también."@
+`"Eh…… ¿moverme?@ ¿Qué debería mover……?"@
+` Tiene una expresión tan seria en su rostro, que soy yo el que se avergüenza.\
+`"Tus piernas.@ Si no las abres, no puedo entrar en ellas.@ Aquí, ábrelas así."@
+` Agarrando sus muslos, las abro por la fuerza.@
+`"¡Ah----no……!@ ¡No, deténgase, Shiki-sama……!"@
+` Hisui retrocede desesperadamente otra vez.@
+` Pero no voy a detenerme aquí.@
+br
+` Con sus piernas bien separadas, puedo ver todo claramente.@ En verdad se ve un poco grotesco, pero al mismo tiempo, increíblemente lindo.\
+`"Mn……"@
+` Uso la punta de mi lengua para separar sus pliegues.@
+`"¡N, ah--!"@
+` Hisui reacciona fuertemente ante mi leve toque.@
+` Está mojada por sus jugos.@
+` …… Me preocupa cuánto tiempo durará mi cuerpo en realidad, así que, aunque sus respuestas sean tan lindas, no puedo tomarme mucho tiempo.\
+`"---Hisui.@ Voy a entrar, así que relájate.@ Si duele, sólo dímelo y me detendré."@
+`"S…… sí…… por favor, Shiki-sama……"@
+` Asintiendo ante la voz vacilante de Hisui, me bajo la cremallera.@
+` Mi virilidad sale de mis pantalones con urgencia.\
+`"Ah……"@
+` Hisui suena como si estuviese viendo algún tipo de fantasma.@
+` ---Justo así.@
+` Sostengo mi endurecido ser y coloco mi punta junto a su entrada.\
+bg "image\event\his_h05.jpg",%type_lshutter_mid
+`"N----"@
+` Ella ni siquiera se resiste.@
+` Hisui está tan mojada que no tengo problemas para meterlo en ella.@
+` Pero eso es sólo la punta.\
+`"Ah…………, n------"@
+` Sus ojos se ensanchan de sorpresa, Hisui observa el lugar donde estamos conectados.@
+` El desgarrar de la carne.@
+` Tan pronto como mi punta entra, su cuerpo se sacude hacia atrás.\
+`"Haa…… ah…… aa……"@
+` Conteniendo sus lágrimas, ella simplemente me mira.@
+` --No puede estar sintiendo ningún placer en este momento.@
+` Hisui sólo está mirando boquiabierta la unión de nuestra carne, tratando de soportar el dolor.\
+`"…… ¡Ah…… ha, Ah……!"@
+` Su respiración es salvaje.@
+` Hisui está resistiendo su dolor.@
+` Pero, ella no admite su dolor.\
+`"¡Nn…… n, nnN, Ah----!"@
+` Hisui recibe todo lo que hago.@
+` Y yo---embelesado por su calidez, estoy a punto de derretirme.\
+` *jadeo*--*jadeo*----*jadeo*----
+` Hisui no es la única que está respirando con fuerza.@
+` Ella es tan estrecha.@
+` Su interior es como un muro de carne.@
+` Probablemente sea porque nunca lo ha experimentado, pero es muy difícil empujar hacia adentro, y sus paredes simplemente me envuelven.\
+`"Nn--ah, ha, ah----"@
+` ¿Pero qué es esta sensación?@
+` Al entrar en ella, todo mi cuerpo se llena de vida.@
+` Mi respiración se hace salvaje.@ Mi corazón comienza a latir con más fuerza.@ Ardo de pasión.@
+`"H--ah."@
+` Mi aliento es caliente.@ Siento que estoy respirando fuego.\
+`"--Hisu--i--"@
+` Ahora--no puedo respirar.@
+`"Ah…… ¿Está, bien, Shiki, sama?"@
+` Dolor adorna su voz.@
+` Pero aun así, se está preocupando por mí.@
+br
+` -----Palpitar.@
+br
+` Tan linda.@
+` Empujo con más fuerza, sin preocuparme de que alguno de nosotros se rompa.\
+`"¡Ah--ha, ah----!"@
+` Ella se estrecha a todo mi alrededor.@
+` Mi punta está completamente insertada.@ Mi pene rasga su interior despreocupadamente.@
+` Me aprietan con firmeza.@
+` Sus caderas intentan huir del dolor mientras se aferran a mí.@
+`"Hisui…… ¿te duele……?"@
+`"Ha…… ah…… N, No----"@
+` Hisui niega débilmente con su cabeza.@
+` Todo lo que hace es intentar seriamente recobrar el aliento.@
+` Al mirar abajo,
+` ya puedo sangre derramándose de ella.\
+` Su virginidad ya ha sido tomada.@
+` Aun así, no dijo siquiera una palabra---nunca dijo que dolía.@
+`"…… Lo siento, debí haber sido…… más amable."@
+` Empujo mis caderas.@
+` Como para traicionar mis propias palabras, empujo aun más forzosamente.\
+` El sonido de nuestra respiración llena la habitación.@
+` Mis caderas se mueven atrás y adelante.@
+` Tomo mi insertada asta, la saco un poco, y la inserto una vez más.@
+`"¡Mm………!"@
+` Incapaz de resistir la fuerza, Hisui se estrecha aun más.\
+` …… Saco.@
+br
+`"Ah…… ha, ah."@
+br
+` …… Empujo.@
+br
+`"¡Huaa--!@ Ah, oh,n--ah."@
+br
+` Saco,
+br
+`"Ha--ah, ah………"@
+br
+` Empujo.\
+`"¡N, ah…… !@ ¡Ha, ooh, ha, n……!"@
+br
+` Saco,
+br
+`"Ah--Shi, Shiki, sa--"@
+br
+` ¡Empujo……!@
+br
+`"¡Ha----ah, Shiki… sama--!"\
+bg "image\bg\bg_40d.jpg",%type_lshutter_fst
+` …… Su voz hace eco en el aire.@
+` Pero, no me detendré.@
+br
+` Deslizo, deslizo, deslizo.@
+br
+` Mientras continúo el ciclo, se hace mejor dentro de Hisui.@
+` Su tensión disminuye, y comienza a aceptarme dentro de ella mientras sus paredes se estrechan y se contraen a mi alrededor.\
+`"¡Ha…… ah, aha…… nn----!"@
+` Pero aún suena como si estuviese sintiendo dolor.@
+` Su respiración es más salvaje que la mía y su cuerpo está temblando.\
+`"Hisui--esto…"@
+` Si duele, debería hacerla sentir mejor rápidamente.@
+`"¡Ah----aah, aah, aah, aah……!"@
+` Pero no puedo parar.@
+` El intercambio de fluidos corporales ya fue realizado cuando estuve dentro de ella.@
+` Pero quiero continuar.\
+`"N--ah, ha, ha, n----!"@
+` Su voz se eleva y cae en armonía con mis penetraciones.@
+`"Ha, ah, ah, Shiki, sama----"@
+` Debe doler, pero ella lo resiste silenciosamente.@
+` ---Su figura.@
+` Se ve tan adorable, mi cuerpo no se detiene.@
+` Atrás y adelante.@
+` Con sonidos eróticos, me entierro en un cuerpo que no conoce el placer.@
+` Pero---Todo eso terminará pronto.\
+`"Hisui--aquí voy."@
+` Respiro muy profundamente.@
+` Incluso ahora, aún no me metido completamente dentro de ella.\
+` Sólo meter la mitad de mí trajo lágrimas a sus ojos.@ Si lo meto por completo, podría desmayarse.@
+` Hasta ahora, no he hecho eso.\
+`"Hisui, con esto----"@
+`"¡Ah--ha, nn--!"@
+` Pero eso fue hasta ahora.@
+` Siento que mi corazón está explotando.@
+` Antes de que eso suceda,
+` quiero enterrarme completamente dentro de ella.\
+`"¡Hisui--!"@
+` Empujo con más fuerza.@
+` Hisui no se percata de lo que voy a hacer.@
+` Sin más advertencia, clavo mi ser entero dentro de ella.\
+bg "image\event\his_h06.jpg",%type_lshutter_fst
+`"¡Nn------!"@
+` Su espalda se arquea.@
+` Sus senos perfectos se sacuden y sudor recorre su cuerpo.@
+`"¡Ah--eso, duele, Shiki-sama……!"@
+` Por primera vez, esas palabras salen de su boca.@
+`"¡Nn--ha, ah----!"@
+` Pero no puedo parar.@
+` Retrocedo, y empujo una vez más.\
+`"¡----!@ ¡Ah, aa, ha, oh………!"@
+` Su tembloroso cuerpo.@
+` Ella intenta contener el dolor desesperadamente.@
+` Pero esta vez, ella siente placer.@
+` Así que---sigo adelante.@
+`"¡Ah, ha--Shiki, sama----!@ ¡Po, por favor, pare……!"@
+` Levantando sus caderas de la cama, intenta escapar de tanto dolor como puede.@
+br
+` ---Pero eso la hace estrecharse aun más.\
+`"¡S--Hisu, i--!"@
+` Todo se desborda.@
+` La sensación comienza a acumularse dentro de mí.@
+`"¡Ha--ah, ah, ah………!"@
+` Las caderas de Hisui se mueven atrás y adelante.@
+` Ese movimiento acaba conmigo.@
+`"¡Ah, k--!"@
+` Empujo con fuerza.\
+`"¡Ah--hua-ah-AaAaa----!"@
+`"¡Tss----!"@
+` La sensación de liberación explosiva.@
+`"¡Hisu… i----!"@
+` En ese instante, me contengo y logro sacarlo.\
+bg #ffffff,%type_crossfade_fst
+bg "image\event\his_h06b.jpg",%type_crossfade_fst
+` Eyaculo.@
+` Mi caliente y blanco fluido se esparce sobre su estómago.@
+`"Ah…… Shiki, sama……"@
+` Hisui simplemente lo observa.\
+` Gotea, gotea.@
+` Parece como un queloide sobre su perfecta piel.@
+` Pero en contraste, ella se ve más atractiva y en ese preciso segundo,
+br
+` Me siento mareado.\
+bg #000000,%type_crossfade_mid
+bg "image\bg\bg_40d.jpg",%type_crossfade_mid
+`"Ha----ah."@
+` Respirando profundamente, caigo sobre la cama.@
+` Hisui está acostada cerca en el mismo estado.@
+br
+` *jadeo* *jadeo* *jadeo* *jadeo*
+br
+` Los dolorosos jadeos de Hisui hacen eco en la habitación.@
+` Hisui parece haber alcanzado su límite con sólo hacerlo una vez.\
+`"…… Esto no servirá, Shiki-sama……"@
+` Pero Hisui levanta su cuerpo.@
+` Sus hombros se mueven mientras respira con fuerza, mirándome inexpresivamente.@
+`"¿Eh--qué sucede?"@
+`"…… Lo hizo fuera de mí.@ Tiene que, um…… hacerlo adentro, o yo… no puedo aceptarlo."@
+`"----¿Adentro?@ …… Eso significa…"@
+` Pensé que habría muchos problemas si acababa dentro de ella, así que simplemente---\
+`"…………"@
+` Hisui me mira apenada.@
+` …… Ver esa cara me hace sentir mal.@
+` Hacerla pasar por todo ese dolor sólo para que al final sea inútil, es totalmente mi culpa.\
+`"…… Pero, ¿qué deberíamos hacer?@ Um…… ¿tenemos que intentarlo una vez más?"@
+`"……… Sí.@ Si eso es, lo que desea."@
+` La voz de Hisui casi desaparece.@
+br
+` ---¿Si así lo deseo?@ Claro que lo deseo.@
+br
+` Aunque acabo de eyacular, mi pene aún está totalmente erecto.@
+` Con toda sinceridad, eso no fue suficiente.\
+`"Estoy de acuerdo.@ ¿Pero tú lo estás?@ Si todavía duele, podemos esperar un poco---"@
+`"…… No, estoy bien.@ Pero por favor, antes de que su cuerpo alcance su límite, por favor descárguese dentro de mí."@
+` …… Hisui… Aunque parece estar tan cansada que no puede hablar contínuamente, aún insiste en hacer esto.@
+` Hisui en verdad se está forzando.@
+` Probablemente aún siente dolor, y debe estar cansada.@
+` …… No puedo hacerle el amor forzosamente de esa manera.\
+`"…… Entiendo.@ Entonces, acércate un poco más."@
+`"Eh---ah………"@
+` Sosteniendo sus brazos, la monto sobre mí.@
+`"Ah…… Shiki…… sama."@
+` Debe estar increíblemente cansada, porque se deja caer completamente sobre mí.@
+`"Sí…… por favor, haga lo que desee, Shiki-sama."@
+` Respirando profundamente, ella pone su cuerpo justo sobre el mío.\
+`"…… Hisui.@ Así está bien, por favor levanta un poco tus caderas.@ Ni siquiera tienes que moverte.@ Iré lentamente."@
+` Hisui concuerda en silencio.@
+` Sus caderas se elevan un poco.@
+` Aún mojada por la última vez, pongo mi erecta virilidad contra ella.\
+bg "image\event\his_h07.jpg",%type_lshutter_mid
+` …… Un toque deslizante.@
+` No entro, pero la froto suavemente.@
+`"Nnn………"@
+` Hisui respira dulcemente.@
+` Su cuerpo está tenso.@
+` Ella se prepara para recibirme de nuevo.\
+` Deslizo, deslizo.@
+` Lentamente, me froto contra ella provocativamente.@
+`"A…… n, …… Na………… Ah."@
+` Ella gime.@
+` Su respiración gira sobre mi pecho.\
+` …… Deslizo, …… Deslizo, …… Deslizo.@
+`"Ha………… Nnngu…… n, Ha----"@
+` Mientras la froto con mi asta, su respiración aumenta.@
+` Tranquilamente, nuestros cuerpos se encuentran como cachorros lamiéndose y saludándose.@
+` El sonido del encuentro de nuestra mojada carne se hace más fuerte y frecuente.\
+`"A…… Ha…… Ahh, a……… nn."@
+` Siento que estoy frotando la más dulce de las mermeladas.@
+`"N…… Shiki…… sama, yo, yo……"@
+` Su voz suena aun más apasionada que antes.@
+` Atrás y adelante, arriba y abajo.@
+` Sus jugos fluyen entre nosotros, cubriéndonos de pegajosa pasión.\
+`"…… Nnnn……… ha--ah…………… Ha."@
+` Cuando me doy cuenta, mis caderas no son las únicas que se mueven.@
+` Ciertamente es un pequeño movimiento.@
+` Como si intentase aliviar una picazón, Hisui se frota contra mí.@
+`"Nnn----Hisu, Hisui--"@
+` La frotación hace que un torrente de placer se dispare a través de mí.\
+`"Hisui, m…… más."@
+` No puedo resistir, y agarro sus caderas.@
+`"N--"@
+` Hisui se detiene repentinamente.@
+` Me deleito en la sensación.@
+` Aprieto con un poco más de fuerza y siento su firmeza.@
+`"Ah--Shiki-sama, justo---ahí---"@
+`"…… Ya veo.@ Eso fue sólo un pequeño descanso."@
+` Desato mi poder.@
+` Sus caderas comienzan a moverse de nuevo y vuelve a soltar cortos y dulces suspiros.\
+` La dulce fricción.@
+` Continúo deslizándome entre sus nalgas.@
+`"…… Hisui.@ ¿Puedes usar un poco más tu cuerpo……?"@
+`"Eh…… sí.@ ¿Así……?"@
+` Desliza, desliza-desliza.@
+` Ella se desliza todo el camino hasta abajo, encontrando mis caderas.@
+`"Mmm--sí, eso se siente--grandioso."@
+` Hisui levanta sus caderas lenta y sensualmente.@
+`"Ah…… atorado, se siente……"@
+` ¿Me atoré con algo?@ El movimiento se detiene por un instante.@
+` Pero, no es gran cosa.@ Hisui se mueve hacia arriba suavemente.\
+`"Haa…… Esto, es grandioso."@
+` Esto en verdad me excita.@
+` No estamos haciendo mucho, ¿entonces por qué---por qué se siente tan bien, y por qué hace que Hisui se vea tan adorable?@
+`"N…… ha, Ah----Ah."@
+` Hisui no puede evitar dar voz a su pasión.@
+` Moviendo sus caderas arriba y abajo, recuesta el resto de su cuerpo sobre el mío.\
+`"…… Hisui…… ¿se siente bien……?"@
+`"S…… s.@ Sí…… Shiki-sama, su pecho…… es amplio, me siento…… muy relajada---"@
+` Exhalando, se presiona aun más contra mí.@
+` Continúo deleitándome en el masaje de sus deslizantes nalgas.\
+`"----Tss."@
+` El ritmo de mi corazón se incrementa aun más.@
+` …… Este suave calentamiento comienza a abrumarme.@
+` Hisui no es la única que está sintiendo el placer.@
+`"Ha----"@
+` Tensiono los músculos bajo mi ingle.@
+` Es para detener el impulso elevándose desde mi esencia.\
+` Aunque sólo me estoy frotando contra ella, se siente prácticamente lo mismo que en el propio acto.@
+` No, saber que estoy frotando su exterior paraliza mi mente y me da más placer que el propio acto.@
+br
+` Nuestros cuerpos están apretados juntos.@
+` La sensación de sus senos presionando mi pecho es tan maravillosamente suave.\
+` No, la sensación de su pequeño y delicado cuerpo descansando sobre el mío es aun mejor.@
+` Nuestras voces crecen en armonía con el movimiento de nuestros cuerpos.@
+` Hisui se relaja por completo, moviendo sólo sus caderas.@
+` Su hermosa espalda, las sensuales curvas de su trasero, todo eso---lo amo todo.\
+`"¿Hisui---puedo?"@
+`"¿Eh…… ya va, a detenerse……?"@
+` Hisui debe haberlo disfrutado mucho porque mueve sus dedos sobre mi pecho con pesar.@
+`"No tenemos opción.@ Tengo que hacerlo dentro de ti, así que tenemos que hacerlo bien."@
+`"Ah…… sí, es cierto…"@
+` Hisui mueve su cuerpo lentamete.@
+` Mientras se mueve para apartarse, se pone en cuatro patas, como un gato.\
+`"----"@
+` Su postura no pasa desapercibida.@
+`"Hisui, no te muevas."@
+`"¿Eh……?@ Pero Shiki-sama, no podemos…… hacerlo, de esta manera, ¿verdad?"@
+`"Está bien, sólo levanta un poco tus caderas.@ No, no con tus manos---apóyate de tus rodillas y codos."@
+`"¿……?"@
+` Confundida, Hisui ladea su cabeza, pero obedece.\
+` ----Todo listo.@
+` Ya que Hisui ha descansado, no voy a contenerme.@
+` Para liberar todo lo que se ha acumulado dentro de mí, me pongo detrás de ella y---\
+bg "image\event\his_h08.jpg",%type_lshutter_mid
+` ---Entro en ella desde atrás.@
+br
+`"¿¡Nku----!?"@
+` La cama se sacude.@
+`"Ah---n, nku----"@
+` Hisui deja caer su espalda.@
+` Los dedos de sus pies se enrollan como para resistir el impacto.\
+` Viéndola desde este ángulo, su cuerpo parece totalmente diferente.@
+` Sus largas, blancas y elegantes piernas.@
+` La única curva de su inmaculada espalda es como un campo de nieve virgen.@
+` Es tan blanca y pura, siento el deseo de enterrar mi rostro en ella.\
+`"…… Guau.@ Incluso puedo ver tu ano y… justo ahí… completamente."@
+`"¡Shi, Shiki-sama--por favor, no diga cosas como ésas……!"@
+` Hisui se sonroja y sacude su cabeza.@
+` Pero Hisui no puede voltear su cuerpo porque estoy en ella ahora.\
+`"Si hago la misma cosa de antes, será aburrido.@ Además creo que ya estás acostumbrada a eso, así que esta vez lo haremos de esta manera."@
+`"Ha…… Shiki-sama, ¿¡por qué será que solamente es cruel, ahora……!?"@
+`"………… Tch."@
+` La castigo entrando un poco más profundamente.\
+`"¡A--n, ku……!"@
+` Me deslizo desntro de ella, haciendo ruidos de batimiento.@
+` Parece que mi juego previo en verdad ayudó.@
+` Su suavidad ahora se siente completamente diferente.\
+`"N--esto, --"@
+` ¡N, Ah……!@ Ha…… Ah--"@
+`"¡Ya no duele tanto, cierto, Hisui--!"@
+`"¡Nn----!"@
+` Empujo mis caderas hacia ella.@
+` Sus blancas caderas se sacuden mientras penetro.@
+` Con cada penetración, sus jugos se desbordan y bajan por sus piernas.\
+`"¡Ah--ha, ah, Shiki, sama……………!"@
+` Sus brazos se clavan desesperadamente a la cama.@
+`"¡Ha, oh, oh, n…… Ah, n---!"@
+` Su cuerpo se sacude cada vez que la penetro.@
+`"…… Nn, nah, ha--Ah!"@
+` Ella se estrecha a todo mi alrededor.@
+` Su interior es más intenso, más sensacional que antes.@
+` Sus contracciones me halan más profundamente hacia su centro.\
+`"¡Ah--, n--!"@
+br
+` Deslizo.@
+br
+`"¡Ha--ah… Shiki-sa--ma, n, oh--!"@
+br
+` Deslizo, deslizo.@
+br
+`"…… Ah, haa, haa, haa----n……"@
+br
+` Deslizo, deslizo, deslizo, deslizo.@
+br
+`"---¡Huaa, ah, ah, ah--!"@
+br
+` ¡Deslizo, Deslizo, Deslizo, Deslizo……!\
+`"¡N--oh, Shiki-sama--por favor, no tan--salvaje……!"@
+`"¡Haa--ah, Haa, ahh, ah……!"@
+` No puedo escucharla bien.@
+` Todo lo que puedo escuchar son mis propios latidos.@
+br
+` Incluso eso---comienza a desaparecer.\
+`"¡Ah--ah, por favor, pare, voy, voy a--!"\
+` Su voz alcanza un grito.@
+` Aprieta.@
+` Ella me aprieta con más fuerza que antes.@
+`"¡Aah--Hi… sui……!"@
+`"¡Shiki, sa, ma------!"\
+bg #ffffff,%type_crossfade_slw
+!w2000
+bg "image\bg\bg_40d.jpg",%type_crossfade_mid
+` Eyaculo.@
+` Nuestras sensaciones estallan al mismo tiempo en un orgasmo creciente, y entonces se detienen.@
+`"Ha--ah."@
+` Exploto dentro de ella.@
+` Continúo liberando dentro de ella con chorros desesperados.@
+` La sensación persistente.@
+` Tiemblo dentro de ella mientras sus caderas se sacuden.\
+`"Nn…… Se ha--terminado."@
+` Salgo de ella.@
+`"Ha…… ah."@
+` …… Estoy agotado.@
+` Estoy tan cansado que tengo ganas de dormir ahora mismo.\
+`"Hisui…… ¿te dolió……?"@
+`"…… Ah…… no, dolió menos que la primera vez."@
+` En otras palabras, aún le dolía.@
+` …… Lo lamento de nuevo.@
+` ¿Por qué será que durante todo este tiempo, todo lo que termino haciendo es ser cruel con ella……?\
+`"Entonces, se acabó, ¿no……?@ Lamento, haberte lastimado dos veces."@
+`"…… En absoluto.@ Si pude ayudarle, entonces estoy satisfecha."@
+` Hisui dice esto acostada ahí, mirando inexpresivamente.@
+` Sus ojos no están enfocados sobre nada.@
+` …… ¿Es eso lo que llaman ausencia mental?@
+` Parece que Hisui simplemente está acostada ahí sin ningún pensamiento racional.@
+` Pero sus ojos aún albergan lágrimas, y siento un dolor punzante en mi corazón.\
+`"…… Lo siento, Hisui.@ Te he hecho llorar tanto."@
+` Limpio sus lágrimas con mi dedo.@
+br
+` ---Y entonces.@
+br
+` Repentinamente, Hisui agarra mi palma.\
+bg "image\event\his_h09.jpg",%type_crossfade_mid
+`"…… ¿Hisui?"@
+`"Shiki………… sama."@
+` Ella toma mi dedo y lo mete en su boca.@
+`"Um……"@
+` Ni siquiera sé qué decir.@
+` Hisui se queda ahí, como si todo lo que quería era sentir la presión de mi dedo.\
+`"……………"@
+` Hisui no parece estar pensando en nada.@
+` Creo que fui un poco rudo anteriormente y está haciendo esto porque su cabeza aún está en blanco.@
+`"………… N………… a…………"@
+` Hisui succiona mi dedo distraídamente.@
+` …… Por alguna razón, estoy disfrutando mucho esto.@
+` No me aparto, y más bien sigo su movimiento.@
+br
+` Chupa, chupa.@
+` Comienzo a sentir su lengua con mi dedo.\
+`"………… Mmm…"@
+` Hisui simplemente continúa.@
+` …… Esos ojos, aún soltando lágrimas, parecen estar en trance.@
+` Ni siquiera me está lamiendo, sólo lo está sosteniendo en su boca.\
+`"N………… nn…"@
+` Como si fuese algo preciado para ella, simplemente lo sostiene.@
+` Hisui me acaricia inconscientemente.@
+` Aprieta mi mano como si fuese un tesoro.@
+`"N…… Shiki, sama……"@
+` Un ligero apretón.@
+` Hisui muerde mi dedo suavemente.\
+`"----Hisui."@
+` Siento que la sangre comienza a circular dentro de mí una vez más.@
+` No, esto no está bien.@
+` ¿Qué estoy pensando---sobre Hisui que ya está tan cansada?\
+`"Hisui--"@
+`"…… Sí.@ ¿Qué desea, Shiki-sama?"@
+`"Hisui, quiero hacerte el amor, una vez más."@
+` Simplemente dejo escapar mis egoístas pensamientos.@
+` Hisui---sólo me mira fijamente.\
+`"…… ¿Por, qué?@ Ya no hay necesidad de que lo haga."@
+`"…… No, no es eso.@ Aún no he hecho el amor contigo de verdad."@
+` …… Es cierto.@ Antes, era sólo para ayudarme a recuperarme--y fue así desde el principio.@
+br
+` Pero no quiero que sea de esa manera.@
+` En verdad la amo, y---por ninguna otra razón, quiero hacer el amor con ella.\
+`"No es suficiente, Hisui.@ No quiero hacerlo para curarme.@ Tú me gustas, Hisui---yo te amo.@ Es por eso que te deseo ahora, Hisui."@
+`"……………"@
+`"Por esa razón, te lo pido una vez más.@ No por algo como intercambiar fluidos.@
+` Simplemente---quiero hacer el amor contigo de verdad."@
+`"………… Shiki, sama."@
+` La consciencia regresa a sus ojos.@
+` Aún mordiendo mi dedo, ella me mira.\
+`"…… ¿Está bien eso, Shiki-sama?@ Yo, yo soy…"@
+`"No seas estúpida.@ Sólo te quiero a ti, Hisui."@
+`"-------"@
+` El sonido de un suspiro.@
+` Pero justo antes de eso,
+` ella me muestra su tierna sonrisa.@
+`"…… Sí.@ También quiero ser amada por usted, Shiki-sama."@
+` Ésa es su respuesta.\
+bg #000000,%type_tshutter_mid
+bg "image\bg\bg_40d.jpg",%type_bshutter_mid
+`"Bien, entonces.@ Esta vez, lo harás encima de mí, Hisui."@
+`"¿Eh…… en… cima……?"@
+` Ella no entiende a qué me refiero y me mira, confundida y un poco avergonzada.@
+`"¿Qué es esto?@ Ya no puedes estar avergonzada.@ No hay una sola parte de ti que no haya visto."@
+`"Ah…………"@
+` Tan pronto como digo eso, su rostro se torna rojo brillante.@
+` …… Aunque lo hemos hecho tan violentamente, Hisui aún vacila como si fuese su primera vez.\
+`"¡Está bien, sólo móntate!"@
+` Agarrando sus brazos, la coloco encima de mí.@
+`"¿Kyaa--ah, eh……?"@
+` Siento su trasero sobre mi estómago.@
+` Con su espalda hacia mí, ella baja sus caderas.@
+`"Ah……"@
+` Escucho su repentina inhalación de aire.@
+` Apuesto que está mirando mi erecta virilidad frente a ella.\
+`"Shi, Shiki-sama, um……"@
+` Sin saber qué hacer e incapaz de escapar, se sonroja vigorosamente y me pide ayuda.@
+` ……… Esto es malo.@
+` Es tan linda que simplemente podría morir.\
+`"¿¡Qué debería hacer ahora--hyaa!?"@
+` Ella voltea hacia arriba rápidamente.@
+` Su cuerpo reacciona cuando lamo su indefensa espalda.\
+`"Ha---Shi, Shiki, sama---"@
+`"Mmm---tu trasero, es tan diminuto, tan lindo."@
+` Lamiendo el centro de su espalda, uso una mano para aferrarme a sus nalgas.@
+`"¡N…………!"@
+` Su espalda se arquea en respuesta.@
+`"Ha…… n, nnn……"@
+` Hisui intenta resistir la sensación de mi lengua jugando a lo largo de su espalda.\
+`"Ah…… Shiki-sama, eso…… hace cosquillas."@
+` Ella se retuerce mientras se incrementa su calor corporal.@
+` Ríos de sudor brillan sobre su cuerpo.@
+`"…… Um…… Shiki-sama.@ ¿Qué---debería…… hacer--ahora?"@
+` Sus últimas palabras apenas salen de su boca.@
+` Tengo la sensación de que siempre va a actuar así, sin importar cuántas veces hagamos esto.\
+`"Simple.@ No tienes que moverte."@
+`"¡Eh---ah………!"@
+` Envuelvo sus estómago con mis brazos.@
+` Reuniendo mi fuerza, la levanto.@
+`"¡Ah--!@ U, um, Shiki-sama, acaso va a……"@
+`"------"@
+` Sin responder su pregunta, pongo en marcha lo que ella está pensando.\
+bg "image\event\his_h10.jpg",%type_lshutter_fst
+`"¡¡¡Hua…………………!!!"@
+` Penetro.@
+` La penetro desde abajo.\
+`"¡Ah--ah, Hua----!"@
+` Su cuerpo salta.@
+` Tratando de alejarse de lo que viene hacia ella desde abajo,
+` ella intenta evitar que el peso de su cuerpo termine el trabajo.@
+` Entre esas dos fuerzas, sus nervios no tienen oportunidad.@
+`"…… ¡Voy a moverme, Hisui……!"@
+`"¡Ah…… N, no, por favor pare……!"@
+` Ignorándola, la levanto y la dejo caer.@
+`"¡N, ha……!@ ¡Ah, Aah, HaAaAAA……!"@
+` Aprieta sus dedos mientras sus sentidos son abrumados.@
+` Supongo que la estoy golpeando en un sitio distinto ya que está reaccionando más ahora.\
+`"¡Ah, Shi---Shiki-sama, dentro de, mí---!"@
+` Su voz es casi un grito.@
+` Sigo levantándola, y dejándola caer.@
+`"¡Ha--ah, ,nua----!"@
+` Puedo sentirla apretando su trasero.@
+` Y al mismo tiempo, su interior se tensa.\
+`"N---Hisui, no tan---relájate un poco---"@
+`"Ah---ha, ah----"@
+` Mi voz no parece alcanzarla.@
+` Como en un sueño, ella continúa contrayendo sus paredes alrededor de mi virilidad.\
+`"¡Haa----ku…………!"@
+` Tratando de responder a eso, la levanto de nuevo.@
+` El sonido de nuestra carne deslizándose.@
+`"HA…… ah, ha………"@
+` La aplastante sensación disminuye y Hisui trata de recobrar el aliento.@
+` Al mismo tiempo, la dejo caer una vez más.@
+`"¡Nuaa----!"@
+` La presión se estrecha a mi alrededor de nuevo.@
+` Su calor se transmite a través de todo mi ser.@
+` Su calidez hace que mi mente se quede totalmente en blanco.\
+`"…… T…… ú……"@
+` No sé qué me hizo enojar.@
+` Pero deslizo el cuerpo de Hisui con todo mi poder.\
+`"¡----!@ ¡Ah, ha--naa------!"@
+` El pegajoso sonido de los jugos y la carne uniéndose y separándose.@
+`"¡N------ah, Shiki-sa----ma----!"@
+` Mi asta es empapada.@
+` Sus jugos se mezclan con los míos y me bañan.@
+`"N----esto, esto es--"@
+` Y de repente,
+` No sólo estoy moviendo el cuerpo de Hisui, también estoy moviendo mis caderas hacia ella.\
+` ---*jadeo* *jadeo* *jadeo*
+br
+` Sostener el cuerpo de Hisui y mover mis caderas es una gran carga.@
+` Naturalmente, mi respiración comienza a acelerarse.@
+` Pero---\
+`"¡Ah…… eso…… d, duele, Shiki-sama……!"@
+br
+` ---*jadeo* *jadeo* *jadeo*
+br
+` No me importa.@
+` Hisui.@ ¡Si puedo hacer mía a Hisui, entonces semejante cosa---!@
+`"¡Nhaa--!@ ¡Ah, hua, Shiki--sa----por favor, más----lento……!"@
+br
+` ---*jadeo* *jadeo* *jadeo*
+br
+` Empujo hacia arriba.\
+` Empujo para llenar su interior.\
+`"…… ¡Ah!@ …… ¡No, si esto continúa---voy, voy a……!"@
+br
+` ---*jadeo* *jadeo* *jadeo*
+br
+` Su convulsionante cuerpo.@
+` Su arqueada espalda.@
+` Su ondulante cabello.@
+` ¿Será dolor, o será placer?@
+` La baba saliendo de su boca me dice que ha perdido toda la razón.\
+`"¡Ha, n, nn, ah---!@ ¡¡¡¡Haa, eso, hua, eso duele---Shiki-sama, por favor…………!!!!"@
+` Su cuerpo está en llamas.@
+` Siento que estoy dentro de un horno.@
+` O, será.@
+` ¿Será mi propia columna de carne inchada por la sangre lo que está en llamas?\
+` ---*jadeo* *jadeo* *jadeo* *jadeo*
+br
+`"¡Ah, ha--Shiki-sama, yo--!"@
+` Aunque sus ojos están rebosantes de lágrimas, baja su cuerpo hacia mí una vez más.@
+` Su sensación.@ Su calidez.@ Su voz.@ Lágrimas.@ Todo eso.@ Todo eso es precioso.@
+`"¡Hisui---mi, Hisui--!"@
+` Penetro de nuevo con toda mi fuerza.@
+` Mi corazón palpita salvajemente.@
+`"¡Te amo---más que a nadie, más que a nada, te amo sólo a ti, Hisui……!"@
+` Sin pensar, dejo escapar esas palabras.@
+` Exponiendo todos mis sentimientos, penetro en ella apasionadamente.\
+`"¡Ha--ah, ah----!"@
+` Su tembloroso cuerpo.@
+` Siento venir el punto culminante de todas estas emociones y sensaciones.@
+`"¡Yo, yo también……!"@
+br
+` *jadeo* *jadeo* *jadeo* *jadeo*
+br
+`"¡Ah---Shiki-sama, yo también lo amo---Shiki-sama, siempre……!"@
+` Su cuerpo se tensa.@
+` Todo el amor dentro de mí se acumula.\
+` *jadeo* *jadeo* *jadeo* *jadeo*……!@
+br
+`"¡Hisui----!"@
+`"¡Ah---sí, Shiki, sama………!"@
+` Nuestras emociones se fusionan.@
+` Acabamos juntos.\
+bg "image\event\his_h11.jpg",%type_lshutter_fst
+`"---¡Hisu, i----!"@
+` Eyaculo dentro de ella.@
+`"¡Ah…… ha, n----!"@
+` Abrazo su tembloroso cuerpo cerca del mío.@
+`"Ah------ah."@
+` Hisui soporta el calor fluyendo dentro de ella.\
+`"Nn----ah."@
+` Su voz disminuye.@
+` Probablemente porque mi dedo está en su boca.@
+` Nuestros corazones armonizan y laten juntos.@
+` Ella aún se sacude por las sensaciones persistentes en su interior.@
+` Quiero aliviar eso, y me aferro a ella.\
+`"…… Shiki, sama……"@
+` ¿Por qué está llorando?@
+` Las lágrimas siguen cayendo de sus ojos.\
+`"Yo…… esto…"@
+` Parece que su vacilante voz contiene algo de arrepentimiento.@
+`"…… ¿Qué, Hisui?@ …… ¿Te dolió……?"@
+`"…… No…… esta felicidad, me da miedo."@
+` Respirando profundamente, ella deja de temblar.\
+`"Ah……"@
+` La fuerza desaparece de su cuerpo.@
+` Exhausta, recuesta todo su cuerpo sobre el mío.@
+`"…… Lo siento tanto…… Nee-san."@
+` Con ese último comentario, se desploma y cierra los ojos.\
+bg #000000,%type_crossfade_slw
+playstop
+!w2000
+` El sonido de suaves respiraciones alcanza mis oídos.@
+br
+`"…… ¿Estás dormida, Hisui?"@
+` La coloco sobre la cama y pongo las sábanas sobre ella.@
+` A diferencia de Hisui, que está exhausta, yo aún tengo mucha energía.@
+` …… No, aunque estoy cansado, mi condición previa ha desaparecido por completo.@
+br
+` Así que, parece que por esta noche, puedo moverme como una persona normal nuevamente.\
+!w3000
+bg "image\bg\bg_40c.jpg",%type_crossfade_fst
+` …… Hisui duerme en mi cama.@
+` Quizás porque me ayudó a recuperar mi fuerza, Hisui está totalmente exhausta.@
+`"…… O tal vez, la forcé demasiado."@
+` Siento una pizca de arrepentimiento.@
+` …… Todo esto fue su primera vez, y en verdad fue demasiado para ella.\
+`"…… Pero es tan linda, que no pude evitarlo."@
+` Invento una excusa, pero no se puede evitar.@
+` Hisui duerme, respirando relajadamente.@
+` …… Si voy a tomar acción, tiene que ser ahora.@
+`"…… Perdona.@ Duerme sólo un poco más, Hisui."@
+` Después de pasar mi mano por su cabello una última vez, me cambio de ropa y dejo la habitación.\
+bg #000000,%type_lshutter_mid
+bg "image\bg\bg_46c.jpg",%type_lshutter_mid
+br
+` ---Es cierto.@ Akiha y Kohaku-san no están aquí.@
+br
+` Es una buena oportunidad.@
+` Puedo investigar sobre lo que sucedió hace ocho años.@
+bg #000000,%type_crossfade_mid
+bg "image\bg\bg_41.jpg",%type_lcartain_mid
+play "*1"
+` Entro a la habitación del viejo.@
+` …… Este lugar definitivamente debería tener algo que responda mis preguntas.@
+br
+`"…… El cajón del escritorio…… ahora está vacío."@
+` Podría haber algo que pertenezca al viejo en uno de los cajones cerrados con llave.@
+` Pero no creo que mantuviese algo tan importante ahí.@
+`"…… Sería grandioso que hubiese una caja fuerte o algo así."@
+` Reviso la habitación.\
+bg #000000,%type_lshutter_fst
+bg "image\bg\bg_41.jpg",%type_lshutter_fst
+`"………… Aquí está."@
+` Encuentro algo parecido a una caja fuerte muy fácilmente.@
+` No hay cerradura externa, y no conozco la combinación de la caja.@
+` Así que me quito mis lentes y corto su "línea".\
+`"…… Hmm……"@
+` Parece haber un viejo diario y algunos sobres.@
+` El diario se ve como el de un niño, y lo demás parecen ser cartas viejas.@
+`"…… ¿Cartas viejas?@ ¿Por qué?"@
+` La letra definitivamente es la de mi viejo.@
+` Es fragmentada y no puedo entenderla a primera vista.@
+br
+` ---La fecha comienza en el verano de hace ocho años, y parece continuar un poco más allá de eso.\
+`"…………"@
+` Aún no comprendo nada, pero continúo ojeando el contenido.\
+playstop
+bg #000000,%type_tshutter_mid
+monocro #ffff00
+bg "image\bg\bg_41.jpg",%type_bshutter_mid
+play "*9"
+` ~ Mes ~ Día
+` Mi hijo SHIKI sucumbió ante su sangre Tohno.@
+` SHIKI asesinó a mi hijo adoptado que casualmente estaba ahí.@
+` (El hijo adoptado es el heredero de la casa Nanaya. Supongo que entre todos los eventos desafortunados, es una bendición que él no pertenezca a la misma familia de los Sincronizadores, como Kohaku y Hisui.)
+br
+` El impulso de inversión de SHIKI es terrible.@ Por eso fue determinado que debe ser eliminado.@ Es mi deber como líder de la casa Tohno, pero matar a mi propio hijo es tan difícil.\
+` La sangre Tohno, más en SHIKI que en AKIHA.@
+` Hablando de potencial, siento un origen más antiguo en la sangre de Akiha, pero la sangre Tohno de SHIKI es mucho más fuerte.@
+` Asumo que por eso SHIKI se invirtió antes de volverse adulto.@
+` Los poderes de SHIKI son "inmortalidad" y "fusión".@
+` SHIKI no pudo manejar los poderes despertados, y como resultado, asesinó al niño Nanaya adoptado, tomando su vida.@
+` Debo decir que fue un trabajo magnífico para ser la primera vez que utilizó sus poderes.\
+` ~ Mes x Día
+` SHIKI y el hijo adoptado lograron escapar de la muerte.@
+` Antes de que yo lo matara, SHIKI asesinó al hijo adoptado y robó su "vida", regenerándose con ella.@
+` No sé si será porque estuvo tan cerca de la muerte, pero SHIKI ha recuperado algo de su cordura.@
+` Aunque es peligroso, no voy a matarlo, sino simplemente separarlo de la mansión por un tiempo.\
+` Por otro lado, el niño Nanaya adoptado no vivirá mucho aunque logre sobrevivir.@
+` Aun si logra sanar, su vida ha sido tomada por SHIKI.@ Su cuerpo puede morir cualquier día.@
+` Mientras el niño adoptado viva, hay una posibilidad de que su mente sintonice con la de SHIKI.@ Parece que es un efecto secundario de la conexión entre sus vidas.@ Pero si eso sucede, el hijo adoptado morirá tarde o temprano, así que no hay problema con eso.\
+` ~ Mes ~ Día
+` El problema de guardar las apariencias ante la sociedad aún permanece.@
+` SHIKI ha asesinado al niño adoptado de los Nanaya.@
+` He encubierto el incidente, pero SHIKI no puede ser mostrado al público.@ La herida que le propiné no ha sanado, y su figura se ha transformado.@
+` No está en condiciones de ser expuesto frente a otros como Tohno SHIKI…… y tampoco puede ser llamado humano.@
+br
+` El niño Nanaya aún vive.@
+` Mientras viva, he decidido utilizarlo.@
+` Si hay algún desacuerdo, quisiera escucharlo.\
+` Complementariamente.@
+` Los Nanaya son una familia que produce asesinos.@
+` Si ese hijo adoptado por casualidad siguiese con vida, la conexión entre él y SHIKI podría corromper la mente de SHIKI.@
+` Aun si SHIKI recobra la cordura, no puedo negar la posibilidad de que la influencia del niño Nanaya lo convierta en un asesino.@
+br
+` Para no dejar que esto ocurra, debemos ubicarlo en un lugar donde podamos tenerlo vigilado.@ Pero tampoco podemos permitir que se acerque a la mansión.@
+` Debería dejar que sea criado por una rama apropiada de la familia.\
+` ~ Mes x Día
+` …… La sangre Tohno que ha despertado dentro de SHIKI.@
+` Tal vez sea porque estuvo muy cerca de la muerte, pero ha recuperado la cordura como antes.@
+` Pero no sé si algo volverá a provocarle una inversión.@
+` A pesar de que me destroza el alma, tampoco puedo permitir que SHIKI se acerque a la mansión.@
+` Lo he puesto bajo el cuidado de un sirviente de confianza.\
+` ~ Mes x Día
+` Aún no he recibido la noticia de que su cordura ha sido completamente restaurada.@
+` …… Ha pasado un año bajo el cuidado de otra casa.@
+` Mi corazón está angustiado.@ Es tan difícil para mí cuando pienso en la manera en que mi propio hijo tiene que vivir.@ Tan pronto como SHIKI sane, podré traerlo de vuelta a la mansión.\
+bg #000000,%type_tshutter_mid
+monocro off
+playstop
+bg "image\bg\bg_41.jpg",%type_bshutter_mid
+`"------¿Qué es… esto?"@
+` Hijo adoptado.@ Ya sabía sobre la adopción de hace diez años.@
+` Aunque no recuerdo exactamente los detalles, sé algo al respecto.@
+` …… ¿Él me asesino?@
+` ¿Hace ocho años, en ese patio?@
+br
+`"…… Nuestras mentes están conectadas……"@
+` Las palabras dicen que mi mente y la suya posiblemente estén conectadas.@
+` Normalmente, esta historia sería algo para reírse.@
+` Pero, en este momento, explica demasiadas cosas.\
+wave se0
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\bg_41.jpg",%type_nowaitdisp
+`"----No."@
+` No, no es eso.@
+` Esto no es nada parecido a eso.@
+wave se0
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\bg_41.jpg",%type_nowaitdisp
+`"------Kk."@
+` …… Lo sé.\
+` Aunque ya lo sé, trato de no notarlo.@
+` ---Quiero negarlo de nuevo.\
+` El niño adoptado era…
+` El que fue asesinado era…
+` Sé cuál es cuál, pero no quiero admitirlo----.@
+br
+`"Tch--esto es inútil."@
+` Maldiciéndome, arrojo las cartas hacia un lado.\
+`"…… Lo único que queda es esto."@
+` Tomo el diario en la caja fuerte.@
+` Parece el diario de un niño; ciertamente nada que Tohno Makihisa habría tenido.@
+` Paso las páginas.@
+` Sólo hay una palabra.\
+monocro #ff0000
+br
+br
+br
+br
+br
+br
+br
+wave se0
+!w2000
+`        AYÚDAME
+!w2000
+br
+` Sólo eso.@
+` Sobre una página en blanco, está escrito en letras muy pequeñas.\
+`"………… ¿Huh?"@
+` Paso las páginas.@
+wave se0
+`        AYÚDAME.@
+` Volteo la página.@
+wave se0
+`        AYÚDAME.@
+` Volteo la página.@
+wave se0
+`        AYÚDAME.@
+` Volteo la página.@
+br
+`"Qué----"@
+` Es como una maldición que lleva al lector a las profundidades de la oscuridad.\
+waveloop se1
+` AYÚDAME
+!w1000
+` AYÚDAME
+!w1000
+` AYÚDAME
+!w1000
+` AYÚDAME
+!w1000
+` AYÚDAME
+!w1000
+` AYÚDAME
+!w1000
+` AYÚDAME   AYÚDAME   AYÚDAME   AYÚDAME  AYÚDAME  AYÚDAME  AYÚDAME  AYÚDAME  AYÚDAMEAYÚDAMEAYÚDAMEAYÚDAMEAYÚDAMEAYÚDAMEAYÚDAMEAYÚDAMEAYÚDAMEAYÚDAMEAYÚDAMEAYÚDAMEAYÚDAMEAYÚDAMEAYÚDAMEAYÚDAMEAYÚDAMEAYÚDAMEAYÚDAMEAYÚDAMEAYÚDAMEAYÚDAMEAYÚDAMEAYÚDAMEAYÚDAMEAYÚDAMEAYÚDAMEAYÚDAMEAYÚDAMEAYÚDAMEAYÚDAME--------\
+bg #000000,%type_crossfade_fst
+monocro off
+bg "image\bg\bg_41.jpg",%type_crossfade_fst
+`"----"@
+` …… Me siento enfermo.@
+` He visto muchas pesadillas hasta ahora, pero esto es mucho peor.@
+` Esa palabra, "AYÚDAME".@
+` No es que quien haya escrito este diario sólo conociese esa palabra.@
+` Sólo esta palabra.@
+` Es todo lo que esa persona podía sentir.\
+` Nada en esta oscura letanía fue garabateado.@
+` Una letra después de la otra, como los escupidos sentimientos de esta persona.@
+` Ésta era la única manera en que el autor podía escapar.@
+` Esta persona no conocía otra manera de liberar esta maldición.\
+`"…… Ah."@
+` Aún queda más de medio diario por leer.@
+` Yo,
+` no puedo forzarme a leer el resto.@
+`"----"@
+` Paso las páginas tratando de no mirar su contenido.@
+` Mientras paso las páginas, mi mano se detiene en la última de ellas.@
+`"…… ¿Oraciones normales……?"@
+` En la última página, hay un párrafo corto.@
+` Letras plateadas adornan la página que de otro modo sería perfectamente blanca.\
+wavestop
+bg #000000,%type_crossfade_fst
+bg "image\bg\ima_08.jpg",%type_crossfade_fst
+play "*7"
+br
+br
+br
+br
+br
+br
+br
+` Así que es mejor convertirme en una muñeca
+\
+br
+` Gradualmente, mi cuerpo dejó de generar un pulso
+!w1000
+br
+` Mis vasos sanguíneos se convirtieron en tubos uno por uno
+!w1000
+br
+` Mi sangre se desvaneció como vapor
+!w1000
+br
+` Mi corazón, todo, sólo partes fabricadas
+br
+!w1000
+br
+` Ves, por eso    no habrá más
+!w1000
+br
+` dolor\
+bg #000000,%type_crossfade_fst
+playstop
+bg "image\bg\bg_41.jpg",%type_crossfade_fst
+`"------"@
+` …… Cierro el diario y lo devuelvo a la caja fuerte.@
+` No sé por qué Tohno Makihisa conservó semejante cosa.@
+` Pero de algo estoy seguro.@
+` Temiendo la malicia del niño, era algo que debía ser sellado en la caja fuerte.\
+bg #000000,%type_crossfade_mid
+!w2000
+bg "image\bg\bg_42c.jpg",%type_lcartain_mid
+` …… El día está por terminar.@
+` El oscuro jardín.@
+` Los oscuros árboles se dispersan frente a mí como un valle negro.@
+` Recuerdo el sueño que tuve antes de venir a esta mansión.@
+br
+`"………… Muy bien."@
+` No es que haya algo aquí.@
+` Simplemente necesito confirmar algo en mi corazón, así que entro al valle negro.\
+bg #000000,%type_crossfade_mid
+bg "image\bg\bg_53b.jpg",%type_lcartain_mid
+` No hay nada aquí.@
+` No es que el cuerpo del que fue asesinado hace ocho años esté aquí.@
+` No es que la sangre del que fue asesinado hace ocho años esté aquí.\
+bg "image\bg\cmo_06.jpg",%type_nowaitdisp
+bg "image\bg\bg_53b.jpg",%type_nowaitdisp
+`"…………"@
+` Por un instante, la escena pasa por mi mente.@
+` Ese caluroso día de verano.@
+` Estaba mirando mi ser manchado de sangre como si yo fuese otra persona.@
+`"…… Entonces.@ Alguien debe haber sido asesinado aquí."@
+` Si fue él o fui yo, no lo sé.@
+br
+` ¿Cuál fue adoptado?@
+` ¿Cuál es el monstruo SHIKI?\
+`"…… Si lo pienso lógicamente, debo haber sido yo quien lo asesinó en este lugar."@
+`"Eso es incorrecto.@ El que fue asesinado, es usted, Shiki-sama."@
+`"¿¡----!?"@
+` Me doy la vuelta.@
+` No sé cuando llegó, pero Hisui está aquí.\
+play "*8"
+ld c,":a;image\tachi\his_t01.jpg",%type_lshutter_mid
+`"Hisui.@ ¿Ya despertaste?@ …… No te fuerces.@ ¿No estás cansada……?"@
+`"Shiki-sama, usted es quien no debería forzarse.@ Aún está perdiendo energía a gran velocidad, mucha más de la que ha obtenido."@
+cl c,%type_lshutter_mid
+` Hisui se para frente a mí.\
+`"Ah……"@
+` …… Mi pulso se acelera.@
+` Que Hisui esté parada tan cerca de mí en verdad me hace sentir más vivo.@
+`"Guau, mi cuerpo en verdad está caliente.@ …… Creo que tu calor está fluyendo hacia mí.@
+ld c,":a;image\tachi\his_t02.jpg",%type_lshutter_fst
+` Pero Hisui, ¿qué estás diciendo?@ Dices que fui asesinado aquí---¿sabes lo que sucedió en este lugar?"\
+ld c,":a;image\tachi\his_t17.jpg",%type_crossfade_fst
+`"---Sí.@ Yo lo vi morir aquí.@ Usted fue asesinado, por SHIKI…… no sólo su cuerpo y su alma; todo fue asesinado."@
+` Su voz está temblando.@
+` No es que esté asustada.@ Más bien, suena increíblemente enojada con la persona que me asesinó.\
+`"…… Espera un segundo, Hisui.@ El asesinado fue ese niño Nanaya adoptado.@ ¿No fue él quien murió?"@
+`"No, usted fue quien murió, Shiki-sama."@
+` Hisui responde directamente.@
+br
+` ----Oh, ya veo.@
+`    Entonces, eso significa--.@
+br
+`"---Ya veo.@ Entonces, ¿yo soy el niño adoptado?"\
+`"…… Sí, usted es un descendiente de la familia Nanaya.@ Makihisa-sama lo adoptó, como el único sobreviviente de esa familia.@
+` …… Su nombre es Shiki---y como Makihisa-sama consideró divertido que el nombre de su hijo también era SHIKI por alguna extraña coincidencia, lo adoptó."@
+`"¿Nuestros nombres----son iguales?"@
+`"Sí.@ Es natural que esté confundido.@ Y es diferente a nosotras, porque fue adoptado como un miembro verdadero de la familia Tohno."\
+`"-------"@
+` No puedo hablar.@
+` …… Semejante cosa, no es un gran impacto ni nada parecido.@
+` Recuerdo que nunca me llevé bien con el viejo, y que nunca me sentí bien en la mansión…
+` Así que semejante cosa---
+bg "image\event\aki_e01b.jpg",%type_nowaitdisp
+!w1000
+bg "image\bg\bg_53b.jpg",%type_nowaitdisp
+br
+` Semejante---
+br
+bg "image\event\his_e01b.jpg",%type_nowaitdisp
+!w1000
+bg "image\bg\bg_53b.jpg",%type_nowaitdisp
+` Semejante cosa----
+br
+bg "image\event\his_e02b.jpg",%type_nowaitdisp
+!w1000
+bg "image\bg\bg_53b.jpg",%type_nowaitdisp
+` Aunque todo haya sido una mentira, yo---\
+ld c,":a;image\tachi\his_t05.jpg",%type_crossfade_fst
+`"…… Lo siento mucho.@ Dije cosas que le causan tristeza."@
+`"No, estoy bien.@ No estoy triste."@
+br
+` ----Digo eso, pero sé que es una mentira.@
+br
+` No sé qué tipo de sentimiento es.@
+` Pero es verdad que siento un vacío en mi corazón.\
+`"---Pero, es raro.@ Los miembros del linaje Tohno tienen poderes, ¿no?@ Si él…… si SHIKI es un vampiro, ¿entonces qué soy yo?@
+` No soy igual a él, pero tengo estos ojos extraños."@
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"…… No conozco los detalles.@ Pero Akiha-sama dijo que usted es igual que Nee-san y yo, cuyas familias son enemigas de aquellos con 'sangre mezclada'.@
+` …… Nosotras tenemos el poder para sincronizar con quienes intercambiemos fluidos corporales, y la familia Nanaya tenía el poder para combatir a los demonios."\
+` …… Ya veo.@
+` Ciertamente mis ojos no son un poder para ayudar a la gente como el de Hisui.@ Más bien, es un poder para matar.\
+`"…… Ya veo.@ Pero entonces, ¿por qué fui adoptado por el viejo?@ No tendría ningún sentido que adoptase a un enemigo."@
+`"…… Shiki-sama, usted es el heredero de un linaje muy especial de cazadores de demonios.@
+` Asagami, Fujyou, Ryougi y Nanaya.@
+` Esas cuatro familias son los enemigos de la 'sangre mezclada'.@
+` Creo que Makihisa-sama lo trajo aquí para eludir algo."@
+`"…… Pero, ¿cómo obtuvo la oportunidad de adoptarme en primer lugar?"\
+ld c,":a;image\tachi\his_t23.jpg",%type_crossfade_fst
+`"Yo…… escuché que usted fue el único miembro de la familia Nanaya que sobrevivió…"@
+`"……… Ah, ya veo."@
+` Hace diez años.@
+` La casa de estilo japonés enclavada en lo profundo de las montañas.@
+` Rodeado por un bosque negro, un mundo rústico aislado del flujo de la historia.@
+br
+` …… No puedo, recordarlo, muy bien.@
+` Todo lo que puedo recordar es esa pálida luna de cristal azul.@
+` Y en el claro del bosque, una figura que se parecía a Tohno Makihisa estaba cortando en pedazos a un montón de personas.\
+` ------*suspiro*@
+` Pero eso fue entonces, y esto es ahora.@
+` Algo hecho hace tanto tiempo, no tiene importancia ahora.\
+`"…… Bueno, entiendo que fui asesinado por SHIKI aquí.@ ¿Pero por qué estoy viviendo como Tohno Shiki en este momento?"@
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"…… Sí.@ Sin duda alguna, fue apuñalado en el pecho por SHIKI, y estuvo al borde de la muerte.@ Pero por algún milagro, pudo recuperarse.@
+` Usted fue salvado y SHIKI también sobrevivió.@
+` Ya que nadie murió, todo debió haber terminado bien.@ Pero SHIKI se convirtió en algo que no podía ser mostrado a otras personas."\
+`"Ya veo, entonces se necesitaba un reemplazo para Tohno SHIKI.@ El nombre de Tohno Makihisa está en la cima del mundo de los negocios, y por eso hijo no puede morir repentinamente."@
+`"…… Sí.@ Makihisa-sama hizo creer que el niño Nanaya murió, y lo hizo vivir a usted como Tohno Shiki…… Todo para proteger el nombre de la familia."@
+`"…… Comprendo, eso es algo que el viejo haría."\
+` Sí, todo encaja ahora.@
+` Aunque soy Tohno Shiki, técnicamente no soy parte de la familia Tohno.@ Aparte de Akiha, nadie más porta esa sangre.@
+` Así que el viejo me envió a vivir con los Arima, e inventó una situación en la que no podía ser el sucesor porque estaba mal de salud, a pesar de que supuestamente era el hijo mayor de la casa Tohno.\
+ld c,":a;image\tachi\his_t04.jpg",%type_crossfade_fst
+`"Shiki-sama---yo…"@
+`"…… Está bien.@ No tienes que disculparte por mantener esto en secreto.@ Decírmelo ahora es suficiente.@ Además, ¿no eres como yo?"@
+ld c,":a;image\tachi\his_t26.jpg",%type_crossfade_fst
+`"¡No, comparada con usted o con Nee-san, yo no he sufrido nada……!@
+` Incluso después de la muerte de Makihisa-sama, Akiha-sama nos tomó bajo su cuidado.@
+` ¡Así que soy la única que ha vivido pacíficamente, sin saber nada……!"\
+`"Espera, Hisui.@
+` ¿Akiha--sabe que no soy su verdadero hermano……?"@
+ld c,":a;image\tachi\his_t04.jpg",%type_crossfade_fst
+`"…… Sí.@ Makihisa-sama se lo dijo después de que fue adoptado.@
+` Pero, Akiha-sama siempre insistía en que usted era su verdadero hermano.@
+` …… Todos los días, Makihisa-sama le decía a Akiha-sama que se olvidase de usted.@
+` Pero, Akiha-sama nunca estaba de acuerdo.@ A pesar de que era regañada severamente, seguía esperando por usted en su corazón."\
+`"…… Si usted descubría la verdad, seguramente se iría.@ Por eso Akiha-sama nos dijo que nunca le permitiésemos saber la verdad.@
+` Akiha-sama siempre nos ayudó a Nee-san y a mí.@ Nee-san era la sirvienta de Makihisa-sama, y no tenía permitido salir de su habitación.@ Akiha-sama odiaba eso, y liberó a Nee-san.@
+` Así que---por el bien de Akiha-sama, continuamos con la mentira.@ Akiha-sama, todas nosotras… queríamos que usted regresara."\
+`"………… Hisui."@
+ld c,":a;image\tachi\his_t07.jpg",%type_crossfade_fst
+`"Así que, por favor, no odie a Akiha-sama.@ Usted es importante para ella, más que cualquier otra persona."@
+`"…… Sí, lo sé.@ De ninguna manera podría odiarla.@ Es más apropiado que yo sea odiado.@ Yo era el que vivía pacíficamente mientras todos ustedes sufrían."@
+`"………"\
+` Por lo tanto.@ Estoy agradecido con Akiha.@
+` Aunque no era más que un desconocido, ella me acogió de vuelta en la mansión.@ Incluso me llama hermano.@
+` …… Por eso, tengo que hacer lo mismo.@
+` Si ella está dispuesta a llamarme Tohno Shiki como si fuese su hermano, entonces no me importa el nombre Nanaya Shiki.@
+` Tengo que continuar siendo su hermano, continuar siendo Tohno Shiki----\
+wave se0
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\bg_53b.jpg",%type_nowaitdisp
+`"¡G----!"@
+quakey 3,100
+ld c,":a;image\tachi\his_t25.jpg",%type_crossfade_fst
+`"¿¡Shiki-sama!?"@
+` Hisui corre hacia mí.@
+` Me separo de Hisui, que me estaba observando con una cara de preocupación, y respiro profundamente.\
+`"…… Cielos.@ Acabas de ayudarme, Hisui, pero aún tengo estos dolores de cabeza."@
+ld c,":a;image\tachi\his_t23.jpg",%type_crossfade_fst
+`"---Shiki-sama.@ El debilitamiento de su cuerpo se debe a ese incidente de hace ocho años.@ En ese momento, SHIKI robó su vida, y ahora la está usando para prolongar la suya.@
+` Por eso---por eso se está debilitando, y por eso está conectado con SHIKI."@
+`"…… Ya veo.@ Entonces, así son las cosas.@
+` En otras palabras, mientras no haga algo respecto a ese asesino---SHIKI, no podré volver a la normalidad."\
+ld c,":a;image\tachi\his_t17.jpg",%type_crossfade_fst
+`"…… Sí.@ Creo que él lo desprecia totalmente.@ Por eso está robando su vida gradualmente, tratando de ensuciar su corazón. Está disfrutando con su dolor."@
+` Su voz se tiñe de ira nuevamente.\
+`"¿Él me odia?@ …… No lo entiendo.@ Él fue quien me mató.@ Puedo entender que yo le guarde rencor pero, ¿por qué él me guardaría rencor?"@
+`"No, SHIKI lo ve como alguien que lo ha asesinado.@ Shiki-sama, usted ha hecho que la existencia de Tohno SHIKI desaparezca."@
+`"¿……?@ ¿Yo, hice que él desapareciera……?"\
+`"Sí.@ Ciertamente fue asesinado por SHIKI.@
+` Pero una vez que su vida fue salvada, tomó el lugar de SHIKI bajo el nombre Tohno Shiki.@
+` …… Después de eso, el SHIKI que fue confinado en algún lugar debe haberlo visto a usted como una amenaza.@
+` Tohno SHIKI aún está vivo, pero hay otra persona existiendo como Tohno Shiki.@
+` SHIKI está vivo, pero usted le ha arrebatado todo como Tohno Shiki, y lo convirtió en algo sin nombre e inexistente."\
+`"…… Ya veo.@ Él se ve a sí mismo como el Tohno SHIKI legítimo, y a mí me ve como un impostor.@ Con razón---"@
+br
+` SHIKI quiere matarme y recuperarlo todo.@
+br
+`"Pero, eso está por terminar.@ Yo lo protegeré, Shiki-sama.@ Sin importar lo que haga SHIKI, no dejaré que lo mate de nuevo.@
+` …… Aunque el asesino SHIKI camine por las calles, será eliminado.@ Así que, hasta entonces, por favor descanse en su habitación."\
+`"………………"@
+` ¿Descansar en mi habitación……?@
+` No, eso no me ayudará.@
+` Ella no lo sabe pero, nuestra fusión empeora cada día.@
+` Eso significa que,
+` si él en verdad enloquece, no sé si podré mantenerme cuerdo.\
+`"…… Ja.@ Él es un sujeto que hasta se lastimaría a sí mismo para lograr su venganza."@
+br
+` …… ¿Venganza?@ No, no es eso.@
+` …… El SHIKI que dice que fue asesinado por mí.@
+` …… El SHIKI que me ve como un impostor.@
+wave se0
+` …… El SHIKI que constantemente dice que me matará.@
+` …… El SHIKI que dice que nada de esto habría ocurrido si yo no hubiese estado aquí.@
+wave se0
+` …… El SHIKI que ha perdido la cordura al igual que Tohno Makihisa, matando gente en las calles.@
+` Y, sí.@
+br
+wave se0
+` ---El que murió en el pasado distante,
+`         el niño llamado Nanaya Shiki.\
+` Inconscientemente, aprieto mis dientes.@
+br
+`"No seas ridículo----yo soy el que tiene derecho a estar resentido, SHIKI."@
+` De repente,
+` la vieja herida en mi pecho comienza a doler.@
+` Sólo hay una manera de detener este dolor.\
+ld c,":a;image\tachi\his_t23.jpg",%type_crossfade_fst
+`"Shiki-sama, ¿adónde……?"@
+`"Ya lo sabes.@ Él dice que va a venir.@ Pero no voy a esperar por él."@
+` Sé dónde está su escondite.@ Voy a terminar con esta inútil conexión entre nosotros.\
+ld c,":a;image\tachi\his_t17.jpg",%type_crossfade_fst
+`"¡Por favor deténgase, Shiki-sama……!@ Con su cuerpo en ese estado, será demasiado peligroso."@
+`"Hisui.@ Lo siento pero, hay un cuchillo en mi habitación.@ ¿Puedes traerlo por mí?"@
+`"---Me niego.@ No puedo dejarlo ir."@
+`"…… Oh bueno, yo mismo lo buscaré.@ Vigila todo mientras no estoy."@
+`"¡Shiki-sama……!"@
+cl c,%type_lshutter_mid
+` Dándole la espalda a Hisui, me alejo caminando.\
+`"¡Shiki-sama!@ ¡Si hace eso, me enfadaré de verdad……!"@
+` Me disculpo silenciosamente, y regreso a la mansión.\
+bg #000000,%type_lcartain_fst
+!w1000
+bg "image\bg\bg_32d.jpg",%type_lcartain_mid
+` ------Atravieso la verja.@
+br
+` En mi bolsillo está el cuchillo con la inscripción "Nanaya".@
+` Gracias a Hisui, ahora tengo fuerza en mi cuerpo.@
+` Si hay algún problema, es que---
+br
+ld c,":a;image\tachi\his_t08.jpg",%type_lshutter_fst
+`"…………………"@
+` que Hisui permanece a mi lado.\
+`"…… Hisui.@ Por favor, vuelve a la mansión."@
+`"…… Me niego.@ No escuchó mis palabras, así que no escucharé las suyas."@
+` Hisui echa su cabeza hacia un lado malhumoradamente.@
+`"Mira.@ No estoy diciendo que vas a estorbar.@ …… Um, el lugar al que voy es muy peligroso, por eso quiero que te quedes en la mansión."\
+ld c,":a;image\tachi\his_t13.jpg",%type_crossfade_fst
+`"Dice eso, pero si me voy, se desmayará.@ Si en verdad quiere ir, tendrá graves problemas a menos que yo lo acompañe."@
+`"¿Eh---tu poder, funciona así?@
+` Pero, hicimos eso…… unimos tanto nuestros cuerpos, ¿no debería estar bien por un tiempo?"@
+`"…… No.@ Eso es sólo un ritual para formar lazos íntimos entre nosotros.@ Aun si alguien intercambia fluidos conmigo o con Nee-san, no puede recibir energía si no estamos cerca."\
+`"----Eso es…"@
+` Es un gran problema.@
+` Si eso es verdad, entonces, ni siquiera puedo ir a la escuela por mi cuenta.\
+ld c,":a;image\tachi\his_t12.jpg",%type_crossfade_fst
+`"Si vuelve a ordenarme que me quede aquí, lo haré.@ Por favor, decida qué debo hacer."@
+` Hisui me mira directamente.@
+`"…… Uuu."@
+` …… Parece que mi respuesta ya está decidida.@
+` Si no puedo llegar a la escuela sin su ayuda, sólo puedo dejarla venir conmigo.\
+bg #000000,%type_lcartain_mid
+playstop
+!w2500
+bg "image\bg\bg_01c.jpg",%type_lcartain_fst
+` …… Por primera vez en muchos días, llego a la escuela.@ El inquietante silencio me da escalofríos en la espalda.@
+` Un espacio donde no se puede sentir ninguna presencia viviente.@
+` Aunque recibe a cientos de estudiantes durante el día, parece una ruina abandonada bajo la luz de la luna.\
+ld c,":a;image\tachi\his_t01.jpg",%type_lshutter_fst
+`"Shiki-sama, ¿éste en verdad es el lugar correcto……?"@
+`"------"@
+` No tengo palabras para responderle.@
+` Sólo lo he visto en la escuela dentro de mis sueños.@
+br
+`"…… Vamos, Hisui."@
+` Atravesamos la entrada frontal.\
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_03c.jpg",%type_lshutter_fst
+wave se0
+`"----"@
+ld c,":a;image\tachi\his_t17.jpg",%type_crossfade_fst
+`"Shiki-sama, esto es--"@
+` Hisui se detiene inmediatamente al igual que yo.@
+br
+` ----Un chirrido.@
+br
+` La noche cuelga sobre el edificio escolar.@
+` Tan pronto como atravieso la entrada, siento algo malo en el aire.\
+` ----Rechina, rechina.@
+br
+` …… Todo el aire está rechinando.@
+` La tensa atmósfera hace arder nuestros pulmones.\
+` ----Rechina, rechina, rechina.@
+br
+`"…… Esta sensación, es--"@
+` He sentido este aire enfermizo muchas veces en mis pesadillas.@
+` El aire está cargado de una intención homicida.@ Hostilidad.@ Odio.@
+` Dentro del edificio,
+` la oscuridad es llenada por una intención homicida como si una batalla a muerte estuviese ocurriendo al igual que en mis sueños.\
+bg #9c0120,%type_crossfade_fst
+bg "image\bg\bg_03c.jpg",%type_nowaitdisp
+`"SHIKI…… ¿está peleando con alguien?"@
+` …… No lo entiendo.@
+` No puede haber alguien capaz de pelear con un monstruo inhumano como él.@
+br
+`"¿Nee, san--?"@
+` Un susurro.@
+` Hisui dice esto, como si resistiese el deseo de vomitar.\
+` ---Nee-san---Kohaku-san.@
+br
+`   Akiha no ha estado en la mansión desde la mañana.@
+`   Salió con Kohaku-san y no regresó en todo el día.@
+`   …… Anoche…
+`   Cuando estaba encerrado en mi habitación,
+`   Akiha me dijo que esperase sólo un poco más.@
+br
+`"¿Qué---?@ …… ¿¡No me dirás que---Akiha----!?"@
+` Mis piernas entran en acción.@
+` Antes de comenzar a pensar, corro hacia el edificio.\
+bg #000000,%type_lshutter_fst
+play "*6"
+bg "image\bg\bg_07b.jpg",%type_lshutter_fst
+` ----Entro corriendo al edificio.@
+br
+` Adentro, el aire es aun más tenso.@
+ld c,":a;image\tachi\his_t08.jpg",%type_lshutter_fst
+`"Shiki-sama---"@
+`"…………………"@
+` Sin responderle, busco cualquier indicio de alguna presencia.\
+cl c,%type_lshutter_fst
+` ----El pasillo.@
+br
+` ----Es horriblemente.@
+br
+` ----Silencioso.@
+br
+monocro #0000ff
+bg "image\bg\bg_07b.jpg",%type_crossfade_fst
+wave se11
+monocro off
+bg "image\bg\bg_07b.jpg",%type_crossfade_fst
+`"¡………!"\
+` ¡Kriiiiiiiiiiiiiiiiiiiiiiii!@
+` Un sonido estridente asalta mis tímpanos.@ Sacude las ventanas.@
+br
+` ---El sonido, viene del piso de arriba.@
+br
+ld c,":a;image\tachi\his_t23.jpg",%type_lshutter_fst
+`"Shiki-sama, eso es--"@
+`"…… Sólo quédate cerca.@ Vamos, Hisui."@
+cl c,%type_lshutter_fst
+` Tomando la mano de Hisui, salgo disparado hacia las escaleras.\
+bg #000000,%type_lshutter_fst
+bg "image\bg\bg_07b.jpg",%type_lshutter_fst
+` ---Aún sosteniendo su mano, subo las escaleras.@
+br
+`"…………"@
+` Aprieto mis dientes.@
+` Aquel día.@
+` Recuerdo aquella vez que dejé la habitación y escuché a Akiha hablando con Kohaku-san.@
+` Akiha dijo que mataría a SHIKI---su hermano.@ Sé que no se refería a mí, sino a SHIKI.@
+` Sin duda alguna, los que están peleando en este momento son Akiha y SHIKI.\
+monocro #0000ff
+bg "image\bg\bg_07b.jpg",%type_crossfade_fst
+wave se11
+monocro off
+bg "image\bg\bg_07b.jpg",%type_crossfade_fst
+` ¡Kriiii!@ El grito perforador se escucha de nuevo.@
+` El sonido viene de arriba--alrededor del cuarto piso.@
+`"¡Esa idiota……!"@
+` Paso volando por el tercer piso.@
+` Maldición---ella no está siendo razonable.@
+` Gracias a mis pesadillas, comprendo mejor el cuerpo de SHIKI.@
+` Su poder no está al mismo nivel que el de un humano.@ No sé que tan "no humanos" sean los miembros de la familia Tohno, pero ella no podrá ganar.@ Sería como ir a ser asesinada.\
+`"¡…………!"@
+` Subo las escaleras tan rápido como puedo.@
+br
+` ---Akiha.@
+br
+` La aparté de mí, desconfiando de ella.@
+` No he hecho nada para actuar como su hermano, pero aun así me llama hermano.@
+br
+` ----Y ahora, está combatiendo al asesino SHIKI por sí sola.\
+`"¡Maldición---!"@
+` …… Tengo ese terrible, terrible presentimiento.@
+` Akiha---Akiha no puede ganar de ninguna manera.@
+` ¿SHIKI la matará?@
+` …… No lo sé.@ No creo que vaya a matar a Akiha, considerando que iba tras ella con persistencia en los sueños.@
+br
+` Pero, por otro lado…
+` No creo que él tenga la misma definición de 'ser persistente' respecto a alguien.@ Nuestra definición de 'conseguir a quienes buscamos con persistencia'.\
+` Él está loco.@
+` No puedo entender sus defectuosas nociones, porque yo no lo estoy.@
+` No, ni siquiera un lunático podría entender los pensamientos de otro lunático.@
+` Ya que el propio lunático no puede entenderse, nadie lo entiende, y tiene que estar solo.\
+`"Aki… ha---"@
+` ---Ella está viva.@
+` Akiha… Tiene que estar viva.@
+` De ninguna manera será asesinada por SHIKI.@
+` Porque debería ser yo a quien SHIKI va a matar.@
+` Akiha---no puedo dejarla morir en mi lugar.@
+` Si semejante cosa sucede, yo---\
+monocro #0000ff
+bg "image\bg\bg_07b.jpg",%type_crossfade_fst
+wave se11
+monocro off
+bg "image\bg\bg_07b.jpg",%type_crossfade_fst
+` ¡Kriiiiiii!@
+` Cuando llego al cuarto piso, ese sonido rechina una vez más.@
+` Está cerca.@ Siento que está en el pasillo al final de estas escaleras.@
+`"¡¡Akiha----!!"@
+` Con la peor imagen mental aún retorciéndose en mi cerebro, entro al pasillo corriendo.\
+bg #000000,%type_lshutter_mid
+bg "image\bg\bg_11c.jpg",%type_lshutter_mid
+br
+` ----¿Eh?@
+br
+` Por un momento, me detengo, estupefacto.@
+`"-------"@
+` Detrás de mí, escucho a Hisui ahogar un grito.@
+`"A----Aki… ha."@
+` Eso es lo único que aparece en mi cabeza.\
+` El pasillo iluminado por la luna.@
+` En el aire congelante que quema mis pulmones,
+` Akiha está parada en el pasillo, pocos metros más adelante.@
+ld c,":a;image\tachi\aki_t27.jpg",%type_lshutter_fst
+` Como sangre, un intenso carmesí.@
+br
+` ---Al principio, parece la sangre de Akiha.@
+br
+` Pero eso no es correcto.@
+` Lo que es rojo es sólo su largo, largo cabello.\
+`"------"@
+` Aún no soy capaz de entender lo que está sucediendo.@
+` A la mitad del pasillo, está Akiha, con su ondulante cabello rojo y---
+br
+cl c,%type_lshutter_fst
+ld c,":a;image\tachi\hal_t04.jpg",%type_lshutter_fst
+` él, agachado y con una mano sobre el piso, tosiendo sangre.\
+` El que está agachado frente a Akiha es él---SHIKI.@
+` Akiha lo está menospreciando con su mirada.@
+` …… Detrás de ella está la figura de Kohaku-san.\
+cl c,%type_lshutter_fst
+` SHIKI aparentemente está al borde de la muerte, y jadeando por aire.@ Akiha ni siquiera está respirando con dificultad.@
+br
+` ---La situación.@
+` Increíblemente, parece que Akiha es la que le está pasando por encima.\
+`"¡Gu………!"@
+` SHIKI salta hacia adelante.@
+` En un destello de velocidad que ni siquiera puedo seguir, una borrosa figura negra se dispara hacia Akiha.@
+ld c,":a;image\tachi\aki_t27.jpg",%type_lshutter_fst
+br
+` ¡Kriiiiiiiii!@
+br
+` Akiha simplemente dirige su mirada hacia SHIKI.@
+` Con eso, su cuerpo se estrella contra el piso, y como en respuesta al sonido…@ Su torso se quema, soltando humo.\
+cl c,%type_lshutter_mid
+`"¡Hya--aaAaaaaaAH!"@
+` Los gritos de SHIKI hacen eco a lo largo del pasillo.@
+` Su cuerpo está cubierto de humo, y se está evaporando.@
+` El cuerpo bajo su kimono prácticamente sólo muestra huesos, como una momia.@
+` Pero aún vive, y su espantosa forma mira fijamente a Akiha.@ Sus ojos están llenos de miedo.@
+` Por el contrario, la ropa de Akiha está inmaculada.@
+` …… Incluso desde aquí, puedo entenderlo todo.@
+` Los alrededores de Akiha están distorsionados, como un espejismo producido por el calor, y parece algo de otro mundo, más que el aire en el edificio.\
+`"¡Haa, g, uuaaaaaa………!"@
+` SHIKI araña su cuerpo que se evapora.@
+ld c,":a;image\tachi\aki_t27.jpg",%type_lshutter_fst
+` Akiha observa con calma y sin descuidos.@
+br
+` ----Los poderes de estos dos…
+`    Son fundamentalmente distintos.\
+cl c,%type_lshutter_mid
+`"Asombroso…… Akiha-sama, eso es…… asombroso."@
+` Detrás de mí, Hisui habla sorprendida.@
+` Eso es exactamente lo que yo también estoy pensando.@
+` …… ¿Qué es esto?@ Se puede decir que Akiha es superior, pero eso es demasiado.@
+` Es demasiado abrumadora----\
+playstop
+bg #000000,%type_tshutter_mid
+bg "image\bg\bg_11c.jpg",%type_bshutter_mid
+play "*9"
+ld c,":a;image\tachi\aki_t27.jpg",%type_lshutter_mid
+`"Se acabó, SHIKI."@
+cl c,%type_crossfade_fst
+ld c,":a;image\tachi\hal_t05.jpg",%type_lshutter_fst
+`"Aki--ha."@
+` Con su respiración entrecortada, SHIKI logra decir el nombre de su verdadera hermana.@
+` Akiha--simplemente observa a SHIKI, sin moverse.\
+`"¿Por qué--por qué me estás tratando de esta manera?@ Soy tu verdadero Nii-san."@
+`"………………"@
+` Hay un cambio,
+` la distorsión alrededor de Akiha se incrementa aun más.\
+`"Te amo, Akiha.@ Sólo te amo a ti.@ ¡Por eso seguí viviendo en ese maldito sótano, tratando de matar a ese impostor para que volviésemos a ser hermanos!@ …… ¿Entonces por qué, por qué te atraviesas en mi camino, Akiha?"@
+cl c,%type_crossfade_fst
+ld c,":a;image\tachi\aki_t11c.jpg",%type_crossfade_fst
+`"…… No me estoy atravesando.@ Esto es simplemente mi deber como líder de la casa Tohno---el deber de dictar sentencia sobre aquellos de la familia que se desvían de ser humanos."\
+cl c,%type_crossfade_fst
+ld c,":a;image\tachi\hal_t05.jpg",%type_crossfade_fst
+`"¡Yo soy el líder de la casa Tohno!@ Si él no hubiese estado ahí, yo seguiría siendo SHIKI.@ Podría haber sido siempre tu Nii-san.@ Despierta, Akiha.@ ¡Ese impostor sólo te está engañando!"@
+cl c,%type_crossfade_fst
+` La distorsión alrededor de Akiha se incrementa aun más.@
+` Después de cerrar sus ojos brevemente, ella mira a SHIKI como si estuviese despidiéndose de él.@
+ld c,":a;image\tachi\aki_t29.jpg",%type_crossfade_fst
+`"---No estoy siendo engañada.@ ¡Tú no eres mi Nii-san……!"\
+` ¡Kriiiiii!@
+br
+`"¡Aaaahhh……!"@
+` SHIKI oculta su rostro con sus manos.@
+` …… Pero eso es inútil.@
+` No entiendo qué tipo de poder posee Akiha.@
+` Pero eso---despoja de calor a todo lo que entra en su visión, todo lo que puede ver.@ Es un "robo" inevitable.\
+` ¡Kriiiiiiiiiii!@
+` Así que en el siguiente instante,
+` el rostro de SHIKI se vaporizará.@
+br
+` Bueno, eso pensé, pero.\
+`"¿Shiki-san?"@
+` Kohaku-san dice esto al percatarse de nuestra presencia.@
+playstop
+`"---¿Eh?"@
+` Akiha voltea hacia nosotros sorprendida.@
+br
+cl a,%type_nowaitdisp
+` …… En ese breve momento,
+` sólo por una fracción de segundo, ella baja la guardia por completo.@
+br
+` No hay manera de que él vaya a dejar escapar esa oportunidad.\
+return

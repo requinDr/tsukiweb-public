@@ -1,0 +1,23 @@
+monocro off
+wavestop
+play "*3"
+;---added context above---
+bg "image\bg\bg_11a.jpg",%type_nowaitdisp
+ld c,":a;image\tachi\cel_t03.jpg",%type_crossfade_fst
+`"Tohno-kun, ¿dormiste bien anoche?"@
+`"¿Eh?"@
+` Ella me mira directamente a los ojos al preguntar.@
+cl c,%type_crossfade_fst
+` …… ¿Que si dormí bien?@ No hace falta decirlo.@ No pude dormir con facilidad anoche, y además--\
+`"Uh……"@
+` Me sonrojo al resurgir los recuerdos.@
+` Con una mirada penetrante, Senpai me observa desde abajo.@
+`"Senpai, um--"@
+ld c,":a;image\tachi\cel_t08.jpg",%type_crossfade_fst
+`"Tohno-kun, pervertido."@
+`"¿Huh?"@
+cl c,%type_lshutter_mid
+` Con una mirada que indica que quiere decir algo más, Senpai se va caminando rápidamente.\
+bg #000000,%type_crossfade_mid
+!w1000
+return

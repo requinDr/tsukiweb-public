@@ -1,0 +1,81 @@
+monocro off
+wavestop
+play "*3"
+;---added context above---
+bg "image\bg\bg_09b.jpg",%type_nowaitdisp
+ld c,":a;image\tachi\cel_t08.jpg",%type_crossfade_fst
+`"¿Eh?@ Ah, um, sólo estaba un poco sorprendida de lo calmado que estabas respecto a todo esto, Tohno-kun."@
+`"¿En serio?@ Bueno, mi familia es estricta, así que estoy acostumbrado a este tipo de cosas.@ Más importante aún, Senpai, ¿no había algo sobre lo que querías hablarme?"@
+`"Lo hay.@ La continuación de lo que estábamos hablando durante el almuerzo."@
+`"…… Lo que estábamos hablando durante el almuerzo… ¿acerca de mi familia?"@
+` Senpai asiente con la cabeza para indicar un sí.\
+ld c,":a;image\tachi\cel_t02.jpg",%type_crossfade_fst
+`"Si no te importa, quisiera escuchar más sobre eso.@ He tenido curiosidad desde que nos detuvimos a medio camino."@
+`"…… No es que me importe, pero escuchar sobre mi familia no es muy interesante.@ Sería una pérdida de tiempo."@
+ld c,":a;image\tachi\cel_t03.jpg",%type_crossfade_fst
+`"No me importa que no sea interesante, sólo quiero escuchar sobre eso."@
+`"…… Hmm, de seguro eres excéntrica, Senpai."@
+`"Tal vez lo soy," Senpai ríe.\
+playstop
+ld c,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
+play "*2"
+`"Muy bien, entonces.@ Continuemos donde nos quedamos.@ Dijiste que te mudaste a tu hogar.@ ¿Qué quisiste decir con eso?"@
+` Senpai pregunta, llena de curiosidad.@
+` …… Bueno, la conversación de esta tarde debe haber sido bastante fragmentada para Senpai, ya que ella no conocía ninguna de las circunstancias.\
+`"---Veamos.@ Básicamente, soy un sujeto que ha sido desheredado.@
+` Fui gravemente herido después de verme implicado en un accidente de tráfico cuando tenía nueve años.@
+` Las heridas sanaron de alguna manera, pero después de eso, me desmayaba fácilmente por anemia y vomitaba mi comida.@ Fue por eso que fui confiado a mis parientes, los Arima, mientras me recuperaba."@
+ld c,":a;image\tachi\cel_t07a.jpg",%type_crossfade_fst
+`"Uh, en otras palabras, los Arima han sido los padres que te han criado desde que tenías nueve años, ¿correcto?"\
+`"Correcto.@ Sabía que mi viejo me odiaba por alguna razón y que una vez que hubiese sido confiado a los Arima, nunca regresaría a casa…… a la mansión Tohno.@ Por esa razón, bueno, pensé que simplemente continuaría viviendo como un hijo de los Arima para siempre.@
+` Eso es lo que pensaba, pero recientemente mi viejo falleció.@ Fue entonces cuando me dijeron que regresara a la mansión, ahora que él ya no está ahí, y finalmente accedí."@
+br
+` ---Y ésa, en su mayor parte, es mi situación doméstica.@
+br
+` Concluyo mi historia de esa manera.@
+` Ciel-senpai hace un pequeño asentimiento silenciosamente.\
+`"…… ¿Puedo preguntar sólo una cosa?"@
+`"¿Mm?@ Claro, si puedo responder.@ Adelante."@
+`"…… Muy bien, entonces preguntaré.@ ¿No te agradaba tu familia anterior?"@
+br
+` ¿Mi familia anterior---Los Arima, quienes me han criado como mis padres?@
+` Mi madre y mi padre, que no eran mis verdaderos padres,
+` y el desconocido edificio que sin lugar a dudas era casa de extraños.@
+` Pero a pesar de todo eso---\
+`"No, ellos me agradaban.@ Fueron personas a quienes no les importó que no estuviese relacionado por sangre con ellas.@ Fueron tan afectuosos conmigo que me sentí mal por ser el único que estaba deprimido.@ Y que ellos me amasen sin importar qué…… no creí que fuese algo malo."\
+` ---Fui amado por estas personas.@
+br
+` Es por eso que pronto, en cualquier día,
+` tengo que convertirme verdaderamente en parte de su familia---\
+` He estado repitiéndome esas palabras desde que era joven.@
+` …… Desde hace mucho, mucho tiempo.@
+` Una y otra vez, juré, hasta prácticamente desfallecer.\
+`"…… Um, justo como dijo Arihiko, no tengo ninguna queja respecto a la familia Arima.@
+` Ellos me trataron bien, y creo que correspondí a su afección también.@
+` Entre nosotros, aunque sabía que sólo estábamos jugando a ser una familia, aun si todo era sólo una actuación, no sentía ningún dolor."@
+` No, en verdad era feliz.@
+` Por alguna razón, he considerado a los padres Arima y a mí como el núcleo familiar ideal.\
+`"---Pero no era bueno, ¿cierto?"@
+`"…… Sí.@ A pesar de todo, había una línea que no podía cruzar.@ 'Ésta no es tu verdadera familia……' Sin importar lo que hiciera, no podía sacar esas palabras de mi cabeza.@
+` Sabía que debía ignorar eso, pero simplemente no podía hacerlo.@
+` No sé si podrías llamarlo una experiencia de la niñez, pero ya se había convertido en una maldición para mí.@ Por alguna razón, sin importar dónde estuviese, me sentía como un extraño para mi familia."@
+ld c,":a;image\tachi\cel_t09.jpg",%type_crossfade_fst
+` Senpai está en silencio.@
+` Evadiendo mi mirada, se encoge de hombros con arrepentimiento.\
+`"¿Ves?@ Fue aburrido después de todo, ¿cierto?@ Por eso dije que sería una pérdida de tiempo."@
+ld c,":a;image\tachi\cel_t03.jpg",%type_crossfade_fst
+`"No, eso no es verdad.@ Fue una historia muy significativa."@
+` Senpai fuerza una sonrisa y trata de neutralizar la situación.@
+ld c,":a;image\tachi\cel_t02.jpg",%type_crossfade_fst
+`"Pero fue un poco sorpresivo, porque había pensado en ti como una persona despreocupada."\
+`"Hmm…… bueno, soy básicamente una persona bastante despreocupada.@ Mi filosofía personal es disfrutar el presente tanto como sea posible.@ Las personas son más felices disfrutando lo que está por venir en lugar de preocupándose por lo que sucedió en el pasado, ¿no crees?"@
+` Bueno, en realidad, ésa es una opinión que he heredado de Arihiko.@
+ld c,":a;image\tachi\cel_t04.jpg",%type_crossfade_fst
+`"¿Disfrutar lo que está por venir?@ Eso suena agradable."@
+` Senpai bebe un sorbo de su té con una sonrisa muy dulce.@
+cl a,%type_lshutter_fst
+` Sigo el ejemplo de Senpai y coloco mis labios sobre la taza.@
+` Con un ruido, el amargo té baja por mi garganta con sólo una pizca de dulzura.\
+bg #000000,%type_lcartain_mid
+playstop
+return

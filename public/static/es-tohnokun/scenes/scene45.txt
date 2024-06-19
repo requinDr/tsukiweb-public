@@ -1,0 +1,247 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_46c.jpg",%type_rcartain_mid
+play "*3"
+` …… Veamos… la habitación de Kohaku-san está… aquí, ¿no?@
+br
+` Noc noc.@ Llamo a la puerta.@
+`"Kohaku-san, ¿estás ahí?"@
+`"Sí, por favor espere un minuto."@
+` Puedo escuchar su alegre voz dentro de la habitación.@
+br
+` Espero alrededor de tres minutos.@
+` Kohaku-san abre la puerta y asoma su cabeza.\
+ld c,":a;image\tachi\koha_t03b.jpg",%type_lshutter_fst
+`"Oh, es usted, Shiki-sama.@ ¿Qué está haciendo aquí a esta hora?"@
+`"Uh… bueno---me preguntaba si me dejarías ver tu TV…"@
+`"¿Eh?"@
+` Kohaku-san muestra una mirada de desconcierto.\
+`"Ah… bueno, no hay TV en esta casa, ¿cierto?@ Estuve viviendo en una casa normal hasta ahora, así que ver TV después de la cena se ha convertido en una rutina diaria para mí.@ Supongo que no puedo tranquilizarme si no lo hago o algo así, así que…"@
+` …… Mientras más hablo, más me doy cuenta de que estoy haciendo algo estúpido.\
+` Hay algo que no está bien en irrumpir en la habitación de una señorita exigiendo ver su TV.@
+br
+` Mira, incluso Kohaku-san esta parada ahí, como desconcerta---espera, en realidad no.@
+br
+`"Ajaja, supongo que tiene razón.@ Estuvo viviendo en la casa Arima hasta ayer, después de todo.@ Debe pensar que esta mansión es algo deprimente después de mudarse tan repentinamente."@
+` Kohaku-san ríe alegremente.\
+`"Eh, veamos… ¿Ha hablado con Akiha-sama y Hisui-chan sobre esto?"@
+`"¿Sobre venir a tu habitación, Kohaku-san?"@
+` Kohaku-san asiente.@
+`"No, aún no he hablado con nadie sobre esto.@ ¿Por qué preguntas?"\
+`"No, no es nada.@ Es sólo que tendría que rechazarlo si ya ha hablado con ellas sobre esto."@
+` Sonriendo mientras habla, Kohaku-san mira de un lado al otro del pasillo.@
+`"Afortunadamente para nosotros, no hay nadie más alrededor.@ Por favor apresúrese y entre.@ Sería problemático que fuésemos atrapados."\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_39.jpg",%type_lcartain_mid
+`"Por favor, siéntese donde quiera.@ Iré a preparar algo de té."@
+`"……"@
+` Tosiendo para aclarar mi garganta, tomo asiento.\
+` Hay toda clase de pequeñas cosas en la habitación de Kohaku-san.@
+` Se podría pensar que es un poco desordenada para ser la habitación de una chica.@ No hay muchas cosas que podrían llamarse adorables, y lo que sí tiene es un montón de cosas que no parecen muy útiles.@
+` …… Más bien, tiene la atmósfera de una habitación perteneciente a una disciplinada persona intelectual.\
+` Enterrada entre los diversos objetos, encuentro la TV.@
+` Sobre la mesa está el control remoto… quizás Kohaku-san estuvo viendo TV hasta ahora.\
+ld c,":a;image\tachi\koha_t02b.jpg",%type_lshutter_fst
+`"Gracias por esperar.@ Le gusta el té, ¿no, Shiki-sama?"@
+`"Ah, gracias.@ Por favor no te preocupes mucho por mí."@
+`"Oh no, en absoluto.@ Lamento no poder hacer mucho para atenderlo."@
+` Kohaku-san dice, sonriendo afectuosamente.\
+ld c,":a;image\tachi\koha_t03b.jpg",%type_crossfade_fst
+`"Entonces, la TV.@ ¿Qué ve alrededor de esta hora, Shiki-sama?"@
+`"No veo ningún programa en particular, pero las noticias es uno bastante básico.@ Me gusta ver las nuevas tendencias, y las historias de esnobs."@
+`"¿En serio?@ Usted parece una persona muy tranquila, pensé que leería después de la cena o algo así."@
+`"Ajaja, no, no tengo intereses tan refinados.@ Tampoco me considero tranquilo, pero tal vez es la impresión que doy con mis lentes."\
+ld c,":a;image\tachi\koha_t12.jpg",%type_crossfade_fst
+`"---¡Ah!@ Usted usa lentes, Shiki-sama.@ Akiha-sama no dijo absolutamente nada sobre eso, así que estaba bastante sorprendida cuando lo vi en la puerta."@
+` …… Ya veo.@ No había visto a Akiha desde que comencé a usar estos lentes.@
+`"Estos lentes son sólo para aparentar.@ Supongo que se podría decir que mis ojos están mal, pero creo que mi visión es mejor que la de la mayoría de las personas.@ No es porque haya estudiado demasiado y me haya vuelto corto de vista ni nada parecido… Ah, mierda.@ Tenía una imagen intelectual pero, ¿te he decepcionado?"\
+ld c,":a;image\tachi\koha_t15.jpg",%type_crossfade_fst
+`"En absoluto.@ También disfruto más ver TV que leer.@ Me alegra que usted sea una persona enérgica, justo como pensé que sería."@
+`"Ah… sí, gracias."@
+` Estoy un poco avergonzado.@
+` Al ser encarado directamente por la despreocupada sonrisa de Kohaku-san, no puedo evitar sentirme un poco nervioso.\
+ld c,":a;image\tachi\koha_t03b.jpg",%type_crossfade_fst
+`"Ah, lo siento.@ Vino a ver las noticias, ¿no?"@
+` Kohaku-san enciende la TV.@
+` Ya son las nueve en punto.@
+` Las noticias, como generalmente lo hacen, anuncian los sucesos del día con un poco de exageración.\
+`"Oh cielos.@ Parece que ha ocurrido otro de esos asesinatos en serie."@
+` Kohaku-san dice para sí misma mientras se sienta a mi lado, sonando como si no estuviese preocupada en lo más mínimo.@
+br
+` Las noticias están transmitiendo un programa especial sobre los asesinatos en serie.@
+` Los asesinatos en serie, que comenzaron en la ciudad vecina, ahora están empezando a concentrarse dentro de esta ciudad.\
+` Es una historia muy simple.@
+` Bien entrada la noche, ataca chicas jóvenes indiscriminadamente, y al final, extrae la sangre de éstas.@
+` Parece que la víctima de anoche es la novena hasta ahora.\
+`"Me pregunto qué está haciendo la policía al respecto."@
+`"¿Quién sabe?@ Podría parecer muy fácil capturar a un asesino que sale de noche, pero tal vez es bastante cuidadoso y por eso no pueden rastrearlo."\
+`"Puede que tenga razón.@ Las pistas sobre los asesinos se acumulan con cada asesinato, así que si no lo han capturado incluso después de nueve asesinatos, debe estar muy cuidadosamente preparado para las matanzas."@
+`"Un asesino cuidadoso, ¿eh?@ ¿Pero no son estas matanzas crímenes espontáneos?@ Es muy extraño pensar que son cuidadosamente preparadas."\
+ld c,":a;image\tachi\koha_t02b.jpg",%type_crossfade_fst
+`"Tiene razón.@ Si no deja evidencia en absoluto, tal vez no sea un asesino ocasional después de todo.@ Sólo puedo pensar que lo tenía todo planeado para ejecutar desde el principio."@
+`"Ah, ya veo.@ Pero entonces ¿qué sentido tendría asesinar a esas nueve chicas?@ ¿Son amigas suyas?@ ¿Conocidas?"\
+`"Hmm… probablemente no.@ Si hubiese conexiones como ésas, entonces creo que la policía ya se habría percatado.@ Al final, supongo que es un caso incomprensible sin motivo o conexiones."@
+` …… Kohaku-san dice todas estas cosas perturbadoras con una sonrisa.@
+br
+` Parece que no está muy preocupada por este caso.\
+`"Esos asesinatos están ocurriendo aquí mismo en esta ciudad, Kohaku-san.@ Eres una chica joven y todo, ¿no estás aunque sea un poco asustada?"@
+`"Estaré bien, ya que el asesino sólo aparece entrada la noche.@ Si no salgo de noche, no me encontraré con él."@
+` Kohaku-san piensa con mucha claridad.@
+` …… Quizás sea una explicación un poco cruda, pero supongo que es así como debe ser tratada una simple historia en las noticias.\
+bg #000000,%type_crossfade_mid
+bg "image\bg\bg_46c.jpg",%type_crossfade_mid
+`"Perdón por molestarte.@ Contaré contigo de nuevo la próxima vez que tenga ganas de ver TV."@
+ld c,":a;image\tachi\koha_t15.jpg",%type_nowaitdisp
+`"Por supuesto, estaré esperando."@
+` Kohaku-san mira de un lado al otro del pasillo.\
+ld c,":a;image\tachi\koha_t12.jpg",%type_crossfade_fst
+`"Me gustaría acompañarlo de vuelta a su habitación, pero Hisui-chan está esperando ahí, así que tendré que despedirme aquí."@
+`"De acuerdo.@ Buenas noches."@
+cl c,%type_lshutter_mid
+`"……"@
+` …… No tenía idea de que la hora de dormir en la mansión era a las diez.@
+` Aparentemente, hay algún tipo de regla no escrita en este lugar que dice que uno no debe estar fuera de su habitación después de las diez.\
+`"Este lugar sigue siendo tan formal, aun sin la presencia del viejo."@
+` Bueno, supongo que es natural.@
+` También me estoy cansando de mi no familiaridad con esta mansión, así que obedientemente regreso a mi habitación.\
+bg #000000,%type_lcartain_mid
+playstop
+bg "image\bg\bg_40c.jpg",%type_lcartain_mid
+`"Ah---"@
+` Cuando regreso a mi habitación, mi cama ha sido hecha… ¿Lo hizo Hisui mientras yo no estaba?@
+`"Me alegra que lo hiciera, pero en verdad es más de lo que merezco."@
+` Rasco mi mejilla.@
+br
+` ------Entonces.\
+wave se3
+`"¿Está ahí, Shiki-sama?"@
+` Puedo escuchar la voz de Hisui junto a una llamada a la puerta.@
+`"Sí, estoy aquí.@ Adelante."@
+ld c,":a;image\tachi\his_t16.jpg",%type_crossfade_mid
+`"Discúlpeme."@
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+play "*1"
+`"Buenas noches.@ Gracias por hacer mi cama, Hisui."@
+` Hisui asiente silenciosamente.@
+`"…… Urgh."@
+` Justo como pensé, no estoy acostumbrado a esto.@
+`"…… Uh… ¿hay algo más que quieras decirme?"@
+`"No, nada de mi parte, pero Akiha-sama me ha ordenado que responda cualquier pregunta que usted pueda tener."\
+`"…… Ya veo.@ Hay muchas cosas que quiero preguntar, pero probablemente dé con las respuestas mientras continúe viviendo aquí……"@
+` Sí.@ Lo que quiero saber ahora mismo antes de dormir es---
+`"¿Es verdad que el toque de queda aquí es a las siete?"@
+`"Sí.@ La verja principal es asegurada a las siete, y todas las entradas a la mansión son cerradas a las ocho.@
+` Es también una regla que nadie debe tratar de salir a caminar por la mansión después de las diez."\
+`"¿Ni siquiera caminar por la mansión?@ …… Bueno, no tengo problema con eso pero, ¿no es algo severo?@ Akiha y yo no somos niños, no creo que se tenga que llegar tan lejos."@
+`"…… Ciertamente.@ Sin embargo, es una regla, así que por favor aténgase a ella.@ Es consciente de las recientes conmociones durante la noche, ¿no es así, Shiki sama?"@
+br
+` …… Sí, ese vampiro del que Arihiko estaba hablando.@
+` Bueno, mientras algo como eso esté sucediendo, supongo que es mejor prevenir que lamentar.\
+`"Qué más… Oh, ¿te molesta si hago una pregunta fuera de lugar?"@
+`"No, ¿de qué se trata?"@
+`"Quisiera saber qué tipo de trabajo hacen Kohaku-san y tú en este lugar."@
+`"Estoy aquí para atender sus necesidades y mi hermana Kohaku para servir a la Señora Akiha-sama.@
+` En nuestro tiempo libre, hacemos las labores de mantenimiento alrededor de la mansión.@ ¿Hay algo más que desearía saber?"@
+`"…… Para servir… Así que es eso después de todo."\
+` Mis hombros de pronto se sienten más pesados.@
+` Parecía completamente natural para Akiha cuando lo dijo, pero no soy nada más que un estudiante de secundaria normal.@
+` No tengo interés en tener una chica de mi edad sirviéndome, al menos por ahora.\
+`"…… ¿Por servirme, quieres decir que eres una sirvienta personal?"@
+`"Sí.@ Por favor no dude en pedir cualquier cosa de mí."@
+`"…… Bien, entiendo.@ Considerando cómo hablaba Akiha de ti, no parece que pueda prescindir de ti, así que obedientemente dejaré que me sirvas…"@
+`"¿Hay algo en particular que quisiera?"@
+`"Nada en particular pero, ¿podrías dejar de llamarme 'Shiki-sama'?@ Para ser sincero, siento escalofríos en la espalda cuando lo escucho."\
+`"Pero Shiki-sama, usted es mi amo."@
+`"Eso es lo que estoy diciendo que odio.@ Estuve llevando una vida normal hasta ayer.@ No tengo deseos de empezar a llevar una vida en la que una chica de mi edad se dirige a mí con '-sama'."@
+`"Ya veo." La respuesta de Hisui fue menos que entusiasta.\
+`"Sólo llámame Shiki, y a cambio, yo te llamaré Hisui.@ Apartemos las formalidades y seamos más familiares el uno con el otro."@
+` Aún inexpresiva, Hisui baja sus cejas como si estuviese siendo incomodada.@
+ld c,":a;image\tachi\his_t23.jpg",%type_crossfade_fst
+`"Pero, usted es mi empleador."@
+`"No es que te esté contratando.@ Tú eres la que está haciendo las cosas que yo no puedo, así que eres la mejor."@
+`"Ya veo." Hisui da otra inentusiasta respuesta.@
+` …… Parece que no seré capaz de convencerla en un solo día.\
+`"---En fin, eso es lo que quiero.@ No seas tan formal conmigo.@ Estaré agradecido si le dices eso a tu hermana Kohaku-san también."@
+ld c,":a;image\tachi\his_t16.jpg",%type_crossfade_fst
+`"Muy bien, como usted diga, Shiki-sama."@
+` Inexpresiva, Hisui inclina su cabeza.@
+br
+` Fracasó completamente para entender.@
+br
+`"Me retiraré ahora.@ Por favor descanse por esta noche."@
+cl c,%type_lshutter_mid
+` Inclinándose, Hisui coloca su mano sobre el pomo de la puerta.\
+br
+` ---Oh, olvidé preguntar algo.@
+br
+`"Ah, espera un segundo."@
+` Corriendo hacia la puerta, coloco mi mano sobre el hombro de Hisui antes de que se vaya.@
+bg #ffffff,%type_nowaitdisp
+bg "image\bg\bg_40c.jpg",%type_nowaitdisp
+` En un instante---El brazo de Hisui aparta mi brazo con un ímpetu increíble.\
+` Con un '¡paf!', ella aparta mi mano con una palmada y salta hacia atrás.@
+ld c,":a;image\tachi\his_t10.jpg",%type_lshutter_fst
+`"¿Eh---?"@
+` Es tan repentino que eso es lo único que puedo decir.@
+` Hisui es inexpresiva, pero me mira ferozmente.\
+`"Eh… ¿Acabo de hacer algo malo?"@
+ld c,":a;image\tachi\his_t28.jpg",%type_crossfade_fst
+`"Ah…"@
+ld c,":a;image\tachi\his_t26.jpg",%type_crossfade_fst
+`"…… Lo siento mucho…"@
+` Ella suena muy nerviosa.@
+`"…… No estoy acostumbrada a ser tocada.@ Por favor perdóneme."@
+` Los hombros de Hisui están temblando débilmente.@
+` Siento que acabo de hacer algo realmente terrible.\
+`"Ah… Sí, lo siento."@
+` Me disculpo sin pensar.@
+` Yo mismo no entiendo por qué.@ Simplemente me siento triste por Hisui y bajo mi cabeza.@
+ld c,":a;image\tachi\his_t04.jpg",%type_crossfade_fst
+`"------"@
+` Hisui no dice nada.@
+` Tengo la sensación de que su mirada es calma de nuevo.\
+ld c,":a;image\tachi\his_t23.jpg",%type_crossfade_fst
+`"---No tiene nada de que disculparse, Shiki-sama.@ Soy yo quien debe ser culpada."@
+`"No, bueno, tal vez, pero yo sólo…"@
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+` Rasco mi cabeza.@
+` Hisui me mira fijamente, deteniéndose sólo para parpadear por un segundo.@
+`"Um… ¿Qué era lo que quería preguntarme, Shiki-sama?"@
+` Es cierto.@
+` Detuve a Hisui porque quería preguntarle algo.\
+`"Oh, quería preguntar sobre Akiha.@ ¿No asiste ella a un internado?"@
+`"Eso fue sólo durante la escuela media, Shiki-sama.@ A partir de este año, Akiha-sama tiene un permiso especial para asistir a la escuela desde casa."@
+`"Eh… ¿Quieres decir que va a la escuela desde aquí?"@
+`"Sí, pero no es común que ella venga a casa antes del ocaso como hoy.@ Akiha-sama tiene práctica hasta la hora de la cena, así que siempre está en casa antes de las siete.\
+`"¿Practica?---¿Practica de qué?"@
+`"Hoy es jueves, así que debe haber tenido práctica de violín."@
+`"----¿Eh?"@
+`"Nomalmente, ella regresa antes de la cena los días de semana, así que si tiene cualquier cosa que decirle a Akiha-sama, por favor hágaselo saber a Nee-san después de la cena."@
+cl c,%type_lshutter_fst
+` Hisui se inclina para despedirse, y deja la habitación.\
+`"Práctica de violín…"@
+` ¿Qué rayos es eso?@
+` Ella no es alguna dama de clase alta ni nada parecido, entonces por qué tendría que hacer algo tan fastidioso como---
+br
+`"…… Oh espera, ella es una dama de clase alta."@
+br
+` Sí.@ Ahora que lo pienso, mi hermana, Tohno Akiha, es una dama de clase alta de nacimiento.\
+` En mis recuerdos, era la obediente y siempre nerviosa hermana que siempre me seguía a todas partes.@ Cuando era niña, Akiha era siempre callada, nunca tenía siquiera el coraje para expresar sus propios deseos.@ Era una chica frágil que siempre vivía con el temor de recibir un regaño por parte de nuestro padre.@
+`"---Sí, la gente realmente cambia después de ocho años."@
+br
+` Después de ocho años, me he convertido en lo que soy ahora.@
+` Akiha se ha convertido en la persona que es ahora también.\
+` ---Ocho años es un largo tiempo.@
+` Es la mitad de nuestras vidas hasta ahora.@
+` Estuve ausente de esta mansión durante ese vital período en el que un niño se convierte en adulto.@
+br
+`"…… Lo siento, Akiha."@
+` Creo que las cosas habrían sido mejores si hubiese estado con ella durante esos ocho años.@
+` Inconscientemente murmuro una disculpa.\
+bg #000000,%type_crossfade_mid
+playstop
+!w1000
+return

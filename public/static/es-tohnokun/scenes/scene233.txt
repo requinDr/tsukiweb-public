@@ -1,0 +1,53 @@
+monocro off
+wavestop
+play "*3"
+;---added context above---
+bg "image\bg\bg_32b.jpg",%type_lcartain_mid
+` Subo la colina y me acerco a la mansión.@
+` Después de caminar un poco más, veo a Hisui parada sola frente a la verja.@
+br
+`"¿……?@ ¿Me pregunto que está haciendo Hisui?"@
+` Ladeando mi cabeza, me dirijo hacia la verja.@
+` Hisui se percata de que estoy aquí e inclina su cabeza.\
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"Bienvenido a casa, Shiki-sama."@
+`"---Ah, sí---gracias, Hisui."@
+` Apenas puedo responder ya que estoy desconcertado por la respetuosidad de todo esto.@
+`"Um---¿estabas esperando que volviera a casa?"@
+`"Sí.@ Saludar al amo es la obligación de un sirviente."@
+` Respondiendo con mucha practicidad, ella ni siquiera pestañea.\
+`"Um, Hisui, estoy verdaderamente feliz de que esperases para saludarme, pero no hay necesidad de esperar afuera.@
+` Regresaré por mi cuenta, así que puedes saludarme cuando te percates de que he vuelto."@
+ld c,":a;image\tachi\his_t05.jpg",%type_crossfade_fst
+`"-----"@
+` El rostro de Hisui se oscurece ligeramente.@
+` …… Oh, tal vez…
+` Tal vez estuvo esperando mi regreso de esta manera el sábado y el domingo.\
+`"--Hisui, um--"@
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"Entiendo.@ A partir de mañana, esperaré su regreso en el vestíbulo."@
+` Hisui hace una pequeña reverencia y abre la verja de la mansión.@
+` Se da la vuelta mientras lo hace.\
+` ………… *suspiro*@
+` Por alguna razón, la atmósfera no es exactamente propicia para conversar.@
+` Hisui cierra la verja después de verme pasar, entonces camina silenciosamente hacia la entrada para abrir la puerta y me guía hasta el vestíbulo.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_40b.jpg",%type_lcartain_mid
+` Llego a mi habitación.@
+` Akiha aún no ha regresado de sus lecciones, Kohaku-san está preparando la cena, y Hisui está limpiando la mansión.@
+br
+`"---Cielos, no hay nada que hacer."@
+` Bueno, hay una gran montaña de estudios, repasos, y memorizaciones que un estudiante como yo tiene que hacer.@
+` Pero, simplemente no tengo ganas de hacer nada.\
+` De repente, el rostro de Arcueid pasa rápidamente por mi mente.@
+` Sea buena o mala, probablemente sea sólo una reacción al loco par de días que acabo de pasar.@
+` Quizás distraerme aquí en mi habitación sea bueno, para darle un descanso a mi mente y a mi corazón.\
+bg #000000,%type_crossfade_mid
+!w2000
+playstop
+bg "image\bg\bg_40c.jpg",%type_crossfade_mid
+` Después de cenar solo en el gran comedor, Kohaku-san trata mis heridas y regreso a mi habitación.@
+` Akiha no llegó a tiempo para la cena.@ Aparentemente su lección iba a durar un rato, así que decidió comer fuera de casa.@
+` Ya son más de la diez de la noche.@
+` Es demasiado temprano, pero ya que estoy exhausto, debería dormir temprano esta noche--\
+return

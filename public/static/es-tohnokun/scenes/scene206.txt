@@ -1,0 +1,220 @@
+monocro off
+wavestop
+play "*2"
+;---added context above---
+bg "image\bg\bg_34a.jpg",%type_nowaitdisp
+ld r,":a;image\tachi\koha_t02.jpg",%type_crossfade_fst
+`"¿Akiha-sama?@ Ya casi es hora de partir; ¿está bien todo esto?"@
+ld l,":a;image\tachi\aki_t05a.jpg",%type_crossfade_fst
+`"…… Lo sé.@ Cielos, no te preocupes tanto por cosas como éstas en tu primer día."@
+` Murmurando quejas, Akiha se levanta.\
+ld l,":a;image\tachi\aki_t01a.jpg",%type_crossfade_fst
+`"Bueno, debo despedirme.@ Nii-san, deberías dedicarte a tus estudios el día de hoy."@
+cl a,%type_lshutter_mid
+` Akiha deja la sala de estar.@
+` Kohaku-san la sigue para despedirla.@
+`"¿Dedicarme a mis estudios…?"@
+` Es bastante ceremoniosa respecto a las cosas triviales de una manera anticuada… supongo que se debe a que fue disciplinada por nuestro viejo durante los últimos ocho años.@
+`"…… Bueno, habría ido a la escuela aunque ella no hubiese dicho nada."\
+` Rasco mi mejilla.@
+` Había algo respecto al rostro de Akiha cuando se fue… debido a eso, no presté ninguna atención a las diversas amonestaciones de esta mañana.@
+`"Por supuesto---"@
+` Aplaudo como gesto de entendimiento.@
+` Por alguna razón, en ese momento el rostro de Akiha pareció asemejarse al que tenía hace mucho tiempo---\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_33a.jpg",%type_lcartain_mid
+` Después de comer el desayuno que Kohaku-san preparó, salgo hacia el vestíbulo.@
+` Hisui estaba esperando ahí con mi maletín.@
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"Shiki-sama, ¿tiene suficiente tiempo?"@
+`"Sí, deberían ser sólo veinte minutos hasta la escuela si corro.@ Apenas son las siete y media, debería llegar a tiempo aunque tome el camino largo."@
+` Pareciendo satisfecha con mi respuesta, Hisui inclina su cabeza en asentimiento.\
+`"Entonces, permítame acompañarlo hasta la entrada."@
+`"¿Eh?@ Ah, sí… gracias."@
+` …… Aún me siento terriblemente incómodo por tener una sirvienta personal.\
+`"¡Oh, Shiki-san!@ ¡Por favor espere un momento!"@
+` Con pasos repiqueteantes, Kohaku-san viene corriendo desde el segundo piso.@
+`"……"@
+cl c,%type_crossfade_fst
+` Hisui retrocede y queda en silencio al acercarse Kohaku-san.\
+ld c,":a;image\tachi\koha_t03.jpg",%type_lshutter_fst
+`"¿Huh?@ ¿No estabas con Akiha?"@
+`"La señora Akiha va a la escuela en auto.@ Ya que tenía algo que darle a usted esta mañana, me quedé aquí."@
+`"¿Algo que darme?"@
+`"Sí.@ Esto vino de parte de la familia Arima ayer."@
+` Kohaku-san sonríe.\
+`"¿Eh?@ Pero, ya tengo todo mi equipaje.@ Todas las cosas que usaba cuando vivía en la casa de los Arima les pertenecían a ellos, así que todo lo que tengo son mis propias ropas…"@
+`"¿En serio?@ Sin embargo, esto fue enviado aquí…"@
+` Kohaku-san me entrega una delgada caja de madera, de unos veinte centímetros de largo.@
+` No es pesada en absoluto.\
+`"…… Kohaku-san, nunca he visto esto antes."@
+`"Bueno… aparentemente fue dejado para usted por su fallecido padre.@ Debía serle entregado de acuerdo al testamento."@
+`"…… ¿Por mi viejo?"@
+` …… No puedo sentir nada respecto a eso.@
+` ¿Qué está haciendo el viejo que me expulsó de esta mansión hace ocho años dejándome cosas?\
+`"Oh bueno.@ Kohaku-san, por favor llévalo a mi habitación por mí."@
+ld c,":a;image\tachi\koha_t09.jpg",%type_crossfade_fst
+`"-----"@
+` Kohaku-san está mirando atentamente la caja de madera.@
+` Parece casi como un niño que quiere un juguete.@
+br
+` Obseeeeeerva.@
+br
+` No, en verdad es una niña.\
+`"…… Entiendo.@ Quieres saber qué hay dentro, ¿cierto?"@
+ld c,":a;image\tachi\koha_t01a.jpg",%type_crossfade_fst
+`"Oh, en absoluto.@ Simplemente me lo pregunté por un momento."@
+` …… Como dije, te preguntas qué hay dentro.@
+`"Muy bien, vamos a abrirlo.@ ¡Uno, dos… tres!"@
+` Con un sonido seco, la caja de madera se abre.@
+` Adentro, hay----una barra de hierro delgado de diez centímetros.\
+`"…… Es… una barra de hierro."@
+` Nada decorada y desgastada, tiene marcas de dedos sobre toda su superficie.@
+` …… El viejo en verdad debió odiarme como para dejarme un pedazo de chatarra como éste.\
+`"No, Shiki-san.@ Es un cuchillo para fruta."@
+` Kohaku-san saca la barra de hierro de la caja.@
+`"¿Ve, no es uno de esos cuchillos plegables?@ ¡Uno, dos… tres!"@
+` Con el sonido del metal al deslizarse, una cuchilla de diez centímetros sale repentinamente de la barra.@
+` …… Ya veo, ciertamente es un cuchillo.\
+`"Es viejo, pero parece bastante sólido.@ El año y la era en que fue fabricado están escritos en el reverso."@
+` Kohaku-san devuelve la cuchilla a si sitio, y me entrega el cuchillo.@
+cl c,%type_crossfade_fst
+` Ciertamente, hay un número escrito en la empuñadura.@
+` El ideograma para "siete", y bajo éste, el ideograma para "noche".\
+ld l,":a;image\tachi\his_t01.jpg",%type_nowaitdisp
+`"Nee-san, no existe una era bajo ese nombre.@ Simplemente dice 'Nanatsu-yoru'."@
+`"¡Ah!"@
+` Me doy la vuelta sorprendido.@
+` Hisui, que había permanecido en silencio hasta ahora, estaba viendo el cuchillo por encima de mis hombros.\
+`"M, me sorprendiste… Hisui, deberías decir algo.@ No tienes que mirar por encima de mi hombro, ¿sabes?@ Si quieres verlo, te lo mostraré."@
+ld l,":a;image\tachi\his_t02.jpg",%type_crossfade_fst
+`"Ah----"@
+br
+` Las mejillas de Hisui se tornan ligeramente rojas.\
+`"P-por favor discúlpeme.@ Um---Ese cuchillo es tan hermoso que no pude evitarlo."@
+`"¿Hermoso?@ ¿En verdad piensas que es hermoso?@ Se ve algo desgastado para mí."@
+ld l,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"---En absoluto.@ El templado de la cuchilla es magistral.@ Pienso que es un cuchillo con historia propia."@
+`"¿En serio?@ A mí me parece un pedazo de chatarra…"\
+` Pero como Hisui parece tan convencida, comienzo a sentirme de la misma manera.@
+` …… Hmmm.@ A su propia manera, supongo que no es una herencia tan mala.\
+ld r,":a;image\tachi\koha_t02.jpg",%type_nowaitdisp
+`"¿'Siete noches'…?@ ¿Tal vez sea el nombre de este cuchillo para fruta?"@
+`"Tal vez… sin embargo, no puedo imaginarme al viejo poniéndole un nombre como ése."@
+` Sea cual fuere el caso, es obvio que es una antiguedad.@
+`"Bien, en todo caso, creo en tomar lo que se me es dado."@
+` Ajusto la cuchilla y meto el cuchillo en el bolsillo de mi pantalón.\
+cl r,%type_crossfade_fst
+`"Shiki-sama, ¿tiene suficiente tiempo…?"@
+`"¡Ah!@ Tengo que irme.@ Bueno, Kohaku-san, gracias por la entrega."@
+` Kohaku-san sonríe y se despide agitando su mano.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_48a.jpg",%type_lcartain_fst
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+` Salgo hacia la verja de entrada.@
+` Hisui me sigue en silencio.@
+`"…… Hisui.@ ¿Estás despidiéndome?"@
+` Hisui asiente silenciosamente.\
+`"¿Shiki-sama?@ ¿A qué hora esperamos su regreso?"@
+` Parece que Hisui continuará usando "-sama" hasta el final.@
+` Bueno, si me pongo a discutir eso ahora, llegaré tarde a la escuela.@ Me quejaré de las formalidades más tarde.\
+`"¿Shiki-sama?"@
+`"Ah, sí.@ Uh… probablemente alrededor de las cuatro en punto, creo.@ No estoy en ningún club escolar."@
+` Cuando no salgo con Arihiko, suelo regresar temprano durante la tarde.@
+` Hisui se inclina profundamente ante mi supuesto estimado.\
+ld c,":a;image\tachi\his_t16.jpg",%type_crossfade_mid
+`"Comprendo.@ Por favor tenga cuidado en el camino."@
+` …… No estoy seguro de qué tener cuidado pero, probablemente sólo está preocupada por mi salud.@
+`"Sí, gracias.@ Tú también, Hisui."@
+` Respondo a la buena voluntad con buenas intenciones.@
+` Con una enérgica agitación de la mano para despedirme, dejo atrás la verja de la mansión.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_22a.jpg",%type_lcartain_mid
+br
+` ---Desciendo la colina.@
+` Ya que había asistido a la escuela desde la casa Arima hasta ahora, es la primera vez que tomo esta ruta.@
+`"No hay muchos de nuestra escuela…"@
+` Aparentemente, no hay mucha gente de mi escuela que viva por estos alrededores.@
+` Siete y media de la mañana.@
+` No puedo ver a nadie corriendo por las calles con uniforme escolar a excepción de mí.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_23a.jpg",%type_lcartain_mid
+` Lentamente, comienzo a ver algunas personas con uniforme escolar mezclándose con la multitud.@
+` Por aquí comienza la ruta hacia la escuela.@
+br
+`"…… ¿Dónde está Yumizuka-san…?@ Bueno, no voy a ser tan afortunado…"@
+` Recuerdo el sonriente rostro de la compañera de clases que partió ayer aquí diciendo "mi casa está por este camino".@
+` Al imaginar a Yumizuka Satsuki en el salón de clases, mi ritmo se acelera un poco, y me apresuro hacia dicho salón.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_24a.jpg",%type_lcartain_mid
+` Dejo el área residecial y alcanzo la intersección.@
+` Las puertas serán cerradas dentro de diez minutos.@
+` Comienzo a correr hacia el otro lado del asfalto.@
+br
+bg #000000,%type_lcartain_fst
+bg "image\bg\bg_01a.jpg",%type_lcartain_mid
+` ------Lo logré.@
+br
+` Parece que me tomó veinte minutos en lugar de treinta desde la mansión.@ Tendré que salir alrededor de las siete si quiero venir lentamente, ya que corrí muchas veces en el camino.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_06a.jpg",%type_lcartain_fst
+`"¿----?"@
+` Cuando llego al salón de clases, noto que el ambiente es de murmullos.@
+` Aunque el salón siempre es ruidoso por la mañana, hay algo diferente respecto al ruido el día de hoy.@
+` Camino hacia mi pupitre junto a la ventana.@
+` Arihiko está esperando ahí malhumoradamente.\
+`"Arihiko, ¿sucedió algo?"@
+ld c,":a;image\tachi\ari_t04.jpg",%type_crossfade_fst
+`"…… No sé.@ Nada importante.@ Hay un rumor de que alguien de la clase huyó de casa."@
+`"Ahh… entonces a eso se debe toda la conmoción."@
+` Tomo asiento en mi pupitre con un suspiro.@
+`"---¿¡Qué quieres decir con nada importante!?@ ¿Quién huyó?@ ¿Quién!"@
+ld c,":a;image\tachi\ari_t03.jpg",%type_crossfade_fst
+`"¿Cómo podría saberlo?@ Pero lo sabremos cuando comience la tutoría.@ El asiento que esté vacío, debe pertenecer al que huyó de casa."\
+`"Ahh, es verdad."@
+` Es verdad, pero, la actitud de Arihiko parece un poco irónica.@
+` …… Si uno de nuestros compañeros en verdad ha huido de casa, creo que ignorarlo como si fuese el problema de otra persona sería demasiado.\
+`"¿Arihiko?@ ¿No estás siendo insensible?@ Uno de nuestros compañeros huyó de casa… ¿no estás preocupado?"@
+ld c,":a;image\tachi\ari_t01.jpg",%type_crossfade_fst
+`"¿Eh?@ Tú eres el único que está seriamente preocupado, bobo.@ Todos están hablando al respecto porque es algo interesante de qué hablar.@
+` No es que tú o yo hayamos huido de casa, así que no hay necesidad de preocuparse, ¿cierto?"@
+br
+` …… Ahora recuerdo.@ Este sujeto es así de frío con todos excepto con sus amigos.\
+ld c,":a;image\tachi\ari_t04.jpg",%type_crossfade_fst
+`"Sin embargo, supongo que estoy un poco preocupado.@ Huir de casa en un momento como éste… tendría que ser muy valiente o muy…"@
+`"¿…?@ ¿Un momento como éste?@ ¿Qué tipo de momento es?"@
+`"Te lo dije ayer, Tohno.@ Hay un asesino en serie recorriendo las calles en este momento.@ No sé quién huyó de casa, pero no tendría excusa si es atacado por él mientras vive en las calles."\
+`"No puede ser----de ninguna manera podría ocurrir eso."\
+`"Tohno, deberías ver más TV.@ Ya han habido ocho víctimas, y él no discrimina.@ Mejor piénsalo de nuevo si crees que estás seguro.@
+` La ciudad está vacía de noche en estos días.@ Los únicos que salen son borrachos o policías, y por eso es tan aburrido."@
+` La voz de Arihiko es muy seria.@
+` Escuchándola, comienzo a sentirme nervioso.\
+`"Oh, Kunifuji llegó.@ Finalmente comenzó la tutoría."@
+cl a,%type_lshutter_fst
+` Arihiko regresa a su asiento.@
+br
+` Después de un rato, todos están sentados.@
+` Sólo un asiento está vacío.@
+` No hay equivocación.@ El pupitre de Yumizuka Satsuki está vacío.\
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_22b.jpg",%type_crossfade_fst
+ld c,":a;image\tachi\stk_t03.jpg",%type_nowaitdisp
+br
+br
+br
+br
+br
+br
+`"Bueno, mi casa está por este camino.@
+` Bai-bai.@ Nos vemos mañana en la escuela."\
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_06a.jpg",%type_crossfade_fst
+`"……"@
+` …… Yumizuka dijo eso cuando nos separamos ayer.@ No sé qué le sucedió en casa, pero no puedo imaginarla teniendo esa cara sonriente antes de huir.\
+`"Yumizuka está ausente."@
+` Yumizuka Satsuki simplemente es tratada como ausente al ser tomada la asistencia.@
+` …… Como si nada estuviese fuera de lugar, la tutoría procede.@
+br
+` Yo----
+br
+return

@@ -1,0 +1,77 @@
+monocro off
+wavestop
+play "*1"
+;---added context above---
+bg "image\bg\bg_40c.jpg",%type_nowaitdisp
+`"Deja de golpear la puerta, voy, a--abrir…"@
+` Vagamente, abro la puerta.@
+`"¡Nii-san--!"@
+` Akiha entra corriendo.@
+` Kohaku-san la sigue.\
+bg "image\event\aki_h13.jpg",%type_nowaitdisp
+bg "image\bg\bg_40c.jpg",%type_nowaitdisp
+ld c,":a;image\tachi\aki_t15b.jpg",%type_lshutter_fst
+`"Nii-san, ¿¡qué estabas haciendo……!?@ ¡Te ves terrible, deberías estar en cama---!"@
+cl c,%type_crossfade_fst
+br
+wave se0
+` ----Mi corazón palpita.\
+br
+ld c,":a;image\tachi\koha_t03.jpg",%type_lshutter_fst
+`"Es cierto, Shiki-san.@ No ha comido desde el almuerzo, y no ha recibido su transfusión.@ Si sigue así, no va a curarse."@
+cl c,%type_crossfade_fst
+br
+wave se0
+` ----Mi corazón palpita.\
+ld c,":a;image\tachi\aki_t02b.jpg",%type_crossfade_fst
+`"Cielos.@ No sé qué sucedió, pero por favor tranquilízate.@ Durmiendo así en el piso… ¿acaso quieres morir, Nii-san?"@
+cl c,%type_crossfade_fst
+br
+wave se0
+` ----Mi corazón palpita.@
+br
+` Akiha se acerca para tomar mi brazo mientras dice eso.\
+` Justo como lo dijo en aquella casa separada.@
+` Ella ha venido… para matarme.\
+`"----¡Fuera de aquí!"@
+wave se9
+quakex 3,10
+ld c,":a;image\tachi\aki_t15b.jpg",%type_crossfade_fst
+`"Eh---Ni, Nii-san, ¿qué estas---"@
+`"¡Fuera, dije!@ ¡No dejaré que--me mates……!"@
+cl c,%type_lshutter_fst
+` La empujo para apartarla.@
+` …… Pero no es que pueda empujarla hasta el pasillo con este cuerpo.@
+` Akiha simplemente da un paso hacia atrás y me mira fijamente.\
+ld c,":a;image\tachi\aki_t11b.jpg",%type_crossfade_fst
+`"Nii-san, ¿qué rayos quieres decir?@ ¿Quién te dijo que yo te mataría?"@
+` Akiha me mira directamente.@
+` Mi corazón omite un latido.@
+` Su aguda mirada me hace sentir que está leyendo mi mente.@
+`"…… ¡Sólo vete……!@ ¡No soy un asesino, aún estoy cuerdo……!"\
+ld c,":a;image\tachi\aki_t15b.jpg",%type_crossfade_fst
+`"Asesino… Nii-san--¿ya has sido atraído hasta ese punto?"@
+` Su voz está llena de sorpresa.@
+` Akiha camina hacia la puerta por voluntad propia.@
+ld c,":a;image\tachi\aki_t11b.jpg",%type_crossfade_fst
+`"…… Entiendo.@ Nii-san, ahora estás exhausto, así que volveré más tarde para verte."@
+`"--¡Cállate!@ ¡No dejaré que ni tú ni nadie entre a esta habitación……!"@
+`"………………"@
+` Akiha levanta sus cejas por un segundo, y entonces comienza a retirarse.\
+ld c,":a;image\tachi\aki_t10b.jpg",%type_crossfade_fst
+`"…… Nii-san.@ Hoy te obedeceré, pero mañana, te obligaré a escucharme.@
+` Dejarte solo por un día ya es bastante peligroso, y no puedo dejarte solo por dos días, porque de seguro morirías.@ Por favor espera sólo un día más, Nii-san."@
+cl c,%type_lshutter_mid
+` La puerta se cierra.\
+` *jadeo*…… *jadeo*…… *jadeo*
+` Difícilmente puedo respirar.@ Justo como dijo Akiha, a este paso de seguro moriré.@
+` *jadeo*…… *jadeo*…… *jadeo*
+` Pero, sigue siendo mejor a que Akiha me mate.@
+br
+` ----Cierro la puerta con llave.@
+br
+` Me recuesto de la pared y mantengo los ojos abiertos para no quedarme dormido.\
+bg #000000,%type_crossfade_slw
+playstop
+!w3000
+return

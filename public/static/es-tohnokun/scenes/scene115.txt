@@ -1,0 +1,10 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_06b.jpg",%type_nowaitdisp
+` …… Sí.@ Me sentiría mal si continuase causándole problemas a Hisui y a Kohaku-san.@
+` Ya que no pude regresar a casa estos últimos días, al menos debería ir directamente a casa el día de hoy.\
+bg #000000,%type_lcartain_slw
+!w2000
+return

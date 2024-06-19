@@ -1,0 +1,58 @@
+monocro off
+;---added context above---
+wave se2
+bg "image\bg\bg_06a.jpg",%type_nowaitdisp
+play "*3"
+ld c,":a;image\tachi\osiete.png",%type_lcartain_mid
+!w1000
+cl c,%type_lcartain_mid
+ld r,":a;image\tachi\cel_t20.jpg",%type_tshutter_mid
+` ¡Merci!@
+` ¡Felicitaciones!@ ¡Es el Final Bueno de Ciel-san!@
+br
+` …… ¿Eh?@
+` ………… ¿Huh?@
+` ………… ¿Huh?@ ¿¿¿Huh???@
+` ¡Espera sólo un minuto!@
+` ¿Qué es esto?@
+` ¿¡Qué es este final!?\
+ld l,":a;image\tachi\ark_t30.jpg",%type_crossfade_mid
+`"……………………………… Adiós, adiós."@
+br
+` ¡Oye tú!@ ¡Detente, gata ladrona----!@
+bg #ffffff,%type_nowaitdisp
+bg "image\bg\bg_06a.jpg",%type_nowaitdisp
+wave se9
+quakey 1,50
+!w1000
+ld l,":a;image\tachi\ark_t31a.jpg",%type_crossfade_mid
+br
+`"¡Auieeee!@ ¡No seas tan violenta!@ ¡Ciel-sensei, no deberías recurrir al castigo corporal!"\
+bg #ffffff,%type_nowaitdisp
+bg "image\bg\bg_06a.jpg",%type_nowaitdisp
+wave se9
+quakey 1,50
+ld r,":a;image\tachi\cel_t20.jpg",%type_lshutter_fst
+` ----Ya puede irse.@
+` …… ¡Oh, cielos, de acuerdo!@
+` Cada heroína tiene dos tipos diferentes de finales.@
+` Éste es el Final Bueno de Ciel-san.@
+` ¡Por favor regresa a una decisión previa y elije una historia diferente!@
+` ¡Ése será el Final Verdadero!\
+` Oh, y una cosa más.@
+` Las rutas de Ciel-san y Arcueid son las rutas de la Cara Visible de la Luna.@ Pero también hay una historia totalmente distinta: la ruta de la Cara Oculta de la Luna.@
+` Es la ruta de la "Familia Tohno", asociada con personas como Akiha-san.@
+` Parece difícil saber qué requerimiento es necesario para poder escoger esa ruta, así que te daré una pequeña pista.\
+` En el primer día, no deberías ir a ver a Ciel-san.@
+br
+` Podría ser mejor permanecer en tu salón de clases durante al almuerzo.@
+br
+` Y lo más importante.@
+` Creo que si no conoces al vampiro llamado Nrvnqsr, esta historia en la que estamos nunca sucederá.@
+` Entonces, cómo causar la historia nueva.@
+` Durante ese momento específico, si no intentas realizar aquella acción, un evento completamente diferente debería esperarte.@
+br
+` ¡Bien, entonces, veámonos de nuevo una vez más dentro de la historia principal!\
+bg #000000,%type_crossfade_mid
+playstop
+return

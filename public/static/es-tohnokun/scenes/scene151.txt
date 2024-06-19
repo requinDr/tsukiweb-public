@@ -1,0 +1,89 @@
+monocro off
+wavestop
+play "*3"
+;---added context above---
+bg "image\bg\bg_06a.jpg",%type_nowaitdisp
+` ---Pero no puedo simplemente irme a mitad de la clase.@
+br
+`"……… Por favor."@
+` Junto mis manos y ruego silenciosamente que ella no inicie ningún problema "interesante" durante veinte minutos.\
+bg #000000,%type_crossfade_mid
+!w1000
+bg "image\bg\bg_06a.jpg",%type_lshutter_mid
+wave se2
+` La clase termina.@
+` Salgo corriendo del salón sumido en la conmoción de la hora del almuerzo.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_11a.jpg",%type_lcartain_mid
+` Atravieso el pasillo como un relámpago.@
+` …… Arcueid está en el patio trasero.@
+` Ya que es la hora del almuerzo, uno o dos estudiantes podrían ir a ese lugar.@
+` ¡Antes de eso, tengo que enviarla lejos de la escuela……!\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_04.jpg",%type_lcartain_mid
+` Jadeo con fuerza.@
+` Salgo del pasillo y entro al patio.@
+` Afortunadamente, nadie más ha salido.@
+` Todo lo que falta es agarrar a Arcueid, pero…
+bg "image\bg\bg_05a.jpg",%type_lcartain_mid
+br
+`"…… Lo peor."@
+` Entrando a la parte trasera de la escuela, doy voz a mis pensamientos inconscientemente.\
+` En ese lugar,
+ld l,":a;image\tachi\ark_t07.jpg",%type_lshutter_mid
+` puedo ver a una Arcueid muy hostil y…
+ld r,":a;image\tachi\cel_t07a.jpg",%type_lshutter_mid
+` mediante el peor giro del destino, Ciel-senpai también está presente.@
+br
+` Como encarando a una invasora, Senpai mira fijamente a Arcueid.\
+`"¡Arcueid……!"@
+` Ambas se dan la vuelta.@
+ld l,":a;image\tachi\ark_t06.jpg",%type_crossfade_fst
+`"Shiki."@
+ld r,":a;image\tachi\cel_t06a.jpg",%type_crossfade_fst
+`"-------"@
+cl a,%type_crossfade_mid
+\
+` …… Gracias al cielo.@ La hostilidad de Arcueid parece desvanecerse.@
+` Después mirar a Arcueid una vez más, Senpai se va en otra dirección.@
+`"Ah…… Senpai."@
+` Debe haber sido ofendida por la feroz mirada de Arcueid.@
+` Que Senpai desaparezca de esa manera y sin decir nada debe significar algo.\
+`"¡Arcueid, tú……!"@
+` Corro hacia ella.@
+ld c,":a;image\tachi\ark_t16.jpg",%type_crossfade_fst
+`"¡Shiki lento perezoso!"@
+` Ella me grita al acercarme.\
+`"Oye…… ¿lento?@ ¡Oye!"@
+`"¿No lo fuiste?@ Sé que me viste, pero nunca bajaste.@ ¡Si hubieses venido antes, no habría sido vista por esa persona!"@
+` …… "Esa persona" debe ser Senpai.\
+`"No podía evitarse, tengo mis obligaciones.@ A diferencia de ti, soy sólo un estudiante normal.@ En primer lugar, ¿por qué demonios viniste aquí?"@
+ld c,":a;image\tachi\ark_t03.jpg",%type_crossfade_fst
+`"Es que sentí algo por estos alrededores.@ Entonces percibí tu rastro y me percaté de que se trataba de tu escuela."@
+`"…… ¿Así que no estabas pensando y viniste sin razón?"@
+` Frunzo el ceño.@ ¿Ella es un perro o algo así?\
+ld c,":a;image\tachi\ark_t04.jpg",%type_crossfade_fst
+`"¡Bueno discúlpame!@ Vine aquí por una razón.@ Difícilmente hay algún rastro de Los Muertos aquí, así que quería confirmarlo yo misma."@
+`"¿En serio?@ Pero si no hay ningún rastro de Los Muertos aquí, ¿no debería ser un lugar sin importancia?@ No hay nadie en la escuela durante la noche, si Los Muertos quisieran alguna presa, irían al centro de la ciudad, no a una escuela."@
+ld c,":a;image\tachi\ark_t10.jpg",%type_crossfade_fst
+`"…… Bueno, eso tiene sentido."\
+`"No hay nada extraño aquí.@ No puedo sentir a Los Muertos, pero ya que mis ojos ven la muerte, puedo saberlo sin quitarme los lentes."@
+ld c,":a;image\tachi\ark_t06.jpg",%type_crossfade_fst
+`"Ya veo.@ Si tú lo dices, Shiki, entonces no hay nada extraño en este lugar, quizás."@
+`"No 'quizás', definitivamente."@
+` Parece que Arcueid no me cree.\
+`"En fin, si nos quedamos aquí mucho tiempo, la gente nos verá.@
+` Te aseguro que mantendré mi promesa, así que ve a casa y descansa.@ Podríamos ver al 'enemigo' esta noche."@
+ld c,":a;image\tachi\ark_t03.jpg",%type_crossfade_fst
+`"¿Oh?@ Suenas como si me quisieras fuera de aquí, Shiki"@
+` Ella comienza a parecer enojada de nuevo.\
+`"Ah, es sólo tu imaginación, así que apresúrate y vuelve a casa.@ De otro modo las cosas podrían volverse un poco peligrosas."@
+` Vete, vete.@ La empujo desde atrás.@
+`"………………"@
+cl c,%type_lshutter_mid
+` Aunque sus ojos indican que quiere decir algo, se va silenciosamente.\
+`"…… Cielos.@ Si veo a Senpai, tengo que disculparme con ella por lo de Arcueid."@
+` Pensando en voz alta, me retiro.\
+bg #000000,%type_lcartain_mid
+!w1000
+return

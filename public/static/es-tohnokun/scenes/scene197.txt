@@ -1,0 +1,20 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_08b.jpg",%type_nowaitdisp
+` ----Debería encontrar a ese vampiro Roa.@
+br
+` Arcueid no va a venir a verme, y para mí es casi imposible encontrarla.@
+` Así que tomaré la ruta opuesta.@
+` Arcueid dijo que derrotaría a Roa sin importar qué.@ Si su propósito es Roa, entonces yo también lo buscaré.\
+` Arcueid irá hacia Roa, y si yo pudiese encontrarlo antes de eso, sería bueno.@
+br
+` Y con esa opción,
+` puedo ayudar a Arcueid en el último momento.\
+`"----Muy bien."@
+` Estoy decidido.@
+` Así que no puedo perder más tiempo aquí.@
+` Tengo que adentrarme en la ciudad de inmediato, y aun si significa buscar una aguja en un pajar, tengo que encontrar a ese vampiro----\
+bg #000000,%type_lcartain_mid
+return

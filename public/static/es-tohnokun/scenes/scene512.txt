@@ -1,0 +1,41 @@
+monocro off
+;---added context above---
+wave se2
+bg "image\bg\bg_06a.jpg",%type_nowaitdisp
+play "*3"
+ld c,":a;image\tachi\osiete.png",%type_lcartain_mid
+!w1000
+cl c,%type_lcartain_mid
+ld r,":a;image\tachi\cel_t20.jpg",%type_tshutter_mid
+` ¡Bonjour!@
+` Este rincón es para el desafortunado Tohno-kun, quien fácilmente terminó en un Final Muerto una vez más.@
+` Es la hora de "¡Enséñame, Ciel-sensei!"@
+br
+` Ahora, comenzaremos con la segunda hora.@
+` Esta vez, presentaremos la primera "Tierra Animal de Sacudidas y Escalofríos" de la serie que da información detallada sobre animales salvajes.@
+\
+ld l,":a;image\tachi\ark_t30.jpg",%type_lshutter_fst
+`"Sensei, tengo una pregunta antes de eso.@ Ese nombre suena muy estúpido.@ En japonés, tu nombre se puede leer como Chiel."@
+br
+` Pregunta denegada.@
+cl l,%type_lshutter_fst
+` ----Entonces, Tohno-kun.@
+` Pienso que es bueno ser prudente, pero esta vez, parece que te salió el tiro por la culata.@
+` Básicamente, eres un héroe, así que un poco de imprudencia será perdonada.@
+` Será perdonada, pero en un caso con un animal absurdo como un tiburón, supongo que no podías hacer mucho.@
+` Simplemente tendrás que abandonar a Arcueid en esta ocasión.\
+ld l,":a;image\tachi\ark_t31a.jpg",%type_lshutter_fst
+ld l,":a;image\tachi\ark_t31b.jpg",%type_lshutter_fst
+`"¡Heeeeyyy!@ ¡No quiero escuchar eso de Chiel!"@
+br
+` ---¡Abandónala!@
+cl l,%type_lshutter_fst
+br
+`"¡Kyaah!@ ¡Sin violencia!"@
+br
+` En fin, por favor prepárate para explorar el hotel tú solo.@
+` Adentro, encontrarás todo un reino animal.@
+` Como representante de los mamíferos, enséñales lo que tenemos.\
+bg #000000,%type_crossfade_mid
+playstop
+return

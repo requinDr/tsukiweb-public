@@ -1,0 +1,587 @@
+monocro off
+wavestop
+play "*3"
+;---added context above---
+bg "image\bg\bg_05a.jpg",%type_nowaitdisp
+ld c,":a;image\tachi\cel_t07a.jpg",%type_crossfade_fst
+play "*3"
+`"---Entiendo.@
+` Así que te aliaste con ella para derrotar al vampiro de esta ciudad.@ ¿Cierto, Tohno-kun?"@
+`"Bueno, sí, así es."@
+ld c,":a;image\tachi\cel_t09.jpg",%type_crossfade_fst
+`"…… No puedo creerlo.@ Tohno-kun, ¿en verdad crees en los vampiros?"\
+`"¿Qué…… qué estás diciendo Senpai?@ Incluso tú, eres una exor---"@
+br
+` Senpai coloca un dedo sobre mis labios.@
+br
+`"No te preocupes por mí.@ ¿No es más importante resolver tu problema, Tohno-kun?"\
+`"¿Yo?@ No tengo ningún problema."@
+ld c,":a;image\tachi\cel_t08.jpg",%type_crossfade_fst
+`"…… No eres consciente de tu situación, o eso parece."@
+` Senpai suelta un suspiro de preocupación.@
+`"Tengo una pregunta… ¿cuánto te habló ella sobre esto?"@
+`"Cuánto…… bueno, sólo que un vampiro está en esta ciudad chupando la sangre de la gente."@
+`"En otras palabras, no sabes nada sobre ella o sobre el 'enemigo' al que persigue."@
+`"…… Bueno, no he escuchado sobre eso.\
+ld c,":a;image\tachi\cel_t07a.jpg",%type_crossfade_fst
+`"Ya veo.@ Entonces, te hablaré de ello."@
+`"…… Guau, asombroso.@ ¿Sabes algo al respecto, Senpai?"@
+ld c,":a;image\tachi\cel_t10a.jpg",%type_crossfade_fst
+`"¡Bueno, ya sabes, soy miembro de La Iglesia, claro que sé algo!"@
+`"Oh, es cierto.@ …… Lo siento, se me olvidó.@ Ajajaja."@
+` Intento zafarme riendo.\
+ld c,":a;image\tachi\cel_t08.jpg",%type_crossfade_fst
+`"Cielos.@ ¡Estoy tratando de ser seria, por favor presta atención!"@
+` Asiento con la cabeza.@
+`"…… ¿Huh?@ Pero, ¿eso no es un secreto?@ Arcueid, um…… dijo que todos ustedes son increíblemente reservados."\
+ld c,":a;image\tachi\cel_t12.jpg",%type_crossfade_fst
+`"Sí, ciertamente no es algo que deba decir, pero el día de hoy es especial.@
+` No hay nadie vigilándonos ni nada parecido, así que mientras no se lo digas a nadie, no habrá problemas."@
+`"…… Um.@ ¿Qué sucederá si le hablo a otra persona sobre ti, Senpai?"@
+ld c,":a;image\tachi\cel_t04.jpg",%type_crossfade_fst
+`"Sí.@ Haré exactamente lo que estás pensando, Tohno-kun."@
+` Senpai da esa aterradora respuesta con una sonrisa.\
+ld c,":a;image\tachi\cel_t12.jpg",%type_crossfade_fst
+`"Bien, entonces lo mantendré muy simple.@ Tohno-kun, ¿cuánto te explicaron sobre los vampiros?"@
+`"---Sólo que existen dos tipos, y que los Apóstoles Muertos son los vampiros que chupan sangre humana.@ Pero creo saber qué tipo de monstruos son."@
+ld c,":a;image\tachi\cel_t07a.jpg",%type_crossfade_fst
+`"Es verdad.@ Tohno-kun, tú derrotaste a un vampiro."@
+`"Jaja, pero me ayudaste en el último momento-----¡S, Senpai!"\
+ld c,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
+`"Sí.@ Te observé cuando aniquiliste a 'Chaos'.@ Pero cuando intervine, 'Chaos' ya estaba muriendo."@
+`"-------"@
+br
+` Estoy sorprendido.@ ¿Entonces Senpai sabe sobre mis ojos---?@
+br
+ld c,":a;image\tachi\cel_t08.jpg",%type_crossfade_fst
+`"Fue terrible.@ Esa mujer te convirtió en semejante cosa.@
+` Si tenía un arma conceptual para derrotar a 'Chaos', debió haberla usado ella misma.@
+` Después de ver tu ensangrentado cuerpo, pensé que debía castigarla en ese momento y lugar."\
+ld c,":a;image\tachi\cel_t10a.jpg",%type_crossfade_fst
+`"Tú también, Tohno-kun.@ Aun si recibiste un arma que puede matar vampiros, ¿qué estabas pensando al pelear con esa cosa?@ ¿Acaso ella conoce tu debilidad o algo así?"@
+` Senpai aún parece sorprendida y se queja en voz alta.\
+`"…… ¿Um, Senpai?@ ¿Cuál es esa arma que puede matar vampiros?"@
+ld c,":a;image\tachi\cel_t12.jpg",%type_crossfade_fst
+`"¿Qué quieres decir?@ Estoy hablando de ese cuchillo que tienes, Tohno-kun.@ …… Oh, supongo que ella no te hablaría sobre eso.@ Tampoco le convendría."\
+ld c,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
+`"Veamos, los vampiros poseen la habilidad de recuperarse de la mayoría de las heridas que reciben.@
+` Con fuerza externa ordinaria…… es decir, con armas normales.@ Con semejantes cosas, no puedes causar heridas que superen su velocidad de recuperación.@
+` Para matar a un vampiro, necesitas una fuerza externa que supere su velocidad de recuperación, o algo que neutralice esa habilidad.@
+` Esta habilidad, la maldición de la restauración---en realidad no se trata de curar las heridas.@ Más bien, es una reversión del tiempo para devolver la parte del cuerpo dañada a su estado original.@ Un artefacto oculto que neutraliza este efecto es llamado un arma conceptual."\
+`"…………………"@
+` Senpai dice alegremente todas estas cosas que no puedo entender muy bien.\
+`"En resúmen, un arma mágica.@
+` Normalmente rompemos sus maldiciones examinando sus pasados como humanos, así que por lo general no las usamos.@ Pero para aquellos que nunca fueron humanos, las utilizamos, es algo como un arma secreta.@
+` Tu cuchillo, ¿no es un arma anti-vampiros que ella trajo?"@
+`"¿Ah----eh?"\
+ld c,":a;image\tachi\cel_t12.jpg",%type_crossfade_fst
+`"¿O es un tesoro familiar?@ …… Hmmm, pero sería extraño que la familia Tohno poseyera an arma anti-demonios."@
+` Senpai medita en voz alta.\
+` …… No sé qué está pensando, pero parece que no tiene idea sobre mis ojos.@
+`"---¿Um, Senpai?@ ¿Adónde se fue nuestra conversación sobre vampiros?"@
+`"------------"@
+` Con un espasmo, Senpai deja de murmurar para sí misma.@
+ld c,":a;image\tachi\cel_t05.jpg",%type_crossfade_fst
+` Sonríe como para esconder su vergüenza.@
+br
+` …… Como siempre, su personalidad es difícil de entender.\
+playstop
+ld c,":a;image\tachi\cel_t12.jpg",%type_crossfade_fst
+play "*1"
+`"Volvamos al tema principal.@ Por favor escucha cuidadosamente, Tohno-kun."@
+`"Sí, por favor mantenlo resumido."@
+ld c,":a;image\tachi\cel_t07a.jpg",%type_crossfade_fst
+`"Parece que ya sabes que hay Verdaderos Ancestros y Apóstoles Muertos.@
+` Así que es muy simple.@
+` El 'enemigo' que ella persigue es un Apostol Muerto apodado 'La Serpiente'.@ Entre los Apóstoles Muertos, es considerado un hereje, un vampiro especial."\
+`"…… Este vampiro no es tan fuerte como 'Chaos', a quien derrotaste.@
+` Pero en cierta forma, es un oponente más difícil de eliminar que 'Chaos'.@ Porque vuelve a la vida incluso después de morir."@
+`"…… Um, Senpai.@ Los vampiros son inmortales, ¿no es natural que vuelvan a la vida después de morir?"\
+`"Tú eliminaste a 'Chaos', ¿cierto?@
+` Aunque sean vampiros, si destruyes sus cuerpos y almas, serán exterminados.@ Si matas a un vampiro, éste morirá.@ Pero 'La Serpiente' es un vampiro que ha superado incluso eso."\
+`"Tohno-kun, ¿te es familiar el ciclo de la reencarnación?@ Es parte de la doctrina budista, creo que a un japonés le sería bastante familiar."@
+`"…… Sí.@ Es esa cosa cuando alguien muere y renace como otro ser humano."@
+ld c,":a;image\tachi\cel_t04.jpg",%type_crossfade_fst
+`"Sí, exactamente."@
+ld c,":a;image\tachi\cel_t12.jpg",%type_crossfade_fst
+`"En otras palabras,
+` el vampiro llamado 'La Serpiente' ha hecho suyo este ciclo de la reencarnación.@
+` A eso me refiero cuando digo que vuelve a la vida incluso después de ser asesinado."\
+`"Reencarnación---¿quieres decir que si muere comenzará de nuevo como un bebé……?"@
+ld c,":a;image\tachi\cel_t07a.jpg",%type_crossfade_fst
+`"Sí.@ Mientras 'La Serpiente' está vivo, escoge a su siguiente huésped y cuando éste nace, le transmite toda la información de su 'ser'.@
+` La información de 'La Serpiente' permanecerá profundamente dentro del bebé hasta que éste madure, o hasta que tenga suficiente inteligencia.@
+` Tan pronto como el bebé tiene la inteligencia para heredar 'su ser', el bebé se convierte en un nuevo vampiro que es 'La Serpiente'."@
+`"---Espera un minuto.@ ¿Qué es eso?@ No me digas que  le hace cirugía mientras está dentro de la madre o algo parecido."\
+`"No, no es nada médico.@
+` Porque en el instante en que su cuerpo es destruido, reencarna dentro del cuerpo que escogió como su nuevo huésped.\
+`"Dije 'toda su información' anteriormente, pero para hacerlo más simple, piensa en eso como su 'alma'.@
+` No sería exactamente correcto decir que su alma se propaga por el aire y toma el cuerpo de alguien, pero es similar a una onda electromagnética.@
+` En este caso, el cerebro humano es el que hace la transmisión y la recepción.@
+` Su punto excepcional es que él tomó esta alma, la cual es incalculable y algo que se dispersa tan pronto como deja la envoltura del cuerpo, y la procesó como algo que podía ser transmitido."\
+`"………………"@
+` Sus palabras no parecen muy reales.@
+` Entiendo lo que está diciendo.@
+` Este sujeto Serpiente renace como un bebé cuando muere y este bebé se convierte en el vampiro Serpiente cuando se hace adulto, pero……\
+`"…… Si decido creer tu historia, significa que él nunca morirá.@ No es inmortalidad, es peor que eso.@
+` Ser asesinado y renacer como otra persona, es como vivir para siempre."@
+`"Sí, exactamente.@
+` Fue hace ochocientos años cuando 'La Serpiente' se convirtió en un Apóstol Muerto.@
+` Desde entonces, 'La Serpiente' ha renacido diecisiete veces.@ En cada ocasión, Arcueid Brunestud lo ha asesinado."\
+`"¿Arcueid lo……?"@
+ld c,":a;image\tachi\cel_t09.jpg",%type_crossfade_fst
+`"Sí.@ Para ella, 'La Serpiente' es un vampiro especial.@ …… Bueno, 'La Serpiente' tiene un significado especial para mí también."@
+`"…… Pero, aun si muere simplemente renacerá, ¿no?@ Entonces---matarlo una y otra vez no tiene sentido, ¿verdad?"\
+`"----Sí.@
+` Es asesinado por ella, reencarna, y es asesinado por ella nuevamente.@
+` Ese ciclo se ha repetido una y otra vez.@
+` …… Si Arcueid tuviese el poder para matar no al 'cuerpo' sino al 'significado', esto probablemente no estaría sucediendo."@
+` Senpai se ve un poco deprimida y parece estar apretando sus dientes.@
+br
+` …… No sé por qué.@
+` Sin embargo, parece que Senpai también le guarda algún rencor al "enemigo" al igual que Arcueid.\
+`"…… Un vampiro que renace cada vez que es asesinado……"@
+` Ése es el "enemigo" de Arcueid y Senpai.@
+`"…… Senpai.@ Este Serpiente, ¿qué tipo de sujeto es?"\
+`"Originalmente era un hombre, pero eso puede cambiar dependiendo del cuerpo en que reencarne.@
+` La parte fastidiosa de este Apóstol Muerto es que todos sus huéspedes son difíciles de encontrar.\
+` Porque nace correctamente como un bebé humano, y tiene padres.\
+` "La Serpiente se transforma en un vampiro sólo cuando alcanza la edad en que puede hacer todo a un nivel satisfactorio.\
+` Hasta entonces, ese humano no muestra señales de ser un vampiro.@ Pero una vez que 'La Serpiente' despierta, utiliza las relaciones que ha adquirido hasta ese momento para mezclarse perfectamente dentro de la sociedad.@
+` Escuché que La Iglesia suele detectar la presencia de 'La Serpiente' después de que una ciudad entera es convertida en Los Muertos."\
+` …… Ya veo.@
+` Por ejemplo, si este sujeto Serpiente hubiese reencarnado en mí, habría vivido como Tohno Shiki incluso después de haberse convertido en La Serpiente.@
+` A menos que cometiese un gran error, sería libre para beber sangre sin que la gente se percatase.@
+br
+` ----Eso es.\
+`"…… Espantoso.@ Obviamente aquellos a su alrededor también están en peligro.@
+` Pero ese humano en quien ha reencarnado, simplemente desaparecería después de madurar, ¿cierto?@
+` En un momento esa persona está viviendo normalmente y en el siguiente repentinamente se convierte en 'La Serpiente'.@ Es muy aterrador."\
+`"…… Sí, pero no es como dos personas compartiendo un cuerpo.@ El bebé humano sigue siendo 'La Serpiente'.@
+` Dependiendo de su ambiente, es una persona buena o mala.@
+` …… Pero incluso eso desaparece en el instante en que 'La Serpiente' despierta.@
+` Para resumir, una vez que 'La Serpiente' muere, renace en el siguiente cuerpo, y una vez que ese cuerpo obtiene inteligencia, obtiene la consciencia de la vida anterior y se convierte en un vampiro."\
+`"…… Eso es, extraño.@
+` Aun si él reencarna, el bebé sigue siendo humano.@ Así que, aunque obtenga la consciencia de una vida anterior, el cuerpo no debería convertirse en el de un vampiro, ¿cierto?"\
+ld c,":a;image\tachi\cel_t07a.jpg",%type_crossfade_fst
+`"La reencarnación no es la transmisión de la personalidad, es la transmisión de un alma.@
+` Así que la personalidad difiere en cada ocasión dependiendo de sus familias y educaciones.@ Pero el alma en sí no cambia.@
+` Una vez mordido por un Verdadero Ancestro, no sólo el cuerpo es manchado para siempre, sino también el alma.@ Lo que cambia el cuerpo es el alma.@
+` 'La Serpiente' transmite toda su información llamada su alma, y cuando 'La Serpiente' despierta, el cuerpo se convierte en el de un vampiro, pero----"\
+`"Sí, pero…"\
+`"Como dijiste, sólo eso es demasiado débil.@
+` Así que selecciona a su siguiente huésped mientras está vivo.@
+` La familia en la que nace debe reunir dos condiciones, la primera es que sea adinerada.@
+` Nacer en una familia con alta posición social, propiedades y dinero facilita convertir una ciudad entera en vampiros más adelante.\
+`"Y hay otra condición, ésta es la importante; entre las personas como nosotros, hay también personas que portan poderes especiales.@
+` No como la hechicería, que es un poder místico que puede ser aprendido, sino más bien habilidades especiales de nacimiento.@
+` ---Tales personas normalmente son llamadas Niños Demoníacos o psíquicos.\
+`"Estas habilidades especiales son genéticas, así que son heredadas---transmitidas por la sangre.@
+` Él escoge a las familias que tienen 'algo no humano' en sus linajes.@
+` Una familia con riquezas, influencia y poder inhumano.@
+` Ésos son los requerimientos para su huésped."\
+`"……………… Este vampiro serpiente, parece estar bastante preparado."@
+ld c,":a;image\tachi\cel_t12.jpg",%type_crossfade_fst
+`"Sí, ya que es una serpiente, tiene un intelecto serpenteante."@
+`"……………"@
+` Hay algo…
+` Algo respecto a esta historia que no me gusta.\
+playstop
+ld c,":a;image\tachi\cel_t08.jpg",%type_crossfade_fst
+`"¿Tohno-kun?@ Eso fue una broma pero, ¿estás escuchando?"@
+`"¿Eh---?@ Ah, sí, no fue muy graciosa."@
+ld c,":a;image\tachi\cel_t09.jpg",%type_crossfade_fst
+\
+` Senpai queda en silencio.@
+` Pero---en verdad no tengo ganas de reír ahora.@
+` ¿Por qué de repente me siento tan desanimado………?\
+`"…… Pero, ahora entiendo.@ Ése es nuestro enemigo, ¿cierto Senpai?"@
+ld c,":a;image\tachi\cel_t07a.jpg",%type_crossfade_fst
+play "*9"
+`"---No.@ Mi enemigo, y el de Arcueid Brunestud.@ No hay necesidad de que te preocupes por 'La Serpiente', Tohno-kun.@
+` Así que por favor no andes más con Arcueid.@
+` Esa mujer o yo lo destruiremos.@ No hay necesidad de que enfrentes ningún peligro."\
+`"Peligro---mira, ¿no es peligroso simplemente vivir en esta ciudad?@ ¡Incluso tú, incluso Arcueid está peleando para proteger esta ciudad!@
+` Así que yo tampoco puedo pasarlo por alto."@
+`"---No.@ Ella no está pensando en esta ciudad.@ Ella sólo persigue a 'La Serpiente' por sus propias razones."\
+`"Tohno-kun.@ Los Apóstoles Muertos fueron humanos una vez.@
+` Existen dos métodos para convertirlos en vampiros.@
+` Que su sangre sea succionada por los Verdaderos Ancestros, quienes nacieron originalmente como vampiros,
+` o que transformen sus propios cuerpos por medio de investigaciones mágicas en su búsqueda de la inmortalidad.@
+` La sangre de 'La Serpiente' fue succionada por un Verdadero Ancestro, convirtiéndolo en un Apóstol Muerto.@ ¿Comprendes?@ 'La Serpiente' fue una víctima de los Verdaderos Ancestros, una raza muy por encima de la nuestra."@
+br
+` Senpai me mira fijamente.@
+` Esos inexpresivos ojos me expresan lo que va a decir a continuación.\
+`"…… No me digas que, ese Verdadero Ancestro fue……"@
+`"Arcueid Brunestud.@ La realeza de los Verdaderos Ancestros que cometió su único error ochocientos años atrás.@
+` Ella es quien creó a 'La Serpiente'."@
+wave se0
+`"Eh-----"\
+ld c,":a;image\tachi\cel_t07a.jpg",%type_crossfade_fst
+`"…… Desde el principio, los Verdaderos Ancestros han sido una existencia muy lejana a la nuestra.@
+` Los Apóstoles Muertos ciertamente son vampiros que portan grandes habilidades, pero esas habilidades son sólo una extensión de la capacidad humana.@
+` Debido a que lograron obtener una larga vida, son capaces desarrollar sus habilidades, y han logrado perfeccionarlas obteniendo como resultado esas 'super' habilidades.@
+` En otras palabras, cualquiera puede desarrollar habilidades iguales a las de los vampiros si posee un largo tiempo de vida."\
+cl c,%type_crossfade_fst
+wave se0
+` …… Sí, creo que he leído eso en alguna parte.@
+` Dicen inmortalidad, pero ser un vampiro no es algo tan grandioso.\
+ld c,":a;image\tachi\cel_t07a.jpg",%type_crossfade_fst
+`"Pero los Verdaderos Ancestros son diferentes.@ Desde el momento en que nacen, poseen poderes más allá de la comprensión humana.@
+` Desde el principio, estos Verdaderos Ancestros son una existencia más cercana al mundo que los humanos.\
+`"Nosotros los humanos hemos prosperado mucho al aislarnos de la naturaleza.@
+` Mientras recibimos bendiciones de la naturaleza, robamos de ella, y aun si la naturaleza es destruída, nosotros no lo seremos.@
+` Nos convertimos en la raza más superior sobre este planeta probablemente gracias a este único pecado que sólo los humanos conllevamos."\
+`"Ya no podemos ser parte de la naturaleza.@ A cambio, hemos obtenido métodos para destruir incluso a la naturaleza, el planeta en que vivimos.@
+` Sin embargo, desde la perspectiva de la naturaleza, esto es maligno.@ El mundo en sí es una forma de vida, así que tiene la voluntad para protegerse de nosotros.@
+` Pero no tiene sentidos.@
+` Así que---el mundo crea una presencia, separada de la naturaleza al igual que nosotros, para reprendernos."\
+cl c,%type_crossfade_fst
+wave se0
+` …… Senpai es extraña.@
+` La naturaleza no tiene voluntad propia.@
+monocro #00ffff
+bg "image\bg\bg_05a.jpg",%type_nowaitdisp
+br
+br
+br
+br
+br
+br
+` Sí, no puede---pero, ¿podría ser que nosotros simplemente no podamos sentirla?\
+br
+br
+br
+` La naturaleza, La Tierra, posee una voluntad.@ Es por eso que aún existe e intenta permanecer hermosa.@
+` El problema no es que no podamos sentirla.@
+br
+` Es que la naturaleza y los humanos consideramos que algo es hermoso bajo el mismo estándar.\
+monocro off
+bg "image\bg\bg_05a.jpg",%type_nowaitdisp
+ld c,":a;image\tachi\cel_t07a.jpg",%type_crossfade_fst
+`"Una existencia que el mundo creó para que sienta por él.@ Es lo que solemos llamar espíritus.@ Son una especie transcendental que existe en un plano distinto al del resto de los espíritus de animales en el mundo presente.@
+` Los Verdaderos Ancestros son una clase de estos espíritus.@
+` Nacen con el propósito de castigar a los humanos, así que ven a los humanos como maldad.@
+` Nosotros pensamos que los vampiros que atacan humanos son maldad, y ellos ven a los humanos que atacan a la naturaleza como maldad."\
+cl c,%type_crossfade_fst
+monocro #00ffff
+bg "image\bg\bg_05a.jpg",%type_nowaitdisp
+br
+br
+br
+br
+br
+br
+` Pero es extraño.@
+` ¿Entonces por qué no pueden existir a menos que se alimenten de nosotros, la existencia maligna?@
+monocro off
+bg "image\bg\bg_05a.jpg",%type_nowaitdisp
+\
+ld c,":a;image\tachi\cel_t07a.jpg",%type_crossfade_fst
+`"---Los humanos son sólo enemigos para los Verdaderos Ancestros.@
+` Como parte de la naturaleza, no, como aquellos cuyo poder está ligado a la propia naturaleza, su poder no tiene límites.@
+` …… En la larga historia de La Iglesia, hay muy pocos registros de combates en contra de los Verdaderos Ancestros.@
+` Ellos obtienen sus poderes del propio mundo.@
+` Por lo tanto, para matarlos, es necesaria un arma conceptual con el poder para matar al mundo.@
+` …… Por supuesto, semejante arma no existe.@
+` Eso significa que su 'muerte' no puede ser causada por factores externos."\
+cl c,%type_crossfade_fst
+wave se0
+` Esa noche.@
+` Ella dijo en ese hotel.@
+` Que si hubiese intentado matarla durante la noche, estos ojos ni siquiera habrían sido capaces de ver su muerte.@
+br
+` En otras palabras.@
+` Significa que ella no puede morir.\
+ld c,":a;image\tachi\cel_t07a.jpg",%type_crossfade_fst
+`"¿Entiendes, Tohno-kun?@
+` Arcueid Brunestud está persiguiendo a 'La Serpiente' para recuperar el poder que le fue robado por él.@
+` No por el bien de ningún humano.@
+` No sé por qué está debilitada ahora, pero si recupera su poder---no necesitará tu ayuda, Tohno-kun.@
+` Cuando eso suceda, ¿piensas que ella te dejará ir sano y salvo?"\
+`"……………… Claro que sí.@
+` Porque---no tiene ninguna razón para lastimarme."\
+`"Ella es un vampiro.@ No es como los Apóstoles Muertos que beben sangre para prolongar sus vidas.@
+` Mira, Tohno-kun.@ En primer lugar, si los Verdaderos Ancestros no chuparan sangre humana, los vampiros no existirían.@
+` Ellos---pueden sobrevivir sin beber sangre humana, pero chupan sangre porque tienen el impulso de hacerlo, y convierten a los humanos en una existencia fuera de la naturaleza humana.@
+` No puedo dejar que una persona ordinaria como tú esté con ella."@
+cl c,%type_crossfade_fst
+\
+br
+` ---El relato de Senpai concluye de esa manera.@
+br
+` Yo---puede que sea a causa de mi mareo, pero parece que todo lo que ella dice no tiene relación alguna conmigo.\
+ld c,":a;image\tachi\cel_t07a.jpg",%type_crossfade_fst
+`"Tohno-kun.@ ¿Eso te demuestra lo peligrosa que es ella?"@
+`"Sí, bueno, capto la idea."@
+`"Entonces, por favor no cooperes más con ella, ¿de acuerdo?"@
+`"Yo---"@
+br
+` No puedo hacer eso.@
+` No puedo concordar con lo que Senpai está diciendo.@
+` Porque Senpai no conoce a Arcueid.@
+` No sabe que tan buena persona es ella.\
+ld c,":a;image\tachi\cel_t10a.jpg",%type_crossfade_fst
+`"---Tohno-kun."@
+` Senpai se queja.@
+` Pero, aun si pone esa cara, no puedo mentirme a mí mismo.\
+`"…… Lo siento, Senpai.@ También tengo mis razones, así que quiero ayudarla.@
+` Es verdad que no sé qué hará si me torno en su contra.@ Pero también es verdad que simplemente no puedo dejarla sola."@
+ld c,":a;image\tachi\cel_t09.jpg",%type_crossfade_fst
+`"…… Por favor no digas estupideces.@ Tohno-kun, eres un chico normal.@ Así que---no deberías hacer cosas tan peligrosas."\
+`"…… Sí, agradezco tu preocupación.@
+` Pero, hay ciertas cosas que quiero proteger si es posible.@ Como esta ciudad, y mi apacible tiempo contigo en la escuela, Senpai.@
+` …… Bueno, aunque tú terminaste protegiéndome."@
+`"…… Pero, es demasiado peligroso.@ ¡Estabas casi muerto cuando peleaste con 'Chaos'……!"\
+`"¿No está bien eso?@ Además, si Arcueid en verdad es tan fuerte, ¿no debería ser simple derrotar a este vampiro serpiente?"@
+ld c,":a;image\tachi\cel_t10a.jpg",%type_crossfade_fst
+`"¡Te estoy diciendo que la peligrosa es ella!@ ¡Por favor abre los ojos de una vez!@
+` Ella no es humana.@ No sabes cuándo querrá chupar sangre, es más parecida a un monstruo que los Apóstoles Muertos……!"@
+`"Qué-----"\
+br
+` …… Lo sé.@
+` Sé que Senpai está muy preocupada por mí.@
+` Pero----no puedo permitir esas palabras.\
+`"---Detente Senpai.@ Ella no es un monstruo.@ No deberías decir esas cosas cuando ni siquiera has hablado con ella."@
+ld c,":a;image\tachi\cel_t09.jpg",%type_crossfade_fst
+`"…… Es verdad.@
+` Pero ella es un vampiro.@ ¡Por favor entiende eso……!"@
+`"¡No, te equivocas……!@
+` Mira Senpai, Arcueid no bebe sangre.@
+` Ella misma me lo dijo, y no pienso que esté mintiendo.@
+` No sé cómo son los otros Verdaderos Ancestros, pero Arcueid es diferente.@
+` Simplemente, ella definitivamente es---"\
+ld c,":a;image\tachi\cel_t07a.jpg",%type_crossfade_fst
+`"¿Definitivamente, qué?@
+` Mira, aun si ella no es peligrosa, pelear ya es lo suficientemente peligroso para ti.@
+` No puedes recuperarte de las heridas como ella.@ ¡Si eres herido, morirás……!@
+` Lo que no puedo perdonar es que ella sabe esto y aun así te permite pelear.@
+` ¡Es como si te viese sólo como una herramienta, Tohno-kun!"\
+br
+` Senpai grita esa última parte.@
+` …… Lo sé.@
+` Entiendo que tiene razón.@
+` Pero, precisamente por eso---su voz me molesta.\
+`"…… Cállate."@
+`"¿Tohno…… kun?"@
+`"---¡Sólo cállate Senpai!@ ¡Arcueid no me ve como una herramienta en absoluto……!@
+` ¡Tú no sabes---no sabes nada sobre ella, sólo piensas que es alguna clase de monstruo, así que no tienes derecho a decir nada de eso……!"@
+`"Por favor cálmate.@
+` Sé que no conozco mucho sobre ella.@ Pero hay una posibilidad de que esté engañándote---"\
+`"¡Cállate!@ ¿¡No eras tú la que estaba engañándome!?"@
+`"……………… Ah."@
+cl c,%type_crossfade_fst
+` Oh---mierda.@
+` ¿Por qué, yo?@
+` ¿Por qué---dije esa, cosa, tan terrible?\
+`"……… Senpai, yo………"@
+` Hablé demasiado.@ Pero no puedo decirlo.@
+` Su expresión parece muy frágil.@
+` Y parece que va a quebrarse en el momento en que diga algo.\
+ld c,":a;image\tachi\cel_t04.jpg",%type_crossfade_fst
+`"Tienes razón, sabes.@ Tienes razón ahora que lo mencionas."@
+`"¿Sen……… pai?"@
+`"Sí, es cierto.@ Te he estado engañando Tohno-kun.@ Así que no tienes razón para creer en mí."@
+` Ella de repente sonríe como si su expresión previa nunca hubiese existido.@
+` No hay rastro de falsedad.@
+` Aunque tiene que ser falsa.@
+` No puedo ver nada más que una sonrisa verdadera.\
+`"Me disculpo por ocupar tu tiempo.@
+` Um, entonces---simplemente desapareceré ahora."@
+`"----¿Eh?"@
+cl c,%type_crossfade_mid
+br
+` El viento se acelera.@
+` En ese mismo instante,
+` Ciel-senpai desaparece justo frente a mis ojos.\
+bg #000000,%type_lcartain_slw
+playstop
+!w2000
+bg "image\bg\bg_06a.jpg",%type_lcartain_mid
+wave se2
+` Es la hora del almuerzo.@
+` El salón se vuelve escandaloso, y mi amigo más escandaloso aparece.\
+ld c,":a;image\tachi\ari_t01.jpg",%type_lshutter_fst
+`"Tohno, ¿dónde vas a comer hoy?"@
+`"……… Donde sea.@ No me importa si es aquí o en la cafetería."@
+`"Muy bien, entonces comamos algo de pan.@ Si estamos aquí, Senpai podría venir.@ Iré a comprar un poco, ¿alguna petición?"@
+`"…… Siempre que no sea pan de curry, cualquier cosa estará bien.@ Oh, y algo de leche."@
+`"Roger."@
+cl c,%type_lshutter_fst
+` Arihiko sale del salón felizmente.\
+bg #000000,%type_lshutter_mid
+bg "image\bg\bg_06a.jpg",%type_lshutter_mid
+ld c,":a;image\tachi\ari_t02.jpg",%type_lshutter_fst
+`"Aquí tienes, dos panes de curry y algo de leche.@ Gracias por esperar."@
+`"………………"@
+br
+` Le dije cualquier cosa menos pan de curry, pero supongo que eso tuvo el efecto opuesto.@
+` Le agradezco y le lanzo algo de dinero.@
+` Comienzo a masticar mi pan de curry.\
+ld c,":a;image\tachi\ari_t01.jpg",%type_crossfade_fst
+`"Oye Tohno, ¿vino Senpai?"@
+` Niego con mi cabeza.@
+`"Demonios.@ Tal vez hoy está en la cafetería."@
+`"Arihiko, ella no vendrá más."@
+ld c,":a;image\tachi\ari_t03.jpg",%type_crossfade_fst
+`"¿¡Queeee!?@ ¿¡Te peleaste con ella!?"\
+`"No es eso, es que ya no le agrado.@ Lo siento Arihiko.@ Si la ves, dile que lo lamento."@
+br
+` …… Puedo entenderlo ahora que lo menciono.@
+` La lastimé seriamente.@
+` No vendrá a verme de nuevo.\
+ld c,":a;image\tachi\ari_t01.jpg",%type_crossfade_fst
+`"¿Qué es esto Tohno?@ ¿Te estás disculpando por invitarla a salir sin preguntarme?"@
+`"---Si fuese así, sería mucho mejor."@
+cl c,%type_crossfade_fst
+br
+` Sí, si hubiese sido un lo siento o un adiós, habría algo de esperanza.@
+` Ciertamente, creo que lo que dije fue muy malo.@
+`"…… Pero, ¿'simplemente desapareceré'?@ Es demasiado, ¿verdad Arihiko?"@
+br
+bg #000000,%type_crossfade_fst
+` Digo eso y coloco mi cabeza sobre mi pupitre.\
+!w1000
+bg "image\bg\bg_06b.jpg",%type_crossfade_mid
+` Las clases han terminado.@
+` Es miércoles así que el resto de mis compañeros salen corriendo del salón tan pronto como terminan las clases.@
+br
+` Es un miércoles como cualquier otro, pero no tengo ganas de hacer nada.@
+` Aunque fuese a la habitación de la ceremonia del té, Ciel-senpai probablemente no estaría ahí.@
+`"-----"@
+` Tan falto de vida como Los Muertos, voy de vuelta a la mansión.\
+bg #000000,%type_lcartain_slw
+bg "image\bg\bg_32b.jpg",%type_lcartain_slw
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"Bienvenido a casa, Shiki-sama."@
+` Hisui me saluda tan pronto como regreso a la mansión.@
+` Aunque Hisui estuvo esperando por mí todo este tiempo, ni siquiera puedo dignarme a saludarla y voy directamente a mi habitación.\
+bg #000000,%type_lcartain_slw
+!w1000
+bg "image\bg\bg_40c.jpg",%type_crossfade_slw
+` Después de la cena, regreso a mi habitación.@
+` Queda un poco de tiempo antes de la hora en que se supone que debo ver a Arcueid.@
+br
+` ---Por favor no digas estupideces.@
+` Tohno-kun, eres un chico normal.@
+` Así que no deberías hacer cosas tan peligrosas.\
+`"…………………"@
+` Senpai sólo se preocupaba por mí.@
+` Al final, ¿es simplemente que elejí a Arcueid por encima de Senpai?@
+`"…… ¿Por qué no entiendes tus propios sentimientos, Shiki?"@
+` Le pregunto a mi reflejo en el cristal de la ventana.\
+wave se0
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\bg_40c.jpg",%type_nowaitdisp
+`"----Tch."@
+` Mi ligero dolor de cabeza regresa.@
+` Recientemente, he estado teniendo más dolores de cabeza.@
+` Hasta ahora, los efectos de mi anemia habían sido sólo mareos.@ Probablemente cambiaron a dolores de cabeza porque comencé a quitarme los lentes y a ver la "muerte".@
+br
+`"…… Ya es hora."@
+` Es la hora en que prometí ver a Arcueid.@
+` Sin importar lo que dijo Senpai, tengo que mantener una promesa hecha.@
+` Meto mi cuchillo en mi bolsillo y salgo de mi habitación.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_32c.jpg",%type_lcartain_mid
+play "*9"
+` Voy afuera.@
+` Nunca hubo mucha gente alrededor de la mansión, pero gracias a estos asesinatos en serie, hay una tranquilidad antinatural.@ Ni siquiera son las diez en punto, pero el vacío me hace sentir que son más de la una.\
+` ----*suspiro*@
+` Es pleno octubre y el viento está comenzando a soplar con más frialdad.@
+` El otoño también está por terminar.@ Camino por la calle vacía con estos sentimentales pensamientos.\
+bg "image\bg\bg_47.jpg",%type_lcartain_mid
+` Avanzo alrededor del muro de la mansión.@
+` Más adelante y bajando la colina está el parque donde Arcueid está esperando.@
+br
+` ---Y entonces,
+` veo una figura negra recostada del muro de la mansión.@
+` Una mujer vestida de negro está ahí, no para bloquear mi camino, sino para observarme pasar.\
+ld c,":a;image\tachi\cel_t07b.jpg",%type_crossfade_fst
+`"¿Adónde vas a estas horas de la noche?"@
+` Senpai ni siquiera me mira a la cara cuando dice esto sin la más leve inflexión en su voz.@
+`"Sen, pai----"@
+` Me congelo donde estoy.@
+` Tampoco puedo mirar su rostro.@
+br
+` Me siento nervioso por lo que sucedió esta mañana, así que no puedo dignarme a mirarla directamente.\
+`"Aun después de haberte dicho todo eso, ¿vas a ir con ella, Tohno-kun?"@
+`"…… No puede evitarse.@ No puedo dejarla sola, y tampoco puedo ignorar al vampiro de esta ciudad."@
+`"---Ya veo, es un buen punto."@
+cl c,%type_crossfade_fst
+` Ella cierra su boca.@
+` Paso junto a su figura pegada al muro.\
+`"Lo siento, Senpai…… lamento tantas cosas…"@
+`"Por favor no te preocupes.@ No estabas equivocado."@
+` …… Escucho su voz detrás de mí.@
+` No parece que pretenda evitar que vea a Arcueid, en absoluto.@
+br
+` Supongo que Senpai se ha dado completamente por vencida.\
+`"Bien, entonces me iré."@
+`"Sí, por favor haz lo que desees, Tohno-kun."@
+` Su voz todavía es lo único que puedo escuchar.@
+` Pero, me alejo de la mansión sin siquiera voltear.\
+bg #000000,%type_lcartain_fst
+bg "image\bg\bg_22c.jpg",%type_lcartain_mid
+` Tap, tap, tap, tap.@
+` Los pasos hacen eco en la noche a lo largo de la calle residencial.\
+bg "image\bg\bg_24c.jpg",%type_lcartain_mid
+` Tap, tap, tap, tap.@
+` Los pasos hacen eco en la noche a lo largo de la calle residencial.@
+` No son los pasos de un hombre pesado, sino de un cuerpo mucho más ligero.@
+` Además, estoy usando zapatos de goma que no hacen semejante ruido.@
+` Solamente zapatos de suela dura pueden producir este sonido.@ Por ejemplo, unas botas de trenzado alto.@
+br
+` …… En realidad, ni siquiera necesito dar un ejemplo.@
+` Sin duda alguna, esos pasos pertenecen a botas de trenzado alto.\
+br
+` Me detengo.@
+` Los pasos cesan al mismo tiempo.@
+br
+`"…………"@
+` Esto no es nada bueno.@
+` Si la sigo ignorando así, alcanzaremos el parque pronto.@
+` Debería parar y decirlo de una vez.\
+` Me doy la vuelta.@
+`"---Oye, Senpai."@
+ld c,":a;image\tachi\cel_t07b.jpg",%type_lshutter_fst
+`"¿Sí?"@
+`"…… Um, ¿tu casa está por este camino?"@
+`"No, está en la dirección totalmente opuesta.@ Fuiste allá una vez Tohno-kun, ¿ya lo olvidaste?"@
+`"No, lo recuerdo.@ Es sólo que no tenía mucha confianza en mi memoria."@
+`"Deberías, porque mi casa está por allá."\
+` "Oh, es cierto," digo con una sonrisa.@ "Sí, así es," dice ella, devolviéndome la sonrisa.\
+`"Bien, entonces tomaré este camino."@
+ld c,":a;image\tachi\cel_t01b.jpg",%type_crossfade_fst
+`"Sí, por favor haz lo que desees, Tohno-kun."@
+` Aún sonriendo, parece estar despidiéndose de mí.@
+` …… Pero, por alguna razón…… tengo un presentimiento increíblemente malo sobre esto.\
+`"------"@
+` Respiro profundamente.@
+ld c,":a;image\tachi\cel_t07b.jpg",%type_crossfade_fst
+`"¿Qué sucede, no te vas?"@
+` Senpai pregunta.@
+` En ese instante, comienzo a correr por la calle.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_27b.jpg",%type_lcartain_mid
+br
+` Comienzo a jadear con fuerza.@
+br
+` Llegué muy lejos.@
+` Corrí una gran distancia con toda mi fuerza; ella no pudo haberme seguido---
+br
+ld c,":a;image\tachi\cel_t07b.jpg",%type_lshutter_fst
+`"Tohno-kun, ¿sabes que enloquecer de esa manera es peligroso?"@
+` Una mano palmea mi hombro desde atrás.\
+`"¡Uaaaaa!"@
+` Salto hacia atrás instintivamente.@
+` Senpai se para detrás de mí como si fuese perfectamente natural hacerlo.@
+`"¿¡Por, por qué me estás siguiendo, Senpai!?"@
+`"Bueno, me siento intranquila si te dejo solo."@
+` Ella habla con mucha practicidad.\
+`"Ah, uh."@
+` Ni siquiera sé cómo responder.@
+` No sé, pero debería---
+br
+cl c,%type_crossfade_fst
+return

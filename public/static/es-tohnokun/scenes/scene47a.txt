@@ -1,0 +1,168 @@
+monocro off
+wavestop
+playstop
+bg "image\bg\bg_40d.jpg",%type_nowaitdisp
+;---added context above---
+` Ni siquiera Akiha y las otras serían capaces de dormir con un escándalo como éste.@
+` Ya que soy el único hombre en la casa, supongo que no tengo más opción que ir a investigar.\
+`"…… Creo que viene del lado derecho de la mansión."@
+` Abro las cortinas y observo qué está sucediendo afuera.@
+br
+` ---Y,
+br
+` afuera de mi habitación hay un gran árbol.@
+` Sobre una de las ramas está posado un cuervo azul.\
+wavestop
+bg #000000,%type_lshutter_fst
+bg "image\bg\cmo_16.jpg",%type_rshutter_fst
+` En la oscura noche,
+` no puedo ver más que negro, y aun así me es bastante claro que el cuervo es azul.@
+`"…………"@
+` Nunca antes he visto o siquiera escuchado de un cuervo azul.@
+br
+` Me mira ferozmente.@
+br
+` Siento que los ojos del cuervo me miran fijamente, como mecánicos cristales sin alma.\
+!w1000
+br
+` ¡Kuaaa!@
+br
+` Después de un grito resquebrajado, se va volando silenciosamente.@
+bg #000000,%type_lshutter_fst
+bg "image\bg\bg_40d.jpg",%type_rshutter_fst
+`"…… ¿Qué fue eso?"@
+` …… Puedo sentir un débil escalofrío en mi espalda.@
+` El aullido de los perros se hace más escandaloso.\
+` Auuuuuuuuu.@
+`            Auuuuuuuuu.@
+`                       Auuuuuuuuu.@
+br
+`"…………"@
+` Está empezando a ponerme los nervios de punta.@
+` No sólo es ruidoso, escucharlo hace que mi corazón comience a palpitar.@ Tengo un casi instintivo disgusto por él.@
+br
+`"¡Cállate---!"@
+` Cambio mi pijama por mi uniforme, y dejo la habitación.\
+bg #000000,%type_lcartain_mid
+play "*6"
+!w500
+bg "image\bg\bg_32d.jpg",%type_lcartain_mid
+br
+` Auuuuuuuuu.@
+br
+` El aullido hace eco a través de la noche.@
+` Ese sonido viene definitivamente del lado derecho de la mansión.\
+`"…………"@
+` Por alguna razón, mi garganta se siente seca.@
+` Los altos muros se extienden alrededor de la mansión.@
+` Aclarando mi garganta, me dirijo hacia donde los perros deben estar reunidos.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_47.jpg",%type_lcartain_mid
+` Llego a donde se originan los aullidos.@
+`"…… ¿Huh?"@
+br
+` Auuuuuuuuu.@
+br
+` Los aullidos no se detienen.@
+` Pero no hay señal de ningún perro.@
+` Todo lo que hay---es una persona.@
+` Bajo la luz de la farola que corta la oscuridad está parado un hombre con un abrigo oscuro.@
+br
+` Los aullidos vienen de uno de sus costados.@
+` ------Pero no se ven perros por ninguna parte.\
+bg #9c0120,%type_crossfade_fst
+bg "image\bg\bg_47.jpg",%type_crossfade_fst
+` El hombre del abrigo es bastante alto.@
+` Tiene un cuerpo fuertemente formado, y está dándome la espalda.@
+`"---------"@
+br
+` Mi garganta… tan seca.@
+` Auuuuuuuuu.@ La voz del perro resuena en mis oídos.@
+` El aire nocturno envuelve mi piel.@
+br
+` Sin razón aparente, tengo dificultad para respirar y moverme, como si estuviese en el fondo del mar---\
+` ¡Kuaah!@
+br
+` Un grito en lo alto.@
+` Con un ruidoso aleteo, el cuervo azul aterriza sobre el hombro del hombre.@
+br
+` ---Entonces,
+br
+` repentinamente, el cuervo se desvanece.\
+`"…… ¿Eh?"@
+` ¿Podrá ser una ilusión?@
+` Me pareció que el cuervo desapareció dentro de su abrigo negro.@
+br
+`"------"@
+br
+` El hombre del abrigo negro se da la vuelta.@
+ld c,":a;image\tachi\nero_t03.jpg",%type_crossfade_fst
+` Bajo la blanca farola, él es igual que una sombra.\
+` Un bulto negro.@
+` En medio de ese bulto, sólo resplandecen los ojos como armas, ardiendo con una inteligencia abrasadora.@
+br
+`"…… Ah."@
+br
+` No puedo respirar.@
+` Pero afortunadamente, esos ojos no parecen estar siquiera mirándome.\
+br
+br
+br
+br
+br
+br
+br
+`"Aquí no después de todo."\
+br
+cl c,%type_crossfade_mid
+` El hombre del abrigo negro se retira.\
+` Cuando ya no puedo verlo, soy finalmente capaz de volver a respirar correctamente.@
+`"Hhahh---haah, ah."@
+` Logro hacer unas pocas respiraciones.@
+br
+` Me percato de que el aullido de los perros ha cesado.\
+bg #000000,%type_crossfade_slw
+bg "image\bg\bg_40c.jpg",%type_lcartain_slw
+` Regreso a mi habitación.@
+` No hay señal de que Akiha o las otras estén despiertas.@ Supongo que soy el único que no podía soportar el aullido de los perros.\
+br
+`"------¡Guh!"@
+br
+` ¿Qué está sucediendo?@
+` La cabeza todavía me duele.\
+`"¿Huh… ?@ ¿Por qué estoy temblando?"@
+` Al mirar abajo, mis dedos están temblando.@
+` Mi cuerpo entero se está sacudiendo, y mi espalda se siente muy fría.@
+br
+` Es casi como… sí.@
+br
+` Es como si alguien hubiese arrancado mi columna y la hubiese reemplazado con hielo.\
+bg #9c0120,%type_crossfade_fst
+bg "image\bg\bg_40c.jpg",%type_crossfade_fst
+`"------"@
+` Me siento mareado.@
+` …… ¿Es sólo la anemia habitual?@
+` Tengo la sensación de caer al piso.@
+br
+` En el camino, veo algo desagradable.\
+bg "image\bg\bg_40f.jpg",%type_lshutter_mid
+`"¿¡Qué---!?"@
+` Aunque tengo puestos mis lentes, puedo ver las "líneas".@
+`"¡Uuh……!"@
+` No las he visto para nada por un largo tiempo, así que mi reacción se magnifica.@
+` Me siento enfermo.@
+` Con el mareo de mi anemia, siento que voy a vomitar el contenido de mi estómago.\
+`"…… ¿Qué está, sucediendo?"@
+` No entiendo.@
+` Sólo que mientras tengo abiertos los ojos, garabatos vuelan por todos lados a lo largo de mi visión.\
+br
+` ---Es un mal… sueño.@
+br
+` De alguna manera, logro desplomarme sobre la cama.@
+` …… Sí.@ Debería dormir.@ Es la forma más fácil de negar lo que estoy viendo.\
+` Mi cuerpo no se mueve como quiero que lo haga.@
+` Todo lo que debería hacer es acostarme aquí y quedarme dormido, como un cadáver---\
+playstop
+bg #000000,%type_crossfade_slw
+!w3000
+return

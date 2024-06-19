@@ -1,0 +1,39 @@
+monocro off
+;---added context above---
+wave se2
+bg "image\bg\bg_06a.jpg",%type_nowaitdisp
+play "*4"
+ld c,":a;image\tachi\osiete.png",%type_lcartain_mid
+!w1000
+cl c,%type_lcartain_mid
+ld r,":a;image\tachi\nero_t02a.jpg",%type_tshutter_mid
+`"Joven, ¿tiene una pregunta?"@
+br
+ld l,":a;image\tachi\ark_t31a.jpg",%type_lshutter_fst
+`"Oye, eso es jugar sucio.@ Tú también estás tratando de lucirte viniendo aquí, Nrvnqsr."@
+br
+ld r,":a;image\tachi\nero_t03.jpg",%type_crossfade_fst
+`"No seas ridícula.@ Ciel-kun fue a la tienda de curry.@ Yo soy el sustituto."@
+br
+`"Muy bien.@ Entonces denos una pista."@
+br
+cl r,%type_crossfade_fst
+ld r,":a;image\tachi\nero_t04.jpg",%type_crossfade_fst
+`"Pelear castiga a ambos bandos.@ No mates sin necesidad."\
+ld l,":a;image\tachi\ark_t31b.jpg",%type_lshutter_fst
+ld l,":a;image\tachi\ark_t31a.jpg",%type_lshutter_fst
+`"No estoy convencida.@ Aunque no quisieran pelear con Ciel, hay algunos que se quitaron los lentes incondicionalmente.@
+` ¿Qué pasa con ésos?"@
+ld r,":a;image\tachi\nero_t02a.jpg",%type_crossfade_fst
+br
+`"No debéis robar, violar, o engañar a otros.@ Puede sonar familiar para algunos de ustedes.@ De ser así, hagan un viaje en el tiempo hasta esta mañana.@
+` Sí.@ Ahora que lo pienso, la princesa podría tener una idea sobre eso, ¿no?"\
+ld l,":a;image\tachi\ark_t30.jpg",%type_lshutter_fst
+`"Nya, ¿q-qué?@ No entiendo de qué estás hablando."@
+br
+ld r,":a;image\tachi\nero_t02c.jpg",%type_crossfade_fst
+`"…… Bueno, lo que le suceda a otros es algo trivial para mí.@
+` Entonces, observaré cómo termina la obra para todos ustedes desde aquí-----"\
+bg #000000,%type_crossfade_mid
+playstop
+return

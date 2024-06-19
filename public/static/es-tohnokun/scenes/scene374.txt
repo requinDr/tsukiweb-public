@@ -1,0 +1,1424 @@
+mov $phasebg,"image\bg\bg_45c.jpg"
+mov $phasetitle_a,":a;image\word\PAKI_11A.PNG"
+mov $phasetitle_b,":a;image\word\day_11.png"
+gosub *left_phase
+bg "image\bg\bg_33c.jpg",%type_lcartain_mid
+play "*1"
+` Dejando que Kohaku-san se encargue de Akiha, bajo al primer piso.@
+` No puedo tratar las heridas de Akiha.@
+` Por lo tanto, quiero ayudarla de alguna otra forma.\
+bg #000000,%type_lshutter_fst
+bg "image\bg\bg_41.jpg",%type_lshutter_fst
+` Si busco en la habitación del viejo, podría encontrar algo que sea de ayuda.@
+` Él fue líder de la familia Tohno después de todo.@
+` Debe haber archivado alguna manera de luchar contra la sangre Tohno.\
+bg #000000,%type_tshutter_mid
+!w1000
+bg "image\bg\bg_41.jpg",%type_tshutter_mid
+`"Maldición-------supongo que no la encontraré tan fácilmente."@
+` Tomo asiento y respiro.@
+` La biblioteca del viejo es muy grande, y toma mucho tiempo mirar libro por libro.@
+` Además, la mayoría son sólo informes educativos, y parece que no hay información sobre la familia Tohno.@
+` Lo único que encontré fue este libro con aspecto de diario que pertenecía al viejo.\
+`"………… Ya veo.@ Parece ser un registro de la época posterior a mi partida hacia la casa Arima."@
+` Paso las páginas rápidamente.@
+br
+` -------Y entonces,
+` veo el nombre de Akiha y me devuelvo.\
+`"Veamos…… Informe sobre los espasmos de Akiha----¿qué es esto?"@
+` Comienzo a leerlo cuidadosamente.\
+` …… El viejo lo veía de esta manera: la sangre Tohno de Akiha cobró fuerza justo después de que yo me fui.@
+` Para vivir, Akiha necesita más calor que una persona normal.@
+` Por ejemplo, si Akiha necesita diez unidades de calor, la comida sólo le da seis o siete, y el calor extra que necesita es la razón del peso extra sobre su cuerpo.\
+` El problema es por qué necesita tanto calor para seguir con vida.@
+` …… Parece que al viejo le tomó algo de tiempo descifrarlo.@
+` Tras algunos años de páginas, la respuesta finalmente fue escrita.\
+`"¿La mitad de su vida……?"@
+br
+` …… No estoy seguro de entender qué quiere decir.@
+` Dice que de toda la energía que ella tiene, sólo está utilizando la mitad.@
+` En palabras más fáciles de entender, es como si se estuviese moviendo normalmente, pero utilizando sólo la mitad de su cuerpo.\
+` Pero claro, es imposible hacer eso.@
+` Por eso el cuerpo de Akiha consume calor de alguna otra fuente, para tratar de compensar eso.@
+` Pero ningún humano puede hacer eso; es un poder sobrehumano.@ Mientras más calor necesita de sus alrededores, más despierta la sangre Tohno, porque se hace menos y menos humana.\
+`"………………"@
+` Lo que está escrito después parece ser el registro del crecimiento de Akiha.@
+` Sigo leyendo, pero la información se hace cada vez menos útil para mí.@
+` Arrojo el diario sobre la mesa.@
+`"---Maldición, aunque sepas la razón, no sirve de nada si no escribes la manera de solucionar el problema.@ Estúpido viejo."@
+` …… ¿O incluso para el viejo fue imposible encontrar una manera de ayudar a Akiha?@
+`"…… Pero, ¿sólo la mitad de su energía?@ Me pregunto qué está haciendo con la otra mitad……"@
+` Parece simple.@ Si Akiha pudiese usar toda su energía para sí misma, no tendría que obtener calor de otras personas.\
+`"-------"@
+` …… No creo que haya algo más que buscar aquí.@
+` Debería ir afuera para relajarme----\
+bg #000000,%type_lcartain_mid
+!w1000
+bg "image\bg\bg_44b.jpg",%type_lcartain_mid
+` …… Estoy preocupado por Akiha.@ Cuando levanto la mirada, me doy cuenta de que estoy en el edificio separado.@
+` No tenía ganas de volver a mi habitación, así que, naturalmente, vine aquí al salir de la mansión.\
+bg #000000,%type_lshutter_mid
+bg "image\bg\bg_45c.jpg",%type_lshutter_mid
+` Entro.@
+` Me siento sobre el tatami y miro el techo fijamente.@
+br
+` ----------*suspiro*@
+` Respiro profundamente.@
+` …… Me siento relajado aquí.@
+` Ésta era mi habitación cuando era niño.\
+`"…… Ésta era la habitación a la que Akiha venía cuando yo estaba enfermo."@
+` Comienzo a recordar poco a poco.@
+` Cuando fui adoptado hace diez años.@
+` Cuando vivía en esta habitación, y los días que pasé jugando con Akiha y SHIKI.\
+`"…… Él me llamó 'Nanaya'."@
+` Nanaya.@ ¿Escrito como "siete noches" en japonés?@
+` Supongo que es mi verdadero apellido, pero eso ya no importa.@
+` Un niño llamado Nanaya Shiki fue eliminado hace ocho años.@ Su apellido, su verdadero nombre, incluso sus recuerdos.@
+br
+` Ni siquiera puedo recordar los rostros de mis padres.@
+` No quiero recordar esas cosas de todas formas.\
+`"…… Ya veo, este cuchillo no era del viejo, sino de mi----"@
+` Saco el cuchillo de mi bolsillo.@
+` "Nanaya" está escrito en la empuñadura.@
+` Tomando eso en cuenta, esto en realidad era de mi verdadero padre.\
+` Tohno Makihisa tenía emociones humanas después de todo.@
+` Debió haber eliminado todo lo que pudiese guiarme hacia Nanaya Shiki, pero aun así me dejó este cuchillo.@
+br
+` ---Y entonces.@
+` Algo gotea sobre mi mano.\
+`"----¿Qué?"@
+` Siento mis mejillas.@
+` …… ¿Por qué?@ No estoy feliz o triste, pero…
+`"Qué raro---¿por qué estoy llorando?"@
+` No hay razón para hacerlo.@
+` Pero no puedo parar de llorar.\
+bg #000000,%type_bshutter_mid
+playstop
+!w2000
+bg "image\bg\bg_45c.jpg",%type_rshutter_mid
+` …… Me pregunto cuánto tiempo he estado aquí.@
+` La noche ya debería haber pasado… ya debe estar amaneciendo.@
+`"…… Hoy es domingo, eh."@
+` Bueno, aunque fuese un día de semana, faltaría a la escuela y me quedaría con Akiha.@ Como es domingo, es más conveniente.@
+`"Kohaku-san dijo que Akiha debía permanecer en cama."@
+` …… Qué deprimente.@
+` No sé cuántas semanas necesitará Akiha para sanar.\
+`"---¿Qué puedo hacer hasta que ella mejore---"@
+` Ni siquiera tengo que pensarlo.@
+` Debo encontrarlo y matarlo, de una vez por todas.@
+` Él ya no es humano.@ …… No, aunque lo sea, aun si la gente me dice que soy un asesino, no puedo dejar que SHIKI siga con vida.\
+wave se8
+`"¿……?"@
+` Alguien entra al edificio.@
+` ¿Podría ser Kohaku-san?@
+` Escucho pequeños y ligeros pasos que se acercan, hasta que finalmente, la puerta corrediza se abre.\
+ld c,":a;image\tachi\aki_t01c.jpg",%type_lshutter_mid
+play "*8"
+` -----No puedo creerlo.@
+` Es Akiha.\
+`"Akiha, ¿estás…… bien?"@
+`"…… Sí, mis heridas ya han sanado."@
+` ¿Sanado……?@
+` No puede ser.@ Ese herida no era algo que pudiese sanar en una noche.@ Además, Kohaku-san dijo que le tomaría semanas para sanar.@
+` Sanar así de rápido no es humano---
+`"-----Ah."@
+` Entonces, finalmente me percato.@
+` …… No, desearía no haberlo hecho.@
+` El cabello de Akiha todavía es rojo.\
+ld c,":a;image\tachi\aki_t12c.jpg",%type_crossfade_fst
+`"…… Es exactamente lo que piensas, Nii-san.@ Mi herida ha sanado--una herida que no sanaría tan rápido en una persona normal."@
+` El cabello de Akiha es rojo bajo la luz solar de la mañana.@
+` ---Pero no tengo ningún interés en eso.\
+`"--¿Qué estás diciendo Akiha?@ Si tu herida sanó, deberías estar conforme.@
+` Odio la sangre Tohno, pero si ayuda de esta manera, entonces es, es algo bueno--"@
+`"…… No tienes que forzarte.@ No vine aquí para ser una molestia.@ Vine para decirte algunas cosas antes de perder la cordura."@
+br
+`"Qué----"@
+` Dijo antes de perder la cordura------\
+`"Escúchame, Nii-san.@ Te he estado mintiendo durante mucho tiempo.@ No hay manera de que pueda compensarte por eso, pero al menos tengo que decirte la verdad.@ No puedo desaparecer de esta manera----"@
+br
+` Los ojos de Akiha brillan como si estuviese a punto de llorar.@
+` …… Si me mira de esa manera, de ninguna forma puedo detenerla.\
+`"…… De acuerdo.@ Te escucharé.@
+` Pero, Akiha, seguiré siendo Tohno Shiki sin importar lo que me digas.@ …… Quizás no tengas que decirme nada.@
+` A pesar de todo----¿aún quieres hablarme al respecto?"@
+`"Nii-san, tú……… ¿lo sabes?"@
+`"…… A SHIKI le gusta hablar mucho, y me dijo casi todo mientras estabas inconsciente.@
+` Pero, si quieres hablarme de ello, te escucharé.@
+` Si tú me lo explicas, creo que me ayudarías a entender."\
+` Akiha parece horrorizada por un momento, luego muerde su labio y me dirige la mirada.@
+ld c,":a;image\tachi\aki_t01c.jpg",%type_crossfade_fst
+`"Nii-san.@ Hace diez años fuiste adoptado de la familia Nanaya.@
+` …… No sé por qué Papá te adoptó, pero fuiste presentado por él como un nuevo miembro de nuestra familia."@
+` Akiha cierra los ojos como si sintiese dolor y continúa.\
+`"He oído que los Nanaya eran el opuesto total a los de nuestra clase.@
+` …… Hay quienes poseen sangre mezclada como la familia Tohno, y también quienes se les oponen."@
+`"Nii-san, no te gustaría que hubiese leones y tigres en tu escuela, ¿cierto?@ Los humanos tendemos a eliminar a quienes son diferentes o a cualquiera que sea superior a nosotros.@
+` …… Si lo piensas, es muy fácil entender por qué.@ No es que eliminen a los 'diferentes' porque los odien.@ Si estas 'personas diferentes' estuviesen en nuestra sociedad, pondrían en peligro las vidas de las personas normales.@ Por eso, siempre existirán aquellos que se encargan de eliminar a los 'no humanos'."\
+`"---La familia Nanaya era especial entre los que se oponían a los 'no humanos'.@ No utilizaban hechicería, y dependían únicamente de sus propias habilidades.@
+` …… La familia Tohno es especial por introducir sangre inhumana en su linaje.@ La familia Nanaya era especial por su fuerza de voluntad y determinación.@ Tohno y Nanaya eran enemigos, pero en cierto modo éramos parecidos, sólo por nuestras naturalezas."\
+`"Por lo tanto, si tienes algún poder especial, no proviene de la sangre Tohno, sino de la Nanaya.@ Matar cualquier cosa que sea inhumana está escrito en tu sangre.@
+` …… Nii-san, ¿recuerdas esa ocasión en que huiste de mí?@ Me di cuenta entonces.@ Tu sangre Nanaya aún está funcionando, y reaccionó ante mí."\
+` ----Ella está hablando sobre aquella noche.@
+` Tiene razón.@ Es verdad que sentí un impulso homicida cuando vi el cabello rojo de Akiha.@
+` Pensé que era un asesino por esa razón, pero eso significa----\
+ld c,":a;image\tachi\aki_t12c.jpg",%type_crossfade_fst
+`"Sí, sólo te sientes de esa manera cuando estás frente a gente anormal como SHIKI y yo.@
+` Pero, es por eso que eras como la muerte para nosotros.@
+` …… Aunque los Nanaya dejaron de hacer su trabajo, creo que el hecho de tener su sangre a nuestro alrededor seguía siendo una amenaza."\
+`"……………………"@
+` ¿Por qué?@
+` De repente mi corazón está latiendo con mucha fuerza.@
+` Tengo un presentimiento muy malo sobre esto.@
+` No puedo dejar que Akiha continúe.@
+` …… No, la verdad es que no quiero escucharlo de su boca.\
+`"Está bien.@ …… No tienes que seguir.@ Todo eso ya pasó, así que no tiene sentido.@ No tiene nada que ver contigo o conmigo."@
+`"Pero Nii-san---"@
+`"No me importa la familia Nanaya.@ No los conozco.@ Si eres la líder de la familia Tohno, sólo deberías preocuparte por la familia Tohno."@
+`"--------"@
+` Akiha inclina su cabeza y asiente con poco entusiasmo.\
+ld c,":a;image\tachi\aki_t01c.jpg",%type_crossfade_fst
+`"…… Entonces, hablemos sobre nosotros.@
+` Nii-san, SHIKI, y yo, fuimos criados como verdaderos hermanos.@
+` Tú y SHIKI se llevaban muy bien, y estaba un poco celosa de ustedes.@
+` Pero todo fue por mal camino cuando 'eso' le ocurrió a SHIKI."@
+`"…… Hace ocho años, la sangre Tohno de SHIKI despertó… y me asesinó."\
+`"…… Sí.@
+` Pero tu vida fue salvada.@
+` Sin embargo, las cosas no terminaron tan fácilmente.\
+` Nos encargamos de SHIKI, pero no podíamos matar al hermano mayor de la familia Tohno.@
+` Somos una familia muy poderosa socialmente, no podíamos decirle a todos que nuestro hijo mayor, el único sucesor, murió.\
+`"Entonces Papá tuvo una idea.@
+` Dejar que Nii-san fuese Tohno Shiki, y que SHIKI fuese el hijo adoptado que murió en un accidente."@
+` Akiha dice estás palabras como deseando que maldigan a Tohno Makihisa.\
+` ---Entonces eso era.@
+br
+` SHIKI y yo intercambiamos papeles.@
+` El que fue asesinado siguió viviendo, y el que asesinó murió.@
+` Ésa es la relación entre SHIKI y yo.\
+ld c,":a;image\tachi\aki_t12c.jpg",%type_crossfade_fst
+`"…… Lo siento.@ Nii-san---el chico llamado Shiki ya no existe.@
+` Murió hace ocho años.@
+` No fue sólo el fin de su vida, sino el fin de su existencia.@ Su nombre, su pasado, su familia, e incluso sus recuerdos.@ No queda nada en ningún lugar.@
+` Ocho años atrás, cuando tomaste el lugar de Tohno SHIKI, Papá se deshizo de todo."\
+`"Por eso fuiste llevado a vivir con los Arima.@
+` Para el mundo exterior, el hijo mayor de Tohno debía estar vivo, pero tú no tienes sangre Tohno, así que no podías ser el sucesor.@
+` Papá alegó que tu cuerpo fue debilitado por el accidente, por lo que te envió con los Arima."\
+`"…… Yo no estuve de acuerdo.@ Incluso le guardé rencor a Papá por dejarte ir por una razón tan estúpida.@
+` Le dije muchas veces que te quería de vuelta, y supongo que por eso, finalmente me dijo que eras adoptado.@
+` Y me dijo que nunca te permitiese acercarte a nuestra casa.@
+` …… Papá no tomaba en consideración las crueldades que te hacía, y me mintió descaradamente hasta el día en que murió."\
+` El relato de Akiha terminó ahí.@
+` Podría ser porque me ocultó estos hechos por tanto tiempo, pero la historia de Akiha sonaba más como una confesión.\
+ld c,":a;image\tachi\aki_t01c.jpg",%type_crossfade_fst
+`"…… Ésa es toda la historia.@ Así que ahora lo sabes.@ Sabes que en realidad no eres mi hermano.@
+` No eres---parte de esta corrompida familia."@
+` A punto de llorar.@
+` La voz de Akiha suena como si estuviese a punto de llorar.\
+`"…… Lo siento, Akiha.@ No era tu verdadero hermano, pero actué como tal, y te causé problemas."@
+`"¿Qué…… Nii-san……?"@
+`"Pero ya soy parte de esta familia.@ Puede que no sea tu hermano pero, ¿puedo quedarme aquí?@ No quiero volver a dejarte, nunca más."@
+`"A------------"@
+ld c,":a;image\tachi\aki_t24c.jpg",%type_crossfade_fst
+` Akiha coloca sus manos sobre su boca y retiene las palabras que estaban por salir.@
+br
+cl a,%type_crossfade_fst
+` Después de un largo silencio,
+` Akiha niega tristemente con su cabeza.\
+`"…… Ya veo, tienes razón.@ Fue un error preguntar eso.@ He sido un hermano terrible de cualquier modo."@
+ld c,":a;image\tachi\aki_t30.jpg",%type_crossfade_fst
+`"¡N---No……!@ ¡Eso no es verdad……!"@
+br
+` ---No puedo… creerlo.@
+` Akiha---Akiha está llorando.\
+`"¡Nii-san---tú eres mi único Nii-san……!@ ¡Te he observado desde que era sólo una pequeña niña……!"@
+`"…… Es agradable que digas eso, pero, es porque no sabías.@ No sabías que yo no era tu hermano."@
+`"¡Lo supe desde el principio……!@ Sabía que eras adoptado, que en realidad no eras mi hermano.@ ¡Sabía todo eso……!@ Pero no me importaba.@ Desde la primera vez que dijiste mi nombre, yo---"@
+cl a,%type_crossfade_fst
+` Palpitar.@
+` Aún llorando, Akiha cae sobre mí.@
+`"Aki----ha."@
+` Coloco mis manos sobre sus delgados hombros.@
+` ¿Son sus latidos lo que hace eco en mis oídos, o son los míos?@
+` Ella está tan cerca.@
+` El cuerpo de Akiha está tan cerca de mí que podría abrazarla si quisiera---\
+`"…… ¿Tú, lo sabías?"@
+` Desde que era niña.@
+` Todo este tiempo, supo que yo no era su verdadero hermano.@
+`"…… ¿Por qué no me lo dijiste, Akiha?@ No soy tu hermano después de todo."@
+br
+` …… Un pequeño silencio.@
+` Akiha levanta la mirada.@
+br
+!w1000
+`"…… Porque quería estar contigo."\
+`"Si no te lo decía… si permanecíamos como hermanos… podíamos seguir juntos.@ Porque no soy humana, porque soy muy diferente de ti, ¿¡no podemos estar juntos……!?"@
+br
+` Akiha cierra sus ojos con fuerza y me golpea el pecho.@
+`"Pero---si éramos hermanos, pensé que podríamos seguir juntos.@ ¡Sin importar cuánto me odiases, sin importar cuánto me ignorases, estaría bien siempre que pudiésemos seguir juntos……!"@
+br
+` Paf.@
+` El sonido de un nuevo golpe sobre mi pecho.\
+`"¿No es extraño……?@ Nací en una familia muy poderosa, pero no se me permitía pedir nada.@
+` Porque soy diferente, porque no soy como los demás, iba a permanecer atrapada en esta mansión y vivir sin conocer a nadie del exterior.@ Estaba preparada para eso, pero tú lo destruiste todo."@
+` Como si tratase de expulsar todo lo que se reservó durante todos estos años, Akiha golpea mi pecho una y otra vez.\
+`"¡Si Nii-san---si Nii-san no hubiese aparecido, podría haber vivido de esa manera toda mi vida……!@
+` Pero me debilité y… me convertí en una mentirosa.@
+` Te mentí, y también a mí misma.@
+` Pensé que si seguía mintiendo sobre nuestra relación de hermanos, entonces no desearía---nada más---"@
+br
+` ----Escuchar esto causa dolor en mi corazón.@
+br
+` Una mentira muy pequeña… pero para proteger esa pequeña mentira, Akiha ha luchado mucho--hasta que finalmente fue demasiado, y ha terminado llorando en este lugar.\
+`"Akiha---yo…"@
+`"Tú has sido mi único Nii-san todo este tiempo.@ Nunca podría aceptar a otra persona como tal, mucho menos amar a otro.@ ¡No puedo hacer nada respecto a este sentimiento……!'
+br
+` Paf.@
+` Akiha golpea mi pecho una vez más y queda en silencio.@
+` Un largo silencio.@
+`"Perdón," murmura Akiha, rompiendo el silencio momentáneamente.\
+`"-------"@
+` Mi corazón tartamudea sólo con esa palabra.@
+` …… Akiha estuvo sola con su dolor todo este tiempo.@
+` Estaba sufriendo porque lo sabía todo--que yo era adoptado, que fui criado como Tohno Shiki, todo.@
+` …… Ahora es una vez más esa chica joven de cabello negro que siempre estaba llorando y disculpándose conmigo cuando era niño.@
+br
+` ---Ahora que lo pienso.@
+br
+` Akiha siempre estaba disculpándose conmigo.\
+` Una pequeña y casi infinitesimal felicidad para Akiha.@ Pero aun así, creó una elaborada historia para protegerla.@
+` La historia en sí era la barrera que la retenía, pero también era su única fuente de felicidad.\
+`"Akiha---yo"@
+`"…… No, lo siento.@ He sido egoísta, pero ésta es la última vez, así que no debes preocuparte."@
+` Akiha se aparta de mí.@
+` Ya no está llorando.@ La Akiha "normal" ha vuelto.\
+`"¿Qué quieres decir con la última---Akiha?"@
+ld c,":a;image\tachi\aki_t11c.jpg",%type_crossfade_fst
+`"…… Mira, Nii-san.@ Mi cabello ya no volverá a la normalidad."@
+` Akiha me mira, sin tristeza, permitiéndome asimilar la verdad de esa afirmación.@
+br
+` …… Su cabello aún conserva ese tedioso rojo sangriento.@
+` Por lo tanto… la sangre Tohno tiene a Akiha bajo su control, al igual que a SHIKI.\
+`"Qué---pero es sólo por ahora, ¿¡cierto……!?@ Además, aún eres Akiha, así que no hay problema."@
+`"No, conozco mi propio cuerpo.@ Sé que no puedo regresar.@
+` Éste es el fin de mi mentira.@ Nii-san, no deberías estar cerca de un monstruo como yo.@ Deberías escapar de este lugar y seguir viviendo como Nanaya Shiki."@
+cl a,%type_crossfade_fst
+` Akiha inclina su cabeza y retrocede.\
+` …… No sé nada sobre ese Nanaya Shiki.@
+` No tengo ninguna conexión con ese nombre ahora.@
+` No, aunque la tuviese, semejante cosa----no tendría importancia, comparada con Akiha.@
+`"---Idiota."@
+` Agarro los brazos de Akiha.@
+`"Oye---N… Nii-san……"@
+` Ella retrocede.@
+` Siempre fingiendo ser fuerte… pero siempre solitaria.@
+` …… Ella me atrapó.@
+` Ahora que lo pienso, me atrapó hace mucho tiempo.\
+`"Escucha Akiha, no me importa lo que nadie diga.@ Soy tu hermano.@ Sin importar qué suceda, sin importar que no tengamos relación de sangre.@ Yo soy tu hermano."@
+`"…… Gracias Nii-san.@ …… Pero yo……"@
+`"¡Pero!@ Aunque no lo fuese, permanecería a tu lado.@ Aunque no seas mi hermana, sigues siendo importante para mí.@ No dejaré que nadie vuelva a lastimarte."@
+` La traigo hacia mis brazos.\
+`"………… Ah."@
+`"Te amo como a una hermana."@
+` La sostengo con firmeza.@
+`"Pero… te amo aun más como mujer.@ ¿No es suficiente razón para quedarme contigo?"@
+`"--------"@
+` Su respiración se atora en su garganta.@
+` Todo se detiene.@
+` …… Puedo escuchar sus latidos.@
+` Nuestros cuerpos se calientan hasta las yemas de nuestros dedos.@
+` ----Y entonces.@
+` Como si nunca hubiese habido ninguna duda, nos besamos---\
+bg "image\event\aki_h01.jpg",%type_lshutter_mid
+`"Oh------"@
+` Ella rehusa un poco al principio.@
+`"Mm, Ah------"@
+` Pero pronto siento todo su peso sobre mí.\
+` Es sólo un beso normal--muy lejos de lo que podría llamarse apasionado.@
+` Y aun así, me deja pasmado.\
+` Los labios de Akiha son fríos y suaves.@
+` Se siente como si pudiésemos fundirnos el uno con el otro.@
+br
+` Mi mente deja de funcionar mientras siento su cálido aliento en contra de mis labios.@
+br
+` ---Puedo pensar en muchas razones por las que no debería.@
+` Pero… deseo a Akiha ahora mismo.@
+br
+` Quiero tomar su tembloroso cuerpo en mis brazos y hacerla toda mía---\
+bg #000000,%type_lshutter_mid
+!w1500
+bg "image\bg\bg_45c.jpg",%type_lshutter_mid
+` Después de un largo tiempo, nuestros labios se separan.@
+` El cuerpo de Akiha aún descansa sobre el mío.@
+br
+`"…… Soy tan feliz."@
+br
+` Su voz es tan suave que casi no la escucho.@
+` Fue sólo un beso, pero ella en verdad parece feliz.\
+`"Akiha---"@
+` Pongo mis manos sobre sus hombros.@
+` …… No es que se me haya ocurrido algo.@
+` Como si fuese la cosa más natural del mundo, beso el cuello de Akiha suavemente.@
+`"………… Nn."@
+` Su cuerpo tiembla.@
+` Pero no por disgusto o rechazo.@
+` …… ¿Acaso Akiha siente lo mismo que yo?@
+` Tal vez, si yo pienso que es natural querer tocar a Akiha, ella podría estar pensando lo mismo de mí.\
+`"Akiha---¿quieres hecerlo?"@
+` Le pregunto.@
+` Sé que pude haberlo dicho mejor, pero no puedo pensar en nada elegante en este momento.@
+`"………………………… Sí."@
+` Akiha asiente.@
+` Sólo ese simple gesto me excita más de lo que haya estado alguna vez.\
+`"…… Pero Nii-san.@ ¿Puedes hacerme un favor primero……?"@
+`"¿Un favor……?"@
+`"Um…… acabo de pensar que esto podría ser…"@
+` Ella mira el tatami bajo nosotros.@
+`"Ya veo.@ Probablemente sería doloroso sobre el tatami.@ …… ¿Pero qué deberíamos hacer?"@
+` …… No creo que pueda contenerme si ella quiere ir todo el camino de vuelta a la mansión.@
+` Si puedo, quiero hacer el amor con Akiha aquí mismo en esta habitación.\
+`"…… Nii-san, hay un futon ahí dentro……"@
+` Akiha señala hacia el armario.@
+`"Um…… está limpio.@ Lo utilizamos cuando tomo sangre de Kohaku."@
+`"Si ése es el caso, debiste habérmelo dicho antes.@ Espera, iré por él."@
+` Me separo de Akiha y saco el futon del armario.@ Lo extiendo en medio de la habitación y volteo a ver a Akiha una vez más.@
+br
+` ----Y.\
+` Akiha se sienta frente al futon, colocando sus dedos sobre el tatami, y hace una reverencia formal.@
+`"…… Entonces, espero que me trates amablemente, Nii-san."@
+` Su rostro y su tono son totalmente serios, aunque sus mejillas están fuertemente sonrojadas.\
+`"---Akiha."@
+` Me acerco más y pongo mi manos sobre sus hombros.@
+` …… Qué hombros tan delgados.@
+` Quiero ver y sentir su suave piel blanca.@
+`"…… ¿Puedo quitarte la ropa?"@
+` Muevo mis manos desde sus hombros hacia su cintura.@
+` Y.@
+`"¡Uhh--------!"@
+` Akiha se sacude y mira hacia mí.\
+`"…… No, puedo hacerlo yo misma……"@
+` Su voz está temblando.@
+` Probablemente le da vergüenza exhibirse ante otra persona.@
+` Akiha se levanta y se aparta de mí mientras coloca sus manos sobre el botón más bajo de su camisa.\
+`"……………… Nii-san, Um………………"@
+` Ella se sonroja y aparta la vista.@
+`"…… Por favor no te rías."@
+` Su voz no es más que un susurro mientras lentamente retira su camisa de sus hombros.\
+ld c,":a;image\tachi\aki_t22.jpg",%type_lshutter_mid
+` Ahora en ropa interior, Akiha desvía su mirada avergonzada.@
+` No sé por qué.@
+` Ella me dijo que no me riera, pero el cuerpo de Akiha es más hermoso que cualquier cosa que haya visto antes.\
+`"No tienes nada de que avergonzarte.@ Akiha, eres hermosa."@
+` Digo con sinceridad.@
+` Esto parece avergonzarla aun más, y se tensa de la cabeza a los pies.@
+`"¿Akiha……?@ ¿No quieres hacerlo con tu hermano después de todo?"@
+`"…… No, no es eso… pero… yo……"@
+` Akiha sigue mirando hacia abajo, cubriendo su pecho con ambas manos.@
+`"…… Tengo senos pequeños, por eso tenía miedo de que no te gustaran."@
+` Akiha está tan sonrojada que incluso sus orejas se están tornando rojas.\
+`"¡¡---!!"@
+` …… Vaya.@
+` Debe haber necesitado mucho valor para decir eso.@
+` Y aun así, logró forzar a salir esas palabras, mirándome a la expectativa de una respuesta.@
+`"Ya veo.@ Tienes senos pequeños, ¿eh?"@
+` Digo esto lo más alegremente que puedo.@
+`"……………"@
+` Akiha no responde, pero sigue ocultando sus senos con sus manos.\
+`"No puedo opinar de esta manera.@ Tendrías que bajar tus manos y quitarte la ropa interior antes de que pueda juzgar por mí mismo."@
+`"¿Quitarme la ropa interior……?@ ¿Me estás diciendo que me desnude, Nii-san……?"@
+`"Bueno, no podemos hacerlo a menos que nos desnudemos, ¿cierto?@ Mira, me quitaré la ropa primero, ¿eso lo haría más fácil?@ Lo que puedo ver ahora es hermoso, así que quiero ver hasta la última pulgada de ti."@
+`"………………"@
+` Akiha vacila.@
+` Aunque quiere hacer el amor, supongo que aún tiene dudas sobre exhibir su cuerpo.@
+` …… No puedo entender cómo piensan las mujeres.\
+`"Bueno, supongo que no imposible hacerlo así… pero ¿en verdad sería tan malo mostrarme tu cuerpo?"@
+`"Uh-----no, sólo es vergonzoso, y um…… no es que no quiera hacerlo."@
+` Ella responde incómodamente.@
+` Su voz es tan débil que no puedo evitar hacerle bromas.\
+`"Bueno, en realidad no me importa si lo quieres de esa manera, pero hay un par de problemas.@ Si lo hacemos así, tu ropa interior se ensuciará y Kohaku-san definitivamente podrá saber qué sucedió."@
+`"Oh----"@
+` Supongo que Akiha no lo pensó hasta ese punto.\
+`"No tengo ninguna duda sobre esto, pero aún somos hermanos para la mayoría de la gente; si Kohaku-san se entera… sería un poco incómodo, ¿no lo crees?"@
+`"Um, sí… ¿entonces qué deberíamos hacer, Nii-san?"@
+` Akiha mueve sus pies con nerviosismo.@
+` Puedo ver que quiere hacer el amor ahora mismo más que arriesgarse a que Kohaku-san se entere.\
+`"Bueno, deberíamos esforzarnos por mantener esto en secreto… así que deberíamos desvestirnos."@
+`"¡Uh---eso es lo que dijiste al principio, Nii-san!"@
+`"Por supuesto.@ Te dije que eres hermosa.@ No hay nada de que avergonzarse.@
+` Además, en realidad no me importa Kohaku-san.@ Simplemente quiero ver tu cuerpo.@ Pero si no quieres, regresaré a la mansión."\
+`"Regresar---"@
+cl c,%type_crossfade_fst
+` Akiha baja la vista y suelta un profundo suspiro.\
+`"…… Cielos, a veces actúas como un niño malcriado, Nii-san."@
+`"Soy malcriado, en cierto modo.@ Puede que diga lo que quiero, pero no habido muchas cosas que haya querido.@ …… Supongo que, ésta es la primera vez que he querido algo con tanta fuerza."@
+`"-----"@
+` Akiha no dice nada.@
+` Pero silenciosamente desliza sus dedos hacia el borde de sus bragas.\
+bg #ffffff,%type_lshutter_mid
+playstop
+!w1500
+play "*5"
+bg "image\event\aki_h02.jpg",%type_crossfade_mid
+` Lentamente, ella se las quita.@
+` Caen silenciosamente al piso, dejando expuesta la piel blanca de Akiha ante mis ojos.\
+`"¿Está bien así, Nii-san?"@
+` Akiha desvía su mirada y deja de taparse con sus manos.@
+`"------"@
+` No puedo decir nada.\
+` Cuerpo blanco.@
+` Su cuerpo es perfecto, y completamente distinto al de un hombre.@
+br
+` La piel es blanca, pero tiene un ligero tono rojo, como si aún estuviese avergonzada por su desnudez.@
+` Donde sea que mire, veo curvas--y no sólo su cintura.@ Incluso sus piernas se ven lustrosas y en buena forma… estoy impresionado.\
+`"…… Nii-san, por favor no me mires de esa manera."@
+`"……………"@
+` ¿Cómo cree que voy a complacer esa petición?@
+` Como Akiha dijo, sus senos son pequeños… pero son muy apropiados para el resto de ella.@
+` Su cuerpo es tan bien proporcionado como el de una muñeca.@
+` Es perfecta en todo sentido.@ No necesita senos más grandes.@
+br
+` Mi corazón palpita dentro de mi pecho.@
+` Estoy seguro de que el corazón de Akiha también esta latiendo con fuerza, pero mis latidos ahogarían a los suyos con facilidad.\
+`"------Ah."@
+` Mi garganta se relaja lo suficiente para dejar salir un pequeño suspiro.@
+` Piel blanca… su cabello cubriendo su delgado cuello… aunque tiene un débil tono rojo, la belleza de su cuerpo no tiene comparación.\
+` Sus cejas esculpidas tiemblan de vergüenza, y sus ojos se cierran con un poco más de fuerza.@
+` Su rostro sonrojado, sus labios cerrados,
+br
+` su estómago plano, sus tentador ombligo.@
+` …… Pero más que nada, lo que espera por mí entre las piernas de Akiha es lo que realmente me hace enloquecer.\
+`"Akiha---um, tú en verdad----"@
+` En verdad eres hermosa.@
+` No puedo expresarlo con palabras, pero su cuerpo desnudo es tan hermoso que quiero halarla hacia mis brazos y aplastarla contra mí hasta que ninguno de los dos pueda respirar.\
+bg "image\bg\bg_45c.jpg",%type_lshutter_mid
+`"…… Oh."@
+` Akiha se sonroja y pone una mano sobre su boca.@
+` Es un tipo de rubor diferente a los anteriores.\
+`"¿Qué?@ ¿Qué ocurre, Akiha?"@
+`"…………………"@
+` En lugar de responder, Akiha simplemente observa.@
+`"¿?"@
+` Sigo su mirada.@
+br
+` ---Y.@
+` Akiha está observando mi cuerpo desnudo.@
+` …… No sólo a mí; está mirando mi virilidad, que se ha endurecido al ver su cuerpo perfecto.\
+`"---Oh."@
+` …… Me siento incómodo.@
+` No es que esté avergonzado pero, es muy incómodo que me vea ya tan endurecido.@
+`"………………"@
+` Akiha se acerca lentamente, sin apartar sus ojos de mi dureza.@
+` …… Mi elevada asta es grotesca y amenazadora comparada con la belleza del cuerpo de Akiha.\
+`"Bueno, Akiha… Esto es, um---"@
+`"…… Lo sé.@ Sólo estaba un poco sorprendida, ya que es la primera que veo el… tú sabes… de un hombre……"@
+` Akiha me mira con total fascinación.@
+`"…… Saber que esto pertenece a Nii-san, me hace pensar que es algo lindo… Ah, ¿qué estoy diciendo?"@
+` Akiha murmura como si hablara consigo misma.@
+br
+` ---Y el sonido de su voz deshace mis limitaciones.\
+`"Akiha---"@
+`"¿¡Kya---!?"@
+` La tomo por los brazos y la halo hacia mi cuerpo.@
+` Finalmente piel con piel, compartimos un sofocado abrazo.@
+` Mi virilidad está tocando el estómago de Akiha.@
+` Brazo con brazo, pecho con pecho.@
+` Mi ingle y el estómago de Akiha se tocan.\
+`"Mm……… Ah."@
+` El cuerpo de Akiha se mueve.@
+` Mi asta reacciona al calor corporal de Akiha, endureciéndose más.\
+`"Akiha---"@
+` La sostengo con más firmeza.@
+` La sensación de mi asta presionándose contra su estómago me hace sentir confuso y drogado.\
+`"Mm…… Nii-san, tu cuerpo está tan caliente."@
+` Sólo nos estamos abrazando, pero Akiha ya está respirando con dificultad.@
+` …… Justo como yo, que estoy excitándome en esta posición, Akiha también parece excitarse al sentir mi dureza contra su estómago.\
+`"Akiha---voy a hacerte el amor ahora."@
+` Akiha asiente.@
+`"Oh…… pero Nii-san…… es mi primera vez, así que……"@
+` Avergonzada, ella murmura.@
+` Dice que no sabe qué hacer.@
+`"---También es mi primera vez.@ No te preocupes.@ Me detendré si duele demasiado.@ …… Así que déjame dirigir por ahora."@
+` Akiha concuerda murmurando.\
+` ---Puedo sentir su cuerpo calentándose más.@
+br
+` Nos sentamos sobre el futon, aún abrazados, y lentamente comienzo a explorar su cuerpo.\
+bg #000000,%type_lshutter_mid
+` Me coloco detrás de ella y muerdo su oreja suavemente.@
+` Poniéndola entre mis labios, muevo cuidadosamente mis dientes atrás y adelante--una especie de calentamiento antes del calentamiento.\
+`"¡¡------!!"@
+` Y.@
+` Sólo con eso, la voz de Akiha se detiene en su garganta.@
+`"¿Akiha……?"@
+`"¡Ha---Ah, mm, Ah……!"@
+` Mi voz no la alcanza.@
+` Solamente mordí su oreja… ¿acaso es su punto débil?\
+`"Akiha, ¿tus orejas son tan sensibles?"@
+`"Um---no, no es eso pero…"@
+` El cuerpo de Akiha se sacude mientras mordisqueo el lóbulo de su oreja.@
+` …… Es un poco extraño.@
+` Estoy siendo tan amable como puedo, pero Akiha parece reaccionar como si la estuviese tratando con rudeza.@ ¿Está tan tensa porque es su primera vez?\
+`"Akiha, relájate.@ Si reaccionas así cuando apenas te estoy tocando, no sé si serás capaz de resistirlo cuando lo hagamos de verdad."@
+`"Mm----Lo… sé---no te preocupes… jhaz lo que quieras, Nii-san---"@
+` Akiha se recuesta de mí, aún respirando con dificultad.@
+bg "image\event\aki_h03.jpg",%type_lshutter_fst
+`"¡¡Hmmm---!!"@
+` Su espalda se arquea violentamente.@
+` Todo lo que hice fue colocar mis manos sobre sus senos, pero está tan encorbada que está cerca de romper su columna.\
+`"…… Guau, en verdad son pequeños."@
+`"Ah……"@
+`"Pero son suaves y firmes.@ Mira, si hago esto, mis dedos son empujados de vuelta."@
+` Aplicando algo de presión con las puntas de mis dedos…
+` …… exprimo sus pequeños senos.\
+`"¡Aaaaaaa………!"@
+` Akiha grita con fuerza.@
+` Mis dedos moldean su piel… sus senos son increíblemente firmes.@
+`"Mm… Ah…… Nii-san, mmk, por favor, no---seas… muy… rudo---"@
+` La voz de Akiha está empezando a calentarse.@
+` Su cuerpo ha estado caliente por un buen tiempo.\
+`"---Tus senos en verdad son lindos.@ Son tan lindos, creo que debo jugar con ellos un poco más."@
+` Inclinándome sobre su hombro, lentamente deslizo mi lengua a lo largo de su seno.@
+`"¡¡Aaaa………!!"@
+` Akiha jadea y sujeta mis manos.\
+`"Ah, huaa---Nii-san, por qué… te… gustan… tanto… mis… senos----"@
+` El cuerpo de Akiha se estremece.@
+` Sólo estoy lamiendo uno de sus senos, pero está saliendo sudor de ella como si estuviese en llamas.@
+`"Ha---hace mucho calor aquí."@
+` …… No tengo mucho calor, pero definitivamente se siente más cálido aquí dentro.@
+` Probablemente porque Akiha está generando suficiente calor para los dos.\
+`"Nii-san, por favor no me toques así.@ Son tan pequeños… son como los de una niña pequeña."@
+` Akiha respira con fuerza e intenta hacer que deje de tocar sus senos.@
+`"………………"@
+` Por supuesto, no tengo ninguna intención de detenerme.@
+` Exprimo su seno derecho, el cual cabe fácilmente en la palma de mi mano.\
+`"---¡¡Mm, Huu, Hauaaaaaa……!!"@
+` Ella arquea su espalda.@
+` Por supuesto, eso hace que su seno sobresalga más, permitiéndome exprimirlo con más fuerza.\
+`"¡¡Ha, ah, ahhh, ahhh, ahhhh……!!"@
+` En vez de ser suaves y esponjosos, los senos de Akiha poseen una agradable y tensa firmeza.@
+` …… Como dijo Akiha, son más parecidos a los senos de una niña que a los de una mujer--haciéndolos casi dolorosamente lindos.@
+`"Mm…… N, Nii-san---"@
+`"Mira Akiha, aunque son pequeños, te gusta cuando cuando los toco.@ Tus pezones están tan duros como rocas."@
+` Para ilustrar mi punto, capturo sus pezones entre mis dedos.\
+`"¡Naaaaaaaaaaa………!"@
+` El rostro de Akiha se torna rojo brillante y su cuerpo entero se sacude.@
+` Vergüenza y placer luchan por dominar su delgado cuerpo.@
+br
+` Exprimo.@
+` Continúo exprimiendo sus duros pezones.@
+`"Ahh---ha, Ah.@ Ah.@ AH-----"@
+br
+` Mordisqueo.@
+` Antes de que ella pueda detenerme, coloco mis dientes alrededor de su pezón derecho y lo muerdo.@
+`"¡¡Nku---!!"@
+` Akiha cae sobre mí.@
+` Pero continúo mordiendo, haciéndola enloquecer.\
+`"Ahhh---H,ha, ha,ha, h, ahh----"@
+` Pellizco sus duros pezones una y otra vez.@
+`"…… ¡¡Hah…… Nii-san---por favor, detente---ah, naaaaaaaaaaa………!!"@
+` En lugar de detenerme, muerdo un poco más fuerte.@
+` Su cabello rojo vuela de un lado a otro.@
+` Su cuerpo está tan caliente que es casi un volcán.@
+br
+` ---Retrocedo por un momento para examinar mi trabajo.@
+` El futon bajo nosotros ya está empapado.\
+`"Hah, hah, hah, hah---Ah, Nm, hua-----"@
+` …… Sólo la estoy tocando, pero actúa como si ya estuviese dentro de ella.@
+`"…… ¿Te gusta?"@
+`"Huh---N,no---Ah, hau----"@
+` …… Akiha está respirando con tanta fuerza que apenas puedo entenderla.@
+` No puedo estar seguro, pero quizás---\
+`"Ya veo.@ Si no se siente bien cuando toco tus senos, lo intentaré en otro lugar."@
+`"¿Huh---di… jis… te… algo… Nii-san?"@
+`"Sí.@ Te dije que iba a hacer esto."@
+` Dándole la vuelta, lamo la espalda de Akiha.@
+br
+` ---Entonces.\
+`"¡¡Aaaaaaa-----!!"@
+` Akiha se arquea para alejarse como si mi lengua la quemara.\
+`"Ah---Haaa---¿¡Nii-san, qué… estás haciendo---!?"@
+`"Todo lo que hice fue lamer tu espalda… ¿no te gusta eso?"@
+`"…… No, hace cosquillas… y estoy asustada."\
+bg "image\bg\bg_45c.jpg",%type_crossfade_fst
+` Dejo caer mis brazos hacia los lados.@
+`"-----"@
+` …… Estoy completamente atónito.@
+` Con razón gritaba tanto cuando toqué su oreja.@
+` Supongo que… Akiha es más sensible--mucho más sensible… que una persona normal.\
+`"Akiha, dime la verdad--¿te sientes bien?"@
+`"-----"@
+` El rostro de Akiha se torna rojo brillante.@
+` …… Ni siquiera tengo que esperar su respuesta.@
+`"…… Vaya…… no sabía que eras tan sensible.@ Um… ¿eres así de sensible todo el tiempo?"@
+`"Uh---um…… no lo sé, pero supongo que es diferente ahora.@ Cuando te imagino tocándome, mi corazón comienza latir muy fuerte y todo mi cuerpo se calienta---"\
+` ---Mierda.@
+` Eso es tan excitante que quiero empujarla contra el futon y terminar lo que comencé.@
+` Pero Akiha fue herida recientemente.@
+` No puedo forzarla más allá de sus límites.\
+`"…… Akiha, ¿quieres que paremos por hoy?"@
+`"¿Qué…… Nii-san?"@
+` Akiha parece sorprendida.\
+`"…… ¿No quieres estar conmigo, Nii-san?"@
+`"No, ¿¡¡cómo puedes siquiera decir eso!!?@ ¡¡En verdad quiero--ahora mismo!!@ Pero eres tan sensible, no sé qué sucederá si continúo.@
+` Además, dijiste que es tu primera vez… siento que podría dañarte si conti---"@
+br
+` ---Mi explicación es cortada…
+` …… porque la boca de Akiha se ha cerrado sobre la mía.\
+`"Nii-san."@
+`"Aki---ha."@
+`"Me dijiste que no habría problema… así que por favor no te detengas."@
+`"Akiha---pero yo…"@
+`"…… Por favor.@ Si crees que vas a romperme, entonces hazlo.@ Soportaré cualquier dolor que me des."@
+` Akiha mira directamente dentro de mis ojos.@
+` …… Su inquebrantable mirada me fuerza a decidirme.\
+`"…… ¿Está segura de que está bien?@ No creo que pueda parar una vez que comience.@ …… Te deseo demasiado."@
+`"----No me importa.@ …… Yo también te deseo, Nii-san."@
+` Los ojos de Akiha están húmedos mientras espera que yo haga el siguiente movimiento.\
+`"Akiha----"@
+` Si ella en verdad quiere esto.@
+` No hay manera de que pueda contenerme.@
+br
+` Me lanzo hacia adelante.@
+`"Ah----"@
+` Akiha suelta un grito agudo y cae sobre el futon.\
+` …… Su acalorado cuerpo.@
+` Su acalorado y sudoroso cuerpo es bastante flexible alrededor de mis dedos.\
+`"…… Ya estás bastante mojada aquí abajo.@ Supongo que no tengo que hacer nada más para prepararte."@
+`"Nii-san, ¿por qué---dices cosas tan embarazosas?"@
+` Akiha se sonroja.@
+` …… Akiha no parece haber descifrado que digo esas cosas porqe quiero ver ver su reacción.\
+`"Hmm---mejor reviso para estar seguro.@ Akiha, separa tus piernas.@ Así no puedo verte."@
+` Agarro sus piernas fuertemente cerradas.@
+`"Hey---Nii-san, no---"@
+`"No esperaré más.@ Déjame verte ahora."@
+`"¿¡Kyaa---!?"@
+` Agarro sus tobillos y separo sus piernas bruscamente.\
+`"¡¡No--por favor no mires………!!"@
+` Akiha intenta luchar, pero la sostengo con firmeza.@
+` Acerco mi rostro a sus delicados pliegues rosa… y olfateo profunda y satisfactoriamente.@
+`"¡¡¡!!!@ ¡¡Q-qué estás haciendo, Nii-san!!"@
+`"Te estoy oliendo.@ ¿No te gusta?"@
+`"¡¡Claro que no……!!@ Además, no tienes que hacer eso, porque, todo lo que tienes que hacer es… tomar el tuyo y… la mía y……"\
+` Ella está balbuceando.@
+` Supongo que Akiha sólo conoce lo básico del sexo.\
+`"…… Es verdad, pero tienes que hacer otras cosas primero o dolerá."@
+` …… Aunque, si ya está tan mojada, no creo que tenga que preocuparme por eso.@
+`"Por ejemplo, tienes que dejarla acostumbrarse a ser tocada… así---"@
+` Separo sus delicados labios y lentamente extiendo mi lengua.\
+`"¿¡Ahaaaaaa---!?"@
+` El cuerpo de Akiha casi sale disparado del futon.@
+`"Asombroso… estás igual de mojada adentro."@
+`"N-Nii-san, no---eso es sucio--"@
+`"No--no es nada sucio.@ Es cálido… y delicioso."@
+br
+` Lamo.@
+` Lamo los jugos saliendo lentamente de ella.\
+`"¡Ahh---Nn, fua…… Ahhhh----!"@
+` Aumento la apuesta al meter mi lengua.@
+`"¡¡Naa-----Haaaaaaaaaaa…………!!"@
+` …… A diferencia de un pene duro, una lengua no es tan fuerte.@
+` No puedo llenarla de esta manera, así que me muevo alrededor, explorando todo lo que está a mi alcance.\
+bg "image\event\aki_h10.jpg",%type_crossfade_mid
+`"Ha----nn.@ ¡¡Dentet… Nii-san, no, detente----Nha……!!"@
+` El cuerpo de Akiha se arquea hacia atrás.@
+` Cada vez que se resiste, su cabello rojo baila sobre sus hombros… es posiblemente la cosa más erótica que haya visto jamás.\
+` El pelo ralo junto a mi boca es mucho más delgado que el cabello sobre su cabeza.@
+` Bajo ese pequeño techo de paja diviso un pequeño bulto de carne, su punta roja simplemente parece doler al ser tocada.\
+`"…… Hmm."@
+` Atentamente, le doy una suave lamida.@
+` Este punto es como la cabeza del pene de un hombre--mucho más sensible que cualquier otra parte.@
+`"¡¡---------!!"@
+` Las piernas de Akiha se tensan.@
+`"Mm-----Ahhh, haa---n."@
+` Su cuerpo tiembla.@
+` Con un solo toque de mi lengua, el hermoso cuerpo de Akiha baila.\
+`"Ahaa----Nii-san, yo---"@
+` Akiha se debe estar sintiendo demasiado bien para pensar, ya que no parece enfocarse en mí.@
+`"…………"@
+` No tiene sentido seguirlo posponiendo.@ Además, no puedo seguir conteniéndome.@
+`"Akiha---voy a meterlo ahora."@
+` Bajo mis caderas, llevando mi punta hacia su anhelante entrada.\
+`"¡Urgh-----!"@
+` Todavía no lo he metido.@
+` Sólo la toqué con la punta, y su cuerpo está temblano.@
+` …… No sé qué sucederá si lo meto.@
+` Pero la deseo demasiado, y no creo que pueda detenerme.@
+`"------"@
+` Tan suavemente como puedo,
+` lentamente empujo hacia dentro.\
+bg "image\event\aki_h04.jpg",%type_lshutter_mid
+`"¡¡Ahuaaaaa……………!!!!"@
+` Akiha se estremece violentamente.@
+` Su respiración se hace cada vez más forzada mientras me introduzco más adentro.\
+`"¡Mm, Ah, ah,ah---Ahh, Ah…………!"@
+` Ella aprieta las sábanas, tomando enormes puñados de tela.@
+` Y sus dientes rechinan mienteas combate el dolor.@
+`"Akiha, ¿duele?"@
+`"S---sí… pero… aún… puedo… soportar… lo---"@
+` Su respuesta llega en pedazos.\
+`"--------"@
+` Mi propia voz tabién desaparece.@
+` …… Ella es tan estrecha.@
+` Al igual que Akiha siente dolor al ser penetrada, yo siento dolor por lo estrecha que es ella.@
+br
+` Está mojada.@
+` Sí, está muy mojada… pero es tan estrecha que es difícil moverme.@
+` Es como si sus paredes internas tratasen de expulsarme.\
+` Esa sensación.@
+` Su suave túnel está ceñido a mi asta, exprimiéndome como un puño y casi haciéndome desmayar.\
+`"…… Tú……"@
+` Estaba tratando de poner a Akiha cómoda y relajada hasta ahora, y aún no estaba TAN excitado, pero…
+` Ahora que estoy medio camino dentro, estoy a punto de explotar.\
+`"Mierda----"@
+` No, todavía no.@ No puedo acabar tan pronto.@
+` Aprieto mi trasero e intento terminar de meterlo.\
+`"¡Nku………!@ ¡Au… Auch, Nii-san, es… muy… grande---!"@
+` Akiha se arquea hacia atrás.@
+` Debe sentir que mi asta la está destrozando.@
+` Estoy tratando de ir lo más lentamente posible, pero aun así parece que es muy doloroso para ella.@
+` Los movimientos de Akiha se hacen bruscos y erráticos mientras el dolor la asalta.\
+`"¡Ah---ahh, Aaau, Naaaaaaaaaaaaa!"@
+` Empujo más adentro.@
+` Alcanzando la profundidades inexploradas de Akiha como si siempre hubiese sido mi destino.@
+`"¡Nmm---Ha, Na, Auuuuuuuuuuu!!"@
+` La voz de Akiha es más como un grito ahora.@
+` Pero mientras su dolor se incrementa, también lo hace mi placer.@
+` Así de bien se siente dentro de ella.@
+br
+` Hundo.@
+` Hundo mi caliente asta en su resistente agujero.\
+`"¡Nku…… Ha, ah, ha---Nii-san… es… tan caliente……!"@
+`"¡Esto es sólo el principio, Akiha……!"@
+` Ella no es la única que se siente caliente.@
+` Es tan caliente dentro de su pasaje que siento que voy a fundirme dentro de ella.\
+`"¡Akiha, voy a entrar---!"@
+` Empujo un poco más.@
+` y siento algo que no puedo atravesar.@
+`"Ya------"@
+` Las paredes de Akiha sigue exprimiéndome.@
+`"Hah----Nii-san---"@
+` Akiha aprieta sus dientes preparándose para el dolor que viene.\
+`"…… Akiha, ¿estás segura de esto?"@
+`"---Sí… tiene que ser contigo, Nii-san."@
+` …… No necesito escuchar nada más.@
+` Intentando hacer al dolor lo más breve posible, me lanzo hacia adelante.@
+`"¡----------!"@
+` Su cuerpo se agita.@
+` El trasero de Akiha retrocede sobre el futon en un inútil intento de escapar del dolor
+bg "image\event\aki_h05.jpg",%type_crossfade_fst
+`"¡Nm---Ah, Nku, Haa----!"@
+` Siento algo viscoso recorriendo mi muslo.@
+` El líquido fluyendo de Akiha ahora tiene un débil tono rojo.@
+` Pero continúo moviéndome.@
+br
+` Empujo hacia dentro.@
+br
+`"¡-----!@ ¡Ah, ah, ahhhhhhhh---!"@
+` El estómago de Akiha sobresale un poco.@
+` Prueba de que ahora estoy profundamente dentro de ella.\
+`"Hah, hah, hah, hah, hah---"@
+` Muevo mis caderas atrás y adelante, amando cada ruido que nuestros cuerpos hacen.@
+`"¡Aj---Ah, auuuuu!"@
+` No puedo escuchar a Akiha.@
+` Aún debe estar sintiendo dolor.@
+` Tiene que haber más dolor que placer para ella en este momento.\
+`"Hah, hah, hah, hah----"@
+` …… Pero es lo exactamente opuesto para mí.@
+` Mientras más lastimo a Akiha, más me aprieta su pasaje.@
+br
+` No hay manera…
+` …… no hay manera de que pueda detenerme ahora.\
+`"¡Nn………!@ ¡Nii-san---!"@
+` Me muevo.@
+`"¡Detent---Nii-san, duele-----!"@
+` Sigo moviéndome.@
+br
+` Es tan suave dentro de ella.@
+` Es cálida y estrecha… y siento que podría explotar en cualquier momento.\
+`"¡Ah, Nha--Aaaa, aa---!"@
+` Escucho a Akiha.@
+` …… Y finalmente me percato de algo.@
+` Hay lágrimas en sus ojos.@
+`"¡Ku------!"@
+` Pero aun así no puedo detenerme.@ Penetro con más fuerza.@
+` Entonces----
+`"¡Nku……!@ ¡Hah, fua, Nii-san---yo, yo----!"@
+` La esplada de Akiha se dobla como un arco.@
+` Me aprieta con tanta fuerza que difícilmente puedo moverme.\
+bg #ffffff,%type_crossfade_fst
+`"----¡Ku, A…………!"@
+` He alcanzado mi límite.@
+` Cuando Akiha cae de vuelta al futon, sé que no puedo contenerme ni un segundo más.@
+` Lo saco rápidamente de sus convulsionantes paredes.@
+br
+` Splash.@
+` Mi semilla se derrama.@
+` En lugar de caer dentro de ella, se esparce sobre el magnífico cuerpo de Akiha.\
+bg "image\bg\bg_45c.jpg",%type_crossfade_mid
+`"Ha…… A,ah----"@
+` La columna arqueada de Akiha finalmente se relaja.@
+` Se deja caer débilmente sobre el futon.@
+` Su cabello rojo se esparce sobre todo el tatami, haciéndola parecer un animal fatalmente herido, pero dolorosamente hermoso.\
+`"Hah----hah----hah----"@
+` Aunque no estoy tan mal como Akiha, aún tengo problemas para calmar mi respiración.@
+` Akiha---se acuesta sobre el futon, aún sonrojada… y con lágrimas brillando en sus ojos.\
+bg "image\event\aki_h06.jpg",%type_lshutter_mid
+` …… Espero que sea sólo por el dolor de perder su virginidad.@
+` Las lágrimas aún están ahí.@
+`"…… Nii-san, acabaste afuera."@
+` La voz y la expresión de Akiha parecen ilusorias y difusas.@
+` Su cuerpo está cubierto por mi esencia.@
+` A Akiha no parece importarle, ya que no hace nada para limpiarse mientras descansa sobre el futon.\
+`"Akiha…… ¿aún te duele?"@
+`"Uh----Sí, un poco, pero ya estoy bien."@
+`"…… Ya veo.@ Lo siento.@ Te dije que iba a ser amable, pero simplemente eres demasiado linda---"@
+` Lo hice todo sólo para mí mismo.@
+`"…… No, está bien.@ Dolió, pero estaba más que feliz.@ Ahora, incluso si tengo que morir---no hay nada que lamente."\
+`"¿Q---qué estás diciendo………!@ Te dije que no me importa cuál 'Akiha' seas.@
+` No me importa que tu cabello se quede rojo.@ Si quieres sangre, te daré toda la que quieras.@ Quiero estar contigo cuando estés sufriendo.@
+` …… Además, no he tenido suficiente de ti.@ Quiero estar más contigo.@ Así que no digas esas cosas.@ ¿No vamos a estar juntos a partir de ahora?"@
+`"Nii-san-----"@
+` Akiha no dice nada.@
+br
+` …… Por un rato,
+` sólo nuestro calor corporal pasa entre nosotros.\
+` Haste que.@
+`"Nii-san, ¿puedes hacerle a tu linda hermana pequeña sólo un favor?"@
+` Akiha habla alegremente.\
+`"Sí, de acuerdo.@ Haré todo lo que pueda."@
+`"Gracias.@ Entonces, por favor prométeme esto: Si alguna vez me convierto en otra… cosa, por favor mátame con tus propias manos."@
+` Así de simple.@
+` Ella lo dice como si no fuese nada.\
+`"Qué----"@
+` No puedo hablar.@
+` Yo---no veo por qué ella tiene que mencionar eso ahora.\
+`"…… ¿Qué quieres decir?@ ¿Crees que yo haría ese tipo de promesa?"@
+`"Sí, porque eres la persona más importante en mi vida.@ Es natural que la persona que más amas esté a tu lado cuando mueras, ¿no?@
+` ¿O estás planeando faltar también a mi funeral, Nii-san?"@
+`"Qué----eso no tiene nada que ver con lo que estamos discutiendo."\
+`"No es diferente.@
+` …… Nii-san, mi cabello podría no regresar, pero eso no es un gran problema.@
+` …… Lo que temo es voy a enloquecer como SHIKI.@ Papá enfermó mentalmente a los cuarenta años.@ Si continúo viviendo, podría sucederme lo mismo."@
+`"…… Eso no ocurrirá.@ Y aunque lo haga, falta mucho tiempo para eso.@ Además---si en verdad sucediese, yo---"\
+`"…… Gracias, pero cualquiera con sangre Tohno en sus venas morirá cuando eso suceda.@
+` Cuando la sangre Tohno se hace demasiado fuerte, uno se suicida.@ …… Así ha sido siempre.@
+` Si has cambiado por completo, no puedes regresar a menos que mueras.@
+` Todos los que han cambiado han enloquecido.@ Ni siquiera me reconocería a mí misma, y le causaría dolor a todo sobre lo que posase mi vista.@
+` …… Lo aterrador es que ni siquiera puedes suicidarte cuando llegas a ese punto."\
+`"---Así que, Nii-san…
+` tengo que pedírselo a la persona que más amo.@ Porque confío en ti más que en nadie… porque sólo te tengo a ti, sólo a ti puedo permitirte encargarte de mí.@
+` No quiero causar sufrimiento a alguien que no conzco mientras estoy fuera de mí.@ Si lo hiciera, la antigua Tohno Akiha sería completamente destruida."\
+`"Akiha---eso es……"@
+`"…… Por eso mátame.@
+` Algún día, cuando haya cambiado por completo, si aún me amas… mátame--por mi bien, y el de todos.@
+` Antes de que haga algo que lamente, para que pueda seguir siendo yo incluso entonces.@ Mientras siga siendo simplemente tu hermana."@
+`"-------"@
+` …… Aprieto mis dientes.@
+` Es por esto que ella estaba llorando.\
+` No porque estuviese feliz de que estemos juntos ahora.@
+` Sino porque un día…
+` Ella sabe que algún día en el futuro, esta felicidad no va a ser nada más que un recuerdo.@ Es por eso que está llorando.\
+`"Tú-----"@
+` …… Siento que la ira se acumula dentro de mí.@
+` ¿Cómo puede decir esas cosas tan fácilmente?@
+br
+`"Idiota-----"@
+` Ira hacia la sangre Tohno por imponer semejante destino sobre ella.@
+br
+`"Por qué tienes que------"@
+` Ira hacia mí mismo por no hacerle la promesa, aunque resultase ser una mentira----\
+bg #000000,%type_crossfade_mid
+bg "image\event\aki_h07.jpg",%type_crossfade_mid
+`"¿¡Hmmm----!?"@
+` La beso… con fuerza.@
+` Nuestro tercer beso no es uno de amor.@
+` Es un beso salvaje para tranquilizarla.\
+`"¡Akiha--------!"@
+` A diferencia del beso previo, es profundo y apasionado.@
+`"Ha-----Mm------"@
+` Akiha vacila un poco al principio, pero finalmente extiende su lengua, dejándola rozar con la mía.@
+` Nuestras lenguas bailan mientras nuestras saliva se mezcla.@
+` La sensación de su lengua como de serpiente hace imposible el pensamiento racional.@
+` …… Se siente como si nuestras lenguas se fusionaran.@
+` Estar con ella se siente tan bien que incluso mi lengua parece estar estorbándome.@
+` Mi piel, mi mente, incluso el hecho de que soy humano me pone los nervios de punta.\
+`"Mm………… Nii-san………"@
+` Debe ser lo mismo para ella, ya que traga mi saliva y la reemplaza con la suya.@
+` Tragar.@
+` En lugar de fusionarnos, nos conformamos con intercambiar saliva.@
+` Akiha succiona salvajemente mis labios.\
+`"Ha--Nn, ku-----"@
+` Respiro con fuerza.@
+` Al igual que Akiha, mi mente se queda en blanco.@
+br
+` …… En verdad.@
+` Estoy furioso por lo que ella dijo.\
+`"Mm…… Ha…………"@
+` Suelto su boca.@
+` Ella respira profundamente.@
+`"…… ¿Nii-san……?@ ¿Qué sucede?@ Estábamos hablando."@
+`"No quiero hablar más.@ Estoy demasiado molesto ahora."@
+` Levanto su cuerpo del futon.@
+`"¿Nii-san---?@ ¿Por qué estás molesto?"@
+`"Por muchas cosas--como tu actitud pesimista… que no puedas olvidarlo riendo, todo.@
+` Pero lo que en verdad me enfurece es que estabas pensando en morir cuando me estaba esforzando tanto para complacerte."\
+`"¿Qué---?"@
+`"No fue tan bueno después de todo, ¿eh?@ ¡Estoy tan molesto que voy a hacerte sentir bien!"@
+` Con eso, entierro mi rostro entre sus senos.@
+` No sé si le habrá gustado la última vez.@
+` Pero coloco mi boca allí y succiono.\
+`"¡Nmmm-----!"@
+` Akiha se sacude hacia atrás.@
+`"N-Nii-san---sí me sentí bien cuando---¿¡Naaa!?"@
+` Froto alrededor de sus caderas.@
+` Ella aparta la vista sólo con eso.\
+`"Ah----Nii-san, ¿todavía… vamos… a… hacer… más---?"@
+`"Sí.@ Apuesto que tu cuerpo ya está acostumbrado.@ ¡Te sentirás mucho mejor esta vez…… voy a hacerlo hasta que no puedas pensar en otra cosa!"\
+`"¿Qué…… hablas en serio, Nii-san……?"@
+`"Sí, estoy molesto… así que no voy a ser amable como la última vez."@
+`"No, quiero decir…… ¿en verdad se va a sentir mejor esta vez……?"@
+` …… Ella se sonroja a pesar de lo que está preguntando.\
+`"---¿No dolió la última vez?@ Pensé que no querías hacerlo de nuevo porque duele mucho."@
+`"Bueno……… sí dolió, pero también se sintió bien.@ …… Pensé que era así como debía ser el sexo, pero---"@
+br
+` ¿Estoy equivocada?@ Preguntan sus ojos.@
+` Es tan linda que me hace sonreír.\
+`"Sólo duele al principio.@ Después sólo se siente bien.@ Así que si hago esto---"@
+`"¡¡-----!!"@
+` Levanto una de sus piernas y pongo mis manos sobre sus caderas.@
+` Entonces---empujo sus caderas hacia mi regazo.\
+`"¿N-Nii-san----?"@
+`"…… Akiha, te amo."@
+` Le digo.@
+`"Haré todo lo que quieras que haga… pero olvida esa porquería que estabas diciendo anteriormente .@ Quiero estar contigo mientras esté con vida."@
+`"Oh…………"@
+`"…… Vamos.@ Te haré sentir tan bien que ni siquiera volverás a pensar en algo como eso."@
+`"Nii-san----"@
+` En esta posición,
+` me es fácil meterlo dentro de ella.\
+` No tengo razón para ser amable con ella ahora.@
+` Sosteniéndola firmemente sobre mi regazo, empujo profundamente dentro de ella.\
+bg "image\event\aki_h08.jpg",%type_crossfade_fst
+`"¿¡Nhaa--------!?"@
+` Akiha se arquea hacia atrás salvajemente.@
+` No lo meto lentamente como antes.@
+` Simplemente lo empujo con tanta fuerza como puedo.\
+`"¡Ha----Ah, Nii-san, duele---!"@
+` Akiha pone sus manos alrededor de mis hombros.@
+` Ignoro su quejas y lo saco… pero sólo lo suficiente para clavarme de vuelta.@
+`"¡-----!"@
+` Movimiento brusco.@
+` Mi asta entra fácilmente en su húmedo túnel.\
+`"Mm---Ah, Ha, Nm, Ah----"@
+` Esta posición me deja entrar profundamente, haciendo temblar todo su cuerpo.@
+`"¡¡N-Nii-san----Me… mentiste……!!"@
+` Akiha está jadeando con tanta fuerza que apenas puedo entenderla.@
+`"Tú… dijiste… que no… dolería… más---"@
+` Suena un poco molesta.@
+` Pero adentro está más caliente que nunca, y sus jugos prácticamente se están vertiendo sobre el futon.\
+`"¿Estoy mintiendo?@ ¿Me estás dicendo… que no se siente mejor que la úlima vez?"@
+`"¿Nha-----!"@
+` Empujo de nuevo.@
+` Con tanta fuerza como puedo.\
+`"…… Ha…… mm, ah, nn---"@
+` Sus brazos se tensan alrededor de mis hombros.@
+` Una vez que estoy totalmente adentro, dejo de moverme para que ella no pierda toda la cordura.@
+` Está respirando con fuerza, sólo por tenerme dentro.@
+`"Nii-san, esta, posición---"@
+`"Sí, es muy avergonzante, ¿no?@ ¿Qué crees que diría la gente si te viese en una posición como ésta?"@
+`"--------"@
+` El rostro de Akiha se torna rojo brillante.\
+`"¡N-Nii-san……!@ Si sabes que no me gusta, por favor déjame bajar……!"@
+` Akiha intenta apartarse.@
+` pero no tengo ninguna intención de dejarla ir.@
+`"…… Akiha, voy a hacerlo de esta manera.@ ¡Sujétate de mí si no quieres caerte……!"@
+`"¿¡Qué---Nku!?"@
+` Agarro su cadera.@
+` Con una mano, levanto sus piernas aun más.@
+` Su cuerpo se arquea hacia atrás, pero eso sólo hace que me sea más fácil moverme.\
+`"Mm.@ ¡Aahhhhhhhhh----!"@
+` En esta posición, Akiha podría estar sintiéndose bien sólo con tenerlo dentro.\
+`"¡Akiha-----!"@
+` Ésa es la señal.@
+` lo saco, y entonces vuelvo  meterlo rápidamente.@
+`"¡Au--!@ ¡Nii-san, po-por favor detente---!"@
+` Akiha grita con más fuerza.@
+` Pero no la suficiente como para hacerme parar.@
+br
+` Haciendo mucho ruido,
+` continúo penetrando.\
+`"¡Hi---Fua, ah, au, hauuuu!!"@
+` Akiha se tensa a mi alrededor.@
+`"¡Ah---Nii-san, Nku, yo---!"@
+` Mientras empujo.@
+`"Qué---se siente, fn, mm, aahhhh…………!"@
+` Siento su calor.@
+br
+` Puedo escuchar los sonidos húmedos elevándose entre nosotros.@
+` Los fluidos de Akiha se filtran.\
+`"Eso----Duele, pero---"@
+` Aprietan.@
+` Los brazos y el interior de Akiha se aferran a mí con fuerza.\
+`"¡Ha, fua, ah, ah-----!"@
+` Empujo dentro de ella tanto como puedo.@
+` El cuerpo de Akiha se sacude con cada penetración.\
+`"Nii-san---es… tan bueno."@
+` Por ira o por alegría, no estoy seguro por cuál…
+` …… Akiha comienza a llorar.@
+`"…… ¡En verdad… es… diferente---!"@
+` Akiha me sostiene con más firmeza, gimiendo entrecortadamente mientras continúo moviéndome.\
+`"Hah, hah, hah, Ah---"@
+` Como Akiha, no puedo evitar gemir de placer.@
+` Claro que es diferente esta vez.@
+` Le estoy dando tan duro como puedo, y ella también es diferente adentro.@
+`"Mmm---Akiha, voy a darle… ¡más duro---!"@
+` Mientras sigo entrando y saliendo de ella, busco maneras de hacerlo mejor.@
+` Ya es estrecho dentro de ella.@
+` Sus pareden succionan y halan mis asta al salir de ella, aparentemente tratando de mantenerme adentro.\
+bg #ffffff,%type_crossfade_fst
+bg "image\event\aki_h09.jpg",%type_crossfade_fst
+`"¡¡Nm---Nii-san, yo---!!"@
+`"¡¡---…………!!"@
+` Cada caricia se siente mejor que la anterior.@
+` Su cuerpo está tan caliente que mi mente se funde sólo al tocarlo.@
+` Me pregunto---si es tan bueno para ella como lo es para mí.@
+`"-------"@
+` Inconscientemente, acaricio su perfecto trasero.@
+` Mientras mis dedos recorren su firme piel, separo sus nalgas tentativamente.@
+`"¿¡Hya-----!?"@
+` Akiha salta, no hacia atrás, sino directamente hacia arriba.\
+`"¡Nii-san, ahí-----no----!"@
+` …… Lentamente, empujo mi dedo medio dentro de su estrecho ano.@
+`"¡¡Nm, mmmmmm!!"@
+` Todo se tensa.@
+` Sus apretados músculos se sienten como si tratasen se romper mi dedo.\
+`"¡N-no, Nii-san, por favor---detente, Nku………!"@
+` A pesar de sus palabras, el cuerpo de Akiha se está retorciendo de placer.@
+`"¡Ha----Nn, ah, ahn, ah, fua---!"@
+` Tal vez sea porque está tan mojada,
+` pero su dolor se ha ido por completo, dejando sólo placer.\
+`"¡Gu----!"@
+` Sigo moviendo mis caderas.@
+` Una y otra vez, adentro y afuera… como si este momento pudiese seguir por siempre.@
+`"¡Ah, Nha, ah, ha----!"@
+` El cuerpo de Akiha se estremece.@
+` Sus brazos se envuelven a mi alrededor.@
+`"¡Nm, ha, ha, haa, haaa-----!"@
+` Su cabello me hace cosquillas donde sea que me toque.@
+` Incapaz de resistirme, muerdo uno de sus pequeños y lindos pezones.\
+`"¡¡Ha-----Aahhhh, Nii-san---!!"@
+` La contínua estimulación de mi asta unida a mi ataque sobre su pezón … parece ser demasiado para Akiha.@
+br
+` Con un débil gemido, ella me suelta.@
+` Y cae sobre el futon.\
+bg #000000,%type_crossfade_fst
+bg "image\event\aki_h12.jpg",%type_crossfade_fst
+`"----"@
+` Me coloco sobre ella, siguiendo su caída.@
+` Ahora en lugar de tener que empujar ahcia arriba, hemos regresado a la más básica de las posiciones.\
+`"Nn----Akiha-----"@
+` Me acomodo sobre ella y me sigo moviendo.@
+` Ella no es la única fuera de control.@
+` Soy dominado tanto por el placer que no puedo pensar en nada más que acabar.\
+`"¡Nn, fuaaaa------!"@
+` Akiha no consigue respiro ante mi frenética penetración.@
+` Sus ojos y labios son pegajosos por las lágrimas y la saliva.@
+`"¡Nii-san, yo… yo… no----!"@
+` Sus brazos se envuelven alrededor de mi espalda.@
+` Sinceramente, estoy en mi límite.\
+`"¡Akiha---voy a………!"@
+bg "image\event\aki_h10.jpg",%type_lshutter_mid
+`"¡¡Mm, mm, mmmmmmmm………!!"@
+` Akiha no me escucha.@
+` Su mente está en el constante e implacable placer que le estoy dando.@
+`"¡¡Ha, ah, ahh, aahhhhhhhhh…!!"@
+`"¡¡Nn---!!"@
+br
+` Empujo.@
+` Pongo todo mi poder en este golpe final.\
+`"¡¡Fua, ah, ah, ahhhhhhh----!!"@
+` El cuerpo de Akiha se arquea hacia atrás.@
+`"Ha----a."@
+` Puedo sentirlo.@
+` Estoy a punto de explotar… mi caliente esperma está a por erupcionar, enviando todo lo que tengo dentro de Akiha.\
+`"Kua----"@
+` Intento sacarlo como lo hice antes.@
+br
+` ---Entonces.@
+br
+bg #ffffff,%type_crossfade_fst
+bg "image\event\aki_h11.jpg",%type_crossfade_fst
+`"¡Nii-san----!"@
+` Akiha me abraza con fuerza.@
+`"¡Por favor---no me dejes………!"@
+`"Akiha----"@
+` Sus brazos aprietan fuertemente mi espalda.@
+` No puedo negarme.\
+`"---¡Voy a acabar, Akiha!"@
+`"---¡¡Sí---dentro de mí………!!"@
+` ---He rebasado el pináculo.@
+` Con un gruñido animal.\
+`"¡¡----!!"@
+`"¡¡Naaaaaaaaa……!!"@
+br
+` Acabo.@
+` Akiha se estremece con cada chorro de esperma que disparo profundamente dentro de ella.@
+` Inconscientemente,
+` sus brazos intensifican su agarre sobre mí.\
+bg #ffffff,%type_crossfade_mid
+playstop
+!w2000
+bg "image\bg\bg_45c.jpg",%type_crossfade_mid
+`"Ah-----Ah, ah."@
+` Completamente agotado, prácticamente caigo sobre ella.\
+`"Ha…… hah, hah, hah----"@
+` Puedo escuchar sus jadeos en sincronía con los míos.@
+`"Aki-----ha."@
+` La abrazo.@
+` Ambos estamos temblando y cubiertos por una capa de sudor, pero no me importa.\
+`"………… ¿Fue… bueno… esta vez…?"@
+`"---------"@
+` Akiha sólo puede asentir.@
+br
+` …… Con eso, en verdad me quedo sin energía.@
+` Caigo sobre el futon y cierro mis ojos.\
+bg #000000,%type_crossfade_mid
+` …… Podría ser porque me estuve moviendo sin parar desde ayer.@
+` Tengo mucho sueño.@
+br
+`"…… ¿Nii-san……?"@
+` Escucho la voz de Akiha.@
+` Pero no tengo la energía como para responder.\
+`"…… ¿Vas a dormir?@ Oye, ¿Nii-san?"@
+` …… Te dije que no tengo energía para responder.@
+` ¿No puedes dejarme dormir, Akiha?\
+`"…… Bueno, sí, pero… ¿puedo dormir contigo……?"@
+` …… No me importa… pero ¿no quieres bañarte?@
+` Pensé que querrías tomar una ducha o algo así.\
+`"…… ¿Quieres que vaya a bañarme?@ De acuerdo, iré.@ Espera aquí.@ Este baño aún funciona."@
+br
+` …… El cuerpo de Akiha se aleja del mío.@
+` Y caigo en un profundo sueño.\
+!w3000
+play "*9"
+`"…… Nii-san, por favor no olvides nuestra promesa."@
+br
+` Puedo escuchar una voz.\
+`"…… Hay cosas peores que la muerte.@ Así que---por favor mantén nuestra promesa."@
+br
+` Puedo escuchar una voz, aunque estoy dormido.\
+`"Lamento…… tener que decir esto.@ Pero a veces, la muerte es la única salvación."@
+br
+` Esto debe ser un sueño.\
+`"No quiero confiar en nadie más.@
+` Así que, por favor---no la olvides, sin importar lo que suceda."@
+br
+` …… Qué sueño tan malo.@
+` Nunca seré capaz de olvidarla.\
+br
+br
+br
+br
+br
+br
+` Si pudiese,
+` desearía poder olvidarla---\
+playstop
+!w3000
+bg #ffffff,%type_crossfade_mid
+`"Nii-san, despierta, Nii-san."@
+br
+` ---Escucho la voz de Akiha.\
+br
+`"Nii-san, Nii-san.@ Tienes que despertar.@ No puedes estar durmiendo cuando el sol está a punto de ponerse."@
+br
+` ---Qué extraño.@
+` Puedo escuchar la voz de Akiha.\
+`"…… Oh, ya basta.@ ¿¡Cómo puedes dormir así cuando quiero que despiertes!?"@
+br
+` ---Alguien me aprieta.@
+` Instantáneamente, me despierto.\
+bg "image\bg\bg_45b.jpg",%type_crossfade_mid
+play "*3"
+`"¡Auchhh………!"@
+` Un agudo dolor en mi brazo me despierta.@
+` ---Entonces.@
+br
+ld c,":a;image\tachi\aki_t21c.jpg",%type_lshutter_fst
+`"Oh…… Buenos días, Akiha."@
+`"……………………"@
+` Akiha parece molesta, y puedo ver que tiene algo que decir.@
+` …… Por la forma de la marca roja en mi brazo, el dolor que sentí fue un pellizco de Akiha.\
+`"¡Akiha, duele mucho!@ ¿Qué hiciste?"@
+ld c,":a;image\tachi\aki_t03c.jpg",%type_crossfade_fst
+`"Nada.@ No despertabas, así que te di un pequeño pellizco."@
+`"No tenías que hacer eso, habría despertado si me lo hubieses pedido."@
+ld c,":a;image\tachi\aki_t18c.jpg",%type_crossfade_fst
+` Uh… Akiha me está mirando con incredulidad.\
+ld c,":a;image\tachi\aki_t21c.jpg",%type_crossfade_fst
+`"Ciertamente, Hisui tenía razón.@ Tú no recuerdas nada cuando alguien trata de despertarte."@
+`"¿Qué---acaso intentaste despertarme, Akiha?"@
+ld c,":a;image\tachi\aki_t03c.jpg",%type_crossfade_fst
+`"Sí, dije tu nombre muchas veces y--ni siquiera lo recuerdas, ¿verdad?"@
+`"Um…… Sí, perdona pero no recuerdo."\
+ld c,":a;image\tachi\aki_t18c.jpg",%type_crossfade_fst
+`"Entiendo.@ La próxima vez, te golpearé directamente.@ Si no quieres eso, trata de despertar a tiempo."@
+` …… Supongo que la dejé sola demasiado tiempo mientras dormía.@
+` Viendo lo enojada que está, supongo que ha estado despierta por más de una hora.\
+`"…… Cielos, no puedo evitarlo.@ Estaba cansado por todo lo que ocurrió ayer.@ Fui atacado por ti en la escuela, y cuando vina a casa, tuve que pelear con SHIKI, luego tuve cuidar de ti, y entonces… tú sabes… 'eso'.@
+` Debería dormir todo el día después de todo eso."@
+ld c,":a;image\tachi\aki_t24c.jpg",%type_crossfade_fst
+`"¿'Eso'?@ Nii-san------"@
+cl a,%type_crossfade_fst
+` Cuando parece recordar lo que hicimos, Akiha se sonroja.@
+` …… Es tan linda.@
+` Verla sonrojada me hace querer burlarme aun más.\
+`"¿Qué?@ Me estabas abrazando con tanta fuerza.@ ¡No me digas que no te gustó……!"@
+ld c,":a;image\tachi\aki_t24c.jpg",%type_crossfade_fst
+`"Um---uh, um----bueno."@
+` Ella murmura mientras mira hacia el piso.@
+`"Está bien.@ Si no te gusta, no te forzaré a hacerlo.@ Supongo que podemos tener una relación 'pura' a partir de ahora."@
+`"Um……… Nii-san, yo, bueno----"@
+`"Qué, no entiendo lo que tratas de decir."\
+` …… Mierda.@ No puedo mantener una cara seria.@
+` Sólo mirarla me hace querer reír a carcajadas.@
+`"Um…… pero no es que no me guste, pero…"@
+`"Oh, ya veo.@ ¿Entonces no te gusta mucho?@ De acuerdo, me contendré de ahora en adelante."@
+ld c,":a;image\tachi\aki_t16c.jpg",%type_crossfade_fst
+`"Oh---pero, supongo… que sí me gusta, pero---"@
+` Akiha aparta la vista mientras responde.\
+`"Ya veo, sigues diciendo 'pero'…"@
+ld c,":a;image\tachi\aki_t13c.jpg",%type_crossfade_fst
+`"No… no puedo evitarlo.@ No podía pensar en ese momento.@ No pude determinar si fue bueno o malo."@
+`"De acuerdo, entonces hagámoslo de nuevo para estar seguros.@ Esta vez quiero quitarte la ropa yo mismo."@
+ld c,":a;image\tachi\aki_t24c.jpg",%type_crossfade_fst
+`"Oh----------"@
+cl a,%type_crossfade_fst
+` Akiha me mira, con sus mejillas ardiendo.@
+` …… Después de mirarme por un segundo, arruga sus labios y niega con su cabeza.\
+ld c,":a;image\tachi\aki_t12c.jpg",%type_crossfade_fst
+`"…… Nii-san, por favor ponte la ropa.@ Ya casi anochece, y tenemos que volver a la mansión."@
+`"No importa.@ Esto es parte de la mansión.@ Quiero quedarme aquí contigo todo el día.@ ¿O no te gusta la idea?"@
+ld c,":a;image\tachi\aki_t13c.jpg",%type_crossfade_fst
+`"¡No, yo siento lo mismo!@ …… Pero estaba pensando que es doloroso aquí, y quisiera hacerlo en una cama de verdad………"@
+` Aunque su voz se nota un poco enojada, lo que está diciendo es muy lindo.@
+` Me hace desearla aun más.\
+`"---De acuerdo.@ Para ser sincero, mientras te observaba recuperarte, estaba pensando que quería dormir contigo en esa cama."@
+ld c,":a;image\tachi\aki_t24c.jpg",%type_crossfade_fst
+`"………………"@
+` Akiha asiente.@
+cl a,%type_crossfade_fst
+br
+` ---Muy bien, apresurémonos.@
+` Déjame ponerme la ropa y regresemos a la mansión.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_54b.jpg",%type_lcartain_mid
+` Salimos del edificio separado y nos abrimos paso por el jardín.@
+` Como dijo Akiha, el sol se está poniendo y el jardín está lleno de rojo.@
+br
+`"---Oye Akiha, ¿qué crees que esté haciendo Kohaku-san?"@
+ld c,":a;image\tachi\aki_t16c.jpg",%type_crossfade_fst
+`"…… Hmm, bueno.@ Kohaku…… podría ya saberlo.@ Normalmente es un poco ignorante, pero a veces, es muy ingeniosa---"@
+`"………… Hmmm."\
+` …… No siento que haya hecho nada malo, pero aun así… hablar sobre esto se siente un poco incómodo.@
+` Conociendo a Kohaku-san, ciertamente podría estar feliz y felicitarnos, pero no tengo idea de cómo reaccionará Hisui.@
+br
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_54b.jpg",%type_crossfade_fst
+`"---¿Huh?"@
+` Muy levemente,
+` siento un dolor de cabeza.\
+`"Cu…………"@
+` Me detengo.@
+` Akiha sigue caminando.@
+br
+`"Akiha, espera un segundo----"@
+br
+` La llamo.@
+` Ella se da la vuelta.@
+ld c,":a;image\tachi\aki_t15c.jpg",%type_lshutter_fst
+` Esa cara.@
+` Antes de que pueda detenerme.@
+playstop
+br
+br
+br
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\bg_54b.jpg",%type_nowaitdisp
+wave se5
+quakey 1,200
+` Caigo al suelo.\
+wave se0
+`"¡Nii-san----!"@
+` Akiha corre hacia mí.@
+` Pero nunca me alcanza.@
+` Porque es detenida… por él.@
+br
+`"¡¡SHIKI--!!@ ¡¡Tú!!@ ¡¡Cómo te atreves a hacerle eso a Nii-san……!!"@
+br
+` Akiha lucha, pero no puede salirse de su agarre.@
+` Ese sujeto…… SHIKI, agarra el cuello de Akiha y comienza a exprimirlo.\
+wave se0
+`"Ah-------"@
+` Después de varios segundos frenéticos, la cabeza de Akiha se inclina hacia adelante.@
+` SHIKI sostiene su inconsciente cuerpo y me mira despectivamente.\
+ld c,":a;image\tachi\hal_t02.jpg",%type_lshutter_mid
+waveloop se1
+`"…… Lo hiciste.@ En verdad me lo quitaste todo."@
+` Si las maldiciones fuesen reales, probablemente sonarían de esa manera.@
+br
+` SHIKI me mira con desprecio, apretando sus dientes.\
+` …… No puedo moverme.@
+` Mi energía parece estar escapando a través de mi espalda.@
+` Sólo hay un poco de dolor… y la certeza de que podría morir aquí.@
+` Puedo sentir que mi camisa es mojada lentamente por mi propia sangre.@
+br
+` En mi espalda.@
+` Está plantado un cuchillo, como algún tipo de ala extraterrestre.\
+`"SHI……… KI"@
+`"No malinterpretes las cosas, Shiki.@ Akiha en realidad no te ama.@ Ella ama a su 'hermano'.@
+ld c,":a;image\tachi\hal_t03.jpg",%type_crossfade_fst
+` Sí---por eso puede que tenga que agradecerte.@
+` ¿No es cierto, Akiha?@ Por favor perdóname por ser semejante debilucho.@ Nunca me di cuenta de cuánto me amabas.@
+` Si hubiese sido más listo, tu pureza no habría sido tomada por ese patético perdedor."\
+` …… SHIKI coloca su cara cerca de Akiha.@
+` Ya que está inconsciente, ella no puede resistirse.\
+ld c,":a;image\tachi\hal_t01.jpg",%type_crossfade_fst
+`"…… Sí, no importa que seamos hermanos.@ Te amo más que a cualquier otra cosa."@
+` SHIKI camina hacia mí, sosteniendo a Akiha.\
+`"Esta vez… esta vez, me aseguraré de matarte de modo que no puedas regresar, Shiki.@ Akiha tiene esta presión sobre su cuerpo porque te está manteniendo con vida."@
+`"…… ¿Presión…… sobre su, cuerpo……?"@
+`"¿Oh?@ ¿No lo sabías?@ Akiha te mantuvo con vida en aquel entonces, dándote la mitad de su fuerza vital.@
+` ¿Nunca te lo habías preguntado?@ Ningún humano puede sobrevivir con un agujero tan grande en su pecho."\
+`"Aquel día, ocho años atrás,
+` Akiha te regeneró dándote la mitad de su vida.@ 
+` Ella está complementando la vida que yo te quité con parte de la suya.@ De ninguna manera hubieses podido sobrevivir de no haber sido por eso."@
+br
+` ---¿Comparte… su… vida?@
+br
+`"Es por eso que Akiha no puede manejar su propio cuerpo.@ Ha sufrido todo este tiempo… por ti.@ Mientras sigas con vida, ella seguirá sufriendo.@
+` ---Voy a aliviar ese sufrimiento ahora."@
+` SHIKI camina hacia mí.@
+` Mi cuerpo no se mueve.@ Puedo sentir que empiezo a perder el conocimiento.\
+bg #ffffff,%type_crossfade_mid
+` ---La mitad de su vida.@
+br
+` …… Escucho el sonido de una espada clavándose al suelo.@
+` SHIKI grita.@
+br
+` ---La razón de los espasmos de Akiha en el diario del viejo.@
+br
+`"---Tohno-kun.@ ¡Te atenderé de inmediato--resiste……!"@
+br
+` ---Este cuerpo… este cuerpo que debería haber muerto.@
+br
+` …… Alguien me levanta del suelo.@
+` Y me lleva a algún lugar.\
+` …… Pero no puedo preocuparme por lo que está sucediendo ahora.@
+br
+` ---Qué horrible verdad para enfrentar.@ Resulta que yo…
+br
+` Todo este tiempo he sido la razón del sufrimiento de Akiha----\
+bg #000000,%type_crossfade_mid
+!w3000
+wavestop
+return

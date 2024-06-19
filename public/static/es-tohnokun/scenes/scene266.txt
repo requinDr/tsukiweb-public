@@ -1,0 +1,34 @@
+monocro off
+wavestop
+play "*3"
+;---added context above---
+bg "image\bg\bg_05a.jpg",%type_nowaitdisp
+`"…… ¡Pero…… pero, dijiste que no eras tú!"@
+`"¿?@ ¿Qué no era?"@
+`"¡Hace tres noches!@ ¡Te pregunté si fuiste la que me ayudó esa noche en el parque, y dijiste que no eras tú……!"\
+ld c,":a;image\tachi\cel_t12.jpg",%type_crossfade_fst
+`"Eso fue una mentira."@
+` Concisamente.@
+` Senpai simplemente dice eso.\
+`"…… ¿Um…… una mentira, Senpai?"@
+`"Mentí por tu bien, Tohno-kun.@ Tengo que sellar la boca de cualquier persona ordinaria que descubra mi verdadera identidad.@
+` Tohno-kun, no te gusta el dolor, ¿cierto?"@
+` Senpai dice una cosa tan increíble con una voz muy alegre.\
+`"Sellar la boca, um……"@
+`"Para hacerlo simple, la gente muerta no puede hablar.@ …… Um, creo que lo hice demasiado simple."@
+`"Uh---"@
+` Retrocedo sin siquiera pensarlo.@
+` Senpai suena como si estuviese medio bromeando.\
+ld c,":a;image\tachi\cel_t07a.jpg",%type_crossfade_fst
+`"Así que, puedo dejarte ir dependiendo de lo que me digas.@ Tohno-kun, ¿cuál es tu conexión con esa mujer?"@
+` Mi corazón casi se detiene cuando esos inexpresivos ojos me miran fijamente.\
+` ---Pensé que yo haría las preguntas, pero nuestras posiciones se han invertido.@
+` Pero no sé qué hará Senpai si no respondo, y un escalofrío me recorre.@
+cl c,%type_crossfade_fst
+\
+`"Ah---no, no es eso.@ Anoche, pensé que Arcueid era quien estaba detrás de los asesinatos en serie, pero eso no podía ser cierto, así que fui a preguntarle y---"@
+br
+` Le digo todo sobre anoche.@
+` Senpai escucha todo silenciosamente.@
+` Cómo la conocí accidentalmente, cómo me explicó lo del vampiro de esta ciudad, cómo me alié con ella para salvar la ciudad, y todo lo sucedido hasta ahora.\
+return

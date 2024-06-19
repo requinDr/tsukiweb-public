@@ -1,0 +1,27 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_11a.jpg",%type_nowaitdisp
+`"…… Senpai, ¿acaso hice algo malo?"@
+` Le pregunto directamente.\
+`"……………"@
+` No hay respuesta.@
+` Puedo sentir su intranquilidad a través de la puerta.@
+`"¿Um, Senpai?"@
+` Noc-noc.@ Intento de nuevo.@
+br
+` Después de unos segundos…
+` Después de un silencio muy incómodo, esucho la voz de Senpai una vez más.\
+`"…… En realidad no, tú no tienes la culpa.@ No puedo verte ahora por mis propias circunstancias."@
+`"¿?@ ¿Cuáles son tus circunstancias, Senpai?"@
+`"¡Estoy bien, por favor come por tu cuenta!@ ¡Me calmaré para cuando la escuela termine, hasta entonces, no te veré!"\
+`"………… Uh."@
+` Su reprendedora voz me hace retroceder, y levanto mi bandera blanca.@
+br
+`"Entiendo.@ Entonces volveré a mi salón."@
+` Diciéndole eso a través de la puerta, dejo atrás la habitación de la ceremonia del té.@
+\
+bg #000000,%type_lcartain_mid
+!w1000
+return

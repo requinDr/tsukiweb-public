@@ -1,0 +1,32 @@
+monocro off
+wavestop
+playstop
+bg #000000,%type_nowaitdisp
+;---added context above---
+` ----Debería preocuparme por la seguridad de Akiha en primer lugar.@
+br
+` Es demasiado peligroso pelear cerca de Akiha.@ Necesito moverme a un lugar más amplio, como el vestíbulo---
+`"¡Ku……………!"@
+` Aún sosteniendo mi cuchillo, salto hacia atrás sin mirar.\
+bg "image\bg\ima_14.jpg",%type_lshutter_fst
+wave se11
+`"¡¡………!!"@
+` El cuchillo de SHIKI pasa frente a mi cara.@
+` Afortunadamente, no fui cortado.@
+` Pero, mis lentes se caen con el golpe----
+br
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\ima_14.jpg",%type_nowaitdisp
+`"¡¡Tú----bastardo………!!"@
+` Mi corazón late escandalosamente.@
+` Mi visión se cubre de "muerte".@
+` Mi mente es dominada por el odio.\
+` Jadeo por aire.@
+` Mi respiración se ha vuelto salvaje.@
+` SHIKI ataca.@
+` En ese caso, ya no hay nada a qué temerle.@
+br
+` ----No hay problema.@
+` Afortunadamente, es la tercera vez que peleo en una situación de vida o muerte.@
+` Para este momento, tengo una muy buena noción de cómo debería moverme exactamente---.\
+return

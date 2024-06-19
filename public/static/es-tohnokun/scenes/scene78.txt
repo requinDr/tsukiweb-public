@@ -1,0 +1,130 @@
+monocro off
+wavestop
+play "*1"
+;---added context above---
+bg "image\bg\bg_31a.jpg",%type_nowaitdisp
+`"…… ¡Kuhh!"@
+` Es imposible.@
+` Casi fui asesinado sólo por un perro negro.@ Si me convierto en su vigilante, quién sabe qué sucederá después.\
+ld c,":a;image\tachi\ark_t03.jpg",%type_crossfade_fst
+`"Oye, apresúrate y responde.@ No creo estar siendo poco razonable aquí."@
+`"……"@
+` Ella no entiende.@ Es evidente que no puede ver que ella es la imprudencia encarnada.@
+` …… Si me involucro más con ella, me arrastrará más allá del punto sin retorno.\
+` Tengo que hallar una oportunidad para escapar.\
+playstop
+`"…… Muy bien.@ Escucharé lo que tengas que decir."@
+` Poniendo mis manos sobre la pared, logro levantarme de alguna manera.@
+` …… Tengo que pasar a través de ese camino angosto si quiero llegar a la calle principal desde aquí.@
+` Afortunadamente, está más lejos de ella que de mí.@
+` Si me pongo en camino mientras aparento hablar, probablemente pueda llegar a la calle principal.\
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"Oh cierto.@ Todavía no sabemos siquiera nuestros nombres.@ Supongo que es un poco apresurado pedirte que cooperes conmigo."@
+` Ella asiente en concordancia.\
+`"¿Verdad?@ Si me dices más detalles, podría aceptar ayudarte."@
+ld c,":a;image\tachi\ark_t03.jpg",%type_crossfade_fst
+`"¿En serio?@ ¿Entonces de qué debería hablar primero?@ ---¿Qué tal del incidente con el vampiro que ha conmocionado a esta ciudad?@ ¿O tal vez debería explicar lo que vamos a hacer de ahora en adelante?"@
+cl c,%type_crossfade_fst
+` Ella pone una cara seria mientras piensa.@
+br
+` ----Ésta es mi única oportunidad.\
+bg #000000,%type_lshutter_fst
+` ---Corro tan rápido como puedo.@
+` Corro hacia el camino que lleva a la calle principal en una sola respiración.@
+br
+`"---¿Huh?"@
+br
+` Puedo escuchar su voz detrás de mí.@
+` Pero es demasiado tarde.@
+` ¡Ahora definitivamente podré escapar---!\
+bg "image\bg\bg_31a.jpg",%type_nowaitdisp
+wave se4
+quakey 2,100
+`"---¿Huh?"@
+` Qué extraño.@
+` Al dar unos pasos hacia adelante, caigo al suelo con fuerza.\
+play "*3"
+ld c,":a;image\tachi\ark_t11.jpg",%type_lshutter_mid
+`"Oye.@ ¿Qué estás haciendo?"@
+` Ella se acerca, con una mirada más llena de asombro que de preocupación.@
+`"…… Nada.@ Sólo quería correr un poco."@
+` …… Parece que no se ha percatado de que estaba tratando de escapar.\
+` Me levanto.@
+` Pero.@
+wave se4
+quakey 2,100
+`"¡……!"@
+` ¡Au…!@ ¡Siento un increíble dolor en las articulaciones de mi pie, no puedo levantarme---!\
+ld c,":a;image\tachi\ark_t03.jpg",%type_crossfade_fst
+`"Ah, creo que fui un poco ruda contigo en aquella ocasión, lo siento.@ Si hubiese suavizado un poco el golpe cuando te empujé, tal vez no te hubieses lesionado el pie de esa manera."@
+`"¿¡Tal vez no---!?@ Escucha, tú----"@
+` Quería quejarme con ella por haberme empujado, pero si no lo hubiese hecho, el perro negro estaría masticando mi cuello en este momento y habría sido el fin para mí.\
+`"…… Está bien.@ Estoy agradecido."@
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"Gracias.@ Pero, ¿por qué quisiste empezar a correr?@ ¿No estábamos teniendo una conversación?"@
+`"No, um, eso era---"@
+` Ciertamente no puedo decir que era un asunto de conveniencia.\
+ld c,":a;image\tachi\ark_t06.jpg",%type_crossfade_fst
+`"………… ¿Hmmmn?"@
+` Ella me mira fijamente.@
+` …… Esto es malo.@ Tendría que ser muy idiota para no entender lo que estaba haciendo.\
+ld c,":a;image\tachi\ark_t04.jpg",%type_crossfade_fst
+`"Oye, eso fue una señal de que querías cooperar conmigo, ¿verdad?"@
+`"………"@
+` No puedo responder.@
+` Dije que la escucharía, no que cooperaría.@
+br
+` ---No quiero mentir.@
+br
+` Responder a su pregunta requiere un definitivo "no".\
+ld c,":a;image\tachi\ark_t06.jpg",%type_crossfade_fst
+`"Sólo para que lo sepas, sé qué clase de persona eres.@ No me des una respuesta poco entusiasta.@
+` Si huyes ahora, simplemente iré a tu casa después."@
+`"¿¡Qué---!?"@
+` ¡Eso significa que va a ir a la mansión aun si escapo de aquí!@
+\
+`"……"@
+` Me atrapó.@
+` Si eso sucediera, no sería sólo mi problema.@ Akiha, Hisui y Kohaku-san también podrían ser atacadas por esta loca persona.@
+br
+`"¡Mie…!"@
+` Qué desastre.@
+` Es como si no hubiese tenido ninguna opción desde el principio----\
+ld c,":a;image\tachi\ark_t03.jpg",%type_crossfade_fst
+`"Bueno, no me importa lo que decidas.@ El familiar del vampiro ya te ha visto, así que seguramente serás atacado.@ Si vas por ahí tú solo, también podrías servir como señuelo."@
+`"Qu… oye, no me digas que…"@
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"Sí, ese familiar te reconoció como mi aliado."@
+`"--------"@
+` Eso significa que seré atacado por cosas como ésa incluso si no la ayudo.\
+ld c,":a;image\tachi\ark_t06.jpg",%type_crossfade_fst
+`"Entonces, ¿qué decidirás?@ ¿Vas a montar guardia mientras duermo, o vas a deshacerte de esos familiares por tu cuenta?"@
+` …… Si el resultado va a ser el mismo, no puedo hacer nada más que asentir.@
+br
+`"----Tramposa."@
+` Suspirando, asiento para indicar que voy a ayudarla.\
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"De acuerdo, nuestro contrato ha sido establecido."@
+` ¿Adónde se fue toda esa furia de hace un momento?@
+` Hablando con un tono de alegría, ella extiende su mano hacia mí.\
+`"Supongo que finalmente puedo presentarme.@
+` Soy Arcueid---hmm… mi apellido es muy largo, así que sólo Arcueid está bien por ahora.@ Soy un vampiro de la clase de los Verdaderos Ancestros.@ ¿Qué hay de ti?"@
+br
+` Suelto un pesado suspiro ante su presentación sin precedentes.@
+` …… Es un suspiro de resignación, evidencia de que he decidido aceptar esta situación sin sentido.\
+`"Soy Tohno Shiki.@ Tristemente, soy sólo un estudiante común.@ …… Lo he dicho antes pero, en realidad no voy a ser de mucha utilidad."@
+` Tomando su---la mano de Arcueid, me levanto.@
+` Ella me dirige una larga y dura mirada, y entonces me ofrece su mano de nuevo.@
+ld c,":a;image\tachi\ark_t09.jpg",%type_crossfade_fst
+br
+`"Es un placer conocerte, Shiki.@
+` Haré que asumas responsabilidad por matarme."@
+` Arcueid sonríe abiertamente mientras extiende su mano izquierda.\
+` …… Hay toda clase de responsabilidades en este mundo, pero ésta probablemente sea la primera y última vez que una persona asume su responsabilidad ayudando a alguien que esa misma persona asesinó.\
+`"…… ¡Maldición!@ Haz lo que quieras."@
+` Pero no hay nada más que pueda hacer.@
+` Extiendo mi mano izquierda de mala gana y doy un apretón de manos a la mujer de blanco que afirma ser un vampiro.\
+bg #000000,%type_lcartain_slw
+!w1500
+playstop
+return

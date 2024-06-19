@@ -1,0 +1,38 @@
+monocro off
+wavestop
+playstop
+bg #000000,%type_nowaitdisp
+;---added context above---
+`"------"@
+` …… La fuente principal.@
+` Si pudiese hacerle algo al cuerpo principal de Nrvnqsr que manipula las bestias, podría ser capaz de salvar al menos a Arcueid--\
+`"¡AAAAAAAAAH!"@
+wave se6
+` Agito mi cuchillo ciegamente.@
+` Fuerzo mi vacilante cuerpo y corro hacia adelante.@
+` Si no se movió mientras jugaba conmigo,
+` entonces, debería estar parado con su medio cuerpo ahí adelante----\
+bg "image\bg\bg_29c.jpg",%type_nowaitdisp
+ld c,":a;image\tachi\nero_t02d.jpg",%type_nowaitdisp
+`"¡----!"@
+` ¡Nrvnqsr----!@
+`"Deja de hacer ruido, es desagradable."@
+` Su abrigo ondea.@
+br
+` Desde ahí,
+` un cuerno blanco viene directamente hacia mí.\
+bg #000000,%type_crossfade_fst
+ld c,":a;image\tachi\kemo_t05.jpg",%type_bshutter_mid
+`"¿Eh----?"@
+` Algo como una cornamenta… se clava… en mi torso.@
+` Paf.@
+` Es tan afilada, que en realidad no duele.@
+br
+`"------"@
+` Caigo plano sobre mi espalda.\
+bg #000000,%type_crossfade_mid
+`"Soy una persona muy exigente.@ Descansa con la seguridad, de que no quedará una sola de tus células."@
+br
+` Escucho una voz.@
+` Al mismo tiempo, una cúpula negra se arquea sobre mí.\
+return

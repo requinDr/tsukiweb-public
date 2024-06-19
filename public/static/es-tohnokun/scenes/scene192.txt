@@ -1,0 +1,53 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg #000000,%type_crossfade_mid
+` ----Iré al apartamento de Arcueid.@
+br
+` Si Arcueid está tan débil como dice Senpai, debe haber vuelto a su habitación para descansar.\
+bg "image\bg\bg_12b.jpg",%type_lcartain_mid
+` Jadeo por aire.@
+` Mis piernas, que corrieron tanto como pudieron, finalmente se detienen.@
+` Intentando recobrar el aliento, entro al apartamento.\
+bg "image\bg\bg_13b.jpg",%type_lcartain_mid
+` …… Agarro el pomo de la puerta.@
+` No está cerrada.@
+` Sin vacilar, lo giro y abro la puerta.\
+bg #000000,%type_crossfade_mid
+bg "image\bg\bg_15b.jpg",%type_crossfade_mid
+` …… Aunque no estaba cerrado, no hay nadie aquí.\
+br
+`"Arcueid…… ¿estás aquí?"@
+br
+` No hay respuesta.@
+` ¿Acaso nunca cierra la puerta?@ No hay señal de que haya siquiera regresado aquí.\
+`"Maldición…… ¿¡Entonces aún está en la ciudad……!?"@
+` Golpeo la pared.@
+` Pero desahogarme con la pared no va a hacer que Arcueid aparezca.@
+`"…… ¿¡Adónde fuiste…… adónde fuiste, Arcueid……!?"@
+br
+` ------Si en verdad hay un Dios, quiero pedirle ayuda.\
+` Arcueid no está aquí.@
+` Pero no puedo encontrarla corriendo sin rumbo fijo.@
+` A este paso nunca----nunca la veré de nuevo.@
+br
+`"------"@
+` No, aún no he terminado.@
+` Aún no he cumplido mi promesa con Arcueid.@ La promesa de ayudarla a derrotar al vampiro, y la promesa de vernos esta noche para poder pelear juntos.\
+`"…… Pro…… mesa……"@
+` …… Es cierto.@ Nuestra promesa aún persiste.@
+` Aunque sólo uno lo haga, yo----aunque sólo yo lo haga, cumpliré nuestra promesa.\
+bg #000000,%type_lcartain_slw
+bg "image\bg\bg_29b.jpg",%type_lcartain_slw
+` Regreso al parque.@
+` Nuestra promesa aún persiste aquí.@
+` Nuestra promesa incumplida aún persiste esta noche.@
+br
+` ----Entonces,
+` Si no puedo romper esta promesa, y si ella también piensa que es importante,
+br
+` Arcueid volverá.@
+` Sólo puedo seguir creyendo en ella y esperar aquí.\
+bg #000000,%type_crossfade_slw
+return

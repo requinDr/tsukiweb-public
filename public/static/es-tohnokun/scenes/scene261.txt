@@ -1,0 +1,134 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_33a.jpg",%type_nowaitdisp
+` ---Pero aun así, no puedo ignorar a Akiha e ir directamente a la escuela.@
+` …… Quiero averiguar sobre Senpai de inmediato, pero primero debería explicarle a Akiha lo de anoche.\
+bg "image\bg\bg_34a.jpg",%type_lcartain_mid
+` Akiha es la única en la sala de estar.@
+` Kohaku-san está en la cocina, tarareando.@
+ld c,":a;image\tachi\aki_t11a.jpg",%type_crossfade_fst
+`"……………"@
+` Akiha no dice nada cuando me ve y bebe su té tranquilamente.\
+`"Buenos días, Akiha."@
+` Resisitiendo el impulso de ir a la escuela, la saludo lo más naturalmente posible.@
+` La ceja de Akiha se retuerce mientras baja su taza y me dirige la mirada lentamente.\
+ld c,":a;image\tachi\aki_t18a.jpg",%type_crossfade_fst
+`"Buenos días Nii-san.@ Era bastante tarde cuando regresaste a casa anoche, ¿no?"@
+`"…… No, en realidad no.@
+` Como máximo era poco más de la una de la mañana, bastante normal para que un saludable joven de secundaria esté despierto, ¿cierto?"@
+`"Ya veo.@ Mi hora de dormir también es pasada la medianoche así que estaba despierta a esa hora.@ Pero yo vendría casa mucho más temprano."\
+`"Sí, pero estuve en casa más temprano, ¿no?@ …… Sólo tenía algo que hacer, así que salí por un momento---"@
+ld c,":a;image\tachi\aki_t03a.jpg",%type_crossfade_fst
+`"¿Sin permiso?@ Actuabas como si estuvieses afuera haciendo algo por lo que te sentías culpable."@
+`"Uh……"@
+` Su mirada es hielo puro.@
+` …… Ya es la segunda vez, y estoy seguro de que, aunque Akiha parece tranquila, está bastante furiosa.\
+`"--Nii-san.@
+` No sé cómo era en la casa Arima, pero aquí el toque de queda es a las ocho en punto.@ Es una regla que no debe ser rota.@
+` La verja estará cerrada después de eso, así que por favor no entres trepando como un ladrón."@
+`"Oh----¿lo sabías?"\
+`"…… La cámara de vigilancia me lo mostró muy claramente.@
+` Es bueno que Kohaku se percatase de que eras tú y apagase el sistema de alarma porque de otro modo probablemente estarías detenido en este momento, Tohno Shiki."\
+`"…… Oh.@ Debería agradecerle a Kohaku-san entonces.@
+` Y, um, Akiha, lo siento.@ No debí haberlo mantenido en secreto."\
+ld c,":a;image\tachi\aki_t01a.jpg",%type_crossfade_fst
+`"…… Si entiendes, entonces está bien.@ Por favor asegúrate de prestarle atención al toque de queda de ahora en adelante.@ Lo pasaré por alto en esta ocasión."@
+`"…… Respecto a eso, Akiha."@
+`"¿Qué sucede?"@
+`"…… Es un poco difícil de decir.@ Yo… tengo algo que hacer esta noche también.@ No sé cuándo estaré de vuelta, pero no voy a hacer nada malo---"\
+ld c,":a;image\tachi\aki_t11a.jpg",%type_crossfade_fst
+`"----------"@
+` Su mirada se agudiza.@
+`"¡Kohaku!"@
+` Akiha se levanta repentinamente.@
+cl c,%type_lshutter_mid
+` Kohaku-san viene desde la cocina.\
+ld r,":a;image\tachi\koha_t03.jpg",%type_lshutter_mid
+`"Sí, ¿qué desea, Mi Señora?"@
+ld l,":a;image\tachi\aki_t11a.jpg",%type_crossfade_fst
+`"Iré a la escuela, ten todo preparado."@
+`"¿Huh?@ Pero aún no he hecho el desayuno de Shiki-san."@
+ld l,":a;image\tachi\aki_t06.jpg",%type_crossfade_fst
+`"Puedes dejar en paz a esta persona.@ Parece que puede hacer todo por sí mismo."@
+cl l,%type_lshutter_fst
+` Akiha camina a pasos largos hacia el vestíbulo.\
+` Kohaku-san suspira.@
+`"…… Shiki-san, no debería enfadar tanto a Akiha-sama.@ Usted es su hermano mayor, así que por favor trátela mejor, ¿de acuerdo?"@
+` Diciendo eso, ella camina detrás de Akiha.@
+cl r,%type_lshutter_mid
+` La taza de té permanece, echando humo.\
+` ……………… *suspiro*@
+` Sé que es mi propia culpa, pero no desayunaré nada hoy.@
+` Pero, es conveniente de cierta forma.@
+` Apenas son las siete en punto.@
+` Si voy corriendo a la escuela ahora, debería llegar allá alrededor de las siete y media----\
+bg #000000,%type_lcartain_slw
+bg "image\bg\bg_01a.jpg",%type_lcartain_slw
+` Llego a la entrada.@
+` Son más o menos las siete y media.@
+br
+`"…………"@
+` Me detengo y espero a Senpai junto a la entrada.@
+` Probablemente me veo poco extraño para los otros estudiantes que pasan, pero no me importa mucho.\
+!w7000
+`"……………"@
+` Senpai no se presenta.@
+` La entrada de la escuela está inundada de estudiantes que llegan.\
+!w5000
+` Faltan sólo unos cinco minutos para que la entrada cierre.@
+` Pero Senpai aún no viene.\
+`"………"@
+` Ella---podría no venir hoy.@
+` Ayer, vi todo lo que sucedió, así que ella podría no venir hoy, o mañana, o el día siguiente---
+br
+` ---Palpitar.@
+br
+`"……… Ah."@
+` Pensando eso, me siento un poco debilitado.@
+` Sacudo mi cabeza para aclararla de estos terribles pensamientos.\
+` …… Y entonces,
+` alguien me da una palmada en el hombro desde atrás.@
+br
+ld c,":a;image\tachi\cel_t07a.jpg",%type_lshutter_fst
+`"Tohno-kun, ¿qué estás haciendo aquí?"@
+`"¿¡Se, Senpai……!?"@
+`"Sí."@
+` Senpai asiente.\
+`"¿¡E, en serio……!?@ Pero ayer, tú estabas---"@
+` Mph.@
+` Antes de que pueda decirlo, Senpai coloca su mano sobre mi boca.\
+ld c,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
+`"Tohno-kun, aquí no.@ Hablemos detrás del gimnasio."@
+` Senpai tiene su sonrisa habitual mientras mantiene su mano sobre mi boca y hala mi brazo.@
+cl c,%type_lshutter_fst
+`"¡…, …!"@
+` Intento decirle que se detenga, pero no puedo hablar.@
+` Ella me hala enérgicamente.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_05a.jpg",%type_lcartain_mid
+play "*3"
+wave se2
+` ----La campana de la escuela repica sobre nosotros.@
+!w5000
+` …… La tutoría ha comenzado.@
+` Además, no hay nadie alrededor.@
+br
+ld c,":a;image\tachi\cel_t07a.jpg",%type_crossfade_fst
+`"Sí, nadie puede escucharnos aquí."@
+` Senpai finalmente me libera.@
+` Saltando hacia atrás, miro a Senpai directamente.\
+`"Quieres hablar sobre lo de anoche, ¿cierto?@ Si hay algo que quieras decir, por favor adelante, Tohno-kun."@
+` Senpai habla tranquilamente.@
+` Como si lo que sucedió anoche no fuese gran cosa.@
+`"¡……………!"@
+` Pero para mí sí fue gran cosa.@
+` Su actitud de ahora me hace enfurecer.\
+`"¿¡Entonces anoche, en verdad eras tú……!?"@
+`"Sí.@ Dije tu nombre en ese momento, así que es imposible seguir escondiéndolo."@
+cl c,%type_crossfade_fst
+`"¡…………!"@
+` Aprieto mis dientes.@
+` …… No esperaba una disculpa ni nada parecido, pero aun así---\
+return

@@ -1,0 +1,1943 @@
+monocro off
+wavestop
+play "*1"
+;---added context above---
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_40c.jpg",%type_crossfade_fst
+` Toso violentamente.@
+` …… Probablemente porque me estoy forzando a hablar con Kohaku-san,
+` mi cuerpo ni siquiera me permite hacer eso correctamente.\
+ld c,":a;image\tachi\koha_t16.jpg",%type_crossfade_mid
+`"…… Shiki-san.@ ¿Por que no le dice a Akiha-sama que la ama?"@
+` Ella vuelve a preguntarme lo mismo.@
+` Pero esta vez, es un poco diferente.@
+` La voz de Kohaku-san parece---un poco triste.\
+`"Si hace lo que Akiha-sama dice, entonces vivirá.@ Aunque sea sólo para aparentar, morirá si no lo hace.@
+` No sé qué está pensando pero, ¿no es mejor que corresponda a sus sentimientos?"@
+br
+` ---Semejante cosa.@
+`   Si pudiese hacer eso, ya lo habría hecho.\
+`"---No.@ Amo a Akiha, pero sólo como mi hermana y nada más.@
+` …… La persona que me gusta no es Akiha, Kohaku-san.@
+` No quiero, mentirle a la persona, que más amo."@
+` Fuerzo las palabras a través de mi entrecortada respiración.@
+` Tic.@
+` La segunda aguja del reloj resuena en el corto silencio.\
+ld c,":a;image\tachi\koha_t03b.jpg",%type_crossfade_mid
+`"Oh Shiki-san, eso no es bueno.@ ¿No puede hacerlo sólo por esta vez?"@
+`"…… Nop.@ Si mi cuerpo no es libre, quisiera que al menos mi corazón lo fuese.@
+` Si miento sólo una vez, luego tendré que continuar mintiendo.@
+` Si cubro las mentiras con más mentiras, todo terminará quedando vacío.@
+` Si eso sucediese, yo---"@
+br
+` …… Esa chica que no tenía ningún lugar hacia donde correr.\
+`"----Nunca podría ayudar a la persona que más quiero."@
+` Y simplemente miro a Kohaku-san.@
+ld c,":a;image\tachi\koha_t17.jpg",%type_crossfade_fst
+` Ella aparta la vista sin volver a ponerse su sonrisa.@
+`"…… Eso es, inútil.@ ¿No siente lástima por Akiha-sama?"@
+`"¿Lástima, por Akiha……?"@
+`"…… Sí.@ Ella recorre las calles todas las noches y bebe la sangre de alguien.@
+` Akiha-sama no puede transformar a sus víctimas de la manera en que lo hacía SHIKI-sama, pero tiene la habilidad para robar a otras personas."\
+`"Akiha-sama lo sabe.@
+` Sabe que chupar sangre la está haciendo menos humana, pero no se detiene.@
+` …… Sólo lo está haciendo para mantenerlo a usted con vida.@ Por lo tanto---a pesar de saber que eso la está transformando en un demonio chupasangre, continúa haciéndolo por su bien."@
+`"Ah-------"\
+ld c,":a;image\tachi\koha_t08.jpg",%type_crossfade_fst
+`"¿Seguirá rechazándola sabiendo que hace todo eso por usted?@ Los últimos ocho años, Akiha-sama esperó sólo por usted."@
+`"--------"@
+` …… No puedo responder.@
+` En primer lugar, estoy muriendo por culpa de Akiha.@
+` Pero he vivido hasta ahora gracias a sus esfuerzos.@
+` Yo----tengo una deuda con ella que nunca podré pagar por lo grande que es.\
+`"---------"@
+` No puedo decir qué está bien y qué está mal.@
+` Pero aún hay algo que no puedo abandonar y no puedo permitir.@
+` …… Sé lo que tengo que hacer.\
+playstop
+`"----Ya veo.@ Akiha saldrá de nuevo esta noche para beber sangre."@
+` Me levanto.@
+` El dolor me recorre como una descarga eléctrica.@
+` Logro ponerme de pie resistiendo esa cantidad de dolor.@
+ld c,":a;image\tachi\koha_t13.jpg",%type_crossfade_fst
+`"¿Qué…… Shiki-san, qué está--"@
+`"…… No.@ No puedo dejar que Tohno Akiha siga bebiendo sangre."@
+cl c,%type_crossfade_fst
+` Doy un solo paso trabajosamente.@
+` Aunque podría caer en cualquier momento, sigo adelante.@
+` Al menos puedo…… llegar a la habitación de Akiha.\
+`"Por favor espere."@
+` Parándose en mi camino,
+` Kohaku-san aparece frente a mí.@
+ld c,":a;image\tachi\koha_t08.jpg",%type_lshutter_fst
+`"Dice que detendrá a Akiha-sama.@ ¿Eso es lo que dice su sangre Nanaya?"@
+`"…… Eso no tiene nada que ver.@ Sólo quiero que Akiha sea Akiha.@ Eso es lo que yo, como Tohno Shiki, verdaderamente siento."\
+ld c,":a;image\tachi\koha_t13.jpg",%type_crossfade_fst
+`"………… No debe.@ Akiha-sama no tendrá piedad con usted.@ Ya se ha dado cuenta.@ La Akiha-sama de antes ya no existe."@
+br
+` …… Eso lo sé.@
+` Ese espejismo titilante detrás de ella.@ Esa cosa está haciendo que deje de ser Akiha.@
+` En su estado actual, Akiha me considerará totalmente inútil si no la acepto.\
+`"Aun así---debo detenerla.@ Soy, su hermano, después de todo."@
+ld c,":a;image\tachi\koha_t16.jpg",%type_crossfade_mid
+`"……………………"@
+` Kohaku-san no dice nada.@
+cl c,%type_lshutter_fst
+` Me abro camino hacia el escritorio.@
+` Adentro está lo que traje de la casa Arima, sólo unas pocas cosas.@
+` Saco mi cuchillo del cajón.@
+` …… Y veo aquello que todavía no he devuelto.\
+play "*7"
+`"Kohaku-san."@
+` Apretando los últimos vestigios, camino hacia ella.@
+ld c,":a;image\tachi\koha_t13.jpg",%type_crossfade_mid
+`"……………"@
+` Kohaku-san se queda parada ahí.@
+`"…… Éste podría ser el fin, así que aquí tienes."@
+` Extiendo mi mano junto con la cinta blanca.@
+`"Es un poco tarde pero, te la devolveré.@ Lo siento.@ Pasaste por tantos problemas para dármela, y ni siquiera llegué a utilizarla."@
+br
+` …… No sé si pude expresar mis sentimientos a través de mis palabras.@ Y con toda la dulzura posible,
+` coloco en su mano la cinta de la promesa.\
+ld c,":a;image\tachi\koha_t09b.jpg",%type_crossfade_mid
+`"-----------"@
+` El sonido de un grito ahogado.@
+` Ella se queda inmóvil como una muñeca, mirando con asombro la cinta en su mano.@
+br
+`"……… ¿Lo sabía, Shiki-san?"@
+br
+`"…… No de inmediato.@ Fue sólo recientemente.@ …… En realidad debí haberlo notado tan pronto como regresé."\
+cl c,%type_crossfade_mid
+` Sí.@ Debí haberlo notado cuando regresé a la mansión y Kohaku-san dijo "Bienvenido a casa."@
+` Aun así, ella sonrió cuando le pregunté si era una de las niñas que estaban aquí en aquella época.@
+br
+`"…… Yo, no tengo el derecho, pero gracias.@ En verdad me hizo feliz que esperases por mí aquí."@
+br
+` …… Durante ocho años.@
+` Ésas son las palabras que siempre quise decir como Tohno Shiki.\
+bg "image\event\koha_e06.jpg",%type_crossfade_mid
+!w3000
+` Lágrimas.@
+` Su rostro.@ Su rostro no se ve triste o alegre, pero una línea desciende por él.@
+` …… No sé qué significa.@
+br
+` Pero, naturalmente.@
+` Sostengo su cuerpo cerca del mío.\
+` …… Puedo sentir su calor.@
+` Extrañamente, eso parece tranquilizar a mi embravecido corazón.\
+`"…… Kohaku-san.@ Dentendré a Akiha, así que huye con Hisui.@ …… Y no tienes que regresar.@
+` …… Has estado encerrada en esta mansión por diez años.@ Puedes ser libre, y---no tienes, que forzarte, a sonreír---"@
+br
+`"Shiki-san, tú, lo, sabías…"@
+br
+` Sus labios se tragan la palabra "todo".@
+` No quería que dijese esas palabras, así que cierro su boca con la mía.\
+bg #000000,%type_crossfade_fst
+br
+br
+br
+br
+br
+br
+` ---Fue sólo un instante.@
+` Sólo un toque, un beso fugaz, pero inolvidable.\
+!w2000
+playstop
+!w2000
+bg "image\bg\bg_40c.jpg",%type_crossfade_fst
+` Levanto mi cabeza.@
+` La dejo ir.@
+` En lugar de la muñeca que Kohaku-san representaba, sonrío con todo mi corazón.@
+br
+`"Bueno.@ Fue un tiempo muy corto, pero vivir aquí contigo fue muy divertido.@
+` ----Sí.@ En verdad eres la que más me gusta, Kohaku-san."@
+br
+` ---En marcha.@
+` Lo único que queda es detener a Akiha.\
+`"………………… No, deténgase."@
+` Cuando voy a abrir la puerta, su voz me llama.@
+`"……………… No, Shiki-san.@ No puede detener a Akiha-sama en ese estado."@
+`"…… ¿Eh?"@
+` Me doy la vuelta---
+ld c,":a;image\tachi\koha_t16.jpg",%type_lshutter_fst
+`"Shiki-san---tiene que detener a Akiha-sama."@
+` Kohaku-san está ahí, no con una sonrisa, sino con una cara verdaderamente triste.\
+`"Kohaku-san---¿por qué?"@
+` ¿Por qué parece que está a punto de romper a llorar?@
+`"Shiki-san.@ ¿Lo que dijo es en serio?"@
+` Ella me mira directamente.@
+` Sus ojos me imploran que confirme mi afirmación de que ella me gusta.\
+cl c,%type_crossfade_fst
+`"--------"@
+` Asiento.@
+` Kohaku-san camina hacia mí arrastrando los pies y sostiene mi mano.@
+` …… ¿Cuánto tiempo estuvimos así?@
+` Kohaku-san no dice nada.@ Después de sostener mi mano como una niña, ella sonríe una vez más y coloca mi mano sobre su pecho.\
+play "*8"
+ld c,":a;image\tachi\koha_t03b.jpg",%type_lshutter_fst
+`"Si ése es el caso, por favor haga el amor conmigo.@ Si lo hace, debería sentirse bien sin la ayuda de Akiha-sama."@
+`"¿Qué----hacer el amor… qué estás-"@
+`"Estoy hablando de sexo.@ Hisui-chan y yo fuimos traídas a esta mansión con ese propósito."@
+` Kohaku-san dice semejante cosa con su sonrisa habitual, como si hablara del clima.\
+`"¡S-sexo, pero eso……!"@
+` Es demasiado repentino, la voz me sale rara.@
+`"Sí.@ Puede que no lo sepa pero, somos llamadas Sincronizadoras.@
+` En términos simples, podemos proyectarnos hacia otra persona e incrementar sus poderes.@
+` Pero sólo funciona si…… la persona es del género opuesto.@ Akiha-sama es mujer, así que no podíamos sincronizar.@ Por eso tenía que beber mi sangre para formar un vínculo falso."\
+`"---------"@
+` Palpitar.@ Mi calor corporal se eleva.@
+` No es el anterior estado salvaje de mi corazón…… son los verdaderos sentimientos de Tohno Shiki saliendo a flote.\
+`"…… P… pero, eso, es---"@
+ld c,":a;image\tachi\koha_t12.jpg",%type_crossfade_fst
+`"Es incapaz de corresponder a sus sentimientos, ¿verdad?@ Entonces no hay otra manera.@
+` Por favor, hágame suya.@ Si intercambiamos fluidos corporales podré ayudarle a mejorar.@
+` Si lo hace, podrá volver a la normalidad sin la ayuda de Akiha-sama."@
+`"Uu…………"\
+` …… En verdad no puedo pedir nada más.@
+` Si dejo de ser una carga para Akiha, no tendrá que beber más sangre.@
+` Y sinceramente, también deseo a Kohaku-san.\
+`"--------"@
+` Pero.@
+` Aún siento que hay algo mal en esto.@
+ld c,":a;image\tachi\koha_t03b.jpg",%type_crossfade_fst
+`"Shiki-san, ¿estaba mintiendo cuando dijo que yo le gustaba?"@
+` Kohaku-san dice eso con una sonrisa---Yo empiezo a perder el control.\
+`"---No fue una mentira.@ Yo… siempre te he querido----"@
+ld c,":a;image\tachi\koha_t12.jpg",%type_crossfade_fst
+`"Entonces, por favor permítame darle fuerza.@ Si no lo hace, morirá y no podrá detener a Akiha-sama."@
+` Al decir eso,
+` aprieta mi mano contra su pecho con más fuerza.@
+` Tiernos, pero con elástica firmeza.@ Sentir los senos de una mujer joven hace que mi cabeza dé vueltas.\
+`"---------"@
+br
+` …… Comprendo.@
+` Kohaku-san está continuando con su actuación.@ Entiendo que sólo me está utilizando.@
+` Pero aun así---es algo importante para mí.@
+br
+`"…………… ¿Está bien esto?@ ¿En verdad estás de acuerdo con esto, Kohaku-san?"@
+`"Sí.@ Porque yo también lo amo, Shiki-san."@
+br
+` ---Sé que esa sonrisa es falsa.@
+br
+` Pero… creo en las palabras.\
+br
+br
+br
+br
+br
+br
+br
+` Quiero creer en esas palabras.\
+cl c,%type_lshutter_mid
+` …… La acerco a mí.@
+` Cuando la beso, es un violento y apasionado beso robado, totalmente distinto al anterior.@
+playstop
+bg #000000,%type_crossfade_slw
+br
+` No sé cuánto tiempo ha pasado.@
+` Sus tiernos labios.@
+` Presiono mi boca sobre la suya como si estuviese robándole la respiración, y la sostengo con firmeza contra mi cuerpo.\
+`"----------"@
+` Mi capacidad para pensar lógicamente se ha ido por la ventana.@
+` Mi mente está totalmente vacía, ningún pensamiento serio la ocupa.@
+` Sólo puedo pensar en hacer que este momento dure para siempre
+`"----------Ah."@
+` Pero mi cuerpo está en su límite.@
+` Mis piernas se mecen debajo de mí.@
+` Los brazos que abrazan a Kohaku-san caen hacia mis costados, y me inclino completamente sobre ella.\
+`"…… Cielos, mire lo que ha pasado, Shiki-san.@ Es lo que pasa cuando fuerza su cuerpo."@
+br
+` Mi cuerpo está por caer al piso.@
+br
+`"Por favor acuéstese en la cama.@ Pronto le haré sentir mucho mejor."\
+bg "image\bg\bg_40c.jpg",%type_tshutter_mid
+play "*5"
+` Caigo sobre la cama.@
+` Ni siquiera puedo moverme.@ El mundo me envuelve como una manta sofocante, e incluso respirar es doloroso.@
+`"………"@
+` …… Mierda.@ En este estado, ni siquiera puedo abrazar a Kohaku-san.@
+` Aunque puedo mejorar si hago lo que Tohno Makihisa hacía, si mi cuerpo no se mueve, ni siquiera puedo hacer eso----\
+`"…… Por favor relájese.@ Quédese así, yo haré todo el trabajo."@
+` Ella pone sus rodillas en el piso.@
+` Kohaku.@ Desaparece.@ De mi vista.\
+`"…… ¿Kohaku… san……?"@
+` La única respuesta es el sonido de algo que traquetea cerca de mis caderas.@
+`"-------Ah."@
+` Mi respiración se detiene al percatarme de que es el sonido de mi cinturón siendo retirado.@
+` El sonido y la sensación al bajar mi cremallera.@
+`"¡H, hey---Kohaku… san……!"@
+`"……………………"@
+` No hay respuesta.@
+` En cambio, Kohaku-san baja mi ropa interior y me desnuda.\
+`"¡------------!"@
+` Todo mi cuerpo se siente cálido.@
+` No por excitación, sino por la vergüenza de ser visto por Kohaku-san.@
+` …… Ciertamente no puedo esconderme si quiero hacer esto, pero aun así---esto no es lo que esperaba… solamente pensé en el propio acto sexual.\
+`"Kohaku-san, eso---"@
+`"…… Sí.@ Tenemos que empezar aquí si quiere recuperarse."@
+` Su aliento toca mi piel.@
+` …… Mi asta se eleva en respuesta.@
+`"Ah………………"@
+` Le escucho exclamar.@
+` Cautelosamente, ella libera mi hinchada virilidad de mis pantalones con su pequeño dedo.\
+`"------Kohaku… san-----"@
+` Sólo un ligero toque.@
+` Fue sólo su pequeño dedo, pero la sensación recorre toda mi asta.@
+`"Hm…… no no, Shiki-san.@ …… No luche.@ Sólo relájese."@
+` Ella me reprende mientras comienza a envolverme con su mano.@
+` Sus dedos comienzan a apretar lentamente.@
+br
+` Su frialdad me atraviesa como una bala.\
+`"Ha----ah, ah-----"@
+` Mi sangre comienza a acumularse.@
+` La vergüenza desaparece cuando un jadeo escapa de mi garganta.@
+`"Sí…… puede gemir más."@
+` Guao.@
+` Como para enfriar algo, Kohaku-san sopla sobre mí.@
+`"¡Mm---------!"@
+` Palpitar.@
+` Con eso, tengo una erección completa.\
+bg #ffffff,%type_crossfade_mid
+bg "image\event\koha_h01.jpg",%type_crossfade_mid
+`"Jaja…… ¿Qué es esto?@ Es muy saludable aquí, Shiki-san."@
+` Habla con una dulce voz mientras me frota ligeramente con su nariz.@
+` Es una sensación… distinta a la de sus dedos.@
+` Como si tratase de asimilar cada matiz de mi olor, Kohaku-san me estimula con su nariz.\
+`"Hm…… Shiki-san, es tan lindo…… Su olor es muy débil pero es tan grande y apuesto."@
+` Después de olfatear, ella saca su lengua lentamente y toca mi punta.@
+` Es sólo por un instante, pero la sensación de su húmeda lengua al tocarme produce una sacudida en todo mi cuerpo.@
+`"Ah------"@
+` El calor acumulado en la base de mi asta me hace hablar sin pensar.@
+` Ese calor.@
+`"…… Jaja…… Finalmente se ha calentado, ya veo."@
+` Felizmente, ella mueve un dedo hacia abajo para revisar.\
+` Sus dedos comienzan a moverse.@
+` Esos cuatro dedos comienzan a acariciarme suavemente de arriba hacia abajo.\
+` Su delicado masaje hace que me endurezca aun más.\
+` La hinchazón se incrementa como para escapar de las caricias de sus dedos.@
+` Sin dejar escapar nada, su fuerte pulgar se une a sus cuatro dedos.@
+`"…… Ah…… está muy excitado, Shiki-san."@
+` Dice Kohaku, medio sorprendida y medio soñando.@
+` Miro la hendidura en la punta de mi herramienta y veo que ya está goteando.@
+`"--------"@
+` Mi cara se torna roja.@
+` Aparto la vista, avergonzado, pero el sonrojado rostro de Kohaku se mueve hacia adelante y olfatea el fluido derramado.\
+`"…… Hm…… las cosas van a empezar a sentirse aun mejor."@
+` Mi seca asta comienza a desbordarse.@
+` Con sus lindos dedos ahora cubiertos por ese licencioso fluido, Kohaku comienza a acariciarme seriamente.\
+br
+` …… Desliza, desliza, desliza desliza desliza.\
+`"¡Ha---ah, -----!"@
+` No puedo contener mis jadeos.@
+` Aunque simplemente suben y bajan, sus extrañamente flexibles dedos se aseguran de que las sensaciones no sean tan simples.@
+` Sus vivaces yemas parecen estar succionando mi piel.\
+`"Jeje…… Shiki-san, es asombroso.@ Todavía está creciendo."@
+`"No……… Eso… lo estás… Kohaku---"@
+` …… Es cierto.@ Sus dedos son más extraños.@
+` Ella es la que… me está moldeando… como si yo… fuese arcilla---\
+`"Detent…… Kohaku… san---no… tienes que… hacer eso---"@
+` …… No me… importa nada más ahora… se siente tan bien… pero…… esto no es exactamente lo que yo quería.@
+` Pensé que la abrazaría.@ Esto es… un poco diferente---\
+`"Es… suficiente---ya… puedes parar---"@
+` Reteniendo mis jadeos llenos de pasión, apenas logro decir eso.@
+` Pero ella… sus dedos… no… paran.@
+` Su lengua, tan roja que parece pintada con fuego, hace una lamida.\
+`"¿¡-------!?"@
+` El impactante placer me hace apretar la mandíbula.@
+` Ella me mira con ojos vidriosos.@
+`"Aún no…… aún no, Shiki-san.@ Este chico de aquí me dice que no es suficiente."@
+` Su lengua roja sube mi asta trazando una línea.@
+` Se desliza desde mis testículos hasta la cima de mi torre.\
+`"Ah…… m, u…… hu…… ah."@
+` Su respiración gira a mi alrededor.@
+` Las salvajes exhalaciones parecen arder con el mismo fuego que me quema.@
+`"Mm…… más, necesita estar más excitado----"@
+` Su lengua gira alrededor de mi punta.@
+` …… Parece casi venenosa.@
+` A pesar de que es tan linda, su lustrosa y serpenteante superficie se extiende.@
+` Lengua roja.@ Se arrastra alrededor de mi asta como sangre arremolinada.\
+`"--------"@
+` Sólo con eso,
+` se siente tan bien… que podría incluso… desmayarme.\
+`"Aahh---¿no… es… suficiente?"@
+` Ya ni siquiera sé qué estoy diciendo.@
+` Ella presiona la abertura de mi mojada asta con el reverso de su lengua.@
+`"¿¡Eh---ah, ah----!?"@
+` El reverso de su lengua se siente completamente diferente.@
+` Ella continúa acariciándome con sus dedos mientras presiona con su lengua.@
+` No sólo de arriba hacia abajo, sino también de lado a lado, deslizando, empujando, halando----\
+`"¡Ha, ah---detente… Kohaku… voy a acabar----!"@
+br
+` Mi asta se tensa.@
+` El calor se eleva desde la base de mi asta, y no puedo seguir conteniéndolo.@
+` Los dedos de Kohaku se detienen por completo.@
+` Su meñique, que hasta ahora sólo me sostenía, se convierte en un tornillo de hierro que detiene el avance de mi semen.\
+`"Ko… haku------qué… estás---"@
+`"Hm…… aún no…… tiene que esperar…… esto es lo último que le queda… así que por favor… acabe… dentro de mí."@
+` …… Sus dedos se apartan.@
+` Como anhelando hasta la última gota, ella besa mi palpitante hasta.@
+` Ella coloca sus manos ligeramente sobre mi cuerpo.\
+bg "image\bg\bg_40c.jpg",%type_crossfade_mid
+`"Ah----"@
+` Caigo hacia atrás.@
+` Kohaku se coloca silenciosamente sobre mí.\
+`"¡Nn………… Qué estrecho………!"@
+` Sus caderas caen.@
+` Guiando mi miembro hacia su dulce pasaje, Kohaku se deja caer sobre mí.@
+`"----------"@
+` No puedo ver nada.@
+` El sonido de mi entrada en Kohaku alcanza mis oídos.@
+` Esa sensación.@
+` Puedo sentir este calor en mi punta.@
+` Envuelve mi asta y mi mundo gira en un trastorno placentero.\
+bg "image\event\koha_h02.jpg",%type_crossfade_mid
+`"…… ¡Ha…… ah…… mm…………!"@
+` Kohaku intenta contener un grito pero su respiración se hace dificultosa.@
+` ¿Tiene los ojos cerrados porque está tratando de resistir el dolor?@
+` Exaltada por el contacto, Kohaku comienza a insertarme dentro de ella.\
+`"---------"@
+` Todo sigue estando oscuro.@
+` Yo---no sé qué acaba de suceder.@
+` Miro, pero no puedo ver nada.@
+` Lo único que tengo por seguro es que puedo sentir a Kohaku.@
+` Cálido.@ No, caliente.@
+` Su interior es estrecho y me hala continuamente hacia adentro.\
+` Para ser sincero, siento que debo felicitarme por no haber acabado todavía.@
+` Esto es completamente diferente a su lengua y sus dedos.@
+` Algo se siente extraño.@
+` ¿Será mi semen?@ ¿O la humedad de ella?@
+` La sensación de inmersión y una sensación de cosquillas viniendo de lo que se siente como una multitud suaves pliegues.\
+`"…… Mm…… Shiki-san, es tan…… duro… por favor---"@
+br
+` Desliza.@
+br
+` Sus caderas bajan gradualmente.@
+` Su humedad fluye sobre mí.\
+`"---------"@
+` Aún no puedo ver claramente.@
+` …… ¿Qué está pasando?@
+` Ella está bajando su cuerpo, pero se siente como si subiera.@
+` Exaltado por el contacto entre nuestras pieles… quiero sostener a Kohaku… cuyo rostro se ve oscurecido como si estuviese resistiendo algo… más cerca de mí.\
+` ---¿Entonces por qué?@
+` Mi cuerpo se ahoga en placer, pero mi mente parece haberse detenido.@
+` …… No lo entiendo.@
+` ¿No la deseo?@
+` Esto se siente tan bien, ¿entonces por qué---\
+`"---N----demasiado----"@
+` Sus caderas se detienen.@
+` Siento algo duro dentro de su estrecho cuerpo con la punta de mi virilidad.@
+` …… Puedo sentirla estrechándose todo el camino hasta mi base.@
+` Estoy casi completamente dentro de ella.@
+` Ella empuja mi pecho con sus manos como para impedirse seguir avanzando.\
+` Respira con dificultad, como si sintiese dolor.@
+` No levanta sus caderas, como si simplemente quisera envolverme con su cuerpo.@
+br
+br
+` …… Noto que incluso su cara de angustia es hermosa.@
+` En verdad amo a Kohaku.\
+`"Ah…… sólo… un poco más------"@
+` La voz de Kohaku.@
+` Con un empuje final ella comienza a moverse hacia abajo.@
+` Su piel y la mía se fusionan y ella se inclina sobre mí.\
+bg "image\event\koha_h03.jpg",%type_crossfade_mid
+` Un espasmo breve.@
+` Mi asta, totalmente incrustada en ella, expresa su placer.\
+`"Ah---a…… está toda… dentro de mí."@
+` Ella inclina su cuerpo sobre mi pecho.@
+` El rostro de Kohaku está lleno de éxtasis.@
+`"----------"@
+` Al ver ese rostro, me pierdo por completo.@
+br
+` Siento sus senos a través de su kimono.@
+` Su delicado y delgado cuerpo contrasta con sus atrevidas piernas abiertas y casi me desmayo.\
+`"Ajaja…… Si hago esto, puedo estar muy cerca de su cara."@
+` Kohaku me mira desde mi pecho.@
+`"--------Kohaku… san."@
+`"…… Sí, no tiene que seguir conteniéndose.@
+` Por favor…… deme todo lo que quiera."\
+`"--------"@
+` …… Pero.@
+` Esto se siente tan bien, pero ni siquiera puedo abrazarla.@
+` …… Comprendo mi nerviosismo de antes.@
+` Porque la amo tanto---no puedo hacer algo tan frío como un simple "intercambio de fluidos corporales."\
+`"No Kohaku-san.@ No puedo---"@
+`"…… Hm…… bien, entonces tendré que moverme."@
+`"Ah---------"@
+` Sin detenerse para escuchar mi respuesta, comienza a mover sus caderas.\
+bg "image\event\koha_h02.jpg",%type_crossfade_mid
+`"¡Oye------, ah, ahh------!"@
+` Todo mi cuerpo se estremece.@
+` Teniéndome dentro de ella, mueve sus caderas en forma circular.@
+` Perforada como está, no puede moverse mucho.@
+` Siento como si cientos de lenguas me lamieran, y ese número se multiplica mientras soy abrumado por la sensación de su movimiento.\
+`"¡Ah----Ko… Koha… ku------!"@
+` Cierro mi boca y resisto tanto como puedo, pero esa boca sigue estrangulándome placenteramente.@
+`"¡¡Ha----ah, ah………………!!"@
+` Quiero morir.@ No, si muero aquí, ni siquiera me importará porque se siente muy bien.@
+` Siento que mi virilidad está en una dimensión de puro placer.@
+` El núcleo de placer rota dentro del cuerpo de Kohaku.\
+`"¡-----,--,,------, ……………!"@
+` Sólo puedo respirar.@
+`"Mm…… Shiki-san, por favor, …… use sus… caderas---"@
+` Envuelta en placer, Kohaku-san pide algo imposible.@
+` Las ascendentes olas de sensación colisionan en mi cabeza---\
+`"Ah---sí, ahí---Shiki-san, cuando quiera----"@
+` Su cabello ondula libremente.@
+` Levanto mis caderas como ella me pide.\
+`"-----,--,,------,"@
+` No puedo respirar.@
+` ---Quiero liberarlo todo.@
+` Todo está llegando a su punto culminante, pero no puedo acabar.@
+` Ella se estrecha tanto a mi alrededor que no puedo soltar nada.@
+` …… En verdad debe haber algo mal en mí.@
+` Este increíble placer no es doloroso.@
+` Esa presión aumenta alrededor del centro de mi asta.@
+` La piel a mi alrededor es muy suave, así que no duele.\
+bg "image\event\koha_h03.jpg",%type_crossfade_mid
+`"¿Qué le parece…… Shiki-san, se siente bien……?"@
+` Kohaku habla con una voz cautivadora.@
+`"-----,--"@
+` Eso… se sobrentiende------
+`"…… Mm…… supongo que eso es un sí……"@
+` Sus caderas se detienen.@
+`"Ah-------"@
+` …… Estoy salvado.@
+` Con esto no tendré que---
+`"¡-----, ……………!"@
+` Instantáneamente.@
+` Con toda la fuerza previa, ella se estrecha de nuevo.\
+`"¡Ha------ah, gah…………!"@
+` Mis caderas se levantan.@
+` Kohaku mira mi rostro.@
+br
+!w2000
+`"---¡Aja, acabe dentro de mí!"@
+!w2000
+br
+` Su voz se eleva como la de una niña inocente.\
+bg #ffffff,%type_crossfade_slw
+` Aquello que contuve por tanto tiempo sale disparado.@
+` Más de lo que creí posible para un solo chorro.@
+` Y… es liberado totalmente dentro de ella.\
+bg "image\bg\bg_40c.jpg",%type_crossfade_mid
+br
+` Ah----ahh----ahh----ahhh.\
+` El sonido de mi respiración es todo lo que hace eco en la habitación.@
+` Kohaku se quita de encima y coloca su mano sobre mi frente.\
+`"Gracias al cielo, su temperatura corporal ha regresado.@ Creo que en verdad somos compatibles.@ Normalmente, si existen lazos previos como en mi caso, una vez no es suficiente."@
+` Ella suena extremadamente feliz.\
+br
+br
+br
+` *jadeo*----\
+` *jadeo*----*jadeo*---
+` …… Ciertamente, mi cuerpo ha cambiado por completo.@
+` Aunque respiro con dificultad por el agotamiento, por primera vez en días puedo moverme libremente y como quiero.\
+`"Fue muy afortunado.@ Pero está cansado, ¿verdad?@ Me preocupaba que no pudiese aceptarlo con un solo intento.@
+` Parecía que hacerlo más de una vez podría poner en peligro su vida."@
+` Enderezando su kimono, ella se aparta de la cama.@
+` Parece verdaderamente feliz de que regresara a la normalidad.\
+br
+br
+br
+br
+br
+br
+` *jadeo*-------*jadeo*--------*jadeo*\
+` Pero, yo no estoy nada feliz.\
+`"Por favor descanse hasta que regrese con ropas nuevas.@
+` Mis poderes no funcionarán por completo de inmediato, así que por favor relájese."@
+` Kohaku se dispone a dejar la habitación.@
+` No puedo resistir verla sonreír de esa manera.\
+`"¡Kohaku-san---!"@
+`"¿Eh-------?"@
+` Me levanto de la cama y agarro su mano.@
+`"----------"@
+` No digo nada, sólo sostengo su delgada mano con la mía.\
+ld c,":a;image\tachi\koha_t03b.jpg",%type_lshutter_fst
+`"¿……?@ ¿Hay algún problema, Shiki-san?"@
+`"---------"@
+` Miro hacia abajo y aprieto mis dientes.@
+` Su calidez fluye a través de mi mano.@
+` Si la dejo ir, esto quizás, nunca habrá sido real.@
+` Incluso yo sé que estoy apostando mi vida al tratar de detener a Akiha.@
+br
+` …… Sólo tengo este momento.@
+` Sólo puedo amarla de verdad ahora mismo.@
+` Así que no quiero algo como eso.\
+`"--------No te vayas."@
+`"¿Eh, Shiki-san……?"@
+`"…… Esto no funcionará, Kohaku.@ No fue suficiente."@
+` Mirando hacia abajo y vigorosamente sonrojado, le digo lo que siento.\
+ld c,":a;image\tachi\koha_t13.jpg",%type_crossfade_fst
+`"¡Ah…… yo, lo siento……!@ Sabía que una sola vez no sería suficiente para aceptarlo.@ Perdóneme por hacerle decir eso.@ Por favor espere, lo haré de nuevo de una manera más---"@
+` Kohaku parece consternada.@
+`"No, eso ya está hecho.@ Mi cuerpo se ha recuperado.@ …… No es mi cuerpo lo que no ha tenido suficiente, es mi corazón."@
+ld c,":a;image\tachi\koha_t09b.jpg",%type_crossfade_fst
+`"¿Huh……?@ ¿Su corazón?"@
+` La expresión de Kohaku se muestra confundida.\
+`"Um---Shiki-san, ¿no se sintió bien?"@
+` Con una mirada seria ella me hace esta increíble pregunta.@
+` Pero ahora no es momento para estar avergonzado.@
+`"¡No es eso, en absoluto……!@ Um…… uh, se sintió muy bien.@ Estoy siendo completamente sincero."@
+ld c,":a;image\tachi\koha_t15.jpg",%type_crossfade_fst
+`"Ajaja.@ Shiki-san, se ve tan lindo cuando se sonroja."@
+` Kohaku sonríe felizmente.\
+ld c,":a;image\tachi\koha_t03b.jpg",%type_crossfade_fst
+`"¿Entonces qué no fue suficiente?@ No entiendo lo que está diciendo."@
+`"…… ¿No es obvio?@ Lo que hicimos no puede denominarse hacer el amor.@ Yo no quería hacerlo de esa manera."@
+ld c,":a;image\tachi\koha_t13.jpg",%type_crossfade_fst
+`"…… No lo entiendo.@ Creo que fue el mejor método para intercambiar fluidos corporales.@
+` Y ya se ha recuperado, ¿no?"\
+`"¡Dije que no es eso……!@
+` Cuando dijiste lo que teníamos que hacer, estaba increíblemente feliz.@ …… Estaba tan feliz que incluso olvidé todo sobre Akiha.@
+` Yo---te amo tanto que no podía preocuparme por nada más.@ No me importa sincronizar ni nada de eso.@ Sólo quiero abrazarte."@
+ld c,":a;image\tachi\koha_t09b.jpg",%type_crossfade_fst
+`"------------"\
+`"Se sintió bien, pero eso fue sólo para mí.@ Tú no pudiste sentirte bien, ¿verdad?@ …… No tengo mucha experiencia, pero quiero hacerte sentir igual de bien.@
+` Es por eso que no fue suficiente.@ Simplemente quiero demostrarte cuánto te amo.@
+` …… Esto no tiene nada que ver con sincronizar, simplemente quiero estar contigo."\
+` Aprieto su mano con más fuerza.@
+` Ella me mira sorprendida.@
+ld c,":a;image\tachi\koha_t14.jpg",%type_crossfade_fst
+`"Ah----yo… cuando lo dice de esa manera, hay un problema.@ Yo… nunca…… he hecho… eso."@
+` Su rostro se torna rojo brillante al decir esto.\
+cl c,%type_crossfade_fst
+` Su seca mano se humedece repentinamente.@
+` Con lo cerca que estoy, puedo escuchar el palpitar de su corazón.@
+` …… Finalmente me percato de algo.@
+` Hasta ahora, ella nunca ha dormido con alguien por amor.@
+` Tohno Makihisa la veía sólo como una herramienta.@
+` Kohaku simplemente aceptó ese papel.\
+`"………………"@
+` No puedo creerlo.@
+` Fue forzada a hacer esto casi todos los días, pero en realidad---en realidad no conocía el verdadero significado de dormir junto a otra persona.\
+`"---Kohaku-san.@ Yo… quiero verte desnuda."@
+ld c,":a;image\tachi\koha_t10.jpg",%type_crossfade_fst
+`"¡N, no……!@ ¿¡Qué está diciendo, tan repentinamente, Shiki-san…………!?"@
+` Todo su cuerpo se torna rojo mientras grita.@
+`"…… Ya veo.@ No quería verlo de esta manera pero, lo que hiciste antes fue sólo una obligación.@ …… Tienes razón, no puedes desnudarte frente a alguien que ni siquiera te gusta."@
+ld c,":a;image\tachi\koha_t17b.jpg",%type_crossfade_fst
+`"Ah……………………"@
+` Ella desvía la mirada y su sonrojo se profundiza.@
+` Se ve increíblemente linda cuando murmura algo como respuesta, jugueteando con el borde de su kimono.\
+`"…… Um, eso no es verdad.@ Mi cuerpo es sucio, así que no, quiero mostrárselo, Shiki-san……"@
+`"No lo creo.@ Eso no es verdad.@ Y aunque lo fuese, seguiría pensando que eres hermosa."@
+` La acerco más a mí.@
+cl c,%type_lshutter_fst
+`"¡-------!"@
+` La presiono contra mi pecho.@
+` Después de disfrutar el momento, me coloco detrás de ella y comienzo a besuquear la base de su cuello.\
+`"Ah------Shiki… san-------"@
+br
+` …… Ya no hay manera de parar.@
+` Sosteniendo su tembloroso cuerpo, comienzo a estimular su cuello con mi lenga.\
+bg #000000,%type_crossfade_mid
+bg "image\event\koha_h04.jpg",%type_crossfade_mid
+` Después de trazar una suave línea cristalina, la beso dulcemente.@
+`"Mm------"@
+` Un débil suspiro.@
+` Con su rostro aún pintado de rojo, acepta silenciosamente todo lo que hago.@
+`"…… ¿Qué es esto?@ Tu piel, es tan limpia…… tan hermosa."@
+` Continúo lamiendo su magnífica piel de porcelana.\
+`"…………………"@
+` Sus ojos permanecen cerrados mientras se sacude levemente.@
+` …… Quizás en verdad es la primera vez que alguien la trata de esta manera.@
+` Sus reacciones no se parecen en nada a la seductora voluptuosidad de antes.@ Por alguna razón---siento un fuerte deseo de provocarla.\
+`"Mm---¿eres sensible aquí……?"@
+` Le susurro desde atrás.@
+`"…………………………"@
+` Con la boca cerrada, ella sacude su cabeza de un lado a otro.@
+` Responde de una manera, pero su cuerpo responde de otra.\
+`"…… ¿Oh en serio?@ Entonces no hay problema si hago esto."@
+` Presiono su cuello fuertemente con mis labios.@
+` Dejo que mi lengua se deslice con firmeza a lo largo de su cuello.@
+`"……… Ah……… Shiki…… sa……… n………"@
+` Sus labios tiemblan.@
+` Mientras saboreo su piel, pongo mis manos sobre sus hombros y comienzo a retirar su kimono.\
+`"………………"@
+` Como esperaba, ella no ofrece ninguna resistencia.@
+` Con un susurro.@ Su kimono desnuda sus hombros.@
+`"……………, …………"@
+` Sus labios se tensan.@
+` …… Probablemente está avergonzada.@
+` Sigue sin ofrecer resistencia mientras tiembla.@
+` No por satisfacción---sino por anticipación.\
+`"…… Kohaku.@ Deseas esto, ¿verdad?"@
+`"…………… S…………… sí…………"@
+` Ella habla suavemente, como si no quisiera ser escuchada.@
+` Su kimono cae hacia un costado.@
+`"----------"@
+` Sólo un pensamiento entra en mi mente---ella en verdad es hermosa.\
+` Su magnífica piel blanca.@
+` Las vívidas líneas de su clavícula.@
+` Sus teblorosos senos blancos.@
+` Su piel blanca es teñida por un pálido tono rojo.@
+` Verla con los ojos cerrados por la vergüenza y los labios ligeramente abiertos por nerviosismo me hace amarla aun más.\
+`"……… Ah……… Shiki… san."@
+` Su voz se eleva.@
+` Instantáneamente envuelvo sus expuestos senos con mis dedos, dándoles un ligero apretón.@
+` …… Caliente.@
+` Mis dedos se hunden en su tierna carne.@
+` Sólo tocarlos hace que mi cerebro arda en llamas.\
+`"…… Mm…… Shiki-sa… n…… ¿Qué… está… haciendo?"@
+` Qué pregunta tan rara.@
+`"¿Qué estoy haciendo?---Te estoy haciendo el amor."@
+` Aprieto con más fuerza.@
+` Sus tiernos montículos tiemblan en respuesta cuando los amaso.\
+`"…… Ooh, ah………"@
+` Ella repentinamente echa su cabeza hacia atrás y arquea su espalda.@
+` La diversión acaba de comenzar, y sus pezones ya se han puesto tan duros como balas.@
+`"…… No puedo…… creerlo…… Shiki-san, yo---"@
+` Con sus labios temblando, retiene su voz desesperadamente.\
+` Mis provocadoras yemas sienten el calor que se eleva en su cuerpo.@
+` Puedo escucharla jadear.@
+` Su respiración--es la misma que tenía cuando estaba montada sobre mí.\
+`"¿……?@ Kohaku, ¿tus senos también son sensibles……?"@
+`"Eh…… no, no----es eso."@
+` Sus palabras se van apagando mientras jadea por aire.\
+`"Haa……… ah, esto es extraño…… yo---"@
+`"Sí.@ Suenas muy… excitada."@
+`"Ah---------"@
+` El sonrojo de Kohaku se profundiza.@
+` Regodeándome en sus reacciones, lamo su cuello una vez más.\
+`"¡………!@ Shiki… san……… Hace… cosquillas---"@
+`"…… ¿Qué es esto?@ Dijiste que no eras sensible aquí.@ Me pregunto qué pasaría si hago esto--"@
+` Sosteniendo su contorsionado cuerpo cerca del mío, libero sus senos.@
+`"Mm--------"@
+` Kohaku jadea en respuesta.@
+` Y entonces---uso mi pulgar y mi índice para apretar un delicado pezón rosa.\
+`"¡¡Ah, ahhh…………!!"@
+` Su cuerpo se sacude.@
+` Mis dedos se mueven con más fuerza.@
+` Sintiendo su placer, aprietan con mayor fuerza, y esta vez utilizo mis uñas.@
+`"…… Mm, haa……… oh…… ah---"@
+` Kohaku exhala enérgicamente.@
+` Esta vez parece que es casi doloroso.\
+`"…… Kohaku-san, ésta es……"@
+` Nunca lo pensé, pero---
+`"¿Es la primera que que te has sentido tan bien……?"@
+`"Ah………………"@
+` Ella deja de respirar por un instante.@
+` Aún mirando hacia abajo avergonzada, hace un ligero asentimiento.\
+`"…… Lo siento.@ Me… siento extraña.@ Sé que debería estar atendiéndole, pero---sólo su toque, hace girar mi cabeza----"@
+` Ella exhala de nuevo.@
+` Como si tratase de sacar todo el calor en su cuerpo por la fuerza, ella toma otro respiro.\
+`"Es extraño, verdad---Nunca… antes… me he sentido… así.@ …… No está pasando nada y… mi cuerpo… está tan caliente---Shiki… san… ¿qué… me ha… hecho?"@
+` Su voz vacila y tiembla.@
+` Me percato de que ni siquiera está parada por sí misma.@
+` Está recostada de mí y siento que si la soltase, se desplomaría.@
+` Sus brazos y piernas cuelgan a sus costados.\
+`"…… Sé sincera, ¿esto se siente bien Kohaku-san?"@
+`"…………………………"@
+` Ella asiente, apenada.@
+`"…… Ya veo.@ Entonces, se pondrá aun mejor.@ Kohaku-san, deshagámonos del resto de tu ropa.@
+`"Ah…………… n, no…………"@
+` Aparento no escuchar su suave negación.@
+br
+` Desatando su obi mientras la sostengo---me deshago rápidamente de lo que estorba entre su cuerpo y el mío.\
+bg "image\bg\bg_40c.jpg",%type_crossfade_mid
+` ---Su cuerpo desnudo es verdaderamente espectacular.@
+br
+` Ver su tímido rostro y sus curvas tiernas y delicadas me hace perder el control.\
+`"Um…… Shiki-san, ¿no va… a quitarse la ropa?"@
+` …… Lo que ella dice es lógico.@
+` Desnudarme ahora expondría aquello que ha estado anhelante por mucho tiempo.@
+`"Pronto.@ Aquí, ven a la cama."@
+` Caminando hacia la cama, me acuesto sobre mi espalda.@
+` Bajo mi cremallera y mi hinchado miembro salta hacia afuera.\
+`"----------"@
+` Escucho su repentina exclamación.@
+` Probablemente está sorprendida de verme erecto tan rápidamente.@
+`"Oye, Kohaku.@ Necesito compensarte, así que ven aquí."@
+` La invito a venir, aún señalándola sin usar mi dedo.@
+`"……………… Sí."@
+` Ella se mete a la cama mientras respira rápidamente.@
+` Es justo como antes.@
+` Ella se dispone a cabalgar sobre mí, cara a cara.\
+`"Ah, así no.@ Pon tu trasero aquí, Kohaku."@
+`"Eh---Shiki-san, ¿¡qué está haciendo………!?"@
+` Kohaku intenta escapar pero mis brazos son mucho más rápidos.@
+` La tomo de las caderas y las halo hacia mi cara.\
+bg "image\bg\ima_10b.jpg",%type_crossfade_mid
+`"¡Shi… Shiki-san, qué está…………………!"@
+`"Te lo dije, voy a compensarte.@ Es tu turno de sentir placer."@
+`"Eh……… a, mm---------"@
+` Agarrando sus tiernas nalgas, hago bajar sus caderas.@
+br
+` Frente a mis ojos,
+` en lugar del techo, el lugar más privado de Kohaku se abalanza sobre mí.\
+`"……… Mm."@
+` Levanto mi cara entre sus piernas.@
+` …… Sólo verla desde este ángulo hace que mi corazón sienta que va a explotar.@
+` Sus deliciosos muslos blancos.@
+` Y entre ellos, sus hinchados labios.@
+` Siento que miel dulce se derramará de esos apasionados petalos si los persuado con mi lengua.@
+` Las sensuales curvas de su trasero añaden otra dimensión de fascinación a sus cautivadores muslos.\
+`"Ah…………… Shiki… san-----"@
+` La voz de Kohaku tiembla.@
+` Debe estar avergonzada por verse tan abierta para mí.@
+` Gotea.@ Una gota de sus jugos salpica sobre mi frente.\
+`"…… Mm…… Kohaku, en verdad te está gustando esto."@
+`"……………………"@
+` Ella no dice nada.@ Todo lo que puedo escuchar es su entrecortada y desesperada respiración.@
+br
+` La asedio con mi lengua.@
+` Estrecho mi lengua y penetro su florida entrada.@
+` Deslizo.@
+` Sus pálidos pliegues rosa se separan para aceptarme.@
+` …… Siento la pasión ardiendo dentro de ella.@
+` Entro muy levemente, como para probar sólo el rocío de sus líquidos.\
+`"¡Huah------oh, nnaah…………………!"@
+br
+` Sus caderas saltan hacia arriba.@
+` Empujando hacia abajo para impedir que escape, esta vez acaricio la superficie exterior.@
+` Mi lengua rueda de arriba hacia abajo.@
+` Lamiendo sus jugos derramados.@
+br
+`"…… Ah…… Haa, mm…………"@
+br
+` Su respiración se hace aun más salvaje.\
+` Armoniza con el sonido que hago al lamer su humedad.@
+` Su respiración alcanza su clímax.@
+br
+` …… Me pierdo por completo mientras le doy placer.@
+` De repente, una sacudida recorre mi columna.\
+bg "image\event\koha_h07.jpg",%type_crossfade_mid
+`"------Ko… haku."@
+` Mi lengua, que estaba masajeando a Kohaku con esmero, se detiene.@
+`"…… Ah……… m, Ha……… Ah."@
+` …… Su respiración gira alrededor de mi erección.\
+` Un nuevo sonido de carne húmeda.@
+` Ahora no soy sólo yo el que expresa su amor físicamente.\
+`"Ha…… Shiki-san---tan cálido."@
+` Kohaku comienza a lamer vorazmente la punta de mi asta.@
+`"--------"@
+` Mi espalda se arquea mientras la sensación me recorre.@
+` Por un momento, dejo de lamerla y me regodeo en el éxtasis que su lengua me provoca.\
+`"N…… mm, ah…………… oh."@
+` Con dulces y cortos jadeos, ella mueve su lengua lentamente a lo largo de mi piel.@
+` Solamente lame mi punta.@
+` Vacilante y lentamente.\
+`"Ko… haku----se siente… tan bien."@
+` Reanudo mi labor.@
+` Mi respiración se hace más profunda mientras su humedad llueve sobre mí.@
+`"¡Mm…………!@ …… Haa…… ah, ha…… Shiki-san, M…… más……"@
+` Susurrando débilmente, me agarra con ambas manos.@
+` Ella tira suavemente de mi resbaloso poste.@
+` Comienza a acariciarme con su lengua una vez más.\
+`"¡Ha------kkk……………!"@
+` Está vez, ella no se contiene.@
+` En total contraste con la vez anterior, no utiliza ninguna técnica especial.@ Sólo sigue los deseos instintivos de su cuerpo.@
+` Esto hace arder mi cuerpo---mucho más que cualquier técnica especial.\
+`"Ah…… nnn…… aah…… oh----"@
+` Su respiración continúa con su entrecortada procesión.@
+` ¿Acaso disfruta tanto el acariciarme?@ Sus dulces jugos continúan fluyendo libremente desde su apasoanado túnel.\
+`"Mm-----, haaa."@
+` Bebo hasta la última gota de ese néctar sensual.@
+` …… No hay razón para esto.@
+` Kohaku, quien me está acariciando.@
+` Kohaku, quien está llenándome de placer.@
+` No quiero perder una sola gota de lo que salga de ella.@
+` Por eso lo reúno todo… con mi lengua… con mi mano.\
+` El sonido del encuentro carnal hace eco en la habitación.@
+` No es sólo el frotar de nuestros lugares apasionados, sino la totalidad de nuestros cuerpos fusionándose.@
+br
+` Sus senos se deslizan sobre mi estómago.@
+` Sus brazos tocando mis costados, sus piernas descansando junto a mi cabeza y hombros.\
+` Deslizar, deslizar, deslizar.@
+br
+` Frotar.@ Sudor, su humedad, mi semen, nuestros cuerpos.@
+` Kohaku jadea contínuamente---su salvajismo se extiende hacia mí.\
+`"-----No puedo, soportar esto."@
+` Sintiendo que mi límite se acerca, miro hacia abajo.@
+` Kohaku traza toda mi asta con sus dedos y los limpia con lengua roja.@
+br
+` ---Desearía que esto pudiese seguir por siempre, pero sé que no puede durar.@
+` La hinchazón en mi ingle se convierte en un ciclón ardiente.\
+`"----Kohaku, acuéstate."@
+` Le digo dulcemente.@
+`"…… ¿Eh…… acostarme……?"@
+` Ella no parece entender pero se mueve para hacer lo que digo.\
+` Se acuesta sobre su espalda.@
+` Apoyándome sobre ella en perfecta simetría, admiro la vista frente a mí.\
+bg "image\event\koha_h06a.jpg",%type_crossfade_slw
+!w2000
+bg "image\event\koha_h06b.jpg",%type_tscroll_slw
+`"………… Ah…………"@
+` Cruzando sus brazos tímidamente, ella me dirige la mirada.@
+` …… Con su piel aún envuelta en las llamas de la pasión, el palpitar en su pecho pinta sus mejillas de rojo.\
+`"…… Shiki…… san.@ Mi, corazón…… está acelerado."@
+` Ella habla con una pequeña voz, casi para sí misma.@
+`"…… Lo sé.@ Kohaku-san, pareces una niña pequeña."@
+` Digo lo primera que aparece en mi cabeza.@
+` Aún sonrojada, ella asiente en respuesta.\
+bg "image\event\koha_h05.jpg",%type_crossfade_mid
+`"…… Esto es, extraño.@ He hecho esto, tantas veces…… pero nunca había sentido esta increíble estrechez en mi corazón."@
+` Por supuesto.@
+` La persona con quien dormía nunca tuvo ningún sentimiento por ella.\
+`"…… Ya veo.@ ¿Es… malo?"@
+`"……………… No.@ Estoy…… tan feliz.@ Que---me da miedo."@
+` Su voz está llena de vacilación.@
+` Ésta no es la Kohaku que sonríe perpétuamente.@
+` Creo que es su verdadera forma de ser.@ No quiero robar este adorable momento.\
+`"Pero, estoy igual de avergonzada.@ …… Cuando me miras de esta manera, mi cuerpo---nunca antes había estado tan caliente."@
+`"…… No deberías.@ Simplemente adoro mirarte.@ …… Pero no se puede evitar.@ Te amo tanto.@ Y quiero hacerte sentir bien."@
+`"…………………… Detente.@ Shiki-san, puedes decir esas cosas tan fácilmente.@ Pero estoy tan avergonzada---ni siquiera sé cómo sonreír en un momento como éste."\
+` Aún sonrojada, ella me mira directamente.@
+br
+` ----Palpitar, Palpitar.@ Mi sangre comienza a acelerarse.@
+br
+` No hay necesidad de más palabras.\
+`"------Kohaku."@
+` Mi cuerpo desciende.@
+` Ella se posiciona tímidamente para aceptarme con los brazos aún cruzados.@
+` Separo sus piernas y bajo mis caderas.@
+`"Mm………"@
+` Ni siquiera he llegado a tocarla y su cara se tensa de dolor.@
+` …… Ella en verdad no sabe cómo responder.@ Su expresión de dolor es una mezcla de anhelo e intranquilidad.\
+`"…… Kohaku, aquí voy."@
+`"……………………"@
+` Ella asiente silenciosamente.@
+` Me detengo justo frente a ella.@
+` …… Entre sus piernas.@
+` Sus muslos tiemblan incontrolablemente y anticipación líquida fluye libremente desde su adorable pozo.@
+` Mi saliva se ha mezclado con su humedad.\
+` Desliiiiizo.@
+` Comienzo a moverme.@
+br
+`"¡Ah…………!"@
+br
+` Su cuerpo reacciona sensitivamente.@
+` Mi punta también ha sido bien lubricada por su saliva.@
+` Entrar no es un problema.@
+` Nuestras pieles comienzan su baile mientras mi punta despeja sus labios inferiores.\
+bg "image\event\koha_h06b.jpg",%type_crossfade_mid
+`"¡……!@ ¡Mm, oh……!"@
+` El cuerpo de Kohaku sube y baja.@
+` …… ¿Está nerviosa?@
+` Está mucho más estrecha que antes.@ Sólo puedo insertar la punta, no puedo ir más lejos.\
+`"…… Kohaku, ¿estás bien……?"@
+`"…… S…… s… í…… Te deseo, Shiki… san---"@
+` Apretando fuertemente las sábanas con sus manos, ella me mira con ojos húmedos.@
+`"-------"@
+` Comienzo a moverme de nuevo.@
+` Muevo mis caderas violentamente como para romper su estrechez.\
+`"¡……!@ ¡Ah, ha-----oh-----!"@
+` Ella levanta su cabeza.@
+` Palpitar.@ Mi pulso recorre mi cuerpo a máxima velocidad.@
+` …… La apretada carne de Kohaku se transforma en numerosos pliegues exprimidores.\
+`"------"@
+` Esta sensación es casi una tortura.@
+` Hay algo mal en la manera en que ella se siente.@
+` El agudo y ardiente placer no parece venir de mis testículos, sino desde atrás, y sube disparado por mi columna.\
+`"¡Tss…… ah, ha, ah------!"@
+` Resistiéndolo, muevo mis caderas.@
+` …… Sin importar qué, voy a penetrar hasta su centro.@
+` Comienzo a entrar y salir de ella, sin alcanzar su centro todavía.@
+br
+` Penetro, aprieta, penetro, aprieta.@
+` Los sonidos de nuestra carne y nuestros fluidos se mezclan para crear una gloriosa cacofonía.\
+`"----……… ¡Ko… haku--------!"@
+`"¡S, sí---Shiki-san, yo----oh, ah, ahh………!"@
+` Su espalda comienza a arquearse.@
+` Al mismo tiempo, el placer se incrementa.@
+` El placer me hace apretar los dientes en desesperación.@
+` Ella aún no ha llegado al orgasmo, así que sin importar qué, no puedo acabar ahora.\
+` …… Pero, sinceramente, ¿por qué se siente tan bien?@
+` Dentro de ella hay un mundo de contradicciones.@
+` Está muy mojada, pero me está apretando como una plancha.@
+` Sus ondulaciones y rotaciones en espiral causan ondas de placer que se estrellan conmigo.@
+` Cada giro de su tierna piel se siente completamente diferente.\
+`"¡Ah---gg, ah……………!"@
+` A pesar de esto, Me fuerzo a continuar sin rendirme ante las sensaciones que me asedian.@
+`"¡N, ngh, ah-----!"@
+` …… Su dulce voz.@
+` Pero, ella no es… la única que… está resistiendo algo.@
+` En otras palabras, yo estoy…
+` Esta sensación.@ El cálido envolvimiento de Kohaku----\
+bg "image\event\koha_h08.jpg",%type_crossfade_mid
+`"¡-----Ha-----ah, …………!"@
+br
+` Sin ceder bajo el peso de la sensación acumulándose dentro de mí, continúo moviendo mis caderas.\
+`"¡M, ah, mm…………!"@
+br
+` Su cuerpo salta desesperadamente.@
+`"-------"@
+` Nuestros cuerpo aún están fusionados.@
+` Penetro con más fuerza.\
+`"¡Ha, ah……!@ ¡Shiki… san---más… suave---!"@
+` Traicionando a sus palabras, su cuerpo se retuerce y me asalta con una pasión que amenaza a mi cordura.\
+`"¡Ha-----ah, Koha… ku----!"@
+` Deslizar.@ Deslizar.@ Deslizar.@
+` Enloquezco.@ Entro para recibir el éxtasis; salgo para escapar de la euforia.\
+`"¡Ha…………, ah, n…………!"@
+` Un baile sin fin.@
+` Nuestros fluidos cubren nuestros cuerpos.@
+`"¡Haa, ah……!@ ¡¡¡Más profundo---más profundo……………!!!"@
+` Más.@
+` Con más fuerza.@
+` Hasta que alcance su centro.@
+` ¡No puedo parar hasta que toque cada pequeña parte de ella---!\
+`"¡¡Ha-----AH…………!!"@
+` La perforo salvajemente, como si no pudiese contener nada.@
+`"¡Hua----ah, Shiki… sannnnnnn!"@
+` Gradualmente, su voz llega a estar completamente ahogada en pasión.@
+` …… Sus piernas abiertas envuelven mi espalda ferozmente y me empujan más profundamente.\
+`"¡¡¡¡No---detente, voy a-----estoy…… ha, ahhh………!!!!"@
+` A ella no parece quedarle mucha energía.@
+` Aprieto sus manos y resisto desesperadamente el inminente final----\
+`"¡Ha---ha----ah, ha----!"@
+` Una sacudida me recorre.@
+` Golpea profundamente dentro de mi cerebro.@
+`"¿¡Ha---n, ah, ha-----!?"@
+` Pero---finalmente, penetro en lo más profundo de ella.@
+` Su figura ahora se retuerce por el éxtasis.@
+br
+` El ciclo continúa.@
+` Habiendo obtenido mi premio, penetro hasta su centro, una y otra y otra vez.\
+`"¡A----oh---Shiki… sa… n----!"@
+` Me hundo.@ Kohaku se eleva para encontrarme.@
+`"¡Ha----Kohaku, voy a acabar---!"@
+` Aprieto mis dientes.@
+`"¡Sí---!@ Acaba-acaba dentro de mí, Shiki----!"@
+`"¡----------!"@
+` Empujo mis caderas con toda mi fuerza.\
+bg #ffffff,%type_crossfade_fst
+bg "image\event\koha_h08.jpg",%type_crossfade_fst
+`"¡---Ngh, n, AhaaAaAa----!"@
+br
+` Un último empujón.@
+` ¡Palpitar!@ Mi palpitante asta explota mientras acabo profundamente dentro de ella.@
+br
+`"Ha---ah…… Ah-------"@
+br
+` Los labios de Kohaku se abren y cierran, abren y cierran.@
+` ----Y.@
+` Ella cae completamente agotada sobre la cama.\
+bg #000000,%type_crossfade_mid
+!w2000
+playstop
+bg "image\bg\bg_40c.jpg",%type_crossfade_mid
+`"-----------Ah."@
+` Mi cuerpo cae sobre el suyo.@
+` ---Ella yace inmóvil, como si durmiese.@
+` …… ¿No estoy igual?@
+` Estoy exhausto.@
+` Mi cuerpo aún no ha recuperado toda su energía---y el placer fue inmenso.@
+` Sobrepasé los límites de mi cuerpo, y aquí estoy, desplomado.\
+`"………… Tengo sueño."@
+` Recobro el aliento junto a ella.@
+` …… Mi consciencia se nubla.@
+` El perfil de Kohaku se mueve al ritmo de su respiración.@
+`"…………………………"@
+` Y sólo con eso---me siento relajado.@
+` Me acuesto sobre mi espalda y miro el techo inexpresivamente…… no puedo quedarme dormido ahora porque sería un desperdicio.@
+` Quiero seguir sintiendo su suave respiración, y resisto la ganas de dormir----\
+bg #000000,%type_crossfade_mid
+!w3000
+mov $phasebg,"image\bg\ima_02.jpg"
+mov $phasetitle_a,":a;image\word\PKOHA_11A.PNG"
+mov $phasetitle_b,":a;image\word\day_11.png"
+gosub *left_phase
+bg #ffffff,%type_nowaitdisp
+!w1000
+bg "image\bg\bg_40d.jpg",%type_crossfade_mid
+play "*8"
+` Miro el techo inexpresivamente mientras continúo acostado en la cama.@
+` Kohaku está acurrucada junto a mí.@
+` …… Sólo puedo escucharla respirar suavemente.@ Probablemente está dormida.\
+`"------"@
+` Extiendo mi mano y la cierro para formar un puño.@
+`"---Muy bien."@
+` Ya no siento ningún dolor o torpeza.@
+` …… Siento que su calidez persiste a mi alrededor.@
+` Aún no me ha llenado por completo, pero puedo sentir que mi energía se incrementa gradualmente.@ Pronto podré moverme como desee.@
+` No tiene caso ir corriendo a la habitación de Akiha, así que hasta entonces---quiero quedarme aquí con Kohaku-san.\
+`"-----Shiki-san."@
+` …… Desde muy cerca.@
+` Escucho la voz de Kohaku-san.\
+`"…… Ah, por favor no respondas.@ Sólo quiero decir algo.@ Expresaré mis pensamientos, así que sólo escucha, por favor."@
+` Su voz es extrañamente serena.@
+`"……………"@
+` Asiento en silencio y continúo mirando el techo.@
+` Puedo sentir que su mirada se desvía hacia mí.\
+`"…… No soy la chica que piensas.@ No tengo un sentido de mi propia identidad, incluso esto podría ser simplemente otra actuación."@
+`"……………………"@
+`"Hace mucho tiempo, siempre era callada.@ No entendía por qué las personas sonreían o arrugaban la cara, y nunca pude descubrir el significado de esas cosas.@
+` …… Pero creo que tenía una forma de ser.@ Hasta que fui traída a esta mansión, en verdad estaba viva."\
+`"…… Después de venir aquí, fui forzada a conocer un dolor insoportable.@ Creo que eso es lo que destruyó mi verdadera identidad.@
+` Me convertí en una muñeca que simplemente estaba ahí.@ Era más soportable, y era la única manera en que podía sobrevivir."\
+`"Pero, a pesar de todo, eso no resolvió nada.@ Así que--busqué un propósito y comencé a actuar para cumplir con mi propósito.@
+` Era una muñeca sin ninguna identidad, así que si vestía la ropa adecuada, podía convertirme en cualquier persona.@
+` …… Pero, aunque me convirtiese en otra persona, era sólo una actuación.@
+` Podía reír o llorar.@ Pero no podía entender si estaba realmente feliz o triste."\
+`"…… ¿No es gracioso?@ Para protegerme a mí misma, deseché mi identidad y me convertí en una muñeca.@
+` Pero mientras más hago eso, más averiada resulto.@
+` Me volví buena para actuar, experta para mentir, y podía engañar a cualquiera con mi sonrisa.@ Pero mientras trato de cumplir con mi propósito de esa manera, continúo perdiendo la identidad que quería proteger.@
+` ¿Qué es la felicidad?@
+` ¿Qué es esta cosa llamada tristeza?@
+` …… Me volví incapaz de recordar siquiera el significado del dolor."\
+`"Pero cuando recordaba una cosa, mi corazón se agitaba.@
+` Cuando recordaba a ese chico que desapareció hace ocho años, tenía este sentimiento que no podía entender.@
+` Ese chico que siempre estaba jugando en el jardín, que no sabía nada sobre mí pero me invitaba con sus ojos.@
+` No me agradaba y tampoco lo odiaba, sólo tenía miedo.@
+` …… Después de esforzarme tanto para convertirme en una muñeca que pudiese soportar el dolor, sentía que podía percatarme de que todo era una ilusión cuando observaba a ese chico."\
+`"…… Cuando ese chico perdió la vida en el jardín, yo estaba observando tras la ventana.@
+` Murió para salvar a una chica con quien ni siquiera tenía lazos de sangre.@
+` No podía apartar mis ojos de esa escena.@ El reflejo de mi cara en el cristal era aterrador.@
+` …… Fue la primera vez que odié a alguien.@
+` Porque en verdad estaba frustrada.@
+` Lo odiaba a él y sólo a él.@ Lo odiaba hasta el punto de las lágrimas.\
+`"…… No odio a Makihisa-sama.@ En realidad no sentía nada por él.@ …… Por SHIKI-sama, que asesinó a ese chico, o Akiha-sama, que fue salvada por ese chico, no sentía absolutamente nada."\
+`"---Supongo que sólo estaba desahogándome con alguien.@
+` Porque no podía entender por qué había hecho eso.@
+` Simplemente seguí mirando su desechado y ensangrentado cuerpo.@
+` …… ¿Acaso valoraba a alguien más que a su propia vida?@ De otro modo nunca habría protegido a Akiha-sama de esa manera.@
+` Pero…… si podía hacer eso, ¿por qué nunca me ayudó?@
+` ¿Por qué----por qué las personas a mi alrededor no eran tan amables como él?"\
+`"…… No sé qué era ese sentimiento.@
+` Pero en mis días sin emoción, sólo ese chico brillaba."@
+br
+` Lentamente, Kohaku se levanta.\
+bg "image\event\koha_e07.jpg",%type_crossfade_mid
+`"Pero, eso es todo.@
+` No entiendo este sentimiento de ahora.@
+` Estoy muy feliz en este momento, pero eso podría ser otra farsa, ¿verdad?@
+` Oye, ¿eso está bien, Shiki-san?@
+` Creer en mí, alguien que no sabe si te ama como tú me amas."\
+`"¿No lo dije antes?@ Ni siquiera sé qué tipo de persona soy.@ Ya que soy sólo una muñeca, puedo convertirme en la Kohaku que yo desee.@
+` Así que, esta Kohaku que dices que amas, no soy yo, es sólo----"@
+br
+` Podría ser otra Kohaku falsa.@
+br
+` Ella habla con una sonrisa de satisfacción y una voz vacilante.\
+bg #000000,%type_crossfade_fst
+br
+br
+br
+br
+br
+br
+br
+` ----Pero.@
+`    Eso nunca podrá ser verdad.\
+bg "image\event\koha_e07.jpg",%type_crossfade_mid
+`"…… Eso no es verdad.@ Actuar o engañar, no tienen nada que ver.@ Tú eres tú.@
+` …… Una persona verdaderamente malintencionada no puede aparentar ser verdaderamente bondadosa.@ Sin importar cómo actúes, sigues siendo la misma por dentro, Kohaku-san."@
+br
+` …… Es cierto.@
+` Aunque sea sólo una actuación, Kohaku-san parece estar divirtiéndose mucho.@
+` Eso significa que está disfrutando de ese papel.@ Era su sueño que podía volverse realidad si ella en verdad lo deseaba.\
+`"…… Sí, aunque todo fuese una mentira.@ Seguiría queriendo a la otra Kohaku-san.@ Definitivamente."@
+`"----------"@
+` Kohaku-san asiente felizmente.\
+`"Es verdad.@ Pensé que dirías eso."@
+` Sus labios se acercan.@
+`"Eh-----"@
+` Ella lanza un ataque sorpresa y me besa.@
+` Su lengua desliza algo dentro de mi boca.@
+` Siento algo duro.@
+br
+`"Uu----mph."@
+` Algo desciende por mi garganta.\
+`"O, oye---Kohaku-san, ¿qué me hiciste tragar-----?"@
+bg #ffffff,%type_crossfade_fst
+bg "image\event\koha_e07.jpg",%type_crossfade_fst
+` ………… ¿Huh?@
+` Algo, se siente…… muy bien.@
+` El siempre presente dolor en mi cuerpo desaparece, y la soñolencia me domina---\
+`"Oye, Shiki-san.@ Tengo una última pregunta para ti.@ ¿Cuál 'Kohaku' te gusta más?"@
+` Su voz cercana pero a la vez distante.@
+`"Mm-----"@
+` Me siento débil.@
+` Aun así…… tengo que responderle.\
+`"…… No lo, sé.@ …… Pero, me gusta esta Kohaku."@
+` Hablo como si estuviese en un sueño.@
+` Ella me mira totalmente sorprendida.@
+br
+`"Sí.@ A mí también me agradó más esta Kohaku."@
+br
+` Con una incomparable sonrisa, ella se levanta silenciosamente.\
+playstop
+bg "image\bg\bg_40d.jpg",%type_lshutter_mid
+` El sonido de un kimono.@
+` Debe estar poniéndoselo fuera de la cama.@
+br
+`"Bien, entonces Shiki-san.@ Tengo que asumir responsabilidad por lo que he hecho."@
+br
+` Con una sonrisa---una totalmente distinta a cualquiera que le haya visto, su verdadera sonrisa, ella deja la habitación.\
+`"---¿Qué estás, haciendo, Kohaku----"@
+br
+` Mi consciencia parpadea.@
+` …… ¿Qué está, sucediendo?@
+` Mi cuerpo finalmente ha sanado, pero esta vez mi mente, se está, desvaneciendo----\
+bg #000000,%type_crossfade_mid
+bg "image\bg\bg_40d.jpg",%type_nowaitdisp
+`"¿¡Qué estoy haciendo………!?"@
+` Me obligo a despertar.@
+` ---Kohaku.@
+` ¿¡Qué fue lo que dijo cuando se fue!?@
+br
+` --Tengo que asumir responsabilidad por lo que he hecho--
+br
+`"…… ¡Debes estar bromeando……!@ ¿Por qué--"@
+` ¿¡Por qué trata de hacerlo todo por sí sola……!?\
+` No hay necesidad de seguir actuando ni de esconder nada.@
+` Haría cualquier cosa por ella, ¿entonces por qué---por qué está tratando de ir sola?@
+` Forzándome a dormir---¿¡será que estaba preocupada por mí……………!?@
+`"En verdad está---comenzando a enfurecerme---"@
+` Me levanto de la cama.@
+` …… El escritorio está muy lejos.@
+`"…… Maldición…… ¿qué tipo de droga, me dio?@ …… Tengo que ir, a su habitación y---"@
+` Tengo que registrar su habitación y llevarme todas sus medicinas---\
+`"Aah……… ah, ah----"@
+` Camino de alguna manera y caigo sobre el escritorio.@
+` Mi cuchillo está sobre éste.@
+` Debo haberlo puesto ahí después de sacarlo del cajón----\
+bg #000000,%type_crossfade_mid
+bg "image\bg\bg_40d.jpg",%type_nowaitdisp
+`"……………"@
+` Mierda.@ Volví a quedarme dormido.@
+` …… ¿Qué es esta fuerte soñolencia?@
+` Sin importar cuánto me esfuerce para combatirla, no tiene caso.\
+`"……… Maldición……… Kohaku-san, pagarás por esto----"@
+` Agarro mi cuchillo.@
+` ¡Kachink!@ La cuchilla sale volando.@
+` La tomo y---
+br
+!w500
+` Rayos, esto va a ser extremadamente doloroso.@
+!w500
+br
+` ---Pensando eso, perforo la uña de mi dedo medio.\
+quakey 2,50
+`"¡Gggah---------------!"@
+` El agudo y punzante dolor viaja directamente hacia mi cerebro.@
+`"¡Ja---toma eso!"@
+` Saco el cuchillo de mi uña.@
+` Cada vez que mi dedo siente dolor, la soñolencia desaparece.@
+` Cubriendo mi dedo con un pañuelo, detengo el sangrado.\
+`"………… Bueno, si eso es todo."@
+` No me impedirá sujetar mi cuchillo.@ …… En realidad todo lo que necesito es sostenerlo.@ Ni siquiera necesito la fuerza física requerida para atravesar las cosas.@
+`"¡Maldición, no hagas ninguna tontería, Kohaku--!"@
+` Tiro el cuchillo en mi bolsillo y salgo volando de la habitación.@
+` No puedo dejar que Kohaku-san y Akiha se enfrenten.@
+` Si no puedo prevenir eso, ocurrirá algo que nunca podrá ser reparado---\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_36d.jpg",%type_lcartain_mid
+` Entro explosivamente.@
+`"¡Kohaku-san…………!"@
+` …… No hay nadie en la habitación.@
+` Ni Kohaku-san ni Akiha.@
+`"------¿¡Están en la otra pieza!?"@
+` Corro hacia el dormitorio, pero tampoco están ahí.@
+`"¿Adónde----adónde fueron?"@
+` Dirijo la mirada hacia el reloj.@
+` Dice---más de medianoche.@ Ya es mañana.\
+`"-----No puede ser."@
+` ¿Cuándo pasó eso?@
+` Sé que perdí la pista del tiempo cuando estaba haciendo el amor con Kohaku-san, pero no pensé que ya fuese tan tarde.@
+`"A esta hora, Akiha está----"@
+` Bebiendo sangre en las calles.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_32d.jpg",%type_lcartain_mid
+` Dejo la mansión.@
+` No hay tiempo que perder.@
+` Kohaku-san salió para detener a Akiha.@
+` Pero no creo que Akiha vaya a escuchar lo que Kohaku-san tenga que decir.@
+` …… Akiha no es normal en este momento.@ En el peor de los casos, verá a Kohaku-san como un obstáculo que necesita ser retirado.\
+`"¿No podrá estar en----la escuela……?"@
+br
+` Aquel sueño en que bebía la sangre de alguien sucedió después de que SHIKI fuese asesinado por Akiha.@
+` No sé cómo sucedió, pero si eso es lo que Akiha estaba viendo, significa que Akiha ha convertido a los terrenos de la escuela en su comedor, al igual que SHIKI.@
+` Entonces---a esta hora, Akiha, que es un demonio chupasangre, definitivamente debe estar ahí---\
+bg #000000,%type_lcartain_fst
+!w2000
+bg "image\bg\bg_01c.jpg",%type_lcartain_fst
+play "*9"
+` ---Y regreso a este lugar.@
+br
+` Hay silencio.@
+` El gigante edificio bañado por la luz de la luna no parece un edificio que alberga a cientos de estudiantes.@
+br
+` ---Por un largo tiempo.@
+br
+` Parece una tumba monolítica abandonada hace mucho tiempo, olvidada por la memoria, olvidada por el tiempo.@
+bg #9c0120,%type_crossfade_fst
+bg "image\bg\bg_01c.jpg",%type_crossfade_fst
+`"-------"@
+` Mi cabeza comienza a palpitar ligeramente.@
+` La ignoro y atravieso las puertas.\
+wave se0
+bg #000000,%type_lshutter_fst
+monocro #ff0000
+bg "image\bg\bg_03c.jpg",%type_lshutter_fst
+` Mi dolor de cabeza se multiplica en intensidad en el instante en que entro.@
+` Todo mi mundo se tambalea.@ Mi corazón despierta.@ Mis dedos tiemblan en anticipación a la batalla.@
+`"------Ella está aquí."@
+` Qué despreciable.@
+` Sólo el olor de la sangre cuelga del aire.@
+` El aire está lleno de calor y arde sobre mi piel.@
+` El viento está muerto.@ El aire estancado se transforma en una jaula roja de descomposición.\
+` Veo incontables hebras de cabello rojo cuando miro más allá de mis lentes.@
+` El cabello rojo impregna los terrenos escolares y el edificio como la red de una araña de mil años, no hay un solo hoyo para dejar escapar a su presa.\
+`"Akiha---tú---"@
+br
+` Este lugar ya es un mundo diferente.@
+` No es un mundo al que un humano debería entrar.@
+br
+`"¿Has llegado tan lejos?"@
+br
+` Mi dolor de cabeza no desaparece.@
+` El agudo dolor de mi uña cortada.@
+` Mi corazón sigue un ritmo de placenteros sollozos.\
+monocro off
+bg "image\bg\bg_03c.jpg",%type_crossfade_fst
+` Me quito mis lentes y aprieto mi cuchillo.@
+` …… ¿Cuánto tiempo ha pasado desde la última vez que vi estas "líneas"?@
+` Nunca pensé que me quitaría los lentes que me dio Sensei por mi propia voluntad.@
+` Ni siquiera en sueños pensé que las usaría para enfrentar a mi hermana menor.\
+`"-------"@
+` No tengo tiempo para quejarme.@
+` Todo está preparado.@
+` Lo único que me queda es cortar a través de este Cerrojo de Cabello.\
+playstop
+bg #000000,%type_lshutter_mid
+bg "image\bg\bg_10c.jpg",%type_lshutter_mid
+play "*4"
+br
+br
+` ---Ardiente.\
+` Al entrar, la temperatura es aun más alta.\
+bg #000000,%type_lshutter_mid
+bg "image\bg\bg_07b.jpg",%type_lshutter_mid
+br
+br
+br
+br
+` -----Ardiente.\
+` Sé lo que es este calor.@
+` Lo vi en el sueño.@ El vampiro que atacó a una mujer joven entró a los terrenos escolares, y entonces----\
+bg #000000,%type_lshutter_mid
+bg "image\bg\bg_11c.jpg",%type_lshutter_mid
+br
+br
+br
+br
+br
+br
+` --------Ardiente.\
+` Arrastrando ese cuerpo, entró en aquel lugar.@
+` El salón que el asesino SHIKI solía utilizar.@
+` La luna plateada mira al acusado con desprecio, como una serpiente.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_06c.jpg",%type_lcartain_mid
+br
+br
+br
+br
+br
+br
+br
+br
+` ----------Ardiente.\
+` En este salón.\
+playstop
+`"…………… Akiha."@
+` Me lleno de náuseas tan pronto como entro.@
+` Entre los pupitres yacen cuerpos inconscientes de chicas.@
+` Una, dos……… tres.@
+` Todas han perdido la consciencia por completo.@
+` En sus cuellos hay rastros de sangre.@
+` En el centro de todo, ese "monstruo" de cabello rojo está riendo.\
+play "*9"
+ld c,":a;image\tachi\aki_t28.jpg",%type_lshutter_mid
+`"Oh, Nii-san.@ ¿No podías esperar hasta mañana?"@
+` Ella me saluda sin un solo indicio de malevolencia.@
+br
+` ---Palpitar.@
+br
+` Soy asaltado por ese impulso tan pronto como la veo.@
+` Desesperadamente, retengo el impulso con toda mi fuerza.\
+`"-----"@
+` La luz de luna que entra por la ventana la ilumina.@
+br
+` ---Palpitar.@
+br
+` No he dado un solo paso desde que entré al salón.@
+` …… Mis instintos me gritan que esto es malo.@
+` Esa cosa es algo que está más allá de lo que esperaba.@
+` La Akiha que exterminó a SHIKI no es nada comparada con ésta.\
+`"Estoy sorprendida.@ Se supone que no puedes caminar, pero te forzaste para venir a verme.@
+` …… Estoy feliz.@ Supongo que finalmente entendiste mis sentimientos."@
+` Su voz está llena de felicidad.@
+br
+` ----Pal, pitar.@
+br
+` Mi razón grita.@
+` Tohno Shiki no puede ganar en contra de esa cosa.@
+` Así que no puedes hacerla enojar.@ No dejes que sea tu enemiga.@ Si haces eso, seguramente serás aniquilado.\
+` ----Palpi, tar.@
+br
+` Aun así---no puedo huir ahora.@
+br
+`"---Akiha, ¿dónde está Kohaku-san?"@
+br
+ld c,":a;image\tachi\aki_t11c.jpg",%type_crossfade_fst
+` El aire se tensa por su apabullante presencia.@
+` Ella aprieta sus dientes con desagrado.\
+`"Está por allá.@ No sé qué estaba pensando, pero ahora está recibiendo su castigo por levantar una mano en mi contra."@
+` Ella mira hacia la pared junto a mí.@
+`"¿----?"@
+` Sigo su mirada.@
+cl c,%type_crossfade_fst
+br
+` Sobre la pared---está la figura crucificada de Kohaku-san.\
+`"Qué------"@
+` Su cuerpo está flotando en el aire.@
+` No, eso es lo que cualquier otro pensaría.@
+br
+` Pero----\
+wave se0
+` ----Pal, pitar.@
+br
+` Mis ojos pueden ver lo que la mantiene atada.@
+` Su cuerpo está clavado contra la pared por algo parecido a cabello rojo.@
+br
+` El cabello se tensa de manera chirriante alrededor de sus brazos y piernas.@
+` …… ¿Se ha desmayado?@ Su cabeza está colgando---en verdad parece una mariposa atrapada en una telaraña.\
+ld c,":a;image\tachi\aki_t28.jpg",%type_crossfade_fst
+`"¿No te parece extraño?@ Suspenderse así de la pared es una gran hazaña, ¿no crees?"@
+` Akiha ríe tontamente.@
+`"Pero no te preocupes Nii-san.@ Yo no mato gatos que me muerden una vez.@ Una vez que reciba su castigo, la perdonaré."@
+`"Qué------"@
+br
+` ----Palpi, tar.@
+br
+` Todo se vuelve confuso.@
+` La figura afligida de Kohaku y la figura roja de Akiha coinciden, y todo pensamiento racional está desapareciendo---\
+`"Pero déjame advertirte.@ No siento afección por las mascotas que me muerden.@ Supongo que ya no la tendré en mi corazón.@
+` Así que no habrá una segunda vez.@ No necesito a nadie que no sea mío.@
+` …… Oye, Nii-san.@ Puedo ser muy cruel con aquellos que me traicionan."@
+` Un sonido de tensión alcanza mis oídos.@
+` El cabello rojo que ata los brazos y piernas de Kohaku-san se tensa aun más, como para arrancar sus extremidades.\
+`"¡Akiha, tú----!"@
+cl c,%type_crossfade_fst
+` Corro hacia la pared.@
+` El cabello que ata a Kohaku-san no puede ser tocado.@
+` …… Es sólo una extensión de su cabello, sólo lo que Akiha está imaginando.@
+` Manteniendo a Kohaku-san en su campo visual, Akiha la está clavando a la pared con su fuerza de voluntad.\
+` ----Pal, pi, tar.@
+br
+` …… El poder que fluye parece cabello rojo.@
+` Eso es algo que ni siquiera ella puede ver.@
+` De repente pienso…@
+` Mis ojos, ¿no fueron diseñados específicamente para este tipo de cosas?@
+` Y al enfrentar la muerte tantas veces, ¿no han percibido el verdadero concepto de la muerte----\
+`"¡Tch-----!"@
+` Olvídalo, eso no importa ahora.@
+` Si puedo verlo, entonces no hay nada que no pueda cortar.@
+` ¡No puedo dejar que este cabello rojo haga lo que desee con Kohaku-san……………!\
+wave se12
+bg "image\bg\ima_14.jpg",%type_lshutter_fst
+` ----Agito mi cuchillo.@
+` Quizás porque mi corazón está latiendo tan rápido.@
+` Mi cuchillo ataca con una velocidad que incluso a mí me sorprende.\
+` No se siente como si cortase a través de algo.@
+` Mi cuchillo se desliza a través del cabello rojo con velocidad y precisión, como si simplemente segara el aire para cosecharlo.@
+` Antes de darme cuenta,
+` he cortado todo el cabello que ataba a Kohaku-san en un respiro.\
+bg "image\bg\bg_06c.jpg",%type_lshutter_fst
+` Su cuerpo cae.@
+`"-------"@
+` La atrapo y toco sus mejillas.@
+` Aún está cálida.@ Su respiración es débil pero no se ha detenido.@ …… Sólo puedo ver unas pocas "líneas" sobre su cuerpo.@
+` Suelto un suspiro de alivio.@
+` La coloco en el suelo.@
+` ---Gracias al cielo.\
+` Si algo sucedía…… gracias al cielo está a salvo.@
+`"¿Nii-san----qué, qué rayos fue eso----"@
+` …… Su voz está temblando.@
+` Volteo para encararla, sujetando mi cuchillo con una mano.@
+ld c,":a;image\tachi\aki_t29.jpg",%type_crossfade_fst
+`"---------"@
+` Ella me mira y ahoga un grito.@
+` Llevando una mano a su boca con incredulidad, ella mira mis ojos.@
+`"----Qué hermosos----ojos, azules."@
+`"¿………… ?"@
+`"¿Cómo es posible---?@ No debería quedarte nada de fuerza----"@
+` El asombro impregna su voz.@
+`"¿Acaso…… tú…"@
+` Akiha tiembla.\
+`"Nii-san, ¿tú----hiciste un contrato con Kohaku?"@
+` Su voz tiembla.@
+` No está llena de odio, sino más bien de tristeza.@
+`"……………"@
+`"…… Esto no puede ser.@ Significa que no me escogiste a mí, sino a---"@
+` Ella se tambalea.@
+cl c,%type_crossfade_mid
+` Se inclina sobre la ventana con ojos llenos de paralizante sorpresa.@
+` Su rostro está pálido y pareciera que fuese a vomitar---\
+`"¡Uu……… ah, eh------agh!"@
+br
+` ---No, en verdad lo hace.\
+playstop
+`"¡Ah----, ghuu……………………!"@
+` Vomita como si estuviese llorando.@
+` Con su cabello rojo ondulando, esconde su cara de angustia mientras continúa vomitando.@ Es casi como si estuviese dejando salir sus gritos.\
+play "*4"
+br
+`"---¡Gata Ladrona!@ Debí haberte matado."@
+br
+` "Es cierto," dice ella mientras observa la figura inconsciente de Kohaku-san.@
+` Entonces ríe extrañamente desde el fondo de su corazón.\
+ld c,":a;image\tachi\aki_t28.jpg",%type_crossfade_fst
+`"¿Esto es lo que planeas hacer, Nii-san?@
+` ¿Viniste aquí para traicionarme y entonces acabar conmigo?@
+` …… Increíble.@ No estabas satisfecho con traicionarme una vez, así que le pediste ayuda a Kohaku-san y viniste para matarme de nuevo.@ Qué meticuloso eres."@
+` Su risa llena el salón.@
+` La temperatura del salón se eleva con ella.\
+wave se0
+` ----Pal, pi, tar.@
+br
+` Por un lado mi corazón está enfurecido, y por el otro la razón me grita advertencias.@
+` Las órdenes de "matar" y "escapar" colisionan.\
+`"¡Estúpid---no es eso……!@ ¡No vine aquí para matarte……!"@
+`"Mentiroso.@ Dormiste con Kohaku, ¿no?@
+` Así que ya no necesitas ayudarme, ¿cierto?@ ¿No es por eso que viniste aquí?"\
+`"¿Qué acabo de decir……!@ ¡Dije que no vine para matarte, sólo para impedir que sigas bebiendo sangre………!@
+` Estabas haciendo esto para ayudarme, ¿no?@ Ya no tienes que hacerlo.@ …… Mi cuerpo ya está bien.@ Mientras Kohaku-san esté cerca, yo----"\
+`"¿Pretendes desecharme ahora?@
+` Jah…… En verdad debo parecer estúpida.@ Te tenía tanto cariño, te amaba tanto----pero tú ni siquiera piensas en mí."@
+`"¿Desecharte?@ No digas estupideces.@
+` …… Eres muy preciada para mí.@ Lo---lo que tú quieras, yo---"@
+` No puedo decir las palabras "lo haré."@
+` Sé bien lo que ella quiere.@
+` Pero, no puedo hacer eso.@ No puedo traicionar a Kohaku-san otra vez.\
+ld c,":a;image\tachi\aki_t31.jpg",%type_crossfade_fst
+`"---Mentiroso.@ No necesito a alguien como tú."@
+br
+` Todo el salón grita.@
+` El aire está ardiendo.@ Su cabello rojo se expande sin límites.@
+` Esto, es un poder, abrumador.\
+play "*6"
+`"Ah--------"@
+` Comienzo a tambalearme.@
+` Inconscientemente, mis piernas retroceden.\
+br
+wave se0
+` ---Palpitar.\
+`"Te lo dije, Nii-san.@ No necesito mascotas que me muerdan."\
+br
+br
+br
+wave se0
+` ---Palpitar.@ Palpitar.\
+`"…… Nii-san.@ Para mí, en verdad eras la persona más importante del mundo.@ Pero eso ha terminado.@
+` Porque, sin importar cuánto te anhele, si nunca puedo tenerte, ¿no eres sólo una gran molestia?"\
+br
+br
+br
+br
+br
+wave se0
+` ---Palpitar.@ Palpitar.@ Palpitar.@
+`"---Así que, te mataré, Nii-san.@
+` Eres lo más importante para mí, así que no dejaré que nadie te posea."\
+br
+br
+br
+br
+br
+br
+br
+wave se0
+` ---Palpitar.@ ¡Palpitar Palpitar Palpitar Palpitar……!\
+cl c,%type_crossfade_fst
+`"A---Aki, ha."@
+` No puedo respirar.@
+` El aire en el salón es como un horno, quemando el interior de mis pulmones.@
+` Alrededor de Akiha está ese titilante espejismo.@
+` Mi corazón.@ Incluso ahora, los impulsos de escapar y matar siguen enfrentándose.\
+ld c,":a;image\tachi\aki_t28.jpg",%type_crossfade_fst
+`"Cielos, ¿qué sucede, Nii-san?@ Estoy siendo generosa.@ Si me pongo seria, todo terminaría, así que al menos tengo que dejarte hacer algo, ¿cierto?@
+` Vamos, ¿no vendrás a cortarme como lo hiciste cuando salvaste a Kohaku?"@
+`"¡Tss……………!"@
+` Su sonrisa no desaparece.@
+` La sensación homicida en el aire casi me hace querer vomitar.@
+` Akiha, está completamente----\
+`"…… Ya veo, eres muy débil, Nii-san.@ Ni siquiera puedes obligarte a matarme.@
+` Pero yo soy diferente.@ No puedo evitar desear matarte.@
+` …… Porque me he estado conteniendo por mucho tiempo.@
+` Tu sangre, tu carne, tu calor, tu figura, todo.@ Siempre soñé con hacerte totalmente mío y sólo mío."@
+cl c,%type_crossfade_fst
+` Mientras tiembla, mientras su cuerpo tiembla con cada palabra, ella sonríe con placer.\
+` ---Siento como si mi corazón hubiese enloquecido.@
+br
+` Esta cosa frente a mí, ya no es---la Tohno Akiha de antes.@
+wave se0
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_06c.jpg",%type_crossfade_fst
+` Tengo dolor de cabeza.@
+` Siento como si fuese a partirse.@
+` El dolor saca todo pensamiento de mi cabeza.\
+wave se0
+br
+br
+br
+br
+br
+br
+br
+br
+br
+` ---Estoy a punto de enloquecer.@
+br
+` Mi cabeza.@ Si mi cabeza duele tanto, voy a---
+` Voy a enloquecer, y desearé, pelear con Akiha hasta la muerte----\
+ld c,":a;image\tachi\aki_t28.jpg",%type_crossfade_fst
+`"Bien, entonces peleemos a muerte, Nii-san.@ Las familias Tohno y Nanaya siempre han tenido esa conexión.@ No hay necesidad de contenernos, ¿cierto?"@
+br
+` Ella se acerca un paso.@
+` Su cabello rojo se sacude alrededor del suelo.\
+`"No me importa que ni siquiera puedas hacer eso.@
+` Un gargajo de mentiras como tú debería morir aquí."@
+cl c,%type_lshutter_fst
+` Ella escupe esas últimas palabras.@
+` Como la vez en que asesinó a SHIKI, ella me mira fijamente.@
+br
+playstop
+`"¡--------!"@
+` El suelo salta hacia mí.@
+` Lo que no puede ser visto, la cosa roja que parece un aura abrasadora, trata de envolverme.\
+bg #000000,%type_lshutter_fst
+bg "image\bg\bg_11c.jpg",%type_lshutter_fst
+waveloop se1
+`"-------"@
+` El sonido de algo que golpea el suelo hace eco por todo el pasillo.@
+`"-------¿Huh?"@
+` …… Algo está mal.@
+` En el instante antes de ser envuelto por esa aura abrasadora, mi cuerpo sintió el peligro instintivamente y saltó hacia atrás.@
+` Di un salto gigante hacia atrás y salté de nuevo cuando aterricé.@
+` Con eso, llegué hasta aquí.@
+`"Ah…………, ahh."\
+` Mi respiración enloquece.@
+` Esta velocidad no es natural.@
+` Fui tan veloz que desaparecí de la vista de Akiha en un instante.@
+` Si no hacía eso, de ninguna manera habría podido escapar de esa aura abrasadora.@
+` En aquel sueño, Akiha robó el cuerpo de SHIKI sólo con su mirada.@
+` …… Estoy en la misma posición en que SHIKI estaba.@
+` Akiha sólo necesita mirar mientras que yo necesito acercarme.@ Hay demasiada diferencia entre nuestras habilidades.\
+`"¡No---!@ ¡Dije que no quería pelear contigo………!"@
+br
+` ----¡PALPITAR!@
+br
+` Mi dolor de cabeza se incrementa.@
+` Siento que mi cabeza va a partirse en dos y le saldrán alas.@
+` La ardiente aura roja fluye desde la puerta del salón.@
+` Ella está transformando todo el aire en bermellón puro y sale al pasillo para buscarme.@
+br
+` Hay aproximadamente un salón de distancia entre ella y yo.\
+ld c,":a;image\tachi\aki_t11c.jpg",%type_lshutter_slw
+`"Asombroso.@ ¿Qué tipo de cuerpo tienes, Nii-san?"@
+br
+` Su cabello ondula alrededor.@
+` El aire en el pasillo comienza a incrementarse sin límite.@
+br
+`"Aunque sea de noche, desaparecer así de mi vista es extraño.@ …… Tus piernas son asombrosamente rápidas.@ No es que estés escondiendo tu cuerpo detrás de algo, simplemente te mueves más rápido de lo que mis ojos pueden percibir."\
+` Mi frente palpita.@
+` Mi dolor de cabeza se multiplica en intensidad.@
+br
+`"Pero, eso también ha terminado.@ No cometeré el mismo error, y no puedes escapar de mi vista aquí."@
+br
+` ---Ciertamente esto es peor que el salón.@
+` Las escaleras están a un largo trecho detrás de mí.@
+` Sin importar que tan rápido corra, Akiha simplemente atrapará mi espalda con su aura abrasadora.@
+` Pero si corro hacia otro salón, seré un ratón enjaulado.@
+` Probablemente destruirá mis brazos y piernas uno por uno, como arrancando las patas de un insecto.\
+ld c,":a;image\tachi\aki_t28.jpg",%type_crossfade_fst
+`"Primero---es cierto.@ ¡Destruiré esas maravillosas piernas tuyas……!"@
+ld c,":a;image\tachi\aki_t27.jpg",%type_crossfade_fst
+` Son ojos se fijan a mis piernas.@
+` El aire huele a quemado.\
+cl c,%type_lshutter_fst
+`"------"@
+` Salto hacia atrás.@ El aire a mi alrededor se transforma en esa aura abrasadora y envuelve mis brazos y piernas.@
+` Agito mi cuchillo.@ Lo que veo es satisfactorio.@ Este dolor de cabeza afecta el lóbulo derecho de mi cerebro.@
+br
+` Corto.@
+` Corto en pedazos el cabello rojo junto con el aire a su alrededor.\
+bg #000000,%type_lshutter_fst
+bg "image\bg\bg_11c.jpg",%type_lshutter_fst
+ld c,":a;image\tachi\aki_t29.jpg",%type_lshutter_fst
+`"¡K---------!"@
+` Akiha se queja y me mira llena de odio.@
+`"----------"@
+` Pero yo también siento dolor.@
+` Aunque lo corté rápidamente, tengo una sensación de ardor persistente en mis brazos y piernas.@
+` Mi dolor de cabeza empeora y siento que en verdad va a partirme la cabeza.\
+`"¿¡¡Otra vez---por qué puedes hacer cosas como ésas…………!!?"@
+cl c,%type_lshutter_fst
+` Ella camina hacia mí tambaleándose.@
+` Debe pensar que su poder no funciona porque no puede enfocarse en mi figura distante.\
+` …… Bueno, eso probablemente es cierto.@
+` Su poder funciona proporcionalmente a la claridad de su visión.@
+` Ya que estamos en un edificio a mitad de la noche, su aura abrasadora es lenta al tratar de atraparme.@
+` Si fuese de día, su visión y el aura abrasadora probablemente tendrían la misma velocidad.@
+` En ese caso, yo no podría matar esa aura lo suficientemente rápido.\
+`"¡Gg………!"@
+` Retrocedo con el ardor persistiendo en mis piernas.@
+` Akiha me sigue.@
+` Ya que ambos somos cautelosos, mantenemos nuestra distancia mientras nos movemos por el pasillo.@
+br
+` ------Y entonces.@
+br
+` Una figura emerge del salón en que estábamos hace poco.\
+playstop
+wavestop
+`"-------"@
+` Mi mente se congela.@
+` Mi dolor de cabeza y mis latidos desaparecen.@
+br
+` ---Esto no puede estar sucediendo.@
+br
+` ¿Por qué saliste?@ ¿Por qué no podías quedarte desmayada en el salón?@
+br
+play "*8"
+`"-----Akiha, sama."@
+br
+` Akiha voltea para encarar a la voz detrás de ella.@
+br
+` ---Siento desesperación arrastrándose por todo mi ser.\
+`"Por favor deténgase.@ Si hace esto, sólo se lastimará a sí misma, Akiha-sama…… Aunque continúe bebiendo sangre y enloquezca como SHIKI-sama, seguirá sufriendo."@
+` Tambaleándose.@
+` Como si fuese a desplomarse en cualquier momento, Kohaku-san camina hacia Akiha.\
+`"------¡Detente!"@
+` Mi protesta no puede alcanzarla.@
+` Para llegar hasta Kohaku-san, tengo que pasar sobre Akiha.@
+` ¿Cómo---puedo hacer eso?\
+`"…… Aún puede lograrlo, Akiha-sama.@ Pero si mata a Shiki-san, en verdad se---convertirá en un demonio Tohno."@
+`"…………………………"@
+` Akiha nos mira a Kohaku-san y a mí.@
+` Y entonces---
+ld c,":a;image\tachi\aki_t11c.jpg",%type_crossfade_fst
+`"Es demasiado tarde.@ Ya soy un demonio chupasangre.@ No escucharé más lo que tengas que decir.@
+` ¿Sufrir?@ Tú no sabes nada sobre lo que siento, así que no trates de sermonearme al respecto, Kohaku.@
+ld c,":a;image\tachi\aki_t28.jpg",%type_crossfade_fst
+` Esto se siente fantástico.@ Puedo entender lo que SHIKI sentía.@ Es la primera vez que he sentido esta clase de libertad.@
+` Así que ya no puedo regresar."\
+`"¡Se equivoca……!@ Eso es sólo lo que se dice a sí misma.@ Mató a SHIKI-sama, y Shiki-san lo descubrió todo, por eso quiere hacer como si nada hubiese sucedido, ¿cierto……?@
+` Pero eso es algo que no puede hacer.@ Sin importar con cuánta demencia pueda actuar, usted es----"\
+ld c,":a;image\tachi\aki_t29.jpg",%type_crossfade_fst
+`"¡Silencio…………!@ ¡No intentes actuar como una buena persona después de arreglarlo todo para que nos matásemos……!"@
+br
+` El cabello de Akiha baila en el aire.@
+` Esto es totalmente diferente a la cantidad de poder que dirigió en mi contra.@
+br
+`"Debes estar satisfecha.@ Justo como lo planeaste, Nii-san y yo estamos peleando a muerte.@ Tu venganza ya está completa, ¿no?"@
+`"Ah--------"@
+` Las palabras de Kohaku-san son cortadas.\
+ld c,":a;image\tachi\aki_t28.jpg",%type_crossfade_fst
+`"Ya veo, Nii-san no lo sabe.@ Kohaku simplemente te estaba manipulando para que no tuvieses confianza en ti mismo, Nii-san."@
+` Akiha dirige su mirada hacia mí como si estuviese ganando un debate.\
+`"¿No pensaste que era extraño?@ Dormir temprano todas las noches, tener oscurecidos tus recuerdos, todo eso fue obra de Kohaku.@
+` Te preparó drogas en lugar de medicinas.@ Y todo lo que tenía que hacer era susurrarte mientras estabas drogado.@
+` 'Tú eres el asesino que acecha las calles' era todo lo que ella tenía que decirte."\
+`"Y después de convertirte en un asesino, intentó convencerte de que me mataras.@
+` No, aunque no te convirtieses en el asesino, sólo tenías que caminar de noche por las calles.@
+` Mientras dirigía esta elaborada obra poniéndonos mutuamente en contra, Kohaku preparó todo con una sonrisa.@
+` Para llevar a cabo su venganza contra la familia Tohno, Kohaku incluso te engañó sabiendo que no tienes conexión alguna con esto, y fabricó la situación en que estamos ahora mismo."\
+playstop
+`"…………………"@
+br
+` ---Sí, parece muy obvio ahora.@
+` Por eso Kohaku-san siempre aparecía en el momento justo, diciéndome siempre lo que quería saber, dándome medicina cuando no podía dormir.@
+` Pero, aun así.\
+ld c,":a;image\tachi\aki_t11c.jpg",%type_crossfade_fst
+`"Para Kohaku, tú y yo éramos sólo piezas para completar su obra.@
+` ¿No lo entiendes?@ ¡Para Kohaku, no eres más que una herramienta………!@
+cl c,%type_crossfade_fst
+ld c,":a;image\tachi\aki_t30.jpg",%type_crossfade_fst
+` Pero, ¿¡aun así la escoges a ella antes que a mí……!?"@
+!w1000
+` …… Sí.@
+` Akiha dice esto con lágrimas en sus ojos.@
+br
+` ---Pero, aun así.@
+play "*7"
+br
+`"………… Lo sabía.@ Todo eso, ya lo sabía, Akiha."\
+cl c,%type_crossfade_fst
+`"----¿Eh?"@
+br
+` Una voz interrogante.@
+` ¿Me pregunto cuál de las dos dijo eso?\
+`"Sabía desde hace mucho tiempo que Kohaku me estaba utilizando.@ …… Pero, eso no importa.@
+` Amo a Kohaku-san.@
+` Sin importar lo que haga---simplemente creo en ella."@
+ld c,":a;image\tachi\koha_t09b.jpg",%type_crossfade_fst
+`"---------"@
+` Un grito ahogado.@
+` En verdad está sorprendida.@
+` Con ojos distantes, anhelantes e inalcanzables, ella me mira.\
+cl c,%type_crossfade_fst
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_11c.jpg",%type_crossfade_fst
+`"--Ja.@ Ajaja, ja."@
+` La risa irónica de Akiha parece la de una muñeca.\
+ld c,":a;image\tachi\aki_t29.jpg",%type_crossfade_fst
+`"…… ¿Entonces soy alguna clase de payasa?@
+` ¿Rechazada por la persona que más amo, quien está siendo utilizado como una herramienta por la persona que ama?@
+` ¡Y aun así----aun así me lo quieres robar!@ ¡¡¡¡No seas ridícula, Kohaku……!!!!"@
+cl c,%type_lshutter_fst
+`"¡Akiha--------!"\
+` Su cabello comienza a fluir.@
+br
+` ---Corro.@
+` Aun si Akiha termina matándome, aun si no puedo lograrlo, no me importa.@ Corro y extiendo mi mano.@
+br
+` Pero, ya conocía la cruel realidad.@
+` Que en el instante en que ella salió de ese salón.@
+br
+br
+!w1000
+` Que mi mano, nunca lograría, alcanzarla.\
+bg "image\event\koha_e08.jpg",%type_crossfade_mid
+` Un sonido enfermizo.@
+` El cabello de Akiha perfora el pecho de Kohaku como una lanza.\
+` Horrorizada, no, como si lo estuviese aceptando, ni siquiera intenta evadirlo.@
+` Ella cae.@
+` Su kimono ondea en el aire como si todo estuviese en cámara lenta.@
+` Mi cerebro no quiere confirmarlo y se queda atrás en el flujo del tiempo.\
+br
+br
+br
+br
+br
+br
+br
+` ---Sólo estaba desahogándome con alguien.\
+` Recuerdo esas palabras.\
+br
+br
+br
+br
+br
+br
+` ---No podía entender por qué hizo eso.@ ¿Acaso valoraba a alguien más que a su propia vida?\
+` Ella, siempre quiso, convertirse, en esa persona especial.@
+` Pero eso no ocurrió, así que vivió sola.@
+` Como diciendo que éste era el único resultado que ella podía esperar.\
+br
+br
+br
+br
+br
+br
+br
+` ---Si podía hacer eso, ¿por qué nunca me ayudó?\
+` ……………… Ese pecado.@
+` No sólo hace ocho años, sino incluso en este instante.\
+br
+br
+br
+br
+br
+` ---Pensé que era muy extraño.@
+` Por qué----por qué las personas a mi alrededor no eran tan amables como él---\
+` Su cuerpo en plena caída.@
+` En ese instante.@
+` Aunque sus ojos se están nublando---veo a Kohaku sonriéndome, o eso pienso.\
+playstop
+!w5000
+bg #000000,%type_crossfade_slw
+bg "image\bg\bg_11c.jpg",%type_crossfade_mid
+play "*4"
+`"-----------"@
+` Mis piernas se detienen.@
+` No puedo hablar, no puedo respirar.@
+wave se0
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_11c.jpg",%type_crossfade_fst
+` Mi penetrante dolor de cabeza es lo único que continúa.\
+ld c,":a;image\tachi\aki_t27.jpg",%type_crossfade_fst
+`"----Hmph.@ Un final adecuado para una Gata Ladrona."@
+` Akiha ríe.@
+wave se0
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_11c.jpg",%type_crossfade_fst
+ld c,":a;image\tachi\aki_t27.jpg",%type_nowaitdisp
+` Este penetrante dolor de cabeza.\
+`"No puedo regresar.@ Maté a SHIKI, incluso Nii-san me rechazó.@ No tengo otro lugar adónde ir.@ Ahora soy libre, así que no debería haber ningún dolor."@
+` Ella me encara.@
+` El aire arde de nuevo.@ Su cabello se enrolla a su alrededor como una serpiente.@ Pareciera que cada uno de sus cabellos tuviese mente propia.\
+wave se0
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_11c.jpg",%type_crossfade_fst
+` Este penetrante dolor de cabeza.@ Dolor de cabeza.@
+br
+`"----¿Acaso no querías matarme?"\
+wave se0
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_11c.jpg",%type_crossfade_fst
+` Este dolor de cabeza.@ Dolor de cabeza.@ Dolor de cabeza.@ Dolor de cabeza.@
+br
+`"No a Kohaku-san---¿no era yo a quien querías matar, Akiha?"\
+wave se0
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_11c.jpg",%type_crossfade_fst
+` Dolor de cabeza.@ Dolor de cabeza.@ Dolor de cabeza.@ Dolor de cabeza.@ Dolor de cabeza.@ Dolor de cabeza.@
+` Estoy furioso.@ Estoy furioso.@ Estoy furioso.@
+` Conmigo mismo, quien no pudo salvarla.@
+` Conmigo mismo, que aún está vivo en este momento.@
+` Con Akiha, quien no pudo salvarla.@
+` Con Akiha, que aún está viva en este momento.\
+ld c,":a;image\tachi\aki_t28.jpg",%type_crossfade_fst
+`"¿Qué, querías morir rápidamente, Nii-san?@ Bueno, no la habría perdonado aunque se hubiese disculpado.@ La habría matado tarde o temprano.@
+` Porque ella no tenía ninguna razón para vivir.@ Estaba averiada desde hace tiempo, así que tirarla a la basura fue hacerle un favor, ¿no?"@
+br
+` -----Ya veo.@
+` Si alguien se descompone, tirarlo a la basura es hacerle un favor.@
+br
+` Por lo tanto-------\
+`"…………… Tú, no eres Akiha."@
+br
+` Ésta no es la Akiha que conozco.@
+` Sólo estaba negándome a reconocer que ya había sido poseída por el espejismo hace mucho tiempo.@
+br
+`"Bien, Akiha, como desees."@
+br
+` Ocho años atrás.@ Como cuando corríamos en el jardín.\
+playstop
+bg #000000,%type_crossfade_fst
+!w1000
+br
+br
+br
+br
+br
+br
+br
+`"Vamos----comencemos nuestra pelea a muerte."\
+` Mi dolor de cabeza cesa.@
+` Tohno Shiki muere.@ Nanaya Shiki sale lentamente de la oscura noche.\
+bg "image\bg\bg_11d.jpg",%type_crossfade_fst
+` Mido visualmente la distancia entre mi enemigo y yo.@
+` Son unos diez metros.@ Necesito dos pasos para tenerla dentro del alcance de mi cuchillo.@ Para asegurar su muerte, necesito dar tres pasos.@
+` No hay nada con lo que pueda cubrirme en el pasillo, y no es lo suficientemente grande como para esconderme mientras me desplazo.@ Aunque use las paredes o el techo, tendré dificultad para evitar su mirada.@
+` Aun si avanzo dos pasos, Akiha puede fijar sus ojos fácilmente sobre mí en un solo movimiento.@
+` Ésa es la situación.@ A esta distancia, moriré primero porque ella será levemente más rápida.\
+ld c,":a;image\tachi\aki_t11c.jpg",%type_lshutter_fst
+`"---Ya veo.@ Finalmente estás de humor, Nii-san."@
+cl c,%type_crossfade_fst
+` Akiha da un paso hacia adelante.@
+` A pesar de que está oscuro, con esta distancia, ella puede verme claramente.@
+` Otro paso.@ Si da otro paso, ésa será mi señal.\
+` ¿La mato ahora o me retiro?@
+` Si cometo un error, terminaré envuelto en el cabello de Akiha como SHIKI en aquel sueño.@
+br
+` ----Otro paso.@
+br
+`"------"@
+return

@@ -1,0 +1,192 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_45e.jpg",%type_crossfade_fst
+` …… No puedo hacerlo.@
+` No hay manera de que pueda hacer eso.@
+` Akiha no hizo nada malo.\
+` No hizo nada malo, ¿entonces por qué-----tiene que terminar de esta manera?\
+play "*9"
+`"………………"@
+` El sonido de mi cuchillo al caer.@
+` Mi brazo perdió toda su fuerza sin que me diera cuenta.@
+` El cuchillo que cayó de mi mano se clava en el piso de tatami.@
+` La habitación está bañada de sangre.@
+` La habitación en que vivía cuando aún era Nanaya Shiki hace mucho tiempo.@
+` …… La habitación en que ella vino a verme tantas veces cuando el viejo no estaba pendiente.\
+`"------"@
+` Hace sólo un día.@
+bg "image\event\aki_h01.jpg",%type_crossfade_mid
+bg #000000,%type_crossfade_mid
+` Lo sentimos todo el uno del otro en este lugar.@
+` ¿Akiha ya había aceptado este resultado en ese momento?@
+` Todo lo que pude hacer fue negarme.@
+` Aunque Akiha me lo dijo todo, intenté hacerlo a un lado.@
+` No quise aceptar los hechos, y vagamente, estaba deseando que no sucediera.@
+br
+` ----Ése es mi crimen.@
+` Le dije a Akiha que la amaba, pero no pude protegerla.\
+bg "image\bg\ima_02.jpg",%type_crossfade_mid
+`"Aki-----ha."@
+` …… Tengo que compensar el crimen que he cometido.@
+` Sólo puedo proteger a Akiha de ahora en adelante, sin importar qué suceda.@
+` Aunque Akiha se haya convertido en una criatura que sólo mata gente, y aunque sólo pueda reconocerme como otra criatura.@
+` A partir de ahora, probablemente hasta que muera, voy a…
+` Vivir por Akiha y vincularla a este mundo.@
+` …… Para Tohno Shiki, quien no pudo salvar nada, ésa es la forma de terminar el espectáculo.\
+bg #000000,%type_crossfade_slw
+playstop
+!w4000
+mov $phasebg,#000000
+mov $phasetitle_a,":a;image\word\PAKI_13B.PNG"
+mov $phasetitle_b,":a;image\word\epi.png"
+gosub *left_phase
+bg #ffffff,%type_crossfade_slw
+monocro off
+bg "image\bg\ima_03.jpg",%type_crossfade_mid
+play "*2"
+` Abro los ojos.@
+` Azul infinito baña mi adormilada mente.@
+` Luz solar levemente cálida y una brisa levemente fría.@
+` Un mundo sólo con el olor de la hierba y el sonido de los árboles.@
+` Puede que el bosque de esta mansión esté en una estación distinta.@ Ya casi es invierno, pero este lugar aún se siente como otoño.\
+`"---------"@
+` Miro hacia el cielo azul, acostado en el suelo.@ El sol ya está muy alto en el cielo.@
+` …… Supongo que me quedé dormido.@
+` Supongo que fue mi culpa por acostarme aquí en la hierba después del desayuno.@
+` Bueno, no tenía nada que hacer de todas formas.@
+` Hacer esto aquí.@
+` Quedarme profundamente dormido, olvidando incluso mi nombre, no puede ser tan malo.\
+` -----Azul sin fin.@
+br
+` El cielo despejado está muy lejos.@
+` Pensando como un niño, continúo mirando el cielo.@
+` Un cielo lejano como en un sueño.@
+` La vista es tan hermosa que ni siquiera puedo suspirar de asombro.\
+`"¿Shiki-sama……?@ ¿Está por aquí, Shiki-sama?"@
+` Escucho la voz de Hisui en el patio.@
+`"…………"@
+` Ya es hora.@
+` Supongo que volví a quedarme dormido.@
+` Si olvido el tiempo mirando este cielo azul, no hace ninguna diferencia que esté dormido o no.\
+bg #000000,%type_lshutter_fst
+bg "image\bg\bg_54a.jpg",%type_lshutter_fst
+` Hisui llega, muy serena.@
+ld c,":a;image\tachi\his_t01.jpg",%type_lshutter_fst
+`"Shiki-sama, Akiha-sama lo está llamando."@
+`"Muy bien.@ Supongo que estaba dormido.@ Perdón por ser tan problemático, Hisui."@
+ld c,":a;image\tachi\his_t17.jpg",%type_crossfade_fst
+`"En absoluto, no es nada parecido……"@
+` Hisui baja la mirada como si quisiera decir algo.@
+` …… Sé lo que Hisui quiere decir, pero aunque lo dijese, no sería capaz de darle una respuesta.\
+`"Ya me voy.@ ¿Puedes llamar a Kohaku-san en más o menos una hora?"@
+`"Ah-----"@
+` Le doy la espalda a Hisui y me dirijo hacia el edificio separado donde Akiha está esperando.\
+bg #000000,%type_crossfade_mid
+playstop
+bg "image\bg\bg_45b.jpg",%type_crossfade_mid
+play "*7"
+` En la habitación vive una chica.@
+` No, el término "vive" no es correcto.@
+` La chica no se puede mover por su propia voluntad.@ Sólo se mueve como una cosa viviente cuando come, y se queda sentada ahí como una estatua cuando no.@
+br
+` Así que en lugar de "vive",
+` "existe" es un término más correcto, porque es más parecida a una muñeca.\
+`"Lo siento Akiha.@ Me quedé dormido y no pude llegar a tiempo."@
+` Entro a la habitación y cierro el shouji.@
+` Akiha está sentada ahí sin moverse.@
+`"Guao, tu cabello está despeinado.@ Parece que tampoco te has cambiado de ropa.@ ¿Kohaku-san no vino esta mañana?"@
+` Akiha no dice nada.@
+` Mira en mi dirección inexpresivamente.@
+` …… No,
+` sólo parece que está mirando.\
+`"Muy bien, al menos hagamos que tu cabello se vea bien.@
+` Toco el cabello de Akiha.@
+` Ella no hace ningún movimiento para impedirlo.@
+` Tan silenciosa y suavemente como puedo, dejo que mis manos pasen por su cabello.@
+` Su largo cabello fluye entre mis dedos.@
+` Akiha no dice nada.@
+` Después de permanecer así por un rato,
+br
+` Akiha repentinamente mueve su brazo.\
+`"¿Akiha---?"@
+` No hay respuesta.@
+` Ella sólo toma mi brazo y lo lleva hacia su boca.@
+` Después de una fuerte sensación,
+` Akiha muerde mi brazo y empieza a chupar mi sangre sin expresión en su rostro.\
+` Su garganta blanca traga mi sangre.\
+` La sangre que se derrama de su boca desciende por su garganta y mancha su kimono de rojo.\
+`"Ghu----u"@
+` Aprieto mis dientes y resisto hasta que Akiha esté satisfecha.@
+` …… No hay ninguna cantidad apropiada para Akiha.@
+` Sólo se detiene cuando está satisfecha, y no puedo predecir cuándo será eso.@
+` Todo lo que puedo hacer es esperar así hasta que esté satisfecha.@
+`"………… Ah."@
+` Me siento mareado.@
+` Pero no retrocedo.\
+` …… Hisui se opuso a esto hasta el último minuto.@
+` Decidí darle a Akiha mi propia sangre, porque sólo podía consumir sangre humana.@
+` No fue por un sentido de responsabilidad.@
+` Si Akiha sólo podía sobrevivir consumiendo sangre, quería limitar la cantidad de víctimas, y por encima de todo---
+` --No quería que Akiha bebiese la sangre de nadie aparte de mí.@
+br
+` Creo que a Akiha le gusta mucho mi sangre.@ No ha vuelto a salir desde entonces.@
+` Pero, es muy peligroso para mi cuerpo.\
+` Para comenzar no tengo mucha sangre, y no soy lo suficientemente saludable como para alimentar a Akiha con mi sangre.@
+` Casi siempre me desmayo cuando vengo aquí una vez al día para alimentarla.@
+` Aunque obtengo sangre por medio de transfusiones, a mi cuerpo le toma un tiempo acostumbrarse a la sangre de otras personas.\
+` …… Mi cuerpo se está debilitando con cada día que pasa.@
+` Supongo que lo que Hisui trata de decirme cada vez que me ve la cara es que debería preocuparme más por mí mismo.@
+br
+` Pero semejante cosa…
+` Para mí es mucho más fácil porque puedo sentir el dolor, a diferencia de Akiha.\
+bg #000000,%type_tshutter_mid
+bg "image\bg\bg_45b.jpg",%type_bshutter_mid
+` ----Akiha baja su brazo.@
+` Supongo que ya está contenta, porque suelta mi brazo.\
+` Entonces vuelve a ser una muñeca una vez más.@
+` Limpio la sangre que gotea de su rostro y cambio su sucio kimono.@
+` Akiha no se resiste.@ Simplemente acepta todo lo que hago.@
+` ---Allí,
+` la mirada orgullosa de Akiha no se ve por ningún lado.\
+`"--------"@
+` Estaría mintiendo si dijese que esto no es difícil para mí.@
+` Pero aun así---mi sensación de felicidad es mayor.@
+` Akiha está viva.@
+` Está viva, y está aquí ahora.@
+` Entonces, algún día, Akiha podría volver a ser la Akiha que una vez fue.\
+bg #000000,%type_lshutter_mid
+bg "image\bg\ima_03.jpg",%type_lshutter_mid
+`"Muy bien.@ Nos vemos, Akiha.@ Volveré mañana, así que hazle caso a Kohaku-san en la noche."@
+` Digo la misma frase de ayer, no, la misma frase de siempre, mientras sostengo las manos de Akiha.\
+` Dedos delgados, manos pequeñas.@
+` Las cubro con las mías.@
+` La calidez.@
+` El hecho de que está viva.@
+` Casi me hace llorar.\
+`"¡…………………!"@
+` Suprimo ese sentimiento y sonrío.@
+` Quiero reír para no tener espacio para ninguna tristeza.@
+` Es fácil sentir tristeza por la situación en la que estoy.@
+` Aun si Akiha no entiende, tengo que seguir sonriendo frente a ella.\
+` Un día, si Akiha recupera su identidad, no quiero que recuerde que yo estaba triste.@
+` Quiero que piense que esto no fue nada---que éste también fue uno de los momentos felices.@
+` Por eso tengo que seguir sonriendo.@
+` Aunque Akiha no lo comprenda ahora, para que Akiha no lamente el pasado cuando recupere su identidad.\
+` ---Sigo esperando, sosteniendo sus manos.@
+br
+` Aunque los ojos de Akiha no estén mirando nada, seguiré sonriendo hasta el fin del mundo.@
+br
+` Para que algún día, cuando Akiha despierte,
+` pueda saludarla como si fuese otro día normal y decirle "Hola".\
+bg #ffffff,%type_crossfade_slw
+playstop
+!w3000
+cl a,%type_waitdisp
+bg "image\word\end.jpg",%type_crossfade_slw
+resettimer
+waittimer 3000
+mov %rockending, 0
+gosub *ending
+return

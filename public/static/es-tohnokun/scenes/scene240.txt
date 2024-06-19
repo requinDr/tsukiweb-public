@@ -1,0 +1,37 @@
+monocro off
+wavestop
+play "*1"
+;---added context above---
+bg "image\bg\bg_33b.jpg",%type_lcartain_mid
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`Bienvenido a casa, Shiki-sama."@
+`"Estoy de vuelta… Hisui, ¿dónde está Akiha?"@
+`"Akiha-sama se ha quedado en la escuela para atender ciertas formalidades.@ Volverá tarde, así que nosotros cenaremos primero."@
+`"¿…?"@
+` Ciertas formalidades, eh.@
+` La escuela de Akiha probablemente tiene un montón de formalidades porque es una escuela de primera clase para señoritas.\
+`"Esperaré en mi habitación hasta la hora de la cena y bajaré cuando esté lista la comida."@
+`"Sí.@ Por favor descanse hasta que lo llame."@
+cl a,%type_crossfade_fst
+` Le doy la espalda a la inclinada Hisui y camino hacia mi habitación.\
+bg #000000,%type_tshutter_mid
+!w2000
+bg "image\bg\bg_40c.jpg",%type_rshutter_mid
+br
+` ---Después de cenar, me siento sobre mi cama.@
+br
+` Las agujas del reloj señalan las nueve en punto.@
+` Dejar la mansión después de las ocho está prohibido, así que ya no puedo salir.@
+`"…………"@
+` Pero, eso es simplemente una regla.@
+` Si así lo quiero, puedo salir fácilmente.\
+bg #000000,%type_crossfade_fst
+bg "image\event\stk_e03.jpg",%type_crossfade_fst
+br
+` ---Bai-bai.@ Nos vemos mañana en la escuela, Tohno-kun.\
+br
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_40c.jpg",%type_crossfade_fst
+` Yo---
+br
+return

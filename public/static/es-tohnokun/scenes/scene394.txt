@@ -1,0 +1,155 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_06a.jpg",%type_lcartain_mid
+wave se2
+!w2000
+` ---Es la hora del almuerzo.@
+` Como siempre, Arihiko faltó a la escuela.@
+br
+`"…… Iré a comer en la cafetería."@
+` Si como solo, simplemente terminaré deprimido.@
+` Si voy a comer en la cafetería llena de gente, eso debería ayudarme a desviar mi mente de las cosas.\
+bg "image\bg\bg_50.jpg",%type_lcartain_mid
+` Como esperaba, la cafetería está repleta.@
+` Después de esperar en una larga fila, compro el confiable almuerzo tipo A y camino hacia una mesa.@
+` Las voces de los estudiantes son muy altas, por lo que sólo puedo concentrarme en mi comida.@
+` Uso mi tenedor y como en silencio.@
+br
+` ----Y entonces.@
+br
+` Por un momento, veo una imagen terrible.\
+`"¿……?@ ¿Está en la televisión?"@
+` Miro boquiabierto el gran televisor montado sobre la pared al fondo de la cafetería.@
+` En mi escuela, graban las noticias matutinas y las reproducen durante el almuerzo.@
+` Miro anonadado la transmisión noticiosa que está muchas horas atrasada.\
+waveloop se1
+`"----No puede ser…"@
+` Miro las noticias con asombro y horror.@
+` En la televisión está ese callejón que vi anoche en mi sueño.@
+` El presentador está hablando.@
+` En la pantalla, las palabras "Novena Víctima del Asesino Vampiro" aparecen en letras sangrientas.\
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\bg_50.jpg",%type_nowaitdisp
+` Después de eso, aparece el rostro de la víctima.@
+br
+` La mujer de cabello largo… definitivamente es la mujer que asesiné en mi sueño.\
+bg #9c0120,%type_crossfade_fst
+bg "image\bg\bg_50.jpg",%type_crossfade_fst
+`"------"@
+` De pronto, comienzo a sentirme débil.\
+wavestop
+`"¿Por…… qué?"@
+` Eso fue un sueño.@ Tuvo que haber sido un sueño.@
+` Pero en la realidad, la misma persona de mi sueño, en el mismo lugar de mi sueño, fue asesinada de la misma manera que en mi sueño.\
+`"El vampiro ya no debería existir."@
+` Maté a Yumizuka con mis propias manos.@
+` Esas matanzas, ya no deberían seguir ocurriendo.\
+`"¿Yo---asesiné?"@
+` Sí, asesiné.@
+` Justo como la vez en que maté a Yumizuka.@
+` Respirando con dificultad, anoche, esa mujer que nunca había conocido---\
+wave se0
+bg #000000,%type_nowaitdisp
+br
+br
+br
+br
+br
+br
+` ¿No te lo dije, Shiki-kun?@
+` Es inútil resistirlo.\
+bg "image\bg\bg_50.jpg",%type_nowaitdisp
+`"Uu---"@
+` Reteniendo el deseo de vomitar mi almuerzo, me tambaleo fuera de mi silla.@
+br
+bg #000000,%type_lshutter_fst
+` No puedo volver a clases.@
+` Por alguna razón, me hallo corriendo hacia la ciudad.\
+!w2000
+bg "image\bg\bg_31a.jpg",%type_crossfade_fst
+` ---Vengo al lugar que vi en mi sueño.@
+br
+` Hay muchos policías alrededor, y una cinta que dice "Límite Policial, No Cruzar" está extendida a lo largo del callejón.@
+`"---Exactamente igual."@
+` Sin duda alguna, es el lugar al que fui en mi sueño.@
+br
+` ---No, eso no fue un sueño.@
+` Ya no puedo seguir engañándome pensando que fue un sueño.@
+`"………"@
+` Si me quedo aquí más tiempo, los policías comenzarán a mirarme.@
+` …… No puedo volver a la escuela ahora.@ Supongo que regresaré a la mansión.\
+bg #000000,%type_crossfade_mid
+bg "image\bg\bg_33a.jpg",%type_crossfade_mid
+waveloop se10
+` Ya que ni siquiera son las dos en punto, Hisui no está esperando en el vestíbulo.@
+`"……………"@
+` Puedo decir que fui afortunado.@ No tengo ganas de ver a nadie ahora.\
+bg #000000,%type_lshutter_mid
+bg "image\bg\bg_40a.jpg",%type_lshutter_mid
+` *suspiro*@
+` Soltando un profundo suspiro, caigo sobre mi cama.\
+bg #000000,%type_crossfade_mid
+` …… Simplemente no entiendo nada de esto.@
+` Tengo sueños en los que asesino gente.@
+` En la realidad, los mismos asesinatos han ocurrido.@
+` Hoy estoy viviendo como una persona normal.@
+` Pero estaba disfrutando al asesinar gente en mis sueños.@
+br
+br
+` -------¿Cuál de los dos?@
+`      ¿Cuál es el verdadero Tohno Shiki?\
+#ff0000
+br
+br
+br
+br
+br
+br
+br
+` ¿En verdad tienes que preguntar?\
+#ffffff
+` …… Esa voz otra vez.\
+#ff0000
+br
+br
+br
+br
+br
+br
+br
+` Vamos, continuemos, Shiki.\
+#ffffff
+` …… Esa voz que hace eco dentro de mi cabeza.@ Mi voz.\
+#ff0000
+br
+br
+br
+br
+br
+` La noche llega todos los días.@
+` De seguro, algún día encontraremos a la persona que deseamos, ¿cierto…?\
+#ffffff
+ld c,":a;image\tachi\aki_t01c.jpg",%type_nowaitdisp
+!w250
+bg "image\bg\bg_40a.jpg",%type_nowaitdisp
+wavestop
+`"¡Cállate----!"@
+` Salto de la cama.@
+` *jadeo* *jadeo* *jadeo*
+` Respiro salvajemente.@
+br
+` Justo ahora,
+` estaba deseando a Akiha.\
+` *jadeo* *jadeo*
+` …… Siento que voy a vomitar.@
+` Nunca pienso en estas cosas normalmente, pero cuando trato de dormir, estos raros pensamientos surgen en mi cabeza.@
+` Es casi como si hubiese otra persona dentro de mi cerebro.\
+`"……… Ah."@
+` Ahora que lo pienso, Akiha dijo algo parecido anteriormente.@
+` Dijo que---mi viejo tenía cambios extremos de personalidad…… suena casi como lo que me sucede ahora.@
+` …… Por supuesto, de tal padre, tal hijo.@ Podría incluso ser hereditario.@
+`"La habitación de mi viejo… creo que aún la mantienen como antes…"@
+br
+return

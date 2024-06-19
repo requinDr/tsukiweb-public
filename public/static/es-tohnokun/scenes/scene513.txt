@@ -1,0 +1,29 @@
+monocro off
+;---added context above---
+wave se2
+bg "image\bg\bg_06a.jpg",%type_nowaitdisp
+play "*3"
+ld c,":a;image\tachi\osiete.png",%type_lcartain_mid
+!w1000
+cl c,%type_lcartain_mid
+ld r,":a;image\tachi\cel_t20.jpg",%type_tshutter_mid
+` ………… *suspiro*@
+` ¿Qué rayos has estado haciendo, Tohno-kun?@
+` Nunca pensé que vendrías a la rara lección de la tercera hora, la segunda "Tierra Animal de Sacudidas y Escalofríos".@
+br
+` ----Bueno, Tohno-kun.@
+` Desafortunadamente, tendré que pedirte un arreglo.@
+` Parece que has vagado por todos los días sin prestar ninguna atención en particular a Arcueid, Ciel-san, o Akiha-san.\
+` Para serte sincera, ésta es la parte más importante de la ruta de Ciel-san.@
+` Pero el hecho de que hayas muerto a pesar todo significa que no has recibido un amuleto de cierta persona.@
+` ¡La moraleja de esta historia es que deberías prestar más atención a tu Senpai en la escuela!@
+br
+` Primero, ve a la habitación de la ceremonia del té después de clases.@
+` Segundo, deberías reconocer honestamente los errores que has cometido.@
+br
+` Si mantienes en mente lo anterior, no deberías tener problemas con el examen.@
+` Eso es todo por la lección de la tercera hora.@
+` Por favor esfuérzate para que no termines aquí de nuevo la próxima vez.\
+bg #000000,%type_crossfade_mid
+playstop
+return

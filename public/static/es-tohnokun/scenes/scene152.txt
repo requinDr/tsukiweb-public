@@ -1,0 +1,39 @@
+monocro off
+wavestop
+play "*3"
+;---added context above---
+bg "image\bg\bg_06a.jpg",%type_nowaitdisp
+` ----La ignoraré.@
+br
+` Si bajo corriedo hacia ella y la gente me ve, será un problema.@
+` Sin importar lo que ella haga, si actúo como un desconocido, no me afectará.@
+` …… Bueno, esta noche probablemente dirá "¿Por qué me ignoraste?" Pero, no se puede evitar.@
+` Todo lo que quiero es que la escuela permanezca tranquila y no hacer nada.\
+bg #000000,%type_crossfade_mid
+!w1000
+bg "image\bg\bg_06a.jpg",%type_lshutter_mid
+wave se2
+` Es la hora del almuerzo.@
+` No estoy de humor para almorzar pan, así que iré a la cafetería.@
+`"…… ¿Huh?"@
+` Siento que olvidé algo, pero, no importa.\
+bg #000000,%type_lcartain_slw
+bg "image\bg\bg_50.jpg",%type_lcartain_slw
+` La cafetería es un caos como siempre.@
+` La mayoría de las mesas están llenas, y si no me apresuro, no conseguiré asiento.\
+`"Ah, Senpai."@
+` Veo a Ciel-senpai sentada con un grupo.@
+` ¿Son sus amigas de la escuela?@ Mientras habla con un grupo de chicas, come seriamente un udon de curry.@
+br
+` …… Ahora que lo pienso, ella siempre está comiendo algo "de curry".@
+`"A ella, le gusta mucho el curry, supongo."@
+` Tendré que preguntarle al respecto.\
+`"………"@
+` Pero, algo me detiene.@
+` Siento que he olvidado algo importante.@ Algo, peligroso si no es atendido.@
+br
+`"…… Bueno, si no lo recuerdo, no puede ser importante."@
+` Aunque parece muy importante, dirijo toda mi atención hacia mi almuerzo por ahora.\
+bg #000000,%type_crossfade_slw
+!w1000
+return

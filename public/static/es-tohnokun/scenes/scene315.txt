@@ -1,0 +1,117 @@
+monocro off
+wavestop
+playstop
+bg #000000,%type_nowaitdisp
+;---added context above---
+!w3000
+bg "image\bg\bg_33d.jpg",%type_crossfade_mid
+waveloop se10
+` La puerta se abre con un chirrido.@
+` Con un cuerpo pesado y la mente nublada, logro regresar a la mansión.@
+` Mis pasos se arrastran detrás de mí.@
+` La luz de la luna ilumina mi figura, haciéndola parecer un fantasma exhausto.\
+`"-----------"@
+` …… Me duele el brazo izquierdo donde Yumizuka me lastimó.@
+` El sangrado se ha detenido, y la disminución gradual del dolor me dice que la herida no pudo haber sido muy profunda.\
+`"-----------"@
+` Alcanzo las escaleras.@
+` No siquiera me importa tratar mis heridas.@
+` En este momento, sólo quiero tambalearme de vuelta a mi habitación y dormir como una roca----\
+bg #000000,%type_crossfade_mid
+wavestop
+!w4000
+mov $phasebg,"image\bg\bg_54b.jpg"
+mov $phasetitle_a,":a;image\word\PHIS_04A.PNG"
+mov $phasetitle_b,":a;image\word\day_04.png"
+gosub *right_phase
+bg #ffffff,%type_crossfade_mid
+bg "image\bg\bg_40a.jpg",%type_crossfade_fst
+play "*2"
+` Despierto de un largo sueño.@
+` La luz solar en la ventana parece más de mediodía que de mañana.@
+` Debe ser por lo tarde que regresé anoche.@
+` Parece que dormí más de la cuenta.\
+`"……………"@
+` Me arrastro fuera de la cama y bajo la vista hacia mi mano.@
+` ----La sensación de la forma en que apuñalé a Yumizuka permanece.@
+` Hace dos noches.@
+` Cuando me encontré con Yumizuka y tuve ese espantoso sueño.@
+`"…… Si lo de ayer…… fuese sólo un sueño."@
+` Pero desearlo no hará que lo sea.@
+` No tengo idea de por qué o cómo Yumizuka se convirtió en un vampiro, y no pude hacer nada para ayudarla.\
+` ---No.@
+` Una vez que Yumizuka se convirtió en eso, probablemente no había ninguna manera de ayudarla.@
+` Ya estaba muerta.@
+` Todo lo que hice fue que ese cadáver, que de alguna forma se movía como si fuese algo viviente, volviese a ser un cadáver.@ Sólo puedo verlo de esa manera.@
+br
+` Pero, aun así---
+br
+wave se3
+`"Por favor discúlpeme, Shiki-sama."@
+` Con esa voz a la que me he acostumbrado, Hisui entra a la habitación.\
+ld c,":a;image\tachi\his_t01.jpg",%type_lcartain_mid
+`"Buenos días, Shiki-sama.@ ¿Cómo se siente el día de hoy?"@
+`"Hm…… ah, dormí bien, no me siento mal en absoluto."@
+`"¿En verdad?@ Oír eso me hace sentir muy aliviada."@
+` …… Aunque dice eso, no la veo siquiera relajar sus hombros, o dar alguna otra indicación de ello.\
+`"……………"@
+` Pero, también me siento aliviado.@
+` Debido a lo que sucedió anoche, la larga noche ha terminado.@ Ya no tengo que volver a entrar en ese mundo antinatural, así que mi corazón puede relajarse.@
+`"…… Gracias, Hisui.@ Siempre vienes para ver cómo estoy desde temprano en la mañana, ¿cierto?@ Tu preocupación significa mucho para mí."@
+ld c,":a;image\tachi\his_t03.jpg",%type_crossfade_fst
+`"----En absoluto.@ Es mi deber preocuparme por su bienestar."@
+` Hay un indicio de felicidad en la expresión de Hisui.\
+` …… Además, siento que he sido rescatado en cierto modo.@
+` Mientras yo dormía de esta manera, Hisui vino como siempre para despertarme.@
+` Sólo con esa trivialidad, siento francamente que he vuelto a mi vida normal.\
+ld c,":a;image\tachi\his_t04.jpg",%type_crossfade_fst
+`"Um…… Shiki-sama, me es un poco difícil decir esto, pero… ¿puedo?"@
+`"¿……?@ ¿Difícil de decir?@ Si se trata de que dormí hasta el mediodía, en verdad no puedo hacer nada más que disculparme."@
+ld c,":a;image\tachi\his_t23.jpg",%type_crossfade_fst
+`"No, no me refería a eso pero, quizás está relacionado con la hora en que se acostó a dormir."@
+` Hisui juega con sus dedos mientras lucha para encontrar las palabras adecuadas.\
+ld c,":a;image\tachi\his_t04.jpg",%type_crossfade_fst
+`"…… Um, yo no dije nada, pero Akiha-sama se enteró de lo de anoche."@
+`"Eh…… ¿qué de anoche……?"@
+`"Cuando usted salió tarde, Shiki-sama."@
+`"Oh----"@
+` Inconscientemente, aparto mis ojos de ella.@
+` Pensé que había logrado escabullirme sin ser detectado, pero debí haber sabido que Hisui se enteraría de todas formas.\
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"Shiki-sama, su tardío regreso de anoche le ha ganado la atención de Akiha-sama, y creo que le será pedido que se explique tarde o temprano.@
+` Ella está en la sala de estar y puede que esté enojada, así que por favor vaya preparado."@
+`"……… Ya veo.@ Oh bueno, no puedo quejarme, porque fui yo quien salió pasado el toque de queda."\
+`"Sobre eso, ¿ocurrirá de nuevo?@ No puedo detenerlo, pero si continúa haciendo cosas como ésas, debo decirle a Akiha-sama."@
+`"----No, nada como lo de anoche ocurrirá de nuevo.@ Todo…… terminó anoche…… Ya no habrán más llamadas telefónicas."\
+` ---Sí.@ En verdad ha terminado.@
+` Con estas palabras, todo finaliza.@
+` Yumizuka Satsuki ya no existe.@
+` El vampiro que acechaba las calles ha desaparecido.@ Yo, con mis propias manos, despaché a una compañera de clases que dijo que yo le gustaba, para toda la eternidad.\
+ld c,":a;image\tachi\his_t07.jpg",%type_crossfade_fst
+`"……………………"@
+` Hisui me mira con una dolorosa expresión en su rostro.@
+` …… Cielos, si Hisui pone una cara como ésa, debo verme terrible en este momento.@
+`"---Bueno, debería levantarme tarde o temprano.@ Hisui, ¿Akiha todavía está aquí?@ Es una persona muy ocupada, ¿acaso tiene una rutina en su día libre?"@
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"Sí, ciertamente tiene planes durante su día libre, pero hoy aún está en la mansión."@
+`"¿………?"@
+` ¿Tiene planes, pero aún está aquí……?\
+`"No lo entiendo muy bien, pero…… bueno, voy a cambiarme, por favor ve a la sala de estar antes que yo."@
+`"Sí.@ Bien, entonces por favor discúlpeme."@
+cl c,%type_lshutter_mid
+` Como siempre, Hisui se va sin hacer sonido alguno.@
+br
+` ---Pero, olvidé algo muy importante.@
+br
+`"Hisui."\
+ld c,":a;image\tachi\his_t01.jpg",%type_lshutter_mid
+`"¿Sí?@ ¿Qué desea, Shiki-sama?"@
+`"Sí, olvidé decir algo.@ Gracias por venir a despertarme.@ Es un poco tarde pero, buenos días, Hisui."@
+ld c,":a;image\tachi\his_t03.jpg",%type_crossfade_fst
+`"---Sí.@ Por favor tenga un buen día, Shiki-sama."@
+cl c,%type_lshutter_mid
+` Bien, entonces.@
+` Debería cambiarme rápidamente y dirigirme hacia la sala de estar.\
+bg #000000,%type_lcartain_mid
+!w1000
+return

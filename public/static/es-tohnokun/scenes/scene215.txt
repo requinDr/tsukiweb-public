@@ -1,0 +1,11 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_40b.jpg",%type_nowaitdisp
+` …… No, me sentiría mal si interfiriese con el trabajo de Hisui y Kohaku-san.@
+` Sólo han pasado dos días desde que regresé a la mansión.@
+` Quizás sea porque aún no estoy acostumbrado, pero por alguna razón, me siento cansado.@ Debería relajarme y decansar hasta la cena.\
+bg #000000,%type_tcartain_mid
+!w2000
+return

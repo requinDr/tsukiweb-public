@@ -1,0 +1,709 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_40c.jpg",%type_nowaitdisp
+`"--No puedo permanecer sin respuestas."@
+` Si ese sueño es real.@
+` ¿En verdad soy un asesino chupasangre?@
+` …… No puedo dejar que esas preguntas permanezcan sin respuesta.@
+br
+`"Debería llevarlo, por si acaso."@
+` El cuchillo ha estado en mi escritorio desde lo sucedido con Satsuki; lo meto en mi bolsillo.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_33c.jpg",%type_lcartain_mid
+play "*9"
+` Bajo al vestíbulo silenciosamente, para que Hisui y Kohaku-san no se percaten.@
+` Sólo necesito abrir la puerta sin hacer ruido---
+br
+` Pero antes de que pueda hacerlo, ésta se abre con un chirrido.\
+ld c,":a;image\tachi\aki_t12b.jpg",%type_crossfade_fst
+`"¿Nii-san?@ ¿Qué sucede?@ ¿Por qué estás paralizado aquí?"@
+`"A---Akiha, tú…"@
+` Por qué estás aquí, le pregunto en silencio.@
+ld c,":a;image\tachi\aki_t03b.jpg",%type_crossfade_fst
+`"Estaba dando un paseo por el jardín.@ ¿Qué hay de ti, Nii-san?@ Parece que estás a punto de salir."@
+`"…… Sí.@ Dejé algo en la escuela y voy a buscarlo."@
+` …… No quiero mentirle a Akiha.@
+` Por eso, digo lo menos que puedo.\
+ld c,":a;image\tachi\aki_t18b.jpg",%type_crossfade_fst
+`"Hmm, ¿olvidaste algo?"@
+` Akiha estrecha sus ojos al mirarme.@
+!w2000
+ld c,":a;image\tachi\aki_t03b.jpg",%type_crossfade_fst
+`"Bien, de acuerdo, todavía son las ocho.@ Asegúrate de regresar a las nueve, Nii-san."@
+`"Sí.@ Estaré de vuelta en una hora."@
+ld c,":a;image\tachi\aki_t09b.jpg",%type_crossfade_fst
+`"Entendido.@ No pasaré llave a la puerta; por favor ten cuidado."@
+cl a,%type_lshutter_mid
+` Akiha camina hacia la sala de estar.@
+` …… Es extraño.@ Anteriormente, me habría puesto en duda, pero ahora parece tenerme absoluta confianza.\
+` …… ¿Será por lo que sucedió en el jardín anoche?@
+` Ser confiable para Akiha, sentir que ella confía en mí, me hace muy feliz.@
+br
+` ---Por favor sé cuidadoso al estar cerca de ella.@
+br
+`"-----Uh."@
+` Las palabras de Senpai regresan como una maldición.@
+`"…… En fin.@ Iré a la escuela y volveré de inmediato." Y me reuniré con Senpai.@
+` Muy bien.@ Tomo el mango de la puerta.\
+bg #000000,%type_tcartain_mid
+!w1000
+playstop
+bg "image\bg\bg_01c.jpg",%type_bcartain_fst
+` ----La escuela está envuelta en silencio.\
+br
+` Nuestra escuela cierra a las seis y media, y ningún maestro o conserje vigila el lugar de noche.@
+` A esta hora, el complejo está completamente vacío.\
+bg "image\bg\bg_03c.jpg",%type_lshutter_mid
+` …… Por todas partes, hay silencio.@
+` El único sonido es el latir de mi propio corazón.@
+br
+`"…… Me pregunto si Senpai está adentro…"@
+` Aunque dijo que me esperaría en la escuela, nunca me dijo dónde.@
+` …… No, es probable que intencionalmente no me lo dijera.\
+`"…… Bueno, no se puede evitar.@ Cortaré la cerradura de una ventana y entraré."@
+` Me quito mis lentes.@
+monocro #0000ff
+bg "image\bg\bg_03c.jpg",%type_crossfade_fst
+`"…… Kuh."@
+` Junto con un ligero dolor de cabeza, las "líneas" aparecen frente a mí.@
+` Las "líneas" a través de las cuales las cosas se rompen fácilmente.@
+` Cosas que pueden ser cortadas sólo con pasar a través de ellas.\
+`"…… Con Yumizuka, fue sólo desesperación…"@
+` Al quitarme los lentes con calma, puedo sentir cuán extraños son mis ojos en realidad.@
+`"…… Ahora, ¿dónde habrá una ventana con una línea en la cerradura…?"@
+` Aunque cualquier cosa puede ser cortada, sólo puedo cortar donde aparezcan las "líneas".@
+` Si corto la pared o la ventana, eso llamaría la atención mañana.@ El corte tiene que ser lo más pequeño posible.\
+`"Ah, perfecto.@ Aquí va…"@
+` Con un chasquido, corto la cerradura limpiamente, y abro la ventana del pasillo.\
+monocro off
+bg #000000,%type_lshutter_fst
+bg "image\bg\bg_10f.jpg",%type_lshutter_fst
+play "*6"
+wave se0
+` -----Palpitar.@
+br
+` Me duele el pecho tan pronto como entro por la ventana.@
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_10f.jpg",%type_crossfade_fst
+`"Uh…"@
+` ¿Qué es esto?@
+` Es horriblemente…
+br
+wave se0
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_10f.jpg",%type_crossfade_fst
+` ----Palpitar.@
+br
+` Hay una atmósfera horriblemente siniestra.\
+wave se0
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_10f.jpg",%type_crossfade_fst
+`"…… Senpai… ¿dónde… estás?"@
+` Incluso murmurar es difícil.@
+` Mi corazón late.@
+` Un bombeo resonante, como un tambor dirigiendo mi sangre en reversa.\
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_10f.jpg",%type_crossfade_fst
+`"…… ¿Huh…?"@
+` Parece que las yemas de mis dedos están temblando.@
+` Me siento enfermo.@
+` Sin mis lentes, el dolor de cabeza empeora con cada segundo que pasa.\
+wave se0
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_10f.jpg",%type_crossfade_fst
+`"Qué es esto… es… extraño…"@
+` No entiendo.@
+` La atmósfera dentro del edificio es muy diferente a la de afuera.@
+` Si tengo que expresarlo en palabras, no tiene vida.@
+` Comparado con el aire fresco de afuera, el aire en el pasillo es tan débil que se siente deprimente.\
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_10f.jpg",%type_crossfade_fst
+`"…… Pero, lo conozco…"@
+` Aunque estoy respirando este aire por primera vez, lo conozco.@
+br
+` Porque siempre lo veo.@
+` Todas las noches, en mi sueño.@
+` Cuando asesino personas y bebo su sangre, la atmósfera siempre está… llena de este olor a descomposición.\
+!w3000
+wave se4
+`"¿Eh----?"@
+` Un sonido.@ Detrás de mí, el sonido de algo que cae.@
+`"¿Senpai…?"@
+` Volteo.@
+` Allí,            hay…
+ld c,":a;image\tachi\man_t03.jpg",%type_tshutter_fst
+br
+` Un hombre extraño.\
+cl c,%type_crossfade_fst
+`"¡Uh…!"@
+` Me tapo la boca con una mano, a punto de vomitar.@
+` El hombre… las "líneas" se extienden sobre su cuerpo.@
+` Recorren todo su cuerpo como vasos sanguíneos.@
+`"-----Gih."@
+` El hombre camina hacia mí, como en cámara lenta.\
+`"Uh----¿hola…?"@
+` Me decido y le hablo.@
+` …… Es extraño, pero mis ojos son más extraños.@
+` Es la primera vez que he visto "líneas" sobre el cuerpo entero de una persona, pero si no estuviesen ahí, vería a un humano normal.@
+`"---Gih---gigih…"@
+` El hombre está diciendo algo.@
+` Pero su voz ni siquiera es un ruido, no puedo escuchar.\
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_10f.jpg",%type_crossfade_fst
+` El hombre se acerca.@
+` ¿Por qué será?@ Cada vez que el hombre se acerca un paso más, un escalofrío me recorre.@
+` Es---
+br
+`"Gih----"@
+` El hombre está justo frente a mí.@
+`"E… espera, ¿quién…"@
+` …… eres?@ Ni siquiera tengo tiempo para decir eso.\
+wave se9
+quakex 3,50
+bg #000000,%type_tshutter_fst
+`"¡Ah----!"@
+` Un estrépito.@
+` Al acercarse, el hombre me arroja hacia un lado con una sola mano.@
+`"Ugh---"@
+` Mi espalda.@ Al ser arrojado, mi espalda golpea la pared violentamente.@
+` Es tan repentino que el dolor aturde mis ojos.\
+bg "image\bg\bg_10c.jpg",%type_lshutter_fst
+`"Au… ¿qué estás haciendo, tan repentinamente…!"@
+` Me levanto y miro ferozmente al hombre.@
+ld c,":a;image\tachi\man_t01.jpg",%type_crossfade_fst
+wave se0
+`"------"@
+` Mi voz se apaga.@
+` Él es… ¿qué es él?@
+` ¿Qué es esta cosa frente a mí?@
+` ¿Esto era un hombre?@ ¿Esto es un ser humano vivo?@
+br
+` No, eso no es importante en este momento.\
+bg "image\bg\bg_10f.jpg",%type_crossfade_fst
+ld c,":a;image\tachi\man_t03.jpg",%type_crossfade_fst
+` Recobro la visión, y miro al hombre nuevamente.@
+` …… Sí, ha vuelto.@
+` Sensei dijo que mis ojos ven la "muerte" dentro de las cosas.@
+` Eso es perfectamente correcto.@
+` Porque---\
+`"Tú eres---"@
+br
+`"Gi---gigi, gigigih."@
+br
+` El hombre está diciendo algo.@
+` Claro que no dice palabras.@ Porque le falta la mitad de su garganta.@ Fue mordida y arrancada por algo.@ Así que no hay manera de que pueda hablar.\
+`"Por qué---Tú, fuiste asesinado, ayer…"@
+`"Gi---gigigigigih…"@
+` Sus hombros están temblando; parece estar riendo.@
+` Pero no hay equivocación.@
+` El cadáver frente a mí, definitivamente es el hombre que asesiné en el sueño de ayer.\
+`"Ah---"@
+` El hombre se aproxima lentamente.@
+`"Ah----"@
+` No hay pensamiento alguno.@ La masa de muerte se acerca.@
+`"Ah----ah."@
+` Un espasmo de dolor.@
+` Entonces, me doy cuenta.@ Cuando el hombre me arrojó anteriormente, el costado de mi pecho fue lastimado.\
+` Me duele el cuerpo.@ No sólo al nivel de los músculos; incluso mis huesos están rechinando.@
+` Estoy seguro de que algo le sucedió a mis costillas.@
+`"¡Gih----gigigigigigih…!"@
+` El hombre levanta su brazo con violencia.@
+` Finalmente, mi entumecida cabeza comprende.\
+br
+br
+br
+br
+br
+br
+` ---Sin duda alguna,
+` él pretende matarme.\
+cl c,%type_lshutter_fst
+`"¡Hii----!"@
+` Evado el golpe del brazo del hombre.@
+` Escucho un desagradable crujido.@
+` El brazo del hombre está incrustado en la pared… está enterrado dentro del hormigón.@
+` No retrocedió siquiera una pulgada.@
+` Rompió una pared de hormigón, y a cambio, rompió sus propios huesos.@
+`"Ah---ahah…"@
+` Es un mundo gracioso y difícil de creer.@
+` Si esto es un sueño… si es sueño, quiero que termine ahora.\
+`"Gih---"@
+` El hombre voltea hacia mí.@
+`"Aaa, ah---"@
+` Otro crujido.@
+` El hombre viene hacia mí, pero su brazo aún está en la pared.@
+` El brazo.@ Atorado en la pared, el brazo se desprende de su cuerpo.@
+`"Gih, gigih, gih."@
+` Aún está riendo.@
+`"¡Ah---aaaahhhh!"@
+` Mi piernas se mueven.@
+` No puedo soportar estar aquí un segundo más.\
+bg #000000,%type_lshutter_fst
+bg "image\bg\bg_07b.jpg",%type_lshutter_fst
+`"¡Ahh, ghah, ghah…!"@
+` Caigo sobre mis rodillas con un ruido sordo.@
+` El hombre… ese cadáver no me está siguiendo.@ A esa velocidad, no puede, atraparme.\
+`"¡Hagh, ghahh…!"@
+` Me duele el pecho.@
+` Cada vez que respiro, siento que mis costillas están a punto de romperse.\
+`"Gah… hah… ha… h."@
+` De alguna forma recobro el aliento.@
+` De alguna forma.@
+` Tengo que volver a la normalidad de alguna forma.@ DEBO calmarme.@
+br
+bg #9c0120,%type_crossfade_fst
+bg "image\bg\bg_07b.jpg",%type_crossfade_fst
+` Piensa.@ Mira, y luego piensa.@ Aprendí eso de Sensei.@
+` Tengo que pensar con seriedad.@
+` Aun si eso es un cadáver.@
+` Aun si es alguien que asesiné.\
+`"¡Ha---no puedo pensar así, esto es sólo…!"@
+br
+` Ignorando el dolor en mis costillas, grito.@
+` No entiendo.@
+` No puedo entender.@
+` La persona que asesiné está a punto de matarme.@
+` La persona que asesiné ha vuelto para cobrar venganza.\
+` ---Es sólo una pesadilla.@
+` No puede ser real, es sólo una desquiciada pesadilla.@
+br
+` ¿Pero qué estoy diciendo ahora?@
+` Ya he estado en una pesadilla, por largo tiempo----\
+`"¡Maldición!"@
+` Tengo que recobrar el aliento y escapar.@
+` Tengo que salir de esta escuela, volver a la mansion, decirle a Akiha que estoy en casa…@
+wave se8
+`"¿Eh-----?"@
+` Un sonido detrás de mí.@
+`"---No puede ser."@
+` ¿Me alcanzó?@ No, es imposible.@ Se movía tan lentamente que no podría alcanzarme así de fácil.\
+` Miro escaleras abajo.@
+` …… No hay nadie subiendo.@
+` Ese ruido fue sólo mi----
+ld c,":a;image\tachi\man_t01.jpg",%type_nowaitdisp
+wave se9
+quakey 2,100
+bg #000000,%type_nowaitdisp
+!w1000
+bg "image\bg\bg_10f.jpg",%type_lshutter_fst
+`"¡Ahh-----!"@
+` Nuevamente, soy abatido.@
+` Cuando me di la vuelta sobre las escaleras, parece que él ya estaba ahí.\
+`"Tengo que---alejarme…"@
+` Fuerzo a mi dolorido cuerpo a levantarse.@
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\bg_10f.jpg",%type_nowaitdisp
+`"¿¡Uhh---!?"@
+` Caigo de nuevo con un ruido sordo.@
+` Parece que esta vez lesionó mi pierna al arrojarme.@
+` No hay nada de fuerza en mi pierna derecha.@
+` No puedo ponerme de pie, y no puedo escapar.\
+wave se7
+playstop
+`"Ah----"@
+` Pasos aproximándose.@
+br
+wave se0
+` ---Palpitar.@
+br
+` Clank, clank; un sonido seco y sin emoción.@
+wave se0
+br
+` ---Palpitar.@
+br
+` El olor putrefacto de un cadáver flota en el aire.\
+wave se0
+` ---Palpitar.@
+br
+` Mi corazón late escandalosamente.@ Todo pensamiento racional se fue hace mucho.@
+br
+wave se0
+` ---Palpitar.@
+br
+` Se acerca.\
+` Ese cadáver viene para matarme.\
+ld c,":a;image\tachi\man_t03.jpg",%type_crossfade_mid
+`"Ah----ah."@
+` Simplemente tengo miedo.@
+`"Gih…"@
+` Aquí viene.@
+` Con un cuerpo lleno de agujeros, viene para matarme.@
+` Un paso más.@
+` Entonces perforará mi pecho como lo hizo con la pared, y será el fin.@
+`"Ah----hah…"@
+` En ese momento, me pregunto.@
+` ¿Exactamente a qué le temo?\
+` ¿Tengo miedo porque la persona que asesiné ha regresado?@
+` No, no es eso.@
+` ¿Tengo miedo porque estoy a punto de ser asesinado?@
+` No, eso tampoco.@
+wave se0
+bg #000000,%type_crossfade_fst
+monocro #ff0000
+bg "image\bg\bg_10f.jpg",%type_crossfade_fst
+br
+` Recuerdo sólo una cosa.@
+` El calor que siento cuando asesino personas en mis sueños.@
+` …… Le tengo miedo a mi propio crimen.@
+` Le temo a mi propio crimen, a mi intención de matar gente.\
+`"Kuh-----hah, haha…"@
+` Bueno, si es así, entonces no hay problema.@
+` Éste ya está muerto, así que no hay nada que temer.@
+` No hay nada malo en poner a dormir a los muertos.@
+br
+` Así que.@
+` No es necesario vacilar para matar una vez más, ¿cierto…?\
+`"¡Gih…!"@
+` El cuerpo levanta un brazo con violencia.@
+` Saco el cuchillo de mi bolsillo.@
+monocro off
+bg #000000,%type_lshutter_fst
+br
+` ---Lo que pasó a continuación fue, verdaderamente, rápido.@
+br
+` ¿Fue porque vi todos esos crímenes en mis sueños?@ O tal vez porque esos crímenes fueron cometidos por mis propias manos como sospechaba.@
+` Mi brazo se movió ridículamente rápido, y acabé con el cadáver como un verdadero asesino.\
+bg "image\bg\bg_10f.jpg",%type_lshutter_mid
+play "*9"
+` La carne, dividida en ocho pedazos, ahora rueda por el pasillo.@
+br
+`"Ah---hah."@
+` Un escalofrío.@
+` La sensación de rebanar carne.@ La aceptación de tomar una vida.@
+` No hay sangre fluyendo.@
+` Sólo mi cuchillo gotea sangre; yo permanezco inmaculado.\
+`"-----"@
+` Estremecimiento.@
+` Una sensación de dolor y frío se arrastra sobre mi espalda.@
+` No hay nada que ganar.@
+` Sólo mi cuchillo gotea sangre, yo no he ganado nada----\
+`"----Hah."@
+` Simplemente me siento enfermo.@
+` Tal vez estoy enloqueciendo.@
+` Al mirar los restos frente a mí, me duele el pecho como si hubiese sido desgarrado.\
+` La escuela de noche.@
+` Bajo la luz de la luna, es gracioso.\
+br
+`"…… Jah,"@
+br
+!w750
+`"…… Jajaja…"@
+br
+!w500
+`"…… ¡Ajajajajajajaja!"\
+` Río sin parar.@
+` No es divertido.@
+` Arrepentimiento es lo único que siento.@
+` Asesiné.@ Sin importar la razón, volví a asesinar a alguien.@
+br
+` ----Aunque era inocente.@
+` Esta persona también tenía una vida que proteger.\
+`"¡Jaja, jajaja, jajajajajajaja…!"@
+` Una risa irritante.@
+` Quiero matar a mis oídos por escuchar, y a mi garganta por reír.@
+` Pero sólo puedo reír.@
+` Por lo menos, tengo que reír.@
+` A menos que haga alguna cosa que se asemeje a una acción humana, estaré acabado.\
+`"Jaja, ja, jaja, ja-----"@
+` No estoy riendo porque algo sea gracioso.@
+` Río para mantener la cordura.@
+` Si ni siquiera puedo ridiculizarme a mí mismo, no puedo mantener la cordura.@
+br
+`"Jah----jajaja, ja… jah."@
+br
+` …… Quizás debería haber llorado.@
+` Pero no me permitiré semejante hipocresía.@
+` ¿Qué pretendo al decir que… matar a los muertos… no es un crimen?\
+`"Hah---hah-----ahh."@
+` …… el hecho no cambia.@
+` Que estuviese vivo o muerto, no cambia el hecho de que tomé la decisión de matarlo.@
+` Aun si ya era un cadáver, la sensación de detener su actividad no disminuye.@
+`"----Hah."@
+` No puedo enojarme por mi propia estupidez.@
+` Aun si está muerto, matar a alguien sigue siendo un pecado.@
+` Mientras yo, Tohno Shiki, siga siendo humano, el peso de este pecado nunca me abandonará.\
+` …… Recuerdo a Yumizuka.@
+` Aunque lo que hice haya sido lo correcto, al final, sé que ella quería vivir.@
+` Decir que la muerte es la salvación es sólo el deseo egoísta de aquellos que aún viven.@
+` La muerte…
+` Es sólo eso, y es tan dolorosa.\
+wave se8
+` ----Alguien viene.@
+br
+` Esta vez, tiene que ser Senpai.@
+`"-----Kuh."@
+` De alguna forma, me levanto, sosteniéndome de la pared.\
+` Palpitar, Palpitar.@
+` Mi corazón aún late violentamente.\
+` Aunque mi corazón está medio muerto, mi cuerpo intenta vivir hasta el último momento.@
+br
+` …… Qué vida tan inútil.@
+` Morir así es doloroso… me percaté de ello hace ocho años, durante mi tiempo con Yumizuka, e incluso en este preciso momento.@
+` Pero, el cuerpo de Tohno Shiki aún está haciendo un gran esfuerzo para sobrevivir.\
+`"…… Qué… repulsivo---"@
+` Pero, ¿qué es lo repulsivo?@
+` ¿El corazón que piensa que debo morir, porque soy un asesino?@
+` ¿O el cuerpo, que intenta vivir matando a otros?@
+` …… Creo que es el corazón.@
+` Sea bueno o malo, mi corazón es muy frágil después de todo.\
+`"----Aquí estás."@
+` Respirando con fuerza, sostengo el cuchillo.@
+` Mi pierna lesionada duele ligeramente.@
+` Si puedo sentir dolor, todavía puedo moverme.@
+` Eso significa que aún puedo pelear.@
+br
+` Y Ciel-senpai aparece bajo la luz de la luna.\
+playstop
+ld c,":a;image\tachi\cel_t15.jpg",%type_crossfade_mid
+`"…… Estoy sorprendido.@ En ninguno de los sueños estabas vestida de esa manera."@
+`"Sí.@ Porque éste es el armamento para matar a un vampiro."@
+br
+` ----Una sacudida.@
+` En el instante en que veo sus ojos y escucho su voz, comprendo.@
+` Esta persona planea matarme sin vacilar en lo más mínimo.\
+`"…… Ya veo.@ Me hiciste venir aquí para matarme, Senpai."@
+`"---------"@
+` Senpai no responde.@
+` …… Obviamente, porque no hay nada que decir.@
+`"Qué cruel.@ Dijiste que no era el asesino, pero en tu corazón sabías que sí lo era."@
+`"---Sí.@ Supe desde el principio que el vampiro que embrujaba a esta ciudad era Tohno Shiki."\
+`"¿Lo sabías… desde el principio…?"@
+`"Sí.@ Por eso, vine a esta escuela.@ Para vigilarte."@
+ld c,":a;image\tachi\cel_t16.jpg",%type_crossfade_mid
+` Diciendo eso, ella saca una daga.@
+` Dos veces más larga y ancha que mi cuchillo, es un arma hecha para matar.\
+`"---Senpai, no tengo idea de qué eres.@ Y aunque lo supiera, creo que no me concerniría."@
+`"Sí, ésta es una situación que no te concierne."@
+`"…… Sí.@ Pero, me temo que no seré asesinado.@ Ahora que lo pienso, maté a Yumizuka porque no quería morir.@
+` Así que---no puedo morir aquí.@ Si dices que vas a matarme, yo…"\
+`"Está bien.@ Si acordamos matarnos el uno al otro, entonces habrá crimen, pero no castigo.@ Sería mejor que lo pienses de esa manera."@
+` El ruido de un movimiento.@
+` Antes de darme cuenta, el cuerpo de Senpai está justo frente a mí.@
+br
+`"Bien, entonces Tohno-kun.@ Continuemos con la pelea de anoche."\
+play "*4"
+cl a,%type_nowaitdisp
+` En un momento.@
+` Ciel-senpai se mueve lo bastante rápido como para levantar chispas.\
+bg "image\bg\ima_14.jpg",%type_lshutter_fst
+wave se11
+` Su ataque es muy simple.@
+` Saltando desde su posición frente a mí, traza una línea horizontal con su daga.@
+`"¡……!"@
+` Bloqueo con mi cuchillo, y soy empujado hacia atrás.@
+`"¡----!"@
+` Mi cuerpo se tambalea.@
+` Desesperadamente, evito caer hacia atrás, y busco a…\
+bg "image\bg\bg_10f.jpg",%type_rshutter_fst
+`"Qué-----"@
+` Por un momento, mi mente se congela.@
+` No hay señal de ella en el pasillo.@
+` En un instante,
+` mientras nuestras armas colisionaban, Senpai desapareció de pronto----
+br
+`"¿Eh-----?"@
+br
+` ---Creo que fue sólo por casualidad.@
+` Sin razón alguna, sólo al sentir una brisa a mi lado, volteo la mirada.\
+` Bajo la azulada luz de luna que brilla a través de la ventana,
+` veo la silueta de Senpai, escalando la pared como si estuviese subiendo una escalera.@
+br
+`"-----¿¡Arriba!?"@
+` Incluso mientras me percato, agacho mi cuerpo.\
+bg "image\bg\ima_14.jpg",%type_tshutter_fst
+`"¡------!"@
+` Caminando en cuatro patas como un perro, escapo hacia adelante.@
+` Al mirar atrás, veo a Senpai caer del techo precisamente sobre el lugar donde yo estaba.@
+` …… Después de atacarme, ¿subió por la pared para tratar de golpear mi cabeza desde el techo?@ Ese absurdo movimiento de montaña rusa fue encantadoramente hermoso.@
+` A pesar de que pudo haber perforado mi nuca.\
+bg "image\bg\bg_10f.jpg",%type_lshutter_fst
+ld c,":a;image\tachi\cel_t16.jpg",%type_crossfade_fst
+`"------"@
+` Como si su chispeante movimiento previo nunca hubiese sucedido, Senpai deja de moverse.@
+` ¿Está sorprendida porque evadí ese golpe?@
+` Sus ojos azules confirman que Tono Shiki aún está vivo.@
+` Sus ojos carentes de sentimiento, como una máquina.@
+` Hay tensión, mientras espero que inicié su siguiente acción.\
+wave se0
+`"-------"@
+` Olvido incluso respirar.@
+` Con esos ojos sobre mí, no puedo moverme.@
+` Dentro de un momento, esa daga será clavada en mi pecho----\
+`"-------Ssst."@
+` El único sonido es el de mi palpitante corazón.@
+` Estoy de pie, incapaz de moverme, y Senpai sólo me mira fijamente.@
+` …… Esto es malo.@
+` A este paso, sucumbiré bajo esta tensión, y haré un movimiento.@
+` Cuando eso suceda, Senpai de seguro me acabará.@
+`"--------"@
+` Todo lo que puedo hacer es sujetar mi cuchillo con firmeza.@
+` En ese momento,
+` Senpai habla repentinamente.\
+`"----Estoy sorprendida.@
+` Ciertamente eres un asesino excelente.@ No eres bueno para sentir la presencia de otros, pero eres bueno para sentir tu propia muerte.@
+` Aunque no lo recuerdes, quizás has sido entrenado para esas cosas."@
+` Senpa habla sin siquiera mover sus cejas.@
+`"En contra de alguien que tiene un mecanismo superior de auto defensa cercano a ver el futuro, el asesinato es inútil.@
+` Tratar de atacarte desde un punto ciego fue inútil, Tohno-kun."@
+` Pareciendo terriblemente triste, Senpai deja salir un suspiro.@
+`"¿------?"\
+`"Es una lástima.@ Si no puedo matar tu consciencia antes de que sientas dolor, lo único que puedo hacer es atacar con toda mi fuerza.@
+` Aunque puedas ver venir la muerte, tus reflejos lo hacen algo casi irrelevante."@
+br
+wave se0
+` Chirrido.@
+br
+`"----No te ves bien, Tohno-kun."@
+br
+` Palpitar.\
+`"Te has estado sintiendo así por un rato, ¿no?@ Náuseas que se sienten como si tu corazón estuviese siendo sujetado."@
+br
+wave se0
+` Escalofrío.@
+br
+`"Eres tan sensible.@ Eso es…"@
+br
+wave se0
+` Escalofrío.@
+br
+`"…… debido al impulso que tienen todos los seres vivos cuando están a punto de ser asesinados."@
+playstop
+cl a,%type_nowaitdisp
+wave se0
+br
+` Diciendo eso,
+` ella ataca justo frente a mí.\
+bg "image\bg\ima_14.jpg",%type_lshutter_fst
+`"¡¡Kuh…!!"@
+` Bloqueo su daga con la mía.@
+` Un impacto.@
+` El simple ataque de Senpai se siente como si hubiese usado un martillo gigante.@
+` Mi cuchillo rechina.@
+`"¡Tttch…!"@
+` Las yemas de mis dedos se entumecen.@
+` Pero no tengo tiempo para pensar en eso.@
+` Su pie golpea el piso audiblemente.\
+quakey 1,50
+wave se9
+`"¿¡Ha, guh………!?"@
+` El aire es sacado de mi cuerpo.@
+` Senpai se ha colocado en el espacio entre mis piernas.@
+` Tan cerca que nuestros cuerpos colisionan, y con ese ímpetu, Senpai clava su hombro en mi pecho.@
+br
+` Me tambaleo.@
+` La fuerza en mi cuchillo se debilita.@
+` Sin una sola pausa, su segundo ataque comienza.\
+wave se11
+quakey 1,100
+` Agita su daga de abajo hacia arriba.@
+` De alguna forma, la bloqueo con mi cuchillo, pero no puedo parar su ímpetu.@
+br
+` Slash.@
+` Un horrible sonido.\
+bg "image\bg\ima_13b.jpg",%type_tshutter_fst
+`"Ah------"@
+` Es caliente.@ En alguna parte, fui cortado.@ La carne que cae, el calor de la sangre.@
+` No hay tiempo para sentir nada de eso.@
+br
+wave se11
+monocro #ff0000
+bg "image\bg\ima_14.jpg",%type_lshutter_fst
+` Aquí viene el tercer golpe.\
+bg "image\bg\ima_12b.jpg",%type_lshutter_fst
+` Probablemente estaba dirigido hacia mi corazón.@
+` Ya que giré mi cuerpo inmediatamente para evadirlo, el cuchillo rompe mi costilla junto con la carne a su alrededor.@
+br
+monocro off
+bg #ffffff,%type_nowaitdisp
+`"¡¡¡¡Gah, aaahhhh…!!!!"@
+` Grito.@
+` La frialdad de la muerte no me hace temblar.@
+` Pero el miedo por el dolor recorre mi cuerpo.@
+br
+` Y ahí.@
+` Viene el cuarto golpe despiadado.\
+bg "image\bg\ima_14.jpg",%type_lshutter_fst
+` ----Mis costillas están lesionadas.@
+br
+` Sólo puedo usar la fuerza de mi brazo para empuñar el cuchillo.@
+` Pero con eso, es imposible bloquear la daga de Senpai.@
+`"¡Kuh-----!"@
+` De alguna forma, salto hacia atrás con mi tambaleante pierna.@
+` Gano suficiente distancia.@
+` Senpai se da la vuelta, dándome la espalda----
+bg #9c0120,%type_nowaitdisp
+bg #000000,%type_nowaitdisp
+br
+` Crash.@
+` Una patada giratoria es clavada en mi barriga como una lanza.\
+bg "image\bg\bg_10f.jpg",%type_tshutter_fst
+quakey 4,50
+`"¡¡¡¡¡Ha----ahh…!!!!!"@
+` Caigo hacia atrás sobre el piso del pasillo.@
+` No tengo tiempo para sentir dolor.@
+` Si no me levanto de inmediato, seré asesinado.@
+` Pero es demasiado tarde.@
+` En el momento en que me levanto, Senpai está justo frente a mí.\
+bg "image\bg\ima_14.jpg",%type_lshutter_fst
+` La daga ataca mi corazón.@
+`"¡------!"@
+` Simplemente estaba, desesperado.@
+` En desesperación, intento igualar su ataque colocando mi cuchillo junto al cuello de Senpai.@
+br
+` ---Entonces.@
+` La daga de Senpai se paraliza.\
+bg "image\event\aki_e05a.jpg",%type_lshutter_mid
+waveloop se1
+`"Haghh---"@
+` Respirar.@ Me es difícil, respirar.@
+` *jadeo*, *jadeo*, *jadeo*, *jadeo*…
+` Su daga está dirigida hacia mi garganta.@
+` Si Senpai mueve su mano aunque sea levemente, moriré instantáneamente.@
+`"Ha… ah…"@
+` Ese hecho.@
+` Sólo eso me hace enloquecer.\
+`"---Se acabó.@ Aun si apuñalas mi cuello con ese cuchillo, no moriré."@
+`"¿Qué---qué estás…"@
+`"Dijiste que lo habías visto.@ Aunque fui perforada por un tubo de hierro, mi cuerpo sanó la herida instantáneamente.@ …… Si apuñalas mi cuello, ciertamente estaré muera por un rato, pero te mataré antes de eso."@
+`"-----Qué."@
+` Lo que ella dice es verdad.@
+` …… No tiene sentido mentir en una situación como ésta.@
+br
+` En otras palabras.@
+` Esta situación en la que cada uno tiene la vida del otro en sus manos no tiene ningún sentido.\
+`"¿No---morirás…?"@
+` …… Ah, pero podría ser verdad.@
+` Aun con heridas como ésas, Senpai vino a la escuela como siempre.@
+br
+`"---Kuh."@
+` Pero, al demonio con todo eso.@
+` Puedo ver "la muerte" sobre su cuerpo.@
+` Aunque es muy diferente a la de otras personas, puedo ver su muerte.@
+` Por lo tanto, matarla es fácil.@
+` Las "líneas" no hacen excepciones.\
+`"Si no me crees, por favor usa tu cuchillo… De cualquier forma, no puedes salvarte a menos que me mates.@ ¿Hacemos la prueba?"@
+`"------"@
+` ……Me está provocando.@
+` Si puedes matarme, mátame, está diciendo.@
+` Pero Senpai, provocar de esa manera es fatal.@
+` No soy como los otros----yo en verdad puedo matarte.\
+` ----Mi corazón late.@
+br
+` Si bajo la vista, su daga está en mi pecho.@
+` …… Tengo que matar.@
+` Porque no quiero morir.@
+` Comprendí que no debo morir tan fácilmente, así que no puedo permitir que me maten.@
+br
+` No, es más simple que eso.@
+` Simplemente, no quiero morir.\
+` ----Mi corazón late.@
+br
+` Así que sólo hay una respuesta.@
+` Matar.@
+` Clavar este cuchillo en la "línea" que veo en el cuello de Ciel, y matarla.@
+` Mata si quieres vivir.@
+` Mata.@ Mata.@ Mata.@ Mata.@ Mata.@ Mata---
+br
+return

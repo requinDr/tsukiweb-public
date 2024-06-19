@@ -1,0 +1,685 @@
+monocro off
+playstop
+;---added context above---
+bg #000000,%type_nowaitdisp
+waveloop se10
+`"-----¿Hisui, quizás?"@
+` …… Tal vez solo esté pasando para ver si estoy dormido durante su ronda nocturna.@
+` No sería extraño que Akiha le hubiese pedido que esté pendiente de mí ya que he estado pasando la noche fuera de casa……@
+`"……………, Zzzz~"@
+` Bueno, debería finjir que estoy dormido para que Hisui se sienta mejor si ése es el caso.\
+wave se8
+` …… Los pasos no se detienen.@
+waveloop se10
+` Los ruidosos pasos no suenan como Hisui.@
+` Ella siempre trata de esconder su presencia educadamente, así que esto es muy extraño.\
+` …… Siento que se acerca.@
+` Parece que está parada junto a mi cama.@
+`"……………… Zzzz~"@
+` Podría no ser Hisui.@
+` Abro mis ojos ligeramente para no ser descubierto.@
+bg "image\bg\bg_40d.jpg",%type_crossfade_mid
+!w1000
+ld c,":a;image\tachi\his_t02.jpg",%type_lshutter_fst
+cl c,%type_lshutter_fst
+`"…………… Zzzz~"@
+` Sin duda alguna, es Hisui.@
+` Pero estoy seguro de que parece estar actuando extraño.\
+`"…………………………"@
+`"………………………… Zzzz~"@
+` Hisui me observa silenciosamente.@
+`"------Ah."@
+` Ella intenta hablar, pero se detiene.@
+` …… Hisui vuelve a hacer lo mismo y permanece quieta.@
+` ……@
+` …………\
+` ………………@
+` ……………………@
+` …………………………\
+` ………………………………\
+` …………………………………… Esto se ha vuelto muy tenso.@
+br
+` No sé qué quiere decir, pero dejarla así me parece patético.@
+` En primer lugar, no puedo dormir así.@
+`"……………… Zzzz~"@
+` Pero en el instante en que decido dejar de finjir y preguntarle,
+br
+`"……… ¿Está despierto, Shiki-sama……?"@
+br
+` Escucho su vacilante voz.\
+`"……………… ¿Hisui?"@
+` Tan naturalmente como puedo, finjo despertarme.@
+` Tan pronto como me siento, allí---
+wavestop
+ld c,":a;image\tachi\his_t20.jpg",%type_crossfade_mid
+play "*1"
+br
+` ----Veo a Hisui actuando extrañamente.@
+br
+`"¿Qué pasa Hisui?@ Es muy tarde… ¿ocurrió algo?"@
+`"…… Sí, tengo que completar mi labor nocturna, Shiki-sama."@
+` Hisui dice algo que no puedo entender muy bien con una débil voz.\
+`"¿……?@ ¿Una labor, nocturna?@ ¿Qué es eso?"@
+` Ladeando mi cabeza, miro a Hisui directamente.@
+`"……………………"@
+` Hisui no reponde y desvía su mirada.@
+`"………………"@
+`"……………………"@
+`"…………………………"@
+`"………………………………"@
+`"……………………………………"@
+br
+` ----Otro largo e incómodo silencio tiene lugar.\
+`"Hisui.@ Um, a menos que lo expliques con más claridad, no entenderé lo que quieres decir."@
+` Digo esto para romper el silencio.@
+` Y entonces,
+ld c,":a;image\tachi\his_t13.jpg",%type_crossfade_fst
+`"Una labor nocturna es una labor nocturna.@ Es lo que usted deseaba, así que esas palabras son muy problemáticas."@
+` Ella casi parece malhumorada.\
+`"-------"@
+` No entiendo adónde quiere llegar.@
+` Pero, más que eso…… esta noche, ella se ve distinta de lo normal.@
+` …… No tanto por sus palabras, sino que se ve tan linda, que repentinamente quiero provocarla.\
+`"…… ¿Hisui?@ Perdona, pero aún no entiendo.@ ¿Qué es esa labor nocturna?"@
+ld c,":a;image\tachi\his_t20.jpg",%type_crossfade_fst
+`"…… Um, ¿en verdad no entiende, Shiki-sama?"@
+`"¿No es lo que estoy diciendo?@ Si puedo ayudar, ayudaré, sólo dime qué necesitas."@
+`"……………………"@
+` Hisui queda en silencio de nuevo.@
+` Pero esta vez, no por mucho tiempo.@
+ld c,":a;image\tachi\his_t21.jpg",%type_crossfade_mid
+`"Estoy aquí para ser su compañera nocturna, Shiki-sama."@
+` Hisui se sonroja vigorosamente al decir esto.\
+`"Oh, ya veo.@ Mi compañera nocturna.@ De eso se trata."@
+` After I understand,
+playstop
+br
+`"-----¿EeeeEEEEh!?"@
+br
+` Retrocedo tan rápidamente que casi me caigo de la cama.\
+`"………………"@
+` Aún mirando hacia abajo, Hisui no dice nada.@
+`"--------Qué--"@
+` Intento decir algo, pero no puedo hablar.@
+` …… Um, en otras palabras,
+` parece que Hisui vino aquí para dormir conmigo.@
+`"……………… Estoy soñando."@
+` Me pellizco para confirmarlo.@
+` …… Duele, y Hisui no desaparece.@
+`"¿P-por qué?"@
+` Todo lo que logro soltar son esas palabras.\
+ld c,":a;image\tachi\his_t20.jpg",%type_crossfade_fst
+`"……………………"@
+` Juntando sus manos con fuerza, Hisui apenas me mira.@
+br
+`"………… Porque, soy suya, Shiki-sama."@
+br
+` Su voz está llena de entusiasmo.\
+`"¿Mía?@ Hisui-----"@
+` Palpitar.@ Mi pulso se acelera.@
+`"Yo no te veo de esa manera---"@
+` No quiero pensar en eso, pero.@
+ld c,":a;image\tachi\his_t28.jpg",%type_crossfade_fst
+`"-------"@
+` Si pone una cara como ésa,
+` mi mareo empeora.\
+`"---Hisui, no puedes hablar en serio.@ Yo… en verdad no."@
+` Nunca pensé en tener sexo con Hisui ni nada parecido---
+`"…… Shiki-sama, ¿está diciendo que me odia?"@
+` Parece atemorizada de que yo pueda decir sí.@
+` No hay ningún hombre en este mundo que pueda resistirse a esos ojos.@
+`"¡D-de ninguna manera……!@ Hisui, yo---"@
+br
+` …… En las profundidades de mis sueños,
+` ¿acaso pensé que deseaba a Hisui?\
+bg #ffffff,%type_crossfade_fst
+waveloop se1
+bg "image\bg\bg_40d.jpg",%type_crossfade_fst
+` …… Mi pulso está acelerado.@
+` …… Mi razonamiento se está desvaneciendo.@
+` …… Algo está mal.@
+` …… Acabo de confirmar que esto no es un sueño.@
+` Pero pareciera que estuviese en un sueño y mis pensamientos son inconsistentes, y en verdad estoy pensando que deseo a Hisui-----\
+ld c,":a;image\tachi\his_t02.jpg",%type_crossfade_fst
+`"Shiki-sama…… ¿no soy buena?"@
+`"Estúpida---No es eso.@ Hisui, tú me gustas."@
+ld c,":a;image\tachi\his_t20.jpg",%type_crossfade_fst
+` Hisui se relaja visiblemente.@
+`"…… Pero, esto es algo diferente.@ Aunque seas mi sirvienta, no es algo que tengas que hacer…… No puedo hacer nada que no quieras hacer."@
+` Palpitar, Palpitar.@
+` Logro reunir suficiente razón para aclarar esto.@
+ld c,":a;image\tachi\his_t21.jpg",%type_crossfade_fst
+`"---------Shiki… sama."@
+` Ella aprieta sus manos con aun más fuerza.\
+`"…… No estoy en contra.@ Soy completamente suya.@
+` …… ¿Está mal que yo desee que usted también me ame?"@
+` Ella habla fragmentadamente.@
+` Al alcanzar mis oídos, los últimos rastros de pensamiento racional desaparecen.@
+`"Hisui, pero---"@
+` Aparto mis ojos de Hisui mientras hablo.@
+` Pero, incluso eso,
+ld c,":a;image\tachi\his_t22.jpg",%type_crossfade_mid
+`"Por favor…… observe, Shiki-sama."@
+` Una vez que vislumbro sus dedos agarrando su falda, ya no puedo apartar la vista.\
+wavestop
+play "*5"
+bg "image\event\his_h15.jpg",%type_bshutter_mid
+` En ese instante, mi respiración se atora en mi garganta.@
+`"-----------"@
+` Su falda levantada.@
+` Las delicadas y atractivas piernas de una chica joven.@
+` Y entre esas piernas, aquello que normalmente estaría cubierto es claramente visible.@
+`"…………………………"@
+` Puedo escucharla temblar mientras respira.@
+` Su delicadamente curveado y tembloroso cuerpo blanco.@
+` Su expuesta hendidura concuerda perfectamente con el resto de su hermoso cuerpo.@
+` Los labios a su alrededor son tan pequeños, parecen pétalos de flores.\
+`"………… Ah……………"@
+` Esos pétalos se estremecen levemente.@
+` Ser vista debe ser extremadamente avergonzante para ella.@
+`"………………………"@
+` Pero ella todavía no se mueve.@
+` Con la falda levantada y completamente expuesta, ella cierra sus ojos y se sonroja, esperando por mí.\
+`"Hi----sui."@
+` Es todo lo que puedo decir.@
+` …… No hay ningún olor viniendo de ella.@
+` Pero soy totalmente intoxicado por el aroma.@
+` Su figura no está llena de curvas femeninas, pero siento a mi corazón acelarse.@
+` Se siente como si la calidéz debajo de su falda de alguna forma hubiese llenado la habitación entera.@
+` Mi cabeza, mi garganta, incluso las yemas de mis dedos están todas esclavizadas.\
+` ----Hisui.@
+br
+` Hisui, quien está cerrando sus ojos tímidamente…
+` Aunque sé que debería detenerla, sigo pensando lo opuesto----\
+`"……………………"@
+` Hisui tiembla en silencio.@
+` Su delicado estremecimiento.@
+` Eran sólo sus dedos al principio, pero luego sus piernas, y sus muslos también.@
+` Ella está temblando.@
+` Cierra sus piernas, como para esconder el glorioso tesoro entre ellas.\
+`"………………………………………………"@
+` La respiración de Hisui se hace más fuerte.@
+` …… Pensé que iba a alzar su voz.@
+` No, no es eso, yo simplemente---
+br
+`"---Hisui."@
+br
+` quería escuchar su voz.\
+` Extiendo mis manos.@
+` Y traigo el tembloroso cuerpo de Hisui hacia mis brazos.@
+br
+`"……………………… Ah."@
+br
+` Su cuerpo se sacude.@
+`"Hisui, yo----"@
+` No sé qué debería decir.@
+` Cuando la halo violentamente hacia mis brazos, ella me mira con ojos llorosos.\
+`"…… Sí.@ Por favor, cuide bien de mí, Shiki-sama."@
+`"-----------"@
+` Sus palabras tienen una extraña magia.@
+` Mi violento corazón se calma repentinamente.\
+`"…… Entiendo.@ Eso me hace muy feliz, Hisui."@
+` La hago sentarse sobre la cama.@
+`"Entonces, no te muevas hasta que yo te diga.@ Y no hables a menos que te lo pida."@
+` Hisui asiente.@
+` Mis dedos se mueven bajo su levantada falda.@
+` "……………………"@
+` Ella observa mi dedo, sin poder hacer nada.@
+` Pretendiendo no darme cuenta, extiendo mi dedo medio y acaricio ligeramente su hendidura.\
+`"Ah………………"@
+` El cuerpo entero de Hisui se estremece.@
+` Intenté ser lo mas amable que pude, pero ella parece haberlo sentido fuertemente.@
+`"…… Mm…… eres tan suave aquí, Hisui."@
+` Junto mis dedos medio e índice y continúo acariciándola.@
+` Tan suavemente como puedo, acaricio toda el área.\
+`"Ha………… ah………"@
+` Su respiración se hace más ruidosa.@
+` Una suave caricia.@
+` Continúo mi suave masaje, moviendo mi dedo arriba y abajo de su hendidura.@
+`"¡-----, Nn…………!"@
+`"¿Hm……?@ Hisui, ¿dijiste algo?"@
+`"Ah…… No, no es…… nada, Shiki… sama."@
+`"Ya veo, eso es bueno.@ Pensé que habías olvidado que te pedí que no hablaras."@
+` Diciendo eso,
+` repentinamente deslizo un dedo dentro de ella.\
+`"------¡Nha…………!"@
+` Su espalda se arquea en respuesta.@
+` Ni siquiera he metido más que la punta de mi dedo todavía, así que no se que sucederá si voy más lejos.@
+`"…… Guau, ¿esto siempre es así?@ Está toda húmeda y muy mojada."@
+`"Ah………………"@
+` Hisui se traga sus palabras y se sonroja hasta la punta de sus orejas.@
+` Probablemente para obedecer mi orden de no hablar.@
+`"En verdad eres sucia.@ No he hecho nada, y ya estás mojada, Hisui."@
+`"---------"@
+` Hisui se queda ahí avergonzada.\
+`"No, lo siento.@ Siendo así, debí haberme apresurado y hacer… ¡esto!"@
+` Sumerjo mi dedo más profundamente.@
+`"¡Kgh……, mm………!"@
+` Hisui echa su cabeza hacia atrás.@
+` Siento a su cuerpo apretarme ligeramente en respuesta.\
+`"…… Cielos, es sólo un dedo.@ Debes ser sensible, Hisui."@
+` Deslizo mi dedo mas profundamente y lentamente lo hago girar dentro de ella.@
+`"¡------!@ Tss,…… a."@
+` Sus labios se sacuden incontrolablemente.@
+` …… Pero aun así, ella continúa cumpliendo mi orden.@
+` Tratando desesperadamente de evitar gritar y romper la regla que le impuse.\
+`"…… Eres bastante persistente, Hisui.@ Pero, bueno---no parece que puedas resistir mucho más tiempo."@
+`"¿Eh…… Shiki… sama……?"@
+`"Porque ya estás muy mojada adentro.@ Mojarte así sólo por un dedo, hay algo mal en eso."@
+`"--------"@
+` El rostro de Hisui se torna aun más rojo.@
+`"…… No, Shiki-sama---es porque usted es quien me está tocando, yo----"@
+`"Oye, no hables.@ No te pregunté eso."@
+`"¡Ah------!"\
+` Muevo mi dedo nuevamente.@
+` Se desliza a lo largo de sus paredes internas.@
+`"---¡Ah---ngah, mm…………!"@
+` Puedo sentir la calidéz de su respiración.@
+`"…… Hisui, ¿dijiste algo?"@
+`"…… Ah………… no, na… da-----"@
+` Ella aprieta sus dientes.@
+` Pero no puede evitar que su respiración se haga más ruidosa.@
+`"…… Eso es bueno, pero… creo que este dedo no será suficiente para ti."@
+` Retiro mi dedo con un sonido húmedo.@
+` Cubierto de jugo, una húmeda línea conecta mi dedo con ella.\
+`"Ah-----"@
+` Hisui mira hacia abajo con asombro.@
+`"Entonces haré esto a continuación…… Hisui, asegúrate de recordar lo que te dije."@
+`"Ah……… S… í."@
+` Hisui asiente.@ Al mismo tiempo, encajo dos dedos dentro de ella.@
+`"¡Hya, nn------!"@
+` Su espalda se arquea una vez más y ella se estrecha por dentro.@
+`"Ah…… oh…… ahn------"@
+` Su respiración es tan caliente que casi me está quemando.@
+` Para hacerla aun más caliente, deslizo mis dos dedos arriba y abajo.\
+`"Nn…… nn----"@
+` Su cuerpo entero se sacude en respuesta.@
+` Sin importar cómo lo intente, no parece poder resistir el placer fluyendo a través de todo su cuerpo.@
+` Su movimiento traiciona a su pasión incluso al tratar de ahogar sus gritos.\
+`"Hisui, aunque gimas tanto, no puedo escucharte.@ Estás haciendo demasiado ruido aquí abajo."@
+` Muevo fuertemente mis dedos, y el sonido de carne mojada sobre carne se hace más escandaloso.@
+`"No----no…… Shiki-sama."@
+` Ella aparta la vista, sonrojándose vigorosamente.@
+` Su cara es tan linda---simplemente quiero provocarla aun más.\
+`"Debes desear esto.@ Estás goteando tanto que estás ensuciando mi alfombra.@ Es bastante obvio que eres una chica sucia."@
+`"Ah…… nhaa……,………"@
+` Continúo moviendo mis dedos mientras hablo.@
+` Mientras muevo mis dedos dentro de ella, enrosco mi dedo medio.@
+`"----¿¡Ha……………!?"@
+` Su cuerpo se sacude instantáneamente.@
+` Mi dedo enroscado se desliza a lo largo de su pared interna.\
+`"¡Aahh----nghaa, hwah-----!"@
+` Debe ser muy sensible ahí; no puede reprimir sus gritos.@
+`"Hisui, ¿no te pedí que no dijeras nada?"@
+`"A-----Sí, Shiki… sama----"@
+` Hisui está jadeando con fuerza.@
+` Pero aún no dejo de frotar dentro de ella.\
+`"Nn…… haa, ah----Ah."@
+` Está respirando con fuerza, como si tuviese una fiebre alta.@
+`"…… Hm…… Incluso te has puesto más grande aquí abajo."@
+` Me inclino hacia adelante y lamo su abultado clítoris.@
+`"¿¡Nahh------!?"@
+` Hisui intenta arquearse hacia atrás.@
+`"Hisui.@ No dije que podías moverte."@
+`"…… S…… sí…… Shiki… sa…… ma."@
+` Su voz es apenas audible.@
+` La acaricio, adentro y afuera.@
+` Aunque no estoy haciendo casi nada, su cuerpo ya parece estar en su límite.\
+`"…… Hisui.@ ¿Es, tu primera vez?"@
+`"A---n, Ah…… S… sí…….@ Porque, Shiki-sama, usted es… mi único amo-----"@
+` Ella me responde con una voz temblorosa.@
+`"…… Ya veo.@ Entonces, aquí está tu recompensa."@
+` La lamo una vez más.@
+` Usando la punta de mi lengua, retiro su capucha y lamo su clítoris.@
+`"¡¡¡Eh---ah, oh………!!!"\
+` Es su grito más escandaloso hasta ahora.@
+` Ignorando eso, lamo con aun más fuerza.@
+`"¡Ah, haa, ah----Shiki-sa… ma------!"@
+` No es una simple lamida.@
+` Lamo como si estuviese tratando de aplanar su clítoris.\
+`"¡Ah…… ngah…… N, no-----Shiki-sama, por favor----por favor deténgase-----Haa, ahn, ah…… Shiki… sama……!"@
+` Ella convulciona de placer.@
+` Su rostro se eleva hacia el cielo mientras respira salvajemente.@
+br
+` Los nudillos de los dedos que sujetan su falda se tornan blancos.\
+`"¡Ha---Esto es… demasiado---!@ ¡Ahh…… Shiki… sama, por favor…… por favor perdóneme, Shiki… sa… maaa-----!"@
+` Ella suelta y débil y desmenuzado grito.@
+` Sus rodillas se dan por vencidas y ella cae sobre la cama.\
+bg #ffffff,%type_crossfade_fst
+bg "image\bg\bg_40d.jpg",%type_crossfade_fst
+` …… El sonido de dificultosas respiraciones hace eco por toda la habitación.@
+` Hisui descansa exhausta en la cama.@ Ya que estoy sentado sobre la cama, Hisui naturalmente cae en mis brazos.\
+`"……………… ¿Hisui?"@
+` Susurro en su oído mientras la sostengo.@
+`"--------"@
+` No hay respuesta.@
+` Todo lo que puedo escuchar es su pesada respiración.@ Ella no parece capaz de responderme.@
+` …… Simplemente,
+` la calidez de los brazos que me sujetan me dice que ella está consciente.\
+`"………………"@
+` Permanecemos así mientras pasa el tiempo.@
+` Sólo sostener su cálido cuerpo en mis brazos se siente tan agradable---y más que eso, estoy embelesado por la sensación de Hisui sujetándose de mí como una niña.@
+`"-------Mm."@
+` Puedo sentir sus latidos.@
+` …… Cielos, ¿qué me pasó de pronto?@
+` Hisui se confió a mí tan sinceramente, y yo la traté de esa forma.@ Me siento tan culpable que quiero morir.@
+`"…… Si Akiha se entera, me matará……"@
+` …… Sí, no hay duda de ello.\
+`"………………"@
+` Hisui finalmente recobra el aliento.@
+`"…………… ¿Shiki… sama……?"@
+` Aún en mis brazos, ella mira hacia mí.@
+`"…… Oh, lo siento, Hisui.@ Creo que me excedí."@
+`"………………"@
+` Ella mira directamente hacia mí con ojos perdidos.\
+`"…… No, estoy bien.@ Shiki-sama, si está satisfecho, entonces estoy feliz."@
+` Sonrojándose, ella habla con su seriedad habitual.@
+` …… Esa cara… es demasiado linda.@
+` Gracias a eso, algo que estaba calmado comienza a despertar de nuevo dentro de mí.@
+`"¡--------!"@
+` Rápidamente me aparto de Hisui.@
+` …… Porque, si permanecíamos en esa posición, mi endurecida asta habría pinchado su estómago.\
+`"…… ¿Shiki-sama……?"@
+` Hisui me mira confundida.@
+`"¿Hay algún problema?@ Um…… ¿fui… insatisfactoria después de todo……?"@
+` Ella suena nerviosa.@
+` Como si estuviese preocupada de que yo pudiese odiarla.@
+`"---No.@ En absoluto.@ No hay nada insatisfactorio en ti.@ Mira, es sólo que mi mente está satisfecha, pero mi cuerpo no lo está……"@
+` No lo digo exactamente bien.@
+br
+` ----Y entonces,
+` Hisui  se sonroja y baja la vista.\
+`"…… ¿Hisui?"@
+`"…… Por favor perdóneme por hacerle decir eso, Shiki-sama."@
+` Ella habla con vacilación.@
+`"Ah-----"@
+` Al mirar abajo, me percato de que estoy totalmente erecto frente a ella…….@ Sería extraño que ella no lo notase, ciertamente.\
+`"¡Ah, no, así---está bien, en serio!@ ¡Me calmaré pronto, así que no te preocupes por eso!"@
+` Mi frenético tartamudeo parece tener el efecto opuesto.@
+`"…… Shiki-sama.@ Aún no lo he servido."@
+` Ella mira directamente hacia mí.@
+`"Por favor relájese.@ No estoy acostumbrada a esto, pero haré mi mejor esfuerzo para servirlo."@
+` Ni siquiera tengo tiempo para detenerla.@
+` Ella se quita la ropa y lentamente mueve su rostro hacia mi entrepierna.\
+bg #000000,%type_crossfade_mid
+bg "image\event\his_h16.jpg",%type_crossfade_mid
+` …… Sus movimientos en verdad son inocentes.@
+` Bajando mi cremallera, ella expone mi hinchado miembro.@
+` No muestra ni una pizca de desagrado al ver esta larga cosa grotesca, y me toca con manos que parecen estar haciendo esto por primera vez.\
+`"…… Ah……"@
+` Ella lo toca y deja salir un jadeo, probablemente sorprendida por lo caliente que está.@
+` Lenta y vacilantemente, sujeta mi asta, moviéndose como si manejara algo frágil.@
+`"…… Hisui, si es tu primera vez, no tienes que forzarte."@
+`"…………………"@
+` Hisui niega con su cabeza.@
+` Sin vacilar, casi como si lo estuviese besando, ella me toca con sus labios.@
+`"-------"@
+` Me hincho en respuesta a esa suave sensación.@
+` La sensación de los labios de alguien…… la sensación de los labios de Hisui hace arder mi sangre.\
+`"¿Shiki-sama……?@ ¿Esto… duele?"@
+`"Oh, no.@ Tus labios se sienten tan bien."@
+`"…… Entonces, ¿no duele……?"@
+`"Claro que no," digo con una sonrisa, tratando de confortarla cuando me mira llena de preocupación.@
+` Claramente aliviada, aplica más presión que antes.\
+`"N-------"@
+` Calor hierve profundamente en mis genitales.@
+` Su caricia en realidad es ligera.@
+` Puede que no sepa cómo hacerlo, porque solamente me sostiene con sus dedos y chupa mi punta suavemente.@
+` …… Pero, eso no significa que no se sienta bien.@
+br
+`"…… Ah…… mm…… Shiki-sama, ¿esto es… bueno……?"@
+br
+` Aunque es inexperta, da lo mejor de sí para complacerme.@
+` La placentera sensación de sus labios que me abrazan.@
+` No totalmente dentro de su boca, pero justo entre sus labios.\
+`"…… Oh…… está empezando a gotear."@
+` Una línea de pre-eyaculación sale goteando.@
+` Sin darle importancia en lo mas mínimo, ella usa su lengua para tragarla.@
+`"----, Ah----"@
+` Mis caderas se levantan en respuesta a la sensación.@
+`"…… Mm…… Shiki-sama, es tan caliente."@
+` Hisui fortalece su agarre, intentando impedir que mi asta se mueva de un lado a otro.@
+`"…………… Hisui."@
+` …… Pude haberle dicho que hacer para que se sienta incluso mejor.\
+` Pero, no es necesario.@
+` Que haga su mejor esfuerzo para complacerme es suficiente para mí.\
+`"…… ¿Shiki… sama……?"@
+`"…… Sí, se siente bien, Hisui."@
+` Dejo que mis dedos vaguen a través de su cabello.@
+` En este momento la amo más de lo que la deseo.@
+` Su cabello rojo, sus mejillas sonrojadas…… Esforzándose tanto, aunque es su primera vez.\
+`"Ah…… Sí, soy muy feliz, Shiki-sa, ma---"@
+` Ella continúa su labor con aun más entusiasmo.@
+` Sus dedos me aprietan hambrientos.@
+` Su lengua, su boca, me acarician casi sin pausa.\
+`"-----Ah."@
+` El calor dentro de mi se eleva más.@
+` …… Como si hubiese comenzado a saber qué hacer, empieza a besar no sólo mi punta, sino mi asta entera.@
+`"Mm…… ahmm…… Shiki-sama, ¿esto es bueno……?"@
+`"-------"@
+` Sin responder, resisto el impulso acumulándose dentro de mí.@
+`"…… Ah…… nn, mmh-----"@
+` Sus labios descienden alrededor de mi asta.@
+` Entre ellos, su lengua se mueve atrás y adelante.\
+`"Oye----Hisui, deberías alejarte."@
+` Digo esto, pero ni siquiera intento hacerla apartarse.@
+`"Ah---Shiki-sama, es… tan----"@
+` Grande, probablemente quizo decir.@
+` Al borde de eyacular, me estoy hinchando aun más.@
+`"Hi… sui---Voy a acabar, así que deberías… alejarte."@
+`"Sí…… por favor acabe, Shiki… sama……"@
+` Al decir esto, su caliente respiración ondula a todo mi alrededor.@
+` …… Ella sabe.@
+` Ella sabe lo que viene ahora, y abraza mi virilidad firmemente con sus labios.\
+`"¡Ahh----,---!"@
+` Con eso, exploto.@
+bg #ffffff,%type_crossfade_fst
+bg "image\event\his_h16.jpg",%type_crossfade_fst
+`"¿¡Ah, mmph------!?"@
+` Puedo escuchar la débil voz de Hisui.@
+` Libero todo mi deseo reprimido.@
+` Con sus pequeños labios, ella lo traga con diligencia.\
+bg #ffffff,%type_crossfade_mid
+`"-------Hi, sui."@
+` Intoxicado por la sensación de liberación, miro la garganta de Hisui.@
+` Ella está tragando cada gota.@
+` Sus ojos azules como cristal, rebosantes de lágrimas.@
+br
+` ----Con eso, repentinamente pienso.@
+br
+` Hisui es tan dedicada, pero torpe.@
+` …… Es realmente triste.@
+` Si esto fuese real y no un sueño, no cometería el error de pensar que ella es como una muñeca-----\
+!w4000
+playstop
+if %flgE>=1 skip 5
+mov $phasebg,"image\bg\bg_06g.jpg"
+mov $phasetitle_a,":a;image\word\PARK_06A.PNG"
+mov $phasetitle_b,":a;image\word\day_06.png"
+gosub *left_phase
+skip 5
+mov $phasebg,"image\bg\bg_27b.jpg"
+mov $phasetitle_a,":a;image\word\PCEL_06A.PNG"
+mov $phasetitle_b,":a;image\word\day_06.png"
+gosub *left_phase
+bg #ffffff,%type_crossfade_slw
+bg "image\bg\bg_40a.jpg",%type_lcartain_fst
+play "*2"
+` ………, ………………, ……………………@
+br
+`"---¿Ma---ñana?"@
+` Abro los ojos, aturdido.@
+` Los rayos del sol entran por la ventana, envolviendo la habitación en una cálida atmósfera.\
+`"--------"@
+` Miro fijamente mis manos.@
+` Están un poco sudorosas.@ Mi cuerpo también está bañado en sudor, como si la noche hubiese sido increíblemente calurosa.@
+` Mi cuerpo está lento.@ No es incómodo, es más bien una sensación de finalización.@
+br
+`"¿-------?"@
+` Sacudo mis hombros.@
+` …… Mi cuerpo parece estar bien.@
+` Pero Hisui no está frente a mí.@ Sus dedos y su aliento que estuvieron acariciándome hasta ahora han desaparecido como si nunca hubiesen estado ahí.\
+`"¿Huh-----?"@
+` ¿Los dedos de Hisui, y su aliento……?@
+br
+`"¡AAH-------!"@
+br
+` Salto de la cama.@
+` Al recordar ese sueño, de pronto soy asaltado por arrepentimiento.@
+`"No puedo, creerlo----"@
+` …… ¿Qué clase de sueño estaba teniendo?@
+` Imaginé a Hisui viniendo aquí y diciéndome que vino para hacer su labor nocturna…… en verdad tengo que cuestionar mis gustos.\
+`"Haa----ahhh."@
+` Estirando mi espalda, respiro profundamente.@
+` …… Intento olvidarme de mi sueño, pero no se desvanecerá tan fácilmente.@
+`"……………… Hisui."@
+` Sé que debe haber sido un sueño---pero se sintió tan real.@ Me hace pensar que en verdad pudo haber sucedido.\
+` …… No obstante, debe haber sido un sueño.@
+` Podría decir que fue bueno al menos en ese sentido.\
+`"…… Pero era tan linda."@
+br
+` ---Mientras recuerdo el sueño, tengo una mezcla de sentimientos.@
+` La verdadera Hisui nunca es tan abierta respecto a sus sentimientos.@
+` Siempre es tranquila e inexpresiva, y raramente se sonroja.@
+`"……………………"@
+` …… Por eso aún no puedo evitar sentir arrepentimiento.@
+` Sé que está mal, pero recuerdo a la Hisui sincera de mi sueño.\
+` Y, entonces,
+ld c,":a;image\tachi\his_t01.jpg",%type_lshutter_fst
+`"Shiki-sama."@
+`"¡Uuaaaaaaa!"@
+quakey 2,100
+br
+` ---Hisui aparece con su expresión habitual.\
+`"¡AAAhHHHhh Hisui!"@
+` Gateo, gateo, ruedo, bam.@
+` El sobresalto me hace rodar fuera de la cama y estrellarme contra la pared cercana.@
+` Afortunadamente, las sábanas aún estaban alrededor de mi cintura.\
+ld c,":a;image\tachi\his_t18.jpg",%type_crossfade_fst
+`"…… Shiki-sama.@ ¿Tiene algo en mi contra?"@
+` Ella parece enfadada.@
+` …… Bueno, al verme girar repentinamente y decir su nombre, probablemente tiene derecho a pensar que estoy actuando extraño.@
+`"…… N-no, no es nada…… uh, en fin, ¿cuánto tiempo, has estado aquí?"@
+` …… Aún vuelto un desastre, suelto lo primero que me viene a la mente.\
+ld c,":a;image\tachi\his_t08.jpg",%type_crossfade_fst
+`"Desde antes de que usted despertase, Shiki-sama, ¿por qué pregunta?"@
+` Ella me mira con una expresión de insatisfacción.@
+`"Uh……………"@
+` Al ver sus ojos de esa manera, siento que soy la forma de vida más baja sobre la Tierra.@
+cl c,%type_crossfade_fst
+br
+`"…… Oh.@ Antes de que yo, despertara……"@
+` ---Eh.@
+` Eso significa,
+` ¿Hisui vio mi rostro cuando estaba teniendo ese sueño?---\
+`"Hisu, Hisui, um-----"@
+Aún tirado en el piso, enredado en las sábanas e incapaz de levantarme, levanto la vista y miro el rostro de Hisui.@
+` Hisui se queda parada ahí, inexpresiva como siempre, y no hace ningún intento por hablar.@
+`"Um…… ¿Yo me veía, extraño……?"@
+ld c,":a;image\tachi\his_t01b.jpg",%type_crossfade_fst
+`"No deseo describirlo."@
+`"Ah--h"@
+` …… Lo sabía.@ Debo haberme visto muy raro.\
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"Pero, si usted insiste, Shiki-sama, puedo describirlo con la mayor precisión que me sea posible."@
+`"…… No, no tienes que hacer eso……"@
+` Con mi rostro aún sonrojado, hablo con una voz débil.@
+`"Um, ¿Hisui-san?"@
+`"¿Qué desea, Shiki-sama?"@
+`"Um, voy a cambiarme, así que ¿podrías por favor ir afuera?"@
+br
+` --O más bien, estoy tan avergonzado que sólo quiero que se vaya.\
+`"…… Entiendo.@ Por favor discúlpeme."@
+cl c,%type_crossfade_mid
+` Ella hace una reverencia y se dispone a retirarse.@
+` Respiro profundamente,
+` y me relajo.@
+ld c,":a;image\tachi\his_t18.jpg",%type_crossfade_fst
+`"…… Por cierto, Shiki-sama."@
+` Hisui se da la vuelta con una temible expresión.@
+`"¿Podría por favor decirme qué tipo de sueño estaba teniendo?"@
+` Ella me dirige la mirada.@
+` …… Esto no es bueno.@ Pude haber dicho algo muy malo mientras dormía.\
+`"…… Um, nada interesante.@
+` Puede que haya dicho algo mientras dormía, pero sería bueno que pensaras que no tiene absolutamente nada que ver conmigo……"@
+ld c,":a;image\tachi\his_t09.jpg",%type_crossfade_fst
+`"…… Está bien.@ Pero de ahora en adelante, por favor absténgase de hablar dormido sobre la pequeñez del pecho de alguien, o la anchura de su frente, u otras características de su cuerpo.@
+` Hace un poco más dificil mi labor de despertarlo."@
+cl c,%type_crossfade_fst
+` "Por favor discúlpeme," dice Hisui y deja la habitación.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_34a.jpg",%type_lcartain_mid
+` Después de tranquilizarme lo suficiente, me dirijo hacia la sala de estar.@
+` Como siempre, Akiha está sentada en el sofá, bebiendo té con elegancia.@
+ld c,":a;image\tachi\aki_t04a.jpg",%type_crossfade_fst
+`"Oh, buenos días Nii-san.@ Ciertamente te has levantado temprano esta mañana."@
+` Debe estar feliz porque desperté temprano ya que me saluda con una sonrisa.@
+cl c,%type_crossfade_fst
+`"Sí, buenos días.@ Sucedieron, bueno, un montón de cosas sucedieron esta mañana."@
+`"¿?@ ¿Un montón de cosas?@ ¿Qué quieres decir con eso?"@
+`"Um, bueno-----"@
+br
+` ----Y entonces,
+` repentinamente recuerdo mi sueño sobre Hisui.\
+`"Ugh---"@
+` Esto no es bueno.@ Sé que mi rostro se está sonrojando mas allá de mi control.@
+`"¿Nii-san---?"@
+` Un breve clamor.@
+ld c,":a;image\tachi\aki_t01a.jpg",%type_crossfade_fst
+`"¿Qué sucede?@ Tu cara está roja, ¿tienes fiebre?"@
+`"¡-----!"@
+` Apresurándose hacia mí, ella me mira desde abajo.@
+` Pero, ese ángulo,
+` Cuando me mira así desde abajo, se asemeja demasiado al sueño de anoche----\
+ld c,":a;image\tachi\aki_t12a.jpg",%type_crossfade_fst
+` Akiha suspira.@
+`"Parece que sí tienes fiebre.@ Kohaku, ven rápido.@ Nii-san no parece estar bien."@
+` Akiha grita hacia el comedor.@
+` Kohaku-san debe estar preparando mi desayuno en la cocina.\
+`"¡Estoy bien--!@ ¡Es un resfriado menor, así que no te preocupes!"@
+ld c,":a;image\tachi\aki_t21.jpg",%type_crossfade_fst
+`"Si es un resfriado, entonces no puedo dejarlo pasar.@ Para ti, una enfermedad trivial es una gran cosa.@ La fortaleza de tu sistema inmunológico es mucho más baja que la de la mayoría de la gente."@
+cl c,%type_crossfade_fst
+` Akiha parece estar harta y coloca su mano sobre mi frente.@
+br
+` La sensación de su fría y delicada mano.@
+` Sus blancos y delicados dedos.@
+` Completamente diferentas a lo de un hombre, esos finos, preciosos, dedos blancos------\
+`"¡Ah!"@
+` Esto no es bueno.@
+` Esto no es nada bueno, así que me libero y salgo corriendo hacia el vestíbulo.\
+bg "image\bg\bg_33a.jpg",%type_lcartain_mid
+br
+` Mis pasos hacen eco mientras corro.@
+br
+bg "image\bg\bg_40a.jpg",%type_lcartain_mid
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"¿Shiki-sama?@ ¿Ya terminó su desayuno?"@
+`"No, no es eso, pero--Um, ¿dónde está mi maletín?"@
+`"Aquí lo tengo.@ ¿Ya va a ir a la escuela?"@
+` Asintiendo, arranco mi maletín de las manos de Hisui.@
+`"Me voy.@ ¡No te preocupes por acompañarme!"\
+bg "image\bg\bg_33a.jpg",%type_lcartain_mid
+ld c,":a;image\tachi\aki_t02.jpg",%type_crossfade_fst
+`"Nii-san, has estado actuando extraño.@ ¿Qué estás haciendo con una fiebre como ésa?"@
+`"¡Cielos, te dije que no es nada!@ ¡Ya que no es nada, voy a la escuela!@ ¡Desayunaré más tarde, así que déjame en paz!"@
+`"¿¡Que te deje en paz--oye, Nii-san!?"@
+br
+` El sonido de mis pasos al huir es mi única respuesta.\
+bg "image\bg\bg_32a.jpg",%type_lcartain_mid
+` *suspiro*@
+` Aunque se trate de Akiha, no me perseguirá tan lejos.\
+` Ya no somos niños, así que no impedirá que vaya a la escuela.\
+`"----Fiu."@
+` Respiro profundamente y me tranquilizo.@
+`"……… ¿De qué estoy escapando?"@
+` Una vez calmado, puedo pensar claramente.@
+` No hice nada malo, y no había necesidad de que huyese de esa manera.\
+`"--No puedo creerlo.@ Parezco un completo idiota."@
+` Pero, regresar a la mansión para desayunar suena más tonto.@
+`"---¿A la escuela, entonces?"@
+` Soltando un suspiro, bajo la colina a lo largo de la calle residencial.\
+playstop
+bg #000000,%type_lcartain_mid
+!w1000
+return

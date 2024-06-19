@@ -1,0 +1,83 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_40d.jpg",%type_nowaitdisp
+` Los aullidos continúan.@
+` No hay manera de que pueda dormir así.@
+` …… No puedo dormir, pero eso es normal.@
+br
+`"…… Tengo sueño, así que no le prestaré atención."@
+` Halo las sábanas sobre mí y me estiro sobre la cama.@
+` Simplemente puedo considerar a los aullidos algo tan mundano como autos pasando por la calle.\
+` *suspiro*@
+` Hoy ha sido un día muy largo.@
+` Estoy mentalmente agotado por cenar en esta mansión desconocida y por mis conversaciones con Akiha y las demás.@
+` Después de todo eso, los aullidos son sólo ruido de fondo.@
+` Cierro mis ojos y me quedo dormido tranquilamente.\
+bg #000000,%type_crossfade_mid
+!w2000
+play "*7"
+bg #ffffff,%type_crossfade_mid
+br
+` ---Tengo un sueño nostálgico.@
+br
+` El final de verano, ocho años atrás.@
+` Después de ser herido, fui llevado a ese hospital donde nadie fue a visitarme jamás, y conocí a Sensei.@
+` Al regresar a la mansión, escuché decir a mi viejo que sería adoptado por una familia de la que nunca había oído hablar.@
+br
+` Todo sucedió tan rápido.@
+` Justo después del día en que dejé el hospital, terminé yendo a la casa Arima.\
+` No había una sola nube en el cielo azul ese día.@
+` El inicio del otoño.@
+` Fui apartado de la mansión Tohno.@
+br
+` Pero poco antes de eso…
+` Esa chica había venido a verme, escabulléndose de los ojos de los adultos.\
+bg "image\bg\cmo_20.jpg",%type_crossfade_mid
+br
+br
+br
+br
+br
+br
+`"Cuando estés a punto de irte, por favor ven al árbol que está en el patio trasero."@
+` Después de escuchar eso, me escabullí bajo la vista de mi viejo y hacia el patio trasero.\
+` El cielo era azul.@
+` Bajo ese profundo azul que parecía extenderse por siempre, ella esperó por mí.@
+` Para mí, era la primera vez que ella dejaba la mansión para venir afuera.\
+`"Toma esto."@
+` Diciendo eso, ella desató la cinta que sujetaba su cabello y me la entregó.@
+` Supongo que fue su regalo de despedida para mí, pero era un niño, así que ni siquiera me sentí feliz al respecto.@
+br
+` …… Después de todo, ¿qué tipo de niño de nueve años se sentiría feliz por recibir una cinta?\
+`"Esa cinta es mi favorita, devuélvemela después, ¿de acuerdo?"@
+` Pero ésas fueron las palabras que me salvaron.@
+br
+` "Devuélvela," dijo ella.@
+` "Regresa," es lo que capté en esas palabras.@
+br
+` ---Sólo eso fue suficiente para mí.@
+` Ese último día, sin nadie siquiera para despedirse de mí.@
+` Que ella, con quien nunca había hablado, me dijera eso… me hizo feliz.\
+` ---Pero no pude decir, "definitivamente la devolveré."@
+br
+` Con lo listo que era en aquel entonces, me percaté de que nunca me sería posible regresar a esta mansión.@
+br
+` …… Ésas fueron las únicas palabras que intercambiamos.@
+` Algo respecto a sus gélidos ojos era verdaderamente triste.@
+` Ya era hora, así que comencé a caminar hacia la entrada.@
+` La chica sólo permaneció ahí como una muñeca, viéndome partir.\
+br
+br
+br
+br
+br
+br
+` Un sueño distante sobre lo que sucedió en un magnífico día.@
+` Bajo el despejado cielo azul.\
+!w1000
+bg #000000,%type_crossfade_mid
+playstop
+!w3000
+return

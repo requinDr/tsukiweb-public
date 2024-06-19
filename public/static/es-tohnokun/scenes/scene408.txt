@@ -1,0 +1,95 @@
+mov $phasebg,"image\bg\ima_01.jpg"
+mov $phasetitle_a,":a;image\word\PHIS_13A.PNG"
+mov $phasetitle_b,":a;image\word\day_13.png"
+gosub *left_phase
+!w3000
+bg #ffffff,%type_nowaitdisp
+waveloop se10
+` …… Noc, noc noc, noc.\
+` …… Noc, noc noc, noc.@
+` …… Noc, noc noc, noc.@
+` …… Noc, noc noc, noc.@
+` …… Noc, noc noc, noc.@
+` …… Noc, noc noc, noc.@
+` …… Noc, noc noc, noc.@
+` …… Noc, noc noc, noc.@
+` …… Noc, noc noc, noc.\
+bg "image\bg\bg_40a.jpg",%type_crossfade_mid
+` …… Noc, noc noc, noc.@
+br
+` ----La noche ha terminado.@
+br
+` Un silencio terrible.@
+` Ni siquiera puedo escuchar mis resollos al respirar.\
+` …… Noc, noc noc, noc.@
+br
+`"--------"@
+` Mi cuerpo ni siquiera tiembla o se mueve en absoluto.@
+` Mi mente también se ha detenido por completo.@
+` Apuesto que si me mirase en el espejo, me vería como un títere con las cuerdas cortadas.\
+` …… N.@ noc no, c.@ no, c.@
+br
+`"-------Gohu."@
+` Toso.@
+br
+` …… Pierdo el ritmo de nuevo.@
+br
+`"Go--ha, ah, ah----"@
+br
+` …… Noc.@ no, noc.@
+` …… Noc.@ noc no, c noc.@
+` …… Noc.@ Noc noc.@ Noc.\
+` …… Noc, noc noc, noc.@
+br
+`", ………, ………"@
+` Recupero el ritmo, y puedo continuar respirando.@
+`"---------"@
+` Estar solo toda la noche hizo que mi cuerpo se debilitara mucho.@
+` Mi visión es muy borrosa.@
+` El aire que toca mi piel es doloroso.@
+` Mis órganos están tan dañados que no puedo respirar a menos que me concentre.\
+` …… Noc,  Noc Noc, Noc.\
+` …… Noc,  Noc Noc, Noc.@
+` …… Noc,  Noc Noc, Noc.@
+` …… Noc,  Noc Noc, Noc.@
+` …… Noc,  Noc Noc, Noc.@
+` …… Noc,  Noc Noc, Noc.@
+` …… Noc,  Noc Noc, Noc.@
+` …… Noc,  Noc Noc, Noc.\
+wave se3
+`"Shiki-sama, ¿está despierto……?"@
+` La voz de Hisui.@
+` …… ¿Cuántas veces han sido?@ Hisui en verdad no se cansa de esto.@
+`"Está despierto, ¿no?@ De ser así, por favor al menos coma algo."@
+`"…… No.@ No comeré nada que venga de ustedes."@
+` No voy a comer nada.@
+` No puedo confiar en nada que venga de esta casa.@
+` Comida.@ Agua.@ Medicina.@
+` Parece que todo es un veneno para matarme.\
+`"…… Shiki-sama, dejaré su comida aquí.@ Después de que me vaya, por favor abra la puerta y coma."@
+wave se7
+waveloop se10
+` …… La presencia de Hisui desaparece.@
+`"………"@
+` Golpeo mi cabeza contra la pared.@
+` …… ¿Cuántas veces he ignorado a Hisui de esta manera?@
+` …… Hisui.@ Hisui es diferente de Akiha y Kohaku-san.@
+` Tal vez Hisui no esté tratando de matarme.\
+`"………"@
+` Pero, eso es sólo una fantasía.@
+` Hisui trató de encerrarme en esta habitación.@
+` Como ahora, vino aquí para cuidar de mí, y mantenerme atrapado en esta habitación.@
+`"----Ha, ah."@
+` …… Esto no es bueno.@
+` Sé que mis pensamientos son sólo paranoia.@
+` Pero mi mente no volverá a la normalidad.\
+` …… Noc,  Noc Noc, Noc.@
+` …… Noc,  Noc Noc, Noc.@
+` …… Noc,  Noc Noc, Noc.@
+` …… Noc,  Noc Noc, Noc.@
+br
+` Mi mente es confusa y mi cuerpo palpita de dolor.@
+` Mi garganta está tan seca que siento que moriré si no bebo agua.@
+` …… A pesar de todo eso, sigo manteniendo la puerta cerrada.\
+bg #000000,%type_crossfade_mid
+return

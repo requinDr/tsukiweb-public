@@ -1,0 +1,19 @@
+monocro off
+wavestop
+playstop
+bg #000000,%type_nowaitdisp
+;---added context above---
+` La cena tiene lugar con Akiha y yo estando cara a cara.@
+` Supongo que es natural aquí que Hisui y Kohaku-san no coman con nosotros, y que permanezcan detrás de nosotros para atender nuestras necesidades.@
+` …… Pensé que sería natural que los cuatro comiésemos juntos, así que se podría decir que he sido atrapado con la guardia baja por esta cena inexplicablemente tensa.\
+` Debería mencionar en este punto que he olvidado completamente todo lo relacionado con los modales en la mesa.@
+` Bueno, recuerdo pequeñas partes, así que no es que sea un completo amateur, pero los humanos tienden a guardar recuerdos en desuso en rincones de la mente.\
+` La tensión ciertamente fue bastante escalofriante, con cada uno de mis movimientos haciendo levantar una ceja a Akiha.@
+br
+` …… Cuando pienso en cómo tendré que pasar por esto todos los días, es muy deprimente.\
+bg "image\bg\bg_40c.jpg",%type_crossfade_mid
+` Al finalizar la cena, regreso a mi habitación.@
+` Son poco más de las ocho de la noche.@
+` Es muy temprano para dormir, entonces ¿qué debería hacer?@
+br
+return

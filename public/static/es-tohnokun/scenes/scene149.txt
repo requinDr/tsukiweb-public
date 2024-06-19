@@ -1,0 +1,57 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_06a.jpg",%type_crossfade_mid
+play "*3"
+` La clase de la cuarta hora es sobre la sociedad moderna.@
+` El ambiente en el salón es un poco más ligero de lo habitual antes del almuerzo.@
+br
+` Es miércoles, así que hay una hora menos de clases el día de hoy.@
+` Después del almuerzo, hay tutoría y una hora para decidir qué hacer para el Festival Cultural.@
+` Además, mañana es un día festivo de la escuela, así que cuando termine esta cuarta hora, ya prácticamente serán vacaciones.@
+` Es natural que todos estén esperando que repique la campana de fin de clases.\
+`"----Tengo sueño."@
+` Suelto un gran bostezo.@
+` La clase no ha cambiado en absoluto, el día progresa sin nada fuera de lo ordinario.@
+br
+` Ahora que lo pienso, he vivido tanta experiencias extrañas que casi me siento raro al estar simplemente sentado viendo clases.@
+` Y después de que terminen las clases y caiga la noche, tendré que salir una vez más con Arcueid.@
+` Considerando eso, ciertamente no tengo tiempo para tontear en este lugar.\
+` Veo mi reflejo en el cristal de la ventana.@
+` El rostro de Tohno Shiki parece estar feliz por alguna razón.@
+`"----Grr."@
+` Hago severa mi expresión.@
+` No es que vagar por las calles con Arcueid sea divertido, ¿entonces por qué estoy actuando de esta manera?@
+bg #000000,%type_crossfade_mid
+bg "image\event\ark_e09.jpg",%type_crossfade_mid
+bg "image\bg\bg_06a.jpg",%type_crossfade_mid
+br
+`"…… Arcueid……"@
+` Hay algo que, está mal.@
+` Al mirar por la ventana y hacia el patio trasero, puedo ver una ilusión de ella agitando su mano hacia mí y diciendo "Oye".\
+br
+br
+br
+br
+br
+br
+br
+` ----¡Hey, espera un minuto……!\
+bg "image\event\ark_e09.jpg",%type_tshutter_mid
+`"Qué, qué, qué----"@
+` Me pego a la ventana y miro hacia abajo.@
+` Sólo puedo ver el borde del patio trasero,
+` pero sin duda alguna,
+` Arcueid, con su estilo habitual, está en mi escuela.\
+`"!!!!!"@
+` Miro alrededor del salón de clases.@
+br
+` ----Afortunadamente, nadie ha notado a la extraña extranjera que me saluda.\
+`"¿¡Qué está pensando……!?"@
+` Me quejo en voz baja mientras sujeto fuertemente mi cabeza.@
+` Pero, quejarme no me hará ningún bien.@
+` …… Faltan unos veinte minutos para el almuerzo.@
+` ¿Qué vas a hacer Tohno Shiki?@ Si la dejas sola, ¿¡quién sabe que hará……!?@
+br
+return

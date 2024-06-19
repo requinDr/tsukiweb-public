@@ -1,0 +1,238 @@
+monocro off
+wavestop
+;---added context above---
+play "*3"
+bg "image\bg\bg_06a.jpg",%type_lcartain_mid
+` Es la hora del almuerzo y el salón de clases comienza a animarse.@
+` Algunos chicos están corriendo hacia la cafetería, un grupo de chicas está reorganizando los pupitres para formar una mesa, y algunos estudiantes están dejando el salón tranquilamente, con sus cajas de almuerzo en mano.@
+` Los observo mientras preparo la leche y el pan que compré.@
+ld c,":a;image\tachi\ari_t01.jpg",%type_lshutter_fst
+`"Cielos, ¿sin mucho apetito como siempre, eh, Tohno?"@
+` Que este sujeto esté parado aquí frente a mí ya es parte de mi rutina diaria, y no voy a comenzar a quejarme ahora.\
+`"Pero hombre, ¿qué nos pasa, sólo nosotros dos almorzando juntos?@ ¿Qué tipo de comida viene sin la compañía de una hermosa flor?"@
+`"Si no tienes ninguna 'flor', ¿por qué no te unes a ese grupo de allá?@ No voy a detenerte."@
+`"¡Idiota!@ Cuando digo 'flor', me refiero a una única y hermosa flor.@ Esas chicas haciendo un grupo no están bien.@ Son venenosas en vez de hermosas."@
+` …… El comentario de Arihiko probablemente le habría ganado algunas rocas lanzadas en su dirección si el grupo de chicas lo hubiese escuchado.@
+` Afortunadamente, las chicas en nuestra clase no escucharon sus venenosas palabras.\
+`"…… Eso es bastante severo, Arihiko.@ Ya sabía que eras un tipo malo pero, ¿no te has puesto peor últimamente?@ Estás pasando de ser simplemente 'malo' a ser 'inconformista'."@
+ld c,":a;image\tachi\ari_t04.jpg",%type_crossfade_fst
+`"No puedo evitarlo, ¿o sí?@ Cuando hay una verdaderamente hermosa flor en nuestra escuela, mi ojo perspicaz se hace aun más crítico."@
+`"Jah…… Entonces, ¿quién es esta hermosa 'flor'?"@
+`"Es un secreto.@ No quiero más competencia, ¿cierto?"@
+cl c,%type_crossfade_fst
+` Arihiko ríe con una ambiciosa sonrisa derramándose sobre su rostro.@
+` Como eso es algo que no poseo, estoy un poco impresionado por su habilidad para expresarse tan francamente.\
+br
+` ----Y entonces.@
+br
+` La persona que acabo de conocer entra por la puerta del salón.@
+`"…… Ah."@
+` Con una caja de almuerzo en una mano, no hay manera de que pueda confundirla con alguien---
+ld c,":a;image\tachi\cel_t01a.jpg",%type_lshutter_fst
+`"Hola, Tohno-kun.@ ¿Te molesta si interrumpo?"@
+`"Eh---Ah, no hay problema, por supuesto---"@
+` Sonriendo, Ciel-senpai trae una silla y se sienta naturalmente.\
+`"Um…… Senpai, ¿estás herida?"@
+`"No estoy herida en absoluto."@
+` Incluso su sonriente respuesta me incomoda.@
+`"Me dijiste que viniese aquí a la hora del almuerzo, pensé que sería descortés no hacerlo."@
+`"Uh…… Es verdad que dije eso, pero……"@
+cl c,%type_crossfade_fst
+` Lo que quise decir fue que ella podía venir si terminaba estando herida y yo me haría responsable.\
+ld r,":a;image\tachi\ari_t04.jpg",%type_lshutter_fst
+`"¡S-s-senpaiiii!"@
+` Arihiko golpea la mesa explosivamente mientras se levanta.@
+ld l,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
+`"Ah, Inui-kun.@ ¿Podría ser que Tohno-kun y tú sean conocidos?"@
+ld r,":a;image\tachi\ari_t05.jpg",%type_crossfade_fst
+`"¡Sí, somos más que simples conocidos!@ ¡Tohno y yo hemos sido amigos desde que éramos niños!@ ¿Cierto, Tohno?@ ¡Hasta se podría decir que éramos los mejores amigos!"@
+`"--------"@
+` Arihiko aprieta un puño para enfatizar su punto.@
+` No hay espacio para estar de acuerdo o no.\
+ld l,":a;image\tachi\cel_t04.jpg",%type_crossfade_fst
+`"Oh, ¿en serio?@ ¡Es una gran coincidencia que ustedes sean amigos!"@
+`"¡Sí que lo es!@ ¡Este bastardo tiene una cara tan tranquila, me pregunto cuándo comenzó a llevarse bien con Senpai!"@
+` '¡Jajaja!' Arihiko me mira ferozmente mientras ríe hacia Senpai.@
+` Distraídamente, me pregunto si eso es a lo que se podría llamar ser bien balanceado.\
+bg #000000,%type_tshutter_fst
+bg "image\bg\bg_06a.jpg",%type_bshutter_fst
+` Al final, Arihiko convence enérgicamente a Senpai de quedarse a almorzar.@
+` Bueno…… ya que trajo su almuerzo, quizás era lo que ella tenía en mente desde el principio.@
+ld l,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
+`"Oh, Inui-kun, ¿vives solo?"@
+ld r,":a;image\tachi\ari_t01.jpg",%type_crossfade_fst
+`"No, vivo con mi hermana.@ Nuestros padres nos dejaron a cargo de la casa, así que aprendimos a cocinar naturalmente, eso es todo."@
+` Arihiko parece familiarizado con Senpai.@
+` Es capaz de hablar con ella más relajadamente que yo.@ Yo sólo me la he encontrado unas pocas veces.\
+`"Por cierto, Senpai, dijiste que fuiste invitada aquí por Tohno.@ ¿Sucedió algo?"@
+`"Sí, tropecé con Tohno-kun durante el descanso.@ No me lastimé, pero Tohno-kun golpeó su cabeza."@
+`"Hmm…… ¿Y viniste a verlo porque te preocupaste?"@
+`"Sí, es correcto."@
+cl a,%type_crossfade_fst
+` La voz de Senpai es vigorosa y agradable de escuchar.@
+` Ya que escuchar es más interesante que hablar, me mantengo en silencio.\
+` Es ahí cuando Arihiko dirige la conversación hacia mí.@
+ld c,":a;image\tachi\ari_t04.jpg",%type_crossfade_fst
+`"¿Qué te pasa, Tohno?@ Estrellarte contra alguien…… No me digas que tu anemia estaba actuando de nuevo."@
+` La voz de Arihiko delata su profunda preocupación por mi salud.@
+`"…… No, no es eso.@ Estaba corriendo hacia la oficina para tratar unos detalles sobre mi mudanza.@ Fue entonces cuando tropecé con Senpai."@
+`"---¿En serio?@ Bueno, supongo que tu falta de cuidado fue la culpable."@
+` Arihiko cruza sus brazos y asiente al concordar consigo mismo.\
+cl a,%type_crossfade_fst
+!w1000
+ld c,":a;image\tachi\cel_t10a.jpg",%type_lshutter_fst
+`"¿¡Tohno-kun, vas a cambiar de escuela!?"@
+` Senpai repentinamente explota, casi histéricamente.@
+` …… Cielos, ¿por qué piensa que voy a cambiar de escuela sólo por eso?@
+`"No voy a cambiar de escuela, Senpai.@ Sólo estoy cambiando mi lugar de residencia, así que hice el papeleo para un cambio de dirección."@
+ld c,":a;image\tachi\cel_t08.jpg",%type_crossfade_fst
+`"Um…… ¿entonces eso significa que vas a vivir solo?"@
+`"No, sólo voy a regresar a mi verdadero hogar.@
+` Es ese elegante lugar en la cima de la colina.@ Todavía no termino de creerlo."\
+`"Ohh…… ¿Podría ser la mansión de Tohno-san?"@
+` Senpai pregunta con algo de vacilación.@
+` La casa de estilo occidental en la cima de la colina es probablemente vista como algo especial por los residentes de esta ciudad.@
+` No he estado allí en ocho años, pero aun en mis recuerdos, la mansión Tohno era ridículamente grande.\
+`"Sí, es correcto.@ No pienso que sea el lugar más adecuado para mí tampoco, pero es muy tarde ahora que ya terminé mi mudanza."@
+cl a,%type_crossfade_fst
+ld c,":a;image\tachi\ari_t04.jpg",%type_crossfade_fst
+`"Hmm…… No te ves muy feliz por eso."@
+`"No es algo particularmente bueno o malo.@ En realidad ni yo mismo lo entiendo."@
+`"Bueno, aun si ésa es tu casa, han pasado ocho años, ¿cierto?@ Puedo entender que te sientas intranquilo.@ Probablemente se sienta como la casa de otra persona por algún tiempo."@
+`"Me pregunto si será así…… aún no he regresado, así que no sé.@ Bueno, estoy un poco relajado, ya que siempre he encontrado refugio en tu casa."\
+cl c,%type_crossfade_fst
+ld r,":a;image\tachi\ari_t03.jpg",%type_crossfade_fst
+`"Hmph.@ ¡Escucha, no me impresiona que vengas a quedarte en mi casa cada vez que algo malo pasa.@ ¡Me gusta tu rasgo personal de no destacar, pero he odiado por un largo tiempo que siempre seas tan reservado!"@
+` Arihiko golpea la mesa explosivamente de nuevo.@
+`"…………"@
+` Bueno, todo lo que dijo Arihiko es cierto, así que no hay manera de defenderme.@
+ld l,":a;image\tachi\cel_t12.jpg",%type_crossfade_fst
+`"Inui-kun, ¿Tohno-kun en verdad se queda en tu casa tan frecuentemente?"@
+`"Sí, lo hace.@ Ese desgraciado Tohno es demasiado reservado con sus familiares y viene a mi casa en todas las vacaciones largas.@ Es reservado con ellos porque están cuidando de él."\
+`"Es por eso que viene a mi casa, donde convenientemente tenemos una habitación vacía.@ Ya que luce bastante decente, a mi hermana comenzó a agradarle, y descaradamente viene a quedarse con nosotros ¡sin pagar un centavo!"@
+` El puño de Arihiko tiembla, como si dijera '¡imperdonable!'@
+ld l,":a;image\tachi\cel_t07a.jpg",%type_crossfade_fst
+`"…… ¿Cuidando de Tohno-kun?"@
+ld r,":a;image\tachi\ari_t04.jpg",%type_crossfade_fst
+`"Ah----"@
+` Arihiko se tapa la boca con una mano.@
+ld r,":a;image\tachi\ari_t03.jpg",%type_crossfade_fst
+`"…… Lo siento.@ Debí haber pensado antes de hablar."@
+`"Está bien.@ No dijiste nada malo."@
+` Continúo comiendo mi pan sin mirar a Arihiko.\
+ld r,":a;image\tachi\ari_t02.jpg",%type_crossfade_fst
+`"¿En serio?@ Sí, tienes razón.@ Si te quejas por eso, te buscarás un castigo."@
+` Arihiko concuerda consigo mismo y asiente.@
+` Su abrumador optimismo es algo que sinceramente envidio.\
+ld l,":a;image\tachi\cel_t09.jpg",%type_crossfade_fst
+`"Tohno-kun, um…… ¿no te llevabas bien con tu familia anterior?"@
+ld r,":a;image\tachi\ari_t01.jpg",%type_crossfade_fst
+`"No, no es eso.@ Este sujeto no tuvo problema alguno con los Arima.@ Oh, los Arima son la familia que cuidó de él.@ Son personas muy agradables, y por lo que he podido ver, son una familia feliz.@
+` Aun así, se negó a ser su hijo adoptado, y escapó hacia mi casa en todas las vacaciones.@ Cielos…… ¿con qué no estabas satisfecho a fin de cuentas?"@
+`"No hay nada con lo que no estuviese satisfecho.@ Es sólo que ya he recibido demasiado de ellos, no quería seguir siendo una carga."\
+cl a,%type_crossfade_fst
+br
+` Me doy la vuelta.@
+` Y…… repentinamente, me doy cuenta de que Yumizuka está cerca.\
+ld c,":a;image\tachi\stk_t13.jpg",%type_lshutter_fst
+`"…………"@
+cl a,%type_crossfade_fst
+` Sus ojos lucen como si quisiera decir algo, pero parece que no puede animarse a interrumpir.@
+`"¿Qué sucede, Yumizuka-san?"@
+` Dejo a Arihiko y a Senpai, y llamo a Yumizuka.@
+ld c,":a;image\tachi\stk_t01.jpg",%type_crossfade_fst
+`"Ah…… uh, hay algo que quiero hablar contigo.@ ¿Ahora es un buen momento?"@
+`"Claro.@ ¿Podemos hablar aquí?"@
+`"…… Um……"@
+cl a,%type_crossfade_fst
+ld c,":a;image\tachi\ari_t04.jpg",%type_crossfade_fst
+` Los ojos de Yumizuka parpadean hacia Arihiko.@
+` …… Parece que Yumizuka no es buena tratando con Arihiko.@
+cl a,%type_crossfade_fst
+ld c,":a;image\tachi\stk_t01.jpg",%type_crossfade_fst
+`"¿Está bien si discutimos esto en el pasillo?"@
+`"No hay problema.@ Voy a salir un momento, Arihiko."@
+` Despidiéndome de Arihiko y Senpai, salgo al pasillo con Yumizuka.\
+bg "image\bg\bg_11a.jpg",%type_lcartain_mid
+`"Entonces, ¿qué querías preguntarme?"\
+ld c,":a;image\tachi\stk_t01.jpg",%type_crossfade_fst
+`"Um, perdón si estoy equivocada pero, ¿has estado caminando de noche por el distrito comercial últimamente?"@
+`"¿Huh---?"@
+` ¿Distrito comercial……?@
+` Raramente voy a ese lugar durante el día, ni hablar de noche.@
+` Su pregunta está tan completamente fuera de lugar que comienzo a interesarme.@
+`"Hmmm…… ¿De noche, dices?@ ¿Como a qué hora?"@
+`"Por lo que he escuchado, después de la medianoche."\
+` Medianoche…… entonces eso lo descarta completamente.@
+` Ocasionalmente voy al distrito comercial en la noche para comprar algo, pero nunca he estado afuera a tan altas horas de la noche.
+.@
+`"Ése definitivamente no soy yo.@ Mi familia es muy anticuada, así que imponen un toque de queda a las siete.@ No puedes entrar después de esa hora aunque llores.@ Ya que no quiero tener que acampar afuera, intento a muerte llegar a casa antes de las siete."@
+` Soy directo al contestar negativamente la pregunta de Yumizuka.@
+` Ella sonríe felizmente.\
+ld c,":a;image\tachi\stk_t03.jpg",%type_crossfade_fst
+`"Sí, lo sé.@ La familia Arima también lidera un estilo de la ceremonia del té.@ Es cierto, debe ser muy estricta para ti, Tohno-kun."@
+`"No tan estrictos como les gusta burlarse de mí…… ¿eh?@ Yumizuka-san, pareces saber bastante@ ¿Eres estudiante de la ceremonia?"@
+`"No.@ En realidad no sé mucho sobre la ceremonia del té.@ Tengo una amiga que estudia allá y ella me dijo que era muy estricto."@
+`"Oh, pero Yumizuka-san, ¿cómo sabías que yo vivía con los Arima?@ No se lo he dicho a nadie de nuestra secundaria."\
+ld c,":a;image\tachi\stk_t01.jpg",%type_crossfade_fst
+`"Has olvidado que asistimos a la misma escuela media, ¿no?"@
+` Yumizuka ríe nerviosamente mientras habla.@
+`"¿Eh----?"@
+` …… ¿Asistimos a la misma escuela media……?@
+` No puedo recordar, así que no puedo decir nada, pero si eso es cierto,
+` entonces no sería raro que ella supiese que fui confiado a los Arima.@
+`"Yumizuka-san, tal vez, um……"@
+cl a,%type_lshutter_fst
+`"Está bien siempre que no se trate de ti, Tohno-kun.@ Perdón por interrumpir tu almuerzo."@
+` Interrumpiendo mis palabras, Yumizuka Satsuki regresa al salón de clases después de decir eso.\
+bg "image\bg\bg_06a.jpg",%type_lcartain_mid
+ld c,":a;image\tachi\ari_t01.jpg",%type_crossfade_fst
+`"Hey.@ ¿Ya terminó tu conversación?"@
+`"Sí…… parece que ella se equivocó de persona…… Oye, Arihiko."@
+`"Sí.@ Yumizuka asistió a nuestra escuela media.@ Fue nuestra compañera de clases durante el segundo y el tercer año, y ahora en el segundo año de secundaria; tres años en total."@
+`"----¿Huh?"@
+` Como si supiese mi pregunta, él responde.@
+`"¿C-cómo sabías lo que te iba a preguntar?"\
+ld c,":a;image\tachi\ari_t04.jpg",%type_crossfade_fst
+`"Por esa expresión en tu rostro.@
+` Pero demonios.@ Pensé que sólo la estabas ignorando, pero en realidad ni siquiera la habías notado.@
+` Ella es muy persistente…… o tal vez es sólo excéntrica.@ Ha tenido que sufrir mucho."@
+` Arihiko hace una expresión complicada y se encoge de hombros.@
+cl a,%type_crossfade_fst
+ld c,":a;image\tachi\cel_t05.jpg",%type_crossfade_fst
+`"Ah, lo sabía.@ Ella es la novia de Tohno-kun, ¿cierto?"@
+`"¿¡Q-qué estas diciendo, Senpai!?@ ¡No hay manera de que eso pueda ser!@ ¡Nunca he tenido siquiera una conversación adecuada con ella!"\
+ld c,":a;image\tachi\cel_t02.jpg",%type_crossfade_fst
+`"No, no, no sirve de nada esconderlo.@ Ustedes parecen llevarse muy bien.@ Estoy un poco celosa."@
+` ¿Qué la hace tan feliz?@ Senpai me mira con una emocionada expresión.@
+`"¡S-senpai!@ Arihiko, tú tambien dile algo a esta persona confundida!"@
+cl a,%type_crossfade_fst
+ld l,":a;image\tachi\cel_t02.jpg",%type_crossfade_fst
+ld r,":a;image\tachi\ari_t01.jpg",%type_crossfade_fst
+`"¿Sobre qué?@ No sé qué se traen Yumizuka y tú.@ Todo lo que sé es que los dos estaban teniendo una amena conversación esta mañana."@
+ld l,":a;image\tachi\cel_t11.jpg",%type_crossfade_fst
+`"¡Kyaah!@ ¡Un encuentro secreto en la escuela por la mañana!@ ¡Qué atrevido de tu parte, Tohno-kun!"@
+` Senpai se está poniendo más y más emotiva de una incomprensible manera……\
+`"…………"@
+` …… Bueno, no importa.@ Después de todo, no me importa si Senpai malinterpreta.@
+ld l,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
+`"Pero no deberías ser tan brusco con ella, Tohno-kun.@ Yumizuka-san se ve un poco triste, ¿no crees?@ Has debido darle más de tu atención."@
+`"Senpai, el almuerzo va a terminar pronto……"@
+ld l,":a;image\tachi\cel_t04.jpg",%type_crossfade_fst
+`"Sí.@ ¡Nos vemos luego, Tohno-kun, Inui-kun!"@
+cl l,%type_crossfade_fst
+` Sonriendo, Senpai deja nuestro salón de clases.@
+` *suspiro*@
+` Me siento un poco exhausto.\
+ld r,":a;image\tachi\ari_t04.jpg",%type_crossfade_fst
+`"Tohno.@ No vayas tras Yumizuka."@
+` Arihiko murmura esto con una expresión severa.@
+`"¿Que no vaya tras……?@ ¿Por qué?"@
+`"Escucha, sobre Yumizuka…… a pesar de su apariencia, es muy penosa y decidida.@ No es compatible para nada con alguien distraído como tú.@ Es peligroso involucrarse mucho con ese tipo de chicas."@
+` Arihiko regresa a su asiento.@
+cl r,%type_crossfade_fst
+`"…… ¿De qué está hablando él?@ No es que esté pensando hacer algo con Yumizuka-san."@
+` Murmuro hacia nadie en particular, y tomo asiento en mi pupitre.\
+bg #000000,%type_crossfade_mid
+playstop
+return

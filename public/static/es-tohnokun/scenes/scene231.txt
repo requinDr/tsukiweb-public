@@ -1,0 +1,31 @@
+monocro off
+wavestop
+play "*3"
+;---added context above---
+bg "image\bg\bg_11b.jpg",%type_nowaitdisp
+` No puedo llegar tan lejos.@
+` Senpai probablemente lo está diciendo de buena voluntad, pero no quiero dejar que me vea de esta manera.\
+`"--No, creo que puedo lograrlo.@ Tus palabras son suficientes para rellenarme."@
+ld c,":a;image\tachi\cel_t09.jpg",%type_crossfade_fst
+`"…… ¿Eso crees?@ Tohno-kun, no has comido nada en todo el día.@ ¿Estás seguro de que no te desmayarás en el camino……?"\
+`"No dejes que tu corazón se inquiete.@ Alguien que siempre se está desmayando como yo lo ve venir a una milla de distancia.@ Y hoy, mi cuerpo dice que estoy perfectamente bien."@
+ld c,":a;image\tachi\cel_t08.jpg",%type_crossfade_fst
+`"…… Bueno.@ Si tú lo dices, supongo que está bien."@
+` Soltando un suspiro como de asombro, Senpai sigue caminando por el pasillo.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_01b.jpg",%type_lcartain_mid
+` Salimos caminando por la entrada.@
+` Desde aquí, tenemos que tomar caminos separados.@
+br
+ld c,":a;image\tachi\cel_t03.jpg",%type_crossfade_mid
+`"Bien, entonces adiós por ahora.@ Llegamos aquí bastante rápido."@
+` …… Eso creo.@ Estaba pensando que sería mejor si la escuela fuese un poco más grande.\
+`"Bien, Senpai, entonces nos vemos mañana."@
+ld c,":a;image\tachi\cel_t04.jpg",%type_crossfade_fst
+`"Sí, veámonos mañana en la escuela."@
+cl c,%type_lshutter_mid
+` Sonriendo al responder, Senpai desaparece en la dirección opuesta.@
+` Después de observarla marcharse, camino por la calle hacia mi casa.\
+bg #000000,%type_lcartain_slw
+playstop
+return

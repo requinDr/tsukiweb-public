@@ -1,0 +1,195 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_40d.jpg",%type_nowaitdisp
+` ---Si no duermo esta noche, no habrá problemas.@
+br
+`"…… Es cierto.@ Si no duermo, y si--"@
+` Si hay otra víctima mañana, de seguro no tendré nada que ver al respecto.\
+`"----Muy bien."@
+` Entiendo que estoy tomando una desviación.@
+` Sé que es un poco extraño quedarme aquí sin dormir, esperando que alguien que no conozco sea asesinado.@
+`"---Pero, ¿qué más puedo hacer?"@
+` Ya que yo---ya que mi memoria no es de confianza, no hay otra manera de hacer esto.@
+br
+` ---En fin.@
+` No hay otro método aparte de quedarme en mi habitación sin soñar hasta el amanecer.\
+bg #000000,%type_crossfade_mid
+bg "image\bg\bg_40d.jpg",%type_crossfade_mid
+br
+br
+br
+` -----El tiempo pasa.@
+` Todavía logro mantenerme despierto.\
+bg #000000,%type_crossfade_mid
+bg "image\bg\bg_40d.jpg",%type_crossfade_mid
+br
+br
+br
+br
+br
+` ----Una hora más.@
+` Todavía logro mantenerme despierto.\
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_40d.jpg",%type_crossfade_fst
+br
+br
+br
+br
+br
+br
+br
+` -----Una hora.@
+` Todavía, logro… mantenerme despierto.\
+bg #000000,%type_nowaitdisp
+bg "image\bg\bg_40d.jpg",%type_nowaitdisp
+br
+br
+br
+br
+br
+br
+br
+br
+br
+` ----Ya es más de la una en punto de la mañana.@
+bg #000000,%type_nowaitdisp
+bg "image\bg\bg_40d.jpg",%type_nowaitdisp
+` Toda… vía  logro   mantenerme    despierto.\
+bg #000000,%type_crossfade_fst
+br
+br
+br
+br
+br
+br
+br
+br
+br
+br
+br
+` ----En sólo cuatro horas, habrá amanecido.\
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\bg_40d.jpg",%type_nowaitdisp
+` …… Algo está mal.@
+` Aún… estoy  consciente… pero…
+bg #000000,%type_nowaitdisp
+bg "image\bg\bg_40d.jpg",%type_nowaitdisp
+` …… Mi campo visual colapsa.@
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\bg_40d.jpg",%type_nowaitdisp
+bg #000000,%type_nowaitdisp
+bg "image\bg\bg_40d.jpg",%type_crossfade_mid
+br
+` Debo permanecer despierto.@
+` Aún no tengo sueño, pero…
+` ¿Por qué?@
+!w750
+` ¿Por qué?@
+!w1350
+` ¿Por qué?@
+!w1750
+` ¿Por qué mi    cuerpo   quiere   dormir   tanto-----?\
+bg #000000,%type_tcartain_mid
+!w2000
+!w3000
+waveloop se10
+bg "image\bg\bg_26a.jpg",%type_nowaitdisp
+` *jadeo*---*jadeo*----*jadeo*\
+` Siento que estoy siendo observado.@
+` Yo.@
+` Con ojos inyectados de sangre, miro a las personas que caminan por las calles.\
+br
+br
+br
+br
+br
+br
+` ---¿Quizás sea debido a la hora?@
+`   A diferencia de anoche, casi no hay nadie alrededor.\
+` …… Alguien está observándome.@
+` No puedo encontrar lo que estoy buscando.@
+` De nuevo.@ Esta noche, no puedo encontrar a la persona que estoy buscando.@
+br
+br
+br
+br
+#ff0000
+`      Estoy comenzando a molestarme.\
+#ffffff
+` Jadeo fuertemente.\
+` Debería cambiar mi lugar habitual.@
+` Voy a dejar de buscar en la ciudad.\
+bg "image\bg\bg_24c.jpg",%type_crossfade_fst
+` Voy de azotea en azotea y termino en un lugar lleno de gente.@
+` …… Mirando desde la azotea de la casa más alta, examino las calles.\
+br
+br
+br
+br
+br
+br
+br
+#ff0000
+`             ¡No mires!\
+#ffffff
+`"----Ahí."@
+` Veo a una persona caminando sola.@
+` Una mujer.@
+` Esta vez, no puede haber equivocación…
+` Sería grandioso que fuese Akiha.\
+#ff0000
+br
+br
+br
+br
+br
+br
+br
+`        No me mires.\
+#ffffff
+` No, eso en realidad no importa.@
+` Una vez más.@
+` Una vez más, quiero probar esa maravillosa sensación----\
+bg #000000,%type_nowaitdisp
+wave se12
+bg "image\bg\ima_12b.jpg",%type_lshutter_fst
+` La mato por la espalda, teniendo cuidado de no dañar el cuerpo.@
+` Sujetando su largo cabello, arrastro el cuerpo de Akiha.@
+bg "image\bg\bg_22c.jpg",%type_lshutter_mid
+` *jadeo*----*jadeo*----*jadeo*
+` Al morder el cuello de Akiha, chupo su sangre.@
+br
+` ---Aburrido.@
+` Esto no está cerca de ser tan excitante como anoche.@
+` Si su cabello es así de corto, definitivamente no es Akiha.\
+`"…… ¡Aburrido……!"@
+` Comienzo a enfurecerme.\
+` Corto el cuerpo en pedazos, pero aún estoy furioso.@
+` Impostora.@
+` Esta impostora me enfurece.\
+#ff0000
+br
+br
+br
+br
+br
+br
+br
+`         ¡Deja de mirarme!\
+#ffffff
+` *jadeo*----*jadeo*----*jadeo*----
+br
+` He utilizado energía extra.@
+` Pronto llegará el amanecer.@
+` Una vez que amanezca, Shiki despertará.@
+br
+`"Estoy cansado esta noche.@ Comenzaré de nuevo, mañana."@
+` Sí, está bien.@ Eso es lo que haré.\
+` Ahora.@
+` Antes de que amanezca, antes de que alguien se percate, debo volver a la escuela----\
+bg #000000,%type_crossfade_mid
+wavestop
+!w3000
+return

@@ -1,0 +1,79 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\ima_06.jpg",%type_nowaitdisp
+br
+` ----Yo valoro mi vida.\
+` Recuerdo la escena de ayer, cuando asesiné a Arcueid.@
+` El hedor de la muerte y la sangre.@ ---No quiero volver a experimentar algo como eso jamás.@
+` Si me quedase con Arcueid, no hay duda de que estaría expuesto a esa escena nuevamente.@ Si no quiero eso, tendré que regresar a la mansión.\
+`"------"@
+` …… Tengo la sensación de que hay una gran falla en mi decisión.@
+` Pero en este momento, todo es un desorden en mi cabeza y mi sentido de la lógica rehúsa funcionar correctamente.@
+` En fin, por ahora, volveré a mi propia habitación para descansar un poco.@ Estoy seguro de que me calmaré y pensaré con más claridad entonces.\
+bg #000000,%type_lcartain_slw
+bg "image\bg\bg_22c.jpg",%type_lcartain_slw
+` El sol se ha puesto y mis alrededores han sido teñidos de oscuridad.@
+` Probablemente son más de las siete.@
+` El toque de queda en la mansión es a las ocho, mejor me apresuro si no quiero ser regañado por Akiha.\
+bg #000000,%type_lcartain_slw
+bg "image\bg\bg_47.jpg",%type_lcartain_slw
+` Las calles alrededor de la mansión están desiertas como siempre.@
+` El sol acaba de desaparecer, pero el silencio es como el de medianoche.\
+`"Ahora que lo pienso, este lugar es…"@
+` Donde vine a buscar a ese ruidoso perro callejero la noche en que volví a la mansión por primera vez.@
+wave se0
+`"¿Huh……?"@
+` Soy acosado por una terrible premonición de infortunio.\
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_47.jpg",%type_crossfade_fst
+bg #000000,%type_tcartain_fst
+br
+br
+br
+br
+br
+br
+` ----Qué extraño.@
+` De repente, mis alrededores se tornan totalmente negros.\
+` Escucho un sonido de goteo.@
+` …… ¿De dónde viene ese sonido?@
+` Viene de un lugar cercano.@
+` Mi cuerpo está empezando a enfriarse.@
+` Viene de cerca.@
+` Alarmas están sonando en algún lugar de mi cabeza.\
+br
+br
+br
+br
+br
+br
+br
+` Gotea, gotea.@ Gotea, gotea.\
+br
+br
+br
+br
+br
+br
+br
+` El sonido…
+` Creo que viene justo de atrás de mi cuello.\
+`"Ah----"@
+wave se4
+` Caigo hacia el asfalto.@
+` Mis extremidades no se mueven, y mi consciencia se desvanece.\
+bg #000000,%type_crossfade_fst
+ld c,":a;image\tachi\nero_t01a.jpg",%type_crossfade_fst
+bg #000000,%type_crossfade_fst
+` En el fondo de mi disminuida consciencia…
+!w500
+` todo lo que encuentro…
+!w500
+` es que unos perros negros se están alimentando de mis brazos y piernas.\
+cl a,%type_waitdisp
+bg "image\word\end.jpg",%type_crossfade_slw
+resettimer
+waittimer 3000
+return

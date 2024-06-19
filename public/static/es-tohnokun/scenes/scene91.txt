@@ -1,0 +1,300 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_19d.jpg",%type_nowaitdisp
+`"------Muy bien."@
+` He decidido qué hacer desde el principio.@
+` Sacando el cuchillo de mi bolsillo, camino hacia la puerta.@
+ld c,":a;image\tachi\ark_t06.jpg",%type_crossfade_fst
+`"----¿Shiki?"@
+`"Voy a revisar afuera.@ No dejes está habitación hasta que regrese."@
+` Salgo al pasillo, sacudiéndome la mirada de Arcueid quien parece querer decir algo.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_20a.jpg",%type_lcartain_mid
+` No hay nadie en el pasillo.@
+` …… No podía escuchar desde adentro, pero hay mucho ruido en el pasillo.@
+` No es que este piso sea ruidoso.@
+` Más bien, el ruido viene de abajo de mis pies.@
+` Hay algún tipo de alboroto en el piso de abajo; puedo escuchar el ruido de muchas personas hablando.@
+br
+` …… Qué raro.@
+` Son poco más de las cuatro de la mañana.@
+` Aun asumiendo que algunas personas se hayan despertado temprano, no es normal que tantas personas estén despiertas a esta hora.\
+`"……… No veo nada extraño por ahora."@
+` Camino por el pasillo.@
+br
+` El ruido de abajo es como el sonido de las olas en el océano.@
+br
+` Ruidoso--y a la vez tan solitario e inactivo.\
+`"¡------!"@
+` Los dedos que sostienen el cuchillo se sienten entumecidos.@
+` Un escalofrío recorre mi nuca.@
+` Hay algo cerca de mi sien.@
+` El dolor emerge de atrás de mis ojos.@
+br
+` Soportándolo, camino por el pasillo.\
+`"------"@
+` …… Duele.@
+` Mis ojos… duelen.@
+` Mi cabeza se hace pesada, y tengo una sensación de bamboleo, como si estuviese a punto de desmayarme aquí mismo.@
+br
+` Sí, sé lo que es esto.@ Es la sensación que tengo justo antes de sufrir un colapso por anemia.\
+`"Ah----gu………!"@
+br
+` Duele.@
+` Duele.@ Sin poder soportarlo más, me quito mis lentes.\
+bg "image\bg\bg_20b.jpg",%type_crossfade_mid
+` …… Hay dos ascensores.@
+` Uno está detenido en el primer piso, el otro en el quinto.@
+`"………"@
+` Hay una desagradable sensación en el aire.@
+` Una sofocante y tensa sensación.@
+` Presiono el botón para llamar al ascensor.@
+` Simplemente quiero saber qué está sucediendo abajo por ahora.\
+` El ascensor sube.@
+` …… Sexto piso.@
+!w500
+` …………… Séptimo piso.@
+!w1000
+` ………………………… Octavo piso.@
+!w1500
+` ……………………………………… Noveno piso.\
+`"--Maldición, ¿qué pasa con él?"@
+` El ascensor es terriblemente lento.@
+` Algo--una sombría premonición sin forma de algo fatalmente irrevocable se cierne sobre mí--
+br
+` ………………………… Décimo piso.@
+br
+` Sólo un piso más para que el ascensor alcance éste.\
+`"------Apresúrate."@
+` Recobro el aliento.@
+` Me doy cuenta de que todo el ruido que escuché viniendo de abajo desapareció hace mucho.@
+br
+bg #ffffff,%type_crossfade_fst
+bg "image\bg\bg_20b.jpg",%type_crossfade_fst
+` Con un ridículo 'ding' eléctronico, llega el ascensor.@
+` La puerta se abre.@
+` No hay nadie adentro.@
+` El interior de la estrecha caja de acero está sorprendentemente limpio y ordenado.\
+bg "image\bg\ima_10b.jpg",%type_lcartain_mid
+`"------"@
+` Entro, y presiono el botón del décimo piso.@
+` Con un fuerte sonido, el ascensor desciende.@
+` Es sólo un piso hacia abajo, pero se siente terriblemente lejos.@
+` La luz sobre la puerta del ascensor cambia para señalar el décimo piso.@
+`"Finalmente--"@
+br
+` De repente---
+bg #000000,%type_nowaitdisp
+playstop
+` El mundo es sumergido en oscuridad.\
+waveloop se1
+`"¿¡………!?"@
+br
+` Oscuridad.@ Total oscuridad.@
+` Negro azabache, totalmente sin luz.@
+br
+` En ella,
+` todo lo que puedo ver es el débil brillo de las 'líneas' de muerte.\
+`"¿Por qué--?"@
+` Mi aliento se congela en mi garganta.@
+` A todo mi alrededor, algo--algún tipo de crujido, como el sonido de insectos arrastrándose--puede ser escuchado.\
+br
+br
+` *cruje*@
+br
+br
+` *cruje* *cruje*@
+br
+br
+` ¡*cruje* *cruje* *cruje* *cruje* ……!\
+`"¡-----!"@
+` Estoy a punto de gritar, pero retengo mi grito.@
+`"…… Primero, tengo que examinar la situación…"@
+` Justo como Sensei me enseñó hace tiempo.@
+`"…… Y entonces, pensar cuidadosamente…"@
+` Respirando profundamente, logro calmar mis pensamientos.\
+`"…… Ya veo…… Un apagón."@
+` …… Pero un hotel como éste debería tener un generador de respaldo para ocasiones como éstas.@
+` Algo debe estar mal con los cables, si incluso eso no está funcionando.\
+br
+br
+br
+br
+br
+br
+br
+` *cruje* *cruje* *cruuuuuuuje*\
+`"¡……!"@
+` Sujetando el cuchillo, me pongo tenso.@
+` El sonido de arrastre de los insectos viene de los alrededores del ascensor.@
+` Es como…
+` Se siente como si hubiese cientos de cucurachas gigantes adheridas al exterior del ascensor.\
+`"--No tiene sentido quedarme aquí."@
+` La luz del ascensor se detuvo cuando el décimo piso estaba iluminado.@
+` Eso significa que, si abro la puerta, debería estar en el décimo piso.@
+`"----Supongo que la cortaré."@
+` Me susurro a mí mismo.@
+` Encajando el cuchillo en la única 'línea' que puedo ver, corto en pedazos la puerta del ascensor.\
+monocro ú0f00f0
+bg "image\bg\bg_20b.jpg",%type_lshutter_mid
+`"¿¡…… !?"@
+` En el instante en que la puerta se abre--soy envuelto por un hedor sofocante.@
+` El décimo piso está repleto de éste.@
+` Es tan denso que sólo respirar es suficiente para bloquear mis conductos de aire.\
+`"-----"@
+` Pero aun así, si decidiera poner un pie afuera, estaría en el pasillo del décimo piso.@
+` En la distancia, el débil brillo de una lámpara señala la salida de emergencia.@
+` A excepción de eso, el mundo está pintado de oscuridad.@
+` Doy un paso hacia fuera.@
+`"…… Hay alguien…"@
+` Estoy a punto de decir "ahí", pero me detengo.@
+` No sé muy bien por qué, pero siento que sería mala idea alzar la voz.\
+` Doy otro paso.@
+` Lentamente, entro al pasillo.@
+` El corredor apesta con ese terrible olor.@
+` Un olor crudo.@ El olor de las bestias.@
+` Eso, y un rechinar viniendo de alguna parte.\
+`"………"@
+` He tenido un dolor punzante en mi cuello por un rato.@
+` La oscuridad es aterradora.@
+` Este silencio es aterrador.@
+` …… Descubrir qué sucedió aquí es más aterrador que todo lo demás.@
+` El dolor en mi nuca, extendiéndose hasta la cima de mi columna, retiene mi nerviosismo.@
+` El palpitante dolor,
+` es el premio por mis desesperados intentos de contener el impulso de simplemente gritar y huír
+br
+br
+` *cruje* *cruje* *cruje*@
+br
+br
+` *rechina* *rechina* *rechina*@
+br
+br
+` *rasca* *rasca* *rasca*\
+`"¡Ha…!"@
+` Mi respiración se hace salvaje.@
+` Mi cuerpo está bañado en sudor.@
+` …… Cuchillo en mano, soy incapaz de dar otro paso.@
+` Tengo la sensación de que si me muevo sólo un poco, veré algo inimaginablemente horrible.\
+` *jadeo*  *jadeo*@
+` Pero en verdad estaré en problemas si no regreso al piso de arriba.@
+` …… Quedarme en este piso es peor.@
+br
+` Se siente como si cada segundo que pasa pulverizara un año de mi vida.@ Siento que la 'muerte' se acerca a mí a esa velocidad.\
+` Mi respiración se hace más rápida y pesada.@
+` Afortunadamente, puedo ver dónde está la salida de emergencia, gracias a la lámpara.@
+` Está al final del pasillo.@
+` Si puedo alcanzar la luz verde de emergencia, puedo regresar al piso de arriba.@
+br
+` Sujetando el cuchillo comienzo a caminar por el oscuro pasillo.\
+br
+br
+br
+br
+br
+br
+` -----*splash*\
+` Puedo escuchar algo debajo de mis pies.\
+`"-----"@
+` Supongo que el pasillo está inundado de agua.@
+` Además, mis pies chocan constantemente con cosas mientras camino.@
+`"-----"@
+` Aun así, permanezco en silencio.@
+` Soportando el terrible hedor que me asfixia, me dirijo hacia la luz de emergencia.@
+` Sólo unos pocos metros más para llegar.@
+` Entonces, veo algo retorciéndose debajo de la luz de emergencia.\
+`"……… ¿Eh?"@
+` Rompo mi silencio.@
+br
+` Un tibio crujido.@
+` Un seco rechinar.@
+` La jadeante respiración de las bestias.\
+`"Qu--"@
+` Bajo la luz verde de la salida de emergencia…
+` Toda clase de animales se están aglomerando alrededor de un objeto con forma humana.@
+br
+` No puedo decir qué clase de animales se lo están comiendo.@
+` El pasillo está oscuro, y la luz de emergencia es demasiado débil.@
+` Por eso, todo lo que puedo deducir es esta imagen.\
+` ---Numerosas cucurachas están devorando el cadáver humano mientras emiten un zumbido como de risa.@
+` Ésa es la única forma en que puedo darle sentido a esta pesadilla.\
+` *cruje*@
+` Hay un ruido que viene desde el ascensor.\
+`"Ha----"@
+` Me doy la vuelta.@
+` ¿Quizás porque mis ojos se han acostumbrado a la oscuridad?@
+` O quizás gracias a la luz de la salida de emergencia, pero ahora veo exactamente en qué clase de condición está el pasillo por el que acabo de pasar.\
+monocro #ff0000
+bg "image\bg\bg_20b.jpg",%type_crossfade_fst
+` El pasillo es un mar de sangre.@
+` Flotando dentro de ese mar hay brazos y piernas humanos.@
+` El pasillo inundado.@ Esqueléticos objetos duros que sentí sobre mis piernas.@
+` Deben haber sido lo que estaba pisando.@
+`"------"@
+` Mi mente se queda en blanco.@
+` El pasillo es rojo solamente en el suelo.@
+` Pegadas al techo y a las paredes hay toda clase cosas negras.\
+` No es que se vean negras porque no hay luz.@
+` Son negras por naturaleza.@
+` No parecen tener ninguna forma sólida, y se pegan al techo y a las paredes como alguna clase de líquido.@
+` Pero sé que son animales por sus ojos.@
+` Los chispeantes ojos de los muchos seres tipo bestia están posados sobre mí, el único humano sobreviviente-----\
+`"Hya……"@
+` Logro contener mi grito.@
+` Las bestias me están mirando atentamente.@
+` Retienen su respiración, esperando para atacarme en el momento en que grite.@
+`"Ha---hhh."@
+` Logro regular mi entrecortada respiración.@
+` Puedo sentir con terror, que en el momento en que grite, todas me atacaran al mismo tiempo.@
+` Ninguna de las criaturas sobre la pared posee los mismos ojos.@
+` Es casi ridículo ver incluso ojos como de tiburón pegados a la pared.\
+`"…………"@
+` Les ordeno moverse a mis pies, pero no se mueven ni una pulgada.@
+br
+` ----No puedo moverme.@
+br
+` Mis pies no se moverán, después de haber visto un mundo como éste.\
+br
+br
+br
+br
+br
+br
+br
+` *rechina* …… *rechina* …… *rech* …… *ina* ……\
+` El ruido que viene de abajo de la luz de emergencia se hace más pequeño.@
+` Esas bestias probablemente están terminando con el cadáver.@
+`"………"@
+` Recobro el aliento.@
+` El crujido se acerca más.@
+` Parece que--las criaturas encontraron a su próxima presa, llamada Tohno Shiki.\
+`"Ah………"@
+` Pero mis piernas no se moverán.@
+` Este mundo es demasiado diferente, mi mente no funciona correctamente.@
+br
+` ---Cometí un error.@
+` No debí haber venido a este piso----\
+monocro off
+bg #000000,%type_nowaitdisp
+!w2000
+br
+` ---Entonces.@
+br
+` Puedo escuchar un sonido terriblemente familiar.@
+` El muy normal sonido de pasos humanos.@
+` Un sonido perfectamente normal del mundo en el que vivía hasta hace un momento.\
+`"¡Aaaaaaah----!"@
+` Mi entumecida mente llena de fuerza a mis paralizadas piernas.@
+` Corro.@
+` Pateando la sangre estancada en el pasillo, corro hacia la luz de emergencia.@
+` Corro.@
+` ¡Tengo que alejarme de este lugar lo más rápido posible…!\
+` Pero eso fue un error.@
+` Reaccionando a mi carrera, las cosas negras pegadas a la pared y al techo saltan en mi búsqueda como una ola.@
+`"¡----!"@
+` Corro hacia las escaleras con todo lo que tengo.@
+` Pero la ola negra es muchas veces más rápida que yo, y en un instante, mi cuerpo--\
+wavestop
+return

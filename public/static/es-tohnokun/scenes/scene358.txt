@@ -1,0 +1,203 @@
+monocro off
+wavestop
+play "*3"
+;---added context above---
+bg "image\bg\bg_04.jpg",%type_nowaitdisp
+ld c,":a;image\tachi\aki_t13a.jpg",%type_crossfade_fst
+`"……………"@
+` Akiha me mira fijamente.@
+` ---Y entonces.@
+ld c,":a;image\tachi\aki_t16a.jpg",%type_crossfade_fst
+`"…… Es la hora del almuerzo, ¿verdad, Nii-san?"@
+` Dice algo terriblemente normal.@
+`"Cierto, es la hora del almuerzo.@ Sería malo no comer nada a esta hora."@
+` Saco el pan que compré de una bolsa plástica.@
+`"Es igual al pan de ayer, ¿está bien?"@
+ld c,":a;image\tachi\aki_t12a.jpg",%type_crossfade_fst
+`"Sí, gracias."\
+cl a,%type_crossfade_fst
+` Le entrego un sándwich a Akiha, y empiezo a masticar el mío.@
+`"…………"@
+` Maldición, por alguna razón cada movimiento de Akiha me llama la atención, y mi cuerpo no se mueve correctamente.\
+ld l,":a;image\tachi\ari_t05.jpg",%type_crossfade_fst
+`"¡Oh, hoy te estás dando un banquete, Senpai!@ ¿Tienes algo que celebrar?"@
+ld r,":a;image\tachi\cel_t12.jpg",%type_crossfade_fst
+`"No, nada de eso.@ Como todo está llegando a su apogeo, tengo que comer mucho y reunir mucha energía."@
+`"Ahh, ya veo, dieta de otoño.@ Supongo que en tu caso, la comida va directamente hacia tu pecho, eh."@
+cl a,%type_crossfade_fst
+br
+` …… En contraste con el desagradable almuerzo que Akiha y yo estamos teniendo, Arihiko y Senpai parecen estar disfrutando de una comida muy alegre.\
+`"…………"@
+` Munch.@
+` Munch munch.@
+` Munch munch munch munch munch.\
+ld c,":a;image\tachi\aki_t16a.jpg",%type_crossfade_fst
+`"Um… ¿Nii-san?"@
+`"¿Hm?@ ¿Qué sucede, Akiha?"@
+`"Bueno… ¿hoy no hay bebida?@ Tengo un poco de sed…"@
+`"-----Ah."@
+cl a,%type_crossfade_fst
+br
+` Lo olvidé.@
+` La merengada de fresa que compré aún está en la bolsa de plástico.\
+`"Perdón, lo olvidé.@ Aquí tienes…"@
+` Le ofrezco la merengada.@
+` Akiha la toma.@
+ld c,":a;image\tachi\aki_t19.jpg",%type_crossfade_fst
+`"Ah----"@
+` Nuestros dedos se tocan porque el cartón es muy pequeño.\
+` ---Palpitar.@
+br
+` Sólo eso.@
+` Sólo con eso, las yemas de mis dedos se calientan.@
+` Debería apartar mi mano de inmediato, pero no se mueve.@
+` Cuando miro a Akiha, ella también parece estar paralizada.\
+cl a,%type_crossfade_fst
+ld l,":a;image\tachi\ari_t01.jpg",%type_crossfade_fst
+ld r,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
+`"¿Huh?@ Tohno-kun, ¿qué estás haciendo?"@
+`"¡-----!"@
+` Rápidamente, aparto mi mano de la de Akiha.@
+`"Ah, no, sólo le estaba pasando su bebida."@
+ld r,":a;image\tachi\cel_t12.jpg",%type_crossfade_fst
+`"¿En serio?@ Como ambos dejaron de moverse, pensé que estaban peleando por la bebida."@
+`"Oh, ¿también pensaste eso, Senpai?@ Me pareció que Tohno estaba luchando a muerte para no entregar el jugo.@
+` Habría sido bueno dárselo a Akiha-chan porque tenía sed, por eso pensé que él estaba siendo un idiota."@
+` …… Bueno, supongo que se veía de esa manera.\
+cl a,%type_crossfade_fst
+`"Nah, no fue nada como eso.@ Sólo me distraje por un momento, ¿cierto Akiha?"@
+ld c,":a;image\tachi\aki_t16a.jpg",%type_crossfade_fst
+`"…………"@
+` Akiha parece perdida.@
+` Su expresión es tan distinta a la Akiha que conozco, que soy deslumbrado por un momento.\
+cl a,%type_crossfade_fst
+ld c,":a;image\tachi\ari_t01.jpg",%type_crossfade_fst
+`"Hmm… oye Tohno, lo he estado pensando, pero, Akiha-chan y tú…"@
+`"---¿Qué?@ Me molestaré si dices algo estúpido."@
+`"Nah, simplemente no son muy parecidos."@
+`"…… Es natural, ¿no?@ Podemos ser hermanos, pero somos hombre y mujer, así que no podemos ser tan similares."@
+`"Oh, no me refería a eso.@ Cómo lo digo… parecen de clases distintas."\
+cl a,%type_crossfade_fst
+ld l,":a;image\tachi\ari_t01.jpg",%type_crossfade_fst
+ld r,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
+`"Es verdad.@ Akiha-san es muy innaccesible, pero Tohno-kun es lo opuesto.@ Es como si Tohno-kun fuese agua y Akiha-san aceite, ¿verdad?"@
+`"…… Bueno, ciertamente, Akiha es difícil de tratar.@ No tendría quejas si fuese más simpática."@
+ld l,":a;image\tachi\ari_t03.jpg",%type_crossfade_fst
+`"¿Qué?@ Akiha-chan es bastante agradable, ¿no?"@
+`"Ah, es simpática en la superficie.@ Pero debajo hay una persona totalmente distinta, la frialdad más fría.@ Deberías ver cómo me regaña cuando cometo errores durante la cena---"\
+cl a,%type_crossfade_fst
+ld c,":a;image\tachi\aki_t03a.jpg",%type_crossfade_fst
+!w1000
+`"---Bueno, ya es suficiente.@ Hablemos de algo más interesante, Arihiko."@
+ld c,":a;image\tachi\aki_t18a.jpg",%type_crossfade_fst
+`"Ah, ¿vas a parar a la mitad de lo que estabas diciendo?@ Quisiera escuchar qué piensas de mí exactamente, Nii-san."@
+`"Uh……………"@
+` La mirada de Akiha es dolorosa.@
+` …… La Akiha de hace un momento debe haber sido alguna clase de ilusión.\
+cl a,%type_crossfade_fst
+ld l,":a;image\tachi\ari_t01.jpg",%type_crossfade_fst
+`"Algo más interesante, eh.@ Ahora que lo pienso, Tohno, ¿viste las noticias sobre tu casa esta mañana?"@
+`"¿Eh---?@ ¿Las noticias de esta mañana?"@
+ld r,":a;image\tachi\cel_t12.jpg",%type_crossfade_fst
+`"Sí, la víctima más reciente del asesino en serie fue encontrada cerca de la casa de Tohno-kun, ¿no?@ Ese muro blanco como de prisión pertenece a la mansión de Akiha-san, ¿cierto?"@
+playstop
+cl l,%type_crossfade_fst
+waveloop se1
+ld l,":a;image\tachi\aki_t01a.jpg",%type_crossfade_fst
+`"--No lo sé.@ No vi las noticias esta mañana, así que no puedo opinar."@
+` Akiha desecha el asunto hábilmente, como si no tuviese nada que ver con ella.@
+` Pero yo no puedo desecharlo como Akiha.\
+cl a,%type_crossfade_fst
+` Porque no debería haber más asesinatos.@
+` Yumizuka ya no está bebiendo la sangre de las personas para vivir.@
+` Así que, no debería haber más víctimas.@
+` Mi…@
+` Si ese sueño mío es sólo un sueño…\
+wavestop
+play "*1"
+`"---Senpai.@ ¿Es verdad?@ ¿Es igual a esos asesinatos vampíricos de antes?"@
+ld c,":a;image\tachi\cel_t03.jpg",%type_crossfade_fst
+`"Sí.@ Dicen que la de anoche fue la décima víctima.@ Toda la sangre fue extraída del cuerpo, por supuesto, pero esta vez también faltaban partes del cuerpo."@
+` Senpai lo explica con su tono habitual.@
+` Pero, yo…@
+` Soy atacado por un gran mareo, como si el mundo entero acabase de ladearse.\
+ld c,":a;image\tachi\cel_t12.jpg",%type_crossfade_fst
+`"Faltaban las manos y los pies, y dijeron que parecían haber sido arrancados por una boca humana.@ Pero es extraño, ¿no?@ ¿Con la boca de una persona?"@
+cl a,%type_crossfade_fst
+ld l,":a;image\tachi\cel_t12.jpg",%type_crossfade_fst
+ld r,":a;image\tachi\aki_t01a.jpg",%type_crossfade_fst
+`"Es imposible arrancar miembros humanos con la boca.@ La quijada humana no es tan fuerte como para arrancar la cabeza o los pies de alguien, y los dientes tampoco lo soportarían.@
+` …… Bueno, podrías masticar el cartílago con tus dientes, pero no más."\
+ld l,":a;image\tachi\cel_t04.jpg",%type_crossfade_fst
+`"Precisamente.@ Pero las marcas en el cuerpo sólo pueden pertenecer a un humano, así que quizás es algo inhumano que tiene forma humana.@ Muy similar a un vampiro, ¿no crees?"@
+br
+` ----Me siento enfermo.@
+` Senpai, como no sabe nada, puede decir todo esto con una sonrisa---\
+ld r,":a;image\tachi\aki_t04a.jpg",%type_crossfade_fst
+`"Jaja."@
+ld l,":a;image\tachi\cel_t12.jpg",%type_crossfade_fst
+`"Akiha-san.@ ¿Acaso dije algo gracioso?"@
+ld r,":a;image\tachi\aki_t08a.jpg",%type_crossfade_fst
+`"Sí.@ Fue muy gracioso, así que reí en contra de mi voluntad."@
+ld l,":a;image\tachi\cel_t10a.jpg",%type_crossfade_fst
+`"¡Cielos, no es asunto de risa!@ ¡La víctima de anoche fue encontrada cerca de tu casa!"@
+ld r,":a;image\tachi\aki_t04a.jpg",%type_crossfade_fst
+`"Perdón si fui descortés, Senpai.@ Pero, no creí que fueses una persona dada a tales impulsos de fantasía.@
+` Bueno, Senpai, ¿quizás podrías decirnos qué piensas del vampiro?"\
+ld l,":a;image\tachi\cel_t08.jpg",%type_crossfade_fst
+`"¿Uh, te refieres a los vampiros de las leyendas?"@
+ld r,":a;image\tachi\aki_t08a.jpg",%type_crossfade_fst
+`"No, me refiero a tu imagen del asesino en serie como un vampiro."@
+cl a,%type_crossfade_fst
+br
+` Ciel-senpai está perdida en sus pensamientos.@
+` Yo---aunque no quiero escuchar la respuesta de Senpai, estoy terriblemente interesado a pesar del riesgo.\
+ld l,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
+`"En realidad, el culpable es una persona común.@ Simplemente creo que tiene cualidades y valores distintos a los nuestros.@
+` Creo que tomamos esas características que no pueden ser distinguidas por el sentido común e intentamos comprenderlas asignándoles la etiqueta de 'vampiro'."@
+ld r,":a;image\tachi\aki_t11a.jpg",%type_crossfade_fst
+`"…… En otras palabras, ¿Senpai cree que un 'vampiro' es alguien con un trastorno mental, una psicosis que le impide diferenciar el bien del mal?"\
+ld l,":a;image\tachi\cel_t07a.jpg",%type_crossfade_fst
+`"Sí.@ Utilizamos el término 'vampiro', pero cualquiera que esté fuera de las costumbres de la sociedad es rechazado por los que están dentro de ésta, porque la sociedad no puede entender el carácter de la persona.@
+` Es la función defensiva del sentido común ordinario, ¿cierto, Akiha-san?"@
+ld r,":a;image\tachi\aki_t04a.jpg",%type_crossfade_fst
+`"Lo has pensado mucho, Senpai.@ Pero es complicado, ¿no?@ Según tu lógica, no se puede decir que el 'vampiro' ha cometido un crimen.@
+` Después de todo, el 'vampiro' no tiene escrúpulos respecto a su propia conducta, ¿verdad?@ Si no ha habido ningún crimen, ¿cómo puede ser castigado?"\
+ld l,":a;image\tachi\cel_t04.jpg",%type_crossfade_fst
+`"Ciertamente.@ Por lo tanto, imponer castigos no es el papel de aquellos dentro de la sociedad.@
+` Para castigar un crimen no reconocido como crimen, el castigo no debe estar basado en la moral de un individuo sino en los principios de la especie entera."@
+ld r,":a;image\tachi\aki_t01a.jpg",%type_crossfade_fst
+`"…… ¿Los principios de la especie entera…?"\
+ld l,":a;image\tachi\cel_t03.jpg",%type_crossfade_fst
+`"Sí.@ El primer principio: 'es mejor que tu propia especie prospere a que otras lo hagan'.@ Para una especie, todo lo que obstruya este principio es un crimen.@
+` Aun si Vampiro-san no ve al asesinato como un crimen, para la especie humana, lo que es un crimen no es el asesinato, sino la existencia del vampiro."\
+cl a,%type_crossfade_fst
+br
+br
+br
+br
+br
+br
+` ------La propia existencia es un crimen.\
+` …… ¿Qué es esto?@
+` Akiha haciendo esas extrañas preguntas, y Senpai dando esas respuestas.@
+` Y,
+` por alguna razón, pareciera que no estuviesen hablando de nadie aparte de mí.\
+playstop
+wave se2
+` Suena la campana que marca el final del almuerzo.@
+ld l,":a;image\tachi\aki_t01a.jpg",%type_crossfade_fst
+`"--Perdón por hablar de cosas tan desagradables."@
+ld r,":a;image\tachi\ari_t01.jpg",%type_crossfade_fst
+`"Ah, está bien, está bien.@ Sólo escuchar la voz de Akiha me hace feliz."@
+cl l,%type_crossfade_fst
+ld l,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
+`"Bien, entonces ¿nos vamos?@ Llegarán tarde si no se apresuran."@
+cl a,%type_crossfade_fst
+` Senpai se dirige hacia la cafetería.@
+` Es más rápido llegar a su salón tomando ese camino.\
+` ----Senpai se está yendo.@
+br
+` ¿Será porque ella sabía tanto sobre los asesinatos en serie, o porque me sentí incluido en la conversación?@
+br
+return

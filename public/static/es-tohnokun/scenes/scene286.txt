@@ -1,0 +1,55 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_33a.jpg",%type_nowaitdisp
+` ---Ciertamente, si fuese a ver a Ciel-senpai con este dolor de cabeza, sólo sería una molestia.@
+br
+`"…… Es, cierto…… no he tenido oportunidad de descansar desde anoche.@ Supongo que me agoté un poco."@
+ld l,":a;image\tachi\koha_t03.jpg",%type_crossfade_fst
+`"Entonces por favor descanse.@ Shiki-san, ¿puede caminar por su cuenta?"@
+bg #9c0120,%type_crossfade_fst
+bg "image\bg\bg_33a.jpg",%type_crossfade_fst
+`"Ah---no."@
+` Parece imposible en este momento.\
+ld l,":a;image\tachi\koha_t02.jpg",%type_crossfade_fst
+`"Es cierto, oh, ¡Hisui-chan!@ Lleva a Shiki-san a su habitación."@
+ld r,":a;image\tachi\his_t07.jpg",%type_crossfade_fst
+`"Eh---Nee-san, pero---"@
+ld l,":a;image\tachi\koha_t04.jpg",%type_crossfade_fst
+`"¡Hisui-chan!@ Shiki-san está enfermo, ¿vas a abandonarlo de esa manera?"@
+`"Ah----"@
+`"Lo permitiré por el día de hoy, así que llévalo a su habitación."\
+ld r,":a;image\tachi\his_t21.jpg",%type_crossfade_fst
+`"…… Sí.@ Perdón por decir cosas tan egoístas."@
+ld l,":a;image\tachi\koha_t01a.jpg",%type_crossfade_fst
+`"Siempre que comprendas, está bien.@ ¿Encontraste la medicina?"@
+ld r,":a;image\tachi\his_t23.jpg",%type_crossfade_fst
+`"…… Um, tienes demasiadas medicinas, ¿ésta es la medicina para la fiebre?"\
+ld l,":a;image\tachi\koha_t05.jpg",%type_crossfade_fst
+`"Ajaja, ésa es para otra cosa.@ Shiki-san aún está consciente, así que no necesitamos usar medicina para estabilizarlo."@
+ld l,":a;image\tachi\koha_t02.jpg",%type_crossfade_fst
+`"Parece que su fiebre se debe al cansancio, así que haré algo de medicina.@ Hisui-chan, por favor encárgate del resto."@
+cl l,%type_lshutter_mid
+` Kohaku-san desaparece velozmente hacia el ala oeste---donde está su habitación.\
+ld r,":a;image\tachi\his_t20.jpg",%type_crossfade_fst
+`"Shiki-sama, lo llevaré a su habitación."@
+` Con un "perdóneme", ella me ofrece su hombro.@
+cl r,%type_crossfade_fst
+br
+` Gracias a la ayuda de Hisui, logro subir las escaleras.@
+` En el camino, incluso más que mi terrible y palpitante dolor de cabeza, el rostro increíblemente avergonzado de Hisui se graba en mi memoria.\
+bg #000000,%type_crossfade_mid
+!w2000
+play "*1"
+bg "image\bg\bg_40c.jpg",%type_crossfade_mid
+br
+` ---Al final,
+` me acuesto en la cama, bebo la medicina que hizo Kohaku-san y le confío a ella mi mensaje para Ciel-senpai que está esperando en el cine.@
+br
+bg #9c0120,%type_crossfade_fst
+bg "image\bg\bg_40c.jpg",%type_crossfade_fst
+`"………… Gah."@
+` Mi dolor de cabeza no se detiene.@
+` A cambio de eso, mi cuerpo sí parece enfriarse.\
+return

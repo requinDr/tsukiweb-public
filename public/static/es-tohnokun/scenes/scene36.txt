@@ -1,0 +1,30 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_22b.jpg",%type_lcartain_mid
+play "*1"
+` Camino por una ruta distinta a la que tomo normalmente.@
+` Pasando a través de calles desconocidas, lentamente me aproximo a la mansión Tohno.@
+` Los alrededores no son completamente desconocidos.@
+` Después de todo, viví aquí hasta la edad de nueve años---ocho años atrás.@ No es la primera vez que tomo esta ruta de regreso a la mansión.@
+` …… Mis sentimientos son un poco complejos.@
+` El camino a casa es nostálgico, y nuevo a la vez.@
+` Hasta ahora, no había siquiera deseado regresar a la casa Tohno.@ Ahora, no se ve tan mal.\
+bg #ffffff,%type_crossfade_mid
+bg "image\bg\ima_17.jpg",%type_crossfade_mid
+` …… La casa en que viví hasta los nueve años de edad.@
+` En este momento, mi hermana Akiha está en esa totalmente no japonesa mansión de estilo occidental.@
+` Tohno Makihisa--Mi viejo, quien me odiaba, y el amo de la casa Tohno, murió hace pocos días.\
+` Mi madre murió de enfermedad después del nacimiento de Akiha, así que los Tohno se han reducido a sólo mi hermana y yo.@
+` Siendo el hijo mayor, se pensaría que tomaría el puesto del heredero de los Tohno… pero no tengo tal privilegio.\
+` Convertirse en el heredero de los Tohno significa estar ligado a una estricta educación.@
+` He perdido la cuenta de el número de veces que mi padre me regañó debido a mi disgusto por no poder vivir libremente.@
+` Fue entonces cuando me vi involucrado en ese accidente, y mi cuerpo se debilitó… Mi padre vio esto como una buena oportunidad para deshacerse de mí.@
+` Su alegato fue algo parecido a "alguien que podría morir en cualquier momento no puede convertirse en el heredero, aunque sea el hijo mayor".@
+` Tristemente para mi padre, traicioné sus expectativas al recuperarme, pero mi hermana Akiha ya había sido considerada para ser la heredera de la casa Tohno.\
+` He escuchado que Akiha, quien ya estaba siendo criada severamente para convertirse en una respetable hija de la casa Tohno, recibió una educación aun más severa desde entonces.@
+` Fue hace mucho tiempo--Yo jugaba con Akiha detrás de la mansión antes del accidente.@ Después de eso, nunca volví a verla.\
+bg #ffffff,%type_crossfade_mid
+return

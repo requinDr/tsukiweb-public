@@ -1,0 +1,294 @@
+monocro off
+wavestop
+play "*2"
+;---added context above---
+bg "image\bg\bg_34a.jpg",%type_nowaitdisp
+`"¡Shiki-san, está listo!"@
+` Puedo escuchar la voz de Kohaku-san viniendo del comedor.@
+br
+`"Bien, entonces voy a tragar algo."@
+ld c,":a;image\tachi\aki_t03a.jpg",%type_nowaitdisp
+`"¡Oh, Nii-san!@ ¡Por favor abstente de hablar de una manera tan poco refinada!"@
+` Akiha me lanza una mirada aguda.@
+`"Au, finalmente volviste a la normalidad.@ Me agradabas más cuando estabas calmada porque estabas preocupada por mí."@
+ld c,":a;image\tachi\aki_t21.jpg",%type_crossfade_fst
+`"¡No me estaba preocupando por ti, Nii-san!"@
+` Akiha aparta la vista rápidamente.@
+` Mirándola con una débil sonrisa, voy al comedor.\
+bg #000000,%type_lcartain_slw
+playstop
+!w1000
+bg "image\bg\bg_48a.jpg",%type_lcartain_slw
+` Soy acompañado por Hisui en mi salida.@
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"Por favor tenga cuidado."@
+` Diciendo lo mismo que siempre dice, continúa mirándome fijamente.@
+`"Shiki-sama, ¿qué le sucedió anoche?"@
+`"¿Anoche?@ Nada en particular.@ Me sentí mal en la escuela y salí temprano.@ Estaba regresando cuando---"@
+br
+` ¿Regresando?@
+br
+`"Simplemente me desmayé en el parque.@ Bueno, supongo que sólo estaba siendo descuidado como dijo Akiha.@ …… Sí, seré más cuidadoso de ahora en adelante."\
+`"No lo estoy culpando de nada, Shiki-sama, pero parece estar extenuándose esta mañana.@ Por favor tenga cuidado en el camino."@
+` Hisui hace una profunda reverencia y se despide de mí.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_24a.jpg",%type_lcartain_slw
+` Mientras me acerco a la escuela, comienzo a ver más y más estudiantes con uniformes.@
+` Es sábado, así que la mayoría de ellos están sonriendo mientras caminan.\
+` Será un corto camino hasta la entrada principal una vez que pase esta intersección.@
+` Son apenas las siete y media.@
+` Parece que podré llegar a la escuela con tiempo de sobra el día de hoy.@
+br
+` El semáforo se torna rojo, y me detengo frente al cruce peatonal.@
+` La valla de la escuela está justo al otro lado.@
+` Ya que es una ruta escolar, el cruce está protegido por una barandilla de seguridad.@ Incluso ahora, los estudiantes frente a mí se dirigen hacia la entrada de la escuela.@
+br
+` No hay nada más que estudiantes de nuestra escuela en el otro lado a esta hora del día.@
+` …… No debería haber nadie aparte de lo estudiantes.@
+` Pero entre los apresurados autos, siento que entreveo a alguien vestido de blanco.\
+bg #000000,%type_lshutter_mid
+bg "image\event\ark_e02.jpg",%type_lshutter_mid
+`"-----Qué……"@
+br
+` Ella está ahí.@
+br
+` Vestida de blanco, con cabello dorado hasta sus hombros.@
+` Largas cejas delgadas y ojos rojos.@
+` Sólo la he visto una vez anteriormente, pero no hay manera de que pueda confundirla con otra persona.\
+`"------"@
+` Pero eso es imposible.@
+` La asesiné ayer, cortándola en pedazos.@
+`"Qué----"@
+` No.@ Incluso eso es una mentira.@
+` Todo fue sólo un sueño.@ Hisui me lo dijo----\
+`"-----"@
+` No, ella no dijo nada parecido.@
+` Es sólo que quería creer que fue un sueño.@
+` Entonces en realidad no fue un sueño.@
+` Pero entonces…
+` ¿Por qué?@ ¿Por qué ella existe, tan real como cualquier cosa---?\
+` El semáforo se torna verde.@
+` Los estudiantes a mi alrededor caminan hacia el otro lado.@
+` Soy el único entre ellos que se queda parado ahí, pasmado.\
+` Ella está sentada sobre la barandilla, balanceando sus piernas ociosamente,
+` como si estuviese esperando por alguien.@
+` No puedo saber cuánto tiempo ha estado esperando, pero su expresión no es siniestra.@
+br
+` ---¿A quién está esperando?@
+br
+` Se mueve inquietamente, como si estuviese esperando a su enamorado.\
+br
+br
+br
+br
+br
+br
+br
+` ---Tengo un mal presentimiento sobre esto.@
+`"Ah-----"@
+` La chica de blanco mira en mi dirección.@
+` Probablemente no es nada más que una coincidencia.@
+br
+` Es sólo una desconocida que se parece a ella.@ Debe estar esperando por otra persona.@
+` De no ser así, entonces este momento seguramente debe ser otro mal sueño.@
+` Después de todo, la asesiné completa y definitivamente con mis propias manos----\
+` Pero ella está mirando hacia acá y sonriendo.@
+` Luciendo muy satisfecha por haber encontrado a la persona que la asesinó, su sonrisa parece decir, "finalmente has venido----"\
+bg "image\bg\bg_24a.jpg",%type_lshutter_mid
+` Con un familiar saludo y una sonrisa, ella salta de la barandilla.@
+` Agitando su cabello, se dirige hacia mí.@
+`"------No vengas."@
+` Esto… es un mal sueño.@
+` El semáforo se torna rojo.@
+`"------No te me acerques."@
+` A ella ni siquiera parece importarle, y camina a lo largo de la calle mientras los autos pasan.@
+br
+` Hay sólo unos pocos metros entre nosotros.\
+`"…… ¡¡¡Te estoy diciendo que no vengas----!!!"@
+` La realidad frente a mis ojos no cambia incluso cuando grito.@
+` Gritando con una voz que ni siquiera yo entiendo, huyo corriendo de la chica de blanco.\
+bg "image\bg\bg_23a.jpg",%type_lcartain_mid
+waveloop se1
+` Corro.@
+` Corro con toda mi fuerza.@
+` Sin considerar la vergüenza, me abro paso explosivamente a través de los transeúntes, corriendo a toda velocidad sobre el asfalto.@
+br
+` *uff* *uff* *uff* *uff*@
+br
+` Mi respiración es salvaje, y mi corazón grita.@
+` Pero aun así, sigo corriendo.@
+` Siento que voy a volverme loco si no lo hago.\
+` Miro detrás de mí.@
+` La chica de blanco está caminando hacia mí.@
+` Definitivamente me está siguiendo.@
+` La chica que asesiné me está persiguiendo.@
+` Es una razón más que suficiente para correr.\
+bg "image\bg\bg_25a.jpg",%type_lcartain_mid
+` *uff* *uff* *uff* *uff*@
+br
+` Siento que mi corazón está a punto de explotar, pero lo ignoro y sigo corriendo.@
+` Cuando miro atrás, la chica todavía está ahí.@
+` Con esos ligeros pasos, ella me sigue mientras huyo corriendo.@
+br
+` *uff* *uff* *uff* *uff*@
+br
+` Mi cabeza se inclina hacia abajo.@
+` Mis brazos se sienten pesados.@
+` Mis piernas se sienten como si fuesen a desprenderse.@
+` Pero a pesar de eso,
+` ¡Estoy corriendo con toda mi fuerza, pero no puedo escapar de alguien que sólo camina detrás de mí---!\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_30a.jpg",%type_lcartain_mid
+` *uff* *uff* *uff* *uff*@
+br
+` Mi respiración está fuera de control.@
+` Creo que ya he corrido muchos kilómetros.@
+` Pero aun así, cuando miro atrás, ella siempre está ahí, caminando hacia mí.\
+` Naturalmente, como si estuviese dando un paseo, ella sigue justo detrás de mí.@
+` *uff* *uff* "…… ¡Jaja, jajaja!"@
+br
+` No es gracioso, pero comienzo a reír.\
+br
+`"¡Jaja, jajaja, ajajajajajaja!"@
+br
+` No puedo parar de reír.@
+` Pero aun así, corro.@ Mi cuerpo se queja de que moriré si corro más, pero continúo corriendo.@
+` La razón es simple.@
+` Si ella me atrapa, de seguro me matará.@
+` Me pregunto en qué me baso para pensar eso, tratando de sacudírmelo como simple imaginación.@ Pero aunque trate de consolarme, soy quien sabe mejor que eso es verdad.@
+br
+` No hay razón, ni base, ni evidencia.@
+` Sé que es un hecho que si ella me alcanza, seré asesinado-----\
+bg "image\bg\bg_31a.jpg",%type_lcartain_mid
+wave se4
+quakey 2,100
+`"¡Ah---!"@
+` Patéticamente, caigo al suelo.@
+` Caigo hacia adelante, no porque tropezara, sino porque simplemente no puedo mover mi cuerpo un solo paso más.@
+`"Guh---ha, aah."@
+` Tirado ahí, desplomado, de alguna manera logro arrastrarme hasta la pared.\
+`"----"@
+` Intento impulsarme hacia arriba contra la pared, pero no tiene caso.@
+` Mis rodillas pierden fuerza mientras intento levantarme, y caigo de nuevo.@
+` Mi cuerpo no se moverá más.@
+br
+` *jadeo* *jadeo* *jadeo*@
+br
+` Levanto la vista mientras respiro.\
+` ----Duele.@
+` No tengo suficiente oxígeno.@
+` No puedo pensar correctamente debido a eso.@
+` Ya ni siquiera puedo decir qué estoy haciendo.@
+` No sé por qué estoy haciendo esto.\
+` ¿Por qué?@ ¿Por qué?@ Ni siquiera sé por qué la chica que asesiné está viva.@
+` Sin lugar a dudas, la asesiné completa y definitivamente de la forma más total imaginable.@
+` ¿Entonces por qué?@
+` ¿Cómo puede estar esperándome en frente de mi escuela, sonriendo--?\
+`"…… Estoy seguro de que la maté."@
+br
+` ---Es cierto.@
+` Estoy seguro de que la maté.@
+!w500
+` Estoy seguro de que la maté.@
+!w500
+` Estoy seguro de que la maté.@
+!w500
+` ESTOY SEGURO DE QUE LA MATÉ, ENTONCES
+!w500
+br
+` ¿¡Por qué por qué por qué por qué por qué por qué por qué por qué por qué por qué por qué por qué por qué por qué por qué por qué por qué por qué por qué por qué por qué por qué por qué por qué por qué por qué por qué por qué-----!?\
+ld c,":a;image\tachi\ark_t03.jpg",%type_lshutter_fst
+wavestop
+`"¿Oh?@ ¿Ya se terminó la persecución?"@
+` Con pasos ligeros, ella entra al callejón, encogiéndose de hombros, decepcionada.\
+`"Hola.@ En verdad me diste problemas ayer."@
+ld c,":a;image\tachi\ark_t01.jpg",%type_crossfade_fst
+play "*9"
+` Con una cálida sonrisa, ella entra al callejón.@
+` ----Tengo que escapar.@
+br
+` Pensando eso, retrocedo, sólo para golpear mi cabeza contra una pared de hormigón.@
+br
+`"La persecución ya ha terminado, ¿cierto?@ Esto es un callejón sin salida, después de todo.@ No hay necesidad de preocuparse por que alguien aparezca o interfiera."@
+` Ella sonríe, pareciendo muy feliz.@
+cl c,%type_crossfade_fst
+\
+` Entrando en pánico, miro mis alrededores.@
+` Un callejón desolado.@ Estoy disgustado por mi estupidez.@
+` Escapar de aquí es como pedirle a ella que me mate.\
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"Ha sido un largo tiempo.@ Dieciocho horas desde entonces, finalmente te encontré."@
+` Ella da un paso más hacia dentro del callejón.@
+br
+`"¡T-tú----!"@
+`"¿Qué?"@
+`"Yo definitivamente----"@
+`"Sí.@ Soy la chica que mataste ayer.@ Me alegra que recuerdes."@
+`"Es---"@
+` Eso no puede ser verdad.@ ¡No hay manera de que eso pueda suceder…!\
+`"¡No seas ridícula!@ ¡La gente muerta no puede estar viva!"@
+`"Es verdad, pero no hay necesidad de que te sorprendas tanto.@ Yo simplemente reviví, eso es todo."@
+` Con esa brusca respuesta, ella da otro paso, el sonido alcanza mis oídos.@
+br
+` La distancia entre nosotros se está reduciendo gradualmente.\
+`"…… ¿Re… viviste?"@
+` Pasmado, le repito su propia frase.@
+` Revivida… ¿quiere decir que un doctor la salvó con alguna cirugía…?\
+`"---¡No seas estúpida!@ ¡No hay manera de que un humano pueda revivir después de ser cortado en pedazos de esa manera---!"@
+`"Cierto.@ No obstante, yo no soy humana."@
+`"-----¿Huh?"@
+` Sus palabras son tan simples que no hay forma de que pueda haberlas malinterpretado.@
+br
+` No soy humana.@
+br
+` Eso es lo que dijo la chica frente a mí.\
+`"…… ¿No eres humana…?"@
+ld c,":a;image\tachi\ark_t02.jpg",%type_crossfade_fst
+`"Cielos, ¿no es obvio?@ ¿Crees que hay algún humano allá afuera que pueda revivir después de ser cortado en pedazos?"@
+cl c,%type_crossfade_fst
+`"-------"@
+` No hay manera de que un humano como ése pueda existir.@
+` Algo como eso es sólo un monstruo que parece humano.@
+br
+` Algo que revive incluso cuando es asesinado.@
+` Algo a lo que la muerte le es irrelevante.@
+` Algo que rápidamente regresa a la normalidad y comienza a moverse aun después de ser cortado en pedazos no es algo que pueda ser llamado humano.\
+`"No… puede ser."@
+` Eso parece ser la chica justo frente a mis ojos.@
+` Intento reír, pero mi garganta está tan seca que no puedo.\
+`"…… ¿Qué demonios es eso?"@
+` No es exactamente una historia graciosa.@
+` Además, hay demasiadas cosas en esta historia que no son graciosas.@
+` Porque definitivamente…
+` Si ella no es humana, eso explica por qué está viva aun después de yo haberla matado.@
+br
+` ---Comienzo a tranquilizarme.@
+br
+` Ésta es una situación en la que debo observar todo y meditarlo.\
+`"…… Dijiste que no eres humana.@ ¿Entonces qué eres?"@
+`"¿Yo?@ Me llaman vampiro.@ En tus términos, soy un monstruo que vive de la sangre humana."@
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+` …… Ah, muy bien.@
+` "Vampiro" es al menos algo que puedo entender fácilmente.\
+`"Ya veo.@ Eres un vampiro---"@
+` Ella sonríe con satisfacción para mostrar su asentimiento.@
+` …… Qué locura de respuesta.@
+` He escuchado que los vampiros no pueden salir a caminar durante el día, pero supongo que es un asunto trivial en este momento.@
+`"…… Entonces, ¿qué quiere este monstruo de mí?"@
+` Por alguna razón, ella se estremece como sorprendida.@
+ld c,":a;image\tachi\ark_t12.jpg",%type_crossfade_fst
+` Después de un momento, coloca sus manos sobre sus caderas y me mira, irritada.\
+ld c,":a;image\tachi\ark_t16.jpg",%type_crossfade_fst
+`"¿Has olvidado lo que me hiciste ayer?@ Aunque no me conocías, me cortaste en pedazos en el momento en que nos vimos.@ Debes estar muy acostumbrado a esto para preguntarme qué quiero contigo ahora."@
+` Ella parece más disgustada que furiosa.@
+` Pero en este momento, yo también me siento así.@
+` Porque alguien que asesiné se está quejando por haberla matado.\
+ld c,":a;image\tachi\ark_t04.jpg",%type_crossfade_fst
+`"¡Oye!@ ¿Estás escuchando, asesino?"@
+`"…… Sí, estoy escuchando.@ Perdona pero, ¿podrías callarte sólo un minuto?@ Estoy reflexionando sobre cuán desafortunado es esto, incluso para mí."@
+cl c,%type_crossfade_fst
+br
+` ---Cielos.@ Tengo la peor de las suertes.@
+` Había una chica a la que quería matar sin razón, y la asesiné por puro impulso.@
+` Mi memoria no era clara después de eso, así que me calmé, pensando que fue sólo un sueño… pero resultó ser real.@ Además, resulta que la persona que maté ni siquiera es humana.\
+return

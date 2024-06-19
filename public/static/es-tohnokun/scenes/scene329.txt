@@ -1,0 +1,125 @@
+monocro off
+wavestop
+play "*3"
+;---added context above---
+bg "image\bg\bg_04.jpg",%type_nowaitdisp
+ld l,":a;image\tachi\ari_t05.jpg",%type_lshutter_fst
+`"Aquí tienen, almuerzo para tres… ¿huh?@ ¿Qué, estoy interrumpiendo algo?"@
+ld r,":a;image\tachi\aki_t01a.jpg",%type_crossfade_fst
+`"No, en absoluto, Senpai.@
+ld r,":a;image\tachi\aki_t04a.jpg",%type_crossfade_fst
+` ¿Eres amigo de Nii-san?@ Soy la hermana menor de Tohno Shiki, Akiha.@ Es un placer conocerte."@
+` Akiha se inclina suavemente.\
+ld l,":a;image\tachi\ari_t01.jpg",%type_crossfade_fst
+`"En absoluto, el placer es mío.@ Soy Inui Arihiko, he conocido a Tohno desde la escuela media, pero hoy es la primera vez que oigo hablar de ti, Akiha-chan."@
+` …… Tal vez aún me guarda rencor por no hablarle sobre ella, porque dice cosas que no debe.\
+`"Bueno, Arihiko, vamos a comer.@ El almuerzo es corto, así que no hay tiempo para charlar con Akiha."@
+ld r,":a;image\tachi\aki_t02.jpg",%type_crossfade_fst
+` Ignoro la mirada feroz de Akiha, y acepto el almuerzo que trajo Arihiko.@
+`"Aquí tienes, Akiha.@ Hay pan de curry y leche; puedes comer aquí.@ No hay mucho tiempo, así que no puedes tardarte mucho."\
+ld r,":a;image\tachi\aki_t21.jpg",%type_crossfade_fst
+`"Ya lo sé.@ No soy una niña, no tienes que explicarme cada pequeña cosa."@
+ld l,":a;image\tachi\ari_t03.jpg",%type_crossfade_fst
+`"Es cierto, Tohno.@ ¿No eres un poco cruel con Akiha-chan?"@
+` Arihiko me abuchea.@
+`"…………"@
+` Ignorándolos, abro mi pan y meto la pajilla en la leche.\
+cl a,%type_crossfade_fst
+` Munch.@
+` Munch munch.@
+` Munch munch munch.@
+br
+`"-----"@
+` Cierto.@ Ya terminó el almuerzo, es hora de volver a clases.\
+ld c,":a;image\tachi\aki_t13a.jpg",%type_crossfade_fst
+`"…… Ah, Nii-san."@
+` Akiha habla tímidamente.@
+` Al mirar, veo que ni siquiera ha abierto su pan de curry.@
+`"¿Qué sucede, Akiha?@ ¿No tienes hambre?"@
+`"Es… bueno, no es eso, es sólo…"@
+` Ella mira hacia arriba, como si estuviese avergonzada o algo así.@
+br
+`"…… ¿Podrías… enseñarme cómo se come esto…?"@
+br
+`"……"@
+` Ella me mira con vacilación.@
+` Y… ¿qué se supone que diga?\
+cl a,%type_crossfade_fst
+ld c,":a;image\tachi\ari_t01.jpg",%type_crossfade_fst
+`"¿Cómo se come?@ Sólo rompe el envoltorio y cómelo.@ No es difícil, ¿verdad Tohno?"@
+`"Arihiko, perdona pero, ¿podrías ir a buscar una servilleta en la cafetería?"@
+`"…… ¿Eh, yo?"@
+` Asiento silenciosamente.@
+ld c,":a;image\tachi\ari_t03.jpg",%type_crossfade_fst
+`"Bien, pero me debes una."@
+cl a,%type_lshutter_fst
+` Arihiko corre nuevamente hacia el edificio escolar.\
+`"De acuerdo, te enseñaré.@ Abres la bolsa aquí, así.@ Y lo muerdes… es bueno, pero no esperes demasiado del sabor.@ La comida de Kohaku-san y esto son como el cielo y la tierra."@
+ld c,":a;image\tachi\aki_t12a.jpg",%type_crossfade_fst
+`"Ahh… ¿en serio, Nii-san?"@
+`"No estoy bromeando.@ ¿O qué vas a decir?@ ¿No me dirás que aunque te transferiste a nuestra escuela no puedes comer nuestra comida?@
+` No quiero pensar mal de ti."\
+ld c,":a;image\tachi\aki_t17a.jpg",%type_crossfade_fst
+`"No, no es eso, es sólo que… este pan, es muy grande, no creo que pueda meterlo en mi boca…"@
+`"…… Nadie dijo que debías comerlo todo en un solo bocado.@ Es pan, tienes que morderlo poco a poco.@ Dejará migajas en tu boca, pero Arihiko te traerá una servilleta para limpiarla, ¿de acuerdo?"@
+ld c,":a;image\tachi\aki_t12a.jpg",%type_crossfade_fst
+`"…… Sí.@ Gracias, Nii-san."@
+cl a,%type_crossfade_fst
+` Diciendo eso, Akiha comienza a morder el pan de curry.@
+` …… No creo que haya habido alguna vez una chica con tantos nervios para comer un pan de curry.\
+bg #000000,%type_tshutter_mid
+bg "image\bg\bg_04.jpg",%type_bshutter_mid
+` Han pasado pocos minutos desde que Akiha terminó su almuerzo.@
+` La presencia de Arihiko no parece molestarla, ya que han iniciado una placentera conversación.\
+ld l,":a;image\tachi\aki_t04a.jpg",%type_crossfade_fst
+`"Entonces Inui-san, ¿has sido amigo de Nii-san desde la escuela media?"@
+ld r,":a;image\tachi\ari_t01.jpg",%type_crossfade_fst
+`"Sí, lo conozco desde hace cinco años.@ Ha sido un tipo fastidioso desde que nos conocimos.@ Le ayudé en toda clase de cosas, y antes de darme cuenta, se hizo parte de mí."@
+`"…… Arihiko, eso no es correcto.@ Deberías llamarlo extorsión."@
+ld r,":a;image\tachi\ari_t02.jpg",%type_crossfade_fst
+`"¡Ahh, llámalo como quieras, estamos atados el uno al otro!"@
+` Arihiko ríe.\
+`"Sí.@ Como cuando algo se queda pegado a la suela de tu zapato.@ Supongo que nos causamos muchos problemas el uno al otro."@
+` Respondo cínicamente a la risa de Arihiko.@
+ld l,":a;image\tachi\aki_t13a.jpg",%type_crossfade_fst
+`"………………"@
+` …… Por alguna razón, Akiha parece tener problemas para asimilar nuestra relación.\
+ld r,":a;image\tachi\ari_t01.jpg",%type_crossfade_fst
+`"Oh, por cierto Akiha-chan, ¿puedo preguntarte algo?"@
+ld l,":a;image\tachi\aki_t04a.jpg",%type_crossfade_fst
+`"Por supuesto, si es algo que pueda responder."@
+`"Bueno, me lo he estado preguntando… Tohno tiene anemia crónica, ¿cierto?@ ¿Siempre ha sido así?"@
+` …… Lo asombroso de Arihiko es lo directo que es cuando hace preguntas incómodas como éstas.\
+ld l,":a;image\tachi\aki_t01a.jpg",%type_crossfade_fst
+`"Sí, Nii-san ha sido anémico desde que nació.@ Pero todos en la familia Tohno tienen problemas similares; él no es un caso especial."@
+`"¿Eh…?@ ¿En serio, Akiha?"@
+`"Sí.@ Papá sufría de manía depresiva.@ Trastorno de Identidad Divergente, para ser más precisa."\
+ld r,":a;image\tachi\ari_t03.jpg",%type_crossfade_fst
+`"¿Qué?@ ¿Identidad Divergente…?"@
+ld l,":a;image\tachi\aki_t04a.jpg",%type_crossfade_fst
+`"Mejor conocido como personalidades multiples.@ Pero, lo de Papá no era tan severo como para causar confusión de la memoria."@
+cl a,%type_crossfade_fst
+br
+` ----No lo sabía.@
+br
+` Pero ahora que recuerdo, el carácter de Tohno Makihisa frecuentemente parecía pasar de la ternura a la brutalidad.\
+`"Hmm… entonces, era una condición médica, ese viejo…"@
+` Viéndolo de esa manera, todo se hace claro.@
+` Antes del accidente, siempre sentí que papá era un hombre afectuoso, que mantenía su distancia.@
+` Pero después del accidente, Makihisa evidentemente me odiaba.@
+` Pensándolo bien, puede haber sido a causa de su enfermedad.\
+wave se2
+ld l,":a;image\tachi\ari_t03.jpg",%type_crossfade_fst
+`"¡Argh!@ ¡Terminó la hora del almuerzo, Tohno!"@
+`"No te quejes conmigo.@ Vamos Akiha, deberías volver a tu salón rápidamente.@ Sería avergonzante llegar tarde en tu primer día."@
+ld r,":a;image\tachi\aki_t09.jpg",%type_crossfade_fst
+`"Entiendo.@ Cuídate, Nii-san."@
+cl a,%type_crossfade_fst
+` Mientras resuena la campana, regresamos a nuestras aulas.\
+bg #000000,%type_lcartain_mid
+!w1000
+bg "image\bg\bg_06b.jpg",%type_rcartain_mid
+` Un día lleno de altibajos finaliza.@
+` ¿Qué debería hacer ahora---
+br
+return

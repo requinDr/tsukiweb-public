@@ -1,0 +1,78 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_56.jpg",%type_nowaitdisp
+` Lo olvidé porque ella comenzó a decirme que la sacara a jugar, pero había algo sobre lo que debía preguntarle.\
+`"Entonces preguntaré.@ Arcueid, fui atacado hace dos noches por una persona extraña."@
+`"¿Eh?@ ¿Una persona extraña?@ ¿De qué tipo?"@
+`"Bueno, eso es----"@
+` Me tranquilizo y describo tan claramente como puedo lo que sucedió dos noches atrás.\
+bg #000000,%type_lshutter_mid
+bg "image\bg\bg_56.jpg",%type_lshutter_mid
+play "*9"
+`"…… Sí, así fue como sucedió------"@
+` Concluyendo mi explicación, leo la expresión de Arcueid.@
+ld c,":a;image\tachi\ark_t07.jpg",%type_crossfade_fst
+` Desde que comencé hasta ahora, su mirada permaneció aguda y sin ninguna amabilidad.\
+`"¿Qué fue todo eso Arcueid?@ Ese hombre vendado, y esa persona con esos ropajes como de sacerdote, ¿son enemigos tuyos?"@
+`"…… Sí.@ Ambos son 'enemigos'.@ No sé quién o qué sea ese hombre vendado, pero esa mujer con ropajes Católicos, tengo una idea sobre ella."@
+` Ella estrecha sus ojos como si estuviese de mal humor.@
+` No, parece estar más irritada que de mal humor.\
+`"Puede que conozca a la persona que te ayudó, Shiki.@ …… Rayos.@ Si en verdad se trata de ella, probablemente será capaz de encontrar al enemigo antes que yo."@
+` Ella muerde su labio con furia.\
+`"Espera un minuto.@ No dije que esa persona fuese una mujer."@
+`"No, no hay equivocación.@ Esa mujer es el único agente que posee autoridad para cazar herejes por sí sola y utiliza Llaves Negras que combinan el Rito de Cremación y el Efecto Coraza de Acero."@
+` Su irritabilidad es casi como hostilidad.@
+` Incluso cuando hablaba de Nrvnqsr, su voz nunca estuvo saturada de emoción hasta este punto.\
+`"…… Arcueid.@ Um, esa persona que me ayudó, ¿es un vampiro……?"@
+`"No, no es eso----es cierto, aún tengo que hablarte sobre otra cosa que es muy importante."\
+ld c,":a;image\tachi\ark_t03.jpg",%type_crossfade_fst
+`"Creo que lo expliqué antes, pero los vampiros como el que hizo su guarida en esta ciudad convierten a los humanos en sus subordinados y expanden su territorio.@ Al mismo tiempo, hacen su máximo esfuerzo para ocultar su existencia.@
+` Aparecen algunas víctimas, pero ellos utilizan diversas técnicas de hechicería para hacer que las cosas no parezcan fuera de lo ordinario.@
+` ¿Sabes por qué?"\
+`"…… Bueno, es porque los humanos no son estúpidos.@ Si descubren que monstruos como ésos existen donde ellos viven, los atacarán.@ Aunque los humanos son débiles, tienen cosas como la policía, así que podrían ser capaces de hacer algo."@
+`"---Bueno, supongo que es verdad, pero la policía es sólo un grupo que impone la ley sobre los humanos.@ Nosotros no los consideramos en absoluto.@
+` Pero, es correcto decir que los vampiros ocultan su presencia debido a su instinto de autoconservación."\
+ld c,":a;image\tachi\ark_t06.jpg",%type_crossfade_fst
+`"Shiki, existe un enemigo natural de los vampiros.@ Un grupo de algo como asesinos profesionales que ahora tienen el balance de poder a su favor.@
+` …… Es verdad para otras especies transcendentes, pero especialmente para los vampiros, que es fatal revelarse a sí mismos.@
+` Aun si un vampiro crea un reino secreto en una aldea en algún lugar de las montañas lejos de toda civilización, este enemigo natural definitivamente lo notará si las víctimas siguen incrementándose.\
+` Los vampiros explotan a los humanos en secreto, por ninguna otra razón que la autoconservación.@
+` Los vampiros esconden los cadáveres de sus víctimas, no por miedo a que la sociedad humana se entere, sino por miedo a que estos enemigos naturales los descubran."@
+`"…… ¿Huh?@ ¿El enemigo natural de los vampiros?@ Otro grupo más de monstruos que no conozco."@
+br
+` Un sujeto normal como yo sólo quiere que todas estas cosas antinaturales dejen de aparecer.\
+ld c,":a;image\tachi\ark_t16.jpg",%type_crossfade_fst
+`"¿Qué estás diciendo?@ Sus enemigos naturales son sin duda alguna ustedes los humanos."@
+`"¿-----?@ ¿Enemigos naturales, nosotros?"@
+`"Sí.@ Hace mucho tiempo, los humanos usaron muchos tipos de hechicería, lo oculto, ceremonias mágicas para crear una organización y comenzaron a eliminar primates diferentes a los humanos.@
+` La mayor de éstas es el Cristianismo---el orgullo de El Vaticano, los Exorcistas.@ La Iglesia Católica siempre vio a los "no humanos" como impurezas, pero los vampiros son considerados los más peligrosos."\
+ld c,":a;image\tachi\ark_t07.jpg",%type_crossfade_fst
+` "Hay muchos grupos religiosos en el mundo, pero la Iglesia Católica ve a los vampiros con más hostilidad que el resto.@
+` Sabes, es casi una obsesión.@ Son tan dementes, ni siquiera yo quisiera involucrarme con ellos."@
+` Arcueid deja salir un suspiro.\
+`"La que te ayudó es una miembro de una selecta organización que caza herejes.@
+` Este grupo, la Agencia de Entierros, es parte de La Iglesia.@ Utilizan su propia fuerza en lugar de la ley para lidiar con contradicciones al Cristianismo.@ Estos exorcistas ocultos son más parecidos a asesinos profesionales."@
+`"…………"@
+` ¿Sacerdotes que van por ahí exterminando vampiros, eh?@
+` Es tan apropiado, no estoy muy seguro de qué decir.\
+`"¿Entonces no son como nosotros?@ Si esta Agencia de Entierros es un grupo cuyo propósito también es cazar vampiros, ¿no podemos buscar juntos?"@
+`"----Eso no funcionará.@ Para ellos, es suficiente que alguien sea un vampiro.@
+` Para ellos, los primates no humanos son simplemente "maldad".@ No les importa que chupen sangre o no.@
+` Esta exorcista puede incluso haber venido aquí para sellarme y no para combatir al vampiro que vive en esta ciudad."\
+`"………………"@
+` Las cosas se han vuelto bastante complicadas.@
+` El enemigo de Arcueid es buscado por un vampiro, y por un grupo que caza vampiros.@
+`"…… ¿Qué es esto?@ ¿Entonces estás completamente sola?"@
+`"Sí, ésa es la vida de un vampiro.@
+` ¿No lo dijo el propio Nrvnqsr?@ Aunque los vampiros pertenezcan a la misma especie, sus naturalezas son tan diferentes que al final, están totalmente solos."@
+cl c,%type_crossfade_fst
+` Arcueid da otro mordisco a su hamburguesa.\
+` Ella habla de estar totalmente sola tan relajadamente.@
+`"…………"@
+` Sintiéndome insatisfecho, continúo escuchando con una amarga expresión.\
+bg #000000,%type_lcartain_mid
+playstop
+!w2000
+return

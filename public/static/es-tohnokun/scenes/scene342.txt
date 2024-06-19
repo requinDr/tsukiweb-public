@@ -1,0 +1,160 @@
+monocro off
+wavestop
+play "*1"
+;---added context above---
+bg "image\bg\bg_40d.jpg",%type_nowaitdisp
+` …… no, mantendré la promesa que le hice a Akiha.@
+` Akiha me dijo que no fuese a ese lugar, y no puedo romper una promesa sólo por tonta curiosidad.@
+br
+`"…… Nn."@
+` Una serena soñolencia impregna mi cuerpo.@
+` Me quedaré tranquilo esta noche y dormiré.\
+bg #000000,%type_crossfade_mid
+!w1000
+playstop
+monocro #ff0000
+!w2000
+wave se0
+!w600
+` ----Caliente.\
+wave se0
+!w600
+br
+br
+br
+` ----Caliente.\
+wave se0
+!w600
+br
+br
+br
+br
+br
+` ----Caliente.\
+wave se0
+!w600
+br
+br
+br
+br
+br
+br
+br
+` ----Mi garganta, seca de sed, caliente.\
+!w600
+br
+br
+br
+br
+br
+br
+br
+br
+` ------No puedo dormir así.@
+`      Iré a buscar un vaso de agua.\
+bg "image\bg\bg_47.jpg",%type_nowaitdisp
+bg #000000,%type_nowaitdisp
+bg "image\bg\bg_24c.jpg",%type_nowaitdisp
+bg #000000,%type_nowaitdisp
+bg "image\bg\bg_25b.jpg",%type_crossfade_mid
+play "*4"
+` Parece que fui a la ciudad de noche.@
+` Parece que estoy esperando, con ojos inyectados de sangre, que alguien pase cerca.\
+wave se0
+br
+br
+br
+br
+br
+br
+br
+` ------Hace calor.\
+` De pronto, veo un rostro reflejado en la ventana.@
+` Los ojos están inyectados de sangre, y el rostro parece demencial.\
+wave se0
+br
+br
+br
+br
+br
+br
+br
+` ------Hace tanto calor.\
+` Parece que encontré mi presa.@
+` Al estragularla desde atrás, todo termina.@
+` Parece que la mujer desconocida ha muerto sólo con eso.\
+wave se0
+br
+br
+br
+br
+br
+br
+br
+` ---Estoy, muy acalorado.\
+bg #000000,%type_nowaitdisp
+bg "image\bg\bg_30b.jpg",%type_nowaitdisp
+bg #ffffff,%type_nowaitdisp
+bg "image\bg\ima_13b.jpg",%type_nowaitdisp
+bg #000000,%type_nowaitdisp
+bg "image\bg\bg_31b.jpg",%type_nowaitdisp
+` Tomando el cadáver, quizás muerdo su garganta.@
+` Hay un gorgoteo.@
+` Al beber la sangre que sale de su cuello desgarrado, calmo mi sed.\
+wave se0
+br
+br
+br
+br
+br
+br
+br
+` ---No entiendo.\
+` El sonido de pesadas respiraciones.@
+` Este acto…
+` ¿Este acto en verdad me excita tanto?@
+` Meto mi dedo en el pecho del cadáver.@
+` El sonido de la carne siendo aplastada y de los huesos siendo rotos.@
+` El sonido de un corazón siendo arrancado por mi mano desnuda.\
+wave se0
+br
+br
+br
+br
+br
+br
+br
+` ---Mientras observo, mi cabeza se llena de blanco puro.\
+` Esto, el máximo despojo.@
+` La cima de la inmoralidad.@
+` Sólo al observar, me siento acalorado.@
+` Podría decirse que es un placer negativo, pero a la hora de excitar a alguien, sigue siendo lo mismo.\
+wave se0
+br
+br
+br
+br
+br
+br
+br
+` ---No entiendo.\
+bg "image\bg\ima_18.jpg",%type_crossfade_fst
+` Con sangre caliente goteando de mi boca, miro hacia el cielo nocturno, fascinado.@
+` Mi largo cabello ondula a mi alrededor.@
+` Arriba está el espiral del cielo.@
+` Una luna plateada tan hermosa.\
+wave se0
+br
+br
+br
+br
+br
+br
+br
+` ---Igualmente, no entiendo.@
+`   Estoy, simplemente, caliente----\
+bg #000000,%type_crossfade_mid
+monocro off
+playstop
+!w3000
+return

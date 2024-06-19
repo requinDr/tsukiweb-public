@@ -1,0 +1,119 @@
+mov $phasebg,"image\bg\bg_22b.jpg"
+mov $phasetitle_a,":a;image\word\PARK_02A.PNG"
+mov $phasetitle_b,":a;image\word\day_02.png"
+gosub *right_phase
+bg #ffffff,%type_crossfade_mid
+` Sensei me dijo.@
+` Mis ojos pueden ver los puntos donde las cosas pueden ser destruídas fácilmente.@
+` Y si esa 'cosa' fuese una persona, entonces lo que vería serían sus puntos vitales.\
+` Líneas que, si son cortadas, podrían destrozar algo sin ningún esfuerzo.@
+` Con esas líneas, incluso cosas tan duras como el acero podrían ser cortadas fácilmente.@
+br
+`"En otras palabras, toda lo existente tiene el destino de 'destruirse' incorporado en su interior.@ Esto es algo ineludible para cualquier cosa con forma física, Shiki."\
+` Eso es lo que Sensei dijo.@
+` Todavía era un niño en ese entonces.@
+` Recuerdo haber entendido finalmente lo que ella quería decir y asustarme por ello.@
+` En otras palabras, el mundo está lleno de grietas, y podría colapsar en cualquier instante.@
+` Si hay garabatos por todo el suelo, entonces hay una posibilidad de que la tierra comience a desmoronarse si camino sobre ella.@
+` ---Cuando entendí lo que quiso decirme, agradecí a Sensei desde el fondo de mi corazón por los lentes que me dio.\
+br
+` No hubiese podido seguir viviendo de haber continuado viendo esas líneas todo el tiempo.@
+` Los puntos donde las cosas pueden ser destruídas fácilmente.@
+` No hay una sola ventaja en ser capaz de verlos---\
+bg #000000,%type_crossfade_slw
+!w1000
+bg "image\bg\ima_03.jpg",%type_crossfade_mid
+`"---Buenos días."@
+br
+` …… Escucho una voz desconocida.\
+`"Ya amaneció.@ Es hora de que despierte, Shiki-sama."@
+` …… Ya deja de llamarme Shiki-sama.@
+` Te lo dije ayer, me da escalofríos en la espalda----\
+bg "image\bg\bg_40e.jpg",%type_crossfade_slw
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+play "*2"
+br
+` ---Me despierto.@
+` Hisui está parada lejos de la cama, como un estatua.@
+`"……"@
+br
+` ¿Dónde estoy?@
+br
+`"Buenos días, Shiki-sama."@
+` La chica con el uniforme de sirvienta hace una reverencia.\
+`"Ah… sí, regresé a casa, cierto…"@
+` Me impulso hacia arriba, mirando alrededor de la habitación.@
+cl c,%type_crossfade_fst
+` En ese instante---
+br
+` ---Siento un dolor agudo en mi sien.\
+`"¿Huh---?"@
+`"¿Está buscando sus lentes?"@
+` Hisui me entrega mis lentes amablemente.@
+bg "image\bg\bg_40a.jpg",%type_lshutter_fst
+`"---Fiu."@
+br
+` …… Dejo escapar un respiro.@
+` Anoche---Antes de dormirme, tuve la sensación de que estaba viendo las líneas aun con mis lentes puestos.@ Parece que fue sólo mi imaginación.\
+`"Sstt……"@
+` Tal vez sea porque dormí en una habitación desconocida, pero mi mente está desconcertada.@
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"¿Shiki-sama…?"@
+` Hisui me llama.@
+` Sacudiendo mi cabeza, me sacudo la soñolencia.\
+`"Buenos días, Hisui.@ Gracias por venir a despertarme."@
+`"No hay necesidad de agradecerme.@ Es mi deber venir a despertarlo, Shiki-sama."@
+` Hisui da una simple y completamente inexpresiva respuesta.\
+` …… Incluso bajo una luz poco favorable, pienso que los rasgos de Hisui son hermosos.@
+` Debería ser maravilloso que semejante chica venga a despertarme todas las mañanas, pero como Hisui nunca sonríe, no me siento tan feliz por eso.@
+br
+` …… Qué lástima.@
+` Si Hisui tuviese sólo la mitad de la alegría de Kohaku, sería muy linda.\
+`"---¿Necesita algo?"@
+` Percatándose de que la estoy mirando, Hisui me devuelve la mirada directamente.@
+`"No, nada en absoluto.@ Despertarme contigo ahí me hace sentir que en verdad estoy en la mansión Tohno."@
+` Entonces.@ Saliendo de la cama, estiro mis brazos.@
+br
+` De pronto, me percato de que estoy vistiendo una pijama.\
+` ---Eh, estoy seguro de que ayer, yo…\
+`"¿Huh?@ Creí que había dormido con mi uniforme anoche."@
+`"Sí.@ Ya que hacer eso es malo para su salud, Nee-san lo cambió de ropa y luego lo devolvió a la cama."@
+` Hisui lo explica como si fuese algo perfectamente natural.@
+` Ya veo.@ Ella me cambió de ropa.@ Es verdad que podría haber cogido un resfriado si hubiese dormido de esa manera.@
+` Justo el tipo de servicio atento que se esperaría de una sirvienta---¡Hey, espera un minuto…!\
+`"¿¡Qu------!?"@
+` Rápidamente reviso mis pantalones y mi ropa interior.@
+` Mis pantalones son flamantes pantalones de pijama.@ Incluso mi ropa interior es nueva.\
+`"¿¡Qu-qu-qu-!?"@
+` Quiero decir '¿¡Qué demonios hiciste!?', pero por alguna razón las palabras están atoradas en mi garganta.@
+` Tengo que calmarme y pensar bien las cosas por ahora.@
+` …… Veamos.@ En primer lugar, la mitad de la culpa es mía.@
+` Y la persona que me cambió no fue Hisui, fue su hermana, Kohaku-san.@
+` Sería un error quejarme de Hisui.\
+`"---Hisui."@
+`"Sí, ¿qué desea?"@
+`"No tienes que hacer nada innecesario como esto de ahora en adelante.@ Si es necesario, por favor despiértame.@ Puedo cambiarme por mi cuenta, así que me gustaría hacerlo de esa manera."@
+` Mi rostro muestra un profundo enrojecimiento mientras digo todo esto.@ Hisui asiente obedientemente en afirmación.@
+`"Su uniforme está doblado y le espera en aquel lugar.@ Por favor vaya a la sala de estar después de haberse cambiado."\
+cl c,%type_lshutter_mid
+`"………"@
+` Maldición.@ Cuán descuidado puedo ser.@
+` Para empezar, fue descuidado de mi parte quedarme dormido de esa manera, pero no haberme despertado mientras estaba siendo cambiado está más allá del límite.@
+`"Normalmente lo habría sentido, pero… quizás estaba muy cansado."@
+` Quejarme de mí mismo no va a cambiar nada.@ No puedo quedarme aquí parado hablando solo como un idiota.@ Será mejor que me cambie rápidamente y vaya a desayunar.\
+` Mi uniforme escolar ha sido cuidadosamente doblado, y mi camisa incluso ha sido planchada.@
+` Pasar mis muñecas a través de las mangas se siente bien.@ Es esa fresca sensación de algo que está nuevo.\
+`"…… No, no hay nada malo en estar desnudo, ¿cierto?@ Sip."@
+` No hay nada malo en eso, pero no puedo evitar estar avergonzado por el hecho de haber sido cambiado por la afectuosamente sonriente Kohaku-san.@
+` Para colmo, el rostro en el espejo continúa sonriendo de vez en cuando a pesar de estar brillantemente rojo.@
+` …… ¿En verdad estás bien, Tohno Shiki?@
+` Pensé que se suponía que estabas nervioso por quedarte aquí, amateur.\
+bg #000000,%type_lcartain_mid
+!w500
+bg "image\bg\bg_34a.jpg",%type_lcartain_mid
+` Akiha y Kohaku-san se están relajando en la sala de estar.@
+` Akiha esta vistiendo el uniforme de la Academia Asagami para Señoritas, una famosa escuela para chicas jóvenes.@
+` Están bebiendo té elegantemente, como si el desayuno hubiese terminado hace mucho tiempo.@
+` Yo----
+br
+return

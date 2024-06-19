@@ -1,0 +1,55 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_50.jpg",%type_nowaitdisp
+`"…… Oh bueno.@ Finalmente somos amigos de nuevo, y si le hablo sobre Arcueid, probablemente se enfadará una vez más."@
+` Por ahora, tengo que mantener esta relación.@ Observo a Senpai retirarse y entonces me concentro en mi comida.\
+bg #000000,%type_lcartain_mid
+!w1000
+bg "image\bg\bg_06b.jpg",%type_lcartain_mid
+` La tutoría de fin de clases ha terminado.@
+` Mis conversadores compañeros se levantan de sus asientos.@
+`"----Bien, entonces."@
+` Debería esperar un poco aquí y ver qué sucede.@
+` Senpai podría venir, y aunque no lo haga, puedo ir a la habitación de la ceremonia del té.\
+bg #000000,%type_lshutter_fst
+bg "image\bg\bg_06b.jpg",%type_lshutter_fst
+` No parece que Senpai vaya a venir.@
+` Supongo que tendré que ir a la habitación de la ceremonia del té.\
+bg "image\bg\bg_11b.jpg",%type_lcartain_mid
+` Mis piernas dejan el salón rápidamente y se dirigen hacia allá.@
+br
+` ---Bueno, hay un montón de cosas sobre las que tendré que hablar con Senpai.@
+` Sobre el vampiro de esta ciudad y sobre Arcueid.@
+` Aunque sé que será doloroso discutir esas cosas, me emociona la oportunidad de estar con Senpai nuevamente.\
+` Comienzo a respirar con dificultad----
+br
+` Bajo corriendo hacia la habitación de la ceremonia del té.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_09b.jpg",%type_lcartain_mid
+` No hay nadie aquí.@
+` Parece que ella aún no ha venido.@
+br
+` …… *jadeo*…… *jadeo*.@
+br
+` …… Creo que me emocioné demasiado.@
+` Me siento en la alfombrilla tatami y recobro el aliento.\
+` …… *jadeo*…… *jadeo*…… *jadeo*.@
+br
+` Mi acalorado cuerpo no se enfría tan fácilmente.@
+` Jadeo dolorosamente por aire.@
+` Mi cuerpo está bañado en sudor, y me siento terrible.\
+` Mis jadeos llenan el aire.@
+br
+` Hay---algo raro.@
+` He estado descansando por un rato, pero mi respiración está empeorando.@
+` En primer lugar, ¿por qué mi cuerpo está cansado después de correr sólo esa pequeña distancia……?\
+monocro #ff0000
+quakey 1,100
+play "*4"
+`"---¿¡Gah!?"@
+br
+` De repente,
+` un dolor punzante llena mi pecho.\
+return

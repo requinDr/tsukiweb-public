@@ -1,0 +1,10 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_40b.jpg",%type_nowaitdisp
+` Bueno, no tengo nada que hacer en particular, así que pasaré el tiempo con calma en mi habitación.\
+bg #000000,%type_tcartain_mid
+playstop
+!w2000
+return

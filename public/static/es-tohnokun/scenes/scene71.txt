@@ -1,0 +1,17 @@
+monocro off
+wavestop
+play "*2"
+;---added context above---
+bg "image\bg\bg_34a.jpg",%type_nowaitdisp
+`"Akiha.@ Sobre Kohaku-san…"@
+ld c,":a;image\tachi\aki_t01a.jpg",%type_nowaitdisp
+`"¿Sí?@ ¿Qué pasa con Kohaku?"\
+`"Es una persona muy agradable, ¿cierto?@ Hace un momento fui regañado por ella en el pasillo.@ '¡No crecerá si no desayuna!' dijo ella."\
+ld c,":a;image\tachi\aki_t04a.jpg",%type_crossfade_mid
+`"Hmmmn.@ Eso suena como algo que ella diría.@ ¿Te gusta Kohaku, Nii-san?"\
+`"Eh---No, eso no es lo que quise decir.@ Sólo estaba sorprendido porque nunca fui regañado así cuando estaba en la casa Arima.@ Gracias a ella, parece que no podré saltarme el desayuno de ahora en adelante."@
+`"Correcto.@ Eres anémico después de todo, así que no te haría ningún bien saltarte el desayuno."@
+` El mareo en realidad no está conectado a mi dieta, pero asiento obedientemente.@
+cl c,%type_nowaitdisp
+\
+return

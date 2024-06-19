@@ -1,0 +1,67 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_06a.jpg",%type_lcartain_mid
+` La tutoría está por comenzar, pero aún hay mucho ruido en el salón.@
+` Tomo asiento junto a la ventana y suelto mi maletín.\
+ld c,":a;image\tachi\ari_t01.jpg",%type_lshutter_fst
+`"Oye, buen día.@ Hoy te ves bastante mal."@
+`"…… Cielos.@ Todos me miran y dicen la misma cosa.@ ¿Me veo tan enfermo?"@
+`"¿Eh---?@ …… Sí, ahora que lo pienso, te ves normal.@ No sé pero, pareces muy deprimido, Tohno."@
+`"………… ¿Deprimido, eh?@ …"@
+` Ciertamente tengo bajo el espíritu.@
+` Desde que Senpai dijo adiós, mi cuerpo se siente pesado y mi mente y cuerpo están fuera de combate.\
+`"---Arihiko.@ ¿Viste a Senpai hoy?"@
+ld c,":a;image\tachi\ari_t03.jpg",%type_crossfade_fst
+`"¿Huh?@ ¿Senpai?@ ¿Cuál Senpai?"@
+`"¿Cuál?@ …… la única Senpai que ambos conocemos es Ciel-senpai."@
+`"¿Shiel-Senpai?@ …… ¿Quién es ésa?@ ¿Hay algún estudiante extranjero en nuestra escuela?"@
+br
+` ----Mi boca cuelga de asombro.@
+br
+`"…… Arihiko, tú……"@
+` Logro tartamudear esto en medio de mi confusión.@
+` Pero, nada más sale de mi boca.\
+ld c,":a;image\tachi\ari_t01.jpg",%type_crossfade_fst
+`"¿Estás bien Tohno?@ Escúpelo ya.@ Siempre que no se trate de pedirme dinero, te ayudaré."@
+br
+` Arihiko está actuando como siempre.@
+` Igual que siempre, pero se ha olvidado por completo de Senpai.@
+br
+`"…… Nah, no es nada.@ Siéntate, la clase va a comenzar."@
+`"Oh, ya es hora.@ Bueno, hasta luego."@
+cl c,%type_lshutter_mid
+` Arihiko regresa a su asiento y el maestro llega.\
+` La tutoría comienza, seguida por física, la clase de la primera hora.@
+br
+` ---La observo como una película en una pantalla.\
+bg #000000,%type_lshutter_fst
+bg "image\bg\ima_03.jpg",%type_lshutter_fst
+` Senpai… en verdad desapareció.@
+` No sólo de mi vista, la persona conocida como Ciel-senpai desapareció por completo, sin dejar rastro.@
+` Arihiko no la recuerda.@ …… Estoy seguro de que nadie más lo hace.@
+` Ese adiós, esto es lo que significa.\
+`"--------"@
+` La película frente a mí continúa, mostrando a un maestro que usa tiza blanca sobre un pizarrón.@
+` Ya nada parece real.@
+` Una vez que terminen las clases y comience el descanso, esa persona nunca más vendrá, jamás.@
+` Durante el almuerzo, no nos sentaremos en la habitación de la ceremonia del té ni pasaremos el tiempo sin propósito alguno.\
+` …… En algún lugar.@ Tenía un hilo de esperanza, pero eso también se ha ido.@
+br
+` He perdido a Ciel por completo.@
+` Aún no he---no he hecho nada.@ No le he dicho nada.@
+` Pasamos el tiempo almorzando juntos en un agradable día como hoy.@
+br
+` Eso fue, un sueño precioso y distante----\
+bg #000000,%type_crossfade_slw
+!w1000
+bg "image\bg\bg_06a.jpg",%type_crossfade_fst
+` Me percato de que el número de mis compañeros de clase está disminuyendo.@
+br
+` ---Parece que es la hora del almuerzo.@
+`"………………"@
+` No tengo ganas de hacer nada.@
+` Siento pereza, así que simplemente---
+br
+return

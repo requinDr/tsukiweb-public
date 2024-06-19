@@ -1,0 +1,122 @@
+monocro off
+wavestop
+play "*3"
+;---added context above---
+bg "image\bg\bg_06a.jpg",%type_nowaitdisp
+br
+` ---No lo haré.@
+` Saltarme dos comidas no me matará.@
+br
+`"…… Mm, yo paso.@ Haz lo que quieras."@
+` Tener una comida con algo rojo encima frente a mis ojos no es algo por lo que quiera pasar de nuevo.@
+` Para ser sincero, ya me siento mal al mirar el emparedado de Arihiko.@
+` Porque hay muchos tomates rojos brillando dentro de éste.\
+ld c,":a;image\tachi\ari_t03.jpg",%type_crossfade_fst
+`"¿Qué es esto?@ Te estás volviendo cada vez menos saludable.@ ¿No te sienta muy bien tu nuevo estilo de vida?"@
+`"Eso podría ser.@
+` Se quejan de mí cuando despierto a las siete; y el toque de queda es a las ocho en punto.@ Si paso la noche en algún sitio sin consultar, más tarde me interrogan.@ Es como una prisión, ¿cierto?"@
+ld c,":a;image\tachi\ari_t01.jpg",%type_crossfade_fst
+`"¿No está bien eso?@ Es una vida apropiada.@ Temprano te acuestas temprano te levantas, ¿no?@ No podrás de crecer para ser un buen sujeto si te quemas cuando eres joven."@
+`"Estoy de acuerdo.@ …… Pero, tú pareces darle al argumento más fuerza que cualquiera."@
+br
+` Como el ejemplo contrario definitivo, en otras palabras.\
+ld c,":a;image\tachi\ari_t02.jpg",%type_crossfade_fst
+`"¿Oh sí?@ Hoy eres muy sincero.@ Muy bien, muy bien, compartiré el emparedado contigo."@
+`"Dije que no quería comer.@ No te preocupes por mí y come; el almuerzo terminará pronto."@
+`"De acuerdo, bajando la escotilla."@
+` Arihiko sostiene su emparedado con ambas manos y comienza a comer.@
+cl a,%type_crossfade_fst
+br
+` ------Y entonces.@
+br
+ld l,":a;image\tachi\cel_t04.jpg",%type_lshutter_fst
+`"Hola a todos."@
+` Senpai entra con algo que parece una caja de almuerzo.\
+ld r,":a;image\tachi\ari_t01.jpg",%type_crossfade_fst
+`"¿Oh?@ Senpai, pensé que siempre comías en la cafetería."@
+ld l,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
+`"No, no tengo una rutina fija para almorzar.@ Simplemente depende del humor que tenga en el momento."@
+` Senpai saca una caja de almuerzo envuelta en un lindo pañuelo.@ Pero parece un poco grande para una chica.@
+`"…… ¿Quieres decir que lograste levantarte temprano e hiciste este almuerzo esta mañana?"@
+`"Sí, eso es.@ Logré despertar antes de las siete esta mañana y…… espera un minuto, ¿¡qué me estás haciendo decir, Tohno-kun!?"@
+ld l,":a;image\tachi\cel_t08.jpg",%type_crossfade_fst
+`"…… No, ésa no era mi intención, pero…… Senpai, ¿no eres activa en la mañana?"\
+ld l,":a;image\tachi\cel_t02.jpg",%type_crossfade_fst
+`"¿Eh----?@ Ah, sí, no soy… no soy buena para despertar temprano."@
+` Senpai de repente parece una estudiante siendo regañada por un maestro.@
+ld l,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
+`"Mi familia era dueña de una panadería, así que nos levantábamos temprano todas las mañanas.@
+` Pero soy terrible en la mañana.@ Mi padre siempre se enojaba cuando era niña."\
+` ¿¡Qué!?@ ¿¡Una panadería!?@
+ld r,":a;image\tachi\ari_t04.jpg",%type_crossfade_fst
+` Arihiko y yo nos miramos el uno al otro.@
+` Él debe estar imaginando lo mismo que yo: Ciel-senpai amasando y horneando pasta con esos blancos dedos suyos.\
+ld l,":a;image\tachi\cel_t03.jpg",%type_crossfade_fst
+`"Mi batalla diaria con mi padre duró diez años, pero al final, se dio por vencido y me dijo que hacer el trabajo de dos era mejor que entrenarme.@
+` Desde entonces, puedo despertar cuando quiera."@
+br
+` Ciel-senpai infla su bien desarrollado pecho.@
+br
+`"¿Oh, en serio?@ Estoy un poco sorprendido; pareces tan confiable."@
+ld l,":a;image\tachi\cel_t02.jpg",%type_crossfade_fst
+`"Sí, siempre trato de no cometer errores frente a ti.@ Pero en realidad, soy una persona torpe."\
+` Sí, tal vez ella sea un poco torpe.@
+` Ahora que lo pienso, comencé a acercarme a Senpai cuando la vi a ella, una estudiante mayor, totalmente sola en el patio reparando esas tablillas.@
+` Una persona verdaderamente torpe nunca haría algo que no le beneficie al menos un poco.\
+`"Ya veo.@ ---Pero, me agrada la gente torpe.@ Puedo relajarme mejor con ellos."@
+` "Sip." Arihiko concuerda junto a mí.@
+`"Entonces, ya que no eres activa en la mañana, ¿sueles comer en la cafetería?"@
+ld l,":a;image\tachi\cel_t03.jpg",%type_crossfade_fst
+`"Sí, aunque suelo comer en la cafetería, a veces preparo mi almuerzo.@ ¿Ustedes dos no son parte del grupo de la cafetería?"@
+ld r,":a;image\tachi\ari_t03.jpg",%type_crossfade_fst
+`"No, también depende de nuestro humor.@ Cuando éramos de primer año, mi hermana me preparaba algo, pero Tohno siempre comía en la cafetería o compraba pan, así que terminé haciendo lo que él hacía."\
+ld l,":a;image\tachi\cel_t12.jpg",%type_crossfade_fst
+`"Ya veo.@ Entonces Tohno-kun es una persona de muchos estados de ánimo."@
+ld r,":a;image\tachi\ari_t02.jpg",%type_crossfade_fst
+`"Sí, sí.@ Estar con él sólo te agotará, así que sé cuidadosa Senpai."@
+ld l,":a;image\tachi\cel_t04.jpg",%type_crossfade_fst
+br
+` "Es verdad," Senpai concuerda y abre su almuerzo.@
+` La redonda caja es mitad arroz y mitad plato secundario.@ Es un almuerzo bastante normal, pero se ve un poco grande.\
+ld l,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
+`"Entonces, empezaré a comer.@ ¿Está bien si utilizo la silla de esta persona?"@
+`"Cualquiera puede tomar la silla de alguien que no está.@ Estoy seguro de que a Takada-kun le encantaría que tomases su silla, Senpai."@
+` Takada-kun es un sujeto que se sienta junto a mí.@ Es bastante regordete, pero es un buen tipo.@
+` A veces, toma prestado dinero con un período de concesión que dura hasta el fin de la eternidad.@
+cl a,%type_crossfade_fst
+` Senpai no coloca su almuerzo sobre mi pupitre, sino en su regazo.@
+` A su lado, Arihiko comienza a abrir su segundo paquete de pan mientras permanece de pie.@
+` Junto a estos dos, miro por la ventana sin propósito alguno.\
+ld l,":a;image\tachi\cel_t12.jpg",%type_crossfade_fst
+`"¿Huh?@ Tohno-kun, ¿no vas a comer?"@
+`"No, pensé en saltarme el almuerzo de hoy."@
+ld l,":a;image\tachi\cel_t08.jpg",%type_crossfade_fst
+`"No comerás…… ¿Eso no te pondrá hambriento?"@
+`"No, en realidad no.@ No tengo hambre y saltarme el almuerzo no me afecta tanto."@
+ld l,":a;image\tachi\cel_t02.jpg",%type_crossfade_fst
+`"Guau, es asombroso.@ Si me salto una sola comida, no puedo funcionar.@ Simplemente me desmayaría de hambre.@
+` …… Es un poco avergonzante, siempre como más que la mayoría de las personas, y aun así me quedo con hambre."\
+ld r,":a;image\tachi\ari_t01.jpg",%type_crossfade_fst
+`"En absoluto.@ Senpai, te has desarrollado más que otras mujeres.@ Estoy seguro de que tienes que comer mucho para mantener ese gran pecho tuyo."@
+` Sí, Arihiko habla con la verdad.@
+` Sinceramente, ambos queremos que ella coma y crezca más.@
+ld l,":a;image\tachi\cel_t11.jpg",%type_crossfade_fst
+` ¿Senpai está avergonzada o es tímida?@ Pone una cara que no comprendo muy bien.@
+` …… Bueno, estoy seguro de que probablemente está feliz.\
+ld l,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
+`"Pero Tohno-kun, ¿en verdad estarás bien si te saltas el almuerzo?"@
+`"Estaré bien.@ Saltar comidas durante el día no es tan raro.@ Tampoco desayuné, así que probablemente estaré bien hasta la noche."@
+ld l,":a;image\tachi\cel_t08.jpg",%type_crossfade_fst
+`"Guau---Tohno-kun, tu cuerpo se estropeará con ese estilo de vida."@
+`"No se estropeará.@ Esto es más como una restricción mental.@ …… Bueno, gracias a un accidente de hace muchos años, mi doctor me dijo que no era bueno ganar peso, así que para mí es mejor saltar comidas de vez en cuando."\
+ld l,":a;image\tachi\cel_t12.jpg",%type_crossfade_fst
+`"Huh.@ Supongo que incluso los chicos se preocupan por su dieta después de todo."@
+` Senpai me observa por alguna razón, y después de pensar un poco, cierra su almuerzo.@
+ld l,":a;image\tachi\cel_t08.jpg",%type_crossfade_fst
+`"Um, acabo de recordar que tenía algo que hacer, discúlpenme."@
+` Reuniendo sus cosas rápidamente, desaparece como el viento.@
+cl l,%type_lshutter_fst
+`"---Mmm, qué linda."@
+` Arihiko comenta sobre Senpai con pesar mientras la observa marcharse.\
+bg #000000,%type_crossfade_slw
+return

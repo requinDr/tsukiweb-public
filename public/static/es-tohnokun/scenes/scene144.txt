@@ -1,0 +1,140 @@
+mov $phasebg,"image\bg\bg_47.jpg"
+mov $phasetitle_a,":a;image\word\PARK_07A.PNG"
+mov $phasetitle_b,":a;image\word\day_07.png"
+gosub *left_phase
+bg "image\bg\cmo_05.jpg",%type_crossfade_mid
+` En aquel entonces, la mansión entera era como un gigante patio de juegos.@
+br
+` El jardín, un profundo bosque.@
+` La casa, un elevado castillo.@
+br
+` Jugábamos en nuestro propio pequeño mundo, el cual tomaría días explorar.\
+` Todos los días eran divertidos.@
+` Ninguno pensaba nunca en crecer,
+` y creíamos que los días y las noches siempre serían iguales.@
+br
+` Fue una niñez que vivimos jugando como cachorros.@
+` Nos llevábamos maravillosamente bien, y éramos los mejores compañeros de juego.\
+` Siempre que miraba atrás, Akiha estaba ahí, agitando sus manos y escondiéndose tímidamente.@
+` Sí, siempre lo mismo.\
+` En ese tiempo, la mansión era un gigante patio de juegos.@
+` El jardín, un profundo bosque.@
+` La casa, un elevado castillo.@
+br
+` Jugábamos en nuestro propio pequeño mundo, el cual tomaría días explorar.\
+!w2000
+bg #ffffff,%type_crossfade_mid
+` Despierto lentamente y abro los ojos.@
+` La luz de la mañana me envuelve y mi soñolencia comienza a desaparecer.@
+br
+` Al despejarse los últimos vestigios,
+` siento que tuve un sueño muy nostálgico.\
+bg "image\bg\bg_40e.jpg",%type_crossfade_slw
+`"-------"@
+` Tan pronto como abro los ojos, esas cosas terribles comienzan a llenar mi visión.@
+` Tengo un agudo dolor de cabeza.@
+`"Gg----"@
+` Busco rápidamente mis lentes junto a la almohada y me los pongo.\
+bg "image\bg\bg_40a.jpg",%type_crossfade_mid
+play "*2"
+` Inhalo algo de aire.@
+` Después de unas respiraciones profundas, logro tranquilizarme.@
+`"¿Por qué----tan temprano…"@
+` ¿Por qué vi esas líneas tan claramente tan temprano en la mañana?@
+` Es dificil ver las líneas de muerte dentro de edificios.@
+` Normalmente es dificil verlas, y verlas tan claramente como acabo de hacerlo es raro.@
+`"…………"@
+` Además, incluso vi esos "puntos".@
+` Creo que mi dolor de cabeza está empeorando también.\
+` Sensei dijo que estos ojos atraerían cosas que no serían buenas.@
+` Pienso que Arcueid y esos vampiros ciertamente no son algo bueno.@
+` Entonces, tal vez todo esto está afectando mis ojos y haciéndolos mas fuertes.@
+`"----No puede ser."@
+` Probablemente sólo estoy cansado.\
+wave se3
+`"Por favor discúlpeme."@
+ld c,":a;image\tachi\his_t01.jpg",%type_lshutter_mid
+` Hisui entra y me saluda con una reverencia.@
+`"Ah, buen día Hisui."@
+`"Sí, buenos días Shiki-sama."@
+` …… Hisui trae mi uniforme como siempre.@
+` Pero, puedo notar que está un poco enojada.\
+` …… La razón no es necesario decirla.@
+` Debe estar enojada por lo de ayer, porque no regresé hasta muy tarde, vine a escondidas hasta mi habitación y me dormí.\
+`"Hisui, anoche, um……"@
+ld c,":a;image\tachi\his_t08.jpg",%type_crossfade_fst
+`"Shiki-sama, no hay necesidad de darme excusas."@
+` Respondiendo rápidamente, ella comienza a caminar hacia la puerta.@
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"Entonces, por favor discúlpeme.@ Nee-san ha preparado su desayuno, por favor apresúrese y vaya a la sala de estar."@
+`"Sí, planeaba hacer eso……"\
+ld c,":a;image\tachi\his_t09.jpg",%type_crossfade_fst
+`"Y Shiki-sama,
+` Akiha-sama quiere hablar con usted sobre su tardío regreso de anoche.@ Por favor no tarde en ir a la sala de estar."@
+cl c,%type_lshutter_mid
+br
+` Ella cierra la puerta inexpresivamente.@
+`"U-----"@
+` …… Bueno, ahora que lo pienso, es un resultado perfectamente natural.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_34a.jpg",%type_lcartain_mid
+` Akiha es la única en la sala de estar.@
+` Kohaku-san está en la cocina, tarareando.@
+ld c,":a;image\tachi\aki_t11a.jpg",%type_crossfade_fst
+`"………………"@
+` Akiha no dice nada cuando me ve y bebe su té silenciosamente.\
+`"Hey.@ Buenos días, Akiha."@
+` Intento saludarla lo más naturalmente posible.@ La ceja de Akiha se sacude cuando baja su taza de té y me dirige la mirada lentamente.\
+ld c,":a;image\tachi\aki_t18a.jpg",%type_crossfade_fst
+`"Buenos días Nii-san.@ Era bastante tarde cuando regresaste a casa anoche, ¿no?"@
+`"…… No, en realidad no.@ Cuando mucho era poco más de la una en punto, bastante normal para que esté despierto un saludable estudiante de secundaria, ¿cierto?"@
+`"Ya veo.@ Mi hora de dormir también es pasada la medianoche así que estaba despierta a esa hora.@ Pero yo vendría a casa mucho más temprano."\
+`"Ah…… bueno, no pude regresar por ciertas circunstancias apremiantes.@ Pero regresé a pesar de todo, así que---"@
+ld c,":a;image\tachi\aki_t11a.jpg",%type_crossfade_fst
+`"Sí, bien entrada la noche y fuiste de vuelta a tu habitación.@ Sin decir nada o hacer ruido.@
+` …… Cielos, actuabas como si hubieses estado afuera haciendo algo por lo que te sentías culpable."@
+`"Uh………"@
+` Su mirada es hielo puro.@
+` …… Ésta es la segunda vez, y estoy seguro de que, aunque Akiha parece tranquila, está bastante enfadada.\
+`"--Nii-san.@
+` No sé cómo eran las cosas en la casa Arima, pero aquí el toque de queda es a las ocho en punto.@ Es una regla que no debe ser rota.@
+` La verja estará cerrada después de eso, así que por favor no entres trepando como un ladrón."@
+`"Oh---¿Lo sabías?"@
+`"…… La cámara de vigilancia me lo mostró muy claramente.@
+` Fue bueno que Kohaku se percatase de que eras tú y apagase el sistema de alarma, porque de otro modo, probablemente estarías detenido en este momento."\
+`"…… Oh.@ Debería agradecerle a Kohaku-san entonces.@ Y, um, Akiha, lo siento.@ No debí haberlo mantenido en secreto."\
+`"…… Si entiendes, entonces está bien.@ Por favor asegúrate de estar pendiente de tu toque de queda a partir de ahora.@ Lo pasaré por alto esta vez."@
+`"…… Sobre eso, Akiha."@
+`"¿Qué sucede?"@
+`"…… Es un poco difícil decirlo.@ Yo… tengo algo que hacer esta noche también.@ No sé cuándo estaré de vuelta, pero no voy a hacer nada malo---"\
+`"---------"@
+` La mirada de Akiha se hace mas rigurosa.@
+`"¡Kohaku!"@
+` Ella repentinamente se levanta.@
+cl c,%type_lshutter_fst
+` Kohaku-san viene desde la cocina.\
+ld l,":a;image\tachi\koha_t02.jpg",%type_lshutter_mid
+`"Sí, ¿qué desea Akiha-sama?"@
+ld r,":a;image\tachi\aki_t11a.jpg",%type_crossfade_fst
+`"Iré a la escuela, ten todo preparado."@
+`"¿Huh?@ Pero aún no he hecho el desayuno de Shiki-san."@
+ld r,":a;image\tachi\aki_t06.jpg",%type_crossfade_fst
+`"Puedes dejar en paz a esta persona.@ Parece que puede hacer todo por sí mismo."@
+cl r,%type_lshutter_mid
+` Akiha camina a pasos largos hacia el vestíbulo.\
+ld l,":a;image\tachi\koha_t01a.jpg",%type_crossfade_mid
+` Kohaku-san suspira.@
+`"…… Shiki-san, no debería enfadar tanto a Akiha-sama.@ Usted es su hermano mayor, por favor trátela mejor, ¿de acuerdo?"@
+` Diciendo eso, ella camina detrás de Akiha.@
+cl l,%type_lshutter_mid
+br
+` La taza de té permanece, aún echando vapor.\
+`"---Bueno, en resumen…"@
+` Al quedarme solo, puedo considerar mi situación tranquilamente.@
+`"Supongo que me saltaré el desayuno hoy."@
+` Sí, no hay duda.@
+` …… Debería detenerme en una tienda de comida rápida para comprar algo de pan.\
+bg #000000,%type_lcartain_slw
+playstop
+!w2000
+return

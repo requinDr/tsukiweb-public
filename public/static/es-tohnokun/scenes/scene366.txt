@@ -1,0 +1,23 @@
+wavestop
+play "*6"
+;---added context above---
+monocro #0000ff
+bg "image\bg\bg_33d.jpg",%type_nowaitdisp
+` ----En el ala este del primer piso, creo.\
+bg #000000,%type_lcartain_fst
+bg "image\bg\bg_34b.jpg",%type_tcartain_fst
+`"……………… ¿Huh?"@
+` ----¿Qué estoy pensando?@
+` Todo lo que hay en el ala este del primer piso es la sala de estar y la cocina, no hay ninguna habitación.@
+`"----¡Fue correcto venir al ala este, pero su habitación está en el segundo piso……!"@
+` Maldiciéndome, subo corriendo.\
+bg #000000,%type_lcartain_fst
+` …… Subo las escaleras corriendo.\
+` El acalorado ambiente y la sensación premonitoria parecen extenderse como cristal sobre la oscuridad de la noche.@
+br
+` ----*jadeo*, *jadeo*, *jadeo*.@
+br
+` Respirando con fuerza, alcanzo la cima de las escaleras y camino por el pasillo.@
+` …… Me duele la espalda.@
+` Esta terrible sensación en el aire se hace más pesada mientras me acerco a la habitación de Akiha.\
+return

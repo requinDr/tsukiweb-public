@@ -1,0 +1,134 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_11a.jpg",%type_nowaitdisp
+`"Tengo pan de curry."@
+br
+` Saco mi arma secreta.\
+`"Tohno-kun, ¿¡piensas que puedo ser comprada con comida!?"@
+` Senpai grita desde el otro lado.@
+` …… Quizás este pan de menos de cien yenes no funcionó.@
+`"……………"@
+` Cielos.@ Creo que tratar de irrumpir la enojaría más, supongo que debería simplemente regresar.@
+br
+` ---Y entonces,\
+ld c,":a;image\tachi\cel_t12.jpg",%type_lcartain_fst
+`"Bueno, supongo que comeré un poco a pesar de todo."@
+` Ella abre la puerta y se para frente a mí.@
+`"¿Se, Senpai--?"@
+ld c,":a;image\tachi\cel_t08b.jpg",%type_crossfade_fst
+`"Ahora que lo pienso, no debería desquitarme contigo Tohno-kun.@ Rechazar a un invitado que vino aquí sería un poco descortés."@
+` Con la cara enrojecida, ella murmura algo como una excusa.\
+`"Senpai, ¿eso significa, que podemos almorzar juntos?"@
+ld c,":a;image\tachi\cel_t03.jpg",%type_crossfade_fst
+`"…… Ummm, no me importa si lo tomas de esa manera.@ Si te gusta tanto esta habitación, por favor entra."@
+cl a,%type_crossfade_fst
+` Senpai entra a la habitación de la ceremonia del té.@
+` Detrás de ella, entro caminando.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_09a.jpg",%type_lcartain_mid
+play "*3"
+` Comienzo a comer con Senpai.@
+` Aunque Arihiko y la reacción anterior de ella me dieron la impresión de que estaba de mal humor, ciertamente no parece ser así.\
+`"…… Senpai.@ Fue algo que me dijo Arihiko pero, ¿estás enojada conmigo?@ ¿Por qué?"@
+ld c,":a;image\tachi\cel_t08.jpg",%type_crossfade_fst
+`"Eh--no, en realidad no estoy enojada contigo.@ Es algo más indirecto…… Tal vez, ¿es tu insensibilidad?"@
+`"…… Espera un segundo Senpai.@ Normalmente eres una persona dificil de entender, pero hoy lo eres aun más.@ Si estás molesta por mi insensibilidad, está bien, pero ¿qué quieres decir con 'tal vez'?@
+` Senpai, ¿no entiendes cómo te sientes?"\
+ld c,":a;image\tachi\cel_t09.jpg",%type_crossfade_fst
+` Ella suspira.@
+` "Estoy un poco insegura.@ No suelo preocuparme por mí."@
+` Senpai suena casi como si se disculpara.@
+`"---Probablemente, no me agrada mi propia forma de ser."@
+`"…… ¿Senpai?"@
+` Senpai se sienta en silencio sin mirar hacia mí.@
+` Después de un breve momento de silencio, de pronto me mira ferozmente.\
+ld c,":a;image\tachi\cel_t07a.jpg",%type_crossfade_fst
+`"Más importante aún, Tohno-kun."@
+`"…… ¿Sí?"@
+` Enderezándome, vuelvo a mirarla a los ojos.@
+` …… Porque sé que ella está a punto de comenzar una conversación muy seria.@
+br
+`"Uh…… ¿de qué se trata, Senpai?"\
+ld c,":a;image\tachi\cel_t12.jpg",%type_crossfade_fst
+`"¿Podría comer ese pan de curry?"@
+br
+`"¿¡Po, por qué dices eso de repente!?@ ¿No acabas de decir que no te venderías por comida!?"@
+ld c,":a;image\tachi\cel_t10a.jpg",%type_crossfade_fst
+`"Ése es otro asunto.@ Tohno-kun, ¿¡estás tratando de retirar lo que dijiste anteriormente!?"@
+br
+` …… Senpai está realmente furiosa.@
+` Fue sólo una broma para mí, pero supongo que ella la tomó con mucha seriedad.\
+`"…… Sí, sí, entiendo.@ Por favor acepte esto, Su Alteza."@
+` Entrego el pan de curry.@
+` Al regalar eso, sólo me queda un poco de pan con salchicha.@
+ld c,":a;image\tachi\cel_t04.jpg",%type_crossfade_fst
+br
+` "¡Sí!" Senpai me lo arrebata felizmente.@
+` …… ¿Es una niña o algo así?\
+ld c,":a;image\tachi\cel_t05.jpg",%type_crossfade_fst
+`"Entonces te daré un poco de esta hamburguesa.@
+` Aquí tienes," dice Senpai al darme media hamburguesa de su almuerzo.@
+`"………"@
+` Creo que la diferencia en el porcentaje de intercambio fue un poco grande…\
+bg #000000,%type_lshutter_mid
+bg "image\event\cel_e02a.jpg",%type_lshutter_mid
+` Después de finalizar nuestras comidas, pasamos el tiempo bebiendo té.@
+` El tiempo pasa con absoluta tranquilidad.@
+br
+` Parece que ella no es consciente de mi presencia, y yo tampoco soy especialmente consciente de la suya.@
+br
+` Simplemente, tranquilidad.@
+` Como dos amigos del mismo género, pasamos el tiempo de descanso restante de esta manera.\
+`"Oye, Tohno-kun."@
+`"¿Sí?@ ¿Qué quieres, Senpai?"@
+`"Lo he estado pensando por un rato pero, tus lentes no son para corregir tu visión ¿verdad?"@
+`"…… Guau, eres asombrosa Senpai, diste en el blanco.@ Son sólo un adorno."@
+br
+`"Lo sabía," asiente Senpai.\
+`"Oye, Tohno-kun, ¿puedo pedirte un favor?"@
+` Senpai mira mis ojos ansiosamente.@ …… No, no mis ojos, sino mis lentes.@
+`"Sólo una vez, ¿podrías quitarte esos lentes?"@
+`"---------"@
+` Eso sería problemático.@
+` Quitarme los lentes significaría ver esas "líneas" y más importante aún---no quiero ver la "muerte" de esta persona cercana a mí.\
+`"No puedo hacer eso.@ Desafortunadamente, nunca me los he quitado frente a otras personas.@ Es algo como un juramento, así que rechazaré tu petición."@
+` Respondo claramente.@
+` Senpai deja caer su hombros, decepcionada.@
+`"Huh, si tú lo dices, entonces supongo que no es posible."@
+`"Sí, porque en los últimos ocho años, nunca---"@
+br
+` …… nunca me los quité frente a otras personas, pero.@
+playstop
+`"----"@
+` Es cierto.@ Eso terminó.@
+` Con estos ojos.@
+` Vi la muerte de muchas, muchas cosas.\
+bg #9c0120,%type_crossfade_fst
+bg "image\bg\bg_09a.jpg",%type_crossfade_fst
+bg "image\bg\cmo_13.jpg",%type_crossfade_slw
+!w4000
+br
+br
+br
+br
+br
+br
+br
+`"-------¿Tohno-kun?"\
+bg "image\bg\bg_09a.jpg",%type_crossfade_slw
+ld c,":a;image\tachi\cel_t07a.jpg",%type_crossfade_slw
+`"Ah---sí, ¿qué pasa, Senpai?"@
+ld c,":a;image\tachi\cel_t10a.jpg",%type_crossfade_fst
+`"¿Qué quieres decir con 'qué pasa'? Te distrajiste de repente, el almuerzo ya casi ha terminado, ¿sabes?"@
+`"…… Oh, es verdad.@ Pensé que teníamos diez minutos más."@
+cl a,%type_crossfade_fst
+ld c,":a;image\tachi\cel_t12.jpg",%type_crossfade_fst
+`"Sí, teníamos diez minutos.@ Pero estuviste distraído todo ese tiempo."@
+cl a,%type_crossfade_fst
+` Senpai reúne las tazas.@
+`"Huh…… ¿En verdad fueron diez minutos……?"@
+` Mientras ladeo mi cabeza con curiosidad, ayudo a Senpai a ordenar la habitación de la ceremonia del té y entonces me voy.\
+bg #000000,%type_crossfade_slw
+return

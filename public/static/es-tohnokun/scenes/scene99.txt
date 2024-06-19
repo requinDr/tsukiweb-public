@@ -1,0 +1,35 @@
+monocro off
+waveloop se1
+playstop
+;---added context above---
+bg "image\bg\bg_29c.jpg",%type_nowaitdisp
+` …… No, es demasiado pronto.@
+` Nrvnqsr acaba de llegar.@
+` Un poco más---hasta que su atención esté más enfocada sobre Arcueid, no puedo lanzar un ataque sorpresa.\
+ld c,":a;image\tachi\ark_t07.jpg",%type_crossfade_fst
+`"No te equivoques, Nrvnqsr.@ Los Apóstoles Muertos no son un grupo de 27, sino de 28.@ ¿No reconocen a 'La Serpiente' como uno de ustedes?"@
+cl c,%type_crossfade_fst
+ld c,":a;image\tachi\nero_t02a.jpg",%type_crossfade_fst
+`"Por supuesto.@ Sus ideales difieren de los nuestros.@ Es un vampiro, pero no se apega al significado de ser un vampiro.@ En consecuencia, no lo aceptamos como uno de nosotros."\
+ld c,":a;image\tachi\nero_t02c.jpg",%type_crossfade_fst
+`"----Pero, somos viejos amigos.@ Creo que lo comprendo más que los otros Apóstoles Muertos."@
+cl c,%type_crossfade_fst
+ld c,":a;image\tachi\ark_t07.jpg",%type_crossfade_fst
+`"…… Ya veo.@ Ahora que lo pienso, tú también eres como 'La Serpiente', porque eres diferente a los otros vampiros.@ Ya que ambos son herejes, deben tener intereses en común."\
+cl c,%type_crossfade_fst
+ld c,":a;image\tachi\nero_t02a.jpg",%type_crossfade_fst
+`"Error.@ La herejía es aislada y por consiguiente es herejía.@ Sólo porque ambos estemos separados del grupo no significa que nos comprendamos el uno al otro."@
+cl c,%type_crossfade_fst
+ld c,":a;image\tachi\ark_t07.jpg",%type_crossfade_fst
+`"¿En serio?@ Viniste a un país tan lejano como éste para perseguirme, creo que ambos son similares."@
+cl c,%type_crossfade_fst
+ld c,":a;image\tachi\nero_t02a.jpg",%type_crossfade_fst
+`"No seas ridícula.@ La caprichosa eres tú.@
+` Tu propósito es ejecutar Apóstoles Muertos, entonces ¿por qué persigues a la Serpiente de Akasha con tanta persistencia?@ El veneno de la 'Serpiente' no es algo por lo que la Princesa de los Verdaderos Ancestros debería ser persistente."\
+cl c,%type_crossfade_fst
+` …… Nrvnqsr alza ligeramente su voz.@
+` Las burlas de Arcueid deben estar funcionando.@ Nrvnqsr sólo esta mirando a su enemiga Arcueid.@
+br
+` ---¿Qué hago ahora?@
+br
+return

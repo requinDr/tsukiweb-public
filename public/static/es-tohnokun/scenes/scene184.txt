@@ -1,0 +1,15 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg #000000,%type_lcartain_slw
+!w3000
+bg "image\bg\bg_29b.jpg",%type_lcartain_slw
+` Son las once en punto.@
+` …… El parque está totalmente quieto, como congelado por completo.@
+` No hay flujo de aire fresco, ni presencia alguna que se aproxime.@
+` No hay señal de que Arcueid vaya a venir.@
+` El tiempo pasa inútilmente.@
+` Yo--
+br
+return

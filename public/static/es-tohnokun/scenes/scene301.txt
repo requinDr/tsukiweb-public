@@ -1,0 +1,143 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_11c.jpg",%type_nowaitdisp
+` -----Todo.@
+`     Todo debería convertirse en una ilusión.@
+!w1000
+wavestop
+\
+bg "image\bg\bg_11d.jpg",%type_crossfade_slw
+` Me pongo de pie mientras sostengo fuertemente mi cuchillo.@
+br
+` Las pasos se hacen aun más ruidosos.@
+` Siento que el enemigo se acerca.@
+` Todo el tiempo, la voz de alguien hace eco en mi cerebro.@
+` Córtala en pedazos.@ Córtala en pedazos.\
+` Córtala en pedazos.@ Córtala en pedazos.@ Córtala en pedazos.\
+`"U----"@
+br
+` Córtala en pedazos  Córtala en pedazos  Córtala en pedazos  Córtala en pedazos  Córtala en pedazos
+` Córtala en pedazos  Córtala en pedazos  Córtala en pedazos  Córtala en pedazos  Córtala en pedazos
+` Córtala en pedazos  Córtala en pedazos  Córtala en pedazos  Córtala en pedazos  Córtala en pedazos
+` Córtala en pedazos  Córtala en pedazos  Córtala en pedazos  Córtala en pedazos----
+br
+`"Cállate."@
+` Usando mi fuerza de voluntad, fuerzo a la voz en mi cabeza a guardar silencio.\
+`"Esto es, lo que decidí."@
+!w750
+` Córta----
+`"No necesito que me digas qué hacer."@
+!w750
+` la----
+`"Si no quieres ser asesinado por Ciel."@
+!w750
+` en pedazos----
+`"Sólo cállate hasta que todo termine, Roa."@
+!w750
+` -----
+\
+` La voz desaparece por completo.@
+` Los pasos, y su sombra que se acerca.@
+br
+` ----Ciel aparece frente a mí.\
+ld c,":a;image\tachi\cel_t15.jpg",%type_crossfade_fst
+play "*7"
+`"---Finalmente decidiste pelear."@
+` Su voz parece casi aliviada.\
+`"Qué bueno.@ Ahora no hay pecado para ninguno de los dos.@
+` Ahora que ambos estamos tratando de matarnos, nuestro pecado morirá.@ Ahora sólo habrá castigo para el que sobreviva."@
+` …… ¿Ya que ambos estamos tratando de matarnos, no hay pecado?@
+` Sus palabras son parte de un mundo que no puedo comprender.\
+`"Ya veo.@ ¿Entonces el castigo para el que sobreviva puede ser expiado?"@
+`"Sí.@ Llamamos castigo a algo que puede ser expiado.@ Si es llamado castigo, no hay razón para que no pueda ser expiado.@ Lo único que no desaparece es el pecado.@
+` Así que---no queremos cargar con ese peso, ¿cierto?"@
+` Diciendo eso,
+` ella da otro paso hacia adelante.\
+`"--Entonces, ¿matarte aquí no es un pecado, Senpai?"@
+`"Correcto.@ Voy a matarte, así que está bien que me mates, Tohno-kun.@ Estamos en las mismas condiciones."@
+` Otro paso.\
+`"--------"@
+` Eso, no es correcto.@
+` Ciertamente voy a ser asesinado, así que voy a matarla para proteger mi propia vida.@
+` Pero si eso no es un pecado---¿qué sucedería con Ciel?@
+` Desde el principio, ella vino aquí con un deseo de matar no correspondido.@
+br
+` Eso es---\
+`"Adiós.@ Bajemos el telón de esta ridícula obra."@
+` El último paso.@
+cl c,%type_lshutter_mid
+` Su preparada bayoneta dispara hacia mi corazón.@
+br
+` Antes de eso,
+` arremeto hacia adelante y ataco el "punto" sobre su pulmón derecho.\
+bg #000000,%type_lshutter_mid
+` ---No pensé que podría matarla.@
+br
+` Era lógico que ella perforase mi corazón antes de ponerse al alcance de mi cuchillo.@
+` Es por eso que me sorprendió.@
+` Evadí fácilmente su cuchilla y pude perforar su "punto" con facilidad.@
+`"----Sen, pai."@
+` Pareció como si aceptase mi cuchillo a propósito.\
+`"Hice que… me… mataras."@
+` Su débil voz al borde de la muerte.\
+br
+br
+br
+br
+br
+br
+br
+`"Ése fue, mi, mayor pecado."\
+` Sonando como si llorase, utiliza el resto de su fuerza para apuñalarme con su bayoneta.\
+wave se9
+bg "image\bg\bg_11c.jpg",%type_crossfade_mid
+quakey 1,100
+`"------Ga, hu."@
+` El flujo de mi sangre se revierte a través de mi apuñalado corazón.@
+` Tosiendo sangre, me desplomo.@
+br
+` Frente a mis ojos,
+` el cuerpo de la persona que murió poco antes que yo yace sobre el piso.\
+`"----Qué--"@
+` ¿Lo sabías?@
+`"----tonta."@
+` ¿Sabías desde el principio---que si había tal cosa como un pecado, sería sólo para ti?\
+`"Ha----ah."@
+` La sensación en mis extremidades se desvanece.@
+` Mi consciencia, también.@ Faltan segundos para que muera desangrado.@
+` En el instante en que fui apuñalado,
+` tuve una visión de algo como un libro viejo, dispersándose y desmoronándose, hoja por hoja.@
+br
+` Probablemente, con eso, la cosa llamada Roa fue dispersada.\
+`"…………"@
+` No puedo pensar.@
+` Desde el principio, ella planeaba dar su vida para tomar la mía.@
+` ¿Acaso pensó que ése era su castigo?@
+br
+` ---Qué tonta.@
+` No hay ningún---significado en eso.@
+br
+`"---Pero."@
+` Me entristeció que muriese antes de disculparse conmigo.\
+` Si hubiese podido disculparse conmigo, apuesto que ella habría sentido algo de alivio…… Pero, ni siquiera pudo decir eso.@
+` Sabía que era algo que no podía ser expiado con disculpas, así que no se disculpó hasta el final.@
+br
+` Esa determinación.@ Me enfurece haberla hecho llegar tan lejos.\
+`"Qué.@ Al final----"@
+` ¿Ella me gustaba?@
+` Hasta el último momento.@
+` Sintiéndome triste hasta mi propia muerte; ella era así de preciada para mí.\
+`"------Tss."@
+` Toso débilmente y escupo sangre.\
+` Todo ha terminado.@
+` Mirando aturdido hacia la luna, con estos extraños pensamientos, me quedo dormi----\
+!w3000
+\
+playstop
+cl a,%type_waitdisp
+bg "image\word\end.jpg",%type_crossfade_slw
+resettimer
+waittimer 3000
+return

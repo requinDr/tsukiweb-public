@@ -1,0 +1,97 @@
+mov $phasebg,"image\bg\ima_09.jpg"
+mov $phasetitle_a,":a;image\word\PCEL_05A.PNG"
+mov $phasetitle_b,":a;image\word\day_05.png"
+gosub *right_phase
+bg #ffffff,%type_crossfade_slw
+` Siento la luz solar de la mañana.@
+` Mantengo mis ojos cerrados y trato de volver a quedarme dormido, pero la apacible luz solar continúa impulsándome a abrir los ojos.@
+br
+` ---Lentamente, comienzo a despertar.\
+br
+bg "image\bg\ima_05.jpg",%type_crossfade_fst
+` Una tranquila atmósfera.@
+` El aire es frío pero reconfortante, y la luz del sol es lo suficientemente cálida.@
+` Supongo que el clima será grandioso el día de hoy.\
+br
+` ---Entonces, debería levantarme e ir a la escuela.@
+br
+` Es cierto, tengo que ir a la escuela.@
+` Los últimos tres días, mi vida fue un caos y eso me hizo olvidar que soy un estudiante.\
+bg "image\bg\bg_40a.jpg",%type_crossfade_slw
+play "*2"
+`"…………"@
+` Me despierto.@
+` Estoy acostado en mi cama, y mis lentes están sobre la cabecera.@
+` Me los pongo automáticamente y miro alrededor.@
+` La luz solar entra con mucha fuerza por la ventana, casi espero escucharla fluir a través de ésta.@
+`"----"@
+` Respiro con calma.@
+` Lleno mis pulmones de aire fresco, y mi pecho se siente purificado.\
+` Escucho el tictac del reloj.@
+` Pequeñas aves gorjean en el bosque de afuera.@
+` Permanezco en mi cálida cama, sintiendo distraídamente el relajado pasar del tiempo.@
+br
+` -----Éste es, por supuesto, otro pacífico día.@
+br
+`"……………"@
+` Pero, me siento un poco insatisfecho.\
+` Aunque estoy de vuelta en esta tranquila mañana, yo---siento que hay algo que parece fuera de lugar.\
+` Aunque maté a ese vampiro del abrigo negro y todo ha vuelto a ser como era---siento que algo está faltando.@
+`"…… Eso es ridículo."@
+` Sacudo mi cabeza, y me deshago de ese pensamiento sin importancia.@
+br
+` ---Y entonces.@
+br
+ld c,":a;image\tachi\his_t01.jpg",%type_lshutter_fst
+` "Buenos días, Shiki-sama."\
+`"¡Uaaaaa!"@
+` Salto sobre mi cama.@
+` Ahora que observo con atención, Hisui está parada silenciosamente al lado de mi cama.@
+`"Hi-HiHi-Hisui---"@
+`"…… Por favor discúlpeme, Shiki-sama, pero ya que no se percató de mi presencia, hablé."@
+`"Ah---bueno, quiero decir, lo siento, también."@
+` Ella se inclina respetuosamente.@
+br
+` ---E-ella me sorprendió.@
+` Mi corazón aún está latiendo rápidamente.\
+`"---¿Huh?@ Pero todavía son menos de las siete en punto, Hisui."@
+`"Sí.@ Es un poco más temprano de su hora habitual de despertar, Shiki-sama."@
+`"Bueno, sí---entonces ¿por qué estás aquí, Hisui?"@
+`"Vine a despertarlo.@ Akiha-sama quiere saber que estuvo haciendo los últimos dos días y me pidió que lo llevase con ella sin importar qué."@
+`"-----Ah."\
+` …… Lo olvidé.@
+` Ahora que lo pienso, falté a la escuela el sábado y estuve con Arcueid todo el domingo.@
+` Además, regresé tarde anoche, entré a escondidas como un ladrón, y entonces fui a dormir.\
+`"…… No me digas, ¿Akiha está enfadada……?"@
+`"No lo sé.@ Por favor confírmelo usted mismo, Shiki-sama."@
+br
+` ---La voz de Hisui suena muy fría.@
+br
+`"…… Hisui, ¿sabías que yo había regresado?"@
+`"Sí.@ Noté cuando regresó alrededor de las dos en punto.@ Lo vimos por medio de la cámara de seguridad cuando estaba trepando la verja, Shiki-sama."\
+`"---Um, ¿Akiha sabe eso?"@
+`"No, sólo Nee-san y yo lo sabemos."@
+`"Qué---bueno."@
+` …… En todo caso, creo que evité la peor situación posible.@
+` Sin embargo, esto sigue siendo bastante malo.@
+` No decirle lo que he estado haciendo los últimos dos días y regresar a mitad de la noche, es bastante malo.\
+`"---Muy bien.@ Bajaré de inmediato.@ Umm…… y, si es posible, me alegraría que intentases tranquilizarla lo más que puedas."@
+`"Akiha-sama ya parece tranquila.@ Pienso que sería dificil que mis palabras la tranquilicen más."@
+`"---"@
+` Ugh, ¿un problema tras otro?@
+` Acabo de terminar con Nrvnqsr, nunca pensé que enfrentaría otra batalla de vida o muerte sin siquiera un descanso.\
+` Bien, hora de levantarse.@
+` No puedo hacer nada quedándome en la cama.@
+`"Iré después de cambiarme, por favor adelántate, Hisui.@ …… Está bien, no escaparé."@
+`"---Bien, entonces lo estaremos esperando."@
+cl a,%type_lshutter_mid
+br
+` …… *suspiro*@
+` Bien, debería cambiarme rápidamente para que la Señora Akiha pueda dictar sentencia sobre mí.\
+bg "image\bg\bg_33a.jpg",%type_lcartain_mid
+` ---Muy bien, aquí estoy.@
+` Ahora sólo una puerta me separa de la sala de estar donde Akiha aguarda.@
+` Sin importar las circunstancias, no hay excusa para faltar a la escuela y no venir a casa durante dos días.@
+` Ahora---
+br
+return

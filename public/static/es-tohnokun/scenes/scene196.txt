@@ -1,0 +1,13 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_08b.jpg",%type_nowaitdisp
+` --Iré de vuelta a la mansión.@
+br
+` No es que me haya dado por vencido respecto a Arcueid, pero sin ninguna pista, no creo que pueda encontrarla.@ Entonces, en vez de dar vueltas ciegamente, debería regresar a la mansión y pensar con calma qué puedo hacer.\
+`"…… ¿Eso es todo lo que puedo hacer?"@
+` Me siento afligido por mi incapacidad.@
+` Pero en este momento, eso es todo en lo que puedo pensar.\
+bg #000000,%type_lcartain_mid
+return

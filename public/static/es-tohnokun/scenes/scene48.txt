@@ -1,0 +1,69 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_40d.jpg",%type_nowaitdisp
+` Los aullidos continúan.@
+` No hay manera de que pueda dormir así.@
+` …… No puedo dormir, pero eso es normal.@
+`"…… Tengo sueño, así que no le prestaré atención."@
+` Halo las sábanas sobre mí y me estiro sobre la cama.@
+` Simplemente puedo considerar a los aullidos algo tan mundano como autos pasando por la calle.\
+` *suspiro*@
+` Hoy ha sido un día muy largo.@
+` Estoy mentalmente agotado por cenar en esta mansión desconocida y por mis conversaciones con Akiha y las demás.@ Después de todo eso, los aullidos son sólo ruido de fondo.@
+` Cierro mis ojos y me quedo dormido tranquilamente.\
+bg #000000,%type_crossfade_mid
+!w3000
+wave se8
+bg "image\bg\bg_40d.jpg",%type_crossfade_fst
+`"---Nng."@
+` Creo que acabo de escuchar algo.@
+` Medio despierto, miro hacia el reloj.@ Son poco más de las dos.@
+` …… Han pasado cerca de dos horas desde que escuché a los perros aullando.@
+` Los aullidos de los perros ya se han detenido.@
+` La mansión es tan silenciosa que puedo escuchar el tictac del reloj en medio del silencio.\
+wave se7
+`"¿------?"@
+` Lo escucho de nuevo.@
+` …… ¿Dentro de la mansión… en el vestíbulo?@
+`"-----¿Podría ser un ladrón?"@
+` No es imposible.@
+` Las posesiones de la mansión son exageradamente valiosas.@ Y además, sin nadie aquí a excepción de Kohaku-san, Hisui, Akiha y yo, es muy inseguro.@
+`"……"@
+`  Saliendo de la cama, me escabullo de la habitación silenciosamente.\
+bg #000000,%type_lcartain_mid
+play "*6"
+bg "image\bg\bg_46c.jpg",%type_lcartain_mid
+` Si se trata de un ladrón, Akiha y todas estarán en peligro, así que no puedo dejarlo escapar.@
+` Veré hacia el vestíbulo desde el segundo piso; eso debería ser lo suficientemente seguro.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_33d.jpg",%type_lcartain_mid
+` No hay nada extraño ahí.@
+wave se7
+`"¡…… !"@
+` No, alguien está ahí.@
+` La figura que viene de la entrada y cruza el vestíbulo con tambaleantes e inseguros pasos, es---
+br
+ld c,":a;image\tachi\aki_t19b.jpg",%type_crossfade_mid
+cl a,%type_crossfade_mid
+`"¿Aki… ha?"@
+` No se dirige a su habitación en el segundo piso, sino al ala oeste del primer piso.@
+` Lo único que hay ahí es la habitación de Kohaku-san, y la habitación de mi viejo.\
+`"…… ¿Qué está haciendo a estas horas de la noche?"@
+` Puedo murmurar todo lo que quiera, pero no obtendré ninguna respuesta.@
+` Después de observar el vestíbulo por un rato, decido regresar a mi habitación.\
+bg #000000,%type_lcartain_mid
+playstop
+bg "image\bg\bg_40d.jpg",%type_lcartain_mid
+` …… Bueno, probablemente tenía algo que hacer, o fue a ver a Kohaku-san.@
+` Me siento mal por observarla a escondidas, y no quiero preguntarle sobre todo lo que hace.@
+`"…… Duerme, duerme.@ Mañana hay escuela."@
+` Me entierro en la cama y cierro mis ojos.@
+br
+bg #000000,%type_crossfade_mid
+` ---Mientras me quedo dormido,
+br
+` mis pensamientos regresan una y otra vez a la figura de Akiha con ojos vacíos en el vestíbulo… y a cómo algo parecía estar mal.\
+!w3000
+return

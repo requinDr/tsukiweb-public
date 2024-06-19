@@ -1,0 +1,42 @@
+monocro off
+;---added context above---
+wave se2
+bg "image\bg\bg_06a.jpg",%type_nowaitdisp
+play "*3"
+ld c,":a;image\tachi\osiete.png",%type_lcartain_mid
+!w1000
+cl c,%type_lcartain_mid
+ld r,":a;image\tachi\cel_t20.jpg",%type_tshutter_mid
+` ¡Merci!@ Ésta es la lección de la cuarta hora.@
+` …… Oh, qué mal.@
+` Dar la espalda de esa manera en una pelea, aún no eres bueno, Tohno-kun.@
+` Hay mucha diferencia entre la experiencia de una experta luchadora como Ciel-san y la de Tohno-kun.@
+` Debiste haber actuado de una manera que Ciel-san no pudiese anticipar.\
+ld l,":a;image\tachi\ark_t31a.jpg",%type_lshutter_fst
+`"Hmph, atacar a alguien por la espalda ciertamente demuestra tu personalidad, Ciel.@ ¿Estás mostrando tu verdadera forma de ser nyaa?"@
+br
+` …………@
+bg "image\bg\ima_14.jpg",%type_lshutter_fst
+wave se11
+br
+`"¡Unyaa!@ ¡Me apuñalaste, acabas de apuñalarme cuando la cámara no podía vernos, nyaa!"@
+br
+` ……………………@
+bg "image\bg\ima_13.jpg",%type_nowaitdisp
+br
+`"¡Unyaaaaaaaaaaaaaaaaa!"\
+bg "image\bg\bg_06a.jpg",%type_lshutter_mid
+ld r,":a;image\tachi\cel_t20.jpg",%type_lshutter_fst
+` La exterminación de la gata ruidosa ha sido completada.@
+` Cielos, un vampiro como tú que se roba el amante de otra persona no tiene derecho a decir nada.@
+` ¡Bien y ahora, por favor disfruten el resto de la historia principal!\
+bg #000000,%type_crossfade_mid
+ld c,":a;image\tachi\ark_t30.jpg",%type_lscroll_mid
+`"Nyaa, ¿qué es esto?@ Todavía no he hecho eso."@
+br
+` ¿"Todavía" significa que vas a hacerlo en el futuro?@
+br
+`"Ejeje.@ Dejaré la respuesta de eso para más tarde."\
+cl c,%type_lscroll_mid
+playstop
+return

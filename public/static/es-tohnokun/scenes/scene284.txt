@@ -1,0 +1,424 @@
+mov $phasebg,"image\bg\ima_08.jpg"
+mov $phasetitle_a,":a;image\word\PCEL_10A.PNG"
+mov $phasetitle_b,":a;image\word\day_10.png"
+gosub *left_phase
+bg #000000,%type_nowaitdisp
+bg "image\bg\bg_40a.jpg",%type_bcartain_slw
+play "*2"
+`"¡------!"@
+` Despierto con un espasmo, pateo mis sábanas y me siento en la cama.@
+br
+`"Qué-----"@
+` Limpio el sudor que recorre mi rostro.@
+` Quizás tuve un mal sueño.@ Estoy bañado en sudor.@
+` No recuerdo haber tenido una pesadilla.@
+` …… ¿Fue a causa de ese libro que leí?@
+` Creo que vi algo un poco malo, pero no recuerdo qué fue.\
+` …… Bueno, un famoso doctor dijo que la naturaleza de los sueños es desvanecerse, así que no debería esforzarme tanto para recordarlo.@
+br
+` ---Noc-Noc.@
+br
+` Escucho un educado llamado a la puerta.@
+ld c,":a;image\tachi\his_t01.jpg",%type_lshutter_mid
+`"--Buenos días, Shiki-sama."@
+`"Mm, buen día."@
+` Devuelvo su saludo y me levanto.@
+` Hisui coloca el uniforme que trae en su mano sobre el escritorio y arrastra los pies silenciosamente de vuelta hacia la puerta.\
+`"Por favor diríjase al comedor una vez que haya terminado de cambiarse."@
+`"Sí.@ Gracias como siempre."@
+` Después de dar una respuesta afirmativa, Hisui sale de la habitación.@
+cl c,%type_lshutter_mid
+`"………… ¿Huh?"@
+` Después de ver su rostro olvidé completamente lo que estaba pensando.@
+`"…… Cielos.@ ¿Siempre he sido tan olvidadizo?"@
+` Ladeando mi cabeza con curiosidad, me pongo el uniforme.\
+` El cuchillo está sobre mi escritorio .@
+` El cuchillo de mi padre adoptivo que he estado llevando en mi bolsillo estos últimos días.@
+br
+` ---Probablemente no tendré que volver a usarlo.@
+br
+`"…… Es cierto.@ Se han ido."@
+` Arcueid, Ciel-senpai.@
+` La horda de bestias llamada Nrvnqsr, y el vampiro llamado Roa.@
+` Todos ellos ya no están aquí.\
+`"Quizás lo que olvidé era algo respecto a eso."@
+` No hay nada esperándome en la escuela.@
+` Senpai se ha ido---así que probablemente ya no será divertido.@
+` Pero, así es como viví mis días hasta ahora.@
+` Sólo perdí algo que obtuve recientemente.@
+` Todo lo que tenía antes sigue estando ahí.\
+` -----*suspiro*@
+` Si lo pienso de esa manera, puedo arreglármelas sin Senpai.@
+` Nunca podría olvidarla, pero podría arreglármelas.@
+` Engañándome a mí mismo con eso, abro la puerta.@
+br
+` Entonces,
+` a la escuela, como siempre---\
+bg #000000,%type_lcartain_slw
+playstop
+bg "image\bg\bg_01a.jpg",%type_lcartain_slw
+` Son las siete y cincuenta.@
+` La entrada frente a la escuela está repleta de estudiantes.@
+` Ya que es sábado, hay caras alegres por todas partes.@
+br
+`"………………"@
+` Avanzo como una nube de tristeza a través del mar de rostros alegres.@ Sin importar lo que me diga a mí mismo, el hecho de que Senpai se ha ido es un enorme peso sobre mi----\
+`"------¿Eh?"@
+` No puedo creer lo que ven mis ojos por un momento, pero no hay duda.@
+` Ciel-senpai está caminando hacia la escuela.@
+`"¿¡Se, Senpai---!?"@
+` Grito su nombre sin siquiera pensar y ella voltea hacia mí.@
+ld c,":a;image\tachi\cel_t01a.jpg",%type_lshutter_fst
+`"Oh, Tohno-kun.@ Buenos días."@
+` Ella hace una reverencia.\
+`"¿Buenos días?@ ¿¡No te habías ido……!?"@
+ld c,":a;image\tachi\cel_t03.jpg",%type_crossfade_fst
+`"No.@ Nunca me iría dejándote aquí."@
+` Ella habla con una alegre sonrisa.@
+br
+` ¿Nunca se iría dejándome aquí?@
+br
+` Aunque hay estudiantes a todo mi alrededor, siento que me sonrojo vigorosamente.\
+`"----Um, eso es……"@
+ld c,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
+`"Sí, ¿de qué se trata?"@
+`"¿Puedo, interpretar esas palabras, por como suenan?"@
+ld c,":a;image\tachi\cel_t04.jpg",%type_crossfade_fst
+`"Sí, lo dejaré a tu imaginación, Tohno-kun."@
+` Ella asiente y muestra una sonrisa radiante.\
+`"¡--------!"@
+` No puedo respirar.@
+` No por la dolorosa tensión que había sentido hasta ahora, sino por la ardiente felicidad que ahora se acumula dentro de mí.@
+` Si no hubiese nadie alrededor, gritaría "¡De acuerdo!" a todo pulmón.\
+`"¡Senpai!"@
+` Agarro su mano.@
+`"Entonces, quieres decir que no irás a ninguna parte, ¿¡cierto!?@ Te quedarás aquí en la escuela para siempre, ¿¡no!?"@
+ld c,":a;image\tachi\cel_t08.jpg",%type_crossfade_fst
+`"Um, si me quedo en la escuela para siempre, me convertiré en una anciana.@ Soy una estudiante de tercer año, así que me faltan cuatro meses para graduarme."@
+`"Pero, te quedarás aquí, ¿no?@ No te irás como dijiste ayer, ¿verdad?"\
+ld c,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
+`"Sí.@ Me quedaré hasta el final."@
+`"¡Muy bien--!"@
+` Suelto su mano y logro detenerme.@
+` Quiero dar muchas vueltas corriendo en circulos.@
+` Como si hubiese ganado una lotería, me siento eufórico.\
+ld c,":a;image\tachi\cel_t07a.jpg",%type_crossfade_fst
+` No, esto se siente mucho, mucho mejor que eso.@ Siento ganas de reír escandalosamente.@
+` Ni siquiera puedo soportar estar parado aquí sin hacer nada.@
+ld c,":a;image\tachi\cel_t05.jpg",%type_crossfade_fst
+`"Tohno-kun, deberías apresurarte o llegarás tarde."@
+`"----Oh.@ Es cierto.@ ¡Hasta luego Senpai!@ ¡Nos vemos en el descanso!"@
+cl c,%type_lshutter_mid
+` Agitando una mano hacia Senpai, voy hacia el edificio escolar.@
+` Sonriendo para mí mismo, me voy corriendo a clases tan rápido como puedo.\
+bg #000000,%type_lcartain_slw
+!w1000
+play "*3"
+bg "image\bg\bg_06a.jpg",%type_crossfade_fst
+wave se2
+br
+` ----La primera hora ha terminado.@
+!w2000
+` Tengo diez minutos hasta la siguiente clase.@
+`"---Muy bien."@
+` En el instante en que me levanto para ir a buscar el salón de Senpai,
+ld c,":a;image\tachi\cel_t03.jpg",%type_lshutter_fst
+`"¿Huh?@ ¿Adónde vas, Tohno-kun?"@
+` ---Senpai se me adelanta viniendo aquí.\
+`"Ah, a ningún lado, iba a verte.@ Siempre espero por ti, por eso pensé que iría verte en esta ocasión."@
+ld c,":a;image\tachi\cel_t02.jpg",%type_crossfade_fst
+`"Ya veo.@ Eso me hace muy feliz, pero no conoces mi clase, ¿verdad Tohno-kun?@ Es la clase B de tercer año, por favor recuérdala."@
+`"Oh en serio---así que en verdad tomas clases.@ Muy bien, muy bien.@ Veo que haces más que sólo beber té en la habitación de la ceremonia."\
+ld c,":a;image\tachi\cel_t04.jpg",%type_crossfade_fst
+`"Sí, me las arreglo para seguir las clases--"@
+ld c,":a;image\tachi\cel_t10a.jpg",%type_crossfade_fst
+`"¡Oye, espera un minuto Tohno-kun!@ ¿¡Piensas que en realidad soy así!?"@
+`"--Uh."@
+` No puedo negar eso.\
+`"Ah, lo siento.@ Pero Senpai, dijiste que no había miembros del club de la ceremonia del té, por eso pensé que tal vez nunca existió tal club."@
+ld c,":a;image\tachi\cel_t05.jpg",%type_crossfade_fst
+` Senpai permanece ahí y queda en silencio.\
+`"…… ¿Huh?@ ¿No me dirás que en verdad nunca existió?@ ¿Es sólo una habitación de estilo japonés sin utilizar?"@
+ld c,":a;image\tachi\cel_t12.jpg",%type_crossfade_fst
+`"---Hmm.@ Parece que no comprendo de qué estás hablando."@
+` Ciel-senpai desvía su mirada hacia la ventana y observa inexpresivamente.\
+`"…… No, está bien.@ Sin importar qué hayas hecho, no eres una mala persona.@ No pienso que vayas a causarle problemas a nadie pero, ¿tu poder de sugestión puede hacer semejante cosa?"@
+`"Ya te lo dije, no sé de qué hablas, así que no puedo responder."@
+`"-----"@
+` Aún en mi asiento, miro fijamente a Ciel-senpai.@
+br
+` El silencio dura alrededor de un minuto.\
+ld c,":a;image\tachi\cel_t09.jpg",%type_crossfade_fst
+`"…… Eres bastante persistente, Tohno-kun."@
+`"Ni tanto, sólo estaba pensando en lo azules que son tus ojos."@
+`"…………"@
+` Ciel-senpai suelta un suspiro como si admitiese la derrota.\
+ld c,":a;image\tachi\cel_t08.jpg",%type_crossfade_fst
+`"Ya lo había dicho pero, el poder de la sugestión no es tan conveniente.@
+` La sugestión no es tan capaz de cambiar tu percepción de las cosas como lo es de hacerte apartar la vista de ellas.@
+` Así que, aunque te dijese que te gusta mucho el curry cuando en realidad lo odias, no funcionaría."@
+`"…… ¿En serio?@ ¿Entonces no puedes hacer que alguien haga algo que no quiere?"\
+`"Correcto.@ Bueno, hay muchas otras maneras de hacerte comer curry, Tohno-kun.@
+` Por ejemplo, no te diría que te gusta mucho el curry.@ En cambio, podría decirte que morirías si no comes curry--"@
+`"Entiendo, lo comería aunque lo odiase.@ …… Ya veo, entonces puedes hacer cualquier cosa con eso."\
+ld c,":a;image\tachi\cel_t03.jpg",%type_crossfade_fst
+`"No, es muy difícil arreglar el escenario para semejante cosa porque la resistencia sería enorme.@
+` Hay muchas personas contra las cuales es difícil usar la sugestión por la fuerza, así que todo lo que puedo hacer es sugerir algo como, 'No dudes de lo que digo.'"@
+` …… Sí, Arcueid también dijo algo como eso.\
+`"---Ya veo.@ Por cierto, Senpai."@
+ld c,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
+`"¿Sí?@ ¿Qué sucede?"@
+`"Sí.@ Senpai, tú en verdad amas el curry, ¿no?"@
+ld c,":a;image\tachi\cel_t05.jpg",%type_crossfade_fst
+br
+` Ciel-senpai sólo sonríe y no responde.@
+` Su leve expresión hace que me sea imposible ver si lo está negando o confirmando.\
+ld c,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
+`"Bueno, ya es hora.@ Te veré de nuevo cuando terminen las clases pero, ¿tu cuerpo está bien, Tohno-kun?@ ¿Tus brazos están funcionando bien?"@
+`"Sí, ya ni siquiera duele.@ Puedo venir a la escuela gracias a ti."@
+` Junto mis manos y hago una reverencia de agradecimiento.\
+`"Ya veo, entonces ¿cómo está tu dolor de cabeza?@ Parecía que dolía mucho ayer."@
+`"Mi cabeza está bien.@ Además, si tengo puestos mis lentes, no hay problema."@
+`"Ya veo.@ Escuchar eso me hace sentir mucho mejor."@
+cl c,%type_lshutter_mid
+` Ciel-senpai se dirige hacia el pasillo.\
+` Repentinamete, se detiene como si hubiese olvidado algo y se da la vuelta.@
+ld c,":a;image\tachi\cel_t07a.jpg",%type_lshutter_fst
+`"Olvidé preguntarte.@ Tohno-kun, ¿te estás sintiendo bien?"@
+`"---Sí, estoy bien.@ Gracias a ti, todos mis problemas han desaparecido."@
+ld c,":a;image\tachi\cel_t04.jpg",%type_crossfade_fst
+`"Eso es bueno.@ Si sucede algo extraño, por favor no dudes en decírmelo.@ Éste es mi número telefónico."@
+`"-----¿Eh?"@
+cl c,%type_lshutter_fst
+\
+` Ella me entrega un pedazo de papel con su número telefónico y deja el salón rápidamente.@
+br
+`"…… ¿Su…… número telefónico?"@
+` Miro fijamente el papel, sorprendido.@
+` Estoy seguro de que me dijo esto porque está muy preocupada por lo de anoche, pero……\
+`"…… Esto es afortunado pero, ¿es bueno que las cosas avancen tan perfectamente?"@
+` …… Es lamentable si lo digo yo mismo.@
+` Tal vez sea porque soy una persona de pueblo por naturaleza, pero no puedo alegrarme sinceramente por mi buena fortuna.\
+bg #000000,%type_lshutter_slw
+!w1000
+bg "image\bg\bg_06a.jpg",%type_lshutter_slw
+wave se2
+` Al terminar las clases, de repente se forma el caos habitual en el salón.@
+` Aún no es exactamente mediodía.@
+` Siempre es así después de las clases sabatinas.@
+` Los estudiantes que corren a casa y los que comen en el salón antes de ir a sus clubes se entremezclan y crean un caos.@
+br
+` Levantándome de mi asiento, preparo mis cosas mientras espero a Senpai…… y entonces,
+` No estoy seguro de cuándo vino a la escuela pero, Arihiko aparece con una sospechosa sonrisa en su rostro.\
+ld c,":a;image\tachi\ari_t05.jpg",%type_lshutter_fst
+`"Vamos a jugar, Tohno."@
+` …… Sin nada más, me dice lo que quiere hacer.\
+`"…… Pareces muy directo el día de hoy.@ ¿Te sucedió algo malo?"@
+`"Oh, nada.@ Sólo quería divertirme con mi buen amigo sin razón alguna."@
+br
+` …… Es demasiado sospechoso.@
+`"De ninguna manera.@ Apuesto que fuiste rechazado por alguien o algo así.@ Hoy iré a casa con Senpai, así que no tengo tiempo de sobra para ti."\
+`"¿Senpai?@ ¿Te refieres a Ciel-senpai?"@
+` Sus cejas se levantan por la sorpresa.@
+br
+`"…… Sí, pero…… Arihiko, ¿¡recuerdas a Senpai……!?"@
+`"¿Qué dices?@ Yo voy tras ella, ¿cómo podría olvidarla?"@
+` Arihiko hace su declaración como si fuese la cosa más natural del mundo.@
+cl c,%type_crossfade_fst
+`"………………"@
+` Ya veo.@ Ya que Ciel-senpai volvió a la escuela, todo regresó a como solía ser.\
+ld l,":a;image\tachi\ari_t02.jpg",%type_crossfade_fst
+`"¡Oh, es Senpai!"@
+` Arihiko señala felizmente hacia la puerta.@
+cl l,%type_crossfade_fst
+ld r,":a;image\tachi\cel_t01a.jpg",%type_lshutter_fst
+`"Gracias por esperar.@ Buenas tardes, Inui-kun."@
+` Ciel hace una breve reverencia.@
+`"¿Nos vamos ya?@ ¿O vamos a la habitación de la ceremonia del té?"@
+`"Hagamos eso.@ Si nos vamos ahora, tendremos que separarnos en la entrada.@ Quiero hablar contigo un poco más, así que mientras bebemos té, podemos---"\
+quakex 2,250
+`"¿¡----!?"@
+` Alguien me golpea inesperadamente desde atrás---
+ld l,":a;image\tachi\ari_t02.jpg",%type_crossfade_fst
+`"Oye."@
+`"……………… ¿Eres tú, Arihiko?"@
+ld l,":a;image\tachi\ari_t03.jpg",%type_crossfade_fst
+`"Sí, soy yo.@ No soy quien para comentar sobre estas cosas muy a menudo, pero ya que lo de ahora fue demasiado, hablaré."@
+` Arihiko nos mira a Senpai y a mí con ojos tristes.\
+ld r,":a;image\tachi\cel_t12.jpg",%type_crossfade_fst
+`"¿?"@
+` Ciel-senpai y yo nos miramos el uno al otro.\
+`"Um, ustedes dos.@ Es sábado, ¿por qué lo utilizan de esa manera?@
+` ¡Hay lugares mucho más divertidos que la habitación de la ceremonia del té!"@
+` Con un movimiento extremadamente exagerado, él señala hacia la ventana.@
+ld r,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
+`"…… ¿Um, dónde?"@
+`"Afuera de la ventana.@ Bueno, creo que está hablando del exterior."@
+` Respondo la pregunta de Ciel-senpai.@
+cl r,%type_crossfade_fst
+\
+br
+` Y entonces,
+quakex 2,250
+` Arihiko me golpea de nuevo.\
+ld l,":a;image\tachi\ari_t04.jpg",%type_crossfade_fst
+`"Tohno, ¿¡estás tratando de burlarte de Senpai!?@
+` Mira, es sábado.@ Aún no es mediodía.@ ¡Y somos estudiantes!@ ¿¡Por qué no puedes tener una idea como ir a la ciudad bajo todas estas condiciones!?"@
+`"----Mph."@
+br
+` Idiota.@
+` Ya he pensado en eso.@
+` Lo hice, pero---\
+ld r,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
+`"¿?"@
+` Robo una mirada a Ciel-senpai.@
+` Tengo la sensación de que en vez de vagar ruidosamente por la ciudad, ella se sentiría más a gusto sentada tranquilamente en un parque o algo parecido, así que no puedo pedirle eso.@
+` Si la invitara a pasear por la ciudad, creo que probablemente se negaría---\
+ld r,":a;image\tachi\cel_t04.jpg",%type_crossfade_fst
+`"Ya veo.@ ¿Entonces saldremos a divertirnos los tres?"@
+`"……… ¿Senpai?"@
+ld r,":a;image\tachi\cel_t03.jpg",%type_crossfade_fst
+`"¿No está bien?@ Ya no tengo que preocuparme por nada, y apuesto que será divertido si salimos los tres."@
+`"Ah---sí, si quieres hacerlo, entonces sería un placer."@
+ld r,":a;image\tachi\cel_t04.jpg",%type_crossfade_fst
+`"Sí.@ Inui-kun, tú también estás de acuerdo, ¿no?"\
+`"-------"@
+` Él simplemente asiente.@
+` …… Apuesto que no esperaba que las cosas resultaran de esta manera.@
+cl l,%type_crossfade_fst
+\
+ld r,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
+`"Entonces está decidido.@ Um, ¿qué hacemos con el almuerzo?@ ¿Comemos en nuestras casas o los tres juntos?"@
+`"Hm, siempre comemos en la escuela, así que usemos el dinero del almuerzo para jugar.@ Arihiko y yo somos bastante pobres, ¿verdad?"@
+ld l,":a;image\tachi\ari_t03.jpg",%type_crossfade_fst
+`"…… Uh…… yo, tal vez podría pedirle dinero prestado a mi hermana."@
+br
+` …… Parece que Arihiko en realidad quiere salir a comer con Senpai.\
+`"---¿Qué hay de ti Senpai?@ ¿Hay algún lugar en el que quieras comer?"@
+ld r,":a;image\tachi\cel_t11.jpg",%type_crossfade_fst
+`"No, normalmente…… no como delante de otros…"@
+`"Ya veo.@ Comes más de lo normal, apuesto que sería costoso."@
+ld r,":a;image\tachi\cel_t10d.jpg",%type_crossfade_fst
+`"¡N, no es eso!@ ¿¡Qué estás diciendo, Tohno-kun!?"@
+br
+` …… Sólo retomé la información que recolecté durante nuestros almuerzos en la habitación de la ceremonia del té, y di una opinión personal.\
+ld r,":a;image\tachi\cel_t12.jpg",%type_crossfade_fst
+`"Estoy de acuerdo con Inui-kun.@ Salgamos todos a comer.@ Hay un lugar cerca del cine llamado Ahnenerbe, escuché que tienen un excelente pastel de fresas."@
+ld l,":a;image\tachi\ari_t02.jpg",%type_crossfade_fst
+`"¡Oh, conoces tus lugares, Senpai!@ ¡El dueño de ese café es un maestro de la cocina italiana!"@
+br
+` …… ¿Por qué Arihiko conoce tantos rumores y datos inútiles?\
+ld r,":a;image\tachi\cel_t10a.jpg",%type_crossfade_fst
+`"Entonces veámonos frente al cine en media hora.@ ¿De acuerdo, Tohno-kun?"@
+`"---Um.@ Sabes que toma media hora llegar a mi casa, Senpai."@
+cl r,%type_lshutter_mid
+` Senpai comienza a desaparecer hacia el fondo del pasillo.\
+`"Sí, llega tarde, Tohno.@ ¡Si quieres, no me importaría que no vinieses hasta mañana!"@
+cl l,%type_lshutter_fst
+` Arihiko se levanta y sale apresuradamente del salón.@
+` …… Todo esto se resolvió de manera muy extraña.\
+`"…… Oh bueno."@
+` De todas formas saldré con Ciel-senpai.@
+` Maletín en mano, voy corriendo a casa.\
+bg #000000,%type_lcartain_mid
+playstop
+bg "image\bg\bg_33a.jpg",%type_lcartain_mid
+ld c,":a;image\tachi\koha_t02.jpg",%type_lshutter_fst
+`"¿Oh?@ Shiki-san, hoy ha vuelto temprano, ¿no?"@
+`"Sí, estoy de vuelta Kohaku-san.@ ¡Tengo prisa, te veo luego!"\
+bg "image\bg\bg_46a.jpg",%type_lcartain_fst
+ld c,":a;image\tachi\his_t01.jpg",%type_lshutter_fst
+`"¿Shiki-sama?@ ¿Ha regresado?"@
+`"¡Me iré de inmediato, no te preocupes por el almuerzo!"\
+bg "image\bg\bg_40a.jpg",%type_lcartain_fst
+`"¡Muy bien, quince minutos!"@
+` Establezco un nuevo record desde mi escuela hasta aquí.@
+` Arrojo mi maltín sobre mi escritorio y me cambio de ropa.@ Después de eso, salgo volando de mi habitación.\
+bg "image\bg\bg_46a.jpg",%type_lcartain_fst
+` De la mansión a la calle principal es un viaje más largo que de la mansión a la escuela.@
+` Para ser sincero, no es una distancia que pueda recorrer en quince minutos.@
+` Ella sabe que vivo en la cima de la colina, pero aun así propuso esa hora límite imposible.@
+br
+`"---Maldición, quizás ella sea un poco cruel."@
+` Me quejo mientras bajo las escaleras como una bala.\
+bg #000000,%type_crossfade_fst
+bg #9c0120,%type_crossfade_fst
+bg #000000,%type_crossfade_fst
+br
+br
+br
+br
+br
+br
+br
+wave se0
+` -----Palpitar.\
+`"------Eh."\
+br
+br
+br
+br
+br
+br
+br
+wave se0
+` -----Palpitar.\
+` Repentinamente, sin advertencia.\
+br
+br
+br
+br
+br
+br
+br
+wave se0
+` -----Palpitar.@
+bg #9c0120,%type_crossfade_fst
+\
+` Todo se torna rojo.\
+quakey 4,375
+`"---¿¡Shiki-sama!?"@
+` …… Puedo escuchar la voz de Hisui.@
+` Escucho pasos.@ …… Hisui parece estar más apresurada de lo habitual.@
+`"Shiki-sama, ¿¡está herido!?"@
+` Puedo escuchar su voz, pero no puedo verla.@
+br
+wave se0
+` -----Palpitar.@
+br
+` Sólo tengo este dolor de cabeza.\
+`"Tranquilízate Hisui-chan.@ Caerte de las escaleras sólo produce pequeños moretones aquí y allá, no hay necesidad de llamar a un doctor.@
+` Pero su cuerpo está muy caliente.@ Puede haberse caído de las escaleras debido a una fiebre, así que por favor prepara su cama."@
+`"Comprendo.@ Nee-san, respecto a Akiha-sama……"\
+`"Es verdad, si no resulta ser gran cosa, no tenemos que decirle.@ Hay algo de medicina en mi habitación, si eres tan amable."@
+br
+` Hisui desaparece con pasos rápidos.@
+` Yo----\
+bg #ffffff,%type_crossfade_fst
+bg "image\bg\bg_33a.jpg",%type_crossfade_mid
+ld c,":a;image\tachi\koha_t03.jpg",%type_crossfade_mid
+waveloop se1
+`"Shiki-san, ¿está consciente?"@
+`"…… ¿Kohaku…… san?"@
+`"Sí.@ Shiki-san, se dio un gran tropezón en las escaleras.@ Afortunadamente no tiene magulladuras serias, pero parece tener fiebre.@
+` Parece que iba a algún lado pero, por favor sólo descanse por hoy."@
+br
+` Kohaku-san coloca su mano sobre mi hombro y me ayuda a ponerme de pie.\
+`"No--estoy bien, no necesito descansar.@ Corrí todo el camino hasta aquí, fue sólo que me quedé sin aliento."@
+ld c,":a;image\tachi\koha_t04.jpg",%type_crossfade_fst
+`"¡Eso no!@ ¿Cómo puede decir eso con una cara tan pálida y luciendo como si fuese a vomitar?@
+` Su doctor me pidió que vigilara de cerca su salud.@ No puedo permitirle tomar semejantes riesgos."@
+`"Pero, hice una promesa---"@
+`"Si quiere decirles que no podrá llegar, yo puedo ir por usted.@ Si continúa extenuándose, tendré que sacar mis jeringas y darle inyecciones."@
+br
+` …… Como si quisiera retenerme aquí, ella se para frente a mí.\
+bg #9c0120,%type_crossfade_fst
+bg "image\bg\bg_33a.jpg",%type_crossfade_fst
+br
+` ---Palpitar.@
+br
+` Tengo dolor de cabeza.@
+` Yo---
+wavestop
+br
+return

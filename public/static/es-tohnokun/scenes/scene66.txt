@@ -1,0 +1,286 @@
+wavestop
+play "*4"
+;---added context above---
+monocro off
+bg "image\bg\bg_14d.jpg",%type_crossfade_fst
+` …… Esto es sólo un mal sueño.@
+` Pero por alguna razón, el hedor de la sangre se siente tan horriblemente real.\
+`"…… M… al…"@
+` Sí.@
+` Mal mal mal mal.@
+` Mal mal mal mal.@
+` Pero.@
+` Yo la maté.@ ¿Eso está mal?\
+` Yo no la maté.@ ¿Eso está mal?\
+br
+` Sí, yo---
+br
+`    Tohno Shiki    quería matar    a esa chica.@
+br
+` Eso es lo que quería hacer entonces.@
+` Sólo que, estaba tan enlodado el interior de mi cabeza, y no lo transformé en palabras.\
+`"¡Ma----l!"@
+br
+` Siento ganas de vomitar por el olor de la sangre.@
+br
+`"¡Ah---guh!"@
+br
+` El contenido de mi estómago se eleva en mi garganta.@
+br
+monocro #ff0000
+`"¡Ah---ah!"@
+br
+` El carmesí está penetrando en mis globos oculares.@
+br
+` Me siento mareado.@
+` Caigo sobre mis rodillas en el rojo mar de sangre.\
+`"¡Ah---Guh……!"@
+` Mis jugos gástricos suben.@
+` Vomito todo de vuelta.@
+` Mi comida, mis jugos gástricos, todo, mientras lloro.@
+` No queda nada dentro de mi estómago.@
+` Pero mi cuerpo continúa forzándome a vomitar, como si tratara de deshacer lo que ha ocurrido y regresarme a una vida normal.@
+br
+` ¡Guuh----burgh!@
+br
+` Dolor.@
+` Duele, como si mis entrañas se quemaran.\
+` Las lágrimás no se detienen, y mi cuerpo cae al piso como una pila de basura.@
+` Mis rodillas se hunden en el charco rojo extendido sobre todo el piso.@
+` El rojo comienza a manchar mi cuerpo.@
+` Es tan doloroso y rojo; es como si estuviese soñando.\
+`"¡Ah-----Aaah……!"@
+` Continúo llorando.@
+` El hecho de haber asesinado a alguien me está entristeciendo.@
+` …… No.@ Eso no es correcto.@
+` Estoy triste porque la asesiné sin razón, como al destrozar una muñeca.@
+br
+` ---No entiendo.@
+br
+` Por qué me siento así,
+` Por qué la asesiné sin razón.@
+` No puedo encontrar la razón.\
+br
+br
+br
+br
+br
+br
+br
+`"--------Es mentira."@
+` No se siente real.@
+` Esto es sólo uno de esos sueños que tengo cuando me desmayo.\
+br
+br
+br
+br
+br
+br
+br
+`"------Es mentira."@
+` Además, como puede alguien cortar en pedazos a una persona sólo con un cuchillo.@
+` Lo leí una vez en un libro.@
+` Toma un día entero de arduo trabajo cortar a alguien en pedazos, incluso usando una sierra.@
+` Es por eso que no hay manera de que haya podido hacer semejante cosa sólo con un cuchillo.@
+` Esas "líneas" nunca existieron en primer lugar.@ Todo fue sólo una ilusión que me ha engañado--\
+br
+br
+br
+br
+br
+br
+br
+`"------Es mentira."\
+bg #000000,%type_crossfade_fst
+playstop
+bg "image\bg\bg_14d.jpg",%type_crossfade_fst
+` Guh---ffpt.@
+br
+` Jugo gástrico gotea de mis labios.@
+` Cayendo de mi boca, goteando sobre mi quijada.@
+` Mezclado con los jugos hay algo rojo.@
+` Mi garganta probablemente está sangrando porque mi estómago sigue tratando de vomitar aun cuando no queda nada en su interior.@
+br
+`"A…… u----"@
+br
+` Duele.@
+` Es por eso que esto…
+` Esto no es un sueño, sólo me estoy engañando.\
+br
+br
+br
+br
+br
+br
+br
+`"---Todo es mentira."@
+` Sí, de hecho, lo entiendo todo.@
+` Yo la deseaba.@ Sólo mirarla me excitaba.@
+` Cuando la corté en pedazos, fue tan emocionante que casi eyaculé.\
+` Estos ojos también.@
+` Si sabía que esas "líneas" podían despedazar las cosas como si fuesen papel…
+` Debí haber comprendido que incluso una persona podía ser cortada en pedazos fácilmente como acabo de hacerlo con ella.@
+` He llevado una vida normal sin siquiera pensar en algo como eso.@
+br
+` ---Si en verdad soy la clase de persona que podría matar fácilmente cualquier cosa…
+` Entonces debí haberme sacado estos ojos o haber vivido sin mirar a nadie.\
+`"…… Lo siento, Sensei."@
+br
+` ---Lo siento mucho.@
+br
+` Ni siquiera una promesa tan simple.@
+` Fui capaz de mantener----\
+bg #000000,%type_crossfade_fst
+monocro off
+bg "image\bg\bg_14d.jpg",%type_crossfade_mid
+`"¿Me he---- vuelto loco?"@
+br
+` No lo sé.@
+` No queda siquiera un rastro de aquel impulso.@
+` El pensamiento de contenerme nunca cruzó por mi mente.@
+` Ni siquiera consideré intentar detenerme.@
+`"Mata a esta chica."@
+` Parecía lo más lógico que hacer, y lo llevé a cabo.\
+` Entonces la respuesta es simple.@
+` Debo estar loco.@
+br
+` Probablemente he estado loco desde hace ocho años, cuando milagrosamente volví a la vida después de un accidente fatal-------
+bg #000000,%type_crossfade_slw
+bg "image\bg\bg_12a.jpg",%type_crossfade_slw
+bg #000000,%type_crossfade_slw
+bg "image\bg\bg_25a.jpg",%type_crossfade_slw
+bg #000000,%type_crossfade_slw
+bg "image\bg\bg_24b.jpg",%type_crossfade_slw
+bg #000000,%type_crossfade_slw
+bg "image\bg\bg_22b.jpg",%type_crossfade_slw
+bg #000000,%type_crossfade_slw
+bg "image\bg\bg_33b.jpg",%type_crossfade_slw
+bg #000000,%type_crossfade_slw
+!w4000
+` …… Puedo escuchar el sonido de la lluvia viniendo de algún lugar.@
+br
+` Está lloviendo.\
+br
+`"-----"@
+` Estoy aturdido.@
+` Me duele la garganta cuando intento respirar.@
+`"Au… ch."@
+` No puedo hablar.@
+br
+`"----¿Shiki-sama?"@
+` Entonces, me percato de la presencia de alguien cerca de mí--
+bg "image\bg\bg_40c.jpg",%type_crossfade_fst
+`"Mi---habitación."@
+` Por alguna razón, estoy en mi habitación.@
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"Buenos días, Shiki-sama."@
+`"¿Hisui…?"@
+`"Sí.@ ¿Cómo se siente?"@
+`"¿……?"@
+` Hisui me hace una pregunta extraña.@
+` Mi cuerpo está perfectamente bien, pero---
+bg #ffffff,%type_crossfade_fst
+bg "image\event\ark_e01.jpg",%type_crossfade_fst
+bg "image\bg\bg_40c.jpg",%type_crossfade_fst
+\
+`"¿Por---qué?"@
+` Sí, ¿por qué?@
+` ¿Por qué estoy durmiendo en un lugar como éste--
+`"A pesar de que---mat--"@
+` Estaba a punto de decir "maté a alguien", pero me detuve.@
+` Mi cerebro me dice que no debería decir esas palabras.\
+`"¿Qué estoy---haciendo aquí, Hisui?"@
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"…… ¿No recuerda?@ Su escuela llamó para decir que salió temprano.@ Sin embargo, no regresó después del ocaso, y cuando mi hermana fue a buscarlo, lo encontró descansando en el parque."\
+`"---¿Parque?---¿Te refieres al parque cerca de aquí?"@
+`"Sí, cuando ella lo encontró, usted estaba durmiendo sobre un banco del parque.@ Entonces regresó a la mansión por su cuenta."@
+`"…… Debes estar bromeando.@ No recuerdo nada de eso."@
+`"No creo que sea tan raro que su memoria esté inestable, Shiki-sama.@ Es difícil para mí decir esto pero, cuando mi hermana lo trajo de vuelta, usted estaba aturdido."@
+`"…………"@
+` …… No recuerdo nada de esto.@
+` Pero no tengo razón para dudar de lo que dice Hisui.\
+`"…… Sí, ya son las nueve en punto… No recuerdo nada."@
+`"Sí.@ Cuando regresó a la mansión, dijo que 'quería dormir'.@ Mi hermana sugirió que llamásemos a un doctor, pero usted dijo 'esto sucede todo el tiempo'."\
+`"---Ya veo.@ Supongo que me desmayo por anemia todo el tiempo, pero---"@
+br
+` …… Esta vez, es diferente.@
+` Porque he asesinado a alguien---¿huh?@
+br
+`"¿Cómo lucía yo, Hisui?"@
+`"---¿Huh?"@
+`"Mi ropa, quiero decir.@ ¿Estaba mi uniforme… uh, con la sangre---"@
+` Estaba manchado de sangre.\
+`"Su uniforme estaba sucio, así que lo estoy lavando."@
+`"¿¡Lavarlo--te refieres a esa ropa manchada de sangre…!?"@
+ld c,":a;image\tachi\his_t08.jpg",%type_crossfade_fst
+`"…… Ciertamente había barro en ella, pero nada como sangre."@
+`"¿Eh…?@ Pero estaba tan---"@
+` ¿Aunque estaba sobre mis rodillas en un mar de sangre, y mis brazos y piernas estaban completamente empapados de rojo…?\
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"¿Ha tenido alguna clase de pesadilla, Shiki-sama?@ Parecía estar teniendo un mal sueño hasta ahora, y ahora no se ve bien."@
+` Hisui mira fijamente mi rostro.@
+cl c,%type_crossfade_fst
+`"¿Un sueño?@ ----Eso, ¿un sueño?"@
+` ¿Fue un sueño?@
+` Esa sensación.@
+` El olor de la sangre.@
+` La espantosamente hermosa chica blanca.\
+`"No---tal vez tengas razón.@ Fue sólo un mal sueño."@
+br
+` Fiu.@ Exhalo lentamente.@
+br
+` ----Es cierto.@
+` Debe haber sido un mal sueño.@
+` No hay manera de que rompiese la promesa de mi niñez a Sensei sin necesidad y sin razón.\
+`"Ah---Finalmente estoy despierto."@
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"Sí.@ Si se siente mejor, iré a preparar la cena ahora."@
+`"¿Cena, eh?"@
+` …… Sé que sólo fue un sueño, pero el color y el olor de la sangre aún persisten en mi mente.\
+`"---No, está bien.@ Sólo voy a dormir por esta noche.@ Más importante aún, Hisui…"@
+`"Sí, ¿qué desea, Shiki-sama?"@
+`"Um… bueno.@ Parece que regresé después del ocaso, ¿Akiha dijo algo?"@
+`"Akiha-sama aún no estaba en casa en ese momento.@ Regresó hace aproximadamante dos horas, y fue informada de su condición a través de mi hermana."@
+` Hisui parece preguntar silenciosamente "¿Qué hay con eso?"\
+`"Oh, no es nada.@ Sólo me preguntaba si estaba disgustada conmigo por causarle problemás en sólo el segundo día después de mi regreso."@
+`"…… Ciertamente parecía que Akiha-sama estaba angustiada, pero no diría que estaba disgustada."@
+` Diciendo eso, Hisui se aleja un paso de mí.\
+`"Bien, me retiraré ahora.@ Por favor llámeme si necesita cualquier cosa."@
+`"Sí, gracias.@ --Oh, una cosa más que olvidé preguntar."@
+`"Sí, ¿de qué se trata, Shiki-sama?"@
+`"Está lloviendo afuera.@ ¿Cuándo comenzó?"@
+`"Antes de que usted regresara, Shiki-sama.@ Cuando mi hermana lo encontró, usted estaba empapado."\
+`"…………"@
+` Ya veo.@ Ni siquiera puedo recordar eso.@ Parece que fue un caso de anemia bastante serio.@
+` …… Si ése es el caso, no debí haberme fatigado, debí haber descansado en la escuela.@
+`"Buenas noches.@ Lamento mucho todo lo de hoy.@ Por favor exprésale mi gratitud a Kohaku-san también."@
+`"Comprendo.@ --Buenas noches."@
+cl c,%type_crossfade_mid
+\
+`"----Un sueño, eh."@
+` Es como si ni siquiera supiese lo que sentí.@
+` Pero si no puedo entender qué sucedió o cómo me sentí al respecto
+` ¿cómo sé que fue un sueño?@
+br
+` Puedo escuchar el sonido de la lluvia de afuera.@
+` Mi mente todavía se siente un poco pesada.@
+` Le echo un vistazo a mi pecho.@
+` …… La vieja herida de hace ocho años sigue estando evidentemente ahí, como una cicatriz de quemadura.@
+br
+`"Ah---"@
+` Sobre mi escritorio descansa el cuchillo que me dejó mi padre.@
+` La vieja cuchilla que cortó a esa chica en diecisiete pedazos.\
+`" ----"@
+` …… Eso fue un sueño.@
+` Nada más.@
+` Repito esto una y otra vez, tratando de tranquilizarme hasta quedarme dormido.\
+bg #000000,%type_crossfade_slw
+br
+br
+br
+br
+br
+` …… Pero cuando era niño,
+` creo que alguien me dijo una vez, "No digas mentiras que no puedan siquiera engañarte a ti mismo."\
+!w3000
+return

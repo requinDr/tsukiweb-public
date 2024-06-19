@@ -1,0 +1,9 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_06a.jpg",%type_lshutter_mid
+` Es la hora del amuerzo.@
+` Entonces, ¿dónde debería almorzar?@
+br
+return

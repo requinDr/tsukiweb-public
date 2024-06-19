@@ -1,0 +1,39 @@
+monocro off
+waveloop se1
+playstop
+;---added context above---
+bg "image\bg\bg_29c.jpg",%type_nowaitdisp
+` …… Todavía, todavía es demasiado pronto.@
+` Hay unos diez metros entre Nrvnqsr y yo.@
+` Necesito una abertura más definitiva antes de poder acercarme sin que se percate de mi presencia.\
+`"------"@
+` Trago saliva.@
+` Un poco más----un poco más, algo----\
+`"…… No entiendo."@
+` Refunfuñando.@
+` Como si le hablase a la luna en el cielo, Nrvnqsr refunfuña en voz alta.\
+`"Es desagradable ser encarado por una hostilidad tan antiestética, pero no puedo creer que éste sea uno de los familiares de la Princesa.@ ¿Es sólo basura?"@
+`"¡------!@ ¡Shiki, huye!"@
+` La discreta voz de Arcueid.\
+`"……… ¿Eh?"@
+` Pero, no puedo entender a tiempo.\
+bg #000000,%type_bcartain_slw
+wavestop
+` Mi piernas comienzan a hundirse en algo.@
+` El firme suelo bajo mis pies es como arena movediza.@
+`"Ah------"@
+` El suelo está lleno de algo negro azabache.@
+` Mi cuerpo cae.@
+` Mis tobillos que se hundieron en el charco negro no están unidos a nada.\
+`"------"@
+` Caigo dentro del charco con un chapoteo.@
+` …… No tiene fondo.@
+` Este charco negro se transforma en la boca de un gran animal y comprime mi cuerpo-----
+\
+resettimer
+waittimer 2000
+cl a,%type_waitdisp
+bg "image\word\end.jpg",%type_crossfade_slw
+resettimer
+waittimer 3000
+return

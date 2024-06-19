@@ -1,0 +1,19 @@
+monocro off
+wavestop
+play "*3"
+;---added context above---
+bg "image\bg\bg_01b.jpg",%type_lcartain_mid
+` Salimos caminando por la entrada.@
+` Desde aquí, tenemos que tomar caminos separados.@
+br
+ld c,":a;image\tachi\cel_t03.jpg",%type_crossfade_mid
+`"Bien, entonces adiós por ahora.@ Llegamos aquí bastante rápido."@
+` …… Eso creo.@ Estaba pensando que sería mejor si la escuela fuese un poco más grande.\
+`"Bien, Senpai, entonces nos vemos mañana."@
+ld c,":a;image\tachi\cel_t04.jpg",%type_crossfade_fst
+`"Sí, veámonos mañana en la escuela."@
+cl c,%type_lshutter_mid
+` Sonriendo al responder, Senpai desaparece en la dirección opuesta.@
+` Después de observarla marcharse, camino por la calle hacia mi casa.\
+bg #000000,%type_lcartain_slw
+return

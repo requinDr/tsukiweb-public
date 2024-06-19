@@ -1,0 +1,332 @@
+monocro off
+waveloop se1
+playstop
+;---added context above---
+bg "image\event\aki_e05a.jpg",%type_nowaitdisp
+` *jadeo* *jadeo* *jadeo*
+br
+` No puedo respirar correctamente.@
+` Los ojos de Senpai ni siquiera parecen interesados en mi muerte.@
+` Su daga está suspendida directamente sobre mi corazón.@
+` Una situación en la que estoy a un segundo de ser asesinado.\
+`"Qué raro.@ Has matado a tantas personas, pero tienes miedo de morir."@
+`"--------"@
+` Su aliento sopla dentro de mis ojos.@
+` Sus palabras me marean.\
+bg "image\event\aki_e05b.jpg",%type_crossfade_fst
+`"Adiós.@ Si no vas a hacerlo, Tohno-kun, tendré que hacerlo yo misma."@
+` Diciendo eso,
+` Senpai tensa sus brazos.@
+`"---------"@
+` Es el fin.@
+` Tohno Shiki morirá aquí.@
+` Si no quiero eso.@
+` ¡Tengo que apuñalar con este cuchillo más rápido que Senpai---!\
+wavestop
+bg #ffffff,%type_nowaitdisp
+`"¡Guh----!"@
+` Mis dedos se llenan de fuerza.@
+` Pero eso es todo.@
+` Mis brazos no se mueven en absoluto.@
+` …… No quiero morir.@ No es que esté dispuesto a morir porque soy un asesino.@
+` Pero si no mato a Ciel-senpai, seré asesinado.@
+` En este momento, entiendo que, aun si no quiero matar, tengo que hacerlo.@
+br
+` ¿Entonces por qué?@
+` ¿Por qué mi brazo no se mueve----\
+play "*7"
+bg #000000,%type_crossfade_fst
+monocro #ffff00
+bg "image\event\stk_e01c.jpg",%type_crossfade_fst
+!w2000
+br
+` De repente.\
+br
+br
+br
+br
+br
+br
+` Quería hablar más contigo, Tohno-kun.@
+` Es por eso que en realidad no quiero morir ahora.\
+br
+br
+br
+` Esas palabras.\
+br
+br
+br
+br
+br
+` Pero, éste seguramente es el mejor camino.@
+` ---Así que, no llores, Tohno-kun.@ Hiciste lo correcto.\
+br
+br
+br
+br
+br
+` Entran por la fuerza en mi memoria.\
+br
+br
+br
+br
+br
+br
+` Sí, adiós, Tohno-kun.@
+` Gracias---y, perdón.\
+bg #000000,%type_crossfade_fst
+monocro off
+br
+br
+br
+br
+` -----Sí.@
+br
+` Ahora veo.\
+bg "image\event\aki_e05b.jpg",%type_crossfade_slw
+`"¿Por qué no te resistes?"@
+` Escucho la voz de Senpai.@
+` La daga aún está en mi pecho; rasga mi ropa y penetra mi piel.\
+`"De esta manera, morirás.@ ¿Entonces por qué?@ ¿Por qué no mueves tu cuchillo?"@
+br
+` Porque…@
+br
+`"…… No puedo."\
+br
+`"¿Por qué no?@ ¿A pesar de que has a matado a tantas personas hasta ahora?"@
+br
+` Nunca más.@
+br
+`"…… No puedo hacerlo."\
+`"Acabas de matar a ese cadáver.@ Después de hacerlo una vez, una segunda o una tercera no cambiará nada.@ Si no lo haces, te mataré."@
+` …… Ella habla en serio.@
+` En un segundo, el asesino llamado Tohno Shiki sin duda será asesinado.@
+` No es que no tenga miedo.@
+br
+` Cierto, pero aun así---\
+br
+br
+br
+br
+br
+br
+br
+`"No puedo… matar a alguien---"\
+` Mientras hablo, brotan lágrimas.@
+` No es que algo sea triste, o alguien esté triste.@
+` Pero las lágrimas que caen por mis mejillas no se detienen.\
+bg #ffffff,%type_crossfade_mid
+!w1000
+playstop
+bg "image\bg\bg_10f.jpg",%type_crossfade_mid
+play "*8"
+` ¿Cuánto tiempo ha pasado?@
+` Mi mente, que estaba en trance…
+`"---Fiu.@ Finalmente comprendes, Tohno-kun."@
+` …… regresa con las palabras de Senpai.\
+`"¿Eh---Sen, pai…?"@
+ld c,":a;image\tachi\cel_t14.jpg",%type_crossfade_fst
+`"¿Ves, estás satisfecho?@ No eres un asesino.@ Esas palabras fueron verdaderas.@
+` Por lo tanto, todo esto es sólo un sueño.@ Tohno-kun es Tohno-kun.@ Muy amable, considerado, y tan sensible como para llorar por algo como esto.@ Simplemente el chico ordinario por el cual suspiraba."@
+br
+` Diciendo eso, Senpai guarda la daga.@
+` Su aterrador tono de muerte desaparece, y Senpai recobra su amabilidad habitual.\
+`"¿Por qué…?@ ¿No viniste aquí para matarme, Senpai…?"@
+ld c,":a;image\tachi\cel_t07d.jpg",%type_crossfade_fst
+`"Sí, vine aquí para matar el auto aborrecimiento dentro de tu corazón.@ No eres un asesino.@ Pero como parecía que no me creerías sin importar cuánto te lo dijese, tuve que persuadirte de una manera más física."@
+`"¿Qué---persuadirme físicamente?@ ¿¡Entonces, quieres decir, que todo esto fue sólo una actuación…!?"\
+ld c,":a;image\tachi\cel_t14b.jpg",%type_crossfade_fst
+`"No, era en serio.@ No podía descartar por completo la posibilidad de que fueses el asesino, Tohno-kun.@ Así que no podía contenerme.@ Además, es más divertido atacar sin reservas.@
+` Y sabes lo divertido que es fastidiar a alguien que te gusta."@
+` Senpai dice algo bastante aterrador con una sonrisa.\
+`"Ja---"@
+br
+` ---Y con eso, me desplomo.@
+` Todas las cosas que he estado pensando hasta ahora parecen tan tontas.@
+`"Jaja, ja---"@
+` Por alguna razón, es gracioso y me río.@
+` Como dice Senpai, mi temor a la posibilidad de ser un asesino ha desaparecido.\
+`"…… Sí, tienes razón.@ Parece que finalmente lo entendí.@ Pero eres terrible, Senpai.@ Fuiste demasiado lejos esta noche."@
+ld c,":a;image\tachi\cel_t14.jpg",%type_crossfade_fst
+`"Sí.@ Había sido condescendiente contigo hasta ahora, así que tuve que compensarte por eso."@
+` Sonriendo, Senpai extiende su mano.@
+` Yo la tomo.@
+` Con un gruñido, Senpai me levanta.\
+bg #000000,%type_tcartain_mid
+!w500
+bg "image\bg\bg_02a.jpg",%type_bcartain_fst
+` Salimos del edificio y hacia los terrenos de la escuela.@
+` Senpai ha tratado las heridas que me propinó.@ Por medio de algún truco, las heridas se cerraron cuando Senpai las cubrió con una cosa que parecía medicina y colocó su mano sobre ésta.\
+ld c,":a;image\tachi\cel_t14.jpg",%type_crossfade_fst
+`"De acuerdo, prometí decirte lo que sé.@ ¿Qué quieres escuchar, Tohno-kun?"@
+`"Qué---bueno, es obvio.@ Quiero saber todo acerca de mis sueños.@ Por qué sueño con matar gente… quién eres exactamente… hay muchas cosas que no entiendo."@
+ld c,":a;image\tachi\cel_t07c.jpg",%type_crossfade_fst
+`"Ahh, ya veo.@ Bien, comencemos con los sueños que tienes, Tohno-kun.\
+`"Simplemente, creo que los sueños que estás viendo no son tuyos.@
+` Tohno-kun, dices que sueñas con asesinar pero, ese sueño ¿no es como observar a alguien matar a otra persona?"@
+`"…… Bueno sí.@ ¿Crees que mataría gente en mis sueños si pudiese controlar lo que hago?"\
+`"Ves, a eso me refiero.@ Cuando duermes, entras en la mente del asesino.@ Bueno, no entras exactamente, más bien eres llevado dentro.@
+` Por eso, aunque tu punto de vista fuese el del asesino, ¿no sentías como si estuvieses viendo las cosas desde lejos?"@
+`"…………"@
+` Eso es---perfectamente correcto.@
+` He estado soñando con matanzas por algún tiempo, pero siempre se ha sentido como si estuviese viendo una "escena".\
+`"Pero, ¿por qué la mente de este asesino y la mía se están fusionando?@ Debe haber algun razón, ¿cierto?"@
+`"…… Sí, hay una razón muy clara.@ Pero hagamos eso a un lado por un momento.@ Primero, tenemos que discutir qué es el asesino en cuestión."\
+ld c,":a;image\tachi\cel_t06c.jpg",%type_crossfade_fst
+`"Ciertamente, hay un asesino.@ Pero sus características son más parecidas a las de un vampiro."@
+`"…… Eso es razonable.@ Ciertamente, se podría llamar vampiro a alguien así."@
+` Recuerdo la escena de mi sueño.@
+` Ese sujeto, mientras disfrutaba la matanza, devoraba la carne y la sangre.\
+`"Sí.@ Yo soy la persona que vino a esta ciudad para encargarse de ese vampiro.@
+` …… Aunque no puedo decirte los detalles, el mundo tiene varios mecanismos de defensa.@ Así como hay policías para lidiar con los que quebrantan la ley, también hay muchas organizaciones que lidian con herejes que son inhumanos.@
+` …… Piensa en mí como un miembro de ese tipo de organización."\
+`"…… ¿Lidiar con vampiros?"@
+ld c,":a;image\tachi\cel_t07c.jpg",%type_crossfade_fst
+`"Sí.@ Aquello que succiona la sangre de los vivos para mantener su propia carne.@ Una vida detenida que hace eso para tener vida eterna.@
+` Mi función es eliminar a tales herejes.@
+` Por eso estaba combatiendo al vampiro todas las noches en tus sueños."@
+`"------"@
+` No hay nada que decir.@
+` Para ser sincero, no entiendo el mundo del que ella está hablando, en absoluto.\
+`"…… ¿Huh?@ ¿Entonces ya has combatido al vampiro varias veces?"@
+`"Dos veces.@ La primera vez escapó, y en la segunda, nuestro encuentro fue bastante doloroso."@
+`"¿Verdad?@ Entonces has visto su rostro, ¿no?@ ¿No supiste inmediatamente que yo no era el vampiro?"@
+`"No.@ Desafortunadamente, no podía estar segura.@ Algunos vampiros pueden cambiar sus cuerpos libremente, por lo que no se puede confiar en la apariencia para identificarlos."@
+`"…… ¿En serio?@ Eso es un problema."\
+`"Pero, ahora está claro.@ Nos hemos ido por las ramas pero, entonces ¿ese vampiro es el asesino en serie?"@
+ld c,":a;image\tachi\cel_t06c.jpg",%type_crossfade_fst
+`"Sí.@ Los cadáveres anunciados como víctimas del asesino en serie son simplemente sobras de comida.@
+` Normalmente, su carne es consumida por completo, o su sangre es extraída y se convierten en nuevos vampiros, así que no debería quedar ningún cuerpo."@
+`"…… Espera.@ Si las personas cuya sangre es succionada se convierten en vampiros, ¿no empezarían a multiplicarse?"\
+`"No, hay un límite para los que 'permanecen' sin morir al ser chupada su sangre.@ La mayoría de los humanos no pueden separar el alma del cuerpo, así que el alma muere junto con el cuerpo.@
+` Quizás sólo una de cada cien personas puede 'permanecer' sin morir.@
+` …… Como Yumizuka Satsuki lo hizo."@
+`"¿Qué---Senpai, sabías lo de Yumizuka?"@
+ld c,":a;image\tachi\cel_t07c.jpg",%type_crossfade_fst
+`"No.@ Cuando llegué al lugar, ya la habías destruido.@
+` …… Lo siento.@ Aquella vez, aunque sabía que estabas sufriendo, no pude ayudarte."\
+`"----No, está bien.@ Quiero pensar que lo sucedido con Yumizuka fue la decisión correcta.@
+` …… Pero, ahora entiendo.@ Yumizuka no era un vampiro desde el principio.@ Fue atacada por ese vampiro, y ése fue el resultado---"@
+`"Sí, es verdad.@
+` Pero no creo que haya otros como Yumizuka-san.@ Se requiere de muchos años para que un vampiro pueda funcionar como un vampiro.@
+` Para que haya sido capaz de funcionar inmediatamente, Yumizuka Satsuki debe haber tenido una concepción espiritual asombrosa."\
+`"¿Eh…?@ ¿Concepción espiritual?@ ¿Qué es eso?"@
+`"Una extensión funcional del cerebro, determinada cuando una persona es un embrión---o eso he escuchado.@ Es parecido a tu habilidad, que emplea una sección del cerebro que la mayoría de las personas nunca utiliza.@
+` Igual para Yumizuka Satsuki.@ Era naturalmente 'apropiada' para ello.@ Por lo tanto, en lugar de quedar bajo el control de su padre vampiro, se convirtió en un vampiro que podía actuar independientemente."@
+br
+` No entiendo la explicación de Senpai.@
+` Pero, una cosa me viene a la mente.\
+`"Senpai.@ Mencionaste mis habilidades… ¿sabes sobre mi ojos…?"@
+ld c,":a;image\tachi\cel_t14.jpg",%type_crossfade_fst
+`"¿Ojos?@ No, no sé qué tipo de ojos de tienes, Tohno-kun, pero sé que tienes una habilidad única.@
+` La sangre de Tohno-kun es especial.@ No una habilidad aprendida como la mía, sino algo con lo que naciste.@
+` Ese tipo de cosas son llamadas 'poderes sobrenaturales'.@ La mayoría de las personas tienen un solo canal abierto en sus mentes, pero tú tienes otro canal abierto que nadie puede ver, ¿cierto?"\
+`"…… Sangre especial… ¿te refieres a, la sangre de la casa Tohno…?"@
+`"Sí, el linaje Tohno es ancestral.@
+` Pero al mirar la historia de la familia Tohno, se puede ver que las habilidades de sus miembros son variadas.@ Hay algunos que pueden recibir inspiración divina, otros que no pueden mantener su forma humana y se convierten en asesinos, y otros cuyos poderes nunca despiertan.@
+` …… Con el paso del tiempo, esta sangre se ha reducido y la mayoría de estas habilidades probablemente ya no se presentan."\
+`"----"@
+` Estoy horrorizado.@
+` Si lo que Senpai dice es verdad, entonces no sólo yo, ¿Akiha también podría tener algo "averiado" como mis ojos…?\
+ld c,":a;image\tachi\cel_t07c.jpg",%type_crossfade_fst
+`"¿Puedo continuar?@
+` Tohno-kun, hace un rato preguntaste.@ ¿Por qué tus sentidos se están fusionando con los del vampiro?"@
+`"Ah… ah, sí, lo hice…"@
+`"Creo que también está relacionado con tus habilidades.@
+` Tu cerebro tiene un canal más amplio que los de otras personas.@ Debido a eso, cuando duermes y tu auto consciencia disminuye, tu mente es atraída hacia un vampiro cuyo cerebro es fácil de conectar con el tuyo."\
+`"¿Huh…?@ Senpai, ¿a qué te refieres con un cerebro fácil de conectar?@ No querrás decir que están hechos de manera similar, ¿cierto?"@
+`"No, eso es exactamente a lo que me refiero.@
+` ¿Has oído alguna vez sobre gemelos que comparten experiencias?"@
+`"¿Gemelos que comparten experiencias…?"@
+`"Por ejemplo, si el hermano mayor es herido, el hermano menor que está a millas de distancia siente el mismo dolor.@ Creo que tus sueños son similares a eso.\
+`"Fundamentalmente, los gemelos idénticos son dos cuerpos humanos nacidos de los mismos genes.@
+` Son órganos hechos a partir de las mismas instrucciones, así que no es imposible que el dolor sentido por un cerebro sea recibido por el otro."\
+`"El cerebro es un órgano que maneja recepción y transmisión.@ Como el cerebro de cada persona está hecho en base a un diseño diferente, tenemos que comunicar nuestros sentimientos a través del lenguaje.@ Pero si dos cerebros son precisamente iguales, el pensamiento será transmitido sin la necesidad del lenguaje.@
+` Usando los términos previos: la señal eléctrica es recibida porque el canal del cerebro está en la misma frecuencia.@
+` Ya que tu cerebro es superior al de otros, te conectas a los cuerpos cercanos a ti."\
+`"…… No puede ser.@ No tengo ningún gemelo."@
+`"Lo sé.@ Pero en tu caso, no es necesario que sea un gemelo.@
+` No es que se estén fusionando, mas bien tienen cerebros similares.@ Como tu cerebro tiene muchos canales, no hay necesidad de que sean gemelos idénticos.@
+` Tener las mismas raíces, o un cuerpo similar… probablemente sea todo lo que se necesita para que seas atraído.@
+` Quizás un hermano con los mismos padres… Bueno, supongo que un caso de transplante de órganos podría ser una excepción; la 'carne' podría halar tu mente en ese caso."\
+cl a,%type_crossfade_fst
+` ---¿Podría suceder con cualquiera que tenga relación de sangre…?@
+` Eso---eso no puede ser.@
+` Akiha es el único familiar de sangre que me queda.@
+` Sólo Akiha.@
+` ¿No hay… nadie aparte de Akiha?\
+`"----No puede ser.@ Eso… es un error."@
+` …… Senpai no responde.@
+` En mi mente,
+` veo la figura de Akiha, bebiendo la sangre de Kohaku-san.@
+`"No puede ser.@ Lo sabía, no era un sueño.@ Era yo quien mataba gente y bebía su sangre.@
+` Porque, de lo contrario----"@
+` Uniendo cabos, todo tiene sentido.\
+ld c,":a;image\tachi\cel_t07c.jpg",%type_crossfade_fst
+`"…… Sospeché de ti al principio.@ Pero después de conocerte, concluí que no eras tú.@
+` Pero podía estarme engañando.@ Así que, esta noche fue una apuesta para mí.@
+` Si me hubieses matado sin vacilar, habría sabido que eras un vampiro… Pero, no lo eras, después de todo."\
+`"---No.@ Eso fue sólo---"@
+`"Tohno-kun.@ Todos en la familia Tohno tienen algo 'inhumano' mezclado en su sangre.@ Aunque algunos son inofensivos, normalmente sólo hay uno así en cada generación.@
+` En el pasado, habían muchos miembros de la familia Tohno que bebían sangre.@
+` Pero tú no necesitas beber sangre de otros ni tienes el deseo de hacerlo.@ Así que----"@
+`"¿Cómo---cómo puedes saber, Senpai?"@
+`"…… Tohno-kun, la casa Tohno alberga la posibilidad de dar nacimiento a un vampiro.@ Si tú no lo eres, entonces…"\
+`"-------"@
+` No, niego desesperadamente con mi cabeza.@
+br
+` ---No aceptaré las palabras de Senpai.@
+`  No puedo aceptarlas.@
+br
+` …… Pero, recuerdo.@
+` En el edificio separado, el rostro de Tohno Akiha bebiendo la sangre de Kohaku-san.\
+`"…… No es Akiha.@ Quien tiene poderes extraños… soy yo."@
+`"--Puede que tengas razón.@ A simple vista, no parece que el poder de Akiha-san esté despierto.@ Ciertamente está contaminada por éste, pero a un nivel en que aún puede volver a la normalidad."@
+`"…… No.@ ¡No es Akiha…!@ Soy el único que tiene estos problemas.@
+` ¡Akiha me esperó por muchos años, e incluso hoy, se despidió de mí normalmente…!"\
+ld c,":a;image\tachi\cel_t06c.jpg",%type_crossfade_fst
+`"Yo sólo cazo vampiros.@ Sin importar quién sea, no puedo pasarlo por alto."@
+cl a,%type_crossfade_fst
+`"-----"@
+` Incapaz de hablar, sólo muerdo mi labio.@
+` …… No entiendo.@
+` Si… si Akiha es semejante cosa, ¿qué debería hacer?@
+` ¿Debería aparentar no darme cuenta, o debería pelear con Senpai para defender a Akiha?@
+!w3000
+` …… Es inútil.@
+` Sin importar cuánto piense, no puedo hallar ninguna respuesta.\
+ld c,":a;image\tachi\cel_t07c.jpg",%type_crossfade_fst
+`"---Comprendo.@ Akiha-san es una persona muy importante para ti.@ Quizás hasta más importante que tú mismo."@
+`"…… Por supuesto.@ Una hermana pequeña siempre es importante para su hermano."@
+`"Podríamos terminar peleando."@
+`"……"@
+` No hay nada que decir.@
+` …… Estoy totalmente derrotado.@
+` Senpai expone claramente las cosas que no quiero decir.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_01c.jpg",%type_lcartain_mid
+` …… Llegamos a la entrada de la escuela.@
+` Senpai parece haber llegado a una conclusión, porque no dice nada.\
+ld c,":a;image\tachi\cel_t07c.jpg",%type_crossfade_fst
+`"---No preguntaré qué vas a hacer ahora.@ Nos despediremos aquí."@
+` Con sus ojos sin emoción, Senpai extiende una mano.@
+`"………………"@
+` Sin decir nada, tomo su mano.@
+br
+` Sólo por un breve momento.@
+` Senpai y yo intercambiamos un vacío apretón de manos.@
+cl a,%type_lshutter_mid
+` Sólo con un adiós, Senpai se marcha.\
+playstop
+bg #000000,%type_lcartain_mid
+` …… Regreso a la mansión, donde Akiha espera.@
+` Sé por la conversación con Senpai que lo que veo son sólo sueños.@
+` Pero, el problema fundamental aún no ha sido resuelto.@
+br
+` El vampiro--la verdad, esa cosa que asesina gente todas las noches.@
+` Si en verdad se trata de Akiha, ¿qué puedo hacer?@ ¿Qué debería hacer?@
+`"¡Kuh…!"@
+` No lo sé.@
+` Tristemente, todo lo que puedo hacer es morder mi labio.\
+!w4000
+return

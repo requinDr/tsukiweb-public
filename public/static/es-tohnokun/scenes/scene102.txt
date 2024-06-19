@@ -1,0 +1,40 @@
+monocro off
+wavestop
+playstop
+bg #000000,%type_nowaitdisp
+;---added context above---
+` …… ¡Lo soportaré por ahora……!@
+` Aunque atacase imprudentemente a Nrvnqsr, estas bestias estorbarían.@
+` Por ahora tengo que soportarlas y esperar una abertura para----\
+bg "image\bg\ima_12b.jpg",%type_nowaitdisp
+wave se9
+bg #000000,%type_nowaitdisp
+`"¡Gah------!"@
+` Soy golpeado por la espalda.@
+` ¿Me ha embestido uno de los perros negros con su cabeza?@
+` Sea lo que fuere, mi columna rechina----y no puedo… respirar.\
+bg "image\bg\ima_12b.jpg",%type_nowaitdisp
+wave se9
+bg #000000,%type_nowaitdisp
+`"Ah------"@
+` Mis muslos son pinchados por dientes caninos.@
+`"¡Ha----ahhh……!"@
+` Perforo sus frentes audiblemente con mi cuchillo.@
+` Los dos perros se disuelven como barro, dejando sólo un ardiente dolor en mis piernas.@
+br
+` ----Las bestias no son descontroladas.\
+` Aunque podrían hacerme pedazos en un instante si quisieran, dan vueltas a mi alrededor y vienen a "alimentarse" una por una.@
+br
+` No hay,
+` ninguna abertura.\
+bg "image\bg\ima_13b.jpg",%type_nowaitdisp
+bg #000000,%type_nowaitdisp
+`"Ah…………… h."@
+` Mi cuerpo cae.@
+` Sin siquiera poder respirar correctamente, sin siquiera poder levantarme por el dolor en mis piernas,
+` Caigo plano sobre mi espalda.\
+`"Soy una persona muy exigente.@ Descansa con la seguridad, de que no quedará una sola de tus células."@
+br
+` Escucho una voz.@
+` Al mismo tiempo, una cúpula negra se arquea sobre mí.\
+return

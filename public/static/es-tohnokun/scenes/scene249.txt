@@ -1,0 +1,11 @@
+monocro off
+wavestop
+;---added context above---
+playstop
++
+bg "image\bg\bg_06b.jpg",%type_crossfade_slw
+` Nuevamente, las clases terminan con bastante tiempo de sobra.@
+br
+` Bien---
+br
+return

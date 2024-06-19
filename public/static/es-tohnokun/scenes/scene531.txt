@@ -1,0 +1,29 @@
+monocro off
+wavestop
+;---added context above---
+bg "image\bg\bg_06b.jpg",%type_nowaitdisp
+play "*3"
+!w1000
+cl c,%type_lcartain_mid
+ld r,":a;image\tachi\cel_t20.jpg",%type_tshutter_mid
+` Has alcanzado el Final Bueno de Hisui.@ Bien hecho.@
+br
+` Cada heroína (con una excepción) tiene dos tipos distintos de finales.@
+` Un Final Verdadero y un Final Bueno.@
+` Ya que no puedes alcanzar el Final Bueno de Hisui-san sin haber visto el Final Verdadero, ¡has completado toda la ruta de Hisui-san!\
+` Bien, entonces, muchas gracias por jugar hasta este punto.@
+` Veámonos de nuevo en algún lugar dentro de Tsukihime.@
+br
+`"Ciel-san.@ Yo también tengo algo que debo impartir."@
+br
+` ¿Huh, Profesor Roa?@ Es una verdadera rareza que venga a un lugar como éste."\
+ld l,":a;image\tachi\roa_t05a.jpg",%type_lshutter_fst
+`"La circunstancia es única.@ Iré al grano de inmediato.@ Ahora que has completado la ruta de Hisui-san, debería haber una nueva opción para ti en el primer día.@
+` Es la opción para desbloquear la última ruta de Tsukihime.@
+` …… Bueno, aunque no te lo dijera, sería obvio una vez que entrases a la galería de imágenes."@
+br
+` Eso es correcto.@
+` ¡Bien, entonces, por favor continúa disfrutando de Tsukihime!\
+bg #000000,%type_crossfade_mid
+playstop
+return

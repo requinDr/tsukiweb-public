@@ -1,0 +1,1173 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_29b.jpg",%type_crossfade_mid
+` El tiempo pasa.@
+` El reloj se mueve mecánicamente, registrando el pasar de cada segundo.@
+`"--------"@
+` Siento que me ahogo.@
+` Mi cuerpo no quiere esperar un minuto más.@
+` Sólo sentarme aquí a esperar parece la máxima idiotez y quiero salir corriendo a buscarla de nuevo.\
+`"--------"@
+` Pero, mi corazón está en calma.@
+` Aunque mi cuerpo me incita a apresurarme, mi corazón permanece en calma.@
+` Continúo esperando, mirando hacia la luna.\
+br
+` ----Hay un silencio horrible.@
+` Sin sonido alguno, como si la noche hubiese congelado todo.@
+br
+` Una silenciosa quietud como si Arcueid y yo fuésemos los únicos en el mundo entero.@
+` Si puedo permanecer en semejante lugar, entonces no es nada doloroso esperar cualquier cantidad de tiempo.@
+br
+` Así que, en este momento,
+` estoy ahogándome en dicha.\
+` El tiempo es lo único que pasa.@
+` Sólo dos horas para el amanecer.@
+` Si cae el día, Arcueid y yo probablemente nunca volveremos a vernos.\
+!w4000
+br
+br
+br
+br
+br
+` Y el tiempo simplemente pasa.@
+` Y entonces, como un conejo blanco en la nieve,
+` ella llega al parque inesperadamente.\
+bg #000000,%type_crossfade_mid
+bg "image\event\ark_e10.jpg",%type_crossfade_mid
+play "*7"
+`"………………"@
+` Arcueid no dice nada.@
+` Con ojos depresivos, no hace ningún movimiento para hacercarse más.@
+`"----Arcueid."@
+` La llamo.@
+` Ella no responde o mira siquiera en mi dirección.\
+`"……………………"@
+` No puedo hablar.@
+` No sé qué puedo decir para hacerla sonreír de nuevo.@
+` En este momento, siento que cualquier palabra que salga de mi boca sólo la entristecerá más.\
+` ………@
+` ………………@
+` ………………………@
+` El tiempo parece hacerse una eternidad.@
+` En realidad, el tic-tac del reloj no puede haber sonado siquiera cerca de mil veces.@
+` Arcueid levanta su cabeza, como si estuviese viendo un sueño.\
+`"No irías a casa de ninguna manera, Shiki.@ Así que vine aquí porque no podía dejarte solo.@ …… Aunque en verdad estaba pensando en volver a mi habitación."@
+` Ella duda al hablar, pero dice esto con su alegre tono habitual.\
+`"…… Claro que no regresaría.@ ¿No dije que mantendría mi promesa?@ Aún no he sido de ayuda esta noche."@
+`"----Es suficiente.@ Ya no tienes que hacer eso."@
+`"¿Suficiente?--¿¡Qué es suficiente, Arcueid……!?"\
+`"¿Es necesario decirlo?@ Es sólo que yo soy un vampiro y tú eres un humano, Shiki.@
+` No tenía ningún derecho a recibir ayuda de ti.@ No comprendí eso anteriormente, y te habría destruído si hubiese ido un poco más lejos.@
+` Por eso----"@
+` es suficiente, susurra ella.\
+` ----¿Qué estás diciendo, tan repentinamente?@
+br
+` Estaba preparado para eso desde el momento en que acordé ayudarte.@
+` Comprendí mucho mejor que tú que eras un vampiro.@
+` Aun sabiendo eso, dije que te ayudaría.@
+` ¡Esto----no es algo con lo que pueda concordar……!\
+`"…… Arcueid, no necesitas preocuparte por lo que sucedió hace poco.@ Sólo estabas cansada y débil.@
+` Soy un idiota, por eso no pude percatarme de tu mentira.@
+` No estabas sufriendo por tus heridas, sino por tus impulsos vampíricos, ¿cierto?@
+` …… Senpai me explicó todo al respecto."\
+`"…… Esa mujer.@ ¿Desde cuando los agentes de la Agencia de Entierros se hicieron tan habladores?"@
+` Con más cansancio que odio, Arcueid suelta un profundo suspiro.\
+`"…… Senpai me lo dijo todo.@ Así que seré directo.@
+` No veo ningún problema, Arcueid.@
+` Sientes dolor ahora, pero volverás a la normalidad en pocos días, ¿no?@ Así que no necesitas preocuparte.@
+` Y en cuanto a lo de antes----aunque estabas sufriendo tanto, te contuviste, ¿cierto?@
+` Así que está bien.@ Vamos a continuar como estábamos hasta ahora."@
+`"………………"@
+` Con algo de dificultad, Arcueid sonríe débilmente.\
+`"…… Shiki, no comprendes nada.@ Es inútil hacer esto.@ Incluso ahora, quiero beber tu sangre."@
+`"----Pero solamente lo piensas.@ Entonces esfuérzate y resístelo.@ …… ¿No lo has hecho bien hasta ahora de esa manera?"@
+`"…… Es verdad, hasta ahora me he contenido, no, era capaz de hacerlo.@
+` Pero supongo que es inútil ahora.@ Aunque el único significado de mi existencia es cazar a otros vampiros, hice un montón de cosas extra.@
+` Si no hubiese sabido nada, nunca habría pensado en querer nada.@ Si no hubiese contado contigo y perseguía al enemigo por mi cuenta, todo habría estado bien."\
+`"------"@
+` ¿Habría estado bien de haber estado sola…?@
+` ¿Habla en serio?@ ¿Ella en verdad cree eso?@
+` ¿Con una cara tan triste?@
+` ¿Con una voz tan triste?@
+` ¿Con una apariencia tan solitaria y al borde del colapso?\
+`"----¡Eso simplemente me enfurece!@ ¡Deja de decir eso, idiota……!"@
+bg #000000,%type_tshutter_fst
+bg "image\bg\bg_29b.jpg",%type_bshutter_fst
+ld c,":a;image\tachi\ark_t06.jpg",%type_crossfade_fst
+`"Qué………"@
+`"¡No seas ridícula……!@
+` ¿¡Qué quieres decir con que todo habría estado bien si perseguías al enemigo por tu cuenta!?@ Me pediste ayuda porque era imposible para ti sola----porque finalmente te diste cuenta de que hay cosas que no puedes hacer sola, ¿¡cierto!?@
+` ¡Entonces cuenta conmigo hasta el final……!@ Te ayudaré.@ Sin importar qué suceda, te ayudaré, así que----"@
+br
+` No luzcas de esa manera.@
+br
+`"----No digas esas… cosas."\
+` …… Finalmente.@
+` Si finalmente te has dado cuenta de que la vida es divertida,
+` por favor no abandones fácilmente tal felicidad.\
+ld c,":a;image\tachi\ark_t13.jpg",%type_crossfade_fst
+`"Shiki----¿estás, llorando……?"@
+`"¡Ni de broma……!@ ¿¡Por qué lloraría por ti……!?"@
+br
+` Es sólo que… ella está diciendo cosas tan estúpidas.@
+` Me enfurece tanto, que mis emociones están enloqueciendo.\
+`"En fin, seguiremos buscando a ese vampiro, ¿¡de acuerdo!?@ Si podemos derrotar a ese tal Roa, podrás descansar un poco.@ Entonces, todo está resuelto.@ ¡No hay absolutamente ningún problema……!"@
+cl c,%type_crossfade_fst
+` Con ojos terriblemente tranquilos, ella hace un silencioso asentimiento.\
+ld c,":a;image\tachi\ark_t01b.jpg",%type_crossfade_fst
+`"Pero----es demasiado tarde para mí, Shiki.@
+` Dijiste que me contuve antes, pero en realidad no lo hice.@
+` En ese momento, sólo me detuve porque comenzaste a tenerme miedo.@
+` Muchas personas me han tenido miedo, como si fuese un monstruo.@ Así que nunca sentía nada cuando me odiaban o temían.\
+`"…… Pero es extraño, ¿sabes?@ En verdad no quería que me vieras como si fuese un monstruo.@ Pero soy un monstruo sin importar cómo me veas."@
+` Ajaja.@
+` Ella fuerza a salir una risa irónica.@
+cl c,%type_crossfade_fst
+\
+`"…… No----es sólo que sucedió tan rápido, estaba sorprendido----"@
+` …… Eso es mentira.@
+` Una mentira con la que ni siquiera puedo engañarme a mí mismo.@
+br
+` Arcueid aparta la vista dolorosamente.@
+` …… Sensei me lo dijo hace tiempo.@
+` Que sólo lastimarás a la otra persona cuando digas mentiras con las que ni siquiera puedas engañarte a ti mismo.\
+ld c,":a;image\tachi\ark_t10.jpg",%type_crossfade_fst
+`"…… Por eso me detuve por un instante.@ Tenía miedo de que me vieses de esa manera.@ Me destrozaría que me volvieses a ver así en el futuro.@
+` Así que----no te veré más."@
+`"Qué------"@
+ld c,":a;image\tachi\ark_t22.jpg",%type_crossfade_fst
+`"Despidámonos aquí, Shiki.@
+` Probablemente nos asociamos demasiado."@
+` Se da la vuelta rápidamente.@
+` Ella dice esto mientras evita mirar hacia mí.\
+` …… demasiado asociados, ¿eh?@
+` Tal vez es verdad.@
+` Para Arcueid y para mí.@
+` Si nunca hubiésemos sabido mucho el uno del otro, esto nunca habría sucedido.@
+` Yo habría vuelto a mi vida normal, y ella probablemente habría continuado por su cuenta.\
+`"…… Tienes razón.@ Tal vez ya nos hemos asociado demasiado.@
+` Pero, creo que estamos bien así.@ Porque, ¿no es solitario estar siempre sola?"@
+`"----"@
+` Arcueid no responde.@
+` Se ve tan vulnerable.@
+` Quiero abrazarla y apoyarla.\
+`"Y para ser sincero, en verdad disfruté estos últimos días.@ Casi muero, pero no todo fue malo.@
+` …… Así que permíteme ayudarte hasta el final.@ ¿Cómo podría dormir sabiendo que te dejé sola?"\
+`"…… No, no tienes que preocuparte por mí.@
+` Mataré a Roa sin importar qué.@ Lo destruiré aunque me cueste la vida.@ …… Ya has hecho suficiente, Shiki.@ Esta ciudad pronto volverá a la normalidad, no tienes que preocuparte más."@
+` Mientras evita mirarme, su voz no tiene rastro de su alegría habitual.@
+` …… No puedo soportarlo más.@
+` Voy a dejar de actuar de esta manera.\
+`"…… Idiota.@ Eso no es lo que me preocupa."@
+` Diciendo eso, me acerco más a ella.@
+cl c,%type_crossfade_fst
+`"Ah----"@
+` Arcueid intenta escapar.@
+` Tomo su brazo desde atrás y le hago darse la vuelta.@
+ld c,":a;image\tachi\ark_t10.jpg",%type_crossfade_fst
+`"Shi----ki."@
+`"Ya que no entiendes a menos que sea directo, seré directo.@
+` …… Mira, no acordé ayudarte para detener al vampiro de esta ciudad.@ En realidad no tengo ningún buen ideal como proteger a esta ciudad en la que vivo."\
+` Cierto, sólo me estaba engañando a mí mismo.@ La razón no está siquiera cerca de ser tan noble.@
+` Simplemente…\
+`"Simplemente me gustas.@ Acordé ayudarte porque deseaba hacerlo.@
+` Y ahora----simplemente no puedo dejarte."@
+br
+` Lo revelo todo.@
+` Y abrazo a Arcueid inmediatamente.\
+playstop
+bg #000000,%type_crossfade_mid
+bg "image\bg\ima_01.jpg",%type_crossfade_mid
+play "*8"
+`"Oh----"@
+` Su reacción no es de resistencia.@
+` Simplemente permanece ahí asombrada, aceptando mi abrazo.@
+br
+` Palpitar.\
+`"No hay nada malo en que quieras beber mi sangre."@
+br
+` Palpitar.\
+`"…… Shiki, duele----mis brazos, duelen----"@
+br
+` Palpitar.\
+`"Con eso estaremos a mano.@ Porque yo también----"@
+br
+` Palpitar.\
+`"Siempre te he deseado.@ Incluso ahora----la pasión me consume sólo al escuchar tus latidos."@
+br
+` Palpitar.@
+` Desde sus brazos que sostengo, desde su cuerpo contra el mío,
+` puedo sentir el latir de su corazón.\
+`"…… No, Shiki.@ Eso es sólo…… algo momentáneo, es sólo un capricho tuyo…"@
+br
+` Palpitar, Palpitar.@
+` Sólo escuchar este sonido----me hace querer abrazarla hasta la muerte.\
+`"----Aun así, si te amo en este momento Arcueid, ésa es mi verdad.@ No me importa qué suceda después."@
+br
+` Palpi, tar.\
+`"¿O tú----me odias?"@
+br
+` Palpi, tar.@
+` Los latidos dan un salto.\
+`"…… No.@ No puedo responder eso."@
+br
+` Los latidos se detienen.@
+` En su lugar,
+` sus brazos envuelven mi espalda como la lluvia al caer.@
+br
+` Al principio, amablemente.@
+` Luego, con fuerza, como si respondiesen a los míos.@
+` Sus brazos comprimen mi cuerpo en contra del suyo.\
+bg #000000,%type_crossfade_mid
+bg "image\bg\bg_29b.jpg",%type_crossfade_mid
+` Nuestro abrazo duró sólo un instante.@
+` Ni siquiera sé cuál de los dos se separó primero.@
+` Pero como si lo hubiésemos planeado, ambos nos soltamos.\
+ld c,":a;image\tachi\ark_t17.jpg",%type_crossfade_fst
+`"………………"@
+` Ella se sonroja y aparta la vista.@
+`"------"@
+` Falta más o menos una hora para el amanecer.@
+` Al terminar la noche, también lo hace el tiempo de Arcueid.@
+` Pero----no puedo soportar más separarme de ella.@
+` Si puede ser perdonado, en este momento, quiero----\
+`"----Mi apartamento."@
+`"¿Eh?"@
+`"…… Um, ¿podemos ir, a mi apartamento……?@ Si dices que vas a protegerme----no quiero que, te vayas."@
+` Una voz vacilante.@
+br
+` …… Incluso yo puedo entender lo que ella quiere decir.@
+` Asintiendo silenciosamente, camino con Arcueid hacia su apartamento.\
+bg #000000,%type_crossfade_mid
+!w2000
+bg "image\bg\bg_15b.jpg",%type_crossfade_mid
+` Entro antes que ella.@
+` …… Detrás de mí, puedo sentir a Arcueid.@
+` Si me doy la vuelta, sé que mis sentimientos se saldrán de control.@
+` Pero, mi mente está casi sorprendentemente tranquila.@
+br
+` Yo mismo no lo entiendo bien,
+` pero quizás sea el contradictorio impulso de estar loco y a la vez cuerdo que produce el amar a alguien.\
+`"----Arcueid."@
+` Intento darme la vuelta.@
+` Antes de lograrlo----siento que su mano toca ligeramente mi espalda.@
+br
+`"No voltees.@ …… Espera así por un rato."@
+` …… Su voz es extremadamente calma.@
+` La mano sobre mi espalda no se mueve, como asegurándose de algo.\
+`"…… Oye Shiki.@ ¿Recuerdas cuando esperé por ti por primera vez?"@
+`"Sí, lo recuerdo.@ La chica que asesiné estaba esperando con una sonrisa.@ ¿Cómo podría olvidarlo?"@
+`"Sí----en aquel entonces, en verdad te odiaba."@
+` A pesar de sus palabras, su voz es muy dulce.\
+`"…… ¿Arcueid?"@
+`"--Sabía que ya no podría seguir resistiendo mis impulsos vampíricos, y que ésta probablemente sería mi oportunidad, así que perseguí a Roa.@
+` Pensé que finalmente lo había encontrado, y entonces alguien que ni siquiera conocía me asesinó y arruinó todo.@
+` En ese momento, todo lo que podía sentir era odio."\
+`"Y encontré al que me asesinó y esperé en esa calle por tanto tiempo.@
+` Estaba deseando que te apresuraras.@ Apresúrate y ven aquí..@ Una vez que te viera, te haría sufrir el mismo destino.@
+` …… En verdad te odiaba.@ Te odiaba tanto que pensé que mi pecho estallaría de odio mientras esperaba."@
+br
+` La presión sobre mi espalda se incrementa.\
+`"…… ¿Ar…… cueid……?"@
+`"Pero, nunca nadie me había matado de esa manera.@ También me daba un poco de curiosidad saber qué tipo de persona eras.@
+` Y----nunca antes había pensado en alguien con tanta fuerza."\
+`"Al principio, era simplemente odio.@ Pero comenzó a cambiar cuando me pregunté qué tipo de humano eras.@
+` Pronto, quería conocerte para saber de ti.@ El que me asesinó de esa manera, y por primera vez casi dejo de ser yo misma----y continué preguntándome."\
+`"----Shiki, lo que dijiste antes.@ Sobre lo solitario que es estar sin compañía.@
+` Pensaba que eso no era verdad.@
+` Pero----cuando esperé por ti, la persona en que pensé con tanta furia, me sentí feliz.\
+`"Quería conocerte de inmediato, pero resultó grandioso que me contuviese y esperase por ti.@
+` Fue muy divertido.@ Estaba tan emocionada, me imaginaba qué tipo de persona eras."@
+br
+` …… Ella retira su mano de mi espalda.@
+` Yo----\
+`"----Recuerdo que comencé a sentir la necesidad de tener compañía desde ese momento, y me sentí insatisfecha por estar sola.@
+` Dijiste que yo te gusto,
+` …… pero creo que me enamoré de ti antes de siquiera conocernos----"@
+br
+` Su voz es… simplemente… tan adorable.@
+` …… No hay necesidad de vacilar.@
+` Dándome la vuelta, la abrazo.\
+playstop
+bg #000000,%type_lshutter_mid
+bg "image\event\ark_h05.jpg",%type_lshutter_mid
+play "*5"
+`"N……"@
+` Nuestros labios se unen naturalmente.@
+` No sé quién comenzó, tal vez ambos lo hicimos.@
+br
+` Lo hicimos dulcemente.@
+` Nos besamos para sentir la presencia de cada uno un poco más cerca.\
+br
+` ----Hha…… ah.@
+br
+` Conteniendo mi respiración, asimilo todo lo que ella siente.@
+` Sus suaves labios.@ La piel que nunca tocaba nada… está tocándome en este momento.@
+` Sólo pensar en eso hace girar mi cabeza, pero tocarla es tan cálido y relajante.@
+` Su cuerpo está temblando ligeramente.@
+` Pero no parece estar asustada en absoluto.@
+` Sus ojos cerrados, la sombra roja sobre sus mejillas es tan adorable.\
+` …… En verdad no puedo creerlo.@
+` Esta Arcueid es la que amo tanto.@
+` No podía siquiera imaginar que sólo hacer esto me haría sentir más amor por ella----\
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_15b.jpg",%type_crossfade_mid
+` Nos separamos.@
+` Aún sosteniéndonos, nos miramos el uno al otro avergonzados.\
+`"…… Eso fue un… beso… ¿no?"@
+` Ella dice esto con un profundo rubor.@
+` Sus ojos rojos me miran implorantes.@
+` Su cabello dorado ondula frente a mis ojos.@
+br
+`"Arcueid…… ¿no te gustan este tipo de cosas?"@
+`"----No es eso.@ Mi corazón está latiendo rápidamente ahora."@
+` Palpitar.@
+` Ciertamente, su corazón está latiendo escandalosamente.@
+` ¿O----se trata de mis latidos?@
+` Ella me mira directamente a los ojos.\
+`"Pero, esto es preocupante.@ …… Me pregunto, si esto en verdad está bien?"@
+`"¿Qué está bien?"@
+`"Porque, no hay ningún vampiro que bese."@
+` Sonrojándose,
+` ella sonríe avergonzadamente.@
+br
+`"--------"@
+` Ese gesto fue un jaque mate.@
+` Quitándome mis lentes, la abrazo una vez más.\
+bg #000000,%type_lshutter_fst
+bg "image\event\ark_h06.jpg",%type_lshutter_fst
+` ----Una vez más.@
+` No el beso mutuo de antes.@
+` Doy un hambriento y penetrante beso robado.\
+`"Mmph----"@
+` Arcueid inhala una respiración.@
+` No me importa.@
+` Simplemente no puedo contener nada más.@
+` Y la beso profundamente.\
+`"¡N, mm………!"@
+` Arcueid intenta inhalar.@
+` Le robo incluso eso.@
+` Levanto su barbilla y sostengo su cabeza.@
+` Cubriendo sus labios con los míos y entrelazando nuestras lenguas.@
+br
+` Quiero que seamos uno solo.\
+`"Ha---ah, n----"@
+br
+` Presionándome contra la boca de Arcueid mientras ella intenta escapar, deslizo mi lengua mas allá de sus labios.@
+` Mi lengua se hunde fácilmente dentro de su boca.@
+` Los sonidos que hacemos, las sensaciones de nuestras lenguas tocándose, me permiten fácilmente imaginarme cómo lucimos.\
+` Cuando su lengua intenta retroceder, envuelvo la mía alrededor de ésta.@
+br
+` Envolviendo, entrelazando, succionando.@
+br
+` La sensación en la punta de mi lengua casi hace cosquillas.@
+` Pero la succión en la base de mi lengua se siente como un cero absoluto.\
+`"N…… ah, n……"@
+` Incapaces de respirar, nuestras gargantas aún intentan tragar.@
+` Su blanca garganta se mueve dolorosamente, gritando por oxígeno.@
+` Al mismo tiempo----su boca succiona mi lengua, y nuestras lenguas se mezclan aun más profundamente.@
+br
+` Moviendo mi lengua, atraigo más su labio.\
+` Nuestra respiración,
+` nuestra exploración,
+br
+` …… todo dentro de nuestras bocas.@
+` Los sonidos de nuestra unión llenan el aire.\
+` No hay final.@
+` El placer de esto es suficiente para hacerme desmayar.@
+` ¿Será porque nuestras bocas y lenguas están tan cerca de nuestros cerebros?@
+` Unirnos de esta manera hace que mi mente quede en blanco más que nada que haya sentido antes.@
+` El placer enciende una mecha en mi cerebro, amenazando con abrumarme.\
+`"¡Ah…… n, mm………!"@
+` Nuestra interrumpida respiración.@
+` En algún punto, su boca--que estaba buscando oxígeno--comenzó a enredar su lengua con la mía.@
+` Al entrelazarse nuestras lenguas, entran en mi boca.\
+`"Ha…… ah."@
+` Me doy cuenta de que ésa era mi propia voz.@
+` No puedo creerlo.@
+` La lengua de otra persona----la lengua de otra persona está entrando en mi boca.@
+br
+` Esta sensación.@ Esta leve sensación de incomodidad, de algo extraño en mi boca.@ Y por encima de eso, este abrumador placer que se siente como si pudiese matarme------\
+`"¡Ha…… mm, mm, mha……!"@
+` Intentamos respirar mientras nuestras lenguas se complacen la una a la otra.@ "hwa…… ah, mm------"@
+` No tenía idea de que una lengua podía generar semejante sensación simplemente al tocar otra lengua.@
+br
+` Sólo estar en contacto nos deja sin aliento.@
+` Inhalando, mordisqueando.@
+` Sólo eso me hace enloquecer--me hace incapaz de pensar en algo aparte de ella.\
+`"Mm----"@
+` Cerrando sus ojos como resistiendo algo, Arcueid responde.@
+` Es completamente diferente a nuestro dulce beso de antes.@
+` Sólo hay un hombre y una mujer aquí ahora.@
+` Nuestras bocas ya están mojadas.@
+` Saliva comienza a derramarse de nuestros labios.@
+` De los míos a los suyos, de los suyos a los míos.@
+` Pero----no es algo sucio, y como el más poderoso afrodisíaco del mundo, hace que todo pensamiento se desmorone.\
+` Y así…
+` No sólo mi lengua, sino queriendo que todo se una, me separo de la boca de Arcueid.\
+bg "image\bg\bg_15b.jpg",%type_crossfade_mid
+` Jadeo por aire.@
+` Me duele el pecho.@
+` No sé cuánto tiempo estuvimos de esa manera.@
+` Ni siquiera puedo respirar correctamente.@
+` Pero, aun más que eso, quiero tocar su cuerpo y sentirla contra mí..\
+`"…… ¿Shiki?"@
+` Preocupada, Arcueid mira mi rostro.@
+` Su sonrojada expresión vacilante.\
+`"Ar…… cueid……"@
+` No puedo parar.@
+` La sostengo firmemente.@
+`"Yo----quiero dormir contigo… yo te deseo----"@
+`"…………"@
+` Al principio, ella no da respuesta.@
+` Entonces, con su cabeza hacia abajo,
+` su rostro entero se enrojece mientras asiente.\
+!w2000
+` Tan naturalmente como si se estuviese quitando un sombrero, Arcueid se quita la ropa.@
+` Sin embargo, es más lo que gana que lo que pierde, una visión lo bastante hermosa como para dejarme sin aliento.@
+` Sus ropas blancas desaparecen sin hacer sonido alguno.@ El sostén cubriendo sus hermosos senos, y la ropa interior ocultando su femineidad, desaparecen como agua fluyendo.\
+` …… Ver la figura desnuda de Arcueid hace que mi alborotada mente se detenga por completo.@
+` No es que me tranquilicé,
+` sino que ella es tan hermosa----que olvidé cómo pensar, o enloquecer.@
+`"----"@
+` No puedo hablar.@
+` Ella se sienta tímidamente sobre la cama.\
+`"¿Shiki……?"@
+` Su mirada me pregunta qué sucede.@
+`"Uh----nada----"@
+` …… Su blanca piel está teñida por un débil color rojo.@
+` Ese tono encantador hace que todo pensamiento racional se desvanezca.\
+`"Um…… Shiki, acaso no soy----"@
+`"No es eso.@ Eres tan hermosa, estaba simplemente… fascinado."@
+`"S…… sí."@
+` Ella aparta sus ojos tímidamente, y revela su cuerpo desnudo.@
+` Usar ambas manos para cubrir la parte baja de su cuerpo hace que sus senos se acentúen.@
+`"----En verdad eres hermosa.@ Tus senos son simplemente tan perfectos."@
+` Diciendo eso, me extiendo y los rozo con mis dedos.\
+bg "image\event\ark_h07.jpg",%type_lshutter_mid
+`"----Ah."@
+` Arcueid tiembla.@
+`"Shiki, espera----"@
+`"¿Qué?@ ¿Por qué?@ Ya he decidido hacerte el amor… esto es sólo el comienzo."@
+`"S, sí----lo sé, pero…"@
+` Tal vez aún está avergonzada.@ Me mira nerviosamente.\
+`"…… No hay  nada de que avergonzarte.@ Tus senos son perfectos, y tienes un cuerpo fantástico."@
+`"¿¡Ah----!?"@
+` El cuerpo de Arcueid se sacude.@
+` Seguramente porque apreté mis dedos.\
+` Inclinándome, mordisqueo la punta de su seno derecho.@
+` Masajeo los sensuales montículos, la carne se siente como fruta madura en mis manos.@
+`"Ah----"@
+` Ella se sonroja aun más.@
+` No debe estar acostumbrada a esta sensación, ya que mira los dedos acariciando sus senos con asombro.\
+`"…… En verdad son grandes.@ Nunca pude saberlo por tus ropas, pero que tengas un cuerpo tan obsceno como éste…"@
+`"----Mmph."@
+` Arcueid no responde.@
+` Sólo suelta unos cortos jadeos mientras lentamente continúo masajeando sus senos.\
+` Mm, ah, ahn----
+br
+` Su respiración casi suena rítmica.\
+`"Mm…… Shiki, espera----"@
+` No le presto ninguna atención.@
+` Al principio, muy ligeramente.@
+` Y entonces, poco a poco.@
+` Casi lo suficiente como para que ella no se percate, gradualmente fortalezco mi agarre.\
+` Sin tocar sus pezones, porque ella probablemente intentará escapar si lo hago demasiado rápido.\
+` Así que por ahora, sólo lentamente.@
+` Para que cuando se percate, ya sea demasiado tarde.@
+` Continúo acariciando sus perfectamente formados senos.\
+`"Ah…… mm, mm----"@
+` Su respiración se hace más pesada.@
+` Finjiendo que no lo noto, la froto aun más.@
+` …… Pretendía permanecer tranquilo, pero sólo hacer esto me excita.\
+`"Mm----, Shiki, me siento----"@
+` Su voz se hace más cálida.@
+` Tiembla con impaciencia.\
+`"Ah…… ah, me----siento… caliente… por todos lados."@
+` Las palabras de Arcueid son interrumpidas por suaves jadeos sensuales.\
+`"DEBES estar caliente, ya que estás sudando de esa manera.@ ¿Calentarte toda después de sólo un pequeño masaje?@ En verdad debes desear esto, Arcueid."@
+`"¡Pero Shiki, es… porque… tú… sigues… haciendo… eso---!"@
+` La aprieto con más fuerza.@
+` Su rostro se pone rígido, como si tuviese miedo.\
+`"Ha----ha, yo no puedo hablar mucho.@ Sólo hacer esto----me está haciendo enloquecer, Arcueid."@
+` Respirando profundamente, la masajeo con más fuerza.\
+`"Ah…… ahn."@
+` Su dulce voz.@
+` Es natural que se caliente al ser tocada.@
+` Pero… ¿qué es esto?@
+` Solamente estoy tocando sus senos,
+` pero la sensación de su pecho sobresaliendo entre mis dedos está carcomiendo mi mente.\
+` ----Hay algo extraño respecto a su cuerpo.@
+br
+` Sólo tocarlo de esta manera…
+` Parece enviar placer rebotando hacia mí con magnitud siempre en aumento.\
+` Mi respiración se hace más pesada.@
+` Antes de darme cuenta,
+` Icomienzo a respirar salvajemente, intoxicado por su cuerpo.\
+` Arcueid está lo suficientemente caliente.@
+` Sus rosados pezones están alzados y rígidos.@
+` Ella jadea rápidamente.@
+` Llevo mi boca hacia uno de ellos.@
+`"Ah----"@
+` Arcueid aparta la vista avergonzada.@
+` Ignorando esto, saco mi lengua.\
+` Doy al endurecido pico una lamida tentativa.@
+`"Mm, kk……"@
+` Puedo escuchar la voz de Arcueid.@
+` Su pezón está tan duro que apenas lo muevo con mi lengua.\
+`"Ha----gh."@
+` Por alguna razón, me duele la cabeza.@
+` Las intensas sensaciones lo están causando.@
+` Pero ignorando todo eso, lamo su pezón… y lentamente lo meto en mi boca.@
+`"----¡Mm, ah----!"@
+` Sus senos se hinchan hacia arriba.@
+` Después de chuparlos esmeradamente por algún tiempo, dejo que mi boca se deslice más abajo.\
+`"A----Shi--"@
+` Un delgado rastro de saliva recorre la longitud de su blanco cuerpo.\
+`"--ki……"@
+` Los sonidos viniendo de su garganta ya no parecen palabras.@
+` Mi lengua juguetea a lo largo de su cuerpo mientras mis dedos continúan su masaje.@
+` Su cuerpo se estremece al ritmo de su respiración.@
+`"Esp………… era----"@
+` Me percato de un olor diferente… algo aparte de su sudor o su piel.@
+` Es un cálido aroma ligero.@
+` El área cubierta por sus manos ya está húmeda.@
+` Sus delgados dedos están cubiertos de jugos pegajosos.\
+`"…… ¿Qué es esto?@ …… ya sientes tanto con sólo tocar tus senos…… eres más…… sensitiva… de lo que pensaba, Ar…… cueid."@
+` …… Pero nuevamente, yo no puedo hablar mucho.@
+` Ni siquiera puedo hablar correctamente.\
+`"Shi… ki----yo… tengo una… petición."@
+`"¿----?@ ¿Qué?@ ¿Una petición?"@
+`"No quiero…… que seas rudo…… como aquella vez."@
+br
+` …… Esa vez.@
+` Cuando empujé hacia abajo a Arcueid en el callejón.@
+` ¿Por qué tiene que mencionar eso ahora?@ Aun si no me lo decía, yo no actuaría de esa manera de todas formas.\
+`"…… ¿Por qué?@ ¿No te gusta con rudeza?"@
+`"Bueno…… um…… ésta es mi primera vez, así que…"@
+` Ella se sonroja e intenta contener su difícil respiración.@
+` Suena tan increíblemente linda.\
+`"------¿Eh?"@
+`"…… En serio, todavía estoy muy asustada…… por eso, Shiki…… sólo por ahora…… por favor sé amable----"@
+br
+` --------Eso lo logró.@
+br
+` Fué la gota que derramó el vaso.\
+`"¿Por qué tú----"@
+` Aprieto sus senos.@
+` Todo pensamiento, toda razón, todo conocimiento desaparece.@ Incluso mi respiración se detiene.\
+`"¿Shiki--?@ ¿Qué pasa?@ Estás actuando extraño…… tu cara da miedo----es…… extraño……"@
+` Sí, claro que estoy actuando extraño.@
+` Porque no puedo pensar con claridad.@
+` Pero ella me puso de esta manera.\
+`"¡Au………!"@
+` La empujo hacia la cama.@
+`"¡Shiki, au----!@ No estoy----"@
+`"¡Cállate!"@
+` Me coloco encima de ella.\
+bg #000000,%type_lshutter_mid
+` Cubro sus labios con los míos.@
+br
+` …… Mi corazón late vigorosamente.\
+` Mi totalmente erecta asta aterriza justo sobre su hendidura.@
+` Como una vulgar espada, perfora dentro de ella.@
+`"¡Ah………!"@
+` La desesperante mezcla de timidez y anticipación sobre su rostro desaparece.@
+`"----¡No……!@ No estoy----"@
+` Aún no estás lista, ¿cierto?@
+` Incluso yo sé eso.@
+` Pero… no puedo evitarlo.@
+` Tohno Shiki ha enloquecido por sus palabras.\
+` Jadeos llenan el aire.@
+` Mi respiración se sale de control.@
+` ¡En serio!@
+` ¿Por qué tú----
+`"----¡Siempre… dices cosas que me hacen enloquecer, Arcueid----!"@
+br
+` No queda nada más ahora.@
+` Brutalmente penetro dentro de ella.\
+bg "image\event\ark_h08.jpg",%type_crossfade_mid
+`"¡Ah………!"@
+` Su cuerpo se pone rígido.@
+` Ella comienza a temblar.@
+` *jadeo* *jadeo* *jadeo*@
+` Sin prestar ninguna atención, continúo empujando dentro de ella.@
+br
+br
+` Ya está lo suficientemente mojada para aceptarme suavemente.@
+` Sin embargo, eso fue sólo al principio.\
+` Está muy estrecha.@
+` Aun si ambos estamos mojados,
+` Sólo mi punta entra suavemente, y el resto no entrará a menos que lo fuerce.\
+`"¡Duele-----Shiki, duele mucho----!"@
+` Su voz es casi un grito.@
+`"----Tienes que soportarlo.@ Si hablas, podrías morder tu lengua."@
+` Empujando su contorsionado cuerpo, continúo adentrándome en ella.\
+`"¡N----ah, aaahaaaa……………!"@
+` Su voz está llena de dolor.@
+`"Haa----ah."@
+` Mi voz por otro lado, es diferente.@
+` Sólo tengo mi punta dentro de ella.@
+` Pero aún así, esta estrechez es algo fuera de este mundo.@
+` Tal vez sea porque no le di mucho calentamiento previo, pero no está muy mojada adentro.@
+` Sólo puedo sentir calientes paredes de piel rodeándome.\
+`"¡Gghh……!"@
+` Es, un poco , extraño.@
+` ¿Están dañados mis nervios, o es estar dentro de ella simplemente tan bueno?@
+` Sólo al tenerla envuelta a mi alrededor, siento que estoy siendo secado.@
+` Sólo lo he tenido adentro por unos segundos, y sólo la punta, pero el placer es lo bastante intenso como para que eyacule una y otra vez.\
+`"¡Gh-----ah………………!"@
+` Me contengo desesperadamente mordiendo mi lengua.@
+` Mis brazos se mueven por sí solos para acariciar sus senos, los costados de su cuerpos, su cuello.\
+` Su figura de marfíl.@
+` Se siente cálida cuando la toco, pero es tan suave que se siente como si fuese a derretirse si presiono con demasiada fuerza.@
+` Simplemente tocar.@
+` Sólo tocar hace que mi mente se quede en blanco.\
+`"¡¡Ar----cueid…………!!"@
+` En contraste con su dolor, mi mente ha quedado completamente vacía.@
+` Si voy más profundamente,
+` si la toco más, siento que entraré en un mundo de placer tan intenso del que nunca regresaré.\
+`"¡Gha-----!"@
+` Esto es malo.@
+` Tengo suficiente razón, al menos, para saber que esto es malo.@
+` Así que uso mis caderas e intento sacarlo.@
+`"¡Mm-----!"@
+` Pero el simple movimiento de sacarlo es demasiado.@
+` Sólo hacer eso me da un placer fuera de este mundo,
+` y Arcueid casi grita de dolor.\
+`"¡Shi…… ki----!"@
+` Arcueid dice mi nombre.@
+` Mirando abajo----sus manos sujetan las sábanas fuertemente como intentando resistir el dolor.\
+`"…… Arcueid, tú----"@
+` …… ella lo está soportando.@
+` Intentando soportarme mientras complazco mi egoísmo, y soportando el dolor de su primera vez.@
+` Soportándolo todo, ella intenta permitirme mi deseo.@
+`"------"@
+` ¿Por qué estoy dudando ahora?@
+` Ella me gusta----yo la amo, así que la deseo.@
+` Entonces----sin importar qué suceda, ¿no quiero simplemente ser uno con ella----?\
+`"…… Arcueid.@ Sé que duele pero, ¿puedes soportarlo……?"@
+`"------"@
+` Ella hace un leve asentimiento.@
+`"Entonces aquí voy.@ Si duele, sólo dilo…… eso debería facilitar un poco las cosas para ti."@
+` Bajo mi cuerpo nuevamente.@
+` Todo lo que queda es enterrarme en sus profundidades.\
+bg "image\event\ark_h10.jpg",%type_lshutter_mid
+`"----¡Mgh!"@
+` La cama rechina.@
+` Su cuerpo se dobla como un arco.@
+` Mi inchada y endurecida asta penetra.@
+` Hay una sensación de algo rompiéndose como papel.@
+` El rostro de Arcueid se sonroja de vergüenza, y lágrimas se reunen en sus ojos por el dolor.\
+`"¡¡¡¡¡¡Ha----A………!!!!!!"@
+` Qué dolor.@
+` Mientras más profundo voy, más se despedeza mi consciencia.@
+` Este placer.@ Sobrepasando al dolor hay ondas de placer, estrellándose dentro de mi cerebro.@
+` Fuego recorre mi médula espinal y me asalta.\
+`"Ha----, gh."@
+` No hay clemencia dentro de ella.@
+` Su carne se envuelve a mi alrededor.@ Abrazando, masajeando, presionando, acariciando, comprimiendo.@
+` Los nervios en mi asta son apretujados como si fuesen sostenidos por un puño.\
+`"Kh---ah, ah--"@
+` Pero sigo yendo más lejos.@
+` Estas ondas de placer amenazan con hacerme desmayar.@
+` Aunque les temo, también quiero más.\
+`"¡Mmph----ah, nn……!"@
+` Arcueid arroja su cabeza hacia atrás, exponiendo su blanco cuello.@
+` Su cuerpo se arquea de dolor.@
+` Hacer eso sólo sirve para que ella se estreche más a mi alrededor, haciéndome enloquecer.\
+`"¡Au----Shiki, ahí… duele………!"@
+`"----¡Está bien----ya casi llegamos……!"@
+` Empujo mis caderas una vez más.@
+` Deslizando.@
+` Los sonidos de carne contra carne.@
+` Derramando.@
+` Los sonidos de nuestros fluídos mezclándose.@
+` Al moverme atrás y adelante, un líquido traslúcido se filtra de ella.\
+`"¡Ah, ah, nn……!"@
+` Aún hay dolor en su voz.@
+` Pero, por otro lado…
+` su cuerpo, que estaba tratando de escapar, está comenzando a responder.@
+` Eso significa,
+` que está comenzando a sentir placer.\
+`"¡----!"@
+` Uso mis caderas un poco más.@
+br
+`"¡Shi…… ki--!"@
+` Su cuerpo salta.@
+` Sus senos tiemblan.@
+` Sus bien formadas cejas se retuercen de angustia.@
+` Su pasaje se hace más estrecho.@
+` No hay final para el interior de Arcueid,
+` y el placer continúa atacándome.\
+bg "image\event\ark_h09.jpg",%type_crossfade_fst
+`"¡Ah--ha, nn, nha………!"@
+` Arcueid gime.@
+` Yo continúo penetrando.@
+` Su dolor, mi dolor, nuestras caderas, todos se mueven juntos como si fuesen uno.\
+`"¡Eso--tan profundo, eso… due… le!"@
+` Ni siquiera puedo responder.@
+` Ahora, el dolor sigue siendo mayor que el placer para ella.@
+` ISi no puedo contenerme hasta que eso se revierta, no tendría sentido.\
+`"¡Ah, mm----Shiki--más… duro--!"@
+` Ella me ruega mientras sus lágrimas comienzan a fluir.@
+` Aún siente dolor, pero no puede pensar en él.@
+` Ella ya no está retrasándome más..\
+`"------Aquí… voy----"@
+` Reuniendo toda mi fuerza, comienzo a penetrar.@
+` Una y otra vez.@
+` Mientras pueda concentrarme, hasta que ella pierda todo pensamiento racional, continuaré.\
+`"¡Nn, huaa, ah, ah------!"@
+` Su respiración iguala el temblar de su cuerpo.@
+` Su caliente piel.@
+` Su rostro teñido de placer y dolor.@
+` Sólo tocarlos me roba la racionalidad.\
+`"¡Shi, ki----Shiki, Shiki…………!"@
+` Ella dice mi nombre como si no recordase nada más.@
+` En respuesta, penetro más profundamente.\
+`"¡Mm……!@ ¡Estoy bien, por favor----ve más profundo……!"@
+`"----¡Ggh………!"@
+` Siento que me derrito dentro de ella.@
+` Ya no es cuestión de simplemente liberar semen dentro de ella.@
+` Es como si mi cuerpo entero, mi mente entera, estuviese tratando de liberarse placenteramente.@
+` Contenerme todo este tiempo podría ser lo que es conocido como un milagro.\
+` Pero, estoy casi en mi límite.@
+` El placer se intensifica sin fin.@ Al disminuir el dolor en Arcueid, el placer se incrementa.@
+`"¡Ha---gh----!"@
+` Aprieto mi estómago.@
+` Un fuego ardiente comienza a acumularse dentro de mí.@
+` Eso fue todo.\
+` Usando toda mi fuerza, me zambullo en ella una última vez.@
+`"¡Oh……!"@
+` Arcueid se arquea en respuesta.@
+`"---¡¡Nn, Aahaaaa----!!"@
+br
+` Sale a chorros.@
+br
+` Comienzo a liberarlo todo.\
+` Chorros, y chorros.@
+br
+`"N---, ah, haa, ahn----"@
+` Arcueid respira fuertemente.@
+` Después de esperar tanto, sólo uno o dos chorros no lo terminarán.\
+` Chorros, y chorros.@
+` Mi ardiente magma llena su interior.@
+` Después de lo que pareció una eternidad,
+` Arcueid cae sobre la cama, completamente exhausta.\
+bg #ffffff,%type_crossfade_slw
+!w750
+bg "image\bg\bg_15b.jpg",%type_lshutter_slw
+` Sólo el sonido de nuestra respiración hace eco a través de la habitación iluminada por la luna.@
+` El cuerpo reluciente de Arcueid descansa junto al mío, una delgada línea de sangre sobre su muslo.\
+` Descansamos ahí, jadeando.@
+` El resultado de su primera vez.@
+` En verdad debe estar exhausta.\
+` Intento recobrar el aliento.@
+` Pero, para mí,
+` aun después de eyacular tanto, y forzarme mas allá del límite, aún no es suficiente.@
+` El éxtasis fue más que suficiente.@
+` Pero mi mente está deseando abrazarla aun más.@
+` Aunque normalmente ya estaría flácida, mi asta está totalmente erecta y diciéndome que las cosas apenas están comenzando.\
+`"Ha------ah."@
+` Arcueid debe estar en su límite.@
+` Ir sin parar de esa manera en su primera vez.@
+` Apuesto que no puede siquiera moverse después de todo ese dolor y movimiento.\
+` Su espalda desprotegida.@
+` Completamente perfecta.@
+` Las dulces curvas de sus caderas.@
+` Sus delicados senos,
+` y su hendidura, aún hinchada con mis fluídos.@
+` ……………
+` El vello sobre mi cuello se levanta.@
+` Esto no es bueno----esto no es suficiente, en absoluto.\
+`"……… ¿Shiki?"@
+` Arcueid pregunta inquisitivamente.@
+`"Arcueid----"@
+` Digo su nombre y envuelvo sus caderas con mis manos desde atrás.\
+`"¿¡Hyaa----!?"@
+` Ella suelta un grito increíblemente lindo.@
+`"¿¡O-oye, Shiki----!?"@
+` Ella voltea y me mira sorprendida\
+`"Ah----"@
+` Se sonroja después de mirar hacia abajo.@
+` Claro que ella pensó que ya tuve suficiente.@
+` Pero después de ver mi totalmente erecta asta, sus ojos parpadean sorprendidos.\
+`"Shiki……… eres… muy vigoroso."@
+`"…… Yo mismo estoy sorprendido.@ Normalmente, estaría acabado para este momento----pero mi cuerpo aún parece desearte."@
+` Así que no quiero que esto termine ahora.@
+` Diciendo eso con mis ojos, coloco mi rostro entre sus piernas.\
+`"¡Shi… Shiki……!"@
+`"…… Si nos detenemos ahora, ¿no sería un desperdicio?@ Finalmente comenzaste a acostumbrarte a todo esto, esta vez es tu turno de sentir nada más que placer."@
+`"¿¡Eh---eeh!?"@
+` Ignoro su preocupada voz.@
+` Con un rápido movimiento de mi lengua,
+` comienzo a lamer sus rojos e inflamados labios.\
+`"Detente, ¿qué estás haciendo Shiki……!"@
+`"¿Qué estoy haciendo?@ Sólo preparándome para la próxima vez.@ Tenemos que limpiarte."@
+`"Ah-----s, sí…… pero eso, ¿no es… sucio?"@
+` Ella se sonroja aún más mientras habla.@
+` Su rostro está lleno de vergüenza y placer.@
+br
+` ----Eso es… increíblemente lindo.\
+`"…… Renuncio.@ No puedo seguir así de lento."@
+` Apartando mi boca, coloco mis manos sobre su bien formado trasero.@
+`"¿Eh?@ Shiki, ¿¡qué……!?"@
+`"------"@
+` No me molesto en reponder.@
+` Poniendo mis manos sobre sus caderas, me presiono contra ella desde atrás.\
+`"E, espera Shiki.@ Ya… estoy----"@
+`"¿En tu límite?@
+` Pero he estado----dentro de ti por tanto tiempo."@
+` Tomo mi totalmente erecta asta y la deslizo dentro de ella desde atrás.@
+`"¡Mm----!"@
+` Ella mira hacia arriba sobresaltada.@
+` Cae sobre sus codos como resistiendo mi ataque trasero.\
+bg #000000,%type_crossfade_fst
+bg "image\event\ark_h11.jpg",%type_crossfade_fst
+`"¡Ah---m, mm……!"@
+` Ya no hay ni una sombra de dolor en su voz.@
+` Me deslizo dentro de ella.@
+` Se siente completamente diferente a la primera vez.\
+` Nuestros fluídos de antes contribuyen a una suave entrada.@
+` Pero no hay diferencia en el placer que siento.@ No, es aun mejor esta vez.@
+` Inexorablemente, sus paredes se estrechan a mi alrededor, no permitiendo siquiera un milímetro de espacio libre.@
+` Aunque ella está caliente como un horno, no hay ningún dolor.\
+`"No---detente, no desde atrás--"@
+` Antes de que pueda terminar de hablar, penetro aun más profundamente.@
+`"¡¡NaAaa----!!"@
+` Sus reacciones son muy inocentes.@
+` Simplemente al empujarla, ella devuelve el doble de la sensación de mi movimiento.\
+`"…… Ni siquiera has acabado aún, ¿cierto?@ No es justo si sólo yo lo hago, así que simplemente acéptalo."@
+`"Aceptarlo----si tú lo dices, no me importa, pero……"@
+`"¿Pero qué?"@
+`"…… Entonces, um, lo deseo……"@
+` …… lcomo antes, ella va perdiendo fuerza débilmente.\
+` …… Su gesto es demasiado lindo.@
+` Una y otra vez,
+` parece ser capaz de hacerme enloquecer por ella.\
+`"------"@
+` Penetro más profundamente.@
+`"¡Mmm…………!"@
+` Su espalda se retuerce y se dobla como una serpiente.@
+` Parece que no siente mucho dolor cuando lo meto desde atrás.@
+` ¿Es sólo su habilidad curativa, o también tiene alguna habilidad sobrenatural de adaptación?@
+` Lo único que está sintiendo ahora es vergüenza por ser tomada desde atrás, y el placer del propio acto.\
+`"----¡Aquí voy……!"@
+` Penetro profundamente dentro de ella.@
+`"¡Ah----mm, mm………!"@
+` Ella eleva su voz mientras me muevo.@
+` Sus una vez calmadas respiración y temperatura corporal se disparan en ascenso nuevamente.\
+`"¡¡Ah----mm, mm, mm………!!"@
+` Respira más rápidamente, como forzándome a apresurarme.@
+` Reacciona mucho más que antes y su pasaje está rebosante de jugos.\
+`"Ah…… Shi…… ki……… tan… caliente……"@
+` Su palabras son cortadas por jadeos.@
+` Su voz deseándome.@
+` La voz que deseo.@
+`"¡Ar…… cueid……!"@
+` Grito su nombre de la misma manera.@
+` Al mismo tiempo----ella se estrecha a mi alrededor.\
+`"¡T----tú………!"@
+` Golpeo dentro de ella tan duro como puedo.@
+`"¡¡¡¡Ah…………!!!!"@
+` Su cuerpo se retuerce en respuesta.@
+`"¡¡Haa…… sí, Shiki, ahí, más……!!"@
+`"Haa----haa, ah……!"@
+` La complazco, bombeando su túnel casi despiadadamente.@
+` …… Tan caliente.@
+` Quiero sentir tanto su caliente piel que enloquezco.\
+` ----No puedo parar.@
+br
+`"¡Nn---ah, huaa, ah……!"@
+` Su voz se llena más de pasión.@
+br
+` ----Como provocado por ella,
+br
+`"Nn---haa, ah, nn……"@
+` me hago aun más salvaje.@
+br
+` Esto,
+br
+`"¡Nn, nn, aha, aah, ah……!"@
+` podría ser la cosa más destructiva que haya hecho jamás.\
+`"¡¡Ah, nn----nn, ah………!!@ ¡¡¡¡Shiki, yo, te, deseo---más, Shi… ki……!!!!"@
+` Estimulado por su voz, continúo reclamando su posesión.@
+` Me entierro en sus profundidades.@
+` La envuelvo con mis manos,
+` y saboreo el sudor cubriendo su espalda.\
+`"¡Ah----!"@
+` La amo.@
+` Aun en medio de esta pasión bestial----la amo tanto.@
+br
+` No entiendo.@
+` No puedo entenderlo, así que simplemente continuó amándola.\
+bg #000000,%type_crossfade_fst
+` Mi limitación ya no existe en este momento.@
+` No puedo contenerme esta vez.@
+` Mientras penetro dentro de ella, caliente pasión viaja a través de mi asta.\
+bg "image\event\ark_h12.jpg",%type_crossfade_fst
+`"¡Gh……!"@
+` Pero, continuaré hasta que no pueda moverme.@
+` Quiero satisfacerla completamente, así que penetro una y otra vez, cambiando la posición en la que estoy.\
+`"Mm----Shiki----te estás moviendo dentro de mí----"@
+` Mientras respira salvajemente, mueve sus dedos hacia su hendidura.@
+` Como para ayudarme a entrar más fácilmente, ella separa sus labios.\
+`"¡Ah----ha, nn----!"@
+` Tal vez el dolor o el placer es demasiado.@ Ella comienza a frotarse mientras lágrimas ruedan por sus mejillas.@
+`"¡Hua…… ah, aaa, mm, aah……!"@
+` Sus dedos se están mojando.\
+` Con mi semen y sus jugos, sus dedos resplandecen y rebosan.\
+`"Arcueid----ahí no… toca aquí."@
+` La guío mientras sigo penetrando.@
+`"Mm…… ¿justo aquí……?@
+` Su dedos se mueven con vacilación hacia la parte más sensible de su cuerpo.\
+`"¿¡Eh------ah!?"@
+` Su espalda se arquea hacia arriba.@
+` Tocar su abultado clítoris hace que jadee sobresaltada.@
+` Ella respira aun más salvajemente después de tocar ese sensitivo lugar.\
+`"¡Ah-----no puedo, creerlo------!"@
+` Ella levanta su cabeza mientras continúa frotándose.@
+` Mientras sigo penetrando dentro de ella,
+` continúa acariciándose en el exterior.@
+` Su piel se tiñe de rosa por todo el placer que está sintiendo.@
+`"¡Mm, ah----Shiki… es… tan bueno----!"@
+` Su cuerpo salta arriba y abajo.@
+`"----, ¡Toma, eso……!"@
+` Mientras ella salta, mi mente se queda en blanco.@
+` Como si estuviese completamente conectado con Arcueid,
+` hsu placer parece canalizarse hacia mí.\
+`"¡Mm, naa, ha…… ah, mm……!"@
+` Se pone más caliente mientras su cuerpo se hace más salvaje.@
+` Su cuerpo resplandece por el sudor.@
+`"Ah, ha----Shiki----más……"@
+` Este calor dentro de ella es como un bosque tropical.@
+`"¡Adentro…… acaba dentro de mí--!"\
+`"¡Gah----!"@
+` Estoy totalmente encantado.@
+` A este paso moriré.@
+` Se siente tan bien dentro de ella, parece que sería lo mejor del mundo morir por el placer.\
+` El ritmo de mi respiración es como un tren de carga.@
+` Penetro de nuevo.@
+` Si no hay final para su clímax, tendré que finalizarlo yo mismo.@
+`"¡Ar…… cueid……!"@
+` ----Penetro dentro de ella.@
+` Mi mente se ha entumecido hace mucho tiempo.\
+`"¡Shi……… ki----!"@
+` Todo lo que es capaz de decir son esas dos sílabas.\
+` Como yo, que estoy en el límite de mi consciencia,
+` ella parece estar al borde del éxtasis también.\
+` ¡¡¡Deslizo.@ Desliiiizo.@ Desliiiiiiiizo……!!!@
+`"¡Ha----mm, AaAAaaa----!"@
+` Continúo penetrando con más fuerza, sin importar cuánto ella grite.@
+` Tan fuerte que podría romperla.\
+`"HA, ha, ha, haa………"@
+` Continúo empujando dentro de ella.\
+bg #ffffff,%type_crossfade_mid
+bg "image\event\ark_h13.jpg",%type_crossfade_mid
+`"¡Ah----Huaa, ah----Shi… ki----!"@
+` Su tembloroso cuerpo,
+` Sus brazos apretados a mi alrededor.\
+`"Yo… voy a----"@
+` Ella grita de forma implorante, sus ojos humedecidos por lágrimas no derramadas.@
+` Yo continúo.@
+br
+` Ella se estrecha.@
+` Su cuerpo se estira en un arco.\
+` Como ella,
+` estoy cerca del final también.@
+` Realmente siento lo último de mi pasión acumulándose dentro de mí.\
+`"¡----!"@
+`"¡Shi----ki------!"@
+` Con un último empuje, penetro profundamente dentro de ella.@
+` Mi semen se dispara a través de mi asta dura como el hierro.\
+bg #ffffff,%type_crossfade_fst
+bg "image\event\ark_h13.jpg",%type_crossfade_fst
+`"¡Nm, kk…………!"@
+br
+` ----Palpitar.@
+br
+`"¡Ah----a……………!"@
+br
+` Arcueid deja de respirar.@
+` La sensación de calor fluyendo fuera de mí.@
+br
+`"Ah----Shi… ki------"@
+br
+` Recibiéndolo todo, ella me envuelve fuertemente con sus brazos----\
+bg #ffffff,%type_crossfade_mid
+!w2000
+bg "image\bg\bg_15b.jpg",%type_crossfade_mid
+`"Ha----ah------"@
+` Su cuerpo se desploma.@
+` Ella recibe mi semen mientra descansa ahí, agitada y débil.@
+` Fascinada por el éxtasis, se hunde en la cama.\
+` …… Sus ojos están cerrados.@
+` Con lágrimas aún recorriendo su totalmente satisfecho rostro, se queda dormida.\
+bg #000000,%type_crossfade_mid
+playstop
+bg "image\bg\bg_15b.jpg",%type_crossfade_mid
+`"……… Estoy…… agotado……"@
+` Bajo la mirada hacia ella mientras respiro con fuerza.@
+` Está respirando tranquilamente mientras duerme.\
+`"……… Nn."@
+` Comienzo a sentirme un poco avergonzado al recordar.@
+` No siento ningún arrepentimiento por tener sexo con ella.@
+` Bueno, tal vez sólo un poco.@
+` Quería actuar con un poco más de calma, para poder disfrutar más la sensación de su piel y la visión de sus avergonzadas expresiones.\
+`"…… Supongo que todavía no puedo.@ Estoy haciendo mi mejor esfuerzo para seguir su ritmo."@
+` …… En realidad, no estoy seguro de que llegará un día en que pueda estar calmado frente al cuerpo de Arcueid.@
+` Incluso hoy, no recuerdo mucho de lo que hice.@
+` Todo lo que puedo recordar es lo bien que se sintió todo.@
+` Si el cansancio es un indicio de lo bueno que fue, estoy tan exhausto que ni siquiera puedo caminar ahora.\
+`"----Huah."@
+` Ahogando un bostezo, miro su rostro dormido.@
+` …… En verdad la amo.@
+` Ella correspondió a mi amor egoísta.@
+` Puede ser de una forma diferente al amor que siento, pero Arcueid también me necesita.\
+` Sólo eso.@
+` Sólo eso me hace extremadamente feliz.@
+` No el hecho de que soy necesitado.@
+` Sino que ella----quien hasta ahora siempre estuvo sola, que ella necesite a otra persona me hace feliz.\
+`"----¿Y sabes? Con esto, ya no estás sola, Arcueid."@
+br
+` Todo comienza a oscilar un poco.@
+` …… Parece que también tengo sueño.@
+` Tirándome sobre mi espalda junto a ella, respiro profundamente.@
+` De esa manera, me hundo en un profundo sueño.\
+bg #000000,%type_crossfade_slw
+` A la mitad de un profundo sueño,
+` Tengo un sueño en el que Arcueid se despierta antes que yo, y está haciendo algo terrible.\
+` Arcueid está susurrando para sí misma.@
+` ¿Qué estás haciendo?@ le pregunto.@
+br
+`"Oh.@ ¿Estás despierto, Shiki?"@
+br
+` En realidad no, estoy más dormido que despierto.@ Gracias a ti, mi cuerpo no está haciendo exactamente lo que le digo.\
+`"----Ya veo.@
+` Me siento halagada, pero es un poco avergonzante."@
+br
+` …… Arcueid sonríe como una niña pequeña.@
+` Creo que es extraño saber cómo se ve ella cuando tengo los ojos cerrados, pero ya que se ve tan feliz, decido ignorar una cosa tan trivial.\
+`"Oye, ¿Shiki?"@
+br
+` ¿Qué quieres?@ Debes estar cansada también, así que deberías dormir hasta el anochecer.@
+br
+`"Qué tal si… ¿Qué tal si me conviertiese en un verdadero vampiro?@ ¿Qué harías, Shiki?"@
+br
+` …… qué extraña pregunta.@
+` Pero, eso nunca sucedería.@
+` Porque te da miedo beber sangre, ¿cierto?\
+`"----Por eso es una pregunta de 'qué tal si'.@
+` Es natural robar otras vidas para preservar la tuya en la naturaleza, ¿cierto?@ Así que----es sólo una historia sobre 'qué tal si me convierto en eso'."@
+br
+` …… Detente ahí.@
+` Eso nunca sucederá----y no me gusta hablar de "qué tal si".@ ¿No te lo había dicho antes?\
+`"¿En serio?@ Me gustan los 'qué tal si'.@ No saber cómo resultarán las cosas, pero aun así tener esperanza al menos por ese momento."@
+br
+` …… Es cierto, también dijiste algo parecido, Arcueid.\
+`"Sí.@ Así que…… me estaba preguntando qué habría hecho si hubieses sido una persona horrible."\
+` …… ¿Ar…… cueid……?@
+br
+`"----Te amo, Shiki.@
+` Me permitiste sentir de esta manera, y me hiciste capaz de hablarte así.@ En verdad fuiste amable conmigo."@
+br
+` …… ¿Por qué?@
+` ¿Por qué Arcueid está llorando?\
+br
+`"Bien Shiki, me iré antes de que despiertes.@
+` …… No podré decir adiós directamente, perdóname por hacerlo de esta manera."@
+br
+br
+br
+` …… El sonido de una puerta al cerrarse.@
+` Aún durmiendo,
+` la escucho cerrarse.\
+bg #ffffff,%type_crossfade_slw
+!w1000
+bg "image\bg\bg_15a.jpg",%type_crossfade_mid
+`"--------Mm."@
+` Me despierto.@
+` Brillante luz solar se filtra a través de las cortinas.@
+` Al mirar el reloj, veo que es mediodía.\
+`"¡Mierda, la escuela……!"@
+` Me levanto rápidamente.@
+` …… Pero, ahora que lo pienso, hoy es domingo.@
+` No hay necesidad de ir a la escuela.@ Si hay algo por lo que debería preocuparme, es por el hecho de que me quedé en casa de Arcueid sin llamar a casa.\
+`"------"@
+` Ahora que lo pienso, creo que tuve un sueño extraño.@
+` Un sueño en el que estaba hablando con Arcueid y ella me besó al final.@
+br
+` …… *suspiro*@
+`"En verdad estoy fuera de mí."@
+` Que haya tenido un sueño tan feliz cuando Arcueid está durmiendo junto a mí podría ser prueba de que estoy muy feliz en este momento.@
+br
+`"¿No lo crees así, Arc----"@
+` Volteo hacia la cama.@
+` Y mi voz se detiene ahí.\
+`"----¿Ar…… cueid?"@
+` Miro hacia la cama, conmocionado.@
+` No hay nadie ahí.@
+` Arcueid no está por ningún lado.@
+br
+` ----Me iré ahora.@
+br
+` En mi sueño,
+` Arcueid dijo eso.\
+`"Oye, espera."@
+` Miro alrededor de la habitación.@
+` Pero claro que ella no está en ningún lado.@
+` Lo único que encuentro,
+` es un pedazo de papel sobre la mesa.@
+`"----Qué…"@
+` …… No sé si es algún tipo de broma o está en otro idioma,
+` pero el papel solamente tiene escrita la palabra "Adiós".\
+`"----¿Por qué?"@
+` No quiero creerlo.@
+` Pero más que eso----no puedo entender lo que Arcueid hizo.\
+br
+`"----¿Por qué?"@
+br
+` …… Debes estar bromeando.@
+` "Adiós" es demasiado simple.@
+` Incluso lo prometimos.@
+` Prometimos estar juntos.@ Le dije que la ayudaría hasta el final.@
+` Por qué-----Por qué se fue sola de nuevo----\
+`"¿¡¡Por qué, Arcueid----!!?"@
+br
+` Grito tan fuertemente como puedo y despedazo el papel.\
+bg #000000,%type_crossfade_mid
+!w3000
+br
+` ----Depués de eso,
+` salgo volando del apartamento y busco por todas partes como si hubiese enloquecido.\
+bg "image\bg\bg_29b.jpg",%type_crossfade_mid
+` …… No puedo encontrar a Arcueid.@
+` Lo sé.@
+` Sé que nunca más volverá a aparecer frente a mí.@
+br
+` ----Pero aún no puedo rendirme.@
+` Enloqueceré de esta manera.@
+` Enloqueceré a menos que la encuentre y le grite por lo idiota que ha sido, pero aún no puedo encontrarla.@
+br
+` Nunca la… veré de nuevo.\
+`"--------"@
+br
+` Algo, finaliza desesperadamente.@
+br
+` Ella ajustará cuentas con Roa y desaparecerá por su cuenta.@
+` …… No, creo que ya terminó su trabajo y dejó la ciudad.\
+`"------"@
+` Dejo de pensar antes de enloquecer.@
+` …… Escucho las voces de las cigarras detrás de mi oído.@
+` Las corazas desechadas de cigarras.@
+` Mi cuerpo se hace ligero, sin nada dentro de él, y ya no puedo pensar más.@
+` Así que esto es lo que significa estar verdaderamente vacío.\
+` Ni siquiera salen lágrimas.@
+` Soy una coraza vacía, pero mis piernas se mueven.@
+` Supongo que ahora soy como un animal que regresa a casa por instinto.@
+` Aunque no queda nada dentro de mí, estoy caminando hacia mi casa----\
+bg #000000,%type_lcartain_slw
+!w3000
+return

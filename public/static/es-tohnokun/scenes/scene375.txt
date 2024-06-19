@@ -1,0 +1,818 @@
+mov $phasebg,"image\bg\ima_02.jpg"
+mov $phasetitle_a,":a;image\word\PAKI_12A.PNG"
+mov $phasetitle_b,":a;image\word\day_12.png"
+gosub *left_phase
+bg #000000,%type_crossfade_mid
+play "*7"
+` ---Tuve un sueño.@
+br
+` No, fue un sueño que no era mío.@
+` Ese día.@
+` Esa chica que se aferró a mí llorando y compartió su vida conmigo.@ Fue su sueño el que tuve.\
+bg #ffffff,%type_crossfade_mid
+br
+br
+br
+br
+br
+br
+br
+` Vivimos solos y morimos solos, Akiha.\
+` Fueron las primeras palabras que papá me enseñó.@
+` Yo no sabía qué significaban las palabras.@
+` Pero recuerdo haberme sentido nerviosa al mirar los inorgánicos ojos de papá mientras decía esas palabras.@
+` Él era una persona muy solitaria.@
+` Y yo sabía que algún día sería como él----\
+!w2000
+monocro #ffff00
+bg "image\bg\bg_36a.jpg",%type_crossfade_mid
+` ---Nací como hija de la familia Tohno, y tenía un hermano mayor.@
+` Pero no podía llevarme bien con él.@
+` Mis padres me dijeron que era mi hermano, pero para mí parecía otra cosa.\
+bg "image\bg\bg_41.jpg",%type_crossfade_mid
+` Tener la sangre Tohno significa tener sangre no humana.@
+` Tal vez se veía diferente a mí por esa razón, pero para mí, él tampoco parecía "eso".@
+br
+` No podía aceptar verdaderamente a mi hermano.\
+bg "image\bg\bg_34a.jpg",%type_crossfade_mid
+` Y cuando cumplí seis años,
+` un chico extraño se unió a nuestras vidas como otro hermano.@
+` Al principio, no me gustó el nombre del chico, porque sonaba exactamente como el de mi hermano.@
+` El chico era unos años menor que mi hermano, pero era maduro y amable con todos.\
+bg "image\bg\bg_42a.jpg",%type_crossfade_mid
+` Aunque estaba restringida por el credo de mi familia, el chico me sacaba a jugar como si fuese perfectamente normal.@
+` Mientras lo seguía silenciosamente, comencé a tener interés en mi nuevo hermano.@
+` Era escandaloso, inquieto, y un poco brusco, pero…
+` Por alguna razón, sabía que esta persona me protegería sin importar qué.\
+bg "image\bg\bg_36a.jpg",%type_crossfade_mid
+` Como hija de la familia Tohno, viví separada de mi hermano y del chico.@
+` Papá decía que no podía tener una vida normal debido a la sangre especial de la familia Tohno.@
+br
+` Logré soportar estudios estrictos al aceptar mi destino.@
+` …… Papá no está haciendo esto porque no me quiera.@
+` Me decía a mí misma que él me regañaba tan severamente sólo porque me amaba.\
+br
+br
+br
+` Mi mente se estaba desgastando.@
+` La mente que tenía era cortada mientras comenzaba a hacerse más y más pequeña.@
+bg #000000,%type_crossfade_mid
+br
+` Pero sentí que podía soportarlo.@
+` Porque tenía un poco de tiempo libre que podía usar para jugar afuera con todos después de mis estudios.\
+bg "image\bg\bg_42a.jpg",%type_crossfade_mid
+` Los tres comenzamos a jugar juntos.@
+` Mi hermano y el chico se llevaban muy bien.@
+` Yo solía seguirlos en silencio.\
+` Mi hermano parecía saber que el chico era diferente a nosotros.@
+` Yo también sabía que el tiempo pasaba volando cuando jugaba con personas normales como ellos.@
+` Ya que lo sabía, quería valorar ese tiempo.@
+` Deseando que cuando madurase y me quedase sola en esta prisión llamada mansión,
+` no me sintiese solitaria y me abstuviese de llorar gracias a estos felices recuerdos.\
+` ---Los recuerdos eran numerosos.@
+br
+` Hubo momentos muy especiales dentro de los días especiales que viví.@
+` Como la noche en que me fui muy lejos con el chico.@
+br
+` En una noche oscura, los dos solos en el campo, rodeados de árboles.\
+bg #000000,%type_lshutter_mid
+` --En verdad fue una experiencia como de sueños para mí.@
+br
+` Todos los días eran cálidos, como un desfile.@
+` Pero,
+` todo terminó abruptamente.\
+monocro off
+bg "image\bg\cmo_05.jpg",%type_crossfade_mid
+` Un caluroso día de verano.@
+` Vi a mi hermano en el patio y caminé hacia él.@
+` Estaba jadeando dolorosamente y agachado en el suelo.@
+br
+` Tuve un terrible presentimiento sobre ello.@
+br
+` Podía escuchar a las cigarras, y el suelo parecía ladearse.@
+` Comencé a sentirme mareada, y llamé a mi hermano.\
+` El hermano que se dio la vuelta no era mi hermano.@
+br
+` No podía hacer nada.@ Todo lo que podía hacer era ver a mi hermano convertirse en una horrible bestia.@
+` El pensamiento de que me convertiría en algo como él en el futuro, me hizo quedar paralizada.@
+br
+` La bestia sedienta de sangre me atacó.@
+` No podía escapar.@
+` En ese momento, alguien tiró de mi mano.\
+monocro #ffff00
+bg "image\bg\bg_53.jpg",%type_lshutter_mid
+` El chico estaba ahí cuando volteé.@
+` Tiró de mi mano y corrió.@
+` …… ¿Acaso no está asustado?@
+` El chico se paró frente a esa horrible bestia como para protegerme.@
+br
+` Pero la bestia sólo me estaba viendo a mí.@
+` La bestia que me atacó, y el chico que se interpuso entre nosotros.\
+` Splash.@
+` Recuerdo el momento en que sangre cálida golpeó mis mejillas.\
+` …… El chico me abrazó y protegió a su hermana de la bestia.@
+br
+` Aunque su cuerpo tenía un agujero y estaba sangrando gravemente, siguió abrazándome.@ Protegió mi pequeño cuerpo y no me dejó ir.\
+` Cuando levanté la vista, él estaba llorando.@
+` Las lágrimas parecían de arrepentimiento y no de dolor.@
+br
+` ---Lo siento, dijo el chico.@
+br
+` Antes de morir, me abrazó, esperando que su cadáver me siguiese protegiendo.\
+` El chico continuó disculpándose.@
+br
+` Si en verdad fuese parte de tu familia, probablemente podría protegerte.@
+` Es tan frustrante---no haber podido ser tu verdadero hermano.@
+` Juré---que serías más importante para mí que cualquiera.\
+` …… Él murió susurrando esa confesión.@
+` El chico deseaba mi seguridad incluso después de morir, e intentó ser un hermano más que mi verdadero hermano.@
+br
+` …… Esas palabras fueron suficiente.@
+` No podía desear nada más.@
+` Lo comprendí---Lloré sabiendo que esta persona nunca me traicionaría.@
+` Aunque fue algo imprudente, le devolví el abrazo y lloré por felicidad.@
+` Estaba feliz de poder pensar que ésta era la única persona para mí sin importar qué sucediese.\
+bg #ffffff,%type_crossfade_mid
+` No sé qué sucedió después de eso.@
+` Cuando desperté, el único recuerdo que tenía era el del cuerpo de la bestia siendo arrastrado hacia algún lugar, y el pequeño cuerpo del chico siendo llevado hacia la mansión.\
+bg "image\bg\bg_41.jpg",%type_crossfade_mid
+` Y mi padre me dijo.@
+` Dijo que el hijo adoptado murió en ese accidente, y que mi verdadero hermano era el que había sobrevivido.@
+` …… Sabía que eso era para guardar las apariencias ante el mundo exterior, pero no me importaba.@
+br
+` Él estaba vivo.@ De ninguna manera podía desear más.@
+` …… Aun si el chico se convierte en mi verdadero hermano, y aun si el propio chico lo cree de esa manera,
+` Me dije a mí misma que estaría bien siempre que pudiese permanecer a su lado como su hermana.\
+bg "image\bg\bg_36a.jpg",%type_crossfade_mid
+` …… Han pasado ocho años, y nuestro padre falleció.@
+` Ascendí al poder en la casa Tohno, y decidí traerlo de vuelta a la mansión, ignorando a la oposición circundante.@
+br
+` No hay libertad para mí como la sucesora, pero podría actuar egoístamente al menos una vez.@
+` Entonces----quisiera usar ese único deseo por mi amor que nunca será mencionado.\
+` Eso es suficiente para mí.@
+` Le he arrebatado todo.@
+` Así que no puedo desear más.@
+br
+` ---En aquel entonces.@
+` El tipo de felicidad que sentí mientras mirábamos juntos las estrellas, nunca ocurrirá de nuevo, pero,
+br
+` mientras él esté aquí, no me importa.@
+` Simplemente, si Nii-san regresara.@
+br
+` ---En una oscura noche, los dos solos en el campo, rodeados de árboles.\
+br
+br
+br
+br
+br
+br
+` Qué sueño
+` tan feliz y egoísta---\
+monocro off
+bg #000000,%type_crossfade_slw
+playstop
+!w3000
+bg #ffffff,%type_crossfade_mid
+bg "image\bg\bg_18b.jpg",%type_tshutter_mid
+play "*1"
+` ----Dolor.@
+` El dolor en mi pecho me despierta.\
+`"……………… Ha."@
+` Una habitación desconocida.@
+` Estaba acostado en la cama, con el pecho desnudo.@
+` En vez de mi ropa, vendajes blancos envuelven todo mi pecho.@
+`"------"@
+` Mi memoria está hecha un lío.@
+` Qué está sucediendo, qué está pasando ahora mismo… todo es un revoltijo y no puedo ordenar las cosas.\
+wave se0
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\bg_18b.jpg",%type_nowaitdisp
+`"¡¡…………!!"@
+` La única cosa segura es este dolor en mi pecho.@
+` …… La herida en mi pecho.@
+` Mi espalda fue apuñalada por alguien.@
+` ¿Por quién?@ Ni siquiera tengo que pensarlo.@
+` Acabo de ser apuñalado por SHIKI, y Akiha---\
+`"¡Akiha……!"@
+` Me levanto de la cama.@
+wave se0
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\bg_18b.jpg",%type_nowaitdisp
+`"¿¡Ugh----!?"@
+` Mi cuerpo se detiene de pronto.@
+` La herida en mi pecho y el resto de mi cuerpo se tensan.@
+`"A-----, ugh-----"@
+` Incluso respirar es doloroso.@
+` No puedo levantarme de esta manera----\
+ld c,":a;image\tachi\cel_t12.jpg",%type_lshutter_mid
+`"Oh, ¿despertaste, Tohno-kun?@ Estoy sorprendida.@ No es una herida como para despertar tan temprano."@
+`"¿Qué---Sen, pai……?"@
+ld c,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
+`"Sí.@ Soy yo.@ Estás en mi habitación, así que puedes relajarte.@ Aunque ese vampiro esté tras de ti, es poco probable que venga aquí."\
+`"Eres tú…… Senpai, ¿¡no se suponía que no volverías a aparecer frente a mí……!?"@
+ld c,":a;image\tachi\cel_t08.jpg",%type_crossfade_fst
+`"Ése era el plan, pero tuve que ayudarte en una situación como ésa."@
+cl a,%type_lshutter_mid
+` Diciendo eso, Senpai camina hacia la cama.\
+`"Mira, la herida se ha abierto porque intestaste moverte.@ Cambiaré los vendajes por ti."@
+` Senpai quita los vendajes de mi cuerpo habilidosamente, y los reemplaza por unos nuevos.@
+` Son bastante apretados.@
+`"…… Um…… Senpai, me siento mal al decir esto porque me estás ayudando pero, lo apretaste demasiado."@
+ld c,":a;image\tachi\cel_t12.jpg",%type_crossfade_fst
+`"Sí, lo estoy apretando para que puedas moverte sin problemas.@ ¿Puedes quedarte quieto por un rato?"@
+cl a,%type_crossfade_fst
+`"Oh…… Lo siento."\
+` Me disculpo y miro alrededor de la habitación.@
+` Parece ser la habitación de Ciel-senpai.@
+` Supongo que fui apuñalado por SHIKI, y luego rescatado por Senpai.@
+` Pero entonces---¿qué sucedió con Akiha?\
+`"¿¡Senpai, Akiha!?@ ¿Dónde está Akiha!"@
+ld c,":a;image\tachi\cel_t07a.jpg",%type_crossfade_fst
+`"…………………"@
+` La mano de Senpai se congela.@
+`"¡Senpai----!"@
+`"…… Las circunstancias dictaban que sólo podía rescatar a una persona.@
+` No podía escapar de ese vampiro cargando a dos personas.@
+` Así que---le di prioridad a tu rescate, porque tenías un probabilidad más alta de recuperación."\
+`"Akiha----¿estás diciendo que abandonaste a Akiha, Senpai……!"@
+`"…… Sí.@ Su vida no puede ser salvada de todas formas.@ Por eso no puedo poner en peligro tu vida para salvar la suya."@
+`"Qué----"@
+br
+` ¿Qué---está diciendo esta persona?\
+`"¿Por qué……!@ ¿Por qué me salvaste……!@ ¿¡No se supone que matas vampiros!?@ ¡Debiste haberte olvidado de mí, y matar a SHIKI allí mismo……!"@
+`"…… Tenía esa opción, pero probablemente habrías muerto.@
+` Tu herida era tan profunda que habrías muerto si no te atendía rápidamente.@ No estaba segura de poder matar a ese vampiro tan rápido, así que tomé la decisión más segura y escapé contigo."\
+`"---¿¡Y abandonaste a Akiha!?@ ¡No----no deseo ese tipo de ayuda!@ ¡Apuesto que Akiha se habría salvado si me dejabas y matabas a SHIKI……!"@
+`"…… No negaré eso.@ Pero Tohno-kun, Akiha-san no está muerta.@ El propósito del vampiro es hacerla más parecida a él.@
+` Akiha-san no será asesinada.@ Tú eras el único que iba a ser asesinado.@ ¿No comprendes eso, Tohno-kun?"@
+`"------"@
+` …… No puedo decir nada.@
+` Senpai tiene razón.@
+` ¿Qué estoy haciendo---desahogando mi impotencia con ella?\
+`"…… Lo siento, pero yo---no puedo creer que ese sujeto no vaya a matar a Akiha.@ Es un asesino.@ ¡Sé eso más que nadie……!"@
+`"…… Tohno-kun.@ Akiha-san no será asesinada.@ Pero, por favor dala por perdida.@
+` Ella----no será capaz de volver a la normalidad."@
+`"¡Eso lo sé……!@ Pero es sólo su cabello.@ Akiha no es como SHIKI."\
+`"No, Tohno-kun.@ El propósito del vampiro es obtener a Akiha-san.@
+` Tohno SHIKI---el verdadero hermano de Akiha-san ya no es humano.@ Lo que quiere es a alguien como él.@
+` ---Entiende, Tohno-kun.@
+` Ese vampiro no quiere a Akiha-san como humana.@ Por eso no la mató cuando la atacó anoche.@
+` No sé cómo, pero Tohno SHIKI debe haber encontrado una manera de despertar la sangre no humana de los Tohno."\
+`"-----"@
+` Ahora que ella lo menciona, recuerdo.@
+` Desde la primera vez que ese sujeto dejó a Akiha inconsciente,
+` su cabello ha permanecido de color rojo.\
+`"Senpai----cómo es que sabes tanto---"@
+`"Te hice hablar mientras estabas dormido.@
+` …… Me disculpo por hacerte hablar sin preguntar, pero considéralo como un pago por haberte rescatado."@
+`"-------"@
+` Eso no me importa.@
+` Su disculpa no tiene ninguna relevancia.@
+br
+` Más bien.@
+` Tengo que ir con Akiha---\
+`"¡Ku………!"@
+` Me levanto de la cama.@
+wave se0
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\bg_18b.jpg",%type_nowaitdisp
+` Dolor.@
+` Dolor como si estuviesen abriendo mi cuerpo con un cuchillo.@
+`"¡Ah----Gu…………!"@
+` Pero, todavía puedo moverme.@
+` Si puedo moverme----no puedo quedarme sentado.\
+`"----Senpai, tú tienes mi cuchillo, ¿verdad?@ ¿Puedes devolvérmelo?"@
+ld c,":a;image\tachi\cel_t07a.jpg",%type_crossfade_fst
+`"¿Vas a regresar a la mansión, Tohno-kun?"@
+` No tengo que responder.@
+` Senpai sostiene el cuchillo en sus manos y se para frente a mí.\
+`"Ese vampiro y Akiha-san aún están en la mansión."@
+`"-----"@
+`"Pero han pasado seis horas desde entonces.@ …… Quizás ya sea demasiado tarde."@
+`"¡Ya te lo dije……!@ Eso no importa, Senpai.@ No me importa a qué se parezca Akiha.@
+` He decidido que voy a estar con ella.@
+` …… Hace mucho tiempo, juré que sería su verdadero hermano, como una familia de verdad."\
+` Digo eso, y siento ganas de llorar.@
+` …… Sucedió hace mucho tiempo.@
+` Una promesa que yo mismo olvidé.@
+` La familia que no actuaba como una familia.@
+` Pero aun así---me esforcé mucho para convertirme en un miembro.@ Solamente ella.@ Akiha se preocupaba por mí más que el resto de su verdadera familia.@
+br
+` Supe que era una mentira desde el principio.@
+` Pero tratábamos de proteger esa mentira.@ …… En realidad, desearía no haberlo sabido nunca.@
+` Qué sueño tan frágil y lejano era.\
+`"…… Tohno-kun, quizás sea verdad que podrás aceptar a Akiha-san sin importar en qué se convierta.@
+` Pero ésa es sólo tu interpretación egoísta.@
+` Akiha-san no permitirá su propia existencia."@
+`"…… ¿Akiha no permitirá su propia existencia……?"@
+br
+` …… Alguien dijo algo parecido anteriormente.\
+`"Escúchame, Tohno-kun.@ Akiha-san perderá la cordura cuando se convierta en una de los Tohno.@
+` La razón que habrá perdido ante su instinto desaparecerá, y cometerá asesinatos sin sentido como Tohno SHIKI."\
+`"Asesinatos que ella no desea.@ Akiha-san no podrá saber lo que está haciendo.@
+` No habrá más 'Akiha-san' en ella.@ Lo único que quedará será la acción llamada asesinar."@
+`"------"\
+`"¿Comprendes, Tohno-kun?@ No son las personas asesinadas por ella quienes la odian más.@ Ella misma es quien más se odia.@
+` Pero no tendrá ninguna emoción como para sentir eso.@
+` ---A menos que muera.@
+` Para calmar a la sangre despertada, debes reiniciarlo todo.@ Pero reiniciarlo todo significa matarla.@
+` Si ya ha cambiado, la antigua Akiha-san ya no se encuentra ahí.@ Muriendo, Akiha-san puede recobrar su identidad original."\
+` …… Ahora recuerdo.@
+` Fue la propia Akiha quien dijo eso.@
+br
+` ---Por favor mátame.@
+br
+` Dijo eso mientras lloraba.\
+`"------"@
+` No puedo decir nada.@
+` Pensé que mi sangre herviría.\
+`"Qué-----"@
+`"Sé que es doloroso, pero por favor date por vencido---"@
+`"¡Qué, egoísta----!"@
+cl c,%type_lshutter_fst
+`"¿¡Kya!?"@
+wave se9
+quakex 2,200
+` Agarro el cuello de Senpai y la empujo contra la pared.@
+` Esta furia no está dirigida hacia ella.@
+` Pero, no debería hablar de Akiha tan a la ligera.\
+`"¿¡Estás---estás diciéndome que mate a Akiha……!?"@
+ld c,":a;image\tachi\cel_t07a.jpg",%type_crossfade_fst
+`"------Sí.@ Si Akiha-san así lo desea, te dejaré tomar ese papel."@
+`"¡N-no estés bromeando………!@ No puedo matarla.@ ¡Senpai me dijo que no matase sin importar qué………!"@
+ld c,":a;image\tachi\cel_t09.jpg",%type_crossfade_fst
+`"Tohno-kun------"@
+` Su rostro inexpresivo comienza a colapsar.@
+` …… Lo sé.@
+` Sé que Senpai no está diciendo esto porque quiera.\
+`"…… Tohno-kun, hay algunas cosas más dolorosas que la muerte, y Akiha-san lo sabe."@
+`"----"@
+`"…… Y si ya ha cambiado, ya no es humana.@ No puedes llamar humano a algo que no puede pensar por sí mismo, aunque podrías llamarlo algo vivo."@
+br
+` Diciendo eso,
+` Senpai me entrega el cuchillo.\
+`"---Tohno-kun.@ La cacería de vampiros es mi trabajo.@ Me encargaré de ese vampiro, así que----"@
+`"…… No.@ Lo siento, pero tú te quedas aquí, Senpai."@
+ld c,":a;image\tachi\cel_t07a.jpg",%type_crossfade_fst
+`"¿Huh…… Tohno-kun?"@
+`"…… Él y yo tenemos historia.@ Es nuestro problema…… sinceramente, no quiero que te involucres en esto."@
+`"------"\
+`"Pero, si algo llega a sucederme, dejaré que te encargues.@ …… Sé que suena un poco egoísta pero, ¿estás de acuerdo, Ciel-senpai?"@
+`"------"@
+` Senpai estrecha sus ojos.@
+` Ojos transitorios, como si estuviese viendo una ilusión.\
+`"…… De acuerdo.@ Suena un poco egoísta, pero lo dejaré en tus manos.@
+` Pero no entiendo, ¿por qué estás dispuesto a hacer semejante cosa?@ Ni siquiera eres un miembro de la familia Tohno, ¿por qué?"@
+br
+` ----¿Por qué?@
+` Sé bien por qué.\
+`"Ya lo dijiste.@ Yo, Tohno Shiki, valoro a Akiha más que a mí mismo.@
+` …… Pero, no pude amarla tanto como ella quería, así que debo ir."@
+br
+` ---Todo este tiempo,
+` Akiha ha sufrido por sí sola.@
+` Comparado con eso, este dolor no es nada.\
+`"Ya me voy.@ Gracias por todo, y adiós, Senpai."@
+` Soporto el dolor mientras comienzo a caminar.@
+br
+bg #000000,%type_tcartain_mid
+`"---Sí, adiós, Tohno-kun."@
+` Mientras me retiro,
+` escucho a Senpai decir eso.\
+playstop
+!w3000
+bg "image\bg\bg_32d.jpg",%type_lcartain_mid
+` Llego a la mansión.@
+br
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_54c.jpg",%type_lcartain_mid
+` Tengo dolor de cabeza.@
+` Tengo la vista borrosa, como si todo estuviese cubierto de neblina.\
+bg #000000,%type_crossfade_mid
+bg "image\bg\bg_54c.jpg",%type_crossfade_mid
+`"Ga……… ah."@
+` Mi visión está distorsionada.@
+` No puedo respirar correctamente.@ Sólo respirar me marea.@
+` Cada paso que doy se siente como cientos de metros.@
+` Mi cuerpo.@
+` Está tan exhausto que prácticamente estoy entumecido.\
+`"Ah………… h."@
+` Arrastro mis piernas.@
+` Mi cuerpo ha alcanzado su límite, y no se mueve como quiero que lo haga.@
+` Mi mente piensa negativamente, diciéndome que no puedo hacer nada con semejante cuerpo.\
+`"---------"@
+` Pero mi sangre ardiente niega todas esas ideas.@
+` Mis escandalosos latidos.@
+` Sólo mi pulso es alto.@
+` Bajo la luna, mi concentración se agudiza.\
+bg #000000,%type_crossfade_mid
+bg "image\bg\bg_44b.jpg",%type_crossfade_mid
+` ---Vine aquí, naturalmente.@
+br
+` No hay equivocación.@
+` Mi corazón late escandalosamente.@
+` Mi garganta arde.@
+` Mi cuerpo está exhausto, y usa toda su energía para mantenerse con vida.@
+` Es suicida pelear de esta manera.@
+` Pero no siento miedo.@
+` Mi dedos están paralizados por el peso de mi cuhcillo.@
+` Mis nervios se sienten crispados.\
+` ---Qué sensación tan familiar.@
+br
+` Recuerdo esta sensación.@
+` Ya la he sentido muchas veces.@
+` La sensación que "él" tenía cuando asesinaba en el sueño; y hace mucho tiempo, creo que también tuve esta sensación----
+br
+wave se0
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\bg_44b.jpg",%type_nowaitdisp
+`"Gu----"@
+` No voy a durar mucho.@
+` Entro al edificio separado.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_45e.jpg",%type_lcartain_mid
+play "*9"
+br
+br
+br
+br
+br
+br
+` ---Extrañamente,
+` no sentí nada cuando lo vi.\
+`"-----SHIKI."@
+`"Eres---tú."@
+` SHIKI se levanta lentamente.@
+br
+` Sólo hay dos personas ahí.@
+` Una es un vampiro llamado SHIKI.@
+` La otra es una chica de cabello rojo.\
+ld c,":a;image\tachi\hal_t01.jpg",%type_crossfade_mid
+`"----Bienvenido, Shiki.@ Pensé que no lo lograrías."@
+cl a,%type_crossfade_fst
+`"------"@
+` Mi mente no siente nada.@
+` Akiha está allí, detrás de SHIKI.@
+` Sus ojos parecen muertos mientras descansa junto a la pared.@
+` Tal vez SHIKI se lo puso, pero, ella está usando un kimono.@
+br
+` Esa cosa.@
+` Akiha es como una muñeca mecánica.\
+` Dejo salir un profundo respiro.@
+br
+` No siento nada.\
+` Es como si me hubiese convertido en una muñeca al igual que Akiha, no siento nada.\
+ld c,":a;image\tachi\hal_t01.jpg",%type_crossfade_mid
+`"---Pero llegas demasiado tarde.@ He recuperado a Akiha."@
+` SHIKI camina hacia mí.@
+`"SHIKI, ¿qué quieres hacer?"@
+` Le pregunto mientras levanto mi cuchillo.@
+` SHIKI trata de aferrarse a su risa mientras habla.\
+ld c,":a;image\tachi\hal_t03.jpg",%type_crossfade_fst
+`"Ni idea.@ Ni siquiera lo sé.@ Mi propósito como SHIKI es obtener a Akiha.@ No tengo la intención de chuparle la sangre a ningún ser inferior."@
+`"…… Ya veo.@ Pero en ese caso, has sido muy inconsistente."@
+`"Sí, tienes tanta razón.@ Pero no se puede evitar, ésa no era mi intención.@
+ld c,":a;image\tachi\hal_t01.jpg",%type_crossfade_mid
+` …… 'Eso' me dice, Shiki.@
+` Que mate, que prive, y destruya todo.@ Sólo estoy siguiendo eso.@ No sé por qué."@
+`"…… Qué terrible.@ No recuerdo mucho pero, antes no eras así, SHIKI."\
+ld c,":a;image\tachi\hal_t03.jpg",%type_crossfade_fst
+`"Sí, enloquecí desde aquel día, hace ocho años.@ Hay un sujeto raro en mi cabeza, y él me dice que mate todo."@
+` Diciendo eso, SHIKI ríe.@
+` Sigue riendo, como ruedas girando indefinidamente.@
+br
+` ---Ahí,
+` no puedo encontrar ni una pizca de humanidad.\
+`"…… Ésta es mi última pregunta.@ ¿Sientes algún dolor?"@
+`"¿Dolor……?@ De ninguna manera.@ Soy perfecto.@ Me amo a mí mismo por hacer esto.@
+` Bueno, podría decir que estaba aburrido, pero ya he resuelto eso.@
+` Hasta ahora, mi única diversión era devorar a esos seres inferiores, pero eso ha terminado, porque Akiha está de vuelta.@ Ahora no tengo tiempo para jugar con esos juguetes."\
+` SHIKI suena satisfecho.@
+br
+` ---Fue inútil preguntar.@
+br
+` Pero, aun así quería preguntar.@
+` Si este sujeto sintiese el mismo dolor que Yumizuka----el dolor de un "humano" que debe chupar sangre a pesar de no querer hacerlo…\
+`"Entonces, ya no eres humano."@
+` Mis palabras son amenazadoras.@
+` SHIKI deja de moverse.@
+ld c,":a;image\tachi\hal_t01.jpg",%type_crossfade_fst
+`"No lo entiendo.@ No entiendo por qué viniste aquí para ser asesinado, y no entiendo esa pregunta que me hiciste.@
+` Shiki, ¿para qué viniste aquí?"@
+`"Para matarte y recuperar a Akiha."@
+` Cuando esas palabras salen de mi boca,
+br
+` toda la sangre en mi cuerpo se acelera.\
+ld c,":a;image\tachi\hal_t03.jpg",%type_crossfade_fst
+`"¡Huh!@ ¿¡Estás loco, Shiki!?@ ¿¡Estás diciendo que una persona normal como tú puede matarme!?"@
+`"…………………"@
+` No tengo razón para responder.@
+` Estrecho mi mirada.@
+` Y, miro sus "líneas"---\
+bg "image\bg\bg_45d.jpg",%type_crossfade_fst
+ld c,":a;image\tachi\hal_t02.jpg",%type_crossfade_fst
+`"¡No seas tan engreído……!@ Ella es mía.@ ¡No voy a dártela……!"@
+` Tal vez sintió algo.@
+` SHIKI retrocede como si estuviese asustado.@
+`"¡Akiha es mi hermana……!@ Soy el único que tiene relación de sangre.@ ¡No hay lugar para ti……!"@
+` Él me mira con ojos inyectados de sangre.@
+br
+` ---No hay nada más que decirle.@
+` Levanto mi cuchillo y doy un paso.\
+`"Tienes razón, SHIKI.@ Akiha no es mi hermana."@
+`"¿Qué……?"@
+`"Akiha es mi mujer."@
+`"¡¡Tú----!!"@
+cl a,%type_lcartain_fst
+` Doy otro paso.@
+` Perdiendo el control ante mis palabras, SHIKI me ataca directamente.@
+br
+` Eso se convierte en la señal de nuestra última pelea a muerte.\
+playstop
+bg #000000,%type_lshutter_fst
+` ---No puedo tomarme mucho tiempo.@
+br
+` Mi cuerpo está en su límite, y quiero sacar a Akiha de aquí lo más rápido posible.@
+` Así que, sólo hay una cosa por hacer.@
+` Tengo que evadir el brazo de SHIKI y cortar a través de la "línea" sobre su pecho.@
+` Mi cuerpo será capaz de moverse por esta vez.@ Seré capaz de evadirlo.@
+` Él me ataca.@
+` SHIKI y yo tenemos prácticamente el mismo alcance.@
+` Tratamos de matarnos mutuamente dentro de nuestro alcance----\
+bg "image\bg\ima_14.jpg",%type_lshutter_fst
+` -----No.@
+` Eso fue sólo una ilusión mía.\
+`"¡Ja……!"@
+` SHIKI suelta un grito gracioso mientras ataca con "eso".@
+`"¿¡-------!?"@
+wave se11
+` Detengo "eso" con mi cuchillo.@
+` ---No hay tiempo para pensar en otras cosas.@
+` Mi cuchillo y lo que sea que porta SHIKI colisionan con un chillido estridente.\
+bg #000000,%type_lshutter_fst
+play "*4"
+`"¡Demonios, pensé que te cortaría en dos junto con tu cuchillo---pero esa cosa es bastante fuerte para ser una antiguedad, Shiki!"@
+` SHIKI agita "eso" sobre su cabeza.@
+`"-------"@
+` Todo mi cuerpo tiembla.@
+` Lo que SHIKI sostiene es "algo como una espada" que debe ser diez veces más largo que mi cuchillo.@
+`"-----"@
+` No entiendo.@
+` Ciertamente estaba desarmado hasta ahora.@ Cuándo consiguió eso-----\
+`"¡Pero no habrá una segunda vez……!"@
+` La espada roja desciende.@
+` Aunque la agite, sólo va a quedarse atorada en las paredes o el techo debido a su longitud-----
+br
+bg "image\bg\ima_14.jpg",%type_tshutter_fst
+`"¿¡--------!?"@
+` La evado instantáneamente.@
+` La espada roja que SHIKI sostiene descendió sin atorarse en ningún lugar.\
+` Durante ese movimiento,
+` la espada ciertamente estaba en el techo, pero descendió como un cuchillo caliente a través de mantequilla.\
+bg #000000,%type_tshutter_fst
+br
+br
+br
+br
+br
+br
+` En algún lugar.@
+` El sonido de sangre goteando.\
+bg "image\bg\bg_45d.jpg",%type_lshutter_fst
+`"¡Persistente-------!"@
+` SHIKI vuelve a sostener la espada sobre su cabeza.@
+`"----------"@
+` Mi mente se detiene.@
+` Dentro de mi campo visual están SHIKI y Akiha, sentada al fondo de la habitación.@
+` Akiha nos mira inexpresivamente.@
+` Akiha está sentada como una muñeca.@
+` Akiha.@ No puedo dejar a Akiha aquí.@
+` Pero en este momento----
+`"¡Ku----!"@
+` Muerdo mi lengua y me alejo.\
+bg #000000,%type_lshutter_fst
+` Atravieso la puerta shouji que lleva hacia el jardín.@
+` Si las paredes no detienen a esa espada, estaré en desventaja adentro.@
+` Afuera, en el bosque.@
+` En esta oscura noche, en este bosque, debería haber alguna ventaja para mí----\
+bg "image\bg\bg_54c.jpg",%type_rshutter_fst
+wave se0
+`"Ar-----gh."@
+` De repente me siento mareado.@
+` Mis pies se tambalean y casi caigo.@
+` La herida en mi espalda vuelve a abrirse, y sangre se derrama.@ No hay tiempo para eso.@
+`"Ugh-----"@
+` Suelto una respiración.@
+` Tambaléandome, me recuesto de un árbol.\
+`"Tú…………"@
+` No puedo desmayarme aquí,
+` Escucho a alguien moverse a través de la hierba.@
+` SHIKI definitivamente está buscándome.@
+` Entonces, sólo un poco más.@
+` Por lo menos, necesito ir a algún lugar donde pueda esconderme y atacarlo por detrás-----\
+wave se14
+quakex 2,50
+`"--------"@
+` Entonces,
+` algo como una espada se clava en el árbol del que estoy recostado.@
+`"¡-------!"@
+` Salto hacia un lado.@
+wave se14
+quakex 2,50
+` Dos veces.@
+` La espada que viene volando atraviesa el árbol fácilmente.\
+`"¡--------!"@
+` Mi cuerpo se movió antes de que yo lo pensara.@
+` Escondo mi cuerpo de árbol en árbol.@
+` Las espadas me están siguiendo de cerca.@
+` ¿Esto no tiene fin?@ Sus espadas son disparadas una después de otra como balas.\
+`"Qué------"@
+` No tiene fin.@
+` Mientras escapo, él incrementa la cantidad de espadas que me arroja.@
+` Cuando me doy cuenta,
+` el oscuro bosque está lleno de árboles perforados, y parece alguna clase de terreno de ejecución extranjero.\
+`"----¿Huh?@ ¿Ya terminaste de huir, Shiki?@ ¡No me digas que piensas que puedes matarme aquí……!"@
+br
+` Puedo escuchar su voz.@
+` Pero no lanza su espada.@
+` Como no puedo verlo, quizás él tampoco puede verme… no, no puede ser.@
+`"Ha………… a."@
+` Aclaro mi mente y me recuesto de un gran árbol.@ Su espada no debería perforar a través de este árbol.\
+`"¡Oye hombre, dónde está toda tu habladuría de antes!@
+` ¡Si vas a matarme, no es divertido a menos que lo intentes……!"@
+` La voz hace eco y aún no puedo saber de dónde viene.@
+` Cierro mis ojos y trato de agudizar mi audición.\
+playstop
+bg #000000,%type_crossfade_fst
+` ………\
+` …………………@
+` ………………………………@
+` ………………………………………………\
+` …… No puedo escuchar su respiración ni sentir su presencia.@
+` Por supuesto.@
+` No tengo sentidos de bestia como él.\
+`"¿-------?"@
+` Escucho un ruido de goteo.@
+` …… ¿Qué será?@
+` No creo que haya nada de agua por aquí.\
+bg "image\bg\bg_54d.jpg",%type_crossfade_fst
+`"Cielos, eres una gran gallina.@ Muy bien.@ Si eso es todo lo que vas a hacer, haré esto interesante para ti.@
+` Puedes esconderte ahí todo lo que quieras."@
+br
+` …… Puedo escuchar su voz.@
+` Pero aún no puedo saber dónde está.@
+br
+`"…… Veamos.@ En ese caso, tendré que hacer esto un poco interesante.@ No es divertido simplemente matarte.@ Sería fácil perforarte ahora mismo, pero apuesto que a Akiha no le gustaría eso."\
+` …… Ese sonido de goteo.@
+` Está más cerca esta vez.@
+` El sonido viene del árbol justo frente a mí.@
+` Cuando miro,
+` veo que se trata de un líquido que está goteando de la espada que perforó el árbol.\
+`"¡Sí, debería aplastar tus manos y pies, y convertirte en un juguete para Akiha……!@ A Akiha le gusta jugar con muñecas, sería apropiado para ella."\
+` …… No parece ser savia.@
+` Algún tipo de líquido está goteando de esa delgada espada.@
+` Si miro con más atención, es más parecido a hielo derritiéndose.\
+`"Oh cierto, aún no te lo he dicho, pero ahora, Akiha está un poco fuera de mis manos.@ Supongo que estaba demasiado feliz y me excedí.@ Es bueno que ella esté de vuelta, pero es un problema si muerde a todos los que ve, ¿cierto?"\
+` …… El líquido gotea.@
+` La espada roja es más una cuchilla que una espada.@
+` Un arma simple, sólo una cuchilla.@
+` Es el arma que SHIKI estaba arrojando.@
+` Una roja, delgada y larga cuchilla.@
+` ¿Pero por qué un líquido rojo gotea de eso?@
+` Rojo.@
+` Rojo.@
+` ¿Ro…… jo?\
+wave se0
+`"Ya veo.@ Mejor no te convierto en el juguete de Akiha.@ Estoy seguro de que sería un gran regalo entregarte con montones de espadas clavadas a ti, pero creo que Akiha te mordería antes de jugar contigo.@ No puedo dejar que Akiha tenga una comida tan mediocre-----"\
+`"-------"@
+` Cállate.@
+wave se0
+` Rojo.@
+` Esa persona.@
+wave se0
+` Rojo.@
+` Hay algo importante.@
+wave se0
+` Rojo.@
+` Tengo que darme cuenta.\
+`"…… Espera un minuto.@ ¡Sí, qué buena idea!@ ¡Dejaré que Akiha sea una caníbal como yo……!"\
+`"-------Sangre."@
+` Ya, veo.@
+wave se0
+` Es sangre.@
+` Eso es sangre.@
+` Es por eso que hay tantas espadas por aquí.@
+wave se0
+` Hay cientos de espadas clavadas en los árboles.@
+` Manos y pies arrancados y esparcidos alrededor.@
+` Noche oscura.@
+wave se0
+` Luna de cristal.@
+` El bosque ensangrentado----\
+monocro #ff0000
+bg "image\bg\ima_02.jpg",%type_crossfade_fst
+wave se0
+!w500
+bg "image\bg\bg_54d.jpg",%type_crossfade_fst
+waveloop se1
+`"¡Sí, sísísísísí!@ Eso es bueno.@ ¡Sería excelente que fueses su primera comida……!@
+` ----Me he decidido.@ Sí, ahora tengo que conseguir que Akiha sea como yo lo más pronto posible."\
+br
+br
+br
+br
+br
+br
+` El sonido de goteo.@
+` El sonido de sangre fresca goteando.\
+`"¡Adiós Shiki, debo decir que estamos bastante cerca, pero ya terminé de jugar------!"@
+br
+` Eso me permite saber dónde está él.\
+wavestop
+bg #000000,%type_crossfade_fst
+` Me alejo del árbol del que estoy recostado.@
+` Me doy la vuelta y corto sus "líneas".@
+` Deslizándose,
+` el gran árbol cae al suelo.\
+`"¿¡Qué-----------!?"@
+` Escucho la voz arriba de mí.@
+` En pocas palabras, estuvo justo sobre mí hasta ahora, diciendo esas cosas de mal gusto.\
+`"¡¡Tú-----!!"@
+` SHIKI viene cayendo.@
+` En su mano está la espada roja hecha de sangre.@
+` Pero antes de que pueda agitarla---
+br
+br
+bg "image\bg\ima_14.jpg",%type_crossfade_fst
+` Mi cuchillo corta a través de su brazo.\
+bg "image\bg\ima_12b.jpg",%type_lshutter_fst
+` Sangre salpica.@
+` …… El brazo de SHIKI cae al suelo.@
+` La sangre que sale de su brazo cortado crea una mancha negra en el suelo.@
+` Es lo mismo para mí, porque estoy debajo de él.@
+` Sangre roja, como sangre humana, salpica sobre mi pecho.\
+bg "image\bg\bg_54d.jpg",%type_crossfade_fst
+`"Ha.@ ¡Agh-----!"@
+` SHIKI cae al suelo y-----salta hacia atrás como un mono.\
+ld c,":a;image\tachi\hal_t04.jpg",%type_crossfade_fst
+waveloop se1
+`"Ja---jaja, ja."@
+` SHIKI me mira.@
+`"¡Oh, supongo que puedes hacerlo si lo intentas……!@
+` Es un alivio Shiki.@ ¡No es propio de ti ser asesinado tan fácilmente……!"\
+`"-----------"@
+` Intento decir algo, pero me detengo.@
+` No tengo espacio para eso.@
+` Mata.@
+` Mata.@
+` Mata.@
+` Mata.@
+` Si tienes la energía para mover tu boca, úsala para eliminar a esa criatura.@
+` Mi cuerpo toma control de mi mente.\
+ld c,":a;image\tachi\hal_t02.jpg",%type_crossfade_fst
+`"¡Oye, por qué no estás diciendo nada……!@ Demonios, no actúes como si fueses el tipo bueno.@ ¡Tú eres más parecido a un monstruo que yo……!"@
+`"---------"@
+` Aprieto mi cuchillo mientras camino hacia SHIKI.\
+`"Jeh, ni siquiera quieres hablarme, ¿eh?@ Yo siento lo mismo.@ Tampoco quiero hablar contigo.@ ¡Puedo ser un caníbal, pero no soy una máquina como tú……!"@
+`"---------"@
+` Camino a través de la hierba.\
+`"¿Cierto?@ Yo todavía tengo una mente que me permite elegir.@ ¡Sé que lo que hago es considerado maligno por ustedes, pero lo hacemos sabiendo eso……!@
+` ¿Pero qué eres tú, siendo controlado por tu sangre?@
+` ¡¡¡Te estoy preguntando qué estás tratando de matar sin voluntad propia, Nanaya Shiki……!!!"@
+`"---------"@
+` Camino.@ Para, matarlo----\
+`"¡Mierda……!@ ¿Sabes cómo te ves ahora?@ No eres una cosa viviente.@ ¡Eres como una máquina, un títere que mata cualquier cosa que no sea humana!@
+` Ya veo, fue perfectamente correcto que el viejo exterminase a los Nanaya.@ ¡Porque son todos unos asesinos sin emociones……!"@
+`"---------"@
+` El último paso.@
+` Con esto,
+` seré capaz de matar a este monstruo----\
+`"---Observa, ése es el tipo de criatura que eres, Shiki.@ Si combates a cualquiera que no sea humano, todo lo que haces es matarlo sin importar cuán humano parezca.@
+` Entonces, ¿también vas a matar a Akiha después de matarme?"@
+wavestop
+`"------"@
+` ¿Qué rayos?@
+` Yo nunca podría-------\
+ld c,":a;image\tachi\hal_t03.jpg",%type_crossfade_fst
+`"¿Puedes decir que no lo harás?@ Escucha, Akiha es más parecida a un monstruo que yo.@ Con ella frente a ti, no habrá manera de que puedas contener tu impulso.@
+` …… Ves, si queda algo de razón en ti como Tohno Shiki y no como Nanaya Shiki, deberías comprender.@
+` ¡¡Que vas a ser asesinado por mí, o----que es mejor si te suicidas----!!"\
+cl a,%type_lcartain_fst
+`"¡------------!"@
+` Él desaparece.@
+` No, en realidad escapó.@
+` Puedo escuchar el sonido de la hierba mientras corre.@
+` Está corriendo hacia el bosque.\
+`"------------Oh."@
+` …… Lo dejé escapar.@
+` Definitivamente pude haberlo matado, pero lo dejé escapar.@
+` ¿Por qué?@
+` Una parte de mí está furiosa----y otra parte piensa que fue algo bueno.\
+`"…… No puedo dejarlo escapar."@
+` …… Hay un rastro de sangre sobre la hierba.@
+` Corté uno de sus brazos.@
+` Su rastro de sangre me dirá exactamente adónde fue.@
+` Pero si no me apresuro, podría perderlo.@
+br
+monocro off
+return

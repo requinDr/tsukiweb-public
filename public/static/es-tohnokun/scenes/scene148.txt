@@ -1,0 +1,124 @@
+monocro off
+wavestop
+play "*2"
+;---added context above---
+bg "image\bg\bg_34a.jpg",%type_nowaitdisp
+` Sin importar qué, no puedo salirme de este problema hablando.@
+` El único método que me queda es disculparme antes de que Akiha pueda hacer algo.\
+`"Akiha, sobre anoche, yo---"@
+ld c,":a;image\tachi\aki_t11a.jpg",%type_crossfade_fst
+`"Nii-san, déjame advertirte algo."@
+br
+` ---Y entonces,
+` antes de que pueda disculparme, Akiha dice esas palabras con una voz aterradora.\
+`"Eres el hijo mayor de la familia Tohno, así que es mejor que no te disculpes por acciones egoístas.@
+` Disculparte es admitir que hiciste algo malo.@ En esa situación, el hijo mayor tiene que recibir un castigo apropiado, ¿no?"@
+`"-----Um, Akiha, bueno…"@
+ld c,":a;image\tachi\aki_t04a.jpg",%type_crossfade_fst
+`"Nii-san, no quiero tener que hacerte eso.@ Así que Nii-san, estoy esperando una maravillosa excusa."\
+`"------"@
+br
+` …… Un demonio.@
+` Veo a un demonio.\
+`"Akiha, antes de eso, quisiera desayunar algo en el comedor.@ ¿Está bien?"@
+` Me retiro hacia el comedor.@
+br
+ld c,":a;image\tachi\aki_t02.jpg",%type_crossfade_fst
+`"----Nii-san."@
+` Su voz me detiene en seco.@
+` Oh-oh…… pase lo que pase, parece que ella no me dejará escapar.\
+ld c,":a;image\tachi\aki_t01a.jpg",%type_crossfade_fst
+`"Tengo algo que discutir contigo antes del desayuno.@ Por favor, siéntate ahí en el sofá."@
+`"…… Entiendo.@ Por favor mantenlo lo más resumido posible."@
+` Me dejo caer sobre el sofá frente a ella.@
+` Kohaku-san me trae una taza de té.@
+` Su sonrisa parece decir "Resista ahí, ¿okey?" y con eso soy capaz de reunir al menos un poco de valor.@
+` Trago un bocado de té e intercepto su mirada.\
+`"Entonces, ¿sobre qué quieres hablar, Akiha?"@
+`"Esa mujer de anoche, ¿qué es ella para ti?"@
+br
+` ---¡Guh!@
+br
+` Eso estuvo cerca.@
+` Akiha normalmente da muchos rodeos, pero esta vez pregunta directamente.@
+` Me sorprendió tanto que casi esparcí té por todos lados.\
+ld c,":a;image\tachi\aki_t03a.jpg",%type_crossfade_fst
+`"Nii-san, ¿me escuchaste?"@
+`"Sí, te escuché.@ Alto y claro."@
+`"Entonces por favor responde.@ Esa mujer de anoche, ¿qué es ella para ti, Nii-san?"@
+`"……… Um, es una pregunta inquietante, um, ella es una amiga, una persona a la que acordé ayudar---"\
+`"¿Una amiga tan importante como para tener que salir a mitad de la noche?@ Sí, no pretendo tener que aprobar todas tus relaciones pero, se supone que eres un estudiante, ¿no?@
+ld c,":a;image\tachi\aki_t16a.jpg",%type_crossfade_fst
+` El hijo mayor de la familia Tohno, yendo quién sabe a dónde con alguna extraña mujer a mitad de la noche… por favor deja de hacer cosas tan desvergonzadas."\
+cl c,%type_crossfade_fst
+` Mientras habla, sus mejillas se sonrojan y aparta la vista.@
+br
+` ---Ya veo, Akiha piensa que mi relación con Arcueid es de ese tipo.\
+`"Espera, Akiha.@ En realidad no hay nada entre nosotros.@ Sólo la estoy ayudando a encontrar algo.@ Después de eso, ni siquiera volveremos a vernos."@
+ld c,":a;image\tachi\aki_t18a.jpg",%type_crossfade_fst
+`"¿Oh en serio?@ Ciertamente parecen muy cercanos.@ Debe ser mi imaginación, ¿cierto Nii-san?"@
+` Su mirada es fría.@
+` …… Si mintiera con algo como "No es eso," las cosas serían mucho mas fáciles, pero---más allá del hecho de que no quiero mentirle a Akiha, no quiero decir que no somos cercanos.\
+`"----Eso, puede que no…… sea tu imaginación, tal vez."@
+ld c,":a;image\tachi\aki_t03a.jpg",%type_crossfade_fst
+`"Correcto.@ Estabas aterrado, como nunca te había visto antes.@ Nunca fuiste serio sobre nada y ahora muestras toda esta emoción, ¿qué sucede contigo?"@
+`"No es eso.@ Sólo me tomó desprevenido al venir aquí tan repentinamente."@
+ld c,":a;image\tachi\aki_t18a.jpg",%type_crossfade_fst
+`"Esa mujer esperó tranquilamente por ti todo el tiempo, Nii-san."@
+` Ella me lanza una mirada de perfil.@
+` En verdad parece convencida de que Arcueid y yo estamos saliendo como pareja.\
+`"Mira, Akiha.@ Lo estás malinterpretando todo.@ En primer lugar, nos conocimos---"@
+br
+` cuando la asesiné, pero me trago el resto de esas palabras.@
+` …… Sería estúpido decir la verdad.@
+` Pero ni siquiera puedo pensar en una buena excusa, y sólo puedo tartamudear.\
+ld c,":a;image\tachi\aki_t01a.jpg",%type_crossfade_fst
+`"Si no puedes responder entonces cambiemos la pregunta.@ La has estado llamando "ella" todo este tiempo, ¿cuál es su nombre?"@
+`"…… Um, Arcueid."@
+`"Ya veo.@ Así que no se conocieron en la escuela.@ No hay estudiantes extranjeros en tu secundaria."@
+`"…… Uh."@
+` Como Akiha dice, no hay nadie del extranjero en mi escuela.@
+` Es correcto pero, ¿por qué ella sabe tanto?\
+ld c,":a;image\tachi\aki_t03a.jpg",%type_crossfade_fst
+`"Entonces Nii-san, ¿en dónde rayos conociste a una persona como ésa?"@
+`"En la ciudad.@ Sólo, una coincidencia."@
+`"Oh, ¿una coincidencia?@ Entonces Arcueid debe haberte hablado."@
+`"Ah---No, fuí yo, quien habló con ella……"@
+` Bueno, en realidad no hablé con ella, pero fui yo quien inició nuestro contacto.\
+`"¿Por qué hablaste con ella?@ Pensé que Arcueid-san no era nada para ti.@ ¿O ésa era tu única intención desde el principio?"@
+br
+` Sus preguntas dan justo en el blanco.@
+` Paso a paso, ella se acerca más a mi secreto.@
+` Como una serpiente acechando a una rana, ignora todas mis excusas y está tratando de arrinconarme.@
+br
+` Sólo puedo usar la fuerza para terminar esta conversación.\
+`"Ya basta.@ ¡Dije que ella no es nada para mí!@
+` Además, lo que yo haga no te concierne.@ No tienes ningún derecho a quejarte de las personas con que salgo."@
+` La señalo directamente.@
+cl c,%type_crossfade_fst
+` Después de mostrar una cara de enojo----ella se levanta sin hacer sonido alguno.@
+`"¿----?"@
+` …… Eso es raro.@
+` Pensé que me devolvería los gritos, pero en lugar de eso parece muy incómoda y aparta la vista.\
+ld c,":a;image\tachi\aki_t12a.jpg",%type_crossfade_fst
+`"…… Yo, no quería decir esto.@ Pero es sólo que, ella me da un mal presentimiento.@
+` Si fuese otra persona, simplemente me resignaría.@ Pero, que seas seducido por ella, ¿no me hace una gran tonta?"@
+` …… No sé por qué.@
+` Pero ella muerde sus labios con arrepentimiento al decir esas palabras.\
+`"Por eso estoy diciendo que ella no es nada especial.@ Qué sucede Akiha, te ves un poco extraña."@
+ld c,":a;image\tachi\aki_t14.jpg",%type_crossfade_fst
+`"Suficiente.@ ¡Si quieres hacer lo que te plazca, entonces siéntete libre, Nii-san……!"@
+cl c,%type_lshutter_fst
+` Akiha se va ruidosamente hacia el vestíbulo, enfurecida.@
+`"¿………?"@
+` No entiendo absolutamente nada.\
+ld c,":a;image\tachi\koha_t01a.jpg",%type_lshutter_fst
+`"Oh, Shiki-san, eso fue horrible de su parte."@
+` Kohaku-san suelta un decepcionado suspiro y empieza a caminar detrás de ella.@
+`"Pobre Akiha-sama.@ Si va a traer a su amante, por favor traiga a alguien más normal.@ Si hubiese hecho eso, Akiha-sama habría comprendido."@
+cl c,%type_lshutter_mid
+` Kohaku-san desaparece hacia el vestíbulo detrás de Akiha.\
+bg #000000,%type_crossfade_slw
+!w2000
+playstop
+return

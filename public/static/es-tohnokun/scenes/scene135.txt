@@ -1,0 +1,125 @@
+monocro off
+wavestop
+play "*3"
+;---added context above---
+bg "image\bg\bg_06a.jpg",%type_crossfade_mid
+wave se2
+` En el descanso del almuerzo, llega el sujeto que ni siquiera se presentó a una sola clase.@
+ld c,":a;image\tachi\ari_t05.jpg",%type_lshutter_fst
+`"¡Hola Tohno!@ ¡Comida, vamos por algo de comida!"@
+` Está feliz por algo, y se ve más enérgico de lo habitual.\
+`"Claro, comida.@ Pero pareces estar de muy buen humor.@ ¿Sucedió algo, Arihiko?"@
+`"Sip.@ Le pregunté a Senpai si quería almorzar conmigo, y me rechazó."@
+`"………………"@
+` Eso es raro.@
+` Con "Senpai" debe referirse a Ciel-senpai, pero este sujeto parece estar feliz cuando su ofrecimiento fue rechazado.\
+`"Oye, Arihiko, ¿tienes esa clase de gustos?"@
+ld c,":a;image\tachi\ari_t02.jpg",%type_crossfade_fst
+`"No, no, no he terminado.@ Entonces le pregunte a Senpai por qué no, y me dijo: ¡¡'Si Tohno-kun va estar ahí, entonces no quiero ir'!!@ ¡Muajajajajajajajaja!@ ¿¡No es genial, Tohno!?"@
+`"……………"@
+` Qué raro.@
+` ¿Por qué he sido amigo de este sujeto desde la escuela media?\
+`"¡Hombre, ella en verdad te odia Tohno!@ ¡La pérdida de un rival es mi ganancia, así que hoy te invitaré a almorzar!"@
+` Arihiko palmea mi espalda felizmente.@
+`"…… Ya veo.@ Senpai aún está enojada conmigo por lo de esta mañana."@
+` No tengo idea de por qué está enfadada conmigo, pero definitivamente está enfadada.@
+ld c,":a;image\tachi\ari_t01.jpg",%type_crossfade_fst
+`"Hey, vamos Tohno.@ Sólo hay asientos para la mitad de las personas que usan la cafetería."@
+` Arihiko me toma del brazo y me arrastra.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_50.jpg",%type_lcartain_mid
+` Me siento junto a Arihiko y como mi almuerzo.@
+` La cafetería de mi escuela tiene una televisión, y así sea bueno o malo para nuestra educación, se reproducen las noticias que fueron grabadas esta mañana.@
+br
+` En todo caso, las noticias de hoy hablan sobre un cliente borracho que apuñaló a muerte a un empleado de una tienda de comida rápida, algo que me hace desear no ir a una tienda de comida rápida al menos por unos días.\
+ld c,":a;image\tachi\ari_t01.jpg",%type_crossfade_fst
+`"En que mundo tan peligroso vivimos.@ Indiscriminados asesinos en serie, gente borracha apuñalando gente.@ Un hombre ya ni siquiera puede sentirse seguro al salir de noche."@
+` Arihiko parece estar viendo las noticias con seriedad.\
+`"…… Bueno, ciertamente es peligroso.@ Pero al menos esos asesinatos en serie no seguirán ocurriendo, así que las cosas deberían ser somo siempre."@
+`"¿Oh en serio?@ ¿Capturaron al asesino en serie?"@
+`"No, no lo han capturado…"@
+br
+` ---Pero Nrvnqsr ya no está en este mundo.@
+` Así que el estúpido titular de las matanzas del vampiro moderno ya no debería aparecer en las noticias y no habrá más de esos asesinatos sin sentido.\
+`"En fin, esos terribles incidentes no volverán a ocurrir.@ No habrá más víctimas, y las calles volverán a la normalidad."@
+ld c,":a;image\tachi\ari_t04.jpg",%type_crossfade_fst
+`"No----creo que en realidad habrá otra víctima, Tohno."@
+`"----¿Qué?@ ¿Cómo puedes estar tan seguro, Arihiko?"@
+`"Bueno velo tú mismo.@ Las noticias dicen que han encontrado el décimo cadaver."@
+br
+` -----¿Eh?@
+br
+`"Rayos…… eso es justo detrás del cine al que siempre voy."\
+`"Oye----oye, espera."@
+` Empujo a Arihiko y miro hacia la TV.@
+` Lo que veo es sin duda alguna,
+` las noticias anunciando que la décima víctima de los asesinatos en serie fue encontrada anoche.@
+playstop
+`"Eso----no puede ser."@
+` Él, Nrvnqsr, está muerto.@
+` ¿Entonces por qué----hay otro cadáver al que le fue extraída casi toda su sangre?\
+ld c,":a;image\tachi\ari_t01.jpg",%type_crossfade_fst
+`"Hmm, ese vampiro moderno.@ No sé nada sobre la persona, pero si fuese una chica sensual, quizás no me importaría que me chuparan la sangre."@
+`"------"@
+br
+` ¿Si fuese una chica sensual, quizás no le importaría que le chuparan la sangre?@
+br
+` En su estupidez----podría tener razón.@
+br
+`"----No puede ser."@
+` No quiero pensarlo, pero…
+` Con Nrvnqsr muerto, todavía queda otro vampiro, Shiki----\
+bg #000000,%type_crossfade_mid
+bg "image\bg\bg_06a.jpg",%type_crossfade_mid
+` Las clases terminan al igual que la escuela.@
+` En realidad, parece que en algún punto, la escuela terminó.@
+` Envuelto en mis malos pensamientos, miro hacia arriba y repentinamente me encuentro solo.\
+`"----Los asesinatos en serie aún están ocurriendo."@
+` No sé qué significa eso.@
+` Probablemente, la única que sabe la respuesta es Arcueid.@
+br
+` No lo sé.@
+` Ya no estoy involucrado en ninguno de esos incidentes.@
+` Una vez que ajusté cuentas con Nrvnqsr, regresé al mundo ordinario.@
+` Entonces----solamente puedo estar loco si quiero volver a ese mundo anormal una vez más.\
+`"No debería----involucrarme."@
+br
+` Lo entiendo incluso sin decirlo.@
+` Probablemente, ésa es la segunda opción más correcta.@
+` Pero hace mucho, mucho tiempo, alguien me enseñó la más correcta.\
+br
+br
+br
+br
+br
+` ----Escucha, Shiki.@ La vida de todas las personas está llena de trampas.@
+` Tú tienes más poder para hacer algo al respecto que la mayoría de la gente, tienes que ordenar tus ideas----
+!w750
+\
+`"----"@
+` Entonces no puedo simplemente aparentar que no lo vi.@
+` Este incidente aún no ha terminado.@
+` Parece que una vez involucrado en este incidente, tengo que presenciarlo hasta el final--\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_24a.jpg",%type_lcartain_mid
+` Dejo la escuela.@
+` Primero, iré al apartamento de Arcueid.@
+br
+bg "image\bg\bg_23a.jpg",%type_lcartain_mid
+bg "image\bg\bg_12a.jpg",%type_lcartain_mid
+bg "image\bg\bg_13a.jpg",%type_lcartain_mid
+bg "image\bg\bg_14a.jpg",%type_crossfade_mid
+bg "image\bg\bg_15c.jpg",%type_crossfade_mid
+bg "image\bg\bg_12a.jpg",%type_lcartain_mid
+` Su habitación sigue siendo la misma, pero Arcueid no está ahí.@
+` …… Bueno, no pensé que la encontraría así de fácil.@ Parece que tengo que adentrarme en la ciudad y buscarla.\
+bg #000000,%type_crossfade_mid
+!w3000
+bg "image\bg\bg_25b.jpg",%type_lcartain_mid
+` El sol se hunde y la ciudad está empezando a ponerse muy oscura.@
+` Busqué alrededor de los lugares más importantes de la ciudad, pero no encontré siquiera un rastro de ella.\
+`"----Maldición.@ Ella estaba cerca cuando no importaba, ¿por qué no puedo encontrarla cuando en verdad la necesito?"@
+` …… ¿Qué debería hacer?@
+` La noche es joven, así que---
+br
+return

@@ -1,0 +1,23 @@
+monocro off
+wavestop
+playstop
+bg #000000,%type_nowaitdisp
+;---added context above---
+` ---No debería considerar mi propia seguridad.@
+br
+` Lo único seguro es que este sujeto es la razón detrás de todo lo que está sucediendo.@
+` El que está chupando la sangre de todas las personas en la ciudad.@
+` El que hirió a Senpai e intentó violarla.@
+` …… Y Yumizuka.@
+` El que convirtió a Yumizuka en un vampiro y la hizo sufrir de esa manera.@
+br
+` Todo.@ Todo es culpa de este "enemigo".@ Entonces----\
+`"----"@
+` Aprieto mis dientes y me aferro a mi odio.@
+` Tratando de tranquilizarme, me quito mis lentes.@
+bg "image\bg\cmo_18.jpg",%type_crossfade_fst
+br
+` ----Comencemos.@
+` Afortunadamente, es la tercera vez que peleo en una situación de vida o muerte.@
+` Para este momento, tengo una muy buena noción de cómo debería moverme exactamente---.\
+return

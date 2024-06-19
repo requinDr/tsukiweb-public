@@ -1,0 +1,240 @@
+mov $phasebg,"image\bg\bg_11c.jpg"
+mov $phasetitle_a,":a;image\word\PCEL_09B.PNG"
+mov $phasetitle_b,":a;image\word\day_09.png"
+gosub *left_phase
+bg #000000,%type_nowaitdisp
+bg "image\bg\ima_01.jpg",%type_crossfade_mid
+play "*9"
+` En mi sueño, estoy observando la luna.\
+` No puedo recordar dónde estoy o por qué la estoy mirando.@
+` Tal vez levante la mirada hacia el cielo sin querer ver nada, y la luna casualmente estaba ahí.\
+` Mi espalda rechina.@
+` Una imagen de frialdad está recorriendo mis venas.@
+` Una solitaria oscuridad que me marea.@
+` Una radiante luna que enferma mi corazón.\
+` …… Qué extraño.@
+` La abrumadora frialdad se siente más como una sensación de nostalgia.\
+playstop
+bg #ffffff,%type_crossfade_mid
+`"---Shiki-sama."@
+` …… Puedo escuchar la voz de Hisui mezclada con la luz de la mañana.@
+br
+`"---Shiki-sama, ya es hora.@ Por favor despierte."@
+` Su desentonada voz me despierta.\
+bg "image\bg\bg_40e.jpg",%type_crossfade_mid
+`"------"@
+br
+` Tan pronto como despierto, cosas terribles entran en mi visión.@
+` Me duele la cabeza, como si le hubiesen disparado.@
+`"Ah----"@
+` Casi pierdo mi recién despertada consciencia.@ Antes de desvanecerme por completo, rápidamente tomo mis lentes.\
+bg "image\bg\bg_40a.jpg",%type_crossfade_mid
+play "*2"
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_mid
+`"¿Shiki-sama……?@ ¿No se siente bien?"@
+`"…… No, sólo estoy un poco cansado por lo de ayer.@ Estaré bien, así que no te preocupes."@
+` Sacudiéndola ligeramente, saco de mi cabeza lo que estaba viendo.@
+` …… Anoche, me forcé para mantener mi promesa con Arcueid, y por eso mi cuerpo aún no ha vuelto a la normalidad.\
+`"Buenos días, Hisui.@ Gracias por venir a despertarme, como siempre."@
+` Sentado en la cama, hago mi mejor esfuerzo para sonreír naturalmente.\
+ld c,":a;image\tachi\his_t04.jpg",%type_crossfade_fst
+`"No, es mi obligación.@ No hay necesidad de que me agradezca, Shiki-sama."@
+`"Ciertamente, pero estoy agradecido.@ Eres infinitamente mejor que un reloj despertador."@
+br
+` Me levanto de la cama.@
+` Son menos de las siete en punto---unos diez minutos antes de la hora en que normalmente despierto.\
+`"…… Hmm, ¿desayuno?@ Estaré allá pronto, por favor adelántate."@
+`"Sí, esperaré por usted en la sala de estar."@
+cl c,%type_lshutter_mid
+` Haciendo una reverencia, Hisui sale de la habitación.\
+` ----Bien, entonces.@
+` Aún me siento un poco lento, pero no tanto como para faltar a la escuela.@ Estoy seguro de que después de comer el desayuno que preparó Kohaku-san, me sentiré mucho mejor.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_34a.jpg",%type_lcartain_mid
+` Como siempre, Akiha está sentada en el sofá, y Hisui está esperando junto a la pared.@
+br
+ld c,":a;image\tachi\aki_t04a.jpg",%type_lshutter_mid
+`"Buenos días, Nii-san.@ ¿Dormiste bien anoche?"@
+` Akiha me saluda tranquilamente cuando entro a la sala.@
+` Ella no sabe que salí anoche.@ …… Ya que estaba tan preocupada, me siento culpable por salir a escondidas.\
+`"…… Sí, buenos días Akiha.@ Hoy también estás despierta temprano."@
+ld c,":a;image\tachi\aki_t12a.jpg",%type_crossfade_fst
+`"No, estoy como siempre…… ¿Nii-san?"@
+` Como si leyese mi mente, mira directamente hacia mí.@
+`"Um----¿Tengo algo en la cara, Akiha?"\
+ld c,":a;image\tachi\aki_t17a.jpg",%type_crossfade_fst
+`"No, no es eso…… Nii-san, ¿en verdad estás bien?@ Aún no te ves bien, si todavía estás enfermo, tal vez sea mejor que descanses el día de hoy----"@
+br
+` ----Oh, es eso.@
+` Me relajo, percatándome de que ella no se enteró de lo de anoche.\
+`"No, en verdad estoy bien.@ Estaré mejor tarde o temprano, así que por favor no luzcas tan preocupada."@
+ld c,":a;image\tachi\aki_t12a.jpg",%type_crossfade_fst
+`"…… De acuerdo.@ Si tú lo dices, Nii-san, entonces no diré nada."@
+cl c,%type_crossfade_mid
+` Ella queda en silencio, pero aún parece preocupada.\
+`"Hm, es bastante raro que seas convencida así de rápido.@ No es lo normal en ti."@
+ld l,":a;image\tachi\aki_t21.jpg",%type_crossfade_fst
+`"Oye, siempre soy sensible.@ Solamente te previne porque eres el que tiene problemas.@ Por favor no me culpes por tus imperfecciones."@
+` Ella me mira ferozmente.@
+`"Oh, eso es más normal.@ Oye Hisui, ¿verdad que no se siente que amaneció a menos que Akiha se ponga severa?"@
+ld r,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"……………………"@
+` ¿Será porque la llamé repentinamente o porque no sabe qué decir?@ Hisui no confirma ni niega mi afirmación.\
+`"¿Ves?@ Mira, Akiha, Hisui también lo cree."@
+`"No seas tonto.@ Hisui no dice nada porque está sorprendida."@
+` Arrugando su frente, Akiha me vuelve a mirar ferozmente.@
+ld l,":a;image\tachi\aki_t03a.jpg",%type_crossfade_fst
+`"Además, siempre quise decir esto pero, dependes demasiado de Hisui.@ Estuviste durmiendo desde ayer, así que habría estado bien que despertaras más temprano.@ Pero siempre despiertas tarde.@ ¿Estás siendo perezoso porque Hisui no dice nada?"\
+`"Qué----¡Lo haces sonar como si le estuviese causando problemas!"@
+ld l,":a;image\tachi\aki_t18a.jpg",%type_crossfade_fst
+`"No 'como', en verdad le estás causando problemas.@ Oye, ¿no lo crees así, Hisui?"@
+`"………………"@
+` Hisui aún no dice nada y se queda parada ahí silenciosamente.\
+ld l,":a;image\tachi\aki_t03a.jpg",%type_crossfade_fst
+`"¿Ves?@ Hisui dice que también lo cree."@
+`"¡De ninguna manera!@ ¡Ella no dijo nada!"@
+ld r,":a;image\tachi\his_t04.jpg",%type_crossfade_fst
+`"……………………"@
+` Hisui está en silencio.@
+` Pero, su silencio se siente como si estuviese más de acuerdo con Akiha.\
+`"………… Ugh."@
+` Siento que ahora son dos contra uno.\
+`"Shiki-san.@ El desayuno está listo~"@
+` Muy oportunamente, la voz de Kohaku-san hace eco a través de la sala.@
+`"Um, voy a comer."@
+` Me dirijo hacia el comedor rápidamente.\
+ld l,":a;image\tachi\aki_t02.jpg",%type_crossfade_fst
+ld r,":a;image\tachi\his_t08.jpg",%type_crossfade_fst
+`"……………………"@
+` Siento la presión silenciosa de las dos detrás de mí taladrando mi espalda.\
+bg #000000,%type_lcartain_mid
+!w2000
+bg "image\bg\bg_34a.jpg",%type_lcartain_mid
+` Después del desayuno, me dirijo de vuelta a la sala de estar.@
+` Akiha no está aquí, y Hisui es la única de pie.\
+`"¿Huh?@ ¿Akiha ya se fue a la escuela?"@
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"Sí.@ También es hora de que usted vaya a la escuela, Shiki-sama."@
+`"Ah, ¿ya son las siete y veinte?@ Supongo que debería irme pronto."@
+` …… Para ser sincero, aún no me siento muy bien, pero estoy seguro de que pronto volveré a la normalidad.\
+`"Perdona Hisui, pero ¿puedes traer mi maletín de mi habitación?@ Voy a lavarme la cara."@
+`"Como desee."@
+cl c,%type_lshutter_mid
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_48a.jpg",%type_lcartain_mid
+` Después de terminar todas mis preparaciones, dejo la mansión.@
+` Sosteniendo mi maletín, Hisui me acompaña hasta la entrada.\
+`"Ya me voy.@ No estoy seguro de cuándo estaré de vuelta, pero probablemente para la cena."@
+ld c,":a;image\tachi\his_t05.jpg",%type_crossfade_fst
+`"Sí, estaré esperando."@
+` Ella hace una silenciosa reverencia.@
+` …… Hay un indicio de intranquilidad en su rostro.\
+`"¿Hisui?@ ¿Te sientes enferma?"@
+`"No----no se trata de mí pero, usted no se ve bien.@ No estoy segura de que sea buena idea dejarlo ir."@
+` Ella habla con vacilación.\
+`"Estoy bien.@ Sólo me siento un poco pesado.@ Cielos, a ti y a Akiha les gusta mucho preocuparse."@
+`"…… ¿Eso cree?@ Si somos sólo nosotras, entonces estará bien, pero…"\
+`"…… Cielos.@ Volveré temprano hoy y descansaré, eso debería bastar, ¿no?@ No me excederé en nada, así que no pongas esa cara."@
+`"………… Sí.@ Perdóneme, Shiki-sama."@
+` Todavía se ve muy preocupada.\
+`"Me voy.@ Estaré mejor cuando regrese, así que por favor relájate."@
+ld c,":a;image\tachi\his_t07.jpg",%type_crossfade_fst
+`"Ah----Shiki-sama----"\
+bg "image\bg\ima_03.jpg",%type_lcartain_mid
+` La ignoro y dejo la mansión.@
+` La imagen de Hisui observándome con intranquilidad permanece en mi cabeza.\
+playstop
+bg "image\bg\bg_22a.jpg",%type_lcartain_mid
+play "*3"
+` Me dirijo hacia la escuela.@
+` Mis pies están pesados y me siento como dentro del cuerpo de otra persona mientras bajo la colina.@
+` …… Probablemente sea sólo el cansancio de anoche.@ Aunque pensé que me recuperaría de inmediato, la pereza no se desvanece.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_01a.jpg",%type_lcartain_mid
+` Faltan diez minutos para las ocho.@
+` La entrada de la escuela está inundada de estudiantes que llegan.@
+`"---Ah."@
+` Junto a la entrada, veo una figura familiar.\
+`"…… Ciel… Senpai."@
+` Es una escena matutina perfectamente normal.@
+` Pero, lo que vi aquella vez----
+bg #000000,%type_lshutter_fst
+monocro #ffff00
+bg "image\event\cel_e04.jpg",%type_crossfade_fst
+monocro off
+bg "image\bg\bg_01a.jpg",%type_lshutter_fst
+` Si no fuese por eso, sería una mañana normal.@
+`"------"@
+` Sin siquiera saber qué planeo hacer, persigo a Senpai.\
+bg "image\bg\bg_03a.jpg",%type_lcartain_mid
+`"¡Senpai!"@
+` La llamo.@
+ld c,":a;image\tachi\cel_t01a.jpg",%type_lshutter_mid
+`"Oh, buenos días, Tohno-kun.@ Es extraño encontrarte aquí afuera."@
+`"…… Si, vi tu figura desde atrás, y corrí detrás de ti, Senpai.@ Um…… había algo que quería preguntarte."@
+` Dirijo una mirada furtiva hacia su rostro.\
+`"Sí, ¿de qué se trata?"@
+` Ella me encara con su habitual y amable sonrisa.\
+`"…… Uh Senpai.@ Hace dos noches, ¿estuviste cerca de mi casa?@ Con un abrigo negro y una falda ondeando en el viento."@
+ld c,":a;image\tachi\cel_t12.jpg",%type_crossfade_fst
+`"¿……?@ ¿De qué estás hablando?"@
+`"¡Um……!@ Bueno--sí, las botas de trenzado alto te quedaban bien.@ Estaba un poco fascinado, te veías, realmente genial."\
+ld c,":a;image\tachi\cel_t05.jpg",%type_crossfade_fst
+` ……"¿Huh?" Senpai ladea su cabeza.@
+` Frunce el ceño como si no entendiese mis palabras, y entonces lo niega todo.\
+ld c,":a;image\tachi\cel_t08.jpg",%type_crossfade_fst
+`"Um, no entiendo muy bien pero, ¿estás diciendo que yo estaba cerca de tu casa hace dos noches, con esa apariencia?"@
+`"Sí.@ Senpai, ¿ésa era tú, cierto?"@
+ld c,":a;image\tachi\cel_t10a.jpg",%type_crossfade_fst
+`"De ninguna manera.@ Tohno-kun, ¿estás diciendo que parezco como si tuviese tanto tiempo libre?"@
+br
+` ---Senpai está muy enfadada.@
+` No puede estar haciéndose la tonta o mintiendo.\
+`"Ah----No, no es eso pero, yo sólo…… vi a alguien que se parecía a ti hace dos noches, así que---"@
+` Senpai suelta un suspiro.@
+ld c,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
+`"Tohno-kun, ésa no era yo.@ No tengo esa clase de pasatiempo."@
+`"Ah---Sí, lo sé.@ Sólo quería preguntar."\
+` …… Ciertamente, después de escucharla decir eso, tiene razón.@
+` Ciel-senpai y la persona de aquella noche no están relacionadas en absoluto.@
+` En primer lugar, Senpai es una persona normal, y si en verdad estuvo ahí---debió haberme visto combatir a ese hombre vendado con mi cuchillo.@
+` Si hubiese visto una escena tan horripilante, de ninguna manera podría estar hablando conmigo normalmente.\
+`"…… Lo siento, por favor olvídalo.@ Supongo que simplemente era otra persona."@
+ld c,":a;image\tachi\cel_t09.jpg",%type_crossfade_fst
+`"Está bien, pero…… ¿esa persona en verdad se parecía a mí?@ ¿Esa extraña persona?"@
+`"Bueno, no estoy muy seguro.@ Estaba oscura, y muy lejana………… ¿huh?"@
+` Sí, estaba lejos y no puede distinguir su rostro.@
+` ¿Entonces por qué pensé que se parecía a Senpai……?\
+`"…… Hmm… Tal vez hay algo mal en mí."@
+` Cruzo mis brazos y pienso.\
+br
+wave se2
+` Entonces, repica la campana de los diez minutos.@
+`"---Mierda, llegaremos tarde.@ ¡Adiós, Senpai, nos vemos luego!"\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_06a.jpg",%type_lcartain_mid
+` Entro corriendo a mi salón.@
+` Todavía faltan cinco minutos para las clases, así que hay mucho ruido aquí dentro.@
+`"Arihiko, no está aquí."@
+` Conociéndolo, probablemente aparecerá alrededor de la segunda hora.\
+bg #000000,%type_crossfade_slw
+playstop
+!w1000
+bg "image\bg\bg_06a.jpg",%type_crossfade_mid
+wave se2
+` Hora del almuerzo.@
+` Parece que Arihiko no vendrá.@
+` …… Inui Arihiko y Yumizuka Satsuki son las dos personas ausentes el día de hoy.@ Yumizuka Satsuki cogió un resfriado o algo así y estará ausente por un tiempo.\
+`"…… Parece que Senpai tampoco vendrá, supongo que comeré solo."@
+` Digo eso, pero no tengo hambre.\
+bg #ffffff,%type_crossfade_fst
+bg "image\bg\bg_06a.jpg",%type_crossfade_fst
+` …… ¿De qué se trata?@
+` No me sentía muy bien para empezar, pero después de venir a la escuela me siento mucho peor.@
+` No es sólo que mi cuerpo se siente pesado.@ La cicatriz en mi pecho es irritante; es una molesta sensación.\
+`"…… Tal vez no debí haber venido a la escuela."@
+` …… Por un breve momento, veo los preocupados rostros de Hisui y Akiha en mi mente.@
+` Tal vez el haber ignorado los deseos de Akiha de que descansara anoche y haber ido a ver a Arcueid podría ser la causa de esto.@
+` Agotándome sólo por estar sentado, comienzo a sentir un extraño nerviosismo.\
+bg #000000,%type_crossfade_mid
+return

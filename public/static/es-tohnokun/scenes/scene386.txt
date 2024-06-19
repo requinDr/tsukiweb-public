@@ -1,0 +1,51 @@
+monocro off
+wavestop
+playstop
+bg #000000,%type_nowaitdisp
+;---added context above---
+!w1000
+bg "image\bg\bg_06a.jpg",%type_lcartain_mid
+` Llego al salón, y la clase comienza sin incidentes, como siempre.@
+br
+` …… No hay nadie en el pupitre de Yumizuka.@
+` Aunque una compañera se ha ido para siempre, la vida en la clase permanece igual.@
+br
+`"………"@
+` Me pongo un poco nervioso.@
+` Gracias a Hisui, había olvidado todo al respecto.@
+` ¿Quizás debido a ese incidente?@
+` Con ese nerviosismo, mis pensamientos se desvían hacia el cielo.\
+bg #000000,%type_crossfade_mid
+bg "image\bg\bg_06b.jpg",%type_crossfade_mid
+` Antes de darme cuenta, el día escolar ha terminado.@
+` Suelto un suspiro.@
+` No tengo ganas de ver a Arihiko o a Senpai.@
+` De momento, parece que me siento más a gusto en la mansión Tohno que en la escuela.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_32b.jpg",%type_lcartain_mid
+bg "image\bg\bg_33b.jpg",%type_lshutter_mid
+play "*1"
+` Entro al vestíbulo y encuentro a Hisui inmediatamente.@
+ld c,":a;image\tachi\his_t16.jpg",%type_lshutter_mid
+`"Bienvenido, Shiki-sama."@
+`"Estoy en casa, Hisui.@ ¿Kohaku-san y Akiha están aquí?"@
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_mid
+`"Akiha-sama aún no ha regresado.@ Nee-san seguramente está barriendo en el patio trasero."@
+`"Como siempre.@ Bueno, estaré en mi habitación; por favor continúa con lo que estabas haciendo."@
+`"Sí.@ Por favor discúlpeme."\
+cl c,%type_lshutter_mid
+` Subo las escaleras hacia el segundo piso.@
+`"Ah, ¿Shiki-sama?"@
+`"¿Hm?"@
+ld c,":a;image\tachi\his_t23.jpg",%type_lshutter_fst
+`"Estaré ordenando cosas en la habitación de Makihisa-sama.@ Si me necesita, por favor llámeme."@
+cl c,%type_lshutter_mid
+` Hisui desaparece hacia el ala este de la mansión.\
+bg #000000,%type_lshutter_fst
+bg "image\bg\bg_40b.jpg",%type_lshutter_fst
+playstop
+` Suelto mi maletín y me quito mi chaqueta.@
+`"…… Bien, entonces."@
+` Aún falta para que anochezca, ¿qué debería hacer?@
+br
+return

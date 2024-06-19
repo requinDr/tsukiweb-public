@@ -1,0 +1,38 @@
+monocro off
+wavestop
+play "*3"
+;---added context above---
+bg "image\bg\bg_03a.jpg",%type_nowaitdisp
+` ---Me armo de valor y le pregunto sobre anoche.@
+br
+`"…… Uh--Senpai.@ Anoche, ¿estuviste en el parque?@ Creí haberte visto vistiendo algo como un abrigo negro, con tu falda ondeando en el viento."@
+ld c,":a;image\tachi\cel_t09.jpg",%type_crossfade_fst
+`"…… ¿Qué es eso?"@
+`"¡Um……!@ Bueno--sí, las botas de trenzado alto te quedaban bien.@ Estaba un poco fascinado, te veías… realmente genial."\
+ld c,":a;image\tachi\cel_t08.jpg",%type_crossfade_fst
+` ……"¿Huh?" Senpai ladea su cabeza.@
+` Frunce el ceño como si no entendiese mis palabras por completo, y entonces lo niega todo.\
+`"Um, no entiendo mucho pero, ¿estás diciendo que yo estaba anoche en el parque, vestida de esa manera?"@
+`"Sí.@ Senpai, ¿eras tú, cierto?"@
+ld c,":a;image\tachi\cel_t10a.jpg",%type_crossfade_fst
+`"De ninguna manera.@ Tohno-kun, ¿estás diciendo que parezco como si tuviese tanto tiempo libre?"@
+` ---Senpai está muy enfadada.@
+` No puede estar fingiendo ignorancia o mintiendo.\
+`"Ah----No, no es eso pero, yo sólo…… vi a alguien que se parecía a ti anoche en el parque, así que---"@
+` Senpai suspira.@
+ld c,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
+`"Tohno-kun, ésa no era yo.@ No tengo esa clase de pasatiempo."@
+`"Ah---Sí, lo sé.@ Sólo quería preguntar."\
+` Ciertamente, después de escucharla decir eso, tiene razón.@
+` Ciel-senpai y la persona de anoche no están relacionadas, en absoluto.@
+` En primer lugar, Senpai es sólo una persona normal, y si en verdad hubiese estado ahí---tendría que haberme visto matar a ese vampiro con mi cuchillo.@
+` De haber visto una escena tan horrible, no habría manera de que pudiese hablar conmigo normalmente.\
+`"…… Lo siento, por favor olvídalo.@ Supongo que era otra persona."@
+ld c,":a;image\tachi\cel_t09.jpg",%type_crossfade_fst
+`"Está bien, pero…… ¿esa persona en verdad se parecía a mí?@ ¿Esa persona extraña?"@
+`"Bueno, no estoy muy seguro.@ Estaba oscura, y muy alejada………… ¿huh?"@
+` Sí, estaba lejos y no pude distinguir su rostro.@
+` ¿Entonces por qué pensé que se parecía Senpai……?@
+`"…… Hmm… Tal vez hay algo mal en mí."@
+` Cruzo mis brazos y pienso.\
+return

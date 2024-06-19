@@ -1,0 +1,121 @@
+monocro off
+wavestop
+play "*2"
+;---added context above---
+bg "image\bg\bg_34a.jpg",%type_nowaitdisp
+ld c,":a;image\tachi\aki_t02.jpg",%type_crossfade_fst
+`"Comprendo.@ Entonces, no preguntaré más.@ Pero, por favor abstente de hacer algo como esto nuevamente.@ Nii-san, eres el hijo mayor de la familia Tohno; si no comprendes mejor tu posición, será muy preocupante."@
+`"--Oye, eso no tiene nada que ver con esto.@ Además, tú eres la sucesora de la familia Tohno, así que en realidad no importa lo que yo haga.@ Si estás tan preocupada por el futuro de la familia Tohno, deberías conseguirte un esposo apropiado para la casa Tohno."@
+ld c,":a;image\tachi\aki_t13a.jpg",%type_crossfade_fst
+`"-----"@
+` ¿……?@
+` Por alguna razón, Akiha queda en silencio.\
+`"¿Qué sucede?@ ¿Te sientes bien, Akiha?"@
+`"--No es nada.@ Si tienes tiempo para preocuparte por mí, por favor préstate más atención a ti mismo.@ Tienes tu anemia crónica para preocuparte, Nii-san."@
+`"……… Hmph."@
+` …… Bueno, es verdad que me desmayo frecuentemente por anemia.\
+ld c,":a;image\tachi\aki_t01a.jpg",%type_crossfade_fst
+`"En fin, por favor no salgas solo de la mansión muy a menudo.@ Aunque no lo hagas, la ciudad es peligrosa recientemente.@
+` Alguien como tú, que vaga por ahí aturdido, está pidiendo ser atacado por ese asesino en serie."@
+`"¿Asesino en serie?--Oh, esos asesinatos en serie."\
+` Los asesinatos en serie de los que nueve víctimas fueron encontradas.@
+` La sangre fue extraída de sus cuerpos, así que lo llaman el vampiro de los días modernos, pero--\
+`"Oh, no hay problema.@ Esos incidentes, nunca volverán a ocurrir de nuevo."@
+`"----¿Huh?"@
+`"Significa que el vampiro ya no está por aquí.@ Ese asesino--ya fue capturado."@
+`"¿En serio……?@ Nii-san, ¿cómo sabes eso?"@
+`"Bueno, lo vi por casualidad, pero de seguro, semejantes cosas no sucederán de nuevo."@
+cl c,%type_crossfade_fst
+` …… Sí, al menos ya no habrá más personas asesinadas por Nrvnqsr.@
+` Esos dos días que pasé con Arcueid… sucedieron tantas cosas que en verdad no puedo decir qué está bien y qué está mal.@
+` Pero, la simple verdad permanece--puedo decir que todo fue con la mejor intención.\
+ld c,":a;image\tachi\aki_t01a.jpg",%type_crossfade_fst
+`"¿Nii-san----?@ ¿Qué sucedió?@ De repente te ves muy feliz."@
+` Akiha mira mi rostro de forma extraña.@
+`"No es nada.@ Sólo sentí que finalmente todo, todo ha terminado."@
+` Una sonrisa se desliza inconscientemente sobre mis labios mientras respondo.\
+bg #000000,%type_lshutter_mid
+bg "image\bg\bg_34a.jpg",%type_lshutter_mid
+` Son las siete y media.@
+`"¡Shiki-san, el desayuno está listo!"@
+` La alegre voz de Kohaku-san viene del comedor.@
+`"Bien, iré a desayunar.@ ¿Ya casi no es hora, Akiha?@ No te preocupes por mí, puedes irte."@
+ld c,":a;image\tachi\aki_t09.jpg",%type_crossfade_fst
+`"Sí, lo sé, Nii-san."@
+` Tal vez se deba a nuestra conversación pero, Akiha está de buen humor.@
+cl a,%type_crossfade_fst
+` Levantándome de mi asiento, me dirijo hacia el comedor.\
+playstop
+bg #000000,%type_crossfade_slw
+` En realidad no tengo apetito.@
+` ¿Por qué será?@ Bueno, comer arroz blanco con algo rojo sangre encima le haría perder el apetito a cualquiera.@
+`"-----"@
+` Niego con mi cabeza.@
+` Ciertamente es sólo una ilusión, y la comida de Kohaku-san es excelente como siempre.@
+` Tranquilizándome, como un poco del desayuno.@
+br
+` ----Lo escupo instantáneamente.\
+bg "image\bg\bg_34a.jpg",%type_lcartain_mid
+ld l,":a;image\tachi\aki_t01a.jpg",%type_lshutter_fst
+play "*3"
+` Akiha me mira inquisitivamente al verme salir del comedor casi inmediatamente.@
+`"Nii-san, ¿olvidaste algo?"@
+`"No, no es nada.@ Sólo algo sin mucha importancia."@
+ld r,":a;image\tachi\koha_t01a.jpg",%type_lshutter_fst
+`"Shiki-san no parece tener apetito esta mañana.@ Simplemente devuelve todo lo que come, así que le hice tomar algo de medicina."@
+ld l,":a;image\tachi\aki_t13a.jpg",%type_crossfade_fst
+`"¿Eh-----?"@
+`"Dijo medicina, pero fueron sólo algunas vitaminas… Tuve un mal sueño anoche.@ Debería calmarme dentro de poco así que comeré en la escuela."@
+` No le dije eso a Kohaku-san, sino a los ojos de Akiha, que parecen querer decir algo.\
+`"Entonces ya me voy.@ Mi cabeza debería aclararse una vez que comience a caminar hacia la escuela."@
+ld l,":a;image\tachi\aki_t17a.jpg",%type_crossfade_fst
+`"Espera, Nii-san---"@
+` La voz de Akiha viene de atrás de mí.@
+`"Me voy.@ Hoy volveré temprano, así que podrás regañarme entonces."@
+` Ignorando la preocupada voz de Akiha, salgo de la mansión.\
+bg #000000,%type_lshutter_mid
+bg "image\bg\bg_32a.jpg",%type_lcartain_mid
+` Hisui me acompaña hasta la verja, llevando mi maletín.@
+`"Bien, me voy.@ Gracias por acompañarme, Hisui."@
+` Hisui me entrega mi maletín silenciosamente.\
+ld c,":a;image\tachi\his_t01.jpg",%type_lshutter_fst
+`"Shiki-sama, ¿como a qué hora regresará hoy?"@
+`"¿Tampoco confías en mí?@ Está bien.@ Definitivamente estaré de vuelta durante la tarde."@
+`"--Entiendo.@ Entonces por favor sea cuidadoso en el camino."@
+` Hisui hace una profunda reverencia.@
+` Sintiéndome un poco avergonzado por eso, dejo la verja de la mansión.\
+bg #000000,%type_lshutter_slw
+bg "image\bg\bg_24a.jpg",%type_lcartain_slw
+` En la intersección sólo están las figuras de mis compañeros estudiantes de secundaria.@
+` Ninguna mujer joven sentada en la barandilla como en aquella ocasión.\
+`"--Bueno, por supuesto."@
+` Probablemente no volveré a verla jamás.@
+` Primero que nada, su objetivo era ejecutar al vampiro, y con Nrvnqsr muerto, no hay razón para que permanezca aquí por más tiempo.@
+br
+` --Sólo un poquito, en mi pecho.@
+` Cosas como arrepentimiento… y afecto persistente.@
+` Es verdad que sólo trajo problemas, pero aun así…… fue divertido estar con ella.\
+`"………"@
+` Creo que debe haber algo mal en mí.@
+` Aunque me hizo correr tanto peligro todo el tiempo, todavía hay una parte de mí que inconscientemente trata de recordarla.@
+` …… Es casi como si estuviese enamorado de ella.@
+` Aunque nunca quisiera volver a estar expuesto a esa clase de peligro.\
+bg "image\bg\bg_01a.jpg",%type_lcartain_slw
+` Ya que no desayuné, llego a la entrada frontal diez minutos antes de que ésta cierre.@
+` Todos los que no tienen actividades de club antes de la escuela llegan a esta hora.@
+` Los únicos clubes que se reúnen en la mañana son los deportivos.@
+` Así que naturalmente, la entrada se llena de estudiantes.@
+`"----Ah."@
+` Junto a la entrada veo una figura familiar.@
+` Sin siquiera saber qué planeo hacer, voy tras ella.\
+bg "image\bg\bg_03a.jpg",%type_lcartain_fst
+ld c,":a;image\tachi\cel_t01a.jpg",%type_lshutter_fst
+`"Ah, buenos días Tohno-kun.@ Es extraño encontrarte aquí afuera."@
+`"…… Sí, te vi desde atrás, y corrí detrás de ti.@ Um…… había algo que quería preguntarte."@
+` Le dirijo una mirada furtiva a su rostro.\
+`"Sí, ¿de qué se trata?"@
+` Ella me mira con su habitual y amable sonrisa.@
+` Yo---
+br
+cl c,%type_crossfade_fst
+return

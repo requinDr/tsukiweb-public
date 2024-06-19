@@ -1,0 +1,106 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_06a.jpg",%type_nowaitdisp
+` ---No voy a lograr nada pudriéndome aquí.@
+br
+` Además, mi estado de salud no es el mejor ahora, y si no como en verdad sufriré un colapso.@
+`"Supongo que iré a la cafetería."@
+` Pensando en voz alta, me levanto de mi pupitre.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_50.jpg",%type_lcartain_mid
+` El gran ajetreo debe haber terminado, porque no hay una fila.@
+` Las mayoría de mesas las están llenas de estudiantes que ya han empezado a comer.@
+` Echo un vistazo alrededor para ver si queda algún asiento.@
+br
+` ---Y entonces,
+ld c,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
+cl c,%type_crossfade_fst
+br
+` …… veo a alguien que se parece a Senpai.\
+`"----Jaja."@
+` Río ruidosamente.@
+` Confundí a alguien con Ciel-senpai porque había una pequeña semejanza… estoy verdaderamente acabado.\
+` Sé que estoy acabado, pero no puedo apartar mis ojos de esta persona que se parece a ella.@
+` Esta persona que se le parece se sienta en una mesa y bebe udon ruidosamente.@
+` Es udon de curry.@
+` Incluso su comida se asemeja a lo que Senpai comía.@
+br
+`"------Ah."@
+br
+` En realidad, es Senpai.\
+bg #000000,%type_lshutter_fst
+bg "image\bg\bg_50.jpg",%type_lshutter_fst
+play "*3"
+ld c,":a;image\tachi\cel_t07a.jpg",%type_crossfade_fst
+`"----¡Senpai!"@
+` Corro con todas mis fuerzas hacia Senpai.@
+`"-------"@
+cl c,%type_crossfade_fst
+` Senpai me mira y entonces aparta la vista rápidamente.@
+` Claramente me está evitando.@
+` Pero, eso no importa.\
+`"Senpai, ¿por qué estás aquí……!"@
+` Dejo escapar eso porque no puedo pensar en nada más para decir.@
+ld c,":a;image\tachi\cel_t12.jpg",%type_crossfade_fst
+`"¿Por qué estoy aquí?@ Sabes que soy una estudiante de aquí.@ Si no como durante el almuerzo, me desmayaré."@
+`"No, no me refería a eso, sino---"@
+cl c,%type_crossfade_fst
+` No sé qué decir.@ Mi cerebro ha dejado de funcionar.@
+` Ella aparta la vista de mí como si quisiera quejarse.\
+`"Pensé que era extraño que estuvieses aquí.@ Justo ayer, dijiste adiós, así que pensé que nunca volvería a verte---"@
+ld c,":a;image\tachi\cel_t12.jpg",%type_crossfade_fst
+`"Sí, porque se estaba haciendo tarde.@ Los estudiantes deberían volver a casa a esas horas, ¿cierto?"@
+` Simplemente.@
+` Con una seria expresión, ella dice esta escandalosa gracia.\
+`"Qué---"@
+ld c,":a;image\tachi\cel_t07a.jpg",%type_crossfade_fst
+`"¿O, Tohno-kun, estás diciendo que la gente como yo no debería venir a la escuela?"@
+` Sus ojos, que ayer carecían de toda emoción, miran directamente dentro de los míos.@
+br
+` …… ¿Una estudiante como yo?@ Eso es lo que dijo.@
+` No sé si en verdad es un vampiro o no.@
+` Pero sanó de esa herida fatal rápidamente, así que tiene que ser algo más que una humana, como Arcueid.@
+` Simplemente no se puede decir que eso es humano.\
+` Pero aun así.@
+` Para mí, ella es una persona muy importante.@
+` Aún no sé exactamente qué clase de sentimientos tengo hacia ella.@
+` Pero con sólo medio día.@ Fue sólo medio día, pero sólo pensar que ella ya no estaba en mi mundo me hizo sentir que la realidad no era nada por lo que debiese preocuparme.@
+` Así que---para mí, ella es alguien a quien no puedo perder.\
+`"…… Senpai, yo---"@
+` Estaría mintiendo si digo todo eso, pero no me importa.@
+` Aunque sea igual a Arcueid, Senpai sigue siendo Senpai.@ Ésa es una verdad absoluta en la que creo.@
+` Sí, debería decir las palabras que no pude decir anoche.@
+br
+` Sin embargo, antes de eso…\
+ld c,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
+`"Bien.@ No puedo evitar que me odies, Tohno-kun.@ Pero es mi vida, así que sin importar lo que digas, he decidido hacer lo que me plazca."@
+br
+` Ella habla directamente.@
+` "No tienes ninguna queja, ¿verdad?" dice Senpai y me mira fijamente.\
+`"………… ¿Huh?"@
+` Por supuesto, ninguna queja.@
+`  Me siento como un idiota por preocuparme tanto por eso.@ Mi cuerpo se queda sin fuerza.@
+` Pero más que eso, no puedo evitar sentirme muy feliz.@
+`"…… Sí, claro que no tengo ninguna queja.@ Porque hasta ahora, estuve ignorando todas tus advertencias y haciendo lo que me placía también, Senpai."\
+ld c,":a;image\tachi\cel_t12.jpg",%type_crossfade_fst
+`"Eso es aceptable.@ Entonces, démonos un apretón de manos."@
+` Ella extiende su mano.@
+` No sé qué está pensando, pero tomo su mano extendida.@
+br
+` Senpai la sacude arriba y abajo.\
+ld c,":a;image\tachi\cel_t04.jpg",%type_crossfade_fst
+`"Sí, esto es una señal de que hemos hecho las paces.@ Sigamos de esta manera, ¿de acuerdo Tohno-kun?"@
+` Ella muestra una sonrisa verdaderamente feliz.@
+cl c,%type_lshutter_slw
+` Con eso, ella se levanta, cargando su bandeja mientras se aleja.@
+br
+` …… No sé adónde va, pero parece que se dirige hacia algún lugar.\
+`"Ah----"@
+` Después de poner los platos en su lugar, sale de la cafetería.@
+` …… Así está bien.@
+` Me hace feliz que aún esté en la escuela y que nos hayamos reconciliado pero---¿puedo olvidarme de Arcueid y de ese vampiro que estamos cazando?@
+br
+playstop
+return

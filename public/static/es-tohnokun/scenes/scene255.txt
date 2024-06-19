@@ -1,0 +1,49 @@
+wavestop
+play "*3"
+;---added context above---
+monocro #0000ff
+bg "image\bg\bg_29b.jpg",%type_nowaitdisp
+ld c,":a;image\tachi\ark_t08.jpg",%type_crossfade_fst
+br
+` ---Moriría antes de decirlo.@
+br
+`"Arcueid, no te concierne, así que déjame en paz."@
+` Aparto la vista de ella y me niego.@
+` Pero Arcueid continúa diciendo "Vamos, vamos," una y otra vez.\
+`"Vamos, dime.@ Puedes al menos decirme con quién soñaste."@
+` Ella pregunta como una niña curiosa.@
+` Cada vez que le doy la espalda sigue saltando frente a mí, diciendo "Vamos, vamos."\
+cl a,%type_crossfade_fst
+`"…… Por favor, ya déjalo pasar.@ Algo estaba mal en ese sueño.@ …… Incluso ahora, eso---"@
+` No sé porque tuve ese sueño.@
+` Arcueid dice que es mi más grande deseo, pero no quiero pensar que eso lo sea.@
+br
+ld c,":a;image\tachi\ark_t11.jpg",%type_crossfade_fst
+`"Oh, ¿tal vez se convirtió en una pesadilla?@ Ella tiende a escribir la historia a su gusto cuando se encariña con su objetivo.@ Es sólo una novata, supongo que no podía evitarse."@
+` Arcueid piensa en voz alta.@
+`"¿……?@ ¿Escribe la historia a su gusto?@ ¿Qué quieres decir?"@
+`"Estoy diciendo que interpreta tu deseo a su propia manera.@ Ese familiar de sueño que te envié es sólo una niña, así que le gusta jugar bromas."@
+`"----Ya veo."@
+` …… Es un alivio.@
+` Es cierto, ese sueño---no pudo haber sido lo que yo deseaba.\
+` Dejo salir un suspiro de alivio.@
+` Con esto, mi inocencia ha sido probada pero---
+`"Arcueid.@ ¿Por qué me enviaste semejante cosa?@ Es demasiado incluso para un acoso."@
+ld c,":a;image\tachi\ark_t16.jpg",%type_crossfade_fst
+`"Hmph.@ No te estaba acosando.@
+` Te envié el familiar de sueño para agradecerte por derrotar a Nrvnqsr.@ En verdad estoy agradecida contigo, y pensé que sería genial si eso te hacía feliz."\
+`"¿Agradecerme?---Bueno, me hace feliz que estés agradecida, pero…"@
+` Pero sin importar qué, no me interesa esa clase de agradecimiento.@
+ld c,":a;image\tachi\ark_t04.jpg",%type_crossfade_fst
+`"Oh por favor.@ ¿Estás diciendo que no puedes aceptar la buena voluntad de una persona?"@
+`"…… Oye, tú no eres una persona, eres un vampiro, Arcueid."@
+ld c,":a;image\tachi\ark_t14.jpg",%type_crossfade_fst
+`"…… Es…… verdad pero."@
+` Arcueid deja caer su hombros.@
+` …… Cómo digo esto… Arcueid es muy abierta al expresar sus emociones.\
+` Feliz o enojada; ella cambia sus expresiones tan rápidamente---ciertamente es algo encantador.@
+br
+` …… Dije que era un vampiro, pero…
+` en verdad parece humana, lo suficiente como para hacerme olvidar ese hecho.\
+playstop
+return

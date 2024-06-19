@@ -1,0 +1,147 @@
+mov $phasebg,"image\bg\bg_47.jpg"
+mov $phasetitle_a,":a;image\word\PHIS_06A.PNG"
+mov $phasetitle_b,":a;image\word\day_06.png"
+gosub *left_phase
+bg "image\bg\bg_40a.jpg",%type_tshutter_fst
+waveloop se1
+quakey 2,10
+`"¡Ah-------!"@
+br
+` Ah-------.@
+br
+` Jadeo por aire.@
+` Ya---amane… ció.@
+` Estoy en mi habitación.@
+` Hasta ahora, he estado aquí,
+` justo así,
+` y debo haber estado durmiendo---------\
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\bg_31b.jpg",%type_nowaitdisp
+bg "image\bg\bg_40a.jpg",%type_nowaitdisp
+`"Ahh……"@
+` Mi frente está doliendo.@
+`"Sue…… ño."@
+` Tuve un sueño terrible.@
+` Un sueño en el que asesine a alguien.@
+` Un sueño en el que eyaculé una y otra vez mientras asesinaba.\
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\bg_40a.jpg",%type_nowaitdisp
+`"ca…… lor…"@
+` Mi garganta está ardiendo.@
+` Mi cuerpo se siente como plomo, y mis manos…
+` La sensación de romper el cuello de alguien aún persiste en mis manos.\
+`"Eso… no puede ser."@
+` Eso no puede ser.@
+` Eso fue un sueño.@ Indudablemente un sueño.@
+` ¿Pero los sueños en verdad pueden ser tan vívidos?@
+` Lo recuerdo tan vívidamente.@
+` La calle a mitad de la noche,
+` la sensación de quebrar el cuello de alguien,
+` la viscosidad de la sangre gorgoteando en mi garganta,
+` el rostro de la mujer cruelmente asesinada-----\
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\bg_40a.jpg",%type_nowaitdisp
+` Pero fue simplemente un sueño.@ Estoy aquí, así que debe haber sido un sueño.@
+` Pero el problema es que…
+` Estoy soñando que me divierto matando gente.\
+bg "image\bg\ima_08.jpg",%type_crossfade_fst
+br
+` ---Tú y yo somos iguales, Shiki-kun.@
+!w1000
+bg "image\bg\bg_25b.jpg",%type_crossfade_fst
+br
+` Frente a mis ojos, el mundo comienza a girar.@
+bg "image\bg\ima_13b.jpg",%type_crossfade_fst
+br
+` ---Alguien que no puede resistir el placer de asesinar.@
+!w1000
+bg "image\bg\bg_31b.jpg",%type_crossfade_fst
+br
+` Y esa velocidad demencial.\
+bg "image\bg\bg_40a.jpg",%type_nowaitdisp
+!w1000
+wavestop
+play "*2"
+` "Discúlpeme," dice Hisui al entrar a la habitación.@
+ld c,":a;image\tachi\his_t01.jpg",%type_lshutter_fst
+`"Buenos días.@ Parece que ya ha despertado, Shiki-sama."@
+`"……… Ah.@ Buen día, Hisui."@
+` El mundo deja de girar.@
+` Tan pronto como Hisui habló, el remolino en que estaba atrapado desapareció como una ilusión.\
+!w2000
+ld c,":a;image\tachi\his_t04.jpg",%type_crossfade_fst
+`"…… ¿Shiki-sama?"@
+`"¿Eh-----qué sucede, Hisui?"@
+`"¿Cómo se siente esta mañana?@ No está diciendo nada."\
+`"…… Ah, perdona, sólo te estaba mirando.@ Entiendo; tengo que ir a la escuela.@ Iré a la sala de estar de inmediato, espérame allá."@
+ld c,":a;image\tachi\his_t07.jpg",%type_crossfade_fst
+`"Shiki-sama.@ Si no se siente bien, por favor no se fuerce.@ Su salud es más importante que la escuela."\
+`"Jaja, de ninguna manera, Hisui.@ No puedo faltar a la escuela.@ No es nada---En serio.@ Así que no me consientas de esa manera."@
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"No, por favor descanse.@ Le informaré a Akiha-sama, así que por favor descanse."@
+` Hisui es más persistente de lo normal.@
+` …… ¿Mi cara se ve tan demacrada?@
+`"Hisui, te preocupas demasiado.@ En verdad no es nada, no te preocupes por eso… Voy a lavarme la cara, por favor espérame en la sala de estar."\
+cl c,%type_lshutter_fst
+` Saliendo de la cama, paso al lado de Hisui, quien parece querer decir algo más.@
+ld c,":a;image\tachi\his_t07.jpg",%type_lshutter_fst
+` Al dejar la habitación,
+` es un poco doloroso ver a Hisui mirándome con tanta intranquilidad en sus ojos.\
+bg #000000,%type_crossfade_mid
+` Me miro en el espejo del baño.@
+`"…… No parezco enfermo.@ ¿Por qué Hisui está tan preocupada?"@
+` Arrojo agua fría sobre mi rostro.@
+br
+` ---Sólo pensar en el sueño que tuve anoche me hace querer vomitar y no ir a la escuela.@
+br
+` Pero si me quedo en casa por esa razón, sería como confirmar algo, lo cual me hace sentir intranquilo.\
+bg #000000,%type_crossfade_mid
+bg "image\bg\bg_34a.jpg",%type_lcartain_mid
+` Akiha y Kohaku-san están en la sala de estar, y Hisui está parada cerca.@
+` Como siempre, soy el último que entra a la sala.\
+ld l,":a;image\tachi\koha_t01a.jpg",%type_lshutter_fst
+`"Ah, buenos días, Shiki-san."@
+ld r,":a;image\tachi\aki_t15a.jpg",%type_lshutter_fst
+`"¿¡No puede ser!?@ ¡Ni siquiera son las seis y media!"@
+` Kohaku-san me mira con una dulce sonrisa, mientras que Akiha se levanta del sofá y me mira boquiabierta.\
+`"Buenos días, Kohaku-san, oh, y para Akiha también."@
+ld r,":a;image\tachi\aki_t21.jpg",%type_crossfade_fst
+`"¿Qué… Qué quieres decir con, 'Akiha también'?"@
+`"Bueno, 'Akiha también' significa 'Akiha también'.@ Debería ser suficiente para alguien que está tan sorprendida de verme despierto temprano, a pesar de que siempre me dice que despierte temprano."@
+ld r,":a;image\tachi\aki_t03a.jpg",%type_crossfade_fst
+`"----Ya veo.@ Nii-san, despiertas temprano por una vez y ahora caminas triunfante con la cabeza en alto."@
+`"¿Cabeza en alto, Akiha---"\
+br
+br
+br
+br
+` Cabeza.@ Cuello.@
+` ¿Cuello……?@
+` Recuerdo las sensaciones de mi sueño y siento ganas de vomitar.\
+`"…… Perdona, Kohaku-san.@ No pretendo ser una molestia pero, ¿podrías traerme algo frío para beber antes de comer?"@
+ld l,":a;image\tachi\koha_t02.jpg",%type_crossfade_fst
+`"Por supuesto.@ ¿Desearía un refresco o un jugo de fruta?"@
+`"Ummm, un refresco por favor."@
+`"De inmediato."@
+cl l,%type_lshutter_mid
+` Kohaku-san desaparece hacia la cocina.\
+ld r,":a;image\tachi\aki_t01a.jpg",%type_crossfade_fst
+`"…… ¿Nii-san?@ No estás replicando.@ ¿Te sientes bien?"@
+`"…… Cielos.@ Tú, e incluso Hisui, ¿qué piensan que soy?@ ¡Simplemente desperté temprano y mi garganta está seca, no me pasa nada malo…!"@
+` Intentando resistir las ganas de vomitar, respondo gritando.\
+ld r,":a;image\tachi\aki_t12a.jpg",%type_crossfade_fst
+`"…… Lo siento, Nii-san.@ Pero obviamente algo está mal, y quiero ayudar."@
+`"Ah---no, no es eso.@ Me hace muy feliz que estés preocupada.@ Es sólo que anoche tuve una pesadilla terrible, y mi mente está en otro lado, eso es todo.@
+` …… Lo siento, Akiha.@ Soy yo quien debería disculparse."@
+cl r,%type_lshutter_fst
+` Me siento en el sofá.@
+` Sé que hay algo mal en mí, pero no puedo hacer nada al respecto.\
+ld c,":a;image\tachi\aki_t12a.jpg",%type_lshutter_fst
+`"Nii-san, ¿algo te está molestando?@ Si tiene algo que ver con esta mansión, por favor dímelo, estoy segura de que puedo ayudar…"@
+`"No, no es que no esté acostumbrado a vivir aquí---"@
+cl c,%type_lshutter_mid
+` …… Es cierto.@
+` Tal vez si le pregunto indirectamente, podría ayudarme a sentir mejor.@
+br
+` Entonces, decido---
+return

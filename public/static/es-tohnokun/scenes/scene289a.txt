@@ -1,0 +1,1296 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg #000000,%type_crossfade_mid
+!w4000
+bg "image\bg\bg_28b.jpg",%type_crossfade_mid
+` La noche cuelga sobre el parque.@
+` En medio de mi confusa visión, hay una figura que se ve claramente.@
+`"------"@
+` Por alguna razón, parece que mi otro "yo" deseaba esto.\
+br
+` La luz de la luna es fuerte.@
+` Bajo una luz tan brillante como el sol.@
+` Ahí, está parada Arcueid, vestida de blanco.\
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"Tiempo sin verte.@ ¿No es maravillosa la luna esta noche, Shiki?"@
+`"--Arcueid.@ ¿No te habías ido?"@
+ld c,":a;image\tachi\ark_t05c.jpg",%type_crossfade_fst
+`"No, aún no he cumplido con mi objetivo.@ No puedo irme antes de eso, ¿verdad?"@
+br
+` ---Sin esfuerzo alguno.@
+` Arcueid me mira con ojos carmesí.\
+`"Ts------"@
+` Mi respiración se detiene en mi garganta.@
+` Una presión antinatural, nada parecido a cuando enfrenté a Senpai.@
+`"Arcueid…… ¿Qué, estás---"@
+` planeando hacer.@ Pero no pude terminar de decirlo.\
+wave se0
+bg "image\bg\ima_13b.jpg",%type_crossfade_fst
+bg "image\bg\bg_28b.jpg",%type_crossfade_fst
+` …… Mi visión oscila.@
+` Dentro de mi cabeza, alguien distinto a mí continúa gritando.@
+` Casi como una bestia aullándole a la luna.\
+ld c,":a;image\tachi\ark_t05c.jpg",%type_crossfade_fst
+`"…… Hmm.@ No estás huyendo, ¿así que estás preparado?"@
+` Sus ojos rojos me miran fijamente, como si estuviese viendo a un odiado enemigo.@
+`"A------"@
+` No puedo respirar.@
+` Mi garganta no se mueve.@
+` Si hago un movimiento tan irrelevante---ella me la arrancaría en ese momento.\
+`"Entonces te mataré, pero ¿quieres decir tus últimas palabras?"@
+wave se0
+`"---------"@
+` Estoy tan asustado que ni siquiera puedo hablar.@
+` Pero, si pudiese hablar---quisiera preguntarle por qué quiere matarme.\
+`"¿Eh---?@ No puede ser, no puedo creerlo.@ ¿Aún no te has dado cuenta?"@
+cl c,%type_lshutter_fst
+` Con una risita, Arcueid se acerca un paso más.@
+br
+` El seco sonido de sus pasos hace eco a través del parque.\
+br
+br
+br
+br
+br
+br
+`"Yo también fui engañada.@ No pensé que tú fueses Roa."\
+` Diciendo eso,
+` ella muestra sólo un breve momento de lástima.@ Entonces, sus ojos se iluminan de puro placer, como una niña feliz.\
+bg #000000,%type_lcartain_mid
+!w1000
+bg "image\bg\bg_28b.jpg",%type_crossfade_mid
+play "*4"
+` Un chasquido.@
+` Algo se quiebra en mi cabeza.@
+` Fue una definitiva, increíblemente terrible, ya defectuosa y desesperada ruptura.\
+`"Qué------"@
+` Mi voz se escapa.@
+` Qué.@
+` ¿Qué está diciendo?@
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"¿Qué te parece, Shiki?@ ¿Cómo se siente tener a Roa dentro de ti?"@
+` La blanca princesa de los vampiros habla con amabilidad mientras me mira con hostilidad.@
+`"Yo-----yo."@
+` No sé nada sobre ese tal Roa.@
+` Lo que está dentro de mí es sólo este inexplicable deseo de destruir las cosas.@
+` Como tratar de matar a Kohaku-san sin razón alguna, y sentir placer al observar.@ Eso es, todo-----\
+`"Oh----"@
+` En otras palabras.@
+` Ese oscuro y repentino impulso.@
+` ¿Eso es Roa?\
+`"---No.@ Eso, no puede ser verdad."@
+ld c,":a;image\tachi\ark_t05a.jpg",%type_crossfade_fst
+`"No puedes hacerte el tonto.@ En primer lugar, fui yo quien convirtió a Roa en un Apóstol Muerto.@
+` Para mí, es muy fácil saber dónde está la persona que robó mi poder."@
+`"----Eso es, mentira."@
+` Diciendo eso, caigo en desesperación.@
+` Con esas palabras---ni siquiera puedo engañarme a mí mismo.\
+`"No sé por qué.@ Han habido diecisiete reencarnaciones antes de ésta, pero es la primera vez que esto sucede."@
+` No parece que ella tenga la intención de avanzar otro paso.@
+` …… No, no hay necesidad.@
+` La distancia entre Arcueid y yo es de unos siete metros.@ Pero aunque fuese diez veces eso, Arcueid podría cortar mi cuello instantáneamente.@
+br
+` Estoy bastante dentro de su alcance.\
+wave se0
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\bg_28b.jpg",%type_nowaitdisp
+` ---Palpitar.@ Un estruendo comienza.@
+` ¿Es mi reacción instintiva al peligro de muerte?@
+` ¿O---es la ferocidad de Roa habitando en mi cerebro?\
+`"…… Ar…… cueid."@
+` Meto mi mano en mi bolsillo.@
+` La dura sensación de mi cuchillo reconstruye mi astillada consciencia.\
+ld c,":a;image\tachi\ark_t05d.jpg",%type_crossfade_fst
+`"Parece que finalmente lo admites, Shiki.@
+` También sientas a Roa dentro de ti, ¿cierto?@
+` En aquel momento, en el instante en que el cuerpo reencarnado de Roa fue asesinado, él transmitió su ser hacia ti.@ No comprendo cómo sucedió."@
+` …… Ojos, carmesí.@
+` Al ser mirado por ellos, el dolor de cabeza regresa.@
+` Palpitar, Palpitar.@
+` Dentro de mi cabeza.@
+` El vampiro llamado Roa, está deseando emerger.\
+`"-------"@
+` …… Duele.@
+` El que Arcueid diga su nombre enfurece los recuerdos de este sujeto en mi cerebro.@
+br
+` Palpitar.@
+` Palpitar.@
+` Palpita------r
+!w1000
+\
+bg #ffffff,%type_crossfade_mid
+!w750
+bg "image\bg\bg_28b.jpg",%type_crossfade_fst
+ld c,":a;image\tachi\ark_t06.jpg",%type_crossfade_fst
+`"Estás muy tranquilo.@ Estás frente a mí y ni siquiera huyes.@ Pensé que huirías en el instante en que me vieras."@
+`"…… Yo… no haré, eso.@ ¿Por qué, tendría que, huir?"@
+` Resistiendo el dolor en mi cabeza, respondo.\
+`"---¿Hm?@ Me sorprende que aún puedas mentir.@ Pensé que más de la mitad de ti ya había sido controlada por Roa---ya veo, así son las cosas."@
+` Su voz suena feliz.@
+` …… No sé qué la hace tan feliz, pero parece que aún queda algo de humanidad en ella.@
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"He cambiado de opinión.@ Si haces lo que te diga, no te mataré.@ ¿Qué te parece?"@
+` Arcueid me mira mientras dice esto, con felicidad adornando su voz.\
+wave se0
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\bg_28b.jpg",%type_nowaitdisp
+br
+br
+br
+br
+br
+` ---Otro dolor de cabeza.@
+` Dentro de mi cabeza, Roa me grita que no confíe en esta mujer.\
+`"…… ¿Qué quieres decir?@ ¿No quieres matar a Roa?@ Entonces…… no hay manera de que me dejes ir, ¿cierto?"@
+ld c,":a;image\tachi\ark_t05a.jpg",%type_crossfade_fst
+`"Sí, una vez que decido algo, así se hará.@ Ten por seguro que llegaré hasta Roa."\
+ld c,":a;image\tachi\ark_t05d.jpg",%type_crossfade_fst
+`"Pero Shiki, el Roa dentro de ti es muy débil.@
+` Probablemente no puede robar la voluntad de una persona a menos que haya nacido en su cuerpo.@
+` De alguna manera logró transmitir su ser hacia ti, pero eso fue todo lo que pudo hacer.@
+` El Roa que trataba de escapar de aquí no pudo establecer control sobre ti.@ Sólo le es posible vivir como tu lado oscuro."@
+br
+`"…… Eso,"@
+` ¿Eso significa que la voluntad de Roa es casi nula dentro de mí……?\
+`"Arcueid, eso---"@
+ld c,":a;image\tachi\ark_t05a.jpg",%type_crossfade_fst
+`"Sí.@ No tengo necesidad de matarte si ése es el caso.@ Me conformo con tener el poder que Roa me robó trabajando bajo mi control."@
+`"¿----?"@
+` Lo que está diciendo es que no hay necesidad de que yo muera.@
+` ¿Entonces por qué vino a verme?@
+` ¿Por qué---me mira con esos ojos tan serios?\
+`"…… No entiendo.@ ¿Qué estás tratando de decir, Arcueid?"@
+ld c,":a;image\tachi\ark_t05b.jpg",%type_crossfade_fst
+`"Te estoy diciendo que te conviertas en mi sirviente."@
+`"--------¿Eh?"@
+cl c,%type_crossfade_fst
+` ---No parece estar bromeando.@
+` Cuando Arcueid y Senpai estaban peleando, ella dijo que fue sólo una broma.\
+`"…… ¿Qué?@ ¿Eso no fue una broma?"@
+ld c,":a;image\tachi\ark_t05d.jpg",%type_crossfade_fst
+`"No.@ Tú me gustas.@ Así que ¿no es natural que te quiera a mi lado en vez de matarte?"@
+br
+` ----Un chasquido.@
+br
+` Con esa frase, mi dolor de cabeza palpita más que nunca.@
+` Roa.@ El sujeto dentro de mi cabeza expresa ira ante sus palabras.@
+` …… No sé si es por placer o por un profundo resentimiento.\
+ld c,":a;image\tachi\ark_t02.jpg",%type_crossfade_fst
+`"Si estás dispuesto a convertirte en mi sirviente, evitaré que Roa te consuma.@
+` No creo que necesites siquiera pensarlo, viendo cómo Roa te consumirá de seguir así."@
+`"…… Lo haces ver tan simple pero, ¿cómo pretendes detener a este Roa dentro de mí?"@
+`"¿Huh?@ El único que puede detener a Roa eres tú, Shiki.@
+` Pero ese método significaría tu muerte.@
+` Mi método es simplemente fortalecerte.@ Siempre que tu voluntad sea más fuerte que la de Roa, no importará cuántos estragos cause dentro de ti, ¿cierto?"\
+cl c,%type_crossfade_fst
+` Algo estalla en mi cabeza de nuevo.@
+` Roa sigue enfurecido.@
+` No la dejes engañarte, grita él.@ Esta mujer quiere convertirte en su títere.@
+` …… No tengo intención de sucumbir ante ese impulso.@
+` Pero, estoy de acuerdo con Roa.@
+` Quiero seguir siendo yo mismo.@
+` Convertirme en el sirviente de Arcueid para alejarme de Roa es ordenar mal mis prioridades.@
+br
+` Y, en primer lugar,
+` existe Ciel-senpai.@
+` Si voy a la escuela mañana y le hablo sobre esto, apuesto que ella podría idear una solución---.\
+`"…………"@
+` Apretando mis dientes, resisto el martilleo en mi cabeza.@
+` Me quito mis lentes,
+` y saco el cuchillo de mi bolsillo.@
+` Saco la cuchilla y la sostengo al nivel de los ojos.\
+ld c,":a;image\tachi\ark_t07.jpg",%type_crossfade_fst
+`"----Shiki."@
+`"Me niego.@ Lo siento, pero no me convertiré en tu posesión."@
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"Ya veo.@ Entonces, supongo que tendrá que ser por la fuerza."@
+br
+` Una fuerte pisada hace crujir el aire.@
+br
+`"Me mataste una vez, así que siempre pensé que debía devolverte el favor."@
+cl c,%type_lshutter_fst
+` Su blanca figura salta hacia adelante con una ráfaga de viento.@
+playstop
+br
+` ----En ese instante,
+` la pelea comienza.\
+bg #000000,%type_lshutter_fst
+wave se11
+bg "image\bg\ima_14.jpg",%type_lshutter_fst
+wave se11
+` ¡Clang!@
+` Sus garras se encuentran con mi cuchillo.@
+br
+` Bajo la luna dorada, aunque sea mi enemiga, su figura sigue siendo hermosa.\
+wave se11
+` ¡Clang!@
+` Nos repelemos mutuamente una vez más.@
+` Para ser sincero, ni siquiera puedo ver sus movimientos.\
+wave se11
+` ¡Clang!@
+` Nos repelemos una vez más.@
+` Arcueid no está siendo seria en absoluto.@
+` Pero aun así, debería serle fácil arrancarme los brazos y las piernas.\
+wave se11
+` Clang.@
+` Nos repelemos de nuevo.@
+` Mi cuerpo se mueve sin pensar.@
+` Mis brazos y piernas, este cuerpo, sólo con la intención de seguir viviendo, repele las garras de Arcueid por sí mismo.\
+`"Tch-----"@
+` Mi labios se retuercen con ironía.@
+` No quiero admitirlo pero, parece que mi cuerpo se ha vuelto más que humano.@
+` A la medianoche, parece que Tohno Shiki se ha vuelto como SHIKI, probablemente capaz de saltar fácilmente desde el tercer piso de un edificio y estar bien.\
+` Cl, ang.@
+` Pero, eso es todo.@
+` Desde el principio---supe que no podía ganar en contra de Arcueid.@
+` En primer lugar, no puedo ver ninguna "línea" sobre ella.@
+br
+` No tengo manera de herirla.@
+` Arcueid lo dijo una vez.@
+` Que durante la noche, no hay nada que pueda causarle la muerte.\
+` Clang.@
+` Ella golpea mi cuchillo.@
+` Con sólo una agitación de su brazo, salgo volando por el aire.\
+bg #000000,%type_lshutter_fst
+`"¡K-----!"@
+` Logro aterrizar sobre mis pies y preparo mi cuchillo.@
+` Sin importar cuánto mire, no puedo ver ninguna "línea" sobre ella.@
+`"Maldición.@ ¡Qué absurda eres……!"@
+` ----Sí, tengo toda la razón.@
+` En la profunda noche sin la bendición del ol,
+` enfrentar a la princesa de la luna es demasiado temerario.\
+bg "image\bg\bg_29b.jpg",%type_lshutter_mid
+`"Ha----ah, ha."@
+` Mi garganta está ardiendo.@
+` Mi corazón se siente como si fuese a explotar.@
+` Ahora me percato; desde que la vi esta noche, he estado bajo la presión de sus ojos carmesí y no he podido respirar bien.\
+ld c,":a;image\tachi\ark_t01a.jpg",%type_lshutter_fst
+`"¿Ya te has dado cuenta?"@
+` Ella ni siquiera se ha quedado sin aliento.@
+` Aunque estoy jadeando por aire y mi corazón se siente como si fuese a detenerse, ella está perfectamente relajada.\
+`"Maldición----¿Qué hay de ti, has enfriado tu cabeza----"@
+` Intentando controlar mi respiración, me alejo de ella poco a poco.@
+` …… Arcueid no está peleando seriamente.@ Ella no ejerce la misma presión que Roa o Nrvnqsr, nunca pensé que sentiría tanta diferencia entre nosotros.\
+ld c,":a;image\tachi\ark_t03.jpg",%type_crossfade_fst
+`"Oh bueno.@ Parece que no entenderás hasta que mueras una vez, Shiki."@
+` Ella suelta un impaciente suspiro.@
+cl c,%type_nowaitdisp
+` Arcueid se para directamente detrás de mí.@
+quakey 3,100
+bg #000000,%type_nowaitdisp
+wave se4
+`"¡Gh----!"@
+` Escucho un sonido detrás de mi cabeza.\
+` ----Ni siquiera tengo tiempo para parpadear.@
+` Ella me empuja hacia el suelo fácilmente.@
+` Me retiene con sus manos sobre mis hombros.@
+` He caído.@
+` En un instante, sin dejarme saber qué estaba sucediendo, Arcueid me ha sometido.\
+bg "image\event\ark_e04b.jpg",%type_crossfade_fst
+waveloop se1
+`"------"@
+` Arcueid me mira ferozmente sin hablar.@
+` El peso de su cuerpo sobre mis hombros.@
+` Se detiene como si no supiera qué hacer conmigo.@
+`"------"@
+` Me quedo sin aliento.@
+` Pero, puede haber sido sólo su silencio.\
+`"------"@
+` Tan cerca.@
+` Ahora que estamos tan cerca---puede que sea capaz de verlas.\
+` ------Miro fijamente su cuerpo.@
+br
+` El núcleo de mi cerebro grita en protesta.@
+` Totalmente distinto al dolor de cabeza anterior---como si se estuviese desgarrando a sí mismo.\
+`"-------"@
+` Pero no sirve para nada.@
+` No puedo leer la "muerte" de una existencia como Arcueid.@
+` De día puede ser diferente, pero de noche, está cerca de ser una forma de vida perfecta que ni siquiera posee el concepto de la muerte.\
+`"…… ¿Qué pretendes hacer con Roa, Arcueid?@ Dijiste que no me matarías, pero mientras yo viva, Roa seguirá con vida."@
+`"No me preocupa un Roa debilitado.@ …… Sí, es por eso que pude haberte dejado ir, Shiki."\
+`"---Oh, no tienes que retenerte, adelante, déjame ir.@ No te preocupes por mí y ve a casa, de vuelta con tu papi."@
+`"Pero sabes, ¿no es natural que recupere mi propio poder?@ Y por sobre todas las cosas, en verdad me gustas."@
+br
+` Me aprieta.@
+` El peso corporal sobre mis hombros se hace aun más pesado.\
+`"Más que matarte y destruir a Roa, quiero hacerte mío."@
+br
+` Así que, no te mataré,
+` sus ojos rojos parecen decir.\
+`"No puedo creerlo, pero parece que en verdad me gustas.@ Por eso voy a salvarte.@ No chuparé tu sangre, y no haré nada que no te agrade."@
+` Así que por favor escucha lo que te digo, sus ojos rojos dicen.\
+` ---Esos son, sin duda alguna, sus verdaderos sentimientos.@
+` Pero, no puedo escuchar.@
+` Ella podría tener la guardia baja ahora que la perfección está desapareciendo de su cuerpo.\
+`"…… Shiki.@ ¿O tú, me odias?"@
+` Sus ojos miran directamente hacia mí.@
+` Miro su rostro mientras me encuentro sometido.@
+` Sinceramente.@ ---Con tanta fuerza que podría quemar mi cerebro.\
+`"…… No te odio Arcueid."@
+`"¿En serio?"@
+` Ella suena muy feliz.@
+br
+` …… Mi frente está ardiendo.@
+` Mientras mi cerebro palpita horriblemente, yo definitivamente---
+br
+` Veo una sola "línea" de muerte.\
+`"¡Pero, no tengo intención de convertirme en tu títere……!"@
+`"¡-------!"@
+` Sus ojos rebosan de furia.@
+` Pero antes de eso,
+` corto a través de la "línea" sobre su cuello.\
+bg "image\bg\ima_12.jpg",%type_lshutter_fst
+!w1000
+wavestop
+bg "image\bg\bg_29b.jpg",%type_crossfade_fst
+`"Ah-----"@
+` Con sangre fresca brotando de su cuello, Arcueid se desploma.@
+` Deslizándome debajo de ella, me aparto.\
+`"Ha----Ah."@
+` Me falta el aliento.@
+` No estoy herido, pero no puedo correr en este estado.@
+` Es Arcueid, debería ser capaz de sanar semejante herida y venir a atacarme de nuevo---
+br
+`"¿Ar…… cueid?"@
+` Ella ni siquiera se mueve.@
+` Sangre fluye por el suelo y su cuerpo blanco está cubierto de bermellón.\
+br
+br
+br
+br
+br
+br
+br
+` -----No puede ser.@ ¿Yo, la maté?\
+`"¿Qué---Arcueid, estás---"@
+` Deteniendo mis piernas que trataban de escapar, intento correr hacia su cuerpo, pero me quedo sin aliento.\
+wave se0
+` Un brazo.@
+` Uno de los brazos sobre su desplomada figura…… como la pata de una araña, se levanta del suelo.@
+br
+` En ese instante,
+` el mundo entero se congela.\
+monocro #ff0000
+bg "image\bg\ima_01.jpg",%type_crossfade_mid
+waveloop se1
+br
+br
+br
+br
+br
+br
+br
+`   "V   o   y       a"@
+br
+\
+br
+` *jadeo*.@ *jadeo*.@ *jadeo*.@
+br
+` …… De su cuello, sale su sangre y su aliento.@
+` Su brazo se tensa.\
+br
+br
+br
+br
+br
+br
+br
+`  "Ma   ta    r   te,"@
+br
+\
+br
+`  *jadeo*.@ *jadeo*.@ *jadeo* *jadeo*.@ *jadeo*.@ *jadeo*
+br
+` …… La sangre bermellón continúa fluyendo.@
+` Su cuerpo se eleva lentamente del suelo.\
+br
+br
+br
+br
+br
+br
+br
+`   "V   o   y       a"@
+br
+\
+br
+` La pesada y rápida respiración se convierte en risa.@
+br
+` …… Su cuerpo blanco manchado de sangre.@
+` Ella levanta su rostro.@
+` Puedo ver sus ojos destellando entre sus dorados cabellos.@
+` Sus ojos son negro azabache.@
+` Y en ellos,
+` resplandece un feroz y ardiente rojo.\
+br
+br
+br
+br
+br
+br
+br
+`   "Voy    a    matar   te."@
+br
+\
+br
+`  *jadeo*.@ *jadeo*.@ *jadeo*.@
+br
+`  *jadeo*.@ *jadeo*.@ *jadeo*.@ ja.@ a.@ ajajaja, ja.@
+br
+` Jajaja, ajajaja,
+br
+` ¡¡¡¡Ajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajajaj-------!!!!\
+bg "image\bg\ima_01.jpg",%type_crossfade_mid
+monocro off
+`"Ar---cueid."@
+` Sus ojos no están mirando nada.@
+` Intenta levantarse con una mano, pero cada vez que lo hace, cae de vuelta al suelo.@
+br
+` Resbala en su propio charco de sangre, y cada vez, su cuerpo se enrojece más.@
+` Una, y otra vez.@
+` Intenta levantarse, resbala, y cae.@
+` …… Pareciera como si estuviese disfrutando ese ciclo de fracaso.\
+br
+`"Só lo, espera."@
+br
+`"-------"@
+` No puedo moverme.@
+` Su voz, su figura, su voluntad---fluyen forzosamente hacia mi cabeza.@
+br
+` Mi voluntad está fluyendo, fundiéndose, mezclándose.@
+` El mundo entero gira a mi alrededor.@
+br
+` En medio de todo eso, su imagen domina.\
+#ff0000
+br
+br
+br
+br
+br
+br
+br
+`          Es cierto.\
+` Nunca antes he sentido tal vergüenza.@
+` Nunca había sido tan deshonrada.@
+br
+` ---Es por eso que, es gracioso.@
+br
+` No puedo siquiera imaginar cuánto placer sentiré cuando descargue esta furia sobre ti, Shiki.\
+br
+` Destruir.@ Destruir.@ Destruir.@
+` Lenta, completamente, poco a poco, cruelmente y hasta el punto de la insensibilidad, violaré tu vida.@
+br
+` Correcto.@
+br
+` ¡El instante en que arranque tus extremidades, desgarre tu pecho y hale tus intestinos, muerda tu cuello mientras ruegues por piedad, mastique a través de tus ojos y esparsa tu cerebro por el suelo como mantequilla------!\
+#ffffff
+bg "image\bg\bg_27b.jpg",%type_crossfade_fst
+`"¡Sólo espera, te mataré pronto……!"@
+` Sonriendo y riendo alocadamente, Arcueid se revuelca en un mar de su propia sangre.\
+`"----"@
+` No puedo moverme.@
+` Esto no es bueno.@
+` Ni siquiera Roa puede moverse.@
+` Si permanezco aquí, seré asesinado.\
+` Tengo que escapar.@
+` No importa dónde, si no me alejo de aquí rápidamente, seré asesinado.\
+`"Ah, Ah-----"@
+` Húmedos sonidos de goteo.@
+` En el charco de su propia sangre, Arcueid ríe alocadamente.@
+`"A ah, ah-----"@
+` La sangre saliendo de su cuello.@
+` Su acuchillada herida fatal.@
+` ¿Acaso duele tanto?@
+` Como para mitigar su dolor, está masticando a través de su estómago, sus brazos, despedazándose a sí misma.@
+br
+`"¡AAAAAaAAAAAA!"\
+bg #000000,%type_lcartain_mid
+` ----Corro.@
+` Hacia dónde o cómo ni siquiera pasan por mi mente.@
+` Soy dominado por el miedo, y huyo de esta cámara de matanzas.\
+wavestop
+!w2000
+bg "image\bg\bg_01c.jpg",%type_lcartain_slw
+` *jadeo*---*jadeo*, *jadeo*----
+` Corro hacia este lugar sin siquiera percatarme de ello.@
+`"Ghaa----ah, ah."@
+` Me falta el aliento.@
+` Estoy tan cansado que no puedo dar un paso más.@
+`"Ts---ah, ha, ah."@
+` Pero mis piernas continúan moviéndose.@
+` Seré encontrado en este lugar.@
+` Tengo que ir adentro y esconderme hasta el amanecer o moriré.@
+` Mientras descanso de esta manera, apuesto que ella está buscándome---
+br
+\
+` Me quito mis lentes y corto la cerradura sobre la verja de la escuela con mi cuchillo.@
+`"Ah----kk."@
+` Abriendo la puerta, camino hacia los terrenos escolares.\
+bg "image\bg\bg_02a.jpg",%type_crossfade_mid
+`"Ha………… ah."@
+` Caigo sobre mis rodillas tan pronto como llego a los terrenos de la escuela.@
+` Evito caer al suelo usando ambas manos.\
+wave se0
+bg #9c0120,%type_crossfade_fst
+bg "image\bg\bg_02a.jpg",%type_crossfade_fst
+`"……………"@
+` Todo mi cuerpo está caliente.@
+` Tengo que entrar rápidamente al edificio escolar, pero mis piernas no se mueven.@
+` Más que mi cuerpo, mi corazón y mi mente están completamente agotados.@
+` Este dolor de cabeza que no se detiene.@
+` Este Roa dentro de mí.@
+` …… Y, la blanca princesa de los vampiros que continuaba riendo alocadamente.\
+`"----Gg."@
+` Una masa se eleva en mi garganta.@
+` Mi boca siente un amargo sabor.@
+` No he comido nada hoy, así que todo lo que puedo vomitar es ácido estomacal.\
+`"Ha----ah."@
+` Aún sobre mis rodillas, caigo al suelo de cabeza.@
+`"¿Por qué…… todo terminó, de esta manera?"@
+` Respirando dolorosamente, dejo de intentar levantar mi rostro.@
+` …… Aunque ella me encuentre, no me importa.@
+` No puedo escapar de todas formas.@
+` De Arcueid, o de Roa que está dentro de mí.@
+br
+` En ese caso---esperar tranquilamente el final aquí es más fácil para mí.\
+!w3000
+wave se8
+monocro #0000ff
+bg "image\bg\bg_02a.jpg",%type_crossfade_fst
+`"¿---?"@
+` Repentinamente oscurece más.@
+` El sonido de unos pasos.@
+` No me percaté porque estaba boca abajo, pero alguien viene.@
+br
+` Bajo la luz de la luna.@
+` ¿Oscureció el cielo con su sombra esa persona?\
+`"¿Estás tratando de arrepentirte, Tohno-kun?"@
+br
+` Ciel-senpai pregunta con una fría voz.@
+br
+`"----¿Senpai?"@
+` …… Levanto mi cabeza, asombrado.@
+` No sé por qué ella está aquí.@
+` Pero, quisiera contar con algo en este momento, y levanto mi cabeza para encarar el aire nocturno.@
+monocro off
+bg "image\event\cel_e06a.jpg",%type_crossfade_slw
+br
+`"----¿Eh?"@
+br
+` ---Pero esto.\
+bg "image\event\cel_e06b.jpg",%type_tscroll_slw
+br
+br
+br
+br
+br
+br
+br
+` ---Esta Ciel frente a mí,
+` no es la que yo conozco.\
+` Tiene el tatuaje de una cruz sobre sus brazos desnudos.@
+` Sus ojos fríos, como si mirase a alguien que ni siquiera conoce.@
+` …… Senpai porta una extraña arma con un aura de frialdad que no le sienta.\
+`"-------Ah."@
+` …… La conozco.@
+` Dentro de mi cerebro, sé que arma es ésta.@ Tiene que ser---la llamada Séptima Escritura Sagrada, una de las apócrifas que nunca deben ser retiradas de su lugar de descanso.@
+br
+`"¿Sen---pai?"@
+`"Como esperaba, eras Roa después de todo, Tohno-kun."@
+` Con sus fríos ojos,
+` Senpai habla con una voz que es igualmente fría.\
+`"----"@
+` Comienzo a sentir un escalofrío en mi columna.@
+` Sin razón alguna.@ No, mis instintos y mi cerebro trabajan a toda su capacidad para advertirme del peligro, y salto hacia atrás.@
+br
+`"------"@
+` Aún con la boca cerrada, ella da un paso hacia mí con esa amenazadora arma.@
+` …… No hay aberturas en su defensa, en absoluto.\
+` Si huyo precipitadamente,
+` si le doy la espalda, sé que esa cosa perforará mi corazón y desapareceré sin la oportunidad de volver a reencarnar.@
+br
+` …… Aunque ni siquiera tengo ese conocimiento en mis recuerdos.\
+`"---Senpai.@ ¿Por qué tú también estás haciendo esto---?"@
+br
+play "*8"
+`"Comprendo.@ Roa ya está emergiendo, ¿no?@ Entonces ya es demasiado tarde."@
+` Ligeramente,
+` ella da otro sencillo paso hacia adelante.@
+br
+` Esa figura parece----\
+`"---¿Qué estás haciendo, Senpai?@
+` Pareciera que---fueses, a matarme."@
+`"-----"@
+` Ella no responde.@
+` Sólo me mira fijamente como si estuviese intentando decidir hacia dónde puede apuntar para matarme rápidamente.\
+`"---Sen, pai."@
+` Ella va en serio.@
+` En serio, planea matarme.@
+br
+` ---Un rechinar.@
+` Mis nervios sienten la muerte inminente frente a mí.@
+` Mi columna está gritando y mi nuca se está entumeciendo.@
+br
+` Pero---más que este miedo a la muerte,
+` no puedo creer que esta persona esté diciendo semejantes cosas.\
+`"----¿Por qué?"@
+` No lo sé.@
+`"Senpai, dijiste que te quedaste aquí por mi bien."@
+`"------"@
+` Con un espasmo,
+` las piernas de Senpai se detienen.@
+br
+` Ella me dirige la mirada y sonríe.\
+`"Tu bondad en verdad es un raro tesoro.@ Es bueno confiar en las personas, pero si hubieses sido un poco más sereno y lo hubieses pensado con claridad, tal vez podrías haber escapado."@
+`"Eh---"@
+`"Primero que nada, ¿nunca te preguntaste por qué vine a esta escuela?@
+` No lo hice sólo porque quería, ¿sabes?"\
+`"------¿Sen, pai?"@
+`"Sabías que mi objetivo era destruir a 'La Serpiente'---Roa.@
+` Vine a esta escuela porque sabía que el huésped reencarnado de Roa estaba aquí.@ Pero como no estaba segura, necesitaba examinar la situación por un tiempo."\
+`"Espera un minuto, ¿qué rayos estás---"@
+` ¿Qué está balbuceando ella?@
+` No lo sé.@
+` En verdad no puedo entender de qué está hablando.@
+` Ella ignora mi desconcierto y continúa hablando.\
+`"…… Te lo dije antes, Tohno-kun.@ Roa tiene requerimientos para la familia en la que decide reencarnar.@
+` Si lo piensas bien, sólo tienes que buscar a las familias con esas características.@ Cuando sabes eso, encontrarlo es muy sencillo.@
+` Con un poco de investigación, es fácil encontrar familias con habilidades especiales en su linaje.@ En esta ciudad, sólo hay una familia que cumple con los requerimientos de Roa.@
+` Así que---supe desde el principio quién era Roa."\
+`"-----Qué--"@
+` Es extraño.@
+` Si lo sabía desde el principio, pudo haberlo matado o capturado en ese momento……@
+` ¿Desde el principio?@
+` ¿Ella sabía, quién era……?\
+`"Sí.@ Mira, ¿no te das cuenta ahora?@
+` Sabes, Tohno-kun.@ Vine a esta escuela para capturarte desde un principio."@
+br
+`"--------------"@
+` Espera.@
+` Sólo quiero, que, ella, espere.\
+`"Pero, había un pequeño error.@
+` …… Estaba observándote desde lejos para no estimular al Roa dentro de ti, pero concluí que podías no ser el nuevo huésped reencarnado de Roa.@
+` Pero, el hijo mayor de la familia Tohno tenía que ser en quien Roa reencarnase.@ No hay equivocación en eso, así que el error debías ser tú, Tohno-kun."@
+` Ciel-senpai habla con practicidad.@
+` Yo---no puedo decir nada.\
+`"Examinando la situación, fuiste herido fatalmente hace ocho años y adoptado por tus parientes.@
+` Lo que sucedió después fue exactamente como dijo Tohno SHIKI hace dos noches.@
+` No sé qué sucedió en la familia Tohno ocho años atrás, pero tú fuiste asesinado por ese niño llamado SHIKI.@ No, en realidad tu vida fue robada.@
+` Como resultado, quedaste conectado a SHIKI, quien era el huésped de Roa."\
+` Una voz directa, sin emoción.@
+` No conozco a esta Ciel-senpai.@
+` ¿O ésta…
+` ¿Ésta es la verdadera Ciel, y la persona que conocí hasta ahora era simplemente----\
+`"Hasta ahora, debes haber vivido momentos en que la memoria de Roa fluía hacia ti a través de SHIKI.@
+` Él es un vampiro que ha manipulado la cosa sin forma llamada alma.@ Para Roa, ustedes dos, quienes compartían una vida, eran una doble existencia finamente elaborada.\
+`"Por eso---cuando el cuerpo de SHIKI fue destruido, Roa no necesitó reencarnar.@ Porque aún tenía un lugar hacia donde correr: tú."@
+` Frío.@
+` Como si odiase a su enemigo, ella me detesta.\
+`"Pero, todo ha terminado ahora.@ No estaba preparada para acabar con esto tan repentinamente aquella noche, pero esta noche es diferente.@
+` Soy muy afortunada en cierto modo.@ Si Arcueid destruía a Roa, probablemente habría reencarnado de nuevo."@
+` …… No puedo.@ Creer esto.@
+` Eso---eso…
+`"----Eso no es, verdad."\
+`"Adelante, por favor continúa negándolo y haciéndote el tonto.@ Eso facilita mi trabajo.@ Pero---"@
+br
+` Un traqueteo metálico proviene del arma.@
+br
+`"Eso no cambia el hecho de que puedo acabarte fácilmente sin importar lo que hagas, Roa."\
+`"-------"@
+` Su jocosa voz me hace comprender finalmente.@
+` …… No está mintiendo.@
+` …… Sus ojos no están mirando hacia "mí".\
+` …… Sus sentimientos no tenían nada que ver "conmigo" desde el principio.\
+`"…… ¿Qué es esto?@
+` Entonces, entonces desde el principio, ¿siempre me viste como Roa?@
+` Senpai.@ ¡Ser mi amiga y todo eso fue simplemente……………!"@
+br
+` ---No puedo decirlo.@
+` No puedo terminar la oración.@
+` Si lo hago, siento que todo se convertirá en una mentira en ese instante.\
+`"Por supuesto.@ Después de que SHIKI fue destruido, sólo permanecí en la escuela porque Roa no había desaparecido.@ Ya que Roa estaba estudiando aquí, era más conveniente quedarme."\
+br
+` Nunca me iría dejándote aquí.@
+br
+` Senpai me dijo eso con una sonrisa.@
+` Eso no fue, por mi bien.@
+` Ella se quedó aquí sólo para buscar al Roa que sobrevivió.@ Es la única razón por la que me dio su número telefónico.\
+`"----Ja."@
+bg #ffffff,%type_crossfade_fst
+monocro #ffffff
+bg "image\event\cel_e01.jpg",%type_crossfade_fst
+` Entonces, eso también.@
+br
+`"Jaja---"@
+bg "image\event\cel_e02a.jpg",%type_crossfade_fst
+br
+` Y aquellas veces, también.@
+br
+`"Jaja----ja."@
+bg "image\event\cel_e03a.jpg",%type_crossfade_fst
+br
+` Y cuando me salvó aquella noche, también.@
+br
+`"Ah……… ja, ja."@
+bg "image\event\cel_e05b.jpg",%type_crossfade_fst
+br
+` Y, esos ojos tristes, también.@
+bg #000000,%type_crossfade_fst
+\
+monocro off
+bg "image\bg\bg_02a.jpg",%type_crossfade_fst
+`"Jaja---ja."@
+` …… Correcto Shiki, no significan absolutamente nada.@ Esos recuerdos---no son nada en absoluto.\
+` Pensé que la amaba.@
+` Y que ella también me amaba.@
+` …… Buena broma.@
+` Todo fue sólo una ilusión sacada de alguna obra.@
+br
+` ----Todo aquello.@
+` Todo fue un cuento de hadas hecho de mentiras---\
+`"---Entiendo.@ Pero, Senpai.@
+` ¿Cómo sabías que Roa aún estaba vivo?@ ¿Cómo, cómo supiste que Roa reencarnó en este Tohno Shiki?"@
+ld c,":a;image\tachi\cel_t06c.jpg",%type_crossfade_mid
+`"Por supuesto que lo sabía.@ Porque se trata de mí misma." Senpai dice algo que no puedo entender.\
+bg #000000,%type_lshutter_fst
+playstop
+bg "image\bg\bg_02a.jpg",%type_lshutter_fst
+` Como diciendo que no hay necesidad de hablar más,
+` las manos de Ciel levantan esa arma.\
+` La Séptima Escritura Sagrada.@
+` El arma que La Iglesia creó para negar la reencarnación.@ Un principio bíblico inscrito con cada posible inculpación de crítica a la reencarnación.@
+` Un objeto que es escritura y a la vez apócrifa.@ Un arma, y una escritura al mismo tiempo.@
+br
+` Si soy golpeado por eso, mi alma será dispersada y devuelta a la nada.\
+`"------"@
+` La bayoneta se eleva.@
+` La punta viene hacia mí.@
+` Pero lentamente.@
+` Tratándose de Ciel---debería ser capaz de perforarme sin que pueda siquiera percatarme de qué sucedió.\
+`"Ah----"@
+` No hay tiempo para pensar.@
+br
+` ---Instantáneamente, caigo hacia adelante.@
+` Sentí que si me daba la vuelta y corría, mi corazón sería atravesado desde atrás.@
+br
+bg #ffffff,%type_nowaitdisp
+bg "image\bg\bg_02a.jpg",%type_nowaitdisp
+wave se11
+`"¡Hya----!"@
+` Su espada pasa volando sobre mi cabeza.@
+` Parece muy lenta.@
+` Evado su ataque, me muevo justo a su lado, y----\
+bg "image\bg\ima_14.jpg",%type_lshutter_fst
+wave se5
+`"¡-----!"@
+` En el instante en que intenté correr hacia adelante, el movimiento de Senpai cambió drásticamente.@
+` En un instante, con tanta velocidad que parece haber desaparecido literalmente, ella agita su arma de manera horizontal.\
+` El sonido del viento llena mis oídos---y por alguna razón, estoy parado mucho metros lejos de ella.@
+bg "image\bg\bg_02a.jpg",%type_crossfade_fst
+ld c,":a;image\tachi\cel_t06c.jpg",%type_crossfade_fst
+`"-------"@
+` Ella hace un chasquido con su lengua y me mira ferozmente.@
+cl c,%type_crossfade_fst
+\
+mov %flushcount,0
+resettimer
+bg #ffffff,%type_nowaitdisp
+waittimer 16
+resettimer
+bg "image\bg\bg_02a.jpg",%type_nowaitdisp
+waittimer 16
+dec %flushcount
+if %flushcount>=0 skip -7
+`"¡Au……!"@
+` Me duele el brazo izquierdo.@
+`"¿¡Qué…… Huh-----!?"@
+` Estoy sorprendido.@
+` Del codo hacia abajo, mi brazo está roto.@
+` Pero no roto normalmente, la parte inferior de mi brazo está doblada en forma de triángulo.\
+ld c,":a;image\tachi\cel_t06c.jpg",%type_crossfade_fst
+`"---¿Sacrificas tu brazo para salvar tu cabeza?@ Si no hubieses hecho nada, todo habría terminado sin dolor para ti."@
+`"Qué----"@
+` Aunque no me percaté, debo haber roto mi brazo al defenderme de su ataque.\
+`"¿No vas a sacar tu cuchillo?"@
+` Ella me mira con una expresión de aburrimiento.@
+` …… Está menospreciándome.@
+` Me menosprecia, como diciéndome que podría matarme en cualquier momento.@
+cl c,%type_crossfade_fst
+\
+mov %flushcount,0
+resettimer
+bg #ffffff,%type_nowaitdisp
+waittimer 16
+resettimer
+bg "image\bg\bg_02a.jpg",%type_nowaitdisp
+waittimer 16
+dec %flushcount
+if %flushcount>=0 skip -7
+`"¡Gg……!"@
+` Dolor.@ Dolor se dispara de mi brazo hacia mi cerebro.@
+` La sangre de mi brazo roto parece fluir como veneno hacia mis nervios.@
+` Dolor agudo.@
+` Sólo con eso, mi mente se llena de una blancura absoluta.\
+ld c,":a;image\tachi\cel_t06c.jpg",%type_crossfade_fst
+`"-----"@
+` Ella continúa mirándome con esos fríos ojos.@
+`"¡Tú---!"@
+` ¿¡Rompiste mi brazo, y aún actúas de esa manera!?@
+` ¿¡No sabes cuánto duele esto!?@
+` Poniéndome en ridículo.@
+` ¡Poniéndome en ridículo!@
+` ¡Poniéndome en ridículo------!\
+`"Si ésa va a ser tu actitud, Senpai----"@
+br
+` Agarro el cuchillo en mi bolsillo.@
+br
+`"No voy a quedarme parado aquí impotente----"@
+br
+` La dura sensación del metal.@
+br
+`"--y dejar que me mates."@
+br
+` Con un rápido chasquido,
+` saco la hoja de mi cuchillo.\
+`"---¿Eres estúpido?"@
+cl c,%type_lshutter_fst
+` Instantáneamente,
+` su cuerpo, explota.\
+bg #000000,%type_lshutter_fst
+br
+` ----No, eso no es correcto.@
+` Ella se agacha---casi como una lagartija, y corre hacia mí en un destello.@
+br
+` Recorre la distancia de seis metros en un destello.\
+` No está dentro de mi visión, en absoluto.@
+` Su cuerpo entero está debajo de la altura de mis rodillas, y explota hacia arriba desde ahí.@
+br
+` Un ruido sordo.@
+br
+` Justo debajo de mí, su bayoneta dispara directamente hacia mi garganta.\
+bg "image\bg\bg_02a.jpg",%type_lshutter_fst
+wave se4
+wave se9
+quakey 4,100
+`"¡Ga----ah!"@
+` Me quedo sin aliento.@
+` Dolor, ¿hay dolor?@ Sí, aún puedo sentir dolor.@
+br
+`"Ha-----ugh."@
+` Consciente, ¿estoy consciente?@ Muy bien, aún tengo eso.@
+br
+`"¡A, aaaaaa…………!"@
+` Mi cuerpo.@ Mi cuerpo----no está bien.\
+bg "image\bg\ima_13.jpg",%type_lshutter_fst
+` Un sonido de goteo.@
+` Proviene de mi hombro izquierdo.@
+` Cuando lo miro, ya es una cascada de sangre que se derrama directamente hacia abajo.@
+` En ese momento.@
+` La bayoneta no golpeó mi garganta, sino mi hombro izquierdo.\
+bg "image\bg\bg_02a.jpg",%type_lshutter_fst
+`"¡A, Aa, Aaaaaaah!"@
+` Duele.@
+` Duele tanto que la palabra dolor no es suficiente para describirlo.@
+br
+`"¡Haa, aaa, aggggg------!"@
+` Pero, estoy vivo.@
+` Todavía, estoy vivo.\
+` Mi cuerpo.@ Mi cuerpo está lejos de ella nuevamente.\
+` Siento un leve olor a pólvora en mi hombro.@
+br
+`"A, Aah, ah."@
+` Justo entonces.@ En el instante en que la bayoneta me perforó, ella debe haber halado el gatillo.@
+` Eso me hizo volar, y hay distancia entre nosotros nuevamente.\
+ld c,":a;image\tachi\cel_t06c.jpg",%type_crossfade_fst
+`"…… Que suceda dos veces, debe significar que no es una coincidencia.@ Con tanta sangre brotando, que no mueras por la conmoción debe ser señal de que tu cuerpo ha comenzado a cambiar."@
+br
+` ¡Ga-chang!@ Un sonido metálico.@
+` La espada en el extremo del arma es reemplazada por una nueva.@
+` La espada que acaba de dispararme cae---se transforma en las páginas de un libro y se dispersa.\
+`"…… Eso es…… ridículo."@
+` Pero esa cosa ridícula es muy aterradora.@
+` Esa cosa---sólo al tocarme inyecta un veneno letal.@
+` La muerte.@
+` Voy a morir.@
+` Sin duda alguna, seré asesinado.\
+wave se0
+bg #9c0120,%type_crossfade_fst
+bg "image\bg\bg_02a.jpg",%type_crossfade_fst
+` ¿Voy a morir?@
+` ¿Eso es a lo que le temo?@
+` No lo sé.@
+br
+`"¡Ah, gg………!"@
+br
+` Mi hombro está ardiendo.@
+` Caliente, es muy caliente, como si mi cuerpo entero ardiese en llamas.\
+` Ella prepara su arma una vez más con otro ruido metálico.@
+` …… Dos veces.@
+` Resistir eso dos veces no puede ser más que un milagro.@
+` La próxima vez seguramente----\
+wave se0
+bg #9c0120,%type_crossfade_fst
+bg "image\bg\bg_02a.jpg",%type_crossfade_fst
+waveloop se1
+` Imagino a esa bayoneta perforándome justo en la cara.@
+` Eso es más repulsivo que atemorizante.@
+br
+` La muerte es.@
+` Sin importar cómo ocurra, algo inútil, sucio, y desagradable.@
+` Yo me aprecio---así que no quiero que eso suceda.\
+` ¿Es por eso que estoy asustado?@
+` No lo sé.@
+` Ahora que lo pienso---siempre he sido capaz de ver "la muerte", pero nunca pensé en "la muerte" como tal.\
+` No, eso no importa mucho ahora.@
+` *jadeo*, *jadeo*, *jadeo*-----
+` Tengo que escapar.@
+` No quiero morir, así que tengo que escapar.@
+br
+ld c,":a;image\tachi\cel_t07c.jpg",%type_crossfade_fst
+`"--¿No te quitarás tus lentes?"@
+` Una simple y plástica voz.@
+` Esas palabras.@ Su significado me deja sin aliento.@
+` Porque quitármelos significaría ver las "líneas" de Senpai.@
+` Si eso sucede, podría matarla----\
+`"¿¡Qué--Qué estás, diciendo, Senpai……!?"@
+ld c,":a;image\tachi\cel_t06c.jpg",%type_crossfade_fst
+`"-------"@
+` Un escalofrío me recorre.@
+` El aire de pronto se ve saturado por una intención homicida.\
+`"…… No puedo perder más tiempo contigo.@ Por favor muere de una vez."@
+cl c,%type_crossfade_fst
+` Su figura se agacha de nuevo.@
+br
+` ---Aquí viene.@
+br
+` Aunque sé que va a correr hacia mí de nuevo, incluso verla se me hace difícil.\
+` ---Sólo puedo pensar en escapar.@
+` Si no quiero ser asesinado---escapar es mi única opción.@
+` Afortunadamente, nuestra distancia es de casi diez metros.@ Si corro con toda mi fuerza, puedo llegar al edificio escolar.@ ¡Tal vez pueda hacer algo si logro entrar a un espacio más cerrado-----!@
+bg #000000,%type_lcartain_fst
+bg "image\bg\bg_03c.jpg",%type_lcartain_fst
+quakey 3,100
+wave se0
+bg #000000,%type_nowaitdisp
+wave se6
+br
+`"------"@
+` Mi espalda.@
+` Algo----perforó, mi espalda.@
+`"Aa----ah."@
+` Mi cuerpo cae hacia adelante.@
+` Sólo un poco más.@
+` Faltaba sólo un poco más para que pudiese entrar al edificio escolar.\
+`"Kk-----"@
+` Me levanto impulsándome con un brazo.@
+` Lo que me atravesó es una de esas espadas parecidas a clavos que Senpai estaba usando antes.\
+`"¿Porqué----tú………!@
+` El dolor debe estar adormecido; saco la espada que está clavada a mi espalda.@
+` …… Ya que me atravesó por completo, enloquecí y la saqué a través de mi pecho.@
+`"¡Muy bien………!"@
+` ¡Ahora puedo escapar hacia dentro……!\
+`"¿Qué planeas hacer escapando, Tohno-kun?"@
+br
+` Antes de eso,
+` escucho la voz de Senpai detrás de mí.\
+`"¿Aún no comprendes?@ ¿Cuán rápido crees que acabas de correr?@ ¿Por qué aún estás vivo después de recibir esa herida fatal?"\
+`"Det-------"@
+` Mi mente comienza a quedarse en blanco.@
+` No dejes que te engañe.@
+` No dejes que te engañe.@
+` ¿No ha estado engañándote todo el tiempo?@
+` No escuches más sus palabras.@
+` Si la escuchas, morirás.@
+` Ignórala.@
+` No la aceptes.@
+` Aunque sea la verdad, este cuerpo sólo puede rechazarla---\
+`"----Deten, te."@
+`"Cielos, no hay lugar al que puedas correr.@
+` Sólo puedes pelear o ser asesinado.@ Pero si no puedes pelear, solamente puedes morir."@
+` Sus pasos.@
+` Con el sonido de sus pasos, Senpai se acerca.\
+`"¡-------!"@
+` Salto.@
+` Mi espalda, mis hombros y mi brazo están casi muertos, pero salto como si no fuese nada.@
+br
+` ---Yo mismo no puedo creerlo.@
+` Respirando salvajemente y con una velocidad que iguala a la de Senpai, entro corriendo al edificio escolar.\
+bg #000000,%type_lcartain_fst
+!w1000
+bg "image\bg\bg_11c.jpg",%type_lcartain_fst
+play "*9"
+` *jadeo*, *jadeo*, *jadeo*, *jadeo*-----
+` Corro.@
+` Sin pensar, sólo queriendo escapar, continúo corriendo.\
+` *jadeo*, *jadeo*, *jadeo*, *jadeo*-----
+` Pero estoy en mi límite.@
+` ¿Será porque me falta el aliento o porque mis heridas ya no me permiten mover mis brazos y piernas?@
+` Sea lo que fuere, no importa.\
+` Mi respiración se hace más forzada.@
+` Al final del pasillo.@
+` Me encuentro sin rumbo con una pared y caigo.@
+` Caigo sobre mi espalda, intento volver a levantarme, y me siento tonto por hacer eso.\
+` …… *jadeo*…… *jadeo*…… *jadeo*
+` Sentado en el piso con las piernas cruzadas, recuesto mi espalda de la pared.@
+` Arrojando mi cabeza hacia atrás, tomo un gran bocado de aire.\
+`"-----La luna."@
+` Al mirar arriba, puedo ver la luz de la luna a través de la ventana.@
+` ¿Será porque estoy tan exhausto?@
+` Todo lo que veo parece vago, como si todo estuviese cubierto de neblina.@
+br
+` Vaguedad.@
+` ¿Significa que es indefinido?@
+` Igual que yo.@ Igual que la persona llamada Tohno Shiki, indefinido.\
+`"…… Au…… ch……"@
+` Mi hombro palpita de dolor.@
+` Si yo fuese tan definitivo como este dolor, ¿tal vez esto no hubiese ocurrido?\
+` Estoy comenzando a no entender.@
+` Siempre pensé que yo era Tohno Shiki.@
+` Pero ésa era una persona diferente, y me dicen que soy sólo un hijo adoptado de algún lugar.@
+` Ser adoptado significa que debería tener recuerdos previos a mi llegada a la mansión Tohno, pero no hay nada.@
+` Yo…… ciertamente, sólo tengo los recuerdos de Tohno Shiki.\
+bg #000000,%type_crossfade_fst
+bg "image\bg\ima_01.jpg",%type_crossfade_fst
+` En el cielo nocturno está la solitaria luna.@
+`"----"@
+` Es increíblemente… extraño.@
+` ¿Por qué no me di cuenta hasta ahora?@
+` Esta noche es tan---\
+bg "image\bg\bg_11c.jpg",%type_crossfade_fst
+` …… Al final, ¿qué rayos era yo?@
+` Es estúpido no saber nada sobre mí mismo y simplemente desaparecer de esta manera.@
+br
+` Todo es tan vago, es estúpido.@
+` Un mundo en el que puedo ver la muerte.@
+` Una visión con la que puedo percibir la muerte.@
+` Aquel día, hace ocho años.@
+` Pude conocer a Sensei y fui capaz de vivir normalmente.@
+` Aún puedo afirmar que fue correcto conocerla.\
+`"…… Pero, Sensei.@ Supongo, que yo, era alguien que no debía estar vivo."@
+` …… Debería terminar con mi vida mientras una parte de mí aún pueda pensar eso.@
+` Pero no puedo hacerlo.@
+` No puedo suicidarme.@
+` Aun si es inútil, aun si es un error, quiero seguir viviendo.\
+` Si muero, todo se convertirá en una mentira.@
+` Quiero seguir viviendo.@
+` Sin importar lo equivocado que esté, sin importar cuántas cosas tenga que perder, quiero seguir viviendo.@
+br
+` Solamente ella.@
+` Si sólo tuviese a Ciel-senpai a mi lado.@ No me importaría qué más tuviese que perder.\
+bg #000000,%type_crossfade_slw
+playstop
+bg "image\bg\bg_11c.jpg",%type_crossfade_slw
+wave se8
+` Puedo escuchar sus pasos.@
+` …… Ella viene.@
+br
+`"……………… ¿Pelear es mi única opción?"@
+br
+` Murmurando, siento un escalofrío.@
+` No puedo hacer algo como combatir a Senpai.@
+` Dije eso en voz alta sólo por capricho.@
+` Pero, "Córtala en pedazos".@
+` En mi cabeza, en lo más profundo de mi cerebro, como intentando filtrarse dentro de mi mente, las mismas palabras continúan repitiéndose una y otra vez.\
+` Córtala en pedazos.@ Córtala en pedazos.@ Córtala en pedazos.@ Córtala en pedazos.@
+` Si quieres seguir con vida, córtala en pedazos.@
+` Si no quieres morir, córtala en pedazos.@
+` Corta en pedazos a la persona que te engañó.@
+` Corta en pedazos a la persona que está intentando matarte.@
+` Hazlo de una vez---corta en pedazos a la persona que me estorba.@ Córtala en pedazos.@ Córtala en pedazos.@ Córtala en pedazos.@ Córtala en pedazos.@ Córtala en pedazos.@ Córtala en pedazos.@ Córtala en pedazos.@ Córtala en pedazos.@ Córtala en pedazos.@ Córtala en pedazos.@ Córtala en pedazos.@ Córtala en pedazos.@ Córtala en pedazos.@ Córtala en pedazos.@ ¡¡CortaCortaCortaCortaCortaCorta, Corta, en pedazos, corta, en pedazos, corta, corta, corta, corta, corta, corta, corta, corta, corta, corta, corta, corta, corta, corta, corta, corta, corta, corta, corta, corta, corta, corta, corta, corta, corta-----!!\
+`"¡¡¡¡¡¡Cáaaaallateeeee!!!!!!"@
+br
+` ---*jadeo*, *jadeo*, *jadeo*.@
+br
+`"¡Cálla…… te, siempre estás……!"@
+br
+` ---*jadeo*…… *jadeo*, *jadeo*.@
+br
+` …… Mi dolor de cabeza disminuye.@
+` Ya no puedo escuchar esa voz.@
+` Pero, a cambio de eso,
+` Ahora, Senpai probablemente sabe dónde estoy debido a mi grito.\
+`"………………"@
+` Sujeto mi cuchillo fuertemente.@
+br
+` ---¿Vas a pelear?@
+br
+` ¿Una pelea a muerte con esa persona?@
+br
+` …… No puedo pensar claramente.@
+` Mis nervios se sienten entumecidos, como si se hubiesen quemado hace mucho tiempo.@
+` Combatí a Arcueid y corté su cuello.@ De alguna manera logré escapar, pero Ciel estaba esperándome.\
+`"Ja…… jaja, ja."@
+` Es un poco decepcionante.@
+` Nunca pensé que sería de esta manera.@
+` Escapo y escapo, pero una peor situación espera por mí.@ Es como una broma.@
+` Desde cuando---me perdí en esta ruta sin esperanza----
+!w750
+wave se0
+monocro #0000ff
+bg "image\bg\bg_11c.jpg",%type_nowaitdisp
+quakey 2,100
+`"¡Ah---gg……………!"@
+` El dolor de cabeza me recorre como un cuchillo atravesando mi cerebro.\
+monocro #ff0000
+bg "image\bg\bg_11c.jpg",%type_nowaitdisp
+wave se0
+quakey 2,100
+`"Ha…………… a, ah------"@
+` No puedo respirar correctamente.@
+` Mi visión oscila.@
+` …… Parece que en verdad estoy acabado.@
+` Mi cabeza comienza a hacer estragos nuevamente.@
+` Pero aun así, no quiero morir.@
+` Si no quiero morir---sólo hay una cosa por hacer.@
+br
+` Los pasos se hacen más ruidosos.@
+` Su sombra se hace más grande.@
+br
+` ---¿No vas a quitarte tus lentes?@
+br
+` Aun sabiendo lo que significa, ella dijo eso.@
+` En ese caso.\
+br
+br
+br
+br
+br
+br
+` -----Todo.@
+`     Todo debería convertirse en una ilusión.@
+!w1000
+\
+monocro off
+bg "image\bg\bg_11d.jpg",%type_crossfade_slw
+` Me pongo de pie mientras sostengo fuertemente mi cuchillo.@
+br
+` Las pasos se hacen aun más ruidosos.@
+` Siento que el enemigo se acerca.@
+` Todo el tiempo, la voz de alguien hace eco en mi cerebro.@
+` Córtala en pedazos.@ Córtala en pedazos.\
+` Córtala en pedazos.@ Córtala en pedazos.@ Córtala en pedazos.\
+`"U----"@
+br
+` Córtala en pedazos  Córtala en pedazos  Córtala en pedazos  Córtala en pedazos  Córtala en pedazos
+` Córtala en pedazos  Córtala en pedazos  Córtala en pedazos  Córtala en pedazos  Córtala en pedazos
+` Córtala en pedazos  Córtala en pedazos  Córtala en pedazos  Córtala en pedazos  Córtala en pedazos
+` Córtala en pedazos  Córtala en pedazos  Córtala en pedazos  Córtala en pedazos----
+br
+`"Cállate."@
+` Usando mi fuerza de voluntad, fuerzo a la voz en mi cabeza a guardar silencio.\
+`"Esto es, lo que decidí."@
+!w750
+` Córta----
+`"No necesito que me digas qué hacer."@
+!w750
+` la----
+`"Si no quieres ser asesinado por Ciel."@
+!w750
+` en pedazos----
+`"Sólo cállate hasta que todo termine, Roa."@
+!w750
+` -----
+\
+` La voz desaparece por completo.@
+` Los pasos, y su sombra que se acerca.@
+br
+` ----Ciel aparece frente a mí.\
+ld c,":a;image\tachi\cel_t15.jpg",%type_crossfade_fst
+play "*7"
+`"---Finalmente decidiste pelear."@
+` Su voz parece casi aliviada.\
+`"Qué bueno.@ Ahora no hay pecado para ninguno de los dos.@
+` Ahora que ambos estamos tratando de matarnos, nuestro pecado morirá.@ Ahora sólo habrá castigo para el que sobreviva."@
+` …… ¿Ya que ambos estamos tratando de matarnos, no hay pecado?@
+` Sus palabras son parte de un mundo que no puedo comprender.\
+`"Ya veo.@ ¿Entonces el castigo para el que sobreviva puede ser expiado?"@
+`"Sí.@ Llamamos castigo a algo que puede ser expiado.@ Si es llamado castigo, no hay razón para que no pueda ser expiado.@ Lo único que no desaparece es el pecado.@
+` Así que---no queremos cargar con ese peso, ¿cierto?"@
+` Diciendo eso,
+` ella da otro paso hacia adelante.\
+`"--Entonces, ¿matarte aquí no es un pecado, Senpai?"@
+`"Correcto.@ Voy a matarte, así que está bien que me mates, Tohno-kun.@ Estamos en las mismas condiciones."@
+` Otro paso.\
+`"--------"@
+` Eso, no es correcto.@
+` Ciertamente voy a ser asesinado, así que voy a matarla para proteger mi propia vida.@
+` Pero si eso no es un pecado---¿qué sucedería con Ciel?@
+` Desde el principio, ella vino aquí con un deseo de matar no correspondido.@
+br
+` Eso es---\
+`"Adiós.@ Bajemos el telón de esta ridícula obra."@
+` El último paso.@
+cl c,%type_lshutter_mid
+` Su preparada bayoneta dispara hacia mi corazón.@
+br
+` Antes de eso,
+` arremeto hacia adelante y ataco el "punto" sobre su pulmón derecho.\
+bg #000000,%type_lshutter_mid
+` ---No pensé que podría matarla.@
+br
+` Era lógico que ella perforase mi corazón antes de ponerse al alcance de mi cuchillo.@
+` Es por eso que me sorprendió.@
+` Evadí fácilmente su cuchilla y pude perforar su "punto" con facilidad.@
+`"----Sen, pai."@
+` Pareció como si aceptase mi cuchillo a propósito.\
+`"Hice que… me… mataras."@
+` Su débil voz al borde de la muerte.\
+br
+br
+br
+br
+br
+br
+`"Ése fue, mi, mayor pecado."\
+` Sonando como si llorase, utiliza el resto de su fuerza para apuñalarme con su bayoneta.\
+wave se9
+bg "image\bg\bg_11c.jpg",%type_crossfade_mid
+quakey 1,100
+`"------Ga, hu."@
+` El flujo de mi sangre se revierte a través de mi apuñalado corazón.@
+` Tosiendo sangre, me desplomo.@
+br
+` Frente a mis ojos,
+` el cuerpo de la persona que murió ligeramente antes que yo yace sobre el piso.\
+`"----Qué--"@
+` ¿Lo sabías?@
+`"----tonta."@
+` ¿Sabías desde el principio---que si había tal cosa como un pecado, sería sólo para ti?\
+`"Ha----ah."@
+` La sensación en mis extremidades se desvanece.@
+` Mi consciencia, también.@ Faltan segundos para que muera desangrado.@
+` En el instante en que fui apuñalado,
+` tuve una visión de algo como un libro viejo, dispersándose y desmoronándose, hoja por hoja.@
+br
+` Probablemente, con eso, la cosa llamada Roa fue dispersada.\
+`"…………"@
+` No puedo pensar.@
+` Desde el principio, ella planeaba dar su vida para tomar la mía.@
+` ¿Acaso pensó que ése era su castigo?@
+br
+` ---Qué tonta.@
+` No hay ningún---significado en eso.@
+br
+`"---Pero."@
+` Me entristeció que muriese antes de disculparse conmigo.\
+` Si hubiese podido disculparse conmigo, apuesto que ella habría sentido algo de alivio…… Pero, ni siquiera pudo decir eso.@
+` Sabía que era algo que no podía ser expiado con disculpas, así que no se disculpó hasta el final.@
+br
+` Esa determinación.@ Me enfurece haberla hecho llegar tan lejos.\
+`"Qué.@ Al final----"@
+` ¿Ella me gustaba?@
+` Hasta el último momento.@
+` Sintiéndome triste hasta mi propia muerte; ella era así de preciada para mí.\
+`"------Tss."@
+` Toso débilmente y escupo sangre.\
+` Todo ha terminado.@
+` Mirando aturdido hacia la luna, con estos extraños pensamientos, me quedo dormi----\
+!w3000
+playstop
+cl a,%type_waitdisp
+bg "image\word\end.jpg",%type_crossfade_slw
+resettimer
+waittimer 3000
+return

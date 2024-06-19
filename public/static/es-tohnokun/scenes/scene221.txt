@@ -1,0 +1,71 @@
+monocro off
+wavestop
+play "*2"
+;---added context above---
+bg "image\bg\bg_33a.jpg",%type_nowaitdisp
+` ---Intentaré decir la verdad.@
+br
+` No quiero mentirle a Akiha, y si explico todo sinceramente, Akiha podría entender.@
+` …… Bueno, la posibilidad de que eso pase es como la de ganar una lotería.@
+br
+`"--De acuerdo, aquí voy."@
+` Respirando profundamente, abro la puerta de la sala de estar.\
+bg "image\bg\bg_34a.jpg",%type_lcartain_mid
+` En la sala de estar, Akiha está sobre el sofá y Hisui está parada junto a la pared.@
+ld c,":a;image\tachi\aki_t02.jpg",%type_lshutter_mid
+`"---Buenos días, Nii-san."@
+` Su mirada me dice, "estoy furiosa."@
+`"Hola, buen día, Akiha."@
+` Una persona insolente es fuerte.@
+` Respondo a la mirada intimidante de Akiha con una alegre sonrisa.\
+ld c,":a;image\tachi\aki_t01a.jpg",%type_crossfade_fst
+`"----"@
+` Debe estar confundida por mi alegría, porque sólo se queda mirándome.@
+ld c,":a;image\tachi\aki_t12a.jpg",%type_crossfade_fst
+`"Nii-san, olvidemos los saludos.@ Por favor siéntate aquí; deseo hablar contigo."@
+`"Seguro.@ Pero mantengámoslo resumido."@
+` Solemne y calmadamente me siento en el sofá frente a Akiha.\
+ld c,":a;image\tachi\aki_t01a.jpg",%type_crossfade_fst
+`"Bien, entonces Nii-san.@ Es muy repentino pero, ¿puedo preguntarte sobre los últimos dos días?"@
+`"-----Hm."@
+` …… Lo sabía.@
+` Dejé la casa durante dos días, así que no hay excusa.@
+` Es hora de decirle sinceramente todo sobre Arcueid y los últimos dos días.\
+`"Sobre eso, Akiha."@
+`"Sí, ¿de qué se trata, Nii-san?"@
+`"Los últimos dos días, estuve cazando a un vampiro.@ Sabes de los recientes asesinatos en serie, ¿no?@ Fueron obra de un vampiro, así que ayudé al 'vampiro bueno' que conocí recientemente, y combatí con el 'vampiro malo'."@
+br
+` ----De esa forma, explico concisamente.\
+ld c,":a;image\tachi\aki_t15a.jpg",%type_crossfade_fst
+`"Qué------"@
+` Akiha es tomada totalmente por sorpresa.@
+` …… Bueno, supongo que es una reacción natural.@
+` En su cabeza, probablemente está pensando que me estoy burlando de ella, y en cualquier momento del siguiente instante,
+bg #000000,%type_nowaitdisp
+ld c,":a;image\tachi\aki_t07.jpg",%type_crossfade_fst
+`"¿¿¿¡¡¡¡Me estás tomando por tonta, Nii-san!!!!???"@
+` Me gritará algo como eso--
+bg "image\bg\bg_34a.jpg",%type_nowaitdisp
+\
+ld c,":a;image\tachi\aki_t10.jpg",%type_crossfade_fst
+`"…………………"@
+` ……… ¿Huh?@
+` Parece molesta, pero no dice nada.\
+`"Um…… ¿Akiha?"@
+ld c,":a;image\tachi\aki_t11a.jpg",%type_crossfade_fst
+`"…… Nii-san, ¿esto es alguna clase de broma pesada?"@
+`"------Uh…"@
+` Akiha me mira tranquilamente, como si mirase directamente dentro de mi corazón.\
+`"No…… bueno, ¿cómo debería decir esto…"@
+ld c,":a;image\tachi\aki_t01a.jpg",%type_crossfade_fst
+`"Una broma, ¿cierto?"@
+`"…… Bueno, sé que suena como una, pero…"@
+ld c,":a;image\tachi\aki_t02.jpg",%type_crossfade_fst
+`"---No, tiene que ser una broma.@ Por favor no digas cosas semejantes en el futuro, aunque sea una broma."@
+cl c,%type_crossfade_fst
+` Ella me observa, más preocupada que molesta.\
+cl c,%type_crossfade_fst
+` Ya que su mirada parece tan seria,
+`"……………… Sí."@
+` Solamente puedo asentir.\
+return

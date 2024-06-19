@@ -1,0 +1,399 @@
+monocro off
+wavestop
+play "*1"
+;---added context above---
+bg #000000,%type_lcartain_mid
+play "*3"
+bg "image\bg\bg_11a.jpg",%type_lcartain_fst
+` Ciel-senpai me lleva a un salón sin utilizar en toda la esquina del edificio escolar.@
+br
+`"¿Huh…?@ Ésta es una habitación de estilo japonés, ¿no?"@
+ld c,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
+`"Correcto.@ Es muy relajante porque no hay nadie más aquí."@
+`"Bueno, es verdad, pero… ¿este lugar no está cerrado, Senpai?"@
+`"Sí.@ Normalmente sólo es abierto para los miembros del club de la ceremonia del té, así que los estudiantes normales no pueden entrar."@
+` Diciendo eso, ella saca una llave de su bolsillo.\
+`"Oh.@ ¿Estás en el club de la ceremonia del té, Senpai?"@
+ld c,":a;image\tachi\cel_t04.jpg",%type_crossfade_fst
+`"Sí.@ Bueno--en realidad, soy el único miembro."@
+` Riendo, Senpai entra a la habitación de estilo japonés.\
+bg #000000,%type_lshutter_fst
+bg "image\bg\bg_09a.jpg",%type_lshutter_fst
+` …… El interior de la habitación se siente especial, como si no fuese parte de la escuela.@
+` La sensación del tatami y la luz solar a través de las ventanas se sienten muy relajantes.\
+ld c,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
+`"Como dije antes, soy el único miembro del club de té.@ Gracias a eso, puedo usar este lugar libremente durante el almuerzo y después de clases.@ Toma."@
+` Riendo, Senpai reparte cojines.@
+`"Haré algo de té, por favor espera ahí, Tohno-kun."@
+cl a,%type_lshutter_fst
+` …… Senpai se dirige hacia el fregadero para preparar el té.@
+` No tiene sentido permanecer de pie, así que hago lo que me fue dicho y me siento sobre el cojín.\
+`"………"@
+` Quizás fue la magia de la habitación de estilo japonés.@
+` El torbellino caótico que estaba haciendo estragos en mi pecho se tranquiliza, y finalmente puedo comenzar a pensar con calma en lo que sucedió con Yumizuka.\
+ld c,":a;image\tachi\cel_t01a.jpg",%type_lshutter_fst
+`"Gracias por esperar.@ Aquí tienes.@ Ahora, almorcemos.@ De hecho, hay algunas cosas que quiero preguntarte, es bueno que estemos almorzando aquí."@
+`"¿Tienes algo que hablar conmigo?"@
+` Confundido, bebo el té que me ofreció.@
+` Ya que estoy en una habitación de estilo japonés, mi postura se enderezó de manera refleja y mi mente se ha tranquilizado.\
+` …… Aunque no estoy relacionado con eso, la familia Arima lidera una escuela de la ceremonia del té.@ Quizás me siento más a gusto en una habitación de estilo japonés que en una de estilo occidental porque fui criado en ese tipo de ambiente.@
+` Senpai me mira con una expresión de preocupación.\
+`"¿Qué sucede, Senpai?@ Te ves un poco preocupada."@
+ld c,":a;image\tachi\cel_t08.jpg",%type_crossfade_fst
+`"¿Eh?@ Ah, um, sólo me sorprendió un poco lo tranquilo que estás respecto a todo esto, Tohno-kun."@
+`"¿En serio?@ Bueno, mi familia es estricta, así que estoy acostumbrado a este tipo de cosas.@ Más importante aún, Senpai, ¿no querías hablarme sobre algo?"@
+ld c,":a;image\tachi\cel_t12.jpg",%type_crossfade_fst
+`"Sí.@ La continuación de lo que estábamos discutiendo anteriormente."@
+`"…… Lo que estábamos discutiendo… ¿quieres decir, acerca de mi familia?"@
+` Senpai asiente para indicar un sí.\
+ld c,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
+`"Si no te importa, quisiera escuchar más al respecto.@ Tenía curiosidad porque nos detuvimos a medio camino."@
+`"…… No es que me importe, pero escuchar sobre mi familia no es muy interesante.@ Sería una pérdida de tiempo."@
+`"No me importa que no sea interesante, sólo quiero escuchar al respecto."@
+`"…… Hmm, qué excéntrica eres, Senpai."@
+`"Tal vez lo soy," Senpai ríe.\
+`"Muy bien, entonces.@ Continuemos donde nos quedamos.@ Dijiste que te mudaste a tu hogar.@ ¿Qué quisiste decir con eso?"@
+` Senpai pregunta, llena de curiosidad.@
+` …… Bueno, la conversación de entonces debe haber sido bastante fragmentada para Senpai, ya que ella no conocía ninguna de las circunstancias.\
+`"---Veamos.@ Básicamente, soy un sujeto que ha sido desheredado.@
+` Fui herido de gravedad después de quedar atrapado en un accidente de tráfico cuando tenía nueve años.@
+` Las heridas sanaron de alguna manera, pero después de eso, me desmayaba fácilmente por anemia y vomitaba mi comida.@ Fue por eso que fui confiado a mis parientes, los Arima, mientras me recuperaba."@
+ld c,":a;image\tachi\cel_t08.jpg",%type_crossfade_fst
+`"Uh, en otras palabras, los Arima han sido los padres que te han criado desde que tenías nueve años, ¿correcto?"\
+`"Correcto.@ Sabía que mi viejo me odiaba por alguna razón y que una vez que hubiese sido confiado a los Arima, nunca volvería a casa…… es decir, a la mansión Tohno.@ Por eso, bueno, pensé que simplemente continuaría viviendo como un hijo de los Arima para siempre.@
+` Eso es lo que pensaba, pero recientemente mi viejo falleció.@ Fue entonces cuando me dijeron que regresara a la mansión, ahora que el viejo no está ahí, y finalmente accedí a su petición."\
+` ---Y ésa, en su mayor parte, es mi situación doméstica.@
+br
+` Concluyo mi historia de esa manera.@
+` Ciel-senpai hace un pequeño asentimiento silenciosamente.\
+ld c,":a;image\tachi\cel_t07a.jpg",%type_crossfade_fst
+`"…… ¿Puedo preguntar sólo una cosa?"@
+`"¿Mm?@ Claro, si puedo responder.@ Adelante."@
+`"…… Muy bien, entonces preguntaré.@ ¿No te agradaba tu familia anterior?"@
+br
+` Mi familia anterior---¿los Arima, quienes me han criado como mis padres?@
+br
+` Mi madre y mi padre que no eran mis verdaderos padres,
+` y el desconocido edificio que sin lugar a dudas era casa de extraños.@
+` Pero a pesar de todo eso---\
+`"No, ellos me agradaban.@ Fueron personas a quienes no les importó que no tuviésemos relación de sangre.@ Fueron tan afectuosos conmigo que me sentí mal por estar deprimido en soledad.@ Y que ellos me amasen sin importar qué…… no pensé que fuese algo malo."\
+` ---Fui amado por estas personas.@
+br
+` Es por eso que pronto, cualquier día de éstos,
+` tengo que convertirme en una verdadera parte de su familia---\
+br
+` He estado repitiéndome esas palabras desde que era joven.@
+` …… Desde hace mucho, mucho tiempo.@
+` Una y otra vez, juré, hasta prácticamente desfallecer.\
+`"…… Um,  justo como dijo Arihiko, no tuve una sola queja respecto a la familia Arima.@
+` Ellos me trataron bien, y pienso que correspondí a su afección.@
+` Entre nosotros, aunque sabía que sólo estábamos jugando a ser una familia, aun si todo era sólo una actuación, no sentía ningún dolor."@
+` No, en realidad era feliz.@
+` En cierta forma, he considerado a los padres Arima y a mí como el núcleo familiar ideal.\
+`"---Pero no servía de nada, ¿cierto?"@
+`"…… Sí.@ A pesar de todo, había una línea que no podía cruzar.@ 'Ésta no es tu verdadera familia……' Sin importar lo que hiciese, no podía sacar esas palabras de mi cabeza.@
+` Sabía que debía ignorar eso, pero simplemente no podía hacerlo.@
+` No sé si podrías llamarlo una experiencia de la niñez, pero ya se había convertido en una maldición para mí.@ Por alguna razón, sin importar dónde estuviese, me sentía como un extraño para mi familia."@
+ld c,":a;image\tachi\cel_t09.jpg",%type_crossfade_fst
+` Senpai está en silencio.@
+` Evadiendo mi mirada, acurruca sus hombros con arrepentimiento.\
+`"¿Ves?@ Fue aburrido después de todo, ¿verdad?@ Por eso que dije que sería una pérdida de tiempo."@
+ld c,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
+`"No, eso no es verdad.@ Fue una historia muy significativa."@
+` Diciendo eso, Senpai comienza a comer su almuerzo.\
+cl a,%type_crossfade_fst
+` Sigo su ejemplo y comienzo a mordisquear el pan que compré.@
+` …… Gracias a mi conversación con Senpai, mi apetito ha regresado.@
+` A pesar de eso, no pude terminar siquiera la mitad del pan.\
+playstop
+!w1000
+ld c,":a;image\tachi\cel_t07a.jpg",%type_crossfade_fst
+`"Entonces.@ Tohno-kun, ¿hay algo que te preocupe en este momento?"@
+`"¿Eh--por qué preguntas eso, tan repentinamente?@ No tengo ninguna preocupación en particular."@
+`"Hmmm.@ Entonces supongo que la razón por la que no estás comiendo mucho debe estar relacionada con tu salud."@
+` Senpai me mira fijamente.@
+` …… Por alguna razón, su mirada se siente muy penetrante.@
+` Se siente difícil permanecer en silencio bajo una mirada como ésa.\
+`"…… No tengo ninguna preocupación, pero… Senpai, ¿qué piensas de los asesinatos recientes?"@
+` No puedo evitar preguntar.@ Las historias sobre mi compañera de clases que no ha vuelto a casa no abandonan mi mente.\
+`"¿Asesinatos?@ Oh, ¿te refieres a ese asunto de los vampiros?"@
+`"--Sí.@ Ya han habido ocho víctimas, ¿cierto?@ No he visto las noticias últimamente, así que no sé mucho respecto a ese tema.@ ¿Sabes algo al respecto, Senpai?"@
+`"Bueno, sé tanto como todos, pero no, no conozco los detalles.@
+` Es sólo que… la palabra 'vampiro' me da escalofríos en la espalda."\
+`"Ah, ¿te refieres a la forma en que a las víctimas les fue extraída la sangre?@ Extraño, ¿no?@ Me pregunto qué podrá significar."@
+`"¿Quién sabe?@ Es imposible saber cómo piensan semejantes personas.@ Pero me pregunto por qué lo apodaron 'el vampiro'?"@
+`"¿……?"@
+` Qué pregunta tan rara.\
+`"Bueno, ¿no será porque la sangre fue extraída de los cuerpos?@ Sería perfectamente natural llamarlo vampiro, ¿no?"@
+play "*4"
+ld c,":a;image\tachi\cel_t04.jpg",%type_crossfade_fst
+`"¿Conoces el folklore sobre los vampiros, Tohno-kun?"@
+` Sonriendo repentinamente, Senpai hace una pregunta aun más extraña.\
+`"…… ¿Folklore de vampiros?@ …… ¿Te refieres a que las personas a las que les fue chupada la sangre también se convierten en vampiros?"\
+`"Sí.@ Si eso fuese verdad, no debería quedar ningún cuerpo, ¿cierto?@ Suponiendo que un vampiro fuese el asesino, no habría cuerpos, Tohno-kun."@
+`"---Ya veo.@ Es verdad, pero… es sólo un apodo, ¿no?@ ¿En verdad crees en los vampiros, Senpai?"@
+ld c,":a;image\tachi\cel_t05.jpg",%type_crossfade_fst
+`"En absoluto.@ Después de todo, el hecho de que los cuerpos están ahí demuestra que no es un vampiro, ¿cierto?"@
+` Sonriendo, Senpai da una respuesta que parece ligeramente fuera de lugar.@
+ld c,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
+`"Pero ¿podrías verlo también de esta manera?@
+` Tal vez las víctimas cuyos cuerpos han sido encontrados murieron porque no pudieron convertirse en vampiros.@
+` Quizás existen aquellos que pueden convertirse, y aquellos que no pueden.@ Los cuerpos de las personas que pueden convertirse en vampiros no serán encontrados aunque hayan sido atacados por vampiros.@ Porque incluso ahora, aún están vivos--en algún lugar.@
+` Pero los que no pueden convertirse en vampiros simplemente mueren, y sus cuerpos terminan siendo encontrados."\
+`"Bueno-----eso es…"@
+` …… Senpai aún está sonriendo.@
+` Sé que sólo es una broma, pero tengo dificultad para reírme de ésta.\
+play "*3"
+ld c,":a;image\tachi\cel_t03.jpg",%type_crossfade_fst
+`"Oh, sólo estoy bromeando.@ Sería como algún tipo de historia de terror si eso fuese verdad.@ No me gustan las historias de miedo, así que por favor no me preguntes cosas como ésas."@
+`"…… ¿Qué?@ Me pareció que la estabas disfrutando, Senpai."@
+ld c,":a;image\tachi\cel_t04.jpg",%type_crossfade_fst
+`"Sí, no me gustan las historias de miedo, pero me gusta asustarte, Tohno-kun."@
+`"…………"@
+` …… ¿Hice algo para que ella me guardase algún rencor?\
+ld c,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
+`"Pero haciendo a un lado las bromas, Tohno-kun, últimamente las calles se han vuelto peligrosas durante la noche.@
+` No debes salir, aunque seas un joven vigoroso."@
+` Senpai me da una advertencia que suena como una broma.@ No puedo saber que tan seria es ella.\
+bg #000000,%type_crossfade_mid
+playstop
+!w1000
+bg "image\bg\bg_06a.jpg",%type_tshutter_mid
+` El descanso del almuerzo termina y comienza la quinta hora.@
+` La lección de estudios clásicos entra por un oído y sale por el otro.\
+bg "image\event\stk_e03.jpg",%type_crossfade_fst
+br
+br
+br
+br
+br
+br
+br
+` ---Bueno, mi casa está por este camino.\
+br
+br
+br
+br
+br
+br
+br
+` ---Bai-bai.@ Nos vemos mañana en la escuela.\
+bg "image\bg\bg_06a.jpg",%type_crossfade_fst
+` Eso es lo que dijo Yumizuka.@
+` Ella no diría eso para entonces huir de casa.@
+br
+`"----"@
+br
+` Tengo un mal presentimiento sobre esto.@
+` El asesino que vaga por la ciudad durante la noche.@
+` Es peligroso salir de noche, las palabras que dijo Senpai.\
+wave se0
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\bg_06a.jpg",%type_nowaitdisp
+`"----"@
+` Quizás se deba a ese rojo escenario que nos rodeaba cuando nos separamos.@
+` De repente,
+` una visión de Yumizuka Satsuki bañada en sangre roja aparece frente a mis ojos.\
+wave se0
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_06a.jpg",%type_crossfade_fst
+`"Guh--"@
+br
+` Sucede repentinamente.@
+` Mi visión se queda en blanco, y mi sentido del balance se tambalea.@
+wave se0
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_06a.jpg",%type_crossfade_fst
+br
+`"----"@
+br
+` Mi campo visual se desequilibra.@
+` Algo merodea detrás de mi cabeza, y mi consciencia se siente pesada.\
+`"…… Esto es malo…"@
+` Conozco esta sensación.@
+` Mareo repentino previo a un ataque de anemia.@
+` La sangre acumulada en los vasos sanguíneos del cerebro se convierte en un bulto negro, haciendo oscilar mi cabeza, y mi visión se oscurecerá por completo.@
+` Se siente como si la oscuridad fuese empujada de mi cerebro hacia mis ojos.\
+wave se0
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_06a.jpg",%type_crossfade_fst
+bg #000000,%type_crossfade_mid
+` ---Esto es malo.@ No me he estado desmayando durante las clases últimamente--
+br
+` Rojo.@
+` ¿Será porque la imagen roja sangre de Yumizuka está demasiado fresca en mi mente?@
+` Mi visión se distorsiona.@
+` Mientras la oscuridad la envuelve, de alguna manera logro sujetarme de mi pupitre.@
+br
+` Pero, es inútil.@
+` No hay fuerza en mis dedos.@
+` Caigo al piso--\
+` Mientras lo hago, recuerdo sus palabras.@
+br
+`  "Tohno-kun, ayúdame cuando esté en un aprieto, ¿de acuerdo?"@
+br
+` --Te dije que eso es imposible.@
+` Sin importar lo que pienses de mí, no soy Superman----\
+!w3000
+bg "image\bg\bg_10c.jpg",%type_tshutter_mid
+play "*1"
+!w1000
+`"---Perdón por arrastrarte conmigo, Arihiko."@
+ld c,":a;image\tachi\ari_t03.jpg",%type_tshutter_mid
+`"Sí, sí, estoy acostumbrado a que te desmayes sin advertencia.@ Sinceramente, ¿dormir en la enfermería hasta el último minuto?@ ¿Quién te crees que eres?"@
+`"Debiste haberme despertado.@ No es nada inteligente dejarme dormir hasta que nos encierren dentro del edificio."@
+`"Cállate.@ ¿Crees que voy a despertar a una persona enferma?@ Simplemente te volverías a desmayar.@ Vamos, tenemos que regresar.@ Ya son las siete, ¿sabes?"@
+cl a,%type_tshutter_mid
+` Arihiko camina por el pasillo.\
+` …… Después de aquello.@
+` Sufrí un colapso por anemia y fui llevado a la enfermería para dormir.@
+` El tiempo pasó hasta la hora de cierre de la escuela, cuando fui despertado por el puñetazo de Arihiko.@ Y así, terminamos caminando a lo largo de este desierto pasillo.@
+`"Oye.@ Vamos Tohno.@ ¿Qué estás haciendo?"@
+`"--Perdón.@ Ya voy."@
+` Sacudo mi aún aturdida cabeza, y sigo a Arihiko.\
+bg #000000,%type_lshutter_mid
+bg "image\bg\bg_01c.jpg",%type_lshutter_mid
+ld c,":a;image\tachi\ari_t04.jpg",%type_crossfade_fst
+`"Muy bien.@ Puedes ir a casa por tu cuenta desde aquí.@ Nos vemos mañana en la escuela."@
+`"…… Gracias.@ Perdón como siempre, Arihiko."@
+ld c,":a;image\tachi\ari_t02.jpg",%type_crossfade_fst
+`"No te preocupes, págame el doble en el futuro."@
+cl a,%type_lshutter_mid
+` …… La respuesta de Arihiko no está exactamente en correcto japonés…
+` Sonriendo irónicamente, decido dirigirme de vuelta a mi casa.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_24c.jpg",%type_lcartain_mid
+` Alcanzo la intersección.@
+` Apenas son las siete de la noche, pero no hay nadie alrededor.@
+` Supongo que debido al asesino, menos personas salen de noche.@
+` La única figura que puedo ver ahora es la espalda de una mujer, muy lejana.\
+`"…… Ah, ¿una rubia?"@
+` La distante mujer parece ser una extranjera.@
+` Incluso desde muy lejos, puedo ver su cabello dorado ondulando mientras camina.@
+playstop
+ld c,":a;image\tachi\ark_t22.jpg",%type_crossfade_mid
+br
+` …… Eso atrae mis ojos hacia ella.@
+` Aunque sólo la veo desde atrás, puedo decir que es hermosa.\
+br
+br
+br
+br
+br
+br
+br
+wave se0
+` --------Palpitar.\
+bg #9c0120,%type_crossfade_fst
+bg "image\bg\bg_24c.jpg",%type_crossfade_fst
+`"Eh…"@
+br
+` De repente mi corazón late escandalosamente.@
+` Mi garganta se seca inexplicablemente.\
+` Comienzo a sudar frío.\
+wave se0
+bg "image\bg\ima_13.jpg",%type_crossfade_fst
+bg "image\bg\bg_24c.jpg",%type_crossfade_fst
+`"U--gh."@
+` Me duele la cabeza.@
+` No es como la anemia de antes.@ En vez de disminuir, mi consciencia se hace más aguda.\
+wave se0
+`"Ha-----gha."@
+` Me quedo sin aliento.@
+ld c,":a;image\tachi\ark_t22.jpg",%type_crossfade_mid
+` Esa---espalda.@
+` Observando el cabello dorado de la mujer--Tengo un terrible dolor de cabeza.\
+wave se0
+` *jadeo*---*jadeo*, *jadeo*----"@
+` …… Se siente como si mis pensamientos se fundiesen en confusión.@
+` Voy a… seguirla, y entonces---
+br
+`"¿Y…… entonces?"@
+` ¿Qué voy a hacer después de eso?@
+cl a,%type_lshutter_fst
+` La mujer desaparece dentro de un grupo de apartamentos en el distrito comercial.\
+wave se0
+`"…… Tengo… que… se… guirla…"@
+` No sé por qué, pero pienso eso.@
+` Mis piernas se mueven hacia los apartamentos.@
+br
+` Pero, antes de eso.@
+br
+ld c,":a;image\tachi\stk_t10.jpg",%type_lshutter_fst
+cl a,%type_lshutter_fst
+`"¡--!"@
+` Sólo por un instante.@
+` A través del rabillo de mi ojo, veo la figura de Yumizuka Satsuki.\
+`"¿Yumizuka, san-----?"@
+` Mi cabeza se aclara.@
+` Yumizuka… fue sólo por un instante, pero sin duda alguna, era Yumizuka.@
+` ¿Se dirigía hacia la ciudad?@
+`"¿¡Qué está haciendo afuera, a una hora como ésta…!?"@
+` Estaba tan fuera de mí, no me importaba si ella estaba desaparecida o si huyó de casa.@
+` Es demasiado peligroso para una chica pasear por la ciudad de noche y sola.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_25b.jpg",%type_lcartain_mid
+` Yumizuka camina a través de la atestada ciudad.@
+` …… Está muy lejos, así que no estoy seguro.@
+` Pero aunque la haya confundido con otra persona, decidí correr tras ella y pedirle que se detenga.@
+`"¡Espera, Yumizuka-san--!"@
+` Grito, persiguiéndola.@
+ld c,":a;image\tachi\stk_t10.jpg",%type_lshutter_mid
+`"---"@
+` Yumizuka mira hacia atrás, como si hubiese escuchado mi voz.\
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_25b.jpg",%type_crossfade_fst
+` Ese rostro… no hay manera de confundirlo.@
+` La chica que camina delante de mí es indudablemente Yumizuka Satsuki, y la expresión en su rostro no era aterradora.@
+`"--Ah."@
+` Pero sentí un escalofrío recorriendo mi columna.@
+br
+` ---Palpitar.@
+br
+` Mi corazón late rápidamente.@
+` Mi nuca se hace pesada, y mi garganta arde.@
+` Un dolor asalta mi cabeza, el mismo que sentí con aquella mujer rubia.\
+`"Qué es esto… Es raro…"@
+` El interior de mi cuerpo está ardiendo.@
+` Me siento mareado como si tuviese una fiebre terrible.@
+br
+` En ese momento, Yumizuka comienza a caminar de nuevo.\
+bg #000000,%type_lshutter_mid
+bg "image\bg\bg_26a.jpg",%type_lshutter_mid
+`"¡Esp… Espera, Yumizuka-san…!"@
+` La llamo a gritos, corriendo.@
+` Yumizuka sigue caminando, sin mirar atrás.@
+`"¿N… no puedes escucharme, Yumizuka…!"@
+` Impulso mi cuerpo hacia adelante.@
+` Pero, sin importar cuánto lo intente, no puedo alcanzarla.@
+br
+` …… Sin importar cuán rápido corra, no puedo alcanzarla aunque ella sólo esté caminando.\
+`"------"@
+` Algo es… extraño.@
+` Lo sé, pero no puedo decir qué es.@
+` En este momento, todo lo que puedo hacer es seguir a Yumizuka Satsuki.@
+br
+bg #000000,%type_nowaitdisp
+` ----Y entonces.@
+br
+` La pierdo de vista.@
+` Yumizuka Satsuki, a quien he estado persiguiendo sin éxito, no se ve por ningún lado.\
+bg "image\bg\bg_26a.jpg",%type_bshutter_mid
+`"…… ¡Mierda… Qué demonios está sucediendo…!"@
+` Me detengo, recobrando el aliento,
+` Mi pecho sube y baja profundamente.@
+` …… Aunque no me había percatado hasta ahora, debo haber estado corriendo por un largo tiempo.@
+br
+`"¿Qué… hora es…?"@
+` Descansando mis manos sobre mi rodillas, levanto la mirada hacia la ventana de una tienda cercana.@
+` Ya--es medianoche.\
+`"----No puede ser.@ No pude haber corrido por tanto tiempo."@
+` …… Es difícil de creer, pero el reloj está en lo correcto.@
+` Si miro alrededor, la mayor parte del distrito comercial está cerrada.\
+`"---Debería… regresar."@
+` Aunque estoy preocupado por Yumizuka, siento que ya no seré capaz de encontrarla.@
+` …… La perseguí durante casi cuatro horas, gritando su nombre todo el tiempo, pero ella ni siquiera respondió.@ ¿Qué estaba pensando ella?@
+br
+` Con un gran suspiro, decido dirigirme de vuelta a la mansión.\
+bg #000000,%type_crossfade_mid
+return

@@ -1,0 +1,58 @@
+wavestop
+playstop
+;---added context above---
+monocro off
+bg "image\bg\bg_29b.jpg",%type_crossfade_mid
+play "*1"
+`"Ah---las farolas se están encendiendo de nuevo."@
+` Las oscuras farolas vuelven a la vida.@
+` El parque iluminado sólo por la luna se hace gradualmente más brillante.\
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"Parece que esa mujer retiró su barrera.@ Se suponía que debía evitar que cualquiera entrase al parque, pero parece que tú pudiste atravesarla directamente."@
+`"¿Hm?@ ¿Quieres decir que ese apagón fue obra de Senpai?"@
+ld c,":a;image\tachi\ark_t03.jpg",%type_crossfade_fst
+`"Sí, es una de sus especialidades, mantener a la gente alejada.@ En realidad no tiene nada que ver con nosotros."@
+ld c,":a;image\tachi\ark_t06.jpg",%type_crossfade_fst
+`"Por cierto Shiki.@ Quiero preguntarte, ¿qué piensas de Ciel?"@
+` Con una fría voz, Arcueid pregunta eso repentinamente.\
+`"…… ¿Qué pienso de Senpai?@ …… ¿Por qué preguntas eso, Arcueid?"@
+`"Oh nada.@ Yo simplemente odio a esa mujer.@ Se suponía que debíamos reunirnos e intercambiar información, pero me irrité durante la conversación y terminamos tratando de matarnos."@
+`"¿¡M-matarse---por qué terminaron haciendo eso!?@ En primer lugar, Senpai no es un vampiro.@ ¿Por qué intentabas matar a Senpai?"\
+ld c,":a;image\tachi\ark_t16.jpg",%type_crossfade_fst
+`"Eso digo yo.@ ¡Ella fue la que golpeó primero!"@
+`"----¿Eh?"@
+br
+` …… ¿La que golpeó primero, fue Senpai……?@
+br
+ld c,":a;image\tachi\ark_t04.jpg",%type_crossfade_fst
+`"Es cierto.@ Ella dijo, 'sabía que era inútil, simplemente no puedo permitir tu existencia', y entonces me atacó.@ Puede parecer muy tranquila, pero todos los miembros de la Agencia de Entierros disfrutan pelear.@ No puedes dejar que ella te engañé también, Shiki."@
+`"Qué-----"@
+br
+` ¿Disfruta pelear?@ Senpai en verdad---\
+ld c,":a;image\tachi\ark_t07.jpg",%type_crossfade_fst
+`"---Shiki.@ Fuiste engañado por ella hasta ahora, ¿cierto?@ ¿Entonces por qué estás diciendo cosas para ayudarla?@
+` Escucha, ella te estaba engañando porque no sabías nada, y fingía ser una persona normal.@ ¿No te sientes un poco enojado por haber sido utilizado?"@
+` Arcueid me mira ferozmente.@
+`"……………"@
+` Eso,
+` ciertamente me conmocionó que Senpai sea distinta a las personas normales, casi como Arcueid.@
+` Pero, no siento que he sido engañado.@ Al contrario, Senpai me ha ayudado muchas veces.\
+`"Yo----"@
+` …… Aunque ahora conozco la identidad de Senpai, todavía la veo como Senpai.@
+` Almorzar con ella, hablar de cosas estúpidas con ella y Arihiko, caminar con ella hasta la entrada de la escuela, todo eso es muy divertido.@
+` Así que---si pudiese.@
+` Habría sido mejor no haberme enterado de su secreto.\
+ld c,":a;image\tachi\ark_t05b.jpg",%type_crossfade_fst
+`"Shiki.@ ¿De qué lado estás, del mío o del de esa mujer?"@
+` Siento presión.@
+` Sus ojos son la fuente.@
+` Ahora no parece humana, es como un animal cazando a su presa.@
+` Parece que Ciel-senpai es un enemigo imperdonable para Arcueid.@
+` Por eso me mira con ojos tan feroces y hostiles.@
+` Como diciéndome que si soy amigo de su enemigo, también seré enemigo de Arcueid.\
+`"…… Arcueid……"@
+` Tengo problemas para responder.@
+` Yo---
+br
+cl c,%type_crossfade_fst
+return

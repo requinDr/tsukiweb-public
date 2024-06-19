@@ -1,0 +1,219 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_29b.jpg",%type_nowaitdisp
+` …… Arcueid no viene.@
+` Es lo más natural.@
+` Después de hacer eso----después de pisotear toda la confianza que me dio, violé su cuerpo por la fuerza.\
+` Probablemente no vendrá.@
+` A esto se refería cuando dijo que lo olvidásemos.@
+br
+`"¡Maldición……!"@
+` Con mi corazón envuelto en arrepentimiento, dejo el parque.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_47.jpg",%type_lcartain_mid
+` …… Regreso a la mansión.@
+` Abriendo la puerta trasera, entro caminando.\
+bg "image\bg\bg_33d.jpg",%type_lcartain_slw
+bg "image\bg\bg_46c.jpg",%type_lcartain_slw
+bg "image\bg\bg_40d.jpg",%type_lcartain_slw
+` Bostezo.@
+` Me hundo en mi cama sin pensar.@
+` Tic.@ Tic.@ Tic.@ El sonido del reloj hace eco en la habitación.\
+`"…………"@
+` …… Sólo duerme por ahora.@
+` Cuando despierte mañana las cosas serán diferentes.@
+` Arcueid, y el vampiro merodeando la ciudad, cuando llegue la mañana todo habrá----\
+bg #000000,%type_crossfade_slw
+mov $phasebg,"image\bg\bg_06a.jpg"
+mov $phasetitle_a,":a;image\word\PARK_11B.PNG"
+mov $phasetitle_b,":a;image\word\day_12.png"
+gosub *left_phase
+bg #000000,%type_crossfade_fst
+waveloop se1
+` PALPITAR         PALPITAR         PALPITAR
+!w1000
+` LATIDO           LATIDO           LATIDO
+!w1000
+` Palpitar         Palpitar         Palpitar
+!w1000
+` Latido           Latido           Latido
+\
+` …… El dolor se sincroniza con mi pulso.@
+` Cada vez que siento el latido de dolor, mis recuerdos se desvanecen.@
+` Cada vez que mi corazón palpita, memorias son encubiertas.@
+br
+` Los recuerdos que se desvanecen probablemente son extras.@
+` Memorias, el pasado, experiencias que no necesito.@
+` Todo eso se desvanece.@ En otras palabras, el olvido.\
+`"Ah------"@
+` Al lavarse el arrepentimiento, reducirse mis recuerdos, y desvanecerse mi pasado, extiendo mi mano.@
+` Pero no puedo sujetar nada.@
+` Porque,
+` ya he olvidado qué tipo de recuerdos he perdido.\
+` PALPITAR, palpitar.@
+` Los repetitivos dolores de cabeza me hacen sentir enfermo, y aun en mi sueño, siento ganas de vomitar.\
+wavestop
+bg #ffffff,%type_crossfade_mid
+`"Shiki-sama, ¿está despierto?"@
+br
+` ----Escucho una voz.@
+br
+`"Por favor resista.@ Le traeré algo para beber."@
+br
+` ----Después de eso, el sonido de pasos corriendo.\
+bg "image\bg\bg_40a.jpg",%type_crossfade_slw
+play "*2"
+` Abro los ojos lentamente.@
+` Estoy acostado en la cama con la radiante luz solar fluyendo a través de la ventana.@
+br
+`"----¿Mañana?"@
+` Me levanto lentamente y me siento empapado por mi propio sudor.@
+`"¿Qué……?@ Debo haber tenido una pesadilla o algo así."@
+` Intento recordar lo que soñé.\
+` …………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………… no puedo recordar.\
+`  Es la naturaleza de los sueños desvanecerse cuando uno despierta.@
+` Pero, aún hay algo.@
+` Siento que hay una vaga imagen de algo que he olvidado.\
+ld c,":a;image\tachi\his_t01.jpg",%type_lshutter_mid
+`"¿Shiki-sama?@ ¿Aún no ha despertado?"@
+`"Estoy despierto.@ Buen día, Hisui."@
+`"Sí, buenos días, Shiki-sama."@
+` Hisui se acerca a la cama, inexpresiva como siempre.\
+`"Le he traído algo para beber.@ Si no se siente bien, por favor beba."@
+` Hisui carga una bandeja de plata con una bebida.@
+`"No, no me siento mal ni nada parecido.@ Dormí profundamente, así que mi cabeza también se ha aclarado."@
+`"---Sin embargo,"@
+` Hisui ofrece una rara respuesta.@
+`"Anoche no parecía estar bien."@
+br
+` …… Parece que en verdad tuve una pesadilla anoche.\
+`"No, no me pasa nada malo.@ Pero estoy muy agradecido de que estés preocupada, Hisui."@
+ld c,":a;image\tachi\his_t04.jpg",%type_crossfade_fst
+`"…… Sí, me alegra que esté bien, Shiki-sama."@
+` Hisui me mira con sus delicados ojos de cristal.\
+` …… Um, me siento nervioso.@
+`"Iré a cambiarme y bajaré al comedor.@ Por favor dile a Kohaku-san que voy a desayunar."@
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"Entiendo."\
+cl c,%type_lshutter_mid
+` …… Bien, entonces.@
+` Son las siete en punto.@
+` Puedo tomarme mi tiempo esta mañana.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_34a.jpg",%type_lcartain_mid
+` Akiha y Hisui están en la sala de estar.@
+` En la cocina, puedo escuchar el rítmico tarareo de Kohaku-san.\
+ld c,":a;image\tachi\aki_t12a.jpg",%type_lshutter_mid
+`"Buenos días, Nii-san."@
+`"Buen día.@ No te ves muy alegre hoy, Akiha.@ ¿Había algo que no te gusta en tu desayuno?"@
+ld c,":a;image\tachi\aki_t13a.jpg",%type_crossfade_fst
+`"…… Nii-san, ¿cómo llegaste a esa conclusión?"\
+`"Me vino a la mente.@ Simplemente recordé que había muchos tipos de comida que no te gustaban."@
+`"Qué grosero… era de esa manera cuando era niña, pero ahora no tengo aversiones."@
+`"…… Ya veo.@ Es raro, porque de ser así, deberías tener más desarrollo físico para tu edad……"\
+ld c,":a;image\tachi\aki_t11a.jpg",%type_crossfade_fst
+`"Nii-san.@ ¿Acabas de decir algo?"@
+` Akiha me mira ferozmente.@
+` …… Mierda.@ Debería cuidar mi boca.\
+`"…… No, no dije nada.@ Sólo estaba pensando en voz alta, no te preocupes por eso."@
+ld c,":a;image\tachi\aki_t02.jpg",%type_crossfade_fst
+`"…… Cielos.@ Parece que no había necesidad de preocuparnos, Hisui.@ No creo que Nii-san muera aunque lo mates."@
+`"Sí, pienso lo mismo."@
+` Akiha suspira y Hisui concuerda inexpresivamente.@
+` Puedo suponer por su conversación que ambas estaban preocupadas por mí.@
+cl c,%type_crossfade_mid
+\
+`"---¿Por qué?"@
+` Me pregunto por qué.@
+ld l,":a;image\tachi\aki_t21.jpg",%type_crossfade_fst
+`"¿Por qué?@ ¡Normalmente, te preocuparías!@ Cuando viniste a casa anoche, fuiste directo a la cama y tuviste pesadillas toda la noche.@
+` Aunque intentamos despertarte, nunca lo hiciste.@ ¿No suena como si estuvieses enfermo?"\
+`"¿Oh?@ En serio---Pero en realidad no cogí ningún resfriado ni nada parecido."@
+ld r,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"No creo que tuviese un resfriado.@ Shiki-sama, estaba durmiendo como siempre, y su temperatura y respiración eran normales.@ Pero estaba segregando mucho sudor."@
+`"…… ¿Segregando?@ No me agrada esa palabra."\
+ld l,":a;image\tachi\aki_t03a.jpg",%type_crossfade_fst
+`"Fue peor para mí porque estaba atendiéndote, por favor sé un poco más agradecido.@ Y agradece a Kohaku también.@ No pude haberlo hecho yo sola."@
+`"¿Tú sola…… Akiha, estabas cuidando de mí?"\
+ld l,":a;image\tachi\aki_t16a.jpg",%type_crossfade_fst
+`"Po-por supuesto.@ Somos hermanos.@
+` Yo sólo estaba observando tu condición; fue Kohaku quien limpió tu sudor."@
+` Ella aparta la vista y murmura como si estuviese hablando consigo misma.@
+` No parece ella, porque normalmente te mira directamente y dice las cosas de igual manera.\
+`"En serio.@ Gracias Akiha.@ Perdón por preocuparte."@
+ld l,":a;image\tachi\aki_t05a.jpg",%type_crossfade_fst
+`"No tienes que agradecerme.@ Sólo estaba haciendo mi labor.@ Si quieres agradecer a alguien, agradece a Kohaku."@
+` Ella aparta la vista y ya ni siquiera intenta mirar hacia mí.\
+`"Shiki-san, el desayuno está listo," La voz de Kohaku-san resuena desde la cocina.@
+`"Nii-san, por favor apresúrate y come tu desayuno."@
+`"Entendido."@
+` Me dirijo hacia el comedor.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_32a.jpg",%type_lcartain_mid
+ld c,":a;image\tachi\his_t01.jpg",%type_lshutter_mid
+`"Por favor sea cuidadoso en el camino, Shiki-sama."@
+`"Me voy.@ Hoy estaré de vuelta como a las cuatro en punto."@
+` Despidiéndome de la inclinada Hisui, dejo la mansión.\
+bg #000000,%type_lcartain_slw
+playstop
+bg "image\bg\bg_23a.jpg",%type_lcartain_slw
+play "*3"
+` Recorro la ruta matutina hacia la escuela.@
+` Lunes por la mañana.@ Por alguna razón, mis pies se sienten muy ligeros el día de hoy.@
+` Tal vez porque los últimos días fueron tan fuera de lo ordinario, mi cuerpo da la bienvenida a un día tan normal.\
+`"………… ¿Huh?"@
+` Qué extraño.@
+` Dije 'fuera de lo ordinario' pero, ¿qué tipo de vida era ésa?@
+br
+`"………………"@
+` Siento que algo muy importante sucedió.@
+` Pero, no puedo recordar qué.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_01a.jpg",%type_lcartain_mid
+ld c,":a;image\tachi\ari_t05.jpg",%type_lshutter_mid
+`"¡Hey, Tohno!"@
+` Arihiko me golpea la espalda como saludo.@
+`"Buen día.@ Llegas bastante temprano hoy."@
+`"Ah, sólo un capricho mío.@ Bueno, no duele actuar como un buen estudiante de vez en cuando."@
+` Arihiko ríe alegremente.@
+` Ver esa sonrisa me asegura que éste es mi mundo.@
+`"………………"@
+ld c,":a;image\tachi\ari_t01.jpg",%type_crossfade_fst
+`"Mmm, ¿qué pasa, Tohno?@ Tienes cara de preocupación...@ ¿Olvidaste algo en casa?"\
+br
+br
+br
+br
+br
+br
+` ¿OLVIDASTE ALGO?@
+!w1000
+br
+` …… Esas palabras retumban en mi cabeza como una maldición.\
+!w1000
+` Pero, al final,
+` no puedo recordar qué es lo que olvidé.\
+playstop
+`"…… No, no olvidé nada.@ Vayamos rápido a clases.@ Después de despertarte tan temprano, sería un desperdicio que llegues tarde, ¿no?"@
+`"Jaja, buen punto."@
+cl c,%type_lshutter_fst
+br
+` Atravieso la entrada de la escuela con mi amigo.@
+` Con eso, algo finaliza completamente.\
+`"------"@
+` Siento que alguien me observa y volteo.@
+` Pero no hay nadie ahí.@
+` Sólo las hojas dispersándose en el patio.@
+br
+` Tohno Shiki se dirige a clases.@
+` Como si regresara a una pacífica, feliz, y normal vida diaria.@
+\
+bg #ffffff,%type_crossfade_slw
+!w3000
+cl a,%type_waitdisp
+bg "image\word\end.jpg",%type_crossfade_slw
+resettimer
+waittimer 3000
+return

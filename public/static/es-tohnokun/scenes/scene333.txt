@@ -1,0 +1,40 @@
+monocro off
+wavestop
+play "*3"
+;---added context above---
+bg "image\bg\bg_23b.jpg",%type_lcartain_mid
+` Camino con Akiha hacia la mansión.@
+`"……"@
+` Francamente, es difícil.@
+` Si miro a mi lado, puedo ver a Akiha caminando, con su largo cabello ondulando.@
+` Akiha es silenciosa y elegante, la hija perfecta de una respetada familia.\
+`"………"@
+` ¿Por qué no puedo pensar en nada para decir?@
+` Aunque veo a Akiha en casa todos los días, por alguna razón siento tensión al caminar hacia la mansión.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_32b.jpg",%type_lcartain_fst
+play "*1"
+` Llegamos a la mansión.@
+` Akiha se dipone a abrir la verja, pero como si hubiese recordado algo, voltea hacia mí.@
+ld c,":a;image\tachi\aki_t01a.jpg",%type_crossfade_fst
+`"…… Tengo una pregunta.@ ¿Que tan cercano eres a esa persona llamada Ciel, Nii-san?"@
+` Abruptamente, hace una pregunta extremadamente directa.@
+`"No es nada especial.@ Sólo somos amigos de la escuela.@ Siento que ella… es alguien con quien puedo hablar."@
+cl a,%type_crossfade_fst
+`"¿En serio?" dice Akiha, dándose la vuelta y atravesando la verja.\
+bg "image\bg\bg_48b.jpg",%type_lshutter_mid
+` Cruzamos el patio y llegamos a la puerta.@
+` Como Hisui no está esperando en la verja y Kohaku no está barriendo el jardín, no hay señal de ninguna de ellas el día de hoy.\
+`"Ah."@
+ld c,":a;image\tachi\aki_t01a.jpg",%type_crossfade_fst
+`"¿Sí?@ ¿Dijiste algo, Nii-san?"@
+`"Bueno no, nada pero… quisiera echarle un vistazo al edificio de estilo japonés del que estabas hablando, si no hay problema."@
+`"----¿El edificio separado?"@
+` Murmurando, la frente de Akiha se arruga con preocupación.\
+ld c,":a;image\tachi\aki_t11a.jpg",%type_crossfade_fst
+`"Por favor, no lo hagas.@ Fue sellado hace muchos años.@ Nii-san, ni siquiera tú tienes permitido ir a ese lugar."@
+cl a,%type_lshutter_fst
+` Habiendo declarado eso, Akiha entra a la mansión.\
+bg #000000,%type_lshutter_mid
+!w1000
+return

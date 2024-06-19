@@ -1,0 +1,76 @@
+mov $phasebg,#000000
+mov $phasetitle_a,":a;image\word\PARK_13A.PNG"
+mov $phasetitle_b,":a;image\word\epi.png"
+gosub *left_phase
+bg #ffffff,%type_crossfade_slw
+play "*2"
+`"Shiki-sama, ya amaneció.@ Por favor despierte."@
+br
+` …… Escucho una voz familiar.\
+br
+`"Shiki-sama…… Por favor despierte.@ Si se retrasa como ayer, romperá su promesa con Akiha-sama."@
+br
+` …… Una voz parcialmente tensa, parcialmente relajada.\
+`"Shiki-sama.@ ¿Está bien eso?@ Akiha-sama terminará regañándolo de nuevo."@
+br
+` …… No, no está bien en absoluto.@
+br
+`"…… Estoy despierto.@ Estoy despierto, así que espera."@
+` Aún bajo las sábanas, respondo mientras abro mis ojos lentamente.\
+bg "image\bg\bg_40a.jpg",%type_crossfade_mid
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"Buenos días, Shiki-sama."@
+`"Ah, buen día."@
+` Respondo con un soñoliento saludo y me pongo mis lentes.@
+` Son más de las siete de la mañana.@
+` Hisui vino a su hora habitual y logró despertarme.@
+br
+`"Prepararé su desayuno.@ Después de cambiarse, por favor vaya al comedor."@
+cl c,%type_lshutter_mid
+` Hisui desaparece de la habitación después de hacer una reverencia.\
+` Suelto un gran bostezo.@
+` Después de un agradable estiramiento, me levanto de la cama.@
+` Me pongo a mi uniforme escolar y echo un vistazo a mi escritorio.@
+` …… Sobre él está el cuchillo que nunca volveré a usar.\
+` Las cortinas se mecen en el viento.@
+` Hisui debe haber abierto la ventana; hay un refrescante cielo despejado.@
+` Pero hace un poco de frío.@
+br
+` Me acerco a la ventana y la cierro.\
+bg "image\bg\ima_03.jpg",%type_lshutter_mid
+br
+br
+br
+br
+br
+br
+` ----Al final,
+` terminé despertando en mi habitación.\
+` Parece que Senpai me trajo hasta aquí.@ Afortunadamente, Akiha y las otras nunca supieron que salí.@
+` Ha pasado una semana desde aquella noche.@
+` La vida de Tohno Shiki no ha cambiado en lo más mínimo.\
+` Mi relación con Akiha a veces es un poco agitada, pero es normal ya que somos hermanos.@
+` Excepto por ese túnel que está en reparación, la escuela no ha cambiado nada.@
+br
+` …… No, sí cambió.@
+` En la escuela, no hay ninguna senpai llamada Ciel, y nadie la recuerda.@
+` Los asesinatos en serie no han vuelto a ocurrir desde entonces.@ Ya que no ha habido un arresto oficial, las calles de la ciudad aún están relativamente vacías durante la noche, pero probablemente volverán a la normalidad en un mes.\
+` Y en cuanto a mí,
+` Llevo un vacío imposible de llenar en mi corazón, pero sigo adelante como solía hacerlo.@
+` …… O más bien, puedo soportarlo todo.@
+` A veces, soy abrumado por los recuerdos, pero no creo que vaya a enloquecer ni nada parecido por ahora.@
+br
+` Algún día.@
+` ¿Enloqueceré al no ser capaz de soportar estos recuerdos, o volveré a vivir normalmente al acostumbrarme a ellos?\
+` Quizás sea una probabilidad cercana a 50-50.@
+` ---Pero hasta entonces,
+` aun si es un poco afeminado, mantendré todos los días la última promesa que hice con ella.@
+br
+`"----El otoño está por terminar, ¿no?"@
+br
+` El cielo azul de afuera basta para dejarme sin aliento.@
+` Con una larga y profunda respiración, cierro la ventana.\
+bg #000000,%type_crossfade_mid
+playstop
+!w2000
+return

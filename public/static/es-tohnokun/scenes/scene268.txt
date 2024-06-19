@@ -1,0 +1,27 @@
+monocro off
+wavestop
+play "*9"
+;---added context above---
+bg "image\bg\bg_27b.jpg",%type_nowaitdisp
+` Debería decirle directamente que se vaya a casa.\
+`"Senpai, no tienes que preocuparte por mí así que puedes irte.@ Las cosas se pondrán feas si continuamos así."@
+ld c,":a;image\tachi\cel_t01b.jpg",%type_crossfade_fst
+`"¿Huh?@ ¿Feas?@ ¿Qué quieres decir con eso?"@
+` …… Ni siquiera parece estar escuchándome.\
+`"---Mira, ¿por qué no me escuchas?@ Senpai, ¿no dijiste que podía hacer lo que quisiera?@ ¿¡Entonces por qué aún estás en mi camino!?"@
+`"Como dije, por favor haz lo que desees.@ Yo también estoy haciendo lo que deseo."@
+cl c,%type_lshutter_mid
+` Aún sonriendo, Senpai camina delante de mí.\
+`"¡Oye---Senpai!"@
+ld c,":a;image\tachi\cel_t07b.jpg",%type_lshutter_fst
+`"¿Huh?@ ¿Qué sucede, Tohno-kun?"@
+`"¿¡Qué sucede!?@ ¿¡Acaso disfrutas preocuparme de esta manera!?"@
+ld c,":a;image\tachi\cel_t01b.jpg",%type_crossfade_fst
+` Ella sonríe.@
+` …… Parece que en verdad lo disfruta.\
+`"…… Lo entiendo.@ Comprendo que eres una persona muy cruel, pero déjame en paz por el día de hoy.@ Si continúas siguiéndome, no será peligroso sólo para mí, sino también para ti."@
+`"¿Oh en serio?@ No te estoy siguiendo ni nada parecido."\
+`"¿Eh---?"@
+`"Simplemente tengo algo que hacer en el parque.@ No sé adónde vas Tohno-kun, pero si no vas al parque, aquí es donde nos despedimos."\
+cl c,%type_crossfade_fst
+return

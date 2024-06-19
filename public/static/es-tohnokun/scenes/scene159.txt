@@ -1,0 +1,528 @@
+mov $phasebg,#000000
+mov $phasetitle_a,":a;image\word\PARK_08A.PNG"
+mov $phasetitle_b,":a;image\word\day_08.png"
+gosub *left_phase
+bg #ffffff,%type_crossfade_mid
+` ---Blanco.@
+`        El color blanco invoca un viejo recuerdo.@
+`   Algo olvidado.@
+`   Algo que se suponía que debía olvidar.@
+br
+`   Algo que mi padre me ordenó olvidar.\
+bg "image\bg\cmo_05.jpg",%type_crossfade_mid
+br
+br
+br
+br
+` Un caluroso, día de verano.@
+br
+` Un cielo azul y largas, largas columnas de nubes veraniegas.@
+` La brisa flotando,
+` y el zumbido de las cigarras.@
+br
+` La voz de las cigarras.\
+br
+br
+br
+br
+` Chiiirp.@ Chirp Chirp.@
+!w500
+` Chiiirp.@ Chirp Chirp.@
+!w500
+` Chiiirp.@ Chirp Chirp.@
+!w500
+br
+` ----Tan escandalosa que quiero morir.\
+br
+br
+br
+` Corazas de cigarras están tiradas en el claro.@
+` Como si el sol estuviese justo a mi lado,
+` el claro se está asando.@
+br
+` Un caluroso día de pleno verano.@
+` Como si el mundo entero se hubiese convertido en una sartén.\
+br
+br
+br
+br
+` bua, u, ubuaa.@
+!w500
+` bua, u, ubuaa.@
+!w500
+` bua, u, ubuaa.@
+!w500
+br
+` Akiha está llorando.\
+` Akiha, quien siempre permanecía obedientemente detrás de mí, está rebosante de lágrimas.\
+bg "image\bg\cmo_06.jpg",%type_crossfade_mid
+br
+` Un niño yace desplomado a sus pies.@
+` Su camisa blanca está pintada de sangre roja y no se mueve en absoluto.@
+br
+` Yo estoy, observando eso.@
+` Mis manos están rojas, al igual que ese niño en el suelo.@
+` No, no es eso.@
+` Estas manos están rojas, con la sangre de ese niño.\
+br
+`"¡Akiha-----!"@
+br
+` Los adultos vienen.@
+` Después de ver esta escena, sus expresiones cambian rápidamente.@
+br
+`"¿Qué rayos-----"@
+br
+` Los adultos se llevan a Akiha.@
+` El niño yace ahí, muerto.@
+` En el cielo distante, las nubes muy, muy blancas.\
+br
+br
+` Me dejan solo, mirando hacia el cielo sin propósito.@
+br
+`"¿Lo mataste----"@
+br
+` Los adultos me están gritando.\
+` Gritan mi nombre, el que mató al niño.@
+` Esas dos sílabas, las gritan como si hubiesen enloquecido.\
+br
+br
+br
+br
+br
+` Sólo esas dos sílabas.@
+` Esos adultos me llaman SHIKI, y mis manos están manchadas de rojo.\
+bg #ffffff,%type_crossfade_mid
+bg "image\bg\bg_40e.jpg",%type_crossfade_fst
+play "*2"
+` Siento que, acabo de ver un viejo, sueño familiar.@
+` Abro los ojos.@
+br
+`"……………"@
+` Estoy en mi habitación.@
+` Después de eso---Después de perder la consciencia junto al muro de la mansión, parece que de alguna forma logré volver aquí.@
+` Mis pensamientos aún no se organizan.@
+` Recuerdo los confusos eventos de anoche.\
+` El hombre totalmente envuelto en vendajes.@
+` Y cómo él podía ver "líneas" al igual que yo.@
+` Después de ser atravesado por esas espadas, su cuerpo estalló en llamas, y con una voz que sonaba como su grito de muerte, escapó.\
+`"----"@
+` Después de eso, sólo puedo recordar vagamente las cosas.@
+` La figura sobre la cima de la farola.@
+` Esa figura que me salvó, y que parecía asemejarse a Ciel-senpai---\
+bg "image\bg\bg_40a.jpg",%type_crossfade_fst
+`"…… Sí claro.@ Eso, no puede ser verdad."@
+` Finalmente me despierto.@
+` Me pongo mis lentes y me levanto sobre la cama.@
+` El reloj dice que son más de las ocho.@
+` Normalmente ya habría desayunado hace mucho, pero hoy es un día festivo de la escuela.\
+`"¿Hisui…… no está aquí?"@
+` La figura de Hisui parada frente a la puerta como una sombra no se ve por ningún lado.@
+` Estoy seguro de que vino muchas veces para despertarme, pero nunca lo hice, así que probablemente fue a hacer otras labores.\
+` ………… *suspiro*@
+` Dejo salir un profundo suspiro.@
+br
+` ---Después de separarme de Arcueid anoche, los eventos siguientes estuvieron más allá de mi comprensión.@
+br
+` El hombre vendado, y la figura que me ayudó… no son cosas que pueda entender sin importar cuánto lo intente.\
+`"En cualquier caso, tengo que ver a Arcueid esta noche.@ Ella debería poder darme algunas respuestas."@
+` Le hablaré sobre todas estas cosas extrañas, pero por ahora, tengo que volver a mi vida normal o enloqueceré.\
+`"--Muy bien.@ Primero lo primero.@ Hora de desayunar."@
+` La gente no puede hacer nada con el estómago vacío, después de todo.@
+` Sacudiendo el sueño de mi cuerpo, voy a la sala de estar.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_46a.jpg",%type_lcartain_mid
+`"¿Hm……?"@
+` En el pasillo del ala este del segundo piso, veo un uniforme oscuro.@
+`"Probablemente es…… Hisui."@
+` Parece que Hisui viene de la habitación de Akiha.@
+` Supongo que nos encontraremos de cualquier forma, así que no estará mal saludarla.\
+`"¡Oye, Hisui!"@
+` La llamo.@
+` Hisui se percata de que estoy aquí y silenciosamente camina hacia mí.@
+ld c,":a;image\tachi\his_t01.jpg",%type_lshutter_mid
+`"Buenos días, Shiki-sama."@
+`"Sí, buen día.@ Perdón por despertarme cuando me viniese en gana."@
+`"Me disculpo también.@ Debí haber estado ahí cuando despertó.@ Por favor perdóneme."@
+` Hisui inclina su cabeza silenciosamente.@
+` …… Se disculpa conmigo de esta manera después de que salí a mitad de la noche y logré regresar a mi habitación; repentinamente me siento como la peor persona del mundo.\
+`"No necesitas disculparte.@ No desperté a la hora habitual, así que es mi culpa.@ Está bien si quieres expresar tus quejas."@
+`"…… ¿Expresar, mis quejas……?"@
+`"Sí.@ Mi amigo siempre dice que soy un vago perezoso, y que una palmada ocasional en la espalda es buena para enderezarme."\
+`"………………"@
+` Hisui se queda parada ahí, pensando en silencio mientras me mira.@
+` Es así durante casi un minuto.@
+` Ni siquiera parpadea, sólo me mira fijamente.@
+` …… Sabía que forzar a Hisui a hacer una cosa tan ordinaria sería imposible.\
+`"No te preocupes... sólo olvídalo.@ Más importante aún, tengo un poco de hambre.@ ¿Está listo el desayuno?"@
+`"…… Nee-san salió.@ Su desayuno está preparado en el comedor."@
+`"Oh.@ En ese caso, iré a comer algo.@ Perdón por molestarte mientras trabajabas."@
+` Después de decir un rápido adiós, me dirijo escaleras abajo.\
+bg #000000,%type_lcartain_mid
+!w2000
+bg "image\bg\bg_34a.jpg",%type_lcartain_mid
+` Después del desayuno, regreso a la sala de estar y me encuentro cara a cara con Hisui.@
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"Ah, estuvo bueno.@ Gracias por preparar un desayuno tan grandioso cada mañana."@
+` Junto mis manos en agradecimiento.\
+`"Preparar comidas es la obligación de Nee-san.@ Si desea hacer cumplidos sobre la comida, por favor hable con Nee-san."@
+`"Es verdad, pero---¿en verdad tienen labores totalmente separadas?@ Por ejemplo hoy, cuando solamente yo me quedé dormido, pensé que tú podrías prepararlo."@
+ld c,":a;image\tachi\his_t08.jpg",%type_crossfade_fst
+`"Shiki-sama, ¿está diciendo que el desayuno no fue de su agrado?"\
+`"----¿Eh?"@
+` Sus palabras están tan fuera de lugar que… es preocupante.@
+` ¿Acaso piensa que quería que ella preparase el desayuno porque el que comí tenía mal sabor?@
+br
+`"No es eso.@ Incluso fría, la comida de Kohaku-san es deliciosa.@
+` …… Pero, me gusta cuando está caliente.@ Y, me haría muy feliz poder probar tu comida, Hisui."\
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"---No puedo hacer eso.@ Shiki-sama, rehúso cocinar para usted."@
+` Sus ojos repentinamente muestran una expresión retadora.@
+`"Oh, ya, veo.@ Sí, no quiero forzarte a hacer nada que no quieras hacer.@ Ya haces mucho por mí."\
+ld c,":a;image\tachi\his_t05.jpg",%type_crossfade_fst
+`"…………"@
+` Aún en silencio, ella me mira como si quisiese decir algo.@
+` …… ¿Qué podrá ser?@
+` ¿Es algo difícil de decir para ella?@
+`"¿Qué sucede Hisui?@ ¿Hice algo malo sin percatarme otra vez?"@
+` Hisui dice "no" con su cabeza.@
+` Sólo permanece ahí silenciosamente.\
+`"…… Entonces, volveré a mi habitación.@ Si me necesitas, por favor llámame."@
+cl c,%type_crossfade_fst
+` "Hasta luego," digo mientras comienzo a caminar hacia fuera de la sala.@
+` Pero---antes de eso, Hisui camina hacia el vestíbulo.\
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"---Shiki-sama."@
+`"¿Hm?"@
+`"Esto puede ser descortés, pero quisiera dar lo mejor de mí para cumplir con su petición."@
+`"…… ¿Huh?"@
+` Ella me mira directamente.\
+`"Esta mañana, llegué a percatarme de lo incapaz que soy."@
+`"¿Eh---Uh?"@
+`"Siete veces.@ Llamé siete veces, pero no hubo respuesta.@ ¿Eso es aceptable?"@
+`"¿Siete veces?@ ¿A qué, te refieres?"@
+` Estoy totalmente perdido respecto a lo que ella quiere decir.\
+` Ella se da la vuelta.@
+ld c,":a;image\tachi\his_t09.jpg",%type_crossfade_fst
+`"Hablando con franqueza, pienso que usted es muy torpe, Shiki-sama."@
+cl c,%type_lshutter_fst
+` Hisui desaparece hacia el vestíbulo con sus pasos haciendo eco en el aire.\
+`"………… ¿Huh?"@
+` Al quedarme solo, balbuceo estúpidamente.@
+` Después de pensar un rato, finalmente comprendo que ella estaba quejándose de mí.@
+br
+` ---Está bien si quieres expresar tus quejas.@
+br
+` Dije eso anteriormente.\
+`"---¿Eso fue… mi petición?"@
+` Sí, no hay equivocación.@
+` Hisui estuvo pensando en eso todo el tiempo, y estuvo esperándome en la sala de estar sólo para decírmelo.@
+br
+`"…………… Bueno, es una queja, pero…"@
+` Ella lo dijo pero, "torpe" es un poco brusco, ¿no?@
+` …… No quisiera pensarlo pero,
+` ¿Será que Hisui me odia?\
+bg #000000,%type_crossfade_mid
+bg "image\bg\bg_40a.jpg",%type_crossfade_mid
+` Regreso a mi habitación, pero en realidad no tengo nada que hacer aquí.@
+` Pensando en qué debería hacer ahora, decido caminar alrededor de la mansión que no he explorado en ocho años.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_33a.jpg",%type_lcartain_mid
+` Llego al vestíbulo.@
+` Ahora que lo pienso, siempre me gritaban por jugar en la mansión cuando era niño.@
+` Ya no soy un niño como para jugar en la mansión, y mi viejo ya no está.@
+` Solía emocionarme tanto al caminar por los pasillos cuando era niño, pero ahora no siento absolutamente nada.@
+br
+` Por alguna razón, vago sin rumbo fijo alrededor de la mansión para confirmar los recuerdos de mi niñez.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_46a.jpg",%type_lcartain_mid
+` El pasillo se extiende una distancia bastante grande.@
+` Cuando era niño, creía que este pasillo continuaría por siempre.@
+br
+` La mansión parecía tan grande como un castillo y todos los días, caminaba un poco alrededor de ésta y tallaba mi nombre sobre las paredes, las columnas, o el piso.@
+` Era una especie de juego que Akiha y yo jugábamos para ver quién podía apoderarse de la mansión.@
+` Decíamos que todo lugar en que colocases tu nombre se convertía en tu territorio, pero en realidad éramos sólo nosotros dos caminando por la mansión y tallando nuestros nombres aquí y allá.\
+bg #000000,%type_lshutter_fst
+bg "image\bg\bg_46a.jpg",%type_lshutter_fst
+`"Oh, aquí.@ Todavía aquí."@
+` Sobre el pasamanos junto a las escaleras está grabado el nombre SHIKI.\
+` Fue probablemente debido a estos juegos que mi viejo nos prohibió jugar dentro de la mansión.@
+` De cualquier forma, si miro atentamente, puedo ver mi nombre y el de Akiha por todo el lugar.\
+` La espaciosa mansión.@
+` Solía pensar que era como un castillo gigante, pero ahora casi parece una abandonada casa embrujada.@
+` Porque, he crecido desde entonces.@
+` Akiha y yo, no somos la Tohno Akiha y el Tohno Shiki que éramos entonces.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_48a.jpg",%type_lcartain_mid
+` Voy afuera.@
+br
+` ---Ahora que lo pienso, jugábamos en el jardín la mayor parte del tiempo.@
+br
+` Ya que Akiha era obediente con ese viejo, a diferencia de mí, sólo podía jugar afuera unos treinta minutos al día.@
+` Y aun así, por lo general sólo se quedaba detrás de nosotros, observando y escuchando.\
+` Pero corría enérgicamente y competía con nosotros en cualquier cosa que jugásemos.@
+br
+`"…… ¿Quizás su personalidad proviene de aquellos tiempos?"@
+` Pudo haberse reprimido frente a ese viejo.@
+` Pero aun así, Akiha cambió demasiado desde entonces.@ Tal vez estos ocho años fueron un tiempo más largo de lo que pensaba.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_42a.jpg",%type_lcartain_mid
+` ---Voy al patio.@
+` Afuera, las paredes también están marcadas con nombres.@
+br
+` SHIKI, Shiki, Akiha, SHIKI, Akiha, SHIKI, Akiha, Shiki, Shiki, SHIKI, Shiki.@
+br
+` Ésas son las proporciones, y el nombre SHIKI aparece muchas veces más.@
+` Supongo que Akiha era sólo una chica y no podía seguir el ritmo de un chico.\
+`"Cielos.@ Hubiese sido mejor si me contenía un poco."@
+` Maldecir al yo de esa época no cambia la cantidad de mis garabatos.@
+` Si esto era siempre así, probablemente hice enfadar mucho a Akiha, considerando cuánto odia perder.@
+`"Ya veo.@ Tal vez se está desahogando conmigo ahora."@
+` …… Estoy seguro de que ella no es alguien que haría eso, pero si lo hiciese, sería un poco lindo.\
+`"Soy un hermano mayor estúpido por su hermanita."@
+` Sí, en verdad lo soy.@
+`"----Bien, entonces."@
+` Con un nostálgico y apacible sentimiento, paseo por el patio.\
+bg #000000,%type_lcartain_mid
+playstop
+bg "image\bg\bg_54a.jpg",%type_lcartain_mid
+`"¿Hisui……?"@
+` Al llegar al patio trasero, veo la figura de Hisui desde atrás.@
+` Hisui no se percata de que estoy aquí.@
+` ¿Qué está haciendo, adentrándose en el bosque de esa manera?@
+`"¿?"@
+` Con un poco de curiosidad, la sigo a corta distancia.@
+br
+` ----Y.@
+br
+` Hacia donde Hisui se dirigía, parece haber un pequeño claro.@
+br
+`"……… ¿Huh?@ ¿Hay un claro en ese lugar?"@
+` Ladeando mi cabeza, intento recordar, pero por alguna razón, mi memoria es un poco vaga.@
+` En el bosque de la mansión, puedo ver un claro como si los árboles hubiesen sido cortados ahí.\
+` ---No, "puedo ver" no es correcto.@
+` Si caminase normalmente por aquí, probablemente nunca lo notaría.@
+` Si Hisui no pasaba por ahí, tan escondido entre los árboles como está, no lo habría notado aunque hubiese vivido aquí toda mi vida.@
+br
+`"¿…… ?@ ¿Eso siempre estuvo ahí?@ De ser así, probablemente jugábamos ahí cuando éramos niños."@
+` Sin exagerar, no recuerdo haber jugado alguna vez con Akiha en el claro.\
+!w1500
+br
+br
+br
+br
+br
+br
+br
+` ----Siento que nunca, he estado ahí, anteriormente.@
+!w1500
+\
+` "…………"@
+` Después de pensar un poco, decido entrar al claro.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_53.jpg",%type_lcartain_mid
+` …… El claro no me impresiona como algo fuera de lo ordinario.@
+` No veo ninguna señal de Hisui.@
+br
+`"Qué es esto---es sólo un lugar vacío."@
+` Camino hacia el centro.@
+` En verdad es sólo un espacio vacío.@
+` El terreno perfectamente nivelado.@
+` El profundo bosque cercando el área.\
+wave se0
+bg #ffffff,%type_crossfade_fst
+bg "image\bg\bg_53.jpg",%type_crossfade_fst
+br
+br
+br
+br
+br
+` La voz de las cigarras.@
+` Y el fuerte sol del verano que se siente como si pudiese disolver------\
+wave se0
+bg #ffffff,%type_crossfade_fst
+bg "image\bg\bg_53.jpg",%type_crossfade_fst
+` "¿Eh…………?"@
+` ¿Verano, sol---?\
+wave se0
+bg #ffffff,%type_crossfade_fst
+bg "image\bg\bg_53.jpg",%type_crossfade_fst
+`"Au----auch………"@
+` La herida en mi pecho comienza a doler.@
+!w500
+`        Es como / puñaladas
+!w500
+`          Este dolor / se siente como / un cuchillo de cocina apuñalando mi pecho.\
+bg #ffffff,%type_crossfade_mid
+br
+` Chiiirp.@ Chirp Chirp.@
+!w500
+` Chiiirp.@ Chirp Chirp.@
+!w500
+` Chiiirp.@ Chirp Chirp----.@
+br
+` ¿Qué es esto?@
+br
+` ----No sé de dónde viene pero, puedo escuchar la voz de las cigarras.@
+br
+` Pero estamos en otoño.@
+br
+` ----El sol del verano baña todo de blanco.\
+wave se0
+br
+br
+br
+br
+br
+` Columnas de nubes veraniegas en el cielo lejano.@
+!w500
+` Prácticamente puedo ver las voces.@
+!w500
+` Junto a mis pies, corazas desechadas de cigarras.\
+!w500
+` Coraza desechada.@ La coraza desechada--de alguien.\
+wave se0
+`"----…………"@
+br
+` Mi herida se abre.@
+!w500
+` Mi pecho se tiñe de carmesí oscuro; negro bermellón empapa mis manos.@
+!w500
+\
+bg "image\bg\ima_13.jpg",%type_nowaitdisp
+bg "image\bg\cmo_06.jpg",%type_crossfade_fst
+waveloop se1
+br
+` …… La silueta de alguien agachado.@
+`   Los pasos de una chica joven aproximándose.@
+`   Las columnas de nubes en el cielo lejano.@ Las corazas desechadas de cigarras.@
+`   Entonces,
+br
+!w500
+`   Frente a mí, el rostro lloroso de Akiha, que está empadada de sangre.\
+br
+br
+br
+br
+br
+` Chiiirp.@ Chirp Chirp.\
+` Chiiirp.@ Chirp Chirp.\
+br
+br
+br
+br
+br
+br
+` ---Ah.@ Voces que intentan perforar mis tímpanos,
+`  voces de cigarras.\
+bg #ffffff,%type_crossfade_slw
+bg "image\bg\bg_53.jpg",%type_nowaitdisp
+`"Ah----gu."@
+` Me duele el pecho.@
+` Me siento enfermo.@
+` Mi herida sanó hace mucho tiempo; ¿por qué duele tanto?@
+monocro #ff0000
+bg "image\bg\ima_13.jpg",%type_crossfade_mid
+` Mi pecho   está roto.@
+` La vieja herida se abre, sangre brota de la abertura.\
+br
+` ---¿Qué es esto?@
+` Mi herida, no ha sanado en absoluto.\
+br
+br
+br
+br
+`   Duele.@
+`     Estoy asustado.@
+`       Esto es,
+!w1000
+`             El impulso llamado Muerte.\
+monocro off
+bg #000000,%type_crossfade_mid
+br
+br
+br
+br
+br
+br
+br
+` Mi consciencia se hunde.@
+` Mi herida duele.\
+br
+br
+br
+br
+br
+br
+br
+` Mi cuerpo cae hacia la tierra con un gran sonido sordo.\
+wavestop
+bg #ffffff,%type_crossfade_slw
+!w2000
+play "*8"
+bg "image\bg\bg_40c.jpg",%type_crossfade_mid
+br
+br
+br
+` …… Puedo escuchar voces hablando.\
+`"Akiha-sama, ¿no va a llamar a un doctor?"@
+`"No seas estúpida, Hisui.@
+` ¡De ninguna manera podría hacer eso, la herida de Nii-san no es normal…!"\
+` …… Akiha  y  Hisui   están hablando.@
+` Ésta  es   la habitación de SHIKI.@
+` Parece   que   estoy  durmiendo  en la cama.@
+br
+` Planeaba decir "¡Hey!" y salir de la cama, pero no puedo moverme en absoluto.@
+` Ya no me duele el pecho, pero mi cuerpo se siente tan pesado como el plomo.@
+` Todo lo que puedo mover son mis ojos y mi boca.\
+ld r,":a;image\tachi\aki_t07b.jpg",%type_crossfade_fst
+`"¿Qué rayos tratabas de hacer, Hisui?@ ¡Sabes que no debes permitir que Shiki se acerque a ese lugar……!"@
+ld l,":a;image\tachi\his_t05.jpg",%type_crossfade_fst
+`"Por favor…… Perdóneme."@
+`"Esto no puede resolverse con disculpas.@ Fuiste asignada al servicio de Nii-san para evitar este tipo de situación.@ ¿¡Qué estabas haciendo…!?"\
+` En total contraste con su conducta habitual, Akiha desahoga toda su furia.@
+` En comparación, Hisui está aceptando el regaño, mirando hacia abajo en silencio.@
+br
+` …… No estoy seguro de cómo surgió todo esto.@
+` Pero al menos puedo decir que a Hisui le están gritando por mi culpa.\
+`"Respóndeme, Hisui.@ ¿Qué estabas haciendo y dónde estuviste todo el día?"@
+` Hisui no responde.@
+` El ambiente se hace más tenso entre ellas.@
+` Mordiendo su labio, Akiha da un paso hacia Hisui.@
+cl a,%type_crossfade_fst
+br
+` …… Incluso yo puedo entender que Akiha pretende golpearla.@
+` Hisui también parece saberlo, pero se queda parada con su cabeza colgando de vergüenza, preparada para recibirlo.\
+`"---Espera, Akiha."@
+ld c,":a;image\tachi\aki_t15b.jpg",%type_crossfade_fst
+`"Nii-san--¿¡Estás despierto!?"@
+`"Sí, fuiste tan escandalosa, que desperté."@
+`"Ah…………"@
+ld c,":a;image\tachi\aki_t16b.jpg",%type_crossfade_fst
+` Akiha aparta la vista incómodamente.@
+` Hisui continúa mirando hacia abajo, sin siquiera intentar mirarme.\
+`"No deberías desahogarte con Hisui.@ No conozco las circunstancias, pero esto tiene que ver con mi desmayo, ¿cierto?@ No es su culpa, me desmayé por mi cuenta."@
+br
+` Hago un gran esfuerzo y de alguna manera logro levantar la mitad superior de mi cuerpo.@
+` Pero eso es todo lo que puedo lograr, y no creo que pueda moverme siquiera una pulgada más.@
+` Pero ya que Hisui está deprimida, tengo que forzarme a actuar lo más saludablemente posible.\
+`"…… Sinceramente, pelearte por mí.@ Aunque pareces adulta, todavía eres una niña."@
+ld c,":a;image\tachi\aki_t17b.jpg",%type_crossfade_fst
+`"Pero… te desmayaste por completo, Nii-san.@ Estuviste inconsciente por más de diez horas, y nada como esto había sucedido antes.@
+` Si---nunca despertabas, ¿¡qué habría hecho yo……!?"@
+`"Idiota, no digas cosas como ésas.@ ¿No fue sólo anemia?@ …… ¿huh?@ ¿¡Ya son las diez en punto!?"\
+ld c,":a;image\tachi\aki_t12b.jpg",%type_crossfade_fst
+`"Sí, estuviste inconsciente desde el mediodía."@
+` Ella habla con vacilación.@
+` No estoy preocupado por mí, sino por mi promesa de encontrarme con Arcueid en el parque a las diez en punto.\
+`"Oh no, tengo que irme.@ Akiha, tengo que irme así que dejaré el resto en tus manos.@ No intimides a Hisui, ¿de acuerdo?"@
+`"¡N, no digas cosas tan estúpidas……!@
+` No preguntaré adónde vas cada noche, Nii-san.@ ¡No preguntaré, así que al menos por esta noche; por favor no fuerces tu cuerpo esta noche……!"@
+`"Jaja, estoy bien.@ Esto es bastante común.@ Cuando estaba en la escuela media, solía desmayarme dos veces al día, tú sabes eso, ¿cierto Akiha?"@
+ld c,":a;image\tachi\aki_t23b.jpg",%type_crossfade_fst
+`"Por eso estoy más preocupada.@ ---Nii-san, por favor escucha lo que digo, al menos sólo por esta noche."\
+` Ella me mira a los ojos con una seria expresión.@
+br
+` Yo-----
+br
+cl c,%type_crossfade_fst
+return

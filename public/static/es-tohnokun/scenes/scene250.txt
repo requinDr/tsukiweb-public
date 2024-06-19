@@ -1,0 +1,15 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_06b.jpg",%type_nowaitdisp
+` No tengo nada que hacer en particular, así que decido dirigirme directamente de vuelta a la mansión.@
+bg #000000,%type_lcartain_slw
+!w1000
+bg "image\bg\bg_32b.jpg",%type_lcartain_slw
+` Subiendo la colina, regreso a la mansión.@
+` Ni siquiera son las cinco en punto.@
+` Faltan dos horas para la cena, así que mataré algo de tiempo en mi habitación---\
+bg #000000,%type_lcartain_mid
+!w1000
+return

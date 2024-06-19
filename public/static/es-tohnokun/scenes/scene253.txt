@@ -1,0 +1,528 @@
+monocro off
+wavestop
+playstop
+bg #000000,%type_nowaitdisp
+;---added context above---
+!w1000
+bg "image\bg\bg_34b.jpg",%type_crossfade_slw
+play "*3"
+` ---La cena ha terminado, y ya es de noche.@
+` Un raro evento: Akiha, Kohaku-san, y Hisui están todas en la sala de estar, así que me uno a ellas para beber algo de té.\
+ld l,":a;image\tachi\koha_t03.jpg",%type_lshutter_fst
+`"¿Eso cree?@ Me gusta más el segundo que el primero.@ Pienso que el sabor es más refinado."@
+ld r,":a;image\tachi\aki_t04b.jpg",%type_lshutter_fst
+`"Es una difícil elección.@ La diferencia en el sabor es significativa, pero cada quien maneja las diferentes concentraciones de diversas formas.@ Pero, Kohaku, te gusta más el té japonés, ¿cierto?@ Creo que Hisui prefiere el té inglés."\
+ld l,":a;image\tachi\koha_t01a.jpg",%type_crossfade_fst
+`"A Hisui-chan no le molesta mucho lo insípido.@ Puede que parezca sensible, pero Hisui-chan es---"@
+cl r,%type_crossfade_fst
+ld r,":a;image\tachi\his_t01.jpg",%type_lshutter_fst
+`"Nee-san."@
+ld l,":a;image\tachi\koha_t02.jpg",%type_crossfade_fst
+`"---sensible como parece.@ Verá, no hay nada que ella no pueda hacer, como limpiar o coser, Shiki-san."@
+` Kohaku-san de repente comienza a conversar conmigo.@
+ld r,":a;image\tachi\his_t08.jpg",%type_crossfade_fst
+` La mirada de Hisui también parece… un poco aterradora.\
+cl r,%type_crossfade_fst
+`"…… ¿Por qué me dices eso de pronto, Kohaku-san?"@
+ld l,":a;image\tachi\koha_t05.jpg",%type_crossfade_fst
+`"Porque Hisui-chan es su sirvienta.@ Usted seguramente sabe sobre su sensibilidad, ¿cierto?"@
+`"Um, bueno---"@
+` Miro hacia Hisui rápidamente.@
+ld r,":a;image\tachi\his_t08.jpg",%type_crossfade_fst
+`"……………………"@
+` …… Hisui permanece ahí en silencio, con algo como una atmósfera de ataque a su alrededor.\
+`"---No, no pienso que sea tan sensible.@ Ella se encarga de las cosas rápidamente, incluso cuando desordeno algo, y no se enfada como cierta persona cuando vuelvo tarde a casa."@
+ld r,":a;image\tachi\his_t04.jpg",%type_crossfade_fst
+cl l,%type_crossfade_fst
+ld l,":a;image\tachi\aki_t18b.jpg",%type_crossfade_fst
+`"Nii-san, ¿no sabes que es perfectamente natural que alguien que ignora el toque de queda sea regañado?"@
+`"…… Lo sé pero, ¿no es demasiado temprano a las ocho en punto?@ No soy un niño, así que dejémoslo a las diez en punto a partir de ahora."@
+ld l,":a;image\tachi\aki_t02b.jpg",%type_crossfade_fst
+`"Me niego.@ No tienes ninguna razón para estar afuera tan tarde.@ No es que tengas una escuela abarrotada o un club al que asistir."\
+cl a,%type_crossfade_fst
+`"……………… Hmph."@
+` No puedo contradecirla cuando saca eso a colación.@
+` Para alguien sin obligaciones como yo, venir tarde a casa significa que estoy afuera jugando.@
+ld c,":a;image\tachi\koha_t02.jpg",%type_crossfade_fst
+`"Shiki-san, es como Akiha-sama dice.@ Recientemente, es peligroso estar afuera, así que por favor no salga de noche, ¿de acuerdo?"@
+`"---¿Peligroso, te refieres a esos asesinatos en serie?"@
+` "Sí," Kohaku-san asiente.@
+` …… Eso casi me hace reír.@
+` El que hacía eso, Nrvnqsr, ya no está.@
+` Pero los únicos que lo sabemos somos Arcueid y yo, y otras personas aún temen a las sombras del asesino muerto.\
+`"Esta mañana encontraron otra víctima en el distrito comercial.@ Es la onceava víctima ¿sabe? La onceava víctima."@
+`"…… Guau, ¿onceava?@ Asombroso, eso es un equipo de fút----"@
+br
+` -----Espera un minuto.@
+br
+`"¡Kohaku-san!"@
+ld c,":a;image\tachi\koha_t01a.jpg",%type_crossfade_fst
+`"¿Sí?"@
+`"Lo que acabas de decir, ¿¡es verdad!?"\
+ld c,":a;image\tachi\koha_t03.jpg",%type_crossfade_fst
+`"Sí, es verdad.@ Estuvo en las noticias de esta mañana.@ Parece que sucedió anoche, y al igual que a todas las otras, le fue extraída toda su sangre."@
+cl a,%type_crossfade_fst
+br
+`"Qué------"@
+br
+` Eso es, raro.@
+` Porque Nrvnqsr está muerto.@
+` ¿Cómo puede alguien que murió hace dos días matar a alguien al día siguiente?\
+`"No puede ser---"@
+` ¿Acaso no murió?@ …… No, eso definitivamente no puede ser.@ Definitivamente murió.@
+` Entonces, cómo---
+bg "image\event\ark_e01.jpg",%type_crossfade_mid
+bg "image\bg\bg_34b.jpg",%type_crossfade_mid
+`"-----"@
+` Pero, tal vez.@
+` Si el vampiro que recorría las calles desapareció, pero estos incidentes aún están ocurriendo…
+` Entonces, el único vampiro que queda en esta ciudad es ella---\
+playstop
+bg #000000,%type_crossfade_slw
+bg "image\bg\bg_40c.jpg",%type_crossfade_slw
+ld c,":a;image\tachi\his_t01.jpg",%type_lshutter_fst
+`"Buenas noches, Shiki-sama."@
+`"…… Sí, buenas noches, Hisui."@
+cl a,%type_lshutter_fst
+` La puerta se cierra suavemente y me quedo solo en la habitación.\
+`"………………"@
+` Otra víctima apareció.@
+` Otra víctima, asesinada por un vampiro.@
+`"No puede ser…… Arcueid, ¿verdad?"@
+` Ella dijo que no chupa sangre, y más que eso---no creo que alguien que actúa tan humanamente pudiese hacer eso.@
+` Sólo pase dos días con ella, pero no puedo creer que hiciera algo malo.@
+` Con su hermosura y su gran sonrisa, no puede chupar la sangre de alguien y desecharlo en medio de la calle.\
+`"------Pero…"@
+` Pero, ha sido encontrado un nuevo cadáver.@
+bg "image\event\ark_e01.jpg",%type_crossfade_mid
+bg "image\bg\bg_40c.jpg",%type_crossfade_mid
+`"…… Simplemente debería verla una vez más y preguntarle sobre eso."\
+bg #000000,%type_crossfade_slw
+` Diciendo eso en voz alta, rápidamente actúo en consecuencia.@
+` Tomo el cuchillo que usé para combatir a Nrvnqsr y salgo a escondidas de la mansión.@
+` Salgo a la calle y comienzo a buscar a Arcueid.\
+!w1000
+bg "image\bg\bg_27b.jpg",%type_lcartain_mid
+` Mis pulmones se sienten como si fuesen a estallar.@
+` Dejo de correr y recobro el aliento.@
+` Mi cuerpo que estuvo corriendo sin parar hasta ahora jadea para tratar de inhalar más oxígeno.@
+` Mis jadeos llenan el aire.@
+` …… Esto no es bueno, no puedo encontrarla.\
+` Corrí por las calles y hasta su casa, pero aun así no pude encontrarla.\
+`"…… Esa Arcueid…… ¡Siempre está cerca cuando no la necesitas, pero cuando intentas encontrarla……!"@
+` Digo esas palabras egoístamente.@
+` Han pasado cuatro horas.@ Es casi medianoche, pero aún no veo a Arcueid por ningún lado.@
+br
+` …… Por alguna razón.@
+` Por alguna razón, pensé con optimismo que la encontraría fácilmente una vez que comenzara a buscarla.@
+` Quiero verla, y cuando nos separamos por última vez, ella dijo "Hasta luego."\
+`"Mierda…… ¿Adónde fuiste, Arcueid……!"@
+` Por alguna razón, me estoy molestando mucho.@
+` Sigo pensando que la veré pronto pero no lo hago.@ Esto me está matando.\
+`"…… Yo…… pensé…… que volveríamos a vernos………"@
+` ¿---?@
+` ¿Qué es eso?@
+` Es como si…… estuviese enamorado de ella.\
+`"---Pero eso---"@
+bg "image\event\ark_e06b.jpg",%type_crossfade_fst
+bg "image\bg\bg_27b.jpg",%type_crossfade_fst
+`"---Eso es estúpido."@
+` Forzando una sombría sonrisa, saco ese pensamiento de mi mente.@
+`"…… Revisaré el parque, y si no la veo ahí, regresaré."@
+` Respirando profundamente, camino hacia el parque.@
+br
+` Hace dos noches.@
+` Ese parque donde tantas cosas sucedieron, el parque donde me despedí de Arcueid.\
+bg #000000,%type_crossfade_slw
+monocro #0000ff
+bg "image\bg\bg_28b.jpg",%type_crossfade_slw
+play "*6"
+`"---¿Hm?"@
+` Hay algo diferente respecto al parque.@
+`"……… Las farolas están apagadas."@
+` Todas las farolas a lo largo del parque están apagadas.@
+` El parque iluminado por la luna se ve más solitario de lo habitual.@
+`"Hmm…… ¿es un apagón?"@
+` Miro a mi alrededor.@
+` …… Afuera del parque, todas las luces están funcionando.@
+` Las únicas farolas que no funcionan están dentro del parque.\
+br
+br
+wave se11
+`     -----Clang-----
+br
+br
+`"Eh----¿Qué fue eso?"@
+` Puedo escuchar algo.@
+` El clamor suena como si viniese de una pelea.\
+!w2000
+`"-----"@
+` Tengo curiosidad.@
+` No hay base para esto, pero si alguna clase de problema está ocurriendo a tan altas horas de la noche, creo que ella debe estar involucrada.\
+`"……… Muy bien."@
+` Trato de ser lo más silencioso posible y me dirijo hacia la fuente del sonido.\
+bg #000000,%type_lcartain_slw
+bg "image\bg\bg_29b.jpg",%type_lcartain_slw
+`"¡----!"@
+` Puedo ver dos figuras enfrentándose.@
+` Alguien está vistiendo prendas negras y no puedo decir quién es.@ Pero puedo reconocer al otro fácilmente.@
+` Prendas blancas, y cabello dorado que puede ser visto fácilmente incluso bajo la débil luz de la luna.\
+`"…… ¡Arcueid……!"@
+` Arcueid está siendo atacada por esa oscura figura humana.\
+br
+` La oscura sombra humana está portando algo como una espada, y esto no es nada parecido a una simple pelea.@
+br
+` Espada en mano, salta hacia Arcueid.@
+` Arcueid desvía la cuchilla dirigida hacia su pecho con su mano y hace contacto ligeramente con el pecho de esa figura negra.@
+br
+` En el siguiente instante,
+` esa figura con espada vuela por el aire como una pelota de fútbol.\
+br
+` Cae con un ruido sordo y rueda, rueda, rueda.@
+br
+` Cae sobre el adoquinado del parque y continúa rodando como para aligerar la caída.@
+` No, para ser más preciso,
+` rueda directamente hacia mí.\
+`"¿……?"@
+` Está oscuro y no puedo ver, pero frente a mí la figura deja de rodar y se pone de pie.@
+`"¡Ku-----!"@
+` Una voz aguda e interrumpida.@
+`"Haa…… ah."@
+` Fascinado por esta demostración, dejo salir un respiro de admiración.\
+` De repente,
+` la figura con espada cesa todo movimiento.@
+`"¿¡He sido vista----!?"@
+` La figura finalmente parece percatarse de que estoy aquí.@
+` Y entonces---salta hacia mí, espada en mano.\
+`"----¿Eh?"@
+` El filo de la espada rápidamente describe un arco hacia mi garganta.@
+` Esta velocidad.@ Esta velocidad de vuelo, esta presición, supera la de las bestias de Nrvnqsr.@
+` El movimiento de la sombra es tan rápido como el de Arcueid cuando estaba despedazando a las bestias de Nrvnqsr.@
+br
+` La espada pincha ligeramente mi cuello.\
+bg #9c0120,%type_crossfade_fst
+br
+br
+` ----Palpitar.@
+br
+` Mi corazón se acelera a un ritmo febril.@
+` Ni siquiera tengo tiempo para pensar en el peligro o para evadir; mis pensamientos están llenos sólo de muerte.@
+br
+` La espada no perfora mi garganta, más bien se detiene repentinamente.\
+bg #000000,%type_crossfade_slw
+bg "image\bg\bg_29b.jpg",%type_crossfade_slw
+ld c,":a;image\tachi\cel_t07b.jpg",%type_crossfade_mid
+`"¿Tohno…… kun---?"@
+`"------Sen, pai."@
+` Nuestras voces coinciden.@
+` Nuestras voces están ahogadas en escepticismo---Ciel-senpai y yo nos miramos con paralizante asombro.\
+`"¡Shiki, aléjate de ella!"@
+` La voz de Arcueid grita desde muy lejos.@
+ld c,":a;image\tachi\cel_t06b.jpg",%type_crossfade_fst
+`"-------"@
+` Arcueid corre hacia nosotros.@
+` Senpai me mira ferozmente con ojos que parecen pertenecer a otra persona---
+cl a,%type_crossfade_slw
+playstop
+br
+` ---De esa manera, se da la vuelta y se va corriendo.\
+`"¿Po…… por qué?"@
+` Senpai ha desaparecido por completo.@
+` Esa figura negra, Senpai vistiendo esas ropas oscuras.@ …… Esa persona que me salvó hace dos días cuando casi fui asesinado por los cuervos de Nrvnqsr.@
+` Pero---Senpai, dijo que no era ella, entonces por qué---
+br
+ld c,":a;image\tachi\ark_t06.jpg",%type_crossfade_mid
+`"¡Shiki---!"@
+` …… De repente me percato de que Arcueid está frente a mí.\
+`"A--Ar, cueid--"@
+ld c,":a;image\tachi\ark_t07.jpg",%type_crossfade_fst
+`"¿¡Estás bien!?@ ¿Te hizo algo?"@
+` Al igual que lo hizo Senpai, ella me mira atentamente.@
+` Pero eso no importa.@
+br
+`"¿Me hizo algo……?"@
+` Toco mi el lugar de mi cuello que fue apuntado por la espada.@
+` Hay un ligero dolor agudo.@
+` El dedo con que toqué mi cuello está levemente pintado de rojo.@
+` La espada de Senpai perforó sólo unos pocos milímetros de mi cuello.\
+`"…… ¿Qué está, sucediendo?@ ¿Por qué Senpai me atacaría?"@
+` Por qué---sinceramente, ¿por qué ella me miraría de esa manera?@
+ld c,":a;image\tachi\ark_t06.jpg",%type_crossfade_fst
+`"¿No es obvio?@ Tú nos viste tratando de matarnos.@ Ella es alguien que actúa en absoluta discreción, y por eso detesta que una persona ordinaria como tú viese lo que estaba sucediendo."@
+` Arcueid hace esa increíble afirmación.@
+`"---¿Matarse…… por qué?@
+` ¿Por qué---por qué Senpai y tú harían algo como eso?"@
+` Perdido en una absoluta conmoción, sólo logro decir esas palabras.\
+cl a,%type_crossfade_fst
+` En primer lugar, no vine aquí para preguntar eso.@ Quería preguntarle---algo a Arcueid, y es por eso que vine aquí.\
+`"…… No sé.@ Yo sólo vine para verte pero, ¿por qué---por qué Senpai y tú están tratando de matarse?"@
+ld c,":a;image\tachi\ark_t03.jpg",%type_crossfade_fst
+`"¿Eh?@ Shiki, ¿viniste para verme?"@
+`"---Sí.@ Quería hablarte sobre algo, así que estaba buscándote---¿por qué las cosas terminaron de esta manera?@
+` …… No lo sé.@ Mi cabeza sólo da vueltas.@ Por favor---¿podrías decirme qué está sucediendo, Arcueid?"\
+`"Bueno, simplemente estaba peleando con esa persona de La Iglesia.@ No es algo que te concierna, así que olvídalo Shiki."@
+`"----Sí me concierne.@ Pero primero, ¿a qué te refieres con 'La Iglesia'?@ Explícalo de modo que pueda entender."@
+cl a,%type_crossfade_fst
+` Arcueid no responde.@
+` Lo medita y finalmente asiente.@ "Claro, ¿por qué no?"\
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"Ya que estás tan preocupado, te lo diré.@ Aunque en realidad no te concierne, ¿en verdad quieres saberlo?"@
+`"Sí.@ Sin importar lo que sea, no me molestaré."@
+ld c,":a;image\tachi\ark_t03.jpg",%type_crossfade_fst
+`"¿Oh?@ Qué entusiasta.@ Aunque en realidad me da un poco de curiosidad saber por qué viniste a verme."@
+`"…… Vamos, por favor apresúrate.@ Quiero escuchar sobre esa persona."@
+ld c,":a;image\tachi\ark_t04.jpg",%type_crossfade_fst
+` "Hmph," Arcueid se ve un poco enojada.@
+` Ni siquiera pienso en qué razón podría tener para verse de esa manera.\
+br
+` …… Todavía me duele la garganta.@
+` Senpai---Ciel-senpai me apuntó con una espada.@
+` Solamente puedo pensar en por qué Ciel-senpai haría eso.\
+ld c,":a;image\tachi\ark_t02.jpg",%type_crossfade_fst
+play "*1"
+`"…… Bien, entonces te lo diré.@
+` Los Apóstoles Muertos son vampiros que hacen su mayor esfuerzo para ocultar su existecia.@
+` Para vivir, deben chupar sangre humana, así que mientras ellos existan seguirán apareciendo víctimas.@ Pero no hay muchas historias sobre personas asesinadas por vampiros, ¿cierto?@
+` ¿Sabes por qué?"@
+`"…… Arcueid.@ No pregunté sobre vampiros."\
+ld c,":a;image\tachi\ark_t16.jpg",%type_crossfade_fst
+`"Cielos, estoy tratando de explicártelo en orden Shiki, favor responde, ¿de acuerdo?@
+` Mira, aunque los vampiros matan gente, intentan ocultárselo a la sociedad circundante en la que vive gente como tú.@ Procuran ocultarse, y por medio de la hechicería y otras cosas, tratan de camuflar a sus víctimas tanto como sea posible y hacerlo parecer natural.@
+` ¿Sabes por qué?"\
+`"…… Bueno, porque los humanos no son estúpidos.@ Si descubriesen que monstruos como ésos existen donde ellos viven, los atacarían.@
+` Aunque los humanos son débiles, tienen cosas como la policía.@ Si hubiese cosas como vampiros, se haría un esfuerzo para proteger a la gente de ellos.@ …… Entonces la gente dejaría de salir a caminar de noche; como lo que está sucediendo ahora.@ Creo que intentan ocultarse porque eso es inconveniente para ellos."@
+ld c,":a;image\tachi\ark_t02.jpg",%type_crossfade_fst
+`"---Bueno, supongo que es verdad, pero la policía es sólo un grupo que impone la ley sobre los humanos.@ Nosotros no los consideramos en absoluto.@
+` Pero, es correcto decir que los vampiros ocultan su presencia por el bien de la auto preservación."\
+`"Shiki, existe un enemigo natural de los vampiros.@ Un grupo de algo como asesinos profesionales que ahora tienen el balance de poder a su favor.@
+` …… Es verdad para otras especies transcendentes, pero especialmente para los vampiros, que es fatal revelarse a sí mismos.@
+` Incluso si un vampiro hiciera un reino secreto en un pueblo en las montañas lejos de toda civilización, este enemigo natural definitivamente lo notaría si las víctimas siguiesen incrementándose.\
+` Los vampiros explotan a los humanos en secreto, por ninguna otra razón que la auto preservación.@ Los vampiros esconden los cadáveres de sus víctimas, no por miedo a que la sociedad humana se entere, sino por miedo a que este enemigo natural los descubra."\
+`"…… ¿Su…… enemigo natural?"@
+` Ella se refiere a alguien que lucha contra los vampiros.@
+` …… Como Senpai, que estaba blandiendo una espada en contra de Arcueid.\
+`"…… Entonces, ¿ellos tampoco son humanos?"@
+ld c,":a;image\tachi\ark_t04.jpg",%type_crossfade_fst
+`"¿Qué estás diciendo?@ Sus enemigos naturales son sin duda alguna ustedes los humanos."@
+`"¿-----?@ ¿Enemigos naturales, nosotros?"@
+ld c,":a;image\tachi\ark_t02.jpg",%type_crossfade_fst
+`"Sí.@ Hace mucho tiempo, los humanos usaron muchos tipos de hechicería, lo oculto, ceremonias mágicas para crear una organización, y comenzaron a eliminar primates diferentes a los humanos.@
+` La mayor de éstas es el Cristianismo---el orgullo de El Vaticano, los Exorcistas.@ La Iglesia Católica siempre vio a los "no humanos" como impurezas, pero los vampiros son considerados los más peligrosos."\
+` "Hay muchos grupos religiosos en el mundo, pero la Iglesia Católica ve a los vampiros con más hostilidad que el resto.@
+` Sabes, es casi una obsesión.@ Son tan dementes, no quisiera involucrarme con ellos en absoluto."@
+` Arcueid deja salir un suspiro.@
+ld c,":a;image\tachi\ark_t06.jpg",%type_crossfade_fst
+`"Ya deberías saber a lo que quiero llegar.@
+` La que intentó matarte es una miembro de una selecta organización que caza herejes.\
+` Este grupo, la Agencia de Entierros, es parte de La Iglesia.@ Usan su propia fuerza en lugar de la ley para lidiar con contradicciones al Cristianismo.@ Estos exorcistas ocultos son más parecidos a asesinos profesionales.@
+` Siendo los que pisotean las contradicciones, su existencia es una sombra, así que no aparecen delante de la gente.@ Son una sección que no debería existir dentro de la organización llamada Cristianismo, así que matan indiscriminadamente a todos aquellos que descubren su existencia."\
+ld c,":a;image\tachi\ark_t04.jpg",%type_crossfade_fst
+`"Esa mujer---parece que ahora se llama Ciel, probablemente vino aquí para cazar al vampiro de esta ciudad.@ Su percepción del 'enemigo' es mucho mejor que la mía."@
+` Ella dice esto con un tono de irritación.\
+cl a,%type_crossfade_fst
+`"………"@
+` No tengo palabra alguna que decir.@
+` Senpai---es alguna clase de exorcista que está cazando vampiros---simplemente no puedo creer nada de eso.\
+bg #000000,%type_crossfade_fst
+monocro off
+bg "image\event\cel_e01.jpg",%type_crossfade_slw
+br
+` Porque Senpai es tan buena y amable por naturaleza,
+br
+bg #000000,%type_crossfade_fst
+bg "image\event\cel_e02a.jpg",%type_crossfade_slw
+` ella no puede matar---no es alguien que pueda manejar semejantes cosas, al contrario de mí.\
+bg #000000,%type_crossfade_slw
+monocro #0000ff
+bg "image\bg\bg_29b.jpg",%type_crossfade_fst
+`"---Eso es mentira.@ Es mentira, Arcueid.@ Porque Senpai es una estudiante mayor en mi escuela.@ ¿¡Por qué dirías que es algún miembro de La Iglesia……!?"@
+ld c,":a;image\tachi\ark_t16.jpg",%type_crossfade_fst
+`"Oye.@ Shiki, ¿la conoces?"@
+` Arcueid se acerca, como diciéndome que no permitirá eso.@
+cl c,%type_lshutter_mid
+`"¡Por supuesto!@ Ella está en tercer año en mi escuela, y la he conocido desde mi primer año--"@
+br
+` ----¿Desde, mi primer año?\
+bg #000000,%type_crossfade_fst
+`"---¿Hu--h?"@
+` …… Algo está mal.@
+` Ahora que lo pienso, ¿por cuánto tiempo la he conocido?@
+` Ni siquiera sé en qué clase está ella.@
+` Trato de recordar---pero no tengo ningún recuerdo de ella anterior al día en que la encontré reparando esas tablillas.\
+monocro #ffff00
+bg "image\event\cel_e01.jpg",%type_crossfade_slw
+br
+` ---Muchas gracias, Tohno-kun.@
+br
+` Porque ella sonrió y dijo eso.@
+` Por alguna razón, sentí que la conocía desde, siempre.@
+`"---Esto no puede----ser verdad."\
+bg #000000,%type_crossfade_fst
+` Primero que nada, lo más extraño es que…@
+` Senpai es llamada "Ciel" como si fuese natural llamarse así, pero nadie la llama por un nombre diferente.@
+` Simplemente es llamada Ciel,
+` ¿cómo es posible que nadie dudase de semejante nombre---?\
+monocro #0000ff
+bg "image\bg\bg_29b.jpg",%type_crossfade_fst
+`"Arcueid---sobre Senpai…… sobre esa persona, ¿quién es ella……"@
+ld c,":a;image\tachi\ark_t02.jpg",%type_crossfade_fst
+`"¿No te lo dije?@ Es una miembro de la Agencia de Entierros.@ Es una novata que entró hace sólo ocho años, pero es posible tenga grandes habilidades.@ Es una agente que ya tiene un puesto en el número perfecto, el Séptimo."@
+cl a,%type_crossfade_fst
+`"----"@
+` No entiendo muy bien lo que Arcueid está diciendo.@
+br
+` Pero, el número siete ciertamente es un número perfecto.\
+bg "image\bg\cmo_09.jpg",%type_crossfade_slw
+monocro #00ffff
+` Un número aislado de los otros.@
+` En su soledad, no tiene a dónde ir.@
+` Aislamiento, aislamiento.@ Ya que es perfecto, la Apócrifa nombrada con ese número rechaza la reencarnación.@
+br
+` …… No las entiendo, pero,
+` por alguna razón, esas palabras se repiten dentro de mi cabeza.\
+bg "image\bg\bg_29b.jpg",%type_crossfade_mid
+monocro #0000ff
+ld c,":a;image\tachi\ark_t06.jpg",%type_crossfade_fst
+`"…… Es cierto, los miembros de la Agencia de Entierros son unos expertos, supongo que para ellos es fácil usar la sugestión sobre alguien que ni siquiera puede resistirse.@
+` Esa mujer probablemente los estuvo engañando sólo para poder permanecer en su escuela."@
+`"…… Sugestión…… ¿como hipnósis?"@
+ld c,":a;image\tachi\ark_t03.jpg",%type_crossfade_fst
+`"Sí, no puede ser una orden muy compleja.@ Probablemente utilizó algo simple, como: 'No duden de Ciel'."\
+` …… Sí, eso es.@
+` Desde el principio sentí que algo estaba mal, pero tan pronto como la veía, esas dudas desaparecían.@
+` Sentir que es natural que ella esté ahí,
+` ¿no era ésa una de las características de Senpai?\
+`"…… Entiendo, pero aún hay algo más.@
+` Dijiste que Senpai es una miembro de esa Agencia de Entierros, ¿entonces por qué está peleando contigo?@ Ellos sólo pelean contra vampiros malos, ¿no?@ Así que---no hay necesidad de que ustedes dos peleen, ¿cierto?"@
+br
+` ---Sólo pelean contra… vampiros… malos.@
+br
+` Como, aquellos que chupan la sangre de los humanos y desechan sus cuerpos.\
+`"…… Arcueid, tú---"@
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"¿Hm?@ ¿Qué, acaso hice algo?"@
+` Arcueid mira directamente hacia mí.@
+` …… No puedo pensar eso.@
+` No quiero pensar que esta persona, chupó sangre humana alguna vez.@
+` Pero la verdad es que los incidentes aún están ocurriendo.@
+` Además, Senpai, una exorcista de La Iglesia, está tratando de matar a Arcueid.\
+`"---Arcueid.@
+` No me digas que el asesinato de ayer fue obra tuya.@ Es por eso que Senpai y tú estaban peleando---"@
+` Aprieto mis dientes.@
+` Digo esas fuertes y dolorosas palabras como si le confesara mi amor a una chica que me gusta.\
+ld c,":a;image\tachi\ark_t06.jpg",%type_crossfade_fst
+`"Shiki, ¿hablas en serio?"@
+`"Ni siquiera yo quisiera creerlo.@ Pero entonces, ¿quién lo hizo?@ Nrvnqsr ya está muerto.@
+` Así que…… solamente, um, quedas…… tú, ¿verdad?"@
+cl a,%type_crossfade_fst
+` …… Me lleno de arrepentimiento tan pronto como digo esas palabras.@
+` Ella todavía me agrada.@
+` Salvó mi vida, y esos dos días fueron muy divertidos.@
+` Así que---no quiero separarme de ella de esta manera.@
+` Pero, si ella es el vampiro asesino, yo----\
+br
+br
+br
+br
+br
+br
+` ------Y entonces,
+quakey 1,100
+br
+` Bam.@ Mi cabeza es golpeada por un puño.\
+ld c,":a;image\tachi\ark_t09.jpg",%type_crossfade_fst
+`"Shiki, idiota."@
+`"¿Eh…… Arcueid……?"@
+`"Normalmente no dejaría que las cosas se arreglaran sólo con esto, pero ya que te ves tan patético, dejaré que eso sea suficiente."@
+` Sonriendo. Arcueid salta hacia atrás.\
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"Shiki, eres una gran persona."@
+`"Qué----"@
+` Que ella diga eso tan repentinamente me hace sonrojar.@
+ld c,":a;image\tachi\ark_t08.jpg",%type_crossfade_fst
+`"Y además, eres tan sincero.@ Me gustan esas cosas de ti."@
+` Arcueid sonríe felizmente.@
+` Viéndola de esa manera---no puedo imaginarla chupando la sangre de alguien.\
+`"Arcueid, entonces---"@
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"Sí.@ Yo no soy el asesino.@ Es obra de otro vampiro, no mía."@
+`"--------"@
+` El nudo en mi pecho desaparece.@
+` Ya veo---lo sabía, Arcueid no hizo esas cosas.@
+br
+`"Ya veo---fue obra de otro vampiro."@
+br
+` Es un alivio…… Espera, eso es raro.\
+`"Un momento Arcueid.@ Dijiste que es otro vampiro pero, ¿no es raro que aparezcan vampiros uno después de otro?"@
+ld c,":a;image\tachi\ark_t11.jpg",%type_crossfade_fst
+`"¿Qué estás diciendo?@ No hay ningún vampiro nuevo."@
+`"---Qué… Pero Nrvnqsr ya no está vivo.@ No hay nadie más que haga algo como eso."@
+`"…… Oh, ya veo.@ Shiki, en verdad cometiste un gran error."@
+` Arcueid suelta un suspiro de asombro.\
+ld c,":a;image\tachi\ark_t02.jpg",%type_crossfade_fst
+`"¿Puedes verlo?@ Los asesinatos en serie de los que hablas fueron obra de un solo vampiro desde el principio.@
+` Así que no vendrá ninguno nuevo, y Nrvnqsr no estaba relacionado con esos incidentes."@
+br
+` ----¿Eh?@
+` ¿Nrvnqsr no estaba relacionado……?@
+br
+`"¿Qué---qué quieres decir?"@
+`"Es justo como dije.@ …… Normalmente eres muy listo, pero estás perdido en algunos puntos.@
+` Recuerda, Shiki.@ Nrvnqsr era un vampiro pero, ¿succionó sangre humana alguna vez?"\
+`"¿Chupar sangre?@ Él comía humanos y---oh."\
+` Ya veo.@
+` ¿Por qué no me percaté de un error tan simple?@
+` Las víctimas de los asesinatos en serie son encontradas con sus cuerpos drenados de sangre.@
+` Pero Nrvnqsr era diferente.@
+` Él no dejaba cadáveres a su paso.@ No sólo bebía la sangre, también comía la carne, sin dejar rastro alguno.@
+` Como prueba, las personas devoradas por él en el hotel fueron declaradas perdidas, no asesinadas.@
+` Entonces---eso significa, que esto es algo completamente diferente.\
+`"Espera.@ ¿Entonces qué son los asesinatos en serie que están sucediendo ahora?@ ¿Quién los realiza?"@
+ld c,":a;image\tachi\ark_t01b.jpg",%type_crossfade_fst
+`"Es un vampiro diferente a Nrvnqsr.@ Para ser más específica, ese vampiro es la razón por la que vine aquí, y Nrvnqsr vino siguiéndome.@ Es esa clase de correlación."@
+`"---¿¡Qué… entonces al que estabas persiguiendo no era a Nrvnqsr después de todo……!?"\
+`"Sí, nunca dije que él fuese mi objetivo original.@ Yo era su objetivo, pero él nunca fue el mío; mi objetivo es el famoso 'asesino en serie' de esta ciudad."@
+`"Qué-----"@
+` Me quedo sin aliento.@
+` Pero---en verdad es como ella dice.@
+` Dijo que su propósito es matar vampiros, así que simplemente pensé que Nrvnqsr era a quien ella perseguía----\
+`"…… ¿Entonces qué?@ Matar a Nrvnqsr esa noche, ¿¡fue inútil………!?"@
+`"No fue inútil, tú peleaste en mi lugar.@ Bueno, si no me hubieses matado, probablemente no habrías tenido que hacerlo."@
+`"------"@
+` Me siento un poco mareado.\
+`"…… En otras palabras, ¿esos asesinatos vampíricos no tenían nada que ver con Nrvnqsr, y eran obra de otro vampiro……?"@
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"Sí, es correcto.@ Pero, es mi problema así que no tienes que preocuparte por eso.@ Pero, aparte de eso, oye."\
+ld c,":a;image\tachi\ark_t08.jpg",%type_crossfade_fst
+playstop
+` Con una sonrisa extremadamente feliz, Arcueid me mira mientras permanezco ahí sorprendido.\
+play "*3"
+`"¿Cómo lo pasaste anoche?@ ¿Quién vino?"\
+`"¿Huh?"@
+` ¿Qué quiere decir con anoche?@
+` No entiendo de qué está hablando.@
+` Después de todo, soy el idiota que malinterpretó las palabras de Arcueid y cometió un error tan estúpido, claro que no entiendo lo que está diciendo, y---¿huh?@
+br
+` ¿Me preguntó Arcueid quién vino anoche---?\
+`"…… Arcueid.@ ¿Qué quieres decir con 'anoche'?"@
+ld c,":a;image\tachi\ark_t11.jpg",%type_crossfade_fst
+`"¿Hm?@ Qué extraño, sé que te envié un familiar de sueño."@
+`"Espera, ¿qué es ese familiar de sueño?"@
+ld c,":a;image\tachi\ark_t03.jpg",%type_crossfade_fst
+`"Um, es como un familiar que te permite ver un sueño sobre lo que más deseas.@ Eres hombre, así que te envié un súcubo.@ ¿No fue un buen sueño?"@
+br
+`"Yo-----"@
+br
+` ¿Un buen sueño?@ Eso fue…\
+` Recuerdo el sueño realista que tuve y mi rostro se torna rojo.@
+br
+`"¡Tú, eso fue obra tuya---!"@
+ld c,":a;image\tachi\ark_t09.jpg",%type_crossfade_fst
+` Arcueid sonríe aun más.@
+` ---Mierda.@
+` Si me hubiese quedado callado esta conversación ya habría terminado, pero ya que reaccioné con tanta fuerza---\
+ld c,":a;image\tachi\ark_t08.jpg",%type_crossfade_fst
+`"Ah, entonces sí lo recibiste.@ Entonces, ¿qué tipo de sueño fue?@ Se supone que el familiar de sueño debe tomar la forma de tu más grande deseo, así que se sintió muy bien, ¿cierto?"@
+cl c,%type_crossfade_fst
+`"¿Qué tipo de sueño?@ Eso es---"@
+return

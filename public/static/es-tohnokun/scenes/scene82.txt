@@ -1,0 +1,37 @@
+monocro off
+wavestop
+play "*9"
+;---added context above---
+bg "image\bg\bg_19d.jpg",%type_nowaitdisp
+` No parece que Arcueid vaya a darse por vencida.@
+`"…… Bien.@ Devuélvelos tan pronto como termines de mirarlos."@
+bg "image\bg\bg_19d.jpg",%type_crossfade_fst
+monocro #ff00ff
+` Le entrego mis lentes.@
+` Arcueid mira los lentes atentamente, y entonces me dirige la mirada con ojos atemorizantes.\
+ld c,":a;image\tachi\ark_t07.jpg",%type_crossfade_fst
+`"Shiki, ¿la persona que hizo estos lentes está ahora en esta ciudad?"@
+`"No lo creo.@ Han pasado ocho años, y parece que ella sólo estuvo aquí durante una semana."@
+`"--Ya veo.@ Eso es bueno.@ No tengo que lidiar con más… bueno, en fin, probablemente sea más seguro no lidiar con Blue de ninguna manera."@
+` Arcueid se refugia en sus pensamientos.\
+`"Arcueid, ¿conoces a Sensei--es decir, a la persona que hizo estos lentes?"@
+`"…… La conozco.@ Una Maga, es una de sólo cuatro de su tipo.@ Estos lentes son una verdadera obra maestra.@ Ni siquiera yo puedo romperlos."@
+` El rostro de Arcueid se torna aun más serio.\
+`"…… Espera--¿ibas a romperlos?"@
+ld c,":a;image\tachi\ark_t12.jpg",%type_crossfade_fst
+`"----¿Eh?@ ¿D-dije esa parte en voz alta?"@
+`"…… Lo sabía.@ Ibas a romperlos después de todo."@
+` Rescato mis lentes de las manos de Arcueid.@
+monocro off
+bg "image\bg\bg_19d.jpg",%type_crossfade_fst
+\
+`"Cielos.@ Fuiste tú quien dijo que no podría seguir cuerdo sin estos lentes.@ ¿O quieres que me vuelva loco?"@
+ld c,":a;image\tachi\ark_t11.jpg",%type_crossfade_fst
+`"Ésa no era mi intención.@ Simplemente no me agradaba cómo los atesorabas tanto."@
+`"--Hey, escucha, tú…"@
+cl c,%type_crossfade_mid
+br
+` …… Cielos.@ Que alguien por favor me diga cómo funciona una mente como la de ella.@
+br
+`"Es verdad que mis recuerdos de Sensei son preciados para mí.@ Pero más importante aún, no puedo vivir sin ellos.@ Si tuviese que ver las líneas 24 horas al día, creo que moriría por el dolor de cabeza antes de volverme loco."\
+return

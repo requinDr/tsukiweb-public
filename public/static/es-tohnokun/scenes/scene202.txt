@@ -1,0 +1,77 @@
+monocro off
+wavestop
+;---added context above---
+bg "image\bg\bg_22b.jpg",%type_nowaitdisp
+playstop
+` …… Akiha no es la única persona que no he visto desde entonces.@
+` No puedo recordar todos los detalles porque han pasado ocho años, pero habían otros niños como de mi edad en la mansión.\
+` No recuerdo sus nombres, pero habían dos chicas que eran gemelas.@
+` Papá dijo una vez que ellas no tenían ningún familiar, así que las recogió para trabajar como sirvientes.@
+`"…… Es extraño.@ Jugábamos juntos frecuentemente cuando éramos pequeños, pero no puedo recordar sus nombres."@
+` Cierro mis ojos y arrojo mi mente hacia el pasado.\
+bg #000000,%type_crossfade_fst
+play "*9"
+bg "image\event\his_e01.jpg",%type_crossfade_mid
+` Debería ser capaz de recordar.@
+` Ella era una chica que siempre era alegre… tan alegre que te alegrarías sólo con mirarla.@
+` Una chica con una despreocupada personalidad que era amada por todos en la mansión.@
+` Ya que era cercana a mí en edad, me llevaba muy bien con ella, y parecía que todos los días corríamos juntos alrededor del jardín.@
+`"Vamos a jugar juntos, Shiki-chan."@
+` Decía ella, y puedo recordarla sacándome de mi habitación después de yo haberme aislado dentro.\
+` Ella reía frecuentemente y tomaba la mano de Akiha, tratando de hacer que jugara con nosotros.@
+` Tal vez era mayor que mi hermana y yo.@
+` Nos sacaba para jugar a Akiha y a mí, pero una vez que empezábamos a jugar, sólo nos observaba.@
+` Incluso el tutor de Akiha, el severo mayordomo, decía "No hay problema, siempre que ****** esté con ustedes", y dejaba jugar a Akiha.\
+bg #000000,%type_crossfade_fst
+` Pero estoy mucho más preocupado por la otra chica.\
+bg "image\event\his_e02.jpg",%type_crossfade_mid
+` …… No sé qué tipo de chica era o por qué actuaba siempre de esa manera.@
+` Desde el segundo piso,
+` había siempre una chica mirando hacia nosotros cada vez que yo volteaba a ver la mansión mientras jugábamos en el jardín.\
+` Era la gemela de esa chica alegre, pero siempre nos miraba inexpresivamente.@
+` Esa chica nunca intentaba dejar la casa.@
+` Todo lo que hacía era observarnos con esos fríos ojos.@
+` …… ¿Será porque eso me molestaba tanto, que pensé que ella se veía tan solitaria?@ La mayoría de los recuerdos que tengo sobre la casa Tohno son todos acerca de ella.\
+br
+br
+br
+br
+br
+` ---Bueno, al final, terminé hablando muy poco con ella.\
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_22b.jpg",%type_crossfade_fst
+`"Me pregunto si esas chicas todavía están en la mansión……"@
+` Mientras pienso en eso, saco una cinta blanca de mi maletín.@
+` Una vieja cinta blanca que las chicas me dieron en el último momento.\
+bg #ffffff,%type_crossfade_fst
+bg "image\bg\cmo_20.jpg",%type_crossfade_mid
+` ---Ocho años atrás.@
+` Después de involucrarme en el accidente.@
+` El día en que fui confiado a la familia Arima.@
+br
+` Justo antes de dejar la mansión, la chica me dio esto por alguna razón.@
+br
+` …… Sólo te lo estoy prestando, asegúrate de devolverlo.@
+` Diciendo algo parecido a eso, se fue corriendo.\
+` Una promesa hecha bajo un gran árbol.@
+br
+` El clima era hermoso ese día.@ Al mirar arriba, había un cielo azul muy, muy elevado en el que podría simplemente perderme.@
+` Es mi último recuerdo de cuando dejé la mansión Tohno, ocho años atrás.\
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_22b.jpg",%type_crossfade_fst
+` *suspiro*@
+` Devuelvo la cinta a mi maletín.@
+` "Pero han pasado ocho años, después de todo……"@
+` No sólo no sé si ellas aún están en la mansión, ni siquiera puedo recordar sus nombres.@
+`"…… Aun así, esta cinta es preciada para mí……"@
+` La época en que mi padre me había desheredado.@
+` En vez de entristecerme por haber sido deshechado por él, sentía una calidez dentro de mí cuando pensaba que ella estaba esperando que le devolviese la cinta.@
+` Es por eso que quiero mantener la promesa, mientras aún pueda recordarla.@
+` Acepté regresar a la mansión porque Akiha está ahí totalmente sola.@
+` La dejé ahí por ocho años, poniendo toda la responsabilidad sobre ella mientras yo vivía egoístamente libre.\
+` …… Pero hay algo más.@ En realidad pienso que decidí regresar debido a esa promesa.@
+` La cinta blanca.@
+` …… Debido a esa promesa hecha a la única que dijo que estaría esperando por mí.\
+bg #000000,%type_lcartain_mid
+playstop
+return

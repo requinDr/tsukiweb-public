@@ -1,0 +1,27 @@
+monocro off
+;---added context above---
+wave se2
+bg "image\bg\bg_06a.jpg",%type_nowaitdisp
+play "*3"
+ld c,":a;image\tachi\osiete.png",%type_lcartain_mid
+!w1000
+cl c,%type_lcartain_mid
+ld r,":a;image\tachi\cel_t20.jpg",%type_tshutter_mid
+` …… Ya es hora de almorzar en nuestro tercer día.@
+` Normalmente salgo a almorzar, pero esta vez, no tengo ganas de hacerlo……@
+br
+ld l,":a;image\tachi\ark_t30.jpg",%type_lshutter_fst
+`"Te cortaron la cabeza.@ Aunque comas, nada llegará a tu estómago.@ Shiki hace cosas feas pero, ¿no fue tu propia culpa, Ciel?"@
+br
+` Jajaja, cállate.@
+` Es mejor que no aparecer ni una sola vez.\
+ld l,":a;image\tachi\ark_t31b.jpg",%type_lshutter_fst
+`"Ugh.@ ¡¡Tienes razón!!@ ¿Por qué no puedo aparecer?@ ¡Es estúpido!"@
+br
+` Apuesto que es tu karma, pero no tengo tiempo para jugar contigo ahora.@
+` Tohno-kun.@
+` Por favor regresa a la decisión previa y escoge la opción que va más de acuerdo con tu personalidad.@
+` ¡Si las cosas continúan así, ni Tohno-kun ni yo seremos salvados!\
+bg #000000,%type_crossfade_mid
+playstop
+return

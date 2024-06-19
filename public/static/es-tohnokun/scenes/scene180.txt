@@ -1,0 +1,451 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_25b.jpg",%type_nowaitdisp
+` ----Buscaré en el distrito comercial.@
+br
+` Aunque estaba sufriendo tanto, no es la clase de persona que descansaría por eso.@
+` Me pidió que volviera a casa.@ En otras palabras, quiso decir que ella no lo va a hacer.@
+` Creo que planea encontrar al vampiro por su cuenta.\
+` Entonces----iré al distrito comercial y encontraré al vampiro o a Los Muertos antes que ella.@
+` Arcueid no puede encontrarlos, pero yo puedo ubicar a Los Muertos si me quito mis lentes.@
+br
+`"------Muy bien."@
+` Quitándome los lentes y haciendo muecas por el ligero dolor de cabeza, corro hacia el distrito comercial.\
+bg #000000,%type_lcartain_mid
+monocro #ff00ff
+bg "image\bg\bg_26a.jpg",%type_lcartain_mid
+`"Ugh----"@
+` El dolor recorre mi frente.@
+` …… No me estoy concentrando particularmente en buscar "líneas", pero parece que correr por la ciudad sin mis lentes es una gran carga para mi cerebro.@
+br
+`"Maldición----pero, no estoy encontrando nada."@
+` …… Todas las personas que caminan por el distrito comercial tienen "líneas" normales.@
+` No veo a nadie pintado de garabatos incoherentes como los que vi la otra vez.\
+`"…… Au"@
+` Froto mi sien con mis dedos.@
+` Mientras no tenga los lentes puestos, este dolor de cabeza sólo empeorará.@
+` Pero aun así--no puedo rendirme tan fácilmente.@
+` Respirando profundamente, comienzo a correr por el distrito comercial una vez más.\
+bg #000000,%type_lshutter_mid
+!w1000
+bg "image\bg\bg_26a.jpg",%type_lshutter_mid
+` Empiezo a jadear por el excesivo esfuerzo.@
+` El agotamiento por correr unido al dolor en mi cabeza me da nauseas.@
+` Sin importar cuántas veces corro alrededor, no puedo encontrar ningún Muerto ni nada fuera de lo ordinario.@
+` Llevando mi mano hacia mi frente, siento un calor febril.@
+` En verdad se siente como si tuviese una fiebre alta.@
+`"…… Maldición, aún no termino----"@
+` Me digo esto a mí mismo y comienzo a correr una vez más.\
+br
+` ----Y entonces.@
+br
+wave se11
+mov %flushcount,0
+resettimer
+bg #0000ff,%type_nowaitdisp
+waittimer 16
+resettimer
+bg "image\bg\bg_26a.jpg",%type_nowaitdisp
+waittimer 16
+dec %flushcount
+if %flushcount>=0 skip -7
+`"…………… Ah."@
+` No aquí, sino en un lugar más alejado.@
+` En un estrecho callejón entre dos edificios, puedo ver algo como chispas volando por el aire.@
+` No, para ser más preciso,
+` siento que los "puntos" de muerte se disparan velozmente y desaparecen.\
+`"----Eso es…"@
+` …… No hay duda.@
+` Es exactamente igual a la vez en que Arcueid derrotó a ese Muerto.@
+` ¡Ella----en esas condiciones, está peleando sola……!@
+br
+`"----¡La encontré……!"@
+` Olvidando el dolor y el cansancio, corro hacia el callejón.\
+monocro off
+bg #000000,%type_lcartain_mid
+play "*6"
+` La entrada del callejón.@
+` Corro hacia el estrecho pasaje entre los edificios.@
+br
+` La "muerte" está volando por el aire y desapareciendo.@
+` …… ¿Con cuántos está peleando?@ Hay una enorme cantidad de muerte.\
+`"------Gh."@
+` Difícilmente puedo soportarlo.@
+` Mientras corro hacia el callejón, mi columna protesta crujiendo.@
+br
+`"Ha------agh."@
+` Como si una sierra estuviese cortando mi columna lenta pero seguramente,
+` un dolor se abre paso desde mi interior.@
+` Mis instintos me gritan.@
+` Dicen que voy a un lugar demasiado peligroso, y que debo regresar.\
+`"Cállen----se."@
+` Pero, no es necesario decirlo.@
+` La cantidad de muerte no es normal.@
+` Adentro.@ Sé que algo terrible está sucediendo dentro de este callejón.@
+` Pero no puedo devolverme ahora.@
+` No puedo dejar a Arcueid sola.@
+` Si----huyo de aquí, ella podría agotarse y morir.@
+` No puedo sacudirme esa sensación, y entro al callejón lleno de muerte.\
+monocro #ff0000
+monocro #ff0000
+bg "image\bg\bg_31b.jpg",%type_lcartain_mid
+`"Qué------"@
+` Mi mente se congela.@
+br
+` Lo que veo es surrealista.@
+br
+` Las figuras de numerosas personas están esparcidas por todo el suelo.@
+` Sin rostro, sin extremidades, con sus estómagos abiertos, los cadáveres totalmente teñidos de carmesí.@
+br
+` Sobre la pared, el suelo, incluso sobre la luna.@
+` Todo aquí es simplemente… rojo.\
+` Un sonido desagradable.@
+` El último, la última figura humana llena de líneas expira en sus manos.@
+br
+` Con una sola mano.@
+` Ella arroja la cabeza del Muerto contra la pared, machacándola como un tomate.@
+` Como si estuviese insatisfecha, parte en dos el cuerpo sin cabeza y lo estrella contra el suelo.\
+monocro off
+bg "image\bg\bg_31b.jpg",%type_crossfade_fst
+`"Ar----cueid."@
+` El mundo está lleno sólo de rojo y luz de luna.@
+` En el centro de todo está Arcueid.@
+` Ella no nota que estoy aquí.@
+` Solamente mira hacia la luna----en trance y respirando con dificultad.\
+`"------"@
+` No puedo hablar.@
+` El dolor dentro de mí alcanza un tono febril.@
+` Parece que la sierra ha atravesado toda mi columna.\
+br
+` ----Rechina Rechina.@
+br
+` Mi mente entera está gritando.@
+` No debería estar aquí.@ No quiero morir, grita ésta.@
+br
+` Entonces,
+` los ojos de Arcueid repentinamente cambian.@
+playstop
+ld c,":a;image\tachi\ark_t20b.jpg",%type_nowaitdisp
+waveloop se1
+` Sus ojos no tienen su habitual carmesí, sino una llama dorada.@
+` No es que nuestros ojos se hayan encontrado.@
+` Es sólo que yo miré hacia esos "ojos".\
+` Pal, pitar.@
+` Mi sangre se acelera por todo mi cuerpo y mi mente está sobresaltada.@
+br
+br
+br
+` ----Primero, una sensación de crisis abrumadora.\
+` No debería estar aquí.@
+` No debería estar frente a esa cosa.@
+br
+`   TE MATARÁ.@
+`   NO PUEDES ENFRENTARTE A ESO.@
+br
+` Esa "criatura" está en un nivel totalmente distinto.@
+` No es una cuestión de mayor o menor nivel, sino algo más allá de toda evaluación.@
+` Frente a esa cosa----sólo estar ahí significa la muerte.\
+` PALPI, TAR.@
+` Todo mi cuerpo palpita.@
+br
+` Al principio, era miedo.@
+` Después, un deseo de matar.@
+br
+` Porque, esa cosa no debería existir.@
+` Entonces mátala.@ Apresúrate y mátala.@ Mátala aquí.@ Mátala ahora.@
+` En el nombre de esta sangre,
+!w500
+` toma esa cosa,
+!w500
+` y destrúyela----\
+br
+` Mi corazón late vigorosamente.@
+br
+` Sé que no hay manera de que pueda enfrentarla, pero mi cuerpo entero me grita que la mate.@
+` Qué contradicción----¿Me está diciendo que la mate aunque sé que va a matarme?\
+` ¿Me está diciendo que no quiero ser asesinado, y que debo matar para evitarlo?\
+`"Gah----, ah."@
+` …… No.@ No estoy… aquí.@
+` Esos ojos----no debo mirar esos ojos dorados.@
+` Lo sé, pero no puedo escapar de sus ojos.\
+` Palpitar.@ Palpitar.@ Mi sangre hierve…@
+` El estimulante palpitar de mi sangre.@
+` Pero, hay otra cosa que intenta irrumpir a través de mi consciencia.\
+monocro #ff0000
+bg "image\bg\bg_31b.jpg",%type_crossfade_fst
+wavestop
+ld c,":a;image\tachi\ark_t20b.jpg",%type_nowaitdisp
+play "*4"
+br
+br
+`"Gh----ah, ghaa----"@
+br
+br
+` ¿Por qué quiero matar?@
+` ¿Vas a asesinar antes de ser asesinado porque no quieres morir?@
+` No, ésa no es una razón.@
+` No hay necesidad de una razón para matar.@
+` Sé sincero, Tohno Shiki.@
+` Desde hace ya mucho tiempo----querías tomar a esta mujer y…\
+br
+br
+`"Cálla----te."@
+br
+` No, tu razón y tu consciencia deberían callarse.@
+` Así es como debería ser.@
+` Yo simplemente, la deseo.@ Deseo a Arcueid.@ Recuerda.@ Recuerda la sensación de aquella vez.@
+` Lo sabías desde la primera vez que la viste.@
+` ¡En aquel entonces mataste a esa criatura con tus manos y perdiste tu virginidad como asesino------!@
+bg "image\bg\ima_13b.jpg",%type_crossfade_mid
+monocro off
+\
+br
+br
+`"Ah------\
+` Ah."@
+br
+br
+` Sí.@ Lo deseo todo.@
+!w1200
+` Su corazón, su cuerpo,
+!w700
+` Sus lágrimas, su saliva,
+!w500
+` Su sangre, su carne, pecado y castigo, deseo e impaciencia------\
+br
+br
+`"¡HA----agh……!"@
+br
+br
+br
+` Mi respiración está fuera de control.@
+` No puedo controlar mi mente.@
+` Sus ojos me consumen.@
+` Esos persuasivos, ojos dorados.\
+br
+br
+br
+br
+br
+br
+` Eso es,
+!w750
+` algo que no puede ser matado sin importar cuánto yo mate…
+!w750
+\
+playstop
+bg "image\bg\bg_31b.jpg",%type_crossfade_fst
+ld c,":a;image\tachi\ark_t18.jpg",%type_crossfade_fst
+`"----¿¡Shiki!?"@
+` Arcueid se percata de que estoy aquí.@
+` Tan pronto como ve que estoy obsesionado con sus ojos, los cambia a su color carmesí.@
+br
+` Pero, ahora,
+` es demasiado tarde.\
+bg #000000,%type_lshutter_fst
+` Saco mi cuchillo y empujo a Arcueid hacia abajo.@
+` Su cuerpo sin fuerza es fácil de empujar.@
+` Separo sus piernas.@
+` Un brazo sobre su cuello, el otro sosteniendo el cuchillo por encima.@
+br
+` Todo lo que falta,
+` es golpear entre sus senos.\
+`"¡Tranquilízate----!@ ¡Esto no es lo que quieres, Shiki……!"@
+br
+` Puedo escuchar su voz.@
+` El centro de mi cerebro comienza a sobrecalentarse.@
+br
+`"¡Cállate------!"@
+` Mi brazo se tensa alrededor de su cuello.@
+` Ella levanta su barbilla dolorosamente.@
+` …… No puedo creerlo.@
+` Con toda su fuerza, no puede siquiera liberar un brazo ahora.\
+`"Shi----ki."@
+` Respirando dolorosamente, Arcueid tose mi nombre.@
+` Palpitar.@
+` Mi corazón late con fuerza en mi pecho.\
+wave se0
+` Yo jadeo.@ Y jadeo.@
+` Mi respiración está fuera de control.@
+` Mi visión es borrosa y confusa.@
+` Este fuego dentro de mí----tengo que liberarlo de inmediato.\
+wave se0
+` Jadeos.@
+` Lentamente comienzo a moverme.@
+` Muevo mis caderas hacia su estómago.@
+` Separando sus piernas, me coloco entre ellas.\
+waveloop se1
+`"Qué…"@
+` Ella me mira con vacilación.@
+` Esa mirada hace que mi cabeza palpite.@
+br
+` Jadeos.@ Y más jadeos.@
+` Se hincha.@
+` Mi asta se hincha tan rápidamente que es casi doloroso.@ Tengo que violarla ahora mismo o enloqueceré.\
+` Sus mejillas de tono bermellón.@
+` Su suave cuello.@
+` Y debajo de mí, su inigualable cuerpo.\
+` Mis jadeos llenan el aire.@
+` Puedo sentir sus latidos.@
+br
+` Jadeo, jadeo, jadeo.@
+` Sus ojos dorados parecen succionar mi alma.\
+` Libero su cuello.@
+` Y a cambio toco sus senos.@
+` Sus brazos.@ Sus piernas.@
+` Mis dedos trazan la blanca piel bajo su ropa, empapando la frialdad de su cuerpo.\
+`"No----éste, éste no eres tú, Shiki……!"@
+br
+` Su ardiente voz.@
+` Sus provocativos ojos rojos.@
+` Al ver esas cosas, mi mente se hace pedazos.\
+bg "image\event\ark_h03.jpg",%type_lshutter_mid
+`"¡N………!"@
+` Ella ahoga sus gritos como si estuviese avergonzada.@
+` Frenéticamente, intenta empujarme hacia atrás con ambas manos.\
+` Apartándolas, la empujo hacia el piso.@
+` ¿No sería mejor si yo tuviese uñas largas?@
+` Con ambas manos apartadas y su figura extendida como una cruz, Arcueid me mira con claro odio en sus ojos.\
+`"------Kk."@
+` Extendida de esta manera, se ve aun más hermosa.@
+` De esta forma, yo tampoco puedo usar mis brazos.@ Si la suelto, seguramente desgarrará mi garganta.@
+br
+` Esta tensión.@ Este balance que nos hace ver como si nos estuviésemos matando en lugar de yo estarla violando, incrementa la bestial lujuria en mí.\
+`"--Deten, te----detente, o lo lamentarás----"@
+` No la dejaré terminar de decir eso.@
+` Ya que mi boca está libre, la utilizo para desvestirla.\
+br
+` Respirando salvajemente, rasgo la ropa sobre su cuerpo.\
+`"…… ¡Nn, Shiki, contróla----!"@
+` Ella se retuerce, aún tratando de resistir mientras tiembla bajo mi poder.@
+br
+` ----Ja… deos.@
+br
+` Mi respiración sopla a lo largo de su estómago.\
+`"¡Ah-----n……!"@
+` ¿Acaso es tan sensible?@ Su cuerpo entero reacciona.@
+` …… Me siento excitado.@
+` Mientras arranco su ropa, mi lengua baila provocativamente a lo largo de su blanca piel.\
+`"¡Shiki, No----!"@
+` Ella lucha con más fuerza, pero soy más fuerte que ella en este momento.@
+` No le permitiré resistirse.@
+` Continúo retirando su ropa.@
+` A la mitad de eso, su sostén se atora sobre su pecho, pero simplemente lo arranco.\
+` Sus senos se mueven mientras lo hago.@
+` Sus bien formados globos están descubiertos para que yo pueda verlos.@
+` Muerdo uno de ellos.@
+br
+`"¡Naha----!"@
+br
+` Ella suelta un jadeo.@
+` Su cuerpo entero se arquea.@
+` No me importa.@
+` Paso mi lengua por la carne entre mis dientes, disfrutando el sabor.\
+`"¡Shi…… ki………, detente……!"@
+` Su voz se hace un poco más ardiente.@
+` Sus rosados pezones se endurecen.@
+` Como en el endurecimiento de un hombre, sus pezones parecen endurecerse sin importar lo que ella piense.@
+`"¡N--------!"@
+` Debe estar avergonzada por eso, ya que ahoga su voz.@
+`"Shiki----si haces esto, después----"@
+` Ignorando su voz, continúo lamiendo sus bellísimos senos.\
+`"¡N…… ah----!"@
+` Su rostro empieza a retorcerse.@
+` Su pecho es firme.@ Mientras más presiono mi rostro contra él, más me empuja de vuelta.@
+` Sus senos blancos toman un ligero tono rojo.@
+` Continúo succionando.@
+`"…… Ah…… oh…… ah, n----"@
+` Su acalorada voz.@
+` Su cuerpo que brilla por el sudor.@
+` Su cabeza que se sacude, sus dolorosos jadeos.\
+` Mi lengua juega con sus suaves senos.@
+` No hay razón para ello.@
+` Todo lo que queda dentro de mí es un deseo de lamer, humedecer, y jugar con ella.@
+br
+` Entierro mi rostro en su pecho.@
+` Sus blancos montículos brillan con mi saliva.\
+`"…… ¡Ha…… deten, te…… yo…… nunca…… te… perdonaré……!"@
+` Suena como si estuviese apretando sus dientes.@
+` Me molesta que su voz aún sea tan razonable.@
+` Muerdo sus pezones.@
+`"¡¡N, gah-----!!"@
+` Su cuerpo entero se arquea más que antes.@
+` Como si empujase sus senos hacia arriba, ella se arquea.\
+` No es mi intención darle diligentes y cariñosas caricias.@
+` Simplemente muevo mi rostro.@
+`"D, detente…… Shiki, por… favor---"@
+` Muevo mi lengua hacia el espacio entre sus senos.@
+`"Si tú, me tocas ahí, comenzaré… a----"@
+` Como para dejar una marca permanente, succiono sobre su piel.@
+br
+`"¡Huaa----!"@
+br
+` Sus brazos comienzan a agitarse.@
+` Sujetándolos, continúo arrastrando mi lengua por su cuerpo.@
+` Desde su pecho hasta su clavícula.@ Desde ahí hasta su cuello.\
+`"¡No…… Shiki… yo… ni… siquiera… te… gusto……!"@
+` No la reconozco.@
+` Ni siquiera puedo escucharla.\
+` Su resplandeciente cuerpo destruye cualquier razón que queda en mí.@
+` Su hermoso cuerpo se ve aun mejor cubierto de sudor.@
+br
+` ----Palpitar.@
+br
+` Mi sangre está fluyendo dolorosamente.@
+` Quiero tomarla ahora mismo.\
+` Mis jadeos hacen eco en el callejón.@
+` No hay necesidad de contenerme.@
+` Si quiero hacerlo, simplemente lo haré.@
+` Alejo mi boca de su cuello y la llevo hacia su mitad inferior.@
+`"¡¡¡…………!!!"@
+` Arcueid lucha con más fuerza que nunca.@
+` De esta forma, podría liberarse de mis brazos.\
+` Pero antes de eso,
+` me muevo más abajo, pasando rápidamente su ombligo.@
+` Hacia la mitad de sus dorados rizos,
+` mi lengua se arrastra hacia su rosados y carnosos labios.@
+br
+` Succiono ligeramente el sobresaliente montículo entre esas lustrosas paredes.\
+`"¡Ah----N, no-----!"@
+` Arcueid arquea su espalda.@
+` Muerdo el punto mas sensible de la anatomía femenina.@
+` Esta sensación de placer es muy diferente a cuando estaba lamiendo todo su cuerpo.\
+` Al mirarla,
+` puedo ver pegajosos fluidos acumulándose dentro de ella.@
+` El olor de jugos cálidos.@
+` No me importa si no es suficiente lubricación para ella.@
+` No estoy pensando para nada en darle placer.@
+br
+` Simplemente----debo tener su cuerpo.\
+`"------Shi… ki."@
+` Su voz es débil, como si se percatase de lo que viene a continuación.@
+` ¿Se ha dado por vencida?@ Ella me mira con ojos humedecidos.@
+br
+`"------"@
+` Sus húmedos… ojos.@
+` ¿Eso significa…
+` que está llorando?\
+bg #ffffff,%type_crossfade_fst
+bg "image\event\ark_h03.jpg",%type_crossfade_fst
+`"¡Ghaa…………!"@
+` Mi cabeza se está partiendo de dolor.@
+` Mis instintos me dicen que continúe.@
+` Que si me detengo ahora moriré.@
+` Mi corazón late salvajemente----Diciéndome que si no lo hago ahora, ella me matará después.\
+bg #ffffff,%type_crossfade_fst
+bg "image\event\ark_h03.jpg",%type_crossfade_fst
+`"------"@
+` Ella está llorando.@
+` ¿Por qué----está llorando?@
+` Si fuese yo, nunca la dejaría llorar.\
+bg #9c0120,%type_crossfade_fst
+bg "image\event\ark_h03.jpg",%type_crossfade_fst
+` Mi dolor de cabeza continúa.@
+` Gritándome que siga adelante.@
+` ----Es extraño estar distraído.@
+` Hay sólo una cosa que es necesario hacer.@
+` Yo----
+br
+return

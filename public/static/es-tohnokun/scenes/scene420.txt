@@ -1,0 +1,298 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_33d.jpg",%type_nowaitdisp
+br
+` ---Debería ir a ver.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_48d.jpg",%type_lcartain_mid
+` Voy afuera.@
+` La luna, anteriormente presente, ahora se ve oscurecida por las nubes.@
+br
+`"¿Hm………?"@
+` Alguien está abriendo la verja frontal.@
+` Comienzo a decir algo,
+`"………… ¿Akiha?"@
+` Akiha mira rápidamente sobre su hombro y sale por la verja.\
+bg #9c0120,%type_crossfade_fst
+bg "image\bg\bg_48d.jpg",%type_crossfade_fst
+waveloop se1
+`"¿Eh-----?"@
+` Palpitar.@
+` De la nada, mi pecho comienza a palpitar.@
+br
+` Palpitar.@
+` PALPITAR.@
+` Palpitar.@
+` PALPITAR.@
+br
+` Mi corazón parece latir con nueva vida.@
+` Puedo sentir la sangre recorriendo mi cuerpo, y el temblor de mis dedos.@
+`"Ah-----"@
+` Un escalofrío recorre mi espalda.@
+` A pesar de eso, mi cuerpo se siente como si estuviese en llamas.\
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\bg_32d.jpg",%type_nowaitdisp
+`"Akiha----¿qué está haciendo a esta hora?---"@
+` Me siento mareado.@
+` Intento explicar las cosas racionalmente, pero me detengo.@
+` Ahora mismo, tengo que seguir a Akiha.\
+wavestop
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_24c.jpg",%type_lcartain_mid
+play "*6"
+`"Haa----"@
+` Ahogando mi respiración, voy tras ella.@
+` Palpitar, Palpitar.@
+` Mi palpitante corazón.@
+` La sigo silenciosamente para evitar ser notado.\
+` Palpitar, palpitar, palpitar.@
+` Siento arrepentimiento.@ No tengo mi cuchillo esta noche.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_25b.jpg",%type_lcartain_mid
+` No hay luz de luna y ya es medianoche.@
+` No hay señal de alguna otra persona en las calles.@
+wave se0
+`                Palpitar,
+`                Palpitar.\
+` Akiha camina tambaleándose.@
+` Trato de silenciar mi respiración y espero mi oportunidad.@
+wave se0
+`                Palpitar,
+`                Palpitar.@
+` Le está tomando un rato quedarse sola.@
+` El lugar adonde va no tiene importancia.@
+wave se0
+`                Palpitar,
+`                Palpitar.\
+` Estoy terriblemente sediento.@
+` Estoy increíblemente excitado.@
+wave se0
+`                Palpitar,
+`              Palpitar, palpitar.@
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_27b.jpg",%type_lcartain_mid
+wave se0
+br
+` ---De repente, la pierdo de vista.@
+` ¿Adónde iría?\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_25b.jpg",%type_lcartain_mid
+` Regreso a la calle principal.@
+` Siento instintivamente que volveré a verla si espero aquí.@
+wave se0
+` Suelto un profundo respiro.@
+` Mi corazón aún está ardiendo.@
+`"-------"@
+` Qué raro.@
+` Esto no es un sueño.@
+` No es un sueño, ¿entonces por qué---mi sangre está ardiendo mientras sigo a Akiha?@
+wave se0
+` Es como si, quisiera matar a Akiha.\
+waveloop se1
+`                  Palpitar
+!w1000
+`                  Palpitar
+!w1000
+`                  Palpitar
+!w750
+`                  Palpitar
+!w750
+`                  Palpitar
+!w750
+`                  Palpitar
+!w500
+`                  Palpitar
+!w500
+`                  Palpitar
+!w500
+`                  Palpitar
+!w250
+`                  Palpitar
+!w250
+`                  Palpitar
+!w250
+`                  Palpitar\
+wavestop
+` Al sentir algo, me oculto instantáneamente.@
+` Akiha viene.@
+` Mira de un lado a otro a su alrededor, como si estuviese buscando algo.@
+br
+`"……… No hay nadie aquí, supongo."@
+br
+` La escucho pensar en voz alta.@
+` Debo estar muy cerca si puedo escucharla.@
+` Observando desde las sombras, miro hacia la calle.\
+ld c,":a;image\tachi\aki_t27.jpg",%type_lshutter_fst
+`"---"@
+` Me duele la cabeza.@
+` El aire a mi alrededor se tensa.@
+bg #000000,%type_nowaitdisp
+br
+` ----Caigo al suelo.@
+br
+` Nunca antes he sentido semejante dolor.@
+` Es tan terrible que me hace pensar seriamente que mi cráneo va a partirse y que voy a morir.\
+playstop
+!w2000
+bg "image\bg\bg_25b.jpg",%type_crossfade_fst
+`"Ah-----auch…………"@
+` Sacudiendo mi cabeza, me levanto.@
+` No sé cuánto tiempo estuve afuera, pero la noche está en silencio.@
+br
+` ---Espera un minuto.@
+br
+`"¿¡Po, por qué estoy aquí!?"@
+` Estoy afuera en la calle principal.@
+` Vi a Akiha junto a la verja, y después de eso---cierto, la seguí.@
+`"…… ¿Qué estoy haciendo?"@
+` Me sorprende lo que estoy haciendo.\
+`"------¿Huh?"@
+` Un olor desagradable pincha mi nariz.@
+` Un olor que no conocía hasta ahora.@ El olor que se pegó a mi boca durante mis sueños más recientes.@
+`"…… ¿Viene de ese callejón……?"@
+` Con un mal presentimiento, corro hacia ese callejón.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_31b.jpg",%type_lcartain_mid
+bg "image\bg\ima_13b.jpg",%type_lshutter_mid
+waveloop se10
+` ---Es como una repetición de mi sueño de anoche.@
+br
+` En el callejón hay un desconocido inconsciente.@
+` A pesar de la sangre que sale de su cuello, la persona aún está respirando.@
+`"---------"@
+` Todo frente a mí se torna carmesí.@
+` Pero esto no es un sueño.@
+` Quizás sea porque he tenido todos esos sueños homicidas, pero, puedo pensar con calma.\
+bg #000000,%type_lcartain_fst
+bg "image\bg\bg_25b.jpg",%type_lcartain_fst
+` Salgo a la calle.@
+` Voy al teléfono público más cercano y llamo al hospital más cercano.@
+` Después de dar un nombre falso, digo la ubicación y el estado de la víctima, y cuelgo el teléfono.@
+` Ahora, antes de que venga la ambulancia, debería volver a la mansión para que nadie me vea.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_48d.jpg",%type_lcartain_mid
+bg #000000,%type_lcartain_fst
+bg "image\bg\bg_33d.jpg",%type_lcartain_fst
+` *jadeo* *jadeo* *jadeo*------
+` Después de correr sin parar, finalmente puedo relajarme.@
+` No tengo ninguna razón para sentirme mal, pero sentí que involucrarme sería peligroso, e hice lo mejor que pude.@
+` …… La persona en el callejón aún estaba respirando,
+` y el sangrado no era tan terrible, así que no creo que su vida estuviese en peligro.\
+wave se0
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_33d.jpg",%type_crossfade_fst
+`"Ah-----"@
+` …… Como esperaba, correr hasta aquí con toda mi fuerza, incluyendo la gran colina, fue un poco excesivo.@ Me he quedado sin aliento.\
+wave se0
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_33d.jpg",%type_crossfade_fst
+`"Mier--"@
+` …… Soy asaltado por mareos.@
+` Puedo sentir que mi consciencia me abandona.@
+` No es un mareo normal.@
+` Si es así de malo, y si me desmayo, no seré capaz de levantarme por un rato.\
+wave se0
+bg #9c0120,%type_crossfade_fst
+bg "image\bg\bg_33d.jpg",%type_crossfade_fst
+`"Maldición……… tengo que, volver, a mi habitación, antes de----"@
+` Me recuesto de las escaleras.@
+` Logro subir un escalón.@
+bg #000000,%type_crossfade_slw
+` Pero eso es todo.@
+` Me desplomo.\
+!w4000
+mov $phasebg,"image\bg\bg_36d.jpg"
+mov $phasetitle_a,":a;image\word\PKOHA_08A.PNG"
+mov $phasetitle_b,":a;image\word\day_08.png"
+gosub *left_phase
+bg #ffffff,%type_crossfade_mid
+bg "image\bg\bg_40a.jpg",%type_crossfade_fst
+play "*2"
+` Fuertes rayos de luz solar me hacen abrir los ojos.@ Estoy en mi habitación.@
+` Tengo puesta mi pijama y estoy acostado en la cama.\
+wave se3
+`"Discúlpeme."@
+` Después de ser tocada, la puerta se abre.@
+` Kohaku-san entra cargando una toalla y una cubeta.@
+ld c,":a;image\tachi\koha_t02.jpg",%type_lshutter_fst
+`"Ah, buenos días Shiki-san.@ ¿Cómo se siente?"@
+` Kohaku-san se acerca a mí con su sonrisa habitual.@
+`"-------"@
+` Recuerdo la conversación que tuve anoche con Hisui.@
+` Metiendo eso en un rincón de mi mente, intento mostrar mi sonrisa de siempre.\
+`"Buen día Kohaku-san.@ Um---¿tú me cargaste hasta aquí?"@
+ld c,":a;image\tachi\koha_t03.jpg",%type_crossfade_fst
+`"¿Huh?@ ¿No recuerda Shiki-san?@ Lo encontré solo en las escaleras y se levantó cuando lo llame.@
+` Dijo que tuvo una buena siesta y comenzó a caminar.@ Le ofrecí mi hombro, pero caminó hasta aquí por su cuenta."@
+` ……… *suspiro*@
+`"No lo recuerdo.@ Debo haber estado tan cansado que olvidé lo que hice."\
+`"¿Entonces no recuerda nada de anoche?"\
+`"…… Tal vez.@ No recuerdo nada después de que regresé a la mansión."@
+ld c,":a;image\tachi\koha_t18.jpg",%type_crossfade_fst
+`"Ajaja.@ Qué desafortunado.@ Shiki-san, estuvo disculpándose conmigo constantemente.@
+` Le pregunté por qué se disculpaba, y me repetía que era un idiota y un cabeza hueca.@
+ld c,":a;image\tachi\koha_t02.jpg",%type_crossfade_fst
+` Shiki-san, ¿usted es un cabeza hueca?"\
+`"No, no lo creo."@
+` …… Bueno, en realidad estoy comenzando a tener la idea de que ellas piensan que mi cerebro está hecho de madera.\
+cl c,%type_lshutter_fst
+`"…… En fin, muchas gracias.@ Si hubiese dormido en las escaleras, habría cogido un resfriado, y la escuela---"@
+` ¿Huh?@ ¿Me están engañando mis ojos?@ El reloj me dice que ya son más de las diez de la mañana.@
+`"¡Ah---!@ ¡Ko, Kohaku-san, la escuela!"@
+ld c,":a;image\tachi\koha_t03.jpg",%type_lshutter_fst
+`"Sí.@ Hoy es el día del fundador de su escuela, así que tiene el día libre."@
+`"--------"@
+` Es cierto.@ Ahora que lo pienso, así es.@
+` Lo olvidé por completo porque últimamente he estado distrayéndome en la escuela.\
+`"Bueno, debería levantarme de todas formas.@ Si sigo durmiendo Akiha va a---"@
+` Me siento en la cama.@
+quakey 1,300
+`"Huh-----no puedo."@
+` Mi cuerpo no se mueve.@
+` Intento impulsarme con mis brazos, pero no tienen fuerza.\
+ld c,":a;image\tachi\koha_t01a.jpg",%type_crossfade_fst
+`"Parece que aún está en mal estado.@ Tiene una ligera fiebre y se ve un poco pálido.@ Puede ser aburrido pero, por favor descanse en cama el día de hoy, Shiki-san."@
+cl c,%type_lshutter_fst
+` Kohaku-san limpia mi frente con la fría y húmeda toalla.@
+` …… Se siente bien y frío.\
+`"Hmm, parece que su fiebre ha bajado.@ No está sudando tanto y su cara se ve mucho mejor.@ Debería estar bien para la noche."@
+` Kohaku-san saca un termómetro y una almohada de hielo esmeradamente.@
+` …… Al final, me hace abrir la boca y revisa el estado de mi lengua.\
+ld c,":a;image\tachi\koha_t03.jpg",%type_lshutter_fst
+`"Bueno, le traeré algo de arroz con leche de inmediato.@ Shiki-san, será mejor que hoy se comporte."@
+cl c,%type_lshutter_fst
+`"Ah---Kohaku-san."@
+ld c,":a;image\tachi\koha_t03.jpg",%type_lshutter_fst
+`"¿Sí?@ ¿Qué desea, Shiki-san?"@
+` …… Como esperaba, ella es como siempre.@
+` Su alegre sonrisa de siempre no cambia.@
+` Yo---no puedo obligarme a pensar que su sonrisa es sólo una actuación.\
+`"…… Nada.@ Espero con ansias el arroz con leche."@
+ld c,":a;image\tachi\koha_t05.jpg",%type_crossfade_fst
+`"Sí, bien, entonces discúlpeme."@
+cl c,%type_lshutter_fst
+` Kohaku-san desaparece en el pasillo, sus pasos resuenan tras ella.@
+` Observo esa figura silenciosamente.\
+bg #000000,%type_tshutter_fst
+playstop
+!w2500
+bg "image\bg\bg_40a.jpg",%type_bshutter_fst
+play "*1"
+` Llega el mediodía.@
+` Después de traer la comida, Kohaku-san regresó a sus labores.@
+` …………………… *suspiro*@
+` Estando solo, suelto un suspiro mientras pienso en mis extrañas circunstancias.@
+` …… El hecho de que soy adoptado.@
+` …… Akiha diciendo que eso no le importa.@
+` …… Hisui y Kohaku-san.@
+` …… Y el asesino que aún anda suelto.\
+` Le pregunté a Kohaku-san, pero parece que no hubo una nueva víctima en las noticias de hoy.@
+` Supongo que la víctima de anoche fue salvada, pero mientras SHIKI ande suelto, habrá más víctimas.@
+`"…… Si sólo este cuerpo hiciera lo que le digo, yo---"@
+` Podría detener a SHIKI.@ Vuelvo a poner mi cabeza sobre la almohada cuando comienzo a decir eso.@
+` Quizás sea porque he estado viendo esos sueños, pero estoy comenzando a tener pensamientos violentos, como SHIKI.@
+`"…… Sin importar lo que vaya a hacer, debería recuperarme primero."@
+` Cierro los ojos.\
+return

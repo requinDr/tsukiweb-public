@@ -1,0 +1,10 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_40b.jpg",%type_tshutter_mid
+` Son un poco más de las cinco de la tarde.@
+` Tengo una hora de tiempo libre antes de la cena.@
+` Entre ahora y la cena, debería pasar el tiempo en mi habitación, o---
+br
+return

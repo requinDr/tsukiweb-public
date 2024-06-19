@@ -1,0 +1,203 @@
+if %flgE>=1 skip 7
+mov $phasebg,"image\bg\bg_06g.jpg"
+mov $phasetitle_a,":a;image\word\PARK_06A.PNG"
+mov $phasetitle_b,":a;image\word\day_06.png"
+gosub *left_phase
+skip 5
+mov $phasebg,"image\bg\bg_27b.jpg"
+mov $phasetitle_a,":a;image\word\PCEL_06A.PNG"
+mov $phasetitle_b,":a;image\word\day_06.png"
+gosub *left_phase
+bg #ffffff,%type_crossfade_slw
+bg "image\bg\bg_40a.jpg",%type_lcartain_fst
+play "*2"
+` ………, ………………, ……………………@
+br
+`"--¿Ma--ñana?"@
+br
+` Abro mis ojos aturdidamente.@
+` Los rayos del sol entran por la ventana, envolviendo la habitación en una cálida atmósfera.\
+`"………………"@
+` Miro fijamente mis manos.@
+` Están un poco sudorosas.@ Mi cuerpo también está bañado en sudor, como si la noche hubiese sido increíblemente calurosa.@
+` Además, estoy jadeando con fuerza.\
+`"Ah--------"@
+` Sacudo ambas manos.@
+`"…… Puedo… moverme……"@
+` No hay una sola marca de cuerdas sobre mis muñecas.@
+` La cama está limpia, y ni la silla donde Akiha estaba sentada ni Kohaku-san se ven por ningún lado.\
+`"¿H------uh?"@
+br
+` ¿Akiha, y Kohaku-san……?@
+br
+`"¡A----Akiha!"@
+` Salto de la cama.@
+` Miro enloquecidamente alrededor de la habitación.@
+` Ya veo--
+br
+`"……… No hay… nadie………"@
+br
+` Correcto, no hay nadie aquí.@
+` La cama no está arrugada--y esa fría Akiha tampoco está ahí.\
+`"¿Un----sueño?"@
+` Tan pronto como me percato, suelto un suspiro de alivio.@ Cierro los ojos y recobro el aliento.@
+` Estoy en mi habitación.@
+` Son menos de las siete de la mañana.@
+` Soy el único aquí, y claro que Kohaku-san y Akiha no se ven por ningún lado.@
+`"Ha……………… a."@
+` Sí, lo sabía.@
+` Sé que fue un sueño.@ Ahora que estoy calmado, sé que ella nunca haría nada como eso.@
+` Basado en eso, lo que sucedió anoche no fue real.\
+`"Ha--ah."@
+` Respiro profundamente.@
+` …… No obstante, definitivamente aún recuerdo lo que sucedió anoche.@
+` Sé que fue un sueño--pero se sintió demasiado real; me hace pensar que fue real.\
+` …… Pero, fue un sueño sin lugar a dudas.@
+` Eso tiene que ser verdad.\
+`"--Por qué--"@
+` ¿Por qué tuve ese sueño?@
+` …… Bueno, ciertamente Akiha es estricta, y es la líder de la casa Tohno; eso la hace la persona más poderosa en este lugar.@
+` Pero ella no haría eso.@
+` Es mi querida hermana, pero ese sueño--¿Significa que la estoy viendo como una mujer?@
+`"------Uh."@
+` Recuerdo su fría mirada, como hielo.@
+` Me abrazo a mí mismo para asegurarme de que esto es real.\
+`"Maldición--¿qué demonios estoy pensando?"@
+` Desear a mi hermana, en verdad hay algo mal en eso.@ …… Bueno, ella es diferente después de ocho años, como una persona totalmente distinta.@ Más bien parece una refinada señorita que nunca había conocido.@ Pero aun así--
+`"…… Pero…… era… muy linda."@
+br
+` --Me sonrojo vigorosamente mientras recuerdo.@
+br
+` Tal vez fue sólo un sueño dentro de un sueño, pero recuerdo a Akiha tocándose mientras decía mi nombre salvajemente.@
+` Sé que es algo verdaderamente prohibido, pero recuerdo el sueño y me quedo sentado aquí pensando en ello.\
+` Y entonces,
+ld c,":a;image\tachi\his_t01.jpg",%type_lshutter_fst
+`"Shiki-sama."@
+`"¡Uuaaaaaa!"@
+quakey 2,100
+` Salgo agitadamente de la cama como tratando de escapar.@
+` No--de hecho, estaba tratando de escapar, pero terminé cayendo al piso junto con las sábanas.\
+`"¿¡Hi, Hihi, Hisui…… !?@ ¿¡Cu, cuánto tiempo has estado ahí!?"@
+`"Desde antes de que usted despertara, Shiki-sama."@
+` Ella habla con su habitual falta de expresión.@
+` Aún tirado en el piso, enredado en las sábanas e incapaz de levantarme, levanto la mirada y veo el rostro de Hisui.\
+`"…… Antes de… despertarme……"@
+br
+` --Entonces, eso significa…
+` ¿Hisui vio mi cara cuando estaba teniendo ese sueño?@
+br
+` Mi rostro se torna rojo brillante.\
+` Hisui se queda parada ahí, inexpresiva como siempre, y no hace ningún intento por hablar.@
+`"Um…… ¿yo me veía… extraño……?"@
+ld c,":a;image\tachi\his_t01b.jpg",%type_crossfade_fst
+`"No deseo describirlo."@
+`"Ah--h"@
+` …… Lo sabía.@ Debo haberme visto muy raro.@
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"Pero, si usted insiste, Shiki-sama, puedo describirlo con la mayor precisión que me sea posible."@
+`"…… No, no tienes que hacer eso……"@
+` Con mi rostro aún sonrojado, hablo con una voz débil.\
+`"Um, ¿Hisui-san?"@
+` Toso para romper el silencio.@
+` …… Añadir "san" a su nombre es una clara señal de mi vulnerabilidad.\
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"¿Qué desea, Shiki-sama?"@
+`"Um…… voy a cambiarme, así que ¿te importaría esperar afuera?"@
+` --O más bien, estoy tan avergonzado que sólo quiero que se vaya.@
+` Pero precisamente hoy Hisui no obedece.\
+`"Una vez que pueda confirmar que está despierto, dejaré la habitación, Shiki-sama."@
+`"¡……!"@
+` ¿Huh?@ ¿¡Es, es es está bromeando!?@
+` ¿¡Por qué cree que me estoy cubriendo con estas sábanas!?@
+` ¡Es para esconder algo que todavía está levantado!\
+`"E, estoy bien, así que por favor retírate.@ Puedo levantarme, y no volveré a dormir.@ Me cambiaré e iré a la sala de estar tan pronto como te vayas."@
+`"Shiki-sama--¿Está herido y no puede levantarse……?"@
+cl c,%type_crossfade_mid
+` Hisui se me acerca con preocupación.@
+`"No, no es eso.@ Estoy de pie----es decir, puedo levantarme, no te preocupes por eso."@
+` Gateo arrastrando las sábanas como una babosa, y gano algo de distancia respecto a ella.@
+` Usando la cama como una barrera, me alejo lo suficiente.\
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"…… Entonces, por favor discúlpeme.@ Prepararé su desayuno, por favor venga después de cambiarse."@
+cl c,%type_lshutter_mid
+` Debe haber sospechado algo, pero se inclina y deja la habitación.\
+` *suspiro*@
+` Estaba tan sorprendido.@
+` El contenido de mi sueño ya era bastante sorprendente, pero que Hisui me haya visto mientras soñaba es muy preocupante.@
+` …… ¿O es mi culpa por tener esa clase de sueño sobre Akiha?\
+`"…… Supongo que es mi culpa.@ Tener un sueño como ése sobre mi propia hermana."@
+` Suelto un suspiro de auto aborrecimento.@
+` Por mi bien y por el de la reputación de Akiha, debería olvidarme de eso tan pronto como sea posible.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_34a.jpg",%type_lcartain_mid
+` Después de tranquilizarme lo suficiente, me dirijo hacia la sala de estar.@
+` Como siempre, Akiha está sentada en el sofá, bebiendo té con elegancia.@
+ld c,":a;image\tachi\aki_t04a.jpg",%type_crossfade_fst
+`"Buenos días, Nii-san.@ Ciertamente te has levantado temprano esta mañana."@
+` Debe estar feliz porque desperté  ya que me saluda con una sonrisa.@
+`"Sí, buenos días.@ Sucedieron, bueno, un montón de cosas sucedieron esta mañana."@
+` Tan pronto como digo eso--recuerdo esa fría mirada de anoche.@
+cl c,%type_crossfade_fst
+`"Uh--"@
+` Esto no es bueno.@ Sé que mi rostro se está sonrojando mas allá de mi control.@
+` …… Yo, convertido en un completo idiota.@
+` Y Akiha, que siempre estuvo observando.\
+`"¿Nii-san--?"@
+` Un breve clamor.@
+ld c,":a;image\tachi\aki_t01a.jpg",%type_crossfade_fst
+`"¿Qué sucede?@ Tu cara está roja, ¿tienes fiebre?"@
+`"¡-----!"@
+` Apresurándose hacia mí, ella me mira desde abajo.@
+` Pero, si me mira tan seriamente, yo----\
+ld c,":a;image\tachi\aki_t12a.jpg",%type_crossfade_fst
+` Akiha suspira.@
+`"Parece que sí tienes fiebre.@ Kohaku, ven rápido.@ Nii-san no parece estar bien."@
+` Akiha grita hacia el comedor.@
+` Kohaku-san debe estar preparando mi desayuno en la cocina.\
+`"¡Estoy bien--!@ ¡Es un resfriado menor, así que no te preocupes!"@
+ld c,":a;image\tachi\aki_t21.jpg",%type_crossfade_fst
+`"Si es un resfriado, entonces no puedo dejarlo pasar.@ Para ti, una enfermedad trivial es una gran cosa.@ La fortaleza de tu sistema inmunológico es mucho más baja que la de la mayoría de la gente."@
+cl c,%type_crossfade_fst
+` Akiha parece estar harta y coloca su mano sobre mi frente.@
+br
+` La sensación de su fría y delicada mano.@
+` Blancos y finos dedos.@
+` Tan diferentes a los de un hombre.@ Delicados, hermosos, dedos blancos------\
+`"!!!!!!!!"@
+` Esto no es bueno.@
+` Esto no es nada bueno, así que me libero y salgo corriendo hacia el vestíbulo.\
+bg "image\bg\bg_33a.jpg",%type_lcartain_mid
+br
+` Mis pasos hacen eco mientras corro.@
+br
+bg "image\bg\bg_40a.jpg",%type_lcartain_mid
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"¿Shiki-sama?@ ¿Ya terminó su desayuno?"@
+`"No, no es eso, pero--Um, ¿dónde está mi maletín?"@
+`"Aquí lo tengo.@ ¿Ya va a ir a la escuela?"@
+` Asintiendo, arranco mi maletín de las manos de Hisui.@
+`"Me voy.@ ¡No te preocupes por acompañarme!"\
+bg "image\bg\bg_33a.jpg",%type_lcartain_mid
+ld c,":a;image\tachi\aki_t02.jpg",%type_crossfade_fst
+`"Nii-san, has estado actuando extraño.@ ¿Qué estás haciendo con una fiebre como ésa?"@
+`"¡Cielos, te dije que no es nada!@ ¡Ya que no es nada, voy a la escuela!@ ¡Desayunaré más tarde, así que déjame en paz!"@
+`"¿¡Que te deje en paz--oye, Nii-san!?"@
+br
+` El sonido de mis pasos al huir es mi única respuesta.\
+bg "image\bg\bg_32a.jpg",%type_lcartain_mid
+`"Fiu----"@
+` Aunque se trate de Akiha, no me perseguirá tan lejos.\
+` Ya no somos niños, así que no impedirá que vaya a la escuela.\
+`"----Fiu."@
+`  Respiro profundamente y finalmente soy capaz de tranquilizarme.@
+`"……… ¿De qué estoy escapando?"@
+` Una vez calmado, puedo pensar claramente.@
+` No hice nada malo, y no había necesidad de que huyese de esa manera.\
+`"--No puedo creerlo.@ Parezco un completo idiota."@
+` Pero, regresar a la mansión para desayunar suena más tonto.@
+`"--¿A la escuela, entonces?"@
+` Soltando un suspiro, bajo la colina a lo largo de la calle residencial.\
+playstop
+bg #000000,%type_lcartain_mid
+!w1000
+return

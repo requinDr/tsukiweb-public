@@ -1,0 +1,70 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_47.jpg",%type_lcartain_mid
+` Dejo la mansión.@
+` …… ¿Qué demonios está sucediendo?@
+` Aunque no hay nadie alrededor, puedo sentir la presencia de personas.@ Edificios.@ En las casas a mi alrededor, puedo sentir personas.\
+` *jadeo*----*jadeo*------
+br
+` Con toda esta gente aquí, no seré capaz de contenerme de nuevo.@
+` Algún sitio---tengo que ir a algún lugar sin nadie alrededor o nunca podré tranquilizarme.@
+` Donde no haya nadie.\
+` Donde no haya ninguna residencia cerca.@
+br
+` …… Algún sitio donde, aunque enloquezca, no cause ningún problema a nadie.\
+bg #000000,%type_crossfade_slw
+bg "image\bg\bg_27b.jpg",%type_crossfade_slw
+` …… *jadeo*…… *jadeo*………
+` No hay nadie en el parque.@
+` No hay ninguna casa cerca.@
+` …… Se supone que no hay nadie aquí, pero aún no puedo tranquilizarme.@
+` Sin importar lo lejos que están, hay casas a todo mi alrededor.@ Puedo ver las luces de la ciudad en la distancia.\
+`"No existe."@
+` Sí, no existe.@
+` En una ciudad, no hay ningún lugar donde no pueda sentirse ninguna presencia humana.@
+` No hay ningún lugar en que pueda estar verdaderamente solo en esta civilizada ciudad.\
+`"Maldición-----"@
+` A todo mi alrededor.@
+` Tanta gente a mi alrededor.@ Si camino sólo un poco, puedo capturar todas las presas que quiera.@
+br
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\bg_27b.jpg",%type_nowaitdisp
+`"Cállate---"@
+` Me duele la cabeza.@
+` Aunque finalmente ya no veo las "líneas", comenzaré a verlas de nuevo de seguir así.\
+`"----¿Eh?"@
+` Espera, Shiki.@
+` ¿Esto no es extraño?@
+` No es que estuviese viendo esas "líneas" porque estaba excitado.@
+` Esas "líneas" son cosas que no puedo evitar ver cuando no tengo puestos mis lentes.@
+` Aun si me tranquilizo, seguiré viéndolas si no tengo puestos mis lentes.@
+` Pero he perdido mis lentes---\
+`"----Están… aquí."@
+` Llevo mis dedos hacia mi rostro y descubro que mis lentes estuvieron ahí todo el tiempo.@
+` En otras palabras,
+` Aun si uso los lentes que Sensei me dio, ya no puedo controlar mis ojos.\
+`"Ja---jaja."@
+` Soy golpeado por la verdad.@
+` Justo como dijo Roa, simplemente no me percaté de que ya estaba loco.@
+` Esa noche.@
+` Desde aquella ocasión cuando deseaba desde el fondo de mi corazón matar a ese bastardo que estaba deshonrando a Ciel.\
+`"…… Oh…… entonces, el dolor de cabeza de aquella vez……"@
+` El dolor de cabeza que tenía cuando estaba combatiendo a Roa.@
+` Cuando vi esas "líneas" de muerte aunque no recordaba haberme quitado los lentes, y cuando Ciel-senpai fue a buscarlos por mí.@
+br
+` Desde entonces, yo---incluso cuando uso los lentes, sin importar mis intenciones, he sido capaz de ver esas "líneas".\
+`"…… Senpai…… lo sabía."@
+` No, ella probablemente no quiso decírmelo.@
+` Para no preocuparme, mintió para proteger mis equivocadas percepciones.@
+`"…… Ya veo…… Sen…… pai."@
+` Me dijo que hablara con ella si sucedía cualquier cosa.@
+` Ya he memorizado su número telefónico.\
+`"Teléfono---"@
+` Hay un teléfono público cerca.@
+` Pero---¿qué voy a lograr con llamarla?@
+` Nadie puede curar mi cuerpo.@
+` Ni siquiera Ciel-senpai puede sanar lo que está dentro de mí.@
+br
+return

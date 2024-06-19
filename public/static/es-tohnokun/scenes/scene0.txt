@@ -1,0 +1,7656 @@
+*f20
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1020==1 skip 4
+gosub *s20
+mov %1020,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip20,
+	`2. No saltar`, *s20
+skip 3
+*skip20
+return
+select `1. Faltan pocos minutos, tengo que dirigirme a clases inmediatamente.`, *f21,
+	`2. …… Soy curioso, así que iré a echar un vistazo.`, *f22
+*f21
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1021==1 skip 4
+gosub *s21
+mov %1021,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip21,
+	`2. No saltar`, *s21
+skip 3
+*skip21
+return
+inc %akiha_regard
+goto *f23
+*f22
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1022==1 skip 4
+gosub *s22
+mov %1022,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip22,
+	`2. No saltar`, *s22
+skip 3
+*skip22
+return
+inc %ciel_regard
+goto *f23
+*f23
+gosub *regard_update
+if %akiha_regard==1 goto *f24
+!sd
+if %sceneskip==1 && %1023==1 skip 4
+gosub *s23
+mov %1023,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip23,
+	`2. No saltar`, *s23
+skip 3
+*skip23
+return
+select `1. Almuerzo en el salón de clases.`, *f25,
+	`2. Voy a comer en la cafetería.`, *f26,
+	`3. Salgo al pasillo para pensarlo.`, *f27
+*f24
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1024==1 skip 4
+gosub *s24
+mov %1024,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip24,
+	`2. No saltar`, *s24
+skip 3
+*skip24
+return
+select `1. Salgo al pasillo para pensarlo.`, *f28,
+	`2. Voy a comer en la cafetería.`, *f29,
+	`3. Almuerzo en el salón de clases.`, *f30
+*f25
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1025==1 skip 4
+gosub *s25
+mov %1025,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip25,
+	`2. No saltar`, *s25
+skip 3
+*skip25
+return
+goto *f31
+*f26
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1026==1 skip 4
+gosub *s26
+mov %1026,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip26,
+	`2. No saltar`, *s26
+skip 3
+*skip26
+return
+goto *f31
+*f27
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1027==1 skip 4
+gosub *s27
+mov %1027,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip27,
+	`2. No saltar`, *s27
+skip 3
+*skip27
+return
+inc %ciel_regard
+goto *f31
+*f28
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1028==1 skip 4
+gosub *s28
+mov %1028,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip28,
+	`2. No saltar`, *s28
+skip 3
+*skip28
+return
+goto *f31
+*f29
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1029==1 skip 4
+gosub *s29
+mov %1029,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip29,
+	`2. No saltar`, *s29
+skip 3
+*skip29
+return
+goto *f31
+*f30
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1030==1 skip 4
+gosub *s30
+mov %1030,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip30,
+	`2. No saltar`, *s30
+skip 3
+*skip30
+return
+inc %akiha_regard
+inc %flgM
+goto *f31
+*f31
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1031==1 skip 4
+gosub *s31
+mov %1031,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip31,
+	`2. No saltar`, *s31
+skip 3
+*skip31
+return
+select `1. Me tranquilizo y voy de vuelta a la mansión.`, *f32,
+	`2. Me quedo un poco más de tiempo en la escuela.`, *f33
+*f32
+gosub *regard_update
+if %flgM>=1 goto *f35
+if %akiha_regard>=1 goto *f502
+goto *f36
+*f502
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1502==1 skip 4
+gosub *s502
+mov %1502,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip502,
+	`2. No saltar`, *s502
+skip 3
+*skip502
+return
+inc %flg6
+goto *f36
+*f33
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1033==1 skip 4
+gosub *s33
+mov %1033,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip33,
+	`2. No saltar`, *s33
+skip 3
+*skip33
+return
+if %ciel_regard>=2 goto *f34
+goto *f89
+*f34
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1034==1 skip 4
+gosub *s34
+mov %1034,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip34,
+	`2. No saltar`, *s34
+skip 3
+*skip34
+return
+inc %ciel_regard
+goto *f36
+*f89
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1089==1 skip 4
+gosub *s89
+mov %1089,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip89,
+	`2. No saltar`, *s89
+skip 3
+*skip89
+return
+goto *f36
+*f35
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1035==1 skip 4
+gosub *s35
+mov %1035,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip35,
+	`2. No saltar`, *s35
+skip 3
+*skip35
+return
+inc %flg6
+goto *f36
+*f36
+gosub *regard_update
+if %clear_hisui!=0 goto *f201
+if %cleared!=0 goto *f37
+!sd
+if %sceneskip==1 && %1036==1 skip 4
+gosub *s36
+mov %1036,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip36,
+	`2. No saltar`, *s36
+skip 3
+*skip36
+return
+goto *f40
+*f37
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1037==1 skip 4
+gosub *s37
+mov %1037,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip37,
+	`2. No saltar`, *s37
+skip 3
+*skip37
+return
+select `1. Sobre mi pequeña hermana Akiha.`, *f38,
+	`2. Sobre la chica alegre.`, *f39
+*f201
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1201==1 skip 4
+gosub *s201
+mov %1201,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip201,
+	`2. No saltar`, *s201
+skip 3
+*skip201
+return
+select `1. Sobre mi pequeña hermana Akiha.`, *f38,
+	`2. Sobre la chica alegre.`, *f39,
+	`3. Sobre la chica tras la ventana.`, *f202
+*f38
+gosub *regard_update
+inc %akiha_regard
+goto *f40
+*f39
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1039==1 skip 4
+gosub *s39
+mov %1039,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip39,
+	`2. No saltar`, *s39
+skip 3
+*skip39
+return
+add %hisui_regard,2
+goto *f41
+*f202
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1202==1 skip 4
+gosub *s202
+mov %1202,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip202,
+	`2. No saltar`, *s202
+skip 3
+*skip202
+return
+add %kohaku_regard,3
+goto *f41
+*f40
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1040==1 skip 4
+gosub *s40
+mov %1040,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip40,
+	`2. No saltar`, *s40
+skip 3
+*skip40
+return
+goto *f42
+*f41
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1041==1 skip 4
+gosub *s41
+mov %1041,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip41,
+	`2. No saltar`, *s41
+skip 3
+*skip41
+return
+goto *f42
+*f42
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1042==1 skip 4
+gosub *s42
+mov %1042,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip42,
+	`2. No saltar`, *s42
+skip 3
+*skip42
+return
+select `1. Ir a la sala de estar y hablar con Akiha.`, *f43,
+	`2. Quedarme en mi habitación.`, *f44,
+	`3. Ir a ver TV en la habitación de Kohaku-san.`, *f45
+*f43
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1043==1 skip 4
+gosub *s43
+mov %1043,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip43,
+	`2. No saltar`, *s43
+skip 3
+*skip43
+return
+inc %akiha_regard
+if %flg6>=1 goto *f46
+goto *f47
+*f44
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1044==1 skip 4
+gosub *s44
+mov %1044,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip44,
+	`2. No saltar`, *s44
+skip 3
+*skip44
+return
+inc %hisui_regard
+if %flg6>=1 goto *f46
+goto *f47
+*f45
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1045==1 skip 4
+gosub *s45
+mov %1045,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip45,
+	`2. No saltar`, *s45
+skip 3
+*skip45
+return
+if %flg6>=1 goto *f46
+goto *f47
+*f46
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1046==1 skip 4
+gosub *s46
+mov %1046,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip46,
+	`2. No saltar`, *s46
+skip 3
+*skip46
+return
+if %clear_ark==0 && %clear_ciel==0 goto *f47a
+select `1. Voy a investigar.`, *f47a,
+	`2. Voy a dormir.`, *f46b
+*f46b
+if %hisui_regard>%akiha_regard && %hisui_regard>%kohaku_regard goto *f49
+if %kohaku_regard>%akiha_regard && %kohaku_regard>%hisui_regard goto *f203
+goto *f48
+*f47
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1047==1 skip 4
+gosub *s47
+mov %1047,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip47,
+	`2. No saltar`, *s47
+skip 3
+*skip47
+return
+goto *f47a
+*f47a
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1547==1 skip 4
+gosub *s47a
+mov %1547,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip47a,
+	`2. No saltar`, *s47a
+skip 3
+*skip47a
+return
+add %ark_regard,3
+goto *f51
+*f48
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1048==1 skip 4
+gosub *s48
+mov %1048,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip48,
+	`2. No saltar`, *s48
+skip 3
+*skip48
+return
+goto *f204
+*f49
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1049==1 skip 4
+gosub *s49
+mov %1049,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip49,
+	`2. No saltar`, *s49
+skip 3
+*skip49
+return
+goto *f205
+*f203
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1999==1 skip 4
+gosub *s203
+mov %1999,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip203,
+	`2. No saltar`, *s203
+skip 3
+*skip203
+return
+goto *f205
+*f183
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1183==1 skip 4
+gosub *s183
+mov %1183,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip183,
+	`2. No saltar`, *s183
+skip 3
+*skip183
+return
+select `1. …… Regreso a la mansión.`, *f186,
+	`2. …… Sigo esperando.`, *f184
+*f184
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1184==1 skip 4
+gosub *s184
+mov %1184,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip184,
+	`2. No saltar`, *s184
+skip 3
+*skip184
+return
+select `1. …… Sigo esperando.`, *f185,
+	`2. …… Regreso a la mansión.`, *f186
+*f185
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1185==1 skip 4
+gosub *s185
+mov %1185,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip185,
+	`2. No saltar`, *s185
+skip 3
+*skip185
+return
+select `1. …… Sigo esperando.`, *f187,
+	`2. …… Regreso a la mansión.`, *f186
+*f186
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1186==1 skip 4
+gosub *s186
+mov %1186,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip186,
+	`2. No saltar`, *s186
+skip 3
+*skip186
+return
+`¿Tomarás la 'lección de Ciel-sensei'?
+select `1. Sí.`, *f518,
+	`2. No.`, *endofplay
+*f518
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1518==1 skip 4
+gosub *s518
+mov %1518,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip518,
+	`2. No saltar`, *s518
+skip 3
+*skip518
+return
+goto *endofplay
+*f187
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1187==1 skip 4
+gosub *s187
+mov %1187,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip187,
+	`2. No saltar`, *s187
+skip 3
+*skip187
+return
+if %flgB>=1 goto *f188
+goto *f189
+*f188
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1188==1 skip 4
+gosub *s188
+mov %1188,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip188,
+	`2. No saltar`, *s188
+skip 3
+*skip188
+return
+`¿Tomarás la 'lección de Ciel-sensei'?
+select `1. Sí.`, *f519,
+	`2. No.`, *endofplay
+*f519
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1519==1 skip 4
+gosub *s519
+mov %1519,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip519,
+	`2. No saltar`, *s519
+skip 3
+*skip519
+return
+goto *endofplay
+*f189
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1189==1 skip 4
+gosub *s189
+mov %1189,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip189,
+	`2. No saltar`, *s189
+skip 3
+*skip189
+return
+select `1. Corro hacia el mismo callejón de anoche.`, *f190,
+	`2. …… Espero aquí en el parque.`, *f191,
+	`3. Voy al apartamento de Arcueid.`, *f192
+*f190
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1190==1 skip 4
+gosub *s190
+mov %1190,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip190,
+	`2. No saltar`, *s190
+skip 3
+*skip190
+return
+goto *f193
+*f191
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1191==1 skip 4
+gosub *s191
+mov %1191,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip191,
+	`2. No saltar`, *s191
+skip 3
+*skip191
+return
+add %ark_regard,2
+goto *f193
+*f192
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1192==1 skip 4
+gosub *s192
+mov %1192,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip192,
+	`2. No saltar`, *s192
+skip 3
+*skip192
+return
+goto *f193
+*f193
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1193==1 skip 4
+gosub *s193
+mov %1193,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip193,
+	`2. No saltar`, *s193
+skip 3
+*skip193
+return
+goto *f194
+*f284
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1284==1 skip 4
+gosub *s284
+mov %1284,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip284,
+	`2. No saltar`, *s284
+skip 3
+*skip284
+return
+select `1. Kohaku-san me está estorbando.`, *f285,
+	`2. Es como dice Kohaku-san.`, *f286
+*f285
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1285==1 skip 4
+gosub *s285
+mov %1285,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip285,
+	`2. No saltar`, *s285
+skip 3
+*skip285
+return
+goto *f287
+*f286
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1286==1 skip 4
+gosub *s286
+mov %1286,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip286,
+	`2. No saltar`, *s286
+skip 3
+*skip286
+return
+goto *f287
+*f287
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1287==1 skip 4
+gosub *s287
+mov %1287,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip287,
+	`2. No saltar`, *s287
+skip 3
+*skip287
+return
+if %ciel_regard>=11 goto *f288
+goto *f289
+*f365
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1365==1 skip 4
+gosub *s365
+mov %1365,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip365,
+	`2. No saltar`, *s365
+skip 3
+*skip365
+return
+select `1. Ala este, primer piso.`, *f366,
+	`2. Ala oeste, primer piso.`, *f367,
+	`3. Ala este, segundo piso.`, *f368,
+	`4. Ala oeste, segundo piso.`, *f369
+*f366
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1366==1 skip 4
+gosub *s366
+mov %1366,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip366,
+	`2. No saltar`, *s366
+skip 3
+*skip366
+return
+dec %akiha_regard
+goto *f370
+*f367
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1367==1 skip 4
+gosub *s367
+mov %1367,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip367,
+	`2. No saltar`, *s367
+skip 3
+*skip367
+return
+dec %akiha_regard
+goto *f370
+*f368
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1368==1 skip 4
+gosub *s368
+mov %1368,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip368,
+	`2. No saltar`, *s368
+skip 3
+*skip368
+return
+inc %akiha_regard
+goto *f370
+*f369
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1369==1 skip 4
+gosub *s369
+mov %1369,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip369,
+	`2. No saltar`, *s369
+skip 3
+*skip369
+return
+dec %akiha_regard
+goto *f370
+*f370
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1370==1 skip 4
+gosub *s370
+mov %1370,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip370,
+	`2. No saltar`, *s370
+skip 3
+*skip370
+return
+select `1. Me quito mis lentes y me preparo para matar.`, *f371,
+	`2. Primero, tengo que alejarlo de la habitación de Akiha.`, *f372
+*f371
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1371==1 skip 4
+gosub *s371
+mov %1371,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip371,
+	`2. No saltar`, *s371
+skip 3
+*skip371
+return
+goto *f373
+*f372
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1372==1 skip 4
+gosub *s372
+mov %1372,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip372,
+	`2. No saltar`, *s372
+skip 3
+*skip372
+return
+goto *f373
+*f373
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1373==1 skip 4
+gosub *s373
+mov %1373,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip373,
+	`2. No saltar`, *s373
+skip 3
+*skip373
+return
+goto *f374
+*f194
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1194==1 skip 4
+gosub *s194
+mov %1194,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip194,
+	`2. No saltar`, *s194
+skip 3
+*skip194
+return
+select `1. Aunque sea inútil, buscaré a Arcueid.`, *f195,
+	`2. Aceptarlo y volver a la mansión.`, *f196,
+	`3. Si así son las cosas, yo mismo buscaré a Roa.`, *f197
+*f195
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1195==1 skip 4
+gosub *s195
+mov %1195,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip195,
+	`2. No saltar`, *s195
+skip 3
+*skip195
+return
+inc %ark_regard
+goto *f198
+*f196
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1196==1 skip 4
+gosub *s196
+mov %1196,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip196,
+	`2. No saltar`, *s196
+skip 3
+*skip196
+return
+goto *f198
+*f197
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1197==1 skip 4
+gosub *s197
+mov %1197,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip197,
+	`2. No saltar`, *s197
+skip 3
+*skip197
+return
+goto *f198
+*f198
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1198==1 skip 4
+gosub *s198
+mov %1198,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip198,
+	`2. No saltar`, *s198
+skip 3
+*skip198
+return
+goto *f199
+*f288
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1288==1 skip 4
+gosub *s288
+mov %1288,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip288,
+	`2. No saltar`, *s288
+skip 3
+*skip288
+return
+goto *f292
+*f289
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1289==1 skip 4
+gosub *s289
+mov %1289,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip289,
+	`2. No saltar`, *s289
+skip 3
+*skip289
+return
+goto *f289a
+*f289a
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1789==1 skip 4
+gosub *s289a
+mov %1789,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip289a,
+	`2. No saltar`, *s289a
+skip 3
+*skip289a
+return
+`¿Tomarás la 'lección de Ciel-sensei'?
+select `1. Sí.`, *f523,
+	`2. No.`, *endofplay
+*f523
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1523==1 skip 4
+gosub *s523
+mov %1523,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip523,
+	`2. No saltar`, *s523
+skip 3
+*skip523
+return
+goto *endofplay
+*f292
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1292==1 skip 4
+gosub *s292
+mov %1292,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip292,
+	`2. No saltar`, *s292
+skip 3
+*skip292
+return
+select `1. No, tengo que decirle a Kohaku-san que se vaya.`, *f293,
+	`2. …… Solamente le permitiré dejar la comida aquí.`, *f294
+*f293
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1293==1 skip 4
+gosub *s293
+mov %1293,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip293,
+	`2. No saltar`, *s293
+skip 3
+*skip293
+return
+goto *f295
+*f294
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1294==1 skip 4
+gosub *s294
+mov %1294,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip294,
+	`2. No saltar`, *s294
+skip 3
+*skip294
+return
+inc %flgJ
+goto *f295
+*f295
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1295==1 skip 4
+gosub *s295
+mov %1295,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip295,
+	`2. No saltar`, *s295
+skip 3
+*skip295
+return
+select `1. …… No puedo dejar que me vea de esta manera.`, *f296,
+	`2. …… Pero aun así, quiero escuchar su voz.`, *f297
+*f296
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1296==1 skip 4
+gosub *s296
+mov %1296,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip296,
+	`2. No saltar`, *s296
+skip 3
+*skip296
+return
+goto *f289a
+*f297
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1297==1 skip 4
+gosub *s297
+mov %1297,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip297,
+	`2. No saltar`, *s297
+skip 3
+*skip297
+return
+select `1. Escapo hacia adelante.`, *f299,
+	`2. Escapo hacia atrás.`, *f298
+*f298
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1298==1 skip 4
+gosub *s298
+mov %1298,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip298,
+	`2. No saltar`, *s298
+skip 3
+*skip298
+return
+`¿Tomarás la 'lección de Ciel-sensei'?
+select `1. Sí.`, *f524,
+	`2. No.`, *endofplay
+*f524
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1524==1 skip 4
+gosub *s524
+mov %1524,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip524,
+	`2. No saltar`, *s524
+skip 3
+*skip524
+return
+goto *endofplay
+*f299
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1299==1 skip 4
+gosub *s299
+mov %1299,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip299,
+	`2. No saltar`, *s299
+skip 3
+*skip299
+return
+if %flgJ>=1 goto *f300
+select `1. …… Me quito los lentes.`, *f301,
+	`2. …… No me quito los lentes.`, *f302
+*f300
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1300==1 skip 4
+gosub *s300
+mov %1300,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip300,
+	`2. No saltar`, *s300
+skip 3
+*skip300
+return
+goto *f301
+*f301
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1301==1 skip 4
+gosub *s301
+mov %1301,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip301,
+	`2. No saltar`, *s301
+skip 3
+*skip301
+return
+`¿Tomarás la 'lección de Ciel-sensei'?
+select `1. Sí.`, *f525,
+	`2. No.`, *endofplay
+*f525
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1525==1 skip 4
+gosub *s525
+mov %1525,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip525,
+	`2. No saltar`, *s525
+skip 3
+*skip525
+return
+goto *endofplay
+*f302
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1302==1 skip 4
+gosub *s302
+mov %1302,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip302,
+	`2. No saltar`, *s302
+skip 3
+*skip302
+return
+select `1. Me gusta el aspecto natural de Senpai.`, *f504,
+	`2. ¡Senpai no es Senpai sin sus lentes!`, *f505
+*f504
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1504==1 skip 4
+gosub *s504
+mov %1504,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip504,
+	`2. No saltar`, *s504
+skip 3
+*skip504
+return
+goto *f307
+*f505
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1505==1 skip 4
+gosub *s505
+mov %1505,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip505,
+	`2. No saltar`, *s505
+skip 3
+*skip505
+return
+goto *f307
+*f374
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1374==1 skip 4
+gosub *s374
+mov %1374,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip374,
+	`2. No saltar`, *s374
+skip 3
+*skip374
+return
+goto *f375
+*f375
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1375==1 skip 4
+gosub *s375
+mov %1375,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip375,
+	`2. No saltar`, *s375
+skip 3
+*skip375
+return
+select `1. Lo persigo ahora mismo.`, *f376,
+	`2. Respiro, me tranquilizo, y entonces lo persigo.`, *f378
+*f376
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1376==1 skip 4
+gosub *s376
+mov %1376,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip376,
+	`2. No saltar`, *s376
+skip 3
+*skip376
+return
+`¿Tomarás la 'lección de Ciel-sensei'?
+select `1. Sí.`, *f537,
+	`2. No.`, *endofplay
+*f537
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1537==1 skip 4
+gosub *s537
+mov %1537,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip537,
+	`2. No saltar`, *s537
+skip 3
+*skip537
+return
+goto *endofplay
+*f378
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1378==1 skip 4
+gosub *s378
+mov %1378,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip378,
+	`2. No saltar`, *s378
+skip 3
+*skip378
+return
+select `1. …… Me detengo.`, *f380,
+	`2. …… No dejaré que sus palabras me engañen.`, *f379
+*f379
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1379==1 skip 4
+gosub *s379
+mov %1379,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip379,
+	`2. No saltar`, *s379
+skip 3
+*skip379
+return
+`¿Tomarás la 'lección de Ciel-sensei'?
+select `1. Sí. `, *f538,
+	`2. No. `, *endofplay
+*f538
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1538==1 skip 4
+gosub *s538
+mov %1538,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip538,
+	`2. No saltar`, *s538
+skip 3
+*skip538
+return
+goto *endofplay
+*f380
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1380==1 skip 4
+gosub *s380
+mov %1380,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip380,
+	`2. No saltar`, *s380
+skip 3
+*skip380
+return
+select `1. …… Persigo a Akiha.`, *f381,
+	`2. …… No puedo hacerlo.`, *f509
+*f381
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1381==1 skip 4
+gosub *s381
+mov %1381,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip381,
+	`2. No saltar`, *s381
+skip 3
+*skip381
+return
+if %akiha_regard<9 goto *f382
+select `1. …… Mantendré mi promesa.`, *f382,
+	`2. …… No puedo hacer esto.`, *f383
+*f509
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1509==1 skip 4
+gosub *s509
+mov %1509,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip509,
+	`2. No saltar`, *s509
+skip 3
+*skip509
+return
+`¿Tomarás la 'lección de Ciel-sensei'?
+select `1. Sí.`, *f539,
+	`2. No.`, *endofplay
+*f539
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1539==1 skip 4
+gosub *s539
+mov %1539,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip539,
+	`2. No saltar`, *s539
+skip 3
+*skip539
+return
+goto *endofplay
+*f382
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1382==1 skip 4
+gosub *s382
+mov %1382,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip382,
+	`2. No saltar`, *s382
+skip 3
+*skip382
+return
+`¿Tomarás la 'lección de Ciel-sensei'?
+select `1. Sí.`, *f540,
+	`2. No.`, *endofplay
+*f540
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1540==1 skip 4
+gosub *s540
+mov %1540,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip540,
+	`2. No saltar`, *s540
+skip 3
+*skip540
+return
+goto *endofplay
+*f383
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1383==1 skip 4
+gosub *s383
+mov %1383,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip383,
+	`2. No saltar`, *s383
+skip 3
+*skip383
+return
+select `1. …… Le devuelvo esta vida a Akiha.`, *f385,
+	`2. …… No puedo hacer eso.`, *f384
+*f384
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1384==1 skip 4
+gosub *s384
+mov %1384,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip384,
+	`2. No saltar`, *s384
+skip 3
+*skip384
+return
+inc %clear_akiha
+inc %cleared
+inc %clear_akiha_good
+`¿Tomarás la 'lección de Ciel-sensei'?
+select `1. Sí.`, *f542,
+	`2. No.`, *endofplay
+*f542
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1542==1 skip 4
+gosub *s542
+mov %1542,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip542,
+	`2. No saltar`, *s542
+skip 3
+*skip542
+return
+goto *endofplay
+*f385
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1385==1 skip 4
+gosub *s385
+mov %1385,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip385,
+	`2. No saltar`, *s385
+skip 3
+*skip385
+return
+inc %clear_akiha
+inc %cleared
+inc %clear_akiha_true
+`¿Tomarás la 'lección de Ciel-sensei'?
+select `1. Sí.`, *f541,
+	`2. No.`, *endofplay
+*f541
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1541==1 skip 4
+gosub *s541
+mov %1541,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip541,
+	`2. No saltar`, *s541
+skip 3
+*skip541
+return
+goto *endofplay
+*f199
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1199==1 skip 4
+gosub *s199
+mov %1199,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip199,
+	`2. No saltar`, *s199
+skip 3
+*skip199
+return
+if %ark_normalcleared!=0 goto *f503
+*f199_0
+gosub *regard_update
+goto *f52
+*f503
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1503==1 skip 4
+gosub *s503
+mov %1503,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip503,
+	`2. No saltar`, *s503
+skip 3
+*skip503
+return
+select `1. Mantendré mi promesa.`, *f52a,
+	`2. Nunca olvidaré a Arcueid.`, *f53a
+*f52
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1052==1 skip 4
+gosub *s52
+mov %1052,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip52,
+	`2. No saltar`, *s52
+skip 3
+*skip52
+return
+goto *f52a
+*f52a
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1552==1 skip 4
+gosub *s52a
+mov %1552,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip52a,
+	`2. No saltar`, *s52a
+skip 3
+*skip52a
+return
+inc %ark_normalcleared
+inc %clear_ark
+inc %cleared
+inc %clear_ark_true
+`¿Tomarás la 'lección de Ciel-sensei'?
+select `1. Sí.`, *f520,
+	`2. No.`, *endofplay
+*f520
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1520==1 skip 4
+gosub *s520
+mov %1520,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip520,
+	`2. No saltar`, *s520
+skip 3
+*skip520
+return
+goto *endofplay
+*f53
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1053==1 skip 4
+gosub *s53
+mov %1053,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip53,
+	`2. No saltar`, *s53
+skip 3
+*skip53
+return
+goto *f53a
+*f53a
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1553==1 skip 4
+gosub *s53a
+mov %1553,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip53a,
+	`2. No saltar`, *s53a
+skip 3
+*skip53a
+return
+inc %clear_ark
+inc %cleared
+inc %clear_ark_good
+`¿Tomarás la 'lección de Ciel-sensei'?
+select `1. Sí.`, *f521,
+	`2. No.`, *endofplay
+*f521
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1521==1 skip 4
+gosub *s521
+mov %1521,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip521,
+	`2. No saltar`, *s521
+skip 3
+*skip521
+return
+goto *endofplay
+*f307
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1307==1 skip 4
+gosub *s307
+mov %1307,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip307,
+	`2. No saltar`, *s307
+skip 3
+*skip307
+return
+select `1. Obedezco Arcueid.`, *f308,
+	`2. No obedezco a Arcueid.`, *f310
+*f308
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1308==1 skip 4
+gosub *s308
+mov %1308,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip308,
+	`2. No saltar`, *s308
+skip 3
+*skip308
+return
+inc %clear_ciel
+inc %cleared
+inc %clear_ciel_good
+`¿Tomarás la 'lección de Ciel-sensei'?
+select `1. Sí.`, *f526,
+	`2. No.`, *endofplay
+*f526
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1526==1 skip 4
+gosub *s526
+mov %1526,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip526,
+	`2. No saltar`, *s526
+skip 3
+*skip526
+return
+goto *endofplay
+*f310
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1310==1 skip 4
+gosub *s310
+mov %1310,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip310,
+	`2. No saltar`, *s310
+skip 3
+*skip310
+return
+inc %clear_ciel
+inc %cleared
+inc %clear_ciel_true
+`¿Tomarás la 'lección de Ciel-sensei'?
+select `1. Sí.`, *f527,
+	`2. No.`, *endofplay
+*f527
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1527==1 skip 4
+gosub *s527
+mov %1527,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip527,
+	`2. No saltar`, *s527
+skip 3
+*skip527
+return
+goto *endofplay
+*f403
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1403==1 skip 4
+gosub *s403
+mov %1403,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip403,
+	`2. No saltar`, *s403
+skip 3
+*skip403
+return
+goto *f405
+*f404
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1404==1 skip 4
+gosub *s404
+mov %1404,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip404,
+	`2. No saltar`, *s404
+skip 3
+*skip404
+return
+goto *f405
+*f405
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1405==1 skip 4
+gosub *s405
+mov %1405,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip405,
+	`2. No saltar`, *s405
+skip 3
+*skip405
+return
+select `1. Abro la puerta.`, *f407,
+	`2. …… ¿Por qué cerré la puerta en primer lugar?`, *f406
+*f406
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1406==1 skip 4
+gosub *s406
+mov %1406,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip406,
+	`2. No saltar`, *s406
+skip 3
+*skip406
+return
+goto *f408
+*f407
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1407==1 skip 4
+gosub *s407
+mov %1407,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip407,
+	`2. No saltar`, *s407
+skip 3
+*skip407
+return
+goto *f408
+*f408
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1408==1 skip 4
+gosub *s408
+mov %1408,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip408,
+	`2. No saltar`, *s408
+skip 3
+*skip408
+return
+if %hisui_regard<5 goto *f410
+goto *f409
+*f409
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1409==1 skip 4
+gosub *s409
+mov %1409,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip409,
+	`2. No saltar`, *s409
+skip 3
+*skip409
+return
+if %clear_hisui!=0 goto *f411
+goto *f412
+*f410
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1410==1 skip 4
+gosub *s410
+mov %1410,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip410,
+	`2. No saltar`, *s410
+skip 3
+*skip410
+return
+`¿Tomarás la 'lección de Ciel-sensei'?
+select `1. Sí.`, *f529,
+	`2. No.`, *endofplay
+*f529
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1529==1 skip 4
+gosub *s529
+mov %1529,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip529,
+	`2. No saltar`, *s529
+skip 3
+*skip529
+return
+goto *endofplay
+*f411
+gosub *regard_update
+br
+select `1. Grito el nombre de Akiha.`, *f412,
+	`2. Grito el nombre de Kohaku.`, *f413
+*f412
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1412==1 skip 4
+gosub *s412
+mov %1412,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip412,
+	`2. No saltar`, *s412
+skip 3
+*skip412
+return
+inc %clear_hisui
+inc %cleared
+inc %clear_hisui_true
+`¿Tomarás la 'lección de Ciel-sensei'?
+select `1. Sí.`, *f530,
+	`2. No.`, *endofplay
+*f530
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1530==1 skip 4
+gosub *s530
+mov %1530,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip530,
+	`2. No saltar`, *s530
+skip 3
+*skip530
+return
+goto *endofplay
+*f413
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1413==1 skip 4
+gosub *s413
+mov %1413,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip413,
+	`2. No saltar`, *s413
+skip 3
+*skip413
+return
+inc %clear_hisui
+inc %cleared
+inc %clear_hisui_good
+`¿Tomarás la 'lección de Ciel-sensei'?
+select `1. Sí.`, *f531,
+	`2. No.`, *endofplay
+*f531
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1531==1 skip 4
+gosub *s531
+mov %1531,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip531,
+	`2. No saltar`, *s531
+skip 3
+*skip531
+return
+goto *endofplay
+*f416
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1416==1 skip 4
+gosub *s416
+mov %1416,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip416,
+	`2. No saltar`, *s416
+skip 3
+*skip416
+return
+select `1. Voy a ver a Kohaku-san.`, *f417,
+	`2. Reviso la habitación de Makihisa.`, *f418
+*f417
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1417==1 skip 4
+gosub *s417
+mov %1417,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip417,
+	`2. No saltar`, *s417
+skip 3
+*skip417
+return
+inc %flgR
+goto *f419
+*f418
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1418==1 skip 4
+gosub *s418
+mov %1418,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip418,
+	`2. No saltar`, *s418
+skip 3
+*skip418
+return
+goto *f419
+*f419
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1419==1 skip 4
+gosub *s419
+mov %1419,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip419,
+	`2. No saltar`, *s419
+skip 3
+*skip419
+return
+select `1. …… Ir a ver afuera.`, *f420,
+	`2. Volver a mi habitación.`, *f421
+*f420
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1420==1 skip 4
+gosub *s420
+mov %1420,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip420,
+	`2. No saltar`, *s420
+skip 3
+*skip420
+return
+goto *f422
+*f421
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1421==1 skip 4
+gosub *s421
+mov %1421,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip421,
+	`2. No saltar`, *s421
+skip 3
+*skip421
+return
+goto *f422
+*f422
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1422==1 skip 4
+gosub *s422
+mov %1422,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip422,
+	`2. No saltar`, *s422
+skip 3
+*skip422
+return
+if %flgR>=1 goto *f423
+goto *f424
+*f423
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1423==1 skip 4
+gosub *s423
+mov %1423,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip423,
+	`2. No saltar`, *s423
+skip 3
+*skip423
+return
+goto *f425
+*f424
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1424==1 skip 4
+gosub *s424
+mov %1424,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip424,
+	`2. No saltar`, *s424
+skip 3
+*skip424
+return
+goto *f425
+*f425
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1425==1 skip 4
+gosub *s425
+mov %1425,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip425,
+	`2. No saltar`, *s425
+skip 3
+*skip425
+return
+select `1. ----La mato ahora.`, *f426,
+	`2. ----Me retiro por ahora.`, *f427
+*f426
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1426==1 skip 4
+gosub *s426
+mov %1426,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip426,
+	`2. No saltar`, *s426
+skip 3
+*skip426
+return
+`¿Tomarás la 'lección de Ciel-sensei'?
+select `1. Sí.`, *f543,
+	`2. No.`, *endofplay
+*f543
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1543==1 skip 4
+gosub *s543
+mov %1543,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip543,
+	`2. No saltar`, *s543
+skip 3
+*skip543
+return
+goto *endofplay
+*f427
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1427==1 skip 4
+gosub *s427
+mov %1427,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip427,
+	`2. No saltar`, *s427
+skip 3
+*skip427
+return
+select `1. …… La mato antes de que note mi presencia.`, *f429,
+	`2. …… Espero a que pase y la ataco por la espalda.`, *f428
+*f428
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1428==1 skip 4
+gosub *s428
+mov %1428,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip428,
+	`2. No saltar`, *s428
+skip 3
+*skip428
+return
+`¿Tomarás la 'lección de Ciel-sensei'?
+select `1. Sí.`, *f544,
+	`2. No.`, *endofplay
+*f544
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1544==1 skip 4
+gosub *s544
+mov %1544,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip544,
+	`2. No saltar`, *s544
+skip 3
+*skip544
+return
+goto *endofplay
+*f429
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1429==1 skip 4
+gosub *s429
+mov %1429,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip429,
+	`2. No saltar`, *s429
+skip 3
+*skip429
+return
+inc %clear_kohaku
+inc %cleared
+inc %clear_kohaku_true
+`¿Tomarás la 'lección de Ciel-sensei'?
+select `1. Sí.`, *f545,
+	`2. No.`, *endofplay
+*f545
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1545==1 skip 4
+gosub *s545
+mov %1545,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip545,
+	`2. No saltar`, *s545
+skip 3
+*skip545
+return
+goto *endofplay
+*f51
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1051==1 skip 4
+gosub *s51
+mov %1051,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip51,
+	`2. No saltar`, *s51
+skip 3
+*skip51
+return
+select `1. Saludo a Akiha.`, *f54,
+	`2. Saludo a Kohaku-san.`, *f55,
+	`3. Saludo a ambas.`, *f56
+*f54
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1054==1 skip 4
+gosub *s54
+mov %1054,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip54,
+	`2. No saltar`, *s54
+skip 3
+*skip54
+return
+goto *f57
+*f55
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1055==1 skip 4
+gosub *s55
+mov %1055,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip55,
+	`2. No saltar`, *s55
+skip 3
+*skip55
+return
+goto *f57
+*f56
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1056==1 skip 4
+gosub *s56
+mov %1056,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip56,
+	`2. No saltar`, *s56
+skip 3
+*skip56
+return
+goto *f57
+*f57
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1057==1 skip 4
+gosub *s57
+mov %1057,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip57,
+	`2. No saltar`, *s57
+skip 3
+*skip57
+return
+if %ciel_regard>=3 goto *f59
+goto *f58
+*f58
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1058==1 skip 4
+gosub *s58
+mov %1058,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip58,
+	`2. No saltar`, *s58
+skip 3
+*skip58
+return
+select `1. En el salón de clases.`, *f60,
+	`2. Voy a la cafetería.`, *f61
+*f59
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1059==1 skip 4
+gosub *s59
+mov %1059,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip59,
+	`2. No saltar`, *s59
+skip 3
+*skip59
+return
+select `1. En el salón de clases.`, *f62,
+	`2. Voy a la cafetería.`, *f63,
+	`3. Voy a la habitación de la ceremonia del té.`, *f64
+*f60
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1060==1 skip 4
+gosub *s60
+mov %1060,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip60,
+	`2. No saltar`, *s60
+skip 3
+*skip60
+return
+goto *f65
+*f61
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1061==1 skip 4
+gosub *s61
+mov %1061,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip61,
+	`2. No saltar`, *s61
+skip 3
+*skip61
+return
+goto *f65
+*f62
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1062==1 skip 4
+gosub *s62
+mov %1062,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip62,
+	`2. No saltar`, *s62
+skip 3
+*skip62
+return
+goto *f65
+*f63
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1063==1 skip 4
+gosub *s63
+mov %1063,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip63,
+	`2. No saltar`, *s63
+skip 3
+*skip63
+return
+goto *f65
+*f64
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1064==1 skip 4
+gosub *s64
+mov %1064,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip64,
+	`2. No saltar`, *s64
+skip 3
+*skip64
+return
+inc %ciel_regard
+inc %flg1
+goto *f65
+*f65
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1065==1 skip 4
+gosub *s65
+mov %1065,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip65,
+	`2. No saltar`, *s65
+skip 3
+*skip65
+return
+select `1. Esto es sólo un mal sueño.`, *f66,
+	`2. Esto es, sin duda alguna, realidad labrada por mis propias manos.`, *f67
+*f66
+gosub *regard_update
+if %ciel_regard>=4 goto *f68
+!sd
+if %sceneskip==1 && %1066==1 skip 4
+gosub *s66
+mov %1066,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip66,
+	`2. No saltar`, *s66
+skip 3
+*skip66
+return
+goto *f69
+*f67
+gosub *regard_update
+if %ciel_regard>=2 goto *f68
+!sd
+if %sceneskip==1 && %1067==1 skip 4
+gosub *s67
+mov %1067,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip67,
+	`2. No saltar`, *s67
+skip 3
+*skip67
+return
+goto *f69
+*f68
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1068==1 skip 4
+gosub *s68
+mov %1068,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip68,
+	`2. No saltar`, *s68
+skip 3
+*skip68
+return
+add %ciel_regard,2
+goto *f74
+*f204
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1204==1 skip 4
+gosub *s204
+mov %1204,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip204,
+	`2. No saltar`, *s204
+skip 3
+*skip204
+return
+inc %flgP
+select `1. Saludo a Akiha.`, *f304,
+	`2. Saludo a Kohaku-san.`, *f123,
+	`3. Saludo a ambas.`, *f124
+*f205
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1205==1 skip 4
+gosub *s205
+mov %1205,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip205,
+	`2. No saltar`, *s205
+skip 3
+*skip205
+return
+select `1. Saludo a Akiha.`, *f304,
+	`2. Saludo a Kohaku-san.`, *f123,
+	`3. Saludo a ambas.`, *f124
+*f304
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1304==1 skip 4
+gosub *s304
+mov %1304,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip304,
+	`2. No saltar`, *s304
+skip 3
+*skip304
+return
+inc %akiha_regard
+goto *f206
+*f123
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1123==1 skip 4
+gosub *s123
+mov %1123,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip123,
+	`2. No saltar`, *s123
+skip 3
+*skip123
+return
+inc %kohaku_regard
+goto *f206
+*f124
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1124==1 skip 4
+gosub *s124
+mov %1124,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip124,
+	`2. No saltar`, *s124
+skip 3
+*skip124
+return
+goto *f206
+*f206
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1206==1 skip 4
+gosub *s206
+mov %1206,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip206,
+	`2. No saltar`, *s206
+skip 3
+*skip206
+return
+select `1. Pregunto por Yumizuka Satsuki.`, *f207,
+	`2. …… Me quedo sentado en silencio.`, *f208
+*f207
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1207==1 skip 4
+gosub *s207
+mov %1207,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip207,
+	`2. No saltar`, *s207
+skip 3
+*skip207
+return
+goto *f208half
+*f208
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1208==1 skip 4
+gosub *s208
+mov %1208,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip208,
+	`2. No saltar`, *s208
+skip 3
+*skip208
+return
+goto *f208half
+*f208half
+if %flgP>=1 goto *f209
+goto *f210
+*f209
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1209==1 skip 4
+gosub *s209
+mov %1209,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip209,
+	`2. No saltar`, *s209
+skip 3
+*skip209
+return
+goto *f209a
+*f209a
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1709==1 skip 4
+gosub *s209a
+mov %1709,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip209a,
+	`2. No saltar`, *s209a
+skip 3
+*skip209a
+return
+goto *f211
+*f210
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1210==1 skip 4
+gosub *s210
+mov %1210,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip210,
+	`2. No saltar`, *s210
+skip 3
+*skip210
+return
+select `1. Ciel-senpai tiene razón.`, *f209a,
+	`2. …… No, en verdad no me siento bien.`, *f212
+*f212
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1212==1 skip 4
+gosub *s212
+mov %1212,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip212,
+	`2. No saltar`, *s212
+skip 3
+*skip212
+return
+select `1. Ir a ver a Hisui.`, *f214,
+	`2. Ayudar a Kohaku-san.`, *f213,
+	`3. Quedarme en mi habitación.`, *f215
+*f213
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1213==1 skip 4
+gosub *s213
+mov %1213,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip213,
+	`2. No saltar`, *s213
+skip 3
+*skip213
+return
+inc %kohaku_regard
+goto *f216
+*f214
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1214==1 skip 4
+gosub *s214
+mov %1214,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip214,
+	`2. No saltar`, *s214
+skip 3
+*skip214
+return
+inc %hisui_regard
+goto *f216
+*f215
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1215==1 skip 4
+gosub *s215
+mov %1215,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip215,
+	`2. No saltar`, *s215
+skip 3
+*skip215
+return
+goto *f216
+*f216
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1216==1 skip 4
+gosub *s216
+mov %1216,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip216,
+	`2. No saltar`, *s216
+skip 3
+*skip216
+return
+goto *f211
+*f211
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1211==1 skip 4
+gosub *s211
+mov %1211,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip211,
+	`2. No saltar`, *s211
+skip 3
+*skip211
+return
+select `1. Voy a ver.`, *f211half,
+	`2. No voy a ver.`, *f234
+*f211half
+if %flgP>=1 goto *f217
+goto *f218
+*f217
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1217==1 skip 4
+gosub *s217
+mov %1217,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip217,
+	`2. No saltar`, *s217
+skip 3
+*skip217
+return
+goto *f235
+*f218
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1218==1 skip 4
+gosub *s218
+mov %1218,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip218,
+	`2. No saltar`, *s218
+skip 3
+*skip218
+return
+goto *f236
+*f234
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1234==1 skip 4
+gosub *s234
+mov %1234,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip234,
+	`2. No saltar`, *s234
+skip 3
+*skip234
+return
+`¿Tomarás la 'lección de Ciel-sensei'?
+select `1. Sí.`, *f532,
+	`2. No.`, *endofplay
+*f532
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1532==1 skip 4
+gosub *s532
+mov %1532,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip532,
+	`2. No saltar`, *s532
+skip 3
+*skip532
+return
+goto *endofplay
+*f69
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1069==1 skip 4
+gosub *s69
+mov %1069,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip69,
+	`2. No saltar`, *s69
+skip 3
+*skip69
+return
+select `1. Hablo sobre Akiha.`, *f70,
+	`2. Hablo sobre Kohaku-san.`, *f71,
+	`3. Hablo sobre la mansión.`, *f72
+*f70
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1070==1 skip 4
+gosub *s70
+mov %1070,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip70,
+	`2. No saltar`, *s70
+skip 3
+*skip70
+return
+goto *f73
+*f71
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1071==1 skip 4
+gosub *s71
+mov %1071,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip71,
+	`2. No saltar`, *s71
+skip 3
+*skip71
+return
+goto *f73
+*f72
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1072==1 skip 4
+gosub *s72
+mov %1072,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip72,
+	`2. No saltar`, *s72
+skip 3
+*skip72
+return
+goto *f73
+*f73
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1073==1 skip 4
+gosub *s73
+mov %1073,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip73,
+	`2. No saltar`, *s73
+skip 3
+*skip73
+return
+goto *f75
+*f74
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1074==1 skip 4
+gosub *s74
+mov %1074,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip74,
+	`2. No saltar`, *s74
+skip 3
+*skip74
+return
+inc %flg2
+goto *f75
+*f75
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1075==1 skip 4
+gosub *s75
+mov %1075,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip75,
+	`2. No saltar`, *s75
+skip 3
+*skip75
+return
+select `1. …… Cooperaré.`, *f76,
+	`2. No, no cooperaré.`, *f77,
+	`3. Escapo de alguna forma.`, *f78
+*f76
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1076==1 skip 4
+gosub *s76
+mov %1076,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip76,
+	`2. No saltar`, *s76
+skip 3
+*skip76
+return
+inc %ark_regard
+if %flg2>=1 goto *f79
+goto *f80
+*f77
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1077==1 skip 4
+gosub *s77
+mov %1077,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip77,
+	`2. No saltar`, *s77
+skip 3
+*skip77
+return
+if %flg2>=1 goto *f79
+goto *f80
+*f78
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1078==1 skip 4
+gosub *s78
+mov %1078,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip78,
+	`2. No saltar`, *s78
+skip 3
+*skip78
+return
+inc %flg3
+if %flg2>=1 goto *f79
+goto *f80
+*f79
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1079==1 skip 4
+gosub *s79
+mov %1079,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip79,
+	`2. No saltar`, *s79
+skip 3
+*skip79
+return
+goto *f80
+*f80
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1080==1 skip 4
+gosub *s80
+mov %1080,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip80,
+	`2. No saltar`, *s80
+skip 3
+*skip80
+return
+select `1. Debería escapar después de todo.`, *f84,
+	`2. …… A pesar de todo, no puedo dejarla sola.`, *f81
+*f81
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1081==1 skip 4
+gosub *s81
+mov %1081,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip81,
+	`2. No saltar`, *s81
+skip 3
+*skip81
+return
+inc %ark_regard
+select `1. …… Bien, pero sólo por un momento.`, *f82,
+	`2. …… No. Tengo un mal presentimiento sobre esto.`, *f83
+*f82
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1082==1 skip 4
+gosub *s82
+mov %1082,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip82,
+	`2. No saltar`, *s82
+skip 3
+*skip82
+return
+inc %ark_regard
+goto *f88
+*f83
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1083==1 skip 4
+gosub *s83
+mov %1083,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip83,
+	`2. No saltar`, *s83
+skip 3
+*skip83
+return
+goto *f88
+*f84
+!sd
+if %sceneskip==1 && %1084==1 skip 4
+gosub *s84
+mov %1084,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip84,
+	`2. No saltar`, *s84
+skip 3
+*skip84
+return
+dec %ark_regard
+gosub *regard_update
+if %flg3>=1 goto *f86
+select `1. Creo que regresaré a la mansión.`, *f86,
+	`2. Creo que regresaré al hotel.`, *f87
+*f86
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1086==1 skip 4
+gosub *s86
+mov %1086,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip86,
+	`2. No saltar`, *s86
+skip 3
+*skip86
+return
+`¿Tomarás la 'lección de Ciel-sensei'?
+select `1. Sí.`, *f511,
+	`2. No.`, *endofplay
+*f511
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1511==1 skip 4
+gosub *s511
+mov %1511,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip511,
+	`2. No saltar`, *s511
+skip 3
+*skip511
+return
+goto *endofplay
+*f87
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1087==1 skip 4
+gosub *s87
+mov %1087,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip87,
+	`2. No saltar`, *s87
+skip 3
+*skip87
+return
+goto *f88
+*f88
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1088==1 skip 4
+gosub *s88
+mov %1088,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip88,
+	`2. No saltar`, *s88
+skip 3
+*skip88
+return
+select `1. ---Debería ir a investigar qué está sucediendo afuera.`, *f90,
+	`2. Me quedaré dentro de la habitación y montaré guardia.`, *f85
+*f90
+gosub *regard_update
+if %ciel_regard>%ark_regard goto *f91
+!sd
+if %sceneskip==1 && %1090==1 skip 4
+gosub *s90
+mov %1090,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip90,
+	`2. No saltar`, *s90
+skip 3
+*skip90
+return
+goto *f94
+*f91
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1091==1 skip 4
+gosub *s91
+mov %1091,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip91,
+	`2. No saltar`, *s91
+skip 3
+*skip91
+return
+if %flg2>=1 goto *f93
+goto *f92
+*f85
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1085==1 skip 4
+gosub *s85
+mov %1085,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip85,
+	`2. No saltar`, *s85
+skip 3
+*skip85
+return
+`¿Tomarás la 'lección de Ciel-sensei'?
+select `1. Sí.`, *f512,
+	`2. No.`, *endofplay
+*f512
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1512==1 skip 4
+gosub *s512
+mov %1512,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip512,
+	`2. No saltar`, *s512
+skip 3
+*skip512
+return
+goto *endofplay
+*f92
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1092==1 skip 4
+gosub *s92
+mov %1092,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip92,
+	`2. No saltar`, *s92
+skip 3
+*skip92
+return
+`¿Tomarás la 'lección de Ciel-sensei'?
+select `1. Sí.`, *f513,
+	`2. No.`, *endofplay
+*f513
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1513==1 skip 4
+gosub *s513
+mov %1513,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip513,
+	`2. No saltar`, *s513
+skip 3
+*skip513
+return
+goto *endofplay
+*f93
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1093==1 skip 4
+gosub *s93
+mov %1093,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip93,
+	`2. No saltar`, *s93
+skip 3
+*skip93
+return
+goto *f98
+*f235
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1235==1 skip 4
+gosub *s235
+mov %1235,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip235,
+	`2. No saltar`, *s235
+skip 3
+*skip235
+return
+select `1. Voy a buscar a Yumizuka.`, *f237,
+	`2. La busco alrededor de la escuela.`, *f238,
+	`3. La busco alrededor de la ciudad.`, *f239
+*f236
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1236==1 skip 4
+gosub *s236
+mov %1236,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip236,
+	`2. No saltar`, *s236
+skip 3
+*skip236
+return
+goto *f242half
+*f237
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1237==1 skip 4
+gosub *s237
+mov %1237,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip237,
+	`2. No saltar`, *s237
+skip 3
+*skip237
+return
+goto *f240
+*f238
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1238==1 skip 4
+gosub *s238
+mov %1238,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip238,
+	`2. No saltar`, *s238
+skip 3
+*skip238
+return
+goto *f240
+*f239
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1239==1 skip 4
+gosub *s239
+mov %1239,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip239,
+	`2. No saltar`, *s239
+skip 3
+*skip239
+return
+goto *f240
+*f240
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1240==1 skip 4
+gosub *s240
+mov %1240,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip240,
+	`2. No saltar`, *s240
+skip 3
+*skip240
+return
+select `1. Voy a bucar a Yumizuka.`, *f241,
+	`2. No puedo hacer algo tan peligroso.`, *f242
+*f241
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1241==1 skip 4
+gosub *s241
+mov %1241,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip241,
+	`2. No saltar`, *s241
+skip 3
+*skip241
+return
+goto *f242half
+*f242
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1242==1 skip 4
+gosub *s242
+mov %1242,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip242,
+	`2. No saltar`, *s242
+skip 3
+*skip242
+return
+inc %flgK
+goto *f242half
+*f242half
+select `1. Me gusta.`, *f243,
+	`2. La odio.`, *f290,
+	`3. No puedo responder.`, *f291
+*f243
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1243==1 skip 4
+gosub *s243
+mov %1243,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip243,
+	`2. No saltar`, *s243
+skip 3
+*skip243
+return
+goto *f291half
+*f290
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1290==1 skip 4
+gosub *s290
+mov %1290,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip290,
+	`2. No saltar`, *s290
+skip 3
+*skip290
+return
+goto *f291half
+*f291
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1291==1 skip 4
+gosub *s291
+mov %1291,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip291,
+	`2. No saltar`, *s291
+skip 3
+*skip291
+return
+goto *f291half
+*f291half
+if %flgP>=1 goto *f312
+goto *f313
+*f312
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1312==1 skip 4
+gosub *s312
+mov %1312,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip312,
+	`2. No saltar`, *s312
+skip 3
+*skip312
+return
+goto *f312a
+*f312a
+gosub *regard_update
+if %flgK>=1 goto *f314
+!sd
+if %sceneskip==1 && %1812==1 skip 4
+gosub *s312a
+mov %1812,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip312a,
+	`2. No saltar`, *s312a
+skip 3
+*skip312a
+return
+goto *f305
+*f313
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1313==1 skip 4
+gosub *s313
+mov %1313,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip313,
+	`2. No saltar`, *s313
+skip 3
+*skip313
+return
+if %hisui_regard>=%kohaku_regard goto *f315
+goto *f316
+*f314
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1314==1 skip 4
+gosub *s314
+mov %1314,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip314,
+	`2. No saltar`, *s314
+skip 3
+*skip314
+return
+`¿Tomarás la 'lección de Ciel-sensei'?
+select `1. Sí.`, *f533,
+	`2. No.`, *endofplay
+*f533
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1533==1 skip 4
+gosub *s533
+mov %1533,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip533,
+	`2. No saltar`, *s533
+skip 3
+*skip533
+return
+goto *endofplay
+*f315
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1315==1 skip 4
+gosub *s315
+mov %1315,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip315,
+	`2. No saltar`, *s315
+skip 3
+*skip315
+return
+goto *f306
+*f316
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1316==1 skip 4
+gosub *s316
+mov %1316,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip316,
+	`2. No saltar`, *s316
+skip 3
+*skip316
+return
+goto *f306
+*f94
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1094==1 skip 4
+gosub *s94
+mov %1094,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip94,
+	`2. No saltar`, *s94
+skip 3
+*skip94
+return
+select `1. Quisiera negarme, pero---`, *f95,
+	`2. No, de ninguna manera podría enfrentarme a un monstruo como ése.`, *f96
+*f95
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1095==1 skip 4
+gosub *s95
+mov %1095,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip95,
+	`2. No saltar`, *s95
+skip 3
+*skip95
+return
+inc %ark_regard
+goto *f97
+*f96
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1096==1 skip 4
+gosub *s96
+mov %1096,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip96,
+	`2. No saltar`, *s96
+skip 3
+*skip96
+return
+goto *f97
+*f97
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1097==1 skip 4
+gosub *s97
+mov %1097,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip97,
+	`2. No saltar`, *s97
+skip 3
+*skip97
+return
+select `1. Corro hacia Nrvnqsr.`, *f101,
+	`2. …… No, todavía es demasiado pronto.`, *f99
+*f98
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1098==1 skip 4
+gosub *s98
+mov %1098,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip98,
+	`2. No saltar`, *s98
+skip 3
+*skip98
+return
+select `1. Quisiera negarme, pero---`, *f95,
+	`2. No, de ninguna manera podría enfrentarme a un montruo como ése.`, *f96
+*f99
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1099==1 skip 4
+gosub *s99
+mov %1099,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip99,
+	`2. No saltar`, *s99
+skip 3
+*skip99
+return
+select `1. Corro hacia Nrvnqsr.`, *f101,
+	`2. …… Todavía es muy pronto.`, *f100
+*f100
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1100==1 skip 4
+gosub *s100
+mov %1100,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip100,
+	`2. No saltar`, *s100
+skip 3
+*skip100
+return
+`¿Tomarás la 'lección de Ciel-sensei'?
+select `1. Sí.`, *f514,
+	`2. No.`, *endofplay
+*f514
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1514==1 skip 4
+gosub *s514
+mov %1514,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip514,
+	`2. No saltar`, *s514
+skip 3
+*skip514
+return
+goto *endofplay
+*f101
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1101==1 skip 4
+gosub *s101
+mov %1101,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip101,
+	`2. No saltar`, *s101
+skip 3
+*skip101
+return
+select `1. Lo soportaré por ahora y esperaré mi oportunidad.`, *f102,
+	`2. Tengo que destruir el cuerpo principal.`, *f103
+*f102
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1102==1 skip 4
+gosub *s102
+mov %1102,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip102,
+	`2. No saltar`, *s102
+skip 3
+*skip102
+return
+goto *f104
+*f103
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1103==1 skip 4
+gosub *s103
+mov %1103,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip103,
+	`2. No saltar`, *s103
+skip 3
+*skip103
+return
+goto *f104
+*f104
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1104==1 skip 4
+gosub *s104
+mov %1104,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip104,
+	`2. No saltar`, *s104
+skip 3
+*skip104
+return
+if %flg2>=1 goto *f106
+goto *f105
+*f105
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1105==1 skip 4
+gosub *s105
+mov %1105,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip105,
+	`2. No saltar`, *s105
+skip 3
+*skip105
+return
+goto *f108
+*f106
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1106==1 skip 4
+gosub *s106
+mov %1106,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip106,
+	`2. No saltar`, *s106
+skip 3
+*skip106
+return
+goto *f200
+*f305
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1305==1 skip 4
+gosub *s305
+mov %1305,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip305,
+	`2. No saltar`, *s305
+skip 3
+*skip305
+return
+select `1. No, en verdad no estoy de humor.`, *f303,
+	`2. Por supuesto que acepto.`, *f317
+*f306
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1306==1 skip 4
+gosub *s306
+mov %1306,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip306,
+	`2. No saltar`, *s306
+skip 3
+*skip306
+return
+if %kohaku_regard>=3 goto *f317
+select `1. No, en verdad no estoy de humor.`, *f414,
+	`2. Por supuesto que acepto.`, *f317
+*f303
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1303==1 skip 4
+gosub *s303
+mov %1303,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip303,
+	`2. No saltar`, *s303
+skip 3
+*skip303
+return
+inc %flgH
+select `1. Le pregunto por qué se transfirió a esta escuela.`, *f326,
+	`2. …… Debería presentarle a Arihiko.`, *f327,
+	`3. ¿Estuvo aparentando ser ingenua hasta ahora?`, *f328
+*f414
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1414==1 skip 4
+gosub *s414
+mov %1414,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip414,
+	`2. No saltar`, *s414
+skip 3
+*skip414
+return
+goto *f386
+*f317
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1317==1 skip 4
+gosub *s317
+mov %1317,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip317,
+	`2. No saltar`, *s317
+skip 3
+*skip317
+return
+if %flgP>=1 goto *f320
+select `1. Ayudar a Kohaku-san.`, *f318,
+       `2. Ayudar a Hisui.`, *f319
+*f318
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1318==1 skip 4
+gosub *s318
+mov %1318,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip318,
+	`2. No saltar`, *s318
+skip 3
+*skip318
+return
+goto *f321
+*f319
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1319==1 skip 4
+gosub *s319
+mov %1319,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip319,
+	`2. No saltar`, *s319
+skip 3
+*skip319
+return
+inc %hisui_regard
+goto *f321
+*f320
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1320==1 skip 4
+gosub *s320
+mov %1320,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip320,
+	`2. No saltar`, *s320
+skip 3
+*skip320
+return
+inc %akiha_regard
+goto *f321
+*f321
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1321==1 skip 4
+gosub *s321
+mov %1321,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip321,
+	`2. No saltar`, *s321
+skip 3
+*skip321
+return
+if %flgP!=0 goto *f322
+if %kohaku_regard>%hisui_regard && %clear_hisui!=0 goto *f324
+goto *f323
+*f322
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1322==1 skip 4
+gosub *s322
+mov %1322,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip322,
+	`2. No saltar`, *s322
+skip 3
+*skip322
+return
+goto *f325
+*f323
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1323==1 skip 4
+gosub *s323
+mov %1323,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip323,
+	`2. No saltar`, *s323
+skip 3
+*skip323
+return
+inc %hisui_regard
+goto *f386
+*f324
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1324==1 skip 4
+gosub *s324
+mov %1324,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip324,
+	`2. No saltar`, *s324
+skip 3
+*skip324
+return
+goto *f416
+*f108
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1108==1 skip 4
+gosub *s108
+mov %1108,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip108,
+	`2. No saltar`, *s108
+skip 3
+*skip108
+return
+select `1. No puedo explicar las circunstancias, así que al menos me disculparé.`, *f109,
+	`2. No puedo explicar las circunstancias, así que mentiré de alguna forma.`, *f110,
+	`3. No, debería decir la verdad.`, *f111
+*f109
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1109==1 skip 4
+gosub *s109
+mov %1109,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip109,
+	`2. No saltar`, *s109
+skip 3
+*skip109
+return
+goto *f112
+*f110
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1110==1 skip 4
+gosub *s110
+mov %1110,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip110,
+	`2. No saltar`, *s110
+skip 3
+*skip110
+return
+goto *f112
+*f111
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1111==1 skip 4
+gosub *s111
+mov %1111,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip111,
+	`2. No saltar`, *s111
+skip 3
+*skip111
+return
+goto *f112
+*f112
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1112==1 skip 4
+gosub *s112
+mov %1112,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip112,
+	`2. No saltar`, *s112
+skip 3
+*skip112
+return
+select `1. …… Adentrarme en la ciudad y buscarla.`, *f113,
+	`2. Distraerme en el salón de clases.`, *f114,
+	`3. Regresar a la mansión y descansar.`, *f115
+*f113
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1113==1 skip 4
+gosub *s113
+mov %1113,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip113,
+	`2. No saltar`, *s113
+skip 3
+*skip113
+return
+inc %ark_regard
+goto *f116
+*f114
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1114==1 skip 4
+gosub *s114
+mov %1114,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip114,
+	`2. No saltar`, *s114
+skip 3
+*skip114
+return
+goto *f116
+*f115
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1115==1 skip 4
+gosub *s115
+mov %1115,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip115,
+	`2. No saltar`, *s115
+skip 3
+*skip115
+return
+goto *f116
+*f116
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1116==1 skip 4
+gosub *s116
+mov %1116,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip116,
+	`2. No saltar`, *s116
+skip 3
+*skip116
+return
+goto *f116a
+*f116a
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1616==1 skip 4
+gosub *s116a
+mov %1616,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip116a,
+	`2. No saltar`, *s116a
+skip 3
+*skip116a
+return
+if %cleared!=0 goto *f117
+select `1. Podría ser Arcueid.`, *f118,
+	`2. Podría ser Ciel-Senpai.`, *f119,
+	`3. Podría ser Akiha.`, *f120
+*f117
+gosub *regard_update
+select `1. Podría ser Arcueid.`, *f118,
+	`2. Podría ser Ciel-Senpai.`, *f119,
+	`3. Podría ser Akiha.`, *f120,
+	`4. Podría ser Hisui.`, *f121,
+	`5. Podría ser Kohaku-san.`, *f122
+*f118
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1118==1 skip 4
+gosub *s118
+mov %1118,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip118,
+	`2. No saltar`, *s118
+skip 3
+*skip118
+return
+add %ark_regard,3
+goto *f125
+*f119
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1119==1 skip 4
+gosub *s119
+mov %1119,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip119,
+	`2. No saltar`, *s119
+skip 3
+*skip119
+return
+add %ciel_regard,3
+goto *f126
+*f120
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1120==1 skip 4
+gosub *s120
+mov %1120,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip120,
+	`2. No saltar`, *s120
+skip 3
+*skip120
+return
+add %akiha_regard,3
+goto *f128
+*f121
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1121==1 skip 4
+gosub *s121
+mov %1121,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip121,
+	`2. No saltar`, *s121
+skip 3
+*skip121
+return
+goto *f129
+*f122
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1122==1 skip 4
+gosub *s122
+mov %1122,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip122,
+	`2. No saltar`, *s122
+skip 3
+*skip122
+return
+goto *f127
+*f200
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1200==1 skip 4
+gosub *s200
+mov %1200,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip200,
+	`2. No saltar`, *s200
+skip 3
+*skip200
+return
+select `1. Me discuparé.`, *f219,
+	`2. Intentaré engañarla.`, *f220,
+	`3. Diré la verdad.`, *f221
+*f219
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1219==1 skip 4
+gosub *s219
+mov %1219,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip219,
+	`2. No saltar`, *s219
+skip 3
+*skip219
+return
+goto *f222
+*f220
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1220==1 skip 4
+gosub *s220
+mov %1220,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip220,
+	`2. No saltar`, *s220
+skip 3
+*skip220
+return
+goto *f222
+*f221
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1221==1 skip 4
+gosub *s221
+mov %1221,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip221,
+	`2. No saltar`, *s221
+skip 3
+*skip221
+return
+goto *f222
+*f222
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1222==1 skip 4
+gosub *s222
+mov %1222,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip222,
+	`2. No saltar`, *s222
+skip 3
+*skip222
+return
+select `1. …… No, debe haber sido otra persona.`, *f223,
+	`2. Pregunto sobre anoche.`, *f224
+*f223
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1223==1 skip 4
+gosub *s223
+mov %1223,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip223,
+	`2. No saltar`, *s223
+skip 3
+*skip223
+return
+goto *f225
+*f224
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1224==1 skip 4
+gosub *s224
+mov %1224,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip224,
+	`2. No saltar`, *s224
+skip 3
+*skip224
+return
+inc %flgC
+goto *f225
+*f225
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1225==1 skip 4
+gosub *s225
+mov %1225,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip225,
+	`2. No saltar`, *s225
+skip 3
+*skip225
+return
+select `1. De acuerdo, comeré.`, *f226,
+	`2. De acuerdo, no comeré.`, *f227
+*f226
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1226==1 skip 4
+gosub *s226
+mov %1226,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip226,
+	`2. No saltar`, *s226
+skip 3
+*skip226
+return
+goto *f228
+*f227
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1227==1 skip 4
+gosub *s227
+mov %1227,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip227,
+	`2. No saltar`, *s227
+skip 3
+*skip227
+return
+inc %flgD
+goto *f228
+*f228
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1228==1 skip 4
+gosub *s228
+mov %1228,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip228,
+	`2. No saltar`, *s228
+skip 3
+*skip228
+return
+if %flgD>=1 goto *f230
+goto *f229
+*f229
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1229==1 skip 4
+gosub *s229
+mov %1229,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip229,
+	`2. No saltar`, *s229
+skip 3
+*skip229
+return
+goto *f233
+*f230
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1230==1 skip 4
+gosub *s230
+mov %1230,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip230,
+	`2. No saltar`, *s230
+skip 3
+*skip230
+return
+select `1. No. Me niego a hacer algo tan embarazoso.`, *f231,
+	`2. No me importa. Asentiré.`, *f232
+*f231
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1231==1 skip 4
+gosub *s231
+mov %1231,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip231,
+	`2. No saltar`, *s231
+skip 3
+*skip231
+return
+goto *f233
+*f232
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1232==1 skip 4
+gosub *s232
+mov %1232,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip232,
+	`2. No saltar`, *s232
+skip 3
+*skip232
+return
+inc %ciel_regard
+goto *f233
+*f233
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1233==1 skip 4
+gosub *s233
+mov %1233,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip233,
+	`2. No saltar`, *s233
+skip 3
+*skip233
+return
+inc %flgE
+goto *f116a
+*f325
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1325==1 skip 4
+gosub *s325
+mov %1325,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip325,
+	`2. No saltar`, *s325
+skip 3
+*skip325
+return
+select `1. Le pregunto por qué se transfirió a esta escuela.`, *f326,
+	`2. …… Debería presentarle a Arihiko.`, *f327,
+	`3. ¿Estuvo aparentando ser ingenua hasta ahora?`, *f328
+*f326
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1326==1 skip 4
+gosub *s326
+mov %1326,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip326,
+	`2. No saltar`, *s326
+skip 3
+*skip326
+return
+inc %flgL
+goto *f329
+*f327
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1327==1 skip 4
+gosub *s327
+mov %1327,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip327,
+	`2. No saltar`, *s327
+skip 3
+*skip327
+return
+goto *f329
+*f328
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1328==1 skip 4
+gosub *s328
+mov %1328,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip328,
+	`2. No saltar`, *s328
+skip 3
+*skip328
+return
+goto *f329
+*f329
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1329==1 skip 4
+gosub *s329
+mov %1329,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip329,
+	`2. No saltar`, *s329
+skip 3
+*skip329
+return
+select `1. Ir a casa solo.`, *f331,
+	`2. Ir al salón de Akiha.`, *f330
+*f330
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1330==1 skip 4
+gosub *s330
+mov %1330,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip330,
+	`2. No saltar`, *s330
+skip 3
+*skip330
+return
+inc %akiha_regard
+goto *f331half
+*f331
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1331==1 skip 4
+gosub *s331
+mov %1331,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip331,
+	`2. No saltar`, *s331
+skip 3
+*skip331
+return
+goto *f331half
+*f331half
+if %flgL>=1 goto *f333
+goto *f332
+*f332
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1332==1 skip 4
+gosub *s332
+mov %1332,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip332,
+	`2. No saltar`, *s332
+skip 3
+*skip332
+return
+goto *f334
+*f333
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1333==1 skip 4
+gosub *s333
+mov %1333,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip333,
+	`2. No saltar`, *s333
+skip 3
+*skip333
+return
+goto *f334
+*f334
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1334==1 skip 4
+gosub *s334
+mov %1334,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip334,
+	`2. No saltar`, *s334
+skip 3
+*skip334
+return
+select `1. Ir a la sala de estar.`, *f335,
+	`2. Ir al edificio separado.`, *f336,
+	`3. Quedarme aquí hasta la cena.`, *f337
+*f335
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1335==1 skip 4
+gosub *s335
+mov %1335,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip335,
+	`2. No saltar`, *s335
+skip 3
+*skip335
+return
+goto *f338
+*f336
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1336==1 skip 4
+gosub *s336
+mov %1336,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip336,
+	`2. No saltar`, *s336
+skip 3
+*skip336
+return
+inc %flgN
+goto *f338
+*f337
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1337==1 skip 4
+gosub *s337
+mov %1337,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip337,
+	`2. No saltar`, *s337
+skip 3
+*skip337
+return
+inc %flgS
+goto *f338
+*f338
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1338==1 skip 4
+gosub *s338
+mov %1338,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip338,
+	`2. No saltar`, *s338
+skip 3
+*skip338
+return
+select `1. Voy al edificio separado.`, *f338a,
+	`2. Voy a dormir.`, *f338b
+*f338a
+if %flgN>=1 goto *f339
+goto *f340
+*f338b
+if %flgS>=1 goto *f341
+goto *f342
+*f339
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1339==1 skip 4
+gosub *s339
+mov %1339,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip339,
+	`2. No saltar`, *s339
+skip 3
+*skip339
+return
+goto *f343
+*f340
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1340==1 skip 4
+gosub *s340
+mov %1340,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip340,
+	`2. No saltar`, *s340
+skip 3
+*skip340
+return
+goto *f343
+*f341
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1341==1 skip 4
+gosub *s341
+mov %1341,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip341,
+	`2. No saltar`, *s341
+skip 3
+*skip341
+return
+inc %flgO
+goto *f343
+*f342
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1342==1 skip 4
+gosub *s342
+mov %1342,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip342,
+	`2. No saltar`, *s342
+skip 3
+*skip342
+return
+goto *f343
+*f386
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1386==1 skip 4
+gosub *s386
+mov %1386,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip386,
+	`2. No saltar`, *s386
+skip 3
+*skip386
+return
+select `1. Ir a ver a Hisui.`, *f387,
+	`2. Ayudar a Kohaku-san.`, *f388,
+	`3. Ir a la habitación de Akiha.`, *f389
+*f387
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1387==1 skip 4
+gosub *s387
+mov %1387,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip387,
+	`2. No saltar`, *s387
+skip 3
+*skip387
+return
+goto *f390
+*f388
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1388==1 skip 4
+gosub *s388
+mov %1388,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip388,
+	`2. No saltar`, *s388
+skip 3
+*skip388
+return
+goto *f390
+*f389
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1389==1 skip 4
+gosub *s389
+mov %1389,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip389,
+	`2. No saltar`, *s389
+skip 3
+*skip389
+return
+goto *f390
+*f390
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1390==1 skip 4
+gosub *s390
+mov %1390,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip390,
+	`2. No saltar`, *s390
+skip 3
+*skip390
+return
+goto *f391
+*f125
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1125==1 skip 4
+gosub *s125
+mov %1125,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip125,
+	`2. No saltar`, *s125
+skip 3
+*skip125
+return
+inc %flg4
+goto *f129
+*f126
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1126==1 skip 4
+gosub *s126
+mov %1126,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip126,
+	`2. No saltar`, *s126
+skip 3
+*skip126
+return
+inc %flg5
+goto *f129
+*f127
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1127==1 skip 4
+gosub *s127
+mov %1127,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip127,
+	`2. No saltar`, *s127
+skip 3
+*skip127
+return
+goto *f129
+*f128
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1128==1 skip 4
+gosub *s128
+mov %1128,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip128,
+	`2. No saltar`, *s128
+skip 3
+*skip128
+return
+goto *f129
+*f129
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1129==1 skip 4
+gosub *s129
+mov %1129,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip129,
+	`2. No saltar`, *s129
+skip 3
+*skip129
+return
+select `1. Iré al pasillo y hablaré con ella.`, *f130,
+	`2. No, probablemente no me concierne, la observaré desde aquí.`, *f131,
+	`3. ¡Una oportunidad! ¡La sorprenderé desde atrás!`, *f132
+*f130
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1130==1 skip 4
+gosub *s130
+mov %1130,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip130,
+	`2. No saltar`, *s130
+skip 3
+*skip130
+return
+goto *f133
+*f131
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1131==1 skip 4
+gosub *s131
+mov %1131,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip131,
+	`2. No saltar`, *s131
+skip 3
+*skip131
+return
+goto *f133
+*f132
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1132==1 skip 4
+gosub *s132
+mov %1132,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip132,
+	`2. No saltar`, *s132
+skip 3
+*skip132
+return
+goto *f133
+*f133
+gosub *regard_update
+if %flg5>=1 goto *f134
+!sd
+if %sceneskip==1 && %1133==1 skip 4
+gosub *s133
+mov %1133,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip133,
+	`2. No saltar`, *s133
+skip 3
+*skip133
+return
+goto *f135
+*f134
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1134==1 skip 4
+gosub *s134
+mov %1134,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip134,
+	`2. No saltar`, *s134
+skip 3
+*skip134
+return
+goto *f135
+*f135
+gosub *regard_update
+if %flgE>=1 goto *f244
+!sd
+if %sceneskip==1 && %1135==1 skip 4
+gosub *s135
+mov %1135,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip135,
+	`2. No saltar`, *s135
+skip 3
+*skip135
+return
+select `1. Busco a Arcueid sin rumbo fijo.`, *f138,
+	`2. Regreso a la mansión.`, *f136
+*f136
+gosub *regard_update
+if %ark_regard>=8 goto *f137
+!sd
+if %sceneskip==1 && %1136==1 skip 4
+gosub *s136
+mov %1136,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip136,
+	`2. No saltar`, *s136
+skip 3
+*skip136
+return
+inc %flg8
+goto *f139
+*f137
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1137==1 skip 4
+gosub *s137
+mov %1137,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip137,
+	`2. No saltar`, *s137
+skip 3
+*skip137
+return
+inc %ark_regard
+goto *f139
+*f138
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1138==1 skip 4
+gosub *s138
+mov %1138,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip138,
+	`2. No saltar`, *s138
+skip 3
+*skip138
+return
+inc %flg7
+goto *f139
+*f139
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1139==1 skip 4
+gosub *s139
+mov %1139,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip139,
+	`2. No saltar`, *s139
+skip 3
+*skip139
+return
+if %flg4>=1 goto *f140
+goto *f141
+*f140
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1140==1 skip 4
+gosub *s140
+mov %1140,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip140,
+	`2. No saltar`, *s140
+skip 3
+*skip140
+return
+goto *f142
+*f141
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1141==1 skip 4
+gosub *s141
+mov %1141,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip141,
+	`2. No saltar`, *s141
+skip 3
+*skip141
+return
+goto *f142
+*f142
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1142==1 skip 4
+gosub *s142
+mov %1142,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip142,
+	`2. No saltar`, *s142
+skip 3
+*skip142
+return
+goto *f143
+*f244
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1244==1 skip 4
+gosub *s244
+mov %1244,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip244,
+	`2. No saltar`, *s244
+skip 3
+*skip244
+return
+select `1. Sí, iré a la cafetería con Arihiko.`, *f245,
+	`2. No, aun si ella me odia, iré a ver a Senpai.`, *f246
+*f245
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1245==1 skip 4
+gosub *s245
+mov %1245,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip245,
+	`2. No saltar`, *s245
+skip 3
+*skip245
+return
+goto *f249
+*f246
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1246==1 skip 4
+gosub *s246
+mov %1246,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip246,
+	`2. No saltar`, *s246
+skip 3
+*skip246
+return
+if %flg1>=1 goto *f248
+goto *f247
+*f247
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1247==1 skip 4
+gosub *s247
+mov %1247,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip247,
+	`2. No saltar`, *s247
+skip 3
+*skip247
+return
+goto *f249
+*f248
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1248==1 skip 4
+gosub *s248
+mov %1248,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip248,
+	`2. No saltar`, *s248
+skip 3
+*skip248
+return
+inc %ciel_regard
+goto *f249
+*f249
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1249==1 skip 4
+gosub *s249
+mov %1249,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip249,
+	`2. No saltar`, *s249
+skip 3
+*skip249
+return
+select `1. Voy de vuelta a la mansión.`, *f250,
+	`2. Voy a la habitación de la ceremonia del té.`, *f251,
+	`3. Salgo a pasear por la ciudad.`, *f252
+*f250
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1250==1 skip 4
+gosub *s250
+mov %1250,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip250,
+	`2. No saltar`, *s250
+skip 3
+*skip250
+return
+goto *f253
+*f251
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1251==1 skip 4
+gosub *s251
+mov %1251,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip251,
+	`2. No saltar`, *s251
+skip 3
+*skip251
+return
+inc %flgI
+goto *f253
+*f252
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1252==1 skip 4
+gosub *s252
+mov %1252,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip252,
+	`2. No saltar`, *s252
+skip 3
+*skip252
+return
+goto *f253
+*f253
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1253==1 skip 4
+gosub *s253
+mov %1253,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip253,
+	`2. No saltar`, *s253
+skip 3
+*skip253
+return
+if %flg4>=1 goto *f254
+goto *f255
+*f254
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1254==1 skip 4
+gosub *s254
+mov %1254,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip254,
+	`2. No saltar`, *s254
+skip 3
+*skip254
+return
+goto *f256
+*f255
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1255==1 skip 4
+gosub *s255
+mov %1255,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip255,
+	`2. No saltar`, *s255
+skip 3
+*skip255
+return
+goto *f256
+*f256
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1256==1 skip 4
+gosub *s256
+mov %1256,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip256,
+	`2. No saltar`, *s256
+skip 3
+*skip256
+return
+select `1. No puedo dejar a Arcueid sola.`, *f257,
+	`2. Senpai es preciada para mí.`, *f258
+*f257
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1257==1 skip 4
+gosub *s257
+mov %1257,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip257,
+	`2. No saltar`, *s257
+skip 3
+*skip257
+return
+sub %ciel_regard,4
+goto *f259
+*f258
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1258==1 skip 4
+gosub *s258
+mov %1258,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip258,
+	`2. No saltar`, *s258
+skip 3
+*skip258
+return
+add %ciel_regard,3
+goto *f259
+*f259
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1259==1 skip 4
+gosub *s259
+mov %1259,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip259,
+	`2. No saltar`, *s259
+skip 3
+*skip259
+return
+goto *f260
+*f343
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1343==1 skip 4
+gosub *s343
+mov %1343,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip343,
+	`2. No saltar`, *s343
+skip 3
+*skip343
+return
+select `1. Me calmaré un poco, y luego iré a la sala de estar.`, *f344,
+	`2. Estoy bien, así que iré a la sala de estar.`, *f345,
+	`3. Debería descansar un poco más.`, *f346
+*f344
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1344==1 skip 4
+gosub *s344
+mov %1344,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip344,
+	`2. No saltar`, *s344
+skip 3
+*skip344
+return
+add %akiha_regard,2
+goto *f347
+*f345
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1345==1 skip 4
+gosub *s345
+mov %1345,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip345,
+	`2. No saltar`, *s345
+skip 3
+*skip345
+return
+inc %akiha_regard
+goto *f347
+*f346
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1346==1 skip 4
+gosub *s346
+mov %1346,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip346,
+	`2. No saltar`, *s346
+skip 3
+*skip346
+return
+goto *f347
+*f347
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1347==1 skip 4
+gosub *s347
+mov %1347,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip347,
+	`2. No saltar`, *s347
+skip 3
+*skip347
+return
+select `1. El uniforme que tiene ahora le queda mejor.`, *f348,
+	`2. El uniforme de nuestra escuela le quedaría mejor.`, *f349
+*f348
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1348==1 skip 4
+gosub *s348
+mov %1348,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip348,
+	`2. No saltar`, *s348
+skip 3
+*skip348
+return
+inc %akiha_regard
+goto *f350
+*f349
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1349==1 skip 4
+gosub *s349
+mov %1349,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip349,
+	`2. No saltar`, *s349
+skip 3
+*skip349
+return
+dec %akiha_regard
+goto *f350
+*f350
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1350==1 skip 4
+gosub *s350
+mov %1350,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip350,
+	`2. No saltar`, *s350
+skip 3
+*skip350
+return
+select `1. Voy a ayudar a Hisui.`, *f351,
+	`2. Voy a ayudar a Kohaku-san.`, *f352
+*f351
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1351==1 skip 4
+gosub *s351
+mov %1351,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip351,
+	`2. No saltar`, *s351
+skip 3
+*skip351
+return
+goto *f353
+*f352
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1352==1 skip 4
+gosub *s352
+mov %1352,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip352,
+	`2. No saltar`, *s352
+skip 3
+*skip352
+return
+goto *f353
+*f391
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1391==1 skip 4
+gosub *s391
+mov %1391,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip391,
+	`2. No saltar`, *s391
+skip 3
+*skip391
+return
+select `1. Hablar con ella al respecto.`, *f392,
+	`2. No hablar con ella al respecto.`, *f393
+*f392
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1392==1 skip 4
+gosub *s392
+mov %1392,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip392,
+	`2. No saltar`, *s392
+skip 3
+*skip392
+return
+goto *f394
+*f393
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1393==1 skip 4
+gosub *s393
+mov %1393,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip393,
+	`2. No saltar`, *s393
+skip 3
+*skip393
+return
+goto *f396
+*f394
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1394==1 skip 4
+gosub *s394
+mov %1394,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip394,
+	`2. No saltar`, *s394
+skip 3
+*skip394
+return
+select `1. Voy a la habitación de mi viejo.`, *f395,
+	`2. Me quedo en mi habitación.`, *f396
+*f395
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1395==1 skip 4
+gosub *s395
+mov %1395,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip395,
+	`2. No saltar`, *s395
+skip 3
+*skip395
+return
+select `1. Voy a la ciudad nocturna.`, *f397,
+	`2. Espero hasta el amanecer sin dormir.`, *f398
+*f396
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1396==1 skip 4
+gosub *s396
+mov %1396,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip396,
+	`2. No saltar`, *s396
+skip 3
+*skip396
+return
+`¿Tomarás la 'lección de Ciel-sensei'?
+select `1. Sí.`, *f528,
+	`2. No.`, *endofplay
+*f528
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1528==1 skip 4
+gosub *s528
+mov %1528,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip528,
+	`2. No saltar`, *s528
+skip 3
+*skip528
+return
+goto *endofplay
+*f397
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1397==1 skip 4
+gosub *s397
+mov %1397,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip397,
+	`2. No saltar`, *s397
+skip 3
+*skip397
+return
+goto *f399
+*f398
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1398==1 skip 4
+gosub *s398
+mov %1398,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip398,
+	`2. No saltar`, *s398
+skip 3
+*skip398
+return
+goto *f399
+*f143
+gosub *regard_update
+if %flg7>=1 goto *f144
+if %flg8>=1 goto *f145
+!sd
+if %sceneskip==1 && %1143==1 skip 4
+gosub *s143
+mov %1143,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip143,
+	`2. No saltar`, *s143
+skip 3
+*skip143
+return
+select `1. Debería suavizar las cosas con un alegre saludo.`, *f146,
+	`2. No haré algo estúpido, la saludaré con normalidad.`, *f147,
+	`3. No, no. Todo lo que puedo hacer es disculparme.`, *f148
+*f144
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1144==1 skip 4
+gosub *s144
+mov %1144,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip144,
+	`2. No saltar`, *s144
+skip 3
+*skip144
+return
+goto *f149
+*f145
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1145==1 skip 4
+gosub *s145
+mov %1145,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip145,
+	`2. No saltar`, *s145
+skip 3
+*skip145
+return
+goto *f149
+*f146
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1146==1 skip 4
+gosub *s146
+mov %1146,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip146,
+	`2. No saltar`, *s146
+skip 3
+*skip146
+return
+goto *f149
+*f147
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1147==1 skip 4
+gosub *s147
+mov %1147,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip147,
+	`2. No saltar`, *s147
+skip 3
+*skip147
+return
+goto *f149
+*f148
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1148==1 skip 4
+gosub *s148
+mov %1148,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip148,
+	`2. No saltar`, *s148
+skip 3
+*skip148
+return
+goto *f149
+*f149
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1149==1 skip 4
+gosub *s149
+mov %1149,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip149,
+	`2. No saltar`, *s149
+skip 3
+*skip149
+return
+select `1. Voy al patio ahora mismo.`, *f150,
+	`2. Rogaré que no haga nada hasta que terminen las clases.`, *f151,
+	`3. No me importa. La ignoraré.`, *f152
+*f150
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1150==1 skip 4
+gosub *s150
+mov %1150,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip150,
+	`2. No saltar`, *s150
+skip 3
+*skip150
+return
+inc %ark_regard
+goto *f153
+*f151
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1151==1 skip 4
+gosub *s151
+mov %1151,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip151,
+	`2. No saltar`, *s151
+skip 3
+*skip151
+return
+goto *f153
+*f152
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1152==1 skip 4
+gosub *s152
+mov %1152,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip152,
+	`2. No saltar`, *s152
+skip 3
+*skip152
+return
+goto *f153
+*f153
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1153==1 skip 4
+gosub *s153
+mov %1153,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip153,
+	`2. No saltar`, *s153
+skip 3
+*skip153
+return
+select `1. Aun así, le diré la verdad a Hisui.`, *f154,
+	`2. No, no puedo dejar que nadie sepa.`, *f155
+*f154
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1154==1 skip 4
+gosub *s154
+mov %1154,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip154,
+	`2. No saltar`, *s154
+skip 3
+*skip154
+return
+goto *f156
+*f155
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1155==1 skip 4
+gosub *s155
+mov %1155,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip155,
+	`2. No saltar`, *s155
+skip 3
+*skip155
+return
+inc %flg9
+goto *f156
+*f156
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1156==1 skip 4
+gosub *s156
+mov %1156,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip156,
+	`2. No saltar`, *s156
+skip 3
+*skip156
+return
+if %flg9>=1 goto *f158
+goto *f157
+*f157
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1157==1 skip 4
+gosub *s157
+mov %1157,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip157,
+	`2. No saltar`, *s157
+skip 3
+*skip157
+return
+goto *f159
+*f158
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1158==1 skip 4
+gosub *s158
+mov %1158,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip158,
+	`2. No saltar`, *s158
+skip 3
+*skip158
+return
+`¿Tomarás la 'lección de Ciel-sensei'?
+select `1. Sí.`, *f515,
+	`2. No.`, *endofplay
+*f515
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1515==1 skip 4
+gosub *s515
+mov %1515,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip515,
+	`2. No saltar`, *s515
+skip 3
+*skip515
+return
+goto *endofplay
+*f260
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1260==1 skip 4
+gosub *s260
+mov %1260,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip260,
+	`2. No saltar`, *s260
+skip 3
+*skip260
+return
+select `1. No, mejor voy a la sala de estar.`, *f261,
+	`2. Más que eso, debería ir a la escuela.`, *f262
+*f261
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1261==1 skip 4
+gosub *s261
+mov %1261,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip261,
+	`2. No saltar`, *s261
+skip 3
+*skip261
+return
+if %flgC==0&&%flgI==0 goto *f263
+if %flgC>=1&&%flgI>=1 goto *f264
+if %flgC==0&&%flgI>=1 goto *f265
+if %flgC>=1&&%flgI==0 goto *f266
+*f262
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1262==1 skip 4
+gosub *s262
+mov %1262,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip262,
+	`2. No saltar`, *s262
+skip 3
+*skip262
+return
+if %flgC==0&&%flgI==0 goto *f263
+if %flgC>=1&&%flgI>=1 goto *f264
+if %flgC==0&&%flgI>=1 goto *f265
+if %flgC>=1&&%flgI==0 goto *f266
+*f263
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1263==1 skip 4
+gosub *s263
+mov %1263,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip263,
+	`2. No saltar`, *s263
+skip 3
+*skip263
+return
+goto *f267
+*f264
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1264==1 skip 4
+gosub *s264
+mov %1264,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip264,
+	`2. No saltar`, *s264
+skip 3
+*skip264
+return
+goto *f267
+*f265
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1265==1 skip 4
+gosub *s265
+mov %1265,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip265,
+	`2. No saltar`, *s265
+skip 3
+*skip265
+return
+goto *f267
+*f266
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1266==1 skip 4
+gosub *s266
+mov %1266,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip266,
+	`2. No saltar`, *s266
+skip 3
+*skip266
+return
+goto *f267
+*f267
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1267==1 skip 4
+gosub *s267
+mov %1267,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip267,
+	`2. No saltar`, *s267
+skip 3
+*skip267
+return
+select `1. Decirlo con franqueza.`, *f268,
+	`2. Decirlo con calma.`, *f269
+*f268
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1268==1 skip 4
+gosub *s268
+mov %1268,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip268,
+	`2. No saltar`, *s268
+skip 3
+*skip268
+return
+goto *f270
+*f269
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1269==1 skip 4
+gosub *s269
+mov %1269,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip269,
+	`2. No saltar`, *s269
+skip 3
+*skip269
+return
+goto *f270
+*f270
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1270==1 skip 4
+gosub *s270
+mov %1270,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip270,
+	`2. No saltar`, *s270
+skip 3
+*skip270
+return
+goto *f271
+	`2. Trust Arcueid.`, *f272
+*f271
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1271==1 skip 4
+gosub *s271
+mov %1271,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip271,
+	`2. No saltar`, *s271
+skip 3
+*skip271
+return
+goto *f273
+*f272
+gosub *regard_update
+goto *f273
+*f353
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1353==1 skip 4
+gosub *s353
+mov %1353,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip353,
+	`2. No saltar`, *s353
+skip 3
+*skip353
+return
+select `1. Aun así, al menos puedo decirle buenos días a Akiha.`, *f354,
+	`2. …… No puedo. Volveré a mi habitación.`, *f355
+*f354
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1354==1 skip 4
+gosub *s354
+mov %1354,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip354,
+	`2. No saltar`, *s354
+skip 3
+*skip354
+return
+select `1. Voy al salón de Akiha.`, *f356,
+	`2. No, no necesito ir a verla.`, *f357
+*f355
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1355==1 skip 4
+gosub *s355
+mov %1355,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip355,
+	`2. No saltar`, *s355
+skip 3
+*skip355
+return
+select `1. Voy al salón de Akiha.`, *f356,
+	`2. No, no necesito ir a verla.`, *f357
+*f356
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1356==1 skip 4
+gosub *s356
+mov %1356,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip356,
+	`2. No saltar`, *s356
+skip 3
+*skip356
+return
+inc %akiha_regard
+goto *f358
+*f357
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1357==1 skip 4
+gosub *s357
+mov %1357,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip357,
+	`2. No saltar`, *s357
+skip 3
+*skip357
+return
+goto *f358
+*f358
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1358==1 skip 4
+gosub *s358
+mov %1358,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip358,
+	`2. No saltar`, *s358
+skip 3
+*skip358
+return
+if %flgO>=1 goto *f360
+select `1. Le hablo a Ciel sobre anoche.`, *f358half,
+	`2. …… No, sólo sería una pérdida de tiempo.`, *f360
+*f358half
+goto *f359
+*f359
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1359==1 skip 4
+gosub *s359
+mov %1359,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip359,
+	`2. No saltar`, *s359
+skip 3
+*skip359
+return
+goto *f361
+*f360
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1360==1 skip 4
+gosub *s360
+mov %1360,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip360,
+	`2. No saltar`, *s360
+skip 3
+*skip360
+return
+`¿Tomarás la 'lección de Ciel-sensei'?
+select `1. Sí.`, *f534,
+	`2. No.`, *endofplay
+*f534
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1534==1 skip 4
+gosub *s534
+mov %1534,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip534,
+	`2. No saltar`, *s534
+skip 3
+*skip534
+return
+goto *endofplay
+*f415
+!sd
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1415==1 skip 4
+gosub *s415
+mov %1415,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip415,
+	`2. No saltar`, *s415
+skip 3
+*skip415
+return
+goto *f361
+*f399
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1399==1 skip 4
+gosub *s399
+mov %1399,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip399,
+	`2. No saltar`, *s399
+skip 3
+*skip399
+return
+select `1. Buscar a Kohaku-san para que prepare algo.`, *f400,
+	`2. Pedirle a Hisui que prepare algo.`, *f401
+*f400
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1400==1 skip 4
+gosub *s400
+mov %1400,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip400,
+	`2. No saltar`, *s400
+skip 3
+*skip400
+return
+goto *f402
+*f401
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1401==1 skip 4
+gosub *s401
+mov %1401,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip401,
+	`2. No saltar`, *s401
+skip 3
+*skip401
+return
+inc %hisui_regard
+goto *f402
+*f402
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1402==1 skip 4
+gosub *s402
+mov %1402,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip402,
+	`2. No saltar`, *s402
+skip 3
+*skip402
+return
+select `1. …… Esto no es suficiente, en absoluto.`, *f404,
+	`2. …… Puedo moverme de nuevo, así que sólo debería agradecerle.`, *f403
+*f159
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1159==1 skip 4
+gosub *s159
+mov %1159,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip159,
+	`2. No saltar`, *s159
+skip 3
+*skip159
+return
+select `1. …… Hago lo que Akiha dice.`, *f160,
+	`2. No, tengo que forzarme para ver a Arcueid.`, *f161
+*f160
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1160==1 skip 4
+gosub *s160
+mov %1160,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip160,
+	`2. No saltar`, *s160
+skip 3
+*skip160
+return
+goto *f162
+*f161
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1161==1 skip 4
+gosub *s161
+mov %1161,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip161,
+	`2. No saltar`, *s161
+skip 3
+*skip161
+return
+goto *f107
+*f107
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1107==1 skip 4
+gosub *s107
+mov %1107,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip107,
+	`2. No saltar`, *s107
+skip 3
+*skip107
+return
+goto *f107a
+*f107a
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1607==1 skip 4
+gosub *s107a
+mov %1607,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip107a,
+	`2. No saltar`, *s107a
+skip 3
+*skip107a
+return
+`¿Tomarás la 'lección de Ciel-sensei'?
+select `1. Sí.`, *f516,
+	`2. No.`, *endofplay
+*f516
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1516==1 skip 4
+gosub *s516
+mov %1516,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip516,
+	`2. No saltar`, *s516
+skip 3
+*skip516
+return
+goto *endofplay
+*f361
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1361==1 skip 4
+gosub *s361
+mov %1361,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip361,
+	`2. No saltar`, *s361
+skip 3
+*skip361
+return
+if %flgO>=1 goto *f364
+select `1. …… Iré a decidir mi propio destino.`, *f362,
+	`2. No, me quedaré en la mansión.`, *f364
+*f162
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1162==1 skip 4
+gosub *s162
+mov %1162,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip162,
+	`2. No saltar`, *s162
+skip 3
+*skip162
+return
+select `1. …… No se puede evitar. Iré con Arcueid.`, *f163,
+	`2. …… Se puede evitar. Debería ir a la escuela.`, *f167
+*f163
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1163==1 skip 4
+gosub *s163
+mov %1163,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip163,
+	`2. No saltar`, *s163
+skip 3
+*skip163
+return
+select `1. Bueno, es porque eres egoísta, ¿no?`, *f164,
+	`2. Bueno, es porque me odias, ¿no?`, *f165,
+	`3. Bueno, es porque eres un vampiro, ¿no?`, *f166
+*f164
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1164==1 skip 4
+gosub *s164
+mov %1164,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip164,
+	`2. No saltar`, *s164
+skip 3
+*skip164
+return
+goto *f168
+*f165
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1165==1 skip 4
+gosub *s165
+mov %1165,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip165,
+	`2. No saltar`, *s165
+skip 3
+*skip165
+return
+inc %ark_regard
+goto *f168
+*f166
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1166==1 skip 4
+gosub *s166
+mov %1166,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip166,
+	`2. No saltar`, *s166
+skip 3
+*skip166
+return
+dec %ark_regard
+goto *f168
+*f167
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1167==1 skip 4
+gosub *s167
+mov %1167,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip167,
+	`2. No saltar`, *s167
+skip 3
+*skip167
+return
+goto *f107a
+*f168
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1168==1 skip 4
+gosub *s168
+mov %1168,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip168,
+	`2. No saltar`, *s168
+skip 3
+*skip168
+return
+select `1. Voy por lo típico, la llevo al cine.`, *f169,
+	`2. Probablemente le guste algo como un callejón trasero, ¿no?`, *f170,
+	`3. …… No estoy seguro, así que iremos al parque por ahora.`, *f171
+*f169
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1169==1 skip 4
+gosub *s169
+mov %1169,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip169,
+	`2. No saltar`, *s169
+skip 3
+*skip169
+return
+add %ark_regard,2
+goto *f172
+*f170
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1170==1 skip 4
+gosub *s170
+mov %1170,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip170,
+	`2. No saltar`, *s170
+skip 3
+*skip170
+return
+dec %ark_regard
+goto *f172
+*f171
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1171==1 skip 4
+gosub *s171
+mov %1171,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip171,
+	`2. No saltar`, *s171
+skip 3
+*skip171
+return
+goto *f172
+*f172
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1172==1 skip 4
+gosub *s172
+mov %1172,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip172,
+	`2. No saltar`, *s172
+skip 3
+*skip172
+return
+select `1. Muy bien, le hablaré sobre anteanoche.`, *f173,
+	`2. Entonces, oigamos los detalles sobre el "enemigo" de Arcueid.`, *f174,
+	`3. ¡Bueno, tengo que preguntarle sobre sus pasatiempos, su historia, y sus medidas!`, *f175
+*f173
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1173==1 skip 4
+gosub *s173
+mov %1173,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip173,
+	`2. No saltar`, *s173
+skip 3
+*skip173
+return
+inc %flgA
+goto *f176
+*f174
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1174==1 skip 4
+gosub *s174
+mov %1174,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip174,
+	`2. No saltar`, *s174
+skip 3
+*skip174
+return
+goto *f176
+*f175
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1175==1 skip 4
+gosub *s175
+mov %1175,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip175,
+	`2. No saltar`, *s175
+skip 3
+*skip175
+return
+goto *f176
+*f176
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1176==1 skip 4
+gosub *s176
+mov %1176,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip176,
+	`2. No saltar`, *s176
+skip 3
+*skip176
+return
+if %flgA==0 goto *f177
+goto *f178
+*f177
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1177==1 skip 4
+gosub *s177
+mov %1177,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip177,
+	`2. No saltar`, *s177
+skip 3
+*skip177
+return
+goto *f178
+*f178
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1178==1 skip 4
+gosub *s178
+mov %1178,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip178,
+	`2. No saltar`, *s178
+skip 3
+*skip178
+return
+select `1. Voy al apartamento de Arcueid.`, *f179,
+	`2. Busco en el distrito comercial.`, *f180,
+	`3. …… ¿La escuela, quizás?`, *f500
+*f179
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1179==1 skip 4
+gosub *s179
+mov %1179,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip179,
+	`2. No saltar`, *s179
+skip 3
+*skip179
+return
+goto *f510
+*f510
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1510==1 skip 4
+gosub *s510
+mov %1510,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip510,
+	`2. No saltar`, *s510
+skip 3
+*skip510
+return
+goto *endofplay
+*f180
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1180==1 skip 4
+gosub *s180
+mov %1180,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip180,
+	`2. No saltar`, *s180
+skip 3
+*skip180
+return
+select `1. No puedo hacer algo que ella no quiere.`, *f181,
+	`2. Simplemente… la deseo, eso es todo.`, *f182
+*f500
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1500==1 skip 4
+gosub *s500
+mov %1500,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip500,
+	`2. No saltar`, *s500
+skip 3
+*skip500
+return
+`¿Tomarás la 'lección de Ciel-sensei'?
+select `1. Sí.`, *f517,
+	`2. No.`, *endofplay
+*f517
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1517==1 skip 4
+gosub *s517
+mov %1517,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip517,
+	`2. No saltar`, *s517
+skip 3
+*skip517
+return
+goto *endofplay
+*f181
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1181==1 skip 4
+gosub *s181
+mov %1181,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip181,
+	`2. No saltar`, *s181
+skip 3
+*skip181
+return
+goto *f183
+*f182
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1182==1 skip 4
+gosub *s182
+mov %1182,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip182,
+	`2. No saltar`, *s182
+skip 3
+*skip182
+return
+inc %flgB
+goto *f183
+*f273
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1273==1 skip 4
+gosub *s273
+mov %1273,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip273,
+	`2. No saltar`, *s273
+skip 3
+*skip273
+return
+select `1. Espero aquí.`, *f274,
+	`2. Voy al salón de clases.`, *f275,
+	`3. Voy detrás de la escuela.`, *f276
+*f274
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1274==1 skip 4
+gosub *s274
+mov %1274,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip274,
+	`2. No saltar`, *s274
+skip 3
+*skip274
+return
+goto *f277
+*f275
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1275==1 skip 4
+gosub *s275
+mov %1275,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip275,
+	`2. No saltar`, *s275
+skip 3
+*skip275
+return
+goto *f277
+*f276
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1276==1 skip 4
+gosub *s276
+mov %1276,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip276,
+	`2. No saltar`, *s276
+skip 3
+*skip276
+return
+goto *f277
+*f277
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1277==1 skip 4
+gosub *s277
+mov %1277,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip277,
+	`2. No saltar`, *s277
+skip 3
+*skip277
+return
+select `1. Me distraeré aquí en el salón.`, *f278,
+	`2. …… Iré a almorzar algo.`, *f279
+*f278
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1278==1 skip 4
+gosub *s278
+mov %1278,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip278,
+	`2. No saltar`, *s278
+skip 3
+*skip278
+return
+goto *f282
+*f279
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1279==1 skip 4
+gosub *s279
+mov %1279,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip279,
+	`2. No saltar`, *s279
+skip 3
+*skip279
+return
+select `1. Supongo que sí.`, *f280,
+	`2. …… No, eso es importante.`, *f281
+*f280
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1280==1 skip 4
+gosub *s280
+mov %1280,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip280,
+	`2. No saltar`, *s280
+skip 3
+*skip280
+return
+goto *f282
+*f281
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1281==1 skip 4
+gosub *s281
+mov %1281,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip281,
+	`2. No saltar`, *s281
+skip 3
+*skip281
+return
+if %ciel_regard>=9 goto *f283
+goto *f282
+*f282
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1282==1 skip 4
+gosub *s282
+mov %1282,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip282,
+	`2. No saltar`, *s282
+skip 3
+*skip282
+return
+`¿Tomarás la 'lección de Ciel-sensei'?
+select `1. Sí.`, *f522,
+	`2. No.`, *endofplay
+*f522
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1522==1 skip 4
+gosub *s522
+mov %1522,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip522,
+	`2. No saltar`, *s522
+skip 3
+*skip522
+return
+goto *endofplay
+*f283
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1283==1 skip 4
+gosub *s283
+mov %1283,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip283,
+	`2. No saltar`, *s283
+skip 3
+*skip283
+return
+goto *f284
+*f362
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1362==1 skip 4
+gosub *s362
+mov %1362,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip362,
+	`2. No saltar`, *s362
+skip 3
+*skip362
+return
+select `1. …… Tengo que vivir.`, *f501,
+	`2. …… No puedo hacerlo.`, *f363
+*f501
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1501==1 skip 4
+gosub *s501
+mov %1501,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip501,
+	`2. No saltar`, *s501
+skip 3
+*skip501
+return
+`¿Tomarás la 'lección de Ciel-sensei'?
+select `1. Sí.`, *f536,
+	`2. No.`, *endofplay
+*f536
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1536==1 skip 4
+gosub *s536
+mov %1536,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip536,
+	`2. No saltar`, *s536
+skip 3
+*skip536
+return
+goto *endofplay
+*f363
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1363==1 skip 4
+gosub *s363
+mov %1363,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip363,
+	`2. No saltar`, *s363
+skip 3
+*skip363
+return
+goto *f365
+*f364
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1364==1 skip 4
+gosub *s364
+mov %1364,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip364,
+	`2. No saltar`, *s364
+skip 3
+*skip364
+return
+`¿Tomarás la 'lección de Ciel-sensei'?
+select `1. Sí.`, *f535,
+	`2. No.`, *endofplay
+*f535
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1535==1 skip 4
+gosub *s535
+mov %1535,1
+skip 9
+`Ya has visto esta escena.
+`¿Quisieras saltarla?
+br
+selgosub `1. Saltar`, *skip535,
+	`2. No saltar`, *s535
+skip 3
+*skip535
+return
+goto *endofplay

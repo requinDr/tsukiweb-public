@@ -1,0 +1,26 @@
+monocro off
+wavestop
+;---added context above---
+bg "image\bg\bg_06b.jpg",%type_nowaitdisp
+play "*9"
+!w1000
+cl c,%type_lcartain_mid
+ld c,":a;image\tachi\cel_t20.jpg",%type_tshutter_mid
+` Has alcanzado el Final Verdadero de Kohaku.@ Buen trabajo.@
+` Sólo hay un final para Kohaku-san.@
+` Si has llegado hasta aquí, deberías entender que la historia de Kohaku-san es el "organizador" de Tsukihime, la historia para enlazar todos los eventos restantes.\
+` Muchas gracias por todo tu trabajo duro.@
+` Después de un largo tiempo, sus historias han finalizado.\
+` ------Pero, por favor espera.@
+br
+` Todavía hay una persona que falta.@
+` Sí, se trata del personaje principal de esta historia.@
+` Su historia aún no ha terminado.@
+` En el cielo está la fría luna circular.@
+` Pero incluso esa luna no puede ser la misma eternamente.@
+br
+` Tras el final de todas las historias,
+` la historia de Tohno Shiki está esperando ser finalizada-----\
+bg #000000,%type_crossfade_mid
+playstop
+return

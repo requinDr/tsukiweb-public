@@ -1,0 +1,100 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_29b.jpg",%type_crossfade_mid
+`"Estoy---exhausto…"@
+` Caigo al suelo.@
+` Caigo sobre mi trasero e intento mantener mi cuerpo erguido con mis manos.\
+`"---Frío."@
+` Tengo frío.@
+` El dolor está adormecido; se siente casi confortable.@
+` Mi cuerpo está desgarrado por mordidas caninas y marcas de picos.@
+br
+` ----Bueno, no hay duda de que probablemente moriré de esta manera.\
+`"-----"@
+` Dejo salir un profundo respiro.@
+` Levanto mi barbilla y miro hacia el cielo.@
+br
+`"-----La luna."@
+` Sólo la bella luna está en el cielo nocturno.@
+` …… ¿Qué pasa?@
+` Esto me es terriblemente familiar… como si hubiese tenido un sueño similar anteriormente.\
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+play "*8"
+`"Shiki, ¿estás bien?"@
+` Arcueid camina hacia mí como si nada acabara de suceder.@
+`"…… Tú… estúpida idiota…… Si estuviese bien… no sería humano."@
+` Hablo y respiro con vacilación.@
+` Incluso hablar es doloroso, tal vez no debí haber respondido.@
+`"Kk------ah."\
+bg #000000,%type_crossfade_slw
+` Mi consciencia comienza a desvanecerse.@
+` Y entonces,
+quakey 2,100
+bg "image\bg\bg_29b.jpg",%type_nowaitdisp
+` ¡Plaf!@ Arcueid me golpea la cabeza y me devuelve la consciencia forzosamente.\
+`"…… ¿Por qué… hiciste eso?"@
+ld c,":a;image\tachi\ark_t11.jpg",%type_lshutter_fst
+`"Eso no.@ Si duermes con esas heridas, definitivamente terminarás muerto.@ No puedes dormir hasta que las cerremos."@
+br
+` ---Su argumento es perfectamente justo.@
+` Es tan justo que me enfurece.@
+br
+`"…… Arcueid.@ ¿Puedo decir lo que siempre he pensado?"@
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"¿Hm, qué?"@
+`"----No digas cosas tan poco razonables, idiota."@
+` Me estrello contra el suelo.\
+bg #000000,%type_crossfade_fst
+bg "image\bg\ima_18.jpg",%type_crossfade_fst
+` ---Mi consciencia comienza a desvanecerse.@
+br
+` Arcueid está formando un alboroto, pero no tengo la fuerza para mantener mis ojos abiertos por más tiempo.@
+` Hace un frío----terrible.@
+br
+`"Oye, Shiki.@ ¡En verdad morirás……!"@
+br
+` …… Te lo dije, tengo sueño.@
+` Dormiré antes de morir, así que despertaré en la mañana.\
+`"¡Shiki, no debes dormir----!@ ¡Debemos al menos cerrar tus heridas y detener el sangrado, de otra forma no despertarás……!"@
+br
+` ---Vaya, qué escandalosa.@
+` Voy a dormir, así que haz lo que quieras.@
+br
+`"¿Eh, está bien si te curo?@ ¿Por qué no lo dijiste antes?"@
+br
+` Después de decir eso alegremente,
+` siento dedos fríos, aun más fríos que mi cuerpo, tocando mi piel como en solidaridad.\
+`"Bueno, no me gusta mucho usar los familiares de otros, pero en estas circunstancias, no se puede evitar."@
+` …… Siento que algo está siendo fijado a mi cuerpo.@
+` No sé por qué,
+` pero se siente terriblemente placentero--
+br
+`"Como era de esperarse del vampiro llamado el mar primordial.@ Aun después de la destrucción de la fuente, los familiares todavía poseen su capacidad regenerativa…… hm, en ese caso, todo lo que tengo que hacer es darle un pequeño empujón.@
+` Primero, lo dejaré vivir en mí----y una vez que haya vuelto a la normalidad lo pondré de nuevo sobre ti, Shiki----"@
+br
+` Los dedos se apartan.\
+`"Supongo que con esto bastará.@ ¿Cómo se siente?@ Es una vida no polar, así que puede adaptarse fácilmente a tu cuerpo, ¿cierto?@
+` Oye, ¿estás dormido Shiki----?"@
+br
+` ---Sí, estoy dormido.@
+br
+`"Oh bueno.@ Tu casa es la mansión en la cima de la colina, ¿no, Shiki?@ Me aseguraré de que llegues a casa."@
+br
+` ---Miro solamente hacia la luna blanca mientras duermo.\
+`"…… Lo hiciste muy bien, Shiki.@ Y gracias.@ En verdad me salvaste esta noche."@
+br
+` …… Ella me agradece sin el más mínimo rastro de pesadez en sus palabras.\
+br
+br
+br
+br
+br
+br
+` …… Ya no puedo escuchar su voz.@
+` Caigo en un profundo sueño, sin nadie que me interrumpa en esta ocasión.\
+bg #ffffff,%type_crossfade_slw
+playstop
+!w3000
+return

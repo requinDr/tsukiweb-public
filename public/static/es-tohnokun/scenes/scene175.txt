@@ -1,0 +1,61 @@
+monocro off
+wavestop
+;---added context above---
+bg "image\bg\bg_56.jpg",%type_nowaitdisp
+play "*3"
+` ----Hmm.@
+br
+` Probablemente nunca volveré a tener la oportunidad de hablar con Arcueid en un restaurante de comida rápida a mitad del día, así que no preguntaré sobre vampiros, sino algo más ordinario.\
+`"Entonces preguntaré.@ Arcueid, ¿podrías hablarme un poco sobre tus intereses, tu pasado, y tus medidas?"@
+ld c,":a;image\tachi\ark_t03.jpg",%type_crossfade_fst
+`"¿Quieres saber sobre eso?@ Tú sí preguntas cosas extrañas, Shiki."@
+`"No es extraño.@ No sé nada sobre ti, así que es natural que quiera conocerte un poco."\
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"Ah, pienso lo mismo, quizás----en ese caso, no hay problema."@
+ld c,":a;image\tachi\ark_t03.jpg",%type_crossfade_fst
+`"Pero, intereses y pasado… no tengo ninguno de ésos.@ Nunca me he tomado mis medidas así que tampoco puedo decírtelas.@ Nunca registré mi edad o mi estatura como ustedes lo hacen."@
+`"¿Qué quieres decir?@ ¿Nunca te has preguntado sobre ti misma?"\
+ld c,":a;image\tachi\ark_t01b.jpg",%type_crossfade_fst
+`"No, no es así pero, nunca fue algo que tuviese como prioridad.@ Todo lo que necesito es la habilidad para cazar Apóstoles Muertos…… vampiros."@
+`"Pero aun así, sucedieron otras cosas antes de que vinieses a esta ciudad, ¿cierto?@ Quiero escuchar sobre ese tipo de cosas."\
+ld c,":a;image\tachi\ark_t03.jpg",%type_crossfade_fst
+`"Antes de venir aquí…… hmm, probablemente sería hace unos ocho años.@
+` En ese tiempo, no estaba aquí, sino en otro país cazando a un vampiro.@
+` Un vampiro hizo su guarida en una pequeña aldea campesina francesa que se convirtió en un pueblo fantasma.@ Después de dos días, encontré al 'enemigo' y me encargué del Apóstol Muerto femenino que controlaba el pueblo----"@
+cl c,%type_crossfade_fst
+` Como si recordase algo horrible, Arcueid cierra sus ojos y se detiene.\
+`"¿Hace ocho años?@ Entonces ¿qué estuviste haciendo hasta ahora, Arcueid?"@
+ld c,":a;image\tachi\ark_t01b.jpg",%type_crossfade_fst
+`"¿Qué estuve haciendo?@ Simplemente regresé a mi castillo y dormí.@ Mi obligación es cazar Apóstoles Muertos.@ Mi existencia no tiene otro sentido, por lo tanto, hasta que otro Apóstol Muerto aparezca, no hay nada que hacer aparte de seguir durmiendo, ¿cierto?"@
+`"Qué------"@
+` ¿Seguir durmiendo?@ ¿Quiere decir, literalmente?@
+` No, en primer lugar----\
+`"…… Espera un minuto.@ ¿Un castillo, te refieres a ese castillo?@ Tendría problemas para creerlo pero, ¡no me digas que tu casa es como ese castillo de Cenicienta…!"@
+ld c,":a;image\tachi\ark_t11.jpg",%type_crossfade_fst
+`"¿Castillo de Cenicienta?"@
+` Arcueid ladea su cabeza como si no entendiese.\
+`"Uh----no, ésa no es la expresión apropiada.@ Um, quiero decir, ¿tú eres una, um…… princesa?"@
+ld c,":a;image\tachi\ark_t03.jpg",%type_crossfade_fst
+`"Sí, así parece.@ Hace mucho tiempo me fue dicho que no cortase mi cabello y fui regañada para que actuase más como la realeza."@
+`"--------"@
+` …… No tengo palabras.@
+` Ahora que lo pienso, ese sujeto Nrvnqsr siempre la llamaba "princesa."@
+` Pero aun así----\
+`"¿Una princesa de la realeza?"@
+` Le echo un vistazo a Arcueid.@
+` Es lo bastante hermosa como para dejarte sin aliento pero, ¿una persona tan indisciplinada, es una princesa?@ Ella no es exactamente lo que me viene a la mente cuando pienso en una princesa.\
+`"…… Bueno, al menos eres tan egoísta como una princesa."@
+` Suelto un profundo suspiro.@
+ld c,":a;image\tachi\ark_t16.jpg",%type_crossfade_fst
+`"¡Oye!@ ¡Sólo lo dije porque preguntaste, así que no respondas de esa manera!"@
+` Su Alteza Real me mira ferozmente.@
+cl c,%type_crossfade_fst
+` …… Arcueid tampoco parece verse a sí misma como una princesa, creo que simplemente es mejor olvidar esto.\
+bg #000000,%type_lshutter_mid
+bg "image\bg\bg_56.jpg",%type_lshutter_mid
+` Aún enfadada, Arcueid continúa comiendo su hamburguesa.@
+` Cuando termina de comer y se tranquiliza, decidimos ir a algún otro lugar.\
+bg #000000,%type_lcartain_mid
+!w1000
+playstop
+return

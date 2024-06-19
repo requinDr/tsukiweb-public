@@ -1,0 +1,10 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_06a.jpg",%type_crossfade_mid
+` Las lecciones de la mañana han terminado.@
+` Es el descanso del almuerzo, y Arihiko ya se ha ido a la cafetería.@
+` Ahora, ¿dónde debería almorzar?@
+br
+return

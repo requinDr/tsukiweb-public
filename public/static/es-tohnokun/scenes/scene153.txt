@@ -1,0 +1,47 @@
+monocro off
+wavestop
+;---added context above---
+playstop
+bg "image\bg\bg_06b.jpg",%type_crossfade_mid
+` …… Como esperaba, el debate sobre qué hacer para el Festival Cultural es tormentoso.@
+` Ya que las opiniones de todos son diferentes, la decisión es pospuesta hasta la semana siguiente.@
+` Para cuando termina, casi es el fin de la tarde.@ Todos se levantan exhaustos de sus sillas y dejan el salón de clases.@
+br
+`"----Bien, entonces."@
+` No hay nada que hacer aquí.@
+` Debería prepararme para esta noche y regresar a la mansión---\
+bg #000000,%type_lcartain_slw
+bg "image\bg\bg_32b.jpg",%type_lcartain_slw
+play "*1"
+` No me detengo en ningún lado y voy directamente a la mansión.@
+` El sol no se ha puesto por completo así que Akiha probablemente aún no ha regresado.\
+`"Esa Akiha.@ Me pregunto si aún está enfadada como esta mañana……"@
+br
+` …… Bueno, eso tampoco puede evitarse.@
+` No puedo decirle la verdad, así que probablemente continuaré siendo odiado como un terrible hermano mayor.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_33b.jpg",%type_lcartain_mid
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"Bienvenido a casa, Shiki-sama."@
+` Hisui se inclina cuando entro a la mansión.@
+`"…… Sí, estoy de vuelta.@ Gracias por saludarme, Hisui."@
+` ---Ha pasado una semana desde que volví, pero aún no estoy acostumbrado a esto.\
+`"Um, ¿Akiha aún no ha vuelto?"@
+`"No.@ Me pidió que le dijese que volvería especialmente tarde esta noche y que por favor cene por su cuenta, Shiki-sama."@
+cl c,%type_crossfade_fst
+` …… Sabía que seguiría enfadada por lo de esta mañana.\
+`"----Fiu."@
+` Dejo caer mis hombros y empiezo a caminar hacia mi habitación.@
+` ---Y entonces,
+br
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"Shiki-sama."@
+` Hisui mira alrededor del vestíbulo antes de hablar de nuevo.\
+`"Perdóneme por hacerle una pregunta incómoda pero, ¿saldrá nuevamente esta noche, Shiki-sama?"@
+`"¿Eh----?"@
+` Ella fija sus inexpresivos ojos sobre mí.@
+` Creo que simplemente quiere saber a qué hora estaré de vuelta porque es una sirvienta muy dedicada, pero dejarle saber implicaría que Akiha también lo sabría.@
+` Debería---
+br
+cl c,%type_crossfade_fst
+return

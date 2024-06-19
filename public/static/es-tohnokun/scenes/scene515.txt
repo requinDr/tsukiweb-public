@@ -1,0 +1,35 @@
+monocro off
+;---added context above---
+wave se2
+bg "image\bg\bg_06a.jpg",%type_nowaitdisp
+play "*3"
+ld c,":a;image\tachi\osiete.png",%type_lcartain_mid
+!w1000
+cl c,%type_lcartain_mid
+ld c,":a;image\tachi\his_t16.jpg",%type_tshutter_mid
+`"Lo lamento mucho.@ Ciel-sensei está ahora en su descanso del almuerzo.@ Por favor espere hasta que ella regrese."@
+ld l,":a;image\tachi\ark_t31a.jpg",%type_lshutter_fst
+br
+`"¡Está ignorando sus obligaciones y devorando pan de curry!"@
+br
+ld r,":a;image\tachi\ark_t31b.jpg",%type_lshutter_fst
+`"¡Ven acá, estúpida Ciel!"@
+br
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"Pienso lo mismo, pero si ella no está aquí, no se puede evitar.@
+` No se puede hacer nada respecto a alguien que no está aquí, y es demasiado miserable quejarme de cómo Nee-san no puede limpiar u ordenar las cosas.@
+` Entonces, comenzaremos con el rincón de corrección acostumbrado."\
+ld c,":a;image\tachi\his_t17.jpg",%type_crossfade_fst
+`"…… Shiki-sama,
+` esconder las cosas no da buenos resultados.@
+` Si aprendió de esta experiencia, por favor confíe en Hisui la próxima vez.@
+ld c,":a;image\tachi\his_t01b.jpg",%type_crossfade_fst
+` …… Eso es todo.@
+` Ahora regresaré a la mansión.@
+` Por favor continúe disfrutando de la historia principal."\
+bg #000000,%type_crossfade_mid
+ld c,":a;image\tachi\ark_t30.jpg",%type_lscroll_mid
+`"Nyaaa…… Esa mujer, presiento a otro personaje parecido a un gato……"@
+cl c,%type_lscroll_mid
+playstop
+return

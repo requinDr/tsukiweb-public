@@ -1,0 +1,205 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_40d.jpg",%type_nowaitdisp
+` ---Recorreré la ciudad envuelta por la noche, y encontraré al asesino en serie.@
+br
+` Así podré probar que mis sueños son sólo sueños.@
+` Porque, si encuentro al asesino…
+` …… Entonces todos los incidentes deben ser obra de ese asesino.@
+br
+`"……… Muy bien."@
+` Por seguridad, meto el cuchillo en mi bolsillo y comienzo mi investigación.\
+bg #000000,%type_crossfade_mid
+!w2000
+bg "image\bg\bg_25b.jpg",%type_lcartain_mid
+play "*6"
+` -----Salgo a la ciudad cubierta por la noche.@
+br
+` No hay una manera exacta de buscar al asesino en serie.@
+` Lo único que puedo hacer es vagar por las calles y buscar cualquier cosa sospechosa---o actuar como señuelo para hacer salir al asesino.@
+br
+`"………………"@
+` Después de lo sucedido con Yumizuka, quizás me haya vuelto inmune al peligro.@
+` El asesino en serie es sólo un humano, así que puedo recorrer las calles sin nerviosismo.\
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_27b.jpg",%type_lcartain_fst
+` Vago sin rumbo fijo.@
+` Son aproximadamente las once de la noche.\
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_26a.jpg",%type_lcartain_fst
+br
+br
+` …… No veo nada sospechoso.@
+` El reloj ya ha rebasado la medianoche.\
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_12b.jpg",%type_lcartain_fst
+br
+br
+br
+br
+` …… No tiene caso venir aquí.\
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_24c.jpg",%type_lcartain_fst
+br
+br
+br
+br
+br
+` …… Maldición.@ No veo a nadie que parezca un asesino.\
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_25b.jpg",%type_lcartain_fst
+` *jadeo*…… *jadeo*…… *jadeo*…… *jadeo*\
+br
+br
+br
+br
+br
+br
+` ------Estoy comenzando a molestarme mucho.@
+br
+` ¿Por qué no puedo encontrar a alguien como él?\
+` Ésa no es la persona.@
+` Ésa no es la persona.@
+` Ésa no es la persona.@
+` Incapaz de soportarlo, meto mi mano en mi bolsillo, y aprieto mi cuchillo.\
+` Ésa no es la persona.@
+` Ésa no es la persona.@
+` Ésa no es la persona.@
+` Ésa no es la persona.@
+` Ésa no es la persona.@
+` Ésa no es la persona.@
+` Ésa no es la persona--------
+`"-----¿Eh?"@
+` Por un breve instante, veo el rostro de un hombre con ojos inyectados de sangre.@
+` …… No es nada.@
+` Es simplemente mi reflejo en la ventana de una tienda.@
+`"--------"@
+` Qué-----estúpido.@
+` Apretando mi cuchillo.@
+` Respirando fuera de control.@
+` Actuando inconscientemente, justo como el asesino de mis sueños.\
+`"¡No------!"@
+` No.@ Yo no quería hacer este tipo de cosas.@
+`"Maldición…… ¿¡Qué estoy haciendo…………!?"@
+` …… En serio, ¿qué estoy haciendo?@
+` Si no puedo reconocer mi propio rostro, yo---en verdad podría, tomar a cualquiera y…
+br
+` Podría matar a cualquiera creyendo que se trata del asesino.@
+bg #000000,%type_lcartain_fst
+`"Tsk---------"@
+` Empiezo a correr.@
+` No puedo quedarme aquí.@
+` No resolveré nada de esta manera.@
+` Yo---hay algo mal en mí---\
+playstop
+bg "image\bg\bg_40d.jpg",%type_lshutter_mid
+` Respiro pesadamente.@
+br
+` Llego a mi habitación como si huyese de algo, y caigo sobre mi cama.@
+`"¡Mie……!"@
+` Al final, no resolví nada.@
+` …… Comienzo a ponerme soñoliento.@
+` Todo lo que puedo hacer es tratar de dormir profundamente para no soñar en absoluto.\
+bg #000000,%type_crossfade_mid
+!w3000
+waveloop se10
+bg "image\bg\bg_26a.jpg",%type_nowaitdisp
+` *jadeo*---*jadeo*----*jadeo*\
+` Siento que estoy siendo observado.@
+` Yo.@
+` Con ojos inyectados de sangre, miro a las personas que caminan por las calles.\
+br
+br
+br
+br
+br
+br
+` ---¿Quizás sea debido a la hora?@
+`   A diferencia de anoche, casi no hay nadie alrededor.\
+` …… Alguien está observándome.@
+` No puedo encontrar lo que estoy buscando.@
+` De nuevo.@ Esta noche, no puedo encontrar a la persona que estoy buscando.@
+br
+br
+br
+br
+#ff0000
+`      Estoy comenzando a molestarme.\
+#ffffff
+` Jadeo fuertemente.\
+` Debería cambiar mi lugar habitual.@
+` Voy a dejar de buscar en la ciudad.\
+bg "image\bg\bg_24c.jpg",%type_crossfade_fst
+` Voy de azotea en azotea y termino en un lugar lleno de gente.@
+` …… Mirando desde la azotea de la casa más alta, examino las calles.\
+br
+br
+br
+br
+br
+br
+br
+#ff0000
+`             ¡No mires!\
+#ffffff
+`"----Ahí."@
+` Veo a una persona caminando sola.@
+` Una mujer.@
+` Esta vez, no puede haber equivocación…
+` Sería grandioso que fuese Akiha.\
+#ff0000
+br
+br
+br
+br
+br
+br
+br
+`        No me mires.\
+#ffffff
+` No, eso en realidad no importa.@
+` Una vez más.@
+` Una vez más, quiero probar esa maravillosa sensación----\
+bg #000000,%type_nowaitdisp
+wave se12
+bg "image\bg\ima_12b.jpg",%type_lshutter_fst
+` La mato por la espalda, teniendo cuidado de no dañar el cuerpo.@
+` Sujetando su largo cabello, arrastro el cuerpo de Akiha.@
+bg "image\bg\bg_22c.jpg",%type_lshutter_mid
+` *jadeo*----*jadeo*----*jadeo*
+` Al morder el cuello de Akiha, chupo su sangre.@
+br
+` ---Aburrido.@
+` Esto no está cerca de ser tan excitante como anoche.@
+` Si su cabello es así de corto, definitivamente no es Akiha.\
+`"…… ¡Aburrido……!"@
+` Comienzo a enfurecerme.\
+` Corto el cuerpo en pedazos, pero aún estoy furioso.@
+` Impostora.@
+` Esta impostora me enfurece.\
+#ff0000
+br
+br
+br
+br
+br
+br
+br
+`         ¡Deja de mirarme!\
+#ffffff
+` *jadeo*----*jadeo*----*jadeo*----
+br
+` He utilizado energía extra.@
+` Pronto llegará el amanecer.@
+` Una vez que amanezca, Shiki despertará.@
+br
+`"Estoy cansado esta noche.@ Comenzaré de nuevo, mañana."@
+` Sí, está bien.@ Eso es lo que haré.\
+` Ahora.@
+` Antes de que amanezca, antes de que alguien se percate, debo volver a la escuela----\
+bg #000000,%type_crossfade_mid
+wavestop
+!w3000
+return

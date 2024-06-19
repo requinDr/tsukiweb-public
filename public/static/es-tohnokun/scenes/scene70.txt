@@ -1,0 +1,36 @@
+monocro off
+wavestop
+play "*2"
+;---added context above---
+bg "image\bg\bg_34a.jpg",%type_nowaitdisp
+`"Ah, Akiha.@ Si recuerdo correctamente, asistes a la Academia Asagami para Señoritas, ¿cierto?"@
+ld c,":a;image\tachi\aki_t01a.jpg",%type_crossfade_fst
+`"---Correcto.@ La Academia Asagami para Señoritas va desde la escuela media hasta la universidad."@
+` La mirada de Akiha parece preguntar, ¿Qué hay con eso?"@
+`"Bueno, ése es un internado para chicas, ¿no?@ Me pregunto por qué vas y vienes de la casa para allá."@
+`"El estimado señor Asagami y Papá eran amigos, así que él complace mis peticiones.@ Hay una disposición para asistir a la escuela desde casa bajo ciertas circunstancias."@
+` Akiha da una respuesta concisa.\
+`"No, eso no es lo que estoy preguntando.@ Estuviste viviendo en el dormitorio de la escuela hasta que el viejo murió, ¿cierto?@ ¿Por qué has empezado a ir desde aquí ahora?"@
+`"Eh----"@
+ld c,":a;image\tachi\aki_t16a.jpg",%type_crossfade_fst
+` Ella retiene sus palabras y aparta la vista.@
+cl c,%type_crossfade_fst
+\
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"Shiki-sama, Akiha-sama tradicionalmente pasaba la mitad de todas las semanas aquí.@ No es nada extraordinario para ella ir a la Academia desde la mansión."@
+`"Ah, ¿en serio?@ Eso suena exigente.@ La Academia Asagami para Señoritas está en la siguiente prefectura, ¿cierto?@ ¿No es más fácil para ti disfrutar la vida de dormitorio escolar en lugar de tener que regresar a la mansión todo el tiempo?"\
+cl c,%type_crossfade_fst
+ld c,":a;image\tachi\aki_t01a.jpg",%type_crossfade_fst
+`"…… Sí, puede que tengas razón.@ Pero es lo que Papá quería, así que pasaba la mitad de la semana aquí."@
+`"Hmm… pero el viejo ya no está aquí, así que no tienes que forzarte, ¿verdad?@ La vida de dormitorio parece algo divertida, después de todo."@
+ld c,":a;image\tachi\aki_t18a.jpg",%type_crossfade_fst
+`"Bueno, no tendría problema si fuese tan fácil.@ Pero si te dejase solo, no se sabe que podría pasar contigo, ¿cierto?@ Con cosas como lo que sucedió ayer, seguiré asistiendo a la escuela desde la mansión por ahora.@
+` ---Una cosa más, Nii-san…"@
+ld c,":a;image\tachi\aki_t01a.jpg",%type_crossfade_fst
+` Ella endereza su postura y me mira directamente.\
+`"…… ¿Uh… sí?"@
+`"Los alojamientos en la Academia Asagami para Señoritas no son dormitorios.@ Son casas de huéspedes.@ Por favor dilo correctamente la próxima vez."@
+cl c,%type_crossfade_fst
+` …… Las palabras de Akiha están envueltas en espinas.@
+` En realidad, fui pinchado muchas veces por ellas en mi primer día aquí, pero esta mañana hay algo de resentimiento en ellas.\
+return

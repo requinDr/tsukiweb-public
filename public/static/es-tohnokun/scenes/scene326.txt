@@ -1,0 +1,47 @@
+monocro off
+wavestop
+play "*3"
+;---added context above---
+bg "image\bg\bg_04.jpg",%type_nowaitdisp
+`"Arihiko es sólo uno de mis compañeros de clases.@ Pero tú tampoco has respondido mi pregunta."@
+ld c,":a;image\tachi\aki_t01a.jpg",%type_crossfade_fst
+`"Muy bien.@ ¿De qué se trata, Nii-san?"@
+`"¿¡De qué se trata!?@ ¿Por qué te has transferido a esta escuela?@ ¿¡Qué razón podrías tener para transferirte a una escuela de segunda clase!?"\
+ld c,":a;image\tachi\aki_t03a.jpg",%type_crossfade_fst
+`"Puedes decir eso, Nii-san.@ Pero puedo asistir a la escuela que desee; no necesito darte explicaciones."@
+`"…… No seas estúpida.@ ¡Soy tu hermano!@ No puedo pasar por alto cosas que puedan perjudicar tu porvenir.@
+` Francamente, no veo ningún beneficio en tu transferencia a esta escuela.@ ¡Ya que el viejo no está más con nosotros, es mi responsabilidad estar pendiente de ti…!"\
+ld c,":a;image\tachi\aki_t16a.jpg",%type_crossfade_fst
+`"…… ¿Qué?@ Es injusto decir esas cosas en momentos como éstos."@
+`" 'Injusto' debería decir yo.@ ¿Qué estabas pensando, transfiriéndote sin siquiera decírmelo?@
+` ¡No aceptaré esta transferencia hasta escuchar una buena razón!"@
+ld c,":a;image\tachi\aki_t17a.jpg",%type_crossfade_fst
+`"Ah----"@
+`"Si no estoy satisfecho con la razón, te enviaré de vuelta a tu escuela.@ Entonces, dime, Akiha.@ ¿Por qué cambiaste de escuela?"@
+cl a,%type_crossfade_fst
+` Akiha queda en silencio y baja la mirada.@
+` Después de un momento muy breve, me encara con valentía.\
+ld c,":a;image\tachi\aki_t12a.jpg",%type_crossfade_fst
+`"…… Estaba preocupada por ti, Nii-san.@ ¿No es razón suficiente?"@
+br
+` -------¿Eh?@
+br
+`"…… E, espera.@ ¿Qué quieres decir con, preocupada por mí…?"@
+` ¿Qué clase de razón para transferirse es ésa?\
+ld c,":a;image\tachi\aki_t03a.jpg",%type_crossfade_fst
+`"Bueno, al observar tu indisciplinada conducta reciente, decidí que, para prevenir que deshonres el nombre Tohno, tendría que vigilarte de cerca."@
+` Akiha lo explica claramente.@
+`"Erk----"@
+` Cuando dice "indisciplinada conducta", no puedo evitar asentir.@
+` Es verdad; mi vida diaría desde que volví a casa de seguro ha sido una molestia para Akiha y las otras.\
+`"Pe, pero, ¿no crees que transferirte es demasiado?@ ¿Qué hay de tus amigas?"@
+ld c,":a;image\tachi\aki_t05a.jpg",%type_crossfade_fst
+`"Eso no es de tu incumbencia, Nii-san.@ Si te sientes aunque sea un poco mal por mí, todo lo que tienes que hacer es cambiar tu manera de pensar de ahora en adelante."@
+` Akiha se da la vuelta violentamente.@
+` …… Bueno, simplemente, así es ella.\
+`"…… Muy bien, haz lo que quieras.@ Pero algún día, lo lamentarás."@
+ld c,":a;image\tachi\aki_t06.jpg",%type_crossfade_fst
+`"Está bien.@ No era mi intención hacer que te preocuparas por mí, Nii-san."@
+` Con un sonido de exasperación, Akiha comienza a refunfuñar.\
+cl a,%type_crossfade_fst
+return

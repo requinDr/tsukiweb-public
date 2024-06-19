@@ -1,0 +1,62 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg #000000,%type_lcartain_mid
+play "*3"
+bg "image\bg\bg_11b.jpg",%type_lcartain_fst
+` Tan pronto como pongo un pie en el pasillo, me encuentro con un rostro familiar.@
+`"¿Huh?@ ¿Qué hay de nuevo, Senpai?@ ¿Tienes algún asunto que resolver aquí en los salones de segundo año?"@
+ld c,":a;image\tachi\cel_t01a.jpg",%type_lshutter_fst
+`"Sí.@ Un asunto con un estudiante de segundo año, para ser precisa."@
+` Ciel-senpai se acerca con una sonrisa.@
+`"Escucha, tengo unos buenos bocadillos aquí, pero nadie con quien hablar.@ Sería un desperdicio comerlos todos yo sola, así que vine a atrapar algún perezoso para conversar."\
+`"Hmm… ¿Alguien para conversar?@ Pero no queda nadie en el salón de clases.@ Es lo mismo en todos los otros salones.@ Tú no vienes a los salones de segundo año muy a menudo, ¿cierto?@ Estás en el piso más bajo, ¿no?"@
+` Y si ella quería hablar con alguien, ¿no hay una buena cantidad de compañeros de tercer año con los que podía hablar?@ No necesitaba subir todo el camino hasta acá.@
+`"¿No has pensado en preguntarle a tus compañeros de tercer año?@ La conversación probablemente sería mejor."\
+ld c,":a;image\tachi\cel_t02.jpg",%type_crossfade_fst
+`"Sí, pero hoy, estoy de humor para hablar con chicos más jóvenes.@ Por favor no me pidas una razón, es sólo un capricho."@
+`"…… Bien, no preguntaré."@
+` Probablemente no sería capaz de entender aunque me lo explicara.@
+` La sonrisa de Senpai desaparece mientras mira fijamente mi rostro.\
+ld c,":a;image\tachi\cel_t07a.jpg",%type_crossfade_fst
+`"¿Estás libre en este momento, Tohno-kun?"@
+`"Bueno---Si no tener nada que hacer significa que estoy libre, entonces estoy definitivamente libre."@
+br
+` Senpai agarra la manga de mi camisa.@
+br
+ld c,":a;image\tachi\cel_t03.jpg",%type_crossfade_fst
+`"Bien, entonces, estás atrapado.@ Vamos a beber algo de té."@
+` Senpai me invita con una sonrisa.@
+` No tengo razón para rechazar la oferta, y además, debería ser divertido hablar con Senpai.\
+`"Claro, te acompañaré, si estás de acuerdo."@
+`"Entonces está decidido.@ ¡Muy bien, vamos!"@
+` Aún sosteniendo mi manga, ella comienza a caminar por el pasillo con un ligero modo de andar.\
+bg #000000,%type_lcartain_slw
+bg "image\bg\bg_09b.jpg",%type_lcartain_slw
+`"Guau.@ ¿Nuestra escuela tiene una habitación como ésta?@ ¿Podría ser para el Club de la Ceremonia del Té?"@
+ld c,":a;image\tachi\cel_t03.jpg",%type_crossfade_fst
+`"Sí, es la habitación del Club de la Ceremonia del Té por ahora.@ Sin embargo parece que no había sido usada hasta que yo vine."@
+cl c,%type_lshutter_fst
+` Senpai se para sobre la alfombrilla tatami y comienza las preparaciones con un ruido de repiqueteo.@
+`"¿Una habitación de club, eh?@ De ser así, ¿no vendrán los otros miembros del club?@ Sería malo que alguien ajeno como yo esté aquí, ¿cierto, Senpai?"@
+`"Está bien.@ Puede que sea el Club de la Ceremonia del Té, pero no hay otros miembros aparte de mí.@ Gracias a eso, puedo usarla libremente durante los descansos y después de la escuela…… todo listo."@
+` Sonriendo, Senpai comienza a repartir los cojines.@
+` El té es té, pero parece que en verdad va a ser una ceremonia del té muy seria.@
+` Para ser sincero, estoy un poco abrumado.\
+`"Uh, Senpai…… no tengo la mas leve idea de qué hacer."@
+`"¿De qué estás hablando?@ Yo misma sólo conozco la parte de servir el té."@
+` Con esa franca respuesta, Senpai coloca la tetera, unas tazas, y algunas pastas de té sobre un plato.@
+ld c,":a;image\tachi\cel_t03.jpg",%type_lshutter_fst
+`"Sólo vamos a tener una simple conversación, así que no hay necesidad de ser tan formales.@ No es nada divertido de esa manera, ¿cierto?"@
+` Sonriendo dulcemente, Senpai sirve té en su propia taza.\
+cl c,%type_lshutter_fst
+`"…… Hmm.@ Simplemente no te entiendo, Senpai."@
+` Murmurando, sirvo mi propio té.@
+` Bebo un poco.@
+` Tomando la pasta de té y metiéndola en mi boca, bebo otro sorbo del té.@
+` Nunca estuve involucrado en eso, pero la Arima es una prominente familia respecto a la ceremonia del té.@
+` Habiendo sido educado en una casa como ésa, estoy acostumbrado a beber té y no hacer nada.@
+` Senpai me mira con una especie de incómoda expresión.\
+`"¿Qué ocurre, Senpai?@ Te ves un poco triste."@
+return

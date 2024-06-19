@@ -1,0 +1,88 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_01c.jpg",%type_lcartain_mid
+` ----Preocupado por lo que sucedió esta tarde, vengo a la escuela.@
+br
+` …… Si mal no recuerdo, Arcueid estaba actuando extraño cuando estuvimos aquí anteriormente.@
+` No tiene mucha lógica, pero si sólo está vagando alrededor, creo que podría terminar aquí.\
+bg "image\bg\bg_03c.jpg",%type_lcartain_mid
+` No hay señal de persona alguna; ni un solo sonido.@
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_03c.jpg",%type_crossfade_fst
+`"…………"@
+` Pero aun así, siento que hay alguien en el edificio.\
+wave se0
+` Algo.@
+!w500
+` Sin la presencia del sol,
+!w500
+` el edificio escolar se ha vuelto un "lugar" amenazador.\
+`"…… Entra ya, Shiki."@
+` No tengo tiempo para vacilar.@
+` Alentándome verbalmente, entro caminado al edificio.\
+bg #000000,%type_lcartain_mid
+play "*6"
+bg "image\bg\bg_10c.jpg",%type_lcartain_mid
+waveloop se1
+br
+` ----No hay nadie en el primer piso.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_07b.jpg",%type_lcartain_mid
+br
+br
+br
+` ----Siento un entumecimiento detrás de mi cuello.@
+` Ignorándolo, subo al segundo piso.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_11c.jpg",%type_lcartain_mid
+br
+br
+br
+br
+br
+` ----Llego al segundo piso.@
+` No hay nadie aquí.\
+wave se7
+` Nadie aquí.@
+wave se7
+` Nadie, aquí.@
+br
+` Pero.@
+` Sobre mi espalda,
+` Soy cubierto por una suave y fría sensación, como el abdomen de una serpiente.\
+`"------¿¡Quién está ahí!?"@
+` Me doy la vuelta bruscamente.@
+` Creo que había…
+ld c,":a;image\tachi\roa_t07a.jpg",%type_nowaitdisp
+bg #000000,%type_nowaitdisp
+\
+`"¿Eh----?"@
+` Escucho el sonido de una puñalada.@
+` En el siguiente instante,
+` Mi pecho es abierto por un corte.\
+bg "image\bg\ima_12b.jpg",%type_lshutter_fst
+` Sangre fluye hacia afuera.@
+` Soy apuñalado desde atrás, como si abrieran mi vieja herida.
+.@
+`"Ah----"@
+` Mi cuerpo cae.@
+br
+` ----No sé qué está sucediendo.@
+\
+bg #000000,%type_crossfade_mid
+` Todo se desvanece.@
+` En el último instante,
+br
+wavestop
+bg "image\bg\cmo_06.jpg",%type_crossfade_mid
+` Veo una escena de un distante día de verano, repitiéndose en mi mente.\
+bg #000000,%type_crossfade_slw
+playstop
+cl a,%type_waitdisp
+bg "image\word\end.jpg",%type_crossfade_slw
+resettimer
+waittimer 3000
+return

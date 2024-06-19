@@ -1,0 +1,84 @@
+monocro off
+wavestop
+playstop
+bg #000000,%type_nowaitdisp
+;---added context above---
+` ---No se me ocurre ninguna respuesta.@
+` Pero sé que no puedo dejar a Akiha sola.@
+`"¡¡-------!!"@
+` Cortaré el raudal de emociones.@
+` Sin pensar, voy tras Akiha.\
+!w1000
+bg "image\bg\bg_54a.jpg",%type_lcartain_mid
+play "*8"
+` --Para mi sorpresa, Akiha no ha salido de la mansión.@
+br
+` Bajo la luz de la luna.@
+` Bajo el árbol otoñal bajo el que una vez hablamos.@
+` Akiha está parada ahí.\
+bg #000000,%type_lshutter_mid
+bg "image\event\aki_e06.jpg",%type_lshutter_mid
+` Está parada en silencio.@
+` Sin hacer nada.@
+` Como una niña, mira inocentemente las hojas otoñales que caen.\
+`"--------"@
+` ¿Qué---podría hacer yo al respecto?@
+` Sin razón, sin inteligencia, una chica que simplemente está ahí.@
+` No hay crimen alguno.@
+` Akiha no es quien debe ser culpada…
+br
+` -----Por favor mátame.@
+br
+` Recuerdo esas palabras.\
+` ---Por favor mátame con tus manos.@
+br
+` Qué deseo tan cruel.@
+` Ella sólo podía pedir eso---ni siquiera podía pedir ayuda.@
+` Si me lo pedías---habría estado de tu lado hasta el último momento, aunque el mundo entero estuviese en mi contra.@
+br
+` ---Por favor mantén nuestra promesa.@
+br
+` …… Qué forma tan severa de ser tratado.@
+` Ciertamente la abandoné durante ocho años, pero nunca pensé que sería castigado de semejante manera.\
+`"---------"@
+` Akiha dijo…
+` No saber quién eres y andar matando gente por instinto es más aterrador que la muerte.\
+` Senpai dijo…
+` Si te conviertes en algo que sólo mata por instinto, a veces la muerte es la única salvación.\
+`"--------"@
+` Aprieto mi cuchillo.@
+` Sorprendentemente, no siento tristeza.@
+` Es como si mi mente se hubiese vaciado; no quiero sentir ninguna emoción.@
+`"Akiha---"@
+` Piso las hojas muertas mientras camino hacia ella.@
+` Akiha se percata y me saluda con una sonrisa.\
+`"-----Al menos."@
+` Me aferro fuertemente a mi cuchillo.@
+` Akiha ríe.@
+` Ella ríe felizmente mientras saluda a la persona que va a asesinarla.@
+`"¡¡-------!!"@
+` Mi mente se debilita.@
+` Pero ya he comenzado a caminar.\
+` ---La muerte puede ser la salvación.@
+br
+` Camino.@
+` Akiha no escapa, sólo me espera felizmente.@
+br
+` ----Por favor mátame.@
+br
+` Las hojas otoñales caen.@
+br
+` ---Ése fue tu último deseo.\
+` Akiha está riendo.@
+` No hay más distancia que recorrer.@
+` Ahora, todo lo que tengo que hacer es estirar este brazo.@
+br
+` ----Sin importar cuán doloroso sea para mí,
+br
+`"Tengo que matarte."@
+playstop
+br
+` Al decir eso,
+` repentinamente, mis ojos rebosan de lágrimas.\
+bg #000000,%type_crossfade_fst
+return

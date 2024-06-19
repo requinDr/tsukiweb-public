@@ -1,0 +1,454 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_40b.jpg",%type_nowaitdisp
+` ----Muy bien.@
+` Siempre estoy en deuda con ella, así que iré a ayudar a Kohaku-san.@
+br
+bg #000000,%type_lcartain_fst
+bg "image\bg\bg_42b.jpg",%type_lcartain_fst
+`"¿Huh……?"@
+` No la veo por ningún lado en el patio.@
+` Echo un vistazo alrededor.@
+` Sólo por un instante, veo el color de su kimono en el bosque.@
+`"¿No es ahí donde está el edificio separado?"@
+` …… Después de un pequeño debate interno, voy detrás de Kohaku-san.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_44a.jpg",%type_lcartain_mid
+` Kohaku-san continúa y entra al edificio.@
+` Sería muy estúpido venir todo el camino hasta aquí sólo para devolverme, así que me obligo a entrar.\
+bg #000000,%type_lshutter_mid
+bg "image\bg\bg_45b.jpg",%type_lshutter_mid
+play "*1"
+ld c,":a;image\tachi\koha_t09.jpg",%type_lshutter_mid
+`"¿Shiki-san?@ ¿Por qué ha venido aquí?"@
+`"Um, bueno----pensé que tal vez podría echarte una mano.@ ¿Estoy estorbando?"@
+ld c,":a;image\tachi\koha_t18.jpg",%type_crossfade_fst
+`"Shiki-san, me alegra que piense eso, pero no vine aquí para trabajar.@ Sólo vine para revisar la electricidad de acuerdo a las órdenes de Akiha-sama."@
+`"¿Eh?@ ¿Electricidad?@ ¿Este lugar todavía es utilizado?"\
+ld c,":a;image\tachi\koha_t03.jpg",%type_crossfade_fst
+`"Sí, ésta es la única habitación con electricidad.@ El edificio aún es mantenido a un nivel para ser habitado.@ El baño aún puede ser usado y hay futones preparados."@
+`"¿En serio?@ Pero este lugar no ha sido usado en mucho tiempo, ¿verdad?@ ¿Por qué es mantenido de esa manera?"@
+ld c,":a;image\tachi\koha_t01a.jpg",%type_crossfade_fst
+`"Veamos, quizás Akiha-sama le tiene cariño a este lugar.@ Hace mucho tiempo, era aquí donde solía vivir el hijo adoptado de Makihisa-sama."@
+br
+` ----¿Huh?@
+` ¿Makihisa…… mi viejo, adoptó un niño… hace mucho tiempo?\
+`"…… Espera un segundo, Kohaku-san.@ ¿Mi viejo adoptó un niño?"\
+ld c,":a;image\tachi\koha_t02.jpg",%type_crossfade_fst
+`"Oh, ¿no lo recuerda?@ Hace unos diez años, él trajo a un niño.@ Sus padres murieron en un accidente, así que lo adoptó."@
+`"¿Eso---sucedió?"@
+`"Sí.@ Pero dos años después, el niño falleció.@ Fue un accidente trivial, pero muchos de los sirvientes comenzaron a decir que la familia Tohno estaba maldita."\
+playstop
+wave se0
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_45b.jpg",%type_crossfade_fst
+` -----Espera un minuto.@
+br
+` Algo en sus palabras parece aterrador.@
+` Sólo al escucharlas, mi visión comienza a deformarse.@
+` Es como si toda la habitación estuviese hecha de azucar disuelta.\
+`"Ko, Kohaku, san."@
+` Un niño adoptado hace diez años.@ Dos años después, el niño murió.@
+` En otras palabras, hace ocho años… Es cuando tuve mi accidente y fui enviado al hospital.\
+play "*6"
+bg "image\bg\cmo_05.jpg",%type_nowaitdisp
+br
+br
+br
+` ---Accidente.@
+br
+` ¿Qué tipo de accidente fue?@
+` Un accidente que me hirió de gravedad.@
+` Un accidente, ¿en el que fue asesinado el niño adoptado?\
+br
+` Un caluroso día de verano.@
+br
+` ---No puedo recordar.@
+br
+` Todo lo que sé, es que en ese momento, mis brazos parecían estar empapados de sangre----\
+bg "image\bg\bg_45b.jpg",%type_crossfade_fst
+`"Kohaku, san.@ ¿Dijiste 'maldita'?"@
+ld c,":a;image\tachi\koha_t18.jpg",%type_crossfade_fst
+`"No, no es nada importante.@ Es sólo que muchos miembros de la familia Tohno han muerto siendo jóvenes.@
+` Accidentes, suicidios, o enfermedades; una maldición que no les permite tener una muerte natural.@ Bueno, ése era el rumor."\
+`"----¿Suicidio…… qué?"@
+ld c,":a;image\tachi\koha_t03.jpg",%type_crossfade_fst
+`"Sí.@ Sea cual fuere el caso, los miembros de la familia Tohno…… en su mayoría varones, sufrían de alguna enfermedad mental y cometieron suicidio cuando se hicieron adultos.@
+` Son sólo rumores persistentes, pero se dice que algunos de ellos eran asesinos antes de la guerra."\
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_45b.jpg",%type_crossfade_fst
+` …… ¿Enfermedad mental?@
+` …… ¿Asesinos?@
+` …… ¿Como soñar con asesinar gente todas las noches?@
+` …… ¿Como tener una sensación de anhelo cuando sueño con asesinar gente todas las noches?\
+`"Kohaku-san, eso---"@
+ld c,":a;image\tachi\koha_t03.jpg",%type_crossfade_fst
+`"Oh, lo siento mucho.@ Son sólo rumores oscuros sobre la familia Tohno."@
+`"No, está bien.@ No hay problema pero…… ¿podrías ser más específica, Kohaku-san?"@
+`"…… Seguro, pero no necesariamente conozco todos los detalles.@ Sólo que, bueno…… Makihisa-sama tenía esa clase de atmósfera a su alrededor."@
+`"Mi viejo----¿mi viejo la tenía?"@
+wave se0
+bg #000000,%type_crossfade_fst
+` Se oscurece.@
+` Mi visión da vueltas.\
+bg "image\bg\bg_45b.jpg",%type_crossfade_fst
+ld c,":a;image\tachi\koha_t01a.jpg",%type_crossfade_fst
+`"Sí.@ Estuve a cargo de la salud de Makihisa-sama dos años antes de que falleciera.@
+` …… Mientras usted vivía con la familia Arima, Makihisa-sama se había vuelto muy depresivo, y tenía que preparar medicina para tranquilizarlo."\
+`"Medicina para tranquilizarlo----¿mi viejo estaba tan mal, Kohaku-san?"@
+`"…… Sí.@ No era extraño que saliese de noche al jardín para matar a nuestros perros y gatos, o que hiriese su propio cuerpo."\
+wave se0
+` ----Qué-
+` ¿Qué es esto?@
+` Eso es prácticamente locura.@
+` Tan loco como yo en mis sueños.@
+wave se0
+br
+` …… No, eso está al revés.@
+` ¿Estoy loco al igual que mi viejo?\
+bg #000000,%type_crossfade_mid
+!w500
+playstop
+bg "image\bg\bg_45b.jpg",%type_crossfade_mid
+quakey 1,200
+wave se4
+waveloop se1
+ld c,":a;image\tachi\koha_t09.jpg",%type_lshutter_fst
+`"¿¡Shiki-san……!?@
+` …… Escucho la voz de Kohaku-san.@
+` N---no sé cuándo sucedió, pero estoy arrodillado sobre el piso de tatami.@
+`"Shiki-san, se ve terrible.@ ¡Si se siente mal, debería descansar en su habitación……!"@
+` Kohaku-san dice esto mientras sostiene mi hombro.@
+` Con su ayuda, puedo levantarme.\
+`"…… Sí…… estoy bien, así que---"@
+` De alguna manera, puedo concentrarme de nuevo.@
+` Pero aún estoy mareado.\
+bg #9c0120,%type_crossfade_fst
+bg "image\bg\bg_45b.jpg",%type_crossfade_fst
+br
+` En el torbellino rojo y blanco de mi visión,
+` blanco.@
+` El cuello de Kohaku… san… parece… terriblemente cálido.@
+br
+`"------Ah."@
+` Qué cautivador.@
+` Si mi cuerpo pudiese moverse correctamente, tomaría el cuerpo de Kohaku y----\
+bg #9c0120,%type_nowaitdisp
+` La visión negra de mi anemia de pronto se torna profundamente roja…@
+` El cuello blanco de Kohaku.@
+` El sueño carmesí de anoche.@
+br
+` ------Las matanzas nocturnas.@
+` Doloroso placer, como si mi corazón fuese a salirse por sí mismo.\
+bg #000000,%type_nowaitdisp
+bg "image\bg\bg_31b.jpg",%type_nowaitdisp
+bg "image\bg\ima_13.jpg",%type_nowaitdisp
+bg #000000,%type_nowaitdisp
+bg "image\bg\bg_45b.jpg",%type_crossfade_fst
+`"¡Gg------!"@
+` Incapaz de soportarlo, me aparto de Kohaku-san.\
+wavestop
+ld c,":a;image\tachi\koha_t01a.jpg",%type_crossfade_fst
+`"¿Shiki-san……?"@
+`"No----estoy bien----estoy bien, así que déjame en paz."@
+ld c,":a;image\tachi\koha_t04.jpg",%type_crossfade_fst
+`"Eso no.@ Si se desmaya aquí, Akiha-sama se enfurecerá.@ En primer lugar, parece que está sintiendo mucho dolor."@
+cl c,%type_crossfade_fst
+` Kohaku-san dice esto y se acerca más.\
+br
+` ------Esto no es bueno.@
+br
+` Es aterrador.@
+` Si se pone al alcance de mis manos, me temo que no sé qué haré.\
+`"----Estoy bien, déjame en paz, Kohaku… san…"@
+ld c,":a;image\tachi\koha_t04.jpg",%type_crossfade_fst
+`"No puedo.@ Shiki-san, por favor cálmese."@
+wave se0
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_45b.jpg",%type_crossfade_fst
+waveloop se1
+` …… Por favor, detente.@
+` Es peligroso acercarte a mí.@
+` Te dije que no te acercaras.@
+` ¿Por qué?@
+` ¿Por qué esta mujer no escucha lo que digo?\
+bg #000000,%type_crossfade_fst
+wave se0
+br
+br
+br
+br
+br
+br
+` ----¿Por qué?@
+br
+`   ¿Por qué te pones en mi camino?@
+wave se0
+`   Por qué haces esto,
+`   ¿¡Por qué no haces lo que yo quiero……!?\
+wave se0
+bg "image\bg\bg_45b.jpg",%type_nowaitdisp
+`"¡Cállate……!@ ¿No entiendes que te estoy diciendo que te alejes, Kohaku!"@
+wave se9
+quakex 2,100
+`"¡Kyaa----!"@
+` Bam, un claro sonido.@
+` Kohaku-san es lanzada contra la pared, su rostro se retuerce de dolor.@
+br
+`"Ah-------"@
+br
+` …… Su expresión hace que regrese mi cordura.@
+` El mareo se desvanece rápidamente.@
+` Después de un momento, todo mareo desaparece, dejando sólo un sentimiento de culpa.\
+`"--Lo siento.@ ¿Qué… estaba…"@
+ld c,":a;image\tachi\koha_t03.jpg",%type_crossfade_mid
+`"Está bien, por favor no se preocupe por eso.@ Fue sólo que lo provoqué cuando estaba de mal humor."@
+br
+` Ella muestra su sonrisa habitual.@
+br
+`"Ya no está pálido, y parece haberse recuperado.@ ¿Continuamos con nuestra conversación?"@
+`"No--ya fue suficiente por hoy.@ Perdón Kohaku-san.@ Hay algo mal en mí."\
+`"¿Oh?@ Usted es hombre, por eso no considero extraño que sea un poco rudo.@ De hecho, creo que casi siempre es demasiado tranquilo, Shiki-san."@
+` Ella dice eso, sonriendo.@
+`"………………"@
+` Ver esa sonrisa hace que me duela el pecho.@
+` …… Kohaku-san confía en mí.@
+` ¿Pero qué estuve a punto de hacerle hace poco----?\
+`"…… De acuerdo, Kohaku-san, iré de vuelta a mi habitación.@ En verdad lamento lo ocurrido."@
+` Digo esto y me voy corriendo.@
+` Dejo atrás el edificio separado, aplastado por el auto aborrecimiento.\
+bg #000000,%type_lcartain_mid
+!w2000
+play "*1"
+bg "image\bg\bg_40c.jpg",%type_lcartain_mid
+` ---Después de la cena, regreso a mi habitación.@
+` Caigo sobre la cama, y recuerdo el rostro de Kohaku-san.@
+br
+`"----"@
+` No entiendo.@
+` Por qué me sentí de esa manera, y por qué hice eso.\
+` En aquel momento…
+` Al mirar el cuello de Kohaku-san, estaba ansioso.@
+` Al igual que en el sueño de anoche, quería morder su cuello.@
+` Pero, ni siquiera puedo pensar en eso ahora.@
+br
+` El sueño de anoche, y el yo de hace un rato.@
+` Siento que hay alguien dentro de mí que no soy yo.\
+`"----"@
+` Toco mi cuello.@
+` Dicen que los que son mordidos por vampiros se convierten en vampiros.@
+`"…… Eso es estúpido.@ Puedo caminar afuera durante el día, después de todo."@
+` …… Sí, es imposible.@
+` Fueron sólo el mareo y mi consciencia disminuida contribuyendo con la imaginación.@
+` Lo que sucedió con Yumizuka está grabado en mi mente, por eso creo que lo recuerdo cuando sufro de anemia.\
+`"Como dijo Kohaku-san, tal vez sólo estoy cansado."@
+` …… Quizás.@
+` Debería dormirme rápidamente, y darle descanso a mi agotado cuerpo.\
+bg #000000,%type_crossfade_mid
+playstop
+!w2000
+wave se0
+!w750
+br
+` ----Caliente.\
+wave se0
+!w750
+br
+br
+br
+` ----Caliente.\
+wave se0
+!w750
+br
+br
+br
+br
+br
+` ----Caliente.\
+wave se0
+!w750
+br
+br
+br
+br
+br
+br
+br
+` ----Mi cuerpo, una vez excitado,
+`     no puede ser calmado por algo como dormir.\
+wave se0
+!w750
+br
+br
+br
+br
+br
+br
+br
+` ----Así que.@
+`    Esta noche también, aliviaré mi sed.\
+monocro #ff0000
+bg "image\bg\bg_47.jpg",%type_nowaitdisp
+bg #000000,%type_nowaitdisp
+bg "image\bg\bg_24c.jpg",%type_nowaitdisp
+bg #000000,%type_nowaitdisp
+bg "image\bg\bg_26a.jpg",%type_crossfade_mid
+` Parece que fui a la ciudad de noche.@
+` Parece que estoy esperando, con ojos inyectados de sangre, que alguien pase cerca.\
+wave se0
+br
+br
+br
+br
+br
+br
+br
+` ----De nuevo.\
+wave se0
+br
+br
+br
+br
+br
+br
+br
+` De pronto, veo un rostro reflejado en la ventana.@
+` Los ojos están inyectados de sangre, y el rostro parece demencial.\
+wave se0
+br
+br
+br
+br
+br
+br
+br
+` ----Este sueño, de nuevo.\
+wave se0
+br
+br
+br
+br
+br
+br
+br
+` Parece que encontré mi presa.@
+` La derribo sin darle oportunidad de gritar, sin que se percate siquiera de que ha muerto.\
+wave se0
+br
+br
+br
+br
+br
+br
+br
+` ----Estoy viendo esta pesadilla de nuevo.\
+bg #000000,%type_nowaitdisp
+bg "image\bg\ima_12b.jpg",%type_nowaitdisp
+bg "image\bg\bg_31b.jpg",%type_nowaitdisp
+` Tomando el cadáver, y el sonido de morder la garganta.@
+` Un gorgoteo.@
+` Bebiendo la sangre que sale del cuello desgarrado, calmo mi sed.\
+br
+br
+br
+br
+br
+br
+br
+` ----La misma escena de anoche.\
+` Aburriéndome sólo con la sangre, tomo la mano del cadáver y arranco los dedos uno por uno con mi boca.\
+br
+br
+br
+br
+br
+br
+br
+` ----La misma escena de anoche.\
+` Aburriéndome sólo con los dedos, tomo las extremidades del cadáver, y las arranco una por una con mi boca.\
+br
+br
+br
+br
+br
+br
+br
+` ----La misma escena de anoche.\
+` Entonces,
+` aparece una obstrucción.@
+` Arrojo el cadáver hacia un lado y salto.@
+` Alguien.@ Alguien está observándome.\
+br
+br
+br
+br
+br
+br
+br
+` ----¿Es diferente a la de anoche…?\
+bg "image\bg\ima_02.jpg",%type_tshutter_fst
+` Algo como un alargado clavo está volando por el aire.@
+` Para evadirlo, salto hacia un lado.@
+` Subo por el costado de un edificio, y salto de azotea en azotea.\
+br
+br
+br
+br
+br
+br
+br
+` ----La figura de negro persigue al vampiro.\
+` De una azotea a la otra.@
+` De una sombra a la otra.@
+` La figura me sigue.\
+br
+br
+br
+br
+br
+br
+br
+` ----No se puede evitar.\
+` No se puede evitar, murmura éste.@
+` Y la comida de esta noche terminó.\
+bg #000000,%type_crossfade_mid
+monocro off
+!w3000
+mov $phasebg,"image\bg\ima_19.jpg"
+mov $phasetitle_a,":a;image\word\PAKI_07A.PNG"
+mov $phasetitle_b,":a;image\word\day_07.png"
+gosub *left_phase
+waveloop se1
+bg #ffffff,%type_crossfade_mid
+`"¿Shiki-sama----?"@
+br
+` ----Una voz.@
+br
+`"¡Por favor tranquilícese, le traeré una bebida de inmediato…!"@
+br
+` ----El sonido de pasos corriendo.\
+bg "image\bg\bg_40a.jpg",%type_crossfade_mid
+br
+`"Ah----"@
+` Despierto de la pesadilla.\
+`"…… Mi habitación."@
+` Definitivamente estoy en mi habitación.@
+` Acostado en la cama, y ya amaneció.@
+` …… Tuve ese sueño de nuevo.@
+` El sueño en el que chupo la sangre de alguien.@
+` Aunque sé que sólo es un sueño, se sigue sintiendo terriblemente real.@
+` Mis manos retienen la sensación de la carne desgarrada; y mi nariz, el olor de la sangre fresca…\
+`"---¿Qué me está sucediendo?"@
+` Toco mi cuello suavemente.@
+` …… Las marcas de la mordida de Yumizuka desaparecieron hace mucho.@
+` Todavía soy un ser humano normal.@
+` No quiero beber sangre humana, y no tengo ningún problema con la luz solar.@
+`"----Ah."@
+` No.@ Ayer, yo@
+` ¿Qué pensé cuando vi el cuello de Kohaku-san?@
+br
+` ---Su cuello blanco.@
+` Desde el fondo de mi corazón, quería beber la sangre fluyendo ahí dentro----\
+return

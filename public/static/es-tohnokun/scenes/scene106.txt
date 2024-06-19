@@ -1,0 +1,283 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_29b.jpg",%type_crossfade_mid
+`"Estoy---exhausto."@
+` Caigo al suelo.@
+` Caigo sobre mi trasero e intento mantenerme erguido con mis manos.\
+` Mi mano derecha finalmente deja caer el cuchillo.\
+`"---Frío."@
+` Tengo frío.@
+` El dolor está adormecido; se siente casi confortable.@
+` Mi cuerpo está desgarrado por marcas de dientes caninos y marcas de picos.@
+br
+` ---Bueno, no hay duda de que probablemente moriré de esta manera.\
+`"----¡Shiki!"@
+` La voz de Arcueid.@
+`"----¡Corre, te tienen en la mira!"@
+` Arcueid grita mientras corre hacia mí.@ "………… ¿Eh?"@
+` Miro hacia el cielo nocturno mientras me siento.@
+` Allí,
+` veo la luna blanca,
+bg "image\bg\cmo_16.jpg",%type_crossfade_mid
+` y la figura de un cuervo azul.\
+` Éste grita mientras cae directamente hacia mí.@
+` Se deja caer para perforar mi cerebro con su afilado pico.@
+bg #000000,%type_lcartain_fst
+br
+`"¡----!"@
+` Intento levantarme para escapar.@
+` Pero, mi cuerpo está en su límite.@
+` Intento levantarme pero termino cayendo al suelo nuevamente.@
+` Ya que caí sobre mi espalda, tengo una vista del cuervo perturbadoramente clara.@
+br
+bg "image\bg\ima_14.jpg",%type_nowaitdisp
+` Cae en picada hacia mi rostro como una bala---y con un sonido de carne rebanada, muere justo frente a mis ojos.\
+bg #000000,%type_crossfade_fst
+` El cuervo fue atravesado por un clavo volador que parece una espada larga.@
+` Debe haber venido de algún lugar por encima de mí.@
+`"…………"@
+` Levanto la vista hacia el cielo nocturno.@
+bg "image\bg\ima_18.jpg",%type_crossfade_fst
+` Allí, está la luna blanca.\
+bg "image\event\cel_e04.jpg",%type_crossfade_slw
+br
+br
+br
+br
+br
+br
+br
+` Y, hay alguien vestido de negro, con prendas como de sacerdote.\
+`"-----"@
+` La figura se para sobre una farola y me mira fijamente desde arriba.@
+` A pesar de casi haber sido asesinado, pienso vagamente que esas botas de trenzado alto se ven geniales.@
+br
+` La figura no dice nada.@
+` Los ojos sin emoción se asemejan a la penetrante luz de la luna.@
+` Se asemeja…
+` La figura----ciertamente se asemeja a Senpai.@
+br
+`"………………"@
+` Mi mente flota.@
+` Cuuuaaaaaaa.@ El grito de muerte del cuervo.@
+` Y, cierro mis ojos tranquilamente.\
+bg #000000,%type_crossfade_slw
+play "*9"
+` …… Continúo sangrando.@
+` En mi aturdido estado,
+` puedo escuchar a Arcueid y a otra persona discutiendo.\
+`"No puedo dejarlo en tus manos.@ Yo lo curaré."@
+` Una voz horriblemente hostil.@
+`"No hagas nada que no debas.@ Él es mío, así que no te concierne."@
+` Arcueid suena exactamente igual.@
+br
+` …… Suena igual, pero desearía que no me tratase como su objeto tan egoístamente.\
+`"Sí, ciertamente no me concierne de momento.@
+` Sin embargo, no creo que puedas curar semejantes heridas.@ Todo lo que puedes hacer es verlo morir.@
+` ¿O----pretendes convertir a este joven en uno de tus subordinados, Arcueid Brunestud?"@
+`"…… ¿Crees que yo haría semejante cosa?"@
+` …… Puedo oír más que hostilidad en sus voces.@
+` Hay tanta tensión que anticipo el comienzo de otra batalla a muerte.\
+`"Entonces cállate por favor.@ Con esas heridas, no puede durar mucho."@
+`"---En verdad te odio.@ Deberías simplemente desaparecer antes de que te mate."@
+`"Yo también te odio.@ No tienes que decirme nada; planeo retirarme una vez que sus heridas sean curadas.@
+` Tú eres quien debería desaparecer antes de que te mate.@ No soporto verte a mi alrededor."@
+br
+` …… Una conversación llena de tensión y hostilidad.@
+` Mi mente se queda totalmente en blanco----\
+bg #ffffff,%type_crossfade_mid
+!w2000
+bg "image\bg\bg_29b.jpg",%type_crossfade_slw
+`"----Du… ro."@
+` Sí, es duro.@
+` Siento algo duro en mi espalda, y eso me hace despertar con un espasmo.\
+ld c,":a;image\tachi\ark_t06.jpg",%type_crossfade_mid
+`"……………………"@
+`"¿Huh?----¿Arcueid?"@
+` Miro alrededor.@
+` Estoy en el parque, acostado sobre un banco.@
+` Miro el reloj del parque, son más de la una de la mañana.@ Supongo que no ha pasado siquiera una hora desde entonces.\
+`"………………"@
+` Arcueid me mira en silencio.@
+` …… O tal vez sea una mirada feroz.@
+`"¿Ar…… cueid……?"@
+ld c,":a;image\tachi\ark_t04.jpg",%type_crossfade_fst
+`"……………………"@
+` Arcueid no responde.@
+` No sé por qué, pero parece muy enojada.\
+`"…… Oye."@
+` Por ahora, me levanto.@
+`"Oh----mis heridas sanaron."@
+` Estaba tan ensangrentado y cortado, pero no hay una sola cicatriz en ningún lado.@
+` Tampoco hay dolor alguno, como si mi pelea con Nrvnqsr hubiese sido un sueño.@
+br
+` ---Pero, eso no fue un sueño.@
+` Entonces, esto---debe ser…
+br
+`"Arcueid.@ ¿No me dirás que usaste una parte del cuerpo de Nrvnqsr otra vez……?"\
+ld c,":a;image\tachi\ark_t06.jpg",%type_crossfade_fst
+`"No, desafortunadamente no.@ Habría sido un arreglo rápido y también te habrías vuelto más fuerte.@ Pero 'mataste' a Nrvnqsr por completo, y ya no podemos usar su cuerpo."@
+`"¿En serio?@ Supongo que me curaste de otra manera entonces.@
+` …… Guau, en verdad estoy de vuelta a la normalidad.@ No siento dolor o mareo.@ ¿Cómo rayos lo hiciste, Arcueid?"@
+`"No lo sé.@ Yo no fui quien te curó."@
+cl a,%type_crossfade_fst
+` Ella exclama y aparta la vista, disgustada.\
+`"¿…………?"@
+` Parece que ésa es la razón.@
+` Pero… si no fue ella quien me curó, ¿entonces quién lo hizo----?\
+bg "image\event\cel_e04.jpg",%type_crossfade_fst
+bg "image\bg\bg_29b.jpg",%type_crossfade_fst
+`"------Ah."@
+br
+` Había.@
+` Había otra persona.@
+` Alguien que me ayudó.@
+` …… Esa mujer de prendas negras que se parecía demasiado a Senpai.\
+`"Arcueid… ¿¡dónde está esa persona de antes!?"@
+ld c,":a;image\tachi\ark_t06.jpg",%type_crossfade_fst
+`"………………"@
+` Aún pareciendo disgustada, ella aparta la vista y me ignora.@
+`"¡Oye, Arcueid!@ ¡Te estoy preguntando qué sucedió con esa persona de antes!"@
+`"No sé.@ No vi a nadie."@
+` Ella se da la vuelta y pretende no saber nada.\
+`"Oye---acabas de decir que no fuiste quien me ayudó.@ Si no fuiste tú, ¿entonces quién más pudo haberlo hecho?"@
+ld c,":a;image\tachi\ark_t16.jpg",%type_crossfade_fst
+`"¡Oh, ya basta, dije que no sé, así que no sé!"@
+br
+` Oh.@ Parece que se está desahogando conmigo.@
+br
+`"En primer lugar, ¿por qué estás tan interesado en esa persona?@ No tiene nada que ver contigo, ¿cierto?"@
+`"Idi---sí hay algo.@ …… Estaba oscuro; no pude comprobarlo, pero esa persona se parecía a alguien que conozco."\
+ld c,":a;image\tachi\ark_t07.jpg",%type_crossfade_fst
+`"----Es sólo una coincidencia.@ Olvídate de esa persona.@ Si hablas de ella otra vez frente a mí, me enfadaré de verdad."@
+cl a,%type_crossfade_fst
+` Concluyendo rápidamente, ella aparta la vista.@
+`"…… ¿Por qué estás tan enfadada?"@
+` Soy yo quien debería estar furioso.@
+` Sólo quiero saber quién era esa persona de antes, eso es todo.\
+`"…… Bien, ya entendí.@ No preguntaré más.@ Además, nuestra asociación termina aquí de todas formas."@
+ld c,":a;image\tachi\ark_t11.jpg",%type_crossfade_fst
+`"¿Eh---?"@
+`"¿No es obvio?@ Derrotamos al vampiro que hacía lo que le placía en esta ciudad, así que ya cumplí con mi responsabilidad.@
+` Tengo que volver a casa pronto, o Akiha me gritará.@ Creo que ya es hora de que terminemos, Arcueid."@
+ld c,":a;image\tachi\ark_t03.jpg",%type_crossfade_fst
+`"Hm----tienes razón.@ Ahora que lo mencionas, ya es muy tarde también."@
+` Arcueid asiente.\
+cl a,%type_lshutter_fst
+`"Cierto."@
+` También asiento en comprensión.@
+br
+` …… Asentí al comprender, pero…
+` todavía hay algo que persiste.@
+` Como si lamentara separarme de ella.@
+br
+`"-----"@
+` Eso es ridículo.@
+` Ella es un vampiro, y yo soy un humano normal.@
+` Si continúo asociado con ella…… sucederá algo que no podré reparar.\
+`"…… Adiós, Arcueid."@
+` Levantando una mano, me alejo caminando.@
+`"Um.@ Sucedieron muchas cosas horribles, pero también fue bastante divertido.@ Entonces---um, cuídate."@
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"Sí.@ Es tarde, y tienes que volver a casa."@
+ld c,":a;image\tachi\ark_t08.jpg",%type_crossfade_fst
+`"Buenas noches.@ ¡Hasta la próxima vez, Shiki!"@
+cl a,%type_lshutter_fst
+`"…………"@
+` …… Creo que ella dijo algo raro.\
+` Intento decir, "Ésta es la última vez, idiota" pero me detengo.@
+`"…… Bueno, causa muchos problemas, pero es una persona muy interesante."@
+` Hablo como si tratara de convencerme a mí mismo.@
+` Pero, es la verdad.@
+` Entonces, aunque sea sólo de vez en cuando…
+` Siento que--si por alguna casualidad nos encontramos de nuevo--no sería algo malo.\
+bg #000000,%type_crossfade_slw
+playstop
+!w1000
+bg "image\bg\bg_32d.jpg",%type_crossfade_slw
+` Regreso a la mansión.@
+` Son casi las dos de la mañana, y no hay una sola luz encendida en la mansión.@
+br
+`"…… Tengo que entrar a escondidas."@
+` Trepo sobre la cerca y entro al jardín.@
+` Afortunadamente, la puerta está abierta y puedo entrar sin despertar a nadie.\
+bg "image\bg\bg_48d.jpg",%type_lcartain_mid
+bg "image\bg\bg_33d.jpg",%type_lcartain_mid
+bg "image\bg\bg_40d.jpg",%type_lcartain_mid
+` *suspiro*@
+` Regreso a mi habitación y respiro profundamente.@
+br
+` Ha terminado.@
+` En verdad siento que los sucesos de los últimos tres días, todas las cosas extrañas, finalmente han terminado.@
+br
+`"Bien, entonces----hora de dormir."@
+` Dejo caer mi cansado cuerpo sobre la cama y me quedo dormido.\
+bg #000000,%type_crossfade_slw
+br
+` ---O al menos, ésa era mi intención.@
+br
+`"……………………"@
+` Pero, simplemente no puedo dormir.@
+` Mi mente y cuerpo están cansados, pero no puedo dejar de pensar en esa figura y no puedo dormir.@
+`"…… No pudo…… haber sido Senpai, pero……"@
+` Pero, se parece demasiado a Senpai.\
+` No pude ver su rostro con claridad, así que no puedo asegurarlo.@
+` Entonces---creo que me equivoqué.@
+`"…… Mañana…… se lo preguntaré…… en la escuela."@
+` Sí---es cierto.@
+` Puedo verla en la escuela cuando quiera, así que se lo preguntaré entonces.@ Entonces, ella podrá decir, "Ésa no era yo" y todo estará bien.\
+`"----Muy bien, eso es lo que haré."@
+` Está decidido.@
+` Ahora---si leo algún libro aburrido, probablemente me quede dormido.\
+bg "image\bg\cmo_15.jpg",%type_lshutter_mid
+waveloop se10
+br
+br
+br
+br
+br
+br
+br
+`       "Inmortalidad".@
+\
+` Si esa palabra fuese una gran realidad, sería una de las cosas que definirían la eternidad.@
+` Pero, en la realidad, nada en existencia ha alcanzado ese nivel.\
+` Por ejemplo, esos vampiros de los que ocasionalmente se habla en leyendas no son inmortales.@
+` Después de todo, son defectuosos porque necesitan robar de otros para existir.@
+` Además, el hecho de que sus partes suplementarias tengan que ser de la misma especie---refiriéndome, en este caso, a los humanos en general----indica que no son versátiles en absoluto.@
+` Se llaman a sí mismos una raza transcendental, pero eso no es evolución, es degeneración.@
+br
+` Aquello que no pueda funcionar independientemente en perpetuidad no puede ser llamado eterno.@
+` Es presuntuoso llamar inmortal a algo que depende de otros para detener su envejecimiento.\
+` Ya existe algo cercano a la perfección que puede funcionar independientemente en perpetuidad.@
+` Se alimenta de sí misma y se multiplica.@ No tiene nada semejante a un promedio de vida.@ Las células viejas se convierten en nutrientes y nuevas células son producidas en ese proceso.@
+` Me refiero a una medusa.@
+` Sin embargo, es perpetua sólo porque no tiene inteligencia.@
+` Si no tener inteligencia está bien, entonces no es diferente a alcanzar la eternidad por medio de la muerte.\
+` Si quieres ser eterno viviendo como un humano, es imposible a través del método de la inmortalidad.@
+` Largos años destruyen el cuerpo y desgastan la flexibilidad de la mente.\
+` Inmortalidad o eternidad.@
+` No tengo ningún apego a la manchada inmortalidad.@
+` Mantener persistentemente la individualidad hace a la eternidad inalcanzable.@
+br
+` En vez de obtener la inmortalidad como un solo humano,
+` elijo la infinidad de ellos en la que continúo existiendo eternamente.\
+bg #000000,%type_lshutter_mid
+bg "image\bg\cmo_10.jpg",%type_lshutter_mid
+` …… Ya veo; ciertamente un enfoque diferente al mío.@ Sin embargo, con tu método, ¿no perderás la eternidad junto a la extinción de la raza humana?@
+` Tu método requiere de un niño aún no nacido aparte de ti.\
+` Sí, es verdad.@ Pero si no existiese ningún otro humano, no sería capaz de confirmar mi propio yo.@
+` Por lo tanto----si los humanos se extinguen, continuar viviendo no tendría valor.@ En ese momento, mi inmortalidad terminaría.\
+` …… No entiendo tu teoría.@ Está lejos de la tesis de eternidad, Serpiente.\
+` No, en verdad es eternidad.@ Cuando llegue la hora de perecer, todo debería perecer.@ Si los observadores dejan de existir, significa que nada ha cambiado.@
+` La eternidad que yo personifico es temporal hasta que eso ocurra.@
+` No puedo convertir todo a la nada.@ Por lo tanto, continuaré viviendo hasta que eso suceda.@
+` …… Aunque, ahora he encontrado otro entretenimiento.\
+` ¿Es por eso que me llamaste?\
+` Sí.@ Te enseñaré un método místico que te permitirá dar forma levemente a lo que está dentro de ti.@ Hay alguien que deseo que captures usando esta hazaña de la era de los dioses, Chaos.\
+wavestop
+bg #000000,%type_lcartain_mid
+!w3000
+return

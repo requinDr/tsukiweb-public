@@ -1,0 +1,175 @@
+mov $phasebg,"image\bg\bg_29b.jpg"
+mov $phasetitle_a,":a;image\word\PCEL_07A.PNG"
+mov $phasetitle_b,":a;image\word\day_07.png"
+gosub *left_phase
+bg #ffffff,%type_crossfade_slw
+br
+` Estoy viendo un sueño.@
+` Un vago sueño sin ningún significado en particular.@
+br
+bg "image\event\ark_e01.jpg",%type_crossfade_fst
+bg #ffffff,%type_crossfade_fst
+` ¿Ella me gusta?@
+br
+bg "image\event\ark_e02.jpg",%type_crossfade_fst
+bg #ffffff,%type_crossfade_fst
+` No conozco mis verdaderos sentimientos, pero no puedo negar la realidad de que siempre estoy preocupado por ella.\
+bg "image\event\cel_e02a.jpg",%type_crossfade_fst
+bg #ffffff,%type_crossfade_fst
+br
+` ¿Ella me gusta?@
+br
+bg "image\event\cel_e03a.jpg",%type_crossfade_fst
+bg #ffffff,%type_crossfade_fst
+` …… No lo sé.@ Es sólo que, cuando estaba totalmente perdido dentro de mí mismo, ella me ayudó.@
+br
+` Si ella no hubiese estado ahí,
+` pude haber muerto bajo esa lluvia torrencial.\
+bg "image\event\cel_e04.jpg",%type_crossfade_fst
+bg #ffffff,%type_crossfade_fst
+br
+` ----No sé.@
+` Es por eso que debo preguntar.@
+` Por qué ella está haciendo esto.@
+` Por qué sus ojos carencen de toda emoción----\
+`"---Shiki-sama."@
+` …… Puedo escuchar la voz de Hisui mezclada con la luz matutina.@
+`"---Shiki-sama, es hora.@ Por favor despierte."@
+` Su desentonada voz me despierta.\
+bg "image\bg\bg_40e.jpg",%type_crossfade_slw
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_mid
+`"------"@
+br
+` Tan pronto como despierto, cosas terribles entran en mi visión.@
+` Comienza a dolerme la cabeza como si le acabasen de disparar.@
+`"Ah----"@
+` Casi pierdo mi recién despertada consciencia.@
+` Antes de desvanecerme por completo, tomo mis lentes rápidamente.\
+bg "image\bg\bg_40a.jpg",%type_crossfade_slw
+play "*2"
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"¿Shiki-sama……?@ ¿No se siente bien?"@
+`"…… No, no es eso.@ Es sólo mi anemia."@
+` Sacudiéndola ligeramente, saco de mi cabeza lo que estaba viendo.@
+`"Más importante aún, buenos días Hisui.@ Gracias por despertarme."@
+` Sentándome en la cama, hago mi mejor esfuerzo para sonreír naturalmente.\
+`"No, es mi obligación.@ No hay necesidad de que me agradezca, Shiki-sama."@
+`"Tal vez, pero estoy agradecido.@ Eres infinitamente mejor que un reloj despertador."@
+br
+` Me levanto.@
+` Aún no son las siete en punto---Son unos diez minutos antes de la hora en que normalmente despierto.@
+br
+`"…… Hmm, ¿desayuno?@ Estaré allá pronto, por favor ve primero que yo."\
+ld c,":a;image\tachi\his_t04.jpg",%type_crossfade_fst
+`"Shiki-sama, sobre eso, um---Akiha-sama lo está esperando en la sala de estar.@ Parece que tiene algunas preguntas para usted."@
+` Hisui dice esto con algo de dificultad.@
+`"…… ¿Preguntas que necesita hacerme?@ …… ¿Está de mal humor……?"@
+`"…… Sí.@ Akiha-sama parece haber descubierto que usted salió anoche, Shiki-sama."@
+`"…… Ah."@
+` Dejo escapar eso sin pensar.@
+` Anoche, fui a buscar a Arcueid y vine tarde a casa.\
+`"…… Uh-oh…… pensé que nadie lo había notado."@
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"Sí, yo también pensé que era la única que lo había notado."@
+` Hisui responde solemnemente.@
+`"¿……?@ Hisui, ¿te percataste de que salí……?"@
+ld c,":a;image\tachi\his_t05.jpg",%type_crossfade_fst
+`"Oh……"@
+` Hisui parece muy apenada.\
+`"Ya veo, lo sabías.@ Con razón la puerta de la mansión estaba abierta."@
+`"……………… Sí."@
+` Hisui responde sin entusiasmo.@
+`"Gracias, fue de gran ayuda.@ Y, gracias por salir de tu rutina para hacer eso."@
+`"Pero Nee-san también se percató debido a eso.@ Nee-san y yo vigilamos la mansión en rondas de dos horas.@
+` Y ella descubrió que dejé la puerta abierta---"\
+` …… Ahora entiendo.@
+` Kohaku-san es la sirvienta de Akiha, así que debe haberle hablado a Akiha sobre lo de anoche.@
+`"Hisui, no necesitas disculparte.@ Fue mi culpa por salir a pasear de noche, así que yo debería asumir la responsabilidad.@
+` Aún me alegra mucho que dejases la puerta abierta."@
+ld c,":a;image\tachi\his_t04.jpg",%type_crossfade_fst
+`"-----"@
+` Hisui simplemente mira hacia mí.\
+`"…… ¿Hm?"@
+ld c,":a;image\tachi\his_t05.jpg",%type_crossfade_fst
+`"…… No es nada.@ Tan pronto como se cambie, por favor vaya a la sala de estar."@
+cl a,%type_lshutter_fst
+` Aún parece como si quisiera decir algo, pero Hisui sale al pasillo.@
+`"…… Demonios, voy a ser regañado por Akiha otra vez."@
+` Murmuro para mí mismo mientras me cambio.@
+` Si tengo tiempo para eso---aún hay otra cosa importante que tengo que hacer.\
+playstop
+bg #000000,%type_crossfade_fst
+bg "image\event\cel_e04.jpg",%type_crossfade_mid
+bg "image\bg\bg_40a.jpg",%type_crossfade_fst
+`"…… Es cierto, tengo que hablar con Senpai---"@
+br
+wave se0
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\bg_40a.jpg",%type_nowaitdisp
+`"-----"@
+` Comienza a dolerme la cabeza otra vez.@
+` Se desvaneció cuando estaba hablando con Hisui, pero tan pronto como ella se fue, comenzó a doler de nuevo.@
+br
+`"Gh…… mierda, esto--no parece, que vaya a terminar, pronto……"@
+` Soporto el dolor mientras caigo sobre la cama.\
+wave se0
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\bg_40a.jpg",%type_nowaitdisp
+` …… No disminuye.@
+` Palpitar, palpitar.@ Un dolor como si estuviese siendo apuñalado en la cabeza.@
+br
+` …… Me hace olvidar por completo lo que estaba pensando anteriormente.@
+br
+` Ahora que lo pienso, desde aquel accidente hace ocho años, siempre he tenido que lidiar con mi cuerpo averiado.@
+` Mareos, dolores de cabeza y anemias que ocurren inesperadamente.@
+` No puedo contar cuántas cosas he tenido que abandonar debido a eso.\
+` El doctor dijo que fue un milagro que sobreviviese.@
+` Ser capaz de vivir es un milagro de por sí, así que soportar diversos dolores quizás es algo necesario.@
+` …… Estos ojos dañados.@ Sensei, quien fue capaz de aliviar estos ojos, me dijo que diese mucha importancia a ese milagro.\
+wave se0
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\bg_40a.jpg",%type_nowaitdisp
+` …… Esas palabras.@
+` ¿Quiso decir que la vida humana no es tan preciosa como irrecuperable, así que debería tratarla cuidadosamente?@
+br
+` En los últimos días, he visto la muerte de muchas personas.@
+` Con demasiada facilidad.@ Vidas que terminan tan fácilmente; es casi cómico.@
+` Si es algo que termina tan fácilmente, ¿no significa que ése era todo el valor que tenía desde el principio?@
+` De ser así, no tiene sentido ver a la vida como algo precioso.\
+wave se0
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\bg_40a.jpg",%type_nowaitdisp
+br
+` ………… ¿H, uh?@
+br
+` Por qué,          desde cuándo,
+wave se0
+!w1000
+wave se0
+` estoy,         comenzaste,
+wave se0
+!w1000
+wave se0
+br
+`    a pensar de esa manera?\
+wave se0
+bg #000000,%type_crossfade_mid
+bg "image\bg\bg_40a.jpg",%type_crossfade_mid
+` …… *suspiro*@
+` El dolor de cabeza finalmente se detiene.@
+`"…… Tal vez he visto demasiada sangre.@ Qué pensamiento tan horrible."@
+` Respiro profundamente.@
+` Llenando mis pulmones de aire fresco, desaparezco el desagrado.@
+`"---Debería apresurarme e ir a la escuela."@
+` Debería ir a ver a Ciel-senpai.@
+` Resistiendo el leve dolor que persiste en mi cabeza, dejo mi habitación.\
+bg #000000,%type_lcartain_slw
+bg "image\bg\bg_33a.jpg",%type_lcartain_mid
+` Bajo las escaleras y entro al vestíbulo.@
+` Junto a mí está el pasillo que lleva hacia la sala de estar.@
+` Frente a mí está la puerta que lleva hacia afuera.@
+`"………………"@
+` ¿Qué debería hacer?@
+` Akiha está esperando en la sala de estar, pero quiero apresurarme y ver a Senpai.@
+br
+return

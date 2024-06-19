@@ -1,0 +1,75 @@
+monocro off
+wavestop
+play "*2"
+;---added context above---
+bg "image\bg\bg_33a.jpg",%type_nowaitdisp
+`"…… Es cierto.@ Creo que es la mejor opción."@
+` No creo que Akiha vaya a entender sobre 'no humanos' como Arcueid y Nrvnqsr, y ya que no puedo decir la verdad, debería al menos disculparme sinceramente.@
+br
+`"--De acuerdo, aquí voy."@
+` Respirando profundamente, abro la puerta de la sala de estar.\
+bg "image\bg\bg_34a.jpg",%type_lcartain_mid
+` En la sala de estar, Akiha está sobre el sofá y Hisui está parada junto a la pared.@
+ld c,":a;image\tachi\aki_t01a.jpg",%type_nowaitdisp
+`"--Buenos días, Nii-san."@
+` Su mirada me dice, "estoy furiosa."@
+`"Um, uh…… Buen día, Akiha."@
+`"Olvidemos los saludos.@ Por favor siéntate ahí.@ Deseo hablar contigo, Nii-san."@
+cl c,%type_nowaitdisp
+`"------"@
+` Sus palabras son tan vigorosas, no puedo negarme.@
+` Solemne y calmadamente me siento en el sofá frente a ella.\
+ld c,":a;image\tachi\aki_t01a.jpg",%type_crossfade_fst
+`"Nii-san.@ Es muy repentino pero, ¿puedo preguntarte sobre los últimos dos días?"@
+`"----Ugh."@
+` A pesar de su educado lenguaje, las palabras de Akiha son sin lugar a dudas una amenaza.@
+` Pero, su Onii-chan no puede contarle semejante historia.\
+br
+`"Sobre eso, Akiha."@
+`"Si, ¿de qué se trata?"@
+`"Lo siento, pero no puedo decirte."@
+cl c,%type_nowaitdisp
+\
+` Crash.@
+` La taza de té que Akiha estaba sosteniendo cae sobre la mesa.@
+` Más bien, creo que la dejo caer intencionalmente.\
+ld l,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"Akiha-sama---"@
+ld r,":a;image\tachi\aki_t04a.jpg",%type_crossfade_fst
+`"Oh, lo siento, Hisui.@ ¿Podrías por favor limpiar esto?"@
+cl a,%type_crossfade_fst
+` Hisui limpia silenciosamente el té derramado y los fragmentos de la (aparentemente muy costosa) taza de té.@
+br
+` La observo hacerlo con nerviosismo mientras Akiha me mira con ferocidad.@
+` Una vez terminada la limpieza, Hisui se va a la cocina.\
+ld c,":a;image\tachi\aki_t03a.jpg",%type_crossfade_fst
+`"---Entonces, Nii-san."@
+`"…… ¿Sí?"@
+`"¿Podría preguntarte de nuevo?"@
+` Akiha no se da por vencida.@
+` Puedo sentir su necesidad de sacarme la historia sin importar qué.@
+` Pero aun así, no creo que pueda hablarle sobre eso.@
+` Por supuesto, no sólo por mi bien, sino también por el de ella.\
+`"…… No.@ Sin importar cuántas veces me preguntes, no te lo puedo decir.@ Lamento haberte preocupado, pero no puedo hablarte sobre eso."@
+ld c,":a;image\tachi\aki_t02.jpg",%type_crossfade_fst
+`"--Aunque lo lamentas, no puedes decírmelo, Nii-san."@
+`"Correcto.@ Lamento no haberte contactado y no poder hablar sobre eso.@ Pero no he hecho nada malo en los últimos dos días.@ …… No quiero siquiera pensar que eso fue algo malo."@
+cl c,%type_crossfade_fst
+\
+` ---Eso es cierto.@
+` Aunque los dos días fueron simplemente de matar o ser matado--quiero creer que hice lo correcto.@
+br
+` Lo hice para ayudar a Arcueid, pero sobre todo… no me arrepiento de matar a ese monstruo caníbal.@
+br
+` Por lo menos, no habrá mas víctimas asesinadas al ser chupada su sangre.\
+`"---Lo siento, Akiha.@ Lamento preocuparte, pero por favor no me preguntes más."@
+ld c,":a;image\tachi\aki_t01a.jpg",%type_crossfade_fst
+`"------"@
+` Akiha mira fijamente mis ojos.@
+` Por un rato, ella permanece de esa manera.\
+`"…… Entiendo.@ Pensándolo bien, debes tener tus razones, así que ya no insistiré más, Nii-san."@
+`"…… Lo siento.@ Gracias por comprender."@
+ld c,":a;image\tachi\aki_t03a.jpg",%type_crossfade_fst
+`"-----"\
+cl c,%type_crossfade_fst
+return

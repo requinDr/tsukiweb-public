@@ -1,0 +1,17 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_29b.jpg",%type_nowaitdisp
+` …… Me quedaré aquí.@
+` Lo prometimos.@ Prometimos encontrarnos aquí.@
+` Aún no hemos cumplido nuestra promesa esta noche.@
+` La promesa de encontrarnos aquí, y pelear juntos.\
+` ----Entonces,
+` Si no puedo romper esta promesa, y si ella también piensa que es importante,
+br
+` Arcueid volverá.@
+` Sólo puedo seguir creyendo en ella y esperar aquí.\
+bg #000000,%type_crossfade_mid
+!w3000
+return

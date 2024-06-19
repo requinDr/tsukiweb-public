@@ -1,0 +1,62 @@
+monocro off
+wavestop
+play "*1"
+;---added context above---
+bg "image\bg\bg_40c.jpg",%type_nowaitdisp
+`"…… ¿Por qué… la cerré……"@
+` Mis pensamientos comienzan a avanzar a través de una neblina.@
+` Lo hice, porque----
+bg "image\event\aki_h13.jpg",%type_nowaitdisp
+!w300
+bg "image\bg\bg_40c.jpg",%type_nowaitdisp
+`"--------"@
+` Es cierto.@
+` La cerré para que Akiha no pudiese entrar.\
+`"¡Nii-san……!@ Sé que estás despierto.@ Tienes que recibir tu examen médico, ¿¡por qué cerraste la puerta!?"@
+` Bam bam.@ Ella golpea con más fuerza.@
+` Akiha me llama frenéticamente con una amarga voz.@
+`"¡Por favor abre la puerta de una vez!@ No has recibido tu transfusión nocturna, ¿¡acaso quieres morir!?"@
+` El retumbar de la puerta no se detiene.@
+` …… Eso es natural.@
+` Para Akiha no es bueno que me encierre en esta habitación de esta manera.@
+` Mientras yo haga esto--Akiha no podrá asesinarme.\
+`"¿¡Nii-san……!?@ Oye, ¿¡me estás escuchando, Nii-san……!?"@
+` Bam, Bam.@
+` …… No me importa mucho el ruido de la puerta, pero no puedo soportar tener que escuchar su voz.@
+br
+`"¡¡Cállate--…………!!"@
+br
+`"¿Eh------?"@
+` Escucho su grito ahogado al otro lado de la puerta.\
+`"¿Que me… calle?@ …… Nii-san, sólo estoy preocupada por ti---"@
+`"…… No me importa.@ No voy a salir.@ Si en verdad estás preocupada por mí, entonces vete."@
+`"Qué--"@
+`"¿No lo entiendes?@ Nunca voy a salir.@ ¡No dejaré--que tú--me mates……!"@
+` Bam.@ Golpeo la puerta.@
+` …… El otro lado de la puerta se convierte en un absoluto silencio.\
+!w2000
+br
+` --Y después de eso…
+br
+`"…… Nii-san, ¿qué rayos quieres decir?@ ¿Quién te dijo que yo te mataría?"@
+`"…… ¡Sólo vete……!@ ¡No soy un asesino, aún estoy cuerdo……!"@
+`"No puedo creerlo----Nii-san, ¿ya has sido atraído hasta ese punto?"@
+` Sus palabras están llenas de sorpresa.@
+` Siento que ella se aparta de la puerta.\
+`"…… Entiendo.@ Nii-san, ahora estás exhausto, así que volveré más tarde para verte."@
+`"--¡Cállate!@ ¡No dejaré que ni tú ni nadie entre a esta habitación……!"@
+`"…… Nii-san.@ Hoy te obedeceré, pero mañana, te obligaré a escucharme.@
+` Dejarte solo por un día ya es bastante peligroso, y no puedo dejarte solo por dos días, porque de seguro morirías.@ Por favor espera sólo un día más, Nii-san."@
+` Escucho sus pasos alejándose.\
+` *jadeo*…… *jadeo*…… *jadeo*
+` Difícilmente puedo respirar.@ Justo como dijo Akiha, a este paso de seguro moriré.@
+` *jadeo*…… *jadeo*…… *jadeo*
+` Pero, sigue siendo mejor a que Akiha me mate.@
+br
+` ----Mantengo la puerta bajo llave.@
+br
+` Me recuesto de la pared y mantengo los ojos abiertos para no quedarme dormido.\
+bg #000000,%type_lcartain_slw
+playstop
+!w3000
+return

@@ -1,0 +1,75 @@
+monocro off
+wavestop
+;---added context above---
+bg "image\bg\bg_31a.jpg",%type_nowaitdisp
+play "*9"
+`"Yo---"@
+br
+` …… Por alguna razón, no puedo negarme.@
+` Después de todo, la asesiné.@
+` Es mi culpa que esté débil y tenga que pedir la ayuda de otros.@
+br
+` ---Es mi responsabilidad.@
+` Además, aunque apenas acabo de conocerla, no parece una mala persona.\
+ld c,":a;image\tachi\ark_t01b.jpg",%type_crossfade_fst
+`"¿Qué opinas entonces?@ ¿No puede un humano como tú cooperar con un vampiro como yo?"@
+`"---Bueno, ésa sería la respuesta obvia, pero…"@
+ld c,":a;image\tachi\ark_t17.jpg",%type_crossfade_fst
+`"----"@
+` ¡Argh, no me mires con esos ojos!@
+` …… ¿Por qué será?@ Me hacen sentir agobiado por la culpa e incapaz de rehusar.@
+`"Pero ahora que me he involucrado en este desastre, no podré dormir de noche si niego toda mi responsabilidad."@
+br
+` ---Dios, sé muy bien que voy a arrepentirme de esto.\
+`"…… Entonces, sí.@ Creo que probablemente podría hacerlo.@ El enemigo es el asesino en serie, ¿cierto?@
+` Como residente de esta ciudad, probablemente seré golpeado por algún tipo de castigo divino si me niego a ayudarte."@
+ld c,":a;image\tachi\ark_t01b.jpg",%type_crossfade_fst
+`"¿Eh--?@ ¿Quieres decir---"@
+`"No voy a ser tu escudo, pero si sólo se trata de ser tu vigilante, lo haré."@
+` Me siento disgustado por lo estúpido que soy tan pronto como esas palabras salen de mi boca.@
+br
+` Me siento disgustado, pero----\
+ld c,":a;image\tachi\ark_t12.jpg",%type_crossfade_fst
+`"------"@
+` Hay algo en su exagerada expresión de sobresalto que es----\
+br
+`"¡Guau!@ ¿¡Lo dices en serio!?@ ¡Sabes que en verdad soy un vampiro!"@
+`"…… Hey, escucha.@ ¿Por qué estás diciendo todo esto ahora, después de haberme amenazado tanto?"\
+ld c,":a;image\tachi\ark_t14.jpg",%type_crossfade_fst
+`"Ah… Hm.@ Es verdad, pero---"@
+ld c,":a;image\tachi\ark_t08.jpg",%type_crossfade_fst
+`"---¡Bueno, no importa!@ ¡Si vas a cooperar conmigo, entonces debería estar agradecida!"@
+` …… Con una expresión muy feliz en su rostro, ella se acerca a mí, tirado sobre mi trasero y contra la pared.\
+ld c,":a;image\tachi\ark_t09.jpg",%type_crossfade_mid
+`"Nuestro contrato ha sido establecido."@
+` Ella extiende su mano hacia mí.@
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"Supongo que finalmente puedo presentarme.@
+` Soy Arcueid---hmm… mi apellido es muy largo, así que sólo Arcueid está bien por ahora.@ Soy un vampiro de la clase de los Verdaderos Ancestros.@ ¿Qué hay de ti?"@
+cl c,%type_crossfade_fst
+br
+` Suelto un pesado suspiro ante su presentación sin precedentes.@
+` …… Es un suspiro de resignación, evidencia de que he decidido aceptar esta situación sin sentido.\
+`"Soy Tohno Shiki.@ Tristemente, soy sólo un estudiante común.@ …… Lo he dicho antes pero, en realidad no voy a ser de mucha utilidad."@
+br
+` Tomando su---la mano de Arcueid, me levanto.@
+br
+` Ella me dirige una larga y dura mirada, y entonces me ofrece su mano de nuevo.\
+ld c,":a;image\tachi\ark_t09.jpg",%type_crossfade_fst
+`"Es un placer conocerte, Shiki.@
+` Haré que asumas responsabilidad por matarme."@
+` Arcueid sonríe abiertamente mientras extiende su mano izquierda.@
+cl c,%type_crossfade_fst
+\
+` *suspiro*@
+br
+` …… Hay toda clase de responsabilidades en este mundo, pero ésta probablemente sea la primera y última vez que una persona asume su responsabilidad ayudando a alguien que esa misma persona asesinó.@
+br
+`"…… Maldición… esto es un verdadero desastre."@
+` Pero no hay nada más que pueda hacer.@
+br
+` Extiendo mi mano izquierda de mala gana y doy un apretón de manos a la mujer de blanco que afirma ser un vampiro.\
+bg #000000,%type_lcartain_slw
+!w1500
+playstop
+return

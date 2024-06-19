@@ -1,0 +1,41 @@
+wavestop
+play "*6"
+;---added context above---
+monocro #0000ff
+bg "image\bg\bg_33d.jpg",%type_nowaitdisp
+` ----¿Estaba en… el ala oeste del primer piso?\
+bg #000000,%type_lcartain_fst
+bg "image\bg\bg_39.jpg",%type_lcartain_fst
+` …… Las luces están apagadas y no puedo distinguir muy bien los detalles de la habitación.@
+` Pero, puedo asegurar de inmediato que no es la habitación de Akiha.\
+`"¡Ésta es la habitación de Kohaku-san……!"@
+` Pateo el piso en la oscuridad.@
+` Ahora que lo pienso, la habitación de Akiha está en el ala opuesta a la mía.@ En otras palabras, el ala este del segundo piso.@
+`"¡Gah……!"@
+` Al darme la vuelta para salir al pasillo, veo algo tirado en el suelo.@
+`"¿………?"@
+` Fuerzo la vista en la oscuridad.@
+` Veo----la figura de Hisui desmayada en el suelo.\
+`"¿¡Hisui----!?"@
+` La llamo y corro hacia ella.@
+`"…………… Mnh."@
+` Hisui no responde.@
+` Está respirando tranquilamente en sus sueños.@
+`"¿Está…… dormida?"@
+` No puedo creerlo, pero así parece.@
+` Hisui no parece estar sufriendo.@ En verdad parece que está durmiendo.@
+` Sólo que, hay una taza de té volcada sobre la mesa, con su contenido derramado.@
+` La explicación más sencilla es que había alguna droga para dormir dentro de su té y se quedó dormida.\
+`"----¿Kohaku-san no está aquí?"@
+` La única desmayada en la habitacón es Hisui.@
+` …… Hisui sólo parece estar durmiendo, así que debo asegurarme de que Akiha esté a salvo----\
+bg #000000,%type_lcartain_fst
+` …… Subo corriendo las escaleras.\
+` El acalorado ambiente y la sensación premonitoria parecen extenderse como cristal sobre la oscuridad de la noche.@
+br
+` ----*jadeo*, *jadeo*, *jadeo*.@
+br
+` Respirando con fuerza, alcanzo la cima de las escaleras y camino por el pasillo…@
+` …… Me duele la espalda.@
+` Esta terrible sensación en el aire se hace más pesada mientras me acerco a la habitación de Akiha.\
+return

@@ -1,0 +1,53 @@
+monocro off
+wavestop
+play "*3"
+bg "image\bg\bg_09b.jpg",%type_nowaitdisp
+;---added context above---
+ld c,":a;image\tachi\cel_t08.jpg",%type_crossfade_fst
+`"¿Eh?@ Ah, um… sólo estaba un poco sorprendida de lo calmado que estabas respecto a todo esto, Tohno-kun."@
+`"¿En serio?@ Bueno, mi familia es estricta, así que estoy acostumbrado a este tipo de cosas.@ Más importante aún, Senpai, ¿no había algo sobre lo que querías hablarme?"\
+ld c,":a;image\tachi\cel_t03.jpg",%type_crossfade_fst
+`"Lo hay.@ Aún no te he agradecido por lo de esta mañana, así que pensé que cuidaría de ti por un rato de esta manera."@
+` Senpai hace su ingenua declaración con una dulce sonrisa.\
+`"¿C-cuidar de mí?@ Así no es como se usa la frase 'cuidar de' en japonés, Senpai."@
+`"Oh, ¿en serio?@ Quieres decir que la gente no dice 'cuidar de' cuando están mostrando hospitalidad hacia alguien a quien quieren agradecer?"@
+`"---No, no lo hacen.@ No creo que sea un error exactamente, pero tampoco es correcto."@
+`"Hmm.@ Estas frases relacionadas con los modales de seguro son difíciles, ¿no?@ Supongo que no debería tratar de usarlas si no estoy familiarizada con ellas."@
+` Senpai ríe avergonzadamente.\
+`"No, en absoluto.@ Dicen que los modales vienen del corazón, después de todo.@ Siempre que tengas los sentimientos correctos, es sólo un error trivial."@
+cl c,%type_crossfade_fst
+` Los ojos de Senpai parpadean en mi dirección mientras me miran fijamente.@
+` …… Su mirada es tan seria que siento como si me hubiese convertido en alguna rara especie de animal de zoológico.\
+`"Um…… ¿Senpai?@ ¿Acaso dije algo inapropiado?"@
+ld c,":a;image\tachi\cel_t07a.jpg",%type_lshutter_fst
+`"………………"@
+` Senpai continúa mirándome fijamente.@
+`"Um……… ¿Senpai?"@
+` Por alguna razón, me siento increíblemente avergonzado.@
+`"------En verdad te queda bien, Tohno-kun.@ Ser más joven y aun así más tranquilo que yo… eres impertinente."@
+` Senpai me mira ferozmente.@
+` …… No entiendo para nada cómo funciona su mente.\
+`"------Lo siento.@ Fue algo arrogante de mi parte hablar de esa manera."@
+ld c,":a;image\tachi\cel_t08.jpg",%type_crossfade_fst
+`"Sí, fue tan impertinente que me conmoví."@
+` Ella baja sus hombros con un suspiro y toma un sorbo de su té.@
+ld c,":a;image\tachi\cel_t03.jpg",%type_crossfade_fst
+`"Ahora tengo curiosidad sobre ti, Tohno-kun.@ Por favor, háblame.@ Puede ser de cualquier cosa."@
+` Senpai endereza su postura, con la actitud de un maestro hacia su estudiante.@
+`"…………"@
+` No parece que pueda negarme.\
+`"…… Bien, de acuerdo, pero no va ser muy interesante si sólo vamos a hablar sobre mí, Senpai."@
+` Senpai responde con una sonrisa.@
+` …… No tengo opción.@
+` No es mi forma de ser, pero supongo que hablaré con ella sobre la escuela------\
+bg #000000,%type_lshutter_mid
+!w1000
+` Al final, Senpai estuvo feliz de escuchar sin importar sobre qué le hablase.@
+` Fue sorprendente verla confundirse tanto cuando estábamos hablando sobre la escuela media.@ Aparentemente, Senpai nunca ha estado en un viaje escolar.@
+`"Eso suena agradable, todos yendo a un viaje juntos," dijo ella, con sus ojos brillando.@ Fue una visión bastante impresionante.@
+br
+` En algún punto, sostuve una conversación de un solo lado por una hora, pero me dejó muy cansado.@
+` Con el permiso de Senpai, decido dirigirme a casa.\
+!w1000
+playstop
+return

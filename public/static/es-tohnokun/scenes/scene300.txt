@@ -1,0 +1,5 @@
+monocro off
+playstop
+;---added context above---
+bg "image\bg\bg_11c.jpg",%type_nowaitdisp
+wavestop

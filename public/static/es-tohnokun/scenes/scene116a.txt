@@ -1,0 +1,29 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg #000000,%type_crossfade_mid
+!w3000
+` ………… Mi cuerpo está exhausto.@
+` Pero, no puedo caer en un profundo sueño.@
+` Las heridas por todo mi cuerpo pican y despiertan mi mente que trata de dormir.@
+br
+` Acostado en la cama, miro el reloj.@
+` Son más de las tres de la mañana----ya son cinco horas de descanso insatisfactorio.@
+`"……… Maldición, no puedo dormir."@
+` No ser capaz de dormir cuando quiero hacerlo… es como una tortura.\
+` Tic, tic, tic.@ El sonido de una de las agujas del reloj me pone los nervios de punta.@
+br
+` Tic, tic, tic, tic, tic, crii, tic, tic, tic, tic----
+br
+`"¿Eh--?"@
+` Creo que escuché algo mezclado con el tictac.@
+` Sonó como si la puerta fuese abierta, pero ¿quién vendría a esta hora?\
+` Tap, tap, tap.@
+br
+` No, no hay equivocación.@
+` Alguien entró a la habitación y se está acercando a mí.@
+`"----"@
+` ¿Quién es?@ …… Si alguien viniese a esta hora de la noche, sería---
+br
+return

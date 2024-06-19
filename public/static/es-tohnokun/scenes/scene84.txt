@@ -1,0 +1,72 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_19b.jpg",%type_nowaitdisp
+`"------"@
+br
+` Quiero continuar viviendo en este adecuado y respetable mundo.@
+` …… En verdad me siento responsable por matar a Arcueid.@
+` Pero, creo que hay algo mal en el hecho de ser forzado a hacer algo que no puedo.@
+` …… Pero, Arcueid está dormida.\
+` Está confiando en mí, alguien que ya la ha matado una vez, y durmiendo pacíficamente.@
+`"……… ¡Maldición………!"@
+` Pero aun así… no puedo hacerlo.@
+` Silenciosamente, comienzo a caminar.@
+` …… Dándole la espalda a Arcueid, durmiendo con total confianza en mí, abandono la habitación de hotel.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_20a.jpg",%type_lcartain_mid
+` …… El pasillo está en silencio.@
+` Estámos en el undécimo piso, el último piso del hotel.@ Ya que ella alquiló todo el piso, no hay otros huéspedes aquí.\
+br
+`"-------"@
+` Aún siento una pizca de indecisión.@
+` Pero, me la sacudo y llamo al ascensor.\
+bg #000000,%type_lcartain_mid
+!w3000
+play "*1"
+bg "image\bg\bg_25a.jpg",%type_crossfade_mid
+` Tomando el tren desde el hotel, regreso a la ciudad.@
+br
+` …… Es poco más de mediodía.@
+` La escuela está por terminar, probablemente estará bien ir de vuelta a la mansión.@
+`"…………"@
+` No obstante, no tengo ganas de regresar a la mansión.@
+br
+` Decido dirigirme hacia el parque para enfriar un poco mi cabeza.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_28a.jpg",%type_lcartain_mid
+` *suspiro*@
+` Sentado en un banco, miro el cielo distraídamente.@
+` El cielo aún está nublado, muy parecido al escenario dentro de mi propio corazón.\
+bg "image\bg\ima_06.jpg",%type_crossfade_mid
+` …… Me pregunto si ella seguirá durmiendo, creyendo en mí.@
+` La maté una vez, pero aun así dijo que me perdonaría.@
+` Ella me ha perdonado---pero… ¿qué estoy haciendo aquí?\
+` Anoche.@
+` Después de matar a Arcueid, juré que expiaría ese pecado sin importar cómo.@
+` ¿Fue un juramento que podría romper cuando mi vida esté en peligro?@ ¿Eso es todo lo que significa?@
+`"……… ¡Kuh!"@
+` Pero en verdad quiero vivir.@
+` Ése es un problema que no puedo ignorar mientras esté vivo.@ Y no es algo que pueda desechar y olvidar fácilmente como un momento de pasión.\
+br
+br
+br
+br
+br
+br
+` ---Ese poder es tuyo.@
+` Pero ésa es la razón principal por la que nunca debes olvidar.\
+`"---"@
+` Recuerdo esas valiosas palabras de hace mucho, mucho tiempo.@
+` Ella… Sensei… ¿qué fue lo que me dijo?@
+`"………"@
+` Aún tengo tiempo.@
+` El sol todavía no se ha puesto.@
+` Si puedo volver al hotel antes de que el sol se ponga, es probable que aún pueda llegar a tiempo.\
+`"Maldición."@
+` No puedo deshacerme de mis dudas.@
+` Al final, yo----
+playstop
+br
+return

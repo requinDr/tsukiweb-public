@@ -1,0 +1,93 @@
+monocro off
+wavestop
+play "*6"
+;---added context above---
+bg "image\bg\bg_53b.jpg",%type_nowaitdisp
+`"------------"@
+` No caeré en ese truco.@
+` Mi cuerpo deja de funcionar correctamente cuando le hago caso.@
+` Si hay alguna manera de recuperar a Akiha, la encontraré yo mismo.@
+` De ninguna manera---SHIKI, el que convirtió a Akiha en eso, no me lo dirá de ninguna manera.\
+`"----¡Huh!@ Supongo que no caerás en eso.@ Muy bien, entonces.@ A partir de ahora se trata de matarnos el uno al otro.@
+` Veamos quién es el mejor asesino."@
+` SHIKI ríe, aún sentado en el suelo.@
+`"------------"@
+` No respondo, y camino directamente hacia él.@
+` Faltan unos diez metros.@
+` Podré saltar hacia él dentro de pocos segundos.\
+`"…… Heh.@ No me digas que piensas que eres bueno sólo porque cortaste uno de mis brazos, Shiki."@
+`"--------"@
+br
+` Un metro.\
+`"Te enseñaré una última cosa.@
+` Sabes que todos en la familia Tohno tienen poderes distintos, ¿cierto?@ Creo que Akiha es buena para tomar calor de sus alrededores.@ Bueno, es algo así, influenciar el mundo exterior, como una habilidad de interferencia."@
+`"--------"@
+br
+` Dos metros.\
+`"Parece que la habilidad para interferir con el mundo exterior ha sido escasa incluso en la familia Tohno.@ Podría decirse que la habilidad de Akiha es rara.@ Ya que tiene un potencial tan grande, no es fácil de despertar.@ Cada vez que intento despertarlo, es como arrojar una roca en el océano.@
+` La mejor manera de utilizar toda su habilidad es que alguien se apodere de su mente y la controle."@
+`"--------"@
+br
+` Tres metros.\
+`"Bueno, hagamos a un lado a Akiha.@ Es más importante hablar sobre mí en este momento."@
+`"--------"@
+br
+` Cuatro metros.\
+`"Shiki, yo soy como el viejo; no tengo ningún método para interferir con el mundo exterior.@ La habilidad vampírica no es mi habilidad original.@ Esto es como una bonificación que obtuve después.@ Mi verdadera habilidad es la 'inmortalidad'."@
+`"--------"@
+br
+` Cinco metros.\
+`"Bueno, hay límites para mi inmortalidad, porque no puedo sanar mis propias heridas.@ ¿No es extraño que esta habilidad sea llamada inmortalidad?@
+` Pero es verdad que morir es difícil para mí.@ Mi cuerpo cambia su contexto para poder sobrevivir sin importar el estado en que se encuentre en ese momento.@
+` Los humanos mueren cuando pierden grandes porciones de su cuerpo, ¿cierto?@ Es porque los humanos necesitan una 'forma humana' con todas las partes necesarias para vivir como humanos.@ Si no pueden encontrar sustitutos para las partes perdidas, mueren.@ Bueno, podría ser más correcto decir que no pueden continuar viviendo."@
+`"--------"@
+br
+` Seis metros.\
+`"Pero en mi caso, es lo opuesto.@
+` Yo no sustituyo mis partes perdidas.@ En cambio, continúo viviendo aunque pierda un brazo o toda mi sangre.@ Mi cuerpo cambia sus órganos internos para que pueda vivir sin las partes que perdí.@
+` ¿Ves, no puedes decir que esto es 'inmortalidad'?@ Probablemente viviría aunque sólo quedase mi cabeza.@ …… Bueno, de ninguna manera querría vivir así."\
+`"--------"@
+` Siete metros.@
+` …… Un paso más.@
+` Entonces, estará a mi alcance----\
+`"…… ¿Vas a matarme, eh?@
+` Bueno, lo que quiero decir es esto.@ Tengo la habilidad no para influenciar el mundo exterior, sino el interior de mi cuerpo.@
+` ¿Lo entiendes?@ Aunque para ti parezca una parte del cuerpo inútil, para mí------"@
+`"--------"@
+br
+` Ya está.@
+` Ahora, voy a-----\
+quakey 1,200
+monocro #ff0000
+bg "image\bg\bg_53b.jpg",%type_nowaitdisp
+br
+br
+br
+br
+br
+` Puñalada.@
+` De repente, desde mis tobillos hasta mi cabeza…
+` Soy apuñalado por numerosas espadas que salieron repentinamente del suelo.\
+bg "image\bg\ima_13.jpg",%type_tshutter_fst
+`"-----Puedo transformarla en un arma importante de esta manera.@
+` Tienes que prestar más atención.@ De ninguna manera esparciría tanta sangre sin razón alguna."@
+` …… Ya… entiendo.@
+` Qué estúpido de mi parte.@
+` Seguí su rastro de sangre,
+` y caminé hacia una montaña de agujas.\
+`"No tengo la habilidad para herir a otros directamente como tú o Akiha, así que tengo que depender de pequeños trucos como éstos.@
+` Pero si este 'alguien' en mi cabeza se hiciera más claro, podría ser capaz de utilizar su habilidad como vampiro."\
+monocro off
+bg #000000,%type_crossfade_mid
+`"-----Supongo que ya no puedes seguir resistiendo.@
+` Entonces se acabó.@ Puedes dejar el resto en mis manos y regresar a tu tumba, Shiki-----"\
+br
+` Escucho una risa.@
+` Hace eco en mi cabeza mientras mi mente cae hacia la oscuridad-----\
+playstop
+!w2000
+cl a,%type_waitdisp
+bg "image\word\end.jpg",%type_crossfade_slw
+resettimer
+waittimer 3000
+return

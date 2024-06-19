@@ -1,0 +1,471 @@
+mov $phasebg,"image\bg\bg_54a.jpg"
+mov $phasetitle_a,":a;image\word\PAKI_05A.PNG"
+mov $phasetitle_b,":a;image\word\day_05.png"
+gosub *left_phase
+bg #ffffff,%type_crossfade_fst
+wave se0
+!w1500
+wave se0
+!w1250
+wave se0
+!w1000
+wave se0
+!w750
+bg #9c0120,%type_nowaitdisp
+bg #ffffff,%type_nowaitdisp
+wave se0
+!w250
+bg #9c0120,%type_nowaitdisp
+bg #ffffff,%type_nowaitdisp
+wave se0
+!w250
+bg #9c0120,%type_nowaitdisp
+bg #ffffff,%type_nowaitdisp
+wave se0
+bg #9c0120,%type_crossfade_fst
+bg "image\bg\bg_40a.jpg",%type_nowaitdisp
+play "*2"
+`"Nnn------"@
+` Despierto con un repentino dolor.\
+`"…… ¿Ya amaneció?"@
+` El reloj dice que son poco más de las seis y cuarenta.@
+` Afuera de la ventana hay un cielo perfectamente despejado.@
+wave se0
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_40a.jpg",%type_crossfade_fst
+`"Au----"@
+` El dolor me recorre una vez más.@
+` No en mi cabeza o en mi pecho, sino aparentemente a un costado de mi cuello.@
+`"…… Es raro…… nunca he tenido dolores ahí."@
+` Coloco mi mano sobre mi cuello, pero no hay sangre.@
+` La herida producida por la mordida de Yumizuka ya está cerrada.\
+`"…… Tal vez tengo fiebre."@
+` ¿Será por el alcohol de anoche?@ Mi cuerpo está pesado y siento que tengo fiebre.@
+wave se3
+ld c,":a;image\tachi\his_t01.jpg",%type_lshutter_fst
+`"Buenos días, Shiki-sama."@
+`"Ah, buen día Hisui.@ ¿Dormiste bien anoche?"@
+ld c,":a;image\tachi\his_t20.jpg",%type_crossfade_fst
+`"----S, sí.@ Por favor perdone mi horrible comportamiento de anoche."@
+`"Es cierto, te quedaste dormida.@ Está bien.@ Yo me demayé después, lo cual probablemente fue peor."\
+ld c,":a;image\tachi\his_t04.jpg",%type_crossfade_fst
+`"Gracias por su amables palabras.@ Después de cambiarse, por favor vaya a la sala de estar."@
+cl a,%type_lshutter_fst
+` Aún debe estar muy avergonzada por lo de anoche, porque se va un poco nerviosa.@
+`"Hisui… quizás…"@
+` Quizás, es posible que ella sea fácil de avergonzar.@
+` Al principio creí que era básicamente inexpresiva, pero cuando la miras de cerca, se avergüenza y se enoja mucho.\
+`"…… La próxima vez debería tratar de hacerla reír con mucho empeño."@
+` No sé cómo podría hacer eso, pero no hay duda de que la sonrisa de Hisui sería muy linda.@
+`"----Hmm, la sonrisa de Hisui sería igual a la de Kohaku-san."@
+` …… Una aburrida conclusión.@
+` Me cambio rápidamente y me dirijo hacia la sala de estar.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_33a.jpg",%type_lcartain_mid
+ld c,":a;image\tachi\aki_t01a.jpg",%type_crossfade_fst
+`""Ah.""@
+` Me encuentro con Akiha en el vestíbulo.@
+` Supongo que va a la escuela, porque está sosteniendo su maletín.@
+` …… Por alguna razón todo mi cuerpo comienza a calentarse tan pronto como veo su rostro.\
+ld c,":a;image\tachi\aki_t09.jpg",%type_crossfade_fst
+`"Buenos días, Nii-san."@
+`"----S, sí.@ Buenos días, Akiha."@
+` Palpitar.@ Me empieza a doler el pecho.@
+ld c,":a;image\tachi\aki_t08a.jpg",%type_crossfade_fst
+`"Guau.@ ¿Ocurre algo especial el día de hoy?@ Estás despierto viente minutos más temprano de lo normal, Nii-san."@
+`"No… sólo tuve un mal sueño, eso es todo.@ Sólo un capricho, no te preocupes."@
+br
+` …… No entiendo lo que estoy diciendo.@
+` ¿Será debido a mi sueño?@ Al recordar repentinamente su rostro de niña, no puedo mirar a Akiha directamente.\
+ld c,":a;image\tachi\aki_t13a.jpg",%type_crossfade_fst
+`"¿Nii-san?@ Tu cara está roja… ¿tienes fiebre?"@
+`"No, no es eso----"@
+`"¿……?"@
+cl a,%type_crossfade_fst
+` Por alguna razón no puedo devolverle la mirada.@
+` Ella levanta una ceja sospechosamente y se acerca a mí.\
+ld c,":a;image\tachi\aki_t01a.jpg",%type_crossfade_fst
+`"Discúlpame."@
+` Ella lleva su mano hacia mi frente.@
+`"Ah----"@
+` Palpitar.@ Mi corazón late.@
+br
+` ----La palma de Akiha es igual a la de aquel entonces.@
+br
+` Fríos y suaves dedos.@
+` Palpitar.@ Palpitar.@
+` Sus dedos me tocan sólo por unos segundos, pero mi corazón extrañanamente comienza a latir con más fuerza.\
+` Si mirase hacia abajo, su rostro estaría justo ahí.@
+` …… Sus delgadas y marcadas cejas que demuestran su fuerte voluntad.@
+` …… Sus claras pupilas negras haciendo juego con su largo cabello negro.@
+` En verdad es una belleza sin conexión con el nombre Tohno Akiha.@
+br
+` ---Palpitar.@ Mis latidos.@
+br
+` Puedo imaginarme cuán rojo se ha puesto mi rostro.\
+`"Oye----Akiha."@
+` Si ella no se aparta, será un problema.@
+ld c,":a;image\tachi\aki_t09.jpg",%type_crossfade_fst
+`"…… Parece que no tienes fiebre."@
+` Ella retira sus dedos y retrocede levemente.@
+ld c,":a;image\tachi\aki_t04a.jpg",%type_crossfade_fst
+`"Sólo por precaución, haré que Kohaku prepare una medicina fría.@ Por favor espera en la sala de estar, Nii-san."@
+cl a,%type_lshutter_fst
+` Con eso, Akiha sube al segundo piso.\
+bg #000000,%type_lshutter_fst
+bg "image\bg\bg_34a.jpg",%type_lshutter_fst
+` Las agujas del reloj señalan las siete.@
+ld c,":a;image\tachi\koha_t03.jpg",%type_lshutter_fst
+`"Perdón por hacerle esperar.@ Traje medicina fría y agua, por favor bébala después del desayuno, ¿de acuerdo?"@
+`"Ah……… Kohaku… san."@
+` Dejo caer mis hombros.@
+` En verdad me alegra que Kohaku-san la trajese, pero esperaba que Akiha lo hiciera, así que estoy un poco decepcionado.\
+`"Gracias, Kohaku-san.@ ¿Dónde está Akiha?@ Creo que es un poco temprano para que vaya a la escuela…"@
+ld c,":a;image\tachi\koha_t01a.jpg",%type_crossfade_fst
+`"No, ya que debía encargarse de algunas formalidades, Akiha-sama fue a la escuela más temprano.@ Y, ¿sabe qué, Shiki-san?"@
+` Kohaku-san mira mi rostro con una sonrisa.@
+`"¿Qu… qué?@ ¿Hice algo de nuevo?"\
+ld c,":a;image\tachi\koha_t02.jpg",%type_crossfade_fst
+`"Sí.@ Me preguntaba qué le hizo a Akiha-sama.@ Hace mucho tiempo que no veía a Akiha-sama tan feliz.@ Me da mucha, mucha curiosidad."@
+`"…… Um, en realidad no hice nada para hacerla feliz…… De hecho, siento que soy yo el que está feliz----"@
+` …… Pero, Akiha en verdad parecía estar de buen humor, ¿no?@
+` Estaba sonriendo cuando nos encontramos, y que Akiha tome mi temperatura, simplemente no es normal en ella.@
+` Habría estado bien dejarle eso a Kohaku-san, así que fue bastante raro.\
+`"¿Shiki-san?@ ¿No se le ocurre nada?"@
+`"No, lo siento.@ Definitivamente parecía estar de buen humor, pero no creo que fuese gracias a mí.@
+` En primer lugar, ya no comprendo a Akiha en absoluto.@ Es diferente a como era hace ocho años."@
+ld c,":a;image\tachi\koha_t03.jpg",%type_crossfade_fst
+`"¿Oh en serio?@ Bueno, personalmente pienso que usted a veces es un poco lento, pero dejemos eso hasta ahí."\
+`"Bien, entonces, por favor coma su desayuno Shiki-san.@ Está esperándole en el comedor."@
+`"Uh, sí.@ Gracias como siempre."@
+` Hago una rápida reverencia y voy al comedor.\
+ld c,":a;image\tachi\koha_t02.jpg",%type_crossfade_fst
+`"Ah, Shiki-san.@ Estaba equivocado en lo que dijo anteriormente."@
+`"…… ¿Eh?@ ¿Equivocado?@ ¿En qué?"@
+`"Akiha-sama no ha cambiado nada a como era en el pasado.@ Creo que el que la está haciendo difícil de entender es usted, Shiki-san."@
+cl a,%type_lshutter_fst
+` Dejándome con una frase cargada de significado, Kohaku-san desaparece hacia el vestíbulo.\
+bg #000000,%type_lcartain_mid
+!w1000
+bg "image\bg\bg_32a.jpg",%type_lcartain_mid
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"Shiki-sama, ¿a qué hora regresará el día de hoy?"@
+`"Hm, durante la tarde…… No tengo nada especial que hacer, así que estaré de vuelta a las cuatro."@
+`"Comprendo…… Ya no podré esperar por usted aquí, pero por favor llámeme si necesita algo cuando regrese."@
+`"¿………?"@
+` No podrá esperarme junto a la verja… ¿qué quiere decir?\
+ld c,":a;image\tachi\his_t16.jpg",%type_crossfade_fst
+`"Por favor tenga cuidado, Shiki-sama."@
+`"Sí, ya me voy."@
+` Despidiéndome de la inclinada Hisui, dejo la verja frontal de la mansión.\
+bg #000000,%type_lcartain_mid
+play "*3"
+bg "image\bg\bg_23a.jpg",%type_lcartain_mid
+` Ya que desperté temprano, puedo tomarme mi tiempo yendo a la escuela.@
+` Camino pausadamente por el camino que normalmente recorro trotando.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_01a.jpg",%type_lcartain_mid
+` Camino lentamente y llego a la entrada diez minutos antes de que cierre.@
+` Es la hora en que llegan todos los estudiantes que no participan en clubes.@
+` En una secundaria preparándose para la entrada de los alumnos regulares como yo, los únicos clubes que practican en la mañana son los clubes atléticos.@
+` Es natural que la entrada de la escuela esté así de congestionada.@
+br
+`"Ah, Senpai."@
+` Veo a Ciel-senpai caminando un poco delante de mí.\
+bg "image\bg\bg_03a.jpg",%type_lshutter_fst
+`"¡Senpai!"@
+` La llamo para detenerla.@
+ld c,":a;image\tachi\cel_t03.jpg",%type_lshutter_mid
+`"Ah, buenos días, Tohno-kun.@ Es raro verte aquí en la entrada."@
+`"Sí.@ Te vi desde atrás y corrí para alcanzarte.@ ¿Siempre vienes a esta hora?"@
+ld c,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
+`"Sí, soy mala para levantarme temprano, así que siempre llego sobre la hora.@ ¿Te quedaste dormido hoy?"\
+`"No, en realidad desperté más temprano.@ Sabes que normalmente llego cuando la entrada está a punto de cerrar."@
+`"Guau, ¿quieres decir que siempre despiertas tarde, Tohno-kun…… eh?"@
+ld c,":a;image\tachi\cel_t07a.jpg",%type_crossfade_fst
+` Puede que haya algo en mi cara, porque Ciel-senpai me mira fijamente.\
+`"¿Um----Senpai?"@
+`"Tohno-kun, ¿sucedió algo durante el fin de semana?"@
+`"No, nada.@ ¿Por qué preguntas, Senpai?"@
+ld c,":a;image\tachi\cel_t12.jpg",%type_crossfade_fst
+`"Oh, no es nada.@ Sólo estaba jugando.@ Por favor olvídalo."@
+`"¿?"@
+` Estoy un poco desconcertado.@
+cl a,%type_crossfade_fst
+br
+` ----Y entonces,
+br
+` en ese momento, veo un rostro familiar corriendo vigorosamente desde la entrada.\
+`"Es Inui-kun."@
+` Senpai dice con calma.@
+`"Sí, es Inui."@
+` Intento responderle con calma.@
+` Senpai y yo ni siquiera creemos que las acciones del alborotador Arihiko que corre hacia nosotros sean extrañas en absoluto.@
+br
+` En otras palabras, estamos acostumbrados.\
+`"¡Tohno~~~~~~!"@
+` Una nube de polvo se eleva detrás de él.@
+` No se detiene.@
+` Aunque estamos justo frente a él, Arihiko lanza una patada de despeje en mi dirección sin siquiera detenerse.\
+wave se4
+bg #ffffff,%type_nowaitdisp
+bg "image\bg\bg_03a.jpg",%type_nowaitdisp
+quakex 3,100
+` Crash, rueda, rueda, rueda, bam.@
+br
+`"……………"@
+` No puedo… creerlo.@
+` Este sujeto, esta persona me lanza una patada con toda su fuerza y de repente nos estrellamos contra el suelo y rodamos tres veces.@
+`"……………"@
+` Me levanto y sacudo todo el polvo de mi ropa.@
+ld c,":a;image\tachi\ari_t04.jpg",%type_bshutter_fst
+` Arihiko también se levanta y sacude su uniforme.\
+`"Arihiko."@
+`"Tohno."@
+` Después de un intervalo de tres segundos, nos enfrentamos directamente.@
+br
+` Listo.@
+!w1000
+br
+`"¿¡Qué demonios estás haciendo!?"@
+`"¿¡Tienes un hermana!?"@
+br
+` Ambos gritamos simultáneamente.\
+br
+br
+br
+br
+br
+br
+br
+` --------¿Q, qué?\
+`"…… Espera un segundo.@ ¿Cómo sabes que tengo una hermana?"@
+ld c,":a;image\tachi\ari_t03.jpg",%type_crossfade_fst
+`"¡Uuaaa, sí tienes una después de todo!"@
+`  Arihiko sostiene su cabeza en sus manos, y hace girar su cuerpo.@
+` …… Todo se ve tan ridículo, negaría que lo conozco aunque me debiese un millón de yenes.\
+`"Oye, ya basta Arihiko, por favor.@ Terminaremos siendo el hazmerreír de la escuela."@
+ld c,":a;image\tachi\ari_t04.jpg",%type_crossfade_fst
+`"¡Al demonio con eso, no me importa!"@
+` Arihiko levanta la vista con una mirada feroz.@
+ld c,":a;image\tachi\ari_t05.jpg",%type_crossfade_fst
+`"¡Traidor!@ ¡Algún día te llamaré Onii-san!"@
+cl a,%type_lshutter_fst
+` Dejando un incomprensible comentario de despedida, Arihko se va corriendo.@
+` No hacia el edificio escolar, sino hacia la entrada frontal.\
+`"…… ¿Qué está haciendo?"@
+` No faltan siquiera cinco minutos para la tutoría.@
+` Nada respecto a él es comprensible.@ En fin, parece que no me lo encontraré por el resto del día.@
+br
+bg #000000,%type_lcartain_mid
+!w1000
+bg "image\bg\bg_06a.jpg",%type_tshutter_mid
+` Durante el descanso después de la segunda hora, Arihiko regresa repentinamente.@
+`"Hm.@ Después de pensarlo un rato, no tenía razón para ir a casa."@
+` Diciendo eso, toma asiento tranquilamente.@
+` Dejándolo solo, me siento inexpresivamente y espero el inicio de la tercera hora.\
+` Pero----la clase parece extraña el día de hoy.@
+br
+` En cada descanso, todos los chicos dejan el salón, y regresan con caras de felicidad.@
+`"¿?"@
+` …… Tengo un poco de curiosidad.\
+ld c,":a;image\tachi\cel_t01a.jpg",%type_lshutter_mid
+`"Hola, Tohno-kun.@ ¿Te importa?"@
+`"¿Huh?@ Es el descanso, Senpai, ¿está bien que vengas a mi salón de esta manera?"@
+ld c,":a;image\tachi\cel_t04.jpg",%type_crossfade_fst
+`"Sí, estar aquí es mucho más divertido que estar en mi salón."@
+` Ella sonríe felizmente mientras dice esto.@
+` Arihiko está sentado en su pupitre, inconsciente de la llegada de Senpai.@
+` Es la situación más ideal.\
+ld c,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
+`"Pero también hay mucho ruido en los salones de segundo año.@ Los chicos de tercer año han estado haciendo un alboroto, e imagino que el cuarto piso ya está abarrotado."@
+`"…… ¿Huh?@ ¿Los de tercer año haciendo un alboroto?@ ¿Por qué?"@
+ld c,":a;image\tachi\cel_t05.jpg",%type_crossfade_fst
+`"Oh, para ti no es la gran cosa.@ Bueno, no hay razón para que vayas a ver, Tohno-kun."@
+`"¿……?"@
+br
+` …… No entiendo muy bien, pero parece que no hay razón para que yo vaya a ver.\
+`"¿Qué quieres decir?@ ¿Ir a ver qué?"@
+ld c,":a;image\tachi\cel_t03.jpg",%type_crossfade_fst
+`"La nueva estudiante de transferencia de primer año.@ Los chicos de todas las clases están tomando turnos para ir a verla.@
+` Aparentemente, el pasillo afuera de su salón está muy congestionado.@ Es terriblemente popular."@
+` ¿Estudiante de transferencia……?@
+` Hmm… en otras palabras, es ahí adonde fueron todos los chicos de mi clase.\
+`"----¿Oh?@ ¿Eso significa que esta nueva estudiante de transferencia es muy linda?"@
+ld c,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
+`"No lo sé, pero eso es lo que he escuchado.@ Dicen que una chica de primer año fue transferida de una famosa academia para señoritas."@
+`"…… Ya veo.@ Para que alguien sea transferido en está época del año, las circunstancias deben ser extrañas."@
+`"Tú también lo crees, ¿eh?@ Pero parece un desperdicio.@ ¿Por qué fue transferida de la distinguida Academia Asagami para Señoritas a este lugar?"@
+`"¿Hm?@ Qué coincidencia.@ Mi hermana también cursa primer año en----"\
+` -----Espera un minuto.@
+br
+` Hay algo que no está bien en toda esta conversación.@
+` Senpai suena como si yo conociera a esa estudiante de transferencia.\
+bg "image\bg\bg_40c.jpg",%type_lshutter_fst
+ld c,":a;image\tachi\aki_t04b.jpg",%type_crossfade_fst
+br
+br
+br
+br
+br
+br
+` Por favor no te preocupes.@
+` A partir de mañana tu vida diaria será más parecida a esto.\
+bg "image\bg\bg_33a.jpg",%type_lshutter_fst
+ld c,":a;image\tachi\koha_t03.jpg",%type_crossfade_fst
+br
+br
+br
+br
+br
+br
+` Ya que debía encargarse de algunas fomalidades, Akiha-sama fue a la escuela más temprano.\
+bg "image\bg\bg_06a.jpg",%type_rshutter_fst
+`"------No puede ser."@
+` Estoy conmocionado.@
+` Estoy conmocionado, pero ésa es la única conclusión a la que puedo llegar.@
+ld c,":a;image\tachi\cel_t07a.jpg",%type_crossfade_fst
+`"¿Tohno-kun?"@
+` Ya no puedo escuchar la voz de Senpai.@
+` Miro hacia el pupitre de Arihiko, quien tiene una sonrisa especialmente malvada en su rostro.\
+cl a,%type_crossfade_fst
+` Camino con determinación hacia su pupitre.@
+`"Arihiko."@
+ld c,":a;image\tachi\ari_t05.jpg",%type_lshutter_fst
+`"¿Oh?@ ¿Qué podrá ser lo que quieres, Onii-sama?"@
+`"…… Te golpearé por decir eso."@
+ld c,":a;image\tachi\ari_t01.jpg",%type_crossfade_fst
+`"O, oye, ¿no aceptas una broma?@ ¿Qué pasa, hay alguna razón por la que quieras hablar con un plebeyo como yo?@ ¡Jyajajaja!"@
+` Arihiko ríe.@
+`"¿Razón?@ Bueno, esta vez en verdad tengo una razón."\
+`"Arihiko, ¿puedes decirme el nombre de esa nueva estudiante de transferencia?"@
+ld c,":a;image\tachi\ari_t02.jpg",%type_crossfade_fst
+`"Hombre, deberías saberlo sin que te lo diga, ¿cierto?@
+` Sí, su nombre es Tohno Akiha.@ Tu hermana menor.@
+ld c,":a;image\tachi\ari_t01.jpg",%type_crossfade_fst
+` Cielos, lo mantuviste en secreto incluso para mí.@ Lo habría descubierto rápidamente porque está muy buena.@ En verdad dudé de nuestra amistad en esta ocasión."@
+`"…… No, nunca ha existido esa clase de ilusión entre nosotros, pero ya veo."@
+` Totalmente deshecho, respondo y regreso a mi asiento.\
+cl a,%type_lshutter_mid
+ld c,":a;image\tachi\cel_t07a.jpg",%type_lshutter_mid
+`"¿Tohno-kun?"@
+` Senpai está hablando, pero no tengo ganas de responder.@
+ld c,":a;image\tachi\cel_t08.jpg",%type_crossfade_fst
+`"…… Hmm.@ Parece que tienes problemas, así que me iré."@
+cl a,%type_lshutter_fst
+` Senpai abandona el salón ligeramente.\
+` Akiha se ha transferido a mi escuela.@
+`"----¿Qué está pensando?"@
+` Murmurando en voz alta por el asombro, caigo sobre mi silla.\
+bg #000000,%type_bshutter_mid
+playstop
+bg "image\bg\bg_06a.jpg",%type_tshutter_mid
+` Llega la tercera hora y comienza la clase de inglés.@
+` El sonido del inglés fluido entra por un oído y sale por el otro.@
+` Mi cabeza sólo está llena de pensamientos sobre Akiha en este momento.@ Este inglés es sólo ruido para mí.\
+`"------"@
+` Como siempre, Akiha es Akiha.@
+` Si iba a transferirse a mi escuela, ¿no podía al menos decírmelo?@
+` No, más importante aún, se transfirió a mi escuela cuando eso no representa ninguna ventaja para ella---
+br
+wave se0
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_06a.jpg",%type_crossfade_fst
+waveloop se1
+`"Ah----"@
+` Dolor de nuevo.@
+` Agudo dolor en mi cuello.\
+monocro #ff0000
+bg "image\bg\bg_06a.jpg",%type_rshutter_mid
+` Caigo sobre mi pupitre.@
+` Esto es malo.@ Difícilmente puedo moverme.@
+` ¿Es la anemia de nuevo?@
+` Entonces es lo de siempre.@ Es normal.@ Ya pasará.@ Estoy en clases.@ Tengo que recuperarme.@ Mira, el maestro de inglés está leyendo en voz alta.@ El pizarrón.@ Tiza.@ Polvo de tiza.@ Inglés.@ El sonido de la tiza.@ Maestro.@ Maestro.@ Adulto.@ Atril.@ El rechinante atril.@ Pupitre.@ Treinta y seis pupitres.@ Estudiante.@ Estudiantes.@ Treinta y seis estudiantes.@ Hace tres días habían treinta y siete.@ Ventana.@ Cielo.@ Patio escolar.@ Sol.@ Impopular.@ Soledad.@ Frío.@ Miedo.@ Nerviosismo.@ Algo.@ Deseo.@ Deseo.@ Deseo----\
+bg #ffffff,%type_crossfade_mid
+monocro off
+bg "image\bg\bg_06a.jpg",%type_rshutter_mid
+wavestop
+`"¡Tohno-kun!@ Oiga, ¿¡está usted bien Tohno-kun!?"@
+` Mis ojos se abren totalmente con el sonido de la voz del maestro.@
+` …… Sudor baja por mi frente.@
+` Mi cuerpo está frío, mi respiración es entrecortada.\
+`"¿Qué sucede, Tohno-kun?@ Si no se siente bien, puede descansar."@
+`"Ah, no, estoy bien.@ Ya ha pasado."@
+`"…… Ya veo.@ Bueno, no se fuerce.@ Sus calificaciones son buenas, así que es aceptable que tome un descanso ocasionalmente.@ Su progreso será satisfactorio aun con algunos impedimentos."@
+` …… A las palabras del maestro de inglés les falta un poco de consideración por los otros estudiantes.@
+` Una vez más declaro que estoy bien y se reanuda la clase.\
+bg #000000,%type_tcartain_mid
+!w1000
+wave se2
+bg "image\bg\bg_06a.jpg",%type_bcartain_mid
+play "*3"
+` A la hora del almuerzo, el salón se vuelve frenético.@
+` *suspiro*@
+` Respiro profundamente.@
+` Me he sentido caliente desde esta mañana.@ Quizás cogí un resfriado.@ Todo mi cuerpo se siente lánguido.\
+ld c,":a;image\tachi\ari_t01.jpg",%type_crossfade_fst
+`"¿Qué pasa, Tohno?@ ¿Aún estás por aquí?"@
+`"…… Sí.@ Hoy no me siento muy bien.@ No puedo ir a la cafetería, ¿podrías comprarme algo, por favor?@ Comeré lo de siempre."@
+`"Seguro pero, ¿está bien eso?@ Tu querida hermana parece estar teniendo problemas en la cafetería."\
+`"----Ah."@
+` Es cierto.@ Ha estado siempre en una academia para señoritas, seguramente no sabe cómo funciona una cafetería escolar normal.@
+` Puedo imaginarme claramente a Akiha parada en la cafetería sin saber qué hacer.@
+br
+` ----Demonios, no puedo dejarla así.@
+br
+`"¡Ah, Tohno!@ ¡Espera!@ ¡Yo también voy!"@
+` Salgo corriendo del salón.@
+` …… Detrás de mí, Arihiko me sigue un poco más enérgico de lo habitual.\
+bg #000000,%type_lshutter_mid
+bg "image\bg\bg_50.jpg",%type_lshutter_mid
+` Akiha está horrorizada en el centro de la congestionada cafetería.@
+` Parece como si no supiera qué hacer.@
+`"----Cielos.@ ¿Qué está haciendo?"@
+` Me apresuro hacia Akiha.\
+`"Akiha."@
+ld c,":a;image\tachi\aki_t19.jpg",%type_crossfade_fst
+`"Nii… san."@
+` En ese instante,
+` veo su rostro al borde de las lágrimas y mi pecho comienza a doler.@
+`"----Vamos, por aquí.@ No te gustan las multitudes, ¿verdad?"@
+`"Ah----sí."@
+cl a,%type_crossfade_fst
+` No quiero ver su rostro casi lloroso un segundo más, así que arrastro a Akiha fuera de la cafetería.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_04.jpg",%type_rcartain_mid
+`"Aquí deberías poder relajarte.@ Iré a comprar algo para que almorcemos, siéntate en este banco."@
+ld c,":a;image\tachi\aki_t12a.jpg",%type_crossfade_fst
+`"…… Sí.@ Disculpa la molestia, Nii-san."@
+`"----Está bien.@ Luego te disculparás.@ Arihiko, voy a buscar el almuerzo así que cuida de Akiha, ¿de acuerdo?"@
+cl a,%type_crossfade_fst
+ld c,":a;image\tachi\ari_t03.jpg",%type_crossfade_fst
+`"¿¡P, por qué me lo estás pidiendo tan repentinamente!?@ Mira, yo iré a comprar el almuerzo y tú hazle compañía a tu hermana, Tohno."\
+`"¿……?@ ¿Cuál es el problema Arihiko?@ ¿No vas a llamarme Onii-san?@ Te lo diré ahora, no te daré una oportunidad como ésta en el futuro."@
+` Le susurro a Arihiko.@
+` Él también me susurra, manteniendo nuestra discreción.@
+`"Ci, cierto, pero no puedo quedarme solo con ella tan repentinamente.@ Si fuese cualquier otra mujer estaría de acuerdo, pero tu hermana es demasiado refinada."\
+`"…… ¿Hm?@ No pareces tú en absoluto.@ ¿Le tienes miedo a Akiha?"@
+ld c,":a;image\tachi\ari_t05.jpg",%type_crossfade_fst
+`"Sí.@ Para ser sincero, así es.@ Ella es del tipo de chica que nunca he enfrentado, así que quisiera concentrarme en reunir información durante el primer asalto."@
+br
+` …… ¿Por qué siempre es tan gracioso en momentos extraños?\
+`"Muy bien.@ ¿Entonces puedes ir a comprar el almuerzo para los tres?"@
+ld c,":a;image\tachi\ari_t01.jpg",%type_crossfade_fst
+`"Déjamelo a mí…… Um, ¿qué querrá comer tu hermana?@ Me da miedo comprarle pan ordinario de cafetería."@
+`"…… Como si yo supiera.@ Ella se transfirió aquí, pan de curry y café con leche serán suficiente."@
+`"----Entendido.@ Volveré en cinco minutos."@
+cl a,%type_lshutter_fst
+` Arihiko regresa corriendo al edificio.\
+ld c,":a;image\tachi\aki_t13a.jpg",%type_crossfade_fst
+`"Parecen ser muy buenos amigos, Nii-san."@
+` …… ¿Huh?@
+` ¿Adónde se fue toda su vulnerabilidad?@ De repente está de vuelta a la normalidad.\
+`"Sí, nos llevamos especialmente bien…… ¡M, más importante aún, Akiha!"@
+`"Por favor no grites así.@ La gente a nuestro alrededor está sorprendida."@
+`"Qué----"@
+ld c,":a;image\tachi\aki_t21.jpg",%type_crossfade_fst
+`"Más importante aún, ¿puedes responderme?@ Esa persona, ¿qué es él para ti, Nii-san?"@
+` …… ¿Qué es él?@ Es sólo un indeseado pero inseparable sujeto que ha estado conmigo desde la escuela media----no, no estamos hablando sobre eso.@
+br
+cl a,%type_crossfade_fst
+return

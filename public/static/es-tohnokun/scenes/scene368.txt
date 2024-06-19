@@ -1,0 +1,18 @@
+wavestop
+play "*6"
+;---added context above---
+monocro #0000ff
+bg "image\bg\bg_33d.jpg",%type_nowaitdisp
+` -----Al final del ala este del segundo piso.@
+br
+` Ahí es donde está la habitación de Akiha.\
+bg #000000,%type_tshutter_fst
+` …… Subo corriendo las escaleras.\
+` El acalorado ambiente y la sensación premonitoria parecen extenderse como cristal sobre la oscuridad de la noche.@
+br
+` ----*jadeo*, *jadeo*, *jadeo*.@
+br
+` Respirando con fuerza, alcanzo la cima de las escaleras y camino por el pasillo.@
+` …… Me duele la espalda.@
+` Esta terrible sensación en el aire se hace más pesada mientras me acerco a la habitación de Akiha.\
+return

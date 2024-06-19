@@ -1,0 +1,19 @@
+monocro off
+wavestop
+;---added context above---
+bg "image\bg\bg_06b.jpg",%type_nowaitdisp
+play "*9"
+!w1000
+cl c,%type_lcartain_mid
+ld c,":a;image\tachi\cel_t20.jpg",%type_tshutter_mid
+` Has alcanzado el Final Verdadero de Arcueid.@ Buen trabajo.@
+br
+` Cada heroína (con una excepción) tiene dos finales distintos,
+` un Final Verdadero y un Final Bueno.@
+` Después de alcanzar uno de los finales, por favor retrocede un poco y vuelve a avanzar a través de la historia.@
+` Un evento diferente debería esperarte.\
+` Bien, entonces, muchas gracias por jugar hasta este punto.@
+` Veámonos de nuevo en algún lugar dentro de Tsukihime.\
+bg #000000,%type_crossfade_mid
+playstop
+return

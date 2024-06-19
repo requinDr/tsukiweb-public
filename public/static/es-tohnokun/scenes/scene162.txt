@@ -1,0 +1,136 @@
+mov $phasebg,"image\bg\bg_36d.jpg"
+mov $phasetitle_a,":a;image\word\PARK_09A.PNG"
+mov $phasetitle_b,":a;image\word\day_09.png"
+gosub *left_phase
+wavestop
+bg #ffffff,%type_crossfade_mid
+play "*9"
+br
+` Pío, Pío, Pío
+br
+` …… ¿Está abierta la ventana?@
+` Puedo escuchar el suave cantar de las aves en el jardín.@
+` Una brisa fría sopla sobre mi rostro.@
+` Siento la luz solar golpeando mis párpados.@
+` Una tranquila y dulce atmósfera.@
+br
+` Una mañana apacible.\
+` ¿Mañana?@
+` Supongo que me quedé dormido mientras Akiha se preocupaba por mí, y dormí hasta ahora.@
+` Acostado, mi cuerpo se siente pesado.@
+` Pero me siento mucho mejor que ayer.@
+` Decido abrir mis ojos y sentarme.@
+br
+` Y----\
+bg #ffffff,%type_lshutter_mid
+bg "image\event\ark_e04.jpg",%type_lshutter_mid
+br
+br
+br
+br
+br
+br
+br
+`    "Ah.@ El pequeño bribón finalmente despertó."@
+!w500
+\
+br
+br
+br
+br
+br
+br
+br
+` …… Veo el rostro de Arcueid justo frente al mío.\
+`"¿¡………!?"@
+` Mi cerebro se queda en blanco y deja de funcionar gracias a este evento inesperado.@
+` Mi boca se abre y se cierra, pero mi voz parece estar perdida.@
+br
+` ---Sinceramente, ¿qué está sucediendo?\
+` Arcueid está frente a mí.@
+` Estoy en mi habitación.@
+` Son más de las nueve de la mañana,
+` y ella ha entrado, con los zapatos puestos; eso es todo lo que sé por ahora.\
+`"¡T-T-T-Tú!"@
+`"Mentiroso.@ Prometimos volver a vernos ayer."@
+` Debe estar de muy mal humor ya que sus ojos rojos han perdido su belleza habitual.@
+br
+` ---No, no la ha perdido en absoluto.@
+` Estando así de cerca, su belleza es más intensa de lo habitual.\
+` Arcueid me mira ferozmente mientras estoy acostado en la cama.@
+br
+`"…… E-espera, Arcueid.@ ¿¡P-por qué estás en mi habitación esta mañana……!?"@
+` Comienzo a gritar, pero me detengo.@
+` Si gritase ahora, Hisui vendría y todo terminaría.@
+br
+` ---Todo es un caos, pero mi cerebro puede comprender eso.\
+`"¡Olvídalo, y quítate……!@ Entrar a la habitación de alguien, amenazar a una persona dormida, ¿¡no sabes lo terrible que es eso……!?"@
+`"¿Por qué tienes esa actitud?@ Vine aquí porque rompiste tu promesa.@ Dormías mientras hacías esperar a alguien, ¿qué rayos estabas planeando?"@
+` Ella me mira con irritabilidad.\
+` …… Me tranquilizo.@
+br
+` Es cierto.@ Rompí mi promesa de ver a Arcueid anoche.\
+`"…… Mmmm."@
+` Finalmente entiendo la situación.@
+` Comprendo por qué Arcueid está enfadada.@
+` Comprendo, pero hacer esto… entrar con zapatos a la habitación de alguien, ¿qué pretende hacer?@
+` La ventana está abierta,  probablemente entró por ahí.\
+`"…… Ya veo, rompí mi promesa, así que es mi culpa.@ Pero sabes que entrar aquí a escondidas es ir un poco lejos."@
+`"Ésta no es tu casa, Shiki."@
+` Ella da una rápida respuesta.\
+`"Sabes, en verdad estaba furiosa.@ Esperé tantas horas, y tan pronto como me percaté de que no vendrías, me puse increíblemente furiosa.@
+` Estaba pensando que no permitiría que esto pasara de nuevo y que desgarraría tu garganta."@
+` Ella habla, pero aún parece irritable.\
+`"¿Entiendes, Shiki?@ Ese sentimiento, no podía resistirlo.@ Aunque sabía que debía calmarme, mientras más pensaba en eso, más furiosa me ponía."@
+` Como si aún se sintiese de esa manera, sus ojos rojos parecen culparme.@
+br
+`"Sí… supongo que no puedes evitarlo."@
+` Agradeciendo a Dios que mi cuello aún esté en su lugar, sigo la conversación.\
+`"¿Verdad?@ Y entré aquí a escondidas, pero ya que estabas dormido decidí esperar.@ Al menos quería escuchar tu excusa.@
+` Y, como no tenía nada que hacer, observé tu rostro dormido.@ …… Sí, tu cara era muy tranquila, casi daba miedo.@
+` Dormías como si estuvieses muerto; comencé a sentirme nerviosa porque pensé que tal vez nunca despertarías."@
+` Suspiro.@
+`"Si estabas nerviosa entonces no debiste haberme despertado.@ Me pongo nervioso cuando estás junto a mí."\
+`"Pero, pensé que sería un desperdicio.@
+` …… No sé cómo luzco cuando duermo, pero pensé que sería grandioso si yo durmiese como tú lo hacías.@
+` Me preguntaba por qué te veías tan apacible mientras te observaba dormir.@
+` Mientras hacía eso, mi furia desapareció, y entonces despertaste."\
+`"…… ¿Entonces has estado aquí todo este tiempo?@ ¿Desde anoche hasta ahora?"@
+`"Sí.@ Personas de esta casa entraron de vez en cuando, pero me escondí así que no hubo problemas.@
+` También vino una chica para despertarte, pero no me agradó así que la envié fuera."@
+` Arcueid ríe alegremente.\
+`"Espera, ¿la enviaste fuera?@ ¿Cómo?"@
+`"No fui ruda.@ ¿No te dije que los vampiros tenemos Ojos Místicos de Encantamiento?@ Sólo tuve que sugestionarla diciendo 'Shiki ya se ha ido a la escuela' y no dejé ningún recuerdo de su encuentro conmigo."@
+`"¿Ningún recuerdo?@ Tú……"@
+` En verdad eres una persona fastidiosa.@
+` …… Bueno, aun si es fastidiosa, al menos se preocupó por no ser detectada.\
+` Llevo mis manos hacia mi cabeza mientras suspiro.@
+`"Muy bien.@ Perdón por lo de ayer, Arcueid.@ No sé si esto lo compensa, pero no romperé más promesas.@ Sí, lo prometo."@
+` La miro directamente a los ojos al declarar esto.\
+`"¿Estás seguro?"@
+`"Estoy seguro.@ Porque ahora me doy cuenta de que tu venganza es aterradora……"@
+` Aún acostado, levanto mis manos en señal de rendición.@
+br
+` De repente, su mal humor desaparece por completo.@ Arcueid asiente con satisfacción y dice 'de acuerdo'.\
+playstop
+bg "image\bg\bg_40a.jpg",%type_crossfade_mid
+play "*2"
+` Arcueid finalmente se aparta de la cama.@
+`"…… Cielos, meterte a la cama de alguien de esa manera.@ ¿No pensate cuán difíciles de limpiar serían las sábanas si dejabas la suciedad de tus zapatos?"@
+` Quejándome, me levanto de la cama.@
+` Arcueid se para en el centro de la habitación observándome mientras salgo lentamente de la cama.@
+`"…… Oye, ¿qué estás haciendo?"\
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"¿Qué estoy haciendo?@ Estoy esperando que te cambies.@ No vas a salir con esa ropa, ¿cierto?"@
+`"Bueno, claro.@ Nadie camina por ahí en pijama… Espera, ¿Arcueid?"@
+`"Sí, estaba pensando que pasaríamos el día juntos, Shiki.@ Dijiste que me compensarías por romper tu promesa, ¿no?"@
+` Arcueid dice esto relajadamente, como si fuese la cosa más natural del mundo.\
+`"Hoy, todo el día… ¿Qué estás diciendo?@ Tengo escuela…"@
+ld c,":a;image\tachi\ark_t16.jpg",%type_crossfade_fst
+`"Oye, dijiste que estabas seguro.@ ¿Irás a la escuela en vez de salir conmigo, Shiki?"@
+`"Uh……"@
+` Me atrapó con eso.@
+` Yo…
+cl c,%type_crossfade_fst
+br
+return

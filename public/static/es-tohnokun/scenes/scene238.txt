@@ -1,0 +1,45 @@
+monocro off
+wavestop
+play "*1"
+;---added context above---
+bg "image\bg\bg_06a.jpg",%type_nowaitdisp
+br
+` ---Buscaré en la escuela.@
+br
+` Sé que está ausente, pero… en este momento, esta escuela es la única conexión que tengo con ella.\
+bg #000000,%type_lshutter_mid
+bg "image\bg\bg_11b.jpg",%type_lshutter_mid
+bg #000000,%type_lshutter_mid
+bg "image\bg\bg_06f.jpg",%type_lshutter_mid
+bg #000000,%type_lshutter_mid
+bg "image\bg\bg_10b.jpg",%type_lshutter_mid
+bg #000000,%type_lshutter_mid
+bg "image\bg\bg_03b.jpg",%type_lshutter_mid
+bg #000000,%type_tshutter_slw
+bg "image\bg\bg_01b.jpg",%type_bshutter_slw
+` El sol se pone.@
+` Aun después de buscar por toda la escuela, no hay señal de Yumizuka Satsuki en ningún lugar.@
+br
+`"………… Gah."@
+` Muerdo mi labio con furia.@
+` …… Pero no es furia por no haberla encontrado.\
+` Hace dos días, estoy furioso conmigo mismo por haber prometido semejante cosa.\
+br
+` ---Ayúdame cuando esté en un aprieto, ¿de acuerdo?@
+br
+` Yumizuka dijo eso, y yo respondí alegremente.@
+` Que la ayudaría, tanto como pudiese.@
+` …… Qué respuesta tan irresponsable.@
+` En realidad no hay nada que yo pueda hacer.@
+br
+` Ella dijo que dolía.@
+` No puedo encontrar a Yumizuka, que está sufriendo dolorosamente en la fría oscuridad.\
+`"---"@
+` El sol se está poniendo.@
+` …… No quiero admitirlo pero, tal vez sólo podré encontrar a Yumizuka cuando caiga la noche.@
+`"…… Le dije a Hisui que regresaría durante la noche."@
+` Quizás es demasiado temprano.@
+` Iré de vuelta a la mansión y meditaré esto con calma.\
+bg #000000,%type_lcartain_mid
+!w1000
+return

@@ -1,0 +1,20 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_50.jpg",%type_lcartain_mid
+` Decido comer en la caótica y llena de estudiantes cafetería como siempre.@
+br
+` Por alguna razón, el udon y el soba son mejores que los almuerzos predeterminados en nuestra escuela, así que naturalmente decido comer algo de udon.\
+` Sentándome a la mesa, como mi udon de tanuki.@
+` La TV de la cafetería está pasando las noticias.@
+` La TV fue colocada de modo que los estudiantes puedan ver las noticias pregrabadas de la mañana durante la hora del almuerzo.\
+` Las noticias están transmitiendo un programa especial sobre los asesinatos en serie.@
+` Ha pasado un mes completo desde que comenzaron las matanzas, pero aún nadie tiene idea de quién es este asesino.@
+` Es un asesino no identificado, que no deja rastro y actúa sin motivo.@
+` Su identidad sigue siendo un misterio, a pesar de que ya han habido ocho asesinatos sólo en nuestra pequeña ciudad.@
+` Ciertamente es muy espantoso, dice el presentador.\
+bg #000000,%type_crossfade_mid
+!w2000
+return

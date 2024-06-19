@@ -1,0 +1,113 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_40b.jpg",%type_nowaitdisp
+` …… Me está enloqueciendo la forma en que Akiha dijo eso.@
+` Dijo que no entrara al edificio separado bajo ninguna circunstancia.@
+` La forma en que lo dijo me da más curiosidad.@ Además-----si hay una habitación de estilo japonés en ese lugar, siento que quiero echarle un vistazo.@
+br
+`"…… Supongo que no habrá problemas si no me atrapan."@
+` Me disculpo con Akiha y decido caminar hacia la salida silenciosamente.\
+playstop
+waveloop se10
+bg #000000,%type_lcartain_fst
+bg "image\bg\bg_33b.jpg",%type_lcartain_fst
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_42b.jpg",%type_lcartain_mid
+bg #000000,%type_lcartain_mid
+` ------El sol se ha puesto y afuera hay una profunda oscuridad.@
+` Camino a través del bosque que más bien parece una selva.@
+` …… No recuerdo muy bien dónde estaba, pero al entrar en el bosque, mis pies se dirigen automáticamente hacia el edificio separado.@
+` Aunque olvidé dónde estaba, supongo que mi cuerpo recuerda cómo llegar.@
+` Por lo menos, soy capaz de llegar al edificio separado sin perderme.\
+bg "image\bg\bg_44b.jpg",%type_lcartain_mid
+`"-------"@
+` Deben haber pasado muchos años desde que este edificio fue abandonado, porque muchas partes están deterioradas.@
+br
+` Al colocar mi mano sobre la puerta, noto que no está bajo llave.@
+br
+bg #000000,%type_lcartain_mid
+` Adentro está oscuro, como esperaba.@
+` Huelo las alfombrillas tatami y el shoji, y por alguna razón me siento cómodo a pesar de que no puedo ver nada.\
+bg "image\bg\bg_45c.jpg",%type_lcartain_mid
+`"-----Ah."@
+` Al entrar a la habitación de estilo japonés, un escalofrío recorre mi columna.\
+`"----------Conozco este lugar."@
+` Supongo que vine aquí de niño porque esta habitación de estilo japonés era interesante.@
+`"------------"@
+` Pero es extraño.@
+` Tengo la misma sensación de incompatibilidad que tuve cuando vi mi habitación por primera vez después de regresar a esta mansión.@
+`"…… Tal vez porque la casa de los Arima era de estilo japonés."@
+` Siento que he vivido aquí toda mi vida.@
+br
+` O tal vez-----\
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_45c.jpg",%type_crossfade_fst
+br
+br
+br
+br
+` Si recuerdo bien, en el pasado…\
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_45c.jpg",%type_crossfade_fst
+br
+br
+br
+br
+br
+br
+br
+` Cuando estábamos jugando en el patio…\
+bg #000000,%type_crossfade_fst
+bg "image\bg\cmo_06.jpg",%type_nowaitdisp
+bg "image\bg\bg_45c.jpg",%type_crossfade_fst
+br
+br
+br
+br
+br
+br
+br
+br
+br
+br
+` Quizás no éramos sólo Akiha y yo.\
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\bg_45c.jpg",%type_nowaitdisp
+wave se0
+`"Auch------"@
+` Siento un dolor en mi cuello.@
+` Podría ser mi anemia, pero mi cuerpo se siente como plomo.@
+`"…… Esto es malo…… tengo que volver a mi habitación."@
+` Sacudo mi cabeza ligeramente, y decido regresar a mi habitación antes de desmayarme.@
+play "*1"
+ld c,":a;image\tachi\koha_t02b.jpg",%type_lshutter_fst
+`"Oh hola, Shiki-san.@ ¿Qué está haciendo en un lugar como éste?"@
+` Kohaku-san entra a la habitación repentinamente.\
+`"¡¡¡----------!!!"@
+` Miro alrededor para ver qué puedo hacer.@
+` …… No hay lugar donde pueda esconderme.@ Además, ella ya me ha visto.@
+ld c,":a;image\tachi\koha_t04b.jpg",%type_crossfade_fst
+`"Oiga, usted no puede venir aquí.@ Akiha-sama nos dijo que nunca le permitiésemos entrar aquí."@
+`"…… Sí, ella me lo dijo hoy.@ Me lo dijo pero-----"@
+ld c,":a;image\tachi\koha_t15.jpg",%type_crossfade_fst
+`"¿Le dio curiosidad?@ Entiendo.@ Lo dejaré pasar esta vez, pero por favor no venga aquí de nuevo.@ Este edificio es viejo y un poco peligroso."\
+` …… Este edificio es viejo y un poco peligroso, eh.@
+` Es una razón extraña, pero tiene sentido.@
+`"…… Lo siento.@ Pero, ¿para qué era usado este edificio?@ Dices que ahora está en desuso pero, ¿alguien lo usaba antes?"@
+ld c,":a;image\tachi\koha_t03b.jpg",%type_crossfade_fst
+`"Sí, ésta solía ser la residencia de los sirvientes.@ Antes de que usted fuese con los Arima, esta mansión tenía muchos sirvientes.@
+` Era imposible permitir que todos los sirvientes viviesen en la mansión, así que Makihisa-sama construyó este edificio separado."@
+`"Ya veo, este lugar era la residencia de los sirvientes."\
+` Tiene sentido ahora que ella lo menciona.@
+` Si se tiene una mansión así de grande, semejante cosa ciertamente sería necesaria.@
+` Pero, ¿por qué?@
+` ¿Por qué Akiha está tratando de mantenerme alejado de este lugar------?\
+`"Shiki-san, deberíamos volver a la mansión, o Akiha-sama podría darse cuenta."@
+`"Oh-----Lo siento."@
+` Me sacudo la pequeña duda restante y decido regresar a la mansión con Kohaku-san.\
+bg #000000,%type_lcartain_mid
+playstop
+!w1000
+return

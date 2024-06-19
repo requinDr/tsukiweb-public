@@ -1,0 +1,49 @@
+monocro off
+wavestop
+play "*3"
+;---added context above---
+bg "image\bg\bg_06a.jpg",%type_nowaitdisp
+` …… Senpai está mirando de un lado a otro en el pasillo.@
+` No sé si está buscando algo o a alguien, pero se ve muy sospechosa.@
+br
+`"………… Je--jeje, je."@
+` Tengo un repentino e irresistible impulso.@
+` Senpai siempre lleva todo a su propio ritmo; creo que puedo responder algunas veces para balancear las cosas.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_11a.jpg",%type_lcartain_mid
+` Senpai está buscando algo seriamente.@
+` Me escabullo detrás de ella.@
+` …… Afortunadamente, Senpai no me nota en absoluto.@
+` Aquí voy,
+br
+`"¡Buu!"@
+`"¡----!"@
+` La sujeto desde atrás, pero----
+wave se4
+quakex 4,375
+ld c,":a;image\tachi\cel_t06a.jpg",%type_crossfade_fst
+` …… antes de darme cuenta, estoy tirado en el suelo.\
+cl c,%type_crossfade_fst
+`"Oh----¿Tohno… kun?"@
+` Senpai suena preocupada.@
+`"Sí--soy yo, Senpai."@
+ld c,":a;image\tachi\cel_t08.jpg",%type_crossfade_fst
+`"¡Cielos, no me sorprendas así!@ Me aparté de manera refleja pero, ¿estás bien?"@
+`"¿Eh?@ Estoy bien.@ Sólo tropecé."@
+` Me levanto.@
+` …… Supongo que las extrañas miradas de los estudiantes en el pasillo son de esperarse.\
+`"Auuuauau…… Vaya, creo que golpeé mi cadera.@ Supongo que no debería hacer bromas como ésa."@
+` Arrepentimiento.@
+`"Exactamente.@ Creo que me excedí, pero fue tu culpa así que no me disculparé."@
+`"Ah, lo sé, lo sé.@ Lo siento Senpai, interrumpí tu búsqueda.@ Bien, este chico travieso volverá a su salón ahora."@
+` Frotando mi trasero, comienzo a caminar hacia el salón.@
+ld c,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
+`"Oh, espera Tohno-kun.@ ¿Puedes quedarte parado ahí como castigo?"\
+`"¿?"@
+` ¿Quedarme aquí como castigo?@ Como siempre, ella dice algo extraño.@
+`"Claro…… ¿De qué se trata?"@
+`"Simplemente no te muevas, por favor."@
+cl c,%type_lshutter_mid
+` Como ayer, ella comienza a olfatearme de nuevo.@
+`"…… ¿Um, Senpai……?"@
+return

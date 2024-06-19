@@ -1,0 +1,110 @@
+monocro off
+wavestop
+;---added context above---
+bg "image\bg\bg_29b.jpg",%type_nowaitdisp
+play "*3"
+`"¿Huh?"@
+` ¿Qué quiere decir con anoche?@
+` No entiendo de qué está hablando.@
+` Después de todo, soy el idiota que malinterpretó las palabras de Arcueid y cometió un error tan estúpido, así que obviamente no entiendo lo que está diciendo, y---¿huh?@
+br
+` ¿Me preguntó Arcueid quién vino anoche---?\
+`"…… Arcueid.@ ¿Qué quieres decir con 'anoche'?"@
+ld c,":a;image\tachi\ark_t11.jpg",%type_crossfade_fst
+`"¿Hm?@ Qué extraño, sé que te envíe un familiar de sueño."@
+`"Espera, ¿qué es ese familiar de sueño?"@
+ld c,":a;image\tachi\ark_t03.jpg",%type_crossfade_fst
+`"Um, es como un familiar que te permite ver un sueño sobre lo que más deseas.@ Eres hombre, así que te envié un súcubo.@ ¿No fue un buen sueño?"@
+cl c,%type_crossfade_fst
+`"Yo-----"@
+br
+` ¿Un buen sueño?@ Eso fue…\
+bg #ffffff,%type_crossfade_fst
+monocro #ffff00
+bg "image\event\ark_h02.jpg",%type_crossfade_fst
+monocro off
+bg "image\bg\bg_29b.jpg",%type_crossfade_fst
+` Recuerdo el sueño realista que tuve y mi rostro se torna rojo.@
+`"¡Tú, eso fue obra tuya---!"@
+` Arcueid sonríe aun más.@
+` ---Mierda.@
+` Si me quedaba callado esta conversación habría terminado, pero ya que reaccioné con tanta intensidad---\
+ld c,":a;image\tachi\ark_t08.jpg",%type_crossfade_fst
+`"Ah, entonces sí lo recibiste.@ Entonces, ¿quién vino?@ Ya sé, fue tu hermana, ¿cierto?"@
+`"¡N, no, Akiha no----!@ ¡Qué clase de hombre crees que soy!@ ¡No estoy loco como para hacerle eso a una hermana!"@
+`"Hmm.@ Si no fue tu hermana, entonces ¿fue una de las sirvientas de la mansión?"@
+cl c,%type_nowaitdisp
+` Arcueid me mira muy entretenida.\
+`"Uh----"@
+` Está actuando como la Arcueid del sueño de anoche.@
+br
+`"No te concierne, así que déjame en paz."@
+` Aparto la vista y me niego.@
+` Pero Arcueid continúa diciendo "Vamos, vamos," una y otra vez.\
+ld c,":a;image\tachi\ark_t08.jpg",%type_crossfade_fst
+`"Vamos, dime.@ Puedes al menos decirme con quién soñaste."@
+` Ella pregunta como una niña curiosa.@
+` Cada vez que me doy la vuelta sigue saltando frente a mí, diciendo "Vamos, vamos."@
+br
+` …… Esto es tortura pura.@
+` Es tan traviesa como en el sueño de anoche.\
+` Entierro mi rostro en mis manos.@
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"Oye Shiki, no te quedes callado y dime."@
+` Arcueid continúa mirándome con esos ojos volteados.@
+br
+` ---No puedo, Dios.@
+` Éste es mi límite.@
+br
+`"…… Tú."@
+` Lo dejo salir con vacilación y una voz débil.\
+`"---¿Eh?@ ¿Qué pasa conmigo?"@
+`"No me hagas decirlo de nuevo.@ ¡Estoy diciendo que fuiste tú quien vino!"@
+` Grito vigorosamente mientras miro hacia un lado.@
+` Los ojos de Arcueid se ensanchan de sorpresa.@
+play "*1"
+ld c,":a;image\tachi\ark_t12.jpg",%type_crossfade_fst
+`"¿Yo, yo……?"@
+`"Sí, no es una broma.@ Tú viniste, y----"@
+` No hay manera de que pueda terminar de decirlo.\
+ld c,":a;image\tachi\ark_t10.jpg",%type_crossfade_fst
+`"Ah----"@
+` Ahora Arcueid aparta la vista de mí, parece muy incómoda.@
+cl c,%type_crossfade_fst
+br
+`"………………"@
+`"………………"@
+` Ninguno de los dos sabe qué decir.@
+` El incómodo silencio continúa.\
+` ……@
+` …………@
+` …………………
+` …………………………@
+` ………………………………… *ejem*@
+` No puedo soportar más el silencio y fuerzo a salir a esa tos.\
+br
+`"…… En primer lugar, ¿por qué me enviaste ese familiar de sueño?@ ¿Aún estás molesta conmigo por matarte?"\
+ld c,":a;image\tachi\ark_t16.jpg",%type_crossfade_fst
+`"No es eso, en absoluto.@ Lo envié como agradecimiento por derrotar a Nrvnqsr.@ En verdad estoy agradecida contigo, creí que estarías extremadamente feliz."@
+`"¿Cómo agradecimiento?---No me interesa ese tipo de agradecimiento.@ Qué mal gusto tienen, ¿en qué piensan los vampiros?"@
+` Dejo caer mis hombros.@
+` No sé por qué está molesta, pero ella me mira con una expresión de insatisfacción.@
+ld c,":a;image\tachi\ark_t06.jpg",%type_crossfade_fst
+`"¿Qué fue todo eso, bestia?@ Sé que no soy humana."@
+cl c,%type_lshutter_fst
+` Ella se da la vuelta y comienza a irse caminando.@
+\
+`"Oye, espera.@ ¿Adónde vas?"@
+`"No tiene nada que ver contigo.@ ¡No me sigas!"@
+` ¿En verdad está tan furiosa?@ Arcueid se va caminando sin siquiera mirar atrás.\
+`"…………"@
+` ¿Adónde planea ir de todas formas?@
+`"…………"@
+` Tal vez hablé demasiado.@
+` Sin importar el resultado o el método utilizado, ella me agradeció con buenas intenciones.@ Comienzo a sentir un intenso arrepentimiento y pienso que quizás debí haber aceptado su regalo felizmente.\
+`"-----"@
+` Maldición.@ ¿¡Por qué será que simplemente no puedo dejar a Arcueid en paz……!?@
+br
+`"Au---¡Oye, dije que esperes!"\
+bg #000000,%type_lcartain_mid
+return

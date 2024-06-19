@@ -1,0 +1,35 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_40a.jpg",%type_nowaitdisp
+`"…………"@
+` No sé qué decir.@
+` Aunque sólo estoy un poco mejor que ayer, al menos ahora me siento vivo.@
+` Pero, después de obligar a Hisui a hacer eso---de hacerle tragar todo eso, quizás hubiese sido mejor quedarme como estaba.\
+ld c,":a;image\tachi\his_t21.jpg",%type_crossfade_fst
+`"------"@
+` Hisui endereza su ropa y se aparta de la cama.@
+`"…… Hisui…… yo"@
+`"Shiki-sama.@ Por favor no le hable a nadie sobre esto.@ …… No quiero que lo mencione, ni siquiera a mí."@
+`"---"@
+` …… Por supuesto, Hisui debe odiar lo que acaba de hacer tanto como para no querer que se lo recuerden.@
+`"Shiki-sama.@ Esto es algo que hice por voluntad propia.@ Por favor piense que nada ha pasado.@ De lo contrario, seré incapaz de seguirle sirviendo."\
+`"-------"@
+` No sé cómo responder.@
+` No tengo palabras para disculparme, y tampoco palabras para agradecerle.@
+`"Bien, entonces por favor discúlpeme."@
+cl c,%type_lshutter_mid
+`"A………"@
+` Hisui se marcha.@
+` Todo lo que puedo hacer es observar mientras lo hace.\
+bg #000000,%type_crossfade_mid
+!w2000
+bg "image\bg\bg_40a.jpg",%type_crossfade_mid
+` …… Son las dos en punto.@
+` Aunque es hora de mi revisión, Hisui probablemente no vendrá.@
+` ………… *suspiro*@
+` Todo lo que puedo hacer es suspirar.@
+` ¿Cómo rayos sucedió todo esto?@
+` Aunque fue Hisui quien comenzó todo, ¿qué estaba pensando al sujetar su cabeza y acabar en su boca de esa manera?\
+return

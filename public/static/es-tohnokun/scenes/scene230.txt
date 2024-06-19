@@ -1,0 +1,50 @@
+monocro off
+wavestop
+;---added context above---
+play "*3"
+bg "image\bg\bg_11b.jpg",%type_crossfade_slw
+` Recorro el pasillo bañado por el ocaso junto a Senpai.@
+` Mientras hablamos de cosas inútiles, caminamos lo más lentamente posible.@
+br
+` Hay una atmósfera tan maravillosa aquí.@
+` ---Ahora que recuerdo, pasé la noche en la habitación de Senpai.@
+` En ese entonces, el hecho de que había matado a alguien llenaba mi mente, y después, me olvidé de ello cuando estuve con Arcueid.\
+` …… De no haber sido por esa noche, creo que hoy no estaría aquí.@
+` Ella no lo saca a colación, pero me pregunto qué piensa sobre esa noche.@
+` …… ¿Se sintió como si estuviese simplemente dándole una mano a un deprimido estudiante menor?@
+` ¿Como recoger a un cachorro abandonado bajo la lluvia?\
+`"…… Senpai, um--"@
+ld c,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
+`"¿Sí?"@
+` Senpai me dirige la mirada.@
+` …… Justo cuando iba preguntarle sobre aquella noche,
+br
+` Guruuuuuu.@
+br
+` Mi estómago interrumpe, gruñendo sonoramente.@
+` No, no 'gruñendo'… es más como un rugido.\
+`"……………… Uhhh."@
+ld c,":a;image\tachi\cel_t12.jpg",%type_crossfade_fst
+`"………………"@
+` El silencio es un poco incómodo.@
+`"…… Tohno-kun, parece que estás hambriento."@
+`"---Supongo.@ Cielos, ¿me da hambre incluso cuando no tengo apetito?"@
+` Dejo salir un suspiro.@
+` Mirando hacia mí, Senpai sonríe.\
+ld c,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
+`"Por supuesto.@ Ser humano significa que tienes que comer para vivir."@
+`"Sin duda.@ …… Ahora que lo pienso, estoy muriendo de hambre."@
+` …… No me había percatado, pero saltarme el desayuno y el almuerzo me ha quitado bastante energía.@
+` No pienso que pueda aguantar hasta la cena, así que debería comprar algo de pan en el camino a casa-----\
+ld c,":a;image\tachi\cel_t03.jpg",%type_crossfade_fst
+`"Tohno-kun, aquí."@
+` Senpai me muestra una pequeña bolsa de tela que tiene en sus manos.@
+` Creo que es su almuerzo.@
+ld c,":a;image\tachi\cel_t02.jpg",%type_crossfade_fst
+`"Está parcialmente comido pero, ¿lo quieres?"@
+` Sonrojándose un poco, Senpai dice esto con vergüenza.@
+` …… Es cierto, Senpai sólo comió la mitad de su almuerzo hoy.@
+` Terminar el almuerzo a medio comer de otra persona es un poco embarazoso.@
+` Yo----
+br
+return

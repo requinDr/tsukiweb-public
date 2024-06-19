@@ -1,0 +1,14 @@
+monocro off
+wavestop
+play "*2"
+;---added context above---
+bg "image\bg\bg_06a.jpg",%type_nowaitdisp
+` ---Estuve a punto preguntar, pero no creí que el maestro me lo diría.@
+br
+` Si en verdad huyó de casa como dijo Arihiko, es su problema.@
+` Además, no hay maestro en el planeta que respondería a un estudiante que casualmente preguntó "¿Yumizuka-san ha huido de casa?"\
+`"…… Sí, no es que haya sido confirmado ni nada parecido."@
+` Tal vez Yumizuka simplemente está retrasada.@
+` Sería una mejor idea ver cómo se desenvuelven las cosas durante un rato antes de preguntarle al maestro.\
+bg #000000,%type_crossfade_mid
+return

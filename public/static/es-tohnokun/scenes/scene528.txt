@@ -1,0 +1,30 @@
+monocro off
+;---added context above---
+wave se2
+bg "image\bg\bg_06a.jpg",%type_nowaitdisp
+play "*3"
+ld c,":a;image\tachi\osiete.png",%type_lcartain_mid
+!w1000
+cl c,%type_lcartain_mid
+ld r,":a;image\tachi\cel_t20.jpg",%type_tshutter_mid
+` ¡Merci!@
+` Y ahora, es hora de la lección de la quinta hora del segundo día.@
+` El rincón por el bien de desafortunado Tohno-kun, que se ha topado con otro Final Malo,
+` Es la hora de "¡Enséñame, Ciel-sensei!"\
+` Veamos, el error esta vez es-----.@
+br
+` …… Oh, no.@ Eso no funcionará.@
+` El problema en que estás involucrado ahora no es algo que puedas resolver por tu cuenta, Tohno-kun.@
+` No seas tan persistente, y confía en las personas a tu alrededor.@ Deberías pedirles ayuda.@
+` No quiero ver a Tohno-kun convertirse en un asesino.\
+ld l,":a;image\tachi\ark_t31a.jpg",%type_lshutter_fst
+`"Pero, dentro de pocos años, Shiki será llamado Shikiller, y se aliará con el Caballero de la Venganza para cazar a los Apóstoles Muertos."@
+br
+` Arc-san, eso es sólo lo que usted desea, no un hecho.@
+` Muy bien, Tohno-kun.@ Ignora a la persona que ni siquiera tiene una aparición en esta ruta, y disfruta el resto de la historia principal.\
+bg #000000,%type_crossfade_mid
+ld c,":a;image\tachi\ark_t30.jpg",%type_crossfade_mid
+`"Arrrg.@ No he hecho nada malo, ¿por qué no puedo aparecer-nyaa?@ Se supone que soy la heroína principal."\
+cl c,%type_crossfade_mid
+playstop
+return

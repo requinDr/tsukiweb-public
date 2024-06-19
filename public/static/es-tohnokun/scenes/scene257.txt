@@ -1,0 +1,64 @@
+monocro off
+wavestop
+play "*1"
+;---added context above---
+bg "image\bg\bg_29b.jpg",%type_nowaitdisp
+` ---¿Cómo me siento?@
+` Ciertamente, Senpai es preciada para mí.@ Sin importar quién sea ella, el tiempo que pasamos juntos en la escuela es preciado para mí.@
+br
+` Pero, aun así------para mí, Senpai es Senpai.@
+` Amiga o enemiga, hombre o mujer, ante todo, siento que ella es mi confiable Senpai.\
+`"………………"@
+ld c,":a;image\tachi\ark_t06.jpg",%type_crossfade_fst
+`"¡Vamos!@ No puedes engañarme quedándote callado, tú lo sabes."@
+` Arcueid continúa mirándome ferozmente.@
+` …… Ahora que lo pienso, sin importar qué tipo de persona sea Senpai, esta persona es mucho más aterradora.@
+` Lo he estado olvidando pero, ella es un vampiro, y no parece tener conocimiento de los conceptos morales.\
+` ----Pero, aún me siento atraído por ella.@
+br
+` Incluso esta noche, simplemente la estaba buscando, pero me estaba frustrando tanto al no poder encontrarla.@
+` Fue, como si me sintiese preocupado por un ser amado.\
+`"Shiki, te lo preguntaré una vez más.@ ¿De qué lado estás, del mío o del de esa mujer?"@
+` Arcueid me observa irritada.\
+`"…… Oye, ¿eso ya no está decidido?@ Aún estoy aquí.@ Si estuviese del lado de Senpai, habría ido tras ella."@
+ld c,":a;image\tachi\ark_t03.jpg",%type_crossfade_fst
+`"Um, en otras palabras---¿qué quieres decir?"@
+` Arcueid ladea su cabeza inquisitivamente.\
+`"¿Qué quiero decir?"@
+br
+` ---¿Por qué ella no entiende conversaciones simples?@
+` En este caso, a menos que se lo diga directamente, ella nunca entenderá.\
+`"Eres bastante torpe.@ Que aún esté aquí significa que----"@
+br
+` ¿Qué significa?@
+` El hecho de que me siento atraído por ella es una verdad innegable.@
+` Pero sé que es algo que no debo decir.@
+` Sin importar lo hermosa que sea, el hecho de que es un vampiro no cambia.\
+ld c,":a;image\tachi\ark_t04.jpg",%type_crossfade_fst
+`"Te quedas callado de nuevo, ¿qué estás tratando de decir?@ ¡Si quieres elegir a Ciel, entonces dilo de una vez!"@
+`"¡Yo, dije que no es eso!@ Sigo diciéndolo pero, ¿¡por qué no entiendes……!?"@
+ld c,":a;image\tachi\ark_t16.jpg",%type_crossfade_fst
+`"¡Cómo puedo saber!"@
+` Recibiendo gritos irracionales, ella me devuelve gritos irracionales.\
+`"¡Bien!@ ¡Entonces no te conozco para nada, Shiki!"@
+cl c,%type_lshutter_fst
+`"Oye, espera.@ ¿Adónde vas?"@
+`"No tiene nada que ver contigo.@ ¡No me sigas!"@
+` ¿En verdad está tan furiosa?@ Arcueid se va caminando sin siquiera voltear.\
+`"Qué-----"@
+` Me quedo sorprendido y solo en el parque.@
+` …… Arcueid se enfureció y se fue a algún lugar por su cuenta, y ya le pregunté lo que quería, así que debería regresar a la mansión.@
+br
+` …… Pero, mis pies no se mueven siquiera un paso hacia allá.\
+` Mi lógica me dice adónde debería ir, pero mi corazón no escucha.\
+` ---Ha sido dicho un millón de veces, pero.@
+` Los sentimientos de amor y odio, no tienen nada que ver con la lógica.\
+`"-----¡Demonios!"@
+br
+` Maldición.@ ¿¡Por qué será que no puedo dejar a Arcueid sola……!?@
+br
+`"¡Arcueid!@ ¡Dije que esperes!"@
+` Alzando la voz, persigo a Arcueid, quien continúa caminando.\
+playstop
+bg #000000,%type_lcartain_mid
+return

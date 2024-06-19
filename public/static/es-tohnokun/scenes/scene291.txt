@@ -1,0 +1,13 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_29b.jpg",%type_nowaitdisp
+`"Yumizuka----yo…"@
+` Yo… no puedo responder.@
+` Tal vez esto me hace una persona horrible, pero son mis verdaderos sentimientos.@
+` Nunca sentí nada especial por mi compañera de clases Yumizuka Satsuki.@
+` Sólo estoy aquí porque lo que sucedió hace dos días en el camino a casa me dejó una gran impresión, no podía simplemente olvidarlo---\
+ld c,":a;image\tachi\stk_t10.jpg",%type_crossfade_fst
+`"Eso pensé.@ Nunca supiste siquiera que yo existía, así que no podrías haberte enamorado de mí."\
+return

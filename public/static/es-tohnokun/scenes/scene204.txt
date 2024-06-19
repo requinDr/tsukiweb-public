@@ -1,0 +1,84 @@
+mov $phasebg,"image\bg\bg_22b.jpg"
+mov $phasetitle_a,":a;image\word\PARK_02A.PNG"
+mov $phasetitle_b,":a;image\word\day_02.png"
+gosub *right_phase
+bg #ffffff,%type_crossfade_slw
+bg "image\bg\cmo_05.jpg",%type_crossfade_mid
+play "*9"
+` En aquel entonces, la mansión entera era como un gigante patio de juegos.@
+br
+` El jardín, un profundo bosque.@
+` La casa, un elevado castillo.@
+br
+` Jugábamos en nuestro propio pequeño mundo, el cual tomaría días explorar.\
+` Todos los días eran divertidos.@
+` Ninguno pensó jamás en crecer,
+` y creíamos que los días y las noches siempre serían iguales.@
+br
+` Fue simplemente una niñez vivida jugando como cachorros.@
+` Nos llevábamos maravillosamente bien, y éramos los mejores compañeros de juego.\
+` Siempre que me daba la vuelta, Akiha estaba ahí, agitando sus manos y escondiéndose tímidamente.@
+` Sí, siempre lo mismo.\
+` En aquel entonces, la mansión entera era como un gigante patio de juegos.@
+br
+` El jardín, un profundo bosque.@
+` La casa, un elevado castillo.@
+br
+` Jugábamos en nuestro propio pequeño mundo, el cual tomaría días explorar.\
+playstop
+bg #ffffff,%type_crossfade_mid
+`"---Buenos días."@
+br
+` …… Escucho una voz desconocida.@
+` El sueño desaparece, y todo lo que queda es la sensación de mi perozoso cuerpo despertando.@
+br
+`"Ya amaneció.@ Hora de despertar, Shiki-sama."@
+br
+` Una voz desconocida me saluda.@
+` …… Ya deja de llamarme Shiki-sama.@
+` Te lo dije ayer, me da escalofríos en la espalda----\
+play "*2"
+bg "image\bg\bg_40a.jpg",%type_crossfade_mid
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+` ---Me despierto.@
+br
+` Hisui está parada lejos de la cama, como una estatua.@
+`"……"@
+` ¿Dónde estoy?@
+ld c,":a;image\tachi\his_t16.jpg",%type_crossfade_fst
+`"Buenos días, Shiki-sama."@
+` Una chica con uniforme de sirvienta se inclina.@
+`"Ah… sí, volví a casa, cierto…"@
+` Me impulso hacia arriba y miro alrededor de la habitación.\
+`"Buenos días, Hisui.@ Gracias por venir a despertarme."@
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"No hay necesidad de agradecerme.@ Es mi obligación venir a despertarlo, Shiki-sama."@
+` Hisui responde con indiferencia, totalmente inexpresiva.@
+`"Ah, ¿en serio…?@ Bien, de acuerdo…"\
+` …… Incluso bajo una luz poco favorable, creo que los rasgos de Hisui son hermosos.@
+` Debería ser maravilloso que semejante chica me despierte todas las mañanas, pero Hisui nunca sonríe, y no me siento tan feliz al respecto.@
+` …… Qué lástima.@
+` Si Hisui tuviese sólo la mitad de la alegría de Kohaku-san, sería muy linda.\
+`"---¿Necesita algo?"@
+` Percatándose de que la estoy viendo, Hisui me devuelve la mirada directamente.@
+`"No, nada.@ Despertar contigo ahí me hace sentir que en verdad estoy en la mansión Tohno."@
+` Entonces.@ Saliendo de la cama, estiro mis brazos.\
+`"Shiki-sama, no hay tiempo.@ De la mansión a su escuela es un viaje de treinta minutos.@ Esto le deja sólo veinte minutos para el desayuno."@
+`"¿Eh?@ …… ¡Ahh!@ ¿¡Ya son las siete en punto!?"@
+` Me quedo sin aliento después de ver el reloj.@
+` …… Despertar tantas veces durante la noche debe haber desordenado mi patrón de sueño.\
+`"Su uniforme está doblado y lo espera en aquel lugar.@ Por favor vaya a la sala de estar después de haberse cambiado."\
+cl a,%type_lshutter_fst
+`"Maldición, si vas a despertarme, despiértame más temprano…"@
+` Murmurando egoístamente, tomo el uniforme.@
+` Está cuidadosamente doblado, y la camisa incluso ha sido planchada.@
+` Pasar mis muñecas a través de las mangas se siente bien.@ Es esa fresca sensación de algo nuevo.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_34a.jpg",%type_lcartain_fst
+ld l,":a;image\tachi\aki_t01a.jpg",%type_crossfade_fst
+ld r,":a;image\tachi\koha_t01a.jpg",%type_crossfade_fst
+` Akiha y Kohaku-san se están relajando en la sala de estar.@
+` Akiha está vistiendo el uniforme de la Academia Asagami para Señoritas, una famosa escuela para chicas jóvenes.@
+` Están bebiendo té con elegancia, como si el desayuno hubiese terminado hace mucho tiempo.\
+cl a,%type_crossfade_mid
+return

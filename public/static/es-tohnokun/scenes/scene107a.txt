@@ -1,0 +1,188 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_06a.jpg",%type_crossfade_mid
+` …… La clase ya ha comenzado.@
+` ¿Cuál clase era?@ No puedo recordar la lección de la quinta hora de hoy.@
+br
+bg #ffffff,%type_crossfade_fst
+wave se0
+bg "image\bg\bg_06a.jpg",%type_crossfade_fst
+` Aunque miro el pizarrón y observo las marcas dejadas por la tiza del maestro, aún no sé qué clase es ésta.@
+br
+bg #ffffff,%type_crossfade_fst
+wave se0
+bg "image\bg\bg_06a.jpg",%type_crossfade_fst
+br
+` No puedo leerlo.@
+` Las letras comienzan a fluir como agua y se mezclan como en algún tipo de alucinación.@
+br
+wave se0
+\
+`"Ugh…………"@
+` Siento que voy a vomitar.@
+` Mareo.@ Mi mente comienza a deslizarse.\
+bg #000000,%type_crossfade_fst
+wave se0
+bg "image\bg\bg_06a.jpg",%type_crossfade_fst
+` Clic, clic.@
+`    Temblar, temblar.@
+`     Rechinar, rechinar.@
+`      Tambaleo, tambaleo.@
+bg #000000,%type_crossfade_fst
+wave se0
+bg "image\bg\bg_06a.jpg",%type_crossfade_fst
+\
+` Esos ruidos sobresalen.\
+` Incompatibilidad.@
+` ¿De dónde viene esa inconsistencia?@
+wave se0
+` No puedo ubicar esta sensación de algo que está fuera de lugar por todo mi cuerpo.@
+` Me llena hasta el borde.@
+` Como si los huesos se deslizaran fuera de lugar en mis articulaciones.@
+wave se0
+` Sí, mis articulaciones están fuera de lugar, y eso causa la sensación antinatural.@ Mi cadáver está expulsando humo invisible y desmoronándose.\
+br
+br
+br
+br
+br
+br
+br
+` Clic, clic.@ Temblar, temblar.@ Rechinar, rechinar.@ Tambaleo, tambaleo.\
+bg #9c0120,%type_crossfade_fst
+wave se0
+bg "image\bg\bg_06a.jpg",%type_crossfade_fst
+bg #000000,%type_crossfade_mid
+` Caigo de mi silla.@
+` Una chica grita.@
+` Escucho lo pasos del maestro corriendo hacia mí.@
+` Yo…
+` Aunque me desmayé por completo, me observo a mí mismo tranquilamente desde muy lejos.\
+!w3000
+` …… Lo que sigue es lo de siempre.@
+` Desmayado por mi anemia, fui llevado a la enfermería donde dormí hasta recuperarme.@
+` Ya que tenía más de 38 grados de fiebre y eran más de las siete en punto, la hora de cierre de la escuela, la enfermera llamó a mi casa para que alguien viniese a recogerme y se fue a casa.@
+br
+` Y el resultado fue…\
+play "*1"
+bg "image\bg\bg_10c.jpg",%type_crossfade_fst
+ld c,":a;image\tachi\koha_t01b.jpg",%type_crossfade_fst
+`"¿Está bien, Shiki-san?@ Todavía tiene fiebre, así que por favor no dude en apoyarse de mi hombro."@
+br
+` ----Sí, así es.\
+`"…… No, estoy bien.@ Al menos puedo caminar, por favor no te preocupes."@
+` Apartándome de Kohaku-san, intento evadir la situación fanfarroneando.@
+` …… Cielos.@ Ya es bastante embarazoso que Kohaku-san venga a recogerme.@ El día en que me apoye de sus hombros, moriré.\
+`"Oh no es bueno que se fuerce de esa manera.@ No es su culpa que su cuerpo sea débil, Shiki-san.@ Así que puede pedir un poco de ayuda.@
+` No se lo diré a Akiha-sama o a Hisui-chan, así que estará bien que dependa de mí por ahora."@
+` Con una amable sonrisa, ella toma mi mano.\
+`"Ah…… sí, lo siento."@
+` Sonrojándome, hago obedientemente lo que ella dice.@
+` …… Ciertamente podría desmayarme si continúo siendo obstinado.\
+`"Hay un auto esperando afuera, por favor resista hasta entonces."@
+cl c,%type_lshutter_mid
+` Halando mi mano, Kohaku-san comienza a caminar.@
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_10c.jpg",%type_crossfade_fst
+`"Ah----"@
+` …… Esto no es bueno.@ Sólo caminar me marea increíblemente.@
+` Dependo de Kohaku-san para guiarme hasta las escaleras mientras me aferro a mi consciencia.\
+bg #000000,%type_lcartain_slw
+!w1000
+playstop
+bg "image\bg\bg_07b.jpg",%type_nowaitdisp
+bg "image\bg\bg_11c.jpg",%type_crossfade_mid
+` ¿Hu----h?@
+` ¿Por qué----estoy subiendo… al… segundo… piso?\
+`"Um…… Kohaku-san… éste… no es… el camino correcto."@
+` La llamo.@
+` No hay respuesta.@ No, no sólo eso----no siento su mano, y ni siquiera la veo.\
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_11c.jpg",%type_crossfade_fst
+play "*6"
+`"¿Kohaku…… san?"@
+` Uso toda mi nebulosa consciencia para mirar a mi alrededor.@
+` No hay nadie en el pasillo.@
+` Sólo la luz de la luna fluyendo a través de la ventana es deslumbrante.\
+wave se0
+`"--------"@
+` Viene repentinamente.@
+wave se0
+`"Ah------"@
+` El sonido de los latidos de mi corazón.@
+` Y un escalofrío que recorre mi columna.\
+waveloop se1
+wave se7
+` Palpitar.@ Tap.\
+br
+wave se7
+` Palpitar.@ Tap.@
+br
+wave se7
+` Palpitar.@ Tap.@
+br
+` Palpitar.@ Tap.@ Palpitar.@ Tap.@ Palpitar.@ Tap.@ Tap.@ Tap.@ Tap.@ Tap.\
+` En la oscuridad, los pasos se acercan.@
+br
+` ---Esto es.@
+br
+` Esto es similar al miedo que sentí en aquella única ocasión.\
+`"¡Kohaku, san……!"@
+` Grito su nombre.@ No para pedir ayuda, sino para decirle que huya, grito su nombre desesperadamente.\
+`"¡Kohaku-san, Kohaku-san, Kohaku-san……!"@
+` ¿Dónde está ella?@ No la veo en ninguna parte.@
+` Las pasos están cerca de mí ahora.@
+br
+` Al menos…
+` Quiero que Kohaku-san escape de aquí ilesa.\
+`"Es inútil Shiki.@ Ella ya está acabada."@
+` …… Escucho una voz.@
+` En la oscuridad frente a mí
+ld c,":a;image\tachi\roa_t04a.jpg",%type_crossfade_mid
+` está el hombre vendado que intentó matarme esa noche.\
+`"------Ah."@
+` …… ¿Por qué será…?@
+` Siento que conozco el rostro de esta persona.\
+`"Qué desafortunado eres.@ Si hubiese sabido que sería tan fácil, no habría esperado por ti frente a la mansión."@
+br
+` …… Los pasos se acercan más.@
+br
+`"Ka…… aah."@
+` Intento moverme.@
+` Pero sólo puedo tambalearme.@
+` Supongo que forcé demasiado mi cuerpo todos estos días.@ Parece que mi cuerpo, en el último momento, se averió.\
+`"Es tu fin, así que te lo diré.@ Ésta es mi guarida ahora."@
+bg #9c0120,%type_crossfade_mid
+` Escucho el sonido de una puñalada.@
+` En sus manos, un cuchillo.@ La cuchilla plateada perfora directamente dentro de mi corazón.\
+wavestop
+bg #000000,%type_crossfade_fst
+monocro #0000ff
+bg "image\bg\ima_18.jpg",%type_nowaitdisp
+playstop
+` ----Caigo al suelo.@
+` Siento la muerte abriéndose paso desde las yemas de mis dedos.@
+` Mi mente se desvanece, gota a gota.\
+` En ese proceso.@
+` Con mi casi desvanecida mente, miro hacia el cielo.@
+` No tengo hacia donde más mirar, así que simplemente miro hacia allá.@
+br
+` La luna azul está en cielo nocturno.@
+` …… Qué estúpido.@
+` Estoy a punto de morir, pero yo…
+` Soy encantado por una cosa tan ordinaria.\
+monocro off
+bg #000000,%type_crossfade_slw
+` ¿De cuándo es este recuerdo?@
+` En un bosque como un velo negro.@
+` En esa terrible noche.@
+` Al igual que ahora, la luna era lo único que yo estaba mirando----
+!w2000
+\
+cl a,%type_waitdisp
+bg "image\word\end.jpg",%type_crossfade_slw
+resettimer
+waittimer 3000
+return

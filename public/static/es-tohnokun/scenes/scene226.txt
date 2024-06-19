@@ -1,0 +1,102 @@
+monocro off
+wavestop
+play "*3"
+;---added context above---
+bg "image\bg\bg_06a.jpg",%type_nowaitdisp
+` --Aun así, necesito nutrirme aunque sea un poco.@
+br
+` Ya de por sí soy propenso a desmayarme; y si no me fuerzo a comer, probablemente me desmayaré.\
+`"Perdón, adelántate y come.@ Tengo que comprar algo de comida."@
+`"¿Oh sí?@ Supongo que empezaré a comer sin ti."@
+cl c,%type_crossfade_fst
+` Salgo del salón y dejo a Arihiko destapando su emparedado felizmente.\
+bg #000000,%type_lcartain_mid
+!w1000
+bg "image\bg\bg_06a.jpg",%type_lcartain_mid
+` Compro algo de pan y leche, y entonces regreso.@
+` Arihiko y Ciel-senpai ya están sobre mi pupitre junto a la ventana.@
+ld l,":a;image\tachi\cel_t03.jpg",%type_lshutter_mid
+`"Oh, Tohno-kun.@ Voy a unirme a ustedes."@
+ld r,":a;image\tachi\ari_t02.jpg",%type_lshutter_mid
+`"Ah, no, no.@ No tienes que ser tan formal.@ Somos muy felices cuando puedes unírtenos.@ ¿No es cierto, Tohno?"@
+` ¿Arihiko está tan feliz sólo por estar con Senpai?@ Felizmente, me pide que concuerde con él.@
+` Bueno, por una ocasión parece que estamos de acuerdo.\
+`"Es cierto.@ En verdad me has ayudado al venir, Senpai.@ No sé qué habría hecho si hubiese tenido que comer mirando la cara de este sujeto."@
+` Respondo alegremente y tomo asiento.@
+cl a,%type_crossfade_mid
+` Senpai está comiendo de una gran caja de almuerzo y Arihiko terminó su emparedado hace mucho.\
+`"……… Muy bien."@
+` Doy un mordisco a mi pan.@
+` Todavía no tengo apetito, así que lo bajo forzosamente con algo de leche.@
+br
+` Arihiko sostiene una animada conversación con Senpai ya que ambos terminaron sus almuerzos.@
+` Hablan sobre eventos extraños como los asesinatos en serie y cosas por el estilo, lo cual daña mi apetito.\
+ld r,":a;image\tachi\ari_t01.jpg",%type_crossfade_fst
+`"¿En serio?@ ¿Aún no han encontrado a todas esas personas perdidas?"@
+ld l,":a;image\tachi\cel_t12.jpg",%type_crossfade_fst
+`"Así parece.@ Incluso hubo un nuevo informe esta mañana.@ Inui-kun, ¿no viste las noticias esta mañana?"@
+`"No, no tengo tiempo para hacer nada en la mañana, así que no las ví."@
+`"Sabes que no es bueno quedarte despierto en la noche.@ No deberías caminar por ahí de noche, hay personas tenebrosas allá afuera."\
+ld r,":a;image\tachi\ari_t02.jpg",%type_crossfade_fst
+`"No hay problema.@ Yo mismo soy una persona tenebrosa."@
+ld l,":a;image\tachi\cel_t04.jpg",%type_crossfade_fst
+`"Bueno, podrías tener razón.@ Inui-kun, en verdad pareces un personaje sombrío."@
+` "Ajajaja." Ambos ríen.@
+br
+` …… Hm, Ciel-senpai puede estar hablando en serio, pero Arihiko probablemente dijo eso como una broma.@
+` "Jajaja." Los ojos de Arihiko se contraen al reír.\
+` En fin, no puedo seguir ignorando su conversación.\
+`"---Senpai.@ Mencionaste un nuevo informe--¿de qué se trata……?"@
+ld l,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
+`"En las noticias de esta mañana, una mujer como de nuestra edad salió de compras anoche----y fue declarada perdida.@ Escuché que su casa está cerca del parque."@
+`"…… Oh, cerca del parque."@
+br
+` Tan pronto como digo eso, el contenido de mi estómago amenaza con elevarse.\
+` --Anoche.@
+br
+` Esa chica desconocida que por casualidad estaba en el parque, fue destruida por esa violencia irracional.@
+` Perdida puede ser una mejor descripción que muerta, ya que fue devorada sin dejar siquiera un solo cabello.\
+ld r,":a;image\tachi\ari_t03.jpg",%type_crossfade_fst
+`"Eso la convierte en la novena víctima, no, ¿la décima?@ Demonios, que ritmo tan asombroso, todas en un solo mes."@
+ld l,":a;image\tachi\cel_t12.jpg",%type_crossfade_fst
+`"Sí, pero escuché que la desaparición de anoche fue un poco diferente a las demás.@
+` Las familias de las otras chicas que desaparecieron lo notaron poco tiempo después."\
+ld l,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
+`"Por cierto, ¿tú tampoco viste las noticias matutinas Tohno-kun?@ No me digas que tampoco eres activo en la mañana."@
+`"…… Hmm.@ No diría que soy activo, pero tampoco soy terrible en la mañana.@ Pero, haciendo eso a un lado, no podré verlas por algún tiempo.@ En mi casa, no hay TV."@
+cl a,%type_nowaitdisp
+` Senpai y Arihiko me miran inexpresivamente.\
+ld l,":a;image\tachi\cel_t08.jpg",%type_crossfade_fst
+`"No hay TV--Tu casa es… esa gran mansión, ¿cierto?"@
+ld r,":a;image\tachi\ari_t03.jpg",%type_crossfade_fst
+`"Heh, no puede ser que no tengas una TV en esa mansión.@ No te dejaré decir que no tienes una en tu habitación, siendo un estudiante y todo."\
+`"No, en verdad no hay ninguna.@ Mi viejo siempre decía que no había la necesidad de semejantes máquinas lavadoras de cerebros.@
+` Hay una pequeña en la habitación de Kohaku-san, pero no voy a irrumpir en la habitación de una chica en la mañana."@
+` Si quiero saber las noticias, tengo que depender del periódico.\
+ld l,":a;image\tachi\cel_t07a.jpg",%type_crossfade_fst
+`"Tohno-kun, ¿a qué chica te refieres?"@
+ld r,":a;image\tachi\ari_t04.jpg",%type_crossfade_fst
+`"No puedes decir eso y salirte con la tuya, Tohno."@
+` Ambos me miran ferozmente.@
+` Me tapo la boca con una mano, pero es demasiado tarde.\
+`"Uh, um--simplemente, en mi casa hay una sirvienta llamada Kohaku-san."@
+ld l,":a;image\tachi\cel_t12.jpg",%type_crossfade_fst
+`"¿Huh, una sirvienta?@ Eres muy afortunado, tienes una chica que se encarga de todas tus necesidades todo el tiempo."@
+`"¡No es así!@ No hay nadie que cuide de la mansión, así que tenemos que contratar gente para hacerlo.@
+` Que sea hombre o mujer es completamente irrelevante."\
+`"¿Oh en seeeerio?@ Oye Inui-kun, ¿Tohno-kun no parece bastante íntimo con esa Kohaku-san?@
+`"Sí sí, se veía muy feliz cuando dijo su nombre.@ Quería preguntar antes pero, ¿qué tipo de vida lleva Tohno ahora?"@
+cl a,%type_crossfade_fst
+` Ellos intercambian miradas.\
+`"……… Ugh."@
+` Me ahogo con el pan que estoy comiendo.@
+` Arihiko, e incluso Ciel-senpai con su fría mirada, me interrogan con bizarra intensidad.@
+ld l,":a;image\tachi\cel_t04.jpg",%type_crossfade_fst
+`"Tohno-kun, todavía queda mucho tiempo.@ Por favor háblanos sobre tu vida en la mansión."@
+` Ella se acerca con una sonrisa y no parece que vaya a dejarme escapar.@
+`"……………"@
+br
+` Sólo pensar en los veinte minutos o más que tendré que vivir esto hace que mi cabeza dé vueltas.\
+bg #000000,%type_lcartain_slw
+!w1000
+return

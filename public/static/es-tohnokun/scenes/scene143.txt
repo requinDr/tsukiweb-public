@@ -1,0 +1,98 @@
+mov $phasebg,"image\bg\bg_47.jpg"
+mov $phasetitle_a,":a;image\word\PARK_07A.PNG"
+mov $phasetitle_b,":a;image\word\day_07.png"
+gosub *left_phase
+bg "image\bg\cmo_05.jpg",%type_crossfade_mid
+` En aquel entonces, la mansión entera era como un gigante patio de juegos.@
+br
+` El jardín, un profundo bosque.@
+` La casa, un elevado castillo.@
+br
+` Jugábamos en nuestro propio pequeño mundo, el cual tomaría días explorar.\
+` Todos los días eran divertidos.@
+` Ninguno pensaba nunca en crecer,
+` y creíamos que los días y las noches siempre serían iguales.@
+br
+` Fue una niñez que vivimos jugando como cachorros.@
+` Nos llevábamos maravillosamente bien, y éramos los mejores compañeros de juego.\
+` Siempre que miraba atrás, Akiha estaba ahí, agitando sus manos y escondiéndose tímidamente.@
+` Sí, siempre lo mismo.\
+` En ese tiempo, la mansión era un gigante patio de juegos.@
+br
+` El jardín, un profundo bosque.@
+` La casa, un elevado castillo.@
+br
+` Jugábamos en nuestro propio pequeño mundo, el cual tomaría días explorar.\
+bg #ffffff,%type_crossfade_mid
+` Despierto lentamente y abro los ojos.@
+` La luz de la mañana me envuelve y mi soñolencia comienza a desaparecer.@
+br
+` Al despejarse los últimos vestigios,
+` siento que tuve un sueño muy nostálgico.@
+bg "image\bg\bg_40e.jpg",%type_crossfade_mid
+`"-------"@
+` Tan pronto como abro los ojos, esas cosas terribles comienzan a llenar mi visión.@
+` Tengo un agudo dolor de cabeza.@
+`"Gg----"@
+` Busco rápidamente mis lentes junto a la almohada y me los pongo.\
+bg "image\bg\bg_40a.jpg",%type_lshutter_mid
+play "*2"
+` Inhalo algo de aire.@
+` Después de unas respiraciones profundas, logro tranquilizarme.@
+`"¿Por qué----tan temprano…"@
+` ¿Por qué vi esas líneas tan claramente tan temprano en la mañana?@
+` Es dificil ver las líneas de muerte dentro de edificios.@
+` Normalmente es dificil verlas, y verlas tan claramente como acabo de hacerlo es raro.@
+`"…………"@
+` Además, incluso vi esos "puntos".@
+` Creo que mi dolor de cabeza está empeorando también.\
+` Sensei dijo que estos ojos atraerían cosas que no serían buenas.@
+` Pienso que Arcueid y esos vampiros ciertamente no son algo bueno.@
+` Entonces, tal vez todo esto está afectando mis ojos y haciéndolos mas fuertes.@
+br
+`"----No puede ser."@
+` Probablemente sólo estoy cansado.\
+`"¿Huh----?"@
+` Ahora que lo pienso, Hisui no está aquí.@
+` Ya son más de las siete.@
+` Normalmente ya hubiese venido y me habría despertado.@
+br
+`"…… Tal vez Hisui se quedó dormida."@
+` Pero veo mi uniforme recientemente planchado sobre mi escritorio.@
+`"¿Qué es esto?@ Quizás tenía otras obligaciones."@
+` Me da un poco de curiosidad, pero supongo que no me concierne.@
+` No tengo tiempo esta mañana, así que debería apresurarme, cambiarme e ir a la sala de estar.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_34a.jpg",%type_lcartain_mid
+playstop
+`"------Ah."@
+` Cuando voy desde el vestíbulo hacia la sala de estar, me doy cuenta de que olvidé algo terriblemente importante.@
+` Abro la puerta y me quedo parado ahí, sin dar un solo paso hacia adelante.\
+ld c,":a;image\tachi\aki_t01a.jpg",%type_crossfade_fst
+` Akiha está en la sala de estar.@
+` Kohaku-san está cerca y ambas están bebiendo té silenciosamente.@
+cl c,%type_crossfade_fst
+br
+` Normalmente ella diría,
+`"Buenos días, Nii-san,"@
+` sin importar cuán enfadada pudiese estar, pero ni siquiera me mira esta mañana.@
+`"Ah……… uh."@
+` No hace falta decirlo.@
+` La visita de Arcueid de anoche tiene repercusiones bastante duraderas.\
+` El enfado de Akiha está impregnando el aire.@ Prácticamente se podría cortar la tensión con un cuchillo.@
+br
+play "*2"
+ld c,":a;image\tachi\koha_t01a.jpg",%type_lshutter_fst
+`"Buenos días, Shiki-san."@
+` …… Bueno, parece que ella ha no se ha visto afectada, por lo menos.@
+`"Ah… sí, buenos días Kohaku-san."@
+` Saludando a Kohaku-san, entro a la sala de estar.@
+cl c,%type_crossfade_fst
+\
+ld c,":a;image\tachi\aki_t03a.jpg",%type_crossfade_fst
+` Akiha me mira ferozmente cuando entro a la sala arrastrando los pies.@
+br
+` ---¡Ugh, no voy a sucumbir ante esta presión silenciosa!@
+br
+cl c,%type_crossfade_fst
+return

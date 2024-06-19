@@ -1,0 +1,87 @@
+monocro off
+wavestop
+play "*3"
+;---added context above---
+bg "image\bg\bg_23b.jpg",%type_lcartain_mid
+play "*8"
+` Camino con Akiha hacia la mansión.@
+`"……"@
+` Francamente, es difícil.@
+` Si miro a mi lado, puedo ver a Akiha caminando, con su largo cabello ondulando.@
+` Akiha es silenciosa y elegante, la hija perfecta de una respetada familia.\
+`"………"@
+` ¿Por qué no puedo pensar en nada para decir?@
+` Aunque veo a Akiha en casa todos los días, por alguna razón siento tensión al caminar hacia la mansión.\
+br
+` --Pero aún no he recibido una explicación.@
+br
+`"Akiha."@
+ld c,":a;image\tachi\aki_t01a.jpg",%type_crossfade_fst
+`"¿Sí?@ ¿Qué quieres, Nii-san?"@
+`"¿¡Qué quiero!?@ ¿Por qué te has transferido a mi escuela?@ ¿¡Qué razón podrías tener para transferirte a una escuela de segunda clase!?"\
+ld c,":a;image\tachi\aki_t21.jpg",%type_crossfade_fst
+`"Puedes decir eso, Nii-san.@ Pero puedo asistir a la escuela que desee; no necesito darte explicaciones."@
+`"…… No seas estúpida.@ ¡Soy tu hermano!@ No puedo pasar por alto cosas que puedan perjudicar tu porvenir.@
+` Francamente, no veo ningún beneficio en tu transferencia a mi escuela.@ ¡Ya que el viejo no está más con nosotros, es mi responsabilidad estar pendiente de ti…!"\
+ld c,":a;image\tachi\aki_t16a.jpg",%type_crossfade_fst
+`"…… ¿Qué?@ Es injusto decir esas cosas en momentos como éstos."@
+`" 'Injusto' debería decir yo.@ ¿Qué estabas pensando, transfiriéndote sin siquiera decírmelo?@
+` ¡No aceptaré esta transferencia hasta escuchar una buena razón!"@
+ld c,":a;image\tachi\aki_t19.jpg",%type_crossfade_fst
+`"Ah----"@
+`"Si no estoy satisfecho con la razón, te enviaré de vuelta a tu escuela.@ Entonces, dime, Akiha.@ ¿Por qué cambiaste de escuela?"@
+cl c,%type_crossfade_fst
+` Akiha queda en silencio y baja la mirada.@
+` Después de un momento muy breve, me encara con valentía.\
+ld c,":a;image\tachi\aki_t01a.jpg",%type_crossfade_fst
+`"…… Estaba preocupada por ti, Nii-san.@ ¿No es razón suficiente?"@
+br
+` -------¿Eh?@
+br
+`"…… E, espera.@ ¿Qué quieres decir con, preocupada por mí…?"@
+` ¿Qué clase de razón para transferirse es ésa?\
+ld c,":a;image\tachi\aki_t03a.jpg",%type_crossfade_fst
+`"Bueno, al observar tu indisciplinada conducta reciente, decidí que, para prevenir que deshonres el nombre Tohno, tendría que vigilarte de cerca."@
+` Akiha lo explica claramente.@
+`"Erk----"@
+` Cuando dice "indisciplinada conducta", no puedo evitar asentir.@
+` Es verdad; mi vida diaría desde que volví a casa de seguro ha sido una molestia para Akiha y las otras.\
+`"Pe, pero, ¿no crees que transferirte es demasiado?@ ¿Qué hay de tus amigas?"@
+ld c,":a;image\tachi\aki_t05a.jpg",%type_crossfade_fst
+`"Eso no es de tu incumbencia, Nii-san.@ Si te sientes aunque sea un poco mal por mí, todo lo que tienes que hacer es cambiar tu manera de pensar de ahora en adelante."@
+` Akiha se da la vuelta violentamente.@
+br
+` …… Bueno, simplemente, así es ella.\
+`"…… Muy bien, haz lo que quieras.@ Pero algún día, lo lamentarás."@
+ld c,":a;image\tachi\aki_t21.jpg",%type_crossfade_fst
+`"Está bien.@ No era mi intención hacer que te preocuparas por mí, Nii-san."@
+` Con un sonido de exasperación, Akiha comienza a refunfuñar.@
+` Quedamos en silencio y continuamos subiendo hacia la mansión.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_32b.jpg",%type_lcartain_fst
+play "*1"
+` Llegamos a la mansión.@
+` Akiha se dipone a abrir la verja, pero como si hubiese recordado algo, voltea hacia mí.@
+ld c,":a;image\tachi\aki_t01a.jpg",%type_crossfade_fst
+`"…… Tengo una pregunta.@ ¿Que tan cercano eres a esa persona llamada Ciel, Nii-san?"@
+` Abruptamente, hace una pregunta extremadamente directa.@
+`"No es nada especial.@ Sólo somos amigos de la escuela.@ Siento que ella… es alguien con quien puedo hablar."@
+cl a,%type_crossfade_fst
+`"¿En serio?" dice Akiha, dándose la vuelta y atravesando la verja.\
+bg "image\bg\bg_48b.jpg",%type_lshutter_mid
+` Cruzamos el patio y llegamos a la puerta.@
+` Como Hisui no está esperando en la verja y Kohaku no está barriendo el jardín, no hay señal de ninguna de ellas el día de hoy.\
+`"Ah."@
+ld c,":a;image\tachi\aki_t01a.jpg",%type_crossfade_fst
+`"¿Sí?@ ¿Dijiste algo, Nii-san?"@
+`"Bueno no, nada pero… quisiera echarle un vistazo al edificio de estilo japonés del que estabas hablando, si no hay problema."@
+`"----¿El edificio separado?"@
+` Murmurando, la frente de Akiha se arruga con preocupación.\
+ld c,":a;image\tachi\aki_t11a.jpg",%type_crossfade_fst
+`"Por favor, no lo hagas.@ Fue sellado hace muchos años.@ Nii-san, ni siquiera tú tienes permitido ir a ese lugar."@
+cl a,%type_lshutter_fst
+` Habiendo declarado eso, Akiha entra a la mansión.\
+bg #000000,%type_lshutter_mid
+!w1000
+playstop
+return

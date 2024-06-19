@@ -1,0 +1,40 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_15c.jpg",%type_nowaitdisp
+br
+` ----Me niego.@
+` No puedo enfrentarme a ese monstruo.@
+` Ella me pidió que fuese su escudo y la custodiara mientras dormía, pero ni siquiera eso pude hacerlo bien.@
+` Y aunque decidiera pelear a su lado, probablemente sólo sería un estorbo.\
+`"Arcueid.@ Lo siento, pero no puedo.@ Él es demasiado diferente.@ Aun si peleo con él, no podría hacerle siquiera un rasguño."@
+ld c,":a;image\tachi\ark_t11.jpg",%type_crossfade_fst
+`"¿Qué?@ ¿En serio…?"@
+` …… No sé de dónde saca esa conclusión, pero ella ladea su cabeza como si dudase de mí.\
+`"…… Me alegra que me tengas tanta confianza, pero no puedo hacerlo.@ Nuestra promesa fue que te cuidaría sólo por una noche.@ No quiero tener nada más que ver con ese monstruo."@
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"Hmm, puede que sea demasiado tarde.@ Nrvnqsr te conoció.@ Aunque no sigas conmigo, no creo que él vaya a dejarte en paz."@
+` Ella habla relajadamente como si se refiriese a terceras personas.\
+`"Qué------"@
+` Digo sin querer, y entonces comprendo.@
+` El vampiro Nrvnqsr es el que está asesinando gente en esta ciudad.@ No hay razón para que me deje en paz una vez que haya visto su rostro.\
+ld c,":a;image\tachi\ark_t03.jpg",%type_crossfade_fst
+`"Pero soy más rápida que Nrvnqsr.@ Él no se puede mover durante el día, y tú estás justo frente a mí, así que la situación está abrumadoramente a mi favor."@
+`"…… ¿Qué quieres decir?"@
+ld c,":a;image\tachi\ark_t09.jpg",%type_crossfade_fst
+`"Oh, nada.@ Sólo estaba pensando que si vas a escapar, te mataría aquí mismo."@
+` Arcueid sonríe mientras bromea, pero también parece seria.\
+`"U…………, gh."@
+` Su sonrisa no desaparece.@
+` …… En verdad parece decidida a obligarme.@
+cl c,%type_crossfade_fst
+\
+`"………… Mujer diabólica."@
+` …… Estoy atrapado.@
+` Si voy a ser atacado de cualquier forma, entonces no tengo más opción que ayudar a Arcueid.@
+` Miro hacia el techo y respiro profundamente.@
+` Afortunadamente, eso me prepara un poco para lo que está por venir.\
+`"De acuerdo, estoy listo.@ …… Ahora que lo pienso, no ha habido forma de escapar desde que te conocí.@ Habiendo llegado tan lejos, supongo que no tengo más opción que seguir hasta el final."\
+bg #000000,%type_crossfade_mid
+return

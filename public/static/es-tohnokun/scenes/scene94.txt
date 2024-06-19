@@ -1,0 +1,514 @@
+mov $phasebg,"image\bg\bg_28b.jpg"
+mov $phasetitle_a,":a;image\word\PARK_04A.PNG"
+mov $phasetitle_b,":a;image\word\day_04.png"
+gosub *right_phase
+bg "image\bg\bg_15a.jpg",%type_crossfade_mid
+` El apartamento de Arcueid no es el que se esperaría de un vampiro.@
+` …… En aquella ocasión, sólo estaba preocupado por Arcueid y no pude notarlo, pero ahora, veo que su apartamento es perfectamente ordinario.@
+`"…… Incluso tiene una subscripción al periódico.@ ¿De qué se trata todo esto?"@
+` Me quejo mientras coloco a la dormida Arcueid sobre su cama.\
+`"Huaa----ahhhhh."@
+` Respiro profundamente al sentarme en el piso.@
+` Son casi las seis en punto de la mañana.@
+` El cielo fuera de la ventana está lleno de luz pero fuertemente cargado de nubes.@
+`"…… Cierto.@ Debería cerrar las cortinas."@
+` Pellizco mi cansando cuerpo para levantarme.@
+` Cierro las cortinas y me siento de nuevo.\
+` Paf.@
+` Mientras desciendo la fuerza se escurre de mis rodillas y caigo al piso.@
+`"----Rayos, parece que también estoy exhausto."@
+` Es lamentable pero ni siquiera puedo ponerme de pie.@
+` Ahora que lo pienso, pasé toda la noche hablando con Arcueid y no comí durante más de un día.@
+` Además----aunque me puse mis lentes, todavía tengo dolor de cabeza.@ Mi cerebro está resonando con este dolor de cabeza.\
+`"…… Arcueid…… me pregunto si su herida está bien……"@
+` El sangrado se ha detenido, y ella es alguien que se regenera después de ser cortada en pedazos… así que tal vez no tenga que preocuparme.@
+`"…… Me pregunto por qué."@
+` En este momento estoy tan cansado que podría desmayarme.@
+` Pero estoy más preocupado por Arcueid que por mí mismo----\
+bg #ffffff,%type_crossfade_slw
+!w3000
+bg "image\bg\bg_15c.jpg",%type_crossfade_mid
+play "*9"
+br
+`"Los investigadores creen que la causa del accidente de motocicleta de Takada Youichi fue un desperfecto en el pedal de freno que ocurrió mientras descendía una colina empinada.@
+` Afortunadamente, nadie murió en el accidente."\
+br
+` …… Me despierta la genérica y desentonada voz de un hombre.\
+`"Nng----¿Me quedé dormido?"@
+` Cuando reacciono, me encuentro acostado en el piso bajo una sábana.@
+` Es poco más de mediodía.@
+` Arcueid ya no está sobre la cama y noticias televisivas poco interesantes llenan la habitación.\
+`"…… ¿Adónde fue Arcueid?"@
+` Y, siento que alguien está en la cocina.@
+`"Esa idiota, moviéndose con semejante herida."@
+` Salgo de abajo de la sábana y me levanto.@
+` Tengo que ir a la cocina y revisar su herida.@
+br
+`"A continuación en las noticias.@ Un número masivo de personas fueron declaradas perdidas a tempranas horas en un hotel al sur de la ciudad de Minamiyashirogi."\
+`"------"@
+` Me detengo en seco.@
+` Mis ojos se fijan con pegamento al presentador dentro del televisor.@
+br
+`"Ciento tres huéspedes del hotel aún están extraviados.@ Además, manchas de sangre pueden ser vistas dentro del hotel y la policía está empezando a sospechar que se vieron involucrados en el algún tipo de crimen."\
+`"¿Qué----estás diciendo?@ ¿Manchas de sangre?@ No era----algo tan pequeño y lindo."@
+br
+` El presentador lee el guión con un tono de desinterés.@ La imagen cambia a la escena del hotel en el que yo estaba anteriormente y entonces muestra una lista de los nombres de las 103 personas perdidas.@
+br
+` ----Por supuesto que mi nombre y el de Arcueid no están en la lista.\
+`"Además, una gran cantidad de pelo de animales salvajes fue encontrada dentro del hotel.@ Se presume que el pelo está conectado con el sospechoso de alguna forma.@ Algunas de las muestras de pelo confirmadas parecen pertenecer a una raza de perro grande, a lobos, y también había evidencia de un oso.@
+` Fueron encontradas numerosas muestras diferentes de pelo en la escena.@ Ridículamente, lo que parecían ser mordidas de tiburón también fueron reportadas en la escena----"@
+br
+` Clic.@ Apago la televisión.\
+`"----"@
+` Cien personas.@ Más de un centenar de personas.@ En sólo media hora, todas fueron brutalmente asesinadas.@
+` ¿Manchas de sangre----?@
+` ¿Personas extraviadas----?@
+` ¿Cómo puedes decir eso cuando tienes tanta información?@
+` Lo entiendo perfectamente.@
+` Todos los huéspedes del hotel fueron asesinados por esas incomprensibles bestias y devorados sin dejar rastro.\
+`"Ugh----"@
+` Resisto las ganas de vomitar.@
+` No puedo permitirme vomitar cuando recuerdo cada uno de los eventos que ocurrieron anoche.@
+` Una compasión tan mezquina me haría más bajo que un asqueroso cerdo.@
+` Siendo el único que escapó de la muerte en ese hotel, no me permitiré nada más que odio por la persona detrás de todo esto.\
+` Cien personas.@
+` Cien personas… asesinadas sin siquiera dejar sus cuerpos, sólo sangre.@
+` El rostro del hombre del abrigo negro aparece en mi memoria.@
+` No sé quién es él.@
+` Pero no es un error pensar que está detrás de todo lo ocurrido.@
+br
+` ----¿Mi corazón todavía está entumecido?@
+` En este momento, el odio sobrepasa al miedo y al disgusto.@
+` O tal vez----incluso los sentimientos dando vueltas dentro de mi pecho son sólo otro tipo de miedo.\
+`"Eso es simplemente----ridículo."@
+` Aprieto mis dientes.@
+` No sé si es arrepentimiento o miedo, o quizás una desagradable repugnancia.@
+` Pero sólo recordar el rostro del hombre del abrigo negro me hace querer romper algo, y me irrita----\
+ld c,":a;image\tachi\ark_t01a.jpg",%type_lshutter_fst
+`"¿Estás despierto Shiki?"@
+` Arcueid asoma su cabeza desde la cocina.@
+`"----Oh."@
+`"¿Qué pasa?@ Tu cara da miedo, ¿sucedió algo?"@
+` Arcueid habla con ligereza como si no hubiese ocurrido absolutamente nada.@
+`"……………"@
+` Los sentimientos que estaban arremolinándose dentro de mí hasta ahora, desaparecen.\
+`"Arcueid----¿tu herida… está bien?"@
+`"Sí, por ahora."@
+` Ella ríe con confianza.@
+` Se ve exactamente como antes, probablemente mejor que yo.@
+`"…… Oh.@ Entonces… qué bueno----"@
+` Al menos.@ Al menos la persona cerca de mí está a salvo.\
+`"…… ¿Hm?"@
+` Oye, espera un minuto.@
+` Arcueid no es humana.@
+` Olvidé algo tan importante… en verdad soy distraído.\
+`"…… En fin, me alegra que tu herida no fuese seria."@
+`"¿Oh?@ ¿Qué pasa Shiki?@ Y eso que sólo un poco más temprano me estabas llamando monstruo."@
+`"Idiota, todavía pienso que lo eres.@ Pero, eso es otra cosa.@ Sólo quería agradecerte por ayudarme."\
+ld c,":a;image\tachi\ark_t12.jpg",%type_crossfade_fst
+`"¿Eh?@ ¿Te ayudé, Shiki?"@
+` Los ojos de Arcueid se ensanchan de sorpresa.@
+` Parece que ella ni siquiera era consciente de eso.@
+`"Sí, me ayudaste.@ Es un poco tarde pero, gracias por protegerme.@ Si no me hubieses apartado del camino, me habría unido a esa lista de 103 nombres."\
+ld c,":a;image\tachi\ark_t11.jpg",%type_crossfade_fst
+`"Gracias----En realidad no fue nada.@ Soy la razón por la que te enfrentaste a Nrvnqsr, así que no tienes que sentirte en deuda conmigo."@
+`"Tal vez, pero la verdad es que me salvaste.@ Ya que lo hiciste, quiero agradecerte."\
+`"----Pero si no te hubiese obligado a custodiarme, nunca te habrías involucrado en todo eso.@ Soy yo la que está estropeando tu vida diaria.@
+` Entonces, ¿no sería más apropiado que me odiases en lugar de estar en deuda conmigo?"@
+`"…… Bueno, ciertamente pienso que eres una gran molestia.@ Pero al final, pienso que debo asumir responsabilidad por mis acciones.@
+` …… Hace mucho, mucho tiempo alguien me enseñó esto.@ Ella dijo que sin importar lo que pase a mi alrededor, tengo que apegarme a las cosas que he iniciado hasta el último momento.@
+` Aunque parece algo muy natural, soy un partidario de esa idea."\
+` Es por eso que no odio a Arcueid.@
+` Simplemente siento que estoy involucrado en algo muy fastidioso.\
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"----Oh.@ Ahora que lo mencionas, dije que necesitaba un escudo porque me asesinaste.@ Supongo que no tengo que disculparme por involucrarte en semejantes cosas."@
+`"Correcto.@ Estoy en esta situación por mi propia culpa."@
+ld c,":a;image\tachi\ark_t08.jpg",%type_crossfade_fst
+`"Tu culpa, eh.@ Hm, creo que has tenido mala suerte, Shiki.@ Si sólo hubieses matado a alguna otra chica aparte de mí, las cosas no habrían terminado así."@
+cl c,%type_crossfade_fst
+\
+`"…… Oye."@
+` En primer lugar, no puedes asumir que yo mataría a alguien aparte de ti, Arcueid.@
+` Sólo me he sentido de esa manera, acosado y asesinado una sola vez, sólo con Arcueid.@
+br
+` …… O quiero pensar que ella sería la única.\
+`"----Ah."@
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"¿Hm?@ ¿Recordaste algo que habías olvidado?"@
+`"No, no es eso.@ …… En realidad nunca antes lo había pensado, pero me pregunto por qué quise matarte."@
+ld c,":a;image\tachi\ark_t06.jpg",%type_crossfade_fst
+` Arcueid arruga su frente mientras me mira.@
+` …… Bueno, es una reacción natural.@
+` Yo, el que asesinó a Arcueid, estoy diciendo que no sé por qué la maté.\
+playstop
+ld c,":a;image\tachi\ark_t03.jpg",%type_crossfade_fst
+`"No hay ninguna razón, ¿verdad?@ Porque eres un asesino de nacimiento Shiki."@
+`"------¿Eh?"@
+br
+` Espera.@
+` ¿Qué, ha dicho, esta, mujer, sobre mí----?@
+br
+`"Parecías muy acostumbrado a eso cuando me atacaste.@ Tocaste el timbre, pasaste tu mano a través de la puerta cuando se abrió, y entraste.\
+ld c,":a;image\tachi\ark_t04.jpg",%type_crossfade_fst
+`"Mientras todavía estaba con la guardia baja y sorprendida, me asesinaste con tu primer golpe, y terminaste cortándome en pedazos----Sí, tu ataque sorpresa fue perfecto.@
+` ¿Qué tan perfecto fue?@ Un retrato tuyo de aquella ocasión sería una obra maestra sin paralelo, así de perfecto fue."@
+`"Es----"\
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"Pero sin importar qué tan buen asesino fueses, sin importar la excelencia de tu técnica, la víctima esta vez fue una mala elección.@
+` No sé cuántas personas has matado hasta ahora, pero creo que te llegó la hora de ser atrapado cuando me escogiste como tu presa."@
+`"Es, es-"@
+ld c,":a;image\tachi\ark_t04.jpg",%type_crossfade_fst
+`"¿'Es-es-es'?@ ¿Qué te traes con esa cara tenebrosa?@ Si quieres decir algo es mejor que lo digas.@ Nunca nos hemos ocultado nada entre nosotros, ¿cierto?"\
+br
+` ----Puede que eso sea verdad.@
+` Asiento y le indico con mi mano que se me acerque.@
+ld c,":a;image\tachi\ark_t08.jpg",%type_crossfade_fst
+`"¿Hm?@ ¿Un secreto?"@
+cl c,%type_crossfade_mid
+` Arcueid se acerca emocionadamente.@ Pongo mi boca cerca de su oído y expreso claramente lo que quiero decir.\
+`"…… Sabes, Arcueid…"@
+`"Sí, ¿qué?"@
+br
+` De acuerdo, listo…\
+br
+br
+br
+br
+br
+br
+br
+`"¡¡ESO NO ES ASÍ EN ABSOLUTO, IDIOTA----!!"\
+` Idiota, diota, iota, ota………
+br
+` Mi grito hace eco en la habitación.@
+` Golpeo sus tímpanos con toda mi fuerza, sin contenerme siquiera un poco.\
+`"Au…… auy………"@
+` Arcueid cubre sus oídos exageradamente.@
+ld c,":a;image\tachi\ark_t16.jpg",%type_crossfade_fst
+`"¡Ahora estoy furiosa!@ ¿¡Qué estás haciendo tan repentinamente Shiki!?"@
+`"¡Soy yo quien debería estar furioso!@ ¡Me preguntaba porque me estabas pidiendo todas esas cosas imposibles, pero ahora lo entiendo!"@
+ld c,":a;image\tachi\ark_t11.jpg",%type_crossfade_fst
+`"¿Eh----?@ ¿Entiendes qué……?"\
+`"¡Que me pediste que fuese tu escudo en contra de un monstruo y te custodiara porque piensas que soy un asesino demente!@
+` …… Cielos, estás increíblemente equivocada.@ Pensabas tan bien de mí debido a eso.@
+` Mira, te lo diré ahora mismo.@ No soy un asesino o un maniático homicida.@
+` Tú----fuiste la primera persona que maté."@
+ld c,":a;image\tachi\ark_t12.jpg",%type_crossfade_fst
+` Arcueid abre su boca con asombro.@
+` …… Maldición, en verdad parece totalmente sorprendida.\
+`"----No puede ser.@ ¿¡Fue tu primera vez y aun así eras tan experto……!?"@
+`"…… Sí.@ Ciertamente tengo ojos extraños pero he llevado una vida honesta.@ Nunca había pensado siquiera una vez en usar esas 'líneas' para matar gente."\
+`"Pero--¿entonces por qué me mataste?@ Nunca me habías visto antes."@
+`"Yo tampoco sé por qué.@
+` Me obsesioné tanto cuando te vi en la calle--y cuando reaccioné, ya te había, cortado en pedazos----"@
+cl c,%type_crossfade_fst
+play "*8"
+br
+` En este apartamento.@
+` Sin razón, sin propósito.\
+`"------Ya veo."@
+br
+` …… Sí, ya veo.@
+` No tengo ningún derecho a estar enojado con Arcueid.@
+` Aunque esté viva ahora y no sea humana.@
+` La verdad es que la asesiné con mis propias manos.\
+ld c,":a;image\tachi\ark_t06.jpg",%type_crossfade_fst
+`"¿Por qué estás tan callado de nuevo?@ ¿Qué pretendes Shiki?"@
+`"…………… Yo, lo siento…… tengo que… disculparme……"@
+br
+` ¿Por qué----olvidé convenientemente una cosa tan importante?\
+cl c,%type_crossfade_fst
+`"--Lo siento.@ Lo siento, Arcueid.@ Yo, Tohno Shiki, te asesiné.@ Por encima de todo… he debido disculparme por eso desde el principio----"@
+` …… En verdad hay algo mal en mí.@
+` Es natural que ella me haya confundido con un asesino.@
+` Porque, ni siquiera yo mismo comprendo ese impulso.@
+` Entonces, tal vez…
+br
+` Tohno Shiki
+` podría ser un verdadero asesino------.\
+`"----La verdad es que te asesiné.@ Así que----tengo que aceptar mi pecado y mi castigo.@
+` Un asesino como yo, no puede mezclarse con el resto de la sociedad."@
+br
+` ----No percatarme de algo tan importante hasta ahora es un acto demasiado cobarde.@
+` Sin importar lo que Arcueid sea--soy alguien que mata sin razón.\
+ld c,":a;image\tachi\ark_t01b.jpg",%type_crossfade_fst
+`"----Ya veo.@ Entonces tú mismo no entiendes por qué, Shiki."@
+br
+` …… Asiento silenciosamente.@
+br
+`"¿Entonces tampoco sentiste ningún placer?@ …… Sí, ciertamente existen asesinos para los que matar es como respirar, pero tú eres bastante normal Shiki."@
+`"…… Es cierto.@ Al menos intento serlo."@
+`"No, eres increíblemente normal.@ ¿Entonces soy la única que has querido matar?"@
+`"…… Sí.@ Aparte de ti, nunca antes me sentí de esa manera."\
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"Ya veo, entonces no hay problema.@ No eres un asesino, Shiki."@
+` Ella dice esto como si nada, casi dándolo por sentado.\
+`"No creo que tengas que recibir ningún castigo.@
+` Por casualidad, era yo a quien querías matar, y para colmo, estabas equipado con esta técnica asesina sin paralelo.@
+` Pero afortunadamente soy un vampiro así que nadie murió, ¿cierto?@ Así que no necesitas preocuparte tanto.@
+` No creo que debas preocuparte por esas morales de la sociedad humana."\
+`"…… Lo sé.@ Pero aun así, maté a alguien.@ Una persona peligrosa como yo no puede andar suelta."@
+ld c,":a;image\tachi\ark_t02.jpg",%type_crossfade_fst
+`"Eso no importa.@ En este momento, los únicos que pueden condenarte son, tú mismo, y yo, la víctima."@
+`"----Puede que así sea, pero eso no cambia el hecho de que te asesiné."@
+br
+` Correcto.@
+` Aun si no hay castigo, el pecado nunca desaparecerá.\
+ld c,":a;image\tachi\ark_t04.jpg",%type_crossfade_fst
+`"Por supuesto.@ Incluso ahora todavía lo resiento, así que sería preocupante que lo olvidases.@
+` Pero sabes, Shiki.@ Si te sientes de esa manera y siempre lo lamentas, entonces creo que no habrá ningún problema."@
+br
+` ----Pero, eso es sólo endulzar la situación.@
+br
+\
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"Shiki.@ Hay personas que no venderían sus almas al diablo aunque odiasen el mundo.@
+` Como… alguien tan sincero que puede disculparse con un vampiro.@
+ld c,":a;image\tachi\ark_t08.jpg",%type_crossfade_fst
+` Así que no hay problema.@ Sin importar qué diga la gente y sin importar cuánto digas que no es así----puedes permanecer en el mundo en el que quieres vivir."@
+`"Qué----"@
+` …… No tengo palabras.@
+` ¿Cómo puedes----cómo puedes sonreír y decirle eso a la persona que te asesinó?\
+playstop
+`"Ar…… cueid----"@
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"Por favor, tenemos un problema mucho más engorroso de qué preocuparnos.@ Ahora que estás despierto Shiki, quiero hablar sobre--"@
+` Mientras habla, Arcueid cae al piso.@
+cl c,%type_tcartain_fst
+`"¿¡Arcueid----!?"@
+` Corro hacia ella.@
+` Sudor brilla sobre su frente y respira dolorosamente.@
+`"…… Au rayos, parece que todavía no puedo hacer mucho."@
+` Miro hacia abajo.@
+` Su blusa blanca está teñida de rojo cerca de su estómago.\
+`"Tú, esa herida----"@
+`"¿Ah, esto?@ Los efectos de tu ataque todavía persisten y ni siquiera puedo sanar mis heridas.@
+` Cerré la herida por lo menos pero parece que no funcionó muy bien."@
+` Su tono es muy alegre.@
+` Pero noto que tiene un indicio de dolor.\
+`"¿Cerraste la herida?@ ¿¡Con qué, Arcueid……!?"@
+`"Ummmm, con eso."@
+` Arcueid señala algo sobre el piso.\
+` Es marrón.@
+` A primera vista, parece una rosquilla o un baumkuchen, pero resulta ser un rollo de cinta para embalar.\
+`"----¡I, idiota!@ ¿Quién demonios usa cinta adhesiva para cerrar una herida……!"@
+`"…… Oye, no deberías llamar idiota a la gente todo el tiempo.@ Podría empezar a creer que en verdad soy una después de un tiempo."@
+`"¡Cállate y déjame ver tu herida…!"@
+` Trato de tomar su ropa.@
+` Pero ella escapa rodando por el piso.\
+`"No seas ridícula, ¿¡qué vas a hacer si se abre de nuevo!?"@
+`"Está bien, déjala así.@ También deberías dejar de actuar estúpidamente.@ Tratabas de arrancar la ropa de una chica de esa manera, eres peor que Nrvnqsr."@
+`"----Mira.@ No te veo como humana, que seas chico o chica no importa.@ Cálmate, ¿de acuerdo?@
+` ¡Si mueres por una herida que recibiste por protegerme, me sentiré culpable por siempre……!"@
+` Arcueid me mira con disgusto, y esta vez, rueda hacia mí.\
+ld c,":a;image\tachi\ark_t06.jpg",%type_crossfade_fst
+`"………………"@
+` Arcueid cierra fuertemente su boca.@
+` …… Parece que está un poco malhumorada, pero supongo que estará bien mirar la herida.@
+ld c,":a;image\tachi\ark_t21.jpg",%type_crossfade_fst
+` Levanto su blusa y expongo su estómago.@
+` La cinta adhesiva está enrollada a todo su alrededor.@
+` Está muy mal realizado y si miro con atención, puedo ver sangre filtrándose.\
+`"----"@
+` Estoy disgustado.@
+` Más que eso, estoy furioso.@
+` Suelto su blusa y levanto a Arcueid.@
+cl c,%type_lshutter_fst
+`"Hey--¿¡qué estás haciendo, Shiki!?"@
+`"Devolverte a la cama.@ Te llevaría a un hospital pero no es algo que pueda hacer."@
+` Lo más cuidadosamente posible, la coloco sobre la cama.\
+`"Mira.@ Hasta que yo regrese, no te muevas.@ Si caminas por ahí como antes, me olvidaré de ti, así que prepárate para las consecuencias."@
+br
+` Miro alrededor de la habitación.@
+` Como pensé, no hay absolutamente nada parecido a un botiquín de primeros auxilios.\
+`"Arcueid, dijiste que eras rica."@
+ld c,":a;image\tachi\ark_t21.jpg",%type_crossfade_fst
+`"¿Eh--?@ S, sí… El dinero no es una preocupación para mí pero, ¿qué hay con eso?"@
+`"Entrégamelo.@ Voy a comprar algunas cosas que necesitaré para tratarte.@ …… No sé si funcionarán contigo, pero tengo que tratarte de la misma manera en que trataría a una persona herida."@
+`"Bien, pero podría ser inútil."@
+`"----Aunque sea inútil lo haré.@ No puedo dejarte así como estás."\
+`"…… Ya veo.@ Mi cuerpo está hecho de la misma manera que el tuyo, así que podría tener algo de sentido."@
+`"Apresúrate y dame el dinero.@ Quédate aquí tranquila.@ Oh, pero no duermas.@ Puedes acostarte, pero mantente despierta."@
+ld c,":a;image\tachi\ark_t14.jpg",%type_crossfade_fst
+`"Qué…… Shiki, ésa es una orden realmente absurda."\
+`"Es absurdo pero hazlo.@ He escuchado que las funciones corporales se debilitan cuando uno duerme.@
+` Creo que si duermes con heridas abiertas, tu sistema inmunológico se debilitará y tu herida se pondrá aun peor.@
+` Dormir sólo aliviará tu cansancio, no sanará tu herida.@ Así que por ahora, no duermas al menos hasta que yo regrese."@
+ld c,":a;image\tachi\ark_t08.jpg",%type_crossfade_fst
+`"----¿En serio?@ De acuerdo, eso haré Shiki."@
+br
+` Arcueid sonríe felizmente.@
+` …… Como era de esperarse, el proceso mental de Arcueid es un completo misterio.\
+`"…… ¿Um, por qué estás sonriendo?"@
+`"Porque eres confiable, Shiki."@
+`"------"@
+` No digo nada y extiendo mi mano.@
+` Arcueid saca su billetera de su falda y me la entrega.@
+`"----Vuelvo enseguida."@
+` Le doy la espalda a Arcueid y salgo de la habitación.\
+bg "image\bg\bg_14a.jpg",%type_lcartain_mid
+` Mientras voy saliendo noto algo en la cocina.@
+`"----Comida."@
+` Sobre la mesa hay algo que es más una comida que un almuerzo… algo que es más ingredientes que comida, podría decir que es algo "que parece comestible".@
+br
+` …… Supongo que es por esto que ella estaba en la cocina.\
+`"……………… Idiota."@
+` Arcueid dijo que no comía comida normal.@
+` Así que ni siquiera tengo que pensar para quién era esta comida.@
+br
+`"Maldición----¿qué pasa con ella?"@
+` Me estoy irritando mucho.@
+` Me estoy irritando tanto, que decido apresurarme y conseguir algo para tratarla lo más rápido posible.\
+bg #000000,%type_lcartain_mid
+!w1000
+` Aunque dije primeros auxilios, las únicas cosas que me vienen a la mente son vendajes o calmantes.@
+` Pero eso es mejor que nada.@
+` Aun si es una pequeña cosa, si es algo, entonces nada no es.@
+` Creyendo eso, compro lo que sea que se me ocurra.\
+!w1000
+bg "image\bg\bg_15c.jpg",%type_rcartain_slw
+play "*3"
+`"Oye, eso hace cosquillas."@
+`"………………"@
+` Ignoro la voz de Arcueid y fijo la gasa tan cuidadosamente como puedo.@
+br
+` La herida sobre su estómago no era muy grande.@ Arcueid dijo que la mayor parte de ésta sanó en el exterior.\
+` Pero aún hay cuatro agujeros del tamaño de una pelota de golf causados por los colmillos del cocodrilo.@
+` Podría ser malo para una herida de este tamaño, pero considerando la posible infección, aplico algo de desinfectante.@
+` Coloco gasa sobre la herida después de eso y cuidadosamente la envuelvo con vendajes.\
+`"Ajajaja, ya basta.@ Eres demasiado bueno."@
+` Arcueid está riendo alegremente.@
+`"…………"@
+` La ignoro y ajusto sus vendajes.@
+` Para detener el flujo de sangre, presiono un poco para apretar los vendajes alrededor de la herida.@
+`"----Au.@ Cielos, te voy a quitar puntos por ésa Shiki."@
+`"…………"@
+` Fiu.@ Por ahora, he hecho todo lo que puedo.\
+`"----Bueno.@ Al menos hice que se vea bien pero, ¿cómo estás?@ ¿Puedes moverte bien Arcueid?"@
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"Sí, no parece que vaya a ser un problema.@
+` Mis entrañas aún están muy estropeadas, así que de todas formas no puedo moverme a placer."@
+`"Ya veo.@ Bien, el resto depende de ti.@ Mi especialidad es cortar en pedazos, no curar."@
+` Me alejo un poco de Arcueid y me siento junto a la pared.\
+`"Puedes dormir ahora.@ El sueño te devolverá la fuerza y sanarás pronto, ¿cierto?@ Yo montaré guardia así que sólo relájate y duerme."@
+`"No, dormir no me ayudará a recuperar mi fuerza.@ Tú mismo dijiste que dormir sólo acaba con el cansancio.@
+` Para mí, recuperar fuerzas es sólo cuestión de tiempo.@ Para mañana estoy segura de que podré moverme normalmente."\
+`"----Ve a dormir de una vez.@ Parece que tuvieses problemas hasta para hablar."@
+`"Sí, pero ya que estás despierto Shiki, me parece un desperdicio dormir ahora."@
+cl c,%type_crossfade_fst
+` Arcueid se sienta en la cama y habla alegremente.@
+br
+`"----Cielos."@
+` Oh bueno.@
+` Hay algunas cosas que quiero preguntar también; supongo que estará bien hacerle compañía a Arcueid.\
+playstop
+`"Arcueid.@ ¿Puedo preguntar sobre el hotel de ayer?"@
+ld c,":a;image\tachi\ark_t03.jpg",%type_crossfade_fst
+`"…… Es cierto.@ Supongo que ése va a ser nuestro tema, considerando nuestra situación."@
+`"Sí.@ Sólo tengo una pregunta.@ El sujeto de anoche----al que llamabas Nrvnqsr… ¿qué demonios es él?@
+` Estoy hablando en serio, por favor no me digas que es un mago que puede hacer aparecer cocodrilos de su cuerpo o algo así."\
+ld c,":a;image\tachi\ark_t02.jpg",%type_crossfade_fst
+play "*4"
+`"Yo no diría eso.@
+` Creo que ya lo sabes pero, él también es un vampiro.@ Nosotros lo llamamos Nrvnqsr y es una gran excepción.@
+` …… Para ser sincera, no es alguien con quien podrías hablar tan relajadamente como lo hacemos ahora."@
+`"………………"@
+` Entonces es un vampiro después de todo.@
+` Pero, por alguna razón----como Arcueid sentada frente a mí, él tampoco encaja en mi imagen de un vampiro.\
+`"Entonces, este Nrvnqsr… ¿qué tipo de sujeto es?@ Tú pareces conocerlo o algo así."@
+ld c,":a;image\tachi\ark_t04.jpg",%type_crossfade_fst
+`"Claro que no.@ No tengo ningún conocido entre los vampiros.@ Conocerlos significa que voy a matarlos en el siguiente instante.@ Ésta es la primera vez que me encuentro con un vampiro y no lo mato."\
+`"Pero estaban hablando de muchas cosas."@
+`"Sería precipitado considerarlo un conocido por eso.@
+` Nrvnqsr es un vampiro famoso así que las presentaciones no fueron necesarias cuando nos vimos, eso es todo.@
+` ¿No es natural conocer los nombres de los vampiros con poderes inusuales y largas historias?@
+` Entre ésos, Nrvnqsr se destaca aun más.@
+` A pesar de ser uno de los vampiros más antiguos, no tiene un castillo o un territorio y es un vagabundo excéntrico.@
+` La Iglesia le ha dado un segundo nombre, Chaos."\
+`"…… ¿Chaos?@ ¿Qué es eso?"@
+`"Literalmente, retorcido y desconcertante caos.@
+` Como una tierra primordial donde nadie sabe qué saldrá volando después de la mezcla de varias cosas…… un significado que estoy deduciendo por lo que vi anoche."@
+`"¿No se sabe qué saldrá volando……?"\
+ld c,":a;image\tachi\ark_t02.jpg",%type_crossfade_fst
+`"Cielos.@ Tú también viste su cuerpo, Shiki.@ Hablamos de eso antes pero, los vampiros de mucha edad no pueden regenerar sus cuerpos dañados fácilmente.@
+` Para restaurar el cuerpo después de siglos de existencia, la débil vida de un humano no es suficiente.@
+` Así que usando las formas de vida simplemente superiores, animales salvajes y bestias mágicas, como material en bruto, ellos componen sus cuerpos.@
+` …… Como uno de los vampiros más antiguos, Nrvnqsr está probablemente en un nivel incomparable en lo que respecta a la cantidad total de bestias que ha capturado y usado para formar su cuerpo."\
+`"Un nivel incomparable----¿Entonces cosas como esos perros negros son parte de su cuerpo?"@
+ld c,":a;image\tachi\ark_t01b.jpg",%type_crossfade_fst
+`"Exactamente.@ Pero hay un límite para la capacidad de un humano.@ Probablemente sólo unas treinta bestias pueden ser controladas al mismo tiempo.@
+` Tener más de una bestia ilusoria como una bestia mágica o fantasma sobrepasaría la capacidad de cualquiera.@
+` Considerando eso, todos los familiares de Nrvnqsr son probablemente animales reales.@
+` …… Sí, eso puede ser una fortuna."@
+br
+` …… No entiendo mucho la última parte pero eso significa que hay treinta de esos perros negros.\
+`"…… No, eso no puede ser correcto.@ Los perros negros no eran las únicas cosas causando estragos en el hotel.@ Creo que había cosas como leones y leopardos también."@
+ld c,":a;image\tachi\ark_t02.jpg",%type_crossfade_fst
+`"Correcto.@ …… Ser capaz de reunir treinta animales del mismo tipo es una cosa, pero para Nrvnqsr, el tener bestias diferentes en su cuerpo ciertamente coloca el poder de su fuerza de voluntad en un nivel distinto al de otros.@
+ld c,":a;image\tachi\ark_t03.jpg",%type_crossfade_fst
+` …… Bueno, ciertamente parece extraño que teniendo esa clase de poder sólo utilice animales salvajes.@
+` Yo hubiese pensado que emplearía más bestias mágicas con su clase de fuerza de voluntad----"@
+` Hmmm.@ Arcueid se hunde profundamente en sus pensamientos.\
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"No importa.@ De cualquier forma, al menos sabemos que sus armas son veinte o treinta familiares.@
+` …… Así que ahora podemos entender por qué es llamado Chaos."@
+`"¿Eh……?@ ¿Su nombre en realidad no es Chaos?"@
+`"No, la mayoría de los Apóstoles Muertos más longevos no usan sus nombres humanos originales.@
+` Pero no inventan un nombre nuevo ellos mismos, La Iglesia les asigna uno.@
+` Añaden nombres al descubrir nuevas características especiales del vampiro así que algunos de ellos tienen nombres tan largos como hechizos."\
+`"…… Y, supongo que La Iglesia en verdad debe haberlo odiado como para nombrarlo Chaos.@
+` Habría sido suficiente con un león para cazar a todo el hotel, ¿cierto?@ Pero dejó sueltas a todas sus bestias para que se alimentaran, lo que significa que parece disfrutar de semejantes excesos."@
+cl c,%type_crossfade_fst
+`"………………"@
+` …… Treinta bestias dentro del vampiro Nrvnqsr.@
+` Sólo con eso, asesinó y devoró sin dejar rastro a un centenar de personas en el hotel en treinta minutos.\
+`"----No puedo creerlo.@ Es un completo monstruo."@
+ld c,":a;image\tachi\ark_t05b.jpg",%type_crossfade_fst
+`"Sí.@ En verdad es el peor oponente que podría tener ahora.@ Es uno de ésos que nunca te quisieras encontrar.@
+` Pero lo peor es que ese sujeto sabe dónde estamos.@
+` Incluso ahora estoy segura de que sus familiares nos están observando."@
+`"Qué----"@
+`"¿Acaso no es obvio?@ Nos salvamos anteriormente porque salió el sol, pero no podemos contar con eso esta noche.@ Él sabe de este lugar así que de seguro vendrá a matarnos durante la cumbre de su poder a la medianoche."\
+`"¿Vendrá a matarnos, esta noche……?"@
+ld c,":a;image\tachi\ark_t02.jpg",%type_crossfade_fst
+`"Sí, él mismo lo dijo."@
+cl c,%type_crossfade_fst
+br
+` ----¿Qué es esto?@
+` ¿Él----ese hombre del abrigo negro va a venir esta noche?\
+`"------"@
+` No… sé qué debería decir.@
+` Debería escapar.@ Sé que ésa es la decisión más sabia.@
+` Pero Arcueid está en estas condiciones.@
+` Aun si huye corriendo, no creo que pueda escapar de ese monstruo.\
+` No, menos sobre ella y más sobre mí.@
+` Si me quedo aquí----si continúo involucrado con Arcueid, no hay duda de que tendré que enfrentarlo.@
+br
+` Él es… peligroso.@
+` Dicho claramente, no está cuerdo.@
+` Aparte de su cuerpo que alberga a todos esos animales, sus ojos son como los de una máquina.@
+br
+` Desprovistos de toda emoción.@
+` Los verdaderos ojos de un asesino que hace lo que sea que le hayan asignado.@
+` Siendo alguien que ha experimentado su ataque, estoy seguro de que sin lugar a dudas, él es alguien que debe ser evitado.\
+`"------"@
+` Pero, ¿significa que debería dejar a Arcueid aquí y escapar?@
+` Sin importar quién sea ella, no puede moverse porque me protegió.@ ¿Y puedo decirle buena suerte e irme a casa------?@
+br
+`"Arcueid, yo----"\
+playstop
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"Pero no hay de que preocuparse.@ Incluso Nrvnqsr no es problema para ti.@ Sin importar quién sea, puedes matar a cualquiera con un solo golpe."@
+`"------¿Huh?"@
+br
+` Arcueid dice… algo atroz,
+` como si fuese perfectamente ordinario.\
+`"Oye---¿qué rayos estás diciendo?"@
+ld c,":a;image\tachi\ark_t01b.jpg",%type_crossfade_fst
+`"¿Qué estoy diciendo?@ Vas a pelear a mi lado, ¿cierto?"@
+` Arcueid mira directamente hacia mí.@
+` Sus ojos ponen toda su confianza en mí.@
+` Pero esto no es un juego.@
+` Yo------
+br
+return

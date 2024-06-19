@@ -1,0 +1,143 @@
+monocro off
+wavestop
+play "*2"
+;---added context above---
+bg "image\bg\bg_40a.jpg",%type_nowaitdisp
+` --Es cierto.@ Habiendo tenido un mal sueño, mi corazón aún está un poco inquieto.@ No puedo desayunar de inmediato.@
+` Iré a la sala de estar en unos diez minutos.\
+bg #000000,%type_tshutter_mid
+!w2000
+bg "image\bg\bg_34a.jpg",%type_bshutter_mid
+ld c,":a;image\tachi\koha_t02.jpg",%type_crossfade_fst
+`"Ah, buenos días, Shiki-san.@ El desayuno ya está listo."@
+` Al ver mi cara, Kohaku-san me saluda inmediatamente con una sonrisa.@
+`"Sí, buen día.@ Y perdóname, como siempre."@
+` Devuelvo el saludo, y miro hacia el sofá.@
+cl a,%type_crossfade_fst
+ld c,":a;image\tachi\aki_t21.jpg",%type_crossfade_fst
+` Allí está Akiha, y parece como si tuviese algo de qué quejarse.\
+`"Buen día, Akiha.@ Hoy te has levantado temprano… otra vez."@
+ld c,":a;image\tachi\aki_t03a.jpg",%type_crossfade_fst
+`"Buenos días.@ Despertaste tarde otra vez, Nii-san."@
+`"…… Ahh.@ Parece que estás totalmente recuperada, Akiha; me alegro."@
+` En verdad parece estar mucho mejor, en mente y cuerpo.@
+ld c,":a;image\tachi\aki_t18a.jpg",%type_crossfade_fst
+`"Ah, ¿estabas preocupado?@ Pero parece que no fuiste a verme ni una sola vez."\
+`"Espera, Akiha, en realidad quería ir a verte.@ ¿No recuerdas que me ordenaste no acercarme a ti?"@
+ld c,":a;image\tachi\aki_t06.jpg",%type_crossfade_fst
+`"Eso era dependiendo de la situación.@ Sólo estaba teniendo un ataque temporal, así que no debiste haberme prestado atención."@
+cl a,%type_crossfade_fst
+` …… Las palabras de Akiha no son razonables.@
+` Parece estar de mal humor esta mañana, y tal vez quiere gritarme por alguna razón.\
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"Shiki-sama.@ Si no desayuna pronto, llegará tarde a la escuela."@
+` Mierda, ahora que lo pienso, ya era tarde cuando vine aquí.\
+bg #000000,%type_lshutter_mid
+bg "image\bg\bg_34a.jpg",%type_rshutter_mid
+` Cuando termino mi desayuno y regreso a la sala de estar, Akiha sigue ahí, bebiendo té con elegancia.@
+` …… Me pregunto si… ¿estará esperando por mí?@
+`"Akiha, ¿por casualidad irás a la escuela en auto?"@
+ld c,":a;image\tachi\aki_t13a.jpg",%type_crossfade_fst
+`"Espera un minuto.@ Ir en auto a tu escuela sería de mal gusto.@ Incluso yo puedo entender eso."@
+` Ahh.@ Supongo que sí era eso, después de todo.\
+`"Bien, entonces, ¿nos vamos?@ A esta hora puede que tengamos que correr un poco, pero no se puede evitar."@
+ld c,":a;image\tachi\aki_t01a.jpg",%type_crossfade_fst
+`"¿Eh… Nii-san?"@
+`"Estoy diciendo que vayamos juntos a la escuela.@ Te enseñaré el mejor camino…… Bueno, si no quieres ir conmigo, no me molesta."@
+ld c,":a;image\tachi\aki_t16a.jpg",%type_crossfade_fst
+`"…… Si tú lo dices, no hay problema, pero…"@
+`"Entonces está decidido.@ Vamos, estás lista, ¿no?@ Llegaremos tarde si no nos apresuramos."@
+cl a,%type_crossfade_fst
+` Tomo la mano de Akiha y la levanto del sofá.\
+`"Ah…"@
+`"Hisui, no necesitaremos que nos acompañes.@ Hoy también volveré en la tarde, cuídate."\
+bg #000000,%type_lcartain_fst
+!w2000
+play "*3"
+bg "image\bg\bg_01a.jpg",%type_lcartain_fst
+` ---Y así, salimos de la mansión, bajamos la colina velozmente, y corremos hacia la escuela.@
+` Igualo mi velocidad a la de Akiha, y a pesar de que toma más tiempo, llegamos en poco menos de quince minutos.@
+`"Bien, aquí estamos.@ Deberías llegar a tiempo a la tutoría, Akiha."@
+ld c,":a;image\tachi\aki_t06.jpg",%type_crossfade_fst
+`"¡Sí, llegaremos con tiempo de sobra, porque corrimos todo el camino!"@
+br
+` ---Ah.@
+` Por alguna razón, Akiha parece estar enojada.\
+`"¿Qué sucede, Akiha?@ Te ves molesta.@ ¿Quizás debiste haber venido en auto después de todo?"@
+ld c,":a;image\tachi\aki_t03a.jpg",%type_crossfade_fst
+`"---Oh por favor.@ En absoluto.@ Estoy molesta por una razón mucho más simple."@
+` Respirando con dificultad, y con sus hombros subiendo y bajando, Akiha me mira ferozmente.@
+`"Entonces, ¿corrí demasiado rápido?"@
+ld c,":a;image\tachi\aki_t18a.jpg",%type_crossfade_fst
+`"Sí.@ No es la respuesta exacta, pero es una de las razones."\
+`"Bueno, ¿quizás porque fuimos vistos y señalados mientras corríamos hacia la escuela?"@
+ld c,":a;image\tachi\aki_t06.jpg",%type_crossfade_fst
+`"Es verdad.@ Aunque estaba muy avergonzada, eso en realidad no me preocupa."@
+br
+` ¿----?@
+` …… No entiendo, entonces.@ ¿Por qué Akiha está tan enfadada?@
+` No está molesta por el cansancio, y llegamos a tiempo a la escuela.\
+ld c,":a;image\tachi\aki_t12a.jpg",%type_crossfade_fst
+`"Olvídalo, estoy creando un problema por nada.@ Pensándolo bien, no tienes razón para levantarte temprano… En verdad no sé qué estaba esperando de ti."@
+cl a,%type_crossfade_fst
+` Con un suspiro, Akiha baja su cabeza.@
+` …… No entiendo muy bien, pero supongo que Akiha está diciendo que quería venir a la escuela con más calma.\
+ld c,":a;image\tachi\aki_t16a.jpg",%type_crossfade_fst
+`"Pero, estoy sorprendida.@ Soy una rápida corredora, pero no pude seguir tu ritmo, Nii-san.@ Aunque no estás en ningún club, eres bastante rápido, ¿no?"@
+`"…… Bueno, las actividades enérgicas no son buenas para mi cuerpo, así que no puedo unirme a un club, pero aun así me gusta moverme.@ De hecho, soy bastante atlético."@
+ld c,":a;image\tachi\aki_t04a.jpg",%type_crossfade_fst
+`"Sí.@ Hisui me lo dijo, pero no me esperaba esto.@
+ld c,":a;image\tachi\aki_t13a.jpg",%type_crossfade_fst
+` Pero, no me gustaría venir a la escuela a semejante ritmo todas las mañanas."\
+bg "image\bg\bg_03a.jpg",%type_lshutter_mid
+` Pasamos la verja principal y llegamos a la entrada del edificio.@
+` Aquí me separo de Akiha; ella va al cuarto piso, y yo a mi salón en el tercero.@
+br
+ld c,":a;image\tachi\aki_t01a.jpg",%type_crossfade_fst
+`"…… Bien, entonces iré a los salones de primer año.@ Te veré después de la escuela."@
+`"¿De qué estás hablando?@ Antes de eso está el almuerzo.@ Te esperaré en el patio, no te demores."@
+ld c,":a;image\tachi\aki_t09.jpg",%type_crossfade_fst
+`"Ah----sí.@ Estaré esperando."\
+cl a,%type_crossfade_fst
+` Haciendo una linda y pequeña reverencia, ella entra corriendo.\
+` ---Entonces.@
+` Como si hubiese recordado algo, Akiha se detiene y voltea.@
+ld c,":a;image\tachi\aki_t08a.jpg",%type_crossfade_fst
+`"Nii-san, la carrera de esta mañana fue agradable.@ ¡Aunque no quisiera hacerlo todos los días, quizás no sea tan malo de vez en cuando!"@
+cl a,%type_lshutter_fst
+` Aún respirando con dificultad, Akiha desaparece dentro.\
+`"……"@
+` …… Bueno, supongo que en verdad tiene un lado lindo.@
+`"¡Qué encantador!@ Se llevan muy bien, ¿no?"@
+` ¿¡!?@
+ld c,":a;image\tachi\cel_t04.jpg",%type_lshutter_fst
+`"¡Ci… Ciel-senpai!@ ¡Por favor no me asustes de esa manera…!"@
+ld c,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
+`"Sí, seré más cuidadosa a partir de ahora."@
+` Sonriendo con dulzura, Senpai me mira felizmente.\
+`"…… ¿De qué se trata, Senpai?@ Si quieres decir algo, dilo."@
+ld c,":a;image\tachi\cel_t04.jpg",%type_crossfade_fst
+`"No, no; no creo que necesite decir nada.@ Te ves muy feliz, Tohno-kun."@
+`"---¡Qué…!"@
+ld c,":a;image\tachi\cel_t03.jpg",%type_crossfade_fst
+`"Si entras a clases con esa cara, Inui-kun de seguro se burlará de ti.@ Bueno, Tohno-kun, te veré de nuevo en el almuerzo."@
+cl a,%type_lshutter_fst
+` Senpai entra al edificio, riendo para sí misma.\
+`"------"@
+` Pellizco mi mejilla.@
+`"…… ¿Me veía tan feliz?"@
+` …… Bueno, supongo que sí.@
+` Porque ver a Akiha sonreír me hizo sentir verdaderamente feliz por dentro.\
+bg #000000,%type_lcartain_mid
+!w1000
+wave se2
+!w1000
+bg "image\bg\bg_06a.jpg",%type_tshutter_mid
+wave se2
+` ----La cuarta hora finaliza.@
+br
+` Llega el descanso del almuerzo, y la escuela se llena de ruido.@
+`"----Cierto."@
+` Akiha debería estar esperando en el patio.@
+` …… Tratándose de Akiha, probablemente hizo que Kohaku-san le preparase el almuerzo, pero debería ir a comprar algo por si acaso.\
+return

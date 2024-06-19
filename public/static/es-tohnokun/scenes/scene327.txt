@@ -1,0 +1,33 @@
+monocro off
+wavestop
+play "*3"
+;---added context above---
+bg "image\bg\bg_04.jpg",%type_nowaitdisp
+`"¿Qué es él para mí?----Arihiko es sólo un compañero de clases.@ ¿Qué más parece?"@
+ld c,":a;image\tachi\aki_t03a.jpg",%type_crossfade_fst
+`"Oh, ¿entonces te refieres a 'sólo' un amigo por su primer nombre, Nii-san?"@
+` Akiha me mira con descontento.@
+`"Mira, ¿en verdad importa si me refiero a él por su apellido o por su primer nombre?@ ¿Por qué de repente estás tan obsesionada con eso?"\
+ld c,":a;image\tachi\aki_t18a.jpg",%type_crossfade_fst
+`"Cielos, no tienes conciencia, Nii-san.@ Quizás para las mujeres, pero no es normal que dos chicos se hablen de esa manera.@ A menos que sean hermanos o parientes…"@
+`"Eh----bueno, tal vez tienes razón."@
+` …… Incluso yo ladeo mi cabeza al pensarlo.@
+` Pero desde un principio, siempre lo he llamado "Arihiko".@ Además, nos conocemos desde hace tanto tiempo que eso no es tan raro.\
+`"Bueno, existe otra posibilidad.@ No me digas que tienes esa clase de relación con él, Nii-san."@
+`"¿……?@ ¿Esa clase de relación?@ ¿Qué quieres decir?"@
+cl c,%type_crossfade_fst
+` Respondo con seriedad porque no entiendo, pero Akiha desvía su mirada.@
+ld c,":a;image\tachi\aki_t13a.jpg",%type_crossfade_fst
+`"…… No es nada.@ Estaba siendo sarcástica, pero parece que no te das cuenta, Nii-san."@
+` Akiha deja caer sus hombros.@
+` …… Estoy cada vez más confundido.\
+`"----Akiha.@ Lo conozco desde la escuela media y siempre me ha ayudado.@ …… Puede no lucir como tal, pero es una buena persona.@ No sé qué te desagrada, pero no pienses mal de él."@
+ld c,":a;image\tachi\aki_t21.jpg",%type_crossfade_fst
+`"…………"@
+` ¿No está satisfecha con algo?@ Akiha comienza a refunfuñar.\
+`"Akiha, ¿estás escuchando?"@
+`"¡Sí, te escucho!@ Es la primera vez que te veo defender a alguien con tanto entusiasmo.@ ¡En verdad debe ser muy especial, ese amigo tuyo!"@
+cl c,%type_crossfade_fst
+` Ella infla su pecho y voltea su cabeza.@
+` …… Cielos.@ No sé por qué decidió transferirse aquí tan repentinamente.@ Y ahora ni siquiera sé qué pasa con ella.\
+return

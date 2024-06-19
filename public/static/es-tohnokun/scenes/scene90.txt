@@ -1,0 +1,602 @@
+monocro off
+wavestop
+play "*6"
+;---added context above---
+bg "image\bg\bg_19d.jpg",%type_nowaitdisp
+`"------Muy bien."@
+br
+` He decidido qué hacer desde el principio.@
+` Sacando el cuchillo de mi bolsillo, camino hacia la puerta.@
+ld c,":a;image\tachi\ark_t06.jpg",%type_crossfade_fst
+`"----¿Shiki?"@
+`"Voy a revisar afuera.@ No dejes esta habitación hasta que regrese."@
+` Salgo al pasillo, sacudiéndome la mirada de Arcueid quien parece querer decir algo.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_20a.jpg",%type_lcartain_mid
+` No hay nadie en el pasillo.@
+` …… No podía escuchar desde adentro, pero hay mucho ruido en el pasillo.@
+` No es que este piso sea ruidoso.@
+` Más bien, el ruido viene de abajo de mis pies.@
+` Hay algún tipo de alboroto en el piso de abajo; puedo escuchar el ruido de muchas personas hablando.@
+br
+` Supongo que el impacto despertó a los huéspedes, y éstos se están quejando ante el hotel.\
+`"……… Nada extraño hasta ahora."@
+` Camino por el pasillo.@
+br
+` El ruido de abajo es como el sonido de las olas en el océano.@
+br
+` Ruidoso--y a la vez tan solitario e inactivo.\
+`"¡------!"@
+` Los dedos que sujetan el cuchillo se sienten entumecidos.@
+` Un escalofrío recorre mi nuca.@
+` Hay algo cerca de mi sien.@
+` El dolor emerge de atrás de mis ojos.@
+br
+` Soportándolo, camino por el pasillo.\
+!w1000
+bg #000000,%type_crossfade_fst
+playstop
+bg "image\bg\bg_20a.jpg",%type_crossfade_fst
+waveloop se1
+`"------"@
+` …… Duele.@
+` Mis ojos… duelen.@
+` Mi cabeza se hace pesada, y tengo una sensación de bamboleo, como si estuviese a punto de desmayarme aquí mismo.@
+` Sí, sé lo que es esto.@ Sin duda, es la sensación que tengo antes de sufrir un colapso por anemia.\
+br
+`"Ha--aahh."@
+br
+` Duele.@
+` Duele.@ Sin poder soportarlo más, me quito mis lentes.\
+bg "image\bg\bg_20b.jpg",%type_crossfade_mid
+` Puedo ver el ascensor.@
+` Un pasillo largo.@
+` Deben ser más de diez metros de aquí hasta el ascensor.@
+br
+` ----Y entonces,
+br
+` Con un "ding dong", el ascensor sube al undécimo piso.\
+bg #000000,%type_crossfade_fst
+`"------"@
+` Puedo ver las "líneas" sobre la puerta del ascensor.@
+` No, éstas son…
+` Son demasiado densas--se ven casi negro azabache.\
+` La puerta se abre.@
+` La pequeña caja de acero se abre.@
+br
+` Dentro de esa caja--
+` Abarrotada hasta el punto del desborde, hay carne humana.\
+bg "image\bg\ima_13b.jpg",%type_crossfade_fst
+` Dentro de esa caja de acero llamada ascensor.@
+` La roja carne humana está tirada y empujada hacia dentro.@
+` En el interior, dos perros negros se están dando un banquete vorazmente.@
+br
+`"Qué------"@
+br
+` Dejo de respirar.@ Al igual que mi cerebro que se acaba de congelar, mis pulmones también se detienen.@
+` No puedo respirar.@ Pero eso no es importante.\
+monocro #ff0000
+bg "image\bg\ima_13.jpg",%type_crossfade_fst
+` Mi visión se torna carmesí.@
+` Con un sonido burbujeante, la sangre se derrama fuera del ascensor.@
+` En medio del océano de sangre, personas, brazos, pies, huesos, sesos, dedos, órganos, y otras partes.@
+br
+` Los dos perros negros son la única forma de vida.\
+bg #000000,%type_crossfade_fst
+monocro off
+`"------"@
+` Mis instintos rehúsan aceptar esta escena.@
+` Al final del pasillo, dos perros negros están hurgando entre los cadáveres humanos.@
+` Si escucho cuidadosamente, todavía puedo oír sonidos viniendo de abajo.@
+br
+` Si escucho cuidadosamente,
+` Son sonidos de devoración, masticar de carne, gritos pidiendo ayuda, y los gritos de muerte de personas que ya no pueden siquiera ser llamados palabras.\
+` …… ¿Qué es esto?@
+` Aunque no hay manera de que pueda verla, frente a mis ojos está la imagen de docenas de bestias devorando vivas a las personas en el hotel.\
+` Un hombre corre por el pasillo, tratando de escapar.@ Pero las garras como de pantera descienden del techo y lo rebanan desde su nariz hasta su nuca.\
+br
+br
+br
+` Una chica se encierra en una habitación y llora.@ Pero para los leones, una puerta no es más fuerte que el papel, y en cuestión de segundos, la demuelen dejándola irreconocible.\
+br
+br
+br
+br
+br
+br
+br
+br
+` Luchando enloquecidamente para ser los primeros en llegar, la gente corre hacia el ascensor.@ Pero dentro, los perros negros que aguardan en el interior los decapitan en el instante en que la puerta se abre.\
+` En todo caso, no hay excepción.@
+` Debajo de mis pies, dentro de esta enorme caja llamada hotel…
+` hay una escena del infierno que puedo sentir hasta en mis huesos.\
+bg "image\bg\bg_20b.jpg",%type_crossfade_fst
+`"¡Guuuuh!"@
+` Siento ganas de vomitar.@
+` Pero no puedo hacer eso.@
+` Si me quedo parado y hago eso--me convertiré en parte de ese mar rojo.\
+`"Haah--ah.@ Ha.@ Ah.@ Ha."@
+br
+` Reanudo mi respiración.@
+` Aprieto fuertemente mis dientes.@
+br
+` Los perros dentro del ascensor se percatan de mi presencia.@
+` Todos los sonidos de abajo han cesado.@
+br
+`"……… Ha."@
+` En otras palabras,
+` ya no queda nadie vivo.\
+` Grrrrr……
+br
+` Los dos perros negros comienzan a correr.@
+` Por supuesto, hacia mí, la última presa.@
+br
+`"Ha----aahh."@
+br
+` El perro negro viene por mí.@
+` Sobre su cuerpo, puedo ver un infinito número de líneas, y sobre la frente, el punto de muerte.@
+br
+` ----Pero aun así.@
+br
+` Mi mente paralizada no le ordena pelear o correr a mi cuerpo.\
+bg #000000,%type_lshutter_fst
+` El primer perro negro salta.@
+` Su velocidad contradice toda comparación humana.@
+` No le toma siquiera dos segundos cubrir los diez metros desde el fondo del pasillo.\
+ld c,":a;image\tachi\kemo_t02.jpg",%type_lshutter_fst
+` Éste abre su boca.@
+` Un hocico llenos de colmillos muchas veces más afilados que el cuchillo que tengo, y dirigidos directamente hacia mi garganta.@
+` Preciso, y rápido.@
+` En el instante en que me percato de que se dirigen hacia mí,
+` los colmillos muerden mi garganta con un crujido.@
+br
+` Muero.\
+bg #ffffff,%type_nowaitdisp
+` Pero eso no es correcto.@
+` No puedo ser asesinado por algo como esto, y me niego a morir.@
+` La muerte de otros no me haría vacilar.\
+br
+` ----Un caluroso día de verano.@
+br
+` Sucedió hace mucho tiempo, ocho años atrás.@
+` He visto algo aun más terrible----\
+monocro #ff0000
+bg "image\bg\bg_20b.jpg",%type_nowaitdisp
+` Encajo.@
+br
+` Encajo mi cuchillo en la frente del perro negro que muerde mi cuello.@
+` Mi brazo se movió justo antes de que el perro negro desgarrara mi garganta.\
+` Fue una acción demasiado perfecta, incluso para mí.@
+` Como una máquina cuya única función es la de cortar, hundí el cuchillo en la frente del perro sin ningún movimiento inútil o desperdiciado.@
+` Porque ahí es donde estaba el "punto" del primer perro.@
+` Normalmente, aunque el cerebro sea destruido, los músculos intentan ejecutar los comandos que habían recibido del cerebro.@
+` El perro negro probablemente habría desgarrado mi garganta aunque hubiese perforado su cabeza.@
+br
+` Bueno--normalmente, eso sucedería.@
+` Pero el perro negro está "muerto".@
+` La muerte es una detención absoluta.@ En el momento en que lo maté, éste perdió toda forma de validez.\
+` El primer perro cae al suelo.@
+` En su lugar--el segundo perro está volando directamente hacia mi cara.@
+bg #000000,%type_lshutter_fst
+ld c,":a;image\tachi\kemo_t02.jpg",%type_nowaitdisp
+`"------"@
+` Encajo el cuchillo directamente dentro de su hocico abierto.@
+` Pero, eso fue un error.@
+` El "punto" de este perro no está en su cara, sino en su pecho.@
+` Apuñalarlo en la boca no lo matará.\
+` El cuchillo perfora a través del hocico del perro hasta la parte trasera de su cabeza.@
+` Naturalmente, la mano que sostiene el cuchillo permanece dentro de la boca del perro.@
+br
+`"------Ah."@
+br
+` El perro negro aún está vivo.@
+` Su quijada se cierra.@
+` La articulación entre mi brazo y la mano que sostiene el cuchillo es mordida, a punto de ser desgarrada.@
+br
+` El pensamiento correcto regresa con el dolor.\
+bg "image\bg\ima_12.jpg",%type_crossfade_fst
+`"¡A--ah--!"@
+br
+` ---¡Debes estar bromeando!@
+` ¡Es--es como si estuviese dejándole masticar mi brazo al apuñalarlo en la boca!@
+br
+`"¡Por qué--tú……!"@
+br
+` Intento halar mi brazo para sacarlo de su boca.@
+` Los dientes del perro están profundamente dentro de mi brazo, no parece que pueda sacarlo.\
+` Más importante aún--este perro negro, a pesar de haber sido perforado en la cabeza, aún está lleno de vida.@
+` Aunque lo levanto del piso después de perforar su cabeza, éste se sacude y aterriza sobre mí.\
+quakey 4,100
+`"¡Guh…!"@
+` Caigo al piso.@
+` Aún no puedo sacar mi mano.@
+` El perro negro, con la cabeza perforada, aplica más poder a su mordida.@
+`"¡------!"@
+` ¡M… Mi brazo de seguro será arrancado--!@
+` No puedo creer esto.@ ¡Ningún perro debería ser capaz de morder algo en ese estado…!\
+`"…… ¡T-tú…!"@
+` Siento algo húmedo.@
+` Puedo ver sangre derramándose de la boca del perro negro.@
+` ¿Es la sangre del perro negro, escapando de su herida en la cabeza?@
+` ¿O es la sangre saliendo de mi brazo, a punto de ser arrancado?@
+br
+` ---Para ser sincero…
+` Mi cabeza está demasiado revuelta como para sentir el dolor,
+` así que no es gran cosa saber de cuál de las dos se trata.\
+`"¡Suél--tame!"@
+` Intento luchar para alejarme del perro negro, pero está firmemente pegado a mi brazo.@
+` No puedo escapar.@
+` No puedo correr.@
+` Si quiero escapar--no tengo más opción que "matarlo".\
+`"¡----…!"@
+` ¿Pero cómo?@
+` La mano que está mordiendo es la que sostiene el cuchillo.@
+` Estoy en el suelo, y aun suponiendo que logre sacar mi mano, en el siguiente instante la boca del perro negro estará libre para morder mi garganta----\
+`"Ha----aaahhh."@
+br
+` ----Está bien.@ Cálmate, Shiki.@
+` Primero, tienes que examinar bien la situación, y entonces meditarla con calma.@
+` Ésa es la forma de pensar que siempre has tenido.@
+br
+` En ese caso--puedo hacer algo…
+` Por ejemplo, hay abundantes 'líneas' detrás de su cabeza.@
+` Y puedo ver el 'punto' negro sobre su pecho.@
+` La forma de sobrevivir es terriblemente simple.\
+` …… Pero tengo mis dudas respecto a la ejecución de este plan.@
+` Sin importar cuán salvaje y maligna sea esta criatura…
+` Hacer algo como matar una jadeante criatura que está tan viva, tan cerca de mí--es algo que me hace vacilar.@
+br
+`"¡Guh--!"@
+br
+` La presión sobre mi brazo se incrementa.@
+` A este paso mi brazo entero será arrancado dentro de poco.@
+` Pero aun así, parece que no puedo hacer algo tan cruel--\
+bg #9c0120,%type_crossfade_fst
+monocro off
+bg "image\bg\ima_12b.jpg",%type_crossfade_fst
+` La sangre roja gotea sobre mi rostro.@
+` Bajando por mi frente, entra en mis ojos.@
+br
+` ---Oscuridad carmesí penetra detrás de mis ojos.@
+br
+`"Ro----jo."@
+` Mi consciencia oscila, y entonces se desvanece.\
+bg #9c0120,%type_crossfade_slw
+bg "image\bg\cmo_05.jpg",%type_crossfade_mid
+` …… Pero aun así, no puedo obligarme a matar una criatura viviente.\
+br
+br
+br
+br
+br
+br
+` ---Qué hipocresía.@
+` Has matado algo mucho más grande que un simple perro.\
+` …… Sí, es verdad.@
+` Pero esa vez fue diferente.@
+` No estaba cuerdo cuando maté a Arcueid.@
+` Incluso cuando maté al otro perro negro, hace sólo un momento--no fue de acuerdo a mi voluntad.@
+` Pero en este momento, ésta es sin duda mi propia voluntad.\
+` …… ¿No lo dijo Sensei, Shiki?@
+` Usa este poder de acuerdo a tu propia voluntad, y a la de nadie más.@
+br
+` Es por eso que…
+` Siendo yo mismo, en este momento, nunca podría tomar una vida sin darle importancia.\
+br
+br
+br
+br
+br
+br
+` ---Eso, también, es hipocresía.@
+`   Porque hace mucho tiempo, tú…\
+bg "image\bg\cmo_06.jpg",%type_crossfade_fst
+bg "image\bg\cmo_05.jpg",%type_crossfade_fst
+`"Ah------"@
+br
+` …… Ésa es una pesadilla de mi niñez.\
+br
+br
+br
+br
+br
+br
+br
+` ---¿Lo ves, qué estás esperando?\
+br
+br
+br
+` …… Era un caluroso día de verano.\
+br
+br
+br
+br
+br
+br
+br
+` ---Matar o ser matado.\
+br
+br
+br
+br
+` …… Frente a mis ojos, la sombra de un chico bañado en sangre.\
+br
+br
+br
+br
+br
+br
+br
+` ---Tú ya has…\
+br
+br
+br
+br
+br
+` …… Caliente, caliente sangre roja sobre mis manos.\
+br
+br
+br
+br
+br
+br
+br
+` ----¿¡No mataste a alguien en una ocasión anterior---!?@
+\
+bg "image\bg\cmo_06.jpg",%type_nowaitdisp
+bg "image\bg\ima_13.jpg",%type_nowaitdisp
+bg "image\bg\cmo_05.jpg",%type_nowaitdisp
+bg "image\bg\cmo_06.jpg",%type_nowaitdisp
+bg "image\bg\ima_13.jpg",%type_nowaitdisp
+bg #ffffff,%type_crossfade_slw
+monocro #ff0000
+bg "image\bg\bg_20b.jpg",%type_nowaitdisp
+br
+br
+br
+br
+br
+br
+br
+`"¡¡¡¡¡Aaaaaaaaaaaaah!!!!!"\
+` Encajo.@
+` En vez de halar, encajo más profundamente dentro de la cabeza del perro negro.\
+` Puedo escuchar sus aullidos justo frente a mí.@
+` Creo que el perro negro está gritando.@
+` Con mi brazo en su hocico, no podría gritar correctamente, pero está gritando de todas formas.@
+br
+` Estoy seguro de que se debe a lo mucho que debe dolerle.@
+` No me importa.@
+` Hundo el cuchillo más profundamente, junto con mi brazo.\
+` Sin hacer sonido alguno, la hoja del cuchillo perfora la parte trasera de la cabeza del perro.@
+` Es como si al perro le hubiese crecido un cuerno.@
+br
+` Habiendo dividido el cráneo, acuchillo fácilmente a través de su piel.@
+br
+` Sangre y sesos salen disparados cuando el cuchillo emerge de la parte trasera de la cabeza.@
+br
+` Además, la mano que sostiene el cuchillo lo atraviesa por completo.\
+` *jadeo* *jadeo* *jadeo*@
+` Pero aun así, el perro negro todavía está vivo.@
+` Entonces sólo hay una cosa que debo hacer.@
+` Muevo mi otra mano alrededor.@
+` Separando el cuchillo de mis ensangrentados dedos, agarro el cuchillo con mi mano libre.@
+` Y así de simple, apuñalo el 'punto' en el pecho del perro negro.\
+wave se5
+bg "image\bg\ima_12.jpg",%type_nowaitdisp
+monocro off
+bg "image\bg\bg_20b.jpg",%type_crossfade_mid
+` *jadeo* *jadeo*@
+` Y con eso, el perro negro muere.@
+` La fuerza desaparece de su quijada, y saco mi brazo fácilmente.@
+br
+`"Oh--no fue arrancado en absoluto."@
+` Observo mi brazo cubierto de sangre.@
+` Hay muchas marcas de dientes, pero la carne está casi libre de heridas.@
+` La sangre debió provenir del perro negro cuando perforé su cabeza.@
+` El dolor que sentía cuando estaba siendo mordido era en realidad bastante trivial, pero el miedo debe haberlo amplificado muchas veces.\
+` *jadeo* *jadeo*@
+` Acostado en el suelo, miro hacia el techo.@
+bg #9c0120,%type_nowaitdisp
+wavestop
+bg "image\bg\bg_20b.jpg",%type_nowaitdisp
+` Me duele la cabeza.@
+` El mundo se convierte en una mezcolanza, y aquí y allá, puedo ver los puntos negros de muerte.@
+` Mi cuerpo se está congelando, pero mi mente está ardiendo febrílmente.\
+`"--¡Kuh!"@
+` Justo a mi lado yacen los cadáveres de dos perros negros.@
+` Uno de mis brazos está cubierto de sangre, el otro sujeta con fuerza un cuchillo rojo.@
+` …… Además, hay un incontable número de cadáveres en los pisos de abajo.@
+br
+`"----Ja, jaja, jajaja."@
+br
+` Todo lo que puedo hacer es reír.@
+` Porque esto no es real.@
+` No hay manera de que esto pueda ser real.@
+` ¿En qué punto, con mis ojos totalmente abiertos, comencé a a vivir una pesadilla----?\
+` Ding dong.@
+br
+`"¿Eh--?"@
+` Escucho un alegre sonido terriblemente fuera de lugar.@
+`"Maldición, ¿qué pasá con este dolor de cabeza--?"@
+` Me levanto, soportando el dolor como el de una navaja en mi cabeza.@
+`"¿Ascen… sor…?"@
+` Parece que el sonido viene del otro ascensor que está subiendo.\
+` La puerta se abre.@
+` Adentro está parado un hombre que lleva puesto un abrigo negro.@
+bg "image\bg\bg_20b.jpg",%type_crossfade_fst
+ld c,":a;image\tachi\nero_t01a.jpg",%type_crossfade_fst
+bg "image\bg\bg_20b.jpg",%type_crossfade_fst
+` El dolor de cabeza empeora.@
+`"Él es--"@
+` Sí, lo he visto antes.@
+` Estoy seguro de que he visto a ese hombre anteriormente.@
+bg "image\bg\bg_20b.jpg",%type_crossfade_fst
+ld c,":a;image\tachi\nero_t01a.jpg",%type_crossfade_fst
+bg "image\bg\bg_20b.jpg",%type_crossfade_fst
+`"-------"@
+` Silenciosamente, camina hacia mí.@
+`"¡Tú--!"@
+` Preparo mi cuchillo mientras lo miro ferozmente.@
+`"-------"@
+` Pero él no reacciona mientras camina hacia mí.@
+` Como si no se percatase de mi presencia en absoluto.\
+` La distancia entre nosotros se encoge.@
+` Sólo un poco después---cuando hay apenas un metro entre nosotros, el hombre finalmente parece percatarse de mi presencia.@
+ld c,":a;image\tachi\nero_t03.jpg",%type_crossfade_fst
+` Esos ojos inyectados de sangre.@
+` En el instante en que veo esos ojos que ningún humano debería poseer, pierdo toda libertad de mover mi cuerpo.\
+`"Pensé que había matado a todos, pero parece que todavía queda alguien."@
+` El hombre voltea y mira los cadáveres de los dos perros negros.@
+ld c,":a;image\tachi\nero_t02a.jpg",%type_crossfade_fst
+`"--Pedazos de porquería.@ Si no pueden siquiera encargarse de un trozo de carne, no son dignos de ser partes de mi cuerpo."@
+cl c,%type_crossfade_mid
+` El hombre expresa su disgusto mientras levanta su mano.@
+` Su abrigo se levanta como un manto.@
+br
+` ---Destruídos.@
+br
+` Con un chapoteo, los restos de los perros negros se hacen líquidos y desaparecen dentro del abrigo del hombre.\
+`"Ah----"@
+` Ni siquiera puedo gritar.@
+` Bajo el abrigo del hombre hay oscuridad pura, sin siquiera rastros de un contorno.@
+` Todo lo que existe es una oscuridad como fango.@
+br
+`"Es----"@
+` Esto es peligroso.@
+` Este sujeto es simplemente demasiado peligroso----
+` Mis instintos hacen sonar salvajemente la alarma en mi cabeza, pero no puedo siquiera levantar un dedo.\
+` El hombre del abrigo negro se acerca a mí.@
+`"¡------!"@
+` Permanecer aquí no es nada bueno.@
+` El continuo dolor de cabeza se incrementa hasta un nivel insoportable, diciéndome que este lugar es peligroso.@
+` Sin importar el método, si no salgo de aquí pronto, voy a perder mi vida.@
+br
+` -----Pero es demasiado tarde.@
+br
+` El hombre está justo frente a mí.@
+` Esos ojos no me están mirándo en absoluto.\
+`"Aliméntate."@
+` Él levanta uno de sus brazos.@
+` Debajo de éste hay una caótica oscuridad.@
+` De ahí, algo enorme aparece.@
+bg #000000,%type_nowaitdisp
+br
+` Zum.@
+` El sonido del viento.@
+` Lo que ha salido de abajo del abrigo del hombre es la boca de un cocodrilo, fácilmente lo bastante grande como para tragarse a un hombre entero.@
+br
+`"Ah------"@
+br
+` Voy a morir.@
+` Aquí mismo, en este instante, masticado como una bola de papel.@
+` Justo cuando estaba convencido de esto, alguien me hala hacia atrás.\
+bg "image\bg\ima_12.jpg",%type_crossfade_fst
+` Clomp.@
+br
+`"¿¡Qué--!?"@
+` No… puedo creerlo.@
+` En mi lugar, las fauces del cocodrilo se cierran sobre el estómago de Arcueid, quien acaba de halarme fuera del camino.\
+bg "image\bg\bg_20b.jpg",%type_crossfade_fst
+ld c,":a;image\tachi\ark_t18.jpg",%type_lshutter_fst
+`"¡Ssstt--!"@
+` El rostro de Arcueid se retuerce de agonía.@
+` Ella retrocede antes de ser completamente devorada por las fauces del cocodrilo.@
+cl c,%type_crossfade_fst
+ld c,":a;image\tachi\nero_t02a.jpg",%type_crossfade_fst
+`"…………"@
+` El hombre observa a Arcueid silenciosamente.@
+` Arcueid le devuelve la mirada con una expresión de dolor y su región central teñida de rojo.\
+ld c,":a;image\tachi\ark_t18.jpg",%type_lshutter_fst
+`"---No puedo creer que un vampiro llamado Chaos practique juegos tan triviales.@ Es como una pesadilla mediocremente escrita, Nrvnqsr Chaos."@
+cl c,%type_crossfade_fst
+ld c,":a;image\tachi\nero_t02a.jpg",%type_crossfade_fst
+` "Pienso lo mismo.@ Para atrapar a uno de los Verdaderos Ancestros sobrevivientes… nunca soñé que sería parte de un festival tan tonto.@ Es una pesadilla para mí también."@
+` El hombre llamado Nrvnqsr baja su brazo silenciosamente.@
+` El abrigo regresa a su posición anterior, y la boca del cocodrilo desaparece debajo de éste.\
+` El hombre sólo mira a Arcueid.@
+` Como si no se preocupase por mí en absoluto, parado detrás de ella con mi cuchillo levantado.\
+ld c,":a;image\tachi\nero_t03.jpg",%type_crossfade_fst
+`"¿Pero qué está sucediendo?@ Escuché que el ejecutor anterior no pudo hacerte siquiera un rasguño.@ ¿Qué clase de error es éste?@
+` En este momento, tu presencia es extremadamente débil.@ Incluso más débil que la de un simple miembro de Los Muertos--¿fuiste atacada por La Iglesia antes de mi llegada, Arcueid Brunestud?"@
+`"……………"@
+` Arcueid no dice nada.@
+` El hombre fija su inexpresiva mirada sobre ella.\
+`"…… No entiendo.@ Sólo hay un número limitado de armas conceptuales capaces de hacerte daño.@ Las únicas personas que las poseen son los asesinos de La Iglesia, y no creo que la Agencia de Entierros enviaría a alguien tan lejos hacia el oriente."@
+` El hombre estrecha sus ojos ligeramente y se da la vuelta.@
+cl c,%type_crossfade_mid
+`"De cualquier forma, esto es una gran fortuna para mí.@ No preguntaré por qué has sido debilitada.@ Todo lo que voy a hacer es reclamar tu cabeza mientras tenga oportunidad de ganar."@
+`"¡Ts……!"@
+` Sostengo arriba mi cuchillo, preparado para su ataque.\
+br
+` ---Pero.@
+br
+` Habiendo declarado abiertamente que iba a tomar su cabeza, el hombre ahora se retira hacia el ascensor.@
+` Parece que a pesar de este reclamo, el hombre del abrigo negro está abandonando el pasillo por medio del ascensor.\
+br
+br
+`"------¿Huh?"@
+br
+` ¡Ahora no tengo absolutamente ninguna idea de qué está sucediendo!@
+` ¡Respecto a ese hombre, los dos perros que me atacaron, la realidad de pesadilla del ataque sobre este hotel--nada de eso!\
+ld c,":a;image\tachi\ark_t18.jpg",%type_crossfade_fst
+`"Shi--ki."@
+` Arcueid se recuesta sobre mí.@
+`"Ah----"@
+` Es una herida terrible.@
+` Aunque su estómago dejó de sangrar, su rostro se estruja de dolor.@
+br
+` ---Sucedió hace sólo segundos.@
+` La herida que recibió para protegerme de ese hombre.\
+`"¿Por qué--tú…?"@
+`"…… Sí.@ Yo, lo subéstime un poco.@ Pensé que podría ayudarte y entonces esquivarlo, pero--lo hiciste muy bien, Shiki.@ Parece que la herida que recibí de ti no es tan insignificante después de todo."@
+` El rostro de Arcueid, retorcido de dolor, se transforma en una pequeña sonrisa burlona.\
+`"Idio--"@
+` ---No puedo seguir mirándola.@
+` Recibió esa herida para protegerme, y también soy la razón por la que la recibió--no hay cabida para esa estúpida sonrisa de ella.\
+` Arcueid se recuesta sobre mí y cierra sus ojos ligeramente.@
+cl c,%type_crossfade_mid
+`"…… ¡Espera, no cierres los ojos, idiota!@ ¡Contrólate!@ Eres un vampiro que no puede morir de noche, ¿¡cierto…!?"@
+`"…… Bueno, es verdad, pero parece que estoy en mi límite."@
+`"¿¡Qué--!?"\
+`"Disculpa pero, ¿podrías llevarme de vuelta a mi apartamento?"@
+` El peso de Arcueid cae sobre mí.@
+`"--¡Espera!@ ¡Eso es--!"@
+` Si ella muere, yo--\
+`"¡Oye--!"@
+` Llamo a Arcueid, quien ha cerrado sus ojos silenciosamente.@
+br
+` Y entonces,
+br
+`"…… Zzz."@
+` Puedo escucharla respirar felizmente en su sueño.\
+`"…………"@
+` …… *suspiro*@
+` No debí haberme molestado en preocuparme.@ Arcueid sólo está durmiendo.@
+`"…… Decirme que la lleve de vuelta a su apartamento de esa manera.@ Qué egoísta de su parte--"@
+` En verdad fue egoísta de su parte, pero es la única opción en esta situación.@
+` Además.@ Si permacemos en este hotel, tengo la sensación de que estaremos en muchos problemas.\
+bg #9c0120,%type_crossfade_fst
+bg "image\bg\bg_20b.jpg",%type_crossfade_fst
+`"………… ¡Guh!"@
+` El dolor de cabeza no se detiene.@
+` Supongo que tendré que descansar también o me desmayaré.@
+`"…… ¿El apartamento de Arcueid?@ --Oh, ese lugar."@
+` Sólo he estado ahí una vez, pero definitivamente lo recuerdo.@
+br
+` ---En ese caso, no tiene sentido quedarnos aquí más tiempo.@
+` Cargando a Arcueid, decido dejar el hotel rápidamente.\
+bg #000000,%type_lcartain_mid
+monocro #fffff0
+bg "image\bg\bg_27a.jpg",%type_lcartain_mid
+` La ciudad está levemente iluminada.@
+` Afortunadamente, es muy temprano en la mañana para que alguien esté despierto, así que voy al apartamento de Arcueid sin ser visto.@
+`"…… Ya veo, así es como funciona."@
+` Entonces, finalmente comprendo por qué ese hombre se retiró.@
+` Las calles están comenzando a ser cubiertas por una débil luz naranja.@
+br
+` Parece que ya está amaneciendo-----\
+monocro off
+bg #000000,%type_crossfade_fst
+!w3000
+return

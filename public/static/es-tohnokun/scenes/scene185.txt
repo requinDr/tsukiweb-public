@@ -1,0 +1,13 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg #000000,%type_lcartain_slw
+!w4000
+bg "image\bg\bg_29b.jpg",%type_lcartain_slw
+` --Ambas agujas del reloj se acercan a la cima del disco.@
+` Han pasado dos horas desde que vine aquí, pero no hay señal de Arcueid.@
+br
+` Yo--
+br
+return

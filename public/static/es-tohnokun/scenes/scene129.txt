@@ -1,0 +1,44 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_01a.jpg",%type_lcartain_mid
+` ----Llego treinta minutos más temprano de lo habitual.@
+` Las figuras de estudiantes alrededor de la escuela son escasas.@ Parece que soy el único que ha llegado a esta extraña hora.\
+bg "image\bg\bg_03a.jpg",%type_lcartain_mid
+` En los terrenos de la escuela, los clubes atléticos están realizando sus prácticas.@
+` …… No estoy en ningún club en este momento, pero sinceramente, me gusta mucho moverme.@
+` Sé que tengo capacidad atlética, al menos la suficiente para estar orgulloso.@
+br
+` Pero, no puedo unirme a ningún club.@
+` Siempre he tenido esta anemia recurrente así que sólo sería una molestia----y mi doctor me ha dicho que no debería ejercitarme frecuentemente.\
+` Desde la escuela media, me han pedido que me una a un club muchas veces.@
+` Pero siempre tengo que decir "no es lo mío" y negarme.@
+` Cada vez que me negué----tuve una sensación de separación.@
+` Eso pudo haber sido…
+` una pared subconsciente que me dijo que nunca podría mezclarme con las personas en el otro lado.\
+`"…………"@
+` Ah, ya basta.@ Esto en verdad no es lo mío.@ Dejaré de pensar en esas cosas e iré al salón de clases rápidamente.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_06a.jpg",%type_lcartain_mid
+play "*3"
+`"¿Huh----?"@
+` Pensé que era el primero, pero parece que algunos de mis compañeros ya están aquí.\
+`"Hola, llegas temprano Tohno."@
+`"Buen día.@ Esta clase parece tener mucha gente con tiempo de sobra."@
+`"Nah.@ Nuestra práctica acaba de terminar.@ Los que vienen tan temprano y no están en clubes son normalmente los que tienen obligaciones diarias."@
+br
+` Ya veo.@ Tiene sentido, ahora que él lo menciona.@
+` Saludando a todos a mi alrededor, tomo asiento.@
+` Falta media hora para la tutoría.@
+` No es mala idea simplemente ver llegar a mis compañeros.\
+bg #000000,%type_lshutter_mid
+bg "image\bg\bg_06a.jpg",%type_lshutter_mid
+` El salón comienza a concurrirse alrededor de las siete y cincuenta.@
+`"----¿Huh?"@
+` Creo que vi a Senpai en el pasillo.\
+`"Está de nuevo en el pasillo de primer año----¿qué está haciendo?"@
+` ¿Quizás vino a verme?@
+` Entonces----
+br
+return

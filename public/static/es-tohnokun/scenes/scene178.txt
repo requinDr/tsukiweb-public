@@ -1,0 +1,268 @@
+monocro off
+wavestop
+play "*1"
+;---added context above---
+bg "image\bg\bg_28b.jpg",%type_lshutter_mid
+play "*1"
+` El tiempo transcurre junto a la manecilla del reloj.@
+` Han pasado dos horas desde que vinimos aquí.@
+br
+`"----Fiu."@
+` He comenzado a relajarme y ya no hay nadie alrededor.@
+` La noche empieza a profundizarse.\
+`"Arcueid, ¿ahora sí podemos?"@
+ld c,":a;image\tachi\ark_t03.jpg",%type_crossfade_fst
+`"Sí, está bien."@
+` Ella concuerda conmigo, pero todavía no parece entusiasmada.@
+`"Has estado actuando extraño, Arcueid.@ ¿Sucede algo?"@
+`"----En realidad no.@ Sólo estaba preocupada por ese hombre vendado del que me hablaste."@
+` Arcueid suspira mientras medita en silencio.\
+ld c,":a;image\tachi\ark_t08.jpg",%type_crossfade_fst
+`"Oh, es cierto.@ Shiki, anoche alguién coqueteó conmigo aquí."@
+`"----¿Huh?"@
+ld c,":a;image\tachi\ark_t11.jpg",%type_crossfade_fst
+`"Estoy diciendo que un sujeto comenzó a hablarme."@
+`"…… No, te escuché.@ Pero pensé que habías dicho que estabas pensando en aquel hombre vendado."@
+ld c,":a;image\tachi\ark_t03.jpg",%type_crossfade_fst
+`"Lo estaba, y por eso lo recordé.@ Al igual que cuando fuiste atacado, alguien comenzó a hablarme."\
+`"…… Ya veo.@ Eso es bueno.@ Vista desde el exterior, eres una persona hermosa, si estás esperando ahí sola, es perfectamente natural que un sujeto te hable."@
+` Doy una respuesta seria.@
+` Algunas veces, soy un poco, demasiado sincero.\
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"¿Eso crees?@ Al principio pensé que era un enemigo, pero recordé que habías dicho que yo siempre destaco o algo así.@ Así que después de estudiarlo brevemente, vi que era sólo un humano."@
+`"…… Espera un minuto.@ No me digas que le hiciste algo al sujeto que trató de coquetear contigo?"@
+ld c,":a;image\tachi\ark_t14.jpg",%type_crossfade_fst
+`"No, no hice nada.@ Sólo hablé un poco con él y luego le hice olvidar todo.@ …… Pero si no hubiese recordado lo que dijiste, podría haber hecho algo."\
+`"Ya veo.@ Buen trabajo, Arcueid.@ Supongo que incluso tú puedes hacer distinciones."@
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"Por supuesto.@ Se necesitaría a alguien como tú para hacerme enfadar."@
+` Ella parece decir esto un poco entretenida.@
+` …… Bueno, es natural que alguien se enfade si es asesinado.@
+cl c,%type_crossfade_fst
+\
+` Suspiro mientras echo un vistazo alrededor del parque.@
+` …… Hace un mes.@
+` Si esos asesinatos en serie nunca hubiesen iniciado, aún habrían jóvenes parejas alrededor y las figuras de estudiantes pasando el tiempo.@
+` Pero ahora, los únicos que estamos hablando aquí somos Arcueid y yo.@
+br
+` Pienso con calma en mi situación actual.@
+` ¿Desde cuándo Tohno Shiki puso pie en el camino de semejante mundo----?\
+playstop
+ld c,":a;image\tachi\ark_t08.jpg",%type_crossfade_fst
+`"Ah.@ Oye, mira eso."@
+` Arcueid me llama repentinamente.@
+`"¿Qué, sucedió algo?"@
+ld c,":a;image\tachi\ark_t09.jpg",%type_crossfade_fst
+`"Sí.@ ¿Ves?@ Mira el reloj.@ Ya es hora."@
+` Ella señala el reloj del parque con una gran sonrisa.@
+` Al mirar----veo que ya son las diez en punto.@
+cl c,%type_crossfade_fst
+\
+play "*8"
+` La hora prometida.@
+` La promesa respaldada sólo por palabras, de encontrarnos aquí a las diez en punto de la noche.@
+br
+` …… Anoche.@
+` La hora de la promesa que no pude mantener.\
+`"--------"@
+` Las palabras se atoran en mi garganta.@
+` ¿Por qué una cosa tan trivial hace que mi pecho se comprima?@
+br
+` ¿Por qué… algo tan trivial la hace tan feliz?\
+` …… En verdad no entiendo.@
+` Pasé todo el día con ella.@
+` Pero nunca se sintió como si en verdad fuese un vampiro.\
+`"…… Déjame preguntarte algo."@
+br
+` ----Detente, Shiki.@
+br
+ld c,":a;image\tachi\ark_t09.jpg",%type_crossfade_fst
+`"Sí, ¿de qué se trata?"@
+`"…… ¿En verdad…"@
+br
+` ----No le preguntes eso.@
+br
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"¿Um, en verdad qué?"@
+`"…… eres un vampiro?"@
+br
+` ----¿Qué clase de respuesta estás esperando?\
+ld c,":a;image\tachi\ark_t12.jpg",%type_crossfade_fst
+`"¿Un vampiro?--¿por qué preguntas eso de repente, Shiki?"@
+`"No es tan repentino.@ Sólo estaba pensando."@
+` Aparto la vista.@
+ld c,":a;image\tachi\ark_t11.jpg",%type_crossfade_fst
+`"¿Huh?@ No puedo saber si eres obstinado o no.@ En realidad no me importa, pero eso es muy insultante.@ Dime por qué preguntas eso."@
+cl c,%type_crossfade_fst
+` No hay razón.@
+` Pero----al mismo tiempo, tampoco hay ninguna prueba real de que ella sea un vampiro.@
+` Así que----\
+`"…… Bueno, dijiste que ni siquiera te gusta ver la sangre.@ ¿Qué tipo de vampiro es ése?@ Incluso dijiste que no eras un vampiro completo, pero un vampiro que no bebe sangre no es un vampiro, ¿cierto?"@
+br
+` ----No es eso.@
+` ¿No será simplemente que Tohno Shiki, muy en lo profundo, desea que ella no sea un vampiro?\
+ld c,":a;image\tachi\ark_t06.jpg",%type_crossfade_fst
+`"Shiki.@ Levántate."@
+` Arcueid se acerca al banco del parque.@
+` Me levanto.@
+br
+`"----"@
+` Nuestros ojos se encuentran.@
+` Cerca de dos metros nos separan.@
+br
+` Arcueid suelta un enorme suspiro, y de pronto muestra una gran sonrisa.\
+ld c,":a;image\tachi\ark_t08.jpg",%type_crossfade_fst
+`"Supongo que tienes razón.@ Incluso yo misma he pensado eso.@ Me preguntaba, ¿Arcueid Brunestud en verdad es un vampiro?@
+` Ajaja," ella ríe.\
+br
+` …… Es un alivio.@
+` Pensé que esta pregunta la insultaría----pero afortunadamente, parece haberla tomado como una broma.@
+br
+`"----Sí.@ En verdad no pareces un vampiro, en absoluto."@
+` "Ajaja," Arcueid ríe de nuevo.\
+`"Entonces, ¿lo intentamos?"@
+br
+` Ella dice eso, aún sonriendo.@
+`"¿Intentar----eh?"@
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"¿Comprobamos si puedo beber sangre?@ Si pudiese, ¿podrías darme un premio, Shiki?"@
+`"Qué----"@
+` Con esa sonrisa aún en su rostro, ella se acerca un paso más.@
+cl c,%type_crossfade_fst
+playstop
+\
+bg "image\bg\ima_02.jpg",%type_crossfade_fst
+` Tap, tap.@
+` Sus pasos hacen eco en el aire.@
+br
+` Sé que está bromeando.@
+` Pero----no puedo moverme, en absoluto.\
+`"Esp----"@
+` --era.@ Pero ni siquera puedo decirlo.@
+` No es su poder----sino yo quien se detiene.@
+br
+` Más cerca.@
+` Un paso.@ Otro paso.@
+` Mirando hacia abajo, poco a poco.@
+` Yo----siendo incapaz de levantar un solo dedo, soy paralizado por sus labios----\
+bg #000000,%type_crossfade_mid
+`"Shiki, dijiste que no era un vampiro completo, pero……"@
+br
+` Una dulce voz que parece hacer eco detrás de mi cabeza.@
+` Otro paso, y los pasos se detienen.@
+br
+` ---Sabes, beber sangre es muy fácil.@
+br
+` Escucho esa voz junto a mi oído.\
+bg "image\event\ark_e05a.jpg",%type_lshutter_mid
+waveloop se1
+` El peso de su cuerpo hace presión sobre mí.@
+br
+`"------"@
+br
+` Mi garganta se congela y ni siquiera puedo hablar.@
+` Sólo puedo sentir su aliento sobre mi cuello.@
+br
+` ----Es caliente, como fuego ardiente.\
+`"Ar-----"@
+` No sigo diciendo su nombre.@
+` Con mi propia voluntad, me detengo.@
+` Porque sé que si grito su nombre, ella se apartará.\
+`"------"@
+` Su respiración está tan cerca.@
+` Sus dedos blancos sobre mis hombros, están temblando.@
+br
+` ----Está, asustada.@
+br
+` Mi mente está en blanco y no estoy nada asustado.@
+` Pero, Arcueid es la única que tiembla.\
+` No puedo ver su rostro.@
+` Sólo el giro de su respiración alrededor de mi cuello, y la sensación de su tembloroso cuerpo contra el mío.@
+br
+` Cambia de una débil brisa a una pesada respiración.\
+`"¿Ar---cueid?"@
+`"Se suponía------que sería una broma."@
+` Su voz tiembla.@
+` Los dedos sobre mis hombros dejan de temblar.@
+br
+` Pero----se hunden en mis hombros como las garras de un ave.\
+`"¡Gah-----!"@
+` Un jadeo de dolor escapa de mí.@
+` Pero sus garras no ceden.@
+` Se hunden como para no dejarme escapar.\
+`"Arc----lo siento, supongo que bromeé demasiado.@ Lo siento----así que ¿podrías, soltarme?"@
+`"Shi----ki."@
+` Su dedos no se mueven.@
+br
+` ----Esto no es bueno.@
+` Mi mente grita advertencias y reuno toda mi fuerza.@
+` Mis brazos se mueven para apartarla.\
+br
+br
+br
+br
+br
+br
+` Antes de eso,
+` Dolor se dispara a través de mis hombros.\
+`"¡¡¡………………!!!"@
+` Mis brazos no pueden moverse, en absoluto.@
+` Su vicioso agarre sobre mis hombros hace que mis brazos se entumezcan.@
+`"----,----,--------"@
+` …… Puedo sentir que su respiración se hace más salvaje sobre mi cuello.@
+` Es enloquecedor.@
+` Sus dientes casi tocan mi cuello.\
+bg #ffffff,%type_crossfade_fst
+`"¡N----No……!"@
+br
+` Después de incrementar el agarre de sus dedos blancos una vez más,
+` Arcueid salta hacia atrás, prácticamente gritando.\
+wavestop
+bg "image\bg\bg_28b.jpg",%type_nowaitdisp
+play "*9"
+` Jadeos llenan el aire.@
+br
+` Pesadas respiraciones hacen eco a través del parque.@
+` Mi entrecortada respiración-----Las temblorosas respiraciones de Arcueid.\
+`"Shi------ki."@
+` Todo su cuerpo tiembla, y jadea como para aspirar toda la atmósfera mientras observa sus manos con incredulidad.@
+br
+` Las blancas yemas de sus dedos están goteando sangre, mi sangre.@
+` El rojo fluye desde sus dedos hasta sus palmas, y luego a lo largo de sus brazos.\
+`"Ah----"@
+` Ella mira eso, y parece estar al borde del colapso.@
+`"…… Arcueid, lo de ahora, fue----"@
+` La llamo.@
+` Levantando la vista de la sangre sobre sus manos, ella intercepta mi mirada.\
+ld c,":a;image\tachi\ark_t18.jpg",%type_crossfade_fst
+`"¿Shi----ki?"@
+`"…… Sí, estoy aquí.@ Lo de ahora, fue----una broma, pero parece que se pasó un poco de la raya."@
+` Digo eso, deseando dejar que esto termine sólo como una broma.@
+` Pero supongo que no funcionó.@
+`"Shiki----yo, sólo----"@
+` Sus ojos pierden la cordura.@
+`"Me puse----muy sedienta----"@
+` Sus convulsiones se hacen más profundas, e incluso ahora----parece que fuese a desplomarse contra el suelo.\
+`"Por favor----ve a casa, Shiki."@
+cl c,%type_crossfade_mid
+`"Oye, ¿¡Arcueid……!?"@
+` Con eso, ella comienza a correr.@
+` Desaparece rápidamente.@
+` No corrió como antes, cuando me estaba tomando en consideración.@
+` Con una velocidad que ni siquiera podría igualar si corriese con toda mi fuerza, se desvanece en la noche en dirección a la ciudad.\
+`"----Qué…"@
+` ¿Piensa que puedo simplemente ir a casa después de verla en ese estado?@
+`"Esa idiota----¿¡adónde va cuando está sufriendo tanto……!?"@
+` No puedo regresar a casa.@
+br
+` Aunque no sé dónde encontrarla, comienzo a correr hacia la ciudad tras ella.\
+bg #000000,%type_lcartain_fst
+playstop
+bg "image\bg\bg_25b.jpg",%type_lcartain_fst
+` ----No la veo en ninguna parte.@
+` La ciudad es demasiado grande, y es casi imposible para una sola persona seguirle la pista cuando no deja rastro alguno.@
+` Sería mucho más probable encontrarla si predigo adónde va en lugar de buscar ciegamente.@
+br
+` Entonces----
+br
+return

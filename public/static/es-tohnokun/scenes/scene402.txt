@@ -1,0 +1,3036 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_34b.jpg",%type_crossfade_fst
+play "*1"
+` Al terminar la cena, voy a la sala de estar para beber algo de té.@
+` …… No es que esté de humor para beber té con elegancia, simplemente no puedo rechazar la invitación de Akiha y Kohaku-san.@
+` Mientras bebo el té que preparó Kohaku-san, escucho la conversación entre las dos.\
+ld l,":a;image\tachi\aki_t04b.jpg",%type_lshutter_fst
+`"Por cierto, Nii-san, sobre el fin de año…"@
+` Y de repente, Akiha dirige la conversación hacia mí.@
+`"¿El fin de año?@ ¿No es muy pronto para pensar en eso?@ Apenas es octubre."@
+ld l,":a;image\tachi\aki_t03b.jpg",%type_crossfade_fst
+`"¿Qué estás diciendo?@ Muy pronto será noviembre, y cuando llegue diciembre, ya estaremos de vacaciones invernales.@ Tiene sentido planificar desde ahora."@
+`"…… Bueno, supongo que tienes razón.@ ¿Qué planean hacer?@ Normalmente siempre hago lo mismo durante el Año Nuevo---"\
+ld l,":a;image\tachi\aki_t18b.jpg",%type_crossfade_fst
+`"Sí, la señora Arima me dijo que en todas las vacaciones largas, te quedabas en casa de tu amigo."@
+br
+` Akiha me mira fijamente, como si quisiera decir algo.@
+br
+` …… ¿Uh, cómo es que Akiha sabe todas estas cosas?\
+`"…… ¿Qué hay de malo en eso?@ Las vacaciones son para pasarlas donde uno desee, y no estoy siendo una carga para ustedes, así que déjame en paz."@
+ld r,":a;image\tachi\koha_t03b.jpg",%type_lshutter_fst
+`"Oh cielos, Shiki-san, ¿va a irse de viaje?"@
+`"…… Mira.@ Soy sólo un estudiante, así que no tengo dinero para un viaje.@ Bueno, quisiera conseguir un trabajo de medio tiempo pero---"\
+ld l,":a;image\tachi\aki_t02b.jpg",%type_crossfade_fst
+`"Nii-san.@ Sabes lo que pasaría si el hijo mayor de la casa Tohno tuviese un trabajo de medio tiempo, ¿cierto?"@
+`"Kohaku-san, no puedo divertirme como un estudiante normal con esta malvada maestra."@
+ld r,":a;image\tachi\koha_t02b.jpg",%type_crossfade_fst
+`"Bueno, supongo que no se puede evitar.@ Pero Shiki-san, ¿en verdad no quiere salir de viaje?@ Ya he hecho reservaciones para Akiha-sama, usted, Hisui-chan y yo."@
+`"¿Eh---reservaciones?@ ¿Dónde…?"@
+`"En el hotel donde pasaremos nuestras vacaciones invernales.@ Ya que usted prefiere las cosas japonesas, decidimos mantener nuestro viaje dentro del país, ¿cierto, Akiha-sama?"\
+ld l,":a;image\tachi\aki_t21b.jpg",%type_crossfade_fst
+`"F, fuiste tú quien dijo eso, Kohaku.@ Yo simplemente lo aprobé."@
+cl l,%type_lshutter_fst
+`"Hmph," Akiha aparta la vista.@
+ld r,":a;image\tachi\koha_t15.jpg",%type_crossfade_fst
+`"Sí, por supuesto.@ Entonces, por favor haga espacio en su calendario para el fin de año, Shiki-san.@
+` Hisui-chan me dijo que si usted va, ella también irá.@
+ld r,":a;image\tachi\koha_t03b.jpg",%type_crossfade_fst
+` ¿Comprende?@ Sería la primera vez que Hisui-chan saldría de viaje.@ Ella siempre se queda en la mansión, y nunca sale."\
+cl r,%type_lshutter_fst
+`"………………"@
+` …… Um, es un problema que digas esas cosas tan repentinamente.@
+` Bueno, salir de viaje como familia… nunca antes lo he hecho, así que---\
+ld c,":a;image\tachi\aki_t13b.jpg",%type_lshutter_fst
+`"¿Qu, qué ocurre, Nii-san?@ Yo, no voy a forzarte, si tienes otros planes, por favor háznoslo saber."@
+`"No, iré con ustedes.@ Si rechazo tu invitación, quién sabe qué me harías."@
+ld c,":a;image\tachi\aki_t21b.jpg",%type_crossfade_fst
+`"¡Ya dije que esto no fue idea mía……!@ Sin importar qué decidas…… no me importa."\
+`"Sí, claro que no.@ …… En fin, gracias.@ …… Salir de viaje con todos ciertamente suena divertido."@
+ld c,":a;image\tachi\aki_t05b.jpg",%type_crossfade_fst
+`"…… No tienes que agradecerme.@ Es natural que viajemos juntos como una familia."@
+cl c,%type_lshutter_fst
+` Akiha resopla y voltea su cabeza.@
+br
+` Ahora que la conversación principal ha terminado, la hora del té finaliza tranquilamente.\
+bg #000000,%type_lcartain_mid
+!w1000
+bg "image\bg\bg_40d.jpg",%type_rcartain_mid
+` Es hora de dormir.@
+` …… Gracias a la discusión en la sala de estar, me siento más relajado en este momento.@
+br
+`"…… Viaje de fin de año, eh."@
+` No puedo imaginarme cómo será el viaje, pero no hay duda de que será divertido.\
+`"------Fiu."@
+` Respirando profundamente, salto hacia la cama.@
+` Al menos por esta noche…
+` Desearía no ver ese sueño al cerrar los ojos.\
+bg #000000,%type_crossfade_slw
+playstop
+!w2000
+waveloop se10
+monocro #0000ff
+bg "image\bg\bg_06c.jpg",%type_crossfade_mid
+` …… Estoy en un lugar oscuro.@
+` El cielo debe estar nublado.@
+` No hay luz de luna esta noche, y no puedo ver nada.\
+br
+br
+br
+br
+br
+br
+br
+br
+br
+br
+` --*jadeo*----*jadeo*-----*jadeo*---\
+` Mi respiración hace eco en el aire.@
+` No estoy matando a nadie esta noche.@
+` En cambio, estoy rompiendo una muñeca.\
+br
+br
+br
+br
+br
+br
+br
+` --*jadeo*----*jadeo*-----*jadeo*---\
+br
+br
+br
+br
+br
+` Agarro el brazo.@ No me importa que se desprenda, así que no me contengo en absoluto.@
+` Tiro del cuerpo y continúo violando a la muñeca.\
+br
+br
+br
+` --*jadeo*----*jadeo*-----*jadeo*--
+br
+br
+br
+br
+br
+br
+br
+br
+` Ya me he cansado de esto.@
+` Esta persona no hace nada.@ Ni siquiera grita, así que no siento nada.@
+` La violo sólo para saciar mi lujuria.\
+` …… El viento sopla.@
+` Las nubes se apartan levemente.\
+monocro off
+bg "image\event\his_h14.jpg",%type_crossfade_mid
+` El salón de clases nocturno.@
+` Allí, existe una hermosa muñeca.\
+br
+br
+br
+br
+br
+br
+` --*jadeo*----*jadeo*-----*jadeo*---\
+br
+br
+br
+br
+br
+br
+br
+br
+br
+br
+br
+br
+br
+` La muñeca no dice nada.@
+` Ni siquiera se mueve por sí misma.\
+br
+br
+br
+br
+br
+br
+br
+br
+br
+br
+br
+br
+br
+` Incluso cuando carne dura es metida entre sus piernas, no se mueve.\
+` ---Con algo como esto, no puedo excitarme.@
+` Sin importar lo hermosa que sea, una muñeca no puede ser una compañera adecuada.\
+br
+br
+br
+br
+br
+br
+` --*jadeo*----*jadeo*-----*jadeo*---\
+` Pero, la sensación que produce es excepcional.@
+` Sin importar cuántas veces la viole, nunca me aburro de su cuerpo.@
+` El cuerpo se sacude al moverlo.@
+` Los ojos de la muñeca no me están mirando.@
+` Los ojos vacíos sólo están reflejando la luna, supongo.@
+br
+br
+` ------Este pedazo de basura comienza a enfurecerme.\
+`"---Muy pronto…"@
+br
+` Las cejas de la muñeca se mueven un poco.@
+br
+`"---Pronto, mataré."@
+br
+` El rostro congelado comienza a enrojecer.@
+br
+`"---Pronto, regresaré."\
+#ff0000
+br
+br
+br
+br
+br
+br
+br
+`   Te mataré  y  tomaré   tu lugar.\
+#ffffff
+`"---Si eso sucedé, serás inútil."@
+br
+` Jaja, eso es gracioso.@
+br
+` --*jadeo*--*jadeo*---*jadeo*--
+br
+` Mi respiración se hace más salvaje.@
+br
+`"¡Ja---------jaja, jajajaja, jajajajajajajajajajajajajajajajajajaajajajajajajajajajajajajajajajajajajajajajajajjajajajajajajajajajajajajajajajajajajajajajajajajaja!"\
+` Mi risa hace eco a lo largo del salón.@
+` Como si mi cabeza se hubiese convertido en uno de esos títeres de madera, se balancea incontrolablemente, arriba y abajo.@
+` Río, y río, y río.@
+` Mientras río, continúo violando a esta chica joven, que es Hisui o Kohaku.\
+bg #000000,%type_crossfade_mid
+wavestop
+!w4000
+mov $phasebg,"image\bg\cmo_05b.jpg"
+mov $phasetitle_a,":a;image\word\PHIS_08A.PNG"
+mov $phasetitle_b,":a;image\word\day_08.png"
+gosub *left_phase
+bg #ffffff,%type_crossfade_slw
+bg "image\bg\bg_40a.jpg",%type_crossfade_fst
+`"------"@
+` Despierto y veo que son más de las diez en punto.@
+`"…… Es cierto, hoy es un día festivo."@
+` Levanto mi cuerpo de la cama.@
+wave se0
+bg #9c0120,%type_nowaitdisp
+bg "image\event\his_h14.jpg",%type_nowaitdisp
+bg "image\bg\bg_40a.jpg",%type_nowaitdisp
+` Incapaz de contenerlo, salgo al pasillo en pijama.\
+bg #000000,%type_lshutter_fst
+` Corro hacia el baño y vomito en el lavamanos.@
+`"¡Uughuuhuuk!@ ¡ah!"@
+` Vacío el contenido de mi estómago, pero aún me siento enfermo.@
+` El sueño de anoche.@
+` En cierto modo, es peor que los sueños en que soy un asesino.@ Es mucho, mucho peor.\
+wave se0
+`"Ha----gaa, ah---"@
+` En mis sueños, no sólo violo a Akiha, sino también a Hisui y a Kohaku-san.@
+` Ese sueño.@
+` Soñé que violaba a una chica que se parecía a Hisui o a Kohaku-san toda la noche.@
+`"……… Aa………… ach."@
+` Al no tener nada más que vomitar, mis convulsiones comienzan a disminuir.\
+bg "image\bg\bg_33a.jpg",%type_lshutter_mid
+` Salgo al vestíbulo y veo a Hisui ocupándose de algo.@
+` Puede que esté cambiado cosas de lugar, porque la veo llevando una silla hacia el vestíbulo.@
+wave se0
+bg #9c0120,%type_crossfade_fst
+bg "image\bg\bg_33a.jpg",%type_crossfade_fst
+`"…………… Ku."@
+` Me siento mareado.@
+` En este momento---no puedo dignarme a mirarla a la cara.@
+` Pero no puedo soportar volver a mi habitación sin decir nada.@
+` Si Hisui hubiese intentado despertarme como siempre---creo que este malestar habría sido menos terrible.\
+`"…… Hisui."@
+` Hisui se percata de que estoy aquí, y camina hacia mí silenciosamente.@
+ld c,":a;image\tachi\his_t01.jpg",%type_lshutter_mid
+play "*1"
+`"Buenos días, Shiki-sama."@
+`"…… Ah, buen día.@ Perdóname por despertar a esta hora."@
+ld c,":a;image\tachi\his_t16.jpg",%type_crossfade_mid
+`"Me disculpo también.@ Debí haber estado ahí cuando despertó.@ Por favor perdóneme."@
+` Hisui inclina su cabeza silenciosamente.@
+` …… El rostro inexpresivo de Hisui.@ Al recordar el sueño de anoche, comienzo a sentirme culpable.\
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_mid
+`"…… No, no necesitas disculparte.@ No desperté a la hora habitual, así que es mi culpa.@ Sería mejor que te quejaras un poco."@
+` …… Si hicieras eso, me sentiría un poco mejor.@
+ld c,":a;image\tachi\his_t07.jpg",%type_crossfade_fst
+`"¿Shiki-sama……?"@
+` Pero, eso es sólo mi deseo egoísta.@
+` Porque en este momento, mis palabras la están haciendo sentir mal.\
+`"No es nada, olvídalo.@ …… Más importante aún, tengo un poco de hambre, ¿está listo el desayuno?"@
+ld c,":a;image\tachi\his_t23.jpg",%type_crossfade_fst
+`"…… Nee-san salió.@ Su desayuno está preparado en el comedor."@
+`"Oh.@ En ese caso, iré a comer algo.@ Perdón por molestarte mientras trabajabas."@
+` Después de decir un rápido adiós, me dirijo hacia el comedor.\
+bg #000000,%type_lcartain_mid
+playstop
+bg "image\bg\bg_40a.jpg",%type_rcartain_mid
+` Regreso a mi habitación, pero en realidad no tengo nada que hacer aquí.@
+` Ya dormí lo suficiente.@
+` Pensando en qué debería hacer, decido caminar alrededor de la mansión.\
+bg "image\bg\bg_33a.jpg",%type_lcartain_mid
+play "*1"
+` Llego al vestíbulo.@
+` Por alguna razón, vago sin rumbo por la mansión para confirmar los recuerdos de mi niñez.\
+bg "image\bg\bg_46a.jpg",%type_lcartain_mid
+` El pasillo se extiende una gran distancia.@
+` Cuando era niño, creía que este pasillo continuaría por siempre.@
+` La mansión parecía un enorme castillo, y todos los días, caminaba un poco por la mansión y tallaba mi nombre sobre las paredes, las columnas, o el piso.@
+` Era una especie de juego que jugaba con Akiha para ver quién podía apoderarse de la mansión.@
+br
+` Diciendo que todo lugar en que dejases tu nombre se convertía en tu territorio, ambos caminábamos por la mansión tallando nuestros nombres aquí y allá.\
+bg "image\bg\bg_46a.jpg",%type_tshutter_mid
+`"…… Aquí."@
+` Sobre el pasamanos junto a la escalera está tallado el nombre SHIKI.@
+` Fue probablemente debido a estos juegos que el viejo nos prohibió jugar dentro de la mansión.@
+` En fin, si miro de cerca, puedo ver mi nombre y el de Akiha por todo el lugar.\
+bg "image\bg\bg_48a.jpg",%type_lcartain_mid
+` Voy afuera.@
+` …… Ahora que lo pienso, jugábamos en el jardín la mayor parte del tiempo.@
+` Ya que Akiha era obediente con el viejo, a diferencia de mí, sólo podía salir a jugar unos treinta minutos al día.@
+` Y aun así, normalmente se quedaba detrás de nosotros, observando y escuchando.@
+` Pero corría enérgicamente con nosotros, y competía en cualquiera de nuestros juegos.\
+`"…… ¿Quizás su personalidad proviene de aquellos tiempos?"@
+` Puede que ella se haya reprimido frente al viejo.\
+bg "image\bg\bg_42a.jpg",%type_lcartain_mid
+` Sobre las paredes de la mansión, los nombre tallados aparecen nuevamente.@
+` Shiki, Shiki, Akiha, SHIKI, Akiha, SHIKI, Akiha, Shiki, Shiki, SHIKI, Shiki.@
+` Ésas son las proporciones, y el nombre SHIKI aparece muchas veces más.@
+` Supongo que Akiha era sólo una chica, y no podía seguir el ritmo de un chico.\
+bg "image\bg\bg_54a.jpg",%type_lshutter_mid
+`"¿Kohaku-san……?"@
+` Al salir al patio trasero, veo la figura de Kohaku-san desde atrás.@
+` Ella no me ha notado.@
+` No sé qué está haciendo, pero desaparece dentro del bosque.@
+`"¿?"@
+` Con un poco de curiosidad, la sigo a corta distancia.@
+br
+` ----Y.@
+br
+` En el lugar al que Kohaku-san se dirigía, parece haber un pequeño claro.\
+`"……… ¿Hay un claro ahí……?"@
+` Ladeando mi cabeza, intento recordar, pero por alguna razón, mi memoria es un poco vaga.@
+` En el bosque de la mansión, puedo ver un claro como si los árboles hubiesen sido cortados allí.\
+br
+` ---No, "puedo ver" no es correcto.@
+` Si pasara caminando normalmente, probablemente nunca lo notaría.@
+` Si Kohaku-san no pasaba por ahí, tan escondido entre los árboles circundantes como está, nunca lo habría notado aunque hubiese vivido aquí toda mi vida.\
+`"…… Qué raro.@ No recuerdo que hubiese un claro en este lugar."@
+` Sin exagerar, no recuerdo haber jugado alguna vez con Akiha en el claro.\
+br
+wave se0
+` ----Siento que nunca, he estado ahí, antes.@
+br
+`"…………"@
+` Después de pensarlo un poco, decido entrar al claro.\
+bg #ffffff,%type_crossfade_mid
+playstop
+bg "image\bg\bg_53.jpg",%type_crossfade_mid
+` …… El claro no me impresiona como algo fuera de lo ordinario.@
+` No hay señal de Kohaku-san, quien entró antes que yo.@
+`"Qué es esto---es sólo un espacio vacío."@
+` Camino hacia el centro del claro.@
+` Este claro en verdad es sólo un espacio vacío.@
+` El terreno perfectamente nivelado.@
+` El profundo bosque cercando el área.\
+bg #ffffff,%type_crossfade_fst
+bg "image\bg\bg_53.jpg",%type_nowaitdisp
+` La voz de las cigarras.@
+` Y el fuerte sol del verano que se siente como si pudiese disolver------\
+bg #ffffff,%type_crossfade_fst
+bg "image\bg\bg_53.jpg",%type_nowaitdisp
+wave se0
+`"¿Eh…………?"@
+` ¿Verano, sol---?@
+br
+bg #ffffff,%type_crossfade_fst
+bg "image\bg\bg_53.jpg",%type_nowaitdisp
+wave se0
+`"Au----auch……"@
+` La herida en mi pecho comienza a doler.@
+br
+br
+wave se0
+`        Como / Puñaladas.@
+br
+br
+wave se0
+`               Este dolor  / se siente como  / un cuchillo de cocina apuñalando mi pecho.\
+bg #ffffff,%type_crossfade_slw
+br
+br
+br
+br
+` Chiiirp.@ Chirp Chirp.@
+!w1000
+` Chiiirp.@ Chirp Chirp.@
+!w1000
+` Chiiirp.@ Chirp Chirp-----
+!w1000
+br
+` ----En algún lugar, puedo escuchar la voz de las cigarras.@
+br
+` Pero, estamos en otoño.\
+` ----El sol del verano que baña todo de blanco.@
+br
+` Las columnas de nubes veraniegas en el cielo lejano.@
+` Prácticamente puedo ver las voces.@
+` Junto a mis pies, hay corazas desechadas de cigarras.@
+` Coraza desechada.@ La coraza desechada--de alguien.\
+br
+`"------------………………"@
+br
+` Mi herida se abre.@
+` Mi pecho se pinta de oscuro carmesí; bermellón negro empapa mis manos-----\
+bg "image\bg\cmo_06.jpg",%type_crossfade_mid
+waveloop se1
+br
+br
+br
+br
+` …… La silueta de alguien agachado.@
+`   Los pasos de una chica joven que se acerca.@
+`   Las columnas de nubes en el cielo lejano.@ Las corazas desechadas de las cigarras.@
+`   De pronto me doy cuenta,
+`   frente a mí está el rostro lloroso de Akiha, bañada en sangre.\
+br
+br
+br
+` Chiiirp.@ Chirp Chirp.@
+` Chiiirp.@ Chirp Chirp.@
+br
+` ---Ah.@ Voces que intentan perforar mis tímpanos,
+`           las voces de las cigarras.\
+bg #ffffff,%type_crossfade_fst
+bg "image\bg\cmo_05.jpg",%type_crossfade_fst
+bg "image\bg\bg_53.jpg",%type_crossfade_mid
+`"Ah-----gu."@
+` Me duele el pecho.@
+` Me siento enfermo.@
+` Mi herida sanó hace mucho tiempo, ¿por qué duele tanto?@
+bg #9c0120,%type_crossfade_mid
+` Mi pecho   está roto.@
+` La vieja herida se abre, sangre sale de la abertura.\
+br
+` ---¿Qué es esto?@
+` Mi herida, no ha sanado en absoluto.\
+bg #000000,%type_crossfade_mid
+` Mi consciencia se hunde.@
+` Mi herida duele.@
+br
+` Justo antes de desmayarme, recuerdo una imagen terrible.@
+bg "image\bg\cmo_06.jpg",%type_crossfade_mid
+br
+` Un caluroso día de verano.@
+` Akiha manchada de sangre, y yo, mirándola fijamente.@
+br
+` La silueta lame la sangre de sus propias manos.@
+` …… Entonces, la silueta se convierte en mi rostro de niño, riendo placenteramente---\
+bg #ffffff,%type_crossfade_slw
+wavestop
+!w4000
+bg "image\bg\bg_40c.jpg",%type_nowaitdisp
+bg #000000,%type_nowaitdisp
+!w500
+bg "image\bg\bg_40c.jpg",%type_nowaitdisp
+bg #ffffff,%type_nowaitdisp
+!w500
+bg "image\bg\bg_40c.jpg",%type_crossfade_mid
+play "*1"
+` …… Puedo escuchar voces hablando.\
+`"Akiha-sama, ¿no va a llamar a un doctor?"@
+`"No seas estúpida, Hisui.@
+` ¡De ninguna manera podría hacer eso, porque la herida de Nii-san no es normal……!"\
+` …… Akiha  y  Hisui   están hablando.@
+` Ésta  es   la habitación de SHIKI.@
+` Parece   que   estoy  durmiendo  en la cama.\
+` Planeaba decir "¡Hola!" y salir de la cama, pero no puedo moverme en absoluto.@
+` Mi pecho ya no duele, pero mi cuerpo se siente tan pesado como el plomo.@
+` Todo lo que puedo mover son mis ojos y mi boca.\
+ld l,":a;image\tachi\aki_t07b.jpg",%type_lshutter_fst
+`"¿Qué rayos estabas tratando de hacer, Hisui?@ ¡Sabes que no debes permitir que Shiki se acerque a ese lugar……!"@
+ld r,":a;image\tachi\his_t05.jpg",%type_lshutter_fst
+`"Por favor…… perdóneme."@
+`"Esto no puede resolverse con disculpas.@ Fuiste asignada al servicio de Nii-san para evitar este tipo de situación.@ ¿¡Entonces, qué estabas haciendo……!?"\
+` En total contraste con su conducta habitual, Akiha desahoga toda su ira.@
+` En comparación, Hisui está aceptando el regaño, mirando hacia abajo en silencio.\
+ld l,":a;image\tachi\aki_t11b.jpg",%type_crossfade_fst
+`"¿Qué hay de Kohaku?@ ¿No le di órdenes también?@ ¿De que no perdiese de vista a Nii-san?"@
+`"Nee-san--no está aquí."@
+`"No está aquí…… ¿qué quieres decir con eso?"@
+` Hisui no responde.@
+` Akiha aprieta sus dientes.@
+br
+` ---¿No está aquí?@
+` ¿Qué está diciendo?@ Kohaku-san estaba en el patio trasero hace un momento---\
+ld r,":a;image\tachi\his_t23.jpg",%type_crossfade_fst
+`"Akiha-sama.@ Deberíamos dejar de hacer esto."@
+`"---Hisui."@
+`"Él es diferente.@ Es una persona diferente.@ Esta mansión, no es buena para él.@ Así que, deberíamos dejar de hacer esto."@
+`"¡No quiero escuchar esas palabras!"@
+ld r,":a;image\tachi\his_t17.jpg",%type_crossfade_fst
+`"No, es por eso que debo decirlas.@ Usted también lo sabe.@ A este paso, Shiki-sama en verdad se convertirá en un asesino."\
+br
+br
+br
+br
+br
+br
+br
+wave se0
+` ----Justo ahora, ¿qué fue lo que dijo Hisui?\
+`"…… ¿Estás diciendo que su sangre Tohno despierta en esta mansión?@ Eso es ridículo.@ Es imposible que eso le ocurra a Nii-san."@
+`"…… Tiene razón.@ Él es como nosotras, por la decisión de Makihisa-sama---"\
+` En ese instante.@
+` ¡Paf!@ El sonido de una mejilla siendo abofeteada hace eco en la habitación.\
+bg #ffffff,%type_nowaitdisp
+bg "image\bg\bg_40c.jpg",%type_nowaitdisp
+ld l,":a;image\tachi\aki_t10b.jpg",%type_crossfade_fst
+`"Te he dicho que no le permitiré a nadie decir eso."@
+ld r,":a;image\tachi\his_t26.jpg",%type_crossfade_fst
+`"…………………"@
+` Las dos quedan en silencio.@
+` La tensión en el aire entre las dos se incrementa.@
+br
+` …… Hisui se queda parada dolorosamente, con la cabeza hacia abajo.@
+` No entiendo por qué Akiha está tan enojada, pero no quiero seguir viendo sufrir a Hisui.\
+`"Ugh."@
+` De alguna manera, logro mover mi cuerpo.@
+ld l,":a;image\tachi\aki_t23b.jpg",%type_crossfade_fst
+`"…… Hisui, dejo el resto en tus manos.@ Si Nii-san despierta, encárgate de sus necesidades."@
+ld r,":a;image\tachi\his_t23.jpg",%type_crossfade_fst
+`"Akiha-sama, ¿está de acuerdo con esto?"@
+`"Sí.@ Si estoy aquí, Nii-san sólo se debilitará más."@
+cl a,%type_lshutter_fst
+` Akiha deja la habitación con una sonrisa extremadamente dolorosa en su rostro.\
+`"……………"@
+` Bueno, ¿qué debería hacer ahora?@
+` Tal vez sea mejor fingir que sigo dormido--
+ld c,":a;image\tachi\his_t23.jpg",%type_crossfade_fst
+`"Shiki-sama, creo que ya puede abrir los ojos con seguridad."@
+`"…… Oh, lo sabías, Hisui."@
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"Sí, Akiha-sama no se percató, pero…… Desde hace mucho tiempo, ella nunca ha sido capaz de desenmascarar a alguien que está actuando."@
+` Hisui habla de mala gana.\
+`"…… ¿En serio?@ Pero tú eres muy perceptiva."@
+ld c,":a;image\tachi\his_t01b.jpg",%type_crossfade_fst
+`"…… No lo sé.@ Ya que no puedo entender el corazón de la persona que más quiero conocer, no me considero muy perceptiva."@
+`"Ya veo…"@
+` Al asentir, por alguna razón tengo la sensación de que está hablando sobre Kohaku-san.\
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"…… Hisui, lo mencionaste anteriormente pero, ¿adónde fue Kohaku-san?"@
+ld c,":a;image\tachi\his_t17.jpg",%type_crossfade_fst
+`"…… Lo siento.@ Yo, no sé mucho sobre Nee-san."@
+`"…………"@
+` Algo no está bien en esa respuesta.@
+` Pero lo que no está bien, parece que no puedo captarlo en este momento.@
+br
+` Debido al estado en que me encuentro.@
+` Mi cuerpo está lento, y requiero de toda mi fuerza sólo para hablar.\
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"Shiki-sama, ¿no se está forzando?"@
+`"…… Para ser sincero, me siento extremadamente lento.@ ¿Qué rayos fue lo que me sucedió?"@
+`"…… Shiki-sama, lo encontramos desmayado en el patio trasero.@ No parecía su anemia normal, así que contactamos a Akiha-sama y lo trajimos a su habitación."\
+br
+br
+br
+br
+br
+` …… Desmayado.@
+` En el patio trasero.@
+` La blanca luz del verano, y la voz de las cigarras.\
+`"----Ya recuerdo.@ Estaba parado, y entonces me sentí muy mareado.@ Cielos, no había tenido una tan terrible desde la escuela primaria."@
+`"…… Pensé que debía llamar al doctor, pero Akiha-sama nos pidió que esperásemos."@
+`"…… Sí, Akiha tiene razón.@ Esto es algo mental, así que llamar al doctor no habría ayudado.@ ¿Cuánto tiempo estuve inconsciente?"@
+`"…… Lo encontré después del mediodía, así que, aproximadamente doce horas."@
+`"¿¡Ta---tanto tiempo!?"@
+` Sorprendido, miro el reloj.@
+` Pero, mi cuerpo no se mueve.\
+ld c,":a;image\tachi\his_t04.jpg",%type_crossfade_fst
+`"Ya es medianoche.@ Cuidaré de usted esta noche, si necesita cualquier cosa, por favor no dude en pedirla."@
+`"De…… acuerdo.@ Lo aprecio mucho."@
+` ---Estuve medio día inconsciente, no había hecho eso desde aquel accidente.@
+` Además, después de dormir tanto, mi cuerpo aún quiere dormir más.\
+`"…… Lo siento.@ Tengo mucho sueño……"@
+`"Entonces por favor duerma.@ Estaré en el pasillo, si sucede algo, ahí estaré."@
+`"…… ¿Qué…… estás diciendo?@ No puedo dejar que alguien cuidando de mí espere en el pasillo…… Debo pedirte, Hisui…… quédate… aquí… mismo."@
+br
+` ---Maldición, no puedo continuar.@
+br
+` Siento como si estuviese cayendo en un tanque de agua.@
+` Mi consciencia cesa abruptamente.\
+bg #000000,%type_crossfade_mid
+playstop
+!w4000
+bg "image\bg\ima_02.jpg",%type_crossfade_mid
+play "*9"
+br
+br
+br
+br
+br
+br
+br
+` --------Tuve un sueño.\
+br
+br
+br
+` Era una noche oscura.@
+` En medio de la noche, creí escuchar un ruido y desperté.@
+` La habitación de tatami estaba vacía.@
+` Parece que en algún momento, todos los adultos salieron.@
+` Estaba un poco intranquilo al estar solo.@
+` Salí al jardín para ver adónde habían ido.\
+br
+br
+br
+` La propia noche se siente congelada por el frío invernal.@
+` Mi blanca respiración flota en el aire.@
+` El jardín es frío, pero al mismo tiempo, el cielo es hermoso.@
+` La expresión "frío congelante" parece haber sido hecha sólo para esta noche invernal.@
+` Las frías estrellas.@ La profunda oscuridad.@
+` Iluminando este mundo, la inerte luz de luna.\
+br
+br
+br
+` Para un niño como yo, el jardín de la mansión es demasiado grande.@
+` Un denso bosque cercando el jardín.@
+` La mansión está en lo profundo de las montañas, y para ser sincero, no es un lugar como para que alguien viva.@
+br
+` La mansión está en el corazón de un oscuro bosque.@
+` En otras palabras…
+` como la luz de un pez luminiscente en el fondo del océano.\
+br
+` La oscuridad del bosque se extiende profundamente.@
+` Los árboles son como una cortina negra tratando de alcanzar la luna.@
+` Escuché un ruido, y estoy convencido de que los adultos deben haber entrado al bosque.@
+` Entro al bosque.@
+br
+` Ni siquiera un solo rayo de luz existe en esta oscuridad.@
+` Incapaz de ver siquiera mi propio cuerpo, camino hacia el sonido.@
+` Es simplemente   frío.@
+` Incluso mis ojos se entumecen.@
+` Siento como si alguien dijese mi nombre.\
+br
+br
+br
+br
+` El grito de un carricero.@
+` La hierba oscilante.@
+` Ahí, conocí a un demonio rojo.@
+` El demonio no parece estar interesado en mí.@
+` Al mismo tiempo, a mí tampoco me interesa el demonio.@
+` Carmesí.@ Rojo.@ Bermellón.@
+` Camino más allá del campo que se ha vuelto un mar carmesí.\
+br
+br
+br
+br
+br
+` Los árboles se separan formando un claro.@
+` Ahí, los cadáveres esparcidos de todos los adultos ensucian el suelo.@
+` El oscuro suelo está bañado de rojo venenoso, como si el mundo entero estuviese sangrando.\
+br
+br
+br
+br
+br
+br
+` ------Ésa es.\
+br
+br
+br
+br
+br
+br
+` En medio de la tierra sangrante, el enemigo que masacró a los adultos está parado ahí.\
+br
+br
+br
+br
+br
+br
+` ------La primera pesadilla.\
+br
+br
+br
+br
+br
+br
+` El enemigo se acerca para matarme.@
+` Mi madre muere, protegiéndome.\
+br
+br
+br
+br
+br
+br
+` ------Sangre salpica sobre mi rostro.\
+br
+br
+br
+br
+br
+br
+` En medio de esta helada noche.@
+` Ese calor.\
+br
+br
+br
+br
+br
+br
+` ------El primer color odiado.\
+br
+br
+br
+br
+br
+` Las garras del enemigo perforan mi pecho.@
+` Quizás estaba entumecido por el frío.@
+` En realidad no sentí mucho dolor.\
+br
+br
+br
+br
+br
+br
+` ------Levanto la vista hacia el cielo.\
+br
+br
+br
+br
+br
+` El mundo comienza a desaparecer.@
+` Ahí, la constante y pálida oscuridad.\
+br
+br
+br
+br
+br
+br
+` ------Qué   hermosa.\
+br
+br
+br
+br
+br
+br
+` La efímera luna de cristal.\
+bg "image\bg\ima_01.jpg",%type_crossfade_mid
+br
+br
+br
+br
+br
+br
+`     Ah---no me di cuenta.\
+br
+br
+br
+br
+br
+br
+`       Esta noche,\
+br
+br
+br
+br
+br
+br
+br
+`     La luna es tan----hermosa-----\
+bg #000000,%type_crossfade_mid
+playstop
+!w4000
+mov $phasebg,"image\bg\cmo_17.jpg"
+mov $phasetitle_a,":a;image\word\PHIS_09A.PNG"
+mov $phasetitle_b,":a;image\word\day_09.png"
+gosub *left_phase
+monocro #ff0000
+bg "image\bg\ima_01.jpg",%type_nowaitdisp
+` ……………………………………………………………………………………………………………………………………………… Una puerta se cierra suavemente y mi consciencia se separa de mis recuerdos.@
+` Mi corazón sale a flote.@ La realidad está en la superficie.\
+br
+br
+br
+br
+br
+br
+` -----Y despierto del viejo sueño.\
+monocro off
+bg #ffffff,%type_crossfade_mid
+bg "image\bg\bg_40a.jpg",%type_crossfade_mid
+play "*2"
+`"¿Huh?@ …… ¿Por qué?"@
+` Al tocar mis mejillas, me percato de que estaba llorando.@
+` No sé qué era tan doloroso, o qué era tan triste.@
+` Sólo la sensación de que acabo de perder algo extremadamente importante permanece en mi corazón.@
+br
+`"¿Fue una pesadilla?"@
+br
+` Creo que fue diferente a esos sueños en que asesino gente.@
+` Pero fue la primera vez que dormí tan bien en muchos días.@
+` Tal vez porque Hisui me estuvo cuidando todo el tiempo.\
+`"…… ¿Hisui?"@
+` Levanto mi cuerpo y miro alrededor de la habitación.@
+` No veo a Hisui en ninguna parte.@
+` La puerta que escuché cerrarse, probablemente fue ella al salir de aquí hace apenas un segundo.\
+` En fin, ya amaneció.@
+` Hoy es viernes, así que debería ir a la escuela.@
+`"Tengo que levantarme."@
+` Quizás sean secuelas de lo sucedido ayer, pero siento un poco de náuseas cuando me levanto.@
+br
+`"Debería cambiarme…… ¿Qué es esto, mi ropa no está lista?"@
+br
+` Parece que Hisui fue a buscar mi uniforme.@
+` Lo cual significa que debería regresar pronto.\
+wave se0
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_40a.jpg",%type_crossfade_fst
+`"…… ¿Hu…… h?"@
+bg #ffffff,%type_crossfade_fst
+bg "image\bg\bg_40a.jpg",%type_crossfade_fst
+wave se4
+quakey 3,200
+` De repente, toda la fuerza desaparece de mi cuerpo, y caigo al piso.@
+` Se siente como un mareo normal---sólo que no puedo volver a levantarme.@
+` No puedo dar nada de fuerza a mis brazos o piernas.@
+` Apenas puedo mover mi brazo, y ni siquiera puedo pararme del piso.@
+`"…… Esto no puede estar sucediendo"@
+` Desesperadamente, intento levantarme.@
+` Pero no puedo moverme.@ Ni siquiera puedo hacer una simple flexión desde aquí.\
+`"Cielos…… parece que todavía estoy en muy malas condiciones."@
+` Luchando sobre la alfombra, comprendo mi situación.@
+` Es obvio que no podré levantarme sin importar cuánto me esfuerce.@
+` No es que esté sufriendo mucho dolor, así que debería sentirme mejor si me quedo aquí por un rato.\
+wave se3
+ld c,":a;image\tachi\his_t16.jpg",%type_lshutter_mid
+`"Shiki-sama, su ropa está lista."@
+` Hisui abre la puerta y entra a mi habitación.@
+ld c,":a;image\tachi\his_t25.jpg",%type_crossfade_fst
+`"----¿¡Shiki-sama!?"@
+` La voz de Hisui resuena como un grito, y sus pasos corren hacia mí.\
+ld c,":a;image\tachi\his_t23.jpg",%type_crossfade_fst
+`"¡Shiki-sama, por favor resista, Shiki-sama……!"@
+` Hisui dice mi nombre frenéticamente.@
+`"Hola, buen día Hisui.@ Sólo me caí, no hay necesidad de alarmarse."@
+`"¡Sólo se cayó---qué está diciendo, Shiki-sama, usted…… !"@
+`"Estoy bien.@ Si me ayudas a levantarme, estaré bien."@
+`"Como desee---"@
+` Hisui se agacha inmediatamente, y extiende su mano hacia mi hombro.\
+ld c,":a;image\tachi\his_t25.jpg",%type_crossfade_fst
+`"Ah……"@
+` De repente, Hisui detiene su mano.@
+` Con una expresión forzada, Hisui extiende su mano desesperadamente y con toda su voluntad; sudor aparece sobre su frente.@
+br
+` Pero eso es todo lo que puede hacer.@
+` Mordiendo su labio, Hisui intenta tocar mi hombro frenéticamente, pero sólo se queda ahí, temblando sin control.\
+`"…… Ya veo.@ No, no te fuerces, Hisui.@ Ve a buscar a Kohaku-san y estaré bien."@
+ld c,":a;image\tachi\his_t24.jpg",%type_crossfade_fst
+`"………………"@
+` Hisui asiente y sale corriendo de la habitación.@
+`"…… ¿Qué fue todo eso?@ La obsesión de Hisui por la limpieza parece bastante grave."@
+` Tirado en el suelo, expreso mis pensamientos descuidadamente.\
+bg #000000,%type_crossfade_mid
+playstop
+!w2000
+bg "image\bg\bg_40a.jpg",%type_lcartain_fst
+play "*3"
+` Kohaku-san llega rápido y me ofrece su hombro.@
+` …… De hecho, ya que no tengo nada de fuerza, Kohaku-san hace la mayor parte del trabajo.@ Probablemente porque estoy muy débil, pero Kohaku-san tiene el descaro de decir que soy tan ligero como una chica.\
+`"Es extraño…… no hay ningún problema, pero mi cuerpo simplemente no se mueve."@
+ld c,":a;image\tachi\koha_t01a.jpg",%type_lshutter_fst
+`"Ya veo, no parece enfermo, pero no puedo decir nada a menos que esperemos un tiempo.@ Pero su cara se ve bien.@ Creo que se recuperará pronto."@
+cl c,%type_lshutter_mid
+` Aún sonriendo, Kohaku-san toma mi temperatura.@
+` Gracias a su sonrisa, me siento un poco más a gusto, pero……\
+ld c,":a;image\tachi\his_t07.jpg",%type_lshutter_mid
+!w1500
+cl c,%type_lshutter_mid
+` Hisui tiene una expresión sombría.@
+` Incluso ahora, parece estar escondiéndose detrás de Kohaku-san, y me mira ocasionalmente.\
+ld c,":a;image\tachi\aki_t10.jpg",%type_lshutter_fst
+`"¡Nii-san……!"@
+` ---Y.@
+` Con un poco de pánico, Akiha entra escandalosamente.\
+`"Hola.@ Estás muy enérgica está mañana, Akiha."@
+` Levanto mi mano para saludarla.@
+ld c,":a;image\tachi\aki_t15a.jpg",%type_crossfade_fst
+`"Qué---"@
+` Después de ver mi rostro, su expresión se transforma en sorpresa.@
+`"¿Qué exageración es ésta?@ Estoy bien, no pongas esa cara de susto.@ Si haces eso, seré yo quien empiece a preocuparse."@
+ld c,":a;image\tachi\aki_t17a.jpg",%type_crossfade_fst
+`"Eso…… puede ser verdad, pero---"@
+` Akiha me mira con una cara pálida.@
+cl c,%type_lshutter_mid
+` En verdad estoy bien, pero parece que Hisui y Akiha sinceramente piensan que estoy enfermo de muerte o algo así.\
+`"…… ¿Me veo tan mal ahora?"@
+ld r,":a;image\tachi\koha_t01a.jpg",%type_lshutter_fst
+`"No, Shiki-san.@ Se ve como siempre.@
+ld r,":a;image\tachi\koha_t02.jpg",%type_crossfade_fst
+` Pero aun así, su cuerpo no se ha recuperado por completo, por eso pienso que debería tomarse el día libre.@ Llamaré a su escuela para hacerles saber."@
+ld l,":a;image\tachi\aki_t12a.jpg",%type_lshutter_fst
+`"…… Sí.@ Por favor llama también al doctor.@ Él podrá hacer un examen más minucioso."\
+`"¿Un examen minucioso?@ …… No creo que necesite eso."@
+ld l,":a;image\tachi\aki_t11a.jpg",%type_crossfade_fst
+`"---Nii-san, si no quieres que te examinen, ¿quizás deberíamos ingresarte a un hospital?"@
+`"Ah…… No, con un examen bastará."@
+ld l,":a;image\tachi\aki_t02.jpg",%type_crossfade_fst
+`"Bien.@ Kohaku, Hisui, por favor cuiden de Nii-san.@
+` Como no parece preocuparse por su propia salud, por favor háganlo por él."@
+cl l,%type_lshutter_mid
+` Akiha da instrucciones severas y abandona la habitación.\
+ld r,":a;image\tachi\koha_t03.jpg",%type_crossfade_fst
+`"En ese caso, iré a llamar por teléfono, ¿de acuerdo?"@
+cl a,%type_lshutter_mid
+` Kohaku-san también deja la habitación.@
+` Los únicos que quedamos somos Hisui y yo, acostado en la cama.\
+`"¿Hisui?"@
+ld c,":a;image\tachi\his_t17.jpg",%type_lshutter_fst
+`"…… ¿Sí, qué desea, Shiki-sama?"@
+`"Estoy bien, así que puedes seguir con tus labores.@ Ya que no puedo moverme, no voy a ir a ningún sitio."@
+`"…………"@
+` Hisui no se mueve un solo paso.@
+`"…… ¿Hisui?@ Qué sucede, has estado actuando extraño.@ Si te sientes enferma, ve a descansar, no te preocupes por mí."@
+`"……………………"@
+` Hisui se queda parada en silencio.\
+` …… Y entonces.@
+` De pronto, como si se hubiese decidido, Hisui dice,
+ld c,":a;image\tachi\his_t23.jpg",%type_crossfade_fst
+`"…… Shiki-sama, ¿no está molesto?"@
+`"¿Qué…?@ ¿Molesto por qué?"@
+ld c,":a;image\tachi\his_t26.jpg",%type_crossfade_fst
+`"Por lo que ocurrió antes.@ …… Aunque debía cuidar de usted, ni siquiera pude ayudarle……"@
+`"-----Hisui."@
+` …… Estoy estupefacto.@ Ni siquiera pensé en eso.\
+`"Bueno, fue un poco sorpresivo.@ Pensé que podrías ayudarme de inmediato, pero terminó siendo Kohaku-san quien lo hizo."@
+ld c,":a;image\tachi\his_t05.jpg",%type_crossfade_fst
+`"……………"@
+`"Pero eso no me importa.@ Puede que no te des cuenta, Hisui, pero ya me has ayudado mucho.@ Comparado con eso, lo que sucedió hace poco no es nada."\
+ld c,":a;image\tachi\his_t26.jpg",%type_crossfade_fst
+`"…… ¿En serio?@ No pienso que sea muy útil."@
+`"Parece que no entiendes.@ Puedo estar tranquilo ahora porque estás aquí.@ …… Es más que simplemente cuidar de mí; si no estuvieses aquí, no sé qué haría."@
+ld c,":a;image\tachi\his_t07.jpg",%type_crossfade_fst
+`"¿……?@ ¿Gracias a mí?"@
+`"Claro.@ Desde que vine aquí, he estado nervioso, y siempre he tenido esas pesadillas.@
+` Pero cuando me dices buenos días todas las mañanas, puedo estar en paz.@
+` ---Por lo tanto, me has ayudado muchas veces.@ Como hoy; cuando viniste, me hiciste feliz."\
+ld c,":a;image\tachi\his_t03.jpg",%type_crossfade_fst
+`"Eh…… Ah, muchas gracias."@
+`"Um, así son las cosas.@ Aunque no puedas tocarme, tus palabras me alcanzan, ¿no?@ Sólo eso me hace muy feliz.@ Hisui, eres extremadamente útil."@
+ld c,":a;image\tachi\his_t23.jpg",%type_crossfade_fst
+`"Um…… ¿habla en serio?"@
+`"Muy en serio.@ Como prueba, aún no siento que haya amanecido.@ Porque, aunque yo lo dije, tú aún no lo has dicho."@
+ld c,":a;image\tachi\his_t04.jpg",%type_crossfade_fst
+`"-------"@
+` Hisui me mira tímidamente y toma un pequeño respiro.\
+ld c,":a;image\tachi\his_t02.jpg",%type_crossfade_fst
+`"…… Sí, buenos días, Shiki-sama."@
+` Ella se sonroja un poco al decir las palabras que olvidó decir esta mañana.@
+`"Eso es.@ Todos tienen sus propias fortalezas y debilidades, así que no te preocupes por eso.@ Hisui, mientras hagas lo que haces, todo estará bien."@
+`"……………"@
+` Hisui no responde.@
+` Sólo me mira como si estuviese perdida en sus pensamientos.\
+`"Ah-, si me miras así, empezaré a ponerme nervioso, Hisui."@
+ld c,":a;image\tachi\his_t20.jpg",%type_crossfade_fst
+`"S, sí, perdóneme."@
+cl c,%type_lshutter_fst
+` Después de decir eso, Hisui comienza a escapar hacia la puerta.\
+ld c,":a;image\tachi\his_t16b.jpg",%type_crossfade_fst
+`"Por favor discúlpeme.@ Parece que Nee-san ha contactado al doctor, así que debería llegar pronto."@
+cl c,%type_lshutter_mid
+` Inclinándose rápidamente, Hisui sale por la puerta.\
+bg #000000,%type_crossfade_fst
+!w2000
+bg "image\bg\bg_40a.jpg",%type_tshutter_mid
+` Fue mi culpa por pensar que un examen minucioso se trataría sólo de tomar la presión sanguínea y unas pocas mediciones.@
+` Siendo el doctor de una familia adinerada, trae un montón de equipos médicos y monta un cuarto de examinación junto al mío.@
+br
+` Después de una exhaustiva evaluación, el doctor se va pasado el mediodía.@
+` Apoyado del hombro de Kohaku-san, me tambaleo de vuelta a mi habitación.@ En definitiva, todo esto tomó unas cuatro horas.\
+`"………… Fiu."@
+` Acostado en mi cama, suelto un pequeño suspiro.@
+` Incluso después del examen, no se encontró nada mal en mí.@
+` …… Bueno, desde el accidente de hace ocho años y mi milagrosa recuperación, el doctor siempre culpa de todo a cualquier tipo de síntoma misterioso.@
+` Bueno, lo mejor que puedo hacer es dormir aquí en mi cama.@
+` Pensé que tal vez debía usar una intravenosa o algo así, pero si no hay ningún problema con mi cuerpo, el doctor dijo que sería mejor no tomar ninguna medicina.\
+wave se3
+`"Shiki-saaan, voy a entrar."@
+ld c,":a;image\tachi\koha_t03.jpg",%type_lshutter_fst
+` Kohaku-san entra a mi habitación.@
+` Está cargando algo que parece arroz con leche sobre una bandeja.@
+`"No ha comido nada desde esta mañana, ¿cierto?@ Es un poco tarde pero, le he traído algo para comer."@
+`"Oh.@ Gracias, Kohaku-san."@
+`"En absoluto, es mi trabajo, después de todo."\
+cl c,%type_lshutter_fst
+` Kohaku-san se coloca junto a mi almohada, tarareando alegremente mientras sostiene la cuchara.@
+`"¿Um, Kohaku-san?"@
+ld c,":a;image\tachi\koha_t03.jpg",%type_lshutter_fst
+`"Sí, abra la boca grande."@
+` Con una gran sonrisa, ella me pide algo extremadamente embarazoso.\
+`"………… ¿Eh?"@
+` Sin entender bien la situación, abro mi boca.@
+` Y entonces, después de enfriar el arroz en la cuchara, ella la mete en mi boca.@
+br
+` ---Con su mano abierta, ella sostiene mi quijada y la mueve arriba y abajo.\
+`"…… Kohaku-san, ¿esto es algún tipo de broma?"@
+ld c,":a;image\tachi\koha_t02.jpg",%type_crossfade_fst
+`"En absoluto.@ Shiki-san, está enfermo, es natural que le ayude a comer."@
+` Sonriendo, Kohaku-san procede a atacarme una segunda vez.@
+`"Gg---"@
+` Esta vez, soy capaz de tragarlo por mi cuenta.\
+`"¡Buen trabajo!@ Siga así, Shiki-san."@
+`"¡E, espera un segundo, Kohaku-san……!@ Puedo estar enfermo, pero es sólo mi anemia.@ ¡Puedo alimentarme solo……!"@
+`"Claro, claro, ahora por favor cálmese.@ Estoy acostumbrada a cosas como éstas."@
+` Kohaku-san suelta una risita y comienza a atacarme por tercera vez.\
+`"Nn---"@
+` Ella mete la cuchara en mi boca enérgicamente, y no puedo hacer más que tragar.@
+`"¿Cómo sabe?@ Escuché que cuando vivía con los Arima le gustaba la papilla de ciruela."@
+`"…… Sí, sabe muy bien."@
+ld c,":a;image\tachi\koha_t05.jpg",%type_crossfade_fst
+`"Qué bueno.@ Entonces, por favor coma tanto como desee."@
+` Kohaku-san parece estar divirtiéndose.@
+`"…… Jaa."@
+` Parece que nada de lo que diga tendrá efecto.@
+` Me doy por vencido y dejo que Kohaku-san haga lo que quiera.\
+cl c,%type_crossfade_fst
+` ……@
+` …………@
+` ……………… Estoy tan avergonzado.@
+` Estoy avergonzado, pero supongo que también estoy un poco feliz.@
+` La comida de Kohaku-san es deliciosa, y la termino rápidamente.\
+ld c,":a;image\tachi\koha_t01a.jpg",%type_crossfade_fst
+`"Por cierto, Shiki-san, ¿cómo se siente?"@
+`"Estoy bien.@ Se siente como mi anemia de siempre."@
+`"¿Eso cree?@ Cuando era niño, fue gravemente herido en esta mansión, así que por favor no se fuerce."@
+cl c,%type_crossfade_fst
+` Kohaku-san dice esto mientras ordena los platos.\
+playstop
+`"---Kohaku-san, ¿qué se supone que significa eso?"@
+`"¿Eh?@ Que estuvo en un accidente y fue gravemente lastimado hace ocho años, ¿no es cierto?@ Escuché que por eso fue adoptado por los Arima: para ayudarle a mejorar."@
+`"Es verdad, pero no me refería a eso…… dijiste que fui herido aquí en la mansió---"\
+wave se0
+bg "image\bg\cmo_05.jpg",%type_nowaitdisp
+bg "image\bg\bg_40a.jpg",%type_nowaitdisp
+br
+br
+br
+br
+br
+br
+` ---En primer lugar.@
+` ¿Exactamente dónde ocurrió el accidente que casi me costó la vida?\
+waveloop se1
+` La herida casi fatal de mi niñez.@
+` El accidente que me hizo capaz de ver líneas de muerte.@
+` Cómo demonios sucedió eso,
+` y dónde demonios ocurrió ese accidente,
+` no recuerdo absolutamente nada---\
+ld c,":a;image\tachi\koha_t02.jpg",%type_crossfade_fst
+`"¿Shiki-san?@ ¿Sucede algo?"@
+`"Eh…… Ah, no es nada.@ Creo que no lo entenderías aunque te lo dijera."\
+bg "image\bg\cmo_06.jpg",%type_nowaitdisp
+bg "image\bg\bg_40a.jpg",%type_nowaitdisp
+` ---Pero lo que recordé ayer,
+`  podría ser algo relacionado con el accidente de hace ocho años.@
+br
+` Creo que, en ese momento---estábamos Akiha, yo, y una persona más en ese lugar---\
+wavestop
+ld c,":a;image\tachi\koha_t03.jpg",%type_crossfade_fst
+`"Iré a lavar a estos platos entonces."@
+cl c,%type_lshutter_mid
+` Kohaku-san intenta dejar la habitación.@
+`"Espera un segundo, Kohaku-san.@ En aquel entonces, jugábamos mucho juntos, ¿verdad?@ En esa época, ¿había otra persona con nosotros?"@
+` Kohaku-san se detiene en seco.\
+ld c,":a;image\tachi\koha_t01a.jpg",%type_lshutter_fst
+`"¿Jugábamos, mucho, juntos……?"@
+` Ella ríe.@
+` Como si recordase el pasado, su risa nostálgica hace eco con frialdad en la habitación.\
+ld c,":a;image\tachi\koha_t02.jpg",%type_crossfade_fst
+`"Hmm, ¿tal vez sea su imaginación?@ Quizás Hisui-chan estaba con usted o algo así."@
+`"Ah, tal vez.@ Eso podría ser."@
+`"Por supuesto.@ Bien, entonces lo veré luego."@
+cl c,%type_lshutter_fst
+` Kohaku-san carga los platos y deja la habitación.@
+br
+`"------Bueno."@
+` Después de comer, me siento muy adormilado.@
+` No hay nada más que hacer, supongo que debería dormir un poco---\
+bg #000000,%type_crossfade_mid
+!w3500
+waveloop se10
+` ---Repentinamente, me encuentro en un lugar desconocido.\
+` Este lugar---parece un sótano que no ha sido utilizado en mucho tiempo.@
+` Escritorios y sillas están esparcidos por todas partes.@
+` En el fondo de la habitación hay pizarras desechadas y sillas plegables.@
+` Los rayos del sol no pueden alcanzar este lugar.@
+` En este oscuro sótano que huele a moho, solamente inhalo y exhalo.@
+br
+` Sentado encima de un escritorio, abrazando mis rodillas.@
+` El cadáver de una nueva mujer está tirado en el suelo.\
+#ff0000
+br
+` El sonido de mi respiración.@
+#ffffff
+br
+` Es entrecortado.@
+` Esa cosa está pensando que no tiene suficiente sangre.@
+` Esa cosa está pensando que quiere comer carne fresca.@
+#ff0000
+` Estoy pensando que quiero matar gente.@
+br
+` *jadeo*   *jadeo*   *jadeo*\
+br
+` *jadeo*   *jadeo*   *jadeo*
+#ffffff
+` *jadeo*   *jadeo*   *jadeo*
+br
+` El ritmo de nuestra respiración se iguala.@
+br
+`"¡Quién esta ahí----!"@
+` Alzando mi voz, miro alrededor.@
+` En este sótano, no hay nadie más.@
+br
+#ff0000
+` *jadeo*   *jadeo*   *jadeo*\
+` *jadeo*   *jadeo*   *jadeo*
+#ffffff
+` *jadeo*   *jadeo*   *jadeo*
+br
+`"¡Maldición, eres tú de nuevo!"@
+br
+` Eso me grita.\
+`"¡No lo haré……!@ ¡Yo tomé a esta mujer!@ No voy a dártela."@
+br
+` Diciendo eso, muerde el cadáver.@
+br
+bg "image\bg\ima_13.jpg",%type_nowaitdisp
+` Mastica.@
+` Exprime, desgarra.@
+` El sonido de intestinos siendo masticados.@
+` -------Exhalar.\
+br
+`  *jadeo*   *jadeo*   *jadeo*  *jadeo*
+` Mi respiración se entrecorta.@
+` Por alguna razón.@
+` Al igual que la respiración de esa cosa, la mía también comienza a enloquecer.@
+br
+bg "image\bg\ima_13b.jpg",%type_nowaitdisp
+`"Voy a matarte."@
+br
+`  *jadeo*   *jadeo*   *jadeo*   *jadeo*
+br
+`"Pronto, pronto, voy, a, matarte."@
+br
+` Como si hubiese perdido la cordura, comienza a devorarlo todo, incluso los huesos.\
+bg "image\bg\bg_40a.jpg",%type_nowaitdisp
+wavestop
+play "*1"
+ld c,":a;image\tachi\his_t01.jpg",%type_lshutter_fst
+`"Shiki-sama, ¿está durmiendo?"@
+`"¿Eh----?"@
+` De repente, Hisui aparece frente a mí.\
+`"Hisui…… ¿cuándo entraste?"@
+ld c,":a;image\tachi\his_t07.jpg",%type_crossfade_fst
+`"¿Cuándo…… pregunta?@ Han pasado cinco minutos desde que terminé de cambiar sus sábanas."@
+`"Oh.@ Lo siento, estaba durmiendo, y no noté que habías entrado."@
+ld c,":a;image\tachi\his_t13.jpg",%type_crossfade_fst
+`"…… Shiki-sama, por favor no bromee.@ Usted aceptó que entrase a la habitación, y me ordenó que cambiase las sábanas."@
+`"Qué-------"@
+` ¿Qué está sucediendo?@
+` Hasta ahora, estuve dormido, tuve otra pesadilla, y desperté con la voz de Hisui……\
+`"…… Hisui.@ ¿Me veía como si estuviese despierto?"@
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"…… Sí.@ Después de cambiarle las sábanas, usted cerró los ojos, y por eso le pregunté si estaba durmiendo."@
+`"---No, no voy a seguir durmiendo."@
+` Respondo de alguna manera, y miro mi mano.@
+` …… Levantar mi mano aún es difícil.@
+` No he mejorado siquiera en lo más mínimo.@
+` Mi pesado cuerpo.@
+` Mi cuerpo----el cuerpo de Tohno Shiki, se siente como si perteneciera a otra persona.\
+`"…… Estaré despierto por un rato.@ ¿Tienes trabajo que hacer?"@
+ld c,":a;image\tachi\his_t02.jpg",%type_crossfade_fst
+`"No, hoy cuidaré de usted…… Si está de acuerdo, me gustaría cuidar de usted, Shiki-sama."@
+` No puedo evitar estar agradecido.@ Si Hisui está aquí, probablemente no tendré pesadillas como la de antes.\
+`"…… Eso es exactamente lo que deseo, Hisui.@ Si no soy una carga para ti, por favor quédate en mi habitación."@
+ld c,":a;image\tachi\his_t16b.jpg",%type_crossfade_mid
+`"---Sí.@ Entonces lo haré, Shiki-sama."@
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+` Después de hacer una reverencia, Hisui se endereza y me observa atentamente.@
+`"Um, no tienes que concentrarte tanto.@ Me alegraría más que trajeses una silla y leyeses un libro o algo así.@ Yo también voy a matar algo de tiempo."\
+ld c,":a;image\tachi\his_t23.jpg",%type_crossfade_fst
+`"Ah…… sí, como desee."@
+cl c,%type_lshutter_fst
+` Hisui deja la habitación rápidamente.@
+` Estoy seguro de que volverá con un libro y una silla, justo como lo sugerí.\
+`"Eres muy obediente, ¿no, Hisui?"@
+` Río un poco al decir esto.@
+` Parecen siglos desde que volví a conocer a Hisui y pensé que era simplemente una chica fría e inexpresiva.@
+` Bueno, eso es todo lo que pensaba entonces, pero ahora---creo que entiendo a Hisui un poco mejor.@
+`"---Vamos, Hisui, apresúrate."@
+` Recostado sobre la cama, digo eso con seriedad.@
+` Si ella va a estar alrededor, estar enfermo de esta manera no suena nada mal.\
+bg #000000,%type_crossfade_mid
+!w2000
+bg "image\bg\bg_40c.jpg",%type_lcartain_mid
+` Para Hisui, cuidar de mí significa simplemente estar a mi lado.@
+` Siendo incapaz de tocar a alguien del género opuesto, Hisui no puede atenderme físicamente.@
+` Tomar mi temperatura o limpiar el sudor de mi frente es el papel de Kohaku-san, y Hisui sólo permanece junto a mí, escuchándome cuando pido cualquier cosa, como algo para beber.@
+br
+` Pero eso no significa que esté insatisfecho.@
+` No es que haya estado siempre ahí, pero estuvo ahí la mayor parte del tiempo.@ Gracias a eso, no tuve ningún sueño terrible.\
+` Son poco menos de las diez en punto, justo antes de la hora de dormir.@
+ld c,":a;image\tachi\aki_t04b.jpg",%type_lshutter_fst
+`"Nii-san, ¿cómo te sientes?"@
+` Akiha viene a ver cómo estoy.\
+`"Sí, me siento bien.@ Aún no puedo mover mi cuerpo libremente, pero creo que mañana estaré mejor.@ Algo como esto me sucedió una vez, y es exactamente como en aquel entonces."@
+ld c,":a;image\tachi\aki_t09b.jpg",%type_crossfade_fst
+`"---Me alegra escuchar eso.@ Me hace sentir un poco más tranquila."@
+` Akiha exhala y se relaja visiblemente.\
+ld c,":a;image\tachi\aki_t04b.jpg",%type_crossfade_fst
+`"Buenas noches, Nii-san.@ Ah, pero aunque te sientas mejor, no te fuerces.@ No te haría ningún bien volver a lastimarte."@
+`"Ya lo sé.@ …… Buenas noches, Akiha.@ Gracias por toda tu preocupación."@
+ld c,":a;image\tachi\aki_t16b.jpg",%type_crossfade_fst
+`"Eh…… Bueno, somos hermanos, es algo natural……
+ld c,":a;image\tachi\aki_t12b.jpg",%type_crossfade_fst
+` En fin, por favor ten cuidado.@ No quiero volver a verte desmayado mañana."@
+cl c,%type_lshutter_mid
+` Con una ligera sonrisa, Akiha sale de la habitación.\
+bg #000000,%type_crossfade_mid
+bg "image\bg\bg_40d.jpg",%type_crossfade_mid
+`"-----"@
+` Es hora de dormir.@
+` Si no puedo moverme, no puedo ir a ningún lado.@
+` Tengo que dormir lo suficiente y asegurarme de mejorar para mañana.@
+` Sin pensar en nada, decido dormir por esta noche.\
+bg #000000,%type_crossfade_mid
+playstop
+!w3000
+mov $phasebg,"image\bg\cmo_18.jpg"
+mov $phasetitle_a,":a;image\word\PHIS_10A.PNG"
+mov $phasetitle_b,":a;image\word\day_10.png"
+gosub *left_phase
+bg "image\bg\bg_40a.jpg",%type_crossfade_mid
+play "*2"
+` La luz de la ventana me despierta.@
+`"---No tuve ningún sueño."@
+` Ciertamente dormí sin soñar nada bueno o malo.@
+` Gracias a eso, no me siento mal en absoluto.@
+` Hoy es sábado, probablemente debería darle las gracias a Hisui y a Kohaku-san por haber cuidado de mí.\
+` Son poco más de las seis.@
+` Ayer estuve acostado todo el día, así que ya no me siento cansado.@
+`"---¡Hora de levantarse!"@
+` Me levanto de la cama.@
+wave se0
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_40a.jpg",%type_crossfade_fst
+`"-----¿Eh?"@
+` Mi cuerpo no se mueve en absoluto.@
+` …… No he mejorado nada.@
+` Como mínimo, estoy peor.@ Ayer, podía mover mis brazos, pero hoy ni siquiera puedo hacer eso.\
+`"----Kk----"@
+` Trato de estirar mi brazo hacia arriba.@
+` ……@
+` ………@
+` …………@
+`"----Ha…… ah."@
+` Finalmente logro hacerlo.@
+` Usando toda mi fuerza, me toma casi un minuto entero.\
+`"…… ¿Qué está sucediendo?"@
+` Es como si mi cuerpo estuviese muerto.@
+` O más bien, como un robot sin combustible.@
+` De cualquier forma, mi cuerpo no se moverá.@
+` Al mismo tiempo, estoy totalmente consciente, y no siento ningún dolor.\
+`"Hey, Hisui---Kohaku-san---"@
+wave se0
+bg #9c0120,%type_crossfade_fst
+bg "image\bg\bg_40a.jpg",%type_crossfade_fst
+` Iba a decirles que viniesen, pero me detengo.@
+` Puedo hablar, pero alzar mucho la voz me marea demasiado.@
+` …… Casi parece que alzar la voz requiere de mucha fuerza muscular, poniendo mucha presión sobre el flujo de sangre hacia el cerebro.@
+`"Ha-----"@
+` Exhalo.@
+` Supongo que todo lo que puedo hacer es esperar que Hisui venga a despertarme.\
+bg #000000,%type_lcartain_mid
+playstop
+!w2000
+bg "image\bg\bg_40a.jpg",%type_lcartain_mid
+play "*3"
+` ---Después de eso, todo fue muy parecido a la mañana de ayer.@
+br
+` Pero, como estaba en la cama desde un principio, fue un poco más rápido que ayer.@
+` Después de venir a despertarme, una Hisui de cara pálida llamó a Kohaku-san, quien hizo un pequeño examen.@
+` Al escuchar esto, Akiha entró corriendo una vez más, llamó al mismo doctor de ayer, quien hizo la misma revisión, y terminé descansando en mi cama.\
+` …… Ya que dormir todo el día me hace sentir enfermo, ahora estoy recostando la mitad superior de mi cuerpo sobre la cabecera.\
+ld c,":a;image\tachi\his_t01.jpg",%type_lshutter_fst
+`"Shiki-sama, ¿dijo algo?"@
+`"¿N……?@ No, sólo estaba distraído.@ No dije nada."@
+ld c,":a;image\tachi\his_t07.jpg",%type_crossfade_fst
+`"-------"@
+`"Oye, ¿por qué tienes esa expresión?@ Te dije que no siento dolor ni nada parecido, no necesitas preocuparte."\
+ld c,":a;image\tachi\his_t05.jpg",%type_crossfade_fst
+`"…… Lo siento mucho, Shiki-sama."@
+`"Te dije que estoy bien…… Cielos, te preocupas demasiado.@ Bueno, supongo que en verdad son hermanas.@ Eres muy parecida a Kohaku-san en ese sentido."@
+ld c,":a;image\tachi\his_t23.jpg",%type_crossfade_fst
+`"¿Eh----soy parecida a Nee-san?"@
+` Hisui pregunta, muy sorprendida.@
+` …… Bueno, no me refería a la apariencia, porque eso es muy obvio.\
+`"Sí, es una vieja historia.@ ¿Sabías que Kohaku-san ha estado actuando como una hermana mayor desde que éramos pequeños?@
+` Siempre que Akiha o yo nos lastimábamos, Kohaku-san se preocupaba mucho.@ …… No, estaba bien que fuese sólo cuando nos lastimábamos, pero incluso cuando no nos sentíamos bien, era muy mandona, y nos decía que fuésemos a dormir, a dormir."@
+ld c,":a;image\tachi\his_t02.jpg",%type_crossfade_fst
+`"Eh…… ¿En verdad era, tan mandona?"\
+`"Sí, me sentía muy apenado cuando ella hacía eso.@ …… Hmm, ¿cuándo fue eso?@ Recuerdo que una vez cogí un resfriado, pero quería salir a jugar de todas formas.@ Kohaku-san me dijo una y otra vez que fuese a acostarme.@
+` Al final ella ganó, y volví a mi habitación, pero después, entró a mi habitación y puso una toalla mojada sobre mí.@ En verdad pensé que iba a asfixiarme hasta morir."@
+ld c,":a;image\tachi\his_t05.jpg",%type_crossfade_fst
+`"…………,"\
+`"Ahora que lo pienso, esta vez, creo que Kohaku-san no estaba tan preocupada como pensé. Tal vez quería actuar como una enfermera o algo así.@ Ella en verdad parecía disfrutarlo."@
+`"……………………,"@
+`"Ah, pero no quiero decir que no me agradó lo que hizo Kohaku-san.@ Me gustaba lo que ella hacía, y jugar con Akiha también era divertido.@
+` …… Es cierto.@ Ahora que lo pienso, tuve una niñez bastante feliz."@
+ld c,":a;image\tachi\his_t16b.jpg",%type_crossfade_mid
+`"---Sí.@ Estoy segura de que Nee-san siente lo mismo."\
+` Hisui asiente tranquilamente.@
+` …… Oh no.@ Estoy hablando mucho sobre mi niñez, Hisui se debe estar aburriendo.\
+`"---Perdona.@ No pretendía aburrirte con este tipo de plática."@
+ld c,":a;image\tachi\his_t02.jpg",%type_crossfade_fst
+`"Por favor no se preocupe por eso.@ A mí me agrada."@
+`"Eh, ¿en serio……?@ En ese caso……"@
+` Ciertamente, Hisui no parece aburrida.@
+`"Sí.@ Mientras no le moleste, por favor continúe.@ El doctor dijo que cualquier tipo de actividad es preferible."\
+` …… Ya veo.@ Dicen que debo mover mi cuerpo, pero lo único que puedo mover ahora es mi boca.@
+`"Cielos.@ En realidad no tengo mucho de que hablar, aunque ciertamente tengo muchos recuerdos de mi niñez."@
+`"No me molesta.@ Por favor, hábleme sobre su niñez, Shiki-sama."@
+`"…… ¿En serio?@ Pero creo que va a ser aburrido, ¿estás segura?"\
+ld c,":a;image\tachi\his_t03.jpg",%type_crossfade_fst
+`"Sí, en verdad estoy, disfrutando esto."@
+` Hisui muestra una sonrisa extremadamente feliz.@
+`"-----"@
+` Olvidando por completo el estado en que me encuentro, mi corazón comienza a acelerarse.@
+` …… La sonrisa que muy raramente es vista en la cara de Hisui es, me hace sonrojar, y, bueno---\
+ld c,":a;image\tachi\his_t02.jpg",%type_crossfade_fst
+`"¿Shiki-sama?@ ¿Hay algún problema?"@
+`"Ah---no, no es nada.@ Bueno, sigamos hablando sobre el pasado entonces."@
+` Hisui asiente.@
+` Mientras sigo recordando más y más sobre el pasado, continúo mi aburrido y estúpido monólogo.\
+bg #000000,%type_crossfade_mid
+!w1500
+bg "image\bg\bg_40a.jpg",%type_crossfade_mid
+` A la hora del almuerzo, Kohaku-san viene y cambia de lugar con Hisui.@
+` Kohaku-san trae un cubo de agua y muchas toallas.@
+`"…………"@
+` Tengo un presentimiento muy malo sobre esto.\
+ld c,":a;image\tachi\koha_t03.jpg",%type_lshutter_fst
+`"Shiki-san, tenemos que lavar su cuerpo, por favor resístalo."@
+`"----"@
+br
+` Lo sabía.@
+br
+`"……… Um"@
+` Es algo que odiaría hacer, pero no puedo negarme.@
+` Es obvio que al no poder mover mi cuerpo, alguien tiene que limpiarlo por mí.@
+` He estado acostado desde ayer, y para ser sincero, me siento pegajoso y muy asqueroso.\
+`"…… Sí.@ Por favor."@
+ld c,":a;image\tachi\koha_t05.jpg",%type_crossfade_fst
+`"En absoluto, soy yo quien debería decir por favor."\
+cl c,%type_lshutter_fst
+bg #000000,%type_lshutter_mid
+bg "image\bg\bg_40a.jpg",%type_lshutter_mid
+` …… Ya terminó.@
+` Fue terriblemente embarazoso, pero no puedo pelear con Kohaku-san.@
+` Después de todo, Kohaku-san me ayuda cuando tengo que ir al baño.@
+` Después de recibir tantos cuidados de Kohaku-san, creo que estar avergonzado es descortés hacia ella.\
+ld c,":a;image\tachi\koha_t03.jpg",%type_lshutter_fst
+`"Todo listo.@ Gracias por su cooperación."@
+` Después de ponerme una pijama nueva, ella reemplaza mis sábanas.@
+ld c,":a;image\tachi\koha_t01a.jpg",%type_crossfade_fst
+`"Pero Shiki-san, en verdad no tiene nada de fuerza, ¿cierto?@ Me sorprendió que ni siquiera reaccionara cuando lo estaba lavando."@
+`"…… Tienes razón.@ Me pregunto qué sucede con mi cuerpo."\
+cl c,%type_crossfade_fst
+` Normalmente, cuando alguien está cuidando de ti, si mueve tus brazos o piernas, hay alguna clase de reacción muscular en el cuerpo.@
+` Debido a esa reacción, la persona que te atiende generalmente tiene mucho trabajo, pero yo ni siquiera tengo esa reacción ahora.@
+` Es como si fuese una medusa.@
+`"Medusa…… Podría estar en lo correcto."@
+` Lo dije como una broma, pero no tengo ganas de reír.@
+` …… Cómo puedo decirlo, es casi como si no estuviese exactamente vivo.\
+` El hecho de que no puedo mover mi cuerpo.@
+` Nunca pensé que no tener ninguna sensación en mi cuerpo sería tan aterrador.@
+` Es casi como si estuviese en un sueño, sólo una vaga existencia.@
+ld c,":a;image\tachi\koha_t02.jpg",%type_crossfade_fst
+`"Shiki-san, por favor no ponga esa cara de intranquilidad.@ Sin importar cuál sea la razón, estoy segura de que pronto podrá volver a la normalidad."@
+`"…… Estoy seguro.@ Pero me pregunto cuál es la razón."\
+` …… Si hubiese una razón, sería esta cicatriz de hace ocho años.@
+` El doctor dijo que era simplemente un milagro que estuviese vivo.@
+` Quizás éste sea el precio de mi milagrosa recuperación.@
+br
+wave se0
+` ---De ser así, entonces yo, Tohno Shiki,
+` podría no ser capaz de levantarme por voluntad propia el resto de mi vida.\
+`"¿Shiki-san?@ ¿Se encuentra bien?@ Se ve terrible."@
+`"Ah…… Acabo de imaginar algo terrible y me asusté un poco."@
+ld c,":a;image\tachi\koha_t04.jpg",%type_crossfade_fst
+`"¡Ah, eso no es bueno, Shiki-san!@ Si su espíritu es débil, nunca podrá recuperarse."@
+`"---Creo que tienes razón.@ Supongo que trataré de pensar positivamente…… Muchas gracias, Kohaku-san."\
+ld c,":a;image\tachi\koha_t01a.jpg",%type_crossfade_fst
+`"Siempre que lo entienda.@ Usted comprende muy bien las cosas, y siempre parece aceptar sus circunstancias.@
+` Por eso creo que está bien que se queje de vez en cuando."@
+` …… Kohaku-san me ofrece un consejo con seriedad.@
+` De repente, recuerdo lo que le estaba diciendo a Hisui anteriormente.@
+`"…… Cielos.@ Kohaku-san, todavía te gusta cuidar a la gente, ¿no?"\
+ld c,":a;image\tachi\koha_t03.jpg",%type_crossfade_fst
+`"¿Huh?@ ¿A qué se refiere con eso?"@
+`"Hace mucho tiempo, ¿recuerdas cuando cogí un resfriado pero quería salir a jugar de todas formas?@ Es igual que en aquel entonces."@
+ld c,":a;image\tachi\koha_t02.jpg",%type_crossfade_fst
+`"Hmm, supongo que algo como eso sucedió.@ Usted nunca decía nada sobre cómo se sentía, Shiki-san."@
+`"Pero lo descubriste rápidamente.@ Después, me hiciste regresar al edificio separado, y nunca te perdoné por eso."@
+` …… En realidad no; de hecho estaba muy agradecido, pero pensé en jugarle una pequeña broma a Kohaku-san.\
+ld c,":a;image\tachi\koha_t03.jpg",%type_crossfade_fst
+`"---------"@
+` Y entonces…
+` Kohaku-san intenta recordar con seriedad, y se queda congelada.\
+`"…… Huh.@ ¿Qué pasa, lo olvidaste?"@
+ld c,":a;image\tachi\koha_t02.jpg",%type_crossfade_fst
+`"Supongo que sí.@ Lo siento, mi memoria no es muy buena."@
+`"No, es difícil recordar cosas de hace ocho años, así que no es gran cosa."@
+`"Tiene razón.@ Recuerdo la mayoría de las cosas, pero como es algo de hace ocho años, puede que esté olvidando algo importante."@
+` …… Estoy totalmente de acuerdo.@
+` Antes de ir a ese jardín en el bosque, había olvidado por completo la imagen del accidente de hace ocho años.@
+ld c,":a;image\tachi\koha_t03.jpg",%type_crossfade_fst
+`"Bien, entonces le traeré algo de comida, por favor descanse hasta entonces."\
+cl c,%type_lshutter_fst
+bg #000000,%type_crossfade_mid
+playstop
+!w1000
+bg "image\bg\bg_40a.jpg",%type_crossfade_mid
+` En la tarde, me quedo solo.@
+` Me siento mal por dejar que Kohaku-san y Hisui me cuiden todo el tiempo, así que las hice regresar a sus labores.@
+` Ya que no tuve ninguna pesadilla anoche, aunque no puedo moverme, mi salud es bastante estable.@
+` Asumo que puedo arreglármelas solo hasta la hora de la cena.\
+`"…… Bueno, mi cuerpo no puede moverse, así que no puedo decir que mi salud es buena o mala."@
+` Recostándome de la cabecera, miro hacia cualquier lado.@
+` Han pasado diez días desde que volví a la mansión.@
+` Al principio, me sentía fuera de lugar, pero ahora me siento muy cómodo en esta habitación.@ No se puede subestimar la adaptabilidad de la mente humana, supongo.\
+wave se0
+bg #ffffff,%type_nowaitdisp
+bg "image\bg\bg_40a.jpg",%type_nowaitdisp
+br
+` ---Y.\
+wave se0
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\bg_40a.jpg",%type_nowaitdisp
+br
+br
+br
+wave se0
+` ---Mi dolor de cabeza.\
+bg "image\bg\bg_40e.jpg",%type_crossfade_mid
+play "*6"
+`"……… ¿Eh?"@
+` Líneas.@ Puedo ver líneas.@
+`"Tengo puestos mis lentes---¿entonces por qué?"\
+#ff0000
+br
+br
+br
+br
+br
+` *jadeo*----*jadeo*----*jadeo*----\
+#ffffff
+`"¿¡----, Quién está ahí!?"@
+` Muevo mi cabeza.@
+` No hay nadie en la habitación aparte de mí.\
+#ff0000
+br
+br
+br
+br
+br
+br
+br
+` *jadeo*----*jadeo*----*jadeo*----\
+#ffffff
+` Puedo escuchar a alguien respirando.@
+` Algo que suena como la rabiosa respiración de un perro salvaje alcanza mis oídos.\
+#ff0000
+br
+br
+br
+br
+br
+br
+br
+br
+br
+` *jadeo*----*jadeo*----*jadeo*----\
+#ffffff
+`"----Qu--"@
+` Logro voltear mi cabeza.@
+` Pero no hay nadie detrás de mí.@
+` Ni siquiera puedo sentir a alguien.@
+` ¿Es alguna clase de alucinación auditiva?@
+` No.@
+` Es una alucinación, pero es real.\
+#ff0000
+br
+br
+br
+br
+br
+br
+br
+br
+br
+br
+br
+br
+` *jadeo*----*jadeo*----*jadeo*----\
+#ffffff
+` No está haciendo eco en mi habitación.@
+` Está haciendo eco dentro de mi cabeza.@
+` En ese caso,
+` esta respiración, sin duda alguna está,
+` saliendo del interior de mi cerebro.\
+#ff0000
+br
+br
+br
+br
+br
+br
+` *jadeo*----*jadeo*----*jadeo*----
+#ffffff
+` *jadeo*----*jadeo*----*jadeo*----\
+` Se fusionan.@
+` Se fusionan progresivamente.@
+` Esta voz desconocida y mi respiración armonizan juntas.@
+br
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\bg_40e.jpg",%type_nowaitdisp
+bg "image\bg\ima_19.jpg",%type_nowaitdisp
+waveloop se1
+` ¿Qué es esto?@
+` ¿Qué rayos es esto?@
+` Estoy a punto de mezclarme con él.@
+!w750
+` Estoy a punto de fusionarme con él.\
+br
+br
+br
+br
+br
+` Engranajes triangulares y / Engranajes de diamante 
+!w750
+` Ruido / Eco
+!w750
+` Panorama / Cuerdas
+!w750
+` No debería haber ningún punto de conexión entre nosotros
+!w750
+` Incluso dentro de una ilusión, el conocimiento debería ser rechazado.\
+br
+br
+br
+br
+br
+` Extraño
+` Extraño
+!w750
+` Qué eres
+` Qué eres
+!w750
+` Yo soy
+` ¡Yo soy!\
+bg #ffffff,%type_crossfade_mid
+`"Ah-----"@
+` El torrente se abre paso.@
+` Girando.@ Girando.@ Girando girando el mundo está girando.@
+` Sol y luna.@ Hembra y león.@ Angel y polución.@ Caminos ascendentes que colisionan.@ Reloj de arena roto.@ Arena que cae hacia arriba.@ Ventana destrozada y una puerta sin mango.@ Oscuridad.@ Oscuridad.@ Oscuridad.@ Oscuridad.@ Oscuridad.\
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\bg_40e.jpg",%type_nowaitdisp
+bg "image\bg\ima_20.jpg",%type_nowaitdisp
+`"Al, to---"@
+` Estoy siendo aplastado.@
+` Muro conmovedor.@ Significado soluble.@ Ser que puede explicar.@ Suavidad de permeabilidad cambiante.@ Tiempo de transición.@ Vida de observación y función de ejecución.@ Una mano sin meñique.@ Ojos sin cabeza.@ Alfombra rodante.@ Una.@ Dos.@ Tres veces.@ 777 jaulas.@ Globo reventado.@ Promesa imposible de cumplir.@ Ley imposible de proteger.@ Contrato de muerte.@ Veneno y miel.@ Rojo y placenta.@ Lámpara de mercurio y luz de insecto.@ Luz refractada hacia incontables dimensiones.@ Pez nadando y cantando en el fondo del océano.@ Herramientas, herramientas, herramientas.@ Hacia estrellas que se reproducen infinitamente sin razón, sin voluntad.@ Mejor que los deseos.@ Otro único yo.@ Profundo mar que desentraña.@ Contradictorio que aparece de organismos microscópicos.@ Vista detallada de un quark.@ Rechazo de todo.@ Forma sin forma.@ Un embrión dentro de un coche fúnebre.@ Maldigo y celebro sus existencias.\
+#ff0000
+br
+br
+br
+br
+br
+br
+br
+` Jaja ajajaja.\
+#ffffff
+`"Qué, es esto----"@
+br
+` Cesar es ignorar.@ La tierra sangrante.@ Cambia tu sangre por veneno y alcanzarás la inmortalidad.@ Rosa.@ Rosa.@ Rosa.@ Rosa.@ Tu esplendor no durará para siempre.@ La manera de alcanzar el templo de Lohan, come este pan.@ Profanación difundida.@ El abril que está más lejos que mayo, la inversión de extremidades, despierta en el santuario del balance más allá de la serpiente doble y el escorpión.@ La piel de la fruta podrida.@ Títere de celuloide quemado.@ El cannabis de Legion.@ Pulverización y fricción.@ Sol y luna.@ Caminos ascendentes que colisionan.@ Hembra y leones.@ Reloj de arena roto.@ Nubes espirales.@ No tengo paralelo.@ Arena que cae hacia arriba.@ Ocho años atrás.@ Asesinado.@ Asesinado.@ Asesinado.@ Asesinado.@ Asesinado.@ Asesinado.@ Asesinado.@ Asesinado.@ Tú.@ ¡Asesinado!\
+#ff0000
+br
+br
+br
+br
+br
+br
+br
+` ¡Ja jaja  ajajajajajajajajajajajajaja!\
+#ffffff
+`"¡Cálla--cálla, te----!"@
+quakex 2,100
+wave se9
+playstop
+bg "image\bg\bg_40a.jpg",%type_nowaitdisp
+` *jadeo*----*jadeo*----*jadeo*----
+` …… Se detiene.@
+` Con toda mi fuerza, golpeo mi cabeza contra la pared, y se detiene.\
+`"---Qué demonios----fue eso----"@
+` No lo sé.@
+` Palabras aleatorias llenaron mi mente, y no podía pensar en nada.@
+` Absolutamente nada---no era capaz de pensar, y todas esas palabras se repetían mecánicamente en mi cabeza.\
+`"………… Ah."@
+` Noto que lágrimas están saliendo de mis ojos.@
+` Mucosidad y baba también recorren mi rostro.@
+br
+wave se0
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\bg_40a.jpg",%type_nowaitdisp
+`"¡Ag----!"@
+` Me duele la cabeza.@
+` No es un dolor de cabeza normal como el de mi anemia.@
+` Siento que mi cerebro está a punto de explotar.@
+` Se debe a que, a pesar de que mi memoria tiene un límite, mucho más de lo que puedo manejar ha entrado en mi cerebro.\
+`"…………"@
+` Una vez más.@
+` Si ese inexplicable dolor de cabeza regresa una vez más.@ A este paso---mi mente de seguro se estropeará antes que mi cuerpo.\
+waveloop se1
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\bg_40e.jpg",%type_nowaitdisp
+bg "image\bg\ima_19.jpg",%type_nowaitdisp
+#ff0000
+br
+br
+br
+br
+br
+br
+br
+` Aja ajaja ja\
+#ffffff
+`"Qu----"@
+bg "image\bg\bg_40e.jpg",%type_crossfade_fst
+br
+`"Detent----"@
+` Está fluyendo.@ No, lo estoy recibiendo.@ El conocimiento de ese sujeto, de un nivel mucho más allá del nuestro, es recibido por mí.@
+br
+` Sí, estamos a punto de mezclarnos.@
+` La fusión entre él y yo ya ha comenzado.@
+` Fue hace ocho años.@ El blanco día de verano.@ Corazas vacías de cigarras.@ Hormigas hambrientas.@ La repentina muerte de alguien.@ La gravitación hacia un extremo dolor, chorros de sangre, estado de shock.@ Campo visual reducido.@ Nada más que oscuridad.@ Nada más que carmesí.@ La crisis de la muerte.@ Aborto.@ Cortar en pedazos a la mujer dando a luz cuando el bebé aún está dentro, dentro de este hambriento mundo, saboreando la carne de los bebés.\
+#ff0000
+br
+br
+br
+` Inútil    todo eso.\
+#ffffff
+br
+br
+`"Al---to."\
+#ff0000
+br
+br
+br
+br
+br
+` Mientras    mantengas     los ojos      abiertos,\
+br
+br
+br
+br
+br
+br
+br
+` Yo    voy a ser   uno     contigo.\
+#ffffff
+wavestop
+`"-----¡Ch!"@
+bg #000000,%type_lshutter_fst
+` Cierro los ojos desesperadamente, como implorando ayuda.@
+br
+`"…………… Ha…………… ah."@
+` Se ha calmado.@
+` El flujo de información y la voz dentro de mi cabeza cesan.@
+`"…… Gracias…… al cielo."@
+` Suelto un suspiro de alivio.@
+` Pero por otro lado, siento que un escalofrío recorre mi columna.\
+`"…… ¿Si abro los ojos…… eso volverá a suceder?"@
+` No lo sé.@
+` Tal vez fue algo instantáneo.@
+` Pero estoy demasiado aterrorizado como para abrir los ojos.@
+` Una sensación desagradable.@
+` Siento como si una oruga se arrastrase dentro de mi cerebro.\
+`"-----"@
+` …… Me da sueño.@
+` Pero si duermo, podría volver a tener esas pesadillas.@
+`"----No me importa.@ Ese sueño es mucho mejor que lo que acaba de suceder."@
+` Relajo mi consciencia.@
+` Con los ojos aún cerrados, me quedo dormido.\
+!w3000
+waveloop se10
+` ---Ah, he venido aquí de nuevo.@
+br
+` El oscuro sótano.@ El olor del moho emanando de la oscuridad.@
+` …… La escuela, probablemente el sótano del gimnasio.@
+` Los maniquíes dispersos.@ No, los pedazos de personas medio devoradas.@
+br
+` Él es.@
+` Aunque es muy temprano, ha traído otra muñeca.\
+` *jadeo*----*jadeo*----*jadeo*----
+` La respiración animal.@
+` *jadeo*----*jadeo*----*jadeo*----!@
+bg "image\bg\ima_13.jpg",%type_nowaitdisp
+` La figura muerde a la muñeca.@
+` La sensación de los dientes rompiendo la piel.@
+` La grasa del abdomen no es exactamente lo que se llamaría carne de primera calidad.@
+` La sangre caliente pegada a la garganta.@
+br
+` ---Siento un escalofrío.@
+` Todas estas sensaciones son transmitidas por completo hacia mí.\
+`"¡T, t t t t tú de nuevo, Shiki!"@
+` Eso grita.@
+`"¡Maldición, maldición, maldición, maldición, maldición-----!"@
+` Actúa como un niño en medio de una rabieta.@
+` Rompiendo todos los pupitres, y arrancando del piso pedazos de hormigón.@
+br
+`"¡Voy a matarte, voy a matarte, voy a matarte…… !"@
+br
+` Diciendo eso.@
+` Clava un cuchillo en su propia mano.\
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\ima_13.jpg",%type_nowaitdisp
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\ima_13.jpg",%type_nowaitdisp
+br
+` ------¿¡Gi----!?@
+br
+` El dolor de la puñalada es transmitido hacia mi propia mano.\
+`"Sólo observa, voy a matarte---"@
+` Entonces toma la pata de un pupitre roto y atraviesa su propia pierna.@
+br
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\ima_13.jpg",%type_nowaitdisp
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\ima_13b.jpg",%type_nowaitdisp
+` ----Ga---.@
+br
+`"Y tomaré de vuelta lo que me robaste-----"@
+` Usando sus propias garras, abre su propio estómago y comienza a sacarse los intestinos.\
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\ima_13b.jpg",%type_nowaitdisp
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\ima_13b.jpg",%type_nowaitdisp
+br
+` ---El, dolor.@
+br
+` ¡¡¡Dolor.@ Dolor, Dolor, Dolor, Dolor, Dolor, Dolor, Dolor, Dolor, Dolor, Dolor, Dolor, Dolor, Dolor, Dolor, Dolor, Dolor, Dolor, Dolor, Dolor, Dolor, Dolor, Dolor, Dolor, Dolor, Dolor, Dolor, Dolor, Dolor, Dolor, Dolor, Dolor, Dolor, Dolor, Dolor, Dolor, Dolor Dolor----------!!!"\
+`"¡Estos dedos, esta piel, incluso estos ojos!"@
+` Él aplasta sus ojos.@
+br
+bg #ffffff,%type_nowaitdisp
+bg "image\bg\ima_13b.jpg",%type_nowaitdisp
+br
+` ---Comienzo a enloquecer.@
+br
+` Un sueño.@ ¡Si esto es un sueño, por favor, despierta!@
+` Duele.@ Preferiría.@ Morir.@
+` Es suficiente dolor como para morir por la conmoción, pero no estoy muriendo.\
+`"¡Tu voz, tu posición, todo eso es mío, originalmente, todo era mío---!@
+` ¡Sólo espera, voy a matarte, iré pronto……!"@
+br
+` Gritando.@
+` Toma un cuchillo,
+br
+!w750
+`      lo lleva hacia su cabeza,
+br
+!w750
+`      apunta hacia el cerebro,
+br
+!w750
+`      y apuñala profundamente.\
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\ima_12b.jpg",%type_nowaitdisp
+bg #000000,%type_nowaitdisp
+bg "image\bg\ima_13b.jpg",%type_nowaitdisp
+bg "image\bg\ima_12b.jpg",%type_nowaitdisp
+bg #ffffff,%type_nowaitdisp
+bg "image\bg\bg_40b.jpg",%type_nowaitdisp
+wavestop
+play "*6"
+`"¡AAAAAAAAAAAAAAAA!"@
+` En medio del máximo dolor, me despierto.@
+`"¡Ahhh----ghaa, aagh, aghhh----!"@
+` Un sueño.@ Eso fue un sueño.@
+`"¡G…!"@
+` Pero mi cuerpo duele por todas partes.@
+` Mano, muslo, ojos, cráneo.@
+` Todos duelen.@
+` El dolor que recibí durante mi sueño, lo he traído de vuelta a la realidad.\
+`"¡A----hh!"@
+` Pero mi cuerpo aún no puede moverse.@
+` Aunque siento que hay un agujero en mi palma, aún no puedo mover mi cuerpo.@
+`"Ah-------ah."@
+` Si al menos pudiese moverme---podría revolcarme, y tal vez reducir un poco la agonía, pero ni siquiera puedo hacer eso.\
+`"Maldi----ción."@
+` ¿Qué es, esto?@
+br
+`"¿Por qué---estas cosas…"@
+` Anteriormente, pensé que mi mente se estropearía antes que mi cuerpo.@
+br
+`"¿Por qué, estas cosas, me pasan, a mí…… !"@
+` Pero si duermo, mi cuerpo ciertamente podría estropearse antes que mi mente.\
+bg #000000,%type_crossfade_fst
+`"Ese sujeto---¿qué es él?"@
+` Ese alguien que aparece en mis sueños.@
+` Ese alguien que me conoce, cuyos nervios se hicieron uno con los míos.@
+` La persona que asesina gente todas las noches.@
+#ff0000
+` ¿Qué es esto?@ ¿Todavía no lo admites?@
+#ffffff
+`"…… ¿Admitir,  qué?"@
+#ff0000
+` Yo soy tú.@
+#ffffff
+`"…… De ninguna manera."@
+#ff0000
+` Tú eres  igual que yo.@
+#ffffff
+`"…… No.@ Aún estoy cuerdo."@
+#ff0000
+` Durante mucho tiempo,    ya has estado loco.@
+#ffffff
+`"…… ¡Te dije que no……!"\
+playstop
+!w1000
+bg "image\bg\bg_40b.jpg",%type_nowaitdisp
+ld c,":a;image\tachi\his_t25.jpg",%type_lshutter_fst
+`"¡Shiki-sama---!"@
+br
+` ---Y,
+br
+` Llamando a la puerta, Hisui entra a mi habitación.\
+`"¿Hi---sui……?"@
+`"Shiki-sama, ¿¡ésa era su voz---!?"@
+cl c,%type_lshutter_fst
+` Hisui camina hacia la cama con una expresión de urgencia.@
+`"Qué----Shiki-sama, qué, rayos----"@
+` La voz de Hisui está temblando.@
+` …… Miro hacia abajo.@
+` Mis sábanas están empapadas de sangre.\
+bg #000000,%type_lshutter_mid
+!w1500
+bg "image\bg\bg_40c.jpg",%type_lcartain_mid
+play "*1"
+` ---Parece que la sangre venía de mi mano y mi muslo.@
+` Digo 'parece' porque es sólo lo que pienso.@
+` No hay ninguna herida en mi cuerpo, así que el problema es el hecho de que la sangre estuviese ahí…\
+ld l,":a;image\tachi\koha_t02.jpg",%type_crossfade_fst
+`"Hisui-chan, prepararé una intravenosa, por favor vigila a Shiki-san."@
+ld r,":a;image\tachi\his_t08.jpg",%type_crossfade_fst
+`"Espera, Nee-san, Shiki-sama está----"@
+ld l,":a;image\tachi\koha_t03.jpg",%type_crossfade_fst
+`"Hisui-chan.@ ¿No crees que es mejor escuchar lo que dice tu hermana mayor de vez en cuando?"@
+ld r,":a;image\tachi\his_t07.jpg",%type_crossfade_fst
+`"Ah----"@
+ld l,":a;image\tachi\koha_t02.jpg",%type_crossfade_fst
+`"Ahora, Shiki-san, dentro de poco va a recibir una transfusión de sangre, por favor relájese hasta entonces."@
+cl l,%type_lshutter_mid
+` Después de atenderme, Kohaku-san deja la habitación.\
+ld r,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"Shiki-sama---¿en verdad no hay ningún problema?@ Nee-san me dijo que no me preocupase, pero toda esa sangre---"@
+`"…… Eres persistente, ¿no?@ Dije que no hay problema.@ No tengo ninguna herida.@ Yo soy el que tiene preguntas."\
+cl r,%type_crossfade_fst
+` ---Al decir eso bruscamente, me odio a mí mismo.@
+` Lo lamento por Hisui, pero no puedo tranquilizarme.@
+` Debe---haber algo mal en mí.@
+` Si duermo, sueño con el asesino y me hiero a mí mismo.@
+` Sé que ésa es la causa del sangrado.@
+` Lo sé, pero no puedo decirle eso a Hisui o a Kohaku-san.\
+` No me creerían, y peor aún, pensarían que simplemente he enloquecido.@
+` Admito que mi cuerpo es raro.@
+` Pero no quiero que Hisui, Kohaku-san, o Akiha piensen que estoy loco.@
+` No quiero decir eso.\
+ld c,":a;image\tachi\his_t21.jpg",%type_crossfade_fst
+`"Pero Shiki-sama, su cuerpo no está funcionando correctamente.@ Parece tener fiebre, y su respiración es salvaje, yo no---"@
+` deseo verte de esa manera.@ Hisui se traga el resto de su oración.@
+`"…… Estoy bien, ya vete.@ Gracias por preocuparte por mí, pero quiero estar solo por ahora."@
+ld c,":a;image\tachi\his_t23.jpg",%type_crossfade_fst
+`"…… Entonces, ¿hay algo que desee?@ Si tiene sed, por favor dígamelo, puedo traerle algo."@
+playstop
+`"¿Algo---que desee?"@
+` ¿Algo que desee?@
+` En realidad no quiero nada en este momento.\
+`"…… Sí, ciertamente estoy sediento……"@
+br
+` Sí, sediento.@
+` Muy sediento.@
+` Así que debo succionar.@
+wave se0
+` Bebida, roja.@
+` Ese pegajoso fluido que se pega a mi garganta.@
+` Caliente sangre carmesí que permanece tibia, eso es lo que quiero ahora----\
+waveloop se1
+`"Ah----"@
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"…… ¿Shiki-sama?"@
+` Algo que, deseo.@
+` Claro que hay algo que deseo.@
+br
+` Eso es…
+bg "image\event\his_h14.jpg",%type_nowaitdisp
+bg "image\bg\bg_40c.jpg",%type_nowaitdisp
+` el cuerpo de Hisui que vi en mi sueño.\
+wavestop
+`"--------¡Tss!"@
+` ¡Bam!@ Me golpeo la cabeza.@
+` El brazo que no podía mover, pude moverlo a través de puro odio hacia mí mismo.@
+ld c,":a;image\tachi\his_t25.jpg",%type_crossfade_fst
+`"¿¡Shiki-sama!?@ ¡Qué sucede, Shiki-sama!"@
+`"¡No te me acerques----!"@
+ld c,":a;image\tachi\his_t24.jpg",%type_crossfade_fst
+`"Shiki…… sama."@
+` Respiro dolorosamente.@
+` Mi garganta está ardiendo.@
+` Mi cuerpo está ardiendo.@
+` Hay algo mal en mí.@ Hay algo mal en mí.@ Hay algo mal en mí.@
+` ¿¡Qué demonios estaba pensando!?\
+`"…… No te me acerques…… Si lo haces, no sé qué, podría hacer."@
+ld c,":a;image\tachi\his_t23.jpg",%type_crossfade_fst
+`"Pero, Shiki-sama---"@
+`"¡Te dije que no te me acerques……!@ ¡No estoy loco……!"@
+` Grito, rechazando la ayuda de Hisui.@
+` Pero si no lo hago, seguramente violaré a Hisui.@
+` Como aquella vez en mi sueño.@
+` Siendo controlado por el pulso que atraviesa mis venas.\
+`"---Sólo vete.@ Hisui, tú no entiendes, nada sobre mi cuerpo."@
+ld c,":a;image\tachi\his_t17.jpg",%type_crossfade_fst
+`"…… Sí.@ Como desee, Shiki-sama."@
+cl c,%type_lshutter_mid
+` Hisui se va.@
+` Mientras se retira, la observo con una visión borrosa.\
+bg #000000,%type_crossfade_mid
+!w1000
+bg "image\bg\bg_40c.jpg",%type_crossfade_fst
+play "*6"
+` ---Mi cuerpo excitado piensa siempre lo mismo, sin importar a quién vea.@
+br
+` Cuando Kohaku-san vino para hacerme la transfusión, sentí el impulso de hundir mis dientes en su garganta blanca.@
+` Yo----no puedo conservar la cordura a menos que esté solo.@
+` Por eso hice que Hisui, Kohaku-san, e incluso Akiha saliesen de mi habitación.@
+br
+` ---El resultado no cambia.@
+` Si estoy solo, todo lo que puedo hacer es averiarme.\
+wave se0
+bg #000000,%type_crossfade_fst
+bg "image\bg\bg_40c.jpg",%type_crossfade_fst
+`"Gu……"@
+` Tengo dolor de cabeza.@
+` Si permanezco despierto, el dolor de cabeza fluye hacia mí.@
+` Antes de enloquecer, cierro los ojos para dormir.\
+bg #000000,%type_lshutter_mid
+` Pero entonces, si duermo, soñaré con él.@
+` Cada vez que él inflige dolor sobre su cuerpo, yo también siento el dolor físico.\
+bg "image\bg\bg_40c.jpg",%type_lshutter_mid
+`"----Agh."@
+` Ese dolor me hace despertar.@
+` Pero tan pronto como lo hago, el espantoso dolor de cabeza regresa.@
+` Así que cierro los ojos---y vuelvo a quedarme dormido.@
+br
+` ………………… Y repito el proceso.@
+` Entro en un sueño ligero, y despierto por el dolor de mi cerebro al ser apuñalado.\
+` Respirar es doloroso.@
+` Jadeo por aire.@
+` Mis extremidades no se mueven, pero tiemblan por el dolor.@
+br
+` No tengo sentido del tiempo.@
+` Una hora se siente como una infinidad.@
+` Sinceramente, yo…
+` ni siquiera pienso que vaya a ser capaz de mantener la cordura hasta el amanecer.\
+bg #000000,%type_crossfade_mid
+playstop
+!w4000
+bg "image\bg\bg_40d.jpg",%type_crossfade_mid
+play "*8"
+br
+` ---La puerta se abre con un chirrido.@
+br
+ld c,":a;image\tachi\aki_t23b.jpg",%type_lshutter_mid
+cl c,%type_lshutter_mid
+` El sonido de pasos que se acercan.@
+` …… Estoy medio dormido, y no puedo decir quién es exactamente.\
+`"---Nii-san, te ves tan exhausto."@
+` Ella suena como si estuviese llorando.@
+`"---Lo siento mucho…… Estás sufriendo mucho, pero no hay nada que pueda hacer."@
+` El peso de unos dedos.@
+`"Esto es lo único---que puedo hacer, Nii-san."@
+` Akiha envuelve mis dedos con los suyos.\
+` Palpitar.@
+` Palpitar.@
+` Palpitar.@
+br
+` Igualando el sonido de mi intravenosa, la temperatura corporal de Akiha fluye hacia mí.@
+br
+` ---Calor.@
+br
+` Siento que el muro podrido de mi consciencia fue reconstruido sólo con eso.\
+`"Resiste, Nii-san.@ Pronto te salvaré."@
+` …… Sus dedos se apartan.@
+` El sonido de pasos desaparece.@
+br
+` ---La puerta se cierra.@
+bg #000000,%type_crossfade_slw
+br
+br
+` …… Medio dormido,
+` tuve ese extraño sueño.\
+playstop
+!w4000
+mov $phasebg,"image\bg\cmo_19.jpg"
+mov $phasetitle_a,":a;image\word\PHIS_11A.PNG"
+mov $phasetitle_b,":a;image\word\day_11.png"
+gosub *left_phase
+bg "image\bg\bg_40a.jpg",%type_crossfade_fst
+bg #000000,%type_nowaitdisp
+bg "image\bg\bg_40a.jpg",%type_crossfade_mid
+bg #000000,%type_nowaitdisp
+bg "image\bg\bg_40a.jpg",%type_crossfade_slw
+play "*1"
+!w1000
+` Han sido muchos amaneceres.@
+` De acuerdo a la hora, es sólo la mañana del día siguiente, pero para mí, habiendo alternado entre estar dormido y despierto, el tiempo y el día no tienen importancia.\
+wave se3
+`"Discúlpeme, Shiki-sama."@
+` Escucho una voz, y Hisui entra a la habitación.@
+ld c,":a;image\tachi\his_t01.jpg",%type_lshutter_mid
+`"Buenos días.@ Le he traído algo para beber."@
+`"………………"@
+` Ni siquiera tengo la energía para decir gracias.@
+` Sólo puedo mirar ansiosamente lo que Hisui me trajo.\
+ld c,":a;image\tachi\his_t23.jpg",%type_crossfade_fst
+`"Shiki-sama, ¿puede beber por su cuenta?@ Si aún no puede moverse libremente, puedo ayudarle."@
+` Ella se inclina sobre mí para revisar mi estado de salud.@
+` Ayudarme a beber, dice ella, pero ni siquiera puede tocar mi cuerpo.@
+` Más importante aún, no puedo permitirle que se acerque a mí.\
+` Es exactamente lo mismo de ayer.@
+` Aunque mi cuerpo no se mueve, cada vez que veo a Hisui o a Kohaku-san, yo----
+br
+bg "image\event\his_h14.jpg",%type_nowaitdisp
+bg "image\bg\bg_40a.jpg",%type_nowaitdisp
+` ---Siento que enloquezco.\
+`"…… Puedo beber agua por mi cuenta.@ Deja el vaso ahí, por favor."@
+ld c,":a;image\tachi\his_t16.jpg",%type_crossfade_fst
+`"Sí, como desee."@
+cl c,%type_lshutter_mid
+` Hisui deja el vaso y espera junto a la pared.@
+` Logro mover mi brazo, y pongo mis labios sobre la taza.@
+` El agua fría es insípida, como aire.@
+` El ardor dentro de mí no puede ser calmado sólo con esta agua, y mi sed no puede ser aliviada por semejante cosa.\
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+` Hisui me mira silenciosamente desde la pared.@
+wave se0
+!w2000
+` …… ¿Qué es esto?@
+` Sólo han sido tres días sin poder moverme, y ya siento celos de Hisui.@
+` Porque puede moverse libremente, y no tiene que sentir este dolor, comienzo a molestarme un poco.\
+`"Hisui."@
+`"Sí, ¿qué desea, Shiki-sama?"@
+`"Si ya terminaste con tu tarea, por favor vete.@ No puedo relajarme con gente a mi alrededor."@
+ld c,":a;image\tachi\his_t17.jpg",%type_crossfade_fst
+`"---Pero Shiki-sama, en ese caso…"@
+`"Te dije que si necesito algo, te llamaré.@ …… No me hagas decir lo mismo una y otra vez.@ Hablar me cansa mucho."@
+ld c,":a;image\tachi\his_t21b.jpg",%type_crossfade_fst
+`"…… Como desee.@ Regresaré más tarde, por favor no se fuerce."\
+cl c,%type_lshutter_fst
+` La puerta se cierra.@
+` …… Hisui viene cada hora para cuidar de mí.@
+` Suelto un profundo suspiro.@
+` Me siento aun más cansado.@
+` Me deprime pensar que hoy tendré que rechazar a Hisui de esta manera más de diez veces.\
+bg #000000,%type_crossfade_mid
+playstop
+monocro #ffff00
+bg "image\bg\bg_40a.jpg",%type_crossfade_mid
+wave se0
+play "*9"
+`"¡Ahh………!"@
+` Un dolor punzante en mi brazo me hace despertar.\
+` Jadeo por aire.@
+` Parece que me quedé dormido en algún momento.@
+` Esa persona aún está en ese sótano, matando su propio cuerpo.@
+`"Maldi…… ción."@
+` Golpeo la pared con mi puño.@
+` ¿Por cuánto tiempo tendré que soportar este dolor?@
+` ¿O este dolor continuará por siempre hasta que me encargué de él personalmente?\
+`"¿Qué demonios es lo que tengo que hacer---!"@
+` Golpeo la pared de nuevo.@
+br
+` …… ¿Huh?@
+br
+`"…… Mi cuerpo, se está moviendo."@
+` Levanto la mitad superior de mi cuerpo.@
+` El movimiento que antes me tomaba una hora, ahora parece muy natural---no, es como siempre ha sido---y puede que me haya curado.\
+`"¡Muy bien!@ …… ¡Estoy mucho mejor…… !@
+` Estoy tan feliz que salto de la cama.@
+br
+wave se4
+` Bump.@
+br
+`"¿Eh?"@
+` Algo cae.@
+` Bajo la mirada.@
+br
+` Sobre la alfombra,
+` está mi antebrazo, que se desprendió de mi codo.\
+playstop
+!w2000
+monocro off
+bg #ffffff,%type_nowaitdisp
+bg "image\bg\bg_40a.jpg",%type_nowaitdisp
+play "*1"
+`"------¡Sssttt!"@
+` …… Supongo que fue un sueño.@
+` Usando toda mi fuerza, levanto la mitad superior de mi cuerpo.@
+` Mi brazo aún está unido a mi cuerpo.@
+` No tengo ninguna sensación, ni siquiera dolor.@
+` Parece que aún no estoy averiado.\
+wave se3
+`"Shiki-sama, ¿puedo entrar?"@
+` …… La voz de Hisui.@
+` Supongo que ha venido para ver cómo estoy otra vez.@
+`"…… Sí, entra."@
+ld c,":a;image\tachi\his_t01.jpg",%type_lshutter_mid
+`"Discúlpeme."@
+ld c,":a;image\tachi\his_t23.jpg",%type_crossfade_fst
+`"Shiki-sama, por favor acuéstese.@ El doctor le ha dicho que no se siente."@
+`"Bueno, no puedo estar durmiendo todo el día.@ Y aunque lo llames doctor, no aprecio nada de lo que hace si no puede ayudarme en absoluto."@
+ld c,":a;image\tachi\his_t05.jpg",%type_crossfade_fst
+` Hisui baja sus hombros con una mirada de arrepentimiento.\
+` …… Me siento enojado.@
+` Si actúa de esa manera, sólo me hará más miserable, ¿por qué no puede entender eso, esta mujer--.@
+`"--Detente.@ Si sigues con esa cara de compasión, sólo me sentiré peor."@
+ld c,":a;image\tachi\his_t21b.jpg",%type_crossfade_fst
+`"---Lo siento mucho, Shiki-sama."@
+`"…… Si tienes algo que hacer, hazlo rápido.@ No puedo hacer nada, así que debería serte fácil cambiar las sábanas o mi intravenosa."@
+`"…… Sí, como desee."@
+cl c,%type_lshutter_mid
+` Hisui cambia mi bolsa de sangre.@
+` Ocuparse de las sábanas manchadas de sudor y sangre al igual que mi pijama, aparentemente es el trabajo de Kohaku-san.\
+ld c,":a;image\tachi\his_t17.jpg",%type_crossfade_fst
+` Aunque ya terminó, Hisui no se retira del costado de la cama.@
+`"¿Hisui……?"@
+`"---Shiki-sama.@ ¿Puedo hacerle una pregunta……?"@
+`"¿?"@
+` La voz de Hisui parece estar temblando.@
+`"…… Sí, ¿de qué se trata?"@
+`"…… Shiki-sama, ¿su cuerpo…… le duele?"@
+wave se0
+`"Qué------"@
+` Por un momento, casi le grito a Hisui.\
+` ¿Me duele el cuerpo?@
+` ¿Puede ella---alguien aparte de mí, entender el dolor que estoy viviendo?@
+` Estoy a punto de enloquecer por la constante sensación de que mi cuerpo está siendo apuñalado, y ni siquiera puede moverme mientras todo esto sucede.@ Ella me mira de esa manera, y me pregunta si me duele el cuerpo---\
+`"---Quién sabe.@ No lo sé.@ Todo mi cuerpo se ha entumecido."@
+`"………… S……… sí."@
+` La voz de Hisui tiembla más y más.@
+`"Siento que mi cuerpo está siendo quemado por un fuego invisible.@ Estoy muriendo poco a poco a partir de mis dedos."@
+`"…………"@
+cl c,%type_lshutter_mid
+` Hisui permanece ahí en doloroso silencio.\
+` ……@
+` ………@
+` …………@
+` …………… Y entonces,\
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"---Shiki-sama, yo…"@
+` La voz de Hisui ya no está temblando.@
+` Una voz tranquila y sin inflexión, como siempre.@
+`"Ya no puedo soportar verlo de esta manera."@
+` Hisui dice todo esto,
+` pero su rostro inexpresivo le hace parecer que no se preocupa por mí.@
+br
+wave se0
+` ---Mi corazón comienza a acelerarse.\
+`"----"@
+` El impulso de desearla se incrementa.@
+` Hisui se para tan cerca de mí.@ Su cuerpo está tan cerca.@
+` Si extiendo mis brazos, puedo hacerla mía---\
+`"Shiki-sama, yo…"@
+`"¡Cállate……!@ ¡No me mires con esa cara!"@
+` Esta furia es totalmente inesperada.@
+` No puedo soportar su cara inexpresiva, así que tomo la bolsa de sangre y se la arrojo.@
+` ¡Splash!@
+ld c,":a;image\tachi\his_t01c.jpg",%type_lshutter_fst
+` La mancha roja se esparce sobre Hisui.@
+` Pero su expresión no cambia.\
+`"---Shiki-sama, por favor no se fuerce."@
+` Esa manera de hablar.@ Esa inexpresiva, voz.@
+`"…… ¡Cállate!@ ¡Es mi cuerpo, puedo hacer lo que quiera con él……!"@
+` Su expresión constante.@ Me crispa los nervios más y más.@
+`"Ya basta.@ Hisui, esto no tiene nada que ver contigo.@ ¡Claro, tú no sientes dolor ni nada parecido!"@
+`"Shiki-sama---por favor, tranquilícese."@
+` Su expresión aún no cambia.@ Sin importar lo que le diga, ella lo recibe tranquilamente.@
+br
+` ---Eso sólo me enfurece más.\
+`"Sí, por supuesto.@ Comparado contigo, yo nunca puedo estar tan tranquilo.@ ¡Porque, aun con lo lastimado que estoy, ni siquiera levantas una ceja, y simplemente me observas con toda tu calma---!"@
+`"Shiki-sama, por favor no se extenúe.@ Si grita de esa manera, su cuerpo podría empeorar."@
+`"¿Por qué…… tú……!@ ¡Ya basta, fuera de aquí!@ ¡Estoy enfermo y cansado de mirarte, no sirves para nada……!"@
+`"---Como desee.@ Por favor discúlpeme, Shiki-sama."\
+cl c,%type_lshutter_mid
+` Hisui deja la habitación.@
+` Mientras lo hace, casualmente veo sus dedos.@
+` Está apretando sus dedos con tanta fuerza, que casi espero ver fluir sangre.@
+` …… Como si estuviese tratando de matar su expresión tanto como le fuese posible.@
+playstop
+`"Ah----"@
+` Instantáneamente, entiendo que es por mi bien.@
+` Desde que le dije que no me tuviese lástima.@
+` Ella simplemente soportó todo el egoísta desahogo de mi furia---\
+`"Maldición… ¿qué estoy haciendo?"@
+` No es que vaya a mejorar si me desahogo con Hisui.@
+` No, no sólo eso, pero yo---
+wave se0
+bg "image\event\his_h14.jpg",%type_nowaitdisp
+bg "image\bg\bg_40a.jpg",%type_nowaitdisp
+`"-----Gah."@
+` …… En verdad hay algo mal en mí.@
+` No sólo me desahogué con ella, sino que además la estaba deseando cuando estaba cerca de mí.@
+` Si ver su piel de cerca y oler su ligera fragancia me hace desear todo de ella, no soy diferente a él.\
+waveloop se1
+#ff0000
+` Por eso  dije  que somos iguales.@
+#ffffff
+`"De nuevo---"@
+#ff0000
+` Porque tú  y yo  somos  la misma persona.@
+#ffffff
+`"¡Cállate---!"@
+#ff0000
+` Correcto, iguales  al igual que yo estuve   encerrado todo este tiempo   tú también.@
+#ffffff
+`"Cállate---"@
+#ff0000
+` En esta habitación  encerrado  de por vida.@
+#ffffff
+`"Qu---"@
+#ff0000
+` Incapaz de dejar  esta prisión  por siempre.@
+#ffffff
+`"T---ú."@
+#ff0000
+` ¡Eternamente  encerrado……!@
+#ffffff
+`"¡Dije, cállate……!"\
+wave se9
+quakex 2,50
+` Golpeo mi cabeza contra la pared.@
+` La voz se detiene.@
+` …… Pero a cambio de eso, mi consciencia se desvanece.@
+`"…………"@
+` Entonces, vuelvo a soñar con el sótano.\
+bg #000000,%type_crossfade_mid
+playstop
+bg "image\bg\bg_40b.jpg",%type_crossfade_mid
+play "*8"
+` ---Cae la tarde.@
+br
+` El dolor de cabeza que me saluda cuando despierto es levemente menor al habitual.@
+`"……………"@
+` Kohaku-san termina de cambiarme la ropa por tercera vez y se retira.@
+` …… Hisui no vino de nuevo después de aquel incidente.\
+`"Por supuesto.@ …… Después de lo que dije, es natural que no regrese."@
+` …… Hisui no volverá a venir.@
+` Al pensar en eso, comienzo a sentir que mi espíritu se va flotando, pero comprendo que es por el bien de ambos.@
+br
+` Si por casualidad, ella viene de nuevo,
+` todo lo que haré será volver a desahogarme con ella, y no merezco su amabilidad.\
+wave se3
+`"…… Por favor discúlpeme, Shiki-sama."@
+` Diciendo eso, Hisui entra a mi habitación.@
+ld c,":a;image\tachi\his_t01.jpg",%type_lshutter_mid
+` Hisui cierra la puerta, pero no se acerca más.@
+` En su mano, sostiene una bandeja con un vaso de agua.\
+`"Le he traído algo para beber, ¿lo desea?"@
+`"--------"@
+` Hisui en verdad es inexpresiva.@
+` Pero, aún puedo ver las yemas de sus dedos temblando.@
+`"…… Hisui."@
+` …… ¿Por qué?@ Después de todas las cosas terribles que dije, ¿por qué aún se preocupa por mí?\
+`"…… Está bien, Hisui.@ No tienes que forzarte; si no deseas estar cerca de mí, está bien."@
+`"Shiki-sama, no me estoy forzando.@ Más bien, es usted quien no debería forzarse, Shiki-sama."@
+` La voz sin emoción de Hisui.@
+` Sus temblorosos dedos.@
+` …… Finalmente me doy cuenta.@
+` No es que su voz no tenga emoción; es que ella está matando la emoción en su voz.\
+`"…… Lo siento.@ Puedes odiarme, si quieres."@
+`"No se preocupe, Shiki-sama.@ No puedo hacer nada, es natural que me regañe."@
+br
+` ----Eso, no es nada natural.@
+` El único que tiene la culpa soy yo.@
+br
+`"…… Lo siento.@ Mi cuerpo está un poco pesado.@ No creo que pueda beber por mi cuenta, ¿puedes ayudarme, por favor?"@
+ld c,":a;image\tachi\his_t02.jpg",%type_crossfade_fst
+`"…… Sí.@ He estado esperando esas palabras."@
+cl c,%type_lshutter_mid
+` Hisui camina hacia mi cama.\
+`"…… Por favor discúlpeme."@
+` Diciendo eso con una voz moderada, ella levanta mi cuerpo.@
+`"¿Eh---Hisui?"@
+ld c,":a;image\tachi\his_t13.jpg",%type_lshutter_fst
+`"Por favor, beba lentamente."@
+` Sosteniendo mi espalda con una mano, lleva el vaso hacia mi boca.@
+cl c,%type_crossfade_fst
+` Hasta ahora, Hisui nunca me tocó sin importar las circunstancias.\
+`"…………"@
+` Trago unos cuantos bocados y sacudo mi cabeza.@
+` Hisui coloca el vaso a un lado.@
+` Entonces pone su mano sobre mi frente.@
+br
+` ----Palpitar.@
+` Mi corazón comienza a latir con fuerza, de una manera distinta a otras ocasiones.@
+`"Hisui---¿está bien, que hagas esto?"@
+` Hisui levanta su mano.@
+ld c,":a;image\tachi\his_t21.jpg",%type_crossfade_fst
+`"…… No parece, tener fiebre."@
+` Hisui murmura esto.@
+` Ni siquiera pensé en ello.@ Todo mi dolor parece desaparecer sólo con eso---\
+`"Hisui…… ¿Puedo pedirte un favor?"@
+ld c,":a;image\tachi\his_t20.jpg",%type_crossfade_fst
+`"Sí, ¿qué desea, Shiki-sama?"@
+`"Aa--podrías por favor, dejar tu mano ahí un poco más."@
+`"¿Por qué…… quiere que haga eso?"@
+`"…… Tu fría mano, se siente bien.@ Si haces eso, puedo relajarme."@
+br
+` ---Todo mi dolor desaparece como si fuese una simple mentira.\
+ld c,":a;image\tachi\his_t03.jpg",%type_crossfade_fst
+` Las mejillas de Hisui se tornan ligeramente rojas, y con una sonrisa, coloca su mano sobre mi frente.@
+cl c,%type_lshutter_mid
+`"…… Qué extraño…… ¿Por qué me siento nostálgico, tan repentinamente……"@
+` Me siento relajado.@
+` Mi consciencia comienza a sentirse a gusto.@
+` …… Sí, ahora que lo pienso, me sentí así cuando Hisui me cuidó de esta manera en una ocasión anterior.@
+br
+`"…… Gracias…… y perdón, Hisui."@
+br
+` Mi consciencia se hunde en el olvido.@
+` Por un breve lapso de tiempo.@
+` Por primera vez en días, caigo en un sueño apacible, sin ningún dolor o sufrimiento.\
+bg #000000,%type_crossfade_slw
+playstop
+!w1000
+bg "image\bg\bg_40d.jpg",%type_crossfade_slw
+play "*1"
+` Es medianoche, e hice que Hisui volviese a su habitación.@
+` Aunque me sentí mejor anteriormente, no sé cuándo volverá ese dolor de cabeza y me hará perder la cordura.@
+wave se0
+bg "image\event\his_h14.jpg",%type_nowaitdisp
+bg "image\bg\bg_40d.jpg",%type_nowaitdisp
+br
+`"…………"@
+` Además, aún hay algo mal en mi cuerpo.@
+` A pesar de que ni siquiera puedo mover mis dedos, no me sorprendería que de pronto se moviesen en contra de mi voluntad para atacar a Hisui o a Kohaku-san.\
+wave se0
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\bg_40d.jpg",%type_nowaitdisp
+`"Auu---"@
+` Mi dolor de cabeza no se detiene.@
+` Mi cuerpo no se mueve.@
+` Tal vez no es sólo dolor lo que es transmitido cuando ese sujeto hiere su propio cuerpo.@
+br
+`"¡Ah---ha,a,haa…………!"@
+br
+` Toso incontrolablemente.@
+` Desde que él comenzó a apuñalarse la garganta con un cuchillo, no he sido capaz de respirar correctamente.\
+`"Ahh…… gghaa…… ah…… ggggg."@
+br
+` *resollo* *resollo*
+br
+` Mi voz ronca hace eco a través de la noche.@
+` A menos que me concentre, ni siquiera puedo realizar una acción tan simple como respirar normalmente.@
+br
+`"…… ¿Éste es…… el fin?"@
+br
+` Este cuerpo debío haber muerto hace ocho años.@
+` No es que nunca haya pensado que terminaría de esta manera.\
+wave se0
+bg "image\event\his_h14.jpg",%type_nowaitdisp
+!w500
+bg "image\bg\bg_40d.jpg",%type_nowaitdisp
+`"Ha……… haha, ha."@
+` Pero quizás esto sea lo mejor.@
+` Siempre lo he visto matando gente en mis sueños.@
+` Pero, quizás "él" nunca existió desde un principio---tal vez siempre he sido yo.@
+br
+` …… Recuerdo las palabras de Yumizuka.@
+br
+` Ella dijo que yo era un verdadero asesino.@
+` En ese momento, solamente podía negarlo, pero ahora---ni siquiera tengo la fuerza para hacerlo.\
+` Mi mente trastornada.@
+` Mi cuerpo averiado.@
+` Los sueños homicidas que tengo.@
+` La voz que hace eco dentro de mí, la voz que no es mía.@
+` …… El Tohno Shiki que no puede dejar de imaginar cómo violó a Hisui.\
+wave se0
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\bg_40d.jpg",%type_nowaitdisp
+wave se0
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\bg_40d.jpg",%type_nowaitdisp
+`"………… ¡Ah!"@
+` El dolor de cabeza que se siente como si mi cráneo se agrietara.@
+` Es como el sonido que hace la personalidad del asesino al devorar mi alma.@
+wave se0
+bg "image\bg\cmo_06.jpg",%type_nowaitdisp
+bg "image\bg\bg_40d.jpg",%type_nowaitdisp
+br
+` …… El recuerdo olvidado de ese incidente.@
+` Mi figura bañada en sangre.@
+br
+` Entonces, tal vez mis sueños homicidas podrían ser recuerdos olvidados que están surgiendo una vez más.\
+wave se0
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\bg_40d.jpg",%type_nowaitdisp
+wave se0
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\bg_40d.jpg",%type_nowaitdisp
+`"---¡Gah……!@ ¡Ah, auuuu……!"@
+` Dolor inunda mi consciencia.@
+` Puedo escuchar una voz que me dice que mate algo, cualquier cosa.@
+br
+` …… Ah, pero no hay problema.@
+` Aun si soy el asesino, de ninguna manera podría matar a alguien en el estado en que me encuentro.@
+` Justo como él dijo, estoy encerrado aquí, incapaz de dar siquiera un paso hacia afuera por mi cuenta----\
+bg #000000,%type_crossfade_slw
+playstop
+!w3000
+mov $phasebg,"image\bg\bg_48a.jpg"
+mov $phasetitle_a,":a;image\word\PHIS_12A.PNG"
+mov $phasetitle_b,":a;image\word\day_12.png"
+gosub *left_phase
+bg "image\bg\ima_10b.jpg",%type_nowaitdisp
+!w1500
+` *resollo*, *resollo*, *resollo*
+br
+wave se0
+!w1000
+` *resollo*, *resollo*, *resollo*
+br
+wave se0
+!w1000
+` *resollo*.@ *resollo*.@ *resollo*.@ *resollo*.@
+br
+wave se0
+`"…… ¿¡Shiki-sama!?@ ¡Por favor, resista, Shiki-sama……!"\
+` *resollo* *resollo* *resollo* *resollo*
+br
+!w1000
+wave se0
+` *resollo* *resollo* *resollo* *resollo*
+br
+!w1000
+wave se0
+` *resollo* *resollo* *resollo* *resollo*……!@
+!w1000
+br
+wave se0
+`"¡Por favor discúlpeme, Shiki-sama……!"\
+quakex 2,200
+bg "image\bg\bg_40a.jpg",%type_lcartain_mid
+play "*2"
+` *resollo* *resollo* *resollo* *resollo*
+br
+wave se0
+`"…… ¿H…… uh…… Hisu,i……?"@
+ld c,":a;image\tachi\his_t04.jpg",%type_lshutter_fst
+`"Gracias al cielo…… Ha despertado, Shiki-sama."@
+` Hisui me habla con una voz cortada.@
+br
+` *resollo* *resollo* *resollo* *resollo*
+br
+wave se0
+`"¿…… ?"@
+` No entiendo por qué Hisui me está mirando de esa manera.\
+`"…… ¿Qué sucedió Hisui?@ ¿Por qué me miras así, ocurrió algo?"@
+ld c,":a;image\tachi\his_t23.jpg",%type_crossfade_fst
+`"………… No, no es nada.@ Shiki-sama, por favor relaje su cuerpo; no necesita pensar en nada."@
+`"…… Sí, ya estoy haciendo eso."@
+br
+` *resollo* *resollo* *resollo* *resollo*
+br
+wave se0
+`"Pero Hisui, ¿no hay mucho ruido esta mañana?@ No puedo dormir bien con todos esos resollos que no sé de dónde vienen."@
+ld c,":a;image\tachi\his_t07.jpg",%type_crossfade_fst
+`"…… Shiki-sama, eso es…"@
+cl c,%type_crossfade_fst
+` Hisui se queda en silencio con una expresión forzada en su rostro.\
+` *resollo* *resollo* *resollo* *resollo*
+br
+wave se0
+` Los resollos continúan.@
+` Puedo escucharlos cerca de mí.@
+`"¡----!"@
+` Toso.@
+` Sólo durante ese instante, el sonido se detiene.@
+`"A---"@
+` …… Bueno, me siento estúpido.@
+` Todo este tiempo, ese ruido era sólo mi respiración.\
+`"Vaya.@ No es que haya cogido un resfriado."@
+ld c,":a;image\tachi\his_t21b.jpg",%type_crossfade_fst
+`"…………"@
+` Con los labios apretados, Hisui baja su cabeza.@
+` Parece que quiere decir algo, pero no puede.@
+` …… Hisui parece estar actuando de esa manera.\
+`"Hisui, ¿por qué estás tan callada?@ No has hecho nada malo, relájate."@
+ld c,":a;image\tachi\his_t04.jpg",%type_crossfade_fst
+`"---Sí.@ Si hay algo que pueda hacer, haré mi mejor esfuerzo para realizarlo."@
+`"Um, no tienes que estar tan tensa, Hisui.@ Mientras estés aquí, puedo relajarme, y es mejor para mí que sonrías."\
+ld c,":a;image\tachi\his_t17.jpg",%type_crossfade_fst
+`"…… Um, ¿está expresión es aceptable?"@
+` Hisui me mira con una cara increíblemente seria.@
+` …… Sinceramente, la expresión que tiene ahora no es nada parecida a la sonrisa que ha mostrado anteriormente, pero ver a Hisui esforzarse tanto me hace feliz.\
+`"Sí, puedes relajarte más si quieres.@ …… ¿Podrías traerme algo para beber?@ Mi garganta está tan seca que difícilmente puedo respirar."@
+ld c,":a;image\tachi\his_t02.jpg",%type_crossfade_fst
+`"Sí, ya tengo una bebida lista para usted."@
+cl c,%type_lshutter_fst
+` Hisui desaparece de mi vista.@
+` La bebida probablemente está junto a la pared.@
+` Hisui regresa con una bandeja plateada y coloca su mano sobre mi espalda para levantarme.\
+wave se0
+playstop
+br
+` ---En ese instante.@
+br
+bg "image\event\his_h14.jpg",%type_nowaitdisp
+bg "image\bg\bg_40a.jpg",%type_nowaitdisp
+` Tan pronto como siento su mano sobre mi espalda, ocurre con desagradable velocidad.\
+wave se0
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\bg_40a.jpg",%type_nowaitdisp
+`"Shiki-sama, ¿está bien así?"@
+wave se0
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\bg_40a.jpg",%type_nowaitdisp
+bg #9c0120,%type_nowaitdisp
+`"No es bueno que lo beba de un solo trago, por favor beba lentamente."@
+wave se0
+bg "image\bg\bg_40a.jpg",%type_nowaitdisp
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\bg_40a.jpg",%type_nowaitdisp
+bg #9c0120,%type_nowaitdisp
+`"¿Shiki-sama?@ Si no abre la boca, se derramará."@
+wave se0
+bg "image\bg\bg_40a.jpg",%type_nowaitdisp
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\bg_40a.jpg",%type_nowaitdisp
+bg #9c0120,%type_nowaitdisp
+br
+`"¡Aléjate------!"\
+bg "image\bg\bg_40a.jpg",%type_nowaitdisp
+quakex 2,10
+wave se9
+`"¡Kyaa!"@
+` *Crash*
+` El vaso cae al piso.@
+` Hisui se sienta en el suelo, hacia donde la empujé.@
+` Comienzo a resollar una vez más.@
+` Mi respiración es tan entrecortada como la de una bestia salvaje.\
+ld c,":a;image\tachi\his_t24.jpg",%type_crossfade_fst
+`"Shiki----sama."@
+` Hisui no está molesta porque la empujé; de hecho, está aun más preocupada.@
+ld c,":a;image\tachi\his_t21b.jpg",%type_crossfade_fst
+`"P, por favor perdóneme…… Lo moví sin preguntar, no debí haber hecho algo tan vergonzoso---"@
+`"No---no es eso.@ ¡No es tu culpa……!"@
+` …… El culpable.@
+`"No es eso, en absoluto.@ No has hecho nada malo."@
+` El culpable,
+` soy yo, resollando con aun más fuerza, deseando el cuerpo de Hisui.\
+ld c,":a;image\tachi\his_t23.jpg",%type_crossfade_fst
+`"¿Shiki------sama?"@
+`"Está bien, por favor vete…… Te lo ruego, sólo por ahora, por favor déjame solo."@
+ld c,":a;image\tachi\his_t21.jpg",%type_crossfade_fst
+`"…… Shiki-sama, si eso es lo que desea."@
+` La voz de Hisui tiembla.@
+cl c,%type_lshutter_mid
+` Ella se retira de la habitación.\
+bg #000000,%type_crossfade_mid
+!w3000
+bg "image\bg\bg_40a.jpg",%type_crossfade_mid
+play "*9"
+` -------------------------------------------------.\
+` El tiempo corre.@
+` Simplemente acostado en la cama, con mi cuerpo en este estado, pierdo todo sentido del tiempo.@
+br
+` …… ¿Corrí a Hisui de mi habitación hace una hora, o fue hace treinta minutos?@ No puedo estar seguro.@
+` Después de quedarme solo, el reloj ha avanzado tres horas.@
+` Pero no puedo confiar en él.@
+` El reloj aparentemente redondo se ve distorsionado.\
+` *resollo* *resollo* *resollo*
+br
+` Todo lo que puedo escuchar son mis resollos.@
+` El reloj distorsionado afirma que ya es mediodía.@
+` El examen médico es como a las dos, así que podré proteger mi cordura yo mismo por un rato más.@
+br
+` …… Bueno, pero entonces…
+` Si estoy solo, esos "dolores de cabeza" regresarán, y podrían robarme toda la razón.\
+wave se3
+ld c,":a;image\tachi\his_t01.jpg",%type_lshutter_fst
+`"Discúlpeme."@
+` Cerrando la puerta silenciosamente, Hisui entra a mi habitación.@
+` Hisui entra cargando una bandeja con un vaso de agua y alguna clase de medicina.\
+`"…… Hisui.@ Todavía no es hora del examen, ¿verdad?"@
+`"Cierto.@ Sólo pensé que podría tener sed."@
+cl c,%type_lshutter_mid
+` Ella asegura la puerta con un tintineo metálico y se acerca a mi cama.@
+br
+` ……… ¿Asegura, la puerta……?\
+ld c,":a;image\tachi\his_t01.jpg",%type_lshutter_mid
+`"¿Puede levantar su cuerpo?@ Si no puede, lo asistiré gustosamente."@
+`"No, no tengo sed.@ Además, ¿por qué viniste aquí?@ Te dije que me dejaras solo."@
+ld c,":a;image\tachi\his_t08.jpg",%type_crossfade_fst
+`"Me niego.@ No puedo dejarlo solo en ese estado."@
+` Después de decir esto con una voz clara, ella pone sus manos sobre mis hombros.\
+`"Oye---¿Hisui?"@
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"Por favor, si no puede levantarse por su cuenta, sólo dígalo."@
+cl c,%type_lshutter_fst
+`"¿¡----!?"@
+` Ella levanta mi cuerpo rápidamente, tirando de él con fuerza.@
+` Hisui toma la medicina y la mete en mi boca por la fuerza.\
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"Por favor beba.@ Es una medicina especial que mi hermana hizo para usted."@
+`"¡N……!"@
+` El agua baja por mi garganta.@
+`"¡N-,n,n-……!"@
+` …… Quizás sea porque está molesta por lo de antes, pero, está actuando de una manera impetuosa.@
+` Se mueve como una muñeca certera y flexible sin voluntad propia.@
+`"¡Ha---puhaa……!@ ¿Qué estás haciendo, tan repentinamente!@ Es verdad que me he estado desahogando contigo, pero, esto, es demasiado."@
+bg #000000,%type_crossfade_mid
+bg "image\bg\bg_40a.jpg",%type_crossfade_fst
+br
+` ¿Hu-----h?\
+quakey 2,100
+wave se4
+` Mi cuerpo cae sobre la cama.@
+` …… No puedo dar nada de fuerza a mis movimientos.@
+` No tengo fuerza, pero tampoco me siento mal.@
+` Más bien, es como una sensación de inconveniencia.@
+` Mi cuerpo comienza a calentarse desde su centro.@
+br
+` ---Esto es, como.@
+` Esa sensación de estar vivo.@ ¿Cuánto tiempo ha pasado desde la última vez que me sentí así----\
+`"…… No puedo creerlo.@ Por alguna razón, de esta manera--"@
+` Siento que podría incluso caminar.@
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"No debe.@ Mi hermana me ha dicho que no funcionará a menos que recobre lentamente los sentidos de su cuerpo.@
+` Por favor, descanse un poco más, Shiki-sama."@
+`"Eh…… Ah, de acuerdo.@ Si tu lo dices, pero, ¿qué vas a hacer?"@
+`"Me encargaré de su cuerpo, Shiki-sama."@
+cl c,%type_lshutter_mid
+` Con eso,
+` Hisui toma sus fríos dedos y los arrastra sobre mi pecho.\
+`"¡------!"@
+` Me estremezco.@
+` Al igual que el cuerpo en recuperación, lo que había sido silenciado surge de nuevo.@
+`"¡Hisui……!@ ¡Si quieres tomarme el pulso, usa mi brazo……!"@
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"No, no le estoy tomando el pulso.@ Estoy examinando sus latidos."@
+cl c,%type_crossfade_fst
+`"¡N----!"@
+` Hielo…
+` Sus fríos dedos se mueven de mi pecho hacia mi estómago.@
+br
+` Deslizándose hacia abajo.@ Desde la abertura en mi camisa, sus dedos sienten mi piel.\
+`"¡H,H, Hisui……!"@
+ld c,":a;image\tachi\his_t01b.jpg",%type_crossfade_fst
+`"Por favor quédese quieto.@ Si se mueve, la medicina no funcionará."@
+`"¿Eh---en… serio……?"@
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"Sí.@ Esta medicina es fácilmente disuelta por su cuerpo; si se mueve, se disolverá rápidamente.@ Mi hermana me ha dicho que eso diluiría los elementos de la droga, y que debería dejar que se disuelva lentamente para que haga efecto."@
+`"U…… Si Kohaku-san lo dice, supongo que así debe ser."\
+` Me sonrojo.@
+` Los dedos de Hisui, que normalmente no tocan a los hombres, están sintiendo mi piel directamente.@
+br
+` A este paso, voy a---\
+playstop
+bg #000000,%type_nowaitdisp
+bg "image\bg\bg_40a.jpg",%type_crossfade_slw
+bg #000000,%type_nowaitdisp
+bg "image\bg\bg_40a.jpg",%type_crossfade_mid
+bg #000000,%type_nowaitdisp
+bg "image\bg\bg_40a.jpg",%type_crossfade_fst
+`"¿H………… uh?"@
+ld c,":a;image\tachi\his_t18.jpg",%type_crossfade_fst
+`"Su temperatura corporal es constante.@ A este paso, será incapaz de pensar en cosas complicadas por un rato."@
+`"………… ¿Qué?"@
+br
+` ¿Qué estás…
+` diciendo   ahora   Hisui ?\
+play "*4"
+`"Sin embargo, tomará más tiempo, así que hablemos para pasar el tiempo.@ …… Sí.@ Hablemos sobre su adorada niñez, Shiki-sama."@
+` Aún de pie,
+` ella me mira como si observase a un cadáver dentro de un ataúd.\
+`"¿Lo recuerda?@ Cuando jugaba en el jardín, usted siempre miraba hacia la ventana donde yo estaba.@
+` Yo siempre esperaba con ansias ese momento.@ Todos en la mansión me trataban como si no existiese."\
+bg "image\event\his_e02.jpg",%type_nowaitdisp
+!w3000
+bg "image\bg\bg_40a.jpg",%type_nowaitdisp
+ld c,":a;image\tachi\his_t18.jpg",%type_crossfade_fst
+`"Sus ojos siempre me miraban y hablaban sin palabras.@ 'Apresúrate y sal a jugar con nosotros,' decían.@
+` Pero yo no dejaba la mansión.@ No sabía cómo, ni siquiera sabía lo que eso significaba."@
+br
+` ---La voz de Hisui es… muy lejana.@
+` Su desinteresada voz.@ Su voz parece carecer de tonos oscuros, pero aun así----\
+`"Yo no miraba por la ventana para encontrar un significado.@
+` Simplemente no quería estar en la habitación de Makihisa-sama, así que estaba allí, el único lugar en que me era permitido estar fuera de su habitación.@
+` Por lo tanto, no significaba nada para mí.@ Las figuras de SHIKI-sama y Akiha-sama jugando en el jardín no eran diferentes al sol o a los árboles."\
+`"---Si usted.@ Si usted nunca me hubiese notado, habría estado bien.@ Si no me hubiese saludado con su mano, quién sabe cómo habría terminado yo.@
+` Lo que soy ahora, es totalmente culpa suya."@
+br
+` Diciendo eso,
+ld c,":a;image\tachi\his_t29.jpg",%type_crossfade_fst
+` Hisui sonríe felizmente.\
+`"Todos los días, esperaba con ansias ese momento.@ Siempre lo veía buscándome.@
+` Todos los días, esos ojos me decían que fuese a jugar, que saliese de ahí.@
+` …… ¿No es gracioso?@ Porque usted estaba ahí, noté por primera vez que tenía piernas que podían llevarme afuera."\
+`"¿Está escuchando Shiki-sama?@ Aunque la droga esté funcionando, por favor no se distraiga.@
+` Desde que era niña, siempre quise hablar con usted de esta manera."@
+br
+` …… La boca de Hisui está distorsionada.@
+` Felicidad.@ Sus labios toman la forma de una sonrisa, como si estuviese divirtiéndose.\
+`"En verdad lo esperaba con ansias.@ Pero no era para que usted me llevase afuera.@ Sabía que tal cosa era imposible."\
+`"Habría estado bien si nunca hubiese sabido lo que era la esperanza.@ De esa manera tampoco habría conocido la desesperación.@
+` Pero usted siempre me decía con sus ojos lo fácil que era, que ir afuera sería mucho mejor.@
+` …… Es verdad, yo siempre esperaba con ansias que usted saliese a jugar en las tardes.@
+` Era la única persona sobre la que podía liberar mis emociones.@ …… Sin importar cuál emoción fuese, apuesto que no sabía cuánto pensaba en usted todos los días."\
+cl c,%type_crossfade_fst
+` ---No puedo escuchar muy bien su voz.@
+` Ella simplemente sigue hablando.@
+` Mi mente está confusa, y no puedo captar bien lo que está diciendo.@
+` Sólo que----lo que Hisui está diciendo en este momento, es una maldición.@
+wave se0
+br
+`"A-----"@
+br
+` Cuando reacciono, todo mi cuerpo está ardiendo.@
+` Mi pulso se acelera, y mis venas se sienten como si fuesen a explotar.@
+` A pesar de que estuve tan cerca de la muerte, siento que la vitalidad regresa a mis órganos.\
+`"Ca----calor, Hisui, hace mucho---"@
+` Calor.@ Hace tanto calor, que voy a enloquecer.@
+` Estas sábanas.@ Estas sábanas estorban.@ Esta pijama también está demasiado caliente.@ Siento que tengo puesto un abrigo de invierno en verano.@
+`"Ha----a, gah----"@
+` Pero aún no puedo moverme.\
+` Este cuerpo que no ha podido moverse durante tres días, no puede empezar a funcionar tan fácilmente.\
+`"Hisui, ¿¡qué me está sucediendo……!?@ ¡Estoy caliente, pero mi cuerpo no se mueve……!"@
+ld c,":a;image\tachi\his_t19.jpg",%type_crossfade_fst
+`"---Sí.@ Sin importar cuánta energía sea restaurada, está perdiendo energía a un ritmo mayor.@ Por lo tanto, esta droga sólo puede restaurar su energía en esta pequeña parte suya."\
+cl c,%type_lshutter_mid
+playstop
+` Hisui dice eso, y…
+` Toma los dedos sobre mi estómago y los mueve hacia abajo.@
+` Ahí abajo, lo que ha estado parado desde antes, es lo que podría llamarse un pilar.@
+`"¡-----!"@
+` Mi espalda comienza a arquearse levemente.@
+` Los dedos de Hisui se arrastran sobre el caliente y duro bulto, y lentamente bajan mis pantalones.@
+`"¡…… !@ ¡No bromees así……!@ Por qué---te mantuve lejos para que esto no pasara, pero si sigues haciendo esto, voy a---"@
+` No puedo contener mi lujuria… por más tiempo.\
+ld c,":a;image\tachi\his_t02.jpg",%type_crossfade_fst
+play "*8"
+`"…… Shiki-sama.@ Ahora atenderé sus… partes bajas."@
+` Con su cara sonrojada de vergüenza, Hisui dice una cosa tan increíble.@
+`"------"@
+` Quiero decirle que se detenga, pero no puedo decir nada.@
+` No puede dejarle hacer esto.@ Pero---con mente propia, mi asta comienza a palpitar, pidiendo los dedos de Hisui.\
+`"------¿¡Qué… estoy pensando!?"@
+` Intento gritar, pero sólo sale un susurro.@
+br
+` Puedo escuchar el palpitar de mi sangre.@
+` Recuerdo los brazos y piernas de esa muñeca violada en mis sueños.\
+ld c,":a;image\tachi\his_t18.jpg",%type_crossfade_fst
+`"Shiki-sama.@ ¿Se está conteniendo?"@
+`"¡Claro que lo estoy……!@ Hacerte esto… a ti---"@
+`"Shiki-sama.@ Con el estado de cuerpo, no debería forzarse."@
+br
+` Los dedos de Hisui comienzan a acariciarme suavemente.@
+` ¿Ya está saliendo semen previo?@ Un hilo se forma entre sus dedos.\
+`"Por favor relájese.@ Hagamos algo que usted desea.@ …… En verdad no quiero verlo estresar su corazón y su cuerpo, Shiki-sama."@
+`"------"@
+` Eso es---tal vez sea la verdad, pero.@
+br
+bg #9c0120,%type_nowaitdisp
+` …… Calor.@
+` Maldición, tanto calor----que no puedo pensar las cosas con calma.\
+bg "image\bg\bg_40a.jpg",%type_nowaitdisp
+ld c,":a;image\tachi\his_t19.jpg",%type_crossfade_fst
+`"Shiki-sama.@ Por favor déjeme hacerle sentir un poco más vivo."@
+` Los dedos de Hisui sujetan mi asta con firmeza.\
+`"Nosotras tenemos ese tipo de poder.@
+` Si recibimos algo de sus fluidos corporales, podemos ayudarle un poco.@ …… Así que, por favor no diga nada, y sólo resista esto."@
+` Puedo sentir si caliente respiración sobre "mí".@
+` La respiración de Hisui, a diferencia de sus dedos---es tan caliente que casi quema.\
+bg #000000,%type_crossfade_mid
+`"…… Entonces, por favor discúlpeme."@
+` Después de decir esto con una voz vacilante, ella baja su cara hacia mi ingle.@
+` ¿Será debido a la medicina, o quizás a sus dedos?@
+` A diferencia del resto de mi cuerpo, que está completamente inmóvil, mi asta está totalmente erecta.\
+` Un caliente y erecto pilar de carne.@
+` Sus dedos continúan tocándolo con un poco de nerviosismo.\
+`"¡……!@ H,Hisui, esto es---"@
+` Comienzo a decirle que está mal, pero antes de que pueda…
+` Hisui sostiene la base de mi pene con ambas manos, como si abrazara algo extremadamente importante para ella.@
+`"Nn……"@
+` Hisui respira profundamente.@
+` Y entonces, una sensación de calor distinta desciende sobre mí.\
+bg "image\event\his_h01.jpg",%type_crossfade_mid
+` ------Mi cuerpo se enciende en llamas.@
+br
+` Nunca antes he tenido esta sensación.@ Mi corazón comienza a latir con fuerza.@
+` Los tiernos labios de Hisui rodean mi punta.@
+` Con suave presión, lentamente comienza a succionar.\
+`"--------"@
+` Mi mente se queda totalmente en blanco.@
+` No tenía idea de que algo pudiese sentirse tan bien.@
+` Sólo ver a mi asta desaparecer entre sus labios hace hervir mi sangre.\
+`"Nn…… ha, n……"@
+` La respiración de Hisui comienza a hacerse salvaje, probablemente porque tiene dificultad para respirar.@
+` Su rostro.@ Sólo al mirarla de esa manera, mi razón se desmorona por completo.@
+` Su cara sonrojada mientras trata de hacer su labor con seriedad.@
+` Sus dedos se mueven incómodamente, apretando desesperadamente mi hinchado miembro.\
+`"Ha…… n, na…… n."@
+` La respiración saliendo de su nariz y su boca me hace cosquillas.@
+`"------"@
+` Hace cosquillas, y me hace sentir más placer.@
+` ¿Es la salive de Hisui, o tal vez mis propios líquidos?@
+` Mi asta comienza a cubrirse de líquido pegajoso.\
+` ----Mi corazón palpita.@
+br
+` Mi pulso se acelera aun más que antes.@
+` Sus dedos me aprietan con firmeza.@
+` Su lengua me lame con vacilación.\
+`"Nn----ha, n ,……"@
+` Sus labios sin experiencia aún son débiles.@
+` Pero su lengua aún acaricia la punta de mi asta.@
+` Gradualmente, su lengua se hace más activa.@
+`"…… ¡Kk…… Hisu… i……!"@
+` Esta sensación se dispara en mi columna.@
+br
+` ----Mi corazón late.@
+br
+` …… Hace un momento, el hecho de que Hisui sea quien hace esto encendió mi cuerpo en llamas.@
+` Pero eso ya terminó.@
+` Ahora parece haberle cogido el tino a esto, haciéndolo com más y más confianza.\
+`"…… Mn…… nna---n……"@
+` Hisui comienza a respirar violentamente.@
+` La sensación de fluido viscoso.@
+` Ella usa la punta de su lengua para lamer la abertura en la punta de mi pene.@
+`"¡K----ha……!"@
+` Mis caderas saltan un poco.@
+` Intento desesperadamente resistir la sensación viajando de mi ingle hacia mis testículos.\
+`"Hisu…… i, detente---"@
+` Mis latidos rugen en mis oídos.@
+` La caliente sensación comienza a acumularse e intensificarse…
+`"Nn…… na…… n---"@
+` Hisui no se detiene.@
+` Poco a poco.@
+` Sus labios comienzan a bajar más.\
+` ----Palpitar.@
+br
+`"…… N, …… n, …… u…… n."@
+` El cabello ondulante de Hisui.@
+` Los labios de Hisui, que no se estaban moviendo anteriormente, comienzan a subir y bajar.@
+br
+` Con un ruido de succión.@
+` La saliva de Hisui y mis fluidos continúan deslizándose arriba y abajo entre sus labios----\
+`"Ah---a,a----"@
+` Un jadeo escapa de mis labios.@
+` La sensación de Hisui envolviéndome con su boca.@ La mezcla de placer y dolor que se dispara de mis caderas, atraviesa mi espalda y llega a mi cerebro.@
+bg "image\event\his_h02.jpg",%type_crossfade_mid
+br
+` El sonido de suave succión.@
+` Estos eróticos sonidos se hacen más fuertes.@
+` Hisui continúa succionando mi asta apasionadamente.\
+`"Nn…… nn,n…………!"@
+` Apretando.@
+` Los dedos de Hisui me aprietan con más fuerza.@
+`"-----¡A… ha……!"@
+` …… Mi respiración está fuera de control.@
+` …… Comienzo a quedarme en blanco.\
+bg "image\event\his_h01.jpg",%type_crossfade_mid
+`"A…… n, nmu……"@
+` La respiración de Hisui casi suena dolorosa.@
+` Con la boca llena, las exhalaciones de su nariz fluyen sobre mi pene.\
+` -----Palpitar.@
+br
+` Mi asta comienza a mojarse.@
+` No sólo eso, los dedos de Hisui también están mojados.@
+` Sucio.@
+` Esos hermosos dedos están cubiertos por dos tipos de fluidos, los suyos y los míos.\
+` -----Mi… corazón… está palpitando…
+br
+` Siento que me dice que enloquezca.\
+`"…… Nn…… Shiki…… sama."@
+` Hisui de repente se aparta de mi asta… tal vez el olor es demasiado para ella.@
+` Un hilo.@
+` Un delgado hilo parte de sus labios, conectándonos.\
+bg "image\bg\bg_40a.jpg",%type_crossfade_mid
+` El sonido de respiraciones.@
+` Salvajes respiraciones.@
+` Saliendo de mí, no de Hisui.@
+br
+` ------Palpitar.@
+br
+` Mi corazón está a punto de estallar.@
+` Mi cuerpo está a punto de apagarse.@
+` Este---este tipo de placer… no lo deseo.@
+` No es suficiente.@
+` Ni siquiera está cerca de ser suficiente.\
+`"…… Shiki-sama…… ¿se está, sintiendo… mejor……?"@
+` La voz de Hisui está llena de vacilación.@
+` *jadeo*…… *jadeo*…… *jadeo*……
+` Aún incapaz de mover siquiera mis brazos, me limito a inhalar y exhalar.@
+`"…… Si eso se sintió bien…… entonces por favor, resista… sólo un poco más."@
+` Respirando profundamente, Hisui una vez más baja su cabeza.\
+bg "image\event\his_h01.jpg",%type_crossfade_mid
+`"Nn-----"@
+` Una vez más, comienza a acariciarme con el interior de su boca.@
+br
+` -----Mi corazón palpita.@
+br
+`    Palpitar.@
+`    Palpitar.@
+`    Palpitar.@
+`    ¡Palpitar------!\
+`"…… No es… suficiente……"@
+`"Ah…… ¿Shiki… sama……?"@
+`"Hisui…… más profundo……"@
+` Diciendo eso.@
+` Mis brazos agarran su cabeza.@
+`"¡……!@ Shiki-sama, ¿qué está……!"@
+`"Hi… sui----"@
+` Doy algo de fuerza a mis brazos.@
+` Y empujo su cabeza hacia abajo por la fuerza.\
+bg "image\event\his_h02.jpg",%type_crossfade_mid
+`"¿¡Nn-----!?"@
+` Sus labios hacen un húmedo sonido de deslizamiento.@
+`"¡Nn---,n… n----!"@
+` Hisui intenta echar su cabeza hacia atrás.@
+` Pero… mis brazos no se lo permiten.\
+`"Hisui---más---"@
+` Respirando entrecortadamente, digo algo tan egoísta.@
+`"¡Nn----ha,n,ah---!"@
+` Hisui trata de respirar.@
+` Antes, era Hisui abrazándome con su boca.@
+` Pero ahora es diferente.@
+` Ahora empujo toda mi asta dentro de su boca.\
+`"¡Nn-----n, n----!"@
+` Abriendo su boca, Hisui logra meterla completa.@
+` No hay semejanza con el entusiasmo de antes.@
+` Ahora sólo pareciera que estuviese tratando de escapar.\
+`"…… Hisui…… ¿esto duele?"@
+`"Nn----n, mu."@
+` Su respiración fluye sobre mi asta.@
+` Comienzo a sentir la presión de sus dientes.@
+`"Ya veo.@ Entonces te soltaré."@
+` Aparto mis manos de su cabeza.@
+`"Nn…… ha, ah."@
+` Respirando dolorosamente, Hisui intenta levantar su rostro.@
+bg "image\event\his_h01.jpg",%type_crossfade_mid
+`"No.@ Hisui---quédate ahí."@
+` Hisui se congela.\
+`"-------"@
+` Confundida, Hisui vacila y entonces.@
+`"N…… nn,ha……"@
+` Hisui me traga más profundamente y empieza a moverse.\
+bg "image\event\his_h02.jpg",%type_crossfade_mid
+` ----Palpitar.@
+br
+`"Nn…… mu, nn, n……"@
+` Arriba y abajo.@
+` Sus ardientes labios suben y bajan.@
+`"A…… n, n, Ah……"@
+` En vez de inhalar aire, ella me está inhalando a mí.@
+` La sensación de estar dentro de la boca de una mujer.\
+bg "image\event\his_h01.jpg",%type_crossfade_mid
+`"Nn---na,n----"@
+` Hisui ya no puede retener su saliva.@
+` Está fluyendo mucho más que antes.@
+` Desliza… Desliza.@
+` La cara ensuciada de Hisui.@
+`"Ha----Hisui, es muy----"@
+` Igualando el deslizamiento de Hisui, comienzo a mover mis caderas.@
+` Golpeo la pared de su garganta.\
+bg "image\event\his_h02.jpg",%type_crossfade_mid
+`"¡Ha---n, nnn---!"@
+` Debo estarla lastimando ya que empieza a morder.@
+` Hisui muerde con suficiente fuerza para dejar marcas de dientes.@
+`"¡----!"@
+` Tratando de escapar de esos dientes, muevo aun más mis caderas.@ "¡nn-----!"@
+` sus firmes dedos.@
+` Su cabello ondula salvajemente.@
+` Ella continúa acariciándome.\
+bg "image\event\his_h01.jpg",%type_crossfade_mid
+`" n…… ¡Hisui, más……!"@
+`"¡Nn-----a, Shiki… sama---!"@
+` Escucho su voz.@
+` La sangre palpita en mi asta.@
+` Abriendo su boca, la traga completa.@
+` La sensación de ser succionado, arriba y abajo.\
+bg "image\event\his_h02.jpg",%type_crossfade_mid
+`"¡Nn----,……!"@
+` Mi semen comienza a elevarse.@
+`"¡Ha,a---voy a acabar, Hisui……!"@
+` Hisui comienza a retroceder.@
+` Pero mis brazos se mueven solos.@
+` Empiezo a eyacular.@
+` No intento contenerme, y no dejo escapar a Hisui.@
+br
+` En mi éxtasis, libero todo dentro de la boca de Hisui.\
+`"¡Nn----Ah,nn------!!"@
+` Splash.@
+`"¡N----,n----!"@
+` Hisui intenta retroceder con una expresión de dolor.@
+` Pero mis brazos no lo permiten.@
+` La fuerzo a tomarlo todo.\
+`"----Ah, ah, ahh--!"@
+` Al mismo tiempo, su garganta comienza a moverse.@
+` *jadeo*…… *jadeo*…… *jadeo*……
+` Con eso, la dejo ir.\
+bg #ffffff,%type_crossfade_mid
+playstop
+bg "image\bg\bg_40a.jpg",%type_crossfade_mid
+` Respirando.@
+` Hisui cae al suelo.@
+` Respirando salvajemente.@
+` Ambos estamos respirando desesperadamente.@
+br
+` ----Palpitar.@
+br
+` Pero… esto no es bueno.@
+` No estoy satisfecho con esto.@
+` Mi cuerpo ahora puede moverse.@ Parece que puedo moverme.@ Debido a eso, esto no es suficiente.\
+` ----Palpitar.@
+br
+`"Shiki-sama…… ¿Cómo se siente ahora?"@
+` Hisui me pregunta esto sentada en el piso.@
+br
+` Yo--
+return

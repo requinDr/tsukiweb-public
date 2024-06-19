@@ -1,0 +1,260 @@
+mov $phasebg,"image\bg\cmo_19.jpg"
+mov $phasetitle_a,":a;image\word\PAKI_03A.PNG"
+mov $phasetitle_b,":a;image\word\day_03.png"
+gosub *right_phase
+bg #ffffff,%type_crossfade_mid
+play "*9"
+bg "image\bg\cmo_05b.jpg",%type_crossfade_fst
+` Un caluroso, día de verano.@
+br
+` Un cielo azul y largas, largas columnas de nubes veraniegas.@
+` La ligera brisa.@
+` El zumbido de las cigarras.@
+br
+` La voz de las cigarras.@
+br
+!w500
+` Chiiirp.@ Chirp Chirp.@
+!w750
+` Chiiirp.@ Chirp Chirp.@
+!w1000
+` Chiiirp.@ Chirp Chirp.@
+!w1500
+br
+` ----Tan escandalosas que quiero morir.\
+` Hay corazas de cigarras tiradas en el claro.@
+` Como si el sol estuviese justo a mi lado,
+` el claro se está asando.@
+br
+` Un caluroso día de pleno verano.@
+br
+` Como si el mundo entero se hubiese convertido en una sartén.\
+bg #ffffff,%type_crossfade_fst
+bg "image\bg\cmo_06b.jpg",%type_crossfade_fst
+br
+br
+br
+br
+br
+br
+!w500
+` buaa, u, ubuaaa.@
+!w750
+` buaa, u, ubuaaa.@
+!w1000
+` buaa, u, ubuaaa.\
+` Akiha está llorando.@
+` Un niño yace desplomado junto a sus pies.@
+` Su camisa blanca está pintada de rojo por la sangre y no se mueve en absoluto.@
+br
+` Yo estoy, observando eso.@
+` Mi manos están rojas, al igual que ese niño en el suelo.@
+` No, no es así.@
+` Estas manos están rojas, con la sangre de ese niño.\
+`"¡Akiha----!"@
+br
+` Los adultos vienen.@
+br
+`"¿Qué rayos----"@
+br
+` Los adultos se llevan a Akiha.@
+` El niño yace ahí, muerto.@
+` Me quedo solo, y los adultos presionan contra el suelo las manos que asesinaron al niño.\
+bg #ffffff,%type_crossfade_fst
+bg "image\bg\cmo_05.jpg",%type_crossfade_fst
+`"¿¡Lo mataste---!?"@
+br
+` Los adultos me están gritando.\
+` Gritan mi nombre, el que asesinó al niño.@
+` Esas dos sílabas, las gritan como si hubiesen enloquecido.\
+playstop
+br
+br
+br
+br
+br
+` Sólo esas dos sílabas.@
+` Esos adultos me llaman SHIKI, porque mis manos están manchadas de rojo.\
+bg #ffffff,%type_crossfade_slw
+!w500
+play "*2"
+bg "image\bg\bg_40a.jpg",%type_crossfade_slw
+`"Shiki-sama, si no se levanta ahora, se retrasará.@ Por favor, despierte."@
+br
+` …… Al escuchar mi nombre, despierto de un profundo sueño.\
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_mid
+`"¿Hisui…?"@
+`"Sí.@ Buenos días, Shiki-sama."@
+ld c,":a;image\tachi\his_t16.jpg",%type_crossfade_fst
+` Hisui se inclina profundamente.@
+` La luz solar del otoño brilla a través de la ventana; estoy indudablemente en mi habitación.\
+`"--Hi… sui."@
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"Shiki-sama, ¿se está sintiendo mal?"@
+`"Ah… No, estoy bien."@
+` …… Acabo de tener un sueño terriblemente nostálgico.@
+` Pero no puedo recordar muy bien los detalles.@
+`"De qué se trataba… No puedo recordar…"@
+`"¿?"@
+` Hisui ladea su cabeza levemente.@
+` …… Bueno, no tiene caso decirle a Hisui.@
+` El sueño---¿qué tipo de sueño era?@
+` Un blanco cegador lo suficientemente brillante como para traer lágrimas a mis ojos, y manchas rojas vigorosamente efusivas.\
+br
+br
+br
+br
+br
+br
+` -------Algo.@
+`      ALGO, COMO UN SUEÑO DE MAL AUGURIO.\
+`"…… SHI… KI…"@
+`"¿Sí?@ ¿Qué desea, Shiki-sama?"@
+`"…… Nada.@ Perdona--iré directamente al comedor."@
+cl a,%type_lshutter_mid
+` Con un asentimiento, Hisui camina hacia la puerta.@
+` Clac, clac, clac.@
+` Los pasos de Hisui son más ruidosos de lo habitual.@
+` Cuando está a punto de dejar la habitación, se da la vuelta.\
+ld c,":a;image\tachi\his_t08.jpg",%type_lshutter_mid
+`"Shiki-sama, perdóneme por preguntar.@
+` ¿A qué hora regresó anoche?"@
+`"Ah… ayer… Bien entrada la noche."@
+`"…… Shiki-sama, dijo que volvería a las cuatro en punto.@ ¿Debo asumir que su horario cambió?"@
+`"----Ah."@
+` Ya recuerdo.@
+` Ayer en la mañana, le dije a Hisui que debía esperar mi regreso a las cuatro.\
+`"Lo siento.@ Ocurrieron algunas cosas y no pude regresar.@ Seré puntual de ahora en adelante, así que sería grandioso que pudieses pasarlo por alto en esta ocasión……"@
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"…… No, no es necesario que diga semejante cosa, Shiki-sama.@ Es nuestro deber como sirvientes trabajar de acuerdo al horario de nuestros amos.@
+ld c,":a;image\tachi\his_t09.jpg",%type_crossfade_fst
+` Sin embargo, le pido humildemente que por lo menos nos contacte.@ Sin importar las circunstancias, al menos debería hacérnoslo saber."@
+`"----Tienes razón.@ Lo siento.@ Mantendré mi promesa de ahora en adelante."@
+ld c,":a;image\tachi\his_t16.jpg",%type_crossfade_fst
+`"Comprendo.@ Entonces, por favor discúlpeme."\
+cl a,%type_lshutter_fst
+`"…… Eso fue raro.@ Hisui parecía bastante enojada."@
+` Siempre es tan inexpresiva, parece que cuando se enoja lo hace de verdad.@
+` …… Como si yo hubiese hecho algo terrible.\
+`"----Bien, entonces, hora de levantarse."@
+` Apartando las sábanas, me levanto.@
+br
+` ---En ese momento.@
+br
+waveloop se1
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\bg_40a.jpg",%type_nowaitdisp
+` Siento un dolor terrible en mi cuerpo.@
+`"¡Guh…!"@
+` El dolor--no viene de la herida en mi hombro.@
+` Viene de un lugar mucho más profundo, duele con el latir de mi corazón.\
+`"A---gah---"@
+` Apretando las sábanas, supero el dolor de alguna manera.@
+wavestop
+`"Ahhh--"@
+` Se desvanece.@
+` Nada persiste.@ ¿Quizás fue sólo un ataque repentino?@
+`"…… Herida… pecho."@
+` Toco mi pecho por encima de mi ropa.@
+` Hay una gran cicatriz ahí, e incluso ahora que ya ha sanado, a veces comienza a doler como acaba de hacerlo.@
+` El doctor dijo que la herida física sanó, pero mi mente debe estar reviviendo el dolor una y otra vez.\
+` Normalmente, la cicatriz comienza a palpitar cuando veo un accidente de tráfico o algo muerto.@
+` Las imágenes de sangre o muerte deben hacerme recordar el accidente de hace ocho años.@
+`"…… Debido a lo de anoche, supongo."@
+` El rojo callejón trasero.@
+` Y el rostro normal y sonriente de Yumizuka.\
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\bg_40a.jpg",%type_nowaitdisp
+`"¡Guh--!"@
+` Mi pecho--duele.@
+` La imagen de Yumizuka no abandona mi mente.@
+` Pero no sé qué debo hacer, o qué puedo hacer.@
+` Sólo puedo puedo vivir mi vida de siempre.@
+`"…… Mier… da…"@
+` Maldiciendo, salgo rodando de la cama.@
+` Después de cambiar mi pijama por mi uniforme escolar, me dirijo hacia la sala de estar.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_34a.jpg",%type_lcartain_mid
+` Akiha y Hisui están en la sala de estar.@
+` Kohaku-san probablemente está en la cocina preparando mi desayuno.@
+ld c,":a;image\tachi\aki_t01a.jpg",%type_crossfade_fst
+`"Buenos días, Nii-san."@
+` Sentada en el sofá, Akiha me saluda y mira mi expresión.@
+`"…… Ah, buen día.@ Perdón por lo de ayer."@
+` Devolviendo su saludo, me dirijo hacia el comedor.@
+` En verdad no tengo mucho tiempo como para quedarme a charlar con Akiha--y no tengo ganas de hablar con nadie.\
+`"Nii-san, quisiera hablar contigo un momento---¿está bien?"@
+`"…… De acuerdo.@ Pero que sea corto por favor, no tengo mucho tiempo."@
+` Me siento en el sofá frente a ella.@
+ld c,":a;image\tachi\aki_t02.jpg",%type_crossfade_fst
+`"Continuemos con la plática de anoche… Nii-san, ¿qué estabas haciendo ayer?"@
+` Akiha me pregunta con una mirada directa.@
+`"Nada.@ Sólo salí a caminar por la ciudad.@ Siento haber llegado tarde, pero no es gran cosa."@
+` Ya que no quiero mentirle a Akiha, respondo lo más evasivamente posible.\
+ld c,":a;image\tachi\aki_t03a.jpg",%type_crossfade_fst
+`"Sólo caminar por las calles ES algo.@ Aún eres menor de edad, así que por favor no deambules a esas horas.@ Y aunque no lo fueses, han estado ocurriendo un montón de cosas perturbadoras."@
+cl a,%type_crossfade_fst
+wave se0
+`"Ah------"@
+` Cosas perturbadoras--el asesino que acecha la ciudad durante la noche.@
+` ¿Por qué?@
+` ¿Por qué no me percaté?@
+` El asesino que mata gente y bebe su sangre.@
+` Esa frase concuerda perfectamente con el comportamiento de la Yumizuka de ayer--\
+ld c,":a;image\tachi\aki_t12a.jpg",%type_crossfade_fst
+`"…… No debería tener que decir esto, pero no deberías forzar tu cuerpo.@ Si vuelves a regresar con una cara de agotamiento como la de anoche, me preocuparé.@
+` Si estás en problemas, por favor dímelo.@ Puede que no sea capaz de hacer mucho, pero si pudieses…"@
+br
+` -----No quiero pensarlo, pero…
+` Yumizuka.@ Yumizuka podría ser el asesino que está aterrorizando a la ciudad.\
+ld c,":a;image\tachi\aki_t03a.jpg",%type_crossfade_fst
+`"…… ¿Nii-san?@ ¿Estás escuchándome?"@
+`"Eh----uh, sí.@ Estoy escuchando."@
+` Escucho la voz de Akiha.@
+` Pero, la única cosa en mi mente es la imagen de la Yumizuka de ayer.@
+ld c,":a;image\tachi\aki_t02.jpg",%type_crossfade_fst
+` Akiha me mira ferozmente.\
+`"Entonces.@ ¿No puedes hablar sobre tu situación, Nii-san?"@
+`"Correcto.@ No tiene nada que ver contigo, Akiha."@
+` En este momento, sólo puedo pensar en Yumizuka.@
+` Quiero estar solo--y por eso dije eso.@
+`"Vas a continuar a tu propia manera, ¿eso es lo que estás diciendo, Nii-san?"@
+`"……………"@
+`"Comprendo.@ Bien, por favor, siéntete libre.@ Si eso es lo que quieres, Nii-san, yo haré lo mismo."\
+cl c,%type_lshutter_fst
+` Akiha se levanta y sale hacia el vestíbulo.@
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"¿Shiki-sama?@ ¿Eso le parece aceptable?"@
+`"…… ¿Aceptable?@ ¿Qué es aceptable?"@
+`"Creo que Akiha-sama está profundamente preocupada por usted, Shiki-sama.@ Pero creo que es difícil para ella porque no expresa sus sentimientos con frecuencia----"@
+`"Lo sé.@ Pero en este momento, mi cabeza está llena, y no puedo… En verdad lo siento."@
+`"…………"\
+cl a,%type_crossfade_fst
+` Hisui queda en silencio.@
+`"¡Shiki-saaaan, desayuno!"@
+` La voz de Kohaku-san viene del comedor.@
+` Me levanto y me dirijo hacia allá.\
+bg #000000,%type_lshutter_mid
+!w1000
+bg "image\bg\bg_32a.jpg",%type_lcartain_mid
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"Shiki-sama, ¿como a qué hora regresará el día de hoy?"@
+`"Ahh… ya que hoy es sábado… --No.@ Probablemente en la noche.@ Hay algo que quiero buscar."@
+ld c,":a;image\tachi\his_t16.jpg",%type_crossfade_fst
+`"Comprendo.@ Por favor, tenga cuidado hasta entonces."@
+` Ella se inclina profundamente.@
+cl a,%type_crossfade_fst
+` Después de despedirme de Hisui, dejo la mansión.\
+bg #000000,%type_lcartain_mid
+playstop
+!w2000
+play "*1"
+bg "image\bg\bg_06a.jpg",%type_rshutter_mid
+` ---Fue inútil venir a la escuela.@
+br
+` Yumizuka Satsuki fue tratada como ausente, y nadie parecía estar preocupado por ella en lo más mínimo.@
+` El tiempo pasó sin darme cuenta.@ Quizás Arihiko y Ciel-senpai vinieron en algun momento, pero no recuerdo bien.\
+` Llega el mediodía, y la escuela termina.@
+` No tengo ninguna idea.@
+` No tengo ninguna idea, pero aun así tengo que buscar a Yumizuka.@
+return

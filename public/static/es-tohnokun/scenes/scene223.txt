@@ -1,0 +1,30 @@
+monocro off
+wavestop
+play "*3"
+;---added context above---
+bg "image\bg\bg_03a.jpg",%type_nowaitdisp
+` …… Espera un minuto.@
+` Todo eso sucedió, pero aun así Senpai me saludó con su sonrisa habitual.@
+` Anoche----si me hubiese visto combatiendo a Nrvnqsr, definitivamente no podría saludarme de esta manera.\
+ld c,":a;image\tachi\cel_t08.jpg",%type_crossfade_fst
+`"¿Tohno-kun?@ ¿Querías decir algo?"@
+`"Um, espera."@
+` …… Si recuerdo bien, esa persona que me ayudó anoche podría no parecerse a Senpai en absoluto.@
+` No pude echar un buen vistazo a su rostro porque estaba oscuro, y su atmósfera era totalmente distinta.\
+`"Senpai, ¿podría verte la cara un momento?"@
+`"¿Uh, sí?"@
+` Ella ladea su cabeza curiosamente y levanta la mirada hacia mí.@
+br
+` …… Por supuesto.@
+` Una vez que lo pienso con calma, esa persona no se parecía a Senpai en absoluto.\
+`"…… Perdón, fue sólo un error.@ No es nada, por favor olvídalo."@
+`"¿Un error?@ Estoy un poco interesada--¿Qué tipo de error?"@
+` Ella continúa mirando fijamente mi rostro.@
+`"Uh…… Es, ummm."@
+` Apartando la vista, trato de esconder mi sonrojado rostro.@
+` …… Tenerla tan cerca de mí en la entrada de la escuela es embarazoso.\
+`"N, nada.@ Sólo pensé que había visto a alguien que se parecía a ti anoche, pero debe haber sido un error."@
+`"…… Hmm, ¿una persona que se parecía a mí?"@
+` Senpai hace un asentimiento de mucho interés.@
+` Parece que no va olvidarse de esto fácilmente.\
+return

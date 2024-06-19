@@ -1,0 +1,568 @@
+monocro off
+waveloop se1
+playstop
+;---added context above---
+bg #000000,%type_lshutter_fst
+` Nrvnqsr está mirando solamente a Arcueid.@
+` Este instante es mi única oportunidad.@
+` Sujetando mi cuchillo, me agacho.@
+` Con todo lo que tengo, corro hacia Nrvnqsr.\
+bg "image\bg\bg_29c.jpg",%type_rcartain_fst
+wavestop
+` Todos sus sentidos están dirigidos hacia Arcueid.@
+` Incluso yo, que no estoy en esa conversación, puedo saber que Nrvnqsr sólo está mirando hacia adelante.@
+` Su espalda parece indefensa, sin saber que voy a desmantelarla en pocos segundos.@
+br
+` ----Puedo hacerlo.@
+br
+` Puedo sentirlo.@
+` Sin duda alguna, puedo matarlo.\
+`"----"@
+` Corro.@
+` Es sólo cuestión de pasos para que pueda alcanzar su espalda con mi cuchillo.@
+` Su espalda.@
+` Su indefensa espalda.@
+` No hay error; él no siente mi presencia.\
+`"----"@
+` Un paso más.@
+` Entonces todo terminará.@
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\bg_29c.jpg",%type_nowaitdisp
+`"------¿Eh?"@
+` Me detengo.@
+` ¿Qué?@
+` ¿¡Qué… es su cuerpo------!?\
+bg #000000,%type_nowaitdisp
+`"No----hay ninguna."@
+` Ninguna.@
+` ¡Ninguna, ninguna, ningunaningunaningunaninguna……!@
+` ¡No hay una sola "línea" en ninguna parte!@
+` Imposible, semejante "vida" no es posible----\
+bg #9c0120,%type_nowaitdisp
+bg #000000,%type_nowaitdisp
+` ----Palpit, ar.@
+br
+` Dolor de cabeza.@
+` Los dedos que sujetan el cuchillo tiemblan.@
+` Después de una puñalada de dolor en mi cerebro,
+` veo un único "punto" negro sobre la espalda de Nrvnqsr.@
+bg "image\bg\cmo_17.jpg",%type_crossfade_fst
+\
+`"¡------!"@
+br
+` ----Ahí.@
+` Ahí debe ser donde está su defecto fatal.@
+` …… Hay algo mal en que sea un punto en lugar de una línea, pero de cualquier forma----¡lo apuñalaré en ese lugar!\
+` Doy un paso de arremetida.@
+` El cuchillo en mi mano derecha vuela hacia su "punto".@
+br
+`"------¿Eh?"@
+br
+` Justo antes de conectar mi golpe,
+` los puntos a lo largo de su espalda se multiplican rápidamente.@
+bg "image\bg\cmo_18.jpg",%type_crossfade_fst
+` Uno.@ Dos.@ Tres.@ Cuatro.@ Cinco, Ocho, Nueve, Diez, Veinte------
+!w500
+bg "image\bg\cmo_19.jpg",%type_crossfade_fst
+` ¡Ochenta, Cien, Doscientos, Trescientos, Cuatrocientos------!\
+`"¿¡------!?"@
+` …… Esto… no está bien.@
+` Esto no se siente como su "muerte".@
+` Más bien parecen agregaciones heterogéneas.@
+` Su----Su cuerpo, ¿qué demonios es----?@
+br
+`"----¡Shiki!"@
+br
+` …… La voz de Arcueid.@
+` No, no tengo tiempo para pensar ahora.@
+` Su espalda está justo ahí.@ Ahora mismo, puedo elegir cualquiera de sus "puntos" y todo terminará.\
+`"----¡Allí!"@
+br
+` Hago descender mi cuchillo mientras grito.@
+br
+` Sin embargo, antes de eso,
+` la espalda de Nrvnqsr se infla como un globo.@
+` Pop.@
+` Un perro negro surge de su espalda como si emergiese de un mar negro.\
+bg "image\bg\ima_14.jpg",%type_crossfade_fst
+`"¿¡Qué----!?"@
+` El perro negro sale disparado como un misil.@
+`"¡----!"@
+` Corto su "línea" con mi cuchillo.@
+` Pero, es sólo una "línea".\
+` Sólo las patas del perro son cortadas.@
+` Su trayectoria no se detiene.@
+`"¡Gah----!"@
+` ¡Zas!@
+` El perro negro estrella su cabeza contra mi estómago.@
+quakex 4,100
+\
+`"-----¡Ggh!"@
+` Cuánta fuerza.@
+` Vuelo muchos metros hacia atrás y quedo aplastado contra el suelo.@
+` El perro negro entonces intenta morder mi cuello.@
+br
+`"¡Ha…… aa----!@
+` Perforo el lado derecho del abdomen del perro con mi cuchillo.@
+` Mi cuchillo penetra el "Punto de Muerte" del perro negro con facilidad, como atravesando el aire.@
+br
+` Los movimientos del perro negro se detienen.@
+` En ese instante----su cuerpo se convierte en un fluido negro y se derrama sobre mí.\
+bg "image\bg\ima_13b.jpg",%type_crossfade_fst
+`"¿¡----!?"@
+` Cubierto por el fluido negro, no puedo levantarme.@
+`"¡Por qué----tú!"@
+` No puedo quitármelo.@
+` Como si estuviese cosido al suelo, no puedo moverme.@
+br
+`"----Hmph.@ Parece que ha ocurrido algo detrás de mí."@
+` Escucho la voz de Nrvnqsr.@
+` Extendido sobre el suelo, miro hacia Nrvnqsr y Arcueid.\
+bg "image\bg\bg_29c.jpg",%type_crossfade_fst
+ld c,":a;image\tachi\nero_t02a.jpg",%type_crossfade_fst
+`"¿Tu familiar?@ Pero, qué desafortunado.@ Aquellos que entren en mi dominio serán reconocidos y atacados por uno de nosotros aunque yo no me percate.@ No puede haber ningún ataque sorpresa en mi contra."@
+cl c,%type_crossfade_fst
+ld c,":a;image\tachi\ark_t05c.jpg",%type_crossfade_fst
+`"…… Así parece.@ No estabas viendo nada aparte de mí, pero reaccionaste al peligro detrás de ti.@ Ésa es la fuerza de un colectivo, ¿cierto, Nrvnqsr Chaos?"@
+cl c,%type_lshutter_mid
+` Arcueid estrecha sus ojos ligeramente y camina hacia Nrvnqsr.\
+ld c,":a;image\tachi\nero_t01b.jpg",%type_crossfade_fst
+`"----Interesante.@ Estás tan débil que ni siquiera puedes usar tu Esfera Fantasma, ¿y aun así me desafías?"@
+`"No hace falta.@ No tiene caso volverse uno con el mundo sólo para combatir a un Apóstol Muerto.@
+` Para alguien como tú----estas garras serán suficiente, Nrvnqsr Chaos."@
+br
+` Escucho una risa corta.@
+ld c,":a;image\tachi\nero_t02c.jpg",%type_crossfade_fst
+`"----Tonta.@ ¡Date cuenta de tu insensatez, Arcueid Brunestud----!"\
+bg #000000,%type_lshutter_fst
+` Nrvnqsr levanta un brazo.@
+` Su abrigo se agita como una capa e incontables animales salen volando.@
+ld c,":a;image\tachi\kemo_t04.jpg",%type_crossfade_fst
+br
+` Grrrrrrrrr.@
+br
+` Con un rugido atronador, tres bestias corren hacia Arcueid como balas.\
+` Nada parecido a perros negros,
+` sino tres leopardos gigantes más grandes que el propio Nrvnqsr, como largas siluetas demoníacas.\
+`"------"@
+` Arcueid no puede moverse.@
+` Tres leopardos corren, agrietando el adoquinado debajo de ellos con sus patas.@
+` Son mucho más veloces que Arcueid, quien está tratando de escapar.@
+br
+` ----Las tres bestias saltan hacia Arcueid.@
+!w2000
+br
+` Todo termina rápidamente.\
+bg "image\bg\ima_12b.jpg",%type_nowaitdisp
+bg "image\event\ark_e03.jpg",%type_nowaitdisp
+` En un instante,
+` los cuerpos de los tres leopardos son cortados por la mitad y caen al suelo.@
+br
+`"----¿Qué?"@
+` La voz de Nrvnqsr explota.@
+` Arcueid está en silencio.@
+` Desde ahí, ella se mueve para atacarlo.\
+`"¡----!"@
+` Bestias emergen del cuerpo de Nrvnqsr.@
+br
+` En el instante en que emerge, la cabeza del león es agarrada y arrancada de su cuerpo.@
+br
+` El leopardo es asesinado en el instante en que ataca a Arcueid al ser perforada su cabeza por un puñetazo.@
+br
+` El tigre es destrozado como arcilla.@
+` Todo lo que aparece después sufre el mismo destino.\
+` El mismo para el águila voladora y el oso pardo gigante.@
+` El mismo para el tiburón nadando en el suelo.@
+` El mismo para el elefante ridículamente grande.@
+br
+` Al final, ni siquiera pueden detenerla, y vuelven a convertirse en un pegajoso fluido negro.\
+`"----Qué…"@
+` Nrvnqsr intenta escapar.@
+` Arcueid ataca con sus garras.@
+br
+` ----Después del sonido de la carne al ser desgarrada,
+`    el cuerpo de Nrvnqsr es dividido en dos desde el cuello hacia abajo.\
+bg "image\bg\ima_13b.jpg",%type_crossfade_fst
+bg "image\event\ark_e03.jpg",%type_crossfade_fst
+`"¡¡Gaaaaaaaaaaaahhhhh!!"@
+br
+` Rugiendo de dolor, Nrvnqsr salta para alejarse de Arcueid.@
+` Dividido desde el cuello hasta la cintura, ha perdido más de la mitad de su cuerpo.@
+br
+` Un ruido sordo.@
+` El resto de su cuerpo cae a los pies de Arcueid.\
+`"--------"@
+` Esto no es una pelea.@
+` …… ¿Y Arcueid estaba diciendo que apenas podía moverse?@
+` Las bestias que Nrvnqsr liberó no eran débiles.@
+` Esos leones y tigres, sólo uno de ellos podría reducir un auto a pedazos.@
+` Y ese oso pardo podría destrozar un tanque con su descontrolada violencia.@
+` Pero semejantes bestias fueron destrozadas por Arcueid, y el propio Nrvnqsr está medio muerto.\
+`"Ja--------"@
+` Casi parece una broma.@
+` Si era así de fácil, tal vez habría sido mejor que yo no hubiese venido aquí----
+bg "image\bg\bg_29c.jpg",%type_crossfade_mid
+`"¡GA…… AH, aaaaa……!"@
+` Nrvnqsr continúa retrocediendo como para escapar.@
+ld c,":a;image\tachi\ark_t18.jpg",%type_lshutter_slw
+` Puede que esté cansada… Arcueid camina lentamente hacia Nrvnqsr.\
+` Jadeos.@
+br
+` Puedo escuchar una fuerte respiración.@
+` …… Pertenece a Arcueid.@
+br
+` Una entrecortada y dolorosa respiración.@
+` ¿A qué se debe?@
+` La respiración de Arcueid suena más dolorosa que la de Nrvnqsr, quien está cortado por la mitad.@
+cl c,%type_crossfade_mid
+\
+play "*6"
+ld c,":a;image\tachi\nero_t02d.jpg",%type_crossfade_fst
+`"--Ciertamente es increíble.@ Debilitada como estás, todavía tienes tanto poder.@ Como es de esperarse de la Ejecutora preparada por los Verdaderos Ancestros.@
+` …… No te enfrentes a la princesa blanca----Parece que las advertencias de otros eran correctas."@
+cl c,%type_crossfade_mid
+` La voz de Nrvnqsr no es débil en absoluto.@
+br
+` ----Tengo,
+`   una horriblemente profunda sensación de desesperación.@
+br
+` Arcueid intenta recobrar el aliento mientras se acerca lentamente a Nrvnqsr.\
+ld c,":a;image\tachi\nero_t02d.jpg",%type_crossfade_fst
+`"Pero, nunca esperé derrotarte con sólo diez o veinte de mis partes."@
+cl c,%type_crossfade_fst
+ld c,":a;image\tachi\ark_t15.jpg",%type_crossfade_fst
+`"----Suficiente presunción.@ No puedes matarme con ninguna cantidad de familiares como ésos, y he cortado la mitad de tu cuerpo.@ Sin importar qué, no tienes oportunidad de ganar."@
+cl c,%type_crossfade_fst
+ld c,":a;image\tachi\nero_t02d.jpg",%type_crossfade_fst
+`"Hah----Todos mis familiares han sido asesinados, pero pareces estar equivocada."@
+`"¿----?"@
+`"Yo no llevo familiares conmigo, ni los utilizo.@ Todas esas cosas que combatiste eran realmente yo.@
+` …… Es bastante desagradable ser considerado similar a las otras basuras que capturan a otros seres vivientes para reparar su carne dañada."\
+ld c,":a;image\tachi\nero_t02b.jpg",%type_crossfade_fst
+`"Habrías sido capaz de notarlo con una mirada si no hubieses sido debilitada.@ Usa tus Ojos Místicos dorados y observa.@ ¿Puedes verlo?@ El caos de 666 "bestias" dentro de mi cuerpo---"@
+cl c,%type_crossfade_fst
+br
+` Un chapoteo.@
+` Algo se mueve rápidamente en el borde de mi visión.@
+br
+`"A----"@
+` Detrás de Arcueid.@
+` La mitad del cuerpo de Nrvnqsr que fue cortada se está sacudiendo.@
+` Se eleva en un gran grumo y se dispara hacia Arcueid----.\
+`"¡Arcueid, detrás de ti----!"@
+ld c,":a;image\tachi\ark_t18.jpg",%type_nowaitdisp
+`"¿Shiki----?"@
+` Arcueid se da la vuelta.@
+` Pero, no lo logra.@
+` La mitad cortada del cuerpo de Nrvnqsr se convierte en incontables serpientes largas que atacan a Arcueid desde atrás.\
+cl c,%type_crossfade_fst
+`"Mier----"@
+` Las largas serpientes se enrollan alrededor de Arcueid y se convierten de nuevo en fluido negro.@
+` Arcueid está clavada al suelo como yo, pero la presión es cientos de veces mayor.\
+`"¿Qu, qué?----¡no puede ser……!"@
+` Mientras es empujada hacia abajo, Arcueid intenta escapar.@
+ld c,":a;image\tachi\nero_t02b.jpg",%type_crossfade_fst
+`"Es inútil.@ Deberías entender lo que es, Princesa de los Verdaderos Ancestros."@
+`"¡………!"@
+` El rostro de Arcueid se ilumina de dolor y sorpresa.@
+` La mitad restante de Nrvnqsr alza su voz casi como si aullara.\
+`"----El que tenga entendimiento que cuente el número de la bestia: porque es número de hombre, y su número es 666---Jaja, ¿estás complacida con el caos dentro de mi cuerpo, Arcueid Brunestud?"@
+`"¿¡Estás loco……!?@ Un cuerpo humano… teniendo más de trescientos factores comprimidos en algo tan pequeño y cerrado como una forma humana, es igual a----"@
+`"Ciertamente, es exactamente igual al Mar Primordial.@
+` No estoy creando mi cuerpo con otros animales.@ Simplemente utilizo como cuerpo a los factores llamados 'animales', mezclándolos como barro."\
+`"No tengo cosas como familiares.@ Lo que existe es 666 bestias----e igual número de vidas.@
+` Partir mi cuerpo por la mitad o aplastar mi cabeza es insignificante.@ Yo soy uno y 666.@ Si deseas destruirme, necesitas destruir 666 vidas al mismo tiempo."@
+`"…… No puede ser…… ¿¡esto es lo que significa Chaos……!?"\
+ld c,":a;image\tachi\nero_t02d.jpg",%type_crossfade_fst
+`"Por supuesto.@ ----Mis álter egos no tienen una existencia concreta.@
+` Cuando son liberados de este cuerpo que es mi territorio, toman la forma de algún tipo de 'especie' por primera vez.@
+` No tienen forma propia desde el principio.@ Puedes matarlos fuera de mí, pero una vez que regresan, se regeneran como parte de mi caos.@
+` …… Sin embargo, ni siquiera yo puedo predecir en qué se convertirán una vez que emerjan.@ Entender y controlar este desordenado dendograma es mi tesis eterna."@
+br
+` El vampiro con sólo medio cuerpo suelta una presuntuosa y moderada risa.\
+`"¡Eso es imposible……!@ ¡Asimilar almas----si encapsulas existencias conceptuales puras dentro de tu cuerpo, tú mismo desaparecerás……!"@
+`"Efectivamente.@ Es por eso que ésta de aquí no es una sola persona.@ La personalidad de Nrvnqsr ya no existe.@ No somos un solo cuerpo, sino algo más cercano a un colectivo ilimitado.@
+` …… Ciertamente, la existencia de semejante vida no tiene un significado.@ Hay formas de vida en el profundo océano que pueden ser eternos sistemas condicionados.@ Al igual que éstas, este cuerpo perderá su inteligencia y se convertirá en un simple 'espécimen' algún día."\
+`"Pero, ¿no te parece magnífico?@
+` Hay cosas que se arremolinan dentro de mí, y no se sabe qué forma tomarán.@ Este pequeño mundo es como nuestro mundo en sus fases primarias.@
+` Un espacio caótico donde lo que nacerá es impredecible.@
+` La oscuridad del caos, justo como el dendograma de este planeta, pero manteniendo la posibilidad de cambios dramáticos.@
+` Deseo saber qué yace en su culminación antes de desaparecer."\
+`"Es por esto que la Iglesia me dio este nombre.@
+` ----Nrvnqsr Chaos.@
+` Equipado con 666 bestias, ya no un vampiro sino un espacio que se ha convertido en caos, un hereje que rompió el tabú."@
+br
+`"¡------!"@
+` La voz de Arcueid es retenida.@
+` El fluido negro se retuerce a todo su alrededor.@
+` Incluso el rostro de Arcueid ya está medio cubierto----.\
+ld c,":a;image\tachi\nero_t02b.jpg",%type_crossfade_fst
+`"…… Eso es todo.@ Bajo semejante prisión, ni siquiera tú puedes escapar.@ Es una unión de quinientas de mis partes, la 'Tierra del Génesis'.@
+` Aunque tuvieses toda tu fuerza, no podrías ni soñar con destruirla.@ ----Es equivalente a destruir un continente entero."@
+br
+` La mitad restante de Nrvnqsr se acerca a Arcueid lentamente.\
+`"Muchos de nuestros hermanos han sido asesinados por ti.@ Muchos han procurado destruirte, sólo para ser destruidos a cambio.@
+` ----Pero, todo eso ha terminado.@
+` Yo, Nrvnqsr Chaos, llevaré a cabo una gran hazaña que nadie pudo realizar hasta ahora."\
+`"--Nrvnqsr.@ Esta Esfera de Realidad, quién---"@
+`"Debería ser fácil adivinarlo.@ Tu némesis 'La Serpiente' vino a mí para enseñarme, pero no el actual de esta generación.@ Antes de que lo mataras, me legó el método para crear esta 'jaula'."@
+`"------"@
+` Ya no puedo escuchar la voz de Arcueid.@
+` Al mirarla, veo que su boca ha sido cubierta por el fluido negro.\
+`"Pero 'La Serpiente' también es una tragedia.@ Quien fuese una vez un sacerdote de La Iglesia no puede vivir tan sólo porque una Diosa de la Muerte como tú lo está persiguiendo.@
+` Si hubiese sobrevivido, podría haber ideado un método para controlar el caos en mi cuerpo.@ …… Ciertamente debe haber sido lamentable no poder utilizar en pleno semejante clara herejía antes de ser destruido."\
+ld c,":a;image\tachi\nero_t02d.jpg",%type_crossfade_fst
+`"Yo era un amigo jurado de 'La Serpiente'.@ Por qué lo perseguías persistentemente y sin cansancio, me da mucha curiosidad----pero, parece que ya no puedes hablar."@
+br
+` El fluido negro comienza a presionar el cuerpo de Arcueid.@
+` En este momento, ya no es la desplomada figura femenina de Arcueid, sino solamente barro sin forma.\
+`"----Te convertiré en parte de mí, Arcueid Brunestud.@
+` Absorber tal cantidad de voluntad puede requerir un gran esfuerzo, pero me elevará al más alto rango de vampiro.@ Un poco de dolor es como una celebración por la nueva creación.@
+` Cuando eso suceda----los asesinos profesionales de la abominable Agencia de Entierros no serán nada a qué temer.@ Erradicaré a todos los miembros de esa miserable Iglesia."\
+cl c,%type_crossfade_fst
+br
+` El rostro de Arcueid se hunde completamente con un sonido de succión.@
+br
+` Incluso las líneas de su cuerpo que apenas podía ver anteriormente, han desaparecido.\
+br
+br
+br
+br
+br
+br
+` ----A este paso,
+` si dejo a Arcueid sola, será absorbida por el fluido negro----\
+`"¡Por qué----tú~……!"@
+` "Miro" el fluido negro que me cubre.@
+` Las líneas negras de muerte definitivamente existen.@
+`"¡Gaahh-----!"@
+` Resistiendo el palpitante dolor en mi cabeza, trazo a lo largo de éstas con mi cuchillo.@
+wave se11
+` El fluido negro se vuelve como simple agua mientras corto las líneas.\
+waveloop se1
+`"¡Muy bien……!"@
+` Respiro con fuerza mientras me levanto.@
+br
+` ----Tengo que salvarla.@
+`   Tengo que salvar a Arcueid de ese monstruo.@
+br
+` Pero, ¿cómo?@
+` No puedo siquiera acercarme a Nrvnqsr.@
+` Incluso Arcueid----con lo fabulosa que fue, no pudo derrotarlo.\
+` Entonces, si me levanto y lo enfrento, ¿no sería asesinado instantáneamente?@
+` Apenas logré matar a un solo perro; no duraría un segundo en contra de las otras bestias como los leones y los leopardos.\
+` Además,
+` puedo ver cientos de "puntos" sobre su espalda.@
+` No pude entender completamente la conversación entre Nrvnqsr y Arcueid, pero parece que cada una de esas bestias son él.@
+br
+` Entonces,
+` si quiero derrotar al vampiro Nrvnqsr, tendré que matar a todas las bestias que tengan ese "punto"----\
+`"Agh----"@
+` No puedo dar un paso.@
+` Sin importar qué----un humano no puede dar un paso hacia un monstruo como ése.@
+br
+`"Maldición-------."@
+` Al final,
+` una vez más, estoy tratando de salvar mi vida y no haciendo nada por alguien que está siendo asesinado----\
+ld c,":a;image\tachi\nero_t02b.jpg",%type_crossfade_fst
+`"----¿Oh?"@
+` Escucho una voz.@
+` La voz de Nrvnqsr está llena de alegría contenida.@
+cl c,%type_crossfade_fst
+br
+` No.@
+` No es su voz.@
+` Puedo escuchar algo como el sonido de unos pasos.\
+`"Esto----no puede ser."@
+` El sonido está muy alejado.@
+` Pero sin duda alguna, el sonido de ligeros e intermitentes pasos se está acercando.@
+br
+` ----Arcueid dijo anteriormente.@
+` El parque está desierto durante la noche----y si alguien pasa por casualidad, simplemente tiene mala suerte.@
+br
+` En la distancia, veo una pequeña figura humana.@
+` Una chica de mi edad que no conozco.\
+`"----"@
+` Esto no es bueno.@ Que ella venga aquí, significa----
+br
+`"¡Huye~~~~~!"@
+br
+` Grito.@
+` Grito, olvidando que Nrvnqsr ni siquiera me estaba prestando atención o que podría atacarme.\
+` Pero, la transeúnte no se detiene.@
+` Sin saber nada, casualmente se dirige hacia este lugar.@
+br
+` La mitad del vampiro del abrigo negro exhala con satisfacción.@
+ld c,":a;image\tachi\nero_t02d.jpg",%type_crossfade_fst
+`"…… Mi cuerpo acaba de ser destrozado.@ Necesito más sustento."@
+` La mitad de su abrigo se retuerce como una cosa viviente.\
+`"Afortunadamente, parece que el sustento ha llegado."@
+bg #000000,%type_crossfade_fst
+ld c,":a;image\tachi\kemo_t03.jpg",%type_crossfade_fst
+` Una bestia negra sale volando del cuerpo de Nrvnqsr.@
+br
+`"¡Detent------!"@
+` Mi voz no la alcanza.@
+` La bestia corre como un viento negro hacia la lejana figura.\
+bg #000000,%type_nowaitdisp
+playstop
+bg "image\bg\ima_12b.jpg",%type_nowaitdisp
+` Todo termina en un instante.@
+` Un grito corto, el sonido de un cuerpo golpeando el suelo.@
+` El olor de la sangre flotando en el aire.@
+br
+` El tigre negro mete a la humana en su boca.@
+br
+` …… el rostro de la chica… ya no existe.@
+` Seguramente fue arrancado por las garras del tigre.\
+br
+br
+br
+br
+br
+br
+` ----Demasiado… despiadado.@
+` Una repulsiva violencia unilateral.\
+wave se0
+bg #ffffff,%type_nowaitdisp
+bg "image\bg\ima_12b.jpg",%type_nowaitdisp
+`"¡Gah----!"@
+` Me duele la cabeza.@
+` Mi garganta está empezando a secarse.@
+` Mi mente comienza a comprimirse, y sólo puedo ver al enemigo frente a mí----\
+monocro #ff0000
+bg "image\bg\ima_13b.jpg",%type_crossfade_fst
+` El tigre se desliza como una serpiente dentro del cuerpo de Nrvnqsr.@
+` Qué extraño.@
+` El cuerpo de la chica en la boca del tigre desaparece.@
+br
+` Pero.\
+br
+br
+` ------Masca.@ Cruje.@ Rechina.\
+br
+br
+br
+wave se0
+` Ella no está ahí, pero aún escucho el sonido.\
+br
+br
+br
+br
+` ------Desgarra.@ Devora.@ Engulle.\
+br
+br
+br
+br
+br
+wave se0
+` Los sonidos vienen de adentro del hombre llamado Nrvnqsr.@
+` Los sonidos de carne disolviéndose, huesos quebrándose, el lento masticar de un humano----\
+monocro off
+bg #000000,%type_crossfade_fst
+ld c,":a;image\tachi\nero_t02d.jpg",%type_crossfade_fst
+wave se0
+`"T------"@
+` No hay error.@
+` Dentro de su cuerpo, está comiéndose a esa persona.@
+ld c,":a;image\tachi\nero_t02b.jpg",%type_crossfade_fst
+` Los labios de Nrvnqsr se tuercen formando una sonrisa.@
+br
+` ----Con eso,
+br
+` un interruptor se dispara en mi cerebro.\
+`"¡¡¡¡Maldito bastardo------!!!!"@
+` No puedo pensar.@
+` Simplemente corro hacia Nrvnqsr.\
+monocro #ff0000
+bg "image\bg\bg_29c.jpg",%type_lshutter_fst
+` ----Mi vista se tiñe de rojo.@
+br
+`"----Aliméntate."@
+` Un leopardo negro sale volando del cuerpo de Nrvnqsr.@
+` ¿Cuántas veces más grandes que las del perro negro son su velocidad y su ferocidad?@
+`"------"@
+` Pero, eso no me importa.@
+` Es una cosa viviente.@
+` Si vive, entonces no es nada en mi contra.\
+bg "image\bg\ima_14.jpg",%type_crossfade_fst
+`"Estás en mi camino."@
+` Me detengo y le digo eso al cadáver junto a mis pies.@
+` El leopardo negro yace en cuatro pedazos.@
+monocro off
+bg "image\bg\bg_29c.jpg",%type_crossfade_fst
+ld c,":a;image\tachi\nero_t02b.jpg",%type_crossfade_fst
+`"----Ya veo.@ Eres el que me atacó por la espalda anteriormente."@
+` Parece que finalmente se ha percatado de que estoy aquí.@
+br
+` Ojos sin emoción miran hacia mí.@
+` ----Sí, justo como dijo Arcueid.@
+` Mientras no me permita a mí mismo perderme, ser mirado por él no cambia nada.\
+`"…… Deja ir a Arcueid, monstruo."@
+`"------"@
+`"Dije que la dejaras ir.@ Yo soy tu oponente.@ No eres nada con ese medio cuerpo tuyo."@
+`"------"@
+` Sin decir una palabra.@
+` Sin decir una palabra, el vampiro con el abrigo negro nos observa a Arcueid y a mí.\
+`"¿Dices que puedes ser mi oponente?"@
+`"Sí.@ Por eso estoy diciendo que la liberes y entonces te apresures y devuelvas tu cuerpo a la normalidad."@
+`"------, ----, ------"@
+` Su cuello se mueve de arriba hacia abajo.@
+` Parece… que… está riendo.\
+ld c,":a;image\tachi\nero_t02d.jpg",%type_crossfade_fst
+`"Le has quitado la diversión a esto.@ Recibe tu castigo, humano."@
+` Nrvnqsr no cambia.@
+` Parece que va a dejar a Arcueid con la mitad de su cuerpo y permanecer como está.\
+`"Te lo prometo.@ Voy a masticarte vivo lentamente."@
+` Una agitación.@
+` Su brazo restante es levantado.@
+`"----Qué circuito mental tan inferior.@ El precio por tu arrogancia al pensar que puedes enfrentarme será tu muerte segura."@
+br
+` Zum.@
+br
+` Un cálido viento sopla.@
+` Montones de bestias emergen del medio cuerpo de Nrvnqsr.\
+bg #000000,%type_crossfade_fst
+`"----"@
+` El número de bestias que emergen no es diez o veinte.@
+` Aun si cada una no es una bestia fuerte, son cerca de un centenar de ellas en contra de un solo humano como yo, y se aglomeran como hormigas alrededor de un cubo de azúcar.\
+`"Qué----"@
+` Inserto mi cuchillo en el cuello del perro negro frente a mí.@
+wave se5
+` El perro negro muere al ser cortada su 'muerte'.@
+br
+` Al instante, un sonido de aleteo por encima de mi cabeza.@
+wave se9
+` Con un desagradable sonido, la carne de mi frente es arrancada hasta el hueso.\
+`"¡Ach----!"@
+` No tengo tiempo para reaccionar al dolor.@
+` Al mismo tiempo, muchos perros negros muerden mis brazos y mi torso desde ambos costados.@
+bg "image\bg\ima_13.jpg",%type_lshutter_fst
+`"¡Tú, pedazo de basura----!"@
+wave se6
+` Corto.@ Corto.@
+` Apuñalo la 'muerte' de los dos perros en mi línea de visión.@
+` Pero, no es suficiente.@
+` Por cada una que mato, diez bestias más toman su lugar para desgarrar mi cuerpo.\
+bg #000000,%type_crossfade_mid
+wave se0
+`"Ah----Ah…"@
+` No puedo ver.@
+` No puedo ver nada.@
+` Todo está totalmente negro.@
+` No le pasa nada a mis ojos.@
+` A todo mi alrededor----las bestias negras me envuelven en oscuridad.\
+`"¡¡¡¡¡¡------!!!!!!"@
+` Las cosas no pueden continuar de esta manera.@
+` Moriré.@ No duraré cinco segundos más.@
+` Mis tobillos son mordidos.@ Sangre brota.@ Mi cuerpo se siente como si fuese a caer.@ Si caigo, todo terminará.@
+` Ellos se darán un hambriento festín con mi cuerpo si golpeo el suelo.@
+br
+`"No----"@
+` No.@
+` Eso es más aterrador que doloroso.\
+` ---Todo está totalmente negro.@
+` No puedo ver nada.@ No puedo hacer nada.@
+` Pero, es por eso que tengo que pensar.@
+br
+return

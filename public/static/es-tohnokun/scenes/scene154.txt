@@ -1,0 +1,55 @@
+monocro off
+wavestop
+play "*1"
+;---added context above---
+bg "image\bg\bg_33b.jpg",%type_nowaitdisp
+` --Es cierto.@
+` Sin importar cuánto me esfuerce, no puedo esconderlo de Hisui y Kohaku-san, que están a cargo del mantenimiento de la mansión.@
+` Así que, lo menos que puedo hacer es dejarles saber que saldré todas las noches durante los próximos días.\
+`"…… Sí, para ser sincero, saldré durante algunas noches a partir de ahora.@ Juro que no estoy divirtiéndome ni haciendo nada malo.@ Akiha probablemente terminará odiándome, pero no puedo detenerme ahora."@
+br
+` Sí.@ El vampiro aún está cazando víctimas en algún lugar de la ciudad.@
+` Ya que vivo aquí, no puedo simplemente fingir que no lo he visto.\
+`"---Sé que es una carga para ti, Hisui, pero por favor pásalo por alto.@ No sé a qué hora regresaré, por favor no cierres la verja con llave."@
+`"Shiki-sama, ¿está diciendo que no nos dirá por qué?"@
+`"…… Sí, lo siento Hisui.@ Puedes pensar que soy totalmente irresponsable, pero por favor no preguntes.@ Yo, no quiero tener que mentir."@
+`"…… No.@ Usted es mi amo.@ Un sirviente no desprecia a su amo de esa manera."@
+` Ella habla claramente y sin ninguna expresión.@
+` La conversación termina y subo para volver a mi habitación.\
+bg "image\bg\bg_46b.jpg",%type_lcartain_mid
+`"Por favor espere."@
+ld c,":a;image\tachi\his_t04.jpg",%type_lshutter_fst
+`"…… Perdone, mi impertinencia, pero…"@
+` Después de detenerse, ella aprieta sus manos mientras me mira.@
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"Si lo desea, Shiki-sama, puedo mantener su salida como un secreto para Akiha-sama."@
+`"¿Eh?@ ¿Quieres decir que, no vas---a decirle?"@
+`"---Sí.@ Después de la cena, es extremadamente raro que Akiha-sama deje su habitación.@ Nee-san y yo somos responsables de conducir un patrullaje antes de que ella duerma, por lo tanto, si no digo la verdad, ella no sabrá."\
+`"Sí, eso me ayuda.@ Gracias, pero…… ¿está bien eso?@ ¿Ella no es tu empleadora?"@
+ld c,":a;image\tachi\his_t04.jpg",%type_crossfade_fst
+`"Dije que usted es mi amo, Shiki-sama."@
+br
+` ---uh…… estoy, algo feliz.@
+` Siempre tengo que decirle que deje de añadir "sama", pero en momentos como éste, pienso que soy increíblemente afortunado.@ ¿Cómo no podría estar feliz?\
+`"Sí----eso me ayuda, si puedes, por favor hazlo."@
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"Entonces por favor utilice la puerta trasera esta noche.@ La entrada frontal estará cerrada, pero si tiene la llave y utiliza la entrada para sirvientes, puede ir y venir sin ser detectado."@
+`"¿Oh?@ ¿Hay una entrada para sirvientes?@ Con razón nunca te veo salir por la verja."@
+`"No, la única que la utiliza es Nee-san.@ Ella tiene la llave, la conseguiré para usted más tarde."@
+cl c,%type_lshutter_mid
+` "Bien, entonces", dice ella, luego se inclina y desaparece.\
+`"-----¡Muy bien!"@
+` Acaba de llegar ayuda de una fuente inesperada.@
+` Con esto, parece que puedo mantener mi promesa con Arcueid sin preocupar a Akiha.\
+bg #000000,%type_crossfade_mid
+bg "image\bg\bg_40c.jpg",%type_crossfade_mid
+playstop
+` Después de la cena, regreso a mi habitación.@
+` Son casi las diez en punto.@
+` Mientras cenaba, Hisui dejó la llave sobre mi escritorio.@
+br
+`"Entonces---¿me voy?"@
+` Metiendo mi cuchillo en mi bolsillo, dejo la habitación lo más silenciosamente posible.\
+bg #000000,%type_crossfade_mid
+!w2000
+return

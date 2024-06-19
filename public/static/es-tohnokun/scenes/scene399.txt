@@ -1,0 +1,110 @@
+mov $phasebg,"image\bg\bg_42a.jpg"
+mov $phasetitle_a,":a;image\word\PHIS_07A.PNG"
+mov $phasetitle_b,":a;image\word\day_07.png"
+gosub *left_phase
+!w3000
+bg #000000,%type_nowaitdisp
+` No puedo despertar.@
+` Inmerso en un oscuro sueño, no puedo despertar.@
+br
+` ---Siento que un escalofrío recorre mi columna.@
+` Sin razón, sin propósito.@
+` Me percato de que nunca podré despertar de este sueño.\
+!w5000
+`"Shiki-sama, por favor despierte.@ Llegará tarde a la escuela."@
+bg "image\bg\bg_40a.jpg",%type_nowaitdisp
+play "*2"
+`"---------¿Eh?"@
+` Hisui está frente a mí.@
+` Estoy en mi habitación, y afuera el clima es sorprendentemente grandioso.@
+`"¿Hi…… sui?"@
+ld c,":a;image\tachi\his_t01.jpg",%type_lshutter_fst
+`"Buenos días, Shiki-sama.@ Hoy no tiene mucho tiempo, por favor apresúrese y vaya a la sala de estar."@
+` Como siempre, Hisui habla con su tono de indeferencia.\
+`"Oh------h."@
+` Con eso, todo desapareció.@
+` Abrazo mi recién despertado pero aún palpitante cuerpo.@
+` …… Me siento aliviado.@
+` El terrible mundo en que estuve hasta ahora se ha convertido en un sueño.@
+`"…… Gracias.@ Si no me hubieses despertado, quizás nunca lo habría logrado."\
+`"¿Shiki-sama……?@ Si no se siente bien, por favor dígamelo."@
+`"No, no es eso.@ ---Buen día, Hisui.@ Me alegra que estés aquí."@
+ld c,":a;image\tachi\his_t02.jpg",%type_crossfade_fst
+`"Eh----ah, muchas gracias, Shiki-sama."@
+` Ella se sonroja ligeramente y baja su cabeza.@
+`"No, soy yo quien debería decir gracias-----¿¡ya son más de las siete y media!?@ ¡Perdona, voy a levantarme, por favor espérame en la sala de estar!"@
+`"Sí, estaré esperando."@
+cl c,%type_lshutter_fst
+` Justo cuando Hisui deja la habitación, me pongo mi uniforme escolar.\
+bg #000000,%type_crossfade_mid
+!w1000
+bg "image\bg\bg_32a.jpg",%type_lcartain_mid
+` Salto de la cama, devoro un poco del desayuno que hizo Kohaku-san, y dejo la mansión.@
+` Todo eso me tomó menos de diez minutos.@
+br
+`"¡Ya me voy--nos vemos luego, Hisui!"@
+ld c,":a;image\tachi\his_t01.jpg",%type_lshutter_fst
+`"Sí, estaré esperando su regreso."\
+cl c,%type_lshutter_mid
+bg "image\bg\bg_22a.jpg",%type_lshutter_fst
+bg "image\bg\bg_24a.jpg",%type_lshutter_fst
+bg "image\bg\bg_03a.jpg",%type_lshutter_fst
+wave se2
+!w2000
+`"…… Lo logré……"@
+` Exhalo y doy descanso a mi cuerpo.@
+` Llegué justo antes de que cerraran la entrada, pero aún tengo que llegar a la clase.\
+bg "image\bg\bg_06a.jpg",%type_lshutter_fst
+`"…… Fiu."@
+` El maestro aún no ha llegado al salón.@
+` Trato de recobrar el aliento al sentarme.@
+` …… El salón parece más animado que de costumbre el día de hoy.@
+` Mañana es un día festivo, probablemente todos se sienten como si hoy fuese sábado.\
+bg #000000,%type_crossfade_mid
+playstop
+!w2000
+bg "image\bg\bg_06b.jpg",%type_crossfade_fst
+` La escuela termina.@
+` Como no tengo ninguna razón para quedarme en la escuela, me dirijo de vuelta a la mansión.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_23b.jpg",%type_lcartain_mid
+`"…… El sueño de ayer."@
+` Éste definitivamente es el lugar donde vi a alguien ser asesinado en mi sueño.@
+` Aunque me esforcé tanto como pude para no soñar, supongo que no se puede huir de uno mismo.@
+`"-----Kk."@
+` Aprieto mis dientes.@
+` Me siento patético por mi debilidad.@
+` Después de todo, es un sueño.@
+` Ciertamente hay algo mal en que tenga esos sueños, pero creo que aún estoy cuerdo.\
+bg "image\bg\bg_22b.jpg",%type_lshutter_mid
+` …… Mi viejo es mi viejo.@
+` No sé nada sobre la sangre Tohno.@
+` Pero mientras esté cuerdo, no quiero ser una carga para Akiha y las otras.@
+` Tengo que tratar de actuar lo más normalmente posible, e intentar encontrar una manera de resolver todo esto---\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_33b.jpg",%type_lshutter_mid
+play "*3"
+ld c,":a;image\tachi\his_t01.jpg",%type_lshutter_fst
+`"Bienvenido a casa, Shiki-sama."@
+` Tan pronto como abro la puerta, Hisui me saluda con cortesía.@
+`"Estoy de vuelta.@ Estaré en mi habitación, puedes seguir con lo que estabas haciendo."@
+`"Se lo agradezco.@ Seguiré limpiando la sala de estar.@ Si necesita cualquier cosa, por favor llámeme."@
+cl c,%type_lshutter_fst
+`"…… Hisui está limpiando la sala de estar…"@
+` No veo a Kohaku-san, pero probablemente esté barriendo el patio trasero o haciendo compras.@
+` Parece que Akiha aún no ha vuelto, así que regresaré a mi habitación.\
+bg "image\bg\bg_40b.jpg",%type_lshutter_mid
+` Suelto mi maletín y me cambio de ropa.@
+` Paso alrededor de una hora sentado en mi habitación sin hacer nada.@
+` Repentinamente, escucho un gorgoteo.@
+` No es un ruido extraño ni nada parecido.@
+` Es sólo el sonido de mi estómago.\
+`"…… Es cierto, no he tenido oportunidad de comer desde esta mañana."@
+` No quería llegar tarde esta mañana, así que sólo pude comer un poco de lo que Kohaku-san hizo para el desayuno.@
+` Pensé en ir a la cafetería, pero perdí el apetito tan pronto como recordé lo que vi ayer en la cafetería.\
+`"…… Me pregunto si puedo conseguir algo para merendar antes de la cena……"@
+` …… En verdad no quiero ser una molestia, pero me estoy muriendo de hambre.@
+br
+` Debería---
+br
+return

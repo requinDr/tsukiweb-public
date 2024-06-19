@@ -1,0 +1,27 @@
+monocro off
+wavestop
+play "*3"
+;---added context above---
+bg "image\bg\bg_05a.jpg",%type_nowaitdisp
+`"…… ¡Pero…… pero, dijiste que no eras tú!"@
+`"¿Qué no era?"@
+`"¡Hace tres noches!@ ¡Te pregunté si fuiste la que me ayudó esa noche en el parque, y dijiste que no eras tú……!"\
+ld c,":a;image\tachi\cel_t12.jpg",%type_crossfade_fst
+`"Eso fue una mentira."@
+` Concisamente.@
+` Senpai simplemente dice eso.\
+`"…… ¿Um…… una mentira, Senpai?"@
+ld c,":a;image\tachi\cel_t07a.jpg",%type_crossfade_fst
+`"No mantuviste la promesa que hicimos.@ Me dijiste que ya no saldrías de noche."@
+`"……… Uh."@
+` Ella me mira fijamente.@
+` De repente comienzo a sentirme como el malo de la película, sintiéndome culpable por lo que hice.\
+ld c,":a;image\tachi\cel_t09.jpg",%type_crossfade_fst
+`"Hice esa promesa contigo para que algo como esto no sucediese.@ ¿Tan poco significa para ti una promesa conmigo, Tohno-kun?@ Eso me entristece."@
+`"Ah---no, no es eso.@ Anoche, pensé que Arcueid era quien estaba detrás de los asesinatos en serie, pero eso no podía ser cierto, así que fui a preguntarle y---"@
+br
+cl c,%type_crossfade_fst
+` Le digo todo sobre anoche.@
+` Senpai escucha todo silenciosamente.@
+` Cómo la conocí accidentalmente, cómo me explicó lo del vampiro de esta ciudad, cómo me alié con ella para salvar la ciudad, y todo lo sucedido hasta ahora.\
+return

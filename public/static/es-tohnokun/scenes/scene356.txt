@@ -1,0 +1,81 @@
+monocro off
+wavestop
+play "*2"
+;---added context above---
+bg #000000,%type_tshutter_mid
+bg "image\bg\bg_11a.jpg",%type_bshutter_mid
+` Subo al cuarto piso.@
+` La clase de Akiha es, primer año, clase uno.@ Hablo con una estudiante que está saliendo del salón, y le pido que llame a Akiha.@
+`"¡Tohno-saaan, tu hermano está aquí!"@
+` …… La chica que detuve llama a Akiha muy directamente.\
+ld c,":a;image\tachi\aki_t21.jpg",%type_lshutter_fst
+`"¿Necesitas algo, Nii-san?"@
+` Akiha sale con una expresión de mal humor.@
+`"-------"@
+` Bueno, esto es preocupante.@
+` Kohaku-san me dijo que me disculpara, pero después de escuchar su historia, es un poco preocupante.\
+`"Si no necesitas nada, volveré a mi salón."@
+`"---No, sí hay algo.@ Es… bueno, quiero decir…"@
+ld c,":a;image\tachi\aki_t03a.jpg",%type_crossfade_fst
+`"Ya dime de qué se trata.@ El descanso es corto, si quieres decir algo por favor apresúrate y dilo."@
+`"…… Bueno, es sólo…"@
+br
+` ---¡Muy bien, ya basta!@ ¡He venido hasta aquí, así que no puedo quedarme callado!\
+`"¡Yo… lamento mucho lo de esta mañana…!"@
+ld c,":a;image\tachi\aki_t13a.jpg",%type_crossfade_fst
+`"¿Eh?@ ---¿Ni, nii-san…?"@
+`"¡Vine para decir que lo de esta mañana fue mi culpa, y que a partir de mañana seré bueno, así que por favor perdóname, Akiha…!"@
+ld c,":a;image\tachi\aki_t16a.jpg",%type_crossfade_fst
+`"No… no hay mucho que perdonar, en realidad no me molestó tanto…"@
+`"Está bien, sólo quería disculparme.@ ¡Te veré más tarde, perdón por ocupar tu tiempo!"\
+bg #000000,%type_lshutter_fst
+`"---¡Ah, espera, Nii-san!"@
+br
+` Akiha me llama.@
+` Pero ahora estoy demasiado avergonzado, incluso para mirar atrás, así que corro directamente de vuelta a mi salón.\
+!w1000
+play "*3"
+bg "image\bg\bg_06a.jpg",%type_tcartain_mid
+` …… Es la hora del almuerzo.@
+` Ya que fui a disculparme con Akiha, se siente un poco incómodo almorzar con ella.@
+` Sin embargo.@
+ld c,":a;image\tachi\ari_t01.jpg",%type_lshutter_fst
+`"Hola, Tohno.@ Vamos corriendo al patio.@ Akiha-chan está esperando."@
+` …… Dice este individuo.@ Además, no puedo dejarla sola.@
+` …………… *suspiro*@
+` Suelto un gran suspiro y dejo el salón con Arihiko.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_04.jpg",%type_lcartain_mid
+` Akiha aún no ha llegado.@
+` Ya que Ciel-senpai también vendrá, supongo que comeremos sobre la hierba.\
+bg #000000,%type_tshutter_fst
+bg "image\bg\bg_04.jpg",%type_bshutter_fst
+ld l,":a;image\tachi\cel_t03.jpg",%type_lshutter_mid
+`"Aquí estoy.@ Hey, ¿Akiha-san aún no ha llegado?"@
+ld r,":a;image\tachi\ari_t01.jpg",%type_crossfade_fst
+`"Sí, debería estar aquí en cualquier momento----oye, Tohno, ¿ocurrió algo entre Akiha-chan y tú?"@
+cl a,%type_crossfade_fst
+` Arihiko pregunta, con su codo en mi costado.@
+` …… ¿Por qué de pronto es tan perceptivo?@
+`"Ah, ahí está.@ ¡Akiha-chan, por aquí!"@
+` Arihiko agita sus manos en el aire.@
+` Akiha entra en la hierba, pero parece un poco desorientada.\
+ld l,":a;image\tachi\aki_t12a.jpg",%type_lshutter_mid
+`"Perdón por llegar tarde.@ Recibí una invitación para almorzar con mis compañeros de clase, y me tomó algo de tiempo declinar sus invitaciones."@
+ld r,":a;image\tachi\ari_t01.jpg",%type_crossfade_fst
+`"No te preocupes, también acabamos de llegar.@ Ven, siéntate aquí."@
+cl a,%type_crossfade_fst
+` Arihiko palmea la hierba.@
+` Después de vacilar por un momento, Akiha se sienta junto a mí.\
+ld c,":a;image\tachi\aki_t16a.jpg",%type_crossfade_fst
+`"……………"@
+` Akiha no dice nada.@
+`"-------"@
+` Sin saber qué decir, permanezco en silencio.@
+cl a,%type_crossfade_fst
+ld c,":a;image\tachi\cel_t03.jpg",%type_crossfade_fst
+`"¿Qué les pasa a los dos?@ Es extraño almorzar así en silencio."@
+`"Uh-----"@
+` Lo sé, simplemente no sé qué decir.\
+cl a,%type_crossfade_fst
+return

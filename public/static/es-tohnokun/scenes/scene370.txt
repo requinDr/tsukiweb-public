@@ -1,0 +1,254 @@
+wavestop
+play "*6"
+;---added context above---
+monocro off
+bg "image\bg\bg_46c.jpg",%type_lshutter_fst
+` ----Llego a la habitación de Akiha.@
+br
+` El mareo se está haciendo insoportablemente fuerte.@
+` Meto mi mano en mi bolsillo.@
+` Soy afortunado, mi cuchillo aún está ahí.@
+`"------"@
+` Ignoro mi mareo, y con el cuchillo en mi otra mano, abro la puerta.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_36d.jpg",%type_tshutter_mid
+playstop
+waveloop se10
+` -----Oscuridad.@
+br
+` La luz de luna que entra por la ventana apenas proporciona suficiente luz para ver.@
+` En la azulada oscuridad, veo a Akiha en el suelo.@
+`"¡Akiha----!"@
+` Corro hacia ella y la sostengo.@
+`"…………………"@
+` Akiha no se mueve, así que podría estar inconsciente.@ Pero puedo ver que está viva, porque su pequeño pecho sube y baja con su respiración.\
+` Pero, hay algo más extraño.@
+` El cabello negro de Akiha.@ Ha tomado un sangriento tono rojizo.@
+`"Akiha---en verdad eres Akiha…… ¿no?"@
+` …… El cabello parece rojo en la oscuridad.@
+` Pero, definitivamente es Akiha.@
+`"¡Akiha, oye, vamos……!@ ¿Qué suced---"\
+wave se0
+bg #000000,%type_nowaitdisp
+bg "image\bg\bg_36d.jpg",%type_nowaitdisp
+` Escucho un ruido.@
+br
+waveloop se10
+`"¡------!"@
+` Me doy la vuelta.@
+` Donde se originó el sonido---alguien, está parado junto a la ventana iluminada por la luna.\
+` …… Parece ser alguien envuelto en vendajes.@
+`"------¿Quién eres?"@
+` El hombre no responde.@
+` …… Un escalofrío atraviesa mi columna.@
+` Siento la muerte en mis nervios.\
+` …… La persona simplemente está ahí, descompuesta.@
+` Ojos anormales que parecen fuera de este mundo.@
+` Pero hay algo de inteligencia.@ Parece que la persona vendada posee tanto inteligencia como locura.\
+wave se0
+` Mi corazón late escandalosamente.@
+waveloop se10
+` Late con más rapidez.@
+` Mientras tanto, mi mente se congela como si estuviese muerto.@
+` Esta sensación.@
+` Conozco esta sensación de muerte.@
+br
+` ---Estoy seguro.@
+` Lo que está ahora en esta habitación es el mundo homicida que vi en mis sueños.\
+`"---Te pregunté quién eres."@
+` Sostengo mi cuchillo y miro fijamente a la persona.@
+` El hombre vendado parece estar sonriendo.@
+wavestop
+play "*4"
+`"Me entristeces, Shiki.@ ¿Ni siquiera recuerdas a la persona que asesinaste?"@
+` Él camina hacia mí.@
+`"¡-----!"@
+` Retrocedo, sosteniendo a Akiha con un brazo.\
+`"¿No puedes verlo, Shiki?@ Soy el sujeto que asesinaste."@
+`"¿Qué estás diciendo-----"@
+` Sólo escuchar su voz me crispa los nervios.@
+` Lo odio.@ …… El odio que sentí desde que entré a la mansión está concentrado sobre él.@
+` Este odio.@ ¿Mi deseo instintivo de hacerlo desaparecer es un impulso homicida?\
+` Mi corazón late.@
+` Desde algún lugar dentro de mí, mi cuerpo grita.@
+` Grita que esta persona debe ser eliminada.@
+br
+!w1500
+`"----Ya veo.@ Tú eres el vampiro."@
+br
+` Sosteniendo a Akiha con un brazo, sostengo mi cuchillo con el otro.\
+` Jajaja.@
+` El hombre ríe como si fuese muy gracioso.@
+`"Ni siquiera lo intentes.@ Yo soy tú.@ No hay nadie que pueda matarse a sí mismo verdaderamente."@
+`"¿Q---qué……?"@
+`"Akiha vendrá conmigo.@ Ella era mía desde un principio."@
+` Un paso más.@
+` El hombre se acerca más.\
+`"¡Detente----!"@
+`"No me detendré.@ Vine a recuperar todo lo que me quitaste.@ Nombre, posición, poder… todo era mío."@
+` El hombre abre sus brazos y habla con orgullo.\
+`"…… ¿Qué estás diciendo?@ ¿Tú---qué eres?"@
+`"…… ¿Aún no lo recuerdas?@ Qué sujeto.@ Éramos tan buenos amigos hace ocho años."@
+`"Qué----"@
+br
+` ¿Hace ocho años?@
+` ¿Tan, buenos, amigos----?\
+`"…… Bueno, supongo que lo olvidaste.@ Fue ese viejo.@ Apuesto que te puso bajo un poderoso hechizo para hacerte olvidar.@
+bg #ffffff,%type_nowaitdisp
+bg "image\bg\cmo_05.jpg",%type_nowaitdisp
+bg "image\bg\bg_36d.jpg",%type_nowaitdisp
+` Y apuesto que tú mismo---querías olvidar el horrible pasado, ¿no Shiki?"@
+br
+` Él ríe.@
+` Mi visión se sacude.@
+` Ocho años atrás, ocho años atrás, ocho años atrás-----\
+` Fue la época en que fui enviado al hospital por aquel accidente.@
+` Fue la última vez que los tres jugamos juntos en esta mansión.@
+` Fue la última vez-----que ese niño estuvo ahí, y toda la sangre----\
+`"Pero todo eso está por terminar ahora.@ Fue doloroso para ti, ¿cierto, Shiki?@ Espera, te salvaré."@
+` El hombre retira lentamente el vendaje alrededor de su cabeza.@
+` Su rostro-----
+br
+`"Tú…"@
+ld c,":a;image\tachi\hal_t01.jpg",%type_crossfade_mid
+`"Tiempo sin vernos, Tohno Shiki.@ No, ése no es tu verdadero nombre."@
+` El rostro que salió del vendaje,
+` no era----el rostro de ese niño ensangrentado, sino…\
+`"Tohno----SHIKI."@
+` Sí, ¿por qué lo olvidé?@
+` Él estaba con Akiha en aquel entonces.@ El nombre del tercer niño ciertamente era ése.\
+`"Sí, en verdad ha sido un largo tiempo, Nanaya Shiki.@ Finalmente recordaste que eres un impostor."@
+` Los labios del hombre---de SHIKI se tornan en una sonrisa y ríen profundamente.\
+wave se0
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\bg_36d.jpg",%type_nowaitdisp
+`"Ah-----"@
+` Dolor de cabeza.@ Tengo dolor de cabeza.@
+` La bóveda se abre.@
+` Lo que fue sellado dentro.@ (¿Por quién?)
+` No puedo mirarlo.@ (¿Mirar qué?)
+` La caja de recuerdos olvidados.\
+wave se0
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\bg_36d.jpg",%type_nowaitdisp
+bg #9c0120,%type_nowaitdisp
+bg #000000,%type_nowaitdisp
+playstop
+play "*9"
+bg "image\bg\cmo_05.jpg",%type_crossfade_mid
+br
+br
+br
+br
+br
+br
+br
+` ----Él me ordenó olvidar todo.\
+` Tohno Makihisa.@
+` Nanaya Shiki fue adoptado por la persona que lo dejó en la soledad.@
+` Probablemente, porque le hacía gracia que yo tuviese el mismo nombre que su hijo.\
+` Es algo que sucedió hace diez años.@
+` Fui adoptado.@
+` Fui llevado a una mansión desconocida.@
+` Mi familia siempre era gente que no conocía.@
+` Mi vida en el edificio separado.@
+` El chico y la chica que conocí.@
+` El gran jardín en el que jugábamos.@
+` Un caluroso día de verano.@
+` Akiha siendo atacada por una sombra.@
+` Sólo podía pensar en ayudarla, y en el momento en que usé mi cuerpo como un escudo----\
+br
+br
+br
+br
+br
+br
+br
+` ----Me fue ordenado que olvidase todo.\
+br
+br
+br
+br
+br
+br
+br
+br
+br
+` Tohno Makihisa lo hizo.@
+` Mi propio padre.@
+` Me ordenó vivir como Tohno Shiki en vez de Nanaya Shiki y---\
+bg #000000,%type_crossfade_mid
+playstop
+!w2000
+play "*4"
+bg "image\bg\bg_36d.jpg",%type_crossfade_mid
+`"¡¡------, …………!!"@
+` Mareo, Náuseas.@
+` Una mezcla de recuerdos recorre mi cabeza.@
+br
+` Pálpitar.@
+` No puedo controlar mi cuerpo.@
+` Dejo caer a Akiha, y aprieto mi cuchillo mientras jadeo por aire.\
+ld c,":a;image\tachi\hal_t03.jpg",%type_crossfade_fst
+`"----¿Es horrible?@ Apuesto que lo es.@ ¡Debe haber sido una gran conmoción saber que eras un impostor, porque pensaste que eras Tohno Shiki todo este tiempo……!"@
+` SHIKI ríe.@
+ld c,":a;image\tachi\hal_t02.jpg",%type_crossfade_fst
+`"Pero, no es nada comparado con lo que yo viví.@
+` Verás, Shiki, fui asesinado por la persona que consideraba mi mejor amigo, e incluso me fue robado el nombre Tohno Shiki.@ ¡Incluso me quitaste a Akiha---mi Akiha……!@ ¿¡Puedes entender cómo me sentí!?"@
+`"¿Asesiné----?@ ¿Yo, a ti----"\
+ld c,":a;image\tachi\hal_t01.jpg",%type_crossfade_fst
+`"Correcto.@ Te asesiné primero, pero el resultado final fue que yo fui asesinado por ti.@
+` ¿Aún no puedes recordarlo?@ Ese día, ocho años atrás, sucumbí ante mi sangre y te asesiné.@ Mira esa cicatriz en tu pecho.@ Tomé este brazo y perforé directamente a través de ti."@
+`"Cicatriz en mi pecho----"@
+` Eso fue un accidente.@
+` Me dijeron que la obtuve en un accidente-----\
+`"Sí, pero el viejo casi me mata después de eso.@
+` La sangre Tohno finalmente despertó dentro de mí, pero fui encarcelado bajo tierra, y viví en la oscuridad durante ocho años.@
+` ---Ese maldito viejo.@ ¡Dijo que me dejaría salir si volvía a ser humano…!@ Pensó que sería inconveniente que Tohno Shiki desapareciera, y por eso te convirtió en Tohno Shiki."\
+`"--------"@
+` …… Entonces,
+` el niño adoptado que estaba aquí hace diez años, era yo.\
+ld c,":a;image\tachi\hal_t02.jpg",%type_crossfade_fst
+`"¿Ahora entiendes, Shiki?@ Fui asesinado por ti.@
+` Estoy vivo ahora, pero tú eres Tohno Shiki.@
+` No tengo lugar al cual regresar.@
+` El nombre Tohno Shiki, mi posición, mi querida hermana, e incluso mi existencia fue robada por ti.@
+` Yo, Tohno SHIKI, fui asesinado por ti, Tohno Shiki."@
+br
+` Un paso.@
+` Él comienza a caminar hacia mí con ferocidad en sus ojos.\
+ld c,":a;image\tachi\hal_t03.jpg",%type_crossfade_fst
+`"Listo---ése es el fin de la historia.@ Shiki, debiste haber muerto hace ocho años.@ Ya has tenido suficiente, ¿cierto?@ Devolvamos las cosas a como eran ocho años atrás."@
+`"-----¿A como eran-----?"@
+`"Sí.@ Yo vuelvo a ser Tohno Shiki, y tú vuelves----¡a ser el cadáver que eras!"\
+cl c,%type_lcartain_fst
+bg #ffffff,%type_nowaitdisp
+bg "image\bg\bg_36d.jpg",%type_nowaitdisp
+quakey 2,100
+bg #000000,%type_lshutter_fst
+bg "image\bg\bg_46c.jpg",%type_lshutter_fst
+` Un gran impacto.@
+` Salí volando hacia el pasillo con un solo golpe de SHIKI.@
+`"A------"@
+` Mi espalda golpea la pared.@
+` No puedo respirar.@
+` Mi cabeza, yo---aún no puedo pensar con claridad.\
+`"Ku-----"@
+` Puedo sentir que se acerca.@
+` SHIKI salta desde la habitación de Akiha.@
+bg #ffffff,%type_nowaitdisp
+bg "image\bg\ima_14.jpg",%type_crossfade_fst
+wave se11
+`"¡Maldición----!"@
+` Puedo escuchar a SHIKI.@
+` Su arma también resultó ser un cuchillo, y mi cuchillo se une al suyo en una competición mortal.\
+bg #000000,%type_lshutter_fst
+playstop
+` Jadeo por aire.@
+` Me quedo sin aliento.@
+` Aún me siento enfermo.@
+` Pero, no tengo tiempo para pensar.@
+br
+` Yo----
+br
+return

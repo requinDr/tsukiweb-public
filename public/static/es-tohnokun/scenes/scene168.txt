@@ -1,0 +1,14 @@
+monocro off
+wavestop
+play "*3"
+;---added context above---
+bg "image\bg\bg_32a.jpg",%type_nowaitdisp
+`"¿Eso lo aclara?@ Entonces vamos…… Arcueid, ¿tienes algún lugar en mente?"@
+ld c,":a;image\tachi\ark_t03.jpg",%type_crossfade_fst
+`"Hmm, no sé, así que te dejaré decidir.@ Llévame a cualquier parte."@
+cl c,%type_crossfade_fst
+` …… ¿Me dijo que iríamos a algún sitio y ahora esto?\
+` Oh bueno--no estoy seguro de qué tipo de lugar le guste a ella, pero la llevaré a un buen sitio para pasar el tiempo.@
+` Bien, entonces--
+br
+return

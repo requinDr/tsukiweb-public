@@ -1,0 +1,77 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_29b.jpg",%type_lcartain_mid
+ld c,":a;image\tachi\ark_t04.jpg",%type_crossfade_fst
+play "*1"
+`"¿Sobre qué querías hablar, Shiki?"@
+`"Sobre vampiros.@ Lo dijiste antes.@ Que los asesinatos recientes fueron obra de un vampiro."@
+` Arcueid asiente.@
+`"¿Entonces sabes que las noticias matutinas dijeron que fue encontrada otra víctima?@ Fue asesinada anoche y su sangre fue extraída."@
+ld c,":a;image\tachi\ark_t06.jpg",%type_crossfade_fst
+`"-----"@
+` …… Los ojos de Arcueid se estrechan.@
+` Algo…
+` Algo como una tensión congelante baja por mi columna.\
+ld c,":a;image\tachi\ark_t07.jpg",%type_crossfade_fst
+`"¿Oh?@ ¿Y?"@
+`"¿Y?---tú……"@
+` Trago con fuerza.@
+` Ella me mira directamente.@
+` Casi---una mirada que me dice que me atacará inmediatamente si me muevo en lo más mínimo.\
+`"¿No---no es extraño, Arcueid?@
+` Nrvnqsr está muerto.@ ¿Por qué siguen ocurriendo estos incidentes?@ No me digas, que, tú---"\
+ld c,":a;image\tachi\ark_t03.jpg",%type_crossfade_fst
+`"No es lo que crees.@ No se trata de mí, sino de otro vampiro."@
+` Arcueid responde inmediatamente, liberando la tensión.@
+` Pero no estoy satisfecho.\
+`"¿Qué quieres decir?@ ¿Fue obra de otro vampiro?@ ¿Entonces simplemente siguen viniendo?"@
+ld c,":a;image\tachi\ark_t01b.jpg",%type_crossfade_fst
+`"Claro que no.@ Los asesinatos en serie siempre han sido obra de un solo vampiro.@ Así que no vendrán nuevos vampiros, y Nrvnqsr no estaba relacionado con esos incidentes."@
+br
+` ----¿Eh?@
+` ¿Nrvnqsr no estaba, relacionado……?@
+br
+`"¿Qué---qué quieres decir?"@
+`"Es justo como dije.@ …… Normalmente eres bastante listo, pero estás perdido en algunos puntos.@ Recuerda, Shiki.@ Nrvnqsr era un vampiro pero, ¿succionó sangre humana alguna vez?"\
+cl c,%type_crossfade_fst
+`"¿Succionar sangre?@ Él comía humanos y---oh."\
+br
+` Ya veo.@
+` ¿Por qué no me percaté de un error tan simple?@
+` Las víctimas de los asesinatos en serie son encontradas con sus cuerpos drenados de sangre.\
+` Pero Nrvnqsr era diferente.@
+` Él no dejaba cadáveres atrás.@ No sólo bebía la sangre, también comía la carne, sin dejar rastro.@
+` Como prueba, las personas devoradas por él en el hotel fueron consideradas perdidas, no asesinadas.@
+br
+` Entonces---eso significa, que se trata de algo totalmente distinto.\
+`"Espera.@ ¿Entonces qué son los asesinatos en serie de ahora?@ ¿Quién lo está haciendo?"@
+ld c,":a;image\tachi\ark_t03.jpg",%type_crossfade_fst
+`"Es un vampiro distinto a Nrvnqsr.@ Para ser más específica, ese vampiro es la razón por la que vine aquí, y Nrvnqsr vino siguiéndome.@ Es esa clase de correlación."@
+`"---Qué… ¿¡Entonces a quien perseguías no era a Nrvnqsr después de todo……!?"\
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"Correcto, nunca dije que él fuese mi objetivo inicial.@
+` Yo era su objetivo, pero él nunca fue el mío; mi objetivo es el famoso 'asesino en serie' de esta ciudad."@
+ld c,":a;image\tachi\ark_t11.jpg",%type_crossfade_fst
+`"…… Shiki.@ No creo que sea el caso pero, ¿no me dirás que cometiste un error tan simple?"\
+cl c,%type_crossfade_fst
+`"Qué-----"@
+` Me quedo sin aliento.@
+` Pero---en verdad es justo como ella dice.@
+` Ella dijo que su propósito es matar vampiros, por eso pensé que Nrvnqsr era a quien perseguía----\
+br
+`"…… ¿Entonces de qué se trata?@ Matar a Nrvnqsr esa noche, ¿¡fue inútil………!?"\
+ld c,":a;image\tachi\ark_t01b.jpg",%type_crossfade_fst
+`"No fue inútil, tú peleaste en mi lugar.@ Bueno, si no me hubieses matado, probablemente no habrías tenido que hacerlo."@
+br
+`"------"@
+` Me siento un poco mareado.\
+`"…… En otras palabras, ¿esos asesinatos no tenían nada que ver con Nrvnqsr y eran obra de otro vampiro……?"@
+`"Sí, es correcto.@ Pero, es mi problema, así que no tienes que preocuparte por ello.@ Pero aparte de eso, oye."\
+playstop
+cl c,%type_crossfade_fst
+` Con una sonrisa extremadamente feliz, Arcueid me dirige la mirada mientras continúo sorprendido.@
+br
+`"¿Cómo lo pasaste anoche?@ ¿Quién vino?"\
+return

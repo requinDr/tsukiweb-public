@@ -1,0 +1,126 @@
+monocro off
+wavestop
+play "*6"
+;---added context above---
+bg "image\bg\bg_40e.jpg",%type_crossfade_mid
+bg #9c0120,%type_nowaitdisp
+bg "image\bg\bg_40e.jpg",%type_nowaitdisp
+` *jadeo*, *jadeo*, *jadeo*----
+br
+` Ya veo.@
+` Este impulso.@
+` Este impulso que intenta hacerme enloquecer estando consciente.@
+br
+` Esto es,
+` Esto es Roa.\
+` ¿Pero por qué?@ Siempre estuve cuerdo.@
+` Hasta que regresé a esta mansión, siempre fui normal.@
+br
+` Escucho fuertes llamadas a la puerta.@
+` Pero no puedo abrirla.@
+` Si la abro, definitivamente será el fin.\
+bg #ffffff,%type_crossfade_fst
+bg "image\bg\cmo_13.jpg",%type_crossfade_fst
+bg "image\bg\bg_40e.jpg",%type_crossfade_fst
+`"Ah-----"@
+` Finalmente comprendo.@
+` Ese sueño era la memoria del Roa de hace una generación.@
+` El encierro en su habitación, el asesinato de sus padres, su reinado sobre la ciudad como un vampiro, los últimos recuerdos de alguien que no conozco.\
+`"------"@
+` …… No hay salida.@
+` No es un problema que pueda solucionar suicidándome.@
+` Esto no es algo que pueda ser evitado.\
+` Comprendo los sentimientos de esa persona previa.@
+` Incluso si muriese, lo único que moriría sería mi voluntad.@ Entonces la voluntad de Roa tomaría control total de mi cuerpo.@
+` Si eso sucediese---las cosas empeorarían mucho más.@
+br
+`"Ja---jaja, ja."@
+` …… En primer lugar, no tengo la más mínima intención de suicidarme.\
+`"¡Shiki-sama, por favor abra, Shiki-sama!"@
+` Escucho su voz detrás de la puerta.@
+br
+` …… Suena casi como si estuviese en otro idioma.\
+` Tan lejana.@
+` Sólo una.@ Hay sólo una lámina de madera entre nosotros.@
+br
+` Pero parece tan lejana como la luna y las estrellas.\
+bg #000000,%type_crossfade_slw
+playstop
+bg "image\bg\bg_40e.jpg",%type_crossfade_slw
+waveloop se10
+` Son las diez de la mañana.@
+` Hisui se dio por vencida y se fue.@
+` Akiha y Kohaku-san tomaron turnos para llamar a la puerta pero las ignoré.\
+bg #000000,%type_crossfade_slw
+bg "image\bg\bg_40e.jpg",%type_crossfade_slw
+` Doce en punto.@
+` …… Estoy hambriento.@
+` Pero, aún estoy bien.@
+` Halo las sábanas hacia mí y abrazo mi tembloroso cuerpo.\
+bg #000000,%type_crossfade_slw
+bg "image\bg\bg_40e.jpg",%type_crossfade_slw
+` Dos en punto.@
+` …… Estoy muriendo de sed.@
+` He perdido el sentido del tiempo.@
+` Se siente muy tranquilo.@
+` Pero como si estuviese tomando estimulantes, mi cuerpo quiere hacer estragos.\
+bg #000000,%type_crossfade_slw
+bg "image\bg\bg_40e.jpg",%type_crossfade_slw
+br
+` Cuatro en punto.@
+` …… Más llamadas a la puerta.@
+` Un nombre siendo gritado.@
+` ¿De quién es esa voz?@ ¿Qué nombre está gritando?@ No lo sé.\
+bg #000000,%type_crossfade_slw
+monocro #ff0000
+bg "image\bg\bg_40e.jpg",%type_crossfade_slw
+br
+br
+` Cinco en punto.@
+` Lentamente comienza a oscurecer.\
+bg #000000,%type_crossfade_slw
+bg "image\bg\bg_40e.jpg",%type_crossfade_slw
+br
+br
+br
+` Seis en punto.\
+bg #000000,%type_crossfade_slw
+monocro off
+bg "image\bg\bg_40f.jpg",%type_crossfade_slw
+br
+br
+br
+br
+` Siete en punto.\
+bg #000000,%type_crossfade_slw
+bg "image\bg\bg_40f.jpg",%type_crossfade_slw
+br
+br
+br
+br
+br
+` Ocho en punto.\
+bg #000000,%type_crossfade_slw
+bg "image\bg\bg_40f.jpg",%type_crossfade_slw
+wave se3
+br
+br
+br
+br
+br
+br
+` ---Alguien, pasa por aquí.\
+`"Shiki-san, le he traído la cena.@ No ha comido nada desde esta mañana, va a sufrir un colapso."@
+br
+` La voz de Kohaku.@
+` Ella llama a la puerta.@
+br
+`"Cielos, si así son las cosas, al menos haré que coma."@
+` Un traqueteo.@
+` No otra llamada, sino el sonido de una cerradura al abrirse.\
+`"Jujuju, hora de usar mi arma secreta, ¡la llave maestra!"@
+`"----Ah."@
+br
+` La cerradura es abierta.@
+br
+return

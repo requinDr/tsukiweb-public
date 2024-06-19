@@ -1,0 +1,13 @@
+monocro off
+wavestop
+play "*3"
+;---added context above---
+bg "image\bg\bg_32a.jpg",%type_nowaitdisp
+`"¿Acaso no te enfadas fácilmente?@ Eres una persona bastante egoísta de corazón, después de todo."@
+` Expreso claramente lo que pienso sobre el asunto.@
+ld c,":a;image\tachi\ark_t08.jpg",%type_crossfade_fst
+`"¿En serio?@ Ahora que lo mencionas, podrías tener razón.@ Parece que me he vuelto muy emocional desde que me mataste."@
+` Arcueid asiente con satisfacción.@
+cl c,%type_crossfade_fst
+` …… Bueno, fuese verdad o no, el problema está resuelto siempre que Arcueid esté convencida.\
+return

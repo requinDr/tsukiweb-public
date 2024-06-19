@@ -1,0 +1,16 @@
+monocro off
+wavestop
+play "*3"
+;---added context above---
+bg "image\bg\bg_32a.jpg",%type_nowaitdisp
+`"¿Cómo demonios se supone que yo lo sepa?@ Eres un vampiro, apuesto que piensas muy diferente a nosotros."@
+ld c,":a;image\tachi\ark_t16.jpg",%type_crossfade_fst
+`"¡Oye……!@ ¿¡Qué quieres decir!?@ ¡Mis procesos mentales son básicamente los mismo de un humano, así que sólo hay una pequeña diferencia!"\
+`"Pero sigue siendo diferente, ¿cierto?@ Bueno, haciendo eso a un lado, es imposible entender los sentimientos de otros.@ No estoy muy seguro de mis propias emociones, así que para mí es imposible entender el proceso mental de un vampiro."@
+ld c,":a;image\tachi\ark_t04.jpg",%type_crossfade_fst
+`"¡Cierto!@ ¡Yo tampoco te entiendo; no hay necesidad de entender!@
+` ¡Sí, sí, soy una idiota por preguntarte!"@
+cl c,%type_crossfade_mid
+` Arcueid se da la vuelta con un "¡hmph!"\
+` …… Se ha enojado un poco, pero al menos parece convencida.\
+return

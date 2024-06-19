@@ -1,0 +1,111 @@
+mov $phasebg,"image\bg\bg_11c.jpg"
+mov $phasetitle_a,":a;image\word\PCEL_09A.PNG"
+mov $phasetitle_b,":a;image\word\day_09.png"
+gosub *left_phase
+bg #000000,%type_nowaitdisp
+bg "image\bg\cmo_14.jpg",%type_crossfade_fst
+` Estoy en un lugar oscuro.@
+` Ocho años desde que desperté.@
+` He estado conteniendo mi respiración en la oscuridad todo el tiempo.\
+` Ni siquiera sé por qué.@
+` Eso fue borrado hace mucho tiempo.@
+` Aquí, sólo hay oscuridad.@
+` Pero, sé que hay algo que tengo que hacer.\
+` No sé por qué vivo.@
+` Pero conozco mi propósito.@
+` Las cadenas que me sujetaban se han ido.@
+` No hay nada que me retenga.@
+!w500
+br
+` Lo único que falta,
+!w500
+br
+` es matarte.\
+bg #ffffff,%type_crossfade_slw
+bg "image\bg\bg_40e.jpg",%type_crossfade_fst
+br
+` Pío.@ Pío pío.@ Pío.@ Pío.@
+br
+` ¿Está abierta la ventana?@
+` Puedo escuchar el gorjeo de pequeñas aves en el jardín.@
+br
+` Una fría brisa roza mi rostro.@
+` La brillante luz solar golpea mis ojos.@
+` Un sereno y delicado matiz.@
+br
+` Una dulce visita matutina.\
+bg "image\bg\bg_40a.jpg",%type_crossfade_fst
+play "*2"
+` ¿Mañana?@
+` Parece que dormí hasta ahora después de ser cuidado por Akiha.@
+` Mi cuerpo aún se siente un poco pesado.@
+` Pero aun así me siento mucho mejor que anoche.@
+` Abriendo los ojos, me levanto.\
+wave se0
+bg #9c0120,%type_crossfade_fst
+bg "image\bg\bg_40a.jpg",%type_crossfade_fst
+`"Ugh…………"@
+` Siento ganas de vomitar instantáneamente.@
+` ¿Aún tengo la anemia de ayer?@
+` Me duele el pecho y me siento enfermo.@
+br
+ld c,":a;image\tachi\his_t01.jpg",%type_lshutter_fst
+`"Por favor discúlpeme."@
+` Hisui entra a mi habitación.@
+` Debe haber pensado que aún estaba dormido, porque parece sorprendida de verme levantado.\
+`"Buenos días.@ Parece que ha despertado, Shiki-sama."@
+`"----"@
+` Por alguna razón,
+` la reacción de Hisui me molesta.\
+`"Buen día.@ Desayuno, ¿cierto?@ Estaré allá pronto, así que vete.@ Voy a cambiarme."@
+ld c,":a;image\tachi\his_t04.jpg",%type_crossfade_fst
+`"…… Sí, por favor discúlpeme."@
+cl c,%type_lshutter_mid
+`"……………"@
+` Sin importar cuán malhumorado esté, desahogarme con Hisui de esa manera… hay algo mal en mí.\
+bg #ffffff,%type_crossfade_fst
+bg "image\bg\bg_40a.jpg",%type_crossfade_fst
+`"----"@
+` Me siento enfermo.@
+` Aun si voy a la escuela, no podré hacer nada en este estado.@
+br
+`"…… Tal vez simplemente me quede en casa."@
+` Pero, tengo que ir.@
+` Si voy a la escuela, podría ver a Senpai de nuevo.\
+` …… Podría no ser la "Senpai" que quiero---pero ella podría estar ahí.@
+br
+`"-----Fiu."@
+` Respirando profundamente, me tranquilizo.@
+` Logro resistir el mareo y dejo mi habitación.\
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_34a.jpg",%type_lcartain_mid
+ld c,":a;image\tachi\aki_t16a.jpg",%type_lshutter_mid
+`"Oh, Nii-san.@ …… Buenos, días."@
+` …… Tan pronto como entro a la sala de estar, Akiha me saluda con falsedad.\
+`"…… Sí, buen día.@ Despertaste temprano Akiha."@
+`"Siempre despierto así de temprano pero…… ¿Nii, san?@
+ld c,":a;image\tachi\aki_t12a.jpg",%type_crossfade_fst
+` …… ¿Estás bien?@ Tu cara aún se ve pálida.@ Si no te sientes bien, puedes quedarte en casa---"@
+`"No, estoy bien.@ Estoy mejor, así que no necesitas preocuparte."@
+` Le respondo rápidamente y paso a su lado.@
+` Me dirijo hacia el comedor  ya que probablemente me desmayaré si no como.\
+`"Nos vemos.@ ¿Ya no es hora de ir a la escuela?"@
+ld c,":a;image\tachi\aki_t17a.jpg",%type_crossfade_fst
+`"……………… Sí.@ Entonces, me iré ahora."@
+` Hablando con vacilación, ella se levanta silenciosamente.@
+cl c,%type_lshutter_mid
+` Akiha abandona la sala de estar.@
+` Después de verla desaparecer del rabillo de mi ojo, entro al comedor.\
+playstop
+bg #000000,%type_lcartain_mid
+bg "image\bg\bg_23a.jpg",%type_lcartain_mid
+` Dejo la mansión y me dirijo hacia la escuela.@
+` Mis extremidades aún se sienten pesadas, y con una sensación de estar en el cuerpo de otra persona, bajo la colina.\
+bg "image\bg\bg_01a.jpg",%type_lcartain_mid
+` Son las siete y cuarenta.@
+` La entrada se congestiona de estudiantes apresurados.@
+br
+`"………………"@
+` No creo que Senpai venga pero, ¿esperar aquí es mejor que esperar en mi salón de clases?@
+br
+return

@@ -1,0 +1,315 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg #000000,%type_nowaitdisp
+`"Oye---Shiki, despierta."@
+br
+` Escucho una voz junto a mi oído.@
+` Anoche---la voz que escuché hasta quedarme dormido… la voz que no puedo olvidar.\
+play "*5"
+bg "image\bg\bg_40d.jpg",%type_crossfade_fst
+`"¿Ar…… cueid---?"@
+` Me siento en la cama y miro alrededor de la oscura habitación.@
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+`"Buenas noches.@ Me alegra que te veas bien."@
+` Arcueid me saluda con ojos sonrientes.\
+`"Er, ¿buenas noches---?"@
+br
+` ---¿Por qué viniste aquí?@
+br
+`"¿Es extraño que esté aquí?"@
+`"¿Extraño?@ Claro que---"@
+br
+` ---Bueno, tal vez no…
+` Ahora que lo pienso, la noche es su tiempo, supongo que no es extraño que esté en cualquier parte.\
+`"¿No eres tú el que actúa extraño, Shiki?@ Vine todo el camino hasta aquí para verte, y tú sólo estás acostado ahí."@
+`"----Sí, espera----."@
+br
+` Salgo de la cama y me levanto.@
+br
+bg #ffffff,%type_crossfade_fst
+bg "image\bg\bg_40d.jpg",%type_crossfade_fst
+quakey 1,200
+ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
+` ----Pero,
+` mi cuerpo comienza a ladearse, y caigo de vuelta a la cama.\
+`"¿Huh----?"@
+` Hay algo extraño.@
+` Sangre se acumula detrás de mi cabeza y mi visión se nubla.@
+` Algo está mal----\
+`"Santo cielo, Shiki."@
+` Arcueid se acerca más.@
+cl c,%type_lshutter_mid
+` Ella se para frente a mí, y sus ojos rojos…\
+`"Así no puedes hacer nada, ¿cierto?@ Vamos, levántate y tócame.@ Quiero sentir tus dedos sobre mi cuerpo."@
+br
+` …… Puedo escuchar su voz junto a mi oído.\
+` ----¿Qué está pasando conmigo?@
+br
+` Ella está justo frente a mí, pero no puedo mirar su rostro.\
+` Algo está mal.@
+` Aunque trato de mirar su rostro, mis ojos no se mueven.\
+` Sus bien formados y aparentemente suaves senos.@
+` Sus delicadamente curveadas y abrazables caderas.@
+` Sus apetitosos labios rojos.@
+` Todo eso me permite sentir su naturaleza femenina, y como hombre, estoy paralizado.\
+`"Oye----"@
+` Me mareo.@
+` Hay algo----raro.@
+` Difícilmente puedo respirar; mi mente está en blanco.@
+` Se siente como si mi corazón se hubiese detenido.@
+br
+`"----Ya veo.@ No puedes moverte por ti mismo, ¿eh?"@
+br
+` Puedo escuchar su voz junto a mi oído.@
+` Relajadamente,
+` Arcueid envuelve sus brazos a mi alrededor mientras estoy congelado sobre la cama.\
+`"Qué----"@
+` Palpitar.@
+` Aunque mi corazón se siente detenido, un palpitar resuena profundamente dentro de mi pecho.\
+`"Tu corazón está latiendo como si fuese a quebrarse, Shiki."@
+` Su voz tira de mis tímpanos.@
+` No, en realidad----sus apetitosos labios están mordisqueando mi oído.@
+`"¡Ah…………!"@
+` Ella sólo está mordisqueando mi oído.@
+` Eso es todo lo que está haciendo,
+` pero una onda de choque me recorre.\
+`"Ar…… cueid……"@
+` Intento mover mis brazos para apartarla.@
+` …… pero no puedo siquiera levantar un dedo.\
+`"Ah…… gu----"@
+` Mi cuerpo no se mueve.@
+` En el instante en que me percato de esto, mi respiración se acelera.@
+` No puedo entender por qué mi cuerpo no se mueve.@
+` Sólo el hecho de que mi cuerpo no se mueva en esta situación parece tan indecente----que me quita el razonamiento y le prende fuego.\
+`"¿Oh?----Ya veo.@ Shiki, me deseas."@
+` Arcueid ríe tontamente.@
+` La voz se mueve de mi oído hacia un lado de mi cuello.@
+` Su ligera respiración se mueve a lo largo de mi garganta.@
+` Con un pequeño chirrido, ella lame mi cuello.@
+br
+` ----Como para probarme.\
+`"¡Erh…………!"@
+` Palpitar.@
+` Mi corazón se está despedazando.@
+` Mi sangre pulsante y mi mente en blanco.@
+` La frialdad de las manos de Arcueid sobre mi espalda.@
+` La suavidad de sus senos presionándose contra mi pecho.@
+` Su congelada lengua trazando las líneas de mi garganta.@
+br
+` Todo eso destruye la razón que me quedaba.\
+`"…… No… seas estúpida… ¿por qué yo----me excitaría por ti?"@
+`"Mmm… mentiroso.@ Estás tan excitado."@
+br
+` Su respiración se mueve de mi cuello y viaja hacia mi pecho.@
+br
+` ----Mi respiración es pesada.@
+` Quiero escapar.@
+` Pero, más que eso, quiero tomarla.\
+` Cabello dorado.@ Ojos rojos.@ Piel Blanca.@ Finos dedos.@ Suaves brazos.@
+` Qué----cuerpo tan lujurioso.@
+` Mi mente está gritando que quiero probarla desde la cima de su cabeza hasta los dedos de sus pies.@
+br
+`"G………"@
+` ¿Qué es esto?@
+` Todavía puedo pensar racionalmente, pero---mi mente es asaltada por excitación animal----\
+`"¡Ha…… gh……!"@
+` Intento levantar mi brazo usando toda mi concentración.@
+` Pero no se mueve.@
+` Mi cuerpo está reaccionando a su respiración, y no puedo moverlo.@
+br
+` ----No puedo creerlo.@
+br
+` Más que estar siendo sometido por algo que puedo ver,
+` Sólo el hecho de que su respiración me está sometiendo me excita tanto, que prácticamente me hace eyacular.\
+`"----Detente…… si continúas haciendo esto… será… malo----"@
+`"Es gracioso, Shiki.@ Tu cuerpo no concuerda con lo que tus labios dicen.@
+` Te has puesto tan duro aquí abajo----será mejor que hagamos algo al respecto."\
+` Sus manos se apartan de mi espalda.@
+` Y entonces,
+` sus adorables dedos blancos descienden bajo mi cintura.@
+` Encontrando mi ya erecta asta.\
+`"Detent----"@
+`"Sientes dolor ¿no?@ Está bien, no tienes que contenerte.@ Yo lo calmaré----"@
+` Su respiración golpea mi dura asta.@
+br
+` Sus finos dedos se envuelven a mi alrededor.@
+bg #000000,%type_lshutter_mid
+`"¡Ga----!"@
+` Sólo eso hace que mi cuerpo salte.@
+` Mi espalda se arquea y vuelvo a caer sobre la cama.\
+`"¡I-Idiota!@ ¿¡Qué estas pensando……!?"@
+` Logro gritar acostado sobre mi espalda.@
+`"----------"@
+` Arcueid mira abajo hacia mí sin decir nada.@
+` …… Y entonces, silenciosamente se quita lo último de su ropa.@
+` Observándome con sus desenfocados ojos rojos, un suave,
+!w500
+br
+`"Shiki, te ves tan delicioso,"@
+!w500
+br
+` escapa de sus labios.\
+`"¡------!"@
+` Lucho con toda mi fuerza para levantarme de la cama.@ Pero aún no puedo mover ni un dedo.@
+` Ella trepa sobre la cama y su exuberante cuerpo desnudo lentamente se relaja para presionarse contra el mío.\
+` Palpitar.@ Mi sangre se agita con más fuerza.@
+br
+` Igual que cuando estoy mareado, no puedo pensar claramente.@
+` Pero esta vez,
+` no pierdo la consciencia.\
+bg "image\event\ark_h01.jpg",%type_lshutter_mid
+`"Asombroso----no sabía que podías ponerte tan duro."@
+` …… Sus dedos me acarician burlonamente.@
+` Es más un toque que un agarre, hasta que las sensaciones se fortalecen---¡impulsándome a apresurarme, apresurarme, apresurarme!\
+`"¿Puedes sentirlo----?@ Estás goteando tanto aquí abajo, Shiki, es casi como si estuvieses llorando."@
+` "Qué lindo" dice ella, sonriendo.@
+` Sus labios descienden para plantar un cálido y suave beso directamente sobre la cabeza.\
+`"¡----!"@
+` Desesperadamente retengo el grito que amenaza con escapar de mis labios.@
+` Arcueid alza la vista hacia mí, sus ojos bailando con alegría desenfrenada.@
+`"¿No puedes simplemente ser sincero?@ Si vas a seguir así, Shiki, tendré que provocarte un poco más."@
+`"Qué----qué estas----m……!"\
+` Ahogo mi voz una vez más.@
+` Sólo el toque de las yemas de sus dedos sobrecarga mis sentidos.@
+` Entonces… la húmeda sensación de su lengua.@
+` Deslizándose a lo largo de mi longitud.@
+` Como para mojar mi reseca asta, una línea de saliva sale de su boca.\
+` Su dorado cabello ondea, ocultando parcialmente su rostro.@
+` Todo lo que siento es culpa y vacilación… y el placer que comienza a eclipsarlas.\
+`"¡K----!"@
+` Comienzo a elevarme aun más alto.@
+` Mi grotesca asta se ha endurecido hasta formar un ofensivo pilar reluciente.@
+br
+` Sus dedos blancos lo sostienen.@
+` Lo abrazan.@
+` Deslizándose ruidosamente arriba y abajo, volviéndome loco.\
+`"¡Ha, ah………!"@
+`"Jeje…… tu voz es muy excitante.@
+` Siempre pensé que esta parte de tu cuerpo se veía deliciosa."@
+` Con eso, ella aparta su boca.@
+` …… Sus dedos blancos, semejantes obras de arte, suben lentamente mi asta.\
+`"¡Nn----……!"@
+` Ella la comprime desde abajo como tratando de exprimir la vida fuera de mí.@
+` Mientras mueve sus dedos----algo se dispara desde la base de mi cuerpo.@
+` Todo lo que puedo hacer es resistir esta sensación frenéticamente.\
+` Mientras sus cuatro finos dedos mueven mi dureza como formas de vida separadas,
+` su pulgar frota fuertemente mi punta----atrás y adelante, arriba y abajo, una y otra vez.\
+`"Asombroso…… ¿Esás goteando tanto y aún hay más?@ En verdad estás excitado, ¿no Shiki?"@
+`"Idio----por… supuesto----que no."@
+`"Oye, estoy haciendo lo que quieres.@ ¡Deberías ser… sincero!"\
+bg #ffffff,%type_nowaitdisp
+bg "image\event\ark_h01.jpg",%type_nowaitdisp
+`"¡Ah----!"@
+` Su pulgar despliega la abertura sobre mi asta.@
+` Desde la mitad inferior de mi cuerpo, dolor y placer se mezclan como un choque eléctrico.\
+`"Ha, ah----haa----ha, ah----"@
+br
+` Sólo puedo… respirar… en fragmentos.@
+` Squish.@
+` Mis latidos, mi respiración, todo ha caído en perfecta sincronización con el movimiento de sus finos dedos.\
+`"----Hm, supongo que estás casi listo."@
+br
+` Liberando mi hinchado órgano, ella mira hacia mi rostro.@
+br
+`"¿Cómo estuvo?@ Se sintió bien, ¿no, Shiki?"@
+`"……………………"@
+` …… No puedo decir nada.@
+` Mi mente grita en negación, pero mi cuerpo ha sucumbido a la voz de Arcueid.\
+` Mi mente aún es mía----pero mi cuerpo está esperando que Arcueid continúe.\
+`"Ar---cuei… d-----ya… es, sufi… ciente."@
+` Con lo último de mi voluntad, logro formar esas palabras de alguna manera.@
+` Arcueid simplemente se ríe.@
+br
+!w500
+`"Ahora Shiki----creo que me pondré seria."@
+!w500
+\
+` Sus dedos blancos agarran mi base.@
+` Mi capturado miembro se hincha como tratando de escapar de su apretado agarre.@
+` Estoy a punto de explotar.@
+` Desde un lado, como tocando una flauta, Arcueid me coloca dentro de su boca.\
+bg "image\event\ark_h02.jpg",%type_lshutter_mid
+`"¡Gh-----!"@
+` Mi columna se siente como si pudiese quebrarse por la mitad en cualquier momento.@
+` La lengua de Arcueid juguetea con la que ahora es la parte más sensible de mi cuerpo.\
+` Este desnudo sentimiento--esta sensación asaltante de puro placer me consume.@
+` Sólo esto hace que mi mente se sienta como si fuese a salir volando, pero su lengua no se detiene.\
+` Sus labios envueltos a mi alrededor se deslizan más y más.@
+` Tragando mi punta.@
+` Ella se la traga junto al fluido rebosante de la punta.\
+`"¡…………!"@
+` Esta sensación.@
+` No puedo creer cuán bien se siente el interior de su boca.@
+` Una tibia sensación.@ La resbaladiza textura de la saliva.@
+` Dentro de su estrecha boca, mi punzante virilidad y el movimiento de la lengua de Arcueid tratando de retenerme----\
+`"Mm…… Shiki, es tan lindo."@
+` Diciendo eso, sus dedos nuevamente se mueven más abajo.@
+` Presionando el lugar del cual brota mi asta de mi cuerpo, sólo su lengua se mueve arriba y abajo---lamiendo desde el fondo hasta la cima.\
+`"Ha…… n……"@
+` Su caliente y placentera respiración.@
+` La suave piel de su lengua presiona fuertemente a lo largo de mi longitud entera.\
+`"N…… n, mm…… ah, mm----"@
+` Su respiración fluye hacia mis nervios como presión líquida.@
+` El húmedo y pegajoso movimiento de su lengua.@
+` La mezcla de su suave y fuerte lengua lamiendo mi endurecida asta.\
+`"¡N----ha, ah……, mm……!"@
+` Respiración pesada.@
+` Mientras sus interrumpidas respiraciones soplan contra mi dureza----otra sensación se eleva dentro de mí.\
+`"A----Ar, cuei, d----"@
+` Desesperadamente me trago mis palabras.@
+` Sé que si hablo, mi mente se perderá completamente ante este placer.@
+` Lo sé, pero----
+`"¡Mm…… Shiki, esto es tan excitante……!"@
+`"¡------!"@
+` Sus dientes blancos presionan mi desnuda asta y yo----simplemente no me preocupo por nada----\
+`"Ha…… kk…… ah…"@
+` Cálida saliva cae de las esquinas de su boca.@
+` Sólo al pensar en eso, desde algún lugar profundamente dentro de mí… una bola de calor comienza a elevarse.\
+`"Haa…… haa…… ha…… ah…"@
+` Desesperadamente intento contenerla.@
+` Aquí----no puedo hacerlo aquí, nunca.@
+` Si lo hago----probablemente… a Arcueid----
+br
+` Derrame.@ Deslizamiento.@
+br
+` Los fluidos de su boca y los míos se mezclan ruidosamente.@
+` Sucia, mala----primitiva lujuria.\
+`"¡Ha----rgh……!"@
+` Muerdo mi lengua para contenerme.@
+` Pero es inútil.@
+` Sus dedos me sujetan fuertemente.@ No el tierno y suave toque de una amante juguetona, como antes.@
+` Ella lo desliza rápidamente arriba y abajo, forzándome hasta el límite.@
+br
+` Estoy más allá de mi límite.\
+bg #ffffff,%type_crossfade_fst
+`"¡Ah------!"@
+br
+` Palpitar.@
+br
+` Ardiente calor viaja a través de mi asta.@
+br
+` Palpitar.@
+br
+` Estalla directamente dentro de su boca.@
+br
+`"¡Ha----ah!"@
+` Este irresistible placer viaja hasta mi cerebro, sacudiendo mi mente hasta la sumisión----\
+` …… Las caricias de Arcueid cesan.@
+` Ella toma todo lo que yo ofrezco y lo traga sin vacilación.\
+`"------Ah."@
+` Su blanca y pura garganta de porcelana se mueve arriba y abajo mientras ella traga.@
+` Sus hermosos labios se apartan de mi grotesco miembro.@
+` Entre los dos, una delgada línea de saliva cuelga como una obscena seda de araña.@
+br
+` Ella tiene una expresión casi de aturdimiento.@
+` Su dorado cabello brilla mientras un rubor se desliza sobre sus mejillas y ella me mira a los ojos.\
+`"Ah------"@
+br
+` Cualquier cosa parecida a la razón o a la moderación abandonó mi mente hace mucho.@
+` Mi cuerpo ya es capaz de moverse.@
+` Respirando salvajemente, como un animal, empujo a Arcueid hacia la cama----\
+playstop
+!w3000
+return

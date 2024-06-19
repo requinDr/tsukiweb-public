@@ -1,0 +1,52 @@
+monocro off
+wavestop
+playstop
+;---added context above---
+bg "image\bg\bg_40b.jpg",%type_nowaitdisp
+` ---Iré a ver a Hisui.@
+br
+`"…… Pero Hisui no me deja ayudarle, y no quiero estorbarle……"@
+` …… ¿Qué debería hacer?@
+` No quiero ser una carga.@
+` Pero por alguna razón, quiero verla.\
+`"…… Ah."@
+` Eso me recuerda.@ Aún tengo que devolverle la cinta.@
+` Hisui dijo que la había olvidado, pero la cinta es suya.@ No tiene sentido que yo la siga conservando, así que debería devolverla.\
+bg #000000,%type_lshutter_mid
+bg "image\bg\bg_41.jpg",%type_lshutter_mid
+play "*8"
+` En la habitación del viejo, Hisui está ordenando libros.@
+` Aunque ya no está siendo usada, su habitación sigue siendo limpiada como antes.\
+`"Hisui, ¿tienes un minuto?"@
+ld c,":a;image\tachi\his_t01.jpg",%type_lshutter_fst
+`"Ah---Shiki-sama.@ Sí, ¿qué desea?"@
+`"Sé que ya lo platicamos anteriormente, pero pensé que debía devolverte esto."@
+br
+` Saco la cinta que Hisui me dio hace ocho años.@
+br
+ld c,":a;image\tachi\his_t04.jpg",%type_crossfade_fst
+`"………………"@
+`"¿Hisui?@ Entonces, ¿en verdad no la quieres……?"@
+ld c,":a;image\tachi\his_t17.jpg",%type_crossfade_fst
+`"……No, la tomaré.@ Es importante para mí, después de todo."@
+` Tomando la cinta, Hisui se queda en silencio.\
+`"…………"@
+` No puedo hablarle.@
+` La Hisui frente a mí se parece mucho a la Hisui de hace ocho años, distante de las personas a su alrededor.@
+ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
+`"Shiki-sama, ¿eso es todo lo que vino a hacer?"@
+` Parece que no puedo hablar, así que simplemente asiento.@
+`"En ese caso, por favor regrese a su habitación.@ Aún tengo trabajo por hacer."@
+cl c,%type_lshutter_fst
+` Hisui camina hacia el centro de la habitación.\
+`"…… Hisui."@
+` ¿Esa cinta tenía algún significado especial?@
+` Este período de ocho años.@ Puede que finalmente haya cumplido mi promesa, aunque haya sido demasiado tarde.@
+br
+`"…… Entonces, iré a mi habitación.@ Nos vemos luego, Hisui."@
+br
+` Con eso, dejo la habitación.\
+bg #000000,%type_crossfade_mid
+playstop
+!w1500
+return
