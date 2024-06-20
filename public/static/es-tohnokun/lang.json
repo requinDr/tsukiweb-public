@@ -1,0 +1,160 @@
+{
+  "translation": {
+    "name": "Tohno-kuN",
+    "desc": "Traducido al español por Tohno-kuN.",
+    "url": "https://web.archive.org/web/20140908015008/http://www.mcanime.net/foro/viewtopic.php?t=113083&postdays=0&postorder=asc&start=0&sid=52365a03cb733b1ddc0f0576310609f5",
+    "vndb": "https://vndb.org/r6351"
+  }, 
+  
+  "images": {
+    "redirect-ids": {
+      "en-mm": {
+        "thumb": 0,
+        "sd":"./image/$.webp",
+        "hd": "./image_x2/$.webp"
+      }
+    },
+    "redirected-images": {
+      "tachi/osiete": "en-mm"
+    }
+  },
+  "disclaimer": [
+    "Esta es una versión web de [i]Tsukihime[/i], una novela visual publicada en 2000 por Type-Moon.",
+    "El juego incluye contenido para adultos y está destinado únicamente a un publico adulto."
+  ],
+  "title": {
+    "start": "Nuevo Juego",
+    "resume": "Continuar",
+    "load": "Cargar Juego",
+    "config": "Opciones",
+    "extra": "Extras",
+    "about": {
+      "port": "Esta es una versión web de [i]Tsukihime[/i], una novela visual publicada en 2000 por Type-Moon.",
+      "project": "El proyecto está disponible en $0GitHub$1. ¡Añade una estrella si te gusta! Las contribuciones son bienvenidas.",
+      "feedback": "Envíe sus comentarios o informe un error $0aquí$1.",
+      "data": "Ningún dato será recopilado, todo se almacenará en su navegador. Gestiona tus datos $0aquí$1.",
+      "remake": "Considere comprar el remake de $0Tsukihime - A piece of blue glass moon$1.",
+      "close": "Cerrar"
+    },
+    "install": "Instalar"
+  },
+  "extra": {
+    "gallery": "Galería",
+    "endings": "Finales",
+    "scenes": "Escenas",
+    "eclipse": "Eclipse"
+  },
+  "config": {
+    "on": "Encendido",
+    "off": "Apagado",
+    "reset": "Reiniciar",
+    "tab-game": "Juego",
+    "tab-audio": "Audio",
+    "tab-controls": "Controles",
+    "tab-advanced": "Avanzado",
+    "volume-master": "Volumen general",
+    "volume-track": "Volumen de la Musica",
+    "volume-se": "Volumen de los Efectos",
+    "track-source": "Versión de la banda sonora",
+    "auto-mute": "Silenciar al cambiar de pestaña",
+    "ratio": "Proporción de la pantalla",
+    "ratio-auto": "Automático",
+    "ratio-4-3": "4:3",
+    "ratio-16-9": "16:9",
+    "text-speed": "Velocidad de texto",
+    "text-speed-low": "Lento",
+    "text-speed-med": "Medio",
+    "text-speed-high": "Rápido",
+    "text-speed-instant": "Instantáneo",
+    "auto-play-delay-text": "Delay en la reproducción automática de texto: $0s",
+    "auto-play-delay-page": "Delay en la reproducción automática de páginas: $0s",
+    "adult-title": "Adulto",
+    "adult-blur": "Desenfocar miniaturas",
+    "adult-warn": "Notificarme cuando entro en una escena H",
+    "quality": "Calidad",
+    "quality-sd": "640\u00D7480",
+    "quality-hd": "1280\u00D7960",
+    "fullscreen": "Pantalla Completa",
+    "language": "Idioma",
+    "data": "Almacenamiento de datos",
+    "data-export": "Exportar",
+    "data-import": "Importar",
+    "data-erase": "Eliminar",
+    "data-erase-warning": "Esto eliminará todos los datos, configuraciones y progreso guardados. ¿Está seguro?",
+    "data-erase-confirm": "Todos los datos han sido eliminados. Si abandona este sitio web sin realizar ningún cambio en la configuración y sin iniciar un nuevo juego, no quedarán datos almacenados en su computadora.",
+    "controls": {
+      "next": "Siguiente",
+      "history": "Mostrar/ocultar Registro",
+      "back": "Cerrar la pantalla actual/Menú de visualización",
+      "bg_move": "Mover imagen de fondo",
+      "auto_play" : "Reproducción automática",
+      "page_nav": "Navegar a la página siguiente/anterior",
+      "load": "Abrir panel de carga",
+      "save": "Abrir panel de guardo",
+      "q_save": "Guardado Rapido",
+      "q_load": "Cargado Rapido",
+      "config": "Abrir panel de configuración",
+      "_hold": "[i](Sostener)"
+    }
+  },
+  "endings": {
+    "normal": "Normal",
+    "good": "Bueno",
+    "true": "Verdadero",
+    "osiete": "Enséñame, Ciel-sensei"
+  },
+  "saves": {
+    "title-load": "Cargar",
+    "title-save": "Guardar",
+    "create": "Crear",
+    "export": "Exportar",
+    "delete": "Eliminar",
+    "delete-warning": "¿Está seguro de que desea eliminar este guardado?",
+    "overwrite-warning": "¿Estás seguro de que deseas sobrescribir este guardado?",
+    "quick-save": "Guardar Rapidamente"
+  },
+  "game": {
+    "skip-named": [
+      "Ya has visto la escena.",
+      "¿Quisieras saltarla?"
+    ],
+    "skip-unnamed": "Ya has visto esta escena. ¿Quisieras saltarla?",
+    "toast-qsave": "El progreso se ha guardado",
+    "toast-qload": "Progreso restaurado",
+    "toast-load": "Progreso restaurado",
+    "toast-save-fail": "No se puede guardar el progreso de esta sesión",
+    "toast-load-fail": "No se puede restaurar el progreso de esta sesión",
+    "toast-autoplay-stop": "Se detuvo la reproducción automática",
+    "toast-ffw-stop": "Se detuvo el avance rápido",
+    "toast-hscene-waning": "Estás a punto de leer una escena con contenido para adultos."
+  },
+  "menu": {
+    "graphics": "Imagen",
+    "history": "Registro",
+    "save": "Guardar",
+    "load": "Cargar",
+    "config": "Configuración",
+    "auto-play": "Reproducción automática",
+    "ffw": "Avance rapido",
+    "title": "Título",
+    "q-save": "Guardar R.",
+    "q-load": "Cargar R."
+  },
+  "history": {
+    "load": "Retroceder",
+    "skipped": "Escena $0 saltada."
+  },
+  "characters": {
+    "aki": "Akiha",
+    "ark": "Arcueid",
+    "cel": "Ciel",
+    "his": "Hisui",
+    "koha": "Kohaku",
+    "others": "Otros"
+  },
+  "yes": "Si",
+  "no": "No",
+  "ok": "Ok",
+  "back": "Volver",
+  "close": "Cerrar"
+}

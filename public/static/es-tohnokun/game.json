@@ -1,0 +1,158 @@
+{
+  "scenario": {
+    "days": [
+      "[i]1[sup]er[/sup] día | 21 de Octubre (Jue.)",
+      "[i]2[sup]do[/sup] día | 22 de Octubre (Vie.)",
+      "[i]3[sup]er[/sup] día | 23 de Octubre (Sáb.)",
+      "[i]4[sup]to[/sup] día | 24 de Octubre  (Dom.)",
+      "[i]5[sup]to[/sup] día | 25 de Octubre (Lun.)",
+      "[i]6[sup]to[/sup] día | 26 de Octubre (Mar.)",
+      "[i]7[sup]mo[/sup] día | 27 de Octubre (Mie.)",
+      "[i]8[sup]vo[/sup] día | 28 de Octubre (Jue.)",
+      "[i]9[sup]no[/sup] día | 29 de Octubre (Vie.)",
+      "[i]10[sup]mo[/sup] día | 30 de Octubre (Sáb.)",
+      "[i]11[sup]er[/sup] día | 31 de Octubre (Dom.)",
+      "[i]12[sup]do[/sup] día | 1 de Noviembre (Lun.)",
+      "[i]13[sup]er[/sup] día | 2 de Noviembre (Mar.)"
+    ],
+    
+    "routes": {
+      "aki" : {
+        "03a": "[b][i]3 / Impulso de Inversión III",
+        "03b": "[b][i]3 / La Marca Oscura del Beso",
+        "04a": "[b][i]4 / Cicatriz Oscura I",
+        "05a": "[b][i]5 / Sueño Tranquilo",
+        "06a": "[b][i]6 / Sueño Profundo",
+        "07a": "[b][i]7 / Cicatriz Oscura II",
+        "08a": "[b][i]8 / Sueño en la Tarde",
+        "09a": "[b][i]9 / Demonio Chupasangre",
+        "10a": "[b][i]10 / Noche Sofocante",
+        "11a": "[b][i]11 / Telescopio",
+        "12a": "[b][i]12 / Un Final",
+        "13a": "[b][i]Siesta Cálida",
+        "13b": "[b][i]Carricero Distante"
+      },
+      "ark": {
+        "01a": "[b][i]1 / Impulso de Inversión I",
+        "02a": "[b][i]2 / Impulso de Inversión II",
+        "03a": "[b][i]3 / La Bestia Negra I",
+        "04a": "[b][i]4 / La Bestia Negra II",
+        "05a": "[b][i]5 / Cicatriz Azul del Pecado",
+        "06a": "[b][i]6 / Ojos de Percepción Mortal I",
+        "07a": "[b][i]7 / Ojos de Percepción Mortal II",
+        "08a": "[b][i]8 / Muerte.",
+        "09a": "[b][i]9 / Luna Carmesí Bermellón I",
+        "10a": "[b][i]10 / Luna Carmesí Bermellón II",
+        "11a": "[b][i]11 / Noche Salvaje",
+        "11b": "[b][i]Crema",
+        "12a": "[b][i]12 / El Mundo de la Luna",
+        "13a": "[b][i]Tsukihime",
+        "13b": "[b][i]Luna al Amanecer"
+      },
+      "cel": {
+        "05a": "[b][i]5 / Residuo Rojo",
+        "06a": "[b][i]6 / Arco en el cielo I",
+        "07a": "[b][i]7 / Arco en el cielo II",
+        "08a": "[b][i]8 / (Muerte).",
+        "09a": "[b][i]9 / Coraza Desechada de Cigarra",
+        "09b": "[b][i]9 / LNO",
+        "10a": "[b][i]10 / Residuo Rojo II",
+        "11a": "[b][i]11 / Espejismo",
+        "11b": "[b][i]11 / Insomnio",
+        "12a": "[b][i]12 / Lápida Eterna",
+        "13a": "[b][i]Azul a Pleno Día",
+        "13b": "[b][i]Sol"
+      },
+      "his": {
+        "04a": "[b][i]4 / Jardín Cuna",
+        "05a": "[b][i]5 / Asesino I",
+        "06a": "[b][i]6 / Asesino II",
+        "07a": "[b][i]7 / Rasguño Transparente",
+        "07b": "[b][i]7 / Shikiller",
+        "08a": "[b][i]8 / “Muerte”.",
+        "09a": "[b][i]9 / Cuerpo Ardiente I",
+        "10a": "[b][i]10 / Cuerpo Ardiente II",
+        "11a": "[b][i]11 / Cuerpo Ardiente III",
+        "12a": "[b][i]12 / Ensueño",
+        "13a": "[b][i]13 / Capullo Dorado",
+        "14a": "[b][i]Luna de Mediodía",
+        "14b": "[b][i]Sueños Soleados"
+      },
+      "koha": {
+        "05a": "[b][i]5 / Cain I",
+        "06a": "[b][i]6 / Cain II",
+        "06b": "[b][i]6 / Visión Futura, Muerte Futura",
+        "07a": "[b][i]7 / Maldad en Cada Esquina I",
+        "08a": "[b][i]8 / Maldad en Cada Esquina II",
+        "09a": "[b][i]9 / Origami",
+        "10a": "[b][i]10 / Mechones de Cabello",
+        "11a": "[b][i]11 / Nanaya",
+        "12a": "[b][i]SUEÑOS SOLEADOS"
+      },
+      "others": {
+        "pro": "[b][i]un prólogo",
+        "epi": "[i]un epílogo"
+      }
+    },
+
+    "scenes": {
+      "openning": {"title": "[b][i]Prólogo - Glass Moon"},
+      "eclipse": {"title": "[b][i]Epílogo"},
+      "ending": {"title": "[b][i]Creditos"}
+    },
+
+    "dead-end": "Dead end",
+    "osiete": "Ciel's lesson"
+  },
+
+  "credits": [
+    {"center": ["[center][font=serif]Planificación / [left=15]Takeuchi Takashi",
+                "[center][font=serif][hide]Planificación / [/][left=15]Nasu Kinoko"]},
+    {"center": ["",
+                "[right][font=serif]Creador / Escritor de escenarios / Programador de escenarios /",
+                "[right][font=serif]Nasu Kinoko"]},
+    {"bottom": ["[right][font=serif]Asistente de Programador de escenarios/[hide]OKSG",
+                "[right][font=serif]OKSG"]},
+    {"center": ["",
+                "[right][font=serif]Diseño de personajes / Artista original / CG /",
+                "[right][font=serif]Takeuchi Takashi"]},
+    {"bottom": ["[right][font=serif]Asistente de CG / [hide]Fumicchi",
+                "[right][font=serif]Fumicchi"]},
+    {"center": ["[center][font=serif]Planos de Fondo / [left=15]",
+                "[center][font=serif][hide]Planos de Fondo / [/][left=15]Kuki Mamoru",
+                "[center][font=serif][hide]Planos de Fondo / [/][left=15]Takeuchi Takashi"]},
+    {"top": ["[left][font=serif]Programación / Escenarios /",
+             "[center][font=serif]Seibei"]},
+    {"top": ["[left][font=serif]Compositor / Arreglos Musicales / Efectos de Sonido",
+             "[center][font=serif]KEITA HAGA"]},
+    {"bottom": ["[right][font=serif]Agradecimientos Especiales / [left=8/]",
+                "[right][font=serif][left=8]Takahashi Naoki",
+                "[right][font=serif][left=8]B46"]},
+    {"bottom": ["[right][font=serif]Agradecimientos Especiales / [left=8/]",
+                "[right][font=serif][left=8]OKSG",
+                "[right][font=serif][left=8]SUBTLE",
+                "[right][font=serif][left=8]Kirihara Kojima",
+                "[right][font=serif][left=8]Hayashi Youko",
+                "[right][font=serif][size=80%](Titles Omitted)"]},
+    {"bottom": ["[right][font=serif]Grupo de testeo /[left=3/][left=12]Uetsugi Hiroyoshi",
+                "[right][font=serif][left=12]EDF Sakata",
+                "[right][font=serif][left=12]K-1",
+                "[right][font=serif][left=12]Shiten",
+                "[right][font=serif][left=12]Derocchi",
+                "[right][font=serif][left=12]NOCKy"]},
+    {"bottom": ["[right][font=serif]Grupo de testeo /[left=3/][left=12]B46",
+                "[right][font=serif][left=12]Mikage",
+                "[right][font=serif][left=12]Yamaguchi Tarou",
+                "[right][font=serif][left=12]Yamazaki Seiji",
+                "",""]},
+    {"bottom": ["[right][font=serif]Grupo de testeo /[left=15]",
+                "[right][font=serif]ALL TYPE-MOON STAFF",
+                "","","",""]},
+    {"center": "[center][font=serif]Director del Juego /[left=3/]Nasu Kinoko"},
+    {"center": "[center][font=serif]Director de produccion /[left=3/]Takeuchi Takashi"},
+    {"center": "[center][font=serif][left=5/]Producido por /[left=3/]TYPE-MOON"},
+
+    {"center": "[center][font=serif][left=5/]Traducción /[left=3/]Tohno-kuN", "delay":4300},
+    {"bottom": "[right][font=serif][noline][color=black][copy/] 2000 TYPE-MOON Todos los derechos reservados.", "delay": 21500, "bg": "#ffffff"}
+  ]
+}
