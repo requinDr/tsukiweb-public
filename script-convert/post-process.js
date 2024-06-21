@@ -233,7 +233,7 @@ function centerOpenning(lines) {
 }
 
 function addContext({graphics = null, track = null, waveloop = null, monocro = null}, _label, lines) {
-    lines.unshift(';---added context above---')
+    // lines.unshift(';---added context above---')
     if (graphics) {
         if (graphics.bg)
             lines.unshift(`bg ${graphics.bg},%type_nowaitdisp`)

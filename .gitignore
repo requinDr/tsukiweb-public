@@ -25,5 +25,5 @@ release
 script-convert/*
 !script-convert/script-convert.js
 public/.htaccess
-public/static/*
+public/static/*/*/
 !public/static/**/*.json
