@@ -292,7 +292,7 @@
     "s268"  : {"r": "cel", "d": "07a", "s": "5a", "fc": {"col": 6, "from": ["s267"]}},
     "s269"  : {"r": "cel", "d": "07a", "s": "5b", "fc": {"col": 7, "from": ["s267"]}},
     "s270"  : {"r": "cel", "d": "07a", "s": "6" , "fc": {"col": 6, "from": ["s268", "s269"], "graph": {"bg": "bg/bg_25b", "l": "tachi/ark_t05b", "r": "tachi/cel_t07b"}}},
-    "s271"  : {"r": "cel", "d": "08a", "fc": {"col": 6, "from": ["s270"]}, "//" : "day=8 inside scene"},
+    "s271"  : {"r": "cel", "d": "08a", "fc": {"col": 6, "from": ["s270"], "graph": {"bg": "event/cel_e05a"}}, "//" : "day=8 inside scene"},
     "s273"  : {"r": "cel", "d": "09a", "s": "1" , "fc": {"col": 6, "from": ["s271"]}},
     "s274"  : {"r": "cel", "d": "09a", "s": "2a", "fc": {"col": 6, "from": ["s273"]}},
     "s275"  : {"r": "cel", "d": "09a", "s": "2b", "fc": {"col": 7, "from": ["s273"]}},
