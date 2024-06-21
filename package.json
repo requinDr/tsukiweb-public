@@ -6,19 +6,19 @@
   "dependencies": {
     "@fancyapps/ui": "^5.0.36",
     "@types/jest": "^29.5.12",
-    "@types/node": "^20.12.7",
-    "@types/react": "^18.3.1",
+    "@types/node": "^20.14.7",
+    "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
-    "framer-motion": "^11.1.7",
+    "framer-motion": "^11.2.11",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-error-boundary": "^4.0.13",
-    "react-icons": "^5.1.0",
+    "react-icons": "^5.2.1",
     "react-modal": "^3.16.1",
-    "react-router-dom": "^6.23.0",
+    "react-router-dom": "^6.23.1",
     "react-toastify": "^10.0.5",
-    "react-tooltip": "^5.26.4",
-    "sass": "^1.75.0",
+    "react-tooltip": "^5.27.0",
+    "sass": "^1.77.6",
     "vite-plugin-svgr": "^4.2.0",
     "vite-tsconfig-paths": "^4.3.2"
   },
@@ -34,8 +34,8 @@
   },
   "devDependencies": {
     "@types/react-modal": "^3.16.3",
-    "@vitejs/plugin-react": "^4.2.1",
-    "typescript": "^5.4.5",
-    "vite": "^5.2.10"
+    "@vitejs/plugin-react": "^4.3.1",
+    "typescript": "^5.5.2",
+    "vite": "^5.3.1"
   }
 }

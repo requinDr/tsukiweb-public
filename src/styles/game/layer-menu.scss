@@ -90,11 +90,7 @@
         &:hover, &:focus-visible {
           &::after {
             width: 100%;
-            background-image: linear-gradient(
-              to right,
-              rgb(10, 164, 171) 75%,
-              #0a9eab00
-            );
+            background-image: linear-gradient(to right, rgb(12 170 217) 75%, rgba(10, 158, 171, 0));
             opacity: 1;
           }
         }
