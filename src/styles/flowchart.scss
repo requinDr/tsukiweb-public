@@ -1,68 +1,78 @@
 #scenes {
-   overflow: auto;
+	overflow: auto;
 
-   .flowchart {
-      padding-bottom: 60px;
-   }
-   .fc-scene {
-      .fc-scene-title {
-         font-size: 3.52777px;
-         line-height: 1;
-         text-align: center;
-         text-anchor: middle;
-         dominant-baseline: middle;
-         stroke-width: 0.264583;
-         stroke-linejoin: round;
-         fill: rgb(179 179 179);
-      }
+	.flowchart {
+		padding-bottom: 60px;
+	}
+	.fc-scene {
+		&.blur {
+			filter: blur(.5em);
+			transition: .2s ease-out;
+			transition-delay: 0s;
 
-      &:hover {
-         cursor: pointer;
-         .graphics {
-            filter: brightness(1.1);
-         }
-      }
-   }
-   .fc-link {
-      fill: none;
-      fill-opacity: 0.246809;
-      fill-rule: evenodd;
-      // not unlocked stroke: #1a465d;
-      stroke: #1187c5;
-      stroke-width: 0.6px;
-      stroke-linejoin: round;
-      stroke-opacity: 1;
-      paint-order: fill markers stroke;
-      stop-color: #000000;
-   }
-   .day-separator {
-      stroke: black;
-      stroke-width: 0.1px;
-   }
-   .day-title {
-      font-size: 3.52777px;
-      line-height: 1;
-      text-align: start;
-      text-anchor: start;
-      stroke-width: 0.264583;
-   }
+			&:hover, &:focus-visible {
+				filter: blur(0);
+				transition-delay: .6s;
+			}
+		}
+		.fc-scene-title {
+			font-size: 3.52777px;
+			line-height: 1;
+			text-align: center;
+			text-anchor: middle;
+			dominant-baseline: middle;
+			stroke-width: 0.264583;
+			stroke-linejoin: round;
+			fill: rgb(179 179 179);
+		}
+
+		&:hover {
+			cursor: pointer;
+			.graphics {
+				filter: brightness(1.1);
+			}
+		}
+	}
+	.fc-link {
+		fill: none;
+		fill-opacity: 0.246809;
+		fill-rule: evenodd;
+		// not unlocked stroke: #1a465d;
+		stroke: #1187c5;
+		stroke-width: 0.6px;
+		stroke-linejoin: round;
+		stroke-opacity: 1;
+		paint-order: fill markers stroke;
+		stop-color: #000000;
+	}
+	.day-separator {
+		stroke: black;
+		stroke-width: 0.1px;
+	}
+	.day-title {
+		font-size: 3.52777px;
+		line-height: 1;
+		text-align: start;
+		text-anchor: start;
+		stroke-width: 0.264583;
+	}
 }
 
 #fc-scene-outline,
 #fc-scene-hidden rect:last-of-type {
-   stroke-width: 0.6;
-   stroke-linejoin: round;
-   fill: none;
+	stroke-width: 0.6;
+	stroke-linejoin: round;
+	fill: none;
 }
 
 #fc-scene-hidden rect:last-of-type {
-   stroke: rgb(115 115 115);
+	stroke: rgb(115 115 115);
 }
 
 #fc-scene-outline {
-   stroke: #1187c5;
+	stroke: #1187c5;
 }
 
 #fc-scene-background {
-   fill: rgb(67 67 67);
+	fill: rgb(67 67 67);
 }
