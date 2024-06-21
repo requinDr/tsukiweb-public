@@ -7,6 +7,7 @@ import { useLanguageRefresh } from "../components/hooks/useLanguageRefresh"
 import { useScreenAutoNavigate } from "../components/hooks/useScreenAutoNavigate"
 import FixedFooter from "@ui-core/components/FixedFooter"
 import MenuButton from "@ui-core/components/MenuButton"
+import BlueContainer from "@ui-core/components/BlueContainer"
 
 const FlowchartScreen = () => {
   useScreenAutoNavigate(SCREEN.SCENES)
@@ -30,6 +31,9 @@ const FlowchartScreen = () => {
         <MenuButton to={SCREEN.TITLE}>
           {strings.back}
         </MenuButton>
+        <BlueContainer style={{display: 'inline-flex', float: "right"}}>
+          Thumbnails are a work in progress
+        </BlueContainer>
       </FixedFooter>
     </motion.div>
   )

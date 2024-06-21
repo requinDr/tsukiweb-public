@@ -28,15 +28,6 @@
 			filter: drop-shadow(0 0 12px white);
 			transition-timing-function: cubic-bezier(0.25, 0.1, 0.16, 1.0);
 		}
-		.neco-arc {
-			position: absolute;
-			top: 50%;
-			transform: translate(-50%, -50%);
-			width: min(600px, 70vmax);
-			height: min(300px, 70vmax);
-			opacity: 0.4;
-			object-position: right;
-		}
 		.tsuki-logo {
 			height: 100%;
 			width: min(70vmin, 400px);
@@ -227,20 +218,20 @@
 .app-info-modale {
 	.title-modal {
 		display: grid;
-		grid-template-columns: 1fr auto;
+		grid-template-columns: 1fr 180px;
 		align-content: start;
 		gap: 4em;
 		flex-grow: 1;
+
+		.card {
+			width: 100%;
+		}
 
 		.infos {
 			.top {
 				display: flex;
 				gap: 16px;
 				align-items: center;
-				border: 1px solid #0f759b;
-				background-color: rgba(22, 201, 251, 0.2);
-				border-radius: 4px;
-				padding: 4px 8px;
 				margin-bottom: 16px;
 
 				a {
@@ -250,6 +241,12 @@
 					&:hover {
 						box-shadow: var(--selected-shadow);
 					}
+				}
+				.vndb {
+					font-size: .8em;
+					display: flex;
+					align-items: center;
+					gap: 4px;
 				}
 			}
 
@@ -261,17 +258,14 @@
 				font-size: 1.1em;
 			}
 		}
-		.tsuki-remake {
-			display: grid;
-			grid-template-areas: "promo";
-			max-width: 180px;
-			border-radius: 4px;
-			overflow: hidden;
-			background-color: var(--focus);
 
-			& > * {
-				grid-area: promo;
-			}
+		.sidebar {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(min(100%, 130px), 1fr));
+			gap: 1em;
+		}
+		.tsuki-logo {
+			overflow: hidden;
 
 			img {
 				display: block;
@@ -279,23 +273,13 @@
 				min-width: 0;
 				object-fit: contain;
 			}
-
-			div {
-				margin-top: auto;
-				padding: 8px;
-				background-color: inherit;
-			}
 		}
 	}
 
-	@media screen and (max-width: 580px) {
+	@media screen and (max-width: 560px) {
 		.title-modal {
 			grid-template-columns: 1fr;
 			gap: 1em;
-
-			.tsuki-remake {
-				margin-inline: auto;
-			}
 		}
 	}
 }
