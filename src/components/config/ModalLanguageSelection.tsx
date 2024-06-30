@@ -23,7 +23,9 @@ const ModalLanguageSelection = ({show, setShow}: Props) => {
     >
       <div className="content">
         <div className="languages">
-          {...Object.entries(languages).map(([id, {"display-name": dispName}])=> {
+          {...Object.entries(languages)
+            .sort((a, b) => a[1]["display-name"].localeCompare(b[1]["display-name"]))
+            .map(([id, {"display-name": dispName}]) => {
             const selected = settings.language === id
             
             return (

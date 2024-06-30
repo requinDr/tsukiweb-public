@@ -106,7 +106,8 @@
   "saves": {
     "title-load": "Load",
     "title-save": "Save",
-    "create": "Create",
+    "create": "New save",
+    "import": "Import save file",
     "export": "Export",
     "delete": "Delete",
     "delete-warning": "Are you sure you want to delete this save ?",

@@ -107,6 +107,7 @@
     "title-load": "Carregar",
     "title-save": "Salvar",
     "create": "Criar",
+    "import": "Importar",
     "export": "Exportar",
     "delete": "Excluir",
     "delete-warning": "Tem certeza que deseja excluir esta sessão?",

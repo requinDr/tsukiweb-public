@@ -107,6 +107,7 @@
     "title-load": "Cargar",
     "title-save": "Guardar",
     "create": "Crear",
+    "import": "Importar",
     "export": "Exportar",
     "delete": "Eliminar",
     "delete-warning": "¿Está seguro de que desea eliminar este guardado?",

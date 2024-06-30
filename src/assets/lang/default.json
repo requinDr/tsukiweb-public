@@ -221,7 +221,8 @@
   "saves": {
     "title-load": "ロード",
     "title-save": "セーブ",
-    "create": "Create",
+    "create": "New save",
+    "import": "Import save file",
     "export": "エクスポート",
     "delete": "削除",
     "delete-warning": "このセーブを本当に削除したいですか？",
