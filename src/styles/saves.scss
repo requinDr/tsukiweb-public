@@ -18,7 +18,7 @@
 		grid-area: list;
 		display: flex;
 		flex-direction: column;
-		gap: 6px;
+		gap: 8px;
 		overflow-x: hidden;
 		letter-spacing: 1px;
 		padding-bottom: 80px;
@@ -35,27 +35,32 @@
 			display: flex;
 			flex-direction: row;
 			transition: all .2s ease-out;
-			min-height: clamp(84px, 25%, 100px);
+			min-height: clamp(80px, 20vw, 100px);
 			overflow: hidden;
 			font-size: 1.1em;
 
 			.deta {
-				padding: 1em;
 				min-width: 0;
 				width: 100%;
 
 				.date {
 					display: flex;
-					column-gap: .6em;
-					flex-flow: wrap;
+					column-gap: 0.6em;
+					white-space: nowrap;
+					color: rgb(47 205 255);
+					font-size: 0.9em;
+					padding-bottom: 2px;
+					margin-bottom: 8px;
+					max-width: fit-content;
+					padding-inline: 1.4em;
+					background-image: linear-gradient(90deg, #002781, transparent)
 				}
 				.line {
-					font-style: italic;
 					white-space: nowrap;
 					overflow: hidden;
 					text-overflow: ellipsis;
 					max-width: 60ch;
-					color: #9d9d9d;
+					margin-inline: 1em;
 				}
 			}
 
