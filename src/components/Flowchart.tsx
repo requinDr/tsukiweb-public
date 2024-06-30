@@ -129,20 +129,22 @@ class FcScene extends FcNode {
 			</>
 		}
 
-		const blur = settings.blurThumbnails && this.graph?.bg && findImageObjectByName(this.graph?.bg)?.sensitive
+		const blur = completed && settings.blurThumbnails && this.graph?.bg && findImageObjectByName(this.graph?.bg)?.sensitive
 		
-		return <Fragment key={this.id}>
-			{super.render()}
-			
-			<g className={`fc-scene${blur ? " blur" : ""}`} id={this.id}
-				transform={`translate(${this.x},${this.y})`}
-				onClick={() => playScene(this.id as LabelName, { continueScript: false })}
-				// TODO: continueScript = true if using the flowchart to navigate to previous scene (not yet implemented)
-				clipPath="url(#fc-scene-clip)">
-				<title>{this.id}</title>
-				{content}
-			</g>
-		</Fragment>
+		return (
+			<Fragment key={this.id}>
+				{super.render()}
+				
+				<g className={`fc-scene${blur ? " blur" : ""}`} id={this.id}
+					transform={`translate(${this.x},${this.y})`}
+					onClick={() => playScene(this.id as LabelName, { continueScript: false })}
+					// TODO: continueScript = true if using the flowchart to navigate to previous scene (not yet implemented)
+					clipPath="url(#fc-scene-clip)">
+					<title>{this.id}</title>
+					{content}
+				</g>
+			</Fragment>
+		)
 	}
 }
 
