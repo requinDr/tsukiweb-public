@@ -409,7 +409,7 @@ function onSceneEnd(label = gameContext.label, nextLabel:LabelName|undefined=und
   }
 }
 
-function warnHScene() {
+export function warnHScene() {
   toast(strings.game["toast-hscene-waning"], {
     toastId: "hscene-warning",
   })

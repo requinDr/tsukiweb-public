@@ -10,6 +10,7 @@ import { useLanguageRefresh } from './hooks/useLanguageRefresh'
 import MenuButton from '@ui-core/components/MenuButton'
 import { Tab } from '@ui-core/components/TabsComponent'
 import PageTabsLayout from '@ui-core/layouts/PageTabsLayout'
+import Button from '@ui-core/components/Button'
 
 enum Tabs {
   game = "game",
@@ -72,14 +73,16 @@ export default ConfigLayout
 
 
 interface ConfigLayoutProps {
-  title: string
+  title: ReactNode
   desc?: ReactNode
   children: ReactNode
   [key:string]:any
 }
 export const ConfigItem = ({ title, desc, children, ...props }: ConfigLayoutProps) => (
   <div className="config" {...props}>
-    <div className="config-name">{title}</div>
+    <div className="config-name">
+      {title}
+     </div>
 
     <div className="config-actions">
       {children}
@@ -99,7 +102,7 @@ type ConfigButtonsEntry =
   { value?: never, onSelect: VoidFunction })
 
 interface ConfigButtonsProps {
-  title: string
+  title: ReactNode
   desc?: ReactNode
   btns: ConfigButtonsEntry[]
   property: string
@@ -124,8 +127,8 @@ export const ConfigButtons = ({title, desc, btns, property, conf, updateValue}: 
 
 export const ResetBtn = ({onClick}: {onClick: ()=> void}) => (
   <div className="reset">
-    <MenuButton onClick={onClick}>
+    <Button onClick={onClick}>
       {strings.config.reset}
-    </MenuButton>
+    </Button>
   </div>
 )

@@ -20,7 +20,7 @@ const Button = ({children, to, className, ...props}: Props) => {
 	const button = to ? (
 		<Link
 			// to={to}
-			className={`${styles.btn} ${className || ""}`}
+			className={`${styles.btn} btn ${className || ""}`}
 			{...props as LinkProps}
 		>
 			{children}
@@ -28,7 +28,7 @@ const Button = ({children, to, className, ...props}: Props) => {
 	) : (
 		<button
 			// onClick={onClick}
-			className={`${styles.btn} ${className || ""}`}
+			className={`${styles.btn} btn ${className || ""}`}
 			{...props as React.ButtonHTMLAttributes<HTMLButtonElement>}
 		>
 			{children}

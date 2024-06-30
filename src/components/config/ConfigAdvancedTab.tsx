@@ -7,9 +7,10 @@ import { strings, languages } from "../../translation/lang"
 import { RecursivePartial } from "../../types"
 import { toast } from "react-toastify"
 import { useLanguageRefresh } from "../hooks/useLanguageRefresh"
-import { MdDeleteForever, MdDownload, MdFileUpload, MdTranslate } from "react-icons/md"
+import { MdDeleteForever, MdDownload, MdFileUpload, MdQuestionMark, MdTranslate } from "react-icons/md"
 import ModalLanguageSelection from "./ModalLanguageSelection"
 import PageSection from "@ui-core/layouts/PageSection"
+import { warnHScene } from "utils/script"
 
 function twoDigits(n: number) {
   return n.toString().padStart(2, '0')
@@ -132,7 +133,14 @@ const ConfigAdvancedTab = () => {
         />
 
         <ConfigButtons
-          title={strings.config["adult-warn"]}
+          title={
+            <>
+              <span>{strings.config["adult-warn"]}</span>
+              <button className="icon-help" style={{ marginLeft: 4}} onClick={warnHScene}>
+                <MdQuestionMark />
+              </button>
+            </>
+           }
           btns={[
             { text: strings.config.on, value: true },
             { text: strings.config.off, value: false },
