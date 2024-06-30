@@ -99,7 +99,7 @@ const SavesLayer = ({variant, back}: Props) => {
 						onMouseEnter={setFocusedSave.bind(null, 1)}
 						onMouseLeave={setFocusedSave.bind(null, undefined)}
 					>
-						<MdAddCircleOutline /> {strings.saves.import}
+						<MdAddCircleOutline /> {strings.saves.create}
 					</Button>
 				: <>
 					<Button

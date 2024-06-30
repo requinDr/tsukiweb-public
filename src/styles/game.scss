@@ -50,7 +50,7 @@
         .choice {
             @extend %info-box;
             padding: .5em 1em;
-            font-size: clamp(0.92em, 3.6vmin, 1.25em);
+            font-size: clamp(.92em, 3.6vmin, 1.3em);
             transition: all 0.2s ease-in-out;
             margin-inline: 8px;
 
