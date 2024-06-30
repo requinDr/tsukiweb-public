@@ -8,14 +8,14 @@
   
   "images": {
     "redirect-ids": {
-      "en-mm": {
+      "pt-matsuri": {
         "thumb": 0,
         "sd":"./image/$.webp",
         "hd": "./image_x2/$.webp"
       }
     },
     "redirected-images": {
-      "tachi/osiete": "en-mm"
+      "tachi/osiete": "pt-matsuri"
     }
   },
   "disclaimer": [
