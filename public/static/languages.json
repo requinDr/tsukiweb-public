@@ -37,11 +37,11 @@
     "last-update": "2024-06-19",
     "fallback": "en-mm"
   },
-    "zh-月姬野人汉化组&shiro神父": {
+    "zh-yueji_yeren_hanhua_zu": {
     "locale": "zh_CN",
     "display-name": "简体中文",
     "authors": "月姬野人汉化组 and shiro神父",
-    "dir": "./zh-月姬野人汉化组&shiro神父",
+    "dir": "./zh-yueji_yeren_hanhua_zu",
     "last-update": "2024-07-01",
     "fallback": "jp"
   }
