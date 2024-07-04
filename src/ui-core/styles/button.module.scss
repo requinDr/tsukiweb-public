@@ -21,8 +21,6 @@
 	color: var(--text-color);
 	padding: .4em 1em;
 	font-size: clamp(0.86rem, 3.5vmin, 1rem);
-	background-image: radial-gradient(#0540af, #020b47);
-	box-shadow: var(--menu-shadow);
 	transition: 0.2s;
 
 	&:hover,

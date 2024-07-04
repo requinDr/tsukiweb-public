@@ -6,7 +6,7 @@
     &.show {
         z-index: 100;
         opacity: 1;
-        background-color: rgba(0, 36, 87, 0.6);
+        background-color: rgba(0, 36, 87, 0.5);
         backdrop-filter: brightness(0.5) blur(1px);
     }
 }

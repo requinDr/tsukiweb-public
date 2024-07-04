@@ -18,50 +18,45 @@
 		grid-area: list;
 		display: flex;
 		flex-direction: column;
-		gap: 8px;
 		overflow-x: hidden;
 		letter-spacing: 1px;
 		padding-bottom: 80px;
 
-		.create, .import {
-			align-self: flex-end;
+		.import, .export {
+			margin-bottom: 8px;
 			gap: 8px;
-			font-size: .9em;
-			line-height: 1.2;
 		}
-
 		.save-container {
 			position: relative;
 			display: flex;
 			flex-direction: row;
 			transition: all .2s ease-out;
-			min-height: clamp(84px, 25vw, 100px);
+			min-height: clamp(84px, 25%, 100px);
 			overflow: hidden;
 			font-size: 1.1em;
+			padding-block: 4px;
+
+			&:not(:last-of-type) {
+				border-bottom: 1px solid var(--separator);
+			}
 
 			.deta {
+				padding: 1em;
 				min-width: 0;
 				width: 100%;
 
 				.date {
 					display: flex;
-					column-gap: 0.6em;
-					white-space: nowrap;
-					color: rgb(91 195 227);
-					font-size: 0.9em;
-					padding-bottom: 2px;
-					margin-bottom: 8px;
-					max-width: fit-content;
-					padding-inline: 1.4em;
-					background-image: linear-gradient(90deg, #001c5b, transparent);
+					column-gap: .6em;
+					flex-flow: wrap;
 				}
 				.line {
+					font-style: italic;
 					white-space: nowrap;
 					overflow: hidden;
 					text-overflow: ellipsis;
 					max-width: 60ch;
-					margin-left: 1em;
-					margin-right: .5em;
+					color: #9d9d9d;
 				}
 			}
 
@@ -76,6 +71,7 @@
 				position: absolute;
 				inset: 0;
 				transition: .2s;
+				margin-block: 4px;
 			}
 
 			&.active::after {
@@ -87,12 +83,11 @@
 				bottom: 4px;
 				right: 0;
 				content: "Quick Save";
-				font-size: 80%;
+				font-size: 0.8em;
 				font-style: italic;
-				background-color: rgb(37 43 57);
-				color: #5297a7;
-				padding: 0.1em 0.5em 0.1em 1.5em;
-				clip-path: polygon(1.5em 0%, 100% 0, 100% 100%, 0 100%);
+				color: #dddddd;
+				padding: 0.1em 0.5em 0.1em 4em;
+				background-image: linear-gradient(45deg, transparent 20%, #3300ff);
 			}
 		}
 	}
