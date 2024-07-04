@@ -24,11 +24,11 @@ const SaveDetails = ({id, saveState, deleteSave, ...props}: SaveDetailsProps)=> 
           <div className="actions">
             <Tooltip id="tooltip" className="tooltip" delayShow={800} />
             <button onClick={deleteSave.bind(null, id)}
-              data-tooltip-id="tooltip" data-tooltip-content="Delete">
+              data-tooltip-id="tooltip" data-tooltip-content="Delete" data-tooltip-place="top" data-tooltip-position-strategy="fixed">
               <MdDeleteOutline />
             </button>
             <button onClick={() => exportSave([id])}
-              data-tooltip-id="tooltip" data-tooltip-content="Download">
+              data-tooltip-id="tooltip" data-tooltip-content="Download" data-tooltip-place="top" data-tooltip-position-strategy="fixed">
               <MdOutlineFileDownload />
             </button>
           </div>
