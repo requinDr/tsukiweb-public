@@ -3,6 +3,7 @@ import { displayMode } from "../utils/display"
 import { addEventListener } from "../utils/utils"
 import { useObserver } from '../utils/Observer';
 import SavesLayout from "../components/SavesLayout";
+import { useLanguageRefresh } from "components/hooks/useLanguageRefresh";
 
 
 function back() {
@@ -14,6 +15,7 @@ const SavesLayer = () => {
   const [display, setDisplay] = useState(displayMode.saveScreen)
   const [variant, setVariant] = useState(displayMode.savesVariant as Exclude<typeof displayMode.savesVariant, "">)
   const rootRef = useRef<HTMLDivElement>(null)
+  useLanguageRefresh()
 
   useObserver((display)=> {
     setDisplay(display)
