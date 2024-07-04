@@ -291,7 +291,11 @@
 	.languages {
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(min(120px, 100%), 1fr));
-		gap: 1em;
+		column-gap: 1em;
+		row-gap: .6em;
+		max-height: 300px;
+		overflow-y: auto;
+		scrollbar-gutter: stable both-edges;
 	}
 	.language {
 		border-radius: .75rem;
@@ -301,7 +305,7 @@
 		transition: box-shadow 0.1s;
 
 		&.selected {
-			background-color: rgba(22, 201, 251, 0.2);
+			background-image: radial-gradient(#006697, #0e1d6d);
 		}
 		&:hover, &:focus-visible {
 			box-shadow: var(--selected-shadow);
@@ -309,8 +313,9 @@
 	}
 
 	.translation-details {
-		padding: 1em;
+		margin-top: 2em;
 		line-height: 1.6;
+		min-height: 180px;
 
 		.title {
 			font-weight: 600;
