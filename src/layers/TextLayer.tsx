@@ -50,7 +50,7 @@ const TextLayer = ({...props}: Props) => {
   if (className) classList.push(className)
   const [previousLines, lastLine] = [lines.slice(0, lines.length-1), lines[lines.length-1]]
   
-  const glyphNode = glyph && <span><img src={icons[glyph]} alt={glyph} id={glyph} className="cursor" /></span>
+  const glyphNode = glyph && <span className="cursor" id={glyph}><img src={icons[glyph]} alt={glyph} /></span>
 
   return (
     <div className={classList.join(' ')} {...remaining_props} id="layer-text">

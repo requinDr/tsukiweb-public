@@ -15,7 +15,7 @@
         position: absolute;
         background: none;
         overflow-y: scroll;
-        width: 98%;
+        scrollbar-gutter: stable both-edges;
         height: calc(100% - 40px);
         padding-bottom: 30vh;
         inset: 0;
