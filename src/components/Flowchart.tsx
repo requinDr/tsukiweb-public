@@ -123,7 +123,9 @@ class FcScene extends FcNode {
 					x={-SCENE_WIDTH/2} y={-SCENE_HEIGHT/2}
 					width={SCENE_WIDTH} height={SCENE_HEIGHT}
 				 >
-					<GraphicsGroup images={this.graph} resolution="thumb" lazy={true} />
+					<div style={{position: "fixed", width: "100%", height: "100%"}}>
+						<GraphicsGroup images={this.graph} resolution="thumb" lazy={true} />
+					</div>
 				</foreignObject>
 				<use href="#fc-scene-outline"/>
 			</>
