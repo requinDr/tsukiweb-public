@@ -156,10 +156,9 @@ export function jsonDiff<T extends JSONObject>(obj: T, ref: Readonly<RecursivePa
 //##############################################################################
 
 export function preprocessText(text: string) {
-  text = text.replaceAll('|', '…')
   let m
   let result = ""
-  while ((m = /[-―─]{2,}/g.exec(text)) !== null) {
+  while ((m = /[-―─―]{2,}/g.exec(text)) !== null) {
     if (m.index > 0)
       result += text.substring(0, m.index)
     const len = m[0].length
