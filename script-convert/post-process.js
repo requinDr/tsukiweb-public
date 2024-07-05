@@ -137,6 +137,17 @@ function replaceColorImages(lines) {
     }
 }
 
+// transform mp3loop m9 into play "*9"
+function replaceMp3Loop(lines) {
+    for (let [i, line] of lines.entries()) {
+        if (line.startsWith('mp3loop')) {
+            let og = line.split(' m')
+            lines[i] = 'play "*'+og[1]+'"'
+        }
+    }
+}
+
+
 /**
  * @param {Array<string>} lines 
  */
@@ -389,6 +400,7 @@ function postProcess(scenes, report) {
         pipesToEllipsis(lines)
         splitInstructions(lines)
         replaceColorImages(lines)
+        replaceMp3Loop(lines)
 
         if (specificFixes.hasOwnProperty(label)) {
             specificFixes[label](label, lines)

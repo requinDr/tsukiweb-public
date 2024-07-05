@@ -38,7 +38,7 @@
     "fallback": "en-mm"
   },
     "zh-yueji_yeren_hanhua_zu": {
-    "locale": "zh_CN",
+    "locale": "zh-CN",
     "display-name": "简体中文",
     "authors": "月姬野人汉化组 and shiro神父",
     "dir": "./zh-yueji_yeren_hanhua_zu",
