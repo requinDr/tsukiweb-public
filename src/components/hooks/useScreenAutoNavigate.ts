@@ -9,11 +9,11 @@ import { SCREEN, displayMode } from "../../utils/display"
  * @param currentScreen label of the current screen this hook is used on
  */
 export function useScreenAutoNavigate(currentScreen: SCREEN) {
-  const navigate = useNavigate()
-  useEffect(()=> {
-    displayMode.screen = currentScreen
-    observe(displayMode, 'screen', navigate,
-        { filter: (s)=> s != currentScreen })
-    return unobserve.bind(null, displayMode, 'screen', navigate) as VoidFunction
-  }, [])
+	const navigate = useNavigate()
+	useEffect(()=> {
+		displayMode.screen = currentScreen
+		observe(displayMode, 'screen', navigate,
+				{ filter: (s)=> s != currentScreen })
+		return unobserve.bind(null, displayMode, 'screen', navigate) as VoidFunction
+	}, [])
 }

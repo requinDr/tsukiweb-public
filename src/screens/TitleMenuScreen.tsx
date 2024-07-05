@@ -19,182 +19,182 @@ import usePWA from '../components/hooks/usePWA'
 import Particles from '@ui-core/components/Particles'
 
 const img = {
-  src: moon,
-  alt: "moon",
-  className: "moon"
+	src: moon,
+	alt: "moon",
+	className: "moon"
 }
 
 const TitleMenuScreen = () => {
-  useScreenAutoNavigate(SCREEN.TITLE)
-  const { hasPWAcapability, installPWA } = usePWA()
-  const [page, setPage] = useState<number>(0)
-  useLanguageRefresh()
+	useScreenAutoNavigate(SCREEN.TITLE)
+	const { hasPWAcapability, installPWA } = usePWA()
+	const [page, setPage] = useState<number>(0)
+	useLanguageRefresh()
 
-  function newGame() {
-    history.clear()
-    loadSaveState(blankSaveState())
-    displayMode.screen = SCREEN.WINDOW
-  }
+	function newGame() {
+		history.clear()
+		loadSaveState(blankSaveState())
+		displayMode.screen = SCREEN.WINDOW
+	}
 
-  async function continueGame() {
-    // restart from beginning of last visisted page ...
-    const lastSave = history.last
-                // or from last saved game
-                ?? getLastSave()
-                // or ask user to provide save file(s).
-                // Also retrieve settings from the save file(s)
-                ?? await loadSaveFiles().then(getLastSave)
-    if (lastSave) {
-      loadSaveState(lastSave)
-      displayMode.screen = SCREEN.WINDOW
-    }
-  }
+	async function continueGame() {
+		// restart from beginning of last visisted page ...
+		const lastSave = history.last
+								// or from last saved game
+								?? getLastSave()
+								// or ask user to provide save file(s).
+								// Also retrieve settings from the save file(s)
+								?? await loadSaveFiles().then(getLastSave)
+		if (lastSave) {
+			loadSaveState(lastSave)
+			displayMode.screen = SCREEN.WINDOW
+		}
+	}
 
-  function playEClipse() {
-    playScene("eclipse", {continueScript: true, viewedOnly: false})
-  }
+	function playEClipse() {
+		playScene("eclipse", {continueScript: true, viewedOnly: false})
+	}
 
-  const [allEndingsSeen, eclipseSeen] = useMemo(()=> {
-    const allEndingsSeen = Object.values(endings).every(e=>e.seen)
-    const eclipseSeen = viewedScene("eclipse")
-    return [allEndingsSeen, eclipseSeen]
-  }, [settings.completedScenes])
+	const [allEndingsSeen, eclipseSeen] = useMemo(()=> {
+		const allEndingsSeen = Object.values(endings).every(e=>e.seen)
+		const eclipseSeen = viewedScene("eclipse")
+		return [allEndingsSeen, eclipseSeen]
+	}, [settings.completedScenes])
 
-  const ExtraMenu = () => (
-    <>
-      <TitleMenuButton to={SCREEN.GALLERY}>
-        {strings.extra.gallery}
-      </TitleMenuButton>
-      <TitleMenuButton to={SCREEN.ENDINGS}>
-        {strings.extra.endings}
-      </TitleMenuButton>
-      <TitleMenuButton to={SCREEN.SCENES}>
-        {strings.extra.scenes}
-      </TitleMenuButton>
-      {allEndingsSeen &&
-      <TitleMenuButton onClick={playEClipse}
-        attention={!eclipseSeen}>
-        {strings.extra.eclipse}
-      </TitleMenuButton>
-      }
-    </>
-  )
+	const ExtraMenu = () => (
+		<>
+			<TitleMenuButton to={SCREEN.GALLERY}>
+				{strings.extra.gallery}
+			</TitleMenuButton>
+			<TitleMenuButton to={SCREEN.ENDINGS}>
+				{strings.extra.endings}
+			</TitleMenuButton>
+			<TitleMenuButton to={SCREEN.SCENES}>
+				{strings.extra.scenes}
+			</TitleMenuButton>
+			{allEndingsSeen &&
+			<TitleMenuButton onClick={playEClipse}
+				attention={!eclipseSeen}>
+				{strings.extra.eclipse}
+			</TitleMenuButton>
+			}
+		</>
+	)
 
-  return (
-    <motion.div
-      className="page" id="title-menu"
-      initial={{opacity: 0}}
-      animate={{opacity: 1}}
-      exit={{opacity: 0}}>
+	return (
+		<motion.div
+			className="page" id="title-menu"
+			initial={{opacity: 0}}
+			animate={{opacity: 1}}
+			exit={{opacity: 0}}>
 
-      <Particles />
+			<Particles />
 
-      <div className="logo">
-        <motion.img src={img.src} alt={img.alt} draggable={false} className={img.className}
-          initial={{ opacity: 0.9, transform: "translateY(-42%) scale(0.9)" }}
-          animate={{ opacity: 0.5, transform: "translateY(-50%) scale(1)" }}
-          transition={{
-            delay: 0,
-            duration: 1,
-          }} />
-        <motion.img
-          src={tsukiLogo} alt="tsukihime logo"
-          draggable={false}
-          className='tsuki-logo'
-          initial={{ opacity: 0, scale: 0.7 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{
-            delay: 0.4,
-            duration: 0.8,
-          }} />
-      </div>
+			<div className="logo">
+				<motion.img src={img.src} alt={img.alt} draggable={false} className={img.className}
+					initial={{ opacity: 0.9, transform: "translateY(-42%) scale(0.9)" }}
+					animate={{ opacity: 0.5, transform: "translateY(-50%) scale(1)" }}
+					transition={{
+						delay: 0,
+						duration: 1,
+					}} />
+				<motion.img
+					src={tsukiLogo} alt="tsukihime logo"
+					draggable={false}
+					className='tsuki-logo'
+					initial={{ opacity: 0, scale: 0.7 }}
+					animate={{ opacity: 1, scale: 1 }}
+					transition={{
+						delay: 0.4,
+						duration: 0.8,
+					}} />
+			</div>
 
-      <nav className="menu">
-        {page === 0 ?
-        <>
-          <div className='first-row'>
-            <TitleMenuButton onClick={newGame}>
-              {strings.title.start}
-            </TitleMenuButton>
+			<nav className="menu">
+				{page === 0 ?
+				<>
+					<div className='first-row'>
+						<TitleMenuButton onClick={newGame}>
+							{strings.title.start}
+						</TitleMenuButton>
 
-            {hasSaveStates() &&
-            <TitleMenuButton onClick={continueGame}>
-              {strings.title.resume}
-            </TitleMenuButton>
-            }
+						{hasSaveStates() &&
+						<TitleMenuButton onClick={continueGame}>
+							{strings.title.resume}
+						</TitleMenuButton>
+						}
 
-            <TitleMenuButton to={SCREEN.LOAD}>
-              {strings.title.load}
-            </TitleMenuButton>
+						<TitleMenuButton to={SCREEN.LOAD}>
+							{strings.title.load}
+						</TitleMenuButton>
 
-            <TitleMenuButton to={SCREEN.CONFIG}>
-              {strings.title.config}
-            </TitleMenuButton>
+						<TitleMenuButton to={SCREEN.CONFIG}>
+							{strings.title.config}
+						</TitleMenuButton>
 
-            <TitleMenuButton onClick={()=>setPage(1)}
-              className="extra"
-              attention={allEndingsSeen && !eclipseSeen}>
-              {strings.title.extra} {">"}
-            </TitleMenuButton>
-          </div>
+						<TitleMenuButton onClick={()=>setPage(1)}
+							className="extra"
+							attention={allEndingsSeen && !eclipseSeen}>
+							{strings.title.extra} {">"}
+						</TitleMenuButton>
+					</div>
 
-          <div className='second-row'>
-            <ExtraMenu />
-          </div>
-        </>
-        :
-        <>
-          <div className='first-row'>
-            <ExtraMenu />
+					<div className='second-row'>
+						<ExtraMenu />
+					</div>
+				</>
+				:
+				<>
+					<div className='first-row'>
+						<ExtraMenu />
 
-            <TitleMenuButton onClick={()=>setPage(0)}>
-              {"<"}  {strings.back}
-            </TitleMenuButton>
-          </div>
-        </>
-        }
-      </nav>
+						<TitleMenuButton onClick={()=>setPage(0)}>
+							{"<"}  {strings.back}
+						</TitleMenuButton>
+					</div>
+				</>
+				}
+			</nav>
 
-      <div className='top-actions'>
-        {hasPWAcapability &&
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{
-              delay: 0.8,
-              duration: 1,
-            }}>
-            <button
-              className="action-icon"
-              aria-label={strings.title.install}
-              onClick={installPWA}>
-              <MdGetApp />
-            </button>
-          </motion.div>
-        }
+			<div className='top-actions'>
+				{hasPWAcapability &&
+					<motion.div
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1 }}
+						transition={{
+							delay: 0.8,
+							duration: 1,
+						}}>
+						<button
+							className="action-icon"
+							aria-label={strings.title.install}
+							onClick={installPWA}>
+							<MdGetApp />
+						</button>
+					</motion.div>
+				}
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{
-            delay: 0.7,
-            duration: 1,
-          }}>
-          <TranslationSwitch />
-        </motion.div>
+				<motion.div
+					initial={{ opacity: 0 }}
+					animate={{ opacity: 1 }}
+					transition={{
+						delay: 0.7,
+						duration: 1,
+					}}>
+					<TranslationSwitch />
+				</motion.div>
 
-        <motion.div         
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{
-            delay: 0.6,
-            duration: 1,
-          }}>
-          <AppInfo />
-        </motion.div>
-      </div>
-    </motion.div>
-  )
+				<motion.div         
+					initial={{ opacity: 0 }}
+					animate={{ opacity: 1 }}
+					transition={{
+						delay: 0.6,
+						duration: 1,
+					}}>
+					<AppInfo />
+				</motion.div>
+			</div>
+		</motion.div>
+	)
 }
 
 export default TitleMenuScreen

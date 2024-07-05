@@ -1,3 +1,4 @@
+import { ResolutionId, TranslationId, LangJson } from "translation/lang"
 import { SpritePos } from "./components/molecules/GraphicsGroup"
 
 export type PageType = 'text'|'choice'|'skip'|'phase'
@@ -94,3 +95,32 @@ export type FcSceneAttrs = FcNodeAttrs & {
 }
 
 export type DivProps = React.ComponentPropsWithoutRef<"div">
+
+export type SettingsType = {
+  // scene settings
+  textSpeed: number
+  autoClickDelay: number
+  nextPageDelay: number
+  fastForwardDelay: number
+  enableSceneSkip: boolean // ask to skip scenes
+  preventUnreadSkip: boolean
+  // graphics settings
+  font: string
+  resolution: ResolutionId
+  language: TranslationId
+  fixedRatio: ViewRatio
+  // H-related settings
+  blurThumbnails: boolean
+  warnHScenes: boolean
+  // audio settings
+  volume: {
+    master: number
+    track: number
+    se: number
+  }
+  trackSource: keyof LangJson["audio"]["track-sources"]
+  autoMute: boolean
+  // saved progress
+  eventImages: string[]
+  completedScenes: string[]
+}

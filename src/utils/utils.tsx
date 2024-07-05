@@ -348,15 +348,15 @@ export async function requestJSONs({ multiple = false, accept = ''}) : Promise<R
   return jsons
 }
 
+export function isFullscreen() {
+  return document.fullscreenElement !== null
+}
+
 export function toggleFullscreen() {
   if (isFullscreen())
     document.exitFullscreen()
   else
     document.documentElement.requestFullscreen()
-}
-
-export function isFullscreen() {
-  return document.fullscreenElement !== null
 }
 
 export function resettable<T extends Record<PropertyKey, any>>(resetValue: Readonly<T>): [T, VoidFunction, Readonly<T>] {

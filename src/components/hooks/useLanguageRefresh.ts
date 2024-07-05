@@ -7,6 +7,6 @@ import { strings } from "../../translation/lang";
  * Forces a refresh of the component when the language is loaded.
  */
 export function useLanguageRefresh() {
-  const [_updateNum, forceUpdate] = useReducer(x => (x + 1) % 100, 0);
-  useObserver(forceUpdate, strings, 'id')
+	const [_updateNum, forceUpdate] = useReducer(x => (x + 1) % 100, 0);
+	useObserver(forceUpdate, strings, 'id')
 }

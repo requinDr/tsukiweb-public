@@ -9,21 +9,19 @@ import GraphicsElement from "./GraphicsElement"
  * used to make background transitions over the sprites
  */
 const ForegroundGraphics = () => {
-  const [bgAlign] = useObserved(displayMode, 'bgAlignment')
-  const {img, duration, effect, imgLoaded} = useGraphicTransition('bg')
+	const [bgAlign] = useObserved(displayMode, 'bgAlignment')
+	const {img, duration, effect, imgLoaded} = useGraphicTransition('bg')
 
-	//useTraceUpdate('fg', {bgAlign, img, duration, effect, imgLoaded, randId})
+	if (!(imgLoaded && duration > 0 && effect != "")) return <></>
 
-	if(!(imgLoaded && duration > 0 && effect != "")) return <></>
-
-  return (
-    <GraphicsElement key={img}
-      pos='bg'
-      image={img}
-      fadeTime={duration}
-      fadeIn={effect}
-      onAnimationEnd={endTransition} {...{'bg-align': bgAlign}}/>
-  )
+	return (
+		<GraphicsElement key={img}
+			pos='bg'
+			image={img}
+			fadeTime={duration}
+			fadeIn={effect}
+			onAnimationEnd={endTransition} {...{'bg-align': bgAlign}}/>
+	)
 }
 
 export default memo(ForegroundGraphics)

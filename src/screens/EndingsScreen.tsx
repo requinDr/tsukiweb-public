@@ -16,86 +16,86 @@ import PageSection from '@ui-core/layouts/PageSection'
 
 
 const EndingsScreen = () => {
-  useScreenAutoNavigate(SCREEN.ENDINGS)
-  useLanguageRefresh()
+	useScreenAutoNavigate(SCREEN.ENDINGS)
+	useLanguageRefresh()
 
-  return (
-    <motion.div
-      className="page" id="endings"
-      initial={{opacity: 0}}
-      animate={{opacity: 1}}
-      exit={{opacity: 0}}>
-      <div className="page-content">
-        <h2 className="page-title">{strings.extra.endings}</h2>
-        
-        <main>
-          <PageSection className="endings-list">
-          {Object.values(endings).map((ending, index) => {
-            if (ending.seen || window.unlock) {
-              return <EndingComponent ending={ending} key={index} />
-            } else {
-              return <div key={index} className="ending" />
-            }
-          })}
-          </PageSection>
+	return (
+		<motion.div
+			className="page" id="endings"
+			initial={{opacity: 0}}
+			animate={{opacity: 1}}
+			exit={{opacity: 0}}>
+			<div className="page-content">
+				<h2 className="page-title">{strings.extra.endings}</h2>
+				
+				<main>
+					<PageSection className="endings-list">
+					{Object.values(endings).map((ending, index) => {
+						if (ending.seen || window.unlock) {
+							return <EndingComponent ending={ending} key={index} />
+						} else {
+							return <div key={index} className="ending" />
+						}
+					})}
+					</PageSection>
 
-          <PageSection className="badendings-list">
-            <h3>{strings.endings.osiete}</h3>
-            <Tooltip id="osiete" place="top" className="tooltip" />
-            {Object.values(osiete).map((ending, index)=>
-              <div key={index} className={`badending ${ending?.seen ? 'seen' : ''}`}>
-                {ending?.seen ?
-                  <img
-                    src={chalkboard}
-                    alt={`Bad Ending ${ending.scene}`}
-                    draggable={false}
-                    onClick={() => playScene(ending.scene, {continueScript: false })}
-                    data-tooltip-id="osiete"
-                    data-tooltip-html={ReactDOMServer.renderToStaticMarkup(
-                    <div>
-                      {ending.name && <>{noBb(ending.name)}<br /></>}
-                      {ending.day && <>Day: {ending.day}<br /></>}
-                      {ending.scene}
-                    </div>)} />
-                : <img src={chalkboard} alt="Bad Ending" draggable={false} />
-                }
-              </div>
-            )}
-          </PageSection>
-        </main>
+					<PageSection className="badendings-list">
+						<h3>{strings.endings.osiete}</h3>
+						<Tooltip id="osiete" place="top" className="tooltip" />
+						{Object.values(osiete).map((ending, index)=>
+							<div key={index} className={`badending ${ending?.seen ? 'seen' : ''}`}>
+								{ending?.seen ?
+									<img
+										src={chalkboard}
+										alt={`Bad Ending ${ending.scene}`}
+										draggable={false}
+										onClick={() => playScene(ending.scene, {continueScript: false })}
+										data-tooltip-id="osiete"
+										data-tooltip-html={ReactDOMServer.renderToStaticMarkup(
+										<div>
+											{ending.name && <>{noBb(ending.name)}<br /></>}
+											{ending.day && <>Day: {ending.day}<br /></>}
+											{ending.scene}
+										</div>)} />
+								: <img src={chalkboard} alt="Bad Ending" draggable={false} />
+								}
+							</div>
+						)}
+					</PageSection>
+				</main>
 
-        <MenuButton to={SCREEN.TITLE} className="back-button">
-          {strings.back}
-        </MenuButton>
-      </div>
-    </motion.div>
-  )
+				<MenuButton to={SCREEN.TITLE} className="back-button">
+					{strings.back}
+				</MenuButton>
+			</div>
+		</motion.div>
+	)
 }
 
 export default EndingsScreen
 
 const EndingComponent = ({ending:{char, image, name, day, type}}: {ending: RouteEnding}) => {
-  return (
-    <div className={`ending ${char}`}>
-      <img className="ending-img"
-        src={imageSrc(`event/${image}`, 'thumb')}
-        alt={name} draggable={false} />
-      
-      <div className="ending-desc">
-        <div className="ending-name">
-          {noBb(strings.scenario.routes[char][day])}
-        </div>
-        
-        <div className="ending-bottom">
-          <div>
-            {strings.characters[char]}
-          </div>
+	return (
+		<div className={`ending ${char}`}>
+			<img className="ending-img"
+				src={imageSrc(`event/${image}`, 'thumb')}
+				alt={name} draggable={false} />
+			
+			<div className="ending-desc">
+				<div className="ending-name">
+					{noBb(strings.scenario.routes[char][day])}
+				</div>
+				
+				<div className="ending-bottom">
+					<div>
+						{strings.characters[char]}
+					</div>
 
-          <div className="ending-type">
-            ({type})
-          </div>
-        </div>
-      </div>
-    </div>
-  )
+					<div className="ending-type">
+						({type})
+					</div>
+				</div>
+			</div>
+		</div>
+	)
 }

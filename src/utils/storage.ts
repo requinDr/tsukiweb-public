@@ -1,5 +1,3 @@
-import { JSONObject } from "../types";
-
 export class StoredValue<T> {
   private name: string;
   private storage: Storage;

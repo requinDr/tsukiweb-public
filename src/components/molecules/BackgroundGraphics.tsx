@@ -5,20 +5,18 @@ import useGraphicTransition from "../hooks/useGraphicTransition"
 import GraphicsElement from "./GraphicsElement"
 
 const BackgroundGraphics = ()=> {
-  const [bgAlign] = useObserved(displayMode, 'bgAlignment')
-  const {img: currImg, prev: prevImg, duration: fadeTime, effect: _effect}
-      = useGraphicTransition('bg', false)
-  const bgTransition = fadeTime > 0
+	const [bgAlign] = useObserved(displayMode, 'bgAlignment')
+	const {img: currImg, prev: prevImg, duration: fadeTime, effect: _effect}
+			= useGraphicTransition('bg', false)
+	const bgTransition = fadeTime > 0
 
-  //useTraceUpdate('bg', {bgAlign, currImg, prevImg, fadeTime, _effect})
-
-  const img = bgTransition ? prevImg : currImg
-  return (
-    <GraphicsElement key={img}
-      pos='bg'
-      image={img}
-      {...{'bg-align': bgAlign}}/>
-  )
+	const img = bgTransition ? prevImg : currImg
+	return (
+		<GraphicsElement key={img}
+			pos='bg'
+			image={img}
+			{...{'bg-align': bgAlign}}/>
+	)
 }
 
 export default memo(BackgroundGraphics)

@@ -378,10 +378,10 @@ async function loadLabel(label: LabelName|"") {
   if (label == "") {
     sceneLines = []
   } else if (label == "endofplay") {
-    console.log("going back to title")
+    console.debug("going back to title")
     displayMode.screen = SCREEN.TITLE
   } else {
-    console.log(`load label ${label}`)
+    console.debug(`load label ${label}`)
     sceneLines = [] // set to empty to prevent execution of previous scene
     if (gameContext.index == -1)
       onSceneStart()
@@ -391,7 +391,7 @@ async function loadLabel(label: LabelName|"") {
 }
 
 function onSceneEnd(label = gameContext.label, nextLabel:LabelName|undefined=undefined) {
-  console.log(`ending ${label}`)
+  console.debug(`ending ${label}`)
   if (!gameSession.continueScript) {
     window.history.back(); // return to previous screen
   } else if (isScene(label)) {
