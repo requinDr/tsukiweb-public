@@ -1,0 +1,162 @@
+{
+  "translation": {
+    "name": "月姬野人汉化组 & SHIROU神父",
+    "desc": "Simplified Chinese translation by 月姬野人汉化组(r22129) + Simplified Chinese translation by SHIROU神父, based on r22129. Translates all text, including the previously untranslated H-scenes and bad endings.
+version 1.6 updated on 2022-03-31.",
+    "url": "https://bbs.sumisora.net/read.php?tid=10940555" "https://t.bilibili.com/643774340302635027",
+    "vndb": "https://vndb.org/r71804"
+  }, 
+  
+  "images": {
+    "redirect-ids": {
+      "en-mm": {
+        "thumb": 0,
+        "sd":"./image/$.webp",
+        "hd": "./image_x2/$.webp"
+      }
+    },
+    "redirected-images": {
+      "tachi/osiete": "zh-yueji_yeren_hanhua_zu"
+    }
+  },
+  "disclaimer": [
+    "这是Type-Moon于2000年出版的视觉小说[i]月姬[/i]的网络版。”,
+    “该游戏包含成人内容，仅适合成熟观众。"
+  ],
+  "title": {
+    "start": "从最初开始",
+    "resume": "继续从",
+    "load": "记忆复原(LOAD)",
+    "config": "选项设置",
+    "extra": "额外",
+    "about": {
+      "port": "这是Type-Moon于2000年出版的视觉小说[i]月姬[/i]的网络版。",
+      "project": "该项目位于 $0GitHub$1 上。 Add a star if you like it! Contributions are welcome.",
+      "feedback": "Send your feedback or report a bug $0here$1.",
+      "data": "不收集任何数据，所有内容都存储在你的浏览器中。管理你的数据$0此处$1。",
+      "remake": "请购买并支持重制版 $0月姬$ - A piece of blue glass moon$1.",
+      "close": "关闭"
+    },
+    "install": "Install"
+  },
+  "extra": {
+    "gallery": "画廊",
+    "endings": "结局列表",
+    "scenes": "场景",
+    "eclipse": "月蚀"
+  },
+  "config": {
+    "on": "On",
+    "off": "Off",
+    "reset": "恢复默认设置",
+    "tab-game": "游戏",
+    "tab-audio": "音频",
+    "tab-controls": "操作设置",
+    "tab-advanced": "高级设置",
+    "volume-master": "音量",
+    "volume-track": "背景音乐音量",
+    "volume-se": "特效音量",
+    "track-source": "音轨来源",
+    "auto-mute": "切换标签时静音",
+    "ratio": "纵横比",
+    "ratio-auto": "Auto",
+    "ratio-4-3": "4:3",
+    "ratio-16-9": "16:9",
+    "text-speed": "文字显示速度",
+    "text-speed-low": "慢",
+    "text-speed-med": "通常",
+    "text-speed-high": "快",
+    "text-speed-instant": "瞬间",
+    "auto-play-delay-text": "自动播放文本延迟: $0s",
+    "auto-play-delay-page": "自动播放页面延迟: $0s",
+    "adult-title": "成人设置",
+    "adult-blur": "模糊缩略图",
+    "adult-warn": "进入成人场景时警告",
+    "quality": "图形质量",
+    "quality-sd": "640\u00D7480",
+    "quality-hd": "1280\u00D7960",
+    "fullscreen": "全屏",
+    "language": "语言",
+    "data": "数据存储",
+    "data-export": "导出",
+    "data-import": "导入",
+    "data-erase": "删除",
+    "data-erase-warning": "你真的要删除所有保存并恢复为默认设置吗？",
+    "data-erase-confirm": "删除了所有的保存。 如果你在未对设置进行任何更改且未开始新游戏的情况下离开本网站，则你的计算机上不会保留任何数据",
+    "controls": {
+      "next": "下一个",
+      "history": "显示/隐藏回想",
+      "back": "关闭当前视图/显示菜单",
+      "bg_move": "移动背景图像",
+      "auto_play" : "自动播放",
+      "page_nav": "下一页/上一页",
+      "load": "打开加载页面",
+      "save": "打开保存页面",
+      "q_save": "速存",
+      "q_load": "速载",
+      "config": "打开选项设置页面",
+      "_hold": "[i](按住)"
+    }
+  },
+  "endings": {
+    "normal": "Normal",
+    "good": "Good",
+    "true": "True",
+    "osiete": "教教我吧！知得留老师！"
+  },
+  "saves": {
+    "title-load": "记忆复原(LOAD)",
+    "title-save": "记忆退避(SAVE)",
+    "create": "新保存",
+    "import": "导入保存文件",
+    "export": "导出",
+    "delete": "删除",
+    "delete-warning": "你确定要删除此保存吗？",
+    "overwrite-warning": "你确定要覆盖此保存吗？",
+    "quick-save": "速存"
+  },
+  "game": {
+    "skip-named": [
+      "该场景曾显示过。",
+      "跳过吗？"
+    ],
+    "skip-unnamed": "该场景曾显示过。 跳过吗？",
+    "toast-qsave": "进度已保存",
+    "toast-qload": "恢复进度",
+    "toast-load": "恢复进度",
+    "toast-save-fail": "无法保存进度",
+    "toast-load-fail": "无法恢复进度",
+    "toast-autoplay-stop": "自动播放停止",
+    "toast-ffw-stop": "快进停止",
+    "toast-hscene-waning": "你将要阅读包含成人内容的场景。"
+  },
+  "menu": {
+    "graphics": "显示图像",
+    "history": "回想",
+    "save": "记忆退避(SAVE)",
+    "load": "记忆复原(LOAD)",
+    "config": "选项设置",
+    "auto-play": "自动播放",
+    "ffw": "快进",
+    "title": "标题画面",
+    "q-save": "速存",
+    "q-load": "速载"
+  },
+  "history": {
+    "load": "记忆复原",
+    "skipped": "跳过场景 $0."
+  },
+  "characters": {
+    "aki": "秋叶",
+    "ark": "爱尔奎特",
+    "cel": "希耶尔",
+    "his": "翡翠",
+    "koha": "琥珀",
+    "others": "他人"
+  },
+  "yes": "是",
+  "no": "否",
+  "ok": "是",
+  "back": "返回",
+  "close": "关闭"
+}
