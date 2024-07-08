@@ -44,5 +44,13 @@
     "dir": "./zh-yueji_yeren_hanhua_zu",
     "last-update": "2024-07-01",
     "fallback": "jp"
+  },
+  "zh-tw-yueji_yeren_hanhua_zu": {
+    "locale": "zh-TW",
+    "display-name": "繁體中文",
+    "authors": "月姬野人汉化组 and shiro神父",
+    "dir": "./zh-tw-yueji_yeren_hanhua_zu",
+    "last-update": "2024-07-06",
+    "fallback": "jp"
   }
 }
