@@ -4,7 +4,7 @@ import moon from "../assets/images/moon.webp"
 import '../styles/title-menu.scss'
 import { SCREEN, displayMode } from '../utils/display'
 import { motion } from 'framer-motion'
-import { blankSaveState, getLastSave, hasSaveStates, loadSaveFiles, loadSaveState, playScene, viewedScene } from '../utils/savestates'
+import { blankSaveState, getLastSave, hasSaveStates, loadSaveFiles, loadSaveState, viewedScene } from '../utils/savestates'
 import history from '../utils/history'
 import { strings } from "../translation/lang"
 import { MdGetApp } from 'react-icons/md'
@@ -17,6 +17,7 @@ import AppInfo from '../components/title-menu/AppInfo'
 import TranslationSwitch from '../components/title-menu/TranslationSwitch'
 import usePWA from '../components/hooks/usePWA'
 import Particles from '@ui-core/components/Particles'
+import ExtraMenu from 'components/title-menu/ExtraMenu'
 
 const img = {
 	src: moon,
@@ -50,35 +51,11 @@ const TitleMenuScreen = () => {
 		}
 	}
 
-	function playEClipse() {
-		playScene("eclipse", {continueScript: true, viewedOnly: false})
-	}
-
 	const [allEndingsSeen, eclipseSeen] = useMemo(()=> {
 		const allEndingsSeen = Object.values(endings).every(e=>e.seen)
 		const eclipseSeen = viewedScene("eclipse")
 		return [allEndingsSeen, eclipseSeen]
 	}, [settings.completedScenes])
-
-	const ExtraMenu = () => (
-		<>
-			<TitleMenuButton to={SCREEN.GALLERY}>
-				{strings.extra.gallery}
-			</TitleMenuButton>
-			<TitleMenuButton to={SCREEN.ENDINGS}>
-				{strings.extra.endings}
-			</TitleMenuButton>
-			<TitleMenuButton to={SCREEN.SCENES}>
-				{strings.extra.scenes}
-			</TitleMenuButton>
-			{allEndingsSeen &&
-			<TitleMenuButton onClick={playEClipse}
-				attention={!eclipseSeen}>
-				{strings.extra.eclipse}
-			</TitleMenuButton>
-			}
-		</>
-	)
 
 	return (
 		<motion.div
@@ -139,13 +116,13 @@ const TitleMenuScreen = () => {
 					</div>
 
 					<div className='second-row'>
-						<ExtraMenu />
+						<ExtraMenu allEndingsSeen={allEndingsSeen} eclipseSeen={eclipseSeen} />
 					</div>
 				</>
 				:
 				<>
 					<div className='first-row'>
-						<ExtraMenu />
+						<ExtraMenu allEndingsSeen={allEndingsSeen} eclipseSeen={eclipseSeen} />
 
 						<TitleMenuButton onClick={()=>setPage(0)}>
 							{"<"}  {strings.back}
