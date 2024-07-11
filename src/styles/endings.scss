@@ -1,160 +1,160 @@
 @use 'partials/_components';
 
 #endings {
-    main {
-        display: grid;
-        grid-template-columns: 1fr 230px;
-        gap: 1rem;
-    }
+	main {
+		display: grid;
+		grid-template-columns: 1fr 230px;
+		gap: 1rem;
+	}
 
-    .endings-list {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(min(400px, 100%), 1fr));
-        isolation: isolate;
-        min-width: 0;
-        gap: 20px;
-        place-content: start;
+	.endings-list {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(min(400px, 100%), 1fr));
+		isolation: isolate;
+		min-width: 0;
+		gap: 20px;
+		place-content: start;
 
-        .ending {
-            display: flex;
-            flex-direction: row;
-            font-size: clamp(1.1em, 7vmin, 1.2em);
-            border-radius: 2px;
-            position: relative;
-            height: 110px;
-            background: linear-gradient(45deg, black, #444444);
+		.ending {
+			display: flex;
+			flex-direction: row;
+			font-size: clamp(1.1em, 7vmin, 1.2em);
+			border-radius: 2px;
+			position: relative;
+			height: 110px;
+			background: linear-gradient(45deg, black, #444444);
 
-            &::before{
-                content: '';
-                position: absolute;
-                inset: -3px;
-                background-size: 300%;
-                z-index: -1;
-                animation: glower 20s ease-out infinite;
-            }
+			&::before{
+				content: '';
+				position: absolute;
+				inset: -3px;
+				background-size: 300%;
+				z-index: -1;
+				animation: glower 20s ease-out infinite;
+			}
 
-            @keyframes glower {
-                0% {
-                  background-position: 0 0;
-                }
-                
-                50% {
-                  background-position: 100% 100%;
-                }
-                
-                100% {
-                  background-position: 0 0;
-                }
-            }
+			@keyframes glower {
+				0% {
+				  background-position: 0 0;
+				}
+				
+				50% {
+				  background-position: 100% 100%;
+				}
+				
+				100% {
+				  background-position: 0 0;
+				}
+			}
 
-            @mixin customCard($mainColor, $secondaryColor, $boxShadowColor) {
-                
-                &::before {
-                  background-image: linear-gradient(45deg, $mainColor, $secondaryColor, $mainColor, $secondaryColor);
-                }
-              
-                box-shadow: 0 2px 8px 0 $boxShadowColor;
-                background-image: linear-gradient(45deg, rgb(39 0 18 / 80%) 0%, $mainColor 100%);
-                transition: all .2s ease-in-out;
+			@mixin customCard($mainColor, $secondaryColor, $boxShadowColor) {
+				box-shadow: 0 2px 8px 0 $boxShadowColor;
+				background-image: linear-gradient(45deg, rgb(39 0 18 / 80%) 0%, $mainColor 100%);
+				transition: all .2s ease-in-out;
+				
+				&::before {
+				  background-image: linear-gradient(45deg, $mainColor, $secondaryColor, $mainColor, $secondaryColor);
+				}
 
-                &:hover {
-                    box-shadow: 0 2px 18px 2px $boxShadowColor;
-                }
-            }
-    
-            &.aki { @include customCard(#212121, #ffddc7, #583117) }
-            &.ark { @include customCard(#646400, #fcfbbe, #e7e300) }
-            &.cel { @include customCard(#003464, #c7faff, #00bfff) }
-            &.his { @include customCard(#640022, #ffc7c7, #ff0000) }
-            &.koha { @include customCard(#640064, #ffc7ff, #ff00ff) }
-            &.others {
-                &::before {
-                    background-image: linear-gradient(45deg, #583117, #e7e300, #00bfff, #ff0000, #ff00ff);
-                }
-                box-shadow: 0 2px 8px 0 #c46f6f;
-                background-image: linear-gradient(45deg, rgb(108 108 108 / 50%) 0%, #928784 100%);
+				&:hover {
+					box-shadow: 0 2px 18px 2px $boxShadowColor;
+				}
+			}
+	
+			&.aki { @include customCard(#212121, #ffddc7, #583117) }
+			&.ark { @include customCard(#646400, #fcfbbe, #e7e300) }
+			&.cel { @include customCard(#003464, #c7faff, #00bfff) }
+			&.his { @include customCard(#640022, #ffc7c7, #ff0000) }
+			&.koha { @include customCard(#640064, #ffc7ff, #ff00ff) }
+			&.others {
+				box-shadow: 0 2px 8px 0 #c46f6f;
+				background-image: linear-gradient(45deg, rgb(108 108 108 / 50%) 0%, #928784 100%);
+				transition: all .2s ease-in-out;
 
-                transition: all .2s ease-in-out;
+				&::before {
+					background-image: linear-gradient(45deg, #583117, #e7e300, #00bfff, #ff0000, #ff00ff);
+				}
 
-                &:hover {
-                    box-shadow: 0 2px 18px 2px #c46f6f;
-                }
-            }
-    
-            .ending-img {
-                height: 100%;
-                aspect-ratio: 4/3;
-                background-color: #1a353f59;
-            }
-            .ending-desc {
-                    margin: 16px;
-                .ending-name {
-                    font-size: 1.2em;
-                    line-height: 1;
-                }
-                .ending-bottom {
-                    display: flex;
-                    gap: 6px;
-                    font-size: .9em;
-                    opacity: 0.5;
-                }
-            }
-        }
-    }
+				&:hover {
+					box-shadow: 0 2px 18px 2px #c46f6f;
+				}
+			}
+	
+			.ending-img {
+				height: 100%;
+				aspect-ratio: 4/3;
+				background-color: #1a353f59;
+			}
+			.ending-desc {
+				margin: 16px;
+				
+				.ending-name {
+					font-size: 1.2em;
+					line-height: 1;
+				}
+				.ending-bottom {
+					display: flex;
+					gap: 6px;
+					font-size: .9em;
+					opacity: 0.5;
+				}
+			}
+		}
+	}
 
-    .badendings-list {
-        @extend %menu-container;
-        gap: 1em;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(32px, 1fr));
-        place-content: flex-start;
-        overflow-y: auto;
-        min-height: 30vh;
-        justify-items: center;
+	.badendings-list {
+		@extend %menu-container;
+		gap: 1em;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(32px, 1fr));
+		place-content: flex-start;
+		overflow-y: auto;
+		min-height: 30vh;
+		justify-items: center;
 
-        h3 {
-            all: unset;
-            font-size: clamp(1.1em, 7vmin, 1.2em);
-            width: 100%;
-            margin-bottom: .4em;
-            grid-column: 1/-1;
-        }
+		h3 {
+			all: unset;
+			font-size: clamp(1.1em, 7vmin, 1.2em);
+			width: 100%;
+			margin-bottom: .4em;
+			grid-column: 1/-1;
+		}
 
-        .badending {
-            width: 32px;
-            height: 32px;
-            filter: grayscale(1);
-            opacity: .5;
+		.badending {
+			width: 32px;
+			height: 32px;
+			filter: grayscale(1);
+			opacity: .5;
 
-            img {
-                width: 100%;
-                height: 100%;
-            }
+			img {
+				width: 100%;
+				height: 100%;
+			}
 
-            &.seen {
-                filter: grayscale(0);
-                opacity: 1;
-                cursor: pointer;
-                -webkit-tap-highlight-color: transparent;
-            }
-        }
+			&.seen {
+				filter: grayscale(0);
+				opacity: 1;
+				cursor: pointer;
+				-webkit-tap-highlight-color: transparent;
+			}
+		}
 
-        #osiete {
-            z-index: 1;
-        }
-    }
+		#osiete {
+			z-index: 1;
+		}
+	}
 
-    @media (max-width: 900px) {
-        .endings-list {
-            .ending {
-                height: 100px;
-            }
-        }
-    }
+	@media (max-width: 900px) {
+		.endings-list {
+			.ending {
+				height: 100px;
+			}
+		}
+	}
 
-    @media (max-width: 600px) {
-        main {
-            display: flex;
-        }
-    }
+	@media (max-width: 600px) {
+		main {
+			display: flex;
+		}
+	}
 }
