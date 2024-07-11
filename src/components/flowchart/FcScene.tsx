@@ -43,6 +43,13 @@ export class FcScene extends FcNode {
 			</>
 		}
 
+		const play = (e: React.MouseEvent | React.KeyboardEvent) => {
+			if (completed)
+				playScene(this.id as LabelName, { continueScript: false })
+			else
+				e.stopPropagation()
+		}
+
 		const blur = completed && settings.blurThumbnails && this.graph?.bg && findImageObjectByName(this.graph?.bg)?.sensitive
 		
 		return (
@@ -51,17 +58,19 @@ export class FcScene extends FcNode {
 				
 				<g className={`fc-scene`} id={this.id}
 					transform={`translate(${this.x},${this.y})`}
-					onClick={(e) => {
-							completed
-								? playScene(this.id as LabelName, { continueScript: false })
-								: e.stopPropagation()
-						}
-					}
 					// TODO: continueScript = true if using the flowchart to navigate to previous scene (not yet implemented)
 				>
 					<g className={`fc-scene-content${completed ? " completed" : ""}${blur ? " blur" : ""}`}
 						tabIndex={completed ? 0 : -1}
-						clipPath="url(#fc-scene-clip)">
+						clipPath="url(#fc-scene-clip)"
+						onClick={play}
+						onKeyDown={(e) => {
+								if (e.key === "Enter" && e.currentTarget === e.target) {
+									play(e)
+								}
+							}
+						}
+					>
 						<title>{this.id}</title>
 						{content}
 					</g>
