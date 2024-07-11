@@ -1,35 +1,53 @@
 #scenes {
-	overflow: auto;
+	display: grid;
+	grid-template-rows: 1fr min-content;
 
+	.page {
+		overflow: auto;
+		flex-direction: column;
+	}
 	.flowchart {
-		padding-bottom: 60px;
+		padding-bottom: max(60px, 10vh);
+		align-items: start;
+		height: auto;
+    max-height: none;
 	}
 	.fc-scene {
-		&.blur {
-			filter: blur(.5em);
-			transition: .2s ease-out;
-			transition-delay: 0s;
+		.fc-scene-content {
+			width: 100%;
+			height: 100%;
 
-			&:hover, &:focus-visible {
-				filter: blur(0);
-				transition-delay: .6s;
+			&:hover, &:focus-visible, &:focus {
+				outline: none;
 			}
-		}
-		.fc-scene-title {
-			font-size: 3.52777px;
-			line-height: 1;
-			text-align: center;
-			text-anchor: middle;
-			dominant-baseline: middle;
-			stroke-width: 0.264583;
-			stroke-linejoin: round;
-			fill: rgb(179 179 179);
-		}
 
-		&:hover {
-			cursor: pointer;
-			.graphics {
-				filter: brightness(1.1);
+			.fc-scene-title {
+				font-size: 3.52777px;
+				line-height: 1;
+				text-align: center;
+				text-anchor: middle;
+				dominant-baseline: middle;
+				stroke-width: 0.264583;
+				stroke-linejoin: round;
+				fill: rgb(179 179 179);
+			}
+
+			&.blur {
+				filter: blur(.5em);
+
+				&:hover, &:focus-visible {
+					filter: blur(0);
+				}
+			}
+
+			&.completed {
+				transition: scale 0.2s ease-in-out, filter 0.2s ease-in-out;
+
+				&:hover, &:focus-visible, &:focus {
+					scale: 1.1;
+
+					cursor: pointer;
+				}
 			}
 		}
 	}

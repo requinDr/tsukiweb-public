@@ -1,27 +1,27 @@
 @use 'layer-text';
 
 %layer-history {
-    z-index: -1;
-    opacity: 0;
-    transition: var(--transition);
-    &.show {
-        z-index: 100;
-        opacity: 1;
-        background: rgb(0 21 50 / 75%);
-        backdrop-filter: blur(2px);
-    }
+	z-index: -1;
+	opacity: 0;
+	transition: var(--transition);
+	display: grid;
+	grid-template-rows: 1fr min-content;
 
-    #history {
-        position: absolute;
-        background: none;
-        overflow-y: scroll;
-        scrollbar-gutter: stable both-edges;
-        height: calc(100% - 40px);
-        padding-bottom: 30vh;
-        inset: 0;
-        margin-inline: auto;
-        border-radius: 5px;
-        @extend %layer-text;
-        user-select: auto;
-    }
+	&.show {
+		z-index: 100;
+		opacity: 1;
+		background: rgb(0 21 50 / 75%);
+		backdrop-filter: blur(2px);
+	}
+
+	#history {
+		background: none;
+		overflow-y: scroll;
+		scrollbar-gutter: stable both-edges;
+		padding-bottom: 30vh;
+		margin-inline: auto;
+		@extend %layer-text;
+		user-select: auto;
+		width: inherit;
+	}
 }
