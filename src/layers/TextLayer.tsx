@@ -8,6 +8,7 @@ import { SCREEN, displayMode } from "../utils/display"
 import { DivProps } from "../types"
 import { BBTypeWriter, Bbcode } from "../utils/Bbcode"
 import { resetSI, scriptInterface } from "../utils/text"
+import useMousePointer from "components/hooks/useMousePointer"
 
 export const icons: Record<"moon"|"page", string> = {
   "moon": moonIcon,
@@ -24,6 +25,7 @@ const TextLayer = ({...props}: Props) => {
   const [ lines, setLines ] = useState<string[]>([])
   const [ immediate ] = useObserved(scriptInterface, 'fastForward')
   const [ glyph ] = useObserved(scriptInterface, 'glyph')
+  const mouseCursorVisible = useMousePointer()
 
   useEffect(()=> {
     if (glyph) {
@@ -47,6 +49,7 @@ const TextLayer = ({...props}: Props) => {
   const {className, ...remaining_props} = props
   const classList = ['layer']
   if (!display || (lines.length == 0)) classList.push('hide')
+  if (!mouseCursorVisible) classList.push('hide-mouse-pointer')
   if (className) classList.push(className)
   const [previousLines, lastLine] = [lines.slice(0, lines.length-1), lines[lines.length-1]]
   

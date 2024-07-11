@@ -20,6 +20,10 @@
 		opacity: 0;
 	}
 
+	&.hide-mouse-pointer {
+		cursor: none;
+	}
+
 	.text-container {
 		width: min(100%, 700px);
 		margin-inline: auto;
