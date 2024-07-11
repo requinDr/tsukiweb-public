@@ -22,5 +22,6 @@
         margin-inline: auto;
         border-radius: 5px;
         @extend %layer-text;
+        user-select: auto;
     }
 }
