@@ -48,9 +48,8 @@ const ConfigLayout = ({back, selectedTab, setSelectedTab, page}: Props) => {
 		{label: strings.config['tab-game'], value: Tabs.game},
 		{label: strings.config['tab-audio'], value: Tabs.audio},
 		{label: strings.config['tab-controls'], value: Tabs.controls},
+		{label: strings.config['tab-advanced'], value: Tabs.advanced, disabled: page !== SCREEN.CONFIG}
 	]
-	if (page === SCREEN.CONFIG)
-		tabs.push({label: strings.config['tab-advanced'], value: Tabs.advanced})
 
 	return (
 		<PageTabsLayout
