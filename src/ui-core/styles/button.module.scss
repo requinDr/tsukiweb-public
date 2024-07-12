@@ -45,8 +45,8 @@
 	&::before, &::after {
 		content: "";
 		position: absolute;
-		width: 10%;
-		height: 6%;
+		width: 20%;
+		height: 10%;
 		border: 20px solid transparent;
 		transition: width .2s ease-in-out, height .2s ease-in-out;
 		pointer-events: none;
@@ -65,7 +65,7 @@
 		--border-color: rgb(0 152 225);
 
 		&::before, &::after {
-			width: 60%;
+			width: 70%;
 			height: 30%;
 		}
 		&::before {
