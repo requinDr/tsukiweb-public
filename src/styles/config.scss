@@ -58,16 +58,6 @@
 			flex-wrap: wrap;
 			gap: 1em;
 		}
-		.desc {
-			font-size: .7em;
-			color: #969696;
-			border: 1px solid #26ffff3b;
-			padding: .2em 1em;
-			border-radius: 4px;
-			display: flex;
-			align-items: center;
-			gap: 0.6em;
-		}
 
 		.config-btns {
 			flex: 1;
@@ -143,10 +133,6 @@
 
 		.erase {
 			color: #bc2525;
-
-			&.config-btn:hover, &.config-btn:focus-visible {
-				background-color: rgb(255 0 0 / 28%);
-			}
 		}
 	}
 
@@ -198,7 +184,6 @@
 				flex-direction: column;
 				flex-wrap: nowrap;
 				.config-btns {
-					gap: 0.6em;
 					.config-btn {
 						min-width: clamp(80px, 26%, 100px);
 					}

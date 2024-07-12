@@ -11,6 +11,7 @@ import { MdDeleteForever, MdDownload, MdFileUpload, MdQuestionMark, MdTranslate 
 import ModalLanguageSelection from "./ModalLanguageSelection"
 import PageSection from "@ui-core/layouts/PageSection"
 import { warnHScene } from "utils/script"
+import Button from "@ui-core/components/Button"
 
 function twoDigits(n: number) {
 	return n.toString().padStart(2, '0')
@@ -110,11 +111,11 @@ const ConfigAdvancedTab = () => {
 
 			<ConfigItem title={strings.config.language}>
 				<div className="config-btns">
-					<button
+					<Button
 						className={`config-btn`}
 						onClick={()=>setShow(true)}>
 						<MdTranslate /> {languages[settings.language]["display-name"]}...
-					</button>
+					</Button>
 				</div>
 			</ConfigItem>
 			<ModalLanguageSelection show={show} setShow={setShow} />
@@ -153,19 +154,19 @@ const ConfigAdvancedTab = () => {
 
 			<ConfigItem title={strings.config.data}>
 				<div className="config-btns">
-					<button className="config-btn"
+					<Button className="config-btn"
 						onClick={exportData}>
 						<MdDownload /> {strings.config["data-export"]}
-					</button>
-					<button className="config-btn"
+					</Button>
+					<Button className="config-btn"
 						onClick={importData.bind(null, false)}
 						onContextMenu={importData.bind(null, true)}>
 						<MdFileUpload /> {strings.config["data-import"]}
-					</button>
-					<button className="config-btn erase"
+					</Button>
+					<Button className="config-btn erase"
 						onClick={eraseData}>
 						<MdDeleteForever /> {strings.config["data-erase"]}
-					</button>
+					</Button>
 				</div>
 			</ConfigItem>
 

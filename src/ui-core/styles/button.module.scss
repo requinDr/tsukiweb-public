@@ -19,12 +19,13 @@
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
+	gap: 6px;
 }
 
 .btnVariantDefault {
 	color: var(--text-color);
-	padding: .4em 1em;
-	font-size: clamp(0.86rem, 3.5vmin, 1rem);
+	padding: .2rem .6rem;
+	font-size: clamp(0.86em, 3.5vmin, 1em);
 	transition: 0.2s;
 
 	&:hover,
@@ -37,7 +38,6 @@
 .btnVariantCorner {
 	padding: .2rem .6rem;
 	background-color: transparent;
-	gap: 6px;
 	position: relative;
 	transition: box-shadow .2s ease-in-out;
 	border-radius: 3px;
