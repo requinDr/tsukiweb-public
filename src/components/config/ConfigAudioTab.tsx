@@ -45,7 +45,7 @@ const ConfigAudioTab = () => {
 			{(Object.keys(conf.volume) as Array<keyof typeof volumeNames>).map(key=>
 				<ConfigItem key={key} title={volumeNames[key]}>
 					<div className="config-range">
-					<span className="icon"><MdOutlineVolumeOff /></span>
+					<span className="icon"><MdVolumeMute /></span>
 						<input
 							type="range"
 							min={0}
@@ -60,7 +60,7 @@ const ConfigAudioTab = () => {
 
 						<button className="mute"
 							onClick={()=> updateSubValue('volume', key, -conf.volume[key])}>
-							{negative(conf.volume[key]) ? <MdVolumeMute aria-label="mute" /> : <MdOutlineVolumeUp aria-label="unmute" />}
+							{negative(conf.volume[key]) ? <MdOutlineVolumeOff aria-label="mute" /> : <MdOutlineVolumeUp aria-label="unmute" />}
 						</button>
 					</div>
 				</ConfigItem>
@@ -75,7 +75,6 @@ const ConfigAudioTab = () => {
 				updateValue={updateValue}
 			/>
 
-			
 			<ConfigButtons
 				title={strings.config['auto-mute']}
 				btns={[

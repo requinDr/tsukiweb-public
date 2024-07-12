@@ -113,12 +113,15 @@ export const ConfigButtons = ({title, desc, btns, property, conf, updateValue}: 
 	<ConfigItem title={title} desc={desc}>
 		<div className="config-btns">
 			{btns.map(({text, value, onSelect}) =>
-				<button
+				<Button
 					key={text.toString()}
-					className={`config-btn ${conf[property] === value ? 'active' : ''}`}
-					onClick={onSelect ?? (() => updateValue(property, value))}>
+					onClick={onSelect ?? (() => updateValue(property, value))}
+					className="config-btn"
+					active={conf[property] === value}
+					variant="corner"
+				>
 					{text}
-				</button>
+				</Button>
 			)}
 		</div>
 	</ConfigItem>

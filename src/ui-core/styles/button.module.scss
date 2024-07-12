@@ -14,10 +14,14 @@
 	}
 }
 
+
 .btn {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
+}
+
+.btnVariantDefault {
 	color: var(--text-color);
 	padding: .4em 1em;
 	font-size: clamp(0.86rem, 3.5vmin, 1rem);
@@ -27,5 +31,56 @@
 	&:focus-visible {
 		box-shadow: var(--selected-shadow);
 		text-decoration: none;
+	}
+}
+
+.btnVariantCorner {
+	padding: .2rem .6rem;
+	background-color: transparent;
+	gap: 6px;
+	position: relative;
+	transition: box-shadow .2s ease-in-out;
+	border-radius: 3px;
+
+	&::before, &::after {
+		content: "";
+		position: absolute;
+		width: 10%;
+		height: 6%;
+		border: 20px solid transparent;
+		transition: width .2s ease-in-out, height .2s ease-in-out;
+		pointer-events: none;
+	}
+	&::before {
+		top: 0;
+		left: 0;
+	}
+	&::after {
+		bottom: 0;
+		right: 0;
+	}
+
+	&.active, &:hover, &:focus-visible {
+		box-shadow: 0px 0px 90px 0px rgba(0, 180, 255, 0.2) inset;
+		--border-color: rgb(0 152 225);
+
+		&::before, &::after {
+			width: 60%;
+			height: 30%;
+		}
+		&::before {
+			border-top: 1px solid var(--border-color);
+			border-left: 1px solid var(--border-color);
+			border-top-left-radius: 3px;
+		}
+
+		&::after {
+			border-bottom: 1px solid var(--border-color);
+			border-right: 1px solid var(--border-color);
+			border-bottom-right-radius: 3px;
+		}
+	}
+	&.active:focus-visible {
+		--border-color: #fff;
 	}
 }

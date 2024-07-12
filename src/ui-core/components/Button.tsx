@@ -8,7 +8,8 @@ interface PropsLink extends LinkProps {
 }
 
 type Props = {
-	children: any
+	variant?: "default" | "corner"
+	active?: boolean
 	className?: string
 	[key: string]: any
 } & (PropsButton | PropsLink)
@@ -16,11 +17,23 @@ type Props = {
 /**
  * A button or Link already styled
  */
-const Button = ({children, to, className, ...props}: Props) => {
+const Button = ({children, to, className, variant = "default", active = false, ...props}: Props) => {
+	const classNames = [styles.btn, "btn"]
+	if (variant === "default") {
+		classNames.push(styles.btnVariantDefault)
+	} else if (variant === "corner") {
+		classNames.push(styles.btnVariantCorner)
+	}
+	if (active) {
+		classNames.push(styles.active)
+	}
+	if (className) {
+		classNames.push(className)
+	}
+
 	const button = to ? (
 		<Link
-			// to={to}
-			className={`${styles.btn} btn ${className || ""}`}
+			className={classNames.join(" ") || ""}
 			{...props as LinkProps}
 		>
 			{children}
@@ -28,7 +41,7 @@ const Button = ({children, to, className, ...props}: Props) => {
 	) : (
 		<button
 			// onClick={onClick}
-			className={`${styles.btn} btn ${className || ""}`}
+			className={classNames.join(" ") || ""}
 			{...props as React.ButtonHTMLAttributes<HTMLButtonElement>}
 		>
 			{children}
