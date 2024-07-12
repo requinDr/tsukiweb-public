@@ -73,6 +73,49 @@ const gestures = new GestureHandler(null, {
 	}
 })
 
+function gameLoopGamepad() {
+	var gamepad = navigator.getGamepads()[0]; //get the first controller.
+	if (gamepad && gamepad.connected) {
+		var buttons = gamepad.buttons;
+		for (var i in buttons) {
+			if (buttons[i].pressed == true) {
+				toast("Gamepad button pressed " + i, {
+					autoClose: 500,
+					toastId: 'gp-pressed'
+				})
+
+				switch (+i) {
+					case 0: next(); break //A
+					case 1: back(); break //B
+					case 2: toggleMenu(); break //X
+					case 3: toggleView('graphics'); break //Y
+					case 4: page_nav("prev"); break //LB
+					case 5: back(); break //RB
+					case 6: toggleView('history'); break //LT
+					case 7: page_nav("next"); break //RT
+					case 8: toggleView('config'); break //Back
+					case 9: toggleMenu(); break //Start
+					case 10: toggleView('menu'); break //LStick
+					case 11: toggleView('config'); break //RStick
+					case 12: // up
+						if (!isViewAnyOf("history")) {
+							toggleView('history')
+						}
+						break
+					case 13: // down
+						if (isViewAnyOf("history")) {
+							toggleView('history')
+						}
+						break
+					case 15: next(); break
+					default:
+						break
+				}
+			}
+		}
+	}
+}
+
 //##############################################################################
 //#                              ACTION FUNCTIONS                              #
 //##############################################################################
@@ -157,6 +200,14 @@ function page_nav(direction: "prev"|"next", event?: KeyboardEvent) {
 
 function toggleMenu() {
 	displayMode.menu = !displayMode.menu
+	//focus menu-container if the menu is open
+	if (displayMode.menu) {
+		setTimeout(()=> {
+			const menuContainer = document.getElementById("menu-container")
+			if (menuContainer)
+				menuContainer.focus()
+		}, 100)
+	}
 	stopAutoPlay()
 }
 
@@ -169,6 +220,7 @@ const Window = () => {
 	useLanguageRefresh()
 	const rootElmtRef = useRef(null)
 	const [hideMenuBtn] = useObserved(displayMode, "graphics")
+	const gameLoop = useRef<any>(null)
 
 	useEffect(()=> {
 		//TODO wait for screen transition animation to end before starting the script
@@ -203,6 +255,27 @@ const Window = () => {
 		evt.preventDefault()
 		back()
 	}
+
+	useEffect(()=> {
+		function loop() {
+			gameLoop.current = setInterval(gameLoopGamepad, 100)
+		}
+		function stopLoop() {
+			clearInterval(gameLoop.current)
+		}
+		
+		window.addEventListener("gamepadconnected", loop)
+		window.addEventListener("gamepaddisconnected", stopLoop)
+		if (navigator.getGamepads().some(gamepad => gamepad)) {
+			loop();
+		}
+
+		return ()=> {
+			stopLoop()
+			window.removeEventListener("gamepadconnected", loop)
+			window.removeEventListener("gamepaddisconnected", stopLoop)
+		}
+	}, [])
 
 //............... render ...............
 	return (
