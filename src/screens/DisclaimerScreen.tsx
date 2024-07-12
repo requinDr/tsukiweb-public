@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import { strings } from '../translation/lang'
 import { bb } from '../utils/Bbcode'
 import { useLanguageRefresh } from '../components/hooks/useLanguageRefresh'
+import { SCREEN } from 'utils/display'
 
 const DisclaimerScreen = () => {
 	const navigate = useNavigate()
@@ -18,7 +19,7 @@ const DisclaimerScreen = () => {
 	}, [])
 
 	const sawDisclaimer = () => {
-		navigate("/title")
+		navigate(SCREEN.TITLE)
 	}
 
 	return (
@@ -30,7 +31,7 @@ const DisclaimerScreen = () => {
 			onClick={sawDisclaimer}
 		>
 			<div className="box">
-				{strings.disclaimer.map((txt, i)=>
+				{strings.disclaimer.map((txt, i) =>
 					<p key={i}>{bb(txt)}</p>
 				)}
 			</div>

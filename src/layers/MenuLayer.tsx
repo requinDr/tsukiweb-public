@@ -133,7 +133,7 @@ const ActionsButtons = () => {
 	}
 	const copySceneToClipboard = () => {
 		navigator.clipboard.writeText(
-			`${window.location.origin}/extra/scenes/${gameContext.label}`
+			`${window.location.origin}/scenes/${gameContext.label}`
 		)
 		toast.info("Scene link copied to clipboard", {autoClose: 2000})
 	}

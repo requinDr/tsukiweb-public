@@ -5,9 +5,9 @@ export enum SCREEN {
   WINDOW = "/window",
   CONFIG = "/config",
   LOAD = "/load",
-  GALLERY = "/extra/gallery",
-  ENDINGS = "/extra/endings",
-  SCENES = "/extra/scenes"
+  GALLERY = "/gallery",
+  ENDINGS = "/endings",
+  SCENES = "/scenes"
 }
 
 let history: boolean = false;
