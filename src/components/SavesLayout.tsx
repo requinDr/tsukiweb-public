@@ -93,7 +93,8 @@ const SavesLayer = ({variant, back}: Props) => {
 			<PageSection className="saves">
 				{variant === "save" ?
 					<Button
-						onClick={createSave} className={`create ${focusedId === 1 ? "active" : ""}`}
+						onClick={createSave}
+						className={`create ${focusedId === 1 ? "active" : ""}`}
 						onFocus={setFocusedSave.bind(null, 1)}
 						onPointerEnter={setFocusedSave.bind(null, 1)}
 						onMouseEnter={setFocusedSave.bind(null, 1)}
@@ -101,7 +102,7 @@ const SavesLayer = ({variant, back}: Props) => {
 					>
 						<MdAddCircleOutline /> {strings.saves.create}
 					</Button>
-				: <>
+				:
 					<Button
 						onClick={importSaves}
 						className={`import ${focusedId === 2 ? "active" : ""}`}
@@ -112,7 +113,7 @@ const SavesLayer = ({variant, back}: Props) => {
 					>
 						<MdUploadFile /> {strings.saves.import}
 					</Button>
-				</>}
+				}
 
 				{saves.filter(([id, _])=> variant === "load" || id !== QUICK_SAVE_ID)
 					.map(([id, ss]) =>
