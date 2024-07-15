@@ -2,8 +2,8 @@ import { SceneName } from "../types";
 import { SCENE_ATTRS } from "./constants";
 import { strings, waitLanguageLoad } from "../translation/lang"
 import { credits, scenesDir } from "../translation/assets";
-import { subTextCount } from "./utils";
 import { getGameVariable } from "./variables";
+import { subTextCount } from "@tsukiweb-common/utils/utils";
 
 function preProcessScript(lines: string[]) {
   //TODO remove this function after preprocessing the scripts to add this line on all scene files

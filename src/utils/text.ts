@@ -1,9 +1,9 @@
 import { PageContent } from "../types"
-import { preprocessText, resettable } from "./utils"
 import { gameContext } from "./variables"
 import { settings } from "./settings"
 import history from "../utils/history"
 import { icons } from "../layers/TextLayer"
+import { resettable, preprocessText } from "@tsukiweb-common/utils/utils"
 
 export const [scriptInterface, resetSI] = resettable({
   text: "" as string,

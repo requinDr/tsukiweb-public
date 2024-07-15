@@ -1,129 +1,86 @@
+import { Graphics, ViewRatio } from "@tsukiweb-common/types"
 import { ResolutionId, TranslationId, LangJson } from "translation/lang"
-import { SpritePos } from "./components/molecules/GraphicsGroup"
 
 export type PageType = 'text'|'choice'|'skip'|'phase'
 export type PageContent<T extends PageType> =
-  T extends 'text' ? { text: string } :
-  T extends 'choice' ? { choices: Choice[], selected?: number} :
-  T extends 'skip' ? { scene: SceneName } :
-  T extends 'phase' ? { } :
-  never
+	T extends 'text' ? { text: string } :
+	T extends 'choice' ? { choices: Choice[], selected?: number} :
+	T extends 'skip' ? { scene: SceneName } :
+	T extends 'phase' ? { } :
+	never
 export type PageArgs<T extends PageType> =
-  T extends 'text' ? [string] :
-  T extends 'choice' ? [Choice[]] :
-  T extends 'skip' ? [SceneName] :
-  T extends 'phase' ? [] :
-  never
-
-export type Graphics = PartialRecord<SpritePos, string> & {
-  monochrome ?: string
-}
+	T extends 'text' ? [string] :
+	T extends 'choice' ? [Choice[]] :
+	T extends 'skip' ? [SceneName] :
+	T extends 'phase' ? [] :
+	never
 
 export type Choice = {
-  index: number,
-  str: string,
-  label: LabelName,
+	index: number,
+	str: string,
+	label: LabelName,
 }
-
-export type Background = {
-  image: string,
-  type: string,
-}
-
-export type Sprite = {
-  image: string,
-  type: string
-}
-
-export enum ViewRatio {
-  unconstrained = "",
-  fourByThree = "4/3",
-  sixteenByNine = "16/9",
-}
-
-export type KeysMatching<T extends object, V> = {
-  [K in keyof T]-?: T[K] extends V ? K : never
-}[keyof T];
-
-export type RecursivePartial<T> = T|{
-  [P in keyof T]?: T[P] extends string|number|boolean|null ? T[P] : RecursivePartial<T[P]>
-}
-export type PartialRecord<K extends keyof any, T> = {
-  [P in K]?: T
-}
-
-export type JSONPrimitive = string|number|boolean|null
-export type JSONObject = {
-  [key:string]: JSONPrimitive|JSONObject|Array<JSONPrimitive|JSONObject>
-}
-
-export type Digit = '0'|'1'|'2'|'3'|'4'|'5'|'6'|'7'|'8'|'9'
-export type LcLetter = 'a'|'b'|'c'|'d'|'e'|'f'|'g'|'h'|'i'|'j'|'k'
-      |'l'|'m'|'n'|'o'|'p'|'q'|'r'|'s'|'t'|'u'|'v'|'w'|'x'|'y'|'z'
-export type UcLetter = 'A'|'B'|'C'|'D'|'E'|'F'|'G'|'H'|'I'|'J'|'K'
-      |'L'|'M'|'N'|'O'|'P'|'Q'|'R'|'S'|'T'|'U'|'V'|'W'|'X'|'Y'|'Z'
-export type Letter = LcLetter|UcLetter
 
 export type RouteName = 'aki'|'ark'|'cel'|'his'|'koha'|'others'
 export type RouteDayName<T extends RouteName=RouteName> = 
-  T extends 'others' ? 'pro'|'epi'|'end'|'fin'
-                     : `${number}${'a'|'b'}`
+	T extends 'others' ? 'pro'|'epi'|'end'|'fin'
+										 : `${number}${'a'|'b'}`
 
 export type CharId = RouteName//Exclude<RouteName, "others">
 
 export type SceneName = `s${number}${'a'|''}` |
-  "openning" | "ending" | "eclipse"
+	"openning" | "ending" | "eclipse"
 
 export type FBlockName = `f${number}${''|'a'|'b'|'half'|'_0'}`
 
 export type LabelName = SceneName | FBlockName | `skip${number}${'a'|''}` |
-  'endofplay'
+	'endofplay'
 
 export type NumVarName = `%${string}`
 export type StrVarName = `$${string}`
 export type VarName = NumVarName | StrVarName
 
 export type FcNodeAttrs = {
-  col: number
-  from: string[]
-  cutAt?: number
-  align?: string
+	col: number
+	from: string[]
+	cutAt?: number
+	align?: string
 }
 
 export type FcSceneAttrs = FcNodeAttrs & {
-  graph: Graphics
+	graph: Graphics
 }
 
 export type DivProps = React.ComponentPropsWithoutRef<"div">
 
 export type SettingsType = {
-  // scene settings
-  textSpeed: number
-  autoClickDelay: number
-  nextPageDelay: number
-  fastForwardDelay: number
-  enableSceneSkip: boolean // ask to skip scenes
-  preventUnreadSkip: boolean
-  // graphics settings
-  font: string
-  resolution: ResolutionId
-  language: TranslationId
-  fixedRatio: ViewRatio
-  // H-related settings
-  blurThumbnails: boolean
-  warnHScenes: boolean
-  // audio settings
-  volume: {
-    master: number
-    track: number
-    se: number
-  }
-  trackSource: keyof LangJson["audio"]["track-sources"]
-  autoMute: boolean
+	// scene settings
+	textSpeed: number
+	autoClickDelay: number
+	nextPageDelay: number
+	fastForwardDelay: number
+	enableSceneSkip: boolean // ask to skip scenes
+	preventUnreadSkip: boolean
+	// graphics settings
+	font: string
+	resolution: ResolutionId
+	language: TranslationId
+	fixedRatio: ViewRatio
+	// H-related settings
+	blurThumbnails: boolean
+	warnHScenes: boolean
+	// audio settings
+	volume: {
+		master: number
+		track: number
+		se: number
+	}
+	trackSource: keyof LangJson["audio"]["track-sources"]
+	autoMute: boolean
 
-  unlockEverything: boolean
-  
-  // saved progress
-  eventImages: string[]
-  completedScenes: string[]
+	unlockEverything: boolean
+	
+	// saved progress
+	eventImages: string[]
+	completedScenes: string[]
 }

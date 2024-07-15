@@ -1,10 +1,9 @@
 import { ReactNode, useEffect, useState } from "react"
 import { ConfigButtons, ConfigItem, ResetBtn } from "../ConfigLayout"
 import { defaultSettings, settings } from "../../utils/settings"
-import { deepAssign, jsonDiff, requestJSONs, textFileUserDownload } from "../../utils/utils"
+import { deepAssign, jsonDiff, requestJSONs, textFileUserDownload } from "../../../tsukiweb-common/src/utils/utils"
 import { SaveState, clearSaveStates, listSaveStates, restoreSaveStates } from "../../utils/savestates"
 import { strings, languages } from "../../translation/lang"
-import { RecursivePartial } from "../../types"
 import { toast } from "react-toastify"
 import { useLanguageRefresh } from "../hooks/useLanguageRefresh"
 import { MdDeleteForever, MdDownload, MdFileUpload, MdTranslate } from "react-icons/md"
@@ -14,6 +13,7 @@ import { bb } from "utils/Bbcode"
 import ConfigModal from "./components/ConfigModal"
 import Button from "@tsukiweb-common/ui-core/components/Button"
 import PageSection from "@tsukiweb-common/ui-core/layouts/PageSection"
+import { RecursivePartial } from "@tsukiweb-common/types"
 
 function twoDigits(n: number) {
 	return n.toString().padStart(2, '0')

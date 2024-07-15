@@ -1,9 +1,9 @@
-import { observe } from "./Observer"
 import { displayMode, SCREEN } from "./display"
 import { audioSePath, audioTrackPath } from "../translation/assets"
-import { TSForceType } from "./utils"
 import { gameContext } from "./variables"
 import { settings } from "./settings"
+import { observe } from "@tsukiweb-common/utils/Observer"
+import { TSForceType } from "@tsukiweb-common/utils/utils"
 
 //##############################################################################
 //#                             AudioManager class                             #

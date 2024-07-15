@@ -2,13 +2,13 @@ import { useEffect, useState, memo, Fragment } from "react"
 import moonIcon from '../assets/icons/icon_moon.svg'
 import pageIcon from '../assets/icons/icon_bars.svg'
 import { settings } from "../utils/settings"
-import { observe, useObserved, useObserver } from "../utils/Observer"
 import history from "../utils/history"
 import { SCREEN, displayMode } from "../utils/display"
 import { DivProps } from "../types"
 import { BBTypeWriter, Bbcode } from "../utils/Bbcode"
 import { resetSI, scriptInterface } from "../utils/text"
-import useMousePointer from "components/hooks/useMousePointer"
+import useMousePointer from "@tsukiweb-common/hooks/useMousePointer"
+import { observe, useObserved, useObserver } from "@tsukiweb-common/utils/Observer"
 
 export const icons: Record<"moon"|"page", string> = {
   "moon": moonIcon,

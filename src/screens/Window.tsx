@@ -14,16 +14,16 @@ import SkipLayer from '../layers/SkipLayer';
 import SavesLayer from '../layers/SavesLayer';
 import history from '../utils/history';
 import { HiMenu } from 'react-icons/hi';
-import GestureHandler from '../utils/touch';
 import { toast } from 'react-toastify';
-import { useObserved } from '../utils/Observer';
 import { SCREEN, displayMode, isViewAnyOf } from '../utils/display';
-import { KeysMatching } from '../types';
 import ConfigLayer from '../layers/ConfigLayer';
 import { moveBg } from '../utils/graphics';
 import { useLanguageRefresh } from '../components/hooks/useLanguageRefresh';
 import { useScreenAutoNavigate } from '../components/hooks/useScreenAutoNavigate';
-import useGamepad from 'components/hooks/useGamepad';
+import { KeysMatching } from '@tsukiweb-common/types';
+import useGamepad from '@tsukiweb-common/hooks/useGamepad';
+import GestureHandler from '@tsukiweb-common/utils/touch';
+import { useObserved } from '@tsukiweb-common/utils/Observer';
 
 //##############################################################################
 //#                                USER INPUTS                                 #

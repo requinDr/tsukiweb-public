@@ -1,5 +1,5 @@
 import { memo } from "react"
-import { useObserved } from "../../utils/Observer"
+import { useObserved } from "../../../tsukiweb-common/src/utils/Observer"
 import { displayMode } from "../../utils/display"
 import { endTransition } from "../../utils/graphics"
 import useGraphicTransition from "../hooks/useGraphicTransition"

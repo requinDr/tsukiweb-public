@@ -4,7 +4,7 @@ import { Dispatch } from "react"
 import { MdOpenInNew } from "react-icons/md"
 import { languages, strings } from "translation/lang"
 import { settings } from "utils/settings"
-import { deepAssign } from "utils/utils"
+import { deepAssign } from "@tsukiweb-common/utils/utils"
 
 type Props = {
 	show: boolean

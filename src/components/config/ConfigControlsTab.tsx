@@ -1,4 +1,4 @@
-import { Fragment, useRef } from "react"
+import { useRef } from "react"
 import { KeymapKeyFilter, inGameKeymap } from "../../utils/KeyMap"
 import { strings } from "../../translation/lang"
 import { bb } from "../../utils/Bbcode"

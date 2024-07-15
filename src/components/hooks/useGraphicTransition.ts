@@ -1,9 +1,10 @@
 import { useState, useRef, useCallback } from "react";
-import { useObserver } from "../../utils/Observer";
-import { splitFirst } from "../../utils/utils";
+import { useObserver } from "../../../tsukiweb-common/src/utils/Observer";
+import { splitFirst } from "../../../tsukiweb-common/src/utils/utils";
 import { gameContext } from "../../utils/variables";
-import { SpritePos, preloadImage } from "../molecules/GraphicsGroup";
+import { preloadImage } from "../molecules/GraphicsGroup";
 import { transition } from "../../utils/graphics";
+import { SpritePos } from "@tsukiweb-common/types";
 
 type GraphicTransitionResult = {
 	img: string;

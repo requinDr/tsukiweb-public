@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import ConfigLayout from '../components/ConfigLayout'
 import { useScreenAutoNavigate } from '../components/hooks/useScreenAutoNavigate'
 import { useLanguageRefresh } from '../components/hooks/useLanguageRefresh'
-import useQueryParam from '../components/hooks/useQueryParam'
+import useQueryParam from '@tsukiweb-common/hooks/useQueryParam'
 
 const ConfigScreen = () => {
 	useScreenAutoNavigate(SCREEN.CONFIG)

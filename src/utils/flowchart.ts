@@ -1,8 +1,9 @@
 import { FcNode } from "components/flowchart/FcNode"
 import { FcScene } from "components/flowchart/FcScene"
 import { isScene } from "./scriptUtils"
-import { Graphics, SceneName } from "types"
+import { SceneName } from "types"
 import { SCENE_ATTRS } from "./constants"
+import { Graphics } from "@tsukiweb-common/types"
 
 export const SCENE_WIDTH = 27
 export const SCENE_HEIGHT = 18

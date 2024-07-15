@@ -1,11 +1,11 @@
-import { SpritePos } from "../components/molecules/GraphicsGroup";
-import { observe } from "./Observer";
 import { displayMode } from "./display";
 import { wordImage } from "../translation/assets";
 import { extractInstructions } from "./scriptUtils";
-import { splitFirst, objectMatch, resettable, splitLast } from "./utils";
 import { gameContext } from "./variables";
 import { settings } from "./settings"
+import { SpritePos } from "@tsukiweb-common/types";
+import { observe } from "@tsukiweb-common/utils/Observer";
+import { resettable, splitFirst, splitLast, objectMatch } from "@tsukiweb-common/utils/utils";
 
 export const [transition, resetTransition] = resettable({
   effect: "",

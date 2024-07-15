@@ -9,11 +9,11 @@ import { RouteEnding, endings, osiete } from '../utils/endings'
 import { Tooltip } from 'react-tooltip'
 import ReactDOMServer from 'react-dom/server';
 import { playScene } from '../utils/savestates'
-import MenuButton from '../../tsukiweb-common/src/ui-core/components/MenuButton'
 import { useLanguageRefresh } from '../components/hooks/useLanguageRefresh'
 import { useScreenAutoNavigate } from '../components/hooks/useScreenAutoNavigate'
 import PageSection from '@tsukiweb-common/ui-core/layouts/PageSection'
 import { settings } from 'utils/settings'
+import MenuButton from '@tsukiweb-common/ui-core/components/MenuButton'
 
 
 const EndingsScreen = () => {

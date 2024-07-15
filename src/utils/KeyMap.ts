@@ -2,8 +2,8 @@
  * Created by Loic France on 12/20/2016.
  */
 
+import { objectsEqual } from "@tsukiweb-common/utils/utils"
 import { displayMode, isViewAnyOf } from "./display"
-import { objectsEqual } from "./utils"
 
 //##############################################################################
 //#                                KeyMap class                                #

@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react"
 import { displayMode } from "../utils/display"
-import { useObserved } from '../utils/Observer';
+import { useObserved } from '../../tsukiweb-common/src/utils/Observer';
 import ConfigLayout from "../components/ConfigLayout";
 
 

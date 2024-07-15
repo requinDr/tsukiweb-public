@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react"
 import { displayMode } from "../utils/display"
-import { addEventListener } from "../utils/utils"
-import { useObserver } from '../utils/Observer';
 import SavesLayout from "../components/SavesLayout";
 import { useLanguageRefresh } from "components/hooks/useLanguageRefresh";
+import { useObserver } from "@tsukiweb-common/utils/Observer";
+import { addEventListener } from "@tsukiweb-common/utils/utils";
 
 
 function back() {

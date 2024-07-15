@@ -25,7 +25,4 @@
       "@tsukiweb-common/*": ["../tsukiweb-common/src/*"]
     }
   },
-  "include": [
-    "src"
-, "tsukiweb-common/src/ui-core"  ]
 }

@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import { useNavigate } from "react-router-dom"
-import { observe, unobserve } from "../../utils/Observer"
+import { observe, unobserve } from "../../../tsukiweb-common/src/utils/Observer"
 import { SCREEN, displayMode } from "../../utils/display"
 
 /**

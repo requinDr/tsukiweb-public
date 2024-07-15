@@ -1,7 +1,7 @@
 import { useState } from "react"
-import { ViewRatio } from "../types"
-import { useObserver } from "../utils/Observer"
 import { settings } from "../utils/settings"
+import { ViewRatio } from "@tsukiweb-common/types"
+import { useObserver } from "@tsukiweb-common/utils/Observer"
 
 type Props = {
 	children: React.ReactNode

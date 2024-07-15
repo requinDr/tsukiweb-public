@@ -1,16 +1,16 @@
 import { useEffect, useRef, useState } from "react"
-import { addEventListener, isFullscreen, toggleFullscreen } from "../utils/utils"
 import { MdFastForward, MdFullscreen, MdFullscreenExit, MdOutlineVolumeOff, MdOutlineVolumeUp, MdPlayArrow, MdShare } from "react-icons/md"
 import { gameContext, gameSession, } from "../utils/variables"
 import { settings } from "../utils/settings"
 import { quickLoad, quickSave } from "../utils/savestates"
-import { useObserved } from "../utils/Observer"
 import script from "../utils/script"
 import { displayMode, SCREEN } from "../utils/display"
 import { strings } from "../translation/lang"
 import Ornament from "../assets/images/ornament.webp"
 import Particles from "@tsukiweb-common/ui-core/components/Particles"
 import { toast } from "react-toastify"
+import { useObserved } from "@tsukiweb-common/utils/Observer"
+import { isFullscreen, toggleFullscreen, addEventListener } from "@tsukiweb-common/utils/utils"
 
 
 const MenuLayer = () => {

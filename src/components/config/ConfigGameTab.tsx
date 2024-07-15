@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react"
 import { ConfigButtons, ConfigItem, ResetBtn } from "../ConfigLayout"
 import { defaultSettings, settings } from "../../utils/settings"
-import { ViewRatio } from "../../types"
 import { TEXT_SPEED } from "../../utils/constants"
-import { addEventListener, deepAssign, isFullscreen, toggleFullscreen } from "../../utils/utils"
+import { addEventListener, deepAssign, isFullscreen, toggleFullscreen } from "../../../tsukiweb-common/src/utils/utils"
 import { FaMinus, FaPlus } from "react-icons/fa"
 import { getLocale, strings } from "../../translation/lang"
 import { useLanguageRefresh } from "../hooks/useLanguageRefresh"
 import PageSection from "@tsukiweb-common/ui-core/layouts/PageSection"
+import { ViewRatio } from "@tsukiweb-common/types"
 
 const ConfigGameTab = () => {
 	useLanguageRefresh()

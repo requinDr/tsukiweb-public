@@ -1,8 +1,8 @@
 import { Choice, LabelName } from "../types"
 import { displayMode } from "./display"
-import { preprocessText, resettable } from "./utils"
 import { gameContext } from "./variables"
 import history from "../utils/history"
+import { preprocessText, resettable } from "@tsukiweb-common/utils/utils"
 
 export const [choicesContainer, resetChoices] = resettable({
   choices: [] as Choice[]

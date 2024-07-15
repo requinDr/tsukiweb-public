@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
-import { TSForceType, innerText } from "./utils"
 import { Fragment, PropsWithoutRef, ReactNode, cloneElement, memo, useEffect, useReducer, useRef } from "react"
 import Timer from "./timer"
+import { innerText, TSForceType } from "@tsukiweb-common/utils/utils"
 
 
 type TagTranslator<T=string|undefined> = (tag: string, content: Array<string|JSX.Element>, arg: T, props?: Record<string, any>)=> JSX.Element

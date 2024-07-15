@@ -1,14 +1,14 @@
 import { useEffect, useRef } from 'react';
-import { addEventListener } from "../utils/utils";
+import { addEventListener } from "../../tsukiweb-common/src/utils/utils";
 import { displayMode, isViewAnyOf } from '../utils/display';
 import { SaveState, loadSaveState } from "../utils/savestates";
-import { useObserved, useObserver, } from '../utils/Observer';
 import history from '../utils/history';
 import script from '../utils/script';
 import { strings } from '../translation/lang';
 import PageElement from '../components/molecules/PageElement';
 import FixedFooter from '@tsukiweb-common/ui-core/components/FixedFooter';
 import MenuButton from '@tsukiweb-common/ui-core/components/MenuButton';
+import { useObserved, useObserver } from '@tsukiweb-common/utils/Observer';
 
 type Props = {
   [key: string] : any // other properties to apply to the root 'div' element of the component

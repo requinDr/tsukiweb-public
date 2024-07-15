@@ -1,7 +1,7 @@
+import { StoredJSON } from "@tsukiweb-common/utils/storage"
 import { Choice, PageArgs, PageContent, PageType, SceneName } from "../types"
 import { HISTORY_MAX_PAGES } from "./constants"
 import { SaveState, createSaveState } from "./savestates"
-import { StoredJSON } from "./storage"
 
 const historyStorage = new StoredJSON<SaveState[]>("history", true)
 

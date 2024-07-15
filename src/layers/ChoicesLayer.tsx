@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { Choice, PageContent } from "../types"
-import { observe, useObserver } from "../utils/Observer"
+import { observe, useObserver } from "../../tsukiweb-common/src/utils/Observer"
 import script from "../utils/script"
 import { SCREEN, displayMode } from "../utils/display"
 import history from "../utils/history"

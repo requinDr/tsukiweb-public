@@ -1,7 +1,8 @@
-import { CharId, PartialRecord, RouteDayName, SceneName } from "../types"
+import { CharId, RouteDayName, SceneName } from "../types"
 import { SCENE_ATTRS } from "./constants"
 import { strings } from "../translation/lang"
 import { settings } from "./settings"
+import { PartialRecord } from "@tsukiweb-common/types"
 
 type EndType = "normal"|"true"|"good"|"osiete"
 

@@ -3,7 +3,6 @@ import { commands as graphicCommands } from "./graphics"
 import { commands as textCommands } from "./text"
 import { LabelName, SceneName } from "../types"
 import { commands as audioCommands } from "./AudioManager"
-import { isObserverNotifyPending, observe } from "./Observer"
 import history from "./history"
 import { SCENE_ATTRS } from "./constants"
 import Timer, { commands as timerCommands } from "./timer"
@@ -15,6 +14,7 @@ import { SCREEN, displayMode } from "./display"
 import { strings } from "../translation/lang"
 import { phaseTexts } from "../translation/assets"
 import { closeBB } from "./Bbcode"
+import { isObserverNotifyPending, observe } from "@tsukiweb-common/utils/Observer"
 
 type Instruction = {cmd: string, arg: string}
 type CommandHandler = {next: VoidFunction, cancel?: VoidFunction, autoPlayDelay?: number}

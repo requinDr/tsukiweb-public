@@ -1,4 +1,4 @@
-import { getLocale, strings } from "../../translation/lang"
+import { getLocale } from "../../translation/lang"
 import { QUICK_SAVE_ID, SaveState } from "../../utils/savestates"
 import GraphicsGroup from "../molecules/GraphicsGroup"
 import SaveSummary from "./SaveSummary"

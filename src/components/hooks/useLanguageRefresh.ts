@@ -1,5 +1,5 @@
 import { useReducer } from "react";
-import { useObserver } from "../../utils/Observer";
+import { useObserver } from "../../../tsukiweb-common/src/utils/Observer";
 import { strings } from "../../translation/lang";
 
 /**

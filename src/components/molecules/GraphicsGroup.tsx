@@ -2,10 +2,10 @@ import { memo } from "react"
 import { settings } from "../../utils/settings"
 import GraphicElement from "../atoms/GraphicElement"
 import { imageSrc } from "../../translation/assets"
-import { DivProps, Graphics as GraphicsType } from "../../types";
+import { DivProps } from "../../types";
+import { POSITIONS } from "@tsukiweb-common/constants";
+import { SpritePos, Graphics as GraphicsType } from "@tsukiweb-common/types";
 
-const POSITIONS = ['bg', 'l', 'c', 'r'] as const
-export type SpritePos = typeof POSITIONS[number]
 
 export async function preloadImage(src:string, resolution=settings.resolution): Promise<void> {
 	if (src.startsWith('#') || src.startsWith('$'))

@@ -1,11 +1,12 @@
 import GraphicsGroup from "components/molecules/GraphicsGroup"
 import { Fragment } from "react/jsx-runtime"
-import { Graphics, SceneName, LabelName } from "types"
+import { SceneName, LabelName } from "types"
 import { SCENE_HEIGHT, SCENE_WIDTH } from "utils/flowchart"
 import { findImageObjectByName } from "utils/gallery"
 import { playScene } from "utils/savestates"
 import { settings } from "utils/settings"
 import { FcNode } from "./FcNode"
+import { Graphics } from "@tsukiweb-common/types"
 
 export class FcScene extends FcNode {
 	graph: Graphics|undefined

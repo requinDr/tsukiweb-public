@@ -1,5 +1,4 @@
 import { Fragment, useMemo } from 'react'
-import Fancybox from "../components/molecules/Fancybox"
 import '../styles/gallery.scss'
 import { settings } from '../utils/settings'
 import { AnimatePresence, Variants, motion } from 'framer-motion'
@@ -9,11 +8,12 @@ import { imageSrc } from '../translation/assets'
 import { SCREEN } from '../utils/display'
 import { useLanguageRefresh } from '../components/hooks/useLanguageRefresh'
 import { useScreenAutoNavigate } from '../components/hooks/useScreenAutoNavigate'
-import useQueryParam from '../components/hooks/useQueryParam'
 import MenuButton from '@tsukiweb-common/ui-core/components/MenuButton'
 import { Tab } from '@tsukiweb-common/ui-core/components/TabsComponent'
 import PageTabsLayout from '@tsukiweb-common/ui-core/layouts/PageTabsLayout'
 import PageSection from '@tsukiweb-common/ui-core/layouts/PageSection'
+import Fancybox from '@tsukiweb-common/components/molecules/Fancybox'
+import useQueryParam from '@tsukiweb-common/hooks/useQueryParam'
 
 type GalleryItem = GalleryImg & {src_thumb: string, src_hd: string}
 
