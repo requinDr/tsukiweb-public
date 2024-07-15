@@ -70,8 +70,8 @@
     "adult-title": "Adult",
     "adult-blur": "Blur thumbnails",
     "adult-blur-help": [
-      "When toggled on, a blur effect will be applied on the thumbnails of the adult scenes (Save, Load, Flowchart, Gallery...).",
-      "In-game content will not be affected."
+      "Apply a blur effect on the thumbnails of the adult scenes (Save, Load, Flowchart, Gallery...).",
+      "In-game content is not affected."
     ],
     "adult-warn": "Warn me when I enter an H scene",
     "quality": "Quality",
@@ -81,7 +81,7 @@
     "language": "Language",
     "show-locked-content": "Reveal locked content",
     "show-locked-content-help": [
-			"When toggled on, reveals the complete Gallery, Flowchart, Endings, Eclipse...",
+			"Reveals the complete Gallery, Flowchart, Endings, Eclipse...",
 			"It can be toggled on and off at any time."
 		],
     "data": "Data storage",
