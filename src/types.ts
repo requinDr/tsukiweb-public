@@ -120,6 +120,9 @@ export type SettingsType = {
   }
   trackSource: keyof LangJson["audio"]["track-sources"]
   autoMute: boolean
+
+  unlockEverything: boolean
+  
   // saved progress
   eventImages: string[]
   completedScenes: string[]

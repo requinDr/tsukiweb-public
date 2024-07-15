@@ -2,7 +2,7 @@
   "translation": {
     "name": "月姬野人汉化组 & SHIROU神父",
     "desc": "Simplified Chinese translation by 月姬野人汉化组(r22129) + Simplified Chinese translation by SHIROU神父, based on r22129. Translates all text, including the previously untranslated H-scenes and bad endings. version 1.6 updated on 2022-03-31.",
-    "url": "https://bbs.sumisora.net/read.php?tid=10940555" "https://t.bilibili.com/643774340302635027",
+    "url": "https://bbs.sumisora.net/read.php?tid=10940555",
     "vndb": "https://vndb.org/r71804"
   }, 
   
@@ -76,6 +76,7 @@
     "quality-hd": "1280\u00D7960",
     "fullscreen": "全屏",
     "language": "语言",
+    "show-locked-content": "Reveal locked content",
     "data": "存档",
     "data-export": "导出",
     "data-import": "导入",

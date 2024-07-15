@@ -13,6 +13,7 @@ import MenuButton from '../ui-core/components/MenuButton'
 import { useLanguageRefresh } from '../components/hooks/useLanguageRefresh'
 import { useScreenAutoNavigate } from '../components/hooks/useScreenAutoNavigate'
 import PageSection from '@ui-core/layouts/PageSection'
+import { settings } from 'utils/settings'
 
 
 const EndingsScreen = () => {
@@ -31,7 +32,7 @@ const EndingsScreen = () => {
 				<main>
 					<PageSection className="endings-list">
 					{Object.values(endings).map((ending, index) => {
-						if (ending.seen || window.unlock) {
+						if (ending.seen || settings.unlockEverything) {
 							return <EndingComponent ending={ending} key={index} />
 						} else {
 							return <div key={index} className="ending" />
@@ -43,23 +44,7 @@ const EndingsScreen = () => {
 						<h3>{strings.endings.osiete}</h3>
 						<Tooltip id="osiete" place="top" className="tooltip" />
 						{Object.values(osiete).map((ending, index)=>
-							<div key={index} className={`badending ${ending?.seen ? 'seen' : ''}`}>
-								{ending?.seen ?
-									<img
-										src={chalkboard}
-										alt={`Bad Ending ${ending.scene}`}
-										draggable={false}
-										onClick={() => playScene(ending.scene, {continueScript: false })}
-										data-tooltip-id="osiete"
-										data-tooltip-html={ReactDOMServer.renderToStaticMarkup(
-										<div>
-											{ending.name && <>{noBb(ending.name)}<br /></>}
-											{ending.day && <>Day: {ending.day}<br /></>}
-											{ending.scene}
-										</div>)} />
-								: <img src={chalkboard} alt="Bad Ending" draggable={false} />
-								}
-							</div>
+							<Oshiete key={index} ending={ending} />
 						)}
 					</PageSection>
 				</main>
@@ -96,6 +81,29 @@ const EndingComponent = ({ending:{char, image, name, day, type}}: {ending: Route
 					</div>
 				</div>
 			</div>
+		</div>
+	)
+}
+
+const Oshiete = ({ending}: {ending: typeof osiete[keyof typeof osiete]}) => {
+	const show = settings.unlockEverything || ending?.seen
+	return (
+		<div className={`badending ${show ? 'seen' : ''}`}>
+			{show && ending ?
+				<img
+					src={chalkboard}
+					alt={`Bad Ending ${ending.scene}`}
+					draggable={false}
+					onClick={() => playScene(ending.scene, {continueScript: false })}
+					data-tooltip-id="osiete"
+					data-tooltip-html={ReactDOMServer.renderToStaticMarkup(
+					<div>
+						{ending.name && <>{noBb(ending.name)}<br /></>}
+						{ending.day && <>Day: {ending.day}<br /></>}
+						{ending.scene}
+					</div>)} />
+			: <img src={chalkboard} alt="Bad Ending" draggable={false} />
+			}
 		</div>
 	)
 }

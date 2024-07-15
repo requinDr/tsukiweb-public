@@ -76,6 +76,7 @@
     "quality-hd": "1280\u00D7960",
     "fullscreen": "全屏",
     "language": "語言",
+    "show-locked-content": "Reveal locked content",
     "data": "存檔",
     "data-export": "匯出",
     "data-import": "匯入",

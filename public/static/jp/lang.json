@@ -86,6 +86,7 @@
     "quality-hd": "1280\u00D7960",
     "fullscreen": "フルスクローン",
     "language": "言語",
+    "show-locked-content": "Reveal locked content",
     "data": "データストレージ",
     "data-export": "エクスポート",
     "data-import": "インポート",

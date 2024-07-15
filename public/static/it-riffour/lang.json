@@ -76,6 +76,7 @@
     "quality-hd": "1280\u00D7960",
     "fullscreen": "Fullscreen",
     "language": "Language",
+    "show-locked-content": "Reveal locked content",
     "data": "Data storage",
     "data-export": "Export",
     "data-import": "Import",

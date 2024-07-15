@@ -353,7 +353,7 @@ export function playScene(scene: LabelName, {
   continueScript = true,
   viewedOnly = true
 }) {
-  if (viewedOnly && !viewedScene(scene)) {
+  if (viewedOnly && !viewedScene(scene) && !settings.unlockEverything) {
     return
   }
 

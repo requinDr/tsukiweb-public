@@ -52,10 +52,10 @@ const TitleMenuScreen = () => {
 	}
 
 	const [allEndingsSeen, eclipseSeen] = useMemo(()=> {
-		const allEndingsSeen = Object.values(endings).every(e=>e.seen)
-		const eclipseSeen = viewedScene("eclipse")
+		const allEndingsSeen = settings.unlockEverything || Object.values(endings).every(e=>e.seen)
+		const eclipseSeen = settings.unlockEverything || viewedScene("eclipse")
 		return [allEndingsSeen, eclipseSeen]
-	}, [settings.completedScenes])
+	}, [settings.completedScenes, settings.unlockEverything])
 
 	return (
 		<motion.div

@@ -45,7 +45,7 @@ const GalleryScreen = () => {
 		
 		const galleryItems = imagesTmp.map((image: GalleryImg) => {
 			const name = `event/${image.img}`
-			const [thumb, hd] = settings.eventImages.includes(name) || window.unlock
+			const [thumb, hd] = settings.eventImages.includes(name) || settings.unlockEverything
 									? [imageSrc(name, 'thumb'), imageSrc(name, 'hd')]
 									: [defaultThumbnail, defaultThumbnail]
 

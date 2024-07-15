@@ -4,13 +4,14 @@
 	font-size: 1.1rem;
 	
 	.sub {
-		margin-top: 1em;
-		padding: .8em;
-		border-left: 1px solid cyan;
+		padding-block: 1em;
 		background-color: #00ffff0a;
+		border: 1px solid #005381;
+		border-radius: 4px;
 
 		.title {
 			color: cyan;
+			margin-left: 1em;
 		}
 
 		.config {
@@ -46,7 +47,9 @@
 		padding-block: .6em;
 		min-height: 60px;
 
-		&:not(:nth-last-child(2)) {
+		
+		// and next sibling is not .sub
+		&:not(:nth-last-child(2), :has(+ .sub)) {
 			border-bottom: 1px solid var(--separator);
 		}
 

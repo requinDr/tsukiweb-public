@@ -7,7 +7,7 @@ import { strings, languages } from "../../translation/lang"
 import { RecursivePartial } from "../../types"
 import { toast } from "react-toastify"
 import { useLanguageRefresh } from "../hooks/useLanguageRefresh"
-import { MdDeleteForever, MdDownload, MdFileUpload, MdQuestionMark, MdTranslate } from "react-icons/md"
+import { MdDeleteForever, MdDownload, MdFileUpload, MdLockOpen, MdQuestionMark, MdTranslate } from "react-icons/md"
 import ModalLanguageSelection from "./ModalLanguageSelection"
 import PageSection from "@ui-core/layouts/PageSection"
 import { warnHScene } from "utils/script"
@@ -31,6 +31,7 @@ const ConfigAdvancedTab = () => {
 		language: undefined,
 		blurThumbnails: undefined,
 		warnHScenes: undefined,
+		unlockEverything: undefined,
 	}, settings, {extend: false}))  
 	useLanguageRefresh()
 
@@ -151,6 +152,17 @@ const ConfigAdvancedTab = () => {
 					updateValue={updateValue}
 				/>
 			</div>
+
+			<ConfigButtons
+				title={strings.config["show-locked-content"]}
+				btns={[
+					{ text: strings.yes, value: true },
+					{ text: strings.no, value: false },
+				]}
+				property="unlockEverything"
+				conf={conf}
+				updateValue={updateValue}
+			/>
 
 			<ConfigItem title={strings.config.data}>
 				<div className="config-btns">

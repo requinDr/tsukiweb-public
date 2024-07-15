@@ -27,6 +27,8 @@ export const defaultSettings: SettingsType = deepFreeze({
   },
   trackSource: 'everafter',
   autoMute: true,
+
+  unlockEverything: false,
   
   eventImages: new Array<string>(),
   completedScenes: new Array<string>(),
