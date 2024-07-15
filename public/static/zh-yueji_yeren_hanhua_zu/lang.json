@@ -1,8 +1,7 @@
 {
   "translation": {
     "name": "月姬野人汉化组 & SHIROU神父",
-    "desc": "Simplified Chinese translation by 月姬野人汉化组(r22129) + Simplified Chinese translation by SHIROU神父, based on r22129. Translates all text, including the previously untranslated H-scenes and bad endings.
-version 1.6 updated on 2022-03-31.",
+    "desc": "Simplified Chinese translation by 月姬野人汉化组(r22129) + Simplified Chinese translation by SHIROU神父, based on r22129. Translates all text, including the previously untranslated H-scenes and bad endings. version 1.6 updated on 2022-03-31.",
     "url": "https://bbs.sumisora.net/read.php?tid=10940555" "https://t.bilibili.com/643774340302635027",
     "vndb": "https://vndb.org/r71804"
   }, 
@@ -20,8 +19,8 @@ version 1.6 updated on 2022-03-31.",
     }
   },
   "disclaimer": [
-    "这是Type-Moon于2000年出版的视觉小说[i]月姬[/i]的网络版。”,
-    “该游戏包含成人内容，仅适合成熟观众。"
+    "这是Type-Moon于2000年出版的视觉小说[i]月姬[/i]的网络版。",
+    "该游戏包含成人内容，仅适合成熟观众。"
   ],
   "title": {
     "start": "从头开始阅读",
@@ -32,8 +31,8 @@ version 1.6 updated on 2022-03-31.",
     "about": {
       "port": "这是Type-Moon于2000年出版的视觉小说[i]月姬[/i]的网络版。",
       "project": "该项目位于 $0GitHub$1 上。 喜欢就加个星吧！欢迎贡献。",
-      "feedback": "发送你的反馈或报告错误 $0這裡$1.",
-      "data": "不收集任何数据，所有内容都存储在你的浏览器中。管理你的数据$0這裡$1。",
+      "feedback": "发送你的反馈或报告错误 $0这里$1.",
+      "data": "不收集任何数据，所有内容都存储在你的浏览器中。管理你的数据$0这里$1。",
       "remake": "请购买并支持重制版 $0月姬$ - A piece of blue glass moon$1.",
       "close": "关闭"
     },
