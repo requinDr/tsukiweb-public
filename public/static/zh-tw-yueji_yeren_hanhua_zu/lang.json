@@ -33,8 +33,7 @@
       "project": "該專案位於 $0GitHub$1 上。 喜歡就加個星吧！歡迎貢獻。",
       "feedback": "發送你的反饋或報告錯誤 $0這裡$1.",
       "data": "不收集任何資料，所有內容都儲存在你的瀏覽器中。管理你的資料$0這裡$1。",
-      "remake": "請購買並支援重製版 $0月姬$ - A piece of blue glass moon$1.",
-      "close": "關閉"
+      "remake": "請購買並支援重製版 $0月姬$ - A piece of blue glass moon$1."
     },
     "install": "安裝"
   },
@@ -70,6 +69,10 @@
     "auto-play-delay-page": "自動模式頁面延遲: $0s",
     "adult-title": "成人設定",
     "adult-blur": "模糊縮圖",
+    "adult-blur-help": [
+      "When toggled on, a blur effect will be applied on the thumbnails of the adult scenes (Save, Load, Flowchart, Gallery...).",
+      "In-game content will not be affected."
+    ],
     "adult-warn": "進入成人場景時警告",
     "quality": "圖形質量",
     "quality-sd": "640\u00D7480",
@@ -77,6 +80,10 @@
     "fullscreen": "全屏",
     "language": "語言",
     "show-locked-content": "Reveal locked content",
+    "show-locked-content-help": [
+			"When toggled on, reveals the complete Gallery, Flowchart, Endings, Eclipse...",
+			"It can be toggled on and off at any time."
+		],
     "data": "存檔",
     "data-export": "匯出",
     "data-import": "匯入",

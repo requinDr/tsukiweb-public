@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { ReactNode, useEffect, useState } from "react"
 import { ConfigButtons, ConfigItem, ResetBtn } from "../ConfigLayout"
 import { defaultSettings, settings } from "../../utils/settings"
 import { deepAssign, jsonDiff, requestJSONs, textFileUserDownload } from "../../utils/utils"
@@ -7,11 +7,13 @@ import { strings, languages } from "../../translation/lang"
 import { RecursivePartial } from "../../types"
 import { toast } from "react-toastify"
 import { useLanguageRefresh } from "../hooks/useLanguageRefresh"
-import { MdDeleteForever, MdDownload, MdFileUpload, MdLockOpen, MdQuestionMark, MdTranslate } from "react-icons/md"
+import { MdDeleteForever, MdDownload, MdFileUpload, MdTranslate } from "react-icons/md"
 import ModalLanguageSelection from "./ModalLanguageSelection"
 import PageSection from "@ui-core/layouts/PageSection"
 import { warnHScene } from "utils/script"
 import Button from "@ui-core/components/Button"
+import { bb } from "utils/Bbcode"
+import ConfigModal from "./components/ConfigModal"
 
 function twoDigits(n: number) {
 	return n.toString().padStart(2, '0')
@@ -23,7 +25,8 @@ type Savefile = {
 }
 
 const ConfigAdvancedTab = () => {
-	const [show, setShow] = useState<boolean>(false)
+	const [showLanguage, setShowLanguage] = useState<boolean>(false)
+	const [modal, setModal] = useState<{show: boolean, content: ReactNode}>({show: false, content: ""})
 
 	const [conf, setConf] = useState(deepAssign({
 		resolution: undefined,
@@ -114,17 +117,25 @@ const ConfigAdvancedTab = () => {
 				<div className="config-btns">
 					<Button
 						className={`config-btn`}
-						onClick={()=>setShow(true)}>
+						onClick={()=>setShowLanguage(true)}>
 						<MdTranslate /> {languages[settings.language]["display-name"]}...
 					</Button>
 				</div>
 			</ConfigItem>
-			<ModalLanguageSelection show={show} setShow={setShow} />
+			<ModalLanguageSelection show={showLanguage} setShow={setShowLanguage} />
 
 			<div className="sub">
 				<div className="title">{strings.config["adult-title"]}</div>
 				<ConfigButtons
 					title={strings.config["adult-blur"]}
+					helpAction={()=>setModal({show: true, content:
+						<>
+							<h2>{strings.config["adult-blur"]}</h2>
+							{strings.config["adult-blur-help"].map((txt, i) =>
+								<p key={i}>{bb(txt)}</p>
+							)}
+						</>
+					})}
 					btns={[
 						{ text: strings.config.on, value: true },
 						{ text: strings.config.off, value: false },
@@ -135,14 +146,8 @@ const ConfigAdvancedTab = () => {
 				/>
 
 				<ConfigButtons
-					title={
-						<>
-							<span>{strings.config["adult-warn"]}</span>
-							<button className="icon-help" style={{ marginLeft: 4}} onClick={warnHScene}>
-								<MdQuestionMark />
-							</button>
-						</>
-					 }
+					title={strings.config["adult-warn"]}
+					helpAction={warnHScene}
 					btns={[
 						{ text: strings.config.on, value: true },
 						{ text: strings.config.off, value: false },
@@ -155,6 +160,14 @@ const ConfigAdvancedTab = () => {
 
 			<ConfigButtons
 				title={strings.config["show-locked-content"]}
+				helpAction={()=>setModal({show: true, content:
+					<>
+						<h2>{strings.config["show-locked-content"]}</h2>
+						{strings.config["show-locked-content-help"].map((txt, i) =>
+							<p key={i}>{bb(txt)}</p>
+						)}
+					</>
+				})}
 				btns={[
 					{ text: strings.yes, value: true },
 					{ text: strings.no, value: false },
@@ -183,6 +196,8 @@ const ConfigAdvancedTab = () => {
 			</ConfigItem>
 
 			<ResetBtn onClick={reset} />
+
+			<ConfigModal modal={modal} setModal={setModal} />
 		</PageSection>
 	)
 }

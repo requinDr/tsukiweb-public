@@ -106,7 +106,7 @@ const ModalInfo = ({show, setShow}: ModalInfoProps) => {
 			</div>
 
 			<MenuButton onClick={()=>setShow(false)} className="close-btn">
-				{strings.title.about.close}
+				{strings.close}
 			</MenuButton>
 		</Modal>
 	)

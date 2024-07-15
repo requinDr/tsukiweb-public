@@ -11,6 +11,7 @@ import MenuButton from '@ui-core/components/MenuButton'
 import { Tab } from '@ui-core/components/TabsComponent'
 import PageTabsLayout from '@ui-core/layouts/PageTabsLayout'
 import Button from '@ui-core/components/Button'
+import { MdQuestionMark } from 'react-icons/md'
 
 enum Tabs {
 	game = "game",
@@ -73,24 +74,24 @@ export default ConfigLayout
 
 interface ConfigLayoutProps {
 	title: ReactNode
-	desc?: ReactNode
 	children: ReactNode
+	helpAction?: VoidFunction
 	[key:string]:any
 }
-export const ConfigItem = ({ title, desc, children, ...props }: ConfigLayoutProps) => (
+export const ConfigItem = ({ title,  children, helpAction, ...props }: ConfigLayoutProps) => (
 	<div className="config" {...props}>
 		<div className="config-name">
-			{title}
+			<span>{title}</span>
+
+			{helpAction && (
+				<button className="icon-help" style={{ marginLeft: 4}} onClick={helpAction}>
+					<MdQuestionMark />
+				</button>
+			)}
 		 </div>
 
 		<div className="config-actions">
 			{children}
-
-			{desc &&
-			<div className="desc">
-				{desc}
-			</div>
-			}
 		</div>
 	</div>
 )
@@ -107,10 +108,11 @@ interface ConfigButtonsProps {
 	property: string
 	conf: Record<string, any>
 	updateValue: (key: any, value: any) => void
+	helpAction?: VoidFunction
 }
 /** Display multiples options to choose from */
-export const ConfigButtons = ({title, desc, btns, property, conf, updateValue}: ConfigButtonsProps) => (
-	<ConfigItem title={title} desc={desc}>
+export const ConfigButtons = ({title, desc, btns, property, conf, updateValue, helpAction}: ConfigButtonsProps) => (
+	<ConfigItem title={title} desc={desc} helpAction={helpAction}>
 		<div className="config-btns">
 			{btns.map(({text, value, onSelect}) =>
 				<Button

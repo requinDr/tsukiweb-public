@@ -1,324 +1,331 @@
 {
-  "translation": {
-    "name": "original",
-    "desc": "",
-    "url": "",
-    "vndb": ""
-  },
+	"translation": {
+		"name": "original",
+		"desc": "",
+		"url": "",
+		"vndb": ""
+	},
 
-  "scenario": {
-    "days": [
-      "[i]1[sup]st[/sup] day|October 21 (Thur.)",
-      "[i]2[sup]nd[/sup] day|October 22 (Fri.)",
-      "[i]3[sup]rd[/sup] day|October 23 (Sat.)",
-      "[i]4[sup]th[/sup] day|October 24 (Sun.)",
-      "[i]5[sup]th[/sup] day|October 25 (Mon.)",
-      "[i]6[sup]th[/sup] day|October 26 (Tue.)",
-      "[i]7[sup]th[/sup] day|October 27 (Wed.)",
-      "[i]8[sup]th[/sup] day|October 28 (Thur.)",
-      "[i]9[sup]th[/sup] day|October 29 (Fri.)",
-      "[i]10[sup]th[/sup] day|October 30 (Sat.)",
-      "[i]11[sup]th[/sup] day|October 1 (Sun.)",
-      "[i]12[sup]th[/sup] day|November 2 (Mon.)",
-      "[i]13[sup]th[/sup] day|November 3 (Tue.)"
-    ],
-    
-    "routes": {
-      "aki" : {
-        "03a": "[b]3／ 反転衝動 III",
-        "03b": "[b]3／ 暗黑唇痕",
-        "04a": "[b]4／ 昏い傷痕 I",
-        "05a": "[b]5／ 静夢",
-        "06a": "[b]6／ 沈夢",
-        "07a": "[b]7／ 昏い傷痕 II",
-        "08a": "[b]8／ 午睡の夢",
-        "09a": "[b]9／ 血を吸う鬼",
-        "10a": "[b]10／ 熱帯夜",
-        "11a": "[b]11／ 望遠鏡",
-        "12a": "[b]12／ 或る終劇",
-        "13a": "[b]温かな午睡",
-        "13b": "[b]遠い葦切"
-      },
-      "ark": {
-        "01a": "[b]1／反転衝動 I",
-        "02a": "[b]2／反転衝動 II",
-        "03a": "[b]3／黒い獣 I",
-        "04a": "[b]4／黒い獣 II",
-        "05a": "[b]5／蒼い咎跡",
-        "06a": "[b]6／直死の眼 I",
-        "07a": "[b]7／直死の眼 II",
-        "08a": "[b]8／死。",
-        "09a": "[b]9／朱の紅月 I",
-        "10a": "[b]10／朱の紅月II",
-        "11a": "[b]11／凶つ夜",
-        "11b": "[b]11／クリーム",
-        "12a": "[b]12／月世界",
-        "13a": "[b]月姫",
-        "13b": "[b]黎明の月"
-      },
-      "cel": {
-        "05a": "[b]5／赤い残滓",
-        "06a": "[b]6／空の弓 I",
-        "07a": "[b]7／空の弓 II",
-        "08a": "[b]8／(死)。",
-        "09a": "[b]9／空蝉",
-        "09b": "[b]9／眩病月",
-        "10a": "[b]10／赤い残滓 II ",
-        "11a": "[b]11／蜃気楼",
-        "11b": "[b]11／不眠症",
-        "12a": "[b]12／果てずの石",
-        "13a": "[b]白日の碧",
-        "13b": "[b]太陽。"
-      },
-      "his": {
-        "04a": "[b]4／揺籃の庭 ",
-        "05a": "[b]5／殺人鬼 I",
-        "06a": "[b]6／殺人鬼 II",
-        "07a": "[b]7／透る爪痕",
-        "07b": "[b][i]7／殺人貴",
-        "08a": "[b]8／「死」。",
-        "09a": "[b]9／硝る躯 I",
-        "10a": "[b]10／硝る躯 II",
-        "11a": "[b]11／硝る躯 III",
-        "12a": "[b]12／白昼夢",
-        "13a": "[b]13／金糸の繭",
-        "14a": "[b]まひるの月",
-        "14b": "[b]ひなたのゆめ"
-      },
-      "koha": {
-        "05a": "[b]5／カイン I",
-        "06a": "[b]6／カイン II",
-        "06b": "[b]VI／未来視 未来死",
-        "07a": "[b]7／逢魔ヶ辻 I",
-        "08a": "[b]8／逢魔ヶ辻 II",
-        "09a": "[b]9／折紙 ",
-        "10a": "[b]10／檻髪",
-        "11a": "[b]11／七つ夜",
-        "12a": "[b]日向の夢"
-      },
-      "others": {
-        "pro": "[b][i]a prologue",
-        "epi": "[i]an epilogue"
-      }
-    },
+	"scenario": {
+		"days": [
+			"[i]1[sup]st[/sup] day|October 21 (Thur.)",
+			"[i]2[sup]nd[/sup] day|October 22 (Fri.)",
+			"[i]3[sup]rd[/sup] day|October 23 (Sat.)",
+			"[i]4[sup]th[/sup] day|October 24 (Sun.)",
+			"[i]5[sup]th[/sup] day|October 25 (Mon.)",
+			"[i]6[sup]th[/sup] day|October 26 (Tue.)",
+			"[i]7[sup]th[/sup] day|October 27 (Wed.)",
+			"[i]8[sup]th[/sup] day|October 28 (Thur.)",
+			"[i]9[sup]th[/sup] day|October 29 (Fri.)",
+			"[i]10[sup]th[/sup] day|October 30 (Sat.)",
+			"[i]11[sup]th[/sup] day|October 1 (Sun.)",
+			"[i]12[sup]th[/sup] day|November 2 (Mon.)",
+			"[i]13[sup]th[/sup] day|November 3 (Tue.)"
+		],
+		
+		"routes": {
+			"aki" : {
+				"03a": "[b]3／ 反転衝動 III",
+				"03b": "[b]3／ 暗黑唇痕",
+				"04a": "[b]4／ 昏い傷痕 I",
+				"05a": "[b]5／ 静夢",
+				"06a": "[b]6／ 沈夢",
+				"07a": "[b]7／ 昏い傷痕 II",
+				"08a": "[b]8／ 午睡の夢",
+				"09a": "[b]9／ 血を吸う鬼",
+				"10a": "[b]10／ 熱帯夜",
+				"11a": "[b]11／ 望遠鏡",
+				"12a": "[b]12／ 或る終劇",
+				"13a": "[b]温かな午睡",
+				"13b": "[b]遠い葦切"
+			},
+			"ark": {
+				"01a": "[b]1／反転衝動 I",
+				"02a": "[b]2／反転衝動 II",
+				"03a": "[b]3／黒い獣 I",
+				"04a": "[b]4／黒い獣 II",
+				"05a": "[b]5／蒼い咎跡",
+				"06a": "[b]6／直死の眼 I",
+				"07a": "[b]7／直死の眼 II",
+				"08a": "[b]8／死。",
+				"09a": "[b]9／朱の紅月 I",
+				"10a": "[b]10／朱の紅月II",
+				"11a": "[b]11／凶つ夜",
+				"11b": "[b]11／クリーム",
+				"12a": "[b]12／月世界",
+				"13a": "[b]月姫",
+				"13b": "[b]黎明の月"
+			},
+			"cel": {
+				"05a": "[b]5／赤い残滓",
+				"06a": "[b]6／空の弓 I",
+				"07a": "[b]7／空の弓 II",
+				"08a": "[b]8／(死)。",
+				"09a": "[b]9／空蝉",
+				"09b": "[b]9／眩病月",
+				"10a": "[b]10／赤い残滓 II ",
+				"11a": "[b]11／蜃気楼",
+				"11b": "[b]11／不眠症",
+				"12a": "[b]12／果てずの石",
+				"13a": "[b]白日の碧",
+				"13b": "[b]太陽。"
+			},
+			"his": {
+				"04a": "[b]4／揺籃の庭 ",
+				"05a": "[b]5／殺人鬼 I",
+				"06a": "[b]6／殺人鬼 II",
+				"07a": "[b]7／透る爪痕",
+				"07b": "[b][i]7／殺人貴",
+				"08a": "[b]8／「死」。",
+				"09a": "[b]9／硝る躯 I",
+				"10a": "[b]10／硝る躯 II",
+				"11a": "[b]11／硝る躯 III",
+				"12a": "[b]12／白昼夢",
+				"13a": "[b]13／金糸の繭",
+				"14a": "[b]まひるの月",
+				"14b": "[b]ひなたのゆめ"
+			},
+			"koha": {
+				"05a": "[b]5／カイン I",
+				"06a": "[b]6／カイン II",
+				"06b": "[b]VI／未来視 未来死",
+				"07a": "[b]7／逢魔ヶ辻 I",
+				"08a": "[b]8／逢魔ヶ辻 II",
+				"09a": "[b]9／折紙 ",
+				"10a": "[b]10／檻髪",
+				"11a": "[b]11／七つ夜",
+				"12a": "[b]日向の夢"
+			},
+			"others": {
+				"pro": "[b][i]a prologue",
+				"epi": "[i]an epilogue"
+			}
+		},
 
-    "scenes": {
-      "openning": {"title": "[b][i]Prologue - Glass Moon"},
-      "eclipse": {"title": "[b][i]Epilogue"},
-      "ending": {"title": "[b][i]Credits"}
-    },
+		"scenes": {
+			"openning": {"title": "[b][i]Prologue - Glass Moon"},
+			"eclipse": {"title": "[b][i]Epilogue"},
+			"ending": {"title": "[b][i]Credits"}
+		},
 
-    "dead-end": "Dead end",
-    "osiete": "知得留先生の授業"
-  },
-  "images": {
-    "redirect-ids": {
-      "": {
-        "thumb":"./image_thumb/$.webp",
-        "sd":"./image/$.webp",
-        "hd": "./image_x2/$.webp"
-      }
-    },
-    "redirected-images": { },
-    "words": {
-      "fin": {"bg": "#ffffff", "center": "[center][noline][color=black][font=serif]Fin"},
-      "end": {"bg": "#ffffff", "bottom": "[right][noline][color=black][font=serif]END"}
-    }
-  },
-  "audio": {
-    "track-sources": {
-      "original": {"name": "Original (2000)", "path": "./CD_original/track$.mp3"},
-      "everafter": {"name": "Ever After (2002)", "path": "./CD_everafter/track$.mp3"},
-      "tsukibako": {"name": "Tsuki-Bako (2003)", "path": "./CD_tsukibako/track$.mp3"}
-    },
-    "waves-path": "./wave/se_$.wav"
-  },
-  "disclaimer": [
-    "このゲームは、TYPE－MOONの2000に発行されたビジュアルノベル[b]「月姫」[/b]のウェブバージョンです。",
-    "18歳以上のみ対象の商品となっております。"
-  ],
-  "title": {
-    "start": "はじめから",
-    "resume": "つづきから",
-    "load": "ロード",
-    "config": "設定",
-    "extra": "エクストラ",
-    "about": {
-      "port": "このゲームは、TYPE－MOONの2000年に発行されたビジュアルノベル[b]「月姫」[/b]のウェブバージョンです。",
-      "project": "プロジェクトは$0GitHub$1にある。Add a star if you like it! Contributions are welcome.",
-      "feedback": "Send your feedback or report a bug $0here$1.",
-      "data": "全てがブラウザに保存されて、データを集められません。データを$0ここで$1管理できます。",
-      "remake": "$0月姫 -A piece of blue glass moon-$1を買って応援してください。",
-      "close": "閉じる"
-    },
-    "install": "Install"
-  },
-  "extra": {
-    "gallery": "ギヤラリー",
-    "endings": "エンディングス",
-    "scenes": "Scenes",
-    "eclipse": "Eclipse"
-  },
-  "config": {
-    "on": "ON",
-    "off": "OFF",
-    "reset": "初期設定に戻す",
-    "tab-game": "Game",
-    "tab-audio": "Audio",
-    "tab-controls": "操作設定",
-    "tab-advanced": "詳細設定",
-    "volume-master": "音量",
-    "volume-track": "BGM 音量",
-    "volume-se": "SFX 音量",
-    "track-source": "Track Source",
-    "auto-mute": "Mute when switching tab",
-    "ratio": "アスペクト比",
-    "ratio-auto": "Auto",
-    "ratio-4-3": "4:3",
-    "ratio-16-9": "16:9",
-    "text-speed": "メッセージ表示間隔",
-    "text-speed-low": "遅い",
-    "text-speed-med": "普通",
-    "text-speed-high": "早い",
-    "text-speed-instant": "瞬時",
-    "auto-play-delay-text": "オートモード時のメッセージ表示時間：$0s",
-    "auto-play-delay-page": "オートモード時のページ切り替え時間：$0s",
-    "adult-title": "エロ設定",
-    "adult-blur": "Blur thumbnails",
-    "adult-warn": "エロシーンを読むところで注意される",
-    "quality": "グラフィック品質",
-    "quality-sd": "640\u00D7480",
-    "quality-hd": "1280\u00D7960",
-    "fullscreen": "フルスクローン",
-    "language": "言語",
-    "show-locked-content": "Reveal locked content",
-    "data": "データストレージ",
-    "data-export": "エクスポート",
-    "data-import": "インポート",
-    "data-erase": "削除",
-    "data-erase-warning": "本当にセーブを全て削除して、初期設定に戻したいですか？",
-    "data-erase-confirm": "セーブを全て削除しました。If you leave this website without making any change to the settings and without starting a new game, no data will remain stored on your computer",
-    "controls": {
-      "next": "つぎ",
-      "history": "ログを表示／非表示する",
-      "back": "Close current view / Display menu",
-      "bg_move": "Move background image",
-      "auto_play" : "オートモード",
-      "page_nav": "次／前のページへ",
-      "load": "ロードのページを開く",
-      "save": "Open save panel",
-      "q_save": "クイックセーブ",
-      "q_load": "クイックロード",
-      "config": "Open config panel",
-      "_hold": "[i](Hold)"
-    }
-  },
-  "endings": {
-    "normal": "エンド",
-    "good": "グッドエンド",
-    "true": "トゥルーエンド",
-    "osiete": "おしえて‼知得留先生"
-  },
-  "saves": {
-    "title-load": "ロード",
-    "title-save": "セーブ",
-    "create": "New save",
-    "import": "Import save file",
-    "export": "エクスポート",
-    "delete": "削除",
-    "delete-warning": "このセーブを本当に削除したいですか？",
-    "overwrite-warning": "このセーブを本当に上書きしたいですか？",
-    "quick-save": "クイックセーブ"
-  },
-  "game": {
-    "skip-named": [
-      "このシーンはもう見ました。",
-      "スキップしますか？"
-    ],
-    "skip-unnamed": "このシーンはもう見ました。スキップしますか？",
-    "toast-qsave": "セーブは成功しました",
-    "toast-qload": "ロードは成功しました",
-    "toast-load": "ロードは成功しました",
-    "toast-save-fail": "セーブは失敗しました",
-    "toast-load-fail": "ロードは失敗しました",
-    "toast-autoplay-stop": "オートモードを停止しました",
-    "toast-ffw-stop": "早送りを停止しました",
-    "toast-hscene-waning": "エロのシーンを読むところです。"
-  },
-  "menu": {
-    "graphics": "グラフィック",
-    "history": "ログ",
-    "save": "セーブ",
-    "load": "ロード",
-    "config": "設定",
-    "auto-play": "オートモード",
-    "ffw": "早送り",
-    "title": "タイトルに戻る",
-    "q-save": "クイックセーブ",
-    "q-load": "クイックロード"
-  },
-  "history": {
-    "load": "ロード",
-    "skipped": "$0のシーンをスキップしました"
-  },
-  "characters": {
-    "aki": "秋葉",
-    "ark": "アルクェイド",
-    "cel": "シエル",
-    "his": "翡翠",
-    "koha": "琥珀",
-    "others": "Others"
-  },
-  "credits": [
-    {"center": "[center][font=serif][i]企画/ 武内崇 奈須きのこ"},
-    {"center": ["",
-                "[right][font=serif][i]原案/シナリオ/シナリオプログラム/",
-                "[right][font=serif][i]奈須きのこ"]},
-    {"bottom": ["[right][font=serif][i]シナリオプログラムアシスタント/[hide]OKSG",
-                "[right][font=serif][i]OKSG"]},
-    {"center": ["",
-                "[right][font=serif][i]キャラクターデザイン/原画/CG/",
-                "[right][font=serif][i]武内崇"]},
-    {"bottom": ["[right][font=serif][i]CGアシスタント/[hide]みっち",
-                "[right][font=serif][i]ふみっち"]},
-    {"center": ["[center][font=serif][i]背景/ [hide]九鬼護",
-                "[center][font=serif][i][hide]背景/[/] 九鬼護",
-                "[center][font=serif][i][hide]背景/[/] 武内崇"]},
-    {"top": ["[left][font=serif][i]プログラミング・大道具/",
-             "[center][font=serif][i]清兵衛"]},
-    {"top": ["[left][font=serif][i]作曲/編曲/サウンドエフェクト",
-             "[center][font=serif][i]KEITA HAGA"]},
-    {"bottom": ["[right][font=serif][i]スペシャルサンクス/[left=8/]",
-                "[right][font=serif][i][left=8]高橋直樹",
-                "[right][font=serif][i][left=8]B46"]},
-    {"bottom": ["[right][font=serif][i]スペシャルサンクス/[left=8/]",
-                "[right][font=serif][i][left=8]OKSG",
-                "[right][font=serif][i][left=8]SUBTLE",
-                "[right][font=serif][i][left=8]桐原小鳥",
-                "[right][font=serif][i][left=8]林羊子",
-                "[right][font=serif][i][size=80%](敬称略)"]},
-    {"bottom": ["[right][font=serif][i]テストプレイ/[left=3/][left=12]上続 浩宜",
-                "[right][font=serif][i][left=12]EDF坂田",
-                "[right][font=serif][i][left=12]K-1",
-                "[right][font=serif][i][left=12]四天",
-                "[right][font=serif][i][left=12]でろっち",
-                "[right][font=serif][i][left=12]NOCKy"]},
-    {"bottom": ["[right][font=serif][i]テストプレイ/[left=3/][left=12][size=80%]B46",
-                "[right][font=serif][i][left=12]御影",
-                "[right][font=serif][i][left=12]やまぐちたろう",
-                "[right][font=serif][i][left=12]山崎聖二[left=2/][size=80%](敬称略)",
-                "",""]},
-    {"bottom": ["[right][font=serif][i]テストプレイ/[left=15/]",
-                "[right][font=serif][i]ALL TYPE-MOON STAFF",
-                "","","",""]},
-    {"center": "[center][font=serif][i]ゲームディレクター/[left=3/]奈須きのこ"},
-    {"center": "[center][font=serif][i]製作総指揮/[left=3/]武内崇"},
-    {"center": "[center][font=serif][i][left=5/]製作/[left=3/]TYPE-MOON"},
-    {"bottom": "[right][font=serif][noline][color=black][copy/] 2000 TYPE-MOON All right reserved.", "delay": 21500, "bg": "#ffffff"}
-  ],
-  "yes": "はい",
-  "no": "いいえ",
-  "ok": "はい",
-  "back": "戻る",
-  "close": "閉じる"
+		"dead-end": "Dead end",
+		"osiete": "知得留先生の授業"
+	},
+	"images": {
+		"redirect-ids": {
+			"": {
+				"thumb":"./image_thumb/$.webp",
+				"sd":"./image/$.webp",
+				"hd": "./image_x2/$.webp"
+			}
+		},
+		"redirected-images": { },
+		"words": {
+			"fin": {"bg": "#ffffff", "center": "[center][noline][color=black][font=serif]Fin"},
+			"end": {"bg": "#ffffff", "bottom": "[right][noline][color=black][font=serif]END"}
+		}
+	},
+	"audio": {
+		"track-sources": {
+			"original": {"name": "Original (2000)", "path": "./CD_original/track$.mp3"},
+			"everafter": {"name": "Ever After (2002)", "path": "./CD_everafter/track$.mp3"},
+			"tsukibako": {"name": "Tsuki-Bako (2003)", "path": "./CD_tsukibako/track$.mp3"}
+		},
+		"waves-path": "./wave/se_$.wav"
+	},
+	"disclaimer": [
+		"このゲームは、TYPE－MOONの2000に発行されたビジュアルノベル[b]「月姫」[/b]のウェブバージョンです。",
+		"18歳以上のみ対象の商品となっております。"
+	],
+	"title": {
+		"start": "はじめから",
+		"resume": "つづきから",
+		"load": "ロード",
+		"config": "設定",
+		"extra": "エクストラ",
+		"about": {
+			"port": "このゲームは、TYPE－MOONの2000年に発行されたビジュアルノベル[b]「月姫」[/b]のウェブバージョンです。",
+			"project": "プロジェクトは$0GitHub$1にある。Add a star if you like it! Contributions are welcome.",
+			"feedback": "Send your feedback or report a bug $0here$1.",
+			"data": "全てがブラウザに保存されて、データを集められません。データを$0ここで$1管理できます。",
+			"remake": "$0月姫 -A piece of blue glass moon-$1を買って応援してください。"
+		},
+		"install": "Install"
+	},
+	"extra": {
+		"gallery": "ギヤラリー",
+		"endings": "エンディングス",
+		"scenes": "Scenes",
+		"eclipse": "Eclipse"
+	},
+	"config": {
+		"on": "ON",
+		"off": "OFF",
+		"reset": "初期設定に戻す",
+		"tab-game": "Game",
+		"tab-audio": "Audio",
+		"tab-controls": "操作設定",
+		"tab-advanced": "詳細設定",
+		"volume-master": "音量",
+		"volume-track": "BGM 音量",
+		"volume-se": "SFX 音量",
+		"track-source": "Track Source",
+		"auto-mute": "Mute when switching tab",
+		"ratio": "アスペクト比",
+		"ratio-auto": "Auto",
+		"ratio-4-3": "4:3",
+		"ratio-16-9": "16:9",
+		"text-speed": "メッセージ表示間隔",
+		"text-speed-low": "遅い",
+		"text-speed-med": "普通",
+		"text-speed-high": "早い",
+		"text-speed-instant": "瞬時",
+		"auto-play-delay-text": "オートモード時のメッセージ表示時間：$0s",
+		"auto-play-delay-page": "オートモード時のページ切り替え時間：$0s",
+		"adult-title": "エロ設定",
+		"adult-blur": "Blur thumbnails",
+		"adult-blur-help": [
+			"When toggled on, a blur effect will be applied on the thumbnails of the adult scenes (Save, Load, Flowchart, Gallery...).",
+			"In-game content will not be affected."
+		],
+		"adult-warn": "エロシーンを読むところで注意される",
+		"quality": "グラフィック品質",
+		"quality-sd": "640\u00D7480",
+		"quality-hd": "1280\u00D7960",
+		"fullscreen": "フルスクローン",
+		"language": "言語",
+		"show-locked-content": "Reveal locked content",
+		"show-locked-content-help": [
+			"When toggled on, reveals the complete Gallery, Flowchart, Endings, Eclipse...",
+			"It can be toggled on and off at any time."
+		],
+		"data": "データストレージ",
+		"data-export": "エクスポート",
+		"data-import": "インポート",
+		"data-erase": "削除",
+		"data-erase-warning": "本当にセーブを全て削除して、初期設定に戻したいですか？",
+		"data-erase-confirm": "セーブを全て削除しました。If you leave this website without making any change to the settings and without starting a new game, no data will remain stored on your computer",
+		"controls": {
+			"next": "つぎ",
+			"history": "ログを表示／非表示する",
+			"back": "Close current view / Display menu",
+			"bg_move": "Move background image",
+			"auto_play" : "オートモード",
+			"page_nav": "次／前のページへ",
+			"load": "ロードのページを開く",
+			"save": "Open save panel",
+			"q_save": "クイックセーブ",
+			"q_load": "クイックロード",
+			"config": "Open config panel",
+			"_hold": "[i](Hold)"
+		}
+	},
+	"endings": {
+		"normal": "エンド",
+		"good": "グッドエンド",
+		"true": "トゥルーエンド",
+		"osiete": "おしえて‼知得留先生"
+	},
+	"saves": {
+		"title-load": "ロード",
+		"title-save": "セーブ",
+		"create": "New save",
+		"import": "Import save file",
+		"export": "エクスポート",
+		"delete": "削除",
+		"delete-warning": "このセーブを本当に削除したいですか？",
+		"overwrite-warning": "このセーブを本当に上書きしたいですか？",
+		"quick-save": "クイックセーブ"
+	},
+	"game": {
+		"skip-named": [
+			"このシーンはもう見ました。",
+			"スキップしますか？"
+		],
+		"skip-unnamed": "このシーンはもう見ました。スキップしますか？",
+		"toast-qsave": "セーブは成功しました",
+		"toast-qload": "ロードは成功しました",
+		"toast-load": "ロードは成功しました",
+		"toast-save-fail": "セーブは失敗しました",
+		"toast-load-fail": "ロードは失敗しました",
+		"toast-autoplay-stop": "オートモードを停止しました",
+		"toast-ffw-stop": "早送りを停止しました",
+		"toast-hscene-waning": "エロのシーンを読むところです。"
+	},
+	"menu": {
+		"graphics": "グラフィック",
+		"history": "ログ",
+		"save": "セーブ",
+		"load": "ロード",
+		"config": "設定",
+		"auto-play": "オートモード",
+		"ffw": "早送り",
+		"title": "タイトルに戻る",
+		"q-save": "クイックセーブ",
+		"q-load": "クイックロード"
+	},
+	"history": {
+		"load": "ロード",
+		"skipped": "$0のシーンをスキップしました"
+	},
+	"characters": {
+		"aki": "秋葉",
+		"ark": "アルクェイド",
+		"cel": "シエル",
+		"his": "翡翠",
+		"koha": "琥珀",
+		"others": "Others"
+	},
+	"credits": [
+		{"center": "[center][font=serif][i]企画/ 武内崇 奈須きのこ"},
+		{"center": ["",
+								"[right][font=serif][i]原案/シナリオ/シナリオプログラム/",
+								"[right][font=serif][i]奈須きのこ"]},
+		{"bottom": ["[right][font=serif][i]シナリオプログラムアシスタント/[hide]OKSG",
+								"[right][font=serif][i]OKSG"]},
+		{"center": ["",
+								"[right][font=serif][i]キャラクターデザイン/原画/CG/",
+								"[right][font=serif][i]武内崇"]},
+		{"bottom": ["[right][font=serif][i]CGアシスタント/[hide]みっち",
+								"[right][font=serif][i]ふみっち"]},
+		{"center": ["[center][font=serif][i]背景/ [hide]九鬼護",
+								"[center][font=serif][i][hide]背景/[/] 九鬼護",
+								"[center][font=serif][i][hide]背景/[/] 武内崇"]},
+		{"top": ["[left][font=serif][i]プログラミング・大道具/",
+						 "[center][font=serif][i]清兵衛"]},
+		{"top": ["[left][font=serif][i]作曲/編曲/サウンドエフェクト",
+						 "[center][font=serif][i]KEITA HAGA"]},
+		{"bottom": ["[right][font=serif][i]スペシャルサンクス/[left=8/]",
+								"[right][font=serif][i][left=8]高橋直樹",
+								"[right][font=serif][i][left=8]B46"]},
+		{"bottom": ["[right][font=serif][i]スペシャルサンクス/[left=8/]",
+								"[right][font=serif][i][left=8]OKSG",
+								"[right][font=serif][i][left=8]SUBTLE",
+								"[right][font=serif][i][left=8]桐原小鳥",
+								"[right][font=serif][i][left=8]林羊子",
+								"[right][font=serif][i][size=80%](敬称略)"]},
+		{"bottom": ["[right][font=serif][i]テストプレイ/[left=3/][left=12]上続 浩宜",
+								"[right][font=serif][i][left=12]EDF坂田",
+								"[right][font=serif][i][left=12]K-1",
+								"[right][font=serif][i][left=12]四天",
+								"[right][font=serif][i][left=12]でろっち",
+								"[right][font=serif][i][left=12]NOCKy"]},
+		{"bottom": ["[right][font=serif][i]テストプレイ/[left=3/][left=12][size=80%]B46",
+								"[right][font=serif][i][left=12]御影",
+								"[right][font=serif][i][left=12]やまぐちたろう",
+								"[right][font=serif][i][left=12]山崎聖二[left=2/][size=80%](敬称略)",
+								"",""]},
+		{"bottom": ["[right][font=serif][i]テストプレイ/[left=15/]",
+								"[right][font=serif][i]ALL TYPE-MOON STAFF",
+								"","","",""]},
+		{"center": "[center][font=serif][i]ゲームディレクター/[left=3/]奈須きのこ"},
+		{"center": "[center][font=serif][i]製作総指揮/[left=3/]武内崇"},
+		{"center": "[center][font=serif][i][left=5/]製作/[left=3/]TYPE-MOON"},
+		{"bottom": "[right][font=serif][noline][color=black][copy/] 2000 TYPE-MOON All right reserved.", "delay": 21500, "bg": "#ffffff"}
+	],
+	"yes": "はい",
+	"no": "いいえ",
+	"ok": "はい",
+	"back": "戻る",
+	"close": "閉じる"
 }

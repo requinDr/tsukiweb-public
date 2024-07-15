@@ -33,8 +33,7 @@
       "project": "O projeto está disponível no link: $0GitHub$1. Adicione uma estrela se gostar! Contribuições são bem-vindas.",
       "feedback": "Envie seu feedback ou reporte um bug $0aqui$1.",
       "data": "Nenhum dado será coletado, tudo é armazenado em seu navegador. Gerencie seus dados $0aqui$1.",
-      "remake": "Considere comprar o remake do $0Tsukihime - A piece of blue glass moon$1.",
-      "close": "Fechar"
+      "remake": "Considere comprar o remake do $0Tsukihime - A piece of blue glass moon$1."
     },
     "install": "Instalar"
   },
@@ -70,6 +69,10 @@
     "auto-play-delay-page": "Delay na reprodução automática da página: $0 s",
     "adult-title": "Adulto",
     "adult-blur": "Desfocar miniaturas",
+    "adult-blur-help": [
+      "When toggled on, a blur effect will be applied on the thumbnails of the adult scenes (Save, Load, Flowchart, Gallery...).",
+      "In-game content will not be affected."
+    ],
     "adult-warn": "Avise-me quando eu entrar em uma cena H",
     "quality": "Qualidade",
     "quality-sd": "640\u00D7480",
@@ -77,6 +80,10 @@
     "fullscreen": "Tela cheia",
     "language": "Idioma",
     "show-locked-content": "Reveal locked content",
+    "show-locked-content-help": [
+			"When toggled on, reveals the complete Gallery, Flowchart, Endings, Eclipse...",
+			"It can be toggled on and off at any time."
+		],
     "data": "Armazenamento de dados",
     "data-export ": "Exportar",
     "data-import ": "Importar",

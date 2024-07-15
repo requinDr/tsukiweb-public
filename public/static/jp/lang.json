@@ -43,8 +43,7 @@
       "project": "プロジェクトは$0GitHub$1にある。Add a star if you like it! Contributions are welcome.",
       "feedback": "Send your feedback or report a bug $0here$1.",
       "data": "全てがブラウザに保存されて、データを集められません。データを$0ここで$1管理できます。",
-      "remake": "$0月姫 -A piece of blue glass moon-$1を買って応援してください。",
-      "close": "閉じる"
+      "remake": "$0月姫 -A piece of blue glass moon-$1を買って応援してください。"
     },
     "install": "Install"
   },
@@ -80,6 +79,10 @@
     "auto-play-delay-page": "オートモード時のページ切り替え時間：$0s",
     "adult-title": "エロ設定",
     "adult-blur": "Blur thumbnails",
+    "adult-blur-help": [
+      "When toggled on, a blur effect will be applied on the thumbnails of the adult scenes (Save, Load, Flowchart, Gallery...).",
+      "In-game content will not be affected."
+    ],
     "adult-warn": "エロシーンを読むところで注意される",
     "quality": "グラフィック品質",
     "quality-sd": "640\u00D7480",
@@ -87,6 +90,10 @@
     "fullscreen": "フルスクローン",
     "language": "言語",
     "show-locked-content": "Reveal locked content",
+    "show-locked-content-help": [
+			"When toggled on, reveals the complete Gallery, Flowchart, Endings, Eclipse...",
+			"It can be toggled on and off at any time."
+		],
     "data": "データストレージ",
     "data-export": "エクスポート",
     "data-import": "インポート",
