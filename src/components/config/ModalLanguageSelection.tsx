@@ -62,7 +62,7 @@ const ModalLanguageSelection = ({show, setShow}: Props) => {
 			</div>
 
 			<MenuButton onClick={()=>setShow(false)} className="close-btn">
-				{strings.title.about.close}
+				{strings.close}
 			</MenuButton>
 		</Modal>
 	)
