@@ -3,7 +3,7 @@ import { SaveState, exportSave } from "../../utils/savestates"
 import { savePhaseTexts } from "../SavesLayout"
 import { MdDeleteOutline, MdOutlineFileDownload } from "react-icons/md"
 import GraphicsGroup from "../molecules/GraphicsGroup"
-import PageSection from "@ui-core/layouts/PageSection"
+import PageSection from "@tsukiweb-common/ui-core/layouts/PageSection"
 
 type SaveDetailsProps = {
 	id?: number, saveState?: SaveState, deleteSave: (id: number)=>void,

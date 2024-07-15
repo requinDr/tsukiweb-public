@@ -22,10 +22,10 @@
     "jsx": "react-jsx",
     "baseUrl": "src",
     "paths": {
-      "@ui-core/*": ["./ui-core/*"]
+      "@tsukiweb-common/*": ["../tsukiweb-common/src/*"]
     }
   },
   "include": [
     "src"
-  ]
+, "tsukiweb-common/src/ui-core"  ]
 }

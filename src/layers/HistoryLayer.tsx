@@ -7,8 +7,8 @@ import history from '../utils/history';
 import script from '../utils/script';
 import { strings } from '../translation/lang';
 import PageElement from '../components/molecules/PageElement';
-import FixedFooter from '@ui-core/components/FixedFooter';
-import MenuButton from '@ui-core/components/MenuButton';
+import FixedFooter from '@tsukiweb-common/ui-core/components/FixedFooter';
+import MenuButton from '@tsukiweb-common/ui-core/components/MenuButton';
 
 type Props = {
   [key: string] : any // other properties to apply to the root 'div' element of the component

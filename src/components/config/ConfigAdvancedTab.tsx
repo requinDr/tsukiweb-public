@@ -9,11 +9,11 @@ import { toast } from "react-toastify"
 import { useLanguageRefresh } from "../hooks/useLanguageRefresh"
 import { MdDeleteForever, MdDownload, MdFileUpload, MdTranslate } from "react-icons/md"
 import ModalLanguageSelection from "./ModalLanguageSelection"
-import PageSection from "@ui-core/layouts/PageSection"
 import { warnHScene } from "utils/script"
-import Button from "@ui-core/components/Button"
 import { bb } from "utils/Bbcode"
 import ConfigModal from "./components/ConfigModal"
+import Button from "@tsukiweb-common/ui-core/components/Button"
+import PageSection from "@tsukiweb-common/ui-core/layouts/PageSection"
 
 function twoDigits(n: number) {
 	return n.toString().padStart(2, '0')

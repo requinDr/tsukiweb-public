@@ -7,9 +7,9 @@ import { phaseTexts } from "../translation/assets"
 import SaveListItem from "./save/SaveListItem"
 import SaveDetails from "./save/SaveDetails"
 import { MdAddCircleOutline, MdUploadFile } from "react-icons/md"
-import MenuButton from "@ui-core/components/MenuButton"
-import PageSection from "@ui-core/layouts/PageSection"
-import Button from "@ui-core/components/Button"
+import MenuButton from "@tsukiweb-common/ui-core/components/MenuButton"
+import PageSection from "@tsukiweb-common/ui-core/layouts/PageSection"
+import Button from "@tsukiweb-common/ui-core/components/Button"
 
 //##############################################################################
 //#                               TOOL FUNCTIONS                               #

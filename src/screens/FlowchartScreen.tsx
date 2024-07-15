@@ -4,9 +4,9 @@ import { SCREEN, displayMode } from "../utils/display"
 import { strings } from "../translation/lang"
 import { useLanguageRefresh } from "../components/hooks/useLanguageRefresh"
 import { useScreenAutoNavigate } from "../components/hooks/useScreenAutoNavigate"
-import FixedFooter from "@ui-core/components/FixedFooter"
-import MenuButton from "@ui-core/components/MenuButton"
-import BlueContainer from "@ui-core/components/BlueContainer"
+import FixedFooter from "@tsukiweb-common/ui-core/components/FixedFooter"
+import MenuButton from "@tsukiweb-common/ui-core/components/MenuButton"
+import BlueContainer from "@tsukiweb-common/ui-core/components/BlueContainer"
 import Flowchart from "components/Flowchart"
 
 const FlowchartScreen = () => {

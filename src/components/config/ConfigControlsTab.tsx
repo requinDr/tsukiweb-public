@@ -3,7 +3,7 @@ import { KeymapKeyFilter, inGameKeymap } from "../../utils/KeyMap"
 import { strings } from "../../translation/lang"
 import { bb } from "../../utils/Bbcode"
 import { useLanguageRefresh } from "../hooks/useLanguageRefresh"
-import PageSection from "@ui-core/layouts/PageSection"
+import PageSection from "@tsukiweb-common/ui-core/layouts/PageSection"
 
 type KeyMapEntry = [string, typeof inGameKeymap[keyof typeof inGameKeymap]]
 

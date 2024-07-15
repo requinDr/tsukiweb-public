@@ -5,9 +5,9 @@ import { bb } from "../../utils/Bbcode"
 import { APP_VERSION } from "../../utils/constants"
 import { strings } from "../../translation/lang"
 import tsukiCover from "../../assets/images/tsukihime_cover.webp"
-import MenuButton from "@ui-core/components/MenuButton"
-import Modal from "@ui-core/components/Modal"
-import BlueContainer from "@ui-core/components/BlueContainer"
+import Modal from "@tsukiweb-common/ui-core/components/Modal"
+import BlueContainer from "@tsukiweb-common/ui-core/components/BlueContainer"
+import MenuButton from "@tsukiweb-common/ui-core/components/MenuButton"
 
 const AppInfo = () => {
 	const [show, setShow] = useState<boolean>(false)

@@ -1,5 +1,5 @@
-import MenuButton from "@ui-core/components/MenuButton"
-import Modal from "@ui-core/components/Modal"
+import MenuButton from "@tsukiweb-common/ui-core/components/MenuButton"
+import Modal from "@tsukiweb-common/ui-core/components/Modal"
 import { Dispatch, ReactNode } from "react"
 import { strings } from "translation/lang"
 import Ornament from "../../../assets/images/ornament.webp"

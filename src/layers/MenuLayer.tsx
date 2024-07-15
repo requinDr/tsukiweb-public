@@ -9,7 +9,7 @@ import script from "../utils/script"
 import { displayMode, SCREEN } from "../utils/display"
 import { strings } from "../translation/lang"
 import Ornament from "../assets/images/ornament.webp"
-import Particles from "@ui-core/components/Particles"
+import Particles from "@tsukiweb-common/ui-core/components/Particles"
 import { toast } from "react-toastify"
 
 

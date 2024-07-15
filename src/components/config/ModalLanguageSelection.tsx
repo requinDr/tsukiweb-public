@@ -1,5 +1,5 @@
-import MenuButton from "@ui-core/components/MenuButton"
-import Modal from "@ui-core/components/Modal"
+import MenuButton from "@tsukiweb-common/ui-core/components/MenuButton"
+import Modal from "@tsukiweb-common/ui-core/components/Modal"
 import { Dispatch } from "react"
 import { MdOpenInNew } from "react-icons/md"
 import { languages, strings } from "translation/lang"

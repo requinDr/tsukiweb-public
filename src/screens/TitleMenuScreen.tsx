@@ -16,7 +16,7 @@ import TitleMenuButton from '../components/atoms/TitleMenuButton'
 import AppInfo from '../components/title-menu/AppInfo'
 import TranslationSwitch from '../components/title-menu/TranslationSwitch'
 import usePWA from '../components/hooks/usePWA'
-import Particles from '@ui-core/components/Particles'
+import Particles from '@tsukiweb-common/ui-core/components/Particles'
 import ExtraMenu from 'components/title-menu/ExtraMenu'
 
 const img = {

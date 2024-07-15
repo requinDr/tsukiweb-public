@@ -10,10 +10,10 @@ import { SCREEN } from '../utils/display'
 import { useLanguageRefresh } from '../components/hooks/useLanguageRefresh'
 import { useScreenAutoNavigate } from '../components/hooks/useScreenAutoNavigate'
 import useQueryParam from '../components/hooks/useQueryParam'
-import MenuButton from '@ui-core/components/MenuButton'
-import { Tab } from '@ui-core/components/TabsComponent'
-import PageTabsLayout from '@ui-core/layouts/PageTabsLayout'
-import PageSection from '@ui-core/layouts/PageSection'
+import MenuButton from '@tsukiweb-common/ui-core/components/MenuButton'
+import { Tab } from '@tsukiweb-common/ui-core/components/TabsComponent'
+import PageTabsLayout from '@tsukiweb-common/ui-core/layouts/PageTabsLayout'
+import PageSection from '@tsukiweb-common/ui-core/layouts/PageSection'
 
 type GalleryItem = GalleryImg & {src_thumb: string, src_hd: string}
 

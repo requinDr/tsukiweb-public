@@ -5,7 +5,7 @@ import { strings } from "../../translation/lang"
 import { phaseTexts } from "../../translation/assets"
 import { SaveState } from "../../utils/savestates"
 import { getSceneTitle } from "../../utils/scriptUtils"
-import Button from "@ui-core/components/Button"
+import Button from "@tsukiweb-common/ui-core/components/Button"
 import { MdReplay } from "react-icons/md"
 
 const PageElement = ({saveState, onLoad}: {saveState: SaveState, onLoad: (ss: SaveState)=>void})=> {

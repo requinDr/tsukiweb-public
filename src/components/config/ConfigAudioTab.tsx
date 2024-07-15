@@ -5,7 +5,7 @@ import { deepAssign, negative } from "../../utils/utils"
 import { strings } from "../../translation/lang"
 import { MdOutlineVolumeOff, MdOutlineVolumeUp, MdVolumeMute } from "react-icons/md"
 import { useLanguageRefresh } from "../hooks/useLanguageRefresh"
-import PageSection from "@ui-core/layouts/PageSection"
+import PageSection from "@tsukiweb-common/ui-core/layouts/PageSection"
 
 const ConfigAudioTab = () => {
 	useLanguageRefresh()
