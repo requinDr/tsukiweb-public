@@ -1,6 +1,6 @@
 import { useReducer } from "react";
-import { useObserver } from "../../../tsukiweb-common/src/utils/Observer";
 import { strings } from "../../translation/lang";
+import { useObserver } from "@tsukiweb-common/utils/Observer";
 
 /**
  * To use in components.

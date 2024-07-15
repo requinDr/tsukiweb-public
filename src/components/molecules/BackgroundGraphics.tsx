@@ -1,8 +1,8 @@
 import { memo } from "react"
-import { useObserved } from "../../../tsukiweb-common/src/utils/Observer"
 import { displayMode } from "../../utils/display"
 import useGraphicTransition from "../hooks/useGraphicTransition"
 import GraphicsElement from "./GraphicsElement"
+import { useObserved } from "@tsukiweb-common/utils/Observer"
 
 const BackgroundGraphics = ()=> {
 	const [bgAlign] = useObserved(displayMode, 'bgAlignment')

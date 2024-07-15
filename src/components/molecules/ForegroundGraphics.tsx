@@ -1,9 +1,9 @@
 import { memo } from "react"
-import { useObserved } from "../../../tsukiweb-common/src/utils/Observer"
 import { displayMode } from "../../utils/display"
 import { endTransition } from "../../utils/graphics"
 import useGraphicTransition from "../hooks/useGraphicTransition"
 import GraphicsElement from "./GraphicsElement"
+import { useObserved } from "@tsukiweb-common/utils/Observer"
 
 /**
  * used to make background transitions over the sprites

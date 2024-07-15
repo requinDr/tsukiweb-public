@@ -1,10 +1,10 @@
 import { Graphics } from "@tsukiweb-common/types"
 import { NumVarName, StrVarName, VarName, LabelName, RouteName, RouteDayName } from "../types"
-import { observe } from "../../tsukiweb-common/src/utils/Observer"
 import { SCREEN, displayMode } from "./display"
 import { endings } from "./endings"
-import { StoredJSON } from "../../tsukiweb-common/src/utils/storage"
 import { resettable, deepFreeze, deepAssign } from "@tsukiweb-common/utils/utils"
+import { observe } from "@tsukiweb-common/utils/Observer"
+import { StoredJSON } from "@tsukiweb-common/utils/storage"
 
 //##############################################################################
 //#                             SCENARIO VARIABLES                             #

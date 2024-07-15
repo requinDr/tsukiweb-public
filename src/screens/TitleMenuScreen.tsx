@@ -15,9 +15,9 @@ import { useScreenAutoNavigate } from '../components/hooks/useScreenAutoNavigate
 import TitleMenuButton from '../../tsukiweb-common/src/components/atoms/TitleMenuButton'
 import AppInfo from '../components/title-menu/AppInfo'
 import TranslationSwitch from '../components/title-menu/TranslationSwitch'
-import usePWA from '../components/hooks/usePWA'
 import Particles from '@tsukiweb-common/ui-core/components/Particles'
 import ExtraMenu from 'components/title-menu/ExtraMenu'
+import usePWA from '@tsukiweb-common/hooks/usePWA'
 
 const img = {
 	src: moon,

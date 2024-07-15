@@ -1,4 +1,4 @@
-import { Graphics, ViewRatio } from "@tsukiweb-common/types"
+import { ViewRatio } from "@tsukiweb-common/constants"
 import { ResolutionId, TranslationId, LangJson } from "translation/lang"
 
 export type PageType = 'text'|'choice'|'skip'|'phase'
@@ -39,19 +39,6 @@ export type LabelName = SceneName | FBlockName | `skip${number}${'a'|''}` |
 export type NumVarName = `%${string}`
 export type StrVarName = `$${string}`
 export type VarName = NumVarName | StrVarName
-
-export type FcNodeAttrs = {
-	col: number
-	from: string[]
-	cutAt?: number
-	align?: string
-}
-
-export type FcSceneAttrs = FcNodeAttrs & {
-	graph: Graphics
-}
-
-export type DivProps = React.ComponentPropsWithoutRef<"div">
 
 export type SettingsType = {
 	// scene settings

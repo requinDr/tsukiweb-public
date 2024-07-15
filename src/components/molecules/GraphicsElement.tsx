@@ -2,8 +2,7 @@ import { memo, useCallback, CSSProperties } from "react"
 import { imageSrc } from "../../translation/assets"
 import { settings } from "../../utils/settings"
 import GraphicElement from "../atoms/GraphicElement"
-import { SpritePos } from "./GraphicsGroup"
-import { DivProps } from "../../types"
+import { DivProps, SpritePos } from "@tsukiweb-common/types"
 
 type Props = {
   pos: SpritePos

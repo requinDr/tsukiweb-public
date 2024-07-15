@@ -1,11 +1,11 @@
 import { useState } from "react"
 import { Choice, PageContent } from "../types"
-import { observe, useObserver } from "../../tsukiweb-common/src/utils/Observer"
 import script from "../utils/script"
 import { SCREEN, displayMode } from "../utils/display"
 import history from "../utils/history"
 import { Bbcode } from "../utils/Bbcode"
 import { choicesContainer, resetChoices } from "../utils/choices"
+import { observe, useObserver } from "@tsukiweb-common/utils/Observer"
 
 observe(displayMode, 'screen', resetChoices, {filter: s => s != SCREEN.WINDOW})
 

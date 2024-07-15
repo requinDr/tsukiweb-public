@@ -1,9 +1,9 @@
-import { RecursivePartial, ViewRatio } from "@tsukiweb-common/types"
+import { RecursivePartial } from "@tsukiweb-common/types"
 import { SettingsType } from "../types"
-import { TEXT_SPEED } from "./constants"
 import { observeChildren, observe } from "@tsukiweb-common/utils/Observer"
 import { StoredJSON } from "@tsukiweb-common/utils/storage"
 import { deepFreeze, deepAssign, jsonDiff, objectsEqual } from "@tsukiweb-common/utils/utils"
+import { TEXT_SPEED, ViewRatio } from "@tsukiweb-common/constants"
 
 export const defaultSettings: SettingsType = deepFreeze({
   textSpeed: TEXT_SPEED.normal,

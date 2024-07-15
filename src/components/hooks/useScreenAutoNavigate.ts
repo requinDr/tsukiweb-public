@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { useNavigate } from "react-router-dom"
-import { observe, unobserve } from "../../../tsukiweb-common/src/utils/Observer"
 import { SCREEN, displayMode } from "../../utils/display"
+import { observe, unobserve } from "@tsukiweb-common/utils/Observer"
 
 /**
  * Navigate to the correct screen when setting the `displayMode.screen` value.

@@ -1,6 +1,6 @@
-import { Digit, UcLetter } from '@tsukiweb-common/types'
+import { Digit, FcNodeAttrs, FcSceneAttrs, UcLetter } from '@tsukiweb-common/types'
 import sceneAttrs from '../assets/game/scene_attrs.json'
-import { FcNodeAttrs, FcSceneAttrs, RouteDayName, RouteName, SceneName } from '../types'
+import { RouteDayName, RouteName, SceneName } from '../types'
 
 export const APP_VERSION = import.meta.env.VITE_VERSION
 
@@ -21,13 +21,6 @@ export const SCENE_ATTRS : {
     fc?: FcSceneAttrs
   }>
 } = JSON.parse(JSON.stringify(sceneAttrs))
-
-export enum TEXT_SPEED {
-  instant = 0,
-  fast = 1,
-  normal = 20,
-  slow = 50,
-}
 
 export const SAVE_EXT = "thweb"
 export const HISTORY_MAX_PAGES = 20

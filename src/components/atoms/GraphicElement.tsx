@@ -1,10 +1,9 @@
-import { DivProps } from "../../types";
 import { bb } from "../../utils/Bbcode";
 import { findImageObjectByName } from "../../utils/gallery";
 import { imageSrc } from "../../translation/assets";
-import { splitFirst } from "../../../tsukiweb-common/src/utils/utils";
 import { settings } from "../../utils/settings";
-import { SpritePos } from "@tsukiweb-common/types";
+import { DivProps, SpritePos } from "@tsukiweb-common/types";
+import { splitFirst } from "@tsukiweb-common/utils/utils";
 
 type Props = {
 	pos: SpritePos

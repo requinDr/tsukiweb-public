@@ -2,9 +2,8 @@ import { memo } from "react"
 import { settings } from "../../utils/settings"
 import GraphicElement from "../atoms/GraphicElement"
 import { imageSrc } from "../../translation/assets"
-import { DivProps } from "../../types";
 import { POSITIONS } from "@tsukiweb-common/constants";
-import { SpritePos, Graphics as GraphicsType } from "@tsukiweb-common/types";
+import { SpritePos, Graphics as GraphicsType, DivProps } from "@tsukiweb-common/types";
 
 
 export async function preloadImage(src:string, resolution=settings.resolution): Promise<void> {
