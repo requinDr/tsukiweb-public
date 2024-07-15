@@ -70,7 +70,7 @@
     "adult-title": "成人设置",
     "adult-blur": "模糊缩略图",
     "adult-blur-help": [
-      "Apply a blur effect on the thumbnails of the adult scenes (Save, Load, Flowchart, Gallery...).",
+      "Apply a blur effect on the thumbnails of the adult scenes (Save, Load, Flowchart, Gallery, …).",
       "In-game content is not affected."
     ],
     "adult-warn": "进入成人场景时警告",
@@ -81,7 +81,7 @@
     "language": "语言",
     "show-locked-content": "Reveal locked content",
     "show-locked-content-help": [
-			"Reveals the complete Gallery, Flowchart, Endings, Eclipse...",
+			"Reveals the complete Gallery, Flowchart, Endings, Eclipse, …",
 			"It can be toggled on and off at any time."
 		],
     "data": "存档",

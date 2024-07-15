@@ -185,7 +185,7 @@
 		"adult-title": "エロ設定",
 		"adult-blur": "Blur thumbnails",
 		"adult-blur-help": [
-			"Apply a blur effect on the thumbnails of the adult scenes (Save, Load, Flowchart, Gallery...).",
+			"Apply a blur effect on the thumbnails of the adult scenes (Save, Load, Flowchart, Gallery, …).",
 			"In-game content is not affected."
 		],
 		"adult-warn": "エロシーンを読むところで注意される",
@@ -196,7 +196,7 @@
 		"language": "言語",
 		"show-locked-content": "Reveal locked content",
 		"show-locked-content-help": [
-			"Reveals the complete Gallery, Flowchart, Endings, Eclipse...",
+			"Reveals the complete Gallery, Flowchart, Endings, Eclipse, …",
 			"It can be toggled on and off at any time."
 		],
 		"data": "データストレージ",
