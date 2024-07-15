@@ -1,0 +1,3 @@
+[submodule "tsukiweb-common"]
+	path = tsukiweb-common
+	url = https://github.com/requinDr/tsukiweb-common.git
