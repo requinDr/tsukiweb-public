@@ -36,10 +36,6 @@ export type FBlockName = `f${number}${''|'a'|'b'|'half'|'_0'}`
 export type LabelName = SceneName | FBlockName | `skip${number}${'a'|''}` |
 	'endofplay'
 
-export type NumVarName = `%${string}`
-export type StrVarName = `$${string}`
-export type VarName = NumVarName | StrVarName
-
 export type SettingsType = {
 	// scene settings
 	textSpeed: number

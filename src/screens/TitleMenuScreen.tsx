@@ -2,10 +2,9 @@ import { useMemo, useState } from 'react'
 import tsukiLogo from "../assets/images/tsukihime-logo.webp"
 import moon from "../assets/images/moon.webp"
 import '../styles/title-menu.scss'
-import { SCREEN, displayMode } from '../utils/display'
+import { SCREEN } from '../utils/display'
 import { motion } from 'framer-motion'
-import { blankSaveState, getLastSave, hasSaveStates, loadSaveFiles, loadSaveState, viewedScene } from '../utils/savestates'
-import history from '../utils/history'
+import { continueGame, hasSaveStates, newGame, viewedScene } from '../utils/savestates'
 import { strings } from "../translation/lang"
 import { MdGetApp } from 'react-icons/md'
 import { settings } from '../utils/settings'
@@ -27,29 +26,9 @@ const img = {
 
 const TitleMenuScreen = () => {
 	useScreenAutoNavigate(SCREEN.TITLE)
-	const { hasPWAcapability, installPWA } = usePWA()
+	const { canInstallPWA, installPWA } = usePWA()
 	const [page, setPage] = useState<number>(0)
 	useLanguageRefresh()
-
-	function newGame() {
-		history.clear()
-		loadSaveState(blankSaveState())
-		displayMode.screen = SCREEN.WINDOW
-	}
-
-	async function continueGame() {
-		// restart from beginning of last visisted page ...
-		const lastSave = history.last
-								// or from last saved game
-								?? getLastSave()
-								// or ask user to provide save file(s).
-								// Also retrieve settings from the save file(s)
-								?? await loadSaveFiles().then(getLastSave)
-		if (lastSave) {
-			loadSaveState(lastSave)
-			displayMode.screen = SCREEN.WINDOW
-		}
-	}
 
 	const [allEndingsSeen, eclipseSeen] = useMemo(()=> {
 		const allEndingsSeen = settings.unlockEverything || Object.values(endings).every(e=>e.seen)
@@ -133,7 +112,7 @@ const TitleMenuScreen = () => {
 			</nav>
 
 			<div className='top-actions'>
-				{hasPWAcapability &&
+				{canInstallPWA &&
 					<motion.div
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1 }}

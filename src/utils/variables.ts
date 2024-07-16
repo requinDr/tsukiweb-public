@@ -1,5 +1,5 @@
-import { Graphics } from "@tsukiweb-common/types"
-import { NumVarName, StrVarName, VarName, LabelName, RouteName, RouteDayName } from "../types"
+import { Graphics, NumVarName, StrVarName, VarName } from "@tsukiweb-common/types"
+import { LabelName, RouteName, RouteDayName } from "../types"
 import { SCREEN, displayMode } from "./display"
 import { endings } from "./endings"
 import { resettable, deepFreeze, deepAssign } from "@tsukiweb-common/utils/utils"

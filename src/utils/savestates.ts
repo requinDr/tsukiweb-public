@@ -187,6 +187,26 @@ export const quickLoad = ()=> {
   }
 }
 
+export function newGame() {
+  history.clear()
+  loadSaveState(blankSaveState())
+  displayMode.screen = SCREEN.WINDOW
+}
+
+export async function continueGame() {
+  // restart from beginning of last visisted page ...
+  const lastSave = history.last
+              // or from last saved game
+              ?? getLastSave()
+              // or ask user to provide save file(s).
+              // Also retrieve settings from the save file(s)
+              ?? await loadSaveFiles().then(getLastSave)
+  if (lastSave) {
+    loadSaveState(lastSave)
+    displayMode.screen = SCREEN.WINDOW
+  }
+}
+
 //______________________________SaveState deletion______________________________
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 

@@ -1,4 +1,4 @@
-import { NumVarName } from "../types"
+import { NumVarName } from "@tsukiweb-common/types"
 import { getGameVariable } from "./variables"
 
 export default class Timer {
