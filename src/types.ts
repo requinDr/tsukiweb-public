@@ -1,5 +1,6 @@
 import { ViewRatio } from "@tsukiweb-common/constants"
-import { ResolutionId, TranslationId, LangJson } from "translation/lang"
+import { ResolutionId, TranslationId } from "@tsukiweb-common/utils/lang"
+import { LangJson } from "translation/lang"
 
 export type PageType = 'text'|'choice'|'skip'|'phase'
 export type PageContent<T extends PageType> =

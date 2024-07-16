@@ -2,10 +2,10 @@ import { memo, useCallback } from "react";
 import { gameContext } from "../utils/variables";
 import { SCREEN, displayMode } from "../utils/display";
 import SpriteGraphics from "../components/molecules/SpriteGraphics";
-import { quakeEffect, resetQuake, resetTransition, transition } from "../utils/graphics";
 import BackgroundGraphics from "../components/molecules/BackgroundGraphics";
 import ForegroundGraphics from "../components/molecules/ForegroundGraphics";
 import { observe, useObserved } from "@tsukiweb-common/utils/Observer";
+import { resetTransition, resetQuake, quakeEffect, transition } from "@tsukiweb-common/utils/graphics";
 
 observe(displayMode, 'screen', (screen)=> {
   if (screen != SCREEN.WINDOW) {

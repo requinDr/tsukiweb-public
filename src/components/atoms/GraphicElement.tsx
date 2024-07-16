@@ -59,12 +59,11 @@ const GraphicElement = ({ pos, image, resolution = settings.resolution, lazy = f
 		)
 	}
 
-	const className: string[] = [pos]
-	const { className: insertClass, ...attrs } = props
-	if (insertClass) className.push(insertClass)
-
 	return (
-		<div className={className.join(" ")} {...attrs}>
+		<div
+			{...props}
+			className={classNames(pos, props.className)}
+		>
 			{imageElement}
 			{overlay}
 		</div>

@@ -1,9 +1,10 @@
 import { useRef } from "react"
-import { KeymapKeyFilter, inGameKeymap } from "../../utils/KeyMap"
+import { inGameKeymap } from "../../utils/KeyMap"
 import { strings } from "../../translation/lang"
 import { bb } from "../../utils/Bbcode"
 import { useLanguageRefresh } from "../hooks/useLanguageRefresh"
 import PageSection from "@tsukiweb-common/ui-core/layouts/PageSection"
+import { KeymapKeyFilter } from "@tsukiweb-common/utils/KeyMap"
 
 type KeyMapEntry = [string, typeof inGameKeymap[keyof typeof inGameKeymap]]
 

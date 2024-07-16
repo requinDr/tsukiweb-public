@@ -6,7 +6,7 @@ import ChoicesLayer from '../layers/ChoicesLayer';
 import MenuLayer from '../layers/MenuLayer';
 import TextLayer from '../layers/TextLayer';
 import GraphicsLayer from '../layers/GraphicsLayer';
-import KeyMap, { inGameKeymap } from '../utils/KeyMap';
+import { inGameKeymap } from '../utils/KeyMap';
 import script from '../utils/script';
 import { gameContext, gameSession } from '../utils/variables';
 import { quickSave, quickLoad, loadSaveState } from "../utils/savestates";
@@ -24,6 +24,7 @@ import { KeysMatching } from '@tsukiweb-common/types';
 import useGamepad from '@tsukiweb-common/hooks/useGamepad';
 import GestureHandler from '@tsukiweb-common/utils/touch';
 import { useObserved } from '@tsukiweb-common/utils/Observer';
+import KeyMap from '@tsukiweb-common/utils/KeyMap';
 
 //##############################################################################
 //#                                USER INPUTS                                 #

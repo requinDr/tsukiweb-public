@@ -2,10 +2,10 @@ import { RouteName, RouteDayName } from "../types"
 import defaultStrings from "../assets/lang/default.json"
 import { SCENE_ATTRS } from "../utils/constants"
 import { settings } from "../utils/settings"
-import { JSONObject } from "@tsukiweb-common/types"
 import { observe } from "@tsukiweb-common/utils/Observer"
 import { StoredJSON } from "@tsukiweb-common/utils/storage"
-import { TSForceType, fetchJson, deepAssign } from "@tsukiweb-common/utils/utils"
+import { fetchJson, deepAssign, insertDirectory } from "@tsukiweb-common/utils/utils"
+import { ImageRedirect, LangDesc, TextImage, TranslationId, UpdateDateFormat } from "@tsukiweb-common/utils/lang"
 
 //##############################################################################
 //#                                  PRIVATE                                   #
@@ -19,17 +19,6 @@ const LANGUAGES_LIST_URL = `${LANG_DIR}languages.json`
 
 //________________________________private types_________________________________
 //------------------------------------------------------------------------------
-
-type UpdateDateFormat = `${number}-${number}-${number}` // YYYY-MM-DD
-
-type LangDesc = {
-  'display-name': string
-  'locale': string
-  'last-update': UpdateDateFormat
-  'dir': string
-  'fallback'?: TranslationId
-  'authors'?: string
-}
 
 type LanguagesType = Record<TranslationId, LangDesc>
 
@@ -62,30 +51,6 @@ const langSelection = {
 
 //______________________________private functions_______________________________
 //------------------------------------------------------------------------------
-
-/**
- * Inserts the specified directory in strings that start with
- * a relative path mark ('./' or '../').
- * @param object object to modify
- * @param dir directory path to insert
- */
-function insertDirectory(object: JSONObject, dir: string) {
-  for (const key of Object.getOwnPropertyNames(object)) {
-    const value = object[key]
-    const valueType = value?.constructor
-    if (valueType == String) {
-      TSForceType<String>(value)
-      if (value.startsWith('./')) {
-        object[key] = dir + value.substring(1)
-      }
-      else if (value.startsWith('../'))
-        object[key] = dir + '/' + value
-    } else if (valueType == Object) {
-      insertDirectory(value as JSONObject, dir)
-    }
-  }
-  return object
-}
 
 async function loadTranslation(id: TranslationId): Promise<typeof strings> {
   if (!Object.hasOwn(languages, id))
@@ -140,23 +105,11 @@ async function updateLanguage(id: TranslationId, forceUpdate = false) {
 //_________________________________public types_________________________________
 //------------------------------------------------------------------------------
 
-export type ImageRedirect<format extends string> = {thumb:format, sd:format, hd: format}
-
-export type TextImage = {
-  bg?: string,
-} & (
-  { top: string|string[], center?: never, bottom?: never } |
-  { center: string|string[], top?: never, bottom?: never } |
-  { bottom: string|string[], top?: never, center?: never }
-)
-
-export type ResolutionId = 'thumb'|'sd'|'hd'
 export type TrackSourceId = keyof typeof defaultStrings.audio['track-sources']
 
 export type GameJson = Pick<StringsType, 'scenario'|'credits'>
 export type LangJson = Omit<typeof defaultStrings, keyof GameJson>
 
-export type TranslationId = string
 
 //_______________________________public variables_______________________________
 //------------------------------------------------------------------------------
