@@ -25,4 +25,5 @@
       "@tsukiweb-common/*": ["../tsukiweb-common/src/*"]
     }
   },
+  "include": ["src", "tsukiweb-common/global.d.ts"],
 }

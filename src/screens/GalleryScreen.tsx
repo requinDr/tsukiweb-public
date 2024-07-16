@@ -14,6 +14,7 @@ import PageTabsLayout from '@tsukiweb-common/ui-core/layouts/PageTabsLayout'
 import PageSection from '@tsukiweb-common/ui-core/layouts/PageSection'
 import Fancybox from '@tsukiweb-common/components/molecules/Fancybox'
 import useQueryParam from '@tsukiweb-common/hooks/useQueryParam'
+import classNames from 'classnames'
 
 type GalleryItem = GalleryImg & {src_thumb: string, src_hd: string}
 
@@ -85,25 +86,29 @@ const GalleryScreen = () => {
 							closeButton: false,
 						}}>
 						<div className='gallery-transition'>
-						<AnimatePresence mode="popLayout">
-							<motion.div
-								key={selectedTab}
-								variants={container}
-								initial="hidden"
-								animate="show"
-								exit="hidden"
-								className="gallery-container">
-								{images?.map((image) =>
-									<Fragment key={image.img}>
-										{image.src_thumb === defaultThumbnail ?
-											<div className="placeholder" />
-										:
-											<GalleryImage image={image} />
-										}
-									</Fragment>
-								)}
-							</motion.div>
-						</AnimatePresence></div>
+							<AnimatePresence mode="popLayout">
+								<motion.div
+									key={selectedTab}
+									variants={container}
+									initial="hidden"
+									animate="show"
+									exit="hidden"
+									className="gallery-container">
+									{images?.map((image) =>
+										<Fragment key={image.img}>
+											{image.src_thumb === defaultThumbnail ?
+												<div className="placeholder" />
+											:
+												<GalleryImage
+													image={image}
+													blurred={image.sensitive && settings.blurThumbnails}
+												/>
+											}
+										</Fragment>
+									)}
+								</motion.div>
+							</AnimatePresence>
+						</div>
 					</Fancybox>
 				</PageSection>
 			</PageTabsLayout>
@@ -116,22 +121,21 @@ export default GalleryScreen
 
 type GalleryImageProps = {
 	image: GalleryItem
+	blurred?: boolean
 }
-const GalleryImage = ({image}: GalleryImageProps) => {
+const GalleryImage = ({image, blurred = false}: GalleryImageProps) => {
 	const {src_thumb, src_hd} = image
-
-	const shouldBlur = image.sensitive && settings.blurThumbnails
 	
 	return (
 		<a
 			href={src_hd}
 			data-fancybox="gallery"
-			className={shouldBlur ? 'blur' : ''}>
+			className={classNames({blur: blurred})}>
 			<img
 				src={src_thumb}
 				alt={`event ${image.img}`}
 				draggable={false}
-				fetchPriority={shouldBlur ? 'low' : 'auto'}
+				fetchpriority={blurred ? 'low' : 'auto'}
 			/>
 		</a>
 	)
