@@ -4,6 +4,7 @@ import { SaveState } from "../../utils/savestates"
 import { getSceneTitle } from "../../utils/scriptUtils"
 import { savePhaseTexts } from "../SavesLayout"
 import { noBb } from "../../utils/Bbcode"
+import classNames from "classnames"
 
 const SaveSummary = memo(({saveState}: {saveState: SaveState})=> {
 	const page = saveState.page
@@ -18,7 +19,7 @@ const SaveSummary = memo(({saveState}: {saveState: SaveState})=> {
 				<>{choices.map(({index: i, str}) =>
 					<Fragment key={i}>
 						{i > 0 && <>, </>}
-						<span className={`choice ${sel == i ? "selected" : ""}`} key={i}>
+						<span className={classNames("choice", {selected: sel == i})} key={i}>
 							{noBb(str)}
 						</span>
 					</Fragment>

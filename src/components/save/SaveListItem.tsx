@@ -1,3 +1,4 @@
+import classNames from "classnames"
 import { getLocale } from "../../translation/lang"
 import { QUICK_SAVE_ID, SaveState } from "../../utils/savestates"
 import GraphicsGroup from "../molecules/GraphicsGroup"
@@ -15,7 +16,8 @@ const SaveListItem = ({id, saveState, onSelect, focusedSave, ...props}: SaveList
 	const isQuickSave = id === QUICK_SAVE_ID
 
 	return (
-		<button className={`save-container ${id==focusedSave ? "active" : ""}`}
+		<button
+			className={classNames("save-container", {active: id==focusedSave})}
 			onClick={onSelect.bind(null, id)}
 			{...(isQuickSave ? {'quick-save':''} : {})}
 			{...props}>

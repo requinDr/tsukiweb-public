@@ -7,6 +7,7 @@ import { playScene } from "utils/savestates"
 import { settings } from "utils/settings"
 import { FcNode } from "./FcNode"
 import { Graphics } from "@tsukiweb-common/types"
+import classNames from "classnames"
 
 export class FcScene extends FcNode {
 	graph: Graphics|undefined
@@ -61,7 +62,8 @@ export class FcScene extends FcNode {
 					transform={`translate(${this.x},${this.y})`}
 					// TODO: continueScript = true if using the flowchart to navigate to previous scene (not yet implemented)
 				>
-					<g className={`fc-scene-content${completed ? " completed" : ""}${blur ? " blur" : ""}`}
+					<g
+						className={classNames("fc-scene-content", {completed, blur})}
 						tabIndex={completed ? 0 : -1}
 						clipPath="url(#fc-scene-clip)"
 						onClick={play}

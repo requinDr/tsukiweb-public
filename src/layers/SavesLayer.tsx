@@ -4,6 +4,7 @@ import SavesLayout from "../components/SavesLayout";
 import { useLanguageRefresh } from "components/hooks/useLanguageRefresh";
 import { useObserver } from "@tsukiweb-common/utils/Observer";
 import { addEventListener } from "@tsukiweb-common/utils/utils";
+import classNames from "classnames";
 
 
 function back() {
@@ -43,7 +44,10 @@ const SavesLayer = () => {
   }, [])
   
   return (
-    <div className={`layer ${display ? "show" : ""}`} ref={rootRef} id="layer-save">
+    <div id="layer-save"
+      className={classNames("layer", {show: display})}
+      ref={rootRef}
+    >
       <div className="page-content">
         <SavesLayout variant={variant} back={back} />
       </div>

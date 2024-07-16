@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react"
 import { displayMode } from "../utils/display"
 import ConfigLayout from "../components/ConfigLayout";
 import { useObserved } from "@tsukiweb-common/utils/Observer";
+import classNames from "classnames";
 
 
 function back() {
@@ -21,7 +22,7 @@ const ConfigLayer = () => {
   return (
     <div
       id="layer-config"
-      className={`layer ${display ? "show" : ""}`}
+      className={classNames("layer", {show: display})}
       ref={rootRef}>
       <ConfigLayout back={back} />
     </div>

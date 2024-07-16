@@ -4,6 +4,7 @@ import script from "../utils/script"
 import { bb } from "../utils/Bbcode"
 import { strings } from "../translation/lang"
 import { useObserver } from "@tsukiweb-common/utils/Observer"
+import classNames from "classnames"
 
 const SkipLayer = () => {
   const [display, setDisplay] = useState<boolean>(false)
@@ -39,7 +40,9 @@ const SkipLayer = () => {
   const handleNo = onSelection.bind(null, false)
 
   return (
-    <div id="skip-layer" className={`layer ${display ? "show" : ""}`}>
+    <div id="skip-layer"
+      className={classNames("layer", {show: display})}
+    >
       <div className="skip-modal">
         <div className="title">
           {sceneTitle ?<>

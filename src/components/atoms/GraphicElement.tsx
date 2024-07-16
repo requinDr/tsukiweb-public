@@ -4,6 +4,7 @@ import { imageSrc } from "../../translation/assets";
 import { settings } from "../../utils/settings";
 import { DivProps, SpritePos } from "@tsukiweb-common/types";
 import { splitFirst } from "@tsukiweb-common/utils/utils";
+import classNames from "classnames";
 
 type Props = {
 	pos: SpritePos
@@ -38,7 +39,7 @@ const GraphicElement = ({ pos, image, resolution = settings.resolution, lazy = f
 				src={imgUrl}
 				alt={alt}
 				draggable={false}
-				className={blur ? "blur" : ""}
+				className={classNames({ blur })}
 				{...(lazy ? { loading: "lazy" } : {})}
 			/>
 		)

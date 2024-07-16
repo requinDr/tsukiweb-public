@@ -10,6 +10,7 @@ import { MdAddCircleOutline, MdUploadFile } from "react-icons/md"
 import MenuButton from "@tsukiweb-common/ui-core/components/MenuButton"
 import PageSection from "@tsukiweb-common/ui-core/layouts/PageSection"
 import Button from "@tsukiweb-common/ui-core/components/Button"
+import classNames from "classnames"
 
 //##############################################################################
 //#                               TOOL FUNCTIONS                               #
@@ -94,7 +95,7 @@ const SavesLayer = ({variant, back}: Props) => {
 				{variant === "save" ?
 					<Button
 						onClick={createSave}
-						className={`create ${focusedId === 1 ? "active" : ""}`}
+						className={classNames("create", {active: focusedId === 1})}
 						onFocus={setFocusedSave.bind(null, 1)}
 						onPointerEnter={setFocusedSave.bind(null, 1)}
 						onMouseEnter={setFocusedSave.bind(null, 1)}
@@ -105,7 +106,7 @@ const SavesLayer = ({variant, back}: Props) => {
 				:
 					<Button
 						onClick={importSaves}
-						className={`import ${focusedId === 2 ? "active" : ""}`}
+						className={classNames("import", {active: focusedId === 2})}
 						onFocus={setFocusedSave.bind(null, 2)}
 						onPointerEnter={setFocusedSave.bind(null, 2)}
 						onMouseEnter={setFocusedSave.bind(null, 2)}

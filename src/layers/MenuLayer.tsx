@@ -11,6 +11,7 @@ import Particles from "@tsukiweb-common/ui-core/components/Particles"
 import { toast } from "react-toastify"
 import { useObserved } from "@tsukiweb-common/utils/Observer"
 import { isFullscreen, toggleFullscreen, addEventListener } from "@tsukiweb-common/utils/utils"
+import classNames from "classnames"
 
 
 const MenuLayer = () => {
@@ -63,7 +64,9 @@ const MenuLayer = () => {
 	}
 
 	return (
-		<div className={`layer ${display ? "show" : ""}`} id="layer-menu">
+		<div id="layer-menu"
+			className={classNames("layer", {show: display})}
+		>
 			<Particles />
 			
 			<nav className="menu-container" ref={menuRef}>
