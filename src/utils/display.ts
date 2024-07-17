@@ -19,7 +19,7 @@ let savesVariant: 'save'|'load'|'' = '';
 let config: boolean = false;
 
 export const displayMode: { [key: string]: any } = {
-  screen: SCREEN.TITLE,
+  screen: undefined,
   menu: false as boolean,
   bgAlignment: 'center' as ('top' | 'center' | 'bottom'),
 
