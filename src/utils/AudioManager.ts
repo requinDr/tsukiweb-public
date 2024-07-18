@@ -164,7 +164,7 @@ class AudioManager {
     TSForceType<GainNode>(this.trackGainNode)
 
     if (!force && this.currentTrack == name)
-      return;
+      return
 
     if (this.trackNode) {
       this.trackNode.stop()
@@ -337,25 +337,24 @@ observe(settings, "trackSource", audio.resetBuffers.bind(audio))
 //_______________________________react to changes_______________________________
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-function playTrack(name: string) {
+observe(gameContext.audio, 'track', (name: string) => {
   if (name?.length > 0)
     audio.playTrack(name, true)
   else
     audio.stopTrack()
-}
-function loopSE(name: string) {
+})
+
+observe(gameContext.audio, 'looped_se', (name: string) => {
   if (name?.length > 0)
     audio.playSE(name, true)
   else
     audio.stopSE()
-}
-const windowFilter = { filter: () => displayMode.screen == SCREEN.WINDOW }
-observe(gameContext.audio, 'track', playTrack, windowFilter)
-observe(gameContext.audio, 'looped_se', loopSE, windowFilter)
+})
 
 observe(displayMode, 'screen', async (screen) => {
   if ([SCREEN.TITLE, SCREEN.LOAD, SCREEN.CONFIG, SCREEN.SCENES, SCREEN.ENDINGS, SCREEN.GALLERY].includes(screen)) {
-    audio.playTrack('"*8"', true, false);
+    audio.playTrack('"*8"', true, false)
+    audio.stopSE()
   }
 })
 
