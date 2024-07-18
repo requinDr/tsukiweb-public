@@ -40,6 +40,11 @@ const ConfigGameTab = () => {
 		return numFormat.format(ms/1000)
 	}
 
+	const handleReset = () => {
+		const defaultConf = deepAssign(structuredClone(conf), defaultSettings, {extend: false})
+		setConf(defaultConf)
+	}
+
 	return (
 		<PageSection>
 			<ConfigButtons
@@ -80,7 +85,7 @@ const ConfigGameTab = () => {
 
 			<ConfigItem title={strings.config["auto-play-delay-text"].replace('$0',msToS(conf.autoClickDelay))}>
 				<div className="config-range">
-				<span className="icon"><FaMinus /></span>
+					<span className="icon"><FaMinus /></span>
 					<input
 						type="range"
 						min={0}
@@ -96,7 +101,7 @@ const ConfigGameTab = () => {
 
 			<ConfigItem title={strings.config["auto-play-delay-page"].replace('$0',msToS(conf.nextPageDelay))}>
 				<div className="config-range">
-				<span className="icon"><FaMinus /></span>
+					<span className="icon"><FaMinus /></span>
 					<input
 						type="range"
 						min={0}
@@ -110,10 +115,7 @@ const ConfigGameTab = () => {
 				</div>
 			</ConfigItem>
 
-			<ResetBtn onClick={() => {
-				const defaultConf = deepAssign(structuredClone(conf), defaultSettings, {extend: false})
-				setConf(defaultConf)
-			}} />
+			<ResetBtn onClick={handleReset} />
 		</PageSection>
 	)
 }

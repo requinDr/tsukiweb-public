@@ -25,7 +25,8 @@ const SpriteGraphics = ({pos}: SpriteGraphicsProps)=> {
 				fadeOut={effect}
 				fadeTime={fadeTime}
 				toImg={currImg}
-				onAnimationEnd={endTransition}/>
+				onAnimationEnd={endTransition}
+			/>
 		}
 		{(fadeTime == 0 || effect != "") &&
 			<GraphicsElement
@@ -34,7 +35,8 @@ const SpriteGraphics = ({pos}: SpriteGraphicsProps)=> {
 				image={currImg}
 				fadeIn={effect}
 				fadeTime={fadeTime}
-				onAnimationEnd={endTransition}/>
+				onAnimationEnd={endTransition}
+			/>
 		}
 	</>
 }

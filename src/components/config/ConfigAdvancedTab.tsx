@@ -95,7 +95,7 @@ const ConfigAdvancedTab = () => {
 		}
 	}
 
-	const reset = () => {
+	const handleReset = () => {
 		const defaultConf = deepAssign(structuredClone(conf), defaultSettings, {extend: false})
 		setConf(defaultConf)
 	}
@@ -195,7 +195,7 @@ const ConfigAdvancedTab = () => {
 				</div>
 			</ConfigItem>
 
-			<ResetBtn onClick={reset} />
+			<ResetBtn onClick={handleReset} />
 
 			<ConfigModal modal={modal} setModal={setModal} />
 		</PageSection>

@@ -28,21 +28,24 @@ const ConfigControlsTab = () => {
 		<PageSection>
 			{keymap.current.map(([action, keys], i)=> 
 				<div key={i} className="keyMap">
-					<div className="action">{bb(controlStrings[action])}</div>
-					{keys.map(({code, key, ctrlKey, altKey, shiftKey, repeat}, j)=>
+					<div className="action">
+						{bb(controlStrings[action])}
+					</div>
+
+					{keys.map(({code, key, ctrlKey, altKey, shiftKey, repeat})=>
 						<div key={`${code || key}`} className="keyItem">
-								{ctrlKey ? "Ctrl + " : ""}
-								{altKey ? "Alt + " : ""}
-								{shiftKey ? "Shift + " : ""}
-								{code || key}
-								{repeat != undefined && (
-									repeat && <>
-										&nbsp;
-										<span className="info">
-											{bb(controlStrings["_hold"])}
-										</span>
-									</>
-								)}
+							{ctrlKey ? "Ctrl + " : ""}
+							{altKey ? "Alt + " : ""}
+							{shiftKey ? "Shift + " : ""}
+							{code || key}
+							{repeat != undefined && (
+								repeat && <>
+									&nbsp;
+									<span className="info">
+										{bb(controlStrings["_hold"])}
+									</span>
+								</>
+							)}
 						</div>
 					)}
 				</div>

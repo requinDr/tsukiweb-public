@@ -40,12 +40,17 @@ const ConfigAudioTab = () => {
 		'se': strings.config["volume-se"]
 	}
 
+	const handleReset = () => {
+		const defaultConf = deepAssign(structuredClone(conf), defaultSettings, {extend: false})
+		setConf(defaultConf)
+	}
+
 	return (
 		<PageSection>
 			{(Object.keys(conf.volume) as Array<keyof typeof volumeNames>).map(key=>
 				<ConfigItem key={key} title={volumeNames[key]}>
 					<div className="config-range">
-					<span className="icon"><MdVolumeMute /></span>
+						<span className="icon"><MdVolumeMute /></span>
 						<input
 							type="range"
 							min={0}
@@ -86,11 +91,7 @@ const ConfigAudioTab = () => {
 				updateValue={updateValue}
 			/>
 
-
-			<ResetBtn onClick={() => {
-				const defaultConf = deepAssign(structuredClone(conf), defaultSettings, {extend: false})
-				setConf(defaultConf)
-			}} />
+			<ResetBtn onClick={handleReset} />
 		</PageSection>
 	)
 }

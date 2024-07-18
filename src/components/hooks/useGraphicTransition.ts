@@ -54,7 +54,13 @@ function useGraphicTransition(
 		pos
 	);
 
-	return { img, prev: prev.current, duration: d, effect: e, imgLoaded: loaded };
+	return {
+		img,
+		prev: prev.current,
+		duration: d,
+		effect: e,
+		imgLoaded: loaded
+	};
 }
 
 export default useGraphicTransition
