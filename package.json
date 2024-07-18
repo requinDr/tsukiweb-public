@@ -4,7 +4,6 @@
   "private": true,
   "type": "module",
   "dependencies": {
-    "@fancyapps/ui": "^5.0.36",
     "@types/jest": "^29.5.12",
     "@types/node": "^20.14.11",
     "@types/react": "^18.3.3",
@@ -21,7 +20,8 @@
     "react-tooltip": "^5.27.1",
     "sass": "^1.77.8",
     "vite-plugin-svgr": "^4.2.0",
-    "vite-tsconfig-paths": "^4.3.2"
+    "vite-tsconfig-paths": "^4.3.2",
+    "yet-another-react-lightbox": "^3.21.1"
   },
   "scripts": {
     "start": "vite",

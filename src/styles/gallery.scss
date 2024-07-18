@@ -15,13 +15,16 @@
 			grid-template-columns: repeat(auto-fill, minmax(min(100px, 100%), 1fr));
 		}
 
-		a {
+		button {
 			overflow: hidden;
 
 			&:hover, &:focus-visible {
 				img {
 					transform: scale(1.1);
 				}
+			}
+			&:focus-visible {
+				outline: 2px solid #fff;
 			}
 		}
 		img, .placeholder {

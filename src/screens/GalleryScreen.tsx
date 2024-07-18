@@ -1,4 +1,4 @@
-import { Fragment, useMemo } from 'react'
+import { Fragment, useMemo, useState } from 'react'
 import '../styles/gallery.scss'
 import { settings } from '../utils/settings'
 import { AnimatePresence, Variants, motion } from 'framer-motion'
@@ -12,13 +12,13 @@ import MenuButton from '@tsukiweb-common/ui-core/components/MenuButton'
 import { Tab } from '@tsukiweb-common/ui-core/components/TabsComponent'
 import PageTabsLayout from '@tsukiweb-common/ui-core/layouts/PageTabsLayout'
 import PageSection from '@tsukiweb-common/ui-core/layouts/PageSection'
-import Fancybox from '@tsukiweb-common/components/molecules/Fancybox'
 import useQueryParam from '@tsukiweb-common/hooks/useQueryParam'
 import classNames from 'classnames'
+import "yet-another-react-lightbox/styles.css";
+import Lightbox from 'yet-another-react-lightbox'
+import Zoom from "yet-another-react-lightbox/plugins/zoom";
 
 type GalleryItem = GalleryImg & {src_thumb: string, src_hd: string}
-
-let defaultThumbnail: string | null = null
 
 const container: Variants = {
 	hidden: { opacity: 0 },
@@ -34,8 +34,12 @@ const GalleryScreen = () => {
 	useScreenAutoNavigate(SCREEN.GALLERY)
 	useLanguageRefresh()
 	const [selectedTab, setSelectedTab] = useQueryParam<CharacterId>("tab", "ark")
+	const [index, setIndex] = useState<number>(-1)
 
-	const images: GalleryItem[] = useMemo(() => {
+	const isUnlocked = (image: GalleryImg) =>
+		settings.eventImages.includes(`event/${image.img}`) || settings.unlockEverything
+
+	const tabImages: GalleryItem[] = useMemo(() => {
 		document.querySelector('.gallery-container')?.scrollTo(0, 0)
 
 		let imagesTmp: GalleryImg[] = GALLERY_IMAGES[selectedTab]
@@ -46,15 +50,19 @@ const GalleryScreen = () => {
 		
 		const galleryItems = imagesTmp.map((image: GalleryImg) => {
 			const name = `event/${image.img}`
-			const [thumb, hd] = settings.eventImages.includes(name) || settings.unlockEverything
+			const [thumb, hd] = isUnlocked(image)
 									? [imageSrc(name, 'thumb'), imageSrc(name, 'hd')]
-									: [defaultThumbnail, defaultThumbnail]
+									: [null, null]
 
 			return {...image, src_thumb: thumb, src_hd: hd} as GalleryItem
 		})
 
 		return galleryItems
-	}, [selectedTab])
+	}, [selectedTab, settings.eventImages, settings.unlockEverything])
+
+	const unlockedImages: GalleryItem[] = useMemo(() =>
+		tabImages.filter(tabImages => isUnlocked(tabImages))
+	, [tabImages, settings.eventImages, settings.unlockEverything])
 
 	const tabs: Tab[] = Object.keys(GALLERY_IMAGES).map(char => ({
 		label: strings.characters[char as CharacterId],
@@ -78,38 +86,46 @@ const GalleryScreen = () => {
 					</MenuButton>
 				}
 			>
+				<Lightbox
+					index={index}
+					slides={unlockedImages.map(image => ({src: image.src_hd}))}
+					open={index >= 0}
+					close={() => setIndex(-1)}
+					controller={{
+						closeOnPullUp: true,
+					}}
+					plugins={[Zoom]}
+					render={{
+						buttonZoom: () => <></>
+					}}
+				/>
+				
 				<PageSection>
-					<Fancybox
-						options={{
-							Toolbar: false,
-							Thumbs: false,
-							closeButton: false,
-						}}>
-						<div className='gallery-transition'>
-							<AnimatePresence mode="popLayout">
-								<motion.div
-									key={selectedTab}
-									variants={container}
-									initial="hidden"
-									animate="show"
-									exit="hidden"
-									className="gallery-container">
-									{images?.map((image) =>
-										<Fragment key={image.img}>
-											{image.src_thumb === defaultThumbnail ?
-												<div className="placeholder" />
-											:
-												<GalleryImage
-													image={image}
-													blurred={image.sensitive && settings.blurThumbnails}
-												/>
-											}
-										</Fragment>
-									)}
-								</motion.div>
-							</AnimatePresence>
-						</div>
-					</Fancybox>
+					<div className='gallery-transition'>
+						<AnimatePresence mode="popLayout">
+							<motion.div
+								key={selectedTab}
+								variants={container}
+								initial="hidden"
+								animate="show"
+								exit="hidden"
+								className="gallery-container">
+								{tabImages?.map((image) =>
+									<Fragment key={image.img}>
+										{image.src_thumb === null ?
+											<div className="placeholder" />
+										:
+											<GalleryImage
+												image={image}
+												blurred={image.sensitive && settings.blurThumbnails}
+												onClick={() => setIndex(unlockedImages.indexOf(image))}
+											/>
+										}
+									</Fragment>
+								)}
+							</motion.div>
+						</AnimatePresence>
+					</div>
 				</PageSection>
 			</PageTabsLayout>
 		</motion.div>
@@ -122,14 +138,14 @@ export default GalleryScreen
 type GalleryImageProps = {
 	image: GalleryItem
 	blurred?: boolean
+	onClick?: () => void
 }
-const GalleryImage = ({image, blurred = false}: GalleryImageProps) => {
-	const {src_thumb, src_hd} = image
+const GalleryImage = ({image, blurred = false, onClick}: GalleryImageProps) => {
+	const {src_thumb} = image
 	
 	return (
-		<a
-			href={src_hd}
-			data-fancybox="gallery"
+		<button
+			onClick={onClick}
 			className={classNames({blur: blurred})}>
 			<img
 				src={src_thumb}
@@ -137,6 +153,6 @@ const GalleryImage = ({image, blurred = false}: GalleryImageProps) => {
 				draggable={false}
 				fetchpriority={blurred ? 'low' : 'auto'}
 			/>
-		</a>
+		</button>
 	)
 }
