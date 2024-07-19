@@ -337,15 +337,15 @@ observe(settings, "trackSource", audio.resetBuffers.bind(audio))
 //_______________________________react to changes_______________________________
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-observe(gameContext.audio, 'track', (name: string) => {
-  if (name?.length > 0)
+observe(gameContext.audio, 'track', (name: string|undefined) => {
+  if (name && name.length > 0)
     audio.playTrack(name, true)
   else
     audio.stopTrack()
 })
 
-observe(gameContext.audio, 'looped_se', (name: string) => {
-  if (name?.length > 0)
+observe(gameContext.audio, 'looped_se', (name: string|undefined) => {
+  if (name && name.length > 0)
     audio.playSE(name, true)
   else
     audio.stopSE()
@@ -353,17 +353,17 @@ observe(gameContext.audio, 'looped_se', (name: string) => {
 
 observe(displayMode, 'screen', async (screen) => {
   if ([SCREEN.TITLE, SCREEN.LOAD, SCREEN.CONFIG, SCREEN.SCENES, SCREEN.ENDINGS, SCREEN.GALLERY].includes(screen)) {
-    audio.playTrack('"*8"', true, false)
+    audio.playTrack(settings.titleMusic, true, false)
     audio.stopSE()
   }
 })
 
 function muteOnTabSwitch() {
-  if (document.visibilityState == "hidden" && settings.autoMute) {
-    audio.masterVolume = 0
-  }
-  else {
-    audio.masterVolume = settingToGain(settings.volume.master)
+  if (settings.autoMute) {
+    if (document.visibilityState == "hidden")
+      audio.masterVolume = 0
+    else
+      audio.masterVolume = settingToGain(settings.volume.master)
   }
 }
 

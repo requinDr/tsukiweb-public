@@ -61,6 +61,7 @@ export type SettingsType = {
 	}
 	trackSource: keyof LangJson["audio"]["track-sources"]
 	autoMute: boolean
+	titleMusic: string
 
 	unlockEverything: boolean
 	
