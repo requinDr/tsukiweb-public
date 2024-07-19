@@ -23,7 +23,7 @@ release
 *.sln
 *.sw?
 script-convert/*
-!script-convert/script-convert.js
+!script-convert/*.js
 public/.htaccess
 public/static/*/*/
 !public/static/**/*.json
