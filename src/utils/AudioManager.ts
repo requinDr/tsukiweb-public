@@ -359,11 +359,10 @@ observe(displayMode, 'screen', async (screen) => {
 })
 
 function muteOnTabSwitch() {
-  if (document.visibilityState == "hidden") {
-    if (settings.autoMute)
-      audio.masterVolume = 0
+  if (document.visibilityState == "hidden" && settings.autoMute) {
+    audio.masterVolume = 0
   }
-  else if (displayMode.screen == SCREEN.WINDOW) {
+  else {
     audio.masterVolume = settingToGain(settings.volume.master)
   }
 }
