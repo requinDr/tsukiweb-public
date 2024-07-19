@@ -1,4 +1,4 @@
-import { Fragment, useMemo, useState } from 'react'
+import { Fragment, useMemo, useRef, useState } from 'react'
 import '../styles/gallery.scss'
 import { settings } from '../utils/settings'
 import { AnimatePresence, Variants, motion } from 'framer-motion'
@@ -35,12 +35,13 @@ const GalleryScreen = () => {
 	useLanguageRefresh()
 	const [selectedTab, setSelectedTab] = useQueryParam<CharacterId>("tab", "ark")
 	const [index, setIndex] = useState<number>(-1)
+	const refSection = useRef<HTMLDivElement>(null)
 
 	const isUnlocked = (image: GalleryImg) =>
 		settings.eventImages.includes(`event/${image.img}`) || settings.unlockEverything
 
 	const tabImages: GalleryItem[] = useMemo(() => {
-		document.querySelector('.gallery-container')?.scrollTo(0, 0)
+		refSection.current?.scrollTo(0, 0)
 
 		let imagesTmp: GalleryImg[] = GALLERY_IMAGES[selectedTab]
 		if (imagesTmp == undefined) {
@@ -100,7 +101,7 @@ const GalleryScreen = () => {
 					}}
 				/>
 				
-				<PageSection>
+				<PageSection ref={refSection}>
 					<div className='gallery-transition'>
 						<AnimatePresence mode="popLayout">
 							<motion.div

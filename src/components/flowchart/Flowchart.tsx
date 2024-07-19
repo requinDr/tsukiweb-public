@@ -1,9 +1,7 @@
 
 import { memo, useState } from "react"
-import '../styles/flowchart.scss'
-import { FcNode } from "./flowchart/FcNode"
+import { FcNode } from "./FcNode"
 import { COLUMN_WIDTH, createTree, DY, SCENE_HEIGHT, SCENE_RECT_ATTRS, SCENE_WIDTH } from "utils/flowchart"
-
 
 type Props = {
 	back: (sceneLoaded: boolean)=>void

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import '../styles/saves.scss'
+import '../styles/flowchart.scss'
 import { SCREEN, displayMode } from "../utils/display"
 import { strings } from "../translation/lang"
 import { useLanguageRefresh } from "../components/hooks/useLanguageRefresh"
@@ -7,7 +7,7 @@ import { useScreenAutoNavigate } from "../components/hooks/useScreenAutoNavigate
 import FixedFooter from "@tsukiweb-common/ui-core/components/FixedFooter"
 import MenuButton from "@tsukiweb-common/ui-core/components/MenuButton"
 import BlueContainer from "@tsukiweb-common/ui-core/components/BlueContainer"
-import Flowchart from "components/Flowchart"
+import Flowchart from "components/flowchart/Flowchart"
 
 const FlowchartScreen = () => {
 	useScreenAutoNavigate(SCREEN.SCENES)
@@ -24,7 +24,7 @@ const FlowchartScreen = () => {
 			animate={{opacity: 1}}
 			exit={{opacity: 0}}>
 			<div className="page">
-				<Flowchart back={back}/>
+				<Flowchart back={back} />
 			</div>
 
 			<FixedFooter>
