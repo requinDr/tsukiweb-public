@@ -155,12 +155,16 @@ class AudioManager {
    * by the specified one. Fetch the audio buffer if necessary.
    * @param name name of the track to play.
    * @param loop true if the track must be looped when it reaches the end
+   * @param force true if the track must be restarted if it we are already playing this track
    *             of the audio buffer, false otherwise. Defaults to true.
    */
-  async playTrack(name: string, loop = true): Promise<void> {
+  async playTrack(name: string, loop = true, force = true): Promise<void> {
     this.buildNodes()
     TSForceType<AudioContext>(this.context)
     TSForceType<GainNode>(this.trackGainNode)
+
+    if (!force && this.currentTrack == name)
+      return
 
     if (this.trackNode) {
       this.trackNode.stop()
@@ -333,43 +337,33 @@ observe(settings, "trackSource", audio.resetBuffers.bind(audio))
 //_______________________________react to changes_______________________________
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-function playTrack(name: string) {
-  if (name?.length > 0)
+observe(gameContext.audio, 'track', (name: string|null) => {
+  if (name && name.length > 0)
     audio.playTrack(name, true)
   else
     audio.stopTrack()
-}
-function loopSE(name: string) {
-  if (name?.length > 0)
+})
+
+observe(gameContext.audio, 'looped_se', (name: string|null) => {
+  if (name && name.length > 0)
     audio.playSE(name, true)
   else
     audio.stopSE()
-}
-const windowFilter = { filter: () => displayMode.screen == SCREEN.WINDOW }
-observe(gameContext.audio, 'track', playTrack, windowFilter)
-observe(gameContext.audio, 'looped_se', loopSE, windowFilter)
+})
 
-observe(displayMode, 'screen', (screen)=> {
-  if (screen == SCREEN.WINDOW) {
-    const {track, looped_se} = gameContext.audio
-    playTrack(track)
-    loopSE(looped_se)
-    // audio.masterVolume = settingToGain(settings.volume.master)
-  } else {
-    playTrack('')
-    loopSE('')
-    // audio.masterVolume = 0
+observe(displayMode, 'screen', async (screen) => {
+  if ([SCREEN.TITLE, SCREEN.LOAD, SCREEN.CONFIG, SCREEN.SCENES, SCREEN.ENDINGS, SCREEN.GALLERY].includes(screen)) {
+    audio.playTrack(settings.titleMusic, true, false)
+    audio.stopSE()
   }
-  // uncomment masterVolume changes if game sound keeps playing on title menu
 })
 
 function muteOnTabSwitch() {
-  if (document.visibilityState == "hidden") {
-    if (settings.autoMute)
+  if (settings.autoMute) {
+    if (document.visibilityState == "hidden")
       audio.masterVolume = 0
-  }
-  else if (displayMode.screen == SCREEN.WINDOW) {
-    audio.masterVolume = settingToGain(settings.volume.master)
+    else
+      audio.masterVolume = settingToGain(settings.volume.master)
   }
 }
 
@@ -380,9 +374,9 @@ function settingToGain(value: number) {
     return 0
   const valueRange = 10 // from 0 to 10. 0 => no sound.
   const dbRange = 25 // from -25dB to 0dB. -25 not used (volume=0 => no sound).
-  const normalizedValue = value/valueRange
-  const dB = normalizedValue*dbRange - dbRange
-  return Math.pow(10, dB/20)
+  const normalizedValue = value / valueRange
+  const dB = normalizedValue * dbRange - dbRange
+  return Math.pow(10, dB / 20)
 }
 
 audio.masterVolume = settingToGain(settings.volume.master)

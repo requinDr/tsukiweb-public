@@ -28,6 +28,7 @@ export const defaultSettings: SettingsType = deepFreeze({
   },
   trackSource: 'everafter',
   autoMute: true,
+  titleMusic: '"*8"',
 
   unlockEverything: false,
   
