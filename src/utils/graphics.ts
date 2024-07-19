@@ -7,6 +7,7 @@ import { SpritePos } from "@tsukiweb-common/types";
 import { observe } from "@tsukiweb-common/utils/Observer";
 import { splitFirst, splitLast, objectMatch } from "@tsukiweb-common/utils/utils";
 import { getTransition, quakeEffect, transition } from "@tsukiweb-common/utils/graphics";
+import { imagePath } from "./gallery";
 
 
 export function endTransition() {
@@ -22,6 +23,13 @@ export function extractImage(image: string) {
 								 .replace(/:a;|image[\/\\]|\.\w+$/g, '')
 								 .replace('\\', '/')
 		const [dir, name] = image.split('/')
+		
+		// Save to gallery if it's a new image
+		if (imagePath(name) == image) {
+			if (!settings.eventImages.includes(image))
+				settings.eventImages.push(image)
+		}
+
 		if (dir == "bg") {
 			switch (name) {
 				case "ima_10"  : image = "#000000"; break
@@ -32,10 +40,6 @@ export function extractImage(image: string) {
 			if (text)
 				throw Error(`Cannot cumulate word image and text (${image}, ${text})`);
 			[image, text] = splitFirst(wordImage(image), '$')
-		}
-		else if (dir == "event") {
-			if (!settings.eventImages.includes(image))
-				settings.eventImages.push(image)
 		}
 	} else if (!image.startsWith('#')) { // not image nor color
 		throw Error(`cannot extract image from "${image}"`)

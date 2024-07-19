@@ -2,7 +2,7 @@ import { Fragment, useMemo, useRef, useState } from 'react'
 import '../styles/gallery.scss'
 import { settings } from '../utils/settings'
 import { AnimatePresence, Variants, motion } from 'framer-motion'
-import { CharacterId, GALLERY_IMAGES, GalleryImg } from '../utils/gallery'
+import { findImageByRoute, GALLERY_IMAGES, GalleryImg, imagePath } from '../utils/gallery'
 import { strings } from "../translation/lang"
 import { imageSrc } from '../translation/assets'
 import { SCREEN } from '../utils/display'
@@ -17,6 +17,7 @@ import classNames from 'classnames'
 import "yet-another-react-lightbox/styles.css";
 import Lightbox from 'yet-another-react-lightbox'
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
+import { CharId } from 'types'
 
 type GalleryItem = GalleryImg & {src_thumb: string, src_hd: string}
 
@@ -33,24 +34,24 @@ const container: Variants = {
 const GalleryScreen = () => {
 	useScreenAutoNavigate(SCREEN.GALLERY)
 	useLanguageRefresh()
-	const [selectedTab, setSelectedTab] = useQueryParam<CharacterId>("tab", "ark")
+	const [selectedTab, setSelectedTab] = useQueryParam<CharId>("tab", "ark")
 	const [index, setIndex] = useState<number>(-1)
 	const refSection = useRef<HTMLDivElement>(null)
 
 	const isUnlocked = (image: GalleryImg) =>
-		settings.eventImages.includes(`event/${image.img}`) || settings.unlockEverything
+		settings.eventImages.includes(imagePath(image.img)) || settings.unlockEverything
 
 	const tabImages: GalleryItem[] = useMemo(() => {
 		refSection.current?.scrollTo(0, 0)
 
-		let imagesTmp: GalleryImg[] = GALLERY_IMAGES[selectedTab]
+		let imagesTmp: GalleryImg[] = findImageByRoute(selectedTab)
 		if (imagesTmp == undefined) {
 			console.error(`unknown character ${selectedTab}`)
 			return []
 		}
 		
 		const galleryItems = imagesTmp.map((image: GalleryImg) => {
-			const name = `event/${image.img}`
+			const name = imagePath(image.img)
 			const [thumb, hd] = isUnlocked(image)
 									? [imageSrc(name, 'thumb'), imageSrc(name, 'hd')]
 									: [null, null]
@@ -65,8 +66,8 @@ const GalleryScreen = () => {
 		tabImages.filter(tabImages => isUnlocked(tabImages))
 	, [tabImages, settings.eventImages, settings.unlockEverything])
 
-	const tabs: Tab[] = Object.keys(GALLERY_IMAGES).map(char => ({
-		label: strings.characters[char as CharacterId],
+	const tabs: Tab[] = ['ark','cel','aki','his','koha'].map(char => ({
+		label: strings.characters[char as CharId],
 		value: char
 	}))
 

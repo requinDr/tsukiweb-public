@@ -1,10 +1,10 @@
 import { bb } from "../../utils/Bbcode";
-import { findImageObjectByName } from "../../utils/gallery";
 import { imageSrc } from "../../translation/assets";
 import { settings } from "../../utils/settings";
 import { DivProps, SpritePos } from "@tsukiweb-common/types";
 import { splitFirst } from "@tsukiweb-common/utils/utils";
 import classNames from "classnames";
+import { GALLERY_IMAGES } from "utils/gallery";
 
 type Props = {
 	pos: SpritePos
@@ -33,7 +33,7 @@ const GraphicElement = ({ pos, image, resolution = settings.resolution, lazy = f
 	} else {
 		const imgUrl = imageSrc(image, resolution)
 		const alt = `[[sprite:${image}]]`
-		const blur = findImageObjectByName(image)?.sensitive && settings.blurThumbnails
+		const blur = GALLERY_IMAGES[image]?.sensitive && settings.blurThumbnails
 		imageElement = (
 			<img
 				src={imgUrl}

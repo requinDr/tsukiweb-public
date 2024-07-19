@@ -2,12 +2,12 @@ import GraphicsGroup from "components/molecules/GraphicsGroup"
 import { Fragment } from "react/jsx-runtime"
 import { SceneName, LabelName } from "types"
 import { SCENE_HEIGHT, SCENE_WIDTH } from "utils/flowchart"
-import { findImageObjectByName } from "utils/gallery"
 import { playScene } from "utils/savestates"
 import { settings } from "utils/settings"
 import { FcNode } from "./FcNode"
 import { Graphics } from "@tsukiweb-common/types"
 import classNames from "classnames"
+import { GALLERY_IMAGES } from "utils/gallery"
 
 export class FcScene extends FcNode {
 	graph: Graphics|undefined
@@ -52,7 +52,7 @@ export class FcScene extends FcNode {
 				e.stopPropagation()
 		}
 
-		const blur = completed && settings.blurThumbnails && this.graph?.bg && findImageObjectByName(this.graph?.bg)?.sensitive
+		const blur = completed && settings.blurThumbnails && this.graph?.bg && GALLERY_IMAGES[this.graph?.bg]?.sensitive
 		
 		return (
 			<Fragment key={this.id}>
