@@ -2,7 +2,7 @@ import { Fragment, useMemo, useRef, useState } from 'react'
 import '../styles/gallery.scss'
 import { settings } from '../utils/settings'
 import { AnimatePresence, Variants, motion } from 'framer-motion'
-import { findImageByRoute, GALLERY_IMAGES, GalleryImg, imagePath } from '../utils/gallery'
+import { findImageByRoute, GALLERY_IMAGES, GalleryImg, getImageVariants, imagePath } from '../utils/gallery'
 import { strings } from "../translation/lang"
 import { imageSrc } from '../translation/assets'
 import { SCREEN } from '../utils/display'
@@ -15,9 +15,12 @@ import PageSection from '@tsukiweb-common/ui-core/layouts/PageSection'
 import useQueryParam from '@tsukiweb-common/hooks/useQueryParam'
 import classNames from 'classnames'
 import "yet-another-react-lightbox/styles.css";
-import Lightbox from 'yet-another-react-lightbox'
+import Lightbox, { SlideImage } from 'yet-another-react-lightbox'
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import { CharId } from 'types'
+import { MdPhotoLibrary } from 'react-icons/md'
+import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
+import "yet-another-react-lightbox/plugins/thumbnails.css";
 
 type GalleryItem = GalleryImg & {src_thumb: string, src_hd: string}
 
@@ -31,15 +34,15 @@ const container: Variants = {
 	}
 }
 
+
+const isUnlocked = (image: GalleryImg) =>
+	settings.eventImages.includes(imagePath(image.img)) || settings.unlockEverything
+
 const GalleryScreen = () => {
 	useScreenAutoNavigate(SCREEN.GALLERY)
 	useLanguageRefresh()
 	const [selectedTab, setSelectedTab] = useQueryParam<CharId>("tab", "ark")
-	const [index, setIndex] = useState<number>(-1)
 	const refSection = useRef<HTMLDivElement>(null)
-
-	const isUnlocked = (image: GalleryImg) =>
-		settings.eventImages.includes(imagePath(image.img)) || settings.unlockEverything
 
 	const tabImages: GalleryItem[] = useMemo(() => {
 		refSection.current?.scrollTo(0, 0)
@@ -49,6 +52,18 @@ const GalleryScreen = () => {
 			console.error(`unknown character ${selectedTab}`)
 			return []
 		}
+
+		// filter out images that are alternatives of .filter(image => !image.alternativeOf)
+		// if the non-alternative image is not unlocked, show the alternative
+		imagesTmp = imagesTmp.filter(image =>
+			!image.alternativeOf
+			|| !isUnlocked(GALLERY_IMAGES[image.alternativeOf])
+		)
+
+		//remove non-alternative version of image image we kept the alternative
+		imagesTmp = imagesTmp.filter(image =>
+			image.alternativeOf || !imagesTmp.find(i => i.alternativeOf === image.img)
+		)
 		
 		const galleryItems = imagesTmp.map((image: GalleryImg) => {
 			const name = imagePath(image.img)
@@ -61,10 +76,6 @@ const GalleryScreen = () => {
 
 		return galleryItems
 	}, [selectedTab, settings.eventImages, settings.unlockEverything])
-
-	const unlockedImages: GalleryItem[] = useMemo(() =>
-		tabImages.filter(tabImages => isUnlocked(tabImages))
-	, [tabImages, settings.eventImages, settings.unlockEverything])
 
 	const tabs: Tab[] = ['ark','cel','aki','his','koha'].map(char => ({
 		label: strings.characters[char as CharId],
@@ -87,21 +98,7 @@ const GalleryScreen = () => {
 						{strings.back}
 					</MenuButton>
 				}
-			>
-				<Lightbox
-					index={index}
-					slides={unlockedImages.map(image => ({src: image.src_hd}))}
-					open={index >= 0}
-					close={() => setIndex(-1)}
-					controller={{
-						closeOnPullUp: true,
-					}}
-					plugins={[Zoom]}
-					render={{
-						buttonZoom: () => <></>
-					}}
-				/>
-				
+			>				
 				<PageSection ref={refSection}>
 					<div className='gallery-transition'>
 						<AnimatePresence mode="popLayout">
@@ -120,7 +117,6 @@ const GalleryScreen = () => {
 											<GalleryImage
 												image={image}
 												blurred={image.sensitive && settings.blurThumbnails}
-												onClick={() => setIndex(unlockedImages.indexOf(image))}
 											/>
 										}
 									</Fragment>
@@ -140,21 +136,72 @@ export default GalleryScreen
 type GalleryImageProps = {
 	image: GalleryItem
 	blurred?: boolean
-	onClick?: () => void
 }
-const GalleryImage = ({image, blurred = false, onClick}: GalleryImageProps) => {
+const GalleryImage = ({image, blurred = false}: GalleryImageProps) => {
+	const [open, setOpen] = useState(false)
 	const {src_thumb} = image
-	
+	const variants = getImageVariants(image.alternativeOf ? GALLERY_IMAGES[image.alternativeOf].img : image.img)
+	const unlockedImages = variants?.filter(image => isUnlocked(image))
+
+	const slides: SlideImage[] = useMemo(() => {
+		return variants.map(image =>
+			isUnlocked(image) ?
+			({src: imageSrc(imagePath(image.img), 'hd'), alt: image.img})
+			: ({src: ""})
+		)
+	}, [unlockedImages])
+
 	return (
+		<>
 		<button
-			onClick={onClick}
+			title={image.img}
+			onClick={() => setOpen(true)}
 			className={classNames({blur: blurred})}>
 			<img
 				src={src_thumb}
+				className={classNames("thumb", {"is-alternative": image.alternativeOf})}
 				alt={`event ${image.img}`}
 				draggable={false}
 				fetchpriority={blurred ? 'low' : 'auto'}
 			/>
+			{variants?.length > 1 &&
+				<div className="alternative">
+					{variants.length} <MdPhotoLibrary />
+				</div>
+			}
 		</button>
+		
+		<Lightbox
+			slides={slides}
+			open={open}
+			close={() => setOpen(false)}
+			controller={{
+				closeOnPullUp: true,
+			}}
+			plugins={[Zoom, Thumbnails]}
+			render={{
+				buttonZoom: () => <></>,
+				thumbnail: ({slide}) => {
+					if (slide.src === "") {
+						return (
+							<div className="placeholder" />
+						)
+					}
+					return (
+						<img
+							src={slide.src}
+							alt={slide.alt}
+							draggable={false}
+							fetchpriority="low"
+							style={{objectFit: "contain", width: "100%", height: "100%"}}
+						/>
+					)
+				}
+			}}
+			carousel={{
+				finite: true,
+			}}
+		/>
+		</>
 	)
 }
