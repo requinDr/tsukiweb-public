@@ -24,8 +24,8 @@ const [gameContext, resetContext, defaultGameContext] = resettable(deepFreeze({
 //_______________________________audio, graphics________________________________
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   audio: {
-    track: undefined as string|undefined,
-    looped_se: undefined as string|undefined,
+    track: null as string|null,
+    looped_se: null as string|null,
   },
   graphics: {
     bg: "",

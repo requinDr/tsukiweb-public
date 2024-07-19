@@ -337,14 +337,14 @@ observe(settings, "trackSource", audio.resetBuffers.bind(audio))
 //_______________________________react to changes_______________________________
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-observe(gameContext.audio, 'track', (name: string|undefined) => {
+observe(gameContext.audio, 'track', (name: string|null) => {
   if (name && name.length > 0)
     audio.playTrack(name, true)
   else
     audio.stopTrack()
 })
 
-observe(gameContext.audio, 'looped_se', (name: string|undefined) => {
+observe(gameContext.audio, 'looped_se', (name: string|null) => {
   if (name && name.length > 0)
     audio.playSE(name, true)
   else
