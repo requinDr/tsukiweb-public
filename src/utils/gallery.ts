@@ -184,7 +184,7 @@ export const GALLERY_IMAGES: Record<string, GalleryImg> = {
   "koha_h08": { img: "koha_h08", path: "event", route: "koha", sensitive: true },
 }
 
-export function findImageByRoute(route: CharId): GalleryImg[] {
+export function findImagesByRoute(route: CharId): GalleryImg[] {
   return Object.values(GALLERY_IMAGES).filter((img) => img.route === route)
 }
 
