@@ -74,6 +74,13 @@ const GalleryImage = ({image, thumb, variants = [], unlockedVariants = [], blurr
 			}}
 			carousel={{
 				finite: true,
+				preload: 5,
+			}}
+			thumbnails={{
+				width: 128,
+				height: 96,
+				padding: 0,
+				borderColor: "#0098e1",
 			}}
 		/>
 		</>
