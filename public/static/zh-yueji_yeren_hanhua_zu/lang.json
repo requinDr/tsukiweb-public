@@ -70,8 +70,8 @@
     "adult-title": "成人设置",
     "adult-blur": "模糊缩略图",
     "adult-blur-help": [
-      "Apply a blur effect on the thumbnails of the adult scenes (Save, Load, Flowchart, Gallery, …).",
-      "In-game content is not affected."
+      "对成人场景的缩图（存档，读档，流程图，画廊，…）套用模糊效果。",
+      "游戏内容不受影响。"
     ],
     "adult-warn": "进入成人场景时警告",
     "quality": "图形质量",
@@ -79,10 +79,10 @@
     "quality-hd": "1280\u00D7960",
     "fullscreen": "全屏",
     "language": "语言",
-    "show-locked-content": "Reveal locked content",
+    "show-locked-content": "解锁内容",
     "show-locked-content-help": [
-			"Reveals the complete Gallery, Flowchart, Endings, Eclipse, …",
-			"It can be toggled on and off at any time."
+			"显示完整的画廊，流程图，结局，月蚀…，",
+			"它可以随时打开和关闭。"
 		],
     "data": "存档",
     "data-export": "导出",
