@@ -78,6 +78,11 @@ observe(settings, 'autoMute', (m) => {
   sysAudio.autoMute(m)
 })
 
+if (settings.autoMute) {
+  gameAudio.autoMute()
+  sysAudio.autoMute()
+}
+
 observe(displayMode, 'screen', (screen)=> {
   if (screen == SCREEN.WINDOW) {
     gameAudio.resume()
