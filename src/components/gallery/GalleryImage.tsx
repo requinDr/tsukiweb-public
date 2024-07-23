@@ -76,6 +76,9 @@ const GalleryImage = ({image, thumb, variants = [], unlockedVariants = [], blurr
 				finite: true,
 				preload: 5,
 			}}
+			zoom={{
+				maxZoomPixelRatio: 2,
+			}}
 			thumbnails={{
 				width: 128,
 				height: 96,

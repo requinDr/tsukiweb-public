@@ -22,7 +22,7 @@ export class FcScene extends FcNode {
 
 	render() {
 		let content
-		let completed = settings.completedScenes.includes(this.id)
+		let completed = settings.completedScenes.includes(this.id) || settings.unlockEverything
 		if (!completed && !settings.unlockEverything)
 			content = <use href="#fc-scene-hidden"/>
 		else if (!this.graph)

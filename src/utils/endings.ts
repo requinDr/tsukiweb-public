@@ -29,7 +29,7 @@ class Ed {
   get image() { return this._illus }
 
   get seen() {
-    return settings.completedScenes.includes(this._scene)
+    return settings.completedScenes.includes(this._scene) || settings.unlockEverything
   }
   get name() {
     if (this._char && this._day)

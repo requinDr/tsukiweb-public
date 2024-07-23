@@ -83,7 +83,7 @@ const GalleryScreen = () => {
 						{strings.back}
 					</MenuButton>
 				}
-			>				
+			>
 				<PageSection ref={refSection}>
 					<div className='gallery-transition'>
 						<AnimatePresence mode="popLayout">
