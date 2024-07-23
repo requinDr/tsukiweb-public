@@ -54,6 +54,8 @@
     "volume-master": "General volume",
     "volume-track": "Music volume",
     "volume-se": "SFX volume",
+		"volume-title-track" : "Title music volume",
+		"volume-system-se" : "System SFX volume",
     "track-source": "Track Source",
     "auto-mute": "Mute when switching tab",
     "ratio": "Display ratio",

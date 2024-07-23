@@ -3,7 +3,7 @@
     "locale": "ja-JP",
     "display-name": "日本語",
     "dir": "./jp",
-    "last-update": "2024-03-23"
+    "last-update": "2024-07-23"
   },
   "en-mm": {
     "locale": "en-US",
@@ -11,7 +11,7 @@
     "authors": "mirror moon",
     "dir": "./en-mm",
     "fallback": "jp",
-    "last-update": "2024-03-23"
+    "last-update": "2024-07-23"
   },
   "it-riffour": {
     "locale": "it-IT",

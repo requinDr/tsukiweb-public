@@ -169,6 +169,8 @@
 		"volume-master": "音量",
 		"volume-track": "BGM 音量",
 		"volume-se": "SFX 音量",
+		"volume-title-track" : "TITLE BGM 音量",
+		"volume-system-se" : "SYS SFX 音量",
 		"track-source": "Track Source",
 		"auto-mute": "Mute when switching tab",
 		"ratio": "アスペクト比",

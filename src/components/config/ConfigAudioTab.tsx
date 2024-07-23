@@ -37,7 +37,9 @@ const ConfigAudioTab = () => {
 	const volumeNames: Record<keyof typeof conf.volume, string> = {
 		'master': strings.config["volume-master"],
 		'track': strings.config["volume-track"],
-		'se': strings.config["volume-se"]
+		'se': strings.config["volume-se"],
+		'titleTrack': strings.config["volume-title-track"],
+		'systemSE': strings.config["volume-system-se"]
 	}
 
 	const handleReset = () => {
