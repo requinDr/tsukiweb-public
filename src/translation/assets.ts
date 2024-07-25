@@ -47,7 +47,7 @@ function textImageToStr(textImg: TextImage): string {
 //------------------------------------------------------------------------------
 
 export function scenesDir() {
-  return assetPath(languages[settings.language].dir + "/scenes/")
+  return assetPath(`${languages[settings.language].dir}/scenes`)
 }
 
 export function audioTrackPath(track: number|string,
