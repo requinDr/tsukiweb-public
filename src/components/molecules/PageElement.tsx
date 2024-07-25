@@ -7,6 +7,7 @@ import { SaveState } from "../../utils/savestates"
 import { getSceneTitle } from "../../utils/scriptUtils"
 import Button from "@tsukiweb-common/ui-core/components/Button"
 import { MdReplay } from "react-icons/md"
+import classNames from "classnames"
 
 const PageElement = ({saveState, onLoad}: {saveState: SaveState, onLoad: (ss: SaveState)=>void})=> {
 	if (saveState.page == undefined)
@@ -27,11 +28,9 @@ const PageElement = ({saveState, onLoad}: {saveState: SaveState, onLoad: (ss: Sa
 		case "choice":
 			const {choices, selected} = content as PageContent<"choice">  
 			displayContent = <>{choices.map(({str, index})=>
-				<Fragment key={index}>{index > 0 && <br/>}
-					<span className={`choice ${index==selected ? 'selected' : ''}`} key={index}>
-						{str}
-					</span>
-				</Fragment>
+				<div key={index} className={classNames('choice', {selected: index==selected})}>
+					{str}
+				</div>
 			)}</>
 			break
 		case "skip" :

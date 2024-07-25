@@ -78,13 +78,15 @@
     gap: 8px;
     color: var(--active-hover);
 	}
-	.choice:not(.selected) {
-		color: grey;
+	.choice {
+		&:not(.selected) {
+			color: grey;
+		}
+		&.selected {
+			display: list-item;
+			list-style-type: disclosure-closed;
+		}
 	}
-	.choice.selected {
-		display: list-item;
-		list-style-type: disclosure-closed;
-	} 
 	.cursor {
 		width: 22px;
 		height: 22px;
