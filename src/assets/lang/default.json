@@ -150,7 +150,8 @@
 			"data": "全てがブラウザに保存されて、データを集められません。データを$0ここで$1管理できます。",
 			"remake": "$0月姫 -A piece of blue glass moon-$1を買って応援してください。"
 		},
-		"install": "Install"
+		"install": "Install",
+		"share": "Share"
 	},
 	"extra": {
 		"gallery": "ギヤラリー",

@@ -216,9 +216,12 @@
 }
 
 .app-info-modale {
+	background-image: linear-gradient(45deg, #011853 60%, #033343);
+	font-size: 1.1em;
+
 	.title-modal {
 		display: grid;
-		grid-template-columns: 1fr 180px;
+		grid-template-columns: 1fr 200px;
 		align-content: start;
 		gap: 4em;
 		flex-grow: 1;
@@ -228,55 +231,55 @@
 		}
 
 		.infos {
-			.top {
+			.header {
 				display: flex;
-				gap: 16px;
-				align-items: center;
-				margin-bottom: 16px;
+				flex-wrap: wrap;
+				gap: 8px;
+				margin-bottom: 1em;
 
-				a {
+				.version {
 					display: flex;
-				}
-				.copy-link {
-					&:hover {
-						box-shadow: var(--selected-shadow);
-					}
-				}
-				.vndb {
-					font-size: .8em;
-					display: flex;
+					gap: 16px;
 					align-items: center;
-					gap: 4px;
 				}
 			}
 
 			.content {
 				display: flex;
 				flex-direction: column;
-				gap: 12px;
+				gap: 8px;
 				margin-inline: 8px;
-				font-size: 1.1em;
+				text-wrap: pretty;
+
+				.more {
+					margin-top: 1em;
+				}
 			}
 		}
 
 		.sidebar {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(min(100%, 130px), 1fr));
-			gap: 1em;
+			display: flex;
+			flex-wrap: wrap;
+			gap: .5em;
+			justify-content: center;
+			align-content: start;
+			font-size: .9em;
+
+			.actions {
+				display: grid;
+				grid-template-columns: repeat(auto-fill, minmax(min(100%, 110px), 1fr));
+			}
 		}
 		.tsuki-logo {
-			overflow: hidden;
-
-			img {
-				display: block;
-				width: 100%;
-				min-width: 0;
-				object-fit: contain;
-			}
+			display: block;
+			width: 100%;
+			min-width: 0;
+			max-width: 200px;
+			object-fit: contain;
 		}
 	}
 
-	@media screen and (max-width: 560px) {
+	@media screen and (max-width: 580px) {
 		.title-modal {
 			grid-template-columns: 1fr;
 			gap: 1em;

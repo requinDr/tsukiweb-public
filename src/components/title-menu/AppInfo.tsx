@@ -1,5 +1,5 @@
 import { Dispatch, useState } from "react"
-import { MdInfoOutline, MdOpenInNew, MdShare } from "react-icons/md"
+import { MdDownload, MdInfoOutline, MdOpenInNew, MdShare } from "react-icons/md"
 import { toast } from "react-toastify"
 import { bb } from "../../utils/Bbcode"
 import { APP_VERSION } from "../../utils/constants"
@@ -8,6 +8,8 @@ import tsukiCover from "../../assets/images/tsukihime_cover.webp"
 import Modal from "@tsukiweb-common/ui-core/components/Modal"
 import BlueContainer from "@tsukiweb-common/ui-core/components/BlueContainer"
 import MenuButton from "@tsukiweb-common/ui-core/components/MenuButton"
+import Button from "@tsukiweb-common/ui-core/components/Button"
+import usePWA from "@tsukiweb-common/hooks/usePWA"
 
 const AppInfo = () => {
 	const [show, setShow] = useState<boolean>(false)
@@ -32,6 +34,7 @@ type ModalInfoProps = {
 	setShow: Dispatch<boolean>
 }
 const ModalInfo = ({show, setShow}: ModalInfoProps) => {
+	const { canInstallPWA, installPWA } = usePWA()
 	const copyCurrentUrl = () => {
 		navigator.clipboard.writeText(window.location.href)
 		toast("Page URL copied to clipboard", {
@@ -51,21 +54,14 @@ const ModalInfo = ({show, setShow}: ModalInfoProps) => {
 		>
 			<div className='title-modal'>
 				<div className='infos'>
-					<BlueContainer className='top'>
-						<div>v{APP_VERSION}</div>
-						<a href="https://github.com/requinDr/tsukiweb-public" target="_blank" rel="noreferrer">
-							<img src="https://img.shields.io/github/stars/requinDr/tsukiweb-public?style=social" alt="stars" />
-						</a>
-						<MdShare
-							title='Copy link'
-							className='copy-link'
-							onClick={copyCurrentUrl}
-						/>
-						<a href="https://vndb.org/v7" target="_blank" className="vndb">
-							<MdOpenInNew />
-							<span>VNDB</span>
-						</a>
-					</BlueContainer>
+					<div className="header">
+						<BlueContainer className='version'>
+							<span>v{APP_VERSION}</span>
+							<a href="https://github.com/requinDr/tsukiweb-public" target="_blank" rel="noreferrer" style={{display: "inline-flex", alignItems: "center"}}>
+								<img src="https://img.shields.io/github/stars/requinDr/tsukiweb-public?style=social" alt="stars" />
+							</a>
+						</BlueContainer>
+					</div>
 
 					<div className='content'>
 						<div>
@@ -89,18 +85,34 @@ const ModalInfo = ({show, setShow}: ModalInfoProps) => {
 								.replace('$0', "[url='https://forms.gle/MJorV8oNbnKo22469']")
 								.replace('$1', "[/url]"))}
 						</div>
+
+						<div className="more">
+							{bb(strings.title.about.remake
+								.replace('$0', "[url='http://typemoon.com/products/tsukihime/']")
+								.replace('$1', "[/url]"))}
+						</div>
 					</div>
 				</div>
 
 				<div className="sidebar">
-					<BlueContainer className="card tsuki-logo">
-						<img src={tsukiCover} alt="tsukihime logo" className="logo" draggable={false} />
-					</BlueContainer>
+					<img src={tsukiCover} alt="tsukihime logo" className="tsuki-logo" draggable={false} />
 
-					<BlueContainer className="card">
-						{bb(strings.title.about.remake
-							.replace('$0', "[url='http://typemoon.com/products/tsukihime/']")
-							.replace('$1', "[/url]"))}
+					<BlueContainer className="card actions">
+						<Button variant="corner" onClick={copyCurrentUrl}>
+							<MdShare /> {strings.title.share}
+						</Button>
+
+						<Button variant="corner">
+							<a href="https://vndb.org/v7" target="_blank" className="vndb">
+								<MdOpenInNew />	<span>VNDB</span>
+							</a>
+						</Button>
+
+						{canInstallPWA && 
+							<Button variant="corner" onClick={installPWA}>
+								<MdDownload /> {strings.title.install}
+							</Button>
+						}
 					</BlueContainer>
 				</div>
 			</div>

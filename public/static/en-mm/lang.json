@@ -35,7 +35,8 @@
       "data": "No data collected, everything is stored in your browser. Manage your data $0here$1.",
       "remake": "Consider buying the remake $0Tsukihime - A piece of blue glass moon$1."
     },
-    "install": "Install"
+    "install": "Install",
+    "share": "Share"
   },
   "extra": {
     "gallery": "Gallery",
