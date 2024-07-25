@@ -1,5 +1,5 @@
 import { Dispatch, useState } from "react"
-import { MdDownload, MdInfoOutline, MdOpenInNew, MdShare } from "react-icons/md"
+import { MdGetApp, MdInfoOutline, MdOpenInNew, MdShare } from "react-icons/md"
 import { toast } from "react-toastify"
 import { bb } from "../../utils/Bbcode"
 import { APP_VERSION } from "../../utils/constants"
@@ -110,7 +110,7 @@ const ModalInfo = ({show, setShow}: ModalInfoProps) => {
 
 						{canInstallPWA && 
 							<Button variant="corner" onClick={installPWA}>
-								<MdDownload /> {strings.title.install}
+								<MdGetApp /> {strings.title.install}
 							</Button>
 						}
 					</BlueContainer>

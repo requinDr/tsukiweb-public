@@ -6,7 +6,7 @@ import { SCREEN } from '../utils/display'
 import { motion } from 'framer-motion'
 import { continueGame, hasSaveStates, newGame, viewedScene } from '../utils/savestates'
 import { strings } from "../translation/lang"
-import { MdGetApp } from 'react-icons/md'
+import { MdOutlineVolumeOff, MdOutlineVolumeUp } from 'react-icons/md'
 import { settings } from '../utils/settings'
 import { endings } from '../utils/endings'
 import { useLanguageRefresh } from '../components/hooks/useLanguageRefresh'
@@ -16,7 +16,7 @@ import AppInfo from '../components/title-menu/AppInfo'
 import TranslationSwitch from '../components/title-menu/TranslationSwitch'
 import Particles from '@tsukiweb-common/ui-core/components/Particles'
 import ExtraMenu from 'components/title-menu/ExtraMenu'
-import usePWA from '@tsukiweb-common/hooks/usePWA'
+import { useObserved } from '@tsukiweb-common/utils/Observer'
 
 const img = {
 	src: moon,
@@ -26,7 +26,7 @@ const img = {
 
 const TitleMenuScreen = () => {
 	useScreenAutoNavigate(SCREEN.TITLE)
-	const { canInstallPWA, installPWA } = usePWA()
+	const [conf] = useObserved(settings.volume, 'master')
 	const [page, setPage] = useState<number>(0)
 	useLanguageRefresh()
 
@@ -112,22 +112,21 @@ const TitleMenuScreen = () => {
 			</nav>
 
 			<div className='top-actions'>
-				{canInstallPWA &&
-					<motion.div
-						initial={{ opacity: 0 }}
-						animate={{ opacity: 1 }}
-						transition={{
-							delay: 0.8,
-							duration: 1,
-						}}>
-						<button
-							className="action-icon"
-							aria-label={strings.title.install}
-							onClick={installPWA}>
-							<MdGetApp />
-						</button>
-					</motion.div>
-				}
+				<motion.div
+					initial={{ opacity: 0 }}
+					animate={{ opacity: 1 }}
+					transition={{
+						delay: 0.8,
+						duration: 1,
+					}}>
+					<button
+						className="action-icon"
+						aria-label={strings.config['volume-master']}
+						onClick={()=> settings.volume.master = -settings.volume.master}
+					>
+						{conf < 0 ? <MdOutlineVolumeOff aria-label="mute" /> : <MdOutlineVolumeUp aria-label="unmute" />}
+					</button>
+				</motion.div>
 
 				<motion.div
 					initial={{ opacity: 0 }}
