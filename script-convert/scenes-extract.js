@@ -11,7 +11,7 @@ const sceneLabels = [
     [/^s\d\w+?$/, (label) => [label, `scene${label.substring(1)}`, false]],
     [/^f\d\w+?$/, (label) => [label, LOGIC_FILE, true]],
     [/^skip\d\w+?$/, (label) => [`f${label.substring(4)}`, LOGIC_FILE, true]],
-    [/^quizz\d\w+?$/, (label) => [label, `quizz`, true]]
+    [/^quizz\d\w+?$/, (label) => [label, `quizz`, true]],
     [/^se\d\w+?$/, (label) => [`s${label.substring(2)}`, `scene${label.substring(1)}`, true]]
     //[/^mm\w+$/, (label) => { i = label.indexOf('click'); return i>= 0 ? label.substring(0, i) : label}], // ignore mirrormoon's easter-egg scenes
 ];
@@ -62,6 +62,7 @@ function extractScript(scriptLines) {
         else {
             scene = null
             file = null
+            keepLabel = false;
         }
     }
 

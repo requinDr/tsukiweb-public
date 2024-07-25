@@ -141,8 +141,17 @@ function replaceColorImages(lines) {
 function replaceMp3Loop(lines) {
     for (let [i, line] of lines.entries()) {
         if (line.startsWith('mp3loop')) {
-            let og = line.split(' m')
-            lines[i] = 'play "*'+og[1]+'"'
+            const arg = line.substring(line.indexOf(' ')+1)
+            let m
+            if (m = arg.match(/m(?<n>\d+)/)) {
+                lines[i] = `play "*${m.groups['n']}`
+            } else if (arg.match(/se\d+/)) {
+                lines[i] = `waveloop ${arg}`
+            } else if (m = arg.match(/"bgm\\(?<n>\d+).wav"/)) {
+                lines[i] = `play "*${Number.parseInt(m.groups['n'], 10)}`
+            } else {
+                throw Error(`Unexpected mp3loop format: ${line}`)
+            }
         }
     }
 }
@@ -430,7 +439,6 @@ function postProcess(scenes, report) {
             report.appliedContexts.scenes[label] = appliedContext;
         }
     }
-    //TODO process scenes in order, use added start context when calculating end context
 }
 
 //#endregion
