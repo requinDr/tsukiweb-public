@@ -275,9 +275,13 @@ const Window = () => {
 
 			<HistoryLayer />
 
-			<SavesLayer />
+			<SavesLayer
+				back={() => {
+					displayMode.save = false
+					displayMode.load = false
+				}} />
 
-			<ConfigLayer />
+			<ConfigLayer back={() => displayMode.config = false} />
 
 			<SkipLayer />
 
