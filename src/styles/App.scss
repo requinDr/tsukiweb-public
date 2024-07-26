@@ -1,24 +1,7 @@
-@use "fonts.scss";
-
 :root {
-  font-family: system-ui, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-
   --toastify-color-progress-dark: #0a2f85;
   --menu-container: hsl(0deg 0% 0% / 40%);
   --menu-shadow: 0 1px 3px 1px hsl(0deg 0% 0% / 70%);
-  // --active: rgb(10, 164, 171);
   --active: rgb(0 111 164);
   --active-hover: #00e5ff;
   --focus: #062b64;
@@ -26,41 +9,21 @@
     0px 0px 90px 0px rgba(0, 180, 255, 0.8) inset;
   --separator: rgba(255, 255, 255, 0.1);
   --page-width: max(1400px, 60%);
-}
 
-* {
-  box-sizing: border-box;
-  -webkit-tap-highlight-color: transparent;
-}
+  --color-link: #00b6ff;
 
-@media (hover: hover) and (pointer: fine) {
-  *::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-  }
-  *::-webkit-scrollbar-thumb {
-    background-image: linear-gradient(
-      180deg,
-      hsl(192, 77%, 31%) 0%,
-      hsl(188, 100%, 50%) 50%,
-      hsl(192, 77%, 31%) 100%
-    );
-    border-radius: 4px;
-
-    &:hover {
-      background-image: linear-gradient(
-        180deg,
-        hsl(192, 77%, 26%) 0%,
-        hsl(188, 100%, 30%) 50%,
-        hsl(192, 77%, 26%) 100%
-      );
-    }
-  }
-}
-img {
-  -webkit-user-drag: none;
-  user-select: none;
-  font-style: italic;
+  --scrollbar-gradient: linear-gradient(
+		180deg,
+		hsl(192, 77%, 31%) 0%,
+		hsl(188, 100%, 50%) 50%,
+		hsl(192, 77%, 31%) 100%
+	);
+	--scrollbar-hover: linear-gradient(
+		180deg,
+		hsl(192, 77%, 26%) 0%,
+		hsl(188, 100%, 30%) 50%,
+		hsl(192, 77%, 26%) 100%
+	);
 }
 
 #root {
@@ -68,34 +31,10 @@ img {
   width: 100%;
 }
 
-a {
-  font-weight: 500;
-  color: #00b6ff;
-  text-decoration: inherit;
-
-  &:hover {
-    text-decoration: underline;
-  }
-}
-
 body {
   margin: 0;
   display: flex;
   min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  all: unset;
-  user-select: none;
-
-  &:hover {
-    cursor: pointer;
-  }
 }
 
 #root-view {

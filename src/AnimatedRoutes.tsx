@@ -1,6 +1,6 @@
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
-import "./assets/fonts/Ubuntu-Regular.ttf"
-import "./assets/fonts/Ubuntu-Bold.ttf"
+import "@tsukiweb-common/assets/fonts/Ubuntu-Regular.ttf"
+import "@tsukiweb-common/assets/fonts/Ubuntu-Bold.ttf"
 import { AnimatePresence } from 'framer-motion';
 import Window from './screens/Window'
 import TitleMenuScreen from './screens/TitleMenuScreen';
@@ -10,6 +10,7 @@ import LoadScreen from "./screens/LoadScreen";
 import DisclaimerScreen from "./screens/DisclaimerScreen";
 import { Slide, ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import '@tsukiweb-common/styles/main.scss'
 import './styles/App.scss'
 import EndingsScreen from "./screens/EndingsScreen";
 import FlowchartScreen from "./screens/FlowchartScreen";
