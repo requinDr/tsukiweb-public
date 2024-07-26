@@ -1,6 +1,5 @@
 import { ChangeEvent, MouseEvent, useEffect, useState } from "react"
 import { SCREEN, displayMode } from "../utils/display"
-import { noBb } from "../utils/Bbcode"
 import { SaveState, QUICK_SAVE_ID, deleteSaveState, getSaveState, listSaveStates, loadSaveState, storeCurrentState, addSavesChangeListener, removeSavesChangeListener, loadSaveFiles } from "../utils/savestates"
 import { strings } from "../translation/lang"
 import { phaseTexts } from "../translation/assets"
@@ -11,6 +10,7 @@ import MenuButton from "@tsukiweb-common/ui-core/components/MenuButton"
 import PageSection from "@tsukiweb-common/ui-core/layouts/PageSection"
 import Button from "@tsukiweb-common/ui-core/components/Button"
 import classNames from "classnames"
+import { noBb } from "@tsukiweb-common/utils/Bbcode"
 
 //##############################################################################
 //#                               TOOL FUNCTIONS                               #

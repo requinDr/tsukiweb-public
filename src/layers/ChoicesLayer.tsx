@@ -3,9 +3,9 @@ import { Choice, PageContent } from "../types"
 import script from "../utils/script"
 import { SCREEN, displayMode } from "../utils/display"
 import history from "../utils/history"
-import { Bbcode } from "../utils/Bbcode"
 import { choicesContainer, resetChoices } from "../utils/choices"
 import { observe, useObserver } from "@tsukiweb-common/utils/Observer"
+import { Bbcode } from "@tsukiweb-common/utils/Bbcode"
 
 observe(displayMode, 'screen', resetChoices, {filter: s => s != SCREEN.WINDOW})
 
@@ -24,13 +24,6 @@ const ChoicesLayer = () => {
     setChoices(choices)
     updateDisplay()
   }, choicesContainer, 'choices')
-
-  /*
-  useObserver((screen)=> {
-    if (screen != SCREEN.WINDOW)
-      displayMode.choices = false // 'select' will be re-processed
-  }, displayMode, 'screen')
-  */
 
   const handleSelect = (choice: Choice) => {
     console.debug(choice)

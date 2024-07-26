@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from "react"
 import { displayMode } from "../utils/display"
 import script from "../utils/script"
-import { bb } from "../utils/Bbcode"
 import { strings } from "../translation/lang"
 import { useObserver } from "@tsukiweb-common/utils/Observer"
 import classNames from "classnames"
+import { bb } from "@tsukiweb-common/utils/Bbcode"
 
 const SkipLayer = () => {
   const [display, setDisplay] = useState<boolean>(false)

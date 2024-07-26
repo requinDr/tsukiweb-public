@@ -1,0 +1,109 @@
+.graphics {
+	z-index: 0;
+	position: relative;
+	display: grid;
+	grid-template-columns: 50% 50%;
+	background: #000;
+	letter-spacing: initial;
+	width: 100%;
+	height: 100%;
+
+	div {
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+
+		&.l, &.c, &.r {
+			position: relative;
+			overflow: visible;
+			grid-row: 1;
+			display: grid;
+
+			img {
+				position: absolute;
+				bottom: 0;
+				justify-self: center;
+				height: inherit;
+				object-fit: cover;
+			}
+		}
+		&.l {
+			grid-column: 1;
+		}
+		&.c {
+			grid-column: 1 / span 2;
+		}
+		&.r {
+			grid-column: 2;
+		}
+
+		.text {
+			--margin: 1em;
+			position: absolute;
+			left: 0;
+			top: 0;
+			height: 100%;
+			width: 100%;
+			font-size: 1.6em;
+			line-height: 1.2em;
+			text-shadow: #000 1px 1px 1px, #000 -1px 1px 1px, #000 -1px -1px 1px,
+				#000 1px -1px 1px;
+			user-select: none;
+			& > * {
+				position: absolute;
+				width: 100%;
+				height: auto;
+				padding: min(8%, 3rem) var(--margin);
+			}
+			&[vertical-align="t"] > * {
+				top: 0;
+			}
+			&[vertical-align="b"] > * {
+				bottom: 0;
+			}
+			&[vertical-align="c"] > * {
+				top: 50%;
+				transform: translateY(-50%);
+			}
+		}
+
+		&.bg {
+			position: absolute;
+			overflow: hidden;
+			inset: 0;
+			display: block;
+			width: inherit;
+
+			img {
+				width: inherit;
+				height: inherit;
+				object-fit: cover;
+				transition: object-position var(--transition-time) ease-out;
+			}
+			&[bg-align="top"] img {
+				object-position: top;
+			}
+			&[bg-align="center"] img {
+				object-position: center;
+			}
+			&[bg-align="bottom"] img {
+				object-position: bottom;
+			}
+		}
+	}
+	&.monochrome {
+		background: var(--monochrome-color);
+
+		div {
+			filter: grayscale(1);
+		}
+
+		&:after {
+			content: "";
+			position: absolute;
+			inset: 0;
+			background: inherit;
+			mix-blend-mode: multiply;
+		}
+	}
+}

@@ -6,6 +6,7 @@ import BackgroundGraphics from "../components/molecules/BackgroundGraphics";
 import ForegroundGraphics from "../components/molecules/ForegroundGraphics";
 import { observe, useObserved } from "@tsukiweb-common/utils/Observer";
 import { resetTransition, resetQuake, quakeEffect, transition } from "@tsukiweb-common/utils/graphics";
+import classNames from "classnames";
 
 observe(displayMode, 'screen', (screen)=> {
 	if (screen != SCREEN.WINDOW) {
@@ -25,30 +26,26 @@ const GraphicsLayer = memo(function({...props}: Record<string, any>) {
 	}, [])
 
 //......... compute properties .........
-	let style, className
-	({style, className, ...props} = props)
+	let style
+	({style, ...props} = props)
 	style = { ...style }
 	
-	const classList = className?.trim().split("") ?? []
-	classList.push('layer', 'graphics')
 	if (quake) {
-		classList.push('quake')
 		style['--quake-x'] = `${quakeEffect.x}pt`
 		style['--quake-y'] = `${quakeEffect.y}pt`
 		style['--quake-time'] = `${quakeEffect.duration}ms`
 	}
 	if (monoChrome) {
-		classList.push("monochrome")
 		style['--monochrome-color'] = monoChrome
 	}
-//............... render ...............
+
 	return (
 		<div id="layer-graphics"
-			className={classList.join(' ')} {...props}
+			{...props}
+			className={classNames("layer", "graphics", {quake, monochrome: monoChrome}, props.className)}
 			style={style}
 			onAnimationEnd={onQuakeEnd}
 		>
-
 			<BackgroundGraphics />
 			<SpriteGraphics pos='l'/>
 			<SpriteGraphics pos='c'/>

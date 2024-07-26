@@ -4,11 +4,11 @@ import pageIcon from '../assets/icons/icon_bars.svg'
 import { settings } from "../utils/settings"
 import history from "../utils/history"
 import { SCREEN, displayMode } from "../utils/display"
-import { BBTypeWriter, Bbcode } from "../utils/Bbcode"
 import { resetSI, scriptInterface } from "../utils/text"
 import useMousePointer from "@tsukiweb-common/hooks/useMousePointer"
 import { observe, useObserved, useObserver } from "@tsukiweb-common/utils/Observer"
 import { DivProps } from "@tsukiweb-common/types"
+import { Bbcode, BBTypeWriter } from "@tsukiweb-common/utils/Bbcode"
 
 export const icons: Record<"moon"|"page", string> = {
   "moon": moonIcon,

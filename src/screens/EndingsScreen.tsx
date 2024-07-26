@@ -4,7 +4,6 @@ import { strings } from '../translation/lang'
 import { imageSrc } from '../translation/assets'
 import { SCREEN } from '../utils/display'
 import chalkboard from '../assets/images/chalkboard.webp'
-import { noBb } from '../utils/Bbcode'
 import { RouteEnding, endings, osiete } from '../utils/endings'
 import { Tooltip } from 'react-tooltip'
 import ReactDOMServer from 'react-dom/server';
@@ -14,6 +13,7 @@ import { useScreenAutoNavigate } from '../components/hooks/useScreenAutoNavigate
 import PageSection from '@tsukiweb-common/ui-core/layouts/PageSection'
 import { settings } from 'utils/settings'
 import MenuButton from '@tsukiweb-common/ui-core/components/MenuButton'
+import { noBb } from '@tsukiweb-common/utils/Bbcode'
 
 
 const EndingsScreen = () => {

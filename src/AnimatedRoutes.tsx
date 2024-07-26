@@ -12,6 +12,7 @@ import { Slide, ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import '@tsukiweb-common/styles/main.scss'
 import './styles/App.scss'
+import './styles/graphics.scss'
 import EndingsScreen from "./screens/EndingsScreen";
 import FlowchartScreen from "./screens/FlowchartScreen";
 import AppLayout from "./layouts/AppLayout";

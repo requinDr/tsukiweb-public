@@ -1,7 +1,6 @@
 import { Dispatch, useState } from "react"
 import { MdGetApp, MdInfoOutline, MdOpenInNew, MdShare } from "react-icons/md"
 import { toast } from "react-toastify"
-import { bb } from "../../utils/Bbcode"
 import { APP_VERSION } from "../../utils/constants"
 import { strings } from "../../translation/lang"
 import tsukiCover from "../../assets/images/tsukihime_cover.webp"
@@ -10,6 +9,7 @@ import BlueContainer from "@tsukiweb-common/ui-core/components/BlueContainer"
 import MenuButton from "@tsukiweb-common/ui-core/components/MenuButton"
 import Button from "@tsukiweb-common/ui-core/components/Button"
 import usePWA from "@tsukiweb-common/hooks/usePWA"
+import { bb } from "@tsukiweb-common/utils/Bbcode"
 
 const AppInfo = () => {
 	const [show, setShow] = useState<boolean>(false)

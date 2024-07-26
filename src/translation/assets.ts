@@ -1,9 +1,9 @@
 import { TSForceType } from "@tsukiweb-common/utils/utils"
 import { RouteDayName, RouteName } from "../types"
-import { closeBB } from "../utils/Bbcode"
 import { settings } from "../utils/settings"
 import {TrackSourceId, languages, strings} from "./lang"
 import { ImageRedirect, TextImage } from "@tsukiweb-common/utils/lang"
+import { closeBB } from "@tsukiweb-common/utils/Bbcode"
 
 //##############################################################################
 //#                                  PRIVATE                                   #

@@ -1,7 +1,7 @@
-import { bb } from "../../utils/Bbcode";
 import { imageSrc } from "../../translation/assets";
 import { settings } from "../../utils/settings";
 import { DivProps, SpritePos } from "@tsukiweb-common/types";
+import { bb } from "@tsukiweb-common/utils/Bbcode";
 import { splitFirst } from "@tsukiweb-common/utils/utils";
 import classNames from "classnames";
 import { GALLERY_IMAGES } from "utils/gallery";
@@ -15,7 +15,6 @@ type Props = {
 }
 
 const GraphicElement = ({ pos, image, resolution = settings.resolution, lazy = false, props = {} }: Props) => {
-
 	image = image || (pos == "bg" ? "#000000" : "#00000000")
 	const isColor = image.startsWith("#")
 	let text

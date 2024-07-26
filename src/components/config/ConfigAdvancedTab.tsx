@@ -8,12 +8,12 @@ import { useLanguageRefresh } from "../hooks/useLanguageRefresh"
 import { MdDeleteForever, MdDownload, MdFileUpload, MdTranslate } from "react-icons/md"
 import ModalLanguageSelection from "./ModalLanguageSelection"
 import { warnHScene } from "utils/script"
-import { bb } from "utils/Bbcode"
 import ConfigModal from "./components/ConfigModal"
 import Button from "@tsukiweb-common/ui-core/components/Button"
 import PageSection from "@tsukiweb-common/ui-core/layouts/PageSection"
 import { RecursivePartial } from "@tsukiweb-common/types"
 import { deepAssign, jsonDiff, textFileUserDownload, requestJSONs } from "@tsukiweb-common/utils/utils"
+import { bb } from "@tsukiweb-common/utils/Bbcode"
 
 function twoDigits(n: number) {
 	return n.toString().padStart(2, '0')

@@ -1,4 +1,4 @@
-import TitleMenuButton from "@tsukiweb-common/components/atoms/TitleMenuButton"
+import TitleMenuButton from "components/atoms/TitleMenuButton"
 import { strings } from "translation/lang"
 import { SCREEN } from "utils/display"
 import { playScene } from "utils/savestates"

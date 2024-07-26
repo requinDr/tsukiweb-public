@@ -3,8 +3,8 @@ import { PageContent } from "../../types"
 import { SaveState } from "../../utils/savestates"
 import { getSceneTitle } from "../../utils/scriptUtils"
 import { savePhaseTexts } from "../SavesLayout"
-import { noBb } from "../../utils/Bbcode"
 import classNames from "classnames"
+import { noBb } from "@tsukiweb-common/utils/Bbcode"
 
 const SaveSummary = memo(({saveState}: {saveState: SaveState})=> {
 	const page = saveState.page

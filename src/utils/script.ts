@@ -13,9 +13,9 @@ import { toast } from "react-toastify"
 import { SCREEN, displayMode } from "./display"
 import { strings } from "../translation/lang"
 import { phaseTexts } from "../translation/assets"
-import { closeBB } from "./Bbcode"
 import { isObserverNotifyPending, observe } from "@tsukiweb-common/utils/Observer"
 import Timer from "@tsukiweb-common/utils/timer"
+import { closeBB } from "@tsukiweb-common/utils/Bbcode"
 
 type Instruction = {cmd: string, arg: string}
 type CommandHandler = {next: VoidFunction, cancel?: VoidFunction, autoPlayDelay?: number}

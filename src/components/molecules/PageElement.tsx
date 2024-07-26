@@ -1,6 +1,5 @@
 import { memo, Fragment } from "react"
 import { PageContent } from "../../types"
-import { Bbcode, bb } from "../../utils/Bbcode"
 import { strings } from "../../translation/lang"
 import { phaseTexts } from "../../translation/assets"
 import { SaveState } from "../../utils/savestates"
@@ -8,6 +7,7 @@ import { getSceneTitle } from "../../utils/scriptUtils"
 import Button from "@tsukiweb-common/ui-core/components/Button"
 import { MdReplay } from "react-icons/md"
 import classNames from "classnames"
+import { Bbcode, bb } from "@tsukiweb-common/utils/Bbcode"
 
 const PageElement = ({saveState, onLoad}: {saveState: SaveState, onLoad: (ss: SaveState)=>void})=> {
 	if (saveState.page == undefined)
