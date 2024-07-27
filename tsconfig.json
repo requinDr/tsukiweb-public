@@ -25,5 +25,5 @@
       "@tsukiweb-common/*": ["../tsukiweb-common/src/*"]
     }
   },
-  "include": ["src", "tsukiweb-common/global.d.ts", "tsukiweb-common/src/utils/Bbcode.tsx"],
+  "include": ["src", "tsukiweb-common/global.d.ts"],
 }
