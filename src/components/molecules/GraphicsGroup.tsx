@@ -1,10 +1,10 @@
 import { memo } from "react"
 import { settings } from "../../utils/settings"
-import GraphicElement from "../atoms/GraphicElement"
+import GraphicElement from "@tsukiweb-common/components/atoms/GraphicElement"
 import { imageSrc } from "../../translation/assets"
 import { POSITIONS } from "@tsukiweb-common/constants";
 import { SpritePos, Graphics as GraphicsType, DivProps } from "@tsukiweb-common/types";
-
+import { shouldBlur } from "utils/gallery";
 
 export async function preloadImage(src:string, resolution=settings.resolution): Promise<void> {
 	if (src.startsWith('#') || src.startsWith('$'))
@@ -25,6 +25,10 @@ type GraphicsGroupProps = {
 	resolution?: typeof settings.resolution,
 	lazy?: boolean,
 } & DivProps
+
+function getUrl(resolution: typeof settings.resolution, image: string): string {
+	return imageSrc(image, resolution)
+}
 
 const GraphicsGroup = ({
 	images,
@@ -54,7 +58,8 @@ const GraphicsGroup = ({
 					pos={pos}
 					image={images[pos] as string} {...(typeof spriteAttrs == 'function' ? spriteAttrs(pos)
 							: spriteAttrs?.[pos] ?? {})}
-					resolution={resolution}
+					getUrl={getUrl.bind(undefined, resolution)}
+					blur={shouldBlur}
 					lazy={lazy}
 				/>
 			)}

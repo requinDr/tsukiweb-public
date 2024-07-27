@@ -1,8 +1,13 @@
 import { memo, useCallback, CSSProperties } from "react"
 import { imageSrc } from "../../translation/assets"
 import { settings } from "../../utils/settings"
-import GraphicElement from "../atoms/GraphicElement"
+import GraphicElement from "@tsukiweb-common/components/atoms/GraphicElement"
 import { DivProps, SpritePos } from "@tsukiweb-common/types"
+import { shouldBlur } from "utils/gallery"
+
+function getUrl(resolution: typeof settings.resolution, image: string): string {
+	return imageSrc(image, resolution)
+}
 
 type Props = {
 	pos: SpritePos
@@ -84,7 +89,8 @@ const GraphicsElement = ({
 				<GraphicElement
 					pos={pos}
 					image={image}
-					resolution={resolution}
+					getUrl={getUrl.bind(undefined, resolution)}
+					blur={shouldBlur}
 					props={maskProps}
 				/>
 			}
@@ -93,7 +99,8 @@ const GraphicsElement = ({
 				<GraphicElement
 					pos={pos}
 					image={image}
-					resolution={resolution}
+					getUrl={getUrl.bind(undefined, resolution)}
+					blur={shouldBlur}
 					props={{
 						style: {...baseStyle, ...insertStyle},
 						...baseAttrs,
