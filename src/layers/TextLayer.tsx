@@ -30,7 +30,7 @@ const TextLayer = ({...props}: Props) => {
   useEffect(()=> {
     if (glyph) {
       scriptInterface.onFinish?.()
-      if (!displayMode.text)
+      if (displayMode.graphics)
         displayMode.text = true
     }
   }, [glyph])
