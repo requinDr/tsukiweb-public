@@ -95,7 +95,14 @@ const ModalInfo = ({show, setShow}: ModalInfoProps) => {
 				</div>
 
 				<div className="sidebar">
-					<img src={tsukiCover} alt="tsukihime logo" className="tsuki-logo" draggable={false} />
+					<img
+						src={tsukiCover}
+						alt="Tsukihime cover with the heroines"
+						className="tsuki-cover"
+						draggable={false}
+						width={200}
+						height={204}
+					/>
 
 					<BlueContainer className="card actions">
 						<Button variant="corner" onClick={copyCurrentUrl}>

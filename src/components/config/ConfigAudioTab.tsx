@@ -34,12 +34,12 @@ const ConfigAudioTab = () => {
 		return newConf
 	})
 
-	const volumeNames: Record<keyof typeof conf.volume, string> = {
+	const volumeNames: Partial<Record<keyof typeof conf.volume, string>> = {
 		'master': strings.config["volume-master"],
 		'track': strings.config["volume-track"],
 		'se': strings.config["volume-se"],
 		'titleTrack': strings.config["volume-title-track"],
-		'systemSE': strings.config["volume-system-se"]
+		// 'systemSE': strings.config["volume-system-se"]
 	}
 
 	const handleReset = () => {
@@ -49,7 +49,7 @@ const ConfigAudioTab = () => {
 
 	return (
 		<PageSection>
-			{(Object.keys(conf.volume) as Array<keyof typeof volumeNames>).map(key=>
+			{(Object.keys(volumeNames) as Array<keyof typeof volumeNames>).map(key=>
 				<ConfigItem key={key} title={volumeNames[key]}>
 					<div className="config-range">
 						<span className="icon"><MdVolumeMute /></span>
