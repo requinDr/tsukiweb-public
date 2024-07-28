@@ -6,10 +6,10 @@ import script from '../utils/script';
 import { strings } from '../translation/lang';
 import PageElement from '../components/molecules/PageElement';
 import FixedFooter from '@tsukiweb-common/ui-core/components/FixedFooter';
-import MenuButton from '@tsukiweb-common/ui-core/components/MenuButton';
 import { useObserved, useObserver } from '@tsukiweb-common/utils/Observer';
 import { addEventListener } from '@tsukiweb-common/utils/utils';
 import classNames from 'classnames';
+import Button from '@tsukiweb-common/ui-core/components/Button';
 
 type Props = {
 	[key: string] : any // other properties to apply to the root 'div' element of the component
@@ -80,9 +80,12 @@ const HistoryLayer = (props: Props) => {
 			</div>
 
 			<FixedFooter>
-				<MenuButton onClick={() => setDisplay(false)}>
+				<Button
+					variant="menu"
+					onClick={() => setDisplay(false)}
+				>
 					{strings.close}
-				</MenuButton>
+				</Button>
 			</FixedFooter>
 		</div>
 	)

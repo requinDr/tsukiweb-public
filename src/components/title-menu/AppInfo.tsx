@@ -5,8 +5,7 @@ import { APP_VERSION } from "../../utils/constants"
 import { strings } from "../../translation/lang"
 import tsukiCover from "../../assets/images/tsukihime_cover.webp"
 import Modal from "@tsukiweb-common/ui-core/components/Modal"
-import BlueContainer from "@tsukiweb-common/ui-core/components/BlueContainer"
-import MenuButton from "@tsukiweb-common/ui-core/components/MenuButton"
+import MessageContainer from "@tsukiweb-common/ui-core/components/MessageContainer"
 import Button from "@tsukiweb-common/ui-core/components/Button"
 import usePWA from "@tsukiweb-common/hooks/usePWA"
 import { bb } from "@tsukiweb-common/utils/Bbcode"
@@ -55,12 +54,12 @@ const ModalInfo = ({show, setShow}: ModalInfoProps) => {
 			<div className='title-modal'>
 				<div className='infos'>
 					<div className="header">
-						<BlueContainer className='version'>
+						<MessageContainer className='version'>
 							<span>v{APP_VERSION}</span>
 							<a href="https://github.com/requinDr/tsukiweb-public" target="_blank" rel="noreferrer" style={{display: "inline-flex", alignItems: "center"}}>
 								<img src="https://img.shields.io/github/stars/requinDr/tsukiweb-public?style=social" alt="stars" />
 							</a>
-						</BlueContainer>
+						</MessageContainer>
 					</div>
 
 					<div className='content'>
@@ -104,7 +103,7 @@ const ModalInfo = ({show, setShow}: ModalInfoProps) => {
 						height={204}
 					/>
 
-					<BlueContainer className="card actions">
+					<MessageContainer className="card actions">
 						<Button variant="corner" onClick={copyCurrentUrl}>
 							<MdShare /> {strings.title.share}
 						</Button>
@@ -120,13 +119,17 @@ const ModalInfo = ({show, setShow}: ModalInfoProps) => {
 								<MdGetApp /> {strings.title.install}
 							</Button>
 						}
-					</BlueContainer>
+					</MessageContainer>
 				</div>
 			</div>
 
-			<MenuButton onClick={()=>setShow(false)} className="close-btn">
+			<Button
+				variant="menu"
+				onClick={()=>setShow(false)}
+				className="close-btn"
+			>
 				{strings.close}
-			</MenuButton>
+			</Button>
 		</Modal>
 	)
 }

@@ -7,7 +7,6 @@ import ConfigControlsTab from '../components/config/ConfigControlsTab'
 import { strings } from '../translation/lang'
 import { SCREEN } from '../utils/display'
 import { useLanguageRefresh } from './hooks/useLanguageRefresh'
-import MenuButton from '@tsukiweb-common/ui-core/components/MenuButton'
 import { Tab } from '@tsukiweb-common/ui-core/components/TabsComponent'
 import PageTabsLayout from '@tsukiweb-common/ui-core/layouts/PageTabsLayout'
 import Button from '@tsukiweb-common/ui-core/components/Button'
@@ -60,9 +59,9 @@ const ConfigLayout = ({back, selectedTab, setSelectedTab, page}: Props) => {
 			selectedTab={activeTab}
 			setSelectedTab={setActiveTab}
 			backButton={
-				<MenuButton onClick={back.bind(null)} className="back-button">
+				<Button variant="menu" onClick={back.bind(null)} className="back-button">
 					{strings.back}
-				</MenuButton>
+				</Button>
 			}>
 			{tabComponents[activeTab]}
 		</PageTabsLayout>

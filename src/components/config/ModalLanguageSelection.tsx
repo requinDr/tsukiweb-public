@@ -1,10 +1,10 @@
-import MenuButton from "@tsukiweb-common/ui-core/components/MenuButton"
 import Modal from "@tsukiweb-common/ui-core/components/Modal"
 import { Dispatch } from "react"
 import { MdOpenInNew } from "react-icons/md"
 import { languages, strings } from "translation/lang"
 import { settings } from "utils/settings"
 import { deepAssign } from "@tsukiweb-common/utils/utils"
+import Button from "@tsukiweb-common/ui-core/components/Button"
 
 type Props = {
 	show: boolean
@@ -61,9 +61,13 @@ const ModalLanguageSelection = ({show, setShow}: Props) => {
 				</div>
 			</div>
 
-			<MenuButton onClick={()=>setShow(false)} className="close-btn">
+			<Button
+				variant="menu"
+				onClick={()=>setShow(false)}
+				className="close-btn"
+			>
 				{strings.close}
-			</MenuButton>
+			</Button>
 		</Modal>
 	)
 }

@@ -5,9 +5,9 @@ import { strings } from "../translation/lang"
 import { useLanguageRefresh } from "../components/hooks/useLanguageRefresh"
 import { useScreenAutoNavigate } from "../components/hooks/useScreenAutoNavigate"
 import FixedFooter from "@tsukiweb-common/ui-core/components/FixedFooter"
-import MenuButton from "@tsukiweb-common/ui-core/components/MenuButton"
-import BlueContainer from "@tsukiweb-common/ui-core/components/BlueContainer"
+import MessageContainer from "@tsukiweb-common/ui-core/components/MessageContainer"
 import Flowchart from "components/flowchart/Flowchart"
+import Button from "@tsukiweb-common/ui-core/components/Button"
 
 const FlowchartScreen = () => {
 	useScreenAutoNavigate(SCREEN.SCENES)
@@ -28,12 +28,15 @@ const FlowchartScreen = () => {
 			</div>
 
 			<FixedFooter>
-				<MenuButton to={SCREEN.TITLE}>
+				<Button
+					variant="menu"
+					to={SCREEN.TITLE}
+				>
 					{strings.back}
-				</MenuButton>
-				<BlueContainer style={{display: 'inline-flex', float: "right"}}>
+				</Button>
+				<MessageContainer style={{display: 'inline-flex', float: "right"}}>
 					Thumbnails are a work in progress
-				</BlueContainer>
+				</MessageContainer>
 			</FixedFooter>
 		</motion.div>
 	)

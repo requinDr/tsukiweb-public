@@ -8,7 +8,6 @@ import { imageSrc } from '../translation/assets'
 import { SCREEN } from '../utils/display'
 import { useLanguageRefresh } from '../components/hooks/useLanguageRefresh'
 import { useScreenAutoNavigate } from '../components/hooks/useScreenAutoNavigate'
-import MenuButton from '@tsukiweb-common/ui-core/components/MenuButton'
 import { Tab } from '@tsukiweb-common/ui-core/components/TabsComponent'
 import PageTabsLayout from '@tsukiweb-common/ui-core/layouts/PageTabsLayout'
 import PageSection from '@tsukiweb-common/ui-core/layouts/PageSection'
@@ -16,6 +15,7 @@ import useQueryParam from '@tsukiweb-common/hooks/useQueryParam'
 import { CharId } from 'types'
 import GalleryImage from 'components/gallery/GalleryImage'
 import GalleryNbVariants from 'components/gallery/GalleryNbVariants'
+import Button from '@tsukiweb-common/ui-core/components/Button'
 
 const container: Variants = {
 	hidden: { opacity: 0 },
@@ -79,9 +79,12 @@ const GalleryScreen = () => {
 				selectedTab={selectedTab}
 				setSelectedTab={setSelectedTab}
 				backButton={
-					<MenuButton to={SCREEN.TITLE} className="back-button">
+					<Button
+						variant="menu"
+						to={SCREEN.TITLE}
+						className="back-button">
 						{strings.back}
-					</MenuButton>
+					</Button>
 				}
 			>
 				<PageSection ref={refSection}>

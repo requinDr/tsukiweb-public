@@ -6,7 +6,6 @@ import { phaseTexts } from "../translation/assets"
 import SaveListItem from "./save/SaveListItem"
 import SaveDetails from "./save/SaveDetails"
 import { MdAddCircleOutline, MdUploadFile } from "react-icons/md"
-import MenuButton from "@tsukiweb-common/ui-core/components/MenuButton"
 import PageSection from "@tsukiweb-common/ui-core/layouts/PageSection"
 import Button from "@tsukiweb-common/ui-core/components/Button"
 import classNames from "classnames"
@@ -130,9 +129,12 @@ const SavesLayer = ({variant, back}: Props) => {
 
 			<SaveDetails id={focusedId} saveState={focusedSave} deleteSave={deleteSave}/>
 			<div className="save-buttons">
-				<MenuButton onClick={back.bind(null, false)} className="back-button">
+				<Button
+					variant="menu"
+					onClick={back.bind(null, false)}
+					className="back-button">
 					{strings.back}
-				</MenuButton>
+				</Button>
 			</div>
 		</main>
 	)

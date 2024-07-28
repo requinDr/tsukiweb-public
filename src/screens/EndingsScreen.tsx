@@ -12,8 +12,8 @@ import { useLanguageRefresh } from '../components/hooks/useLanguageRefresh'
 import { useScreenAutoNavigate } from '../components/hooks/useScreenAutoNavigate'
 import PageSection from '@tsukiweb-common/ui-core/layouts/PageSection'
 import { settings } from 'utils/settings'
-import MenuButton from '@tsukiweb-common/ui-core/components/MenuButton'
 import { noBb } from '@tsukiweb-common/utils/Bbcode'
+import Button from '@tsukiweb-common/ui-core/components/Button'
 
 
 const EndingsScreen = () => {
@@ -49,9 +49,12 @@ const EndingsScreen = () => {
 					</PageSection>
 				</main>
 
-				<MenuButton to={SCREEN.TITLE} className="back-button">
+				<Button
+					variant="menu"
+					to={SCREEN.TITLE}
+					className="back-button">
 					{strings.back}
-				</MenuButton>
+				</Button>
 			</div>
 		</motion.div>
 	)

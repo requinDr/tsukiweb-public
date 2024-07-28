@@ -1,8 +1,8 @@
-import MenuButton from "@tsukiweb-common/ui-core/components/MenuButton"
 import Modal from "@tsukiweb-common/ui-core/components/Modal"
 import { Dispatch, ReactNode } from "react"
 import { strings } from "translation/lang"
 import Ornament from "../../../assets/images/ornament.webp"
+import Button from "@tsukiweb-common/ui-core/components/Button"
 
 type Props = {
 	modal: {show: boolean, content: ReactNode},
@@ -21,10 +21,12 @@ const ConfigModal = ({modal, setModal}: Props) => {
 			<div className="modal-content">
 				{modal.content}
 			</div>
-			<MenuButton onClick={close}
+			<Button
+				variant="menu"
+				onClick={close}
 				className="close-btn">
 				{strings.close}
-			</MenuButton>
+			</Button>
 		</Modal>
 	)
 }
