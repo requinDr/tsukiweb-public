@@ -80,7 +80,7 @@ const ConfigGameTab = () => {
 						step={TEXT_SPEED_STEP_WIDTH}
 						value={conf.textSpeed}
 						onChange={e => {
-							updateValue('textSpeed', parseInt(e.target.value)); console.log(e.target.value, TextSettingsToCharacterDelay(parseInt(e.target.value)))
+							updateValue('textSpeed', TextSettingsToCharacterDelay(parseInt(e.target.value)))
 						}} />
 					<span className="icon"><FaPlus /></span>
 				</div>
