@@ -9,6 +9,7 @@ import useMousePointer from "@tsukiweb-common/hooks/useMousePointer"
 import { observe, useObserved, useObserver } from "@tsukiweb-common/utils/Observer"
 import { DivProps } from "@tsukiweb-common/types"
 import { Bbcode, BBTypeWriter } from "@tsukiweb-common/utils/Bbcode"
+import { TextSettingsToCharacterDelay } from "@tsukiweb-common/constants"
 
 export const icons: Record<"moon"|"page", string> = {
   "moon": moonIcon,
@@ -66,7 +67,7 @@ const TextLayer = ({...props}: Props) => {
 
         {lastLine ?
           <BBTypeWriter key={history.length*100 + lines.length}
-            charDelay={immediate ? 0 : settings.textSpeed}
+            charDelay={immediate ? 0 : TextSettingsToCharacterDelay(settings.textSpeed)}
             text={lastLine}
             hideTag="hide"
             onFinish={()=> { scriptInterface.onFinish?.() }}

@@ -6,7 +6,7 @@ import { getLocale, strings } from "../../translation/lang"
 import { useLanguageRefresh } from "../hooks/useLanguageRefresh"
 import PageSection from "@tsukiweb-common/ui-core/layouts/PageSection"
 import { deepAssign, isFullscreen, toggleFullscreen, addEventListener } from "@tsukiweb-common/utils/utils"
-import { ViewRatio, TEXT_SPEED } from "@tsukiweb-common/constants"
+import { TEXT_SPEED_MAX, TEXT_SPEED_STEP_WIDTH, TextSettingsToCharacterDelay, ViewRatio } from "@tsukiweb-common/constants"
 
 const ConfigGameTab = () => {
 	useLanguageRefresh()
@@ -70,18 +70,21 @@ const ConfigGameTab = () => {
 				updateValue={toggleFullscreen}
 			/>
 
-			<ConfigButtons
-				title={strings.config["text-speed"]}
-				btns={[
-					{ text: strings.config["text-speed-low"], value: TEXT_SPEED.slow },
-					{ text: strings.config["text-speed-med"], value: TEXT_SPEED.normal },
-					{ text: strings.config["text-speed-high"], value: TEXT_SPEED.fast },
-					{ text: strings.config["text-speed-instant"], value: TEXT_SPEED.instant }
-				]}
-				property="textSpeed"
-				conf={conf}
-				updateValue={updateValue}
-			/>
+			<ConfigItem title={strings.config["text-speed"]}>
+				<div className="config-range">
+					<span className="icon"><FaMinus /></span>
+					<input
+						type="range"
+						min={0}
+						max={TEXT_SPEED_MAX}
+						step={TEXT_SPEED_STEP_WIDTH}
+						value={conf.textSpeed}
+						onChange={e => {
+							updateValue('textSpeed', parseInt(e.target.value)); console.log(e.target.value, TextSettingsToCharacterDelay(parseInt(e.target.value)))
+						}} />
+					<span className="icon"><FaPlus /></span>
+				</div>
+			</ConfigItem>
 
 			<ConfigItem title={strings.config["auto-play-delay-text"].replace('$0',msToS(conf.autoClickDelay))}>
 				<div className="config-range">

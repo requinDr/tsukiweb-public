@@ -3,10 +3,10 @@ import { SettingsType } from "../types"
 import { observeChildren, observe } from "@tsukiweb-common/utils/Observer"
 import { StoredJSON } from "@tsukiweb-common/utils/storage"
 import { deepFreeze, deepAssign, jsonDiff, objectsEqual } from "@tsukiweb-common/utils/utils"
-import { TEXT_SPEED, ViewRatio } from "@tsukiweb-common/constants"
+import { ViewRatio } from "@tsukiweb-common/constants"
 
 export const defaultSettings: SettingsType = deepFreeze({
-  textSpeed: TEXT_SPEED.normal,
+  textSpeed: 1000,
   autoClickDelay: 500,
   nextPageDelay: 2500,
   fastForwardDelay: 5,
