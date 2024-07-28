@@ -8,6 +8,7 @@ import Lightbox, { SlideImage } from 'yet-another-react-lightbox'
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 import GalleryNbVariants from "./GalleryNbVariants"
+import { MdLock } from "react-icons/md"
 
 type GalleryImageProps = {
 	image: GalleryImg
@@ -58,7 +59,9 @@ const GalleryImage = ({image, thumb, variants = [], unlockedVariants = [], blurr
 				thumbnail: ({slide}) => {
 					if (slide.src === "") {
 						return (
-							<div className="placeholder" />
+							<div className="placeholder">
+								<MdLock size={24} />
+							</div>
 						)
 					}
 					return (
@@ -70,7 +73,8 @@ const GalleryImage = ({image, thumb, variants = [], unlockedVariants = [], blurr
 							style={{objectFit: "contain", width: "100%", height: "100%"}}
 						/>
 					)
-				}
+				},
+				iconError: () => <MdLock size={24} />,
 			}}
 			carousel={{
 				finite: true,
