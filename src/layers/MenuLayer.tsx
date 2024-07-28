@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react"
-import { MdFastForward, MdFullscreen, MdFullscreenExit, MdOutlineVolumeOff, MdOutlineVolumeUp, MdPlayArrow, MdShare } from "react-icons/md"
-import { gameContext, gameSession, } from "../utils/variables"
+import { MdCopyAll, MdFastForward, MdFullscreen, MdFullscreenExit, MdOutlineVolumeOff, MdOutlineVolumeUp, MdPlayArrow } from "react-icons/md"
+import { gameContext } from "../utils/variables"
 import { settings } from "../utils/settings"
 import { quickLoad, quickSave } from "../utils/savestates"
 import script from "../utils/script"
@@ -14,7 +14,22 @@ import { isFullscreen, toggleFullscreen, addEventListener } from "@tsukiweb-comm
 import classNames from "classnames"
 
 
-const MenuLayer = () => {
+type Props = {
+	show?: Partial<{
+		graphics: boolean
+		history: boolean
+		save: boolean
+		load: boolean
+		config: boolean
+		title: boolean
+
+		sceneName: boolean
+		qSave: boolean
+		qLoad: boolean
+		copyScene: boolean
+	}>
+}
+const MenuLayer = ({show}: Props) => {
 	const menuRef = useRef<HTMLDivElement>(null)
 	const [display] = useObserved(displayMode, 'menu')
 
@@ -74,29 +89,39 @@ const MenuLayer = () => {
 					<div className="top" />
 
 					<div className="layer-btns">
+						{show?.graphics &&
 						<button onClick={graphicMode} className="layer-btn">
 							{strings.menu["graphics"]}
 						</button>
+						}
+						{show?.history &&
 						<button onClick={historyMode} className="layer-btn">
 							{strings.menu["history"]}
 						</button>
-						{gameSession.continueScript && <>
-							<button onClick={saveMode} className="layer-btn">
-								{strings.menu["save"]}
-							</button>
-							<button onClick={loadMode} className="layer-btn">
-								{strings.menu["load"]}
-							</button>
-						</>}
+						}
+						{show?.save &&
+						<button onClick={saveMode} className="layer-btn">
+							{strings.menu["save"]}
+						</button>
+						}
+						{show?.load &&
+						<button onClick={loadMode} className="layer-btn">
+							{strings.menu["load"]}
+						</button>
+						}
+						{show?.config &&
 						<button onClick={configMode} className="layer-btn">
 							{strings.menu["config"]}
 						</button>
+						}
+						{show?.title &&
 						<button onClick={title} className="layer-btn">
 							{strings.menu["title"]}
 						</button>
+						}
 					</div>
 
-					<ActionsButtons />
+					<ActionsButtons show={show} />
 				</menu>
 			</nav>
 
@@ -112,7 +137,15 @@ export default MenuLayer
  * TODO
  * - Go to next scene
  */
-const ActionsButtons = () => {
+type ActionsButtonsProps = {
+	show?: Partial<{
+		sceneName: boolean
+		qSave: boolean
+		qLoad: boolean
+		copyScene: boolean
+	}>
+}
+const ActionsButtons = ({show}: ActionsButtonsProps) => {
 	const [mute] = useObserved(settings.volume, 'master', (vol)=>vol<0)
 	const [fullscreen, setFullscreen] = useState<boolean>(isFullscreen())
 
@@ -143,19 +176,21 @@ const ActionsButtons = () => {
 
 	return (
 		<div className="action-btns">
-			{!gameSession.continueScript && <>
-				<div className="fullsize replaying">
-					Currently reading {gameContext.label}
-				</div>
-			</>}
-			{gameSession.continueScript && <>
-				<button onClick={quickSave} className="quick">
-					{strings.menu["q-save"]}
-				</button>
-				<button onClick={quickLoad} className="quick">
-					{strings.menu["q-load"]}
-				</button>
-			</>}
+			{show?.sceneName &&
+			<div className="fullsize replaying">
+				Currently reading {gameContext.label}
+			</div>
+			}
+			{show?.qSave &&
+			<button onClick={quickSave} className="quick">
+				{strings.menu["q-save"]}
+			</button>
+			}
+			{show?.qLoad &&
+			<button onClick={quickLoad} className="quick">
+				{strings.menu["q-load"]}
+			</button>
+			}
 			<button onClick={toggleVolume} aria-label="mute/unmute">
 				{mute ? <MdOutlineVolumeOff /> : <MdOutlineVolumeUp />}
 			</button>
@@ -168,9 +203,11 @@ const ActionsButtons = () => {
 			<button onClick={fastForwardScene} aria-label="skip scene" title={strings.menu["ffw"]}>
 				<MdFastForward />
 			</button>
+			{show?.copyScene &&
 			<button onClick={copySceneToClipboard} className="fullsize" aria-label="copy scene link">
-				<MdShare style={{marginRight: 8}} /> Share scene link
+				<MdCopyAll style={{marginRight: 8}} /> Copy scene link
 			</button>
+			}
 		</div>
 	)
 }

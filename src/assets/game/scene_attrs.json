@@ -249,7 +249,7 @@
     "s107"  : {"r": "cel", "d": "09b", "fc": {"col": 2, "from": ["s161"]}},
     "s107a" : {"r": "cel", "d": "09b", "fc": {"col": 1, "from": ["s107", "s167"]}, "deadEnd": true},
     "s516"  : {"r": "cel", "d": "09b", "osiete": true},
-    "s200"  : {"r": "cel", "d": "05a", "s": "1" , "fc": {"col": 6, "from": ["s106"]}},
+    "s200"  : {"r": "cel", "d": "05a", "s": "1" , "fc": {"col": 6, "from": ["s106"], "graph": {"bg": "bg/bg_40a", "c": "tachi/his_t01"}}},
     "s219"  : {"r": "cel", "d": "05a", "s": "2a", "fc": {"col": 6, "from": ["s200"]}},
     "s220"  : {"r": "cel", "d": "05a", "s": "2b", "fc": {"col": 7, "from": ["s200"]}},
     "s221"  : {"r": "cel", "d": "05a", "s": "2c", "fc": {"col": 8, "from": ["s200"]}},

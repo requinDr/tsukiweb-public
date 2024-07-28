@@ -224,6 +224,21 @@ const Window = () => {
 	const [hideMenuBtn] = useObserved(displayMode, "graphics")
 	useGamepad({fct: gameLoopGamepad})
 
+	// ref so it doesn't change once leaving a context until component unmount
+	const show = useRef({
+		graphics: true,
+		history: true,
+		save: gameSession.continueScript,
+		load: gameSession.continueScript,
+		config: true,
+		title: true,
+
+		sceneName: !gameSession.continueScript,
+		qSave: gameSession.continueScript,
+		qLoad: gameSession.continueScript,
+		copyScene: true,
+	})
+
 	useEffect(()=> {
 		//TODO wait for screen transition animation to end before starting the script
 		if (gameContext.label == '') {
@@ -275,11 +290,13 @@ const Window = () => {
 
 			<HistoryLayer />
 
+			{(show.current.save || show.current.load) &&
 			<SavesLayer
 				back={() => {
 					displayMode.save = false
 					displayMode.load = false
 				}} />
+			}
 
 			<ConfigLayer back={() => displayMode.config = false} />
 
@@ -290,7 +307,7 @@ const Window = () => {
 					<HiMenu />
 				</button>
 			}
-			<MenuLayer />
+			<MenuLayer show={show.current} />
 		</motion.div>
 	)
 }
