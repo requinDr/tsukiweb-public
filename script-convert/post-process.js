@@ -11,6 +11,155 @@ const colorImages = new Map(Object.entries({
     '"image\\bg\\ima_11b.jpg"': '#9c0120'
 }))
 
+class Context {
+
+    constructor() {
+        /** @type {Map<string, string|null>}*/
+        this.properties = new Map(Object.entries({
+            bg: null, l: null, c: null, r: null,
+            track: null, waveloop: null,
+            monocro: null
+        }));
+    }
+    get bg() { return this.properties.get('bg'); }
+    set bg(val) { this.properties.set('bg', val); }
+    get l() { return this.properties.get('l'); }
+    set l(val) { this.properties.set('l', val); }
+    get c() { return this.properties.get('c'); }
+    set c(val) { this.properties.set('c', val); }
+    get r() { return this.properties.get('r'); }
+    set r(val) { this.properties.set('r', val); }
+
+    get track() { return this.properties.get('track'); }
+    set track(val) { return this.properties.set('track', val); }
+    
+    get waveloop() { return this.properties.get('waveloop'); }
+    set waveloop(val) { return this.properties.set('waveloop', val); }
+
+    get monocro() { return this.properties.get('monocro'); }
+    set monocro(val) { return this.properties.set('monocro', val); }
+
+    set(key, value) {
+        if (!this.properties.has(key))
+            throw new Error(`unknown property key ${key}`)
+        this.properties.set(key, value)
+    }
+    get(key) {
+        if (!this.properties.has(key))
+            throw new Error(`unknown property key ${key}`)
+        return this.properties.get(key)
+    }
+
+    isNull() {
+        for (let value of this.properties.values()) {
+            if (value != null)
+                return false;
+        }
+        return true;
+    }
+    isFull() {
+        for (let value of this.properties.values()) {
+            if (value == null)
+                return false;
+        }
+        return true;
+    }
+
+    equals(context) {
+        for (let [key, value] of this.properties.entries()) {
+            if (value != context.properties.get(key))
+                return false;
+        }
+        return true;
+    }
+    
+    clone() {
+        const ctx = new Context();
+        for (let [key, value] of this.properties.entries()) {
+            ctx.properties.set(key, value)
+        }
+        return ctx;
+    }
+    /**
+     * @param {Context} ctx 
+     */
+    include(ctx) {
+        for (let [key, value] of this.properties.entries()) {
+            if (value == null)
+                this.properties.set(key, ctx.properties.get(key))
+        }
+        return this;
+    }
+    /**
+     * @param {Context} ctx 
+     */
+    exclude(ctx) {
+        for (let [key, value] of ctx.properties.entries()) {
+            if (value != null)
+                this.properties.set(key, null)
+        }
+        return this;
+    }
+
+    fill() {
+        for (let [key, value] of this.properties.entries()) {
+            if (value == null)
+                this.properties.set(key, '')
+        }
+        return this;
+    }
+
+    /**
+     * @param {string} cmd 
+     * @param {string} arg
+     * @returns {boolean} `false` if command contains a delay, `true` otherwise
+     */
+    readCmd(cmd, arg) {
+        switch (cmd) {
+            case 'bg' : {
+                const [ bg, effect ] = arg.split(',');
+                this.bg = bg;
+                this.l = this.c = this.r = '';
+                return effect.includes("nowaitdisp");
+            }
+            case 'ld' : {
+                const [pos, img, effect] = arg.split(',');
+                this.set(pos, img);
+                return effect.includes('nowaitdisp');
+            }
+            case 'cl' : {
+                let [pos, effect] = arg.split(',');
+                if (pos == 'a')
+                    this.l = this.c = this.r = '';
+                else
+                    this.set(pos, ''); 
+                return effect.includes('nowaitdisp');
+            }
+            case 'play' : this.track = arg; return true;
+            case 'playstop' : this.track = ''; return true;
+            case 'waveloop' : this.waveloop = arg; return true;
+            case 'wave' :
+            case 'wavestop' : this.waveloop = ''; return true;
+            case 'monocro' : this.monocro = arg == 'off' ? '' : arg; return true;
+            case 'gosub' :
+                this.bg = this.l = this.c = this.r = '';
+                this.track = '';
+                this.waveloop = '';
+                this.monocro = '';
+                return false;
+            case 'delay' :
+            case 'waittimer':
+            case '!w' : return false;
+        }
+        return true;
+    }
+
+    toJSON() {
+        const nonNullProps = [...this.properties.entries()].filter(([_k, v])=> (v != null))
+        return Object.fromEntries(nonNullProps);
+    }
+}
+
 function getCmdArg(line) {
     if (isTextLine(line))
         return [null, null]
@@ -29,87 +178,6 @@ function getCmdArg(line) {
     return [cmd, arg]
 }
 
-function createNullContext() {
-    return {
-        graphics: {bg: null, l: null, c: null, r: null},
-        track: null,
-        waveloop: null,
-        monocro: null
-    };
-}
-function isContextNull(ctx) {
-    const {graphics: {bg, l, c, r}, track, waveloop, monocro} = ctx
-    return bg == null && l == null && c == null && r == null
-        && track == null && waveloop == null && monocro == null;
-}
-function createNeutralContext() {
-    return { graphics: {bg: '', l: '', c: '', r: ''}, track: '', waveloop: '', monocro: '' };
-}
-function contextEqual(ctx1, ctx2) {
-    const {graphics: {bg1, l1, c1, r1}, track1, waveloop1, monocro1} = ctx1;
-    const {graphics: {bg2, l2, c2, r2}, track2, waveloop2, monocro2} = ctx2;
-    if (bg1 != bg2) return false;
-    if (l1 != l2) return false;
-    if (c1 != c2) return false;
-    if (r1 != r2) return false;
-    if (track1 != track2) return false;
-    if (waveloop1 != waveloop2) return false;
-    if (monocro1 != monocro2) return false;
-    return true
-}
-function contextDiff(ctx1, ctx2) {
-    const {graphics: {bg: bg1, l: l1, c: c1, r: r1}, track: track1, waveloop: waveloop1, monocro: monocro1} = ctx1
-    const {graphics: {bg: bg2, l: l2, c: c2, r: r2}, track: track2, waveloop: waveloop2, monocro: monocro2} = ctx2
-    
-    const bg = (bg1 != bg2) ? bg2 : null
-    const l = (l1 != l2) ? l2 : null
-    const c = (c1 != c2) ? c2 : null
-    const r = (r1 != r2) ? r2 : null
-    const track = (track1 != track2) ? track2 : null
-    const waveloop = (waveloop1 != waveloop2) ? waveloop2 : null
-    const monocro = (monocro1 != monocro2) ? monocro2 : null
-    
-    const result = {}
-    if (bg != null || l != null || c != null || r != null) {
-        result.graphics = { }
-        if (bg != null) result.graphics.bg = bg;
-        if (l != null) result.graphics.l = l;
-        if (c != null) result.graphics.c = c;
-        if (r != null) result.graphics.r = r;
-    }
-    if (track != null) result.track = track
-    if (waveloop != null) result.waveloop = waveloop
-    if (monocro != null) result.monocro = monocro
-    return result
-}
-function copyContext(ctx) {
-    const {graphics: {bg, l, c, r}, track, waveloop, monocro} = ctx
-    return {
-        graphics: { bg, l, c, r },
-        track, waveloop, monocro
-    }
-}
-function contextUnion(ctx1, ctx2) {
-    const {graphics: {bg: bg1, l: l1, c: c1, r: r1}, track: track1, waveloop: waveloop1, monocro: monocro1} = ctx1
-    const {graphics: {bg: bg2, l: l2, c: c2, r: r2}, track: track2, waveloop: waveloop2, monocro: monocro2} = ctx2
-    return {
-        graphics: {
-            bg: bg1 != null ? bg1 : bg2,
-            l: l1 != null ? l1 : l2,
-            c: c1 != null ? c1 : c2,
-            r: r1 != null ? r1 : r2,
-        },
-        track: track1 != null ? track1 : track2,
-        waveloop: waveloop1 != null ? waveloop1 : waveloop2,
-        monocro: monocro1 != null ? monocro1 : monocro2
-    }
-}
-
-function isContextFull(ctx) {
-    const {graphics: {bg, l, c, r}, track, waveloop, monocro} = ctx
-    return bg != null && l != null && c != null && r != null
-        && track != null && waveloop != null && monocro != null;
-}
 
 //#endregion ###################################################################
 //#region                          General fixes
@@ -144,14 +212,17 @@ function replaceMp3Loop(lines) {
             const arg = line.substring(line.indexOf(' ')+1)
             let m
             if (m = arg.match(/m(?<n>\d+)/)) {
-                lines[i] = `play "*${m.groups['n']}`
+                lines[i] = `play "*${m.groups['n']}"`
             } else if (arg.match(/se\d+/)) {
                 lines[i] = `waveloop ${arg}`
             } else if (m = arg.match(/"bgm\\(?<n>\d+).wav"/)) {
-                lines[i] = `play "*${Number.parseInt(m.groups['n'], 10)}`
+                lines[i] = `play "*${Number.parseInt(m.groups['n'], 10)}"`
             } else {
                 throw Error(`Unexpected mp3loop format: ${line}`)
             }
+        }
+        else if (line == 'stop') {
+            lines[i] = "playstop" // could also stop waveloop, but never used to
         }
     }
 }
@@ -252,31 +323,45 @@ function centerOpenning(lines) {
     }
 }
 
-function addContext({graphics = null, track = null, waveloop = null, monocro = null}, _label, lines) {
+function applyContext(context, lines) {
     // lines.unshift(';---added context above---')
-    if (graphics) {
-        if (graphics.bg)
-            lines.unshift(`bg ${graphics.bg},%type_nowaitdisp`)
-        if (graphics.l)
-            lines.unshift(`ld l,${graphics.l},%type_nowaitdisp`)
-        if (graphics.c)
-            lines.unshift(`ld c,${graphics.l},%type_nowaitdisp`)
-        if (graphics.r)
-            lines.unshift(`ld r,${graphics.l},%type_nowaitdisp`)
-    }
-    if (track != null)
-        lines.unshift(track == '' ? "playstop" : `play ${track}`)
-    if (waveloop != null)
-        lines.unshift(waveloop == '' ? 'wavestop' : `waveloop ${waveloop}`)
-    if (monocro != null)
-        lines.unshift(`monocro ${monocro || 'off'}`)
+    if (context.l ) lines.unshift(`ld l,${context.l},%type_nowaitdisp`);
+    if (context.c ) lines.unshift(`ld c,${context.l},%type_nowaitdisp`);
+    if (context.r ) lines.unshift(`ld r,${context.l},%type_nowaitdisp`);
+    if (context.bg) lines.unshift(`bg ${context.bg },%type_nowaitdisp`);
+    if (context.track != null)
+        lines.unshift(context.track == '' ? "playstop" : `play ${context.track}`)
+    if (context.waveloop != null)
+        lines.unshift(context.waveloop == '' ? 'wavestop' : `waveloop ${context.waveloop}`)
+    if (context.monocro != null)
+        lines.unshift(`monocro ${context.monocro || 'off'}`)
 }
 /**
  * @type {Object.<string, function(string, Array<string>)>}
  */
 const specificFixes = {
     'openning': (_label, lines) => {
-        centerOpenning(lines)
+        centerOpenning(lines);
+    },
+    's46' : (_label, lines) => {
+        const i = lines.findIndex((line) => line.startsWith('bg'));
+        lines.splice(i+1, 0, 'waveloop se10');
+    },
+    's228' : (_label, lines) => {
+        const i = lines.findLastIndex((line) => line.startsWith('bg'));
+        lines.splice(i+1, 0, "playstop");
+    },
+    's333' : (_label, lines) => {
+        const i = lines.findLastIndex((line) => line.startsWith("!w"));
+        lines.splice(i+1, 0, "playstop");
+    },
+    's140' : (_label, lines) => {
+        let i = lines.findLastIndex((line) => line.startsWith("cl c"));
+        i += lines.slice(i).findIndex((line) => line == "\\");
+        lines.splice(i+1, 0, "playstop");
+    },
+    's178' : (_label, lines) => {
+        lines.splice(0, 0, 'play "*1"');
     },
 }
 
@@ -285,59 +370,17 @@ const specificFixes = {
 //##############################################################################
 
 function extractContexts(lines) {
-    const ctx = createNullContext();
-    let startContext
+    const ctx = new Context();
+    let startContext = null;
 
-    let firstDelay = false
     for (const line of lines) {
         const [cmd, arg] = getCmdArg(line);
-        let delayHere = false
-        switch(cmd) {
-            case 'bg' : {
-                const [ bg, effect ] = arg.split(',');
-                ctx.graphics = { bg: bg, l: '', c :'', r: '' }
-                if (!effect.includes('nowaitdisp'))
-                    delayHere = true
-                break;
+        if (startContext == null) {
+            if (cmd == null || !ctx.readCmd(cmd, arg)) {
+                startContext = ctx.clone()
             }
-            case 'ld' : {
-                const [pos, img, effect] = arg.split(',');
-                ctx.graphics[pos] = img;
-                if (!effect.includes('nowaitdisp'))
-                    delayHere = true
-                break;
-            }
-            case 'cl' : {
-                let [pos, effect] = arg.split(',');
-                if (pos == 'a')
-                    ctx.graphics = {bg: ctx.graphics.bg, l: '', c: '', r: ''}
-                else
-                    ctx.graphics[pos] = '';
-                if (!effect.includes('nowaitdisp'))
-                    delayHere = true
-                break;
-            }
-            case 'play' : ctx.track = arg; break;
-            case 'playstop' : ctx.track = ''; break;
-            case 'waveloop' : ctx.waveloop = arg; break;
-            case 'wave' :
-            case 'wavestop' : ctx.waveloop = ''; break;
-            case 'monocro' : ctx.monocro = arg == 'off' ? '' : arg; break;
-            case 'gosub' :
-                ctx.graphics = {bg: '', l: '', c: '', r: ''};
-                ctx.track = '';
-                ctx.waveloop = '';
-                ctx.monocro = '';
-                delayHere = true;
-                break;
-            case 'delay' :
-            case 'waittimer':
-            case '!w' :
-            case null : delayHere = true; // case null is text line
-        }
-        if (delayHere && !firstDelay) {
-            firstDelay = true;
-            startContext = copyContext(ctx);
+        } else if (cmd != null) {
+            ctx.readCmd(cmd, arg);
         }
     }
     return {
@@ -348,31 +391,26 @@ function extractContexts(lines) {
 
 function getEndContext(label, tree, end_contexts, start_contexts, report) {
     let end_context = end_contexts.get(label);
-    if (isContextFull(end_context)) {
-        return end_context;
-    }
-    end_context = contextUnion(end_context, getStartContext(label, tree, end_contexts, start_contexts, report))
-    end_contexts.set(label, end_context)
-    return end_context
+    if (!end_context.isFull())
+        end_context.include(getStartContext(label, tree, end_contexts, start_contexts, report))
+    return end_context;
 }
 
 function getStartContext(label, tree, end_contexts, start_contexts, report) {
     let start_context = start_contexts.get(label)
-    if (isContextFull(start_context)) {
+    if (start_context.isFull()) {
         return start_context;
     }
     const parent_scenes = tree.get(label)?.parent_nodes.map(node => node.scene) ?? []
     if (parent_scenes.length == 0) {
-        start_context = contextUnion(start_context, createNeutralContext());
+        start_context = start_context.clone().fill();
     } else {
-        const parent_contexts = parent_scenes.map(scene =>
-            contextUnion(start_context,
-                         getEndContext(scene, tree, end_contexts, start_contexts, report)
-            )
-        )
+        const parent_contexts = parent_scenes.map(scene => start_context.clone().include(
+            getEndContext(scene, tree, end_contexts, start_contexts, report)
+        ))
         let context = parent_contexts[0]
         for (let ctx of parent_contexts.slice(1)) {
-            if (!contextEqual(ctx, context)) {
+            if (!ctx.equals(context)) {
                 report.conflicts.scenes[label] = [...parent_contexts]
                 break
             }
@@ -380,10 +418,8 @@ function getStartContext(label, tree, end_contexts, start_contexts, report) {
         start_context = context
     }
     let end_context = end_contexts.get(label);
-    if (!isContextFull(end_context)) {
-        end_context = contextUnion(end_context, start_context);
-        end_contexts.set(label, end_context);
-    }
+    if (!end_context.isFull())
+        end_context.include(start_context);
     return start_context;
 }
 
@@ -423,7 +459,7 @@ function postProcess(scenes, report) {
     const tree = getFlowchart(scenes, {'openning': {before: ['f20']}, 'eclipse': {}})
 
     report.conflicts = {
-        info: "Conflicts when deducting start contexts",
+        info: "Conflicts when deducing start contexts",
         scenes: {}
     }
     report.appliedContexts = {
@@ -432,11 +468,11 @@ function postProcess(scenes, report) {
     }
     for (const label of tree.keys()) {
         const startContext = startContexts.get(label);
-        let appliedContext = getStartContext(label, tree, endContexts, startContexts, report);
-        appliedContext = contextDiff(startContext, appliedContext);
-        if (Object.getOwnPropertyNames(appliedContext).length > 0) {
-            addContext(appliedContext, label, scenes.get(label).lines);
-            report.appliedContexts.scenes[label] = appliedContext;
+        if (!startContext.isFull()) {
+            const diff = getStartContext(label, tree, endContexts, startContexts, report).clone();
+            diff.exclude(startContext);
+            applyContext(diff, scenes.get(label).lines)
+            report.appliedContexts.scenes[label] = diff.toJSON();
         }
     }
 }

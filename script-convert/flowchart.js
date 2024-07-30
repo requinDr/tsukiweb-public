@@ -1,7 +1,6 @@
 import { LOGIC_FILE } from "./script-convert.js"
 
-const gotoRegexp = /\b.*\s+\*(?<label>\w+\b)/
-
+const gotoRegexp = /^[\s\w].*\s\*(?<label>\w+\b)/
 class TreeNode {
 
     /**

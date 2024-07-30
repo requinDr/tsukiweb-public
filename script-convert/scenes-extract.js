@@ -2,7 +2,7 @@
 import { LOGIC_FILE } from "./script-convert.js";
 
 /**
- * @type {Array<[string | RegExp, (label: string, match: RegExpMatchArray)=>[string, string]]}
+ * @type {Array<[string | RegExp, (label: string, match: RegExpMatchArray)=>[string, string]]>}
  */
 const sceneLabels = [
     ["eclipse", (label)=> [label, label, false]],
