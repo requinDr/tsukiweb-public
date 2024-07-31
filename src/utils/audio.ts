@@ -4,6 +4,7 @@ import { gameContext } from "./variables"
 import { settings } from "./settings"
 import { observe } from "@tsukiweb-common/utils/Observer"
 import { AudioChannel, BasicAudioManager } from "@tsukiweb-common/utils/AudioManager"
+import { isLanguageLoaded, waitLanguageLoad } from "translation/lang"
 
 function calcGain(value: number) {
   if (value <= 0)
@@ -90,10 +91,16 @@ observe(displayMode, 'screen', (screen)=> {
   } else {
     if (gameAudio.playing)
       gameAudio.suspend()
-    if (!sysAudio.track.playing)
+    if (!sysAudio.track.playing && isLanguageLoaded())
       sysAudio.track.play(settings.titleMusic, {loop: true})
   }
 })
+
+waitLanguageLoad().then(()=> {
+  if (displayMode.screen != SCREEN.WINDOW)
+    sysAudio.track.play(settings.titleMusic, {loop: true});
+});
+
 //___________________________________commands___________________________________
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
