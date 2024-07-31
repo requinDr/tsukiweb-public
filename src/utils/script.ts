@@ -2,11 +2,11 @@ import { commands as choiceCommands } from "./choices"
 import { commands as graphicCommands } from "./graphics"
 import { commands as textCommands } from "./text"
 import { LabelName, SceneName } from "../types"
-import { commands as audioCommands } from "./AudioManager"
+import { commands as audioCommands } from "./audio"
 import history from "./history"
 import { SCENE_ATTRS } from "./constants"
 import { commands as timerCommands } from "./timer"
-import { checkIfCondition, creditsScript, extractInstructions, fetchFBlock, fetchScene, getSceneTitle, isScene, isTextLine } from "./scriptUtils"
+import { checkIfCondition, creditsScript, extractInstructions, fetchFBlock, fetchScene, isScene, isTextLine } from "./scriptUtils"
 import { commands as variableCommands, gameContext, gameSession } from "./variables"
 import { settings } from "./settings"
 import { toast } from "react-toastify"
@@ -23,7 +23,7 @@ type CommandProcessFunction =
     ((arg: string, cmd: string, onFinish: VoidFunction)=>CommandHandler|Instruction[]|void)
 type CommandMap = Map<string, CommandProcessFunction|null>
 
-type SkipCallback = (scene: SceneName|undefined, sceneTitle: string|undefined, confirm:(skip: boolean)=>void)=>void
+type SkipCallback = (scene: SceneName, confirm:(skip: boolean)=>void)=>void
 let skipCallback: SkipCallback = ()=> { throw Error(`script.onSkipPrompt not specified`) }
 let skipCancelCallback: VoidFunction = ()=> { throw Error(`script.onSkipCancel not specified`) }
 
@@ -428,7 +428,7 @@ function onSceneStart() {
         next: ()=>{},
         cancel: skipCancelCallback
       }
-      skipCallback(label, getSceneTitle(label), async skip=> {
+      skipCallback(label, async skip=> {
         if (skip) {
           history.onPageBreak("skip", label)
           onSceneEnd(label)

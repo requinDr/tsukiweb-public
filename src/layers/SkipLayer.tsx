@@ -9,6 +9,7 @@ import GraphicsGroup from "components/molecules/GraphicsGroup"
 import sceneAttrs from '../assets/game/scene_attrs.json'
 import { SceneName } from "types"
 import Button from "@tsukiweb-common/ui-core/components/Button"
+import { getSceneTitle } from "utils/scriptUtils"
 
 const SkipLayer = () => {
 	const [display, setDisplay] = useState<boolean>(false)
@@ -17,12 +18,11 @@ const SkipLayer = () => {
 	const skipConfirm = useRef<(skip:boolean)=>void>()
 
 	useEffect(()=> {
-		script.onSkipPrompt = (scene: SceneName|undefined, title: string|undefined,
-													 confirm: (skip: boolean)=>void)=> {
+		script.onSkipPrompt = (scene: SceneName, confirm: (skip: boolean)=>void)=> {
 			displayMode.skip = true
 			skipConfirm.current = confirm
 			setScene(scene)
-			setSceneTitle(title)
+			setSceneTitle(getSceneTitle(scene))
 		}
 		script.onSkipCancel = ()=> {
 			displayMode.skip = false

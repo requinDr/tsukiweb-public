@@ -120,6 +120,10 @@ export const strings = stringsStorage.get() || { ...defaultStrings, id: "" } as 
 //_______________________________public functions_______________________________
 //------------------------------------------------------------------------------
 
+export function isLanguageLoaded() {
+  return langSelection.ready;
+}
+
 export async function waitLanguageLoad() {
   if (langSelection.ready)
     return
