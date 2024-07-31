@@ -166,9 +166,11 @@ export function getSceneTitle(label: SceneName): string|undefined {
 
 // (%var|n)(op)(%var|n)
 const opRegexp = /(?<lhs>(%\w+|\d+))(?<op>[=!><]+)(?<rhs>(%\w+|\d+))/
+const sepRegexp = /(?<=&&|\|\|)|(?=&&|\|\|)/
 export function checkIfCondition(condition: string) {
   let value = true
-  for (const [i, token] of condition.split(' ').entries()) {
+  for (let [i, token] of condition.split(sepRegexp).entries()) {
+    token = token.trim();
     if (i % 2 == 0) {
       const match = opRegexp.exec(token)
       if (!match) throw Error(
