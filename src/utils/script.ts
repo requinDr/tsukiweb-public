@@ -23,7 +23,7 @@ type CommandProcessFunction =
     ((arg: string, cmd: string, onFinish: VoidFunction)=>CommandHandler|Instruction[]|void)
 type CommandMap = Map<string, CommandProcessFunction|null>
 
-type SkipCallback = (sceneTitle: string|undefined, confirm:(skip: boolean)=>void)=>void
+type SkipCallback = (scene: SceneName|undefined, sceneTitle: string|undefined, confirm:(skip: boolean)=>void)=>void
 let skipCallback: SkipCallback = ()=> { throw Error(`script.onSkipPrompt not specified`) }
 let skipCancelCallback: VoidFunction = ()=> { throw Error(`script.onSkipCancel not specified`) }
 
@@ -428,7 +428,7 @@ function onSceneStart() {
         next: ()=>{},
         cancel: skipCancelCallback
       }
-      skipCallback(getSceneTitle(label), async skip=> {
+      skipCallback(label, getSceneTitle(label), async skip=> {
         if (skip) {
           history.onPageBreak("skip", label)
           onSceneEnd(label)
