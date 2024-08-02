@@ -37,9 +37,12 @@ export class FcScene extends FcNode {
 					x={-SCENE_WIDTH/2} y={-SCENE_HEIGHT/2}
 					width={SCENE_WIDTH} height={SCENE_HEIGHT}
 				>
-					<div style={{position: "fixed", width: "100%", height: "100%"}}>
-						<GraphicsGroup images={this.graph} resolution="thumb" lazy={true} />
-					</div>
+					<GraphicsGroup
+						images={this.graph}
+						resolution="thumb"
+						lazy={true}
+						style={{width: "100%", height: "100%", position: "fixed"}} // position: fixed for safari
+					/>
 				</foreignObject>
 				<use href="#fc-scene-outline"/>
 			</>
@@ -52,7 +55,7 @@ export class FcScene extends FcNode {
 				e.stopPropagation()
 		}
 
-		const blur = completed && settings.blurThumbnails && this.graph?.bg && shouldBlur(imageNameFromPath(this.graph?.bg))
+		const blur = completed && this.graph?.bg && shouldBlur(imageNameFromPath(this.graph?.bg))
 
 		return (
 			<Fragment key={this.id}>

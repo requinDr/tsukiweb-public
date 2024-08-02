@@ -33,7 +33,7 @@
 			}
 
 			&.blur {
-				filter: blur(.5em);
+				filter: blur(3px);
 
 				&:hover, &:focus-visible {
 					filter: blur(0);
@@ -42,11 +42,10 @@
 
 			&.completed {
 				transition: scale 0.2s ease-in-out, filter 0.2s ease-in-out;
+				cursor: pointer;
 
 				&:hover, &:focus-visible, &:focus {
 					scale: 1.1;
-
-					cursor: pointer;
 				}
 			}
 		}
