@@ -227,34 +227,6 @@ function replaceMp3Loop(lines) {
     }
 }
 
-
-/**
- * @param {Array<string>} lines 
- */
-function pipesToEllipsis(lines) {
-    let index, endIndex
-    for (let [i, line] of lines.entries()) {
-        if (!isTextLine(line))
-            line = line.replaceAll('|', '…')
-        else {
-            index = line.indexOf('`')
-            while (index >= 0) {
-                endIndex = line.indexOf('`', index+1)
-                if (endIndex == -1)
-                    endIndex = line.length
-                if (line.includes('|')) {
-                    line = line.substring(0,index+1)
-                        + line.substring(index+1,endIndex).replaceAll('|', '…')
-                        + line.substring(endIndex)
-                }
-                index = line.indexOf('`', endIndex+1)
-            }
-        }
-        lines[i] = line
-    }
-}
-
-
 // split texts with '\' in the middle, split instructions with ':'
 const colonRegexp = /^\s?\w([^"`:]*"[^"`]*")*[^"`:]*:/
 /**
