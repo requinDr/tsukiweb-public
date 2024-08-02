@@ -204,3 +204,7 @@ export function imagePath(imgName: string): string {
   }
   return `${img.path}/${img.img}`
 }
+
+export function imageNameFromPath(path: string): string {
+  return path.split("/").pop() ?? ""
+}
