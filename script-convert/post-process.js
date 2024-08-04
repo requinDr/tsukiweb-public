@@ -183,86 +183,160 @@ function getCmdArg(line) {
 //#region                          General fixes
 //##############################################################################
 
-/**
- * @param {Array<string>} lines
- */
-function filterEmptyLines(lines) {
-	const result = lines.filter(line => line.length > 0 && !line.startsWith(';'))
-	lines.splice(0, lines.length, ...result)
+function processTextLine(line) {
+	if (!line.startsWith('`'))
+		line = '`' + line;
+	const result = []
+	do {
+		let index = line.search(/\\(?!$)/); // '\' before end of line
+		if (index == -1) {
+			result.push(line);
+			break;
+		} else {
+			result.push(line.substring(0, index+1));
+			line = line.substring(index+1);
+			if (!line.startsWith(' '))
+				line = ' '+line
+			line = '`'+line;
+		}
+	} while (line.length > 0);
+	return result;
 }
 
-/**
- * @param {Array<string>} lines
- */
-function replaceColorImages(lines) {
-	for (let [i, line] of lines.entries()) {
-		for (let [file, color] of colorImages.entries()) {
-			if (line.includes(file)) {
-				lines[i] = line.replace(file, color)
-				break
-			}
+function replaceColorImages(str) {
+	for (let [file, color] of colorImages.entries()) {
+		if (str.includes(file)) {
+			return str.replace(file, color)
 		}
 	}
+	return str;
 }
 
 // transform mp3loop m9 into play "*9"
-function replaceMp3Loop(lines) {
-	for (let [i, line] of lines.entries()) {
-		if (line.startsWith('mp3loop')) {
-			const arg = line.substring(line.indexOf(' ')+1)
-			let m
-			if (m = arg.match(/m(?<n>\d+)/)) {
-				lines[i] = `play "*${m.groups['n']}"`
-			} else if (arg.match(/se\d+/)) {
-				lines[i] = `waveloop ${arg}`
-			} else if (m = arg.match(/"bgm\\(?<n>\d+).wav"/)) {
-				lines[i] = `play "*${Number.parseInt(m.groups['n'], 10)}"`
-			} else {
-				throw Error(`Unexpected mp3loop format: ${line}`)
-			}
-		}
-		else if (line == 'stop') {
-			lines[i] = "playstop" // could also stop waveloop, but never used to
-		}
+function processMp3Loop(i, arg) {
+	let m;
+	if (m = arg.match(/m(?<n>\d+)/))
+		return processLine(i, `play "*${m.groups['n']}"`);
+	else if (arg.match(/se\d+/))
+		return processLine(i, `waveloop ${arg}`);
+	else if (m = arg.match(/"bgm\\(?<n>\d+).wav"/))
+		return processLine(i, `play "*${Number.parseInt(m.groups['n'], 10)}"`);
+	else
+		throw Error(`Unexpected mp3loop argument: ${arg}`);
+	
+}
+
+
+function processIf(i, arg) {
+	let index = arg.search(/ [a-z]/);
+	if (index == -1)
+	  throw Error(`no separation between condition and command: "if ${arg}"`);
+	const condition = arg.substring(0, index);
+	const instructions = arg.substring(index+1)
+			.split(':')
+			.map(instr=> processLine(i, instr))
+			.join(':');
+	return `if ${condition} ${instructions}`;
+}
+
+function processLine(i, line) {
+	if (isTextLine(line))
+		return processTextLine(line);
+	if (line.length == 0 || line.startsWith(';'))
+		return null;
+	if (line.startsWith('*'))
+		return line;
+	if (line.startsWith('#'))
+		line = `textcolor ${line}`;
+	const [cmd, arg] = getCmdArg(line);
+	//TODO split instructions with ':', except inside 'if'
+	/*
+	const colonRegexp = /^\s?\w([^"`:]*"[^"`]*")*[^"`:]*:/
+	if (match = line.match(colonRegexp)) {
+		const index = match[0].length-1;
+		result.push(line.substring(0, index).trimEnd());
+		line = line.substring(index+1).trimStart();
+	} 
+	*/
+	switch(cmd) {
+		// text
+		case '\\' 	: return line;
+		case '@' 	: return line;
+		case 'br' 	: return line;
+		case 'textcolor' : return line;
+
+		// audio
+		case 'mp3loop' 	: return processMp3Loop(i, arg);
+		case 'stop'		: return "playstop";
+		case 'play' 	: return line;
+		case 'playstop' : return line;
+		case 'wave' 	: return line;
+		case 'waveloop' : return line;
+		case 'wavestop' : return line;
+
+		// graphics
+		case 'ld' : return line;
+		case 'cl' : return line;
+		case 'bg' : return replaceColorImages(line);
+		case 'monocro'	: return line;
+		case 'quakex'	: return line;
+		case 'quakey'	: return line;
+
+		// timer
+		case 'resettimer': return line; // keep for now, check in +Disc and KT if necessary
+		case 'waittimer' : return line;
+		case '!w' : return line;
+
+		// variables
+		case 'mov' : return replaceColorImages(line);
+		case 'dec'	 : return line;
+
+		// script jumps
+		case 'gosub' : return line;
+		case 'goto'  : return line;
+		case 'if' 	: return processIf(i, arg);
+		case 'skip' : return `skipTo(${i+Number.parseInt(arg)})`; // replaced in second loop
+
+		// ignored
+		case 'return'		: return null;
+		case '+' 			: return null;
+		case 'setwindow'	: return null;
+		case 'windoweffect' : return null;
+		case 'setcursor'	: return null;
+		case 'autoclick'	: return null;
+		default :
+			throw Error(`Unknown command: ${line}`)
 	}
 }
 
-// split texts with '\' in the middle, split instructions with ':'
-const colonRegexp = /^\s?\w([^"`:]*"[^"`]*")*[^"`:]*:/
-/**
- * @param {Array<string>} lines 
- */
-function splitInstructions(lines) {
-	const result = [];
-	let match
-	for (let line of lines) {
-		if (line.length == 0)
-			result.push(line)
+const skipToRegexp = /skipTo\((?<p>\d+)\)/
 
-		while (line.length > 0) {
-			if (isTextLine(line)) {
-				let index = line.search(/\\(?!$)/); // '\' before end of line
-				if (index == -1) {
-					result.push(line);
-					break;
-				} else {
-					result.push(line.substring(0, index+1));
-					line = line.substring(index+1);
-					if (!line.startsWith(' '))
-						line = ' '+line
-					line = '`'+line;
-				}
-			} else if (match = line.match(colonRegexp)) {
-				const index = match[0].length-1;
-				result.push(line.substring(0, index).trimEnd());
-				line = line.substring(index+1).trimStart();
-			} else {
-				result.push(line)
-				break
-			}
+function sanitizeSceneLines(lines) {
+	const result = []
+	const newIndices = new Array(lines.length);
+	for (let i = 0; i < lines.length; i++) {
+		newIndices[i] = result.length;
+		const processed = processLine(i, lines[i])
+		if (processed == null)
+			continue;
+		if (processed.constructor == String)
+			result.push(processed)
+		else
+			result.push(...processed);
+	}
+	// second loop to update skip delta
+	for (let i = 0; i < result.length; i++) {
+		const line = result[i];
+		let m = skipToRegexp.exec(line)
+		if (m) {
+			let target = Number.parseInt(m.groups["p"]);
+			target = newIndices[target];
+			result[i] = line.substring(0, m.index) + 
+				   `skip ${target - i}` +
+				   line.substring(m.index + m[0].length)
 		}
 	}
-	lines.splice(0, lines.length, ...result)
+	lines.splice(0, lines.length, ...result);
 }
 
 //#endregion ###################################################################
@@ -318,6 +392,10 @@ const specificFixes = {
 	's46' : (_label, lines) => {
 		const i = lines.findIndex((line) => line.startsWith('bg'));
 		lines.splice(i+1, 0, 'waveloop se10');
+	},
+	's121' : (_label, lines) => {
+		const i = lines.indexOf('if %flgE>=1 skip 5')
+		lines[i] = 'if %flgE>=1 skip 6'; // otherwise first skip lands on second one
 	},
 	's228' : (_label, lines) => {
 		const i = lines.findLastIndex((line) => line.startsWith('bg'));
@@ -413,11 +491,9 @@ function postProcess(scenes, report) {
 	const endContexts = new Map()
 
 	for (const [label, {file, lines}] of scenes.entries()) {
-		filterEmptyLines(lines)
-		splitInstructions(lines)
-		replaceColorImages(lines)
-		replaceMp3Loop(lines)
-
+		if (file != LOGIC_FILE) {
+			sanitizeSceneLines(lines)
+		}
 		if (specificFixes.hasOwnProperty(label)) {
 			specificFixes[label](label, lines)
 		}

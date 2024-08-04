@@ -67,9 +67,6 @@ function extractScript(scriptLines) {
 	}
 
 	for (let line of scriptLines) {
-		line = line.trimEnd()
-		if (line.length == 0)
-			continue;
 		if (line.startsWith('*')) {
 			onLabel(line.substring(1))
 			if (keepLabel)
