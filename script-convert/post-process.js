@@ -2,7 +2,7 @@
 import { getFlowchart, TreeNode } from "./flowchart.js"
 import { LOGIC_FILE } from "./script-convert.js"
 
-const TEXT_LINE_REGEXP = /^[`\-―─\[「『\s]/
+const TEXT_LINE_REGEXP = /^[^a-z;*!#@~\\]/
 const isTextLine = TEXT_LINE_REGEXP.test.bind(TEXT_LINE_REGEXP)
 
 const colorImages = new Map(Object.entries({
@@ -149,7 +149,8 @@ class Context {
 				return false;
 			case 'delay' :
 			case 'waittimer':
-			case '!w' : return false;
+			case '!w' :
+			case '!d' : return false;
 		}
 		return true;
 	}
@@ -163,11 +164,14 @@ class Context {
 function getCmdArg(line) {
 	if (isTextLine(line))
 		return [null, null]
-	let index = line.indexOf(' ');
+	let indexSep = line.indexOf(' ');
+	let indexTab = line.indexOf('\t');
+	if (indexSep == -1 || (indexTab >= 0 && indexTab < indexSep))
+		indexSep = indexTab;
 	let cmd, arg;
-	if (index >= 0) {
-		cmd = line.substring(0, index);
-		arg = line.substring(index+1);
+	if (indexSep >= 0) {
+		cmd = line.substring(0, indexSep);
+		arg = line.substring(indexSep+1);
 	} else if (line.startsWith('!')) {
 		cmd = line.substring(0, 2);
 		arg = line.substring(2)
@@ -257,6 +261,7 @@ function processLine(i, line, lines = null) {
 	while (line.endsWith(',') && lines) {
 		line = line + lines.splice(i+1, 1)
 	}
+	line = line.trim();
 	const [cmd, arg] = getCmdArg(line);
 	//TODO split instructions with ':', except inside 'if'
 	/*
@@ -295,6 +300,7 @@ function processLine(i, line, lines = null) {
 		case 'resettimer': return line; // keep for now, check in +Disc and KT if necessary
 		case 'waittimer' : return line;
 		case '!w' : return line;
+		case '!d' : return line;
 
 		// variables
 		case 'mov'	: return replaceColorImages(line);
@@ -319,7 +325,7 @@ function processLine(i, line, lines = null) {
 		case 'setcursor'	: return null;
 		case 'autoclick'	: return null;
 		default :
-			throw Error(`Unknown command: ${line}`)
+			throw Error(`Unknown command line ${i}: ${line}`)
 	}
 }
 
