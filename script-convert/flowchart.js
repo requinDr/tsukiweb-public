@@ -1,6 +1,6 @@
 import { LOGIC_FILE } from "./script-convert.js"
 
-const gotoRegexp = /^[\s\w].*\s\*(?<label>\w+\b)/
+const gotoRegexp = /(?<=`,|goto|gosub)\s+\*(?<label>\w+\b)/g
 class TreeNode {
 
     /**
@@ -94,8 +94,8 @@ function getFlowchart(script, noLogicScenes = {}) {
         } else {
             const node = TreeNode.get(nodes, name)
             for (let line of lines) {
-                const match = line.match(gotoRegexp);
-                if (match) {
+                let match;
+                while ((match = gotoRegexp.exec(line)) !== null) {
                     const label = match.groups['label'];
                     const target = script.get(label);
                     if (!target)

@@ -223,7 +223,6 @@ function processMp3Loop(i, arg) {
 		return processLine(i, `play "*${Number.parseInt(m.groups['n'], 10)}"`);
 	else
 		throw Error(`Unexpected mp3loop argument: ${arg}`);
-	
 }
 
 
@@ -238,8 +237,14 @@ function processIf(i, arg) {
 			.join(':');
 	return `if ${condition} ${instructions}`;
 }
+function processSelect(line) {
+	if (!line.includes('`'))
+		return line.replace(/"/g, '`')
+	else
+		return line;
+}
 
-function processLine(i, line) {
+function processLine(i, line, lines = null) {
 	if (isTextLine(line))
 		return processTextLine(line);
 	if (line.length == 0 || line.startsWith(';'))
@@ -248,6 +253,10 @@ function processLine(i, line) {
 		return line;
 	if (line.startsWith('#'))
 		line = `textcolor ${line}`;
+
+	while (line.endsWith(',') && lines) {
+		line = line + lines.splice(i+1, 1)
+	}
 	const [cmd, arg] = getCmdArg(line);
 	//TODO split instructions with ':', except inside 'if'
 	/*
@@ -288,16 +297,21 @@ function processLine(i, line) {
 		case '!w' : return line;
 
 		// variables
-		case 'mov' : return replaceColorImages(line);
-		case 'dec'	 : return line;
+		case 'mov'	: return replaceColorImages(line);
+		case 'dec'	: return line;
+		case 'inc'	: return line;
+		case 'add'	: return line;
+		case 'sub'	: return line;
 
 		// script jumps
-		case 'gosub' : return line;
-		case 'goto'  : return line;
-		case 'if' 	: return processIf(i, arg);
-		case 'skip' : return `skipTo(${i+Number.parseInt(arg)})`; // replaced in second loop
-
+		case 'gosub' 	: return line;
+		case 'goto'  	: return line;
+		case 'if' 		: return processIf(i, arg);
+		case 'skip'		: return `skipTo(${i+Number.parseInt(arg)})`; // replaced in second loop
+		case 'select' 	: return processSelect(line);
 		// ignored
+		case 'selgosub'		: return null;
+		case '!s'			: return null;
 		case 'return'		: return null;
 		case '+' 			: return null;
 		case 'setwindow'	: return null;
@@ -311,12 +325,12 @@ function processLine(i, line) {
 
 const skipToRegexp = /skipTo\((?<p>\d+)\)/
 
-function sanitizeSceneLines(lines) {
+function sanitizeLines(lines) {
 	const result = []
 	const newIndices = new Array(lines.length);
 	for (let i = 0; i < lines.length; i++) {
 		newIndices[i] = result.length;
-		const processed = processLine(i, lines[i])
+		const processed = processLine(i, lines[i], lines)
 		if (processed == null)
 			continue;
 		if (processed.constructor == String)
@@ -491,9 +505,7 @@ function postProcess(scenes, report) {
 	const endContexts = new Map()
 
 	for (const [label, {file, lines}] of scenes.entries()) {
-		if (file != LOGIC_FILE) {
-			sanitizeSceneLines(lines)
-		}
+		sanitizeLines(lines)
 		if (specificFixes.hasOwnProperty(label)) {
 			specificFixes[label](label, lines)
 		}
