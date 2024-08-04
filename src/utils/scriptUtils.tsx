@@ -115,15 +115,14 @@ export async function fetchFBlock(label: string): Promise<string[]> {
       sceneLine--;
     }
   }
-  // concatenate choices
-  let choiceLine = lines.findIndex(line => line.startsWith('select'));
-  if (choiceLine >= 0) {
-    const choices = lines.slice(choiceLine).map(line => line.trim()).join(' ');
-    lines.splice(choiceLine);
-    lines.push(choices);
-    let osieteMatch = osieteRE.exec(choices)
+  
+  let choiceIdx = lines.findIndex(line => line.startsWith('select'));
+  if (choiceIdx >= 0) {
+    let choiceLine = lines[choiceIdx];
+    let osieteMatch = osieteRE.exec(choiceLine)
     if (osieteMatch && osieteMatch.groups?.["label"])
-      lines.splice(choiceLine, 1, `osiete ${osieteMatch.groups.label}`)
+      choiceLine = `osiete ${osieteMatch.groups.label}`;
+    lines.splice(choiceIdx, lines.length - choiceIdx, choiceLine)
   }
   //remove remaining text lines
   return lines.filter(l=>!isTextLine(l));
@@ -234,38 +233,26 @@ function splitText(text: string) {
   return instructions
 }
 
-const textLineRegexp = /^[`\-―─—\[「『\s]/
-export const isTextLine = textLineRegexp.test.bind(textLineRegexp)
+export function isTextLine(line: string) {
+  return line.startsWith('`');
+}
 
 export function extractInstructions(line: string) {
   const instructions = new Array<{cmd:string,arg:string}>()
-  line = line.trimEnd()
-  const endPageBreak = line.endsWith('\\') && line.length > 1
-
-  if (endPageBreak) // '\\' will be added as an individual command at the end
-    line = line.substring(0, line.length-1)
   
   if (isTextLine(line)) {
-    if (line.startsWith('`')) {
-      line = line.substring(1)
-      if (!endPageBreak)
-          line += '\n'
-    } else if (!endPageBreak)
-      line += '@\n'
+    line = line.substring(1)
+    const endPageBreak = line.endsWith('\\')
+    if (endPageBreak)
+      line = line.substring(0, line.length-1)
+    else
+      line += '\n'
     instructions.push(...splitText(line))
+    if (endPageBreak)
+      instructions.push({cmd:'\\',arg:''})
   } else if (line.startsWith('!')) {
     instructions.push(...splitText(line)) // '!w' are handled as inline commands
-  } else if (line.startsWith('#')) {
-    instructions.push({ cmd: 'textcolor', arg: line })
   } else {
-    //remove comments (text after ';' outside "")
-    let commentIdx = -1
-    do {
-      commentIdx = line.indexOf(';', commentIdx+1)
-    } while (commentIdx >= 0 && subTextCount(line.substring(0, commentIdx), '"') % 2 == 1)
-    if (commentIdx >= 0)
-      line = line.substring(0, commentIdx)
-
     let index = line.search(/\s|$/)
     instructions.push({
       cmd: line.substring(0,index),
@@ -273,8 +260,6 @@ export function extractInstructions(line: string) {
     })
   }
 
-  if (endPageBreak)
-    instructions.push({cmd:'\\',arg:''})
 
   return instructions
 }

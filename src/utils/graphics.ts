@@ -30,13 +30,7 @@ export function extractImage(image: string) {
 				settings.eventImages.push(image)
 		}
 
-		if (dir == "bg") {
-			switch (name) {
-				case "ima_10"  : image = "#000000"; break
-				case "ima_11"  : image = "#ffffff"; break
-				case "ima_11b" : image = "#9c0120"; break;
-			}
-		} else if (dir == "word") {
+		if (dir == "word") {
 			if (text)
 				throw Error(`Cannot cumulate word image and text (${image}, ${text})`);
 			[image, text] = splitFirst(wordImage(image), '$')

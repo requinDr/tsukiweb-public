@@ -165,9 +165,6 @@ function getCmdArg(line) {
 	if (isTextLine(line))
 		return [null, null]
 	let indexSep = line.indexOf(' ');
-	let indexTab = line.indexOf('\t');
-	if (indexSep == -1 || (indexTab >= 0 && indexTab < indexSep))
-		indexSep = indexTab;
 	let cmd, arg;
 	if (indexSep >= 0) {
 		cmd = line.substring(0, indexSep);
@@ -188,22 +185,23 @@ function getCmdArg(line) {
 //##############################################################################
 
 function processTextLine(line) {
-	if (!line.startsWith('`'))
+	if (!line.startsWith('`')) {
+		if (!(line.endsWith('\\') || line.endsWith('@')))
+			line = line + '@'
 		line = '`' + line;
-	const result = []
-	do {
-		let index = line.search(/\\(?!$)/); // '\' before end of line
-		if (index == -1) {
-			result.push(line);
+	}
+	let i;
+	const result = [];
+	while ((i = line.indexOf('\\')) >= 0) {
+		if (i == line.length-1)
 			break;
-		} else {
-			result.push(line.substring(0, index+1));
-			line = line.substring(index+1);
-			if (!line.startsWith(' '))
-				line = ' '+line
-			line = '`'+line;
-		}
-	} while (line.length > 0);
+		result.push(line.substring(0, i+1));
+		line = line.substring(i+1);
+		if (!line.startsWith(' '))
+			line = ' ' + line;
+		line = '`' + line;
+	}
+	result.push(line);
 	return result;
 }
 
@@ -231,6 +229,7 @@ function processMp3Loop(i, arg) {
 
 
 function processIf(i, arg) {
+	// TODO add whitespaces around '&&', make sure no condition is written with single '&'
 	let index = arg.search(/ [a-z]/);
 	if (index == -1)
 	  throw Error(`no separation between condition and command: "if ${arg}"`);
@@ -241,27 +240,34 @@ function processIf(i, arg) {
 			.join(':');
 	return `if ${condition} ${instructions}`;
 }
+
 function processSelect(line) {
 	if (!line.includes('`'))
-		return line.replace(/"/g, '`')
-	else
-		return line;
+		line = line.replace(/"/g, '`');
+	return line;
 }
 
-function processLine(i, line, lines = null) {
-	if (isTextLine(line))
-		return processTextLine(line);
-	if (line.length == 0 || line.startsWith(';'))
-		return null;
-	if (line.startsWith('*'))
-		return line;
-	if (line.startsWith('#'))
-		line = `textcolor ${line}`;
+function isOpenQuoted(str) {
+	if (str.split('"').length % 2 == 0)
+		return true;
+	if (str.split('`').length % 2 == 0)
+		return true;
+	return false;
+}
 
-	while (line.endsWith(',') && lines) {
-		line = line + lines.splice(i+1, 1)
-	}
-	line = line.trim();
+function removeComment(line) {
+	//remove comments (text after ';' outside "")
+	let i = -1
+	do
+		i = line.indexOf(';', i+1)
+	while (i >= 0 && isOpenQuoted(line.substring(0, i)));
+
+	if (i >= 0)
+		line = line.substring(0, i);
+	return line;
+}
+
+function processCommand(line, i) {
 	const [cmd, arg] = getCmdArg(line);
 	//TODO split instructions with ':', except inside 'if'
 	/*
@@ -315,6 +321,7 @@ function processLine(i, line, lines = null) {
 		case 'if' 		: return processIf(i, arg);
 		case 'skip'		: return `skipTo(${i+Number.parseInt(arg)})`; // replaced in second loop
 		case 'select' 	: return processSelect(line);
+
 		// ignored
 		case 'selgosub'		: return null;
 		case '!s'			: return null;
@@ -327,6 +334,40 @@ function processLine(i, line, lines = null) {
 		default :
 			throw Error(`Unknown command line ${i}: ${line}`)
 	}
+}
+
+function processLine(i, line, lines = null) {
+
+	line = line.trimEnd();
+	if (isTextLine(line))
+		return processTextLine(line);
+	line = removeComment(line);
+	if (line.length == 0)
+		return null;
+	if (line.startsWith('*'))
+		return line;
+	if (line.startsWith('#')) 
+		line = `textcolor ${line}`;
+
+	while (line.endsWith(',') && lines) {
+		line = line + removeComment(lines.splice(i+1, 1))
+	}
+	line = line.replace(/\t+/g, ' ');
+
+	line = line.trimStart();
+	const endPageBreak = line.length > 1 && line.endsWith('\\');
+	if (endPageBreak)
+		line = line.substring(0, line.length-1);
+	let result = processCommand(line, i);
+	if (endPageBreak) {
+		if (result == null)
+			result = '\\';
+		else if (result.constructor == String)
+			result = [result, '\\'];
+		else
+			result.push('\\');
+	}
+	return result;
 }
 
 const skipToRegexp = /skipTo\((?<p>\d+)\)/
