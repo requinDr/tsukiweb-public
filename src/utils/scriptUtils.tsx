@@ -62,66 +62,57 @@ export async function fetchScene(sceneId: string): Promise<string[] | undefined>
   return result;
 }
 
-async function fetchBlock(label: string): Promise<string[]> {
-  await waitLanguageLoad()
-  const script = await fetch(`${scenesDir()}/${LOGIC_FILE}`).then(
-    (response) => response.text());
-
-  let start = script.search(new RegExp(`^\\*${label}\\b`, "m"));
-  if (start == -1)
-    return [];
-  start = script.indexOf('\n', start + 1) + 1;
-  
-  const nextLabelRegexp = new RegExp(`^\\*(?!skip)(?!${label}_\\d)(?<label>\\w+\\b)`, 'm')
-  const nextLabelMatch = nextLabelRegexp.exec(script.substring(start))
-  let text
-  if (nextLabelMatch) {
-    // add `goto *next_label' in case it is missing at the end of the block
-    const nextLabel = nextLabelMatch.groups!['label']
-    text = script.substring(start, start + nextLabelMatch.index) + `goto *${nextLabel}`
-  } else {
-    text = script.substring(start)
-  }
-  
-  return text.split(/\r?\n/).filter(
-    line => line.length > 0 && !line.startsWith('*')
-  );
-}
-
 const ignoredFBlockLines = [
   "gosub *regard_update",
-  "!sd"
+  "if %sceneskip"
 ];
-
 const osieteRE = /[`"][^`"]+[`"],\s*(?<label>\*f5\d{2}),\s*[`"][^`"]+[`"],\s*\*endofplay/
-export async function fetchFBlock(label: string): Promise<string[]> {
-  const afterScene = /^skip\d+a?$/.test(label);
-  if (afterScene) {
-    // extract block label from skip label after 'skip'
-    label = `f${label.substring(4)}`;
+
+async function fetchLogicBlock(label: string) : Promise<string[]> {
+  await waitLanguageLoad()
+  const logicScript = await fetch(`${scenesDir()}/${LOGIC_FILE}`).then(
+    (response) => response.text());
+  let start = logicScript.search(new RegExp(`^\\*${label}\\b`, "m"))
+  if (start == -1)
+    return [];
+  start = logicScript.indexOf('\n', start+1)+1 // move to next line
+  let end = logicScript.indexOf('\n*', start) // position of next label
+  let lines
+  if (end >= 0) {
+    lines = logicScript.substring(start, end).split('\n')
+    const nextLabel = logicScript.substring(end+1, logicScript.indexOf('\n', end+1))
+    // if the script intends on continuing to next block, add goto at the end
+    lines.push(`goto ${nextLabel}`)
+  } else {
+    lines = logicScript.substring(start).split('\n')
   }
-  const lines = (await fetchBlock(label)).filter(
-    line => !ignoredFBlockLines.includes(line));
+  return lines.filter((line)=> {
+    for (let ignored of ignoredFBlockLines) {
+      if (line.startsWith(ignored))
+        return false
+    }
+    return true
+  })
+}
+
+export async function fetchFBlock(label: string): Promise<string[]> {
+  const afterScene = /^skip\d+a?$/.test(label)
+
+  const lines = (await fetchLogicBlock(label))
 
   // find 'gosub *sXXX'
-  let sceneLine = lines.findIndex(line => /^gosub\s+\*s\d/.test(line));
-  if (sceneLine >= 0) {
-    // remove scene skip code
-    const skipEnd = lines.indexOf("return") + 1;
-    if (afterScene)
-      lines.splice(0, skipEnd);
-    else {
-      lines.splice(sceneLine - 1, skipEnd - sceneLine + 1, lines[sceneLine]);
-      sceneLine--;
+  if (!afterScene) {
+    let sceneLine = lines.findIndex(line => /^gosub\s+\*s\d/.test(line))
+    if (sceneLine >= 0) {
+      lines.splice(sceneLine+1)
     }
   }
-  
-  let choiceIdx = lines.findIndex(line => line.startsWith('select'));
+  let choiceIdx = lines.findIndex(line => line.startsWith('select'))
   if (choiceIdx >= 0) {
-    let choiceLine = lines[choiceIdx];
+    let choiceLine = lines[choiceIdx]
     let osieteMatch = osieteRE.exec(choiceLine)
     if (osieteMatch && osieteMatch.groups?.["label"])
-      choiceLine = `osiete ${osieteMatch.groups.label}`;
+      choiceLine = `osiete ${osieteMatch.groups.label}`
     lines.splice(choiceIdx, lines.length - choiceIdx, choiceLine)
   }
   //remove remaining text lines
