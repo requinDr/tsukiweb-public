@@ -173,6 +173,11 @@
 		"volume-title-track" : "TITLE BGM 音量",
 		"volume-system-se" : "SYS SFX 音量",
 		"track-source": "Track Source",
+		"track-source-help": [
+			"[b]Original[/b]: Original soundtrack of the complete game from 2000.",
+			"[b]Ever After[/b]: Remake of the original soundtrack, published in 2002.",
+			"[b]Tsuki-Bako[/b]: Remixed soundtrack that came with a Tsukihime + PLUS-DISC + Kagetsu Tohya package in 2003."
+		],
 		"auto-mute": "Mute when switching tab",
 		"ratio": "アスペクト比",
 		"ratio-auto": "Auto",

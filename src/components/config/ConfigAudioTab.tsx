@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { ReactNode, useEffect, useState } from "react"
 import { ConfigButtons, ConfigItem, ResetBtn } from "../ConfigLayout"
 import { defaultSettings, settings } from "../../utils/settings"
 import { strings } from "../../translation/lang"
@@ -6,6 +6,8 @@ import { MdOutlineVolumeOff, MdOutlineVolumeUp, MdVolumeMute } from "react-icons
 import { useLanguageRefresh } from "../hooks/useLanguageRefresh"
 import PageSection from "@tsukiweb-common/ui-core/layouts/PageSection"
 import { deepAssign, negative } from "@tsukiweb-common/utils/utils"
+import ConfigModal from "./components/ConfigModal"
+import { bb } from "@tsukiweb-common/utils/Bbcode"
 
 const ConfigAudioTab = () => {
 	useLanguageRefresh()
@@ -14,6 +16,7 @@ const ConfigAudioTab = () => {
 		trackSource: undefined,
 		autoMute: undefined
 	}, settings, {extend: false}))
+	const [modal, setModal] = useState<{show: boolean, content: ReactNode}>({show: false, content: undefined})
 
 	useEffect(()=> {
 		deepAssign(settings, conf)
@@ -75,6 +78,16 @@ const ConfigAudioTab = () => {
 			
 			<ConfigButtons
 				title={strings.config["track-source"]}
+				helpAction={()=>setModal({show: true, content:
+					<>
+						<h2>{strings.config["track-source"]}</h2>
+						<ul>
+						{strings.config["track-source-help"].map((txt, i) =>
+							<li key={i}>{bb(txt)}</li>
+						)}
+						</ul>
+					</>
+				})}
 				btns={Object.entries(strings.audio["track-sources"]).map(
 					([id, {name}])=> ({text: name, value: id}))}
 				property="trackSource"
@@ -94,6 +107,8 @@ const ConfigAudioTab = () => {
 			/>
 
 			<ResetBtn onClick={handleReset} />
+
+			<ConfigModal modal={modal} setModal={setModal} />
 		</PageSection>
 	)
 }

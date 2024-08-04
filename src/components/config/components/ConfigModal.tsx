@@ -9,7 +9,7 @@ type Props = {
 	setModal: Dispatch<{show: boolean, content: ReactNode}>
 }
 const ConfigModal = ({modal, setModal}: Props) => {
-	const close = () => setModal({show: false, content: undefined})
+	const close = () => setModal({show: false, content: modal.content})
 
 	return (
 		<Modal

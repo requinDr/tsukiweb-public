@@ -26,7 +26,7 @@ type Savefile = {
 
 const ConfigAdvancedTab = () => {
 	const [showLanguage, setShowLanguage] = useState<boolean>(false)
-	const [modal, setModal] = useState<{show: boolean, content: ReactNode}>({show: false, content: ""})
+	const [modal, setModal] = useState<{show: boolean, content: ReactNode}>({show: false, content: undefined})
 
 	const [conf, setConf] = useState(deepAssign({
 		resolution: undefined,
