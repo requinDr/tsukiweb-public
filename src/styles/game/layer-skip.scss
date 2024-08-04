@@ -49,6 +49,10 @@
 			max-width: 100%;
 			position: absolute;
 			inset: 0;
+
+			.blur {
+				filter: blur(10px);
+			}
 		}
 
 		.buttons {

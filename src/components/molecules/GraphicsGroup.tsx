@@ -4,7 +4,7 @@ import GraphicElement from "@tsukiweb-common/components/atoms/GraphicElement"
 import { imageSrc } from "../../translation/assets"
 import { POSITIONS } from "@tsukiweb-common/constants";
 import { SpritePos, Graphics as GraphicsType, DivProps } from "@tsukiweb-common/types";
-import { shouldBlur } from "utils/gallery";
+import { imageNameFromPath, shouldBlur } from "utils/gallery";
 
 export async function preloadImage(src:string, resolution=settings.resolution): Promise<void> {
 	if (src.startsWith('#') || src.startsWith('$'))
@@ -54,12 +54,13 @@ const GraphicsGroup = ({
 	return (
 		<div className={classes.join(' ')} style={style} {...attrs}>
 			{POSITIONS.map(pos => images[pos] &&
-				<GraphicElement key={images[pos]||pos}
+				<GraphicElement
+					key={images[pos]||pos}
 					pos={pos}
 					image={images[pos] as string} {...(typeof spriteAttrs == 'function' ? spriteAttrs(pos)
 							: spriteAttrs?.[pos] ?? {})}
 					getUrl={getUrl.bind(undefined, resolution)}
-					blur={shouldBlur}
+					blur={shouldBlur(imageNameFromPath(images[pos] as string))}
 					lazy={lazy}
 				/>
 			)}
