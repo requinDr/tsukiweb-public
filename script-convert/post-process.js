@@ -1,8 +1,8 @@
 
-import { getFlowchart, TreeNode } from "./flowchart.js"
+import { getFlowchart } from "./flowchart.js"
 import { LOGIC_FILE } from "./script-convert.js"
 
-const TEXT_LINE_REGEXP = /^[^a-z;*!#@~\\]/
+const TEXT_LINE_REGEXP = /^[^a-z;+*!#@~\\]/
 const isTextLine = TEXT_LINE_REGEXP.test.bind(TEXT_LINE_REGEXP)
 
 const colorImages = new Map(Object.entries({
