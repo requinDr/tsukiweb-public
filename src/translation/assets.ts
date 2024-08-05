@@ -1,4 +1,4 @@
-import { TSForceType } from "@tsukiweb-common/utils/utils"
+import { splitLast, TSForceType } from "@tsukiweb-common/utils/utils"
 import { RouteDayName, RouteName } from "../types"
 import { settings } from "../utils/settings"
 import {TrackSourceId, languages, strings} from "./lang"
@@ -50,17 +50,37 @@ export function scenesDir() {
   return assetPath(`${languages[settings.language].dir}/scenes`)
 }
 
+function audioPath(formats: string|string[], num: number|string) {
+  const paddedNum = num.toString().padStart(2, '0')
+  let format
+  if (formats.constructor == String)
+    format = formats
+  else if (formats.length == 1) {
+    format = (formats as string[])[0]
+  } else {
+    format = (formats as string[]).find((f)=> {
+      const [_, ext] = splitLast(f, '.')
+      switch (ext) {
+        case null : return true
+        case 'mp3' : return true // consider all browser can play mp3
+        case 'wav' : return true
+        case 'ogg' : return MediaSource.isTypeSupported('audio/ogg')
+        case 'aac' : return MediaSource.isTypeSupported('audio/mp4')
+        case 'opus' : return MediaSource.isTypeSupported('audio/ogg; codecs=opus')
+        default : return true
+      }
+    }) ?? formats[formats.length-1]
+  }
+  return assetPath(format.replace('$', paddedNum))
+}
+
 export function audioTrackPath(track: number|string,
                                source: TrackSourceId = settings.trackSource) {
-  const paddedNum = track.toString().padStart(2, '0')
-  const format = assetPath(strings.audio["track-sources"][source].path)
-  return format.replace('$', paddedNum)
+  return audioPath(strings.audio["track-sources"][source].path, track)
 }
 
 export function audioSePath(se: number|string) {
-  const paddedNum = se.toString().padStart(2,'0')
-  const format = assetPath(strings.audio["waves-path"])
-  return format.replace('$', paddedNum)
+  return audioPath(strings.audio["waves-path"], se)
 }
 
 /**

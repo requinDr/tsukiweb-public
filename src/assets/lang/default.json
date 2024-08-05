@@ -127,11 +127,11 @@
 	},
 	"audio": {
 		"track-sources": {
-			"original": {"name": "Original (2000)", "path": "./CD_original/track$.mp3"},
-			"everafter": {"name": "Ever After (2002)", "path": "./CD_everafter/track$.mp3"},
-			"tsukibako": {"name": "Tsuki-Bako (2003)", "path": "./CD_tsukibako/track$.mp3"}
+			"original": {"name": "Original (2000)", "path": ["./jp/CD_original/track$.opus", "./jp/CD_original/track$.mp3"]},
+			"everafter": {"name": "Ever After (2002)", "path": ["./jp/CD_everafter/track$.opus", "./jp/CD_everafter/track$.mp3"]},
+			"tsukibako": {"name": "Tsuki-Bako (2003)", "path": ["./jp/CD_tsukibako/track$.opus", "./jp/CD_tsukibako/track$.mp3"]}
 		},
-		"waves-path": "./wave/se_$.wav"
+		"waves-path": "./jp/wave/se_$.wav"
 	},
 	"disclaimer": [
 		"このゲームは、TYPE－MOONの2000に発行されたビジュアルノベル[b]「月姫」[/b]のウェブバージョンです。",

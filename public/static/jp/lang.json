@@ -22,9 +22,9 @@
 	},
 	"audio": {
 		"track-sources": {
-			"original": {"name": "Original (2000)", "path": "./CD_original/track$.mp3"},
-			"everafter": {"name": "Ever After (2002)", "path": "./CD_everafter/track$.mp3"},
-			"tsukibako": {"name": "Tsuki-Bako (2003)", "path": "./CD_tsukibako/track$.mp3"}
+			"original": {"name": "Original (2000)", "path": ["./CD_original/track$.opus", "./CD_original/track$.mp3"]},
+			"everafter": {"name": "Ever After (2002)", "path": ["./CD_everafter/track$.opus","./CD_everafter/track$.mp3"]},
+			"tsukibako": {"name": "Tsuki-Bako (2003)", "path": ["./CD_tsukibako/track$.opus","./CD_tsukibako/track$.mp3"]}
 		},
 		"waves-path": "./wave/se_$.wav"
 	},
