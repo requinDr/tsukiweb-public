@@ -58,15 +58,14 @@ function audioPath(formats: string|string[], num: number|string) {
   else if (formats.length == 1)
     format = (formats as string[])[0]
   else {
+    const audio = document.createElement('audio')
     format = (formats as string[]).find((f)=> {
       const [_, ext] = splitLast(f, '.')
       switch (ext) {
         case null : return true
         case 'mp3' : return true // consider all browser can play mp3
         case 'wav' : return true
-        case 'ogg' : return MediaSource.isTypeSupported('audio/ogg')
-        case 'aac' : return MediaSource.isTypeSupported('audio/mp4')
-        case 'opus' : return MediaSource.isTypeSupported('video/mp4; codecs="Opus"')
+        case 'opus' : return audio.canPlayType('audio/webm; codecs="opus"') == "probably"
         default : return true
       }
     }) ?? formats[formats.length-1]
