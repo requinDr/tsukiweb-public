@@ -49,6 +49,9 @@ const SkipLayer = () => {
 		const scenes = sceneAttrs.scenes as Record<SceneName, any>;
 		const attrs = scenes[scene]
 		if (attrs) {
+			if (attrs.osiete) {
+				return {"bg": "bg/bg_06a", "r": "tachi/cel_t20"}
+			}
 			const graph = attrs.fc?.graph
 			if (graph) {
 				return graph
