@@ -26,7 +26,7 @@
 			"everafter": {"name": "Ever After (2002)", "path": ["./CD_everafter/track$.webm","./CD_everafter/track$.mp3"]},
 			"tsukibako": {"name": "Tsuki-Bako (2003)", "path": ["./CD_tsukibako/track$.webm","./CD_tsukibako/track$.mp3"]}
 		},
-		"waves-path": "./wave/se_$.wav"
+		"waves-path": ["./wave/se_$.webm", "./wave/se_$.wav"]
 	},
 	"disclaimer": [
 		"このゲームは、TYPE－MOONの2000に発行されたビジュアルノベル[b]「月姫」[/b]のウェブバージョンです。",
