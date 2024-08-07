@@ -34,8 +34,9 @@ type ModalInfoProps = {
 }
 const ModalInfo = ({show, setShow}: ModalInfoProps) => {
 	const { canInstallPWA, installPWA } = usePWA()
+	
 	const copyCurrentUrl = () => {
-		navigator.clipboard.writeText(window.location.href)
+		navigator.clipboard.writeText(window.location.origin)
 		toast("Page URL copied to clipboard", {
 			toastId: "copy-url",
 			type: "info",
