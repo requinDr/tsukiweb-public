@@ -37,7 +37,7 @@ const GraphicsGroup = ({
 	resolution = settings.resolution,
 	lazy=false,
 	...props}: GraphicsGroupProps)=> {
-	useLanguageRefresh()
+	useLanguageRefresh(true)
 	const monochrome = images.monochrome ?? ""
 	let {style, className, ...attrs} = props
 	const classes = ['graphics']
