@@ -1,5 +1,5 @@
 import { SceneName } from "../types";
-import { SCENE_ATTRS } from "./constants";
+import { APP_VERSION, SCENE_ATTRS } from "./constants";
 import { strings, waitLanguageLoad } from "../translation/lang"
 import { credits, scenesDir } from "../translation/assets";
 import { getGameVariable } from "./variables";
@@ -51,7 +51,7 @@ export async function fetchScene(sceneId: string): Promise<string[] | undefined>
   else if (sceneId == "ending") {
     return await creditsScript(true)
   }
-  const script = await fetch(`${scenesDir()}/${sceneId}.txt`).then(
+  const script = await fetch(`${scenesDir()}/${sceneId}.txt?v=${APP_VERSION}`).then(
     (response) => response.ok ? response.text() : undefined,
     (_failErr) => undefined);
 
@@ -70,7 +70,7 @@ const osieteRE = /[`"][^`"]+[`"],\s*(?<label>\*f5\d{2}),\s*[`"][^`"]+[`"],\s*\*e
 
 async function fetchLogicBlock(label: string) : Promise<string[]> {
   await waitLanguageLoad()
-  const logicScript = await fetch(`${scenesDir()}/${LOGIC_FILE}`).then(
+  const logicScript = await fetch(`${scenesDir()}/${LOGIC_FILE}?v=${APP_VERSION}`).then(
     (response) => response.text());
   let start = logicScript.search(new RegExp(`^\\*${label}\\b`, "m"))
   if (start == -1)
