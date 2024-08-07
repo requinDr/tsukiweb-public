@@ -97,8 +97,10 @@ observe(displayMode, 'screen', (screen)=> {
 })
 
 waitLanguageLoad().then(()=> {
-  if (displayMode.screen != SCREEN.WINDOW)
-    sysAudio.track.play(settings.titleMusic, {loop: true});
+  setTimeout(()=> {
+    if (displayMode.screen != SCREEN.WINDOW)
+      sysAudio.track.play(settings.titleMusic, {loop: true});
+  }, 100)
 });
 
 //___________________________________commands___________________________________
