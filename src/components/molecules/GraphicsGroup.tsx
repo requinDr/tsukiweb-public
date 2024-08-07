@@ -5,6 +5,7 @@ import { imageSrc } from "../../translation/assets"
 import { POSITIONS } from "@tsukiweb-common/constants";
 import { SpritePos, Graphics as GraphicsType, DivProps } from "@tsukiweb-common/types";
 import { imageNameFromPath, shouldBlur } from "utils/gallery";
+import { useLanguageRefresh } from "components/hooks/useLanguageRefresh";
 
 export async function preloadImage(src:string, resolution=settings.resolution): Promise<void> {
 	if (src.startsWith('#') || src.startsWith('$'))
@@ -36,6 +37,7 @@ const GraphicsGroup = ({
 	resolution = settings.resolution,
 	lazy=false,
 	...props}: GraphicsGroupProps)=> {
+	useLanguageRefresh()
 	const monochrome = images.monochrome ?? ""
 	let {style, className, ...attrs} = props
 	const classes = ['graphics']
