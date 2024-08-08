@@ -7,7 +7,6 @@ import script from "../utils/script"
 import { displayMode, SCREEN } from "../utils/display"
 import { strings } from "../translation/lang"
 import Ornament from "../assets/images/ornament.webp"
-import Particles from "@tsukiweb-common/ui-core/components/Particles"
 import { toast } from "react-toastify"
 import { useObserved } from "@tsukiweb-common/utils/Observer"
 import { isFullscreen, toggleFullscreen, addEventListener } from "@tsukiweb-common/utils/utils"
@@ -81,9 +80,7 @@ const MenuLayer = ({show}: Props) => {
 	return (
 		<div id="layer-menu"
 			className={classNames("layer", {show: display})}
-		>
-			<Particles />
-			
+		>			
 			<nav className="menu-container" ref={menuRef}>
 				<menu>
 					<div className="top" />
