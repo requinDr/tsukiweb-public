@@ -15,27 +15,28 @@
 			}
 		},
 		"redirected-images": {
-			"tachi/osiete": "en-mm"
+			"tachi/osiete": "es-tohnokun"
 		}
 	},
 	"disclaimer": [
-		"Esta es una versión web de [i]Tsukihime[/i], una novela visual publicada en 2000 por Type-Moon.",
-		"El juego incluye contenido para adultos y está destinado únicamente a un publico adulto."
+		"Esta es una versión web de [i]Tsukihime[/i], una novela visual publicada en el año 2000 por Type-Moon.",
+		"El juego incluye contenido para adultos y está destinado únicamente a audiencias maduras."
 	],
 	"title": {
 		"start": "Nuevo Juego",
 		"resume": "Continuar",
-		"load": "Cargar Juego",
-		"config": "Opciones",
-		"extra": "Extras",
+		"load": "Cargar",
+		"config": "Configuración",
+		"extra": "Extra",
 		"about": {
-			"port": "Esta es una versión web de [i]Tsukihime[/i], una novela visual publicada en 2000 por Type-Moon.",
+			"port": "Esta es una versión web de [i]Tsukihime[/i], una novela visual publicada en el año 2000 por Type-Moon.",
 			"project": "El proyecto está disponible en $0GitHub$1. ¡Añade una estrella si te gusta! Las contribuciones son bienvenidas.",
-			"feedback": "Envíe sus comentarios o informe un error $0aquí$1.",
-			"data": "Ningún dato será recopilado, todo se almacenará en su navegador. Gestiona tus datos $0aquí$1.",
-			"remake": "Considere comprar el remake de $0Tsukihime - A piece of blue glass moon$1."
+			"feedback": "Envía tus comentarios o reporta un error $0aquí$1.",
+			"data": "No se recopilan datos, todo se almacena en tu navegador. Administra tus datos $0aquí$1.",
+			"remake": "Considera comprar el remake $0Tsukihime - A piece of blue glass moon$1."
 		},
-		"install": "Instalar"
+		"install": "Instalar",
+		"share": "Compartir"
 	},
 	"extra": {
 		"gallery": "Galería",
@@ -46,62 +47,69 @@
 	"config": {
 		"on": "Encendido",
 		"off": "Apagado",
-		"reset": "Reiniciar",
+		"reset": "Restablecer",
 		"tab-game": "Juego",
 		"tab-audio": "Audio",
 		"tab-controls": "Controles",
 		"tab-advanced": "Avanzado",
 		"volume-master": "Volumen general",
-		"volume-track": "Volumen de la Musica",
-		"volume-se": "Volumen de los Efectos",
-		"track-source": "Versión de la banda sonora",
+		"volume-track": "Volumen de la música",
+		"volume-se": "Volumen de efectos de sonido",
+		"volume-title-track" : "Volumen de la música del título",
+		"volume-system-se" : "Volumen de efectos de sonido del sistema",
+		"track-source": "Fuente de la banda sonora",
+		"track-source-help": [
+			"[b]Original[/b]: Banda sonora original del juego completo de 2000.",
+			"[b]Ever After[/b]: Remake de la banda sonora original, publicado en 2002.",
+			"[b]Tsuki-Bako[/b]: Banda sonora remixada que vino con un paquete de Tsukihime + PLUS-DISC + Kagetsu Tohya en 2003."
+		],
 		"auto-mute": "Silenciar al cambiar de pestaña",
-		"ratio": "Proporción de la pantalla",
-		"ratio-auto": "Automático",
+		"ratio": "Relación de aspecto",
+		"ratio-auto": "Auto",
 		"ratio-4-3": "4:3",
 		"ratio-16-9": "16:9",
-		"text-speed": "Velocidad de texto",
-		"text-speed-low": "Lento",
-		"text-speed-med": "Medio",
-		"text-speed-high": "Rápido",
-		"text-speed-instant": "Instantáneo",
-		"auto-play-delay-text": "Delay en la reproducción automática de texto: $0s",
-		"auto-play-delay-page": "Delay en la reproducción automática de páginas: $0s",
-		"adult-title": "Adulto",
+		"text-speed": "Velocidad de visualización del texto",
+		"text-speed-low": "Lenta",
+		"text-speed-med": "Media",
+		"text-speed-high": "Rápida",
+		"text-speed-instant": "Instantánea",
+		"auto-play-delay-text": "Retraso de auto-play del texto: $0s",
+		"auto-play-delay-page": "Retraso de auto-play de la página: $0s",
+		"adult-title": "Adultos",
 		"adult-blur": "Desenfocar miniaturas",
 		"adult-blur-help": [
-			"Apply a blur effect on the thumbnails of the adult scenes (Save, Load, Flowchart, Gallery, …).",
-			"In-game content is not affected."
+			"Aplica un efecto de desenfoque en las miniaturas de las escenas para adultos (Guardar, Cargar, Diagrama de flujo, Galería, …).",
+			"El contenido dentro del juego no se ve afectado."
 		],
-		"adult-warn": "Notificarme cuando entro en una escena H",
+		"adult-warn": "Advertirme cuando ingrese a una escena H",
 		"quality": "Calidad",
 		"quality-sd": "640\u00D7480",
 		"quality-hd": "1280\u00D7960",
-		"fullscreen": "Pantalla Completa",
+		"fullscreen": "Pantalla completa",
 		"language": "Idioma",
-		"show-locked-content": "Reveal locked content",
+		"show-locked-content": "Revelar contenido bloqueado",
 		"show-locked-content-help": [
-			"Reveals the complete Gallery, Flowchart, Endings, Eclipse, …",
-			"Also fulfills the requirement to access the Far Side.",
-			"It can be toggled on and off at any time."
+			"Revela la Galería completa, el Diagrama de flujo, los Finales, Eclipse, …",
+			"También cumple con el requisito para acceder al Lado Lejano.",
+			"Se puede activar y desactivar en cualquier momento."
 		],
 		"data": "Almacenamiento de datos",
 		"data-export": "Exportar",
 		"data-import": "Importar",
-		"data-erase": "Eliminar",
-		"data-erase-warning": "Esto eliminará todos los datos, configuraciones y progreso guardados. ¿Está seguro?",
-		"data-erase-confirm": "Todos los datos han sido eliminados. Si abandona este sitio web sin realizar ningún cambio en la configuración y sin iniciar un nuevo juego, no quedarán datos almacenados en su computadora.",
+		"data-erase": "Borrar",
+		"data-erase-warning": "Esto eliminará todas las partidas guardadas, restablecerá todas las configuraciones y el progreso. ¿Estás seguro?",
+		"data-erase-confirm": "Todos los datos han sido eliminados. Si abandonas este sitio web sin hacer ningún cambio en la configuración y sin comenzar un nuevo juego, no se almacenará ningún dato en tu computadora",
 		"controls": {
 			"next": "Siguiente",
-			"history": "Mostrar/ocultar Registro",
-			"back": "Cerrar la pantalla actual/Menú de visualización",
+			"history": "Mostrar/ocultar Historia",
+			"back": "Cerrar vista actual / Mostrar menú",
 			"bg_move": "Mover imagen de fondo",
-			"auto_play" : "Reproducción automática",
-			"page_nav": "Navegar a la página siguiente/anterior",
+			"auto_play" : "Auto-play",
+			"page_nav": "Navegar a la página siguiente / anterior",
 			"load": "Abrir panel de carga",
-			"save": "Abrir panel de guardo",
-			"q_save": "Guardado Rapido",
-			"q_load": "Cargado Rapido",
+			"save": "Abrir panel de guardado",
+			"q_save": "Guardado rápido",
+			"q_load": "Cargar rápido",
 			"config": "Abrir panel de configuración",
 			"_hold": "[i](Sostener)"
 		}
@@ -115,44 +123,44 @@
 	"saves": {
 		"title-load": "Cargar",
 		"title-save": "Guardar",
-		"create": "Crear",
+		"create": "Nuevo guardado",
 		"import": "Importar",
 		"export": "Exportar",
 		"delete": "Eliminar",
-		"delete-warning": "¿Está seguro de que desea eliminar este guardado?",
-		"overwrite-warning": "¿Estás seguro de que deseas sobrescribir este guardado?",
-		"quick-save": "Guardar Rapidamente"
+		"delete-warning": "¿Estás seguro de que quieres eliminar este guardado?",
+		"overwrite-warning": "¿Estás seguro de que quieres sobrescribir este guardado?",
+		"quick-save": "Guardado rápido"
 	},
 	"game": {
 		"skip-named": [
-			"Ya has visto la escena.",
-			"¿Quisieras saltarla?"
+			"Ya has visto la escena",
+			"¿Quieres omitirla?"
 		],
-		"skip-unnamed": "Ya has visto esta escena. ¿Quisieras saltarla?",
-		"toast-qsave": "El progreso se ha guardado",
+		"skip-unnamed": "Ya has visto esta escena. ¿Quieres omitirla?",
+		"toast-qsave": "El progreso ha sido guardado",
 		"toast-qload": "Progreso restaurado",
 		"toast-load": "Progreso restaurado",
-		"toast-save-fail": "No se puede guardar el progreso de esta sesión",
-		"toast-load-fail": "No se puede restaurar el progreso de esta sesión",
-		"toast-autoplay-stop": "Se detuvo la reproducción automática",
-		"toast-ffw-stop": "Se detuvo el avance rápido",
+		"toast-save-fail": "No se pudo guardar el progreso",
+		"toast-load-fail": "No se pudo restaurar el progreso",
+		"toast-autoplay-stop": "Auto-play detenido",
+		"toast-ffw-stop": "Avance rápido detenido",
 		"toast-hscene-waning": "Estás a punto de leer una escena con contenido para adultos."
 	},
 	"menu": {
-		"graphics": "Imagen",
-		"history": "Registro",
+		"graphics": "Gráficos",
+		"history": "Historia",
 		"save": "Guardar",
 		"load": "Cargar",
 		"config": "Configuración",
-		"auto-play": "Reproducción automática",
-		"ffw": "Avance rapido",
+		"auto-play": "Auto-play",
+		"ffw": "Avance rápido",
 		"title": "Título",
-		"q-save": "Guardar R.",
-		"q-load": "Cargar R."
+		"q-save": "Guardado rápido",
+		"q-load": "Cargado rápido"
 	},
 	"history": {
-		"load": "Retroceder",
-		"skipped": "Escena $0 saltada."
+		"load": "Cargar",
+		"skipped": "Escena $0 omitida."
 	},
 	"characters": {
 		"aki": "Akiha",
@@ -162,9 +170,9 @@
 		"koha": "Kohaku",
 		"others": "Otros"
 	},
-	"yes": "Si",
+	"yes": "Sí",
 	"no": "No",
 	"ok": "Ok",
-	"back": "Volver",
+	"back": "Atrás",
 	"close": "Cerrar"
 }
