@@ -29,7 +29,7 @@ const SaveSummary = memo(({saveState}: {saveState: SaveState})=> {
 		case "skip" :
 			return (
 				<span className="scene-skip">
-					{getSceneTitle((page as PageContent<"skip">).scene)}
+					{noBb(getSceneTitle((page as PageContent<"skip">).scene) ?? "")}
 				</span>
 			)
 
