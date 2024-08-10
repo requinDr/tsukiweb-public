@@ -103,7 +103,7 @@ export const script = {
   },
 
   isCurrentLineText() {
-    return isTextLine(this.currentLine)
+    return this.currentLine && isTextLine(this.currentLine)
   }
 }
 export default script
@@ -194,7 +194,7 @@ function processIfCmd(arg: string, _: string) {
 }
 
 function processGoto(arg: string) {
-  if (/^\*f\d+[a-z]*$/.test(arg)) {
+  if (/^\*f\d+\w*$/.test(arg)) {
     script.moveTo(arg.substring(1) as LabelName, 0)
     return LOCK_CMD // prevent processing next line
   } else if (arg == "*endofplay") {
@@ -355,7 +355,7 @@ async function fetchSceneLines() {
   let fetchedLines: string[]|undefined = undefined
   if (isScene(label))
     fetchedLines = await fetchScene(label)
-  else if (/^(f|skip)\d+[a-z]*$/.test(label))
+  else if (/^(f|skip)\d+\w*$/.test(label))
     fetchedLines = await fetchFBlock(label)
 
   if (fetchedLines == undefined)
