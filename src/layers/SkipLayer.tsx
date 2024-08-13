@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react"
 import { displayMode } from "../utils/display"
-import script from "../utils/script"
+import script, { removeSkipHandlers, setSkipHandlers } from "../utils/script"
 import { strings } from "../translation/lang"
 import { useObserver } from "@tsukiweb-common/utils/Observer"
 import classNames from "classnames"
@@ -18,16 +18,16 @@ const SkipLayer = () => {
 	const skipConfirm = useRef<(skip:boolean)=>void>()
 
 	useEffect(()=> {
-		script.onSkipPrompt = (scene: SceneName, confirm: (skip: boolean)=>void)=> {
+		setSkipHandlers((scene: SceneName, confirm: (skip: boolean)=>void)=> {
 			displayMode.skip = true
 			skipConfirm.current = confirm
 			setScene(scene)
 			setSceneTitle(getSceneTitle(scene))
-		}
-		script.onSkipCancel = ()=> {
+		}, ()=> {
 			displayMode.skip = false
 			skipConfirm.current = undefined
-		}
+		})
+		return removeSkipHandlers
 	}, [])
 	
 	useObserver(()=> {

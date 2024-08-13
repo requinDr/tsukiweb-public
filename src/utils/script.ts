@@ -24,8 +24,6 @@ type CommandProcessFunction =
 type CommandMap = Map<string, CommandProcessFunction|null>
 
 type SkipCallback = (scene: SceneName, confirm:(skip: boolean)=>void)=>void
-let skipCallback: SkipCallback = ()=> { throw Error(`script.onSkipPrompt not specified`) }
-let skipCancelCallback: VoidFunction = ()=> { throw Error(`script.onSkipCancel not specified`) }
 
 type FastForwardStopCondition = (line:string, index: number, label: string)=>boolean
 
@@ -39,22 +37,89 @@ let fastForwardStopCondition: FastForwardStopCondition|undefined = undefined
 
 const LOCK_CMD = {next: ()=>{}} // prevent proceeding to next line
 
+//#endregion ###################################################################
+//#region                          SKIP PROMPT                                 #
+//##############################################################################
+
+let pendingSkip: SceneName | null = null
+let skipCallback : SkipCallback | null = null
+let skipCancelCallback: VoidFunction | null = null
+
+/**
+ * callback function sent to the skip handler, called when the user has
+ * chosen to skip or not.
+ */
+function skipConfirm(label: SceneName, skip: boolean) {
+  if (skip) {
+    history.onPageBreak("skip", label)
+    onSceneEnd(label)
+  } else {
+    // check if context was changed while asking user
+    if (label == gameContext.label) {
+      gameContext.index = 0
+      fetchSceneLines()
+    }
+  }
+}
+
+/**
+ * Set the callbacks to call when a scene can be skipped, and the one to call
+ * when a skip prompt is canceled by loading another save
+ */
+export function setSkipHandlers(onSkipPrompt: SkipCallback,
+                                cancel: VoidFunction) {
+    skipCallback = onSkipPrompt
+    skipCancelCallback = cancel
+    // if a skip prompt was requested before the callback is set,
+    // call it immediately.
+    if (pendingSkip) {
+      onSkipPrompt(pendingSkip, skipConfirm.bind(undefined, pendingSkip))
+      pendingSkip = null
+    }
+}
+export function removeSkipHandlers() {
+  skipCallback = null
+  skipCancelCallback = null
+}
+
+function promptSkip(scene: SceneName) {
+  
+  currentCommand = {
+    next: ()=>{},
+    cancel: cancelSkip
+  }
+
+  if (skipCallback)
+    skipCallback(scene, skipConfirm.bind(undefined, scene))
+  else {
+    console.log("skip callback not registered yet")
+    // skip callback is not yet registered. Store the skip parameters to use
+    // when the callback is registered.
+    pendingSkip = scene
+    // if after 2 seconds, the callback is still not registered, cancel the skip
+    // and log the error
+    setTimeout(()=> {
+      if (pendingSkip) {
+        console.error("Skip callback not registered after 2 seconds. Cancel skip")
+        skipConfirm(scene, false)
+      }
+    }, 2000)
+  }
+}
+
+function cancelSkip() {
+  if (skipCancelCallback)
+    skipCancelCallback()
+  else {
+    pendingSkip = null
+  }
+}
+
+//#endregion ###################################################################
+//#region                        PUBLIC STRUCTURE                              #
+//##############################################################################
+
 export const script = {
-  /**
-   * Set the callback to call when a scene can be skipped
-   */
-  set onSkipPrompt(callback: SkipCallback) {
-    skipCallback = callback
-  },
-
-  /**
-   * Set the callback to call when a skip prompt is canceled by loading
-   * another save
-   */
-  set onSkipCancel(callback: VoidFunction) {
-    skipCancelCallback = callback
-  },
-
   /**
    * function to call to move to the next step of the current command.
    * Most commands will interpet it as a "skip".
@@ -148,8 +213,8 @@ function cancelCurrentCommand() {
   currentCommand = undefined
 }
 
-//##############################################################################
-//#                                  COMMANDS                                  #
+//#endregion ###################################################################
+//#region                            COMMANDS                                  #
 //##############################################################################
 
 let commands:CommandMap|undefined;
@@ -225,8 +290,8 @@ function processClick(arg: string, _: string, onFinish: VoidFunction) {
   }
 }
 
-//##############################################################################
-//#                            EXECUTE SCRIPT LINES                            #
+//#endregion ###################################################################
+//#region                      EXECUTE SCRIPT LINES                            #
 //##############################################################################
 
 function makeAutoPlay() {
@@ -424,22 +489,7 @@ function onSceneStart() {
       setTimeout(onSceneStart, 0) // wait for the cancel to complete
     }
     else {
-      currentCommand = {
-        next: ()=>{},
-        cancel: skipCancelCallback
-      }
-      skipCallback(label, async skip=> {
-        if (skip) {
-          history.onPageBreak("skip", label)
-          onSceneEnd(label)
-        } else {
-          // check if context was changed while asking user
-          if (label == gameContext.label) {
-            gameContext.index = 0
-            fetchSceneLines()
-          }
-        }
-      })
+      promptSkip(label)
     }
   } else {
     if (settings.warnHScenes && SCENE_ATTRS.scenes[label]?.h)
@@ -463,8 +513,8 @@ observe(displayMode, 'screen', (screen)=> {
     processCurrentLine()
 })
 
-//##############################################################################
-//#                                   DEBUG                                    #
+//#endregion ###################################################################
+//#region                             DEBUG                                    #
 //##############################################################################
 
 window.script = script
