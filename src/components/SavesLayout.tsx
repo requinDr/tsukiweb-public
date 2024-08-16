@@ -52,7 +52,7 @@ const SavesLayer = ({variant, back}: Props) => {
 		addSavesChangeListener(onChange)
 		onChange()
 		return removeSavesChangeListener.bind(null, onChange) as VoidFunction
-	}, [])
+	}, [variant])
 
 	const parentRef = useRef<HTMLDivElement>(null)
 
@@ -136,11 +136,13 @@ const SavesLayer = ({variant, back}: Props) => {
 				{rowVirtualizer.getVirtualItems()
 					.map(({index, start, size, key}) => {
 					const [id, ss] = saves[index]
+
 					return (
 						<SaveListItem
 							key={key}
 							id={id}
-							saveState={ss} onSelect={onSaveSelect}
+							saveState={ss}
+							onSelect={onSaveSelect}
 							focusedSave={focusedId}
 							onFocus={setFocusedSave.bind(null, id)}
 							onPointerEnter={setFocusedSave.bind(null, id)}
