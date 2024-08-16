@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "dependencies": {
+    "@tanstack/react-virtual": "^3.9.0",
     "@types/jest": "^29.5.12",
     "@types/node": "^20.14.15",
     "@types/react": "^18.3.3",

@@ -1,4 +1,4 @@
-import { ChangeEvent, MouseEvent, useEffect, useState } from "react"
+import { ChangeEvent, MouseEvent, useEffect, useRef, useState } from "react"
 import { SCREEN, displayMode } from "../utils/display"
 import { SaveState, QUICK_SAVE_ID, deleteSaveState, getSaveState, listSaveStates, loadSaveState, storeCurrentState, addSavesChangeListener, removeSavesChangeListener, loadSaveFiles } from "../utils/savestates"
 import { strings } from "../translation/lang"
@@ -10,6 +10,7 @@ import PageSection from "@tsukiweb-common/ui-core/layouts/PageSection"
 import Button from "@tsukiweb-common/ui-core/components/Button"
 import classNames from "classnames"
 import { noBb } from "@tsukiweb-common/utils/Bbcode"
+import { useVirtualizer } from "@tanstack/react-virtual"
 
 //##############################################################################
 //#                               TOOL FUNCTIONS                               #
@@ -43,12 +44,23 @@ const SavesLayer = ({variant, back}: Props) => {
 
 	useEffect(()=> {
 		const onChange = ()=> {
-			setSaves(listSaveStates().sort(compareSaveStates))
+			setSaves(
+				listSaveStates()
+				.filter(([id, _])=> variant === "load" || id !== QUICK_SAVE_ID)
+				.sort(compareSaveStates))
 		}
 		addSavesChangeListener(onChange)
 		onChange()
 		return removeSavesChangeListener.bind(null, onChange) as VoidFunction
 	}, [])
+
+	const parentRef = useRef<HTMLDivElement>(null)
+
+	const rowVirtualizer = useVirtualizer({
+		count: saves.length,
+		getScrollElement: () => parentRef.current,
+		estimateSize: () => 109,
+	})
 
 	function createSave() {
 		storeCurrentState(new Date().getTime())
@@ -90,7 +102,7 @@ const SavesLayer = ({variant, back}: Props) => {
 	return (
 		<main id="saves-layout">
 			<h2 className="page-title">{title}</h2>
-			<PageSection className="saves">
+			<PageSection className="saves" ref={parentRef}>
 				{variant === "save" ?
 					<Button
 						onClick={createSave}
@@ -115,16 +127,32 @@ const SavesLayer = ({variant, back}: Props) => {
 					</Button>
 				}
 
-				{saves.filter(([id, _])=> variant === "load" || id !== QUICK_SAVE_ID)
-					.map(([id, ss]) =>
-					<SaveListItem key={id} id={id}
-						saveState={ss} onSelect={onSaveSelect}
-						focusedSave={focusedId}
-						onFocus={setFocusedSave.bind(null, id)}
-						onPointerEnter={setFocusedSave.bind(null, id)}
-						onMouseEnter={setFocusedSave.bind(null, id)}
-					/>
-				)}
+			<div
+				className="virtual-list"
+				style={{
+					height: `${rowVirtualizer.getTotalSize()}px`,
+				}}
+			>
+				{rowVirtualizer.getVirtualItems()
+					.map(({index, start, size, key}) => {
+					const [id, ss] = saves[index]
+					return (
+						<SaveListItem
+							key={key}
+							id={id}
+							saveState={ss} onSelect={onSaveSelect}
+							focusedSave={focusedId}
+							onFocus={setFocusedSave.bind(null, id)}
+							onPointerEnter={setFocusedSave.bind(null, id)}
+							onMouseEnter={setFocusedSave.bind(null, id)}
+							style={{
+								transform: `translateY(${start}px)`,
+								height: `${size}px`,
+							}}
+						/>
+					)
+				})}
+			</div>
 			</PageSection>
 
 			<SaveDetails id={focusedId} saveState={focusedSave} deleteSave={deleteSave}/>
