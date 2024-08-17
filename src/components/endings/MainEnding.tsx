@@ -1,17 +1,20 @@
-import { noBb } from "@tsukiweb-common/utils/Bbcode"
 import classNames from "classnames"
 import { imageSrc } from "translation/assets"
-import { strings } from "translation/lang"
-import { RouteEnding } from "utils/endings"
 
 type Props = {
 	unlocked: boolean
-	ending: RouteEnding
+	ending: {
+		id: string
+		char: string
+		image: string
+		name: string
+		type: string
+	}
 }
 
-const MainEnding = ({unlocked, ending:{char, image, name, day, type}}: Props) => {
+const MainEnding = ({unlocked, ending:{id, char, image, name, type}}: Props) => {
 	return (
-		<div className={classNames("ending", char, {"unlocked": unlocked})}>
+		<div className={classNames("ending", id, {"unlocked": unlocked})}>
 			{unlocked ?
 			<img
 				className="ending-img"
@@ -23,13 +26,13 @@ const MainEnding = ({unlocked, ending:{char, image, name, day, type}}: Props) =>
 			
 			<div className="ending-desc">
 				<div className="ending-name">
-					{unlocked ? noBb(strings.scenario.routes[char][day]) : "???"}
+					{unlocked ? name : "???"}
 				</div>
 				
 				<div className="ending-bottom">
-					{unlocked ?
-					<>{strings.characters[char]} {`\u2022`} {type}</>
-					:
+					{unlocked && char ?
+					<>{char} {`\u2022`} {type}</>
+					: unlocked && !char ? "" :
 					"???"
 					}
 				</div>

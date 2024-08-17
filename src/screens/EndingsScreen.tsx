@@ -11,6 +11,8 @@ import { settings } from 'utils/settings'
 import Button from '@tsukiweb-common/ui-core/components/Button'
 import MainEnding from 'components/endings/MainEnding'
 import Oshiete from 'components/endings/Oshiete'
+import { viewedScene } from 'utils/savestates'
+import { noBb } from '@tsukiweb-common/utils/Bbcode'
 
 
 const EndingsScreen = () => {
@@ -32,9 +34,26 @@ const EndingsScreen = () => {
 						<MainEnding
 							key={index}
 							unlocked={settings.unlockEverything || Boolean(ending?.seen)}
-							ending={ending}
+							ending={{
+								id: ending.char,
+								char: strings.characters[ending.char],
+								image: ending.image,
+								name: noBb(strings.scenario.routes[ending.char][ending.day]),
+								type: ending.type
+							}}
 						/>
 					)}
+
+					<MainEnding
+						unlocked={settings.unlockEverything || viewedScene("eclipse")}
+						ending={{
+							id: "eclipse",
+							char: "",
+							image: "ao_02",
+							name: strings.extra.eclipse,
+							type: ""
+						}}
+					/>
 					</PageSection>
 
 					<PageSection className="badendings-list">
