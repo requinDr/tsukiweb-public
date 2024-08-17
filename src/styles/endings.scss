@@ -19,19 +19,34 @@
 			position: relative;
 			font-size: 1.1em;
 
-			// @mixin shadow($shadow-color) {
-			// 	.ending-img {
-			// 		border: 1px solid $shadow-color;
-			// 	}
-			// }
+			@mixin shadow($color) {
+				$color-title: darken($color, 20%);
+				.ending-name {
+					background: linear-gradient(to right, $color-title, lighten($color, 20%), $color-title);
+					-webkit-background-clip: text;
+					background-clip: text;
+					color: transparent;
 
-			// &.unlocked {
-			// 	&.ark { @include shadow(#e7e300) }
-			// 	&.cel { @include shadow(#00bfff) }
-			// 	&.aki { @include shadow(#915934) }
-			// 	&.his { @include shadow(#ff0000) }
-			// 	&.koha { @include shadow(#ff00ff) }
-			// }
+					&::after {
+						content: '';
+						position: absolute;
+						bottom: -5px;
+						left: 0;
+						width: 100%;
+						height: 1px;
+						background-color: $color;
+						mask-image: linear-gradient(to right, transparent, black 50%, transparent);
+					}
+				}
+			}
+
+			&.unlocked {
+				&.ark { @include shadow(#e7e300) }
+				&.cel { @include shadow(#00bfff) }
+				&.aki { @include shadow(#915934) }
+				&.his { @include shadow(#ff0000) }
+				&.koha { @include shadow(#ff00ff) }
+			}
 	
 			.ending-img {
 				width: 100%;
@@ -50,10 +65,12 @@
 				
 				.ending-name {
 					font-size: 1.1em;
+					font-weight: 600;
 					text-wrap: pretty;
+					position: relative;
 				}
 				.ending-bottom {
-					margin-top: 4px;
+					margin-top: 8px;
 					font-size: .9em;
 					opacity: 0.8;
 				}

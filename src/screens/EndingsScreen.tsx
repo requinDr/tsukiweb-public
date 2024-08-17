@@ -37,7 +37,6 @@ const EndingsScreen = () => {
 					)}
 					</PageSection>
 
-					
 					<PageSection className="badendings-list">
 						<h3>{strings.endings.osiete}</h3>
 						{Object.values(osiete).map((ending, index)=>
