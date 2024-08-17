@@ -77,7 +77,7 @@
 			text-transform: uppercase;
 			letter-spacing: 3px;
 			flex-direction: row;
-			row-gap: 6px;
+			row-gap: 8px;
 			column-gap: 2.2em;
 			justify-content: center;
 			align-items: flex-start;
@@ -88,7 +88,7 @@
 			}
 		}
 		.second-row {
-			margin-top: 1.4em;
+			margin-top: 1.8em;
 			font-size: .7em;
 		}
 
@@ -100,6 +100,8 @@
 			text-shadow: 0 0 8px #d0d3e1;
 			position: relative;
 			-webkit-tap-highlight-color: transparent;
+			text-align: center;
+			line-height: 1.4;
 
 			// Hover area
 			&::before {
