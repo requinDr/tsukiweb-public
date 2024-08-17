@@ -28,18 +28,18 @@ const EndingsScreen = () => {
 				
 				<main>
 					<PageSection className="endings-list">
-					{Object.values(endings).map((ending, index) => {
-						if (ending.seen || settings.unlockEverything) {
-							return <MainEnding ending={ending} key={index} />
-						} else {
-							return <div key={index} className="ending" />
-						}
-					})}
+					{Object.values(endings).map((ending, index) =>
+						<MainEnding
+							key={index}
+							unlocked={settings.unlockEverything || Boolean(ending?.seen)}
+							ending={ending}
+						/>
+					)}
 					</PageSection>
 
+					
 					<PageSection className="badendings-list">
 						<h3>{strings.endings.osiete}</h3>
-						<Tooltip id="osiete" place="top" className="tooltip" />
 						{Object.values(osiete).map((ending, index)=>
 							<Oshiete
 								key={index}
@@ -48,6 +48,7 @@ const EndingsScreen = () => {
 							/>
 						)}
 					</PageSection>
+					<Tooltip id="osiete" place="bottom" className="tooltip" />
 				</main>
 
 				<Button
