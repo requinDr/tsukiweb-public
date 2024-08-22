@@ -39,7 +39,8 @@ const EndingsScreen = () => {
 								char: strings.characters[ending.char],
 								image: ending.image,
 								name: noBb(strings.scenario.routes[ending.char][ending.day]),
-								type: ending.type
+								type: ending.type,
+								scene: ending.scene
 							}}
 						/>
 					)}
@@ -51,7 +52,8 @@ const EndingsScreen = () => {
 							char: "",
 							image: "ao_02",
 							name: strings.extra.eclipse,
-							type: ""
+							type: "",
+							scene: "eclipse"
 						}}
 					/>
 					</PageSection>

@@ -1,5 +1,7 @@
 import classNames from "classnames"
 import { imageSrc } from "translation/assets"
+import { LabelName } from "types"
+import { playScene } from "utils/savestates"
 
 type Props = {
 	unlocked: boolean
@@ -9,12 +11,21 @@ type Props = {
 		image: string
 		name: string
 		type: string
+		scene: LabelName
 	}
 }
 
-const MainEnding = ({unlocked, ending:{id, char, image, name, type}}: Props) => {
+const MainEnding = ({unlocked, ending:{id, char, image, name, type, scene}}: Props) => {
+	const startScene = () => playScene(scene, {continueScript: false, viewedOnly: true})
+
 	return (
-		<div className={classNames("ending", id, {"unlocked": unlocked})}>
+		<div
+			className={classNames("ending", id, {"unlocked": unlocked})}
+			onClick={startScene}
+			tabIndex={unlocked ? 0 : -1}
+			role="button"
+			onKeyDown={(e)=> e.key === "Enter" && startScene()}
+		>
 			{unlocked ?
 			<img
 				className="ending-img"
@@ -31,7 +42,7 @@ const MainEnding = ({unlocked, ending:{id, char, image, name, type}}: Props) => 
 				
 				<div className="ending-bottom">
 					{unlocked && char ?
-					<>{char} {`\u2022`} {type}</>
+					<>{char} <span className="separator">{`\u2022`}</span> {type}</>
 					: unlocked && !char ? "" :
 					"???"
 					}

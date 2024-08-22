@@ -30,7 +30,7 @@
 					&::after {
 						content: '';
 						position: absolute;
-						bottom: -5px;
+						bottom: -4px;
 						left: 0;
 						width: 100%;
 						height: 1px;
@@ -47,6 +47,22 @@
 				&.his { @include shadow(#ff0000) }
 				&.koha { @include shadow(#ff00ff) }
 				&.eclipse { @include shadow(#970e0e) }
+
+				&::after {
+					content: '';
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					transition: all .2s;
+				}
+
+				&:hover, &:focus-visible {
+					&::after {
+						box-shadow: var(--selected-shadow);
+					}
+				}
 			}
 	
 			.ending-img {
@@ -74,6 +90,12 @@
 					margin-top: 8px;
 					font-size: .9em;
 					opacity: 0.8;
+
+					.separator {
+						user-select: none;
+						margin: 0 2px;
+						font-size: .8em;
+					}
 				}
 			}
 		}
