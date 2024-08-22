@@ -12,8 +12,7 @@ import { closeBB } from "@tsukiweb-common/utils/Bbcode"
 //______________________________private constants_______________________________
 //------------------------------------------------------------------------------
 
-const ASSETS_PATH = import.meta.env.DEV ? "/static/"
-                  : `${import.meta.env.BASE_URL}static/`
+const ASSETS_PATH = `${import.meta.env.BASE_URL}static/`
 
 //______________________________private functions_______________________________
 //------------------------------------------------------------------------------
