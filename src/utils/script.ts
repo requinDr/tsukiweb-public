@@ -92,7 +92,7 @@ function promptSkip(scene: SceneName) {
   if (skipCallback)
     skipCallback(scene, skipConfirm.bind(undefined, scene))
   else {
-    console.log("skip callback not registered yet")
+    console.debug("skip callback not registered yet")
     // skip callback is not yet registered. Store the skip parameters to use
     // when the callback is registered.
     pendingSkip = scene
