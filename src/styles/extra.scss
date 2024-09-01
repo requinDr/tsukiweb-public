@@ -122,6 +122,7 @@
 
 	@media screen and (max-width: 600px) {
 		grid-template-columns: 1fr;
+		grid-template-rows: 1fr min-content;
 		grid-template-areas:
 			"extra-content"
 			"extra-menu";
@@ -135,6 +136,17 @@
 			.menu-item {
 				white-space: nowrap;
 			}
+		}
+	}
+
+	@media screen and (max-height: 600px) and (min-width: 600px) {
+		grid-template-columns: 140px 1fr;
+		.extra-menu {
+			font-size: 1.1em;
+			padding-top: 1em;
+			align-items: center;
+			overflow-y: auto;
+			padding-right: 0;
 		}
 	}
 }

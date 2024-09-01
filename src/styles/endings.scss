@@ -1,18 +1,18 @@
 #endings {
 	main {
 		display: grid;
-		// grid-template-columns: 1fr 240px;
-    margin-block: 1em;
+		margin-block: 1em;
 		gap: 1rem;
-    overflow-y: auto;
-    scrollbar-gutter: stable both-edges;
+		overflow-y: auto;
+		scrollbar-gutter: stable both-edges;
+		align-content: start;
 	}
 
-  section {
-    padding: 1em;
-    flex-grow: 1;
-    position: relative;
-  }
+	section {
+		padding: 1em;
+		flex-grow: 1;
+		position: relative;
+	}
 
 	.endings-list {
 		display: grid;
@@ -81,7 +81,7 @@
 
 				&.placeholder {
 					border: 1px solid #004f87;
-    			background-color: rgba(0, 0, 0, 0.4);
+					background-color: rgba(0, 0, 0, 0.4);
 				}
 			}
 			.ending-desc {
@@ -115,10 +115,7 @@
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(32px, 1fr));
 		place-content: flex-start;
-		overflow-y: auto;
-		min-height: 30vh;
-		justify-items: center;
-    max-width: 600px;
+		max-width: min(600px, 100%);
 
 		h3 {
 			all: unset;
@@ -152,15 +149,36 @@
 		}
 	}
 
-	@media (max-width: 900px) {
+	@media (max-width: 900px), (max-width: 1200px) and (max-height: 600px) {
 		.endings-list {
-			grid-template-columns: repeat(auto-fill, minmax(min(120px, 100%), 1fr));
+			grid-template-columns: repeat(auto-fill, minmax(min(100px, 100%), 1fr));
+			gap: 8px;
+			.ending {
+				font-size: 1em;
+			}
 		}
 	}
 
-	@media (max-width: 600px) {
+	@media (max-height: 600px) {
 		main {
-			display: flex;
+			grid-template-columns: 3fr minmax(120px, 1fr);
+			margin-block: 0;
+		}
+
+		.endings-list {
+			grid-template-columns: repeat(auto-fill, minmax(min(90px, 100%), 1fr));
+			overflow-y: auto;
+			gap: 8px;
+			padding-block: 2em;
+			.ending {
+				font-size: .9em;
+			}
+		}
+
+		.badendings-list {
+			overflow-y: auto;
+			grid-template-columns: repeat(auto-fit, minmax(26px, 1fr));
+			padding-block: 2em;
 		}
 	}
 }
