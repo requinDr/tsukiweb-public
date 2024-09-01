@@ -16,7 +16,7 @@
 
 	.endings-list {
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(min(180px, 100%), 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(min(180px, 18vmin), 1fr));
 		isolation: isolate;
 		min-width: 0;
 		gap: 1em;
@@ -151,7 +151,7 @@
 
 	@media (max-width: 900px), (max-width: 1200px) and (max-height: 600px) {
 		.endings-list {
-			grid-template-columns: repeat(auto-fill, minmax(min(100px, 100%), 1fr));
+			grid-template-columns: repeat(auto-fill, minmax(min(140px, 30vmin), 1fr));
 			gap: 8px;
 			.ending {
 				font-size: 1em;
@@ -170,7 +170,7 @@
 		}
 		
 		.endings-list {
-			grid-template-columns: repeat(auto-fill, minmax(min(20vh, 100%), 1fr));
+			grid-template-columns: repeat(auto-fill, minmax(min(140px, 30vmin), 1fr));
 			overflow-y: auto;
 			gap: 8px;
 			padding-block: 2em;

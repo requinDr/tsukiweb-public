@@ -109,7 +109,7 @@
 		overflow: hidden;
 	}
 
-	@media screen and (max-width: 600px) {
+	@media screen and (max-width: 800px) {
 		grid-template-columns: 1fr;
 		grid-template-rows: 1fr min-content;
 		grid-template-areas:
@@ -124,6 +124,7 @@
 			box-shadow: var(--menu-shadow);
 			background-color: var(--menu-container);
 			padding-bottom: 1.6em;
+			justify-content: space-evenly;
 
 			.menu-item {
 				white-space: nowrap;
@@ -131,12 +132,12 @@
 		}
 	}
 
-	@media screen and (max-height: 600px) and (min-width: 600px) {
+	@media screen and (max-height: 600px) and (min-width: 800px) {
 		grid-template-columns: 140px 1fr;
 		.extra-menu {
 			font-size: 1.1em;
 			padding-top: 1em;
-			align-items: center;
+			align-content: center;
 			overflow-y: auto;
 			padding-right: 0;
 		}
