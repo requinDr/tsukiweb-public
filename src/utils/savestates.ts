@@ -10,6 +10,7 @@ import { RecursivePartial } from "@tsukiweb-common/types";
 import { notifyObservers } from "@tsukiweb-common/utils/Observer";
 import { StoredJSON } from "@tsukiweb-common/utils/storage";
 import { jsonDiff, TSForceType, deepAssign, textFileUserDownload, requestJSONs } from "@tsukiweb-common/utils/utils";
+import { strings } from "translation/lang";
 
 //##############################################################################
 //#                                 SAVESTATES                                 #
@@ -110,13 +111,13 @@ export function storeCurrentState(id: SaveStateId) {
  */
 export const quickSave = () => {
   if (storeCurrentState(QUICK_SAVE_ID)) {
-    toast('Progress has been saved', {
-      icon: FaSave,
+    toast(strings.game["toast-qsave"], {
+      icon: () => FaSave({}),
       autoClose: 1400,
       toastId: "qs-toast",
     })
   } else {
-    toast("Couldn't save progress", {
+    toast(strings.game["toast-save-fail"], {
       autoClose: 2400,
       toastId: "qs-toast",
       type: "warning"
@@ -138,13 +139,13 @@ export function loadSaveState(ss: SaveStateId | SaveState) {
   if (ss.constructor == Number) {
     ss = saveStates.get(ss) as SaveState
     if (ss) {
-      toast("Progress restored", {
-        icon: FaSave,
+      toast(strings.game["toast-qload"], {
+        icon: () => FaSave({}),
         autoClose: 1400,
-        toastId: 'ql-toast'
+        toastId: 'ql-toast',
       })
     } else {
-      toast("Could not restore progress", {
+      toast(strings.game["toast-load-fail"], {
         autoClose: 2400,
         toastId: 'ql-toast',
         type: "warning"
@@ -173,13 +174,13 @@ export function loadSaveState(ss: SaveStateId | SaveState) {
  */
 export const quickLoad = ()=> {
   if (loadSaveState(QUICK_SAVE_ID)) {
-    toast("Progress restored", {
-      icon: FaSave,
+    toast(strings.game["toast-qload"], {
+      icon: () => FaSave({}),
       autoClose: 1400,
       toastId: 'ql-toast'
     })
   } else {
-    toast("Could not restore progress", {
+    toast(strings.game["toast-load-fail"], {
       autoClose: 2400,
       toastId: 'ql-toast',
       type: "warning"
