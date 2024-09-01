@@ -155,23 +155,31 @@
 			gap: 8px;
 			.ending {
 				font-size: 1em;
+
+				.ending-desc {
+					margin: .5em 0;
+				}
 			}
 		}
 	}
-
+	
 	@media (max-height: 600px) {
 		main {
 			grid-template-columns: 3fr minmax(120px, 1fr);
 			padding-block: 0;
 		}
-
+		
 		.endings-list {
-			grid-template-columns: repeat(auto-fill, minmax(min(90px, 100%), 1fr));
+			grid-template-columns: repeat(auto-fill, minmax(min(20vh, 100%), 1fr));
 			overflow-y: auto;
 			gap: 8px;
 			padding-block: 2em;
 			.ending {
 				font-size: .9em;
+
+				.ending-desc {
+					margin: .5em 0;
+				}
 			}
 		}
 
