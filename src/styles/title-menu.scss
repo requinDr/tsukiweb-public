@@ -151,9 +151,6 @@
 			}
 
 			&.attention {
-				color: rgb(10 164 171);
-				text-shadow: 0 0 6px #005aff;
-
 				span {
 					rotate: 23deg;
 					float: inline-end;
@@ -161,6 +158,8 @@
 					right: -14px;
 					top: 0;
 					animation: scale-up-down infinite 1.6s;
+					color: rgb(10 164 171);
+					text-shadow: 0 0 6px #005aff;
 
 					@keyframes scale-up-down {
 						0%, 100% {
