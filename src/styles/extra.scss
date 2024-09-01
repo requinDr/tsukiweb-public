@@ -5,11 +5,10 @@
 	grid-template-columns: 180px 1fr;
 	grid-template-areas: "extra-menu extra-content";
 	padding: 0;
-	gap: 1em;
+	column-gap: 1em;
 
 	.extra-menu {
 		grid-area: extra-menu;
-		// margin-top: 3em;
 		display: grid;
 		align-content: start;
 		justify-items: left;
@@ -17,7 +16,6 @@
 		gap: 1em;
     padding: 1em;
     padding-top: 3em;
-    // background-image: linear-gradient(45deg, #0b2e4d, transparent);
 
 		.menu-item {
 			all: unset;
@@ -128,10 +126,13 @@
 			"extra-menu";
 
 		.extra-menu {
-			padding-top: 0;
+			padding-top: 1em;
 			grid-auto-flow: column;
-			font-size: 1.2em;
+			font-size: 1.1em;
 			overflow-x: auto;
+			box-shadow: var(--menu-shadow);
+			background-color: var(--menu-container);
+			padding-bottom: 1.6em;
 
 			.menu-item {
 				white-space: nowrap;

@@ -1,7 +1,7 @@
 #endings {
 	main {
 		display: grid;
-		margin-block: 1em;
+		padding-block: 1em;
 		gap: 1rem;
 		overflow-y: auto;
 		scrollbar-gutter: stable both-edges;
@@ -162,7 +162,7 @@
 	@media (max-height: 600px) {
 		main {
 			grid-template-columns: 3fr minmax(120px, 1fr);
-			margin-block: 0;
+			padding-block: 0;
 		}
 
 		.endings-list {

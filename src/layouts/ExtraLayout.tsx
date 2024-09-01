@@ -52,7 +52,7 @@ const ExtraLayout = ({ children }: PropsWithChildren) => {
 				</TitleMenuButton>
 				}
 				<TitleMenuButton to={SCREEN.TITLE}>
-					{`<`}	{strings.back}
+					{`<<`} {strings.back}
 				</TitleMenuButton>
 			</div>
 
