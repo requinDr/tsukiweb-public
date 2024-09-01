@@ -30,6 +30,19 @@
 			text-align: center;
 			line-height: 1.4;
 
+			&.active {
+				&::after {
+					width: 100%;
+					background-image: linear-gradient(
+						to right,
+						#0a9eab00,
+						rgb(10, 164, 171) 50%,
+						#0a9eab00
+					);
+					opacity: 1;
+				}
+			}
+
 			// Hover area
 			&::before {
 				content: "";

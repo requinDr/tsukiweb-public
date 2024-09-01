@@ -16,6 +16,7 @@ function App() {
   return (
     <ErrorBoundary FallbackComponent={PageCrash}>
       <LocaleSetter />
+      
       <BrowserRouter basename={import.meta.env.BASE_URL}>
         <AnimatedRoutes />
       </BrowserRouter>

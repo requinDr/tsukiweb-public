@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useMemo } from 'react'
 import tsukiLogo from "../assets/images/tsukihime-logo.webp"
 import moon from "../assets/images/moon.webp"
 import '../styles/title-menu.scss'
@@ -13,7 +13,6 @@ import { useLanguageRefresh } from '../components/hooks/useLanguageRefresh'
 import { useScreenAutoNavigate } from '../components/hooks/useScreenAutoNavigate'
 import AppInfo from '../components/title-menu/AppInfo'
 import TranslationSwitch from '../components/title-menu/TranslationSwitch'
-import ExtraMenu from 'components/title-menu/ExtraMenu'
 import TitleMenuButton from '../../tsukiweb-common/src/components/atoms/TitleMenuButton'
 import Particles from '@tsukiweb-common/ui-core/components/Particles'
 import { useObserved } from '@tsukiweb-common/utils/Observer'
@@ -27,7 +26,6 @@ const img = {
 const TitleMenuScreen = () => {
 	useScreenAutoNavigate(SCREEN.TITLE)
 	const [conf] = useObserved(settings.volume, 'master')
-	const [page, setPage] = useState<number>(0)
 	useLanguageRefresh()
 
 	const [allEndingsSeen, eclipseSeen] = useMemo(()=> {
@@ -85,7 +83,7 @@ const TitleMenuScreen = () => {
 						{strings.title.config}
 					</TitleMenuButton>
 
-					<TitleMenuButton to={SCREEN.GALLERY}>
+					<TitleMenuButton to={SCREEN.GALLERY} attention={allEndingsSeen && !eclipseSeen}>
 						{strings.title.extra}
 					</TitleMenuButton>
 				</div>

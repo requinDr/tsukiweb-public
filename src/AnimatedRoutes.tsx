@@ -19,9 +19,13 @@ import AppLayout from "./layouts/AppLayout";
 import SceneReplayScreen from "screens/SceneReplayScreen";
 import ExtraLayout from "layouts/ExtraLayout";
 
-
 const AnimatedRoutes = () => {
 	const location = useLocation()
+
+	const isExtra = location.pathname.startsWith("/gallery")
+		|| location.pathname.startsWith("/endings")
+		|| location.pathname.startsWith("/scenes")
+	const keyPresence = isExtra ? "extra" : location.pathname
 
 	return (
 		<AppLayout>
@@ -32,24 +36,24 @@ const AnimatedRoutes = () => {
 				closeButton={false}
 				pauseOnFocusLoss={false}
 				theme="dark" />
-			
-			<AnimatePresence mode="wait">
-				<Routes location={location} key={location.pathname}>
-					<Route path="/*" element={<Navigate to={"/disclaimer"} />} />
+
+			<AnimatePresence mode="wait" initial={false}>
+				<Routes location={location} key={keyPresence}>
+					<Route path="/" element={<Navigate to={"/disclaimer"} />} />
 					<Route path="/disclaimer" element={<DisclaimerScreen />} />
 					<Route path="/title" element={<TitleMenuScreen />} />
 					<Route path="/window" element={<Window />} />
 					<Route path="/load" element={<LoadScreen />} />
 					<Route path="/config" element={<ConfigScreen />} />
 
-          <Route path="/" element={<ExtraLayout><Outlet /></ExtraLayout>}>
-  					<Route path="/gallery" element={<GalleryScreen />} />
-  					<Route path="/endings" element={<EndingsScreen />} />
-  					<Route path="/scenes">
-  						<Route index element={<FlowchartScreen />} />
-  						<Route path=":sceneId" element={<SceneReplayScreen />} />
-  					</Route>
-          </Route>
+					<Route element={<ExtraLayout><Outlet /></ExtraLayout>}>
+						<Route path="/gallery" element={<GalleryScreen />} />
+						<Route path="/endings" element={<EndingsScreen />} />
+						<Route path="/scenes">
+							<Route index element={<FlowchartScreen />} />
+							<Route path=":sceneId" element={<SceneReplayScreen />} />
+						</Route>
+					</Route>
 				</Routes>
 			</AnimatePresence>
 		</AppLayout>
