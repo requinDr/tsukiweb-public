@@ -1,9 +1,18 @@
 #endings {
 	main {
 		display: grid;
-		grid-template-columns: 1fr 240px;
+		// grid-template-columns: 1fr 240px;
+    margin-block: 1em;
 		gap: 1rem;
+    overflow-y: auto;
+    scrollbar-gutter: stable both-edges;
 	}
+
+  section {
+    padding: 1em;
+    flex-grow: 1;
+    position: relative;
+  }
 
 	.endings-list {
 		display: grid;
@@ -109,6 +118,7 @@
 		overflow-y: auto;
 		min-height: 30vh;
 		justify-items: center;
+    max-width: 600px;
 
 		h3 {
 			all: unset;

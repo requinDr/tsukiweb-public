@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation, Outlet } from "react-router-dom";
 import "@tsukiweb-common/assets/fonts/Ubuntu-Regular.ttf"
 import "@tsukiweb-common/assets/fonts/Ubuntu-Bold.ttf"
 import { AnimatePresence } from 'framer-motion';
@@ -17,6 +17,7 @@ import EndingsScreen from "./screens/EndingsScreen";
 import FlowchartScreen from "./screens/FlowchartScreen";
 import AppLayout from "./layouts/AppLayout";
 import SceneReplayScreen from "screens/SceneReplayScreen";
+import ExtraLayout from "layouts/ExtraLayout";
 
 
 const AnimatedRoutes = () => {
@@ -41,12 +42,14 @@ const AnimatedRoutes = () => {
 					<Route path="/load" element={<LoadScreen />} />
 					<Route path="/config" element={<ConfigScreen />} />
 
-					<Route path="/gallery" element={<GalleryScreen />} />
-					<Route path="/endings" element={<EndingsScreen />} />
-					<Route path="/scenes">
-						<Route index element={<FlowchartScreen />} />
-						<Route path=":sceneId" element={<SceneReplayScreen />} />
-					</Route>
+          <Route path="/" element={<ExtraLayout><Outlet /></ExtraLayout>}>
+  					<Route path="/gallery" element={<GalleryScreen />} />
+  					<Route path="/endings" element={<EndingsScreen />} />
+  					<Route path="/scenes">
+  						<Route index element={<FlowchartScreen />} />
+  						<Route path=":sceneId" element={<SceneReplayScreen />} />
+  					</Route>
+          </Route>
 				</Routes>
 			</AnimatePresence>
 		</AppLayout>

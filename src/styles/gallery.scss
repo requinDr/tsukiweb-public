@@ -1,6 +1,13 @@
 @use 'partials/_components';
 
 #gallery {
+  section {
+    position: relative;
+    padding-block: 1rem;
+    overflow-y: auto;
+    flex-grow: 1;
+    scrollbar-gutter: stable both-edges;
+  }
 	.gallery-transition {
 		position: relative;
 		overflow: hidden;

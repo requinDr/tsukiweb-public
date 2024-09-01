@@ -20,45 +20,41 @@ const EndingsScreen = () => {
 	useLanguageRefresh()
 
 	return (
-		<motion.div
-			className="page" id="endings"
-			initial={{opacity: 0}}
-			animate={{opacity: 1}}
-			exit={{opacity: 0}}>
-			<div className="page-content">
-				<h2 className="page-title">{strings.extra.endings}</h2>
+		<div
+			className="page" id="endings">
+				{/* <h2 className="page-title">{strings.extra.endings}</h2> */}
 				
 				<main>
-					<PageSection className="endings-list">
-					{Object.values(endings).map((ending, index) =>
-						<MainEnding
-							key={index}
-							unlocked={settings.unlockEverything || Boolean(ending?.seen)}
-							ending={{
-								id: ending.char,
-								char: strings.characters[ending.char],
-								image: ending.image,
-								name: noBb(strings.scenario.routes[ending.char][ending.day]),
-								type: ending.type,
-								scene: ending.scene
-							}}
-						/>
-					)}
+					<section className="endings-list">
+  					{Object.values(endings).map((ending, index) =>
+  						<MainEnding
+  							key={index}
+  							unlocked={settings.unlockEverything || Boolean(ending?.seen)}
+  							ending={{
+  								id: ending.char,
+  								char: strings.characters[ending.char],
+  								image: ending.image,
+  								name: noBb(strings.scenario.routes[ending.char][ending.day]),
+  								type: ending.type,
+  								scene: ending.scene
+  							}}
+  						/>
+  					)}
 
-					<MainEnding
-						unlocked={settings.unlockEverything || viewedScene("eclipse")}
-						ending={{
-							id: "eclipse",
-							char: "",
-							image: "ao_02",
-							name: strings.extra.eclipse,
-							type: "",
-							scene: "eclipse"
-						}}
-					/>
-					</PageSection>
+  					<MainEnding
+  						unlocked={settings.unlockEverything || viewedScene("eclipse")}
+  						ending={{
+  							id: "eclipse",
+  							char: "",
+  							image: "ao_02",
+  							name: strings.extra.eclipse,
+  							type: "",
+  							scene: "eclipse"
+  						}}
+  					/>
+					</section>
 
-					<PageSection className="badendings-list">
+					<section className="badendings-list">
 						<h3>{strings.endings.osiete}</h3>
 						{Object.values(osiete).map((ending, index)=>
 							<Oshiete
@@ -67,18 +63,10 @@ const EndingsScreen = () => {
 								ending={ending}
 							/>
 						)}
-					</PageSection>
+					</section>
 					<Tooltip id="osiete" place="bottom" className="tooltip" />
 				</main>
-
-				<Button
-					variant="menu"
-					to={SCREEN.TITLE}
-					className="back-button">
-					{strings.back}
-				</Button>
-			</div>
-		</motion.div>
+		</div>
 	)
 }
 

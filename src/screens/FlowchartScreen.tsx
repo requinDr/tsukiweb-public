@@ -17,24 +17,12 @@ const FlowchartScreen = () => {
 			displayMode.screen = SCREEN.TITLE
 	}
 	return (
-		<motion.div
-			className="page" id="scenes"
-			initial={{opacity: 0}}
-			animate={{opacity: 1}}
-			exit={{opacity: 0}}>
+		<div
+			className="page" id="scenes">
 			<div className="page">
 				<Flowchart back={back} />
 			</div>
-
-			<FixedFooter>
-				<Button
-					variant="menu"
-					to={SCREEN.TITLE}
-				>
-					{strings.back}
-				</Button>
-			</FixedFooter>
-		</motion.div>
+		</div>
 	)
 }
 

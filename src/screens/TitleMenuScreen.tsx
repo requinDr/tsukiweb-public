@@ -66,49 +66,29 @@ const TitleMenuScreen = () => {
 			</div>
 
 			<nav className="menu">
-				{page === 0 ?
-				<>
-					<div className='first-row'>
-						<TitleMenuButton onClick={newGame}>
-							{strings.title.start}
-						</TitleMenuButton>
+				<div className='first-row'>
+					<TitleMenuButton onClick={newGame}>
+						{strings.title.start}
+					</TitleMenuButton>
 
-						{hasSaveStates() &&
-						<TitleMenuButton onClick={continueGame}>
-							{strings.title.resume}
-						</TitleMenuButton>
-						}
+					{hasSaveStates() &&
+					<TitleMenuButton onClick={continueGame}>
+						{strings.title.resume}
+					</TitleMenuButton>
+					}
 
-						<TitleMenuButton to={SCREEN.LOAD}>
-							{strings.title.load}
-						</TitleMenuButton>
+					<TitleMenuButton to={SCREEN.LOAD}>
+						{strings.title.load}
+					</TitleMenuButton>
 
-						<TitleMenuButton to={SCREEN.CONFIG}>
-							{strings.title.config}
-						</TitleMenuButton>
+					<TitleMenuButton to={SCREEN.CONFIG}>
+						{strings.title.config}
+					</TitleMenuButton>
 
-						<TitleMenuButton onClick={()=>setPage(1)}
-							className="extra"
-							attention={allEndingsSeen && !eclipseSeen}>
-							{strings.title.extra} {">"}
-						</TitleMenuButton>
-					</div>
-
-					<div className='second-row'>
-						<ExtraMenu allEndingsSeen={allEndingsSeen} eclipseSeen={eclipseSeen} />
-					</div>
-				</>
-				:
-				<>
-					<div className='first-row'>
-						<ExtraMenu allEndingsSeen={allEndingsSeen} eclipseSeen={eclipseSeen} />
-
-						<TitleMenuButton onClick={()=>setPage(0)}>
-							{"<"}  {strings.back}
-						</TitleMenuButton>
-					</div>
-				</>
-				}
+					<TitleMenuButton to={SCREEN.GALLERY}>
+						{strings.title.extra}
+					</TitleMenuButton>
+				</div>
 			</nav>
 
 			<div className='top-actions'>

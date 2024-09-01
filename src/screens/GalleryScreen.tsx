@@ -68,26 +68,14 @@ const GalleryScreen = () => {
 	}))
 
 	return (
-		<motion.div
-			className="page" id="gallery"
-			initial={{opacity: 0}}
-			animate={{opacity: 1}}
-			exit={{opacity: 0}}>
+		<div
+    className="page" id="gallery">
 			<PageTabsLayout
-				title={strings.extra.gallery}
 				tabs={tabs}
 				selectedTab={selectedTab}
 				setSelectedTab={setSelectedTab}
-				backButton={
-					<Button
-						variant="menu"
-						to={SCREEN.TITLE}
-						className="back-button">
-						{strings.back}
-					</Button>
-				}
 			>
-				<PageSection ref={refSection}>
+				<section ref={refSection}>
 					<div className='gallery-transition'>
 						<AnimatePresence mode="popLayout">
 							<motion.div
@@ -129,9 +117,9 @@ const GalleryScreen = () => {
 							</motion.div>
 						</AnimatePresence>
 					</div>
-				</PageSection>
+				</section>
 			</PageTabsLayout>
-		</motion.div>
+		</div>
 	)
 }
 
