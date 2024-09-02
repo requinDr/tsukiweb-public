@@ -8,25 +8,27 @@ type Props = {
 	ending: {
 		id: string
 		char: string
-		image: string
+		image?: string
 		name: string
 		type: string
 		scene: LabelName
-	}
-}
+	},
+} & React.HTMLAttributes<HTMLDivElement>
 
-const MainEnding = ({unlocked, ending:{id, char, image, name, type, scene}}: Props) => {
-	const startScene = () => playScene(scene, {continueScript: false, viewedOnly: true})
+const MainEnding = ({unlocked, ending, ...props}: Props) => {
+	const {id, char, image, name, type, scene} = ending
+	const startScene = () => playScene(scene, {continueScript: false, viewedOnly: !unlocked})
 
 	return (
 		<div
-			className={classNames("ending", id, {"unlocked": unlocked})}
+			{...props}
+			className={classNames("ending", id, {"unlocked": unlocked}, props.className)}
 			onClick={startScene}
 			tabIndex={unlocked ? 0 : -1}
 			role="button"
 			onKeyDown={(e)=> e.key === "Enter" && startScene()}
 		>
-			{unlocked ?
+			{unlocked && image ?
 			<img
 				className="ending-img"
 				src={imageSrc(`event/${image}`, 'sd')}

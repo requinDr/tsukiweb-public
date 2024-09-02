@@ -19,7 +19,7 @@
 		grid-template-columns: repeat(auto-fill, minmax(min(180px, 18vmin), 1fr));
 		isolation: isolate;
 		min-width: 0;
-		gap: 1em;
+		gap: 12px;
 		place-content: start;
 
 		.ending {
@@ -46,6 +46,35 @@
 						background-color: $color;
 						mask-image: linear-gradient(to right, transparent, black 50%, transparent);
 					}
+				}
+			}
+			
+			&.attention {
+				&:before {
+					content: "!";
+					font-size: 2.5em;
+					float: inline-end;
+					position: absolute;
+					right: 0;
+					left: 0;
+					justify-self: center;
+					top: 16px;
+					animation: scale-up-down infinite 1.6s;
+					color: rgb(10, 164, 171);
+					text-shadow: 0 0 6px #005aff;
+
+					@keyframes scale-up-down {
+						0%, 100% {
+							transform: scale(1);
+						}
+						50% {
+							transform: scale(1.2);
+						}
+					}
+				}
+
+				&.unlocked.eclipse {
+					@include shadow(#ffffff);
 				}
 			}
 

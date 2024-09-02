@@ -1,10 +1,10 @@
-import { AnimatePresence, motion } from "framer-motion"
+import { motion } from "framer-motion"
 import { PropsWithChildren, useMemo } from "react"
 import "../styles/extra.scss"
 import TitleMenuButton from "@tsukiweb-common/components/atoms/TitleMenuButton"
 import { strings } from "translation/lang"
 import { SCREEN } from "utils/display"
-import { playScene, viewedScene } from "utils/savestates"
+import { viewedScene } from "utils/savestates"
 import { useLocation } from "react-router-dom"
 import { useLanguageRefresh } from "components/hooks/useLanguageRefresh"
 import { endings } from "utils/endings"
@@ -21,10 +21,6 @@ const ExtraLayout = ({ children }: PropsWithChildren) => {
 		return [allEndingsSeen, eclipseSeen]
 	}, [settings.completedScenes, settings.unlockEverything])
 
-	function playEClipse() {
-		playScene("eclipse", {continueScript: true, viewedOnly: false})
-	}
-
 	const currentPage = "/" + location.pathname.split("/")[1]
 
 	return (
@@ -36,21 +32,23 @@ const ExtraLayout = ({ children }: PropsWithChildren) => {
 			exit={{opacity: 0}}>
 			<div
 				className="extra-menu">
-				<TitleMenuButton to={SCREEN.GALLERY} className={classNames({active: currentPage === SCREEN.GALLERY})}>
+				<TitleMenuButton
+					to={SCREEN.GALLERY}
+					className={classNames({active: currentPage === SCREEN.GALLERY})}>
 					{strings.extra.gallery}
 				</TitleMenuButton>
-				<TitleMenuButton to={SCREEN.ENDINGS} className={classNames({active: currentPage === SCREEN.ENDINGS})}>
+				<TitleMenuButton
+					to={SCREEN.ENDINGS}
+					className={classNames({active: currentPage === SCREEN.ENDINGS})}
+					attention={allEndingsSeen && !eclipseSeen}>
 					{strings.extra.endings}
 				</TitleMenuButton>
-				<TitleMenuButton to={SCREEN.SCENES} className={classNames({active: currentPage === SCREEN.SCENES})}>
+				<TitleMenuButton
+					to={SCREEN.SCENES}
+					className={classNames({active: currentPage === SCREEN.SCENES})}>
 					{strings.extra.scenes}
 				</TitleMenuButton>
-				{allEndingsSeen &&
-				<TitleMenuButton onClick={playEClipse}
-					attention={!eclipseSeen}>
-					{strings.extra.eclipse}
-				</TitleMenuButton>
-				}
+
 				<TitleMenuButton to={SCREEN.TITLE}>
 					{`<<`} {strings.back}
 				</TitleMenuButton>
