@@ -1,3 +1,5 @@
+@use '../tsukiweb-common/src/ui-core/styles/_partials' as *;
+
 #title-menu {
 	position: relative;
 	display: flex;
@@ -157,18 +159,9 @@
 					position: absolute;
 					right: -14px;
 					top: 0;
-					animation: scale-up-down infinite 1.6s;
 					color: rgb(10 164 171);
 					text-shadow: 0 0 6px #005aff;
-
-					@keyframes scale-up-down {
-						0%, 100% {
-							transform: scale(1);
-						}
-						50% {
-							transform: scale(1.2);
-						}
-					}
+					@include hover-scale("attention", 1.2);
 				}
 			}
 		}

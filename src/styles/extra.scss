@@ -1,4 +1,4 @@
-@use 'partials/_components';
+@use '../tsukiweb-common/src/ui-core/styles/_partials' as *;
 
 #extra {
 	display: grid;
@@ -14,8 +14,8 @@
 		justify-items: left;
 		font-size: 1.4em;
 		gap: 1em;
-    padding: 1em;
-    padding-top: 3em;
+		padding: 1em;
+		padding-top: 3em;
 
 		.menu-item {
 			all: unset;
@@ -87,18 +87,9 @@
 					position: absolute;
 					right: -14px;
 					top: 0;
-					animation: scale-up-down infinite 1.6s;
 					color: rgb(10 164 171);
 					text-shadow: 0 0 6px #005aff;
-
-					@keyframes scale-up-down {
-						0%, 100% {
-							transform: scale(1);
-						}
-						50% {
-							transform: scale(1.2);
-						}
-					}
+					@include hover-scale("attention", 1.2);
 				}
 			}
 		}
