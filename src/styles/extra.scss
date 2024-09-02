@@ -8,14 +8,13 @@
 	column-gap: 1em;
 
 	.extra-menu {
-		grid-area: extra-menu;
-		display: grid;
-		align-content: start;
-		justify-items: left;
-		font-size: 1.4em;
-		gap: 1em;
-		padding: 1em;
-		padding-top: 3em;
+    grid-area: extra-menu;
+    display: flex;
+    font-size: 1.4em;
+    gap: 1em;
+    padding: 1em;
+    flex-direction: column;
+    align-items: flex-start;
 
 		.menu-item {
 			all: unset;
@@ -108,14 +107,17 @@
 			"extra-menu";
 
 		.extra-menu {
-			padding-top: 1em;
-			grid-auto-flow: column;
+			flex-direction: row;
 			font-size: 1.1em;
 			overflow-x: auto;
 			box-shadow: var(--menu-shadow);
 			background-color: var(--menu-container);
 			padding-bottom: 1.6em;
 			justify-content: space-evenly;
+
+			h2 {
+				display: none;
+			}
 
 			.menu-item {
 				white-space: nowrap;

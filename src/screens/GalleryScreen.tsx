@@ -10,12 +10,10 @@ import { useLanguageRefresh } from '../components/hooks/useLanguageRefresh'
 import { useScreenAutoNavigate } from '../components/hooks/useScreenAutoNavigate'
 import { Tab } from '@tsukiweb-common/ui-core/components/TabsComponent'
 import PageTabsLayout from '@tsukiweb-common/ui-core/layouts/PageTabsLayout'
-import PageSection from '@tsukiweb-common/ui-core/layouts/PageSection'
 import useQueryParam from '@tsukiweb-common/hooks/useQueryParam'
 import { CharId } from 'types'
 import GalleryImage from 'components/gallery/GalleryImage'
 import GalleryNbVariants from 'components/gallery/GalleryNbVariants'
-import Button from '@tsukiweb-common/ui-core/components/Button'
 
 const container: Variants = {
 	hidden: { opacity: 0 },
@@ -68,8 +66,7 @@ const GalleryScreen = () => {
 	}))
 
 	return (
-		<div
-    className="page" id="gallery">
+		<div  className="page" id="gallery">
 			<PageTabsLayout
 				tabs={tabs}
 				selectedTab={selectedTab}

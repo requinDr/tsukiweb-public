@@ -8,7 +8,7 @@ import { useScreenAutoNavigate } from '../components/hooks/useScreenAutoNavigate
 import { settings } from 'utils/settings'
 import MainEnding from 'components/endings/MainEnding'
 import Oshiete from 'components/endings/Oshiete'
-import { playScene, viewedScene } from 'utils/savestates'
+import { viewedScene } from 'utils/savestates'
 import { noBb } from '@tsukiweb-common/utils/Bbcode'
 import { useMemo } from 'react'
 import classNames from 'classnames'
@@ -23,10 +23,6 @@ const EndingsScreen = () => {
 		const eclipseSeen = settings.unlockEverything || viewedScene("eclipse")
 		return [allEndingsSeen, eclipseSeen]
 	}, [settings.completedScenes, settings.unlockEverything])
-
-	function playEClipse() {
-		playScene("eclipse", {continueScript: true, viewedOnly: false})
-	}
 
 	const eclipseUnlocked = allEndingsSeen && !eclipseSeen
 

@@ -1,13 +1,34 @@
 @use 'partials/_components';
 
 #gallery {
-  section {
-    position: relative;
-    padding-block: 1rem;
-    overflow-y: auto;
-    flex-grow: 1;
-    scrollbar-gutter: stable both-edges;
-  }
+	// cancel the left menu
+	@media screen and (orientation: landscape) and (max-height: 480px) {
+		main {
+			grid-template-columns: 1fr;
+			grid-template-areas:
+					"page-title"
+					"tabs"
+					"content"
+					"back-button";
+			grid-template-rows: auto auto 1fr auto;
+
+			& > div {
+				flex-direction: row;
+			}
+		}
+	}
+
+	&.page > div {
+		padding-bottom: 0;
+	}
+
+	section {
+		position: relative;
+		padding-block: 1rem;
+		overflow-y: auto;
+		flex-grow: 1;
+		scrollbar-gutter: stable both-edges;
+	}
 	.gallery-transition {
 		position: relative;
 		overflow: hidden;
@@ -17,6 +38,7 @@
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(min(160px, 20vmin), 1fr));
 		gap: 8px;
+		padding-bottom: 60px;
 
 		@media (max-width: 480px) or (max-height: 480px) {
 			grid-template-columns: repeat(auto-fill, minmax(min(100px, 30vmin), 1fr));

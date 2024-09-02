@@ -30,8 +30,10 @@ const ExtraLayout = ({ children }: PropsWithChildren) => {
 			initial={{opacity: 0}}
 			animate={{opacity: 1}}
 			exit={{opacity: 0}}>
-			<div
-				className="extra-menu">
+			<div className="extra-menu">
+				<h2 className="page-title">
+					{strings.title.extra}
+				</h2>
 				<TitleMenuButton
 					to={SCREEN.GALLERY}
 					className={classNames({active: currentPage === SCREEN.GALLERY})}>
