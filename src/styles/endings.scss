@@ -18,7 +18,7 @@
 
 	.endings-list {
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(min(180px, 18vmin), 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(min(184px, 20vmin), 1fr));
 		isolation: isolate;
 		min-width: 0;
 		gap: 12px;
@@ -187,7 +187,7 @@
 		}
 	}
 	
-	@media (max-height: 600px) {
+	@media (max-height: 600px) and (min-width: 600px) {
 		main {
 			grid-template-columns: 3fr minmax(120px, 1fr);
 			padding-block: 0;
