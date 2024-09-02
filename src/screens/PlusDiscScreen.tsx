@@ -26,7 +26,8 @@ const PlusDiscScreen = () => {
 							VNDB
 						</a>
 						<p>
-							Plus Disc is a fan disc containing shorts stories.<br />It was originally releassed in 2001.
+							Plus Disc is a fan disc containing a short story and bonus.<br />
+							It was originally released in 2001.
 						</p>
 					</div>
 				</div>

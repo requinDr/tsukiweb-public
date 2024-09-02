@@ -6,6 +6,7 @@
 		padding-bottom: 60px;
 	}
 	.header {
+		margin-top: 2em;
 		display: flex;
 
 		.cover {
@@ -65,7 +66,6 @@
 				&:after {
 					box-shadow: var(--selected-shadow);
 				}
-				box-shadow: var(--selected-shadow);
 			}
 
 			@media screen and (max-width: 440px) {

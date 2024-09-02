@@ -2,7 +2,7 @@
 
 #extra {
 	display: grid;
-	grid-template-columns: 180px 1fr;
+	grid-template-columns: minmax(180px, min-content) 1fr;
 	grid-template-areas: "extra-menu extra-content";
 	padding: 0;
 	column-gap: 1em;
@@ -135,7 +135,7 @@
 	}
 
 	@media screen and (max-height: 600px) and (min-width: 800px) {
-		grid-template-columns: 140px 1fr;
+		grid-template-columns: minmax(140px, min-content) 1fr;
 		.extra-menu {
 			font-size: 1.1em;
 			overflow-y: auto;
