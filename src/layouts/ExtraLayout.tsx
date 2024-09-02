@@ -50,8 +50,15 @@ const ExtraLayout = ({ children }: PropsWithChildren) => {
 					className={classNames({active: currentPage === SCREEN.SCENES})}>
 					{strings.extra.scenes}
 				</TitleMenuButton>
+				{import.meta.env.DEV &&
+				<TitleMenuButton
+					to={SCREEN.PLUS_DISC}
+					className={classNames({active: currentPage === SCREEN.PLUS_DISC})}>
+					Plus Disc
+				</TitleMenuButton>
+				}
 
-				<TitleMenuButton to={SCREEN.TITLE}>
+				<TitleMenuButton to={SCREEN.TITLE} className="back-button">
 					{`<<`} {strings.back}
 				</TitleMenuButton>
 			</div>

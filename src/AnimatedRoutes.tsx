@@ -18,6 +18,7 @@ import FlowchartScreen from "./screens/FlowchartScreen";
 import AppLayout from "./layouts/AppLayout";
 import SceneReplayScreen from "screens/SceneReplayScreen";
 import ExtraLayout from "layouts/ExtraLayout";
+import PlusDiscScreen from "screens/PlusDiscScreen";
 
 const AnimatedRoutes = () => {
 	const location = useLocation()
@@ -25,6 +26,7 @@ const AnimatedRoutes = () => {
 	const isExtra = location.pathname.startsWith("/gallery")
 		|| location.pathname.startsWith("/endings")
 		|| location.pathname.startsWith("/scenes")
+		|| location.pathname.startsWith("/plus-disc")
 	const keyPresence = isExtra ? "extra" : location.pathname
 
 	return (
@@ -53,6 +55,7 @@ const AnimatedRoutes = () => {
 							<Route index element={<FlowchartScreen />} />
 							<Route path=":sceneId" element={<SceneReplayScreen />} />
 						</Route>
+						<Route path="/plus-disc" element={<PlusDiscScreen />} />
 					</Route>
 				</Routes>
 			</AnimatePresence>

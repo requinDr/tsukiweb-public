@@ -7,7 +7,8 @@ export enum SCREEN {
   LOAD = "/load",
   GALLERY = "/gallery",
   ENDINGS = "/endings",
-  SCENES = "/scenes"
+  SCENES = "/scenes",
+  PLUS_DISC = "/plus-disc",
 }
 
 let history: boolean = false;

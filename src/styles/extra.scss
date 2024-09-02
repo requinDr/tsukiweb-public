@@ -8,13 +8,13 @@
 	column-gap: 1em;
 
 	.extra-menu {
-    grid-area: extra-menu;
-    display: flex;
-    font-size: 1.4em;
-    gap: 1em;
-    padding: 1em;
-    flex-direction: column;
-    align-items: flex-start;
+		grid-area: extra-menu;
+		display: flex;
+		font-size: 1.4em;
+		gap: 1em;
+		padding: 1em;
+		flex-direction: column;
+		align-items: flex-start;
 
 		.menu-item {
 			all: unset;
@@ -92,6 +92,10 @@
 				}
 			}
 		}
+
+		.back-button {
+			margin-top: auto;
+		}
 	}
 
 	.extra-content {
@@ -107,7 +111,8 @@
 			"extra-menu";
 
 		.extra-menu {
-			flex-direction: row;
+			display: grid;
+			grid-auto-flow: column;
 			font-size: 1.1em;
 			overflow-x: auto;
 			box-shadow: var(--menu-shadow);
@@ -122,6 +127,10 @@
 			.menu-item {
 				white-space: nowrap;
 			}
+
+			.back-button {
+				grid-column: 1 / -1;
+			}
 		}
 	}
 
@@ -129,8 +138,6 @@
 		grid-template-columns: 140px 1fr;
 		.extra-menu {
 			font-size: 1.1em;
-			padding-top: 1em;
-			align-content: center;
 			overflow-y: auto;
 			padding-right: 0;
 		}
