@@ -137,9 +137,9 @@
 	.badendings-list {
 		gap: 1em;
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(32px, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(34px, 1fr));
 		place-content: flex-start;
-		max-width: min(600px, 100%);
+		max-width: min(620px, 100%);
 
 		h3 {
 			all: unset;
@@ -150,14 +150,15 @@
 		}
 
 		.badending {
-			width: 32px;
-			height: 32px;
+			width: 34px;
+			height: 34px;
 			filter: grayscale(1);
 			opacity: .5;
 
 			img {
 				width: 100%;
 				height: 100%;
+				object-fit: contain;
 			}
 
 			&.seen {
