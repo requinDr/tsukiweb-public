@@ -6,11 +6,11 @@
   "dependencies": {
     "@tanstack/react-virtual": "^3.10.6",
     "@types/jest": "^28.1.8",
-    "@types/node": "^20.16.2",
+    "@types/node": "^20.16.3",
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
     "classnames": "^2.5.1",
-    "framer-motion": "^11.3.31",
+    "framer-motion": "^11.4.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-error-boundary": "^4.0.13",
@@ -38,6 +38,6 @@
     "@types/react-modal": "^3.16.3",
     "@vitejs/plugin-react": "^4.3.1",
     "typescript": "^5.5.4",
-    "vite": "^5.4.2"
+    "vite": "^5.4.3"
   }
 }
