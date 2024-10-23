@@ -1,4 +1,5 @@
-@use '../tsukiweb-common/src/ui-core/styles/_partials' as *;
+@use "sass:color";
+@use '../../tsukiweb-common/src/ui-core/styles/_partials' as *;
 
 #endings {
 	main {
@@ -31,9 +32,10 @@
 			font-size: 1.1em;
 
 			@mixin shadow($color) {
-				$color-title: darken($color, 20%);
+				$color-title: color.adjust($color, $lightness: -20%);
+				
 				.ending-name {
-					background: linear-gradient(to right, $color-title, lighten($color, 20%), $color-title);
+					background: linear-gradient(to right, $color-title, color.adjust($color-title, $lightness: 20%), $color-title);
 					-webkit-background-clip: text;
 					background-clip: text;
 					color: transparent;
