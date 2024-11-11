@@ -1,6 +1,9 @@
 @use 'partials/_components';
 
 #gallery {
+	.tabs {
+		font-size: 1.1em;
+	}
 	// cancel the left menu
 	@media screen and (orientation: landscape) and (max-height: 480px) {
 		main {
@@ -24,7 +27,7 @@
 
 	section {
 		position: relative;
-		padding-block: 1rem;
+		padding-block: 8px;
 		overflow-y: auto;
 		flex-grow: 1;
 		scrollbar-gutter: stable both-edges;

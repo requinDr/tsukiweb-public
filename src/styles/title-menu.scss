@@ -194,7 +194,6 @@
 
 .app-info-modale {
 	background-image: linear-gradient(45deg, #011853 60%, #033343);
-	font-size: 1.1em;
 
 	.title-modal {
 		display: grid;
@@ -271,31 +270,23 @@
 	.languages {
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(min(120px, 100%), 1fr));
-		column-gap: 1em;
-		row-gap: .6em;
-		max-height: 300px;
+		gap: 4px;
+		max-height: 260px;
 		overflow-y: auto;
 		scrollbar-gutter: stable both-edges;
+		background-color: var(--menu-container);
+		padding: 8px 4px;
+		border-radius: 2px;
 	}
 	.language {
-		border-radius: .75rem;
-		padding: 1em;
-		text-align: center;
-		border: 1px solid #0f759b;
-		transition: box-shadow 0.1s;
-
-		&.selected {
-			background-image: radial-gradient(#006697, #0e1d6d);
-		}
-		&:hover, &:focus-visible {
-			box-shadow: var(--selected-shadow);
-		}
+		padding: .8em;
 	}
 
 	.translation-details {
-		margin-top: 2em;
+		margin-top: 1em;
 		line-height: 1.6;
 		min-height: 180px;
+		padding: 8px;
 
 		.title {
 			font-weight: 600;

@@ -29,12 +29,15 @@ const ModalLanguageSelection = ({show, setShow}: Props) => {
 						const selected = settings.language === id
 						
 						return (
-							<button key={id}
-								className={`language ${selected ? 'selected' : ''}`}
+							<Button
+								key={id}
+								variant="corner"
 								onClick={()=>selectLanguage(id)}
+								className="language"
+								active={selected}
 							>
-								<div>{dispName}</div>
-							</button>
+								{dispName}
+							</Button>
 						)
 					})}
 				</div>

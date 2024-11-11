@@ -1,18 +1,18 @@
 :root {
-  --toastify-color-progress-dark: #0a2f85;
-  --menu-container: hsl(0deg 0% 0% / 40%);
-  --menu-shadow: 0 1px 3px 1px hsl(0deg 0% 0% / 70%);
-  --active: rgb(0 111 164);
-  --active-hover: #00e5ff;
-  --focus: #062b64;
-  --selected-shadow: 0px 0px 0px 1px rgb(0, 200, 255) inset,
-    0px 0px 90px 0px rgba(0, 180, 255, 0.8) inset;
-  --separator: rgba(255, 255, 255, 0.1);
-  --page-width: max(1400px, 60%);
+	--toastify-color-progress-dark: #0a2f85;
+	--menu-container: hsl(0deg 0% 0% / 40%);
+	--menu-shadow: 0 1px 3px 1px hsl(0deg 0% 0% / 70%);
+	--active: rgb(0 111 164);
+	--active-hover: #00e5ff;
+	--focus: #062b64;
+	--selected-shadow: 0px 0px 0px 1px rgb(0, 200, 255) inset,
+		0px 0px 90px 0px rgba(0, 180, 255, 0.8) inset;
+	--separator: rgba(255, 255, 255, 0.1);
+	--page-width: max(1400px, 60%);
 
-  --color-link: #00b6ff;
+	--color-link: #00b6ff;
 
-  --scrollbar-gradient: linear-gradient(
+	--scrollbar-gradient: linear-gradient(
 		180deg,
 		hsl(192, 77%, 31%) 0%,
 		hsl(188, 100%, 50%) 50%,
@@ -27,99 +27,100 @@
 }
 
 #root {
-  background-image: radial-gradient(#00267d, #01001a);
-  width: 100%;
+	background-image: radial-gradient(#00267d, #01001a);
+	width: 100%;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  min-height: 100vh;
+	margin: 0;
+	display: flex;
+	min-height: 100vh;
 }
 
 #root-view {
-  height: 100vh;
-  height: 100dvh;
-  width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  --font: "Ubuntu";
-  font-family: var(--font), sans-serif;
+	height: 100vh;
+	height: 100dvh;
+	width: 100vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	--font: "Ubuntu";
+	font-family: var(--font), sans-serif;
 }
 #view {
-  --width: 100%;
-  width: var(--width);
-  height: 100%;
-  --ratio: initial;
-  aspect-ratio: var(--ratio);
-  overflow: hidden;
-  box-shadow: 0 4px 3em rgb(0 0 0 / 60%);
+	--width: 100%;
+	width: var(--width);
+	height: 100%;
+	--ratio: initial;
+	aspect-ratio: var(--ratio);
+	overflow: hidden;
+	box-shadow: 0 4px 3em rgb(0 0 0 / 60%);
 }
 .page {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  display: flex;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	display: flex;
 }
 .page-content {
-  max-width: var(--page-width);
-  max-height: max(1080px, 60%);
-  margin-inline: auto;
-  padding: clamp(.8rem, 1.6vmin, 1.2rem);
-  height: inherit;
-  width: inherit;
-  display: flex;
-  flex-direction: column;
-  font-size: 1rem;
-  align-self: center;
+	max-width: var(--page-width);
+	max-height: max(1080px, 60%);
+	margin-inline: auto;
+	padding: clamp(.8rem, 1.6vmin, 1.2rem);
+	height: inherit;
+	width: inherit;
+	display: flex;
+	flex-direction: column;
+	font-size: 1rem;
+	align-self: center;
 }
 .page-title {
-  font-size: clamp(2.2rem, 8vmin, 3rem);
-  letter-spacing: -1px;
-  margin-block: 0;
-  font-family: "Times New Roman", "Times-Roman", serif;
-  font-weight: 700;
-  background: linear-gradient(180deg, #99bccf 0%, #71c1dc 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 0.2em;
-  grid-area: page-title;
+	font-size: clamp(2.2rem, 8vmin, 3rem);
+	letter-spacing: -1px;
+	margin-block: 0;
+	font-family: "Times New Roman", "Times-Roman", serif;
+	font-weight: 700;
+	background: linear-gradient(180deg, #99bccf 0%, #71c1dc 100%);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	margin-bottom: 0.2em;
+	grid-area: page-title;
 }
 main {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  min-height: 0;
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	min-height: 0;
 }
 
 .back-button {
-  margin-top: clamp(.8rem, 4vmin, 1rem);
-  width: fit-content;
+	margin-top: clamp(.8rem, 4vmin, 1rem);
+	width: fit-content;
 }
 
 /* Overlay */
 .modal {
-  .close-btn {
-    display: flex;
-    margin-inline: auto;
-    margin-top: 1em;
-  }
+	.close-btn {
+		display: flex;
+		margin-inline: auto;
+		margin-top: 1em;
+		font-size: inherit;
+	}
 }
 .ReactModal__Overlay {
-  opacity: 0;
-  transition: opacity 200ms ease-in-out;
+	opacity: 0;
+	transition: opacity 200ms ease-in-out;
 }
 .ReactModal__Overlay--after-open {
-  opacity: 1;
+	opacity: 1;
 }
 .ReactModal__Overlay--before-close {
-  opacity: 0;
+	opacity: 0;
 }
 
 .tooltip {
-  --rt-color-dark: #000;
-  --rt-opacity: 1;
+	--rt-color-dark: #000;
+	--rt-opacity: 1;
 }
