@@ -6,22 +6,28 @@ import PageCrash from "./screens/CrashScreen";
 import { useLanguageRefresh } from "./components/hooks/useLanguageRefresh";
 
 const LocaleSetter = () => {
-  useLanguageRefresh()
-  document.documentElement.setAttribute('lang', getLocale())
+	useLanguageRefresh()
+	document.documentElement.setAttribute('lang', getLocale())
 
-  return null
+	return null
 }
 
 function App() {
-  return (
-    <ErrorBoundary FallbackComponent={PageCrash}>
-      <LocaleSetter />
-      
-      <BrowserRouter basename={import.meta.env.BASE_URL}>
-        <AnimatedRoutes />
-      </BrowserRouter>
-    </ErrorBoundary>
-  )
+	return (
+		<ErrorBoundary FallbackComponent={PageCrash}>
+			<LocaleSetter />
+			
+			<BrowserRouter
+				basename={import.meta.env.BASE_URL}
+				future={{
+					v7_startTransition: true,
+					v7_relativeSplatPath: true,
+				}}
+			>
+				<AnimatedRoutes />
+			</BrowserRouter>
+		</ErrorBoundary>
+	)
 }
 
 export default App
