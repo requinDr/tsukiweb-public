@@ -41,7 +41,7 @@
 	.top-actions {
 		position: absolute;
 		top: $spacing;
-		right: $icon-size;
+		right: $spacing;
 		display: flex;
 		flex-direction: row;
 		gap: calc($icon-size / 4);
@@ -68,7 +68,7 @@
 
 	.menu {
 		flex: 1;
-		margin-bottom: 4vh;
+		margin-bottom: 6vh;
 		width: min(860px, 100%);
 		font-size: 1.4em;
 		z-index: 1;

@@ -9,6 +9,7 @@ import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 import GalleryNbVariants from "./GalleryNbVariants"
 import { MdLock } from "react-icons/md"
+import { useMediaQuery } from "@uidotdev/usehooks"
 
 type GalleryImageProps = {
 	image: GalleryImg
@@ -19,6 +20,7 @@ type GalleryImageProps = {
 }
 const GalleryImage = ({image, thumb, variants = [], unlockedVariants = [], blurred = false}: GalleryImageProps) => {
 	const [open, setOpen] = useState(false)
+	const isSmallLandscape = useMediaQuery("(orientation: landscape) and (max-height: 480px)")
 
 	const slides: SlideImage[] = useMemo(() => {
 		return variants.map(image =>
@@ -88,6 +90,7 @@ const GalleryImage = ({image, thumb, variants = [], unlockedVariants = [], blurr
 				height: 96,
 				padding: 0,
 				borderColor: "#0098e1",
+				position: isSmallLandscape ? "start" : "bottom",
 			}}
 		/>
 		</>
