@@ -1,5 +1,6 @@
 :root {
-	--toastify-color-progress-dark: #0a2f85;
+	--font: "Ubuntu";
+
 	--menu-container: hsl(0deg 0% 0% / 40%);
 	--menu-shadow: 0 1px 3px 1px hsl(0deg 0% 0% / 70%);
 	--active: rgb(0 111 164);
@@ -24,6 +25,11 @@
 		hsl(188, 100%, 30%) 50%,
 		hsl(192, 77%, 26%) 100%
 	);
+
+	--toastify-color-progress-dark: #0a2f85;
+	--toastify-font-family: var(--font);
+	--toastify-color-dark: #01060e;
+	--toastify-color-progress-dark: #0087ff;
 }
 
 #root {
@@ -45,7 +51,6 @@ body {
 	align-items: center;
 	justify-content: center;
 	overflow: hidden;
-	--font: "Ubuntu";
 	font-family: var(--font), sans-serif;
 }
 #view {
@@ -123,4 +128,8 @@ main {
 .tooltip {
 	--rt-color-dark: #000;
 	--rt-opacity: 1;
+}
+
+.Toastify__progress-bar--wrp {
+	height: 3px;
 }

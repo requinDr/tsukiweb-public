@@ -31,14 +31,6 @@ const AnimatedRoutes = () => {
 
 	return (
 		<AppLayout>
-			<ToastContainer
-				transition={Slide}
-				position="bottom-right"
-				autoClose={3000}
-				closeButton={false}
-				pauseOnFocusLoss={false}
-				theme="dark" />
-
 			<AnimatePresence mode="wait" initial={false}>
 				<Routes location={location} key={keyPresence}>
 					<Route path="/" element={<Navigate to={"/disclaimer"} />} />
@@ -59,6 +51,14 @@ const AnimatedRoutes = () => {
 					</Route>
 				</Routes>
 			</AnimatePresence>
+
+			<ToastContainer
+				transition={Slide}
+				position="bottom-right"
+				autoClose={3000}
+				closeButton={false}
+				pauseOnFocusLoss={false}
+				theme="dark" />
 		</AppLayout>
 	)
 }

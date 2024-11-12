@@ -41,7 +41,7 @@
 			height: 100%;
 			flex: 1;
 			display: grid;
-			grid-template-rows: 1fr 2fr 1fr;
+			grid-template-rows: 1fr 2fr 1fr minmax(0, 0.1fr);
 			font-size: clamp(1.1em, 3.6vh, 1.3em);
 			padding: 1em;
 			margin-left: 2em;
@@ -72,7 +72,7 @@
 
 			.layer-btn {
 				&:hover, &:focus-visible {
-					color: rgb(10 164 171);
+					color: var(--active-hover);
 					text-shadow: 1px 0 5px rgb(14 79 187), 1px 0 6px rgba(28, 147, 147, 0.5);
 				}
 				&::after {
@@ -101,14 +101,17 @@
 			grid-row: 3;
 			display: grid;
 			grid-template-columns: 1fr 1fr;
-			gap: 8px;
+			gap: 6px;
 			margin-top: auto;
 			padding-top: 1em;
 			width: 100%;
 			max-width: 200px;
+			font-size: 1em;
 
 			.fullsize {
 				grid-column: 1 / -1;
+			}
+			.fullsize , .quick {
 				font-size: 1rem;
 			}
 			.replaying {
@@ -121,18 +124,12 @@
 				color: rgb(176 209 229);
 				background-color: rgb(1 17 27 / 60%);
 				justify-content: center;
-				outline-color: var(--active);
+				outline: none;
 
-				&:hover,
-				&:focus-visible {
+				&:hover, &:focus-visible {
 					color: rgb(245 249 251);
-					background-color: rgb(1 17 27 / 60%);
-					outline: 1px solid var(--active);
+					box-shadow: var(--selected-shadow);
 				}
-			}
-
-			.quick {
-				font-size: 1rem;
 			}
 		}
 	}
