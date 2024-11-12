@@ -14,7 +14,9 @@ const SaveDetails = ({id, saveState, deleteSave, ...props}: SaveDetailsProps)=> 
 
 	return (
 		<PageSection className="info" {...props}>
-			<GraphicsGroup images={saveState?.graphics ?? saveState?.context.graphics ?? {bg:"#000"}} />
+			{(saveState?.graphics || saveState?.context.graphics) &&
+				<GraphicsGroup images={saveState?.graphics ?? saveState?.context.graphics ?? {bg:"#000"}} />
+			}
 			
 			{id != undefined && saveState != undefined &&
 				<div className="deta">
