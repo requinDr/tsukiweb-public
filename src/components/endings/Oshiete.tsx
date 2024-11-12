@@ -12,14 +12,24 @@ type Props = {
 
 const Oshiete = ({unlocked, ending}: Props) => {
 
+	const handlePlay = () => {
+		if (unlocked && ending)
+			playScene(ending.scene, {continueScript: false })
+	}
+
 	return (
-		<div className={classNames("badending", {"seen": unlocked})}>
+		<div
+			className={classNames("badending", {"seen": unlocked})}
+			tabIndex={unlocked ? 0 : -1}
+			role="button"
+			onClick={unlocked ? handlePlay : undefined}
+			onKeyDown={e => e.key === 'Enter' && handlePlay()}
+		>
 			{unlocked && ending ?
 				<img
 					src={chalkboard}
 					alt={`Chalkboard Bad Ending ${ending.scene}`}
 					draggable={false}
-					onClick={() => playScene(ending.scene, {continueScript: false })}
 					data-tooltip-id="osiete"
 					data-tooltip-html={
 						ReactDOMServer.renderToString(
