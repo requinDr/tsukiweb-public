@@ -108,10 +108,10 @@
 			max-width: 200px;
 			font-size: 1em;
 
-			.fullsize {
+			.fullwidth {
 				grid-column: 1 / -1;
 			}
-			.fullsize , .quick {
+			.copy-scene, .quick {
 				font-size: 1rem;
 			}
 			.replaying {
@@ -130,6 +130,11 @@
 					color: rgb(245 249 251);
 					box-shadow: var(--selected-shadow);
 				}
+			}
+
+			.copy-scene:disabled {
+				opacity: 0.5;
+				pointer-events: none;
 			}
 		}
 	}

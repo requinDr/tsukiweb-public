@@ -80,7 +80,7 @@ const MenuLayer = ({show}: Props) => {
 	return (
 		<div id="layer-menu"
 			className={classNames("layer", {show: display})}
-		>			
+		>
 			<nav className="menu-container" ref={menuRef}>
 				<menu>
 					<div className="top" />
@@ -136,7 +136,6 @@ export default MenuLayer
  */
 type ActionsButtonsProps = {
 	show?: Partial<{
-		sceneName: boolean
 		qSave: boolean
 		qLoad: boolean
 		copyScene: boolean
@@ -173,11 +172,6 @@ const ActionsButtons = ({show}: ActionsButtonsProps) => {
 
 	return (
 		<div className="action-btns">
-			{show?.sceneName &&
-			<div className="fullsize replaying">
-				Currently reading {gameContext.label}
-			</div>
-			}
 			{show?.qSave &&
 			<button onClick={quickSave} className="quick">
 				{strings.menu["q-save"]}
@@ -201,7 +195,13 @@ const ActionsButtons = ({show}: ActionsButtonsProps) => {
 				<MdFastForward />
 			</button>
 			{show?.copyScene &&
-			<button onClick={copySceneToClipboard} className="fullsize" aria-label="copy scene link">
+			<button
+				onClick={copySceneToClipboard}
+				className="fullwidth copy-scene"
+				aria-label="copy scene link"
+				disabled={gameContext.label.startsWith("skip")}
+				title={gameContext.label}
+			>
 				<MdCopyAll style={{marginRight: 8}} /> Copy scene link
 			</button>
 			}

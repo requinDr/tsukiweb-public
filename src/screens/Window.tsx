@@ -233,7 +233,6 @@ const Window = () => {
 		config: true,
 		title: true,
 
-		sceneName: !gameSession.continueScript,
 		qSave: gameSession.continueScript,
 		qLoad: gameSession.continueScript,
 		copyScene: true,
