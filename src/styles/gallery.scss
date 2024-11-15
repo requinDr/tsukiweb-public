@@ -5,7 +5,7 @@
 		font-size: 1.1em;
 	}
 	// cancel the left menu
-	@media screen and (orientation: landscape) and (max-height: 480px) {
+	@media screen and (orientation: landscape) and (max-height: 680px) {
 		main {
 			grid-template-columns: 1fr;
 			grid-template-areas:

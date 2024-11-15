@@ -191,7 +191,7 @@
 		}
 	}
 	
-	@media (max-height: 600px) and (min-width: 600px) {
+	@media (max-height: 600px) and (min-width: 800px) {
 		main {
 			grid-template-columns: 3fr minmax(120px, 1fr);
 			padding-block: 0;
@@ -213,7 +213,7 @@
 
 		.badendings-list {
 			overflow-y: auto;
-			grid-template-columns: repeat(auto-fit, minmax(26px, 1fr));
+			grid-template-columns: repeat(auto-fit, minmax(34px, 1fr));
 			padding-block: 2em;
 		}
 	}
