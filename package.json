@@ -11,7 +11,7 @@
     "@types/react-dom": "^18.3.1",
     "@uidotdev/usehooks": "^2.4.1",
     "classnames": "^2.5.1",
-    "framer-motion": "^11.11.11",
+    "framer-motion": "^11.11.17",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-error-boundary": "^4.1.2",
@@ -20,10 +20,10 @@
     "react-router-dom": "^6.28.0",
     "react-toastify": "^10.0.6",
     "react-tooltip": "^5.28.0",
-    "sass": "^1.80.6",
+    "sass": "^1.81.0",
     "vite-plugin-svgr": "^4.3.0",
     "vite-tsconfig-paths": "^5.1.2",
-    "yet-another-react-lightbox": "^3.21.6"
+    "yet-another-react-lightbox": "^3.21.7"
   },
   "scripts": {
     "start": "vite",
