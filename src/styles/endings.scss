@@ -191,7 +191,7 @@
 		}
 	}
 	
-	@media (max-height: 600px) and (min-width: 800px) {
+	@media (max-height: 600px) and (min-width: 1080px) {
 		main {
 			grid-template-columns: 3fr minmax(120px, 1fr);
 			padding-block: 0;

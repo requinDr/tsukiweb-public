@@ -7,10 +7,11 @@
 		flex-direction: column;
 	}
 	.flowchart {
+		padding-top: 2em;
 		padding-bottom: max(60px, 10vh);
 		align-items: start;
 		height: auto;
-    max-height: none;
+		max-height: none;
 	}
 	.fc-scene {
 		.fc-scene-content {

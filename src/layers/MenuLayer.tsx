@@ -81,6 +81,8 @@ const MenuLayer = ({show}: Props) => {
 		<div id="layer-menu"
 			className={classNames("layer", {show: display})}
 		>
+			<img src={Ornament} alt="ornament" className="bottom-ornament" />
+			<img src={Ornament} alt="ornament" className="top-ornament" />
 			<nav className="menu-container" ref={menuRef}>
 				<menu>
 					<div className="top" />
@@ -121,9 +123,6 @@ const MenuLayer = ({show}: Props) => {
 					<ActionsButtons show={show} />
 				</menu>
 			</nav>
-
-			<img src={Ornament} alt="ornament" className="bottom-ornament" />
-			<img src={Ornament} alt="ornament" className="top-ornament" />
 		</div>
 	)
 }
@@ -182,17 +181,17 @@ const ActionsButtons = ({show}: ActionsButtonsProps) => {
 				{strings.menu["q-load"]}
 			</button>
 			}
-			<button onClick={toggleVolume} aria-label="mute/unmute">
-				{mute ? <MdOutlineVolumeOff /> : <MdOutlineVolumeUp />}
-			</button>
-			<button onClick={toggleFullscreen} aria-label="toggle fullscreen">
-				{fullscreen ? <MdFullscreenExit /> : <MdFullscreen />}
-			</button>
 			<button onClick={autoPlay} aria-label="auto play" title={strings.menu["auto-play"]}>
 				<MdPlayArrow />
 			</button>
 			<button onClick={fastForwardScene} aria-label="skip scene" title={strings.menu["ffw"]}>
 				<MdFastForward />
+			</button>
+			<button onClick={toggleVolume} aria-label="mute/unmute">
+				{mute ? <MdOutlineVolumeOff /> : <MdOutlineVolumeUp />}
+			</button>
+			<button onClick={toggleFullscreen} aria-label="toggle fullscreen">
+				{fullscreen ? <MdFullscreenExit /> : <MdFullscreen />}
 			</button>
 			{show?.copyScene &&
 			<button
