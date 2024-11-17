@@ -17,7 +17,7 @@ const ASSETS_PATH = `${import.meta.env.BASE_URL}static/`
 //______________________________private functions_______________________________
 //------------------------------------------------------------------------------
 
-function assetPath(basePath: string) {
+export function assetPath(basePath: string) {
   if (!/^\w+:\/\//.test(basePath)) // does not start with "<protocol>://"
     return ASSETS_PATH + basePath
   else
