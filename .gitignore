@@ -22,8 +22,10 @@ release
 *.njsproj
 *.sln
 *.sw?
-script-convert/*
-!script-convert/*.js
+
 public/.htaccess
 public/static/*/*/
 !public/static/**/*.json
+
+tools/*/*
+!tools/**/*.js
