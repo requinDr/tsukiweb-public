@@ -19,7 +19,7 @@ function createDir(dirName) {
 
 
 function main() {
-	const inputFile = './fullscript.txt';
+	const inputFile = '../public/static/jp/full-script.txt';
 	const outputDir = './scenes';
 
 	const lines = fs.readFileSync(inputFile, 'utf-8').split(/\r?\n/);

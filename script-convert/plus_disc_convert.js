@@ -3,7 +3,8 @@ import fs from 'fs';
 import path from 'path';
 
 // <key>( ?= ?<value>)?
-const kagArgRegexp = /\s*(?<key>[^\s=]+)(\s*=\s*(?<val>\S+|"[^"]*"))?/
+// a value that starts with a digit must contain only digits.
+const kagArgRegexp = /\s*(?<key>[^\s=]+)(\s*=\s*(?<val>\d+|[^\s\d"][^\s"]*|"[^"]*"))?/
 
 //##############################################################################
 //region                             GRAPHICS
@@ -104,8 +105,10 @@ function processImgTransition(args) {
     let vague = args.get('vague'); // width (in px) of the opacity gradient
     let rule = args.get('rule');
     let method = args.get('method');
+    if (Number.parseInt(args.get("time") ?? '0') == 0)
+        return 'notrans';
     if (!rule && !method)
-        method = args.get('time') ? 'crossfade' : 'notrans';
+        method = 'crossfade';
     if (method) {
         switch (method) {
             case 'crossfade' : break;
@@ -221,6 +224,10 @@ function processWave(cmd, args) {
     }
 }
 
+//endregion ####################################################################
+//region                             EFFECTS
+//##############################################################################
+
 function processQuake(cmd, args) {
     let h = Number.parseInt(args.get('hmax') ?? '10');
     let v = Number.parseInt(args.get('vmax') ?? '10');
@@ -234,9 +241,51 @@ function processQuake(cmd, args) {
                                  // implementation, simply replace with a delay
     }
 }
+//endregion ####################################################################
+//region                               TEXT
+//##############################################################################
+
+function translateTextLine(line) {
+    let i = 0;
+    let resultLine = '`';
+    let cmdIndex;
+    while ((cmdIndex = line.indexOf('[', i)) >= 0) {
+        resultLine += line.substring(i, cmdIndex)
+        i = line.indexOf(']', cmdIndex)+1
+        const cmdStr = line.substring(cmdIndex+1, i-1);
+        const [cmd, args] = extractCommand(cmdStr);
+        switch (cmd) {
+            case 'l' :
+                resultLine += '@';
+                break;
+            case 'r' :
+                if (i != line.length)
+                    throw Error(`unexpected [r] before end of line`);
+                break;
+            case 'graph' :
+                const id = args.get('storage');
+                switch (id) {
+                    case 'heart' : resultLine += '♥'; break;
+                    default : throw new Error(`Unexpected graph storage value ${id}`);
+                }
+                break;
+            case 'ruby' :
+                if (!args.has('char')) {
+                    args.set('char', line[i]);
+                    i++;
+                }
+                const rubyTxt = args.get('text')
+                const rubyChars = args.get('char')
+                resultLine += `[ruby=${rubyTxt}]${rubyChars}[/ruby]`
+                break;
+            default : throw new Error(`Unexpected inline command ${cmdStr}`);
+        }
+    }
+    return resultLine + line.substring(i);
+}
 
 //endregion  ###################################################################
-//region                      1st LEVEL TRANSLATION
+//region                           LINE ROUTER
 //##############################################################################
 
 function translateCommand(command) {
@@ -277,55 +326,23 @@ function translateCommand(command) {
         case 'wrocket'  : return null; // idem
         case 'textoff'  : return null; // can probably be ignored. Used around...
         case 'texton'   : return null; // ...img changes to hide and show the text.
-        }
-}
-
-function translateTextLine(line) {
-    let i = 0;
-    let resultLine = '`';
-    let cmdIndex;
-    while ((cmdIndex = line.indexOf('[', i)) >= 0) {
-        resultLine += line.substring(i, cmdIndex)
-        i = line.indexOf(']', cmdIndex)+1
-        const cmdStr = line.substring(cmdIndex+1, i-1);
-        const [cmd, args] = extractCommand(cmdStr);
-        switch (cmd) {
-            case 'l' :
-                resultLine += '@';
-                break;
-            case 'r' :
-                if (i != line.length)
-                    throw Error(`unexpected [r] before end of line`);
-                break;
-            case 'graph' :
-                const id = args.get('storage');
-                switch (id) {
-                    case 'heart' : resultLine += '♥'; break;
-                    default : throw new Error(`Unexpected graph storage value ${id}`);
-                }
-                break;
-            case 'ruby' :
-                if (!args.has('char')) {
-                    args.set('char', line[i]);
-                    i++;
-                }
-                const rubyTxt = args.get('text')
-                const rubyChars = args.get('char')
-                resultLine += `[ruby=${rubyTxt}]${rubyChars}[/ruby]`
-                break;
-            default : throw new Error(`Unexpected inline command ${cmdStr}`);
-        }
     }
-    return resultLine + line.substring(i)
-
 }
-
 
 function translateLine(line, index) {
     if (line.length == 0)
         return '';
     switch (line.charAt(0)) {
-        case '@' : return translateCommand(line.substring(1));
+        case '@' :
+            const [cmd, args, remaining] = extractCommand(line);
+            result = translateCommand(cmd, args);
+            if (remaining.trim().length > 0) {
+                if (Array.isArray(result))
+                    result.push(translateLine(remaining, index));
+                else
+                    result = [result, translateLine(line, index)];
+            }
+            return result;
         case '*' :
             if (index == 0)
                 return '';

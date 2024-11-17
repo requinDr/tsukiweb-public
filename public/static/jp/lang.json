@@ -17,7 +17,14 @@
 		"redirected-images": { },
 		"words": {
 			"fin": {"bg": "#ffffff", "center": "[center][noline][color=black][font=serif]Fin"},
-			"end": {"bg": "#ffffff", "bottom": "[right][noline][color=black][font=serif]END"}
+			"end": {"bg": "#ffffff", "bottom": "[right][noline][color=black][font=serif]END"},
+			"pd_fin": {"bg": "#000000", "bottom": "[right][noline][font=serif]Fin"},
+			"pd_genshi": {"bg": "#000000", "bottom": "[right][noline][font=serif][u]   閑話/幻視同盟"},
+			"pd_tea": {"bg": "#000000", "top": "[left][noline][noline][font=serif][u]          月茶"},
+			"pd_one_a": {"bg": "#000000", "center": "[center][noline][font=serif]一日目/1"},
+			"pd_one_b": {"bg": "#000000", "center": "[center][noline][font=serif]一日目/2"},
+			"pd_two": {"bg": "#000000", "center": "[center][noline][font=serif]二日目"},
+			"pd_three": {"bg": "#000000", "center": "[center][noline][font=serif]三日目"}
 		}
 	},
 	"audio": {

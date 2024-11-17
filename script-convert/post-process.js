@@ -1,15 +1,9 @@
 
-import { getFlowchart } from "./flowchart.js"
-import { LOGIC_FILE } from "./script-convert.js"
+import { getFlowchart } from "./flowchart.js";
+import { LOGIC_FILE } from "./script-convert.js";
 
-const TEXT_LINE_REGEXP = /^[^a-z;+*!#@~\\]/
-const isTextLine = TEXT_LINE_REGEXP.test.bind(TEXT_LINE_REGEXP)
-
-const colorImages = new Map(Object.entries({
-	'"image\\bg\\ima_10.jpg"' : '#000000',
-	'"image\\bg\\ima_11.jpg"' : '#ffffff',
-	'"image\\bg\\ima_11b.jpg"': '#9c0120'
-}))
+const TEXT_LINE_REGEXP = /^[^a-z;+*!#@~\\]/;
+const isTextLine = TEXT_LINE_REGEXP.test.bind(TEXT_LINE_REGEXP);
 
 class Context {
 
@@ -205,15 +199,6 @@ function processTextLine(line) {
 	return result;
 }
 
-function replaceColorImages(str) {
-	for (let [file, color] of colorImages.entries()) {
-		if (str.includes(file)) {
-			return str.replace(file, color)
-		}
-	}
-	return str;
-}
-
 // transform mp3loop m9 into play "*9"
 function processMp3Loop(i, arg) {
 	let m;
@@ -245,6 +230,65 @@ function processSelect(line) {
 	if (!line.includes('`'))
 		line = line.replace(/"/g, '`');
 	return line;
+}
+
+function processGraphics(cmd, arg) {
+
+	let pos, image, effect, time;
+	const args = arg.split(',');
+	switch (cmd) {
+		case 'bg' : [image, effect] = args; break;
+		case 'ld' : [pos, image, effect] = args; break;
+		case 'cl' : [pos, effect] = args; break;
+	}
+	pos = pos.trim()
+	image = image.trim();
+	effect = effect.trim();
+
+	if (image.startsWith('"') && image.endsWith('"')) {
+		image = image.substring(1);
+	}
+	if (image.startsWith(':a;')) image = image.substring(3);
+	if (image.startsWith('image\\')) {
+		image = image.substring(6);
+		const idx = image.lastIndexOf('.');
+		if (idx == -1) throw Error(`Expected image extension: ${cmd} ${arg}`)
+		image = image.substring(0, idx);
+	}
+	image = image.replace(/\\/g, '/');
+	switch (image) {
+		case 'bg/ima_10' : image = '#000000'; break;
+		case 'bg/ima_11' : image = '#ffffff'; break;
+		case 'bg/ima_11b': image = '#9c0120'; break;
+	}
+	
+	if (effect.startsWith('%type_'))
+		effect = effect.substring(6)
+	if (effect == 'nowaitdisp') {
+		effect = 'notrans';
+		time = 0;
+	} else {
+		const idx = effect.lastIndexOf('_');
+		time = effect.substring(idx+1);
+		switch(time) {
+			case 'fst' : time = 400; break;
+			case 'med' : time = 800; break;
+			case 'slw' : time = 1500; break;
+			default : throw Error(`Cannot extract time from ${cmd} ${arg}`);
+		}
+		effect = effect.substring(0, idx);
+	}
+	switch (cmd) {
+		case 'bg' : return `bg ${image},${effect},${time}`;
+		case 'ld' : return `ld ${pos},${image},${effect},${time}`;
+		case 'cl' : return `cl ${pos},${effect},${time}`
+	}
+	//ld l,":a;image\tachi\roa_t05a.jpg",%type_lshutter_fst
+	//   -> ld l,tachi/roa_t05a,lshutter,400
+	//cl c,%type_lcartain_mid
+	//   -> cl c,lcartain,800
+	//bg "image\bg\ima_10.jpg",%type_crossfade_mid
+	//   -> bg bg/ima_10,crossfade,800
 }
 
 function isOpenQuoted(str) {
@@ -295,15 +339,15 @@ function processCommand(line, i) {
 		case 'wavestop' : return line;
 
 		// graphics
-		case 'ld' : return line;
-		case 'cl' : return line;
-		case 'bg' : return replaceColorImages(line);
+		case 'ld' : return processGraphics(cmd, arg);
+		case 'cl' : return processGraphics(cmd, arg);
+		case 'bg' : return processGraphics(cmd, arg);
 		case 'monocro'	: return line;
 		case 'quakex'	: return line;
 		case 'quakey'	: return line;
 
 		// timer
-		case 'resettimer': return line; // keep for now, check in +Disc and KT if necessary
+		case 'resettimer': return line; // keep for now, check in KT if necessary
 		case 'waittimer' : return line;
 		case '!w' : return line;
 		case '!d' : return line;
@@ -336,8 +380,14 @@ function processCommand(line, i) {
 	}
 }
 
+/**
+ * 
+ * @param {number} i 
+ * @param {string} line 
+ * @param {string[]} lines 
+ * @returns 
+ */
 function processLine(i, line, lines = null) {
-
 	line = line.trimEnd();
 	if (isTextLine(line))
 		return processTextLine(line);
@@ -349,7 +399,7 @@ function processLine(i, line, lines = null) {
 	if (line.startsWith('#')) 
 		line = `textcolor ${line}`;
 
-	while (line.endsWith(',') && lines) {
+	while (line.trim().endsWith(',') && lines) {
 		line = line + removeComment(lines.splice(i+1, 1))
 	}
 	line = line.replace(/\t+/g, ' ');
@@ -358,14 +408,28 @@ function processLine(i, line, lines = null) {
 	const endPageBreak = line.length > 1 && line.endsWith('\\');
 	if (endPageBreak)
 		line = line.substring(0, line.length-1);
+
+	// line continues with text. this regexp should detect all cases ^[a-z][^"`]*(["`][^"`]*["`][^"`]*)*(\\|　(?!$)|「|`(?!.*`))
+	//TODO: for KT, also consider ':' outside if to split instructions
+	const textStartIndex = line.search(/　|「/);
+	let nextLine;
+	if (textStartIndex > 0) {
+		nextLine = line.substring(textStartIndex);
+		line = processLine(i, line.substring(0, textStartIndex));
+	} else {
+		nextLine = null;
+	}
 	let result = processCommand(line, i);
 	if (endPageBreak) {
 		if (result == null)
-			result = '\\';
+			result = ['\\'];
 		else if (result.constructor == String)
 			result = [result, '\\'];
 		else
 			result.push('\\');
+	}
+	if (nextLine) {
+		result.push(nextLine);
 	}
 	return result;
 }

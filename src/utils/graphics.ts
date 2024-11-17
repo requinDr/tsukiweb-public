@@ -110,6 +110,35 @@ export function moveBg(direction: "up"|"down") {
 //_______________________________script commands________________________________
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 function processImageCmd(arg: string, cmd: string, onFinish: VoidFunction) {
+	if (arg.includes('%type_')) { // if the effect starts with "%type_", use old parser
+		return processImageCmdOld(arg, cmd, onFinish)
+	}
+	let pos = 'bg', image = '', effect = '', time = ''
+	switch (cmd) {
+		case 'bg' : [image, effect, time] = arg.split(','); break;
+		case 'ld' : [pos, image, effect, time] = arg.split(','); break;
+		case 'cl' : [pos, effect, time] = arg.split(','); break;
+		default : throw Error(`unknown image command ${cmd} ${arg}`)
+	}
+	//FIXME revious implementation. must be updated with new script pre-processing
+	//check if text line starts right after command
+	const match = /\D/.exec(time)
+	if (match) {
+		const secondInstrLength = time.length - match.index
+		return [
+			{cmd, arg: arg.substring(0, arg.length - secondInstrLength)},
+			...extractInstructions(time.substring(time.length - secondInstrLength))
+		]
+	} else {
+		// get image
+		if (image)
+			image = extractImage(image)
+		return applyChange(pos as SpritePos, image, `${effect}_${time}`, onFinish)
+	}
+}
+
+/** @deprecated */
+function processImageCmdOld(arg: string, cmd: string, onFinish: VoidFunction) {
 	let pos: string = 'bg',
 			image: string = '',
 			type: string = ''
