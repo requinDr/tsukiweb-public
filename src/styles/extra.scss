@@ -95,6 +95,7 @@
 
 		.back-button {
 			margin-top: auto;
+			margin-bottom: 1em;
 		}
 	}
 
@@ -103,7 +104,7 @@
 		overflow: hidden;
 	}
 
-	@media screen and (max-width: 800px) {
+	@media screen and (max-width: 799px) {
 		grid-template-columns: 1fr;
 		grid-template-rows: 1fr min-content;
 		grid-template-areas:
@@ -116,7 +117,6 @@
 			font-size: 1.1em;
 			overflow-x: auto;
 			box-shadow: var(--menu-shadow);
-			background-color: var(--menu-container);
 			padding-bottom: 1.6em;
 			justify-content: space-evenly;
 			gap: 1.6em;
@@ -138,7 +138,7 @@
 	@media screen and (max-height: 600px) and (min-width: 800px) {
 		grid-template-columns: minmax(140px, min-content) 1fr;
 		.extra-menu {
-			font-size: 1.1em;
+			font-size: 1.2em;
 			overflow-y: auto;
 			padding-right: 0;
 		}

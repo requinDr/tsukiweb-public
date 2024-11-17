@@ -58,6 +58,7 @@ const AnimatedRoutes = () => {
 				autoClose={3000}
 				closeButton={false}
 				pauseOnFocusLoss={false}
+				draggable
 				theme="dark" />
 		</AppLayout>
 	)
