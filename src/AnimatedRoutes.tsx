@@ -49,6 +49,8 @@ const AnimatedRoutes = () => {
 						</Route>
 						<Route path="/plus-disc" element={<PlusDiscScreen />} />
 					</Route>
+					
+					<Route path="*" element={<Navigate to={"/disclaimer"} />} />
 				</Routes>
 			</AnimatePresence>
 
