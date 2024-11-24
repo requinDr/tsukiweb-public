@@ -4,12 +4,13 @@ import { SCENE_HEIGHT, SCENE_WIDTH } from "utils/flowchart"
 import { playScene } from "utils/savestates"
 import { settings } from "utils/settings"
 import { FcNode } from "./FcNode"
-import { Graphics } from "@tsukiweb-common/types"
+import { Graphics, JSONObject } from "@tsukiweb-common/types"
 import classNames from "classnames"
 import { imageNameFromPath, shouldBlur } from "utils/gallery"
 import { assetPath } from "translation/assets"
 import SpritesheetMetadata from "../../assets/flowchart/spritesheet_metadata.json"
-import { useEffect, useState } from "react"
+import { SyntheticEvent, useEffect, useState } from "react"
+import { preloadImage } from "components/molecules/GraphicsGroup"
 
 const metadatas = JSON.parse(JSON.stringify(SpritesheetMetadata))
 
@@ -17,11 +18,24 @@ const spriteSheetImgPath = (file: string) => {
 	return assetPath(`jp/flowchart-spritesheet/${file}`)
 }
 
+function onLoad(metadata: JSONObject, evt: SyntheticEvent<HTMLImageElement, Event>) {
+	const img = evt.target as HTMLImageElement
+	const imgWidth = img.naturalWidth
+	const imgHeight = img.naturalHeight
+	const { top, left, width, height } = metadata as Record<string, number>
+	const ratio_x = SCENE_WIDTH / width
+	const ratio_y = SCENE_HEIGHT / height
+	img.style.marginLeft = `-${ratio_x * left}px`,
+	img.style.marginTop  = `-${ratio_y * top}px`
+	img.style.width      = `${imgWidth * ratio_x}px`
+	img.style.height     = `${imgHeight * ratio_y}px`
+}
+
 const FlowchartScene = (id: string) => {
 	const imageMetadata = metadatas[id]
-	const { top, left, width, height } = imageMetadata
 
 	const image = spriteSheetImgPath(imageMetadata.file)
+	
 	return (<>
 		<foreignObject
 			x={-SCENE_WIDTH/2} y={-SCENE_HEIGHT/2}
@@ -30,13 +44,7 @@ const FlowchartScene = (id: string) => {
 			<img
 				src={image}
 				alt={id}
-				style={{
-					width: "100%",
-					height: "100%",
-					objectFit: "none",
-					objectPosition: `-${left}px -${top}px`,
-					// clipPath: `inset(${top}px ${SCENE_WIDTH - (left + width)}px ${SCENE_HEIGHT - (top + height)}px ${left}px)`,
-				}}
+				onLoad={onLoad.bind(null, imageMetadata)}
 			/>
 		</foreignObject>
 		<use href="#fc-scene-outline"/>
