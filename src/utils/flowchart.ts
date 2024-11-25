@@ -5,8 +5,8 @@ import { SceneName } from "types"
 import { SCENE_ATTRS } from "./constants"
 import { Graphics } from "@tsukiweb-common/types"
 
-export const SCENE_WIDTH = 27
-export const SCENE_HEIGHT = 18
+export const SCENE_WIDTH = 27*1.1
+export const SCENE_HEIGHT = 18*1.1
 export const COLUMN_WIDTH = SCENE_WIDTH + 3
 export const DY = 3
 export const OVERLAP_BREAK_LENGTH = 2

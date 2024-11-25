@@ -24,9 +24,11 @@ const Flowchart = memo(({back}: Props)=> {
 	return (
 		<div className="page-content flowchart">
 			<svg viewBox={`${left} ${top} ${width} ${height}`}
-				style={{minWidth: minWidth, maxWidth: maxWidth,
-								minHeight: minHeight, maxHeight: maxHeight,
-								overflow: "visible"}}
+				style={{
+					minWidth: minWidth, maxWidth: maxWidth,
+					minHeight: minHeight, maxHeight: maxHeight,
+					overflow: "visible"
+				}}
 				version="1.1"
 				xmlns="http://www.w3.org/2000/svg">
 				<defs>

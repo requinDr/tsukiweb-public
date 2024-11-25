@@ -17,7 +17,7 @@ const ASSETS_PATH = `${import.meta.env.BASE_URL}static/`
 //______________________________private functions_______________________________
 //------------------------------------------------------------------------------
 
-export function assetPath(basePath: string) {
+function assetPath(basePath: string) {
   if (!/^\w+:\/\//.test(basePath)) // does not start with "<protocol>://"
     return ASSETS_PATH + basePath
   else
@@ -47,6 +47,10 @@ function textImageToStr(textImg: TextImage): string {
 
 export function scenesDir() {
   return assetPath(`${languages[settings.language].dir}/scenes`)
+}
+
+export function spriteSheetImgPath(file: string) {
+	return assetPath(`jp/flowchart-spritesheet/${file}`)
 }
 
 function audioPath(formats: string|string[], num: number|string) {
