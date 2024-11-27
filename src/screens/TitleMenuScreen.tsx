@@ -13,7 +13,7 @@ import { useLanguageRefresh } from '../components/hooks/useLanguageRefresh'
 import { useScreenAutoNavigate } from '../components/hooks/useScreenAutoNavigate'
 import AppInfo from '../components/title-menu/AppInfo'
 import TranslationSwitch from '../components/title-menu/TranslationSwitch'
-import TitleMenuButton from '../../tsukiweb-common/src/components/atoms/TitleMenuButton'
+import TitleMenuButton from '../../tsukiweb-common/src/ui-core/components/TitleMenuButton'
 import Particles from '@tsukiweb-common/ui-core/components/Particles'
 import { useObserved } from '@tsukiweb-common/utils/Observer'
 

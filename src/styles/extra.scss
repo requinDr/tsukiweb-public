@@ -1,5 +1,3 @@
-@use '../../tsukiweb-common/src/ui-core/styles/_partials' as *;
-
 #extra {
 	display: grid;
 	grid-template-columns: minmax(180px, min-content) 1fr;
@@ -16,84 +14,6 @@
 		padding-right: .5em;
 		flex-direction: column;
 		align-items: flex-start;
-
-		.menu-item {
-			all: unset;
-			text-decoration: none;
-			transition: var(--transition);
-			user-select: none;
-			text-shadow: 0 0 8px #d0d3e1;
-			position: relative;
-			-webkit-tap-highlight-color: transparent;
-			text-align: center;
-			line-height: 1.4;
-
-			&.active {
-				color: rgb(10 164 171);
-				text-shadow: 0 0 6px #005aff;
-			}
-
-			// Hover area
-			&::before {
-				content: "";
-				position: absolute;
-				inset: -6px;
-			}
-
-			&::after {
-				content: "";
-				position: absolute;
-				bottom: -6px;
-				left: 0;
-				width: 100%;
-				height: 1px;
-				transition: var(--transition);
-				transition-delay: 0.1s;
-				opacity: 0.1;
-			}
-
-			&:hover, &:focus-visible {
-				cursor: pointer;
-				color: rgb(10 164 171);
-				text-shadow: 0 0 6px #005aff;
-				transform: translateY(-6px);
-
-				&::before {
-					top: 0;
-					bottom: -12px;
-				}
-
-				&::after {
-					width: 100%;
-					background-image: linear-gradient(
-						to right,
-						#0a9eab00,
-						rgb(10, 164, 171) 50%,
-						#0a9eab00
-					);
-					opacity: 1;
-				}
-			}
-			&.disabled, &:disabled {
-				pointer-events: none;
-				opacity: .4;
-				text-shadow: 0 0 2px #d0d3e1;
-			}
-
-			&.attention {
-				span {
-					rotate: 23deg;
-					float: inline-end;
-					position: absolute;
-					right: -14px;
-					top: 0;
-					color: rgb(10 164 171);
-					text-shadow: 0 0 6px #005aff;
-					pointer-events: none;
-					@include hover-scale("attention", 1.2);
-				}
-			}
-		}
 
 		.back-button {
 			margin-top: auto;

@@ -1,7 +1,6 @@
 import { motion } from "framer-motion"
 import { PropsWithChildren, useMemo } from "react"
 import "../styles/extra.scss"
-import TitleMenuButton from "@tsukiweb-common/components/atoms/TitleMenuButton"
 import { strings } from "translation/lang"
 import { SCREEN } from "utils/display"
 import { viewedScene } from "utils/savestates"
@@ -10,6 +9,7 @@ import { useLanguageRefresh } from "components/hooks/useLanguageRefresh"
 import { endings } from "utils/endings"
 import { settings } from "utils/settings"
 import classNames from "classnames"
+import TitleMenuButton from "@tsukiweb-common/ui-core/components/TitleMenuButton"
 
 const ExtraLayout = ({ children }: PropsWithChildren) => {
 	const location = useLocation()
@@ -36,24 +36,24 @@ const ExtraLayout = ({ children }: PropsWithChildren) => {
 				</h2>
 				<TitleMenuButton
 					to={SCREEN.GALLERY}
-					className={classNames({active: currentPage === SCREEN.GALLERY})}>
+					active={currentPage === SCREEN.GALLERY}>
 					{strings.extra.gallery}
 				</TitleMenuButton>
 				<TitleMenuButton
 					to={SCREEN.ENDINGS}
-					className={classNames({active: currentPage === SCREEN.ENDINGS})}
+					active={currentPage === SCREEN.ENDINGS}
 					attention={allEndingsSeen && !eclipseSeen}>
 					{strings.extra.endings}
 				</TitleMenuButton>
 				<TitleMenuButton
 					to={SCREEN.SCENES}
-					className={classNames({active: currentPage === SCREEN.SCENES})}>
+					active={currentPage === SCREEN.SCENES}>
 					{strings.extra.scenes}
 				</TitleMenuButton>
 				{import.meta.env.DEV &&
 				<TitleMenuButton
 					to={SCREEN.PLUS_DISC}
-					className={classNames({active: currentPage === SCREEN.PLUS_DISC})}>
+					active={currentPage === SCREEN.PLUS_DISC}>
 					Plus Disc
 				</TitleMenuButton>
 				}
