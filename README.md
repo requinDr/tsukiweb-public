@@ -6,7 +6,7 @@ The Progressive Web App (PWA) can be installed from the title screen using chrom
 It offers a better experience in general.
 
 To download the source code and run the game locally, follow the steps below:
-1) install [`node.js`](https://nodejs.org/en/download) (version `18 / 20+` is required)
+1) install [`node.js`](https://nodejs.org/en/download) (version `18 / 20 / 22+` is required)
 2) Get the source code: `git clone --recursive`
 3) Install project dependencies with `npm i`
 4) Start the localhost with `npm start`

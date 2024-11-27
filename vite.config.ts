@@ -21,12 +21,5 @@ export default defineConfig({
 				rewrite: (path) => path.replace(/^\/static/, '')
 			}
 		}
-	},
-	css :{
-		preprocessorOptions : {
-			scss: {
-				api: "modern",
-			}        
-		} 
 	}
 });
