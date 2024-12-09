@@ -55,8 +55,8 @@
 		"install": "Install"
 	},
 	"extra": {
-		"gallery": "ギヤラリー",
-		"endings": "エンディングス",
+		"gallery": "ギャラリー",
+		"endings": "エンディング",
 		"scenes": "Flowchart",
 		"eclipse": "Eclipse"
 	},
@@ -96,7 +96,7 @@
 		"quality": "グラフィック品質",
 		"quality-sd": "640\u00D7480",
 		"quality-hd": "1280\u00D7960",
-		"fullscreen": "フルスクローン",
+		"fullscreen": "フルスクリーン",
 		"language": "言語",
 		"show-locked-content": "Reveal locked content",
 		"show-locked-content-help": [
