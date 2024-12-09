@@ -8,7 +8,6 @@ import { useLocation } from "react-router-dom"
 import { useLanguageRefresh } from "components/hooks/useLanguageRefresh"
 import { endings } from "utils/endings"
 import { settings } from "utils/settings"
-import classNames from "classnames"
 import TitleMenuButton from "@tsukiweb-common/ui-core/components/TitleMenuButton"
 
 const ExtraLayout = ({ children }: PropsWithChildren) => {
