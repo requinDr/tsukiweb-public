@@ -9,7 +9,6 @@ import ConfigScreen from './screens/ConfigScreen';
 import LoadScreen from "./screens/LoadScreen";
 import DisclaimerScreen from "./screens/DisclaimerScreen";
 import { Slide, ToastContainer } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
 import '@tsukiweb-common/styles/main.scss'
 import './styles/App.scss'
 import './styles/graphics.scss'
