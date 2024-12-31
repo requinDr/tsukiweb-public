@@ -38,7 +38,7 @@ const GalleryImage = ({image, thumb, variants = [], unlockedVariants = [], blurr
 				className={classNames("thumb", {"is-alternative": image.alternativeOf, blur: blurred})}
 				alt={`event ${image.img}`}
 				draggable={false}
-				fetchpriority={blurred ? 'low' : 'auto'}
+				fetchPriority={blurred ? 'low' : 'auto'}
 			/>
 			{variants.length > 1 &&
 				<GalleryNbVariants
@@ -71,7 +71,7 @@ const GalleryImage = ({image, thumb, variants = [], unlockedVariants = [], blurr
 							src={slide.src}
 							alt={slide.alt}
 							draggable={false}
-							fetchpriority="low"
+							fetchPriority="low"
 							style={{objectFit: "contain", width: "100%", height: "100%"}}
 						/>
 					)
