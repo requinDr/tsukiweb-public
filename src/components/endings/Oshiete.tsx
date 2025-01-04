@@ -8,9 +8,10 @@ import classNames from 'classnames'
 type Props = {
 	unlocked: boolean
 	ending: typeof osiete[keyof typeof osiete]
+	number: number
 }
 
-const Oshiete = ({unlocked, ending}: Props) => {
+const Oshiete = ({unlocked, ending, number}: Props) => {
 
 	const handlePlay = () => {
 		if (unlocked && ending)
@@ -24,26 +25,31 @@ const Oshiete = ({unlocked, ending}: Props) => {
 			role="button"
 			onClick={unlocked ? handlePlay : undefined}
 			onKeyDown={e => e.key === 'Enter' && handlePlay()}
+			data-tooltip-id="osiete"
+			data-tooltip-html={
+				unlocked ? ReactDOMServer.renderToString(
+					<Tooltip ending={ending} />
+				)
+				: undefined
+			}
 		>
 			{unlocked && ending ?
 				<img
 					src={chalkboard}
-					alt={`Chalkboard Bad Ending ${ending.scene}`}
+					alt={`Chalkboard`}
 					draggable={false}
-					data-tooltip-id="osiete"
-					data-tooltip-html={
-						ReactDOMServer.renderToString(
-							<Tooltip ending={ending} />
-						)
-					}
 				/>
 			:
 				<img
 					src={chalkboard}
-					alt="Bad Ending"
+					alt="Chalkboard locked"
 					draggable={false}
 				/>
 			}
+
+			<div className='label'>
+				{number}
+			</div>
 		</div>
 	)
 }
@@ -58,9 +64,9 @@ const Tooltip = ({ending}: TooltipProps) => {
 
 	return (
 		<div>
+			{ending?.scene}<br />
 			{ending.name && <>{noBb(ending.name)}<br /></>}
 			{ending.day && <>Day: {ending.day}<br /></>}
-			{ending.scene}
 		</div>
 	)
 }

@@ -59,15 +59,18 @@ const EndingsScreen = () => {
 					/>
 				</section>
 
-				<section className="badendings-list">
+				<section className="badendings">
 					<h3>{strings.endings.osiete}</h3>
-					{Object.values(osiete).map((ending, index)=>
-						<Oshiete
-							key={index}
-							unlocked={settings.unlockEverything || Boolean(ending?.seen)}
-							ending={ending}
-						/>
-					)}
+					<div className='badendings-list'>
+						{Object.values(osiete).map((ending, index)=>
+							<Oshiete
+								key={index}
+								unlocked={settings.unlockEverything || Boolean(ending?.seen)}
+								ending={ending}
+								number={index + 1}
+							/>
+						)}
+					</div>
 				</section>
 				<Tooltip id="osiete" place="bottom" className="tooltip" />
 			</main>

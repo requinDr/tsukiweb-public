@@ -72,7 +72,7 @@ export const osiete = Object.fromEntries(
         case "s523": return [name, new Ed(name, "cel" , "11b") as OsieteEnding] //s289,
         case "s528": return [name, new Ed(name, "his" , "07b") as OsieteEnding] //s396,
         case "s539": return [name, new Ed(name, "aki" , "13b") as OsieteEnding] //s509,
-        //case "s510": return [name, new _Ending(name, "cel" , as OsieteEnding "09b")] //s510,
+        // case "s510": return [name, new Ed(name, "cel" , "09b") as OsieteEnding] //s510,
         case "s521": return [name, new Ed(name, "ark" , "13b") as OsieteEnding] //s53a
         case "s520": return [name, new Ed(name, "ark" , "13a") as OsieteEnding] //s52a
         case "s526": return [name, new Ed(name, "cel" , "13b") as OsieteEnding] //s308
