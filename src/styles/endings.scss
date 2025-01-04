@@ -19,7 +19,7 @@
 
 	.endings-list {
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(min(200px, 20vmin), 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(min(200px, 24vmin), 1fr));
 		isolation: isolate;
 		min-width: 0;
 		gap: 1em;
