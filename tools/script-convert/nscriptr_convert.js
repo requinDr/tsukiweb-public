@@ -1,7 +1,8 @@
 
 import fs from 'fs';
 import path from 'path';
-import { Token, CommandToken, TextToken, ConditionToken, LabelToken, ErrorToken, ReturnToken, parseScript } from "./parsers/nscriptr.js";
+import { parseScript } from "./parsers/nscriptr.js";
+import { Token, CommandToken, TextToken, ConditionToken, LabelToken, ErrorToken } from "./parsers/utils.js"
 
 //##############################################################################
 //#region                       GENERIC FIXES
@@ -60,10 +61,6 @@ function formatGraphics(token) {
     }
 }
 
-const IGNORED_VARIBLES = [
-	'%rockending',
-]
-
 function adjustSkips(tokens) {
     for (let [i, token] of tokens.entries()) {
         if (token instanceof ConditionToken)
@@ -87,15 +84,11 @@ function genericFixes(token, clickChars) {
         for (const c of clickChars) {
             token.text = token.text.replaceAll(c, c + '@')
         }
-        // remove duplicate '@' if too much was added by clickChars
-        token.text = token.text.replaceAll(/@{2,}/g, '@')
-        let m
-        while ((m = /[-―─―]{2,}/g.exec(token.text)) !== null) {
-            const len = m[0].length
-            const textBefore = token.text.substring(0, m.index)
-            const textAfter = token.text.substring(m.index + len)
-            token.text = `${textBefore}[line=${len}]${textAfter}`
-        }
+        
+        token.text = token.text
+                .replaceAll(/@{2,}/g, '@')// remove dup. '@' if too much added by clickChars
+                .replaceAll(/[-―─―]{2,}/g, (match)=> `[line=${match.length}]`)
+        
     } else if (token instanceof ConditionToken) {
         if (!token.condition.startsWith('('))
             token.condition = `(${token.condition})`
@@ -137,7 +130,7 @@ function genericFixes(token, clickChars) {
  * @param {(label:string)=>string|null} getFile
  * @param {(files:Map<string, Token[]>)=>void} fixes
  */
-function nscriptr_convert(output_dir, tokens, getFile, fixes) {
+function generate(output_dir, tokens, getFile, fixes) {
     // 1. search for specific setup commands
     // 1.1. clickstr
     let clickChars = tokens.find(
@@ -197,5 +190,5 @@ function nscriptr_convert(output_dir, tokens, getFile, fixes) {
 }
 
 export {
-    nscriptr_convert
+    generate
 }

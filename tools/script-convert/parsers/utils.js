@@ -1,4 +1,97 @@
 
+//##############################################################################
+//#region                            TOKENS
+//##############################################################################
+
+class Token {
+	/**
+	 * @param {number} lineIndex 
+	 * @param {string} text 
+	 */
+	constructor(lineIndex) {
+		this.lineIndex = lineIndex
+	}
+
+	toString() {
+		throw Error(`Unimplemented method 'toString'`)
+	}
+}
+
+class TextToken extends Token {
+	constructor(lineIndex, text) {
+		super(lineIndex)
+		this.text = text
+	}
+
+	toString() {
+		return `\`${this.text}`
+	}
+}
+
+class CommandToken extends Token {
+	constructor(lineIndex, cmd, args = []) {
+		super(lineIndex)
+		this.cmd = cmd
+		this.args = args
+	}
+
+	toString() {
+		let argsString
+		if (this.args instanceof Map) {
+			if (this.args.size == 0)
+				argsString = ''
+			else
+				argsString = ` {${[...this.args.entries()].map(([k, v])=> `${k}=${v}`)}}`
+		} else {
+			if (this.cmd.startsWith('!'))
+				argsString = `${this.args[0]}`
+			else
+				argsString = ' ' + [...this.args].join(',')
+		}
+		return `${this.cmd}${argsString}`
+	}
+}
+
+class LabelToken extends Token {
+	constructor(lineIndex, label) {
+		super(lineIndex)
+		this.label = label
+	}
+
+	toString() {
+		return `*${this.label}`
+	}
+}
+
+class ReturnToken extends Token {
+
+	toString() {
+		return 'return'
+	}
+}
+
+class ConditionToken extends Token {
+	constructor(lineIndex, not, condition, command) {
+		super(lineIndex)
+		this.not = not
+		this.condition = condition // TODO normalize operators and spaces around them
+		this.command = command
+	}
+	toString() {
+		return `${this.not? 'not':''}if ${this.condition} ${this.command.toString()}`
+	}
+}
+
+class ErrorToken extends Token {
+	constructor(lineIndex, txt) {
+		super(lineIndex)
+		this.txt = txt
+	}
+}
+//#endregion ###################################################################
+//#region                            READER
+//##############################################################################
+
 class StrReader {
 	
 	/**
@@ -212,6 +305,17 @@ class StrReader {
 	}
 }
 
+//#endregion ###################################################################
+//#region                            EXPORTS
+//##############################################################################
+
 export {
+	Token,
+	TextToken,
+	CommandToken,
+	ConditionToken,
+	ErrorToken,
+	LabelToken,
+	ReturnToken,
     StrReader
 }

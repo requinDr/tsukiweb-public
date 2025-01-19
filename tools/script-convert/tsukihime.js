@@ -3,19 +3,13 @@
  * used by the parser.
  */
 import fs from 'fs';
-import { CommandToken, ConditionToken, ErrorToken, LabelToken, parseScript, ReturnToken, TextToken } from './parsers/nscriptr.js';
-import { nscriptr_convert } from './nscriptr_convert.js';
+import { parseScript } from './parsers/nscriptr.js';
+import { CommandToken, ConditionToken, ErrorToken, LabelToken, ReturnToken, TextToken } from './parsers/utils.js'
+import { generate } from './nscriptr_convert.js';
 import { fixContexts, getScenes } from './scenes.js';
 
 
 const LOGIC_FILE = "scene0"
-
-//if not exist create a folder "scenes"
-function createDir(dirName) {
-	if (!fs.existsSync(dirName)) {
-		fs.mkdirSync(dirName);
-	}
-}
 
 //#endregion ###################################################################
 //#region                        SPECIFIC FIXES
@@ -115,6 +109,8 @@ function generalFixes(file, tokens) {
 				case 'mov' :
 					if (COLOR_IMAGES.has(token.args[1]))
 						token.args[1] = COLOR_IMAGES.get(token.args[1])
+					else if (token.args[0] == '%rockending')
+						tokens[i] = null
 					break
 			}
 		} else if (token instanceof ReturnToken) {
@@ -277,38 +273,13 @@ function tsukihime_fixes(files) {
 	fixContexts(scenes, cmdToProps, propsToCmds)
 }
 
-
-
 function main() {
 	const inputFile = '../../public/static/jp/full-script.txt';
 	const outputDir = './output-jp';
 
 	const txt = fs.readFileSync(inputFile, 'utf-8')
 	const tokens = parseScript(txt);
-	nscriptr_convert(outputDir, tokens, getLabelFile, tsukihime_fixes)
-	debugger;
-
-	// const lines = fs.readFileSync(inputFile, 'utf-8').split(/\r?\n/);
-	// createDir(outputDir);
-
-	// let scenes = extractScript(lines)
-	// const report = {}
-	// postProcess(scenes, report)
-	// fs.writeFileSync(path.join(outputDir, '.log.json'), JSON.stringify(report, undefined, 2))
-	// /**@type {Map<string, Array<string>>} */
-	// const fileContents = new Map()
-	// for (let [_label, {file, lines}] of scenes.entries()) {
-	// 	if (!fileContents.has(file)) {
-	// 		fileContents.set(file, Array.from(lines))
-	// 	}
-	// 	else {
-	// 		fileContents.get(file).push(...lines)
-	// 	}
-	// }
-
-	// for (let [name, lines] of fileContents.entries()) {
-	// 	fs.writeFileSync(path.join(outputDir, `${name}.txt`), lines.join('\n')+'\n')
-	// }
+	generate(outputDir, tokens, getLabelFile, tsukihime_fixes)
 }
 
 main()
