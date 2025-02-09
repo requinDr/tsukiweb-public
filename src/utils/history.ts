@@ -1,5 +1,5 @@
 import { StoredJSON } from "@tsukiweb-common/utils/storage"
-import { Choice, PageArgs, PageContent, PageType, SceneName } from "../types"
+import { Choice, PageArgs, PageContent, PageType, TsukihimeSceneName } from "../types"
 import { HISTORY_MAX_PAGES } from "./constants"
 import { SaveState, createSaveState } from "./savestates"
 
@@ -99,7 +99,7 @@ class History {
         content = { text: args[0] as string ?? "" } as PageContent<"text">
         break
       case "choice": content = { choices: args[0] as Choice[] } as PageContent<"choice">; break
-      case "skip" : content = { scene: args[0] as SceneName } as PageContent<"skip">; break
+      case "skip" : content = { scene: args[0] as TsukihimeSceneName } as PageContent<"skip">; break
       case "phase" : content = {} as PageContent<"phase">
         break
       default :

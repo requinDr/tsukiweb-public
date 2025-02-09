@@ -1,7 +1,7 @@
 import { FcNode } from "components/flowchart/FcNode"
 import { FcScene } from "components/flowchart/FcScene"
-import { isScene } from "./scriptUtils"
-import { SceneName } from "types"
+import { isThScene } from "./scriptUtils"
+import { TsukihimeSceneName } from "types"
 import { SCENE_ATTRS } from "./constants"
 import { Graphics } from "@tsukiweb-common/types"
 
@@ -43,12 +43,12 @@ class FcNodeParams {
 
 class FcSceneParams extends FcNodeParams {
 	graph: Graphics|undefined
-	constructor(id: SceneName, column: number, from: string[], align?: string, graph?: Graphics, cutAt?: number) {
+	constructor(id: TsukihimeSceneName, column: number, from: string[], align?: string, graph?: Graphics, cutAt?: number) {
 		super(id, column, from, align, cutAt)
 		this.graph = graph
 	}
 	construct(parentNodes: FcNode[], alignedNode: FcNode|undefined) {
-		return new FcScene(this.id as SceneName, this.column, parentNodes, alignedNode, this.graph, this.cutAt)
+		return new FcScene(this.id as TsukihimeSceneName, this.column, parentNodes, alignedNode, this.graph, this.cutAt)
 	}
 }
 
@@ -57,7 +57,7 @@ export function createTree() {
 	Object.entries(SCENE_ATTRS.scenes).forEach(([id, {fc}])=> {
 		if (fc) {
 			let {col, from, align, graph, cutAt} = fc
-			tree.set(id, new FcSceneParams(id as SceneName, col, from, align, graph, cutAt))
+			tree.set(id, new FcSceneParams(id as TsukihimeSceneName, col, from, align, graph, cutAt))
 		}
 	})
 	Object.entries(SCENE_ATTRS["fc-nodes"]??{}).forEach(([id, {col, from, align, cutAt}])=> {
@@ -82,7 +82,7 @@ function getPreviousScenes(tree: Map<string, FcNodeParams|FcNode>, scene: string
 			result.push(node.id)
 		else if (node instanceof FcNode)
 			result.push(...getPreviousScenes(tree, node.id))
-		else if (isScene(node))
+		else if (isThScene(node))
 			result.push(node)
 		else
 			result.push(...getPreviousScenes(tree, node))

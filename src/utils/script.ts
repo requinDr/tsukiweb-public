@@ -1,12 +1,12 @@
 import { commands as choiceCommands } from "./choices"
 import { commands as graphicCommands } from "./graphics"
 import { commands as textCommands } from "./text"
-import { LabelName, SceneName } from "../types"
+import { LabelName, TsukihimeSceneName, SceneName } from "../types"
 import { commands as audioCommands } from "./audio"
 import history from "./history"
 import { SCENE_ATTRS } from "./constants"
 import { commands as timerCommands } from "./timer"
-import { checkIfCondition, creditsScript, extractInstructions, fetchFBlock, fetchScene, isScene, isTextLine } from "./scriptUtils"
+import { checkIfCondition, creditsScript, extractInstructions, fetchFBlock, fetchScene, isScene, isThScene, isTextLine } from "./scriptUtils"
 import { commands as variableCommands, gameContext, gameSession } from "./variables"
 import { settings } from "./settings"
 import { toast } from "react-toastify"
@@ -23,7 +23,7 @@ type CommandProcessFunction =
 		((arg: string, cmd: string, onFinish: VoidFunction)=>CommandHandler|Instruction[]|void)
 type CommandMap = Map<string, CommandProcessFunction|null>
 
-type SkipCallback = (scene: SceneName, confirm:(skip: boolean)=>void)=>void
+type SkipCallback = (scene: TsukihimeSceneName, confirm:(skip: boolean)=>void)=>void
 
 type FastForwardStopCondition = (line:string, index: number, label: string)=>boolean
 
@@ -41,7 +41,7 @@ const LOCK_CMD = {next: ()=>{}} // prevent proceeding to next line
 //#region                          SKIP PROMPT                                 #
 //##############################################################################
 
-let pendingSkip: SceneName | null = null
+let pendingSkip: TsukihimeSceneName | null = null
 let skipCallback : SkipCallback | null = null
 let skipCancelCallback: VoidFunction | null = null
 
@@ -49,7 +49,7 @@ let skipCancelCallback: VoidFunction | null = null
  * callback function sent to the skip handler, called when the user has
  * chosen to skip or not.
  */
-function skipConfirm(label: SceneName, skip: boolean) {
+function skipConfirm(label: TsukihimeSceneName, skip: boolean) {
 	if (skip) {
 		history.onPageBreak("skip", label)
 		onSceneEnd(label)
@@ -66,8 +66,7 @@ function skipConfirm(label: SceneName, skip: boolean) {
  * Set the callbacks to call when a scene can be skipped, and the one to call
  * when a skip prompt is canceled by loading another save
  */
-export function setSkipHandlers(onSkipPrompt: SkipCallback,
-																cancel: VoidFunction) {
+export function setSkipHandlers(onSkipPrompt: SkipCallback, cancel: VoidFunction) {
 		skipCallback = onSkipPrompt
 		skipCancelCallback = cancel
 		// if a skip prompt was requested before the callback is set,
@@ -82,7 +81,7 @@ export function removeSkipHandlers() {
 	skipCancelCallback = null
 }
 
-function promptSkip(scene: SceneName) {
+function promptSkip(scene: TsukihimeSceneName) {
 	
 	currentCommand = {
 		next: ()=>{},
@@ -274,7 +273,7 @@ function processGosub(arg: string, _: string) {
 		return processPhase((arg == "*left_phase") ? "l" : "r")
 	} else if (arg == "*ending") {
 		return creditsScript().map(extractInstructions).flat(1)
-	} else if (isScene(arg)) {
+	} else if (isThScene(arg)) {
 		script.moveTo(arg.substring(1) as SceneName)
 		return LOCK_CMD
 	}
@@ -484,7 +483,9 @@ export function warnHScene() {
 
 function onSceneStart() {
 	const label = gameContext.label as SceneName
-	if (settings.enableSceneSkip && settings.completedScenes.includes(label)) {
+	const thScene = isThScene(label)
+	if (thScene && settings.enableSceneSkip &&
+			settings.completedScenes.includes(label)) {
 		if (currentCommand) {
 			cancelCurrentCommand()
 			setTimeout(onSceneStart, 0) // wait for the cancel to complete
@@ -493,7 +494,7 @@ function onSceneStart() {
 			promptSkip(label)
 		}
 	} else {
-		if (settings.warnHScenes && SCENE_ATTRS.scenes[label]?.h)
+		if (thScene && settings.warnHScenes && SCENE_ATTRS.scenes[label]?.h)
 			warnHScene()
 		gameContext.index = 0
 		fetchSceneLines()

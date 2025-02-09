@@ -1,4 +1,4 @@
-import { SceneName } from "../types";
+import { PlusDiscSceneName, SceneName, TsukihimeSceneName } from "../types";
 import { APP_VERSION, SCENE_ATTRS } from "./constants";
 import { strings, waitLanguageLoad } from "../translation/lang"
 import { credits, scenesDir } from "../translation/assets";
@@ -123,11 +123,21 @@ export async function fetchFBlock(label: string): Promise<string[]> {
 //#                     SCRIPT PROCESSING HELPER FUNCTIONS                     #
 //##############################################################################
 
-export function isScene(label: string): boolean {
-  return /^\*?s\d+a?$/.test(label) || ["openning", "ending", "eclipse"].includes(label)
+export function isThScene(label: string): label is TsukihimeSceneName {
+  if (/^\*?s\d+a?$/.test(label))
+    return true
+  if (["openning", "ending", "eclipse"].includes(label))
+    return true
+  return false
+}
+export function isPDScene(label: string): label is PlusDiscSceneName {
+  return ["pd_alliance", "pd_experiment", "pd_geccha", "pd_geccha2"].includes(label)
+}
+export function isScene(label: string): label is SceneName {
+  return isThScene(label) || isPDScene(label)
 }
 
-export function getSceneTitle(label: SceneName): string|undefined {
+export function getSceneTitle(label: TsukihimeSceneName): string|undefined {
   const attrs = strings.scenario.scenes[label] ?? SCENE_ATTRS.scenes[label]
   
   if (!attrs)

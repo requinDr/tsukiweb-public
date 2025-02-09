@@ -7,18 +7,18 @@ import classNames from "classnames"
 import { bb, noBb } from "@tsukiweb-common/utils/Bbcode"
 import GraphicsGroup from "components/molecules/GraphicsGroup"
 import sceneAttrs from '../assets/game/scene_attrs.json'
-import { SceneName } from "types"
+import { TsukihimeSceneName } from "types"
 import Button from "@tsukiweb-common/ui-core/components/Button"
 import { getSceneTitle } from "utils/scriptUtils"
 
 const SkipLayer = () => {
 	const [display, setDisplay] = useState<boolean>(false)
-	const [scene, setScene] = useState<SceneName>()
+	const [scene, setScene] = useState<TsukihimeSceneName>()
 	const [sceneTitle, setSceneTitle] = useState<string>()
-	const skipConfirm = useRef<(skip:boolean)=>void>()
+	const skipConfirm = useRef<((skip:boolean)=>void)|undefined>(undefined)
 
 	useEffect(()=> {
-		setSkipHandlers((scene: SceneName, confirm: (skip: boolean)=>void)=> {
+		setSkipHandlers((scene: TsukihimeSceneName, confirm: (skip: boolean)=>void)=> {
 			displayMode.skip = true
 			skipConfirm.current = confirm
 			setScene(scene)
@@ -45,8 +45,8 @@ const SkipLayer = () => {
 	const handleYes = onSelection.bind(null, true)
 	const handleNo = onSelection.bind(null, false)
 
-	const getThumbnail = (scene: SceneName) => {
-		const scenes = sceneAttrs.scenes as Record<SceneName, any>;
+	const getThumbnail = (scene: TsukihimeSceneName) => {
+		const scenes = sceneAttrs.scenes as Record<TsukihimeSceneName, any>;
 		const attrs = scenes[scene]
 		if (attrs) {
 			if (attrs.osiete) {
@@ -78,7 +78,7 @@ const SkipLayer = () => {
 					<div className="scene-title">{noBb(sceneTitle)}</div> 
 					<div className="thumbnail">
 						<GraphicsGroup
-							images={getThumbnail(scene as SceneName)}
+							images={getThumbnail(scene as TsukihimeSceneName)}
 							resolution="thumb"
 						/>
 					</div>

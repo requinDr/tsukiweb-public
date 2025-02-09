@@ -5,7 +5,7 @@
 import fs from 'fs';
 import path from 'path';
 import { parseScript } from './parsers/kagScript.js';
-import { CommandToken, LabelToken, StrReader, TextToken, Token } from './parsers/utils.js'
+import { CommandToken, LabelToken, TextToken, Token } from './parsers/utils.js'
 
 
 //#endregion ###################################################################

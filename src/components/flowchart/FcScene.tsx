@@ -1,5 +1,5 @@
 import { Fragment, SyntheticEvent } from "react"
-import { SceneName, LabelName } from "types"
+import { TsukihimeSceneName, LabelName } from "types"
 import { SCENE_HEIGHT, SCENE_WIDTH } from "utils/flowchart"
 import { playScene } from "utils/savestates"
 import { settings } from "utils/settings"
@@ -47,7 +47,7 @@ const FlowchartScene = (id: string) => {
 
 export class FcScene extends FcNode {
 	graph: Graphics|undefined
-	constructor(id: SceneName, column: number, from: FcNode[], alignedNode?: FcNode, graph ?: Graphics, cutAt?: number) {
+	constructor(id: TsukihimeSceneName, column: number, from: FcNode[], alignedNode?: FcNode, graph ?: Graphics, cutAt?: number) {
 		super(id, column, from, alignedNode, cutAt)
 		this.y += SCENE_HEIGHT/2
 		this.graph = graph

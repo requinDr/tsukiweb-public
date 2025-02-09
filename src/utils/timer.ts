@@ -6,8 +6,9 @@ import Timer from "@tsukiweb-common/utils/timer"
 export const commands = {
   'resettimer': null, // all 'waittimer' are immediately after 'resettimer'
   'waittimer' : processTimerCmd,
-  'delay'     : processTimerCmd,
-  '!w'        : processTimerCmd,
+  'wait'      : processTimerCmd, // short for 'resettimer' + 'waittimer', user by mm
+  'delay'     : processTimerCmd, // same as 'wait', used for credits
+  '!w'        : processTimerCmd, // used for inline waits
 }
 
 function processTimerCmd(arg: string, _: string, onFinish: VoidFunction) {

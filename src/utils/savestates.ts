@@ -374,7 +374,7 @@ export function viewedScene(scene: LabelName): boolean {
 export function playScene(scene: LabelName, {
   continueScript = true,
   viewedOnly = true
-}) {
+} = {}) {
   if (viewedOnly && !viewedScene(scene) && !settings.unlockEverything) {
     return
   }

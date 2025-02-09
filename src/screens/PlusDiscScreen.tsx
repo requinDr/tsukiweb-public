@@ -7,10 +7,15 @@ import { Graphics } from '@tsukiweb-common/types'
 import { ReactNode } from 'react'
 import Cover from "../assets/images/plus-disc_cover.webp"
 import MessageContainer from '@tsukiweb-common/ui-core/components/MessageContainer'
+import { playScene } from 'utils/savestates'
+import { PlusDiscSceneName } from 'types'
 
 const PlusDiscScreen = () => {
 	useScreenAutoNavigate(SCREEN.PLUS_DISC)
 	useLanguageRefresh()
+	const play = (id: PlusDiscSceneName)=> {
+		playScene(id, {viewedOnly: false})
+	}
 
 	return (
 		<div className="page" id="plus-disc">
@@ -43,6 +48,7 @@ const PlusDiscScreen = () => {
 							"bg": "bg/bg_59",
 							"r": "tachi/akira_02"
 						}}
+						onClick={play.bind(undefined, "pd_alliance")}
 					/>
 
 					<Scene
@@ -53,6 +59,7 @@ const PlusDiscScreen = () => {
 							"c": "tachi/aki_t04b",
 							"r": "tachi/cel_t01a",
 						}}
+						onClick={play.bind(undefined, "pd_geccha")}
 					/>
 
 					<Scene
@@ -62,6 +69,7 @@ const PlusDiscScreen = () => {
 							"l": "tachi/stk_t11",
 							"r": "tachi/neko_t01a",
 						}}
+						onClick={play.bind(undefined, "pd_geccha2")}
 					/>
 
 					<Scene
@@ -70,6 +78,7 @@ const PlusDiscScreen = () => {
 							"bg": "bg/bg_40a",
 							"c": "tachi/koha_t06",
 						}}
+						onClick={play.bind(undefined, "pd_experiment")}
 					/>
 				</div>
 			</main>

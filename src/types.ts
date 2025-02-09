@@ -6,13 +6,13 @@ export type PageType = 'text'|'choice'|'skip'|'phase'
 export type PageContent<T extends PageType> =
 	T extends 'text' ? { text: string } :
 	T extends 'choice' ? { choices: Choice[], selected?: number} :
-	T extends 'skip' ? { scene: SceneName } :
+	T extends 'skip' ? { scene: TsukihimeSceneName } :
 	T extends 'phase' ? { } :
 	never
 export type PageArgs<T extends PageType> =
 	T extends 'text' ? [string] :
 	T extends 'choice' ? [Choice[]] :
-	T extends 'skip' ? [SceneName] :
+	T extends 'skip' ? [TsukihimeSceneName] :
 	T extends 'phase' ? [] :
 	never
 
@@ -29,8 +29,13 @@ export type RouteDayName<T extends RouteName=RouteName> =
 
 export type CharId = RouteName//Exclude<RouteName, "others">
 
-export type SceneName = `s${number}${'a'|''}` |
+export type TsukihimeSceneName = `s${number}${'a'|''}` |
 	"openning" | "ending" | "eclipse"
+
+export type PlusDiscSceneName =
+	`pd_${"alliance" | "experiment" | "geccha" | "geccha2"}`
+
+export type SceneName = TsukihimeSceneName | PlusDiscSceneName
 
 export type FBlockName = `f${number}${''|'a'|'b'|'half'|'_0'}`
 

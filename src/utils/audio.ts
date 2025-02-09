@@ -5,6 +5,7 @@ import { settings } from "./settings"
 import { observe } from "@tsukiweb-common/utils/Observer"
 import { AudioChannel, BasicAudioManager } from "@tsukiweb-common/utils/AudioManager"
 import { isLanguageLoaded, waitLanguageLoad } from "translation/lang"
+import { asyncDelay } from "@tsukiweb-common/utils/timer"
 
 function calcGain(value: number) {
   if (value <= 0)
@@ -96,11 +97,10 @@ observe(displayMode, 'screen', (screen)=> {
   }
 })
 
-waitLanguageLoad().then(()=> {
-  setTimeout(()=> {
-    if (displayMode.screen != SCREEN.WINDOW)
-      sysAudio.track.play(settings.titleMusic, {loop: true});
-  }, 100)
+waitLanguageLoad().then(async ()=> {
+  await asyncDelay(100)
+  if (displayMode.screen != SCREEN.WINDOW)
+    sysAudio.track.play(settings.titleMusic, {loop: true});
 });
 
 //___________________________________commands___________________________________
