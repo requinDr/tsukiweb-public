@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useState } from 'react'
+import { JSX, ReactNode, useEffect, useState } from 'react'
 import '../styles/config.scss'
 import ConfigGameTab from './config/ConfigGameTab'
 import ConfigAudioTab from './config/ConfigAudioTab'
