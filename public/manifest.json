@@ -3,7 +3,7 @@
   "name": "Tsukihime - Blue Blue Glass Moon, Under The Crimson Air",
   "description": "Enjoy the story of Tsukihime in your browser.",
   "short_name": "Tsukihime",
-  "start_url": "./title",
+  "start_url": "./",
   "scope": "./",
   "theme_color": "#062b64",
   "background_color": "#0a2f85",

@@ -18,23 +18,28 @@ import AppLayout from "./layouts/AppLayout";
 import SceneReplayScreen from "screens/SceneReplayScreen";
 import ExtraLayout from "layouts/ExtraLayout";
 import PlusDiscScreen from "screens/PlusDiscScreen";
+import { useEffect, useState } from "react";
 
 const AnimatedRoutes = () => {
+	const [showDisclaimer, setShowDisclaimer] = useState<boolean>(false)
 	const location = useLocation()
 
-	const isExtra = location.pathname.startsWith("/gallery")
-		|| location.pathname.startsWith("/endings")
-		|| location.pathname.startsWith("/scenes")
-		|| location.pathname.startsWith("/plus-disc")
+	useEffect(() => {
+		setShowDisclaimer(true)
+	}, [location.pathname])
+
+	const isExtra = ["/gallery", "/endings", "/scenes", "/plus-disc"].some(path =>
+		location.pathname.startsWith(path)
+	)
 	const keyPresence = isExtra ? "extra" : location.pathname
 
 	return (
 		<AppLayout>
 			<AnimatePresence mode="wait" initial={false}>
 				<Routes location={location} key={keyPresence}>
-					<Route path="/" element={<Navigate to={"/disclaimer"} />} />
+					<Route path="/" element={!showDisclaimer ? <Navigate to="/disclaimer" replace /> : <TitleMenuScreen />} />
 					<Route path="/disclaimer" element={<DisclaimerScreen />} />
-					<Route path="/title" element={<TitleMenuScreen />} />
+					<Route path="/title" element={<Navigate to="/" replace />} />
 					<Route path="/window" element={<Window />} />
 					<Route path="/load" element={<LoadScreen />} />
 					<Route path="/config" element={<ConfigScreen />} />

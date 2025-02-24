@@ -1,7 +1,7 @@
 import { notifyObservers, observe } from "@tsukiweb-common/utils/Observer";
 
 export enum SCREEN {
-  TITLE = "/title",
+  TITLE = "/",
   WINDOW = "/window",
   CONFIG = "/config",
   LOAD = "/load",
