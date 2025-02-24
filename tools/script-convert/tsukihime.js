@@ -274,7 +274,7 @@ function tsukihime_fixes(files) {
 }
 
 function main() {
-	const inputFile = '../../public/static/jp/full-script.txt';
+	const inputFile = '../../public/static/jp/fullscript_jp.txt';
 	const outputDir = './output-jp';
 
 	const txt = fs.readFileSync(inputFile, 'utf-8')
