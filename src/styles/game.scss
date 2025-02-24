@@ -93,7 +93,7 @@
 		.menu-button {
 			display: flex;
 			position: absolute;
-			bottom: 4vmin;
+			bottom: min(3em, 10vh);
 			right: 0;
 			z-index: 3;
 			background-color: rgb(14 79 187);
