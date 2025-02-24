@@ -9,8 +9,8 @@
 	padding: 8vmin 10%;
 	text-shadow: #000 1px 1px 1px, #000 -1px 1px 1px, #000 -1px -1px 1px, #000 1px -1px 1px;
 	letter-spacing: 1px;
-	font-size: clamp(.96em, 3.8vmin, 1.35em);
-	line-height: clamp(1.7em, 4.8vmin, 1.8em);
+	font-size: clamp(.95em, 4.4vmin, 1.35em);
+	line-height: clamp(1.6em, 4.8vmin, 1.8em);
 	overflow-x: hidden;
 	transition: var(--transition);
 	transition-property: opacity, z-index;
@@ -25,11 +25,22 @@
 	}
 
 	.text-container {
-		width: min(100%, 720px);
+		width: min(100%, 80vw);
+		max-width: 760px;
 		margin-inline: auto;
 
-		@media screen and (min-width: 1280px) and (max-height: 620px){
-			width: min(100%, 660px);
+		@media screen and (orientation: landscape) and (max-height: 460px){
+			width: min(100%, 680px);
+		}
+	}
+
+	@media screen and (orientation: portrait) and (max-width: 460px){
+		padding: 12vmin 8%;
+		background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%);
+		font-size: clamp(1em, 4.4vmin, 1.35em);
+		line-height: clamp(1.7em, 4.8vmin, 1.8em);
+		.text-container {
+			width: min(100%, 90vw);
 		}
 	}
 

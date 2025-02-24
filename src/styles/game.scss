@@ -18,6 +18,16 @@
 	display: flex;
 	font-size: 1.1em;
 	font-family: var(--font), sans-serif;
+
+	.ratio-container {
+		width: var(--width);
+		height: 100%;
+		aspect-ratio: var(--ratio);
+		margin: 0 auto;
+		position: relative;
+		min-width: 0;
+		box-shadow: 0 4px 3em rgb(0 0 0 / 60%);
+	}
 	
 	.dash {
 		text-decoration: line-through;

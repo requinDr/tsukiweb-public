@@ -281,9 +281,11 @@ const Window = () => {
 			exit={{scale: 1.5, opacity: 0}}
 			transition={{duration: 0.5}}
 			onContextMenu={onContextMenu}>
-			<GraphicsLayer onClick={next} />
+			<div className='ratio-container'>
+				<GraphicsLayer onClick={next} />
 
-			<TextLayer onClick={next}/>
+				<TextLayer onClick={next}/>
+			</div>
 
 			<ChoicesLayer />
 
