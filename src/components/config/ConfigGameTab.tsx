@@ -5,7 +5,7 @@ import { FaMinus, FaPlus } from "react-icons/fa"
 import { getLocale, strings } from "../../translation/lang"
 import { useLanguageRefresh } from "../hooks/useLanguageRefresh"
 import PageSection from "@tsukiweb-common/ui-core/layouts/PageSection"
-import { deepAssign, isFullscreen, toggleFullscreen, addEventListener } from "@tsukiweb-common/utils/utils"
+import { deepAssign, isFullscreen, toggleFullscreen, addEventListener, supportFullscreen } from "@tsukiweb-common/utils/utils"
 import { ViewRatio, TEXT_SPEED } from "@tsukiweb-common/constants"
 
 const ConfigGameTab = () => {
@@ -68,6 +68,7 @@ const ConfigGameTab = () => {
 				property="fullscreen"
 				conf={{fullscreen}}
 				updateValue={toggleFullscreen}
+				disabled={!supportFullscreen()}
 			/>
 
 			<ConfigButtons

@@ -106,11 +106,12 @@ interface ConfigButtonsProps {
 	btns: ConfigButtonsEntry[]
 	property: string
 	conf: Record<string, any>
+	disabled?: boolean
 	updateValue: (key: any, value: any) => void
 	helpAction?: VoidFunction
 }
 /** Display multiples options to choose from */
-export const ConfigButtons = ({title, desc, btns, property, conf, updateValue, helpAction}: ConfigButtonsProps) => (
+export const ConfigButtons = ({title, desc, btns, property, conf, disabled, updateValue, helpAction}: ConfigButtonsProps) => (
 	<ConfigItem title={title} desc={desc} helpAction={helpAction}>
 		<div className="config-btns">
 			{btns.map(({text, value, onSelect}) =>
@@ -120,6 +121,7 @@ export const ConfigButtons = ({title, desc, btns, property, conf, updateValue, h
 					className="config-btn"
 					active={conf[property] === value}
 					variant="corner"
+					disabled={disabled}
 				>
 					{text}
 				</Button>

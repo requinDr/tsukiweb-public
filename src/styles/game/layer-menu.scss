@@ -129,6 +129,10 @@
 					color: rgb(245 249 251);
 					box-shadow: var(--selected-shadow);
 				}
+				&:disabled {
+					opacity: 0.5;
+					pointer-events: none;
+				}
 			}
 
 			.copy-scene:disabled {

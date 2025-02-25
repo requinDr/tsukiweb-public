@@ -9,7 +9,7 @@ import { strings } from "../translation/lang"
 import Ornament from "../assets/images/ornament.webp"
 import { toast } from "react-toastify"
 import { useObserved } from "@tsukiweb-common/utils/Observer"
-import { isFullscreen, toggleFullscreen, addEventListener } from "@tsukiweb-common/utils/utils"
+import { isFullscreen, toggleFullscreen, addEventListener, supportFullscreen } from "@tsukiweb-common/utils/utils"
 import classNames from "classnames"
 
 
@@ -190,7 +190,7 @@ const ActionsButtons = ({show}: ActionsButtonsProps) => {
 			<button onClick={toggleVolume} aria-label="mute/unmute">
 				{mute ? <MdOutlineVolumeOff /> : <MdOutlineVolumeUp />}
 			</button>
-			<button onClick={toggleFullscreen} aria-label="toggle fullscreen">
+			<button onClick={toggleFullscreen} aria-label="toggle fullscreen" disabled={!supportFullscreen()}>
 				{fullscreen ? <MdFullscreenExit /> : <MdFullscreen />}
 			</button>
 			{show?.copyScene &&
