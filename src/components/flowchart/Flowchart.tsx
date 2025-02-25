@@ -37,7 +37,7 @@ const Flowchart = memo(({back}: Props)=> {
 						<stop offset="50%" stopColor="#111" />
 						<stop offset="95%" stopColor="#222" />
 					</radialGradient>
-					<rect id="fc-scene-outline" {...SCENE_RECT_ATTRS} rx={SCENE_HEIGHT/10} />
+					<rect id="fc-scene-outline" {...SCENE_RECT_ATTRS} rx={SCENE_HEIGHT/14} />
 					<rect id="fc-scene-background" {...SCENE_RECT_ATTRS} />
 					<g id="fc-scene-hidden">
 						<rect {...SCENE_RECT_ATTRS} rx={SCENE_HEIGHT/10} fill="url(#hidden-scene-gradient)" />

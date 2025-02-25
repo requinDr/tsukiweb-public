@@ -64,7 +64,7 @@ const TitleMenuScreen = () => {
 			</div>
 
 			<nav className="menu">
-				<div className='first-row'>
+				<div className='menu-buttons'>
 					<TitleMenuButton onClick={newGame}>
 						{strings.title.start}
 					</TitleMenuButton>

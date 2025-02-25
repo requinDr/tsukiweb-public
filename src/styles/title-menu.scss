@@ -72,9 +72,8 @@
 		margin-bottom: 6vh;
 		width: min(860px, 100%);
 		font-size: 1.4em;
-		z-index: 1;
 
-		.first-row {
+		.menu-buttons {
 			display: flex;
 			font-weight: bold;
 			text-transform: uppercase;
@@ -88,14 +87,14 @@
 	}
 
 	// One column
-	@media (max-width: 810px) and (min-height: 420px), (orientation: portrait) {
+	@media (max-width: 810px) and (min-height: 460px), (orientation: portrait) {
 		.top-actions {
 			right: $spacing;
 			flex-direction: column-reverse;
 		}
 	}
 	// One column, mobile portrait
-	@media (max-width: 810px), ((orientation: landscape) and (max-height: 420px)) {
+	@media (max-width: 810px), ((orientation: landscape) and (max-height: 460px)) {
 		display: grid;
 		grid-template-rows: 3fr 2fr;
 		.logo {
@@ -107,16 +106,16 @@
 			}
 		}
 		.menu {
-			.first-row {
+			.menu-buttons {
 				flex-direction: column;
 				align-items: center;
-				margin-top: 1em;
-				row-gap: 10px;
+				margin-right: 1em;
+				row-gap: 12px;
 			}
 		}
 	}
 	// Two columns, mobile landscape
-	@media (max-height: 420px) and (orientation: landscape) {
+	@media (max-height: 460px) and (orientation: landscape) {
 		grid-template-columns: 1fr 1fr;
 		grid-template-rows: 1fr;
 		.logo {
@@ -124,6 +123,8 @@
 		}
 		.menu {
 			margin-bottom: 0;
+			height: 100%;
+			align-content: center;
 		}
 	}
 }
