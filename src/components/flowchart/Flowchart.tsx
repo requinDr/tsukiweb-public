@@ -16,7 +16,7 @@ const Flowchart = memo(({back}: Props)=> {
 	], [Number.MAX_VALUE, Number.MAX_VALUE, 0, 0])
 	const width = right - left
 	const height = bottom - top
-	const minWidth  = `${width/8}rem`
+	const minWidth = `${width/8}rem`
 	const minHeight = `${height/8}rem`
 	const maxWidth = `${100 * width / (2 * COLUMN_WIDTH)}%` // minimum 2 scenes visible
 	const maxHeight = `${100 * height / (4 * (SCENE_HEIGHT + DY*2))}%` // minimum 4 scenes visible

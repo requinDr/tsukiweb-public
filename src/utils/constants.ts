@@ -4,7 +4,6 @@ import { RouteDayName, RouteName, TsukihimeSceneName } from '../types'
 
 export const APP_VERSION = import.meta.env.VITE_VERSION
 
-export const ASSETS_PATH = import.meta.env.DEV ? "/static/" : `${import.meta.env.BASE_URL}static/`
 export const SCENE_ATTRS : {
   //days: string[],
   //routes: Record<RouteName, Record<RouteDayName, string>>,

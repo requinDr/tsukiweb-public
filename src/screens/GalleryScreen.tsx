@@ -66,7 +66,7 @@ const GalleryScreen = () => {
 	}))
 
 	return (
-		<div  className="page" id="gallery">
+		<div className="page" id="gallery">
 			<PageTabsLayout
 				tabs={tabs}
 				selectedTab={selectedTab}

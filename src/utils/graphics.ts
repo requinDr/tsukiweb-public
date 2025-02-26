@@ -73,7 +73,7 @@ export function applyChange(pos: SpritePos, image: string, type: string, onFinis
 	}
 }
 
-export function clearAllSprites() {
+function clearAllSprites() {
 	const graphics = gameContext.graphics
 	const changed = (graphics.l != "" || graphics.c != "" || graphics.r != "")
 	graphics.l = ""
