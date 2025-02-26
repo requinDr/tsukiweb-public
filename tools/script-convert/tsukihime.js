@@ -288,6 +288,7 @@ function main() {
 	const fullscripts = [
 		['jp', 'fullscript_jp.txt'],
 		['en-mm', 'fullscript_en-mm.txt'],
+		['es-tohnokun', 'fullscript_es-tohnokun.txt'],
 		['it-riffour', 'fullscript_it-riffour.txt'],
 		['pt-matsuri', 'fullscript_matsuri.txt'],
 		['zh-tw-yueji_yeren_hanhua_zu', 'fullscript_zh-tw-yueji_yeren_hanhua_zu.txt'],
@@ -296,7 +297,7 @@ function main() {
 
 	for (const [folder, file] of fullscripts) {
 		try {
-			console.log(`Processing ${file}...`)
+			console.log(`> Processing ${file}...`)
 			
 			const fullscriptPath = path_prefix + folder + '/' + file
 			if (!fs.existsSync(fullscriptPath)) {
@@ -308,9 +309,11 @@ function main() {
 			const tokens = parseScript(txt)
 
 			const outputPath = path_prefix + folder + '/' + outputDir
-			if (!fs.existsSync(outputPath)) {
-				fs.mkdirSync(outputPath, { recursive: true });
+			if (fs.existsSync(outputPath)) {
+				fs.rmSync(outputPath, { recursive: true })
 			}
+			fs.mkdirSync(outputPath, { recursive: true })
+
 			generate(outputPath, tokens, getLabelFile, tsukihime_fixes)
 		} catch (e) {
 			console.error(`Error processing ${file}: ${e.message}`)
