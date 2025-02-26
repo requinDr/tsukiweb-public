@@ -328,7 +328,7 @@ export function exportSave(ids: SaveStateId[]) {
  * to the user or from the specified stringified JSONs.
  * @param saves stringified JSONs, or undefined to ask files from the user.
  */
-export async function loadSaveFiles(saves?: string[] | FileList | undefined | null, allExtensions=false) {
+export async function loadSaveFiles(saves?: string[] | FileList | undefined | null, allExtensions=false): Promise<boolean> {
   let jsons
   if (saves instanceof FileList) {
     jsons = await Promise.all(Array.from(saves).map(file=> {

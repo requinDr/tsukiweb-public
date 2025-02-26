@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react"
 import { displayMode } from "../utils/display"
-import script, { removeSkipHandlers, setSkipHandlers } from "../utils/script"
+import { removeSkipHandlers, setSkipHandlers } from "../utils/script"
 import { strings } from "../translation/lang"
 import { useObserver } from "@tsukiweb-common/utils/Observer"
 import classNames from "classnames"

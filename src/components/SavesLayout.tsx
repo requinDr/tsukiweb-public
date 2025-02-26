@@ -11,6 +11,7 @@ import Button from "@tsukiweb-common/ui-core/components/Button"
 import classNames from "classnames"
 import { noBb } from "@tsukiweb-common/utils/Bbcode"
 import { useVirtualizer } from "@tanstack/react-virtual"
+import { toast } from "react-toastify"
 
 //##############################################################################
 //#                               TOOL FUNCTIONS                               #
@@ -69,6 +70,15 @@ const SavesLayer = ({variant, back}: Props) => {
 	function importSaves(event: ChangeEvent|MouseEvent) {
 		console.debug("import saves from file")
 		loadSaveFiles((event.target as HTMLInputElement)?.files, event.type == "contextmenu")
+			.then((success) => {
+				if (success)
+					toast.success(strings.game["toast-load"])
+				else
+					toast.error(strings.game["toast-load-fail"])
+			})
+			.catch(() => {
+				toast.error(strings.game["toast-load-fail"])
+			})
 	}
 
 	function onSaveSelect(id: number) {
