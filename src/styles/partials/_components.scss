@@ -1,9 +1,9 @@
 %info-box {
 	color: #ffffffe8;
 	background-color: #010e2470;
-	border: 1px solid #00628b;
-	backdrop-filter: blur(1em);
+	border: 1px solid var(--active);
 	-webkit-backdrop-filter: blur(1em);
+	backdrop-filter: blur(1em);
 
 	@supports not (backdrop-filter: blur(1em)) {
 		background-color: #000000d1;

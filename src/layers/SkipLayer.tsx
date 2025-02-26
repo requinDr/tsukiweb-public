@@ -10,6 +10,7 @@ import sceneAttrs from '../assets/game/scene_attrs.json'
 import { TsukihimeSceneName } from "types"
 import Button from "@tsukiweb-common/ui-core/components/Button"
 import { getSceneTitle } from "utils/scriptUtils"
+import { motion } from "framer-motion"
 
 const SkipLayer = () => {
 	const [display, setDisplay] = useState<boolean>(false)
@@ -61,10 +62,16 @@ const SkipLayer = () => {
 	}
 
 	return (
-		<div id="skip-layer"
+		<div
+			id="skip-layer"
 			className={classNames("layer", {show: display})}
 		>
-			<div className="skip-modal">
+			<motion.div
+				className="skip-modal"
+				initial={{opacity: 0, scale: 0.9}}
+				animate={{opacity: 1, scale: 1}}
+				key={sceneTitle}
+			>
 				<div className="title">
 					{sceneTitle ?<>
 						{bb(strings.game["skip-named"][0])}
@@ -93,7 +100,7 @@ const SkipLayer = () => {
 					<Button onClick={handleYes}>{strings.yes}</Button>
 					<Button onClick={handleNo}>{strings.no}</Button>
 				</div>
-			</div>
+			</motion.div>
 		</div>
 	)
 }
