@@ -274,12 +274,48 @@ function tsukihime_fixes(files) {
 }
 
 function main() {
-	const inputFile = '../../public/static/jp/fullscript_jp.txt';
-	const outputDir = './output-jp';
+	// Process a single fullscript file
+	// const inputFile = '../../public/static/jp/fullscript_jp.txt';
+	// const outputDir = './output-jp';
 
-	const txt = fs.readFileSync(inputFile, 'utf-8')
-	const tokens = parseScript(txt);
-	generate(outputDir, tokens, getLabelFile, tsukihime_fixes)
+	// const txt = fs.readFileSync(inputFile, 'utf-8')
+	// const tokens = parseScript(txt);
+	// generate(outputDir, tokens, getLabelFile, tsukihime_fixes)
+
+	// Process all fullscript files
+	const path_prefix = '../../public/static/'
+	const outputDir = 'scenes'
+	const fullscripts = [
+		['jp', 'fullscript_jp.txt'],
+		['en-mm', 'fullscript_en-mm.txt'],
+		['it-riffour', 'fullscript_it-riffour.txt'],
+		['pt-matsuri', 'fullscript_matsuri.txt'],
+		['zh-tw-yueji_yeren_hanhua_zu', 'fullscript_zh-tw-yueji_yeren_hanhua_zu.txt'],
+		['zh-yueji_yeren_hanhua_zu', 'fullscript_zh-yueji_yeren_hanhua_zu.txt'],
+	]
+
+	for (const [folder, file] of fullscripts) {
+		try {
+			console.log(`Processing ${file}...`)
+			
+			const fullscriptPath = path_prefix + folder + '/' + file
+			if (!fs.existsSync(fullscriptPath)) {
+				console.error(`File not found: ${fullscriptPath}`)
+				continue
+			}
+
+			const txt = fs.readFileSync(fullscriptPath, 'utf-8')
+			const tokens = parseScript(txt)
+
+			const outputPath = path_prefix + folder + '/' + outputDir
+			if (!fs.existsSync(outputPath)) {
+				fs.mkdirSync(outputPath, { recursive: true });
+			}
+			generate(outputPath, tokens, getLabelFile, tsukihime_fixes)
+		} catch (e) {
+			console.error(`Error processing ${file}: ${e.message}`)
+		}
+	}
 }
 
 main()
