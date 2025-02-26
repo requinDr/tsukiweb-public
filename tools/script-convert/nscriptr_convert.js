@@ -114,6 +114,16 @@ function genericFixes(token, clickChars) {
                     token.args[1] = simplifyImage(token.args[1])
                 }
                 break
+            case 'mp3loop' :
+                token.cmd = "play"
+                if (/m\d+/.test(token.args[0])) {
+                    token.args[0] = `"*${token.args[0].substring(1)}`
+                }
+                break
+            case 'stop' :
+                token.cmd = 'playstop' // could be used to stop both music
+                                       // and se, but used only for music
+                break
         }
     }
 }
@@ -135,7 +145,7 @@ function generate(output_dir, tokens, getFile, fixes) {
     // 1.1. clickstr
     let clickChars = tokens.find(
         t=> t instanceof CommandToken && t.cmd == "clickstr"
-    )?.args[0].replace(/^"/, '').replace(/"$/, '').split('')
+    )?.args[0].replace(/^["`]/, '').replace(/["`]$/, '').split('')
     
     //----------
     /** @type {Map<string, Token[]>} */

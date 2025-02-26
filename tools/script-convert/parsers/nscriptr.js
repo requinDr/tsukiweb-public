@@ -89,6 +89,7 @@ function parseLabel(lineIndex, str) {
  */
 function parseCommand(lineIndex, str) {
     let cmd, arg, args, reader
+    str = str.trimStart()
     switch (str.charAt(0)) {
         case '@' : case '\\' : case '~' :
             if (str.length > 1)
@@ -134,11 +135,11 @@ function parseError(lineIndex, str) {
 
 const tokensRE = new Map(Object.entries({
     'comment'       : [/^(\s*(;.*)?\r?\n)+/, null],
-    'asciiText'     : [/^`[^\n`]*(`|\r?\n)/, parseText],
-    'nonAsciiText'  : [/^\s*[^A-za-z0-9;`*@\\+!:,~"][^\n\\]*/u, parseText],
+    'asciiText'     : [/^\s*`[^\n`]*(`|\r?\n)/, parseText],
+    'nonAsciiText'  : [/^\s*[^ \t\na-z;`*@\\+!:,~"][^\n\\]*/u, parseText],
     'return'        : [/^\s*return\s*\r?\n/, parseReturn],
     'condition'     : [/^\s*(not)?if\s[^\n]*/, parseCondition],
-    'cmd'           : [/^\s*(?<cmd>[a-zA-Z]\w+)[ \t]*(?<args>(([\w%$_#*-]*|"([^\n"]|(_"))*"|`[^`]*`)(,\s*)?[ \t]*)+)?/u, parseCommand],
+    'cmd'           : [/^\s*(?<cmd>[a-z]\w+)[ \t]*(?<args>(([\w%$_#*-]*|"([^\n"]|(_"))*"|`[^`]*`)(,\s*)?[ \t]*)+)?/u, parseCommand],
     'cmd2'          : [/^[@\\+]/, parseCommand],
     'cmd3'          : [/^![a-z]+\d*/, parseCommand],
     'cmd4'          : [/^#[\da-fA-F]+/, parseCommand],

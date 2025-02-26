@@ -3,6 +3,7 @@
  * used by the parser.
  */
 import fs from 'fs';
+import path from 'path';
 import { parseScript } from './parsers/nscriptr.js';
 import { CommandToken, ConditionToken, ErrorToken, LabelToken, ReturnToken, TextToken } from './parsers/utils.js'
 import { generate } from './nscriptr_convert.js';
@@ -193,7 +194,7 @@ function propsToCmds(props) {
 //##############################################################################
 
 const kept_commands = [
-    'play', 'playstop', 'wave', 'waveloop', 'wavestop', // audio
+    'play', 'playstop', 'wave', 'waveloop', 'wavestop', 'mp3loop', 'stop', // audio
     'bg', 'ld', 'cl','quakex', 'quakey', 'monocro', // graphics
     'if', 'skip', 'jumpf', 'jumpb', '~', // in-scene movements
     'osiete', 'return', 'goto', 'gosub', 'select', 'selgosub',// inter-scenes movements
@@ -273,6 +274,19 @@ function tsukihime_fixes(files) {
 	fixContexts(scenes, cmdToProps, propsToCmds)
 }
 
+/**
+ * @param {string} language 
+ * @param {string} text 
+ */
+function raw_fixes(language, text) {
+	switch(language) {
+		case 'it-riffour' :
+			text = text.replaceAll(/ò(?=[a-fA-F\d]{6})/g, '#')
+			return text
+		default : return text
+	}
+}
+
 function main() {
 	// Process a single fullscript file
 	// const inputFile = '../../public/static/jp/fullscript_jp.txt';
@@ -299,20 +313,19 @@ function main() {
 		try {
 			console.log(`> Processing ${file}...`)
 			
-			const fullscriptPath = path_prefix + folder + '/' + file
+			const fullscriptPath = path.join(path_prefix, folder, file)
 			if (!fs.existsSync(fullscriptPath)) {
 				console.error(`File not found: ${fullscriptPath}`)
 				continue
 			}
 
 			const txt = fs.readFileSync(fullscriptPath, 'utf-8')
-			const tokens = parseScript(txt)
+			const tokens = parseScript(raw_fixes(folder, txt))
 
-			const outputPath = path_prefix + folder + '/' + outputDir
-			if (fs.existsSync(outputPath)) {
-				fs.rmSync(outputPath, { recursive: true })
+			const outputPath = path.join(path_prefix, folder, outputDir)
+			if (!fs.existsSync(outputPath)) {
+				fs.mkdirSync(outputPath, { recursive: true })
 			}
-			fs.mkdirSync(outputPath, { recursive: true })
 
 			generate(outputPath, tokens, getLabelFile, tsukihime_fixes)
 		} catch (e) {
