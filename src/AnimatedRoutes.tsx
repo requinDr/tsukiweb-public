@@ -16,15 +16,27 @@ import FlowchartScreen from "./screens/FlowchartScreen";
 import SceneReplayScreen from "screens/SceneReplayScreen";
 import ExtraLayout from "layouts/ExtraLayout";
 import PlusDiscScreen from "screens/PlusDiscScreen";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 const AnimatedRoutes = () => {
-	const [showDisclaimer, setShowDisclaimer] = useState<boolean>(false)
+	const isFirstRender = useRef(true)
+	const [hasSeenDisclaimer, setHasSeenDisclaimer] = useState(false)
 	const location = useLocation()
 
 	useEffect(() => {
-		setShowDisclaimer(true)
+		// If this is the first render and we're not at the root or disclaimer page,
+		// mark disclaimer as seen to avoid redirecting
+		if (isFirstRender.current && 
+				location.pathname !== '/' && 
+				location.pathname !== '/disclaimer') {
+			setHasSeenDisclaimer(true)
+		}
+		isFirstRender.current = false
 	}, [location.pathname])
+
+	const markDisclaimerAsSeen = useCallback(() => {
+		setHasSeenDisclaimer(true)
+	}, [])
 
 	const isExtra = ["/gallery", "/endings", "/scenes", "/plus-disc"].some(path =>
 		location.pathname.startsWith(path)
@@ -34,8 +46,15 @@ const AnimatedRoutes = () => {
 	return (
 		<AnimatePresence mode="wait">
 			<Routes location={location} key={keyPresence}>
-				<Route path="/disclaimer" element={<DisclaimerScreen />} />
-				<Route index path="/" element={!showDisclaimer ? <Navigate to="/disclaimer" replace /> : <TitleMenuScreen />} />
+				<Route path="/disclaimer" element={<DisclaimerScreen onAccept={markDisclaimerAsSeen} />} />
+				<Route 
+					path="/" 
+					element={
+						!hasSeenDisclaimer 
+							? <Navigate to="/disclaimer" replace /> 
+							: <TitleMenuScreen />
+					} 
+				/>
 				<Route path="/title" element={<Navigate to="/" replace />} />
 				<Route path="/window" element={<Window />} />
 				<Route path="/load" element={<LoadScreen />} />

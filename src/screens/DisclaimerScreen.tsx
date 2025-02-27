@@ -7,7 +7,7 @@ import { useLanguageRefresh } from '../components/hooks/useLanguageRefresh'
 import { SCREEN } from 'utils/display'
 import { bb } from '@tsukiweb-common/utils/Bbcode'
 
-const DisclaimerScreen = () => {
+const DisclaimerScreen = ({ onAccept }: { onAccept?: () => void }) => {
 	const navigate = useNavigate()
 	useLanguageRefresh()
 
@@ -19,14 +19,15 @@ const DisclaimerScreen = () => {
 	}, [])
 
 	const sawDisclaimer = () => {
+		if (onAccept) onAccept()
 		navigate(SCREEN.TITLE)
 	}
 
 	return (
 		<motion.div
 			className="page" id="disclaimer"
-			initial={{opacity: 0}}
-			animate={{opacity: 1}}
+			// initial={{opacity: 0}}
+			// animate={{opacity: 1}}
 			exit={{opacity: 0, transition: {duration: 1}}}
 			onClick={sawDisclaimer}
 		>
