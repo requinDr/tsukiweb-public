@@ -4,6 +4,8 @@ import { getLocale } from "./translation/lang";
 import { ErrorBoundary } from "react-error-boundary";
 import PageCrash from "./screens/CrashScreen";
 import { useLanguageRefresh } from "./components/hooks/useLanguageRefresh";
+import AppLayout from "layouts/AppLayout";
+import { Slide, ToastContainer } from "react-toastify";
 
 const LocaleSetter = () => {
 	useLanguageRefresh()
@@ -20,7 +22,18 @@ function App() {
 			<BrowserRouter
 				basename={import.meta.env.BASE_URL}
 			>
-				<AnimatedRoutes />
+				<AppLayout>
+					<AnimatedRoutes />
+				</AppLayout>
+
+				<ToastContainer
+					transition={Slide}
+					position="bottom-right"
+					autoClose={3000}
+					closeButton={false}
+					pauseOnFocusLoss={false}
+					draggable
+					theme="dark" />
 			</BrowserRouter>
 		</ErrorBoundary>
 	)
