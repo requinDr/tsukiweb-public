@@ -3,24 +3,9 @@ import { APP_VERSION, SCENE_ATTRS } from "./constants";
 import { strings, waitLanguageLoad } from "../translation/lang"
 import { credits, scenesDir } from "../translation/assets";
 import { getGameVariable } from "./variables";
-import { subTextCount } from "@tsukiweb-common/utils/utils";
-
-function preProcessScript(lines: string[]) {
-	//TODO remove this function after preprocessing the scripts to add this line on all scene files
-	const firstTextIndex = lines.findIndex(isTextLine)
-	const prefixLines = lines.slice(0, firstTextIndex)
-	const prefix = []
-	if (prefixLines.findIndex(line => line.startsWith('monocro')) == -1) {
-		prefix.push("monocro off")
-	}
-
-	if (prefix.length > 0) {
-		lines.unshift(...prefix)
-	}
-}
 
 //##############################################################################
-//#                           FETCH SCENES / BLOCKS                            #
+//#region                     FETCH SCENES / BLOCKS
 //##############################################################################
 
 const LOGIC_FILE = 'scene0.txt';
@@ -31,15 +16,15 @@ const LOGIC_FILE = 'scene0.txt';
 export function creditsScript(insertEndOfPlay: boolean = false): string[] {
 	return [
 		'play "*10"',
-		'bg #000000,%type_crossfade_fst',
+		'bg #000000,crossfade,400',
 		...(credits().map(([text, delay])=> {
 			const delayCmd = `delay ${delay}`
 			if (!text)
 				return delayCmd
-			const textCmd = `bg ${text},%type_crossfade_mid`
+			const textCmd = `bg ${text},crossfade,800`
 			return [textCmd, delayCmd]
 		}).flat()),
-		'bg #000000,%type_crossfade_slw',
+		'bg #000000,crossfade,1500',
 		...(insertEndOfPlay ? ["goto *endofplay"] : [])
 	]
 }
@@ -57,8 +42,6 @@ export async function fetchScene(sceneId: string): Promise<string[] | undefined>
 
 	//split data on \n
 	const result = script?.split(/\r?\n/).filter(line => line.length > 0);
-	if (result)
-		preProcessScript(result)
 	return result;
 }
 
@@ -104,23 +87,19 @@ export async function fetchFBlock(label: string): Promise<string[]> {
 	if (!afterScene) {
 		let sceneLine = lines.findIndex(line => /^gosub\s+\*s\d/.test(line))
 		if (sceneLine >= 0) {
-			lines.splice(sceneLine+1)
+			lines.splice(sceneLine + 1)
 		}
 	}
-	let choiceIdx = lines.findIndex(line => line.startsWith('select'))
+	let choiceIdx = lines.findIndex(line =>
+		line.startsWith('select') || line.startsWith('osiete'))
 	if (choiceIdx >= 0) {
-		let choiceLine = lines[choiceIdx]
-		let osieteMatch = osieteRE.exec(choiceLine)
-		if (osieteMatch && osieteMatch.groups?.["label"])
-			choiceLine = `osiete ${osieteMatch.groups.label}`
-		lines.splice(choiceIdx, lines.length - choiceIdx, choiceLine)
+		lines.splice(choiceIdx + 1)
 	}
-	//remove remaining text lines
-	return lines.filter(l=>!isTextLine(l));
+	return lines
 }
 
-//##############################################################################
-//#                     SCRIPT PROCESSING HELPER FUNCTIONS                     #
+//#endregion ###################################################################
+//#region               SCRIPT PROCESSING HELPER FUNCTIONS
 //##############################################################################
 
 export function isThScene(label: string): label is TsukihimeSceneName {
@@ -202,6 +181,14 @@ export function checkIfCondition(condition: string) {
 	return value
 }
 
+function parseInlineCommand(text: string) {
+	const argIndex = text.search(/\d|\s|$/)
+	return {
+		cmd: text.substring(0, argIndex),
+		arg: text.substring(argIndex)
+	}
+}
+
 function splitText(text: string) {
 	const instructions = new Array<{ cmd:string, arg:string }>()
 	let index = 0
@@ -211,22 +198,19 @@ function splitText(text: string) {
 	text = "\u2002".repeat(index) + text.substring(index)
 	// split tokens at every '@', '\', '!xxx'
 	while (text.length > 0) {
-		index = text.search(/@|\\|!\w|$/)
+		index = text.search(/@|!\w|$/)
 		if (index > 0)
-			instructions.push({cmd:'`',arg: text.substring(0, index)})
+			instructions.push({cmd:'`', arg: text.substring(0, index)})
 		text = text.substring(index)
 		switch (text.charAt(0)) {
 			case '@' :
-			case '\\' :
-				instructions.push({cmd: text.charAt(0), arg:""})
+				instructions.push({cmd: '@', arg:""})
 				text = text.substring(1)
 				break
 			case '!' : // !w<time>
-				const argIndex = text.search(/\d|\s|$/)
-				const endIndex = text.search(/\s|$/)
-				instructions.push({
-					cmd: text.substring(0, argIndex),
-					arg: text.substring(argIndex, endIndex)})
+				const endIndex = text.substring(1).search(/\D|$/)+1
+				const cmd = parseInlineCommand(text.substring(0, endIndex))
+				instructions.push(cmd)
 				text = text.substring(endIndex)
 				break
 		}
@@ -234,33 +218,25 @@ function splitText(text: string) {
 	return instructions
 }
 
-export function isTextLine(line: string) {
-	return line.startsWith('`');
-}
-
 export function extractInstructions(line: string) {
 	const instructions = new Array<{cmd:string,arg:string}>()
-	
-	if (isTextLine(line)) {
-		line = line.substring(1)
-		const endPageBreak = line.endsWith('\\')
-		if (endPageBreak)
-			line = line.substring(0, line.length-1)
-		else
-			line += '\n'
-		instructions.push(...splitText(line))
-		if (endPageBreak)
+	switch(line.charAt(0)) {
+		case '!' : // inline command
+			instructions.push(parseInlineCommand(line))
+			break
+		case '\\' : // page break
 			instructions.push({cmd:'\\',arg:''})
-	} else if (line.startsWith('!')) {
-		instructions.push(...splitText(line)) // '!w' are handled as inline commands
-	} else {
-		let index = line.search(/\s|$/)
-		instructions.push({
-			cmd: line.substring(0,index),
-			arg: line.substring(index+1)
-		})
+			break
+		case '`' : // text
+			instructions.push(...splitText(line.substring(1)+'\n'))
+			break
+		default : // normal command
+			let index = line.search(/\s|$/)
+			instructions.push({
+				cmd: line.substring(0,index),
+				arg: line.substring(index+1)
+			})
+			break
 	}
-
-
 	return instructions
 }

@@ -6,7 +6,7 @@ import { commands as audioCommands } from "./audio"
 import history from "./history"
 import { SCENE_ATTRS } from "./constants"
 import { commands as timerCommands } from "./timer"
-import { checkIfCondition, creditsScript, extractInstructions, fetchFBlock, fetchScene, isScene, isThScene, isTextLine } from "./scriptUtils"
+import { checkIfCondition, creditsScript, extractInstructions, fetchFBlock, fetchScene, isScene, isThScene } from "./scriptUtils"
 import { commands as variableCommands, gameContext, gameSession } from "./variables"
 import { settings } from "./settings"
 import { toast } from "react-toastify"
@@ -167,7 +167,7 @@ export const script = {
 	},
 
 	isCurrentLineText() {
-		return this.currentLine && isTextLine(this.currentLine)
+		return this.currentLine && this.currentLine.startsWith('`')
 	}
 }
 export default script
@@ -183,12 +183,12 @@ function processPhase(dir: "l"|"r") {
 	const common = `bg ${bg}$${vAlign}\`${hAlign}${title}`
 	if (dayStr) {
 		texts = [
-			`${common}\n[hide][size=80%]${dayStr}\`,%type_${invDir}cartain_fst`,
-			`${common}\n[size=80%]${dayStr}\`,%type_crossfade_fst`,
+			`${common}\n[hide][size=80%]${dayStr}\`,${invDir}cartain,400`,
+			`${common}\n[size=80%]${dayStr}\`,crossfade,400`,
 		]
 	} else {
 		texts = [
-			`${common}\`,%type_${invDir}cartain_fst`
+			`${common}\`,${invDir}cartain,400`
 		]
 	}
 	history.onPageBreak("phase")
@@ -196,10 +196,10 @@ function processPhase(dir: "l"|"r") {
 		...extractInstructions(`playstop`),
 		...extractInstructions(`wavestop`),
 		...extractInstructions(`monocro off`),
-		...extractInstructions(`bg ${bg},%type_${dir}cartain_fst`),
+		...extractInstructions(`bg ${bg},${dir}cartain,400`),
 		...(texts.map(extractInstructions).flat()),
 		{cmd: "click", arg: Math.max(1000, settings.nextPageDelay).toString()},
-		...extractInstructions(`bg #000000,%type_crossfade_fst`)
+		...extractInstructions(`bg #000000,crossfade,400`)
 	];
 }
 
@@ -360,7 +360,7 @@ export async function processLine(line: string) {
 
 function createPageIfNeeded() {
 	const {index, label} = gameContext
-	if (isScene(label) && (index == 0 || sceneLines[index-1].endsWith('\\') ||
+	if (isScene(label) && (index == 0 || sceneLines[index-1].startsWith('\\') ||
 			(history.last?.page?.contentType != "text"))) {
 		history.onPageBreak("text", "")
 	}

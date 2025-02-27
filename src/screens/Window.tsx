@@ -192,7 +192,7 @@ function page_nav(direction: "prev"|"next", event?: KeyboardEvent) {
 			if (!script.isFastForward && isViewAnyOf("text", "graphics")) {
 				const currLabel = gameContext.label
 				script.fastForward((_l, _i, label)=>{
-					return script.getOffsetLine(-1)?.endsWith('\\')
+					return script.getOffsetLine(-1)?.startsWith('\\')
 							|| label != currLabel
 				})
 			}
