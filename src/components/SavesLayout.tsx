@@ -8,6 +8,7 @@ import SaveDetails from "./save/SaveDetails"
 import { MdAddCircleOutline, MdUploadFile } from "react-icons/md"
 import PageSection from "@tsukiweb-common/ui-core/layouts/PageSection"
 import Button from "@tsukiweb-common/ui-core/components/Button"
+import { modalPromptService } from "@tsukiweb-common/ui-core/components/ModalPrompt"
 import classNames from "classnames"
 import { noBb } from "@tsukiweb-common/utils/Bbcode"
 import { useVirtualizer } from "@tanstack/react-virtual"
@@ -61,6 +62,7 @@ const SavesLayer = ({variant, back}: Props) => {
 		count: saves.length,
 		getScrollElement: () => parentRef.current,
 		estimateSize: () => 109,
+		overscan: 5,
 	})
 
 	function createSave() {
@@ -81,9 +83,14 @@ const SavesLayer = ({variant, back}: Props) => {
 			})
 	}
 
-	function onSaveSelect(id: number) {
+	async function onSaveSelect(id: number) {
 		if (variant == "save") {
-			if (confirm("Are you sure you want to overwrite this save?")) {
+			const confirmed = await modalPromptService.confirm({
+				text: "Are you sure you want to overwrite this save?",
+				labelYes: strings.yes,
+				labelNo: strings.no,
+			})
+			if (confirmed) {
 				/*
 				storeCurrentState(id)
 				/*/
@@ -98,8 +105,13 @@ const SavesLayer = ({variant, back}: Props) => {
 		}
 	}
 
-	function deleteSave(id: number) {
-		if (confirm("Are you sure you want to delete this save?")) {
+	async function deleteSave(id: number) {
+		const confirmed = await modalPromptService.confirm({
+			text: "Are you sure you want to delete this save?",
+			labelYes: strings.yes,
+			labelNo: strings.no,
+		})
+		if (confirmed) {
 			deleteSaveState(id)
 			if (id == focusedId)
 				setFocusedSave(undefined)
@@ -137,34 +149,34 @@ const SavesLayer = ({variant, back}: Props) => {
 					</Button>
 				}
 
-			<div
-				className="virtual-list"
-				style={{
-					height: `${rowVirtualizer.getTotalSize()}px`,
-				}}
-			>
-				{rowVirtualizer.getVirtualItems()
-					.map(({index, start, size, key}) => {
-					const [id, ss] = saves[index]
+				<div
+					className="virtual-list"
+					style={{
+						height: `${rowVirtualizer.getTotalSize()}px`,
+					}}
+				>
+					{rowVirtualizer.getVirtualItems()
+						.map(({index, start, size, key}) => {
+						const [id, ss] = saves[index]
 
-					return (
-						<SaveListItem
-							key={key}
-							id={id}
-							saveState={ss}
-							onSelect={onSaveSelect}
-							focusedSave={focusedId}
-							onFocus={setFocusedSave.bind(null, id)}
-							onPointerEnter={setFocusedSave.bind(null, id)}
-							onMouseEnter={setFocusedSave.bind(null, id)}
-							style={{
-								transform: `translateY(${start}px)`,
-								height: `${size}px`,
-							}}
-						/>
-					)
-				})}
-			</div>
+						return (
+							<SaveListItem
+								key={key}
+								id={id}
+								saveState={ss}
+								onSelect={onSaveSelect}
+								focusedSave={focusedId}
+								onFocus={setFocusedSave.bind(null, id)}
+								onPointerEnter={setFocusedSave.bind(null, id)}
+								onMouseEnter={setFocusedSave.bind(null, id)}
+								style={{
+									transform: `translateY(${start}px)`,
+									height: `${size}px`,
+								}}
+							/>
+						)
+					})}
+				</div>
 			</PageSection>
 
 			<SaveDetails id={focusedId} saveState={focusedSave} deleteSave={deleteSave}/>

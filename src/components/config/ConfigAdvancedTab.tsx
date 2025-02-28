@@ -14,6 +14,7 @@ import PageSection from "@tsukiweb-common/ui-core/layouts/PageSection"
 import { RecursivePartial } from "@tsukiweb-common/types"
 import { deepAssign, jsonDiff, textFileUserDownload, requestJSONs } from "@tsukiweb-common/utils/utils"
 import { bb } from "@tsukiweb-common/utils/Bbcode"
+import { modalPromptService } from "@tsukiweb-common/ui-core/components/ModalPrompt"
 
 function twoDigits(n: number) {
 	return n.toString().padStart(2, '0')
@@ -84,13 +85,22 @@ const ConfigAdvancedTab = () => {
 		}
 	}
 
-	const eraseData = () => {
-		if (confirm(strings.config["data-erase-warning"])) {
+	const eraseData = async () => {
+		const confirmed = await modalPromptService.confirm({
+			text: strings.config["data-erase-warning"],
+			labelYes: strings.yes,
+			labelNo: strings.no,
+			color: "#760101"
+		})
+		if (confirmed) {
 			clearSaveStates()
 			deepAssign(settings, defaultSettings)
-			setTimeout(()=> {
+			setTimeout(async ()=> {
 				localStorage.clear()
-				alert(strings.config["data-erase-confirm"])
+				await modalPromptService.alert({
+					text: strings.config["data-erase-confirm"],
+					labelOk: strings.ok,
+				})
 			}, 10) // leave room for asynchronous callbacks (if any) to complete
 		}
 	}
