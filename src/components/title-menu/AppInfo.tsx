@@ -17,6 +17,7 @@ const AppInfo = () => {
 			<button
 				className="action-icon" 
 				aria-label="show information modal"
+				onContextMenu={e => e.preventDefault()}
 				onClick={()=>setShow(true)}>
 				<MdInfoOutline />
 			</button>

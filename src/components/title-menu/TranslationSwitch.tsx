@@ -8,7 +8,8 @@ const TranslationSwitch = () => {
     <>
       <button
         className="action-icon" 
-        aria-label="show information modal"
+        aria-label="show language selection modal"
+        onContextMenu={e => e.preventDefault()}
         onClick={()=>setShow(true)}>
         <MdTranslate />
       </button>

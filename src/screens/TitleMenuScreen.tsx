@@ -16,6 +16,7 @@ import TranslationSwitch from '../components/title-menu/TranslationSwitch'
 import TitleMenuButton from '../../tsukiweb-common/src/ui-core/components/TitleMenuButton'
 import Particles from '@tsukiweb-common/ui-core/components/Particles'
 import { useObserved } from '@tsukiweb-common/utils/Observer'
+import { useNavigate } from 'react-router-dom'
 
 const img = {
 	src: moon,
@@ -24,6 +25,7 @@ const img = {
 }
 
 const TitleMenuScreen = () => {
+	const navigate = useNavigate()
 	useScreenAutoNavigate(SCREEN.TITLE)
 	const [conf] = useObserved(settings.volume, 'master')
 	useLanguageRefresh()
@@ -75,15 +77,15 @@ const TitleMenuScreen = () => {
 					</TitleMenuButton>
 					}
 
-					<TitleMenuButton to={SCREEN.LOAD}>
+					<TitleMenuButton onClick={() => navigate(SCREEN.LOAD)}>
 						{strings.title.load}
 					</TitleMenuButton>
 
-					<TitleMenuButton to={SCREEN.CONFIG}>
+					<TitleMenuButton onClick={() => navigate(SCREEN.CONFIG)}>
 						{strings.title.config}
 					</TitleMenuButton>
 
-					<TitleMenuButton to={SCREEN.GALLERY} attention={allEndingsSeen && !eclipseSeen}>
+					<TitleMenuButton onClick={() => navigate(SCREEN.GALLERY)} attention={allEndingsSeen && !eclipseSeen}>
 						{strings.title.extra}
 					</TitleMenuButton>
 				</div>
@@ -99,6 +101,7 @@ const TitleMenuScreen = () => {
 					}}>
 					<button
 						className="action-icon"
+						onContextMenu={e => e.preventDefault()}
 						aria-label={strings.config['volume-master']}
 						onClick={()=> settings.volume.master = -settings.volume.master}
 					>
