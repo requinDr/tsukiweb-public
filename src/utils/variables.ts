@@ -117,12 +117,10 @@ const flagsProxy = new Proxy({}, {
   }
 })
 
-const routePhaseRE = /word\\p(?<route>[a-z]+)_(?<rDay>\d+[ab])/
-const ignoredPhaseRE = /(?<ignored>bg\\.*)/
-const parseTitleA = (val: string)=> val.match(routePhaseRE)?.groups ??
-                                    val.match(ignoredPhaseRE)?.groups ?? {}
-const dayPhaseRE = /word\\day_(?<day>\d+)/
-const rawScenePhaseRE = /word\\(?<scene>\w+)/
+const routePhaseRE = /word\/p(?<route>[a-z]+)_(?<rDay>\d+[ab])/
+const parseTitleA = (val: string)=> val.match(routePhaseRE)?.groups ?? {}
+const dayPhaseRE = /word\/day_(?<day>\d+)/
+const rawScenePhaseRE = /word\/(?<scene>\w+)/
 const parseTitleB = (val: string)=> val.match(dayPhaseRE)?.groups ??
                                     val.match(rawScenePhaseRE)?.groups ?? {}
 
@@ -132,13 +130,13 @@ const phaseProxy = new Proxy({}, {
     switch(varName) {
       case "phasebg" : return `"${bg}"`
       case "phasetitle_a" :
-        return route != "" ? `"a;image\\word\\p${route}_${routeDay}.jpg"`
-                           : `"a;image\\bg\\ima_10.jpg"`
+        return route != "" ? `"word/p${route}_${routeDay}"`
+                           : `#000000`
       case "phasetitle_b" :
         return day.constructor == String ?
-              `"a;image\\word\\${day}.jpg`
+              `"word/${day}`
             : day as number > 0 ?
-              `"a;image\\word\\day_${day.toString().padStart(2, "0")}.png`
+              `"word/day_${day.toString().padStart(2, "0")}`
             : ""
     }
   },
@@ -146,13 +144,17 @@ const phaseProxy = new Proxy({}, {
     switch(varName) {
       case "phasebg" : gameContext.phase.bg = value; return true
       case "phasetitle_a" :
-        const {route = "", rDay = "", ignored = ""} = parseTitleA(value.toLowerCase())
-        if (!(route && rDay) && !ignored)
-          throw Error(`Cannot parse ${varName} ${value}`)
-        deepAssign(gameContext.phase, {
-          route : (route as RouteName) || "others",
-          routeDay : (rDay as RouteDayName) || ""
-        })
+        if (value.startsWith('#')) {
+          deepAssign(gameContext.phase, {route: '', routeDay: ''})
+        } else {
+          const {route = "", rDay = ""} = parseTitleA(value.toLowerCase())
+          if (!(route && rDay))
+            throw Error(`Cannot parse $${varName},${value}`)
+          deepAssign(gameContext.phase, {
+            route : (route as RouteName) || "others",
+            routeDay : (rDay as RouteDayName) || ""
+          })
+        }
         return true
       case "phasetitle_b" :
         if (value == '""')
