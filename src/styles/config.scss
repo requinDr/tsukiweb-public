@@ -47,7 +47,6 @@
 		align-items: center;
 		padding-block: .6em;
 		min-height: 60px;
-
 		
 		// and next sibling is not .sub
 		&:not(:nth-last-child(2), :has(+ .sub)) {
@@ -66,7 +65,7 @@
 		.config-btns {
 			flex: 1;
 			display: flex;
-			gap: 8px;
+			gap: 6px;
 			flex-wrap: wrap;
 
 			.config-btn {
@@ -177,6 +176,8 @@
 	}
 
 	@media (max-width: 768px) {
+		font-size: 1rem;
+
 		.config {
 			grid-template-columns: 1fr;
 			row-gap: 0.4em;
@@ -184,17 +185,11 @@
 			min-height: auto;
 
 			.config-name {
-				font-size: .9em;
 				margin-bottom: .2em;
 			}
 			.config-actions {
 				flex-direction: column;
 				flex-wrap: nowrap;
-				.config-btns {
-					.config-btn {
-						min-width: clamp(80px, 26%, 100px);
-					}
-				}
 			}
 		}
 
@@ -204,7 +199,6 @@
 			padding-block: 1em;
 
 			.action {
-				font-size: .9em;
 				margin-bottom: .2em;
 			}
 			.keyItem {

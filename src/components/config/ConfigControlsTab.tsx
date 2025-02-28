@@ -33,7 +33,7 @@ const ConfigControlsTab = () => {
 					</div>
 
 					{keys.map(({code, key, ctrlKey, altKey, shiftKey, repeat})=>
-						<div key={`${code || key}`} className="keyItem">
+						<kbd key={`${code || key}`} className="keyItem">
 							{ctrlKey ? "Ctrl + " : ""}
 							{altKey ? "Alt + " : ""}
 							{shiftKey ? "Shift + " : ""}
@@ -46,7 +46,7 @@ const ConfigControlsTab = () => {
 									</span>
 								</>
 							)}
-						</div>
+						</kbd>
 					)}
 				</div>
 			)}
