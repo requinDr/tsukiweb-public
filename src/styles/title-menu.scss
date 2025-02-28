@@ -257,6 +257,7 @@
 		border: 1px solid #00628b;
 		padding: 2em;
 		margin: 1em;
+		user-select: none;
 
 		p {
 			font-size: clamp(.92em, 3.6vmin, 1.3em);
