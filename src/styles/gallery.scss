@@ -1,8 +1,12 @@
 @use 'partials/_components';
 
 #gallery {
+	font-size: 1.1rem;
+	height: 100%;
+
 	.tabs {
-		font-size: 1.1em;
+		margin-inline: calc(var(--page-padding) * -1);
+		padding-inline: var(--page-padding);
 	}
 	// cancel the left menu
 	@media screen and (orientation: landscape) and (max-height: 680px) {
@@ -19,10 +23,6 @@
 				flex-direction: row;
 			}
 		}
-	}
-
-	&.page > div {
-		padding-bottom: 0;
 	}
 
 	section {

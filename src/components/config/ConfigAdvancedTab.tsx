@@ -128,7 +128,7 @@ const ConfigAdvancedTab = () => {
 					<Button
 						className={`config-btn`}
 						onClick={()=>setShowLanguage(true)}>
-						<MdTranslate /> {languages[settings.language]["display-name"]}...
+						<MdTranslate /> {languages[settings.language]["display-name"]}, ...
 					</Button>
 				</div>
 			</ConfigItem>

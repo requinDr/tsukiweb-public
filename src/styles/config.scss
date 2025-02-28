@@ -2,16 +2,25 @@
 
 #config-layout {
 	font-size: 1.1rem;
+
+	.tabs {
+		margin-inline: calc(var(--page-padding) * -1);
+		padding-inline: var(--page-padding);
+	}
 	
 	.sub {
-		padding-block: 1em;
-		background-color: #00ffff0a;
-		border: 1px solid #005381;
-		border-radius: 4px;
+		--theme-color: #3a0263;
+		padding-bottom: 1em;
+		border-block: 1px solid var(--theme-color);
+		margin-block: 1em;
+		background-color: hsl(315.54deg 87.83% 45.81% / 10%);
 
 		.title {
-			color: cyan;
-			margin-left: 1em;
+			padding-left: 1em;
+			background-image: linear-gradient(90deg, var(--theme-color) 70%, transparent);
+			width: fit-content;
+			padding-right: 2em;
+			padding-block: 0.1em;
 		}
 
 		.config {
@@ -43,7 +52,7 @@
 
 	.config {
 		display: grid;
-		grid-template-columns: 1fr 2fr;
+		grid-template-columns: minmax(240px, 1fr) 2fr;
 		align-items: center;
 		padding-block: .6em;
 		min-height: 60px;
@@ -55,6 +64,7 @@
 
 		.config-name {
 			margin-left: min(4%, 1em);
+			margin-right: 8px;
 		}
 		.config-actions {
 			display: flex;
@@ -176,12 +186,21 @@
 	}
 
 	@media (max-width: 768px) {
-		font-size: 1rem;
+		section {
+			padding-inline: 0;
+		}
+
+		.sub {
+			.title {
+				padding-left: 2em;
+			}
+		}
 
 		.config {
 			grid-template-columns: 1fr;
 			row-gap: 0.4em;
 			padding-block: 1em;
+			padding-inline: 1em;
 			min-height: auto;
 
 			.config-name {
@@ -209,17 +228,14 @@
 }
 
 .config-modal {
-	background-image: linear-gradient(45deg, #011853 60%, #033343);
-	font-size: 1.1em;
-
 	.ornament {
 		position: absolute;
-    top: 0;
-    right: 0;
-    z-index: -1;
-    width: 100%;
-    max-height: 100%;
-    object-fit: cover;
+		top: 0;
+		right: 0;
+		z-index: -1;
+		width: 100%;
+		max-height: 100%;
+		object-fit: cover;
 		opacity: 0.04;
 	}
 	.modal-content {
