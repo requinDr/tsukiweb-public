@@ -16,7 +16,7 @@ export default defineConfig({
 	server: {
 		proxy: {
 			'/static': {
-				target: `https://tsukidev.holofield.fr/static`,
+				target: `https://tsukiweb.holofield.fr/static`,
 				changeOrigin: true,
 				rewrite: (path) => path.replace(/^\/static/, '')
 			}
