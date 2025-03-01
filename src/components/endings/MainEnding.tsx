@@ -29,12 +29,17 @@ const MainEnding = ({unlocked, ending, ...props}: Props) => {
 			onKeyDown={(e)=> e.key === "Enter" && startScene()}
 		>
 			{unlocked && image ?
-			<img
-				className="ending-img"
-				src={imageSrc(`event/${image}`, 'sd')}
-				alt={name} draggable={false} />
+				<picture style={{display: "contents"}}>
+					<source srcSet={imageSrc(`event/${image}`, 'sd').replace(".webp", ".avif")} type="image/avif"/>
+					<img
+					 	className="ending-img"
+					 	src={imageSrc(`event/${image}`, 'sd')}
+					 	alt={name}
+					 	draggable={false}
+					/>
+				</picture>
 			:
-			<div className="ending-img placeholder" />
+				<div className="ending-img placeholder" />
 			}
 			
 			<div className="ending-desc">

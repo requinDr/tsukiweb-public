@@ -33,13 +33,16 @@ const GalleryImage = ({image, thumb, variants = [], unlockedVariants = [], blurr
 	return (
 		<>
 		<button onClick={() => setOpen(true)}>
-			<img
-				src={thumb}
-				className={classNames("thumb", {"is-alternative": image.alternativeOf, blur: blurred})}
-				alt={`event ${image.img}`}
-				draggable={false}
-				fetchPriority={blurred ? 'low' : 'auto'}
-			/>
+			<picture style={{display: "contents"}}>
+				<source srcSet={thumb.replace(".webp", ".avif")} type="image/avif"/>
+				<img
+					src={thumb}
+					className={classNames("thumb", {"is-alternative": image.alternativeOf, blur: blurred})}
+					alt={`event ${image.img}`}
+					draggable={false}
+					fetchPriority={blurred ? 'low' : 'auto'}
+				/>
+			</picture>
 			{variants.length > 1 &&
 				<GalleryNbVariants
 					nbVariants={variants.length}
@@ -67,13 +70,31 @@ const GalleryImage = ({image, thumb, variants = [], unlockedVariants = [], blurr
 						)
 					}
 					return (
-						<img
-							src={slide.src}
-							alt={slide.alt}
-							draggable={false}
-							fetchPriority="low"
-							style={{objectFit: "contain", width: "100%", height: "100%"}}
-						/>
+						<picture style={{display: "contents"}}>
+							<source srcSet={slide.src.replace(".webp", ".avif")} type="image/avif"/>
+							<img
+								src={slide.src}
+								alt={slide.alt}
+								draggable={false}
+								fetchPriority="low"
+								style={{objectFit: "contain", width: "100%", height: "100%"}}
+							/>
+						</picture>
+					)
+				},
+				slide(props) {
+					return (
+						<picture style={{display: "contents"}}>
+							<source srcSet={props.slide.src.replace(".webp", ".avif")} type="image/avif"/>
+							<img
+								src={props.slide.src}
+								alt={props.slide.alt}
+								draggable={false}
+								fetchPriority="high"
+								className="yarl__slide_image"
+								style={{maxWidth: "min(1280px, 100%)", maxHeight: "min(960px, 100%)"}}
+							/>
+						</picture>
 					)
 				},
 				iconError: () => <MdLock size={24} />,
