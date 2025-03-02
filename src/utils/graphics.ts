@@ -115,7 +115,7 @@ function processImageCmd(arg: string, cmd: string, onFinish: VoidFunction) {
 	}
 	let pos = 'bg', image = '', effect = '', time = ''
 	switch (cmd) {
-		case 'bg' : [image, effect, time] = arg.split(/,(?![^`]*`[^`]*(?:`[^`]*`[^`]*)*$)/); break; // ignore commas inside backticks
+		case 'bg' : [image, effect, time] = arg.split(/,(?!.*`)/); break; // ignore commas inside image
 		case 'ld' : [pos, image, effect, time] = arg.split(','); break;
 		case 'cl' : [pos, effect, time] = arg.split(','); break;
 		default : throw Error(`unknown image command ${cmd} ${arg}`)
