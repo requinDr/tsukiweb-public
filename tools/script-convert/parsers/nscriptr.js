@@ -2,7 +2,7 @@ import {StrReader, TextToken, CommandToken, ReturnToken, LabelToken, ConditionTo
 
 const CONDITION_REGEXP = /((^|\s*[&<>!=]*)\s*([%$\d-]\w*|fchk|"[^"]"))*/
 // [%$]X*|N* <=!> [%$]X*|N* (&& ...)*
-const ARGUMENT_REGEXP = /^`[^`]*`|"[^"]*"|[\w%$*-]+/
+const ARGUMENT_REGEXP = /^`[^`]*`|"[^"]*"|[#\w%$*-]+/
 
 //##############################################################################
 //#region                         TOKEN PARSERS
