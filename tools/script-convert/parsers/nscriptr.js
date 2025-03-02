@@ -103,7 +103,7 @@ function parseCommand(lineIndex, str) {
             args = arg ? [arg] : []
             return [new CommandToken(lineIndex, cmd, args)]
         case '#' :
-            return new CommandToken(lineIndex, 'textcolor', str)
+            return [new CommandToken(lineIndex, 'textcolor', [str])]
         default :
             reader = new StrReader(str)
             cmd = reader.readMatch(/^\w+\b/)
@@ -136,7 +136,7 @@ function parseError(lineIndex, str) {
 const tokensRE = new Map(Object.entries({
     'comment'       : [/^(\s*(;.*)?\r?\n)+/, null],
     'asciiText'     : [/^\s*`[^\n`]*(`|\r?\n)/, parseText],
-    'nonAsciiText'  : [/^\s*[^ \t\na-z;`*@\\+!:,~"][^\n\\]*/u, parseText],
+    'nonAsciiText'  : [/^\s*[^ \t\na-z;`*@\\+!:,~"#][^\n\\]*/u, parseText],
     'return'        : [/^\s*return\s*\r?\n/, parseReturn],
     'condition'     : [/^\s*(not)?if\s[^\n]*/, parseCondition],
     'cmd'           : [/^\s*(?<cmd>[a-z]\w+)[ \t]*(?<args>(([\w%$_#*-]*|"([^\n"]|(_"))*"|`[^`]*`)(,\s*)?[ \t]*)+)?/u, parseCommand],
