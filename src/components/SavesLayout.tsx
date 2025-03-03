@@ -86,7 +86,7 @@ const SavesLayer = ({variant, back}: Props) => {
 	async function onSaveSelect(id: number) {
 		if (variant == "save") {
 			const confirmed = await modalPromptService.confirm({
-				text: "Are you sure you want to overwrite this save?",
+				text: strings.saves["overwrite-warning"],
 				labelYes: strings.yes,
 				labelNo: strings.no,
 			})
@@ -107,7 +107,7 @@ const SavesLayer = ({variant, back}: Props) => {
 
 	async function deleteSave(id: number) {
 		const confirmed = await modalPromptService.confirm({
-			text: "Are you sure you want to delete this save?",
+			text: strings.saves["delete-warning"],
 			labelYes: strings.yes,
 			labelNo: strings.no,
 		})
