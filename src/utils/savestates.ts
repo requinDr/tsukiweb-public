@@ -3,7 +3,7 @@ import { settings } from "./settings"
 import history from './history';
 import { toast } from "react-toastify";
 import { FaSave } from "react-icons/fa"
-import { SAVE_EXT } from "./constants";
+import { APP_VERSION, SAVE_EXT } from "./constants";
 import { LabelName, PageContent, PageType } from "../types";
 import { SCREEN, displayMode } from "./display";
 import { RecursivePartial } from "@tsukiweb-common/types";
@@ -28,6 +28,7 @@ export type SaveState<T extends PageType = PageType> = {
   } & PageContent<T>
   graphics?: RecursivePartial<typeof gameContext.graphics>
   date?: number
+  version?: string
 }
 
 type SaveStateId = number
@@ -101,6 +102,7 @@ export function storeCurrentState(id: SaveStateId) {
   if (!ss)
     return false
   ss.graphics = jsonDiff(gameContext.graphics, defaultGameContext.graphics)
+  ss.version = APP_VERSION
   storeSaveState(id, ss)
   return true
 }
