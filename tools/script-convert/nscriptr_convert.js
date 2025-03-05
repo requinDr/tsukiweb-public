@@ -117,7 +117,7 @@ function genericFixes(token, clickChars) {
             case 'mp3loop' :
                 token.cmd = "play"
                 if (/m\d+/.test(token.args[0])) {
-                    token.args[0] = `"*${token.args[0].substring(1)}`
+                    token.args[0] = `"*${token.args[0].substring(1)}"`
                 }
                 break
             case 'stop' :
