@@ -1,5 +1,19 @@
 @use 'partials/_components';
 
+#saves, #layer-save {
+	.page-content {
+		@media screen and (orientation: landscape) and (max-height: 680px) {
+			--page-padding: 0;
+			.page-title {
+				padding: clamp(.8rem, 1.6vmin, 1.2rem);
+			}
+			.back-button {
+				margin: clamp(.8rem, 1.6vmin, 1.2rem);
+			}
+		}
+	}
+}
+
 #saves-layout {
 	font-size: 1rem;
 	display: grid;
@@ -9,7 +23,6 @@
 		"buttons buttons";
 	grid-template-columns: 3fr 1fr;
 	grid-template-rows: min-content 1fr min-content;
-	column-gap: 1rem;
 
 	.page-title {
 		grid-area: title;
@@ -28,7 +41,7 @@
 			margin-bottom: 8px;
 			gap: 8px;
 			width: 100%;
-			padding-block: 8px;
+			padding: 12px 0;
 		}
 		.save-container {
 			position: absolute;
@@ -55,8 +68,7 @@
 					display: flex;
 					column-gap: .6em;
 					flex-flow: wrap;
-					color: #9d9d9d;
-					font-size: .9em;
+					color: #bdbdbd;
 				}
 
 				.line {
@@ -107,43 +119,98 @@
 		overflow: hidden;
 		display: flex;
 		flex-direction: column;
-		font-size: 1.1em;
-		gap: 1em;
+		font-size: 1.2em;
 
-		.graphics {
-			width: 100%;
-			height: 100%;
-			flex: 1;
-			filter: brightness(0.9);
-			font-size: 0.8em;
-			min-height: 0;
+		&.preview-save {
+			border-left: 2px solid var(--separator);
+		}
+
+		.graphics-wrapper {
+			.graphics {
+				font-size: 0.8em;
+			}
 		}
 
 		.deta {
 			display: flex;
 			flex-direction: column;
-			padding: 1em;
-			min-height: 130px;
+			padding: 1em 1.2em;
 			justify-content: flex-end;
+		}
 
-			.actions {
-				align-self: flex-end;
-				display: flex;
-				margin-top: .6em;
-				gap: 4px;
+		.affection {
+			margin-top: 1em;
 
-				button {
-					padding: 4px 16px;
-					opacity: 0.8;
-					display: flex;
-					align-items: center;
-					font-size: 1.3em;
+			.affection-table {
+				width: 100%;
+				border-collapse: collapse;
+				tr:not(:last-child) {
+					border-bottom: 1px solid var(--separator);
+				}
+				td {
+					padding: 0.5em 0.5em;
+					vertical-align: top;
 
-					&:hover {
-						box-shadow: var(--selected-shadow);
-						opacity: 1;
+					&.name {
+						padding-left: 1.2em;
+						width: 110px;
+					}
+					&.hearts {
+						padding-right: 1em;
+						display: flex;
+						align-items: center;
+						column-gap: 0.4em;
+						row-gap: 0.2em;
+						flex-wrap: wrap;
 					}
 				}
+				.heart-icon {
+					color: red;
+				}
+			}
+		}
+
+		.actions {
+			margin-top: auto;
+			padding: 1em;
+			align-self: flex-end;
+			display: flex;
+			gap: 4px;
+
+			button {
+				padding: 4px 16px;
+				opacity: 0.8;
+				display: flex;
+				align-items: center;
+				font-size: 1.3em;
+
+				&:hover {
+					box-shadow: var(--selected-shadow);
+					opacity: 1;
+				}
+			}
+		}
+
+		// phone landscape
+		@media screen and (max-height: 480px) and (orientation: landscape) {
+			overflow-y: auto;
+			&.preview-save {
+				border-left: none;
+			}
+
+			.graphics-wrapper {
+				display: none;
+			}
+		}
+		// phone portrait
+		@media screen and (max-width: 760px) and (orientation: portrait) {
+			overflow-y: auto;
+			&.preview-save {
+				border-left: none;
+			}
+
+			.graphics-wrapper {
+				display: none;
 			}
 		}
 	}
@@ -160,31 +227,14 @@
 		}
 	}
 
-	@media screen and (max-width: 720px) and (orientation: portrait) {
+	@media screen and (max-width: 760px) and (orientation: portrait) {
 		grid-template-areas:
 			"title"
 			"info"
 			"list"
 			"buttons";
 		grid-template-columns: 1fr;
-		grid-template-rows: min-content 120px 1fr min-content;
-
-		.info {
-			flex-direction: row;
-			.graphics {
-				display: none;
-			}
-			.deta {
-				display: block;
-
-				.actions {
-					position: absolute;
-					bottom: 0;
-					padding-bottom: 12px;
-					background-color: inherit;
-				}
-			}
-		}
+		grid-template-rows: min-content 160px 1fr min-content;
 
 		.saves {
 			margin-top: 12px;
