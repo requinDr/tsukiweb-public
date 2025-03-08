@@ -10,6 +10,7 @@ import "yet-another-react-lightbox/plugins/thumbnails.css";
 import GalleryNbVariants from "./GalleryNbVariants"
 import { MdLock } from "react-icons/md"
 import { useMediaQuery } from "@uidotdev/usehooks"
+import { replaceExtensionByAvif } from "@tsukiweb-common/utils/images"
 
 type GalleryImageProps = {
 	image: GalleryImg
@@ -33,8 +34,8 @@ const GalleryImage = ({image, thumb, variants = [], unlockedVariants = [], blurr
 	return (
 		<>
 		<button onClick={() => setOpen(true)}>
-			<picture style={{display: "contents"}}>
-				<source srcSet={thumb.replace(".webp", ".avif")} type="image/avif"/>
+			<picture>
+				<source srcSet={replaceExtensionByAvif(thumb)} type="image/avif"/>
 				<img
 					src={thumb}
 					className={classNames("thumb", {"is-alternative": image.alternativeOf, blur: blurred})}
@@ -71,7 +72,7 @@ const GalleryImage = ({image, thumb, variants = [], unlockedVariants = [], blurr
 					}
 					return (
 						<picture style={{display: "contents"}}>
-							<source srcSet={slide.src.replace(".webp", ".avif")} type="image/avif"/>
+							<source srcSet={replaceExtensionByAvif(slide.src)} type="image/avif"/>
 							<img
 								src={slide.src}
 								alt={slide.alt}
@@ -85,7 +86,7 @@ const GalleryImage = ({image, thumb, variants = [], unlockedVariants = [], blurr
 				slide(props) {
 					return (
 						<picture style={{display: "contents"}}>
-							<source srcSet={props.slide.src.replace(".webp", ".avif")} type="image/avif"/>
+							<source srcSet={replaceExtensionByAvif(props.slide.src)} type="image/avif"/>
 							<img
 								src={props.slide.src}
 								alt={props.slide.alt}

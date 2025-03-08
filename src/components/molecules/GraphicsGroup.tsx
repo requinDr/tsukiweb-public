@@ -6,18 +6,30 @@ import { POSITIONS } from "@tsukiweb-common/constants";
 import { SpritePos, Graphics as GraphicsType, DivProps } from "@tsukiweb-common/types";
 import { imageNameFromPath, shouldBlur } from "utils/gallery";
 import { useLanguageRefresh } from "components/hooks/useLanguageRefresh";
+import { replaceExtensionByAvif, testAvifSupport } from "@tsukiweb-common/utils/images";
 
-export async function preloadImage(src:string, resolution=settings.resolution): Promise<void> {
+
+preloadImage.supportsAvif = undefined as boolean | undefined
+
+export async function preloadImage(src: string, resolution = settings.resolution): Promise<void> {
 	if (src.startsWith('#') || src.startsWith('$'))
 		return
-	else {
-		return new Promise((resolve, reject)=> {
-			const img = new Image()
-			img.onload = resolve as VoidFunction
-			img.onerror = img.onabort = reject
-			img.src = imageSrc(src, resolution)
-		})
+	
+	if (preloadImage.supportsAvif === undefined) {
+		preloadImage.supportsAvif = await testAvifSupport()
 	}
+	
+	return new Promise((resolve, reject) => {
+		const img = new Image()
+		img.onload = resolve as VoidFunction
+		img.onerror = img.onabort = reject
+		
+		if (preloadImage.supportsAvif) {
+			img.src = replaceExtensionByAvif(imageSrc(src, resolution))
+		} else {
+			img.src = imageSrc(src, resolution)
+		}
+	})
 }
 
 type GraphicsGroupProps = {

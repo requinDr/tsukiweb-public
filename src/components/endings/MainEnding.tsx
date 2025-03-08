@@ -2,6 +2,7 @@ import classNames from "classnames"
 import { imageSrc } from "translation/assets"
 import { LabelName } from "types"
 import { playScene } from "utils/savestates"
+import { replaceExtensionByAvif } from "@tsukiweb-common/utils/images";
 
 type Props = {
 	unlocked: boolean
@@ -30,7 +31,7 @@ const MainEnding = ({unlocked, ending, ...props}: Props) => {
 		>
 			{unlocked && image ?
 				<picture style={{display: "contents"}}>
-					<source srcSet={imageSrc(`event/${image}`, 'sd').replace(".webp", ".avif")} type="image/avif"/>
+					<source srcSet={replaceExtensionByAvif(imageSrc(`event/${image}`, 'sd'))} type="image/avif"/>
 					<img
 					 	className="ending-img"
 					 	src={imageSrc(`event/${image}`, 'sd')}
