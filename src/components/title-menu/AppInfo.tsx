@@ -110,10 +110,8 @@ const ModalInfo = ({show, setShow}: ModalInfoProps) => {
 							<MdShare /> {strings.title.share}
 						</Button>
 
-						<Button variant="corner">
-							<a href="https://vndb.org/v7" target="_blank" className="vndb">
-								<MdOpenInNew />	<span>VNDB</span>
-							</a>
+						<Button variant="corner" href="https://vndb.org/v7" target="_blank" className="vndb">
+							<MdOpenInNew />	<span>VNDB</span>
 						</Button>
 
 						{canInstallPWA && 
