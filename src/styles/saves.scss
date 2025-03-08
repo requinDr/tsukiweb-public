@@ -6,7 +6,8 @@
 			(max-width: 760px) and (orientation: portrait) {
 			--page-padding: 0;
 			.page-title {
-				padding: clamp(.8rem, 1.6vmin, 1.2rem);
+				padding-inline: clamp(.8rem, 1.6vmin, 1.2rem);
+				padding-top: clamp(.8rem, 1.6vmin, 1.2rem);
 			}
 			.back-button {
 				margin: clamp(.8rem, 1.6vmin, 1.2rem);
@@ -158,7 +159,7 @@
 						width: 110px;
 					}
 					&.hearts {
-						padding-right: 1em;
+						padding-right: .6em;
 						display: flex;
 						align-items: center;
 						column-gap: 0.4em;
@@ -198,10 +199,13 @@
 			overflow-y: auto;
 			&.preview-save {
 				border-left: none;
+				border-block: 2px solid var(--separator);
 			}
-
 			.graphics-wrapper {
 				display: none;
+			}
+			.affection {
+				margin-top: 0;
 			}
 		}
 		// phone portrait
@@ -210,9 +214,11 @@
 			&.preview-save {
 				border-left: none;
 			}
-
 			.graphics-wrapper {
 				display: none;
+			}
+			.affection {
+				margin-top: 0;
 			}
 		}
 	}
@@ -240,7 +246,7 @@
 	}
 
 	@media screen and (max-height: 480px) and (orientation: landscape) {
-		grid-template-columns: 1fr 3fr;
+		grid-template-columns: 2fr 5fr;
 		grid-template-areas:
 			"title list"
 			"info list"
