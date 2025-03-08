@@ -2,7 +2,8 @@
 
 #saves, #layer-save {
 	.page-content {
-		@media screen and (orientation: landscape) and (max-height: 680px) {
+		@media screen and (orientation: landscape) and (max-height: 680px),
+			(max-width: 760px) and (orientation: portrait) {
 			--page-padding: 0;
 			.page-title {
 				padding: clamp(.8rem, 1.6vmin, 1.2rem);
@@ -69,6 +70,7 @@
 					column-gap: .6em;
 					flex-flow: wrap;
 					color: #bdbdbd;
+					white-space: nowrap;
 				}
 
 				.line {
@@ -235,10 +237,6 @@
 			"buttons";
 		grid-template-columns: 1fr;
 		grid-template-rows: min-content 160px 1fr min-content;
-
-		.saves {
-			margin-top: 12px;
-		}
 	}
 
 	@media screen and (max-height: 480px) and (orientation: landscape) {
