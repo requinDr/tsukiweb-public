@@ -9,9 +9,9 @@ type SaveListItemProps = {
 	saveState: SaveState,
 	onSelect: (id: number)=>void,
 	focusedSave?: number,
-	[key: string]: any
+	buttonProps?: React.ButtonHTMLAttributes<HTMLButtonElement>,
 }
-const SaveListItem = ({id, saveState, onSelect, focusedSave, ...props}: SaveListItemProps)=> {
+const SaveListItem = ({id, saveState, onSelect, focusedSave, buttonProps}: SaveListItemProps)=> {
 	const date = new Date(saveState.date as number)
 	const isQuickSave = id === QUICK_SAVE_ID
 
@@ -20,7 +20,8 @@ const SaveListItem = ({id, saveState, onSelect, focusedSave, ...props}: SaveList
 			className={classNames("save-container", {active: id==focusedSave})}
 			onClick={onSelect.bind(null, id)}
 			{...(isQuickSave ? {'quick-save':''} : {})}
-			{...props}>
+			{...buttonProps}
+		>
 			<GraphicsGroup
 				images={saveState.graphics ?? saveState.context.graphics ?? {bg: ""}}
 				resolution="thumb"

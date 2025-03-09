@@ -166,12 +166,14 @@ const SavesLayer = ({variant, back}: Props) => {
 								saveState={ss}
 								onSelect={onSaveSelect}
 								focusedSave={focusedId}
-								onFocus={setFocusedSave.bind(null, id)}
-								onPointerEnter={setFocusedSave.bind(null, id)}
-								onMouseEnter={setFocusedSave.bind(null, id)}
-								style={{
-									transform: `translateY(${start}px)`,
-									height: `${size}px`,
+								buttonProps={{
+									onFocus: setFocusedSave.bind(null, id),
+									onPointerEnter: setFocusedSave.bind(null, id),
+									onMouseEnter: setFocusedSave.bind(null, id),
+									style: {
+										transform: `translateY(${start}px)`,
+										height: `${size}px`,
+									}
 								}}
 							/>
 						)

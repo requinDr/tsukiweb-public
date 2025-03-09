@@ -222,7 +222,6 @@ const Window = () => {
 	useLanguageRefresh()
 	const rootElmtRef = useRef(null)
 	const [hideMenuBtn] = useObserved(displayMode, "graphics")
-	useGamepad({fct: gameLoopGamepad})
 
 	// ref so it doesn't change once leaving a context until component unmount
 	const show = useRef({
@@ -253,6 +252,8 @@ const Window = () => {
 	}, [])
 
 //............ user inputs .............
+	useGamepad({fct: gameLoopGamepad})
+
 	useEffect(()=> {
 		if (rootElmtRef.current) {
 			gestures.enable(rootElmtRef.current)
@@ -267,8 +268,11 @@ const Window = () => {
 		return keyMap.disable.bind(keyMap, document, "keydown")
 	}, [])
 
-	const onContextMenu = (evt: React.MouseEvent) => {
-		evt.preventDefault()
+	const onContextMenu = (e: React.MouseEvent<HTMLElement>) => {
+		e.preventDefault()
+		const isTouchDevice = window.matchMedia("(pointer: coarse)").matches
+		if (isTouchDevice) return
+		
 		back()
 	}
 
