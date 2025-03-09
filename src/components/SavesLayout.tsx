@@ -61,7 +61,7 @@ const SavesLayer = ({variant, back}: Props) => {
 	const rowVirtualizer = useVirtualizer({
 		count: saves.length,
 		getScrollElement: () => parentRef.current,
-		estimateSize: () => 109,
+		estimateSize: () => 110,
 		overscan: 5,
 	})
 
