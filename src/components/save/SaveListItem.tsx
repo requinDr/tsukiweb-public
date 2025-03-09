@@ -32,6 +32,11 @@ const SaveListItem = ({id, saveState, onSelect, focusedSave, buttonProps}: SaveL
 				<time dateTime={date.toISOString()} className="date">
 					{date.toLocaleDateString(getLocale())} {date.toLocaleString(getLocale(), {hour: 'numeric', minute: '2-digit'})}
 				</time>
+				{saveState.page?.contentType === "choice" &&
+					<span className="chip-choice">
+						choice
+					</span>
+				}
 
 				<div className="line">
 					<SaveSummary saveState={saveState}/>

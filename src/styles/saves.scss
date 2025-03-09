@@ -66,11 +66,19 @@
 				overflow: hidden;
 
 				.date {
-					display: flex;
+					display: inline-flex;
 					column-gap: .6em;
 					flex-flow: wrap;
 					color: #bdbdbd;
 					white-space: nowrap;
+				}
+				.chip-choice {
+					font-size: 0.8em;
+					letter-spacing: .5px;
+					margin-left: 0.8em;
+					background-color: #2c00da;
+					padding: 2px 4px;
+					border-radius: 3px;
 				}
 
 				.line {
