@@ -61,7 +61,7 @@ const gestures = new GestureHandler(null, {
 				// disabled as on android, swiping down to display the browser's menu
 				// would also show the history.
 			}
-		} else if (isViewAnyOf("menu", "saves")) {
+		} else if (isViewAnyOf("menu")) {
 			if (direction == "right") {
 				back()
 				return true
