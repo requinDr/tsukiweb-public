@@ -2,15 +2,15 @@ import classNames from "classnames"
 import { useState, useMemo } from "react"
 import { imageSrc } from "translation/assets"
 import { GalleryImg, imagePath } from "utils/gallery"
+import Lightbox, { SlideImage } from 'yet-another-react-lightbox'
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails"
 import "yet-another-react-lightbox/styles.css";
-import Lightbox, { SlideImage } from 'yet-another-react-lightbox'
-import Zoom from "yet-another-react-lightbox/plugins/zoom";
-import "yet-another-react-lightbox/plugins/thumbnails.css";
+import Zoom from "yet-another-react-lightbox/plugins/zoom"
+import "yet-another-react-lightbox/plugins/thumbnails.css"
 import GalleryNbVariants from "./GalleryNbVariants"
 import { MdLock } from "react-icons/md"
 import { useMediaQuery } from "@uidotdev/usehooks"
-import { replaceExtensionByAvif } from "@tsukiweb-common/utils/images"
+import { replaceExtensionByAvif, supportAvif } from "@tsukiweb-common/utils/images"
 
 type GalleryImageProps = {
 	image: GalleryImg
@@ -26,7 +26,10 @@ const GalleryImage = ({image, thumb, variants = [], unlockedVariants = [], blurr
 	const slides: SlideImage[] = useMemo(() => {
 		return variants.map(image =>
 			unlockedVariants.includes(image) ?
-			({src: imageSrc(imagePath(image.img), 'hd'), alt: image.img})
+			({
+				src: supportAvif ? replaceExtensionByAvif(imageSrc(imagePath(image.img), 'hd')) : imageSrc(imagePath(image.img), 'hd'),
+				alt: image.img
+			})
 			: ({src: ""})
 		)
 	}, [unlockedVariants])
@@ -70,33 +73,6 @@ const GalleryImage = ({image, thumb, variants = [], unlockedVariants = [], blurr
 							</div>
 						)
 					}
-					return (
-						<picture style={{display: "contents"}}>
-							<source srcSet={replaceExtensionByAvif(slide.src)} type="image/avif"/>
-							<img
-								src={slide.src}
-								alt={slide.alt}
-								draggable={false}
-								fetchPriority="low"
-								style={{objectFit: "contain", width: "100%", height: "100%"}}
-							/>
-						</picture>
-					)
-				},
-				slide(props) {
-					return (
-						<picture style={{display: "contents"}}>
-							<source srcSet={replaceExtensionByAvif(props.slide.src)} type="image/avif"/>
-							<img
-								src={props.slide.src}
-								alt={props.slide.alt}
-								draggable={false}
-								fetchPriority="high"
-								className="yarl__slide_image"
-								style={{maxWidth: "min(1280px, 100%)", maxHeight: "min(960px, 100%)"}}
-							/>
-						</picture>
-					)
 				},
 				iconError: () => <MdLock size={24} />,
 			}}
