@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { motion } from 'motion/react'
+import * as motion from "motion/react-m"
 import '../styles/game.scss';
 import HistoryLayer from '../layers/HistoryLayer';
 import ChoicesLayer from '../layers/ChoicesLayer';

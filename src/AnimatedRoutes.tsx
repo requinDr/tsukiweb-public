@@ -1,7 +1,7 @@
 import { Routes, Route, Navigate, useLocation, Outlet } from "react-router-dom";
 import "@tsukiweb-common/assets/fonts/Ubuntu-Regular.ttf"
 import "@tsukiweb-common/assets/fonts/Ubuntu-Bold.ttf"
-import { AnimatePresence } from 'motion/react';
+import { AnimatePresence, LazyMotion, domAnimation } from 'motion/react';
 import Window from './screens/Window'
 import TitleMenuScreen from './screens/TitleMenuScreen';
 import GalleryScreen from './screens/GalleryScreen';
@@ -44,35 +44,37 @@ const AnimatedRoutes = () => {
 	const keyPresence = isExtra ? "extra" : location.pathname
 
 	return (
-		<AnimatePresence mode="wait">
-			<Routes location={location} key={keyPresence}>
-				<Route path="/disclaimer" element={<DisclaimerScreen onAccept={markDisclaimerAsSeen} />} />
-				<Route 
-					path="/" 
-					element={
-						!hasSeenDisclaimer 
-							? <Navigate to="/disclaimer" replace /> 
-							: <TitleMenuScreen />
-					} 
-				/>
-				<Route path="/title" element={<Navigate to="/" replace />} />
-				<Route path="/window" element={<Window />} />
-				<Route path="/load" element={<LoadScreen />} />
-				<Route path="/config" element={<ConfigScreen />} />
+		<LazyMotion features={domAnimation} strict>
+			<AnimatePresence mode="wait">
+				<Routes location={location} key={keyPresence}>
+					<Route path="/disclaimer" element={<DisclaimerScreen onAccept={markDisclaimerAsSeen} />} />
+					<Route 
+						path="/" 
+						element={
+							!hasSeenDisclaimer 
+								? <Navigate to="/disclaimer" replace /> 
+								: <TitleMenuScreen />
+						} 
+					/>
+					<Route path="/title" element={<Navigate to="/" replace />} />
+					<Route path="/window" element={<Window />} />
+					<Route path="/load" element={<LoadScreen />} />
+					<Route path="/config" element={<ConfigScreen />} />
 
-				<Route element={<ExtraLayout><Outlet /></ExtraLayout>}>
-					<Route path="/gallery" element={<GalleryScreen />} />
-					<Route path="/endings" element={<EndingsScreen />} />
-					<Route path="/scenes">
-						<Route index element={<FlowchartScreen />} />
-						<Route path=":sceneId" element={<SceneReplayScreen />} />
+					<Route element={<ExtraLayout><Outlet /></ExtraLayout>}>
+						<Route path="/gallery" element={<GalleryScreen />} />
+						<Route path="/endings" element={<EndingsScreen />} />
+						<Route path="/scenes">
+							<Route index element={<FlowchartScreen />} />
+							<Route path=":sceneId" element={<SceneReplayScreen />} />
+						</Route>
+						<Route path="/plus-disc" element={<PlusDiscScreen />} />
 					</Route>
-					<Route path="/plus-disc" element={<PlusDiscScreen />} />
-				</Route>
-				
-				<Route path="*" element={<Navigate to="/disclaimer" />} />
-			</Routes>
-		</AnimatePresence>
+					
+					<Route path="*" element={<Navigate to="/disclaimer" />} />
+				</Routes>
+			</AnimatePresence>
+		</LazyMotion>
 	)
 }
 

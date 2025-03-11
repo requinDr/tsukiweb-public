@@ -1,7 +1,8 @@
 import { Fragment, useMemo, useRef } from 'react'
 import '../styles/gallery.scss'
 import { settings } from '../utils/settings'
-import { AnimatePresence, Variants, motion } from 'motion/react'
+import * as motion from "motion/react-m"
+import { AnimatePresence, Variants } from 'motion/react'
 import { findImagesByRoute, GalleryImg, getImageVariants, imagePath } from '../utils/gallery'
 import { strings } from "../translation/lang"
 import { imageSrc } from '../translation/assets'

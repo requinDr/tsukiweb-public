@@ -3,7 +3,7 @@ import tsukiLogo from "../assets/images/tsukihime-logo.webp"
 import moon from "../assets/images/moon.webp"
 import '../styles/title-menu.scss'
 import { SCREEN } from '../utils/display'
-import { motion } from 'motion/react'
+import * as motion from "motion/react-m"
 import { continueGame, hasSaveStates, newGame, viewedScene } from '../utils/savestates'
 import { strings } from "../translation/lang"
 import { MdOutlineVolumeOff, MdOutlineVolumeUp } from 'react-icons/md'

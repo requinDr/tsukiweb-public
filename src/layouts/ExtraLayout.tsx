@@ -1,4 +1,4 @@
-import { motion } from "motion/react"
+import * as motion from "motion/react-m"
 import { PropsWithChildren, useMemo } from "react"
 import "../styles/extra.scss"
 import { strings } from "translation/lang"
