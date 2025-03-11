@@ -1,6 +1,6 @@
 import '../styles/config.scss'
 import { SCREEN, displayMode } from '../utils/display'
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import ConfigLayout from '../components/ConfigLayout'
 import { useScreenAutoNavigate } from '../components/hooks/useScreenAutoNavigate'
 import { useLanguageRefresh } from '../components/hooks/useLanguageRefresh'

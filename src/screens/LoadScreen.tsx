@@ -1,4 +1,4 @@
-import { motion } from "framer-motion"
+import { motion } from "motion/react"
 import '../styles/saves.scss'
 import SavesLayout from "../components/SavesLayout"
 import { SCREEN, displayMode } from "../utils/display"

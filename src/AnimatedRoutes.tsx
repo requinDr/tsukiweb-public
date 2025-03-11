@@ -1,7 +1,7 @@
 import { Routes, Route, Navigate, useLocation, Outlet } from "react-router-dom";
 import "@tsukiweb-common/assets/fonts/Ubuntu-Regular.ttf"
 import "@tsukiweb-common/assets/fonts/Ubuntu-Bold.ttf"
-import { AnimatePresence } from 'framer-motion';
+import { AnimatePresence } from 'motion/react';
 import Window from './screens/Window'
 import TitleMenuScreen from './screens/TitleMenuScreen';
 import GalleryScreen from './screens/GalleryScreen';

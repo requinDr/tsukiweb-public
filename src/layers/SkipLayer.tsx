@@ -10,7 +10,7 @@ import sceneAttrs from '../assets/game/scene_attrs.json'
 import { TsukihimeSceneName } from "types"
 import Button from "@tsukiweb-common/ui-core/components/Button"
 import { getSceneTitle } from "utils/scriptUtils"
-import { motion } from "framer-motion"
+import { motion } from "motion/react"
 
 const SkipLayer = () => {
 	const [display, setDisplay] = useState<boolean>(false)

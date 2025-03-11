@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import '../styles/game.scss';
 import HistoryLayer from '../layers/HistoryLayer';
 import ChoicesLayer from '../layers/ChoicesLayer';
