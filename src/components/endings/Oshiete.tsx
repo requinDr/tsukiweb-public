@@ -1,6 +1,5 @@
 import { playScene } from 'utils/savestates'
 import chalkboard from '../../assets/images/chalkboard.webp'
-import ReactDOMServer from 'react-dom/server'
 import { noBb } from '@tsukiweb-common/utils/Bbcode'
 import { osiete } from 'utils/endings'
 import classNames from 'classnames'
@@ -10,7 +9,6 @@ type Props = {
 	ending: typeof osiete[keyof typeof osiete]
 	number: number
 }
-
 const Oshiete = ({unlocked, ending, number}: Props) => {
 
 	const handlePlay = () => {
@@ -26,12 +24,13 @@ const Oshiete = ({unlocked, ending, number}: Props) => {
 			onClick={unlocked ? handlePlay : undefined}
 			onKeyDown={e => e.key === 'Enter' && handlePlay()}
 			data-tooltip-id="osiete"
-			data-tooltip-html={
-				unlocked ? ReactDOMServer.renderToString(
-					<Tooltip ending={ending} />
-				)
-				: undefined
-			}
+			data-tooltip-html={`
+				<div>
+					${ending?.scene}<br />
+					${ending?.name ? `${noBb(ending.name)}<br />` : ""}
+					${ending?.day ? `Day: ${ending.day}` : ""}
+				</div>
+			`}
 		>
 			{unlocked && ending ?
 				<img
@@ -55,18 +54,3 @@ const Oshiete = ({unlocked, ending, number}: Props) => {
 }
 
 export default Oshiete
-
-type TooltipProps = {
-	ending: typeof osiete[keyof typeof osiete]
-}
-const Tooltip = ({ending}: TooltipProps) => {
-	if (!ending) return null
-
-	return (
-		<div>
-			{ending?.scene}<br />
-			{ending.name && <>{noBb(ending.name)}<br /></>}
-			{ending.day && <>Day: {ending.day}<br /></>}
-		</div>
-	)
-}
