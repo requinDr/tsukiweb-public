@@ -22,8 +22,9 @@ async function processScenes(scenes, outputDir, prefixPath, width, height) {
 	let batchIndex = 0
 	let thumbnails = []
 	let jsonMetadata = {
-		dimensions: { width, height },
-		images: {}
+		d: { w: width, h: height },
+		f: [],
+		i: {}
 	}
 
 	for (const [sceneName, sceneData] of Object.entries(scenes)) {
@@ -52,13 +53,20 @@ async function processScenes(scenes, outputDir, prefixPath, width, height) {
 				thumbnails.push(thumbBuffer)
 
 				const batchPosition = thumbnails.length - 1
+				const fileName = `spritesheet_${batchIndex}.${imageFormat}`
+
+				let fileIndex = jsonMetadata.f.indexOf(fileName)
+				if (fileIndex === -1) {
+					jsonMetadata.f.push(fileName)
+					fileIndex = jsonMetadata.f.length - 1
+				}
 
 				// Calculate metadata for this scene
-				jsonMetadata.images[sceneName] = {
-					file: `spritesheet_${batchIndex}.${imageFormat}`,
-					top: Math.floor(batchPosition / 10) * height, // Assuming 10 columns
-					left: (batchPosition % 10) * width
-				}
+				jsonMetadata.i[sceneName] = [
+					Math.floor(batchPosition / 10) * height,
+					(batchPosition % 10) * width,
+					fileIndex
+				]
 
 				// Save spritesheet when batch is full
 				if (thumbnails.length === batchSize) {
@@ -81,7 +89,7 @@ async function processScenes(scenes, outputDir, prefixPath, width, height) {
 
 	// Write JSON metadata
 	const metadataPath = path.join(outputDir, "spritesheet_metadata.json")
-	fs.writeFileSync(metadataPath, JSON.stringify(jsonMetadata, null, 2))
+	fs.writeFileSync(metadataPath, JSON.stringify(jsonMetadata))
 	console.log(`Metadata saved to ${metadataPath}`)
 }
 
