@@ -1,98 +1,13 @@
 import sharp from 'sharp'
-import fs from 'fs'
 import path from 'path'
 
-const scenes = JSON.parse(fs.readFileSync('scenes-graphics.json', 'utf8'))
-
-const prefixPath = '../../public/static/jp/image_thumb/'
-const outputDir = 'output/'
-const width = 108
-const height = 72
-
-const ensureWebpExtension = (filePath) => (filePath ? `${filePath}.webp` : null)
-
-const isHexColor = (str) => /^#[0-9A-Fa-f]{6}$/.test(str)
-
-async function processScenes(scenes, outputDir, prefixPath, width, height) {
-	// Ensure the output directory exists
-	if (!fs.existsSync(outputDir)) {
-		fs.mkdirSync(outputDir, { recursive: true })
-	}
-
-	const batchSize = 90 // Number of thumbnails per spritesheet
-	let batchIndex = 0
-	let thumbnails = []
-	let jsonMetadata = {
-		dimensions: { width, height },
-		images: {}
-	}
-
-	for (const [sceneName, sceneData] of Object.entries(scenes)) {
-		const graph = sceneData?.fc?.graph
-
-		if (graph) {
-			let { bg, l = null, c = null, r = null, monochrome = null } = graph
-
-			if (!bg) {
-				bg = "#000000"
-			}
-
-			try {
-				// Generate thumbnail buffer
-				const thumbBuffer = await generateFlowchartImage({
-					bg: isHexColor(bg) ? bg : path.join(prefixPath, ensureWebpExtension(bg)),
-					l: l ? path.join(prefixPath, ensureWebpExtension(l)) : null,
-					c: c ? path.join(prefixPath, ensureWebpExtension(c)) : null,
-					r: r ? path.join(prefixPath, ensureWebpExtension(r)) : null,
-					monochrome,
-					width,
-					height,
-				})
-
-				thumbnails.push(thumbBuffer)
-
-				const batchPosition = thumbnails.length - 1
-
-				// Calculate metadata for this scene
-				jsonMetadata.images[sceneName] = {
-					file: `spritesheet_${batchIndex}.webp`,
-					top: Math.floor(batchPosition / 10) * height, // Assuming 10 columns
-					left: (batchPosition % 10) * width,
-					width,
-					height,
-					left: (batchPosition % 10) * width
-				}
-
-				// Save spritesheet when batch is full
-				if (thumbnails.length === batchSize) {
-					await saveSpritesheet(thumbnails, outputDir, batchIndex, width, height)
-					thumbnails = []
-					batchIndex++
-				}
-			} catch (error) {
-				console.error(`Error processing scene ${sceneName}:`, error.message)
-			}
-		} else {
-			console.warn(`Skipping scene ${sceneName} due to missing graph data`)
-		}
-	}
-
-	// Save remaining thumbnails in the last batch
-	if (thumbnails.length > 0) {
-		await saveSpritesheet(thumbnails, outputDir, batchIndex, width, height)
-	}
-
-	// Write JSON metadata
-	const metadataPath = path.join(outputDir, "spritesheet_metadata.json")
-	fs.writeFileSync(metadataPath, JSON.stringify(jsonMetadata, null, 2))
-	console.log(`Metadata saved to ${metadataPath}`)
-}
+export const isHexColor = (str) => /^#[0-9A-Fa-f]{6}$/.test(str)
 
 // Helper function to generate a spritesheet
-async function saveSpritesheet(thumbnails, outputDir, batchIndex, thumbWidth, thumbHeight) {
+export async function saveSpritesheet(thumbnails, outputDir, batchIndex, thumbWidth, thumbHeight, format) {
 	const cols = 10 // Number of thumbnails per row
 	const rows = Math.ceil(thumbnails.length / cols)
-	const spritesheetPath = path.join(outputDir, `spritesheet_${batchIndex}.webp`)
+	const spritesheetPath = path.join(outputDir, `spritesheet_${batchIndex}.${format}`)
 
 	const compositeImages = thumbnails.map((thumb, i) => ({
 		input: thumb,
@@ -109,12 +24,12 @@ async function saveSpritesheet(thumbnails, outputDir, batchIndex, thumbWidth, th
 		},
 	})
 
-	await canvas.composite(compositeImages).toFormat('webp').toFile(spritesheetPath)
+	await canvas.composite(compositeImages).toFormat(format).toFile(spritesheetPath)
 	console.log(`Spritesheet saved to ${spritesheetPath}`)
 }
 
-// Updated generateFlowchartImage to return buffer instead of saving
-async function generateFlowchartImage({ bg, l, c, r, monochrome, width, height, output }) {
+// return buffer
+export async function generateFlowchartImage({ bg, l, c, r, monochrome, width, height, format }) {
 	const canvas = sharp({
 		create: {
 			width,
@@ -230,10 +145,5 @@ async function generateFlowchartImage({ bg, l, c, r, monochrome, width, height, 
 	}
 
 	// Composite all layers and save the final image
-	return canvas.composite(layers).toFormat('webp').toBuffer()
-
-	// console.log(Image saved to ${output})
+	return canvas.composite(layers).toFormat(format).toBuffer()
 }
-
-
-processScenes(scenes, outputDir, prefixPath, width, height).catch(console.error)
