@@ -10,13 +10,26 @@ import { imageNameFromPath, shouldBlur } from "utils/gallery"
 import SpritesheetMetadata from "../../assets/flowchart/spritesheet_metadata.json"
 import { spriteSheetImgPath } from "translation/assets"
 
-const metadatas = JSON.parse(JSON.stringify(SpritesheetMetadata))
+type SpritesheetMetadata = {
+	dimensions: {
+		width: number
+		height: number
+	}
+	images: {
+		[key: string]: {
+			file: string
+			top: number
+			left: number
+		}
+	}
+}
+const metadatas: SpritesheetMetadata = JSON.parse(JSON.stringify(SpritesheetMetadata))
 
-function onLoad(metadata: JSONObject, evt: SyntheticEvent<HTMLImageElement, Event>) {
+function onLoad(width: number, height: number, metadata: JSONObject, evt: SyntheticEvent<HTMLImageElement, Event>) {
 	const img = evt.target as HTMLImageElement
 	const imgWidth = img.naturalWidth
 	const imgHeight = img.naturalHeight
-	const { top, left, width, height } = metadata as Record<string, number>
+	const { top, left } = metadata as Record<string, number>
 	const ratio_x = SCENE_WIDTH / width
 	const ratio_y = SCENE_HEIGHT / height
 	img.style.marginLeft = `-${ratio_x * left}px`,
@@ -26,7 +39,8 @@ function onLoad(metadata: JSONObject, evt: SyntheticEvent<HTMLImageElement, Even
 }
 
 const FlowchartScene = (id: string) => {
-	const imageMetadata = metadatas[id]
+	const imageMetadata = metadatas.images[id]
+	const { width, height } = metadatas.dimensions
 
 	const image = spriteSheetImgPath(imageMetadata.file)
 	
@@ -36,7 +50,7 @@ const FlowchartScene = (id: string) => {
 			width={SCENE_WIDTH} height={SCENE_HEIGHT}
 		>
 			<img
-				onLoad={onLoad.bind(null, imageMetadata)}
+				onLoad={onLoad.bind(null, width, height, imageMetadata)}
 				src={image}
 				alt={`Thumbnail for ${id}`}
 			/>

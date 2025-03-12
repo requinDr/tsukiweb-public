@@ -28,5 +28,6 @@ public/static/*/*/
 !public/static/**/*.json
 public/static/jp/fullscript_jp.txt
 
-tools/*/*
+tools/generate-thumbnails/output
+tools/script-convert/*
 !tools/**/*.js
