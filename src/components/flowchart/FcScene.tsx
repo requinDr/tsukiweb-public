@@ -1,7 +1,7 @@
 import { Fragment, ReactNode, SyntheticEvent, useEffect, useRef, useState } from "react"
 import { TsukihimeSceneName, LabelName } from "types"
 import { SCENE_HEIGHT, SCENE_WIDTH } from "utils/flowchart"
-import { playScene } from "utils/savestates"
+import { playScene, viewedScene } from "utils/savestates"
 import { settings } from "utils/settings"
 import { FcNode } from "./FcNode"
 import { Graphics } from "@tsukiweb-common/types"
@@ -72,7 +72,7 @@ export class FcScene extends FcNode {
 
 	render() {
 		let content
-		let completed = settings.completedScenes.includes(this.id) || settings.unlockEverything
+		let completed = viewedScene(this.id as LabelName) || settings.unlockEverything
 		if (!completed && !settings.unlockEverything)
 			content = <use href="#fc-scene-hidden"/>
 		else if (!this.graph)

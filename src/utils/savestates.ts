@@ -363,7 +363,7 @@ export async function loadSaveFiles(saves?: string[] | FileList | undefined | nu
 /**
  * Return if the specified scene has been viewed by the player.
  */
-export function viewedScene(scene: LabelName): boolean {
+export function viewedScene(scene: LabelName | string): boolean {
   return settings.completedScenes.includes(scene)
 }
 

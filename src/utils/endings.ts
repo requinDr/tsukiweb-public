@@ -3,6 +3,7 @@ import { SCENE_ATTRS } from "./constants"
 import { strings } from "../translation/lang"
 import { settings } from "./settings"
 import { PartialRecord } from "@tsukiweb-common/types"
+import { viewedScene } from "./savestates"
 
 type EndType = "normal"|"true"|"good"|"osiete"
 
@@ -29,7 +30,7 @@ class Ed {
   get image() { return this._illus }
 
   get seen() {
-    return settings.completedScenes.includes(this._scene) || settings.unlockEverything
+    return viewedScene(this._scene) || settings.unlockEverything
   }
   get name() {
     if (this._char && this._day)

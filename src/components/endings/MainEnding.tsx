@@ -14,16 +14,18 @@ type Props = {
 		type: string
 		scene: LabelName
 	},
-} & React.HTMLAttributes<HTMLDivElement>
+	continueScript?: boolean
+	divProps?: React.HTMLAttributes<HTMLDivElement>
+}
 
-const MainEnding = ({unlocked, ending, ...props}: Props) => {
+const MainEnding = ({unlocked, ending, continueScript = false, divProps}: Props) => {
 	const {id, char, image, name, type, scene} = ending
-	const startScene = () => playScene(scene, {continueScript: false, viewedOnly: !unlocked})
+	const startScene = () => playScene(scene, {continueScript: continueScript, viewedOnly: !unlocked})
 
 	return (
 		<div
-			{...props}
-			className={classNames("ending", id, {"unlocked": unlocked}, props.className)}
+			{...divProps}
+			className={classNames("ending", id, {"unlocked": unlocked}, divProps?.className)}
 			onClick={startScene}
 			tabIndex={unlocked ? 0 : -1}
 			role="button"

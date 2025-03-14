@@ -5,7 +5,7 @@
 	"type": "module",
 	"dependencies": {
 		"@floating-ui/react": "^0.27.5",
-		"@tanstack/react-virtual": "^3.13.2",
+		"@tanstack/react-virtual": "^3.13.4",
 		"@types/jest": "^29.5.14",
 		"@types/node": "^22.13.10",
 		"@types/react": "^19.0.10",
@@ -24,7 +24,7 @@
 		"sass": "^1.85.1",
 		"vite-plugin-svgr": "^4.3.0",
 		"vite-tsconfig-paths": "^5.1.4",
-		"yet-another-react-lightbox": "^3.21.7"
+		"yet-another-react-lightbox": "^3.21.8"
 	},
 	"scripts": {
 		"start": "vite",
@@ -41,6 +41,6 @@
 		"@vitejs/plugin-react": "^4.3.4",
 		"sharp": "^0.33.5",
 		"typescript": "^5.8.2",
-		"vite": "^6.2.1"
+		"vite": "^6.2.2"
 	}
 }

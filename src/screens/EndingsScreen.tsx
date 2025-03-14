@@ -55,7 +55,10 @@ const EndingsScreen = () => {
 							type: "",
 							scene: "eclipse"
 						}}
-						className={classNames({attention: eclipseUnlocked})}
+						continueScript={eclipseUnlocked} //needed to add to the completed scenes
+						divProps={{
+							className: classNames({attention: eclipseUnlocked})
+						}}
 					/>
 				</section>
 
