@@ -109,7 +109,6 @@
 			.menu-buttons {
 				flex-direction: column;
 				align-items: center;
-				margin-right: 1em;
 				row-gap: 12px;
 			}
 		}
@@ -125,6 +124,9 @@
 			margin-bottom: 0;
 			height: 100%;
 			align-content: center;
+			.menu-buttons {
+				margin-right: 1em;
+			}
 		}
 	}
 }
