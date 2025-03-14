@@ -118,6 +118,13 @@ function genericFixes(token, clickChars) {
                 token.cmd = "play"
                 if (/m\d+/.test(token.args[0])) {
                     token.args[0] = `"*${token.args[0].substring(1)}"`
+                } else if (token.args[0].includes("bgm")) {
+                    // "bgm\07.wav"
+                    const match = token.args[0].match(/bgm\\(\d+)\.wav/)
+                    if (match && match[1]) {
+                        const num = parseInt(match[1], 10)
+                        token.args[0] = `"*${num}"`
+                    }
                 }
                 break
             case 'stop' :
