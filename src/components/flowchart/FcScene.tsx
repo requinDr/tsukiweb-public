@@ -1,14 +1,18 @@
-import { Fragment, SyntheticEvent } from "react"
+import { Fragment, ReactNode, SyntheticEvent, useEffect, useRef, useState } from "react"
 import { TsukihimeSceneName, LabelName } from "types"
 import { SCENE_HEIGHT, SCENE_WIDTH } from "utils/flowchart"
 import { playScene } from "utils/savestates"
 import { settings } from "utils/settings"
 import { FcNode } from "./FcNode"
-import { Graphics, JSONObject } from "@tsukiweb-common/types"
+import { Graphics } from "@tsukiweb-common/types"
 import classNames from "classnames"
 import { imageNameFromPath, shouldBlur } from "utils/gallery"
 import SpritesheetMetadata from "../../assets/flowchart/spritesheet_metadata.json"
 import { spriteSheetImgPath } from "translation/assets"
+import GraphicsGroup from "components/molecules/GraphicsGroup"
+import * as motion from "motion/react-m"
+import { autoUpdate, useFloating, useHover, useInteractions} from '@floating-ui/react';
+import { createPortal } from "react-dom"
 
 type SpritesheetMetadata = {
 	d: {
@@ -57,7 +61,7 @@ const FlowchartScene = (id: string) => {
 
 export class FcScene extends FcNode {
 	graph: Graphics|undefined
-	constructor(id: TsukihimeSceneName, column: number, from: FcNode[], alignedNode?: FcNode, graph ?: Graphics, cutAt?: number) {
+	constructor(id: TsukihimeSceneName, column: number, from: FcNode[], alignedNode?: FcNode, graph?: Graphics, cutAt?: number) {
 		super(id, column, from, alignedNode, cutAt)
 		this.y += SCENE_HEIGHT/2
 		this.graph = graph
@@ -81,40 +85,151 @@ export class FcScene extends FcNode {
 			content = FlowchartScene(this.id as string)
 		}
 
-		const play = (e: React.MouseEvent | React.KeyboardEvent) => {
-			if (completed)
-				playScene(this.id as LabelName, { continueScript: false })
-			else
-				e.stopPropagation()
-		}
-
-		const blur = completed && this.graph?.bg && shouldBlur(imageNameFromPath(this.graph?.bg))
+		const blur = Boolean(completed && this.graph?.bg && shouldBlur(imageNameFromPath(this.graph?.bg)))
 
 		return (
 			<Fragment key={this.id}>
 				{super.render()}
 				
-				<g className={`fc-scene`} id={this.id}
-					transform={`translate(${this.x},${this.y})`}
-					// TODO: continueScript = true if using the flowchart to navigate to previous scene (not yet implemented)
-				>
-					<g
-						className={classNames("fc-scene-content", {completed, blur})}
-						tabIndex={completed ? 0 : -1}
-						clipPath="url(#fc-scene-clip)"
-						onClick={play}
-						onKeyDown={(e) => {
-								if (e.key === "Enter" && e.currentTarget === e.target) {
-									play(e)
-								}
-							}
-						}
+				{completed ?
+					<UnlockedSceneRender
+						id={this.id}
+						graphics={this.graph}
+						content={content}
+						blur={blur}
+						x={this.x} y={this.y}
+					/>
+				:
+					<g 
+						className={`fc-scene`} 
+						id={this.id}
+						transform={`translate(${this.x},${this.y})`}
 					>
-						<title>{this.id}</title>
-						{content}
+						<g
+							className={classNames("fc-scene-content", {unlocked: completed, blur})}
+							clipPath="url(#fc-scene-clip)"
+						>
+							{content}
+						</g>
 					</g>
-				</g>
+				}
 			</Fragment>
 		)
 	}
+}
+
+
+
+type SceneRenderProps = {
+	id: string
+	graphics?: Graphics
+	content: ReactNode
+	blur: boolean
+	x: number
+	y: number
+}
+export const UnlockedSceneRender = ({ id, graphics, content, blur, x, y }: SceneRenderProps) => {
+	const [isOpen, setIsOpen] = useState(false)
+	
+	const {refs, floatingStyles, context} = useFloating({
+		placement: "right",
+		whileElementsMounted: autoUpdate,
+		open: isOpen,
+		onOpenChange: setIsOpen
+	})
+
+	const hover = useHover(context, {
+		delay: {
+			open: 200,
+			close: 50,
+		},
+	})
+
+	const {getReferenceProps} = useInteractions([
+    hover,
+  ])
+
+	const play = (e: React.MouseEvent | React.KeyboardEvent) => {
+		e.stopPropagation()
+		setIsOpen(false)
+		playScene(id as LabelName, { continueScript: false })
+	}
+
+	return (
+		<>
+			<g 
+				className={`fc-scene`} 
+				id={`fc-scene-${id}`}
+				transform={`translate(${x},${y})`}
+			>
+				<g
+					className={classNames("fc-scene-content", "unlocked", {blur})}
+					tabIndex={0}
+					clipPath="url(#fc-scene-clip)"
+					onClick={play}
+					onKeyDown={(e) => {
+							if (e.key === "Enter" && e.currentTarget === e.target) {
+								play(e)
+							}
+						}
+					}
+					{...getReferenceProps()}
+					onContextMenu={(e) => {
+						e.preventDefault()
+						setIsOpen(!isOpen)
+					}}
+					ref={refs.setReference}
+				>
+					{content}
+				</g>
+			</g>
+			
+			{isOpen && createPortal(
+				<div
+					className="scene-popover-container"
+					ref={refs.setFloating}
+					style={floatingStyles}
+					id="scene-popover"
+				>
+					<motion.div
+						className="scene-popover"
+						initial={{opacity: 0, scale: 0.95}}
+						animate={{opacity: 1, scale: 1}}
+					>
+						<ScenePopover id={id} graphics={graphics} onClose={() => setIsOpen(false)} />
+					</motion.div>
+				</div>,
+				document.getElementById("root-view") as HTMLElement
+			)}
+		</>
+	)
+}
+
+const ScenePopover = ({ id, graphics, onClose }: { id: string, graphics?: Graphics, onClose: () => void }) => {
+	const popoverRef = useRef<HTMLDivElement>(null)
+	
+	useEffect(() => {
+		const handleClickOutside = (event: MouseEvent) => {
+			if (popoverRef.current && !popoverRef.current.contains(event.target as Node)) {
+				onClose()
+			}
+		}
+		
+		document.addEventListener('mousedown', handleClickOutside)
+		
+		return () => {
+			document.removeEventListener('mousedown', handleClickOutside)
+		}
+	}, [onClose])
+
+	return (
+		<div className="scene-popover-content" ref={popoverRef}>
+			<div className="header">
+				<GraphicsGroup images={graphics ?? {bg:"#000"}} resolution="sd" />
+			</div>
+			<div className="content">
+				{id}<br/>
+			</div>
+		</div>
+	)
 }

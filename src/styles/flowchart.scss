@@ -41,7 +41,7 @@
 				}
 			}
 
-			&.completed {
+			&.unlocked {
 				transition: scale 0.2s ease-in-out, filter 0.2s ease-in-out;
 				cursor: pointer;
 
@@ -82,4 +82,25 @@
 
 #fc-scene-background {
 	fill: rgb(67 67 67);
+}
+
+.scene-popover-container {
+		width: min(300px, 100%);
+}
+.scene-popover {
+	width: 100%;
+	border-radius: 4px;
+	background-color: #000;
+	box-shadow: 0 1px 4px #000;
+	overflow: hidden;
+
+	.header {
+		width: 100%;
+		height: 200px;
+		background-color: #000;
+	}
+	.content {
+		padding: 1em;
+		font-size: 1.1em;
+	}
 }
