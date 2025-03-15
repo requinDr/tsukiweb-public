@@ -3,10 +3,12 @@
 #gallery {
 	font-size: 1.1rem;
 	height: 100%;
+	overflow-y: auto;
 
 	.tabs {
 		margin-inline: calc(var(--page-padding) * -1);
 		padding-inline: var(--page-padding);
+		margin-top: var(--page-padding);
 	}
 	// cancel the left menu
 	@media screen and (orientation: landscape) and (max-height: 680px) {
@@ -27,9 +29,8 @@
 
 	section {
 		position: relative;
-		overflow-y: auto;
 		flex-grow: 1;
-		scrollbar-gutter: stable both-edges;
+		padding-top: 0.4em;
 	}
 	.gallery-transition {
 		position: relative;
@@ -40,10 +41,10 @@
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(min(180px, 20vmin), 1fr));
 		gap: 8px;
-		padding-bottom: 60px;
+		padding-bottom: 40px;
 
 		@media (max-width: 480px) or (max-height: 480px) {
-			grid-template-columns: repeat(auto-fill, minmax(min(100px, 30vmin), 1fr));
+			grid-template-columns: repeat(auto-fill, minmax(min(104px, 30vmin), 1fr));
 		}
 
 		button {

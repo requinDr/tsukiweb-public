@@ -4,25 +4,23 @@
 #endings {
 	main {
 		display: grid;
-		padding-block: 1em;
-		gap: 1rem;
+		padding-block: 2em;
 		overflow-y: auto;
 		scrollbar-gutter: stable both-edges;
 		align-content: start;
 	}
 
 	section {
-		padding: 1em;
-		flex-grow: 1;
+		padding: var(--page-padding);
 		position: relative;
 	}
 
 	.endings-list {
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(min(200px, 24vmin), 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(min(204px, 24vmin), 1fr));
 		isolation: isolate;
 		min-width: 0;
-		gap: 1em;
+		gap: .8em;
 		place-content: start;
 
 		.ending {
@@ -193,32 +191,6 @@
 					margin: .5em 0;
 				}
 			}
-		}
-	}
-	
-	@media (max-height: 600px) and (min-width: 1120px) {
-		main {
-			grid-template-columns: 3fr minmax(120px, 1fr);
-			padding-block: 0;
-		}
-		
-		.endings-list {
-			grid-template-columns: repeat(auto-fill, minmax(min(140px, 30vmin), 1fr));
-			overflow-y: auto;
-			gap: 8px;
-			padding-block: 2em;
-			.ending {
-				font-size: .9em;
-
-				.ending-desc {
-					margin: .5em 0;
-				}
-			}
-		}
-
-		.badendings {
-			overflow-y: auto;
-			padding: 2em;
 		}
 	}
 }

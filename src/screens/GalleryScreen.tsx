@@ -1,4 +1,4 @@
-import { Fragment, useMemo, useRef } from 'react'
+import { Fragment, useMemo } from 'react'
 import '../styles/gallery.scss'
 import { settings } from '../utils/settings'
 import * as motion from "motion/react-m"
@@ -33,11 +33,8 @@ const GalleryScreen = () => {
 	useScreenAutoNavigate(SCREEN.GALLERY)
 	useLanguageRefresh()
 	const [selectedTab, setSelectedTab] = useQueryParam<CharId>("tab", "ark")
-	const refSection = useRef<HTMLDivElement>(null)
 
 	const tabImages: GalleryImg[] = useMemo(() => {
-		refSection.current?.scrollTo(0, 0)
-
 		let imagesTmp: GalleryImg[] = findImagesByRoute(selectedTab)
 		if (imagesTmp == undefined) {
 			console.error(`unknown character ${selectedTab}`)
@@ -73,7 +70,7 @@ const GalleryScreen = () => {
 			selectedTab={selectedTab}
 			setSelectedTab={setSelectedTab}
 		>
-			<section ref={refSection}>
+			<section>
 				<div className='gallery-transition'>
 					<AnimatePresence mode="popLayout">
 						<motion.div

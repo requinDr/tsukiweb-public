@@ -1,6 +1,6 @@
 #extra {
 	display: grid;
-	grid-template-columns: minmax(180px, min-content) 1fr;
+	grid-template-columns: minmax(190px, min-content) 1fr;
 	grid-template-areas: "extra-menu extra-content";
 	padding: 0;
 	column-gap: 1em;
@@ -23,10 +23,11 @@
 
 		.menu-item {
 			text-align: start;
+			font-size: 1.05em;
 		}
 		.back-button {
 			margin-top: auto;
-			margin-bottom: 1em;
+			margin-bottom: .5em;
 		}
 	}
 
