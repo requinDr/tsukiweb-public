@@ -4,6 +4,7 @@ import { settings } from "../utils/settings"
 import {TrackSourceId, languages, strings} from "./lang"
 import { ImageRedirect, TextImage } from "@tsukiweb-common/utils/lang"
 import { closeBB } from "@tsukiweb-common/utils/Bbcode"
+import { supportAvif, testAvifSupport } from "@tsukiweb-common/utils/images"
 
 //##############################################################################
 //#                                  PRIVATE                                   #
@@ -50,6 +51,10 @@ export function scenesDir() {
 }
 
 export function spriteSheetImgPath(file: string) {
+  if (supportAvif === null) {
+    testAvifSupport()
+  }
+  file = supportAvif ? file.replace(/\.webp$/, '.avif') : file
 	return assetPath(`jp/flowchart-spritesheet/${file}`)
 }
 

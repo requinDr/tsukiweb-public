@@ -15,7 +15,7 @@ export async function saveSpritesheet(thumbnails, outputDir, batchIndex, thumbWi
 		top: Math.floor(i / cols) * thumbHeight,
 	}))
 
-	const canvas = sharp({
+	let canvas = sharp({
 		create: {
 			width: cols * thumbWidth,
 			height: rows * thumbHeight,
@@ -24,7 +24,12 @@ export async function saveSpritesheet(thumbnails, outputDir, batchIndex, thumbWi
 		},
 	})
 
-	await canvas.composite(compositeImages).toFormat(format).toFile(spritesheetPath)
+	if (format === 'avif') {
+		canvas = canvas.avif({ effort: 9, quality: 40 })
+	} else if (format === 'webp') {
+		canvas = canvas.webp({ effort: 6, preset: 'drawing' })
+	}
+	await canvas.composite(compositeImages).toFile(spritesheetPath)
 	console.log(`Spritesheet saved to ${spritesheetPath}`)
 }
 

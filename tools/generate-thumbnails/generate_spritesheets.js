@@ -4,12 +4,12 @@ import { isHexColor, saveSpritesheet, generateFlowchartImage } from './utils.js'
 
 
 const scenes = JSON.parse(fs.readFileSync('scenes-graphics.json', 'utf8'))
-const prefixPath = '../../public/static/jp/image_thumb/'
+const prefixPath = '../../public/static/jp/image/'
 const outputDir = 'output/'
 const width = 108
 const height = 72
 
-const imageFormat = 'webp'
+const imageFormat = 'avif'
 const ensureExtension = (filePath) => (filePath ? `${filePath}.${imageFormat}` : null)
 
 async function processScenes(scenes, outputDir, prefixPath, width, height) {
