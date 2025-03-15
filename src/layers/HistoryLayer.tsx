@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { displayMode, isViewAnyOf } from '../utils/display';
 import { SaveState, loadSaveState } from "../utils/savestates";
 import history from '../utils/history';
@@ -10,12 +10,15 @@ import { useObserved, useObserver } from '@tsukiweb-common/utils/Observer';
 import { addEventListener } from '@tsukiweb-common/utils/utils';
 import classNames from 'classnames';
 import Button from '@tsukiweb-common/ui-core/components/Button';
+import Flowchart from 'components/flowchart/Flowchart';
+import { gameContext } from 'utils/variables';
 
 type Props = {
-	[key: string] : any // other properties to apply to the root 'div' element of the component
+	divProps?: React.HTMLProps<HTMLDivElement>
 }
-const HistoryLayer = (props: Props) => {
+const HistoryLayer = ({ divProps }: Props) => {
 	const [display, setDisplay] = useObserved(displayMode, 'history')
+	const [view, setView] = useState<"history" | "flowchart">("history")
 	const rootRef = useRef<HTMLDivElement>(null)
 	const historyRef = useRef<HTMLDivElement>(null)
 
@@ -60,6 +63,13 @@ const HistoryLayer = (props: Props) => {
 		}
 	}, [display])
 
+	const allScenes = document.querySelectorAll("[id^='fc-scene-']");
+	allScenes.forEach(scene => scene.classList.remove("active"));
+	const scene = document.getElementById(`fc-scene-${gameContext.label}`);
+	if (scene) {
+		scene.classList.add("active");
+	}
+
 	function onClick(saveState: SaveState) {
 		setDisplay(false)
 		loadSaveState(saveState)
@@ -68,15 +78,25 @@ const HistoryLayer = (props: Props) => {
 	return (
 		<div
 			id="layer-history"
-			{...props}
-			className={classNames("layer", {"show": display}, props.className)}
+			{...divProps}
+			className={classNames("layer", {"show": display}, divProps?.className)}
 			ref={rootRef}>
-			<div id="history" ref={historyRef}>
-				<div className="text-container">
-					{Array.from(history, (page, i) =>
-						<PageElement key={i} saveState={page} onLoad={onClick} />
-					)}
+			<div ref={historyRef} className='scroll-container'>
+				{view === "history" ?
+				<div id="history">
+					<div className="text-container">
+						{Array.from(history, (page, i) =>
+							<PageElement key={i} saveState={page} onLoad={onClick} />
+						)}
+					</div>
 				</div>
+				:
+				<div id="scenes">
+					<div className="flowchart-container">
+						<Flowchart />
+					</div>
+				</div>
+				}
 			</div>
 
 			<FixedFooter>
@@ -85,6 +105,13 @@ const HistoryLayer = (props: Props) => {
 					onClick={() => setDisplay(false)}
 				>
 					{strings.close}
+				</Button>
+				<Button
+					variant="menu"
+					onClick={() => setView(prev => prev === "history" ? "flowchart" : "history")}
+					style={{ marginLeft: '1em' }}
+				>
+					{view === "history" ? <>{strings.extra.scenes}</> : <>{strings.menu.history}</>}
 				</Button>
 			</FixedFooter>
 		</div>
