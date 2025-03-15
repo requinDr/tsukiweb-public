@@ -63,12 +63,16 @@ const HistoryLayer = ({ divProps }: Props) => {
 		}
 	}, [display])
 
+	//TODO: only process when gameContext label changes
 	const allScenes = document.querySelectorAll("[id^='fc-scene-']");
 	allScenes.forEach(scene => scene.classList.remove("active"));
 	const scene = document.getElementById(`fc-scene-${gameContext.label}`);
 	if (scene) {
 		scene.classList.add("active");
 	}
+
+	//TODO: auto-scroll to the current scene
+	//TODO: prevent loading a different scene until we are able to restore flags and affections
 
 	function onClick(saveState: SaveState) {
 		setDisplay(false)
