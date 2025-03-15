@@ -5,6 +5,7 @@ import ConfigLayout from '../components/ConfigLayout'
 import { useScreenAutoNavigate } from '../components/hooks/useScreenAutoNavigate'
 import { useLanguageRefresh } from '../components/hooks/useLanguageRefresh'
 import useQueryParam from '@tsukiweb-common/hooks/useQueryParam'
+import { useEffect } from 'react'
 
 const ConfigScreen = () => {
 	useScreenAutoNavigate(SCREEN.CONFIG)
@@ -14,6 +15,19 @@ const ConfigScreen = () => {
 	function back() {
 		displayMode.screen = SCREEN.TITLE
 	}
+
+	useEffect(()=> {
+		const handleKeyDown = (event: KeyboardEvent) => {
+			if (event.key === "Escape") {
+				back()
+			}
+		}
+		window.addEventListener("keydown", handleKeyDown)
+		return () => {
+			window.removeEventListener("keydown", handleKeyDown)
+		}
+	}, [])
+
 	return (
 		<motion.div
 			className="page" id="config"

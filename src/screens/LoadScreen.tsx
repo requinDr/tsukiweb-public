@@ -4,6 +4,8 @@ import SavesLayout from "../components/SavesLayout"
 import { SCREEN, displayMode } from "../utils/display"
 import { useLanguageRefresh } from "../components/hooks/useLanguageRefresh"
 import { useScreenAutoNavigate } from "../components/hooks/useScreenAutoNavigate"
+import { useEffect } from "react"
+
 
 const LoadScreen = () => {
 	useScreenAutoNavigate(SCREEN.LOAD)
@@ -13,6 +15,19 @@ const LoadScreen = () => {
 		if (!saveLoaded)
 			displayMode.screen = SCREEN.TITLE
 	}
+	
+	useEffect(()=> {
+		const handleKeyDown = (event: KeyboardEvent) => {
+			if (event.key === "Escape") {
+				back(false)
+			}
+		}
+		window.addEventListener("keydown", handleKeyDown)
+		return () => {
+			window.removeEventListener("keydown", handleKeyDown)
+		}
+	}, [])
+	
 	return (
 		<motion.div
 			className="page" id="saves"

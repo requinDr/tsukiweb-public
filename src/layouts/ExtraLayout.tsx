@@ -1,8 +1,8 @@
 import * as motion from "motion/react-m"
-import { PropsWithChildren, useMemo } from "react"
+import { PropsWithChildren, useEffect, useMemo } from "react"
 import "../styles/extra.scss"
 import { strings } from "translation/lang"
-import { SCREEN } from "utils/display"
+import { displayMode, SCREEN } from "utils/display"
 import { viewedScene } from "utils/savestates"
 import { useLocation, useNavigate } from "react-router-dom"
 import { useLanguageRefresh } from "components/hooks/useLanguageRefresh"
@@ -14,6 +14,22 @@ const ExtraLayout = ({ children }: PropsWithChildren) => {
 	const navigate = useNavigate()
 	const location = useLocation()
 	useLanguageRefresh()
+
+	function back() {
+		displayMode.screen = SCREEN.TITLE
+	}
+
+	useEffect(()=> {
+		const handleKeyDown = (event: KeyboardEvent) => {
+			if (event.key === "Escape") {
+				back()
+			}
+		}
+		window.addEventListener("keydown", handleKeyDown)
+		return () => {
+			window.removeEventListener("keydown", handleKeyDown)
+		}
+	}, [])
 
 	const [allEndingsSeen, eclipseSeen] = useMemo(()=> {
 		const allEndingsSeen = settings.unlockEverything || Object.values(endings).every(e=>e.seen)
