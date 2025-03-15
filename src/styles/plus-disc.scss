@@ -1,14 +1,12 @@
 #plus-disc {
+	font-size: 1.1em;
 	main {
-		overflow-y: auto;
-		scrollbar-gutter: stable both-edges;
 		padding: 1em;
 		padding-bottom: 60px;
 	}
 	.header {
 		margin-top: 2em;
 		display: flex;
-		font-size: 1.2em;
 
 		.cover {
 			aspect-ratio: 1;
@@ -24,9 +22,10 @@
 			flex-direction: column;
 			padding: 1em;
 			align-items: center;
+			row-gap: 1em;
 
 			.cover {
-				width: min(100%, 100px);;
+				width: min(100%, 160px);;
 			}
 			.desc {
 				padding: 0;
@@ -35,15 +34,17 @@
 	}
 
 	.scenes-list {
-		margin-top: 1em;
 		display: grid;
-		gap: 8px;
 
 		.scene {
 			display: grid;
-			grid-template-columns: 180px 1fr;
-			background-color: var(--menu-container);
+			grid-template-columns: 160px 1fr;
 			position: relative;
+			padding: 4px;
+			
+			&:not(:last-child) {
+				border-bottom: 1px solid var(--separator);
+			}
 
 			.scene-image {
 				width: 100%;
@@ -57,13 +58,11 @@
 			&:after {
 				content: '';
 				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
+				inset: 0;
 				transition: .2s;
 			}
 			&:hover, &:focus-visible {
+				cursor: pointer;
 				&:after {
 					box-shadow: var(--selected-shadow);
 				}

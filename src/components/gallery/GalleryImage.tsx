@@ -1,7 +1,7 @@
 import classNames from "classnames"
 import { useState, useMemo } from "react"
 import { imageSrc } from "translation/assets"
-import { GalleryImg, imagePath } from "utils/gallery"
+import { GalleryImg } from "utils/gallery"
 import Lightbox, { SlideImage } from 'yet-another-react-lightbox'
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails"
 import "yet-another-react-lightbox/styles.css";
@@ -15,11 +15,12 @@ import { replaceExtensionByAvif, supportAvif } from "@tsukiweb-common/utils/imag
 type GalleryImageProps = {
 	image: GalleryImg
 	thumb: string
-	variants?: GalleryImg[]
+	variants: GalleryImg[]
 	unlockedVariants?: GalleryImg[]
 	blurred?: boolean
+	imagePath: (img: string) => string
 }
-const GalleryImage = ({image, thumb, variants = [], unlockedVariants = [], blurred = false}: GalleryImageProps) => {
+const GalleryImage = ({image, thumb, variants = [], unlockedVariants = [], blurred = false, imagePath}: GalleryImageProps) => {
 	const [open, setOpen] = useState(false)
 	const isSmallLandscape = useMediaQuery("(orientation: landscape) and (max-height: 480px)")
 

@@ -208,3 +208,38 @@ export function imagePath(imgName: string): string {
 export function imageNameFromPath(path: string): string {
   return path.split("/").pop() ?? ""
 }
+
+export const GALLERY_IMAGES_PD: Record<string, GalleryImg> = {
+  "s01" : { img: "s01" , path: "bg" },
+  "s02" : { img: "s02" , path: "bg" },
+  "s03" : { img: "s03" , path: "bg" },
+  "s04" : { img: "s04" , path: "bg" },
+  "s05" : { img: "s05" , path: "bg" },
+  "s06" : { img: "s06" , path: "bg" },
+  "s07" : { img: "s07" , path: "bg" },
+  "s08" : { img: "s08" , path: "bg" },
+  "s09" : { img: "s09" , path: "bg" },
+  "s10" : { img: "s10" , path: "bg" },
+  "s11" : { img: "s11" , path: "bg" },
+  "s12" : { img: "s12" , path: "bg" },
+  "s13" : { img: "s13" , path: "bg" },
+  "s14" : { img: "s14" , path: "bg" },
+  "s15" : { img: "s15" , path: "bg" },
+  "s16" : { img: "s16" , path: "bg" },
+  "s17" : { img: "s17" , path: "bg" , sensitive: true },
+  "scroll19" : { img: "scroll19" , path: "bg" },
+  "t01" : { img: "t01" , path: "bg" },
+  "t02" : { img: "t02" , path: "bg" },
+  "t03" : { img: "t03" , path: "bg" },
+  "t04" : { img: "t04" , path: "bg" },
+  "t05" : { img: "t05" , path: "bg" },
+  "t06" : { img: "t06" , path: "bg" },
+  "t07" : { img: "t07" , path: "bg" },
+}
+export function imagePathPd(imgName: string): string {
+  const img = GALLERY_IMAGES_PD[imgName]
+  if (!img) {
+    return ""
+  }
+  return `${img.path}/${img.img}`
+}

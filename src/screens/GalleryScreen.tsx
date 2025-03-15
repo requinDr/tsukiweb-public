@@ -71,47 +71,46 @@ const GalleryScreen = () => {
 			setSelectedTab={setSelectedTab}
 		>
 			<section>
-				<div className='gallery-transition'>
-					<AnimatePresence mode="popLayout">
-						<motion.div
-							key={selectedTab}
-							variants={container}
-							initial="hidden"
-							animate="show"
-							exit="hidden"
-							className="gallery-container">
-							{tabImages?.map((image) => {
-								const {isUnlockedImage, variants, unlockedVariants} = getImgDetails(image)
-								const mainImage = isUnlockedImage ? image : unlockedVariants[0]
-								const thumbSrc = imageSrc(imagePath(mainImage?.img), 'thumb')
-								const showGalleryImage = isUnlockedImage || unlockedVariants.length > 0
-							
-								return (
-									<Fragment key={image.img}>
-										{showGalleryImage ?
-											<GalleryImage
-												image={mainImage}
-												thumb={thumbSrc}
-												variants={variants}
-												unlockedVariants={unlockedVariants}
-												blurred={image.sensitive && settings.blurThumbnails}
-											/>
-										:
-											<div className="placeholder">
-												{variants.length > 1 && (
-													<GalleryNbVariants
-														nbVariants={variants.length}
-														nbUnlocked={unlockedVariants.length}
-													/>
-												)}
-											</div>
-										}
-									</Fragment>
-								)
-							})}
-						</motion.div>
-					</AnimatePresence>
-				</div>
+				<AnimatePresence mode="popLayout">
+					<motion.div
+						key={selectedTab}
+						variants={container}
+						initial="hidden"
+						animate="show"
+						exit="hidden"
+						className="gallery-container">
+						{tabImages?.map((image) => {
+							const {isUnlockedImage, variants, unlockedVariants} = getImgDetails(image)
+							const mainImage = isUnlockedImage ? image : unlockedVariants[0]
+							const thumbSrc = imageSrc(imagePath(mainImage?.img), 'thumb')
+							const showGalleryImage = isUnlockedImage || unlockedVariants.length > 0
+						
+							return (
+								<Fragment key={image.img}>
+									{showGalleryImage ?
+										<GalleryImage
+											image={mainImage}
+											thumb={thumbSrc}
+											variants={variants}
+											unlockedVariants={unlockedVariants}
+											blurred={image.sensitive && settings.blurThumbnails}
+											imagePath={imagePath}
+										/>
+									:
+										<div className="placeholder">
+											{variants.length > 1 && (
+												<GalleryNbVariants
+													nbVariants={variants.length}
+													nbUnlocked={unlockedVariants.length}
+												/>
+											)}
+										</div>
+									}
+								</Fragment>
+							)
+						})}
+					</motion.div>
+				</AnimatePresence>
 			</section>
 		</PageTabsLayout>
 	)

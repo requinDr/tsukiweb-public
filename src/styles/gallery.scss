@@ -1,9 +1,10 @@
 @use 'partials/_components';
 
-#gallery {
+#gallery, #plus-disc {
 	font-size: 1.1rem;
 	height: 100%;
 	overflow-y: auto;
+	scrollbar-gutter: stable;
 
 	.tabs {
 		margin-inline: calc(var(--page-padding) * -1);
@@ -31,10 +32,6 @@
 		position: relative;
 		flex-grow: 1;
 		padding-top: 0.4em;
-	}
-	.gallery-transition {
-		position: relative;
-		overflow: hidden;
 	}
 
 	.gallery-container {
@@ -69,6 +66,8 @@
 		.thumb {
 			transition: .2s ease-out;
 			background-color: #0e98cb59;
+			object-fit: cover;
+			object-position: top;
 
 			&.is-alternative {
 				opacity: 0.5;

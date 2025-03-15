@@ -1,21 +1,49 @@
 import '../styles/plus-disc.scss'
-import { SCREEN } from '../utils/display'
+import { displayMode, SCREEN } from '../utils/display'
 import { useLanguageRefresh } from '../components/hooks/useLanguageRefresh'
 import { useScreenAutoNavigate } from '../components/hooks/useScreenAutoNavigate'
-import GraphicsGroup from 'components/molecules/GraphicsGroup'
-import { Graphics } from '@tsukiweb-common/types'
-import { ReactNode } from 'react'
+import { useEffect } from 'react'
 import Cover from "../assets/images/plus-disc_cover.webp"
 import MessageContainer from '@tsukiweb-common/ui-core/components/MessageContainer'
-import { playScene } from 'utils/savestates'
-import { PlusDiscSceneName } from 'types'
+import TabsComponent from '@tsukiweb-common/ui-core/components/TabsComponent'
+import useQueryParam from '@tsukiweb-common/hooks/useQueryParam'
+import * as motion from "motion/react-m"
+import { AnimatePresence, Variants } from 'motion/react'
+import ScenesTab from 'components/plus-disc/ScenesTab'
+import GalleryTab from 'components/plus-disc/GalleryTab'
+
+const container: Variants = {
+	hidden: { opacity: 0 },
+	show: {
+		opacity: 1,
+		transition: {
+			staggerChildren: 0.5
+		}
+	}
+}
 
 const PlusDiscScreen = () => {
 	useScreenAutoNavigate(SCREEN.PLUS_DISC)
 	useLanguageRefresh()
-	const play = (id: PlusDiscSceneName)=> {
-		playScene(id, {viewedOnly: false})
+	const [selectedTab, setSelectedTab] = useQueryParam<"scenes" | "gallery">("tab", "scenes")
+
+	function back() {
+		displayMode.screen = SCREEN.TITLE
 	}
+
+	useEffect(()=> {
+		const handleKeyDown = (event: KeyboardEvent) => {
+			if (event.key === "Escape") {
+				back()
+			}
+		}
+		window.addEventListener("keydown", handleKeyDown)
+		return () => {
+			window.removeEventListener("keydown", handleKeyDown)
+		}
+	}, [])
+
+
 
 	return (
 		<div className="page" id="plus-disc">
@@ -34,76 +62,45 @@ const PlusDiscScreen = () => {
 							Plus Disc is a fan disc containing a short story and bonus.<br />
 							It was originally released in 2001.
 						</p>
+						<MessageContainer style={{marginTop: '1rem'}}>
+							Work in progress
+						</MessageContainer>
 					</div>
 				</div>
 
-				<MessageContainer style={{marginTop: '1rem'}}>
-					Work in progress
-				</MessageContainer>
+				<TabsComponent
+					tabs={[
+						{
+							label: "Scenes",
+							value: "scenes"
+						},
+						{
+							label: "Gallery",
+							value: "gallery"
+						}
+					]}
+					selected={selectedTab}
+					setSelected={setSelectedTab}
+				/>
 
-				<div className="scenes-list">
-					<Scene
-						title="Alliance of Illusionary Eyes"
-						images={{
-							"bg": "bg/bg_59",
-							"r": "tachi/akira_02"
-						}}
-						onClick={play.bind(undefined, "pd_alliance")}
-					/>
-
-					<Scene
-						title="Geccha"
-						images={{
-							"bg": "bg/bg_59",
-							"l": "tachi/ark_t01",
-							"c": "tachi/aki_t04b",
-							"r": "tachi/cel_t01a",
-						}}
-						onClick={play.bind(undefined, "pd_geccha")}
-					/>
-
-					<Scene
-						title="Geccha 2"
-						images={{
-							"bg": "bg/s07",
-							"l": "tachi/stk_t11",
-							"r": "tachi/neko_t01a",
-						}}
-						onClick={play.bind(undefined, "pd_geccha2")}
-					/>
-
-					<Scene
-						title="Kinoko's Masterpiece Experimental Theater"
-						images={{
-							"bg": "bg/bg_40a",
-							"c": "tachi/koha_t06",
-						}}
-						onClick={play.bind(undefined, "pd_experiment")}
-					/>
-				</div>
+					<AnimatePresence mode="popLayout">
+						<motion.div
+							key={selectedTab}
+							variants={container}
+							initial="hidden"
+							animate="show"
+							exit="hidden"
+						>
+							{selectedTab === "scenes" ? (
+								<ScenesTab />
+							) : (
+								<GalleryTab />
+							)}
+						</motion.div>
+					</AnimatePresence>
 			</main>
 		</div>
 	)
 }
 
 export default PlusDiscScreen
-
-type SceneProps = {
-	title: ReactNode
-	images: Graphics
-	onClick?: ()=>void
-}
-const Scene = ({title, images, onClick}: SceneProps) => {
-	return (
-		<div className="scene" onClick={onClick}>
-			<GraphicsGroup
-				images={images}
-				resolution="sd"
-				className='scene-image'
-			/>
-			<div className="scene-title">
-				{title}
-			</div>
-		</div>
-	)
-}
