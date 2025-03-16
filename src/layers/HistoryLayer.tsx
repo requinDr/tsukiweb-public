@@ -42,7 +42,7 @@ const HistoryLayer = ({ divProps }: Props) => {
 			}
 		}
 		return addEventListener({event: 'wheel', handler: handleWheel})
-	})
+	}, [setDisplay])
 
 	useEffect(() => {
 		//when scrolled to the bottom of history, hide history
@@ -53,7 +53,7 @@ const HistoryLayer = ({ divProps }: Props) => {
 			}
 		}
 		return addEventListener({event: 'scroll', handler: handleScroll, element: historyRef.current})
-	})
+	}, [historyRef, setDisplay])
 
 	useEffect(() => {
 		//scroll to the bottom of history
