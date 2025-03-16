@@ -28,6 +28,10 @@ const HistoryLayer = ({ divProps }: Props) => {
 			(document.activeElement as HTMLElement).blur?.()
 	}, displayMode, "history", {filter: d=>!d})
 
+	const handleClose = () => {
+		setDisplay(false)
+	}
+
 	useEffect(() => {
 		//on mouse wheel up display history
 		const handleWheel = (e: WheelEvent) => {
@@ -38,7 +42,7 @@ const HistoryLayer = ({ divProps }: Props) => {
 					setDisplay(true)
 				script.autoPlay = false
 			} else if (e.deltaY > 0 && display && historyRef.current?.scrollHeight == historyRef.current?.clientHeight) {
-				setDisplay(false)
+				handleClose()
 			}
 		}
 		return addEventListener({event: 'wheel', handler: handleWheel})
@@ -48,21 +52,26 @@ const HistoryLayer = ({ divProps }: Props) => {
 		//when scrolled to the bottom of history, hide history
 		const handleScroll = (e: any) => {
 			const bottom = e.target.scrollHeight - Math.round(e.target.scrollTop) === e.target.clientHeight
-			if (bottom) {
-				setDisplay(false)
-			}
+			if (bottom)
+				handleClose()
 		}
 		return addEventListener({event: 'scroll', handler: handleScroll, element: historyRef.current})
 	}, [historyRef, setDisplay])
 
 	useEffect(() => {
-		//scroll to the bottom of history
-		if (display && view === "history") {
+		if (display && view === "flowchart") {
+			setView("history")
+		}
+	}, [display])
+
+	useEffect(() => {
+		if (view === "history") {
+			// scroll to the bottom of the history
 			const historyElement = historyRef.current
 			if (historyElement)
 				historyElement.scrollTop = historyElement!.scrollHeight - historyElement!.clientHeight - 1
 		}
-	}, [display, view])
+	}, [view])
 	 
 	return (
 		<div
@@ -73,7 +82,7 @@ const HistoryLayer = ({ divProps }: Props) => {
 			<div ref={historyRef} className='scroll-container' key={view}>
 				{view === "history" ?
 					<div id="history">
-						<HistoryDisplay display={display} close={() => setDisplay(false)} />
+						<HistoryDisplay display={display} close={handleClose} />
 					</div>
 				:
 					<div id="scenes">
@@ -85,7 +94,7 @@ const HistoryLayer = ({ divProps }: Props) => {
 			<FixedFooter>
 				<Button
 					variant="menu"
-					onClick={() => setDisplay(false)}
+					onClick={handleClose}
 				>
 					{strings.close}
 				</Button>
