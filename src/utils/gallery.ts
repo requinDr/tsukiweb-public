@@ -7,6 +7,7 @@ export type GalleryImg = {
   route?: CharId,
   sensitive?: boolean,
   alternativeOf?: string,
+  source?: "unused" | "half-moon"
 }
 
 export const GALLERY_IMAGES: Record<string, GalleryImg> = {
@@ -38,7 +39,7 @@ export const GALLERY_IMAGES: Record<string, GalleryImg> = {
   "ark_h08" : { img: "ark_h08" , path: "event", route: "ark", sensitive: true },
   "ark_h09" : { img: "ark_h09" , path: "event", route: "ark", sensitive: true },
   "ark_h10" : { img: "ark_h10" , path: "event", route: "ark", sensitive: true },
-  "ark_h10b": { img: "ark_h10b", path: "event", route: "ark", sensitive: true },
+  "ark_h10b": { img: "ark_h10b", path: "event", route: "ark", sensitive: true, alternativeOf: "ark_h10", source: "unused" },
   "ark_h11" : { img: "ark_h11" , path: "event", route: "ark", sensitive: true },
   "ark_h12" : { img: "ark_h12" , path: "event", route: "ark", sensitive: true },
   "ark_h13" : { img: "ark_h13" , path: "event", route: "ark", sensitive: true },
@@ -183,6 +184,22 @@ export const GALLERY_IMAGES: Record<string, GalleryImg> = {
   "koha_h06a":{ img: "koha_h06a",path: "event", route: "koha", sensitive: true, alternativeOf: "koha_h06b" },
   "koha_h07": { img: "koha_h07", path: "event", route: "koha", sensitive: true },
   "koha_h08": { img: "koha_h08", path: "event", route: "koha", sensitive: true },
+
+  "hm_aki02": { img: "hm_aki02", path: "half-moon", sensitive: true, alternativeOf: "aki_h02", source: "half-moon" },
+  "hm_cmo_01": { img: "hm_cmo_01", path: "half-moon", alternativeOf: "cmo_01", source: "half-moon" },
+  "hm_cmo_02": { img: "hm_cmo_02", path: "half-moon", alternativeOf: "cmo_02", source: "half-moon" },
+  "hm_his01": { img: "hm_his01", path: "half-moon", alternativeOf: "his_e04", source: "half-moon" },
+  "hm_his02": { img: "hm_his02", path: "half-moon", sensitive: true, alternativeOf: "his_h03", source: "half-moon" },
+}
+
+type GalleryImageKey = keyof typeof GALLERY_IMAGES
+export const UNLOCK_TOGETHER: Record<GalleryImageKey, GalleryImageKey[]> = {
+  "ark_h10": ["ark_h10b"],
+  "aki_h02": ["hm_aki02"],
+  "cmo_01" : ["hm_cmo_01"],
+  "cmo_02" : ["hm_cmo_02"],
+  "his_e04": ["hm_his01"],
+  "his_h03": ["hm_his02"],
 }
 
 export function shouldBlur(image: string): boolean {
@@ -208,6 +225,9 @@ export function imagePath(imgName: string): string {
 export function imageNameFromPath(path: string): string {
   return path.split("/").pop() ?? ""
 }
+
+export const isImgUnlocked = (imgName: string) =>
+	settings.eventImages.includes(imagePath(imgName))
 
 export const GALLERY_IMAGES_PD: Record<string, GalleryImg> = {
   "s01" : { img: "s01" , path: "bg" },

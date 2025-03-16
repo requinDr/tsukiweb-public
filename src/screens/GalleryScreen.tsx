@@ -3,7 +3,7 @@ import '../styles/gallery.scss'
 import { settings } from '../utils/settings'
 import * as motion from "motion/react-m"
 import { AnimatePresence, Variants } from 'motion/react'
-import { findImagesByRoute, GalleryImg, getImageVariants, imagePath } from '../utils/gallery'
+import { findImagesByRoute, GalleryImg, getImageVariants, imagePath, isImgUnlocked } from '../utils/gallery'
 import { strings } from "../translation/lang"
 import { imageSrc } from '../translation/assets'
 import { SCREEN } from '../utils/display'
@@ -27,13 +27,12 @@ const container: Variants = {
 }
 
 const isUnlocked = (image: GalleryImg) =>
-	settings.eventImages.includes(imagePath(image.img)) || settings.unlockEverything
+	isImgUnlocked(image.img) || settings.unlockEverything
 
 const GalleryScreen = () => {
 	useScreenAutoNavigate(SCREEN.GALLERY)
 	useLanguageRefresh()
 	const [selectedTab, setSelectedTab] = useQueryParam<CharId>("tab", "ark")
-
 	const tabImages: GalleryImg[] = useMemo(() => {
 		let imagesTmp: GalleryImg[] = findImagesByRoute(selectedTab)
 		if (imagesTmp == undefined) {

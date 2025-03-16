@@ -105,6 +105,17 @@
 }
 
 .yarl {
+	&__root {
+		.header {
+			position: absolute;
+			top: 3em;
+			right: 0;
+			z-index: 1;
+			padding: .4em 1em .4em 2em;
+			font-size: 1.2em;
+			background-image: linear-gradient(270deg, #002673 40%, transparent);
+		}
+	}
 	&__thumbnails_thumbnail_active {
 		--yarl__thumbnails_thumbnail_active_border_color: #00c8ff;
 		position: relative;

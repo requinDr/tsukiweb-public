@@ -7,7 +7,7 @@ import { SpritePos } from "@tsukiweb-common/types";
 import { observe } from "@tsukiweb-common/utils/Observer";
 import { splitFirst, splitLast, objectMatch } from "@tsukiweb-common/utils/utils";
 import { getTransition, quakeEffect, transition } from "@tsukiweb-common/utils/graphics";
-import { imagePath } from "./gallery";
+import { imagePath, isImgUnlocked, UNLOCK_TOGETHER } from "./gallery";
 
 
 export function endTransition() {
@@ -25,9 +25,15 @@ export function extractImage(image: string) {
 		const [dir, name] = image.split('/')
 		
 		// Save to gallery if it's a new image
-		if (imagePath(name) == image) {
-			if (!settings.eventImages.includes(image))
-				settings.eventImages.push(image)
+		if (imagePath(name) == image && !isImgUnlocked(image)) {
+			settings.eventImages.push(image)
+			if (UNLOCK_TOGETHER[name]) {
+				UNLOCK_TOGETHER[name].forEach((img) => {
+					if (!isImgUnlocked(img)) {
+						settings.eventImages.push(imagePath(img))
+					}
+				})
+			}
 		}
 
 		if (dir == "word") {
