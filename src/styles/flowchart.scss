@@ -13,6 +13,7 @@
 	.fc-scene {
 		&.active {
 			outline: 4px solid #ff9f00;
+			position: relative;
 			.fc-scene-content {
 				scale: 1.1;
 			}

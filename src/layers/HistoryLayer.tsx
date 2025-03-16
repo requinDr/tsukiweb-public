@@ -13,6 +13,7 @@ import Button from '@tsukiweb-common/ui-core/components/Button';
 import Flowchart from 'components/flowchart/Flowchart';
 import { gameContext } from 'utils/variables';
 
+
 type Props = {
 	divProps?: React.HTMLProps<HTMLDivElement>
 }
@@ -56,28 +57,12 @@ const HistoryLayer = ({ divProps }: Props) => {
 
 	useEffect(() => {
 		//scroll to the bottom of history
-		if (display) {
+		if (display && view === "history") {
 			const historyElement = historyRef.current
 			if (historyElement)
 				historyElement.scrollTop = historyElement!.scrollHeight - historyElement!.clientHeight - 1
 		}
-	}, [display])
-
-	//TODO: only process when gameContext label changes
-	const allScenes = document.querySelectorAll("[id^='fc-scene-']");
-	allScenes.forEach(scene => scene.classList.remove("active"));
-	const scene = document.getElementById(`fc-scene-${gameContext.label}`);
-	if (scene) {
-		scene.classList.add("active");
-	}
-
-	//TODO: auto-scroll to the current scene
-	//TODO: prevent loading a different scene until we are able to restore flags and affections
-
-	function onClick(saveState: SaveState) {
-		setDisplay(false)
-		loadSaveState(saveState)
-	}
+	}, [display, view])
 	 
 	return (
 		<div
@@ -85,21 +70,15 @@ const HistoryLayer = ({ divProps }: Props) => {
 			{...divProps}
 			className={classNames("layer", {"show": display}, divProps?.className)}
 			ref={rootRef}>
-			<div ref={historyRef} className='scroll-container'>
+			<div ref={historyRef} className='scroll-container' key={view}>
 				{view === "history" ?
-				<div id="history">
-					<div className="text-container">
-						{Array.from(history, (page, i) =>
-							<PageElement key={i} saveState={page} onLoad={onClick} />
-						)}
+					<div id="history">
+						<HistoryDisplay display={display} close={() => setDisplay(false)} />
 					</div>
-				</div>
 				:
-				<div id="scenes">
-					<div className="flowchart-container">
-						<Flowchart />
+					<div id="scenes">
+						<FlowchartDisplay display={display} />
 					</div>
-				</div>
 				}
 			</div>
 
@@ -124,3 +103,67 @@ const HistoryLayer = ({ divProps }: Props) => {
 
 
 export default HistoryLayer
+
+
+type HistoryDisplayProps = {
+	display: boolean
+	close: () => void
+}
+const HistoryDisplay = ({ display, close }: HistoryDisplayProps) => {
+	useEffect(() => {
+		if (display) {
+			const historyElement = document.getElementById("history")
+			if (historyElement)
+				historyElement.scrollTop = historyElement!.scrollHeight - historyElement!.clientHeight - 1
+		}
+	}, [display])
+
+	function onClick(saveState: SaveState) {
+		close()
+		loadSaveState(saveState)
+	}
+
+	return (
+		<div className="text-container">
+			{Array.from(history, (page, i) =>
+				<PageElement key={i} saveState={page} onLoad={onClick} />
+			)}
+		</div>
+	)
+}
+
+function setActiveScene(label: string) {
+	const allScenes = document.querySelectorAll("[id^='fc-scene-']")
+	allScenes.forEach(scene => scene.classList.remove("active"))
+	if (gameContext.label.startsWith("skip")) {
+		return
+	}
+	const sceneNode = document.getElementById(`fc-scene-${label}`)
+	if (sceneNode) {
+		sceneNode.classList.add("active")
+		sceneNode.scrollIntoView({ behavior: "instant", block: "center" })
+	}
+}
+
+type FlowchartDisplayProps = {
+	display: boolean
+}
+const FlowchartDisplay = ({ display }: FlowchartDisplayProps) => {
+	useObserver((label)=> {
+		setActiveScene(label)
+
+		//TODO: prevent loading a different scene until we are able to restore flags and affections
+	}, gameContext, 'label')
+
+	useEffect(() => {
+		if (display) {
+			setActiveScene(gameContext.label)
+		}
+	}, [display])
+
+	return (
+		<div className="flowchart-container">
+			<Flowchart />
+		</div>
+	)
+}
