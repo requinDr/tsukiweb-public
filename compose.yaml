@@ -1,0 +1,8 @@
+services:
+  tsukiweb:
+    build:
+        context: .
+    container_name: tsukiweb
+    ports:
+      - 8080:80
+    restart: unless-stopped
