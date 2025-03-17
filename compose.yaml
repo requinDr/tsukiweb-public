@@ -2,9 +2,6 @@ services:
   tsukiweb:
     build:
         context: .
-        args:
-          CACHE_MAX_SIZE: -1  # e.g. 50g
-          CACHE_INACTIVE: -1  # e.g. 14d
     container_name: tsukiweb
     volumes:
       - tsukiweb_cache:/var/cache/nginx
