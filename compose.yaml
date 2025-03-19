@@ -1,0 +1,13 @@
+services:
+  tsukiweb:
+    build:
+        context: .
+    container_name: tsukiweb
+    volumes:
+      - tsukiweb_cache:/var/cache/nginx
+    ports:
+      - 8080:80
+    restart: unless-stopped
+
+volumes:
+  tsukiweb_cache:

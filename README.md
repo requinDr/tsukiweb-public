@@ -12,6 +12,24 @@ To download the source code and run the game locally, follow the steps below:
 4) Start the localhost with `npm start`
 5) Open your browser at the localhost address specified in the output of the previous command
 
+Alternatively, [`Docker`](https://docs.docker.com/get-started/get-docker/) can be used for local deployment from a single command:
+```
+$ docker compose up -d
+```
+
+or, if you prefer to use the CLI,
+```
+$ docker build -t tsukiweb .
+$ docker run -p 8080:80 tsukiweb
+```
+In addition, a version tag or commit hash can be specified as a build argument:
+```
+docker build --build-arg VERSION=latest -t tsukiweb
+docker build --build-arg VERSION=v0.3.0 -t tsukiweb
+docker build --build-arg VERSION=da4ea4f -t tsukiweb
+```
+In your browser, navigate to http://localhost:8080 after deploying the container.
+
 ## Roadmap
 A roadmap is available here https://github.com/requinDr/tsukiweb-public/wiki
 
