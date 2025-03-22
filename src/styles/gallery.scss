@@ -36,11 +36,11 @@
 
 	.gallery-container {
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(min(180px, 20vmin), 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(min(180px, 22vmin), 1fr));
 		gap: 8px;
 		padding-bottom: 40px;
 
-		@media (max-width: 480px) or (max-height: 480px) {
+		@media (max-width: 540px) or (max-height: 480px) {
 			grid-template-columns: repeat(auto-fill, minmax(min(104px, 30vmin), 1fr));
 		}
 
