@@ -23,7 +23,7 @@ export class FcNode {
 	get left()    { return this.x - this.width/2 }
 	get right()   { return this.x + this.width/2 }
 
-	render(): React.ReactNode {
+	render(disabled: boolean): React.ReactNode {
 		return this.from.map(node=> {
 			const id = `${node.id}-${this.id}`
 			const yStart = node.bottom

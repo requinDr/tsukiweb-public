@@ -5,8 +5,9 @@ import { COLUMN_WIDTH, createTree, DY, SCENE_HEIGHT, SCENE_RECT_ATTRS, SCENE_WID
 
 type Props = {
 	back?: (sceneLoaded: boolean)=>void
+	disabled?: boolean
 }
-const Flowchart = memo(({back}: Props)=> {
+const Flowchart = memo(({back, disabled = false}: Props)=> {
 	const [tree] = useState<FcNode[]>(createTree)
 	const [left, top, right, bottom] = tree.reduce((vb, node)=> [
 		Math.min(vb[0], node.left),
@@ -50,7 +51,7 @@ const Flowchart = memo(({back}: Props)=> {
 			<clipPath id="fc-scene-clip">
 				<use href="#fc-scene-outline"/>
 			</clipPath>
-			{tree.map(node=> node.render())}
+			{tree.map(node=> node.render(disabled))}
 		</svg>
 	)
 })
