@@ -1,5 +1,3 @@
-import { MdPhotoLibrary } from "react-icons/md"
-
 type Props = {
 	nbVariants: number
 	nbUnlocked: number
@@ -8,7 +6,7 @@ type Props = {
 const GalleryNbVariants = ({nbVariants, nbUnlocked}: Props) => {
 	return (
 		<div className="alternative">
-			{nbUnlocked}/{nbVariants} <MdPhotoLibrary />
+			{nbUnlocked}/{nbVariants}
 		</div>
 	)
 }

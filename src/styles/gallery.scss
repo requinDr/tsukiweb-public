@@ -83,12 +83,9 @@
 			position: absolute;
 			top: 0px;
 			right: 0px;
-			padding: 0px 8px;
-			font-size: 0.8em;
-			display: flex;
-			align-items: center;
-			gap: 6px;
-			background-image: linear-gradient(270deg, #0839c3 60%, transparent);
+			padding: 1px 8px 0 16px;
+			font-size: 0.9em;
+			background-image: linear-gradient(270deg, #0839c3 70%, transparent);
 		}
 
 		.blur {

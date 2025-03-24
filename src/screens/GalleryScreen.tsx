@@ -3,7 +3,7 @@ import '../styles/gallery.scss'
 import { settings } from '../utils/settings'
 import * as motion from "motion/react-m"
 import { AnimatePresence, Variants } from 'motion/react'
-import { findImagesByRoute, GalleryImg, getImageVariants, imagePath, isImgUnlocked } from '../utils/gallery'
+import { findImagesByRoute, GalleryImg, getImageVariants, imagePath, isImgUnlocked, UNLOCK_TOGETHER } from '../utils/gallery'
 import { strings } from "../translation/lang"
 import { imageSrc } from '../translation/assets'
 import { SCREEN } from '../utils/display'
@@ -50,6 +50,12 @@ const GalleryScreen = () => {
 		const variants = getImageVariants(image.img)
 		const unlockedVariants = variants.filter(image => isUnlocked(image))
 
+		if (isUnlockedImage && UNLOCK_TOGETHER[image.img]) {
+			UNLOCK_TOGETHER[image.img].forEach((img) => {
+				unlockedVariants.push(getImageVariants(img)[0])
+			})
+		}
+
 		return {
 			isUnlockedImage,
 			variants,
@@ -83,7 +89,7 @@ const GalleryScreen = () => {
 							const mainImage = isUnlockedImage ? image : unlockedVariants[0]
 							const thumbSrc = imageSrc(imagePath(mainImage?.img), 'thumb')
 							const showGalleryImage = isUnlockedImage || unlockedVariants.length > 0
-						
+							
 							return (
 								<Fragment key={image.img}>
 									{showGalleryImage ?
