@@ -14,14 +14,30 @@
 		backdrop-filter: blur(2px);
 	}
 
-	#history {
-		background: none;
+	.scroll-container {
 		overflow-y: scroll;
 		scrollbar-gutter: stable both-edges;
+		width: inherit;
+	}
+
+	#history {
+		background: none;
 		padding-bottom: 30vh;
 		margin-inline: auto;
 		@extend %layer-text;
 		user-select: auto;
 		width: inherit;
+	}
+
+	#scenes {
+		padding-bottom: 30vh;
+		width: inherit;
+		.flowchart-container {
+			isolation: isolate;
+			max-width: var(--page-width);
+			margin-inline: auto;
+			padding-inline: 1em;
+			padding-top: 4em;
+		}
 	}
 }

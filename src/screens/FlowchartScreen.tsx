@@ -16,7 +16,9 @@ const FlowchartScreen = () => {
 		<div
 			className="page" id="scenes">
 			<div className="page">
-				<Flowchart back={back} />
+				<div className="page-content flowchart">
+					<Flowchart back={back} />
+				</div>
 			</div>
 		</div>
 	)

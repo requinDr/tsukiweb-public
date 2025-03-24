@@ -70,7 +70,7 @@ export class FcScene extends FcNode {
 	get width()   { return SCENE_WIDTH }
 	get height()  { return SCENE_HEIGHT }
 
-	render() {
+	render(disabled: boolean) {
 		let content
 		let completed = viewedScene(this.id as LabelName) || settings.unlockEverything
 		if (!completed && !settings.unlockEverything)
@@ -89,7 +89,7 @@ export class FcScene extends FcNode {
 
 		return (
 			<Fragment key={this.id}>
-				{super.render()}
+				{super.render(disabled)}
 				
 				{completed ?
 					<UnlockedSceneRender
@@ -98,6 +98,7 @@ export class FcScene extends FcNode {
 						content={content}
 						blur={blur}
 						x={this.x} y={this.y}
+						disabled={disabled}
 					/>
 				:
 					<g 
@@ -127,8 +128,9 @@ type SceneRenderProps = {
 	blur: boolean
 	x: number
 	y: number
+	disabled: boolean
 }
-export const UnlockedSceneRender = ({ id, graphics, content, blur, x, y }: SceneRenderProps) => {
+export const UnlockedSceneRender = ({ id, graphics, content, blur, x, y, disabled }: SceneRenderProps) => {
 	const [isOpen, setIsOpen] = useState(false)
 	
 	const {refs, floatingStyles, context} = useFloating({
@@ -152,7 +154,8 @@ export const UnlockedSceneRender = ({ id, graphics, content, blur, x, y }: Scene
 	const play = (e: React.MouseEvent | React.KeyboardEvent) => {
 		e.stopPropagation()
 		setIsOpen(false)
-		playScene(id as LabelName, { continueScript: false })
+		if (!disabled)
+			playScene(id as LabelName, { continueScript: false })
 	}
 
 	return (
