@@ -37,6 +37,14 @@
     "last-update": "2025-03-14",
     "fallback": "en-mm"
   },
+  "ru-ciel": {
+    "locale": "ru-RU",
+    "display-name": "Русский",
+    "authors": "Ciel-senpai",
+    "dir": "./ru-ciel",
+    "last-update": "2025-03-24",
+    "fallback": "en-mm"
+  },
    "zh-yueji_yeren_hanhua_zu": {
     "locale": "zh-CN",
     "display-name": "简体中文",
