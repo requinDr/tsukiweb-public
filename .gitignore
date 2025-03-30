@@ -30,4 +30,5 @@ public/static/jp/fullscript_jp.txt
 
 tools/generate-thumbnails/output
 tools/script-convert/*
+tools/sprites-transparency/*
 !tools/**/*.js
