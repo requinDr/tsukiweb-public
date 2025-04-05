@@ -60,5 +60,13 @@
     "dir": "./zh-tw-yueji_yeren_hanhua_zu",
     "last-update": "2025-03-14",
     "fallback": "jp"
+  },
+  "ko-wolhui": {
+    "locale": "ko-KR",
+    "display-name": "한국어",
+    "authors": "Wolhui",
+    "dir": "./ko-wolhui",
+    "last-update": "2025-04-05",
+    "fallback": "en-mm"
   }
 }

@@ -305,6 +305,7 @@ function main() {
 		['es-tohnokun', 'fullscript_es-tohnokun.txt'],
 		['it-riffour', 'fullscript_it-riffour.txt'],
 		['pt-matsuri', 'fullscript_pt-matsuri.txt'],
+		['ko-wolhui', 'fullscript_ko-wolhui.txt'],
 		['ru-ciel', 'fullscript_ru-ciel.txt'],
 		['zh-tw-yueji_yeren_hanhua_zu', 'fullscript_zh-tw-yueji_yeren_hanhua_zu.txt'],
 		['zh-yueji_yeren_hanhua_zu', 'fullscript_zh-yueji_yeren_hanhua_zu.txt'],

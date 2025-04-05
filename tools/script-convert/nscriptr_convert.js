@@ -127,6 +127,15 @@ function genericFixes(token, clickChars) {
                     }
                 }
                 break
+            case 'dwavestop' :
+                token.cmd = 'wavestop'
+                break
+            case 'dwave' :
+                token.cmd = 'wave'
+                break
+            case 'dwaveloop' :
+                token.cmd = 'waveloop'
+                break
             case 'stop' :
                 token.cmd = 'playstop' // could be used to stop both music
                                        // and se, but used only for music
