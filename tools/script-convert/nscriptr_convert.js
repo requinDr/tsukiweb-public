@@ -80,10 +80,25 @@ function adjustSkips(tokens) {
 }
 
 /**
+ * @param {string|number} num 
+ * @param {string} file
+ */
+function dwaveFileConvert(num, file) {
+    if (+num !== 0)
+        throw Error(`Unexpected argument ${num} for dwaveloop`)
+    const wavRe = /"?wave\\se_(?<n>\d+).wav"?/
+    let m = file.match(wavRe)
+    if (!m)
+        throw Error(`Could not parse argument ${file} for dwaveloop`)
+    const n = m.groups['n']
+    return `se${n-1}`
+}
+
+/**
  * @param {Token} token 
  * @param {Token[]} tokens 
  * @param {number} index 
- * @param {string[]} clickChars 
+ * @param {string[]} clickChars
  */
 function genericFixes(token, tokens, index, clickChars) {
     if (token instanceof TextToken) {
@@ -104,7 +119,7 @@ function genericFixes(token, tokens, index, clickChars) {
     } else if (token instanceof ConditionToken) {
         if (!token.condition.startsWith('('))
             token.condition = `(${token.condition})`
-        genericFixes(token.command, clickChars)
+        genericFixes(token.command, tokens, index, clickChars)
     } else if (token instanceof CommandToken) {
         switch (token.cmd) {
             case 'bg' : case 'cl' : case 'ld' :
@@ -144,9 +159,11 @@ function genericFixes(token, tokens, index, clickChars) {
                 break
             case 'dwave' :
                 token.cmd = 'wave'
+                token.args = [dwaveFileConvert(...token.args)]
                 break
             case 'dwaveloop' :
                 token.cmd = 'waveloop'
+                token.args = [dwaveFileConvert(...token.args)]
                 break
             case 'stop' :
                 token.cmd = 'playstop' // could be used to stop both music
