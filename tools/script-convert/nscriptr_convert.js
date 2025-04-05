@@ -79,7 +79,13 @@ function adjustSkips(tokens) {
     }
 }
 
-function genericFixes(token, clickChars) {
+/**
+ * @param {Token} token 
+ * @param {Token[]} tokens 
+ * @param {number} index 
+ * @param {string[]} clickChars 
+ */
+function genericFixes(token, tokens, index, clickChars) {
     if (token instanceof TextToken) {
         for (const c of clickChars) {
             token.text = token.text.replaceAll(c, c + '@')
@@ -88,6 +94,12 @@ function genericFixes(token, clickChars) {
         token.text = token.text
                 .replaceAll(/@{2,}/g, '@')// remove dup. '@' if too much added by clickChars
                 .replaceAll(/[-―─―]{2,}/g, (match)=> `[line=${match.length}]`)
+        if (token.text.endsWith('@') && index < tokens.length - 1) {
+            // remove '@' if right before '\'
+            const nextToken = tokens[index+1]
+            if (nextToken instanceof CommandToken && nextToken.cmd == '\\')
+                token.text = token.text.substring(0, token.text.length-1)
+        }
         
     } else if (token instanceof ConditionToken) {
         if (!token.condition.startsWith('('))
@@ -168,7 +180,7 @@ function generate(output_dir, tokens, getFile, fixes) {
     const files = new Map()
     let file = null
     let fileTokens = []
-    for (const token of tokens) {
+    for (const [i, token] of tokens.entries()) {
         // 2. chose destination file from last label
         if (token instanceof LabelToken) {
             file = getFile(token.label)
@@ -180,7 +192,7 @@ function generate(output_dir, tokens, getFile, fixes) {
         }
         if (file) {
             if (!(token instanceof ErrorToken)) {
-                genericFixes(token, clickChars)
+                genericFixes(token, tokens, i, clickChars)
                 fileTokens.push(token)
             }
         }

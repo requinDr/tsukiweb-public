@@ -5,10 +5,10 @@
 
 class Token {
 	/**
-	 * @param {number} lineIndex 
-	 * @param {string} text 
+	 * @param {number} lineIndex
 	 */
 	constructor(lineIndex) {
+		/** @type {number} */
 		this.lineIndex = lineIndex
 	}
 
@@ -18,8 +18,13 @@ class Token {
 }
 
 class TextToken extends Token {
+	/**
+	 * @param {number} lineIndex
+	 * @param {string} text
+	 */
 	constructor(lineIndex, text) {
 		super(lineIndex)
+		/** @type {string} */
 		this.text = text
 	}
 
@@ -29,9 +34,16 @@ class TextToken extends Token {
 }
 
 class CommandToken extends Token {
+	/**
+	 * @param {number} lineIndex 
+	 * @param {string} cmd 
+	 * @param {(string|number)[]} args 
+	 */
 	constructor(lineIndex, cmd, args = []) {
 		super(lineIndex)
+		/** @type {string} */
 		this.cmd = cmd
+		/** @type {(string|number)[]} */
 		this.args = args
 	}
 
@@ -53,8 +65,13 @@ class CommandToken extends Token {
 }
 
 class LabelToken extends Token {
+	/**
+	 * @param {number} lineIndex 
+	 * @param {string} label 
+	 */
 	constructor(lineIndex, label) {
 		super(lineIndex)
+		/** @type {string} */
 		this.label = label
 	}
 
@@ -71,10 +88,19 @@ class ReturnToken extends Token {
 }
 
 class ConditionToken extends Token {
+	/**
+	 * @param {number} lineIndex 
+	 * @param {boolean} not 
+	 * @param {string} condition 
+	 * @param {Token} command 
+	 */
 	constructor(lineIndex, not, condition, command) {
 		super(lineIndex)
+		/** @type {boolean} */
 		this.not = not
+		/** @type {string} */
 		this.condition = condition // TODO normalize operators and spaces around them
+		/** @type {Token[]} */
 		this.command = command
 	}
 	toString() {
@@ -83,8 +109,13 @@ class ConditionToken extends Token {
 }
 
 class ErrorToken extends Token {
+	/**
+	 * @param {number} lineIndex 
+	 * @param {string} txt 
+	 */
 	constructor(lineIndex, txt) {
 		super(lineIndex)
+		/** @type {string} */
 		this.txt = txt
 	}
 }
