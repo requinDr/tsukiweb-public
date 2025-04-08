@@ -55,7 +55,7 @@ class FcSceneParams extends FcNodeParams {
 export function createTree() {
 	let tree = new Map<string, FcNodeParams|FcNode>()
 	Object.entries(SCENE_ATTRS.scenes).forEach(([id, {fc}])=> {
-		if (fc) {
+		if (fc && Object.hasOwn(fc, 'col')) {
 			let {col, from, align, graph, cutAt} = fc
 			tree.set(id, new FcSceneParams(id as TsukihimeSceneName, col, from, align, graph, cutAt))
 		}

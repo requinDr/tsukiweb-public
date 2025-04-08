@@ -23,12 +23,9 @@ function tsukihime_logic_fixes(token, i, tokens) {
 		tokens[i] = null // remove text tokens from logic file
 	} else if (token instanceof CommandToken) {
 		switch (token.cmd) {
-			case 'br' : case 'selgosub' :
-				tokens[i] = null
-				break
-			case 'skip':
-				tokens[i] = null
-				break
+			case 'br'		: tokens[i] = null; break
+			case 'selgosub' : tokens[i] = null; break
+			case 'skip'		: tokens[i] = null; break
 			case 'mov' :
 				if (token.args[0].match(/%1\d{3}/) && +token.args[1] == 1)
 					tokens[i] = null // ignore completion variables (%1000-%15XX)
@@ -37,6 +34,9 @@ function tsukihime_logic_fixes(token, i, tokens) {
 				if (token.args[0] == "*regard_update")
 					tokens[i] = null
 				break
+			case 'goto' :
+				if (token.args[0] == "*f300")
+					token.args[0] = "*f301"
 			case 'select' :
 				if (token.args.length == 4 &&
 						token.args[1].trim().match(/^\*f5\d{2}$/) &&
@@ -49,6 +49,15 @@ function tsukihime_logic_fixes(token, i, tokens) {
 	} else if (token instanceof ConditionToken) {
 		if (token.condition.match(/%sceneskip\s*==\s*1/))
 			tokens[i] = null // ignore skip prompt (handled by the UI)
+		else {
+			const conditionalTokens = [token.command]
+			tsukihime_logic_fixes(token.command, 0, conditionalTokens)
+			if (conditionalTokens[0] == null)
+				tokens[i] = null
+			else {
+				token.command = conditionalTokens[0]
+			}
+		}
 	} else if (token instanceof ReturnToken) {
 		tokens[i] = null
 	}
@@ -238,6 +247,8 @@ function token_filter(file, token) {
 function getLabelFile(label) {
     if (["eclipse", "openning"].includes(label))
         return label
+	if (['f300', 'skip300', 's300'].includes(label))
+		return null // remove empty f300 scene
     if (/^s\d\w+?$/.test(label))
         return `scene${label.substring(1)}`
     if (/^se\d\w+?$/.test(label)) //TODO move to kt-specific script
@@ -301,14 +312,14 @@ function main() {
 	const outputDir = 'scenes'
 	const fullscripts = [
 		['jp', 'fullscript_jp.txt'],
-		['en-mm', 'fullscript_en-mm.txt'],
-		['es-tohnokun', 'fullscript_es-tohnokun.txt'],
-		['it-riffour', 'fullscript_it-riffour.txt'],
-		['pt-matsuri', 'fullscript_pt-matsuri.txt'],
-		['ko-wolhui', 'fullscript_ko-wolhui.txt'],
-		['ru-ciel', 'fullscript_ru-ciel.txt'],
-		['zh-tw-yueji_yeren_hanhua_zu', 'fullscript_zh-tw-yueji_yeren_hanhua_zu.txt'],
-		['zh-yueji_yeren_hanhua_zu', 'fullscript_zh-yueji_yeren_hanhua_zu.txt'],
+//		['en-mm', 'fullscript_en-mm.txt'],
+//		['es-tohnokun', 'fullscript_es-tohnokun.txt'],
+//		['it-riffour', 'fullscript_it-riffour.txt'],
+//		['pt-matsuri', 'fullscript_pt-matsuri.txt'],
+//		['ko-wolhui', 'fullscript_ko-wolhui.txt'],
+//		['ru-ciel', 'fullscript_ru-ciel.txt'],
+//		['zh-tw-yueji_yeren_hanhua_zu', 'fullscript_zh-tw-yueji_yeren_hanhua_zu.txt'],
+//		['zh-yueji_yeren_hanhua_zu', 'fullscript_zh-yueji_yeren_hanhua_zu.txt'],
 	]
 
 	for (const [folder, file] of fullscripts) {

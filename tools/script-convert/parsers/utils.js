@@ -100,7 +100,7 @@ class ConditionToken extends Token {
 		this.not = not
 		/** @type {string} */
 		this.condition = condition // TODO normalize operators and spaces around them
-		/** @type {Token[]} */
+		/** @type {Token} */
 		this.command = command
 	}
 	toString() {
