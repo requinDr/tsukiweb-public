@@ -8,6 +8,42 @@
 		<meta name="description" content="Enjoy the story of Tsukihime in your browser." />
 		<link rel="manifest" href="/manifest.json">
 		<title>Tsukihime</title>
+
+		<style>
+			:root {
+				--font: "Ubuntu";
+			}
+			html {
+				font-family: var(--font, system-ui), Arial, sans-serif;
+				line-height: 1.5;
+				font-weight: 400;
+
+				color-scheme: light dark;
+				color: rgba(255, 255, 255, 0.87);
+				background-color: #00153f;
+
+				font-synthesis: none;
+				text-rendering: optimizeLegibility;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+				-webkit-text-size-adjust: 100%;
+			}
+			body {
+				margin: 0;
+				display: flex;
+			}
+			#root {
+				background-image: radial-gradient(#00267d, #01001a);
+				height: 100vh;
+				height: 100dvh;
+				width: 100vw;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				overflow: hidden;
+				position: relative;
+			}
+		</style>
 	</head>
 	<body>
 		<noscript>You need to enable javascript to run this visual novel.</noscript>

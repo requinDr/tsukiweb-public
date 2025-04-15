@@ -20,9 +20,9 @@
 	font-family: var(--font), sans-serif;
 
 	.ratio-container {
-		width: var(--width);
+		width: var(--width, initial);
 		height: 100%;
-		aspect-ratio: var(--ratio);
+		aspect-ratio: var(--ratio, initial);
 		margin: 0 auto;
 		position: relative;
 		min-width: 0;

@@ -23,11 +23,7 @@ const AppLayout = ({ children }: Props) => {
 		}
 	}, settings, "fixedRatio")
 
-	return (
-		<div id="root-view">
-			{children}
-		</div>
-	)
+	return children
 }
 
 export default AppLayout

@@ -1,60 +1,10 @@
 :root {
-	--font: "Ubuntu";
-	--width: 100%;
-	--ratio: initial;
-
-	--menu-container: hsl(0deg 0% 0% / 40%);
-	--menu-shadow: 0 1px 3px 1px hsl(0deg 0% 0% / 70%);
-	--active: rgb(0 111 164);
-	--active-hover: #00e5ff;
-	--focus: #062b64;
-	--selected-shadow: 0px 0px 0px 1px rgb(0, 200, 255) inset,
-		0px 0px 90px 0px rgba(0, 180, 255, 0.8) inset;
-	--separator: rgba(255, 255, 255, 0.1);
-
-	--color-link: #00b6ff;
-
-	--scrollbar-gradient: linear-gradient(
-		180deg,
-		hsl(192, 86%, 34%) 0%,
-		hsl(188, 100%, 50%) 50%,
-		hsl(192, 86%, 34%) 100%
-	);
-	--scrollbar-hover: linear-gradient(
-		180deg,
-		hsl(192, 77%, 26%) 0%,
-		hsl(188, 100%, 34%) 50%,
-		hsl(192, 77%, 26%) 100%
-	);
-
 	--toastify-color-progress-dark: #0a2f85;
 	--toastify-font-family: var(--font);
 	--toastify-color-dark: #01060e;
 	--toastify-color-progress-dark: #0087ff;
 }
 
-#root {
-	background-image: radial-gradient(#00267d, #01001a);
-	width: 100%;
-}
-
-body {
-	margin: 0;
-	display: flex;
-	min-height: 100vh;
-}
-
-#root-view {
-	height: 100vh;
-	height: 100dvh;
-	width: 100vw;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	overflow: hidden;
-	font-family: var(--font), sans-serif;
-	position: relative;
-}
 .page {
 	width: 100%;
 	height: 100%;

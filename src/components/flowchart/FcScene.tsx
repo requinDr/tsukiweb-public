@@ -202,7 +202,7 @@ export const UnlockedSceneRender = ({ id, graphics, content, blur, x, y, disable
 						<ScenePopover id={id} graphics={graphics} onClose={() => setIsOpen(false)} />
 					</motion.div>
 				</div>,
-				document.getElementById("root-view") as HTMLElement
+				document.getElementById("root") as HTMLElement
 			)}
 		</>
 	)
