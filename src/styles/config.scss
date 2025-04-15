@@ -187,8 +187,8 @@
 
 	.reset {
 		margin-top: 1em;
-		width: min-content;
-		margin-left: auto;
+		display: flex;
+		justify-content: flex-end;
 
 		.btn {
 			min-width: 80px;

@@ -2,25 +2,17 @@
 @use '../../tsukiweb-common/src/ui-core/styles/_partials' as *;
 
 #endings {
-	main {
-		display: grid;
-		padding-block: 2em;
-		overflow-y: auto;
-		scrollbar-gutter: stable both-edges;
-		align-content: start;
-	}
-
 	section {
-		padding: var(--page-padding);
 		position: relative;
 	}
 
 	.endings-list {
+		margin-top: 1em;
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(min(204px, 24vmin), 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(min(204px, 24vmin), 1fr));
 		isolation: isolate;
 		min-width: 0;
-		gap: .8em;
+		gap: .6em;
 		place-content: start;
 
 		.ending {
@@ -29,6 +21,7 @@
 			position: relative;
 			font-size: 1.1em;
 			outline: 0;
+			background-color: var(--menu-container);
 
 			@mixin shadow($color) {
 				$color-title: color.adjust($color, $lightness: -20%);
@@ -39,16 +32,16 @@
 					background-clip: text;
 					color: transparent;
 
-					&::after {
-						content: '';
-						position: absolute;
-						bottom: -4px;
-						left: 0;
-						width: 100%;
-						height: 1px;
-						background-color: $color;
-						mask-image: linear-gradient(to right, transparent, black 50%, transparent);
-					}
+					// &::after {
+					// 	content: '';
+					// 	position: absolute;
+					// 	bottom: -4px;
+					// 	left: 0;
+					// 	width: 100%;
+					// 	height: 1px;
+					// 	background-color: $color;
+					// 	mask-image: linear-gradient(to right, transparent, black 50%, transparent);
+					// }
 				}
 			}
 			
@@ -77,8 +70,8 @@
 			&.unlocked {
 				&.ark { @include shadow(#e7e300) }
 				&.cel { @include shadow(#00bfff) }
-				&.aki { @include shadow(#915934) }
-				&.his { @include shadow(#ff0000) }
+				&.aki { @include shadow(#b35a1f) }
+				&.his { @include shadow(#e70909) }
 				&.koha { @include shadow(#ff00ff) }
 				&.eclipse { @include shadow(#970e0e) }
 
@@ -107,18 +100,18 @@
 				}
 			}
 			.ending-desc {
-				margin: 16px;
+				margin: 0.6em 0.8em 0.8em 0.8em;
 				text-align: center;
 				line-height: 1.1;
 				
 				.ending-name {
-					font-size: 1.1em;
-					font-weight: 600;
+					font-weight: 700;
 					text-wrap: pretty;
 					position: relative;
+					letter-spacing: -0.4px;
 				}
 				.ending-bottom {
-					margin-top: 8px;
+					margin-top: 0.2em;
 					font-size: .9em;
 					opacity: 0.8;
 
@@ -133,6 +126,9 @@
 	}
 
 	.badendings {
+		padding-top: 2em;
+		padding-bottom: 2em;
+
 		h3 {
 			all: unset;
 			font-size: clamp(1.1em, 7vmin, 1.2em);
