@@ -2,10 +2,6 @@
 @use '../../tsukiweb-common/src/ui-core/styles/_partials' as *;
 
 #endings {
-	section {
-		position: relative;
-	}
-
 	.endings-list {
 		margin-top: 1em;
 		display: grid;
@@ -31,25 +27,14 @@
 					-webkit-background-clip: text;
 					background-clip: text;
 					color: transparent;
-
-					// &::after {
-					// 	content: '';
-					// 	position: absolute;
-					// 	bottom: -4px;
-					// 	left: 0;
-					// 	width: 100%;
-					// 	height: 1px;
-					// 	background-color: $color;
-					// 	mask-image: linear-gradient(to right, transparent, black 50%, transparent);
-					// }
 				}
 			}
 			
 			&.attention {
+				overflow: hidden;
 				&:before {
 					content: "!";
 					font-size: 2.5em;
-					float: inline-end;
 					position: absolute;
 					top: 16px;
 					right: 0;
