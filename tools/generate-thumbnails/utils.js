@@ -3,38 +3,8 @@ import path from 'path'
 
 export const isHexColor = (str) => /^#[0-9A-Fa-f]{6}$/.test(str)
 
-// Helper function to generate a spritesheet
-export async function saveSpritesheet(thumbnails, outputDir, batchIndex, thumbWidth, thumbHeight, format) {
-	const cols = 10 // Number of thumbnails per row
-	const rows = Math.ceil(thumbnails.length / cols)
-	const spritesheetPath = path.join(outputDir, `spritesheet_${batchIndex}.${format}`)
-
-	const compositeImages = thumbnails.map((thumb, i) => ({
-		input: thumb,
-		left: (i % cols) * thumbWidth,
-		top: Math.floor(i / cols) * thumbHeight,
-	}))
-
-	let canvas = sharp({
-		create: {
-			width: cols * thumbWidth,
-			height: rows * thumbHeight,
-			channels: 4,
-			background: { r: 0, g: 0, b: 0, alpha: 0 },
-		},
-	})
-
-	if (format === 'avif') {
-		canvas = canvas.avif({ effort: 9, quality: 40 })
-	} else if (format === 'webp') {
-		canvas = canvas.webp({ effort: 6, preset: 'drawing' })
-	}
-	await canvas.composite(compositeImages).toFile(spritesheetPath)
-	console.log(`Spritesheet saved to ${spritesheetPath}`)
-}
-
 // return buffer
-export async function generateFlowchartImage({ bg, l, c, r, monochrome, width, height, format }) {
+export async function generateFlowchartImage({ bg, l, c, r, monochrome, width, height }) {
 	const canvas = sharp({
 		create: {
 			width,
@@ -74,7 +44,7 @@ export async function generateFlowchartImage({ bg, l, c, r, monochrome, width, h
 			left: 0,
 		})
 	} else {
-		const bgBuffer = await sharp(bg).resize(width, height).toBuffer()
+		const bgBuffer = await sharp(bg).resize(width, height, { fit: 'cover' }).toBuffer()
 		const finalBgBuffer = await applyGrayscale(sharp(bgBuffer)) // Apply grayscale if monochrome is specified
 		layers.push({ input: finalBgBuffer, top: 0, left: 0 })
 	}
@@ -149,6 +119,41 @@ export async function generateFlowchartImage({ bg, l, c, r, monochrome, width, h
 		})
 	}
 
-	// Composite all layers and save the final image
-	return canvas.composite(layers).toFormat(format).toBuffer()
+	// return canvas.composite(layers).toBuffer()
+	return canvas.composite(layers).toFormat("avif").toBuffer()
+}
+
+// Helper function to generate a spritesheet
+export async function saveSpritesheet(thumbnails, outputDir, batchIndex, thumbWidth, thumbHeight) {
+	const cols = 10 // Number of thumbnails per row
+	const rows = Math.ceil(thumbnails.length / cols)
+	const spritesheetPath = path.join(outputDir, `spritesheet_${batchIndex}`)
+
+	const compositeImages = thumbnails.map((thumb, i) => ({
+		input: thumb,
+		left: (i % cols) * thumbWidth,
+		top: Math.floor(i / cols) * thumbHeight,
+	}))
+
+	const canvas = {
+		create: {
+			width: cols * thumbWidth,
+			height: rows * thumbHeight,
+			channels: 4,
+			background: { r: 0, g: 0, b: 0, alpha: 0 },
+		},
+	}
+
+	await sharp(canvas)
+		.composite(compositeImages)
+		.toFormat('avif')
+		.avif({ effort: 9, quality: 40 })
+		.toFile(spritesheetPath + ".avif")
+	await sharp(canvas)
+		.composite(compositeImages)
+		.toFormat('webp')
+		.webp({ effort: 6, preset: 'drawing', quality: 70 })
+		.toFile(spritesheetPath + ".webp")
+
+	console.log(`Spritesheet saved to ${spritesheetPath}`)
 }

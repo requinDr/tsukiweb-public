@@ -28,8 +28,12 @@ async function processScenes(scenes, outputDir, prefixPath, width, height) {
 	}
 
 	for (const [sceneName, sceneData] of Object.entries(scenes)) {
+		if (!sceneData?.fc?.hasOwnProperty("col")) {
+			console.warn(`Skipping scene ${sceneName} due to unused in flowchart`)
+			continue
+		}
+		
 		const graph = sceneData?.fc?.graph
-
 		if (graph) {
 			let { bg, l = null, c = null, r = null, monochrome = null } = graph
 
@@ -46,8 +50,7 @@ async function processScenes(scenes, outputDir, prefixPath, width, height) {
 					r: r ? path.join(prefixPath, ensureExtension(r)) : null,
 					monochrome,
 					width,
-					height,
-					format: imageFormat
+					height
 				})
 
 				thumbnails.push(thumbBuffer)
@@ -70,7 +73,7 @@ async function processScenes(scenes, outputDir, prefixPath, width, height) {
 
 				// Save spritesheet when batch is full
 				if (thumbnails.length === batchSize) {
-					await saveSpritesheet(thumbnails, outputDir, batchIndex, width, height, imageFormat)
+					await saveSpritesheet(thumbnails, outputDir, batchIndex, width, height)
 					thumbnails = []
 					batchIndex++
 				}
@@ -84,7 +87,7 @@ async function processScenes(scenes, outputDir, prefixPath, width, height) {
 
 	// Save remaining thumbnails in the last batch
 	if (thumbnails.length > 0) {
-		await saveSpritesheet(thumbnails, outputDir, batchIndex, width, height, imageFormat)
+		await saveSpritesheet(thumbnails, outputDir, batchIndex, width, height)
 	}
 
 	// Write JSON metadata
