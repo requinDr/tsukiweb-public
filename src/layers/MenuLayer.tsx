@@ -201,7 +201,7 @@ const ActionsButtons = ({show}: ActionsButtonsProps) => {
 				disabled={gameContext.label.startsWith("skip")}
 				title={gameContext.label}
 			>
-				<MdCopyAll style={{marginRight: 8}} /> Copy scene link
+				<MdCopyAll style={{marginRight: 8}} /> {strings.menu["copy-scene-url"]}
 			</button>
 			}
 		</div>

@@ -1,4 +1,5 @@
 import '../styles/endings.scss'
+import styles from "@tsukiweb-common/ui-core/styles/layouts.module.scss"
 import { strings } from '../translation/lang'
 import { SCREEN } from '../utils/display'
 import { endings, osiete } from '../utils/endings'
@@ -27,7 +28,7 @@ const EndingsScreen = () => {
 	const eclipseUnlocked = allEndingsSeen && !eclipseSeen
 
 	return (
-		<div className="page" id="endings">
+		<div className={`${styles.pageContent}`} id="endings">
 			<main>
 				<section className="endings-list">
 					{Object.values(endings).map((ending, index) =>

@@ -271,7 +271,8 @@
 		"ffw": "早送り",
 		"title": "タイトルに戻る",
 		"q-save": "クイックセーブ",
-		"q-load": "クイックロード"
+		"q-load": "クイックロード",
+		"copy-scene-url": "Copy scene link"
 	},
 	"history": {
 		"load": "ロード",

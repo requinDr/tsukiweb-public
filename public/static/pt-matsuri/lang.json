@@ -148,7 +148,8 @@
 		"ffw": "Avanço rápido",
 		"title": "Título",
 		"q-save": "Q. salvar",
-		"q-load": "Q. carregar"
+		"q-load": "Q. carregar",
+		"copy-scene-url": "Copy scene link"
 	},
 	"history": {
 		"load": "Carregar",

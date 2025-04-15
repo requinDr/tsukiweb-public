@@ -148,7 +148,8 @@
 		"ffw": "快进",
 		"title": "标题界面",
 		"q-save": "快速存档",
-		"q-load": "快速读档"
+		"q-load": "快速读档",
+		"copy-scene-url": "Copy scene link"
 	},
 	"history": {
 		"load": "读档",

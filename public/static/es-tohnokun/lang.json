@@ -156,7 +156,8 @@
 		"ffw": "Avance rápido",
 		"title": "Título",
 		"q-save": "Guardado rápido",
-		"q-load": "Cargado rápido"
+		"q-load": "Cargado rápido",
+		"copy-scene-url": "Copy scene link"
 	},
 	"history": {
 		"load": "Cargar",
