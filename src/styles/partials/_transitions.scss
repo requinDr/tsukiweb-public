@@ -48,7 +48,7 @@ $size: 25px;
 
 *[fade-out="crossfade"] { animation-name: fadeOut }
 *[fade-in ="crossfade"] { animation-name: fadeIn  }
-img[for-mask], *[for-mask] > img {
+img[for-mask], *[for-mask] img {
 	-webkit-mask-image: var(--from-image),var(--to-image);
 	mask-image: var(--from-image),var(--to-image);
 	-webkit-mask-size: cover;
