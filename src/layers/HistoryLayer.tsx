@@ -172,7 +172,7 @@ const FlowchartDisplay = ({ display }: FlowchartDisplayProps) => {
 
 	return (
 		<div className="flowchart-container">
-			<Flowchart disabled={true}/>
+			<Flowchart/>
 		</div>
 	)
 }
