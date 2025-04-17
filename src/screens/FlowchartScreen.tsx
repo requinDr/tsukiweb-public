@@ -11,7 +11,7 @@ const FlowchartScreen = () => {
 	useLanguageRefresh()
 
 	const onSceneClick = (id: TsukihimeSceneName)=> {
-		playScene(id, {continueScript: true, viewedOnly: true})
+		playScene(id, {continueScript: false, viewedOnly: true})
 	}
 	return (
 		<div
