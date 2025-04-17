@@ -336,7 +336,7 @@
 
     "s234"  : {"r": "aki", "d": "03b", "fc": {"col": 12, "from": ["s211"], "graph": {"bg": "bg/bg_06c", "c": "tachi/stk_t10"}}, "deadEnd": true},
     "s532"  : {"r": "aki", "d": "03b", "osiete": true},
-    "s235"  : {"r": "aki", "d": "03a", "s": "1a", "fc": {"col": 11, "from": ["s217"], "graph": {"bg": "bbg/cmo_19"}}},
+    "s235"  : {"r": "aki", "d": "03a", "s": "1a", "fc": {"col": 11, "from": ["s217"], "graph": {"bg": "bg/cmo_19"}}},
     "s236"  : {"r": "aki", "d": "03a", "s": "1b", "fc": {"col": 10, "from": ["s218"], "graph": {"bg": "bg/bg_46c", "c": "tachi/his_t23"}}},
     "s237"  : {"r": "aki", "d": "03a", "s": "2a", "fc": {"col": 11, "from": ["s235"], "graph": {"bg": "bg/bg_23b"}}},
     "s238"  : {"r": "aki", "d": "03a", "s": "2b", "fc": {"col": 12, "from": ["s235"], "graph": {"bg": "bg/bg_01b"}}},
@@ -363,8 +363,8 @@
     "s327"  : {"r": "aki", "d": "05a", "s": "2b", "fc": {"col": 11, "from": ["a303"], "graph": {"bg": "bg/bg_04", "c": "tachi/aki_t03a"}}},
     "s328"  : {"r": "aki", "d": "05a", "s": "2c", "fc": {"col": 12, "from": ["a303"], "graph": {"bg": "bg/bg_04", "c": "tachi/aki_t21"}}},
     "s329"  : {"r": "aki", "d": "05a", "s": "3" , "fc": {"col": 10, "from": ["s326", "s327", "s328"], "graph": {"bg": "bg/bg_04", "l": "tachi/ari_t01", "r": "tachi/aki_t13a"}}},
-    "s331"  : {"r": "aki", "d": "05a", "s": "4a", "fc": {"col": 10, "from": ["s329"], "graph": {"bg": "bg/bg_23b", "c": "tachi/aki_t21"}}},
-    "s330"  : {"r": "aki", "d": "05a", "s": "4b", "fc": {"col": 11, "from": ["s329"], "graph": {"bg": "bg/bg_23b", "c": "tachi/aki_t21"}}},
+    "s331"  : {"r": "aki", "d": "05a", "s": "4a", "fc": {"col": 10, "from": ["s329"], "graph": {"bg": "bg/bg_11b", "c": "tachi/cel_t02"}}},
+    "s330"  : {"r": "aki", "d": "05a", "s": "4b", "fc": {"col": 11, "from": ["s329"], "graph": {"bg": "bg/bg_01b", "l": "tachi/cel_t03", "r": "tachi/aki_t01a"}}},
     "s332"  : {"r": "aki", "d": "05a", "s": "5a", "fc": {"col": 10, "from": ["a331"], "graph": {"bg": "bg/bg_23b", "c": "tachi/aki_t21"}}},
     "s333"  : {"r": "aki", "d": "05a", "s": "5b", "fc": {"col": 11, "from": ["a331"], "graph": {"bg": "bg/bg_32b", "c": "tachi/aki_t01a"}}},
     "s334"  : {"r": "aki", "d": "05a", "s": "6" , "fc": {"col": 10, "from": ["s332", "s333"], "graph": {"bg": "bg/bg_40b"}}},
@@ -484,7 +484,7 @@
     "s426"  : {"r": "koha", "d": "11a", "s": "1", "fc": {"col": 17, "from": ["s425"], "graph": {"bg": "bg/ima_01", "monochrome": "#ff0000"}}, "deadEnd": true},
     "s543"  : {"r": "koha", "d": "11a", "s": "1", "osiete": true},
     "s427"  : {"r": "koha", "d": "11a", "s": "1", "fc": {"col": 18, "from": ["s425"], "graph": {"bg": "bg/bg_11d", "c": "tachi/aki_t28"}}},
-    "s428"  : {"r": "koha", "d": "11a", "s": "2", "fc": {"col": 18, "from": ["s427"], "graph": {"bg": "event/koha_f01"}}, "deadEnd": true},
+    "s428"  : {"r": "koha", "d": "11a", "s": "2", "fc": {"col": 18, "from": ["s427"], "graph": {"bg": "bg/bg_06b", "monochrome": "#0f00f0"}}, "deadEnd": true},
     "s544"  : {"r": "koha", "d": "11a", "s": "2", "osiete": true},
     "s429"  : {"r": "koha", "d": "12a", "fc": {"col": 17, "from": ["s427"], "graph": {"bg": "event/koha_f01"}}, "//": "day=12 inside scene"},
     "s545"  : {"r": "koha", "d": "12a", "osiete": true}
