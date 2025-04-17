@@ -23,6 +23,7 @@ function onImgLoad(top: number, left: number, width: number, height: number,
 	img.style.marginTop  = `-${ratio_y * top}px`
 	img.style.width      = `${imgWidth * ratio_x}px`
 	img.style.height     = `${imgHeight * ratio_y}px`
+	img.style.opacity = '1'
 }
 
 //#endregion ###################################################################
@@ -42,6 +43,7 @@ export function SceneImage(node: FcNode, props: ImageProps = {}) {
 					onLoad={onImgLoad.bind(null, top, left, width, height)}
 					src={file}
 					alt={`Thumbnail for ${node.id}`}
+					style={{ opacity: 0, transition: "opacity .2s" }}
 					{...props}
 				/>
 			</foreignObject>
