@@ -44,8 +44,9 @@
 					filter: blur(0);
 				}
 			}
-
-			&.unlocked {
+		}
+		&.unlocked {
+			.fc-scene-content {
 				transition: scale 0.2s ease-in-out, filter 0.2s ease-in-out;
 				cursor: pointer;
 
