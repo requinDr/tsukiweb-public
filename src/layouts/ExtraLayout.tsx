@@ -50,33 +50,35 @@ const ExtraLayout = ({ children }: PropsWithChildren) => {
 				<h2 className="page-title">
 					{strings.title.extra}
 				</h2>
-				<TitleMenuButton
-					onClick={()=>navigate(SCREEN.GALLERY)}
-					active={currentPage === SCREEN.GALLERY}>
-					{strings.extra.gallery}
-				</TitleMenuButton>
-				<TitleMenuButton
-					onClick={()=>navigate(SCREEN.ENDINGS)}
-					active={currentPage === SCREEN.ENDINGS}
-					attention={allEndingsSeen && !eclipseSeen}>
-					{strings.extra.endings}
-				</TitleMenuButton>
-				<TitleMenuButton
-					onClick={()=>navigate(SCREEN.SCENES)}
-					active={currentPage === SCREEN.SCENES}>
-					{strings.extra.scenes}
-				</TitleMenuButton>
-				{import.meta.env.DEV &&
-				<TitleMenuButton
-					onClick={()=>navigate(SCREEN.PLUS_DISC)}
-					active={currentPage === SCREEN.PLUS_DISC}>
-					Plus Disc
-				</TitleMenuButton>
-				}
+				<div className="menus">
+					<TitleMenuButton
+						onClick={()=>navigate(SCREEN.GALLERY)}
+						active={currentPage === SCREEN.GALLERY}>
+						{strings.extra.gallery}
+					</TitleMenuButton>
+					<TitleMenuButton
+						onClick={()=>navigate(SCREEN.ENDINGS)}
+						active={currentPage === SCREEN.ENDINGS}
+						attention={allEndingsSeen && !eclipseSeen}>
+						{strings.extra.endings}
+					</TitleMenuButton>
+					<TitleMenuButton
+						onClick={()=>navigate(SCREEN.SCENES)}
+						active={currentPage === SCREEN.SCENES}>
+						{strings.extra.scenes}
+					</TitleMenuButton>
+					{import.meta.env.DEV &&
+					<TitleMenuButton
+						onClick={()=>navigate(SCREEN.PLUS_DISC)}
+						active={currentPage === SCREEN.PLUS_DISC}>
+						Plus Disc
+					</TitleMenuButton>
+					}
 
-				<TitleMenuButton onClick={()=>navigate(SCREEN.TITLE)} className="back-button">
-					{`<<`} {strings.back}
-				</TitleMenuButton>
+					<TitleMenuButton onClick={()=>navigate(SCREEN.TITLE)} className="back-button">
+						{`<<`} {strings.back}
+					</TitleMenuButton>
+				</div>
 			</div>
 
 			<motion.div

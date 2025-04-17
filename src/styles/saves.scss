@@ -1,6 +1,9 @@
 @use 'partials/_components';
 
 #saves, #layer-save {
+	.back-button {
+		margin: 1em;
+	}
 	.page-content {
 		@media screen and (orientation: landscape) and (max-height: 680px),
 			(max-width: 760px) and (orientation: portrait) {
@@ -8,9 +11,6 @@
 			.page-title {
 				padding-inline: clamp(.8rem, 1.6vmin, 1.2rem);
 				padding-top: clamp(.8rem, 1.6vmin, 1.2rem);
-			}
-			.back-button {
-				margin: clamp(.8rem, 1.6vmin, 1.2rem);
 			}
 		}
 	}
@@ -203,7 +203,7 @@
 		}
 
 		// phone landscape
-		@media screen and (max-height: 480px) and (orientation: landscape) {
+		@media screen and (max-height: 500px) and (orientation: landscape) {
 			&.preview-save {
 				border-left: none;
 				border-block: 2px solid var(--separator);
@@ -252,7 +252,7 @@
 		grid-template-rows: min-content minmax(160px, 1fr) 3fr min-content;
 	}
 
-	@media screen and (max-height: 480px) and (orientation: landscape) {
+	@media screen and (max-height: 500px) and (orientation: landscape) {
 		grid-template-columns: 2fr 5fr;
 		grid-template-areas:
 			"title list"

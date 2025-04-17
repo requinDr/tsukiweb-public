@@ -11,6 +11,7 @@ import { Tab } from '@tsukiweb-common/ui-core/components/TabsComponent'
 import PageTabsLayout from '@tsukiweb-common/ui-core/layouts/PageTabsLayout'
 import Button from '@tsukiweb-common/ui-core/components/Button'
 import { MdQuestionMark } from 'react-icons/md'
+import TitleMenuButton from '@tsukiweb-common/ui-core/components/TitleMenuButton'
 
 enum Tabs {
 	game = "game",
@@ -59,9 +60,9 @@ const ConfigLayout = ({back, selectedTab, setSelectedTab, page}: Props) => {
 			selectedTab={activeTab}
 			setSelectedTab={setActiveTab}
 			backButton={
-				<Button variant="menu" onClick={back.bind(null)} className="back-button">
-					{strings.back}
-				</Button>
+				<TitleMenuButton onClick={back.bind(null)} className="back-button">
+					{`<<`} {strings.back}
+				</TitleMenuButton>
 			}>
 			{tabComponents[activeTab]}
 		</PageTabsLayout>

@@ -8,10 +8,8 @@
 	.extra-menu {
 		grid-area: extra-menu;
 		display: flex;
-		font-size: 1.4em;
-		gap: 1em;
-		padding: 1em;
-		padding-right: .2em;
+		padding: 2em;
+		padding-right: 0;
 		flex-direction: column;
 		align-items: flex-start;
 
@@ -21,13 +19,24 @@
 			}
 		}
 
-		.menu-item {
-			text-align: start;
-			font-size: 1.05em;
-		}
-		.back-button {
-			margin-top: auto;
-			margin-bottom: .5em;
+		.menus {
+			flex: 1;
+			margin-top: 2em;
+			display: flex;
+			flex-direction: column;
+			gap: 1.6em;
+
+			.menu-item {
+				text-align: start;
+				font-size: 1.3em;
+				text-transform: uppercase;
+				font-weight: 700;
+				letter-spacing: 1px;
+				width: fit-content;
+			}
+			.back-button {
+				margin-top: auto;
+			}
 		}
 	}
 
@@ -44,25 +53,30 @@
 			"extra-menu";
 
 		.extra-menu {
-			display: grid;
-			grid-auto-flow: column;
-			font-size: 1.1em;
+			padding: 0;
 			overflow-x: auto;
 			box-shadow: var(--menu-shadow);
-			padding-bottom: 1.6em;
-			justify-content: space-evenly;
-			gap: 1.6em;
 
-			h2 {
+			.page-title {
 				display: none;
 			}
-
-			.menu-item {
-				white-space: nowrap;
-			}
-
-			.back-button {
-				grid-column: 1 / -1;
+			.menus {
+				padding: 1em 2em;
+				padding-bottom: 3em;
+				font-size: 0.8em;
+				margin-top: .5em;
+				display: grid;
+				grid-auto-flow: column;
+				gap: 1.6em;
+				min-width: 100%;
+	
+				.menu-item {
+					white-space: nowrap;
+				}
+	
+				.back-button {
+					grid-column: 1 / -1;
+				}
 			}
 		}
 	}
@@ -70,7 +84,7 @@
 	@media screen and (max-height: 600px) and (min-width: 800px) {
 		grid-template-columns: minmax(160px, min-content) 1fr;
 		.extra-menu {
-			font-size: 1.3em;
+			font-size: .8em;
 			overflow-y: auto;
 			padding-right: 0;
 		}

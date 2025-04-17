@@ -13,6 +13,7 @@ import classNames from "classnames"
 import { noBb } from "@tsukiweb-common/utils/Bbcode"
 import { useVirtualizer } from "@tanstack/react-virtual"
 import { toast } from "react-toastify"
+import TitleMenuButton from "@tsukiweb-common/ui-core/components/TitleMenuButton"
 
 //##############################################################################
 //#                               TOOL FUNCTIONS                               #
@@ -183,12 +184,9 @@ const SavesLayer = ({variant, back}: Props) => {
 
 			<SaveDetails id={focusedId} saveState={focusedSave} deleteSave={deleteSave}/>
 			<div className="save-buttons">
-				<Button
-					variant="menu"
-					onClick={back.bind(null, false)}
-					className="back-button">
-					{strings.back}
-				</Button>
+				<TitleMenuButton onClick={back.bind(null, false)} className="back-button">
+					{`<<`} {strings.back}
+				</TitleMenuButton>
 			</div>
 		</main>
 	)

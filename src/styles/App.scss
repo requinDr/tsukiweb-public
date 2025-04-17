@@ -34,7 +34,7 @@
 	background-clip: text;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
-	margin-bottom: 0.2em;
+	margin-block: 0.2em;
 	grid-area: page-title;
 }
 main {
@@ -47,6 +47,10 @@ main {
 .back-button {
 	margin-top: clamp(.8rem, 4vmin, 1rem);
 	width: fit-content;
+	font-size: 1.1rem;
+	text-transform: uppercase;
+	font-weight: 700;
+	letter-spacing: 1px;
 }
 
 /* Overlay */

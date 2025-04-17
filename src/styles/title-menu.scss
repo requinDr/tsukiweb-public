@@ -11,8 +11,9 @@
 
 	.logo {
 		display: flex;
-		margin: 1em;
 		justify-content: center;
+		align-items: center;
+		margin: 1em;
 		flex: 8;
 		min-height: 0;
 		position: relative;
@@ -32,7 +33,7 @@
 			transition-timing-function: cubic-bezier(0.25, 0.1, 0.16, 1.0);
 		}
 		.tsuki-logo {
-			height: 100%;
+			height: 90%;
 			width: min(70vmin, 400px);
 		}
 	}
@@ -54,7 +55,7 @@
 			justify-content: center;
 			box-sizing: border-box;
 
-			font-size: 1.4em;
+			font-size: 1.44em;
 			padding: 4pt;
 			width: $icon-size;
 			height: $icon-size;
@@ -69,9 +70,9 @@
 
 	.menu {
 		flex: 1;
-		margin-bottom: 6vh;
+		margin-bottom: 5vh;
 		width: min(860px, 100%);
-		font-size: 1.4em;
+		font-size: 1.44em;
 
 		.menu-buttons {
 			display: flex;
@@ -87,14 +88,14 @@
 	}
 
 	// One column
-	@media (max-width: 810px) and (min-height: 460px), (orientation: portrait) {
+	@media (max-width: 840px) and (min-height: 500px), (orientation: portrait) {
 		.top-actions {
 			right: $spacing;
 			flex-direction: column-reverse;
 		}
 	}
 	// One column, mobile portrait
-	@media (max-width: 810px), ((orientation: landscape) and (max-height: 460px)) {
+	@media (max-width: 840px), ((orientation: landscape) and (max-height: 500px)) {
 		display: grid;
 		grid-template-rows: 3fr 2fr;
 		.logo {
@@ -114,7 +115,7 @@
 		}
 	}
 	// Two columns, mobile landscape
-	@media (max-height: 460px) and (orientation: landscape) {
+	@media (max-height: 500px) and (orientation: landscape) {
 		grid-template-columns: 1fr 1fr;
 		grid-template-rows: 1fr;
 		.logo {
@@ -260,6 +261,7 @@
 		padding: 2em;
 		margin: 1em;
 		user-select: none;
+		text-wrap: balance;
 
 		p {
 			font-size: clamp(.92em, 3.6vmin, 1.3em);

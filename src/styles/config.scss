@@ -3,13 +3,14 @@
 #config-layout {
 	font-size: 1.1rem;
 
+	.back-button {
+		margin: 1em;
+	}
+
 	@media screen and (orientation: landscape) and (max-height: 680px) {
 		--page-padding: 0;
 		.page-title {
 			padding: clamp(.8rem, 1.6vmin, 1.2rem);
-		}
-		.back-button {
-			margin: clamp(.8rem, 1.6vmin, 1.2rem);
 		}
 	}
 
