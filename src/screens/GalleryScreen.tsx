@@ -52,7 +52,9 @@ const GalleryScreen = () => {
 
 		if (isUnlockedImage && UNLOCK_TOGETHER[image.img]) {
 			UNLOCK_TOGETHER[image.img].forEach((img) => {
-				unlockedVariants.push(getImageVariants(img)[0])
+				if (unlockedVariants.findIndex(v => v.img === img) === -1) {
+					unlockedVariants.push(getImageVariants(img)[0])
+				}
 			})
 		}
 
