@@ -325,7 +325,7 @@
 	"s312a" : {"r": "aki", "d": "03a", "s": "7" , "fc": {"col": 10, "from": ["s312"], "graph": {"bg": "event/stk_e01b"}}},
 	"s305"  : {"r": "aki", "d": "04a", "s": "1" , "fc": {"col": 10, "from": ["s312a"], "graph": {"bg": "bg/bg_40a", "l": "tachi/his_t01", "r": "tachi/aki_t21b"}}},
 	"s317"  : {"r": {"flg":"P", "0":"his", "1": "aki"}, "d": "04a", "s": "2", "fc": {"col": 11, "from": ["a305", "s306"], "graph": {"bg": "bg/bg_34a", "l": "tachi/koha_t03b", "r": "tachi/his_t02"}}},
-	"s320"  : {"r": "aki", "d": "04a", "s": "3" , "fc": {"col": 13, "from": ["s317"], "graph": {"bg": "bg/bg_35", "c": "tachi/koha_t07"}}},
+	"s320"  : {"r": "aki", "d": "04a", "s": "3" , "fc": {"col": 13, "from": ["s317"], "graph": {"bg": "bg/bg_36a", "c": "tachi/aki_t21b"}}},
 	"s321"  : {"r": {"flg":"P", "0":"his", "1": "aki"}, "d": "04a", "s": "4", "fc": {"col": 11, "from": ["s320", "s318", "s319"], "graph": {"bg": "bg/bg_34a", "l": "tachi/koha_t01a", "c": "tachi/aki_t08b", "r": "tachi/his_t20"}}},
 	"s322"  : {"r": "aki", "d": "04a", "s": "5" , "fc": {"col": 11, "from": ["s321"], "graph": {"bg": "bg/bg_34c", "c": "tachi/aki_t26"}}},
 	"s325"  : {"r": "aki", "d": "05a", "s": "1a", "fc": {"col": 11, "from": ["s322"], "graph": {"bg": "bg/bg_04", "l": "tachi/aki_t12a", "r": "tachi/ari_t05"}}},
