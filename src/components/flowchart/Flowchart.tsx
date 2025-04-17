@@ -92,14 +92,14 @@ const Flowchart = ({flowchart, onSceneClick}: Props)=> {
 			version="1.1"
 			xmlns="http://www.w3.org/2000/svg">
 			{SVG_DEFS}
-			{flowchart.listNodes().filter(node=>node.visible).map(node=>
+			{[...flowchart.listNodes().filter(node=>node.visible).map(node=>
 				<Fragment key={node.id}>
 					{[...node.parents.filter(parent=>parent.state > FcNodeState.UNSEEN).map(
 						parent => connectionPath(parent, node))]}
 					{node.scene &&
 						<SceneRenderer node={node} onClick={onSceneClick}/>}
 				</Fragment>
-			)}
+			)]}
 		</svg>
 	)
 }
