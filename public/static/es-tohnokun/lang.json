@@ -23,16 +23,16 @@
 		"El juego incluye contenido para adultos y está destinado únicamente a audiencias maduras."
 	],
 	"title": {
-		"start": "Nuevo Juego",
+		"start": "Iniciar",
 		"resume": "Continuar",
 		"load": "Cargar",
-		"config": "Configuración",
-		"extra": "Extra",
+		"config": "Ajustes",
+		"extra": "Extras",
 		"about": {
 			"port": "Esta es una versión web de [i]Tsukihime[/i], una novela visual publicada en el año 2000 por Type-Moon.",
 			"project": "El proyecto está disponible en $0GitHub$1. ¡Añade una estrella si te gusta! Las contribuciones son bienvenidas.",
 			"feedback": "Envía tus comentarios o reporta un error $0aquí$1.",
-			"data": "No se recopilan datos, todo se almacena en tu navegador. Administra tus datos $0aquí$1.",
+			"data": "No se recopilan datos; toda la información se almacena localmente en tu navegador. Administra tus datos $0aquí$1.",
 			"remake": "Considera comprar el remake $0Tsukihime - A piece of blue glass moon$1."
 		},
 		"install": "Instalar",
@@ -57,7 +57,7 @@
 		"volume-se": "Volumen de efectos de sonido",
 		"volume-title-track" : "Volumen de la música del título",
 		"volume-system-se" : "Volumen de efectos de sonido del sistema",
-		"track-source": "Fuente de la banda sonora",
+		"track-source": "Versión de la banda sonora",
 		"track-source-help": [
 			"[b]Original[/b]: Banda sonora original del juego completo de 2000.",
 			"[b]Ever After[/b]: Remake de la banda sonora original, publicado en 2002.",
@@ -65,7 +65,7 @@
 		],
 		"auto-mute": "Silenciar al cambiar de pestaña",
 		"ratio": "Relación de aspecto",
-		"ratio-auto": "Auto",
+		"ratio-auto": "Automática",
 		"ratio-4-3": "4:3",
 		"ratio-16-9": "16:9",
 		"text-speed": "Velocidad de visualización del texto",
@@ -73,9 +73,9 @@
 		"text-speed-med": "Media",
 		"text-speed-high": "Rápida",
 		"text-speed-instant": "Instantánea",
-		"auto-play-delay-text": "Retraso de auto-play del texto: $0s",
-		"auto-play-delay-page": "Retraso de auto-play de la página: $0s",
-		"adult-title": "Adultos",
+		"auto-play-delay-text": "Retraso de la reproducción automática del texto: $0s",
+		"auto-play-delay-page": "Retraso de  la reproducción automática de la página: $0s",
+		"adult-title": "Contenido para adultos",
 		"adult-blur": "Desenfocar miniaturas",
 		"adult-blur-help": [
 			"Aplica un efecto de desenfoque en las miniaturas de las escenas para adultos (Guardar, Cargar, Diagrama de flujo, Galería, …).",
@@ -96,20 +96,20 @@
 		"data": "Almacenamiento de datos",
 		"data-export": "Exportar",
 		"data-import": "Importar",
-		"data-erase": "Borrar",
+		"data-erase": "Eliminar",
 		"data-erase-warning": "Esto eliminará todas las partidas guardadas, restablecerá todas las configuraciones y el progreso. ¿Estás seguro?",
 		"data-erase-confirm": "Todos los datos han sido eliminados. Si abandonas este sitio web sin hacer ningún cambio en la configuración y sin comenzar un nuevo juego, no se almacenará ningún dato en tu computadora",
 		"controls": {
 			"next": "Siguiente",
-			"history": "Mostrar/ocultar Historia",
-			"back": "Cerrar vista actual / Mostrar menú",
+			"history": "Mostrar/ocultar registro",
+			"back": "Cerrar la pantalla actual / Mostrar menú",
 			"bg_move": "Mover imagen de fondo",
-			"auto_play" : "Auto-play",
+			"auto_play" : "Reproducción automática",
 			"page_nav": "Navegar a la página siguiente / anterior",
 			"load": "Abrir panel de carga",
 			"save": "Abrir panel de guardado",
 			"q_save": "Guardado rápido",
-			"q_load": "Cargar rápido",
+			"q_load": "Carga rápida",
 			"config": "Abrir panel de configuración",
 			"_hold": "[i](Sostener)"
 		}
@@ -133,31 +133,31 @@
 	},
 	"game": {
 		"skip-named": [
-			"Ya has visto la escena",
-			"¿Quieres omitirla?"
+			"Ya has visto esta escena.",
+			"¿Quisieras saltarla?"
 		],
-		"skip-unnamed": "Ya has visto esta escena. ¿Quieres omitirla?",
+		"skip-unnamed": "Ya has visto esta escena. ¿Quisieras saltarla?",
 		"toast-qsave": "El progreso ha sido guardado",
 		"toast-qload": "Progreso restaurado",
 		"toast-load": "Progreso restaurado",
 		"toast-save-fail": "No se pudo guardar el progreso",
 		"toast-load-fail": "No se pudo restaurar el progreso",
-		"toast-autoplay-stop": "Auto-play detenido",
+		"toast-autoplay-stop": "Reproducción automática detenida",
 		"toast-ffw-stop": "Avance rápido detenido",
 		"toast-hscene-waning": "Estás a punto de leer una escena con contenido para adultos."
 	},
 	"menu": {
-		"graphics": "Gráficos",
-		"history": "Historia",
+		"graphics": "Ocultar texto",
+		"history": "Registro",
 		"save": "Guardar",
 		"load": "Cargar",
-		"config": "Configuración",
-		"auto-play": "Auto-play",
+		"config": "Ajustes",
+		"auto-play": "Reproducción automática",
 		"ffw": "Avance rápido",
 		"title": "Título",
 		"q-save": "Guardado rápido",
-		"q-load": "Cargado rápido",
-		"copy-scene-url": "Copy scene link"
+		"q-load": "Carga rápida",
+		"copy-scene-url": "Copiar link de escena"
 	},
 	"history": {
 		"load": "Cargar",
