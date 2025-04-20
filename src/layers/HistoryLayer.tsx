@@ -21,7 +21,6 @@ const HistoryLayer = ({ divProps }: Props) => {
 	const [display, setDisplay] = useObserved(displayMode, 'history')
 	const [view, setView] = useState<"history" | "flowchart">("history")
 	const rootRef = useRef<HTMLDivElement>(null)
-	const historyRef = useRef<HTMLDivElement>(null)
 
 	useObserver(()=> {
 		if (rootRef.current?.contains(document.activeElement))
@@ -41,37 +40,16 @@ const HistoryLayer = ({ divProps }: Props) => {
 				if (!history.empty) // at least one element in the iterator
 					setDisplay(true)
 				script.autoPlay = false
-			} else if (e.deltaY > 0 && display && historyRef.current?.scrollHeight == historyRef.current?.clientHeight) {
-				handleClose()
 			}
 		}
 		return addEventListener({event: 'wheel', handler: handleWheel})
 	}, [setDisplay])
 
 	useEffect(() => {
-		//when scrolled to the bottom of history, hide history
-		const handleScroll = (e: any) => {
-			const bottom = e.target.scrollHeight - Math.round(e.target.scrollTop) === e.target.clientHeight
-			if (bottom)
-				handleClose()
-		}
-		return addEventListener({event: 'scroll', handler: handleScroll, element: historyRef.current})
-	}, [historyRef, setDisplay])
-
-	useEffect(() => {
 		if (display && view === "flowchart") {
 			setView("history")
 		}
 	}, [display])
-
-	useEffect(() => {
-		if (view === "history") {
-			// scroll to the bottom of the history
-			const historyElement = historyRef.current
-			if (historyElement)
-				historyElement.scrollTop = historyElement!.scrollHeight - historyElement!.clientHeight - 1
-		}
-	}, [view])
 	 
 	return (
 		<div
@@ -79,15 +57,12 @@ const HistoryLayer = ({ divProps }: Props) => {
 			{...divProps}
 			className={classNames("layer", {"show": display}, divProps?.className)}
 			ref={rootRef}>
-			<div ref={historyRef} className='scroll-container' key={view}>
+			<div className='scroll-container' key={view}>
 				{view === "history" ?
-					<div id="history">
-						<HistoryDisplay display={display} close={handleClose} />
-					</div>
-				:
-					<div id="scenes">
-						<FlowchartDisplay display={display} />
-					</div>
+					<HistoryDisplay display={display} close={handleClose} />
+				: view === "flowchart" ?
+					<FlowchartDisplay display={display} />
+				: null
 				}
 			</div>
 
@@ -119,13 +94,24 @@ type HistoryDisplayProps = {
 	close: () => void
 }
 const HistoryDisplay = ({ display, close }: HistoryDisplayProps) => {
+	const historyRef = useRef<HTMLDivElement>(null)
+
 	useEffect(() => {
-		if (display) {
-			const historyElement = document.getElementById("history")
-			if (historyElement)
-				historyElement.scrollTop = historyElement!.scrollHeight - historyElement!.clientHeight - 1
-		}
+		// scroll near the bottom of the history
+		const historyElement = historyRef.current
+		if (historyElement)
+			historyElement.scrollTop = historyElement!.scrollHeight - historyElement!.clientHeight - 1
 	}, [display])
+
+	useEffect(() => {
+		//when scrolled to the bottom of history, hide history
+		const handleScroll = (e: any) => {
+			const bottom = e.target.scrollHeight - Math.round(e.target.scrollTop) === e.target.clientHeight
+			if (bottom)
+				close()
+		}
+		return addEventListener({event: 'scroll', handler: handleScroll, element: historyRef.current})
+	}, [historyRef])
 
 	function onClick(saveState: SaveState) {
 		close()
@@ -133,10 +119,12 @@ const HistoryDisplay = ({ display, close }: HistoryDisplayProps) => {
 	}
 
 	return (
-		<div className="text-container">
-			{Array.from(history, (page, i) =>
-				<PageElement key={i} saveState={page} onLoad={onClick} />
-			)}
+		<div id="history" ref={historyRef}>
+			<div className="text-container">
+				{Array.from(history, (page, i) =>
+					<PageElement key={i} saveState={page} onLoad={onClick} />
+				)}
+			</div>
 		</div>
 	)
 }
@@ -171,8 +159,10 @@ const FlowchartDisplay = ({ display }: FlowchartDisplayProps) => {
 	}, [display])
 
 	return (
-		<div className="flowchart-container">
-			<Flowchart/>
+		<div id="scenes">
+			<div className="flowchart-container">
+				<Flowchart/>
+			</div>
 		</div>
 	)
 }

@@ -31,6 +31,7 @@ const Oshiete = ({unlocked, ending, number}: Props) => {
 					${ending?.day ? `Day: ${ending.day}` : ""}
 				</div>
 			`}
+			data-tooltip-place="top"
 		>
 			{unlocked && ending ?
 				<img

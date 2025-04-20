@@ -10,6 +10,7 @@
 		min-width: 0;
 		gap: .6em;
 		place-content: start;
+		flex-grow: 0;
 
 		.ending {
 			display: flex;
@@ -121,7 +122,7 @@
 	}
 	.badendings-list {
 		margin-top: 1em;
-		gap: 1.6em 1.4em;
+		gap: 1.4em 1.4em;
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(46px, 1fr));
 		place-content: flex-start;
