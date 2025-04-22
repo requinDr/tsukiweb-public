@@ -1,5 +1,5 @@
 import { memo, useCallback } from "react";
-import { gameContext } from "../utils/variables";
+import { gameContext } from "utils/gameContext";
 import { SCREEN, displayMode } from "../utils/display";
 import SpriteGraphics from "../components/molecules/SpriteGraphics";
 import BackgroundGraphics from "../components/molecules/BackgroundGraphics";

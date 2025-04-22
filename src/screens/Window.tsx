@@ -8,7 +8,7 @@ import TextLayer from '../layers/TextLayer';
 import GraphicsLayer from '../layers/GraphicsLayer';
 import { inGameKeymap } from '../utils/KeyMap';
 import script from '../utils/script';
-import { gameContext, gameSession } from '../utils/variables';
+import { gameContext } from "utils/gameContext";
 import { quickSave, quickLoad, loadSaveState } from "../utils/savestates";
 import SkipLayer from '../layers/SkipLayer';
 import SavesLayer from '../layers/SavesLayer';
@@ -38,11 +38,11 @@ const keyMap = new KeyMap(inGameKeymap, (action, evt, ...args)=> {
 		case "page_nav" : page_nav(args[0], evt); break
 		case "history"  : toggleView('history'); break
 		case "graphics" : toggleView('graphics'); break
-		case "load"     : gameSession.continueScript && toggleView('load'); break
-		case "save"     : gameSession.continueScript && toggleView('save'); break
+		case "load"     : gameContext.continueScript && toggleView('load'); break
+		case "save"     : gameContext.continueScript && toggleView('save'); break
 		case "config"   : toggleView('config'); break
-		case "q_save"   : gameSession.continueScript && quickSave(); break
-		case "q_load"   : gameSession.continueScript && quickLoad(); break
+		case "q_save"   : gameContext.continueScript && quickSave(); break
+		case "q_load"   : gameContext.continueScript && quickLoad(); break
 		case "bg_move"  : moveBg(args[0]); break
 	}
 })
@@ -184,16 +184,13 @@ function page_nav(direction: "prev"|"next", event?: KeyboardEvent) {
 	stopAutoPlay(!(event?.repeat))
 	switch (direction) {
 		case "prev":
-			let ss = history.get(history.length < 2 ? -1 : -2)
-			if (ss)
-				loadSaveState(ss)
+			history.load(history.pagesLength < 2 ? -1 : -2)
 			break
 		case "next":
 			if (!script.isFastForward && isViewAnyOf("text", "graphics")) {
-				const currLabel = gameContext.label
-				script.fastForward((_l, _i, label)=>{
-					return script.getOffsetLine(-1)?.startsWith('\\')
-							|| label != currLabel
+				const {label, page} = gameContext
+				script.fastForward((_l, context)=>{
+					return context.page != page || context.label != label
 				})
 			}
 			break;
@@ -227,13 +224,13 @@ const Window = () => {
 	const show = useRef({
 		graphics: true,
 		history: true,
-		save: gameSession.continueScript,
-		load: gameSession.continueScript,
+		save: gameContext.continueScript,
+		load: gameContext.continueScript,
 		config: true,
 		title: true,
 
-		qSave: gameSession.continueScript,
-		qLoad: gameSession.continueScript,
+		qSave: gameContext.continueScript,
+		qLoad: gameContext.continueScript,
 		copyScene: true,
 	})
 
@@ -243,8 +240,8 @@ const Window = () => {
 			setTimeout(()=> {
 				if (gameContext.label != '')
 					return
-				if (!history.empty)
-					loadSaveState(history.last)
+				if (history.pagesLength > 0)
+					history.load(-1)
 				else
 					script.moveTo('openning')
 			}, 100)

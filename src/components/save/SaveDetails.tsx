@@ -6,6 +6,7 @@ import { BiSolidHeart } from "react-icons/bi"
 import GraphicsGroup from "../molecules/GraphicsGroup"
 import { strings } from "translation/lang"
 import classNames from "classnames"
+import { gameContext } from "utils/gameContext"
 
 type SaveDetailsProps = {
 	id?: number
@@ -14,13 +15,14 @@ type SaveDetailsProps = {
 }
 const SaveDetails = ({id, saveState, deleteSave}: SaveDetailsProps)=> {
 	const [phaseTitle, phaseDay] = saveState ? savePhaseTexts(saveState) : ["", ""]
-
+	const graphics = saveState?.page.graphics ?? {bg: "#000"}
+	const regard = saveState?.history[saveState.history.length-1].regard ?? {}
 	return (
 		<section className={classNames("info", { "preview-save": saveState !== undefined })}>		
 			{id != undefined && saveState != undefined && <>
 				<div className="graphics-wrapper">
-					{(saveState?.graphics || saveState?.context.graphics) &&
-						<GraphicsGroup images={saveState?.graphics ?? saveState?.context.graphics ?? {bg:"#000"}} />
+					{(graphics) &&
+						<GraphicsGroup images={graphics} />
 					}
 				</div>
 				{(phaseTitle || phaseDay) && 
@@ -31,7 +33,7 @@ const SaveDetails = ({id, saveState, deleteSave}: SaveDetailsProps)=> {
 				}
 
 				<div className="affection">
-					<AffectionTable regard={saveState.progress.regard} />
+					<AffectionTable regard={regard} />
 				</div>
 
 				<div className="actions">
@@ -53,20 +55,20 @@ const SaveDetails = ({id, saveState, deleteSave}: SaveDetailsProps)=> {
 export default SaveDetails
 
 
-const AffectionTable = ({ regard }: { regard: SaveState["progress"]["regard"] }) => {
+const AffectionTable = ({ regard }: { regard?: Partial<typeof gameContext.regard> }) => {
 	return (
 		<table className="affection-table">
 			<tbody>
 				{regard?.ark && regard?.ark > 0 &&
 					<AffectionRow name={strings.characters.ark} value={regard.ark} maxHearts={20} />}
-				{regard?.ciel && regard?.ciel > 0 &&
-					<AffectionRow name={strings.characters.cel} value={regard.ciel} maxHearts={20} />}
-				{regard?.akiha && regard?.akiha > 0 &&
-					<AffectionRow name={strings.characters.aki} value={regard.akiha} maxHearts={20} />}
-				{regard?.hisui && regard?.hisui > 0 &&
-					<AffectionRow name={strings.characters.his} value={regard.hisui} maxHearts={20} />}
-				{regard?.kohaku && regard?.kohaku > 0 &&
-					<AffectionRow name={strings.characters.koha} value={regard.kohaku} maxHearts={20} />}
+				{regard?.cel && regard?.cel > 0 &&
+					<AffectionRow name={strings.characters.cel} value={regard.cel} maxHearts={20} />}
+				{regard?.aki && regard?.aki > 0 &&
+					<AffectionRow name={strings.characters.aki} value={regard.aki} maxHearts={20} />}
+				{regard?.his && regard?.his > 0 &&
+					<AffectionRow name={strings.characters.his} value={regard.his} maxHearts={20} />}
+				{regard?.koha && regard?.koha > 0 &&
+					<AffectionRow name={strings.characters.koha} value={regard.koha} maxHearts={20} />}
 			</tbody>
 		</table>
 	)

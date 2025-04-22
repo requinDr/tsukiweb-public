@@ -1,5 +1,4 @@
 import { memo, Fragment } from "react"
-import { PageContent } from "../../types"
 import { strings } from "../../translation/lang"
 import { phaseTexts } from "../../translation/assets"
 import { SaveState } from "../../utils/savestates"
@@ -8,16 +7,18 @@ import Button from "@tsukiweb-common/ui-core/components/Button"
 import { MdReplay } from "react-icons/md"
 import classNames from "classnames"
 import { Bbcode, bb } from "@tsukiweb-common/utils/Bbcode"
+import { PageEntry } from "utils/history"
+import { LabelName, TsukihimeSceneName } from "types"
 
-const PageElement = ({saveState, onLoad}: {saveState: SaveState, onLoad: (ss: SaveState)=>void})=> {
-	if (saveState.page == undefined)
+const PageElement = ({content, onLoad}: {content: PageEntry, onLoad: (page: PageEntry)=>void})=> {
+	
+	if (!content)
 		return <></>
 	
-	const {contentType, ...content} = saveState.page
 	let displayContent
-	switch(contentType) {
+	switch(content.type) {
 		case "text" :
-			const {text} = content as PageContent<"text">
+			const text = content.text ?? ""
 			displayContent = text.split('\n').map((line, i) =>
 				<Fragment key={i}>
 					{i > 0 && <br/>}
@@ -26,7 +27,7 @@ const PageElement = ({saveState, onLoad}: {saveState: SaveState, onLoad: (ss: Sa
 			)
 			break
 		case "choice":
-			const {choices, selected} = content as PageContent<"choice">  
+			const {choices, selected} = content as PageEntry<"choice">
 			displayContent = <>{choices.map(({str, index})=>
 				<div key={index} className={classNames('choice', {selected: index==selected})}>
 					{str}
@@ -34,14 +35,14 @@ const PageElement = ({saveState, onLoad}: {saveState: SaveState, onLoad: (ss: Sa
 			)}</>
 			break
 		case "skip" :
-			const {scene} = content as PageContent<"skip">
-			const sceneTitle = getSceneTitle(scene)??""
+			const {label} = content as PageEntry<"skip">
+			const sceneTitle = getSceneTitle(label as TsukihimeSceneName)??""
 			displayContent = <span className='skip'>
 				{bb(strings.history.skipped.replace('$0', sceneTitle))}
 			</span>
 			break
 		case "phase" :
-			const {route, routeDay, day} = saveState.context.phase ?? {}
+			const {route, routeDay, day} = content as PageEntry<"phase">
 			const [phaseTitle, phaseDay] = phaseTexts(route ?? "", routeDay ?? "", day ?? 0)
 			displayContent = <span className='phase'>
 				{phaseTitle && bb(phaseTitle)}
@@ -49,13 +50,13 @@ const PageElement = ({saveState, onLoad}: {saveState: SaveState, onLoad: (ss: Sa
 			</span>
 			break
 		default :
-			throw Error(`Unknown page type ${contentType}`)
+			throw Error(`Unknown page type ${content.type}`)
 	}
 	return (
 	<>
-		<hr {...{"page-type": contentType}} />
-		{saveState &&
-			<Button onClick={onLoad.bind(null,saveState)} className='load'>
+		<hr {...{"page-type": content.type}} />
+		{content &&
+			<Button onClick={onLoad.bind(null,content)} className='load'>
 				<MdReplay />	{strings.history.load}
 			</Button>
 		}

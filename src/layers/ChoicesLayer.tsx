@@ -27,8 +27,8 @@ const ChoicesLayer = () => {
 
   const handleSelect = (choice: Choice) => {
     console.debug(choice)
-    const lastPage = history.last?.page
-    if (lastPage?.contentType == "choice")
+    const lastPage = history.lastPage
+    if (lastPage?.type == "choice") 
       (lastPage as PageContent<"choice">).selected = choice.index
     script.moveTo(choice.label)
     choicesContainer.choices = []

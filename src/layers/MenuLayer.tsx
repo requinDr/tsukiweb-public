@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react"
 import { MdCopyAll, MdFastForward, MdFullscreen, MdFullscreenExit, MdOutlineVolumeOff, MdOutlineVolumeUp, MdPlayArrow } from "react-icons/md"
-import { gameContext } from "../utils/variables"
+import { gameContext } from "utils/gameContext"
 import { settings } from "../utils/settings"
 import { quickLoad, quickSave } from "../utils/savestates"
 import script from "../utils/script"
@@ -155,7 +155,7 @@ const ActionsButtons = ({show}: ActionsButtonsProps) => {
 	}
 	const fastForwardScene = ()=> {
 		const currLabel = gameContext.label
-		script.fastForward((_l, _i, label)=> label != currLabel)
+		script.fastForward((_l, context)=> context.label != currLabel)
 		displayMode.menu = false
 	}
 	const autoPlay = () => {

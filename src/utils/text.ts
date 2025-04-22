@@ -1,72 +1,62 @@
-import { PageContent } from "../types"
-import { gameContext } from "./variables"
+import { gameContext } from "./gameContext"
 import { settings } from "./settings"
-import history from "../utils/history"
 import { icons } from "../layers/TextLayer"
 import { resettable, preprocessText } from "@tsukiweb-common/utils/utils"
+import { observe } from "@tsukiweb-common/utils/Observer"
 
 export const [scriptInterface, resetSI] = resettable({
-  text: "" as string,
   glyph: undefined as keyof typeof icons|undefined,
   fastForward: false as boolean,
   onFinish: undefined as VoidFunction|undefined
 })
 
-history.addListener(()=> {
-  scriptInterface.text = ""
+observe(gameContext, 'text', ()=> {
   scriptInterface.glyph = undefined
 })
 
-function appendText(text: string) {
-  const lastPage = history.last.page as PageContent<"text">
-  lastPage.text += text
-  scriptInterface.text = lastPage.text
-  scriptInterface.glyph = undefined
-}
-
-function onBreakChar(_: string, cmd: string, onFinish: VoidFunction) {
-  let delay = 0
-  switch(cmd) {
-    case '@' :
-      scriptInterface.glyph = "moon"
-      delay = settings.autoClickDelay
-      break
-    case '\\' :
-      scriptInterface.glyph = "page"
-      delay = settings.nextPageDelay
-      break
-    default : throw Error(`unknown break char ${cmd}`)
-  }
+function onClickWait(_txt: string, _cmd: string, onFinish: VoidFunction) {
+  scriptInterface.glyph = "moon"
   return { next: ()=> {
     scriptInterface.glyph = undefined
     onFinish()
-  }, autoPlayDelay: delay}
+  }, autoPlayDelay: settings.autoClickDelay }
+}
+
+function onPageWait(_txt: string, _cmd: string, onFinish: VoidFunction) {
+  scriptInterface.glyph = "page"
+  return { next: ()=> {
+    scriptInterface.glyph = undefined // this might be redundant
+    gameContext.page++
+    onFinish()
+  }, autoPlayDelay: settings.nextPageDelay }
+}
+
+function onText(text: string, _cmd: string, onFinish: VoidFunction) {
+  if (text == '\n') { // line breaks are displayed instantly
+    gameContext.text += '\n'
+    return
+  }
+  text = preprocessText(gameContext.textPrefix + text)
+  gameContext.text += text
+  
+  scriptInterface.onFinish = ()=> {
+    scriptInterface.onFinish = undefined,
+    scriptInterface.fastForward = false
+    onFinish()
+  }
+  return {
+    next: () => {
+      scriptInterface.fastForward = true;
+    },
+  }
 }
 
 export const commands = {
-  'br' : appendText.bind(null, "\n"),
-  '@'  : onBreakChar,
-  '\\' : onBreakChar,
-  '`'  : (text:string, _: string, onFinish: VoidFunction)=> {
-    if (text == '\n') { // line breaks are displayed instantly
-      appendText('\n')
-      return
-    }
-    text = preprocessText(gameContext.textPrefix + text)
-    appendText(text)
-    
-    scriptInterface.onFinish = ()=> {
-      scriptInterface.onFinish = undefined,
-      scriptInterface.fastForward = false
-      onFinish()
-    }
-    return {
-      next: () => {
-        scriptInterface.fastForward = true;
-      }
-    }
-  },
-  'textcolor': (color: string, _: string)=> {
+  'br' : ()=>{ gameContext.text += "\n" },
+  '@'  : onClickWait,
+  '\\' : onPageWait,
+  '`'  : onText,
+  'textcolor': (color: string)=> {
     gameContext.textPrefix = `[color=${color}]`
   }
 }

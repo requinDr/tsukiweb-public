@@ -27,8 +27,7 @@ function compareSaveStates([id1, ss1]: [number, SaveState], [id2, ss2]: [number,
 }
 
 export function savePhaseTexts(saveState: SaveState) {
-	const context = saveState.context
-	const {route, routeDay, day} = context.phase || {}
+	const {route, routeDay, day} = saveState.page.phase || {}
 	return phaseTexts(route ?? "", routeDay ?? "", day ?? 0).map(noBb)
 }
 

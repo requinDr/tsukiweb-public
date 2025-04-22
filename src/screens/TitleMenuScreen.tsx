@@ -4,7 +4,8 @@ import moon from "../assets/images/moon.webp"
 import '../styles/title-menu.scss'
 import { SCREEN } from '../utils/display'
 import * as motion from "motion/react-m"
-import { continueGame, hasSaveStates, newGame, viewedScene } from '../utils/savestates'
+import { continueGame, hasSaveStates, newGame } from '../utils/savestates'
+import { viewedScene } from "utils/settings"
 import { strings } from "../translation/lang"
 import { MdOutlineVolumeOff, MdOutlineVolumeUp } from 'react-icons/md'
 import { settings } from '../utils/settings'

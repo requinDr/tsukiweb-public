@@ -7,7 +7,8 @@ import history from "./history"
 import { SCENE_ATTRS } from "./constants"
 import { commands as timerCommands } from "./timer"
 import { checkIfCondition, creditsScript, extractInstructions, fetchFBlock, fetchScene, isScene, isThScene } from "./scriptUtils"
-import { commands as variableCommands, gameContext, gameSession } from "./variables"
+import { commands as variableCommands } from "./variables"
+import { gameContext } from "./gameContext"
 import { settings } from "./settings"
 import { toast } from "react-toastify"
 import { SCREEN, displayMode } from "./display"
@@ -25,7 +26,7 @@ type CommandMap = Map<string, CommandProcessFunction|null>
 
 type SkipCallback = (scene: TsukihimeSceneName, confirm:(skip: boolean)=>void)=>void
 
-type FastForwardStopCondition = (line:string, index: number, label: string)=>boolean
+type FastForwardStopCondition = (line:string, context: typeof gameContext)=>boolean
 
 let sceneLines: Array<string> = []
 let currentCommand: CommandHandler | undefined
@@ -51,7 +52,7 @@ let skipCancelCallback: VoidFunction | null = null
  */
 function skipConfirm(label: TsukihimeSceneName, skip: boolean) {
 	if (skip) {
-		history.onPageBreak("skip", label)
+		history.onSceneSkip()
 		onSceneEnd(label)
 	} else {
 		// check if context was changed while asking user
@@ -148,6 +149,40 @@ export const script = {
 	getOffsetLine(offset: number) {
 		return sceneLines[gameContext.index+offset]
 	},
+	
+	getPageIndex(page: number) {
+		if (page == 0)
+			return 0
+		let p = 0
+		for (const [i, line] of sceneLines.entries()) {
+			if (line.startsWith('\\')) {
+				p += 1
+				if (p == page)
+					return i+1
+			} else if (/^gosub \*(right|left)_phase/.test(line)) {
+				if (!sceneLines[i+1].startsWith('skip')) { // prevents counting 2 pages for conditional phases
+					p += 1
+					if (p == page)
+						return i+1
+				}
+			}
+		}
+		return sceneLines.length // return end of file if not enough pages
+	},
+	getPageAtIndex(index: number) {
+		let p = 0
+		for (const [i, line] of sceneLines.entries()) {
+			if (i == index)
+				break
+			
+			if (line.startsWith('\\'))
+				p += 1
+			else if (/^gosub \*(right|left)_phase/.test(line) &&
+					 !sceneLines[i+1].startsWith('skip')) // prevents counting 2 pages for conditional phases
+				p += 1
+		}
+		return p
+	},
 
 	moveTo(label: LabelName|'', index: number = -1) {
 		gameContext.label = label
@@ -191,7 +226,7 @@ function processPhase(dir: "l"|"r") {
 			`${common}\`,${invDir}cartain,400`
 		]
 	}
-	history.onPageBreak("phase")
+	history.onPhase(route, routeDay, day, bg)
 	return [
 		...extractInstructions(`playstop`),
 		...extractInstructions(`wavestop`),
@@ -199,7 +234,8 @@ function processPhase(dir: "l"|"r") {
 		...extractInstructions(`bg ${bg},${dir}cartain,400`),
 		...(texts.map(extractInstructions).flat()),
 		{cmd: "click", arg: Math.max(1000, settings.nextPageDelay).toString()},
-		...extractInstructions(`bg #000000,crossfade,400`)
+		...extractInstructions(`bg #000000,crossfade,400`),
+		...extractInstructions(`inc %page`)
 	];
 }
 
@@ -358,14 +394,6 @@ export async function processLine(line: string) {
 	}
 }
 
-function createPageIfNeeded() {
-	const {index, label} = gameContext
-	if (isScene(label) && (index == 0 || sceneLines[index-1].startsWith('\\') ||
-			(history.last?.page?.contentType != "text"))) {
-		history.onPageBreak("text", "")
-	}
-}
-
 /**
  * Executed when {@link gameContext.index} is modified,
  * when the scene is loaded, or when the screen changes.
@@ -380,10 +408,10 @@ async function processCurrentLine() {
 			lines.length == 0 || // scene not loaded
 			displayMode.screen != SCREEN.WINDOW) // not in the right screen
 		return
-
 	if (currentCommand) {
 		// Index/Label changed while executing an instruction.
 		// Cancel unfinished instructions.
+		console.debug(`canceling execution of line ${label}:${index}`)
 		cancelCurrentCommand()
 		// Process the current line after aborting the previous line
 		setTimeout(processCurrentLine, 0)
@@ -391,11 +419,10 @@ async function processCurrentLine() {
 	}
 
 	if (index < lines.length) {
-		createPageIfNeeded()
 		let line = lines[index]
 		console.debug(`${label}:${index}: ${line}`)
 
-		if (fastForwardStopCondition?.(line, gameContext.index, gameContext.label))
+		if (fastForwardStopCondition?.(line, gameContext))
 			fastForwardStopCondition = undefined
 
 		await processLine(line)
@@ -404,8 +431,9 @@ async function processCurrentLine() {
 			// processCurrentLine() will be called again by the observer.
 			// The index should not be incremented
 			lineSkipped = false
-			if (history.last?.context.index == index)
-				history.pop() // if the skipped line is the first of the page, remove page from history
+			//TODO check if test below is necessary with last version
+			//if (history.lastPage?.index == index)
+			//	history.pop() // if the skipped line is the first of the page, remove page from history
 		} else {
 			gameContext.index++
 		}
@@ -454,10 +482,18 @@ async function loadLabel(label: LabelName|"") {
 			fetchSceneLines()
 	}
 }
+export function skipSceneLabel(label = gameContext.label) {
+	if (/^s\d+a?$/.test(label))
+		return `skip${label.substring(1)}` as LabelName
+	else if (label == "openning")
+		return 's20'
+	else
+		return 'endofplay'
+}
 
 function onSceneEnd(label = gameContext.label, nextLabel:LabelName|undefined=undefined) {
 	console.debug(`ending ${label}`)
-	if (!gameSession.continueScript) {
+	if (!gameContext.continueScript) {
 		window.history.back(); // return to previous screen
 	} else if (isScene(label)) {
 		// add scene to completed scenes
@@ -465,12 +501,8 @@ function onSceneEnd(label = gameContext.label, nextLabel:LabelName|undefined=und
 			settings.completedScenes.push(label)
 		if (nextLabel)
 			script.moveTo(nextLabel)
-		else if (/^s\d+a?$/.test(label))
-			script.moveTo(`skip${label.substring(1)}` as LabelName)
-		else if (label == "openning")
-			script.moveTo('s20')
 		else
-			script.moveTo('endofplay')
+			script.moveTo(skipSceneLabel(label))
 	}
 }
 
@@ -503,6 +535,10 @@ function onSceneStart() {
 
 observe(gameContext, 'label', loadLabel)
 observe(gameContext, 'index', processCurrentLine)
+observe(gameContext, 'page', (page)=> {
+	if (page != 0 && gameContext.index <= 0 && sceneLines.length > 0)
+		gameContext.index = script.getPageIndex(page)
+})
 observe(displayMode, 'screen', (screen)=> {
 	if (screen != SCREEN.WINDOW) {
 		// clear values not in gameContext

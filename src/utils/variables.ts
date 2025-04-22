@@ -1,84 +1,16 @@
-import { Graphics, NumVarName, StrVarName, VarName } from "@tsukiweb-common/types"
-import { LabelName, RouteName, RouteDayName } from "../types"
-import { SCREEN, displayMode } from "./display"
+import { NumVarName, StrVarName, VarName } from "@tsukiweb-common/types"
+import { RouteName, RouteDayName } from "../types"
 import { endings } from "./endings"
-import { resettable, deepFreeze, deepAssign } from "@tsukiweb-common/utils/utils"
-import { observe } from "@tsukiweb-common/utils/Observer"
-import { StoredJSON } from "@tsukiweb-common/utils/storage"
+import { deepAssign } from "@tsukiweb-common/utils/utils"
+import { gameContext } from "./gameContext"
 
 //##############################################################################
-//#                             SCENARIO VARIABLES                             #
+//#region                       VARIABLE PROXIES
 //##############################################################################
 
-const [gameContext, resetContext, defaultGameContext] = resettable(deepFreeze({
-//_____________________________position in scenario_____________________________
+//___________________________________endings____________________________________
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-  label: '' as LabelName|'', // script block label
-  index: 0, // line index in the labeled script block.
-  phase: {
-    route: "" as RouteName|"",
-    routeDay: "" as RouteDayName|"",
-    day: 0 as number|RouteDayName<'others'>,
-    bg: ""
-  },
-//_______________________________audio, graphics________________________________
-// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-  audio: {
-    track: null as string|null,
-    looped_se: null as string|null,
-  },
-  graphics: {
-    bg: "",
-    l : "",
-    c : "",
-    r : "",
-    monochrome: "",
-  } as Required<Graphics>,
-  textPrefix: "", // used to add bbcode before text lines (for e.g., color or alignement)
-}))
-//_______________________________script variables_______________________________
-// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-const [progress, resetProgress, defaultProgress] = resettable(deepFreeze({
-  regard: {
-    ark: 0,
-    ciel: 0,
-    akiha: 0,
-    kohaku: 0,
-    hisui: 0,
-  },
-  flags: new Array<string>(),
-}))
 
-const [gameSession, resetGameSession] = resettable({ // temporaty variables (not to be saved saved)
-  rockending: -1, // written, but never read in the script.
-  flushcount: 0,  //used in for loops in the script
-  continueScript: true, // false if the game must go back to the previous menu once the scene ends
-})
-const gameSessionStorage = new StoredJSON("gameSession", true, ()=> {
-  return gameSession
-})
-if (gameSessionStorage.exists()) {
-  deepAssign(gameSession, gameSessionStorage.get()!)
-}
-
-export { gameContext, defaultGameContext, progress, defaultProgress, gameSession }
-window.addEventListener('load', ()=> {
-  observe(displayMode, 'screen', (screen)=> {
-    if (screen != SCREEN.WINDOW) {
-      resetContext()
-      resetProgress()
-      resetGameSession()
-      gameSessionStorage.delete()
-    }
-  })
-})
-
-//##############################################################################
-//#                                 FUNCTIONS                                  #
-//##############################################################################
-
-//___________________________________commands___________________________________
-// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 const endingsProxy = new Proxy({}, {
   get(_, name: string) {
     if (Object.hasOwn(endings, name))
@@ -102,20 +34,26 @@ const endingsProxy = new Proxy({}, {
     {ark: 0|1|2, ciel: 0|1|2, akiha: 0|1|2, hisui: 0|1|2, kohaku: 0|1,
      cleared: number}
 
+//____________________________________flags_____________________________________
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 const flagsProxy = new Proxy({}, {
   get(_, flag: string) {
-    return progress.flags.includes(flag) ? 1 : 0
+    return gameContext.flags.includes(flag) ? 1 : 0
   },
   set(_, flag: string, value: number) {
-    if (value == 0 && progress.flags.includes(flag))
-      progress.flags.splice(progress.flags.indexOf(flag),1)
-    else if (value == 1 && !progress.flags.includes(flag)) {
-      progress.flags.push(flag)
-      progress.flags.sort()
+    if (value == 0 && gameContext.flags.includes(flag))
+      gameContext.flags.splice(gameContext.flags.indexOf(flag),1)
+    else if (value == 1 && !gameContext.flags.includes(flag)) {
+      gameContext.flags.push(flag)
+      gameContext.flags.sort()
     }
     return true
   }
 })
+
+//____________________________________phase_____________________________________
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 const routePhaseRE = /word\/p(?<route>[a-z]+)_(?<rDay>\d+[ab])/
 const parseTitleA = (val: string)=> val.match(routePhaseRE)?.groups ?? {}
@@ -172,13 +110,17 @@ const phaseProxy = new Proxy({}, {
   }
 })
 
+//#endregion ###################################################################
+//#region                      GET / SET VARIABLES
+//##############################################################################
+
 function getVarLocation(fullName: VarName): [any, string] {
   if (!['$','%'].includes(fullName.charAt(0)))
     throw Error(`Ill-formed variable name in 'mov' command: "${fullName}"`)
   let name = fullName.substring(1)
   let parent
-  if (name in gameSession) {
-    parent = gameSession
+  if (['rockending', 'flushcount', 'page'].includes(name)) {
+    parent = gameContext // 'page' is incremented after phases transitions
   }
   else if (name.startsWith("phase")) {
     parent = phaseProxy
@@ -188,10 +130,10 @@ function getVarLocation(fullName: VarName): [any, string] {
     name = name.charAt(3)
   }
   else if (/^[a-z]+_regard$/.test(name)) {
-    parent = progress.regard
+    parent = gameContext.regard
     name = name.substring(0,name.indexOf('_'))
   }
-  else if (/^clear(ed|_[a-z])+/.test(name)) {
+  else if (/^clear(ed|_[a-z]+)/.test(name)) {
     parent = endingsProxy
     name = name.substring(name.indexOf('_')+1) // 0 if no '_' in name
   }
@@ -222,6 +164,10 @@ export function setGameVariable(name: VarName, value: number|string) {
   parent[attrName as keyof typeof parent] = value
 }
 
+//#endregion ###################################################################
+//#region                           COMMANDS
+//##############################################################################
+
 function processVarCmd(arg: string, cmd: string) {
   const [name, v] = arg.split(',') as [VarName, string]
   let currVal = getGameVariable(name)
@@ -245,8 +191,8 @@ export const commands = {
   'dec': processVarCmd,
 }
 
-//##############################################################################
-//#                                   DEBUG                                    #
+//#endregion ###################################################################
+//#region                             DEBUG
 //##############################################################################
 
 declare global {
@@ -254,6 +200,4 @@ declare global {
     [key: string]: any
   }
 }
-window.progress = progress
 window.g = window.gameContext = gameContext
-window.session_vars = gameSession

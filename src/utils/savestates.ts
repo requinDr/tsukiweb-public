@@ -1,40 +1,41 @@
-import { defaultGameContext, defaultProgress, gameContext, gameSession, progress, } from "./variables";
-import { settings } from "./settings"
-import history from './history';
+import { gameContext } from "./gameContext";
+import { settings, viewedScene } from "./settings"
+import history, { PageEntry, PageType } from './history';
 import { toast } from "react-toastify";
 import { FaSave } from "react-icons/fa"
-import { APP_VERSION, SAVE_EXT } from "./constants";
-import { LabelName, PageContent, PageType } from "../types";
+import { SAVE_EXT } from "./constants";
+import { LabelName } from "../types";
 import { SCREEN, displayMode } from "./display";
-import { RecursivePartial } from "@tsukiweb-common/types";
-import { notifyObservers } from "@tsukiweb-common/utils/Observer";
 import { StoredJSON } from "@tsukiweb-common/utils/storage";
-import { jsonDiff, TSForceType, deepAssign, textFileUserDownload, requestJSONs } from "@tsukiweb-common/utils/utils";
+import { TSForceType, textFileUserDownload, requestJSONs, version_compare } from "@tsukiweb-common/utils/utils";
 import { strings } from "translation/lang";
+import script from "./script";
 
 //##############################################################################
-//#                                 SAVESTATES                                 #
+//#region                       TYPES & CONSTANTS
+//##############################################################################
+
+export type SaveState<T extends PageType = PageType> = {
+  history: Array<ReturnType<typeof gameContext.sceneJson>>
+  page: PageEntry<T>
+  date: number
+  version: string
+}
+type SaveStateId = number
+export const QUICK_SAVE_ID: SaveStateId = 0
+
+//#endregion ###################################################################
+//#region                        LOCAL VARIABLES
 //##############################################################################
 
 const savesStorage = new StoredJSON<Iterable<[SaveStateId, SaveState]>>("savestates", false)
-
-export const QUICK_SAVE_ID: SaveStateId = 0
-
-export type SaveState<T extends PageType = PageType> = {
-  context: RecursivePartial<typeof gameContext>
-  progress: RecursivePartial<typeof progress>
-  page?: {
-    contentType: T
-  } & PageContent<T>
-  graphics?: RecursivePartial<typeof gameContext.graphics>
-  date?: number
-  version?: string
-}
-
-type SaveStateId = number
-
 const saveStates = new Map<SaveStateId, SaveState>()
 const listeners = new Array<VoidFunction>()
+
+
+//#endregion ###################################################################
+//#region                            STORAGE
+//##############################################################################
 
 {
   const restored = savesStorage.get()
@@ -42,11 +43,23 @@ const listeners = new Array<VoidFunction>()
     restoreSaveStates(restored)
 }
 
-//________________________________Local storage_________________________________
-// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
 function updateLocalStorage() {
   savesStorage.set(Array.from(saveStates.entries()))
+}
+
+//____________________________________Store_____________________________________
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+/**
+ * Store the savestate in a map with the specified id.
+ * If a previous savestate has the same id, the new one replaces it.
+ * @param id unique id of the savestate in the map.
+ * @param ss savestate to store.
+ */
+export function storeSaveState(id: SaveStateId, ss: SaveState) {
+  saveStates.set(id, ss)
+  updateLocalStorage()
+  notifyListeners()
 }
 
 /**
@@ -60,37 +73,85 @@ export function restoreSaveStates(keyValuePairs: Iterable<[SaveStateId, SaveStat
   updateLocalStorage()
   notifyListeners()
 }
-
-//______________________________SaveState creation______________________________
+//___________________________________Delete_____________________________________
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 /**
- * Creates a savestates that contains the current gameContext and the progress
- * (flags, character regards).
- * @returns the created savestate.
- */
-export function createSaveState<T extends PageType>(page?: {contentType: T} & PageContent<T>) {
-  const ss: SaveState<T> = {
-    context: jsonDiff(gameContext, defaultGameContext),
-    progress: jsonDiff(progress, defaultProgress),
-    page
-  }
-  return ss
-}
-
-/**
- * Store the savestate in a map with the specified id.
- * If a previous savestate has the same id, the new one replaces it.
+ * Delete from the savestate map the savesate with the specified id
  * @param id unique id of the savestate in the map.
- * @param ss savestate to store.
  */
-export function storeSaveState(id: SaveStateId, ss: SaveState) {
-  if (!ss.date)
-    ss.date = Date.now()
-  saveStates.set(id, ss)
+export function deleteSaveState(id: SaveStateId) {
+  saveStates.delete(id)
   updateLocalStorage()
   notifyListeners()
 }
+
+/**
+ * Delete all savestates from the savestates map.
+ */
+export function clearSaveStates() {
+  saveStates.clear()
+  updateLocalStorage()
+  notifyListeners()
+}
+//___________________________________Getters____________________________________
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+export function getSaveState(id: SaveStateId) {
+  return saveStates.get(id)
+}
+
+export function hasSaveStates() {
+  return saveStates.size > 0 || history.pagesLength > 0
+}
+
+/**
+ * Creates an iterator of key-value pairs from the stored savestates,
+ * where the key is the id of the savestate in the map, and the value
+ * is the savestate itself.
+ * @returns the created iterator.
+ */
+export function listSaveStates(): Array<[SaveStateId, SaveState]> {
+  return Array.from(saveStates.entries())
+}
+
+export function getLastSave(): SaveState|undefined {
+  if (saveStates.size == 0)
+    return undefined
+  return Array.from(saveStates.values()).reduce(
+    (ss1, ss2) => ss1.date > ss2.date ? ss1 : ss2)
+}
+
+//_______________________________Saves listeners________________________________
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+export function addSavesChangeListener(onChange: VoidFunction) {
+  if (listeners.indexOf(onChange) >= 0)
+    return
+  listeners.push(onChange)
+}
+
+export function removeSavesChangeListener(onChange: VoidFunction) {
+  const index = listeners.indexOf(onChange)
+  if (index == -1)
+    return false
+  listeners.splice(index, 1)
+  return true
+}
+
+function notifyListeners() {
+  for (const listener of listeners) {
+    listener()
+  }
+}
+
+//#endregion ###################################################################
+//#region                          SAVE & LOAD
+//##############################################################################
+
+//____________________________________Save______________________________________
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 
 /**
  * Store the last savestate from the script'shistory into the savestate map,
@@ -98,11 +159,9 @@ export function storeSaveState(id: SaveStateId, ss: SaveState) {
  * @param id unique id of the savestate in the map.
  */
 export function storeCurrentState(id: SaveStateId) {
-  const ss = history.last
+  const ss = history.createSaveState()
   if (!ss)
     return false
-  ss.graphics = jsonDiff(gameContext.graphics, defaultGameContext.graphics)
-  ss.version = APP_VERSION
   storeSaveState(id, ss)
   return true
 }
@@ -127,7 +186,7 @@ export const quickSave = () => {
   }
 }
 
-//______________________________SaveState loading_______________________________
+//____________________________________Load______________________________________
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 /**
@@ -156,15 +215,18 @@ export function loadSaveState(ss: SaveStateId | SaveState) {
   }
   if (ss) {
     TSForceType<SaveState>(ss)
-    history.onSaveStateLoaded(ss)
-    const ctx = deepAssign(defaultGameContext, ss.context, {clone: true})
-    const pgr = deepAssign(defaultProgress, ss.progress, {clone: true})
-    deepAssign(gameContext, ctx)
-    deepAssign(progress, pgr)
-
-    // force re-processing current line if the index is unchanged
-    notifyObservers(gameContext, 'index')
-
+    if (ss.version && version_compare(ss.version, "0.3.4") > 0) {
+      history.onLoad(ss.page)
+      let page = ss.page
+      if (page.type == "text")
+        page = {...page, text: ""}
+      let index = script.getPageIndex(page.page)
+      gameContext.load({...page, index})
+    } else { // < v0.3.5: no scene history, split progress
+      history.clear()
+      const page = script.getPageAtIndex((ss as any).context.index)
+      gameContext.load({...(ss as any).context, ...(ss as any).progress, page})
+    }
     return true
   }
   return false
@@ -192,17 +254,17 @@ export const quickLoad = ()=> {
 
 export function newGame() {
   history.clear()
-  loadSaveState(blankSaveState())
+  gameContext.load({label: 'openning'})
   displayMode.screen = SCREEN.WINDOW
 }
 
 export async function continueGame() {
   // restart from beginning of last visisted page ...
-  const lastSave = history.last
+  const lastSave = history.pagesLength ? history.createSaveState()
               // or from last saved game
-              ?? getLastSave()
+              : getLastSave()
               // or ask user to provide save file(s).
-              // Also retrieve settings from the save file(s)
+              // Also retrieves settings from the save file(s)
               ?? await loadSaveFiles().then(getLastSave)
   if (lastSave) {
     loadSaveState(lastSave)
@@ -210,98 +272,27 @@ export async function continueGame() {
   }
 }
 
-//______________________________SaveState deletion______________________________
-// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
 /**
- * Delete from the savestate map the savesate with the specified id
- * @param id unique id of the savestate in the map.
+ * Play the specified scene
+ * @param scene scene to play
+ * @param continueScript if true, the script will continue to the next scene. Default is true.
+ * @param viewedOnly if true, the scene will only be played if it has been viewed by the player. Default is true.
  */
-export function deleteSaveState(id: SaveStateId) {
-  saveStates.delete(id)
-  updateLocalStorage()
-  notifyListeners()
-}
-
-/**
- * Delete all savestates from the savestates map.
- */
-export function clearSaveStates() {
-  saveStates.clear()
-  updateLocalStorage()
-  notifyListeners()
-}
-
-//___________________________________Getters____________________________________
-// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-export function getSaveState(id: SaveStateId) {
-  return saveStates.get(id)
-}
-
-export function hasSaveStates() {
-  return saveStates.size > 0 || !history.empty
-}
-
-/**
- * Creates an iterator of key-value pairs from the stored savestates,
- * where the key is the id of the savestate in the map, and the value
- * is the savestate itself.
- * @returns the created iterator.
- */
-export function listSaveStates(): Array<[SaveStateId, SaveState]> {
-  return Array.from(saveStates.entries())
-}
-
-export function getLastSave(): SaveState|undefined {
-  if (saveStates.size == 0)
-    return undefined
-  return Array.from(saveStates.values()).reduce(
-    (ss1, ss2)=>(ss1.date ?? 0) > (ss2.date ?? 0) ? ss1 : ss2)
-}
-
-export function blankSaveState() : Readonly<SaveState> {
-  return {
-    context: defaultGameContext,
-    progress: defaultProgress
-  }
-}
-
-export function loadScene(label: LabelName) : Readonly<SaveState> {
-  return {
-    context: {
-      ...defaultGameContext,
-      label: label
-    },
-    progress: defaultProgress
-  }
-}
-
-//_______________________________Saves listeners________________________________
-// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-export function addSavesChangeListener(onChange: VoidFunction) {
-  if (listeners.indexOf(onChange) >= 0)
+export function playScene(scene: LabelName, {
+                            continueScript = true,
+                            viewedOnly = true
+                          } = {}) {
+  if (viewedOnly && !viewedScene(scene) && !settings.unlockEverything) {
     return
-  listeners.push(onChange)
-}
-
-export function removeSavesChangeListener(onChange: VoidFunction) {
-  const index = listeners.indexOf(onChange)
-  if (index == -1)
-    return false
-  listeners.splice(index, 1)
-  return true
-}
-
-function notifyListeners() {
-  for (const listener of listeners) {
-    listener()
   }
+  history.clear()
+  gameContext.load({label: scene}, continueScript)
+  displayMode.screen = SCREEN.WINDOW
 }
 
-//##############################################################################
-//#                                 SAVE FILES                                 #
+
+//#endregion ###################################################################
+//#region                          SAVE FILES
 //##############################################################################
 
 function twoDigits(n: number) {
@@ -330,7 +321,10 @@ export function exportSave(ids: SaveStateId[]) {
  * to the user or from the specified stringified JSONs.
  * @param saves stringified JSONs, or undefined to ask files from the user.
  */
-export async function loadSaveFiles(saves?: string[] | FileList | undefined | null, allExtensions=false): Promise<boolean> {
+export async function loadSaveFiles(
+    saves?: string[] | FileList | undefined | null,
+    allExtensions=false
+  ): Promise<boolean> {
   let jsons
   if (saves instanceof FileList) {
     jsons = await Promise.all(Array.from(saves).map(file=> {
@@ -358,30 +352,4 @@ export async function loadSaveFiles(saves?: string[] | FileList | undefined | nu
     return [id, save] as [number, SaveState]
   }))
   return true
-}
-
-/**
- * Return if the specified scene has been viewed by the player.
- */
-export function viewedScene(scene: LabelName | string): boolean {
-  return settings.completedScenes.includes(scene)
-}
-
-/**
- * Play the specified scene
- * @param scene scene to play
- * @param continueScript if true, the script will continue to the next scene. Default is true.
- * @param viewedOnly if true, the scene will only be played if it has been viewed by the player. Default is true.
- */
-export function playScene(scene: LabelName, {
-  continueScript = true,
-  viewedOnly = true
-} = {}) {
-  if (viewedOnly && !viewedScene(scene) && !settings.unlockEverything) {
-    return
-  }
-
-  loadSaveState(loadScene(scene))
-  gameSession.continueScript = continueScript
-  displayMode.screen = SCREEN.WINDOW
 }

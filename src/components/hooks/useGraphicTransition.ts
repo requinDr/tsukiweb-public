@@ -1,5 +1,5 @@
 import { useState, useRef, useCallback } from "react";
-import { gameContext } from "../../utils/variables";
+import { gameContext } from "utils/gameContext";
 import { preloadImage } from "../molecules/GraphicsGroup";
 import { SpritePos } from "@tsukiweb-common/types";
 import { useObserver } from "@tsukiweb-common/utils/Observer";

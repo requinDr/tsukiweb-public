@@ -1,6 +1,6 @@
 import { displayMode, SCREEN } from "./display"
 import { audioSePath, audioTrackPath } from "../translation/assets"
-import { gameContext } from "./variables"
+import { gameContext } from "./gameContext"
 import { settings } from "./settings"
 import { observe } from "@tsukiweb-common/utils/Observer"
 import { AudioChannel, BasicAudioManager } from "@tsukiweb-common/utils/AudioManager"

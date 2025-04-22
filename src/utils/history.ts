@@ -1,233 +1,238 @@
-import { StoredJSON } from "@tsukiweb-common/utils/storage"
-import { Choice, PageArgs, PageContent, PageType, TsukihimeSceneName } from "../types"
-import { HISTORY_MAX_PAGES } from "./constants"
-import { SaveState, createSaveState } from "./savestates"
+import { Stored } from "@tsukiweb-common/utils/storage"
+import { Queue } from "@tsukiweb-common/utils/queue"
+import { Choice, LabelName, RouteDayName, RouteName } from "../types"
+import { APP_VERSION, HISTORY_MAX_PAGES } from "./constants"
+import { loadSaveState, SaveState } from "./savestates"
+import { gameContext } from "./gameContext"
+import { isThScene } from "./scriptUtils"
+import { skipSceneLabel } from "./script"
+import { observe } from "@tsukiweb-common/utils/Observer"
+import { displayMode, SCREEN } from "./display"
 
-const historyStorage = new StoredJSON<SaveState[]>("history", true)
+//##############################################################################
+//#region                             TYPES
+//##############################################################################
 
-class History {
-  private pages: SaveState[]
-  private limit: number
-  private listeners: VoidFunction[]
+export type PageType = 'text'|'choice'|'skip'|'phase'
+type PageJson = ReturnType<(typeof gameContext.pageJson)>
+type SceneJson = ReturnType<(typeof gameContext.sceneJson)>
+type PageContent<T extends PageType> = (
+  T extends 'text' ? { } :
+  T extends 'choice' ? {choices: Choice[], selected?: number, label: LabelName} :
+  T extends 'skip' ? { } :
+  T extends 'phase' ? typeof gameContext.phase :
+  never
+)
+export type PageEntry<T extends PageType = PageType> = 
+  PageJson & PageContent<T> & { type: T }
 
-  /**
-   * @param limit maximum number of pages. If 0 or unset, no limit is
-   *              applied.
-   */
+type SceneEntry = ReturnType<(typeof gameContext.sceneJson)>
+
+
+class History extends Stored {
+
+//#endregion ###################################################################
+//#region                      ATTRS, CONSTRUCTOR
+//##############################################################################
+
+  private pages: Queue<PageEntry>
+  private scenes: Queue<SceneEntry>
+
   constructor(limit: number = 0) {
-    this.pages = []
-    this.limit = limit
-    this.listeners = []
+    super("history", true, true)
+    this.pages = new Queue(limit)
+    this.scenes = new Queue()
   }
 
-  /**
-   * number of items in the queue.
-   */
-  get length(): number {
+//#endregion ###################################################################
+//#region                            GETTERS
+//##############################################################################
+
+  get lastPage() {
+    return this.pages.head
+  }
+  get allPages() {
+    return this.pages.slice()
+  }
+  get pagesLength() {
     return this.pages.length
   }
-
-  get empty(): boolean {
-    return this.pages.length === 0
+  get lastScene() {
+    return this.scenes.head
   }
 
-  /**
-   * oldest page in the queue. Next to be removed
-   */
-  get first(): SaveState {
-    return this.pages[0]
-  }
-
-  /**
-   * Most recent page in the queue.
-   */
-  get last(): SaveState {
-    return this.pages[this.pages.length - 1]
-  }
-
-  /**
-   * Get the page at the specified index in the buffer
-   * @param index index of the page to get
-   * @returns the page in the buffer at {@link index}
-   */
-  get(index: number) {
-    if (index >= 0)
-      return this.pages[index]
-    else
-      return this.pages[this.pages.length + index]
-  }
-
-  /**
-   * Remove the oldest pages to fit the buffer size in the specified limit.
-   * Nothing happens if the limit is not set (= 0).
-   */
-  private clean() {
-    const overflow = this.pages.length - this.limit
-    if (this.limit > 0 && overflow > 0)
-      this.trimFirsts(overflow)
-  }
-
-  /**
-   * Empty the buffer.
-   */
-  clear() {
-    this.pages.splice(0, this.pages.length)
-    this.onChange()
-  }
-
-  /**
-   * Append the element at the end of the queue.
-   * If the limit is exceeded, remove the oldest pages
-   * @param elmt element to insert
-   * @returns this
-   */
-  push<T extends PageType>(elmt: SaveState<T>): typeof this {
-    this.pages.push(elmt)
-    this.clean()
-    this.onChange()
-    return this
-  }
-
-  /**
-   * Push a new page to the history
-   * @param contentType type of the page
-   */
-  private createPage<T extends PageType>(contentType: T, ...args: PageArgs<T>) {
-    let content
-    switch(contentType) {
-      case "text" :
-        content = { text: args[0] as string ?? "" } as PageContent<"text">
-        break
-      case "choice": content = { choices: args[0] as Choice[] } as PageContent<"choice">; break
-      case "skip" : content = { scene: args[0] as TsukihimeSceneName } as PageContent<"skip">; break
-      case "phase" : content = {} as PageContent<"phase">
-        break
-      default :
-        throw Error(`Unknown page type ${contentType}`)
+  getCurrentText() {
+    if (this.pages.length == 0)
+      return ""
+    const lastPage = this.pages.head
+    switch (lastPage.type) {
+      case 'text' : return lastPage.text ?? ""
+      case 'choice' :
+        if (this.pages.length == 1) return ""
+        const prevPage = this.pages.get(-2)
+        if (prevPage.type == 'text')
+          return prevPage.text ?? ""
     }
-    this.push(createSaveState({
-      contentType,
-      ...content as PageContent<T>
-    }))
+    return ""
+  }
+  hasScene(label: LabelName) {
+    return this.scenes.findLastIndex(s=>s.label == label) >= 0
   }
 
-  /**
-   * Creates a new page in the history. Replaces the last page if it is an empty text page
-   * @param contentType type of the page to create
-   * @param args content of the page, depending on {@link contentType}
-   */
-  onPageBreak<T extends PageType>(contentType: T, ...args: PageArgs<T>) {
-    const lastPage = this.last?.page
-    if (lastPage?.contentType == "text" && (lastPage as PageContent<"text">).text.length == 0)
-      this.pages.pop() // remove empty text pages from history
-    this.createPage(contentType, ...args)
+//#endregion ###################################################################
+//#region                        PRIVATE METHODS
+//##############################################################################
+
+  private addPage<T extends PageType>(type: T, content: PageContent<T>) {
+    const lastPage = this.pages.empty ? undefined : this.pages.head
+    if (lastPage?.type == "text" && (lastPage.text?.length ?? 0) == 0)
+      this.pages.popHead() // remove empty text pages from history
+    const pageJson = gameContext.pageJson()
+    this.pages.push({type, ...pageJson, ...content})
+    if (isThScene(pageJson.label) &&
+        (this.scenes.empty || this.scenes.head.label != pageJson.label)) {
+      this.scenes.push(gameContext.sceneJson())
+    }
   }
 
-  /**
-   * Remove and return the most recent element in the stack
-   * @returns the removed item
-   */
-  pop(): SaveState | undefined {
-    const page = this.pages.pop()
-    if (page)
-      this.onChange()
-    return page
+  private getSceneIndex(pageIndex: number): number {
+    const page = this.pages.get(pageIndex)
+    let label: LabelName | "" | undefined = page.label
+    if (!isThScene(label)) {
+      label = this.pages.findLast(p => isThScene(p.label), pageIndex)?.label
+      if (!label) {
+        label = this.pages.find(p => isThScene(p.label), pageIndex)?.label
+        if (!label) // only entry in history. Must be the last scene visited
+          return this.scenes.length-1
+        // next scene found, return previous one
+        return this.scenes.findLastIndex(s => s.label == label) - 1
+      }
+    }
+    return this.scenes.findLastIndex(s=>s.label == label)
   }
 
-  /**
-   * remove the top-most n elements from the stack
-   * @param quantity number of elements to remove
-   */
-  private trimLasts(quantity: number) {
-    if (quantity > this.pages.length)
-      quantity = this.pages.length
-    this.pages.splice(this.pages.length - quantity)
+  protected serializeToStorage(): string {
+    return JSON.stringify({
+      pages: this.pages.slice(),
+      scenes: this.scenes.slice()
+    })
   }
 
-  /**
-   * remove the bottom-most n elements from the stack
-   * @param quantity number of elements to remove
-   */
-  private trimFirsts(quantity: number) {
-    if (quantity > this.pages.length)
-      quantity = this.pages.length
-    this.pages.splice(0, quantity)
+  protected deserializeFromStorage(str: string): void {
+    const {pages, scenes} = JSON.parse(str)
+    for (const page of pages)
+      this.pages.push(page)
+    for (const scene of scenes)
+      this.scenes.push(scene)
   }
 
-  /**
-   * Trims the history up to the loaded save-state. If the save-state is not
-   * in the history, the history is cleared.
-   * @param saveState loaded save-state.
-   * @returns true if the save-state was in the history, false otherwise.
-   */
-  onSaveStateLoaded(saveState: SaveState): boolean {
-    let i = this.pages.indexOf(saveState)
-    this.trimLasts(this.pages.length - i)
-    this.onChange()
-    return i >= 0
+//#endregion ###################################################################
+//#region                       INSERTION METHODS
+//##############################################################################
+
+  onChoice(choices: Choice[]) {
+    this.addPage('choice', {
+      choices,
+      label: skipSceneLabel(this.scenes.head.label)
+    })
+  }
+  onPhase(route: RouteName|"", routeDay: RouteDayName|"",
+          day: number|RouteDayName<'others'>, bg: string) {
+    this.addPage('phase', { route, routeDay, day, bg })
+  }
+  onSceneSkip(sceneJson: SceneJson = gameContext.sceneJson()) {
+    this.addPage('skip', { })
+    //this.scenes.push(sceneJson)
+  }
+  onPageBreak() {
+    this.addPage('text', { })
+  }
+  onTextChange() {
+    const {text, page} = gameContext
+    let lastPage: PageEntry
+    if (this.pages.length == 0) {
+      this.onPageBreak();
+      lastPage = this.pages.head
+    } else {
+      lastPage = this.pages.head
+      if (lastPage.type != "text" || lastPage.page != page) {
+        this.onPageBreak()
+        lastPage = this.pages.head
+      }
+    }
+    lastPage.text = text.trim()
   }
 
-  /**
-   * Listen for pages addition or removal.
-   * @param listener callback function to register
-   */
-  addListener(listener: VoidFunction) {
-    this.listeners.push(listener)
-  }
+//#endregion ###################################################################
+//#region                         LOAD METHODS
+//##############################################################################
 
-  /**
-   * Stop listening for pages addition or removal
-   * @param listener callback function to unregister
-   * @returns true if the callback was registered, false otherwise
-   */
-  removeListener(listener: VoidFunction): boolean {
-    const i = this.listeners.indexOf(listener)
-    if (i == -1)
+  load(index: number) {
+    const saveState = this.createSaveState(index)
+    if (!saveState)
       return false
-    this.listeners.splice(i, 1)
+    loadSaveState(saveState)
+    return true
+  }
+  loadScene(label: LabelName) {
+    const sceneIndex = this.scenes.findLastIndex(s => s.label == label)
+    if (sceneIndex < 0)
+      return false
+    const scene= this.scenes.get(sceneIndex)
+    const ss = {
+      history: this.scenes.slice(0, sceneIndex),
+      page: { label: scene.label },
+      date: Date.now(),
+      version: APP_VERSION
+    } as SaveState
+    loadSaveState(ss)
     return true
   }
 
-  /**
-   * pages have been removed or added. Notify the listeners
-   */
-  private onChange() {
-    for (const listener of this.listeners) {
-      listener()
+  onLoad(page: PageEntry) {
+    const pageIndex = this.pages.indexOf(page)
+    if (pageIndex >= 0) {
+      const sceneIndex = this.getSceneIndex(pageIndex)
+      // remove future scenes
+      this.scenes.spliceHead(this.scenes.length - (sceneIndex + 1))
+      // remove future pages including the current one
+      this.pages.spliceHead(this.pages.length - pageIndex)
     }
   }
-
-  /**
-   * Save the history in the session storage
-   */
-  saveSession() {
-    historyStorage.set(this.pages)
+  clear() {
+    this.pages.clear()
+    this.scenes.clear()
   }
 
   /**
-   * restore the history from the session storage
+   * Creates a savestates that contains the scenes history and their flags,
+   * and the context of the page at the specified index in the pages history.
+   * @param index - index of the page to export, last page by default
+   * @returns the created savestate.
    */
-  restoreSession() {
-    const saved = historyStorage.get()
-    if (saved) {
-      this.pages.splice(0, this.pages.length, ...saved)
-      this.clean()
-      this.onChange()
-    }
-  }
-
-  [Symbol.iterator]() {
-    return this.pages[Symbol.iterator]()
+  createSaveState(index: number = this.pagesLength-1) {
+    if (index < 0)
+      index = this.pages.length + index
+    const page = this.pages.get(index)
+    const sceneIndex = this.getSceneIndex(index)
+    return {
+      history: this.scenes.slice(0, sceneIndex+1),
+      page: page,
+      date: Date.now(),
+      version: APP_VERSION
+    } as SaveState
   }
 }
-
-const history = new History(HISTORY_MAX_PAGES)
-history.restoreSession()
-
-//save session when closing the tab or going to another tab
-document.addEventListener("visibilitychange", ()=> {
-  if (document.visibilityState == "hidden")
-    history.saveSession()
-})
+export const history = new History(HISTORY_MAX_PAGES)
+window.addEventListener("load", history.restoreFromStorage.bind(history))
+observe(gameContext, 'page', history.onPageBreak.bind(history))
+observe(gameContext, 'text', history.onTextChange.bind(history))
 
 export default history
+
+declare global {
+  interface Window {
+    [key: string]: any
+  }
+}
+window.h = history

@@ -1,6 +1,6 @@
 import { Choice, LabelName } from "../types"
 import { displayMode } from "./display"
-import { gameContext } from "./variables"
+import { gameContext } from "./gameContext"
 import history from "../utils/history"
 import { preprocessText, resettable } from "@tsukiweb-common/utils/utils"
 
@@ -33,7 +33,7 @@ export const commands = {
     choicesContainer.choices = choices
     displayMode.choice = true;
     console.debug(choices)
-    history.onPageBreak("choice", choices)
+    history.onChoice(choices)
     return {
       next: ()=>{}, // prevent continuing to next instruction
       cancel: ()=> { choicesContainer.choices = [] }

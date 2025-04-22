@@ -2,13 +2,13 @@ import { useEffect, useState, memo, Fragment } from "react"
 import moonIcon from '../assets/icons/icon_moon.svg'
 import pageIcon from '../assets/icons/icon_bars.svg'
 import { settings } from "../utils/settings"
-import history from "../utils/history"
 import { SCREEN, displayMode } from "../utils/display"
 import { resetSI, scriptInterface } from "../utils/text"
 import useMousePointer from "@tsukiweb-common/hooks/useMousePointer"
 import { observe, useObserved, useObserver } from "@tsukiweb-common/utils/Observer"
 import { DivProps } from "@tsukiweb-common/types"
 import { Bbcode, BBTypeWriter } from "@tsukiweb-common/utils/Bbcode"
+import { gameContext } from "utils/gameContext"
 
 export const icons: Record<"moon"|"page", string> = {
   "moon": moonIcon,
@@ -44,7 +44,7 @@ const TextLayer = ({...props}: Props) => {
       if (!displayMode.text && text.length > 0)
         displayMode.text = true
     }
-  }, scriptInterface, 'text')
+  }, gameContext, 'text')
 
   const {className, ...remaining_props} = props
   const classList = ['layer']
@@ -65,7 +65,7 @@ const TextLayer = ({...props}: Props) => {
         </Fragment>)}
 
         {lastLine ?
-          <BBTypeWriter key={history.length*100 + lines.length}
+          <BBTypeWriter key={gameContext.page*100 + lines.length}
             charDelay={immediate ? 0 : settings.textSpeed}
             text={lastLine}
             hideTag="hide"

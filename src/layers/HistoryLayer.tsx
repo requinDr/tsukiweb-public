@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { displayMode, isViewAnyOf } from '../utils/display';
 import { SaveState, loadSaveState } from "../utils/savestates";
-import history from '../utils/history';
+import history, { PageEntry } from '../utils/history';
 import script from '../utils/script';
 import { strings } from '../translation/lang';
 import PageElement from '../components/molecules/PageElement';
@@ -11,7 +11,7 @@ import { addEventListener } from '@tsukiweb-common/utils/utils';
 import classNames from 'classnames';
 import Button from '@tsukiweb-common/ui-core/components/Button';
 import Flowchart from 'components/flowchart/Flowchart';
-import { gameContext } from 'utils/variables';
+import { gameContext } from "utils/gameContext";
 
 
 type Props = {
@@ -37,8 +37,8 @@ const HistoryLayer = ({ divProps }: Props) => {
 			if (e.ctrlKey)
 				return
 			if (e.deltaY < 0 && !display && isViewAnyOf("text", "graphics", "dialog")) {
-				if (!history.empty) // at least one element in the iterator
-					setDisplay(true)
+				//if (!history.empty) // at least one element in the iterator TODO display a 'nothing here' icon
+				setDisplay(true)
 				script.autoPlay = false
 			}
 		}
@@ -113,16 +113,16 @@ const HistoryDisplay = ({ display, close }: HistoryDisplayProps) => {
 		return addEventListener({event: 'scroll', handler: handleScroll, element: historyRef.current})
 	}, [historyRef])
 
-	function onClick(saveState: SaveState) {
+	function onClick(index: number, _page: PageEntry) {
 		close()
-		loadSaveState(saveState)
+		history.load(index)
 	}
 
 	return (
 		<div id="history" ref={historyRef}>
 			<div className="text-container">
-				{Array.from(history, (page, i) =>
-					<PageElement key={i} saveState={page} onLoad={onClick} />
+				{Array.from(history.allPages, (page, i) =>
+					<PageElement key={i} content={page} onLoad={onClick.bind(null, i)} />
 				)}
 			</div>
 		</div>
@@ -147,21 +147,22 @@ type FlowchartDisplayProps = {
 }
 const FlowchartDisplay = ({ display }: FlowchartDisplayProps) => {
 	useObserver((label)=> {
-		setActiveScene(label)
+		if (history.pagesLength > 0)
+			setActiveScene(history.lastScene.label)
 
 		//TODO: prevent loading a different scene until we are able to restore flags and affections
 	}, gameContext, 'label')
 
 	useEffect(() => {
 		if (display) {
-			setActiveScene(gameContext.label)
+			//setActiveScene(gameContext.label)
 		}
 	}, [display])
 
 	return (
 		<div id="scenes">
 			<div className="flowchart-container">
-				<Flowchart/>
+				<Flowchart onSceneClick={(id=> history.loadScene(id))}/>
 			</div>
 		</div>
 	)

@@ -1,13 +1,14 @@
 import { isScene, isThScene } from "./scriptUtils"
-import { TsukihimeSceneName } from "types"
+import { LabelName, TsukihimeSceneName } from "types"
 import { SCENE_ATTRS } from "./constants"
 import { Graphics } from "@tsukiweb-common/types"
 import { Flowchart, FlowchartNode, FlowchartNodeAttrs } from "@tsukiweb-common/utils/Flowchart"
 import SpritesheetMetadata from "../assets/flowchart/spritesheet_metadata.json"
 import { spriteSheetImgPath } from "translation/assets"
 import { settings } from "./settings"
-import { gameContext } from "./variables"
+import { gameContext } from "./gameContext"
 import { displayMode, SCREEN } from "./display"
+import history from "./history"
 
 //##############################################################################
 //#region                       CONSTANTS & TYPES
@@ -66,15 +67,18 @@ export class TsukihimeFlowchart extends Flowchart<FcNode> {
 
 	isSceneEnabled(id: FcNodeId): boolean {
 		if (displayMode.screen == SCREEN.WINDOW) {
-			//TODO check if id is in history or is the active scene
-			return this.activeScene == id
+			return history.hasScene(id as LabelName)
 		} else {
 			const node = this.getNode(id)
 			return node != undefined && node.seen
 		}
 	}
 	get activeScene(): FcNodeId {
-		return gameContext.label
+		if (history.pagesLength > 0) {
+			return history.lastScene.label
+		} else {
+			return ""
+		}
 	}
 }
 export enum FcNodeState {
