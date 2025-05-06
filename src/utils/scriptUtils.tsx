@@ -208,7 +208,7 @@ function splitText(text: string) {
 				text = text.substring(1)
 				break
 			case '!' : // !w<time>
-				const endIndex = text.substring(1).search(/\D|$/)+1
+				const endIndex = text.substring(2).search(/\D|$/)+2
 				const cmd = parseInlineCommand(text.substring(0, endIndex))
 				instructions.push(cmd)
 				text = text.substring(endIndex)
