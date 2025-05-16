@@ -216,13 +216,12 @@ export function getImageVariants(imgName: string): GalleryImg[] {
 
 export function imagePath(imgName: string): string {
   const img = GALLERY_IMAGES[imgName]
-  if (!img) {
-    return ""
-  }
+  if (!img) return ""
   return `${img.path}/${img.img}`
 }
 
 export function imageNameFromPath(path: string): string {
+  if (!path) return ""
   return path.split("/").pop() ?? ""
 }
 

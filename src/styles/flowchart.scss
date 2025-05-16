@@ -36,8 +36,9 @@
 				stroke-linejoin: round;
 				fill: rgb(179 179 179);
 			}
-
-			&.blur {
+		}
+		&.blur {
+			.fc-scene-content {
 				filter: blur(3px);
 
 				&:hover, &:focus-visible {
