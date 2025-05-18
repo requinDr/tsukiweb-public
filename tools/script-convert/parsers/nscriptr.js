@@ -57,7 +57,7 @@ function parseCondition(lineIndex, str) {
     const condition = cmdReader.readMatch(CONDITION_REGEXP)
     // extract commands until end of line (separated by ':')
     const commands = parseScript(cmdReader.read().trim())
-    commands.forEach(tkn=> tkn.lineIndex += lineIndex)
+    commands.forEach(tkn=> tkn.lineIndex += lineIndex) //TODO maybe single line index?
 
     if (commands.length == 1)
         return [new ConditionToken(lineIndex, not, condition, commands[0])]
@@ -150,8 +150,9 @@ const tokensRE = new Map(Object.entries({
 
 /**
  * @param {string} text 
+ * @param {number} singleLineIndex
  */
-function parseScript(text) {
+function parseScript(text, singleLineIndex = -1) {
     const reader = new StrReader(text)
     const tokens = []
     
@@ -172,6 +173,9 @@ function parseScript(text) {
             debugger;
             throw Error(`Cannot determine token for text: '${reader.peek(30)}'`)
         }
+    }
+    if (singleLineIndex != -1) {
+        tokens.forEach(t => t.lineIndex = singleLineIndex)
     }
     return tokens
 }

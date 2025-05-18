@@ -1,149 +1,217 @@
-import { gameContext } from "./gameContext";
 import { settings, viewedScene } from "./settings"
-import history, { PageEntry, PageType } from './history';
+import history, { History, PageEntry, PageType, SceneEntry } from './history';
 import { toast } from "react-toastify";
 import { FaSave } from "react-icons/fa"
-import { SAVE_EXT } from "./constants";
-import { LabelName } from "../types";
+import { APP_VERSION, SAVE_EXT } from "./constants";
+import { LabelName, RouteDayName, RouteName } from "../types";
 import { SCREEN, displayMode } from "./display";
-import { StoredJSON } from "@tsukiweb-common/utils/storage";
-import { TSForceType, textFileUserDownload, requestJSONs, version_compare } from "@tsukiweb-common/utils/utils";
+import { Stored } from "@tsukiweb-common/utils/storage";
+import { TSForceType, jsonMerge, requestFilesFromUser, textFileUserDownload, versionsCompare } from "@tsukiweb-common/utils/utils";
 import { strings } from "translation/lang";
-import script from "./script";
+import { Regard, ScriptPlayer } from "script/ScriptPlayer";
+import { JSONDiff, JSONMerge, JSONObject, PartialJSON, PartialRecord, RecursivePartial } from "@tsukiweb-common/types";
 
 //##############################################################################
 //#region                       TYPES & CONSTANTS
 //##############################################################################
 
-export type SaveState<T extends PageType = PageType> = {
-  history: Array<ReturnType<typeof gameContext.sceneJson>>
-  page: PageEntry<T>
-  date: number
-  version: string
-}
 type SaveStateId = number
 export const QUICK_SAVE_ID: SaveStateId = 0
+const SAVE_MIME_TYPE = "application/thweb+json"
 
-//#endregion ###################################################################
-//#region                        LOCAL VARIABLES
-//##############################################################################
+type DefaultPageContext = ReturnType<typeof ScriptPlayer.defaultPageContext>
+type DefaultBlockContext = ReturnType<typeof ScriptPlayer.defaultBlockContext>
 
-const savesStorage = new StoredJSON<Iterable<[SaveStateId, SaveState]>>("savestates", false)
-const saveStates = new Map<SaveStateId, SaveState>()
-const listeners = new Array<VoidFunction>()
+type SSList<T extends PartialJSON, Default extends PartialJSON<T>> = []
+  | [JSONDiff<T, Default>]
+  | [JSONDiff<T, Default>, ...PartialJSON<T>[], JSONDiff<T, Default>] 
 
-
-//#endregion ###################################################################
-//#region                            STORAGE
-//##############################################################################
-
-{
-  const restored = savesStorage.get()
-  if (restored)
-    restoreSaveStates(restored)
+export type SaveState = {
+  scenes: SSList<SceneEntry, DefaultBlockContext>
+  pages: SSList<PageEntry, DefaultPageContext>
+  date: number
+  version: string
+  name?: string
+  id?: SaveStateId
 }
 
-function updateLocalStorage() {
-  savesStorage.set(Array.from(saveStates.entries()))
+function twoDigits(n: number) {
+  return n.toString().padStart(2, '0')
 }
+
+//#endregion
+//##############################################################################
+
+
+class SavesManager extends Stored {
+
+  private _saveStates: Map<SaveStateId, SaveState>
+  private _changeListeners: Set<VoidFunction>
+
+  constructor() {
+    super("savestates", false)
+    this._saveStates = new Map()
+    this._changeListeners = new Set
+    this.restoreFromStorage()
+  }
+
+//##############################################################################
+//#region                        PRIVATE METHODS
+//##############################################################################
+
+  private _notifyListeners() {
+    for (const listener of this._changeListeners) {
+      listener()
+    }
+  }
+
+  protected serializeToStorage(): string {
+    return JSON.stringify({
+      version: APP_VERSION,
+      saveStates: Array.from(this._saveStates.values())
+    })
+  }
+
+  protected deserializeFromStorage(str: string): void {
+    const json = JSON.parse(str) as [number, SaveState][]|{version:string, saveStates:SaveState[]}
+    if (Array.isArray(json)) { // < v0.4.0
+      this.add(...json.map(([id, save])=> 
+        (id != save.date) ? {id, ...save} : save
+      ))
+    } else {
+      //if (versionsCompare(json.version, "1.0.0") < 0) // uncomment if necessary to convert savestates
+      const saveStates = json.saveStates
+      for (const save of saveStates) {
+        this._saveStates.set(save.id ?? save.date, save)
+      }
+      this._notifyListeners()
+    }
+  }
+
+//#endregion ###################################################################
+//#region                           LISTENERS
+//##############################################################################
+
+  addListener(listener: VoidFunction) {
+    this._changeListeners.add(listener)
+  }
+  removeListener(listener: VoidFunction) {
+    this._changeListeners.delete(listener)
+  }
+
+//#endregion ###################################################################
+//#region                            GETTERS
+//##############################################################################
+  
+  get savesCount() {
+    return this._saveStates.size
+  }
+
+  listSaves() {
+    return Array.from(this._saveStates.values())
+  }
+
+  get(id: SaveStateId) {
+    return this._saveStates.get(id)
+  }
+
+  getLastSave(): SaveState|undefined {
+    return this.listSaves().reduce((a, b)=> a.date > b.date ? a : b)
+  }
+
+  /**
+   * Export the save-states to json files and lets the user download them.
+   * @param ids array of save-state ids to export. Exporting multiple save-states
+   *            will result in multiple files being downloaded
+   */
+  exportSave(...ids: SaveStateId[]) {
+    for (const id of ids) {
+      const ss = this.get(id)
+      if (!ss)
+        continue
+      const json = JSON.stringify({ id, ...ss }),
+            date = new Date(ss.date as number)
+      const year = date.getFullYear(), month = date.getMonth()+1,
+            day = date.getDate(), hour = date.getHours(), min = date.getMinutes()
+      const dateString = [year, month, day].map(twoDigits).join('-')
+      const timeString = [hour, min].map(twoDigits).join('-')
+      let basename = `${dateString}_${timeString}`
+      if (ss.name)
+        basename += `_${ss.name}`
+      textFileUserDownload(json, `${basename}.${SAVE_EXT}`, SAVE_MIME_TYPE)
+    }
+  }
+
+//#endregion ###################################################################
+//#region                          EDIT SAVES
+//##############################################################################
+
+  clear() {
+    this._saveStates.clear()
+    this.deleteStorage()
+    this._notifyListeners()
+  }
+
+  add(...saves: (SaveState|[number, SaveState])[]) {
+    for (let save of saves) {
+      let id
+      if (Array.isArray(save)) {
+        [id, save] = save
+        if (id != save.date)
+          save = {id, ...save}
+      } else {
+        id = save.id ?? save.date
+      }
+      this._saveStates.set(id, updateSave(save))
+    }
+    this.saveToStorage()
+    this._notifyListeners()
+  }
+
+  remove(id: SaveStateId) {
+    this._saveStates.delete(id)
+    this.saveToStorage()
+    this._notifyListeners()
+  }
+
+  async importSave(save: string|File): Promise<void> {
+    if (save instanceof File)
+      save = await new Promise<string>((resolve)=> {
+        const reader = new FileReader()
+        reader.readAsText(save as File)
+        reader.onload = (evt)=> {
+          if (evt.target?.result?.constructor == String)
+            resolve(evt.target.result)
+          else
+            throw Error(`Cannot read save file ${(save as File).name}`)
+        }
+      })
+    this.add(JSON.parse(save) as SaveState)
+  }
+
+  async importSaveFiles(saves: string[] | FileList | File[]): Promise<void> {
+    await Promise.all(
+      Array.from<string|File, Promise<void>>(saves, this.importSave.bind(this)))
+  }
+}
+
+export const savesManager = new SavesManager()
 
 //____________________________________Store_____________________________________
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-/**
- * Store the savestate in a map with the specified id.
- * If a previous savestate has the same id, the new one replaces it.
- * @param id unique id of the savestate in the map.
- * @param ss savestate to store.
- */
-export function storeSaveState(id: SaveStateId, ss: SaveState) {
-  saveStates.set(id, ss)
-  updateLocalStorage()
-  notifyListeners()
-}
 
-/**
- * Store all the savestates from the iterator in the savestates map
- * @param keyValuePairs iterator of [id, savestate].
- */
-export function restoreSaveStates(keyValuePairs: Iterable<[SaveStateId, SaveState]>) {
-  for (const [id, ss] of keyValuePairs) {
-    saveStates.set(id, ss as SaveState)
-  }
-  updateLocalStorage()
-  notifyListeners()
-}
 //___________________________________Delete_____________________________________
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-/**
- * Delete from the savestate map the savesate with the specified id
- * @param id unique id of the savestate in the map.
- */
-export function deleteSaveState(id: SaveStateId) {
-  saveStates.delete(id)
-  updateLocalStorage()
-  notifyListeners()
-}
 
-/**
- * Delete all savestates from the savestates map.
- */
-export function clearSaveStates() {
-  saveStates.clear()
-  updateLocalStorage()
-  notifyListeners()
-}
 //___________________________________Getters____________________________________
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-export function getSaveState(id: SaveStateId) {
-  return saveStates.get(id)
-}
-
-export function hasSaveStates() {
-  return saveStates.size > 0 || history.pagesLength > 0
-}
-
-/**
- * Creates an iterator of key-value pairs from the stored savestates,
- * where the key is the id of the savestate in the map, and the value
- * is the savestate itself.
- * @returns the created iterator.
- */
-export function listSaveStates(): Array<[SaveStateId, SaveState]> {
-  return Array.from(saveStates.entries())
-}
-
-export function getLastSave(): SaveState|undefined {
-  if (saveStates.size == 0)
-    return undefined
-  return Array.from(saveStates.values()).reduce(
-    (ss1, ss2) => ss1.date > ss2.date ? ss1 : ss2)
-}
 
 //_______________________________Saves listeners________________________________
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-export function addSavesChangeListener(onChange: VoidFunction) {
-  if (listeners.indexOf(onChange) >= 0)
-    return
-  listeners.push(onChange)
-}
-
-export function removeSavesChangeListener(onChange: VoidFunction) {
-  const index = listeners.indexOf(onChange)
-  if (index == -1)
-    return false
-  listeners.splice(index, 1)
-  return true
-}
-
-function notifyListeners() {
-  for (const listener of listeners) {
-    listener()
-  }
-}
 
 //#endregion ###################################################################
 //#region                          SAVE & LOAD
@@ -154,95 +222,38 @@ function notifyListeners() {
 
 
 /**
- * Store the last savestate from the script'shistory into the savestate map,
- * with the specified id.
- * @param id unique id of the savestate in the map.
- */
-export function storeCurrentState(id: SaveStateId) {
-  const ss = history.createSaveState()
-  if (!ss)
-    return false
-  storeSaveState(id, ss)
-  return true
-}
-
-/**
  * Stores the last savestate of the script's history in the savestate map
  * with the id 'quick".
  */
-export const quickSave = () => {
-  if (storeCurrentState(QUICK_SAVE_ID)) {
-    toast(strings.game["toast-qsave"], {
-      icon: () => FaSave({}),
-      autoClose: 1400,
-      toastId: "qs-toast",
-    })
-  } else {
-    toast(strings.game["toast-save-fail"], {
-      autoClose: 2400,
-      toastId: "qs-toast",
-      type: "warning"
-    })
+export function quickSave(history: History) {
+  const ss = {
+    id: 0,
+    ...history.createSaveState()
   }
+  savesManager.add(ss)
+  toast(strings.game["toast-qsave"], {
+    icon: () => FaSave({}),
+    autoClose: 1400,
+    toastId: "qs-toast",
+  })
+  //} else {
+  //  toast(strings.game["toast-save-fail"], {
+  //    autoClose: 2400,
+  //    toastId: "qs-toast",
+  //    type: "warning"
+  //  })
+  //}
 }
-
-//____________________________________Load______________________________________
-// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-/**
- * Restore the context and progress from the specified savestate.
- * If the savestate is stored in the script's history, all pages
- * after the one associated with the savestate will be removed from the history.
- * @param ss savestate to load, or its id in the savestate map.
- * @returns true if the savestate has been loaded, false otherwise.
- */
-export function loadSaveState(ss: SaveStateId | SaveState) {
-  if (ss.constructor == Number) {
-    ss = saveStates.get(ss) as SaveState
-    if (ss) {
-      toast(strings.game["toast-qload"], {
-        icon: () => FaSave({}),
-        autoClose: 1400,
-        toastId: 'ql-toast',
-      })
-    } else {
-      toast(strings.game["toast-load-fail"], {
-        autoClose: 2400,
-        toastId: 'ql-toast',
-        type: "warning"
-      })
-    }
-  }
+export function quickLoad(history: History, onLoad: VoidFunction) {
+  const ss = savesManager.get(QUICK_SAVE_ID)
   if (ss) {
-    TSForceType<SaveState>(ss)
-    if (ss.version && version_compare(ss.version, "0.3.4") > 0) {
-      history.onLoad(ss.page)
-      let page = ss.page
-      if (page.type == "text")
-        page = {...page, text: ""}
-      let index = script.getPageIndex(page.page)
-      gameContext.load({...page, index})
-    } else { // < v0.3.5: no scene history, split progress
-      history.clear()
-      const page = script.getPageAtIndex((ss as any).context.index)
-      gameContext.load({...(ss as any).context, ...(ss as any).progress, page})
-    }
-    return true
-  }
-  return false
-}
-
-/**
- * Loads the savestate with the id 'quick' from the script's history,
- * and restores the context and progress from it.
- */
-export const quickLoad = ()=> {
-  if (loadSaveState(QUICK_SAVE_ID)) {
+    history.loadSaveState(ss)
     toast(strings.game["toast-qload"], {
       icon: () => FaSave({}),
       autoClose: 1400,
       toastId: 'ql-toast'
     })
+    onLoad()
   } else {
     toast(strings.game["toast-load-fail"], {
       autoClose: 2400,
@@ -253,8 +264,7 @@ export const quickLoad = ()=> {
 }
 
 export function newGame() {
-  history.clear()
-  gameContext.load({label: 'openning'})
+  history.loadSaveState({scenes: [{label: 'openning'}], pages: []})
   displayMode.screen = SCREEN.WINDOW
 }
 
@@ -262,12 +272,9 @@ export async function continueGame() {
   // restart from beginning of last visisted page ...
   const lastSave = history.pagesLength ? history.createSaveState()
               // or from last saved game
-              : getLastSave()
-              // or ask user to provide save file(s).
-              // Also retrieves settings from the save file(s)
-              ?? await loadSaveFiles().then(getLastSave)
+              : savesManager.getLastSave()
   if (lastSave) {
-    loadSaveState(lastSave)
+    history.loadSaveState(lastSave)
     displayMode.screen = SCREEN.WINDOW
   }
 }
@@ -286,70 +293,71 @@ export function playScene(scene: LabelName, {
     return
   }
   history.clear()
-  gameContext.load({label: scene}, continueScript)
+  const obj = continueScript ? {label: scene} : {label: scene, continueScript}
+  history.loadSaveState({scenes: [obj], pages: []})
   displayMode.screen = SCREEN.WINDOW
 }
 
 
 //#endregion ###################################################################
-//#region                          SAVE FILES
+//#region                         FORMAT UPDATE
 //##############################################################################
 
-function twoDigits(n: number) {
-  return n.toString().padStart(2, '0')
-}
-/**
- * Export the save-states to json files and lets the user
- * download it.
- * @param ids array of save-state ids to export. Exporting multiple save-states
- *            will result in multiple files being downloaded
- */
-export function exportSave(ids: SaveStateId[]) {
-  const saveStates = listSaveStates().filter(([id,_ss])=>ids.includes(id))
-  for (const [id, ss] of saveStates) {
-    const json = JSON.stringify({ id, ...ss }),
-          date = new Date(ss.date as number)
-    const year = date.getFullYear(), month = date.getMonth()+1,
-          day = date.getDate(), hour = date.getHours(), min = date.getMinutes()
-    const dateString = [year, month, day].map(twoDigits).join('-')
-    const timeString = [hour, min].map(twoDigits).join('-')
-    textFileUserDownload(json, `${dateString}_${timeString}.thweb`, "application/thweb+json")
+type OldRegard = PartialRecord<'ark'|'ciel'|'akiha'|'kohaku'|'hisui', number>
+function regard_update(regard: OldRegard): Regard {
+  return {
+    ark : regard.ark    ?? 0,
+    cel : regard.ciel   ?? 0,
+    aki : regard.akiha  ?? 0,
+    koha: regard.kohaku ?? 0,
+    his : regard.hisui  ?? 0,
   }
 }
-/**
- * Restores save-states from one or multiple files requested
- * to the user or from the specified stringified JSONs.
- * @param saves stringified JSONs, or undefined to ask files from the user.
- */
-export async function loadSaveFiles(
-    saves?: string[] | FileList | undefined | null,
-    allExtensions=false
-  ): Promise<boolean> {
-  let jsons
-  if (saves instanceof FileList) {
-    jsons = await Promise.all(Array.from(saves).map(file=> {
-      return new Promise<string>((resolve) => {
-        const reader = new FileReader()
-        reader.readAsText(file)
-        reader.onload = (evt) => {
-          if (evt.target?.result?.constructor == String)
-            resolve(JSON.parse(evt.target.result))
-          else
-            throw Error(`cannot read save file ${file.name}`)
-        }
-      })
-    }));
-  } else if (saves) {
-    jsons = saves.map(save=>JSON.parse(save))
-  } else {
-    jsons = await requestJSONs({multiple: true, accept: allExtensions ? '*' : `.${SAVE_EXT}`})
+function phase_update(phase: Record<string, string|number>) {
+  const route = phase.route
+  let routeDay = phase.routeDay
+  let day = phase.day
+  if (routeDay == "") {
+    routeDay = day
+    day = 0
   }
-  if (!jsons)
-    return false
-  restoreSaveStates(jsons.map(({id, ...save})=>{
-    if (id == undefined || id.constructor != Number)
-      throw Error(`Save-file is missing 'id' field`)
-    return [id, save] as [number, SaveState]
-  }))
-  return true
+  return {
+    route   : route    as RouteName,
+    routeDay: routeDay as RouteDayName,
+    day     : day      as RouteDayName<'others'> | number
+  }
+}
+function updateSave(ss: SaveState): SaveState {
+  if (ss.version && versionsCompare(ss.version, "0.4.0") > 0)
+    return ss
+  else {
+    const {context, progress, page} = ss as any
+    return {
+      scenes: [{
+        label: context.label,
+        flags: progress.flags ?? [],
+        regard: regard_update(progress.regard ?? {})
+      }],
+      pages: [{
+        label: context.label,
+        ['index' as keyof PageEntry]: context.index ?? 0,
+        page: -1,
+        text: page.text ?? "",
+        textPrefix: page.textPrefix ?? "",
+        audio: context.audio ?? {},
+        graphics: context.graphics ?? {},
+        phase: phase_update(context.phase),
+        ...(page.contentType == "text" ? { type: "text" }
+          : page.contentType == "skip" ? { type: "skip" }
+          : page.contentType == "phase" ? { type: "phase" }
+          : { type: "choice",
+            choices: page.choices,
+            selected: page.selected
+          }
+        )
+      }],
+      date: ss.date,
+      version: ss.version ?? "0.3.6"
+    }
+  }
 }

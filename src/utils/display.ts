@@ -1,4 +1,10 @@
-import { notifyObservers, observe } from "@tsukiweb-common/utils/Observer";
+import { notifyObservers, observe, simulateObserverChange as triggerObservers } from "@tsukiweb-common/utils/Observer";
+import { toast } from "react-toastify";
+import { isThScene } from "script/utils";
+import { strings } from "translation/lang";
+import { LabelName } from "types";
+import { SCENE_ATTRS } from "./constants";
+import { settings } from "./settings";
 
 export enum SCREEN {
   TITLE = "/",
@@ -11,186 +17,133 @@ export enum SCREEN {
   PLUS_DISC = "/plus-disc",
 }
 
-let history: boolean = false;
-let text: boolean = true;
-let skip: boolean = false;
-let choice: boolean = false;
-let graphics: boolean = false;
-let savesVariant: 'save'|'load'|'' = '';
-let config: boolean = false;
-
 export const displayMode: { [key: string]: any } = {
   screen: undefined,
-  menu: false as boolean,
   bgAlignment: 'center' as ('top' | 'center' | 'bottom'),
+}
 
-  get text() { return text },
-  set text(v) {
-    if (v != text) {
-      text = v
-      if (v && this.history)
-        this.history = false
+type InGameMenu = 'history' | 'flowchart' | 'save' | 'load' | 'config'
+
+type LayersOptions = {
+  /**
+   * * `keep`  : the menu stays active when another menu is enabled
+   * * `remove`: the menu is removed when another menu is enabled
+   * * `hide`  : the menu is removed when another menu is enabled,
+   * 			   but restored when it is disabled
+   */
+  backgroundMenu?: 'keep' | 'hide' | 'remove'
+  onChange?: VoidFunction
+}
+
+export class InGameLayersHandler {
+  private _text: boolean = true
+  private _menu: boolean = false
+  private _currentMenu: InGameMenu|null = null
+
+  private _backgroundMenu: 'keep' | 'hide' | 'remove'
+  private _onChange: ((layers: InGameLayersHandler)=>void)|VoidFunction|undefined
+
+  constructor({backgroundMenu = 'remove', onChange}: LayersOptions = {}) {
+    this._backgroundMenu = backgroundMenu
+    this._onChange = onChange
+  }
+  get text() { return this._text }
+  set text(value: boolean) {
+    if (value != this._text) {
+      this._text = value
+      this._currentMenu = null
+      this._menu = false
+      this._onChange?.(this)
     }
-  },
+  }
+  get graphics() { return !this._text }
+  set graphics(value: boolean) { this.text = !value }
 
-  get history() { return history },
-  set history(v) {
-    if (v != history) {
-      history = v
-      if (v == this.text) { // showing the history hides the text,
-        this.text = !v      // and hiding the history shows the text
-        //this.dialog = !v // also hide/show the dialogs if any
-      }
+  get menu() {
+    if (!this._menu) return false
+    if (!this._currentMenu) return true
+    if (this._backgroundMenu != 'keep') return false
+    return true
+  }
+  set menu(value: boolean) {
+    if (value != this.menu) {
+      this._menu = value
+      this._currentMenu = null
+      if (value == this.menu)
+        this._onChange?.(this)
     }
-  },
+  }
+  get history() { return this._currentMenu == 'history' }
+  set history(value: boolean) { this._setMenu('history', value) }
 
-  get skip() { return skip },
-  set skip(v) {
-    if (v != skip) {
-      const prevDialog = this.dialog
-      skip = v
-      if (prevDialog != this.dialog)
-        notifyObservers(this, 'dialog')
-    }
-  },
+  get flowchart() { return this._currentMenu == 'flowchart' }
+  set flowchart(value: boolean) { this._setMenu('flowchart', value) }
 
-  get choice() { return choice },
-  set choice(v) {
-    if (v != choice) {
-      const prevDialog = this.dialog
-      choice = v
-      if (prevDialog != this.dialog)
-        notifyObservers(this, 'dialog')
-    }
-  },
+  get save() { return this._currentMenu == 'save' }
+  set save(value: boolean) { this._setMenu('save', value) }
 
-  get dialog(): boolean { return skip || choice },
-  set dialog(v: boolean) {
-    if (v != this.dialog) {
-      this.skip = v    // if true and nothing to show,
-      this.choice = v  // their handler will reset them to false
-    }
-  },
+  get load() { return this._currentMenu == 'load' }
+  set load(value: boolean) { this._setMenu('load', value) }
 
-  get save() { return savesVariant == 'save' },
-  set save(v) {
-    if (v != this.save) {
-      const notifyLoad = this.load
-      savesVariant = v ? 'save' : ''
-      if (notifyLoad)
-        notifyObservers(this, 'load')
-      notifyObservers(this, 'saveScreen')
-    }
-  },
+  get config() { return this._currentMenu == 'config' }
+  set config(value: boolean) { this._setMenu('config', value) }
 
-  get load() { return savesVariant == 'load' },
-  set load(v) {
-    if (v != this.load) {
-      const notifySave = this.save
-      savesVariant = v ? 'load' : ''
-      if (notifySave)
-        notifyObservers(this, 'save')
-      notifyObservers(this, 'saveScreen')
-    }
-  },
+  get currentMenu() {
+    if (this._currentMenu)
+      return this._currentMenu
+    if (this._menu)
+      return 'menu'
+    return null
+  }
 
-  get saveScreen():boolean { return savesVariant != '' },
-  set saveScreen(v: false) {
-    if (v != (this.saveScreen)) {
-      if (v)
-        throw Error("saveScreen cannot be set to true manually."+
-                    " Use 'save' or 'load' instead.")
-      const prevSave = this.save
-      savesVariant = ''
-      notifyObservers(this, prevSave ? 'save' : 'load')
-    }
-  },
-
-  get savesVariant() { return savesVariant },
-
-  get config() { return config },
-  set config(v: boolean) {
-    if (v != config) {
-      config = v
-      if (v) {
-        this.dialog = false
-        this.text = false
-        this.history = false
-        this.saveScreen = false
-      } else {
-        this.text = true
-        this.dialog = true
-      }
-    }
-  },
-
-  get graphics() { return graphics },
-  set graphics(v: boolean) {
-    if (v != graphics) {
-      graphics = v
-      if (v) {
-        this.dialog = false
-        this.text = false
-        this.history = false
-        this.saveScreen = false
-      } else {
-        this.text = true
-        this.dialog = true
-      }
-    }
-  },
-
-  get currentView() { // not observable
-    if (this.saveScreen)
-      return "saves"
-    else if (this.config)
-      return "config"
-    else if (this.menu)
-      return "menu"
-    else if (this.history)
-      return "history"
-    else if (this.dialog)
-      return "dialog"
-    else if (this.text)
-      return "text"
-    else if (this.graphics)
-      return "graphics"
+  get topLayer() {
+    if (this._currentMenu)
+      return this._currentMenu
+    else if (this._menu)
+      return 'menu'
+    else if (this._text)
+      return 'text'
     else
-      throw Error("Could not determine current view")
+      return 'graphics'
+  }
+
+  private _setMenu(menu: InGameMenu, open: boolean) {
+    if (open) {
+      if (this._currentMenu != menu) {
+        if (this.menu && this._backgroundMenu == 'remove')
+          this.menu = false
+        this._currentMenu = menu
+        this._onChange?.(this)
+      }
+    } else if (this._currentMenu == menu) {
+      this.exitCurrentMenu()
+    }
+  }
+  exitCurrentMenu() {
+    if (this._currentMenu){
+      this._currentMenu = null
+      this._onChange?.(this)
+    }
+  }
+  back() {
+    if (this._currentMenu)
+      this.exitCurrentMenu()
+    else {
+      this.menu = !this.menu
+    }
   }
 }
 
-function updateGraphics() {
-  displayMode.graphics = !(text || choice || skip || history || (savesVariant!=''))
+export function warnHScene(label?: LabelName) {
+	if (!label || (isThScene(label) && settings.warnHScenes
+		&& SCENE_ATTRS.scenes[label]?.h)) {
+		toast(strings.game["toast-hscene-waning"], {
+			toastId: "hscene-warning",
+			autoClose: 4000
+		});
+	}
 }
 
-observe(displayMode, 'dialog', updateGraphics)
-observe(displayMode, 'history', updateGraphics)
-observe(displayMode, 'text', updateGraphics)
-observe(displayMode, 'saveScreen', updateGraphics)
-
-function hideMenuOnActive(d: boolean) {
-  if (d)
-    displayMode.menu = false
-}
-
-observe(displayMode, "saveScreen", hideMenuOnActive)
-observe(displayMode, "history", hideMenuOnActive)
-observe(displayMode, "graphics", hideMenuOnActive)
-observe(displayMode, "screen", (screen)=> {
-  if (screen != SCREEN.WINDOW) {
-    displayMode.history = false
-    displayMode.text = false
-    displayMode.dialog = false
-    displayMode.saveScreen = false
-    displayMode.menu = false
-    displayMode.config = false
-  }
-})
-
-export function isViewAnyOf(...views: Array<typeof displayMode.currentView>) {
-  return views.includes(displayMode.currentView)
-}
 
 //##############################################################################
 //#                                   DEBUG                                    #

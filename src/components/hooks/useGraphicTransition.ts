@@ -1,66 +1,94 @@
-import { useState, useRef, useCallback } from "react";
-import { gameContext } from "utils/gameContext";
+import { useState, useRef, useEffect } from "react";
 import { preloadImage } from "../molecules/GraphicsGroup";
-import { SpritePos } from "@tsukiweb-common/types";
-import { useObserver } from "@tsukiweb-common/utils/Observer";
+import { GraphicsTransition, SpritePos } from "@tsukiweb-common/types";
 import { splitFirst } from "@tsukiweb-common/utils/utils";
-import { transition } from "@tsukiweb-common/utils/graphics";
+import { useTraceUpdate } from "@tsukiweb-common/hooks/useTraceUpdate";
 
 type GraphicTransitionResult = {
-	img: string;
-	prev: string;
-	duration: number;
-	effect: string;
-	imgLoaded: boolean;
+	img: string
+	prev: undefined
+	duration?: undefined
+	effect?: undefined
+	onAnimationEnd?: undefined
+} | {
+	img: string,
+	prev: string
+	duration: number
+	effect: string
+	onAnimationEnd: VoidFunction
 };
 
-function useGraphicTransition(
-	pos: SpritePos,
-	preload: boolean = true
-): GraphicTransitionResult {
-	const [img, setImg] = useState(gameContext.graphics[pos]);
-	const [loaded, setLoaded] = useState(true);
-	const prev = useRef(gameContext.graphics[pos]);
-	const [d, setD] = useState(0);
-	const [e, setE] = useState("");
 
-	const onChange = useCallback(() => {
-		const { duration: transD, pos: transPos, effect: transE } = transition;
-		if (transD == 0 || (transPos != pos && (pos == "bg" || transPos != "a"))) {
-			setD(0);
-			setE("");
-			prev.current = gameContext.graphics[pos];
-		} else {
-			setD(transD);
-			setE(transE);
-		}
-	}, []);
-	useObserver(onChange, transition, "duration");
-	useObserver(onChange, transition, "effect");
+function useGraphicTransition(pos: SpritePos, image: string,
+		transition?: GraphicsTransition, preload: boolean = true
+		): GraphicTransitionResult {
+	const [currImg, setCurrImg] = useState<string>(image)
+	const prevImg = useRef<string>(image)
+	const onEnd = useRef<VoidFunction>(undefined)
+	const [loaded, setLoaded] = useState(true)
+	const [currentDuration, setDuration] = useState(0)
+	const [currentEffect, setEffect] = useState("")
 
-	useObserver(
-		(img) => {
-			setImg(img);
-			if (preload && img) {
-				setLoaded(false);
-				img = splitFirst(img, "$")[0];
-				preloadImage(img).finally(setLoaded.bind(null, true));
-			} else {
-				setLoaded(true);
+	useEffect(()=> {
+		const {duration = 0, effect, onFinish,
+			to: {[pos]: transImg = undefined} = {}} = transition ?? {}
+		let load = false
+		if (transImg != undefined && transImg != currImg) {
+			//console.debug(`${pos}: ${currImg} --> ${transImg} (${effect}, ${duration})`)
+			setDuration(duration)
+			setEffect(effect!)
+			prevImg.current = currImg
+			setCurrImg(transImg)
+			load = true
+			onEnd.current = ()=> {
+				onEnd.current = undefined
+				setDuration(0)
+				setEffect("")
+				onFinish?.()
 			}
-			onChange();
-		},
-		gameContext.graphics,
-		pos
+		} else {
+			if (image != currImg) {
+				//console.debug(`${pos}: ${currImg} --> ${image}`)
+				if (loaded) // keep previous image if current one not loaded
+					prevImg.current = currImg
+				setCurrImg(image)
+				load = true
+			}
+			if (currentDuration > 0 || currentEffect.length > 0) { //transition on other position
+				setDuration(0)
+				setEffect("")
+			}
+		}
+		if (load) {
+			const loadImage = transImg ?? image
+			const src = splitFirst(loadImage, '$')[0]
+			if (src.length > 0) {
+				setLoaded(false)
+				preloadImage(src).finally(()=> {
+					//if (currImg.current == loadImage) {
+						setLoaded(true)
+						if (onEnd.current && duration == 0)
+							onEnd.current() // instant transition -> onEnd when loaded
+					//}
+				})
+			}
+		}
+	}, [transition, image])
+	return (
+		!loaded ? { // next image not yet loaded
+			img: prevImg.current,
+			prev: undefined
+		} : currentDuration > 0 ? { // next image loaded, need animation
+			img: currImg,
+			prev: prevImg.current,
+			duration: currentDuration,
+			effect: currentEffect,
+			onAnimationEnd: onEnd.current as VoidFunction
+		} : { // next image loaded, no animation
+			img: currImg,
+			prev: undefined
+		}
 	);
-
-	return {
-		img,
-		prev: prev.current,
-		duration: d,
-		effect: e,
-		imgLoaded: loaded
-	};
 }
 
 export default useGraphicTransition

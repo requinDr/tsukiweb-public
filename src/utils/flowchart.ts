@@ -1,14 +1,12 @@
-import { isScene, isThScene } from "./scriptUtils"
+import { isScene, isThScene } from "../script/utils"
 import { LabelName, TsukihimeSceneName } from "types"
 import { SCENE_ATTRS } from "./constants"
 import { Graphics } from "@tsukiweb-common/types"
-import { Flowchart, FlowchartNode, FlowchartNodeAttrs } from "@tsukiweb-common/utils/Flowchart"
+import { Flowchart, FlowchartNode, FlowchartNodeAttrs } from "@tsukiweb-common/utils/flowchart"
 import SpritesheetMetadata from "../assets/flowchart/spritesheet_metadata.json"
 import { spriteSheetImgPath } from "translation/assets"
 import { settings } from "./settings"
-import { gameContext } from "./gameContext"
-import { displayMode, SCREEN } from "./display"
-import history from "./history"
+import { History } from "./history"
 
 //##############################################################################
 //#region                       CONSTANTS & TYPES
@@ -52,13 +50,15 @@ type FcNodeAttrs = FlowchartNodeAttrs<FcNodeId> & {
 
 export class TsukihimeFlowchart extends Flowchart<FcNode> {
 	public metadatas: Readonly<SpritesheetMetadataType> = SpritesheetMetadata
-	constructor() {
+	private _history: History|undefined
+	constructor(history?: History) {
 		super({
 			...(SCENE_ATTRS["fc-nodes"] ?? {}),
 			...Object.fromEntries(Object.entries(SCENE_ATTRS.scenes)
 					.map(([id, {fc}])=> [id, fc])
 					.filter(([_id, fc])=> fc)) // filter non-fc scenes
 		})
+		this._history = history
 	}
 
 	protected createNode(id: string, attrs: FcNodeAttrs): FcNode {
@@ -66,19 +66,13 @@ export class TsukihimeFlowchart extends Flowchart<FcNode> {
 	}
 
 	isSceneEnabled(id: FcNodeId): boolean {
-		if (displayMode.screen == SCREEN.WINDOW) {
-			return history.hasScene(id as LabelName)
-		} else {
-			const node = this.getNode(id)
-			return node != undefined && node.seen
-		}
+		return this._history?.hasScene(id as LabelName)
+			?? this.getNode(id)?.seen
+			?? false
 	}
+
 	get activeScene(): FcNodeId {
-		if (history.pagesLength > 0) {
-			return history.lastScene.label
-		} else {
-			return ""
-		}
+		return this._history?.lastScene.label ?? ""
 	}
 }
 export enum FcNodeState {

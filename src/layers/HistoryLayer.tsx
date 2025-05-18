@@ -1,67 +1,63 @@
-import { useEffect, useRef, useState } from 'react';
-import { displayMode, isViewAnyOf } from '../utils/display';
-import { SaveState, loadSaveState } from "../utils/savestates";
-import history, { PageEntry } from '../utils/history';
-import script from '../utils/script';
+import { useCallback, useEffect, useRef  } from 'react';
+import { displayMode, InGameLayersHandler } from '../utils/display';
+import { History, PageEntry } from '../utils/history';
 import { strings } from '../translation/lang';
 import PageElement from '../components/molecules/PageElement';
 import FixedFooter from '@tsukiweb-common/ui-core/components/FixedFooter';
-import { useObserved, useObserver } from '@tsukiweb-common/utils/Observer';
-import { addEventListener } from '@tsukiweb-common/utils/utils';
 import classNames from 'classnames';
 import Button from '@tsukiweb-common/ui-core/components/Button';
 import Flowchart from 'components/flowchart/Flowchart';
-import { gameContext } from "utils/gameContext";
 
 
 type Props = {
-	divProps?: React.HTMLProps<HTMLDivElement>
-}
-const HistoryLayer = ({ divProps }: Props) => {
-	const [display, setDisplay] = useObserved(displayMode, 'history')
-	const [view, setView] = useState<"history" | "flowchart">("history")
+	history: History
+	onRewind: VoidFunction
+	layers: InGameLayersHandler
+} & React.HTMLProps<HTMLDivElement>
+
+const HistoryLayer = ({ history, onRewind, layers, ...divProps }: Props) => {
 	const rootRef = useRef<HTMLDivElement>(null)
 
-	useObserver(()=> {
-		if (rootRef.current?.contains(document.activeElement))
-			(document.activeElement as HTMLElement).blur?.()
-	}, displayMode, "history", {filter: d=>!d})
+	const close = useCallback(()=> {
+		layers.back()
+	}, [])
 
-	const handleClose = () => {
-		setDisplay(false)
-	}
+	const toggleView = useCallback(()=> {
+		//switch history and flowchart
+		if (layers.history)
+			layers.flowchart = true
+		else
+			layers.history = true
+	}, [])
 
-	useEffect(() => {
-		//on mouse wheel up display history
-		const handleWheel = (e: WheelEvent) => {
-			if (e.ctrlKey)
-				return
-			if (e.deltaY < 0 && !display && isViewAnyOf("text", "graphics", "dialog")) {
-				//if (!history.empty) // at least one element in the iterator TODO display a 'nothing here' icon
-				setDisplay(true)
-				script.autoPlay = false
-			}
-		}
-		return addEventListener({event: 'wheel', handler: handleWheel})
-	}, [setDisplay])
+	const loadPage = useCallback((index: number)=> {
+		history.onPageLoad(index)
+		close()
+		onRewind()
+	}, [])
 
-	useEffect(() => {
-		if (display && view === "flowchart") {
-			setView("history")
-		}
-	}, [display])
-	 
+	const loadScene = useCallback((index: number)=> {
+		history.onSceneLoad(index)
+		close()
+		onRewind()
+	}, [])
+	
 	return (
 		<div
 			id="layer-history"
 			{...divProps}
-			className={classNames("layer", {"show": display}, divProps?.className)}
+			className={classNames("layer", {"show": layers.history || layers.flowchart}, divProps?.className)}
 			ref={rootRef}>
-			<div className='scroll-container' key={view}>
-				{view === "history" ?
-					<HistoryDisplay display={display} close={handleClose} />
-				: view === "flowchart" ?
-					<FlowchartDisplay display={display} />
+			<div className='scroll-container'>
+				{layers.history ?
+					<HistoryDisplay key={history.lastPage.page}
+						history={history}
+						close={close}
+						onPageSelect={loadPage}/>
+				: layers.flowchart ?
+					<FlowchartDisplay key={history.lastScene.label}
+						history={history}
+						onSceneSelect={loadScene}/>
 				: null
 				}
 			</div>
@@ -69,16 +65,20 @@ const HistoryLayer = ({ divProps }: Props) => {
 			<FixedFooter>
 				<Button
 					variant="menu"
-					onClick={handleClose}
+					onClick={close}
 				>
 					{strings.close}
 				</Button>
 				<Button
 					variant="menu"
-					onClick={() => setView(prev => prev === "history" ? "flowchart" : "history")}
+					onClick={toggleView}
 					style={{ marginLeft: '1em' }}
 				>
-					{view === "history" ? <>{strings.extra.scenes}</> : <>{strings.menu.history}</>}
+					{layers.history ?
+						<>{strings.extra.scenes}</>
+					:
+						<>{strings.menu.history}</>
+					}
 				</Button>
 			</FixedFooter>
 		</div>
@@ -90,79 +90,67 @@ export default HistoryLayer
 
 
 type HistoryDisplayProps = {
-	display: boolean
+	history: History
 	close: () => void
+	onPageSelect: (pageIndex: number) => void
 }
-const HistoryDisplay = ({ display, close }: HistoryDisplayProps) => {
+const HistoryDisplay = ({
+		history,
+		close,
+		onPageSelect
+	}: HistoryDisplayProps) => {
 	const historyRef = useRef<HTMLDivElement>(null)
 
 	useEffect(() => {
 		// scroll near the bottom of the history
-		const historyElement = historyRef.current
-		if (historyElement)
-			historyElement.scrollTop = historyElement!.scrollHeight - historyElement!.clientHeight - 1
-	}, [display])
-
-	useEffect(() => {
-		//when scrolled to the bottom of history, hide history
-		const handleScroll = (e: any) => {
-			const bottom = e.target.scrollHeight - Math.round(e.target.scrollTop) === e.target.clientHeight
-			if (bottom)
-				close()
-		}
-		return addEventListener({event: 'scroll', handler: handleScroll, element: historyRef.current})
+		const historyElmt = historyRef.current
+		if (historyElmt)
+			historyElmt.scrollTop = historyElmt.scrollHeight - historyElmt.clientHeight - 1
 	}, [historyRef])
 
+	const onScroll = useCallback(()=> {
+		//when scrolled to the bottom of history, hide history
+		const elmt = historyRef.current!
+		const bottom = elmt.scrollHeight - Math.round(elmt.scrollTop) === elmt.clientHeight
+		if (bottom)
+			close()
+	}, [])
+
 	function onClick(index: number, _page: PageEntry) {
-		close()
-		history.load(index)
+		onPageSelect(index)
 	}
+	//if (!history.empty) // at least one element in the iterator TODO display a 'nothing here' icon
 
 	return (
-		<div id="history" ref={historyRef}>
+		<div id="history" ref={historyRef} onScroll={onScroll}>
 			<div className="text-container">
 				{Array.from(history.allPages, (page, i) =>
-					<PageElement key={i} content={page} onLoad={onClick.bind(null, i)} />
+					<PageElement history={history} key={i} content={page} onLoad={onClick.bind(null, i)} />
 				)}
 			</div>
 		</div>
 	)
 }
 
-function setActiveScene(label: string) {
-	const allScenes = document.querySelectorAll("[id^='fc-scene-']")
-	allScenes.forEach(scene => scene.classList.remove("active"))
-	if (gameContext.label.startsWith("skip")) {
-		return
-	}
-	const sceneNode = document.getElementById(`fc-scene-${label}`)
-	if (sceneNode) {
-		sceneNode.classList.add("active")
-		sceneNode.scrollIntoView({ behavior: "instant", block: "center" })
-	}
-}
-
 type FlowchartDisplayProps = {
-	display: boolean
+	history: History
+	onSceneSelect: (index: number)=>void
 }
-const FlowchartDisplay = ({ display }: FlowchartDisplayProps) => {
-	useObserver((label)=> {
-		if (history.pagesLength > 0)
-			setActiveScene(history.lastScene.label)
-
-		//TODO: prevent loading a different scene until we are able to restore flags and affections
-	}, gameContext, 'label')
-
-	useEffect(() => {
-		if (display) {
-			//setActiveScene(gameContext.label)
-		}
-	}, [display])
-
+const FlowchartDisplay = ({ history, onSceneSelect }: FlowchartDisplayProps) => {
+	useEffect(()=> {
+		setTimeout(()=> {
+			const activeNode = document.querySelector(`.fc-scene.active`)
+			if (activeNode) {
+				activeNode.scrollIntoView({ behavior: "instant", block: "center" })
+			}
+		}, 0)
+	}, [history])
 	return (
 		<div id="scenes">
 			<div className="flowchart-container">
-				<Flowchart onSceneClick={(id=> history.loadScene(id))}/>
+				<Flowchart
+					history={history}
+					onSceneClick={(id=> onSceneSelect(history.sceneIndex(id)))}/>
 			</div>
 		</div>
 	)

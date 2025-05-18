@@ -1,27 +1,33 @@
 import { memo } from "react"
 import { displayMode } from "../../utils/display"
-import { endTransition } from "../../utils/graphics"
 import useGraphicTransition from "../hooks/useGraphicTransition"
 import GraphicsElement from "./GraphicsElement"
 import { useObserved } from "@tsukiweb-common/utils/Observer"
+import { GraphicsTransition } from "@tsukiweb-common/types"
 
+type Props = {
+	image: string
+	transition: GraphicsTransition|undefined
+}
 /**
  * used to make background transitions over the sprites
  */
-const ForegroundGraphics = () => {
+const ForegroundGraphics = ({image, transition}: Props) => {
 	const [bgAlign] = useObserved(displayMode, 'bgAlignment')
-	const {img, duration, effect, imgLoaded} = useGraphicTransition('bg')
+	const {
+		img: currImg, prev: prevImg,
+		duration: fadeTime, effect, onAnimationEnd
+	} = useGraphicTransition('bg', image, transition)
 
-	if (!(imgLoaded && duration > 0 && effect != "")) return <></>
-
-	return (
-		<GraphicsElement key={img}
+	return prevImg != undefined ? (
+		<GraphicsElement key={currImg}
 			pos='bg'
-			image={img}
-			fadeTime={duration}
+			image={currImg}
+			fadeTime={fadeTime}
 			fadeIn={effect}
-			onAnimationEnd={endTransition} {...{'bg-align': bgAlign}}/>
-	)
+			onAnimationEnd={onAnimationEnd}
+			{...{'bg-align': bgAlign}}/>
+	) : <></>
 }
 
 export default memo(ForegroundGraphics)

@@ -2,15 +2,21 @@ import { memo, Fragment } from "react"
 import { strings } from "../../translation/lang"
 import { phaseTexts } from "../../translation/assets"
 import { SaveState } from "../../utils/savestates"
-import { getSceneTitle } from "../../utils/scriptUtils"
+import { getSceneTitle } from "../../script/utils"
 import Button from "@tsukiweb-common/ui-core/components/Button"
 import { MdReplay } from "react-icons/md"
 import classNames from "classnames"
 import { Bbcode, bb } from "@tsukiweb-common/utils/Bbcode"
-import { PageEntry } from "utils/history"
+import { History, PageEntry } from "utils/history"
 import { LabelName, TsukihimeSceneName } from "types"
 
-const PageElement = ({content, onLoad}: {content: PageEntry, onLoad: (page: PageEntry)=>void})=> {
+type Props = {
+	history: History,
+	content: PageEntry,
+	onLoad: (page: PageEntry)=>void
+}
+
+const PageElement = ({history, content, onLoad}: Props)=> {
 	
 	if (!content)
 		return <></>
@@ -36,13 +42,14 @@ const PageElement = ({content, onLoad}: {content: PageEntry, onLoad: (page: Page
 			break
 		case "skip" :
 			const {label} = content as PageEntry<"skip">
-			const sceneTitle = getSceneTitle(label as TsukihimeSceneName)??""
+			const flags = history.getSceneContext(label)?.flags as string[]
+			const sceneTitle = getSceneTitle(flags, label as TsukihimeSceneName)??""
 			displayContent = <span className='skip'>
 				{bb(strings.history.skipped.replace('$0', sceneTitle))}
 			</span>
 			break
 		case "phase" :
-			const {route, routeDay, day} = content as PageEntry<"phase">
+			const {phase: {route, routeDay, day}} = content as PageEntry<"phase">
 			const [phaseTitle, phaseDay] = phaseTexts(route ?? "", routeDay ?? "", day ?? 0)
 			displayContent = <span className='phase'>
 				{phaseTitle && bb(phaseTitle)}

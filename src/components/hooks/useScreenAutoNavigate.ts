@@ -5,7 +5,8 @@ import { observe, unobserve } from "@tsukiweb-common/utils/Observer"
 
 /**
  * Navigate to the correct screen when setting the `displayMode.screen` value.
- * Sets this attribute to the provided `currentScreen`.
+ * 
+ * Calling this method also sets this attribute to the provided `currentScreen`.
  * @param currentScreen label of the current screen this hook is used on
  */
 export function useScreenAutoNavigate(currentScreen: SCREEN) {

@@ -57,7 +57,10 @@ export type SettingsType = {
 	titleMusic: string
 
 	unlockEverything: boolean
-	
+
+	historyLength: number, // pages stored at runtime in the history
+	savedHistoryLength: number // pages saved when creating a save state
+
 	// saved progress
 	eventImages: string[]
 	completedScenes: string[]

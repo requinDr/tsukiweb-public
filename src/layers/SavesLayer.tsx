@@ -7,30 +7,23 @@ import classNames from "classnames";
 
 
 type Props = {
-  back: ()=>void
+  mode: null|'save'|'load'
+  back: (saveLoaded: boolean)=>void
 }
 
-const SavesLayer = ({back}: Props) => {
-  const [display, setDisplay] = useState(displayMode.saveScreen)
-  const [variant, setVariant] = useState(displayMode.savesVariant as Exclude<typeof displayMode.savesVariant, "">)
+const SavesLayer = ({mode, back}: Props) => {
   const rootRef = useRef<HTMLDivElement>(null)
+  const variant = useRef<'save'|'load'>(mode!=null ? mode : 'save')
+  const display = useRef<boolean>(false)
   useLanguageRefresh()
-
-  useObserver((display)=> {
-    setDisplay(display)
-    if (display)
-      setVariant(displayMode.savesVariant as "save"|"load")
-    else if (rootRef.current?.contains(document.activeElement))
-      (document.activeElement as HTMLElement).blur?.()
-  }, displayMode, "saveScreen")
   
   return (
     <div id="layer-save"
-      className={classNames("layer", {show: display})}
+      className={classNames("layer", {show: mode != null})}
       ref={rootRef}
     >
       <div className="page-content">
-        <SavesLayout variant={variant} back={back} />
+        <SavesLayout variant={mode ?? 'save'} back={back} />
       </div>
     </div>
   )

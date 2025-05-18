@@ -1,12 +1,12 @@
 import { Tooltip } from "react-tooltip"
-import { SaveState, exportSave } from "../../utils/savestates"
+import { SaveState, savesManager } from "../../utils/savestates"
 import { savePhaseTexts } from "../SavesLayout"
 import { MdDeleteOutline, MdOutlineFileDownload } from "react-icons/md"
 import { BiSolidHeart } from "react-icons/bi"
 import GraphicsGroup from "../molecules/GraphicsGroup"
 import { strings } from "translation/lang"
 import classNames from "classnames"
-import { gameContext } from "utils/gameContext"
+import { Regard } from "script/ScriptPlayer"
 
 type SaveDetailsProps = {
 	id?: number
@@ -15,8 +15,10 @@ type SaveDetailsProps = {
 }
 const SaveDetails = ({id, saveState, deleteSave}: SaveDetailsProps)=> {
 	const [phaseTitle, phaseDay] = saveState ? savePhaseTexts(saveState) : ["", ""]
-	const graphics = saveState?.page.graphics ?? {bg: "#000"}
-	const regard = saveState?.history[saveState.history.length-1].regard ?? {}
+	const lastPage = saveState?.pages[saveState!.pages.length-1]
+	const lastScene = saveState?.scenes[saveState!.scenes.length-1]
+	const graphics = lastPage?.graphics ?? {bg: "#000"}
+	const regard = lastScene?.regard ?? {}
 	return (
 		<section className={classNames("info", { "preview-save": saveState !== undefined })}>		
 			{id != undefined && saveState != undefined && <>
@@ -42,7 +44,7 @@ const SaveDetails = ({id, saveState, deleteSave}: SaveDetailsProps)=> {
 						data-tooltip-id="tooltip" data-tooltip-content="Delete" data-tooltip-place="top" data-tooltip-position-strategy="fixed">
 						<MdDeleteOutline />
 					</button>
-					<button onClick={() => exportSave([id])}
+					<button onClick={() => savesManager.exportSave(id)}
 						data-tooltip-id="tooltip" data-tooltip-content="Download" data-tooltip-place="top" data-tooltip-position-strategy="fixed">
 						<MdOutlineFileDownload />
 					</button>
@@ -55,20 +57,17 @@ const SaveDetails = ({id, saveState, deleteSave}: SaveDetailsProps)=> {
 export default SaveDetails
 
 
-const AffectionTable = ({ regard }: { regard?: Partial<typeof gameContext.regard> }) => {
+const AffectionTable = ({ regard }: { regard?: Partial<Regard> }) => {
 	return (
 		<table className="affection-table">
 			<tbody>
-				{regard?.ark && regard?.ark > 0 &&
-					<AffectionRow name={strings.characters.ark} value={regard.ark} maxHearts={20} />}
-				{regard?.cel && regard?.cel > 0 &&
-					<AffectionRow name={strings.characters.cel} value={regard.cel} maxHearts={20} />}
-				{regard?.aki && regard?.aki > 0 &&
-					<AffectionRow name={strings.characters.aki} value={regard.aki} maxHearts={20} />}
-				{regard?.his && regard?.his > 0 &&
-					<AffectionRow name={strings.characters.his} value={regard.his} maxHearts={20} />}
-				{regard?.koha && regard?.koha > 0 &&
-					<AffectionRow name={strings.characters.koha} value={regard.koha} maxHearts={20} />}
+				{Object.entries(regard ?? {}).map(([char, pts])=> {
+					return pts > 0 ?
+						<AffectionRow key={char}
+							name={strings.characters[char as keyof Regard]}
+							value={pts} maxHearts={20}/>
+					: undefined
+				})}
 			</tbody>
 		</table>
 	)

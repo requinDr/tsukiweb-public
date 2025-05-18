@@ -14,6 +14,7 @@ type SaveListItemProps = {
 const SaveListItem = ({id, saveState, onSelect, focusedSave, buttonProps}: SaveListItemProps)=> {
 	const date = new Date(saveState.date as number)
 	const isQuickSave = id === QUICK_SAVE_ID
+	const lastPage = saveState.pages[saveState.pages.length-1]
 
 	return (
 		<button
@@ -23,7 +24,7 @@ const SaveListItem = ({id, saveState, onSelect, focusedSave, buttonProps}: SaveL
 			{...buttonProps}
 		>
 			<GraphicsGroup
-				images={saveState.graphics ?? saveState.context.graphics ?? {bg: ""}}
+				images={lastPage?.graphics ?? {bg: ""}}
 				resolution="thumb"
 				lazy={true}
 			/>
@@ -32,7 +33,7 @@ const SaveListItem = ({id, saveState, onSelect, focusedSave, buttonProps}: SaveL
 				<time dateTime={date.toISOString()} className="date">
 					{date.toLocaleDateString(getLocale())} {date.toLocaleString(getLocale(), {hour: 'numeric', minute: '2-digit'})}
 				</time>
-				{saveState.page?.contentType === "choice" &&
+				{lastPage?.type === "choice" &&
 					<span className="chip-choice">
 						choice
 					</span>

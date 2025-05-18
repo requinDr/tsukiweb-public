@@ -1,43 +1,47 @@
 import { memo } from "react"
 import GraphicsElement from "./GraphicsElement"
 import useGraphicTransition from "../hooks/useGraphicTransition"
-import { endTransition } from "../../utils/graphics"
-import { SpritePos } from "@tsukiweb-common/types"
+import { GraphicsTransition, SpritePos } from "@tsukiweb-common/types"
 
 type SpriteGraphicsProps = {
 	pos: Exclude<SpritePos, 'bg'>
+	image: string
+	transition?: GraphicsTransition
 }
 
 //.......... l, c, r sprites ...........
-const SpriteGraphics = ({pos}: SpriteGraphicsProps)=> {
-	const {img: currImg, prev: prevImg, duration: fadeTime, effect, imgLoaded}
-			= useGraphicTransition(pos)
+const SpriteGraphics = ({pos, image, transition}: SpriteGraphicsProps)=> {
+	const {
+		img: currImg, prev: prevImg,
+		duration: fadeTime, effect, onAnimationEnd
+	} = useGraphicTransition(pos, image, transition)
 
-	if (!imgLoaded || prevImg == currImg)
-		return <GraphicsElement key={prevImg} pos={pos} image={prevImg}/>
-
-	return <>
-		{fadeTime > 0 &&
+	if (prevImg == undefined) // not loaded or no change
+		return (
 			<GraphicsElement
+					key={currImg}
+					pos={pos}
+					image={currImg}
+				/>
+		)
+	return <>
+		<GraphicsElement
 				key={prevImg}
 				pos={pos}
 				image={prevImg}
 				fadeOut={effect}
 				fadeTime={fadeTime}
 				toImg={currImg}
-				onAnimationEnd={endTransition}
+				onAnimationEnd={onAnimationEnd}
 			/>
-		}
-		{(fadeTime == 0 || effect != "") &&
-			<GraphicsElement
+		<GraphicsElement
 				key={currImg}
 				pos={pos}
 				image={currImg}
 				fadeIn={effect}
 				fadeTime={fadeTime}
-				onAnimationEnd={endTransition}
+				onAnimationEnd={onAnimationEnd}
 			/>
-		}
 	</>
 }
 

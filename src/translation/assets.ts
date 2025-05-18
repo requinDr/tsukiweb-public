@@ -97,6 +97,8 @@ export function audioSePath(se: number|string) {
  * @returns the requested image's url
  */
 export function imageSrc(img: string, res=settings.resolution) {
+  if (img.startsWith('"'))
+    img = img.replaceAll(/(^")|"$/g, '')
   let imgRedirect = strings.images["redirected-images"][img] ?? ""
   if (imgRedirect.constructor == String) {
     if (imgRedirect.startsWith('#'))
@@ -151,20 +153,16 @@ export function credits() : [string, number][] {
  * @returns an array of two elements where the first element is the text
  *          for the title, and the second element is the text for the subtitle
  */
-export function phaseTexts(route: RouteName|"", routeDay: RouteDayName|"", day: RouteDayName<'others'>|number): [string, string] {
-  if (route == "") { // this case should never happen
-    if (routeDay == "" && day == 0)
-      return ["", ""]
-    else
-      route = 'others'
-  }
-  if (route == 'others' && routeDay == "") {
-    routeDay = day as RouteDayName
-    day = 0
-  }
+export function phaseTexts(route: RouteName, routeDay: RouteDayName, day: number|RouteDayName<"others">): [string, string] {
+  
   const titleString = strings.scenario.routes[route][routeDay as RouteDayName]
-  const dayString = day.constructor == String ? strings.scenario.routes['others'][day]
-                  : (day as number) > 0 ? strings.scenario.days[(day as number)-1]
-                  : ""
+  let dayString: string
+  if (isNaN(day as number))
+    dayString = strings.scenario.days[+day - 1]
+  else if ((day as string).length > 0)
+    dayString = strings.scenario.routes['others'][day as RouteDayName<"others">]
+  else
+    dayString = ""
+
   return [titleString, dayString]
 }

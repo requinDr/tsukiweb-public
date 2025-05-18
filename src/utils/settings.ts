@@ -33,6 +33,9 @@ export const defaultSettings: SettingsType = deepFreeze({
   titleMusic: '"*8"',
 
   unlockEverything: false,
+
+  historyLength: 20,
+  savedHistoryLength: 10,
   
   eventImages: new Array<string>(),
   completedScenes: new Array<string>(),
@@ -52,8 +55,8 @@ let savePostPoneTimeoutId: NodeJS.Timeout|0 = 0
 
 function saveSettings() {
   if (savePostPoneTimeoutId) {
-    savePostPoneTimeoutId = 0
     clearTimeout(savePostPoneTimeoutId)
+    savePostPoneTimeoutId = 0
   }
   settings.completedScenes.sort()
   const diff = jsonDiff(settings, defaultSettings)
@@ -89,5 +92,11 @@ export function viewedScene(scene: LabelName | string): boolean {
 }
 
 //TODO clean unused settings from previous versions
+
+declare global {
+  interface Window {
+    [key: string]: any
+  }
+}
 
 window.settings = settings

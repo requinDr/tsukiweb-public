@@ -1,22 +1,23 @@
 import { useEffect, useRef, useState } from "react"
 import { MdCopyAll, MdFastForward, MdFullscreen, MdFullscreenExit, MdOutlineVolumeOff, MdOutlineVolumeUp, MdPlayArrow } from "react-icons/md"
-import { gameContext } from "utils/gameContext"
 import { settings } from "../utils/settings"
-import { quickLoad, quickSave } from "../utils/savestates"
-import script from "../utils/script"
-import { displayMode, SCREEN } from "../utils/display"
+import { displayMode, InGameLayersHandler, SCREEN } from "../utils/display"
 import { strings } from "../translation/lang"
 import Ornament from "../assets/images/ornament.webp"
 import { toast } from "react-toastify"
 import { useObserved } from "@tsukiweb-common/utils/Observer"
-import { isFullscreen, toggleFullscreen, addEventListener, supportFullscreen } from "@tsukiweb-common/utils/utils"
+import { isFullscreen, toggleFullscreen, supportFullscreen } from "@tsukiweb-common/utils/utils"
 import classNames from "classnames"
+import { useDOMEvent } from "@tsukiweb-common/hooks/useDOMEvent"
+import { ScriptPlayer } from "script/ScriptPlayer"
 
 
 type Props = {
+	script: ScriptPlayer
 	show?: Partial<{
 		graphics: boolean
 		history: boolean
+		flowchart: boolean
 		save: boolean
 		load: boolean
 		config: boolean
@@ -27,54 +28,43 @@ type Props = {
 		qLoad: boolean
 		copyScene: boolean
 	}>
+	layers: InGameLayersHandler
+	qSave: VoidFunction
+	qLoad: VoidFunction
 }
-const MenuLayer = ({show}: Props) => {
+const MenuLayer = ({script, show, layers, qSave, qLoad}: Props) => {
 	const menuRef = useRef<HTMLDivElement>(null)
-	const [display] = useObserved(displayMode, 'menu')
+	const display = layers.menu
 
 	useEffect(()=> {
-		if (!display && menuRef.current?.contains(document.activeElement))
+		if (display) {
+			//focus the menu when it appears
+			setTimeout(()=> {
+				menuRef.current?.focus()
+			}, 100)
+		} else if (menuRef.current?.contains(document.activeElement))
 			(document.activeElement as HTMLElement).blur?.();
 	}, [display])
 
-	useEffect(() => {
+	useDOMEvent((e: MouseEvent)=> {
 		//if a left click is made outside the menu, hide it
-		const handleClick = (e: MouseEvent) => {
-			if (e.button === 0 && displayMode.menu && !menuRef.current?.contains(e.target as Node)) {
-				displayMode.menu = false
-			}
+		if (e.button === 0 && !menuRef.current?.contains(e.target as Node)) {
+			layers.menu = false
 		}
-		return addEventListener({event: 'mousedown', handler: handleClick})
-	})
+	}, window, 'mousedown')
 
-	const graphicMode = () => {
-		displayMode.graphics = !displayMode.graphics;
-		displayMode.menu = false
-	}
+	const graphicMode   = () => { layers.graphics  = true }
+	const historyMode   = () => { layers.history   = true }
+	const flowchartMode = () => { layers.flowchart = true }
+	const saveMode      = () => { layers.save      = true }
+	const loadMode      = () => { layers.load      = true }
+	const configMode    = () => { layers.config    = true }
 
-	const historyMode = () => {
-		displayMode.menu = false
-		displayMode.history = true
-	}
-
-	const saveMode = () => {
-		displayMode.menu = false
-		displayMode.save = true
-	}
-
-	const loadMode = () => {
-		displayMode.menu = false
-		displayMode.load = true
-	}
-
-	const configMode = () => {
-		displayMode.menu = false
-		displayMode.config = true
-	}
+	const closeMenu = () => { layers.menu = false }
 
 	const title = () => {
+		closeMenu()
 		displayMode.screen = SCREEN.TITLE
-		displayMode.menu = false
 	}
 
 	return (
@@ -96,6 +86,11 @@ const MenuLayer = ({show}: Props) => {
 						{show?.history &&
 						<button onClick={historyMode} className="layer-btn">
 							{strings.menu["history"]}
+						</button>
+						}
+						{show?.flowchart &&
+						<button onClick={flowchartMode} className="layer-btn">
+							{strings.extra.scenes}
 						</button>
 						}
 						{show?.save &&
@@ -120,7 +115,8 @@ const MenuLayer = ({show}: Props) => {
 						}
 					</div>
 
-					<ActionsButtons show={show} />
+					<ActionsButtons script={script} show={show}
+						close={closeMenu} qSave={qSave} qLoad={qLoad}/>
 				</menu>
 			</nav>
 		</div>
@@ -134,37 +130,42 @@ export default MenuLayer
  * - Go to next scene
  */
 type ActionsButtonsProps = {
+	script: ScriptPlayer
 	show?: Partial<{
 		qSave: boolean
 		qLoad: boolean
 		copyScene: boolean
 	}>
+	close: VoidFunction
+	qSave: VoidFunction
+	qLoad: VoidFunction
 }
-const ActionsButtons = ({show}: ActionsButtonsProps) => {
+const ActionsButtons = ({script, show, close, qSave, qLoad}: ActionsButtonsProps) => {
 	const [mute] = useObserved(settings.volume, 'master', (vol)=>vol<0)
 	const [fullscreen, setFullscreen] = useState<boolean>(isFullscreen())
 
-	useEffect(()=> {
-		return addEventListener({event: 'fullscreenchange', handler: ()=> {
-			setFullscreen(isFullscreen())
-		}})
-	}, [])
+	useDOMEvent(()=> {
+		setFullscreen(isFullscreen())
+	}, document, "fullscreenchange")
 
 	const toggleVolume = () => {
 		settings.volume.master = - settings.volume.master
 	}
 	const fastForwardScene = ()=> {
-		const currLabel = gameContext.label
-		script.fastForward((_l, context)=> context.label != currLabel)
-		displayMode.menu = false
+		const currLabel = script.currentLabel
+		if (currLabel)
+			script.ffw((_line, _index, _page, _lines, label)=>{
+				return label != currLabel
+			}, settings.fastForwardDelay)
+		close()
 	}
 	const autoPlay = () => {
-		displayMode.menu = false
 		script.autoPlay = true
+		close()
 	}
 	const copySceneToClipboard = () => {
 		navigator.clipboard.writeText(
-			`${window.location.origin}/scenes/${gameContext.label}`
+			`${window.location.origin}/scenes/${script.currentLabel??""}`
 		)
 		toast.info("Scene link copied to clipboard", {autoClose: 2000})
 	}
@@ -172,12 +173,12 @@ const ActionsButtons = ({show}: ActionsButtonsProps) => {
 	return (
 		<div className="action-btns">
 			{show?.qSave &&
-			<button onClick={quickSave} className="quick">
+			<button onClick={qSave} className="quick">
 				{strings.menu["q-save"]}
 			</button>
 			}
 			{show?.qLoad &&
-			<button onClick={quickLoad} className="quick">
+			<button onClick={qLoad} className="quick">
 				{strings.menu["q-load"]}
 			</button>
 			}
@@ -198,8 +199,8 @@ const ActionsButtons = ({show}: ActionsButtonsProps) => {
 				onClick={copySceneToClipboard}
 				className="fullwidth copy-scene"
 				aria-label="copy scene link"
-				disabled={gameContext.label.startsWith("skip")}
-				title={gameContext.label}
+				disabled={script.currentLabel?.startsWith("skip")}
+				title={script.currentLabel ?? ""}
 			>
 				<MdCopyAll style={{marginRight: 8}} /> {strings.menu["copy-scene-url"]}
 			</button>

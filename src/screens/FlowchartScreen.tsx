@@ -1,5 +1,5 @@
 import '../styles/flowchart.scss'
-import { SCREEN, displayMode } from "../utils/display"
+import { SCREEN } from "../utils/display"
 import { useLanguageRefresh } from "../components/hooks/useLanguageRefresh"
 import { useScreenAutoNavigate } from "../components/hooks/useScreenAutoNavigate"
 import Flowchart from "components/flowchart/Flowchart"
