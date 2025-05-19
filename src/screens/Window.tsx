@@ -294,6 +294,7 @@ const Window = () => {
 			console.debug("starting script")
 			script.start()
 		}
+		window.script = script
 	}, [script])
 
 	const topLayer = layers.topLayer

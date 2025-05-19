@@ -332,3 +332,4 @@ export const history = new History({
   restore: true
 })
 export default history
+window.h = history
