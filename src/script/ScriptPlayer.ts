@@ -271,6 +271,11 @@ export class ScriptPlayer extends ScriptPlayerBase<LabelName> {
         this.history.onBlockStart(this, label)
         return super.beforeBlock(label, initPage)
     }
+    protected override async afterBlock(label: LabelName): Promise<void> {
+        if (isThScene(label) && !settings.completedScenes.includes(label)) {
+            settings.completedScenes.push(label)
+        }
+    }
     override onPageStart(line: string, index: number, blockLines: string[],
                          label: LabelName): void {
         super.onPageStart(line, index, blockLines, label)

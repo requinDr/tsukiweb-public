@@ -23,7 +23,7 @@
 				//outline: 2px solid #ff9f00;
 			}
 		}
-		.disabled {
+		&.disabled {
 			filter: grayscale(1)
 		}
 		.fc-scene-content {

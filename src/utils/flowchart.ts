@@ -79,8 +79,7 @@ export enum FcNodeState {
 	HIDDEN,
 	UNSEEN,
 	DISABLED,
-	ENABLED,
-	ACTIVE,
+	ENABLED
 }
 
 //##############################################################################
@@ -122,16 +121,18 @@ export class FcNode extends FlowchartNode<FcNodeId, TsukihimeFlowchart> {
 		return settings.completedScenes.includes(this.id)
 	}
 
+	get active(): boolean {
+		return this.flowchart.activeScene == this.id
+	}
+
 	get state(): FcNodeState {
 		if (this._state == -1) {
 			if (isThScene(this.id)) {
-				if (this.flowchart.activeScene == this.id)
-					this._state = FcNodeState.ACTIVE
 				if (this.flowchart.isSceneEnabled(this.id))
 					this._state = FcNodeState.ENABLED
 				else if (this.seen)
 					this._state = FcNodeState.DISABLED
-				else if (this.parents.some(p=>p.state > FcNodeState.UNSEEN))
+				else if (this.parents.some(p=>p.seen))
 					this._state = FcNodeState.UNSEEN
 				else
 					this._state = FcNodeState.HIDDEN

@@ -49,7 +49,7 @@ const HistoryLayer = ({ history, onRewind, layers, ...divProps }: Props) => {
 			className={classNames("layer", {"show": layers.history || layers.flowchart}, divProps?.className)}
 			ref={rootRef}>
 			<div className='scroll-container'>
-				{layers.history ?
+				{layers.history && history.pagesLength > 0 ?
 					<HistoryDisplay key={history.lastPage.page}
 						history={history}
 						close={close}
