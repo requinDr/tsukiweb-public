@@ -7,6 +7,7 @@ import GraphicsGroup from "../molecules/GraphicsGroup"
 import { strings } from "translation/lang"
 import classNames from "classnames"
 import { Regard } from "script/ScriptPlayer"
+import { jsonMerge } from "@tsukiweb-common/utils/utils"
 
 type SaveDetailsProps = {
 	id?: number
@@ -15,9 +16,10 @@ type SaveDetailsProps = {
 }
 const SaveDetails = ({id, saveState, deleteSave}: SaveDetailsProps)=> {
 	const [phaseTitle, phaseDay] = saveState ? savePhaseTexts(saveState) : ["", ""]
-	const lastPage = saveState?.pages[saveState!.pages.length-1]
-	const lastScene = saveState?.scenes[saveState!.scenes.length-1]
-	const graphics = lastPage?.graphics ?? {bg: "#000"}
+	const lastPage = saveState?.pages.at(-1)
+	const lastScene = saveState?.scenes.at(-1)
+	const graphics = jsonMerge(saveState?.graphics ?? {},
+			lastPage?.graphics ?? {bg: "#000"})
 	const regard = lastScene?.regard ?? {}
 	return (
 		<section className={classNames("info", { "preview-save": saveState !== undefined })}>		

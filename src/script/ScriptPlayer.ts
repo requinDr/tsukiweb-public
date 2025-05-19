@@ -1,6 +1,6 @@
 import { ScriptPlayerBase, ScriptPlayerCallbacks } from "@tsukiweb-common/script/ScriptPlayer"
 import { LabelName, RouteDayName, RouteName } from "types";
-import { fetchLogicBlock, fetchScene, isThScene, nextLabel } from "script/utils";
+import { fetchBlockLines, fetchLogicBlock, fetchScene, isThScene, nextLabel } from "script/utils";
 import { settings } from "utils/settings";
 import { phaseTexts } from "translation/assets";
 import { closeBB } from "@tsukiweb-common/utils/Bbcode";
@@ -251,10 +251,7 @@ export class ScriptPlayer extends ScriptPlayerBase<LabelName> {
     }
 
     override fetchLines(label: LabelName): Promise<string[]> {
-        if (isThScene(label))
-            return fetchScene(label)
-        else
-            return fetchLogicBlock(label)
+        return fetchBlockLines(label)
     }
     override isLinePageBreak(line: string, index: number, sceneLines: string[],
                     label: LabelName, playing: boolean): boolean {

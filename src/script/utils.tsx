@@ -107,6 +107,13 @@ export async function fetchLogicBlock(label: string) : Promise<string[]> {
 	return lines
 }
 
+export async function fetchBlockLines(label: string): Promise<string[]> {
+	if (isThScene(label))
+		return fetchScene(label)
+	else
+		return fetchLogicBlock(label)
+}
+
 export function creditsScript(insertEndOfPlay: boolean = false): string[] {
 	return [
 		'play "*10"',
@@ -121,4 +128,30 @@ export function creditsScript(insertEndOfPlay: boolean = false): string[] {
 		'bg #000000,crossfade,1500',
 		...(insertEndOfPlay ? ["goto *endofplay"] : [])
 	]
+}
+
+export function isLinePageBreak(line: string, index: number,
+		sceneLines: string[], playing: boolean = false): boolean {
+	if (playing) {
+		return line.startsWith('\\') || line.startsWith('phase ')
+	} else {
+		if (line.startsWith('\\'))
+			return true
+		else if (line.startsWith('phase'))
+			// prevents counting 2 pages for conditional phases
+			return !sceneLines[index+1].startsWith('skip')
+		else
+			return false
+	}
+}
+
+
+export function getPageAtLine(lines: string[], index: number) {
+	let p = 0
+	for (let i = 0; i < index; i++) {
+		const line = lines[i]
+		if (isLinePageBreak(line, i, lines))
+			p++
+	}
+	return p
 }

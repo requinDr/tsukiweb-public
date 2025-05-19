@@ -10,7 +10,7 @@ import { LabelName, TsukihimeSceneName } from "types"
 const SaveSummary = memo(({saveState}: {saveState: SaveState})=> {
 	const lastPage = saveState.pages[saveState.pages.length-1]
 
-	switch (lastPage?.type) {
+	switch (lastPage?.type ?? "text") {
 		case "text" :
 			return <>{noBb(lastPage.text ?? "").trim()}</>
 
@@ -45,7 +45,7 @@ const SaveSummary = memo(({saveState}: {saveState: SaveState})=> {
 			)
 		
 		default :
-			throw Error(`unimplemented page type`)
+			throw Error(`unimplemented page type ${lastPage?.type}`)
 	}
 })
 

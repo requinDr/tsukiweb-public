@@ -2,14 +2,15 @@ import { settings, viewedScene } from "./settings"
 import history, { History, PageEntry, PageType, SceneEntry } from './history';
 import { toast } from "react-toastify";
 import { FaSave } from "react-icons/fa"
-import { APP_VERSION, SAVE_EXT } from "./constants";
+import { APP_VERSION, SAVE_EXT, SCENE_ATTRS } from "./constants";
 import { LabelName, RouteDayName, RouteName } from "../types";
 import { SCREEN, displayMode } from "./display";
 import { Stored } from "@tsukiweb-common/utils/storage";
 import { TSForceType, jsonMerge, requestFilesFromUser, textFileUserDownload, versionsCompare } from "@tsukiweb-common/utils/utils";
 import { strings } from "translation/lang";
 import { Regard, ScriptPlayer } from "script/ScriptPlayer";
-import { JSONDiff, JSONMerge, JSONObject, PartialJSON, PartialRecord, RecursivePartial } from "@tsukiweb-common/types";
+import { Graphics, JSONDiff, JSONMerge, JSONObject, PartialJSON, PartialRecord, RecursivePartial } from "@tsukiweb-common/types";
+import { fetchBlockLines, getPageAtLine, getSceneTitle, isThScene } from "script/utils";
 
 //##############################################################################
 //#region                       TYPES & CONSTANTS
@@ -29,6 +30,7 @@ type SSList<T extends PartialJSON, Default extends PartialJSON<T>> = []
 export type SaveState = {
   scenes: SSList<SceneEntry, DefaultBlockContext>
   pages: SSList<PageEntry, DefaultPageContext>
+  graphics?: Graphics
   date: number
   version: string
   name?: string
@@ -153,7 +155,7 @@ class SavesManager extends Stored {
   }
 
   add(...saves: (SaveState|[number, SaveState])[]) {
-    for (let save of saves) {
+    Promise.all(saves.map(async (save)=> {
       let id
       if (Array.isArray(save)) {
         [id, save] = save
@@ -162,10 +164,12 @@ class SavesManager extends Stored {
       } else {
         id = save.id ?? save.date
       }
-      this._saveStates.set(id, updateSave(save))
-    }
-    this.saveToStorage()
-    this._notifyListeners()
+      const ss = await updateSave(save)
+      this._saveStates.set(id, ss)
+    })).then(()=> {
+      this.saveToStorage()
+      this._notifyListeners()
+    })
   }
 
   remove(id: SaveStateId) {
@@ -313,12 +317,20 @@ function regard_update(regard: OldRegard): Regard {
     his : regard.hisui  ?? 0,
   }
 }
-function phase_update(phase: Record<string, string|number>) {
-  const route = phase.route
-  let routeDay = phase.routeDay
-  let day = phase.day
-  if (routeDay == "") {
-    routeDay = day
+function phase_update(phase: Record<string, string|number>|undefined) {
+  let route, routeDay, day
+  if (phase) {
+    route = phase.route
+    routeDay = phase.routeDay
+    day = phase.day
+    if (routeDay == "") {
+      routeDay = day
+      day = 0
+    }
+  } else {
+    // use default values. SaveItem should use scene title if available
+    route = 'others'
+    routeDay = 'pro'
     day = 0
   }
   return {
@@ -327,11 +339,14 @@ function phase_update(phase: Record<string, string|number>) {
     day     : day      as RouteDayName<'others'> | number
   }
 }
-function updateSave(ss: SaveState): SaveState {
-  if (ss.version && versionsCompare(ss.version, "0.4.0") > 0)
+async function updateSave(ss: SaveState): Promise<SaveState> {
+  if (ss.version && versionsCompare(ss.version, "0.4.0") >= 0)
     return ss
   else {
-    const {context, progress, page} = ss as any
+    const {context, progress, page, graphics} = ss as any
+    const pageNum = isThScene(context.label) ?
+      getPageAtLine(await fetchBlockLines(context.label), context.index)
+      : 0
     return {
       scenes: [{
         label: context.label,
@@ -340,8 +355,7 @@ function updateSave(ss: SaveState): SaveState {
       }],
       pages: [{
         label: context.label,
-        ['index' as keyof PageEntry]: context.index ?? 0,
-        page: -1,
+        page: pageNum,
         text: page.text ?? "",
         textPrefix: page.textPrefix ?? "",
         audio: context.audio ?? {},
@@ -356,6 +370,7 @@ function updateSave(ss: SaveState): SaveState {
           }
         )
       }],
+      graphics: graphics,
       date: ss.date,
       version: ss.version ?? "0.3.6"
     }

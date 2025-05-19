@@ -88,6 +88,7 @@ export class History extends Stored {
   private _pages: PagesQueue
   private _scenes: ScenesQueue
   private _pageContext: PageContext|undefined
+  private _script: ScriptPlayer|undefined
 
   constructor({limit = settings.historyLength,
               storageId = "history", restore = false}: Params = {}) {
@@ -95,6 +96,7 @@ export class History extends Stored {
     this._pages = new PagesQueue(limit)
     this._scenes = new ScenesQueue()
     this._pageContext = undefined
+    this._script = undefined
     if (restore)
       this.restoreFromStorage()
   }
@@ -235,6 +237,7 @@ export class History extends Stored {
     }
   }
   onBlockStart(script: ScriptPlayer, label: LabelName = script.currentLabel!) {
+    this._script = script
     if (isThScene(label) && label != this.lastScene.label) {
       this._scenes.push({...script.blockContext() as SceneEntry, label})
     }
@@ -291,15 +294,23 @@ export class History extends Stored {
    * @param index - index of the page to export, last page by default
    * @returns the created savestate.
    */
-  createSaveState(index: number = this.pagesLength-1,
+  createSaveState(index: number = this.pagesLength,
       pagesMaxLength = Math.max(settings.savedHistoryLength, 1)) {
     if (index < 0)
       index = this._pages.length + index
+    const includeGraphics = (index == this.pagesLength)
+    if (includeGraphics)
+      index--
     const sceneIndex = this.getSceneAtPage(index)
     const firstPageIndex = Math.max(0, index + 1 - pagesMaxLength)
+    const pages = this._pages.exportJSON(firstPageIndex, index+1)
+    const graphics = includeGraphics && this._script ?
+        jsonDiff({graphics: this._script.graphics}, pages.at(-1)!)
+        : {}
     return {
       scenes: this._scenes.exportJSON(0, sceneIndex+1),
-      pages: this._pages.exportJSON(firstPageIndex, index+1),
+      pages: pages,
+      ...graphics,
       date: Date.now(),
       version: APP_VERSION
     } as SaveState
