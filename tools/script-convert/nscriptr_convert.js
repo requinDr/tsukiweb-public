@@ -13,7 +13,7 @@ const durations = new Map(Object.entries({'fst': 400, 'mid': 800, 'slw': 1500}))
 function simplifyImage(image) {
     return image.replaceAll('\\', '/')
                 .replace(/^"(:a;)?image\//, '"')
-                .replace(/.jpg"$/, '"')
+                .replace(/.(jpg|png)"$/, '"')
 }
 
 /** @param {Token[]} token */
