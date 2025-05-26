@@ -37,13 +37,13 @@ function processSelect(setChoices: (choices: Choice[])=>void,
   }
   if (choices.length == 0)
     console.error(`canot parse choices ${arg}`)
-  console.debug(choices)
+  //console.debug(choices)
   setChoices(choices)
   history.onChoicePrompt(choices)
 
 //----------- set callback -------------
   onSelection.current = (choice)=> {
-    console.debug(choice)
+    //console.debug(choice)
     script.setNextLabel(choice.label)
     onSelection.current = undefined
     setChoices([])

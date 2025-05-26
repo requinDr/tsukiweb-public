@@ -5,11 +5,11 @@ import { useLanguageRefresh } from "../hooks/useLanguageRefresh"
 import PageSection from "@tsukiweb-common/ui-core/layouts/PageSection"
 import { KeymapKeyFilter } from "@tsukiweb-common/utils/KeyMap"
 import { bb } from "@tsukiweb-common/utils/Bbcode"
+import { inGameKeyMap } from "utils/keybind"
 
-//type KeyMapEntry = [string, typeof inGameKeymap[keyof typeof inGameKeymap]]
+type KeyMapEntry = [string, typeof inGameKeyMap[keyof typeof inGameKeyMap]]
 
-//function convertAction([action, keys]: KeyMapEntry) : [string, KeymapKeyFilter[]] {
-function convertAction([action, keys]: any) : [string, KeymapKeyFilter[]] {
+function convertAction([action, keys]: KeyMapEntry) : [string, KeymapKeyFilter[]] {
 	return [
 		action,
 		Array.isArray(keys) ?
@@ -21,10 +21,10 @@ function convertAction([action, keys]: any) : [string, KeymapKeyFilter[]] {
 const ConfigControlsTab = () => {
 	useLanguageRefresh()
 	const controlStrings = strings.config.controls as Record<string, string>
-	const keymap = useRef<[string, KeymapKeyFilter[]][]>([])
-//			Object.entries(inGameKeymap)
-//						.filter(([action, _])=> Object.hasOwn(controlStrings, action))
-//						.map(convertAction))
+	const keymap = useRef<[string, KeymapKeyFilter[]][]>(
+			Object.entries(inGameKeyMap)
+						.filter(([action, _])=> Object.hasOwn(controlStrings, action))
+						.map(convertAction))
 	return (
 		<PageSection>
 			{keymap.current.map(([action, keys], i)=> 

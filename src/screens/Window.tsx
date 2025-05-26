@@ -25,6 +25,7 @@ import ChoicesLayer from 'layers/ChoicesLayer';
 import SkipLayer from 'layers/SkipLayer';
 import { toast } from 'react-toastify';
 import { settings } from 'utils/settings';
+import { inGameKeyMap } from 'utils/keybind';
 
 //##############################################################################
 //#region                          USER INPUTS
@@ -35,32 +36,18 @@ function createKeyMap(layers: InGameLayersHandler) {
 	//const noMenuWindow = ()=> ['menu', null].includes(layers.currentMenu)
 	const onText = ()=> layers.topLayer == 'text'
 	return {
-		"next":    [noMenu,
-					{key: "Enter"},
-					{key: "Control", repeat: true},
-					{key: "Meta", repeat: true},
-					{key: "ArrowDown", repeat: false},
-					{key: "ArrowRight", repeat: false}],
-		"back":    [{key: "Escape", repeat: false},
-					{key: "Backspace", repeat: false}],
-		"history": [onText,
-					{key: "ArrowUp", repeat: false},
-					{key: "ArrowLeft", repeat: false},
-					{key: "H", repeat: false}],
-		"graphics": {code: "Space", repeat: false, [KeyMap.condition]: noMenu},
-		"bg_move": [noMenu,
-					{key: "ArrowUp", ctrlKey: true, repeat: false, [KeyMap.args]: "up"},
-					{key: "ArrowDown", ctrlKey: true, repeat: false, [KeyMap.args]: "down"}],
-		"auto_play":[onText,
-					{key: "E", repeat: false}],
-		"page_nav":[noMenu,
-					{key: "PageUp", [KeyMap.args]: "prev"},
-					{key: "PageDown", [KeyMap.args]: "next"}],
-		"load":    [{key: "A", repeat: false, [KeyMap.condition]: noMenu}],
-		"save":    [{key: "Z", repeat: false, [KeyMap.condition]: noMenu}],
-		"q_save":  [{key: "S", repeat: false, [KeyMap.condition]: noMenu}],
-		"q_load":  [{key: "L", repeat: false, [KeyMap.condition]: noMenu}],
-		"config":  [{key: "C", repeat: false, [KeyMap.condition]: noMenu}],
+		"next":  	[noMenu, ...inGameKeyMap['next']],
+		"back":     inGameKeyMap['back'],
+		"history":  [onText, ...inGameKeyMap['history']],
+		"graphics": [noMenu, ...inGameKeyMap['graphics']],
+		"bg_move":  [noMenu, ...inGameKeyMap['bg_move']],
+		"auto_play":[onText, ...inGameKeyMap['auto_play']],
+		"page_nav":	[noMenu, ...inGameKeyMap['page_nav']],
+		"load":     [noMenu, ...inGameKeyMap['load']],
+		"save":     [noMenu, ...inGameKeyMap['save']],
+		"q_save":   [noMenu, ...inGameKeyMap['q_save']],
+		"q_load":   [noMenu, ...inGameKeyMap['q_load']],
+		"config":   [noMenu, ...inGameKeyMap['config']],
 	}
 }
 
@@ -245,7 +232,7 @@ class UserActionsHandler {
 
 function onAutoPlayStop(ffw: boolean) {
 	if (ffw) {
-		console.log("ffw stop")
+		//console.log("ffw stop")
 		//toast("Fast-Forward stopped", {
 		//	autoClose: 500,
 		//	toastId: 'ff-stop'
@@ -273,25 +260,28 @@ const Window = () => {
 
 	useMemo(()=> {
 		if (history.empty) {
-			displayMode.screen = SCREEN.TITLE
-			return
+			setTimeout(()=> {
+				displayMode.screen = SCREEN.TITLE
+			}, 0)
 		}
 	}, [])
 	
 	useEffect(()=> {
+		if (history.empty)
+			return
 		actionsHandler.onScriptChange(script)
 		script.setCommands(audioCommands)
 		script.setBlockStartCallback(warnHScene)
 		if (!script.continueScript) {
 			script.setAfterBlockCallback(()=> {
-				console.log("scene ended, return to previous page")
+				//console.log("scene ended, return to previous page")
 				script.stop()
 				window.history.back()
 			})
 		}
 		script.setAutoPlayStopCallback(onAutoPlayStop)
 		if (!script.currentBlock) {
-			console.debug("starting script")
+			//console.debug("starting script")
 			script.start()
 		}
 		window.script = script
@@ -300,6 +290,8 @@ const Window = () => {
 	const topLayer = layers.topLayer
 
 	useEffect(()=> {
+		if (history.empty)
+			return
 		//pause script execution when text is not the top layer
 		if (script) {
 			if (script.paused) {
