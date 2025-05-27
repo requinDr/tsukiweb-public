@@ -135,7 +135,8 @@ export class FcNode extends FlowchartNode<FcNodeId, TsukihimeFlowchart> {
 				else if (this.parents.some(p=>p.seen))
 					this._state = FcNodeState.UNSEEN
 				else
-					this._state = FcNodeState.HIDDEN
+					this._state = FcNodeState.UNSEEN
+					// this._state = FcNodeState.HIDDEN
 			}
 			else {
 				this._state = Math.max(FcNodeState.HIDDEN,
@@ -146,7 +147,8 @@ export class FcNode extends FlowchartNode<FcNodeId, TsukihimeFlowchart> {
 	}
 
 	get visible(): boolean {
-		return this.state > FcNodeState.HIDDEN
+		return true
+		// return this.state > FcNodeState.HIDDEN
 	}
 	
 	get metadatas() {
@@ -167,8 +169,7 @@ export class FcNode extends FlowchartNode<FcNodeId, TsukihimeFlowchart> {
 			if (this.alignedNode && this.alignedNode.visible)
 				top = this.alignedNode.top
 			else if (this.parents.length > 0)
-				top = Math.max(...this.parents.filter(node => node.visible)
-											  .map(node => node.bottom)) + DY*2
+				top = Math.max(0, ...this.parents.map(node => node.bottom)) + (this.visible ? DY*2 : 0)
 			else
 				top = 0
 			if (this.scene && this.visible)
