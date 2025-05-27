@@ -4,6 +4,7 @@ import { COLUMN_WIDTH, DY, FcNode, FcNodeState, OVERLAP_BREAK_LENGTH, SCENE_HEIG
 import { TsukihimeSceneName } from "types"
 import { PartialRecord } from "@tsukiweb-common/types"
 import { SceneRenderer } from "./FcScene"
+import { History } from "utils/history"
 
 
 //#endregion ###################################################################
@@ -62,12 +63,11 @@ const SVG_DEFS = <>
 //##############################################################################
 
 type Props = {
-	flowchart ?: TsukihimeFlowchart,
+	history ?: History,
 	onSceneClick ?: (id: TsukihimeSceneName)=>void
 }
-const Flowchart = ({flowchart, onSceneClick}: Props)=> {
-	if (!flowchart)
-		flowchart = new TsukihimeFlowchart()
+const Flowchart = ({history, onSceneClick}: Props)=> {
+	const flowchart = new TsukihimeFlowchart(history)
 	const [left, top, right, bottom] = flowchart.listNodes().filter(n=>n.visible).reduce(
 		(vb, node)=> [
 			Math.min(vb[0], node.left),
@@ -95,7 +95,7 @@ const Flowchart = ({flowchart, onSceneClick}: Props)=> {
 			{[...flowchart.listNodes().filter(node=>node.visible).map(node=>
 				<Fragment key={node.id}>
 					{[...node.parents
-						// .filter(parent=>parent.state > FcNodeState.UNSEEN)
+						// .filter(parent=>parent.seen)
 						.map(
 						parent => connectionPath(parent, node))]}
 					{node.scene &&

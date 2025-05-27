@@ -12,7 +12,8 @@ import { replaceExtensionByAvif, supportAvif, testAvifSupport } from "@tsukiweb-
 export async function preloadImage(src: string, resolution = settings.resolution): Promise<void> {
 	if (src.startsWith('#') || src.startsWith('$'))
 		return
-	
+	if (src.startsWith('"'))
+		src = src.replaceAll('"', '')
 	if (supportAvif === null) {
 		await testAvifSupport()
 	}
@@ -31,7 +32,7 @@ export async function preloadImage(src: string, resolution = settings.resolution
 }
 
 type GraphicsGroupProps = {
-	images: GraphicsType
+	images: Partial<GraphicsType>
 	spriteAttrs?: Partial<Record<SpritePos, DivProps>> | ((pos:SpritePos)=>DivProps)
 	resolution?: typeof settings.resolution,
 	lazy?: boolean,
@@ -69,10 +70,10 @@ const GraphicsGroup = ({
 				<GraphicElement
 					key={images[pos]||pos}
 					pos={pos}
-					image={images[pos] as string} {...(typeof spriteAttrs == 'function' ? spriteAttrs(pos)
+					image={images[pos] ?? ''} {...(typeof spriteAttrs == 'function' ? spriteAttrs(pos)
 							: spriteAttrs?.[pos] ?? {})}
 					getUrl={getUrl.bind(undefined, resolution)}
-					blur={shouldBlur(imageNameFromPath(images[pos] as string))}
+					blur={shouldBlur(imageNameFromPath(images[pos] ?? '' as string))}
 					lazy={lazy}
 				/>
 			)}

@@ -5,16 +5,58 @@
 import fs from 'fs';
 import path from 'path';
 import { parseScript } from './parsers/nscriptr.js';
-import { CommandToken, ConditionToken, ErrorToken, LabelToken, ReturnToken, TextToken } from './parsers/utils.js'
+import { CommandToken, ConditionToken, ErrorToken, LabelToken, ReturnToken, TextToken, Token } from './parsers/utils.js'
 import { generate } from './nscriptr_convert.js';
 import { fixContexts, getScenes } from './scenes.js';
 
-
 const LOGIC_FILE = "scene0"
+
+const CONDITION_REGEXP = /^(?<lhs>(%\w+|\d+))(?<op>[=!><]+)(?<rhs>(%\w+|\d+))$/
 
 //#endregion ###################################################################
 //#region                        SPECIFIC FIXES
 //##############################################################################
+
+function processVarName(varName) {
+	if (varName == "%sceneskip")
+		return null
+	if (varName.match(/^%1\d{3}$/)) // scene completion
+		return null
+	if (varName == "%ark_normalcleared")
+		return "%clear_ark_true"
+	if (varName.endsWith('_regard')) {
+		let char = varName.split('_')[0]
+		switch(char) {
+			case '%ark'   : return '%regard_ark'
+			case '%ciel'  : return '%regard_cel'
+			case '%akiha' : return '%regard_aki'
+			case '%hisui' : return '%regard_his'
+			case '%kohaku': return '%regard_koha'
+			default : throw Error(`regard variable ${varName} not recognized`)
+		}
+	}
+	return varName
+}
+
+function processCondition(condition) {
+	condition = condition.trim()
+	/** @type {string[]} */
+	let subConditions = condition.split('&&')
+	if (subConditions.length > 1)
+		return subConditions.map(processCondition).filter(c => c).join(' && ')
+	let match = CONDITION_REGEXP.exec(condition)
+	if (!match) throw Error(
+		`Unable to parse condition "${condition}"`)
+
+	let {lhs, op, rhs} = match.groups
+	if (lhs.startsWith('%'))
+		lhs = processVarName(lhs)
+	if (rhs.startsWith('%'))
+		rhs = processVarName(rhs)
+	if (!lhs || !rhs)
+		return null
+	return `${lhs}${op}${rhs}`
+}
 
 function tsukihime_logic_fixes(token, i, tokens) {
 	if (!token) {
@@ -26,9 +68,18 @@ function tsukihime_logic_fixes(token, i, tokens) {
 			case 'br'		: tokens[i] = null; break
 			case 'selgosub' : tokens[i] = null; break
 			case 'skip'		: tokens[i] = null; break
-			case 'mov' :
-				if (token.args[0].match(/%1\d{3}/) && +token.args[1] == 1)
-					tokens[i] = null // ignore completion variables (%1000-%15XX)
+			case 'mov' : case 'add' : case 'sub' :
+			case 'inc' : case 'dec' :
+				let [varName] = token.args
+				varName = processVarName(token.args[0])
+				if (!varName)
+					tokens[i] = null
+				else {
+					token.args[0] = varName
+					// route cleared determined with scene completion
+					if (varName.match(/^%clear(ed|_\w+)$/))
+						tokens[i] = null
+				}
 				break
 			case 'gosub' :
 				if (token.args[0] == "*regard_update")
@@ -37,6 +88,7 @@ function tsukihime_logic_fixes(token, i, tokens) {
 			case 'goto' :
 				if (token.args[0] == "*f300")
 					token.args[0] = "*f301"
+				break
 			case 'select' :
 				if (token.args.length == 4 &&
 						token.args[1].trim().match(/^\*f5\d{2}$/) &&
@@ -47,9 +99,11 @@ function tsukihime_logic_fixes(token, i, tokens) {
 				break
 		}
 	} else if (token instanceof ConditionToken) {
-		if (token.condition.match(/%sceneskip\s*==\s*1/))
-			tokens[i] = null // ignore skip prompt (handled by the UI)
+		let condition = processCondition(token.condition)
+		if (condition == null)
+			tokens[i] = null
 		else {
+			tokens[i].condition = condition
 			const conditionalTokens = [token.command]
 			tsukihime_logic_fixes(token.command, 0, conditionalTokens)
 			if (conditionalTokens[0] == null)
@@ -71,29 +125,29 @@ const fixes = new Map(Object.entries({
 				t.text = '[center]' + t.text.trimStart()
 		})
 	},
-	's46': (tokens)=> {
+	'scene46': (tokens)=> {
 		let i = tokens.findIndex(t=> t instanceof CommandToken && t.cmd == 'bg')
-		lines.splice(i+1, 0, 'waveloop se10')
+		tokens.splice(i+1, 0, 'waveloop se10')
 	},
-	's121': (tokens)=> {
+	'scene121': (tokens)=> {
 		// if %flgE>=1 skip 5 --> ... skip 6, otherwise first skip lands on second one
 		const i = tokens.findIndex(t=> t instanceof ConditionToken && t.condition.match(/%flgE\s*>=\s*1/))
-		tokens[i].command.args = [6]
+		tokens[i].command.args = [7]
 	},
-	's228' : (tokens) => {
+	'scene228' : (tokens) => {
 		const i = tokens.findLastIndex(t => t instanceof CommandToken && t.cmd == 'bg')
-		lines.splice(i+1, 0, 'playstop')
+		tokens.splice(i+1, 0, 'playstop')
 	},
-	's333' : (tokens) => {
+	'scene333' : (tokens) => {
 		const i = tokens.findLastIndex(t => t instanceof CommandToken && t.cmd == 'bg')
-		lines.splice(i+1, 0, 'playstop')
+		tokens.splice(i+1, 0, 'playstop')
 	},
-	's140' : (tokens) => {
+	'scene140' : (tokens) => {
 		let i = tokens.findLastIndex(t => t instanceof CommandToken && t.cmd == 'cl' && t.args[0] == 'c')
-		i += tokens.slide(i).findIndex(t => t instanceof CommandToken && t.cmd == '\\')
-		lines.splice(i+1, 0, 'playstop');
+		i += tokens.slice(i).findIndex(t => t instanceof CommandToken && t.cmd == '\\')
+		tokens.splice(i+1, 0, 'playstop');
 	},
-	's178' : (tokens) => {
+	'scene178' : (tokens) => {
 		tokens.unshift('play "*1"')
 	},
 }))
@@ -108,6 +162,64 @@ const COLOR_IMAGES = new Map(Object.entries({
 	'"bg/ima_11b"': '#9c0120',
 }))
 
+const routePhaseRE = /word\/p(?<route>[a-z]+)_(?<rDay>\d+[ab])/
+const parseTitleA = (val)=> val.match(routePhaseRE)?.groups ?? {}
+const dayPhaseRE = /word\/day_(?<day>\d+)/
+const rawScenePhaseRE = /word\/(?<scene>\w+)/
+const parseTitleB = (val)=> val.match(dayPhaseRE)?.groups ??
+                                    val.match(rawScenePhaseRE)?.groups ?? {}
+
+/**
+ * @param {CommandToken} token 
+ * @param {number} i 
+ * @param {Token[]} tokens 
+ */
+function processPhase(token, i, tokens) {
+	token.cmd = 'phase'
+	let side = token.args[0].charAt(1) // 'l' or 'r'
+	if (!['l', 'r'].includes(side))
+		throw Error(`cannot determine side of phase ${token}`)
+	/** @type {Record<string, string>} */
+	const args = Object.fromEntries(
+		tokens.slice(i-3, i).map(t=> {
+			if (!(t instanceof CommandToken && t.cmd == 'mov'))
+				throw Error(`Expected 3 'mov' before ${token}`)
+			return t.args
+		})
+	)
+	let {'$phasebg': bg, '$phasetitle_a': titleA,
+		 '$phasetitle_b': titleB} = args
+	titleA = titleA.toLowerCase()
+	titleB = titleB.toLowerCase()
+	let {day = '', scene = ''} = parseTitleB(titleB)
+	if (!day) {
+		if (!scene)
+			day = '0'
+		else
+			day = scene
+	}
+	if (day.includes(','))
+		throw Error(`Unexpected ',' in phase day`)
+	if (!Number.isNaN(+day))
+		day = +day
+	if (titleA.startsWith('#'))
+		token.args = [bg,side,"others",day,0]
+	else {
+		let {route = "", rDay = ""} = parseTitleA(titleA)
+		if (!route || !rDay)
+			throw Error(`Cannot parse ${titleA}`)
+
+		if (route.includes(',') || rDay.includes(','))
+			throw Error(`Unexpected ',' in phase route and route day`)
+		token.args = [bg,side,route,rDay,day]
+	}
+	tokens[i-3] = tokens[i-2] = tokens[i-1] = null
+}
+
+/**
+ * @param {string} file 
+ * @param {Token[]} tokens 
+ */
 function generalFixes(file, tokens) {
 	for (const [i, token] of tokens.entries()) {
 		if (token instanceof CommandToken) {
@@ -120,8 +232,15 @@ function generalFixes(file, tokens) {
 					if (COLOR_IMAGES.has(token.args[1]))
 						token.args[1] = COLOR_IMAGES.get(token.args[1])
 					else if (token.args[0] == '%rockending')
-						tokens[i] = null
+						tokens[i] = null // unused in game
 					break
+				case 'gosub' :
+					if (/^\*(left|right)_phase$/.test(token.args[0])) {
+						processPhase(token, i, tokens)
+					}
+					else if (/^\*s\d\w+$/.test(token.args[0])) {
+						token.cmd = 'goto'
+					}
 			}
 		} else if (token instanceof ReturnToken) {
 			if (file != LOGIC_FILE) {
@@ -144,7 +263,7 @@ function cmdToProps(cmd, args) {
 	switch (cmd) {
 		case 'bg' : {
 			const [img, , time] = args
-			return [{'bg' : img}, time > 0]
+			return [{'bg' : img, 'l': null, 'c': null, 'r': null}, time > 0]
 		}
 		case 'ld' : {
 			const [pos, img, , time] = args
@@ -163,10 +282,11 @@ function cmdToProps(cmd, args) {
         case 'wavestop' : case 'wave' : return [{'waveloop': null}, false]
         case 'monocro' :
 			return [{'monocro': (args[0]=='off')? null : args[0]}, false]
-        case 'gosub' :
-            return [{'bg': null, 'l': null, 'c': null, 'r': null}, true]
+        case 'phase' :
+            return [{'bg': null, 'l': null, 'c': null, 'r': null,
+					 'track': null, 'waveloop': null, 'monocro': null}, true]
         case 'wait' : case '!w' : return [{}, true]
-        case _ : return [{}, false]
+        default : return [{}, false]
 	}
 }
 
@@ -184,7 +304,7 @@ function propsToCmds(props) {
 	props = [...props.entries()].sort(([k1,],[k2,])=>{
 		return PROP_CMDS.indexOf(k1) - PROP_CMDS.indexOf(k2)
 	})
-	inserts = props.map(([key, value])=> {
+	const insertCmds = props.map(([key, value])=> {
 		switch(key) {
 			case 'bg' : return `bg ${value || '#000000'},notrans,0`
 			case 'a' : case 'l' : case 'c' : case 'r' :
@@ -192,10 +312,13 @@ function propsToCmds(props) {
 					`ld ${key},${value},notrans,0` :
 					`cl ${key},notrans,0`
 			case 'track' : return value ? `play ${value}` : `playstop`
-			case 'waveloop' : return value ? `wavestop` : `waveloop ${value}`
+			case 'waveloop' : return value ? `waveloop ${value}` : `wavestop`
 			case 'monocro' : return `monocro ${value || 'off'}`
 		}
 	})
+	const insertText = insertCmds.join('\n')
+	const inserts = parseScript(insertText, 0)
+	
 	return inserts
 }
 //#endregion ###################################################################
@@ -222,6 +345,8 @@ const ignored_commands = [
 ]
 
 function token_filter(file, token) {
+	if (token == null)
+		return false
     if (token instanceof TextToken)
         return true
     if (token instanceof ConditionToken)
@@ -272,6 +397,16 @@ function tsukihime_fixes(files) {
 		if (fix)
 			fix(tokens)
 		generalFixes(file, tokens)
+		let lineIndex = 0
+		for (let i=0; i < tokens.length; i++) {
+			if (!tokens[i])
+				continue
+			if (!(tokens[i] instanceof Token)) {
+				tokens.splice(i, 1, ...parseScript(tokens[i], lineIndex))
+			} else {
+				lineIndex = tokens[i].lineIndex
+			}
+		}
 	}
 	const scenes = getScenes(files, LOGIC_FILE, (label)=> {
 		if (/^s\d\w+/.test(label))
@@ -312,7 +447,7 @@ function main() {
 	const outputDir = 'scenes'
 	const fullscripts = [
 		['jp', 'fullscript_jp.txt'],
-//		['en-mm', 'fullscript_en-mm.txt'],
+		['en-mm', 'fullscript_en-mm.txt'],
 //		['es-tohnokun', 'fullscript_es-tohnokun.txt'],
 //		['it-riffour', 'fullscript_it-riffour.txt'],
 //		['pt-matsuri', 'fullscript_pt-matsuri.txt'],

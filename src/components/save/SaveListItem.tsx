@@ -3,6 +3,7 @@ import { getLocale } from "../../translation/lang"
 import { QUICK_SAVE_ID, SaveState } from "../../utils/savestates"
 import GraphicsGroup from "../molecules/GraphicsGroup"
 import SaveSummary from "./SaveSummary"
+import { jsonMerge } from "@tsukiweb-common/utils/utils"
 
 type SaveListItemProps = {
 	id: number,
@@ -14,6 +15,9 @@ type SaveListItemProps = {
 const SaveListItem = ({id, saveState, onSelect, focusedSave, buttonProps}: SaveListItemProps)=> {
 	const date = new Date(saveState.date as number)
 	const isQuickSave = id === QUICK_SAVE_ID
+	const lastPage = saveState.pages.at(-1)!
+	const graphics = jsonMerge(saveState.graphics ?? {},
+			lastPage.graphics ?? {bg: "#000"})
 
 	return (
 		<button
@@ -23,7 +27,7 @@ const SaveListItem = ({id, saveState, onSelect, focusedSave, buttonProps}: SaveL
 			{...buttonProps}
 		>
 			<GraphicsGroup
-				images={saveState.graphics ?? saveState.context.graphics ?? {bg: ""}}
+				images={graphics}
 				resolution="thumb"
 				lazy={true}
 			/>
@@ -32,7 +36,7 @@ const SaveListItem = ({id, saveState, onSelect, focusedSave, buttonProps}: SaveL
 				<time dateTime={date.toISOString()} className="date">
 					{date.toLocaleDateString(getLocale())} {date.toLocaleString(getLocale(), {hour: 'numeric', minute: '2-digit'})}
 				</time>
-				{saveState.page?.contentType === "choice" &&
+				{lastPage?.type === "choice" &&
 					<span className="chip-choice">
 						choice
 					</span>

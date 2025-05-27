@@ -1,13 +1,12 @@
 import { ReactNode, useEffect, useState } from "react"
 import { ConfigButtons, ConfigItem, ResetBtn } from "../ConfigLayout"
 import { defaultSettings, settings } from "../../utils/settings"
-import { SaveState, clearSaveStates, listSaveStates, restoreSaveStates } from "../../utils/savestates"
+import { savesManager, SaveState } from "../../utils/savestates"
 import { strings, languages } from "../../translation/lang"
 import { toast } from "react-toastify"
 import { useLanguageRefresh } from "../hooks/useLanguageRefresh"
 import { MdDeleteForever, MdDownload, MdFileUpload, MdTranslate } from "react-icons/md"
 import ModalLanguageSelection from "./ModalLanguageSelection"
-import { warnHScene } from "utils/script"
 import ConfigModal from "./components/ConfigModal"
 import Button from "@tsukiweb-common/ui-core/components/Button"
 import PageSection from "@tsukiweb-common/ui-core/layouts/PageSection"
@@ -15,14 +14,17 @@ import { RecursivePartial } from "@tsukiweb-common/types"
 import { deepAssign, jsonDiff, textFileUserDownload, requestJSONs } from "@tsukiweb-common/utils/utils"
 import { bb } from "@tsukiweb-common/utils/Bbcode"
 import { modalPromptService } from "@tsukiweb-common/ui-core/components/ModalPrompt"
+import { APP_VERSION } from "utils/constants"
+import { warnHScene } from "utils/display"
 
 function twoDigits(n: number) {
 	return n.toString().padStart(2, '0')
 }
 
 type Savefile = {
+	version: string
 	settings: RecursivePartial<typeof settings>,
-	saveStates?: [number, SaveState][],
+	saveStates?: SaveState[],
 }
 
 const ConfigAdvancedTab = () => {
@@ -50,8 +52,9 @@ const ConfigAdvancedTab = () => {
 
 	const exportData = () => {
 		const content: Savefile = {
+			version: APP_VERSION,
 			settings: jsonDiff(settings, defaultSettings),
-			saveStates: listSaveStates(),
+			saveStates: savesManager.listSaves(),
 		}
 		const date = new Date()
 		const year = date.getFullYear(), month = date.getMonth()+1,
@@ -66,11 +69,13 @@ const ConfigAdvancedTab = () => {
 			const json = (await requestJSONs({accept: allExtensions ? '*' : '.thfull'}) as Savefile[])?.[0] as Savefile|undefined
 			if (!json)
 				return
+			if (!json.version)
+				json.version = "0.3.6"
 			const importedSettings = deepAssign(defaultSettings, json.settings, {clone: true})
 			deepAssign(settings, importedSettings)
 			if (json.saveStates != undefined) {
-				clearSaveStates()
-				restoreSaveStates(json.saveStates)
+				savesManager.clear()
+				savesManager.add(...json.saveStates)
 			}
 
 			toast("Your data has been loaded", {
@@ -93,7 +98,7 @@ const ConfigAdvancedTab = () => {
 			color: "#760101"
 		})
 		if (confirmed) {
-			clearSaveStates()
+			savesManager.clear()
 			deepAssign(settings, defaultSettings)
 			setTimeout(async ()=> {
 				localStorage.clear()

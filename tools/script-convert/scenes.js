@@ -50,7 +50,7 @@ class Scene {
      */
     _calculateContexts(cmdToProps) {
         let ctx = this._startContext
-        for (const token of self._tokens) {
+        for (let token of this._tokens) {
             if (token instanceof ConditionToken)
                 token = token.command
             let delay = false
@@ -60,7 +60,7 @@ class Scene {
                 let props
                 [props, delay] = cmdToProps(token.cmd, token.args)
                 for (const [prop, value] of Object.entries(props)) {
-                    if (!(ctx.has(prop)))
+                    if (ctx == this._endContext || !(ctx.has(prop)))
                         ctx.set(prop, value)
                 }
             }
@@ -109,7 +109,7 @@ class Scene {
                     throw Error(`Differences in end contexts before ${this._label}`)
             }
         }
-        insert = propsToCmds(missing_props)
+        const insert = propsToCmds(missing_props)
         this._tokens.unshift(...insert)
         // add new properties in end context
         for (const [prop, value] of missing_props) {
@@ -149,8 +149,11 @@ function getScenes(files, logicFileName, getSceneName, additionalLabels) {
         let labels = []
         if (token instanceof ConditionToken)
             token = token.command
-        if (token instanceof LabelToken)
-            scene = getScene(token.label)
+        if (token instanceof LabelToken) {
+            if (!token.label.startsWith('skip')) {
+                scene = getScene(token.label)
+            }
+        }
         else if (token instanceof CommandToken) {
             if (scene != null)
             switch(token.cmd) {
@@ -163,7 +166,11 @@ function getScenes(files, logicFileName, getSceneName, additionalLabels) {
             }
         }
 
-        for (const label of labels) {
+        for (let label of labels) {
+            if (label.startsWith('*'))
+                label = label.substring(1)
+            else
+                throw Error(`Differences in end contexts before ${this._label}`)
             const sceneName = getSceneName(label)
             if (sceneName) {
                 scene.setTokens(files.get(sceneName))

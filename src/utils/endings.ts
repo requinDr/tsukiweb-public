@@ -3,7 +3,7 @@ import { SCENE_ATTRS } from "./constants"
 import { strings } from "../translation/lang"
 import { settings } from "./settings"
 import { PartialRecord } from "@tsukiweb-common/types"
-import { viewedScene } from "./savestates"
+import { viewedScene } from "./settings"
 
 type EndType = "normal"|"true"|"good"|"osiete"
 

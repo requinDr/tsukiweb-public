@@ -13,7 +13,7 @@ const durations = new Map(Object.entries({'fst': 400, 'mid': 800, 'slw': 1500}))
 function simplifyImage(image) {
     return image.replaceAll('\\', '/')
                 .replace(/^"(:a;)?image\//, '"')
-                .replace(/.jpg"$/, '"')
+                .replace(/.(jpg|png)"$/, '"')
 }
 
 /** @param {Token[]} token */
@@ -42,6 +42,8 @@ function formatGraphics(token) {
             time = +speed
         if (!time)
             throw Error(`Ill-formed effect: ${token}`)
+    } else if (!(/^(crossfade|(no)?waitdisp|[rltb](shutter|cartain|maskcross|scroll))/.test(effect))){
+        throw Error(`Ill-formed effect: ${token}`)
     } else {
         time = 0
     }
@@ -117,8 +119,6 @@ function genericFixes(token, tokens, index, clickChars) {
         }
         
     } else if (token instanceof ConditionToken) {
-        if (!token.condition.startsWith('('))
-            token.condition = `(${token.condition})`
         genericFixes(token.command, tokens, index, clickChars)
     } else if (token instanceof CommandToken) {
         switch (token.cmd) {
@@ -227,7 +227,7 @@ function generate(output_dir, tokens, getFile, fixes) {
                 genericFixes(newTokens)
                 lineIndex = (i > 0) ? tokens[i-1].lineIndex : 0
                 newTokens.forEach(t=> t.lineIndex = lineIndex)
-                tokens.splice(i, 0, ...newTokens)
+                tokens.splice(i, 1, ...newTokens)
             } else {
                 throw Error(`Could not convert ${t} to script token`)
             }

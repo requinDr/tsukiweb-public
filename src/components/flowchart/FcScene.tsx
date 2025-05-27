@@ -81,18 +81,11 @@ export function SceneRenderer({node, onClick}: SceneProps) {
 	const classes = ["fc-scene", "unlocked"]
 	if (node.graph?.bg && shouldBlur(imageNameFromPath(node.graph.bg)))
 		classes.push("blur")
-	switch (node.state) {
-		case FcNodeState.DISABLED :
-			classes.push("disabled")
-			onClick = undefined
-			break
-		case FcNodeState.ENABLED : break
-		case FcNodeState.ACTIVE :
-			classes.push("active")
-			break;
-		default :
-			let unknown: never = node.state
-			throw Error(`unknown node state ${unknown}`)
+	if (node.active) {
+		classes.push("active")
+	} else if (node.state == FcNodeState.DISABLED) {
+		classes.push("disabled")
+		onClick = undefined
 	}
 	
 // ----- floating panel -----

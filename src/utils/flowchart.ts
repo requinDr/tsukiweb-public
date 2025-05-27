@@ -1,13 +1,12 @@
-import { isScene, isThScene } from "./scriptUtils"
-import { TsukihimeSceneName } from "types"
+import { isScene, isThScene } from "../script/utils"
+import { LabelName, TsukihimeSceneName } from "types"
 import { SCENE_ATTRS } from "./constants"
 import { Graphics } from "@tsukiweb-common/types"
 import { Flowchart, FlowchartNode, FlowchartNodeAttrs } from "@tsukiweb-common/utils/flowchart"
 import SpritesheetMetadata from "../assets/flowchart/spritesheet_metadata.json"
 import { spriteSheetImgPath } from "translation/assets"
 import { settings } from "./settings"
-import { gameContext } from "./variables"
-import { displayMode, SCREEN } from "./display"
+import { History } from "./history"
 
 //##############################################################################
 //#region                       CONSTANTS & TYPES
@@ -51,13 +50,15 @@ type FcNodeAttrs = FlowchartNodeAttrs<FcNodeId> & {
 
 export class TsukihimeFlowchart extends Flowchart<FcNode> {
 	public metadatas: Readonly<SpritesheetMetadataType> = SpritesheetMetadata
-	constructor() {
+	private _history: History|undefined
+	constructor(history?: History) {
 		super({
 			...(SCENE_ATTRS["fc-nodes"] ?? {}),
 			...Object.fromEntries(Object.entries(SCENE_ATTRS.scenes)
 					.map(([id, {fc}])=> [id, fc])
 					.filter(([_id, fc])=> fc)) // filter non-fc scenes
 		})
+		this._history = history
 	}
 
 	protected createNode(id: string, attrs: FcNodeAttrs): FcNode {
@@ -65,24 +66,20 @@ export class TsukihimeFlowchart extends Flowchart<FcNode> {
 	}
 
 	isSceneEnabled(id: FcNodeId): boolean {
-		if (displayMode.screen == SCREEN.WINDOW) {
-			//TODO check if id is in history or is the active scene
-			return this.activeScene == id
-		} else {
-			const node = this.getNode(id)
-			return node != undefined && node.seen
-		}
+		return this._history?.hasScene(id as LabelName)
+			?? this.getNode(id)?.seen
+			?? false
 	}
+
 	get activeScene(): FcNodeId {
-		return gameContext.label
+		return this._history?.lastScene.label ?? ""
 	}
 }
 export enum FcNodeState {
 	HIDDEN,
 	UNSEEN,
 	DISABLED,
-	ENABLED,
-	ACTIVE,
+	ENABLED
 }
 
 //##############################################################################
@@ -124,16 +121,18 @@ export class FcNode extends FlowchartNode<FcNodeId, TsukihimeFlowchart> {
 		return settings.completedScenes.includes(this.id)
 	}
 
+	get active(): boolean {
+		return this.flowchart.activeScene == this.id
+	}
+
 	get state(): FcNodeState {
 		if (this._state == -1) {
 			if (isThScene(this.id)) {
-				if (this.flowchart.activeScene == this.id)
-					this._state = FcNodeState.ACTIVE
 				if (this.flowchart.isSceneEnabled(this.id))
 					this._state = FcNodeState.ENABLED
 				else if (this.seen)
 					this._state = FcNodeState.DISABLED
-				else if (this.parents.some(p=>p.state > FcNodeState.UNSEEN))
+				else if (this.parents.some(p=>p.seen))
 					this._state = FcNodeState.UNSEEN
 				else
 					this._state = FcNodeState.UNSEEN

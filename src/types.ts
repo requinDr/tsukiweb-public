@@ -2,20 +2,6 @@ import { ViewRatio } from "@tsukiweb-common/constants"
 import { ResolutionId, TranslationId } from "@tsukiweb-common/utils/lang"
 import { LangJson } from "translation/lang"
 
-export type PageType = 'text'|'choice'|'skip'|'phase'
-export type PageContent<T extends PageType> =
-	T extends 'text' ? { text: string } :
-	T extends 'choice' ? { choices: Choice[], selected?: number} :
-	T extends 'skip' ? { scene: TsukihimeSceneName } :
-	T extends 'phase' ? { } :
-	never
-export type PageArgs<T extends PageType> =
-	T extends 'text' ? [string] :
-	T extends 'choice' ? [Choice[]] :
-	T extends 'skip' ? [TsukihimeSceneName] :
-	T extends 'phase' ? [] :
-	never
-
 export type Choice = {
 	index: number,
 	str: string,
@@ -71,7 +57,10 @@ export type SettingsType = {
 	titleMusic: string
 
 	unlockEverything: boolean
-	
+
+	historyLength: number, // pages stored at runtime in the history
+	savedHistoryLength: number // pages saved when creating a save state
+
 	// saved progress
 	eventImages: string[]
 	completedScenes: string[]

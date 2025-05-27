@@ -1,11 +1,11 @@
 import { displayMode, SCREEN } from "./display"
 import { audioSePath, audioTrackPath } from "../translation/assets"
-import { gameContext } from "./variables"
 import { settings } from "./settings"
 import { observe } from "@tsukiweb-common/utils/Observer"
-import { AudioChannel, BasicAudioManager } from "@tsukiweb-common/utils/AudioManager"
+import { BasicAudioManager } from "@tsukiweb-common/utils/AudioManager"
 import { isLanguageLoaded, waitLanguageLoad } from "translation/lang"
 import { asyncDelay } from "@tsukiweb-common/utils/timer"
+import { ScriptPlayer } from "script/ScriptPlayer"
 
 function calcGain(value: number) {
   if (value <= 0)
@@ -38,17 +38,6 @@ export const sysAudio = new BasicAudioManager(getUrl)
 
 //__________________________________observers___________________________________
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-// update track and looped se
-function updateLoop(channel: AudioChannel, name: string|null) {
-  if (name && name.length > 0)
-    channel.play(name, {loop: true})
-  else
-    channel.stop()
-}
-
-observe(gameContext.audio, 'track', updateLoop.bind(null, gameAudio.track))
-observe(gameContext.audio, 'looped_se', updateLoop.bind(null, gameAudio.se))
 
 // update volume
 observe(settings.volume, 'track' , v => { gameAudio.track.volume = calcGain(v) })
@@ -107,11 +96,26 @@ waitLanguageLoad().then(async ()=> {
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 export const commands = {
-  'play'    : (arg: string)=>{ gameContext.audio.track = arg },
-  'playstop': ()=>           { gameContext.audio.track = "" },
-  'wave'    : (arg: string)=>{ gameAudio.se.play(arg) },
-  'waveloop': (arg: string)=>{ gameContext.audio.looped_se = arg },
-  'wavestop': ()=>           { gameContext.audio.looped_se = "" },
+  'play'    : (arg: string, _: string, script: ScriptPlayer)=> {
+    script.audio.track = arg
+    gameAudio.track.play(arg, {loop: true})
+  },
+  'playstop': (_a: string, _c: string, script: ScriptPlayer)=> {
+    script.audio.track = null
+    gameAudio.track.stop()
+  },
+  'wave'    : (arg: string, _: string, script: ScriptPlayer)=> {
+    script.audio.looped_se = null
+    gameAudio.se.play(arg)
+  },
+  'waveloop': (arg: string, _: string, script: ScriptPlayer)=> {
+    script.audio.looped_se = arg
+    gameAudio.se.play(arg, {loop: true})
+  },
+  'wavestop': (_a: string, _c: string, script: ScriptPlayer)=> {
+    script.audio.looped_se = null
+    gameAudio.se.stop()
+  },
 }
 
 //##############################################################################

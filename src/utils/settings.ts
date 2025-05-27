@@ -1,5 +1,5 @@
 import { RecursivePartial } from "@tsukiweb-common/types"
-import { SettingsType } from "../types"
+import { LabelName, SettingsType } from "../types"
 import { observeChildren, observe } from "@tsukiweb-common/utils/Observer"
 import { StoredJSON } from "@tsukiweb-common/utils/storage"
 import { deepFreeze, deepAssign, jsonDiff, objectsEqual } from "@tsukiweb-common/utils/utils"
@@ -33,6 +33,9 @@ export const defaultSettings: SettingsType = deepFreeze({
   titleMusic: '"*8"',
 
   unlockEverything: false,
+
+  historyLength: 20,
+  savedHistoryLength: 10,
   
   eventImages: new Array<string>(),
   completedScenes: new Array<string>(),
@@ -42,7 +45,9 @@ export const defaultSettings: SettingsType = deepFreeze({
 const settingsStorage = new StoredJSON<RecursivePartial<SettingsType>>("settings", false)
 let savedSettings = settingsStorage.get() || {} as RecursivePartial<SettingsType>
 
-export const settings = deepAssign(defaultSettings, savedSettings as SettingsType, {clone: true})
+export const settings = deepAssign(defaultSettings, savedSettings as SettingsType, {
+  clone: true, extend: false
+})
 
 // deep-copy savedSettings
 
@@ -50,8 +55,8 @@ let savePostPoneTimeoutId: NodeJS.Timeout|0 = 0
 
 function saveSettings() {
   if (savePostPoneTimeoutId) {
-    savePostPoneTimeoutId = 0
     clearTimeout(savePostPoneTimeoutId)
+    savePostPoneTimeoutId = 0
   }
   settings.completedScenes.sort()
   const diff = jsonDiff(settings, defaultSettings)
@@ -79,6 +84,19 @@ for (const key of Reflect.ownKeys(settings)) {
   }
 }
 
+/**
+ * Return if the specified scene has been viewed by the player.
+ */
+export function viewedScene(scene: LabelName | string): boolean {
+  return settings.completedScenes.includes(scene)
+}
+
 //TODO clean unused settings from previous versions
+
+declare global {
+  interface Window {
+    [key: string]: any
+  }
+}
 
 window.settings = settings

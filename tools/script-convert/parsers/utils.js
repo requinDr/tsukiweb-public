@@ -53,10 +53,12 @@ class CommandToken extends Token {
 			if (this.args.size == 0)
 				argsString = ''
 			else
-				argsString = ` {${[...this.args.entries()].map(([k, v])=> `${k}=${v}`)}}`
+				argsString = ` {${[...this.args.entries()].map(([k, v])=> `${k}=${v}`).join(',')}}`
 		} else {
 			if (this.cmd.startsWith('!'))
 				argsString = `${this.args[0]}`
+			else if (this.args.length == 0)
+				argsString = ''
 			else
 				argsString = ' ' + [...this.args].join(',')
 		}
@@ -104,7 +106,7 @@ class ConditionToken extends Token {
 		this.command = command
 	}
 	toString() {
-		return `${this.not? 'not':''}if ${this.condition} ${this.command.toString()}`
+		return `${this.not? 'not':''}if (${this.condition}) ${this.command.toString()}`
 	}
 }
 

@@ -1,15 +1,13 @@
 import { useEffect, useRef } from "react"
-import { displayMode } from "../utils/display"
 import ConfigLayout from "../components/ConfigLayout";
-import { useObserved } from "@tsukiweb-common/utils/Observer";
 import classNames from "classnames";
 
 
 type Props = {
+	display: boolean
 	back: ()=>void
 }
-const ConfigLayer = ({back}: Props) => {
-	const [display] = useObserved(displayMode, 'config')
+const ConfigLayer = ({display, back}: Props) => {
 	const rootRef = useRef<HTMLDivElement>(null)
 
 	useEffect(() => {

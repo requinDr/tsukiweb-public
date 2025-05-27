@@ -4,7 +4,8 @@ import moon from "../assets/images/moon.webp"
 import '../styles/title-menu.scss'
 import { SCREEN } from '../utils/display'
 import * as motion from "motion/react-m"
-import { continueGame, hasSaveStates, newGame, viewedScene } from '../utils/savestates'
+import { continueGame, newGame, savesManager } from '../utils/savestates'
+import { viewedScene } from "utils/settings"
 import { strings } from "../translation/lang"
 import { MdOutlineVolumeOff, MdOutlineVolumeUp } from 'react-icons/md'
 import { settings } from '../utils/settings'
@@ -17,6 +18,7 @@ import TitleMenuButton from '../../tsukiweb-common/src/ui-core/components/TitleM
 import Particles from '@tsukiweb-common/ui-core/components/Particles'
 import { useObserved } from '@tsukiweb-common/utils/Observer'
 import { useNavigate } from 'react-router-dom'
+import history from 'utils/history'
 
 const img = {
 	src: moon,
@@ -71,7 +73,7 @@ const TitleMenuScreen = () => {
 						{strings.title.start}
 					</TitleMenuButton>
 
-					{hasSaveStates() &&
+					{savesManager.savesCount > 0 || history.pagesLength > 0 &&
 					<TitleMenuButton onClick={continueGame}>
 						{strings.title.resume}
 					</TitleMenuButton>

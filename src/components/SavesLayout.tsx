@@ -1,6 +1,6 @@
 import { ChangeEvent, MouseEvent, useEffect, useRef, useState } from "react"
 import { SCREEN, displayMode } from "../utils/display"
-import { SaveState, QUICK_SAVE_ID, deleteSaveState, getSaveState, listSaveStates, loadSaveState, storeCurrentState, addSavesChangeListener, removeSavesChangeListener, loadSaveFiles } from "../utils/savestates"
+import { SaveState, QUICK_SAVE_ID, savesManager } from "../utils/savestates"
 import { strings } from "../translation/lang"
 import { phaseTexts } from "../translation/assets"
 import SaveListItem from "./save/SaveListItem"
@@ -14,22 +14,24 @@ import { noBb } from "@tsukiweb-common/utils/Bbcode"
 import { useVirtualizer } from "@tanstack/react-virtual"
 import { toast } from "react-toastify"
 import TitleMenuButton from "@tsukiweb-common/ui-core/components/TitleMenuButton"
+import history from "utils/history"
+import { requestFilesFromUser } from "@tsukiweb-common/utils/utils"
+import { SAVE_EXT } from "utils/constants"
 
 //##############################################################################
 //#                               TOOL FUNCTIONS                               #
 //##############################################################################
 
 // sort savestates quick save first, then from most recent to oldest
-function compareSaveStates([id1, ss1]: [number, SaveState], [id2, ss2]: [number, SaveState]) {
-	return id1 == QUICK_SAVE_ID ? -1
-			: id2 == QUICK_SAVE_ID ? 1
-			: (ss2.date ?? 0) - (ss1.date ?? 0)
+function compareSaveStates(ss1: SaveState, ss2: SaveState) {
+	return ss1.id == QUICK_SAVE_ID ? -1 : ss2.id == QUICK_SAVE_ID ? 1
+		: (ss2.date ?? 0) - (ss1.date ?? 0)
 }
 
 export function savePhaseTexts(saveState: SaveState) {
-	const context = saveState.context
-	const {route, routeDay, day} = context.phase || {}
-	return phaseTexts(route ?? "", routeDay ?? "", day ?? 0).map(noBb)
+	const lastPage = saveState.pages.at(-1) as Exclude<SaveState['pages'][0], undefined>
+	const {route, routeDay, day} = lastPage.phase
+	return phaseTexts(route, routeDay ?? "", day ?? 0).map(noBb)
 }
 
 
@@ -42,19 +44,19 @@ type Props = {
 	back: (saveLoaded: boolean)=>void,
 }
 const SavesLayer = ({variant, back}: Props) => {
-	const [saves, setSaves] = useState<Array<[number,SaveState]>>([])
+	const [saves, setSaves] = useState<Array<SaveState>>([])
 	const [focusedId, setFocusedSave] = useState<number>()
 
 	useEffect(()=> {
 		const onChange = ()=> {
 			setSaves(
-				listSaveStates()
-				.filter(([id, _])=> variant === "load" || id !== QUICK_SAVE_ID)
+				savesManager.listSaves()
+				.filter((ss)=> variant === "load" || ss.id !== QUICK_SAVE_ID)
 				.sort(compareSaveStates))
 		}
-		addSavesChangeListener(onChange)
+		savesManager.addListener(onChange)
 		onChange()
-		return removeSavesChangeListener.bind(null, onChange) as VoidFunction
+		return savesManager.removeListener.bind(savesManager, onChange)
 	}, [variant])
 
 	const parentRef = useRef<HTMLDivElement>(null)
@@ -66,22 +68,27 @@ const SavesLayer = ({variant, back}: Props) => {
 		overscan: 5,
 	})
 
-	function createSave() {
-		storeCurrentState(new Date().getTime())
+	function createSave(name?: string) {
+		const ss = history.createSaveState()
+		if (name)
+			ss.name = name
+		savesManager.add(ss)
 	}
 
-	function importSaves(event: ChangeEvent|MouseEvent) {
+	async function importSaves(event: ChangeEvent|MouseEvent) {
 		console.debug("import saves from file")
-		loadSaveFiles((event.target as HTMLInputElement)?.files, event.type == "contextmenu")
-			.then((success) => {
-				if (success)
-					toast.success(strings.game["toast-load"])
-				else
-					toast.error(strings.game["toast-load-fail"])
-			})
-			.catch(() => {
+		let files = (event.target as HTMLInputElement)?.files
+			?? await requestFilesFromUser({multiple: true, accept: `.${SAVE_EXT}`})
+		if (files) {
+			if (files instanceof File)
+				files = [files]
+			try {
+				savesManager.importSaveFiles(files)
+				toast.success(strings.game["toast-load"])
+			} catch(error) {
 				toast.error(strings.game["toast-load-fail"])
-			})
+			}
+		}
 	}
 
 	async function onSaveSelect(id: number) {
@@ -92,15 +99,12 @@ const SavesLayer = ({variant, back}: Props) => {
 				labelNo: strings.no,
 			})
 			if (confirmed) {
-				/*
-				storeCurrentState(id)
-				/*/
-				deleteSaveState(id)
-				storeCurrentState(new Date().getTime())
-				//*/
+				const ss = savesManager.get(id)!
+				savesManager.remove(id)
+				createSave(ss.name)
 			}
 		} else {
-			loadSaveState(id)
+			history.loadSaveState(savesManager.get(id)!)
 			displayMode.screen = SCREEN.WINDOW
 			back(true)
 		}
@@ -113,13 +117,13 @@ const SavesLayer = ({variant, back}: Props) => {
 			labelNo: strings.no,
 		})
 		if (confirmed) {
-			deleteSaveState(id)
+			savesManager.remove(id)
 			if (id == focusedId)
 				setFocusedSave(undefined)
 		}
 	}
 
-	const focusedSave = focusedId != undefined ? getSaveState(focusedId) : undefined
+	const focusedSave = focusedId != undefined ? savesManager.get(focusedId) : undefined
 	const title = strings.saves[variant == "save" ? "title-save" : "title-load"]
 
 	return (
@@ -128,7 +132,7 @@ const SavesLayer = ({variant, back}: Props) => {
 			<PageSection className="saves" ref={parentRef}>
 				{variant === "save" ?
 					<Button
-						onClick={createSave}
+						onClick={createSave.bind(null, undefined)}
 						className={classNames("create", {active: focusedId === 1})}
 						onFocus={setFocusedSave.bind(null, 1)}
 						onPointerEnter={setFocusedSave.bind(null, 1)}
@@ -158,8 +162,8 @@ const SavesLayer = ({variant, back}: Props) => {
 				>
 					{rowVirtualizer.getVirtualItems()
 						.map(({index, start, size, key}) => {
-						const [id, ss] = saves[index]
-
+						const ss = saves[index]
+						const id = ss.id ?? ss.date
 						return (
 							<SaveListItem
 								key={key}
