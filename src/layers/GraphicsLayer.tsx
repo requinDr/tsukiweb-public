@@ -1,4 +1,4 @@
-import { memo, useEffect, useRef, useState, CSSProperties } from "react";
+import { memo, useEffect, useRef, useState, CSSProperties, useMemo } from "react";
 import SpriteGraphics from "../components/molecules/SpriteGraphics";
 import BackgroundGraphics from "../components/molecules/BackgroundGraphics";
 import ForegroundGraphics from "../components/molecules/ForegroundGraphics";
@@ -157,7 +157,7 @@ const GraphicsLayer = memo(function({
 	}, [script, onTransitionStart, onTransitionEnd])
 
 //......... compute properties .........
-	useEffect(()=> {
+	useMemo(()=> {
 		const {style: _style, ..._props} = props
 		style.current = {
 			...(_style),
