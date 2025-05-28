@@ -127,7 +127,7 @@ export const GALLERY_IMAGES: Record<string, GalleryImg> = {
   "his_e01b": { img: "his_e01b", path: "event", route: "his" },
   "his_e02" : { img: "his_e02" , path: "event", route: "his", alternativeOf: "his_e02b" },
   "his_e02b": { img: "his_e02b", path: "event", route: "his" },
-  "his_e02b2":{ img: "his_e02b2",path: "event", route: "his", alternativeOf: "his_e02b" },
+  "his_e02b2":{ img: "his_e02b2",path: "event", route: "his", alternativeOf: "his_e02b", source: "unused" },
   "his_e08" : { img: "his_e08" , path: "event", route: "his" },  
   "his_e03" : { img: "his_e03" , path: "event", route: "his" },
   "his_e04" : { img: "his_e04" , path: "event", route: "his" },
@@ -195,6 +195,7 @@ export const GALLERY_IMAGES: Record<string, GalleryImg> = {
 type GalleryImageKey = keyof typeof GALLERY_IMAGES
 export const UNLOCK_TOGETHER: Record<GalleryImageKey, GalleryImageKey[]> = {
   "ark_h10": ["ark_h10b"],
+  "his_e02b": ["his_e02b2"],
   "aki_h02": ["hm_aki02"],
   "cmo_01" : ["hm_cmo_01"],
   "cmo_02" : ["hm_cmo_02"],
