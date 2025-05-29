@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef  } from 'react';
-import { displayMode, InGameLayersHandler } from '../utils/display';
+import { InGameLayersHandler } from '../utils/display';
 import { History, PageEntry } from '../utils/history';
 import { strings } from '../translation/lang';
 import PageElement from '../components/molecules/PageElement';
@@ -10,12 +10,13 @@ import Flowchart from 'components/flowchart/Flowchart';
 
 
 type Props = {
+	display: boolean
 	history: History
 	onRewind: VoidFunction
 	layers: InGameLayersHandler
-} & React.HTMLProps<HTMLDivElement>
-
-const HistoryLayer = ({ history, onRewind, layers, ...divProps }: Props) => {
+	divProps?: React.HTMLProps<HTMLDivElement>
+}
+const HistoryLayer = ({ display, history, onRewind, layers, divProps }: Props) => {
 	const rootRef = useRef<HTMLDivElement>(null)
 
 	const close = useCallback(()=> {
@@ -46,7 +47,7 @@ const HistoryLayer = ({ history, onRewind, layers, ...divProps }: Props) => {
 		<div
 			id="layer-history"
 			{...divProps}
-			className={classNames("layer", {"show": layers.history || layers.flowchart}, divProps?.className)}
+			className={classNames("layer", {"show": display}, divProps?.className)}
 			ref={rootRef}>
 			<div className='scroll-container'>
 				{layers.history && history.pagesLength > 0 ?

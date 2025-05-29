@@ -1,25 +1,22 @@
-import { useRef, useState } from "react"
-import { displayMode } from "../utils/display"
+import { useRef } from "react"
 import SavesLayout from "../components/SavesLayout";
 import { useLanguageRefresh } from "components/hooks/useLanguageRefresh";
-import { useObserver } from "@tsukiweb-common/utils/Observer";
 import classNames from "classnames";
 
 
 type Props = {
+  display: boolean
   mode: null|'save'|'load'
   back: (saveLoaded: boolean)=>void
 }
 
-const SavesLayer = ({mode, back}: Props) => {
+const SavesLayer = ({display, mode, back}: Props) => {
   const rootRef = useRef<HTMLDivElement>(null)
-  const variant = useRef<'save'|'load'>(mode!=null ? mode : 'save')
-  const display = useRef<boolean>(false)
   useLanguageRefresh()
   
   return (
     <div id="layer-save"
-      className={classNames("layer", {show: mode != null})}
+      className={classNames("layer", {show: display})}
       ref={rootRef}
     >
       <div className="page-content">

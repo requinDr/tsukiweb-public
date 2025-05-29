@@ -4,7 +4,7 @@ import { ReactNode } from "react"
 
 type SceneProps = {
 	title: ReactNode
-	images: Graphics
+	images: Partial<Graphics>
 	onClick?: ()=>void
 }
 const SceneShortcut = ({title, images, onClick}: SceneProps) => {

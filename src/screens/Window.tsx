@@ -1,4 +1,4 @@
-import { Fragment, useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'react';
+import { Fragment, useCallback, useEffect, useMemo, useReducer, useRef } from 'react';
 import * as motion from "motion/react-m"
 import '../styles/game.scss';
 import HistoryLayer from '../layers/HistoryLayer';
@@ -12,7 +12,7 @@ import { moveBg } from '../utils/graphics';
 import { useLanguageRefresh } from '../components/hooks/useLanguageRefresh';
 import { useScreenAutoNavigate } from '../components/hooks/useScreenAutoNavigate';
 import { useSwipeGesture } from '@tsukiweb-common/utils/touch';
-import KeyMap, { useKeyMap } from '@tsukiweb-common/utils/KeyMap';
+import { useKeyMap } from '@tsukiweb-common/utils/KeyMap';
 import { useSetter as useReset } from '@tsukiweb-common/hooks/useSetter';
 import { useDOMEvent } from '@tsukiweb-common/hooks/useDOMEvent';
 import { ScriptPlayer } from 'script/ScriptPlayer';
@@ -368,19 +368,21 @@ const Window = () => {
 					<SkipLayer script={script} history={history} display={layers.text}/>
 				</>}
 
-				<HistoryLayer history={history} layers={layers}
+				<HistoryLayer
+					display={layers.history || layers.flowchart}
+					history={history}
+					layers={layers}
 					onRewind={remountScript}/>
-				{(layers.save || layers.load) &&
-				<SavesLayer mode={layers.save ? 'save' : 'load'}
+					
+				<SavesLayer
+					display={layers.save || layers.load}
+					mode={layers.save ? 'save' : 'load'}
 					back={(load)=> {
 						layers.back()
 						if (load) remountScript()
 					}} />
-				}
-				{layers.config &&
-				<ConfigLayer display={true} back={layers.back.bind(layers)} />
-				}
-
+				
+				<ConfigLayer display={layers.config} back={layers.back.bind(layers)} />
 
 				{layers.text &&
 					<button className="menu-button"
