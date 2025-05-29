@@ -6,7 +6,7 @@ import MenuLayer from '../layers/MenuLayer';
 import SavesLayer from '../layers/SavesLayer';
 import { HiMenu } from 'react-icons/hi';
 import { InGameLayersHandler, SCREEN, displayMode, warnHScene } from '../utils/display';
-import { commands as audioCommands } from '../utils/audio';
+import { commands as audioCommands, gameAudio } from '../utils/audio';
 import ConfigLayer from '../layers/ConfigLayer';
 import { moveBg } from '../utils/graphics';
 import { useLanguageRefresh } from '../components/hooks/useLanguageRefresh';
@@ -284,6 +284,16 @@ const Window = () => {
 			//console.debug("starting script")
 			script.start()
 		}
+		const {track, looped_se} = script.audio
+		if (track && track.length > 0)
+			gameAudio.track.play(track)
+		else
+			gameAudio.track.stop()
+		
+		if (looped_se && looped_se.length > 0)
+			gameAudio.se.play(looped_se)
+		else
+			gameAudio.se.stop()
 		window.script = script
 	}, [script])
 

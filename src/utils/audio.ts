@@ -79,8 +79,11 @@ observe(displayMode, 'screen', (screen)=> {
     gameAudio.resume()
     sysAudio.track.stop()
   } else {
-    if (gameAudio.playing)
+    if (gameAudio.playing) {
       gameAudio.suspend()
+      gameAudio.track.stop()
+      gameAudio.se.stop()
+    }
     if (!sysAudio.track.playing && isLanguageLoaded())
       sysAudio.track.play(settings.titleMusic, {loop: true})
   }
