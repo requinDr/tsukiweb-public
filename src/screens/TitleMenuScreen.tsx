@@ -73,7 +73,7 @@ const TitleMenuScreen = () => {
 						{strings.title.start}
 					</TitleMenuButton>
 
-					{savesManager.savesCount > 0 || history.pagesLength > 0 &&
+					{(savesManager.savesCount > 0 || history.pagesLength > 0) &&
 					<TitleMenuButton onClick={continueGame}>
 						{strings.title.resume}
 					</TitleMenuButton>
