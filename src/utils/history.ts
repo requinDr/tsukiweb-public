@@ -228,7 +228,8 @@ export class History extends Stored {
     const text = script.text.replace(/^\[\r\n]*/, '')
     if (this._pages.length > 0) {
       let lastPage = this.lastPage
-      if (lastPage.page == script.currentBlock?.page)
+      if (lastPage.page == script.currentBlock?.page &&
+          lastPage.label == script.currentBlock.label)
         lastPage.text = text
       else
         this.setPage('text', {text})
