@@ -405,8 +405,8 @@ const Window = () => {
 					</button>
 				}
 				<MenuLayer show={show.current} script={script} layers={layers}
-					qLoad={actionsHandler.quickLoad}
-					qSave={actionsHandler.quickSave}/>
+					qLoad={actionsHandler.quickLoad.bind(actionsHandler)}
+					qSave={actionsHandler.quickSave.bind(actionsHandler)}/>
 			</Fragment>
 		</motion.div>
 	)
