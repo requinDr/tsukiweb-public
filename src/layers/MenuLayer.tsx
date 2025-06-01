@@ -163,11 +163,16 @@ const ActionsButtons = ({script, show, close, qSave, qLoad}: ActionsButtonsProps
 		script.autoPlay = true
 		close()
 	}
+	
 	const copySceneToClipboard = () => {
 		navigator.clipboard.writeText(
 			`${window.location.origin}/scenes/${script.currentLabel??""}`
 		)
-		toast.info("Scene link copied to clipboard", {autoClose: 2000})
+		toast.info("Scene link copied to clipboard", {
+			autoClose: 2000,
+			hideProgressBar: true,
+			icon: () => <MdCopyAll />
+		})
 	}
 
 	return (

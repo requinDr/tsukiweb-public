@@ -1,5 +1,5 @@
 import { Dispatch, useState } from "react"
-import { MdGetApp, MdInfoOutline, MdOpenInNew, MdShare } from "react-icons/md"
+import { MdCopyAll, MdGetApp, MdInfoOutline, MdOpenInNew, MdShare } from "react-icons/md"
 import { toast } from "react-toastify"
 import { APP_VERSION } from "../../utils/constants"
 import { strings } from "../../translation/lang"
@@ -44,6 +44,8 @@ const ModalInfo = ({show, setShow}: ModalInfoProps) => {
 			autoClose: 2000,
 			closeButton: false,
 			pauseOnHover: false,
+			hideProgressBar: true,
+			icon: () => <MdCopyAll />
 		})
 	}
 

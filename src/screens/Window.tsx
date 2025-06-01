@@ -26,6 +26,8 @@ import SkipLayer from 'layers/SkipLayer';
 import { toast } from 'react-toastify';
 import { settings } from 'utils/settings';
 import { inGameKeyMap } from 'utils/keybind';
+import { strings } from 'translation/lang';
+import { MdPlayArrow } from 'react-icons/md';
 
 //##############################################################################
 //#region                          USER INPUTS
@@ -234,13 +236,15 @@ function onAutoPlayStop(ffw: boolean) {
 	if (ffw) {
 		//console.log("ffw stop")
 		//toast("Fast-Forward stopped", {
-		//	autoClose: 500,
+		//	autoClose: 600,
 		//	toastId: 'ff-stop'
 		//})
 	} else {
-		toast("Auto-play stopped", {
-			autoClose: 500,
-			toastId: 'ap-stop'
+		toast(strings.game['toast-autoplay-stop'], {
+			autoClose: 600,
+			toastId: 'ap-stop',
+			hideProgressBar: true,
+			icon: () => <MdPlayArrow />,
 		})
 	}
 }
