@@ -90,19 +90,19 @@
         "12a": "[b][i]햇볕의 꿈"
       },
       "others": {
-        "pro": "[b][i]a prologue",
-        "epi": "[i]an epilogue"
+        "pro": "[b][i]프롤로그",
+        "epi": "[i]에필로그"
       }
     },
 
     "scenes": {
-      "openning": {"title": "[b][i]Prologue - Glass Moon"},
-      "eclipse": {"title": "[b][i]Epilogue"},
-      "ending": {"title": "[b][i]Credits"}
+      "openning": {"title": "[b][i]프롤로그 - Glass Moon"},
+      "eclipse": {"title": "[b][i]에필로그"},
+      "ending": {"title": "[b][i]크레딧"}
     },
 
     "dead-end": "Dead end",
-    "osiete": "시엘선생님의 수업."
+    "osiete": "시에루선생님의 수업"
   },
 
   "credits": [

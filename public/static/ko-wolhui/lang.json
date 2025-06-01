@@ -9,24 +9,24 @@
 	"images": {
 	},
 	"disclaimer": [
-		"이 게임은 2000년에 발매된 TYPE－MOON 의 비쥬얼 노벨, [i]「월희」[/i] 의 웹 버전 입니다.",
+		"이 게임은 2000년에 발매된 TYPE－MOON 의 비주얼 노벨, [i]「월희」[/i] 의 웹 버전 입니다.",
 		"18세 이상의 성인만 사용해 주시길 바랍니다."
 	],
 	"title": {
-		"start": "새로 시작하기",
+		"start": "새 게임 시작하기",
 		"resume": "이어서 플레이",
-		"load": "로드",
+		"load": "불러오기",
 		"config": "설정",
-		"extra": "엑스트라",
+		"extra": "추가요소",
 		"about": {
-			"port": "이 게임은 2000년에 발매된 TYPE－MOON 의 비쥬얼 노벨, [i]「월희」[/i] 의 웹 버전 입니다.",
+			"port": "이 게임은 2000년에 발매된 TYPE－MOON 의 비주얼 노벨, [i]「월희」[/i] 의 웹 버전 입니다.",
 			"project": "이 프로젝트는 현재 $0GitHub$1 에서 진행중입니다. 마음에 드신다면 별을 눌러주세요! 프로젝트에 기여를 해주시는 것도 언제나 환영입니다.",
 			"feedback": "피드백사항 이나 버그를 발견하신다면 $0이곳$1 으로 보내주세요.",
 			"data": "데이터는 사이트에 저장되지 않고 브라우저 캐시로 저장되니 따로 관리하고 싶으시면 $0이곳$1에서 해주세요.",
-			"remake": "$0리메이크 판-$1 을 구매해서 원작자를 응원하는 것도 추천드립니다."
+			"remake": "$0리메이크 판$1 을 구매해서 원작자를 응원하는 것도 추천드립니다."
 		},
 		"install": "설치",
-		"share": "Share"
+		"share": "공유"
 	},
 	"extra": {
 		"gallery": "갤러리",
@@ -37,11 +37,11 @@
 	"config": {
 		"on": "켜기",
 		"off": "끄기",
-		"reset": "초기 설정으로 되돌립니다.",
+		"reset": "모든 설정 초기화",
 		"tab-game": "화면 설정",
 		"tab-audio": "사운드 설정",
 		"tab-controls": "조작법 설정",
-		"tab-advanced": "그 외 설정",
+		"tab-advanced": "기타 설정",
 		"volume-master": "마스터 음량",
 		"volume-track": "BGM 음량",
 		"volume-se": "효과음 음량",
@@ -54,7 +54,7 @@
 			"[b]Tsuki-Bako버전[/b]: 원작의 음원 + PLUS-DISC + 가월십야의 음원을 섞은 버전입니다."
 		],
 		"auto-mute": "탭 전환 시 음소거",
-		"ratio": "화면비 설정",
+		"ratio": "화면비율",
 		"ratio-auto": "Auto",
 		"ratio-4-3": "4:3",
 		"ratio-16-9": "16:9",
@@ -65,10 +65,10 @@
 		"text-speed-instant": "즉시",
 		"auto-play-delay-text": "오토 시 텍스트 넘기기 대기 시간: $0s",
 		"auto-play-delay-page": "오토 시 페이지 넘기기 대기 시간: $0s",
-		"adult-title": "H 콘텐츠",
+		"adult-title": "H 씬",
 		"adult-blur": "썸네일 블러",
 		"adult-blur-help": [
-			"H 콘텐츠의 썸네일을 블러처리 합니다.",
+			"H 씬의 썸네일을 블러처리 합니다.",
 			"실제 게임에는 영향을 끼치지 않습니다."
 		],
 		"adult-warn": "H씬을 들어가기 전에 경고 메시지가 나옵니다.",
@@ -84,11 +84,11 @@
 			"이 옵션을 끄는 것으로 원래 진행상태로 돌아갈 수 있습니다."
 		],
 		"data": "저장공관 관리",
-		"data-export": "데이터 추출",
-		"data-import": "데이터 삽입",
+		"data-export": "데이터 내보내기",
+		"data-import": "데이터 불러오기",
 		"data-erase": "데이터 삭제",
-		"data-erase-warning": "모든 저장 내용이 삭제되고, 모든 설정과 진행 상황이 초기화됩니다. 괜찮으신가요?",
-		"data-erase-confirm": "모든 데이터가 삭제되었습니다. 설정을 변경하지 않고, 새 게임을 시작하지 않고 이 웹사이트를 떠나시면 컴퓨터에 남은 데이터는 없습니다.",
+		"data-erase-warning": "모든 저장 데이터가 삭제되고, 모든 설정과 진행 상황이 초기화됩니다. 괜찮으신가요?",
+		"data-erase-confirm": "모든 저장 데이터가 삭제되었습니다. 설정을 변경하지 않고, 새 게임을 시작하지 않고 이 웹사이트를 떠나시면 컴퓨터에 남은 데이터는 없습니다.",
 		"controls": {
 			"next": "다음으로",
 			"history": "백로그",
@@ -108,17 +108,17 @@
 		"normal": "노말 엔딩",
 		"good": "굿 엔딩",
 		"true": "트루 엔딩",
-		"osiete": "가르쳐줘! 시엘 선생님"
+		"osiete": "가르쳐줘요! 시에루선생님"
 	},
 	"saves": {
 		"title-load": "불러오기",
 		"title-save": "저장",
-		"create": "새롭게 저장",
-		"import": "저장 파일 삽입",
-		"export": "저장 파일 추출",
-		"delete": "저장 파일 삭제",
-		"delete-warning": "이 저장파일을 정말로 삭제하십니까?",
-		"overwrite-warning": "이 저장파일에 덮어 씌어도 괜찮으십니까?",
+		"create": "새로 저장",
+		"import": "저장 데이터 불러오기",
+		"export": "저장 데이터 내보내기",
+		"delete": "저장 데이터 삭제",
+		"delete-warning": "이 저장 데이터를 정말로 삭제하십니까?",
+		"overwrite-warning": "이 저장 데이터에 덮어써도 괜찮으십니까?",
 		"quick-save": "빠른 저장"
 	},
 	"game": {
@@ -144,10 +144,10 @@
 		"config": "설정",
 		"auto-play": "오토플레이",
 		"ffw": "빨리 감기",
-		"title": "타이틀",
+		"title": "타이틀로 돌아가기",
 		"q-save": "빠른 저장",
 		"q-load": "빠른 불러오기",
-		"copy-scene-url": "Copy scene link"
+		"copy-scene-url": "장면 링크 복사"
 	},
 	"history": {
 		"load": "불러오기",
@@ -163,7 +163,7 @@
 	},
 	"yes": "네",
 	"no": "아니오",
-	"ok": "네",
-	"back": "돌아간다.",
-	"close": "닫는다."
+	"ok": "확인",
+	"back": "뒤로가기",
+	"close": "닫기"
 }
