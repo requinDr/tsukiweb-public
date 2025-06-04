@@ -17,10 +17,10 @@ type SaveDetailsProps = {
 const SaveDetails = ({id, saveState, deleteSave}: SaveDetailsProps)=> {
 	const [phaseTitle, phaseDay] = saveState ? savePhaseTexts(saveState) : ["", ""]
 	const lastPage = saveState?.pages.at(-1)
-	const lastScene = saveState?.scenes.at(-1)
+	const progress = saveState?.scenes.reduce((s1, s2)=>jsonMerge(s1, s2))
 	const graphics = jsonMerge(saveState?.graphics ?? {},
 			lastPage?.graphics ?? {bg: "#000"})
-	const regard = lastScene?.regard ?? {}
+	const regard = progress?.regard ?? {}
 	return (
 		<section className={classNames("info", { "preview-save": saveState !== undefined })}>		
 			{id != undefined && saveState != undefined && <>

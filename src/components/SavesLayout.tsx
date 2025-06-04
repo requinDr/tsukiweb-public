@@ -5,18 +5,19 @@ import { strings } from "../translation/lang"
 import { phaseTexts } from "../translation/assets"
 import SaveListItem from "./save/SaveListItem"
 import SaveDetails from "./save/SaveDetails"
-import { MdAddCircleOutline, MdUploadFile } from "react-icons/md"
+import { MdAddCircleOutline, MdUploadFile, MdWarning } from "react-icons/md"
 import PageSection from "@tsukiweb-common/ui-core/layouts/PageSection"
 import Button from "@tsukiweb-common/ui-core/components/Button"
 import { modalPromptService } from "@tsukiweb-common/ui-core/components/ModalPrompt"
 import classNames from "classnames"
-import { noBb } from "@tsukiweb-common/utils/Bbcode"
+import { bb, noBb } from "@tsukiweb-common/utils/Bbcode"
 import { useVirtualizer } from "@tanstack/react-virtual"
 import { toast } from "react-toastify"
 import TitleMenuButton from "@tsukiweb-common/ui-core/components/TitleMenuButton"
 import history from "utils/history"
 import { requestFilesFromUser } from "@tsukiweb-common/utils/utils"
 import { SAVE_EXT } from "utils/constants"
+import Modal from "@tsukiweb-common/ui-core/components/Modal"
 
 //##############################################################################
 //#                               TOOL FUNCTIONS                               #
@@ -45,6 +46,7 @@ type Props = {
 }
 const SavesLayer = ({variant, back}: Props) => {
 	const [saves, setSaves] = useState<Array<SaveState>>([])
+	const [warningDialog, setWarningDialog] = useState<boolean>(false)
 	const [focusedId, setFocusedSave] = useState<number>()
 
 	useEffect(()=> {
@@ -191,8 +193,29 @@ const SavesLayer = ({variant, back}: Props) => {
 				<TitleMenuButton onClick={back.bind(null, false)} className="back-button">
 					{`<<`} {strings.back}
 				</TitleMenuButton>
+				<button className="menu-item" onClick={()=>setWarningDialog(true)}><MdWarning/></button>
 			</div>
+			<Modal
+			show={warningDialog}
+			setShow={setWarningDialog}
+			className="translation-switch-modale"
+			>
+				<div className="content">
+					{bb(strings.saves["local-storage-warning"]
+						.replace('$0', "[url='/config?tab=advanced']")
+						.replace('$1', "[/url]"))}
+				</div>
+
+				<Button
+					variant="menu"
+					onClick={()=>setWarningDialog(false)}
+					className="close-btn"
+				>
+					{strings.close}
+				</Button>
+			</Modal>
 		</main>
+		
 	)
 }
 

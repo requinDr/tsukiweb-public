@@ -83,6 +83,7 @@ const ConfigAdvancedTab = () => {
 				type: "success",
 			})
 		} catch (e) {
+			console.error(e)
 			toast("Failed to load data", {
 				toastId: "failed-data",
 				type: "error",
