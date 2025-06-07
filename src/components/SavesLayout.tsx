@@ -10,14 +10,15 @@ import PageSection from "@tsukiweb-common/ui-core/layouts/PageSection"
 import Button from "@tsukiweb-common/ui-core/components/Button"
 import { modalPromptService } from "@tsukiweb-common/ui-core/components/ModalPrompt"
 import classNames from "classnames"
-import { bb, noBb } from "@tsukiweb-common/utils/Bbcode"
+import { noBb } from "@tsukiweb-common/utils/Bbcode"
 import { useVirtualizer } from "@tanstack/react-virtual"
 import { toast } from "react-toastify"
 import TitleMenuButton from "@tsukiweb-common/ui-core/components/TitleMenuButton"
 import history from "utils/history"
 import { requestFilesFromUser } from "@tsukiweb-common/utils/utils"
 import { SAVE_EXT } from "utils/constants"
-import Modal from "@tsukiweb-common/ui-core/components/Modal"
+import { exportGameData } from "utils/settings"
+import { Link } from "react-router-dom"
 
 //##############################################################################
 //#                               TOOL FUNCTIONS                               #
@@ -46,7 +47,6 @@ type Props = {
 }
 const SavesLayer = ({variant, back}: Props) => {
 	const [saves, setSaves] = useState<Array<SaveState>>([])
-	const [warningDialog, setWarningDialog] = useState<boolean>(false)
 	const [focusedId, setFocusedSave] = useState<number>()
 
 	useEffect(()=> {
@@ -125,6 +125,23 @@ const SavesLayer = ({variant, back}: Props) => {
 		}
 	}
 
+	const exportData = async () => {
+		const confirmed = await modalPromptService.confirm({
+			text: <>
+				{strings.saves["local-storage-warning"]}
+				<div style={{marginTop: "1em", color: "#daca04", fontSize: "0.9em"}}>
+					{strings.menu.config} {">"} {strings.config["tab-advanced"]} {">"} {strings.config["data-export"]}
+				</div>
+			</>,
+			labelYes: strings.config["data-export"],
+			labelNo: "Later",
+			color: "#757601"
+		})
+		if (confirmed) {
+			exportGameData()
+		}
+	}
+
 	const focusedSave = focusedId != undefined ? savesManager.get(focusedId) : undefined
 	const title = strings.saves[variant == "save" ? "title-save" : "title-load"]
 
@@ -189,33 +206,16 @@ const SavesLayer = ({variant, back}: Props) => {
 			</PageSection>
 
 			<SaveDetails id={focusedId} saveState={focusedSave} deleteSave={deleteSave}/>
+			
 			<div className="save-buttons">
 				<TitleMenuButton onClick={back.bind(null, false)} className="back-button">
 					{`<<`} {strings.back}
 				</TitleMenuButton>
-				<button className="menu-item" onClick={()=>setWarningDialog(true)}><MdWarning/></button>
+				<button className="warning-button" onClick={exportData}>
+					<MdWarning/>
+				</button>
 			</div>
-			<Modal
-			show={warningDialog}
-			setShow={setWarningDialog}
-			className="translation-switch-modale"
-			>
-				<div className="content">
-					{bb(strings.saves["local-storage-warning"]
-						.replace('$0', "[url='/config?tab=advanced']")
-						.replace('$1', "[/url]"))}
-				</div>
-
-				<Button
-					variant="menu"
-					onClick={()=>setWarningDialog(false)}
-					className="close-btn"
-				>
-					{strings.close}
-				</Button>
-			</Modal>
 		</main>
-		
 	)
 }
 

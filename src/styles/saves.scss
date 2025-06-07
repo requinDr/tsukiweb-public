@@ -232,6 +232,8 @@
 
 	.save-buttons {
 		grid-area: buttons;
+		display: flex;
+		align-items: center;
 	}
 
 	.graphics {
@@ -239,6 +241,18 @@
 
 		div.bg img.blur {
 			filter: blur(20px);
+		}
+	}
+
+	.warning-button {
+		opacity: .9;
+		display: inline-flex;
+		padding: 0.4em;
+		margin-left: auto;
+		margin-right: 1em;
+		&:hover {
+			box-shadow: var(--selected-shadow);
+			opacity: 1;
 		}
 	}
 

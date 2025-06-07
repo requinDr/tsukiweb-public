@@ -246,7 +246,7 @@
 		"overwrite-warning": "このセーブを本当に上書きしたいですか？",
 		"quick-save": "クイックセーブ",
 		"local-storage-warning":
-			"Savefiles and settings are stored locally in the web browser, and might get deleted by the browser after a delay of inactivity. Regularly export your data in $0the advanced settings$1 to avoid data loss.",
+			"Savefiles and settings are stored locally in the web browser, and might get deleted by the browser after a delay of inactivity. Regularly export your data.",
 		"local-storage-last-export": "Last full data export date: $0"
 	},
 	"game": {

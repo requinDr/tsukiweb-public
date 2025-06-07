@@ -1,6 +1,6 @@
 import { ReactNode, useEffect, useState } from "react"
 import { ConfigButtons, ConfigItem, ResetBtn } from "../ConfigLayout"
-import { defaultSettings, settings } from "../../utils/settings"
+import { defaultSettings, exportGameData, settings } from "../../utils/settings"
 import { savesManager, SaveState } from "../../utils/savestates"
 import { strings, languages } from "../../translation/lang"
 import { toast } from "react-toastify"
@@ -11,15 +11,11 @@ import ConfigModal from "./components/ConfigModal"
 import Button from "@tsukiweb-common/ui-core/components/Button"
 import PageSection from "@tsukiweb-common/ui-core/layouts/PageSection"
 import { RecursivePartial } from "@tsukiweb-common/types"
-import { deepAssign, jsonDiff, textFileUserDownload, requestJSONs } from "@tsukiweb-common/utils/utils"
+import { deepAssign, requestJSONs } from "@tsukiweb-common/utils/utils"
 import { bb } from "@tsukiweb-common/utils/Bbcode"
 import { modalPromptService } from "@tsukiweb-common/ui-core/components/ModalPrompt"
-import { APP_VERSION } from "utils/constants"
 import { warnHScene } from "utils/display"
 
-function twoDigits(n: number) {
-	return n.toString().padStart(2, '0')
-}
 
 type Savefile = {
 	version: string
@@ -51,17 +47,7 @@ const ConfigAdvancedTab = () => {
 	) => setConf(prev => ({ ...prev, [key]: value }))
 
 	const exportData = () => {
-		const content: Savefile = {
-			version: APP_VERSION,
-			settings: jsonDiff(settings, defaultSettings),
-			saveStates: savesManager.listSaves(),
-		}
-		const date = new Date()
-		const year = date.getFullYear(), month = date.getMonth()+1,
-					day = date.getDate(), hour = date.getHours(), min = date.getMinutes()
-		const dateString = [year, month, day].map(twoDigits).join('-')
-		const timeString = [hour, min].map(twoDigits).join('-')
-		textFileUserDownload(JSON.stringify(content), `${dateString}_${timeString}.thfull`, "application/thfull+json")
+		exportGameData()
 	}
 
 	const importData = async (allExtensions=false) => {
