@@ -1,6 +1,6 @@
 import { ReactNode, useEffect, useState } from "react"
 import { ConfigButtons, ConfigItem, ResetBtn } from "../ConfigLayout"
-import { defaultSettings, exportGameData, settings } from "../../utils/settings"
+import { defaultSettings, exportGameData, importGameData, settings } from "../../utils/settings"
 import { savesManager, SaveState } from "../../utils/savestates"
 import { strings, languages } from "../../translation/lang"
 import { toast } from "react-toastify"
@@ -50,31 +50,8 @@ const ConfigAdvancedTab = () => {
 		exportGameData()
 	}
 
-	const importData = async (allExtensions=false) => {
-		try {
-			const json = (await requestJSONs({accept: allExtensions ? '*' : '.thfull'}) as Savefile[])?.[0] as Savefile|undefined
-			if (!json)
-				return
-			if (!json.version)
-				json.version = "0.3.6"
-			const importedSettings = deepAssign(defaultSettings, json.settings, {clone: true})
-			deepAssign(settings, importedSettings)
-			if (json.saveStates != undefined) {
-				savesManager.clear()
-				savesManager.add(...json.saveStates)
-			}
-
-			toast("Your data has been loaded", {
-				toastId: "loaded-data",
-				type: "success",
-			})
-		} catch (e) {
-			console.error(e)
-			toast("Failed to load data", {
-				toastId: "failed-data",
-				type: "error",
-			})
-		}
+	const importData = (allExtensions=false) => {
+		importGameData(allExtensions ? '*' : '.thfull')
 	}
 
 	const eraseData = async () => {

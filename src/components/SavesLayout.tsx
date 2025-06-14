@@ -17,8 +17,9 @@ import TitleMenuButton from "@tsukiweb-common/ui-core/components/TitleMenuButton
 import history from "utils/history"
 import { requestFilesFromUser } from "@tsukiweb-common/utils/utils"
 import { SAVE_EXT } from "utils/constants"
-import { exportGameData } from "utils/settings"
+import { computeSaveHash, exportGameData, settings } from "utils/settings"
 import { Link } from "react-router-dom"
+import { useObserver } from "@tsukiweb-common/utils/Observer"
 
 //##############################################################################
 //#                               TOOL FUNCTIONS                               #
@@ -48,6 +49,18 @@ type Props = {
 const SavesLayer = ({variant, back}: Props) => {
 	const [saves, setSaves] = useState<Array<SaveState>>([])
 	const [focusedId, setFocusedSave] = useState<number>()
+	const [displayWarning, setDisplayWarning] = useState<boolean>(false)
+
+	useObserver(()=> {
+		const delay = Date.now() - settings.lastFullExport.date
+		if (delay < settings.localStorageWarningDelay) {
+			setDisplayWarning(false)
+		} else {
+			computeSaveHash().then(hash=> {
+				setDisplayWarning(settings.lastFullExport.hash != hash)
+			})
+		}
+	}, settings.lastFullExport, 'date')
 
 	useEffect(()=> {
 		const onChange = ()=> {
@@ -211,9 +224,11 @@ const SavesLayer = ({variant, back}: Props) => {
 				<TitleMenuButton onClick={back.bind(null, false)} className="back-button">
 					{`<<`} {strings.back}
 				</TitleMenuButton>
-				<button className="warning-button" onClick={exportData}>
-					<MdWarning/>
-				</button>
+				{displayWarning &&
+					<button className="warning-button" onClick={exportData}>
+						<MdWarning/>
+					</button>
+				}
 			</div>
 		</main>
 	)

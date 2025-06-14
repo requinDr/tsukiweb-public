@@ -2,10 +2,11 @@ import { RecursivePartial } from "@tsukiweb-common/types"
 import { LabelName, SettingsType } from "../types"
 import { observeChildren, observe } from "@tsukiweb-common/utils/Observer"
 import { StoredJSON } from "@tsukiweb-common/utils/storage"
-import { deepFreeze, deepAssign, jsonDiff, objectsEqual, textFileUserDownload } from "@tsukiweb-common/utils/utils"
+import { deepFreeze, deepAssign, jsonDiff, objectsEqual, textFileUserDownload, requestJSONs } from "@tsukiweb-common/utils/utils"
 import { TEXT_SPEED, ViewRatio } from "@tsukiweb-common/constants"
 import { savesManager, SaveState } from "./savestates"
 import { APP_VERSION } from "./constants"
+import { toast } from "react-toastify"
 
 export const defaultSettings: SettingsType = deepFreeze({
   textSpeed: TEXT_SPEED.normal,
@@ -38,6 +39,12 @@ export const defaultSettings: SettingsType = deepFreeze({
 
   historyLength: 20,
   savedHistoryLength: 10,
+
+  lastFullExport: {
+    date: 0,
+    hash: 0
+  },
+  localStorageWarningDelay: 2 * 24 * 60 * 60 * 1000, // 2 days
   
   eventImages: new Array<string>(),
   completedScenes: new Array<string>(),
@@ -94,6 +101,20 @@ export function viewedScene(scene: LabelName | string): boolean {
 }
 
 
+export async function computeSaveHash() {
+  // compute hash from event images, completed scenes and savestates
+  const buffer = new TextEncoder().encode(JSON.stringify({
+    eventImages: settings.eventImages,
+    completedScenes: settings.completedScenes,
+    saves: savesManager.listSaves()
+  }))
+  const hashBuffer = await window.crypto.subtle.digest('SHA-1', buffer)
+  const lastQuad = new Uint32Array(hashBuffer).at(-1)
+  if (lastQuad == undefined)
+    throw Error(`Empty hash`)
+  return lastQuad
+}
+
 function twoDigits(n: number) {
   return n.toString().padStart(2, '0')
 }
@@ -105,6 +126,7 @@ type Savefile = {
 }
 
 export const exportGameData = () => {
+  const {lastFullExport, ...exportedSettings} = settings
 	const content: Savefile = {
 		version: APP_VERSION,
 		settings: jsonDiff(settings, defaultSettings),
@@ -116,6 +138,45 @@ export const exportGameData = () => {
 	const dateString = [year, month, day].map(twoDigits).join('-')
 	const timeString = [hour, min].map(twoDigits).join('-')
 	textFileUserDownload(JSON.stringify(content), `${dateString}_${timeString}.thfull`, "application/thfull+json")
+  const timeStamp = date.getTime()
+  settings.lastFullExport.date = timeStamp
+  computeSaveHash().then(hash=> {
+    if (settings.lastFullExport.date == timeStamp)
+      settings.lastFullExport.hash = hash
+  })
+}
+
+export const importGameData = async (accept = '.thfull') => {
+  try {
+    const json = (await requestJSONs({accept}) as Savefile[])?.[0] as Savefile|undefined
+    if (!json)
+      return
+    if (!json.version)
+      json.version = "0.3.6"
+    const importedSettings = deepAssign(defaultSettings, json.settings, {clone: true})
+    deepAssign(settings, importedSettings)
+    if (json.saveStates != undefined) {
+      savesManager.clear()
+      savesManager.add(...json.saveStates)
+    }
+    const timeStamp = Date.now()
+    settings.lastFullExport.date = timeStamp
+    computeSaveHash().then(hash=> {
+      if (settings.lastFullExport.date == timeStamp)
+        settings.lastFullExport.hash = hash
+    })
+
+    toast("Your data has been loaded", {
+      toastId: "loaded-data",
+      type: "success",
+    })
+  } catch (e) {
+    console.error(e)
+    toast("Failed to load data", {
+      toastId: "failed-data",
+      type: "error",
+    })
+  }
 }
 
 //TODO clean unused settings from previous versions

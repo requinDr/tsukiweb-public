@@ -1,6 +1,6 @@
 import { ScriptPlayerBase, ScriptPlayerCallbacks } from "@tsukiweb-common/script/ScriptPlayer"
 import { LabelName, RouteDayName, RouteName } from "types";
-import { fetchBlockLines, fetchLogicBlock, fetchScene, isThScene, nextLabel } from "script/utils";
+import { fetchBlockLines, isThScene, nextLabel } from "script/utils";
 import { settings } from "utils/settings";
 import { phaseTexts } from "translation/assets";
 import { closeBB } from "@tsukiweb-common/utils/Bbcode";

@@ -61,6 +61,12 @@ export type SettingsType = {
 	historyLength: number, // pages stored at runtime in the history
 	savedHistoryLength: number // pages saved when creating a save state
 
+	lastFullExport: {
+		date: number,
+		hash: number
+	},
+	localStorageWarningDelay: number,
+
 	// saved progress
 	eventImages: string[]
 	completedScenes: string[]
