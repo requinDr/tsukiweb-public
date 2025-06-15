@@ -58,7 +58,7 @@ function processCondition(condition) {
 	return `${lhs}${op}${rhs}`
 }
 
-function tsukihime_logic_fixes(token, i, tokens) {
+function tsukihime_logic_fixes(labels, token, i, tokens) {
 	if (!token) {
 		return
 	} else if (token instanceof TextToken) {
@@ -95,6 +95,12 @@ function tsukihime_logic_fixes(token, i, tokens) {
 						token.args[3].trim() == '*endofplay') {
 					token.cmd = 'osiete'
 					token.args = [token.args[1].trim()]
+				} else {
+					const targetLabels = token.args.filter((a, i)=>i%2==1 && a.startsWith('*f'))
+					for(let lbl of targetLabels) {
+						if (!labels.includes(lbl.substring(1)))
+							throw Error(`target label ${lbl} does not exist`)
+					}
 				}
 				break
 		}
@@ -105,7 +111,7 @@ function tsukihime_logic_fixes(token, i, tokens) {
 		else {
 			tokens[i].condition = condition
 			const conditionalTokens = [token.command]
-			tsukihime_logic_fixes(token.command, 0, conditionalTokens)
+			tsukihime_logic_fixes(labels, token.command, 0, conditionalTokens)
 			if (conditionalTokens[0] == null)
 				tokens[i] = null
 			else {
@@ -117,7 +123,10 @@ function tsukihime_logic_fixes(token, i, tokens) {
 	}
 }
 const fixes = new Map(Object.entries({
-	[LOGIC_FILE]: (tokens)=> tokens.forEach(tsukihime_logic_fixes),
+	[LOGIC_FILE]: (tokens)=> {
+		const labels = tokens.filter(t=>t instanceof LabelToken).map(t=>t.label)
+		tokens.forEach(tsukihime_logic_fixes.bind(null, labels))
+	},
 	'openning': (tokens)=> {
 		// center text lines except when they start with [line=X/] ("----")
 		tokens.forEach(t=> {
@@ -480,6 +489,7 @@ function main() {
 			console.error(`Error processing ${file}: ${e.message}`)
 		}
 	}
+	console.log(`> Done.`)
 }
 
 main()

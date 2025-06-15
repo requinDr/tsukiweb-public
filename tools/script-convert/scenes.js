@@ -23,7 +23,7 @@ class Scene {
         return this._index
     }
     isScene() {
-        return this._tokens.length > 0
+        return this._tokens?.length ?? 0 > 0
     }
     setTokens(tokens) {
         this._tokens = tokens
@@ -106,7 +106,7 @@ class Scene {
                 else if (!missing_props.has(key))
                     missing_props.set(key, value)
                 else if (missing_props.get(key) != value)
-                    throw Error(`Differences in end contexts before ${this._label}`)
+                    throw Error(`Differences in end contexts before ${this._label} (scenes ${this._parentScenes.map(s=>s._label)} on property ${key})`)
             }
         }
         const insert = propsToCmds(missing_props)
