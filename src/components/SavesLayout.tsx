@@ -49,18 +49,6 @@ type Props = {
 const SavesLayer = ({variant, back}: Props) => {
 	const [saves, setSaves] = useState<Array<SaveState>>([])
 	const [focusedId, setFocusedSave] = useState<number>()
-	const [displayWarning, setDisplayWarning] = useState<boolean>(false)
-
-	useObserver(()=> {
-		const delay = Date.now() - settings.lastFullExport.date
-		if (delay < settings.localStorageWarningDelay) {
-			setDisplayWarning(false)
-		} else {
-			computeSaveHash().then(hash=> {
-				setDisplayWarning(settings.lastFullExport.hash != hash)
-			})
-		}
-	}, settings.lastFullExport, 'date')
 
 	useEffect(()=> {
 		const onChange = ()=> {
@@ -138,23 +126,6 @@ const SavesLayer = ({variant, back}: Props) => {
 		}
 	}
 
-	const exportData = async () => {
-		const confirmed = await modalPromptService.confirm({
-			text: <>
-				{strings.saves["local-storage-warning"]}
-				<div style={{marginTop: "1em", color: "#daca04", fontSize: "0.9em"}}>
-					{strings.menu.config} {">"} {strings.config["tab-advanced"]} {">"} {strings.config["data-export"]}
-				</div>
-			</>,
-			labelYes: strings.config["data-export"],
-			labelNo: "Later",
-			color: "#757601"
-		})
-		if (confirmed) {
-			exportGameData()
-		}
-	}
-
 	const focusedSave = focusedId != undefined ? savesManager.get(focusedId) : undefined
 	const title = strings.saves[variant == "save" ? "title-save" : "title-load"]
 
@@ -224,14 +195,64 @@ const SavesLayer = ({variant, back}: Props) => {
 				<TitleMenuButton onClick={back.bind(null, false)} className="back-button">
 					{`<<`} {strings.back}
 				</TitleMenuButton>
-				{displayWarning &&
-					<button className="warning-button" onClick={exportData}>
-						<MdWarning/>
-					</button>
-				}
+				
+				<ExportWarning />
 			</div>
 		</main>
 	)
 }
 
 export default SavesLayer
+
+
+const ExportWarning = () => {
+	const [displayWarning, setDisplayWarning] = useState<boolean>(false)
+	const [modalShown, setModalShown] = useState<boolean>(false)
+
+	useObserver(()=> {
+		const delay = Date.now() - settings.lastFullExport.date
+		if (delay < settings.localStorageWarningDelay) {
+			setDisplayWarning(false)
+		} else {
+			computeSaveHash().then(hash=> {
+				setDisplayWarning(settings.lastFullExport.hash != hash)
+			})
+		}
+	}, settings.lastFullExport, 'date')
+
+	if (!displayWarning) {
+		return null
+	}
+
+	const exportData = async () => {
+		setModalShown(true)
+		const confirmed = await modalPromptService.confirm({
+			text: <>
+				{strings.saves["local-storage-warning"]}
+				<div style={{marginTop: "1em", color: "#daca04", fontSize: "0.9em"}}>
+					{strings.menu.config} {">"} {strings.config["tab-advanced"]} {">"} {strings.config["data-export"]}
+				</div>
+			</>,
+			labelYes: strings.config["data-export"],
+			labelNo: "Later",
+			color: "#757601"
+		})
+		if (confirmed) {
+			exportGameData()
+		}
+		setModalShown(false)
+	}
+
+	return (
+		<button className={classNames("warning-button", {"active": modalShown})} onClick={exportData}>
+			<svg aria-hidden="true" focusable="false" className="gradient-icon" width="0" height="0">
+				<linearGradient id="gradient-vertical" x2="0" y2="1">
+					<stop offset="0%" stopColor="var(--color-stop-1)" />
+					<stop offset="50%" stopColor="var(--color-stop-2)" />
+					<stop offset="100%" stopColor="var(--color-stop-3)" />
+				</linearGradient>
+			</svg>
+			<MdWarning className="warning-icon"/>
+		</button>
+	)
+}

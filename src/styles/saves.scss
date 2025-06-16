@@ -250,9 +250,43 @@
 		padding: 0.4em;
 		margin-left: auto;
 		margin-right: 1em;
+		transform-origin: center;
+		&:not(.active) {
+			animation: periodic-shake 10s infinite;
+		}
+		.warning-icon {
+			font-size: 1.3em;
+			fill: url(#gradient-vertical) gray;
+		}
+		#gradient-vertical {
+			--color-stop-1: #00c3ff;
+			--color-stop-2: #77e190;
+			--color-stop-3: #ffff1c;
+		}
 		&:hover {
 			box-shadow: var(--selected-shadow);
 			opacity: 1;
+		}
+
+		@keyframes periodic-shake {
+			0%, 39%, 59%, 100% {
+				transform: rotate(0deg) scale(1);
+			}
+			40% {
+				transform: rotate(-4deg) scale(1.5);
+			}
+			42% {
+				transform: rotate(4deg) scale(1.5);
+			}
+			44% {
+				transform: rotate(-4deg) scale(1.5);
+			}
+			46% {
+				transform: rotate(4deg) scale(1.5);
+			}
+			48% {
+				transform: rotate(0deg) scale(1);
+			}
 		}
 	}
 
