@@ -2,10 +2,11 @@
  * Convert a script file into a folder of scenes in the format
  * used by the parser.
  */
-import fs from 'fs';
+import fs, { read } from 'fs';
 import path from 'path';
 import { parseScript } from './parsers/kagScript.js';
-import { CommandToken, LabelToken, TextToken, Token } from './parsers/utils.js'
+import { CommandToken, LabelToken, StrReader, TextToken, Token } from './parsers/utils.js'
+import { generate } from './nscriptr_convert.js';
 
 
 //#endregion ###################################################################
@@ -89,7 +90,7 @@ function processImgFile(args) {
     }
     switch (file) {
         case 'fin' : case 'genshi' : case 'tea' : case 'one_a' : case 'one_b' :
-        case 'two' : case 'three' : return `words/pd_${file}`;
+        case 'two' : case 'three' : return `"word/pd_${file}"`;
         //'$b`[right]Fin[/right]`';
         //'$b`[right][u]   閑話/幻視同盟[/u][/right]`'; //Casual Talk / Illusionary Alliance
         //'$t`[u]          月茶[/u]`'; //Geccha
@@ -97,12 +98,12 @@ function processImgFile(args) {
         //'$c`[center]一日目/2[/center]`'; //Day 1/2
         //'$c`[center]二日目[/center]`'; //Day 2
         //'$c`[center]三日目[/center]`'; //Day 3
-        case 'yumizuka' : return 'bg/yumizuka';
-        case 'スクロール19a' : return 'bg/スクロール19'; //TODO align bottom
-        case 'スクロール19b' : return 'bg/スクロール19'; //TODO align top
-        case 'matu'   : return `bg/matu`; //TODO full-screen sprite. Change ld to bg
+        case 'yumizuka' : return '"bg/yumizuka"';
+        case 'スクロール19a' : return '"bg/スクロール19"'; //TODO align bottom
+        case 'スクロール19b' : return '"bg/スクロール19"'; //TODO align top
+        case 'matu'   : return `"bg/matu"`; //TODO full-screen sprite. Change ld to bg
         case 'next'   : return null; // used at the end of the scene (ignore)
-        case 'title_01' : return 'bg/title_01'; // used during script
+        case 'title_01' : return '"bg/title_01"'; // used during script
         default : throw Error(`Unexpected image file ${file}`);
     }
 }
@@ -309,37 +310,49 @@ const GLYPHS = new Map(Object.entries({
 }))
 
 function processText(token, i, tokens) {
-    token.text = token.text.replaceAll(INLINE_CMD_REGEX, (command)=> {
-        command = command.substring(1, command.length-1) // remove '[' and ']'
-        let m = command.match(/^(?<cmd>\w+)(\s*|$)/)
-        if (!m)
-            throw Error(`Could not extract command from inline command ${command}`)
-        const cmd = m.groups['cmd']
-        const args = new Map()
-        const argsString = command.substring(cmd.length)
-        while ((m = INLINE_CMD_ARG_REGEXP.exec(argsString))) {
-            if (INLINE_CMD_ARG_REGEXP.lastIndex )
-            args.set(m.groups['key'], m.groups['val'])
+    const reader = new StrReader(token.text)
+    let result = ""
+    while (!reader.atEnd()) {
+        const text = reader.readUntil(INLINE_CMD_REGEX, false)
+        if (text.length > 0) {
+            result += text
         }
-        switch (cmd) {
-            case 'l' : return '@'
-            case 'r' :
-                return '' // ignore [r], all placed at end of line
-            case 'graph' :
-                const glyph = args.get('storage')
-                if (!GLYPHS.has(glyph))
-                    throw Error(`Unknown glyph ${glyph}`)
-                return GLYPHS.get(glyph)
-            case 'ruby' :
-                const rubyChars = args.get('char') ?? reader.read(1)
-                const rubyTxt = args.get('text')
-                return `[ruby=${rubyTxt}]${rubyChars}[/ruby]`
-            case 'wrap' :
-                return '' // ignore [wrap text="..."] commands used in english
-            default :
-                throw new Error(`Unexpected inline command ${command}`);
+        let command = reader.readMatch(INLINE_CMD_REGEX)
+        if (command) {
+            command = command.substring(1, command.length-1) // remove '[' and ']'
+            let m = command.match(/^(?<cmd>\w+)(\s*|$)/)
+            if (!m)
+                throw Error(`Could not extract command from inline command ${command}`)
+            const cmd = m.groups['cmd']
+            const args = new Map()
+            const argsString = command.substring(cmd.length)
+            while ((m = INLINE_CMD_ARG_REGEXP.exec(argsString))) {
+                if (INLINE_CMD_ARG_REGEXP.lastIndex )
+                args.set(m.groups['key'], m.groups['val'])
+            }
+            switch (cmd) {
+                case 'l' : return '@'
+                case 'r' :
+                    break // ignore [r], all placed at end of line
+                case 'graph' :
+                    const glyph = args.get('storage')
+                    if (!GLYPHS.has(glyph))
+                        throw Error(`Unknown glyph ${glyph}`)
+                    result += GLYPHS.get(glyph)
+                    break
+                case 'ruby' :
+                    const rubyChars = args.get('char') ?? reader.read(1)
+                    const rubyTxt = args.get('text')
+                    result += `[ruby=${rubyTxt}]${rubyChars}[/ruby]`
+                    break
+                case 'wrap' :
+                    break // ignore [wrap text="..."] commands used in english
+                default :
+                    throw new Error(`Unexpected inline command ${command}`);
+            }
         }
-    }).replaceAll(/[-―─―]{2,}/g, (match)=> `[line=${match.length}]`)
+    }
+    token.text = result.replaceAll(/[-―─―]{2,}/g, (match)=> `[line=${match.length}]`)
 }
 
 //#endregion ###################################################################
@@ -380,15 +393,24 @@ function main() {
         const txt = fs.readFileSync(path.join(input_dir,ks), 'utf-8')
         const tokens = parseScript(txt)
         tokens.forEach(processToken)
-        if (fixes.has(file)) {
-            fixes.get(file)(tokens)
-        }
-        const file_str = tokens.filter(t=> t != null).map(t=>t.toString()).join('\n')
-        if (output_dir) {
-            if (!fs.existsSync(output_dir))
-                fs.mkdirSync(output_dir);
-            fs.writeFileSync(path.join(output_dir, `${file}.txt`), file_str+'\n')
-        }
+        tokens.unshift(new LabelToken(0, file)) // prevent generate() from discarding all tokens. Removed later
+        generate(output_dir, tokens, ()=> file, (map)=>{
+            const tokens = map.get(file)
+            tokens[0] = null // remove label added previously
+            if (tokens[1] instanceof CommandToken && tokens[1].cmd == '\\')
+                tokens[1] = null
+            if (fixes.has(file))
+                fixes.get(file)(tokens)
+        })
+        //if (fixes.has(file)) {
+        //    fixes.get(file)(tokens)
+        //}
+        //const file_str = tokens.filter(t=> t != null).map(t=>t.toString()).join('\n')
+        //if (output_dir) {
+        //    if (!fs.existsSync(output_dir))
+        //        fs.mkdirSync(output_dir);
+        //    fs.writeFileSync(path.join(output_dir, `${file}.txt`), file_str+'\n')
+        //}
     }
 }
 

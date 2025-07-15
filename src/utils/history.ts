@@ -3,7 +3,7 @@ import { Queue } from "@tsukiweb-common/utils/queue"
 import { Choice, LabelName } from "../types"
 import { APP_VERSION, HISTORY_MAX_PAGES } from "./constants"
 import { SaveState } from "./savestates"
-import { isThScene } from "../script/utils"
+import { isScene } from "../script/utils"
 import { ScriptPlayer } from "script/ScriptPlayer"
 import { PartialJSON, RecursivePartial } from "@tsukiweb-common/types"
 import { settings } from "./settings"
@@ -153,12 +153,12 @@ export class History extends Stored {
   private getSceneAtPage(pageIndex: number): number {
     const page = this._pages.get(pageIndex) as PageEntry
     let label: LabelName|undefined = page.label
-    if (!isThScene(label)) {
+    if (!isScene(label)) {
       // not a scene => search previous pages
-      label = this._pages.findLast(p=>isThScene(p.label), pageIndex)?.label
+      label = this._pages.findLast(p=>isScene(p.label), pageIndex)?.label
       if (!label) {
         // no valid label found in previous pages. Search on next pages
-        label = this._pages.find(p=>isThScene(p.label), pageIndex)?.label
+        label = this._pages.find(p=>isScene(p.label), pageIndex)?.label
         if (!label) // only entry in history. Must be the last scene visited
           return this._scenes.length-1
         // next scene found, return previous one
@@ -210,7 +210,7 @@ export class History extends Stored {
   }
   onPageStart(script: ScriptPlayer) {
     const label = script.currentLabel as LabelName
-    if (isThScene(label) || (label.startsWith("skip") && (
+    if (isScene(label) || (label.startsWith("skip") && (
         script.currentBlock as NonNullable<typeof script.currentBlock>).page == 0)
       ) {
       this._pageContext = script.pageContext()!
@@ -239,7 +239,7 @@ export class History extends Stored {
   }
   onBlockStart(script: ScriptPlayer, label: LabelName = script.currentLabel!) {
     this._script = script
-    if (isThScene(label) && label != this.lastScene.label) {
+    if (isScene(label) && label != this.lastScene.label) {
       this._scenes.push({...script.blockContext() as SceneEntry, label})
     }
   }

@@ -108,7 +108,7 @@ export async function fetchLogicBlock(label: string) : Promise<string[]> {
 }
 
 export async function fetchBlockLines(label: string): Promise<string[]> {
-	if (isThScene(label))
+	if (isScene(label))
 		return fetchScene(label)
 	else
 		return fetchLogicBlock(label)

@@ -478,12 +478,15 @@ function main() {
 
 			const txt = fs.readFileSync(fullscriptPath, 'utf-8')
 			const tokens = parseScript(raw_fixes(folder, txt))
-
-			const outputPath = path.join(path_prefix, folder, outputDir)
-			if (!fs.existsSync(outputPath)) {
-				fs.mkdirSync(outputPath, { recursive: true })
+			let outputPath
+			if (outputDir) {
+				outputPath = path.join(path_prefix, folder, outputDir)
+				if (!fs.existsSync(outputPath)) {
+					fs.mkdirSync(outputPath, { recursive: true })
+				}
+			} else {
+				outputPath = null
 			}
-
 			generate(outputPath, tokens, getLabelFile, tsukihime_fixes)
 		} catch (e) {
 			console.error(`Error processing ${file}: ${e.message}`)

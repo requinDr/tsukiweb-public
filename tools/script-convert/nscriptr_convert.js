@@ -179,7 +179,7 @@ function genericFixes(token, tokens, index, clickChars) {
 //##############################################################################
 
 /**
- * @param {string} output_dir
+ * @param {string|null} output_dir
  * @param {Token[]} tokens
  * @param {string} logicFileName
  * @param {(label:string)=>string|null} getFile
@@ -190,7 +190,7 @@ function generate(output_dir, tokens, getFile, fixes) {
     // 1.1. clickstr
     let clickChars = tokens.find(
         t=> t instanceof CommandToken && t.cmd == "clickstr"
-    )?.args[0].replace(/^["`]/, '').replace(/["`]$/, '').split('')
+    )?.args[0].replace(/^["`]/, '').replace(/["`]$/, '').split('') ?? ''
     
     //----------
     /** @type {Map<string, Token[]>} */
@@ -208,12 +208,13 @@ function generate(output_dir, tokens, getFile, fixes) {
             }
         }
         if (file) {
-            if (!(token instanceof ErrorToken)) {
+            if (token && !(token instanceof ErrorToken)) {
                 genericFixes(token, tokens, i, clickChars)
                 fileTokens.push(token)
             }
         }
     }
+    tokens = tokens.filter(t=>t != null)
     fixes(files)
     for (let [file, tokens] of files.entries()) {
         // 5. custom fixes, then remove null tokens if necessary

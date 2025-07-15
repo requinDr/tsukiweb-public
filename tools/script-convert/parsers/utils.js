@@ -217,7 +217,11 @@ class StrReader {
 				else
 					index = -1
 			} else {
-				index = text.search(strOrRegexp) + this._index
+				index = text.search(strOrRegexp)
+				if (index < 0)
+					index = -1
+				else
+					index += this._index
 			}
 		}
 

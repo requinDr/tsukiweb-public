@@ -1,4 +1,3 @@
-import { notifyObservers, observe, simulateObserverChange as triggerObservers } from "@tsukiweb-common/utils/Observer";
 import { toast } from "react-toastify";
 import { isThScene } from "script/utils";
 import { strings } from "translation/lang";

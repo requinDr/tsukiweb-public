@@ -23,6 +23,7 @@ export function extractImage(image: string) {
 	let text;
 	[image, text] = splitFirst(image, '$')
 	if (image.startsWith('"') && image.endsWith('"')) {
+		image = image.substring(1, image.length-1)
 		const [dir, name] = image.split('/')
 		
 		// Save to gallery if it's a new image

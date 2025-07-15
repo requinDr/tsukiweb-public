@@ -1,16 +1,16 @@
 import { settings, viewedScene } from "./settings"
-import history, { History, PageEntry, PageType, SceneEntry } from './history';
+import history, { History, PageEntry, SceneEntry } from './history';
 import { toast } from "react-toastify";
 import { FaSave } from "react-icons/fa"
-import { APP_VERSION, SAVE_EXT, SCENE_ATTRS } from "./constants";
+import { APP_VERSION, SAVE_EXT } from "./constants";
 import { LabelName, RouteDayName, RouteName } from "../types";
 import { SCREEN, displayMode } from "./display";
 import { Stored } from "@tsukiweb-common/utils/storage";
-import { TSForceType, jsonMerge, requestFilesFromUser, textFileUserDownload, versionsCompare } from "@tsukiweb-common/utils/utils";
+import { textFileUserDownload, versionsCompare } from "@tsukiweb-common/utils/utils";
 import { strings } from "translation/lang";
 import { Regard, ScriptPlayer } from "script/ScriptPlayer";
-import { Graphics, JSONDiff, JSONMerge, JSONObject, PartialJSON, PartialRecord, RecursivePartial } from "@tsukiweb-common/types";
-import { fetchBlockLines, getPageAtLine, getSceneTitle, isThScene } from "script/utils";
+import { Graphics, JSONDiff, PartialJSON, PartialRecord } from "@tsukiweb-common/types";
+import { fetchBlockLines, getPageAtLine, isScene } from "script/utils";
 
 //##############################################################################
 //#region                       TYPES & CONSTANTS
@@ -329,7 +329,7 @@ async function updateSave(ss: SaveState): Promise<SaveState> {
     return ss
   else {
     const {context, progress, page, graphics} = ss as any
-    const pageNum = isThScene(context.label) ?
+    const pageNum = isScene(context.label) ?
       getPageAtLine(await fetchBlockLines(context.label), context.index)
       : 0
     return {
