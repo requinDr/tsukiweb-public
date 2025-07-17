@@ -72,13 +72,18 @@
 					color: #bdbdbd;
 					white-space: nowrap;
 				}
-				.chip-choice {
+				.chip {
 					font-size: 0.8em;
-					letter-spacing: .5px;
-					margin-left: 0.8em;
-					background-color: #2c00da;
-					padding: 2px 4px;
-					border-radius: 3px;
+					letter-spacing: 0.5px;
+					margin-left: 0.6em;
+					padding: 2px 6px;
+					border-radius: 5px;
+					&__choice {
+						background-color: #6300ff;
+					}
+					&__pd {
+						background-color: #0073ff;
+					}
 				}
 
 				.line {

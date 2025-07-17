@@ -4,6 +4,7 @@ import { QUICK_SAVE_ID, SaveState } from "../../utils/savestates"
 import GraphicsGroup from "../molecules/GraphicsGroup"
 import SaveSummary from "./SaveSummary"
 import { jsonMerge } from "@tsukiweb-common/utils/utils"
+import { isPDScene } from "script/utils"
 
 type SaveListItemProps = {
 	id: number,
@@ -37,8 +38,13 @@ const SaveListItem = ({id, saveState, onSelect, focusedSave, buttonProps}: SaveL
 					{date.toLocaleDateString(getLocale())} {date.toLocaleString(getLocale(), {hour: 'numeric', minute: '2-digit'})}
 				</time>
 				{lastPage?.type === "choice" &&
-					<span className="chip-choice">
+					<span className="chip chip__choice">
 						choice
+					</span>
+				}
+				{lastPage.label && isPDScene(lastPage.label) &&
+					<span className="chip chip__pd">
+						plus disc
 					</span>
 				}
 
