@@ -4,18 +4,25 @@
 		"desc": "Simplified Chinese translation by 月姬野人汉化组(r22129) + Simplified Chinese translation by SHIROU神父, based on r22129. Translates all text, including the previously untranslated H-scenes and bad endings. version 1.6 updated on 2022-03-31.",
 		"url": "https://bbs.sumisora.net/read.php?tid=10940555",
 		"vndb": "https://vndb.org/r71804"
-	}, 
+	},
+	"translation-pd": {
+		"name": "月姬野人汉化组 & SHIROU神父",
+		"desc": "Simplified Chinese translation by 月姬野人汉化组(r22129) + Simplified Chinese translation by SHIROU神父, based on r22129. Translates all text, including the previously untranslated H-scenes and bad endings. version 1.6 updated on 2022-03-31.",
+		"url": "https://bbs.sumisora.net/read.php?tid=10940555",
+		"vndb": "https://vndb.org/r71804"
+	},
+
+	"scripts-dir": "./scenes/",
 	
 	"images": {
-		"redirect-ids": {
-			"zh-yueji_yeren_hanhua_zu": {
-				"thumb": 0,
-				"sd":"./image/$.webp",
-				"hd": "./image_x2/$.webp"
-			}
+		"thumb" : {
+			"tachi/osiete" : "./image/%0.webp"
 		},
-		"redirected-images": {
-			"tachi/osiete": "zh-yueji_yeren_hanhua_zu"
+		"sd" : {
+			"tachi/osiete" : "./image/%0.webp"
+		},
+		"hd" : {
+			"tachi/osiete" : "./image_x2/%0.webp"
 		}
 	},
 	"disclaimer": [
@@ -30,10 +37,10 @@
 		"extra": "其他",
 		"about": {
 			"port": "这是Type-Moon于2000年出版的视觉小说[i]月姬[/i]的网络版。",
-			"project": "该项目位于 $0GitHub$1 上。 喜欢就加个星吧！欢迎贡献。",
-			"feedback": "发送你的反馈或报告错误 $0这里$1.",
-			"data": "不收集任何数据，所有内容都存储在你的浏览器中。管理你的数据$0这里$1。",
-			"remake": "请购买并支持重制版 $0月姬$ - A piece of blue glass moon$1."
+			"project": "该项目位于 %0GitHub%1 上。 喜欢就加个星吧！欢迎贡献。",
+			"feedback": "发送你的反馈或报告错误 %0这里%1.",
+			"data": "不收集任何数据，所有内容都存储在你的浏览器中。管理你的数据%0这里%1。",
+			"remake": "请购买并支持重制版 %0月姬$ - A piece of blue glass moon%1."
 		},
 		"install": "安装"
 	},
@@ -65,8 +72,8 @@
 		"text-speed-med": "通常",
 		"text-speed-high": "快",
 		"text-speed-instant": "瞬间",
-		"auto-play-delay-text": "自动模式文本延迟: $0s",
-		"auto-play-delay-page": "自动模式页面延迟: $0s",
+		"auto-play-delay-text": "自动模式文本延迟: %0s",
+		"auto-play-delay-page": "自动模式页面延迟: %0s",
 		"adult-title": "成人设置",
 		"adult-blur": "模糊缩略图",
 		"adult-blur-help": [
@@ -153,7 +160,7 @@
 	},
 	"history": {
 		"load": "读档",
-		"skipped": "跳过场景 $0."
+		"skipped": "跳过场景 %0."
 	},
 	"characters": {
 		"aki": "秋叶",

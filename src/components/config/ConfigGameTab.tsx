@@ -83,7 +83,7 @@ const ConfigGameTab = () => {
 				updateValue={updateValue}
 			/>
 
-			<ConfigItem title={strings.config["auto-play-delay-text"].replace('$0',msToS(conf.autoClickDelay))}>
+			<ConfigItem title={strings.config["auto-play-delay-text"].replace('%0',msToS(conf.autoClickDelay))}>
 				<div className="config-range">
 					<span className="icon"><FaMinus /></span>
 					<input
@@ -99,7 +99,7 @@ const ConfigGameTab = () => {
 				</div>
 			</ConfigItem>
 
-			<ConfigItem title={strings.config["auto-play-delay-page"].replace('$0',msToS(conf.nextPageDelay))}>
+			<ConfigItem title={strings.config["auto-play-delay-page"].replace('%0',msToS(conf.nextPageDelay))}>
 				<div className="config-range">
 					<span className="icon"><FaMinus /></span>
 					<input

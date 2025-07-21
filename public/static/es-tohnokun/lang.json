@@ -4,18 +4,25 @@
 		"desc": "Traducido al español por Tohno-kuN.",
 		"url": "https://web.archive.org/web/20140908015008/http://www.mcanime.net/foro/viewtopic.php?t=113083&postdays=0&postorder=asc&start=0&sid=52365a03cb733b1ddc0f0576310609f5",
 		"vndb": "https://vndb.org/r6351"
-	}, 
+	},
+	"translation-pd": {
+		"name": "Tohno-kuN",
+		"desc": "Traducido al español por Tohno-kuN.",
+		"url": "https://web.archive.org/web/20140908015008/http://www.mcanime.net/foro/viewtopic.php?t=113083&postdays=0&postorder=asc&start=0&sid=52365a03cb733b1ddc0f0576310609f5",
+		"vndb": "https://vndb.org/r6351"
+	},
+
+	"scripts-dir": "./scenes/",
 	
 	"images": {
-		"redirect-ids": {
-			"es-tohnokun": {
-				"thumb": 0,
-				"sd":"./image/$.webp",
-				"hd": "./image_x2/$.webp"
-			}
+		"thumb" : {
+			"tachi/osiete" : "./image/%0.webp"
 		},
-		"redirected-images": {
-			"tachi/osiete": "es-tohnokun"
+		"sd" : {
+			"tachi/osiete" : "./image/%0.webp"
+		},
+		"hd" : {
+			"tachi/osiete" : "./image_x2/%0.webp"
 		}
 	},
 	"disclaimer": [
@@ -30,10 +37,10 @@
 		"extra": "Extras",
 		"about": {
 			"port": "Esta es una versión web de [i]Tsukihime[/i], una novela visual publicada en el año 2000 por Type-Moon.",
-			"project": "El proyecto está disponible en $0GitHub$1. ¡Añade una estrella si te gusta! Las contribuciones son bienvenidas.",
-			"feedback": "Envía tus comentarios o reporta un error $0aquí$1.",
-			"data": "No se recopilan datos; toda la información se almacena localmente en tu navegador. Administra tus datos $0aquí$1.",
-			"remake": "Considera comprar el remake $0Tsukihime - A piece of blue glass moon$1."
+			"project": "El proyecto está disponible en %0GitHub%1. ¡Añade una estrella si te gusta! Las contribuciones son bienvenidas.",
+			"feedback": "Envía tus comentarios o reporta un error %0aquí%1.",
+			"data": "No se recopilan datos; toda la información se almacena localmente en tu navegador. Administra tus datos %0aquí%1.",
+			"remake": "Considera comprar el remake %0Tsukihime - A piece of blue glass moon%1."
 		},
 		"install": "Instalar",
 		"share": "Compartir"
@@ -73,8 +80,8 @@
 		"text-speed-med": "Media",
 		"text-speed-high": "Rápida",
 		"text-speed-instant": "Instantánea",
-		"auto-play-delay-text": "Retraso de la reproducción automática del texto: $0s",
-		"auto-play-delay-page": "Retraso de la reproducción automática de la página: $0s",
+		"auto-play-delay-text": "Retraso de la reproducción automática del texto: %0s",
+		"auto-play-delay-page": "Retraso de la reproducción automática de la página: %0s",
 		"adult-title": "Contenido para adultos",
 		"adult-blur": "Desenfocar miniaturas",
 		"adult-blur-help": [
@@ -161,7 +168,7 @@
 	},
 	"history": {
 		"load": "Cargar",
-		"skipped": "Escena $0 omitida."
+		"skipped": "Escena %0 omitida."
 	},
 	"characters": {
 		"aki": "Akiha",

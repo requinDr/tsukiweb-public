@@ -28,7 +28,7 @@ type StringsType = typeof defaultStrings & {
   images: {
     "redirect-ids": Record<string, ImageRedirect<`${string}\$${string}`>>,
     "redirected-images": Record<string, string|ImageRedirect<string>>,
-    "words": Record<string, TextImage>
+    "words": Record<string, string>
   },
   scenario: {
     days: string[],

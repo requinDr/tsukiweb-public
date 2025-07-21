@@ -73,26 +73,26 @@ const ModalInfo = ({show, setShow}: ModalInfoProps) => {
 
 						<div>
 							{bb(strings.title.about.data
-								.replace('$0', "[url='/config?tab=advanced']")
-								.replace('$1', "[/url]"))}
+								.replace('%0', "[url='/config?tab=advanced']")
+								.replace('%1', "[/url]"))}
 						</div>
 
 						<div>
 							{bb(strings.title.about.project
-								.replace('$0', "[url='https://github.com/requinDr/tsukiweb-public']")
-								.replace('$1', "[/url]"))}
+								.replace('%0', "[url='https://github.com/requinDr/tsukiweb-public']")
+								.replace('%1', "[/url]"))}
 						</div>
 
 						<div>
 							{bb(strings.title.about.feedback
-								.replace('$0', "[url='https://forms.gle/MJorV8oNbnKo22469']")
-								.replace('$1', "[/url]"))}
+								.replace('%0', "[url='https://forms.gle/MJorV8oNbnKo22469']")
+								.replace('%1', "[/url]"))}
 						</div>
 
 						<div className="more">
 							{bb(strings.title.about.remake
-								.replace('$0', "[url='http://typemoon.com/products/tsukihime/']")
-								.replace('$1', "[/url]"))}
+								.replace('%0', "[url='http://typemoon.com/products/tsukihime/']")
+								.replace('%1', "[/url]"))}
 						</div>
 					</div>
 				</div>

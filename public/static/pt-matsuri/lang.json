@@ -5,17 +5,24 @@
 		"url": "https://matsurifansub.blogspot.com/p/blog-page.html",
 		"vndb": "https://vndb.org/r46958"
 	},
+	"translation-pd": {
+		"name": "Matsuri Fansub",
+		"desc": "Traduzido para português por Matsuri Fansub",
+		"url": "https://matsurifansub.blogspot.com/p/blog-page.html",
+		"vndb": "https://vndb.org/r46958"
+	},
+
+	"scripts-dir": "./scenes/",
 	
 	"images": {
-		"redirect-ids": {
-			"pt-matsuri": {
-				"thumb": 0,
-				"sd":"./image/$.webp",
-				"hd": "./image_x2/$.webp"
-			}
+		"thumb" : {
+			"tachi/osiete" : "./image/%0.webp"
 		},
-		"redirected-images": {
-			"tachi/osiete": "pt-matsuri"
+		"sd" : {
+			"tachi/osiete" : "./image/%0.webp"
+		},
+		"hd" : {
+			"tachi/osiete" : "./image_x2/%0.webp"
 		}
 	},
 	"disclaimer": [
@@ -30,10 +37,10 @@
 		"extra": "Extra",
 		"about": {
 			"port": "Esta é uma versão web de [i]Tsukihime[/i], uma visual novel publicada em 2000 pela Type-Moon.",
-			"project": "O projeto está disponível no link: $0GitHub$1. Adicione uma estrela se gostar! Contribuições são bem-vindas.",
-			"feedback": "Envie seu feedback ou reporte um bug $0aqui$1.",
-			"data": "Nenhum dado será coletado, tudo é armazenado em seu navegador. Gerencie seus dados $0aqui$1.",
-			"remake": "Considere comprar o remake do $0Tsukihime - A piece of blue glass moon$1."
+			"project": "O projeto está disponível no link: %0GitHub%1. Adicione uma estrela se gostar! Contribuições são bem-vindas.",
+			"feedback": "Envie seu feedback ou reporte um bug %0aqui%1.",
+			"data": "Nenhum dado será coletado, tudo é armazenado em seu navegador. Gerencie seus dados %0aqui%1.",
+			"remake": "Considere comprar o remake do %0Tsukihime - A piece of blue glass moon%1."
 		},
 		"install": "Instalar"
 	},
@@ -65,8 +72,8 @@
 		"text-speed-med": "Média",
 		"text-speed-high": "Rápida",
 		"text-speed-instant": "Instantânea",
-		"auto-play-delay-text": "Delay na reprodução automática de texto: $0 s",
-		"auto-play-delay-page": "Delay na reprodução automática da página: $0 s",
+		"auto-play-delay-text": "Delay na reprodução automática de texto: %0 s",
+		"auto-play-delay-page": "Delay na reprodução automática da página: %0 s",
 		"adult-title": "Adulto",
 		"adult-blur": "Desfocar miniaturas",
 		"adult-blur-help": [
@@ -153,7 +160,7 @@
 	},
 	"history": {
 		"load": "Carregar",
-		"skipped": "Cena ignorada $0."
+		"skipped": "Cena ignorada %0."
 	},
 	"characters": {
 		"aki": "Akiha",

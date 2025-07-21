@@ -1,4 +1,4 @@
-import { splitLast, TSForceType } from "@tsukiweb-common/utils/utils"
+import { splitFirst, splitLast, TSForceType } from "@tsukiweb-common/utils/utils"
 import { RouteDayName, RouteName } from "../types"
 import { settings } from "../utils/settings"
 import {TrackSourceId, languages, strings} from "./lang"
@@ -47,7 +47,7 @@ function textImageToStr(textImg: TextImage): string {
 //------------------------------------------------------------------------------
 
 export function scenesDir() {
-  return assetPath(`${languages[settings.language].dir}/scenes`)
+  return assetPath(`${strings['scripts-dir']}`)
 }
 
 export function spriteSheetImgPath(file: string) {
@@ -78,7 +78,7 @@ function audioPath(formats: string|string[], num: number|string) {
       }
     }) ?? formats[formats.length-1]
   }
-  return assetPath(format.replace('$', paddedNum))
+  return assetPath(format.replace('%', paddedNum))
 }
 
 export function audioTrackPath(track: number|string,
@@ -97,27 +97,30 @@ export function audioSePath(se: number|string) {
  * @returns the requested image's url
  */
 export function imageSrc(img: string, res=settings.resolution) {
-  if (img.startsWith('"'))
-    img = img.replaceAll(/(^")|"$/g, '')
-  let imgRedirect = strings.images["redirected-images"][img] ?? ""
-  if (imgRedirect.constructor == String) {
-    if (imgRedirect.startsWith('#'))
-      return imgRedirect
-    imgRedirect = strings.images["redirect-ids"][imgRedirect]
+  if (img.startsWith('"') && img.endsWith('"'))
+    img = img.substring(1, img.length-1)
+  const [dir, name] = splitFirst(img, '/')
+  const root = strings.images[res]
+  let src
+  if (Object.hasOwn(root, img)) {
+    src = root[img as keyof typeof root]
+  } else {
+    if (!name)
+      throw Error(`Unimplemented image format ${img}`)
+    if (Object.hasOwn(root, dir)) {
+      const parent = root[dir as keyof typeof root] as any as Record<string, string>
+      if (Object.hasOwn(parent, name))
+        src = parent[name as keyof typeof parent]
+      else
+        src = parent[""]
+    } else
+      src = root[""]
   }
-  else {
-    TSForceType<ImageRedirect<string>>(imgRedirect)
-  }
-  if (res == "thumb" && !("thumb" in imgRedirect))
-    res = "sd"
-  if (res == "sd" && !("sd" in imgRedirect))
-    res = "hd"
-  else if (res == "hd" && !("hd" in imgRedirect))
-    res = "sd"
-  let src = imgRedirect[res].replace('$', img)
   if (src.startsWith('#'))
     return src
-  return assetPath(src)
+  return assetPath(src.replace('%0', img)
+                       .replace('%1', dir as string)
+                       .replace('%2', name as string))
 }
 
 /**
@@ -132,7 +135,7 @@ export function wordImage(img: string) : string {
   if (!textImage) {
     throw Error(`unknown word-image ${img}`)
   }
-  return textImageToStr(textImage)
+  return textImage
 }
 
 /**

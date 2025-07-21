@@ -5,17 +5,24 @@
 		"url": "https://riffourtranslations.wordpress.com/2018/11/30/tsukihime-traduzione-italiana/",
 		"vndb": "https://vndb.org/r68615"
 	},
+	"translation-pd": {
+		"name": "Riffour",
+		"desc": "Italian translation by Riffour. The H scenes are present, but the translator has chosen to slightly alter their most disturbing descriptions. The story remains unaffected.",
+		"url": "https://riffourtranslations.wordpress.com/2018/11/30/tsukihime-traduzione-italiana/",
+		"vndb": "https://vndb.org/r68615"
+	},
+
+	"scripts-dir": "./scenes/",
 
 	"images": {
-		"redirect-ids": {
-			"it-riffour": {
-				"thumb": 0,
-				"sd":"./image/$.webp",
-				"hd": "./image_x2/$.webp"
-			}
+		"thumb" : {
+			"tachi/osiete" : "./image/%0.webp"
 		},
-		"redirected-images": {
-			"tachi/osiete": "it-riffour"
+		"sd" : {
+			"tachi/osiete" : "./image/%0.webp"
+		},
+		"hd" : {
+			"tachi/osiete" : "./image_x2/%0.webp"
 		}
 	},
 	"disclaimer": [
@@ -30,10 +37,10 @@
 		"extra": "Extra",
 		"about": {
 			"port": "This is a web version of [i]Tsukihime[/i], a visual novel published on 2000 by Type-Moon.",
-			"project": "The project is available on $0GitHub$1. Add a star if you like it! Contributions are welcome.",
-			"feedback": "Send your feedback or report a bug $0here$1.",
-			"data": "No data collected, everything is stored in your browser. Manage your data $0here$1.",
-			"remake": "Consider buying the remake $0Tsukihime - A piece of blue glass moon$1."
+			"project": "The project is available on %0GitHub%1. Add a star if you like it! Contributions are welcome.",
+			"feedback": "Send your feedback or report a bug %0here%1.",
+			"data": "No data collected, everything is stored in your browser. Manage your data %0here%1.",
+			"remake": "Consider buying the remake %0Tsukihime - A piece of blue glass moon%1."
 		},
 		"install": "Install"
 	},
@@ -65,8 +72,8 @@
 		"text-speed-med": "Medium",
 		"text-speed-high": "Fast",
 		"text-speed-instant": "Instant",
-		"auto-play-delay-text": "Auto-play text delay: $0s",
-		"auto-play-delay-page": "Auto-play page delay: $0s",
+		"auto-play-delay-text": "Auto-play text delay: %0s",
+		"auto-play-delay-page": "Auto-play page delay: %0s",
 		"adult-title": "Adult",
 		"adult-blur": "Blur thumbnails",
 		"adult-blur-help": [
@@ -153,7 +160,7 @@
 	},
 	"history": {
 		"load": "Load",
-		"skipped": "Skipped scene $0."
+		"skipped": "Skipped scene %0."
 	},
 	"characters": {
 		"aki": "Akiha",

@@ -45,7 +45,7 @@ const PageElement = ({history, content, onLoad}: Props)=> {
 			const flags = history.getSceneContext(label)?.flags as string[]
 			const sceneTitle = getSceneTitle(flags, label as TsukihimeSceneName)??""
 			displayContent = <span className='skip'>
-				{bb(strings.history.skipped.replace('$0', sceneTitle))}
+				{bb(strings.history.skipped.replace('%0', sceneTitle))}
 			</span>
 			break
 		case "phase" :

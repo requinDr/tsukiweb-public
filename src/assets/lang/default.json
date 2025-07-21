@@ -5,6 +5,12 @@
 		"url": "",
 		"vndb": ""
 	},
+	"translation-pd" : {
+		"name": "original",
+		"desc" : "",
+		"url": "",
+		"vndb": ""
+	},
 
 	"scenario": {
 		"days": [
@@ -111,27 +117,39 @@
 		"dead-end": "Dead end",
 		"osiete": "知得留先生の授業"
 	},
+
+	"scripts-dir": "./jp/scenes/",
+
 	"images": {
-		"redirect-ids": {
-			"": {
-				"thumb":"./image_thumb/$.webp",
-				"sd":"./image/$.webp",
-				"hd": "./image_x2/$.webp"
-			}
-		},
-		"redirected-images": { },
 		"words": {
-			"fin": {"bg": "#ffffff", "center": "[center][noline][color=black][font=serif]Fin"},
-			"end": {"bg": "#ffffff", "bottom": "[right][noline][color=black][font=serif]END"}
+			"fin": "#ffffff$c`[center][noline][color=black][font=serif]Fin`",
+			"end": "#ffffff$b`[right][noline][color=black][font=serif]END`",
+			"pd_fin": "#000000$b`[right][noline][font=serif]Fin`",
+			"pd_genshi": "#000000$b`[right][noline][font=serif][u]   閑話/幻視同盟`",
+			"pd_tea": "#000000$t`[left][noline][noline][font=serif][u]          月茶`",
+			"pd_one_a": "#000000$c`[center][noline][font=serif]一日目/1`",
+			"pd_one_b": "#000000$c`[center][noline][font=serif]一日目/2`",
+			"pd_two": "#000000$c`[center][noline][font=serif]二日目`",
+			"pd_three": "#000000$c`[center][noline][font=serif]三日目`"
+		},
+		"sd" : {
+			"" : "./image/%0.webp"
+		},
+		"thumb": {
+			"": "./image_thumb/%0.webp"
+		},
+		"hd": {
+			"": "./image_x2/%0.webp"
 		}
 	},
 	"audio": {
 		"track-sources": {
-			"original": {"name": "Original (2000)", "path": ["./jp/CD_original/track$.webm", "./jp/CD_original/track$.mp3"]},
-			"everafter": {"name": "Ever After (2002)", "path": ["./jp/CD_everafter/track$.webm", "./jp/CD_everafter/track$.mp3"]},
-			"tsukibako": {"name": "Tsuki-Bako (2003)", "path": ["./jp/CD_tsukibako/track$.webm", "./jp/CD_tsukibako/track$.mp3"]}
+			"original": {"name": "Original (2000)", "path": ["./jp/CD_original/track%.webm", "./jp/CD_original/track%.mp3"]},
+			"everafter": {"name": "Ever After (2002)", "path": ["./jp/CD_everafter/track%.webm", "./jp/CD_everafter/track%.mp3"]},
+			"tsukibako": {"name": "Tsuki-Bako (2003)", "path": ["./jp/CD_tsukibako/track%.webm", "./jp/CD_tsukibako/track%.mp3"]}
 		},
-		"waves-path": ["./jp/wave/se_$.webm", "./jp/wave/se_$.wav"]
+		"waves-path": ["./jp/wave/se_%.webm", "./jp/wave/se_%.wav"],
+		"waves-pd-path": ["./jp/wave-pd/%.webm", "./jp/wave-pd/%.wav"]
 	},
 	"disclaimer": [
 		"このゲームは、TYPE－MOONの2000に発行されたビジュアルノベル[b]「月姫」[/b]のウェブバージョンです。",
@@ -145,10 +163,10 @@
 		"extra": "エクストラ",
 		"about": {
 			"port": "このゲームは、TYPE－MOONの2000年に発行されたビジュアルノベル[b]「月姫」[/b]のウェブバージョンです。",
-			"project": "プロジェクトは$0GitHub$1にある。Add a star if you like it! Contributions are welcome.",
-			"feedback": "Send your feedback or report a bug $0here$1.",
-			"data": "全てがブラウザに保存されて、データを集められません。データを$0ここで$1管理できます。",
-			"remake": "$0月姫 -A piece of blue glass moon-$1を買って応援してください。"
+			"project": "プロジェクトは%0GitHub%1にある。Add a star if you like it! Contributions are welcome.",
+			"feedback": "Send your feedback or report a bug %0here%1.",
+			"data": "全てがブラウザに保存されて、データを集められません。データを%0ここで%1管理できます。",
+			"remake": "%0月姫 -A piece of blue glass moon-%1を買って応援してください。"
 		},
 		"install": "Install",
 		"share": "Share"
@@ -188,8 +206,8 @@
 		"text-speed-med": "普通",
 		"text-speed-high": "早い",
 		"text-speed-instant": "瞬時",
-		"auto-play-delay-text": "オートモード時のメッセージ表示時間：$0s",
-		"auto-play-delay-page": "オートモード時のページ切り替え時間：$0s",
+		"auto-play-delay-text": "オートモード時のメッセージ表示時間：%0s",
+		"auto-play-delay-page": "オートモード時のページ切り替え時間：%0s",
 		"adult-title": "エロ設定",
 		"adult-blur": "Blur thumbnails",
 		"adult-blur-help": [
@@ -247,7 +265,7 @@
 		"quick-save": "クイックセーブ",
 		"local-storage-warning":
 			"Savefiles and settings are stored locally in the web browser, and might get deleted by the browser after a delay of inactivity. Regularly export your data.",
-		"local-storage-last-export": "Last full data export date: $0"
+		"local-storage-last-export": "Last full data export date: %0"
 	},
 	"game": {
 		"skip-named": [
@@ -279,7 +297,7 @@
 	},
 	"history": {
 		"load": "ロード",
-		"skipped": "$0のシーンをスキップしました"
+		"skipped": "%0のシーンをスキップしました"
 	},
 	"characters": {
 		"aki": "秋葉",
