@@ -7,9 +7,9 @@
 	},
 	"translation-pd": {
 		"name": "Riffour",
-		"desc": "Italian translation by Riffour. The H scenes are present, but the translator has chosen to slightly alter their most disturbing descriptions. The story remains unaffected.",
-		"url": "https://riffourtranslations.wordpress.com/2018/11/30/tsukihime-traduzione-italiana/",
-		"vndb": "https://vndb.org/r68615"
+		"desc": "Italian translation by Riffour (2019).",
+		"url": "https://riffourtranslations.wordpress.com/2019/03/22/tsukihime-plusdisc-traduzione-italiana/",
+		"vndb": "https://vndb.org/r68616"
 	},
 
 	"scripts-dir": "./scenes/",

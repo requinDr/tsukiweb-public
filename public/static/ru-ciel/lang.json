@@ -6,10 +6,10 @@
 		"vndb": "https://vndb.org/r88288"
 	},
 	"translation-pd": {
-		"name": "Ciel senpai",
-		"desc": "Full translation released in 2022.",
-		"url": "https://t.me/ciel_senpai",
-		"vndb": "https://vndb.org/r88288"
+		"name": "VN-moon",
+		"desc": "Published in 2015.",
+		"url": "https://vk.com/wall-54523753_9870",
+		"vndb": "https://vndb.org/r40068"
 	},
 
 	"scripts-dir": "./scenes/",

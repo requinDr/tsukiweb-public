@@ -7,9 +7,9 @@
 	}, 
 	"translation-pd": {
 		"name": "mirror moon",
-		"desc": "English translation by mirror moon.",
-		"url": "http://mirrormoon.org/projects/complete/tsukihime/",
-		"vndb": "https://vndb.org/r341"
+		"desc": "Translation by mirror moon (2007).",
+		"url": "http://mirrormoon.org/projects/complete/tsukihime/tsukihime-plusdisc/",
+		"vndb": "https://vndb.org/r345"
 	},
 
 	"scripts-dir": "./scenes/",

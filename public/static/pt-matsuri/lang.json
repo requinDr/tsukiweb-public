@@ -6,10 +6,10 @@
 		"vndb": "https://vndb.org/r46958"
 	},
 	"translation-pd": {
-		"name": "Matsuri Fansub",
-		"desc": "Traduzido para português por Matsuri Fansub",
-		"url": "https://matsurifansub.blogspot.com/p/blog-page.html",
-		"vndb": "https://vndb.org/r46958"
+		"name": "Neet Projects",
+		"desc": "A brazilian portuguese patch based on the english Mirror Moon patch.",
+		"url": "https://neetprojects.github.io/vn/tsuki-plus/",
+		"vndb": "https://vndb.org/r111689"
 	},
 
 	"scripts-dir": "./scenes/",
