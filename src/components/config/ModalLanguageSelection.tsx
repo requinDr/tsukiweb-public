@@ -24,7 +24,7 @@ const ModalLanguageSelection = ({show, setShow}: Props) => {
 
 	// 2. then place user languages
 	let sortedLength = 1
-	for (let locale in orderedLocales) {
+	for (let locale of orderedLocales) {
 		const remainingLanguages = sortedLanguages.slice(sortedLength)
 		let i = remainingLanguages.findIndex(([_, lang])=> lang.locale == locale)
 		if (i == -1) {
