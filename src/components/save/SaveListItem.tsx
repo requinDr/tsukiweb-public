@@ -44,7 +44,7 @@ const SaveListItem = ({id, saveState, onSelect, focusedSave, buttonProps}: SaveL
 				}
 				{lastPage.label && isPDScene(lastPage.label) &&
 					<span className="chip chip__pd">
-						plus disc
+						plus-disc
 					</span>
 				}
 

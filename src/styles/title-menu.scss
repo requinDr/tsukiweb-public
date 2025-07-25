@@ -211,7 +211,7 @@
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(min(120px, 100%), 1fr));
 		gap: 4px;
-		max-height: 260px;
+		max-height: 200px;
 		overflow-y: auto;
 		scrollbar-gutter: stable both-edges;
 		background-color: var(--menu-container);
@@ -226,21 +226,39 @@
 	.translation-details {
 		margin-top: 1em;
 		line-height: 1.6;
-		min-height: 180px;
-		padding: 8px;
+		height: 280px;
+		overflow-y: auto;
+		scrollbar-gutter: stable both-edges;
+
+		.game-credits {
+			--title-gradient: linear-gradient(180deg, #00d7ff 70%, #0024ff 100%);
+			padding-block: 1em;
+		}
 
 		.title {
 			font-weight: 600;
 			font-size: 1.2em;
+			background: var(--title-gradient);
+			background-clip: text;
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
+		.links {
+			font-size: .9em;
+			margin-top: 4px;
+			display: flex;
+			flex-wrap: wrap;
+			column-gap: 1em;
+		}
+		.author {
+			font-weight: 600;
 		}
 
-		.line {
-			a {
-				white-space: nowrap;
-				overflow: hidden;
-				text-overflow: ellipsis;
-				display: block;
-				max-width: min-content;
+		.pd {
+			--title-gradient: linear-gradient(180deg, #f300ff 22%, #ff00cb 100%);
+			--color-link: #ff1ded;
+			.title {
+				font-size: 1em;
 			}
 		}
 	}

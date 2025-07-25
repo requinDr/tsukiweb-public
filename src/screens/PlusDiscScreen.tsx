@@ -51,7 +51,7 @@ const PlusDiscScreen = () => {
 				<div className="header">
 					<img
 						src={Cover}
-						alt="Plus Disc Cover"
+						alt="Plus-Disc Cover"
 						className="cover"
 					/>
 					<div className='desc'>
@@ -59,7 +59,7 @@ const PlusDiscScreen = () => {
 							VNDB
 						</a>
 						<p>
-							Plus Disc is a fan disc containing a short story and bonus.<br />
+							PLUS-DISC is a fan disc containing a short story and bonus.<br />
 							It was originally released in 2001.
 						</p>
 						<MessageContainer style={{marginTop: '1rem'}}>

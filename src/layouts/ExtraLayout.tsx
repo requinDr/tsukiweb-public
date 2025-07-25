@@ -71,7 +71,7 @@ const ExtraLayout = ({ children }: PropsWithChildren) => {
 					<TitleMenuButton
 						onClick={()=>navigate(SCREEN.PLUS_DISC)}
 						active={currentPage === SCREEN.PLUS_DISC}>
-						Plus Disc
+						Plus-Disc
 					</TitleMenuButton>
 					}
 
