@@ -5,12 +5,21 @@ import { settings } from "utils/settings"
 import { deepAssign, splitFirst } from "@tsukiweb-common/utils/utils"
 import Button from "@tsukiweb-common/ui-core/components/Button"
 import { LangDesc } from "@tsukiweb-common/utils/lang"
+import { polyfillCountryFlagEmojis } from "@tsukiweb-common/utils/flagsPolyfill"
+
+let flagSupportChecked = false
+const EMOJI_REGEX = /^(\u00a9|\u00ae|[\u2000-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])+|^(\uD83C[\uDDE6-\uDDFF]\uD83C[\uDDE6-\uDDFF])/
 
 type Props = {
 	show: boolean
 	setShow: Dispatch<boolean>
 }
 const ModalLanguageSelection = ({show, setShow}: Props) => {
+
+	if (!flagSupportChecked) {
+		polyfillCountryFlagEmojis()
+		flagSupportChecked = true
+	}
 	const selectLanguage = (id: string) => {
 		deepAssign(settings, {language: id})
 	}
@@ -44,6 +53,11 @@ const ModalLanguageSelection = ({show, setShow}: Props) => {
 	const langCompare = (lang1: [string, LangDesc], lang2: [string, LangDesc]) => {
 		let name1 = lang1[1]["display-name"]
 		let name2 = lang2[1]["display-name"]
+
+		// Remove leading emojis
+		name1 = name1.replace(EMOJI_REGEX, '').trim()
+		name2 = name2.replace(EMOJI_REGEX, '').trim()
+		
 		return name1.localeCompare(name2)
 	}
 	const remLangs = sortedLanguages.splice(sortedLength).sort(langCompare)
