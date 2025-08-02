@@ -9,8 +9,12 @@ type Props = {
 const AppLayout = ({ children }: Props) => {
 	useObserver(font => {
 		const root = document.documentElement
-		root.style.setProperty('--font', font)
-	}, settings, "font")
+		root.style.setProperty('--ui-font', font)
+	}, settings, "uiFont")
+	useObserver(font => {
+		const root = document.documentElement
+		root.style.setProperty('--game-font', font)
+	}, settings, "gameFont")
 
 	useObserver(ratio => {
 		const root = document.documentElement

@@ -37,7 +37,8 @@ export type SettingsType = {
 	enableSceneSkip: boolean // ask to skip scenes
 	preventUnreadSkip: boolean
 	// graphics settings
-	font: string
+	gameFont: string
+	uiFont: string
 	resolution: ResolutionId
 	language: TranslationId
 	fixedRatio: ViewRatio
