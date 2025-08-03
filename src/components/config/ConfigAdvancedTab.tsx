@@ -1,27 +1,21 @@
 import { ReactNode, useEffect, useState } from "react"
 import { ConfigButtons, ConfigItem, ResetBtn } from "../ConfigLayout"
 import { defaultSettings, exportGameData, importGameData, settings } from "../../utils/settings"
-import { savesManager, SaveState } from "../../utils/savestates"
+import { savesManager } from "../../utils/savestates"
 import { strings, languages } from "../../translation/lang"
-import { toast } from "react-toastify"
 import { useLanguageRefresh } from "../hooks/useLanguageRefresh"
-import { MdDeleteForever, MdDownload, MdFileUpload, MdTranslate } from "react-icons/md"
+import { MdDeleteForever, MdDownload, MdFileUpload } from "react-icons/md"
 import ModalLanguageSelection from "./ModalLanguageSelection"
 import ConfigModal from "./components/ConfigModal"
 import Button from "@tsukiweb-common/ui-core/components/Button"
 import PageSection from "@tsukiweb-common/ui-core/layouts/PageSection"
-import { RecursivePartial } from "@tsukiweb-common/types"
-import { deepAssign, requestJSONs } from "@tsukiweb-common/utils/utils"
+import { deepAssign } from "@tsukiweb-common/utils/utils"
 import { bb } from "@tsukiweb-common/utils/Bbcode"
 import { modalPromptService } from "@tsukiweb-common/ui-core/components/ModalPrompt"
 import { warnHScene } from "utils/display"
+import { polyfillCountryFlagEmojis } from "@tsukiweb-common/utils/flagsPolyfill"
 
-
-type Savefile = {
-	version: string
-	settings: RecursivePartial<typeof settings>,
-	saveStates?: SaveState[],
-}
+let flagSupportChecked = false
 
 const ConfigAdvancedTab = () => {
 	const [showLanguage, setShowLanguage] = useState<boolean>(false)
@@ -40,6 +34,11 @@ const ConfigAdvancedTab = () => {
 	useEffect(()=> {
 		deepAssign(settings, conf)
 	}, [conf])
+
+	if (!flagSupportChecked) {
+		polyfillCountryFlagEmojis()
+		flagSupportChecked = true
+	}
 
 	const updateValue = <T extends keyof typeof conf>(
 		key: T,
@@ -95,9 +94,9 @@ const ConfigAdvancedTab = () => {
 			<ConfigItem title={strings.config.language}>
 				<div className="config-btns">
 					<Button
-						className={`config-btn`}
+						className={`config-btn flag`}
 						onClick={()=>setShowLanguage(true)}>
-						<MdTranslate /> {languages[settings.language]["display-name"]}, ...
+						{languages[settings.language]["display-name"]}, ...
 					</Button>
 				</div>
 			</ConfigItem>

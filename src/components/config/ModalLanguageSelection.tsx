@@ -80,7 +80,7 @@ const ModalLanguageSelection = ({show, setShow}: Props) => {
 								key={id}
 								variant="corner"
 								onClick={()=>selectLanguage(id)}
-								className="language"
+								className="language flag"
 								active={selected}
 							>
 								{dispName}

@@ -56,10 +56,9 @@
 			box-sizing: border-box;
 
 			font-size: 1.44em;
-			padding: 4pt;
 			width: $icon-size;
 			height: $icon-size;
-			border-radius: 6px;
+			border-radius: 5px;
 			background-color: #005675;
 
 			&:hover, &:focus-visible {
@@ -203,6 +202,9 @@
 	}
 }
 
+.flag {
+	font-family: "Twemoji Country Flags", var(--ui-font, system-ui), Arial, sans-serif;
+}
 .translation-switch-modale {
 	.content {
 		flex: 1;
@@ -218,7 +220,6 @@
 		padding: 8px 4px;
 		border-radius: 2px;
 		white-space: nowrap;
-		font-family: "Twemoji Country Flags", var(--ui-font, system-ui), Arial, sans-serif;
 	}
 	.language {
 		padding: .8em;
