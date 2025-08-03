@@ -59,15 +59,14 @@ const PlusDiscScreen = () => {
 							VNDB
 						</a>
 						<p>
-							PLUS-DISC is a fan disc containing a short story and bonus.<br />
-							It was originally released in 2001.
+							PLUS-DISC is a fan disc containing a short story and bonus, originally released in 2001.<br />
+							Note: You should read Tsukihime first.
 						</p>
-						<MessageContainer style={{marginTop: '1rem'}}>
-							Work in progress
-						</MessageContainer>
 					</div>
 				</div>
-
+				<MessageContainer style={{marginTop: '1rem'}}>
+					Work in progress
+				</MessageContainer>
 				<TabsComponent
 					tabs={[
 						{

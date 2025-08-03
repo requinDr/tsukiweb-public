@@ -36,6 +36,7 @@
 			}
 			.back-button {
 				margin-top: auto;
+				margin-bottom: 1em;
 			}
 		}
 	}
@@ -76,6 +77,7 @@
 	
 				.back-button {
 					grid-column: 1 / -1;
+					margin-bottom: 0;
 				}
 			}
 		}

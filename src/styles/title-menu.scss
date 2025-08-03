@@ -29,7 +29,7 @@
 			top: 50%;
 			width: min(600px, 70vmin);
 			height: min(600px, 70vmin);
-			filter: drop-shadow(0 0 12px white);
+			filter: drop-shadow(0 0 6px white) drop-shadow(0 0 14px hsl(0deg 0% 100% / 50%));
 			transition-timing-function: cubic-bezier(0.25, 0.1, 0.16, 1.0);
 		}
 		.tsuki-logo {
@@ -58,7 +58,7 @@
 			font-size: 1.44em;
 			width: $icon-size;
 			height: $icon-size;
-			border-radius: 5px;
+			border-radius: 4px;
 			background-color: #005675;
 
 			&:hover, &:focus-visible {
@@ -71,13 +71,13 @@
 		flex: 1;
 		margin-bottom: 5vh;
 		width: min(860px, 100%);
-		font-size: 1.44em;
+		font-size: 1.54em;
 
 		.menu-buttons {
 			display: flex;
 			font-weight: bold;
 			text-transform: uppercase;
-			letter-spacing: 3px;
+			letter-spacing: 2.8px;
 			flex-direction: row;
 			row-gap: 8px;
 			column-gap: 2.2em;
