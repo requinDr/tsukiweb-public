@@ -1,7 +1,9 @@
 import GalleryImage from "components/gallery/GalleryImage"
 import { Fragment } from "react/jsx-runtime"
 import { imageSrc } from "translation/assets"
-import { GALLERY_IMAGES_PD, GalleryImg, imagePathPd } from "utils/gallery"
+import { GalleryImg } from "types"
+import { imagePathPd } from "utils/gallery"
+import { GALLERY_IMAGES_PD } from "utils/gallery-data"
 import { settings } from "utils/settings"
 
 const GalleryTab = () => {

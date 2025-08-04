@@ -72,3 +72,12 @@ export type SettingsType = {
 	eventImages: string[]
 	completedScenes: string[]
 }
+
+export type GalleryImg = {
+	img: string,
+	path: string,
+	route?: CharId,
+	sensitive?: boolean,
+	alternativeOf?: string,
+	source?: "unused" | "half-moon"
+}

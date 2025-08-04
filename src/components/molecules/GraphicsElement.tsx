@@ -3,7 +3,7 @@ import { imageSrc } from "../../translation/assets"
 import { settings } from "../../utils/settings"
 import GraphicElement from "@tsukiweb-common/components/atoms/GraphicElement"
 import { DivProps, SpritePos } from "@tsukiweb-common/types"
-import { shouldBlur } from "utils/gallery"
+import cg from "utils/gallery"
 
 function getUrl(resolution: typeof settings.resolution, image: string): string {
 	return imageSrc(image, resolution)
@@ -90,7 +90,7 @@ const GraphicsElement = ({
 					pos={pos}
 					image={image}
 					getUrl={getUrl.bind(undefined, resolution)}
-					blur={shouldBlur}
+					blur={cg.shouldBlur}
 					props={maskProps}
 				/>
 			}
@@ -100,7 +100,7 @@ const GraphicsElement = ({
 					pos={pos}
 					image={image}
 					getUrl={getUrl.bind(undefined, resolution)}
-					blur={shouldBlur}
+					blur={cg.shouldBlur}
 					props={{
 						style: {...baseStyle, ...insertStyle},
 						...baseAttrs,

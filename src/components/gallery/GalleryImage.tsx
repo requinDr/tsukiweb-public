@@ -1,21 +1,22 @@
 import classNames from "classnames"
-import { useState, useMemo } from "react"
+import { useState, useMemo, useEffect } from "react"
 import { imageSrc } from "translation/assets"
-import { GalleryImg } from "utils/gallery"
 import Lightbox, { SlideImage } from 'yet-another-react-lightbox'
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails"
-import "yet-another-react-lightbox/styles.css";
+import "yet-another-react-lightbox/styles.css"
 import Zoom from "yet-another-react-lightbox/plugins/zoom"
 import "yet-another-react-lightbox/plugins/thumbnails.css"
 import GalleryNbVariants from "./GalleryNbVariants"
 import { MdLock } from "react-icons/md"
 import { useMediaQuery } from "@uidotdev/usehooks"
 import { replaceExtensionByAvif, supportAvif } from "@tsukiweb-common/utils/images"
+import { GalleryImg } from "types"
 
 
 interface CustomSlideImage extends SlideImage {
 	source?: GalleryImg['source']
 }
+
 
 type GalleryImageProps = {
 	image: GalleryImg
@@ -32,14 +33,32 @@ const GalleryImage = ({image, thumb, variants = [], unlockedVariants = [], blurr
 	const slides: CustomSlideImage[] = useMemo(() => {
 		return variants.map(image =>
 			unlockedVariants.includes(image) ?
-			({
-				src: supportAvif ? replaceExtensionByAvif(imageSrc(imagePath(image.img), 'hd')) : imageSrc(imagePath(image.img), 'hd'),
-				alt: image.img,
-				source: image.source ? image.source : undefined,
-			})
-			: ({src: ""})
+				({
+					src: supportAvif ? replaceExtensionByAvif(imageSrc(imagePath(image.img), 'hd')) : imageSrc(imagePath(image.img), 'hd'),
+					alt: image.img,
+					source: image.source ? image.source : undefined,
+				})
+				: ({src: ""})
 		)
 	}, [unlockedVariants])
+
+	useEffect(() => {
+		const handleKeyDown = (event: KeyboardEvent) => {
+			if (open && event.key === 'Escape') {
+				event.stopPropagation()
+				event.preventDefault()
+				setOpen(false)
+			}
+		}
+
+		if (open) {
+			document.addEventListener('keydown', handleKeyDown, true)
+		}
+
+		return () => {
+			document.removeEventListener('keydown', handleKeyDown, true)
+		}
+	}, [open])
 
 	return (
 		<>

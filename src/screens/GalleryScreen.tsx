@@ -3,7 +3,7 @@ import '../styles/gallery.scss'
 import { settings } from '../utils/settings'
 import * as motion from "motion/react-m"
 import { AnimatePresence, Variants } from 'motion/react'
-import { findImagesByRoute, GalleryImg, getImageVariants, imagePath, isImgUnlocked, UNLOCK_TOGETHER } from '../utils/gallery'
+import cg from '../utils/gallery'
 import { strings } from "../translation/lang"
 import { imageSrc } from '../translation/assets'
 import { SCREEN } from '../utils/display'
@@ -12,9 +12,10 @@ import { useScreenAutoNavigate } from '../components/hooks/useScreenAutoNavigate
 import { Tab } from '@tsukiweb-common/ui-core/components/TabsComponent'
 import PageTabsLayout from '@tsukiweb-common/ui-core/layouts/PageTabsLayout'
 import useQueryParam from '@tsukiweb-common/hooks/useQueryParam'
-import { CharId } from 'types'
+import { CharId, GalleryImg } from 'types'
 import GalleryImage from 'components/gallery/GalleryImage'
 import GalleryNbVariants from 'components/gallery/GalleryNbVariants'
+import { UNLOCK_TOGETHER } from 'utils/gallery-data'
 
 const container: Variants = {
 	hidden: { opacity: 0 },
@@ -27,33 +28,31 @@ const container: Variants = {
 }
 
 const isUnlocked = (image: GalleryImg) =>
-	isImgUnlocked(image.img) || settings.unlockEverything
+	cg.isUnlocked(image.img) || settings.unlockEverything
 
 const GalleryScreen = () => {
 	useScreenAutoNavigate(SCREEN.GALLERY)
 	useLanguageRefresh()
 	const [selectedTab, setSelectedTab] = useQueryParam<CharId>("tab", "ark")
 	const tabImages: GalleryImg[] = useMemo(() => {
-		let imagesTmp: GalleryImg[] = findImagesByRoute(selectedTab)
+		let imagesTmp: GalleryImg[] = cg.getByRoute(selectedTab)
 		if (imagesTmp == undefined) {
 			console.error(`unknown character ${selectedTab}`)
 			return []
 		}
 		
-		const galleryItems = imagesTmp.filter(image => !image.alternativeOf)
-
-		return galleryItems
+		return imagesTmp.filter(image => !image.alternativeOf)
 	}, [selectedTab, settings.eventImages, settings.unlockEverything])
 
 	const getImgDetails = (image: GalleryImg) => {
 		const isUnlockedImage = isUnlocked(image)
-		const variants = getImageVariants(image.img)
+		const variants = cg.getVariants(image.img)
 		const unlockedVariants = variants.filter(image => isUnlocked(image))
 
 		if (isUnlockedImage && UNLOCK_TOGETHER[image.img]) {
 			UNLOCK_TOGETHER[image.img].forEach((img) => {
 				if (unlockedVariants.findIndex(v => v.img === img) === -1) {
-					unlockedVariants.push(getImageVariants(img)[0])
+					unlockedVariants.push(cg.getVariants(img)[0])
 				}
 			})
 		}
@@ -89,7 +88,7 @@ const GalleryScreen = () => {
 						{tabImages?.map((image) => {
 							const {isUnlockedImage, variants, unlockedVariants} = getImgDetails(image)
 							const mainImage = isUnlockedImage ? image : unlockedVariants[0]
-							const thumbSrc = imageSrc(imagePath(mainImage?.img), 'thumb')
+							const thumbSrc = imageSrc(cg.getPath(mainImage?.img), 'thumb')
 							const showGalleryImage = isUnlockedImage || unlockedVariants.length > 0
 							
 							return (
@@ -101,7 +100,7 @@ const GalleryScreen = () => {
 											variants={variants}
 											unlockedVariants={unlockedVariants}
 											blurred={image.sensitive && settings.blurThumbnails}
-											imagePath={imagePath}
+											imagePath={cg.getPath}
 										/>
 									:
 										<div className="placeholder">

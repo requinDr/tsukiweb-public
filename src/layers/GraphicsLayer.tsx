@@ -6,11 +6,10 @@ import { useObserved } from "@tsukiweb-common/utils/Observer";
 import classNames from "classnames";
 import { ScriptPlayer } from "script/ScriptPlayer";
 import { DivProps, GraphicsTransition, SpritePos } from "@tsukiweb-common/types";
-import { objectMatch, objectsEqual, splitFirst } from "@tsukiweb-common/utils/utils";
-import { imagePath, isImgUnlocked } from "utils/gallery";
+import { objectMatch, splitFirst } from "@tsukiweb-common/utils/utils";
 import { settings } from "utils/settings";
 import { wordImage } from "translation/assets";
-import { useTraceUpdate } from "@tsukiweb-common/hooks/useTraceUpdate";
+import cg from "utils/gallery";
 
 type Quake = {
 	duration: number
@@ -27,7 +26,7 @@ export function extractImage(image: string) {
 		const [dir, name] = image.split('/')
 		
 		// Save to gallery if it's a new image
-		if (imagePath(name) == image && !isImgUnlocked(image)) {
+		if (cg.getPath(name) == image && !cg.isUnlocked(image)) {
 			settings.eventImages.push(image)
 		}
 

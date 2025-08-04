@@ -2,11 +2,11 @@
 import { SyntheticEvent, useEffect, useRef, useState } from "react"
 import { FcNode, FcNodeState, SCENE_HEIGHT, SCENE_WIDTH } from "utils/flowchart"
 import { TsukihimeSceneName } from "types"
-import { imageNameFromPath, shouldBlur } from "utils/gallery"
 import { autoUpdate, useFloating, useHover, useInteractions } from "@floating-ui/react"
 import { createPortal } from "react-dom"
 import GraphicsGroup from "components/molecules/GraphicsGroup"
 import * as motion from "motion/react-m"
+import cg from "utils/gallery"
 
 //##############################################################################
 //#region                       HELPER FUNCTIONS
@@ -79,7 +79,7 @@ export function SceneRenderer({node, onClick}: SceneProps) {
 
 // ----- state-specific changes -----
 	const classes = ["fc-scene", "unlocked"]
-	if (node.graph?.bg && shouldBlur(imageNameFromPath(node.graph.bg)))
+	if (node.graph?.bg && cg.shouldBlur(cg.getNameFromPath(node.graph.bg)))
 		classes.push("blur")
 	if (node.active) {
 		classes.push("active")

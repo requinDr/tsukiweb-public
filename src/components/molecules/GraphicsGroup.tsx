@@ -4,9 +4,9 @@ import GraphicElement from "@tsukiweb-common/components/atoms/GraphicElement"
 import { imageSrc } from "../../translation/assets"
 import { POSITIONS } from "@tsukiweb-common/constants";
 import { SpritePos, Graphics as GraphicsType, DivProps } from "@tsukiweb-common/types";
-import { imageNameFromPath, shouldBlur } from "utils/gallery";
 import { useLanguageRefresh } from "components/hooks/useLanguageRefresh";
 import { replaceExtensionByAvif, supportAvif, testAvifSupport } from "@tsukiweb-common/utils/images";
+import cg from "utils/gallery";
 
 
 export async function preloadImage(src: string, resolution = settings.resolution): Promise<void> {
@@ -73,7 +73,7 @@ const GraphicsGroup = ({
 					image={images[pos] ?? ''} {...(typeof spriteAttrs == 'function' ? spriteAttrs(pos)
 							: spriteAttrs?.[pos] ?? {})}
 					getUrl={getUrl.bind(undefined, resolution)}
-					blur={shouldBlur(imageNameFromPath(images[pos] ?? '' as string))}
+					blur={cg.shouldBlur(cg.getNameFromPath(images[pos] ?? ''))}
 					lazy={lazy}
 				/>
 			)}

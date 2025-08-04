@@ -1,8 +1,7 @@
 import '../styles/plus-disc.scss'
-import { displayMode, SCREEN } from '../utils/display'
+import { SCREEN } from '../utils/display'
 import { useLanguageRefresh } from '../components/hooks/useLanguageRefresh'
 import { useScreenAutoNavigate } from '../components/hooks/useScreenAutoNavigate'
-import { useEffect } from 'react'
 import Cover from "../assets/images/plus-disc_cover.webp"
 import MessageContainer from '@tsukiweb-common/ui-core/components/MessageContainer'
 import TabsComponent from '@tsukiweb-common/ui-core/components/TabsComponent'
@@ -26,24 +25,6 @@ const PlusDiscScreen = () => {
 	useScreenAutoNavigate(SCREEN.PLUS_DISC)
 	useLanguageRefresh()
 	const [selectedTab, setSelectedTab] = useQueryParam<"scenes" | "gallery">("tab", "scenes")
-
-	function back() {
-		displayMode.screen = SCREEN.TITLE
-	}
-
-	useEffect(()=> {
-		const handleKeyDown = (event: KeyboardEvent) => {
-			if (event.key === "Escape") {
-				back()
-			}
-		}
-		window.addEventListener("keydown", handleKeyDown)
-		return () => {
-			window.removeEventListener("keydown", handleKeyDown)
-		}
-	}, [])
-
-
 
 	return (
 		<div className="page" id="plus-disc">
