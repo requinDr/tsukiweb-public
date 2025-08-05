@@ -6,7 +6,7 @@ import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails"
 import "yet-another-react-lightbox/styles.css"
 import Zoom from "yet-another-react-lightbox/plugins/zoom"
 import "yet-another-react-lightbox/plugins/thumbnails.css"
-import GalleryNbVariants from "./GalleryNbVariants"
+import GalleryTotal from "./GalleryTotal"
 import { MdLock } from "react-icons/md"
 import { useMediaQuery } from "@uidotdev/usehooks"
 import { replaceExtensionByAvif, supportAvif } from "@tsukiweb-common/utils/images"
@@ -20,27 +20,28 @@ interface CustomSlideImage extends SlideImage {
 
 type GalleryImageProps = {
 	image: GalleryImg
-	thumb: string
-	variants: GalleryImg[]
-	unlockedVariants?: GalleryImg[]
+	src: string
+	gallery: GalleryImg[]
+	galleryUnlocked?: GalleryImg[]
 	blurred?: boolean
+	showTotal?: boolean
 	imagePath: (img: string) => string
 }
-const GalleryImage = ({image, thumb, variants = [], unlockedVariants = [], blurred = false, imagePath}: GalleryImageProps) => {
+const GalleryImage = ({image, src, gallery = [], galleryUnlocked = [], blurred = false, showTotal, imagePath}: GalleryImageProps) => {
 	const [open, setOpen] = useState(false)
 	const isSmallLandscape = useMediaQuery("(orientation: landscape) and (max-height: 480px)")
 
 	const slides: CustomSlideImage[] = useMemo(() => {
-		return variants.map(image =>
-			unlockedVariants.includes(image) ?
+		return gallery.map(img =>
+			galleryUnlocked.includes(img) ?
 				({
-					src: supportAvif ? replaceExtensionByAvif(imageSrc(imagePath(image.img), 'hd')) : imageSrc(imagePath(image.img), 'hd'),
-					alt: image.img,
-					source: image.source ? image.source : undefined,
+					src: supportAvif ? replaceExtensionByAvif(imageSrc(imagePath(img.name), 'hd')) : imageSrc(imagePath(img.name), 'hd'),
+					alt: img.name,
+					source: img.source ? img.source : undefined,
 				})
 				: ({src: ""})
 		)
-	}, [unlockedVariants])
+	}, [galleryUnlocked])
 
 	useEffect(() => {
 		const handleKeyDown = (event: KeyboardEvent) => {
@@ -64,19 +65,19 @@ const GalleryImage = ({image, thumb, variants = [], unlockedVariants = [], blurr
 		<>
 		<button onClick={() => setOpen(true)}>
 			<picture>
-				<source srcSet={replaceExtensionByAvif(thumb)} type="image/avif"/>
+				<source srcSet={replaceExtensionByAvif(src)} type="image/avif"/>
 				<img
-					src={thumb}
-					className={classNames("thumb", {"is-alternative": image.alternativeOf, blur: blurred})}
-					alt={`event ${image.img}`}
+					src={src}
+					className={classNames("thumb", {"is-alternative": image.altOf, blur: blurred})}
+					alt={`event ${image.name}`}
 					draggable={false}
 					fetchPriority={blurred ? 'low' : 'auto'}
 				/>
 			</picture>
-			{variants.length > 1 &&
-				<GalleryNbVariants
-					nbVariants={variants.length}
-					nbUnlocked={unlockedVariants.length}
+			{showTotal && gallery.length > 1 &&
+				<GalleryTotal
+					nbTotal={gallery.length}
+					nbUnlocked={galleryUnlocked.length}
 				/>
 			}
 		</button>
@@ -84,7 +85,11 @@ const GalleryImage = ({image, thumb, variants = [], unlockedVariants = [], blurr
 		<Lightbox
 			slides={slides}
 			open={open}
-			index={unlockedVariants.length > 0 ? slides.findIndex((slide) => slide.src !== "") : 0}
+			index={
+				slides.findIndex(slide => slide.alt === image.name) !== -1 ?
+					slides.findIndex(slide => slide.alt === image.name) :
+						slides.findIndex(slide => slide.src !== "")
+			}
 			close={() => setOpen(false)}
 			controller={{
 				closeOnPullUp: true,

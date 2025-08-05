@@ -74,10 +74,11 @@ export type SettingsType = {
 }
 
 export type GalleryImg = {
-	img: string,
+	name: string,
 	path: string,
-	route?: CharId,
+	group?: CharId,
 	sensitive?: boolean,
-	alternativeOf?: string,
+	altOf?: string,
 	source?: "unused" | "half-moon"
+	unlockIds?: string[]
 }

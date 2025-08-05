@@ -3,23 +3,27 @@ import { settings } from "./settings"
 import { GALLERY_IMAGES, GALLERY_IMAGES_PD } from "./gallery-data"
 
 
+function getImg(imgName: string): GalleryImg | undefined {
+	return GALLERY_IMAGES[imgName]
+}
+
 function shouldBlur(image: string): boolean {
-	return (GALLERY_IMAGES[image]?.sensitive ?? false) && settings.blurThumbnails
+	return (getImg(image)?.sensitive ?? false) && settings.blurThumbnails
 }
 
-function getByRoute(route: CharId): GalleryImg[] {
-	return Object.values(GALLERY_IMAGES).filter((img) => img.route === route)
+function getByGroup(group: CharId): GalleryImg[] {
+	return Object.values(GALLERY_IMAGES).filter((img) => img.group === group)
 }
 
-function getVariants(imgName: string): GalleryImg[] {
-	return Object.values(GALLERY_IMAGES).filter((img) => img.alternativeOf === imgName || img.img === imgName)
+function getAlts(imgName: string): GalleryImg[] {
+	return Object.values(GALLERY_IMAGES).filter((img) => img.altOf === imgName || img.name === imgName)
 }
 
 function getPath(imgName: string): string {
-	const img = GALLERY_IMAGES[imgName]
+	const img = getImg(imgName)
 	if (!img) return ""
 
-	return `${img.path}/${img.img}`
+	return `${img.path}/${img.name}`
 }
 
 function getNameFromPath(path: string): string {
@@ -31,11 +35,12 @@ const isUnlocked = (imgName: string) =>
 	settings.eventImages.includes(getPath(imgName))
 
 const cg = {
-	shouldBlur,
-	getByRoute,
-	getVariants,
+	getImg,
+	getByGroup,
+	getAlts,
 	getPath,
 	getNameFromPath,
+	shouldBlur,
 	isUnlocked,
 }
 export default cg
@@ -45,5 +50,5 @@ export function imagePathPd(imgName: string): string {
 	const img = GALLERY_IMAGES_PD[imgName]
 	if (!img) return ""
 	
-	return `${img.path}/${img.img}`
+	return `${img.path}/${img.name}`
 }
