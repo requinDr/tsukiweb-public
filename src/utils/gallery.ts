@@ -46,9 +46,23 @@ const cg = {
 export default cg
 
 
-export function imagePathPd(imgName: string): string {
-	const img = GALLERY_IMAGES_PD[imgName]
+
+// PLUS-DISC
+
+function getImgPd(imgName: string): GalleryImg | undefined {
+	return GALLERY_IMAGES_PD[imgName]
+}
+function shouldBlurPd(image: string): boolean {
+	return (getImgPd(image)?.sensitive ?? false) && settings.blurThumbnails
+}
+function getPathPd(imgName: string): string {
+	const img = getImgPd(imgName)
 	if (!img) return ""
 	
 	return `${img.path}/${img.name}`
+}
+export const cgPd = {
+	getImg: getImgPd,
+	getPath: getPathPd,
+	shouldBlur: shouldBlurPd,
 }
