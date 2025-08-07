@@ -27,7 +27,7 @@ type StringsType = typeof defaultStrings & {
   lastUpdate: UpdateDateFormat
   images: {
     "redirect-ids": Record<string, ImageRedirect<`${string}\$${string}`>>,
-    "redirected-images": Record<string, string|ImageRedirect<string>>,
+    "redirected-images": Record<string, string | ImageRedirect<string>>,
     "words": Record<string, string>
   },
   scenario: {
@@ -35,7 +35,7 @@ type StringsType = typeof defaultStrings & {
     routes: Record<RouteName, Record<RouteDayName, string>>,
     scenes: typeof SCENE_ATTRS.scenes
   },
-  credits: (TextImage & {delay?: number})[]
+  credits: (TextImage & { delay?: number })[]
 }
 
 //______________________________private variables_______________________________
@@ -56,7 +56,7 @@ async function loadTranslation(id: TranslationId): Promise<typeof strings> {
   if (!Object.hasOwn(languages, id))
     id = Object.getOwnPropertyNames(languages)[0] // fall back to first option if id does not exist
 
-  const {dir, fallback, 'last-update': lastUpdate} = languages[id]
+  const { dir, fallback, 'last-update': lastUpdate } = languages[id]
   const path = dir.startsWith("./") ? LANG_DIR + dir.substring(2) : dir
   const promise = Promise.all([
     fetchJson(`${path}/lang.json`).then(json => insertDirectory(json, dir)),
@@ -93,7 +93,7 @@ async function updateLanguage(id: TranslationId, forceUpdate = false) {
   if (!forceUpdate && Object.hasOwn(strings, 'id') && strings.id == id)
     return
   langSelection.ready = false
-  deepAssign(strings, await loadTranslation(id), {clean: true})
+  deepAssign(strings, await loadTranslation(id), { clean: true })
   stringsStorage.set(strings)
   langSelection.ready = true
 }
@@ -107,14 +107,14 @@ async function updateLanguage(id: TranslationId, forceUpdate = false) {
 
 export type TrackSourceId = keyof typeof defaultStrings.audio['track-sources']
 
-export type GameJson = Pick<StringsType, 'scenario'|'credits'>
+export type GameJson = Pick<StringsType, 'scenario' | 'credits'>
 export type LangJson = Omit<typeof defaultStrings, keyof GameJson>
 
 
 //_______________________________public variables_______________________________
 //------------------------------------------------------------------------------
 
-export const languages = languagesStorage.get() || { } as LanguagesType
+export const languages = languagesStorage.get() || {} as LanguagesType
 export const strings = stringsStorage.get() || { ...defaultStrings, id: "" } as StringsType
 
 //_______________________________public functions_______________________________
@@ -127,8 +127,8 @@ export function isLanguageLoaded() {
 export async function waitLanguageLoad() {
   if (langSelection.ready)
     return
-  else return new Promise(resolve=> {
-    observe(langSelection, 'ready', resolve, {once: true})
+  else return new Promise(resolve => {
+    observe(langSelection, 'ready', resolve, { once: true })
   })
 }
 
@@ -146,9 +146,31 @@ export function addLanguage(id: TranslationId, description: LangDesc) {
 //##############################################################################
 
 let languagesLoaded = false
-
 if (!languagesStorage.exists()) {
-  updateTranslations().then(()=> {
+  const broswerLanguage = navigator.language;
+  updateTranslations().then(() => {
+    // Autodetect and switch languages based on browser language
+    // This seems to be the best place
+    if (broswerLanguage.startsWith("en"))  
+      settings.language = 'en-mm'
+    else if (broswerLanguage.startsWith("ja"))
+      settings.language = 'jp'
+    else if (broswerLanguage.startsWith("it"))
+      settings.language = 'it-riffour'
+    else if (broswerLanguage.startsWith("pt"))
+      settings.language = 'pt-matsuri'
+    else if (broswerLanguage.startsWith("es"))
+      settings.language = 'es-tohnokun'
+    else if (broswerLanguage.startsWith("ru"))
+      settings.language = 'ru-ciel'
+    else if (broswerLanguage == "zh-CN")
+      settings.language = 'zh-yueji_yeren_hanhua_zu'
+    else if (broswerLanguage == "zh-TW" || broswerLanguage == "zh-HK" || broswerLanguage == "zh-MO")
+      settings.language = 'zh-tw-yueji_yeren_hanhua_zu'
+    else if (broswerLanguage.startsWith("ko"))
+      settings.language = 'ko-wolhui'
+    else
+      settings.language = 'en-mm'
     languagesLoaded = true
   })
 } else {
@@ -157,12 +179,17 @@ if (!languagesStorage.exists()) {
 }
 
 // update strings when language changes and when window loads
-window.addEventListener('load', ()=> {
+
+window.addEventListener('load', () => {
   observe(settings, 'language', updateLanguage)
+  // 
+
+  const broswerLanguage = navigator.language;
   if (languagesLoaded) {
     if (!Object.hasOwn(strings, 'id') || strings.id != settings.language)
       updateLanguage(settings.language)
     else
+
       langSelection.ready = true
   }
 })
