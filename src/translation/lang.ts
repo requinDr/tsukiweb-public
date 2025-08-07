@@ -100,7 +100,10 @@ async function updateLanguage(id: TranslationId, forceUpdate = false) {
 }
 
 function setDefaultlanguage() {
-  if (!localStorage.getItem('settings')) {    
+  // If no locale storage for settings and savestates (=> the user has not
+  // really played the game yet), then set the language to the closest one to
+  // the browser languages
+  if (!localStorage.getItem('settings') && !localStorage.getItem('savestates')) {
     const langEntries = Object.entries(languages)
     let index = -1
     for (let locale of navigator.languages) {
@@ -108,7 +111,8 @@ function setDefaultlanguage() {
       if (index != -1)
         break
     }
-    settings.language = langEntries[index][0]
+    if (index != -1)
+      settings.language = langEntries[index][0]
   }
 }
 
