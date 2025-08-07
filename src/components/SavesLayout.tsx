@@ -229,13 +229,12 @@ const ExportWarning = () => {
 		const confirmed = await modalPromptService.confirm({
 			text: <>
 				{strings.saves["local-storage-warning"]}
-				<div style={{marginTop: "1em", color: "#daca04", fontSize: "0.9em"}}>
+				<div style={{marginTop: "1em", color: "#daca04"}}>
 					{strings.menu.config} {">"} {strings.config["tab-advanced"]} {">"} {strings.config["data-export"]}
 				</div>
 			</>,
 			labelYes: strings.config["data-export"],
-			labelNo: "Later",
-			color: "#757601"
+			labelNo: "Later"
 		})
 		if (confirmed) {
 			exportGameData()
