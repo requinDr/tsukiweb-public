@@ -96,6 +96,20 @@ async function updateLanguage(id: TranslationId, forceUpdate = false) {
   deepAssign(strings, await loadTranslation(id), {clean: true})
   stringsStorage.set(strings)
   langSelection.ready = true
+  setDefaultlanguage()
+}
+
+function setDefaultlanguage() {
+  if (!localStorage.getItem('settings')) {    
+    const langEntries = Object.entries(languages)
+    let index = -1
+    for (let locale of navigator.languages) {
+      index = langEntries.findIndex(([_, lang])=> lang.locale == locale)
+      if (index != -1)
+        break
+    }
+    settings.language = langEntries[index][0]
+  }
 }
 
 //##############################################################################
