@@ -136,7 +136,7 @@ const fixes = new Map(Object.entries({
 	},
 	'scene46': (tokens)=> {
 		let i = tokens.findIndex(t=> t instanceof CommandToken && t.cmd == 'bg')
-		tokens.splice(i+1, 0, 'waveloop se10')
+		tokens.splice(i+1, 0, 'waveloop se_11')
 	},
 	'scene121': (tokens)=> {
 		// if %flgE>=1 skip 5 --> ... skip 6, otherwise first skip lands on second one
@@ -159,6 +159,9 @@ const fixes = new Map(Object.entries({
 	'scene178' : (tokens) => {
 		tokens.unshift('play "*1"')
 	},
+	'scene404': (tokens) => {
+		tokens.findLastIndex(t => t instanceof CommandToken && t.cmd)
+	}
 }))
 
 //#endregion ###################################################################
@@ -250,6 +253,13 @@ function generalFixes(file, tokens) {
 					else if (/^\*s\d\w+$/.test(token.args[0])) {
 						token.cmd = 'goto'
 					}
+					break
+				case 'wave' : case 'waveloop' :
+					const m = token.args[0].match(/^"?se(?<n>\d+)"?$/)
+					if (m) {
+						token.args[0] = `se_${parseInt(m.groups['n'])+1}`
+					}
+					break
 			}
 		} else if (token instanceof ReturnToken) {
 			if (file != LOGIC_FILE) {
@@ -405,7 +415,6 @@ function tsukihime_fixes(files) {
 		const fix = fixes.get(file)
 		if (fix)
 			fix(tokens)
-		generalFixes(file, tokens)
 		let lineIndex = 0
 		for (let i=0; i < tokens.length; i++) {
 			if (!tokens[i])
@@ -416,6 +425,7 @@ function tsukihime_fixes(files) {
 				lineIndex = tokens[i].lineIndex
 			}
 		}
+		generalFixes(file, tokens)
 	}
 	const scenes = getScenes(files, LOGIC_FILE, (label)=> {
 		if (/^s\d\w+/.test(label))
@@ -437,6 +447,12 @@ function raw_fixes(language, text) {
 	switch(language) {
 		case 'it-riffour' :
 			text = text.replaceAll(/ò(?=[a-fA-F\d]{6})/g, '#')
+			let searchText = `\` Ha HAHAHA HAHAHAHAHAHA\\`
+			let i = text.indexOf(searchText)
+			if (i < 0)
+				throw Error(`cannot find anchor of s404 to add missing playstop`)
+			i += searchText.length
+			text = text.substring(0, i) + '\nplaystop\n' + text.substring(i)
 			return text
 		default : return text
 	}
@@ -457,13 +473,13 @@ function main() {
 	const fullscripts = [
 		['jp', 'fullscript_jp.txt'],
 		['en-mm', 'fullscript_en-mm.txt'],
-//		['es-tohnokun', 'fullscript_es-tohnokun.txt'],
-//		['it-riffour', 'fullscript_it-riffour.txt'],
-//		['pt-matsuri', 'fullscript_pt-matsuri.txt'],
-//		['ko-wolhui', 'fullscript_ko-wolhui.txt'],
-//		['ru-ciel', 'fullscript_ru-ciel.txt'],
-//		['zh-tw-yueji_yeren_hanhua_zu', 'fullscript_zh-tw-yueji_yeren_hanhua_zu.txt'],
-//		['zh-yueji_yeren_hanhua_zu', 'fullscript_zh-yueji_yeren_hanhua_zu.txt'],
+		['es-tohnokun', 'fullscript_es-tohnokun.txt'],
+		['it-riffour', 'fullscript_it-riffour.txt'],
+		['pt-matsuri', 'fullscript_pt-matsuri.txt'],
+		['ko-wolhui', 'fullscript_ko-wolhui.txt'],
+		['ru-ciel', 'fullscript_ru-ciel.txt'],
+		['zh-tw-yueji_yeren_hanhua_zu', 'fullscript_zh-tw-yueji_yeren_hanhua_zu.txt'],
+		['zh-yueji_yeren_hanhua_zu', 'fullscript_zh-yueji_yeren_hanhua_zu.txt'],
 	]
 
 	for (const [folder, file] of fullscripts) {

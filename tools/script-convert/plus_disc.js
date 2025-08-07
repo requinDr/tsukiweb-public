@@ -226,7 +226,7 @@ function processWave(token) {
     const time = args.get('time') ?? 0
     const nowait = args.get('nowait') == "true"
 
-    token.args = [file] // cmd is unchanged
+    token.args = file ? [`pd/${file}`] : [] // cmd is unchanged
 }
 
 //#endregion ###################################################################

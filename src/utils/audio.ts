@@ -18,19 +18,18 @@ function calcGain(value: number) {
 }
 
 function getUrl(id: string): string {
-  let match
-  if ((match = /^se(?<id>\d+)$/.exec(id)) != null) {
-    const se = match.groups?.['id'] ?? '0'
-    return audioSePath(parseInt(se)+1)
+  if (id.startsWith('"') && id.endsWith('"'))
+    id = id.substring(1, id.length-1)
+  if (id.startsWith('*')) {
+    const trackNum = parseInt(id.substring(1))
+    return audioTrackPath(trackNum)
   }
-  else if ((match = /^"\*(?<id>\d+)"$/.exec(id)) != null) {
-    const track = match.groups?.['id'] ?? 0
-    return audioTrackPath(track)
+  else if (id.includes('/')) {
+    const [path, seName] = id.split('/')
+    if (path == 'pd')
+      return audioSePath(seName, path=='pd')
   }
-  else {
-    console.error(`unknown sound id: ${id}`)
-    return id
-  }
+  return audioSePath(id)
 }
 
 export const gameAudio = new BasicAudioManager(getUrl)

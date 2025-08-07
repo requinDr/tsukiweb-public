@@ -81,13 +81,15 @@ function audioPath(formats: string|string[], num: number|string) {
   return assetPath(format.replace('%', paddedNum))
 }
 
-export function audioTrackPath(track: number|string,
+export function audioTrackPath(track: number,
                                source: TrackSourceId = settings.trackSource) {
   return audioPath(strings.audio["track-sources"][source].path, track)
 }
 
-export function audioSePath(se: number|string) {
-  return audioPath(strings.audio["waves-path"], se)
+export function audioSePath(se: string, pd: boolean = false) {
+  const parent_dir = pd ? strings.audio["waves-pd-path"]
+                        : strings.audio["waves-path"]
+  return audioPath(parent_dir, se)
 }
 
 /**

@@ -152,7 +152,8 @@ function genericFixes(token, tokens, index, clickChars) {
                         const num = parseInt(match[1], 10)
                         token.args[0] = `"*${num}"`
                     }
-                }
+                } else if (token.args[0].startsWith('se'))
+                    token.cmd = 'waveloop'
                 break
             case 'dwavestop' :
                 token.cmd = 'wavestop'
