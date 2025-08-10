@@ -1,5 +1,5 @@
 import * as motion from "motion/react-m"
-import '../styles/saves.scss'
+import '@styles/saves.scss'
 import SavesLayout from "../components/SavesLayout"
 import { SCREEN, displayMode } from "../utils/display"
 import { useLanguageRefresh } from "../components/hooks/useLanguageRefresh"

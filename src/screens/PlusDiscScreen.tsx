@@ -1,10 +1,9 @@
-import '../styles/plus-disc.scss'
+import '@styles/plus-disc.scss'
 import { SCREEN } from '../utils/display'
 import { useLanguageRefresh } from '../components/hooks/useLanguageRefresh'
 import { useScreenAutoNavigate } from '../components/hooks/useScreenAutoNavigate'
 import Cover from "../assets/images/plus-disc_cover.webp"
-import MessageContainer from '@tsukiweb-common/ui-core/components/MessageContainer'
-import TabsComponent from '@tsukiweb-common/ui-core/components/TabsComponent'
+import { MessageContainer, TabsComponent } from '@tsukiweb-common/ui-core'
 import useQueryParam from '@tsukiweb-common/hooks/useQueryParam'
 import * as motion from "motion/react-m"
 import { AnimatePresence, Variants } from 'motion/react'

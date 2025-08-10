@@ -1,6 +1,6 @@
 import { Fragment, useCallback, useEffect, useMemo, useReducer, useRef } from 'react';
 import * as motion from "motion/react-m"
-import '../styles/game.scss';
+import '@styles/game.scss';
 import HistoryLayer from '../layers/HistoryLayer';
 import MenuLayer from '../layers/MenuLayer';
 import SavesLayer from '../layers/SavesLayer';

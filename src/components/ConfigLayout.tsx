@@ -1,5 +1,5 @@
-import { JSX, ReactNode, useEffect, useState } from 'react'
-import '../styles/config.scss'
+import { ComponentProps, JSX, ReactNode, useEffect, useState } from 'react'
+import '@styles/config.scss'
 import ConfigGameTab from './config/ConfigGameTab'
 import ConfigAudioTab from './config/ConfigAudioTab'
 import ConfigAdvancedTab from '../components/config/ConfigAdvancedTab'
@@ -7,11 +7,8 @@ import ConfigControlsTab from '../components/config/ConfigControlsTab'
 import { strings } from '../translation/lang'
 import { SCREEN } from '../utils/display'
 import { useLanguageRefresh } from './hooks/useLanguageRefresh'
-import { Tab } from '@tsukiweb-common/ui-core/components/TabsComponent'
-import PageTabsLayout from '@tsukiweb-common/ui-core/layouts/PageTabsLayout'
-import Button from '@tsukiweb-common/ui-core/components/Button'
 import { MdQuestionMark } from 'react-icons/md'
-import TitleMenuButton from '@tsukiweb-common/ui-core/components/TitleMenuButton'
+import { Button, TitleMenuButton, PageTabsLayout } from '@tsukiweb-common/ui-core'
 
 enum Tabs {
 	game = "game",
@@ -45,7 +42,7 @@ const ConfigLayout = ({back, selectedTab, setSelectedTab, page}: Props) => {
 		setSelectedTab(activeTab)
 	}, [activeTab])
 
-	const tabs: Tab[] = [
+	const tabs: ComponentProps<typeof PageTabsLayout>["tabs"] = [
 		{label: strings.config['tab-game'], value: Tabs.game},
 		{label: strings.config['tab-audio'], value: Tabs.audio},
 		{label: strings.config['tab-controls'], value: Tabs.controls},

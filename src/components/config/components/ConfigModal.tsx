@@ -1,8 +1,7 @@
-import Modal from "@tsukiweb-common/ui-core/components/Modal"
 import { Dispatch, ReactNode } from "react"
 import { strings } from "translation/lang"
 import Ornament from "../../../assets/images/ornament.webp"
-import Button from "@tsukiweb-common/ui-core/components/Button"
+import { Button, Modal } from "@tsukiweb-common/ui-core"
 
 type Props = {
 	modal: {show: boolean, content: ReactNode},

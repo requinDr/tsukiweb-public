@@ -1,9 +1,8 @@
-import Modal from "@tsukiweb-common/ui-core/components/Modal"
 import { Dispatch } from "react"
 import { languages, strings } from "translation/lang"
 import { settings } from "utils/settings"
 import { deepAssign, splitFirst } from "@tsukiweb-common/utils/utils"
-import Button from "@tsukiweb-common/ui-core/components/Button"
+import { Button, Modal } from "@tsukiweb-common/ui-core"
 import { LangDesc } from "@tsukiweb-common/utils/lang"
 import { polyfillCountryFlagEmojis } from "@tsukiweb-common/utils/flagsPolyfill"
 

@@ -1,5 +1,5 @@
-import '../styles/endings.scss'
 import styles from "@tsukiweb-common/ui-core/styles/layouts.module.scss"
+import '@styles/endings.scss'
 import { strings } from '../translation/lang'
 import { SCREEN } from '../utils/display'
 import { endings, osiete } from '../utils/endings'

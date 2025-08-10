@@ -20,9 +20,11 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
+
     "baseUrl": "src",
     "paths": {
-      "@tsukiweb-common/*": ["../tsukiweb-common/src/*"]
+      "@tsukiweb-common/*": ["../tsukiweb-common/src/*"],
+      "@styles/*": ["./styles/*"]
     }
   },
   "include": ["src", "tsukiweb-common/global.d.ts"],

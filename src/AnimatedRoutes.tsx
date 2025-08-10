@@ -7,8 +7,8 @@ import ConfigScreen from './screens/ConfigScreen';
 import LoadScreen from "./screens/LoadScreen";
 import DisclaimerScreen from "./screens/DisclaimerScreen";
 import '@tsukiweb-common/styles/main.scss'
-import './styles/App.scss'
-import './styles/graphics.scss'
+import '@styles/App.scss'
+import '@styles/graphics.scss'
 import EndingsScreen from "./screens/EndingsScreen";
 import FlowchartScreen from "./screens/FlowchartScreen";
 import SceneReplayScreen from "screens/SceneReplayScreen";

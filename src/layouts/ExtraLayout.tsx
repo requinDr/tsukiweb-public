@@ -1,6 +1,6 @@
 import * as motion from "motion/react-m"
 import { PropsWithChildren, useEffect, useMemo } from "react"
-import "../styles/extra.scss"
+import "@styles/extra.scss"
 import { strings } from "translation/lang"
 import { displayMode, SCREEN } from "utils/display"
 import { viewedScene } from "utils/settings"
@@ -8,7 +8,7 @@ import { useLocation, useNavigate } from "react-router-dom"
 import { useLanguageRefresh } from "components/hooks/useLanguageRefresh"
 import { endings } from "utils/endings"
 import { settings } from "utils/settings"
-import TitleMenuButton from "@tsukiweb-common/ui-core/components/TitleMenuButton"
+import { TitleMenuButton } from "@tsukiweb-common/ui-core"
 
 const ExtraLayout = ({ children }: PropsWithChildren) => {
 	const navigate = useNavigate()

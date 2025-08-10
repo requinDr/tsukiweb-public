@@ -1,4 +1,4 @@
-import '../styles/flowchart.scss'
+import '@styles/flowchart.scss'
 import { SCREEN } from "../utils/display"
 import { useLanguageRefresh } from "../components/hooks/useLanguageRefresh"
 import { useScreenAutoNavigate } from "../components/hooks/useScreenAutoNavigate"

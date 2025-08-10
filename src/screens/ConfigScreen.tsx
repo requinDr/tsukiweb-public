@@ -1,4 +1,4 @@
-import '../styles/config.scss'
+import '@styles/config.scss'
 import { SCREEN, displayMode } from '../utils/display'
 import * as motion from "motion/react-m"
 import ConfigLayout from '../components/ConfigLayout'

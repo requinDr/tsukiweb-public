@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import tsukiLogo from "../assets/images/tsukihime-logo.webp"
 import moon from "../assets/images/moon.webp"
-import '../styles/title-menu.scss'
+import '@styles/title-menu.scss'
 import { SCREEN } from '../utils/display'
 import * as motion from "motion/react-m"
 import { continueGame, newGame, savesManager } from '../utils/savestates'
@@ -14,11 +14,10 @@ import { useLanguageRefresh } from '../components/hooks/useLanguageRefresh'
 import { useScreenAutoNavigate } from '../components/hooks/useScreenAutoNavigate'
 import AppInfo from '../components/title-menu/AppInfo'
 import TranslationSwitch from '../components/title-menu/TranslationSwitch'
-import TitleMenuButton from '../../tsukiweb-common/src/ui-core/components/TitleMenuButton'
-import Particles from '@tsukiweb-common/ui-core/components/Particles'
 import { useObserved } from '@tsukiweb-common/utils/Observer'
 import { useNavigate } from 'react-router-dom'
 import history from 'utils/history'
+import { Particles, TitleMenuButton } from '@tsukiweb-common/ui-core'
 
 const img = {
 	src: moon,

@@ -1,4 +1,4 @@
-import "../styles/crash.scss"
+import "@styles/crash.scss"
 
 type Props = {
 	error: Error

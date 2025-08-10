@@ -3,9 +3,8 @@ import { InGameLayersHandler } from '../utils/display';
 import { History, PageEntry } from '../utils/history';
 import { strings } from '../translation/lang';
 import PageElement from '../components/molecules/PageElement';
-import FixedFooter from '@tsukiweb-common/ui-core/components/FixedFooter';
 import classNames from 'classnames';
-import Button from '@tsukiweb-common/ui-core/components/Button';
+import { Button, FixedFooter } from '@tsukiweb-common/ui-core';
 import Flowchart from 'components/flowchart/Flowchart';
 
 

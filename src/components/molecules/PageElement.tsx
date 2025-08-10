@@ -1,14 +1,13 @@
 import { memo, Fragment } from "react"
 import { strings } from "../../translation/lang"
 import { phaseTexts } from "../../translation/assets"
-import { SaveState } from "../../utils/savestates"
 import { getSceneTitle } from "../../script/utils"
-import Button from "@tsukiweb-common/ui-core/components/Button"
+import { Button } from "@tsukiweb-common/ui-core"
 import { MdReplay } from "react-icons/md"
 import classNames from "classnames"
 import { Bbcode, bb } from "@tsukiweb-common/utils/Bbcode"
 import { History, PageEntry } from "utils/history"
-import { LabelName, TsukihimeSceneName } from "types"
+import { TsukihimeSceneName } from "types"
 
 type Props = {
 	history: History,

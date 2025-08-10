@@ -1,5 +1,5 @@
-import { useMemo } from 'react'
-import '../styles/gallery.scss'
+import { ComponentProps, useMemo } from 'react'
+import '@styles/gallery.scss'
 import { settings } from '../utils/settings'
 import * as motion from "motion/react-m"
 import { AnimatePresence, Variants } from 'motion/react'
@@ -9,8 +9,7 @@ import { imageSrc } from '../translation/assets'
 import { SCREEN } from '../utils/display'
 import { useLanguageRefresh } from '../components/hooks/useLanguageRefresh'
 import { useScreenAutoNavigate } from '../components/hooks/useScreenAutoNavigate'
-import { Tab } from '@tsukiweb-common/ui-core/components/TabsComponent'
-import PageTabsLayout from '@tsukiweb-common/ui-core/layouts/PageTabsLayout'
+import { PageTabsLayout } from '@tsukiweb-common/ui-core'
 import useQueryParam from '@tsukiweb-common/hooks/useQueryParam'
 import { CharId, GalleryImg } from 'types'
 import GalleryImage from 'components/gallery/GalleryImage'
@@ -64,7 +63,7 @@ const GalleryScreen = () => {
 		}
 	}
 
-	const tabs: Tab[] = ['ark','cel','aki','his','koha'].map(char => ({
+	const tabs: ComponentProps<typeof PageTabsLayout>["tabs"] = ['ark','cel','aki','his','koha'].map(char => ({
 		label: strings.characters[char as CharId],
 		value: char
 	}))
