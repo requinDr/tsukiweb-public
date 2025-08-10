@@ -1,10 +1,9 @@
 import * as motion from "motion/react-m"
 import '@styles/saves.scss'
-import SavesLayout from "../components/SavesLayout"
+import SavesLayout from "../components/save/SavesLayout"
 import { SCREEN, displayMode } from "../utils/display"
-import { useLanguageRefresh } from "../components/hooks/useLanguageRefresh"
-import { useScreenAutoNavigate } from "../components/hooks/useScreenAutoNavigate"
 import { useEffect } from "react"
+import { useScreenAutoNavigate, useLanguageRefresh } from "hooks"
 
 
 const LoadScreen = () => {

@@ -1,12 +1,12 @@
 import { ReactNode, useEffect, useState } from "react"
-import { ConfigButtons, ConfigItem, ResetBtn } from "../ConfigLayout"
+import { ConfigButtons, ConfigItem, ResetBtn } from "./ConfigLayout"
 import { defaultSettings, settings } from "../../utils/settings"
 import { strings } from "../../translation/lang"
 import { MdOutlineVolumeOff, MdOutlineVolumeUp, MdVolumeMute } from "react-icons/md"
-import { useLanguageRefresh } from "../hooks/useLanguageRefresh"
+import { useLanguageRefresh } from "../../hooks/useLanguageRefresh"
 import { PageSection } from "@tsukiweb-common/ui-core"
 import { deepAssign, negative } from "@tsukiweb-common/utils/utils"
-import ConfigModal from "./components/ConfigModal"
+import ConfigModal from "./ConfigModal"
 import { bb } from "@tsukiweb-common/utils/Bbcode"
 
 const ConfigAudioTab = () => {

@@ -3,9 +3,9 @@ import '@styles/title-menu.scss'
 import * as motion from "motion/react-m"
 import { useNavigate } from 'react-router-dom'
 import { strings } from '../translation/lang'
-import { useLanguageRefresh } from '../components/hooks/useLanguageRefresh'
 import { SCREEN } from 'utils/display'
 import { bb } from '@tsukiweb-common/utils/Bbcode'
+import { useLanguageRefresh } from 'hooks'
 
 const DisclaimerScreen = ({ onAccept }: { onAccept?: () => void }) => {
 	const navigate = useNavigate()
@@ -26,8 +26,6 @@ const DisclaimerScreen = ({ onAccept }: { onAccept?: () => void }) => {
 	return (
 		<motion.div
 			className="page" id="disclaimer"
-			// initial={{opacity: 0}}
-			// animate={{opacity: 1}}
 			exit={{opacity: 0, transition: {duration: 1}}}
 			onClick={sawDisclaimer}
 		>

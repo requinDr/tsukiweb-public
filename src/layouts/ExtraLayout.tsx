@@ -5,10 +5,10 @@ import { strings } from "translation/lang"
 import { displayMode, SCREEN } from "utils/display"
 import { viewedScene } from "utils/settings"
 import { useLocation, useNavigate } from "react-router-dom"
-import { useLanguageRefresh } from "components/hooks/useLanguageRefresh"
 import { endings } from "utils/endings"
 import { settings } from "utils/settings"
 import { TitleMenuButton } from "@tsukiweb-common/ui-core"
+import { useLanguageRefresh } from "hooks/useLanguageRefresh"
 
 const ExtraLayout = ({ children }: PropsWithChildren) => {
 	const navigate = useNavigate()

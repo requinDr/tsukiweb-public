@@ -9,8 +9,6 @@ import { InGameLayersHandler, SCREEN, displayMode, warnHScene } from '../utils/d
 import { commands as audioCommands, gameAudio } from '../utils/audio';
 import ConfigLayer from '../layers/ConfigLayer';
 import { moveBg } from '../utils/graphics';
-import { useLanguageRefresh } from '../components/hooks/useLanguageRefresh';
-import { useScreenAutoNavigate } from '../components/hooks/useScreenAutoNavigate';
 import { useSwipeGesture } from '@tsukiweb-common/utils/touch';
 import { useKeyMap } from '@tsukiweb-common/utils/KeyMap';
 import { useSetter as useReset } from '@tsukiweb-common/hooks/useSetter';
@@ -28,6 +26,7 @@ import { settings } from 'utils/settings';
 import { inGameKeyMap } from 'utils/keybind';
 import { strings } from 'translation/lang';
 import { MdPlayArrow } from 'react-icons/md';
+import { useScreenAutoNavigate, useLanguageRefresh } from 'hooks';
 
 //##############################################################################
 //#region                          USER INPUTS

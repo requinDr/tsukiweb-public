@@ -1,8 +1,7 @@
 import { useState, useRef, useEffect } from "react";
-import { preloadImage } from "../molecules/GraphicsGroup";
 import { GraphicsTransition, SpritePos } from "@tsukiweb-common/types";
 import { splitFirst } from "@tsukiweb-common/utils/utils";
-import { useTraceUpdate } from "@tsukiweb-common/hooks/useTraceUpdate";
+import { preloadImage } from "components/molecules/GraphicsGroup";
 
 type GraphicTransitionResult = {
 	img: string

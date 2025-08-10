@@ -1,4 +1,4 @@
-import { useEffect, useState, memo, Fragment, useRef, RefObject, useCallback } from "react"
+import { useEffect, useState, memo, Fragment, useRef, RefObject } from "react"
 import moonIcon from '../assets/icons/icon_moon.svg'
 import pageIcon from '../assets/icons/icon_bars.svg'
 import { settings } from "../utils/settings"

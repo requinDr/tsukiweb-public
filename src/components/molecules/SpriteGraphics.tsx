@@ -1,7 +1,7 @@
 import { memo } from "react"
 import GraphicsElement from "./GraphicsElement"
-import useGraphicTransition from "../hooks/useGraphicTransition"
 import { GraphicsTransition, SpritePos } from "@tsukiweb-common/types"
+import useGraphicTransition from "hooks/useGraphicTransition"
 
 type SpriteGraphicsProps = {
 	pos: Exclude<SpritePos, 'bg'>

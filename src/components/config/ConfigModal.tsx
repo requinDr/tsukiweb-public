@@ -1,6 +1,6 @@
 import { Dispatch, ReactNode } from "react"
 import { strings } from "translation/lang"
-import Ornament from "../../../assets/images/ornament.webp"
+import Ornament from "../../assets/images/ornament.webp"
 import { Button, Modal } from "@tsukiweb-common/ui-core"
 
 type Props = {

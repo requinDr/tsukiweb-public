@@ -1,11 +1,11 @@
 import '@styles/config.scss'
 import { SCREEN, displayMode } from '../utils/display'
 import * as motion from "motion/react-m"
-import ConfigLayout from '../components/ConfigLayout'
-import { useScreenAutoNavigate } from '../components/hooks/useScreenAutoNavigate'
-import { useLanguageRefresh } from '../components/hooks/useLanguageRefresh'
+import ConfigLayout from '../components/config/ConfigLayout'
 import useQueryParam from '@tsukiweb-common/hooks/useQueryParam'
 import { useEffect } from 'react'
+import { useLanguageRefresh } from 'hooks/useLanguageRefresh'
+import { useScreenAutoNavigate } from 'hooks/useScreenAutoNavigate'
 
 const ConfigScreen = () => {
 	useScreenAutoNavigate(SCREEN.CONFIG)

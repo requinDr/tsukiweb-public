@@ -7,13 +7,12 @@ import cg from '../utils/gallery'
 import { strings } from "../translation/lang"
 import { imageSrc } from '../translation/assets'
 import { SCREEN } from '../utils/display'
-import { useLanguageRefresh } from '../components/hooks/useLanguageRefresh'
-import { useScreenAutoNavigate } from '../components/hooks/useScreenAutoNavigate'
 import { PageTabsLayout } from '@tsukiweb-common/ui-core'
 import useQueryParam from '@tsukiweb-common/hooks/useQueryParam'
 import { CharId, GalleryImg } from 'types'
 import GalleryImage from 'components/gallery/GalleryImage'
 import GalleryTotal from 'components/gallery/GalleryTotal'
+import { useScreenAutoNavigate, useLanguageRefresh } from 'hooks'
 
 const container: Variants = {
 	hidden: { opacity: 0 },

@@ -1,7 +1,7 @@
 import { useRef } from "react"
-import SavesLayout from "../components/SavesLayout";
-import { useLanguageRefresh } from "components/hooks/useLanguageRefresh";
+import SavesLayout from "../components/save/SavesLayout";
 import classNames from "classnames";
+import { useLanguageRefresh } from "hooks";
 
 
 type Props = {

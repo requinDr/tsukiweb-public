@@ -1,12 +1,12 @@
 import { memo } from "react"
 import { settings } from "../../utils/settings"
-import GraphicElement from "@tsukiweb-common/components/atoms/GraphicElement"
 import { imageSrc } from "../../translation/assets"
 import { POSITIONS } from "@tsukiweb-common/constants";
 import { SpritePos, Graphics as GraphicsType, DivProps } from "@tsukiweb-common/types";
-import { useLanguageRefresh } from "components/hooks/useLanguageRefresh";
 import { replaceExtensionByAvif, supportAvif, testAvifSupport } from "@tsukiweb-common/utils/images";
 import cg from "utils/gallery";
+import { useLanguageRefresh } from "hooks";
+import GraphicElement from "@tsukiweb-common/components/GraphicElement";
 
 
 export async function preloadImage(src: string, resolution = settings.resolution): Promise<void> {

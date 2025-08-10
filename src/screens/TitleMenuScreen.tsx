@@ -10,14 +10,13 @@ import { strings } from "../translation/lang"
 import { MdOutlineVolumeOff, MdOutlineVolumeUp } from 'react-icons/md'
 import { settings } from '../utils/settings'
 import { endings } from '../utils/endings'
-import { useLanguageRefresh } from '../components/hooks/useLanguageRefresh'
-import { useScreenAutoNavigate } from '../components/hooks/useScreenAutoNavigate'
 import AppInfo from '../components/title-menu/AppInfo'
 import TranslationSwitch from '../components/title-menu/TranslationSwitch'
 import { useObserved } from '@tsukiweb-common/utils/Observer'
 import { useNavigate } from 'react-router-dom'
 import history from 'utils/history'
 import { Particles, TitleMenuButton } from '@tsukiweb-common/ui-core'
+import { useScreenAutoNavigate, useLanguageRefresh } from 'hooks'
 
 const img = {
 	src: moon,

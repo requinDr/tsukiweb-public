@@ -1,9 +1,9 @@
 import { memo } from "react"
 import { displayMode } from "../../utils/display"
-import useGraphicTransition from "../hooks/useGraphicTransition"
 import GraphicsElement from "./GraphicsElement"
 import { useObserved } from "@tsukiweb-common/utils/Observer"
 import { GraphicsTransition } from "@tsukiweb-common/types"
+import useGraphicTransition from "hooks/useGraphicTransition"
 
 type Props = {
 	image: string

@@ -1,4 +1,4 @@
-import { useScreenAutoNavigate } from "components/hooks/useScreenAutoNavigate"
+import { useScreenAutoNavigate } from "hooks"
 import { useEffect } from "react"
 import { useParams } from "react-router-dom"
 import { LabelName } from "types"

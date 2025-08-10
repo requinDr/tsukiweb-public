@@ -4,8 +4,6 @@ import { strings } from '../translation/lang'
 import { SCREEN } from '../utils/display'
 import { endings, osiete } from '../utils/endings'
 import { Tooltip } from 'react-tooltip'
-import { useLanguageRefresh } from '../components/hooks/useLanguageRefresh'
-import { useScreenAutoNavigate } from '../components/hooks/useScreenAutoNavigate'
 import { settings } from 'utils/settings'
 import MainEnding from 'components/endings/MainEnding'
 import Oshiete from 'components/endings/Oshiete'
@@ -13,6 +11,7 @@ import { viewedScene } from "utils/settings"
 import { noBb } from '@tsukiweb-common/utils/Bbcode'
 import { useMemo } from 'react'
 import classNames from 'classnames'
+import { useScreenAutoNavigate, useLanguageRefresh } from "hooks"
 
 
 const EndingsScreen = () => {

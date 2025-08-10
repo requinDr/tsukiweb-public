@@ -1,7 +1,7 @@
 import { Fragment, memo } from "react"
 import { SaveState } from "../../utils/savestates"
 import { getSceneTitle } from "../../script/utils"
-import { savePhaseTexts } from "../SavesLayout"
+import { savePhaseTexts } from "./SavesLayout"
 import classNames from "classnames"
 import { noBb } from "@tsukiweb-common/utils/Bbcode"
 import { PageEntry } from "utils/history"

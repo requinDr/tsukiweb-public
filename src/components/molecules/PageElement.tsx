@@ -63,7 +63,7 @@ const PageElement = ({history, content, onLoad}: Props)=> {
 		<hr {...{"page-type": content.type}} />
 		{content &&
 			<Button onClick={onLoad.bind(null,content)} className='load'>
-				<MdReplay />	{strings.history.load}
+				<MdReplay /> {strings.history.load}
 			</Button>
 		}
 		{displayContent}

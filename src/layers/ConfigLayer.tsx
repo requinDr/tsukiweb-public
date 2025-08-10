@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react"
-import ConfigLayout from "../components/ConfigLayout";
+import ConfigLayout from "../components/config/ConfigLayout";
 import classNames from "classnames";
 
 

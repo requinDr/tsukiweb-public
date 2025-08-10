@@ -1,10 +1,9 @@
 import '@styles/flowchart.scss'
 import { SCREEN } from "../utils/display"
-import { useLanguageRefresh } from "../components/hooks/useLanguageRefresh"
-import { useScreenAutoNavigate } from "../components/hooks/useScreenAutoNavigate"
 import Flowchart from "components/flowchart/Flowchart"
 import { TsukihimeSceneName } from 'types'
 import { playScene } from 'utils/savestates'
+import { useScreenAutoNavigate, useLanguageRefresh } from 'hooks'
 
 const FlowchartScreen = () => {
 	useScreenAutoNavigate(SCREEN.SCENES)

@@ -1,7 +1,7 @@
 import { memo, useCallback, CSSProperties } from "react"
 import { imageSrc } from "../../translation/assets"
 import { settings } from "../../utils/settings"
-import GraphicElement from "@tsukiweb-common/components/atoms/GraphicElement"
+import GraphicElement from "@tsukiweb-common/components/GraphicElement";
 import { DivProps, SpritePos } from "@tsukiweb-common/types"
 import cg from "utils/gallery"
 
