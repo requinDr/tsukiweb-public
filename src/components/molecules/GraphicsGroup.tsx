@@ -46,7 +46,7 @@ const GraphicsGroup = ({
 	images,
 	spriteAttrs,
 	resolution = settings.resolution,
-	lazy=false,
+	lazy = false,
 	...props}: GraphicsGroupProps)=> {
 	useLanguageRefresh(true)
 	const monochrome = images.monochrome ?? ""

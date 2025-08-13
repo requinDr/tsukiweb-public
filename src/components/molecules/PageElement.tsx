@@ -1,4 +1,4 @@
-import { memo, Fragment } from "react"
+import { memo, Fragment, ReactNode } from "react"
 import { strings } from "../../translation/lang"
 import { phaseTexts } from "../../translation/assets"
 import { getSceneTitle } from "../../script/utils"
@@ -20,7 +20,7 @@ const PageElement = ({history, content, onLoad}: Props)=> {
 	if (!content)
 		return <></>
 	
-	let displayContent
+	let displayContent: ReactNode
 	switch(content.type) {
 		case "text" :
 			const text = content.text ?? ""
@@ -33,11 +33,11 @@ const PageElement = ({history, content, onLoad}: Props)=> {
 			break
 		case "choice":
 			const {choices, selected} = content as PageEntry<"choice">
-			displayContent = <>{choices.map(({str, index})=>
+			displayContent = choices.map(({str, index})=>
 				<div key={index} className={classNames('choice', {selected: index==selected})}>
 					{str}
 				</div>
-			)}</>
+			)
 			break
 		case "skip" :
 			const {label} = content as PageEntry<"skip">
