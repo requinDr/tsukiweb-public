@@ -119,30 +119,25 @@ function processRocket(
 	script: ScriptPlayer,
 	onFinish: VoidFunction
 ) {
-	const params: any = {};
-	const parts = arg.split(' ');
+	const params: any = {}
+	const parts = arg.split(' ')
 	for (const part of parts) {
-		const [key, value] = part.split('=');
-		params[key] = value;
+		const [key, value] = part.split('=')
+		params[key] = value
 	}
 
-	const layerMapping: {[key: string]: 'l' | 'c' | 'r'} = {
-		left: 'l',
-		center: 'c',
-		right: 'r'
-	};
-	const layer = layerMapping[params.layer] || params.layer;
+	const layer = params.layer as 'l' | 'c' | 'r'
 
 	if (!['l', 'c', 'r'].includes(layer)) {
-			console.error(`Invalid layer for @rocket: ${layer}`);
-			onFinish();
-			return;
+		console.error(`Invalid layer for @rocket: ${layer}`)
+		onFinish()
+		return
 	}
 
 	const onAnimationEnd = () => {
 		setRocket(undefined);
-		onFinish();
-	};
+		onFinish()
+	}
 
 	const rocket: RocketProps = {
 		layer: layer,
@@ -152,10 +147,10 @@ function processRocket(
 		accel: parseInt(params.accel || 1),
 		opacity: parseInt(params.opacity || 255),
 		onAnimationEnd
-	};
+	}
 
-	setRocket(rocket);
-	return { next: onAnimationEnd };
+	setRocket(rocket)
+	return { next: onAnimationEnd }
 }
 
 function processMonocro(color: string, _: string, script: ScriptPlayer) {
@@ -201,7 +196,7 @@ const GraphicsLayer = memo(function({
 			'quakex'  : _processQuake,
 			'quakey'  : _processQuake,
 			'monocro' : processMonocro, //TODO : crossfade ?
-			'@rocket' : _processRocket,
+			'rocket' : _processRocket,
 		})
 	}, [script, onTransitionStart, onTransitionEnd])
 

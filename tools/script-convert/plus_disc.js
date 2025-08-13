@@ -256,6 +256,28 @@ function processQuake(token, i, tokens) {
     }
 }
 
+function processRocket(token) {
+    const args = token.args
+    const arg_list = []
+    
+    const layer_mapping = {
+        'right': 'r',
+        'left': 'l',
+        'center': 'c'
+    }
+
+    for (const [key, value] of args.entries()) {
+        if (key === 'layer' && layer_mapping[value]) {
+            arg_list.push(`${key}=${layer_mapping[value]}`)
+        } else {
+            arg_list.push(`${key}=${value}`)
+        }
+    }
+    
+    token.cmd = 'rocket'
+    token.args = [arg_list.join(' ')]
+}
+
 function discardToken(_token, i, tokens) {
     tokens[i] = null
 }
@@ -293,7 +315,7 @@ const CMD_MAP = new Map(Object.entries({
     'position'   : discardToken, // different call at the beginning of all 4 scenes. Must check consequence.
     'position2'  : discardToken, // change message layer (?)
     'resetposition2' : ()=> {}, // reset message layer (?)
-    'rocket'  : discardToken, // TODO see in-game effect (scenario/plugin/CVS/Base/RocketPlugin.ks)
+    'rocket'  : processRocket, // TODO see in-game effect (scenario/plugin/CVS/Base/RocketPlugin.ks)
     'wrocket' : discardToken, // idem
     'textoff' : discardToken, // can probably be ignored. Used around...
     'texton'  : discardToken, // ...img changes to hide and show the text.
