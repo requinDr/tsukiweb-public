@@ -278,6 +278,16 @@ function processRocket(token) {
     token.args = [arg_list.join(' ')]
 }
 
+function processPosition2(token) {
+    token.cmd = 'textbox';
+    token.args = ['adv'];
+}
+
+function processResetPosition2(token) {
+    token.cmd = 'textbox';
+    token.args = ['nvl'];
+}
+
 function discardToken(_token, i, tokens) {
     tokens[i] = null
 }
@@ -313,8 +323,8 @@ const CMD_MAP = new Map(Object.entries({
     'wait' : (t)=> {t.args= [t.args.get('time')]},
     'jump' : discardToken, // used to go to next scene
     'position'   : discardToken, // different call at the beginning of all 4 scenes. Must check consequence.
-    'position2'  : discardToken, // change message layer (?)
-    'resetposition2' : discardToken, // reset message layer (?)
+    'position2'  : processPosition2, // change text layer to adv mode
+    'resetposition2' : processResetPosition2, // reset text layer to nvl mode
     'rocket'  : processRocket, // TODO see in-game effect (scenario/plugin/CVS/Base/RocketPlugin.ks)
     'wrocket' : discardToken, // idem
     'textoff' : discardToken, // can probably be ignored. Used around...

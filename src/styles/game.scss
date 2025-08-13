@@ -44,6 +44,12 @@
 	}
 	#layer-text {
 		@extend %layer-text;
+
+		&.adv {
+			max-height: 300px;
+			margin-top: auto;
+			padding-top: 1em;
+		}
 	}
 	#layer-choices {
 		z-index: 3;

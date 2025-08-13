@@ -1,4 +1,4 @@
-import { Fragment, useCallback, useEffect, useMemo, useReducer, useRef } from 'react';
+import { Fragment, useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import * as motion from "motion/react-m"
 import '@styles/game.scss';
 import HistoryLayer from '../layers/HistoryLayer';
@@ -27,6 +27,7 @@ import { inGameKeyMap } from 'utils/keybind';
 import { strings } from 'translation/lang';
 import { MdPlayArrow } from 'react-icons/md';
 import { useScreenAutoNavigate, useLanguageRefresh } from 'hooks';
+import { isPDScene } from 'script/utils';
 
 //##############################################################################
 //#region                          USER INPUTS
@@ -260,6 +261,7 @@ const Window = () => {
 	}))
 	const [actionsHandler, ] = useReset(()=>
 		new UserActionsHandler(script, layers, remountScript))
+	const [textboxStyle, setTextboxStyle] = useState<'adv' | 'nvl'>(isPDScene(script.currentLabel ?? "") ? "adv" : "nvl");
 
 	useMemo(()=> {
 		if (history.empty) {
@@ -274,6 +276,11 @@ const Window = () => {
 			return
 		actionsHandler.onScriptChange(script)
 		script.setCommands(audioCommands)
+		script.setCommand('textbox', (arg: string) => {
+			if (arg === 'adv' || arg === 'nvl') {
+				setTextboxStyle(arg as 'adv' | 'nvl');
+			}
+		})
 		script.setBlockStartCallback(warnHScene)
 		if (!script.continueScript) {
 			script.setAfterBlockCallback(()=> {
@@ -373,7 +380,7 @@ const Window = () => {
 			<Fragment key={script.uid}>
 				<div className='ratio-container' onClick={()=> actionsHandler.next()}>
 					<GraphicsLayer script={script} />
-					<TextLayer script={script} display={layers.text && 'auto'}/>
+					<TextLayer script={script} display={layers.text && 'auto'} textbox={textboxStyle} />
 				</div>
 
 				{script.continueScript && <>

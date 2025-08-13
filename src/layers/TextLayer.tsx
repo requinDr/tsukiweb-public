@@ -56,11 +56,11 @@ type Props = {
   script: ScriptPlayer
   display?: boolean|'auto'
   charDelay?: number
+  textbox?: "nvl"|"adv"
 } & DivProps
 
-
 const TextLayer = ({ script, display = 'auto',
-                     charDelay = settings.textSpeed, ...props }: Props) => {
+                     charDelay = settings.textSpeed, textbox = "nvl", ...props }: Props) => {
 
   const [ lines, setLines ] = useState<string[]>([])
   const [ glyph, setGlyph ] = useState<'moon'|'page'|null>(null)
@@ -95,6 +95,8 @@ const TextLayer = ({ script, display = 'auto',
     classList.push('hide')
   if (!mouseCursorVisible)
     classList.push('hide-mouse-pointer')
+  if (textbox === "adv")
+    classList.push('adv')
   if (className)
     classList.push(className)
 
