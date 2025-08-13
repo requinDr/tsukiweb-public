@@ -74,7 +74,7 @@ function processImgFile(args) {
         const n = Number.parseInt(file.substring(1));
         // s01 .. s17 (name conflict with some waves -_-)
         // t01 .. t07
-        return `"bg/bg_${file}"`
+        return `"bg/${file}"`
     }
     if (file.match(/(aki|ark|cel|his|kemo|koha|neko|nero|roa|stk)_t?\d+[abc]?/)) {
         return `"tachi/${file}"`;
@@ -314,7 +314,7 @@ const CMD_MAP = new Map(Object.entries({
     'jump' : discardToken, // used to go to next scene
     'position'   : discardToken, // different call at the beginning of all 4 scenes. Must check consequence.
     'position2'  : discardToken, // change message layer (?)
-    'resetposition2' : ()=> {}, // reset message layer (?)
+    'resetposition2' : discardToken, // reset message layer (?)
     'rocket'  : processRocket, // TODO see in-game effect (scenario/plugin/CVS/Base/RocketPlugin.ks)
     'wrocket' : discardToken, // idem
     'textoff' : discardToken, // can probably be ignored. Used around...
