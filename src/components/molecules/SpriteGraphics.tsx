@@ -1,16 +1,17 @@
 import { memo } from "react"
 import GraphicsElement from "./GraphicsElement"
-import { GraphicsTransition, SpritePos } from "@tsukiweb-common/types"
+import { GraphicsTransition, RocketProps, SpritePos } from "@tsukiweb-common/types"
 import useGraphicTransition from "hooks/useGraphicTransition"
 
 type SpriteGraphicsProps = {
 	pos: Exclude<SpritePos, 'bg'>
 	image: string
 	transition?: GraphicsTransition
+	rocket?: RocketProps
 }
 
 //.......... l, c, r sprites ...........
-const SpriteGraphics = ({pos, image, transition}: SpriteGraphicsProps)=> {
+const SpriteGraphics = ({pos, image, transition, rocket}: SpriteGraphicsProps)=> {
 	const {
 		img: currImg, prev: prevImg,
 		duration: fadeTime, effect, onAnimationEnd
@@ -22,6 +23,7 @@ const SpriteGraphics = ({pos, image, transition}: SpriteGraphicsProps)=> {
 					key={currImg}
 					pos={pos}
 					image={currImg}
+					rocket={rocket}
 				/>
 		)
 	return <>
@@ -41,6 +43,7 @@ const SpriteGraphics = ({pos, image, transition}: SpriteGraphicsProps)=> {
 				fadeIn={effect}
 				fadeTime={fadeTime}
 				onAnimationEnd={onAnimationEnd}
+				rocket={rocket}
 			/>
 	</>
 }

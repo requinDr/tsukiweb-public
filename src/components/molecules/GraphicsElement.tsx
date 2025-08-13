@@ -2,7 +2,7 @@ import { memo, useCallback, CSSProperties } from "react"
 import { imageSrc } from "../../translation/assets"
 import { settings } from "../../utils/settings"
 import GraphicElement from "@tsukiweb-common/components/GraphicElement";
-import { DivProps, SpritePos } from "@tsukiweb-common/types"
+import { DivProps, RocketProps, SpritePos } from "@tsukiweb-common/types"
 import cg from "utils/gallery"
 
 function getUrl(resolution: typeof settings.resolution, image: string): string {
@@ -13,6 +13,7 @@ type Props = {
 	pos: SpritePos
 	image: string
 	resolution?: typeof settings.resolution
+	rocket?: RocketProps
 } & ({
 	fadeIn?: undefined
 	fadeOut?: undefined
@@ -35,6 +36,7 @@ const GraphicsElement = ({
 	fadeOut=undefined,
 	toImg=undefined,
 	onAnimationEnd=undefined,
+	rocket,
 	...props} : Props)=> {
 
 //____________________________________image_____________________________________
@@ -43,6 +45,20 @@ const GraphicsElement = ({
 //.............. no image ..............
 		if (!image) {
 			return pos == 'bg' ? {} : undefined
+		}
+//............ rocket image ............
+		if (rocket) {
+			return {
+				className: 'rocket',
+				style: {
+					'--rocket-my': `${rocket.my}px`, //maybe vh
+					'--rocket-magnify': rocket.magnify,
+					'--rocket-duration': `${rocket.time}ms`,
+					'--rocket-accel': rocket.accel,
+					'--rocket-opacity': rocket.opacity / 255,
+				},
+				onAnimationEnd: rocket.onAnimationEnd
+			}
 		}
 //............ static image ............
 		else if (fadeTime == 0) {
@@ -59,7 +75,7 @@ const GraphicsElement = ({
 				onAnimationEnd
 			}
 		}
-	}, [pos, image, fadeTime, fadeIn, fadeOut])()
+	}, [pos, image, fadeTime, fadeIn, fadeOut, rocket])()
 
 //________________________________crossfade mask________________________________
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

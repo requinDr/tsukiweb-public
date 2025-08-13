@@ -5,7 +5,7 @@ import ForegroundGraphics from "../components/molecules/ForegroundGraphics";
 import { useObserved } from "@tsukiweb-common/utils/Observer";
 import classNames from "classnames";
 import { ScriptPlayer } from "script/ScriptPlayer";
-import { DivProps, GraphicsTransition, SpritePos } from "@tsukiweb-common/types";
+import { DivProps, GraphicsTransition, RocketProps, SpritePos } from "@tsukiweb-common/types";
 import { objectMatch, splitFirst } from "@tsukiweb-common/utils/utils";
 import { settings } from "utils/settings";
 import { wordImage } from "translation/assets";
@@ -89,10 +89,10 @@ function processImageCmd(onTransitionStart: VoidFunction|undefined,
 }
 
 function processQuake(onTransitionStart: VoidFunction|undefined,
-					  onTransitionEnd: VoidFunction|undefined,
-					  setQuake: (quake: Quake|undefined)=>void,
-					  arg: string, cmd: string, _script: ScriptPlayer,
-					  onFinish: VoidFunction) {
+						onTransitionEnd: VoidFunction|undefined,
+						setQuake: (quake: Quake|undefined)=>void,
+						arg: string, cmd: string, _script: ScriptPlayer,
+						onFinish: VoidFunction) {
 	const [ampl, duration] = arg.split(',').map(x=>parseInt(x))
 	const _onFinish = ()=> {
 		setQuake(undefined)
@@ -110,6 +110,52 @@ function processQuake(onTransitionStart: VoidFunction|undefined,
 	}
 	onTransitionStart?.()
 	return { next: _onFinish }
+}
+
+function processRocket(
+	setRocket: (rocket: RocketProps | undefined) => void,
+	arg: string,
+	cmd: string,
+	script: ScriptPlayer,
+	onFinish: VoidFunction
+) {
+	const params: any = {};
+	const parts = arg.split(' ');
+	for (const part of parts) {
+		const [key, value] = part.split('=');
+		params[key] = value;
+	}
+
+	const layerMapping: {[key: string]: 'l' | 'c' | 'r'} = {
+		left: 'l',
+		center: 'c',
+		right: 'r'
+	};
+	const layer = layerMapping[params.layer] || params.layer;
+
+	if (!['l', 'c', 'r'].includes(layer)) {
+			console.error(`Invalid layer for @rocket: ${layer}`);
+			onFinish();
+			return;
+	}
+
+	const onAnimationEnd = () => {
+		setRocket(undefined);
+		onFinish();
+	};
+
+	const rocket: RocketProps = {
+		layer: layer,
+		my: parseFloat(params.my || 0),
+		magnify: parseFloat(params.magnify || 1),
+		time: parseInt(params.time || 0),
+		accel: parseInt(params.accel || 1),
+		opacity: parseInt(params.opacity || 255),
+		onAnimationEnd
+	};
+
+	setRocket(rocket);
+	return { next: onAnimationEnd };
 }
 
 function processMonocro(color: string, _: string, script: ScriptPlayer) {
@@ -137,6 +183,7 @@ const GraphicsLayer = memo(function({
 	const [quake, setQuake] = useState<Quake|undefined>(undefined)
 	const [transition, setTransition] = useState<GraphicsTransition|undefined>(undefined)
 	const [monoChrome] = useObserved(script.graphics, 'monochrome')
+	const [rocket, setRocket] = useState<RocketProps|undefined>(undefined)
 	const style = useRef<CSSProperties>(undefined)
 	const otherProps = useRef<Omit<DivProps, 'style'>>(undefined)
 	//useTraceUpdate("[GRAPHICS]", {script, quake, transition, monoChrome})
@@ -146,6 +193,7 @@ const GraphicsLayer = memo(function({
 				onTransitionEnd, setTransition)
 		const _processQuake = processQuake.bind(null, onTransitionStart,
 				onTransitionEnd, setQuake)
+		const _processRocket = processRocket.bind(null, setRocket)
 		script.setCommands({
 			'bg' : _processImageCmd,
 			'ld' : _processImageCmd,
@@ -153,6 +201,7 @@ const GraphicsLayer = memo(function({
 			'quakex'  : _processQuake,
 			'quakey'  : _processQuake,
 			'monocro' : processMonocro, //TODO : crossfade ?
+			'@rocket' : _processRocket,
 		})
 	}, [script, onTransitionStart, onTransitionEnd])
 
@@ -183,9 +232,9 @@ const GraphicsLayer = memo(function({
 			onAnimationEnd={quake?.onFinish}
 		>
 			<BackgroundGraphics image={graphics.bg}/>
-			<SpriteGraphics image={graphics.l} transition={transition} pos='l'/>
-			<SpriteGraphics image={graphics.c} transition={transition} pos='c'/>
-			<SpriteGraphics image={graphics.r} transition={transition} pos='r'/>
+			<SpriteGraphics image={graphics.l} transition={transition} pos='l' rocket={rocket?.layer === 'l' ? rocket : undefined}/>
+			<SpriteGraphics image={graphics.c} transition={transition} pos='c' rocket={rocket?.layer === 'c' ? rocket : undefined}/>
+			<SpriteGraphics image={graphics.r} transition={transition} pos='r' rocket={rocket?.layer === 'r' ? rocket : undefined}/>
 			<ForegroundGraphics image={graphics.bg} transition={transition} />
 		</div>
 	)

@@ -106,4 +106,22 @@
 			mix-blend-mode: multiply;
 		}
 	}
+
+	.rocket {
+		animation-name: rocket;
+		animation-duration: var(--rocket-duration);
+		animation-timing-function: ease-in-out; // TODO: use accel
+		animation-fill-mode: forwards;
+	}
+
+	@keyframes rocket {
+		from {
+			transform: translateY(0) scale(1);
+			opacity: 1;
+		}
+		to {
+			transform: translateY(var(--rocket-my)) scale(var(--rocket-magnify));
+			opacity: var(--rocket-opacity);
+		}
+	}
 }
