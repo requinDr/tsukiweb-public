@@ -10,7 +10,7 @@ import { useScreenAutoNavigate } from 'hooks/useScreenAutoNavigate'
 const ConfigScreen = () => {
 	useScreenAutoNavigate(SCREEN.CONFIG)
 	useLanguageRefresh()
-	const [selectedTab, setSelectedTab] = useQueryParam("tab", "game")
+	const [selectedTab, setSelectedTab] = useQueryParam<any>("tab", "game")
 
 	function back() {
 		displayMode.screen = SCREEN.TITLE
@@ -36,7 +36,7 @@ const ConfigScreen = () => {
 			exit={{opacity: 0}}>
 			<ConfigLayout
 				back={back}
-				selectedTab={selectedTab as any}
+				selectedTab={selectedTab}
 				setSelectedTab={setSelectedTab}
 				page={SCREEN.CONFIG} />
 		</motion.div>

@@ -27,6 +27,26 @@ const container: Variants = {
 const isShown = (image: GalleryImg) =>
 	cg.isUnlocked(image.name) || settings.unlockEverything
 
+const getImgDetails = (image: GalleryImg) => {
+	const isShownImage = isShown(image)
+	const alts = cg.getAlts(image.name)
+	const shownAlts = alts.filter(a => isShown(a))
+
+	if (isShownImage && image.unlockIds) {
+		image.unlockIds.forEach(imgName => {
+			if (shownAlts.findIndex(v => v.name === imgName) === -1) {
+				shownAlts.push(cg.getAlts(imgName)[0])
+			}
+		})
+	}
+
+	return {
+		isShownImage,
+		alts,
+		shownAlts,
+	}
+}
+
 const GalleryScreen = () => {
 	useScreenAutoNavigate(SCREEN.GALLERY)
 	useLanguageRefresh()
@@ -41,26 +61,6 @@ const GalleryScreen = () => {
 		
 		return imagesTmp.filter(image => !image.altOf)
 	}, [selectedTab])
-
-	const getImgDetails = (image: GalleryImg) => {
-		const isShownImage = isShown(image)
-		const alts = cg.getAlts(image.name)
-		const shownAlts = alts.filter(a => isShown(a))
-
-		if (isShownImage && image.unlockIds) {
-			image.unlockIds.forEach(imgName => {
-				if (shownAlts.findIndex(v => v.name === imgName) === -1) {
-					shownAlts.push(cg.getAlts(imgName)[0])
-				}
-			})
-		}
-
-		return {
-			isShownImage,
-			alts,
-			shownAlts,
-		}
-	}
 
 	const tabs: ComponentProps<typeof PageTabsLayout>["tabs"] = ['ark','cel','aki','his','koha'].map(char => ({
 		label: strings.characters[char as CharId],

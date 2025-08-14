@@ -30,7 +30,7 @@ const PlusDiscScreen = () => {
 				<div className="header">
 					<img
 						src={Cover}
-						alt="Plus-Disc Cover"
+						alt="Plus-Disc cover"
 						className="cover"
 					/>
 					<div className='desc'>

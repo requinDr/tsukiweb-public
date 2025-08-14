@@ -13,8 +13,7 @@ const FlowchartScreen = () => {
 		playScene(id, {continueScript: false, viewedOnly: true})
 	}
 	return (
-		<div
-			className="page" id="scenes">
+		<div className="page" id="scenes">
 			<div className="page">
 				<div className="page-content flowchart">
 					<Flowchart onSceneClick={onSceneClick} />

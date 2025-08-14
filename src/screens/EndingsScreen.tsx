@@ -9,7 +9,6 @@ import MainEnding from 'components/endings/MainEnding'
 import Oshiete from 'components/endings/Oshiete'
 import { viewedScene } from "utils/settings"
 import { noBb } from '@tsukiweb-common/utils/Bbcode'
-import { useMemo } from 'react'
 import classNames from 'classnames'
 import { useScreenAutoNavigate, useLanguageRefresh } from "hooks"
 
@@ -18,16 +17,13 @@ const EndingsScreen = () => {
 	useScreenAutoNavigate(SCREEN.ENDINGS)
 	useLanguageRefresh()
 
-	const [allEndingsSeen, eclipseSeen] = useMemo(()=> {
-		const allEndingsSeen = settings.unlockEverything || Object.values(endings).every(e=>e.seen)
-		const eclipseSeen = settings.unlockEverything || viewedScene("eclipse")
-		return [allEndingsSeen, eclipseSeen]
-	}, [settings.completedScenes, settings.unlockEverything])
+	const sawAllEndings = settings.unlockEverything || Object.values(endings).every(e => e.seen)
+	const sawEclipse = settings.unlockEverything || viewedScene("eclipse")
 
-	const eclipseUnlocked = allEndingsSeen && !eclipseSeen
+	const eclipseUnlocked = sawAllEndings && !sawEclipse
 
 	return (
-		<div className={`${styles.pageContent}`} id="endings">
+		<div className={styles.pageContent} id="endings">
 			<main>
 				<section className="endings-list">
 					{Object.values(endings).map((ending, index) =>
@@ -65,7 +61,7 @@ const EndingsScreen = () => {
 				<section className="badendings">
 					<h3>{strings.endings.osiete}</h3>
 					<div className='badendings-list'>
-						{Object.values(osiete).map((ending, index)=>
+						{Object.values(osiete).map((ending, index) =>
 							<Oshiete
 								key={index}
 								unlocked={settings.unlockEverything || Boolean(ending?.seen)}
