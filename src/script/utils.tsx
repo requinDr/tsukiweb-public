@@ -1,7 +1,6 @@
 import { LabelName, PlusDiscSceneName, SceneName, TsukihimeSceneName } from "../types";
 import { APP_VERSION, SCENE_ATTRS } from "../utils/constants";
 import { strings, waitLanguageLoad } from "../translation/lang"
-import { getGameVariable } from "../utils/variables";
 import { ScriptPlayer } from "./ScriptPlayer";
 import { credits, scenesDir } from "translation/assets";
 

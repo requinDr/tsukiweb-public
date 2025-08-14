@@ -3,10 +3,10 @@ import { settings } from "../../utils/settings"
 import { imageSrc } from "../../translation/assets"
 import { POSITIONS } from "@tsukiweb-common/constants";
 import { SpritePos, Graphics as GraphicsType, DivProps } from "@tsukiweb-common/types";
-import { replaceExtensionByAvif, supportAvif, testAvifSupport } from "@tsukiweb-common/utils/images";
 import cg from "utils/gallery";
 import { useLanguageRefresh } from "hooks";
-import GraphicElement from "@tsukiweb-common/components/GraphicElement";
+import GraphicElement from "@tsukiweb-common/graphics/GraphicElement";
+import { avif } from "@tsukiweb-common/utils/images";
 
 
 export async function preloadImage(src: string, resolution = settings.resolution): Promise<void> {
@@ -14,17 +14,17 @@ export async function preloadImage(src: string, resolution = settings.resolution
 		return
 	if (src.startsWith('"'))
 		src = src.replaceAll('"', '')
-	if (supportAvif === null) {
-		await testAvifSupport()
+	if (avif.isSupported === null) {
+		await avif.testSupport()
 	}
 	
 	return new Promise((resolve, reject) => {
 		const img = new Image()
 		img.onload = resolve as VoidFunction
 		img.onerror = img.onabort = reject
-		
-		if (supportAvif) {
-			img.src = replaceExtensionByAvif(imageSrc(src, resolution))
+
+		if (avif.isSupported) {
+			img.src = avif.replaceExtension(imageSrc(src, resolution))
 		} else {
 			img.src = imageSrc(src, resolution)
 		}

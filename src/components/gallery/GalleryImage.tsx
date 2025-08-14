@@ -9,7 +9,7 @@ import "yet-another-react-lightbox/plugins/thumbnails.css"
 import GalleryTotal from "./GalleryTotal"
 import { MdLock } from "react-icons/md"
 import { useMediaQuery } from "@uidotdev/usehooks"
-import { replaceExtensionByAvif, supportAvif } from "@tsukiweb-common/utils/images"
+import { avif } from "@tsukiweb-common/utils/images"
 import { GalleryImg } from "types"
 
 
@@ -35,7 +35,7 @@ const GalleryImage = ({image, src, gallery = [], galleryUnlocked = [], blurred =
 		return gallery.map(img =>
 			galleryUnlocked.includes(img) ?
 				({
-					src: supportAvif ? replaceExtensionByAvif(imageSrc(imagePath(img.name), 'hd')) : imageSrc(imagePath(img.name), 'hd'),
+					src: avif.isSupported ? avif.replaceExtension(imageSrc(imagePath(img.name), 'hd')) : imageSrc(imagePath(img.name), 'hd'),
 					alt: img.name,
 					source: img.source ? img.source : undefined,
 				})
@@ -65,7 +65,7 @@ const GalleryImage = ({image, src, gallery = [], galleryUnlocked = [], blurred =
 		<>
 		<button onClick={() => setOpen(true)}>
 			<picture>
-				<source srcSet={replaceExtensionByAvif(src)} type="image/avif"/>
+				<source srcSet={avif.replaceExtension(src)} type="image/avif"/>
 				<img
 					src={src}
 					className={classNames("thumb", {"is-alternative": image.altOf, blur: blurred})}

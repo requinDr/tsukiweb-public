@@ -1,10 +1,10 @@
-import { splitFirst, splitLast, TSForceType } from "@tsukiweb-common/utils/utils"
+import { splitFirst, splitLast } from "@tsukiweb-common/utils/utils"
 import { RouteDayName, RouteName } from "../types"
 import { settings } from "../utils/settings"
-import {TrackSourceId, languages, strings} from "./lang"
-import { ImageRedirect, TextImage } from "@tsukiweb-common/utils/lang"
+import {TrackSourceId, strings} from "./lang"
+import { TextImage } from "@tsukiweb-common/utils/lang"
 import { closeBB } from "@tsukiweb-common/utils/Bbcode"
-import { supportAvif, testAvifSupport } from "@tsukiweb-common/utils/images"
+import { avif } from "@tsukiweb-common/utils/images"
 
 //##############################################################################
 //#                                  PRIVATE                                   #
@@ -51,10 +51,10 @@ export function scenesDir() {
 }
 
 export function spriteSheetImgPath(file: string) {
-  if (supportAvif === null) {
-    testAvifSupport()
+  if (avif.isSupported === null) {
+    avif.testSupport()
   }
-  file = supportAvif ? file.replace(/\.webp$/, '.avif') : file
+  file = avif.isSupported ? file.replace(/\.webp$/, '.avif') : file
 	return assetPath(`jp/flowchart-spritesheet/${file}`)
 }
 

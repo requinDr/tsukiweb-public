@@ -69,8 +69,9 @@
 
 	.menu {
 		flex: 1;
+		margin-inline: 1em;
 		margin-bottom: 5vh;
-		width: min(860px, 100%);
+		width: min(860px, calc(100% - 2em));
 		font-size: 1.54em;
 
 		.menu-buttons {
@@ -87,14 +88,14 @@
 	}
 
 	// One column
-	@media (max-width: 840px) and (min-height: 500px), (orientation: portrait) {
+	@media (max-width: 920px) and (min-height: 500px), (orientation: portrait) {
 		.top-actions {
 			right: $spacing;
 			flex-direction: column-reverse;
 		}
 	}
 	// One column, mobile portrait
-	@media (max-width: 840px), ((orientation: landscape) and (max-height: 500px)) {
+	@media (max-width: 920px), ((orientation: landscape) and (max-height: 500px)) {
 		display: grid;
 		grid-template-rows: 3fr 2fr;
 		.logo {
