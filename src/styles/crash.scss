@@ -1,39 +1,49 @@
 #page-crash {
-    overflow: clip;
-    
-    .page-content {
-        height: unset;
-        text-align: center;
-        max-width: 600px;
-        font-size: 1.1rem;
-        align-items: center;
-    }
+	overflow: clip;
+	
+	.page-content {
+		height: unset;
+		text-align: center;
+		max-width: 800px;
+		font-size: 1.1rem;
+		align-items: center;
+	}
 
-    h1 {
-        color: var(--text-color);
-        font-size: 4em;
-        letter-spacing: -2px;
-        font-weight: 800;
-        margin-block-start: 0;
-        margin-block-end: 0;
-    }
-    h2 {
-        letter-spacing: -1px;
-        font-size: 2em;
-        margin-block-start: 0;
-        margin-block-end: 1em;
-        font-weight: 700;
-    }
+	h1 {
+		letter-spacing: -1px;
+		font-size: 2.1em;
+		margin-block-start: 0;
+		margin-block-end: 0;
+		font-weight: 700;
+	}
 
-    p {
-        text-wrap: balance;
-    }
+	p {
+		text-wrap: balance;
+	}
+	.code {
+		font-family: monospace;
+		background-color: var(--menu-container);
+		text-align: left;
+		text-wrap: auto;
+		width: 100%;
+		margin-block: 2em;
+	}
 
-    details {
-        p {
-            text-align: left;
-            height: 200px;
-            overflow-y: auto;
-        }
-    }
+	details {
+		summary {
+			padding: 1.4em 2em;
+			color: var(--color-link);
+			&:hover {
+				cursor: pointer;
+			}
+		}
+		p {
+			text-align: left;
+			max-height: 300px;
+			overflow-y: auto;
+			margin: 0;
+			padding-inline: 1.4em 2em;
+			padding-bottom: 1em;
+		}
+	}
 }

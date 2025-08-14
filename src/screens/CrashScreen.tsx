@@ -1,28 +1,26 @@
 import "@styles/crash.scss"
 
-type Props = {
-	error: Error
-}
 
 /**
  * Display on crash
  * Used as a fallback component for ErrorBoundary
- * - Should use as little dependencies as possible
+ * - Should use as few dependencies as possible
  */
+type Props = {
+	error: Error
+}
 const PageCrash = ({ error }: Props) => { 
 	return (
 		<div id="page-crash" className="page">
 			<div className="page-content">
-				<h1>:(</h1>
-				<h2>An error happened</h2>
+				<h1>An error has occured :(</h1>
 				<p>
-					If this is the first time you launch this application on this browser,
-					you may need to update it or use another one.
+					If this is the first time you've launched this application on this browser,
+					you may need to update it or try using another one.
 				</p>
-				<details>
-					<summary>More about the error</summary>
+				<details className="code">
+					<summary>{error.message}</summary>
 					<p>
-						<b>{error.message}</b><br /><br />
 						{error.stack}
 					</p>
 				</details>
