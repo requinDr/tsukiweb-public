@@ -10,39 +10,9 @@ import SceneImage from "./SceneImage"
 import ScenePopover from "./ScenePopover"
 import classNames from "classnames"
 
-
-type SceneProps = {
-	node: FcNode,
-	onClick?: (id: TsukihimeSceneName) => void
-}
-export const SceneRenderer = ({node, onClick}: SceneProps) => {
-
-	if (node.state == FcNodeState.HIDDEN)
-		return <></>
-	if (node.state == FcNodeState.UNSEEN) {
-		return (
-			<g className='fc-scene' id={node.id}
-				transform={`translate(${node.centerX}, ${node.centerY})`}>
-				<g className="fc-scene-content"
-					clipPath="url(#fc-scene-clip)">
-					<use href="#fc-scene-hidden"/>
-				</g>
-			</g>
-		)
-	}
-
-	const classes = ["fc-scene", "unlocked"]
-	if (node.graph?.bg && cg.shouldBlur(cg.getNameFromPath(node.graph.bg)))
-		classes.push("blur")
-	if (node.active) {
-		classes.push("active")
-	} else if (node.state == FcNodeState.DISABLED) {
-		classes.push("disabled")
-		onClick = undefined
-	}
-	
+const useScenePopover = () => {
 	const [isOpen, setIsOpen] = useState(false)
-	const {refs, floatingStyles, context} = useFloating({
+	const { refs, floatingStyles, context } = useFloating({
 		placement: "right",
 		whileElementsMounted: autoUpdate,
 		open: isOpen,
@@ -54,7 +24,30 @@ export const SceneRenderer = ({node, onClick}: SceneProps) => {
 			close: 50,
 		},
 	})
-	const {getReferenceProps} = useInteractions([ hover ])
+	const { getReferenceProps } = useInteractions([hover])
+
+	return { isOpen, setIsOpen, refs, floatingStyles, context, getReferenceProps }
+}
+
+type SceneProps = {
+	node: FcNode,
+	onClick?: (id: TsukihimeSceneName) => void
+}
+
+const HiddenScene = () => <></>
+
+const UnseenScene = ({ node }: { node: FcNode }) => (
+	<g className='fc-scene' id={node.id}
+		transform={`translate(${node.centerX}, ${node.centerY})`}>
+		<g className="fc-scene-content"
+			clipPath="url(#fc-scene-clip)">
+			<use href="#fc-scene-hidden" />
+		</g>
+	</g>
+)
+
+const VisibleScene = ({ node, onClick }: SceneProps) => {
+	const { isOpen, setIsOpen, refs, floatingStyles, getReferenceProps } = useScenePopover()
 
 	const onAction = (e: React.MouseEvent | React.KeyboardEvent) => {
 		if (e instanceof KeyboardEvent) {
@@ -66,24 +59,31 @@ export const SceneRenderer = ({node, onClick}: SceneProps) => {
 		onClick?.(node.id as TsukihimeSceneName)
 	}
 
+	const classes = classNames("fc-scene", "unlocked", {
+		"blur": node.graph?.bg && cg.shouldBlur(cg.getNameFromPath(node.graph.bg)),
+		"active": node.active,
+		"disabled": node.state === FcNodeState.DISABLED
+	})
+
 	return <>
-		<g className={classNames(classes)} id={`fc-scene-${node.id}`}
+		<g className={classes} id={`fc-scene-${node.id}`}
 			transform={`translate(${node.centerX},${node.centerY})`}>
 			<g className={'fc-scene-content'}
 				tabIndex={0}
 				clipPath="url(#fc-scene-clip)"
-				onClick={onAction} onKeyDown={onAction}
+				onClick={node.state !== FcNodeState.DISABLED ? onAction : undefined}
+				onKeyDown={node.state !== FcNodeState.DISABLED ? onAction : undefined}
 				{...getReferenceProps()}
-				onContextMenu={(e) => {
+				onContextMenu={e => {
 					e.preventDefault()
-					setIsOpen(!isOpen)
+					setIsOpen(prev => !prev)
 				}}
 				ref={refs.setReference}
 			>
-				{SceneImage(node)}
+				<SceneImage node={node} />
 			</g>
 		</g>
-		
+
 		{isOpen && createPortal(
 			<div
 				className="scene-popover-container"
@@ -100,4 +100,16 @@ export const SceneRenderer = ({node, onClick}: SceneProps) => {
 			document.getElementById("root") as HTMLElement
 		)}
 	</>
+}
+
+export const SceneRenderer = ({ node, onClick }: SceneProps) => {
+
+	switch (node.state) {
+		case FcNodeState.HIDDEN:
+			return <HiddenScene />
+		case FcNodeState.UNSEEN:
+			return <UnseenScene node={node} />
+		default:
+			return <VisibleScene node={node} onClick={onClick} />
+	}
 }

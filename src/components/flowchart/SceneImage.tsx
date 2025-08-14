@@ -17,8 +17,10 @@ function onImgLoad(top: number, left: number, width: number, height: number,
 }
 
 
-type ImageProps = React.HTMLAttributes<HTMLImageElement>
-const SceneImage = (node: FcNode, props: ImageProps = {}) => {
+type SceneImageProps = {
+	node: FcNode
+}
+const SceneImage = ({ node }: SceneImageProps) => {
 	const {file, left, top, width, height} = node.metadatas
 	if (file) {
 		return (<>
@@ -31,7 +33,6 @@ const SceneImage = (node: FcNode, props: ImageProps = {}) => {
 					src={file}
 					alt={`Thumbnail for ${node.id}`}
 					style={{ opacity: 0, transition: "opacity .2s" }}
-					{...props}
 				/>
 			</foreignObject>
 			<use href="#fc-scene-outline"/>
