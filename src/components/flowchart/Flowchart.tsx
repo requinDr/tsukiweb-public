@@ -1,9 +1,9 @@
 
-import { Fragment, SyntheticEvent } from "react"
-import { COLUMN_WIDTH, DY, FcNode, FcNodeState, OVERLAP_BREAK_LENGTH, SCENE_HEIGHT, SCENE_RECT_ATTRS, SCENE_WIDTH, TsukihimeFlowchart } from "utils/flowchart"
+import { Fragment } from "react"
+import { COLUMN_WIDTH, DY, FcNode, OVERLAP_BREAK_LENGTH, SCENE_HEIGHT, SCENE_RECT_ATTRS, SCENE_WIDTH, TsukihimeFlowchart } from "utils/flowchart"
 import { TsukihimeSceneName } from "types"
 import { PartialRecord } from "@tsukiweb-common/types"
-import { SceneRenderer } from "./FcScene"
+import { SceneRenderer } from "./SceneRenderer"
 import { History } from "utils/history"
 
 
