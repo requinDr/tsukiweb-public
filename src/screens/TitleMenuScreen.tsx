@@ -15,7 +15,7 @@ import TranslationSwitch from '../components/title-menu/TranslationSwitch'
 import { useObserved } from '@tsukiweb-common/utils/Observer'
 import { useNavigate } from 'react-router-dom'
 import history from 'utils/history'
-import { Particles, TitleMenuButton } from '@tsukiweb-common/ui-core'
+import { TitleMenuButton } from '@tsukiweb-common/ui-core'
 import { useScreenAutoNavigate, useLanguageRefresh } from 'hooks'
 
 const img = {
@@ -42,9 +42,6 @@ const TitleMenuScreen = () => {
 			initial={{opacity: 0}}
 			animate={{opacity: 1}}
 			exit={{opacity: 0}}>
-
-			<Particles />
-
 			<div className="logo">
 				<motion.img src={img.src} alt={img.alt} draggable={false} className={img.className}
 					initial={{ opacity: 0.9, transform: "translateY(-42%) scale(0.9)" }}

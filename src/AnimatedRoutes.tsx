@@ -15,6 +15,7 @@ import SceneReplayScreen from "screens/SceneReplayScreen";
 import ExtraLayout from "layouts/ExtraLayout";
 import PlusDiscScreen from "screens/PlusDiscScreen";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { Particles } from "@tsukiweb-common/ui-core";
 
 const AnimatedRoutes = () => {
 	const isFirstRender = useRef(true)
@@ -40,9 +41,11 @@ const AnimatedRoutes = () => {
 		location.pathname.startsWith(path)
 	)
 	const keyPresence = isExtra ? "extra" : location.pathname
+	const showParticles = location.pathname !== "/disclaimer" && location.pathname !== "/window";
 
 	return (
 		<LazyMotion features={domAnimation} strict>
+			{showParticles && <Particles />}
 			<AnimatePresence mode="wait">
 				<Routes location={location} key={keyPresence}>
 					<Route path="/disclaimer" element={<DisclaimerScreen onAccept={markDisclaimerAsSeen} />} />
@@ -55,7 +58,6 @@ const AnimatedRoutes = () => {
 						} 
 					/>
 					<Route path="/title" element={<Navigate to="/" replace />} />
-					<Route path="/window" element={<Window />} />
 					<Route path="/load" element={<LoadScreen />} />
 					<Route path="/config" element={<ConfigScreen />} />
 
@@ -68,6 +70,8 @@ const AnimatedRoutes = () => {
 						</Route>
 						<Route path="/plus-disc" element={<PlusDiscScreen />} />
 					</Route>
+
+					<Route path="/window" element={<Window />} />
 					
 					<Route path="*" element={<Navigate to="/disclaimer" />} />
 				</Routes>
