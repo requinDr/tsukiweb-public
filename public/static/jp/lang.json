@@ -43,7 +43,7 @@
 			"tsukibako": {"name": "Tsuki-Bako (2003)", "path": ["./CD_tsukibako/track%.webm","./CD_tsukibako/track%.mp3"]}
 		},
 		"waves-path": ["./wave/se_%.webm", "./wave/se_%.wav"],
-		"waves-pd-path": ["./jp/wave-pd/%.webm", "./jp/wave-pd/%.wav"]
+		"waves-pd-path": ["./wave-pd/%.webm", "./wave-pd/%.wav"]
 	},
 	"disclaimer": [
 		"このゲームは、TYPE－MOONの2000に発行されたビジュアルノベル[b]「月姫」[/b]のウェブバージョンです。",
