@@ -261,7 +261,7 @@ const Window = () => {
 	}))
 	const [actionsHandler, ] = useReset(()=>
 		new UserActionsHandler(script, layers, remountScript))
-	const [textboxStyle, setTextboxStyle] = useState<'adv' | 'nvl'>(isPDScene(script.currentLabel ?? "") ? "adv" : "nvl");
+	const [textboxStyle, setTextboxStyle] = useState<'adv' | 'nvl'>("nvl")
 
 	useMemo(()=> {
 		if (history.empty) {
@@ -329,7 +329,7 @@ const Window = () => {
 	const show = useRef({
 		graphics: true,
 		history: true,
-		flowchart: true,
+		flowchart: !isPDScene(script.currentLabel ?? ""),
 		save: true,
 		load: true,
 		config: true,
@@ -392,6 +392,7 @@ const Window = () => {
 					display={layers.history || layers.flowchart}
 					history={history}
 					layers={layers}
+					show={show.current}
 					onRewind={remountScript}/>
 					
 				<SavesLayer

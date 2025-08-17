@@ -424,14 +424,14 @@ function processToken(token, i, tokens) {
 
 
 function main() {
-    const input_dir = './input-pd-en'
-    const output_dir = './output-pd-en'
+    const input_dir = '../../public/static/en-mm'
+    const output_dir = '../../public/static/en-mm/scenes'
 
     const files = {
-        // 'pd_alliance'  : '幻視同盟.ks',
-        // 'pd_geccha'    : 'げっちゃ.ks',
+        'pd_alliance'  : '幻視同盟.ks',
+        'pd_geccha'    : 'げっちゃ.ks',
         'pd_geccha2'   : '真・弓塚夢想3.ks',
-        // 'pd_experiment': 'きのこ名作実験場.ks'
+        'pd_experiment': 'きのこ名作実験場.ks'
     }
     for (const [file, ks] of Object.entries(files)) {
         const txt = fs.readFileSync(path.join(input_dir,ks), 'utf-8')

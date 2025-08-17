@@ -13,9 +13,12 @@ type Props = {
 	history: History
 	onRewind: VoidFunction
 	layers: InGameLayersHandler
+	show?: Partial<{
+		flowchart: boolean
+	}>
 	divProps?: React.HTMLProps<HTMLDivElement>
 }
-const HistoryLayer = ({ display, history, onRewind, layers, divProps }: Props) => {
+const HistoryLayer = ({ display, history, onRewind, layers, show, divProps }: Props) => {
 	const rootRef = useRef<HTMLDivElement>(null)
 
 	const close = useCallback(()=> {
@@ -69,6 +72,7 @@ const HistoryLayer = ({ display, history, onRewind, layers, divProps }: Props) =
 				>
 					{strings.close}
 				</Button>
+				{show?.flowchart &&
 				<Button
 					variant="menu"
 					onClick={toggleView}
@@ -80,6 +84,7 @@ const HistoryLayer = ({ display, history, onRewind, layers, divProps }: Props) =
 						<>{strings.menu.history}</>
 					}
 				</Button>
+				}
 			</FixedFooter>
 		</div>
 	)
