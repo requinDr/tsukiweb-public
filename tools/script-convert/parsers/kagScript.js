@@ -2,7 +2,7 @@ import {StrReader, TextToken, CommandToken, LabelToken, ErrorToken} from "./util
 
 const CONDITION_REGEXP = /((^|\s*[&<>!=]*)\s*([%$\d-]\w*|fchk|"[^"]"))*/
 // [%$]X*|N* <=!> [%$]X*|N* (&& ...)*
-const ARGUMENT_REGEXP = /\s*(?<key>[^\s=]+)(\s*=\s*(?<val>[\w.-]+|[^\s\d"][^\s"]*|"[^\n"]*"))?/
+const ARGUMENT_REGEXP = /\s*(?<key>[^\s=]+)(\s*=(?<val>[-\d][\w.]*|[^\s\d"][^\s"]*|"[^\n"]*")?)?/
 
 
 //##############################################################################
@@ -61,7 +61,7 @@ function parseCommand(lineIndex, str) {
 
 const tokensRE = new Map(Object.entries({
     'comment'       : [/^(\t*(;.*)?\r?\n)+/, null],
-    'command'       : [/^\t*@\w+([ \t]+[^\s=]+(\s*=\s*([\w.-]+|[^\s\d"][^\s"]*|"[^\n"]*"))?)*/, parseCommand],
+    'command'       : [/^\t*@\w+([ \t]+[^\s=]+(\s*=([-\d][\w.]*|[^\s\d"][^\s"]*|"[^\n"]*")?)?)*/, parseCommand],
     'label'         : [/^\t*\*\w*\b(\|.*)/, parseLabel],
     'text'          : [/^\t*[^@;*\t].*/, parseText],
 }))

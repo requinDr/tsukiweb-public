@@ -173,19 +173,21 @@ function processSpritePos(args) {
 }
 
 function processBg(token, i, tokens) {
-    const args = token.args
+    let args = token.args
+    let hideText = true
     switch (token.cmd) {
-        case 'black' : args.set('file', 'black'); break// TODO hide text
-        case 'blackout' : args.set('file', 'black'); break// TODO do not hide text
-        case 'flushover' : args.set('file', 'white'); break// TODO do not hide text
-        case 'flash' : return null; // TODO used only once, must see original in-game effect and context https://youtu.be/3cB9ZIEcAuM?si=NUoMcQ71qq3aZvfj&t=170
-        case 'fadein' : break; // TODO do not hide text
+        case 'black' : args.set('file', 'black'); break
+        case 'blackout' : args.set('file', 'black'); hideText = false; break
+        case 'flushover' : args.set('file', 'white'); hideText = false; break
+        case 'flash' : tokens[i] = null; return // only used once, no apparent effect
+        case 'fadein' : hideText = false; break
     }
     const file = processImgFile(args)
     const transition = processImgTransition(args)
     const time = args.get('time') ?? 0
     token.cmd = 'bg'
     token.args = [file, transition, time]
+    //TODO if (!hideText) keep text displayed
 }
 
 function processSprite(token) {
@@ -278,26 +280,33 @@ function processQuake(token, i, tokens) {
     }
 }
 
-function processRocket(token) {
-    const args = token.args
-    const arg_list = []
+function processRocket(token, i, tokens) {
     
-    const layer_mapping = {
-        'right': 'r',
-        'left': 'l',
-        'center': 'c'
-    }
+    switch (token.cmd) {
+        case 'rocket' :
+            const args = token.args
+            const arg_list = []
+            
+            const layer_mapping = {
+                'right': 'r',
+                'left': 'l',
+                'center': 'c'
+            }
 
-    for (const [key, value] of args.entries()) {
-        if (key === 'layer' && layer_mapping[value]) {
-            arg_list.push(`${key}=${layer_mapping[value]}`)
-        } else {
-            arg_list.push(`${key}=${value}`)
-        }
+            for (const [key, value] of args.entries()) {
+                if (key === 'layer' && layer_mapping[value]) {
+                    arg_list.push(`${key}=${layer_mapping[value]}`)
+                } else {
+                    arg_list.push(`${key}=${value}`)
+                }
+            }
+            
+            token.cmd = 'rocket'
+            token.args = [arg_list.join(' ')]
+            break
+        case 'wrocket' :
+            tokens[i] = null
     }
-    
-    token.cmd = 'rocket'
-    token.args = [arg_list.join(' ')]
 }
 
 function processPosition2(token) {
@@ -360,7 +369,7 @@ const CMD_MAP = new Map(Object.entries({
     'position2'  : processPosition2, // change text layer to adv mode
     'resetposition2' : processResetPosition2, // reset text layer to nvl mode
     'rocket'  : processRocket, // TODO see in-game effect (scenario/plugin/CVS/Base/RocketPlugin.ks)
-    'wrocket' : discardToken, // idem
+    'wrocket' : processRocket, // idem
     'textoff' : discardToken, // can probably be ignored. Used around...
     'texton'  : discardToken, // ...img changes to hide and show the text.
 }))
