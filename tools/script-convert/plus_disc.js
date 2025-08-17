@@ -30,6 +30,17 @@ const fixes = new Map(Object.entries({
 	'pd_geccha2': (tokens)=> {
 	},
 	'pd_experiment' : (tokens) => {
+		// Add a page break around l156 because the page is too long
+		const targetLine = 'ld c,"tachi/koha_t02",crossfade,400';
+		const index = tokens.findIndex(t => t?.toString() == targetLine);
+	
+		if (index > 0) {
+			const previousToken = tokens[index - 1];
+			if (previousToken instanceof TextToken && previousToken.text.endsWith('@')) {
+				previousToken.text = previousToken.text.slice(0, -1);
+				tokens.splice(index, 0, new CommandToken(0, '\\', []));
+			}
+		}
 	},
 }))
 
