@@ -106,7 +106,10 @@ function processQuake(onTransitionStart: VoidFunction|undefined,
 		case 'quakey' :
 			setQuake({duration, x: 0, y: ampl, onFinish: _onFinish})
 			break
-		default : throw Error(`Unknwon quake command ${cmd} ${arg}`)
+		case 'quakexy' :
+			setQuake({duration, x: ampl, y: ampl, onFinish: _onFinish})
+			break
+		default : throw Error(`Unknown quake command ${cmd} ${arg}`)
 	}
 	onTransitionStart?.()
 	return { next: _onFinish }
@@ -195,6 +198,7 @@ const GraphicsLayer = memo(function({
 			'cl' : _processImageCmd,
 			'quakex'  : _processQuake,
 			'quakey'  : _processQuake,
+			'quakexy' : _processQuake,
 			'monocro' : processMonocro, //TODO : crossfade ?
 			'rocket' : _processRocket,
 		})

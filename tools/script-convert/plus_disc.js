@@ -157,6 +157,7 @@ function processBg(token, i, tokens) {
         case 'blackout' : args.set('file', 'black'); break// TODO do not hide text
         case 'flushover' : args.set('file', 'white'); break// TODO do not hide text
         case 'flash' : return null; // TODO used only once, must see original in-game effect and context
+        case 'flash' : return null; // TODO used only once, must see original in-game effect and context https://youtu.be/3cB9ZIEcAuM?si=NUoMcQ71qq3aZvfj&t=170
         case 'fadein' : break; // TODO do not hide text
     }
     const file = processImgFile(args)
@@ -416,10 +417,10 @@ function main() {
     const output_dir = './output-pd-en'
 
     const files = {
-        'pd_alliance'  : '幻視同盟.ks',
-        'pd_geccha'    : 'げっちゃ.ks',
+        // 'pd_alliance'  : '幻視同盟.ks',
+        // 'pd_geccha'    : 'げっちゃ.ks',
         'pd_geccha2'   : '真・弓塚夢想3.ks',
-        'pd_experiment': 'きのこ名作実験場.ks'
+        // 'pd_experiment': 'きのこ名作実験場.ks'
     }
     for (const [file, ks] of Object.entries(files)) {
         const txt = fs.readFileSync(path.join(input_dir,ks), 'utf-8')
