@@ -455,38 +455,75 @@ function processToken(token, i, tokens) {
 
 
 function main() {
-    const input_dir = '../../public/static/en-mm'
-    const output_dir = '../../public/static/en-mm/scenes'
-
+	const path_prefix = '../../public/static/'
+	const outputDir = 'scenes'
+	const langs = [
+		'jp',
+		'en-mm',
+		'es-tohnokun',
+		'it-riffour',
+		'pt-matsuri',
+		'ko-wolhui',
+		'ru-ciel',
+		// 'zh-tw-yueji_yeren_hanhua_zu',
+		// 'zh-yueji_yeren_hanhua_zu',
+	]
     const files = {
         'pd_alliance'  : '幻視同盟.ks',
         'pd_geccha'    : 'げっちゃ.ks',
         'pd_geccha2'   : '真・弓塚夢想3.ks',
         'pd_experiment': 'きのこ名作実験場.ks'
     }
-    for (const [file, ks] of Object.entries(files)) {
-        const txt = fs.readFileSync(path.join(input_dir,ks), 'utf-8')
-        const tokens = parseScript(txt)
-        tokens.forEach(processToken)
-        tokens.unshift(new LabelToken(0, file)) // prevent generate() from discarding all tokens. Removed later
-        generate(output_dir, tokens, ()=> file, (map)=>{
-            const tokens = map.get(file)
-            tokens[0] = null // remove label added previously
-            if (tokens[1] instanceof CommandToken && tokens[1].cmd == '\\')
-                tokens[1] = null
-            if (fixes.has(file))
-                fixes.get(file)(tokens)
-        })
-        //if (fixes.has(file)) {
-        //    fixes.get(file)(tokens)
-        //}
-        //const file_str = tokens.filter(t=> t != null).map(t=>t.toString()).join('\n')
-        //if (output_dir) {
-        //    if (!fs.existsSync(output_dir))
-        //        fs.mkdirSync(output_dir);
-        //    fs.writeFileSync(path.join(output_dir, `${file}.txt`), file_str+'\n')
-        //}
-    }
+    // for (const [file, ks] of Object.entries(files)) {
+    //     const txt = fs.readFileSync(path.join(input_dir,ks), 'utf-8')
+    //     const tokens = parseScript(txt)
+    //     tokens.forEach(processToken)
+    //     tokens.unshift(new LabelToken(0, file)) // prevent generate() from discarding all tokens. Removed later
+    //     generate(output_dir, tokens, ()=> file, (map)=>{
+    //         const tokens = map.get(file)
+    //         tokens[0] = null // remove label added previously
+    //         if (tokens[1] instanceof CommandToken && tokens[1].cmd == '\\')
+    //             tokens[1] = null
+    //         if (fixes.has(file))
+    //             fixes.get(file)(tokens)
+    //     })
+    // }
+	for (const folder of langs) {
+		console.log(`> Processing ${folder}...`)
+	
+		const input_dir = path.join(path_prefix, folder)
+		const output_dir = path.join(input_dir, outputDir)
+		if (!fs.existsSync(output_dir)) {
+			throw new Error(`Output directory does not exist: ${output_dir}`)
+		}
+		
+		for (const [file, ks] of Object.entries(files)) {
+			try {
+				const fullPath = path.join(input_dir, ks)
+				if (!fs.existsSync(fullPath)) {
+					console.error(`File not found: ${fullPath}`)
+					continue
+				}
+
+				const txt = fs.readFileSync(fullPath, 'utf-8')
+				const tokens = parseScript(txt)
+				tokens.forEach(processToken)
+				tokens.unshift(new LabelToken(0, file)) // prevent discard
+
+				generate(output_dir, tokens, ()=> file, (map)=>{
+					const tokens = map.get(file)
+					tokens[0] = null
+					if (tokens[1] instanceof CommandToken && tokens[1].cmd == '\\')
+						tokens[1] = null
+					if (fixes.has(file))
+						fixes.get(file)(tokens)
+				})
+			} catch (e) {
+				console.error(`Error processing ${file}: ${e.message}`)
+				continue
+			}
+		}
+	}
 }
 
 main()

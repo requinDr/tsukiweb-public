@@ -1243,7 +1243,7 @@
 @blackout vague=16 rule=シャッター上から time=800
 @fadein file=bg_61 vague=16 rule=シャッター上から time=800
 @ld_auto pos=right file=fake_02 time=400
-@play file=bgm12
+@play file=TMCD-0101_04
 @texton
 「아────」[l][r]
  한손을 들어올린 채로, 어떻게든 도망치려고 발버둥 쳐본다. [l][r]
