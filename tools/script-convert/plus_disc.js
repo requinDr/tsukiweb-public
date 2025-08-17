@@ -156,7 +156,6 @@ function processBg(token, i, tokens) {
         case 'black' : args.set('file', 'black'); break// TODO hide text
         case 'blackout' : args.set('file', 'black'); break// TODO do not hide text
         case 'flushover' : args.set('file', 'white'); break// TODO do not hide text
-        case 'flash' : return null; // TODO used only once, must see original in-game effect and context
         case 'flash' : return null; // TODO used only once, must see original in-game effect and context https://youtu.be/3cB9ZIEcAuM?si=NUoMcQ71qq3aZvfj&t=170
         case 'fadein' : break; // TODO do not hide text
     }
@@ -293,10 +292,22 @@ function discardToken(_token, i, tokens) {
     tokens[i] = null
 }
 
+const processPg = (token, i, tokens) => {
+    const lastBreakIndex = tokens
+        .slice(0, i)
+        .findLastIndex(t => t instanceof CommandToken && t.cmd === '\\')
+
+    const pageTokens = tokens.slice(lastBreakIndex + 1, i)
+    // Check if there is any dialogue line in the page.
+    const hasDialogue = pageTokens.some(t => t?.toString().startsWith('`'))
+
+    hasDialogue ? token.cmd = '\\' : discardToken(token, i, tokens)
+}
+
 const CMD_MAP = new Map(Object.entries({
     'l'  : (t)=> t.cmd = '@',
     'r'  : (t)=> t.cmd = 'br',
-    'pg' : (t)=> t.cmd = '\\',
+    'pg' : processPg,
     'cm' : (t)=> t.cmd = '\\',
     'ct' : (t)=> t.cmd = '\\',
     'bg' : processBg,
