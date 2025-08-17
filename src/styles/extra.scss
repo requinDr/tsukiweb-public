@@ -1,6 +1,6 @@
 #extra {
 	display: grid;
-	grid-template-columns: minmax(190px, min-content) 1fr;
+	grid-template-columns: minmax(220px, min-content) 1fr;
 	grid-template-areas: "extra-menu extra-content";
 	padding: 0;
 	column-gap: 1em;
@@ -11,7 +11,6 @@
 		padding: 2em;
 		padding-right: 0;
 		flex-direction: column;
-		align-items: flex-start;
 
 		@media (pointer: coarse) {
 			&::-webkit-scrollbar {
@@ -21,22 +20,22 @@
 
 		.menus {
 			flex: 1;
-			margin-top: 2em;
+			margin-top: 1.8em;
 			display: flex;
 			flex-direction: column;
-			gap: 1.6em;
+			gap: 1.8em;
 
 			.menu-item {
 				text-align: start;
-				font-size: 1.3em;
-				text-transform: uppercase;
-				font-weight: 700;
+				font-size: 1.6em;
+				font-weight: 500;
 				letter-spacing: 1px;
 				width: fit-content;
 			}
 			.back-button {
 				margin-top: auto;
-				margin-bottom: 1em;
+				margin-bottom: .5em;
+				font-size: 1.1rem;
 			}
 		}
 	}
@@ -46,7 +45,7 @@
 		overflow: hidden;
 	}
 
-	@media screen and (max-width: 799px) {
+	@media screen and (max-width: 979px) {
 		grid-template-columns: 1fr;
 		grid-template-rows: 1fr min-content;
 		grid-template-areas:
@@ -83,7 +82,7 @@
 		}
 	}
 
-	@media screen and (max-height: 600px) and (min-width: 800px) {
+	@media screen and (max-height: 600px) and (min-width: 980px) {
 		grid-template-columns: minmax(160px, min-content) 1fr;
 		.extra-menu {
 			font-size: .8em;

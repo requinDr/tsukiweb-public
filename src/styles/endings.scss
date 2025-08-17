@@ -8,7 +8,7 @@
 		grid-template-columns: repeat(auto-fit, minmax(min(204px, 24vmin), 1fr));
 		isolation: isolate;
 		min-width: 0;
-		gap: .6em;
+		gap: 10px;
 		place-content: start;
 		flex-grow: 0;
 

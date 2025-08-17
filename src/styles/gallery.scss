@@ -36,12 +36,12 @@
 
 	.gallery-container {
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(min(180px, 22vmin), 1fr));
-		gap: 8px;
+		grid-template-columns: repeat(auto-fill, minmax(min(176px, 100%), 1fr));
+		gap: 6px;
 		padding-bottom: 40px;
 
-		@media (max-width: 540px) or (max-height: 480px) {
-			grid-template-columns: repeat(auto-fill, minmax(min(104px, 30vmin), 1fr));
+		@media (max-width: 980px) or (max-height: 480px) {
+			grid-template-columns: repeat(auto-fill, minmax(min(134px, 32vmin), 1fr));
 		}
 
 		button {
