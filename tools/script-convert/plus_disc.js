@@ -12,6 +12,20 @@ import { generate } from './nscriptr_convert.js';
 //#endregion ###################################################################
 //#region                      FILE-SPECIFIC FIXES
 //##############################################################################
+function insertPageBreak(tokens, targetLine, offset = 0) {
+	const index = tokens.findIndex(t => t?.toString() === targetLine)
+	if (index < 0) return
+
+	const insertIndex = index + offset
+	if (insertIndex > 0) {
+		const previousToken = tokens[insertIndex - 1]
+		if (previousToken instanceof TextToken && previousToken.text.endsWith('@')) {
+			previousToken.text = previousToken.text.slice(0, -1)
+			tokens.splice(insertIndex, 0, new CommandToken(0, '\\', []))
+		}
+	}
+}
+
 const fixes = new Map(Object.entries({
     /**
      * 
@@ -24,23 +38,20 @@ const fixes = new Map(Object.entries({
                 tokens[i].text = '　[ruby text="つき"]月[ruby text="ひめ"]姫[ruby text="ほん"]本[ruby text="ぺん"]編のいずれかのエンディングに[ruby text="とう"]到[ruby text="たつ"]達した[ruby text="あと"]後に、[r]'
                 tokens[i+1].text = '[ruby text="いき"]息[ruby text="ぬ"]抜きとして[ruby text="たの"]楽しんでください。'
             }
+
+		insertPageBreak(tokens, '`  "[line=10]"@', -1)
 	},
 	'pd_geccha': (tokens)=> {
+		insertPageBreak(tokens, 'ld l,"tachi/aki_t02b",notrans,0', -3)
+		insertPageBreak(tokens, 'ld l,"tachi/his_t02",notrans,0', -6)
+		insertPageBreak(tokens, 'ld l,"tachi/koha_t12",notrans,0')
+		insertPageBreak(tokens, 'ld r,"tachi/koha_t14",notrans,0', 9)
+		insertPageBreak(tokens, 'ld l,"tachi/koha_t16",notrans,0', -3)
 	},
 	'pd_geccha2': (tokens)=> {
 	},
 	'pd_experiment' : (tokens) => {
-		// Add a page break around l156 because the page is too long
-		const targetLine = 'ld c,"tachi/koha_t02",crossfade,400';
-		const index = tokens.findIndex(t => t?.toString() == targetLine);
-	
-		if (index > 0) {
-			const previousToken = tokens[index - 1];
-			if (previousToken instanceof TextToken && previousToken.text.endsWith('@')) {
-				previousToken.text = previousToken.text.slice(0, -1);
-				tokens.splice(index, 0, new CommandToken(0, '\\', []));
-			}
-		}
+		insertPageBreak(tokens, 'ld c,"tachi/koha_t02",crossfade,400')
 	},
 }))
 
