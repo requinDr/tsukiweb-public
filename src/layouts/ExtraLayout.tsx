@@ -67,13 +67,11 @@ const ExtraLayout = ({ children }: PropsWithChildren) => {
 						active={currentPage === SCREEN.SCENES}>
 						{strings.extra.scenes}
 					</TitleMenuButton>
-					{import.meta.env.DEV &&
 					<TitleMenuButton
 						onClick={()=>navigate(SCREEN.PLUS_DISC)}
 						active={currentPage === SCREEN.PLUS_DISC}>
 						Plus-Disc
 					</TitleMenuButton>
-					}
 
 					<TitleMenuButton onClick={()=>navigate(SCREEN.TITLE)} className="back-button">
 						{`<<`} {strings.back}

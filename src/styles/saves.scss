@@ -201,7 +201,7 @@
 				align-items: center;
 				font-size: 1.3em;
 
-				&:hover {
+				&:hover, &:focus-visible {
 					box-shadow: var(--selected-shadow);
 					opacity: 1;
 				}
@@ -268,7 +268,7 @@
 			--color-stop-2: #77e190;
 			--color-stop-3: #ffff1c;
 		}
-		&:hover {
+		&:hover, &:focus-visible {
 			box-shadow: var(--selected-shadow);
 			opacity: 1;
 		}

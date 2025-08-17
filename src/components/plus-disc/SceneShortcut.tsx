@@ -9,7 +9,7 @@ type SceneProps = {
 }
 const SceneShortcut = ({title, images, onClick}: SceneProps) => {
 	return (
-		<div className="scene" onClick={onClick}>
+		<div className="scene" onClick={onClick} role="button" tabIndex={0}>
 			<GraphicsGroup
 				images={images}
 				resolution="sd"

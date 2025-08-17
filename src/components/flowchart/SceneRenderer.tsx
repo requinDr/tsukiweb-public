@@ -50,7 +50,7 @@ const VisibleScene = ({ node, onClick }: SceneProps) => {
 	const { isOpen, setIsOpen, refs, floatingStyles, getReferenceProps } = useScenePopover()
 
 	const onAction = (e: React.MouseEvent | React.KeyboardEvent) => {
-		if (e instanceof KeyboardEvent) {
+		if ('key' in e) {
 			if (e.key !== "Enter" || e.currentTarget !== e.target)
 				return
 		}
