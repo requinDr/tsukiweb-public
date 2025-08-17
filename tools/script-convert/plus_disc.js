@@ -12,6 +12,7 @@ import { generate } from './nscriptr_convert.js';
 //#endregion ###################################################################
 //#region                      FILE-SPECIFIC FIXES
 //##############################################################################
+
 function insertPageBreak(tokens, targetLine, offset = 0) {
 	const index = tokens.findIndex(t => t?.toString() === targetLine)
 	if (index < 0) return
@@ -23,6 +24,16 @@ function insertPageBreak(tokens, targetLine, offset = 0) {
 			previousToken.text = previousToken.text.slice(0, -1)
 			tokens.splice(insertIndex, 0, new CommandToken(0, '\\', []))
 		}
+	}
+}
+
+function insertDelay(tokens, targetLine, delay, offset = 0) {
+	const index = tokens.findIndex(t => t?.toString() === targetLine)
+	if (index < 0) return
+
+	const insertIndex = index + offset
+	if (insertIndex > 0) {
+        tokens.splice(insertIndex, 0, new CommandToken(0, 'wait', [delay]))
 	}
 }
 
@@ -49,6 +60,9 @@ const fixes = new Map(Object.entries({
 		insertPageBreak(tokens, 'ld l,"tachi/koha_t16",notrans,0', -3)
 	},
 	'pd_geccha2': (tokens)=> {
+        insertDelay(tokens, 'bg "bg/s12",lcartain,1000', 1500, 1)
+        insertDelay(tokens, 'bg "bg/s13",tcartain,1000', 1500, 1)
+        insertDelay(tokens, 'bg "bg/s14",lcartain,1000', 1500, 1)
 	},
 	'pd_experiment' : (tokens) => {
 		insertPageBreak(tokens, 'ld c,"tachi/koha_t02",crossfade,400')
@@ -121,8 +135,8 @@ function processImgFile(args) {
         //'$c`[center]二日目[/center]`'; //Day 2
         //'$c`[center]三日目[/center]`'; //Day 3
         case 'yumizuka' : return '"bg/yumizuka"';
-        case 'スクロール19a' : return '"bg/スクロール19"'; //TODO align bottom
-        case 'スクロール19b' : return '"bg/スクロール19"'; //TODO align top
+        case 'スクロール19a' : return '"bg/scroll19"'; //TODO align bottom
+        case 'スクロール19b' : return '"bg/scroll19"'; //TODO align top
         case 'matu'   : return `"bg/matu"`; //TODO full-screen sprite. Change ld to bg
         case 'next'   : return null; // used at the end of the scene (ignore)
         case 'title_01' : return '"bg/title_01"'; // used during script
