@@ -32,9 +32,6 @@ docker build --build-arg VERSION=da4ea4f -t tsukiweb
 ```
 In your browser, navigate to http://localhost:8080 after deploying the container.
 
-## Roadmap
-A roadmap is available here https://github.com/requinDr/tsukiweb-public/wiki
-
 ## Contributing
 Anyone wanting to contribute can download the project and follow the roadmap, or do something else entirely.  
 You can find our [contributing guidelines here](https://github.com/requinDr/tsukiweb-public/blob/main/CONTRIBUTING.md)
@@ -42,6 +39,7 @@ You can find our [contributing guidelines here](https://github.com/requinDr/tsuk
 ## Useful links
 - [Adding a translation](https://github.com/requinDr/tsukiweb-public/wiki/Adding-a-translation)
 - [Recreating the ressources](https://github.com/requinDr/tsukiweb-public/wiki/Recreating-the-ressources)
+- [Roadmap](https://github.com/requinDr/tsukiweb-public/wiki/Roadmap)
 
 ## Project technologies
 - React (Vite)
