@@ -101,8 +101,10 @@ export async function fetchLogicBlock(label: string) : Promise<string[]> {
 		end = logicScript.length
 	}
 	lines = logicScript.substring(start, end).split('\n')
-	// add goto at the end in case the script intends on continuing to next block, 
-	lines.push(`goto ${nextLabel}`)
+	// add goto at the end in case the script intends on continuing to next block
+	const lastLine = lines.at(-1) as string
+	if (!(lastLine.startsWith('select') || lastLine.startsWith('goto')))
+		lines.push(`goto ${nextLabel}`)
 	return lines
 }
 

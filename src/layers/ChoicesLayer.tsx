@@ -45,6 +45,7 @@ function processSelect(setChoices: (choices: Choice[])=>void,
   onSelection.current = (choice)=> {
     //console.debug(choice)
     script.setNextLabel(choice.label)
+    script.skipCurrentBlock()
     onSelection.current = undefined
     setChoices([])
     onFinish()
