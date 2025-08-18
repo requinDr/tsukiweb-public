@@ -22,7 +22,8 @@
 			}
 		}
 		&.disabled {
-			filter: grayscale(1)
+			filter: brightness(0.6) grayscale(1);
+			pointer-events: none;
 		}
 		.fc-scene-content {
 			width: 100%;
