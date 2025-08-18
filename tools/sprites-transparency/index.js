@@ -2,6 +2,10 @@ import sharp from 'sharp'
 import fs from 'fs/promises'
 import path from 'path'
 
+// 1) Run once to create the input and output directories
+// 2) Place the jpg images in the "input" folder
+// 3) Run the script to process the images
+
 async function ensureDirectoryExists(dir) {
 	try {
 		await fs.access(dir)

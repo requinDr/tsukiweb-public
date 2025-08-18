@@ -2,6 +2,8 @@ import fs from 'fs'
 import path from 'path'
 import { isHexColor, saveSpritesheet, generateFlowchartImage } from './utils.js'
 
+// 1) Run to to create the spritesheet
+// Note: static/jp/image must contain the necessary image files
 
 const scenes = JSON.parse(fs.readFileSync('scenes-graphics.json', 'utf8'))
 const prefixPath = '../../public/static/jp/image/'
