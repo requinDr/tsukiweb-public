@@ -13,8 +13,7 @@ We welcome all contributions.
 7) The main browsers must be supported (Chromium-based browsers, Firefox, Safari) within the last 2 to 3 years updates.
 8) Every action done with a mouse should have an equivalent for touch screens.
 9) Actions shortcut can be changed to reflect common VNs shortcuts.
-10) The preprocess of the original script should be limited to what would apply to a maximum of Ponscript VN.
 
 ## Code
-- In-game layers are toggled using context. They are moved from back to front using CSS property `z-index`.
-- Assets have been separated from the repo.
+- The game original assets have been separated from the repo and shouldn't be commited to it.
+- `tsukiweb-common` should be used for any shared code or assets with future projects. No dependency outside of it or npm modules should be imported in it.
