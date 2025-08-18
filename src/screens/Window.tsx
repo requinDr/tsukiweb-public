@@ -263,6 +263,21 @@ const Window = () => {
 		new UserActionsHandler(script, layers, remountScript))
 	const [textboxStyle, setTextboxStyle] = useState<'adv' | 'nvl'>("nvl")
 
+	// ref so it doesn't change once leaving a context until component unmount
+	const show = useRef({
+		graphics: true,
+		history: true,
+		flowchart: !isPDScene(script.currentLabel ?? ""),
+		save: true,
+		load: true,
+		config: true,
+		title: true,
+
+		qSave: true,
+		qLoad: true,
+		copyScene: true,
+	})
+
 	useMemo(()=> {
 		if (history.empty) {
 			setTimeout(()=> {
@@ -272,6 +287,7 @@ const Window = () => {
 	}, [])
 	
 	useEffect(()=> {
+		show.current.flowchart = !isPDScene(script.currentLabel ?? "")
 		if (history.empty)
 			return
 		actionsHandler.onScriptChange(script)
@@ -323,22 +339,6 @@ const Window = () => {
 			}
 		}
 	}, [topLayer])
-	
-
-	// ref so it doesn't change once leaving a context until component unmount
-	const show = useRef({
-		graphics: true,
-		history: true,
-		flowchart: !isPDScene(script.currentLabel ?? ""),
-		save: true,
-		load: true,
-		config: true,
-		title: true,
-
-		qSave: true,
-		qLoad: true,
-		copyScene: true,
-	})
 
 //............ user inputs .............
 	const _createKeyMap = useCallback(()=> createKeyMap(layers), [])
