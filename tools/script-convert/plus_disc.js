@@ -4,6 +4,7 @@
  */
 import fs, { read } from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url'
 import { parseScript } from './parsers/kagScript.js';
 import { CommandToken, LabelToken, StrReader, TextToken, Token } from './parsers/utils.js'
 import { generate } from './nscriptr_convert.js';
@@ -478,7 +479,7 @@ function processToken(token, i, tokens) {
 }
 
 
-function main() {
+export function main() {
 	const path_prefix = '../../public/static/'
 	const outputDir = 'scenes'
 	const langs = [
@@ -550,4 +551,7 @@ function main() {
 	}
 }
 
-main()
+const __filename = fileURLToPath(import.meta.url)
+if (process.argv[1] === __filename) {
+    main()
+}

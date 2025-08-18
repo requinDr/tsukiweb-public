@@ -4,6 +4,7 @@
  */
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url'
 import { parseScript } from './parsers/nscriptr.js';
 import { CommandToken, ConditionToken, ErrorToken, LabelToken, ReturnToken, TextToken, Token } from './parsers/utils.js'
 import { generate } from './nscriptr_convert.js';
@@ -458,15 +459,7 @@ function raw_fixes(language, text) {
 	}
 }
 
-function main() {
-	// Process a single fullscript file
-	// const inputFile = '../../public/static/jp/fullscript_jp.txt';
-	// const outputDir = './output-jp';
-
-	// const txt = fs.readFileSync(inputFile, 'utf-8')
-	// const tokens = parseScript(txt);
-	// generate(outputDir, tokens, getLabelFile, tsukihime_fixes)
-
+export function main() {
 	// Process all fullscript files
 	const path_prefix = '../../public/static/'
 	const outputDir = 'scenes'
@@ -511,5 +504,8 @@ function main() {
 	console.log(`> Done.`)
 }
 
-main()
+const __filename = fileURLToPath(import.meta.url)
+if (process.argv[1] === __filename) {
+	main()
+}
 export { LOGIC_FILE }
