@@ -92,9 +92,11 @@ const VisibleScene = ({ node, onClick }: SceneProps) => {
 				id="scene-popover">
 				<motion.div
 					className="scene-popover"
-					initial={{opacity: 0, scale: 0.95}}
-					animate={{opacity: 1, scale: 1}}>
-					<ScenePopover node={node} onClose={() => setIsOpen(false)} />
+					initial={{opacity: 0, scale: 0.9, transform: "translateY(-4px)"}}
+					animate={{opacity: 1, scale: 1, transform: "translateY(0)"}}
+					exit={{opacity: 0, scale: 0.9, transform: "translateY(-4px)"}}
+				>
+					<ScenePopover node={node} />
 				</motion.div>
 			</div>,
 			document.getElementById("root") as HTMLElement
