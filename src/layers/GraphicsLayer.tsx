@@ -10,6 +10,7 @@ import { objectMatch, splitFirst } from "@tsukiweb-common/utils/utils";
 import { settings } from "utils/settings";
 import { wordImage } from "translation/assets";
 import cg from "utils/gallery";
+import { displayMode } from "utils/display";
 
 type Quake = {
 	duration: number
@@ -50,12 +51,17 @@ function processImageCmd(onTransitionStart: VoidFunction|undefined,
 						 setTransition: (t: GraphicsTransition|undefined)=>void,
 						 arg: string, cmd: string, script: ScriptPlayer,
 						 onFinish: VoidFunction) {
-	let pos = 'bg', image = '', effect = '', time = ''
+	let pos = 'bg', image = '', effect = '', time = '', rest: string[] = []
 	switch (cmd) {
-		case 'bg' : [image, effect, time] = arg.split(/,(?!.*`)/); break; // ignore commas inside image
+		case 'bg' : [image, effect, time, ...rest] = arg.split(/,(?!.*`)/); break; // ignore commas inside image
 		case 'ld' : [pos, image, effect, time] = arg.split(','); break;
 		case 'cl' : [pos, effect, time] = arg.split(','); break;
 		default : throw Error(`unknown image command ${cmd} ${arg}`)
+	}
+	const positions = ['top', 'bottom', 'center']
+	if (rest.length > 0 && positions.some(x=>rest.includes(x))) {
+		const alignment = rest.find(x=>positions.includes(x)) || 'center'
+		displayMode.bgAlignment = alignment
 	}
 	const _onFinish = ()=> {
 		if (pos == 'a')

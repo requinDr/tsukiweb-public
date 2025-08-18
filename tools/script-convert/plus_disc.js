@@ -37,6 +37,13 @@ function insertDelay(tokens, targetLine, delay, offset = 0) {
 	}
 }
 
+function replaceLine(tokens, targetLine, newLine, offset = 0) {
+	const index = tokens.findIndex(t => t?.toString() === targetLine)
+	if (index < 0) return
+
+	tokens[index + offset] = new CommandToken(0, newLine, [])
+}
+
 const fixes = new Map(Object.entries({
     /**
      * 
@@ -63,6 +70,9 @@ const fixes = new Map(Object.entries({
         insertDelay(tokens, 'bg "bg/s12",lcartain,1000', 1500, 1)
         insertDelay(tokens, 'bg "bg/s13",tcartain,1000', 1500, 1)
         insertDelay(tokens, 'bg "bg/s14",lcartain,1000', 1500, 1)
+        replaceLine(tokens, 'bg "bg/scroll19",tshutter,1000', 'bg "bg/scroll19",tshutter,1000,bottom')
+        replaceLine(tokens, 'bg "bg/scroll19",bscroll,4000', 'bg "bg/scroll19",bscroll,4000,top')
+        replaceLine(tokens, 'bg #ffffff,lexpl,4000', 'bg #ffffff,lexpl,4000,center')
 	},
 	'pd_experiment' : (tokens) => {
 		insertPageBreak(tokens, 'ld c,"tachi/koha_t02",crossfade,400')
