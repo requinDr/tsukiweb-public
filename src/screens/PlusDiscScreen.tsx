@@ -1,7 +1,7 @@
 import '@styles/plus-disc.scss'
 import { SCREEN } from '../utils/display'
 import Cover from "../assets/images/plus-disc_cover.webp"
-import { MessageContainer, TabsComponent } from '@tsukiweb-common/ui-core'
+import { TabsComponent } from '@tsukiweb-common/ui-core'
 import useQueryParam from '@tsukiweb-common/hooks/useQueryParam'
 import * as motion from "motion/react-m"
 import { AnimatePresence, Variants } from 'motion/react'
@@ -43,9 +43,6 @@ const PlusDiscScreen = () => {
 						</p>
 					</div>
 				</div>
-				<MessageContainer style={{marginTop: '1rem'}}>
-					Work in progress
-				</MessageContainer>
 				<TabsComponent
 					tabs={[
 						{

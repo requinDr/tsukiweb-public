@@ -69,7 +69,7 @@
 					display: inline-flex;
 					column-gap: .6em;
 					flex-flow: wrap;
-					color: #bdbdbd;
+					color: var(--text-muted);
 					white-space: nowrap;
 				}
 				.chip {

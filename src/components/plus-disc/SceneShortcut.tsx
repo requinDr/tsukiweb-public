@@ -5,9 +5,10 @@ import { ReactNode } from "react"
 type SceneProps = {
 	title: ReactNode
 	images: Partial<Graphics>
+	viewed: boolean
 	onClick?: ()=>void
 }
-const SceneShortcut = ({title, images, onClick}: SceneProps) => {
+const SceneShortcut = ({title, images, viewed, onClick}: SceneProps) => {
 	return (
 		<div className="scene" onClick={onClick} role="button" tabIndex={0}>
 			<GraphicsGroup
@@ -16,7 +17,8 @@ const SceneShortcut = ({title, images, onClick}: SceneProps) => {
 				className='scene-image'
 			/>
 			<div className="scene-title">
-				{title}
+				{title}<br />
+				{viewed && <span className="viewed-indicator">Viewed</span>}
 			</div>
 		</div>
 	)

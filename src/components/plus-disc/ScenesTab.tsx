@@ -1,13 +1,14 @@
 import { PlusDiscSceneName } from "types"
 import SceneShortcut from "./SceneShortcut"
 import { playScene } from "utils/savestates"
+import { viewedScene } from "utils/settings"
 
 const ScenesTab = () => {
 
 	const play = (id: PlusDiscSceneName)=> {
 		playScene(id, {viewedOnly: false})
 	}
-	
+
 	return (
 		<div className="scenes-list">
 			<SceneShortcut
@@ -16,6 +17,7 @@ const ScenesTab = () => {
 					"bg": "bg/bg_59",
 					"r": "tachi/akira_02"
 				}}
+				viewed={viewedScene("pd_alliance")}
 				onClick={play.bind(undefined, "pd_alliance")}
 			/>
 
@@ -27,6 +29,7 @@ const ScenesTab = () => {
 					"c": "tachi/aki_t04b",
 					"r": "tachi/cel_t01a",
 				}}
+				viewed={viewedScene("pd_geccha")}
 				onClick={play.bind(undefined, "pd_geccha")}
 			/>
 
@@ -37,6 +40,7 @@ const ScenesTab = () => {
 					"l": "tachi/stk_t11",
 					"r": "tachi/neko_t01a",
 				}}
+				viewed={viewedScene("pd_geccha2")}
 				onClick={play.bind(undefined, "pd_geccha2")}
 			/>
 
@@ -46,6 +50,7 @@ const ScenesTab = () => {
 					"bg": "bg/bg_40a",
 					"c": "tachi/koha_t06",
 				}}
+				viewed={viewedScene("pd_experiment")}
 				onClick={play.bind(undefined, "pd_experiment")}
 			/>
 		</div>

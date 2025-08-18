@@ -53,6 +53,11 @@
 			.scene-title {
 				font-size: 1.2em;
 				padding: 1em;
+
+				.viewed-indicator {
+					font-size: 0.8em;
+					color: var(--text-muted);
+				}
 			}
 
 			&:after {
