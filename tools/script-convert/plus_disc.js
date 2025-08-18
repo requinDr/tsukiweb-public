@@ -71,6 +71,11 @@ const fixes = new Map(Object.entries({
         insertDelay(tokens, 'bg "bg/s12",lcartain,1000', 1500, 1)
         insertDelay(tokens, 'bg "bg/s13",tcartain,1000', 1500, 1)
         insertDelay(tokens, 'bg "bg/s14",lcartain,1000', 1500, 1)
+
+        insertDelay(tokens, 'bg "bg/s08",lcartain,1000', 1500, 1)
+        insertDelay(tokens, 'bg "bg/s09",bcartain,1000', 1500, 1)
+        insertDelay(tokens, 'bg "bg/s10",lcartain,1000', 1500, 1)
+
         replaceLine(tokens, 'bg "bg/scroll19",tshutter,1000', 'bg "bg/scroll19",tshutter,1000,bottom')
         replaceLine(tokens, 'bg "bg/scroll19",bscroll,4000', 'bg "bg/scroll19",bscroll,4000,top')
         replaceLine(tokens, 'bg #ffffff,lexpl,4000', 'bg #ffffff,lexpl,4000,center')
