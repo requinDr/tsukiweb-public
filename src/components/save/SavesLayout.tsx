@@ -162,7 +162,7 @@ const SavesLayer = ({variant, back}: Props) => {
 					}}
 				>
 					{rowVirtualizer.getVirtualItems()
-						.map(({index, start, size, key}) => {
+						.map(({index, start, key}) => {
 						const ss = saves[index]
 						const id = ss.id ?? ss.date
 						return (
@@ -178,7 +178,6 @@ const SavesLayer = ({variant, back}: Props) => {
 									onMouseEnter: setFocusedSave.bind(null, id),
 									style: {
 										transform: `translateY(${start}px)`,
-										height: `${size}px`,
 									}
 								}}
 							/>

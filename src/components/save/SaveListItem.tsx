@@ -20,6 +20,8 @@ const SaveListItem = ({id, saveState, onSelect, focusedSave, buttonProps}: SaveL
 	const graphics = jsonMerge(saveState.graphics ?? {},
 			lastPage.graphics ?? {bg: "#000"})
 
+	const isPd = lastPage.label && isPDScene(lastPage.label)
+
 	return (
 		<button
 			className={classNames("save-container", {active: id==focusedSave})}
@@ -42,16 +44,18 @@ const SaveListItem = ({id, saveState, onSelect, focusedSave, buttonProps}: SaveL
 						choice
 					</span>
 				}
-				{lastPage.label && isPDScene(lastPage.label) &&
-					<span className="chip chip__pd">
-						plus-disc
-					</span>
-				}
 
 				<div className="line">
 					<SaveSummary saveState={saveState}/>
 				</div>
 			</div>
+			{isPd &&
+				<span className="game-pd">
+					<div className="label">
+						plus-disc
+					</div>
+				</span>
+			}
 		</button>
 	)
 }

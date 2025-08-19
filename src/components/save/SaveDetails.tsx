@@ -8,6 +8,7 @@ import { strings } from "translation/lang"
 import classNames from "classnames"
 import { Regard } from "script/ScriptPlayer"
 import { jsonMerge } from "@tsukiweb-common/utils/utils"
+import { isPDScene } from "script/utils"
 
 type SaveDetailsProps = {
 	id?: number
@@ -21,6 +22,10 @@ const SaveDetails = ({id, saveState, deleteSave}: SaveDetailsProps)=> {
 	const graphics = jsonMerge(saveState?.graphics ?? {},
 			lastPage?.graphics ?? {bg: "#000"})
 	const regard = progress?.regard ?? {}
+
+	const isPd = lastPage?.label && isPDScene(lastPage.label)
+	//todo scene title instead of "Plus-Disc"
+
 	return (
 		<section className={classNames("info", { "preview-save": saveState !== undefined })}>		
 			{id != undefined && saveState != undefined && <>
@@ -29,7 +34,11 @@ const SaveDetails = ({id, saveState, deleteSave}: SaveDetailsProps)=> {
 						<GraphicsGroup images={graphics} />
 					}
 				</div>
-				{(phaseTitle || phaseDay) && 
+				{isPd ?
+					<div className="deta">
+						Plus-Disc
+					</div>
+				: (phaseTitle || phaseDay) && 
 					<div className="deta">
 						{phaseTitle && <div>{phaseTitle}</div>}
 						{phaseDay && <div>{phaseDay}</div>}

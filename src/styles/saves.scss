@@ -34,10 +34,14 @@
 		overflow-x: hidden;
 		letter-spacing: 1px;
 		padding-bottom: 80px;
+		transform: translate3d(0, 0, 0); //huge list on GPU
 
 		.virtual-list {
 			position: relative;
 			width: 100%;
+			.save-container {
+				will-change: transform;
+			}
 		}
 		.create, .import {
 			margin-bottom: 8px;
@@ -50,7 +54,6 @@
 			width: 100%;
 			display: flex;
 			flex-direction: row;
-			transition: all .2s ease-out;
 			height: 109px;
 			border-bottom: 1px solid transparent;
 			font-size: 1.1em;
@@ -81,9 +84,6 @@
 					&__choice {
 						background-color: #0073ff;
 					}
-					&__pd {
-						background-color: #ff1ded;
-					}
 				}
 
 				.line {
@@ -105,7 +105,7 @@
 				content: "";
 				position: absolute;
 				inset: 0 -4px;
-				transition: .2s;
+				transition: box-shadow .2s ease-out;
 			}
 
 			&.active::after {
@@ -122,6 +122,29 @@
 				color: #dddddd;
 				padding: 0.1em 0.5em 0.1em 4em;
 				background-image: linear-gradient(45deg, transparent 20%, #3300ff);
+			}
+
+			.game-pd {
+				position: absolute;
+				inset: 0;
+				right: -4px;
+				top: 1px;
+				border-image: linear-gradient(to left, #ff1ded, 1em, #ff1ded, 2em, transparent, 10em, transparent) 1;
+				border-width: 3px;
+				border-style: solid;
+				border-left-width: 0;
+				border-right-width: 0;
+
+				.label {
+					background-color: #ff1ded;
+					text-orientation: sideways;
+					writing-mode: vertical-rl;
+					text-align: center;
+					position: absolute;
+					top: -1px;
+					bottom: -1px;
+					right: 0;
+				}
 			}
 		}
 	}

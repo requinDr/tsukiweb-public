@@ -207,7 +207,7 @@ const ActionsButtons = ({script, show, close, qSave, qLoad}: ActionsButtonsProps
 				disabled={script.currentLabel?.startsWith("skip")}
 				title={script.currentLabel ?? ""}
 			>
-				<MdCopyAll style={{marginRight: 8}} /> {strings.menu["copy-scene-url"]}
+				{strings.menu["copy-scene-url"]}
 			</button>
 			}
 		</div>
