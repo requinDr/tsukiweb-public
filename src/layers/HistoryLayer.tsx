@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef  } from 'react';
+import { memo, useCallback, useEffect, useLayoutEffect, useRef  } from 'react';
 import { InGameLayersHandler } from '../utils/display';
 import { History, PageEntry } from '../utils/history';
 import { strings } from '../translation/lang';
@@ -26,7 +26,6 @@ const HistoryLayer = ({ display, history, onRewind, layers, show, divProps }: Pr
 	}, [])
 
 	const toggleView = useCallback(()=> {
-		//switch history and flowchart
 		if (layers.history)
 			layers.flowchart = true
 		else
@@ -91,7 +90,7 @@ const HistoryLayer = ({ display, history, onRewind, layers, show, divProps }: Pr
 }
 
 
-export default HistoryLayer
+export default memo(HistoryLayer)
 
 
 type HistoryDisplayProps = {
@@ -142,14 +141,13 @@ type FlowchartDisplayProps = {
 	onSceneSelect: (index: number)=>void
 }
 const FlowchartDisplay = ({ history, onSceneSelect }: FlowchartDisplayProps) => {
-	useEffect(()=> {
-		setTimeout(()=> {
-			const activeNode = document.querySelector(`.fc-scene.active`)
-			if (activeNode) {
-				activeNode.scrollIntoView({ behavior: "instant", block: "center" })
-			}
-		}, 0)
+	useLayoutEffect(()=> {
+		const activeNode = document.querySelector(`.fc-scene.active`)
+		if (activeNode) {
+			activeNode.scrollIntoView({ behavior: "instant", block: "center" })
+		}
 	}, [history])
+
 	return (
 		<div id="scenes">
 			<div className="flowchart-container">

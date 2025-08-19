@@ -1,14 +1,11 @@
 #scenes {
-	.page {
-		overflow: auto;
-		flex-direction: column;
-	}
 	.flowchart {
 		padding-top: 4em;
 		padding-bottom: max(60px, 10vh);
+		padding-inline: calc(var(--page-padding) / 2);
 		align-items: start;
-		height: auto;
-		max-height: none;
+		overflow: auto;
+		flex-direction: column;
 	}
 	.fc-scene {
 		&.active {
