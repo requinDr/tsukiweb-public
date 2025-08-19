@@ -226,7 +226,7 @@ const ExportWarning = () => {
 		const confirmed = await modalPromptService.confirm({
 			text: <>
 				{strings.saves["local-storage-warning"]}
-				<div style={{marginTop: "1em", color: "#daca04"}}>
+				<div style={{marginTop: "1em", color: "var(--text-muted)"}}>
 					{strings.menu.config} {">"} {strings.config["tab-advanced"]} {">"} {strings.config["data-export"]}
 				</div>
 			</>,
