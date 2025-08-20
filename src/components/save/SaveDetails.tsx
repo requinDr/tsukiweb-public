@@ -9,6 +9,7 @@ import classNames from "classnames"
 import { Regard } from "script/ScriptPlayer"
 import { jsonMerge } from "@tsukiweb-common/utils/utils"
 import { isPDScene } from "script/utils"
+import { PlusDiscSceneName } from "types"
 
 type SaveDetailsProps = {
 	id?: number
@@ -36,9 +37,9 @@ const SaveDetails = ({id, saveState, deleteSave}: SaveDetailsProps)=> {
 				</div>
 				{isPd ?
 					<div className="deta">
-						Plus-Disc
+						{strings.plus_disc_scenario[lastPage.label as PlusDiscSceneName]}
 					</div>
-				: (phaseTitle || phaseDay) && 
+				: (phaseTitle || phaseDay) &&
 					<div className="deta">
 						{phaseTitle && <div>{phaseTitle}</div>}
 						{phaseDay && <div>{phaseDay}</div>}
