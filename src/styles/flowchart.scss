@@ -29,17 +29,6 @@
 			&:hover, &:focus-visible, &:focus {
 				outline: none;
 			}
-
-			.fc-scene-title {
-				font-size: 3.52777px;
-				line-height: 1;
-				text-align: center;
-				text-anchor: middle;
-				dominant-baseline: middle;
-				stroke-width: 0.264583;
-				stroke-linejoin: round;
-				fill: rgb(179 179 179);
-			}
 		}
 		&.blur {
 			.fc-scene-content {
@@ -60,12 +49,20 @@
 				}
 			}
 		}
+
+		img {
+			opacity: 0;
+			transition: opacity .2s;
+
+			&.loaded {
+				opacity: 1;
+			}
+		}
 	}
 	.fc-link {
 		fill: none;
 		fill-opacity: 0.246809;
 		fill-rule: evenodd;
-		// not unlocked stroke: #1a465d;
 		stroke: #1187c5;
 		stroke-width: 0.6px;
 		stroke-linejoin: round;

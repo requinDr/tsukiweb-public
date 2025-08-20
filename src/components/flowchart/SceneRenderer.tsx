@@ -38,11 +38,9 @@ const HiddenScene = () => <></>
 
 const UnseenScene = ({ node }: { node: FcNode }) => (
 	<g className='fc-scene' id={node.id}
-		transform={`translate(${node.centerX}, ${node.centerY})`}>
-		<g className="fc-scene-content"
-			clipPath="url(#fc-scene-clip)">
-			<use href="#fc-scene-hidden" />
-		</g>
+		transform={`translate(${node.centerX}, ${node.centerY})`}
+		clipPath="url(#fc-scene-clip)">
+		<use href="#fc-scene-hidden" />
 	</g>
 )
 
@@ -59,17 +57,18 @@ const VisibleScene = ({ node, onClick }: SceneProps) => {
 		onClick?.(node.id as TsukihimeSceneName)
 	}
 
+	const disabled = node.state === FcNodeState.DISABLED
 	const classes = classNames("fc-scene", "unlocked", {
 		"blur": node.graph?.bg && cg.shouldBlur(cg.getNameFromPath(node.graph.bg)),
 		"active": node.active,
-		"disabled": node.state === FcNodeState.DISABLED
+		"disabled": disabled
 	})
 
 	return <>
 		<g className={classes} id={`fc-scene-${node.id}`}
 			transform={`translate(${node.centerX},${node.centerY})`}>
 			<g className={'fc-scene-content'}
-				tabIndex={0}
+				tabIndex={disabled ? -1 : 0}
 				clipPath="url(#fc-scene-clip)"
 				onClick={node.state !== FcNodeState.DISABLED ? onAction : undefined}
 				onKeyDown={node.state !== FcNodeState.DISABLED ? onAction : undefined}

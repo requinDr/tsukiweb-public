@@ -5,15 +5,13 @@ import { FcNode, SCENE_WIDTH, SCENE_HEIGHT } from "utils/flowchart"
 function onImgLoad(top: number, left: number, width: number, height: number,
 					 evt: SyntheticEvent<HTMLImageElement, Event>) {
 	const img = evt.target as HTMLImageElement
-	const imgWidth = img.naturalWidth
-	const imgHeight = img.naturalHeight
 	const ratio_x = SCENE_WIDTH / width
 	const ratio_y = SCENE_HEIGHT / height
 	img.style.marginLeft = `-${ratio_x * left}px`,
 	img.style.marginTop  = `-${ratio_y * top}px`
-	img.style.width      = `${imgWidth * ratio_x}px`
-	img.style.height     = `${imgHeight * ratio_y}px`
-	img.style.opacity = '1'
+	img.style.width      = `${img.naturalWidth * ratio_x}px`
+	img.style.height     = `${img.naturalHeight * ratio_y}px`
+	img.classList.add('loaded')
 }
 
 
@@ -32,7 +30,6 @@ const SceneImage = ({ node }: SceneImageProps) => {
 					onLoad={onImgLoad.bind(null, top, left, width, height)}
 					src={file}
 					alt={`Thumbnail for ${node.id}`}
-					style={{ opacity: 0, transition: "opacity .2s" }}
 				/>
 			</foreignObject>
 			<use href="#fc-scene-outline"/>
@@ -40,7 +37,6 @@ const SceneImage = ({ node }: SceneImageProps) => {
 	} else {
 		return <>
 			<use href="#fc-scene-background" />
-			<text className="fc-scene-title">{node.id}</text>
 			<use href="#fc-scene-outline"/>
 		</>
 	}
