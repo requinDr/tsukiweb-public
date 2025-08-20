@@ -170,6 +170,15 @@
 		"koha": "Kohaku",
 		"others": "Outros"
 	},
+	"plus_disc": {
+		"desc": [
+			"PLUS-DISC is a fan disc containing a short story and bonus, originally released in 2001.",
+			"Note: You should read Tsukihime first."
+		],
+		"viewed": "Viewed",
+		"gallery": "Galeria de Imagens",
+		"scenes": "Scenes"
+	},
 	"yes": "Sim",
 	"no": "Não",
 	"ok": "Ok",

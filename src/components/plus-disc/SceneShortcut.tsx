@@ -1,6 +1,7 @@
 import { Graphics } from "@tsukiweb-common/types"
 import GraphicsGroup from "components/molecules/GraphicsGroup"
 import { ReactNode } from "react"
+import { strings } from "translation/lang"
 
 type SceneProps = {
 	title: ReactNode
@@ -18,7 +19,7 @@ const SceneShortcut = ({title, images, viewed, onClick}: SceneProps) => {
 			/>
 			<div className="scene-title">
 				{title}<br />
-				{viewed && <span className="viewed-indicator">Viewed</span>}
+				{viewed && <span className="viewed-indicator">{strings.plus_disc.viewed}</span>}
 			</div>
 		</div>
 	)

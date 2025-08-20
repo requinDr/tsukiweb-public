@@ -8,6 +8,7 @@ import { AnimatePresence, Variants } from 'motion/react'
 import ScenesTab from 'components/plus-disc/ScenesTab'
 import GalleryTab from 'components/plus-disc/GalleryTab'
 import { useLanguageRefresh, useScreenAutoNavigate } from 'hooks'
+import { strings } from 'translation/lang'
 
 const container: Variants = {
 	hidden: { opacity: 0 },
@@ -38,19 +39,22 @@ const PlusDiscScreen = () => {
 							VNDB
 						</a>
 						<p>
-							PLUS-DISC is a fan disc containing a short story and bonus, originally released in 2001.<br />
-							Note: You should read Tsukihime first.
+							{strings.plus_disc.desc.map((line, index) => (
+								<span key={index}>
+									{line}<br />
+								</span>
+							))}
 						</p>
 					</div>
 				</div>
 				<TabsComponent
 					tabs={[
 						{
-							label: "Scenes",
+							label: strings.plus_disc.scenes,
 							value: "scenes"
 						},
 						{
-							label: "Gallery",
+							label: strings.plus_disc.gallery,
 							value: "gallery"
 						}
 					]}

@@ -151,5 +151,11 @@
     {"center": "[center][font=serif][i]製作総指揮/[left=3/]武内崇"},
     {"center": "[center][font=serif][i][left=5/]製作/[left=3/]TYPE-MOON"},
     {"bottom": "[right][font=serif][noline][color=black][copy/] 2000 TYPE-MOON All right reserved.", "delay": 21500, "bg": "#ffffff"}
-  ]
+  ],
+  "plus_disc_scenario": {
+    "pd_alliance": "Alliance of Illusionary Eyes",
+    "pd_geccha": "Geccha",
+    "pd_geccha2": "Geccha 2",
+    "pd_experiment": "Kinoko's Masterpiece Experimental Theater"
+  }
 }

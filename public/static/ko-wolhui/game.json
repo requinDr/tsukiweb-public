@@ -152,5 +152,11 @@
     {"center": "[center][font=serif]Production Director /[left=3/]Takeuchi Takashi"},
     {"center": "[center][font=serif][left=5/]Produced by /[left=3/]TYPE-MOON"},
     {"bottom": "[right][font=serif][noline][color=black][copy/] 2000 TYPE-MOON All right reserved.", "delay": 21500, "bg": "#ffffff"}
-  ]
+  ],
+  "plus_disc_scenario": {
+    "pd_alliance": "Alliance of Illusionary Eyes",
+    "pd_geccha": "Geccha",
+    "pd_geccha2": "Geccha 2",
+    "pd_experiment": "Kinoko's Masterpiece Experimental Theater"
+  }
 }

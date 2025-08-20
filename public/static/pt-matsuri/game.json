@@ -153,5 +153,11 @@
     {"center": "[center][font=serif][left=5/]Produzido por /[left=3/]TYPE-MOON"},
 
     {"bottom": "[right][font=serif][noline][color=black][copy/] 2000 TYPE-MOON Todos os direitos reservados.", "delay": 21500, "bg": "#ffffff"}
-  ]
+  ],
+  "plus_disc_scenario": {
+    "pd_alliance": "Aliança dos Olhos Ilusórios",
+    "pd_geccha": "Geccha",
+    "pd_geccha2": "Geccha 2",
+    "pd_experiment": "Teatro experimental:Obra-prima de Kinoko"
+  }
 }

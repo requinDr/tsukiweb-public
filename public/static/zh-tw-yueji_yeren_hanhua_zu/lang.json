@@ -170,6 +170,15 @@
 		"koha": "琥珀",
 		"others": "其他"
 	},
+	"plus_disc": {
+		"desc": [
+			"PLUS-DISC is a fan disc containing a short story and bonus, originally released in 2001.",
+			"Note: You should read Tsukihime first."
+		],
+		"viewed": "Viewed",
+		"gallery": "畫廊",
+		"scenes": "Scenes"
+	},
 	"yes": "是",
 	"no": "否",
 	"ok": "是",
