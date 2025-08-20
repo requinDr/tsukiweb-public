@@ -35,31 +35,33 @@ const SaveDetails = ({id, saveState, deleteSave}: SaveDetailsProps)=> {
 						<GraphicsGroup images={graphics} />
 					}
 				</div>
-				{isPd ?
-					<div className="deta">
-						{strings.plus_disc_scenario[lastPage.label as PlusDiscSceneName]}
-					</div>
-				: (phaseTitle || phaseDay) &&
-					<div className="deta">
-						{phaseTitle && <div>{phaseTitle}</div>}
-						{phaseDay && <div>{phaseDay}</div>}
-					</div>
-				}
+				<div className="save-details-content">
+					{isPd ?
+						<div className="deta">
+							{strings.plus_disc_scenario[lastPage.label as PlusDiscSceneName]}
+						</div>
+					: (phaseTitle || phaseDay) &&
+						<div className="deta">
+							{phaseTitle && <div>{phaseTitle}</div>}
+							{phaseDay && <div>{phaseDay}</div>}
+						</div>
+					}
 
-				<div className="affection">
-					<AffectionTable regard={regard} />
-				</div>
+					<div className="affection">
+						<AffectionTable regard={regard} />
+					</div>
 
-				<div className="actions">
-					<Tooltip id="tooltip" className="tooltip" delayShow={800} />
-					<button onClick={deleteSave.bind(null, id)}
-						data-tooltip-id="tooltip" data-tooltip-content="Delete" data-tooltip-place="top" data-tooltip-position-strategy="fixed">
-						<MdDeleteOutline />
-					</button>
-					<button onClick={() => savesManager.exportSave(id)}
-						data-tooltip-id="tooltip" data-tooltip-content="Download" data-tooltip-place="top" data-tooltip-position-strategy="fixed">
-						<MdOutlineFileDownload />
-					</button>
+					<div className="actions">
+						<Tooltip id="tooltip" className="tooltip" delayShow={800} />
+						<button onClick={deleteSave.bind(null, id)}
+							data-tooltip-id="tooltip" data-tooltip-content="Delete" data-tooltip-place="top" data-tooltip-position-strategy="fixed">
+							<MdDeleteOutline />
+						</button>
+						<button onClick={() => savesManager.exportSave(id)}
+							data-tooltip-id="tooltip" data-tooltip-content="Download" data-tooltip-place="top" data-tooltip-position-strategy="fixed">
+							<MdOutlineFileDownload />
+						</button>
+					</div>
 				</div>
 			</>}
 		</section>
