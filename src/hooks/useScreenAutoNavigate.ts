@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useLayoutEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import { observe, unobserve } from "@tsukiweb-common/utils/Observer"
 import { displayMode, SCREEN } from "utils/display"
@@ -11,7 +11,7 @@ import { displayMode, SCREEN } from "utils/display"
  */
 export function useScreenAutoNavigate(currentScreen: SCREEN) {
 	const navigate = useNavigate()
-	useEffect(()=> {
+	useLayoutEffect(()=> {
 		displayMode.screen = currentScreen
 		observe(displayMode, 'screen', navigate,
 				{ filter: (s)=> s != currentScreen })
