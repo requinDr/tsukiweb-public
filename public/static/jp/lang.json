@@ -42,7 +42,7 @@
 			"everafter": {"name": "Ever After (2002)", "path": ["./CD_everafter/track%.webm"]},
 			"tsukibako": {"name": "Tsuki-Bako (2003)", "path": ["./CD_tsukibako/track%.webm"]}
 		},
-		"waves-path": ["./wave/se_%.webm"],
+		"waves-path": ["./wave/%.webm"],
 		"waves-pd-path": ["./wave-pd/%.webm"]
 	},
 	"disclaimer": [
