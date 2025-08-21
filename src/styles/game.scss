@@ -41,6 +41,7 @@
 	}
 	#layer-graphics {
 		z-index: 0;
+		overflow: hidden;
 	}
 	#layer-text {
 		@extend %layer-text;
