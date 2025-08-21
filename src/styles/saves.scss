@@ -151,13 +151,14 @@
 
 	.info {
 		grid-area: info;
-		padding: 0;
-		scrollbar-gutter: unset;
-		overflow: hidden;
+		overflow-y: auto;
+		scrollbar-gutter: stable;
 		display: flex;
 		flex-direction: column;
 		font-size: 1.2em;
 		border-bottom: 2px solid var(--separator);
+		position: relative;
+		isolation: isolate;
 
 		&.preview-save {
 			border-left: 2px solid var(--separator);
@@ -171,8 +172,7 @@
 		.save-details-content {
 			display: flex;
 			flex-direction: column;
-			overflow-x: hidden;
-			overflow-y: auto;
+			flex: 1;
 		}
 
 		.deta {
@@ -183,8 +183,6 @@
 		}
 
 		.affection {
-			margin-top: 1em;
-
 			.affection-table {
 				width: 100%;
 				border-collapse: collapse;
@@ -197,14 +195,14 @@
 
 					&.name {
 						padding-left: 1.2em;
-						width: 110px;
+						width: 100px;
 					}
 					&.hearts {
-						padding-top: 0.6em;
+						padding-top: .6em;
 						padding-right: .6em;
 						display: flex;
 						align-items: center;
-						column-gap: 0.4em;
+						column-gap: 0.2em;
 						row-gap: 0.2em;
 						flex-wrap: wrap;
 					}
@@ -239,43 +237,31 @@
 		// phone landscape
 		@media screen and (max-height: 500px) and (orientation: landscape) {
 			&.preview-save {
-				border-left: none;
 				border-bottom: 2px solid var(--separator);
 			}
-		}
-		// phone portrait
-		@media screen and (max-width: 760px) and (orientation: portrait) {
-			&.preview-save {
-				border-left: none;
+			.actions {
+				padding-right: .5em;
+				padding-bottom: .5em;
 			}
 		}
-		
+
+		// phone landscape or phone portrait
 		@media screen and (max-width: 760px) and (orientation: portrait),
 		       screen and (max-height: 500px) and (orientation: landscape) {
 			&.preview-save {
-				position: relative;
-				* {
-					z-index: 1;
-				}
+				border-left: none;
+			}
+			.save-details-content {
+				overflow-y: auto;
 			}
 			.graphics-wrapper {
 				position: absolute;
 				inset: 0;
-				opacity: 0.2;
+				opacity: 0.25;
 				overflow: hidden;
-				z-index: 0;
-
-				.graphics {
-					position: absolute;
-					top: 50%;
-					left: 50%;
-					min-width: 100%;
-					min-height: 100%;
-					transform: translate(-50%,-50%);
-				}
 			}
-			.affection {
-				margin-top: 0;
+			.save-details-content {
+				z-index: 1;
 			}
 		}
 	}

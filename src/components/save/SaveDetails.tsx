@@ -25,7 +25,6 @@ const SaveDetails = ({id, saveState, deleteSave}: SaveDetailsProps)=> {
 	const regard = progress?.regard ?? {}
 
 	const isPd = lastPage?.label && isPDScene(lastPage.label)
-	//todo scene title instead of "Plus-Disc"
 
 	return (
 		<section className={classNames("info", { "preview-save": saveState !== undefined })}>		
