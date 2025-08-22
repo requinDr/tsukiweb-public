@@ -7,20 +7,16 @@ import { Tooltip } from 'react-tooltip'
 import { settings } from 'utils/settings'
 import MainEnding from 'components/endings/MainEnding'
 import Oshiete from 'components/endings/Oshiete'
-import { viewedScene } from "utils/settings"
 import { noBb } from '@tsukiweb-common/utils/Bbcode'
 import classNames from 'classnames'
 import { useScreenAutoNavigate, useLanguageRefresh } from "hooks"
+import useEclipseUnlocked from "hooks/useEclipseUnlocked"
 
 
 const EndingsScreen = () => {
 	useScreenAutoNavigate(SCREEN.ENDINGS)
 	useLanguageRefresh()
-
-	const sawAllEndings = settings.unlockEverything || Object.values(endings).every(e => e.seen)
-	const sawEclipse = settings.unlockEverything || viewedScene("eclipse")
-
-	const eclipseUnlocked = sawAllEndings && !sawEclipse
+	const { sawEclipse, eclipseUnlocked } = useEclipseUnlocked()
 
 	return (
 		<div className={styles.pageContent} id="endings">
@@ -42,7 +38,7 @@ const EndingsScreen = () => {
 					)}
 
 					<MainEnding
-						unlocked={settings.unlockEverything || viewedScene("eclipse") || eclipseUnlocked}
+						unlocked={sawEclipse || eclipseUnlocked}
 						ending={{
 							id: "eclipse",
 							char: "",

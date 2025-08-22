@@ -1,15 +1,12 @@
-import { useMemo } from 'react'
 import tsukiLogo from "../assets/images/tsukihime-logo.webp"
 import moon from "../assets/images/moon.webp"
 import '@styles/title-menu.scss'
 import { SCREEN } from '../utils/display'
 import * as motion from "motion/react-m"
 import { continueGame, newGame, savesManager } from '../utils/savestates'
-import { viewedScene } from "utils/settings"
 import { strings } from "../translation/lang"
 import { MdOutlineVolumeOff, MdOutlineVolumeUp } from 'react-icons/md'
 import { settings } from '../utils/settings'
-import { endings } from '../utils/endings'
 import AppInfo from '../components/title-menu/AppInfo'
 import TranslationSwitch from '../components/title-menu/TranslationSwitch'
 import { useObserved } from '@tsukiweb-common/utils/Observer'
@@ -17,6 +14,7 @@ import { useNavigate } from 'react-router-dom'
 import history from 'utils/history'
 import { TitleMenuButton } from '@tsukiweb-common/ui-core'
 import { useScreenAutoNavigate, useLanguageRefresh } from 'hooks'
+import useEclipseUnlocked from 'hooks/useEclipseUnlocked'
 
 const img = {
 	src: moon,
@@ -29,12 +27,7 @@ const TitleMenuScreen = () => {
 	useScreenAutoNavigate(SCREEN.TITLE)
 	const [conf] = useObserved(settings.volume, 'master')
 	useLanguageRefresh()
-
-	const [allEndingsSeen, eclipseSeen] = useMemo(()=> {
-		const allEndingsSeen = settings.unlockEverything || Object.values(endings).every(e=>e.seen)
-		const eclipseSeen = settings.unlockEverything || viewedScene("eclipse")
-		return [allEndingsSeen, eclipseSeen]
-	}, [settings.completedScenes, settings.unlockEverything])
+	const { eclipseUnlocked } = useEclipseUnlocked()
 
 	return (
 		<motion.div
@@ -82,7 +75,7 @@ const TitleMenuScreen = () => {
 						{strings.title.config}
 					</TitleMenuButton>
 
-					<TitleMenuButton onClick={() => navigate(SCREEN.GALLERY)} attention={allEndingsSeen && !eclipseSeen}>
+					<TitleMenuButton onClick={() => navigate(SCREEN.GALLERY)} attention={eclipseUnlocked}>
 						{strings.title.extra}
 					</TitleMenuButton>
 				</div>

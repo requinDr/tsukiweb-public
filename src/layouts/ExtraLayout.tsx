@@ -1,19 +1,18 @@
 import * as motion from "motion/react-m"
-import { PropsWithChildren, useEffect, useMemo } from "react"
+import { PropsWithChildren, useEffect } from "react"
 import "@styles/extra.scss"
 import { strings } from "translation/lang"
 import { displayMode, SCREEN } from "utils/display"
-import { viewedScene } from "utils/settings"
 import { useLocation, useNavigate } from "react-router-dom"
-import { endings } from "utils/endings"
-import { settings } from "utils/settings"
 import { TitleMenuButton } from "@tsukiweb-common/ui-core"
 import { useLanguageRefresh } from "hooks/useLanguageRefresh"
+import useEclipseUnlocked from "hooks/useEclipseUnlocked"
 
 const ExtraLayout = ({ children }: PropsWithChildren) => {
 	const navigate = useNavigate()
 	const location = useLocation()
 	useLanguageRefresh()
+	const { eclipseUnlocked } = useEclipseUnlocked()
 
 	function back() {
 		displayMode.screen = SCREEN.TITLE
@@ -30,12 +29,6 @@ const ExtraLayout = ({ children }: PropsWithChildren) => {
 			window.removeEventListener("keydown", handleKeyDown)
 		}
 	}, [])
-
-	const [allEndingsSeen, eclipseSeen] = useMemo(()=> {
-		const allEndingsSeen = settings.unlockEverything || Object.values(endings).every(e=>e.seen)
-		const eclipseSeen = settings.unlockEverything || viewedScene("eclipse")
-		return [allEndingsSeen, eclipseSeen]
-	}, [settings.completedScenes, settings.unlockEverything])
 
 	const currentPage = "/" + location.pathname.split("/")[1]
 
@@ -59,7 +52,7 @@ const ExtraLayout = ({ children }: PropsWithChildren) => {
 					<TitleMenuButton
 						onClick={()=>navigate(SCREEN.ENDINGS)}
 						active={currentPage === SCREEN.ENDINGS}
-						attention={allEndingsSeen && !eclipseSeen}>
+						attention={eclipseUnlocked}>
 						{strings.extra.endings}
 					</TitleMenuButton>
 					<TitleMenuButton
