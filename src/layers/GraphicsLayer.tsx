@@ -63,23 +63,25 @@ function processImageCmd(onTransitionStart: VoidFunction|undefined,
 		const alignment = rest.find(x=>positions.includes(x)) || 'center'
 		displayMode.bgAlignment = alignment
 	}
+	if (image)
+		image = extractImage(image)
+	const to = (pos == 'a') ? {l: "", c: "", r: ""} : {[pos]: image}
 	const _onFinish = ()=> {
-		if (pos == 'a')
-			script.graphics = {l: "", c: "", r: ""}
-		else if (pos == 'bg') {
-			script.graphics = {bg: image, l: "", c: "", r: ""}
-		} else {
-			script.graphics[pos as SpritePos] = image
+		if (!objectMatch(script.graphics, to)) {
+			if (pos == 'a')
+				script.graphics = {l: "", c: "", r: ""}
+			else if (pos == 'bg') {
+				script.graphics = {bg: image, l: "", c: "", r: ""}
+			} else {
+				script.graphics[pos as SpritePos] = image
+			}
+			setTransition(undefined)
+			onTransitionEnd?.()
 		}
-		setTransition(undefined)
-		onTransitionEnd?.()
 		onFinish()
 	}
 
 	// get image
-	if (image)
-		image = extractImage(image)
-	const to = (pos == 'a') ? {l: "", c: "", r: ""} : {[pos]: image}
 	if (!objectMatch(script.graphics, to)) {
 		setTransition({
 			to,

@@ -197,7 +197,7 @@ export class ScriptPlayer extends ScriptPlayerBase<LabelName> {
         return {
             page: this.currentBlock.page ?? 0,
             label: this.currentLabel as LabelName,
-            graphics: this.graphics,
+            graphics: {...this.graphics},
             audio: this.audio,
             phase: this.phase,
             textPrefix: this.textPrefix,
