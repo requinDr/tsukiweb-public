@@ -66,11 +66,9 @@ const ConfigAudioTab = () => {
 								const sign = negative(conf.volume[key]) ? -1 : 1
 								updateSubValue('volume', key, sign * parseInt(e.target.value))
 							}} />
-						<span className="icon"><MdOutlineVolumeUp /></span>
-
-						<button className="mute"
+						<button className="icon mute"
 							onClick={()=> updateSubValue('volume', key, -conf.volume[key])}>
-							{negative(conf.volume[key]) ? <MdOutlineVolumeOff aria-label="mute" /> : <MdOutlineVolumeUp aria-label="unmute" />}
+							{negative(conf.volume[key]) ? <MdOutlineVolumeOff aria-label="mute" className="off" /> : <MdOutlineVolumeUp aria-label="unmute" />}
 						</button>
 					</div>
 				</ConfigItem>
