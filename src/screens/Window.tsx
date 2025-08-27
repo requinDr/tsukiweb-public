@@ -98,7 +98,7 @@ const Window = () => {
 		}
 		const {track, looped_se} = script.audio
 		if (track && track.length > 0)
-			gameAudio.track.play(track)
+			gameAudio.track.play(track, {loop: true})
 		else
 			gameAudio.track.stop()
 		
