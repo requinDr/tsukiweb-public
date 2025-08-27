@@ -35,7 +35,7 @@ const getImgDetails = (image: string) => {
 		const unlockIds = cg.getImg(alt).unlockIds || []
 		unlockIds.forEach(unlockId => {
 			if (!shownAlts.includes(unlockId))
-			shownAlts = [...shownAlts, unlockId]
+				shownAlts = [...shownAlts, unlockId]
 		})
 	})
 

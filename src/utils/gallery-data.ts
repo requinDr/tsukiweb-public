@@ -120,7 +120,7 @@ export const GALLERY_IMAGES: Record<string, GalleryImg> = {
 	"event/his_e02b2":{ name: "his_e02b2", group: "his", altOf: "event/his_e02b", source: "unused" },
 	"event/his_e08" : { name: "his_e08" , group: "his" },  
 	"event/his_e03" : { name: "his_e03" , group: "his" },
-	"event/his_e04" : { name: "his_e04" , group: "his", unlockIds: ["event/his01"] },
+	"event/his_e04" : { name: "his_e04" , group: "his", unlockIds: ["half-moon/his01"] },
 	"event/his_e05" : { name: "his_e05" , group: "his" },
 	"event/his_e09" : { name: "his_e09" , group: "his" },  
 	"event/his_e06" : { name: "his_e06" , group: "his" },
