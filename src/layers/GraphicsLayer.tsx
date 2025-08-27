@@ -27,7 +27,7 @@ export function extractImage(image: string) {
 		const [dir, name] = image.split('/')
 		
 		// Save to gallery if it's a new image
-		if (cg.getPath(name) == image && !cg.isUnlocked(image)) {
+		if (cg.isInGallery(image) && !cg.isUnlocked(image)) {
 			settings.eventImages.push(image)
 		}
 

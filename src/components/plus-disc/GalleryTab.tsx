@@ -1,15 +1,12 @@
 import GalleryImage from "components/gallery/GalleryImage"
 import { useMemo } from "react"
-import { Fragment } from "react/jsx-runtime"
-import { imageSrc } from "translation/assets"
-import { GalleryImg } from "types"
 import {cgPd} from "utils/gallery"
 import { GALLERY_IMAGES_PD } from "utils/gallery-data"
 import { settings, viewedScene } from "utils/settings"
 
 
 const GalleryTab = () => {
-	const images: GalleryImg[] = Object.values(GALLERY_IMAGES_PD)
+	const gallery: string[] = Object.keys(GALLERY_IMAGES_PD)
 
 	const galleryUnlocked = useMemo(()=> {
 		return settings.unlockEverything || viewedScene("pd_geccha2")
@@ -18,22 +15,19 @@ const GalleryTab = () => {
 	return (
 		<div className="gallery-container">
 			{galleryUnlocked
-			? images.map(img => {
-					const thumbSrc = imageSrc(cgPd.getPath(img?.name), 'thumb')
+			? gallery.map(img => {
 					return (
-						<Fragment key={img.name}>
-							<GalleryImage
-								image={img}
-								src={thumbSrc}
-								gallery={images}
-								galleryUnlocked={images}
-								blurred={cgPd.shouldBlur(img.name)}
-								imagePath={cgPd.getPath}
-							/>
-						</Fragment>
+						<GalleryImage
+							key={img}
+							image={img}
+							gallery={gallery}
+							galleryUnlocked={gallery}
+							blurred={cgPd.shouldBlur(img)}
+							getGalleryImg={cgPd.getImg}
+						/>
 					)
 				})
-			: Array.from({length: images.length}).map((_, index) => (
+			: Array.from({length: gallery.length}).map((_, index) => (
 				<div className="placeholder" key={index} />
 			))}
 		</div>

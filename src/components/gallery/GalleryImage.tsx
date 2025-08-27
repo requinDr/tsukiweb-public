@@ -17,30 +17,32 @@ interface CustomSlideImage extends SlideImage {
 	source?: GalleryImg['source']
 }
 
-
 type GalleryImageProps = {
-	image: GalleryImg
-	src: string
-	gallery: GalleryImg[]
-	galleryUnlocked?: GalleryImg[]
+	image: string
+	gallery: string[]
+	galleryUnlocked?: string[]
 	blurred?: boolean
 	showTotal?: boolean
-	imagePath: (img: string) => string
+	getGalleryImg: (name: string) => GalleryImg
 }
-const GalleryImage = ({image, src, gallery = [], galleryUnlocked = [], blurred = false, showTotal, imagePath}: GalleryImageProps) => {
+const GalleryImage = ({image, gallery = [], galleryUnlocked = [], blurred = false, showTotal, getGalleryImg}: GalleryImageProps) => {
 	const [open, setOpen] = useState(false)
 	const isSmallLandscape = useMediaQuery("(orientation: landscape) and (max-height: 480px)")
 
 	const slides: CustomSlideImage[] = useMemo(() => {
-		return gallery.map(img =>
-			galleryUnlocked.includes(img) ?
-				({
-					src: avif.isSupported ? avif.replaceExtension(imageSrc(imagePath(img.name), 'hd')) : imageSrc(imagePath(img.name), 'hd'),
-					alt: img.name,
-					source: img.source ? img.source : undefined,
-				})
-				: ({src: ""})
-		)
+		return gallery.map(img => {
+			if (galleryUnlocked.includes(img)) {
+				const src = imageSrc(img, 'hd')
+				const galleryImg = getGalleryImg(img)
+				return {
+					src: avif.isSupported ? avif.replaceExtension(src) : src,
+					alt: galleryImg.name,
+					source: galleryImg.source ?? undefined,
+				}
+			} else {
+				return { src: "" }
+			}
+		})
 	}, [galleryUnlocked])
 
 	useEffect(() => {
@@ -61,6 +63,9 @@ const GalleryImage = ({image, src, gallery = [], galleryUnlocked = [], blurred =
 		}
 	}, [open])
 
+	const galleryImg = getGalleryImg(image)
+	const src = imageSrc(image, 'thumb')
+
 	return (
 		<>
 		<button onClick={() => setOpen(true)}>
@@ -68,8 +73,8 @@ const GalleryImage = ({image, src, gallery = [], galleryUnlocked = [], blurred =
 				<source srcSet={avif.replaceExtension(src)} type="image/avif"/>
 				<img
 					src={src}
-					className={classNames("thumb", {"is-alternative": image.altOf, blur: blurred})}
-					alt={`event ${image.name}`}
+					className={classNames("thumb", {"is-alternative": galleryImg.altOf, blur: blurred})}
+					alt={`event ${galleryImg.name}`}
 					draggable={false}
 					fetchPriority={blurred ? 'low' : 'auto'}
 				/>
@@ -86,8 +91,8 @@ const GalleryImage = ({image, src, gallery = [], galleryUnlocked = [], blurred =
 			slides={slides}
 			open={open}
 			index={
-				slides.findIndex(slide => slide.alt === image.name) !== -1 ?
-					slides.findIndex(slide => slide.alt === image.name) :
+				slides.findIndex(slide => slide.alt === galleryImg.name) !== -1 ?
+					slides.findIndex(slide => slide.alt === galleryImg.name) :
 						slides.findIndex(slide => slide.src !== "")
 			}
 			close={() => setOpen(false)}

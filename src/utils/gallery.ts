@@ -3,27 +3,28 @@ import { settings } from "./settings"
 import { GALLERY_IMAGES, GALLERY_IMAGES_PD } from "./gallery-data"
 
 
-function getImg(imgName: string): GalleryImg | undefined {
+function getImg(imgName: string): GalleryImg {
 	return GALLERY_IMAGES[imgName]
+}
+
+function isInGallery(image: string): boolean {
+	return image in GALLERY_IMAGES
 }
 
 function shouldBlur(image: string): boolean {
 	return (getImg(image)?.sensitive ?? false) && settings.blurThumbnails
 }
 
-function getByGroup(group: CharId): GalleryImg[] {
-	return Object.values(GALLERY_IMAGES).filter((img) => img.group === group)
+function getByGroup(group: CharId): string[] {
+  return Object.entries(GALLERY_IMAGES)
+    .filter(([key, img]) => img.group === group)
+    .map(([key]) => key);
 }
 
-function getAlts(imgName: string): GalleryImg[] {
-	return Object.values(GALLERY_IMAGES).filter((img) => img.altOf === imgName || img.name === imgName)
-}
-
-function getPath(imgName: string): string {
-	const img = getImg(imgName)
-	if (!img) return ""
-
-	return `${img.path}/${img.name}`
+function getAlts(imgName: string): string[] {
+  return Object.entries(GALLERY_IMAGES)
+    .filter(([key, img]) => img.altOf === imgName)
+    .map(([key]) => key);
 }
 
 function getNameFromPath(path: string): string {
@@ -31,17 +32,17 @@ function getNameFromPath(path: string): string {
 	return path.split("/").pop() ?? ""
 }
 
-const isUnlocked = (imgName: string) =>
-	settings.eventImages.includes(getPath(imgName))
+const isUnlocked = (img: string) =>
+	settings.eventImages.includes(img)
 
 const cg = {
 	getImg,
 	getByGroup,
 	getAlts,
-	getPath,
 	getNameFromPath,
 	shouldBlur,
 	isUnlocked,
+	isInGallery,
 }
 export default cg
 
@@ -49,20 +50,13 @@ export default cg
 
 // PLUS-DISC
 
-function getImgPd(imgName: string): GalleryImg | undefined {
+function getImgPd(imgName: string): GalleryImg {
 	return GALLERY_IMAGES_PD[imgName]
 }
 function shouldBlurPd(image: string): boolean {
 	return (getImgPd(image)?.sensitive ?? false) && settings.blurThumbnails
 }
-function getPathPd(imgName: string): string {
-	const img = getImgPd(imgName)
-	if (!img) return ""
-	
-	return `${img.path}/${img.name}`
-}
 export const cgPd = {
 	getImg: getImgPd,
-	getPath: getPathPd,
 	shouldBlur: shouldBlurPd,
 }

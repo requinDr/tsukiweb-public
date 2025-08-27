@@ -5,11 +5,10 @@ import * as motion from "motion/react-m"
 import { AnimatePresence, Variants } from 'motion/react'
 import cg from '../utils/gallery'
 import { strings } from "../translation/lang"
-import { imageSrc } from '../translation/assets'
 import { SCREEN } from '../utils/display'
 import { PageTabsLayout } from '@tsukiweb-common/ui-core'
 import useQueryParam from '@tsukiweb-common/hooks/useQueryParam'
-import { CharId, GalleryImg } from 'types'
+import { CharId } from 'types'
 import GalleryImage from 'components/gallery/GalleryImage'
 import GalleryTotal from 'components/gallery/GalleryTotal'
 import { useScreenAutoNavigate, useLanguageRefresh } from 'hooks'
@@ -24,27 +23,23 @@ const container: Variants = {
 	}
 }
 
-const isShown = (image: GalleryImg) =>
-	cg.isUnlocked(image.name) || settings.unlockEverything
+const isShown = (image: string) =>
+	cg.isUnlocked(image) || settings.unlockEverything
 
-const getImgDetails = (image: GalleryImg) => {
-	const isShownImage = isShown(image)
-	const alts = cg.getAlts(image.name)
-	const shownAlts = alts.filter(a => isShown(a))
-
-	if (isShownImage && image.unlockIds) {
-		image.unlockIds.forEach(imgName => {
-			if (shownAlts.findIndex(v => v.name === imgName) === -1) {
-				shownAlts.push(cg.getAlts(imgName)[0])
-			}
+const getImgDetails = (image: string) => {
+	let alts: string[] = [image, ...cg.getAlts(image)]
+	let shownAlts: string[] = alts.filter(isShown)
+	
+	// if a shown alt has some unlockIds, show them too
+	shownAlts.forEach(alt => {
+		const unlockIds = cg.getImg(alt).unlockIds || []
+		unlockIds.forEach(unlockId => {
+			if (!shownAlts.includes(unlockId))
+			shownAlts = [...shownAlts, unlockId]
 		})
-	}
+	})
 
-	return {
-		isShownImage,
-		alts,
-		shownAlts,
-	}
+	return { alts, shownAlts }
 }
 
 const GalleryScreen = () => {
@@ -52,14 +47,14 @@ const GalleryScreen = () => {
 	useLanguageRefresh()
 	const [selectedTab, setSelectedTab] = useQueryParam<CharId>("tab", "ark")
 
-	const tabImages: GalleryImg[] = useMemo(() => {
+	const tabImages: string[] = useMemo(() => {
 		const imagesTmp = cg.getByGroup(selectedTab)
 		if (imagesTmp == undefined) {
 			console.error(`unknown character ${selectedTab}`)
 			return []
 		}
 		
-		return imagesTmp.filter(image => !image.altOf)
+		return imagesTmp.filter(image => !cg.getImg(image).altOf)
 	}, [selectedTab])
 
 	const tabs: ComponentProps<typeof PageTabsLayout>["tabs"] = ['ark','cel','aki','his','koha'].map(char => ({
@@ -84,29 +79,26 @@ const GalleryScreen = () => {
 						exit="hidden"
 						className="gallery-container">
 						{tabImages?.map(image => {
-							const {isShownImage, alts, shownAlts} = getImgDetails(image)
-							const showGalleryImage = isShownImage || shownAlts.length > 0
+							const {alts, shownAlts} = getImgDetails(image)
 
-							if (showGalleryImage) {
-								const mainImage = isShownImage ? image : shownAlts[0]
-								const thumbSrc = imageSrc(cg.getPath(mainImage?.name), 'thumb')
+							if (shownAlts.length > 0) {
+								const mainImage = shownAlts[0]
 
 								return (
 									<GalleryImage
-										key={image.name}
+										key={image}
 										image={mainImage}
-										src={thumbSrc}
 										gallery={alts}
 										galleryUnlocked={shownAlts}
-										blurred={cg.shouldBlur(mainImage.name)}
+										blurred={cg.shouldBlur(mainImage)}
 										showTotal={true}
-										imagePath={cg.getPath}
+										getGalleryImg={cg.getImg}
 									/>
 								)
 							}
 
 							return (
-								<div key={image.name} className="placeholder">
+								<div key={image} className="placeholder">
 									{alts.length > 1 &&
 										<GalleryTotal
 											nbTotal={alts.length}
