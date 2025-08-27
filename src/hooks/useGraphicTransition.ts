@@ -70,6 +70,8 @@ function useGraphicTransition(pos: SpritePos, image: string,
 							onEnd.current() // instant transition -> onEnd when loaded
 					//}
 				})
+			} else if (duration == 0) {
+				onEnd.current?.()
 			}
 		}
 	}, [transition, image])
