@@ -6,6 +6,7 @@ import { BasicAudioManager } from "@tsukiweb-common/utils/AudioManager"
 import { isLanguageLoaded, waitLanguageLoad } from "translation/lang"
 import { asyncDelay } from "@tsukiweb-common/utils/timer"
 import { ScriptPlayer } from "script/ScriptPlayer"
+import { splitFirst } from "@tsukiweb-common/utils/utils"
 
 function calcGain(value: number) {
   if (value <= 0)
@@ -25,9 +26,12 @@ function getUrl(id: string): string {
     return audioTrackPath(trackNum)
   }
   else if (id.includes('/')) {
-    const [path, seName] = id.split('/')
-    if (path == 'pd')
-      return audioSePath(seName, path=='pd')
+    const [rootDir, subPath] = splitFirst(id, '/')
+    if (rootDir == 'pd')
+      return audioSePath(subPath!, true)
+    else {
+      return id
+    }
   }
   return audioSePath(id)
 }
@@ -125,3 +129,4 @@ export const commands = {
 //##############################################################################
 
 window.audio = gameAudio
+window.sysAudio = sysAudio
