@@ -258,7 +258,8 @@ function generalFixes(file, tokens) {
 				case 'wave' : case 'waveloop' :
 					const m = token.args[0].match(/^"?se(?<n>\d+)"?$/)
 					if (m) {
-						token.args[0] = `se_${parseInt(m.groups['n'])+1}`
+						// se0 -> se_01
+						token.args[0] = `se_${String(+m.groups.n + 1).padStart(2, '0')}`
 					}
 					break
 			}
