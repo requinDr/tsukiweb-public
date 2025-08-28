@@ -3,6 +3,7 @@
 %layer-history {
 	z-index: -1;
 	opacity: 0;
+	touch-action: manipulation;
 	transition: var(--transition);
 	display: grid;
 	grid-template-rows: 1fr min-content;

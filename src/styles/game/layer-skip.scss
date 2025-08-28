@@ -3,6 +3,7 @@
 %layer-skip {
 	z-index: -1;
 	opacity: 0;
+	touch-action: manipulation;
 	background-color: #0006;
 	display: flex;
 	justify-content: center;
