@@ -255,10 +255,19 @@ export class History extends Stored {
       }
     } else {
       const page = this._pages.get(index) as PageEntry
-      return {
-        ...this.getSceneContext(page?.label as LabelName),
-        ...page
+      let label = page.label
+      let sceneContext
+      if (isScene(label))
+        sceneContext = this.getSceneContext(label)
+      else if (index > 0) {
+        do {
+          index --;
+          label = this._pages.get(index)!.label
+        } while (index > 0 && !isScene(label))
+        sceneContext = this.getSceneContext(label)
       }
+      return { ...sceneContext, ...page }
+      
     }
   }
 

@@ -32,7 +32,7 @@ export function getGameVariable(script: ScriptPlayer, name: NumVarName): number 
 		default :
 			if (/^%flg[1-9A-Z]$/.test(name)) {
 			  // flags
-				return script.flags.has(name.substring(3)) ? 1 : 0
+				return script.flags.has(name.substring(4)) ? 1 : 0
       } else if (/regard_\w+/.test(name)) {
 		    // regard
         const char = name.substring(name.indexOf('_')+1)
@@ -57,7 +57,7 @@ export function setGameVariable(script: ScriptPlayer, name: NumVarName,
       script.flushcount = value
   } else if (/^%flg[1-9A-Z]$/.test(name)) {
     if (value > 0)
-      script.flags.add(name.substring(3))
+      script.flags.add(name.substring(4))
     else
       script.flags.delete(name.substring(3))
   } else if (/regard_\w+/.test(name)) {

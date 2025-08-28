@@ -31,8 +31,13 @@ function compareSaveStates(ss1: SaveState, ss2: SaveState) {
 
 export function savePhaseTexts(saveState: SaveState) {
 	const lastPage = saveState.pages.at(-1) as Exclude<SaveState['pages'][0], undefined>
-	const {route, routeDay, day} = lastPage.phase
-	return phaseTexts(route, routeDay ?? "", day ?? 0).map(noBb)
+	if (lastPage.phase) {
+		const {route, routeDay, day} = lastPage.phase
+		return phaseTexts(route, routeDay ?? "", day ?? 0).map(noBb)
+	} else {
+		//TODO retrieve route, routeDay and day from SCENE_ATTRS
+		return ["", ""]
+	}
 }
 
 

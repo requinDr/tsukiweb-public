@@ -1,6 +1,6 @@
 import { ScriptPlayerBase, ScriptPlayerCallbacks } from "@tsukiweb-common/script/ScriptPlayer"
 import { LabelName, RouteDayName, RouteName } from "types";
-import { fetchBlockLines, isThScene, nextLabel } from "script/utils";
+import { fetchBlockLines, isScene, isThScene, nextLabel } from "script/utils";
 import { settings } from "utils/settings";
 import { phaseTexts } from "translation/assets";
 import { closeBB } from "@tsukiweb-common/utils/Bbcode";
@@ -217,12 +217,12 @@ export class ScriptPlayer extends ScriptPlayerBase<LabelName> {
     }
     
     blockContext() {
-        if (!this.currentBlock)
+        if (!isScene(this.currentLabel as LabelName))
             return undefined
         return {
             label: this.currentLabel as LabelName,
             flags: [...this.flags],
-            regard: this.regard,
+            regard: {...this.regard},
             continueScript: this._continueScript,
         }
     }
