@@ -12,6 +12,7 @@
 	font-size: clamp(.95em, 4.4vmin, 1.35em);
 	line-height: clamp(1.6em, 4.8vmin, 1.8em);
 	overflow-x: hidden;
+	touch-action: manipulation;
 	transition: var(--transition);
 	transition-property: opacity, z-index;
 
