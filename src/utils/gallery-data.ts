@@ -132,8 +132,8 @@ export const GALLERY_IMAGES: Record<string, GalleryImg> = {
 	"event/hal_e01" : { name: "hal_e01" , group: "his" },
 	"event/his_h16" : { name: "his_h16" , group: "his", sensitive: true },
 	"event/his_h15" : { name: "his_h15" , group: "his", sensitive: true },
-	"event/his_h01" : { name: "his_h01" , group: "his", sensitive: true, altOf: "event/his_h02" },
-	"event/his_h02" : { name: "his_h02" , group: "his", sensitive: true },
+	"event/his_h01" : { name: "his_h01" , group: "his", sensitive: true },
+	"event/his_h02" : { name: "his_h02" , group: "his", sensitive: true, altOf: "event/his_h01" },
 	"event/his_h03" : { name: "his_h03" , group: "his", sensitive: true, unlockIds: ["half-moon/his02"] },
 	"event/his_h04a": { name: "his_h04a", group: "his", sensitive: true },
 	"event/his_h04b": { name: "his_h04b", group: "his", sensitive: true, altOf: "event/his_h04a" },
@@ -176,8 +176,8 @@ export const GALLERY_IMAGES: Record<string, GalleryImg> = {
 	"event/koha_h08": { name: "koha_h08", group: "koha", sensitive: true },
 
 	"half-moon/aki02": { name: "aki02",  sensitive: true, altOf: "event/aki_h02", source: "half-moon" },
-	"half-moon/cmo_01": { name: "cmo_01", altOf: "event/cmo_01", source: "half-moon" },
-	"half-moon/cmo_02": { name: "cmo_02", altOf: "event/cmo_02", source: "half-moon" },
+	"half-moon/cmo_01": { name: "cmo_01", altOf: "bg/cmo_01", source: "half-moon" },
+	"half-moon/cmo_02": { name: "cmo_02", altOf: "bg/cmo_02", source: "half-moon" },
 	"half-moon/his01": { name: "his01", altOf: "event/his_e04", source: "half-moon" },
 	"half-moon/his02": { name: "his02", sensitive: true, altOf: "event/his_h03", source: "half-moon" },
 }
