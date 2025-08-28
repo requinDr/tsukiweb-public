@@ -131,11 +131,8 @@
 		"quick-save": "Salvar rápidamente"
 	},
 	"game": {
-		"skip-named": [
-			"Você já viu a cena",
-			"Você quer pular?"
-		],
-		"skip-unnamed": "Você já viu esta cena. Quer pular?",
+		"skip-viewed": "Você já viu esta cena.",
+		"skip-prompt": "Você quer pular?",
 		"toast-qsave": "O progresso foi salvo",
 		"toast-qload": "Progresso restaurado",
 		"toast-load": "Progresso restaurado",

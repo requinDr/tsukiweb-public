@@ -130,11 +130,8 @@
 		"quick-save": "빠른 저장"
 	},
 	"game": {
-		"skip-named": [
-			"이미 본 장면입니다.",
-			"스킵하시겠습니까?"
-		],
-		"skip-unnamed": "이미 본 장면입니다. 스킵하시겠습니까?",
+		"skip-viewed": "이미 본 장면입니다.",
+		"skip-prompt": "스킵하시겠습니까?",
 		"toast-qsave": "저장을 성공하였습니다.",
 		"toast-qload": "불러오기를 성공하였습니다.",
 		"toast-load": "불러오기를 성공하였습니다.",

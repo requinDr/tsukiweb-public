@@ -16,54 +16,62 @@
 	.skip-modal {
 		@extend %info-box;
 		align-self: center;
-		padding: 1em min(3em, 3vmin);
-		margin: 1em;
+		margin: 1rem;
 		width: min(540px, 100%);
 		box-shadow: 0 0 10px black;
 		display: grid;
 		text-align: center;
 		text-wrap: balance;
-
-		.title {
-			text-align: center;
-		}
+		isolation: isolate;
 
 		.scene {
 			display: grid;
-			margin-block: 1em;
-			min-height: 120px;
+			min-height: 90px;
 			position: relative;
-			mask-image: linear-gradient(90deg, transparent, black 2%, black 98%, transparent);
 		}
 		.scene-title {
 			font-weight: bold;
-			color: hsl(0, 0%, 100%);
-			font-size: 1.4em;
+			color: var(--color-link);
+			font-size: 1.5em;
+			line-height: 1.2;
 			z-index: 1;
-			background-image: linear-gradient(0deg, rgb(0 55 141 / 70%), rgb(0 208 255 / 40%));
 			display: flex;
-			align-items: center;
+			align-items: end;
 			justify-content: center;
 			padding: 0.5em;
-			text-shadow: 0 0 10px #000f10, 0 0 10px #0096ff, 0 0 10px #00b8ff;
+			padding-bottom: 0;
+			text-shadow: 0 0 1em #000000, 0 0 1em #000000, 0 0 1em #000000;
 		}
 		.thumbnail {
 			height: 100%;
 			max-width: 100%;
 			position: absolute;
 			inset: 0;
+			mask-image: linear-gradient(180deg, black 0%, transparent);
 
 			.blur {
 				filter: blur(10px);
 			}
 		}
 
+		.body {
+			margin-top: .6rem;
+			margin-bottom: 2em;
+			padding-inline: .5em;
+		}
+		.title {
+			color: var(--text-muted);
+		}
+
 		.buttons {
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
 			font-size: 1.2em;
-			margin-top: 1em;
-			margin-bottom: .5em;
+			border-top: 1px solid var(--separator);
+
+			button {
+				padding: 1rem;
+			}
 		}
 	}
 }

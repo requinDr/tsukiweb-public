@@ -131,11 +131,8 @@
 		"quick-save": "快速保存"
 	},
 	"game": {
-		"skip-named": [
-			"該場景曾顯示過。",
-			"要跳過嗎？"
-		],
-		"skip-unnamed": "該場景曾顯示過。 要跳過嗎？",
+		"skip-viewed": "該場景曾顯示過。",
+		"skip-prompt": "要跳過嗎？",
 		"toast-qsave": "進度已保存",
 		"toast-qload": "恢復進度",
 		"toast-load": "恢復進度",

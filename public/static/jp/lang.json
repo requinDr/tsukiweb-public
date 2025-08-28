@@ -156,8 +156,8 @@
 		"local-storage-last-export": "Last full data export date: %0"
 	},
 	"game": {
-		"skip-named": ["", "このシーンはもう見ました。スキップしますか？"],
-		"skip-unnamed": "このシーンはもう見ました。スキップしますか？",
+		"skip-viewed": "このシーンはもう見ました。",
+		"skip-prompt": "スキップしますか？",
 		"toast-qsave": "セーブは成功しました",
 		"toast-qload": "ロードは成功しました",
 		"toast-load": "ロードは成功しました",

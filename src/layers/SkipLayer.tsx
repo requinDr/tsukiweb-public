@@ -74,29 +74,26 @@ const SkipLayer = ({script, history, display = true}: Props) => {
 				initial={{opacity: 0, scale: 0.9}}
 				animate={{opacity: 1, scale: 1}}
 				key={sceneTitle}
-			>
-				<div className="title">
-					{sceneTitle ?<>
-						{bb(strings.game["skip-named"][0])}
-					</> : <>
-						{bb(strings.game["skip-unnamed"])}
-					</>}
-				</div>
-				
+			>				
 				{sceneTitle &&
 				<div className="scene">
-					<div className="scene-title">{noBb(sceneTitle)}</div> 
 					<div className="thumbnail">
 						<GraphicsGroup
 							images={getThumbnail(scene as TsukihimeSceneName)}
-							resolution="thumb"
+							resolution="sd"
 						/>
 					</div>
+					<div className="scene-title">{noBb(sceneTitle)}</div> 
 				</div>
 				}
 
-				<div>
-					{bb(strings.game["skip-named"][1])} 
+				<div className="body">
+					<div className="title">
+						{bb(strings.game["skip-viewed"])}
+					</div>
+					<div className="desc">
+						{bb(strings.game["skip-prompt"])}
+					</div>
 				</div>
 
 				<div className="buttons">

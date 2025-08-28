@@ -139,11 +139,8 @@
 		"quick-save": "Guardado rápido"
 	},
 	"game": {
-		"skip-named": [
-			"Ya has visto esta escena.",
-			"¿Quisieras saltarla?"
-		],
-		"skip-unnamed": "Ya has visto esta escena. ¿Quisieras saltarla?",
+		"skip-viewed": "Ya has visto esta escena.",
+		"skip-prompt": "¿Quieres saltarla?",
 		"toast-qsave": "El progreso ha sido guardado",
 		"toast-qload": "Progreso restaurado",
 		"toast-load": "Progreso restaurado",
