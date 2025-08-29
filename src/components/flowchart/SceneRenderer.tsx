@@ -34,7 +34,7 @@ type SceneProps = {
 	onClick?: (id: TsukihimeSceneName) => void
 }
 
-const HiddenScene = () => <></>
+const HiddenScene = () => null
 
 const UnseenScene = ({ node }: { node: FcNode }) => (
 	<g className='fc-scene' id={node.id}

@@ -101,7 +101,7 @@ const GalleryImage = ({image, gallery = [], galleryUnlocked = [], blurred = fals
 			}}
 			plugins={[Zoom, Thumbnails]}
 			render={{
-				buttonZoom: () => <></>,
+				buttonZoom: () => null,
 				thumbnail: ({slide}) => {
 					if (slide.src === "") {
 						return (

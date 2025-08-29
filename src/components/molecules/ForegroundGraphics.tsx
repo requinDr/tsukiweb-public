@@ -19,7 +19,9 @@ const ForegroundGraphics = ({image, transition}: Props) => {
 		duration: fadeTime, effect, onAnimationEnd
 	} = useGraphicTransition('bg', image, transition)
 
-	return prevImg != undefined ? (
+	if (!prevImg) return null
+
+	return (
 		<GraphicsElement key={currImg}
 			pos='bg'
 			image={currImg}
@@ -27,7 +29,7 @@ const ForegroundGraphics = ({image, transition}: Props) => {
 			fadeIn={effect}
 			onAnimationEnd={onAnimationEnd}
 			{...{'bg-align': bgAlign}}/>
-	) : <></>
+	)
 }
 
 export default memo(ForegroundGraphics)

@@ -19,9 +19,7 @@ const SceneReplayScreen = () => {
 		playScene(sceneIdTmp, { continueScript: false, viewedOnly: false })
 	}
 
-	return (
-		<></>
-	)
+	return null
 }
 
 export default SceneReplayScreen

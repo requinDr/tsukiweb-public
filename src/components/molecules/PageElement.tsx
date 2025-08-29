@@ -17,8 +17,7 @@ type Props = {
 
 const PageElement = ({history, content, onLoad}: Props)=> {
 	
-	if (!content)
-		return <></>
+	if (!content) return null
 	
 	let displayContent: ReactNode
 	switch(content.type) {

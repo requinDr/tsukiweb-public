@@ -74,8 +74,7 @@ const ChoicesLayer = ({script, display}: Props) => {
       processSelect.bind(null, setChoices, onSelection))
   }, [script])
 
-  if (!display || choices.length == 0)
-    return <></>
+  if (!display || choices.length == 0) return null
 
   return (
     <div className="layer" id="layer-choices">
