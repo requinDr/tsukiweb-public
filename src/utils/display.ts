@@ -14,6 +14,7 @@ export enum SCREEN {
   ENDINGS = "/endings",
   SCENES = "/scenes",
   PLUS_DISC = "/plus-disc",
+  CHARACTERS = "/characters"
 }
 
 export const displayMode: { [key: string]: any } = {

@@ -16,6 +16,8 @@ import ExtraLayout from "layouts/ExtraLayout";
 import PlusDiscScreen from "screens/PlusDiscScreen";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Particles } from "@tsukiweb-common/ui-core";
+import CharactersScreen from "screens/CharactersScreen";
+import { SCREEN } from "utils/display";
 
 const AnimatedRoutes = () => {
 	const isFirstRender = useRef(true)
@@ -37,7 +39,7 @@ const AnimatedRoutes = () => {
 		setHasSeenDisclaimer(true)
 	}, [])
 
-	const isExtra = ["/gallery", "/endings", "/scenes", "/plus-disc"].some(path =>
+	const isExtra = [SCREEN.GALLERY, SCREEN.ENDINGS, SCREEN.SCENES, SCREEN.CHARACTERS, SCREEN.PLUS_DISC].some(path =>
 		location.pathname.startsWith(path)
 	)
 	const keyPresence = isExtra ? "extra" : location.pathname
@@ -58,21 +60,22 @@ const AnimatedRoutes = () => {
 						} 
 					/>
 					<Route path="/title" element={<Navigate to="/" replace />} />
-					<Route path="/load" element={<LoadScreen />} />
-					<Route path="/config" element={<ConfigScreen />} />
+					<Route path={SCREEN.LOAD} element={<LoadScreen />} />
+					<Route path={SCREEN.CONFIG} element={<ConfigScreen />} />
 
 					<Route element={<ExtraLayout><Outlet /></ExtraLayout>}>
-						<Route path="/gallery" element={<GalleryScreen />} />
-						<Route path="/endings" element={<EndingsScreen />} />
-						<Route path="/scenes">
+						<Route path={SCREEN.GALLERY} element={<GalleryScreen />} />
+						<Route path={SCREEN.ENDINGS} element={<EndingsScreen />} />
+						<Route path={SCREEN.SCENES}>
 							<Route index element={<FlowchartScreen />} />
 							<Route path=":sceneId" element={<SceneReplayScreen />} />
 						</Route>
-						<Route path="/plus-disc" element={<PlusDiscScreen />} />
+						<Route path={SCREEN.CHARACTERS} element={<CharactersScreen />} />
+						<Route path={SCREEN.PLUS_DISC} element={<PlusDiscScreen />} />
 					</Route>
 
-					<Route path="/window" element={<Window />} />
-					
+					<Route path={SCREEN.WINDOW} element={<Window />} />
+
 					<Route path="*" element={<Navigate to="/disclaimer" />} />
 				</Routes>
 			</AnimatePresence>
