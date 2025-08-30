@@ -19,7 +19,7 @@ const ForegroundGraphics = ({image, transition}: Props) => {
 		duration: fadeTime, effect, onAnimationEnd
 	} = useGraphicTransition('bg', image, transition)
 
-	if (!prevImg) return null
+	if (prevImg === undefined) return null
 
 	return (
 		<GraphicsElement key={currImg}

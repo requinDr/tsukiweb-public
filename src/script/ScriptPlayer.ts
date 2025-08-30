@@ -149,7 +149,9 @@ export class ScriptPlayer extends ScriptPlayerBase<LabelName> {
         deepAssign(this._graphics, value, {extend: false})
     }
     get phase(): Phase { return this._phase }
-    set phase(value: Phase) { this._phase}
+    set phase(value: Phase) {
+        deepAssign(this._phase, value)
+    }
     get textPrefix() { return this._textPrefix }
     set textPrefix(value: string) { this._textPrefix = value }
     get text() { return this._text }

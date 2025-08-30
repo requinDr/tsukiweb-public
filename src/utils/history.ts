@@ -42,7 +42,7 @@ class PagesQueue extends Queue<PageEntry> {
       if (i == 0 || i == pages.length - 1)
         mergedPages[i] = jsonMerge(p as NonNullable<SaveState['pages'][0]>, defaultValue)
       else
-        mergedPages[i] = jsonMerge({...p, type: 'text'} as PartialJSON<PageEntry>, mergedPages[i-1])
+        mergedPages[i] = jsonMerge(p as PartialJSON<PageEntry>, {...mergedPages[i-1], type: 'text'} as PageEntry)
     })
     this.push(...mergedPages)
   }
