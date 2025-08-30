@@ -124,7 +124,7 @@ const ConfigAdvancedTab = () => {
 
 				<ConfigButtons
 					title={strings.config["adult-warn"]}
-					helpAction={warnHScene}
+					helpAction={() => warnHScene()}
 					btns={[
 						{ text: strings.config.on, value: true },
 						{ text: strings.config.off, value: false },
