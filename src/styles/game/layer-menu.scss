@@ -41,15 +41,14 @@
 			height: 100%;
 			flex: 1;
 			display: grid;
-			grid-template-rows: 1fr 2fr 1fr minmax(0, 0.1fr);
+			grid-template-rows: 1fr 2fr 1fr;
 			font-size: clamp(1.1em, 3.6vh, 1.3em);
 			padding: 1em;
 			margin-left: 2em;
 			overflow-y: auto;
 		}
 
-		button,
-		a {
+		button, a {
 			color: var(--text-color);
 			text-decoration: none;
 			transition: var(--transition);
@@ -78,10 +77,10 @@
 				&::after {
 					content: "";
 					position: absolute;
-					bottom: -4px;
+					bottom: -2px;
 					left: 0;
 					width: 0;
-					height: 1px;
+					height: 2px;
 					transition: var(--transition);
 					transition-delay: 0.1s;
 					opacity: 0.1;
@@ -89,7 +88,7 @@
 
 				&:hover, &:focus-visible {
 					&::after {
-						width: 100%;
+						width: 90%;
 						background-image: linear-gradient(to right, rgb(12 170 217) 75%, rgba(10, 158, 171, 0));
 						opacity: 1;
 					}
@@ -120,7 +119,7 @@
 
 			button {
 				border-radius: 2px;
-				padding: 4px;
+				padding: 5px 4px;
 				color: rgb(176 209 229);
 				background-color: rgb(1 17 27 / 80%);
 				justify-content: center;

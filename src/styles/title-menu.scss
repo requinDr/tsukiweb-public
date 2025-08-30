@@ -55,8 +55,7 @@
 			align-items: center;
 			justify-content: center;
 			box-sizing: border-box;
-
-			font-size: 1.44em;
+			font-size: 1.5em;
 			width: $icon-size;
 			height: $icon-size;
 			border-radius: 4px;
@@ -72,7 +71,7 @@
 		flex: 1;
 		margin-inline: 1em;
 		margin-bottom: 5vh;
-		width: min(860px, calc(100% - 2em));
+		width: min(900px, calc(100% - 2em));
 		font-size: 1.54em;
 
 		.menu-buttons {
@@ -89,14 +88,14 @@
 	}
 
 	// One column
-	@media (max-width: 920px) and (min-height: 500px), (orientation: portrait) {
+	@media (max-width: 940px) and (min-height: 500px), (orientation: portrait) {
 		.top-actions {
 			right: $spacing;
 			flex-direction: column-reverse;
 		}
 	}
 	// One column, mobile portrait
-	@media (max-width: 920px), ((orientation: landscape) and (max-height: 500px)) {
+	@media (max-width: 940px), ((orientation: landscape) and (max-height: 500px)) {
 		display: grid;
 		grid-template-rows: 3fr 2fr;
 		.logo {
