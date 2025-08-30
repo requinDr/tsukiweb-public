@@ -272,9 +272,10 @@ export class ScriptPlayer extends ScriptPlayerBase<LabelName> {
         return super.beforeBlock(label, initPage)
     }
     protected override async afterBlock(label: LabelName): Promise<void> {
-        if (isThScene(label) && !settings.completedScenes.includes(label)) {
+        if (isScene(label) && !settings.completedScenes.includes(label)) {
             settings.completedScenes.push(label)
         }
+        await super.afterBlock(label)
     }
     override onPageStart(line: string, index: number, blockLines: string[],
                          label: LabelName): void {
