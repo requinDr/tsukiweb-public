@@ -56,13 +56,13 @@ const Window = () => {
 		graphics: true,
 		history: true,
 		flowchart: !isPDScene(script.currentLabel ?? ""),
-		save: true,
+		save: script.continueScript,
 		load: true,
 		config: true,
 		title: true,
 
-		qSave: true,
-		qLoad: true,
+		qSave: script.continueScript,
+		qLoad: script.continueScript,
 		copyScene: true,
 	})
 
@@ -71,9 +71,16 @@ const Window = () => {
 			displayMode.screen = SCREEN.TITLE
 		}
 	}, [])
-	
+
+	useLayoutEffect(() => {
+		const isPd = isPDScene(script.currentLabel ?? "")
+		show.current.flowchart = !isPd
+		show.current.save = script.continueScript || isPd
+		show.current.qSave = script.continueScript || isPd
+		show.current.qLoad = script.continueScript || isPd
+	}, [script.continueScript, script.currentLabel])
+
 	useEffect(()=> {
-		show.current.flowchart = !isPDScene(script.currentLabel ?? "")
 		if (history.empty)
 			return
 		actionsHandler.onScriptChange(script)
