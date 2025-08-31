@@ -292,7 +292,7 @@ function generalFixes(file, tokens) {
 				}
 			} else if (token instanceof TextToken) {
 				if (!token.text.endsWith('@')) {
-					tokens.splice(i, 0, new CommandToken(token.lineIndex, '\\'))
+					tokens.splice(i+1, 0, new CommandToken(token.lineIndex, '\\'))
 					stop = true
 				}
 			}
