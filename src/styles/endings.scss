@@ -7,9 +7,7 @@
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(min(204px, 24vmin), 1fr));
 		isolation: isolate;
-		min-width: 0;
 		gap: 10px;
-		place-content: start;
 		flex-grow: 0;
 
 		.ending {
@@ -17,8 +15,8 @@
 			flex-direction: column;
 			position: relative;
 			font-size: 1.1em;
-			outline: 0;
 			background-color: var(--menu-container);
+			height: 260px;
 
 			@mixin shadow($color) {
 				$color-title: color.adjust($color, $lightness: -20%);
@@ -37,13 +35,14 @@
 					content: "!";
 					font-size: 2.5em;
 					position: absolute;
-					top: 16px;
+					top: 32px;
 					right: 0;
 					left: 0;
 					display: grid;
 					justify-content: center;
 					color: rgb(10, 164, 171);
 					text-shadow: 0 0 6px #005aff;
+					z-index: 1;
 
 					@include hover-scale("attention", 1.2);
 				}
@@ -77,8 +76,9 @@
 	
 			.ending-img {
 				width: 100%;
-				aspect-ratio: 4/3;
-				background-color: #1a353f59;
+				mask-image: linear-gradient(180deg, black 0%, black, transparent);
+				flex: 1;
+				object-fit: cover;
 
 				&.placeholder {
 					border: 1px solid #004f87;
@@ -86,9 +86,11 @@
 				}
 			}
 			.ending-desc {
-				margin: 0.6em 0.8em 0.8em 0.8em;
 				text-align: center;
 				line-height: 1.1;
+				margin-top: -1em;
+				margin-inline: .6em;
+				margin-bottom: 1.4em;
 				
 				.ending-name {
 					font-weight: 700;
@@ -98,7 +100,7 @@
 				}
 				.ending-bottom {
 					margin-top: 0.2em;
-					font-size: .9em;
+					font-size: .86em;
 					opacity: 0.8;
 
 					.separator {
@@ -122,7 +124,7 @@
 	}
 	.badendings-list {
 		margin-top: 1em;
-		gap: 1.4em 1.4em;
+		gap: 1.4em;
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(46px, 1fr));
 		place-content: flex-start;
@@ -168,10 +170,6 @@
 			gap: 8px;
 			.ending {
 				font-size: 1em;
-
-				.ending-desc {
-					margin: .5em 0;
-				}
 			}
 		}
 	}
