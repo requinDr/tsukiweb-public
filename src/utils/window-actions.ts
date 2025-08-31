@@ -7,23 +7,37 @@ import { quickSave, quickLoad } from "./savestates";
 import { settings } from "./settings";
 import history from './history';
 
-function createKeyMap(layers: InGameLayersHandler) {
+type ShowLayers = {
+	graphics: boolean,
+	history: boolean,
+	flowchart: boolean,
+	save: boolean,
+	load: boolean,
+	config: boolean,
+	title: boolean,
+
+	qSave: boolean,
+	qLoad: boolean,
+	copyScene: boolean,
+}
+
+function createKeyMap(layers: InGameLayersHandler, show: ShowLayers) {
 	const noMenu = ()=> layers.currentMenu == null
 	//const noMenuWindow = ()=> ['menu', null].includes(layers.currentMenu)
 	const onText = ()=> layers.topLayer == 'text'
 	return {
 		"next":  	[noMenu, ...inGameKeyMap['next']],
 		"back":     inGameKeyMap['back'],
-		"history":  [onText, ...inGameKeyMap['history']],
-		"graphics": [noMenu, ...inGameKeyMap['graphics']],
+		"history":  [()=> show.history && onText(), ...inGameKeyMap['history']],
+		"graphics": [()=> show.graphics && noMenu(), ...inGameKeyMap['graphics']],
 		"bg_move":  [noMenu, ...inGameKeyMap['bg_move']],
 		"auto_play":[onText, ...inGameKeyMap['auto_play']],
 		"page_nav":	[noMenu, ...inGameKeyMap['page_nav']],
-		"load":     [noMenu, ...inGameKeyMap['load']],
-		"save":     [noMenu, ...inGameKeyMap['save']],
-		"q_save":   [noMenu, ...inGameKeyMap['q_save']],
-		"q_load":   [noMenu, ...inGameKeyMap['q_load']],
-		"config":   [noMenu, ...inGameKeyMap['config']],
+		"load":     [()=> show.load && noMenu(), ...inGameKeyMap['load']],
+		"save":     [()=> show.save && noMenu(), ...inGameKeyMap['save']],
+		"q_save":   [()=> show.qSave && noMenu(), ...inGameKeyMap['q_save']],
+		"q_load":   [()=> show.qLoad && noMenu(), ...inGameKeyMap['q_load']],
+		"config":   [()=> show.config && noMenu(), ...inGameKeyMap['config']],
 	}
 }
 
