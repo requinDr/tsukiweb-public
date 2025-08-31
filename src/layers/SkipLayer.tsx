@@ -29,12 +29,11 @@ function getThumbnail(label: TsukihimeSceneName) {
 
 type Props = {
 	script: ScriptPlayer
-	display?: boolean
+	display: boolean
 	history: History
 }
 
-const SkipLayer = ({script, history, display = true}: Props) => {
-
+const SkipLayer = ({script, history, display}: Props) => {
 	const [scene, setScene] = useState<TsukihimeSceneName|undefined>(undefined)
 	const onFinish = useRef<VoidFunction>(undefined)
 
@@ -51,6 +50,7 @@ const SkipLayer = ({script, history, display = true}: Props) => {
 			script.setBeforeBlockCallback(undefined)
 		}
 	}, [script])
+	
 	const onClick = useCallback((evt: MouseEvent<HTMLButtonElement>)=> {
 		if ((evt.target as HTMLButtonElement).value == 'yes') {
 			script.skipCurrentBlock()
@@ -59,6 +59,8 @@ const SkipLayer = ({script, history, display = true}: Props) => {
 		onFinish.current?.()
 		setScene(undefined)
 	}, [script])
+
+	console.log("display", display)
 
 	if (!scene)
 		display = false

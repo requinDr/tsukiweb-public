@@ -11,6 +11,10 @@
 	--text-muted: #bdbdbd;
 	--transition-time: 0.2s;
 	--transition: all var(--transition-time) ease-out;
+	--text-bg: linear-gradient(90deg, rgba(0, 0, 0, 0.15) 0%,
+											 rgba(0, 0, 0, 0.45) 10%,
+											 rgba(0, 0, 0, 0.45) 90%,
+											 rgba(0, 0, 0, 0.15) 100%);
 }
 
 .window {
@@ -68,7 +72,7 @@
 	}
 	#layer-choices {
 		z-index: 3;
-		background-color: #0006;
+		background-image: var(--text-bg);
 
 		.choices-container {
 			display: flex;

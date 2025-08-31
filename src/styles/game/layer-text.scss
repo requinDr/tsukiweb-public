@@ -2,10 +2,7 @@
 	z-index: 2;
 	opacity: 1;
 	user-select: none;
-	background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.15) 0%,
-											 rgba(0, 0, 0, 0.45) 10%,
-											 rgba(0, 0, 0, 0.45) 90%,
-											 rgba(0, 0, 0, 0.15) 100%);
+	background-image: var(--text-bg);
 	padding: 8vmin 10%;
 	text-shadow: #000 1px 1px 1px, #000 -1px 1px 1px, #000 -1px -1px 1px, #000 1px -1px 1px;
 	letter-spacing: 1px;

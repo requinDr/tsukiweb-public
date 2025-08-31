@@ -6,7 +6,6 @@ import { ScriptPlayer } from "script/ScriptPlayer"
 import { preprocessText } from "@tsukiweb-common/utils/utils"
 
 
-
 type SelectionCallback = (choice: Choice)=>void
 
 //##############################################################################
@@ -53,7 +52,7 @@ function processSelect(setChoices: (choices: Choice[])=>void,
   }
   return {
     next: ()=>{}, // prevent continuing to next instruction
-  };
+  }
 }
 
 //#endregion ###################################################################
@@ -79,10 +78,13 @@ const ChoicesLayer = ({script, display}: Props) => {
   return (
     <div className="layer" id="layer-choices">
       <div className="choices-container">
-        {choices.map((choice: Choice) =>
-          <button key={choice.index} className="choice"
-            onClick={()=> onSelection.current?.(choice)}>
-            <Bbcode text={choice.str}/>
+        {choices.map(choice =>
+          <button
+            key={choice.index}
+            className="choice"
+            onClick={() => onSelection.current?.(choice)}
+          >
+            <Bbcode text={choice.str} />
           </button>
         )}
       </div>
