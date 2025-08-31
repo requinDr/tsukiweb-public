@@ -134,7 +134,7 @@ const Window = () => {
 	}, [topLayer])
 
 //............ user inputs .............
-	const _createKeyMap = useCallback(()=> actions.createKeyMap(layers), [])
+	const _createKeyMap = useCallback(()=> actions.createKeyMap(layers, show.current), [])
 	useKeyMap(_createKeyMap, (action, _evt, ...args)=>
 		actionsHandler.handleAction(action, ...args),
 	document, "keydown", {capture: false})
