@@ -269,6 +269,35 @@ function generalFixes(file, tokens) {
 			}
 		}
 	}
+
+	// Add page break after last text of scenes (fix text skip before choices)
+	if (file != LOGIC_FILE) {
+		let stop = false
+		for (let i = tokens.length-1; i>= 0 && !stop; i--) {
+			const token = tokens[i]
+			if (token instanceof CommandToken) {
+				switch (token.cmd) {
+					case 'br' :
+						tokens[i] = null
+						break
+					case 'ld' : case 'bg' : case 'cl' :
+						stop = true
+						break
+					case 'wait' : case '!w' :
+						stop = true
+						break
+					case '\\' : case '@' :
+						stop = true
+						break
+				}
+			} else if (token instanceof TextToken) {
+				if (!token.text.endsWith('@')) {
+					tokens.splice(i, 0, new CommandToken(token.lineIndex, '\\'))
+					stop = true
+				}
+			}
+		}
+	}
 }
 
 //#endregion ###################################################################

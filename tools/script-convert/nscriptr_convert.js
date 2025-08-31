@@ -97,9 +97,9 @@ function dwaveFileConvert(num, file) {
 }
 
 /**
- * @param {Token} token 
- * @param {Token[]} tokens 
- * @param {number} index 
+ * @param {Token} token
+ * @param {Token[]} tokens
+ * @param {number} index
  * @param {string[]} clickChars
  */
 function genericFixes(token, tokens, index, clickChars) {
@@ -110,7 +110,7 @@ function genericFixes(token, tokens, index, clickChars) {
         
         token.text = token.text
                 .replaceAll(/@{2,}/g, '@')// remove dup. '@' if too much added by clickChars
-                .replaceAll(/[-―─―]{2,}/g, (match)=> `[line=${match.length}]`)
+                .replaceAll(/[-―─―—]{2,}/g, (match)=> `[line=${match.length}]`)
         if (token.text.endsWith('@') && index < tokens.length - 1) {
             // remove '@' if right before '\'
             const nextToken = tokens[index+1]
