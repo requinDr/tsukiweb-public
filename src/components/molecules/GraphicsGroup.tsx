@@ -68,7 +68,7 @@ const GraphicsGroup = ({
 		<div className={classes.join(' ')} style={style} {...attrs}>
 			{POSITIONS.map(pos => images[pos] &&
 				<GraphicElement
-					key={images[pos]||pos}
+					key={pos}
 					pos={pos}
 					image={images[pos] ?? ''} {...(typeof spriteAttrs == 'function' ? spriteAttrs(pos)
 							: spriteAttrs?.[pos] ?? {})}
