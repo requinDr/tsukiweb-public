@@ -41,7 +41,14 @@ const Window = () => {
 	useScreenAutoNavigate(SCREEN.WINDOW)
 	useLanguageRefresh()
 	const rootElmtRef = useRef(null)
-	const [script, remountScript] = useReset(()=> new ScriptPlayer(history))
+	const [script, remountScript] = useReset(()=>
+		new ScriptPlayer(history, {
+			onFinish(complete) {
+				if (complete)
+					displayMode.screen = SCREEN.TITLE
+			}
+		})
+	)
 	const [, onLayersChange] = useReducer(x=>x+1, 0)
 	const [layers, ] = useReset(()=> new InGameLayersHandler({
 		onChange: onLayersChange,
