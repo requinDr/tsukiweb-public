@@ -1,4 +1,4 @@
-import { Fragment, useCallback, useEffect, useLayoutEffect, useReducer, useRef, useState } from 'react';
+import { Fragment, useCallback, useEffect, useLayoutEffect, useReducer, useRef, useState, useMemo } from 'react';
 import * as motion from "motion/react-m"
 import '@styles/game.scss';
 import HistoryLayer from '../layers/HistoryLayer';
@@ -51,34 +51,27 @@ const Window = () => {
 		new actions.UserActionsHandler(script, layers, remountScript))
 	const [textboxStyle, setTextboxStyle] = useState<'adv' | 'nvl'>("nvl")
 
-	// ref so it doesn't change once leaving a context until component unmount
-	const show = useRef({
-		graphics: true,
-		history: true,
-		flowchart: !isPDScene(script.currentLabel ?? ""),
-		save: script.continueScript,
-		load: true,
-		config: true,
-		title: true,
-
-		qSave: script.continueScript,
-		qLoad: script.continueScript,
-		copyScene: true,
-	})
+	const show = useMemo(() => {
+		const isPd = isPDScene(script.currentLabel ?? "")
+		return {
+			graphics: true,
+			history: true,
+			flowchart: !isPd,
+			save: script.continueScript || isPd,
+			load: true,
+			config: true,
+			title: true,
+			qSave: script.continueScript || isPd,
+			qLoad: script.continueScript || isPd,
+			copyScene: true,
+		}
+	}, [script.currentLabel, script.continueScript])
 
 	useLayoutEffect(()=> {
 		if (history.empty) {
 			displayMode.screen = SCREEN.TITLE
 		}
 	}, [])
-
-	useLayoutEffect(() => {
-		const isPd = isPDScene(script.currentLabel ?? "")
-		show.current.flowchart = !isPd
-		show.current.save = script.continueScript || isPd
-		show.current.qSave = script.continueScript || isPd
-		show.current.qLoad = script.continueScript || isPd
-	}, [script.continueScript, script.currentLabel])
 
 	useEffect(()=> {
 		if (history.empty)
@@ -134,7 +127,7 @@ const Window = () => {
 	}, [topLayer])
 
 //............ user inputs .............
-	const _createKeyMap = useCallback(()=> actions.createKeyMap(layers, show.current), [])
+	const _createKeyMap = useCallback(()=> actions.createKeyMap(layers, show), [layers, show])
 	useKeyMap(_createKeyMap, (action, _evt, ...args)=>
 		actionsHandler.handleAction(action, ...args),
 	document, "keydown", {capture: false})
@@ -185,7 +178,7 @@ const Window = () => {
 					display={layers.history || layers.flowchart}
 					history={history}
 					layers={layers}
-					show={show.current}
+					show={show}
 					onRewind={remountScript}/>
 					
 				<SavesLayer
@@ -204,7 +197,7 @@ const Window = () => {
 						<HiMenu />
 					</button>
 				}
-				<MenuLayer show={show.current} script={script} layers={layers}
+				<MenuLayer show={show} script={script} layers={layers}
 					qLoad={actionsHandler.quickLoad.bind(actionsHandler)}
 					qSave={actionsHandler.quickSave.bind(actionsHandler)}/>
 			</Fragment>
