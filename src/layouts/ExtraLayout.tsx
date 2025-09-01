@@ -3,13 +3,14 @@ import { PropsWithChildren, useEffect } from "react"
 import "@styles/extra.scss"
 import { strings } from "translation/lang"
 import { displayMode, SCREEN } from "utils/display"
-import { useLocation } from "react-router-dom"
+import { useLocation, useNavigate } from "react-router-dom"
 import { TitleMenuButton } from "@tsukiweb-common/ui-core"
 import { useLanguageRefresh } from "hooks/useLanguageRefresh"
 import useEclipseUnlocked from "hooks/useEclipseUnlocked"
 import { settings } from "utils/settings"
 
 const ExtraLayout = ({ children }: PropsWithChildren) => {
+	const navigate = useNavigate()
 	const location = useLocation()
 	useLanguageRefresh()
 	const { eclipseUnlocked } = useEclipseUnlocked()
@@ -45,36 +46,36 @@ const ExtraLayout = ({ children }: PropsWithChildren) => {
 				</h2>
 				<div className="menus">
 					<TitleMenuButton
-						to={SCREEN.GALLERY}
+						onClick={()=>navigate(SCREEN.GALLERY)}
 						active={currentPage === SCREEN.GALLERY}>
 						{strings.extra.gallery}
 					</TitleMenuButton>
 					<TitleMenuButton
-						to={SCREEN.ENDINGS}
+						onClick={()=>navigate(SCREEN.ENDINGS)}
 						active={currentPage === SCREEN.ENDINGS}
 						attention={eclipseUnlocked}>
 						{strings.extra.endings}
 					</TitleMenuButton>
 					<TitleMenuButton
-						to={SCREEN.SCENES}
+						onClick={()=>navigate(SCREEN.SCENES)}
 						active={currentPage === SCREEN.SCENES}>
 						{strings.extra.scenes}
 					</TitleMenuButton>
 					{import.meta.env.DEV && settings.unlockEverything &&
 					<TitleMenuButton
-						to={SCREEN.CHARACTERS}
+						onClick={()=>navigate(SCREEN.CHARACTERS)}
 						active={currentPage === SCREEN.CHARACTERS}>
 						Characters
 					</TitleMenuButton>
 					}
 					<TitleMenuButton
-						to={SCREEN.PLUS_DISC}
+						onClick={()=>navigate(SCREEN.PLUS_DISC)}
 						active={currentPage === SCREEN.PLUS_DISC}>
 						Plus-Disc
 					</TitleMenuButton>
 
 					<TitleMenuButton
-						to={SCREEN.TITLE}
+						onClick={()=>navigate(SCREEN.TITLE)}
 						className="back-button">
 						{`<<`} {strings.back}
 					</TitleMenuButton>

@@ -60,8 +60,6 @@ const SkipLayer = ({script, history, display}: Props) => {
 		setScene(undefined)
 	}, [script])
 
-	console.log("display", display)
-
 	if (!scene)
 		display = false
 	const sceneTitle = display ? getSceneTitle(Array.from(script.flags), scene!) : ""
