@@ -1,12 +1,12 @@
 import { ScriptPlayerBase, ScriptPlayerCallbacks } from "@tsukiweb-common/script/ScriptPlayer"
 import { LabelName, RouteDayName, RouteName } from "types";
-import { fetchBlockLines, isScene, isThScene, nextLabel } from "script/utils";
+import { fetchBlockLines, isScene, nextLabel } from "script/utils";
 import { settings } from "utils/settings";
 import { phaseTexts } from "translation/assets";
 import { closeBB } from "@tsukiweb-common/utils/Bbcode";
 import { Graphics, StrVarName, NumVarName, VarName, RecursivePartial } from "@tsukiweb-common/types";
 import { getGameVariable, setGameVariable } from "utils/variables";
-import { deepAssign, jsonDiff, TSForceType } from "@tsukiweb-common/utils/utils";
+import { deepAssign, TSForceType } from "@tsukiweb-common/utils/utils";
 import { CommandRecord } from "@tsukiweb-common/script/utils";
 import { History, PageEntry, PageType, SceneEntry } from "utils/history";
 

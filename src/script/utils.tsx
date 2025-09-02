@@ -86,11 +86,11 @@ export async function fetchScene(sceneId: string): Promise<string[]> {
 
 export async function fetchLogicBlock(label: string) : Promise<string[]> {
 	await waitLanguageLoad()
-	const logicScript = await fetch(`${scenesDir()}/${LOGIC_FILE}?v=${APP_VERSION}`).then(
-		(response) => response.text());
+	const logicScript = await fetch(`${scenesDir()}/${LOGIC_FILE}?v=${APP_VERSION}`)
+		.then((response) => response.text())
 	let start = logicScript.search(new RegExp(`^\\*${label}\\b`, "m"))
 	if (start == -1)
-		return [];
+		return []
 	start = logicScript.indexOf('\n', start+1)+1 // move to next line
 	let end = logicScript.indexOf('\n*', start) // position of next label
 	let nextLabel, lines
