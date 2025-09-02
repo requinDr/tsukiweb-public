@@ -52,8 +52,8 @@
 		.save-container {
 			position: absolute;
 			width: 100%;
-			display: grid;
-			grid-template-columns: auto 1fr;
+			display: flex;
+			flex-direction: row;
 			height: 109px;
 			border-bottom: 1px solid transparent;
 			font-size: 1.1em;
@@ -65,7 +65,7 @@
 			.deta {
 				padding: 1em;
 				min-width: 0;
-				width: 100%;
+				flex: 1;
 				overflow: hidden;
 
 				.date {
