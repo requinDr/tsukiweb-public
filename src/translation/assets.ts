@@ -159,15 +159,13 @@ export function credits() : [string, number][] {
  *          for the title, and the second element is the text for the subtitle
  */
 export function phaseTexts(route: RouteName, routeDay: RouteDayName, day: number|RouteDayName<"others">): [string, string] {
-  
-  const titleString = strings.scenario.routes[route][routeDay as RouteDayName]
-  let dayString: string
-  if (isNaN(day as number))
-    dayString = strings.scenario.days[+day - 1]
+  const titleString = strings.scenario.routes[route][routeDay as RouteDayName] ?? ""
+  let dayString = ""
+
+  if (isNaN(+day))
+    dayString = strings.scenario.days[+day - 1] ?? ""
   else if ((day as string).length > 0)
-    dayString = strings.scenario.routes['others'][day as RouteDayName<"others">]
-  else
-    dayString = ""
+    dayString = strings.scenario.routes['others'][day as RouteDayName<"others">] ?? ""
 
   return [titleString, dayString]
 }
