@@ -15,6 +15,17 @@
 	"scripts-dir": "./scenes/",
 	
 	"images": {
+		"words": {
+			"fin": "#ffffff$c`[center][noline][color=black][font=serif]Fin`",
+			"end": "#ffffff$b`[right][noline][color=black][font=serif]END`",
+			"pd_fin": "#000000$b`[right][noline][font=serif]Fin`",
+			"pd_genshi": "#000000$b`[right][noline][font=serif][u]Historia corta/Alianza de ojos ilusorios`",
+			"pd_tea": "#000000$t`[left][noline][noline][font=serif][u]Té Lunar`",
+			"pd_one_a": "#000000$c`[center][noline][font=serif]Primer Día/1`",
+			"pd_one_b": "#000000$c`[center][noline][font=serif]Primer Día/2`",
+			"pd_two": "#000000$c`[center][noline][font=serif]Segundo Día`",
+			"pd_three": "#000000$c`[center][noline][font=serif]Tercer Día`"
+		},
 		"thumb" : {
 			"tachi/osiete" : "./image/%0.webp"
 		},
@@ -136,7 +147,10 @@
 		"delete": "Eliminar",
 		"delete-warning": "¿Estás seguro de que quieres eliminar este guardado?",
 		"overwrite-warning": "¿Estás seguro de que quieres sobrescribir este guardado?",
-		"quick-save": "Guardado rápido"
+		"quick-save": "Guardado rápido",
+		"local-storage-warning":
+			"Las partidas guardadas y las configuraciones se almacenan localmente en el navegador y podrían eliminarse tras un período de inactividad. Exporta tus datos regularmente.",
+		"local-storage-last-export": "Última fecha de exportación completa de datos: %0"
 	},
 	"game": {
 		"skip-viewed": "Ya has visto esta escena.",
@@ -177,12 +191,12 @@
 	},
 	"plus_disc": {
 		"desc": [
-			"PLUS-DISC is a fan disc containing a short story and bonus, originally released in 2001.",
-			"Note: You should read Tsukihime first."
+			"PLUS-DISC es un fan disc que contiene una historia corta y contenido extra, lanzado originalmente en 2001.",
+			"Nota: Se recomienda haber leído primero Tsukihime."
 		],
-		"viewed": "Viewed",
+		"viewed": "Visto",
 		"gallery": "Galería",
-		"scenes": "Scenes"
+		"scenes": "Escenas"
 	},
 	"yes": "Sí",
 	"no": "No",
