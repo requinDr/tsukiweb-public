@@ -137,7 +137,7 @@ function processRocket(
 		params[key] = value
 	}
 
-	const layer = params.layer as 'l' | 'c' | 'r'
+	const layer = params.layer as RocketProps['layer']
 
 	if (!['l', 'c', 'r'].includes(layer)) {
 		console.error(`Invalid layer for @rocket: ${layer}`)
