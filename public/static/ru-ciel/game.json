@@ -2,6 +2,17 @@
   "scripts-dir": "./scenes/",
   
   "images": {
+    "words": {
+      "fin": "#ffffff$c`[center][noline][color=black][font=serif]Конец`",
+      "end": "#ffffff$b`[right][noline][color=black][font=serif]END`",
+      "pd_fin": "#000000$b`[right][noline][font=serif]Конец`",
+      "pd_genshi": "#000000$b`[right][noline][font=serif][u]Рассказ: Альянс Иллюзорных Глаз`",
+      "pd_tea": "#000000$t`[left][noline][noline][font=serif][u]Лунный чай`",
+      "pd_one_a": "#000000$c`[center][noline][font=serif]День первый/1`",
+      "pd_one_b": "#000000$c`[center][noline][font=serif]День первый/2`",
+      "pd_two": "#000000$c`[center][noline][font=serif]День второй`",
+      "pd_three": "#000000$c`[center][noline][font=serif]День третий`"
+    }
   },
 
   "scenario": {

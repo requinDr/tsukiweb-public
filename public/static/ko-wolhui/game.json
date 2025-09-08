@@ -2,6 +2,17 @@
   "scripts-dir": "./scenes/",
   
   "images": {
+    "words": {
+      "fin": "#ffffff$c`[center][noline][color=black][font=serif]Fin`",
+      "end": "#ffffff$b`[right][noline][color=black][font=serif]END`",
+      "pd_fin": "#000000$b`[right][noline][font=serif]Fin`",
+      "pd_genshi": "#000000$b`[right][noline][font=serif][u]한화/환시 동맹`",
+      "pd_tea": "#000000$t`[left][noline][noline][font=serif][u]월차`",
+      "pd_one_a": "#000000$c`[center][noline][font=serif]1 일째/1`",
+      "pd_one_b": "#000000$c`[center][noline][font=serif]2 일째/2`",
+      "pd_two": "#000000$c`[center][noline][font=serif]2일째`",
+      "pd_three": "#000000$c`[center][noline][font=serif]3일째`"
+    }
   },
 
   "scenario": {
