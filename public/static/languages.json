@@ -3,7 +3,7 @@
     "locale": "ja-JP",
     "display-name": "🇯🇵 日本語",
     "dir": "./jp",
-    "last-update": "2025-09-08"
+    "last-update": "2025-09-09"
   },
   "en-mm": {
     "locale": "en-US",
@@ -11,14 +11,14 @@
     "authors": "mirror moon",
     "dir": "./en-mm",
     "fallback": "jp",
-    "last-update": "2025-09-08"
+    "last-update": "2025-09-09"
   },
   "it-riffour": {
     "locale": "it-IT",
     "display-name": "🇮🇹 Italiano",
     "authors": "Riffour",
     "dir": "./it-riffour",
-    "last-update": "2025-09-08",
+    "last-update": "2025-09-09",
     "fallback": "en-mm"
   },
   "pt-matsuri": {
@@ -26,7 +26,7 @@
     "display-name": "🇧🇷 Português",
     "authors": "Matsuri Fansub",
     "dir": "./pt-matsuri",
-    "last-update": "2025-09-08",
+    "last-update": "2025-09-09",
     "fallback": "en-mm"
   },
   "es-tohnokun": {
@@ -34,7 +34,7 @@
     "display-name": "🇪🇸 Español",
     "authors": "Tohno-kuN",
     "dir": "./es-tohnokun",
-    "last-update": "2025-09-08",
+    "last-update": "2025-09-09",
     "fallback": "en-mm"
   },
   "ru-ciel": {
@@ -42,7 +42,7 @@
     "display-name": "🇷🇺 Русский",
     "authors": "Ciel-senpai",
     "dir": "./ru-ciel",
-    "last-update": "2025-09-08",
+    "last-update": "2025-09-09",
     "fallback": "en-mm"
   },
    "zh-yueji_yeren_hanhua_zu": {
@@ -50,7 +50,7 @@
     "display-name": "🇨🇳 简体中文",
     "authors": "月姬野人汉化组 & SHIROU神父",
     "dir": "./zh-yueji_yeren_hanhua_zu",
-    "last-update": "2025-09-08",
+    "last-update": "2025-09-09",
     "fallback": "jp"
   },
   "zh-tw-yueji_yeren_hanhua_zu": {
@@ -58,7 +58,7 @@
     "display-name": "🇨🇳 繁體中文",
     "authors": "月姬野人汉化组 & SHIROU神父",
     "dir": "./zh-tw-yueji_yeren_hanhua_zu",
-    "last-update": "2025-09-08",
+    "last-update": "2025-09-09",
     "fallback": "jp"
   },
   "ko-wolhui": {
@@ -66,7 +66,7 @@
     "display-name": "🇰🇷 한국어",
     "authors": "Wolhui",
     "dir": "./ko-wolhui",
-    "last-update": "2025-09-08",
+    "last-update": "2025-09-09",
     "fallback": "en-mm"
   }
 }

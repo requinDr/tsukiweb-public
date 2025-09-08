@@ -59,7 +59,7 @@ const VisibleScene = ({ node, onClick }: SceneProps) => {
 
 	const disabled = node.state === FcNodeState.DISABLED
 	const classes = classNames("fc-scene", "unlocked", {
-		"blur": node.graph?.bg && cg.shouldBlur(cg.getNameFromPath(node.graph.bg)),
+		"blur": node.graph?.bg && cg.shouldBlur(node.graph.bg),
 		"active": node.active,
 		"disabled": disabled
 	})

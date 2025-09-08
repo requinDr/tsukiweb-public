@@ -13,6 +13,8 @@ import { bb } from "@tsukiweb-common/utils/Bbcode"
 import { modalPromptService } from "@tsukiweb-common/ui-core/components/ModalPrompt"
 import { warnHScene } from "utils/display"
 import { polyfillCountryFlagEmojis } from "@tsukiweb-common/utils/flagsPolyfill"
+import { avif } from "@tsukiweb-common/utils/images"
+import { imageSrc } from "translation/assets"
 
 let flagSupportChecked = false
 
@@ -109,8 +111,29 @@ const ConfigAdvancedTab = () => {
 						<>
 							<h2>{strings.config["adult-blur"]}</h2>
 							{strings.config["adult-blur-help"].map((txt, i) =>
-								<p key={i}>{bb(txt)}</p>
+								<div key={i}>{bb(txt)}</div>
 							)}
+
+							<div className="comparison">
+								<picture>
+									<source srcSet={avif.replaceExtension(imageSrc(`event/ark_e01`, 'sd'))} type="image/avif"/>
+									<img
+									 	className="unblurred"
+									 	src={imageSrc(`event/ark_e01`, 'sd')}
+									 	alt={"Sample image, unblurred"}
+									 	draggable={false}
+									/>
+								</picture>
+								<picture>
+									<source srcSet={avif.replaceExtension(imageSrc(`event/ark_e01`, 'sd'))} type="image/avif"/>
+									<img
+									 	className="blurred"
+									 	src={imageSrc(`event/ark_e01`, 'sd')}
+									 	alt={"Sample image, blurred"}
+									 	draggable={false}
+									/>
+								</picture>
+							</div>
 						</>
 					})}
 					btns={[

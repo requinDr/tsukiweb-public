@@ -1,6 +1,5 @@
 import { Dispatch, ReactNode } from "react"
 import { strings } from "translation/lang"
-import Ornament from "../../assets/images/ornament.webp"
 import { Button, Modal } from "@tsukiweb-common/ui-core"
 
 type Props = {
@@ -16,7 +15,6 @@ const ConfigModal = ({modal, setModal}: Props) => {
 			setShow={close}
 			className="config-modal"
 		>
-			<img src={Ornament} alt="ornament" className="ornament" />
 			<div className="modal-content">
 				{modal.content}
 			</div>

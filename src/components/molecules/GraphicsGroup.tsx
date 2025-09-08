@@ -73,7 +73,7 @@ const GraphicsGroup = ({
 					image={images[pos] ?? ''} {...(typeof spriteAttrs == 'function' ? spriteAttrs(pos)
 							: spriteAttrs?.[pos] ?? {})}
 					getUrl={getUrl.bind(undefined, resolution)}
-					blur={cg.shouldBlur(cg.getNameFromPath(images[pos] ?? ''))}
+					blur={cg.shouldBlur(images[pos] ?? '')}
 					lazy={lazy}
 				/>
 			)}
