@@ -4,8 +4,9 @@ import { SCENE_ATTRS } from "../utils/constants"
 import { settings } from "../utils/settings"
 import { observe } from "@tsukiweb-common/utils/Observer"
 import { StoredJSON } from "@tsukiweb-common/utils/storage"
-import { fetchJson, deepAssign, insertDirectory } from "@tsukiweb-common/utils/utils"
+import { fetchJson, deepAssign, insertDirectory, jsonMerge } from "@tsukiweb-common/utils/utils"
 import { ImageRedirect, LangDesc, TextImage, TranslationId, UpdateDateFormat } from "@tsukiweb-common/utils/lang"
+import { JSONObject } from "@tsukiweb-common/types"
 
 //##############################################################################
 //#                                  PRIVATE                                   #
@@ -134,6 +135,9 @@ export type LangJson = Omit<typeof defaultStrings, keyof GameJson>
 
 export const languages = languagesStorage.get() || { } as LanguagesType
 export const strings = stringsStorage.get() || { ...defaultStrings, id: "" } as StringsType
+if (Object.hasOwn(strings, "translation-pd")) {
+  jsonMerge(strings as any, defaultStrings as any, {inplace: true})
+}
 
 //_______________________________public functions_______________________________
 //------------------------------------------------------------------------------
