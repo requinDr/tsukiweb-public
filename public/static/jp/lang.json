@@ -1,214 +1,181 @@
 {
-	"translation": {
-		"name": "original",
-		"desc": "",
-		"url": "",
-		"vndb": ""
-	},
-	"translation-pd": {
-		"name": "original",
-		"desc": "",
-		"url": "",
-		"vndb": ""
-	},
+  "translation": {
+    "name": "original",
+    "desc": "",
+    "url": "",
+    "vndb": ""
+  },
+  "translation-pd": {
+    "name": "original",
+    "desc": "",
+    "url": "",
+    "vndb": ""
+  },
 
-	"scripts-dir": "./scenes/",
-
-	"images": {
-		"words": {
-			"fin": "#ffffff$c`[center][noline][color=black][font=serif]Fin`",
-			"end": "#ffffff$b`[right][noline][color=black][font=serif]END`",
-			"pd_fin": "#000000$b`[right][noline][font=serif]Fin`",
-			"pd_genshi": "#000000$b`[right][noline][font=serif][u]   閑話/幻視同盟`",
-			"pd_tea": "#000000$t`[left][noline][noline][font=serif][u]          月茶`",
-			"pd_one_a": "#000000$c`[center][noline][font=serif]一日目/1`",
-			"pd_one_b": "#000000$c`[center][noline][font=serif]一日目/2`",
-			"pd_two": "#000000$c`[center][noline][font=serif]二日目`",
-			"pd_three": "#000000$c`[center][noline][font=serif]三日目`"
-		},
-		"sd": {
-			"": "./image/%0.webp"
-		},
-		"thumb": {
-			"": "./image_thumb/%0.webp"
-		},
-		"hd": {
-			"": "./image_x2/%0.webp"
-		}
-	},
-	"audio": {
-		"tracks-path": {
-			"original": ["./CD_original/track%.webm"],
-			"everafter": ["./CD_everafter/track%.webm"],
-			"tsukibako": ["./CD_tsukibako/track%.webm"]
-		},
-		"waves-path": ["./wave/%.webm"],
-		"waves-pd-path": ["./wave-pd/%.webm"]
-	},
-	"disclaimer": [
-		"このゲームは、TYPE－MOONの2000に発行されたビジュアルノベル[b]「月姫」[/b]のウェブバージョンです。",
-		"18歳以上のみ対象の商品となっております。"
-	],
-	"title": {
-		"start": "はじめから",
-		"resume": "つづきから",
-		"load": "ロード",
-		"config": "設定",
-		"extra": "エクストラ",
-		"about": {
-			"port": "このゲームは、TYPE－MOONの2000年に発行されたビジュアルノベル[b]「月姫」[/b]のウェブバージョンです。",
-			"project": "プロジェクトは%0GitHub%1にある。Add a star if you like it! Contributions are welcome.",
-			"feedback": "Send your feedback or report a bug %0here%1.",
-			"data": "全てがブラウザに保存されて、データを集められません。データを%0ここで%1管理できます。",
-			"remake": "%0月姫 -A piece of blue glass moon-%1を買って応援してください。"
-		},
-		"install": "Install"
-	},
-	"extra": {
-		"gallery": "ギャラリー",
-		"endings": "エンディング",
-		"scenes": "Flowchart",
-		"eclipse": "Eclipse"
-	},
-	"config": {
-		"on": "ON",
-		"off": "OFF",
-		"reset": "初期設定に戻す",
-		"tab-game": "Game",
-		"tab-audio": "Audio",
-		"tab-controls": "操作設定",
-		"tab-advanced": "詳細設定",
-		"volume-master": "音量",
-		"volume-track": "BGM 音量",
-		"volume-se": "SFX 音量",
-		"volume-title-track": "TITLE BGM 音量",
-		"volume-system-se": "SYS SFX 音量",
-		"track-source": "Track Source",
-		"track-sources": {
-			"original": "Original (2000)",
-			"everafter": "Ever After (2002)",
-			"tsukibako": "Tsuki-Bako (2003)"
-		},
-		"auto-mute": "Mute when switching tab",
-		"ratio": "アスペクト比",
-		"ratio-auto": "Auto",
-		"ratio-4-3": "4:3",
-		"ratio-16-9": "16:9",
-		"text-speed": "メッセージ表示間隔",
-		"text-speed-low": "遅い",
-		"text-speed-med": "普通",
-		"text-speed-high": "早い",
-		"text-speed-instant": "瞬時",
-		"auto-play-delay-text": "オートモード時のメッセージ表示時間：%0s",
-		"auto-play-delay-page": "オートモード時のページ切り替え時間：%0s",
-		"adult-title": "エロ設定",
-		"adult-blur": "Blur thumbnails",
-		"adult-blur-help": [
-			"Apply a blur effect on the thumbnails of the adult scenes (Save, Load, Flowchart, Gallery, …).",
-			"In-game content is not affected."
-		],
-		"adult-warn": "エロシーンを読むところで注意される",
-		"quality": "グラフィック品質",
-		"quality-sd": "640\u00D7480",
-		"quality-hd": "1280\u00D7960",
-		"fullscreen": "フルスクリーン",
-		"language": "言語",
-		"show-locked-content": "Reveal locked content",
-		"show-locked-content-help": [
-			"Reveals the complete Gallery, Flowchart, Endings, Eclipse, …",
-			"Also fulfills the requirement to access the Far Side.",
-			"It can be toggled on and off at any time."
-		],
-		"data": "データストレージ",
-		"data-export": "エクスポート",
-		"data-import": "インポート",
-		"data-erase": "削除",
-		"data-erase-warning": "本当にセーブを全て削除して、初期設定に戻したいですか？",
-		"data-erase-confirm": "セーブを全て削除しました。If you leave this website without making any change to the settings and without starting a new game, no data will remain stored on your computer",
-		"controls": {
-			"next": "つぎ",
-			"history": "ログを表示／非表示する",
-			"back": "Close current view / Display menu",
-			"bg_move": "Move background image",
-			"auto_play": "オートモード",
-			"page_nav": "次／前のページへ",
-			"load": "ロードのページを開く",
-			"save": "Open save panel",
-			"q_save": "クイックセーブ",
-			"q_load": "クイックロード",
-			"config": "Open config panel",
-			"_hold": "[i](Hold)"
-		}
-	},
-	"endings": {
-		"normal": "エンド",
-		"good": "グッドエンド",
-		"true": "トゥルーエンド",
-		"osiete": "おしえて‼知得留先生"
-	},
-	"saves": {
-		"title-load": "ロード",
-		"title-save": "セーブ",
-		"create": "New save",
-		"import": "Import save file",
-		"export": "エクスポート",
-		"delete": "削除",
-		"delete-warning": "このセーブを本当に削除したいですか？",
-		"overwrite-warning": "このセーブを本当に上書きしたいですか？",
-		"quick-save": "クイックセーブ",
-		"local-storage-warning":
-			"Savefiles and settings are stored locally in the web browser, and might get deleted by the browser after a delay of inactivity. Regularly export your data.",
-		"local-storage-last-export": "Last full data export date: %0"
-	},
-	"game": {
-		"skip-viewed": "このシーンはもう見ました。",
-		"skip-prompt": "スキップしますか？",
-		"toast-qsave": "セーブは成功しました",
-		"toast-qload": "ロードは成功しました",
-		"toast-load": "ロードは成功しました",
-		"toast-save-fail": "セーブは失敗しました",
-		"toast-load-fail": "ロードは失敗しました",
-		"toast-autoplay-stop": "オートモードを停止しました",
-		"toast-ffw-stop": "早送りを停止しました",
-		"toast-hscene-waning": "エロのシーンを読むところです。"
-	},
-	"menu": {
-		"graphics": "グラフィック",
-		"history": "ログ",
-		"save": "セーブ",
-		"load": "ロード",
-		"config": "設定",
-		"auto-play": "オートモード",
-		"ffw": "早送り",
-		"title": "タイトルに戻る",
-		"q-save": "クイックセーブ",
-		"q-load": "クイックロード",
-		"copy-scene-url": "Copy scene link"
-	},
-	"history": {
-		"load": "ロード",
-		"skipped": "%0のシーンをスキップしました"
-	},
-	"characters": {
-		"aki": "秋葉",
-		"ark": "アルクェイド",
-		"cel": "シエル",
-		"his": "翡翠",
-		"koha": "琥珀",
-		"others": "Others"
-	},
-	"plus_disc": {
-		"desc": [
-			"PLUS-DISC is a fan disc containing a short story and bonus, originally released in 2001.",
-			"Note: You should read Tsukihime first."
-		],
-		"viewed": "Viewed",
-		"gallery": "ギャラリー",
-		"scenes": "Scenes"
-	},
-	"yes": "はい",
-	"no": "いいえ",
-	"ok": "はい",
-	"back": "戻る",
-	"close": "閉じる"
+  "disclaimer": [
+    "このゲームは、TYPE－MOONの2000に発行されたビジュアルノベル[b]「月姫」[/b]のウェブバージョンです。",
+    "18歳以上のみ対象の商品となっております。"
+  ],
+  "title": {
+    "start": "はじめから",
+    "resume": "つづきから",
+    "load": "ロード",
+    "config": "設定",
+    "extra": "エクストラ",
+    "about": {
+      "port": "このゲームは、TYPE－MOONの2000年に発行されたビジュアルノベル[b]「月姫」[/b]のウェブバージョンです。",
+      "project": "プロジェクトは%0GitHub%1にある。Add a star if you like it! Contributions are welcome.",
+      "feedback": "Send your feedback or report a bug %0here%1.",
+      "data": "全てがブラウザに保存されて、データを集められません。データを%0ここで%1管理できます。",
+      "remake": "%0月姫 -A piece of blue glass moon-%1を買って応援してください。"
+    },
+    "install": "Install"
+  },
+  "extra": {
+    "gallery": "ギャラリー",
+    "endings": "エンディング",
+    "scenes": "Flowchart",
+    "eclipse": "Eclipse"
+  },
+  "config": {
+    "on": "ON",
+    "off": "OFF",
+    "reset": "初期設定に戻す",
+    "tab-game": "Game",
+    "tab-audio": "Audio",
+    "tab-controls": "操作設定",
+    "tab-advanced": "詳細設定",
+    "volume-master": "音量",
+    "volume-track": "BGM 音量",
+    "volume-se": "SFX 音量",
+    "volume-title-track": "TITLE BGM 音量",
+    "volume-system-se": "SYS SFX 音量",
+    "track-source": "Track Source",
+    "track-sources": {
+      "original": "Original (2000)",
+      "everafter": "Ever After (2002)",
+      "tsukibako": "Tsuki-Bako (2003)"
+    },
+    "auto-mute": "Mute when switching tab",
+    "ratio": "アスペクト比",
+    "ratio-auto": "Auto",
+    "ratio-4-3": "4:3",
+    "ratio-16-9": "16:9",
+    "text-speed": "メッセージ表示間隔",
+    "text-speed-low": "遅い",
+    "text-speed-med": "普通",
+    "text-speed-high": "早い",
+    "text-speed-instant": "瞬時",
+    "auto-play-delay-text": "オートモード時のメッセージ表示時間：%0s",
+    "auto-play-delay-page": "オートモード時のページ切り替え時間：%0s",
+    "adult-title": "エロ設定",
+    "adult-blur": "Blur thumbnails",
+    "adult-blur-help": [
+      "Apply a blur effect on the thumbnails of the adult scenes (Save, Load, Flowchart, Gallery, …).",
+      "In-game content is not affected."
+    ],
+    "adult-warn": "エロシーンを読むところで注意される",
+    "quality": "グラフィック品質",
+    "quality-sd": "640\u00D7480",
+    "quality-hd": "1280\u00D7960",
+    "fullscreen": "フルスクリーン",
+    "language": "言語",
+    "show-locked-content": "Reveal locked content",
+    "show-locked-content-help": [
+      "Reveals the complete Gallery, Flowchart, Endings, Eclipse, …",
+      "Also fulfills the requirement to access the Far Side.",
+      "It can be toggled on and off at any time."
+    ],
+    "data": "データストレージ",
+    "data-export": "エクスポート",
+    "data-import": "インポート",
+    "data-erase": "削除",
+    "data-erase-warning": "本当にセーブを全て削除して、初期設定に戻したいですか？",
+    "data-erase-confirm": "セーブを全て削除しました。If you leave this website without making any change to the settings and without starting a new game, no data will remain stored on your computer",
+    "controls": {
+      "next": "つぎ",
+      "history": "ログを表示／非表示する",
+      "back": "Close current view / Display menu",
+      "bg_move": "Move background image",
+      "auto_play": "オートモード",
+      "page_nav": "次／前のページへ",
+      "load": "ロードのページを開く",
+      "save": "Open save panel",
+      "q_save": "クイックセーブ",
+      "q_load": "クイックロード",
+      "config": "Open config panel",
+      "_hold": "[i](Hold)"
+    }
+  },
+  "endings": {
+    "normal": "エンド",
+    "good": "グッドエンド",
+    "true": "トゥルーエンド",
+    "osiete": "おしえて‼知得留先生"
+  },
+  "saves": {
+    "title-load": "ロード",
+    "title-save": "セーブ",
+    "create": "New save",
+    "import": "Import save file",
+    "export": "エクスポート",
+    "delete": "削除",
+    "delete-warning": "このセーブを本当に削除したいですか？",
+    "overwrite-warning": "このセーブを本当に上書きしたいですか？",
+    "quick-save": "クイックセーブ",
+    "local-storage-warning":
+      "Savefiles and settings are stored locally in the web browser, and might get deleted by the browser after a delay of inactivity. Regularly export your data.",
+    "local-storage-last-export": "Last full data export date: %0"
+  },
+  "game": {
+    "skip-viewed": "このシーンはもう見ました。",
+    "skip-prompt": "スキップしますか？",
+    "toast-qsave": "セーブは成功しました",
+    "toast-qload": "ロードは成功しました",
+    "toast-load": "ロードは成功しました",
+    "toast-save-fail": "セーブは失敗しました",
+    "toast-load-fail": "ロードは失敗しました",
+    "toast-autoplay-stop": "オートモードを停止しました",
+    "toast-ffw-stop": "早送りを停止しました",
+    "toast-hscene-waning": "エロのシーンを読むところです。"
+  },
+  "menu": {
+    "graphics": "グラフィック",
+    "history": "ログ",
+    "save": "セーブ",
+    "load": "ロード",
+    "config": "設定",
+    "auto-play": "オートモード",
+    "ffw": "早送り",
+    "title": "タイトルに戻る",
+    "q-save": "クイックセーブ",
+    "q-load": "クイックロード",
+    "copy-scene-url": "Copy scene link"
+  },
+  "history": {
+    "load": "ロード",
+    "skipped": "%0のシーンをスキップしました"
+  },
+  "characters": {
+    "aki": "秋葉",
+    "ark": "アルクェイド",
+    "cel": "シエル",
+    "his": "翡翠",
+    "koha": "琥珀",
+    "others": "Others"
+  },
+  "plus_disc": {
+    "desc": [
+      "PLUS-DISC is a fan disc containing a short story and bonus, originally released in 2001.",
+      "Note: You should read Tsukihime first."
+    ],
+    "viewed": "Viewed",
+    "gallery": "ギャラリー",
+    "scenes": "Scenes"
+  },
+  "yes": "はい",
+  "no": "いいえ",
+  "ok": "はい",
+  "back": "戻る",
+  "close": "閉じる"
 }

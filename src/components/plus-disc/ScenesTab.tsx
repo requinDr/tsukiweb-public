@@ -4,7 +4,7 @@ import { playScene } from "utils/savestates"
 import { viewedScene } from "utils/settings"
 import { strings } from "translation/lang"
 import { MessageContainer } from "@tsukiweb-common/ui-core"
-import { MdBuild, MdWork } from "react-icons/md"
+import { MdBuild } from "react-icons/md"
 
 const ScenesTab = () => {
 

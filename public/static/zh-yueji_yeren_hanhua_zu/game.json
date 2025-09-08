@@ -1,4 +1,18 @@
 {
+  "scripts-dir": "./scenes/",
+  
+  "images": {
+    "thumb": {
+      "tachi/osiete": "./image/%0.webp"
+    },
+    "sd": {
+      "tachi/osiete": "./image/%0.webp"
+    },
+    "hd": {
+      "tachi/osiete": "./image_x2/%0.webp"
+    }
+  },
+
   "scenario": {
     "days": [
       "[i]1[sup]st[/sup] day|October 21 (Thur.)",

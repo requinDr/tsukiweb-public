@@ -1,183 +1,179 @@
 {
-	"translation": {
-		"name": "Ciel senpai",
-		"desc": "Full translation released in 2022.",
-		"url": "https://t.me/ciel_senpai",
-		"vndb": "https://vndb.org/r88288"
-	},
-	"translation-pd": {
-		"name": "VN-moon",
-		"desc": "Published in 2015.",
-		"url": "https://vk.com/wall-54523753_9870",
-		"vndb": "https://vndb.org/r40068"
-	},
+  "translation": {
+    "name": "Ciel senpai",
+    "desc": "Full translation released in 2022.",
+    "url": "https://t.me/ciel_senpai",
+    "vndb": "https://vndb.org/r88288"
+  },
+  "translation-pd": {
+    "name": "VN-moon",
+    "desc": "Published in 2015.",
+    "url": "https://vk.com/wall-54523753_9870",
+    "vndb": "https://vndb.org/r40068"
+  },
 
-	"scripts-dir": "./scenes/",
-	
-	"images": {
-	},
-	"disclaimer": [
-		"This is a web version of [i]Tsukihime[/i], a visual novel published on 2000 by Type-Moon.",
-		"The game contains adult content and is intended for mature audiences only."
-	],
-	"title": {
-		"start": "New Game",
-		"resume": "Continue",
-		"load": "Load",
-		"config": "Config",
-		"extra": "Extra",
-		"about": {
-			"port": "This is a web version of [i]Tsukihime[/i], a visual novel published on 2000 by Type-Moon.",
-			"project": "The project is available on %0GitHub%1. Add a star if you like it! Contributions are welcome.",
-			"feedback": "Send your feedback or report a bug %0here%1.",
-			"data": "No data collected, everything is stored in your browser. Manage your data %0here%1.",
-			"remake": "Consider buying the remake %0Tsukihime - A piece of blue glass moon%1."
-		},
-		"install": "Install",
-		"share": "Share"
-	},
-	"extra": {
-		"gallery": "Gallery",
-		"endings": "Endings",
-		"scenes": "Flowchart",
-		"eclipse": "Eclipse"
-	},
-	"config": {
-		"on": "On",
-		"off": "Off",
-		"reset": "Reset",
-		"tab-game": "Game",
-		"tab-audio": "Audio",
-		"tab-controls": "Controls",
-		"tab-advanced": "Advanced",
-		"volume-master": "General volume",
-		"volume-track": "Music volume",
-		"volume-se": "SFX volume",
-		"volume-title-track": "Title music volume",
-		"volume-system-se": "System SFX volume",
-		"track-source": "Track Source",
-		"track-source-help": [
-			"[b]Original[/b]: Original soundtrack of the complete game from 2000.",
-			"[b]Ever After[/b]: Remake of the original soundtrack, published in 2002.",
-			"[b]Tsuki-Bako[/b]: Remixed soundtrack that came with a Tsukihime + PLUS-DISC + Kagetsu Tohya package in 2003."
-		],
-		"auto-mute": "Mute when switching tab",
-		"ratio": "Display ratio",
-		"ratio-auto": "Auto",
-		"ratio-4-3": "4:3",
-		"ratio-16-9": "16:9",
-		"text-speed": "Text display speed",
-		"text-speed-low": "Slow",
-		"text-speed-med": "Medium",
-		"text-speed-high": "Fast",
-		"text-speed-instant": "Instant",
-		"auto-play-delay-text": "Auto-play text delay: %0s",
-		"auto-play-delay-page": "Auto-play page delay: %0s",
-		"adult-title": "Adult",
-		"adult-blur": "Blur thumbnails",
-		"adult-blur-help": [
-			"Apply a blur effect on the thumbnails of the adult scenes (Save, Load, Flowchart, Gallery, …).",
-			"In-game content is not affected."
-		],
-		"adult-warn": "Warn me when I enter an H scene",
-		"quality": "Quality",
-		"quality-sd": "640\u00D7480",
-		"quality-hd": "1280\u00D7960",
-		"fullscreen": "Fullscreen",
-		"language": "Language",
-		"show-locked-content": "Reveal locked content",
-		"show-locked-content-help": [
-			"Reveals the complete Gallery, Flowchart, Endings, Eclipse, …",
-			"Also fulfills the requirement to access the Far Side.",
-			"It can be toggled on and off at any time."
-		],
-		"data": "Data storage",
-		"data-export": "Export",
-		"data-import": "Import",
-		"data-erase": "Erase",
-		"data-erase-warning": "This will delete all saves, reset all settings and progress. Are you sure?",
-		"data-erase-confirm": "All data have been deleted. If you leave this website without making any change to the settings and without starting a new game, no data will remain stored on your computer",
-		"controls": {
-			"next": "Next",
-			"history": "Show/hide History",
-			"back": "Close current view / Display menu",
-			"bg_move": "Move background image",
-			"auto_play": "Auto-play",
-			"page_nav": "Navigate to next / previous page",
-			"load": "Open load panel",
-			"save": "Open save panel",
-			"q_save": "Quick-save",
-			"q_load": "Quick-load",
-			"config": "Open config panel",
-			"_hold": "[i](Hold)"
-		}
-	},
-	"endings": {
-		"normal": "Normal",
-		"good": "Good",
-		"true": "True",
-		"osiete": "Teach-me, Ciel-sensei!"
-	},
-	"saves": {
-		"title-load": "Load",
-		"title-save": "Save",
-		"create": "New save",
-		"import": "Import save file",
-		"export": "Export",
-		"delete": "Delete",
-		"delete-warning": "Are you sure you want to delete this save?",
-		"overwrite-warning": "Are you sure you want to overwrite this save?",
-		"quick-save": "Quick Save"
-	},
-	"game": {
-		"skip-viewed": "You have already seen this scene.",
-		"skip-prompt": "Do you want to skip it?",
-		"toast-qsave": "Progress has been saved",
-		"toast-qload": "Progress restored",
-		"toast-load": "Progress restored",
-		"toast-save-fail": "Could not save progress",
-		"toast-load-fail": "Could not restore progress",
-		"toast-autoplay-stop": "Auto-play stopped",
-		"toast-ffw-stop": "Fast-Forward stopped",
-		"toast-hscene-waning": "You are about to read a scene with mature content."
-	},
-	"menu": {
-		"graphics": "Graphics",
-		"history": "History",
-		"save": "Save",
-		"load": "Load",
-		"config": "Config",
-		"auto-play": "Auto-Play",
-		"ffw": "Fast forward",
-		"title": "Title",
-		"q-save": "Q. save",
-		"q-load": "Q. load",
-		"copy-scene-url": "Copy scene link"
-	},
-	"history": {
-		"load": "Load",
-		"skipped": "Skipped scene %0."
-	},
-	"characters": {
-		"aki": "Akiha",
-		"ark": "Arcueid",
-		"cel": "Ciel",
-		"his": "Hisui",
-		"koha": "Kohaku",
-		"others": "Others"
-	},
-	"plus_disc": {
-		"desc": [
-			"PLUS-DISC is a fan disc containing a short story and bonus, originally released in 2001.",
-			"Note: You should read Tsukihime first."
-		],
-		"viewed": "Viewed",
-		"gallery": "Gallery",
-		"scenes": "Scenes"
-	},
-	"yes": "Yes",
-	"no": "No",
-	"ok": "Ok",
-	"back": "Back",
-	"close": "Close"
+  "disclaimer": [
+    "This is a web version of [i]Tsukihime[/i], a visual novel published on 2000 by Type-Moon.",
+    "The game contains adult content and is intended for mature audiences only."
+  ],
+  "title": {
+    "start": "New Game",
+    "resume": "Continue",
+    "load": "Load",
+    "config": "Config",
+    "extra": "Extra",
+    "about": {
+      "port": "This is a web version of [i]Tsukihime[/i], a visual novel published on 2000 by Type-Moon.",
+      "project": "The project is available on %0GitHub%1. Add a star if you like it! Contributions are welcome.",
+      "feedback": "Send your feedback or report a bug %0here%1.",
+      "data": "No data collected, everything is stored in your browser. Manage your data %0here%1.",
+      "remake": "Consider buying the remake %0Tsukihime - A piece of blue glass moon%1."
+    },
+    "install": "Install",
+    "share": "Share"
+  },
+  "extra": {
+    "gallery": "Gallery",
+    "endings": "Endings",
+    "scenes": "Flowchart",
+    "eclipse": "Eclipse"
+  },
+  "config": {
+    "on": "On",
+    "off": "Off",
+    "reset": "Reset",
+    "tab-game": "Game",
+    "tab-audio": "Audio",
+    "tab-controls": "Controls",
+    "tab-advanced": "Advanced",
+    "volume-master": "General volume",
+    "volume-track": "Music volume",
+    "volume-se": "SFX volume",
+    "volume-title-track": "Title music volume",
+    "volume-system-se": "System SFX volume",
+    "track-source": "Track Source",
+    "track-source-help": [
+      "[b]Original[/b]: Original soundtrack of the complete game from 2000.",
+      "[b]Ever After[/b]: Remake of the original soundtrack, published in 2002.",
+      "[b]Tsuki-Bako[/b]: Remixed soundtrack that came with a Tsukihime + PLUS-DISC + Kagetsu Tohya package in 2003."
+    ],
+    "auto-mute": "Mute when switching tab",
+    "ratio": "Display ratio",
+    "ratio-auto": "Auto",
+    "ratio-4-3": "4:3",
+    "ratio-16-9": "16:9",
+    "text-speed": "Text display speed",
+    "text-speed-low": "Slow",
+    "text-speed-med": "Medium",
+    "text-speed-high": "Fast",
+    "text-speed-instant": "Instant",
+    "auto-play-delay-text": "Auto-play text delay: %0s",
+    "auto-play-delay-page": "Auto-play page delay: %0s",
+    "adult-title": "Adult",
+    "adult-blur": "Blur thumbnails",
+    "adult-blur-help": [
+      "Apply a blur effect on the thumbnails of the adult scenes (Save, Load, Flowchart, Gallery, …).",
+      "In-game content is not affected."
+    ],
+    "adult-warn": "Warn me when I enter an H scene",
+    "quality": "Quality",
+    "quality-sd": "640\u00D7480",
+    "quality-hd": "1280\u00D7960",
+    "fullscreen": "Fullscreen",
+    "language": "Language",
+    "show-locked-content": "Reveal locked content",
+    "show-locked-content-help": [
+      "Reveals the complete Gallery, Flowchart, Endings, Eclipse, …",
+      "Also fulfills the requirement to access the Far Side.",
+      "It can be toggled on and off at any time."
+    ],
+    "data": "Data storage",
+    "data-export": "Export",
+    "data-import": "Import",
+    "data-erase": "Erase",
+    "data-erase-warning": "This will delete all saves, reset all settings and progress. Are you sure?",
+    "data-erase-confirm": "All data have been deleted. If you leave this website without making any change to the settings and without starting a new game, no data will remain stored on your computer",
+    "controls": {
+      "next": "Next",
+      "history": "Show/hide History",
+      "back": "Close current view / Display menu",
+      "bg_move": "Move background image",
+      "auto_play": "Auto-play",
+      "page_nav": "Navigate to next / previous page",
+      "load": "Open load panel",
+      "save": "Open save panel",
+      "q_save": "Quick-save",
+      "q_load": "Quick-load",
+      "config": "Open config panel",
+      "_hold": "[i](Hold)"
+    }
+  },
+  "endings": {
+    "normal": "Normal",
+    "good": "Good",
+    "true": "True",
+    "osiete": "Teach-me, Ciel-sensei!"
+  },
+  "saves": {
+    "title-load": "Load",
+    "title-save": "Save",
+    "create": "New save",
+    "import": "Import save file",
+    "export": "Export",
+    "delete": "Delete",
+    "delete-warning": "Are you sure you want to delete this save?",
+    "overwrite-warning": "Are you sure you want to overwrite this save?",
+    "quick-save": "Quick Save"
+  },
+  "game": {
+    "skip-viewed": "You have already seen this scene.",
+    "skip-prompt": "Do you want to skip it?",
+    "toast-qsave": "Progress has been saved",
+    "toast-qload": "Progress restored",
+    "toast-load": "Progress restored",
+    "toast-save-fail": "Could not save progress",
+    "toast-load-fail": "Could not restore progress",
+    "toast-autoplay-stop": "Auto-play stopped",
+    "toast-ffw-stop": "Fast-Forward stopped",
+    "toast-hscene-waning": "You are about to read a scene with mature content."
+  },
+  "menu": {
+    "graphics": "Graphics",
+    "history": "History",
+    "save": "Save",
+    "load": "Load",
+    "config": "Config",
+    "auto-play": "Auto-Play",
+    "ffw": "Fast forward",
+    "title": "Title",
+    "q-save": "Q. save",
+    "q-load": "Q. load",
+    "copy-scene-url": "Copy scene link"
+  },
+  "history": {
+    "load": "Load",
+    "skipped": "Skipped scene %0."
+  },
+  "characters": {
+    "aki": "Akiha",
+    "ark": "Arcueid",
+    "cel": "Ciel",
+    "his": "Hisui",
+    "koha": "Kohaku",
+    "others": "Others"
+  },
+  "plus_disc": {
+    "desc": [
+      "PLUS-DISC is a fan disc containing a short story and bonus, originally released in 2001.",
+      "Note: You should read Tsukihime first."
+    ],
+    "viewed": "Viewed",
+    "gallery": "Gallery",
+    "scenes": "Scenes"
+  },
+  "yes": "Yes",
+  "no": "No",
+  "ok": "Ok",
+  "back": "Back",
+  "close": "Close"
 }

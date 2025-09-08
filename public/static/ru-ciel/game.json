@@ -1,4 +1,9 @@
 {
+  "scripts-dir": "./scenes/",
+  
+  "images": {
+  },
+
   "scenario": {
     "days": [
       "[i]1[sup]st[/sup] day | October 21 (Thur.)",

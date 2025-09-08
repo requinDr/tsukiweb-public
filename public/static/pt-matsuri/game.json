@@ -1,4 +1,29 @@
 {
+  "scripts-dir": "./scenes/",
+  
+  "images": {
+    "words": {
+      "fin": "#ffffff$c`[center][noline][color=black][font=serif]Fim`",
+      "end": "#ffffff$b`[right][noline][color=black][font=serif]END`",
+      "pd_fin": "#000000$b`[right][noline][font=serif]Fim`",
+      "pd_genshi": "#000000$b`[right][noline][font=serif][u]História Curta/Aliança de Olhos Ilusórios`",
+      "pd_tea": "#000000$t`[left][noline][noline][font=serif][u]Chá da Lua`",
+      "pd_one_a": "#000000$c`[center][noline][font=serif]Primeiro Dia/1`",
+      "pd_one_b": "#000000$c`[center][noline][font=serif]Primeiro Dia/2`",
+      "pd_two": "#000000$c`[center][noline][font=serif]Segundo Dia`",
+      "pd_three": "#000000$c`[center][noline][font=serif]Terceiro Dia`"
+    },
+    "thumb": {
+      "tachi/osiete": "./image/%0.webp"
+    },
+    "sd": {
+      "tachi/osiete": "./image/%0.webp"
+    },
+    "hd": {
+      "tachi/osiete": "./image_x2/%0.webp"
+    }
+  },
+
   "scenario": {
     "days": [
       "[i]1[sup]°[/sup] dia | 21 de Outubro (Qui.)",
