@@ -328,6 +328,12 @@ async function updateSave(ss: SaveState): Promise<SaveState> {
   if (ss.version && versionsCompare(ss.version, "0.4.0") >= 0)
     return ss
   else {
+    if (!Object.hasOwn(ss, 'context')) { // Fix errors with previous saves
+      return {                           // getting updated without the change
+        ...ss,                           // of version number.
+        version: APP_VERSION
+      }
+    }
     const {context, progress, page, graphics} = ss as any
     const pageNum = isScene(context.label) ?
       getPageAtLine(await fetchBlockLines(context.label), context.index)
