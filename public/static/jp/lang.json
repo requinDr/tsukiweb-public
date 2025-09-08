@@ -26,8 +26,8 @@
 			"pd_two": "#000000$c`[center][noline][font=serif]二日目`",
 			"pd_three": "#000000$c`[center][noline][font=serif]三日目`"
 		},
-		"sd" : {
-			"" : "./image/%0.webp"
+		"sd": {
+			"": "./image/%0.webp"
 		},
 		"thumb": {
 			"": "./image_thumb/%0.webp"
@@ -37,10 +37,10 @@
 		}
 	},
 	"audio": {
-		"track-sources": {
-			"original": {"name": "Original (2000)", "path": ["./CD_original/track%.webm"]},
-			"everafter": {"name": "Ever After (2002)", "path": ["./CD_everafter/track%.webm"]},
-			"tsukibako": {"name": "Tsuki-Bako (2003)", "path": ["./CD_tsukibako/track%.webm"]}
+		"tracks-path": {
+			"original": ["./CD_original/track%.webm"],
+			"everafter": ["./CD_everafter/track%.webm"],
+			"tsukibako": ["./CD_tsukibako/track%.webm"]
 		},
 		"waves-path": ["./wave/%.webm"],
 		"waves-pd-path": ["./wave-pd/%.webm"]
@@ -81,9 +81,14 @@
 		"volume-master": "音量",
 		"volume-track": "BGM 音量",
 		"volume-se": "SFX 音量",
-		"volume-title-track" : "TITLE BGM 音量",
-		"volume-system-se" : "SYS SFX 音量",
+		"volume-title-track": "TITLE BGM 音量",
+		"volume-system-se": "SYS SFX 音量",
 		"track-source": "Track Source",
+		"track-sources": {
+			"original": "Original (2000)",
+			"everafter": "Ever After (2002)",
+			"tsukibako": "Tsuki-Bako (2003)"
+		},
 		"auto-mute": "Mute when switching tab",
 		"ratio": "アスペクト比",
 		"ratio-auto": "Auto",
@@ -125,7 +130,7 @@
 			"history": "ログを表示／非表示する",
 			"back": "Close current view / Display menu",
 			"bg_move": "Move background image",
-			"auto_play" : "オートモード",
+			"auto_play": "オートモード",
 			"page_nav": "次／前のページへ",
 			"load": "ロードのページを開く",
 			"save": "Open save panel",

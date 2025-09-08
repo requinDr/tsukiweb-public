@@ -26,14 +26,14 @@
 			"pd_two": "#000000$c`[center][noline][font=serif]Segundo Dia`",
 			"pd_three": "#000000$c`[center][noline][font=serif]Terceiro Dia`"
 		},
-		"thumb" : {
-			"tachi/osiete" : "./image/%0.webp"
+		"thumb": {
+			"tachi/osiete": "./image/%0.webp"
 		},
-		"sd" : {
-			"tachi/osiete" : "./image/%0.webp"
+		"sd": {
+			"tachi/osiete": "./image/%0.webp"
 		},
-		"hd" : {
-			"tachi/osiete" : "./image_x2/%0.webp"
+		"hd": {
+			"tachi/osiete": "./image_x2/%0.webp"
 		}
 	},
 	"disclaimer": [
@@ -114,7 +114,7 @@
 			"history": "Mostrar/ocultar histórico",
 			"back": "Fechar tela atual/Menu de exibição",
 			"bg_move": "Mover imagem de fundo",
-			"auto_play" : "Reprodução automática",
+			"auto_play": "Reprodução automática",
 			"page_nav": "Navegar para a página seguinte/anterior",
 			"load": "Abrir painel de carregamento",
 			"save": "Abrir painel de salvamento",

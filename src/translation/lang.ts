@@ -123,7 +123,7 @@ function setDefaultlanguage() {
 //_________________________________public types_________________________________
 //------------------------------------------------------------------------------
 
-export type TrackSourceId = keyof typeof defaultStrings.audio['track-sources']
+export type TrackSourceId = keyof typeof defaultStrings.audio['tracks-path']
 
 export type GameJson = Pick<StringsType, 'scenario'|'credits'>
 export type LangJson = Omit<typeof defaultStrings, keyof GameJson>

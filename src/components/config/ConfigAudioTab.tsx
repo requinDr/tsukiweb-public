@@ -86,8 +86,8 @@ const ConfigAudioTab = () => {
 						</ul>
 					</>
 				})}
-				btns={Object.entries(strings.audio["track-sources"]).map(
-					([id, {name}])=> ({text: name, value: id}))}
+				btns={Object.entries(strings.config["track-sources"]).map(
+					([id, name])=> ({text: name, value: id}))}
 				property="trackSource"
 				conf={conf}
 				updateValue={updateValue}

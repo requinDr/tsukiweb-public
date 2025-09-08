@@ -26,14 +26,14 @@
 			"pd_two": "#000000$c`[center][noline][font=serif]Second Day`",
 			"pd_three": "#000000$c`[center][noline][font=serif]Third Day`"
 		},
-		"thumb" : {
-			"tachi/osiete" : "./image/%0.webp"
+		"thumb": {
+			"tachi/osiete": "./image/%0.webp"
 		},
-		"sd" : {
-			"tachi/osiete" : "./image/%0.webp"
+		"sd": {
+			"tachi/osiete": "./image/%0.webp"
 		},
-		"hd" : {
-			"tachi/osiete" : "./image_x2/%0.webp"
+		"hd": {
+			"tachi/osiete": "./image_x2/%0.webp"
 		}
 	},
 	"disclaimer": [
@@ -73,9 +73,14 @@
 		"volume-master": "General volume",
 		"volume-track": "Music volume",
 		"volume-se": "SFX volume",
-		"volume-title-track" : "Title music volume",
-		"volume-system-se" : "System SFX volume",
+		"volume-title-track": "Title music volume",
+		"volume-system-se": "System SFX volume",
 		"track-source": "Track Source",
+		"track-sources": {
+			"original": "Original (2000)",
+			"everafter": "Ever After (2002)",
+			"tsukibako": "Tsuki-Bako (2003)"
+		},
 		"track-source-help": [
 			"[b]Original[/b]: Original soundtrack of the complete game from 2000.",
 			"[b]Ever After[/b]: Remake of the original soundtrack, published in 2002.",
@@ -122,7 +127,7 @@
 			"history": "Show/hide History",
 			"back": "Close current view / Display menu",
 			"bg_move": "Move background image",
-			"auto_play" : "Auto-play",
+			"auto_play": "Auto-play",
 			"page_nav": "Navigate to next / previous page",
 			"load": "Open load panel",
 			"save": "Open save panel",

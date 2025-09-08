@@ -15,14 +15,14 @@
 	"scripts-dir": "./scenes/",
 	
 	"images": {
-		"thumb" : {
-			"tachi/osiete" : "./image/%0.webp"
+		"thumb": {
+			"tachi/osiete": "./image/%0.webp"
 		},
-		"sd" : {
-			"tachi/osiete" : "./image/%0.webp"
+		"sd": {
+			"tachi/osiete": "./image/%0.webp"
 		},
-		"hd" : {
-			"tachi/osiete" : "./image_x2/%0.webp"
+		"hd": {
+			"tachi/osiete": "./image_x2/%0.webp"
 		}
 	},
 	"disclaimer": [
@@ -103,7 +103,7 @@
 			"history": "顯示/隱藏履歷",
 			"back": "關閉當前頁面/顯示選單",
 			"bg_move": "移動背景影像",
-			"auto_play" : "自動模式",
+			"auto_play": "自動模式",
 			"page_nav": "下一頁/上一頁",
 			"load": "開啟載入頁面",
 			"save": "開啟保存頁面",

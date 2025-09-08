@@ -53,7 +53,7 @@ export type SettingsType = {
 		titleTrack: number
 		systemSE: number
 	}
-	trackSource: keyof LangJson["audio"]["track-sources"]
+	trackSource: keyof LangJson["audio"]["tracks-path"]
 	autoMute: boolean
 	titleMusic: string
 

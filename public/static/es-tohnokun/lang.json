@@ -26,14 +26,14 @@
 			"pd_two": "#000000$c`[center][noline][font=serif]Segundo Día`",
 			"pd_three": "#000000$c`[center][noline][font=serif]Tercer Día`"
 		},
-		"thumb" : {
-			"tachi/osiete" : "./image/%0.webp"
+		"thumb": {
+			"tachi/osiete": "./image/%0.webp"
 		},
-		"sd" : {
-			"tachi/osiete" : "./image/%0.webp"
+		"sd": {
+			"tachi/osiete": "./image/%0.webp"
 		},
-		"hd" : {
-			"tachi/osiete" : "./image_x2/%0.webp"
+		"hd": {
+			"tachi/osiete": "./image_x2/%0.webp"
 		}
 	},
 	"disclaimer": [
@@ -73,8 +73,8 @@
 		"volume-master": "Volumen general",
 		"volume-track": "Volumen de la música",
 		"volume-se": "Volumen de efectos de sonido",
-		"volume-title-track" : "Volumen de la música del título",
-		"volume-system-se" : "Volumen de efectos de sonido del sistema",
+		"volume-title-track": "Volumen de la música del título",
+		"volume-system-se": "Volumen de efectos de sonido del sistema",
 		"track-source": "Versión de la banda sonora",
 		"track-source-help": [
 			"[b]Original[/b]: Banda sonora original del juego completo de 2000.",
@@ -122,7 +122,7 @@
 			"history": "Mostrar/ocultar registro",
 			"back": "Cerrar la pantalla actual / Mostrar menú",
 			"bg_move": "Mover imagen de fondo",
-			"auto_play" : "Reproducción automática",
+			"auto_play": "Reproducción automática",
 			"page_nav": "Navegar a la página siguiente / anterior",
 			"load": "Abrir panel de carga",
 			"save": "Abrir panel de guardado",

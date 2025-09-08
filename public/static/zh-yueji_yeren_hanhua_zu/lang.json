@@ -15,14 +15,14 @@
 	"scripts-dir": "./scenes/",
 	
 	"images": {
-		"thumb" : {
-			"tachi/osiete" : "./image/%0.webp"
+		"thumb": {
+			"tachi/osiete": "./image/%0.webp"
 		},
-		"sd" : {
-			"tachi/osiete" : "./image/%0.webp"
+		"sd": {
+			"tachi/osiete": "./image/%0.webp"
 		},
-		"hd" : {
-			"tachi/osiete" : "./image_x2/%0.webp"
+		"hd": {
+			"tachi/osiete": "./image_x2/%0.webp"
 		}
 	},
 	"disclaimer": [
@@ -103,7 +103,7 @@
 			"history": "显示/隐藏回顾前文",
 			"back": "关闭当前页面/显示菜单",
 			"bg_move": "移动背景图像",
-			"auto_play" : "自动模式",
+			"auto_play": "自动模式",
 			"page_nav": "下一页/上一页",
 			"load": "打开读档页面",
 			"save": "打开存档页面",

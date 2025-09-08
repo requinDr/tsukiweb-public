@@ -5,9 +5,9 @@
 		"url": "",
 		"vndb": ""
 	},
-	"translation-pd" : {
+	"translation-pd": {
 		"name": "original",
-		"desc" : "",
+		"desc": "",
 		"url": "",
 		"vndb": ""
 	},
@@ -26,8 +26,8 @@
 			"pd_two": "#000000$c`[center][noline][font=serif]二日目`",
 			"pd_three": "#000000$c`[center][noline][font=serif]三日目`"
 		},
-		"sd" : {
-			"" : "./image/%0.webp"
+		"sd": {
+			"": "./image/%0.webp"
 		},
 		"thumb": {
 			"": "./image_thumb/%0.webp"
@@ -37,10 +37,10 @@
 		}
 	},
 	"audio": {
-		"track-sources": {
-			"original": {"name": "Original (2000)", "path": ["./jp/CD_original/track%.webm"]},
-			"everafter": {"name": "Ever After (2002)", "path": ["./jp/CD_everafter/track%.webm"]},
-			"tsukibako": {"name": "Tsuki-Bako (2003)", "path": ["./jp/CD_tsukibako/track%.webm"]}
+		"tracks-path": {
+			"original": ["./jp/CD_original/track%.webm"],
+			"everafter": ["./jp/CD_everafter/track%.webm"],
+			"tsukibako": ["./jp/CD_tsukibako/track%.webm"]
 		},
 		"waves-path": ["./jp/wave/%.webm"],
 		"waves-pd-path": ["./jp/wave-pd/%.webm"]
@@ -82,9 +82,14 @@
 		"volume-master": "音量",
 		"volume-track": "BGM 音量",
 		"volume-se": "SFX 音量",
-		"volume-title-track" : "TITLE BGM 音量",
-		"volume-system-se" : "SYS SFX 音量",
+		"volume-title-track": "TITLE BGM 音量",
+		"volume-system-se": "SYS SFX 音量",
 		"track-source": "Track Source",
+		"track-sources": {
+			"original": "Original (2000)",
+			"everafter": "Ever After (2002)",
+			"tsukibako": "Tsuki-Bako (2003)"
+		},
 		"track-source-help": [
 			"[b]Original[/b]: Original soundtrack of the complete game from 2000.",
 			"[b]Ever After[/b]: Remake of the original soundtrack, published in 2002.",
@@ -131,7 +136,7 @@
 			"history": "ログを表示／非表示する",
 			"back": "Close current view / Display menu",
 			"bg_move": "Move background image",
-			"auto_play" : "オートモード",
+			"auto_play": "オートモード",
 			"page_nav": "次／前のページへ",
 			"load": "ロードのページを開く",
 			"save": "Open save panel",
@@ -231,7 +236,7 @@
 		],
 		
 		"routes": {
-			"aki" : {
+			"aki": {
 				"03a": "[b]3／ 反転衝動 III",
 				"03b": "[b]3／ 暗黑唇痕",
 				"04a": "[b]4／ 昏い傷痕 I",

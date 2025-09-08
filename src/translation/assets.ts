@@ -83,7 +83,7 @@ function audioPath(formats: string|string[], num: number|string) {
 
 export function audioTrackPath(track: number,
                                source: TrackSourceId = settings.trackSource) {
-  return audioPath(strings.audio["track-sources"][source].path, track)
+  return audioPath(strings.audio["tracks-path"][source], track)
 }
 
 export function audioSePath(se: string, pd: boolean = false) {
