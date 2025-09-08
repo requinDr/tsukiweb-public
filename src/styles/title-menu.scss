@@ -274,21 +274,20 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		background-color: #000206;
+		background-color: #000000;
 	}
 	.box {
 		max-width: 680px;
 		text-align: center;
-		border: 1px solid #00628b;
+		border: 1px solid var(--message-container-border);
 		padding: 2em;
 		margin: 1em;
 		user-select: none;
 		text-wrap: balance;
 
 		p {
-			font-size: clamp(.92em, 3.6vmin, 1.3em);
-			line-height: clamp(1.52em, 4.6vmin, 1.7em);
-			text-shadow: #000 1px 1px 1px, #000 -1px 1px 1px, #000 -1px -1px 1px, #000 1px -1px 1px;
+			font-size: clamp(1em, 3.6vmin, 1.3em);
+			line-height: 1.7em;
 			letter-spacing: 1px;
 		}
 	}
