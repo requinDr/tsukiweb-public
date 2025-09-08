@@ -357,7 +357,7 @@ async function updateSave(ss: SaveState): Promise<SaveState> {
       }],
       graphics: graphics,
       date: ss.date,
-      version: ss.version ?? "0.3.6"
+      version: APP_VERSION
     }
   }
 }
