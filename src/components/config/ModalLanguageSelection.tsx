@@ -9,6 +9,17 @@ import { polyfillCountryFlagEmojis } from "@tsukiweb-common/utils/flagsPolyfill"
 let flagSupportChecked = false
 const EMOJI_REGEX = /^(\u00a9|\u00ae|[\u2000-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])+|^(\uD83C[\uDDE6-\uDDFF]\uD83C[\uDDE6-\uDDFF])/
 
+const langCompare = (lang1: [string, LangDesc], lang2: [string, LangDesc]) => {
+	let name1 = lang1[1]["display-name"]
+	let name2 = lang2[1]["display-name"]
+
+	// Remove leading emojis
+	name1 = name1.replace(EMOJI_REGEX, '').trim()
+	name2 = name2.replace(EMOJI_REGEX, '').trim()
+	
+	return name1.localeCompare(name2)
+}
+
 type Props = {
 	show: boolean
 	setShow: Dispatch<boolean>
@@ -26,8 +37,10 @@ const ModalLanguageSelection = ({show, setShow}: Props) => {
 	
 	// 1. place japanese first
 	const sortedLanguages = Object.entries(languages)
-	const japIndex = sortedLanguages.findIndex(([key, value])=>key == "jp")
-	sortedLanguages.unshift(sortedLanguages.splice(japIndex, 1)[0])
+	const japIndex = sortedLanguages.findIndex(([key]) => key === "jp")
+	if (japIndex !== -1) {
+	  sortedLanguages.unshift(sortedLanguages.splice(japIndex, 1)[0])
+	}
 
 	// 2. then place user languages
 	let sortedLength = 1
@@ -49,16 +62,6 @@ const ModalLanguageSelection = ({show, setShow}: Props) => {
 	}
 
 	// 3. then order alphabetically
-	const langCompare = (lang1: [string, LangDesc], lang2: [string, LangDesc]) => {
-		let name1 = lang1[1]["display-name"]
-		let name2 = lang2[1]["display-name"]
-
-		// Remove leading emojis
-		name1 = name1.replace(EMOJI_REGEX, '').trim()
-		name2 = name2.replace(EMOJI_REGEX, '').trim()
-		
-		return name1.localeCompare(name2)
-	}
 	const remLangs = sortedLanguages.splice(sortedLength).sort(langCompare)
 	sortedLanguages.push(...remLangs)
 
