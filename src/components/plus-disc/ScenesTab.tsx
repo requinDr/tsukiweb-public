@@ -3,6 +3,8 @@ import SceneShortcut from "./SceneShortcut"
 import { playScene } from "utils/savestates"
 import { viewedScene } from "utils/settings"
 import { strings } from "translation/lang"
+import { MessageContainer } from "@tsukiweb-common/ui-core"
+import { MdBuild, MdWork } from "react-icons/md"
 
 const ScenesTab = () => {
 
@@ -35,7 +37,7 @@ const ScenesTab = () => {
 			/>
 
 			<SceneShortcut
-				title={strings.plus_disc_scenario.pd_geccha2}
+				title={<>{strings.plus_disc_scenario.pd_geccha2} <MessageContainer style={{fontSize: ".6em",  marginLeft: 4, float: "right", display: "flex", alignItems: "center"}}><MdBuild style={{marginRight: 4}} /> WIP</MessageContainer></>}
 				images={{
 					"bg": "bg/s07",
 					"l": "tachi/stk_t11",
