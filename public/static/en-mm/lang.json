@@ -15,6 +15,17 @@
 	"scripts-dir": "./scenes/",
 	
 	"images": {
+		"words": {
+			"fin": "#ffffff$c`[center][noline][color=black][font=serif]Fin`",
+			"end": "#ffffff$b`[right][noline][color=black][font=serif]END`",
+			"pd_fin": "#000000$b`[right][noline][font=serif]Fin`",
+			"pd_genshi": "#000000$b`[right][noline][font=serif][u]Short Story/Alliance of Illusionary Eyes`",
+			"pd_tea": "#000000$t`[left][noline][noline][font=serif][u]Moon Tea`",
+			"pd_one_a": "#000000$c`[center][noline][font=serif]First Day/1`",
+			"pd_one_b": "#000000$c`[center][noline][font=serif]First Day/2`",
+			"pd_two": "#000000$c`[center][noline][font=serif]Second Day`",
+			"pd_three": "#000000$c`[center][noline][font=serif]Third Day`"
+		},
 		"thumb" : {
 			"tachi/osiete" : "./image/%0.webp"
 		},
