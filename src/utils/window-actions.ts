@@ -3,9 +3,46 @@ import { LabelName } from "types";
 import { InGameLayersHandler } from "./display";
 import { moveBg } from "./graphics";
 import { inGameKeyMap } from "./keybind";
-import { quickSave, quickLoad } from "./savestates";
+import { QUICK_SAVE_ID, savesManager } from "./savestates";
 import { settings } from "./settings";
-import history from './history';
+import history, { History } from './history';
+import { toast } from "react-toastify";
+import { strings } from "translation/lang";
+import { FaSave } from "react-icons/fa";
+
+
+function quickLoad(history: History, onLoad: VoidFunction) {
+	const ss = savesManager.get(QUICK_SAVE_ID)
+	if (ss) {
+		history.loadSaveState(ss)
+		toast(strings.game["toast-qload"], {
+			icon: () => FaSave({}),
+			autoClose: 1400,
+			toastId: 'ql-toast'
+		})
+		onLoad()
+	} else {
+		toast(strings.game["toast-load-fail"], {
+			autoClose: 2400,
+			toastId: 'ql-toast',
+			type: "warning"
+		})
+	}
+}
+
+function quickSave(history: History) {
+	const ss = {
+		id: 0,
+		...history.createSaveState()
+	}
+	savesManager.add(ss)
+	toast(strings.game["toast-qsave"], {
+		icon: () => FaSave({}),
+		autoClose: 1400,
+		toastId: "qs-toast",
+	})
+}
+
 
 type ShowLayers = {
 	graphics: boolean,

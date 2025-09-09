@@ -1,12 +1,11 @@
 import { RouteName, RouteDayName } from "../types"
 import defaultStrings from "../assets/lang/default.json"
-import { SCENE_ATTRS } from "../utils/constants"
+import { APP_VERSION, SCENE_ATTRS } from "../utils/constants"
 import { settings } from "../utils/settings"
 import { observe } from "@tsukiweb-common/utils/Observer"
 import { StoredJSON } from "@tsukiweb-common/utils/storage"
-import { fetchJson, deepAssign, insertDirectory, jsonMerge } from "@tsukiweb-common/utils/utils"
+import { fetchJson, deepAssign, insertDirectory } from "@tsukiweb-common/utils/utils"
 import { ImageRedirect, LangDesc, TextImage, TranslationId, UpdateDateFormat } from "@tsukiweb-common/utils/lang"
-import { JSONObject } from "@tsukiweb-common/types"
 
 //##############################################################################
 //#                                  PRIVATE                                   #
@@ -60,8 +59,8 @@ async function loadTranslation(id: TranslationId): Promise<typeof strings> {
   const {dir, fallback, 'last-update': lastUpdate} = languages[id]
   const path = dir.startsWith("./") ? LANG_DIR + dir.substring(2) : dir
   const promise = Promise.all([
-    fetchJson(`${path}/lang.json`).then(json => insertDirectory(json, dir)),
-    fetchJson(`${path}/game.json`).then(json => insertDirectory(json, dir)),
+    fetchJson(`${path}/lang.json?v=${APP_VERSION}`).then(json => insertDirectory(json, dir)),
+    fetchJson(`${path}/game.json?v=${APP_VERSION}`).then(json => insertDirectory(json, dir)),
   ])
   const result = fallback ? await loadTranslation(fallback) : {} as StringsType
 
@@ -76,7 +75,7 @@ async function loadTranslation(id: TranslationId): Promise<typeof strings> {
 }
 
 async function updateTranslations() {
-  deepAssign(languages, await fetchJson(LANGUAGES_LIST_URL))
+  deepAssign(languages, await fetchJson(`${LANGUAGES_LIST_URL}?v=${APP_VERSION}`))
   languagesStorage.set(languages)
   let id: TranslationId | undefined = settings.language
   let lastUpdate = ""
@@ -135,19 +134,16 @@ export type LangJson = Omit<typeof defaultStrings, keyof GameJson>
 
 export const languages = languagesStorage.get() || { } as LanguagesType
 export const strings = stringsStorage.get() || { ...defaultStrings, id: "" } as StringsType
-if (Object.hasOwn(strings, "translation-pd")) {
-  jsonMerge(strings as any, defaultStrings as any, {inplace: true})
-}
 
 //_______________________________public functions_______________________________
 //------------------------------------------------------------------------------
 
 export function isLanguageLoaded() {
-  return langSelection.ready;
+  return langSelection?.ready ?? false
 }
 
 export async function waitLanguageLoad() {
-  if (langSelection.ready)
+  if (isLanguageLoaded())
     return
   else return new Promise(resolve=> {
     observe(langSelection, 'ready', resolve, {once: true})

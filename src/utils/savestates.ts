@@ -1,13 +1,10 @@
 import { settings, viewedScene } from "./settings"
-import history, { History, PageEntry, SceneEntry } from './history';
-import { toast } from "react-toastify";
-import { FaSave } from "react-icons/fa"
+import history, { PageEntry, SceneEntry } from './history';
 import { APP_VERSION, SAVE_EXT } from "./constants";
 import { LabelName, RouteDayName, RouteName } from "../types";
 import { SCREEN, displayMode } from "./display";
 import { Stored } from "@tsukiweb-common/utils/storage";
 import { textFileUserDownload, versionsCompare } from "@tsukiweb-common/utils/utils";
-import { strings } from "translation/lang";
 import { Regard, ScriptPlayer } from "script/ScriptPlayer";
 import { Graphics, JSONDiff, PartialJSON, PartialRecord } from "@tsukiweb-common/types";
 import { fetchBlockLines, getPageAtLine, isScene } from "script/utils";
@@ -208,49 +205,6 @@ export const savesManager = new SavesManager()
 
 //____________________________________Save______________________________________
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-
-/**
- * Stores the last savestate of the script's history in the savestate map
- * with the id 'quick".
- */
-export function quickSave(history: History) {
-  const ss = {
-    id: 0,
-    ...history.createSaveState()
-  }
-  savesManager.add(ss)
-  toast(strings.game["toast-qsave"], {
-    icon: () => FaSave({}),
-    autoClose: 1400,
-    toastId: "qs-toast",
-  })
-  //} else {
-  //  toast(strings.game["toast-save-fail"], {
-  //    autoClose: 2400,
-  //    toastId: "qs-toast",
-  //    type: "warning"
-  //  })
-  //}
-}
-export function quickLoad(history: History, onLoad: VoidFunction) {
-  const ss = savesManager.get(QUICK_SAVE_ID)
-  if (ss) {
-    history.loadSaveState(ss)
-    toast(strings.game["toast-qload"], {
-      icon: () => FaSave({}),
-      autoClose: 1400,
-      toastId: 'ql-toast'
-    })
-    onLoad()
-  } else {
-    toast(strings.game["toast-load-fail"], {
-      autoClose: 2400,
-      toastId: 'ql-toast',
-      type: "warning"
-    })
-  }
-}
 
 export function newGame() {
   history.loadSaveState({scenes: [{label: 'openning'}], pages: []})
