@@ -1,14 +1,13 @@
 import { avif } from "@tsukiweb-common/utils/images"
 import GalleryImage from "components/gallery/GalleryImage"
 import { imageSrc } from "translation/assets"
-import { CHARACTERS_DATA, CharactersTabs, getImgBonus } from "utils/characters-data"
+import { CHARACTERS_DATA, CharactersTabs } from "utils/characters-data"
 
 type Props = {
 	char: CharactersTabs
 }
 const CharacterPanel = ({ char }: Props) => {
 	const charData = CHARACTERS_DATA[char]
-	const gallery = charData.images
 
 	return (
 		<div className="character-panel">
@@ -52,21 +51,6 @@ const CharacterPanel = ({ char }: Props) => {
 						</tbody>
 					</table>
 				</div>
-			</div>
-
-			<div className="gallery-container">
-				{gallery.map(img => {
-					return (
-						<GalleryImage
-							key={img}
-							image={img}
-							gallery={gallery}
-							galleryUnlocked={gallery}
-							blurred={false}
-							getGalleryImg={getImgBonus}
-						/>
-					)
-				})}
 			</div>
 		</div>
 	)
