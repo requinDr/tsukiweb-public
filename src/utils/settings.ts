@@ -5,7 +5,7 @@ import { StoredJSON } from "@tsukiweb-common/utils/storage"
 import { deepFreeze, deepAssign, jsonDiff, objectsEqual, textFileUserDownload, requestJSONs } from "@tsukiweb-common/utils/utils"
 import { TEXT_SPEED, ViewRatio } from "@tsukiweb-common/constants"
 import { savesManager, SaveState } from "./savestates"
-import { APP_VERSION } from "./constants"
+import { APP_VERSION, FULLSAVE_EXT } from "./constants"
 import { toast } from "react-toastify"
 
 export const defaultSettings: SettingsType = deepFreeze({
@@ -138,7 +138,7 @@ export const exportGameData = () => {
 				day = date.getDate(), hour = date.getHours(), min = date.getMinutes()
 	const dateString = [year, month, day].map(twoDigits).join('-')
 	const timeString = [hour, min].map(twoDigits).join('-')
-	textFileUserDownload(JSON.stringify(content), `${dateString}_${timeString}.thfull`, "application/thfull+json")
+	textFileUserDownload(JSON.stringify(content), `${dateString}_${timeString}.${FULLSAVE_EXT}`, `application/${FULLSAVE_EXT}+json`)
   const timeStamp = date.getTime()
   settings.lastFullExport.date = timeStamp
   computeSaveHash().then(hash=> {
@@ -147,7 +147,7 @@ export const exportGameData = () => {
   })
 }
 
-export const importGameData = async (accept = '.thfull') => {
+export const importGameData = async (accept = `.${FULLSAVE_EXT}`) => {
   try {
     const json = (await requestJSONs({accept}) as Savefile[])?.[0] as Savefile|undefined
     if (!json)

@@ -1,5 +1,4 @@
 import { avif } from "@tsukiweb-common/utils/images"
-import GalleryImage from "components/gallery/GalleryImage"
 import { imageSrc } from "translation/assets"
 import { CHARACTERS_DATA, CharactersTabs } from "utils/characters-data"
 

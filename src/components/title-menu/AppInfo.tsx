@@ -1,12 +1,13 @@
 import { Dispatch, useState } from "react"
 import { MdCopyAll, MdGetApp, MdInfoOutline, MdOpenInNew, MdShare } from "react-icons/md"
 import { toast } from "react-toastify"
-import { APP_VERSION } from "../../utils/constants"
+import { APP_INFO, APP_VERSION } from "../../utils/constants"
 import { strings } from "../../translation/lang"
 import tsukiCover from "../../assets/images/tsukihime_cover.webp"
 import { Button, MessageContainer, Modal } from "@tsukiweb-common/ui-core"
 import usePWA from "@tsukiweb-common/hooks/usePWA"
 import { bb } from "@tsukiweb-common/utils/Bbcode"
+import { SCREEN } from "utils/display"
 
 const AppInfo = () => {
 	const [show, setShow] = useState<boolean>(false)
@@ -58,8 +59,8 @@ const ModalInfo = ({show, setShow}: ModalInfoProps) => {
 					<div className="header">
 						<MessageContainer className='version'>
 							<span>v{APP_VERSION}</span>
-							<a href="https://github.com/requinDr/tsukiweb-public" target="_blank" rel="noreferrer" style={{display: "inline-flex", alignItems: "center"}}>
-								<img src="https://img.shields.io/github/stars/requinDr/tsukiweb-public?style=social" alt="stars" />
+							<a href={APP_INFO.GITHUB_URL} target="_blank" rel="noreferrer" style={{display: "inline-flex", alignItems: "center"}}>
+								<img src={APP_INFO.GITHUB_STARS} alt="stars" />
 							</a>
 						</MessageContainer>
 					</div>
@@ -71,25 +72,25 @@ const ModalInfo = ({show, setShow}: ModalInfoProps) => {
 
 						<div>
 							{bb(strings.title.about.data
-								.replace('%0', "[url='/config?tab=advanced']")
+								.replace('%0', `[url='${SCREEN.CONFIG}?tab=advanced']`)
 								.replace('%1', "[/url]"))}
 						</div>
 
 						<div>
 							{bb(strings.title.about.project
-								.replace('%0', "[url='https://github.com/requinDr/tsukiweb-public']")
+								.replace('%0', `[url='${APP_INFO.GITHUB_URL}']`)
 								.replace('%1', "[/url]"))}
 						</div>
 
 						<div>
 							{bb(strings.title.about.feedback
-								.replace('%0', "[url='https://forms.gle/MJorV8oNbnKo22469']")
+								.replace('%0', `[url='${APP_INFO.FEEDBACK_URL}']`)
 								.replace('%1', "[/url]"))}
 						</div>
 
 						<div className="more">
 							{bb(strings.title.about.remake
-								.replace('%0', "[url='http://typemoon.com/products/tsukihime/']")
+								.replace('%0', `[url='${APP_INFO.REMAKE_URL}']`)
 								.replace('%1', "[/url]"))}
 						</div>
 					</div>
@@ -110,7 +111,7 @@ const ModalInfo = ({show, setShow}: ModalInfoProps) => {
 							<MdShare /> {strings.title.share}
 						</Button>
 
-						<Button variant="corner" href="https://vndb.org/v7" target="_blank" className="vndb">
+						<Button variant="corner" href={APP_INFO.TSUKI_VNDB} target="_blank" className="vndb">
 							<MdOpenInNew />	<span>VNDB</span>
 						</Button>
 

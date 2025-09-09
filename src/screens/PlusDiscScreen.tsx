@@ -9,6 +9,7 @@ import ScenesTab from 'components/plus-disc/ScenesTab'
 import GalleryTab from 'components/plus-disc/GalleryTab'
 import { useLanguageRefresh, useScreenAutoNavigate } from 'hooks'
 import { strings } from 'translation/lang'
+import { APP_INFO } from 'utils/constants'
 
 const container: Variants = {
 	hidden: { opacity: 0 },
@@ -35,7 +36,7 @@ const PlusDiscScreen = () => {
 						className="cover"
 					/>
 					<div className='desc'>
-						<a href="https://vndb.org/v49" target="_blank">
+						<a href={APP_INFO.PLUS_DISC_VNDB} target="_blank">
 							VNDB
 						</a>
 						<p>

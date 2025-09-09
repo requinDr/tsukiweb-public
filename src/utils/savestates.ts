@@ -15,7 +15,7 @@ import { fetchBlockLines, getPageAtLine, isScene } from "script/utils";
 
 type SaveStateId = number
 export const QUICK_SAVE_ID: SaveStateId = 0
-const SAVE_MIME_TYPE = "application/thweb+json"
+const SAVE_MIME_TYPE = `application/${SAVE_EXT}+json`
 
 type DefaultPageContext = ReturnType<typeof ScriptPlayer.defaultPageContext>
 type DefaultBlockContext = ReturnType<typeof ScriptPlayer.defaultBlockContext>

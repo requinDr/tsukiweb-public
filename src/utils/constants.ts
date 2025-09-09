@@ -4,9 +4,7 @@ import { RouteDayName, RouteName, TsukihimeSceneName } from '../types'
 
 export const APP_VERSION = import.meta.env.VITE_VERSION
 
-export const SCENE_ATTRS : {
-  //days: string[],
-  //routes: Record<RouteName, Record<RouteDayName, string>>,
+export const SCENE_ATTRS: {
   'fc-nodes'?: Record<string, FcNodeAttrs>,
   scenes: Record<TsukihimeSceneName, ({
     title: string,
@@ -22,4 +20,13 @@ export const SCENE_ATTRS : {
 } = JSON.parse(JSON.stringify(sceneAttrs))
 
 export const SAVE_EXT = "thweb"
+export const FULLSAVE_EXT = "thfull"
 export const HISTORY_MAX_PAGES = 20
+export const APP_INFO = {
+  GITHUB_URL: "https://github.com/requinDr/tsukiweb-public",
+  GITHUB_STARS: "https://img.shields.io/github/stars/requinDr/tsukiweb-public?style=social",
+  FEEDBACK_URL: "https://forms.gle/MJorV8oNbnKo22469",
+  REMAKE_URL: "http://typemoon.com/products/tsukihime/",
+  TSUKI_VNDB: "https://vndb.org/v7",
+  PLUS_DISC_VNDB: "https://vndb.org/v49"
+}

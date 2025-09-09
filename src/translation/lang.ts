@@ -18,6 +18,7 @@ import { langSelection } from "./langSelection"
 const LANG_DIR = `${import.meta.env.BASE_URL}static/`
 const LANGUAGES_LIST_URL = `${LANG_DIR}languages.json`
 
+
 //________________________________private types_________________________________
 //------------------------------------------------------------------------------
 
@@ -39,12 +40,13 @@ type StringsType = typeof defaultStrings & {
   credits: (TextImage & {delay?: number})[]
 }
 
+
 //______________________________private variables_______________________________
 //------------------------------------------------------------------------------
 
 const languagesStorage = new StoredJSON<LanguagesType>("languages", false)
-
 const stringsStorage = new StoredJSON<StringsType>("strings", true)
+
 
 //______________________________private functions_______________________________
 //------------------------------------------------------------------------------
@@ -71,7 +73,7 @@ async function loadTranslation(id: TranslationId): Promise<typeof strings> {
   return result
 }
 
-async function updateTranslations() {
+async function fetchAvailableLanguages() {
   deepAssign(languages, await fetchJson(`${LANGUAGES_LIST_URL}?v=${APP_VERSION}`))
   languagesStorage.set(languages)
   let id: TranslationId | undefined = settings.language
@@ -113,15 +115,14 @@ function setDefaultlanguage() {
   }
 }
 
+
 //##############################################################################
 //#                                   PUBLIC                                   #
 //##############################################################################
 
 //_________________________________public types_________________________________
-//------------------------------------------------------------------------------
 
 export type TrackSourceId = keyof typeof defaultStrings.audio['tracks-path']
-
 export type GameJson = Pick<StringsType, 'scenario'|'credits'>
 export type LangJson = Omit<typeof defaultStrings, keyof GameJson>
 
@@ -131,6 +132,7 @@ export type LangJson = Omit<typeof defaultStrings, keyof GameJson>
 
 export const languages = languagesStorage.get() || { } as LanguagesType
 export const strings = stringsStorage.get() || { ...defaultStrings, id: "" } as StringsType
+
 
 //_______________________________public functions_______________________________
 //------------------------------------------------------------------------------
@@ -148,27 +150,22 @@ export function addLanguage(id: TranslationId, description: LangDesc) {
 //#                               ON-LOAD LOGIC                                #
 //##############################################################################
 
-let languagesLoaded = false
-
-if (!languagesStorage.exists()) {
-  updateTranslations().then(()=> {
-    languagesLoaded = true
-  })
-} else {
-  languagesLoaded = true
-  updateTranslations() // update languages.json in the background
+async function initTranslations() {
+  if (!languagesStorage.exists()) {
+    await fetchAvailableLanguages()
+  } else {
+    fetchAvailableLanguages() // update languages.json in the background
+  }
+  
+  if (!Object.hasOwn(strings, 'id') || strings.id !== settings.language) {
+    await updateLanguage(settings.language)
+  } else {
+    langSelection.ready = true
+  }
 }
 
 // update strings when language changes and when window loads
-window.addEventListener('load', ()=> {
-  observe(settings, 'language', updateLanguage)
-  if (languagesLoaded) {
-    if (!Object.hasOwn(strings, 'id') || strings.id != settings.language)
-      updateLanguage(settings.language)
-    else
-      langSelection.ready = true
-  }
-})
-
+observe(settings, 'language', updateLanguage)
+window.addEventListener('load', initTranslations)
 
 window.strings = strings
