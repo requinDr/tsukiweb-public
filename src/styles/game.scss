@@ -1,10 +1,10 @@
-@use 'partials/transitions' as *;
-@use 'partials/components';
+@use '../../tsukiweb-common/src/styles/partials/transitions' as *;
 @use 'game/layer-text';
 @use 'game/layer-menu';
 @use 'game/layer-save-config';
 @use 'game/layer-history';
 @use 'game/layer-skip';
+@use 'game/layer-choices';
 
 :root {
 	--text-color: #e7e7e7;
@@ -15,6 +15,7 @@
 											 rgba(0, 0, 0, 0.45) 10%,
 											 rgba(0, 0, 0, 0.45) 90%,
 											 rgba(0, 0, 0, 0.15) 100%);
+	--menu-button-bg: rgb(14 79 187);
 }
 
 .window {
@@ -49,53 +50,10 @@
 	}
 	#layer-text {
 		@extend %layer-text;
-
-		&.adv {
-			max-height: 300px;
-			margin: .5em;
-			margin-top: auto;
-			padding-top: 1em;
-			padding-bottom: 0.5em;
-			font-size: clamp(1em, 4.7vmin, 1.5em);
-			background: unset;
-			border: 4px solid var(--active-hover);
-			background-color: rgb(0 34 60 / 75%);
-			width: calc(100% - 1em);
-			max-width: 1140px;
-			padding-inline: 5%;
-			justify-self: center;
-
-			.text-container {
-				max-width: unset;
-			}
-		}
 	}
 	#layer-choices {
-		z-index: 3;
-		background-image: var(--text-bg);
-
-		.choices-container {
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			height: 100%;
-			max-width: 620px;
-			margin-inline: auto;
-			gap: 1.2em;
-		}
-		.choice {
-			@extend %info-box;
-			padding: .5em 1em;
-			font-size: clamp(.98em, 4.2vmin, 1.32em);
-			transition: all 0.2s ease-in-out;
-			margin-inline: 8px;
-
-			&:hover, &:focus-visible {
-				box-shadow: var(--selected-shadow);
-			}
-		}
+		@extend %layer-choices;
 	}
-
 	#layer-menu {
 		@extend %layer-menu;
 	}
@@ -110,7 +68,6 @@
 	}
 
 	.menu-button {
-		all: unset;
 		display: none;
 	}
 	// mobile screens
@@ -121,7 +78,7 @@
 			bottom: min(3em, 10vh);
 			right: 0;
 			z-index: 3;
-			background-color: rgb(14 79 187);
+			background-color: var(--menu-button-bg);
 			padding: 16px 4px;
 			border-radius: 8px 0 0 8px;
 			opacity: .5;

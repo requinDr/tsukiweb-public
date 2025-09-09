@@ -1,0 +1,27 @@
+@use '../partials/components';
+
+%layer-choices {
+	z-index: 3;
+	background-image: var(--text-bg);
+
+	.choices-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		height: 100%;
+		max-width: 620px;
+		margin-inline: auto;
+		gap: 1.2em;
+	}
+	.choice {
+		@extend %info-box;
+		padding: .5em 1em;
+		font-size: clamp(.98em, 4.2vmin, 1.32em);
+		transition: all 0.2s ease-in-out;
+		margin-inline: 8px;
+
+		&:hover, &:focus-visible {
+			box-shadow: var(--selected-shadow);
+		}
+	}
+}
