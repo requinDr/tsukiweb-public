@@ -6,6 +6,7 @@ import { observe } from "@tsukiweb-common/utils/Observer"
 import { StoredJSON } from "@tsukiweb-common/utils/storage"
 import { fetchJson, deepAssign, insertDirectory } from "@tsukiweb-common/utils/utils"
 import { ImageRedirect, LangDesc, TextImage, TranslationId, UpdateDateFormat } from "@tsukiweb-common/utils/lang"
+import { langSelection } from "./langSelection"
 
 //##############################################################################
 //#                                  PRIVATE                                   #
@@ -44,10 +45,6 @@ type StringsType = typeof defaultStrings & {
 const languagesStorage = new StoredJSON<LanguagesType>("languages", false)
 
 const stringsStorage = new StoredJSON<StringsType>("strings", true)
-
-const langSelection = {
-  ready: false
-}
 
 //______________________________private functions_______________________________
 //------------------------------------------------------------------------------
@@ -137,18 +134,6 @@ export const strings = stringsStorage.get() || { ...defaultStrings, id: "" } as 
 
 //_______________________________public functions_______________________________
 //------------------------------------------------------------------------------
-
-export function isLanguageLoaded() {
-  return langSelection?.ready ?? false
-}
-
-export async function waitLanguageLoad() {
-  if (isLanguageLoaded())
-    return
-  else return new Promise(resolve=> {
-    observe(langSelection, 'ready', resolve, {once: true})
-  })
-}
 
 export function getLocale() {
   return languages[settings.language]?.locale ?? "en-US"

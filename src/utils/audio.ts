@@ -3,10 +3,10 @@ import { audioSePath, audioTrackPath } from "../translation/assets"
 import { settings } from "./settings"
 import { observe } from "@tsukiweb-common/utils/Observer"
 import { BasicAudioManager } from "@tsukiweb-common/utils/AudioManager"
-import { isLanguageLoaded, waitLanguageLoad } from "translation/lang"
 import { asyncDelay } from "@tsukiweb-common/utils/timer"
 import { ScriptPlayer } from "script/ScriptPlayer"
 import { splitFirst } from "@tsukiweb-common/utils/utils"
+import { isLanguageLoaded, waitLanguageLoad } from "translation/langSelection"
 
 function calcGain(value: number) {
   if (value <= 0)

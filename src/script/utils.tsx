@@ -1,8 +1,9 @@
 import { LabelName, PlusDiscSceneName, SceneName, TsukihimeSceneName } from "../types";
 import { APP_VERSION, SCENE_ATTRS } from "../utils/constants";
-import { strings, waitLanguageLoad } from "../translation/lang"
+import { strings } from "../translation/lang"
 import { ScriptPlayer } from "./ScriptPlayer";
 import { credits, scenesDir } from "translation/assets";
+import { waitLanguageLoad } from "translation/langSelection";
 
 export type SkipRequest =
     (label: LabelName, script: ScriptPlayer)=>Promise<boolean>
