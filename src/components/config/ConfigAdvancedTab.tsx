@@ -11,11 +11,11 @@ import { Button, PageSection } from "@tsukiweb-common/ui-core"
 import { deepAssign } from "@tsukiweb-common/utils/utils"
 import { bb } from "@tsukiweb-common/utils/Bbcode"
 import { modalPromptService } from "@tsukiweb-common/ui-core/components/ModalPrompt"
-import { warnHScene } from "utils/display"
 import { polyfillCountryFlagEmojis } from "@tsukiweb-common/utils/flagsPolyfill"
 import { avif } from "@tsukiweb-common/utils/images"
 import { imageSrc } from "translation/assets"
 import { FULLSAVE_EXT } from "utils/constants"
+import { warnHScene } from "utils/window-actions"
 
 let flagSupportChecked = false
 

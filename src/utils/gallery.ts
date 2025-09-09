@@ -47,9 +47,7 @@ const cg = {
 export default cg
 
 
-
 // PLUS-DISC
-
 function getImgPd(imgName: string): GalleryImg {
 	return GALLERY_IMAGES_PD[imgName]
 }

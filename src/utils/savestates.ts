@@ -4,7 +4,7 @@ import { APP_VERSION, SAVE_EXT } from "./constants";
 import { LabelName, RouteDayName, RouteName } from "../types";
 import { SCREEN, displayMode } from "./display";
 import { Stored } from "@tsukiweb-common/utils/storage";
-import { textFileUserDownload, versionsCompare } from "@tsukiweb-common/utils/utils";
+import { textFileUserDownload, twoDigits, versionsCompare } from "@tsukiweb-common/utils/utils";
 import { Regard, ScriptPlayer } from "script/ScriptPlayer";
 import { Graphics, JSONDiff, PartialJSON, PartialRecord } from "@tsukiweb-common/types";
 import { fetchBlockLines, getPageAtLine, isScene } from "script/utils";
@@ -32,10 +32,6 @@ export type SaveState = {
   version: string
   name?: string
   id?: SaveStateId
-}
-
-function twoDigits(n: number) {
-  return n.toString().padStart(2, '0')
 }
 
 //#endregion

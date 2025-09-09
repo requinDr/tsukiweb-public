@@ -98,4 +98,3 @@ export const commands = {
   'inc': processVarCmd,
   'dec': processVarCmd,
 }
-

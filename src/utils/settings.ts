@@ -2,7 +2,7 @@ import { RecursivePartial } from "@tsukiweb-common/types"
 import { LabelName, SettingsType } from "../types"
 import { observeChildren, observe } from "@tsukiweb-common/utils/Observer"
 import { StoredJSON } from "@tsukiweb-common/utils/storage"
-import { deepFreeze, deepAssign, jsonDiff, objectsEqual, textFileUserDownload, requestJSONs } from "@tsukiweb-common/utils/utils"
+import { deepFreeze, deepAssign, jsonDiff, objectsEqual, textFileUserDownload, requestJSONs, twoDigits } from "@tsukiweb-common/utils/utils"
 import { TEXT_SPEED, ViewRatio } from "@tsukiweb-common/constants"
 import { savesManager, SaveState } from "./savestates"
 import { APP_VERSION, FULLSAVE_EXT } from "./constants"
@@ -114,10 +114,6 @@ export async function computeSaveHash() {
   if (lastQuad == undefined)
     throw Error(`Empty hash`)
   return lastQuad
-}
-
-function twoDigits(n: number) {
-  return n.toString().padStart(2, '0')
 }
 
 type Savefile = {

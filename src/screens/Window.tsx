@@ -5,7 +5,7 @@ import HistoryLayer from '../layers/HistoryLayer';
 import MenuLayer from '../layers/MenuLayer';
 import SavesLayer from '../layers/SavesLayer';
 import { HiMenu } from 'react-icons/hi';
-import { InGameLayersHandler, SCREEN, displayMode, warnHScene } from '../utils/display';
+import { InGameLayersHandler, SCREEN, displayMode } from '../utils/display';
 import { commands as audioCommands, gameAudio } from '../utils/audio';
 import ConfigLayer from '../layers/ConfigLayer';
 import { useSwipeGesture } from '@tsukiweb-common/utils/touch';
@@ -18,24 +18,10 @@ import GraphicsLayer from 'layers/GraphicsLayer';
 import TextLayer from 'layers/TextLayer';
 import ChoicesLayer from 'layers/ChoicesLayer';
 import SkipLayer from 'layers/SkipLayer';
-import { toast } from 'react-toastify';
-import { strings } from 'translation/lang';
-import { MdPlayArrow } from 'react-icons/md';
 import { useScreenAutoNavigate, useLanguageRefresh } from 'hooks';
 import { isPDScene } from 'script/utils';
-import actions from 'utils/window-actions';
+import actions, { onAutoPlayStop, warnHScene } from 'utils/window-actions';
 
-
-function onAutoPlayStop(ffw: boolean) {
-	if (!ffw) {
-		toast(strings.game['toast-autoplay-stop'], {
-			autoClose: 600,
-			toastId: 'ap-stop',
-			hideProgressBar: true,
-			icon: () => <MdPlayArrow />,
-		})
-	}
-}
 
 const Window = () => {
 	useScreenAutoNavigate(SCREEN.WINDOW)

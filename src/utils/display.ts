@@ -1,10 +1,3 @@
-import { toast } from "react-toastify";
-import { isThScene } from "script/utils";
-import { strings } from "translation/lang";
-import { LabelName } from "types";
-import { SCENE_ATTRS } from "./constants";
-import { settings } from "./settings";
-
 export enum SCREEN {
   TITLE = "/",
   WINDOW = "/window",
@@ -132,16 +125,6 @@ export class InGameLayersHandler {
       this.menu = !this.menu
     }
   }
-}
-
-export function warnHScene(label?: LabelName) {
-	if (!label || (isThScene(label) && settings.warnHScenes
-		&& SCENE_ATTRS.scenes[label]?.h)) {
-		toast(strings.game["toast-hscene-waning"], {
-			toastId: "hscene-warning",
-			autoClose: 4000
-		});
-	}
 }
 
 

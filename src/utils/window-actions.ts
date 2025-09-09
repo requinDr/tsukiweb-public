@@ -9,6 +9,9 @@ import history, { History } from './history';
 import { toast } from "react-toastify";
 import { strings } from "translation/lang";
 import { FaSave } from "react-icons/fa";
+import { MdPlayArrow } from 'react-icons/md';
+import { isThScene } from "script/utils";
+import { SCENE_ATTRS } from "./constants";
 
 
 function quickLoad(history: History, onLoad: VoidFunction) {
@@ -41,6 +44,27 @@ function quickSave(history: History) {
 		autoClose: 1400,
 		toastId: "qs-toast",
 	})
+}
+
+export function warnHScene(label?: LabelName) {
+	if (!label || (isThScene(label) && settings.warnHScenes
+		&& SCENE_ATTRS.scenes[label]?.h)) {
+		toast(strings.game["toast-hscene-waning"], {
+			toastId: "hscene-warning",
+			autoClose: 4000
+		})
+	}
+}
+
+export function onAutoPlayStop(ffw: boolean) {
+	if (!ffw) {
+		toast(strings.game['toast-autoplay-stop'], {
+			autoClose: 600,
+			toastId: 'ap-stop',
+			hideProgressBar: true,
+			icon: () => MdPlayArrow({}),
+		})
+	}
 }
 
 
