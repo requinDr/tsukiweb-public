@@ -37,9 +37,9 @@ export function getGameVariable(script: ScriptPlayer, name: NumVarName): number 
 		    // regard
         const char = name.substring(name.indexOf('_')+1)
         return script.regard[char as keyof ScriptPlayer["regard"]]
-      } else if (/^%clear_[a-z]+_[a-z]+^/.test(name)) {
+      } else if (/^%clear_[a-z]+_[a-z]+$/.test(name)) {
 			  // endings
-				const ending = name.substring(6) as keyof typeof endings
+				const ending = name.substring(name.indexOf('_')+1) as keyof typeof endings
 				return endings[ending].seen ? 1 : 0
 			} else {
 				throw Error(`Unknown variable ${name}`)
