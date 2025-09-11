@@ -30,3 +30,10 @@ export const APP_INFO = {
   TSUKI_VNDB: "https://vndb.org/v7",
   PLUS_DISC_VNDB: "https://vndb.org/v49"
 }
+
+export const SYS_SE = {
+  BACK: "./se/Modern2.wav",
+  TITLE_SELECT: "./se/Modern8.wav",
+  MENU_SELECT: "./se/Modern15.wav",
+  TAB_SELECT: "./se/Modern4.wav",
+}

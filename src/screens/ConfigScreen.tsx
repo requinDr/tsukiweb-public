@@ -6,6 +6,8 @@ import useQueryParam from '@tsukiweb-common/hooks/useQueryParam'
 import { useEffect } from 'react'
 import { useLanguageRefresh } from 'hooks/useLanguageRefresh'
 import { useScreenAutoNavigate } from 'hooks/useScreenAutoNavigate'
+import { sysAudio } from 'utils/audio'
+import { SYS_SE } from 'utils/constants'
 
 const ConfigScreen = () => {
 	useScreenAutoNavigate(SCREEN.CONFIG)
@@ -13,6 +15,7 @@ const ConfigScreen = () => {
 	const [selectedTab, setSelectedTab] = useQueryParam<any>("tab", "game")
 
 	function back() {
+		sysAudio.se.play(SYS_SE.BACK)
 		displayMode.screen = SCREEN.TITLE
 	}
 

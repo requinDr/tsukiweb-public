@@ -12,6 +12,8 @@ import { CharId } from 'types'
 import GalleryImage from 'components/gallery/GalleryImage'
 import GalleryTotal from 'components/gallery/GalleryTotal'
 import { useScreenAutoNavigate, useLanguageRefresh } from 'hooks'
+import { sysAudio } from 'utils/audio'
+import { SYS_SE } from 'utils/constants'
 
 const container: Variants = {
 	hidden: { opacity: 0 },
@@ -62,12 +64,17 @@ const GalleryScreen = () => {
 		value: char
 	}))
 
+	const handleSetSelectedTab = (tab: CharId) => {
+		sysAudio.se.play(SYS_SE.TAB_SELECT)
+		setSelectedTab(tab)
+	}
+
 	return (
 		<PageTabsLayout
 			id="gallery"
 			tabs={tabs}
 			selectedTab={selectedTab}
-			setSelectedTab={setSelectedTab}
+			setSelectedTab={handleSetSelectedTab}
 		>
 			<section>
 				<AnimatePresence mode="popLayout">

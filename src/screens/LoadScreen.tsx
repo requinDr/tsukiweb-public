@@ -4,6 +4,8 @@ import SavesLayout from "../components/save/SavesLayout"
 import { SCREEN, displayMode } from "../utils/display"
 import { useEffect } from "react"
 import { useScreenAutoNavigate, useLanguageRefresh } from "hooks"
+import { sysAudio } from "utils/audio"
+import { SYS_SE } from "utils/constants"
 
 
 const LoadScreen = () => {
@@ -11,8 +13,10 @@ const LoadScreen = () => {
 	useLanguageRefresh()
 
 	function back(saveLoaded: boolean) {
-		if (!saveLoaded)
+		if (!saveLoaded) {
+			sysAudio.se.play(SYS_SE.BACK)
 			displayMode.screen = SCREEN.TITLE
+		}
 	}
 	
 	useEffect(()=> {

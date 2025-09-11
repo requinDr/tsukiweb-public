@@ -8,6 +8,8 @@ import { TitleMenuButton } from "@tsukiweb-common/ui-core"
 import { useLanguageRefresh } from "hooks/useLanguageRefresh"
 import useEclipseUnlocked from "hooks/useEclipseUnlocked"
 import { settings } from "utils/settings"
+import { sysAudio } from "utils/audio"
+import { SYS_SE } from "utils/constants"
 
 const ExtraLayout = ({ children }: PropsWithChildren) => {
 	const navigate = useNavigate()
@@ -16,6 +18,7 @@ const ExtraLayout = ({ children }: PropsWithChildren) => {
 	const { eclipseUnlocked } = useEclipseUnlocked()
 
 	function back() {
+		sysAudio.se.play(SYS_SE.BACK)
 		displayMode.screen = SCREEN.TITLE
 	}
 
@@ -30,6 +33,11 @@ const ExtraLayout = ({ children }: PropsWithChildren) => {
 			window.removeEventListener("keydown", handleKeyDown)
 		}
 	}, [])
+
+	const onClickMenu = (screen: SCREEN) => {
+		sysAudio.se.play(SYS_SE.MENU_SELECT)
+		navigate(screen)
+	}
 
 	const currentPage = "/" + location.pathname.split("/")[1]
 
@@ -46,36 +54,36 @@ const ExtraLayout = ({ children }: PropsWithChildren) => {
 				</h2>
 				<div className="menus">
 					<TitleMenuButton
-						onClick={()=>navigate(SCREEN.GALLERY)}
+						onClick={() => onClickMenu(SCREEN.GALLERY)}
 						active={currentPage === SCREEN.GALLERY}>
 						{strings.extra.gallery}
 					</TitleMenuButton>
 					<TitleMenuButton
-						onClick={()=>navigate(SCREEN.ENDINGS)}
+						onClick={() => onClickMenu(SCREEN.ENDINGS)}
 						active={currentPage === SCREEN.ENDINGS}
 						attention={eclipseUnlocked}>
 						{strings.extra.endings}
 					</TitleMenuButton>
 					<TitleMenuButton
-						onClick={()=>navigate(SCREEN.SCENES)}
+						onClick={() => onClickMenu(SCREEN.SCENES)}
 						active={currentPage === SCREEN.SCENES}>
 						{strings.extra.scenes}
 					</TitleMenuButton>
 					{import.meta.env.DEV && settings.unlockEverything &&
 					<TitleMenuButton
-						onClick={()=>navigate(SCREEN.CHARACTERS)}
+						onClick={() => onClickMenu(SCREEN.CHARACTERS)}
 						active={currentPage === SCREEN.CHARACTERS}>
 						Characters
 					</TitleMenuButton>
 					}
 					<TitleMenuButton
-						onClick={()=>navigate(SCREEN.PLUS_DISC)}
+						onClick={() => onClickMenu(SCREEN.PLUS_DISC)}
 						active={currentPage === SCREEN.PLUS_DISC}>
 						Plus-Disc
 					</TitleMenuButton>
 
 					<TitleMenuButton
-						onClick={()=>navigate(SCREEN.TITLE)}
+						onClick={back}
 						className="back-button">
 						{`<<`} {strings.back}
 					</TitleMenuButton>
