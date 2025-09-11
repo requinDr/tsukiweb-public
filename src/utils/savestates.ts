@@ -299,6 +299,7 @@ async function updateSave(ss: SaveState): Promise<SaveState> {
         page: pageNum,
         text: page.text ?? "",
         textPrefix: page.textPrefix ?? "",
+        textBox: page.textBox ?? "nvl",
         audio: context.audio ?? {},
         graphics: context.graphics ?? {},
         phase: phase_update(context.phase),

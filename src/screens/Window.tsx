@@ -42,7 +42,6 @@ const Window = () => {
 	}))
 	const [actionsHandler, ] = useReset(()=>
 		new actions.UserActionsHandler(script, layers, remountScript))
-	const [textboxStyle, setTextboxStyle] = useState<'adv' | 'nvl'>("nvl")
 
 	const show = useMemo(() => {
 		const isPd = isPDScene(script.currentLabel ?? "")
@@ -71,11 +70,6 @@ const Window = () => {
 			return
 		actionsHandler.onScriptChange(script)
 		script.setCommands(audioCommands)
-		script.setCommand('textbox', (arg: string) => {
-			if (arg === 'adv' || arg === 'nvl') {
-				setTextboxStyle(arg as 'adv' | 'nvl');
-			}
-		})
 		script.setBlockStartCallback(warnHScene)
 		if (!script.continueScript) {
 			script.setAfterBlockCallback(()=> {
@@ -159,7 +153,7 @@ const Window = () => {
 			<Fragment key={script.uid}>
 				<div className='ratio-container' onClick={()=> actionsHandler.next()}>
 					<GraphicsLayer script={script} />
-					<TextLayer script={script} display={layers.text && 'auto'} textbox={textboxStyle} />
+					<TextLayer script={script} display={layers.text && 'auto'} />
 				</div>
 
 				{script.continueScript && <>

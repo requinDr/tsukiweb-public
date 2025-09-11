@@ -37,6 +37,7 @@ export type InitContext = RecursivePartial<{
     regard: Regard
     flags: Iterable<string>
     textPrefix: string
+    textBox: typeof ScriptPlayer.prototype.textBox
     conitnueScript: boolean
 }>
 
@@ -119,6 +120,7 @@ export class ScriptPlayer extends ScriptPlayerBase<LabelName> {
     private _regard: Regard = { ark: 0, cel: 0, aki: 0, his: 0, koha: 0 }
     private _continueScript: boolean
     private _textPrefix : string // add bbcode before text lines (for e.g., color or alignement)
+    private _textBox: 'adv'|'nvl' = 'nvl'
     private _text: string = ""
     private _audio: Audio = { track: '', looped_se: '' }
     private _graphics: Graphics =
@@ -154,6 +156,8 @@ export class ScriptPlayer extends ScriptPlayerBase<LabelName> {
     }
     get textPrefix() { return this._textPrefix }
     set textPrefix(value: string) { this._textPrefix = value }
+    get textBox() { return this._textBox }
+    set textBox(value: 'adv'|'nvl') { this._textBox = value }
     get text() { return this._text }
     set text(value: string) {
         this._text = value
@@ -182,6 +186,7 @@ export class ScriptPlayer extends ScriptPlayerBase<LabelName> {
         for (const flag of initContext.flags ?? [])
             this._flags.add(flag)
         this._textPrefix = initContext.textPrefix ?? ""
+        this._textBox = initContext.textBox ?? "nvl"
         this._continueScript = initContext.continueScript ?? true
         this.setCommands(commands)
 
@@ -203,6 +208,7 @@ export class ScriptPlayer extends ScriptPlayerBase<LabelName> {
             audio: this.audio,
             phase: this.phase,
             textPrefix: this.textPrefix,
+            textBox: this.textBox,
             text: this.text,
         }
     }
@@ -214,6 +220,7 @@ export class ScriptPlayer extends ScriptPlayerBase<LabelName> {
             graphics: {bg: "", l:"", c:"", r:"", monochrome: ""},
             audio: {track: "", looped_se: ""},
             textPrefix: "",
+            textBox: 'nvl' as typeof ScriptPlayer.prototype.textBox,
             text: "",
         }
     }

@@ -4,7 +4,7 @@ import pageIcon from '../assets/icons/icon_bars.svg'
 import { settings } from "../utils/settings"
 import { ScriptPlayer } from "script/ScriptPlayer"
 import useMousePointer from "@tsukiweb-common/hooks/useMousePointer"
-import { useObserver } from "@tsukiweb-common/utils/Observer"
+import { useObserved, useObserver } from "@tsukiweb-common/utils/Observer"
 import { DivProps } from "@tsukiweb-common/types"
 import { Bbcode, BBTypeWriter } from "@tsukiweb-common/utils/Bbcode"
 import { preprocessText } from "@tsukiweb-common/utils/utils"
@@ -59,11 +59,16 @@ type Props = {
   textbox?: "nvl"|"adv"
 } & DivProps
 
+function onTextBox(textbox: string, _cmd: string, script: ScriptPlayer) {
+  script.textBox = textbox as 'adv' | 'nvl'
+}
+
 const TextLayer = ({ script, display = 'auto',
-                     charDelay = settings.textSpeed, textbox = "nvl", ...props }: Props) => {
+                     charDelay = settings.textSpeed, ...props }: Props) => {
 
   const [ lines, setLines ] = useState<string[]>([])
   const [ glyph, setGlyph ] = useState<'moon'|'page'|null>(null)
+  const [ textBox ] = useObserved(script, 'textBox')
   const [ immediate, setImmediate ] = useState<boolean>(false)
   const onFinishRef = useRef<VoidFunction|undefined>(undefined)
   const mouseCursorVisible = useMousePointer()
@@ -77,6 +82,7 @@ const TextLayer = ({ script, display = 'auto',
       '`' : _onText, '@' : _onGlyph,
       'br': _onText, '\\': _onGlyph,
       'textcolor': onTextColor,
+      'textbox': onTextBox,
     })
   }, [script])
 
@@ -95,7 +101,7 @@ const TextLayer = ({ script, display = 'auto',
     classList.push('hide')
   if (!mouseCursorVisible)
     classList.push('hide-mouse-pointer')
-  if (textbox === "adv")
+  if (textBox === "adv")
     classList.push('adv')
   if (className)
     classList.push(className)

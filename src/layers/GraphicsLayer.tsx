@@ -130,7 +130,7 @@ function processRocket(
 	script: ScriptPlayer,
 	onFinish: VoidFunction
 ) {
-	const params: any = {}
+	const params: Record<string, string> = {}
 	const parts = arg.split(' ')
 	for (const part of parts) {
 		const [key, value] = part.split('=')
@@ -144,24 +144,28 @@ function processRocket(
 		onFinish()
 		return
 	}
+	const wait = (!Object.hasOwn(params, "wait") || params.wait == "true")
 
 	const onAnimationEnd = () => {
-		setRocket(undefined);
-		onFinish()
+		if (wait) {
+			setRocket(undefined);
+			onFinish()
+		}
 	}
 
 	const rocket: RocketProps = {
 		layer: layer,
-		my: parseFloat(params.my || 0),
-		magnify: parseFloat(params.magnify || 1),
-		time: parseInt(params.time || 0),
-		accel: parseInt(params.accel || 1),
-		opacity: parseInt(params.opacity || 255),
+		my: parseFloat(params.my || '0'),
+		magnify: parseFloat(params.magnify || '1'),
+		time: parseInt(params.time || '0'),
+		accel: parseInt(params.accel || '1'),
+		opacity: parseInt(params.opacity || '255'),
 		onAnimationEnd
 	}
 
 	setRocket(rocket)
-	return { next: onAnimationEnd }
+	if (wait)
+		return { next: onAnimationEnd }
 }
 
 function processMonocro(color: string, _: string, script: ScriptPlayer) {
