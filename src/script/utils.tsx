@@ -66,7 +66,7 @@ export function nextLabel(label: LabelName): LabelName {
 //#region                         FETCH BLOCKS
 //##############################################################################
 
-export const LOGIC_FILE = 'scene0.txt';
+const LOGIC_FILE = 'scene0.txt'
 
 export async function fetchScene(sceneId: string): Promise<string[]> {
 	await waitLanguageLoad()
@@ -75,10 +75,12 @@ export async function fetchScene(sceneId: string): Promise<string[]> {
 	else if (sceneId == "ending") {
 		return creditsScript(true)
 	}
+
 	const path = `${scenesDir()}/${sceneId}.txt?v=${APP_VERSION}`
 	const script = await fetch(path).then(
 		(response) => response.ok ? response.text() : undefined,
-		(_failErr) => undefined);
+		(_failErr) => undefined)
+	
 	if (script == undefined)
 		throw Error(`Cannot load file ${path}`)
 	//split data on \n
@@ -87,8 +89,11 @@ export async function fetchScene(sceneId: string): Promise<string[]> {
 
 export async function fetchLogicBlock(label: string) : Promise<string[]> {
 	await waitLanguageLoad()
-	const logicScript = await fetch(`${scenesDir()}/${LOGIC_FILE}?v=${APP_VERSION}`)
+
+	const path = `${scenesDir()}/${LOGIC_FILE}?v=${APP_VERSION}`
+	const logicScript = await fetch(path)
 		.then((response) => response.text())
+	
 	let start = logicScript.search(new RegExp(`^\\*${label}\\b`, "m"))
 	if (start == -1)
 		return []
