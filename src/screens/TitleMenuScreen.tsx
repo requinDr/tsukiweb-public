@@ -1,5 +1,5 @@
-import tsukiLogo from "../assets/images/tsukihime-logo.webp"
-import moon from "../assets/images/moon.webp"
+import gameLogo from "@assets/images/tsukihime-logo.webp"
+import moon from "@assets/images/moon.webp"
 import '@styles/title-menu.scss'
 import { SCREEN } from '../utils/display'
 import * as motion from "motion/react-m"
@@ -16,12 +16,6 @@ import { TitleMenuButton } from '@tsukiweb-common/ui-core'
 import { useScreenAutoNavigate, useLanguageRefresh } from 'hooks'
 import useEclipseUnlocked from 'hooks/useEclipseUnlocked'
 
-const img = {
-	src: moon,
-	alt: "moon",
-	className: "moon"
-}
-
 const TitleMenuScreen = () => {
 	const navigate = useNavigate()
 	useScreenAutoNavigate(SCREEN.TITLE)
@@ -36,7 +30,10 @@ const TitleMenuScreen = () => {
 			animate={{opacity: 1}}
 			exit={{opacity: 0}}>
 			<div className="logo">
-				<motion.img src={img.src} alt={img.alt} draggable={false} className={img.className}
+				<motion.img
+					src={moon} alt="moon"
+					draggable={false}
+					className="moon"
 					initial={{ opacity: 0.9, transform: "translateY(-42%) scale(0.9)" }}
 					animate={{ opacity: 0.5, transform: "translateY(-50%) scale(1)" }}
 					transition={{
@@ -44,7 +41,7 @@ const TitleMenuScreen = () => {
 						duration: 1,
 					}} />
 				<motion.img
-					src={tsukiLogo} alt="tsukihime logo"
+					src={gameLogo} alt="Tsukihime logo"
 					draggable={false}
 					className='tsuki-logo'
 					initial={{ opacity: 0, scale: 0.7 }}

@@ -3,7 +3,7 @@ import { MdCopyAll, MdGetApp, MdInfoOutline, MdOpenInNew, MdShare } from "react-
 import { toast } from "react-toastify"
 import { APP_INFO, APP_VERSION } from "../../utils/constants"
 import { strings } from "../../translation/lang"
-import tsukiCover from "../../assets/images/tsukihime_cover.webp"
+import tsukiCover from "@assets/images/tsukihime_cover.webp"
 import { Button, MessageContainer, Modal } from "@tsukiweb-common/ui-core"
 import usePWA from "@tsukiweb-common/hooks/usePWA"
 import { bb } from "@tsukiweb-common/utils/Bbcode"

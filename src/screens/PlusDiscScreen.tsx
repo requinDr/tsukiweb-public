@@ -1,6 +1,6 @@
 import '@styles/plus-disc.scss'
 import { SCREEN } from '../utils/display'
-import Cover from "../assets/images/plus-disc_cover.webp"
+import Cover from "@assets/images/plus-disc_cover.webp"
 import { TabsComponent } from '@tsukiweb-common/ui-core'
 import useQueryParam from '@tsukiweb-common/hooks/useQueryParam'
 import * as motion from "motion/react-m"

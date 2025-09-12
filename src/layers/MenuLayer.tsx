@@ -3,7 +3,7 @@ import { MdCopyAll, MdFastForward, MdFullscreen, MdFullscreenExit, MdOutlineVolu
 import { settings } from "../utils/settings"
 import { displayMode, InGameLayersHandler, SCREEN } from "../utils/display"
 import { strings } from "../translation/lang"
-import Ornament from "../assets/images/ornament.webp"
+import Ornament from "@assets/images/ornament.webp"
 import { toast } from "react-toastify"
 import { useObserved } from "@tsukiweb-common/utils/Observer"
 import { isFullscreen, toggleFullscreen, supportFullscreen } from "@tsukiweb-common/utils/utils"

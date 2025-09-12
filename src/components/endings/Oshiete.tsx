@@ -1,5 +1,5 @@
 import { playScene } from 'utils/savestates'
-import chalkboard from '../../assets/images/chalkboard.webp'
+import chalkboard from '@assets/images/chalkboard.webp'
 import { noBb } from '@tsukiweb-common/utils/Bbcode'
 import { osiete } from 'utils/endings'
 import classNames from 'classnames'

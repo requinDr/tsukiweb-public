@@ -3,7 +3,7 @@ import { strings } from "../translation/lang"
 import classNames from "classnames"
 import { bb, noBb } from "@tsukiweb-common/utils/Bbcode"
 import GraphicsGroup from "components/molecules/GraphicsGroup"
-import sceneAttrs from '../assets/game/scene_attrs.json'
+import sceneAttrs from '@assets/game/scene_attrs.json'
 import { TsukihimeSceneName } from "types"
 import { Button } from "@tsukiweb-common/ui-core"
 import { getSceneTitle, isThScene } from "script/utils"

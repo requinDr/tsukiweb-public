@@ -24,7 +24,8 @@
     "baseUrl": "src",
     "paths": {
       "@tsukiweb-common/*": ["../tsukiweb-common/src/*"],
-      "@styles/*": ["./styles/*"]
+      "@styles/*": ["./styles/*"],
+      "@assets/*": ["./assets/*"],
     }
   },
   "include": ["src", "tsukiweb-common/global.d.ts"],

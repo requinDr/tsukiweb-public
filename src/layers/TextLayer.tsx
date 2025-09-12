@@ -1,6 +1,6 @@
 import { useEffect, useState, memo, Fragment, useRef, RefObject } from "react"
-import moonIcon from '../assets/icons/icon_moon.svg'
-import pageIcon from '../assets/icons/icon_bars.svg'
+import moonIcon from '@assets/icons/icon_moon.svg'
+import pageIcon from '@assets/icons/icon_bars.svg'
 import { settings } from "../utils/settings"
 import { ScriptPlayer } from "script/ScriptPlayer"
 import useMousePointer from "@tsukiweb-common/hooks/useMousePointer"
