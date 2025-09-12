@@ -342,6 +342,8 @@ function processRocket(token, i, tokens) {
           arg_list.push(`${key}=${value}`)
         }
       }
+      if (tokens[i+1] instanceof CommandToken && tokens[i+1].cmd != 'wrocket')
+        arg_list.push("wait=false")
       
       token.cmd = 'rocket'
       token.args = [arg_list.join(' ')]
