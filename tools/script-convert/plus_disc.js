@@ -109,15 +109,25 @@ const COLOR_IMAGES = new Map(Object.entries({
 
 const TRANSITION_RULES = new Map(Object.entries({
   'カーテン上から'    :'bcartain',//curtain from top
+  'Curtainfromtop'   :'bcartain',
   'カーテン下から'    :'tcartain',//curtain from bottom
+  'Curtainfrombottom':'tcartain',
   'カーテン右から'    :'lcartain',//curtain from right
+  'Curtainfromright' :'lcartain',
   'カーテン左から'    :'rcartain',//curtain from left
+  'Curtainfromleft'  :'rcartain',
   'シャッター上から'  :'bshutter',//TODO shutter from top
+  'Shutterfromtop'  :'bshutter',
   'シャッター下から'  :'tshutter',//TODO shutter from bottom
+  'Shutterfrombottom' :'tshutter',
   'シャッター左から'  :'rshutter',//TODO shutter from left
+  'Shutterfromleft'  :'rshutter',
   '集中線2'           :'lexpl',   //TODO explosion on the left
+  'Concentrateline2' :'lexpl',
   '円形(中から外へ・下)':'lcircle',//TODO circle left
+  'Round(intoout_down)':'lcircle',
   '円形(中から外へ)'  :'ccircle', //TODO circle center
+  'Round(intoout)'  :'ccircle',
 }))
 
 const SPRITE_POSITIONS = new Map(Object.entries({
@@ -129,10 +139,10 @@ function processImgFile(args) {
   const file = args.get('file')
   if (COLOR_IMAGES.has(file))
     return COLOR_IMAGES.get(file)
-  if (file.startsWith('志貴')) // 志貴_0[234]
-    return `"tachi/shiki${file.substring(2)}"`
-  if (file.startsWith('瀬尾')) // 瀬尾_0[123]
-    return `"tachi/akira${file.substring(2)}"`
+  if (/^(志貴_|shiki_)/.test(file)) // 志貴_0[234]
+    return `"tachi/shiki${file.replace(/^(志貴_|shiki_)/, "_")}"`
+  if (/^(瀬尾_|seo_)/.test(file)) // 瀬尾_0[123]
+    return `"tachi/akira${file.replace(/^(瀬尾_|seo_)/, "_")}"`
   if (file.match(/^[st]\d{2}$/)) {
     const c = file.charAt(0);
     const n = Number.parseInt(file.substring(1));
@@ -165,6 +175,8 @@ function processImgFile(args) {
     case 'yumizuka' : return '"bg/yumizuka"';
     case 'スクロール19a' : return '"bg/scroll19"'; //TODO align bottom
     case 'スクロール19b' : return '"bg/scroll19"'; //TODO align top
+    case 'scroll19a' : return '"bg/scroll19"'; //TODO align top
+    case 'scroll19b' : return '"bg/scroll19"'; //TODO align top
     case 'matu'   : return `"bg/matu"`; //TODO full-screen sprite. Change ld to bg
     case 'next'   : return null; // used at the end of the scene (ignore)
     case 'title_01' : return '"bg/title_01"'; // used during script
@@ -510,7 +522,7 @@ export function main() {
     'ko-wolhui',
     'ru-ciel',
     // 'zh-tw-yueji_yeren_hanhua_zu',
-    // 'zh-yueji_yeren_hanhua_zu',
+    'zh-yueji_yeren_hanhua_zu',
   ]
   const files = {
     'pd_alliance'  : '幻視同盟.ks',
