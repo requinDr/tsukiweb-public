@@ -145,7 +145,8 @@ export class History extends Stored {
       this._pages.push(c as PageEntry)
       this._pageContext = undefined
     } else {
-      throw Error(`Page context already used`)
+      const c = {...content, type} as PageEntry
+      this._pages.push(c)
     }
   }
 
