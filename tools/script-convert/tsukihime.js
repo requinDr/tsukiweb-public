@@ -271,6 +271,7 @@ function generalFixes(file, tokens) {
 	}
 
 	// Add page break after last text of scenes (fix text skip before choices)
+	// and selects outside logic file
 	if (file != LOGIC_FILE) {
 		let stop = false
 		for (let i = tokens.length-1; i>= 0 && !stop; i--) {
@@ -288,6 +289,10 @@ function generalFixes(file, tokens) {
 						break
 					case '\\' : case '@' :
 						stop = true
+						break
+					case 'select' :
+						console.log(`removing 'select' command line in ${file}`)
+						tokens[i] = null
 						break
 				}
 			} else if (token instanceof TextToken) {
