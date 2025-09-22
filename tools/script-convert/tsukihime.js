@@ -520,7 +520,7 @@ function raw_fixes(language, text) {
 export function main() {
 	// Process all fullscript files
 	const path_prefix = '../../public/static/'
-	const outputDir = null//'scenes'
+	const outputDir = 'scenes'
 	const fullscripts = [
 		['jp', 'fullscript_jp.txt'],
 		['en-mm', 'fullscript_en-mm.txt'],

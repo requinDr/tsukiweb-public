@@ -42,7 +42,7 @@
     "display-name": "🇷🇺 Русский",
     "authors": "Ciel-senpai",
     "dir": "./ru-ciel",
-    "last-update": "2025-09-11",
+    "last-update": "2025-09-19",
     "fallback": "en-mm"
   },
    "zh-yueji_yeren_hanhua_zu": {
@@ -50,7 +50,7 @@
     "display-name": "🇨🇳 简体中文",
     "authors": "月姬野人汉化组 & SHIROU神父",
     "dir": "./zh-yueji_yeren_hanhua_zu",
-    "last-update": "2025-09-13",
+    "last-update": "2025-09-19",
     "fallback": "jp"
   },
   "zh-tw-yueji_yeren_hanhua_zu": {
@@ -58,7 +58,7 @@
     "display-name": "🇨🇳 繁體中文",
     "authors": "月姬野人汉化组 & SHIROU神父",
     "dir": "./zh-tw-yueji_yeren_hanhua_zu",
-    "last-update": "2025-09-11",
+    "last-update": "2025-09-19",
     "fallback": "jp"
   },
   "ko-wolhui": {

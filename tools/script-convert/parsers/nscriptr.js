@@ -125,7 +125,7 @@ function parseCommand(lineIndex, str) {
  * @param {string} str
  */
 function parseError(lineIndex, str) {
-    console.log(`Error line ${lineIndex + 1}: ${str}`)
+    console.log(`Warning line ${lineIndex + 1}: ${str}`)
     return [new ErrorToken(lineIndex, str)]
 }
 
