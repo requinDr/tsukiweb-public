@@ -227,6 +227,29 @@ function processPhase(token, i, tokens) {
 		token.args = [bg,side,route,rDay,day]
 	}
 	tokens[i-3] = tokens[i-2] = tokens[i-1] = null
+	// check if there is a page break between last text and phase
+	for (let j = i-4; j >= 0; j--) {
+		if (tokens[j] instanceof TextToken) {
+			const text = tokens[j].text
+			if (text.endsWith('\\')) {
+				break
+			}
+			if (text.endsWith('@')) {
+				tokens[j].text = text.substring(0, text.length-1)
+			}
+			//console.log(`adding '\\' before ${tokens[i]}, after ${tokens[j]}`)
+			// Insert page break.
+			// Index is conserved by moving tokens on step, using one null
+			// token before phase as a room to move tokens to
+			tokens.splice(j+1, (i - (j+1)),
+				new CommandToken(tokens[j].lineIndex, '\\'),
+				...tokens.slice(j+1, i-1))
+			break
+		} else if (tokens[j] instanceof CommandToken && tokens[j].cmd == '\\') {
+			break
+		}
+	}
+
 }
 
 /**
@@ -497,7 +520,7 @@ function raw_fixes(language, text) {
 export function main() {
 	// Process all fullscript files
 	const path_prefix = '../../public/static/'
-	const outputDir = 'scenes'
+	const outputDir = null//'scenes'
 	const fullscripts = [
 		['jp', 'fullscript_jp.txt'],
 		['en-mm', 'fullscript_en-mm.txt'],
