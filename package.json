@@ -6,21 +6,21 @@
 	"dependencies": {
 		"@floating-ui/react": "^0.27.16",
 		"@tanstack/react-virtual": "^3.13.12",
-		"@types/node": "^24.3.1",
-		"@types/react": "^19.1.12",
-		"@types/react-dom": "^19.1.9",
+		"@types/node": "^24.6.2",
+		"@types/react": "^19.2.0",
+		"@types/react-dom": "^19.2.0",
 		"@uidotdev/usehooks": "^2.4.1",
 		"classnames": "^2.5.1",
-		"motion": "^12.23.12",
-		"react": "^19.1.1",
-		"react-dom": "^19.1.1",
+		"motion": "^12.23.22",
+		"react": "^19.2.0",
+		"react-dom": "^19.2.0",
 		"react-error-boundary": "^6.0.0",
 		"react-icons": "^5.5.0",
 		"react-modal": "^3.16.3",
-		"react-router-dom": "^7.9.0",
+		"react-router-dom": "^7.9.3",
 		"react-toastify": "^11.0.5",
 		"react-tooltip": "^5.29.1",
-		"sass": "^1.92.1",
+		"sass": "^1.93.2",
 		"vite-plugin-svgr": "^4.5.0",
 		"vite-tsconfig-paths": "^5.1.4",
 		"yet-another-react-lightbox": "^3.25.0"
@@ -36,9 +36,9 @@
 	},
 	"devDependencies": {
 		"@types/react-modal": "^3.16.3",
-		"@vitejs/plugin-react": "^5.0.2",
-		"sharp": "^0.34.3",
-		"typescript": "^5.9.2",
-		"vite": "^7.1.5"
+		"@vitejs/plugin-react": "^5.0.4",
+		"sharp": "^0.34.4",
+		"typescript": "^5.9.3",
+		"vite": "^7.1.9"
 	}
 }
