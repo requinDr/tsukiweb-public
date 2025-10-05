@@ -10,7 +10,7 @@ import { CommandToken, ConditionToken, ErrorToken, LabelToken, ReturnToken, Text
 import { generate } from './nscriptr_convert.js';
 import { fixContexts, getScenes } from './scenes.js';
 
-const LOGIC_FILE = "scene0"
+const LOGIC_FILE = "logic"
 
 const CONDITION_REGEXP = /^(?<lhs>(%\w+|\d+))(?<op>[=!><]+)(?<rhs>(%\w+|\d+))$/
 
@@ -135,32 +135,32 @@ const fixes = new Map(Object.entries({
 				t.text = '[center]' + t.text.trimStart()
 		})
 	},
-	'scene46': (tokens)=> {
+	's046': (tokens)=> {
 		let i = tokens.findIndex(t=> t instanceof CommandToken && t.cmd == 'bg')
 		tokens.splice(i+1, 0, 'waveloop se_11')
 	},
-	'scene121': (tokens)=> {
+	's121': (tokens)=> {
 		// if %flgE>=1 skip 5 --> ... skip 6, otherwise first skip lands on second one
 		const i = tokens.findIndex(t=> t instanceof ConditionToken && t.condition.match(/%flgE\s*>=\s*1/))
 		tokens[i].command.args = [7]
 	},
-	'scene228' : (tokens) => {
+	's228' : (tokens) => {
 		const i = tokens.findLastIndex(t => t instanceof CommandToken && t.cmd == 'bg')
 		tokens.splice(i+1, 0, 'playstop')
 	},
-	'scene333' : (tokens) => {
+	's333' : (tokens) => {
 		const i = tokens.findLastIndex(t => t instanceof CommandToken && t.cmd == 'bg')
 		tokens.splice(i+1, 0, 'playstop')
 	},
-	'scene140' : (tokens) => {
+	's140' : (tokens) => {
 		let i = tokens.findLastIndex(t => t instanceof CommandToken && t.cmd == 'cl' && t.args[0] == 'c')
 		i += tokens.slice(i).findIndex(t => t instanceof CommandToken && t.cmd == '\\')
 		tokens.splice(i+1, 0, 'playstop');
 	},
-	'scene178' : (tokens) => {
+	's178' : (tokens) => {
 		tokens.unshift('play "*1"')
 	},
-	'scene404': (tokens) => {
+	's404': (tokens) => {
 		tokens.findLastIndex(t => t instanceof CommandToken && t.cmd)
 	}
 }))
@@ -453,9 +453,9 @@ function getLabelFile(label) {
 	if (['f300', 'skip300', 's300'].includes(label))
 		return null // remove empty f300 scene
     if (/^s\d\w+?$/.test(label))
-        return `scene${label.substring(1)}`
+        return `s${label.substring(1).padStart(3, '0')}`
     if (/^se\d\w+?$/.test(label)) //TODO move to kt-specific script
-        return `scene${label.substring(1)}`
+        return `s${label.substring(1).padStart(3, '0')}`
     if (/^f\d\w+?$/.test(label))
         return LOGIC_FILE
     if (/^skip\d\w+?$/.test(label))
@@ -488,7 +488,7 @@ function tsukihime_fixes(files) {
 	}
 	const scenes = getScenes(files, LOGIC_FILE, (label)=> {
 		if (/^s\d\w+/.test(label))
-			return `scene${label.substring(1)}`
+			return `s${label.substring(1).padStart(3, '0')}`
 		if (label == 'openning')
 			return label
 		return null

@@ -354,5 +354,5 @@ export {
 	ErrorToken,
 	LabelToken,
 	ReturnToken,
-    StrReader
+	StrReader
 }

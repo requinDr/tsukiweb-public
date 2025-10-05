@@ -66,12 +66,12 @@ export function nextLabel(label: LabelName): LabelName {
 //#region                         FETCH BLOCKS
 //##############################################################################
 
-const LOGIC_FILE = 'scene0.txt'
+const LOGIC_FILE = 'logic.txt'
 
 export async function fetchScene(sceneId: string): Promise<string[]> {
 	await waitLanguageLoad()
 	if (/^s\d+a?$/.test(sceneId))
-		sceneId = `scene${sceneId.substring(1)}`;
+		sceneId = `s${sceneId.substring(1).padStart(3, '0')}`;
 	else if (sceneId == "ending") {
 		return creditsScript(true)
 	}
