@@ -33,4 +33,7 @@ public/se
 tools/generate-thumbnails/output
 tools/script-convert/*
 tools/sprites-transparency/*
+tools/convert-images/input
+tools/convert-images/input_x2
+tools/convert-images/output
 !tools/**/*.js
