@@ -144,14 +144,17 @@ export async function saveSpritesheet(thumbnails, outputDir, fileName, thumbWidt
 		},
 	}
 
-	await sharp(canvas)
+	const avifPromise = sharp(canvas)
 		.composite(compositeImages)
 		.toFormat('avif')
 		.avif({ effort: 9, quality: 40 })
 		.toFile(spritesheetPath + ".avif")
-	await sharp(canvas)
+	
+	const webpPromise = sharp(canvas)
 		.composite(compositeImages)
 		.toFormat('webp')
 		.webp({ effort: 6, preset: 'drawing', quality: 70 })
 		.toFile(spritesheetPath + ".webp")
+
+	await Promise.all([avifPromise, webpPromise])
 }

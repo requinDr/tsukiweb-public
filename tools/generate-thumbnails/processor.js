@@ -13,81 +13,99 @@ export async function processScenes(scenes, inputImagesPath, outputDir, outputDi
 		fs.mkdirSync(outputDir, { recursive: true })
 	}
 
+	// 1. Filter scenes that need processing
+	const validSceneEntries = Object.entries(scenes).filter(
+		([, sceneData]) => sceneData?.fc?.hasOwnProperty('col') && sceneData?.fc?.graph
+	)
+
+	const totalScenes = validSceneEntries.length
+	let processedCount = 0
+
+	const updateProgress = () => {
+		processedCount++
+		process.stdout.write(`\rGenerating thumbnails: ${processedCount}/${totalScenes}`)
+	}
+
+	// 2. Create an array of promises for image generation
+	const thumbnailPromises = validSceneEntries.map(([sceneName, sceneData]) => {
+		const { graph } = sceneData.fc
+		const { l = null, c = null, r = null, monochrome = null } = graph
+		const bg = graph.bg || '#000000'
+
+		return generateFlowchartImage({
+			bg: isHexColor(bg) ? bg : path.join(inputImagesPath, ensureExtension(bg)),
+			l: l ? path.join(inputImagesPath, ensureExtension(l)) : null,
+			c: c ? path.join(inputImagesPath, ensureExtension(c)) : null,
+			r: r ? path.join(inputImagesPath, ensureExtension(r)) : null,
+			monochrome,
+			width,
+			height,
+		})
+			.then((buffer) => {
+				updateProgress()
+				return buffer
+			})
+			.catch((error) => {
+				console.error(`\nError processing scene ${sceneName}:`, error.message)
+				return null
+			})
+	})
+
+	// 3. Run all promises in parallel
+	const allThumbBuffers = await Promise.all(thumbnailPromises)
+	process.stdout.write('\n')
+
+	// 4. Assemble spritesheets from the results
+	console.log('Assembling spritesheets...')
 	let jsonMetadata = {
 		d: { w: width, h: height },
 		f: [],
 		i: {}
 	}
 	let batchIndex = 0
-	let thumbnails = []
+	let thumbnailsInCurrentBatch = []
+	const batchSavePromises = []
 
 	const saveBatch = async () => {
-		if (thumbnails.length === 0) return
+		if (thumbnailsInCurrentBatch.length === 0) return
 		const fileName = `spritesheet_${batchIndex}`
-		await saveSpritesheet(thumbnails, outputDir, fileName, width, height)
-		thumbnails = []
+		batchSavePromises.push(saveSpritesheet(thumbnailsInCurrentBatch, outputDir, fileName, width, height))
+		thumbnailsInCurrentBatch = []
 		batchIndex++
 	}
 
-	const sceneEntries = Object.entries(scenes)
-	const totalScenes = sceneEntries.length
-	let processedCount = 0
+	for (let i = 0; i < validSceneEntries.length; i++) {
+		const thumbBuffer = allThumbBuffers[i]
+		if (!thumbBuffer) continue
 
-	for (const [sceneName, sceneData] of sceneEntries) {
-		processedCount++
-		process.stdout.write(`\rGenerating thumbnails: ${processedCount}/${totalScenes}`)
+		const [sceneName] = validSceneEntries[i]
 
-		const graph = sceneData?.fc?.graph
-		if (!sceneData?.fc?.hasOwnProperty("col") || !graph) {
-			// console.debug(`Skipping scene ${sceneName} (unused or missing graph)`)
-			continue
+		thumbnailsInCurrentBatch.push(thumbBuffer)
+
+		// Metadata calculation
+		const batchPos = thumbnailsInCurrentBatch.length - 1
+		const fileName = `spritesheet_${batchIndex}.${IMAGE_FORMAT}`
+		let fileIndex = jsonMetadata.f.indexOf(fileName)
+		if (fileIndex === -1) {
+			fileIndex = jsonMetadata.f.push(fileName) - 1
 		}
-		
-		let { l = null, c = null, r = null, monochrome = null } = graph
-		const bg = graph.bg || "#000000"
+		jsonMetadata.i[sceneName] = [
+			Math.floor(batchPos / 10) * height,
+			(batchPos % 10) * width,
+			fileIndex,
+		]
 
-		try {
-			const thumbBuffer = await generateFlowchartImage({
-				bg: isHexColor(bg) ? bg : path.join(inputImagesPath, ensureExtension(bg)),
-				l: l ? path.join(inputImagesPath, ensureExtension(l)) : null,
-				c: c ? path.join(inputImagesPath, ensureExtension(c)) : null,
-				r: r ? path.join(inputImagesPath, ensureExtension(r)) : null,
-				monochrome,
-				width,
-				height
-			})
-
-			thumbnails.push(thumbBuffer)
-
-			const batchPos = thumbnails.length - 1
-			const fileName = `spritesheet_${batchIndex}.${IMAGE_FORMAT}`
-
-			let fileIndex = jsonMetadata.f.indexOf(fileName)
-			if (fileIndex === -1) {
-				fileIndex = jsonMetadata.f.push(fileName) - 1
-			}
-
-			// Calculate metadata for this scene
-			jsonMetadata.i[sceneName] = [
-				Math.floor(batchPos / 10) * height,
-				(batchPos % 10) * width,
-				fileIndex
-			]
-
-			// Save spritesheet when batch is full
-			if (thumbnails.length === BATCH_SIZE) await saveBatch()
-		} catch (error) {
-			console.error(`Error processing scene ${sceneName}:`, error.message)
+		if (thumbnailsInCurrentBatch.length === BATCH_SIZE) {
+			saveBatch()
 		}
 	}
 
 	// Save remaining thumbnails in the last batch
-	await saveBatch()
+	saveBatch()
 
-	process.stdout.write('\n')
+	await Promise.all(batchSavePromises)
 
-	// Write JSON metadata
-	const metadataPath = path.join(outputDirMetadata, "spritesheet_metadata.json")
+	const metadataPath = path.join(outputDirMetadata, 'spritesheet_metadata.json')
 	fs.writeFileSync(metadataPath, JSON.stringify(jsonMetadata))
 	console.log(`Metadata saved to ${metadataPath}`)
 }
