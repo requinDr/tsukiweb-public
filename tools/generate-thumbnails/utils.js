@@ -124,10 +124,10 @@ export async function generateFlowchartImage({ bg, l, c, r, monochrome, width, h
 }
 
 // Helper function to generate a spritesheet
-export async function saveSpritesheet(thumbnails, outputDir, batchIndex, thumbWidth, thumbHeight) {
+export async function saveSpritesheet(thumbnails, outputDir, fileName, thumbWidth, thumbHeight) {
 	const cols = 10 // Number of thumbnails per row
 	const rows = Math.ceil(thumbnails.length / cols)
-	const spritesheetPath = path.join(outputDir, `spritesheet_${batchIndex}`)
+	const spritesheetPath = path.join(outputDir, fileName)
 
 	const compositeImages = thumbnails.map((thumb, i) => ({
 		input: thumb,
