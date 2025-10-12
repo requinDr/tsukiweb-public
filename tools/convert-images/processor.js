@@ -1,4 +1,5 @@
 import fs from 'fs/promises'
+import os from 'os'
 import path from 'path'
 import sharp from 'sharp'
 import { logError, logProgressLines } from '../utils/logging.js'
@@ -64,30 +65,37 @@ export async function processImages(inputDir, outputDir, options) {
     return
   }
 
-  const conversionPromises = []
+  const numCores = os.cpus().length
+  const concurrencyLimit = Math.max(1, numCores - 1)
   let processedCount = 0
   const totalImages = imagePaths.length
 
   logProgressLines(outputDir, `Processing ${outputDir}: 0/${totalImages}`)
-  
-  for (const imagePath of imagePaths) {
-    const relativePath = path.relative(inputDir, imagePath)
-    const parsedPath = path.parse(relativePath)
-    const outputRelativePath = path.join(parsedPath.dir, `${parsedPath.name}.avif`)
 
-    const outputFile = path.join(outputDir, outputRelativePath)
+  const processQueue = async (paths) => {
+    const worker = async () => {
+      while (paths.length > 0) {
+        const imagePath = paths.shift()
+        if (!imagePath) continue
 
-    conversionPromises.push(
-      convertImage(imagePath, outputFile, options)
-        .then(() => {
+        const relativePath = path.relative(inputDir, imagePath)
+        const parsedPath = path.parse(relativePath)
+        const outputRelativePath = path.join(parsedPath.dir, `${parsedPath.name}.avif`)
+        const outputFile = path.join(outputDir, outputRelativePath)
+
+        try {
+          await convertImage(imagePath, outputFile, options)
           processedCount++
           logProgressLines(outputDir, `Processing ${outputDir}: ${processedCount}/${totalImages}`)
-        })
-        .catch((error) => {
+        } catch (error) {
           logError(`Error converting ${imagePath} to ${outputFile}:`, error)
-        })
-    )
+        }
+      }
+    }
+
+    const workers = Array.from({ length: concurrencyLimit }, () => worker())
+    await Promise.all(workers)
   }
 
-  await Promise.all(conversionPromises)
+  await processQueue([...imagePaths])
 }
