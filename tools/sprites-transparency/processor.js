@@ -1,14 +1,14 @@
 import sharp from 'sharp'
 import fs from 'fs/promises'
 import path from 'path'
-
+import { logProgress, logError } from '../utils/logging.js'
 
 async function ensureDirectoryExists(dir) {
 	try {
 		await fs.access(dir)
 	} catch (error) {
 		await fs.mkdir(dir, { recursive: true })
-		console.log(`Folder "${dir}" successfully created.`)
+		logProgress(`Folder "${dir}" successfully created.`)
 	}
 }
 
@@ -36,10 +36,9 @@ async function applyTransparencyMaskToImage(inputPath, outputPath) {
 			.png()
 			.toFile(outputPath)
 		
-		console.log(`Image successfully processed: ${outputPath}`)
 		return true
 	} catch (error) {
-		console.error(`Error processing image ${inputPath}:`, error)
+		logError(`Error processing image ${inputPath}: ${error.message}`)
 		return false
 	}
 }
@@ -62,24 +61,25 @@ export async function processImages(inputDir, outputDir) {
 			return ext === '.jpg' || ext === '.jpeg'
 		})
 		
-		if (imageFiles.length === 0) {
-			console.log('No images found in the "input" folder.')
+		const totalImages = imageFiles.length
+		if (totalImages === 0) {
+			logError('No images found in the "input" folder.')
 			return
 		}
 		
-		console.log(`${imageFiles.length} image(s) found for processing.`)
-		
 		let successCount = 0
-		for (const file of imageFiles) {
+		for (const [index, file] of imageFiles.entries()) {
 			const inputPath = path.join(inputDir, file)
 			const outputPath = path.join(outputDir, `${path.parse(file).name}.png`)
+			
+			logProgress(`Processing image ${index + 1}/${totalImages}: ${file}`)
 			
 			const success = await applyTransparencyMaskToImage(inputPath, outputPath)
 			if (success) successCount++
 		}
 		
-		console.log(`Processing complete. ${successCount}/${imageFiles.length} image(s) successfully processed.`)
+		logProgress(`Processing complete. ${successCount}/${totalImages}\n`)
 	} catch (error) {
-		console.error('Error processing images:', error)
+		logError(`Error processing images: ${error.message}`)
 	}
 }

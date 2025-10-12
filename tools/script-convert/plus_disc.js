@@ -8,7 +8,7 @@ import { fileURLToPath } from 'url'
 import { parseScript } from './parsers/kagScript.js';
 import { CommandToken, LabelToken, StrReader, TextToken, Token } from './parsers/utils.js'
 import { generate } from './utils/nscriptr_convert.js';
-import { logError, logProgress } from './utils/logging.js';
+import { logError, logProgress } from '../utils/logging.js';
 
 
 //#endregion ###################################################################

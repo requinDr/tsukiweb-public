@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import { isHexColor, saveSpritesheet, generateFlowchartImage } from './utils.js'
+import { logError, logProgress } from '../utils/logging.js'
 
 const IMAGE_FORMAT = 'avif'
 const BATCH_SIZE = 90
@@ -23,7 +24,7 @@ export async function processScenes(scenes, inputImagesPath, outputDir, outputDi
 
 	const updateProgress = () => {
 		processedCount++
-		process.stdout.write(`\rGenerating thumbnails: ${processedCount}/${totalScenes}`)
+		logProgress(`Generating thumbnails: ${processedCount}/${totalScenes}`)
 	}
 
 	// 2. Create an array of promises for image generation
@@ -46,17 +47,17 @@ export async function processScenes(scenes, inputImagesPath, outputDir, outputDi
 				return buffer
 			})
 			.catch((error) => {
-				console.error(`\nError processing scene ${sceneName}:`, error.message)
+				logError(`Error processing scene ${sceneName}: ${error.message}`)
 				return null
 			})
 	})
 
 	// 3. Run all promises in parallel
 	const allThumbBuffers = await Promise.all(thumbnailPromises)
-	process.stdout.write('\n')
 
 	// 4. Assemble spritesheets from the results
-	console.log('Assembling spritesheets...')
+	console.log()
+	logProgress('Assembling spritesheets...')
 	let jsonMetadata = {
 		d: { w: width, h: height },
 		f: [],
@@ -107,5 +108,5 @@ export async function processScenes(scenes, inputImagesPath, outputDir, outputDi
 
 	const metadataPath = path.join(outputDirMetadata, 'spritesheet_metadata.json')
 	fs.writeFileSync(metadataPath, JSON.stringify(jsonMetadata))
-	console.log(`Metadata saved to ${metadataPath}`)
+	logProgress('Spritesheets assembled.\n')
 }

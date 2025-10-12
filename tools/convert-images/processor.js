@@ -1,6 +1,7 @@
 import fs from 'fs/promises'
 import path from 'path'
 import sharp from 'sharp'
+import { logError, logProgressLines } from '../utils/logging.js'
 
 /**
  * Finds all image files in a directory.
@@ -52,31 +53,41 @@ async function convertImage(inputFile, outputFile, options) {
 /**
  * Processes all images in a directory based on multiple output configurations.
  * @param {string} inputDir - The root directory containing input images.
- * @param {object} outputConfigs - An object where keys are output directories and values are conversion options.
+ * @param {object} outputDir
+ * @param {object} options
  */
-export async function processImages(inputDir, outputConfigs) {
+export async function processImages(inputDir, outputDir, options) {
   const imagePaths = await findImageFiles(inputDir)
 
   if (imagePaths.length === 0) {
-    console.log('No images found to process in ' + inputDir)
+    logError('No images found to process in ' + inputDir)
     return
   }
 
-  console.log(`Found ${imagePaths.length} images to process.`)
-
   const conversionPromises = []
+  let processedCount = 0
+  const totalImages = imagePaths.length
 
+  logProgressLines(outputDir, `Processing ${outputDir}: 0/${totalImages}`)
+  
   for (const imagePath of imagePaths) {
     const relativePath = path.relative(inputDir, imagePath)
     const parsedPath = path.parse(relativePath)
     const outputRelativePath = path.join(parsedPath.dir, `${parsedPath.name}.avif`)
 
-    for (const [outputDir, options] of Object.entries(outputConfigs)) {
-      const outputFile = path.join(outputDir, outputRelativePath)
-      conversionPromises.push(convertImage(imagePath, outputFile, options))
-    }
+    const outputFile = path.join(outputDir, outputRelativePath)
+
+    conversionPromises.push(
+      convertImage(imagePath, outputFile, options)
+        .then(() => {
+          processedCount++
+          logProgressLines(outputDir, `Processing ${outputDir}: ${processedCount}/${totalImages}`)
+        })
+        .catch((error) => {
+          logError(`Error converting ${imagePath} to ${outputFile}:`, error)
+        })
+    )
   }
 
   await Promise.all(conversionPromises)
-  console.log(`Successfully processed ${imagePaths.length} images, creating ${Object.keys(outputConfigs).length} versions for each.`)
 }

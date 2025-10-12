@@ -9,8 +9,10 @@ const INPUT_IMAGES = '../../public/static/jp/image/'
 const OUTPUT_THUMBNAILS = '../../public/static/jp/flowchart-spritesheet/'
 const OUTPUT_METADATA = '../../src/assets/flowchart/'
 
-function main() {
-	processScenes(INPUT_SCENES, INPUT_IMAGES, OUTPUT_THUMBNAILS, OUTPUT_METADATA)
+async function main() {
+	console.log('--- Starting thumbnail generation ---\n')
+	await processScenes(INPUT_SCENES, INPUT_IMAGES, OUTPUT_THUMBNAILS, OUTPUT_METADATA)
+	console.log('\n--- Thumbnail generation finished ---')
 }
 
 main()

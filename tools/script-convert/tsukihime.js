@@ -9,7 +9,7 @@ import { parseScript } from './parsers/nscriptr.js';
 import { CommandToken, ConditionToken, ErrorToken, LabelToken, ReturnToken, TextToken, Token } from './parsers/utils.js'
 import { generate } from './utils/nscriptr_convert.js';
 import { fixContexts, getScenes } from './utils/scenes.js';
-import { logError, logProgress } from './utils/logging.js';
+import { logError, logProgress } from '../utils/logging.js';
 
 const LOGIC_FILE = "logic"
 const CONDITION_REGEXP = /^(?<lhs>(%\w+|\d+))(?<op>[=!><]+)(?<rhs>(%\w+|\d+))$/

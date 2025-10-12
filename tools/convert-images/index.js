@@ -51,15 +51,16 @@ const imageX2Options = {
 
 async function main() {
   try {
-    console.log('Starting image conversion process... (this may take a while)')
-    await processImages(inputDir, {
-      [imageOutputDir]: imageOptions,
-      [thumbOutputDir]: thumbOptions
-    })
-    await processImages(inputDirtX2, {
-      [imageX2OutputDir]: imageX2Options
-    })
-    console.log('Image conversion process completed successfully.')
+    console.log('--- Starting image conversion ---\n')
+
+    const conversionPromises = [
+      processImages(inputDir, imageOutputDir, imageOptions),
+      processImages(inputDir, thumbOutputDir, thumbOptions),
+      processImages(inputDirtX2, imageX2OutputDir, imageX2Options)
+    ]
+    await Promise.all(conversionPromises)
+
+    console.log('\n--- Image conversion finished ---')
   } catch (error) {
     console.error('An error occurred during image processing:', error)
     process.exit(1)
