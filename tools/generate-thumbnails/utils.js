@@ -154,6 +154,4 @@ export async function saveSpritesheet(thumbnails, outputDir, fileName, thumbWidt
 		.toFormat('webp')
 		.webp({ effort: 6, preset: 'drawing', quality: 70 })
 		.toFile(spritesheetPath + ".webp")
-
-	console.log(`Spritesheet saved to ${spritesheetPath}`)
 }

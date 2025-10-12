@@ -28,10 +28,18 @@ export async function processScenes(scenes, inputImagesPath, outputDir, outputDi
 		thumbnails = []
 		batchIndex++
 	}
-	for (const [sceneName, sceneData] of Object.entries(scenes)) {
+
+	const sceneEntries = Object.entries(scenes)
+	const totalScenes = sceneEntries.length
+	let processedCount = 0
+
+	for (const [sceneName, sceneData] of sceneEntries) {
+		processedCount++
+		process.stdout.write(`\rGenerating thumbnails: ${processedCount}/${totalScenes}`)
+
 		const graph = sceneData?.fc?.graph
 		if (!sceneData?.fc?.hasOwnProperty("col") || !graph) {
-			console.debug(`Skipping scene ${sceneName} (unused or missing graph)`)
+			// console.debug(`Skipping scene ${sceneName} (unused or missing graph)`)
 			continue
 		}
 		
@@ -75,6 +83,8 @@ export async function processScenes(scenes, inputImagesPath, outputDir, outputDi
 
 	// Save remaining thumbnails in the last batch
 	await saveBatch()
+
+	process.stdout.write('\n')
 
 	// Write JSON metadata
 	const metadataPath = path.join(outputDirMetadata, "spritesheet_metadata.json")
