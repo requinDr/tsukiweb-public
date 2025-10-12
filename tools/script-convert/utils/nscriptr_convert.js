@@ -1,8 +1,8 @@
 
 import fs from 'fs';
 import path from 'path';
-import { parseScript } from "./parsers/nscriptr.js";
-import { Token, CommandToken, TextToken, ConditionToken, LabelToken, ErrorToken } from "./parsers/utils.js"
+import { parseScript } from "../parsers/nscriptr.js";
+import { Token, CommandToken, TextToken, ConditionToken, LabelToken, ErrorToken } from "../parsers/utils.js"
 
 //##############################################################################
 //#region                       GENERIC FIXES

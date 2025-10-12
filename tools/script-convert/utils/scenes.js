@@ -1,4 +1,4 @@
-import { CommandToken, ConditionToken, LabelToken, TextToken, Token } from "./parsers/utils.js";
+import { CommandToken, ConditionToken, LabelToken, TextToken, Token } from "../parsers/utils.js";
 
 class Scene {
     /**

@@ -2,12 +2,13 @@
  * Convert a script file into a folder of scenes in the format
  * used by the parser.
  */
-import fs, { read } from 'fs';
+import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url'
 import { parseScript } from './parsers/kagScript.js';
 import { CommandToken, LabelToken, StrReader, TextToken, Token } from './parsers/utils.js'
-import { generate } from './nscriptr_convert.js';
+import { generate } from './utils/nscriptr_convert.js';
+import { logError, logProgress } from './utils/logging.js';
 
 
 //#endregion ###################################################################
@@ -335,7 +336,6 @@ function processQuake(token, i, tokens) {
 }
 
 function processRocket(token, i, tokens) {
-  
   switch (token.cmd) {
     case 'rocket' :
       const args = token.args
@@ -510,54 +510,43 @@ function processToken(token, i, tokens) {
 }
 
 
+const outputPathPrefix = '../../public/static/'
+const outputDir = 'scenes'
+const langs = [
+  'jp',
+  'en-mm',
+  'es-tohnokun',
+  'it-riffour',
+  'pt-matsuri',
+  'ko-wolhui',
+  'ru-ciel',
+  // 'zh-tw-yueji_yeren_hanhua_zu',
+  'zh-yueji_yeren_hanhua_zu',
+]
+const files = {
+  'pd_alliance'  : '幻視同盟.ks',
+  'pd_geccha'    : 'げっちゃ.ks',
+  'pd_geccha2'   : '真・弓塚夢想3.ks',
+  'pd_experiment': 'きのこ名作実験場.ks'
+}
 export function main() {
-  const path_prefix = '../../public/static/'
-  const outputDir = 'scenes'
-  const langs = [
-    'jp',
-    'en-mm',
-    'es-tohnokun',
-    'it-riffour',
-    'pt-matsuri',
-    'ko-wolhui',
-    'ru-ciel',
-    // 'zh-tw-yueji_yeren_hanhua_zu',
-    'zh-yueji_yeren_hanhua_zu',
-  ]
-  const files = {
-    'pd_alliance'  : '幻視同盟.ks',
-    'pd_geccha'    : 'げっちゃ.ks',
-    'pd_geccha2'   : '真・弓塚夢想3.ks',
-    'pd_experiment': 'きのこ名作実験場.ks'
-  }
-  // for (const [file, ks] of Object.entries(files)) {
-  //     const txt = fs.readFileSync(path.join(input_dir,ks), 'utf-8')
-  //     const tokens = parseScript(txt)
-  //     tokens.forEach(processToken)
-  //     tokens.unshift(new LabelToken(0, file)) // prevent generate() from discarding all tokens. Removed later
-  //     generate(output_dir, tokens, ()=> file, (map)=>{
-  //         const tokens = map.get(file)
-  //         tokens[0] = null // remove label added previously
-  //         if (tokens[1] instanceof CommandToken && tokens[1].cmd == '\\')
-  //             tokens[1] = null
-  //         if (fixes.has(file))
-  //             fixes.get(file)(tokens)
-  //     })
-  // }
+  const totalScripts = Object.keys(files).length * langs.length
+  let processedCount = 0
+
   for (const folder of langs) {
-    console.log(`> Processing ${folder}...`)
-  
-    const input_dir = path.join(path_prefix, folder)
+    const input_dir = path.join(outputPathPrefix, folder)
     const output_dir = path.join(input_dir, outputDir)
     if (!fs.existsSync(output_dir)) {
       throw new Error(`Output directory does not exist: ${output_dir}`)
     }
     
     for (const [file, ks] of Object.entries(files)) {
+      processedCount++
+      logProgress(`Processing Plus-Disc scripts: (${processedCount}/${totalScripts}) ${folder}`)
       try {
         const fullPath = path.join(input_dir, ks)
         if (!fs.existsSync(fullPath)) {
-          console.error(`File not found: ${fullPath}`)
+          logError(`Input file not found: ${fullPath}`)
           continue
         }
 
@@ -575,11 +564,12 @@ export function main() {
             fixes.get(file)(tokens)
         })
       } catch (e) {
-        console.error(`Error processing ${file}: ${e.message}`)
+        logError(`Error processing ${file} in ${folder}: ${e.message}`)
         continue
       }
     }
   }
+  logProgress(`Processing Plus-Disc scripts: ${processedCount}/${totalScripts}\n`)
 }
 
 const __filename = fileURLToPath(import.meta.url)

@@ -30,10 +30,10 @@ public/static/jp/fullscript_jp.txt
 public/static/jp/*.ks
 public/se
 
-tools/generate-thumbnails/output
-tools/script-convert/*
-tools/sprites-transparency/*
+tools/script-convert/input
+tools/script-convert/output
+tools/sprites-transparency/input
+tools/sprites-transparency/output
 tools/convert-images/input
 tools/convert-images/input_x2
 tools/convert-images/output
-!tools/**/*.js

@@ -7,11 +7,11 @@ import path from 'path';
 import { fileURLToPath } from 'url'
 import { parseScript } from './parsers/nscriptr.js';
 import { CommandToken, ConditionToken, ErrorToken, LabelToken, ReturnToken, TextToken, Token } from './parsers/utils.js'
-import { generate } from './nscriptr_convert.js';
-import { fixContexts, getScenes } from './scenes.js';
+import { generate } from './utils/nscriptr_convert.js';
+import { fixContexts, getScenes } from './utils/scenes.js';
+import { logError, logProgress } from './utils/logging.js';
 
 const LOGIC_FILE = "logic"
-
 const CONDITION_REGEXP = /^(?<lhs>(%\w+|\d+))(?<op>[=!><]+)(?<rhs>(%\w+|\d+))$/
 
 //#endregion ###################################################################
@@ -180,7 +180,7 @@ const parseTitleA = (val)=> val.match(routePhaseRE)?.groups ?? {}
 const dayPhaseRE = /word\/day_(?<day>\d+)/
 const rawScenePhaseRE = /word\/(?<scene>\w+)/
 const parseTitleB = (val)=> val.match(dayPhaseRE)?.groups ??
-                                    val.match(rawScenePhaseRE)?.groups ?? {}
+	val.match(rawScenePhaseRE)?.groups ?? {}
 
 /**
  * @param {CommandToken} token 
@@ -314,7 +314,7 @@ function generalFixes(file, tokens) {
 						stop = true
 						break
 					case 'select' :
-						console.log(`removing 'select' command line in ${file}`)
+						// console.log(`removing 'select' command line in ${file}`)
 						tokens[i] = null
 						break
 				}
@@ -354,17 +354,17 @@ function cmdToProps(cmd, args) {
 			else
 				return [{[pos]: null}]
 		}
-        case 'play': return [{'track': args[0]}, false]
-        case 'playstop' : return [{'track': null}, false]
-        case 'waveloop' : return [{'waveloop': args[0]}, false]
-        case 'wavestop' : case 'wave' : return [{'waveloop': null}, false]
-        case 'monocro' :
+				case 'play': return [{'track': args[0]}, false]
+				case 'playstop' : return [{'track': null}, false]
+				case 'waveloop' : return [{'waveloop': args[0]}, false]
+				case 'wavestop' : case 'wave' : return [{'waveloop': null}, false]
+				case 'monocro' :
 			return [{'monocro': (args[0]=='off')? null : args[0]}, false]
-        case 'phase' :
-            return [{'bg': null, 'l': null, 'c': null, 'r': null,
+				case 'phase' :
+						return [{'bg': null, 'l': null, 'c': null, 'r': null,
 					 'track': null, 'waveloop': null, 'monocro': null}, true]
-        case 'wait' : case '!w' : return [{}, true]
-        default : return [{}, false]
+				case 'wait' : case '!w' : return [{}, true]
+				default : return [{}, false]
 	}
 }
 
@@ -377,7 +377,7 @@ function propsToCmds(props) {
 		// ... and at least one position is spcified...
 		if (['l', 'c', 'r'].reduce((x, pos) => x || props.delete(pos), false))
 			// ... then replace all positions with a single 'a'
-        	props.set('a', null)
+					props.set('a', null)
 	}
 	props = [...props.entries()].sort(([k1,],[k2,])=>{
 		return PROP_CMDS.indexOf(k1) - PROP_CMDS.indexOf(k2)
@@ -404,41 +404,41 @@ function propsToCmds(props) {
 //##############################################################################
 
 const kept_commands = [
-    'play', 'playstop', 'wave', 'waveloop', 'wavestop', 'mp3loop', 'stop', // audio
-    'bg', 'ld', 'cl','quakex', 'quakey', 'monocro', // graphics
-    'if', 'skip', 'jumpf', 'jumpb', '~', // in-scene movements
-    'osiete', 'return', 'goto', 'gosub', 'select', 'selgosub',// inter-scenes movements
-    '@', '\\', 'click', 'br', 'textcolor', // text commands, wait click
-    '!w', 'wait', 'waittimer', 'delay', // delay
-    'mov', 'add', 'sub', 'inc', 'dec', // set variables
+	'play', 'playstop', 'wave', 'waveloop', 'wavestop', 'mp3loop', 'stop', // audio
+	'bg', 'ld', 'cl','quakex', 'quakey', 'monocro', // graphics
+	'if', 'skip', 'jumpf', 'jumpb', '~', // in-scene movements
+	'osiete', 'return', 'goto', 'gosub', 'select', 'selgosub',// inter-scenes movements
+	'@', '\\', 'click', 'br', 'textcolor', // text commands, wait click
+	'!w', 'wait', 'waittimer', 'delay', // delay
+	'mov', 'add', 'sub', 'inc', 'dec', // set variables
 ]
 // TODO: selgosub commands should be removed. They are only useful in KT
 // in some contexts (7 occurrences), for which a solution must be found
 
 const ignored_commands = [
-    'setwindow', 'windoweffect',
-    'setcursor', 'autoclick',
-    '!s', '!sd',
-    'resettimer'
+	'setwindow', 'windoweffect',
+	'setcursor', 'autoclick',
+	'!s', '!sd',
+	'resettimer'
 ]
 
 function token_filter(file, token) {
 	if (token == null)
 		return false
-    if (token instanceof TextToken)
-        return true
-    if (token instanceof ConditionToken)
-        return token_filter(file, token.command) // keep if command after 'if' is kept
-    if (token instanceof ErrorToken)
-        return false
-    if (token instanceof ReturnToken)
-        return true
-    if (token instanceof CommandToken) {
-        if (kept_commands.includes(token.cmd))
-            return true
-        if (ignored_commands.includes(token.cmd))
-            return false
-        throw Error(`unrecognized command ${token.cmd} (line ${token.lineIndex})`)
+		if (token instanceof TextToken)
+				return true
+		if (token instanceof ConditionToken)
+				return token_filter(file, token.command) // keep if command after 'if' is kept
+		if (token instanceof ErrorToken)
+				return false
+		if (token instanceof ReturnToken)
+				return true
+		if (token instanceof CommandToken) {
+				if (kept_commands.includes(token.cmd))
+						return true
+				if (ignored_commands.includes(token.cmd))
+						return false
+				throw Error(`unrecognized command ${token.cmd} (line ${token.lineIndex})`)
 	}
 	if (token instanceof LabelToken) {
 		return file == LOGIC_FILE
@@ -448,21 +448,21 @@ function token_filter(file, token) {
 
 /** @param {string} label */
 function getLabelFile(label) {
-    if (["eclipse", "openning"].includes(label))
-        return label
+		if (["eclipse", "openning"].includes(label))
+				return label
 	if (['f300', 'skip300', 's300'].includes(label))
 		return null // remove empty f300 scene
-    if (/^s\d\w+?$/.test(label))
-        return `s${label.substring(1).padStart(3, '0')}`
-    if (/^se\d\w+?$/.test(label)) //TODO move to kt-specific script
-        return `s${label.substring(1).padStart(3, '0')}`
-    if (/^f\d\w+?$/.test(label))
-        return LOGIC_FILE
-    if (/^skip\d\w+?$/.test(label))
-        return LOGIC_FILE
-    if (/^quizz\d\w+?$/.test(label)) //TODO move to kt-specific script
-        return `quizz`
-    return null
+		if (/^s\d\w+?$/.test(label))
+				return `s${label.substring(1).padStart(3, '0')}`
+		if (/^se\d\w+?$/.test(label)) //TODO move to kt-specific script
+				return `s${label.substring(1).padStart(3, '0')}`
+		if (/^f\d\w+?$/.test(label))
+				return LOGIC_FILE
+		if (/^skip\d\w+?$/.test(label))
+				return LOGIC_FILE
+		if (/^quizz\d\w+?$/.test(label)) //TODO move to kt-specific script
+				return `quizz`
+		return null
 }
 
 /**
@@ -517,49 +517,52 @@ function raw_fixes(language, text) {
 	}
 }
 
+
+const outputPathPrefix = '../../public/static/'
+const outputDir = 'scenes'
+const fullscripts = [
+	['jp', 'fullscript_jp.txt'],
+	['en-mm', 'fullscript_en-mm.txt'],
+	['es-tohnokun', 'fullscript_es-tohnokun.txt'],
+	['it-riffour', 'fullscript_it-riffour.txt'],
+	['pt-matsuri', 'fullscript_pt-matsuri.txt'],
+	['ko-wolhui', 'fullscript_ko-wolhui.txt'],
+	['ru-ciel', 'fullscript_ru-ciel.txt'],
+	['zh-tw-yueji_yeren_hanhua_zu', 'fullscript_zh-tw-yueji_yeren_hanhua_zu.txt'],
+	['zh-yueji_yeren_hanhua_zu', 'fullscript_zh-yueji_yeren_hanhua_zu.txt'],
+]
+
 export function main() {
-	// Process all fullscript files
-	const path_prefix = '../../public/static/'
-	const outputDir = 'scenes'
-	const fullscripts = [
-		['jp', 'fullscript_jp.txt'],
-		['en-mm', 'fullscript_en-mm.txt'],
-		['es-tohnokun', 'fullscript_es-tohnokun.txt'],
-		['it-riffour', 'fullscript_it-riffour.txt'],
-		['pt-matsuri', 'fullscript_pt-matsuri.txt'],
-		['ko-wolhui', 'fullscript_ko-wolhui.txt'],
-		['ru-ciel', 'fullscript_ru-ciel.txt'],
-		['zh-tw-yueji_yeren_hanhua_zu', 'fullscript_zh-tw-yueji_yeren_hanhua_zu.txt'],
-		['zh-yueji_yeren_hanhua_zu', 'fullscript_zh-yueji_yeren_hanhua_zu.txt'],
-	]
+	const totalScripts = fullscripts.length
+	let processedCount = 0
 
 	for (const [folder, file] of fullscripts) {
+		processedCount++
+		logProgress(`Processing Tsukihime scripts: ${processedCount}/${totalScripts} (${file})`)
+
 		try {
-			console.log(`> Processing ${file}...`)
-			
-			const fullscriptPath = path.join(path_prefix, folder, file)
+			const fullscriptPath = path.join(outputPathPrefix, folder, file)
 			if (!fs.existsSync(fullscriptPath)) {
-				console.error(`File not found: ${fullscriptPath}`)
+				logError(`Input file not found: ${fullscriptPath}`)
 				continue
 			}
 
 			const txt = fs.readFileSync(fullscriptPath, 'utf-8')
 			const tokens = parseScript(raw_fixes(folder, txt))
-			let outputPath
-			if (outputDir) {
-				outputPath = path.join(path_prefix, folder, outputDir)
-				if (!fs.existsSync(outputPath)) {
-					fs.mkdirSync(outputPath, { recursive: true })
-				}
-			} else {
-				outputPath = null
+			const outputPath = outputDir
+				? path.join(outputPathPrefix, folder, outputDir)
+				: null
+	
+			if (outputPath && !fs.existsSync(outputPath)) {
+				fs.mkdirSync(outputPath, { recursive: true })
 			}
+
 			generate(outputPath, tokens, getLabelFile, tsukihime_fixes)
 		} catch (e) {
-			console.error(`Error processing ${file}: ${e.message}`)
+			logError(`Error processing ${file}: ${e.message}`)
 		}
 	}
-	console.log(`> Done.`)
+	logProgress(`Processing Tsukihime scripts: ${processedCount}/${totalScripts}\n`)
 }
 
 const __filename = fileURLToPath(import.meta.url)

@@ -3,13 +3,13 @@ import { main as runPlusDisc } from './plus_disc.js';
 
 function main() {
     try {
-        console.log('--- Starting tsukihime.js ---')
+        console.log('--- Starting scenes generation ---\n')
+
         runTsukihime()
 
-        console.log('\n--- Starting plus_disc.js ---')
         runPlusDisc()
 
-        console.log('\n--- Both scripts finished successfully. ---')
+        console.log('\n--- Scenes generated ---')
     } catch (error) {
         console.error('An error occurred during execution:', error)
     }
