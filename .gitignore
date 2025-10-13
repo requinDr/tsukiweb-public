@@ -37,3 +37,5 @@ tools/sprites-transparency/output
 tools/convert-images/input
 tools/convert-images/input_x2
 tools/convert-images/output
+tools/extract-sar/arc.sar
+tools/extract-sar/output
