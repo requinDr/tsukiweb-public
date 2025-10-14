@@ -3,13 +3,13 @@
   
   "images": {
     "thumb": {
-      "tachi/osiete": "./image/%0.webp"
+      "tachi/osiete": "./image/%0"
     },
     "sd": {
-      "tachi/osiete": "./image/%0.webp"
+      "tachi/osiete": "./image/%0"
     },
     "hd": {
-      "tachi/osiete": "./image_x2/%0.webp"
+      "tachi/osiete": "./image_x2/%0"
     }
   },
 

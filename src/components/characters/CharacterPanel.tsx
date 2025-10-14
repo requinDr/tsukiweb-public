@@ -1,4 +1,3 @@
-import { avif } from "@tsukiweb-common/utils/images"
 import { imageSrc } from "translation/assets"
 import { CHARACTERS_DATA, CharactersTabs } from "utils/characters-data"
 
@@ -11,15 +10,12 @@ const CharacterPanel = ({ char }: Props) => {
 	return (
 		<div className="character-panel">
 			<div className="header">
-				<picture>
-					<source srcSet={avif.replaceExtension(imageSrc(charData.sprite, "hd"))} type="image/avif"/>
-					<img
-						src={charData.sprite}
-						alt={charData.name}
-						draggable={false}
-						className="illustration"
-					/>
-				</picture>
+				<img
+					src={charData.sprite}
+					alt={charData.name}
+					draggable={false}
+					className="illustration"
+				/>
 
 				<div className="infos">
 					<h2>{charData.fullname}</h2>

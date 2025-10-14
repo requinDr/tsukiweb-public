@@ -1,4 +1,3 @@
-import { avif } from "@tsukiweb-common/utils/images"
 import classNames from "classnames"
 import { imageSrc } from "translation/assets"
 import { LabelName } from "types"
@@ -32,15 +31,12 @@ const MainEnding = ({unlocked, ending, continueScript = false, divProps}: Props)
 			onKeyDown={(e)=> e.key === "Enter" && startScene()}
 		>
 			{unlocked && image ?
-				<picture style={{display: "contents"}}>
-					<source srcSet={avif.replaceExtension(imageSrc(`event/${image}`, 'sd'))} type="image/avif"/>
-					<img
-					 	className="ending-img"
-					 	src={imageSrc(`event/${image}`, 'sd')}
-					 	alt={name}
-					 	draggable={false}
-					/>
-				</picture>
+				<img
+					className="ending-img"
+					src={imageSrc(`event/${image}`, 'sd')}
+					alt={name}
+					draggable={false}
+				/>
 			:
 				<div className="ending-img placeholder" />
 			}

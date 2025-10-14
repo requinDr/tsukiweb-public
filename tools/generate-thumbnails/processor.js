@@ -85,7 +85,7 @@ export async function processScenes(scenes, inputImagesPath, outputDir, outputDi
 
 		// Metadata calculation
 		const batchPos = thumbnailsInCurrentBatch.length - 1
-		const fileName = `spritesheet_${batchIndex}.${IMAGE_FORMAT}`
+		const fileName = `spritesheet_${batchIndex}`
 		let fileIndex = jsonMetadata.f.indexOf(fileName)
 		if (fileIndex === -1) {
 			fileIndex = jsonMetadata.f.push(fileName) - 1

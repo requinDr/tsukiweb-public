@@ -4,7 +4,7 @@ import { settings } from "../utils/settings"
 import {TrackSourceId, strings} from "./lang"
 import { TextImage } from "@tsukiweb-common/utils/lang"
 import { closeBB } from "@tsukiweb-common/utils/Bbcode"
-import { avif } from "@tsukiweb-common/utils/images"
+import { imageFormat } from "@tsukiweb-common/utils/images"
 
 //##############################################################################
 //#                                  PRIVATE                                   #
@@ -51,11 +51,7 @@ export function scenesDir() {
 }
 
 export function spriteSheetImgPath(file: string) {
-  if (avif.isSupported === null) {
-    avif.testSupport()
-  }
-  file = avif.isSupported ? file.replace(/\.webp$/, '.avif') : file
-	return assetPath(`jp/flowchart-spritesheet/${file}`)
+	return assetPath(`jp/flowchart-spritesheet/${file}.${imageFormat}`)
 }
 
 function audioPath(formats: string|string[], num: number|string) {
@@ -98,31 +94,35 @@ export function audioSePath(se: string, pd: boolean = false) {
  * @param res desired resolution. any of 'hd', 'sd' or 'thumb'
  * @returns the requested image's url
  */
-export function imageSrc(img: string, res=settings.resolution) {
+export function imageSrc(img: string, res = settings.resolution) {
   if (img.startsWith('"') && img.endsWith('"'))
     img = img.substring(1, img.length-1)
+
   const [dir, name] = splitFirst(img, '/')
   const root = strings.images[res]
-  let src
+  let srcTemplate: string
+
   if (Object.hasOwn(root, img)) {
-    src = root[img as keyof typeof root]
+    srcTemplate = root[img as keyof typeof root]
   } else {
     if (!name)
       throw Error(`Unimplemented image format ${img}`)
     if (Object.hasOwn(root, dir)) {
       const parent = root[dir as keyof typeof root] as any as Record<string, string>
-      if (Object.hasOwn(parent, name))
-        src = parent[name as keyof typeof parent]
-      else
-        src = parent[""]
-    } else
-      src = root[""]
+      srcTemplate = Object.hasOwn(parent, name) ? parent[name as keyof typeof parent] : parent[""]
+    } else {
+      srcTemplate = root[""]
+    }
   }
-  if (src.startsWith('#'))
-    return src
-  return assetPath(src.replace('%0', img)
-                       .replace('%1', dir as string)
-                       .replace('%2', name as string))
+
+  if (srcTemplate.startsWith('#'))
+    return srcTemplate
+
+  const replaced = srcTemplate
+    .replace('%0', img)
+    .replace('%1', dir)
+    .replace('%2', name || "")
+  return assetPath(`${replaced}.${imageFormat}`)
 }
 
 /**

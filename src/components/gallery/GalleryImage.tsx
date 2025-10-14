@@ -9,7 +9,6 @@ import "yet-another-react-lightbox/plugins/thumbnails.css"
 import GalleryTotal from "./GalleryTotal"
 import { MdLock } from "react-icons/md"
 import { useMediaQuery } from "@uidotdev/usehooks"
-import { avif } from "@tsukiweb-common/utils/images"
 import { GalleryImg } from "types"
 
 
@@ -35,7 +34,7 @@ const GalleryImage = ({image, gallery = [], galleryUnlocked = [], blurred = fals
 				const src = imageSrc(img, 'hd')
 				const galleryImg = getGalleryImg(img)
 				return {
-					src: avif.isSupported ? avif.replaceExtension(src) : src,
+					src: src,
 					alt: galleryImg.name,
 					source: galleryImg.source ?? undefined,
 				}
@@ -69,16 +68,13 @@ const GalleryImage = ({image, gallery = [], galleryUnlocked = [], blurred = fals
 	return (
 		<>
 		<button onClick={() => setOpen(true)}>
-			<picture>
-				<source srcSet={avif.replaceExtension(src)} type="image/avif"/>
-				<img
-					src={src}
-					className={classNames("thumb", {"is-alternative": galleryImg.altOf, blur: blurred})}
-					alt={`event ${galleryImg.name}`}
-					draggable={false}
-					fetchPriority={blurred ? 'low' : 'auto'}
-				/>
-			</picture>
+			<img
+				src={src}
+				className={classNames("thumb", {"is-alternative": galleryImg.altOf, blur: blurred})}
+				alt={`event ${galleryImg.name}`}
+				draggable={false}
+				fetchPriority={blurred ? 'low' : 'auto'}
+			/>
 			{showTotal && gallery.length > 1 &&
 				<GalleryTotal
 					nbTotal={gallery.length}

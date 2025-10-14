@@ -14,13 +14,13 @@
       "pd_three": "#000000$c`[center][noline][font=serif]Terzo Giorno`"
     },
     "thumb": {
-      "tachi/osiete": "./image/%0.webp"
+      "tachi/osiete": "./image/%0"
     },
     "sd": {
-      "tachi/osiete": "./image/%0.webp"
+      "tachi/osiete": "./image/%0"
     },
     "hd": {
-      "tachi/osiete": "./image_x2/%0.webp"
+      "tachi/osiete": "./image_x2/%0"
     }
   },
 
