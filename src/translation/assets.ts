@@ -74,7 +74,7 @@ function audioPath(formats: string|string[], num: number|string) {
       }
     }) ?? formats[formats.length-1]
   }
-  return assetPath(format.replace('%', paddedNum))
+  return assetPath(`${format.replace('%', paddedNum)}.${import.meta.env.VITE_AUDIO_FORMAT}`)
 }
 
 export function audioTrackPath(track: number,

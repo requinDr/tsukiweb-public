@@ -211,12 +211,12 @@
   },
   "audio": {
     "tracks-path": {
-      "original": ["./jp/CD_original/track%.webm"],
-      "everafter": ["./jp/CD_everafter/track%.webm"],
-      "tsukibako": ["./jp/CD_tsukibako/track%.webm"]
+      "original": ["./jp/CD_original/track%"],
+      "everafter": ["./jp/CD_everafter/track%"],
+      "tsukibako": ["./jp/CD_tsukibako/track%"]
     },
-    "waves-path": ["./jp/wave/%.webm"],
-    "waves-pd-path": ["./jp/wave-pd/%.webm"]
+    "waves-path": ["./jp/wave/%"],
+    "waves-pd-path": ["./jp/wave-pd/%"]
   },
   "scenario": {
     "days": [
