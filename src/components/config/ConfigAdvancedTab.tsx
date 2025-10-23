@@ -63,7 +63,6 @@ const ConfigAdvancedTab = () => {
 		})
 		if (confirmed) {
 			savesManager.clear()
-			deepAssign(settings, defaultSettings)
 			setTimeout(async ()=> {
 				localStorage.clear()
 				await modalPromptService.alert({

@@ -70,6 +70,7 @@ function saveSettings() {
   }
   settings.completedScenes.sort()
   const diff = jsonDiff(settings, defaultSettings)
+  diff.language = settings.language
   if (!objectsEqual(diff, savedSettings, false)) {
     savedSettings = diff
     if (Object.keys(diff).length == 0)
