@@ -18,9 +18,6 @@ export default defineConfig({
 		viteTsconfigPaths(),
 		svgrPlugin()
 	],
-	define: {
-		'process.env': {}
-	},
 	server: {
 		proxy: {
 			'/static': {
