@@ -54,8 +54,7 @@ export function spriteSheetImgPath(file: string) {
 	return assetPath(`jp/flowchart-spritesheet/${file}.${imageFormat}`)
 }
 
-function audioPath(formats: string|string[], num: number|string) {
-  const paddedNum = num.toString().padStart(2, '0')
+function audioPath(formats: string|string[], trackName: string) {
   let format
   if (formats.constructor == String)
     format = formats
@@ -74,10 +73,11 @@ function audioPath(formats: string|string[], num: number|string) {
       }
     }) ?? formats[formats.length-1]
   }
-  return assetPath(`${format.replace('%', paddedNum)}.${import.meta.env.VITE_AUDIO_FORMAT}`)
+
+  return assetPath(`${format.replace('%', trackName)}.${import.meta.env.VITE_AUDIO_FORMAT}`)
 }
 
-export function audioTrackPath(track: number,
+export function audioTrackPath(track: string,
                                source: TrackSourceId = settings.trackSource) {
   return audioPath(strings.audio["tracks-path"][source], track)
 }

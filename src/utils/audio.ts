@@ -13,8 +13,8 @@ function getUrl(id: string): string {
   if (id.startsWith('"') && id.endsWith('"'))
     id = id.substring(1, id.length-1)
   if (id.startsWith('*')) {
-    const trackNum = parseInt(id.substring(1))
-    return audioTrackPath(trackNum)
+    const trackName = parseInt(id.substring(1)).toString().padStart(2, '0')
+    return audioTrackPath(trackName)
   }
   else if (id.includes('/')) {
     const [rootDir, subPath] = splitFirst(id, '/')
