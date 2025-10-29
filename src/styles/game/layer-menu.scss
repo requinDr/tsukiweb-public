@@ -120,13 +120,13 @@
 			button {
 				border-radius: 2px;
 				padding: 5px 4px;
-				color: rgb(176 209 229);
+				color: rgb(206 223 234);
 				background-color: rgb(1 17 27 / 80%);
 				justify-content: center;
 				outline: none;
 
 				&:hover, &:focus-visible {
-					color: rgb(245 249 251);
+					color: var(--text-color);
 					box-shadow: var(--selected-shadow);
 				}
 				&:disabled {

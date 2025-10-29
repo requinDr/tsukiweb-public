@@ -116,14 +116,16 @@ const TextLayer = ({ script, display = 'auto',
       <img src={icons[glyph]} alt={glyph} />
     </span>)
   const twKey = script.uid*1000 + script.currentPage*100 + lines.length
+
   return (
     <div className={classList.join(' ')} {...remaining_props} id="layer-text">
       <div className="text-container">
         {previousLines.map((line, i) =>
-        <Fragment key={i}>
-          {line && <Bbcode text={line} />}
-          <br/>
-        </Fragment>)}
+          <Fragment key={i}>
+            {line && <Bbcode text={line} />}
+            <br/>
+          </Fragment>
+        )}
 
         {lastLine ?
           <BBTypeWriter key={twKey}
