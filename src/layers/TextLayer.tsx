@@ -10,7 +10,7 @@ import { Bbcode, BBTypeWriter } from "@tsukiweb-common/utils/Bbcode"
 import { preprocessText } from "@tsukiweb-common/utils/utils"
 
 type Glyph = "moon"|"page"
-export const icons: Record<Glyph, string> = {
+const icons: Record<Glyph, string> = {
   "moon": moonIcon,
   "page": pageIcon
 }
