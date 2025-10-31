@@ -26,12 +26,24 @@
 	background-color: #000;
 
 	.ratio-container {
-		width: var(--width, initial);
-		height: 100%;
 		aspect-ratio: var(--ratio, initial);
+		width: var(--max-size, initial);
+		height: 100%;
 		margin: 0 auto;
 		position: relative;
 		min-width: 0;
+
+		&::before {
+			content: "";
+			position: fixed;
+			inset: 0;
+		}
+
+		@media screen and (orientation: portrait) and (min-width: 740px) {
+			width: 100%;
+			height: var(--max-size, initial);
+			margin: auto;
+		}
 	}
 	
 	.dash {

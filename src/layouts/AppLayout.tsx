@@ -20,10 +20,10 @@ const AppLayout = ({ children }: Props) => {
 		const root = document.documentElement
 		if (ratio == ViewRatio.unconstrained) {
 			root.style.setProperty('--ratio', "initial")
-			root.style.setProperty('--width', "100%")
+			root.style.setProperty('--max-size', "100%")
 		} else {
 			root.style.setProperty('--ratio', `${ratio}`)
-			root.style.setProperty('--width', "initial")
+			root.style.setProperty('--max-size', "initial")
 		}
 	}, settings, "fixedRatio")
 
