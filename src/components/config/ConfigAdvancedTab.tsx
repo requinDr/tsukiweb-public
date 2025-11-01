@@ -114,18 +114,22 @@ const ConfigAdvancedTab = () => {
 							)}
 
 							<div className="comparison">
-								<img
-									className="unblurred"
-									src={imageSrc(`event/ark_e01`, 'sd')}
-									alt={"Sample image, unblurred"}
-									draggable={false}
-								/>
-								<img
-									className="blurred"
-									src={imageSrc(`event/ark_e01`, 'sd')}
-									alt={"Sample image, blurred"}
-									draggable={false}
-								/>
+								<div className="comparison-container">
+									<img
+										className="unblurred"
+										src={imageSrc(`event/ark_e01`, 'sd')}
+										alt={"Sample image, unblurred"}
+										draggable={false}
+									/>
+								</div>
+								<div className="comparison-container">
+									<img
+										className="blurred"
+										src={imageSrc(`event/ark_e01`, 'sd')}
+										alt={"Sample image, blurred"}
+										draggable={false}
+									/>
+								</div>
 							</div>
 						</>
 					})}

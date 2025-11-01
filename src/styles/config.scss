@@ -263,7 +263,7 @@
 		justify-content: space-evenly;
 		gap: 8px;
 
-		picture {
+		.comparison-container {
 			display: flex;
 			width: min(260px, 100%);
 			place-self: center;
