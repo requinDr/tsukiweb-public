@@ -15,7 +15,8 @@ export const inGameKeyMap = {
         {key: "ArrowLeft", repeat: false},
         {key: "H", repeat: false}],
     "graphics": [
-        {code: "Space", repeat: false}],
+        {code: "Space", repeat: false},
+        {key: "Delete", repeat: false}],
     "bg_move": [
         {key: "ArrowUp", ctrlKey: true, repeat: false, [KeyMap.args]: "up"},
         {key: "ArrowDown", ctrlKey: true, repeat: false, [KeyMap.args]: "down"}],
