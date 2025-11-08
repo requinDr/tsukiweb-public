@@ -4,7 +4,7 @@ import "@styles/extra.scss"
 import { strings } from "translation/lang"
 import { displayMode, SCREEN } from "utils/display"
 import { useLocation, useNavigate } from "react-router-dom"
-import { TitleMenuButton } from "@tsukiweb-common/ui-core"
+import { PageTitle, TitleMenuButton } from "@tsukiweb-common/ui-core"
 import { useLanguageRefresh } from "hooks/useLanguageRefresh"
 import useEclipseUnlocked from "hooks/useEclipseUnlocked"
 import { settings } from "utils/settings"
@@ -41,9 +41,9 @@ const ExtraLayout = ({ children }: PropsWithChildren) => {
 			animate={{opacity: 1}}
 			exit={{opacity: 0}}>
 			<div className="extra-menu">
-				<h2 className="page-title">
+				<PageTitle>
 					{strings.title.extra}
-				</h2>
+				</PageTitle>
 				<div className="menus">
 					<TitleMenuButton
 						onClick={()=>navigate(SCREEN.GALLERY)}

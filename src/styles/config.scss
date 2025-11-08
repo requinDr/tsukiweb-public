@@ -4,18 +4,21 @@
 	font-size: 1.1rem;
 
 	.back-button {
-		margin: 1em;
+		margin: .5rem;
+		padding: .5rem;
 	}
 
 	@media screen and (orientation: landscape) and (max-height: 680px) {
 		--page-padding: 0;
 		.page-title {
-			padding: clamp(.8rem, 1.6vmin, 1.2rem);
+			padding: .8rem;
+		}
+		.page-section {
+			border: 0;
 		}
 	}
 
 	.tabs {
-		margin-inline: calc(var(--page-padding) * -1);
 		padding-inline: var(--page-padding);
 	}
 	

@@ -2,6 +2,9 @@
 @use '../../tsukiweb-common/src/ui-core/styles/_partials' as *;
 
 #endings {
+	main {
+		padding-inline: var(--page-padding);
+	}
 	.endings-list {
 		margin-top: 1em;
 		display: grid;

@@ -2,15 +2,21 @@
 
 #saves, #layer-save {
 	.back-button {
-		margin: 1em;
+		margin: .5rem;
+		padding: .5rem;
 	}
 	.page-content {
 		@media screen and (orientation: landscape) and (max-height: 680px),
 			(max-width: 760px) and (orientation: portrait) {
 			--page-padding: 0;
 			.page-title {
-				padding-inline: clamp(.8rem, 1.6vmin, 1.2rem);
-				padding-top: clamp(.8rem, 1.6vmin, 1.2rem);
+				padding: .8rem;
+				padding-bottom: 0;
+			}
+		}
+		@media screen and (orientation: landscape) and (max-height: 680px) {
+			.page-section {
+				border: 0;
 			}
 		}
 	}
@@ -236,20 +242,9 @@
 			}
 		}
 
-		// phone landscape
-		@media screen and (max-height: 500px) and (orientation: landscape) {
-			&.preview-save {
-				border-bottom: 2px solid var(--separator);
-			}
-			.actions {
-				padding-right: .5em;
-				padding-bottom: .5em;
-			}
-		}
-
 		// phone landscape or phone portrait
 		@media screen and (max-width: 760px) and (orientation: portrait),
-		       screen and (max-height: 500px) and (orientation: landscape) {
+		       screen and (max-height: 680px) and (orientation: landscape) {
 			&.preview-save {
 				border-left: none;
 			}
@@ -264,6 +259,24 @@
 			}
 			.save-details-content {
 				z-index: 1;
+			}
+		}
+
+		// phone landscape
+		@media screen and (max-height: 680px) and (orientation: landscape) {
+			&.preview-save {
+				border-bottom: 2px solid var(--separator);
+			}
+			.actions {
+				padding-right: .5em;
+				padding-bottom: .5em;
+			}
+		}
+
+		// phone portrait
+		@media screen and (max-width: 760px) and (orientation: portrait) {
+			&.preview-save {
+				border-bottom: 0;
 			}
 		}
 	}
@@ -338,7 +351,7 @@
 		grid-template-rows: min-content minmax(160px, 1fr) 3fr min-content;
 	}
 
-	@media screen and (max-height: 500px) and (orientation: landscape) {
+	@media screen and (max-height: 680px) and (orientation: landscape) {
 		grid-template-columns: 2fr 5fr;
 		grid-template-areas:
 			"title list"

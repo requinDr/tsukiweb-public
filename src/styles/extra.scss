@@ -5,10 +5,14 @@
 	padding: 0;
 	column-gap: 1em;
 
+	.page-title {
+		padding-inline: 0;
+	}
+
 	.extra-menu {
 		grid-area: extra-menu;
 		display: flex;
-		padding: 2em;
+		padding: var(--page-padding);
 		padding-right: 0;
 		flex-direction: column;
 
@@ -25,7 +29,7 @@
 			flex-direction: column;
 			gap: 1.8em;
 
-			.menu-item {
+			.menu-item:not(.back-button) {
 				text-align: start;
 				font-size: 1.6em;
 				font-weight: 500;
@@ -35,7 +39,8 @@
 			.back-button {
 				margin-top: auto;
 				margin-bottom: .5em;
-				font-size: 1.1rem;
+				padding: .5rem;
+				padding-left: 0;
 			}
 		}
 	}

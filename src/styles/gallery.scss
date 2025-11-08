@@ -7,22 +7,17 @@
 	scrollbar-gutter: stable;
 
 	.tabs {
-		margin-inline: calc(var(--page-padding) * -1);
 		padding-inline: var(--page-padding);
 		margin-top: var(--page-padding);
 	}
-	// cancel the left menu
 	@media screen and (orientation: landscape) and (max-height: 680px) {
 		main {
 			grid-template-columns: 1fr;
 			grid-template-areas:
-					"page-title"
 					"tabs"
-					"content"
-					"back-button";
-			grid-template-rows: auto auto 1fr auto;
+					"content";
 
-			& > div {
+			& > .tabs {
 				flex-direction: row;
 			}
 		}
@@ -39,6 +34,7 @@
 		grid-template-columns: repeat(auto-fill, minmax(min(176px, 100%), 1fr));
 		gap: 6px;
 		padding-bottom: 40px;
+		padding-inline: var(--page-padding);
 
 		@media (max-width: 980px) or (max-height: 480px) {
 			grid-template-columns: repeat(auto-fill, minmax(min(134px, 32vmin), 1fr));

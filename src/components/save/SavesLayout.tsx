@@ -16,7 +16,7 @@ import { requestFilesFromUser } from "@tsukiweb-common/utils/utils"
 import { SAVE_EXT } from "utils/constants"
 import { computeSaveHash, exportGameData, settings } from "utils/settings"
 import { useObserver } from "@tsukiweb-common/utils/Observer"
-import { Button, TitleMenuButton, PageSection } from "@tsukiweb-common/ui-core"
+import { Button, TitleMenuButton, PageSection, PageTitle } from "@tsukiweb-common/ui-core"
 
 
 //##############################################################################
@@ -134,7 +134,7 @@ const SavesLayer = ({variant, back}: Props) => {
 
 	return (
 		<main id="saves-layout">
-			<h2 className="page-title">{title}</h2>
+			<PageTitle>{title}</PageTitle>
 			<PageSection className="saves" ref={parentRef}>
 				{variant === "save" ?
 					<Button
