@@ -29,19 +29,18 @@
 			flex-direction: column;
 			gap: 1.8em;
 
-			.menu-item:not(.back-button) {
+			.menu-item {
 				text-align: start;
 				font-size: 1.6em;
 				font-weight: 500;
 				letter-spacing: 1px;
 				width: fit-content;
 			}
-			.back-button {
-				margin-top: auto;
-				margin-bottom: .5em;
-				padding: .5rem;
-				padding-left: 0;
-			}
+		}
+		.back-button {
+			margin-bottom: .5em;
+			padding: .5rem;
+			padding-left: 0;
 		}
 	}
 
@@ -50,7 +49,7 @@
 		overflow: hidden;
 	}
 
-	@media screen and (max-width: 979px) {
+	@media screen and (orientation: portrait) and (max-width: 979px) {
 		grid-template-columns: 1fr;
 		grid-template-rows: 1fr min-content;
 		grid-template-areas:
@@ -58,36 +57,45 @@
 			"extra-menu";
 
 		.extra-menu {
+			align-items: flex-start;
 			padding: 0;
-			overflow-x: auto;
-			box-shadow: var(--menu-shadow);
+			padding-bottom: var(--safe-area-max-inset-bottom);
+			background-image: linear-gradient(180deg, #001325, rgba(0, 67, 138, 0.8));
+			border-top: 1px solid var(--separator);
+			min-width: 0;
 
 			.page-title {
 				display: none;
 			}
 			.menus {
-				padding: 1em 2em;
-				padding-bottom: 3em;
+				overflow-x: auto;
+				width: 100%;
+				min-width: 0;
+				margin: 0;
+				padding-block: 1em;
+				padding-inline: 2rem;
 				font-size: 0.8em;
-				margin-top: .5em;
-				display: grid;
-				grid-auto-flow: column;
-				gap: 1.6em;
-				min-width: 100%;
+				gap: 1.8em;
+				mask-image: linear-gradient(to right, black 95%, transparent 100%);
+				flex-direction: row;
+
+				@media (pointer: coarse) {
+					&::-webkit-scrollbar {
+						display: none;
+					}
+				}
 	
 				.menu-item {
 					white-space: nowrap;
 				}
-	
-				.back-button {
-					grid-column: 1 / -1;
-					margin-bottom: 0;
-				}
+			}
+			.back-button {
+				padding-left: 2rem;
 			}
 		}
 	}
 
-	@media screen and (max-height: 600px) and (min-width: 980px) {
+	@media screen and (orientation: landscape) and (max-height: 600px) {
 		grid-template-columns: minmax(160px, min-content) 1fr;
 		.extra-menu {
 			font-size: .8em;

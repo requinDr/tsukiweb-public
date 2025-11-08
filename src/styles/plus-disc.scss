@@ -1,7 +1,11 @@
 #plus-disc {
 	font-size: 1.1em;
+	overflow-y: auto;
+	scrollbar-gutter: stable;
+
 	.tabs {
 		margin-top: 2em;
+		flex-direction: row;
 	}
 	main {
 		padding: 1em;

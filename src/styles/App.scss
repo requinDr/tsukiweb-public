@@ -1,4 +1,6 @@
 :root {
+	--safe-area-max-inset-bottom: env(safe-area-max-inset-bottom, 36px);
+	
 	--toastify-color-progress-dark: #0a2f85;
 	--toastify-font-family: var(--ui-font);
 	--toastify-color-dark: #01060e;

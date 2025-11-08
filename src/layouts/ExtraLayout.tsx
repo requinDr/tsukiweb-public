@@ -73,13 +73,12 @@ const ExtraLayout = ({ children }: PropsWithChildren) => {
 						active={currentPage === SCREEN.PLUS_DISC}>
 						Plus-Disc
 					</TitleMenuButton>
-
-					<TitleMenuButton
+				</div>
+									<TitleMenuButton
 						onClick={()=>navigate(SCREEN.TITLE)}
 						className="back-button">
 						{`<<`} {strings.back}
 					</TitleMenuButton>
-				</div>
 			</div>
 
 			<motion.div
