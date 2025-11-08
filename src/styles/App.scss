@@ -1,6 +1,6 @@
 :root {
 	--safe-area-max-inset-bottom: env(safe-area-max-inset-bottom, 36px);
-	
+
 	--toastify-color-progress-dark: #0a2f85;
 	--toastify-font-family: var(--ui-font);
 	--toastify-color-dark: #01060e;
@@ -17,7 +17,7 @@
 	--page-padding: clamp(.8rem, 1.6vmin, 1rem);
 	max-width: var(--page-width);
 	margin-inline: auto;
-	padding: var(--page-padding);
+	padding-block: var(--page-padding);
 	height: inherit;
 	width: inherit;
 	display: flex;

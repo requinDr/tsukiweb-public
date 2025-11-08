@@ -6,8 +6,7 @@
 		padding: .5rem;
 	}
 	.page-content {
-		@media screen and (orientation: landscape) and (max-height: 680px),
-			(max-width: 760px) and (orientation: portrait) {
+		@media screen and (orientation: landscape) and (max-height: 680px) {
 			--page-padding: 0;
 			.page-title {
 				padding: .8rem;
@@ -245,7 +244,7 @@
 		// phone landscape or phone portrait
 		@media screen and (max-width: 760px) and (orientation: portrait),
 		       screen and (max-height: 680px) and (orientation: landscape) {
-			&.preview-save {
+			&.info {
 				border-left: none;
 			}
 			.save-details-content {
@@ -264,7 +263,7 @@
 
 		// phone landscape
 		@media screen and (max-height: 680px) and (orientation: landscape) {
-			&.preview-save {
+			&.info {
 				border-bottom: 2px solid var(--separator);
 			}
 			.actions {
@@ -275,7 +274,7 @@
 
 		// phone portrait
 		@media screen and (max-width: 760px) and (orientation: portrait) {
-			&.preview-save {
+			&.info {
 				border-bottom: 0;
 			}
 		}
@@ -285,6 +284,7 @@
 		grid-area: buttons;
 		display: flex;
 		align-items: center;
+		padding-bottom: var(--safe-area-max-inset-bottom);
 	}
 
 	.graphics {

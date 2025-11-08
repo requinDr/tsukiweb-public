@@ -6,6 +6,7 @@
 	.back-button {
 		margin: .5rem;
 		padding: .5rem;
+		padding-bottom: calc(.5rem + var(--safe-area-max-inset-bottom));
 	}
 
 	@media screen and (orientation: landscape) and (max-height: 680px) {
