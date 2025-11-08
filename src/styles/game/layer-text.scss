@@ -3,11 +3,11 @@
 	opacity: 1;
 	user-select: none;
 	background-image: var(--text-bg);
-	padding: 8vmin 10%;
-	text-shadow: #000 1px 1px 1px, #000 -1px 1px 1px, #000 -1px -1px 1px, #000 1px -1px 1px;
+	padding: 7cqmin;
+	text-shadow: #000 1px 1px 2px, #000 -1px 1px 2px, #000 -1px -1px 1px, #000 1px -1px 1px;
 	letter-spacing: 1px;
-	font-size: clamp(.95em, 4.4vmin, 1.35em);
-	line-height: clamp(1.6em, 4.8vmin, 1.8em);
+	font-size: clamp(0.95em, min(2.8cqw, 4cqh), 1.6em);
+	line-height: clamp(1.6em, 5.6cqw, 1.95em);
 	overflow-x: hidden;
 	touch-action: manipulation;
 	transition: var(--transition);
@@ -49,22 +49,19 @@
 	}
 
 	.text-container {
-		width: min(100%, 80vw);
-		max-width: 760px;
 		margin-inline: auto;
-
-		@media screen and (orientation: landscape) and (max-height: 460px){
-			width: min(100%, 680px);
-		}
+		max-width: 1000px;
 	}
 
 	@media screen and (orientation: portrait) and (max-width: 680px){
-		padding: 12vmin 8%;
+		padding: 10vmin 6%;
 		background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%);
-		font-size: clamp(1em, 4.4vmin, 1.35em);
-		line-height: clamp(1.7em, 4.8vmin, 1.8em);
+		font-size: min(2.3cqh, 1.6em);
+		line-height: 1.8em;
+	}
+	@media screen and (orientation: landscape) and (max-height: 500px){
 		.text-container {
-			width: min(100%, 90vw);
+			max-width: 700px;
 		}
 	}
 
@@ -122,10 +119,11 @@
 		}
 	}
 	.cursor {
-		width: 22px;
-		height: 22px;
+		--size: max(min(min(2.8cqw, 4cqh), 1em), 0.95em);
+		width: var(--size);
+		height: var(--size);
 		margin-left: 8px;
-		margin-top: clamp(0em, 1vmin, 0.3em);
+		margin-top: 0.5em;
 		position: absolute;
 
 		img {
