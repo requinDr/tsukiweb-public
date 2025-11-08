@@ -25,7 +25,7 @@
 		}
 	}
 
-	$width: clamp(260px, 64vmin, 320px);
+	$width: clamp(260px, 64vw, 320px);
 	.menu-container {
 		will-change: transform;
 		transform: translateX(calc($width));
@@ -100,7 +100,7 @@
 			grid-row: 3;
 			display: grid;
 			grid-template-columns: 1fr 1fr;
-			gap: 6px;
+			gap: 5px;
 			margin-top: auto;
 			padding-top: 1em;
 			width: 100%;
