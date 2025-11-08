@@ -11,10 +11,13 @@
 	--text-muted: #bdbdbd;
 	--transition-time: 0.2s;
 	--transition: all var(--transition-time) ease-out;
-	--text-bg: linear-gradient(90deg, rgba(0, 0, 0, 0.1) 0%,
-											 rgba(0, 0, 0, 0.4) 10%,
-											 rgba(0, 0, 0, 0.4) 90%,
-											 rgba(0, 0, 0, 0.1) 100%);
+	--text-bg: linear-gradient(90deg,
+		rgba(0, 0, 0, 0.1) 0%,
+		rgba(0, 0, 0, 0.3) 4%,
+		rgba(0, 0, 0, 0.42) 8%,
+		rgba(0, 0, 0, 0.42) 92%,
+		rgba(0, 0, 0, 0.3) 96%,
+		rgba(0, 0, 0, 0.1) 100%);
 	--menu-button-bg: rgb(14 79 187);
 }
 
@@ -29,9 +32,9 @@
 		aspect-ratio: var(--ratio, initial);
 		width: var(--max-size, initial);
 		height: 100%;
-		margin: 0 auto;
-		position: relative;
 		min-width: 0;
+		margin: auto;
+		position: relative;
 		container-type: inline-size;
 
 		&::before {
@@ -40,10 +43,9 @@
 			inset: 0;
 		}
 
-		@media screen and (orientation: portrait) and (min-width: 680px) {
+		@media screen and (orientation: portrait) and (min-width: 620px) {
 			width: 100%;
 			height: var(--max-size, initial);
-			margin: auto;
 		}
 	}
 	

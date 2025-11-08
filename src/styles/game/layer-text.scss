@@ -4,10 +4,18 @@
 	user-select: none;
 	background-image: var(--text-bg);
 	padding: 7cqmin;
-	text-shadow: #000 1px 1px 2px, #000 -1px 1px 2px, #000 -1px -1px 1px, #000 1px -1px 1px;
+	--sc: #000;
+	--ts: clamp(0.8px, 0.15cqw, 1.1px);
+	--nts: calc(-1 * var(--ts));
+	text-shadow:
+	  var(--ts) var(--ts) var(--ts) var(--sc),
+	  var(--nts) var(--ts) var(--ts) var(--sc),
+	  var(--nts) var(--nts) var(--ts) var(--sc),
+	  var(--ts) var(--nts) var(--ts) var(--sc),
+	  0 0 calc(var(--ts) * 2) var(--sc);
 	letter-spacing: 1px;
-	font-size: clamp(0.95em, min(2.8cqw, 4cqh), 1.6em);
-	line-height: clamp(1.6em, 5.6cqw, 1.95em);
+	font-size: clamp(0.85em, min(2.8cqw, 4cqh), 1.6em);
+	line-height: clamp(1.6em, 5cqw, 1.95em);
 	overflow-x: hidden;
 	touch-action: manipulation;
 	transition: var(--transition);
@@ -53,7 +61,7 @@
 		max-width: 1000px;
 	}
 
-	@media screen and (orientation: portrait) and (max-width: 680px){
+	@media screen and (orientation: portrait) and (max-width: 620px){
 		padding: 10vmin 6%;
 		background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%);
 		font-size: min(2.3cqh, 1.6em);
@@ -119,11 +127,11 @@
 		}
 	}
 	.cursor {
-		--size: max(min(min(2.8cqw, 4cqh), 1em), 0.95em);
+		--size: clamp(0.95em, min(2.8cqw, 4cqh), 1em);
 		width: var(--size);
 		height: var(--size);
 		margin-left: 8px;
-		margin-top: 0.5em;
+		margin-top: clamp(0.3em, min(1.4cqw, 2cqh), 0.5em);
 		position: absolute;
 
 		img {
