@@ -109,15 +109,17 @@ const HistoryDisplay = ({
 		// scroll near the bottom of the history
 		const historyElmt = historyRef.current
 		if (historyElmt)
-			historyElmt.scrollTop = historyElmt.scrollHeight - historyElmt.clientHeight - 1
+			historyElmt.scrollTop = historyElmt.scrollHeight - historyElmt.clientHeight - 2
 	}, [historyRef])
 
 	const onScroll = useCallback(()=> {
 		//when scrolled to the bottom of history, hide history
 		const elmt = historyRef.current!
-		const bottom = elmt.scrollHeight - Math.round(elmt.scrollTop) === elmt.clientHeight
-		if (bottom)
+		const diff = elmt.scrollHeight - elmt.scrollTop - elmt.clientHeight
+		const bottom = diff <= 1
+		if (bottom) {
 			close()
+		}
 	}, [])
 
 	function onClick(index: number, _page: PageEntry) {

@@ -83,9 +83,9 @@
 	}
 	hr {
 		border: 0;
-		height: 2px;
+		height: 1px;
 		background-image: linear-gradient(90deg, #1b9ab900 0%, #1b9ab9 50%, #1b9ab900 100%);
-		margin: 5em 0 1.4em;
+		margin: 4em 0 1em;
 		position: relative;
 		overflow: visible;
 
@@ -110,12 +110,14 @@
 	}
 	.load {
 		display: flex;
-		margin-bottom: 0.4em;
+		margin-left: auto;
 		padding: 0 0.8em;
 		font-size: 0.8em;
+		margin-top: -1em;
+		margin-bottom: 2em;
 		text-shadow: none;
 		gap: 8px;
-		color: var(--active-hover);
+		color: var(--color-link);
 	}
 	.choice {
 		&:not(.selected) {

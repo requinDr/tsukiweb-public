@@ -159,21 +159,12 @@ function swipeCallback(layers: InGameLayersHandler,
 			switch(direction) {
 				case "up" : layers.graphics = true; return true;
 				case "left" : layers.menu = true; return true;
-				case "right" : layers.history = true; return true;
-				//case "down" : toggleView('history'); return true;
-				// disabled as on android, swiping down to display the browser's menu
-				// would also show the history.
+				case "down" : layers.history = true; return true;
 			}
 			break
 		case 'menu':
 			if (direction == "right") {
 				layers.menu = false
-				return true
-			}
-			break
-		case 'history':
-			if (direction == "left") {
-				layers.history = false
 				return true
 			}
 			break
