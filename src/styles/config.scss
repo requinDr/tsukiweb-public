@@ -78,7 +78,6 @@
 		}
 
 		.config-name {
-			margin-left: min(4%, 1em);
 			margin-right: 8px;
 		}
 		.config-actions {
@@ -183,7 +182,6 @@
 
 		.action {
 			grid-column: 1;
-			margin-left: min(4%, 1em);
 		}
 		.keyItem {
 			grid-column: 2;
@@ -239,6 +237,9 @@
 
 			.action {
 				margin-bottom: .2em;
+				text-decoration: underline;
+				text-underline-offset: 6px;
+				text-decoration-thickness: 1px;
 			}
 			.keyItem {
 				grid-column: 1;

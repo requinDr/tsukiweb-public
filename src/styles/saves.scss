@@ -25,18 +25,14 @@
 	font-size: 1rem;
 	display: grid;
 	grid-template-areas:
-		"title title"
+		"page-title page-title"
 		"list info"
 		"buttons buttons";
 	grid-template-columns: 3fr minmax(234px, 1fr);
 	grid-template-rows: min-content 1fr min-content;
 
-	.page-title {
-		grid-area: title;
-	}
 	.saves {
 		grid-area: list;
-		overflow-x: hidden;
 		letter-spacing: 1px;
 		padding-bottom: 80px;
 		transform: translate3d(0, 0, 0); //huge list on GPU
@@ -44,17 +40,14 @@
 		.virtual-list {
 			position: relative;
 			width: 100%;
-			.save-container {
-				will-change: transform;
-			}
 		}
 		.create, .import {
 			margin-bottom: 8px;
-			gap: 8px;
 			width: 100%;
-			padding: 12px 0;
+			padding-block: 12px;
 		}
 		.save-container {
+			will-change: transform;
 			position: absolute;
 			width: 100%;
 			display: flex;
@@ -343,7 +336,7 @@
 
 	@media screen and (max-width: 760px) and (orientation: portrait) {
 		grid-template-areas:
-			"title"
+			"page-title"
 			"info"
 			"list"
 			"buttons";
@@ -354,7 +347,7 @@
 	@media screen and (max-height: 680px) and (orientation: landscape) {
 		grid-template-columns: 2fr 5fr;
 		grid-template-areas:
-			"title list"
+			"page-title list"
 			"info list"
 			"buttons list";
 	}

@@ -11,7 +11,7 @@ const CharacterPanel = ({ char }: Props) => {
 		<div className="character-panel">
 			<div className="header">
 				<img
-					src={charData.sprite}
+					src={imageSrc(charData.sprite)}
 					alt={charData.name}
 					draggable={false}
 					className="illustration"

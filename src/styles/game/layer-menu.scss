@@ -1,7 +1,12 @@
 %layer-menu {
+	--menu-bg: linear-gradient(226deg, rgb(7 5 75), rgb(0 150 176 / 100%));
+	--menu-backdrop: rgba(0, 36, 87, 0.6);
+	--menu-border-color: #002373;
+	--surface-on-menu: rgb(1 17 27 / 80%);
 	--panel-trans-time: 0.4s;
+
 	z-index: -1;
-	background-color: rgb(0 36 87 / 60%);
+	background-color: var(--menu-backdrop);
 	-webkit-backdrop-filter: blur(1px);
 	backdrop-filter: blur(1px);
 	opacity: 0;
@@ -13,7 +18,7 @@
 	// when hiding, wait before starting the transition
 	transition-delay: calc(var(--panel-trans-time) - var(--transition-time));
 	overflow: hidden;
-	border-block: 12px solid #002373;
+	border-block: 12px solid var(--menu-border-color);
 
 	&.show {
 		z-index: 4;
@@ -29,12 +34,12 @@
 	.menu-container {
 		will-change: transform;
 		transform: translateX(calc($width));
-		height: 100%;
 		width: $width;
-		transition: all var(--panel-trans-time) ease-out;
+		height: 100%;
+		transition: transform var(--panel-trans-time) ease-out;
 		display: flex;
 		align-items: center;
-		background-image: linear-gradient(226deg, rgb(7 5 75), rgb(0 150 176 / 100%));
+		background-image: var(--menu-bg);
 		mask-image: linear-gradient(to right, transparent, black 2em);
 
 		menu {
@@ -50,24 +55,19 @@
 
 		button, a {
 			color: var(--text-color);
-			text-decoration: none;
 			transition: var(--transition);
-			user-select: none;
 			display: flex;
-			align-items: center;
 			position: relative;
 			padding: 2px 6px;
+			letter-spacing: 1px;
 		}
-		.top {
-			grid-row: 1;
-			min-height: 60px;
+		.layer-btns, .action-btns {
+			max-width: 200px;
 		}
 		.layer-btns {
-			grid-row: 2;
 			display: flex;
 			row-gap: min(2vh, 0.8em);
 			flex-direction: column;
-			max-width: 200px;
 
 			.layer-btn {
 				&:hover, &:focus-visible {
@@ -97,15 +97,11 @@
 		}
 
 		.action-btns {
-			grid-row: 3;
 			display: grid;
 			grid-template-columns: 1fr 1fr;
 			gap: 5px;
-			margin-top: auto;
-			padding-top: 1em;
-			width: 100%;
-			max-width: 200px;
-			font-size: 1em;
+			align-self: end;
+			margin-top: 1em;
 
 			.fullwidth {
 				grid-column: 1 / -1;
@@ -113,17 +109,13 @@
 			.copy-scene, .quick {
 				font-size: 1rem;
 			}
-			.replaying {
-				margin-bottom: 8px;
-			}
 
 			button {
 				border-radius: 2px;
 				padding: 5px 4px;
 				color: rgb(206 223 234);
-				background-color: rgb(1 17 27 / 80%);
+				background-color: var(--surface-on-menu);
 				justify-content: center;
-				outline: none;
 
 				&:hover, &:focus-visible {
 					color: var(--text-color);
@@ -133,11 +125,6 @@
 					opacity: 0.5;
 					pointer-events: none;
 				}
-			}
-
-			.copy-scene:disabled {
-				opacity: 0.5;
-				pointer-events: none;
 			}
 		}
 	}

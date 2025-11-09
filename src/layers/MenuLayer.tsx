@@ -75,7 +75,7 @@ const MenuLayer = ({script, show, layers, qSave, qLoad}: Props) => {
 			<img src={Ornament} alt="ornament" className="top-ornament" />
 			<nav className="menu-container" ref={menuRef}>
 				<menu>
-					<div className="top" />
+					<div className="top-spacer" />
 
 					<div className="layer-btns">
 						{show?.graphics &&

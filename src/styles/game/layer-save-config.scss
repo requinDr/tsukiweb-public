@@ -8,6 +8,6 @@
 		z-index: 100;
 		opacity: 1;
 		backdrop-filter: brightness(0.6) blur(4px);
-		background-image: linear-gradient(180deg, #001325, rgb(0 67 138 / 80%));
+		background-image: var(--gradient-layer);
 	}
 }
