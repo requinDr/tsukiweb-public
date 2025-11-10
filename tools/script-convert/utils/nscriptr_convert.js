@@ -237,7 +237,7 @@ function generate(output_dir, tokens, getFile, fixes) {
         // 6. generic fixes after custom fixes
         adjustSkips(tokens)
         // 7. print to file
-        const file_str = tokens.map(t=>t.toString()).join('\n')
+        const file_str = tokens.map(t=>t.toString().trimEnd()).join('\n')
         if (output_dir) {
             if (!fs.existsSync(output_dir))
                 fs.mkdirSync(output_dir);
