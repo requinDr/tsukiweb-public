@@ -24,7 +24,7 @@ export const FULLSAVE_EXT = "thfull"
 export const HISTORY_MAX_PAGES = 20
 export const APP_INFO = {
   GITHUB_URL: "https://github.com/requinDr/tsukiweb-public",
-  GITHUB_STARS: "https://img.shields.io/github/stars/requinDr/tsukiweb-public?style=social",
+  GITHUB_STARS: "https://img.shields.io/github/stars/requinDr/tsukiweb-public",
   FEEDBACK_URL: "https://forms.gle/MJorV8oNbnKo22469",
   REMAKE_URL: "http://typemoon.com/products/tsukihime/",
   TSUKI_VNDB: "https://vndb.org/v7",
