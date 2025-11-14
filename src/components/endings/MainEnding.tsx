@@ -33,7 +33,7 @@ const MainEnding = ({unlocked, ending, continueScript = false, divProps}: Props)
 			{unlocked && image ?
 				<img
 					className="ending-img"
-					src={imageSrc(`event/${image}`, 'hd')}
+					src={imageSrc(`event/${image}`, 'src')}
 					alt={name}
 					draggable={false}
 				/>

@@ -1,5 +1,5 @@
 import { ViewRatio } from "@tsukiweb-common/constants"
-import { ResolutionId, TranslationId } from "@tsukiweb-common/utils/lang"
+import { TranslationId } from "@tsukiweb-common/utils/lang"
 import { LangJson } from "translation/lang"
 
 export type Choice = {
@@ -39,7 +39,6 @@ export type SettingsType = {
 	// graphics settings
 	gameFont: string
 	uiFont: string
-	resolution: ResolutionId
 	language: TranslationId
 	fixedRatio: ViewRatio
 	// H-related settings

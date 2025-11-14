@@ -18,7 +18,6 @@ export const defaultSettings: SettingsType = deepFreeze({
   
   gameFont: "Ubuntu", // [not implemented]
   uiFont: "Ubuntu", // [not implemented]
-  resolution: "hd",
   language: "en-mm",
   fixedRatio: ViewRatio.unconstrained,
   

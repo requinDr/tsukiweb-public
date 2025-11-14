@@ -2,7 +2,7 @@ import { splitFirst, splitLast } from "@tsukiweb-common/utils/utils"
 import { RouteDayName, RouteName } from "../types"
 import { settings } from "../utils/settings"
 import {TrackSourceId, strings} from "./lang"
-import { TextImage } from "@tsukiweb-common/utils/lang"
+import { ResolutionId, TextImage } from "@tsukiweb-common/utils/lang"
 import { closeBB } from "@tsukiweb-common/utils/Bbcode"
 import { imageFormat } from "@tsukiweb-common/utils/images"
 
@@ -91,10 +91,10 @@ export function audioSePath(se: string, pd: boolean = false) {
 /**
  * Get the image source from the translation file.
  * @param img id of the image to get its source
- * @param res desired resolution. 'hd' or 'thumb'
+ * @param res desired resolution.
  * @returns the requested image's url
  */
-export function imageSrc(img: string, res = settings.resolution) {
+export function imageSrc(img: string, res: ResolutionId = "src") {
   if (img.startsWith('"') && img.endsWith('"'))
     img = img.substring(1, img.length-1)
 

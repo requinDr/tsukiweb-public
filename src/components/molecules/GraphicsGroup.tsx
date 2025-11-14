@@ -1,14 +1,14 @@
 import { memo } from "react"
-import { settings } from "../../utils/settings"
 import { imageSrc } from "../../translation/assets"
 import { POSITIONS } from "@tsukiweb-common/constants";
 import { SpritePos, Graphics as GraphicsType, DivProps } from "@tsukiweb-common/types";
 import cg from "utils/gallery";
 import { useLanguageRefresh } from "hooks";
 import GraphicElement from "@tsukiweb-common/graphics/GraphicElement";
+import { ResolutionId } from "@tsukiweb-common/utils/lang";
 
 
-export async function preloadImage(src: string, resolution = settings.resolution): Promise<void> {
+export async function preloadImage(src: string, resolution: ResolutionId = "src"): Promise<void> {
 	if (src.startsWith('#') || src.startsWith('$'))
 		return
 	if (src.startsWith('"'))
@@ -26,18 +26,18 @@ export async function preloadImage(src: string, resolution = settings.resolution
 type GraphicsGroupProps = {
 	images: Partial<GraphicsType>
 	spriteAttrs?: Partial<Record<SpritePos, DivProps>> | ((pos:SpritePos)=>DivProps)
-	resolution?: typeof settings.resolution,
+	resolution?: ResolutionId,
 	lazy?: boolean,
 } & DivProps
 
-function getUrl(resolution: typeof settings.resolution, image: string): string {
+function getUrl(resolution: ResolutionId, image: string): string {
 	return imageSrc(image, resolution)
 }
 
 const GraphicsGroup = ({
 	images,
 	spriteAttrs,
-	resolution = settings.resolution,
+	resolution = "src",
 	lazy = false,
 	...props}: GraphicsGroupProps)=> {
 	useLanguageRefresh(true)

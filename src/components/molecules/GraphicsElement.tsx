@@ -4,15 +4,16 @@ import { settings } from "../../utils/settings"
 import GraphicElement from "@tsukiweb-common/graphics/GraphicElement";
 import { DivProps, RocketProps, SpritePos } from "@tsukiweb-common/types"
 import cg from "utils/gallery"
+import { ResolutionId } from "@tsukiweb-common/utils/lang";
 
-function getUrl(resolution: typeof settings.resolution, image: string): string {
+function getUrl(resolution: ResolutionId, image: string): string {
 	return imageSrc(image, resolution)
 }
 
 type Props = {
 	pos: SpritePos
 	image: string
-	resolution?: typeof settings.resolution
+	resolution?: ResolutionId
 	rocket?: RocketProps
 } & ({
 	fadeIn?: undefined
@@ -30,7 +31,7 @@ type Props = {
 const GraphicsElement = ({
 	pos,
 	image,
-	resolution=settings.resolution,
+	resolution="src",
 	fadeTime=0,
 	fadeIn=undefined,
 	fadeOut=undefined,

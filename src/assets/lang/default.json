@@ -200,13 +200,10 @@
       "pd_three": "#000000$c`[center][noline][font=serif]三日目`"
     },
     "thumb": {
-      "": "./image_thumb/%0"
+      "": "./images_thumb/%0"
     },
-    "sd": {
-      "": "./image/%0"
-    },
-    "hd": {
-      "": "./image_x2/%0"
+    "src": {
+      "": "./images/%0"
     }
   },
   "audio": {

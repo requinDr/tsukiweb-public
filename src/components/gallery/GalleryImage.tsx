@@ -31,7 +31,7 @@ const GalleryImage = ({image, gallery = [], galleryUnlocked = [], blurred = fals
 	const slides: CustomSlideImage[] = useMemo(() => {
 		return gallery.map(img => {
 			if (galleryUnlocked.includes(img)) {
-				const src = imageSrc(img, 'hd')
+				const src = imageSrc(img, 'src')
 				const galleryImg = getGalleryImg(img)
 				return {
 					src: src,

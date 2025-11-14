@@ -2,14 +2,8 @@
   "scripts-dir": "./scenes",
   
   "images": {
-    "thumb": {
-      "tachi/osiete": "./image/%0"
-    },
-    "sd": {
-      "tachi/osiete": "./image/%0"
-    },
-    "hd": {
-      "tachi/osiete": "./image_x2/%0"
+    "src": {
+      "tachi/osiete": "./images/%0"
     }
   },
 

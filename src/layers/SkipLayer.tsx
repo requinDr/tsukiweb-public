@@ -110,7 +110,7 @@ const SceneImage = ({ scene, sceneTitle }: { scene: TsukihimeSceneName, sceneTit
 			<div className="thumbnail">
 				<GraphicsGroup
 					images={image}
-					resolution={isCGScene ? "hd" : "thumb"}
+					resolution={isCGScene ? "src" : "thumb"}
 				/>
 			</div>
 			<div className="scene-title">{noBb(sceneTitle)}</div> 

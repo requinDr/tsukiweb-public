@@ -23,7 +23,6 @@ const ConfigAdvancedTab = () => {
 	const [modal, setModal] = useState<{show: boolean, content: ReactNode}>({show: false, content: undefined})
 
 	const [conf, setConf] = useState(deepAssign({
-		resolution: undefined,
 		imagesFolder: undefined,
 		language: undefined,
 		blurThumbnails: undefined,
@@ -80,17 +79,6 @@ const ConfigAdvancedTab = () => {
 
 	return (
 		<PageSection>
-			{/* <ConfigButtons
-				title={strings.config.quality}
-				btns={[
-					{ text: strings.config["quality-sd"], value: 'sd' },
-					{ text: strings.config["quality-hd"], value: 'hd' },
-				]}
-				property="resolution"
-				conf={conf}
-				updateValue={updateValue}
-			/> */}
-
 			<ConfigItem title={strings.config.language}>
 				<div className="config-btns">
 					<Button
@@ -117,7 +105,7 @@ const ConfigAdvancedTab = () => {
 								<div className="comparison-container">
 									<img
 										className="unblurred"
-										src={imageSrc(`event/ark_e01`, 'hd')}
+										src={imageSrc("event/ark_e01", 'src')}
 										alt="Sample image, unblurred"
 										draggable={false}
 									/>
@@ -125,7 +113,7 @@ const ConfigAdvancedTab = () => {
 								<div className="comparison-container">
 									<img
 										className="blurred"
-										src={imageSrc(`event/ark_e01`, 'hd')}
+										src={imageSrc("event/ark_e01", 'src')}
 										alt="Sample image, blurred"
 										draggable={false}
 									/>
