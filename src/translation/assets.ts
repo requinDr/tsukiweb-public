@@ -91,7 +91,7 @@ export function audioSePath(se: string, pd: boolean = false) {
 /**
  * Get the image source from the translation file.
  * @param img id of the image to get its source
- * @param res desired resolution. any of 'hd', 'sd' or 'thumb'
+ * @param res desired resolution. 'hd' or 'thumb'
  * @returns the requested image's url
  */
 export function imageSrc(img: string, res = settings.resolution) {

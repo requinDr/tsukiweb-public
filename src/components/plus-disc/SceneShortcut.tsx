@@ -14,7 +14,7 @@ const SceneShortcut = ({title, images, viewed, onClick}: SceneProps) => {
 		<div className="scene" onClick={onClick} role="button" tabIndex={0}>
 			<GraphicsGroup
 				images={images}
-				resolution="sd"
+				resolution="thumb"
 				className='scene-image'
 			/>
 			<div className="scene-title">

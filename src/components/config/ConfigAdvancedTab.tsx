@@ -80,7 +80,7 @@ const ConfigAdvancedTab = () => {
 
 	return (
 		<PageSection>
-			<ConfigButtons
+			{/* <ConfigButtons
 				title={strings.config.quality}
 				btns={[
 					{ text: strings.config["quality-sd"], value: 'sd' },
@@ -89,7 +89,7 @@ const ConfigAdvancedTab = () => {
 				property="resolution"
 				conf={conf}
 				updateValue={updateValue}
-			/>
+			/> */}
 
 			<ConfigItem title={strings.config.language}>
 				<div className="config-btns">
@@ -117,16 +117,16 @@ const ConfigAdvancedTab = () => {
 								<div className="comparison-container">
 									<img
 										className="unblurred"
-										src={imageSrc(`event/ark_e01`, 'sd')}
-										alt={"Sample image, unblurred"}
+										src={imageSrc(`event/ark_e01`, 'hd')}
+										alt="Sample image, unblurred"
 										draggable={false}
 									/>
 								</div>
 								<div className="comparison-container">
 									<img
 										className="blurred"
-										src={imageSrc(`event/ark_e01`, 'sd')}
-										alt={"Sample image, blurred"}
+										src={imageSrc(`event/ark_e01`, 'hd')}
+										alt="Sample image, blurred"
 										draggable={false}
 									/>
 								</div>

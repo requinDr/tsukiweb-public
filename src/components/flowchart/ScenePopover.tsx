@@ -8,7 +8,7 @@ const ScenePopover = ({ node }: PopoverProps) => {
 	return (
 		<div className="scene-popover-content">
 			<div className="header">
-				<GraphicsGroup images={node.graph ?? {bg:"#000"}} resolution="sd" />
+				<GraphicsGroup images={node.graph ?? {bg:"#000"}} resolution="hd" />
 			</div>
 			<div className="content">
 				{node.id}<br/>

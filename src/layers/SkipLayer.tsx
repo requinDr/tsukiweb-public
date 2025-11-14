@@ -11,9 +11,10 @@ import * as motion from "motion/react-m"
 import { ScriptPlayer } from "script/ScriptPlayer"
 import { settings } from "utils/settings"
 import { History } from "utils/history"
+import cg from "utils/gallery"
 
 function getThumbnail(label: TsukihimeSceneName) {
-	const scenes = sceneAttrs.scenes as Record<TsukihimeSceneName, any>;
+	const scenes = sceneAttrs.scenes as Record<TsukihimeSceneName, any>
 	const attrs = scenes[label]
 	if (attrs) {
 		if (attrs.osiete) {
@@ -75,16 +76,8 @@ const SkipLayer = ({script, history, display}: Props) => {
 				animate={{opacity: 1, scale: 1}}
 				key={sceneTitle}
 			>				
-				{sceneTitle &&
-				<div className="scene">
-					<div className="thumbnail">
-						<GraphicsGroup
-							images={getThumbnail(scene as TsukihimeSceneName)}
-							resolution="sd"
-						/>
-					</div>
-					<div className="scene-title">{noBb(sceneTitle)}</div> 
-				</div>
+				{sceneTitle && scene &&
+					<SceneImage scene={scene} sceneTitle={sceneTitle} />
 				}
 
 				<div className="body">
@@ -106,3 +99,21 @@ const SkipLayer = ({script, history, display}: Props) => {
 }
 
 export default SkipLayer
+
+
+const SceneImage = ({ scene, sceneTitle }: { scene: TsukihimeSceneName, sceneTitle: string }) => {
+	const image = getThumbnail(scene)
+	const isCGScene = scene ? cg.isInGallery(image?.bg) : false
+
+	return (
+		<div className="scene">
+			<div className="thumbnail">
+				<GraphicsGroup
+					images={image}
+					resolution={isCGScene ? "hd" : "thumb"}
+				/>
+			</div>
+			<div className="scene-title">{noBb(sceneTitle)}</div> 
+		</div>
+	)
+}

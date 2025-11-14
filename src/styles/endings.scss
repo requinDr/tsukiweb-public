@@ -82,6 +82,7 @@
 				mask-image: linear-gradient(180deg, black 0%, black, transparent);
 				flex: 1;
 				object-fit: cover;
+				overflow-clip-margin: unset;
 
 				&.placeholder {
 					border: 1px solid #004f87;

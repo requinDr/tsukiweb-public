@@ -52,6 +52,9 @@
 			.blur {
 				filter: blur(10px);
 			}
+			.bg img {
+				object-position: 0 40%;
+			}
 		}
 
 		.body {

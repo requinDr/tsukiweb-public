@@ -2,7 +2,7 @@
 import { useState } from "react"
 import { FcNode, FcNodeState } from "utils/flowchart"
 import { TsukihimeSceneName } from "types"
-import { autoUpdate, useFloating, useHover, useInteractions } from "@floating-ui/react"
+import { autoUpdate, flip, useFloating, useHover, useInteractions } from "@floating-ui/react"
 import { createPortal } from "react-dom"
 import * as motion from "motion/react-m"
 import cg from "utils/gallery"
@@ -16,7 +16,10 @@ const useScenePopover = () => {
 		placement: "right",
 		whileElementsMounted: autoUpdate,
 		open: isOpen,
-		onOpenChange: setIsOpen
+		onOpenChange: setIsOpen,
+		middleware: [
+			flip()
+		],
 	})
 	const hover = useHover(context, {
 		delay: {
