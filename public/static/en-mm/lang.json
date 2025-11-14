@@ -74,7 +74,7 @@
     "text-speed-instant": "Instant",
     "auto-play-delay-text": "Auto-play text delay: %0s",
     "auto-play-delay-page": "Auto-play page delay: %0s",
-    "adult-title": "Adult",
+    "adult-title": "Adult content",
     "adult-blur": "Blur thumbnails",
     "adult-blur-help": [
       "Apply a blur effect on the thumbnails of the adult scenes (Save, Load, Flowchart, Gallery, …).",

@@ -81,7 +81,7 @@ export const ConfigItem = ({ title,  children, helpAction, ...props }: ConfigLay
 			<span>{title}</span>
 
 			{helpAction && (
-				<button className="icon-help" style={{ marginLeft: 4}} onClick={helpAction}>
+				<button className="icon-help" onClick={helpAction}>
 					<MdQuestionMark />
 				</button>
 			)}

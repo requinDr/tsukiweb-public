@@ -24,18 +24,14 @@
 	}
 	
 	.sub {
-		--theme-color: #8107db;
-		padding-bottom: 1em;
-		border-block: 1px solid var(--theme-color);
-		margin-block: 1em;
-		background-color: hsl(295deg 88% 46% / 30%);
+		margin-block: .6em;
+		background-color: hsl(290deg 90% 33% / 50%);
+		border: 1px solid #9700ff;
+		padding: 1em;
+		border-radius: 3px;
 
 		.title {
-			padding-left: 1em;
-			background-image: linear-gradient(90deg, var(--theme-color) 70%, transparent);
-			width: fit-content;
-			padding-right: 2em;
-			padding-block: 0.1em;
+			font-weight: 600;
 		}
 
 		.config {
@@ -50,13 +46,14 @@
 	.icon-help {
 		background-color: rgb(255 255 255 / 15%);
 		border-radius: 50%;
-		padding: 2px;
+		padding: 4px;
 		display: inline-flex;
 		align-items: center;
-		width: 16px;
-		height: 16px;
+		width: 20px;
+		height: 20px;
 		justify-content: center;
 		font-size: .8em;
+		margin-left: 6px;
 		transition: .1s ease-in-out;
 
 		&:hover {
@@ -206,13 +203,12 @@
 		section {
 			padding-inline: 0;
 		}
-
 		.sub {
+			padding-inline: 0;
 			.title {
-				padding-left: 2em;
+				padding-inline: 1em;
 			}
 		}
-
 		.config {
 			grid-template-columns: 1fr;
 			row-gap: 0.4em;
