@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate, useLocation, Outlet } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation, Outlet } from "react-router";
 import { AnimatePresence, LazyMotion, domAnimation } from 'motion/react';
 import Window from './screens/Window'
 import TitleMenuScreen from './screens/TitleMenuScreen';

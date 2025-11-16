@@ -1,6 +1,6 @@
 import { useScreenAutoNavigate } from "hooks"
 import { useEffect } from "react"
-import { useParams } from "react-router-dom"
+import { useParams } from "react-router"
 import { LabelName } from "types"
 import { SCREEN } from "utils/display"
 import { playScene } from "utils/savestates"

@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import '@styles/title-menu.scss'
 import * as motion from "motion/react-m"
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from "react-router"
 import { strings } from '../translation/lang'
 import { SCREEN } from 'utils/display'
 import { bb } from '@tsukiweb-common/utils/Bbcode'

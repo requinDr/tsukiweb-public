@@ -1,4 +1,4 @@
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router";
 import AnimatedRoutes from './AnimatedRoutes';
 import { getLocale } from "./translation/lang";
 import { ErrorBoundary } from "react-error-boundary";
