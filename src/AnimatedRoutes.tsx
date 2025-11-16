@@ -14,26 +14,17 @@ import FlowchartScreen from "./screens/FlowchartScreen";
 import SceneReplayScreen from "screens/SceneReplayScreen";
 import ExtraLayout from "layouts/ExtraLayout";
 import PlusDiscScreen from "screens/PlusDiscScreen";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useState } from "react";
 import { Particles } from "@tsukiweb-common/ui-core";
 import CharactersScreen from "screens/CharactersScreen";
 import { SCREEN } from "utils/display";
 
 const AnimatedRoutes = () => {
-	const isFirstRender = useRef(true)
-	const [hasSeenDisclaimer, setHasSeenDisclaimer] = useState(false)
 	const location = useLocation()
-
-	useEffect(() => {
-		// If this is the first render and we're not at the root or disclaimer page,
-		// mark disclaimer as seen to avoid redirecting
-		if (isFirstRender.current && 
-				location.pathname !== '/' && 
-				location.pathname !== '/disclaimer') {
-			setHasSeenDisclaimer(true)
-		}
-		isFirstRender.current = false
-	}, [location.pathname])
+	const [hasSeenDisclaimer, setHasSeenDisclaimer] = useState(() => {
+		const initialPath = location.pathname
+		return initialPath !== '/' && initialPath !== '/disclaimer'
+	})
 
 	const markDisclaimerAsSeen = useCallback(() => {
 		setHasSeenDisclaimer(true)

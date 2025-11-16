@@ -1,15 +1,26 @@
-
 import { useState } from "react"
 import { FcNode, FcNodeState } from "utils/flowchart"
 import { TsukihimeSceneName } from "types"
-import { autoUpdate, flip, useFloating, useHover, useInteractions } from "@floating-ui/react"
+import { flip, autoUpdate } from "@floating-ui/dom";
+import { useFloating, useHover, useInteractions } from "@floating-ui/react";
 import { createPortal } from "react-dom"
-import * as motion from "motion/react-m"
+import * as m from "motion/react-m"
 import cg from "utils/gallery"
 import SceneImage from "./SceneImage"
 import ScenePopover from "./ScenePopover"
 import classNames from "classnames"
 
+
+let rootElement: HTMLElement | null = null
+const getRootElement = () => {
+	if (!rootElement) {
+		rootElement = document.getElementById("root")
+	}
+	return rootElement!
+}
+
+
+const FLOATING_MIDDLEWARE = [flip()]
 const useScenePopover = () => {
 	const [isOpen, setIsOpen] = useState(false)
 	const { refs, floatingStyles, context } = useFloating({
@@ -17,15 +28,10 @@ const useScenePopover = () => {
 		whileElementsMounted: autoUpdate,
 		open: isOpen,
 		onOpenChange: setIsOpen,
-		middleware: [
-			flip()
-		],
+		middleware: FLOATING_MIDDLEWARE
 	})
 	const hover = useHover(context, {
-		delay: {
-			open: 200,
-			close: 50,
-		},
+		delay: { open: 200, close: 50 },
 	})
 	const { getReferenceProps } = useInteractions([hover])
 
@@ -36,8 +42,6 @@ type SceneProps = {
 	node: FcNode,
 	onClick?: (id: TsukihimeSceneName) => void
 }
-
-const HiddenScene = () => null
 
 const UnseenScene = ({ node }: { node: FcNode }) => (
 	<g className='fc-scene' id={node.id}
@@ -51,9 +55,8 @@ const VisibleScene = ({ node, onClick }: SceneProps) => {
 	const { isOpen, setIsOpen, refs, floatingStyles, getReferenceProps } = useScenePopover()
 
 	const onAction = (e: React.MouseEvent | React.KeyboardEvent) => {
-		if ('key' in e) {
-			if (e.key !== "Enter" || e.currentTarget !== e.target)
-				return
+		if ('key' in e && (e.key !== "Enter" || e.currentTarget !== e.target)) {
+			return
 		}
 		e.stopPropagation()
 		setIsOpen(false)
@@ -73,8 +76,8 @@ const VisibleScene = ({ node, onClick }: SceneProps) => {
 			<g className={'fc-scene-content'}
 				tabIndex={disabled ? -1 : 0}
 				clipPath="url(#fc-scene-clip)"
-				onClick={node.state !== FcNodeState.DISABLED ? onAction : undefined}
-				onKeyDown={node.state !== FcNodeState.DISABLED ? onAction : undefined}
+				onClick={!disabled ? onAction : undefined}
+				onKeyDown={!disabled ? onAction : undefined}
 				{...getReferenceProps()}
 				onContextMenu={e => {
 					e.preventDefault()
@@ -92,16 +95,16 @@ const VisibleScene = ({ node, onClick }: SceneProps) => {
 				ref={refs.setFloating}
 				style={floatingStyles}
 				id="scene-popover">
-				<motion.div
+				<m.div
 					className="scene-popover"
 					initial={{opacity: 0, scale: 0.9, transform: "translateY(-4px)"}}
 					animate={{opacity: 1, scale: 1, transform: "translateY(0)"}}
 					exit={{opacity: 0, scale: 0.9, transform: "translateY(-4px)"}}
 				>
 					<ScenePopover node={node} />
-				</motion.div>
+				</m.div>
 			</div>,
-			document.getElementById("root") as HTMLElement
+			getRootElement()
 		)}
 	</>
 }
@@ -110,7 +113,7 @@ export const SceneRenderer = ({ node, onClick }: SceneProps) => {
 
 	switch (node.state) {
 		case FcNodeState.HIDDEN:
-			return <HiddenScene />
+			return null
 		case FcNodeState.UNSEEN:
 			return <UnseenScene node={node} />
 		default:

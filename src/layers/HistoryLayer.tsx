@@ -6,6 +6,7 @@ import PageElement from '../components/molecules/PageElement';
 import classNames from 'classnames';
 import { Button, FixedFooter } from '@tsukiweb-common/ui-core';
 import Flowchart from 'components/flowchart/Flowchart';
+import { TsukihimeSceneName } from 'types';
 
 
 type Props = {
@@ -150,12 +151,17 @@ const FlowchartDisplay = ({ history, onSceneSelect }: FlowchartDisplayProps) => 
 		}
 	}, [history])
 
+	const handleSceneSelect = useCallback((id: TsukihimeSceneName)=> {
+		onSceneSelect(history.sceneIndex(id))
+	}, [history, onSceneSelect])
+
 	return (
 		<div id="scenes">
 			<div className="flowchart-container">
 				<Flowchart
 					history={history}
-					onSceneClick={(id=> onSceneSelect(history.sceneIndex(id)))}/>
+					onSceneClick={handleSceneSelect}
+				/>
 			</div>
 		</div>
 	)

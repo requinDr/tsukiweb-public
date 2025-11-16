@@ -1,5 +1,5 @@
 
-import { Fragment } from "react"
+import { Fragment, memo } from "react"
 import { COLUMN_WIDTH, DY, SCENE_HEIGHT, SCENE_RECT_ATTRS, SCENE_WIDTH, TsukihimeFlowchart } from "utils/flowchart"
 import { TsukihimeSceneName } from "types"
 import { SceneRenderer } from "./SceneRenderer"
@@ -44,7 +44,8 @@ type Props = {
 }
 const Flowchart = ({history, onSceneClick}: Props)=> {
 	const flowchart = new TsukihimeFlowchart(history)
-	const [left, top, right, bottom] = flowchart.listNodes().filter(n=>n.visible).reduce(
+	const visibleNodes = flowchart.listNodes().filter(n=>n.visible)
+	const [left, top, right, bottom] = visibleNodes.reduce(
 		(vb, node)=> [
 			Math.min(vb[0], node.left),
 			Math.min(vb[1], node.top),
@@ -68,19 +69,18 @@ const Flowchart = ({history, onSceneClick}: Props)=> {
 			version="1.1"
 			xmlns="http://www.w3.org/2000/svg">
 			{SVG_DEFS}
-			{[...flowchart.listNodes().filter(node=>node.visible).map(node=>
+			{visibleNodes.map(node=>
 				<Fragment key={node.id}>
 					{[...node.parents.map(
 						parent => <ConnectionPath key={`${parent.id}-${node.id}`} from={parent} to={node} />
 					)]}
-					{node.scene &&
-						<SceneRenderer node={node} onClick={onSceneClick}/>}
+					{node.scene && <SceneRenderer node={node} onClick={onSceneClick}/>}
 				</Fragment>
-			)]}
+			)}
 		</svg>
 	)
 }
 
 //#endregion ###################################################################
 
-export default Flowchart
+export default memo(Flowchart)
