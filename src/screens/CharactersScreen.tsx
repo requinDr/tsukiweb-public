@@ -2,7 +2,7 @@ import '@styles/characters.scss'
 import { SCREEN } from '../utils/display'
 import { PageTabsLayout } from '@tsukiweb-common/ui-core'
 import useQueryParam from '@tsukiweb-common/hooks/useQueryParam'
-import * as motion from "motion/react-m"
+import * as m from "motion/react-m"
 import { AnimatePresence, Variants } from 'motion/react'
 import { useLanguageRefresh, useScreenAutoNavigate } from 'hooks'
 import { CHARACTERS_DATA, CharactersTabs } from 'utils/characters-data'
@@ -37,7 +37,7 @@ const CharactersScreen = () => {
 			setSelectedTab={setSelectedTab}
 		>
 			<AnimatePresence mode="popLayout">
-				<motion.div
+				<m.div
 					key={selectedTab}
 					variants={container}
 					initial="hidden"
@@ -46,7 +46,7 @@ const CharactersScreen = () => {
 					style={{ width: "100%" }}
 				>
 					<CharacterPanel char={selectedTab} />
-				</motion.div>
+				</m.div>
 			</AnimatePresence>
 		</PageTabsLayout>
 	)

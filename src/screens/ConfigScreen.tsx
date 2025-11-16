@@ -1,6 +1,6 @@
 import '@styles/config.scss'
 import { SCREEN, displayMode } from '../utils/display'
-import * as motion from "motion/react-m"
+import * as m from "motion/react-m"
 import ConfigLayout from '../components/config/ConfigLayout'
 import useQueryParam from '@tsukiweb-common/hooks/useQueryParam'
 import { useEffect } from 'react'
@@ -29,7 +29,7 @@ const ConfigScreen = () => {
 	}, [])
 
 	return (
-		<motion.div
+		<m.div
 			className="page" id="config"
 			initial={{opacity: 0}}
 			animate={{opacity: 1}}
@@ -39,7 +39,7 @@ const ConfigScreen = () => {
 				selectedTab={selectedTab}
 				setSelectedTab={setSelectedTab}
 				page={SCREEN.CONFIG} />
-		</motion.div>
+		</m.div>
 	)
 }
 

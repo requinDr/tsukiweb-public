@@ -1,7 +1,7 @@
 import { ComponentProps, useMemo } from 'react'
 import '@styles/gallery.scss'
 import { settings } from '../utils/settings'
-import * as motion from "motion/react-m"
+import * as m from "motion/react-m"
 import { AnimatePresence, Variants } from 'motion/react'
 import cg from '../utils/gallery'
 import { strings } from "../translation/lang"
@@ -71,7 +71,7 @@ const GalleryScreen = () => {
 		>
 			<section>
 				<AnimatePresence mode="popLayout">
-					<motion.div
+					<m.div
 						key={selectedTab}
 						variants={container}
 						initial="hidden"
@@ -108,7 +108,7 @@ const GalleryScreen = () => {
 								</div>
 							)
 						})}
-					</motion.div>
+					</m.div>
 				</AnimatePresence>
 			</section>
 		</PageTabsLayout>

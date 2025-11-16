@@ -7,7 +7,7 @@ import sceneAttrs from '@assets/game/scene_attrs.json'
 import { TsukihimeSceneName } from "types"
 import { Button } from "@tsukiweb-common/ui-core"
 import { getSceneTitle, isThScene } from "script/utils"
-import * as motion from "motion/react-m"
+import * as m from "motion/react-m"
 import { ScriptPlayer } from "script/ScriptPlayer"
 import { settings } from "utils/settings"
 import { History } from "utils/history"
@@ -70,7 +70,7 @@ const SkipLayer = ({script, history, display}: Props) => {
 			id="skip-layer"
 			className={classNames("layer", {show: display})}
 		>
-			<motion.div
+			<m.div
 				className="skip-modal"
 				initial={{opacity: 0, scale: 0.9}}
 				animate={{opacity: 1, scale: 1}}
@@ -93,7 +93,7 @@ const SkipLayer = ({script, history, display}: Props) => {
 					<Button onClick={onClick} value="yes">{strings.yes}</Button>
 					<Button onClick={onClick} value="no">{strings.no}</Button>
 				</div>
-			</motion.div>
+			</m.div>
 		</div>
 	)
 }

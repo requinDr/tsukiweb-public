@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import '@styles/title-menu.scss'
-import * as motion from "motion/react-m"
+import * as m from "motion/react-m"
 import { useNavigate } from "react-router"
 import { strings } from '../translation/lang'
 import { SCREEN } from 'utils/display'
@@ -24,7 +24,7 @@ const DisclaimerScreen = ({ onAccept }: { onAccept?: () => void }) => {
 	}
 
 	return (
-		<motion.div
+		<m.div
 			className="page" id="disclaimer"
 			exit={{opacity: 0, transition: {duration: 1}}}
 			onClick={sawDisclaimer}
@@ -34,7 +34,7 @@ const DisclaimerScreen = ({ onAccept }: { onAccept?: () => void }) => {
 					<p key={i}>{bb(txt)}</p>
 				)}
 			</div>
-		</motion.div>
+		</m.div>
 	)
 }
 

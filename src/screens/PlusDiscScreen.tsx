@@ -3,7 +3,7 @@ import { SCREEN } from '../utils/display'
 import Cover from "@assets/images/plus-disc_cover.webp"
 import { TabsComponent } from '@tsukiweb-common/ui-core'
 import useQueryParam from '@tsukiweb-common/hooks/useQueryParam'
-import * as motion from "motion/react-m"
+import * as m from "motion/react-m"
 import { AnimatePresence, Variants } from 'motion/react'
 import ScenesTab from 'components/plus-disc/ScenesTab'
 import GalleryTab from 'components/plus-disc/GalleryTab'
@@ -64,7 +64,7 @@ const PlusDiscScreen = () => {
 				/>
 
 					<AnimatePresence mode="popLayout">
-						<motion.div
+						<m.div
 							key={selectedTab}
 							variants={container}
 							initial="hidden"
@@ -76,7 +76,7 @@ const PlusDiscScreen = () => {
 							) : (
 								<GalleryTab />
 							)}
-						</motion.div>
+						</m.div>
 					</AnimatePresence>
 			</main>
 		</div>

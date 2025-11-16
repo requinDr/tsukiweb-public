@@ -2,7 +2,7 @@ import gameLogo from "@assets/images/tsukihime-logo.webp"
 import moon from "@assets/images/moon.webp"
 import '@styles/title-menu.scss'
 import { SCREEN } from '../utils/display'
-import * as motion from "motion/react-m"
+import * as m from "motion/react-m"
 import { continueGame, newGame, savesManager } from '../utils/savestates'
 import { strings } from "../translation/lang"
 import { MdOutlineVolumeOff, MdOutlineVolumeUp } from 'react-icons/md'
@@ -24,13 +24,13 @@ const TitleMenuScreen = () => {
 	const { eclipseUnlocked } = useEclipseUnlocked()
 
 	return (
-		<motion.div
+		<m.div
 			className="page" id="title-menu"
 			initial={{opacity: 0}}
 			animate={{opacity: 1}}
 			exit={{opacity: 0}}>
 			<div className="logo">
-				<motion.img
+				<m.img
 					src={moon} alt="moon"
 					draggable={false}
 					className="moon"
@@ -40,7 +40,7 @@ const TitleMenuScreen = () => {
 						delay: 0,
 						duration: 1,
 					}} />
-				<motion.img
+				<m.img
 					src={gameLogo} alt="Tsukihime logo"
 					draggable={false}
 					className='tsuki-logo'
@@ -79,7 +79,7 @@ const TitleMenuScreen = () => {
 			</nav>
 
 			<div className='top-actions'>
-				<motion.div
+				<m.div
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
 					transition={{
@@ -94,9 +94,9 @@ const TitleMenuScreen = () => {
 					>
 						{conf < 0 ? <MdOutlineVolumeOff aria-label="mute" /> : <MdOutlineVolumeUp aria-label="unmute" />}
 					</button>
-				</motion.div>
+				</m.div>
 
-				<motion.div
+				<m.div
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
 					transition={{
@@ -104,9 +104,9 @@ const TitleMenuScreen = () => {
 						duration: 1,
 					}}>
 					<TranslationSwitch />
-				</motion.div>
+				</m.div>
 
-				<motion.div
+				<m.div
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
 					transition={{
@@ -114,9 +114,9 @@ const TitleMenuScreen = () => {
 						duration: 1,
 					}}>
 					<AppInfo />
-				</motion.div>
+				</m.div>
 			</div>
-		</motion.div>
+		</m.div>
 	)
 }
 

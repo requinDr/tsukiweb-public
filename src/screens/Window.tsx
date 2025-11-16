@@ -1,5 +1,5 @@
 import { Fragment, useCallback, useEffect, useLayoutEffect, useReducer, useRef, useState, useMemo } from 'react';
-import * as motion from "motion/react-m"
+import * as m from "motion/react-m"
 import '@styles/game.scss';
 import HistoryLayer from '../layers/HistoryLayer';
 import MenuLayer from '../layers/MenuLayer';
@@ -143,7 +143,7 @@ const Window = () => {
 
 //............... render ...............
 	return (
-		<motion.div
+		<m.div
 			className="page window" ref={rootElmtRef}
 			initial={{opacity: 0}}
 			animate={{opacity: 1}}
@@ -188,7 +188,7 @@ const Window = () => {
 					qLoad={actionsHandler.quickLoad.bind(actionsHandler)}
 					qSave={actionsHandler.quickSave.bind(actionsHandler)}/>
 			</Fragment>
-		</motion.div>
+		</m.div>
 	)
 }
 

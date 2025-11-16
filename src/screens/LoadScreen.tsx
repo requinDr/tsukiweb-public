@@ -1,4 +1,4 @@
-import * as motion from "motion/react-m"
+import * as m from "motion/react-m"
 import '@styles/saves.scss'
 import SavesLayout from "../components/save/SavesLayout"
 import { SCREEN, displayMode } from "../utils/display"
@@ -28,7 +28,7 @@ const LoadScreen = () => {
 	}, [])
 	
 	return (
-		<motion.div
+		<m.div
 			className="page" id="saves"
 			initial={{opacity: 0}}
 			animate={{opacity: 1}}
@@ -36,7 +36,7 @@ const LoadScreen = () => {
 			<div className="page-content">
 				<SavesLayout variant="load" back={back}/>
 			</div>
-		</motion.div>
+		</m.div>
 	)
 }
 
