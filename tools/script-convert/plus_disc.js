@@ -520,7 +520,7 @@ const langs = [
   'pt-matsuri',
   'ko-wolhui',
   'ru-ciel',
-  // 'zh-tw-yueji_yeren_hanhua_zu',
+  'zh-tw-yueji_yeren_hanhua_zu',
   'zh-yueji_yeren_hanhua_zu',
 ]
 const files = {
