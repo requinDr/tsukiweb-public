@@ -58,7 +58,11 @@
 			width: $icon-size;
 			height: $icon-size;
 			border-radius: 4px;
-			background-color: #005675;
+			background-color: var(--active);
+
+			&.inactive {
+				filter: grayscale(1);
+			}
 
 			&:hover, &:focus-visible {
 				box-shadow: var(--selected-shadow);

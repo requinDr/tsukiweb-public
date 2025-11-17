@@ -15,6 +15,7 @@ import history from 'utils/history'
 import { TitleMenuButton } from '@tsukiweb-common/ui-core'
 import { useScreenAutoNavigate, useLanguageRefresh } from 'hooks'
 import useEclipseUnlocked from 'hooks/useEclipseUnlocked'
+import classNames from "classnames"
 
 const TitleMenuScreen = () => {
 	const navigate = useNavigate()
@@ -87,7 +88,7 @@ const TitleMenuScreen = () => {
 						duration: 1,
 					}}>
 					<button
-						className="action-icon"
+						className={classNames("action-icon", { inactive: conf < 0 })}
 						onContextMenu={e => e.preventDefault()}
 						aria-label={strings.config['volume-master']}
 						onClick={()=> settings.volume.master = -settings.volume.master}
