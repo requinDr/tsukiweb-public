@@ -1,16 +1,15 @@
-import { ComponentProps, JSX, ReactNode, useEffect, useState } from 'react'
+import { ComponentProps, JSX, ReactNode } from 'react'
 import '@styles/config.scss'
 import ConfigGameTab from './ConfigGameTab'
 import ConfigAudioTab from './ConfigAudioTab'
 import ConfigAdvancedTab from './ConfigAdvancedTab'
 import ConfigControlsTab from './ConfigControlsTab'
 import { strings } from '../../translation/lang'
-import { SCREEN } from '../../utils/display'
 import { useLanguageRefresh } from '../../hooks/useLanguageRefresh'
 import { MdQuestionMark } from 'react-icons/md'
 import { Button, TitleMenuButton, PageTabsLayout } from '@tsukiweb-common/ui-core'
 
-enum Tabs {
+export enum ConfigTabs {
 	game = "game",
 	audio = "audio",
 	controls = "controls",
@@ -18,35 +17,26 @@ enum Tabs {
 }
 
 const tabComponents = {
-	[Tabs.game]: <ConfigGameTab />,
-	[Tabs.audio]: <ConfigAudioTab />,
-	[Tabs.controls]: <ConfigControlsTab />,
-	[Tabs.advanced]: <ConfigAdvancedTab />,
+	[ConfigTabs.game]: <ConfigGameTab />,
+	[ConfigTabs.audio]: <ConfigAudioTab />,
+	[ConfigTabs.controls]: <ConfigControlsTab />,
+	[ConfigTabs.advanced]: <ConfigAdvancedTab />,
 }
 
 type Props = {
-	back: ()=>void,
-	selectedTab?: Tabs,
-	setSelectedTab?: (activeTab: string)=>void,
-	page?: string,
+	back: ()=>void
+	selectedTab: ConfigTabs
+	setSelectedTab: (activeTab: ConfigTabs)=>void
 }
 
-const ConfigLayout = ({back, selectedTab, setSelectedTab, page}: Props) => {
-	const [activeTab, setActiveTab] = useState(selectedTab || Tabs.game)
+const ConfigLayout = ({back, selectedTab, setSelectedTab}: Props) => {
 	useLanguageRefresh()
 
-	useEffect(()=> {
-		if (!Object.hasOwn(tabComponents, activeTab))
-			setActiveTab(Tabs.game)
-		else if (setSelectedTab)
-		setSelectedTab(activeTab)
-	}, [activeTab])
-
 	const tabs: ComponentProps<typeof PageTabsLayout>["tabs"] = [
-		{label: strings.config['tab-game'], value: Tabs.game},
-		{label: strings.config['tab-audio'], value: Tabs.audio},
-		{label: strings.config['tab-controls'], value: Tabs.controls},
-		{label: strings.config['tab-advanced'], value: Tabs.advanced, disabled: page !== SCREEN.CONFIG}
+		{label: strings.config['tab-game'], value: ConfigTabs.game},
+		{label: strings.config['tab-audio'], value: ConfigTabs.audio},
+		{label: strings.config['tab-controls'], value: ConfigTabs.controls},
+		{label: strings.config['tab-advanced'], value: ConfigTabs.advanced}
 	]
 
 	return (
@@ -54,14 +44,14 @@ const ConfigLayout = ({back, selectedTab, setSelectedTab, page}: Props) => {
 			id="config-layout"
 			title={strings.menu.config}
 			tabs={tabs}
-			selectedTab={activeTab}
-			setSelectedTab={setActiveTab}
+			selectedTab={selectedTab}
+			setSelectedTab={setSelectedTab}
 			backButton={
 				<TitleMenuButton onClick={back.bind(null)} className="back-button">
 					{`<<`} {strings.back}
 				</TitleMenuButton>
 			}>
-			{tabComponents[activeTab]}
+			{tabComponents[selectedTab]}
 		</PageTabsLayout>
 	)
 }

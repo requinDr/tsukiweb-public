@@ -143,7 +143,7 @@
     "toast-load-fail": "Could not restore progress",
     "toast-autoplay-stop": "Auto-play stopped",
     "toast-ffw-stop": "Fast-Forward stopped",
-    "toast-hscene-waning": "You are about to read a scene with mature content."
+    "toast-hscene-waning": "You are entering a scene with mature content."
   },
   "menu": {
     "graphics": "Graphics",

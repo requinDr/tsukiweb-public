@@ -21,6 +21,7 @@ import SkipLayer from 'layers/SkipLayer';
 import { useScreenAutoNavigate, useLanguageRefresh } from 'hooks';
 import { isPDScene } from 'script/utils';
 import actions, { onAutoPlayStop, warnHScene } from 'utils/window-actions';
+import { settings } from 'utils/settings';
 
 
 const Window = () => {
@@ -42,6 +43,10 @@ const Window = () => {
 	}))
 	const [actionsHandler, ] = useReset(()=>
 		new actions.UserActionsHandler(script, layers, remountScript))
+
+	useEffect(() => {
+		remountScript()
+	}, [settings.language])
 
 	const show = useMemo(() => {
 		const isPd = isPDScene(script.currentLabel ?? "")
@@ -88,7 +93,7 @@ const Window = () => {
 			gameAudio.track.play(track, {loop: true})
 		else
 			gameAudio.track.stop()
-		
+
 		if (looped_se && looped_se.length > 0)
 			gameAudio.se.play(looped_se)
 		else
@@ -117,7 +122,7 @@ const Window = () => {
 	const _createKeyMap = useCallback(()=> actions.createKeyMap(layers, show), [layers, show])
 	useKeyMap(_createKeyMap, (action, _evt, ...args)=>
 		actionsHandler.handleAction(action, ...args),
-	document, "keydown", {capture: false})
+		document, "keydown", { capture: false })
 
 	// useGamepad({fct: gameLoopGamepad.bind(null, actionsHandler.current!)})
 
@@ -141,6 +146,10 @@ const Window = () => {
 		actionsHandler.back()
 	}
 
+	const handleBackConfig = useCallback(() => {
+		layers.back()
+	}, [layers])
+
 //............... render ...............
 	return (
 		<m.div
@@ -157,8 +166,8 @@ const Window = () => {
 				</div>
 
 				{script.continueScript && <>
-					<ChoicesLayer script={script} display={layers.text}/>
-					<SkipLayer script={script} history={history} display={layers.text}/>
+					<ChoicesLayer script={script} display={layers.text} />
+					<SkipLayer script={script} history={history} display={layers.text} />
 				</>}
 
 				<HistoryLayer
@@ -166,8 +175,8 @@ const Window = () => {
 					history={history}
 					layers={layers}
 					show={show}
-					onRewind={remountScript}/>
-					
+					onRewind={remountScript} />
+
 				<SavesLayer
 					display={layers.save || layers.load}
 					mode={layers.save ? 'save' : 'load'}
@@ -176,7 +185,9 @@ const Window = () => {
 						if (load) remountScript()
 					}} />
 				
-				<ConfigLayer display={layers.config} back={layers.back.bind(layers)} />
+				<ConfigLayer
+					display={layers.config}
+					back={handleBackConfig} />
 
 				{layers.text &&
 					<button className="menu-button"
@@ -186,13 +197,10 @@ const Window = () => {
 				}
 				<MenuLayer show={show} script={script} layers={layers}
 					qLoad={actionsHandler.quickLoad.bind(actionsHandler)}
-					qSave={actionsHandler.quickSave.bind(actionsHandler)}/>
+					qSave={actionsHandler.quickSave.bind(actionsHandler)} />
 			</Fragment>
 		</m.div>
 	)
 }
 
-export default Window;
-
-//#endregion
-//##############################################################################
+export default Window

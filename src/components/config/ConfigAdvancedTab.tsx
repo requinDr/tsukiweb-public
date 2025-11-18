@@ -23,7 +23,6 @@ const ConfigAdvancedTab = () => {
 	const [modal, setModal] = useState<{show: boolean, content: ReactNode}>({show: false, content: undefined})
 
 	const [conf, setConf] = useState(deepAssign({
-		imagesFolder: undefined,
 		language: undefined,
 		blurThumbnails: undefined,
 		warnHScenes: undefined,

@@ -1,7 +1,7 @@
 import '@styles/config.scss'
 import { SCREEN, displayMode } from '../utils/display'
 import * as m from "motion/react-m"
-import ConfigLayout from '../components/config/ConfigLayout'
+import ConfigLayout, { ConfigTabs } from '../components/config/ConfigLayout'
 import useQueryParam from '@tsukiweb-common/hooks/useQueryParam'
 import { useEffect } from 'react'
 import { useLanguageRefresh } from 'hooks/useLanguageRefresh'
@@ -10,7 +10,7 @@ import { useScreenAutoNavigate } from 'hooks/useScreenAutoNavigate'
 const ConfigScreen = () => {
 	useScreenAutoNavigate(SCREEN.CONFIG)
 	useLanguageRefresh()
-	const [selectedTab, setSelectedTab] = useQueryParam<any>("tab", "game")
+	const [selectedTab, setSelectedTab] = useQueryParam<ConfigTabs>("tab", ConfigTabs.game)
 
 	function back() {
 		displayMode.screen = SCREEN.TITLE
@@ -38,7 +38,7 @@ const ConfigScreen = () => {
 				back={back}
 				selectedTab={selectedTab}
 				setSelectedTab={setSelectedTab}
-				page={SCREEN.CONFIG} />
+			/>
 		</m.div>
 	)
 }

@@ -1,5 +1,5 @@
-import { useEffect, useRef } from "react"
-import ConfigLayout from "../components/config/ConfigLayout";
+import { memo, useEffect, useRef, useState } from "react"
+import ConfigLayout, { ConfigTabs } from "../components/config/ConfigLayout";
 import classNames from "classnames";
 
 
@@ -8,6 +8,7 @@ type Props = {
 	back: ()=>void
 }
 const ConfigLayer = ({display, back}: Props) => {
+	const [activeTab, setActiveTab] = useState(ConfigTabs.game)
 	const rootRef = useRef<HTMLDivElement>(null)
 
 	useEffect(() => {
@@ -20,9 +21,13 @@ const ConfigLayer = ({display, back}: Props) => {
 			id="layer-config"
 			className={classNames("layer", {show: display})}
 			ref={rootRef}>
-			<ConfigLayout back={back} />
+			<ConfigLayout
+				back={back}
+				selectedTab={activeTab}
+				setSelectedTab={setActiveTab}
+			/>
 		</div>
 	)
 }
 
-export default ConfigLayer
+export default memo(ConfigLayer)
