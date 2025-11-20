@@ -162,10 +162,10 @@ export function phaseTexts(route: RouteName, routeDay: RouteDayName, day: number
   const titleString = strings.scenario.routes[route][routeDay as RouteDayName] ?? ""
   let dayString = ""
 
-  if (isNaN(+day))
-    dayString = strings.scenario.days[+day - 1] ?? ""
-  else if ((day as string).length > 0)
-    dayString = strings.scenario.routes['others'][day as RouteDayName<"others">] ?? ""
+  if (typeof day === "number")
+    dayString = strings.scenario.days[day - 1] ?? ""
+  else if (day in strings.scenario.routes['others'])
+    dayString = strings.scenario.routes['others'][day] ?? ""
 
   return [titleString, dayString]
 }
