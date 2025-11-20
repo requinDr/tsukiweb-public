@@ -48,7 +48,7 @@ const PageElement = ({history, content, onLoad}: Props)=> {
 			break
 		case "phase" :
 			const {phase: {route, routeDay, day}} = content as PageEntry<"phase">
-			const [phaseTitle, phaseDay] = phaseTexts(route ?? "", routeDay ?? "", day ?? 0)
+			const [phaseTitle, phaseDay] = phaseTexts(route, routeDay, day)
 			displayContent = <span className='phase'>
 				{phaseTitle && bb(phaseTitle)}
 				{phaseDay && <><br/>{bb(phaseDay)}</>}
