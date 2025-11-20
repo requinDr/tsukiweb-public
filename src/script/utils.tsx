@@ -87,12 +87,23 @@ export async function fetchScene(sceneId: string): Promise<string[]> {
 	return script?.trim().split(/\r?\n/);
 }
 
+let cachedLogicScript: string | null = null
+
 export async function fetchLogicBlock(label: string) : Promise<string[]> {
 	await waitLanguageLoad()
 
-	const path = `${scenesDir()}/${LOGIC_FILE}?v=${APP_VERSION}`
-	const logicScript = await fetch(path)
-		.then((response) => response.text())
+	if (!cachedLogicScript) {
+		const ASSETS_PATH = `${import.meta.env.BASE_URL}static/`
+		const path = `${ASSETS_PATH}${LOGIC_FILE}?v=${APP_VERSION}`
+		cachedLogicScript = await fetch(path)
+			.then(response => response.text())
+	}
+	
+	if (!cachedLogicScript) {
+		throw Error(`Failed to load logic file`)
+	}
+	
+	const logicScript = cachedLogicScript
 	
 	let start = logicScript.search(new RegExp(`^\\*${label}\\b`, "m"))
 	if (start == -1)

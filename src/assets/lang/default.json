@@ -215,6 +215,8 @@
     "waves-path": ["./jp/wave/%"],
     "waves-pd-path": ["./jp/wave-pd/%"]
   },
+  "choices": [],
+
   "scenario": {
     "days": [
       "[i]1[sup]st[/sup] day|October 21 (Thur.)",

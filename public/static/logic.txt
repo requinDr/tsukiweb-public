@@ -1,0 +1,1972 @@
+*f20
+goto *s20
+*skip20
+select `0`,*f21,`1`,*f22
+*f21
+goto *s21
+*skip21
+inc %regard_aki
+goto *f23
+*f22
+goto *s22
+*skip22
+inc %regard_cel
+goto *f23
+*f23
+if (%regard_aki==1) goto *f24
+goto *s23
+*skip23
+select `2`,*f25,`3`,*f26,`4`,*f27
+*f24
+goto *s24
+*skip24
+select `5`,*f28,`6`,*f29,`7`,*f30
+*f25
+goto *s25
+*skip25
+goto *f31
+*f26
+goto *s26
+*skip26
+goto *f31
+*f27
+goto *s27
+*skip27
+inc %regard_cel
+goto *f31
+*f28
+goto *s28
+*skip28
+goto *f31
+*f29
+goto *s29
+*skip29
+goto *f31
+*f30
+goto *s30
+*skip30
+inc %regard_aki
+inc %flgM
+goto *f31
+*f31
+goto *s31
+*skip31
+select `8`,*f32,`9`,*f33
+*f32
+if (%flgM>=1) goto *f35
+if (%regard_aki>=1) goto *f502
+goto *f36
+*f502
+goto *s502
+*skip502
+inc %flg6
+goto *f36
+*f33
+goto *s33
+*skip33
+if (%regard_cel>=2) goto *f34
+goto *f89
+*f34
+goto *s34
+*skip34
+inc %regard_cel
+goto *f36
+*f89
+goto *s89
+*skip89
+goto *f36
+*f35
+goto *s35
+*skip35
+inc %flg6
+goto *f36
+*f36
+if (%clear_hisui!=0) goto *f201
+if (%cleared!=0) goto *f37
+goto *s36
+*skip36
+goto *f40
+*f37
+goto *s37
+*skip37
+select `10`,*f38,`11`,*f39
+*f201
+goto *s201
+*skip201
+select `12`,*f38,`13`,*f39,`14`,*f202
+*f38
+inc %regard_aki
+goto *f40
+*f39
+goto *s39
+*skip39
+add %regard_his,2
+goto *f41
+*f202
+goto *s202
+*skip202
+add %regard_koha,3
+goto *f41
+*f40
+goto *s40
+*skip40
+goto *f42
+*f41
+goto *s41
+*skip41
+goto *f42
+*f42
+goto *s42
+*skip42
+select `15`,*f43,`16`,*f44,`17`,*f45
+*f43
+goto *s43
+*skip43
+inc %regard_aki
+if (%flg6>=1) goto *f46
+goto *f47
+*f44
+goto *s44
+*skip44
+inc %regard_his
+if (%flg6>=1) goto *f46
+goto *f47
+*f45
+goto *s45
+*skip45
+if (%flg6>=1) goto *f46
+goto *f47
+*f46
+goto *s46
+*skip46
+if (%clear_ark==0 && %clear_ciel==0) goto *f47a
+select `18`,*f47a,`19`,*f46b
+*f46b
+if (%regard_his>%regard_aki && %regard_his>%regard_koha) goto *f49
+if (%regard_koha>%regard_aki && %regard_koha>%regard_his) goto *f203
+goto *f48
+*f47
+goto *s47
+*skip47
+goto *f47a
+*f47a
+goto *s47a
+*skip47a
+add %regard_ark,3
+goto *f51
+*f48
+goto *s48
+*skip48
+goto *f204
+*f49
+goto *s49
+*skip49
+goto *f205
+*f203
+goto *s203
+*skip203
+goto *f205
+*f183
+goto *s183
+*skip183
+select `20`,*f186,`21`,*f184
+*f184
+goto *s184
+*skip184
+select `22`,*f185,`23`,*f186
+*f185
+goto *s185
+*skip185
+select `24`,*f187,`25`,*f186
+*f186
+goto *s186
+*skip186
+osiete *f518
+*f518
+goto *s518
+*skip518
+goto *endofplay
+*f187
+goto *s187
+*skip187
+if (%flgB>=1) goto *f188
+goto *f189
+*f188
+goto *s188
+*skip188
+osiete *f519
+*f519
+goto *s519
+*skip519
+goto *endofplay
+*f189
+goto *s189
+*skip189
+select `26`,*f190,`27`,*f191,`28`,*f192
+*f190
+goto *s190
+*skip190
+goto *f193
+*f191
+goto *s191
+*skip191
+add %regard_ark,2
+goto *f193
+*f192
+goto *s192
+*skip192
+*f193
+goto *s193
+*skip193
+goto *f194
+*f284
+goto *s284
+*skip284
+select `29`,*f285,`30`,*f286
+*f285
+goto *s285
+*skip285
+goto *f287
+*f286
+goto *s286
+*skip286
+goto *f287
+*f287
+goto *s287
+*skip287
+goto *f288
+*f365
+goto *s365
+*skip365
+select `31`,*f366,`32`,*f367,`33`,*f368,`34`,*f369
+*f366
+goto *s366
+*skip366
+dec %regard_aki
+goto *f370
+*f367
+goto *s367
+*skip367
+dec %regard_aki
+goto *f370
+*f368
+goto *s368
+*skip368
+inc %regard_aki
+goto *f370
+*f369
+goto *s369
+*skip369
+dec %regard_aki
+goto *f370
+*f370
+goto *s370
+*skip370
+select `35`,*f371,`36`,*f372
+*f371
+goto *s371
+*skip371
+goto *f373
+*f372
+goto *s372
+*skip372
+goto *f373
+*f373
+goto *s373
+*skip373
+goto *f374
+*f194
+goto *s194
+*skip194
+select `37`,*f195,`38`,*f196,`39`,*f197
+*f195
+goto *s195
+*skip195
+inc %regard_ark
+goto *f198
+*f196
+goto *s196
+*skip196
+goto *f198
+*f197
+goto *s197
+*skip197
+goto *f198
+*f198
+goto *s198
+*skip198
+goto *f199
+*f288
+goto *s288
+*skip288
+if (%regard_cel>=11) goto *f292
+goto *f289
+*f289
+goto *s289
+*skip289
+goto *f289a
+*f289a
+goto *s289a
+*skip289a
+osiete *f523
+*f523
+goto *s523
+*skip523
+goto *endofplay
+*f292
+goto *s292
+*skip292
+select `40`,*f293,`41`,*f294
+*f293
+goto *s293
+*skip293
+goto *f295
+*f294
+goto *s294
+*skip294
+inc %flgJ
+goto *f295
+*f295
+goto *s295
+*skip295
+select `42`,*f296,`43`,*f297
+*f296
+goto *s296
+*skip296
+goto *f289a
+*f297
+goto *s297
+*skip297
+select `44`,*f299,`45`,*f298
+*f298
+goto *s298
+*skip298
+osiete *f524
+*f524
+goto *s524
+*skip524
+goto *endofplay
+*f299
+goto *s299
+*skip299
+if (%flgJ>=1) goto *f301
+select `46`,*f301,`47`,*f302
+*f301
+goto *s301
+*skip301
+osiete *f525
+*f525
+goto *s525
+*skip525
+goto *endofplay
+*f302
+goto *s302
+*skip302
+select `48`,*f504,`49`,*f505
+*f504
+goto *s504
+*skip504
+goto *f307
+*f505
+goto *s505
+*skip505
+goto *f307
+*f374
+goto *s374
+*skip374
+goto *f375
+*f375
+goto *s375
+*skip375
+select `50`,*f376,`51`,*f378
+*f376
+goto *s376
+*skip376
+osiete *f537
+*f537
+goto *s537
+*skip537
+goto *endofplay
+*f378
+goto *s378
+*skip378
+select `52`,*f380,`53`,*f379
+*f379
+goto *s379
+*skip379
+osiete *f538
+*f538
+goto *s538
+*skip538
+goto *endofplay
+*f380
+goto *s380
+*skip380
+select `54`,*f381,`55`,*f509
+*f381
+goto *s381
+*skip381
+if (%regard_aki<9) goto *f382
+select `56`,*f382,`57`,*f383
+*f509
+goto *s509
+*skip509
+osiete *f539
+*f539
+goto *s539
+*skip539
+goto *endofplay
+*f382
+goto *s382
+*skip382
+osiete *f540
+*f540
+goto *s540
+*skip540
+goto *endofplay
+*f383
+goto *s383
+*skip383
+select `58`,*f385,`59`,*f384
+*f384
+goto *s384
+*skip384
+osiete *f542
+*f542
+goto *s542
+*skip542
+goto *endofplay
+*f385
+goto *s385
+*skip385
+osiete *f541
+*f541
+goto *s541
+*skip541
+goto *endofplay
+*f199
+goto *s199
+*skip199
+if (%clear_ark_true!=0) goto *f503
+*f199_0
+goto *f52
+*f503
+goto *s503
+*skip503
+select `60`,*f52a,`61`,*f53a
+*f52
+goto *s52
+*skip52
+goto *f52a
+*f52a
+goto *s52a
+*skip52a
+osiete *f520
+*f520
+goto *s520
+*skip520
+goto *endofplay
+*f53
+goto *s53
+*skip53
+goto *f53a
+*f53a
+goto *s53a
+*skip53a
+osiete *f521
+*f521
+goto *s521
+*skip521
+goto *endofplay
+*f307
+goto *s307
+*skip307
+select `62`,*f308,`63`,*f310
+*f308
+goto *s308
+*skip308
+osiete *f526
+*f526
+goto *s526
+*skip526
+goto *endofplay
+*f310
+goto *s310
+*skip310
+osiete *f527
+*f527
+goto *s527
+*skip527
+goto *endofplay
+*f403
+goto *s403
+*skip403
+goto *f405
+*f404
+goto *s404
+*skip404
+goto *f405
+*f405
+goto *s405
+*skip405
+select `64`,*f407,`65`,*f406
+*f406
+goto *s406
+*skip406
+goto *f408
+*f407
+goto *s407
+*skip407
+goto *f408
+*f408
+goto *s408
+*skip408
+if (%regard_his<5) goto *f410
+goto *f409
+*f409
+goto *s409
+*skip409
+if (%clear_hisui!=0) goto *f411
+goto *f412
+*f410
+goto *s410
+*skip410
+osiete *f529
+*f529
+goto *s529
+*skip529
+goto *endofplay
+*f411
+select `66`,*f412,`67`,*f413
+*f412
+goto *s412
+*skip412
+osiete *f530
+*f530
+goto *s530
+*skip530
+goto *endofplay
+*f413
+goto *s413
+*skip413
+osiete *f531
+*f531
+goto *s531
+*skip531
+goto *endofplay
+*f416
+goto *s416
+*skip416
+select `68`,*f417,`69`,*f418
+*f417
+goto *s417
+*skip417
+inc %flgR
+goto *f419
+*f418
+goto *s418
+*skip418
+goto *f419
+*f419
+goto *s419
+*skip419
+select `70`,*f420,`71`,*f421
+*f420
+goto *s420
+*skip420
+goto *f422
+*f421
+goto *s421
+*skip421
+goto *f422
+*f422
+goto *s422
+*skip422
+if (%flgR>=1) goto *f423
+goto *f424
+*f423
+goto *s423
+*skip423
+goto *f425
+*f424
+goto *s424
+*skip424
+goto *f425
+*f425
+goto *s425
+*skip425
+select `72`,*f426,`73`,*f427
+*f426
+goto *s426
+*skip426
+osiete *f543
+*f543
+goto *s543
+*skip543
+goto *endofplay
+*f427
+goto *s427
+*skip427
+select `74`,*f429,`75`,*f428
+*f428
+goto *s428
+*skip428
+osiete *f544
+*f544
+goto *s544
+*skip544
+goto *endofplay
+*f429
+goto *s429
+*skip429
+osiete *f545
+*f545
+goto *s545
+*skip545
+goto *endofplay
+*f51
+goto *s51
+*skip51
+select `76`,*f54,`77`,*f55,`78`,*f56
+*f54
+goto *s54
+*skip54
+goto *f57
+*f55
+goto *s55
+*skip55
+goto *f57
+*f56
+goto *s56
+*skip56
+goto *f57
+*f57
+goto *s57
+*skip57
+if (%regard_cel>=3) goto *f59
+*f58
+goto *s58
+*skip58
+select `79`,*f60,`80`,*f61
+*f59
+goto *s59
+*skip59
+select `81`,*f62,`82`,*f63,`83`,*f64
+*f60
+goto *s60
+*skip60
+goto *f65
+*f61
+goto *s61
+*skip61
+goto *f65
+*f62
+goto *s62
+*skip62
+goto *f65
+*f63
+goto *s63
+*skip63
+goto *f65
+*f64
+goto *s64
+*skip64
+inc %regard_cel
+inc %flg1
+goto *f65
+*f65
+goto *s65
+*skip65
+select `84`,*f66,`85`,*f67
+*f66
+if (%regard_cel>=4) goto *f68
+goto *s66
+*skip66
+goto *f69
+*f67
+if (%regard_cel>=2) goto *f68
+goto *s67
+*skip67
+goto *f69
+*f68
+goto *s68
+*skip68
+add %regard_cel,2
+goto *f74
+*f204
+goto *s204
+*skip204
+inc %flgP
+select `86`,*f304,`87`,*f123,`88`,*f124
+*f205
+goto *s205
+*skip205
+select `89`,*f304,`90`,*f123,`91`,*f124
+*f304
+goto *s304
+*skip304
+inc %regard_aki
+goto *f206
+*f123
+goto *s123
+*skip123
+inc %regard_koha
+goto *f206
+*f124
+goto *s124
+*skip124
+goto *f206
+*f206
+goto *s206
+*skip206
+select `92`,*f207,`93`,*f208
+*f207
+goto *s207
+*skip207
+goto *f208half
+*f208
+goto *s208
+*skip208
+goto *f208half
+*f208half
+if (%flgP>=1) goto *f209
+goto *f210
+*f209
+goto *s209
+*skip209
+goto *f209a
+*f209a
+goto *s209a
+*skip209a
+goto *f211
+*f210
+goto *s210
+*skip210
+select `94`,*f209a,`95`,*f212
+*f212
+goto *s212
+*skip212
+select `96`,*f214,`97`,*f213,`98`,*f215
+*f213
+goto *s213
+*skip213
+inc %regard_koha
+goto *f216
+*f214
+goto *s214
+*skip214
+inc %regard_his
+goto *f216
+*f215
+goto *s215
+*skip215
+goto *f216
+*f216
+goto *s216
+*skip216
+goto *f211
+*f211
+goto *s211
+*skip211
+select `99`,*f211half,`100`,*f234
+*f211half
+if (%flgP>=1) goto *f217
+goto *f218
+*f217
+goto *s217
+*skip217
+goto *f235
+*f218
+goto *s218
+*skip218
+goto *f236
+*f234
+goto *s234
+*skip234
+osiete *f532
+*f532
+goto *s532
+*skip532
+goto *endofplay
+*f69
+goto *s69
+*skip69
+select `101`,*f70,`102`,*f71,`103`,*f72
+*f70
+goto *s70
+*skip70
+goto *f73
+*f71
+goto *s71
+*skip71
+goto *f73
+*f72
+goto *s72
+*skip72
+goto *f73
+*f73
+goto *s73
+*skip73
+goto *f75
+*f74
+goto *s74
+*skip74
+inc %flg2
+goto *f75
+*f75
+goto *s75
+*skip75
+select `104`,*f76,`105`,*f77,`106`,*f78
+*f76
+goto *s76
+*skip76
+inc %regard_ark
+if (%flg2>=1) goto *f79
+goto *f80
+*f77
+goto *s77
+*skip77
+if (%flg2>=1) goto *f79
+goto *f80
+*f78
+goto *s78
+*skip78
+inc %flg3
+if (%flg2>=1) goto *f79
+goto *f80
+*f79
+goto *s79
+*skip79
+goto *f80
+*f80
+goto *s80
+*skip80
+select `107`,*f84,`108`,*f81
+*f81
+goto *s81
+*skip81
+inc %regard_ark
+select `109`,*f82,`110`,*f83
+*f82
+goto *s82
+*skip82
+inc %regard_ark
+goto *f88
+*f83
+goto *s83
+*skip83
+goto *f88
+*f84
+goto *s84
+*skip84
+dec %regard_ark
+if (%flg3>=1) goto *f86
+select `111`,*f86,`112`,*f87
+*f86
+goto *s86
+*skip86
+osiete *f511
+*f511
+goto *s511
+*skip511
+goto *endofplay
+*f87
+goto *s87
+*skip87
+goto *f88
+*f88
+goto *s88
+*skip88
+select `113`,*f90,`114`,*f85
+*f90
+if (%regard_cel>%regard_ark) goto *f91
+goto *s90
+*skip90
+goto *f94
+*f91
+goto *s91
+*skip91
+if (%flg2>=1) goto *f93
+goto *f92
+*f85
+goto *s85
+*skip85
+osiete *f512
+*f512
+goto *s512
+*skip512
+goto *endofplay
+*f92
+goto *s92
+*skip92
+osiete *f513
+*f513
+goto *s513
+*skip513
+goto *endofplay
+*f93
+goto *s93
+*skip93
+goto *f98
+*f235
+goto *s235
+*skip235
+select `115`,*f237,`116`,*f238,`117`,*f239
+*f236
+goto *s236
+*skip236
+goto *f242half
+*f237
+goto *s237
+*skip237
+goto *f240
+*f238
+goto *s238
+*skip238
+goto *f240
+*f239
+goto *s239
+*skip239
+goto *f240
+*f240
+goto *s240
+*skip240
+select `118`,*f241,`119`,*f242
+*f241
+goto *s241
+*skip241
+goto *f242half
+*f242
+goto *s242
+*skip242
+inc %flgK
+goto *f242half
+*f242half
+select `120`,*f243,`121`,*f290,`122`,*f291
+*f243
+goto *s243
+*skip243
+goto *f291half
+*f290
+goto *s290
+*skip290
+goto *f291half
+*f291
+goto *s291
+*skip291
+goto *f291half
+*f291half
+if (%flgP>=1) goto *f312
+goto *f313
+*f312
+goto *s312
+*skip312
+goto *f312a
+*f312a
+if (%flgK>=1) goto *f314
+goto *s312a
+*skip312a
+goto *f305
+*f313
+goto *s313
+*skip313
+if (%regard_his>=%regard_koha) goto *f315
+goto *f316
+*f314
+goto *s314
+*skip314
+osiete *f533
+*f533
+goto *s533
+*skip533
+goto *endofplay
+*f315
+goto *s315
+*skip315
+goto *f306
+*f316
+goto *s316
+*skip316
+goto *f306
+*f94
+goto *s94
+*skip94
+select `123`,*f95,`124`,*f96
+*f95
+goto *s95
+*skip95
+inc %regard_ark
+goto *f97
+*f96
+goto *s96
+*skip96
+goto *f97
+*f97
+goto *s97
+*skip97
+select `125`,*f101,`126`,*f99
+*f98
+goto *s98
+*skip98
+select `127`,*f95,`128`,*f96
+*f99
+goto *s99
+*skip99
+select `129`,*f101,`130`,*f100
+*f100
+goto *s100
+*skip100
+osiete *f514
+*f514
+goto *s514
+*skip514
+goto *endofplay
+*f101
+goto *s101
+*skip101
+select `131`,*f102,`132`,*f103
+*f102
+goto *s102
+*skip102
+goto *f104
+*f103
+goto *s103
+*skip103
+goto *f104
+*f104
+goto *s104
+*skip104
+if (%flg2>=1) goto *f106
+goto *f105
+*f105
+goto *s105
+*skip105
+goto *f108
+*f106
+goto *s106
+*skip106
+goto *f200
+*f305
+goto *s305
+*skip305
+select `133`,*f303,`134`,*f317
+*f306
+goto *s306
+*skip306
+if (%regard_koha>=3) goto *f317
+select `135`,*f414,`136`,*f317
+*f303
+goto *s303
+*skip303
+inc %flgH
+select `137`,*f326,`138`,*f327,`139`,*f328
+*f414
+goto *s414
+*skip414
+goto *f386
+*f317
+goto *s317
+*skip317
+if (%flgP>=1) goto *f320
+select `140`,*f318,`141`,*f319
+*f318
+goto *s318
+*skip318
+goto *f321
+*f319
+goto *s319
+*skip319
+inc %regard_his
+goto *f321
+*f320
+goto *s320
+*skip320
+inc %regard_aki
+goto *f321
+*f321
+goto *s321
+*skip321
+if (%flgP!=0) goto *f322
+if (%regard_koha>%regard_his && %clear_hisui!=0) goto *f324
+goto *f323
+*f322
+goto *s322
+*skip322
+goto *f325
+*f323
+goto *s323
+*skip323
+inc %regard_his
+goto *f386
+*f324
+goto *s324
+*skip324
+goto *f416
+*f108
+goto *s108
+*skip108
+select `142`,*f109,`143`,*f110,`144`,*f111
+*f109
+goto *s109
+*skip109
+goto *f112
+*f110
+goto *s110
+*skip110
+goto *f112
+*f111
+goto *s111
+*skip111
+goto *f112
+*f112
+goto *s112
+*skip112
+select `145`,*f113,`146`,*f114,`147`,*f115
+*f113
+goto *s113
+*skip113
+inc %regard_ark
+goto *f116
+*f114
+goto *s114
+*skip114
+goto *f116
+*f115
+goto *s115
+*skip115
+goto *f116
+*f116
+goto *s116
+*skip116
+goto *f116a
+*f116a
+goto *s116a
+*skip116a
+if (%cleared!=0) goto *f117
+select `148`,*f118,`149`,*f119,`150`,*f120
+*f117
+select `151`,*f118,`152`,*f119,`153`,*f120,`154`,*f121,`155`,*f122
+*f118
+goto *s118
+*skip118
+add %regard_ark,3
+goto *f125
+*f119
+goto *s119
+*skip119
+add %regard_cel,3
+goto *f126
+*f120
+goto *s120
+*skip120
+add %regard_aki,3
+goto *f128
+*f121
+goto *s121
+*skip121
+goto *f129
+*f122
+goto *s122
+*skip122
+goto *f127
+*f200
+goto *s200
+*skip200
+select `156`,*f219,`157`,*f220,`158`,*f221
+*f219
+goto *s219
+*skip219
+goto *f222
+*f220
+goto *s220
+*skip220
+goto *f222
+*f221
+goto *s221
+*skip221
+goto *f222
+*f222
+goto *s222
+*skip222
+select `159`,*f223,`160`,*f224
+*f223
+goto *s223
+*skip223
+goto *f225
+*f224
+goto *s224
+*skip224
+inc %flgC
+goto *f225
+*f225
+goto *s225
+*skip225
+select `161`,*f226,`162`,*f227
+*f226
+goto *s226
+*skip226
+goto *f228
+*f227
+goto *s227
+*skip227
+inc %flgD
+goto *f228
+*f228
+goto *s228
+*skip228
+if (%flgD>=1) goto *f230
+goto *f229
+*f229
+goto *s229
+*skip229
+goto *f233
+*f230
+goto *s230
+*skip230
+select `163`,*f231,`164`,*f232
+*f231
+goto *s231
+*skip231
+goto *f233
+*f232
+goto *s232
+*skip232
+inc %regard_cel
+goto *f233
+*f233
+goto *s233
+*skip233
+inc %flgE
+goto *f116a
+*f325
+goto *s325
+*skip325
+select `165`,*f326,`166`,*f327,`167`,*f328
+*f326
+goto *s326
+*skip326
+inc %flgL
+goto *f329
+*f327
+goto *s327
+*skip327
+goto *f329
+*f328
+goto *s328
+*skip328
+goto *f329
+*f329
+goto *s329
+*skip329
+select `168`,*f331,`169`,*f330
+*f330
+goto *s330
+*skip330
+inc %regard_aki
+goto *f331half
+*f331
+goto *s331
+*skip331
+goto *f331half
+*f331half
+if (%flgL>=1) goto *f333
+goto *f332
+*f332
+goto *s332
+*skip332
+goto *f334
+*f333
+goto *s333
+*skip333
+goto *f334
+*f334
+goto *s334
+*skip334
+select `170`,*f335,`171`,*f336,`172`,*f337
+*f335
+goto *s335
+*skip335
+goto *f338
+*f336
+goto *s336
+*skip336
+inc %flgN
+goto *f338
+*f337
+goto *s337
+*skip337
+inc %flgS
+goto *f338
+*f338
+goto *s338
+*skip338
+select `173`,*f338a,`174`,*f338b
+*f338a
+if (%flgN>=1) goto *f339
+goto *f340
+*f338b
+if (%flgS>=1) goto *f341
+goto *f342
+*f339
+goto *s339
+*skip339
+goto *f343
+*f340
+goto *s340
+*skip340
+goto *f343
+*f341
+goto *s341
+*skip341
+inc %flgO
+goto *f343
+*f342
+goto *s342
+*skip342
+goto *f343
+*f386
+goto *s386
+*skip386
+select `175`,*f387,`176`,*f388,`177`,*f389
+*f387
+goto *s387
+*skip387
+goto *f390
+*f388
+goto *s388
+*skip388
+goto *f390
+*f389
+goto *s389
+*skip389
+goto *f390
+*f390
+goto *s390
+*skip390
+goto *f391
+*f125
+goto *s125
+*skip125
+inc %flg4
+goto *f129
+*f126
+goto *s126
+*skip126
+inc %flg5
+goto *f129
+*f127
+goto *s127
+*skip127
+goto *f129
+*f128
+goto *s128
+*skip128
+goto *f129
+*f129
+goto *s129
+*skip129
+select `178`,*f130,`179`,*f131,`180`,*f132
+*f130
+goto *s130
+*skip130
+goto *f133
+*f131
+goto *s131
+*skip131
+goto *f133
+*f132
+goto *s132
+*skip132
+goto *f133
+*f133
+if (%flg5>=1) goto *f134
+goto *s133
+*skip133
+goto *f135
+*f134
+goto *s134
+*skip134
+goto *f135
+*f135
+if (%flgE>=1) goto *f244
+goto *s135
+*skip135
+select `181`,*f138,`182`,*f136
+*f136
+if (%regard_ark>=8) goto *f137
+goto *s136
+*skip136
+inc %flg8
+goto *f139
+*f137
+goto *s137
+*skip137
+inc %regard_ark
+goto *f139
+*f138
+goto *s138
+*skip138
+inc %flg7
+goto *f139
+*f139
+goto *s139
+*skip139
+if (%flg4>=1) goto *f140
+goto *f141
+*f140
+goto *s140
+*skip140
+goto *f142
+*f141
+goto *s141
+*skip141
+goto *f142
+*f142
+goto *s142
+*skip142
+goto *f143
+*f244
+goto *s244
+*skip244
+select `183`,*f245,`184`,*f246
+*f245
+goto *s245
+*skip245
+goto *f249
+*f246
+goto *s246
+*skip246
+if (%flg1>=1) goto *f248
+goto *f247
+*f247
+goto *s247
+*skip247
+goto *f249
+*f248
+goto *s248
+*skip248
+inc %regard_cel
+goto *f249
+*f249
+goto *s249
+*skip249
+select `185`,*f250,`186`,*f251,`187`,*f252
+*f250
+goto *s250
+*skip250
+goto *f253
+*f251
+goto *s251
+*skip251
+inc %flgI
+goto *f253
+*f252
+goto *s252
+*skip252
+goto *f253
+*f253
+goto *s253
+*skip253
+if (%flg4>=1) goto *f254
+goto *f255
+*f254
+goto *s254
+*skip254
+goto *f256
+*f255
+goto *s255
+*skip255
+goto *f256
+*f256
+goto *s256
+*skip256
+select `188`,*f257,`189`,*f258
+*f257
+goto *s257
+*skip257
+sub %regard_cel,4
+goto *f259
+*f258
+goto *s258
+*skip258
+add %regard_cel,3
+goto *f259
+*f259
+goto *s259
+*skip259
+goto *f260
+*f343
+goto *s343
+*skip343
+select `190`,*f344,`191`,*f345,`192`,*f346
+*f344
+goto *s344
+*skip344
+add %regard_aki,2
+goto *f347
+*f345
+goto *s345
+*skip345
+inc %regard_aki
+goto *f347
+*f346
+goto *s346
+*skip346
+goto *f347
+*f347
+goto *s347
+*skip347
+select `193`,*f348,`194`,*f349
+*f348
+goto *s348
+*skip348
+inc %regard_aki
+goto *f350
+*f349
+goto *s349
+*skip349
+dec %regard_aki
+goto *f350
+*f350
+goto *s350
+*skip350
+select `195`,*f351,`196`,*f352
+*f351
+goto *s351
+*skip351
+goto *f353
+*f352
+goto *s352
+*skip352
+goto *f353
+*f391
+goto *s391
+*skip391
+select `197`,*f392,`198`,*f393
+*f392
+goto *s392
+*skip392
+goto *f394
+*f393
+goto *s393
+*skip393
+goto *f396
+*f394
+goto *s394
+*skip394
+select `199`,*f395,`200`,*f396
+*f395
+goto *s395
+*skip395
+select `201`,*f397,`202`,*f398
+*f396
+goto *s396
+*skip396
+osiete *f528
+*f528
+goto *s528
+*skip528
+goto *endofplay
+*f397
+goto *s397
+*skip397
+goto *f399
+*f398
+goto *s398
+*skip398
+goto *f399
+*f143
+if (%flg7>=1) goto *f144
+if (%flg8>=1) goto *f145
+goto *s143
+*skip143
+select `203`,*f146,`204`,*f147,`205`,*f148
+*f144
+goto *s144
+*skip144
+goto *f149
+*f145
+goto *s145
+*skip145
+goto *f149
+*f146
+goto *s146
+*skip146
+goto *f149
+*f147
+goto *s147
+*skip147
+goto *f149
+*f148
+goto *s148
+*skip148
+goto *f149
+*f149
+goto *s149
+*skip149
+select `206`,*f150,`207`,*f151,`208`,*f152
+*f150
+goto *s150
+*skip150
+inc %regard_ark
+goto *f153
+*f151
+goto *s151
+*skip151
+goto *f153
+*f152
+goto *s152
+*skip152
+goto *f153
+*f153
+goto *s153
+*skip153
+select `209`,*f154,`210`,*f155
+*f154
+goto *s154
+*skip154
+goto *f156
+*f155
+goto *s155
+*skip155
+inc %flg9
+goto *f156
+*f156
+goto *s156
+*skip156
+if (%flg9>=1) goto *f158
+goto *f157
+*f157
+goto *s157
+*skip157
+goto *f159
+*f158
+goto *s158
+*skip158
+osiete *f515
+*f515
+goto *s515
+*skip515
+goto *endofplay
+*f260
+goto *s260
+*skip260
+select `211`,*f261,`212`,*f262
+*f261
+goto *s261
+*skip261
+if (%flgC==0 && %flgI==0) goto *f263
+if (%flgC>=1 && %flgI>=1) goto *f264
+if (%flgC==0 && %flgI>=1) goto *f265
+if (%flgC>=1 && %flgI==0) goto *f266
+*f262
+goto *s262
+*skip262
+if (%flgC==0 && %flgI==0) goto *f263
+if (%flgC>=1 && %flgI>=1) goto *f264
+if (%flgC==0 && %flgI>=1) goto *f265
+if (%flgC>=1 && %flgI==0) goto *f266
+*f263
+goto *s263
+*skip263
+goto *f267
+*f264
+goto *s264
+*skip264
+goto *f267
+*f265
+goto *s265
+*skip265
+goto *f267
+*f266
+goto *s266
+*skip266
+goto *f267
+*f267
+goto *s267
+*skip267
+select `213`,*f268,`214`,*f269
+*f268
+goto *s268
+*skip268
+goto *f270
+*f269
+goto *s269
+*skip269
+goto *f270
+*f270
+goto *s270
+*skip270
+goto *f271
+*f271
+goto *s271
+*skip271
+goto *f273
+*f272
+goto *f273
+*f353
+goto *s353
+*skip353
+select `215`,*f354,`216`,*f355
+*f354
+goto *s354
+*skip354
+select `217`,*f356,`218`,*f357
+*f355
+goto *s355
+*skip355
+select `219`,*f356,`220`,*f357
+*f356
+goto *s356
+*skip356
+inc %regard_aki
+goto *f358
+*f357
+goto *s357
+*skip357
+goto *f358
+*f358
+goto *s358
+*skip358
+if (%flgO>=1) goto *f360
+select `221`,*f358half,`222`,*f360
+*f358half
+goto *f359
+*f359
+goto *s359
+*skip359
+goto *f361
+*f360
+goto *s360
+*skip360
+osiete *f534
+*f534
+goto *s534
+*skip534
+goto *endofplay
+*f415
+goto *s415
+*skip415
+goto *f361
+*f399
+goto *s399
+*skip399
+select `223`,*f400,`224`,*f401
+*f400
+goto *s400
+*skip400
+goto *f402
+*f401
+goto *s401
+*skip401
+inc %regard_his
+goto *f402
+*f402
+goto *s402
+*skip402
+select `225`,*f404,`226`,*f403
+*f159
+goto *s159
+*skip159
+select `227`,*f160,`228`,*f161
+*f160
+goto *s160
+*skip160
+goto *f162
+*f161
+goto *s161
+*skip161
+goto *f107
+*f107
+goto *s107
+*skip107
+goto *f107a
+*f107a
+goto *s107a
+*skip107a
+osiete *f516
+*f516
+goto *s516
+*skip516
+goto *endofplay
+*f361
+goto *s361
+*skip361
+if (%flgO>=1) goto *f364
+select `229`,*f362,`230`,*f364
+*f162
+goto *s162
+*skip162
+select `231`,*f163,`232`,*f167
+*f163
+goto *s163
+*skip163
+select `233`,*f164,`234`,*f165,`235`,*f166
+*f164
+goto *s164
+*skip164
+goto *f168
+*f165
+goto *s165
+*skip165
+inc %regard_ark
+goto *f168
+*f166
+goto *s166
+*skip166
+dec %regard_ark
+goto *f168
+*f167
+goto *s167
+*skip167
+goto *f107a
+*f168
+goto *s168
+*skip168
+select `236`,*f169,`237`,*f170,`238`,*f171
+*f169
+goto *s169
+*skip169
+add %regard_ark,2
+goto *f172
+*f170
+goto *s170
+*skip170
+dec %regard_ark
+goto *f172
+*f171
+goto *s171
+*skip171
+goto *f172
+*f172
+goto *s172
+*skip172
+select `239`,*f173,`240`,*f174,`241`,*f175
+*f173
+goto *s173
+*skip173
+inc %flgA
+goto *f176
+*f174
+goto *s174
+*skip174
+goto *f176
+*f175
+goto *s175
+*skip175
+goto *f176
+*f176
+goto *s176
+*skip176
+if (%flgA==0) goto *f177
+goto *f178
+*f177
+goto *s177
+*skip177
+goto *f178
+*f178
+goto *s178
+*skip178
+select `242`,*f179,`243`,*f180,`244`,*f500
+*f179
+goto *s179
+*skip179
+goto *f510
+*f510
+goto *s510
+*skip510
+goto *endofplay
+*f180
+goto *s180
+*skip180
+select `245`,*f181,`246`,*f182
+*f500
+goto *s500
+*skip500
+osiete *f517
+*f517
+goto *s517
+*skip517
+goto *endofplay
+*f181
+goto *s181
+*skip181
+goto *f183
+*f182
+goto *s182
+*skip182
+inc %flgB
+goto *f183
+*f273
+goto *s273
+*skip273
+select `247`,*f274,`248`,*f275,`249`,*f276
+*f274
+goto *s274
+*skip274
+goto *f277
+*f275
+goto *s275
+*skip275
+goto *f277
+*f276
+goto *s276
+*skip276
+goto *f277
+*f277
+goto *s277
+*skip277
+select `250`,*f278,`251`,*f279
+*f278
+goto *s278
+*skip278
+goto *f282
+*f279
+goto *s279
+*skip279
+select `252`,*f280,`253`,*f281
+*f280
+goto *s280
+*skip280
+goto *f282
+*f281
+goto *s281
+*skip281
+if (%regard_cel>=9) goto *f283
+goto *f282
+*f282
+goto *s282
+*skip282
+osiete *f522
+*f522
+goto *s522
+*skip522
+goto *endofplay
+*f283
+goto *s283
+*skip283
+goto *f284
+*f362
+goto *s362
+*skip362
+select `254`,*f501,`255`,*f363
+*f501
+goto *s501
+*skip501
+osiete *f536
+*f536
+goto *s536
+*skip536
+goto *endofplay
+*f363
+goto *s363
+*skip363
+goto *f365
+*f364
+goto *s364
+*skip364
+osiete *f535
+*f535
+goto *s535
+*skip535
+goto *endofplay

@@ -10,6 +10,7 @@ import { CommandToken, ConditionToken, ErrorToken, LabelToken, ReturnToken, Text
 import { generate } from './utils/nscriptr_convert.js';
 import { fixContexts, getScenes } from './utils/scenes.js';
 import { logError, logProgress } from '../utils/logging.js';
+import { extractChoicesFromLogic, replaceChoicesWithIndices, updateGameJsonWithChoices } from './utils/choices_extractor.js';
 
 const LOGIC_FILE = "logic"
 const CONDITION_REGEXP = /^(?<lhs>(%\w+|\d+))(?<op>[=!><]+)(?<rhs>(%\w+|\d+))$/
@@ -535,6 +536,7 @@ const fullscripts = [
 export function main() {
 	const totalScripts = fullscripts.length
 	let processedCount = 0
+	const languageLogicFiles = new Map()
 
 	for (const [folder, file] of fullscripts) {
 		processedCount++
@@ -558,10 +560,35 @@ export function main() {
 			}
 
 			generate(outputPath, tokens, getLabelFile, tsukihime_fixes)
+			
+			const logicPath = path.join(outputPath, `${LOGIC_FILE}.txt`)
+			if (fs.existsSync(logicPath)) {
+				const logicContent = fs.readFileSync(logicPath, 'utf-8')
+				const choices = extractChoicesFromLogic(logicContent)
+				const gameJsonPath = path.join(outputPathPrefix, folder, 'game.json')
+				updateGameJsonWithChoices(gameJsonPath, choices)
+				
+				if (folder === 'jp') {
+					languageLogicFiles.set(folder, logicContent)
+				}
+				
+				fs.unlinkSync(logicPath)
+			}
 		} catch (e) {
 			logError(`Error processing ${file}: ${e.message}`)
 		}
 	}
+	
+	if (languageLogicFiles.has('jp')) {
+		const modifiedContent = replaceChoicesWithIndices(languageLogicFiles.get('jp'))
+		const centralLogicPath = path.join(outputPathPrefix, 'logic.txt')
+		const dir = path.dirname(centralLogicPath)
+		if (!fs.existsSync(dir)) {
+			fs.mkdirSync(dir, { recursive: true })
+		}
+		fs.writeFileSync(centralLogicPath, modifiedContent)
+	}
+	
 	logProgress(`Processing Tsukihime scripts: ${processedCount}/${totalScripts}\n`)
 }
 

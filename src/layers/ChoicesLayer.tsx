@@ -4,6 +4,7 @@ import history from "../utils/history"
 import { Bbcode } from "@tsukiweb-common/utils/Bbcode"
 import { ScriptPlayer } from "script/ScriptPlayer"
 import { preprocessText } from "@tsukiweb-common/utils/utils"
+import { strings } from "../translation/lang"
 
 
 type SelectionCallback = (choice: Choice)=>void
@@ -28,9 +29,20 @@ function processSelect(setChoices: (choices: Choice[])=>void,
       console.error(`Could not parse choices in "select ${arg}"`)
     // remove ` or " at beginning and end of text regexp label, trim text
     const trimmedText = text.substring(1, text.length-1).trim()
+    
+    // Look up choice text in translations if it's an index
+    let choiceText = trimmedText
+    const choiceIndex = parseInt(trimmedText)
+    if (!isNaN(choiceIndex) && choiceIndex >= 0 && choiceIndex < strings.choices.length) {
+      const translatedChoice = strings.choices[choiceIndex]
+      if (translatedChoice !== undefined) {
+        choiceText = translatedChoice
+      }
+    }
+    
     choices.push({
       index: choices.length,
-      str: preprocessText(trimmedText), 
+      str: preprocessText(choiceText), 
       label: label.trim() as LabelName
     })
   }
