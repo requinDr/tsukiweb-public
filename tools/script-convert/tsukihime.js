@@ -7,11 +7,25 @@ import path from 'path';
 import { fileURLToPath } from 'url'
 import { parseScript } from './parsers/nscriptr.js';
 import { CommandToken, ConditionToken, ErrorToken, LabelToken, ReturnToken, TextToken, Token } from './parsers/utils.js'
-import { generate } from './utils/nscriptr_convert.js';
+import { generateScenes, writeScenes } from './utils/nscriptr_convert.js';
 import { fixContexts, getScenes } from './utils/scenes.js';
 import { logError, logProgress } from '../utils/logging.js';
 import { extractChoicesFromLogic, replaceChoicesWithIndices, updateGameJsonWithChoices } from './utils/choices_extractor.js';
 
+
+const outputPathPrefix = '../../public/static/'
+const outputDir = 'scenes'
+const fullscripts = [
+	['jp', 'fullscript_jp.txt'],
+	['en-mm', 'fullscript_en-mm.txt'],
+	['es-tohnokun', 'fullscript_es-tohnokun.txt'],
+	['it-riffour', 'fullscript_it-riffour.txt'],
+	['pt-matsuri', 'fullscript_pt-matsuri.txt'],
+	['ko-wolhui', 'fullscript_ko-wolhui.txt'],
+	['ru-ciel', 'fullscript_ru-ciel.txt'],
+	['zh-tw-yueji_yeren_hanhua_zu', 'fullscript_zh-tw-yueji_yeren_hanhua_zu.txt'],
+	['zh-yueji_yeren_hanhua_zu', 'fullscript_zh-yueji_yeren_hanhua_zu.txt'],
+]
 const LOGIC_FILE = "logic"
 const CONDITION_REGEXP = /^(?<lhs>(%\w+|\d+))(?<op>[=!><]+)(?<rhs>(%\w+|\d+))$/
 
@@ -519,68 +533,75 @@ function raw_fixes(language, text) {
 }
 
 
-const outputPathPrefix = '../../public/static/'
-const outputDir = 'scenes'
-const fullscripts = [
-	['jp', 'fullscript_jp.txt'],
-	['en-mm', 'fullscript_en-mm.txt'],
-	['es-tohnokun', 'fullscript_es-tohnokun.txt'],
-	['it-riffour', 'fullscript_it-riffour.txt'],
-	['pt-matsuri', 'fullscript_pt-matsuri.txt'],
-	['ko-wolhui', 'fullscript_ko-wolhui.txt'],
-	['ru-ciel', 'fullscript_ru-ciel.txt'],
-	['zh-tw-yueji_yeren_hanhua_zu', 'fullscript_zh-tw-yueji_yeren_hanhua_zu.txt'],
-	['zh-yueji_yeren_hanhua_zu', 'fullscript_zh-yueji_yeren_hanhua_zu.txt'],
-]
+/**
+ * @param {string} folder
+ * @param {string} filename
+ * @param {string|null} outputDir
+ * @returns {string|null} Logic file content
+ */
+function processSingleScript(folder, filename, outputDir) {
+	const fullscriptPath = path.join(outputPathPrefix, folder, filename)
+
+	if (!fs.existsSync(fullscriptPath)) {
+		logError(`Input file not found: ${fullscriptPath}`)
+		return null
+	}
+
+	const txt = fs.readFileSync(fullscriptPath, 'utf-8')
+	const tokens = parseScript(raw_fixes(folder, txt))
+	const fileContents = generateScenes(tokens, getLabelFile, tsukihime_fixes)
+
+	const outputPath = outputDir
+		? path.join(outputPathPrefix, folder, outputDir)
+		: null
+
+	if (outputPath) {
+		const scenesList = new Map(fileContents)
+		scenesList.delete(LOGIC_FILE)
+		writeScenes(outputPath, scenesList)
+	}
+
+	return fileContents.get(LOGIC_FILE) || null
+}
+
 
 export function main() {
 	const totalScripts = fullscripts.length
-	let processedCount = 0
-	const languageLogicFiles = new Map()
+	const languageLogicScripts = new Map()
 
-	for (const [folder, file] of fullscripts) {
+	// Phase 1: Generate scenes
+	let processedCount = 0
+	for (const [folder, filename] of fullscripts) {
 		processedCount++
-		logProgress(`Processing Tsukihime scripts: ${processedCount}/${totalScripts} (${file})`)
+		logProgress(`Processing Tsukihime scripts: ${processedCount}/${totalScripts} (${filename})`)
 
 		try {
-			const fullscriptPath = path.join(outputPathPrefix, folder, file)
-			if (!fs.existsSync(fullscriptPath)) {
-				logError(`Input file not found: ${fullscriptPath}`)
-				continue
-			}
-
-			const txt = fs.readFileSync(fullscriptPath, 'utf-8')
-			const tokens = parseScript(raw_fixes(folder, txt))
-			const outputPath = outputDir
-				? path.join(outputPathPrefix, folder, outputDir)
-				: null
-	
-			if (outputPath && !fs.existsSync(outputPath)) {
-				fs.mkdirSync(outputPath, { recursive: true })
-			}
-
-			generate(outputPath, tokens, getLabelFile, tsukihime_fixes)
+			const logicContent = processSingleScript(folder, filename, outputDir)
 			
-			const logicPath = path.join(outputPath, `${LOGIC_FILE}.txt`)
-			if (fs.existsSync(logicPath)) {
-				const logicContent = fs.readFileSync(logicPath, 'utf-8')
-				const choices = extractChoicesFromLogic(logicContent)
-				const gameJsonPath = path.join(outputPathPrefix, folder, 'game.json')
-				updateGameJsonWithChoices(gameJsonPath, choices)
-				
-				if (folder === 'jp') {
-					languageLogicFiles.set(folder, logicContent)
-				}
-				
-				fs.unlinkSync(logicPath)
+			if (logicContent) {
+				languageLogicScripts.set(folder, logicContent)
 			}
 		} catch (e) {
-			logError(`Error processing ${file}: ${e.message}`)
+			logError(`Error processing ${filename}: ${e.message}`)
 		}
 	}
 	
-	if (languageLogicFiles.has('jp')) {
-		const modifiedContent = replaceChoicesWithIndices(languageLogicFiles.get('jp'))
+	logProgress(`Processing Tsukihime scripts: ${processedCount}/${totalScripts}\n`)
+	
+	// Phase 2: Extract choices and update game.json
+	for (const [folder, logicContent] of languageLogicScripts) {
+		try {
+			const choices = extractChoicesFromLogic(logicContent)
+			const gameJsonPath = path.join(outputPathPrefix, folder, 'game.json')
+			updateGameJsonWithChoices(gameJsonPath, choices)
+		} catch (e) {
+			logError(`Error processing logic for ${folder}: ${e.message}`)
+		}
+	}
+	
+	// Phase 3: Write central logic file
+	if (languageLogicScripts.has('jp')) {
+		const modifiedContent = replaceChoicesWithIndices(languageLogicScripts.get('jp'))
 		const centralLogicPath = path.join(outputPathPrefix, 'logic.txt')
 		const dir = path.dirname(centralLogicPath)
 		if (!fs.existsSync(dir)) {
@@ -588,8 +609,6 @@ export function main() {
 		}
 		fs.writeFileSync(centralLogicPath, modifiedContent)
 	}
-	
-	logProgress(`Processing Tsukihime scripts: ${processedCount}/${totalScripts}\n`)
 }
 
 const __filename = fileURLToPath(import.meta.url)
