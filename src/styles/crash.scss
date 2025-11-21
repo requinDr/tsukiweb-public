@@ -15,18 +15,23 @@
 		margin-block-start: 0;
 		margin-block-end: 0;
 		font-weight: 700;
+		text-wrap: balance;
 	}
 
-	p {
+	.page-content > p {
 		text-wrap: balance;
+	}
+	.ver {
+		font-size: .8em;
+		float: right;
 	}
 	.code {
 		font-family: monospace;
 		background-color: var(--menu-container);
 		text-align: left;
-		text-wrap: auto;
 		width: 100%;
 		margin-block: 2em;
+		border-radius: 2px;
 	}
 
 	details {
@@ -35,6 +40,7 @@
 			color: var(--color-link);
 			&:hover {
 				cursor: pointer;
+				background-color: var(--menu-container);
 			}
 		}
 		p {
@@ -44,6 +50,10 @@
 			margin: 0;
 			padding-inline: 1.4em 2em;
 			padding-bottom: 1em;
+			padding-top: .5em;
+			border-top: 1px solid var(--separator);
+			font-size: 0.8em;
+			line-height: 1.8;
 		}
 	}
 }

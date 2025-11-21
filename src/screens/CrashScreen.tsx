@@ -1,4 +1,5 @@
 import "@styles/crash.scss"
+import { APP_VERSION } from "utils/constants"
 
 
 /**
@@ -9,17 +10,19 @@ import "@styles/crash.scss"
 type Props = {
 	error: Error
 }
-const PageCrash = ({ error }: Props) => { 
+const PageCrash = ({ error }: Props) => {
 	return (
 		<div id="page-crash" className="page">
 			<div className="page-content">
-				<h1>An error has occured :(</h1>
+				<h1>An error has occured <span style={{ whiteSpace: 'nowrap' }}>:(</span></h1>
 				<p>
 					If this is the first time you've launched this application on this browser,
 					you may need to update it or try using another one.
 				</p>
 				<details className="code">
-					<summary>{error.message}</summary>
+					<summary>
+						{error.message} <i className="ver">—v{APP_VERSION}</i>
+					</summary>
 					<p>
 						{error.stack}
 					</p>
