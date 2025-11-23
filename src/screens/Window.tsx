@@ -6,7 +6,7 @@ import MenuLayer from '../layers/MenuLayer';
 import SavesLayer from '../layers/SavesLayer';
 import { HiMenu } from 'react-icons/hi';
 import { InGameLayersHandler, SCREEN, displayMode } from '../utils/display';
-import { commands as audioCommands, gameAudio } from '../utils/audio';
+import { commands as audioCommands, audio } from '../utils/audio';
 import ConfigLayer from '../layers/ConfigLayer';
 import { useSwipeGesture } from '@tsukiweb-common/utils/touch';
 import { useKeyMap } from '@tsukiweb-common/utils/KeyMap';
@@ -90,14 +90,14 @@ const Window = () => {
 		}
 		const {track, looped_se} = script.audio
 		if (track && track.length > 0)
-			gameAudio.track.play(track, {loop: true})
+			audio.playGameTrack(track)
 		else
-			gameAudio.track.stop()
+			audio.stopGameTrack()
 
 		if (looped_se && looped_se.length > 0)
-			gameAudio.se.play(looped_se)
+			audio.playWave(looped_se, true)
 		else
-			gameAudio.se.stop()
+			audio.stopWave()
 		window.script = script
 	}, [script])
 

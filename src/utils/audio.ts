@@ -2,7 +2,7 @@ import { displayMode, SCREEN } from "./display"
 import { audioSePath, audioTrackPath } from "../translation/assets"
 import { settings } from "./settings"
 import { observe } from "@tsukiweb-common/utils/Observer"
-import { BasicAudioManager } from "@tsukiweb-common/utils/AudioManager"
+import { AudioManager } from "@tsukiweb-common/audio/AudioManager"
 import { asyncDelay } from "@tsukiweb-common/utils/timer"
 import { ScriptPlayer } from "script/ScriptPlayer"
 import { splitFirst } from "@tsukiweb-common/utils/utils"
@@ -27,66 +27,47 @@ function getUrl(id: string): string {
   return audioSePath(id)
 }
 
-export const gameAudio = new BasicAudioManager(getUrl)
-export const sysAudio = new BasicAudioManager(getUrl)
+export const audio = new AudioManager(getUrl)
 
 //__________________________________observers___________________________________
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 // update volume
-observe(settings.volume, 'track' , v => { gameAudio.track.volume = calcGain(v) })
-observe(settings.volume, 'se'    , v => { gameAudio.se.volume = calcGain(v) })
-observe(settings.volume, 'titleTrack', v => { sysAudio.track.volume = calcGain(v) })
-observe(settings.volume, 'systemSE'  , v => { sysAudio.se.volume = calcGain(v) })
-observe(settings.volume, 'master', v => {
-  const gain = calcGain(v)
-  gameAudio.volume = calcGain(v)
-  sysAudio.volume = gain
-})
-const masterVolume = calcGain(settings.volume.master)
-gameAudio.volume = masterVolume
-gameAudio.track.volume = calcGain(settings.volume.track)
-gameAudio.se.volume = calcGain(settings.volume.se)
-sysAudio.volume = masterVolume
-sysAudio.track.volume = calcGain(settings.volume.titleTrack)
-sysAudio.se.volume = calcGain(settings.volume.systemSE)
+observe(settings.volume, 'master'    , v => { audio.masterVolume = calcGain(v) })
+observe(settings.volume, 'systemSE'  , v => { audio.uiVolume = calcGain(v) })
+observe(settings.volume, 'se'        , v => { audio.waveVolume = calcGain(v) })
+observe(settings.volume, 'track'     , v => { audio.gameTrackVolume = calcGain(v) })
+observe(settings.volume, 'titleTrack', v => { audio.menuTrackVolume = calcGain(v) })
+audio.masterVolume    = calcGain(settings.volume.master)
+audio.gameTrackVolume = calcGain(settings.volume.track)
+audio.waveVolume      = calcGain(settings.volume.se)
+audio.menuTrackVolume = calcGain(settings.volume.titleTrack)
+audio.uiVolume        = calcGain(settings.volume.systemSE)
 
 // update track source
-observe(settings, "trackSource", ()=> {
-  gameAudio.clearAudioBuffers(true)
-  sysAudio.clearAudioBuffers(true)
-})
+observe(settings, 'trackSource', audio.clearBuffers.bind(audio, true))
 
 // mute on hide
-observe(settings, 'autoMute', (m) => {
-  gameAudio.autoMute(m)
-  sysAudio.autoMute(m)
-})
-
-if (settings.autoMute) {
-  gameAudio.autoMute()
-  sysAudio.autoMute()
-}
+observe(settings, 'autoMute', (m) => { audio.autoMute = m })
+audio.autoMute = settings.autoMute
 
 observe(displayMode, 'screen', (screen)=> {
   if (screen == SCREEN.WINDOW) {
-    gameAudio.resume()
-    sysAudio.track.stop()
+    audio.stopMenuTrack()
   } else {
-    if (gameAudio.playing) {
-      gameAudio.suspend()
-      gameAudio.track.stop()
-      gameAudio.se.stop()
+    audio.stopGameTrack()
+    audio.stopWave()
+    if (audio.menuTrack == null && isLanguageLoaded()) {
+      audio.playMenuTrack(settings.titleMusic)
     }
-    if (!sysAudio.track.playing && isLanguageLoaded())
-      sysAudio.track.play(settings.titleMusic, {loop: true})
   }
 })
 
 waitLanguageLoad().then(async ()=> {
   await asyncDelay(100)
-  if (displayMode.screen != SCREEN.WINDOW)
-    sysAudio.track.play(settings.titleMusic, {loop: true});
+  if (displayMode.screen != SCREEN.WINDOW) {
+    audio.playMenuTrack(settings.titleMusic);
+  }
 });
 
 //___________________________________commands___________________________________
@@ -94,24 +75,20 @@ waitLanguageLoad().then(async ()=> {
 
 export const commands = {
   'play'    : (arg: string, _: string, script: ScriptPlayer)=> {
-    script.audio.track = arg
-    gameAudio.track.play(arg, {loop: true})
+    script.audio.track = audio.gameTrack = arg
   },
   'playstop': (_a: string, _c: string, script: ScriptPlayer)=> {
-    script.audio.track = null
-    gameAudio.track.stop()
+    script.audio.track = audio.gameTrack = null
   },
   'wave'    : (arg: string, _: string, script: ScriptPlayer)=> {
     script.audio.looped_se = null
-    gameAudio.se.play(arg)
+    audio.wave = arg
   },
   'waveloop': (arg: string, _: string, script: ScriptPlayer)=> {
-    script.audio.looped_se = arg
-    gameAudio.se.play(arg, {loop: true})
+    script.audio.looped_se = audio.waveLoop = arg
   },
   'wavestop': (_a: string, _c: string, script: ScriptPlayer)=> {
-    script.audio.looped_se = null
-    gameAudio.se.stop()
+    script.audio.looped_se = audio.waveLoop = null
   },
 }
 
@@ -119,5 +96,4 @@ export const commands = {
 //#                                   DEBUG                                    #
 //##############################################################################
 
-window.audio = gameAudio
-window.sysAudio = sysAudio
+window.audio = audio

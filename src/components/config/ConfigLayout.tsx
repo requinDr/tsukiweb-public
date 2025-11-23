@@ -8,6 +8,7 @@ import { strings } from '../../translation/lang'
 import { useLanguageRefresh } from '../../hooks/useLanguageRefresh'
 import { MdQuestionMark } from 'react-icons/md'
 import { Button, TitleMenuButton, PageTabsLayout } from '@tsukiweb-common/ui-core'
+import { audio } from 'utils/audio'
 
 export enum ConfigTabs {
 	game = "game",
@@ -47,7 +48,7 @@ const ConfigLayout = ({back, selectedTab, setSelectedTab}: Props) => {
 			selectedTab={selectedTab}
 			setSelectedTab={setSelectedTab}
 			backButton={
-				<TitleMenuButton onClick={back.bind(null)} className="back-button">
+				<TitleMenuButton audio={audio} onClick={back.bind(null)} className="back-button">
 					{`<<`} {strings.back}
 				</TitleMenuButton>
 			}>

@@ -16,6 +16,7 @@ import { TitleMenuButton } from '@tsukiweb-common/ui-core'
 import { useScreenAutoNavigate, useLanguageRefresh } from 'hooks'
 import useEclipseUnlocked from 'hooks/useEclipseUnlocked'
 import classNames from "classnames"
+import { audio } from "utils/audio"
 
 const TitleMenuScreen = () => {
 	const navigate = useNavigate()
@@ -55,25 +56,25 @@ const TitleMenuScreen = () => {
 
 			<nav className="menu">
 				<div className='menu-buttons'>
-					<TitleMenuButton onClick={newGame}>
+					<TitleMenuButton audio={audio} onClick={newGame}>
 						{strings.title.start}
 					</TitleMenuButton>
 
 					{(savesManager.savesCount > 0 || history.pagesLength > 0) &&
-					<TitleMenuButton onClick={continueGame}>
+					<TitleMenuButton audio={audio} onClick={continueGame}>
 						{strings.title.resume}
 					</TitleMenuButton>
 					}
 
-					<TitleMenuButton onClick={() => navigate(SCREEN.LOAD)}>
+					<TitleMenuButton audio={audio} onClick={() => navigate(SCREEN.LOAD)}>
 						{strings.title.load}
 					</TitleMenuButton>
 
-					<TitleMenuButton onClick={() => navigate(SCREEN.CONFIG)}>
+					<TitleMenuButton audio={audio} onClick={() => navigate(SCREEN.CONFIG)}>
 						{strings.title.config}
 					</TitleMenuButton>
 
-					<TitleMenuButton onClick={() => navigate(SCREEN.GALLERY)} attention={eclipseUnlocked}>
+					<TitleMenuButton audio={audio} onClick={() => navigate(SCREEN.GALLERY)} attention={eclipseUnlocked}>
 						{strings.title.extra}
 					</TitleMenuButton>
 				</div>

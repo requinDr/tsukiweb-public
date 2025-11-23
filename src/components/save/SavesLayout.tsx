@@ -17,6 +17,7 @@ import { SAVE_EXT } from "utils/constants"
 import { computeSaveHash, exportGameData, settings } from "utils/settings"
 import { useObserver } from "@tsukiweb-common/utils/Observer"
 import { Button, TitleMenuButton, PageSection, PageTitle } from "@tsukiweb-common/ui-core"
+import { audio } from "utils/audio"
 
 
 //##############################################################################
@@ -194,7 +195,7 @@ const SavesLayer = ({variant, back}: Props) => {
 			<SaveDetails id={focusedId} saveState={focusedSave} deleteSave={deleteSave}/>
 			
 			<div className="save-buttons">
-				<TitleMenuButton onClick={back.bind(null, false)} className="back-button">
+				<TitleMenuButton audio={audio} onClick={back.bind(null, false)} className="back-button">
 					{`<<`} {strings.back}
 				</TitleMenuButton>
 				

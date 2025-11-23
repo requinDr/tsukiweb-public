@@ -8,6 +8,7 @@ import { PageTitle, TitleMenuButton } from "@tsukiweb-common/ui-core"
 import { useLanguageRefresh } from "hooks/useLanguageRefresh"
 import useEclipseUnlocked from "hooks/useEclipseUnlocked"
 import { settings } from "utils/settings"
+import { audio } from "utils/audio"
 
 const ExtraLayout = ({ children }: PropsWithChildren) => {
 	return (
@@ -66,35 +67,41 @@ const ExtraMenu = () => {
 			</PageTitle>
 			<div className="menus">
 				<TitleMenuButton
+					audio={audio}
 					onClick={()=>navigate(SCREEN.GALLERY)}
 					active={currentPage === SCREEN.GALLERY}>
 					{strings.extra.gallery}
 				</TitleMenuButton>
 				<TitleMenuButton
+					audio={audio}
 					onClick={()=>navigate(SCREEN.ENDINGS)}
 					active={currentPage === SCREEN.ENDINGS}
 					attention={eclipseUnlocked}>
 					{strings.extra.endings}
 				</TitleMenuButton>
 				<TitleMenuButton
+					audio={audio}
 					onClick={()=>navigate(SCREEN.SCENES)}
 					active={currentPage === SCREEN.SCENES}>
 					{strings.extra.scenes}
 				</TitleMenuButton>
 				{import.meta.env.DEV && settings.unlockEverything &&
 				<TitleMenuButton
+					audio={audio}
 					onClick={()=>navigate(SCREEN.CHARACTERS)}
 					active={currentPage === SCREEN.CHARACTERS}>
 					Characters
 				</TitleMenuButton>
 				}
 				<TitleMenuButton
+					audio={audio}
 					onClick={()=>navigate(SCREEN.PLUS_DISC)}
 					active={currentPage === SCREEN.PLUS_DISC}>
 					Plus-Disc
 				</TitleMenuButton>
 			</div>
 			<TitleMenuButton
+				audio={audio}
 				onClick={()=>navigate(SCREEN.TITLE)}
 				className="back-button">
 				{`<<`} {strings.back}
