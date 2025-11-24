@@ -1,4 +1,4 @@
-import { Fragment, useCallback, useEffect, useLayoutEffect, useReducer, useRef, useState, useMemo } from 'react';
+import { Fragment, useCallback, useEffect, useLayoutEffect, useReducer, useRef, useMemo } from 'react';
 import * as m from "motion/react-m"
 import '@styles/game.scss';
 import HistoryLayer from '../layers/HistoryLayer';
@@ -8,8 +8,8 @@ import { HiMenu } from 'react-icons/hi';
 import { InGameLayersHandler, SCREEN, displayMode } from '../utils/display';
 import { commands as audioCommands, audio } from '../utils/audio';
 import ConfigLayer from '../layers/ConfigLayer';
-import { useSwipeGesture } from '@tsukiweb-common/utils/touch';
-import { useKeyMap } from '@tsukiweb-common/utils/KeyMap';
+import { useSwipeGesture } from '@tsukiweb-common/input/touch';
+import { useKeyMap } from '@tsukiweb-common/input/KeyMap';
 import { useSetter as useReset } from '@tsukiweb-common/hooks/useSetter';
 import { useDOMEvent } from '@tsukiweb-common/hooks/useDOMEvent';
 import { ScriptPlayer } from 'script/ScriptPlayer';

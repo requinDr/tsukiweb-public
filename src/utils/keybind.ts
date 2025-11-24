@@ -1,4 +1,4 @@
-import KeyMap from "@tsukiweb-common/utils/KeyMap";
+import KeyMap from "@tsukiweb-common/input/KeyMap";
 
 export const inGameKeyMap = {
     "next":    [
