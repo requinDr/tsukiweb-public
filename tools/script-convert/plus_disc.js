@@ -7,9 +7,29 @@ import path from 'path';
 import { fileURLToPath } from 'url'
 import { parseScript } from './parsers/kagScript.js';
 import { CommandToken, LabelToken, StrReader, TextToken, Token } from './parsers/utils.js'
-import { generate } from './utils/nscriptr_convert.js';
+import { generateScenes, writeScenes } from './utils/nscriptr_convert.js';
 import { logError, logProgress } from '../utils/logging.js';
 
+
+const outputPathPrefix = '../../public/static/'
+const outputDir = 'scenes'
+const langs = [
+  'jp',
+  'en-mm',
+  'es-tohnokun',
+  'it-riffour',
+  'pt-matsuri',
+  'ko-wolhui',
+  'ru-ciel',
+  'zh-tw-yueji_yeren_hanhua_zu',
+  'zh-yueji_yeren_hanhua_zu',
+]
+const files = {
+  'pd_alliance'  : '幻視同盟.ks',
+  'pd_geccha'    : 'げっちゃ.ks',
+  'pd_geccha2'   : '真・弓塚夢想3.ks',
+  'pd_experiment': 'きのこ名作実験場.ks'
+}
 
 //#endregion ###################################################################
 //#region                      FILE-SPECIFIC FIXES
@@ -510,25 +530,6 @@ function processToken(token, i, tokens) {
 }
 
 
-const outputPathPrefix = '../../public/static/'
-const outputDir = 'scenes'
-const langs = [
-  'jp',
-  'en-mm',
-  'es-tohnokun',
-  'it-riffour',
-  'pt-matsuri',
-  'ko-wolhui',
-  'ru-ciel',
-  'zh-tw-yueji_yeren_hanhua_zu',
-  'zh-yueji_yeren_hanhua_zu',
-]
-const files = {
-  'pd_alliance'  : '幻視同盟.ks',
-  'pd_geccha'    : 'げっちゃ.ks',
-  'pd_geccha2'   : '真・弓塚夢想3.ks',
-  'pd_experiment': 'きのこ名作実験場.ks'
-}
 export function main() {
   const totalScripts = Object.keys(files).length * langs.length
   let processedCount = 0
@@ -555,7 +556,7 @@ export function main() {
         tokens.forEach(processToken)
         tokens.unshift(new LabelToken(0, file)) // prevent discard
 
-        generate(output_dir, tokens, ()=> file, (map)=>{
+        const fileContents = generateScenes(tokens, ()=> file, (map)=>{
           const tokens = map.get(file)
           tokens[0] = null
           if (tokens[1] instanceof CommandToken && tokens[1].cmd == '\\')
@@ -563,6 +564,7 @@ export function main() {
           if (fixes.has(file))
             fixes.get(file)(tokens)
         })
+        writeScenes(output_dir, fileContents)
       } catch (e) {
         logError(`Error processing ${file} in ${folder}: ${e.message}`)
         continue

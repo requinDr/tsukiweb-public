@@ -1,6 +1,263 @@
 {
   "scripts-dir": "./scenes",
-  
+  "choices": [
+    "1. Faltan pocos minutos, tengo que dirigirme a clases inmediatamente.",
+    "2. …… Soy curioso, así que iré a echar un vistazo.",
+    "1. Almuerzo en el salón de clases.",
+    "2. Voy a comer en la cafetería.",
+    "3. Salgo al pasillo para pensarlo.",
+    "1. Salgo al pasillo para pensarlo.",
+    "2. Voy a comer en la cafetería.",
+    "3. Almuerzo en el salón de clases.",
+    "1. Me tranquilizo y voy de vuelta a la mansión.",
+    "2. Me quedo un poco más de tiempo en la escuela.",
+    "1. Sobre mi pequeña hermana Akiha.",
+    "2. Sobre la chica alegre.",
+    "1. Sobre mi pequeña hermana Akiha.",
+    "2. Sobre la chica alegre.",
+    "3. Sobre la chica tras la ventana.",
+    "1. Ir a la sala de estar y hablar con Akiha.",
+    "2. Quedarme en mi habitación.",
+    "3. Ir a ver TV en la habitación de Kohaku-san.",
+    "1. Voy a investigar.",
+    "2. Voy a dormir.",
+    "1. …… Regreso a la mansión.",
+    "2. …… Sigo esperando.",
+    "1. …… Sigo esperando.",
+    "2. …… Regreso a la mansión.",
+    "1. …… Sigo esperando.",
+    "2. …… Regreso a la mansión.",
+    "1. Corro hacia el mismo callejón de anoche.",
+    "2. …… Espero aquí en el parque.",
+    "3. Voy al apartamento de Arcueid.",
+    "1. Kohaku-san me está estorbando.",
+    "2. Es como dice Kohaku-san.",
+    "1. Ala este, primer piso.",
+    "2. Ala oeste, primer piso.",
+    "3. Ala este, segundo piso.",
+    "4. Ala oeste, segundo piso.",
+    "1. Me quito mis lentes y me preparo para matar.",
+    "2. Primero, tengo que alejarlo de la habitación de Akiha.",
+    "1. Aunque sea inútil, buscaré a Arcueid.",
+    "2. Aceptarlo y volver a la mansión.",
+    "3. Si así son las cosas, yo mismo buscaré a Roa.",
+    "1. No, tengo que decirle a Kohaku-san que se vaya.",
+    "2. …… Solamente le permitiré dejar la comida aquí.",
+    "1. …… No puedo dejar que me vea de esta manera.",
+    "2. …… Pero aun así, quiero escuchar su voz.",
+    "1. Escapo hacia adelante.",
+    "2. Escapo hacia atrás.",
+    "1. …… Me quito los lentes.",
+    "2. …… No me quito los lentes.",
+    "1. Me gusta el aspecto natural de Senpai.",
+    "2. ¡Senpai no es Senpai sin sus lentes!",
+    "1. Lo persigo ahora mismo.",
+    "2. Respiro, me tranquilizo, y entonces lo persigo.",
+    "1. …… Me detengo.",
+    "2. …… No dejaré que sus palabras me engañen.",
+    "1. …… Persigo a Akiha.",
+    "2. …… No puedo hacerlo.",
+    "1. …… Mantendré mi promesa.",
+    "2. …… No puedo hacer esto.",
+    "1. …… Le devuelvo esta vida a Akiha.",
+    "2. …… No puedo hacer eso.",
+    "1. Mantendré mi promesa.",
+    "2. Nunca olvidaré a Arcueid.",
+    "1. Obedezco Arcueid.",
+    "2. No obedezco a Arcueid.",
+    "1. Abro la puerta.",
+    "2. …… ¿Por qué cerré la puerta en primer lugar?",
+    "1. Grito el nombre de Akiha.",
+    "2. Grito el nombre de Kohaku.",
+    "1. Voy a ver a Kohaku-san.",
+    "2. Reviso la habitación de Makihisa.",
+    "1. …… Ir a ver afuera.",
+    "2. Volver a mi habitación.",
+    "1. ----La mato ahora.",
+    "2. ----Me retiro por ahora.",
+    "1. …… La mato antes de que note mi presencia.",
+    "2. …… Espero a que pase y la ataco por la espalda.",
+    "1. Saludo a Akiha.",
+    "2. Saludo a Kohaku-san.",
+    "3. Saludo a ambas.",
+    "1. En el salón de clases.",
+    "2. Voy a la cafetería.",
+    "1. En el salón de clases.",
+    "2. Voy a la cafetería.",
+    "3. Voy a la habitación de la ceremonia del té.",
+    "1. Esto es sólo un mal sueño.",
+    "2. Esto es, sin duda alguna, realidad labrada por mis propias manos.",
+    "1. Saludo a Akiha.",
+    "2. Saludo a Kohaku-san.",
+    "3. Saludo a ambas.",
+    "1. Saludo a Akiha.",
+    "2. Saludo a Kohaku-san.",
+    "3. Saludo a ambas.",
+    "1. Pregunto por Yumizuka Satsuki.",
+    "2. …… Me quedo sentado en silencio.",
+    "1. Ciel-senpai tiene razón.",
+    "2. …… No, en verdad no me siento bien.",
+    "1. Ir a ver a Hisui.",
+    "2. Ayudar a Kohaku-san.",
+    "3. Quedarme en mi habitación.",
+    "1. Voy a ver.",
+    "2. No voy a ver.",
+    "1. Hablo sobre Akiha.",
+    "2. Hablo sobre Kohaku-san.",
+    "3. Hablo sobre la mansión.",
+    "1. …… Cooperaré.",
+    "2. No, no cooperaré.",
+    "3. Escapo de alguna forma.",
+    "1. Debería escapar después de todo.",
+    "2. …… A pesar de todo, no puedo dejarla sola.",
+    "1. …… Bien, pero sólo por un momento.",
+    "2. …… No. Tengo un mal presentimiento sobre esto.",
+    "1. Creo que regresaré a la mansión.",
+    "2. Creo que regresaré al hotel.",
+    "1. ---Debería ir a investigar qué está sucediendo afuera.",
+    "2. Me quedaré dentro de la habitación y montaré guardia.",
+    "1. Voy a buscar a Yumizuka.",
+    "2. La busco alrededor de la escuela.",
+    "3. La busco alrededor de la ciudad.",
+    "1. Voy a bucar a Yumizuka.",
+    "2. No puedo hacer algo tan peligroso.",
+    "1. Me gusta.",
+    "2. La odio.",
+    "3. No puedo responder.",
+    "1. Quisiera negarme, pero---",
+    "2. No, de ninguna manera podría enfrentarme a un monstruo como ése.",
+    "1. Corro hacia Nrvnqsr.",
+    "2. …… No, todavía es demasiado pronto.",
+    "1. Quisiera negarme, pero---",
+    "2. No, de ninguna manera podría enfrentarme a un montruo como ése.",
+    "1. Corro hacia Nrvnqsr.",
+    "2. …… Todavía es muy pronto.",
+    "1. Lo soportaré por ahora y esperaré mi oportunidad.",
+    "2. Tengo que destruir el cuerpo principal.",
+    "1. No, en verdad no estoy de humor.",
+    "2. Por supuesto que acepto.",
+    "1. No, en verdad no estoy de humor.",
+    "2. Por supuesto que acepto.",
+    "1. Le pregunto por qué se transfirió a esta escuela.",
+    "2. …… Debería presentarle a Arihiko.",
+    "3. ¿Estuvo aparentando ser ingenua hasta ahora?",
+    "1. Ayudar a Kohaku-san.",
+    "2. Ayudar a Hisui.",
+    "1. No puedo explicar las circunstancias, así que al menos me disculparé.",
+    "2. No puedo explicar las circunstancias, así que mentiré de alguna forma.",
+    "3. No, debería decir la verdad.",
+    "1. …… Adentrarme en la ciudad y buscarla.",
+    "2. Distraerme en el salón de clases.",
+    "3. Regresar a la mansión y descansar.",
+    "1. Podría ser Arcueid.",
+    "2. Podría ser Ciel-Senpai.",
+    "3. Podría ser Akiha.",
+    "1. Podría ser Arcueid.",
+    "2. Podría ser Ciel-Senpai.",
+    "3. Podría ser Akiha.",
+    "4. Podría ser Hisui.",
+    "5. Podría ser Kohaku-san.",
+    "1. Me discuparé.",
+    "2. Intentaré engañarla.",
+    "3. Diré la verdad.",
+    "1. …… No, debe haber sido otra persona.",
+    "2. Pregunto sobre anoche.",
+    "1. De acuerdo, comeré.",
+    "2. De acuerdo, no comeré.",
+    "1. No. Me niego a hacer algo tan embarazoso.",
+    "2. No me importa. Asentiré.",
+    "1. Le pregunto por qué se transfirió a esta escuela.",
+    "2. …… Debería presentarle a Arihiko.",
+    "3. ¿Estuvo aparentando ser ingenua hasta ahora?",
+    "1. Ir a casa solo.",
+    "2. Ir al salón de Akiha.",
+    "1. Ir a la sala de estar.",
+    "2. Ir al edificio separado.",
+    "3. Quedarme aquí hasta la cena.",
+    "1. Voy al edificio separado.",
+    "2. Voy a dormir.",
+    "1. Ir a ver a Hisui.",
+    "2. Ayudar a Kohaku-san.",
+    "3. Ir a la habitación de Akiha.",
+    "1. Iré al pasillo y hablaré con ella.",
+    "2. No, probablemente no me concierne, la observaré desde aquí.",
+    "3. ¡Una oportunidad! ¡La sorprenderé desde atrás!",
+    "1. Busco a Arcueid sin rumbo fijo.",
+    "2. Regreso a la mansión.",
+    "1. Sí, iré a la cafetería con Arihiko.",
+    "2. No, aun si ella me odia, iré a ver a Senpai.",
+    "1. Voy de vuelta a la mansión.",
+    "2. Voy a la habitación de la ceremonia del té.",
+    "3. Salgo a pasear por la ciudad.",
+    "1. No puedo dejar a Arcueid sola.",
+    "2. Senpai es preciada para mí.",
+    "1. Me calmaré un poco, y luego iré a la sala de estar.",
+    "2. Estoy bien, así que iré a la sala de estar.",
+    "3. Debería descansar un poco más.",
+    "1. El uniforme que tiene ahora le queda mejor.",
+    "2. El uniforme de nuestra escuela le quedaría mejor.",
+    "1. Voy a ayudar a Hisui.",
+    "2. Voy a ayudar a Kohaku-san.",
+    "1. Hablar con ella al respecto.",
+    "2. No hablar con ella al respecto.",
+    "1. Voy a la habitación de mi viejo.",
+    "2. Me quedo en mi habitación.",
+    "1. Voy a la ciudad nocturna.",
+    "2. Espero hasta el amanecer sin dormir.",
+    "1. Debería suavizar las cosas con un alegre saludo.",
+    "2. No haré algo estúpido, la saludaré con normalidad.",
+    "3. No, no. Todo lo que puedo hacer es disculparme.",
+    "1. Voy al patio ahora mismo.",
+    "2. Rogaré que no haga nada hasta que terminen las clases.",
+    "3. No me importa. La ignoraré.",
+    "1. Aun así, le diré la verdad a Hisui.",
+    "2. No, no puedo dejar que nadie sepa.",
+    "1. No, mejor voy a la sala de estar.",
+    "2. Más que eso, debería ir a la escuela.",
+    "1. Decirlo con franqueza.",
+    "2. Decirlo con calma.",
+    "1. Aun así, al menos puedo decirle buenos días a Akiha.",
+    "2. …… No puedo. Volveré a mi habitación.",
+    "1. Voy al salón de Akiha.",
+    "2. No, no necesito ir a verla.",
+    "1. Voy al salón de Akiha.",
+    "2. No, no necesito ir a verla.",
+    "1. Le hablo a Ciel sobre anoche.",
+    "2. …… No, sólo sería una pérdida de tiempo.",
+    "1. Buscar a Kohaku-san para que prepare algo.",
+    "2. Pedirle a Hisui que prepare algo.",
+    "1. …… Esto no es suficiente, en absoluto.",
+    "2. …… Puedo moverme de nuevo, así que sólo debería agradecerle.",
+    "1. …… Hago lo que Akiha dice.",
+    "2. No, tengo que forzarme para ver a Arcueid.",
+    "1. …… Iré a decidir mi propio destino.",
+    "2. No, me quedaré en la mansión.",
+    "1. …… No se puede evitar. Iré con Arcueid.",
+    "2. …… Se puede evitar. Debería ir a la escuela.",
+    "1. Bueno, es porque eres egoísta, ¿no?",
+    "2. Bueno, es porque me odias, ¿no?",
+    "3. Bueno, es porque eres un vampiro, ¿no?",
+    "1. Voy por lo típico, la llevo al cine.",
+    "2. Probablemente le guste algo como un callejón trasero, ¿no?",
+    "3. …… No estoy seguro, así que iremos al parque por ahora.",
+    "1. Muy bien, le hablaré sobre anteanoche.",
+    "2. Entonces, oigamos los detalles sobre el \"enemigo\" de Arcueid.",
+    "3. ¡Bueno, tengo que preguntarle sobre sus pasatiempos, su historia, y sus medidas!",
+    "1. Voy al apartamento de Arcueid.",
+    "2. Busco en el distrito comercial.",
+    "3. …… ¿La escuela, quizás?",
+    "1. No puedo hacer algo que ella no quiere.",
+    "2. Simplemente… la deseo, eso es todo.",
+    "1. Espero aquí.",
+    "2. Voy al salón de clases.",
+    "3. Voy detrás de la escuela.",
+    "1. Me distraeré aquí en el salón.",
+    "2. …… Iré a almorzar algo.",
+    "1. Supongo que sí.",
+    "2. …… No, eso es importante.",
+    "1. …… Tengo que vivir.",
+    "2. …… No puedo hacerlo."
+  ],
   "images": {
     "words": {
       "fin": "#ffffff$c`[center][noline][color=black][font=serif]Fin`",
@@ -17,7 +274,6 @@
       "tachi/osiete": "./images/%0"
     }
   },
-  
   "scenario": {
     "days": [
       "[i]1[sup]er[/sup] día | 21 de Octubre (Jue.)",
@@ -34,7 +290,6 @@
       "[i]12[sup]do[/sup] día | 1 de Noviembre (Lun.)",
       "[i]13[sup]er[/sup] día | 2 de Noviembre (Mar.)"
     ],
-    
     "routes": {
       "aki": {
         "03a": "[b][i]3 / Impulso de Inversión III",
@@ -113,74 +368,151 @@
         "epi": "[i]un epílogo"
       }
     },
-
     "scenes": {
-      "openning": {"title": "[b][i]Prólogo - Glass Moon"},
-      "eclipse": {"title": "[b][i]Epílogo"},
-      "ending": {"title": "[b][i]Creditos"}
+      "openning": {
+        "title": "[b][i]Prólogo - Glass Moon"
+      },
+      "eclipse": {
+        "title": "[b][i]Epílogo"
+      },
+      "ending": {
+        "title": "[b][i]Creditos"
+      }
     },
-
     "dead-end": "Dead end",
     "osiete": "Ciel's lesson"
   },
-
   "credits": [
-    {"center": ["[center][font=serif]Planificación / [left=15]Takeuchi Takashi",
-                "[center][font=serif][hide]Planificación / [/][left=15]Nasu Kinoko"]},
-    {"center": ["",
-                "[right][font=serif]Creador / Escritor de Escenarios / Programador de Escenarios /",
-                "[right][font=serif]Nasu Kinoko"]},
-    {"bottom": ["[right][font=serif]Asistente de Programación de Escenarios/[hide]OKSG",
-                "[right][font=serif]OKSG"]},
-    {"center": ["",
-                "[right][font=serif]Diseño de Personajes / Artista Original / CG /",
-                "[right][font=serif]Takeuchi Takashi"]},
-    {"bottom": ["[right][font=serif]Asistente de CG / [hide]Fumicchi",
-                "[right][font=serif]Fumicchi"]},
-    {"center": ["[center][font=serif]Fondos / [left=15]",
-                "[center][font=serif][hide]Fondos / [/][left=15]Kuki Mamoru",
-                "[center][font=serif][hide]Fondos / [/][left=15]Takeuchi Takashi"]},
-    {"top": ["[left][font=serif]Programación / Escenario /",
-             "[center][font=serif]Seibei"]},
-    {"top": ["[left][font=serif]Compositor / Arreglos Musicales / Efectos de Sonido",
-             "[center][font=serif]KEITA HAGA"]},
-    {"bottom": ["[right][font=serif]Agradecimientos Especiales / [left=8/]",
-                "[right][font=serif][left=8]Takahashi Naoki",
-                "[right][font=serif][left=8]B46"]},
-    {"bottom": ["[right][font=serif]Agradecimientos Especiales / [left=8/]",
-                "[right][font=serif][left=8]OKSG",
-                "[right][font=serif][left=8]SUBTLE",
-                "[right][font=serif][left=8]Kirihara Kojima",
-                "[right][font=serif][left=8]Hayashi Youko",
-                "[right][font=serif][size=80%](Titles Omitted)"]},
-    {"bottom": ["[right][font=serif]Testers /[left=3/][left=12]Uetsugi Hiroyoshi",
-                "[right][font=serif][left=12]EDF Sakata",
-                "[right][font=serif][left=12]K-1",
-                "[right][font=serif][left=12]Shiten",
-                "[right][font=serif][left=12]Derocchi",
-                "[right][font=serif][left=12]NOCKy"]},
-    {"bottom": ["[right][font=serif]Testers /[left=3/][left=12]B46",
-                "[right][font=serif][left=12]Mikage",
-                "[right][font=serif][left=12]Yamaguchi Tarou",
-                "[right][font=serif][left=12]Yamazaki Seiji",
-                "",""]},
-    {"bottom": ["[right][font=serif]Testers /[left=15]",
-                "[right][font=serif]ALL TYPE-MOON STAFF",
-                "","","",""]},
-    {"center": "[center][font=serif]Director del Juego /[left=3/]Nasu Kinoko"},
-    {"center": "[center][font=serif]Director de Producción /[left=3/]Takeuchi Takashi"},
-    {"center": "[center][font=serif][left=5/]Producido por /[left=3/]TYPE-MOON"},
-
-    {"top": ["[left][font=serif]Versión en Español", "",
-             "[center][font=serif][left=40]Traducción y Edición de Imágenes /",
-             "[center][font=serif][left=5/][left=35]Tohno-kuN","",
-             "[center][font=serif][left=40]Programación de Engine /",
-             "[center][font=serif][left=5/][left=35]Helios","",
-			 "[left][font=serif]Agradecimientos /", "",
-             "[center][font=serif][left=40]TYPE-MOON",
-             "[center][font=serif][left=40]mirror moon",
-             "[center][font=serif][left=40]y a todos los fans por apoyar el projecto"], "delay":4300},
-    {"bottom": "[right][font=serif][noline][color=black][copy/] 2000 TYPE-MOON. Todos los derechos reservados.", "delay": 21500, "bg": "#ffffff"}
+    {
+      "center": [
+        "[center][font=serif]Planificación / [left=15]Takeuchi Takashi",
+        "[center][font=serif][hide]Planificación / [/][left=15]Nasu Kinoko"
+      ]
+    },
+    {
+      "center": [
+        "",
+        "[right][font=serif]Creador / Escritor de Escenarios / Programador de Escenarios /",
+        "[right][font=serif]Nasu Kinoko"
+      ]
+    },
+    {
+      "bottom": [
+        "[right][font=serif]Asistente de Programación de Escenarios/[hide]OKSG",
+        "[right][font=serif]OKSG"
+      ]
+    },
+    {
+      "center": [
+        "",
+        "[right][font=serif]Diseño de Personajes / Artista Original / CG /",
+        "[right][font=serif]Takeuchi Takashi"
+      ]
+    },
+    {
+      "bottom": [
+        "[right][font=serif]Asistente de CG / [hide]Fumicchi",
+        "[right][font=serif]Fumicchi"
+      ]
+    },
+    {
+      "center": [
+        "[center][font=serif]Fondos / [left=15]",
+        "[center][font=serif][hide]Fondos / [/][left=15]Kuki Mamoru",
+        "[center][font=serif][hide]Fondos / [/][left=15]Takeuchi Takashi"
+      ]
+    },
+    {
+      "top": [
+        "[left][font=serif]Programación / Escenario /",
+        "[center][font=serif]Seibei"
+      ]
+    },
+    {
+      "top": [
+        "[left][font=serif]Compositor / Arreglos Musicales / Efectos de Sonido",
+        "[center][font=serif]KEITA HAGA"
+      ]
+    },
+    {
+      "bottom": [
+        "[right][font=serif]Agradecimientos Especiales / [left=8/]",
+        "[right][font=serif][left=8]Takahashi Naoki",
+        "[right][font=serif][left=8]B46"
+      ]
+    },
+    {
+      "bottom": [
+        "[right][font=serif]Agradecimientos Especiales / [left=8/]",
+        "[right][font=serif][left=8]OKSG",
+        "[right][font=serif][left=8]SUBTLE",
+        "[right][font=serif][left=8]Kirihara Kojima",
+        "[right][font=serif][left=8]Hayashi Youko",
+        "[right][font=serif][size=80%](Titles Omitted)"
+      ]
+    },
+    {
+      "bottom": [
+        "[right][font=serif]Testers /[left=3/][left=12]Uetsugi Hiroyoshi",
+        "[right][font=serif][left=12]EDF Sakata",
+        "[right][font=serif][left=12]K-1",
+        "[right][font=serif][left=12]Shiten",
+        "[right][font=serif][left=12]Derocchi",
+        "[right][font=serif][left=12]NOCKy"
+      ]
+    },
+    {
+      "bottom": [
+        "[right][font=serif]Testers /[left=3/][left=12]B46",
+        "[right][font=serif][left=12]Mikage",
+        "[right][font=serif][left=12]Yamaguchi Tarou",
+        "[right][font=serif][left=12]Yamazaki Seiji",
+        "",
+        ""
+      ]
+    },
+    {
+      "bottom": [
+        "[right][font=serif]Testers /[left=15]",
+        "[right][font=serif]ALL TYPE-MOON STAFF",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "center": "[center][font=serif]Director del Juego /[left=3/]Nasu Kinoko"
+    },
+    {
+      "center": "[center][font=serif]Director de Producción /[left=3/]Takeuchi Takashi"
+    },
+    {
+      "center": "[center][font=serif][left=5/]Producido por /[left=3/]TYPE-MOON"
+    },
+    {
+      "top": [
+        "[left][font=serif]Versión en Español",
+        "",
+        "[center][font=serif][left=40]Traducción y Edición de Imágenes /",
+        "[center][font=serif][left=5/][left=35]Tohno-kuN",
+        "",
+        "[center][font=serif][left=40]Programación de Engine /",
+        "[center][font=serif][left=5/][left=35]Helios",
+        "",
+        "[left][font=serif]Agradecimientos /",
+        "",
+        "[center][font=serif][left=40]TYPE-MOON",
+        "[center][font=serif][left=40]mirror moon",
+        "[center][font=serif][left=40]y a todos los fans por apoyar el projecto"
+      ],
+      "delay": 4300
+    },
+    {
+      "bottom": "[right][font=serif][noline][color=black][copy/] 2000 TYPE-MOON. Todos los derechos reservados.",
+      "delay": 21500,
+      "bg": "#ffffff"
+    }
   ],
   "plus_disc_scenario": {
     "pd_alliance": "Alianza de ojos ilusorios",

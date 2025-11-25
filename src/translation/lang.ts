@@ -32,6 +32,7 @@ type StringsType = typeof defaultStrings & {
     "redirected-images": Record<string, string|ImageRedirect<string>>,
     "words": Record<string, string>
   },
+  choices: string[] | Record<string, string>,
   scenario: {
     days: string[],
     routes: Record<RouteName, Record<RouteDayName, string>>,
@@ -123,7 +124,7 @@ function setDefaultlanguage() {
 //_________________________________public types_________________________________
 
 export type TrackSourceId = keyof typeof defaultStrings.audio['tracks-path']
-export type GameJson = Pick<StringsType, 'scenario'|'credits'>
+export type GameJson = Pick<StringsType, 'scenario'|'credits'|'choices'>
 export type LangJson = Omit<typeof defaultStrings, keyof GameJson>
 
 

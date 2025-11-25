@@ -180,13 +180,13 @@ function genericFixes(token, tokens, index, clickChars) {
 //##############################################################################
 
 /**
- * @param {string|null} output_dir
+ * Generate scene contents from tokens
  * @param {Token[]} tokens
- * @param {string} logicFileName
  * @param {(label:string)=>string|null} getFile
  * @param {(files:Map<string, Token[]>)=>void} fixes
+ * @returns {Map<string, string>} Map of file names to their content
  */
-function generate(output_dir, tokens, getFile, fixes) {
+function generateScenes(tokens, getFile, fixes) {
     // 1. search for specific setup commands
     // 1.1. clickstr
     let clickChars = tokens.find(
@@ -217,6 +217,7 @@ function generate(output_dir, tokens, getFile, fixes) {
     }
     tokens = tokens.filter(t=>t != null)
     fixes(files)
+    const fileContents = new Map()
     for (let [file, tokens] of files.entries()) {
         // 5. custom fixes, then remove null tokens if necessary
         tokens = tokens.filter(t => t != null)
@@ -236,16 +237,23 @@ function generate(output_dir, tokens, getFile, fixes) {
         }
         // 6. generic fixes after custom fixes
         adjustSkips(tokens)
-        // 7. print to file
+        // 7. generate file content
         const file_str = tokens.map(t=>t.toString().trimEnd()).join('\n')
-        if (output_dir) {
-            if (!fs.existsSync(output_dir))
-                fs.mkdirSync(output_dir);
-            fs.writeFileSync(path.join(output_dir, `${file}.txt`), file_str+'\n')
-        }
+        fileContents.set(file, file_str)
+    }
+    return fileContents
+}
+
+function writeScenes(output_dir, fileContents) {
+    if (!fs.existsSync(output_dir))
+        fs.mkdirSync(output_dir, { recursive: true })
+
+    for (const [file, content] of fileContents.entries()) {
+        fs.writeFileSync(path.join(output_dir, `${file}.txt`), content + '\n')
     }
 }
 
 export {
-    generate
+    generateScenes,
+    writeScenes
 }
