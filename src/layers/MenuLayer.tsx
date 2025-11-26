@@ -10,6 +10,8 @@ import { isFullscreen, toggleFullscreen, supportFullscreen } from "@tsukiweb-com
 import classNames from "classnames"
 import { useDOMEvent } from "@tsukiweb-common/hooks/useDOMEvent"
 import { ScriptPlayer } from "script/ScriptPlayer"
+import useButtonSounds from "@tsukiweb-common/hooks/useButtonSounds"
+import { audio } from "utils/audio"
 
 
 type Props = {
@@ -79,39 +81,39 @@ const MenuLayer = ({script, show, layers, qSave, qLoad}: Props) => {
 
 					<div className="layer-btns">
 						{show?.graphics &&
-						<button onClick={graphicMode} className="layer-btn">
+						<LayerButton onClick={graphicMode}>
 							{strings.menu["graphics"]}
-						</button>
+						</LayerButton>
 						}
 						{show?.history &&
-						<button onClick={historyMode} className="layer-btn">
+						<LayerButton onClick={historyMode}>
 							{strings.menu["history"]}
-						</button>
+						</LayerButton>
 						}
 						{show?.flowchart &&
-						<button onClick={flowchartMode} className="layer-btn">
+						<LayerButton onClick={flowchartMode}>
 							{strings.extra.scenes}
-						</button>
+						</LayerButton>
 						}
 						{show?.save &&
-						<button onClick={saveMode} className="layer-btn">
+						<LayerButton onClick={saveMode}>
 							{strings.menu["save"]}
-						</button>
+						</LayerButton>
 						}
 						{show?.load &&
-						<button onClick={loadMode} className="layer-btn">
+						<LayerButton onClick={loadMode}>
 							{strings.menu["load"]}
-						</button>
+						</LayerButton>
 						}
 						{show?.config &&
-						<button onClick={configMode} className="layer-btn">
+						<LayerButton onClick={configMode}>
 							{strings.menu["config"]}
-						</button>
+						</LayerButton>
 						}
 						{show?.title &&
-						<button onClick={title} className="layer-btn">
+						<LayerButton onClick={title}>
 							{strings.menu["title"]}
-						</button>
+						</LayerButton>
 						}
 					</div>
 
@@ -124,6 +126,25 @@ const MenuLayer = ({script, show, layers, qSave, qLoad}: Props) => {
 }
 
 export default MenuLayer
+
+
+type LayerButtonProps = {
+	children: React.ReactNode
+} & React.ButtonHTMLAttributes<HTMLButtonElement>
+const LayerButton = ({children, ...props}: LayerButtonProps) => {
+	const soundProps = useButtonSounds<HTMLButtonElement>(
+		audio, 
+		props,
+		{ hoverSound: 'tick', clickSound: 'glass' }, 
+		200
+	)
+	
+	return (
+		<button {...soundProps} className="layer-btn">
+			{children}
+		</button>
+	)
+}
 
 /**
  * TODO
