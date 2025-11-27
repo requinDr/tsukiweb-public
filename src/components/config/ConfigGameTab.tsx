@@ -5,9 +5,9 @@ import { FaMinus, FaPlus } from "react-icons/fa"
 import { getLocale, strings } from "../../translation/lang"
 import { useLanguageRefresh } from "../../hooks/useLanguageRefresh"
 import { PageSection } from "@tsukiweb-common/ui-core"
-import { deepAssign, isFullscreen, toggleFullscreen, supportFullscreen } from "@tsukiweb-common/utils/utils"
+import { deepAssign, fullscreen } from "@tsukiweb-common/utils/utils"
 import { ViewRatio, TEXT_SPEED } from "@tsukiweb-common/constants"
-import { useDOMEvent } from "@tsukiweb-common/hooks/useDOMEvent"
+import useIsFullscreen from "@tsukiweb-common/hooks/useIsFullscreen"
 
 const ConfigGameTab = () => {
 	useLanguageRefresh()
@@ -19,15 +19,11 @@ const ConfigGameTab = () => {
 		nextPageDelay: undefined,
 	}, settings, {extend: false}))
 
-	const [fullscreen, setFullscreen] = useState<boolean>(isFullscreen()) // don't save in settings
+	const isFullscreen = useIsFullscreen()
 
 	useEffect(()=> {
 		deepAssign(settings, conf)
 	}, [conf])
-
-	useDOMEvent((_evt)=> {
-		setFullscreen(isFullscreen())
-	}, document, 'fullscreenchange')
 
 	const updateValue = <T extends keyof typeof conf>(
 		key: T,
@@ -60,13 +56,19 @@ const ConfigGameTab = () => {
 
 			<ConfigItem label={strings.config.fullscreen}>
 				<ConfigButtons
-					currentValue={fullscreen}
+					currentValue={isFullscreen}
 					btns={[
 						{ label: strings.config.on, value: true },
 						{ label: strings.config.off, value: false },
 					]}
-					updateValue={toggleFullscreen}
-					disabled={!supportFullscreen()}
+					updateValue={newValue => {
+						if (newValue && !isFullscreen) {
+							fullscreen.setOn()
+						} else if (!newValue && isFullscreen) {
+							fullscreen.setOff()
+						}
+					}}
+					disabled={!fullscreen.isSupported}
 				/>
 			</ConfigItem>
 

@@ -195,7 +195,7 @@ const Window = () => {
 						<HiMenu />
 					</button>
 				}
-				<MenuLayer show={show} script={script} layers={layers}
+				<MenuLayer display={layers.menu} show={show} script={script} layers={layers}
 					qLoad={actionsHandler.quickLoad.bind(actionsHandler)}
 					qSave={actionsHandler.quickSave.bind(actionsHandler)} />
 			</Fragment>

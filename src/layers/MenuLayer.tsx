@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef } from "react"
 import { MdCopyAll, MdFastForward, MdFullscreen, MdFullscreenExit, MdOutlineVolumeOff, MdOutlineVolumeUp, MdPlayArrow } from "react-icons/md"
 import { settings } from "../utils/settings"
 import { displayMode, InGameLayersHandler, SCREEN } from "../utils/display"
@@ -6,7 +6,8 @@ import { strings } from "../translation/lang"
 import Ornament from "@assets/images/ornament.webp"
 import { toast } from "react-toastify"
 import { useObserved } from "@tsukiweb-common/utils/Observer"
-import { isFullscreen, toggleFullscreen, supportFullscreen } from "@tsukiweb-common/utils/utils"
+import { fullscreen } from "@tsukiweb-common/utils/utils"
+import useIsFullscreen from "@tsukiweb-common/hooks/useIsFullscreen"
 import classNames from "classnames"
 import { useDOMEvent } from "@tsukiweb-common/hooks/useDOMEvent"
 import { ScriptPlayer } from "script/ScriptPlayer"
@@ -16,6 +17,7 @@ import { navProps } from "@tsukiweb-common/input/arrowNavigation"
 
 
 type Props = {
+	display: boolean
 	script: ScriptPlayer
 	show?: Partial<{
 		graphics: boolean
@@ -26,7 +28,6 @@ type Props = {
 		config: boolean
 		title: boolean
 
-		sceneName: boolean
 		qSave: boolean
 		qLoad: boolean
 		copyScene: boolean
@@ -35,16 +36,15 @@ type Props = {
 	qSave: VoidFunction
 	qLoad: VoidFunction
 }
-const MenuLayer = ({script, show, layers, qSave, qLoad}: Props) => {
+const MenuLayer = ({display, script, show, layers, qSave, qLoad}: Props) => {
 	const menuRef = useRef<HTMLDivElement>(null)
-	const display = layers.menu
 
 	useEffect(()=> {
 		if (display) {
 			//focus the menu when it appears
-			setTimeout(()=> {
+			requestAnimationFrame(()=> {
 				menuRef.current?.focus()
-			}, 100)
+			})
 		} else if (menuRef.current?.contains(document.activeElement))
 			(document.activeElement as HTMLElement).blur?.();
 	}, [display])
@@ -164,11 +164,8 @@ type ActionsButtonsProps = {
 }
 const ActionsButtons = ({script, show, close, qSave, qLoad}: ActionsButtonsProps) => {
 	const [mute] = useObserved(settings.volume, 'master', (vol)=>vol<0)
-	const [fullscreen, setFullscreen] = useState<boolean>(isFullscreen())
-
-	useDOMEvent(()=> {
-		setFullscreen(isFullscreen())
-	}, document, "fullscreenchange")
+	const isFullscreen = useIsFullscreen()
+	const isAutoplaying = false
 
 	const toggleVolume = () => {
 		settings.volume.master = - settings.volume.master
@@ -181,9 +178,13 @@ const ActionsButtons = ({script, show, close, qSave, qLoad}: ActionsButtonsProps
 			}, settings.fastForwardDelay)
 		close()
 	}
-	const autoPlay = () => {
-		script.autoPlay = true
-		close()
+	const toggleAutoPlay = () => {
+		if (script.autoPlay) {
+			script.autoPlay = false
+		} else {
+			script.autoPlay = true
+			close()
+		}
 	}
 	
 	const copySceneToClipboard = () => {
@@ -209,7 +210,7 @@ const ActionsButtons = ({script, show, close, qSave, qLoad}: ActionsButtonsProps
 				{strings.menu["q-load"]}
 			</button>
 			}
-			<button onClick={autoPlay} aria-label="auto play" title={strings.menu["auto-play"]} {...navProps(8, 0)}>
+			<button onClick={toggleAutoPlay} aria-label="auto play" className={isAutoplaying ? "on" : ""} title={strings.menu["auto-play"]} {...navProps(8, 0)}>
 				<MdPlayArrow />
 			</button>
 			<button onClick={fastForwardScene} aria-label="skip scene" title={strings.menu["ffw"]} {...navProps(8, 1)}>
@@ -218,8 +219,8 @@ const ActionsButtons = ({script, show, close, qSave, qLoad}: ActionsButtonsProps
 			<button onClick={toggleVolume} aria-label="mute/unmute" {...navProps(9, 0)}>
 				{mute ? <MdOutlineVolumeOff /> : <MdOutlineVolumeUp />}
 			</button>
-			<button onClick={toggleFullscreen} aria-label="toggle fullscreen" disabled={!supportFullscreen()} {...navProps(9, 1)}>
-				{fullscreen ? <MdFullscreenExit /> : <MdFullscreen />}
+			<button onClick={fullscreen.toggle} aria-label="toggle fullscreen" disabled={!fullscreen.isSupported} {...navProps(9, 1)}>
+				{isFullscreen ? <MdFullscreenExit /> : <MdFullscreen />}
 			</button>
 			{show?.copyScene &&
 			<button

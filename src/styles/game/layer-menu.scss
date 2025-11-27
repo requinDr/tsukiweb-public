@@ -117,6 +117,16 @@
 				background-color: var(--surface-on-menu);
 				justify-content: center;
 
+				&.on {
+					background: linear-gradient(90deg, #00d2ff 40%, oklch(1.8 0.15 220.72 / 1) 60%, #00d2ff);
+					background-size: 300% 100%;
+					animation: gradientAnimation 4s linear infinite;
+					@keyframes gradientAnimation {
+						0% { background-position: -100% 50%; }
+						100% { background-position: 200% 50%; }
+					}
+				}
+
 				&:hover, &:focus-visible {
 					color: var(--text-color);
 					box-shadow: var(--selected-shadow);

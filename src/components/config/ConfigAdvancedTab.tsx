@@ -81,9 +81,9 @@ const ConfigAdvancedTab = () => {
 			<ConfigItem label={strings.config.language}>
 				<div className="config-btns">
 					<Button
-						className={`config-btn flag`}
+						className="config-btn flag"
 						onClick={()=>setShowLanguage(true)}>
-						{languages?.[settings.language]?.["display-name"]}, ...
+						{languages?.[settings.language]?.["display-name"]}... +{Object.keys(languages).length - 1}
 					</Button>
 				</div>
 			</ConfigItem>
