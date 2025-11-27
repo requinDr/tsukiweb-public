@@ -34,10 +34,10 @@ const ConfigLayout = ({back, selectedTab, setSelectedTab}: Props) => {
 	useLanguageRefresh()
 
 	const tabs: ComponentProps<typeof PageTabsLayout>["tabs"] = [
-		{label: strings.config['tab-game'], value: ConfigTabs.game},
-		{label: strings.config['tab-audio'], value: ConfigTabs.audio},
-		{label: strings.config['tab-controls'], value: ConfigTabs.controls},
-		{label: strings.config['tab-advanced'], value: ConfigTabs.advanced}
+		{label: strings.config['tab-game'], value: ConfigTabs.game, audio: audio},
+		{label: strings.config['tab-audio'], value: ConfigTabs.audio, audio: audio},
+		{label: strings.config['tab-controls'], value: ConfigTabs.controls, audio: audio},
+		{label: strings.config['tab-advanced'], value: ConfigTabs.advanced, audio: audio}
 	]
 
 	return (

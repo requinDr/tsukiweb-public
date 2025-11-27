@@ -12,6 +12,7 @@ import { CharId } from 'types'
 import GalleryImage from 'components/gallery/GalleryImage'
 import GalleryTotal from 'components/gallery/GalleryTotal'
 import { useScreenAutoNavigate, useLanguageRefresh } from 'hooks'
+import { audio } from 'utils/audio'
 
 const container: Variants = {
 	hidden: { opacity: 0 },
@@ -59,7 +60,8 @@ const GalleryScreen = () => {
 
 	const tabs: ComponentProps<typeof PageTabsLayout>["tabs"] = ['ark','cel','aki','his','koha'].map(char => ({
 		label: strings.characters[char as CharId],
-		value: char
+		value: char,
+		audio: audio
 	}))
 
 	return (

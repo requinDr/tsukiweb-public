@@ -1,7 +1,7 @@
 import '@styles/plus-disc.scss'
 import { SCREEN } from '../utils/display'
 import Cover from "@assets/images/plus-disc_cover.webp"
-import { TabsComponent } from '@tsukiweb-common/ui-core'
+import { TabsBar } from '@tsukiweb-common/ui-core'
 import useQueryParam from '@tsukiweb-common/hooks/useQueryParam'
 import * as m from "motion/react-m"
 import { AnimatePresence, Variants } from 'motion/react'
@@ -48,7 +48,7 @@ const PlusDiscScreen = () => {
 						</p>
 					</div>
 				</div>
-				<TabsComponent
+				<TabsBar
 					tabs={[
 						{
 							label: strings.plus_disc.scenes,
