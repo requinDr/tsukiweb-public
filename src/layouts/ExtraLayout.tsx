@@ -7,7 +7,6 @@ import { useLocation, useNavigate } from "react-router"
 import { PageTitle, TitleMenuButton } from "@tsukiweb-common/ui-core"
 import { useLanguageRefresh } from "hooks/useLanguageRefresh"
 import useEclipseUnlocked from "hooks/useEclipseUnlocked"
-import { settings } from "utils/settings"
 import { audio } from "utils/audio"
 
 const ExtraLayout = ({ children }: PropsWithChildren) => {
@@ -85,14 +84,6 @@ const ExtraMenu = () => {
 					active={currentPage === SCREEN.SCENES}>
 					{strings.extra.scenes}
 				</TitleMenuButton>
-				{import.meta.env.DEV && settings.unlockEverything &&
-				<TitleMenuButton
-					audio={audio}
-					onClick={()=>navigate(SCREEN.CHARACTERS)}
-					active={currentPage === SCREEN.CHARACTERS}>
-					Characters
-				</TitleMenuButton>
-				}
 				<TitleMenuButton
 					audio={audio}
 					onClick={()=>navigate(SCREEN.PLUS_DISC)}
