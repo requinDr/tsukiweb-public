@@ -60,16 +60,15 @@ const ConfigLayout = ({back, selectedTab, setSelectedTab}: Props) => {
 export default ConfigLayout
 
 
-interface ConfigLayoutProps {
-	title: ReactNode
+type ConfigLayoutProps = ComponentProps<'div'> & {
+	label: ReactNode
 	children: ReactNode
 	helpAction?: VoidFunction
-	[key:string]:any
 }
-export const ConfigItem = ({ title,  children, helpAction, ...props }: ConfigLayoutProps) => (
+export const ConfigItem = ({ label, children, helpAction, ...props }: ConfigLayoutProps) => (
 	<div className="config" {...props}>
 		<div className="config-name">
-			<span>{title}</span>
+			<span>{label}</span>
 
 			{helpAction && (
 				<button className="icon-help" onClick={helpAction}>
@@ -84,43 +83,40 @@ export const ConfigItem = ({ title,  children, helpAction, ...props }: ConfigLay
 	</div>
 )
 
-type ConfigButtonsEntry =
-	{ text: string|JSX.Element } & (
-	{ value: any, onSelect?: never } |
-	{ value?: never, onSelect: VoidFunction })
-
-interface ConfigButtonsProps {
-	title: ReactNode
-	desc?: ReactNode
-	btns: ConfigButtonsEntry[]
-	property: string
-	conf: Record<string, any>
+type ConfigButtonsEntry<V> = {
+	label: string | JSX.Element,
+	value: V,
 	disabled?: boolean
-	updateValue: (key: any, value: any) => void
-	helpAction?: VoidFunction
+}
+
+interface ConfigButtonsProps<V> {
+	currentValue?: V
+	btns: ConfigButtonsEntry<V>[]
+	disabled?: boolean
+	updateValue: (newValue: V) => void
 }
 /** Display multiples options to choose from */
-export const ConfigButtons = ({title, desc, btns, property, conf, disabled, updateValue, helpAction}: ConfigButtonsProps) => (
-	<ConfigItem title={title} desc={desc} helpAction={helpAction}>
+export const ConfigButtons = <V,>({currentValue, btns, disabled, updateValue}: ConfigButtonsProps<V>) => {
+	return (
 		<div className="config-btns">
-			{btns.map(({text, value, onSelect}) =>
+			{btns.map((btn) =>
 				<Button
-					key={text.toString()}
-					onClick={onSelect ?? (() => updateValue(property, value))}
-					className="config-btn"
-					active={conf[property] === value}
+					key={btn.label.toString()}
 					variant="corner"
-					disabled={disabled}
+					onClick={() => updateValue(btn.value)}
+					className="config-btn"
+					active={currentValue === btn.value}
+					disabled={disabled || btn.disabled}
 				>
-					{text}
+					{btn.label}
 				</Button>
 			)}
 		</div>
-	</ConfigItem>
-)
+	)
+}
 
 export const ResetBtn = ({onClick}: {onClick: ()=> void}) => (
-	<div className="reset">
+	<div className="config-reset">
 		<Button onClick={onClick}>
 			{strings.config.reset}
 		</Button>

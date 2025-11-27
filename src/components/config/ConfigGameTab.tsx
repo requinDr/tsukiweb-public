@@ -46,44 +46,44 @@ const ConfigGameTab = () => {
 
 	return (
 		<PageSection>
-			<ConfigButtons
-				title={strings.config.ratio}
-				btns={[
-					{ text: strings.config["ratio-auto"], value: ViewRatio.unconstrained },
-					{ text: strings.config["ratio-4-3"], value: ViewRatio.fourByThree },
-					{ text: strings.config["ratio-16-9"], value: ViewRatio.sixteenByNine }
-				]}
-				property="fixedRatio"
-				conf={conf}
-				updateValue={updateValue}
-			/>
+			<ConfigItem label={strings.config.ratio}>
+				<ConfigButtons
+					currentValue={conf.fixedRatio}
+					btns={[
+						{ label: strings.config["ratio-auto"], value: ViewRatio.unconstrained },
+						{ label: strings.config["ratio-4-3"], value: ViewRatio.fourByThree },
+						{ label: strings.config["ratio-16-9"], value: ViewRatio.sixteenByNine }
+					]}
+					updateValue={newValue => updateValue('fixedRatio', newValue)}
+				/>
+			</ConfigItem>
 
-			<ConfigButtons
-				title={strings.config.fullscreen}
-				btns={[
-					{ text: strings.config.on, value: true },
-					{ text: strings.config.off, value: false },
-				]}
-				property="fullscreen"
-				conf={{fullscreen}}
-				updateValue={toggleFullscreen}
-				disabled={!supportFullscreen()}
-			/>
+			<ConfigItem label={strings.config.fullscreen}>
+				<ConfigButtons
+					currentValue={fullscreen}
+					btns={[
+						{ label: strings.config.on, value: true },
+						{ label: strings.config.off, value: false },
+					]}
+					updateValue={toggleFullscreen}
+					disabled={!supportFullscreen()}
+				/>
+			</ConfigItem>
 
-			<ConfigButtons
-				title={strings.config["text-speed"]}
-				btns={[
-					{ text: strings.config["text-speed-low"], value: TEXT_SPEED.slow },
-					{ text: strings.config["text-speed-med"], value: TEXT_SPEED.normal },
-					{ text: strings.config["text-speed-high"], value: TEXT_SPEED.fast },
-					{ text: strings.config["text-speed-instant"], value: TEXT_SPEED.instant }
-				]}
-				property="textSpeed"
-				conf={conf}
-				updateValue={updateValue}
-			/>
+			<ConfigItem label={strings.config["text-speed"]}>
+				<ConfigButtons
+					currentValue={conf.textSpeed}
+					btns={[
+						{ label: strings.config["text-speed-low"], value: TEXT_SPEED.slow },
+						{ label: strings.config["text-speed-med"], value: TEXT_SPEED.normal },
+						{ label: strings.config["text-speed-high"], value: TEXT_SPEED.fast },
+						{ label: strings.config["text-speed-instant"], value: TEXT_SPEED.instant }
+					]}
+					updateValue={newValue => updateValue('textSpeed', newValue)}
+				/>
+			</ConfigItem>
 
-			<ConfigItem title={strings.config["auto-play-delay-text"].replace('%0',msToS(conf.autoClickDelay))}>
+			<ConfigItem label={strings.config["auto-play-delay-text"].replace('%0',msToS(conf.autoClickDelay))}>
 				<div className="config-range">
 					<span className="icon"><FaMinus /></span>
 					<input
@@ -99,7 +99,7 @@ const ConfigGameTab = () => {
 				</div>
 			</ConfigItem>
 
-			<ConfigItem title={strings.config["auto-play-delay-page"].replace('%0',msToS(conf.nextPageDelay))}>
+			<ConfigItem label={strings.config["auto-play-delay-page"].replace('%0',msToS(conf.nextPageDelay))}>
 				<div className="config-range">
 					<span className="icon"><FaMinus /></span>
 					<input

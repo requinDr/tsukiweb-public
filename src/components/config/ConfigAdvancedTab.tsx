@@ -78,7 +78,7 @@ const ConfigAdvancedTab = () => {
 
 	return (
 		<PageSection>
-			<ConfigItem title={strings.config.language}>
+			<ConfigItem label={strings.config.language}>
 				<div className="config-btns">
 					<Button
 						className={`config-btn flag`}
@@ -91,8 +91,8 @@ const ConfigAdvancedTab = () => {
 
 			<div className="sub">
 				<div className="title">{strings.config["adult-title"]}</div>
-				<ConfigButtons
-					title={strings.config["adult-blur"]}
+				<ConfigItem
+					label={strings.config["adult-blur"]}
 					helpAction={()=>setModal({show: true, content:
 						<>
 							<h2>{strings.config["adult-blur"]}</h2>
@@ -120,30 +120,33 @@ const ConfigAdvancedTab = () => {
 							</div>
 						</>
 					})}
-					btns={[
-						{ text: strings.config.on, value: true },
-						{ text: strings.config.off, value: false },
-					]}
-					property="blurThumbnails"
-					conf={conf}
-					updateValue={updateValue}
-				/>
+				>
+					<ConfigButtons
+						currentValue={conf.blurThumbnails}
+						btns={[
+							{ label: strings.config.on, value: true },
+							{ label: strings.config.off, value: false },
+						]}
+						updateValue={newValue => updateValue('blurThumbnails', newValue)}
+					/>
+				</ConfigItem>
 
-				<ConfigButtons
-					title={strings.config["adult-warn"]}
-					helpAction={() => warnHScene()}
-					btns={[
-						{ text: strings.config.on, value: true },
-						{ text: strings.config.off, value: false },
-					]}
-					property="warnHScenes"
-					conf={conf}
-					updateValue={updateValue}
-				/>
+				<ConfigItem
+					label={strings.config["adult-warn"]}
+					helpAction={() => warnHScene()}>
+					<ConfigButtons
+						currentValue={conf.warnHScenes}
+						btns={[
+							{ label: strings.config.on, value: true },
+							{ label: strings.config.off, value: false },
+						]}
+						updateValue={newValue => updateValue('warnHScenes', newValue)}
+					/>
+				</ConfigItem>
 			</div>
 
-			<ConfigButtons
-				title={strings.config["show-locked-content"]}
+			<ConfigItem
+				label={strings.config["show-locked-content"]}
 				helpAction={()=>setModal({show: true, content:
 					<>
 						<h2>{strings.config["show-locked-content"]}</h2>
@@ -151,26 +154,27 @@ const ConfigAdvancedTab = () => {
 							<p key={i}>{bb(txt)}</p>
 						)}
 					</>
-				})}
-				btns={[
-					{ text: strings.yes, value: true },
-					{ text: strings.no, value: false },
-				]}
-				property="unlockEverything"
-				conf={conf}
-				updateValue={updateValue}
-			/>
+				})}>
+				<ConfigButtons
+					currentValue={conf.unlockEverything}
+					btns={[
+						{ label: strings.yes, value: true },
+						{ label: strings.no, value: false },
+					]}
+					updateValue={newValue => updateValue('unlockEverything', newValue)}
+				/>
+			</ConfigItem>
 
-			<ConfigItem title={strings.config.data}>
+			<ConfigItem label={strings.config.data}>
 				<div className="config-btns">
-					<Button className="config-btn"
-						onClick={exportData}>
-						<MdDownload /> {strings.config["data-export"]}
-					</Button>
 					<Button className="config-btn"
 						onClick={importData.bind(null, false)}
 						onContextMenu={importData.bind(null, true)}>
 						<MdFileUpload /> {strings.config["data-import"]}
+					</Button>
+					<Button className="config-btn"
+						onClick={exportData}>
+						<MdDownload /> {strings.config["data-export"]}
 					</Button>
 					<Button className="config-btn erase"
 						onClick={eraseData}>

@@ -53,7 +53,7 @@ const ConfigAudioTab = () => {
 	return (
 		<PageSection>
 			{(Object.keys(volumeNames) as Array<keyof typeof volumeNames>).map(key=>
-				<ConfigItem key={key} title={volumeNames[key]}>
+				<ConfigItem key={key} label={volumeNames[key]}>
 					<div className="config-range">
 						<span className="icon"><MdVolumeMute /></span>
 						<input
@@ -66,16 +66,18 @@ const ConfigAudioTab = () => {
 								const sign = negative(conf.volume[key]) ? -1 : 1
 								updateSubValue('volume', key, sign * parseInt(e.target.value))
 							}} />
-						<button className="icon mute"
+						<button className="icon btn"
 							onClick={()=> updateSubValue('volume', key, -conf.volume[key])}>
-							{negative(conf.volume[key]) ? <MdOutlineVolumeOff aria-label="mute" className="off" /> : <MdOutlineVolumeUp aria-label="unmute" />}
+							{negative(conf.volume[key])
+								? <MdOutlineVolumeOff aria-label="mute" className="off" />
+								: <MdOutlineVolumeUp aria-label="unmute" />}
 						</button>
 					</div>
 				</ConfigItem>
 			)}
 			
-			<ConfigButtons
-				title={strings.config["track-source"]}
+			<ConfigItem
+				label={strings.config["track-source"]}
 				helpAction={()=>setModal({show: true, content:
 					<>
 						<h2>{strings.config["track-source"]}</h2>
@@ -86,23 +88,25 @@ const ConfigAudioTab = () => {
 						</ul>
 					</>
 				})}
-				btns={Object.entries(strings.config["track-sources"]).map(
-					([id, name])=> ({text: name, value: id}))}
-				property="trackSource"
-				conf={conf}
-				updateValue={updateValue}
-			/>
+			>
+				<ConfigButtons
+					currentValue={conf.trackSource}
+					btns={Object.entries(strings.config["track-sources"]).map(
+						([id, name])=> ({label: name, value: id as typeof conf.trackSource}))}
+					updateValue={newValue => updateValue('trackSource', newValue)}
+				/>
+			</ConfigItem>
 
-			<ConfigButtons
-				title={strings.config['auto-mute']}
-				btns={[
-					{ text: strings.config.on, value: true },
-					{ text: strings.config.off, value: false },
-				]}
-				property="autoMute"
-				conf={conf}
-				updateValue={updateValue}
-			/>
+			<ConfigItem label={strings.config['auto-mute']}>
+				<ConfigButtons
+					currentValue={conf.autoMute}
+					btns={[
+						{ label: strings.config.on, value: true },
+						{ label: strings.config.off, value: false },
+					]}
+					updateValue={newValue => updateValue('autoMute', newValue)}
+				/>
+			</ConfigItem>
 
 			<ResetBtn onClick={handleReset} />
 

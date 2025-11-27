@@ -90,7 +90,11 @@
 			flex-wrap: wrap;
 
 			.config-btn {
-				min-width: min(100px, 100%);
+				min-width: 100px;
+
+				&:has(> svg) {
+					padding-left: 0.6em;
+				}
 			}
 		}
 
@@ -99,7 +103,7 @@
 			display: flex;
 			gap: .6em;
 			align-items: center;
-			min-height: 36.45px; // height of buttons
+			min-height: 36px; // height of buttons
 
 			input[type="range"] {
 				appearance: none;
@@ -141,20 +145,19 @@
 			.icon {
 				display: flex;
 				font-size: 1.2em;
-			}
-			.mute {
-				display: flex;
-				transition: .1s ease-in-out;
-				border-radius: 4px;
-				padding: 0.2em;
-				color: var(--color-link);
+				&.btn {
+					transition: .1s ease-in-out;
+					border-radius: 4px;
+					padding: 0.2em;
+					color: var(--color-link);
 
-				&:hover, &:focus-visible {
-					box-shadow: var(--selected-shadow);
-				}
+					.off {
+						filter: grayscale(1);
+					}
 
-				.off {
-					filter: grayscale(1);
+					&:hover, &:focus-visible {
+						box-shadow: var(--selected-shadow);
+					}
 				}
 			}
 		}
@@ -189,7 +192,7 @@
 		}
 	}
 
-	.reset {
+	.config-reset {
 		margin-top: 1em;
 		display: flex;
 		justify-content: flex-end;

@@ -137,8 +137,7 @@ const LayerButton = ({children, navY, ...props}: LayerButtonProps) => {
 	const soundProps = useButtonSounds<HTMLButtonElement>(
 		audio, 
 		props,
-		{ hoverSound: 'tick', clickSound: 'glass' }, 
-		200
+		{ hoverSound: 'tick', clickSound: 'glass' }
 	)
 	
 	return (
