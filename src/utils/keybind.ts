@@ -36,3 +36,20 @@ export const inGameKeyMap = {
     "config":  [
         {key: "C", repeat: false}],
 }
+
+export const menuKeyMap = {
+    "nav": [
+        {key: "ArrowUp"   , ctrlKey: false, [KeyMap.args]: "up"},
+        {key: "ArrowLeft" , ctrlKey: false, [KeyMap.args]: "left"},
+        {key: "ArrowDown" , ctrlKey: false, [KeyMap.args]: "down"},
+        {key: "ArrowRight", ctrlKey: false, [KeyMap.args]: "right"},
+        //{code: "KeyW"     , ctrlKey: false, [KeyMap.args]: "up"},
+        //{code: "KeyA"     , ctrlKey: false, [KeyMap.args]: "left"},
+        //{code: "KeyS"     , ctrlKey: false, [KeyMap.args]: "down"},
+        //{code: "KeyD"     , ctrlKey: false, [KeyMap.args]: "right"},
+        {key: "Escape"    , ctrlKey: false, repeat: false, [KeyMap.args]: "out"},
+        {key: "Backspace" , ctrlKey: false, repeat: false, [KeyMap.args]: "out"},
+        {key: "Enter"     , ctrlKey: false, repeat: false, [KeyMap.args]: "in"},
+        {key: "Space"     , ctrlKey: false, repeat: false, [KeyMap.args]: "in"},
+    ]
+}

@@ -2,7 +2,7 @@ import { ScriptPlayer } from "script/ScriptPlayer";
 import { LabelName } from "types";
 import { InGameLayersHandler } from "./display";
 import { moveBg } from "./graphics";
-import { inGameKeyMap } from "./keybind";
+import { inGameKeyMap, menuKeyMap } from "./keybind";
 import { QUICK_SAVE_ID, savesManager } from "./savestates";
 import { settings } from "./settings";
 import history, { History } from './history';
@@ -12,6 +12,7 @@ import { FaSave } from "react-icons/fa";
 import { MdPlayArrow } from 'react-icons/md';
 import { isThScene } from "script/utils";
 import { SCENE_ATTRS } from "./constants";
+import directionalNavigate from "@tsukiweb-common/input/arrowNavigation";
 
 
 function quickLoad(history: History, onLoad: VoidFunction) {
@@ -99,6 +100,7 @@ function createKeyMap(layers: InGameLayersHandler, show: ShowLayers) {
 		"q_save":   [()=> show.qSave && noMenu(), ...inGameKeyMap['q_save']],
 		"q_load":   [()=> show.qLoad && noMenu(), ...inGameKeyMap['q_load']],
 		"config":   [()=> show.config && noMenu(), ...inGameKeyMap['config']],
+		"nav":		[()=> !noMenu(), ...menuKeyMap['nav']]
 	}
 }
 
@@ -265,6 +267,10 @@ class UserActionsHandler {
 			case "save"     : layers.save     = !layers.save; break
 			case "config"   : layers.config   = !layers.config; break
 			case "bg_move"  : moveBg(args[0]); break
+			case "nav"		:
+				if (!['text', 'graphics'].includes(layers.topLayer))
+					directionalNavigate(args[0])
+				break
 		}
 	}
 }

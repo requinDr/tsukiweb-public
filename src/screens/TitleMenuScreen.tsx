@@ -17,6 +17,16 @@ import { useScreenAutoNavigate, useLanguageRefresh } from 'hooks'
 import useEclipseUnlocked from 'hooks/useEclipseUnlocked'
 import classNames from "classnames"
 import { audio } from "utils/audio"
+import directionalNavigate, { navProps } from '@tsukiweb-common/input/arrowNavigation'
+import { useKeyMap } from "@tsukiweb-common/input/KeyMap"
+import { menuKeyMap } from "utils/keybind"
+
+function keyboardCallback(action: any, evt: KeyboardEvent, ...args: any) {
+	switch (action) {
+		case "nav" : return directionalNavigate(args[0])
+		default : throw Error(`Unknown action ${action}`)
+	}
+}
 
 const TitleMenuScreen = () => {
 	const navigate = useNavigate()
@@ -24,6 +34,9 @@ const TitleMenuScreen = () => {
 	const [conf] = useObserved(settings.volume, 'master')
 	useLanguageRefresh()
 	const { eclipseUnlocked } = useEclipseUnlocked()
+
+	useKeyMap(menuKeyMap, keyboardCallback, document, 'keydown',
+			{ capture: false })
 
 	return (
 		<m.div
@@ -56,25 +69,26 @@ const TitleMenuScreen = () => {
 
 			<nav className="menu">
 				<div className='menu-buttons'>
-					<TitleMenuButton audio={audio} onClick={newGame}>
+					<TitleMenuButton audio={audio} onClick={newGame} {...navProps(0, 0)}>
 						{strings.title.start}
 					</TitleMenuButton>
 
 					{(savesManager.savesCount > 0 || history.pagesLength > 0) &&
-					<TitleMenuButton audio={audio} onClick={continueGame}>
+					<TitleMenuButton audio={audio} onClick={continueGame} {...navProps(0, 1)}>
 						{strings.title.resume}
 					</TitleMenuButton>
 					}
 
-					<TitleMenuButton audio={audio} onClick={() => navigate(SCREEN.LOAD)}>
+					<TitleMenuButton audio={audio} onClick={() => navigate(SCREEN.LOAD)} {...navProps(0, 2)}>
 						{strings.title.load}
 					</TitleMenuButton>
 
-					<TitleMenuButton audio={audio} onClick={() => navigate(SCREEN.CONFIG)}>
+					<TitleMenuButton audio={audio} onClick={() => navigate(SCREEN.CONFIG)} {...navProps(0, 3)}>
 						{strings.title.config}
 					</TitleMenuButton>
 
-					<TitleMenuButton audio={audio} onClick={() => navigate(SCREEN.GALLERY)} attention={eclipseUnlocked}>
+					<TitleMenuButton audio={audio} onClick={() => navigate(SCREEN.GALLERY)} {...navProps(0, 4)}
+									 attention={eclipseUnlocked}>
 						{strings.title.extra}
 					</TitleMenuButton>
 				</div>
@@ -89,6 +103,7 @@ const TitleMenuScreen = () => {
 						duration: 1,
 					}}>
 					<button
+						{...navProps(-1, 5)}
 						className={classNames("action-icon", { inactive: conf < 0 })}
 						onContextMenu={e => e.preventDefault()}
 						aria-label={strings.config['volume-master']}
@@ -105,7 +120,7 @@ const TitleMenuScreen = () => {
 						delay: 0.7,
 						duration: 1,
 					}}>
-					<TranslationSwitch />
+					<TranslationSwitch {...navProps(-1, 6)}/>
 				</m.div>
 
 				<m.div
@@ -115,7 +130,7 @@ const TitleMenuScreen = () => {
 						delay: 0.6,
 						duration: 1,
 					}}>
-					<AppInfo />
+					<AppInfo {...navProps(-1, 7)}/>
 				</m.div>
 			</div>
 		</m.div>

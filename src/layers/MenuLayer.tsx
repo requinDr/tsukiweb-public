@@ -12,6 +12,7 @@ import { useDOMEvent } from "@tsukiweb-common/hooks/useDOMEvent"
 import { ScriptPlayer } from "script/ScriptPlayer"
 import useButtonSounds from "@tsukiweb-common/hooks/useButtonSounds"
 import { audio } from "utils/audio"
+import { navProps } from "@tsukiweb-common/input/arrowNavigation"
 
 
 type Props = {
@@ -81,37 +82,37 @@ const MenuLayer = ({script, show, layers, qSave, qLoad}: Props) => {
 
 					<div className="layer-btns">
 						{show?.graphics &&
-						<LayerButton onClick={graphicMode}>
+						<LayerButton onClick={graphicMode} navY={0}>
 							{strings.menu["graphics"]}
 						</LayerButton>
 						}
 						{show?.history &&
-						<LayerButton onClick={historyMode}>
+						<LayerButton onClick={historyMode} navY={1}>
 							{strings.menu["history"]}
 						</LayerButton>
 						}
 						{show?.flowchart &&
-						<LayerButton onClick={flowchartMode}>
+						<LayerButton onClick={flowchartMode} navY={2}>
 							{strings.extra.scenes}
 						</LayerButton>
 						}
 						{show?.save &&
-						<LayerButton onClick={saveMode}>
+						<LayerButton onClick={saveMode} navY={3}>
 							{strings.menu["save"]}
 						</LayerButton>
 						}
 						{show?.load &&
-						<LayerButton onClick={loadMode}>
+						<LayerButton onClick={loadMode} navY={4}>
 							{strings.menu["load"]}
 						</LayerButton>
 						}
 						{show?.config &&
-						<LayerButton onClick={configMode}>
+						<LayerButton onClick={configMode} navY={5}>
 							{strings.menu["config"]}
 						</LayerButton>
 						}
 						{show?.title &&
-						<LayerButton onClick={title}>
+						<LayerButton onClick={title} navY={6}>
 							{strings.menu["title"]}
 						</LayerButton>
 						}
@@ -129,9 +130,10 @@ export default MenuLayer
 
 
 type LayerButtonProps = {
+	navY: number,
 	children: React.ReactNode
 } & React.ButtonHTMLAttributes<HTMLButtonElement>
-const LayerButton = ({children, ...props}: LayerButtonProps) => {
+const LayerButton = ({children, navY, ...props}: LayerButtonProps) => {
 	const soundProps = useButtonSounds<HTMLButtonElement>(
 		audio, 
 		props,
@@ -140,7 +142,7 @@ const LayerButton = ({children, ...props}: LayerButtonProps) => {
 	)
 	
 	return (
-		<button {...soundProps} className="layer-btn">
+		<button {...soundProps} className="layer-btn" {...navProps(navY, 0)}>
 			{children}
 		</button>
 	)
@@ -199,25 +201,25 @@ const ActionsButtons = ({script, show, close, qSave, qLoad}: ActionsButtonsProps
 	return (
 		<div className="action-btns">
 			{show?.qSave &&
-			<button onClick={qSave} className="quick">
+			<button onClick={qSave} className="quick" {...navProps(7, 0)}>
 				{strings.menu["q-save"]}
 			</button>
 			}
 			{show?.qLoad &&
-			<button onClick={qLoad} className="quick">
+			<button onClick={qLoad} className="quick" {...navProps(7, 1)}>
 				{strings.menu["q-load"]}
 			</button>
 			}
-			<button onClick={autoPlay} aria-label="auto play" title={strings.menu["auto-play"]}>
+			<button onClick={autoPlay} aria-label="auto play" title={strings.menu["auto-play"]} {...navProps(8, 0)}>
 				<MdPlayArrow />
 			</button>
-			<button onClick={fastForwardScene} aria-label="skip scene" title={strings.menu["ffw"]}>
+			<button onClick={fastForwardScene} aria-label="skip scene" title={strings.menu["ffw"]} {...navProps(8, 1)}>
 				<MdFastForward />
 			</button>
-			<button onClick={toggleVolume} aria-label="mute/unmute">
+			<button onClick={toggleVolume} aria-label="mute/unmute" {...navProps(9, 0)}>
 				{mute ? <MdOutlineVolumeOff /> : <MdOutlineVolumeUp />}
 			</button>
-			<button onClick={toggleFullscreen} aria-label="toggle fullscreen" disabled={!supportFullscreen()}>
+			<button onClick={toggleFullscreen} aria-label="toggle fullscreen" disabled={!supportFullscreen()} {...navProps(9, 1)}>
 				{fullscreen ? <MdFullscreenExit /> : <MdFullscreen />}
 			</button>
 			{show?.copyScene &&
@@ -227,6 +229,7 @@ const ActionsButtons = ({script, show, close, qSave, qLoad}: ActionsButtonsProps
 				aria-label="copy scene link"
 				disabled={script.currentLabel?.startsWith("skip")}
 				title={script.currentLabel ?? ""}
+				{...navProps(10, 0)}
 			>
 				{strings.menu["copy-scene-url"]}
 			</button>

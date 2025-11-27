@@ -2,7 +2,7 @@ import { useRef } from "react"
 import { strings } from "../../translation/lang"
 import { useLanguageRefresh } from "../../hooks/useLanguageRefresh"
 import { PageSection } from "@tsukiweb-common/ui-core"
-import { KeymapKeyFilter } from "@tsukiweb-common/utils/KeyMap"
+import { KeymapKeyFilter } from "@tsukiweb-common/input/KeyMap"
 import { bb } from "@tsukiweb-common/utils/Bbcode"
 import { inGameKeyMap } from "utils/keybind"
 

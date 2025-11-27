@@ -9,11 +9,14 @@ import usePWA from "@tsukiweb-common/hooks/usePWA"
 import { bb } from "@tsukiweb-common/utils/Bbcode"
 import { SCREEN } from "utils/display"
 
-const AppInfo = () => {
+type Props = Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'onClick'|'onContextMenu'|'className'>
+
+const AppInfo = (props?: Props) => {
 	const [show, setShow] = useState<boolean>(false)
 	return (
 		<>
 			<button
+				{...props}
 				className="action-icon" 
 				aria-label="show information modal"
 				onContextMenu={e => e.preventDefault()}
