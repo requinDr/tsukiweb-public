@@ -108,6 +108,7 @@ const HistoryDisplay = ({
 		onPageSelect
 	}: HistoryDisplayProps) => {
 	const containerRef = useRef<HTMLDivElement>(null)
+	const ignoreScrollRef = useRef(false)
 	const pagesArray = Array.from(history.allPages)
 
 	useEffect(() => {
@@ -121,6 +122,7 @@ const HistoryDisplay = ({
 	}, [history.pagesLength])
 
 	const onScroll = useCallback((evt: React.UIEvent<HTMLDivElement>)=> {
+		if (ignoreScrollRef.current) return
 		const elmt = containerRef.current!
 		const diff = elmt.scrollHeight - elmt.scrollTop - elmt.clientHeight
 
@@ -129,12 +131,20 @@ const HistoryDisplay = ({
 			close()
 	}, [])
 
+	const handleFocusCapture = useCallback(() => {
+		ignoreScrollRef.current = true
+
+		setTimeout(() => {
+			ignoreScrollRef.current = false
+		}, 500)
+	}, [])
+
 	const handlePageClick = (index: number) => {
 		onPageSelect(index)
 	}
 
 	return (
-		<div id="history" ref={containerRef} onScroll={onScroll}>
+		<div id="history" ref={containerRef} onScroll={onScroll} onFocusCapture={handleFocusCapture}>
 			<div className="text-container">
 				{pagesArray.map((page, i) =>
 					<PageElement key={i} history={history} content={page}

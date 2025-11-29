@@ -1,4 +1,4 @@
-import { memo, Fragment, ReactNode, useCallback, createRef, useEffect } from "react"
+import { memo, Fragment, ReactNode, useCallback, useMemo } from "react"
 import { strings } from "../../translation/lang"
 import { phaseTexts } from "../../translation/assets"
 import { getSceneTitle } from "../../script/utils"
@@ -9,7 +9,53 @@ import { Bbcode, bb } from "@tsukiweb-common/utils/Bbcode"
 import { History, PageEntry } from "utils/history"
 import { TsukihimeSceneName } from "types"
 import { DivProps } from "@tsukiweb-common/types"
-import useButtonSounds from "@tsukiweb-common/hooks/useButtonSounds"
+
+
+const TextContent = ({ text }: { text: string }) => {
+	const lines = useMemo(() => {
+		if (!text) return []
+		// remove empty first and last lines
+		return text.replace(/^\n+|\n+$/g, '').split('\n')
+	}, [text])
+
+	return lines.map((line, i) =>
+		<Fragment key={i}>
+			{i > 0 && <br/>}
+			<Bbcode text={line}/>
+		</Fragment>
+	)
+}
+
+const ChoiceContent = ({ content }: { content: PageEntry<"choice"> }) => {
+	const { choices, selected } = content
+	return choices.map(({ str, index }) =>
+		<div key={index} className={classNames('choice', { selected: index == selected })}>
+			{str}
+		</div>
+	)
+}
+
+const SkipContent = ({ history, content }: { history: History, content: PageEntry<"skip"> }) => {
+	const {label} = content as PageEntry<"skip">
+	const flags = history.getSceneContext(label)?.flags as string[]
+	const sceneTitle = getSceneTitle(flags, label as TsukihimeSceneName)??""
+	return (
+		<span className='skip'>
+			{bb(strings.history.skipped.replace('%0', sceneTitle))}
+		</span>
+	)
+}
+
+const PhaseContent = ({ content }: { content: PageEntry<"phase"> }) => {
+	const { phase: { route, routeDay, day } } = content
+	const [phaseTitle, phaseDay] = phaseTexts(route, routeDay, day)
+	return (
+		<span className='phase'>
+			{phaseTitle && bb(phaseTitle)}
+			{phaseDay && <><br/>{bb(phaseDay)}</>}
+		</span>
+	)
+}
 
 type Props = {
 	history: History,
@@ -18,71 +64,41 @@ type Props = {
 	navY?: number
 } & Omit<DivProps, 'onLoad'|'content'>
 
-const PageElement = ({history, content, onLoad, navY=0, ...props}: Props)=> {
-	
-	if (!content) return null
-	
+const PageElement = ({history, content, onLoad, navY=0, ...props}: Props)=> {	
 	let displayContent: ReactNode
-	let divRef = createRef<HTMLDivElement>()
 
 	switch(content.type) {
 		case "text" :
-			const text = content.text?.split('\n') ?? []
-			// remove empty first and last lines
-			while (text.length > 0 && text[0].length == 0)
-				text.shift()
-			while (text.length > 0 && text[text.length-1].length == 0)
-				text.pop()
-
-			displayContent = text.map((line, i) =>
-				<Fragment key={i}>
-					{i > 0 && <br/>}
-					<Bbcode text={line}/>
-				</Fragment>
-			)
+			displayContent = <TextContent text={content.text}/>
 			break
 		case "choice":
-			const {choices, selected} = content as PageEntry<"choice">
-			displayContent = choices.map(({str, index})=>
-				<div key={index} className={classNames('choice', {selected: index==selected})}>
-					{str}
-				</div>
-			)
+			displayContent = <ChoiceContent content={content as PageEntry<"choice">}/>
 			break
 		case "skip" :
-			const {label} = content as PageEntry<"skip">
-			const flags = history.getSceneContext(label)?.flags as string[]
-			const sceneTitle = getSceneTitle(flags, label as TsukihimeSceneName)??""
-			displayContent = <span className='skip'>
-				{bb(strings.history.skipped.replace('%0', sceneTitle))}
-			</span>
+			displayContent = <SkipContent history={history} content={content as PageEntry<"skip">}/>
 			break
 		case "phase" :
-			const {phase: {route, routeDay, day}} = content as PageEntry<"phase">
-			const [phaseTitle, phaseDay] = phaseTexts(route, routeDay, day)
-			displayContent = <span className='phase'>
-				{phaseTitle && bb(phaseTitle)}
-				{phaseDay && <><br/>{bb(phaseDay)}</>}
-			</span>
+			displayContent = <PhaseContent content={content as PageEntry<"phase">}/>
 			break
 		default :
-			throw Error(`Unknown page type ${content.type}`)
+			console.error(`Unknown page type ${content.type}`)
 	}
-	const onFocus = useCallback((evt: FocusEvent)=> {
-		(evt.target! as HTMLElement).parentElement!.scrollIntoView({behavior: 'smooth', block: 'nearest'})
+
+	const onFocus = useCallback((e: FocusEvent)=> {
+		(e.target! as HTMLElement).parentElement!.scrollIntoView({behavior: 'smooth', block: 'nearest'})
 	}, [])
 
 	return (
-	<div {...props}>
-		<hr {...{"page-type": content.type}} />
-		{content &&
-			<Button onClick={onLoad.bind(null,content)} className='load'
+		<div {...props}>
+			<hr data-page-type={content.type} />
+			{content &&
+				<Button onClick={onLoad.bind(null,content)} className='load'
 					{...{"nav-y": navY, "nav-x": 0}} onFocus={onFocus as any}>
-				<MdReplay /> {strings.history.load}
-			</Button>
-		}
-		{displayContent}
-	</div>
+					<MdReplay /> {strings.history.load}
+				</Button>
+			}
+			{displayContent}
+		</div>
 	)
 }
 
