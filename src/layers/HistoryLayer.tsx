@@ -124,7 +124,7 @@ const HistoryDisplay = ({
 		const elmt = containerRef.current!
 		const diff = elmt.scrollHeight - elmt.scrollTop - elmt.clientHeight
 
-		const isAtBottom = diff < 2
+		const isAtBottom = diff <= 1
 		if (isAtBottom)
 			close()
 	}, [])
