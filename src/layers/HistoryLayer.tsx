@@ -1,6 +1,6 @@
-import { createRef, memo, useCallback, useEffect, useLayoutEffect, useRef  } from 'react';
+import { memo, useCallback, useEffect, useLayoutEffect, useRef } from 'react';
 import { InGameLayersHandler } from '../utils/display';
-import { History, PageEntry } from '../utils/history';
+import { History } from '../utils/history';
 import { strings } from '../translation/lang';
 import PageElement from '../components/molecules/PageElement';
 import classNames from 'classnames';
@@ -107,46 +107,40 @@ const HistoryDisplay = ({
 		close,
 		onPageSelect
 	}: HistoryDisplayProps) => {
-	const historyRef = useRef<HTMLDivElement>(null)
-	const lastPageRef = createRef<HTMLElement>()
-	const scrolling = useRef<boolean>(false)
+	const containerRef = useRef<HTMLDivElement>(null)
+	const pagesArray = Array.from(history.allPages)
 
-	useEffect(()=> {
-		lastPageRef.current?.scrollIntoView({behavior: 'auto', block: 'nearest'})
-	}, [lastPageRef])
-
-	const onScroll = useCallback((evt: Event)=> {
-		//when scrolled to the bottom of history, hide history
-		if (!scrolling.current && evt.isTrusted) {
-			const elmt = historyRef.current!
-			const diff = elmt.scrollHeight - elmt.scrollTop - elmt.clientHeight
-
-			const bottom = diff <= 1
-			if (bottom)
-				close()
-			else
-				scrolling.current = true
+	useEffect(() => {
+		if (containerRef.current) {
+			const { scrollHeight, clientHeight } = containerRef.current
+			containerRef.current.scrollTo({ 
+				top: scrollHeight - clientHeight - 2, //-2 for precision issues
+				behavior: 'auto' 
+			})
 		}
+	}, [history.pagesLength])
+
+	const onScroll = useCallback((evt: React.UIEvent<HTMLDivElement>)=> {
+		const elmt = containerRef.current!
+		const diff = elmt.scrollHeight - elmt.scrollTop - elmt.clientHeight
+
+		const isAtBottom = diff < 2
+		if (isAtBottom)
+			close()
 	}, [])
 
-	const onScrollEnd = useCallback(()=> {
-		scrolling.current = false
-	}, [])
-
-	function onClick(index: number, _page: PageEntry) {
+	const handlePageClick = (index: number) => {
 		onPageSelect(index)
 	}
-	//if (!history.empty) // at least one element in the iterator TODO display a 'nothing here' icon
 
 	return (
-		<div id="history" ref={historyRef} onScroll={onScroll as any} onScrollEnd={onScrollEnd}>
+		<div id="history" ref={containerRef} onScroll={onScroll}>
 			<div className="text-container">
-				{Array.from(history.allPages, (page, i) =>
-					<PageElement history={history} key={i} content={page}
-								 onLoad={onClick.bind(null, i)}
-								 navY={i + 1 - history.pagesLength}
-								 {...(i == history.pagesLength - 1) ? {ref: lastPageRef} : {}}
-								 />
+				{pagesArray.map((page, i) =>
+					<PageElement key={i} history={history} content={page}
+						onLoad={() => handlePageClick(i)}
+						navY={i + 1 - history.pagesLength}
+					/>
 				)}
 			</div>
 		</div>
