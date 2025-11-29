@@ -70,7 +70,7 @@ const HistoryLayer = ({ display, history, onRewind, layers, show, divProps }: Pr
 				<Button
 					variant="menu"
 					onClick={close}
-					{...{"nav-x": -1, "nav-y": 1}}
+					{...{"nav-x": -2, "nav-y": 1}}
 				>
 					{strings.close}
 				</Button>
@@ -79,7 +79,7 @@ const HistoryLayer = ({ display, history, onRewind, layers, show, divProps }: Pr
 					variant="menu"
 					onClick={toggleView}
 					style={{ marginLeft: '1em' }}
-					{...{"nav-x": 0, "nav-y": 1}}
+					{...{"nav-x": -1, "nav-y": 1}}
 				>
 					{layers.history ?
 						<>{strings.extra.scenes}</>
@@ -108,7 +108,6 @@ const HistoryDisplay = ({
 		onPageSelect
 	}: HistoryDisplayProps) => {
 	const containerRef = useRef<HTMLDivElement>(null)
-	const ignoreScrollRef = useRef(false)
 	const pagesArray = Array.from(history.allPages)
 
 	useEffect(() => {
@@ -122,7 +121,6 @@ const HistoryDisplay = ({
 	}, [history.pagesLength])
 
 	const onScroll = useCallback((evt: React.UIEvent<HTMLDivElement>)=> {
-		if (ignoreScrollRef.current) return
 		const elmt = containerRef.current!
 		const diff = elmt.scrollHeight - elmt.scrollTop - elmt.clientHeight
 
@@ -131,25 +129,17 @@ const HistoryDisplay = ({
 			close()
 	}, [])
 
-	const handleFocusCapture = useCallback(() => {
-		ignoreScrollRef.current = true
-
-		setTimeout(() => {
-			ignoreScrollRef.current = false
-		}, 500)
-	}, [])
-
 	const handlePageClick = (index: number) => {
 		onPageSelect(index)
 	}
 
 	return (
-		<div id="history" ref={containerRef} onScroll={onScroll} onFocusCapture={handleFocusCapture}>
+		<div id="history" ref={containerRef} onScroll={onScroll}>
 			<div className="text-container">
 				{pagesArray.map((page, i) =>
 					<PageElement key={i} history={history} content={page}
 						onLoad={() => handlePageClick(i)}
-						navY={i + 1 - history.pagesLength}
+						navY={i - history.pagesLength}
 					/>
 				)}
 			</div>

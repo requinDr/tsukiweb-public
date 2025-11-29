@@ -90,10 +90,11 @@ const PageElement = ({history, content, onLoad, navY=0, ...props}: Props)=> {
 
 	return (
 		<div {...props}>
-			<hr data-page-type={content.type} />
+			<hr page-type={content.type} />
 			{content &&
 				<Button onClick={onLoad.bind(null,content)} className='load'
-					{...{"nav-y": navY, "nav-x": 0}} onFocus={onFocus as any}>
+					nav-noscroll={1} nav-x={0} nav-y={navY}
+					onFocus={onFocus as any}>
 					<MdReplay /> {strings.history.load}
 				</Button>
 			}

@@ -89,7 +89,7 @@
 		position: relative;
 		overflow: visible;
 
-		&[data-page-type="phase"] {
+		&[page-type="phase"] {
 			background-image: linear-gradient(90deg,
 				#1b9ab900 0%,
 				#00aed9 30%,
