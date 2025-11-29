@@ -1,4 +1,4 @@
-import { memo, useCallback, useEffect, useLayoutEffect, useRef  } from 'react';
+import { createRef, memo, useCallback, useEffect, useLayoutEffect, useRef  } from 'react';
 import { InGameLayersHandler } from '../utils/display';
 import { History, PageEntry } from '../utils/history';
 import { strings } from '../translation/lang';
@@ -23,6 +23,7 @@ const HistoryLayer = ({ display, history, onRewind, layers, show, divProps }: Pr
 	const rootRef = useRef<HTMLDivElement>(null)
 
 	const close = useCallback(()=> {
+		(document.activeElement as HTMLElement|null)?.blur()
 		layers.back()
 	}, [])
 
@@ -69,6 +70,7 @@ const HistoryLayer = ({ display, history, onRewind, layers, show, divProps }: Pr
 				<Button
 					variant="menu"
 					onClick={close}
+					{...{"nav-x": -1, "nav-y": 1}}
 				>
 					{strings.close}
 				</Button>
@@ -77,6 +79,7 @@ const HistoryLayer = ({ display, history, onRewind, layers, show, divProps }: Pr
 					variant="menu"
 					onClick={toggleView}
 					style={{ marginLeft: '1em' }}
+					{...{"nav-x": 0, "nav-y": 1}}
 				>
 					{layers.history ?
 						<>{strings.extra.scenes}</>
@@ -105,22 +108,29 @@ const HistoryDisplay = ({
 		onPageSelect
 	}: HistoryDisplayProps) => {
 	const historyRef = useRef<HTMLDivElement>(null)
+	const lastPageRef = createRef<HTMLElement>()
+	const scrolling = useRef<boolean>(false)
 
-	useEffect(() => {
-		// scroll near the bottom of the history
-		const historyElmt = historyRef.current
-		if (historyElmt)
-			historyElmt.scrollTop = historyElmt.scrollHeight - historyElmt.clientHeight - 2
-	}, [historyRef])
+	useEffect(()=> {
+		lastPageRef.current?.scrollIntoView({behavior: 'auto', block: 'nearest'})
+	}, [lastPageRef])
 
-	const onScroll = useCallback(()=> {
+	const onScroll = useCallback((evt: Event)=> {
 		//when scrolled to the bottom of history, hide history
-		const elmt = historyRef.current!
-		const diff = elmt.scrollHeight - elmt.scrollTop - elmt.clientHeight
-		const bottom = diff <= 1
-		if (bottom) {
-			close()
+		if (!scrolling.current && evt.isTrusted) {
+			const elmt = historyRef.current!
+			const diff = elmt.scrollHeight - elmt.scrollTop - elmt.clientHeight
+
+			const bottom = diff <= 1
+			if (bottom)
+				close()
+			else
+				scrolling.current = true
 		}
+	}, [])
+
+	const onScrollEnd = useCallback(()=> {
+		scrolling.current = false
 	}, [])
 
 	function onClick(index: number, _page: PageEntry) {
@@ -129,10 +139,14 @@ const HistoryDisplay = ({
 	//if (!history.empty) // at least one element in the iterator TODO display a 'nothing here' icon
 
 	return (
-		<div id="history" ref={historyRef} onScroll={onScroll}>
+		<div id="history" ref={historyRef} onScroll={onScroll as any} onScrollEnd={onScrollEnd}>
 			<div className="text-container">
 				{Array.from(history.allPages, (page, i) =>
-					<PageElement history={history} key={i} content={page} onLoad={onClick.bind(null, i)} />
+					<PageElement history={history} key={i} content={page}
+								 onLoad={onClick.bind(null, i)}
+								 navY={i + 1 - history.pagesLength}
+								 {...(i == history.pagesLength - 1) ? {ref: lastPageRef} : {}}
+								 />
 				)}
 			</div>
 		</div>

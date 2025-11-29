@@ -269,7 +269,7 @@ class UserActionsHandler {
 			case "bg_move"  : moveBg(args[0]); break
 			case "nav"		:
 				if (!['text', 'graphics'].includes(layers.topLayer))
-					directionalNavigate(args[0])
+					return directionalNavigate(args[0])
 				break
 		}
 	}

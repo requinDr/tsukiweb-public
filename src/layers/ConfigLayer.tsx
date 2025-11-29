@@ -1,4 +1,4 @@
-import { memo, useEffect, useRef, useState } from "react"
+import { Activity, memo, useEffect, useRef, useState } from "react"
 import ConfigLayout, { ConfigTabs } from "../components/config/ConfigLayout";
 import classNames from "classnames";
 
@@ -21,11 +21,13 @@ const ConfigLayer = ({display, back}: Props) => {
 			id="layer-config"
 			className={classNames("layer", {show: display})}
 			ref={rootRef}>
-			<ConfigLayout
-				back={back}
-				selectedTab={activeTab}
-				setSelectedTab={setActiveTab}
-			/>
+			<Activity mode={display ? "visible" : "hidden"}>
+				<ConfigLayout
+					back={back}
+					selectedTab={activeTab}
+					setSelectedTab={setActiveTab}
+				/>
+			</Activity>
 		</div>
 	)
 }

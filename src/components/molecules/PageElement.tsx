@@ -1,4 +1,4 @@
-import { memo, Fragment, ReactNode } from "react"
+import { memo, Fragment, ReactNode, useCallback, createRef, useEffect } from "react"
 import { strings } from "../../translation/lang"
 import { phaseTexts } from "../../translation/assets"
 import { getSceneTitle } from "../../script/utils"
@@ -8,22 +8,33 @@ import classNames from "classnames"
 import { Bbcode, bb } from "@tsukiweb-common/utils/Bbcode"
 import { History, PageEntry } from "utils/history"
 import { TsukihimeSceneName } from "types"
+import { DivProps } from "@tsukiweb-common/types"
+import useButtonSounds from "@tsukiweb-common/hooks/useButtonSounds"
 
 type Props = {
 	history: History,
 	content: PageEntry,
 	onLoad: (page: PageEntry)=>void
-}
+	navY?: number
+} & Omit<DivProps, 'onLoad'|'content'>
 
-const PageElement = ({history, content, onLoad}: Props)=> {
+const PageElement = ({history, content, onLoad, navY=0, ...props}: Props)=> {
 	
 	if (!content) return null
 	
 	let displayContent: ReactNode
+	let divRef = createRef<HTMLDivElement>()
+
 	switch(content.type) {
 		case "text" :
-			const text = content.text ?? ""
-			displayContent = text.split('\n').map((line, i) =>
+			const text = content.text?.split('\n') ?? []
+			// remove empty first and last lines
+			while (text.length > 0 && text[0].length == 0)
+				text.shift()
+			while (text.length > 0 && text[text.length-1].length == 0)
+				text.pop()
+
+			displayContent = text.map((line, i) =>
 				<Fragment key={i}>
 					{i > 0 && <br/>}
 					<Bbcode text={line}/>
@@ -57,16 +68,21 @@ const PageElement = ({history, content, onLoad}: Props)=> {
 		default :
 			throw Error(`Unknown page type ${content.type}`)
 	}
+	const onFocus = useCallback((evt: FocusEvent)=> {
+		(evt.target! as HTMLElement).parentElement!.scrollIntoView({behavior: 'smooth', block: 'nearest'})
+	}, [])
+
 	return (
-	<>
+	<div {...props}>
 		<hr {...{"page-type": content.type}} />
 		{content &&
-			<Button onClick={onLoad.bind(null,content)} className='load'>
+			<Button onClick={onLoad.bind(null,content)} className='load'
+					{...{"nav-y": navY, "nav-x": 0}} onFocus={onFocus as any}>
 				<MdReplay /> {strings.history.load}
 			</Button>
 		}
 		{displayContent}
-	</>
+	</div>
 	)
 }
 

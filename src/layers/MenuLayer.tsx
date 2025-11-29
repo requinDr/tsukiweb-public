@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, Activity } from "react"
 import { MdCopyAll, MdFastForward, MdFullscreen, MdFullscreenExit, MdOutlineVolumeOff, MdOutlineVolumeUp, MdPlayArrow } from "react-icons/md"
 import { settings } from "../utils/settings"
 import { displayMode, InGameLayersHandler, SCREEN } from "../utils/display"
@@ -78,48 +78,51 @@ const MenuLayer = ({display, script, show, layers, qSave, qLoad}: Props) => {
 			<img src={Ornament} alt="ornament" className="top-ornament" />
 			<nav className="menu-container" ref={menuRef}>
 				<menu>
-					<div className="top-spacer" />
+					<Activity mode={display ? "visible" : "hidden"}>
+						<div className="top-spacer" />
 
-					<div className="layer-btns">
-						{show?.graphics &&
-						<LayerButton onClick={graphicMode} navY={0}>
-							{strings.menu["graphics"]}
-						</LayerButton>
-						}
-						{show?.history &&
-						<LayerButton onClick={historyMode} navY={1}>
-							{strings.menu["history"]}
-						</LayerButton>
-						}
-						{show?.flowchart &&
-						<LayerButton onClick={flowchartMode} navY={2}>
-							{strings.extra.scenes}
-						</LayerButton>
-						}
-						{show?.save &&
-						<LayerButton onClick={saveMode} navY={3}>
-							{strings.menu["save"]}
-						</LayerButton>
-						}
-						{show?.load &&
-						<LayerButton onClick={loadMode} navY={4}>
-							{strings.menu["load"]}
-						</LayerButton>
-						}
-						{show?.config &&
-						<LayerButton onClick={configMode} navY={5}>
-							{strings.menu["config"]}
-						</LayerButton>
-						}
-						{show?.title &&
-						<LayerButton onClick={title} navY={6}>
-							{strings.menu["title"]}
-						</LayerButton>
-						}
-					</div>
+						<div className="layer-btns">
+							{show?.graphics &&
+							<LayerButton onClick={graphicMode} navY={0}>
+								{strings.menu["graphics"]}
+							</LayerButton>
+							}
+							{show?.history &&
+							<LayerButton onClick={historyMode} navY={1}>
+								{strings.menu["history"]}
+							</LayerButton>
+							}
+							{show?.flowchart &&
+							<LayerButton onClick={flowchartMode} navY={2}>
+								{strings.extra.scenes}
+							</LayerButton>
+							}
+							{show?.save &&
+							<LayerButton onClick={saveMode} navY={3}>
+								{strings.menu["save"]}
+							</LayerButton>
+							}
+							{show?.load &&
+							<LayerButton onClick={loadMode} navY={4}>
+								{strings.menu["load"]}
+							</LayerButton>
+							}
+							{show?.config &&
+							<LayerButton onClick={configMode} navY={5}>
+								{strings.menu["config"]}
+							</LayerButton>
+							}
+							{show?.title &&
+							<LayerButton onClick={title} navY={6}>
+								{strings.menu["title"]}
+							</LayerButton>
+							}
+						</div>
 
-					<ActionsButtons script={script} show={show}
-						close={closeMenu} qSave={qSave} qLoad={qLoad}/>
+						<ActionsButtons script={script} show={show}
+							close={closeMenu} qSave={qSave} qLoad={qLoad}/>
+
+					</Activity>
 				</menu>
 			</nav>
 		</div>
