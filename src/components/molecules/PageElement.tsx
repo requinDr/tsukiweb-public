@@ -9,6 +9,7 @@ import { Bbcode, bb } from "@tsukiweb-common/utils/Bbcode"
 import { History, PageEntry } from "utils/history"
 import { TsukihimeSceneName } from "types"
 import { DivProps } from "@tsukiweb-common/types"
+import { audio } from "utils/audio"
 
 
 const TextContent = ({ text }: { text: string }) => {
@@ -92,7 +93,9 @@ const PageElement = ({history, content, onLoad, navY=0, ...props}: Props)=> {
 		<div {...props}>
 			<hr page-type={content.type} />
 			{content &&
-				<Button onClick={onLoad.bind(null,content)} className='load'
+				<Button
+					audio={audio} hoverSound={'tick'} clickSound={'glass'}
+					onClick={onLoad.bind(null,content)} className='load'
 					nav-noscroll={1} nav-x={0} nav-y={navY}
 					onFocus={onFocus as any}>
 					<MdReplay /> {strings.history.load}

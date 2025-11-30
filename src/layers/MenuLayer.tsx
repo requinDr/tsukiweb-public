@@ -14,7 +14,21 @@ import { ScriptPlayer } from "script/ScriptPlayer"
 import useButtonSounds from "@tsukiweb-common/hooks/useButtonSounds"
 import { audio } from "utils/audio"
 import { navProps } from "@tsukiweb-common/input/arrowNavigation"
+import { Button } from "@tsukiweb-common/ui-core"
 
+const AUDIO_PROPS = {
+	audio: audio,
+	variant: null,
+	hoverSound: 'tick',
+	clickSound: 'glass',
+}
+const LAYER_PROPS = {
+	...AUDIO_PROPS,
+	className: "layer-btn",
+}
+const ACTION_PROPS = {
+	...AUDIO_PROPS,
+}
 
 type Props = {
 	display: boolean
@@ -83,39 +97,39 @@ const MenuLayer = ({display, script, show, layers, qSave, qLoad}: Props) => {
 
 						<div className="layer-btns">
 							{show?.graphics &&
-							<LayerButton onClick={graphicMode} navY={0}>
+							<Button {...LAYER_PROPS} onClick={graphicMode} nav-y={0}>
 								{strings.menu["graphics"]}
-							</LayerButton>
+							</Button>
 							}
 							{show?.history &&
-							<LayerButton onClick={historyMode} navY={1}>
+							<Button {...LAYER_PROPS} onClick={historyMode} nav-y={1}>
 								{strings.menu["history"]}
-							</LayerButton>
+							</Button>
 							}
 							{show?.flowchart &&
-							<LayerButton onClick={flowchartMode} navY={2}>
+							<Button {...LAYER_PROPS} onClick={flowchartMode} nav-y={2}>
 								{strings.extra.scenes}
-							</LayerButton>
+							</Button>
 							}
 							{show?.save &&
-							<LayerButton onClick={saveMode} navY={3}>
+							<Button {...LAYER_PROPS} onClick={saveMode} nav-y={3}>
 								{strings.menu["save"]}
-							</LayerButton>
+							</Button>
 							}
 							{show?.load &&
-							<LayerButton onClick={loadMode} navY={4}>
+							<Button {...LAYER_PROPS} onClick={loadMode} nav-y={4}>
 								{strings.menu["load"]}
-							</LayerButton>
+							</Button>
 							}
 							{show?.config &&
-							<LayerButton onClick={configMode} navY={5}>
+							<Button {...LAYER_PROPS} onClick={configMode} nav-y={5}>
 								{strings.menu["config"]}
-							</LayerButton>
+							</Button>
 							}
 							{show?.title &&
-							<LayerButton onClick={title} navY={6}>
+							<Button {...LAYER_PROPS} onClick={title} nav-y={6}>
 								{strings.menu["title"]}
-							</LayerButton>
+							</Button>
 							}
 						</div>
 
@@ -131,24 +145,6 @@ const MenuLayer = ({display, script, show, layers, qSave, qLoad}: Props) => {
 
 export default MenuLayer
 
-
-type LayerButtonProps = {
-	navY: number,
-	children: React.ReactNode
-} & React.ButtonHTMLAttributes<HTMLButtonElement>
-const LayerButton = ({children, navY, ...props}: LayerButtonProps) => {
-	const soundProps = useButtonSounds<HTMLButtonElement>(
-		audio, 
-		props,
-		{ hoverSound: 'tick', clickSound: 'glass' }
-	)
-	
-	return (
-		<button {...soundProps} className="layer-btn" {...navProps(navY, 0)}>
-			{children}
-		</button>
-	)
-}
 
 /**
  * TODO
@@ -204,38 +200,43 @@ const ActionsButtons = ({script, show, close, qSave, qLoad}: ActionsButtonsProps
 	return (
 		<div className="action-btns">
 			{show?.qSave &&
-			<button onClick={qSave} className="quick" {...navProps(7, 0)}>
+			<Button {...ACTION_PROPS} onClick={qSave} className="quick"
+					nav-y={7} nav-x={0}>
 				{strings.menu["q-save"]}
-			</button>
+			</Button>
 			}
 			{show?.qLoad &&
-			<button onClick={qLoad} className="quick" {...navProps(7, 1)}>
+			<Button {...ACTION_PROPS} onClick={qLoad} className="quick"
+					nav-y={7} nav-x={1}>
 				{strings.menu["q-load"]}
-			</button>
+			</Button>
 			}
-			<button onClick={toggleAutoPlay} aria-label="auto play" className={isAutoplaying ? "on" : ""} title={strings.menu["auto-play"]} {...navProps(8, 0)}>
+			<Button {...ACTION_PROPS} onClick={toggleAutoPlay} className={isAutoplaying ? "on" : ""}
+					aria-label="auto play" title={strings.menu["auto-play"]}
+					nav-y={8} nav-x={0}>
 				<MdPlayArrow />
-			</button>
-			<button onClick={fastForwardScene} aria-label="skip scene" title={strings.menu["ffw"]} {...navProps(8, 1)}>
+			</Button>
+			<Button {...ACTION_PROPS} onClick={fastForwardScene}
+					aria-label="skip scene" title={strings.menu["ffw"]}
+					nav-y={8} nav-x={1}>
 				<MdFastForward />
-			</button>
-			<button onClick={toggleVolume} aria-label="mute/unmute" {...navProps(9, 0)}>
+			</Button>
+			<Button {...ACTION_PROPS} onClick={toggleVolume}
+					aria-label="mute/unmute" nav-y={9} nav-x={0}>
 				{mute ? <MdOutlineVolumeOff /> : <MdOutlineVolumeUp />}
-			</button>
-			<button onClick={fullscreen.toggle} aria-label="toggle fullscreen" disabled={!fullscreen.isSupported} {...navProps(9, 1)}>
+			</Button>
+			<Button {...ACTION_PROPS} onClick={fullscreen.toggle}
+					aria-label="toggle fullscreen" nav-y={9} nav-x={1}
+					disabled={!fullscreen.isSupported}>
 				{isFullscreen ? <MdFullscreenExit /> : <MdFullscreen />}
-			</button>
+			</Button>
 			{show?.copyScene &&
-			<button
-				onClick={copySceneToClipboard}
-				className="fullwidth copy-scene"
-				aria-label="copy scene link"
-				disabled={script.currentLabel?.startsWith("skip")}
-				title={script.currentLabel ?? ""}
-				{...navProps(10, 0)}
-			>
+			<Button {...ACTION_PROPS} onClick={copySceneToClipboard}
+					className="fullwidth copy-scene" aria-label="copy scene link"
+					nav-y={10} title={script.currentLabel ?? ""}
+					disabled={script.currentLabel?.startsWith("skip")}>
 				{strings.menu["copy-scene-url"]}
-			</button>
+			</Button>
 			}
 		</div>
 	)
