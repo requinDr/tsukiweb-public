@@ -128,7 +128,7 @@ const ModalInfo = ({show, setShow}: ModalInfoProps) => {
 			</div>
 
 			<Button
-				variant="menu"
+				variant="elevation"
 				onClick={()=>setShow(false)}
 				className="close-btn"
 			>

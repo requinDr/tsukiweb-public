@@ -68,7 +68,7 @@ const HistoryLayer = ({ display, history, onRewind, layers, show, divProps }: Pr
 
 			<FixedFooter>
 				<Button
-					variant="menu"
+					variant="elevation"
 					onClick={close}
 					{...{"nav-x": -2, "nav-y": 1}}
 				>
@@ -76,7 +76,7 @@ const HistoryLayer = ({ display, history, onRewind, layers, show, divProps }: Pr
 				</Button>
 				{show?.flowchart &&
 				<Button
-					variant="menu"
+					variant="elevation"
 					onClick={toggleView}
 					style={{ marginLeft: '1em' }}
 					{...{"nav-x": -1, "nav-y": 1}}

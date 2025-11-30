@@ -11,23 +11,22 @@ import useIsFullscreen from "@tsukiweb-common/hooks/useIsFullscreen"
 import classNames from "classnames"
 import { useDOMEvent } from "@tsukiweb-common/hooks/useDOMEvent"
 import { ScriptPlayer } from "script/ScriptPlayer"
-import useButtonSounds from "@tsukiweb-common/hooks/useButtonSounds"
 import { audio } from "utils/audio"
-import { navProps } from "@tsukiweb-common/input/arrowNavigation"
 import { Button } from "@tsukiweb-common/ui-core"
 
 const AUDIO_PROPS = {
 	audio: audio,
-	variant: null,
-	hoverSound: 'tick',
-	clickSound: 'glass',
 }
 const LAYER_PROPS = {
 	...AUDIO_PROPS,
-	className: "layer-btn",
+	variant: "underline-left" as const,
+	hoverSound: 'tick',
+	clickSound: 'glass',
 }
 const ACTION_PROPS = {
 	...AUDIO_PROPS,
+	variant: null,
+	clickSound: "impact"
 }
 
 type Props = {

@@ -53,14 +53,6 @@
 			overflow-y: auto;
 		}
 
-		button, a {
-			color: var(--text-color);
-			transition: var(--transition);
-			display: flex;
-			position: relative;
-			padding: 2px 6px;
-			letter-spacing: 1px;
-		}
 		.layer-btns, .action-btns {
 			max-width: 200px;
 		}
@@ -68,32 +60,6 @@
 			display: flex;
 			row-gap: min(2vh, 0.8em);
 			flex-direction: column;
-
-			.layer-btn {
-				&:hover, &:focus-visible {
-					color: var(--active-hover);
-					text-shadow: 1px 0 5px rgb(14 79 187), 1px 0 6px rgba(28, 147, 147, 0.5);
-				}
-				&::after {
-					content: "";
-					position: absolute;
-					bottom: -2px;
-					left: 0;
-					width: 0;
-					height: 2px;
-					transition: var(--transition);
-					transition-delay: 0.1s;
-					opacity: 0.1;
-				}
-
-				&:hover, &:focus-visible {
-					&::after {
-						width: 90%;
-						background-image: linear-gradient(to right, rgb(12 170 217) 75%, rgba(10, 158, 171, 0));
-						opacity: 1;
-					}
-				}
-			}
 		}
 
 		.action-btns {
@@ -116,6 +82,7 @@
 				color: rgb(206 223 234);
 				background-color: var(--surface-on-menu);
 				justify-content: center;
+				letter-spacing: 1px;
 
 				&.on {
 					background: linear-gradient(90deg, #00d2ff 40%, oklch(1.8 0.15 220.72 / 1) 60%, #00d2ff);
