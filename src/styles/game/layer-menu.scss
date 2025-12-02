@@ -30,7 +30,7 @@
 		}
 	}
 
-	$width: clamp(260px, 64vw, 320px);
+	$width: clamp(260px, 46vw, 340px);
 	.menu-container {
 		will-change: transform;
 		transform: translateX(calc($width));
@@ -47,18 +47,21 @@
 			flex: 1;
 			display: grid;
 			grid-template-rows: 1fr 2fr 1fr;
-			font-size: clamp(1.1em, 3.6vh, 1.3em);
-			padding: 1em;
-			margin-left: 2em;
+			padding: 1.2em;
+			margin-left: 2.5em;
 			overflow-y: auto;
 		}
 
 		.layer-btns, .action-btns {
 			max-width: 200px;
+
+			button {
+				font-size: clamp(1.1em, 3.6vh, 1.5em);
+			}
 		}
 		.layer-btns {
 			display: flex;
-			row-gap: min(2vh, 0.8em);
+			row-gap: min(2vh, 1em);
 			flex-direction: column;
 		}
 
