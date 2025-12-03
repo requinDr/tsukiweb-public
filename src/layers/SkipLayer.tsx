@@ -65,6 +65,11 @@ const SkipLayer = ({script, history, display}: Props) => {
 	if (!scene)
 		display = false
 	const sceneTitle = display ? getSceneTitle(Array.from(script.flags), scene!) : ""
+	const btnProps = {
+		onClick: onClick,
+		audio: audio,
+		hoverSound:'tick'
+	}
 	
 	return (
 		<div
@@ -91,10 +96,10 @@ const SkipLayer = ({script, history, display}: Props) => {
 				</div>
 
 				<div className="buttons">
-					<Button onClick={onClick} value="yes" audio={audio} clickSound="glass">
+					<Button {...btnProps} value="yes" clickSound="glass">
 						{strings.yes}
 					</Button>
-					<Button onClick={onClick} value="no" audio={audio} clickSound="impact">
+					<Button {...btnProps} value="no" clickSound="impact">
 						{strings.no}
 					</Button>
 				</div>

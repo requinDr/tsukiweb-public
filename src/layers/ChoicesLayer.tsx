@@ -99,6 +99,7 @@ const ChoicesLayer = ({script, display}: Props) => {
             className="choice"
             onClick={() => onSelection.current?.(choice)}
             audio={audio}
+            hoverSound="tick"
             clickSound="impact"
           >
             <Bbcode text={choice.str} />
