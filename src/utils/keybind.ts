@@ -12,7 +12,6 @@ export const inGameKeyMap = {
         {key: "Backspace", repeat: false}],
     "history": [
         {key: "ArrowUp", repeat: false},
-        {key: "ArrowLeft", repeat: false},
         {key: "H", repeat: false}],
     "graphics": [
         {code: "Space", repeat: false},

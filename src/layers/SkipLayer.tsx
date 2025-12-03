@@ -12,6 +12,7 @@ import { ScriptPlayer } from "script/ScriptPlayer"
 import { settings } from "utils/settings"
 import { History } from "utils/history"
 import cg from "utils/gallery"
+import { audio } from "utils/audio"
 
 function getThumbnail(label: TsukihimeSceneName) {
 	const scenes = sceneAttrs.scenes as Record<TsukihimeSceneName, any>
@@ -90,8 +91,12 @@ const SkipLayer = ({script, history, display}: Props) => {
 				</div>
 
 				<div className="buttons">
-					<Button onClick={onClick} value="yes">{strings.yes}</Button>
-					<Button onClick={onClick} value="no">{strings.no}</Button>
+					<Button onClick={onClick} value="yes" audio={audio} clickSound="glass">
+						{strings.yes}
+					</Button>
+					<Button onClick={onClick} value="no" audio={audio} clickSound="impact">
+						{strings.no}
+					</Button>
 				</div>
 			</m.div>
 		</div>

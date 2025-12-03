@@ -5,6 +5,8 @@ import { Bbcode } from "@tsukiweb-common/utils/Bbcode"
 import { ScriptPlayer } from "script/ScriptPlayer"
 import { preprocessText } from "@tsukiweb-common/utils/utils"
 import { strings } from "../translation/lang"
+import { Button } from "@tsukiweb-common/ui-core"
+import { audio } from "utils/audio"
 
 
 type SelectionCallback = (choice: Choice)=>void
@@ -91,13 +93,16 @@ const ChoicesLayer = ({script, display}: Props) => {
     <div className="layer" id="layer-choices">
       <div className="choices-container">
         {choices.map(choice =>
-          <button
+          <Button
             key={choice.index}
+            variant={null}
             className="choice"
             onClick={() => onSelection.current?.(choice)}
+            audio={audio}
+            clickSound="impact"
           >
             <Bbcode text={choice.str} />
-          </button>
+          </Button>
         )}
       </div>
     </div>
