@@ -7,6 +7,7 @@ import { preprocessText } from "@tsukiweb-common/utils/utils"
 import { strings } from "../translation/lang"
 import { Button } from "@tsukiweb-common/ui-core"
 import { audio } from "utils/audio"
+import { InGameLayersHandler } from "utils/display"
 
 
 type SelectionCallback = (choice: Choice)=>void
@@ -75,10 +76,10 @@ function processSelect(setChoices: (choices: Choice[])=>void,
 
 type Props = {
   script: ScriptPlayer
-  display: boolean
+  layers: InGameLayersHandler
 }
 
-const ChoicesLayer = ({script, display}: Props) => {
+const ChoicesLayer = ({script, layers}: Props) => {
   const [choices, setChoices] = useState<Choice[]>([])
   const onSelection = useRef<SelectionCallback>(undefined)
 
@@ -87,12 +88,12 @@ const ChoicesLayer = ({script, display}: Props) => {
       processSelect.bind(null, setChoices, onSelection))
   }, [script])
 
-  if (!display || choices.length == 0) return null
+  if (!layers.text || choices.length == 0) return null
 
   return (
     <div className="layer" id="layer-choices">
       <div className="choices-container">
-        {choices.map(choice =>
+        {choices.map((choice, i) =>
           <Button
             key={choice.index}
             variant={null}
@@ -101,7 +102,8 @@ const ChoicesLayer = ({script, display}: Props) => {
             audio={audio}
             hoverSound="tick"
             clickSound="impact"
-          >
+            {...(layers.topLayer == 'text' && {'nav-y': i-0.5})}
+          > { /* i-0.5 to place cursor on second choice when pressing down */ }
             <Bbcode text={choice.str} />
           </Button>
         )}

@@ -67,27 +67,29 @@ const HistoryLayer = ({ display, history, onRewind, layers, show, divProps }: Pr
 			</div>
 
 			<FixedFooter>
-				<Button
-					variant="elevation"
-					onClick={close}
-					{...{"nav-x": -2, "nav-y": 1}}
-				>
-					{strings.close}
-				</Button>
-				{show?.flowchart &&
-				<Button
-					variant="elevation"
-					onClick={toggleView}
-					style={{ marginLeft: '1em' }}
-					{...{"nav-x": -1, "nav-y": 1}}
-				>
-					{layers.history ?
-						<>{strings.extra.scenes}</>
-					:
-						<>{strings.menu.history}</>
+				{(layers.history || layers.flowchart) && <>
+					<Button
+						variant="elevation"
+						onClick={close}
+						{...{"nav-x": -2, "nav-y": 1}}
+					>
+						{strings.close}
+					</Button>
+					{show?.flowchart &&
+					<Button
+						variant="elevation"
+						onClick={toggleView}
+						style={{ marginLeft: '1em' }}
+						{...{"nav-x": -1, "nav-y": 1}}
+					>
+						{layers.history ?
+							<>{strings.extra.scenes}</>
+						:
+							<>{strings.menu.history}</>
+						}
+					</Button>
 					}
-				</Button>
-				}
+				</>}
 			</FixedFooter>
 		</div>
 	)

@@ -166,8 +166,8 @@ const Window = () => {
 				</div>
 
 				{script.continueScript && <>
-					<ChoicesLayer script={script} display={layers.text} />
-					<SkipLayer script={script} history={history} display={layers.text} />
+					<ChoicesLayer script={script} layers={layers}/>
+					<SkipLayer script={script} history={history} layers={layers}/>
 				</>}
 
 				<HistoryLayer

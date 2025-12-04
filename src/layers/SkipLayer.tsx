@@ -13,6 +13,7 @@ import { settings } from "utils/settings"
 import { History } from "utils/history"
 import cg from "utils/gallery"
 import { audio } from "utils/audio"
+import { InGameLayersHandler } from "utils/display"
 
 function getThumbnail(label: TsukihimeSceneName) {
 	const scenes = sceneAttrs.scenes as Record<TsukihimeSceneName, any>
@@ -31,11 +32,11 @@ function getThumbnail(label: TsukihimeSceneName) {
 
 type Props = {
 	script: ScriptPlayer
-	display: boolean
 	history: History
+	layers: InGameLayersHandler
 }
 
-const SkipLayer = ({script, history, display}: Props) => {
+const SkipLayer = ({script, history, layers}: Props) => {
 	const [scene, setScene] = useState<TsukihimeSceneName|undefined>(undefined)
 	const onFinish = useRef<VoidFunction>(undefined)
 
@@ -62,14 +63,15 @@ const SkipLayer = ({script, history, display}: Props) => {
 		setScene(undefined)
 	}, [script])
 
-	if (!scene)
-		display = false
+	let display = layers.text && (scene != undefined)
 	const sceneTitle = display ? getSceneTitle(Array.from(script.flags), scene!) : ""
 	const btnProps = {
 		onClick: onClick,
 		audio: audio,
 		hoverSound:'tick'
 	}
+	// prevent navigation on skip buttons when other layer is active
+	const nav = display && (layers.topLayer == 'text')
 	
 	return (
 		<div
@@ -96,10 +98,12 @@ const SkipLayer = ({script, history, display}: Props) => {
 				</div>
 
 				<div className="buttons">
-					<Button {...btnProps} value="yes" clickSound="glass">
+					<Button {...btnProps} value="yes" clickSound="glass"
+							{...(nav && {'nav-x': -1})}>
 						{strings.yes}
 					</Button>
-					<Button {...btnProps} value="no" clickSound="impact">
+					<Button {...btnProps} value="no" clickSound="impact"
+							{...(nav && {'nav-x': 1})}>
 						{strings.no}
 					</Button>
 				</div>

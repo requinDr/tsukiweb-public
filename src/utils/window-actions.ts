@@ -88,6 +88,7 @@ function createKeyMap(layers: InGameLayersHandler, show: ShowLayers) {
 	//const noMenuWindow = ()=> ['menu', null].includes(layers.currentMenu)
 	const onText = ()=> layers.topLayer == 'text'
 	return {
+		"nav":		[()=> true, ...menuKeyMap['nav']],
 		"next":  	[noMenu, ...inGameKeyMap['next']],
 		"back":     inGameKeyMap['back'],
 		"history":  [()=> show.history && onText(), ...inGameKeyMap['history']],
@@ -100,7 +101,6 @@ function createKeyMap(layers: InGameLayersHandler, show: ShowLayers) {
 		"q_save":   [()=> show.qSave && noMenu(), ...inGameKeyMap['q_save']],
 		"q_load":   [()=> show.qLoad && noMenu(), ...inGameKeyMap['q_load']],
 		"config":   [()=> show.config && noMenu(), ...inGameKeyMap['config']],
-		"nav":		[()=> !noMenu(), ...menuKeyMap['nav']]
 	}
 }
 
@@ -210,10 +210,7 @@ class UserActionsHandler {
 		if (this._script.autoPlay && !this._script.paused)
 			this._script.autoPlay = false
 		else {
-			if (this._layers.topLayer != 'menu')
-				this._layers.menu = true // open menu / go back to menu
-			else
-				this._layers.menu = false
+			this._layers.back()
 		}
 	}
 	prevPage() {
@@ -255,22 +252,19 @@ class UserActionsHandler {
 			case "auto_play":
 				this._script.autoPlay = !this._script.autoPlay
 				break
-			case "next"     : this.next(); break
-			case "back"     : this.back(); break
+			case "next"     : this.next(); return true
+			case "back"     : this.back(); return true
 			case "page_nav" : this.pageNav(args[0]); break
 			case "q_save"   : this.quickSave(); break
 			case "q_load"   : this.quickLoad(); break
-			case "menu"		: layers.menu     = !layers.menu; break
+			case "menu"		: console.log('menu'); layers.menu     = !layers.menu; break
 			case "history"  : layers.history  = !layers.history; break
 			case "graphics" : layers.graphics = !layers.graphics; break
 			case "load"     : layers.load     = !layers.load; break
 			case "save"     : layers.save     = !layers.save; break
 			case "config"   : layers.config   = !layers.config; break
 			case "bg_move"  : moveBg(args[0]); break
-			case "nav"		:
-				if (!['text', 'graphics'].includes(layers.topLayer))
-					return directionalNavigate(args[0])
-				break
+			case "nav"		: return directionalNavigate(args[0])
 		}
 	}
 }
