@@ -1,4 +1,4 @@
-import { MouseEvent, useCallback, useEffect, useRef, useState } from "react"
+import { useCallback, useEffect, useRef, useState } from "react"
 import { strings } from "../translation/lang"
 import classNames from "classnames"
 import { bb, noBb } from "@tsukiweb-common/utils/Bbcode"
@@ -14,8 +14,9 @@ import { History } from "utils/history"
 import cg from "utils/gallery"
 import { audio } from "utils/audio"
 import { InGameLayersHandler } from "utils/display"
+import { Graphics } from "@tsukiweb-common/types"
 
-function getThumbnail(label: TsukihimeSceneName) {
+function getThumbnail(label: TsukihimeSceneName): Partial<Graphics> & {bg: Graphics["bg"]} {
 	const scenes = sceneAttrs.scenes as Record<TsukihimeSceneName, any>
 	const attrs = scenes[label]
 	if (attrs) {
@@ -27,7 +28,7 @@ function getThumbnail(label: TsukihimeSceneName) {
 			return graph
 		}
 	}
-	return {}
+	return {"bg": "#000000"}
 }
 
 type Props = {
@@ -54,10 +55,10 @@ const SkipLayer = ({script, history, layers}: Props) => {
 		}
 	}, [script])
 	
-	const onClick = useCallback((evt: MouseEvent<HTMLButtonElement>)=> {
-		if ((evt.target as HTMLButtonElement).value == 'yes') {
+	const onClick = useCallback((e: React.MouseEvent<HTMLButtonElement>)=> {
+		if (e.currentTarget.value == 'yes' && script.currentLabel) {
 			script.skipCurrentBlock()
-			history.onSceneSkip(script, script.currentLabel!)
+			history.onSceneSkip(script, script.currentLabel)
 		}
 		onFinish.current?.()
 		setScene(undefined)

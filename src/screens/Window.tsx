@@ -166,7 +166,7 @@ const Window = () => {
 				</div>
 
 				{script.continueScript && <>
-					<ChoicesLayer script={script} layers={layers}/>
+					<ChoicesLayer script={script} display={layers.text} navigable={layers.topLayer == 'text'} />
 					<SkipLayer script={script} history={history} layers={layers}/>
 				</>}
 
@@ -195,7 +195,11 @@ const Window = () => {
 						<HiMenu />
 					</button>
 				}
-				<MenuLayer display={layers.menu} show={show} script={script} layers={layers}
+				<MenuLayer
+					display={layers.menu}
+					show={show}
+					script={script}
+					layers={layers}
 					qLoad={actionsHandler.quickLoad.bind(actionsHandler)}
 					qSave={actionsHandler.quickSave.bind(actionsHandler)} />
 			</Fragment>

@@ -1,4 +1,4 @@
-import { RefObject, useEffect, useRef, useState } from "react"
+import { memo, RefObject, useEffect, useRef, useState } from "react"
 import { Choice, LabelName } from "../types"
 import history from "../utils/history"
 import { Bbcode } from "@tsukiweb-common/utils/Bbcode"
@@ -16,6 +16,17 @@ type SelectionCallback = (choice: Choice)=>void
 //#region                       COMMAND HANDLERS
 //##############################################################################
 
+function getChoiceText(trimmedText: string): string {
+  const choiceIndex = parseInt(trimmedText)
+  if (!isNaN(choiceIndex) && choiceIndex >= 0 && choiceIndex < strings.choices.length) {
+    const translatedChoice = strings.choices[choiceIndex]
+    if (translatedChoice !== undefined) {
+      return translatedChoice
+    }
+  }
+  return trimmedText
+}
+
 // <"text"|`text` , *label> (optional whitespace around ',')
 const choiceRegexp = /(?<text>"[^"]*"|`[^`]*`)\s*,\s*\*(?<label>\w+)/gm
 
@@ -23,25 +34,17 @@ function processSelect(setChoices: (choices: Choice[])=>void,
                        onSelection: RefObject<SelectionCallback|undefined>,
                        arg: string, _cmd: string, script: ScriptPlayer,
                        onFinish: VoidFunction) {
-//----- extract texts and labels -------
   const choices: Choice[] = []
   let match
   while ((match = choiceRegexp.exec(arg)) != null) {
     const {text, label} = match.groups ?? {}
-    if (!text || !label)
+    if (!text || !label) {
       console.error(`Could not parse choices in "select ${arg}"`)
-    // remove ` or " at beginning and end of text regexp label, trim text
-    const trimmedText = text.substring(1, text.length-1).trim()
-    
-    // Look up choice text in translations if it's an index
-    let choiceText = trimmedText
-    const choiceIndex = parseInt(trimmedText)
-    if (!isNaN(choiceIndex) && choiceIndex >= 0 && choiceIndex < strings.choices.length) {
-      const translatedChoice = strings.choices[choiceIndex]
-      if (translatedChoice !== undefined) {
-        choiceText = translatedChoice
-      }
+      continue
     }
+    // remove ` or " at beginning and end of text regexp label, trim text
+    const trimmedText = text.slice(1, -1).trim()
+    const choiceText = getChoiceText(trimmedText)
     
     choices.push({
       index: choices.length,
@@ -49,13 +52,13 @@ function processSelect(setChoices: (choices: Choice[])=>void,
       label: label.trim() as LabelName
     })
   }
+
   if (choices.length == 0)
     console.error(`canot parse choices ${arg}`)
-  //console.debug(choices)
+  
   setChoices(choices)
   history.onChoicePrompt(choices)
 
-//----------- set callback -------------
   onSelection.current = (choice)=> {
     //console.debug(choice)
     script.setNextLabel(choice.label)
@@ -76,19 +79,20 @@ function processSelect(setChoices: (choices: Choice[])=>void,
 
 type Props = {
   script: ScriptPlayer
-  layers: InGameLayersHandler
+  display: boolean
+  navigable: boolean
 }
 
-const ChoicesLayer = ({script, layers}: Props) => {
+const ChoicesLayer = ({script, display, navigable}: Props) => {
   const [choices, setChoices] = useState<Choice[]>([])
-  const onSelection = useRef<SelectionCallback>(undefined)
+  const onSelection = useRef<SelectionCallback|undefined>(undefined)
 
   useEffect(()=> {
     script.setCommand('select',
       processSelect.bind(null, setChoices, onSelection))
   }, [script])
 
-  if (!layers.text || choices.length == 0) return null
+  if (!display || choices.length == 0) return null
 
   return (
     <div className="layer" id="layer-choices">
@@ -102,8 +106,9 @@ const ChoicesLayer = ({script, layers}: Props) => {
             audio={audio}
             hoverSound="tick"
             clickSound="impact"
-            {...(layers.topLayer == 'text' && {'nav-y': i-0.5})}
-          > { /* i-0.5 to place cursor on second choice when pressing down */ }
+            //i-0.5 to place cursor on second choice when pressing down
+            {...(navigable && {'nav-y': i-0.5})}
+          >
             <Bbcode text={choice.str} />
           </Button>
         )}
@@ -112,4 +117,4 @@ const ChoicesLayer = ({script, layers}: Props) => {
   )
 }
 
-export default ChoicesLayer
+export default memo(ChoicesLayer)
