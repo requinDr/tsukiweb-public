@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import viteTsconfigPaths from 'vite-tsconfig-paths';
-import svgrPlugin from 'vite-plugin-svgr';
 
 // List assets files to use from local instead of fetching from remote
 const regexPatterns = globToRegex([
@@ -15,8 +14,7 @@ const regexPatterns = globToRegex([
 export default defineConfig({
 	plugins: [
 		react(),
-		viteTsconfigPaths(),
-		svgrPlugin()
+		viteTsconfigPaths()
 	],
 	server: {
 		proxy: {
