@@ -5,8 +5,7 @@ export const inGameKeyMap = {
         {key: "Enter"},
         {key: "Control", repeat: true},
         {key: "Meta", repeat: true},
-        {key: "ArrowDown", repeat: false, ctrlKey: false},
-        {key: "ArrowRight", repeat: false, ctrlKey: false}],
+        {key: "ArrowDown", repeat: false, ctrlKey: false}],
     "back":    [
         {key: "Escape", repeat: false},
         {key: "Backspace", repeat: false}],

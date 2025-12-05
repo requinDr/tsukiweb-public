@@ -12,7 +12,7 @@
 		z-index: 100;
 		opacity: 1;
 		background: rgb(0 21 50 / 75%);
-		backdrop-filter: blur(4px);
+		backdrop-filter: blur(1px);
 	}
 
 	.scroll-container {
@@ -41,5 +41,9 @@
 			padding-inline: 1em;
 			padding-top: 4em;
 		}
+	}
+
+	footer {
+		font-size: 1.1em;
 	}
 }

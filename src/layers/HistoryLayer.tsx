@@ -27,11 +27,8 @@ const HistoryLayer = ({ display, history, onRewind, layers, show, divProps }: Pr
 		layers.back()
 	}, [])
 
-	const toggleView = useCallback(()=> {
-		if (layers.history)
-			layers.flowchart = true
-		else
-			layers.history = true
+	const setLayer = useCallback((layer: 'history' | 'flowchart')=> {
+		layers[layer] = true
 	}, [])
 
 	const loadPage = useCallback((index: number)=> {
@@ -75,20 +72,26 @@ const HistoryLayer = ({ display, history, onRewind, layers, show, divProps }: Pr
 					>
 						{strings.close}
 					</Button>
-					{show?.flowchart &&
+					{show?.flowchart && <>
 					<Button
-						variant="elevation"
-						onClick={toggleView}
+						variant="corner"
+						onClick={() => setLayer('history')}
+						active={layers.history}
 						style={{ marginLeft: '1em' }}
 						{...{"nav-x": -1, "nav-y": 1}}
 					>
-						{layers.history ?
-							<>{strings.extra.scenes}</>
-						:
-							<>{strings.menu.history}</>
-						}
+						{strings.menu.history}
 					</Button>
-					}
+					<Button
+						variant="corner"
+						onClick={() => setLayer('flowchart')}
+						active={layers.flowchart}
+						style={{ marginLeft: '.5em' }}
+						{...{"nav-x": 0, "nav-y": 1}}
+					>
+						{strings.extra.scenes}
+					</Button>
+					</>}
 				</>}
 			</FixedFooter>
 		</div>
