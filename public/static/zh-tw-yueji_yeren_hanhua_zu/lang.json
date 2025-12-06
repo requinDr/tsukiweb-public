@@ -29,7 +29,8 @@
       "data": "不收集任何資料，所有內容都儲存在你的瀏覽器中。管理你的資料%0這裡%1。",
       "remake": "請購買並支援重製版 %0月姬$ - A piece of blue glass moon%1."
     },
-    "install": "安裝"
+    "install": "安裝",
+    "share": "Share"
   },
   "extra": {
     "gallery": "畫廊",
@@ -48,7 +49,19 @@
     "volume-master": "音量",
     "volume-track": "BGM音量",
     "volume-se": "效果音",
+    "volume-title-track": "Title music volume",
+    "volume-system-se": "System SFX volume",
     "track-source": "音軌來源",
+    "track-sources": {
+      "original": "Original (2000)",
+      "everafter": "Ever After (2002)",
+      "tsukibako": "Tsuki-Bako (2003)"
+    },
+    "track-source-help": [
+      "[b]Original[/b]: Original soundtrack of the complete game from 2000.",
+      "[b]Ever After[/b]: Remake of the original soundtrack, published in 2002.",
+      "[b]Tsuki-Bako[/b]: Remixed soundtrack that came with a Tsukihime + PLUS-DISC + Kagetsu Tohya package in 2003."
+    ],
     "auto-mute": "切換分頁時靜音",
     "ratio": "縱橫比",
     "ratio-auto": "自動",
@@ -88,6 +101,7 @@
     "controls": {
       "next": "文字推進",
       "history": "顯示/隱藏履歷",
+      "flowchart": "Show/hide Flowchart",
       "back": "關閉當前頁面/顯示選單",
       "bg_move": "移動背景影像",
       "auto_play": "自動模式",
@@ -115,7 +129,9 @@
     "delete": "刪除",
     "delete-warning": "你確定要刪除此存檔嗎？",
     "overwrite-warning": "你確定要覆蓋此存檔嗎？",
-    "quick-save": "快速保存"
+    "quick-save": "快速保存",
+    "local-storage-warning": "Savefiles and settings are stored locally in the web browser, and might get deleted by the browser after a delay of inactivity. Regularly export your data.",
+    "local-storage-last-export": "Last full data export date: %0"
   },
   "game": {
     "skip-viewed": "該場景曾顯示過。",

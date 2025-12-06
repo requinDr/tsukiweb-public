@@ -12,7 +12,7 @@ function convertAction([action, keys]: KeyMapEntry) : [string, KeymapKeyFilter[]
 	return [
 		action,
 		Array.isArray(keys) ?
-			keys.filter(x=>x.constructor != Function) as KeymapKeyFilter[]
+			keys.filter(x=>x.constructor != Function && Object.hasOwn(x, 'key')) as KeymapKeyFilter[]
 		: [keys]
 	]
 }

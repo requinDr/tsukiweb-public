@@ -52,6 +52,11 @@
     "volume-title-track": "Volumen de la música del título",
     "volume-system-se": "Volumen de efectos de sonido del sistema",
     "track-source": "Versión de la banda sonora",
+    "track-sources": {
+      "original": "Original (2000)",
+      "everafter": "Ever After (2002)",
+      "tsukibako": "Tsuki-Bako (2003)"
+    },
     "track-source-help": [
       "[b]Original[/b]: Banda sonora original del juego completo de 2000.",
       "[b]Ever After[/b]: Remake de la banda sonora original, publicado en 2002.",
@@ -96,6 +101,7 @@
     "controls": {
       "next": "Siguiente",
       "history": "Mostrar/ocultar registro",
+      "flowchart": "Show/hide Flowchart",
       "back": "Cerrar la pantalla actual / Mostrar menú",
       "bg_move": "Mover imagen de fondo",
       "auto_play": "Reproducción automática",
@@ -124,8 +130,7 @@
     "delete-warning": "¿Estás seguro de que quieres eliminar este guardado?",
     "overwrite-warning": "¿Estás seguro de que quieres sobrescribir este guardado?",
     "quick-save": "Guardado rápido",
-    "local-storage-warning":
-      "Las partidas guardadas y las configuraciones se almacenan localmente en el navegador y podrían eliminarse tras un período de inactividad. Exporta tus datos regularmente.",
+    "local-storage-warning": "Las partidas guardadas y las configuraciones se almacenan localmente en el navegador y podrían eliminarse tras un período de inactividad. Exporta tus datos regularmente.",
     "local-storage-last-export": "Última fecha de exportación completa de datos: %0"
   },
   "game": {

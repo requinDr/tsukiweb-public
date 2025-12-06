@@ -96,6 +96,7 @@ function createKeyMap(layers: InGameLayersHandler, show: ShowLayers) {
 		"next":  	[noMenu, ...inGameKeyMap['next']],
 		"back":     inGameKeyMap['back'],
 		"history":  [()=> show.history && onText(), ...inGameKeyMap['history']],
+		"flowchart":[()=> show.flowchart && onText(), ...inGameKeyMap['flowchart']],
 		"graphics": [()=> show.graphics && noMenu(), ...inGameKeyMap['graphics']],
 		"bg_move":  [noMenu, ...inGameKeyMap['bg_move']],
 		"auto_play":[onText, ...inGameKeyMap['auto_play']],
@@ -265,6 +266,7 @@ class UserActionsHandler {
 			case "q_load"   : this.quickLoad(); break
 			case "menu"		: console.log('menu'); layers.menu = !layers.menu; break
 			case "history"  : layers.history  = !layers.history; break
+			case "flowchart": layers.flowchart= !layers.flowchart; break
 			case "graphics" : layers.graphics = !layers.graphics; break
 			case "load"     : layers.load     = !layers.load; break
 			case "save"     : layers.save     = !layers.save; break

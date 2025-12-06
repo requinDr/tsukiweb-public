@@ -29,7 +29,8 @@
       "data": "Nenhum dado será coletado, tudo é armazenado em seu navegador. Gerencie seus dados %0aqui%1.",
       "remake": "Considere comprar o remake do %0Tsukihime - A piece of blue glass moon%1."
     },
-    "install": "Instalar"
+    "install": "Instalar",
+    "share": "Compartilhar"
   },
   "extra": {
     "gallery": "Galeria de Imagens",
@@ -48,7 +49,19 @@
     "volume-master": "Volume geral",
     "volume-track": "Volume da música",
     "volume-se": "Volume dos efeitos sonoros",
+    "volume-title-track": "Volume da música do título",
+    "volume-system-se": "Volume dos efeitos sonoros do sistema",
     "track-source": "Versão da trilha sonora",
+    "track-sources": {
+      "original": "Original (2000)",
+      "everafter": "Ever After (2002)",
+      "tsukibako": "Tsuki-Bako (2003)"
+    },
+    "track-source-help": [
+      "[b]Original[/b]: Original soundtrack of the complete game from 2000.",
+      "[b]Ever After[/b]: Remake of the original soundtrack, published in 2002.",
+      "[b]Tsuki-Bako[/b]: Remixed soundtrack that came with a Tsukihime + PLUS-DISC + Kagetsu Tohya package in 2003."
+    ],
     "auto-mute": "Silenciar ao mudar de guia",
     "ratio": "Proporção da tela",
     "ratio-auto": "Automático",
@@ -88,6 +101,7 @@
     "controls": {
       "next": "Próximo",
       "history": "Mostrar/ocultar histórico",
+      "flowchart": "Show/hide Flowchart",
       "back": "Fechar tela atual/Menu de exibição",
       "bg_move": "Mover imagem de fundo",
       "auto_play": "Reprodução automática",
@@ -115,7 +129,9 @@
     "delete": "Excluir",
     "delete-warning": "Tem certeza que deseja excluir esta sessão?",
     "overwrite-warning": "Tem certeza que deseja sobrepor esta sessão?",
-    "quick-save": "Salvar rápidamente"
+    "quick-save": "Salvar rápidamente",
+    "local-storage-warning": "Savefiles and settings are stored locally in the web browser, and might get deleted by the browser after a delay of inactivity. Regularly export your data.",
+    "local-storage-last-export": "Last full data export date: %0"
   },
   "game": {
     "skip-viewed": "Você já viu esta cena.",

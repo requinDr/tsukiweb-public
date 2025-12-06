@@ -15,6 +15,10 @@ export const inGameKeyMap = {
         {[KeyMap.editing]: false, repeat: false},
         {key: "ArrowUp", ctrlKey: false},
         {key: "H"}],
+    "flowchart": [
+        {[KeyMap.editing]: false, repeat: false},
+        {key: "F", ctrlKey: false}
+    ],
     "graphics": [
         {[KeyMap.editing]: false, repeat: false},
         {code: "Space"},
