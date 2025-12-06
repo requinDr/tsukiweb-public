@@ -93,6 +93,7 @@ export class FcNode extends FlowchartNode<FcNodeId, TsukihimeFlowchart> {
 	graph?: Graphics
 	_boundRect: [number, number, number, number] | null = null
 	_state: number = -1
+	_navY: number | null
 
 	constructor(id: FcNodeId, {col, cutAt, graph, align, ...attrs}: FcNodeAttrs,
 				flowchart: TsukihimeFlowchart, ) {
@@ -101,6 +102,35 @@ export class FcNode extends FlowchartNode<FcNodeId, TsukihimeFlowchart> {
 		this.cutAt = cutAt ?? 0
 		this.graph = graph
 		this._align = align ?? null
+		this._navY = null
+	}
+	
+	get navY() {
+		if (!this.scene || this.state < FcNodeState.ENABLED)
+			return null
+		if (this._navY != null)
+			return this._navY
+		const parentSceneNodes = this.parentSceneNodes
+		if (parentSceneNodes.length == 0)
+			return 0
+		const max: number = parentSceneNodes.reduce((max, n)=> {
+			return Math.max(max, n.navY as number)
+		}, 0)
+		this._navY = max+1
+		return this._navY
+	}
+	
+	get parentSceneNodes() {
+		const parents: this[] = new Array(...this.parents)
+		let i = 0
+		while (i < parents.length) {
+			const node = parents[i]
+			if (!node.scene)
+				parents.splice(i, 1, ...node.parents)
+			else
+				i++
+		}
+		return parents
 	}
 	get flowchart(): TsukihimeFlowchart {
 		return super.flowchart

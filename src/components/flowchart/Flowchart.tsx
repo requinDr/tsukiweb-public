@@ -58,6 +58,12 @@ const Flowchart = ({history, onSceneClick}: Props)=> {
 	const minHeight = `${height/8}rem`
 	const maxWidth = `${100 * width / (2 * COLUMN_WIDTH)}%` // minimum 2 scenes visible
 	const maxHeight = `${100 * height / (4 * (SCENE_HEIGHT + DY*2))}%` // minimum 4 scenes visible
+	const activeNode = flowchart.getNode(flowchart.activeScene)
+	let refX: number, refY: number
+	if (activeNode)
+		refX = activeNode.column, refY = activeNode.navY!
+	else
+		refX = refY = 0
 
 	return (
 		<svg viewBox={`${left} ${top} ${width} ${height}`}
@@ -74,7 +80,12 @@ const Flowchart = ({history, onSceneClick}: Props)=> {
 					{[...node.parents.map(
 						parent => <ConnectionPath key={`${parent.id}-${node.id}`} from={parent} to={node} />
 					)]}
-					{node.scene && <SceneRenderer node={node} onClick={onSceneClick}/>}
+					{node.scene && <SceneRenderer node={node}
+						{...(node.navY != null && { 'nav-noscroll': 1,
+							'nav-y': node.navY - refY,
+							'nav-x': node.column - refX	})}
+						onClick={onSceneClick}/>
+					}
 				</Fragment>
 			)}
 		</svg>

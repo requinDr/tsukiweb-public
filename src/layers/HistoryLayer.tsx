@@ -68,7 +68,7 @@ const HistoryLayer = ({ display, history, onRewind, layers, show, divProps }: Pr
 					<Button
 						variant="elevation"
 						onClick={close}
-						{...{"nav-x": -2, "nav-y": 1}}
+						nav-x={-2} nav-y={10000} // 10k prevents overlapping with flowchart nodes
 					>
 						{strings.close}
 					</Button>
@@ -78,7 +78,7 @@ const HistoryLayer = ({ display, history, onRewind, layers, show, divProps }: Pr
 						onClick={() => setLayer('history')}
 						active={layers.history}
 						style={{ marginLeft: '1em' }}
-						{...{"nav-x": -1, "nav-y": 1}}
+						nav-x={-1} nav-y={10000}
 					>
 						{strings.menu.history}
 					</Button>
@@ -87,7 +87,7 @@ const HistoryLayer = ({ display, history, onRewind, layers, show, divProps }: Pr
 						onClick={() => setLayer('flowchart')}
 						active={layers.flowchart}
 						style={{ marginLeft: '.5em' }}
-						{...{"nav-x": 0, "nav-y": 1}}
+						nav-x={0} nav-y={10000}
 					>
 						{strings.extra.scenes}
 					</Button>

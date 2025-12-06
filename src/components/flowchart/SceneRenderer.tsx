@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { SVGProps, useState } from "react"
 import { FcNode, FcNodeState } from "utils/flowchart"
 import { TsukihimeSceneName } from "types"
 import { flip, autoUpdate } from "@floating-ui/dom";
@@ -9,6 +9,7 @@ import cg from "utils/gallery"
 import SceneImage from "./SceneImage"
 import ScenePopover from "./ScenePopover"
 import classNames from "classnames"
+import { NavigationProps } from "@tsukiweb-common/input/arrowNavigation";
 
 
 let rootElement: HTMLElement | null = null
@@ -41,17 +42,17 @@ const useScenePopover = () => {
 type SceneProps = {
 	node: FcNode,
 	onClick?: (id: TsukihimeSceneName) => void
-}
+} & Omit<SVGProps<SVGGElement>, 'onClick'> & NavigationProps
 
-const UnseenScene = ({ node }: { node: FcNode }) => (
-	<g className='fc-scene' id={node.id}
+const UnseenScene = ({ node, ...props }: Omit<SceneProps, 'onClick'>) => (
+	<g {...props} className='fc-scene' id={node.id}
 		transform={`translate(${node.centerX}, ${node.centerY})`}
 		clipPath="url(#fc-scene-clip)">
 		<use href="#fc-scene-hidden" />
 	</g>
 )
 
-const VisibleScene = ({ node, onClick }: SceneProps) => {
+const VisibleScene = ({ node, onClick, ...props }: SceneProps) => {
 	const { isOpen, setIsOpen, refs, floatingStyles, getReferenceProps } = useScenePopover()
 
 	const onAction = (e: React.MouseEvent | React.KeyboardEvent) => {
@@ -73,7 +74,7 @@ const VisibleScene = ({ node, onClick }: SceneProps) => {
 	return <>
 		<g className={classes} id={`fc-scene-${node.id}`}
 			transform={`translate(${node.centerX},${node.centerY})`}>
-			<g className={'fc-scene-content'}
+			<g className={'fc-scene-content'} {...props}
 				tabIndex={disabled ? -1 : 0}
 				clipPath="url(#fc-scene-clip)"
 				onClick={!disabled ? onAction : undefined}
@@ -109,14 +110,14 @@ const VisibleScene = ({ node, onClick }: SceneProps) => {
 	</>
 }
 
-export const SceneRenderer = ({ node, onClick }: SceneProps) => {
+export const SceneRenderer = ({ node, onClick, ...props }: SceneProps) => {
 
 	switch (node.state) {
 		case FcNodeState.HIDDEN:
 			return null
 		case FcNodeState.UNSEEN:
-			return <UnseenScene node={node} />
+			return <UnseenScene node={node} {...props} />
 		default:
-			return <VisibleScene node={node} onClick={onClick} />
+			return <VisibleScene node={node} onClick={onClick} {...props} />
 	}
 }
