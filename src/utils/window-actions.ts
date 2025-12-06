@@ -14,6 +14,10 @@ import { isThScene } from "script/utils";
 import { SCENE_ATTRS } from "./constants";
 import directionalNavigate from "@tsukiweb-common/input/arrowNavigation";
 
+function noFocus() {
+	return document.activeElement == null
+		|| document.activeElement == document.body
+}
 
 function quickLoad(history: History, onLoad: VoidFunction) {
 	const ss = savesManager.get(QUICK_SAVE_ID)
@@ -88,7 +92,7 @@ function createKeyMap(layers: InGameLayersHandler, show: ShowLayers) {
 	//const noMenuWindow = ()=> ['menu', null].includes(layers.currentMenu)
 	const onText = ()=> layers.topLayer == 'text'
 	return {
-		"nav":		[()=> true, ...menuKeyMap['nav']],
+		"nav":		menuKeyMap['nav'],
 		"next":  	[noMenu, ...inGameKeyMap['next']],
 		"back":     inGameKeyMap['back'],
 		"history":  [()=> show.history && onText(), ...inGameKeyMap['history']],
@@ -194,14 +198,16 @@ class UserActionsHandler {
 
 	next() {
 		if (!this._script)
-			return
+			return false
 		switch (this._layers.topLayer) {
-			case 'graphics' : this._layers.text = true; break
+			case 'graphics' :
+				this._layers.text = true
+				return true
 			case 'text' :
 				if (this._script.autoPlay)
 					this._script.autoPlay = false
-				this._script.next();
-				break
+				this._script.next()
+				return true
 		}
 	}
 	back() {
@@ -244,7 +250,7 @@ class UserActionsHandler {
 		if (this._script?.continueScript)
 			quickLoad(this._script.history, this._remountScript)
 	}
-	handleAction(action: string, ...args: any) {
+	handleAction(action: string, e: KeyboardEvent, ...args: any) {
 		if (!this._script)
 			return
 		const layers = this._layers
@@ -252,12 +258,12 @@ class UserActionsHandler {
 			case "auto_play":
 				this._script.autoPlay = !this._script.autoPlay
 				break
-			case "next"     : this.next(); return true
-			case "back"     : this.back(); return true
+			case "next"     : return noFocus() && this.next()
+			case "back"     : this.back(); break
 			case "page_nav" : this.pageNav(args[0]); break
 			case "q_save"   : this.quickSave(); break
 			case "q_load"   : this.quickLoad(); break
-			case "menu"		: console.log('menu'); layers.menu     = !layers.menu; break
+			case "menu"		: console.log('menu'); layers.menu = !layers.menu; break
 			case "history"  : layers.history  = !layers.history; break
 			case "graphics" : layers.graphics = !layers.graphics; break
 			case "load"     : layers.load     = !layers.load; break
@@ -265,7 +271,11 @@ class UserActionsHandler {
 			case "config"   : layers.config   = !layers.config; break
 			case "bg_move"  : moveBg(args[0]); break
 			case "nav"		: return directionalNavigate(args[0])
+			default :
+				console.error(`Unimplemented action ${action}`)
+				return false
 		}
+		return true
 	}
 }
 

@@ -120,8 +120,8 @@ const Window = () => {
 
 //............ user inputs .............
 	const _createKeyMap = useCallback(()=> actions.createKeyMap(layers, show), [layers, show])
-	useKeyMap(_createKeyMap, (action, _evt, ...args)=>
-		actionsHandler.handleAction(action, ...args),
+	useKeyMap(_createKeyMap, (action, e, ...args)=>
+		actionsHandler.handleAction(action, e, ...args),
 		document, "keydown", { capture: false })
 
 	// useGamepad({fct: gameLoopGamepad.bind(null, actionsHandler.current!)})
