@@ -24,7 +24,7 @@ export const inGameKeyMap = {
         {code: "Space"},
         {key: "Delete"}],
     "bg_move": [
-        {[KeyMap.editing]: false, ctrlKey: false, repeat: false},
+        {[KeyMap.editing]: false, ctrlKey: true, repeat: false},
         {key: "ArrowUp", [KeyMap.args]: "up"},
         {key: "ArrowDown", [KeyMap.args]: "down"}],
     "auto_play":[
