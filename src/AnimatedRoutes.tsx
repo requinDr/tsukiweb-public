@@ -15,7 +15,7 @@ import SceneReplayScreen from "screens/SceneReplayScreen";
 import ExtraLayout from "layouts/ExtraLayout";
 import PlusDiscScreen from "screens/PlusDiscScreen";
 import { useCallback, useState } from "react";
-import { Particles } from "@tsukiweb-common/ui-core";
+import { SnowfallCanvas } from "@tsukiweb-common/ui-core";
 import { SCREEN } from "utils/display";
 
 const AnimatedRoutes = () => {
@@ -37,7 +37,7 @@ const AnimatedRoutes = () => {
 
 	return (
 		<LazyMotion features={domAnimation} strict>
-			{showParticles && <Particles />}
+			{showParticles && <SnowfallCanvas />}
 			<AnimatePresence mode="wait">
 				<Routes location={location} key={keyPresence}>
 					<Route path="/disclaimer" element={<DisclaimerScreen onAccept={markDisclaimerAsSeen} />} />
