@@ -1,5 +1,5 @@
 import { playScene } from 'utils/savestates'
-import chalkboard from '@assets/images/chalkboard.webp'
+import chalkboard from '@assets/icons/chalkboard.svg'
 import { noBb } from '@tsukiweb-common/utils/Bbcode'
 import { osiete } from 'utils/endings'
 import classNames from 'classnames'
@@ -8,8 +8,9 @@ type Props = {
 	unlocked: boolean
 	ending: typeof osiete[keyof typeof osiete]
 	number: number
-}
-const Oshiete = ({unlocked, ending, number}: Props) => {
+} & React.HTMLAttributes<HTMLDivElement>
+
+const Oshiete = ({unlocked, ending, number, ...props}: Props) => {
 
 	const handlePlay = () => {
 		if (unlocked && ending)
@@ -18,6 +19,7 @@ const Oshiete = ({unlocked, ending, number}: Props) => {
 
 	return (
 		<div
+			{...props}
 			className={classNames("badending", {"seen": unlocked})}
 			tabIndex={unlocked ? 0 : -1}
 			role="button"

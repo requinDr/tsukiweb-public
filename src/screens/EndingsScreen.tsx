@@ -11,12 +11,24 @@ import { noBb } from '@tsukiweb-common/utils/Bbcode'
 import classNames from 'classnames'
 import { useScreenAutoNavigate, useLanguageRefresh } from "hooks"
 import useEclipseUnlocked from "hooks/useEclipseUnlocked"
+import directionalNavigate from "@tsukiweb-common/input/arrowNavigation"
+import { useKeyMap } from "@tsukiweb-common/input/KeyMap"
+import { menuKeyMap } from "utils/keybind"
 
+function keyboardCallback(action: any, evt: KeyboardEvent, ...args: any) {
+	switch (action) {
+		case "nav" : return directionalNavigate(args[0])
+		default : throw Error(`Unknown action ${action}`)
+	}
+}
 
 const EndingsScreen = () => {
 	useScreenAutoNavigate(SCREEN.ENDINGS)
 	useLanguageRefresh()
 	const { sawEclipse, eclipseUnlocked } = useEclipseUnlocked()
+
+	useKeyMap(menuKeyMap, keyboardCallback, document, 'keydown',
+			{ capture: false })
 
 	return (
 		<div className={styles.pageContent} id="endings">
@@ -34,6 +46,7 @@ const EndingsScreen = () => {
 								type: ending.type,
 								scene: ending.scene
 							}}
+							nav-auto={(settings.unlockEverything || Boolean(ending?.seen)) ? 1 : undefined}
 						/>
 					)}
 
@@ -48,9 +61,8 @@ const EndingsScreen = () => {
 							scene: "eclipse"
 						}}
 						continueScript={eclipseUnlocked} //needed to add to the completed scenes
-						divProps={{
-							className: classNames({attention: eclipseUnlocked})
-						}}
+						className={classNames({attention: eclipseUnlocked})}
+						nav-auto={(sawEclipse || eclipseUnlocked) ? 1 : undefined}
 					/>
 				</section>
 
@@ -63,6 +75,7 @@ const EndingsScreen = () => {
 								unlocked={settings.unlockEverything || Boolean(ending?.seen)}
 								ending={ending}
 								number={index + 1}
+								nav-auto={(settings.unlockEverything || Boolean(ending?.seen)) ? 1 : undefined}
 							/>
 						)}
 					</div>

@@ -70,6 +70,7 @@
 					transition: all .2s;
 				}
 				&:hover, &:focus-visible {
+					outline: none;
 					&::after {
 						box-shadow: var(--selected-shadow);
 						z-index: 1;
@@ -138,6 +139,8 @@
 			filter: brightness(0.5);
 			opacity: .5;
 			position: relative;
+			cursor: default;
+			user-select: none;
 
 			img {
 				width: 100%;
@@ -145,12 +148,15 @@
 			}
 			.label {
 				position: absolute;
-				top: 14px;
+				top: 12px;
 				left: 0;
 				right: 0;
 				text-align: center;
 			}
 
+			&:focus-visible {
+				outline: none;
+			}
 			&.seen {
 				filter: grayscale(0);
 				opacity: 1;

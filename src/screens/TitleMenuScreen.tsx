@@ -17,7 +17,7 @@ import { useScreenAutoNavigate, useLanguageRefresh } from 'hooks'
 import useEclipseUnlocked from 'hooks/useEclipseUnlocked'
 import classNames from "classnames"
 import { audio } from "utils/audio"
-import directionalNavigate, { navProps } from '@tsukiweb-common/input/arrowNavigation'
+import directionalNavigate from '@tsukiweb-common/input/arrowNavigation'
 import { useKeyMap } from "@tsukiweb-common/input/KeyMap"
 import { menuKeyMap } from "utils/keybind"
 
