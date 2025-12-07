@@ -69,25 +69,25 @@ const TitleMenuScreen = () => {
 
 			<nav className="menu">
 				<div className='menu-buttons'>
-					<TitleMenuButton audio={audio} onClick={newGame} {...navProps(0, 0)}>
+					<TitleMenuButton audio={audio} onClick={newGame} nav-auto={1}>
 						{strings.title.start}
 					</TitleMenuButton>
 
 					{(savesManager.savesCount > 0 || history.pagesLength > 0) &&
-					<TitleMenuButton audio={audio} onClick={continueGame} {...navProps(0, 1)}>
+					<TitleMenuButton audio={audio} onClick={continueGame} nav-auto={1}>
 						{strings.title.resume}
 					</TitleMenuButton>
 					}
 
-					<TitleMenuButton audio={audio} onClick={() => navigate(SCREEN.LOAD)} {...navProps(0, 2)}>
+					<TitleMenuButton audio={audio} onClick={() => navigate(SCREEN.LOAD)} nav-auto={1}>
 						{strings.title.load}
 					</TitleMenuButton>
 
-					<TitleMenuButton audio={audio} onClick={() => navigate(SCREEN.CONFIG)} {...navProps(0, 3)}>
+					<TitleMenuButton audio={audio} onClick={() => navigate(SCREEN.CONFIG)} nav-auto={1}>
 						{strings.title.config}
 					</TitleMenuButton>
 
-					<TitleMenuButton audio={audio} onClick={() => navigate(SCREEN.GALLERY)} {...navProps(0, 4)}
+					<TitleMenuButton audio={audio} onClick={() => navigate(SCREEN.GALLERY)} nav-auto={1}
 									 attention={eclipseUnlocked}>
 						{strings.title.extra}
 					</TitleMenuButton>
@@ -103,7 +103,7 @@ const TitleMenuScreen = () => {
 						duration: 1,
 					}}>
 					<button
-						{...navProps(-1, 5)}
+						nav-auto={1}
 						className={classNames("action-icon", { inactive: conf < 0 })}
 						onContextMenu={e => e.preventDefault()}
 						aria-label={strings.config['volume-master']}
@@ -120,7 +120,7 @@ const TitleMenuScreen = () => {
 						delay: 0.7,
 						duration: 1,
 					}}>
-					<TranslationSwitch {...navProps(-1, 6)}/>
+					<TranslationSwitch nav-auto={1}/>
 				</m.div>
 
 				<m.div
@@ -130,7 +130,7 @@ const TitleMenuScreen = () => {
 						delay: 0.6,
 						duration: 1,
 					}}>
-					<AppInfo {...navProps(-1, 7)}/>
+					<AppInfo nav-auto={1}/>
 				</m.div>
 			</div>
 		</m.div>
