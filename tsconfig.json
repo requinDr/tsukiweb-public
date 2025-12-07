@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
-    "target": "es2018",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "target": "es2020",
+    "lib": ["dom", "dom.iterable", "esnext"],
     "types": ["vite/client", "node"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -20,12 +16,11 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-
     "baseUrl": "src",
     "paths": {
       "@tsukiweb-common/*": ["../tsukiweb-common/src/*"],
       "@styles/*": ["./styles/*"],
-      "@assets/*": ["./assets/*"],
+      "@assets/*": ["./assets/*"]
     }
   },
   "include": ["src", "tsukiweb-common/global.d.ts"],

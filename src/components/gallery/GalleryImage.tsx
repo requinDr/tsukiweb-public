@@ -8,8 +8,8 @@ import Zoom from "yet-another-react-lightbox/plugins/zoom"
 import "yet-another-react-lightbox/plugins/thumbnails.css"
 import GalleryTotal from "./GalleryTotal"
 import { MdLock } from "react-icons/md"
-import { useMediaQuery } from "@uidotdev/usehooks"
 import { GalleryImg } from "types"
+import useMediaQuery from "@tsukiweb-common/hooks/useMediaQuery"
 
 
 interface CustomSlideImage extends SlideImage {

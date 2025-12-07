@@ -9,7 +9,6 @@
 		"@types/node": "^24.10.1",
 		"@types/react": "^19.2.7",
 		"@types/react-dom": "^19.2.3",
-		"@uidotdev/usehooks": "^2.4.1",
 		"classnames": "^2.5.1",
 		"motion": "^12.23.25",
 		"react": "^19.2.1",
@@ -27,11 +26,6 @@
 	"scripts": {
 		"start": "vite",
 		"build": "tsc && vite build"
-	},
-	"eslintConfig": {
-		"extends": [
-			"react-app"
-		]
 	},
 	"devDependencies": {
 		"@types/react-modal": "^3.16.3",
