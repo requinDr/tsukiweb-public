@@ -20,6 +20,7 @@ import { audio } from "utils/audio"
 import directionalNavigate from '@tsukiweb-common/input/arrowNavigation'
 import { useKeyMap } from "@tsukiweb-common/input/KeyMap"
 import { menuKeyMap } from "utils/keybind"
+import christmas_hat from '@assets/icons/christmas_hat.svg'
 
 function keyboardCallback(action: any, evt: KeyboardEvent, ...args: any) {
 	switch (action) {
@@ -110,6 +111,20 @@ const TitleMenuScreen = () => {
 						onClick={()=> settings.volume.master = -settings.volume.master}
 					>
 						{conf < 0 ? <MdOutlineVolumeOff aria-label="mute" /> : <MdOutlineVolumeUp aria-label="unmute" />}
+						<img
+							src={christmas_hat}
+							alt="Christmas hat"
+							className="christmas-hat"
+							style={{
+								position: 'absolute',
+						    top: '-15px',
+						    left: '-11px',
+						    rotate: '-38deg',
+						    width: '28px',
+						    height: '28px',
+								transform: 'scaleX(-1)',
+							}}
+						/>
 					</button>
 				</m.div>
 
