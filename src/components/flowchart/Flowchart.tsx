@@ -81,7 +81,7 @@ const Flowchart = ({history, onSceneClick}: Props)=> {
 						parent => <ConnectionPath key={`${parent.id}-${node.id}`} from={parent} to={node} />
 					)]}
 					{node.scene && <SceneRenderer node={node}
-						{...(node.navY != null && { 'nav-noscroll': 1,
+						{...(node.navY != null && { 'nav-scroll': 'smooth',
 							'nav-y': node.navY - refY,
 							'nav-x': node.column - refX	})}
 						onClick={onSceneClick}/>

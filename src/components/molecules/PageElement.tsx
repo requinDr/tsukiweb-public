@@ -96,7 +96,7 @@ const PageElement = ({history, content, onLoad, navY=0, ...props}: Props)=> {
 				<Button
 					audio={audio} hoverSound={'tick'} clickSound={'glass'}
 					onClick={onLoad.bind(null,content)} className='load'
-					nav-noscroll={1} nav-x={0} nav-y={navY}
+					nav-scroll='none' nav-x={0} nav-y={navY}
 					onFocus={onFocus as any}>
 					<MdReplay /> {strings.history.load}
 				</Button>
