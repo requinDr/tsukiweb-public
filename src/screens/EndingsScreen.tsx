@@ -46,7 +46,7 @@ const EndingsScreen = () => {
 								type: ending.type,
 								scene: ending.scene
 							}}
-							nav-auto={(settings.unlockEverything || Boolean(ending?.seen)) ? 1 : undefined}
+							nav-auto={1}
 						/>
 					)}
 
@@ -62,7 +62,7 @@ const EndingsScreen = () => {
 						}}
 						continueScript={eclipseUnlocked} //needed to add to the completed scenes
 						className={classNames({attention: eclipseUnlocked})}
-						nav-auto={(sawEclipse || eclipseUnlocked) ? 1 : undefined}
+						nav-auto={1}
 					/>
 				</section>
 
@@ -75,7 +75,7 @@ const EndingsScreen = () => {
 								unlocked={settings.unlockEverything || Boolean(ending?.seen)}
 								ending={ending}
 								number={index + 1}
-								nav-auto={(settings.unlockEverything || Boolean(ending?.seen)) ? 1 : undefined}
+								nav-auto={1}
 							/>
 						)}
 					</div>
