@@ -11,7 +11,7 @@ type SceneProps = React.HTMLAttributes<HTMLDivElement> & {
 }
 const SceneShortcut = ({title, images, viewed, onClick, ...props}: SceneProps) => {
 	return (
-		<div {...props} className="scene" onClick={onClick} role="button" tabIndex={0}>
+		<div {...props} className="scene" onClick={onClick} onContextMenu={(e) => {e.preventDefault()}} role="button" tabIndex={0}>
 			<GraphicsGroup
 				images={images}
 				resolution="thumb"

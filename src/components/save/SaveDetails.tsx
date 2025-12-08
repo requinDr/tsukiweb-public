@@ -53,10 +53,12 @@ const SaveDetails = ({id, saveState, deleteSave}: SaveDetailsProps)=> {
 					<div className="actions">
 						<Tooltip id="tooltip" className="tooltip" delayShow={800} />
 						<button onClick={deleteSave.bind(null, id)}
+							onContextMenu={(e) => {e.preventDefault()}}
 							data-tooltip-id="tooltip" data-tooltip-content="Delete" data-tooltip-place="top" data-tooltip-position-strategy="fixed">
 							<MdDeleteOutline />
 						</button>
 						<button onClick={() => savesManager.exportSave(id)}
+							onContextMenu={(e) => {e.preventDefault()}}
 							data-tooltip-id="tooltip" data-tooltip-content="Download" data-tooltip-place="top" data-tooltip-position-strategy="fixed">
 							<MdOutlineFileDownload />
 						</button>

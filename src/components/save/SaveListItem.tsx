@@ -26,6 +26,7 @@ const SaveListItem = ({id, saveState, onSelect, focusedSave, buttonProps}: SaveL
 		<button
 			className={classNames("save-container", {active: id==focusedSave})}
 			onClick={onSelect.bind(null, id)}
+			onContextMenu={(e) => {e.preventDefault()}}
 			{...(isQuickSave ? {'quick-save':''} : {})}
 			{...buttonProps}
 		>

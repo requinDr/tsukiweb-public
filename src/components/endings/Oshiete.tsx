@@ -25,6 +25,7 @@ const Oshiete = ({unlocked, ending, number, ...props}: Props) => {
 			role="button"
 			onClick={unlocked ? handlePlay : undefined}
 			onKeyDown={e => e.key === 'Enter' && handlePlay()}
+			onContextMenu={(e) => {e.preventDefault()}}
 			data-tooltip-id="osiete"
 			data-tooltip-html={`
 				${ending?.scene}<br />

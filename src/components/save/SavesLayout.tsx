@@ -246,7 +246,11 @@ const ExportWarning = () => {
 	}
 
 	return (
-		<button className={classNames("warning-button", {"active": modalShown})} onClick={exportData}>
+		<button
+			className={classNames("warning-button", {"active": modalShown})}
+			onClick={exportData}
+			onContextMenu={(e) => {e.preventDefault()}}
+		>
 			<svg aria-hidden="true" focusable="false" className="gradient-icon" width="0" height="0">
 				<linearGradient id="gradient-vertical" x2="0" y2="1">
 					<stop offset="0%" stopColor="var(--color-stop-1)" />
