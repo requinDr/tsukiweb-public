@@ -4,11 +4,11 @@ import { noBb } from '@tsukiweb-common/utils/Bbcode'
 import { osiete } from 'utils/endings'
 import classNames from 'classnames'
 
-type Props = {
+type Props = React.HTMLAttributes<HTMLDivElement> & {
 	unlocked: boolean
 	ending: typeof osiete[keyof typeof osiete]
 	number: number
-} & React.HTMLAttributes<HTMLDivElement>
+}
 
 const Oshiete = ({unlocked, ending, number, ...props}: Props) => {
 
@@ -27,13 +27,9 @@ const Oshiete = ({unlocked, ending, number, ...props}: Props) => {
 			onKeyDown={e => e.key === 'Enter' && handlePlay()}
 			data-tooltip-id="osiete"
 			data-tooltip-html={`
-				<div>
-					${ending?.scene}<br />
-					${ending?.name ? `${noBb(ending.name)}<br />` : ""}
-					${ending?.day ? `Day: ${ending.day}` : ""}
-				</div>
+				${ending?.scene}<br />
+				${ending?.name ? `${noBb(ending.name)}, Day: ${ending.day}` : ""}
 			`}
-			data-tooltip-place="top"
 		>
 			{unlocked && ending ?
 				<img

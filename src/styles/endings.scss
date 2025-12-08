@@ -1,5 +1,5 @@
 @use "sass:color";
-@use '../../tsukiweb-common/src/ui-core/styles/_partials' as *;
+@use '../../tsukiweb-common/src/ui-core/styles/mixins' as *;
 
 #endings {
 	main {
@@ -21,7 +21,7 @@
 			background-color: var(--menu-container);
 			height: 260px;
 
-			@mixin shadow($color) {
+			@mixin ending-color($color) {
 				$color-title: color.adjust($color, $lightness: -20%);
 				
 				.ending-name {
@@ -51,31 +51,18 @@
 				}
 
 				&.unlocked.eclipse {
-					@include shadow(#ffffff);
+					@include ending-color(#ffffff);
 				}
 			}
 
 			&.unlocked {
-				&.ark { @include shadow(#e7e300) }
-				&.cel { @include shadow(#00bfff) }
-				&.aki { @include shadow(#b35a1f) }
-				&.his { @include shadow(#e70909) }
-				&.koha { @include shadow(#ff00ff) }
-				&.eclipse { @include shadow(#970e0e) }
-
-				&::after {
-					content: '';
-					position: absolute;
-					inset: 0;
-					transition: all .2s;
-				}
-				&:hover, &:focus-visible {
-					outline: none;
-					&::after {
-						box-shadow: var(--selected-shadow);
-						z-index: 1;
-					}
-				}
+				@include active-shadow;
+				&.ark { @include ending-color(#e7e300) }
+				&.cel { @include ending-color(#00bfff) }
+				&.aki { @include ending-color(#b35a1f) }
+				&.his { @include ending-color(#e70909) }
+				&.koha { @include ending-color(#ff00ff) }
+				&.eclipse { @include ending-color(#970e0e) }
 			}
 	
 			.ending-img {
@@ -119,8 +106,7 @@
 	}
 
 	.badendings {
-		padding-top: 2em;
-		padding-bottom: 2em;
+		padding-block: 2em;
 
 		h3 {
 			all: unset;
@@ -138,34 +124,32 @@
 		.badending {
 			filter: brightness(0.5);
 			opacity: .5;
-			position: relative;
 			cursor: default;
 			user-select: none;
+			@include active-shadow;
 
-			img {
-				width: 100%;
-				object-fit: contain;
+			&::after {
+				inset: -2px -4px;
+				scale: .93;
 			}
+
 			.label {
 				position: absolute;
-				top: 12px;
-				left: 0;
-				right: 0;
-				text-align: center;
+				inset: 0;
+				display: flex;
+				align-items: center;
+				justify-content: center;
 			}
 
-			&:focus-visible {
-				outline: none;
+			&:hover, &:focus-visible {
+				&::after {
+					scale: 1;
+				}
 			}
 			&.seen {
 				filter: grayscale(0);
 				opacity: 1;
 				cursor: pointer;
-
-				&:focus-visible, &:hover {
-					color: rgb(10, 164, 171);
-					text-shadow: 0 0 6px #005aff;
-				}
 			}
 		}
 

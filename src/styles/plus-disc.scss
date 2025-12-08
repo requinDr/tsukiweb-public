@@ -1,3 +1,5 @@
+@use '../../tsukiweb-common/src/ui-core/styles/mixins' as *;
+
 #plus-disc {
 	font-size: 1.1em;
 	overflow-y: auto;
@@ -46,9 +48,9 @@
 		gap: .1px;
 
 		.scene {
+			@include active-shadow;
 			display: grid;
 			grid-template-columns: 160px 1fr;
-			position: relative;
 			padding: 4px;
 			outline: none;
 			
@@ -67,19 +69,6 @@
 				.viewed-indicator {
 					font-size: 0.8em;
 					color: var(--text-muted);
-				}
-			}
-
-			&:after {
-				content: '';
-				position: absolute;
-				inset: 0;
-				transition: .2s;
-			}
-			&:hover, &:focus-visible {
-				cursor: pointer;
-				&:after {
-					box-shadow: var(--selected-shadow);
 				}
 			}
 
