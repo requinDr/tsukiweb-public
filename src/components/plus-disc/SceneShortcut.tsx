@@ -3,15 +3,15 @@ import GraphicsGroup from "components/molecules/GraphicsGroup"
 import { ReactNode } from "react"
 import { strings } from "translation/lang"
 
-type SceneProps = {
+type SceneProps = React.HTMLAttributes<HTMLDivElement> & {
 	title: ReactNode
 	images: Partial<Graphics>
 	viewed: boolean
 	onClick?: ()=>void
 }
-const SceneShortcut = ({title, images, viewed, onClick}: SceneProps) => {
+const SceneShortcut = ({title, images, viewed, onClick, ...props}: SceneProps) => {
 	return (
-		<div className="scene" onClick={onClick} role="button" tabIndex={0}>
+		<div {...props} className="scene" onClick={onClick} role="button" tabIndex={0}>
 			<GraphicsGroup
 				images={images}
 				resolution="thumb"

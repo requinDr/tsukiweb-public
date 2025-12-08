@@ -8,6 +8,9 @@ import { PageTitle, TitleMenuButton } from "@tsukiweb-common/ui-core"
 import { useLanguageRefresh } from "hooks/useLanguageRefresh"
 import useEclipseUnlocked from "hooks/useEclipseUnlocked"
 import { audio } from "utils/audio"
+import directionalNavigate from "@tsukiweb-common/input/arrowNavigation"
+import { useKeyMap } from "@tsukiweb-common/input/KeyMap"
+import { menuKeyMap } from "utils/keybind"
 
 const ExtraLayout = ({ children }: PropsWithChildren) => {
 	return (
@@ -36,6 +39,13 @@ const ExtraLayout = ({ children }: PropsWithChildren) => {
 export default ExtraLayout
 
 
+function keyboardCallback(action: any, evt: KeyboardEvent, ...args: any) {
+	switch (action) {
+		case "nav" : return directionalNavigate(args[0])
+		default : throw Error(`Unknown action ${action}`)
+	}
+}
+
 const ExtraMenu = () => {
 	const navigate = useNavigate()
 	const location = useLocation()
@@ -43,6 +53,8 @@ const ExtraMenu = () => {
 	const { eclipseUnlocked } = useEclipseUnlocked()
 	const currentPage = "/" + location.pathname.split("/")[1]
 
+	useKeyMap(menuKeyMap, keyboardCallback, document, 'keydown', { capture: false })
+				
 	function back() {
 		displayMode.screen = SCREEN.TITLE
 	}
@@ -68,33 +80,38 @@ const ExtraMenu = () => {
 				<TitleMenuButton
 					audio={audio}
 					onClick={()=>navigate(SCREEN.GALLERY)}
-					active={currentPage === SCREEN.GALLERY}>
+					active={currentPage === SCREEN.GALLERY}
+					nav-auto={1}>
 					{strings.extra.gallery}
 				</TitleMenuButton>
 				<TitleMenuButton
 					audio={audio}
 					onClick={()=>navigate(SCREEN.ENDINGS)}
 					active={currentPage === SCREEN.ENDINGS}
-					attention={eclipseUnlocked}>
+					attention={eclipseUnlocked}
+					nav-auto={1}>
 					{strings.extra.endings}
 				</TitleMenuButton>
 				<TitleMenuButton
 					audio={audio}
 					onClick={()=>navigate(SCREEN.SCENES)}
-					active={currentPage === SCREEN.SCENES}>
+					active={currentPage === SCREEN.SCENES}
+					nav-auto={1}>
 					{strings.extra.scenes}
 				</TitleMenuButton>
 				<TitleMenuButton
 					audio={audio}
 					onClick={()=>navigate(SCREEN.PLUS_DISC)}
-					active={currentPage === SCREEN.PLUS_DISC}>
+					active={currentPage === SCREEN.PLUS_DISC}
+					nav-auto={1}>
 					Plus-Disc
 				</TitleMenuButton>
 			</div>
 			<TitleMenuButton
 				audio={audio}
 				onClick={()=>navigate(SCREEN.TITLE)}
-				className="back-button">
+				className="back-button"
+				nav-auto={1}>
 				{`<<`} {strings.back}
 			</TitleMenuButton>
 		</div>

@@ -95,12 +95,13 @@ const GalleryScreen = () => {
 										blurred={cg.shouldBlur(mainImage)}
 										showTotal={true}
 										getGalleryImg={cg.getImg}
+										nav-auto={1}
 									/>
 								)
 							}
 
 							return (
-								<div key={image} className="placeholder">
+								<div key={image} className="placeholder" nav-auto={1}>
 									{alts.length > 1 &&
 										<GalleryTotal
 											nbTotal={alts.length}

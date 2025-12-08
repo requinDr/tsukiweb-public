@@ -20,6 +20,7 @@ const ScenesTab = () => {
 				}}
 				viewed={viewedScene("pd_alliance")}
 				onClick={play.bind(undefined, "pd_alliance")}
+				nav-auto={1}
 			/>
 
 			<SceneShortcut
@@ -32,6 +33,7 @@ const ScenesTab = () => {
 				}}
 				viewed={viewedScene("pd_geccha")}
 				onClick={play.bind(undefined, "pd_geccha")}
+				nav-auto={1}
 			/>
 
 			<SceneShortcut
@@ -43,6 +45,7 @@ const ScenesTab = () => {
 				}}
 				viewed={viewedScene("pd_geccha2")}
 				onClick={play.bind(undefined, "pd_geccha2")}
+				nav-auto={1}
 			/>
 
 			<SceneShortcut
@@ -53,6 +56,7 @@ const ScenesTab = () => {
 				}}
 				viewed={viewedScene("pd_experiment")}
 				onClick={play.bind(undefined, "pd_experiment")}
+				nav-auto={1}
 			/>
 		</div>
 	)

@@ -48,6 +48,7 @@
 			grid-template-columns: 160px 1fr;
 			position: relative;
 			padding: 4px;
+			outline: none;
 			
 			&:not(:last-child) {
 				border-bottom: 1px solid var(--separator);

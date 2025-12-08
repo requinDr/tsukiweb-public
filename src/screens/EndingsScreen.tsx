@@ -11,24 +11,12 @@ import { noBb } from '@tsukiweb-common/utils/Bbcode'
 import classNames from 'classnames'
 import { useScreenAutoNavigate, useLanguageRefresh } from "hooks"
 import useEclipseUnlocked from "hooks/useEclipseUnlocked"
-import directionalNavigate from "@tsukiweb-common/input/arrowNavigation"
-import { useKeyMap } from "@tsukiweb-common/input/KeyMap"
-import { menuKeyMap } from "utils/keybind"
 
-function keyboardCallback(action: any, evt: KeyboardEvent, ...args: any) {
-	switch (action) {
-		case "nav" : return directionalNavigate(args[0])
-		default : throw Error(`Unknown action ${action}`)
-	}
-}
 
 const EndingsScreen = () => {
 	useScreenAutoNavigate(SCREEN.ENDINGS)
 	useLanguageRefresh()
 	const { sawEclipse, eclipseUnlocked } = useEclipseUnlocked()
-
-	useKeyMap(menuKeyMap, keyboardCallback, document, 'keydown',
-			{ capture: false })
 
 	return (
 		<div className={styles.pageContent} id="endings">

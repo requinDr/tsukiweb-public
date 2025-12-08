@@ -16,7 +16,7 @@ interface CustomSlideImage extends SlideImage {
 	source?: GalleryImg['source']
 }
 
-type GalleryImageProps = {
+type GalleryImageProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
 	image: string
 	gallery: string[]
 	galleryUnlocked?: string[]
@@ -24,7 +24,7 @@ type GalleryImageProps = {
 	showTotal?: boolean
 	getGalleryImg: (name: string) => GalleryImg
 }
-const GalleryImage = ({image, gallery = [], galleryUnlocked = [], blurred = false, showTotal, getGalleryImg}: GalleryImageProps) => {
+const GalleryImage = ({image, gallery = [], galleryUnlocked = [], blurred = false, showTotal, getGalleryImg, ...props}: GalleryImageProps) => {
 	const [open, setOpen] = useState(false)
 	const isSmallLandscape = useMediaQuery("(orientation: landscape) and (max-height: 480px)")
 
@@ -67,7 +67,7 @@ const GalleryImage = ({image, gallery = [], galleryUnlocked = [], blurred = fals
 
 	return (
 		<>
-		<button onClick={() => setOpen(true)}>
+		<button {...props} onClick={() => setOpen(true)}>
 			<img
 				src={src}
 				className={classNames("thumb", {"is-alternative": galleryImg.altOf, blur: blurred})}
