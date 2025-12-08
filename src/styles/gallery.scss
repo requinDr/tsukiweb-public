@@ -49,15 +49,17 @@
 					transform: scale(1.06);
 				}
 			}
-			&:focus-visible {
-				outline: 4px solid var(--color-link);
-			}
 		}
 		
 		.thumb, .placeholder {
 			display: block;
 			aspect-ratio: 4/3;
 			width: 100%;
+		}
+		button, .thumb, .placeholder {
+			&:focus-visible {
+				outline: 3px solid var(--color-link);
+			}
 		}
 		.thumb {
 			transition: .2s ease-out;

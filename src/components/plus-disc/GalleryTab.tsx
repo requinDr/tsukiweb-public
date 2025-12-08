@@ -24,11 +24,12 @@ const GalleryTab = () => {
 							galleryUnlocked={gallery}
 							blurred={cgPd.shouldBlur(img)}
 							getGalleryImg={cgPd.getImg}
+							nav-auto={1}
 						/>
 					)
 				})
 			: Array.from({length: gallery.length}).map((_, index) => (
-				<div className="placeholder" key={index} />
+				<div key={index} className="placeholder" tabIndex={0} nav-auto={1} />
 			))}
 		</div>
 	)

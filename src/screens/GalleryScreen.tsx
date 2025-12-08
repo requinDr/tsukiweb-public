@@ -101,7 +101,7 @@ const GalleryScreen = () => {
 							}
 
 							return (
-								<div key={image} className="placeholder" nav-auto={1}>
+								<div key={image} className="placeholder" tabIndex={0} nav-auto={1}>
 									{alts.length > 1 &&
 										<GalleryTotal
 											nbTotal={alts.length}
