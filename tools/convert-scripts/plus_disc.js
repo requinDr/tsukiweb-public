@@ -5,10 +5,10 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url'
-import { parseScript } from './parsers/kagScript.js';
-import { CommandToken, LabelToken, StrReader, TextToken, Token } from './parsers/utils.js'
+import { parseScript } from '../../tsukiweb-common/tools/convert-scripts/parsers/kagScript.js';
+import { CommandToken, LabelToken, StrReader, TextToken, Token } from '../../tsukiweb-common/tools/convert-scripts/parsers/utils.js'
+import { logError, logProgress } from '../../tsukiweb-common/tools/utils/logging.js';
 import { generateScenes, writeScenes } from './utils/nscriptr_convert.js';
-import { logError, logProgress } from '../utils/logging.js';
 
 
 const outputPathPrefix = '../../public/static/'

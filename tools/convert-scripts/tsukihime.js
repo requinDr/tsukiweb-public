@@ -5,12 +5,12 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url'
-import { parseScript } from './parsers/nscriptr.js';
-import { CommandToken, ConditionToken, ErrorToken, LabelToken, ReturnToken, TextToken, Token } from './parsers/utils.js'
+import { parseScript } from '../../tsukiweb-common/tools/convert-scripts/parsers/nscriptr.js';
+import { CommandToken, ConditionToken, ErrorToken, LabelToken, ReturnToken, TextToken, Token } from '../../tsukiweb-common/tools/convert-scripts/parsers/utils.js'
 import { generateScenes, writeScenes } from './utils/nscriptr_convert.js';
-import { fixContexts, getScenes } from './utils/scenes.js';
-import { logError, logProgress } from '../utils/logging.js';
+import { logError, logProgress } from '../../tsukiweb-common/tools/utils/logging.js';
 import { extractChoicesFromLogic, replaceChoicesWithIndices, updateGameJsonWithChoices } from './utils/choices_extractor.js';
+import { fixContexts, getScenes } from './utils/scenes.js';
 
 
 const outputPathPrefix = '../../public/static/'

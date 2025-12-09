@@ -1,8 +1,8 @@
 
 import fs from 'fs';
 import path from 'path';
-import { parseScript } from "../parsers/nscriptr.js";
-import { Token, CommandToken, TextToken, ConditionToken, LabelToken, ErrorToken } from "../parsers/utils.js"
+import { parseScript } from "../../../tsukiweb-common/tools/convert-scripts/parsers/nscriptr.js";
+import { Token, CommandToken, TextToken, ConditionToken, LabelToken, ErrorToken } from "../../../tsukiweb-common/tools/convert-scripts/parsers/utils.js"
 
 //##############################################################################
 //#region                       GENERIC FIXES

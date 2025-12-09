@@ -1,6 +1,6 @@
 import path from 'path'
 import { fileURLToPath } from 'url'
-import { processImages } from './processor.js'
+import { processImages } from '../../tsukiweb-common/tools/processor.js'
 
 // Put in the input folder bg, event and tachi folders.
 // Put in the input_x2 folder bg, event and tachi folders (upscaled).
