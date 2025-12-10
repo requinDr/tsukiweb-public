@@ -1,14 +1,11 @@
 import { memo, useCallback, CSSProperties } from "react"
-import { imageSrc } from "../../translation/assets"
-import { settings } from "../../utils/settings"
 import GraphicElement from "@tsukiweb-common/graphics/GraphicElement";
 import { DivProps, RocketProps, SpritePos } from "@tsukiweb-common/types"
-import cg from "utils/gallery"
 import { ResolutionId } from "@tsukiweb-common/utils/lang";
+import { isImage } from "@tsukiweb-common/utils/images";
+import { imageSrc } from "../../translation/assets"
+import cg from "utils/gallery"
 
-function getUrl(resolution: ResolutionId, image: string): string {
-	return imageSrc(image, resolution)
-}
 
 type Props = {
 	pos: SpritePos
@@ -96,8 +93,9 @@ const GraphicsElement = ({
 
 	}, [pos, image, toImg, fadeOut, fadeTime])()
 
+	const getUrl = useCallback((img: string) => imageSrc(img, resolution), [resolution])
 
-	const {style: baseStyle = {}, ...baseAttrs} = (imageProps || {})  as DivProps
+	const {style: baseStyle = {}, ...baseAttrs} = (imageProps || {}) as DivProps
 	const {style: insertStyle = {}, ...insertAttrs} = props
 
 	return (
@@ -106,7 +104,7 @@ const GraphicsElement = ({
 				<GraphicElement
 					pos={pos}
 					image={image}
-					getUrl={getUrl.bind(undefined, resolution)}
+					getUrl={getUrl}
 					blur={cg.shouldBlur}
 					props={maskProps}
 				/>
@@ -116,7 +114,7 @@ const GraphicsElement = ({
 				<GraphicElement
 					pos={pos}
 					image={image}
-					getUrl={getUrl.bind(undefined, resolution)}
+					getUrl={getUrl}
 					blur={cg.shouldBlur}
 					props={{
 						style: {...baseStyle, ...insertStyle},
@@ -130,8 +128,3 @@ const GraphicsElement = ({
 }
 
 export default memo(GraphicsElement)
-
-function isImage(str: string) {
-	const c = str.charAt(0)
-	return c != '#' && c != '$'
-}

@@ -1,7 +1,9 @@
 import { useState, useRef, useEffect } from "react";
 import { GraphicsTransition, SpritePos } from "@tsukiweb-common/types";
 import { splitFirst } from "@tsukiweb-common/utils/utils";
-import { preloadImage } from "components/molecules/GraphicsGroup";
+import { isImage, preloadImage } from "@tsukiweb-common/utils/images";
+import { imageSrc } from "translation/assets";
+
 
 type GraphicTransitionResult = {
 	img: string
@@ -15,34 +17,36 @@ type GraphicTransitionResult = {
 	duration: number
 	effect: string
 	onAnimationEnd: VoidFunction
-};
+}
 
-
-function useGraphicTransition(pos: SpritePos, image: string,
-		transition?: GraphicsTransition, preload: boolean = true
-		): GraphicTransitionResult {
+function useGraphicTransition(
+	pos: SpritePos,
+	image: string,
+	transition?: GraphicsTransition
+): GraphicTransitionResult {
 	const [currImg, setCurrImg] = useState<string>(image)
 	const prevImg = useRef<string>(image)
 	const onEnd = useRef<VoidFunction>(undefined)
 	const [loaded, setLoaded] = useState(true)
-	const [currentDuration, setDuration] = useState(0)
-	const [currentEffect, setEffect] = useState("")
+	const [state, setState] = useState<{duration: number, effect: string}>({duration: 0, effect: ""})
 
 	useEffect(()=> {
-		const {duration = 0, effect, onFinish,
-			to: {[pos]: transImg = undefined} = {}} = transition ?? {}
+		const {
+			duration = 0,
+			effect,
+			onFinish,
+			to: {[pos]: transImg = undefined} = {}
+		} = transition ?? {}
 		let load = false
 		if (transImg != undefined && transImg != currImg) {
 			//console.debug(`${pos}: ${currImg} --> ${transImg} (${effect}, ${duration})`)
-			setDuration(duration)
-			setEffect(effect!)
+			setState({duration, effect: effect!})
 			prevImg.current = currImg
 			setCurrImg(transImg)
 			load = true
 			onEnd.current = ()=> {
 				onEnd.current = undefined
-				setDuration(0)
-				setEffect("")
+				setState({duration: 0, effect: ""})
 				onFinish?.()
 			}
 		} else {
@@ -53,43 +57,60 @@ function useGraphicTransition(pos: SpritePos, image: string,
 				setCurrImg(image)
 				load = true
 			}
-			if (currentDuration > 0 || currentEffect.length > 0) { //transition on other position
-				setDuration(0)
-				setEffect("")
+			if (state.duration > 0 || state.effect.length > 0) { //transition on other position
+				setState({duration: 0, effect: ""})
 			}
 		}
+
 		if (load) {
 			const loadImage = transImg ?? image
-			const src = splitFirst(loadImage, '$')[0]
+			let src = splitFirst(loadImage, '$')[0]
+			if (!isImage(src)) {
+				if (duration == 0)
+					onEnd.current?.()
+				return
+			}
+			if (src.startsWith('"'))
+				src = src.replaceAll('"', '')
+
 			if (src.length > 0) {
 				setLoaded(false)
-				preloadImage(src).finally(()=> {
-					//if (currImg.current == loadImage) {
+				preloadImage(imageSrc(src))
+					.finally(()=> {
 						setLoaded(true)
 						if (onEnd.current && duration == 0)
-							onEnd.current() // instant transition -> onEnd when loaded
-					//}
-				})
+							onEnd.current()
+					})
 			} else if (duration == 0) {
 				onEnd.current?.()
 			}
 		}
 	}, [transition, image])
-	return (
-		!loaded ? { // next image not yet loaded
+
+	// next image not yet loaded
+	if (!loaded) {
+		return {
 			img: prevImg.current,
 			prev: undefined
-		} : currentDuration > 0 ? { // next image loaded, need animation
+		}
+	}
+
+	// next image loaded, need animation
+	if (state.duration > 0) {
+		return {
 			img: currImg,
 			prev: prevImg.current,
-			duration: currentDuration,
-			effect: currentEffect,
-			onAnimationEnd: onEnd.current as VoidFunction
-		} : { // next image loaded, no animation
-			img: currImg,
-			prev: undefined
+			duration: state.duration,
+			effect: state.effect,
+			onAnimationEnd: onEnd.current!
 		}
-	);
+	}
+
+	// next image loaded, no animation
+	return {
+		img: currImg,
+		prev: undefined
+	}
 }
 
 export default useGraphicTransition

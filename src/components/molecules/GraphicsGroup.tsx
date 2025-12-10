@@ -1,37 +1,18 @@
-import { memo } from "react"
-import { imageSrc } from "../../translation/assets"
+import { memo, useCallback } from "react"
 import { POSITIONS } from "@tsukiweb-common/constants";
 import { SpritePos, Graphics as GraphicsType, DivProps } from "@tsukiweb-common/types";
-import cg from "utils/gallery";
-import { useLanguageRefresh } from "hooks";
 import GraphicElement from "@tsukiweb-common/graphics/GraphicElement";
 import { ResolutionId } from "@tsukiweb-common/utils/lang";
+import { imageSrc } from "../../translation/assets"
+import cg from "utils/gallery";
+import { useLanguageRefresh } from "hooks";
 
 
-export async function preloadImage(src: string, resolution: ResolutionId = "src"): Promise<void> {
-	if (src.startsWith('#') || src.startsWith('$'))
-		return
-	if (src.startsWith('"'))
-		src = src.replaceAll('"', '')
-	
-	return new Promise((resolve, reject) => {
-		const img = new Image()
-		img.onload = resolve as VoidFunction
-		img.onerror = img.onabort = reject
-
-		img.src = imageSrc(src, resolution)
-	})
-}
-
-type GraphicsGroupProps = {
+type GraphicsGroupProps = DivProps & {
 	images: Partial<GraphicsType>
 	spriteAttrs?: Partial<Record<SpritePos, DivProps>> | ((pos:SpritePos)=>DivProps)
 	resolution?: ResolutionId,
 	lazy?: boolean,
-} & DivProps
-
-function getUrl(resolution: ResolutionId, image: string): string {
-	return imageSrc(image, resolution)
 }
 
 const GraphicsGroup = ({
@@ -56,6 +37,8 @@ const GraphicsGroup = ({
 	if (className)
 		classes.push(className)
 
+	const getUrl = useCallback((img: string) => imageSrc(img, resolution), [resolution])
+
 	return (
 		<div className={classes.join(' ')} style={style} {...attrs}>
 			{POSITIONS.map(pos => images[pos] &&
@@ -64,7 +47,7 @@ const GraphicsGroup = ({
 					pos={pos}
 					image={images[pos] ?? ''} {...(typeof spriteAttrs == 'function' ? spriteAttrs(pos)
 							: spriteAttrs?.[pos] ?? {})}
-					getUrl={getUrl.bind(undefined, resolution)}
+					getUrl={getUrl}
 					blur={cg.shouldBlur(images[pos] ?? '')}
 					lazy={lazy}
 				/>
