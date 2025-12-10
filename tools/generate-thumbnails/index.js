@@ -5,7 +5,7 @@ import { processScenes } from '../../tsukiweb-common/tools/generate-thumbnails/p
 // 2) Run to to create the spritesheet
 
 const INPUT_SCENES = JSON.parse(fs.readFileSync('scenes-graphics.json', 'utf8'))
-const INPUT_IMAGES = 'input'
+const INPUT_IMAGES = '../../public/static/jp/images_thumb/'
 const OUTPUT_THUMBNAILS = '../../public/static/jp/flowchart-spritesheet/'
 const OUTPUT_METADATA = '../../src/assets/flowchart/'
 
