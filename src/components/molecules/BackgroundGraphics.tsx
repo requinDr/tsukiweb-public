@@ -12,7 +12,7 @@ const BackgroundGraphics = ({image}: Props)=> {
 		<GraphicsElement key={image}
 			pos='bg'
 			image={image}
-			{...{'bg-align': bgAlign}}
+			bg-align={bgAlign}
 		/>
 	)
 }

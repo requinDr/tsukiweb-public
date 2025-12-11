@@ -28,7 +28,8 @@ const ForegroundGraphics = ({image, transition}: Props) => {
 			fadeTime={fadeTime}
 			fadeIn={effect}
 			onAnimationEnd={onAnimationEnd}
-			{...{'bg-align': bgAlign}}/>
+			bg-align={bgAlign}
+		/>
 	)
 }
 

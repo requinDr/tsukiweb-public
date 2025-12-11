@@ -101,6 +101,12 @@
 
 .yarl {
 	&__root {
+		--yarl__thumbnails_thumbnail_border_color: #0098e1;
+		--yarl__thumbnails_thumbnail_active_border_color: #00c8ff;
+		--yarl__thumbnails_thumbnail_height: 96px;
+		--yarl__thumbnails_thumbnail_width: 128px;
+		--yarl__thumbnails_thumbnail_padding: 0px;
+
 		.header {
 			position: absolute;
 			top: 3em;
@@ -112,7 +118,6 @@
 		}
 	}
 	&__thumbnails_thumbnail_active {
-		--yarl__thumbnails_thumbnail_active_border_color: #00c8ff;
 		position: relative;
 
 		&::after {

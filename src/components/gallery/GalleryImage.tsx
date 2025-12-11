@@ -1,19 +1,20 @@
 import classNames from "classnames"
 import { useState, useMemo, useEffect } from "react"
-import { imageSrc } from "translation/assets"
 import Lightbox, { SlideImage } from 'yet-another-react-lightbox'
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails"
 import "yet-another-react-lightbox/styles.css"
 import Zoom from "yet-another-react-lightbox/plugins/zoom"
 import "yet-another-react-lightbox/plugins/thumbnails.css"
-import GalleryTotal from "./GalleryTotal"
-import { MdLock } from "react-icons/md"
-import { GalleryImg } from "types"
+import { MdClose, MdLock } from "react-icons/md"
 import useMediaQuery from "@tsukiweb-common/hooks/useMediaQuery"
+import { GalleryPlaceholderLocked, GalleryTotal } from "./GalleryComponents"
+import { imageSrc } from "translation/assets"
+import { GalleryImg } from "types"
 
-
-interface CustomSlideImage extends SlideImage {
-	source?: GalleryImg['source']
+declare module "yet-another-react-lightbox" {
+	interface SlideImage {
+		source?: GalleryImg['source']
+	}
 }
 
 type GalleryImageProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
@@ -28,21 +29,19 @@ const GalleryImage = ({image, gallery = [], galleryUnlocked = [], blurred = fals
 	const [open, setOpen] = useState(false)
 	const isSmallLandscape = useMediaQuery("(orientation: landscape) and (max-height: 480px)")
 
-	const slides: CustomSlideImage[] = useMemo(() => {
-		return gallery.map(img => {
-			if (galleryUnlocked.includes(img)) {
-				const src = imageSrc(img, 'src')
-				const galleryImg = getGalleryImg(img)
-				return {
-					src: src,
-					alt: galleryImg.name,
-					source: galleryImg.source ?? undefined,
-				}
-			} else {
+	const slides: SlideImage[] = useMemo(() =>
+		gallery.map(img => {
+			if (!galleryUnlocked.includes(img))
 				return { src: "" }
+
+			const g = getGalleryImg(img)
+			return {
+				src: imageSrc(img, 'src'),
+				alt: g.name,
+				source: g.source,
 			}
-		})
-	}, [galleryUnlocked])
+		}
+	), [gallery, galleryUnlocked])
 
 	useEffect(() => {
 		const handleKeyDown = (event: KeyboardEvent) => {
@@ -63,13 +62,15 @@ const GalleryImage = ({image, gallery = [], galleryUnlocked = [], blurred = fals
 	}, [open])
 
 	const galleryImg = getGalleryImg(image)
-	const src = imageSrc(image, 'thumb')
+	const index = slides.findIndex(slide => slide.alt === galleryImg.name) !== -1
+		? slides.findIndex(slide => slide.alt === galleryImg.name)
+		: slides.findIndex(slide => slide.src !== "")
 
 	return (
 		<>
 		<button {...props} onClick={() => setOpen(true)}>
 			<img
-				src={src}
+				src={imageSrc(image, 'thumb')}
 				className={classNames("thumb", {"is-alternative": galleryImg.altOf, blur: blurred})}
 				alt={`event ${galleryImg.name}`}
 				draggable={false}
@@ -86,61 +87,21 @@ const GalleryImage = ({image, gallery = [], galleryUnlocked = [], blurred = fals
 		<Lightbox
 			slides={slides}
 			open={open}
-			index={
-				slides.findIndex(slide => slide.alt === galleryImg.name) !== -1 ?
-					slides.findIndex(slide => slide.alt === galleryImg.name) :
-						slides.findIndex(slide => slide.src !== "")
-			}
+			index={index}
 			close={() => setOpen(false)}
-			controller={{
-				closeOnPullUp: true,
-			}}
+			controller={{ closeOnPullUp: true }}
 			plugins={[Zoom, Thumbnails]}
 			render={{
 				buttonZoom: () => null,
-				thumbnail: ({slide}) => {
-					if (slide.src === "") {
-						return (
-							<div className="placeholder">
-								<MdLock size={24} />
-							</div>
-						)
-					}
-				},
-				slide: ({slide}) => {
-					if (slide.src === "") {
-						return (
-							<div className="placeholder">
-								<MdLock size={24} />
-							</div>
-						)
-					}
-				},
-				slideHeader({slide}: {slide: CustomSlideImage}) {
-					if (slide.source) {
-						return (
-							<div className="header">
-								{slide.source}
-							</div>
-						)
-					}
-				},
+				thumbnail: ({ slide }) => (slide.src ? null : <GalleryPlaceholderLocked />),
+				slide: ({ slide }) => (slide.src ? null : <GalleryPlaceholderLocked />),
+				slideHeader: ({slide}) => (slide.source && <div className="header">{slide.source}</div>),
 				iconError: () => <MdLock size={24} />,
+				iconClose: () => <MdClose size={24} />,
 			}}
-			carousel={{
-				finite: true,
-				preload: 5,
-			}}
-			zoom={{
-				maxZoomPixelRatio: 2,
-			}}
-			thumbnails={{
-				width: 128,
-				height: 96,
-				padding: 0,
-				borderColor: "#0098e1",
-				position: isSmallLandscape ? "start" : "bottom",
-			}}
+			carousel={{ finite: true, preload: 5 }}
+			zoom={{ maxZoomPixelRatio: 2 }}
+			thumbnails={{ position: isSmallLandscape ? "start" : "bottom" }}
 		/>
 		</>
 	)

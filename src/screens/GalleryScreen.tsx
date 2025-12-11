@@ -10,7 +10,7 @@ import { PageTabsLayout } from '@tsukiweb-common/ui-core'
 import useQueryParam from '@tsukiweb-common/hooks/useQueryParam'
 import { CharId } from 'types'
 import GalleryImage from 'components/gallery/GalleryImage'
-import GalleryTotal from 'components/gallery/GalleryTotal'
+import GalleryTotal from 'components/gallery/GalleryComponents'
 import { useScreenAutoNavigate, useLanguageRefresh } from 'hooks'
 import { audio } from 'utils/audio'
 
