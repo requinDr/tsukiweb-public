@@ -3,22 +3,23 @@
 %layer-choices {
 	z-index: 3;
 	background-image: var(--text-bg);
+	display: flex;
+	overflow-y: auto;
 
 	.choices-container {
+		flex: 1;
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
-		height: 100%;
-		max-width: 680px;
-		margin-inline: auto;
-		gap: 1.2em;
+		max-width: 700px;
+		margin: auto;
+		gap: 1em;
+		padding: 8px;
 	}
 	.choice {
 		@extend %info-box;
-		padding: .5em 1em;
+		padding: .4em .8em;
 		font-size: clamp(1.05em, 4.2vmin, 1.5em);
-		transition: all 0.2s ease-in-out;
-		margin-inline: 8px;
+		backdrop-filter: none;
 
 		&:hover, &:focus-visible {
 			box-shadow: var(--selected-shadow);

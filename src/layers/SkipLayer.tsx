@@ -83,6 +83,7 @@ const SkipLayer = ({script, history, layers}: Props) => {
 				className="skip-modal"
 				initial={{opacity: 0, scale: 0.9}}
 				animate={{opacity: 1, scale: 1}}
+				transition={{ ease: "easeOut", duration: 0.2 }}
 				key={sceneTitle}
 			>				
 				{sceneTitle && scene &&
