@@ -42,7 +42,7 @@ const ConfigAudioTab = () => {
 		'track': strings.config["volume-track"],
 		'se': strings.config["volume-se"],
 		'titleTrack': strings.config["volume-title-track"],
-		// 'systemSE': strings.config["volume-system-se"]
+		'systemSE': strings.config["volume-system-se"]
 	}
 
 	const handleReset = () => {
