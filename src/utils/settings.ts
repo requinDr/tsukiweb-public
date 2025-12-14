@@ -29,7 +29,7 @@ export const defaultSettings: SettingsType = deepFreeze({
     track: 10,
     se: 10,
     titleTrack: 10,
-    systemSE: 10,
+    systemSE: 8,
   },
   trackSource: 'everafter',
   autoMute: true,
