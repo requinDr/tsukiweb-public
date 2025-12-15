@@ -9,7 +9,7 @@ import { parseScript } from '../../tsukiweb-common/tools/convert-scripts/parsers
 import { CommandToken, ConditionToken, ErrorToken, LabelToken, ReturnToken, TextToken, Token } from '../../tsukiweb-common/tools/convert-scripts/parsers/utils.js'
 import { generateScenes, writeScenes } from './utils/nscriptr_convert.js';
 import { logError, logProgress } from '../../tsukiweb-common/tools/utils/logging.js';
-import { extractChoicesFromLogic, replaceChoicesWithIndices, updateGameJsonWithChoices } from './utils/choices_extractor.js';
+import { extractChoicesFromLogic, extractLabelOrder, replaceChoicesWithIndices, updateGameJsonWithChoices } from './utils/choices_extractor.js';
 import { fixContexts, getScenes } from './utils/scenes.js';
 
 
@@ -587,22 +587,25 @@ export function main() {
 	}
 	
 	logProgress(`Processing Tsukihime scripts: ${processedCount}/${totalScripts}\n`)
-	
+
 	// Phase 2: Extract choices and update game.json
-	for (const [folder, logicContent] of languageLogicScripts) {
-		try {
-			const choices = extractChoicesFromLogic(logicContent)
-			const gameJsonPath = path.join(outputPathPrefix, folder, 'game.json')
-			updateGameJsonWithChoices(gameJsonPath, choices)
-		} catch (e) {
-			logError(`Error processing logic for ${folder}: ${e.message}`)
-		}
-	}
-	
-	// Phase 3: Write central logic file
 	if (languageLogicScripts.has('jp')) {
-		const modifiedContent = replaceChoicesWithIndices(languageLogicScripts.get('jp'))
-		const centralLogicPath = path.join(outputPathPrefix, 'logic.txt')
+		const referenceLogic = languageLogicScripts.get('jp')
+
+		const labelOrder = extractLabelOrder(referenceLogic)
+		for (const [folder, logicContent] of languageLogicScripts) {
+			try {
+				const choices = extractChoicesFromLogic(logicContent, labelOrder)
+				const gameJsonPath = path.join(outputPathPrefix, folder, 'game.json')
+				updateGameJsonWithChoices(gameJsonPath, choices)
+			} catch (e) {
+				logError(`Error processing logic for ${folder}: ${e.message}`)
+			}
+		}
+	
+		// Phase 3: Write central logic file
+		const modifiedContent = replaceChoicesWithIndices(referenceLogic)
+		const centralLogicPath = path.join(outputPathPrefix, LOGIC_FILE + '.txt')
 		const dir = path.dirname(centralLogicPath)
 		if (!fs.existsSync(dir)) {
 			fs.mkdirSync(dir, { recursive: true })

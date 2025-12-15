@@ -1,13 +1,32 @@
 import fs from 'fs';
 
-export function extractChoicesFromLogic(logicContent) {
-  const choices = []
-  const choiceRegex = /`([^`]+)`[\s\n]*,[\s\n]*\*\w+/g
-  let match
-  while ((match = choiceRegex.exec(logicContent)) != null) {
-    choices.push(match[1].trim())
+const labelRegex = /^\*(f\d+)\s*$/ // Matches lines like "*f123"
+const choiceRegex = /`([^`]+)`/g
+
+export const extractLabelOrder = (content) =>
+  content
+    .split('\n')
+    .map(line => line.match(labelRegex)?.[1])
+    .filter(Boolean)
+
+export function extractChoicesFromLogic(logicContent, labelOrder) {  
+  const choicesByLabel = {}
+  let currentLabel = null
+
+  for (const line of logicContent.split('\n')) {
+    const label = line.match(labelRegex)?.[1]
+    if (label) {
+      currentLabel = label
+      continue
+    }
+
+    if (currentLabel && line.includes('select')) {
+      choicesByLabel[currentLabel] =
+        [...line.matchAll(choiceRegex)].map(m => m[1].trim())
+    }
   }
-  return choices
+
+  return labelOrder.flatMap(label => choicesByLabel[label] || [])
 }
 
 export function replaceChoicesWithIndices(logicContent) {
