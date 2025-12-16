@@ -166,6 +166,10 @@
 			.graphics {
 				font-size: 0.6em;
 				overflow: hidden;
+
+				.text {
+					display: none;
+				}
 			}
 		}
 		.save-details-content {
