@@ -35,13 +35,13 @@ const Oshiete = ({unlocked, ending, number, ...props}: Props) => {
 			{unlocked && ending ?
 				<img
 					src={chalkboard}
-					alt={`Chalkboard`}
+					alt="Green chalkboard icon"
 					draggable={false}
 				/>
 			:
 				<img
 					src={chalkboard}
-					alt="Chalkboard locked"
+					alt="Green chalkboard icon greyed out"
 					draggable={false}
 				/>
 			}

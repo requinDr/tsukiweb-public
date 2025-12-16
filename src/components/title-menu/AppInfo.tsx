@@ -8,8 +8,9 @@ import { Button, MessageContainer, Modal } from "@tsukiweb-common/ui-core"
 import usePWA from "@tsukiweb-common/hooks/usePWA"
 import { bb } from "@tsukiweb-common/utils/Bbcode"
 import { SCREEN } from "utils/display"
+import { audio } from "utils/audio"
 
-type Props = Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'onClick'|'onContextMenu'|'className'>
+type Props = Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'onClick'|'onContextMenu'>
 
 const AppInfo = (props?: Props) => {
 	const [show, setShow] = useState<boolean>(false)
@@ -17,7 +18,6 @@ const AppInfo = (props?: Props) => {
 		<>
 			<button
 				{...props}
-				className="action-icon" 
 				aria-label="show information modal"
 				onContextMenu={e => e.preventDefault()}
 				onClick={()=>setShow(true)}>
@@ -131,6 +131,8 @@ const ModalInfo = ({show, setShow}: ModalInfoProps) => {
 				variant="elevation"
 				onClick={()=>setShow(false)}
 				className="close-btn"
+				audio={audio}
+				clickSound="impact"
 			>
 				{strings.close}
 			</Button>

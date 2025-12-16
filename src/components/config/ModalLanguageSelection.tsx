@@ -5,6 +5,7 @@ import { deepAssign, splitFirst } from "@tsukiweb-common/utils/utils"
 import { Button, Modal } from "@tsukiweb-common/ui-core"
 import { LangDesc } from "@tsukiweb-common/utils/lang"
 import { polyfillCountryFlagEmojis } from "@tsukiweb-common/utils/flagsPolyfill"
+import { audio } from "utils/audio"
 
 let flagSupportChecked = false
 const EMOJI_REGEX = /^(\u00a9|\u00ae|[\u2000-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])+|^(\uD83C[\uDDE6-\uDDFF]\uD83C[\uDDE6-\uDDFF])/
@@ -84,6 +85,8 @@ const ModalLanguageSelection = ({show, setShow}: Props) => {
 								onClick={()=>selectLanguage(id)}
 								className="language flag"
 								active={selected}
+								audio={audio}
+								clickSound="glass"
 							>
 								{dispName}
 							</Button>
@@ -134,6 +137,8 @@ const ModalLanguageSelection = ({show, setShow}: Props) => {
 				variant="elevation"
 				onClick={()=>setShow(false)}
 				className="close-btn"
+				audio={audio}
+				clickSound="impact"
 			>
 				{strings.close}
 			</Button>

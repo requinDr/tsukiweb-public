@@ -2,7 +2,7 @@ import { useState } from "react"
 import { MdTranslate } from "react-icons/md"
 import ModalLanguageSelection from "components/config/ModalLanguageSelection"
 
-type Props = Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'onClick'|'onContextMenu'|'className'>
+type Props = Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'onClick'|'onContextMenu'>
 
 const TranslationSwitch = (props?: Props) => {
   const [show, setShow] = useState<boolean>(false)
@@ -10,7 +10,6 @@ const TranslationSwitch = (props?: Props) => {
     <>
       <button
         {...props}
-        className="action-icon" 
         aria-label="show language selection modal"
         onContextMenu={e => e.preventDefault()}
         onClick={()=>setShow(true)}>

@@ -47,7 +47,7 @@ const TitleMenuScreen = () => {
 			exit={{opacity: 0}}>
 			<div className="logo">
 				<m.img
-					src={moon} alt="moon"
+					src={moon} alt="Full moon"
 					draggable={false}
 					className="moon"
 					initial={{ opacity: 0.9, transform: "translateY(-42%) scale(0.9)" }}
@@ -135,7 +135,7 @@ const TitleMenuScreen = () => {
 						delay: 0.7,
 						duration: 1,
 					}}>
-					<TranslationSwitch nav-auto={1}/>
+					<TranslationSwitch className="action-icon" nav-auto={1}/>
 				</m.div>
 
 				<m.div
@@ -145,7 +145,7 @@ const TitleMenuScreen = () => {
 						delay: 0.6,
 						duration: 1,
 					}}>
-					<AppInfo nav-auto={1}/>
+					<AppInfo className="action-icon" nav-auto={1}/>
 				</m.div>
 			</div>
 		</m.div>

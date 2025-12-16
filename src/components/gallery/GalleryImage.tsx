@@ -72,7 +72,7 @@ const GalleryImage = ({image, gallery = [], galleryUnlocked = [], blurred = fals
 			<img
 				src={imageSrc(image, 'thumb')}
 				className={classNames("thumb", {"is-alternative": galleryImg.altOf, blur: blurred})}
-				alt={`event ${galleryImg.name}`}
+				alt={`Game CG ${galleryImg.name}`}
 				draggable={false}
 				fetchPriority={blurred ? 'low' : 'auto'}
 			/>
