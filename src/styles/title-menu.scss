@@ -1,21 +1,21 @@
 #title-menu {
 	position: relative;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+	display: grid;
+	grid-template-rows: 5fr 1fr;
+	justify-items: center;
 	gap: 1em;
-	row-gap: 2em;
+	row-gap: 4em;
 	padding: 1em;
 
 	.logo {
 		display: flex;
-		justify-content: center;
+		align-self: center;
 		align-items: center;
-		margin: 1em;
-		flex: 8;
+		padding: 1em;
 		min-height: 0;
 		position: relative;
 		isolation: isolate;
+		height: min(500px, 100%);
 
 		img {
 			object-fit: contain;
@@ -24,16 +24,17 @@
 
 		.moon {
 			position: absolute;
+			inset: 0;
 			top: 50%;
-			width: min(530px, 70vmin);
-			height: min(530px, 70vmin);
-			padding: 1em;
+			width: 100%;
+			max-height: 100%;
+			justify-self: center;
 			filter: drop-shadow(0 0 6px white) drop-shadow(0 0 14px hsl(0deg 0% 100% / 50%));
 			transition-timing-function: cubic-bezier(0.25, 0.1, 0.16, 1.0);
 		}
-		.tsuki-logo {
-			height: 90%;
-			width: min(70vmin, 400px);
+		.game-logo {
+			height: 100%;
+			width: 100%;
 		}
 	}
 
@@ -70,7 +71,6 @@
 	}
 
 	.menu {
-		flex: 1;
 		margin-inline: 1em;
 		margin-bottom: 5vh;
 		width: min(900px, calc(100% - 2em));
@@ -98,21 +98,15 @@
 	}
 	// One column, mobile portrait
 	@media (max-width: 940px), ((orientation: landscape) and (max-height: 500px)) {
-		display: grid;
-		grid-template-rows: 3fr 2fr;
+		grid-template-rows: 5fr 3fr;
 		.logo {
-			height: 100%;
-
-			.moon {
-				max-width: 100%;
-				max-height: 100%;
-			}
+			width: min(280px, 80%);
 		}
 		.menu {
 			.menu-buttons {
 				flex-direction: column;
 				align-items: center;
-				row-gap: 12px;
+				row-gap: 14px;
 			}
 		}
 	}

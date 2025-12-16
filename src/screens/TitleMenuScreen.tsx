@@ -54,17 +54,19 @@ const TitleMenuScreen = () => {
 					animate={{ opacity: 0.5, transform: "translateY(-50%) scale(1)" }}
 					transition={{
 						delay: 0,
-						duration: 1,
+						duration: 0.8,
+						ease: "easeOut",
 					}} />
 				<m.img
 					src={gameLogo} alt="Tsukihime logo"
 					draggable={false}
-					className='tsuki-logo'
-					initial={{ opacity: 0, scale: 0.7 }}
+					className='game-logo'
+					initial={{ opacity: 0, scale: 0.8 }}
 					animate={{ opacity: 1, scale: 1 }}
 					transition={{
-						delay: 0.4,
+						delay: 0,
 						duration: 0.8,
+						ease: "easeOut"
 					}} />
 			</div>
 
