@@ -1,6 +1,7 @@
 import { Dispatch, ReactNode } from "react"
 import { strings } from "translation/lang"
 import { Button, Modal } from "@tsukiweb-common/ui-core"
+import { audio } from "utils/audio"
 
 type Props = {
 	modal: {show: boolean, content: ReactNode},
@@ -21,7 +22,9 @@ const ConfigModal = ({modal, setModal}: Props) => {
 			<Button
 				variant="elevation"
 				onClick={close}
-				className="close-btn">
+				className="close-btn"
+				audio={audio}
+				clickSound="close">
 				{strings.close}
 			</Button>
 		</Modal>

@@ -31,7 +31,7 @@ export const defaultSettings: SettingsType = deepFreeze({
     titleTrack: 10,
     systemSE: 8,
   },
-  trackSource: 'everafter',
+  trackSource: 'tsukibako',
   autoMute: true,
   titleMusic: '"*8"',
 

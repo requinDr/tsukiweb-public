@@ -104,7 +104,7 @@ const SkipLayer = ({script, history, layers}: Props) => {
 							{...(nav && {'nav-x': -1})}>
 						{strings.yes}
 					</Button>
-					<Button {...btnProps} value="no" clickSound="impact"
+					<Button {...btnProps} value="no" clickSound="close"
 							{...(nav && {'nav-x': 1})}>
 						{strings.no}
 					</Button>

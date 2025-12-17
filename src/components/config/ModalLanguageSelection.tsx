@@ -138,7 +138,7 @@ const ModalLanguageSelection = ({show, setShow}: Props) => {
 				onClick={()=>setShow(false)}
 				className="close-btn"
 				audio={audio}
-				clickSound="impact"
+				clickSound="close"
 			>
 				{strings.close}
 			</Button>

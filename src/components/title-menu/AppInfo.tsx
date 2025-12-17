@@ -132,7 +132,7 @@ const ModalInfo = ({show, setShow}: ModalInfoProps) => {
 				onClick={()=>setShow(false)}
 				className="close-btn"
 				audio={audio}
-				clickSound="impact"
+				clickSound="close"
 			>
 				{strings.close}
 			</Button>
