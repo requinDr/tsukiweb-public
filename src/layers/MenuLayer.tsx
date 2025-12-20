@@ -163,7 +163,7 @@ type ActionsButtonsProps = {
 const ActionsButtons = ({script, show, close, qSave, qLoad}: ActionsButtonsProps) => {
 	const [mute] = useObserved(settings.volume, 'master', (vol)=>vol<0)
 	const isFullscreen = useIsFullscreen()
-	const isAutoplaying = false
+	const [isAutoplaying] = useObserved(script, 'autoPlay')
 
 	const toggleVolume = () => {
 		settings.volume.master = - settings.volume.master

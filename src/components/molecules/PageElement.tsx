@@ -38,7 +38,7 @@ const ChoiceContent = ({ content }: { content: PageEntry<"choice"> }) => {
 
 const SkipContent = ({ history, content }: { history: History, content: PageEntry<"skip"> }) => {
 	const {label} = content as PageEntry<"skip">
-	const flags = history.getSceneContext(label)?.flags as string[]
+	const flags = history.sceneContent(label)?.flags as string[]
 	const sceneTitle = getSceneTitle(flags, label as TsukihimeSceneName)??""
 	return (
 		<span className='skip'>

@@ -41,6 +41,15 @@ export type InitContext = RecursivePartial<{
     conitnueScript: boolean
 }>
 
+type PageBaseContent = {
+    phase: Phase,
+    textBox: 'nvl'|'adv'
+}
+
+type BlockContent = {
+    regard: Regard
+}
+
 type Callbacks = ScriptPlayerCallbacks<LabelName>
 
 //#endregion ###################################################################
@@ -107,7 +116,7 @@ function processPhase(arg: string, _cmd: string, script: ScriptPlayer) {
 //#endregion
 //##############################################################################
 
-export class ScriptPlayer extends ScriptPlayerBase<LabelName> {
+export class ScriptPlayer extends ScriptPlayerBase<LabelName, PageBaseContent, BlockContent> {
 
 //#endregion ###################################################################
 //#region                         ATTRS & PROPS
@@ -116,15 +125,8 @@ export class ScriptPlayer extends ScriptPlayerBase<LabelName> {
 //_____________________________private attributes_______________________________
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    private _flags = new Set<string>()
     private _regard: Regard = { ark: 0, cel: 0, aki: 0, his: 0, koha: 0 }
-    private _continueScript: boolean
-    private _textPrefix : string // add bbcode before text lines (for e.g., color or alignement)
     private _textBox: 'adv'|'nvl' = 'nvl'
-    private _text: string = ""
-    private _audio: Audio = { track: '', looped_se: '' }
-    private _graphics: Graphics =
-        { bg: '', l: '', c: '', r: '', monochrome: '' }
     private _phase: Phase = { route: "others", routeDay: "pro", day: 0 }
     
     private _history: History
@@ -138,29 +140,18 @@ export class ScriptPlayer extends ScriptPlayerBase<LabelName> {
     set regard(value: Partial<Regard>) {
         deepAssign(this._regard, value)
     }
-    get flags() { return this._flags }
 
-    get continueScript() { return this._continueScript }
-
-    get audio(): Audio { return this._audio }
-    set audio(value: Partial<Audio>) {
-        deepAssign(this._audio, value, {extend: false})
-    }
-    get graphics(): Graphics { return this._graphics }
-    set graphics(value: Partial<Graphics>) {
-        deepAssign(this._graphics, value, {extend: false})
-    }
     get phase(): Phase { return this._phase }
     set phase(value: Phase) {
         deepAssign(this._phase, value)
     }
-    get textPrefix() { return this._textPrefix }
-    set textPrefix(value: string) { this._textPrefix = value }
+
     get textBox() { return this._textBox }
     set textBox(value: 'adv'|'nvl') { this._textBox = value }
-    get text() { return this._text }
+
+    get text() { return super.text }
     set text(value: string) {
-        this._text = value
+        super.text = value
         this._history.onTextChange(this)
     }
 
@@ -172,22 +163,15 @@ export class ScriptPlayer extends ScriptPlayerBase<LabelName> {
 //##############################################################################
 
     constructor(history: History, callbacks?: Partial<Callbacks>) {
-        const initContext = history.getPageContext() as NonNullable<PageEntry & SceneEntry>
-        const {label: initLabel = 'openning', page: initPage = 0} = initContext
-        if (initLabel == undefined)
-            throw Error("unspecified label in context")
+        const initContext = history.getCurrentContext()
 
-        super(initLabel, initPage, callbacks)
+        if (initContext.label == undefined)
+            throw Error("unspecified label in context")
         
-        deepAssign(this._graphics, initContext.graphics ?? {})
-        deepAssign(this._audio, initContext.audio ?? {})
+        super(initContext, callbacks)
         deepAssign(this._regard, initContext.regard ?? {})
         deepAssign(this._phase, initContext.phase ?? {})
-        for (const flag of initContext.flags ?? [])
-            this._flags.add(flag)
-        this._textPrefix = initContext.textPrefix ?? ""
         this._textBox = initContext.textBox ?? "nvl"
-        this._continueScript = initContext.continueScript ?? true
         this.setCommands(commands)
 
         this._history = history
@@ -198,55 +182,56 @@ export class ScriptPlayer extends ScriptPlayerBase<LabelName> {
 //#region                        PUBLIC METHODS
 //##############################################################################
 
-    pageContext() {
-        if (!this.currentBlock)
-            return undefined
+    override isLinePageBreak(line: string, index: number, sceneLines: string[],
+                    label: LabelName, playing: boolean): boolean {
+        if (super.isLinePageBreak(line, index, sceneLines, label, playing))
+            return true
+        if (line.startsWith('phase')) {
+            if (playing) // count all phases as page while playing game
+                return true
+            // when counting pages outside of gameplay,
+            // avoid counting 2 pages for conditional phases which have 2 'phase'
+            if (!sceneLines[index+1].startsWith('skip'))
+                return true
+        }
+        return false
+    }
+
+    override pageContent() {
         return {
-            page: this.currentBlock.page ?? 0,
-            label: this.currentLabel as LabelName,
-            graphics: {...this.graphics},
-            audio: this.audio,
             phase: this.phase,
-            textPrefix: this.textPrefix,
-            textBox: this.textBox,
-            text: this.text,
+            textBox: this.textBox
+        }
+    }
+    
+    override blockContent() {
+        return {
+            regard: {...this.regard}
         }
     }
 
-    static defaultPageContext() {
+    static override defaultPageContext() {
         return {
-            type: 'text' as PageType,
-            page: 0,
-            graphics: {bg: "", l:"", c:"", r:"", monochrome: ""},
-            audio: {track: "", looped_se: ""},
-            textPrefix: "",
+            ...ScriptPlayerBase.defaultPageContext(),
+            phase: { route: "others", routeDay: "pro", day: 0 } as Phase,
             textBox: 'nvl' as typeof ScriptPlayer.prototype.textBox,
-            text: "",
         }
     }
     
-    blockContext() {
-        if (!isScene(this.currentLabel as LabelName))
-            return undefined
+    static override defaultBlockContext() {
         return {
-            label: this.currentLabel as LabelName,
-            flags: [...this.flags],
-            regard: {...this.regard},
-            continueScript: this._continueScript,
-        }
-    }
-    
-    static defaultBlockContext() {
-        return {
-            flags: [] as string[],
+            ...ScriptPlayerBase.defaultBlockContext(),
             regard: { ark: 0, cel: 0, aki: 0, his: 0, koha: 0 },
-            continueScript: true
         }
     }
 
 //#endregion ###################################################################
 //#region                      INHERITED ABSTRACTS
 //##############################################################################
+
+    override isScene(label: LabelName) {
+        return isScene(label)
+    }
 
     override writeVariable(name: StrVarName, value: string): void
     override writeVariable(name: NumVarName, value: number): void
@@ -262,22 +247,8 @@ export class ScriptPlayer extends ScriptPlayerBase<LabelName> {
     override fetchLines(label: LabelName): Promise<string[]> {
         return fetchBlockLines(label)
     }
-    override isLinePageBreak(line: string, index: number, sceneLines: string[],
-                    label: LabelName, playing: boolean): boolean {
-        if (playing) {
-            return line.startsWith('\\') || line.startsWith('phase ')
-        } else {
-            if (line.startsWith('\\'))
-                return true
-            else if (line.startsWith('phase'))
-                // prevents counting 2 pages for conditional phases
-                return !sceneLines[index+1].startsWith('skip')
-            else
-                return false
-        }
-    }
     protected override beforeBlock(label: LabelName, initPage: number): Promise<void> {
-        this.history.onBlockStart(this, label)
+        this.history.onBlockStart({...this.blockContext(), label})
         return super.beforeBlock(label, initPage)
     }
     protected override async afterBlock(label: LabelName): Promise<void> {
@@ -289,7 +260,7 @@ export class ScriptPlayer extends ScriptPlayerBase<LabelName> {
     override onPageStart(line: string, index: number, blockLines: string[],
                          label: LabelName): void {
         super.onPageStart(line, index, blockLines, label)
-        this.history.onPageStart(this)
+        this.history.onPageStart(this.pageContext()!)
         this.text = ""
     }
     protected override nextLabel(label: LabelName): LabelName | null {
