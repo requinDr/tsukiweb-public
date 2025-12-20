@@ -324,8 +324,8 @@ function processWave(token) {
   const file = args.get('file')
   const time = args.get('time') ?? 0
   const nowait = args.get('nowait') == "true"
-  if (token.cmd == 'wave' && nowait)
-    token.cmd = 'wave_nowait'
+  if (token.cmd == 'wave' && !nowait)
+    token.cmd = 'wave_wait'
 
   token.args = file ? [`pd/${file}`] : [] // cmd is unchanged
 }
