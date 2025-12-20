@@ -83,11 +83,17 @@ export const commands = {
   'wave'    : (arg: string, _: string, script: ScriptPlayer,
                onFinish: VoidFunction)=> {
     script.audio.looped_se = null
-    audio.playWave(arg)
-    audio.waitWaveEnd().then(onFinish)
-    return {
-      next: audio.stopWave.bind(audio)
+    if (audio.waveVolume * audio.masterVolume > 0) {
+      audio.playWave(arg)
+      audio.waitWaveEnd().then(onFinish)
+      return {
+        next: audio.stopWave.bind(audio)
+      }
     }
+  },
+  'wave_nowait': (arg: string, _: string, script: ScriptPlayer)=> {
+    script.audio.looped_se = null
+    audio.playWave(arg)
   },
   'waveloop': (arg: string, _: string, script: ScriptPlayer)=> {
     script.audio.looped_se = audio.waveLoop = arg
