@@ -22,7 +22,7 @@
 		background: unset;
 		padding-inline: 5%;
 		justify-self: center;
-		background-image: linear-gradient(360deg, #010d1fd1, #005a91fa 94%, #043252);
+		background-image: var(--textbox-adv-bg);
 
 		&::before {
 			content: '';
@@ -81,44 +81,7 @@
 		text-shadow: #000 .8px .8px .6px, #000 -.8px .8px .6px,
 					 #000 -.8px -.8px .6px, #000 .8px -.8px .6px;
 	}
-	hr {
-		border: 0;
-		height: 1px;
-		background-image: linear-gradient(90deg, #1b9ab900 0%, #1b9ab9 50%, #1b9ab900 100%);
-		margin: 4em 0 1em;
-		position: relative;
-		overflow: visible;
 
-		&[page-type="phase"] {
-			background-image: linear-gradient(90deg,
-				#1b9ab900 0%,
-				#00aed9 30%,
-				#fff 50%,
-				#00aed9 70%,
-				#1b9ab900 100%
-			);
-			height: 4px;
-			&::after {
-				content: attr(data-label);
-				position: absolute;
-				bottom: 100%;
-				left: 50%;
-				transform: translateX(-50%);
-				font-size: 0.8em;
-			}
-		}
-	}
-	.load {
-		display: flex;
-		margin-left: auto;
-		padding: 0 0.8em;
-		font-size: 0.8em;
-		margin-top: -1em;
-		margin-bottom: 2em;
-		text-shadow: none;
-		gap: 8px;
-		color: var(--color-link);
-	}
 	.choice {
 		&:not(.selected) {
 			color: grey;
@@ -135,6 +98,11 @@
 		margin-left: 8px;
 		margin-top: clamp(0.3em, min(1.4cqw, 2cqh), 0.5em);
 		position: absolute;
+
+		&.hide {
+			opacity: 0;
+			animation-play-state: paused !important;
+		}
 
 		img {
 			width: 100%;

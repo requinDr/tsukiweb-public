@@ -8,6 +8,7 @@ import { useObserved, useObserver } from "@tsukiweb-common/utils/Observer"
 import { DivProps } from "@tsukiweb-common/types"
 import { Bbcode, BBTypeWriter } from "@tsukiweb-common/utils/Bbcode"
 import { preprocessText } from "@tsukiweb-common/utils/utils"
+import classNames from "classnames"
 
 type Glyph = "moon"|"page"
 const icons: Record<Glyph, string> = {
@@ -52,18 +53,19 @@ function onTextColor(color: string, _c: string, script: ScriptPlayer) {
   script.textPrefix = `[color=${color}]`
 }
 
-type Props = {
-  script: ScriptPlayer
-  display?: boolean|'auto'
-  charDelay?: number
-  textbox?: "nvl"|"adv"
-} & DivProps
-
 function onTextBox(textbox: string, _cmd: string, script: ScriptPlayer) {
   script.textBox = textbox as 'adv' | 'nvl'
 }
 
-const TextLayer = ({ script, display = 'auto',
+type Props = DivProps & {
+  script: ScriptPlayer
+  display: boolean
+  isTopLayer: boolean
+  charDelay?: number
+  textbox?: "nvl"|"adv"
+}
+
+const TextLayer = ({ script, display, isTopLayer,
                      charDelay = settings.textSpeed, ...props }: Props) => {
 
   const [ lines, setLines ] = useState<string[]>([])
@@ -97,7 +99,7 @@ const TextLayer = ({ script, display = 'auto',
 
   const {className, ...remaining_props} = props
   const classList = ['layer']
-  if (!display || (display == 'auto' && lines.length == 0 && !glyph))
+  if (!display || (lines.length == 0 && !glyph))
     classList.push('hide')
   if (!mouseCursorVisible)
     classList.push('hide-mouse-pointer')
@@ -112,7 +114,7 @@ const TextLayer = ({ script, display = 'auto',
   ]
   
   const glyphNode = glyph && (
-    <span className="cursor" id={glyph}>
+    <span className={classNames("cursor", {"hide": !isTopLayer})} id={glyph}>
       <img src={icons[glyph]} alt={glyph} />
     </span>)
   const twKey = script.uid*1000 + script.currentPage*100 + lines.length
@@ -129,7 +131,7 @@ const TextLayer = ({ script, display = 'auto',
 
         {lastLine ?
           <BBTypeWriter key={twKey}
-            charDelay={immediate ? 0 : settings.textSpeed}
+            charDelay={immediate ? 0 : charDelay}
             paused={!display}
             text={lastLine}
             hideTag="hide"

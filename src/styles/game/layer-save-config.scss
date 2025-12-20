@@ -7,7 +7,7 @@
 	&.show {
 		z-index: 100;
 		opacity: 1;
-		backdrop-filter: brightness(0.6) blur(4px);
 		background-image: var(--gradient-layer);
+		backdrop-filter: brightness(0.6) blur(2px);
 	}
 }

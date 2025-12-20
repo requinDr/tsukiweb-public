@@ -43,6 +43,7 @@ const Window = () => {
 	}))
 	const [actionsHandler, ] = useReset(()=>
 		new actions.UserActionsHandler(script, layers, remountScript))
+	const topLayer = layers.topLayer
 
 	useEffect(() => {
 		remountScript()
@@ -100,8 +101,6 @@ const Window = () => {
 			audio.stopWave()
 		window.script = script
 	}, [script])
-
-	const topLayer = layers.topLayer
 
 	useEffect(()=> {
 		if (history.empty)
@@ -162,11 +161,15 @@ const Window = () => {
 			<Fragment key={script.uid}>
 				<div className='ratio-container' onClick={()=> actionsHandler.next()}>
 					<GraphicsLayer script={script} />
-					<TextLayer script={script} display={layers.text && 'auto'} />
+					<TextLayer
+						script={script}
+						display={layers.text && (topLayer == 'text' || topLayer == 'menu')}
+						isTopLayer={topLayer == 'text'}
+					/>
 				</div>
 
 				{script.continueScript && <>
-					<ChoicesLayer script={script} display={layers.text} navigable={layers.topLayer == 'text'} />
+					<ChoicesLayer script={script} display={layers.text} navigable={topLayer == 'text'} />
 					<SkipLayer script={script} history={history} layers={layers}/>
 				</>}
 
