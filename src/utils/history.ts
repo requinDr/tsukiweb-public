@@ -7,6 +7,7 @@ import { ScriptPlayer } from "script/ScriptPlayer"
 import { settings } from "./settings"
 import { jsonDiff } from "@tsukiweb-common/utils/utils"
 import { HistoryBase } from "@tsukiweb-common/script/history"
+import { PartialJSON, WithRequired } from "@tsukiweb-common/types"
 
 //##############################################################################
 //#region                             TYPES
@@ -14,12 +15,12 @@ import { HistoryBase } from "@tsukiweb-common/script/history"
 
 export type PageType = 'text'|'choice'|'skip'|'phase'|''
 type PageContext = NonNullable<ReturnType<ScriptPlayer['pageContext']>>
-type PageContent<T extends PageType> = (
+type PageContent<T extends PageType = PageType> = { type: T } & (
   T extends 'text' | 'skip' | 'phase' ? { } :
   T extends 'choice' ? {choices: Choice[], selected: number} :
   never
 )
-export type PageEntry<T extends PageType = PageType> = { type: T } &
+export type PageEntry<T extends PageType = PageType> =
   PageContext & PageContent<T>
 
 export type SceneEntry = NonNullable<ReturnType<ScriptPlayer['blockContext']>>
@@ -32,13 +33,11 @@ type Params = {
 
 export class History extends HistoryBase<ScriptPlayer, PageType,
   ReturnType<typeof ScriptPlayer.defaultPageContext>,
-  ReturnType<typeof ScriptPlayer.defaultBlockContext>> {
+  ReturnType<typeof ScriptPlayer.defaultBlockContext>, PageContent> {
 
 //#endregion ###################################################################
 //#region                      ATTRS, CONSTRUCTOR
 //##############################################################################
-
-  private _script: ScriptPlayer | undefined
 
   constructor({limit = settings.historyLength,
               storageId = "history", restore = false}: Params = {}) {
@@ -46,8 +45,6 @@ export class History extends HistoryBase<ScriptPlayer, PageType,
       defaultPage: ScriptPlayer.defaultPageContext(),
       defaultBlock: ScriptPlayer.defaultBlockContext()
     })
-    
-    this._script = undefined
   }
 
 //#endregion ###################################################################
@@ -84,32 +81,11 @@ export class History extends HistoryBase<ScriptPlayer, PageType,
     }
     this.setPage({type: 'phase'})
   }
-  
-  onSceneSkip(script: ScriptPlayer, label: LabelName) {
-    this.onPageStart({...script.pageContext()!, label, page: 0})
-    this.setPage({type: 'skip', label, page: 0})
-  }
 
-  onPageStart(context: PageContext): void {
+  onPageStart(context: WithRequired<PartialJSON<PageContext>, 'label'>): void {
     const {label} = context
     if (isScene(label) || (label.startsWith('skip') && context.page == 0))
       super.onPageStart(context)
-  }
-
-  onTextChange(script: ScriptPlayer) {
-    if (script.text.length == 0)
-      return
-    const text = script.text.replace(/^\[\r\n]*/, '')
-    if (this.pages.length > 0) {
-      let lastPage = this.lastPage
-      if (lastPage.page == script.currentBlock?.page &&
-          lastPage.label == script.currentBlock.label)
-        lastPage.text = text
-      else
-        this.setPage({type: 'text', text})
-    } else {
-      this.setPage({type: 'text', text})
-    }
   }
 
 //#endregion ###################################################################
@@ -170,8 +146,8 @@ export class History extends HistoryBase<ScriptPlayer, PageType,
     if (includeGraphics)
       index--
     const result = super.export(index, pagesMaxLength)
-    const graphics = includeGraphics && this._script ?
-        jsonDiff({graphics: this._script.graphics}, result.pages.at(-1)!)
+    const graphics = includeGraphics && this.script ?
+        jsonDiff({graphics: this.script.graphics}, result.pages.at(-1)!)
         : {}
     return {
       ...result,

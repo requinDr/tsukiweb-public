@@ -130,7 +130,6 @@ export class ScriptPlayer extends ScriptPlayerBase<LabelName, PageBaseContent, B
     private _phase: Phase = { route: "others", routeDay: "pro", day: 0 }
     
     private _history: History
-    private _uid: number
 
 //_______________________public attributes & properties_________________________
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -156,7 +155,6 @@ export class ScriptPlayer extends ScriptPlayerBase<LabelName, PageBaseContent, B
     }
 
     get history() { return this._history }
-    get uid() { return this._uid }
 
 //#endregion ###################################################################
 //#region                          CONSTRUCTOR
@@ -175,7 +173,7 @@ export class ScriptPlayer extends ScriptPlayerBase<LabelName, PageBaseContent, B
         this.setCommands(commands)
 
         this._history = history
-        this._uid = Date.now()
+        history.script = this
     }
 
 //#endregion ###################################################################
@@ -198,16 +196,11 @@ export class ScriptPlayer extends ScriptPlayerBase<LabelName, PageBaseContent, B
     }
 
     override pageContent() {
-        return {
-            phase: this.phase,
-            textBox: this.textBox
-        }
+        return { phase: this.phase, textBox: this.textBox }
     }
     
     override blockContent() {
-        return {
-            regard: {...this.regard}
-        }
+        return { regard: {...this.regard} }
     }
 
     static override defaultPageContext() {
