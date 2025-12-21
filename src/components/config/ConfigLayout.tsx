@@ -48,7 +48,7 @@ const ConfigLayout = ({back, selectedTab, setSelectedTab}: Props) => {
 			selectedTab={selectedTab}
 			setSelectedTab={setSelectedTab}
 			backButton={
-				<TitleMenuButton audio={audio} onClick={back.bind(null)} className="back-button">
+				<TitleMenuButton audio={audio} onClick={back.bind(null)} className="back-button" nav-auto={1}>
 					{`<<`} {strings.back}
 				</TitleMenuButton>
 			}>
@@ -71,7 +71,7 @@ export const ConfigItem = ({ label, children, helpAction, ...props }: ConfigLayo
 			<span>{label}</span>
 
 			{helpAction && (
-				<button className="icon-help" onClick={helpAction}>
+				<button className="icon-help" onClick={helpAction} nav-auto={1}>
 					<MdQuestionMark />
 				</button>
 			)}
@@ -82,6 +82,12 @@ export const ConfigItem = ({ label, children, helpAction, ...props }: ConfigLayo
 		</div>
 	</div>
 )
+
+
+const ACTION_PROPS = {
+	audio: audio,
+	clickSound: "impact"
+}
 
 type ConfigButtonsEntry<V> = {
 	label: string | JSX.Element,
@@ -99,16 +105,18 @@ interface ConfigButtonsProps<V> {
 export const ConfigButtons = <V,>({currentValue, btns, disabled, updateValue}: ConfigButtonsProps<V>) => {
 	return (
 		<div className="config-btns">
-			{btns.map((btn) =>
+			{btns.map(b =>
 				<Button
-					key={btn.label.toString()}
+					key={b.label.toString()}
+					{...ACTION_PROPS}
 					variant="corner"
-					onClick={() => updateValue(btn.value)}
+					onClick={() => updateValue(b.value)}
 					className="config-btn"
-					active={currentValue === btn.value}
-					disabled={disabled || btn.disabled}
+					active={currentValue === b.value}
+					disabled={disabled || b.disabled}
+					nav-auto={1}
 				>
-					{btn.label}
+					{b.label}
 				</Button>
 			)}
 		</div>
@@ -117,7 +125,7 @@ export const ConfigButtons = <V,>({currentValue, btns, disabled, updateValue}: C
 
 export const ResetBtn = ({onClick}: {onClick: ()=> void}) => (
 	<div className="config-reset">
-		<Button onClick={onClick}>
+		<Button {...ACTION_PROPS} onClick={onClick} nav-auto={1}>
 			{strings.config.reset}
 		</Button>
 	</div>

@@ -8,9 +8,7 @@ import { PageTitle, TitleMenuButton } from "@tsukiweb-common/ui-core"
 import { useLanguageRefresh } from "hooks/useLanguageRefresh"
 import useEclipseUnlocked from "hooks/useEclipseUnlocked"
 import { audio } from "utils/audio"
-import directionalNavigate from "@tsukiweb-common/input/arrowNavigation"
-import { useKeyMap } from "@tsukiweb-common/input/KeyMap"
-import { menuKeyMap } from "utils/keybind"
+import useKeyArrows from "hooks/useKeyArrows"
 
 const ExtraLayout = ({ children }: PropsWithChildren) => {
 	return (
@@ -39,13 +37,6 @@ const ExtraLayout = ({ children }: PropsWithChildren) => {
 export default ExtraLayout
 
 
-function keyboardCallback(action: any, evt: KeyboardEvent, ...args: any) {
-	switch (action) {
-		case "nav" : return directionalNavigate(args[0])
-		default : throw Error(`Unknown action ${action}`)
-	}
-}
-
 const ExtraMenu = () => {
 	const navigate = useNavigate()
 	const location = useLocation()
@@ -53,7 +44,7 @@ const ExtraMenu = () => {
 	const { eclipseUnlocked } = useEclipseUnlocked()
 	const currentPage = "/" + location.pathname.split("/")[1]
 
-	useKeyMap(menuKeyMap, keyboardCallback, document, 'keydown', { capture: false })
+	useKeyArrows()
 				
 	function back() {
 		displayMode.screen = SCREEN.TITLE

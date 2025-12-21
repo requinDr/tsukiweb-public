@@ -6,10 +6,12 @@ import useQueryParam from '@tsukiweb-common/hooks/useQueryParam'
 import { useEffect } from 'react'
 import { useLanguageRefresh } from 'hooks/useLanguageRefresh'
 import { useScreenAutoNavigate } from 'hooks/useScreenAutoNavigate'
+import useKeyArrows from 'hooks/useKeyArrows'
 
 const ConfigScreen = () => {
 	useScreenAutoNavigate(SCREEN.CONFIG)
 	useLanguageRefresh()
+	useKeyArrows()
 	const [selectedTab, setSelectedTab] = useQueryParam<ConfigTabs>("tab", ConfigTabs.game)
 
 	function back() {

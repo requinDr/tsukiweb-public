@@ -17,27 +17,17 @@ import { useScreenAutoNavigate, useLanguageRefresh } from 'hooks'
 import useEclipseUnlocked from 'hooks/useEclipseUnlocked'
 import classNames from "classnames"
 import { audio } from "utils/audio"
-import directionalNavigate from '@tsukiweb-common/input/arrowNavigation'
-import { useKeyMap } from "@tsukiweb-common/input/KeyMap"
-import { menuKeyMap } from "utils/keybind"
 import christmas_hat from '@assets/icons/christmas_hat.svg'
+import useKeyArrows from "hooks/useKeyArrows"
 
-function keyboardCallback(action: any, evt: KeyboardEvent, ...args: any) {
-	switch (action) {
-		case "nav" : return directionalNavigate(args[0])
-		default : throw Error(`Unknown action ${action}`)
-	}
-}
 
 const TitleMenuScreen = () => {
 	const navigate = useNavigate()
 	useScreenAutoNavigate(SCREEN.TITLE)
-	const [conf] = useObserved(settings.volume, 'master')
 	useLanguageRefresh()
+	useKeyArrows()
+	const [conf] = useObserved(settings.volume, 'master')
 	const { eclipseUnlocked } = useEclipseUnlocked()
-
-	useKeyMap(menuKeyMap, keyboardCallback, document, 'keydown',
-			{ capture: false })
 
 	return (
 		<m.div

@@ -56,7 +56,7 @@
 		margin-left: 6px;
 		transition: .1s ease-in-out;
 
-		&:hover {
+		&:hover, &:focus-visible {
 			box-shadow: var(--selected-shadow);
 			cursor: pointer;
 		}

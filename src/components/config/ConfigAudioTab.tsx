@@ -67,7 +67,8 @@ const ConfigAudioTab = () => {
 								updateSubValue('volume', key, sign * parseInt(e.target.value))
 							}} />
 						<button className="icon btn"
-							onClick={()=> updateSubValue('volume', key, -conf.volume[key])}>
+							onClick={()=> updateSubValue('volume', key, -conf.volume[key])}
+							nav-auto={1}>
 							{negative(conf.volume[key])
 								? <MdOutlineVolumeOff aria-label="mute" className="off" />
 								: <MdOutlineVolumeUp aria-label="unmute" />}

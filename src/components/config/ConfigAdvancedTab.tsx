@@ -81,6 +81,7 @@ const ConfigAdvancedTab = () => {
 			<ConfigItem label={strings.config.language}>
 				<div className="config-btns">
 					<Button
+						nav-auto={1}
 						className="config-btn flag"
 						onClick={()=>setShowLanguage(true)}>
 						{languages?.[settings.language]?.["display-name"]}... +{Object.keys(languages).length - 1}
@@ -169,15 +170,18 @@ const ConfigAdvancedTab = () => {
 				<div className="config-btns">
 					<Button className="config-btn"
 						onClick={importData.bind(null, false)}
-						onContextMenu={importData.bind(null, true)}>
+						onContextMenu={importData.bind(null, true)}
+						nav-auto={1}>
 						<MdFileUpload /> {strings.config["data-import"]}
 					</Button>
 					<Button className="config-btn"
-						onClick={exportData}>
+						onClick={exportData}
+						nav-auto={1}>
 						<MdDownload /> {strings.config["data-export"]}
 					</Button>
 					<Button className="config-btn erase"
-						onClick={eraseData}>
+						onClick={eraseData}
+						nav-auto={1}>
 						<MdDeleteForever /> {strings.config["data-erase"]}
 					</Button>
 				</div>
