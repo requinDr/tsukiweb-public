@@ -1,14 +1,12 @@
 import { ChangeEvent, MouseEvent, useEffect, useRef, useState } from "react"
 import { SCREEN, displayMode } from "../../utils/display"
-import { SaveState, QUICK_SAVE_ID, savesManager } from "../../utils/savestates"
+import { SaveState, QUICK_SAVE_ID, savesManager, compareSaveStates } from "../../utils/savestates"
 import { strings } from "../../translation/lang"
-import { phaseTexts } from "../../translation/assets"
 import SaveListItem from "./SaveListItem"
 import SaveDetails from "./SaveDetails"
 import { MdAddCircleOutline, MdUploadFile, MdWarning } from "react-icons/md"
 import { modalPromptService } from "@tsukiweb-common/ui-core/components/ModalPrompt"
 import classNames from "classnames"
-import { noBb } from "@tsukiweb-common/utils/Bbcode"
 import { useVirtualizer } from "@tanstack/react-virtual"
 import { toast } from "react-toastify"
 import history from "utils/history"
@@ -19,32 +17,6 @@ import { useObserver } from "@tsukiweb-common/utils/Observer"
 import { Button, TitleMenuButton, PageSection, PageTitle } from "@tsukiweb-common/ui-core"
 import { audio } from "utils/audio"
 
-
-//##############################################################################
-//#                               TOOL FUNCTIONS                               #
-//##############################################################################
-
-// sort savestates quick save first, then from most recent to oldest
-function compareSaveStates(ss1: SaveState, ss2: SaveState) {
-	return ss1.id == QUICK_SAVE_ID ? -1 : ss2.id == QUICK_SAVE_ID ? 1
-		: (ss2.date ?? 0) - (ss1.date ?? 0)
-}
-
-export function savePhaseTexts(saveState: SaveState) {
-	const lastPage = saveState.pages.at(-1) as Exclude<SaveState['pages'][0], undefined>
-	if (lastPage.phase) {
-		const {route, routeDay, day} = lastPage.phase
-		return phaseTexts(route, routeDay, day)?.map(noBb)
-	} else {
-		//TODO retrieve route, routeDay and day from SCENE_ATTRS
-		return ["", ""]
-	}
-}
-
-
-//##############################################################################
-//#                               MAIN COMPONENT                               #
-//##############################################################################
 
 type Props = {
 	variant: "save"|"load",

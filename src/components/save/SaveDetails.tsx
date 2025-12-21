@@ -1,6 +1,5 @@
 import { Tooltip } from "react-tooltip"
-import { SaveState, savesManager } from "../../utils/savestates"
-import { savePhaseTexts } from "./SavesLayout"
+import { SaveState, savePhaseTexts, savesManager } from "../../utils/savestates"
 import { MdDeleteOutline, MdOutlineFileDownload } from "react-icons/md"
 import { BiSolidHeart } from "react-icons/bi"
 import GraphicsGroup from "../molecules/GraphicsGroup"

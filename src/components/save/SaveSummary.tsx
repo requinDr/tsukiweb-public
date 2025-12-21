@@ -1,11 +1,10 @@
 import { Fragment, memo } from "react"
-import { SaveState } from "../../utils/savestates"
+import { savePhaseTexts, SaveState } from "../../utils/savestates"
 import { getSceneTitle } from "../../script/utils"
-import { savePhaseTexts } from "./SavesLayout"
 import classNames from "classnames"
 import { noBb } from "@tsukiweb-common/utils/Bbcode"
 import { PageEntry } from "utils/history"
-import { LabelName, TsukihimeSceneName } from "types"
+import { TsukihimeSceneName } from "types"
 
 const SaveSummary = memo(({saveState}: {saveState: SaveState})=> {
 	const lastPage = saveState.pages[saveState.pages.length-1]

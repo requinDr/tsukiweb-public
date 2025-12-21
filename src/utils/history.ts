@@ -1,12 +1,11 @@
 
-import { Choice, LabelName, RouteDayName, RouteName } from "../types"
+import { Choice, LabelName } from "../types"
 import { APP_VERSION, HISTORY_MAX_PAGES } from "./constants"
 import { SaveState } from "./savestates"
 import { isScene } from "../script/utils"
 import { ScriptPlayer } from "script/ScriptPlayer"
-import { PartialJSON, RecursivePartial } from "@tsukiweb-common/types"
 import { settings } from "./settings"
-import { jsonDiff, jsonMerge } from "@tsukiweb-common/utils/utils"
+import { jsonDiff } from "@tsukiweb-common/utils/utils"
 import { HistoryBase } from "@tsukiweb-common/script/history"
 
 //##############################################################################

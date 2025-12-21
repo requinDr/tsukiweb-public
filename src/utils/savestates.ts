@@ -8,6 +8,8 @@ import { textFileUserDownload, twoDigits, versionsCompare } from "@tsukiweb-comm
 import { Regard, ScriptPlayer } from "script/ScriptPlayer";
 import { Graphics, JSONDiff, PartialJSON, PartialRecord } from "@tsukiweb-common/types";
 import { fetchBlockLines, getPageAtLine, isScene } from "script/utils";
+import { phaseTexts } from "translation/assets";
+import { noBb } from "@tsukiweb-common/utils/Bbcode";
 
 //##############################################################################
 //#region                       TYPES & CONSTANTS
@@ -235,6 +237,24 @@ export function playScene(scene: LabelName, {
   const obj = continueScript ? {label: scene} : {label: scene, continueScript}
   history.loadSaveState({scenes: [obj], pages: []})
   displayMode.screen = SCREEN.WINDOW
+}
+
+/**
+ * sort savestates quick save first, then from most recent to oldest
+ */
+export function compareSaveStates(ss1: SaveState, ss2: SaveState) {
+	return ss1.id == QUICK_SAVE_ID ? -1 : ss2.id == QUICK_SAVE_ID ? 1
+		: (ss2.date ?? 0) - (ss1.date ?? 0)
+}
+
+export function savePhaseTexts(saveState: SaveState): string[] {
+	const { route, routeDay, day } = saveState.pages.at(-1)?.phase ?? {}
+
+	if (route !== undefined && routeDay !== undefined && day !== undefined) {
+		return phaseTexts(route, routeDay, day)?.map(noBb)
+	}
+
+	return ["", ""]
 }
 
 
