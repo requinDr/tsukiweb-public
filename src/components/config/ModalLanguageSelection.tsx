@@ -87,6 +87,7 @@ const ModalLanguageSelection = ({show, setShow}: Props) => {
 								active={selected}
 								audio={audio}
 								clickSound="glass"
+								nav-auto={1}
 							>
 								{dispName}
 							</Button>
@@ -139,6 +140,7 @@ const ModalLanguageSelection = ({show, setShow}: Props) => {
 				className="close-btn"
 				audio={audio}
 				clickSound="close"
+				nav-auto={1}
 			>
 				{strings.close}
 			</Button>
