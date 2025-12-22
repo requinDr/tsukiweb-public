@@ -8,7 +8,11 @@ import { Graphics, StrVarName, NumVarName, VarName, RecursivePartial } from "@ts
 import { getGameVariable, setGameVariable } from "utils/variables";
 import { deepAssign, TSForceType } from "@tsukiweb-common/utils/utils";
 import { CommandRecord } from "@tsukiweb-common/script/utils";
-import { History, PageEntry, PageType, SceneEntry } from "utils/history";
+import { History } from "utils/history";
+
+//#endregion ###################################################################
+//#region                             TYPES
+//##############################################################################
 
 type Audio = {
   track: string | null
@@ -161,7 +165,7 @@ export class ScriptPlayer extends ScriptPlayerBase<LabelName, PageBaseContent, B
 //##############################################################################
 
     constructor(history: History, callbacks?: Partial<Callbacks>) {
-        const initContext = history.getCurrentContext()
+        const initContext = history.getPageContext()
 
         if (initContext.label == undefined)
             throw Error("unspecified label in context")
@@ -221,10 +225,6 @@ export class ScriptPlayer extends ScriptPlayerBase<LabelName, PageBaseContent, B
 //#endregion ###################################################################
 //#region                      INHERITED ABSTRACTS
 //##############################################################################
-
-    override isScene(label: LabelName) {
-        return isScene(label)
-    }
 
     override writeVariable(name: StrVarName, value: string): void
     override writeVariable(name: NumVarName, value: number): void

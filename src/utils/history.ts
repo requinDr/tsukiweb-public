@@ -1,5 +1,5 @@
 
-import { Choice, LabelName } from "../types"
+import { Choice } from "../types"
 import { APP_VERSION, HISTORY_MAX_PAGES } from "./constants"
 import { SaveState } from "./savestates"
 import { isScene } from "../script/utils"
@@ -14,7 +14,7 @@ import { PartialJSON, WithRequired } from "@tsukiweb-common/types"
 //##############################################################################
 
 export type PageType = 'text'|'choice'|'skip'|'phase'|''
-type PageContext = NonNullable<ReturnType<ScriptPlayer['pageContext']>>
+type PageContext = ReturnType<ScriptPlayer['pageContext']>
 type PageContent<T extends PageType = PageType> = { type: T } & (
   T extends 'text' | 'skip' | 'phase' ? { } :
   T extends 'choice' ? {choices: Choice[], selected: number} :
@@ -24,6 +24,10 @@ export type PageEntry<T extends PageType = PageType> =
   PageContext & PageContent<T>
 
 export type SceneEntry = NonNullable<ReturnType<ScriptPlayer['blockContext']>>
+
+//#endregion ###################################################################
+//#region                          CONSTRUCTOR
+//##############################################################################
 
 type Params = {
   limit?: number
@@ -35,10 +39,6 @@ export class History extends HistoryBase<ScriptPlayer, PageType,
   ReturnType<typeof ScriptPlayer.defaultPageContext>,
   ReturnType<typeof ScriptPlayer.defaultBlockContext>, PageContent> {
 
-//#endregion ###################################################################
-//#region                      ATTRS, CONSTRUCTOR
-//##############################################################################
-
   constructor({limit = settings.historyLength,
               storageId = "history", restore = false}: Params = {}) {
     super({ limit, storageId, restore,
@@ -48,16 +48,13 @@ export class History extends HistoryBase<ScriptPlayer, PageType,
   }
 
 //#endregion ###################################################################
-//#region                        PRIVATE METHODS
+//#region                            METHODS
 //##############################################################################
 
-  protected isScene(label: LabelName): boolean {
-    return isScene(label)
-  }
+  protected isScene = isScene
 
-//#endregion ###################################################################
-//#region                       INSERTION METHODS
-//##############################################################################
+//________________________________page creation_________________________________
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
   onChoicePrompt(choices: Choice[]) {
     this.setPage({ type: 'choice', choices, selected: -1 })
@@ -88,51 +85,8 @@ export class History extends HistoryBase<ScriptPlayer, PageType,
       super.onPageStart(context)
   }
 
-//#endregion ###################################################################
-//#region                         LOAD METHODS
-//##############################################################################
-  
-  getCurrentContext() {
-    const scene = this.scenes.get(-1)
-    if (!scene)
-      throw Error(`history is empty (no scene)`)
-    const page = this.pages.get(-1) ?? this.pages.default
-    return {
-      ...scene,
-      ...page,
-    }
-  }
-
-  getPageContext(index: number = -1) {
-    const page = this.pages.get(index)
-    if (!page)
-      throw Error(`no page in history at index ${index}`)
-    const sceneIndex = this.getSceneIndexAtPage(index)
-    if (sceneIndex < 0)
-      throw Error(`Unable to retrieve scene ${page.label} from history`)
-    const scene = this.scenes.get(sceneIndex)!
-    return {
-      ...scene,
-      ...page
-    }
-  }
-
-  onPageLoad(index: number) {
-    this.loadSaveState(this.createSaveState(index, this.pagesLength))
-  }
-
-  onSceneLoad(index: number) {
-    const scene = this.scenes.get(index) as SceneEntry
-    const firstPageIndex = this.pages.findIndex(p=>p.label == scene.label && p.page == 0)
-    if (firstPageIndex >= 0)
-      this.onPageLoad(firstPageIndex)
-    else {
-      this.loadSaveState({
-        scenes: this.scenes.exportJSON(0, index+1),
-        pages: []
-      })
-    }
-  }
+//_________________________________save & load__________________________________
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
   /**
    * Creates a savestates that contains the scenes history and their flags,
@@ -148,7 +102,7 @@ export class History extends HistoryBase<ScriptPlayer, PageType,
     const result = super.export(index, pagesMaxLength)
     const graphics = includeGraphics && this.script ?
         jsonDiff({graphics: this.script.graphics}, result.pages.at(-1)!)
-        : {}
+        : { }
     return {
       ...result,
       ...graphics,
@@ -157,10 +111,15 @@ export class History extends HistoryBase<ScriptPlayer, PageType,
     } as SaveState
   }
 
-  loadSaveState(ss: Pick<SaveState, 'scenes'|'pages'>) {
-    super.import(ss)
-  }
+  loadSaveState = super.import
+  getPageContext = super.getMergedContext
+  onPageLoad = super.rollbackToPage
+  onSceneLoad = super.rollbackToScene
 }
+
+//#endregion ###################################################################
+//#region                          GLOBAL VARS
+//##############################################################################
 
 export const history = new History({
   limit: HISTORY_MAX_PAGES,

@@ -58,7 +58,7 @@ const SkipLayer = ({script, history, layers}: Props) => {
 	const onClick = useCallback((e: React.MouseEvent<HTMLButtonElement>)=> {
 		if (e.currentTarget.value == 'yes' && script.currentLabel) {
 			script.skipCurrentBlock()
-			history.onSceneSkip(script, script.currentLabel)
+			history.onSceneSkip(script.currentLabel)
 		}
 		onFinish.current?.()
 		setScene(undefined)

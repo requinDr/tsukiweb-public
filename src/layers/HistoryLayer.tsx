@@ -6,7 +6,7 @@ import PageElement from '../components/molecules/PageElement';
 import classNames from 'classnames';
 import { Button, FixedFooter } from '@tsukiweb-common/ui-core';
 import Flowchart from 'components/flowchart/Flowchart';
-import { TsukihimeSceneName } from 'types';
+import { LabelName, TsukihimeSceneName } from 'types';
 
 
 type Props = {
@@ -37,8 +37,8 @@ const HistoryLayer = ({ display, history, onRewind, layers, show, divProps }: Pr
 		onRewind()
 	}, [])
 
-	const loadScene = useCallback((index: number)=> {
-		history.onSceneLoad(index)
+	const loadScene = useCallback((label: LabelName)=> {
+		history.onSceneLoad(label)
 		close()
 		onRewind()
 	}, [])
@@ -154,7 +154,7 @@ const HistoryDisplay = ({
 
 type FlowchartDisplayProps = {
 	history: History
-	onSceneSelect: (index: number)=>void
+	onSceneSelect: (label: LabelName)=>void
 }
 const FlowchartDisplay = ({ history, onSceneSelect }: FlowchartDisplayProps) => {
 	useLayoutEffect(()=> {
@@ -165,7 +165,7 @@ const FlowchartDisplay = ({ history, onSceneSelect }: FlowchartDisplayProps) => 
 	}, [history])
 
 	const handleSceneSelect = useCallback((id: TsukihimeSceneName)=> {
-		onSceneSelect(history.sceneIndex(id))
+		onSceneSelect(id)
 	}, [history, onSceneSelect])
 
 	return (
