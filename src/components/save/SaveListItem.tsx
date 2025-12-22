@@ -5,17 +5,16 @@ import GraphicsGroup from "../molecules/GraphicsGroup"
 import SaveSummary from "./SaveSummary"
 import { jsonMerge } from "@tsukiweb-common/utils/utils"
 import { isPDScene } from "script/utils"
+import { ComponentProps } from "react"
 
-type SaveListItemProps = {
-	id: number,
-	saveState: SaveState,
-	onSelect: (id: number)=>void,
-	focusedSave?: number,
-	buttonProps?: React.ButtonHTMLAttributes<HTMLButtonElement>,
+type SaveListItemProps = ComponentProps<"button"> & {
+	saveId: number
+	saveState: SaveState
+	isFocused?: boolean
 }
-const SaveListItem = ({id, saveState, onSelect, focusedSave, buttonProps}: SaveListItemProps)=> {
+const SaveListItem = ({saveId, saveState, isFocused, ...props}: SaveListItemProps)=> {
 	const date = new Date(saveState.date as number)
-	const isQuickSave = id === QUICK_SAVE_ID
+	const isQuickSave = saveId === QUICK_SAVE_ID
 	const lastPage = saveState.pages.at(-1)!
 	const graphics = jsonMerge(saveState.graphics ?? {},
 			lastPage.graphics ?? {bg: "#000"})
@@ -24,11 +23,10 @@ const SaveListItem = ({id, saveState, onSelect, focusedSave, buttonProps}: SaveL
 
 	return (
 		<button
-			className={classNames("save-container", {active: id==focusedSave})}
-			onClick={onSelect.bind(null, id)}
-			onContextMenu={(e) => {e.preventDefault()}}
-			{...(isQuickSave ? {'quick-save':''} : {})}
-			{...buttonProps}
+			className={classNames("save-container", {active: isFocused})}
+			onContextMenu={e => e.preventDefault()}
+			quick-save={isQuickSave ? "" : undefined}
+			{...props}
 		>
 			<GraphicsGroup
 				images={graphics}

@@ -117,6 +117,7 @@ const SavesLayer = ({variant, back}: Props) => {
 						onPointerEnter={setFocusedSave.bind(null, 1)}
 						onMouseEnter={setFocusedSave.bind(null, 1)}
 						onMouseLeave={setFocusedSave.bind(null, undefined)}
+						nav-auto={1}
 					>
 						<MdAddCircleOutline /> {strings.saves.create}
 					</Button>
@@ -128,6 +129,7 @@ const SavesLayer = ({variant, back}: Props) => {
 						onPointerEnter={setFocusedSave.bind(null, 2)}
 						onMouseEnter={setFocusedSave.bind(null, 2)}
 						onMouseLeave={setFocusedSave.bind(null, undefined)}
+						nav-auto={1}
 					>
 						<MdUploadFile /> {strings.saves.import}
 					</Button>
@@ -142,22 +144,21 @@ const SavesLayer = ({variant, back}: Props) => {
 					{rowVirtualizer.getVirtualItems()
 						.map(({index, start, key}) => {
 						const ss = saves[index]
-						const id = ss.id ?? ss.date
+						const saveId = ss.id ?? ss.date
 						return (
 							<SaveListItem
 								key={key}
-								id={id}
+								saveId={saveId}
 								saveState={ss}
-								onSelect={onSaveSelect}
-								focusedSave={focusedId}
-								buttonProps={{
-									onFocus: setFocusedSave.bind(null, id),
-									onPointerEnter: setFocusedSave.bind(null, id),
-									onMouseEnter: setFocusedSave.bind(null, id),
-									style: {
-										transform: `translateY(${start}px)`,
-									}
+								onClick={onSaveSelect.bind(null, saveId)}
+								isFocused={focusedId === saveId}
+								onFocus={setFocusedSave.bind(null, saveId)}
+								onPointerEnter={setFocusedSave.bind(null, saveId)}
+								onMouseEnter={setFocusedSave.bind(null, saveId)}
+								style={{
+									transform: `translateY(${start}px)`,
 								}}
+								nav-auto={1}
 							/>
 						)
 					})}
@@ -167,7 +168,11 @@ const SavesLayer = ({variant, back}: Props) => {
 			<SaveDetails id={focusedId} saveState={focusedSave} deleteSave={deleteSave}/>
 			
 			<div className="save-buttons">
-				<TitleMenuButton audio={audio} onClick={back.bind(null, false)} className="back-button">
+				<TitleMenuButton
+					audio={audio}
+					onClick={back.bind(null, false)}
+					className="back-button"
+					nav-auto={1}>
 					{`<<`} {strings.back}
 				</TitleMenuButton>
 				

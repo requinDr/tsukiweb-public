@@ -4,11 +4,13 @@ import SavesLayout from "../components/save/SavesLayout"
 import { SCREEN, displayMode } from "../utils/display"
 import { useEffect } from "react"
 import { useScreenAutoNavigate, useLanguageRefresh } from "hooks"
+import useKeyArrows from "hooks/useKeyArrows"
 
 
 const LoadScreen = () => {
 	useScreenAutoNavigate(SCREEN.LOAD)
 	useLanguageRefresh()
+	useKeyArrows()
 
 	function back(saveLoaded: boolean) {
 		if (!saveLoaded)
