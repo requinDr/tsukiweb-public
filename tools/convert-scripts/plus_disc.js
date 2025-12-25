@@ -67,7 +67,7 @@ function replaceLine(tokens, targetLine, newLine, offset = 0) {
 }
 
 function replaceAll(tokens, search, replace) {
-  tokens.forEach((token, index) => {
+  tokens.forEach(token => {
     if (token instanceof CommandToken && token.cmd === 'ld') {
       const args = token.args
       if (args.length >= 2 && args[1] === search) {
@@ -75,6 +75,12 @@ function replaceAll(tokens, search, replace) {
       }
     }
   })
+}
+
+function deleteLine(tokens, targetLine, offset = 0) {
+  const index = tokens.findIndex(t => t?.toString() === targetLine)
+  if (index < 0) return
+  tokens.splice(index + offset, 1)
 }
 
 const fixes = new Map(Object.entries({
@@ -115,6 +121,7 @@ const fixes = new Map(Object.entries({
   'pd_experiment' : (tokens) => {
     insertPageBreak(tokens, 'ld c,"tachi/koha_t02",crossfade,400')
     replaceAll(tokens, '"tachi/nero_t02C"', '"tachi/nero_t02c"')
+    deleteLine(tokens, '`「なに、追いかけっこ？　志貴も好きだねー」')
   },
 }))
 
