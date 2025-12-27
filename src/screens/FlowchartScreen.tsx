@@ -14,8 +14,8 @@ const FlowchartScreen = () => {
 	}, [])
 
 	return (
-		<div className="page" id="scenes">
-			<div className="page-content flowchart">
+		<div className="page" id="flowchart">
+			<div className="page-content flowchart-container">
 				<Flowchart onSceneClick={onSceneClick} />
 			</div>
 		</div>

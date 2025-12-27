@@ -169,7 +169,7 @@ const FlowchartDisplay = ({ history, onSceneSelect }: FlowchartDisplayProps) => 
 	}, [history, onSceneSelect])
 
 	return (
-		<div id="scenes">
+		<div id="flowchart">
 			<div className="flowchart-container">
 				<Flowchart
 					history={history}

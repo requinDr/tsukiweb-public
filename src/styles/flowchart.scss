@@ -1,11 +1,16 @@
-#scenes {
-	.flowchart {
+#flowchart {
+	.flowchart-container {
+		isolation: isolate;
 		padding-top: 4em;
 		padding-bottom: max(60px, 10vh);
 		padding-inline: calc(var(--page-padding) / 2);
 		align-items: start;
 		overflow: auto;
 		flex-direction: column;
+	}
+	.flowchart {
+		overflow: visible;
+		direction: ltr;
 	}
 	.fc-scene {
 		&.active {

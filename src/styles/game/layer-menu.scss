@@ -19,6 +19,7 @@
 	transition-delay: calc(var(--panel-trans-time) - var(--transition-time));
 	overflow: hidden;
 	border-block: 12px solid var(--menu-border-color);
+	direction: ltr;
 
 	&.show {
 		z-index: 4;
