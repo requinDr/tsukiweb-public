@@ -330,7 +330,7 @@ function processWave(token) {
   let args = token.args
   const file = args.get('file')
   const time = args.get('time') ?? 0
-  const nowait = args.get('nowait') == "true"
+  const nowait = !(args.get('nowait') == "false")
   if (token.cmd == 'wave' && !nowait)
     token.cmd = 'wave_wait'
 
