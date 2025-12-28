@@ -120,7 +120,8 @@ function processPhase(arg: string, _cmd: string, script: ScriptPlayer) {
 //#endregion
 //##############################################################################
 
-export class ScriptPlayer extends ScriptPlayerBase<LabelName, PageBaseContent, BlockContent> {
+export class ScriptPlayer extends ScriptPlayerBase<LabelName, PageBaseContent,
+                                                   BlockContent, History> {
 
 //#endregion ###################################################################
 //#region                         ATTRS & PROPS
@@ -132,8 +133,6 @@ export class ScriptPlayer extends ScriptPlayerBase<LabelName, PageBaseContent, B
     private _regard: Regard = { ark: 0, cel: 0, aki: 0, his: 0, koha: 0 }
     private _textBox: 'adv'|'nvl' = 'nvl'
     private _phase: Phase = { route: "others", routeDay: "pro", day: 0 }
-    
-    private _history: History
 
 //_______________________public attributes & properties_________________________
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -152,14 +151,6 @@ export class ScriptPlayer extends ScriptPlayerBase<LabelName, PageBaseContent, B
     get textBox() { return this._textBox }
     set textBox(value: 'adv'|'nvl') { this._textBox = value }
 
-    get text() { return super.text }
-    set text(value: string) {
-        super.text = value
-        this._history.onTextChange(this)
-    }
-
-    get history() { return this._history }
-
 //#endregion ###################################################################
 //#region                          CONSTRUCTOR
 //##############################################################################
@@ -170,14 +161,11 @@ export class ScriptPlayer extends ScriptPlayerBase<LabelName, PageBaseContent, B
         if (initContext.label == undefined)
             throw Error("unspecified label in context")
         
-        super(initContext, callbacks)
+        super(history, initContext, callbacks)
         deepAssign(this._regard, initContext.regard ?? {})
         deepAssign(this._phase, initContext.phase ?? {})
         this._textBox = initContext.textBox ?? "nvl"
         this.setCommands(commands)
-
-        this._history = history
-        history.script = this
     }
 
 //#endregion ###################################################################
@@ -240,22 +228,14 @@ export class ScriptPlayer extends ScriptPlayerBase<LabelName, PageBaseContent, B
     override fetchLines(label: LabelName): Promise<string[]> {
         return fetchBlockLines(label)
     }
-    protected override beforeBlock(label: LabelName, initPage: number): Promise<void> {
-        this.history.onBlockStart({...this.blockContext(), label})
-        return super.beforeBlock(label, initPage)
-    }
+
     protected override async afterBlock(label: LabelName): Promise<void> {
         if (isScene(label) && !settings.completedScenes.includes(label)) {
             settings.completedScenes.push(label)
         }
         await super.afterBlock(label)
     }
-    override onPageStart(line: string, index: number, blockLines: string[],
-                         label: LabelName): void {
-        super.onPageStart(line, index, blockLines, label)
-        this.history.onPageStart(this.pageContext()!)
-        this.text = ""
-    }
+    
     protected override nextLabel(label: LabelName): LabelName | null {
         const result = nextLabel(label)
         if (result == "endofplay")

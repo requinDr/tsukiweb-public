@@ -6,6 +6,7 @@ import { Button, Modal } from "@tsukiweb-common/ui-core"
 import { LangDesc } from "@tsukiweb-common/utils/lang"
 import { polyfillCountryFlagEmojis } from "@tsukiweb-common/utils/flagsPolyfill"
 import { audio } from "utils/audio"
+import { useLanguageRefresh } from "hooks"
 
 let flagSupportChecked = false
 const EMOJI_REGEX = /^(\u00a9|\u00ae|[\u2000-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])+|^(\uD83C[\uDDE6-\uDDFF]\uD83C[\uDDE6-\uDDFF])/
@@ -26,13 +27,13 @@ type Props = {
 	setShow: Dispatch<boolean>
 }
 const ModalLanguageSelection = ({show, setShow}: Props) => {
-
+	useLanguageRefresh()
 	if (!flagSupportChecked) {
 		polyfillCountryFlagEmojis()
 		flagSupportChecked = true
 	}
 	const selectLanguage = (id: string) => {
-		deepAssign(settings, {language: id})
+		settings.language = id
 	}
 	const orderedLocales = navigator.languages
 	

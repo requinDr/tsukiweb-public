@@ -1,105 +1,30 @@
-import { RecursivePartial } from "@tsukiweb-common/types"
-import { LabelName, SettingsType } from "../types"
-import { observeChildren, observe } from "@tsukiweb-common/utils/Observer"
-import { StoredJSON } from "@tsukiweb-common/utils/storage"
-import { deepFreeze, deepAssign, jsonDiff, objectsEqual, textFileUserDownload, requestJSONs, twoDigits } from "@tsukiweb-common/utils/utils"
-import { TEXT_SPEED, ViewRatio } from "@tsukiweb-common/constants"
+import { NoMethods, PartialJSON } from "@tsukiweb-common/types"
+import { Settings as SettingsBase } from "@tsukiweb-common/utils/settings"
+import { textFileUserDownload, requestJSONs, twoDigits } from "@tsukiweb-common/utils/utils"
 import { savesManager, SaveState } from "./savestates"
 import { APP_VERSION, FULLSAVE_EXT } from "./constants"
 import { toast } from "react-toastify"
 
-export const defaultSettings: SettingsType = deepFreeze({
-  textSpeed: TEXT_SPEED.normal,
-  autoClickDelay: 500,
-  nextPageDelay: 2500,
-  fastForwardDelay: 5,
-  enableSceneSkip: true,
-  preventUnreadSkip: false, // [not implemented]
+class Settings extends SettingsBase {
   
-  gameFont: "Ubuntu", // [not implemented]
-  uiFont: "Ubuntu", // [not implemented]
-  language: "en-mm",
-  fixedRatio: ViewRatio.unconstrained,
+  language: string = "en-mm"
+
+  trackSource: string = 'tsukibako'
+  titleMusic: string = '"*8"'
   
-  blurThumbnails: true,
-  warnHScenes: false,
-  
-  volume: {
-    master: 5,
-    track: 10,
-    se: 10,
-    titleTrack: 10,
-    systemSE: 8,
-  },
-  trackSource: 'tsukibako',
-  autoMute: true,
-  titleMusic: '"*8"',
+  eventImages: Array<string> = new Array()
 
-  unlockEverything: false,
-
-  historyLength: 20,
-  savedHistoryLength: 10,
-
-  lastFullExport: {
-    date: 0,
-    hash: 0
-  },
-  localStorageWarningDelay: 2 * 24 * 60 * 60 * 1000, // 2 days
-  
-  eventImages: new Array<string>(),
-  completedScenes: new Array<string>(),
-})
-
-// load from file
-const settingsStorage = new StoredJSON<RecursivePartial<SettingsType>>("settings", false)
-let savedSettings = settingsStorage.get() || {} as RecursivePartial<SettingsType>
-
-export const settings = deepAssign(defaultSettings, savedSettings as SettingsType, {
-  clone: true, extend: false
-})
-
-// deep-copy savedSettings
-
-let savePostPoneTimeoutId: NodeJS.Timeout|0 = 0
-
-function saveSettings() {
-  if (savePostPoneTimeoutId) {
-    clearTimeout(savePostPoneTimeoutId)
-    savePostPoneTimeoutId = 0
+  override getDiff() {
+    const diff = super.getDiff()
+    diff.language = this.language // force language to be stored
+    return diff
   }
-  settings.completedScenes.sort()
-  const diff = jsonDiff(settings, defaultSettings)
-  diff.language = settings.language
-  if (!objectsEqual(diff, savedSettings, false)) {
-    savedSettings = diff
-    if (Object.keys(diff).length == 0)
-      settingsStorage.delete()
-    else
-      settingsStorage.set(savedSettings)
+  constructor() {
+    super("settings", false)
   }
 }
 
-function postPoneSaveSettings() {
-  if (savePostPoneTimeoutId == 0) {
-    savePostPoneTimeoutId = setTimeout(saveSettings, 0)
-  }
-}
-
-for (const key of Reflect.ownKeys(settings)) {
-  const k = key as keyof typeof settings
-  if (typeof settings[k] == "object")
-    observeChildren(settings, k, postPoneSaveSettings)
-  else {
-    observe(settings, k, postPoneSaveSettings)
-  }
-}
-
-/**
- * Return if the specified scene has been viewed by the player.
- */
-export function viewedScene(scene: LabelName | string): boolean {
-  return settings.completedScenes.includes(scene)
-}
+export const settings = new Settings()
 
 
 export async function computeSaveHash() {
@@ -118,7 +43,7 @@ export async function computeSaveHash() {
 
 type Savefile = {
   version: string
-  settings: RecursivePartial<typeof settings>,
+  settings: PartialJSON<NoMethods<Settings>>,
   saveStates?: SaveState[],
 }
 
@@ -126,7 +51,7 @@ export const exportGameData = () => {
   const {lastFullExport, ...exportedSettings} = settings
 	const content: Savefile = {
 		version: APP_VERSION,
-		settings: jsonDiff(settings, defaultSettings),
+		settings: settings.getDiff(),
 		saveStates: savesManager.listSaves(),
 	}
 	const date = new Date()
@@ -150,8 +75,7 @@ export const importGameData = async (accept = `.${FULLSAVE_EXT}`) => {
       return
     if (!json.version)
       json.version = "0.3.6"
-    const importedSettings = deepAssign(defaultSettings, json.settings, {clone: true})
-    deepAssign(settings, importedSettings)
+    settings.fromDiff(json.settings)
     if (json.saveStates != undefined) {
       savesManager.clear()
       savesManager.add(...json.saveStates)
@@ -175,6 +99,9 @@ export const importGameData = async (accept = `.${FULLSAVE_EXT}`) => {
     })
   }
 }
+
+// expose viewedScene outside the settings object
+export const viewedScene = settings.viewedScene.bind(settings)
 
 //TODO clean unused settings from previous versions
 

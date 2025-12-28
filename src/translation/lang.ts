@@ -3,7 +3,7 @@ import defaultStrings from "../assets/lang/default.json"
 import { APP_VERSION, SCENE_ATTRS } from "../utils/constants"
 import { settings } from "../utils/settings"
 import { observe } from "@tsukiweb-common/utils/Observer"
-import { StoredJSON } from "@tsukiweb-common/utils/storage"
+import { ValueStorage } from "@tsukiweb-common/utils/storage"
 import { fetchJson, deepAssign, insertDirectory } from "@tsukiweb-common/utils/utils"
 import { ImageRedirect, LangDesc, TextImage, TranslationId, UpdateDateFormat } from "@tsukiweb-common/utils/lang"
 import { langSelection } from "./langSelection"
@@ -45,8 +45,8 @@ type StringsType = typeof defaultStrings & {
 //______________________________private variables_______________________________
 //------------------------------------------------------------------------------
 
-const languagesStorage = new StoredJSON<LanguagesType>("languages", false)
-const stringsStorage = new StoredJSON<StringsType>("strings", true)
+const languagesStorage = new ValueStorage<LanguagesType>("languages", false, JSON.stringify, JSON.parse)
+const stringsStorage = new ValueStorage<StringsType>("strings", true, JSON.stringify, JSON.parse)
 
 
 //______________________________private functions_______________________________
@@ -152,7 +152,7 @@ export function addLanguage(id: TranslationId, description: LangDesc) {
 //##############################################################################
 
 async function initTranslations() {
-  if (!languagesStorage.exists()) {
+  if (!languagesStorage.storageExists()) {
     await fetchAvailableLanguages()
   } else {
     fetchAvailableLanguages() // update languages.json in the background
@@ -166,7 +166,7 @@ async function initTranslations() {
 }
 
 // update strings when language changes and when window loads
-observe(settings, 'language', updateLanguage)
+observe(settings, 'language', (lang)=>updateLanguage(lang))
 window.addEventListener('load', initTranslations)
 
 window.strings = strings

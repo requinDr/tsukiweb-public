@@ -1,23 +1,18 @@
 import { useEffect, useState } from "react"
 import { ConfigButtons, ConfigItem, ResetBtn } from "./ConfigLayout"
-import { defaultSettings, settings } from "../../utils/settings"
+import { settings } from "../../utils/settings"
 import { FaMinus, FaPlus } from "react-icons/fa"
 import { getLocale, strings } from "../../translation/lang"
 import { useLanguageRefresh } from "../../hooks/useLanguageRefresh"
 import { PageSection } from "@tsukiweb-common/ui-core"
-import { deepAssign, fullscreen } from "@tsukiweb-common/utils/utils"
+import { deepAssign, extract, fullscreen } from "@tsukiweb-common/utils/utils"
 import { ViewRatio, TEXT_SPEED } from "@tsukiweb-common/constants"
 import useIsFullscreen from "@tsukiweb-common/hooks/useIsFullscreen"
 
 const ConfigGameTab = () => {
 	useLanguageRefresh()
-	const [conf, setConf] = useState(deepAssign({
-		// object only used for its structure. Values don't matter.
-		textSpeed: undefined,
-		fixedRatio: undefined,
-		autoClickDelay: undefined,
-		nextPageDelay: undefined,
-	}, settings, {extend: false}))
+	const [conf, setConf] = useState(extract(settings, [
+		'textSpeed', 'fixedRatio', 'autoClickDelay', 'nextPageDelay']))
 
 	const isFullscreen = useIsFullscreen()
 
@@ -36,7 +31,7 @@ const ConfigGameTab = () => {
 	}
 
 	const handleReset = () => {
-		const defaultConf = deepAssign(structuredClone(conf), defaultSettings, {extend: false})
+		const defaultConf = deepAssign(conf, settings.getReference()!, {extend: false, clone: true})
 		setConf(defaultConf)
 	}
 

@@ -79,7 +79,7 @@ export class History extends HistoryBase<ScriptPlayer, PageType,
     this.setPage({type: 'phase'})
   }
 
-  onPageStart(context: WithRequired<PartialJSON<PageContext>, 'label'>): void {
+  onPageStart(context: PageContext): void {
     const {label} = context
     if (isScene(label) || (label.startsWith('skip') && context.page == 0))
       super.onPageStart(context)

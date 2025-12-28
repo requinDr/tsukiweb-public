@@ -10,7 +10,7 @@ const GalleryTab = () => {
 
 	const galleryUnlocked = useMemo(()=> {
 		return settings.unlockEverything || viewedScene("pd_geccha2")
-	}, [settings.unlockEverything, viewedScene])
+	}, [settings.unlockEverything])
 
 	return (
 		<div className="gallery-container">

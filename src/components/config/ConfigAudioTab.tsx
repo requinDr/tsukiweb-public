@@ -1,21 +1,18 @@
 import { ReactNode, useEffect, useState } from "react"
 import { ConfigButtons, ConfigItem, ResetBtn } from "./ConfigLayout"
-import { defaultSettings, settings } from "../../utils/settings"
+import { settings } from "../../utils/settings"
 import { strings } from "../../translation/lang"
 import { MdOutlineVolumeOff, MdOutlineVolumeUp, MdVolumeMute } from "react-icons/md"
 import { useLanguageRefresh } from "../../hooks/useLanguageRefresh"
 import { PageSection } from "@tsukiweb-common/ui-core"
-import { deepAssign, negative } from "@tsukiweb-common/utils/utils"
+import { deepAssign, extract, negative } from "@tsukiweb-common/utils/utils"
 import ConfigModal from "./ConfigModal"
 import { bb } from "@tsukiweb-common/utils/Bbcode"
 
 const ConfigAudioTab = () => {
 	useLanguageRefresh()
-	const [conf, setConf] = useState(deepAssign({
-		volume: undefined,
-		trackSource: undefined,
-		autoMute: undefined
-	}, settings, {extend: false}))
+	const [conf, setConf] = useState(extract(settings,
+		['volume', 'trackSource', 'autoMute']))
 	const [modal, setModal] = useState<{show: boolean, content: ReactNode}>({show: false, content: undefined})
 
 	useEffect(()=> {
@@ -32,7 +29,7 @@ const ConfigAudioTab = () => {
 		key2: T,
 		value: typeof conf[K][T]
 	) => setConf(prev=> {
-		const newConf = structuredClone(prev)
+		const newConf = deepAssign({}, prev)
 		newConf[key1][key2] = value
 		return newConf
 	})
@@ -46,7 +43,7 @@ const ConfigAudioTab = () => {
 	}
 
 	const handleReset = () => {
-		const defaultConf = deepAssign(structuredClone(conf), defaultSettings, {extend: false})
+		const defaultConf = deepAssign(conf, settings.getReference()!, {extend: false, clone: true})
 		setConf(defaultConf)
 	}
 

@@ -1,6 +1,6 @@
 import { ReactNode, useEffect, useState } from "react"
 import { ConfigButtons, ConfigItem, ResetBtn } from "./ConfigLayout"
-import { defaultSettings, exportGameData, importGameData, settings } from "../../utils/settings"
+import { exportGameData, importGameData, settings } from "../../utils/settings"
 import { savesManager } from "../../utils/savestates"
 import { strings, languages } from "../../translation/lang"
 import { useLanguageRefresh } from "../../hooks/useLanguageRefresh"
@@ -8,7 +8,7 @@ import { MdDeleteForever, MdDownload, MdFileUpload } from "react-icons/md"
 import ModalLanguageSelection from "./ModalLanguageSelection"
 import ConfigModal from "./ConfigModal"
 import { Button, PageSection } from "@tsukiweb-common/ui-core"
-import { deepAssign } from "@tsukiweb-common/utils/utils"
+import { deepAssign, extract } from "@tsukiweb-common/utils/utils"
 import { bb } from "@tsukiweb-common/utils/Bbcode"
 import { modalPromptService } from "@tsukiweb-common/ui-core/components/ModalPrompt"
 import { polyfillCountryFlagEmojis } from "@tsukiweb-common/utils/flagsPolyfill"
@@ -22,13 +22,8 @@ const ConfigAdvancedTab = () => {
 	const [showLanguage, setShowLanguage] = useState<boolean>(false)
 	const [modal, setModal] = useState<{show: boolean, content: ReactNode}>({show: false, content: undefined})
 
-	const [conf, setConf] = useState(deepAssign({
-		language: undefined,
-		blurThumbnails: undefined,
-		warnHScenes: undefined,
-		unlockEverything: undefined,
-	}, settings, {extend: false}))  
-	useLanguageRefresh()
+	const [conf, setConf] = useState(extract(settings,
+		['language', 'blurThumbnails', 'warnHScenes', 'unlockEverything']))
 
 	useEffect(()=> {
 		deepAssign(settings, conf)
@@ -72,7 +67,7 @@ const ConfigAdvancedTab = () => {
 	}
 
 	const handleReset = () => {
-		const defaultConf = deepAssign(structuredClone(conf), defaultSettings, {extend: false})
+		const defaultConf = deepAssign(conf, settings.getReference()!, {extend: false, clone: true})
 		setConf(defaultConf)
 	}
 
