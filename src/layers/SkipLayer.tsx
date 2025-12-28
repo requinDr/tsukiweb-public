@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react"
 import { strings } from "../translation/lang"
-import classNames from "classnames"
 import { bb, noBb } from "@tsukiweb-common/utils/Bbcode"
 import GraphicsGroup from "components/molecules/GraphicsGroup"
 import sceneAttrs from '@assets/game/scene_attrs.json'
@@ -15,6 +14,7 @@ import cg from "utils/gallery"
 import { audio } from "utils/audio"
 import { InGameLayersHandler } from "utils/display"
 import { Graphics } from "@tsukiweb-common/types"
+import AnimatedHideActivityDiv from "@tsukiweb-common/ui-core/components/AnimatedHideActivityDiv"
 
 function getThumbnail(label: TsukihimeSceneName): Partial<Graphics> & {bg: Graphics["bg"]} {
 	const scenes = sceneAttrs.scenes as Record<TsukihimeSceneName, any>
@@ -75,9 +75,11 @@ const SkipLayer = ({script, history, layers}: Props) => {
 	const nav = display && (layers.topLayer == 'text')
 	
 	return (
-		<div
+		<AnimatedHideActivityDiv
+			show={display}
+			showProps={{className: "show"}}
 			id="skip-layer"
-			className={classNames("layer", {show: display})}
+			className="layer"
 		>
 			<m.div
 				className="skip-modal"
@@ -110,7 +112,7 @@ const SkipLayer = ({script, history, layers}: Props) => {
 					</Button>
 				</div>
 			</m.div>
-		</div>
+		</AnimatedHideActivityDiv>
 	)
 }
 

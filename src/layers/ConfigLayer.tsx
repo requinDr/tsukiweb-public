@@ -1,6 +1,6 @@
-import { Activity, memo, useEffect, useRef, useState } from "react"
+import { memo, useEffect, useRef, useState } from "react"
 import ConfigLayout, { ConfigTabs } from "../components/config/ConfigLayout";
-import classNames from "classnames";
+import { AnimatedHideActivityDiv } from "@tsukiweb-common/ui-core/components/AnimatedHideActivityDiv"
 
 
 type Props = {
@@ -17,18 +17,18 @@ const ConfigLayer = ({display, back}: Props) => {
 	}, [display])
 	
 	return (
-		<div
+		<AnimatedHideActivityDiv
+			show={display}
+			showProps={{className: 'show'}}
 			id="layer-config"
-			className={classNames("layer", {show: display})}
+			className="layer"
 			ref={rootRef}>
-			<Activity mode={display ? "visible" : "hidden"}>
-				<ConfigLayout
-					back={back}
-					selectedTab={activeTab}
-					setSelectedTab={setActiveTab}
-				/>
-			</Activity>
-		</div>
+			<ConfigLayout
+				back={back}
+				selectedTab={activeTab}
+				setSelectedTab={setActiveTab}
+			/>
+		</AnimatedHideActivityDiv>
 	)
 }
 

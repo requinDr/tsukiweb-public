@@ -1,4 +1,4 @@
-import { useEffect, useRef, Activity } from "react"
+import { useEffect, useRef } from "react"
 import { MdCopyAll, MdFastForward, MdFullscreen, MdFullscreenExit, MdOutlineVolumeOff, MdOutlineVolumeUp, MdPlayArrow } from "react-icons/md"
 import { settings } from "../utils/settings"
 import { displayMode, InGameLayersHandler, SCREEN } from "../utils/display"
@@ -8,11 +8,11 @@ import { toast } from "react-toastify"
 import { useObserved } from "@tsukiweb-common/utils/Observer"
 import { fullscreen } from "@tsukiweb-common/utils/utils"
 import useIsFullscreen from "@tsukiweb-common/hooks/useIsFullscreen"
-import classNames from "classnames"
 import { useDOMEvent } from "@tsukiweb-common/hooks/useDOMEvent"
 import { ScriptPlayer } from "script/ScriptPlayer"
 import { audio } from "utils/audio"
 import { Button } from "@tsukiweb-common/ui-core"
+import AnimatedHideActivityDiv from "@tsukiweb-common/ui-core/components/AnimatedHideActivityDiv"
 
 const AUDIO_PROPS = {
 	audio: audio,
@@ -84,61 +84,62 @@ const MenuLayer = ({display, script, show, layers, qSave, qLoad}: Props) => {
 	}
 
 	return (
-		<div id="layer-menu"
-			className={classNames("layer", {show: display})}
+		<AnimatedHideActivityDiv
+			show={display}
+			showProps={{className: "show", 'nav-root': 1}}
+			id="layer-menu"
+			className="layer"
 		>
 			<img src={Ornament} alt="ornament" className="bottom-ornament" />
 			<img src={Ornament} alt="ornament" className="top-ornament" />
 			<nav className="menu-container" ref={menuRef}>
 				<menu>
-					<Activity mode={display ? "visible" : "hidden"}>
-						<div className="top-spacer" />
+					<div className="top-spacer" />
 
-						<div className="layer-btns">
-							{show?.graphics &&
-							<Button {...LAYER_PROPS} onClick={graphicMode} nav-y={0}>
-								{strings.menu["graphics"]}
-							</Button>
-							}
-							{show?.history &&
-							<Button {...LAYER_PROPS} onClick={historyMode} nav-y={1}>
-								{strings.menu["history"]}
-							</Button>
-							}
-							{show?.flowchart &&
-							<Button {...LAYER_PROPS} onClick={flowchartMode} nav-y={2}>
-								{strings.extra.scenes}
-							</Button>
-							}
-							{show?.save &&
-							<Button {...LAYER_PROPS} onClick={saveMode} nav-y={3}>
-								{strings.menu["save"]}
-							</Button>
-							}
-							{show?.load &&
-							<Button {...LAYER_PROPS} onClick={loadMode} nav-y={4}>
-								{strings.menu["load"]}
-							</Button>
-							}
-							{show?.config &&
-							<Button {...LAYER_PROPS} onClick={configMode} nav-y={5}>
-								{strings.menu["config"]}
-							</Button>
-							}
-							{show?.title &&
-							<Button {...LAYER_PROPS} onClick={title} nav-y={6}>
-								{strings.menu["title"]}
-							</Button>
-							}
-						</div>
+					<div className="layer-btns">
+						{show?.graphics &&
+						<Button {...LAYER_PROPS} onClick={graphicMode} nav-y={0}>
+							{strings.menu["graphics"]}
+						</Button>
+						}
+						{show?.history &&
+						<Button {...LAYER_PROPS} onClick={historyMode} nav-y={1}>
+							{strings.menu["history"]}
+						</Button>
+						}
+						{show?.flowchart &&
+						<Button {...LAYER_PROPS} onClick={flowchartMode} nav-y={2}>
+							{strings.extra.scenes}
+						</Button>
+						}
+						{show?.save &&
+						<Button {...LAYER_PROPS} onClick={saveMode} nav-y={3}>
+							{strings.menu["save"]}
+						</Button>
+						}
+						{show?.load &&
+						<Button {...LAYER_PROPS} onClick={loadMode} nav-y={4}>
+							{strings.menu["load"]}
+						</Button>
+						}
+						{show?.config &&
+						<Button {...LAYER_PROPS} onClick={configMode} nav-y={5}>
+							{strings.menu["config"]}
+						</Button>
+						}
+						{show?.title &&
+						<Button {...LAYER_PROPS} onClick={title} nav-y={6}>
+							{strings.menu["title"]}
+						</Button>
+						}
+					</div>
 
-						<ActionsButtons script={script} show={show}
-							close={closeMenu} qSave={qSave} qLoad={qLoad}/>
+					<ActionsButtons script={script} show={show}
+						close={closeMenu} qSave={qSave} qLoad={qLoad}/>
 
-					</Activity>
 				</menu>
 			</nav>
-		</div>
+		</AnimatedHideActivityDiv>
 	)
 }
 

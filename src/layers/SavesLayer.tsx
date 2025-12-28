@@ -1,7 +1,7 @@
 import { useRef } from "react"
 import SavesLayout from "../components/save/SavesLayout";
-import classNames from "classnames";
 import { useLanguageRefresh } from "hooks";
+import AnimatedHideActivityDiv from "@tsukiweb-common/ui-core/components/AnimatedHideActivityDiv";
 
 
 type Props = {
@@ -15,14 +15,17 @@ const SavesLayer = ({display, mode, back}: Props) => {
   useLanguageRefresh()
   
   return (
-    <div id="layer-save"
-      className={classNames("layer", {show: display})}
+    <AnimatedHideActivityDiv
+      show={display}
+      showProps={{className: "show"}}
+      id="layer-save"
+      className="layer"
       ref={rootRef}
     >
       <div className="page-content">
         <SavesLayout variant={mode ?? 'save'} back={back} />
       </div>
-    </div>
+    </AnimatedHideActivityDiv>
   )
 }
 
