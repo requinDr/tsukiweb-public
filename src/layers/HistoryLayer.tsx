@@ -49,19 +49,17 @@ const HistoryLayer = ({ display, history, onRewind, layers, show, divProps }: Pr
 			{...divProps}
 			className={classNames("layer", {"show": display}, divProps?.className)}
 			ref={rootRef}>
-			<div className='scroll-container'>
-				{layers.history && history.pagesLength > 0 ?
-					<HistoryDisplay key={history.lastPage.page}
-						history={history}
-						close={close}
-						onPageSelect={loadPage}/>
-				: layers.flowchart ?
-					<FlowchartDisplay key={history.lastScene.label}
-						history={history}
-						onSceneSelect={loadScene}/>
-				: null
-				}
-			</div>
+			{layers.history && history.pagesLength > 0 ?
+				<HistoryDisplay key={history.lastPage.page}
+					history={history}
+					close={close}
+					onPageSelect={loadPage}/>
+			: layers.flowchart ?
+				<FlowchartDisplay key={history.lastScene.label}
+					history={history}
+					onSceneSelect={loadScene}/>
+			: null
+			}
 
 			<FixedFooter>
 				{(layers.history || layers.flowchart) && <>
@@ -139,8 +137,8 @@ const HistoryDisplay = ({
 	}
 
 	return (
-		<div id="history" ref={containerRef} onScroll={onScroll}>
-			<div className="text-container">
+		<div id="history" className="scroll-container" ref={containerRef} onScroll={onScroll}>
+			<div className="text-container" style={{ minHeight: "calc(100% + 2px)"}}>
 				{pagesArray.map((page, i) =>
 					<PageElement key={i} history={history} content={page}
 						onLoad={() => handlePageClick(i)}
@@ -169,7 +167,7 @@ const FlowchartDisplay = ({ history, onSceneSelect }: FlowchartDisplayProps) => 
 	}, [history, onSceneSelect])
 
 	return (
-		<div id="flowchart">
+		<div id="flowchart" className="scroll-container">
 			<div className="flowchart-container">
 				<Flowchart
 					history={history}

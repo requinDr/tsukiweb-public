@@ -19,7 +19,7 @@
 		overflow-y: scroll;
 		scrollbar-gutter: stable both-edges;
 		width: inherit;
-		display: grid;
+		height: 100%;
 	}
 
 	#history {
@@ -28,7 +28,6 @@
 		margin-inline: auto;
 		@extend %layer-text;
 		user-select: auto;
-		width: inherit;
 
 		.load {
 			display: flex;
