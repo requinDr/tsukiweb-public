@@ -181,8 +181,7 @@ const Window = () => {
 					onRewind={remountScript} />
 
 				<SavesLayer
-					display={layers.save || layers.load}
-					mode={layers.save ? 'save' : 'load'}
+					mode={layers.save ? 'save' : layers.load ? 'load' : null}
 					back={(load)=> {
 						layers.back()
 						if (load) remountScript()

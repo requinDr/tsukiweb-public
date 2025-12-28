@@ -22,7 +22,7 @@ export function isThScene(label: string): label is TsukihimeSceneName {
 export function isPDScene(label: string): label is PlusDiscSceneName {
 	return ["pd_alliance", "pd_experiment", "pd_geccha", "pd_geccha2"].includes(label)
 }
-export function isScene(label: LabelName): label is SceneName {
+export function isScene(label: string): label is SceneName {
 	return isThScene(label) || isPDScene(label)
 }
 
