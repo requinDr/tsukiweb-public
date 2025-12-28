@@ -41,7 +41,7 @@
 		display: flex;
 		align-items: center;
 		background-image: var(--menu-bg);
-		mask-image: linear-gradient(to right, transparent, black 2em);
+		mask-image: linear-gradient(to right, transparent, black 4em), linear-gradient(to right, transparent, black 2em);
 
 		menu {
 			height: 100%;
@@ -54,7 +54,7 @@
 		}
 
 		.layer-btns, .action-btns {
-			max-width: 200px;
+			max-width: 220px;
 
 			button {
 				font-size: clamp(1.1em, 3.6vh, 1.5em);

@@ -20,31 +20,31 @@ const SpriteGraphics = ({pos, image, transition, rocket}: SpriteGraphicsProps)=>
 	if (prevImg == undefined) // not loaded or no change
 		return (
 			<GraphicsElement
-					key={currImg}
-					pos={pos}
-					image={currImg}
-					rocket={rocket}
-				/>
-		)
-	return <>
-		<GraphicsElement
-				key={prevImg}
-				pos={pos}
-				image={prevImg}
-				fadeOut={effect}
-				fadeTime={fadeTime}
-				toImg={currImg}
-				onAnimationEnd={onAnimationEnd}
-			/>
-		<GraphicsElement
 				key={currImg}
 				pos={pos}
 				image={currImg}
-				fadeIn={effect}
-				fadeTime={fadeTime}
-				onAnimationEnd={onAnimationEnd}
 				rocket={rocket}
 			/>
+		)
+	return <>
+		<GraphicsElement
+			key={prevImg}
+			pos={pos}
+			image={prevImg}
+			fadeOut={effect}
+			fadeTime={fadeTime}
+			toImg={currImg}
+			onAnimationEnd={onAnimationEnd}
+		/>
+		<GraphicsElement
+			key={currImg}
+			pos={pos}
+			image={currImg}
+			fadeIn={effect}
+			fadeTime={fadeTime}
+			onAnimationEnd={onAnimationEnd}
+			rocket={rocket}
+		/>
 	</>
 }
 
