@@ -13,7 +13,7 @@ const ConfigModal = ({modal, setModal}: Props) => {
 	return (
 		<Modal
 			show={modal.show} 
-			setShow={close}
+			onRequestClose={close}
 			className="config-modal"
 		>
 			<div className="modal-content">
@@ -24,7 +24,8 @@ const ConfigModal = ({modal, setModal}: Props) => {
 				onClick={close}
 				className="close-btn"
 				audio={audio}
-				clickSound="close">
+				clickSound="close"
+				nav-auto={1}>
 				{strings.close}
 			</Button>
 		</Modal>

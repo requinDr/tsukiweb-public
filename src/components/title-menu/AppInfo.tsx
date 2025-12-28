@@ -54,7 +54,7 @@ const ModalInfo = ({show, setShow}: ModalInfoProps) => {
 	return (
 		<Modal
 			show={show}
-			setShow={setShow}
+			onRequestClose={() => setShow(false)}
 			className="app-info-modale"
 		>
 			<div className='title-modal'>

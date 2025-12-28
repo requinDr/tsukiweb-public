@@ -4,12 +4,13 @@ import { textFileUserDownload, requestJSONs, twoDigits } from "@tsukiweb-common/
 import { savesManager, SaveState } from "./savestates"
 import { APP_VERSION, FULLSAVE_EXT } from "./constants"
 import { toast } from "react-toastify"
+import { TrackSourceId } from "translation/lang"
 
 class Settings extends SettingsBase {
   
   language: string = "en-mm"
 
-  trackSource: string = 'tsukibako'
+  trackSource: TrackSourceId = 'tsukibako'
   titleMusic: string = '"*8"'
   
   eventImages: Array<string> = new Array()

@@ -70,7 +70,7 @@ const ModalLanguageSelection = ({show, setShow}: Props) => {
 	return (
 		<Modal
 			show={show}
-			setShow={setShow}
+			onRequestClose={() => setShow(false)}
 			className="translation-switch-modale"
 		>
 			<div className="content">

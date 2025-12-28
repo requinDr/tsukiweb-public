@@ -19,6 +19,7 @@ import { warnHScene } from "utils/window-actions"
 let flagSupportChecked = false
 
 const ConfigAdvancedTab = () => {
+	useLanguageRefresh()
 	const [showLanguage, setShowLanguage] = useState<boolean>(false)
 	const [modal, setModal] = useState<{show: boolean, content: ReactNode}>({show: false, content: undefined})
 
