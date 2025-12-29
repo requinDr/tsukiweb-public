@@ -13,7 +13,7 @@ import { useKeyMap } from '@tsukiweb-common/input/KeyMap';
 import { useSetter as useReset } from '@tsukiweb-common/hooks/useSetter';
 import { useDOMEvent } from '@tsukiweb-common/hooks/useDOMEvent';
 import { ScriptPlayer } from 'script/ScriptPlayer';
-import history from 'utils/history';
+import history from 'script/history';
 import GraphicsLayer from 'layers/GraphicsLayer';
 import TextLayer from 'layers/TextLayer';
 import ChoicesLayer from 'layers/ChoicesLayer';

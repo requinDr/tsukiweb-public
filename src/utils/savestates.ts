@@ -1,5 +1,5 @@
 import { settings, viewedScene } from "./settings"
-import history, { PageEntry, SceneEntry } from './history';
+import history, { PageEntry, SceneEntry } from '../script/history';
 import { APP_VERSION, SAVE_EXT } from "./constants";
 import { LabelName, RouteDayName, RouteName } from "../types";
 import { SCREEN, displayMode } from "./display";

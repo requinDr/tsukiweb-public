@@ -5,7 +5,7 @@ import { moveBg } from "./graphics";
 import { inGameKeyMap, menuKeyMap } from "./keybind";
 import { QUICK_SAVE_ID, savesManager } from "./savestates";
 import { settings } from "./settings";
-import history, { History } from './history';
+import history, { History } from '../script/history';
 import { toast } from "react-toastify";
 import { strings } from "translation/lang";
 import { FaSave } from "react-icons/fa";

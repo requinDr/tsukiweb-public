@@ -3,7 +3,7 @@ import { savePhaseTexts, SaveState } from "../../utils/savestates"
 import { getSceneTitle } from "../../script/utils"
 import classNames from "classnames"
 import { noBb } from "@tsukiweb-common/utils/Bbcode"
-import { PageEntry } from "utils/history"
+import { PageEntry } from "script/history"
 import { TsukihimeSceneName } from "types"
 
 const SaveSummary = memo(({saveState}: {saveState: SaveState})=> {

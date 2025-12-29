@@ -9,7 +9,7 @@ import { modalPromptService } from "@tsukiweb-common/ui-core/components/ModalPro
 import classNames from "classnames"
 import { useVirtualizer } from "@tanstack/react-virtual"
 import { toast } from "react-toastify"
-import history from "utils/history"
+import history from "script/history"
 import { requestFilesFromUser } from "@tsukiweb-common/utils/utils"
 import { SAVE_EXT } from "utils/constants"
 import { computeSaveHash, exportGameData, settings } from "utils/settings"

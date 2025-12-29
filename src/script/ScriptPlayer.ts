@@ -8,7 +8,7 @@ import { Graphics, StrVarName, NumVarName, VarName, RecursivePartial } from "@ts
 import { getGameVariable, setGameVariable } from "utils/variables";
 import { deepAssign, TSForceType } from "@tsukiweb-common/utils/utils";
 import { CommandRecord } from "@tsukiweb-common/script/utils";
-import { History } from "utils/history";
+import { History } from "./history";
 
 //#endregion ###################################################################
 //#region                             TYPES

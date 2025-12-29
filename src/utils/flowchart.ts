@@ -6,7 +6,7 @@ import { Flowchart, FlowchartNode, FlowchartNodeAttrs } from "@tsukiweb-common/u
 import SpritesheetMetadata from "@assets/flowchart/spritesheet_metadata.json"
 import { spriteSheetImgPath } from "translation/assets"
 import { settings } from "./settings"
-import { History } from "./history"
+import { History } from "../script/history"
 
 //##############################################################################
 //#region                       CONSTANTS & TYPES

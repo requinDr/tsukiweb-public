@@ -1,6 +1,6 @@
 import { memo, RefObject, useEffect, useRef, useState } from "react"
 import { Choice, LabelName } from "../types"
-import history from "../utils/history"
+import history from "../script/history"
 import { Bbcode } from "@tsukiweb-common/utils/Bbcode"
 import { ScriptPlayer } from "script/ScriptPlayer"
 import { preprocessText } from "@tsukiweb-common/utils/utils"

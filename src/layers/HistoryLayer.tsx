@@ -1,6 +1,6 @@
 import { memo, useCallback, useEffect, useLayoutEffect, useRef } from 'react';
 import { InGameLayersHandler } from '../utils/display';
-import { History } from '../utils/history';
+import { History } from '../script/history';
 import { strings } from '../translation/lang';
 import PageElement from '../components/molecules/PageElement';
 import classNames from 'classnames';

@@ -3,7 +3,7 @@ import { Fragment, memo } from "react"
 import { COLUMN_WIDTH, DY, SCENE_HEIGHT, SCENE_RECT_ATTRS, SCENE_WIDTH, TsukihimeFlowchart } from "utils/flowchart"
 import { TsukihimeSceneName } from "types"
 import { SceneRenderer } from "./SceneRenderer"
-import { History } from "utils/history"
+import { History } from "script/history"
 import ConnectionPath from "./ConnectionPath"
 
 

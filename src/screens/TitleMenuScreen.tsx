@@ -11,7 +11,7 @@ import AppInfo from '../components/title-menu/AppInfo'
 import TranslationSwitch from '../components/title-menu/TranslationSwitch'
 import { useObserved } from '@tsukiweb-common/utils/Observer'
 import { useNavigate } from "react-router"
-import history from 'utils/history'
+import history from 'script/history'
 import { TitleMenuButton } from '@tsukiweb-common/ui-core'
 import { useScreenAutoNavigate, useLanguageRefresh } from 'hooks'
 import useEclipseUnlocked from 'hooks/useEclipseUnlocked'

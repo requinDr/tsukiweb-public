@@ -1,10 +1,10 @@
 
 import { Choice } from "../types"
-import { APP_VERSION, HISTORY_MAX_PAGES } from "./constants"
-import { SaveState } from "./savestates"
+import { APP_VERSION, HISTORY_MAX_PAGES } from "../utils/constants"
+import { SaveState } from "../utils/savestates"
 import { isScene } from "../script/utils"
 import { ScriptPlayer } from "script/ScriptPlayer"
-import { settings } from "./settings"
+import { settings } from "../utils/settings"
 import { jsonDiff } from "@tsukiweb-common/utils/utils"
 import { HistoryBase } from "@tsukiweb-common/script/history"
 import { PartialJSON, WithRequired } from "@tsukiweb-common/types"
