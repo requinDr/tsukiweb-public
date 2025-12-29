@@ -146,10 +146,6 @@ const MenuLayer = ({display, script, show, layers, qSave, qLoad}: Props) => {
 export default MenuLayer
 
 
-/**
- * TODO
- * - Go to next scene
- */
 type ActionsButtonsProps = {
 	script: ScriptPlayer
 	show?: Partial<{

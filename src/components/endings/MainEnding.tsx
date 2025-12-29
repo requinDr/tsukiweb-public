@@ -27,8 +27,8 @@ const MainEnding = ({unlocked, ending, continueScript = false, ...props}: Props)
 			onClick={startScene}
 			tabIndex={unlocked ? 0 : -1}
 			role="button"
-			onKeyDown={(e)=> e.key === "Enter" && startScene()}
-			onContextMenu={(e) => {e.preventDefault()}}
+			onKeyDown={e => e.key === "Enter" && startScene()}
+			onContextMenu={e => e.preventDefault()}
 		>
 			{unlocked && image ?
 				<img

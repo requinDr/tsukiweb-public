@@ -226,11 +226,10 @@ export async function continueGame() {
  * @param continueScript if true, the script will continue to the next scene. Default is true.
  * @param viewedOnly if true, the scene will only be played if it has been viewed by the player. Default is true.
  */
-export function playScene(scene: LabelName, {
-                            continueScript = true,
-                            viewedOnly = true
-                          } = {}) {
+export function playScene(scene: LabelName,
+  { continueScript = true, viewedOnly = true }) {
   if (viewedOnly && !viewedScene(scene) && !settings.unlockEverything) {
+    console.warn(`Can't play "${scene}" because it has not been viewed yet.`)
     return
   }
   history.clear()

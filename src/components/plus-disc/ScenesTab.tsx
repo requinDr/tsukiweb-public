@@ -7,7 +7,7 @@ import { strings } from "translation/lang"
 const ScenesTab = () => {
 
 	const play = (id: PlusDiscSceneName)=> {
-		playScene(id, {viewedOnly: false, continueScript: false})
+		playScene(id, {viewedOnly: false, continueScript: true})
 	}
 
 	return (

@@ -54,6 +54,7 @@
 			height: 109px;
 			border-bottom: 1px solid transparent;
 			font-size: 1.1em;
+			isolation: isolate;
 
 			&:not(:last-of-type) {
 				border-color: var(--separator);
@@ -108,18 +109,20 @@
 
 			&.active::after {
 				box-shadow: var(--selected-shadow);
+				z-index: 1;
 			}
 
 			&[quick-save]::before {
 				position: absolute;
-				bottom: 4px;
-				right: 0;
+				bottom: 0;
+				right: -4px;
 				content: "Quick Save";
 				font-size: 0.8em;
 				font-style: italic;
 				color: #dddddd;
 				padding: 0.1em 0.5em 0.1em 4em;
 				background-image: linear-gradient(45deg, transparent 20%, #3300ff);
+				z-index: 1;
 			}
 
 			.game-pd {
