@@ -1,4 +1,4 @@
-import { memo, useCallback, CSSProperties } from "react"
+import { CSSProperties, memo, useMemo } from "react"
 import GraphicElement from "@tsukiweb-common/graphics/GraphicElement";
 import { DivProps, RocketProps, SpritePos } from "@tsukiweb-common/types"
 import { ResolutionId } from "@tsukiweb-common/utils/lang";
@@ -35,16 +35,15 @@ const GraphicsElement = ({
 	toImg=undefined,
 	onAnimationEnd=undefined,
 	rocket,
-	...props} : Props)=> {
+	style,
+	...rest}: Props)=> {
+	const getUrl = (img: string) => imageSrc(img, resolution)
 
 //____________________________________image_____________________________________
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-	const imageProps = useCallback(()=> {
-//.............. no image ..............
-		if (!image) {
-			return pos == 'bg' ? {} : undefined
-		}
-//............ rocket image ............
+	const imageProps = useMemo(()=> {
+		if (!image) return pos === 'bg' ? {} : null
+
 		if (rocket) {
 			return {
 				className: 'rocket',
@@ -58,29 +57,31 @@ const GraphicsElement = ({
 				onAnimationEnd: rocket.onAnimationEnd
 			}
 		}
-//............ static image ............
-		else if (fadeTime == 0) {
-			return {}
+
+		// static image
+		if (fadeTime === 0) return {}
+
+		// (dis)appearing image
+		const fadeAttr =
+			fadeIn ? { 'fade-in': fadeIn } :
+			fadeOut ? { 'fade-out': fadeOut } :
+			{}
+		return {
+			...fadeAttr,
+			style: {
+				'--transition-time': `${fadeTime}ms`
+			},
+			onAnimationEnd
 		}
-//........ (dis)appearing image ........
-		else {
-			return {
-				...(fadeIn ? {'fade-in' : fadeIn}
-					: fadeOut ? {'fade-out': fadeOut} : {}),
-					style: {
-						'--transition-time': `${fadeTime}ms`
-					},
-				onAnimationEnd
-			}
-		}
-	}, [pos, image, fadeTime, fadeIn, fadeOut, rocket])()
+	}, [image, pos, rocket, fadeTime, fadeIn, fadeOut, onAnimationEnd])
+
 
 //________________________________crossfade mask________________________________
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 	// add an opaque background to the crossfade-disappearing image to prevent
 	// the background from being visible by transparency
-	const maskProps = useCallback(()=> {
-		if (pos != 'bg' && fadeTime > 0 && fadeOut == 'crossfade'
+	const maskProps = useMemo(()=> {
+		if (pos !== 'bg' && fadeTime > 0 && fadeOut === 'crossfade'
 				&& image && toImg && isImage(image) && isImage(toImg)) {
 			return {
 				'for-mask': "",
@@ -90,17 +91,12 @@ const GraphicsElement = ({
 				} as CSSProperties
 			}
 		}
-
-	}, [pos, image, toImg, fadeOut, fadeTime])()
-
-	const getUrl = useCallback((img: string) => imageSrc(img, resolution), [resolution])
-
-	const {style: baseStyle = {}, ...baseAttrs} = (imageProps || {}) as DivProps
-	const {style: insertStyle = {}, ...insertAttrs} = props
+		return null
+	}, [pos, fadeTime, fadeOut, image, toImg])
 
 	return (
 		<>
-			{maskProps != undefined &&
+			{maskProps &&
 				<GraphicElement
 					pos={pos}
 					image={image}
@@ -110,16 +106,16 @@ const GraphicsElement = ({
 				/>
 			}
 
-			{imageProps != undefined &&
+			{imageProps &&
 				<GraphicElement
 					pos={pos}
 					image={image}
 					getUrl={getUrl}
 					blur={cg.shouldBlur}
 					props={{
-						style: {...baseStyle, ...insertStyle},
-						...baseAttrs,
-						...insertAttrs
+						...rest,
+						...imageProps,
+						style: { ...imageProps.style, ...style }
 					}}
 				/>
 			}
