@@ -2,7 +2,7 @@ import { memo, useCallback, useEffect, useLayoutEffect, useRef } from 'react';
 import { InGameLayersHandler } from '../utils/display';
 import { History } from '../script/history';
 import { strings } from '../translation/lang';
-import PageElement from '../components/molecules/PageElement';
+import PageElement from '../components/history/PageElement';
 import classNames from 'classnames';
 import { Button, FixedFooter } from '@tsukiweb-common/ui-core';
 import Flowchart from 'components/flowchart/Flowchart';
@@ -22,7 +22,7 @@ type Props = {
 const HistoryLayer = ({ display, history, onRewind, layers, show, divProps }: Props) => {
 	const rootRef = useRef<HTMLDivElement>(null)
 
-	const close = useCallback(()=> {
+	const handleClose = useCallback(()=> {
 		(document.activeElement as HTMLElement|null)?.blur()
 		layers.back()
 	}, [])
@@ -33,13 +33,13 @@ const HistoryLayer = ({ display, history, onRewind, layers, show, divProps }: Pr
 
 	const loadPage = useCallback((index: number)=> {
 		history.onPageLoad(index)
-		close()
+		handleClose()
 		onRewind()
 	}, [])
 
 	const loadScene = useCallback((label: LabelName)=> {
 		history.onSceneLoad(label)
-		close()
+		handleClose()
 		onRewind()
 	}, [])
 	
@@ -50,14 +50,16 @@ const HistoryLayer = ({ display, history, onRewind, layers, show, divProps }: Pr
 			className={classNames("layer", {"show": display}, divProps?.className)}
 			ref={rootRef}>
 			{layers.history && history.pagesLength > 0 ?
-				<HistoryDisplay key={history.lastPage.page}
+				<HistoryTab key={history.lastPage.page}
 					history={history}
-					close={close}
-					onPageSelect={loadPage}/>
+					close={handleClose}
+					onPageSelect={loadPage}
+				/>
 			: layers.flowchart ?
-				<FlowchartDisplay key={history.lastScene.label}
+				<FlowchartTab key={history.lastScene.label}
 					history={history}
-					onSceneSelect={loadScene}/>
+					onSceneSelect={loadScene}
+				/>
 			: null
 			}
 
@@ -65,30 +67,30 @@ const HistoryLayer = ({ display, history, onRewind, layers, show, divProps }: Pr
 				{(layers.history || layers.flowchart) && <>
 					<Button
 						variant="elevation"
-						onClick={close}
+						onClick={handleClose}
 						nav-x={-2} nav-y={10000} // 10k prevents overlapping with flowchart nodes
 					>
 						{strings.close}
 					</Button>
 					{show?.flowchart && <>
-					<Button
-						variant="corner"
-						onClick={() => setLayer('history')}
-						active={layers.history}
-						style={{ marginLeft: '1em' }}
-						nav-x={-1} nav-y={10000}
-					>
-						{strings.menu.history}
-					</Button>
-					<Button
-						variant="corner"
-						onClick={() => setLayer('flowchart')}
-						active={layers.flowchart}
-						style={{ marginLeft: '.5em' }}
-						nav-x={0} nav-y={10000}
-					>
-						{strings.extra.scenes}
-					</Button>
+						<Button
+							variant="corner"
+							onClick={() => setLayer('history')}
+							active={layers.history}
+							style={{ marginLeft: '1em' }}
+							nav-x={-1} nav-y={10000}
+						>
+							{strings.menu.history}
+						</Button>
+						<Button
+							variant="corner"
+							onClick={() => setLayer('flowchart')}
+							active={layers.flowchart}
+							style={{ marginLeft: '.5em' }}
+							nav-x={0} nav-y={10000}
+						>
+							{strings.extra.scenes}
+						</Button>
 					</>}
 				</>}
 			</FixedFooter>
@@ -100,16 +102,16 @@ const HistoryLayer = ({ display, history, onRewind, layers, show, divProps }: Pr
 export default memo(HistoryLayer)
 
 
-type HistoryDisplayProps = {
+type HistoryTabProps = {
 	history: History
 	close: () => void
 	onPageSelect: (pageIndex: number) => void
 }
-const HistoryDisplay = ({
+const HistoryTab = ({
 		history,
 		close,
 		onPageSelect
-	}: HistoryDisplayProps) => {
+	}: HistoryTabProps) => {
 	const containerRef = useRef<HTMLDivElement>(null)
 	const pagesArray = Array.from(history.allPages)
 
@@ -150,11 +152,11 @@ const HistoryDisplay = ({
 	)
 }
 
-type FlowchartDisplayProps = {
+type FlowchartTabProps = {
 	history: History
 	onSceneSelect: (label: LabelName)=>void
 }
-const FlowchartDisplay = ({ history, onSceneSelect }: FlowchartDisplayProps) => {
+const FlowchartTab = ({ history, onSceneSelect }: FlowchartTabProps) => {
 	useLayoutEffect(()=> {
 		const activeNode = document.querySelector(`.fc-scene.active`)
 		if (activeNode) {
