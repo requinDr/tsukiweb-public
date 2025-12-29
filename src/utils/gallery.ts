@@ -1,6 +1,6 @@
-import { CharId, GalleryImg } from "types"
+import { GalleryImg } from "types"
 import { settings } from "./settings"
-import { GALLERY_IMAGES, GALLERY_IMAGES_PD } from "./gallery-data"
+import { GALLERY_IMAGES } from "./gallery-data"
 
 
 function getImg(imgName: string): GalleryImg {
@@ -15,7 +15,7 @@ function shouldBlur(image: string): boolean {
 	return (getImg(image)?.sensitive ?? false) && settings.blurThumbnails
 }
 
-function getByGroup(group: CharId): string[] {
+function getByGroup(group: GalleryImg["group"]): string[] {
   return Object.entries(GALLERY_IMAGES)
     .filter(([key, img]) => img.group === group)
     .map(([key]) => key);
@@ -45,16 +45,3 @@ const cg = {
 	isInGallery,
 }
 export default cg
-
-
-// PLUS-DISC
-function getImgPd(imgName: string): GalleryImg {
-	return GALLERY_IMAGES_PD[imgName]
-}
-function shouldBlurPd(image: string): boolean {
-	return (getImgPd(image)?.sensitive ?? false) && settings.blurThumbnails
-}
-export const cgPd = {
-	getImg: getImgPd,
-	shouldBlur: shouldBlurPd,
-}
