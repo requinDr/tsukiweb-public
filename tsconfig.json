@@ -23,5 +23,5 @@
       "@assets/*": ["./assets/*"]
     }
   },
-  "include": ["src", "tsukiweb-common/global.d.ts"],
+  "include": ["src"],
 }
