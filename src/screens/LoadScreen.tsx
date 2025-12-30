@@ -3,8 +3,7 @@ import '@styles/saves.scss'
 import SavesLayout from "../components/save/SavesLayout"
 import { SCREEN, displayMode } from "../utils/display"
 import { useEffect } from "react"
-import { useScreenAutoNavigate, useLanguageRefresh } from "hooks"
-import useKeyArrows from "hooks/useKeyArrows"
+import { useScreenAutoNavigate, useLanguageRefresh, useKeyArrows } from "hooks"
 
 
 const LoadScreen = () => {

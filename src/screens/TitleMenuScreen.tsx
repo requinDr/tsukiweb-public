@@ -13,12 +13,10 @@ import { useObserved } from '@tsukiweb-common/utils/Observer'
 import { useNavigate } from "react-router"
 import history from 'script/history'
 import { TitleMenuButton } from '@tsukiweb-common/ui-core'
-import { useScreenAutoNavigate, useLanguageRefresh } from 'hooks'
-import useEclipseUnlocked from 'hooks/useEclipseUnlocked'
+import { useScreenAutoNavigate, useLanguageRefresh, useKeyArrows, useEclipseUnlocked } from 'hooks'
 import classNames from "classnames"
 import { audio } from "utils/audio"
 import christmas_hat from '@assets/icons/christmas_hat.svg'
-import useKeyArrows from "hooks/useKeyArrows"
 
 
 const TitleMenuScreen = () => {
@@ -81,7 +79,7 @@ const TitleMenuScreen = () => {
 					</TitleMenuButton>
 
 					<TitleMenuButton audio={audio} onClick={() => navigate(SCREEN.GALLERY)} nav-auto={1}
-									 attention={eclipseUnlocked}>
+						attention={eclipseUnlocked}>
 						{strings.title.extra}
 					</TitleMenuButton>
 				</div>

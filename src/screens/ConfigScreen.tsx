@@ -6,7 +6,7 @@ import useQueryParam from '@tsukiweb-common/hooks/useQueryParam'
 import { useEffect } from 'react'
 import { useLanguageRefresh } from 'hooks/useLanguageRefresh'
 import { useScreenAutoNavigate } from 'hooks/useScreenAutoNavigate'
-import useKeyArrows from 'hooks/useKeyArrows'
+import { useKeyArrows } from 'hooks'
 
 const ConfigScreen = () => {
 	useScreenAutoNavigate(SCREEN.CONFIG)

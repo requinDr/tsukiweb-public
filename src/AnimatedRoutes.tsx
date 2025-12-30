@@ -42,7 +42,7 @@ const AnimatedRoutes = () => {
 				<Routes location={location} key={keyPresence}>
 					<Route path="/disclaimer" element={<DisclaimerScreen onAccept={markDisclaimerAsSeen} />} />
 					<Route 
-						path="/" 
+						path="/"
 						element={
 							!hasSeenDisclaimer 
 								? <Navigate to="/disclaimer" replace /> 

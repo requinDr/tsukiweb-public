@@ -4,6 +4,18 @@ import { RouteDayName, RouteName, TsukihimeSceneName } from '../types'
 
 export const APP_VERSION = import.meta.env.VITE_PACKAGE_VERSION
 
+export const SAVE_EXT = "thweb"
+export const FULLSAVE_EXT = "thfull"
+export const HISTORY_MAX_PAGES = 20
+export const APP_INFO = {
+  GITHUB_URL: "https://github.com/requinDr/tsukiweb-public",
+  GITHUB_STARS: "https://img.shields.io/github/stars/requinDr/tsukiweb-public",
+  FEEDBACK_URL: "https://forms.gle/MJorV8oNbnKo22469",
+  REMAKE_URL: "http://typemoon.com/products/tsukihime/",
+  TSUKI_VNDB: "https://vndb.org/v7",
+  PLUS_DISC_VNDB: "https://vndb.org/v49"
+}
+
 export const SCENE_ATTRS: {
   'fc-nodes'?: Record<string, FcNodeAttrs>,
   scenes: Record<TsukihimeSceneName, ({
@@ -18,15 +30,3 @@ export const SCENE_ATTRS: {
     fc?: FcSceneAttrs
   }>
 } = JSON.parse(JSON.stringify(sceneAttrs))
-
-export const SAVE_EXT = "thweb"
-export const FULLSAVE_EXT = "thfull"
-export const HISTORY_MAX_PAGES = 20
-export const APP_INFO = {
-  GITHUB_URL: "https://github.com/requinDr/tsukiweb-public",
-  GITHUB_STARS: "https://img.shields.io/github/stars/requinDr/tsukiweb-public",
-  FEEDBACK_URL: "https://forms.gle/MJorV8oNbnKo22469",
-  REMAKE_URL: "http://typemoon.com/products/tsukihime/",
-  TSUKI_VNDB: "https://vndb.org/v7",
-  PLUS_DISC_VNDB: "https://vndb.org/v49"
-}

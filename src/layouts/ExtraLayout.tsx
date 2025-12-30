@@ -6,9 +6,8 @@ import { displayMode, SCREEN } from "utils/display"
 import { useLocation, useNavigate } from "react-router"
 import { PageTitle, TitleMenuButton } from "@tsukiweb-common/ui-core"
 import { useLanguageRefresh } from "hooks/useLanguageRefresh"
-import useEclipseUnlocked from "hooks/useEclipseUnlocked"
+import { useEclipseUnlocked, useKeyArrows } from "hooks"
 import { audio } from "utils/audio"
-import useKeyArrows from "hooks/useKeyArrows"
 
 const ExtraLayout = ({ children }: PropsWithChildren) => {
 	return (

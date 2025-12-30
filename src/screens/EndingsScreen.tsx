@@ -9,8 +9,7 @@ import MainEnding from 'components/endings/MainEnding'
 import Oshiete from 'components/endings/Oshiete'
 import { noBb } from '@tsukiweb-common/utils/Bbcode'
 import classNames from 'classnames'
-import { useScreenAutoNavigate, useLanguageRefresh } from "hooks"
-import useEclipseUnlocked from "hooks/useEclipseUnlocked"
+import { useScreenAutoNavigate, useLanguageRefresh, useEclipseUnlocked } from "hooks"
 
 
 const EndingsScreen = () => {

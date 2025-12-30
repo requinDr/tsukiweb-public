@@ -7,7 +7,7 @@ import { processScenes } from '../../tsukiweb-common/tools/generate-thumbnails/p
 const INPUT_SCENES = JSON.parse(fs.readFileSync('scenes-graphics.json', 'utf8'))
 const INPUT_IMAGES = '../../public/static/jp/images_thumb/'
 const OUTPUT_THUMBNAILS = '../../public/static/jp/flowchart-spritesheet/'
-const OUTPUT_METADATA = '../../src/assets/flowchart/'
+const OUTPUT_METADATA = '../../src/assets/game/'
 
 async function main() {
 	console.log('--- Starting thumbnail generation ---\n')

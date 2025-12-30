@@ -9,7 +9,5 @@ function keyboardCallback(action: any, evt: KeyboardEvent, ...args: any) {
 	}
 }
 
-const useKeyArrows = () => 
+export const useKeyArrows = () => 
 	useKeyMap(menuKeyMap, keyboardCallback, document, 'keydown', { capture: false })
-
-export default useKeyArrows

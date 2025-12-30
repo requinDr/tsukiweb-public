@@ -2,12 +2,6 @@ import { ViewRatio } from "@tsukiweb-common/constants"
 import { TranslationId } from "@tsukiweb-common/utils/lang"
 import { LangJson } from "translation/lang"
 
-export type Choice = {
-	index: number,
-	str: string,
-	label: LabelName,
-}
-
 export type RouteName = 'aki'|'ark'|'cel'|'his'|'koha'|'others'
 export type RouteDayName<T extends RouteName=RouteName> = 
 	T extends 'others' ? 'pro'|'epi'|'end'|'fin'
@@ -27,6 +21,12 @@ export type FBlockName = `f${number}${''|'a'|'b'|'half'|'_0'}`
 
 export type LabelName = SceneName | FBlockName | `skip${number}${'a'|''}` |
 	'endofplay'
+
+export type Choice = {
+	index: number
+	str: string
+	label: LabelName
+}
 
 export type SettingsType = {
 	// scene settings
