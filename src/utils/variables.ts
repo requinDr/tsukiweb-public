@@ -59,7 +59,7 @@ export function setGameVariable(script: ScriptPlayer, name: NumVarName,
     if (value > 0)
       script.flags.add(name.substring(4))
     else
-      script.flags.delete(name.substring(3))
+      script.flags.delete(name.substring(4))
   } else if (/regard_\w+/.test(name)) {
     // regard
     const char = name.substring(name.indexOf('_')+1)

@@ -28,14 +28,13 @@ const Window = () => {
 	useScreenAutoNavigate(SCREEN.WINDOW)
 	useLanguageRefresh()
 	const rootElmtRef = useRef(null)
-	const [script, remountScript] = useReset(()=>
-		new ScriptPlayer(history, {
-			onFinish(complete) {
-				if (complete)
-					displayMode.screen = SCREEN.TITLE
-			}
+	const [script, remountScript] = useReset(()=> {
+		const script = new ScriptPlayer(history)
+		script.addEventListener('finish', (complete)=> {
+			if (complete) displayMode.screen = SCREEN.TITLE
 		})
-	)
+		return script
+	})
 	const [, onLayersChange] = useReducer(x=>x+1, 0)
 	const [layers, ] = useReset(()=> new InGameLayersHandler({
 		onChange: onLayersChange,
@@ -76,15 +75,15 @@ const Window = () => {
 			return
 		actionsHandler.onScriptChange(script)
 		script.setCommands(audioCommands)
-		script.setBlockStartCallback(warnHScene)
+		script.addEventListener('blockStart', warnHScene)
 		if (!script.continueScript) {
-			script.setAfterBlockCallback(()=> {
+			script.addEventListener('afterBlock', ()=> {
 				//console.log("scene ended, return to previous page")
 				script.stop()
 				window.history.back()
 			})
 		}
-		script.setAutoPlayStopCallback(onAutoPlayStop)
+		script.addEventListener('autoPlayStop', onAutoPlayStop)
 		if (!script.currentBlock) {
 			//console.debug("starting script")
 			script.start()

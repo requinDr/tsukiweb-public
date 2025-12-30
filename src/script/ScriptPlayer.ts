@@ -1,4 +1,4 @@
-import { ScriptPlayerBase, ScriptPlayerCallbacks } from "@tsukiweb-common/script/ScriptPlayer"
+import { ScriptPlayerBase } from "@tsukiweb-common/script/ScriptPlayer"
 import { LabelName, RouteDayName, RouteName } from "types";
 import { fetchBlockLines, isScene, nextLabel } from "script/utils";
 import { settings } from "utils/settings";
@@ -7,7 +7,7 @@ import { closeBB } from "@tsukiweb-common/utils/Bbcode";
 import { Graphics, StrVarName, NumVarName, VarName, RecursivePartial } from "@tsukiweb-common/types";
 import { getGameVariable, setGameVariable } from "utils/variables";
 import { deepAssign, TSForceType } from "@tsukiweb-common/utils/utils";
-import { CommandRecord } from "@tsukiweb-common/script/utils";
+import { CommandRecord, VarType } from "@tsukiweb-common/script/utils";
 import { History } from "./history";
 
 //#endregion ###################################################################
@@ -53,8 +53,6 @@ type PageBaseContent = {
 type BlockContent = {
     regard: Regard
 }
-
-type Callbacks = ScriptPlayerCallbacks<LabelName>
 
 //#endregion ###################################################################
 //#region                         BASE COMMANDS
@@ -155,17 +153,21 @@ export class ScriptPlayer extends ScriptPlayerBase<LabelName, PageBaseContent,
 //#region                          CONSTRUCTOR
 //##############################################################################
 
-    constructor(history: History, callbacks?: Partial<Callbacks>) {
+    constructor(history: History) {
         const initContext = history.getPageContext()
 
         if (initContext.label == undefined)
             throw Error("unspecified label in context")
         
-        super(history, initContext, callbacks)
+        super(history, initContext)
         deepAssign(this._regard, initContext.regard ?? {})
         deepAssign(this._phase, initContext.phase ?? {})
         this._textBox = initContext.textBox ?? "nvl"
         this.setCommands(commands)
+        this.addEventListener('afterBlock', (label)=> {
+            if (isScene(label) && !settings.completedScenes.includes(label))
+                settings.completedScenes.push(label)
+        })
     }
 
 //#endregion ###################################################################
@@ -214,26 +216,15 @@ export class ScriptPlayer extends ScriptPlayerBase<LabelName, PageBaseContent,
 //#region                      INHERITED ABSTRACTS
 //##############################################################################
 
-    override writeVariable(name: StrVarName, value: string): void
-    override writeVariable(name: NumVarName, value: number): void
-    override writeVariable(name: VarName, value: string | number): void {
+    override writeVariable<T extends VarName>(name: T, value: VarType<T>) {
         setGameVariable(this, name as NumVarName, value as number)
     }
-    override readVariable(name: StrVarName): string
-    override readVariable(name: NumVarName): number
-    override readVariable(name: VarName): string | number {
-        return getGameVariable(this, name as NumVarName)
+    override readVariable<T extends VarName>(name: T): VarType<T> {
+        return getGameVariable(this, name as NumVarName) as VarType<T>
     }
 
     override fetchLines(label: LabelName): Promise<string[]> {
         return fetchBlockLines(label)
-    }
-
-    protected override async afterBlock(label: LabelName): Promise<void> {
-        if (isScene(label) && !settings.completedScenes.includes(label)) {
-            settings.completedScenes.push(label)
-        }
-        await super.afterBlock(label)
     }
     
     protected override nextLabel(label: LabelName): LabelName | null {

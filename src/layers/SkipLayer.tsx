@@ -3,12 +3,12 @@ import { strings } from "../translation/lang"
 import { bb, noBb } from "@tsukiweb-common/utils/Bbcode"
 import GraphicsGroup from "components/molecules/GraphicsGroup"
 import sceneAttrs from '@assets/game/scene_attrs.json'
-import { TsukihimeSceneName } from "types"
+import { LabelName, TsukihimeSceneName } from "types"
 import { Button } from "@tsukiweb-common/ui-core"
 import { getSceneTitle, isThScene } from "script/utils"
 import * as m from "motion/react-m"
 import { ScriptPlayer } from "script/ScriptPlayer"
-import { settings } from "utils/settings"
+import { settings, viewedScene } from "utils/settings"
 import { History } from "script/history"
 import cg from "utils/gallery"
 import { audio } from "utils/audio"
@@ -42,17 +42,16 @@ const SkipLayer = ({script, history, layers}: Props) => {
 	const onFinish = useRef<VoidFunction>(undefined)
 
 	useEffect(()=> {
-		script.setBeforeBlockCallback((label, initPage)=> {
-			if (isThScene(label) && initPage == 0 && settings.completedScenes.includes(label)) {
-				return new Promise<void>((resolve)=> {
-					setScene(label)
-					onFinish.current = resolve
-				})
+		const ref = script.addEventListener('beforeBlock',
+			(label, initPage)=> {
+				if (isThScene(label) && initPage == 0 && settings.enableSceneSkip && viewedScene(label)) {
+					return new Promise<void>((resolve)=> {
+						setScene(label)
+						onFinish.current = resolve
+					})
 			}
 		})
-		return ()=> {
-			script.setBeforeBlockCallback(undefined)
-		}
+		return script.removeEventListener.bind(script, 'beforeBlock', ref) as VoidFunction
 	}, [script])
 	
 	const onClick = useCallback((e: React.MouseEvent<HTMLButtonElement>)=> {

@@ -61,15 +61,13 @@ export function warnHScene(label?: LabelName) {
 	}
 }
 
-export function onAutoPlayStop(ffw: boolean) {
-	if (!ffw) {
-		toast(strings.game['toast-autoplay-stop'], {
-			autoClose: 600,
-			toastId: 'ap-stop',
-			hideProgressBar: true,
-			icon: () => MdPlayArrow({}),
-		})
-	}
+export function onAutoPlayStop() {
+	toast(strings.game['toast-autoplay-stop'], {
+		autoClose: 600,
+		toastId: 'ap-stop',
+		hideProgressBar: true,
+		icon: () => MdPlayArrow({}),
+	})
 }
 
 
