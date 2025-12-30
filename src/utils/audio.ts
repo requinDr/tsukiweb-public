@@ -6,7 +6,7 @@ import { AudioManager } from "@tsukiweb-common/audio/AudioManager"
 import { asyncDelay } from "@tsukiweb-common/utils/timer"
 import { ScriptPlayer } from "script/ScriptPlayer"
 import { splitFirst } from "@tsukiweb-common/utils/utils"
-import { calcGain } from "@tsukiweb-common/utils/audio"
+import { calcGain } from "@tsukiweb-common/audio/utils"
 import { isLanguageLoaded, waitLanguageLoad } from "translation/langSelection"
 
 function getUrl(id: string): string {
