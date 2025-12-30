@@ -74,7 +74,7 @@ export type SettingsType = {
 
 export type GalleryImg = {
 	name: string,
-	group?: CharId,
+	group?: CharId | "pd",
 	sensitive?: boolean,
 	altOf?: string,
 	source?: "unused" | "half-moon"

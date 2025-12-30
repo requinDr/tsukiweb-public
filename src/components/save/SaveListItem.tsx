@@ -1,7 +1,7 @@
 import classNames from "classnames"
 import { getLocale } from "../../translation/lang"
 import { QUICK_SAVE_ID, SaveState } from "../../utils/savestates"
-import GraphicsGroup from "../molecules/GraphicsGroup"
+import GraphicsGroup from "@tsukiweb-common/graphics/GraphicsGroup"
 import SaveSummary from "./SaveSummary"
 import { jsonMerge } from "@tsukiweb-common/utils/utils"
 import { isPDScene } from "script/utils"

@@ -1,12 +1,13 @@
 import { memo, useEffect, useRef, useState, CSSProperties, useMemo } from "react";
-import SpriteGraphics from "../components/molecules/SpriteGraphics";
-import BackgroundGraphics from "../components/molecules/BackgroundGraphics";
-import ForegroundGraphics from "../components/molecules/ForegroundGraphics";
+import SpriteGraphics from "@tsukiweb-common/graphics/SpriteGraphics";
+import BackgroundGraphics from "@tsukiweb-common/graphics/BackgroundGraphics";
+import ForegroundGraphics from "@tsukiweb-common/graphics/ForegroundGraphics";
 import { useObserved } from "@tsukiweb-common/utils/Observer";
 import classNames from "classnames";
 import { ScriptPlayer } from "script/ScriptPlayer";
 import { DivProps, GraphicsTransition, Quake, RocketProps } from "@tsukiweb-common/types";
 import { processImageCmd, processMonocro, processQuake, processRocket } from "utils/graphics";
+import { displayMode } from "utils/display";
 
 
 type Props = {
@@ -21,6 +22,7 @@ const GraphicsLayer = memo(function({
 		onTransitionEnd,
 		...props }: Props) {
 
+	const [bgAlign] = useObserved(displayMode, 'bgAlignment')
 	const [quake, setQuake] = useState<Quake|undefined>(undefined)
 	const [transition, setTransition] = useState<GraphicsTransition|undefined>(undefined)
 	const [monoChrome] = useObserved(script.graphics, 'monochrome')
@@ -73,7 +75,7 @@ const GraphicsLayer = memo(function({
 			style={style.current}
 			onAnimationEnd={quake?.onFinish}
 		>
-			<BackgroundGraphics image={graphics.bg}/>
+			<BackgroundGraphics image={graphics.bg} bgAlign={bgAlign} />
 			<SpriteGraphics
 				image={graphics.l}
 				transition={transition}
@@ -92,7 +94,7 @@ const GraphicsLayer = memo(function({
 				pos='r'
 				rocket={rocket?.layer === 'r' ? rocket : undefined}
 			/>
-			<ForegroundGraphics image={graphics.bg} transition={transition} />
+			<ForegroundGraphics image={graphics.bg} transition={transition} bgAlign={bgAlign} />
 		</div>
 	)
 })

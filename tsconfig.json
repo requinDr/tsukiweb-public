@@ -23,5 +23,5 @@
       "@assets/*": ["./assets/*"]
     }
   },
-  "include": ["src"],
+  "include": ["src", "tsukiweb-common/src/hooks/useGraphicTransition.ts", "tsukiweb-common/src/graphics/GraphicsElement.tsx", "tsukiweb-common/src/graphics/GraphicsGroup.tsx", "tsukiweb-common/src/graphics/SpriteGraphics.tsx", "tsukiweb-common/src/graphics/ForegroundGraphics.tsx", "tsukiweb-common/src/graphics/BackgroundGraphics.tsx"],
 }

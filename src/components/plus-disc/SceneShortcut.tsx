@@ -1,5 +1,5 @@
+import GraphicsGroup from "@tsukiweb-common/graphics/GraphicsGroup"
 import { Graphics } from "@tsukiweb-common/types"
-import GraphicsGroup from "components/molecules/GraphicsGroup"
 import { ReactNode } from "react"
 import { strings } from "translation/lang"
 

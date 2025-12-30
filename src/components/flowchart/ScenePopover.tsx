@@ -1,4 +1,4 @@
-import GraphicsGroup from "components/molecules/GraphicsGroup"
+import GraphicsGroup from "@tsukiweb-common/graphics/GraphicsGroup"
 import { FcNode } from "utils/flowchart"
 
 type PopoverProps = {

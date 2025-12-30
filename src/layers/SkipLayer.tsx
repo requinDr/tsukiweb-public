@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react"
 import { strings } from "../translation/lang"
 import { bb, noBb } from "@tsukiweb-common/utils/Bbcode"
-import GraphicsGroup from "components/molecules/GraphicsGroup"
 import sceneAttrs from '@assets/game/scene_attrs.json'
 import { LabelName, TsukihimeSceneName } from "types"
 import { Button } from "@tsukiweb-common/ui-core"
@@ -15,6 +14,7 @@ import { audio } from "utils/audio"
 import { InGameLayersHandler } from "utils/display"
 import { Graphics } from "@tsukiweb-common/types"
 import AnimatedHideActivityDiv from "@tsukiweb-common/ui-core/components/AnimatedHideActivityDiv"
+import GraphicsGroup from "@tsukiweb-common/graphics/GraphicsGroup"
 
 function getThumbnail(label: TsukihimeSceneName): Partial<Graphics> & {bg: Graphics["bg"]} {
 	const scenes = sceneAttrs.scenes as Record<TsukihimeSceneName, any>
