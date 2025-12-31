@@ -18,15 +18,15 @@ import GraphicsLayer from 'layers/GraphicsLayer';
 import TextLayer from 'layers/TextLayer';
 import ChoicesLayer from 'layers/ChoicesLayer';
 import SkipLayer from 'layers/SkipLayer';
-import { useScreenAutoNavigate, useLanguageRefresh } from 'hooks';
+import { useScreenAutoNavigate } from 'hooks';
 import { isPDScene } from 'script/utils';
 import actions, { onAutoPlayStop, warnHScene } from 'utils/window-actions';
 import { settings } from 'utils/settings';
+import { useObserver } from '@tsukiweb-common/utils/Observer';
 
 
 const Window = () => {
 	useScreenAutoNavigate(SCREEN.WINDOW)
-	useLanguageRefresh()
 	const rootElmtRef = useRef(null)
 	const [script, remountScript] = useReset(()=> {
 		const script = new ScriptPlayer(history)
@@ -44,9 +44,7 @@ const Window = () => {
 		new actions.UserActionsHandler(script, layers, remountScript))
 	const topLayer = layers.topLayer
 
-	useEffect(() => {
-		remountScript()
-	}, [settings.language])
+	useObserver(remountScript, settings, 'language', { skipFirst: true })
 
 	const show = useMemo(() => {
 		const isPd = isPDScene(script.currentLabel ?? "")
@@ -64,15 +62,9 @@ const Window = () => {
 		}
 	}, [script.currentLabel, script.continueScript])
 
-	useLayoutEffect(()=> {
-		if (history.empty) {
-			displayMode.screen = SCREEN.TITLE
-		}
-	}, [])
-
 	useEffect(()=> {
 		if (history.empty)
-			return
+			displayMode.screen = SCREEN.TITLE
 		actionsHandler.onScriptChange(script)
 		script.setCommands(audioCommands)
 		script.addEventListener('blockStart', warnHScene)

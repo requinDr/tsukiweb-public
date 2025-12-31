@@ -154,10 +154,10 @@ export class ScriptPlayer extends ScriptPlayerBase<LabelName, PageBaseContent,
 //##############################################################################
 
     constructor(history: History) {
-        const initContext = history.getPageContext()
-
-        if (initContext.label == undefined)
-            throw Error("unspecified label in context")
+        const initContext = history.empty ? {
+            ...ScriptPlayer.defaultBlockContext(),
+            ...ScriptPlayer.defaultPageContext()
+        } : history.getPageContext()
         
         super(history, initContext)
         deepAssign(this._regard, initContext.regard ?? {})
