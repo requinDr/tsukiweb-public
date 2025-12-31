@@ -1,8 +1,6 @@
-import { SVGProps, useState } from "react"
+import { SVGProps } from "react"
 import { FcNode, FcNodeState } from "utils/flowchart"
 import { TsukihimeSceneName } from "types"
-import { flip, autoUpdate } from "@floating-ui/dom";
-import { useFloating, useHover, useInteractions } from "@floating-ui/react";
 import { createPortal } from "react-dom"
 import * as m from "motion/react-m"
 import cg from "utils/gallery"
@@ -10,6 +8,7 @@ import SceneImage from "./SceneImage"
 import ScenePopover from "./ScenePopover"
 import classNames from "classnames"
 import { NavigationProps } from "@tsukiweb-common/input/arrowNavigation";
+import { usePopover } from "hooks";
 
 
 let rootElement: HTMLElement | null = null
@@ -21,39 +20,20 @@ const getRootElement = () => {
 }
 
 
-const FLOATING_MIDDLEWARE = [flip()]
-const useScenePopover = () => {
-	const [isOpen, setIsOpen] = useState(false)
-	const { refs, floatingStyles, context } = useFloating({
-		placement: "right",
-		whileElementsMounted: autoUpdate,
-		open: isOpen,
-		onOpenChange: setIsOpen,
-		middleware: FLOATING_MIDDLEWARE
-	})
-	const hover = useHover(context, {
-		delay: { open: 200, close: 50 },
-	})
-	const { getReferenceProps } = useInteractions([hover])
-
-	return { isOpen, setIsOpen, refs, floatingStyles, context, getReferenceProps }
-}
+const UnseenScene = ({ node, ...props }: { node: FcNode }) => (
+	<use {...props} className='fc-scene' id={node.id}
+		href="#fc-scene-hidden"
+		x={node.centerX} y={node.centerY}
+		clipPath="url(#fc-scene-clip)" />
+)
 
 type SceneProps = {
 	node: FcNode,
 	onClick?: (id: TsukihimeSceneName) => void
 } & Omit<SVGProps<SVGGElement>, 'onClick'> & NavigationProps
 
-const UnseenScene = ({ node, ...props }: Omit<SceneProps, 'onClick'>) => (
-	<g {...props} className='fc-scene' id={node.id}
-		transform={`translate(${node.centerX}, ${node.centerY})`}
-		clipPath="url(#fc-scene-clip)">
-		<use href="#fc-scene-hidden" />
-	</g>
-)
-
 const VisibleScene = ({ node, onClick, ...props }: SceneProps) => {
-	const { isOpen, setIsOpen, refs, floatingStyles, getReferenceProps } = useScenePopover()
+	const { isOpen, setIsOpen, refs, floatingStyles, getReferenceProps } = usePopover()
 
 	const onAction = (e: React.MouseEvent | React.KeyboardEvent) => {
 		if ('key' in e && (e.key !== "Enter" || e.currentTarget !== e.target)) {
@@ -74,7 +54,7 @@ const VisibleScene = ({ node, onClick, ...props }: SceneProps) => {
 	return <>
 		<g className={classes} id={`fc-scene-${node.id}`}
 			transform={`translate(${node.centerX},${node.centerY})`}>
-			<g className={'fc-scene-content'} {...props}
+			<g className='fc-scene-content' {...props}
 				tabIndex={disabled ? -1 : 0}
 				clipPath="url(#fc-scene-clip)"
 				onClick={!disabled ? onAction : undefined}

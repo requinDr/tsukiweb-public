@@ -11,8 +11,8 @@
 	&.show {
 		z-index: 100;
 		opacity: 1;
-		background-image: var(--gradient-layer);
-		backdrop-filter: brightness(0.6) blur(2px);
+		background: var(--transparent-layer);
+		backdrop-filter: blur(1px);
 	}
 
 	.scroll-container {

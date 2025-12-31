@@ -11,28 +11,25 @@ import ConnectionPath from "./ConnectionPath"
 //#region                        SUB COMPONENTS
 //##############################################################################
 
-const SVG_DEFS = <>
+const SVG_DEFS = (
 	<defs>
 		<radialGradient id="hidden-scene-gradient">
 			<stop offset="0%" stopColor="black" />
 			<stop offset="50%" stopColor="#111" />
 			<stop offset="95%" stopColor="#222" />
 		</radialGradient>
+		<clipPath id="fc-scene-clip">
+			<rect {...SCENE_RECT_ATTRS} rx={SCENE_HEIGHT/14} />
+		</clipPath>
 		<rect id="fc-scene-outline" {...SCENE_RECT_ATTRS} rx={SCENE_HEIGHT/14} />
 		<rect id="fc-scene-background" {...SCENE_RECT_ATTRS} />
-		<g id="fc-scene-hidden">
+		<symbol id="fc-scene-hidden" overflow="visible">
 			<rect {...SCENE_RECT_ATTRS} rx={SCENE_HEIGHT/10} fill="url(#hidden-scene-gradient)" />
-			<line x1={-SCENE_WIDTH/2} y1={-SCENE_HEIGHT/2} stroke="black"
-						x2={ SCENE_WIDTH/2} y2={ SCENE_HEIGHT/2} strokeWidth={0.4}/>
-			<line x1={-SCENE_WIDTH/2} y1={ SCENE_HEIGHT/2} stroke="black"
-						x2={ SCENE_WIDTH/2} y2={-SCENE_HEIGHT/2} strokeWidth={0.4}/>
+			<path d={`M${-SCENE_WIDTH/2},${-SCENE_HEIGHT/2} L${SCENE_WIDTH/2},${SCENE_HEIGHT/2} M${-SCENE_WIDTH/2},${SCENE_HEIGHT/2} L${SCENE_WIDTH/2},${-SCENE_HEIGHT/2}`} stroke="black" strokeWidth={0.4} />
 			<rect {...SCENE_RECT_ATTRS} rx={SCENE_HEIGHT/10} />
-		</g>
+		</symbol>
 	</defs>
-	<clipPath id="fc-scene-clip">
-		<use href="#fc-scene-outline"/>
-	</clipPath>
-</>
+)
 
 //#endregion ###################################################################
 //#region                           FLOWCHART
@@ -75,19 +72,22 @@ const Flowchart = ({history, onSceneClick}: Props)=> {
 			version="1.1"
 			xmlns="http://www.w3.org/2000/svg">
 			{SVG_DEFS}
-			{visibleNodes.map(node=>
-				<Fragment key={node.id}>
-					{[...node.parents.map(
-						parent => <ConnectionPath key={`${parent.id}-${node.id}`} from={parent} to={node} />
-					)]}
-					{node.scene && <SceneRenderer node={node}
+			<g className="fc-connections">
+				{visibleNodes.flatMap(node =>
+					node.parents.map(parent => 
+						<ConnectionPath key={`${parent.id}-${node.id}`} from={parent} to={node} />
+					)
+				)}
+			</g>
+			<g className="fc-scenes">
+				{visibleNodes.map(node=>
+					node.scene && <SceneRenderer key={node.id} node={node}
 						{...(node.navY != null && { 'nav-scroll': 'smooth',
 							'nav-y': node.navY - refY,
 							'nav-x': node.column - refX	})}
 						onClick={onSceneClick}/>
-					}
-				</Fragment>
-			)}
+				)}
+			</g>
 		</svg>
 	)
 }

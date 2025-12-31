@@ -54,9 +54,10 @@ export class TsukihimeFlowchart extends Flowchart<FcNode> {
 	constructor(history?: History) {
 		super({
 			...(SCENE_ATTRS["fc-nodes"] ?? {}),
-			...Object.fromEntries(Object.entries(SCENE_ATTRS.scenes)
-					.map(([id, {fc}])=> [id, fc])
-					.filter(([_id, fc])=> fc)) // filter non-fc scenes
+			...Object.entries(SCENE_ATTRS.scenes).reduce((acc, [id, { fc }]) => {
+				if (fc) acc[id] = fc // filter non-fc scenes
+				return acc
+			}, {} as Record<string, FcNodeAttrs>)
 		})
 		this._history = history
 	}
