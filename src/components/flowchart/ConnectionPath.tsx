@@ -5,9 +5,10 @@ import classNames from "classnames";
 type ConnectionPathProps = {
 	from: FcNode
 	to: FcNode
+	mode?: 'playthrough' | 'viewer'
 }
 
-const ConnectionPath = memo(({ from, to }: ConnectionPathProps) => {
+const ConnectionPath = memo(({ from, to, mode = 'viewer' }: ConnectionPathProps) => {
 	const {centerX: x1, bottom: y1} = from
 	const {centerX: x2, top: y2} = to
 
@@ -35,7 +36,15 @@ const ConnectionPath = memo(({ from, to }: ConnectionPathProps) => {
 		}
 	}
 
-	const isDisabled = from.state === FcNodeState.DISABLED || to.state === FcNodeState.DISABLED
+	let isDisabled: boolean
+	if (mode === 'playthrough') {
+		// only show paths that were actually traversed
+		isDisabled = !from.flowchart.hasTransition(from.id, to.id)
+	} else {
+		// show all paths to/from enabled scenes
+		isDisabled = from.state === FcNodeState.DISABLED || to.state === FcNodeState.DISABLED
+	}
+	
 	const classes = classNames("fc-link", { disabled: isDisabled })
 
 	return <path id={id} className={classes} d={d} style={style} />

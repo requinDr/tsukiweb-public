@@ -7,7 +7,6 @@ import { ScriptPlayer } from "script/ScriptPlayer"
 import { settings } from "../utils/settings"
 import { jsonDiff } from "@tsukiweb-common/utils/utils"
 import { HistoryBase } from "@tsukiweb-common/script/history"
-import { PartialJSON, WithRequired } from "@tsukiweb-common/types"
 
 //##############################################################################
 //#region                             TYPES

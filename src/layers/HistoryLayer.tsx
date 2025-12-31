@@ -174,6 +174,7 @@ const FlowchartTab = ({ history, onSceneSelect }: FlowchartTabProps) => {
 				<Flowchart
 					history={history}
 					onSceneClick={handleSceneSelect}
+					mode="playthrough"
 				/>
 			</div>
 		</div>

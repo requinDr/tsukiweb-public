@@ -37,9 +37,10 @@ const SVG_DEFS = (
 
 type Props = {
 	history?: History,
-	onSceneClick?: (id: TsukihimeSceneName) => void
+	onSceneClick?: (id: TsukihimeSceneName) => void,
+	mode?: 'playthrough' | 'viewer'
 }
-const Flowchart = ({history, onSceneClick}: Props)=> {
+const Flowchart = ({history, onSceneClick, mode = 'viewer'}: Props)=> {
 	const flowchart = new TsukihimeFlowchart(history)
 	const visibleNodes = flowchart.listNodes().filter(n=>n.visible)
 	const [left, top, right, bottom] = visibleNodes.reduce(
@@ -76,7 +77,7 @@ const Flowchart = ({history, onSceneClick}: Props)=> {
 			{SVG_DEFS}
 			<g className="fc-connections">
 				{connections.map(c => 
-					<ConnectionPath key={`${c.from.id}-${c.to.id}`} from={c.from} to={c.to} />
+					<ConnectionPath key={`${c.from.id}-${c.to.id}`} from={c.from} to={c.to} mode={mode} />
 				)}
 			</g>
 			<g className="fc-scenes">

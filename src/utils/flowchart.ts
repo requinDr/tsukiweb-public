@@ -72,6 +72,24 @@ export class TsukihimeFlowchart extends Flowchart<FcNode> {
 			?? false
 	}
 
+	hasTransition(fromId: FcNodeId, toId: FcNodeId): boolean {
+		const history = (this._history as any)?.scenes?.all()
+		if (!history || history.length < 2) return false
+
+		const fromNode = this.getNode(fromId)
+		const toNode = this.getNode(toId)
+		if (!fromNode || !toNode) return false
+
+		const fromSet = new Set(fromNode.scene ? [fromId] : fromNode.parentSceneNodes.map(n => n.id))
+		const toSet = new Set(toNode.scene ? [toId] : toNode.childSceneNodes.map(n => n.id))
+
+		return history.some((scene: { label: string }, i: number) => 
+			i < history.length - 1 && 
+			fromSet.has(scene.label) && 
+			toSet.has(history[i + 1].label)
+		)
+	}
+
 	get activeScene(): FcNodeId {
 		return this._history?.lastScene.label ?? ""
 	}
@@ -133,6 +151,27 @@ export class FcNode extends FlowchartNode<FcNodeId, TsukihimeFlowchart> {
 		}
 		return parents
 	}
+
+	get childSceneNodes(): FcNode[] {
+		const allNodes = this.flowchart.listNodes()
+
+		const childrenMap = new Map<FcNode, FcNode[]>()
+		for (const node of allNodes) {
+			for (const parent of node.parents) {
+				childrenMap.set(parent, [...(childrenMap.get(parent) ?? []), node])
+			}
+		}
+
+		const collectSceneNodes = (nodes: FcNode[]): FcNode[] =>
+			nodes.flatMap(node =>
+				node.scene
+					? [node]
+					: collectSceneNodes(childrenMap.get(node) ?? [])
+			)
+
+		return collectSceneNodes(childrenMap.get(this) ?? [])
+	}
+
 	get flowchart(): TsukihimeFlowchart {
 		return super.flowchart
 	}
