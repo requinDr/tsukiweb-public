@@ -28,6 +28,12 @@ const SVG_DEFS = (
 			<path d={`M${-SCENE_WIDTH/2},${-SCENE_HEIGHT/2} L${SCENE_WIDTH/2},${SCENE_HEIGHT/2} M${-SCENE_WIDTH/2},${SCENE_HEIGHT/2} L${SCENE_WIDTH/2},${-SCENE_HEIGHT/2}`} stroke="black" strokeWidth={0.4} />
 			<rect {...SCENE_RECT_ATTRS} rx={SCENE_HEIGHT/10} />
 		</symbol>
+		<filter id="glow">
+			<feDropShadow dx="0" dy="0" floodColor="rgb(22,135,197)" stdDeviation="1"></feDropShadow>
+			<feDropShadow dx="0" dy="0" floodColor="rgb(22,135,197)" stdDeviation="1"></feDropShadow>
+			<feDropShadow dx="0" dy="0" floodColor="rgb(22,135,197)" stdDeviation="1"></feDropShadow>
+			<feDropShadow dx="0" dy="0" floodColor="rgb(22,135,197)" stdDeviation="2"></feDropShadow>
+		</filter>
 	</defs>
 )
 

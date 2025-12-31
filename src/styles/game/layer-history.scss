@@ -71,15 +71,24 @@
 	}
 
 	#flowchart {
-		width: inherit;
+		overflow: auto;
+		will-change: scroll-position;
 		.flowchart-container {
 			max-width: var(--page-width);
 			padding-inline: 1em;
 			margin-inline: auto;
+			overflow: unset;
+			width: fit-content;
 		}
 	}
 
 	footer {
 		font-size: 1.1em;
+		overflow-x: auto;
+
+		& > div {
+			display: flex;
+			align-items: start;
+		}
 	}
 }

@@ -14,12 +14,18 @@
 	.flowchart {
 		overflow: visible;
 		direction: ltr;
+		transform: translateZ(0);
+		shape-rendering: optimizeSpeed;
+		vector-effect: non-scaling-stroke;
 	}
 	.fc-scene {
 		&.active {
 			position: relative;
 			.fc-scene-content {
 				scale: 1.14;
+			}
+			use {
+				filter: url(#glow);
 			}
 		}
 		&.disabled {
