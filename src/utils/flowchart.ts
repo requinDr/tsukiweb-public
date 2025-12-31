@@ -225,3 +225,23 @@ export class FcNode extends FlowchartNode<FcNodeId, TsukihimeFlowchart> {
 		this._state = -1
 	}
 }
+
+
+type Connection = { from: FcNode; to: FcNode }
+
+export function buildConnections(visibleNodes: FcNode[]): Connection[] {
+	const disabled: Connection[] = []
+	const enabled: Connection[] = []
+
+	for (const node of visibleNodes) {
+		for (const parent of node.parents) {
+			const isDisabled =
+				parent.state === FcNodeState.DISABLED ||
+				node.state === FcNodeState.DISABLED;
+
+			(isDisabled ? disabled : enabled).push({ from: parent, to: node })
+		}
+	}
+
+	return [...disabled, ...enabled] // disabled first = rendered under enabled
+}

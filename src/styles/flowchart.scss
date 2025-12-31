@@ -1,4 +1,7 @@
 #flowchart {
+	--active-connection: #0d96e0;
+	--inactive-connection: #444;
+
 	.flowchart-container {
 		isolation: isolate;
 		padding-top: 4em;
@@ -24,7 +27,7 @@
 			}
 		}
 		&.disabled {
-			filter: brightness(0.6) grayscale(1);
+			filter: brightness(0.5) grayscale(1);
 			pointer-events: none;
 		}
 		.fc-scene-content {
@@ -68,12 +71,16 @@
 		fill: none;
 		fill-opacity: 0.246809;
 		fill-rule: evenodd;
-		stroke: #1187c5;
+		stroke: var(--active-connection);
 		stroke-width: 0.6px;
 		stroke-linejoin: round;
 		stroke-opacity: 1;
 		paint-order: fill markers stroke;
 		stop-color: #000000;
+
+		&.disabled {
+			stroke: var(--inactive-connection);
+		}
 	}
 }
 
@@ -89,7 +96,7 @@
 }
 
 #fc-scene-outline {
-	stroke: #1187c5;
+	stroke: var(--active-connection);
 }
 
 #fc-scene-background {

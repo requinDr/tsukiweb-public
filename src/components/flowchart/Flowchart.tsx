@@ -1,6 +1,6 @@
 
-import { Fragment, memo } from "react"
-import { COLUMN_WIDTH, DY, SCENE_HEIGHT, SCENE_RECT_ATTRS, SCENE_WIDTH, TsukihimeFlowchart } from "utils/flowchart"
+import { memo } from "react"
+import { buildConnections, COLUMN_WIDTH, DY, SCENE_HEIGHT, SCENE_RECT_ATTRS, SCENE_WIDTH, TsukihimeFlowchart } from "utils/flowchart"
 import { TsukihimeSceneName } from "types"
 import { SceneRenderer } from "./SceneRenderer"
 import { History } from "script/history"
@@ -62,6 +62,8 @@ const Flowchart = ({history, onSceneClick}: Props)=> {
 	else
 		refX = refY = 0
 
+	const connections = buildConnections(visibleNodes)
+	
 	return (
 		<svg viewBox={`${left} ${top} ${width} ${height}`}
 			className="flowchart"
@@ -73,10 +75,8 @@ const Flowchart = ({history, onSceneClick}: Props)=> {
 			xmlns="http://www.w3.org/2000/svg">
 			{SVG_DEFS}
 			<g className="fc-connections">
-				{visibleNodes.flatMap(node =>
-					node.parents.map(parent => 
-						<ConnectionPath key={`${parent.id}-${node.id}`} from={parent} to={node} />
-					)
+				{connections.map(c => 
+					<ConnectionPath key={`${c.from.id}-${c.to.id}`} from={c.from} to={c.to} />
 				)}
 			</g>
 			<g className="fc-scenes">
