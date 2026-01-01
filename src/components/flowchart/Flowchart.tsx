@@ -29,10 +29,10 @@ const SVG_DEFS = (
 			<rect {...SCENE_RECT_ATTRS} rx={SCENE_HEIGHT/10} />
 		</symbol>
 		<filter id="glow">
-			<feDropShadow dx="0" dy="0" floodColor="rgb(22,135,197)" stdDeviation="1"></feDropShadow>
-			<feDropShadow dx="0" dy="0" floodColor="rgb(22,135,197)" stdDeviation="1"></feDropShadow>
-			<feDropShadow dx="0" dy="0" floodColor="rgb(22,135,197)" stdDeviation="1"></feDropShadow>
-			<feDropShadow dx="0" dy="0" floodColor="rgb(22,135,197)" stdDeviation="2"></feDropShadow>
+			<feDropShadow dx="0" dy="0" floodColor="var(--active-connection)" stdDeviation="1" />
+			<feDropShadow dx="0" dy="0" floodColor="var(--active-connection)" stdDeviation="1" />
+			<feDropShadow dx="0" dy="0" floodColor="var(--active-connection)" stdDeviation="1" />
+			<feDropShadow dx="0" dy="0" floodColor="var(--active-connection)" stdDeviation="2" />
 		</filter>
 	</defs>
 )
