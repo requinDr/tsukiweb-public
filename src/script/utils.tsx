@@ -1,4 +1,4 @@
-import { LabelName, PlusDiscSceneName, SceneName, TsukihimeSceneName } from "../types";
+import { LabelName, PlusDiscSceneName, RouteName, SceneName, TsukihimeSceneName } from "../types";
 import { APP_VERSION, SCENE_ATTRS } from "../utils/constants";
 import { strings } from "../translation/lang"
 import { ScriptPlayer } from "./ScriptPlayer";
@@ -26,31 +26,55 @@ export function isScene(label: string): label is SceneName {
 	return isThScene(label) || isPDScene(label)
 }
 
-export function getSceneTitle(flags: string[], label: TsukihimeSceneName): string|undefined {
+export function getSceneTitles(label: TsukihimeSceneName): { flg: string, titles: [string, string] } | string | undefined {
 	const attrs = strings.scenario.scenes[label] ?? SCENE_ATTRS.scenes[label]
-	
 	if (!attrs)
 		return undefined
 	if ("title" in attrs)
 		return attrs.title
 	else {
 		const {r, d, s} = attrs
-		let route: keyof typeof strings.scenario.routes
+		let flg = null
+		let routes: RouteName[]
 		if (typeof r == "object" && 'flg' in r)
-			route = r[flags.includes(r.flg) ? "1" : "0"]
+			routes = [r['0'], r['1']], flg = r.flg
 		else
-			route = r
+			routes = [r]
 
-		let sceneName = strings.scenario.routes[route][d]
-		if (s) {
-			sceneName += " - "
-			if (typeof s == "object" && 'flg' in s)
-				sceneName += s[flags.includes(s.flg) ? "1" : "0"]
-			else
-				sceneName += s
+		let scenes: string[]|undefined
+		if (typeof s == "object" && 'flg' in s) {
+			if (!flg)
+				routes = [routes[0], routes[0]], flg = s.flg
+			else if (flg != s.flg)
+				throw Error(`Unexpected multiple flags for label ${label}`)
+			scenes = [s['0'], s['1']]
+		} else if (s && flg) {
+			scenes = [s, s]
+		} else if (s) {
+			scenes = [s]
+		} else {
+			scenes = undefined
 		}
-		return sceneName
+		const titles = routes.map((r, i) => {
+			const dayName = strings.scenario.routes[r][d]
+			if (scenes)
+				return `${dayName} - ${scenes[i]}`
+			else return dayName
+		})
+		if (flg)
+			return {flg, titles: titles as [string, string]}
+		return titles[0]
 	}
+}
+
+export function getSceneTitle(flags: string[], label: TsukihimeSceneName): string|undefined {
+	const attrs = strings.scenario.scenes[label] ?? SCENE_ATTRS.scenes[label]
+	const titles = getSceneTitles(label)
+	if (typeof titles != 'object')
+		return titles
+	else if (flags.includes(titles.flg))
+		return titles.titles[1]
+	else return titles.titles[0]
 }
 
 export function nextLabel(label: LabelName): LabelName {

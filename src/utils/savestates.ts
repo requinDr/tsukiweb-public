@@ -3,13 +3,13 @@ import history, { PageEntry, SceneEntry } from '../script/history';
 import { APP_VERSION, SAVE_EXT } from "./constants";
 import { LabelName, RouteDayName, RouteName } from "../types";
 import { SCREEN, displayMode } from "./display";
-import { Stored } from "@tsukiweb-common/utils/storage";
-import { textFileUserDownload, twoDigits, versionsCompare } from "@tsukiweb-common/utils/utils";
+import { versionsCompare } from "@tsukiweb-common/utils/utils";
 import { Regard, ScriptPlayer } from "script/ScriptPlayer";
 import { Graphics, JSONDiff, PartialJSON, PartialRecord } from "@tsukiweb-common/types";
 import { fetchBlockLines, getPageAtLine, isScene } from "script/utils";
 import { phaseTexts } from "translation/assets";
 import { noBb } from "@tsukiweb-common/utils/Bbcode";
+import { SavesManager as SavesManagerBase, SaveState as SSBase } from "@tsukiweb-common/script/saves"
 
 //##############################################################################
 //#region                       TYPES & CONSTANTS
@@ -17,7 +17,6 @@ import { noBb } from "@tsukiweb-common/utils/Bbcode";
 
 type SaveStateId = number
 export const QUICK_SAVE_ID: SaveStateId = 0
-const SAVE_MIME_TYPE = `application/${SAVE_EXT}+json`
 
 type DefaultPageContext = ReturnType<typeof ScriptPlayer.defaultPageContext>
 type DefaultBlockContext = ReturnType<typeof ScriptPlayer.defaultBlockContext>
@@ -26,130 +25,34 @@ type SSList<T extends PartialJSON, Default extends PartialJSON<T>> = []
   | [JSONDiff<T, Default>]
   | [JSONDiff<T, Default>, ...PartialJSON<T>[], JSONDiff<T, Default>] 
 
-export type SaveState = {
+export type SaveState = SSBase & {
   scenes: SSList<SceneEntry, DefaultBlockContext>
   pages: SSList<PageEntry, DefaultPageContext>
   graphics?: Graphics
-  date: number
-  version: string
-  name?: string
-  id?: SaveStateId
 }
 
-//#endregion
+//#endregion ###################################################################
+//#region                          SAVES MANAGER
 //##############################################################################
 
+class SavesManager extends SavesManagerBase<SaveState> {
 
-class SavesManager extends Stored {
+  protected override get app_version() { return APP_VERSION }
+  protected override get save_ext()    { return SAVE_EXT    }
 
-  private _saveStates: Map<SaveStateId, SaveState>
-  private _changeListeners: Set<VoidFunction>
-
-  constructor() {
-    super("savestates", false)
-    this._saveStates = new Map()
-    this._changeListeners = new Set
-    this.restoreFromStorage()
-  }
-
-//##############################################################################
-//#region                        PRIVATE METHODS
-//##############################################################################
-
-  private _notifyListeners() {
-    for (const listener of this._changeListeners) {
-      listener()
-    }
-  }
-
-  protected serializeToStorage(): string {
-    return JSON.stringify({
-      version: APP_VERSION,
-      saveStates: Array.from(this._saveStates.values())
-    })
-  }
-
-  protected deserializeFromStorage(str: string): void {
-    const json = JSON.parse(str) as [number, SaveState][]|{version:string, saveStates:SaveState[]}
-    if (Array.isArray(json)) { // < v0.4.0
-      this.add(...json.map(([id, save])=> 
-        (id != save.date) ? {id, ...save} : save
-      ))
-    } else {
-      //if (versionsCompare(json.version, "1.0.0") < 0) // uncomment if necessary to convert savestates
-      const saveStates = json.saveStates
-      for (const save of saveStates) {
-        this._saveStates.set(save.id ?? save.date, save)
+  protected override import(saves: [number, SaveState][]|{version:string, saveStates:SaveState[]}) {
+    if (Array.isArray(saves)) { // < v0.4.0
+      saves = {
+        version: APP_VERSION,
+        saveStates: saves.map(([id, save])=>
+          (id != save.date) ? {id, ...save} : save)
       }
-      this._notifyListeners()
     }
+    //if (versionsCompare(json.version, "1.0.0") < 0) // uncomment if necessary to convert savestates
+    return super.import(saves)
   }
 
-//#endregion ###################################################################
-//#region                           LISTENERS
-//##############################################################################
-
-  addListener(listener: VoidFunction) {
-    this._changeListeners.add(listener)
-  }
-  removeListener(listener: VoidFunction) {
-    this._changeListeners.delete(listener)
-  }
-
-//#endregion ###################################################################
-//#region                            GETTERS
-//##############################################################################
-  
-  get savesCount() {
-    return this._saveStates.size
-  }
-
-  listSaves() {
-    return Array.from(this._saveStates.values())
-  }
-
-  get(id: SaveStateId) {
-    return this._saveStates.get(id)
-  }
-
-  getLastSave(): SaveState|undefined {
-    return this.listSaves().reduce((a, b)=> a.date > b.date ? a : b)
-  }
-
-  /**
-   * Export the save-states to json files and lets the user download them.
-   * @param ids array of save-state ids to export. Exporting multiple save-states
-   *            will result in multiple files being downloaded
-   */
-  exportSave(...ids: SaveStateId[]) {
-    for (const id of ids) {
-      const ss = this.get(id)
-      if (!ss)
-        continue
-      const json = JSON.stringify({ id, ...ss }),
-            date = new Date(ss.date as number)
-      const year = date.getFullYear(), month = date.getMonth()+1,
-            day = date.getDate(), hour = date.getHours(), min = date.getMinutes()
-      const dateString = [year, month, day].map(twoDigits).join('-')
-      const timeString = [hour, min].map(twoDigits).join('-')
-      let basename = `${dateString}_${timeString}`
-      if (ss.name)
-        basename += `_${ss.name}`
-      textFileUserDownload(json, `${basename}.${SAVE_EXT}`, SAVE_MIME_TYPE)
-    }
-  }
-
-//#endregion ###################################################################
-//#region                          EDIT SAVES
-//##############################################################################
-
-  clear() {
-    this._saveStates.clear()
-    this.deleteStorage()
-    this._notifyListeners()
-  }
-
-  add(...saves: (SaveState|[number, SaveState])[]) {
+  override add(...saves: (SaveState[]|[number, SaveState][])) {
     Promise.all(saves.map(async (save)=> {
       let id
       if (Array.isArray(save)) {
@@ -159,50 +62,18 @@ class SavesManager extends Stored {
       } else {
         id = save.id ?? save.date
       }
-      const ss = await updateSave(save)
-      this._saveStates.set(id, ss)
-    })).then(()=> {
-      this.saveToStorage()
-      this._notifyListeners()
-    })
-  }
-
-  remove(id: SaveStateId) {
-    this._saveStates.delete(id)
-    this.saveToStorage()
-    this._notifyListeners()
-  }
-
-  async importSave(save: string|File): Promise<void> {
-    if (save instanceof File)
-      save = await new Promise<string>((resolve)=> {
-        const reader = new FileReader()
-        reader.readAsText(save as File)
-        reader.onload = (evt)=> {
-          if (evt.target?.result?.constructor == String)
-            resolve(evt.target.result)
-          else
-            throw Error(`Cannot read save file ${(save as File).name}`)
-        }
-      })
-    this.add(JSON.parse(save) as SaveState)
-  }
-
-  async importSaveFiles(saves: string[] | FileList | File[]): Promise<void> {
-    await Promise.all(
-      Array.from<string|File, Promise<void>>(saves, this.importSave.bind(this)))
+      save = await updateSave(save)
+      return save
+    })).then((saves: SaveState[])=> super.add(...saves))
   }
 }
 
-export const savesManager = new SavesManager()
+export const savesManager = new SavesManager("savestates")
 
 
 //#endregion ###################################################################
 //#region                          SAVE & LOAD
 //##############################################################################
-
-//____________________________________Save______________________________________
-// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 export function newGame() {
   history.loadSaveState({scenes: [{label: 'openning'}], pages: []})
@@ -246,6 +117,9 @@ export function compareSaveStates(ss1: SaveState, ss2: SaveState) {
 		: (ss2.date ?? 0) - (ss1.date ?? 0)
 }
 
+/**
+ * Compute the text to be displayed for saves created during phase transitions
+ */
 export function savePhaseTexts(saveState: SaveState): string[] {
 	const { route, routeDay, day } = saveState.pages.at(-1)?.phase ?? {}
 
@@ -258,7 +132,7 @@ export function savePhaseTexts(saveState: SaveState): string[] {
 
 
 //#endregion ###################################################################
-//#region                         FORMAT UPDATE
+//#region                         < v0.4.0 UPDATE
 //##############################################################################
 
 type OldRegard = PartialRecord<'ark'|'ciel'|'akiha'|'kohaku'|'hisui', number>

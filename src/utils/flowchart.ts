@@ -1,4 +1,4 @@
-import { isScene, isThScene } from "../script/utils"
+import { getSceneTitle, getSceneTitles, isScene, isThScene } from "../script/utils"
 import { LabelName, TsukihimeSceneName } from "types"
 import { SCENE_ATTRS } from "./constants"
 import { Graphics } from "@tsukiweb-common/types"
@@ -70,6 +70,18 @@ export class TsukihimeFlowchart extends Flowchart<FcNode> {
 		return this._history?.hasScene(id as LabelName)
 			?? this.getNode(id)?.seen
 			?? false
+	}
+
+	getSceneDisplayName(id: FcNodeId): string {
+		const flags = this._history?.sceneContext(id as LabelName)?.flags
+		if (flags)
+			return getSceneTitle(flags, id as TsukihimeSceneName) ?? id
+		else {
+			const titles = getSceneTitles(id as TsukihimeSceneName)
+			if (typeof titles == "object")
+				return titles.titles.join('[br/]')
+			return titles ?? id
+		}
 	}
 
 	hasTransition(fromId: FcNodeId, toId: FcNodeId): boolean {
@@ -258,6 +270,9 @@ export class FcNode extends FlowchartNode<FcNodeId, TsukihimeFlowchart> {
 	get bottom(): number { return this.top + this.height }
 	get centerX(): number { return this.left + this.width/2 }
 	get centerY(): number { return this.top + this.height/2 }
+	get displayName(): string {
+		return this.flowchart.getSceneDisplayName(this.id)
+	}
 
 	invalidate() {
 		this._boundRect = null

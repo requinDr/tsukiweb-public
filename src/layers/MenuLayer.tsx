@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react"
 import { MdCopyAll, MdFastForward, MdFullscreen, MdFullscreenExit, MdOutlineVolumeOff, MdOutlineVolumeUp, MdPlayArrow } from "react-icons/md"
-import { settings } from "../utils/settings"
+import { settings, viewedScene } from "../utils/settings"
 import { displayMode, InGameLayersHandler, SCREEN } from "../utils/display"
 import { strings } from "../translation/lang"
 import Ornament from "@assets/images/ornament.webp"
@@ -13,6 +13,7 @@ import { ScriptPlayer } from "script/ScriptPlayer"
 import { audio } from "utils/audio"
 import { Button } from "@tsukiweb-common/ui-core"
 import AnimatedHideActivityDiv from "@tsukiweb-common/ui-core/components/AnimatedHideActivityDiv"
+import { isScene } from "script/utils"
 
 const AUDIO_PROPS = {
 	audio: audio,
@@ -165,11 +166,15 @@ const ActionsButtons = ({script, show, close, qSave, qLoad}: ActionsButtonsProps
 	const toggleVolume = () => {
 		settings.volume.master = - settings.volume.master
 	}
-	const fastForwardScene = ()=> {
-		const currLabel = script.currentLabel
+	const fastForward = ()=> {
+		let currLabel = script.currentLabel
 		if (currLabel)
 			script.ffw((_line, _index, _page, _lines, label)=>{
-				return label != currLabel
+				if (label == currLabel)
+					return false
+				if (isScene(label) && settings.enableSceneSkip && viewedScene(label))
+					return true // user refused to skip already-seen scene
+				return false
 			}, settings.fastForwardDelay)
 		close()
 	}
@@ -212,7 +217,7 @@ const ActionsButtons = ({script, show, close, qSave, qLoad}: ActionsButtonsProps
 					nav-y={8} nav-x={0}>
 				<MdPlayArrow />
 			</Button>
-			<Button {...ACTION_PROPS} onClick={fastForwardScene}
+			<Button {...ACTION_PROPS} onClick={fastForward}
 					aria-label="skip scene" title={strings.menu["ffw"]}
 					nav-y={8} nav-x={1}>
 				<MdFastForward />
