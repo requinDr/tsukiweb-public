@@ -16,7 +16,7 @@ import { TitleMenuButton } from '@tsukiweb-common/ui-core'
 import { useScreenAutoNavigate, useLanguageRefresh, useKeyArrows, useEclipseUnlocked } from 'hooks'
 import classNames from "classnames"
 import { audio } from "utils/audio"
-import christmas_hat from '@assets/icons/christmas_hat.svg'
+// import christmas_hat from '@assets/icons/christmas_hat.svg'
 
 
 const TitleMenuScreen = () => {
@@ -101,7 +101,7 @@ const TitleMenuScreen = () => {
 						onClick={()=> settings.volume.master = -settings.volume.master}
 					>
 						{conf < 0 ? <MdOutlineVolumeOff aria-label="mute" /> : <MdOutlineVolumeUp aria-label="unmute" />}
-						<img
+						{/* <img
 							src={christmas_hat}
 							alt="Christmas hat"
 							className="christmas-hat"
@@ -114,7 +114,7 @@ const TitleMenuScreen = () => {
 						    height: '28px',
 								transform: 'scaleX(-1)',
 							}}
-						/>
+						/> */}
 					</button>
 				</m.div>
 
