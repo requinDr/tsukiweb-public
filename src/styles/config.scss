@@ -103,19 +103,19 @@
 			display: flex;
 			gap: .6em;
 			align-items: center;
-			min-height: 36px; // height of buttons
+			min-height: 36px; // buttons height
 
 			input[type="range"] {
 				appearance: none;
 				width: min(320px, 100%);
 				height: 1px;
-				background: var(--active);
+				background: var(--surface-light);
 				cursor: pointer;
 				border: 0;
 				border-radius: 8px;
 
 				&:hover {
-					background: var(--active-hover);
+					background: var(--surface-light-active);
 				}
 	
 				&::-webkit-slider-thumb {
@@ -123,10 +123,10 @@
 					width: 20px;
 					height: 20px;
 					border-radius: 50%; 
-					background: var(--active);
+					background: var(--surface-light);
 
 					&:hover {
-						background: var(--active-hover);
+						background: var(--surface-light-active);
 					}
 				}
 	
@@ -134,11 +134,11 @@
 					width: 20px;
 					height: 20px;
 					border-radius: 50%;
-					background: var(--active);
+					background: var(--surface-light);
 					border: 0;
 
 					&:hover {
-						background: var(--active-hover);
+						background: var(--surface-light-active);
 					}
 				}
 			}

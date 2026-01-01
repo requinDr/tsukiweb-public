@@ -58,7 +58,7 @@
 			width: $icon-size;
 			height: $icon-size;
 			border-radius: 4px;
-			background-color: var(--active);
+			background-color: var(--surface-light);
 
 			&.inactive {
 				filter: grayscale(1);

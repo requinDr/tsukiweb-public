@@ -132,9 +132,8 @@
 			z-index: 1;
 			bottom: 0;
 			left: 0;
-			padding: 0.2em 1em;
-			font-size: 1.1em;
-			background-image: linear-gradient(90deg, #0839c3 70%, transparent);
+			padding: 0.3em 1em;
+			background-image: linear-gradient(90deg, var(--surface-dark) 70%, transparent);
 			min-width: 80px;
 			-webkit-text-stroke: 0.01em black;
 		}
