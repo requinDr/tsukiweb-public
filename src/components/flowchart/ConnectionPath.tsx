@@ -42,7 +42,7 @@ const ConnectionPath = memo(({ from, to, mode = 'viewer' }: ConnectionPathProps)
 		isDisabled = !from.flowchart.hasTransition(from.id, to.id)
 	} else {
 		// show all paths to/from enabled scenes
-		isDisabled = from.state === FcNodeState.DISABLED || to.state === FcNodeState.DISABLED
+		isDisabled = from.state !== FcNodeState.ENABLED || to.state !== FcNodeState.ENABLED
 	}
 	
 	const classes = classNames("fc-link", { disabled: isDisabled })
