@@ -5,6 +5,7 @@ import { TsukihimeSceneName } from "types"
 import { SceneRenderer } from "./SceneRenderer"
 import { History } from "script/history"
 import ConnectionPath from "./ConnectionPath"
+import { ScenePopoverProvider } from "./ScenePopoverContext"
 
 
 //#endregion ###################################################################
@@ -72,30 +73,32 @@ const Flowchart = ({history, onSceneClick, mode = 'viewer'}: Props)=> {
 	const connections = buildConnections(visibleNodes)
 	
 	return (
-		<svg viewBox={`${left} ${top} ${width} ${height}`}
-			className="flowchart"
-			style={{
-				minWidth: minWidth, maxWidth: maxWidth,
-				minHeight: minHeight, maxHeight: maxHeight,
-			}}
-			version="1.1"
-			xmlns="http://www.w3.org/2000/svg">
-			{SVG_DEFS}
-			<g className="fc-connections">
-				{connections.map(c => 
-					<ConnectionPath key={`${c.from.id}-${c.to.id}`} from={c.from} to={c.to} mode={mode} />
-				)}
-			</g>
-			<g className="fc-scenes">
-				{visibleNodes.map(node=>
-					node.scene && <SceneRenderer key={node.id} node={node}
-						{...(node.navY != null && { 'nav-scroll': 'smooth',
-							'nav-y': node.navY - refY,
-							'nav-x': node.column - refX	})}
-						onClick={onSceneClick}/>
-				)}
-			</g>
-		</svg>
+		<ScenePopoverProvider>
+			<svg viewBox={`${left} ${top} ${width} ${height}`}
+				className="flowchart"
+				style={{
+					minWidth: minWidth, maxWidth: maxWidth,
+					minHeight: minHeight, maxHeight: maxHeight,
+				}}
+				version="1.1"
+				xmlns="http://www.w3.org/2000/svg">
+				{SVG_DEFS}
+				<g className="fc-connections">
+					{connections.map(c => 
+						<ConnectionPath key={`${c.from.id}-${c.to.id}`} from={c.from} to={c.to} mode={mode} />
+					)}
+				</g>
+				<g className="fc-scenes">
+					{visibleNodes.map(node=>
+						node.scene && <SceneRenderer key={node.id} node={node}
+							{...(node.navY != null && { 'nav-scroll': 'smooth',
+								'nav-y': node.navY - refY,
+								'nav-x': node.column - refX	})}
+							onClick={onSceneClick}/>
+					)}
+				</g>
+			</svg>
+		</ScenePopoverProvider>
 	)
 }
 
