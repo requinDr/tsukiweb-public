@@ -11,10 +11,20 @@ import { displayMode, SCREEN } from "utils/display"
  */
 export function useScreenAutoNavigate(currentScreen: SCREEN) {
 	const navigate = useNavigate()
+
 	useLayoutEffect(()=> {
-		displayMode.screen = currentScreen
-		observe(displayMode, 'screen', navigate,
-				{ filter: (s)=> s != currentScreen })
-		return unobserve.bind(null, displayMode, 'screen', navigate) as VoidFunction
-	}, [])
+		if (displayMode.screen !== currentScreen) {
+			displayMode.screen = currentScreen
+		}
+		const handleNavigate = (screen: SCREEN) => {
+			navigate(screen, { replace: false })
+		}
+		observe(displayMode, 'screen', handleNavigate, {
+			filter: (s) => s != currentScreen
+		})
+		
+		return () => {
+			unobserve(displayMode, 'screen', handleNavigate)
+		}
+	}, [currentScreen, navigate])
 }
