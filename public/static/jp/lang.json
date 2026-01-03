@@ -51,7 +51,7 @@
     "volume-se": "SFX 音量",
     "volume-title-track": "TITLE BGM 音量",
     "volume-system-se": "SYS SFX 音量",
-    "track-source": "Track Source",
+    "track-source": "Music source",
     "track-sources": {
       "original": "Original (2000)",
       "everafter": "Ever After (2002)",
