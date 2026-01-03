@@ -1,4 +1,4 @@
-import { useEffect, useState, memo, Fragment, useRef, RefObject } from "react"
+import { useEffect, useState, memo, Fragment, useRef, RefObject, useCallback } from "react"
 import moonIcon from '@assets/icons/icon_moon.svg'
 import pageIcon from '@assets/icons/icon_bars.svg'
 import { settings } from "../utils/settings"
@@ -75,10 +75,10 @@ const TextLayer = ({ script, display, isTopLayer,
   const [textBox] = useObserved(script, 'textBox')
   const [immediate, setImmediate] = useState<boolean>(false)
   const [isFfw] = useEventState(script, "ffwStart", "ffwStop")
-  const onFinishRef = useRef<VoidFunction|undefined>(undefined)
+  const onFinishRef = useRef<VoidFunction>(undefined)
   const mouseCursorVisible = useMousePointer()
 
-  const skip = setImmediate.bind(null, true) as VoidFunction
+  const skip = useCallback(() => setImmediate(true), [])
 
   useEffect(()=> {
     const _onGlyph = onGlyph.bind(null, setGlyph)
@@ -89,15 +89,11 @@ const TextLayer = ({ script, display, isTopLayer,
       'textcolor': onTextColor,
       'textbox': onTextBox,
     })
-  }, [script])
+  }, [script, skip])
 
-  useObserver((text)=> {
+  useObserver(text => {
     const trimmed = text.trimEnd()
-    if (trimmed.length == 0)
-      setLines([])
-    else {
-      setLines(trimmed.split('\n'))
-    }
+    setLines(trimmed ? trimmed.split('\n') : [])
   }, script, 'text')
 
   const {className, ...remaining_props} = props
@@ -111,19 +107,14 @@ const TextLayer = ({ script, display, isTopLayer,
   if (className)
     classList.push(className)
 
-  const [previousLines, lastLine] = [
-    lines.slice(0, lines.length-1),
-    lines[lines.length-1]
-  ]
+  const lastLine = lines.at(-1)
+  const previousLines = lines.slice(0, -1)
   
-  const glyphNode = glyph && (
-    <span className={classNames("cursor", {"hide": !isTopLayer})} id={glyph}>
-      <img src={icons[glyph]} alt={glyph} />
-    </span>)
-  const twKey = script.uid*1000 + script.currentPage*100 + lines.length
+  const glyphNode = glyph && <EndLineIndicator glyph={glyph} hide={!isTopLayer} />
+  const twKey = `${script.uid}-${script.currentPage}-${lines.length}`
 
   return (
-    <div className={classList.join(' ')} {...remaining_props} id="layer-text">
+    <div className={classList.join(' ')} {...remaining_props} id="layer-text" aria-hidden={!display}>
       <div className="text-container">
         {previousLines.map((line, i) =>
           <Fragment key={i}>
@@ -147,28 +138,37 @@ const TextLayer = ({ script, display, isTopLayer,
         }
       </div>
 
-      {isFfw &&
-      <div className="ffw">
-        <svg width="0" height="0" style={{ position: 'absolute' }}>
-          <defs>
-            <linearGradient id="gradient-ffw" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="var(--surface-light-active)">
-                <animate attributeName="offset" values="-1; 1" dur="0.8s" repeatCount="indefinite" />
-              </stop>
-              <stop offset="50%" stopColor="var(--surface-light)">
-                <animate attributeName="offset" values="-0.5; 1.5" dur="0.8s" repeatCount="indefinite" />
-              </stop>
-              <stop offset="100%" stopColor="var(--surface-light-active)">
-                <animate attributeName="offset" values="0; 2" dur="0.8s" repeatCount="indefinite" />
-              </stop>
-            </linearGradient>
-          </defs>
-        </svg>
-        <MdFastForward />
-      </div>
-      }
+      {isFfw && <FfwIndicator />}
     </div>
   )
 }
 
 export default memo(TextLayer)
+
+
+const EndLineIndicator = ({glyph, hide}: {glyph: Glyph, hide: boolean}) => (
+  <span className={classNames("cursor", {"hide": hide})} id={glyph}>
+    <img src={icons[glyph]} alt={glyph} />
+  </span>
+)
+
+const FfwIndicator = () => (
+  <div className="ffw">
+    <svg width="0" height="0" style={{ position: 'absolute' }}>
+      <defs>
+        <linearGradient id="gradient-ffw" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="var(--surface-light-active)">
+            <animate attributeName="offset" values="-1; 1" dur="0.8s" repeatCount="indefinite" />
+          </stop>
+          <stop offset="50%" stopColor="var(--surface-light)">
+            <animate attributeName="offset" values="-0.5; 1.5" dur="0.8s" repeatCount="indefinite" />
+          </stop>
+          <stop offset="100%" stopColor="var(--surface-light-active)">
+            <animate attributeName="offset" values="0; 2" dur="0.8s" repeatCount="indefinite" />
+          </stop>
+        </linearGradient>
+      </defs>
+    </svg>
+    <MdFastForward />
+  </div>
+)

@@ -48,6 +48,7 @@ const HistoryLayer = ({ display, history, onRewind, layers, show, divProps }: Pr
 			id="layer-history"
 			{...divProps}
 			className={classNames("layer", {"show": display}, divProps?.className)}
+			aria-hidden={!display}
 			ref={rootRef}>
 			{layers.history && history.pagesLength > 0 ?
 				<HistoryTab key={history.lastPage.page}
