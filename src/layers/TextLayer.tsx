@@ -10,6 +10,7 @@ import { Bbcode, BBTypeWriter } from "@tsukiweb-common/utils/Bbcode"
 import { preprocessText } from "@tsukiweb-common/utils/utils"
 import classNames from "classnames"
 import { MdFastForward } from "react-icons/md"
+import useEventState from "@tsukiweb-common/hooks/useEventState"
 
 type Glyph = "moon"|"page"
 const icons: Record<Glyph, string> = {
@@ -73,7 +74,7 @@ const TextLayer = ({ script, display, isTopLayer,
   const [glyph, setGlyph] = useState<Glyph|null>(null)
   const [textBox] = useObserved(script, 'textBox')
   const [immediate, setImmediate] = useState<boolean>(false)
-  const isFfw = false // TODO: implement fast-forward detection
+  const [isFfw] = useEventState(script, "ffwStart", "ffwStop")
   const onFinishRef = useRef<VoidFunction|undefined>(undefined)
   const mouseCursorVisible = useMousePointer()
 
