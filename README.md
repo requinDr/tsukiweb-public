@@ -38,7 +38,7 @@ You can find our [contributing guidelines here](https://github.com/requinDr/tsuk
 
 ## Useful links
 - [Adding a translation](https://github.com/requinDr/tsukiweb-public/wiki/Adding-a-translation)
-- [Recreating the ressources](https://github.com/requinDr/tsukiweb-public/wiki/Recreating-the-ressources)
+- [Recreating the resources](https://github.com/requinDr/tsukiweb-public/wiki/Recreating-the-resources)
 - [Roadmap](https://github.com/requinDr/tsukiweb-public/wiki/Roadmap)
 
 ## Project technologies
