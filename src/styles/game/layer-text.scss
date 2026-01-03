@@ -1,16 +1,16 @@
 %layer-text {
 	z-index: 2;
 	opacity: 1;
+	pointer-events: auto;
+	transition: opacity var(--transition-time) ease-out;
 	user-select: none;
 	background-image: var(--text-bg);
 	padding: 7cqmin;
 	overflow-x: hidden;
 	touch-action: manipulation;
-	transition: var(--transition);
-	transition-property: opacity, z-index;
 
 	&.hide {
-		z-index: -1;
+		pointer-events: none;
 		opacity: 0;
 	}
 

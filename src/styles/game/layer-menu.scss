@@ -3,26 +3,27 @@
 	--menu-backdrop: rgba(0, 36, 87, 0.6);
 	--menu-border-color: #002373;
 	--surface-on-menu: rgb(1 17 27 / 80%);
-	--panel-trans-time: 0.4s;
+	--panel-trans-time: 0.35s;
 
-	z-index: -1;
-	background-color: var(--menu-backdrop);
-	-webkit-backdrop-filter: blur(1px);
-	backdrop-filter: blur(1px);
+	z-index: 4;
 	opacity: 0;
+	pointer-events: none;
 	touch-action: manipulation;
+	transition: opacity var(--transition-time) ease-out;
+	transition-delay: calc(var(--panel-trans-time) - var(--transition-time));
+	will-change: opacity;
 	display: flex;
 	justify-content: flex-end;
-	transition: var(--transition);
-	transition-property: opacity, z-index;
+	background-color: var(--menu-backdrop);
+	-webkit-backdrop-filter: blur(.5px);
+	backdrop-filter: blur(.5px);
 	// when hiding, wait before starting the transition
-	transition-delay: calc(var(--panel-trans-time) - var(--transition-time));
 	overflow: hidden;
 	border-block: 12px solid var(--menu-border-color);
 	direction: ltr;
 
 	&.show {
-		z-index: 4;
+		pointer-events: auto;
 		opacity: 1;
 		transition-delay: 0s;
 
@@ -31,7 +32,7 @@
 		}
 	}
 
-	$width: clamp(260px, 46vw, 340px);
+	$width: clamp(280px, 46vw, 340px);
 	.menu-container {
 		will-change: transform;
 		transform: translateX(calc($width));
@@ -57,12 +58,12 @@
 			max-width: 220px;
 
 			button {
-				font-size: clamp(1.1em, 3.6vh, 1.5em);
+				font-size: clamp(1.3em, 3.2vmin, 1.5em);
 			}
 		}
 		.layer-btns {
 			display: flex;
-			row-gap: min(2vh, 1em);
+			row-gap: min(1.6vh, 1em);
 			flex-direction: column;
 		}
 
@@ -82,7 +83,8 @@
 
 			button {
 				border-radius: 2px;
-				padding: 5px 4px;
+				padding: 4px;
+				height: 32px;
 				color: rgb(206 223 234);
 				background-color: var(--surface-on-menu);
 				justify-content: center;
