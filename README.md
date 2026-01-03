@@ -5,7 +5,7 @@ The goal is to provide an accessible modern way of reading an old, beautiful sto
 The Progressive Web App (PWA) can be installed from the title screen using chromium-based browsers (_e.g._, Chrome, Edge, Opera).  
 It offers a better experience in general.
 
-To download the source code and run the game locally, follow one of the two methods:
+To download the source code and run the game's code locally, follow one of the two methods:
 ### Node
 1) install [`node.js`](https://nodejs.org/en/download) (version `18 / 20 / 22+` is required)
 2) Get the source code: `git clone --recursive`
@@ -39,7 +39,6 @@ You can find our [contributing guidelines here](https://github.com/requinDr/tsuk
 ## Useful links
 - [Adding a translation](https://github.com/requinDr/tsukiweb-public/wiki/Adding-a-translation)
 - [Recreating the resources](https://github.com/requinDr/tsukiweb-public/wiki/Recreating-the-resources)
-- [Roadmap](https://github.com/requinDr/tsukiweb-public/wiki/Roadmap)
 
 ## Project technologies
 - React (Vite)
