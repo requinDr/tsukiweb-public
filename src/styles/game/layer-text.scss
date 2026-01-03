@@ -64,8 +64,10 @@
 	@media screen and (orientation: portrait) and (max-width: 640px){
 		padding: 10vmin 6%;
 		background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%);
-		font-size: min(2.25cqh, 1.6em);
-		line-height: 1.8em;
+		.text-container {
+			font-size: min(2.15cqh, 1.5em);
+			line-height: 1.8em;
+		}
 	}
 	@media screen and (orientation: landscape) and (max-height: 500px){
 		.text-container {
