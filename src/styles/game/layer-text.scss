@@ -51,11 +51,11 @@
 		--ts: clamp(0.8px, 0.15cqw, 1.1px);
 		--nts: calc(-1 * var(--ts));
 		text-shadow:
-		  var(--ts) var(--ts) var(--ts) var(--sc),
-		  var(--nts) var(--ts) var(--ts) var(--sc),
-		  var(--nts) var(--nts) var(--ts) var(--sc),
-		  var(--ts) var(--nts) var(--ts) var(--sc),
-		  0 0 calc(var(--ts) * 2) var(--sc);
+			var(--ts) var(--ts) var(--ts) var(--sc),
+			var(--nts) var(--ts) var(--ts) var(--sc),
+			var(--nts) var(--nts) var(--ts) var(--sc),
+			var(--ts) var(--nts) var(--ts) var(--sc),
+			0 0 calc(var(--ts) * 2) var(--sc);
 		letter-spacing: 1px;
 		font-size: clamp(.92em, min(2.6cqw, 3.9cqh), 1.68em);
 		line-height: clamp(1.6em, 4.8cqw, 1.95em);
@@ -91,6 +91,33 @@
 			list-style-type: disclosure-closed;
 		}
 	}
+	.ffw {
+		position: absolute;
+		top: .8em;
+		right: 1.2em;
+		font-size: 1rem;
+		z-index: -1;
+		pointer-events: none;
+
+		svg {
+			width: 3em;
+			height: 3em;
+			fill: url(#gradient-ffw);
+			filter: drop-shadow(0px 0px 2px rgba(0,0,0,0.5));
+			animation: ffw-pulse 0.75s ease-in-out infinite alternate;
+		}
+	}
+	@keyframes ffw-pulse {
+		from {
+			transform: scale(1);
+			opacity: 0.8;
+		}
+		to {
+			transform: scale(1.1);
+			opacity: 1;
+		}
+	}
+
 	.cursor {
 		--size: clamp(0.95em, min(2.8cqw, 4cqh), 1em);
 		width: var(--size);

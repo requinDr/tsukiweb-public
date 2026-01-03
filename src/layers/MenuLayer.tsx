@@ -218,7 +218,7 @@ const ActionsButtons = ({script, show, close, qSave, qLoad}: ActionsButtonsProps
 				<MdPlayArrow />
 			</Button>
 			<Button {...ACTION_PROPS} onClick={fastForward}
-					aria-label="skip scene" title={strings.menu["ffw"]}
+					aria-label="fast forward" title={strings.menu["ffw"]}
 					nav-y={8} nav-x={1}>
 				<MdFastForward />
 			</Button>

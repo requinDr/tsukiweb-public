@@ -9,6 +9,7 @@ import { DivProps } from "@tsukiweb-common/types"
 import { Bbcode, BBTypeWriter } from "@tsukiweb-common/utils/Bbcode"
 import { preprocessText } from "@tsukiweb-common/utils/utils"
 import classNames from "classnames"
+import { MdFastForward } from "react-icons/md"
 
 type Glyph = "moon"|"page"
 const icons: Record<Glyph, string> = {
@@ -68,10 +69,11 @@ type Props = DivProps & {
 const TextLayer = ({ script, display, isTopLayer,
                      charDelay = settings.textSpeed, ...props }: Props) => {
 
-  const [ lines, setLines ] = useState<string[]>([])
-  const [ glyph, setGlyph ] = useState<'moon'|'page'|null>(null)
-  const [ textBox ] = useObserved(script, 'textBox')
-  const [ immediate, setImmediate ] = useState<boolean>(false)
+  const [lines, setLines] = useState<string[]>([])
+  const [glyph, setGlyph] = useState<Glyph|null>(null)
+  const [textBox] = useObserved(script, 'textBox')
+  const [immediate, setImmediate] = useState<boolean>(false)
+  const isFfw = false // TODO: implement fast-forward detection
   const onFinishRef = useRef<VoidFunction|undefined>(undefined)
   const mouseCursorVisible = useMousePointer()
 
@@ -143,6 +145,27 @@ const TextLayer = ({ script, display, isTopLayer,
         : glyphNode
         }
       </div>
+
+      {isFfw &&
+      <div className="ffw">
+        <svg width="0" height="0" style={{ position: 'absolute' }}>
+          <defs>
+            <linearGradient id="gradient-ffw" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="var(--surface-light-active)">
+                <animate attributeName="offset" values="-1; 1" dur="0.8s" repeatCount="indefinite" />
+              </stop>
+              <stop offset="50%" stopColor="var(--surface-light)">
+                <animate attributeName="offset" values="-0.5; 1.5" dur="0.8s" repeatCount="indefinite" />
+              </stop>
+              <stop offset="100%" stopColor="var(--surface-light-active)">
+                <animate attributeName="offset" values="0; 2" dur="0.8s" repeatCount="indefinite" />
+              </stop>
+            </linearGradient>
+          </defs>
+        </svg>
+        <MdFastForward />
+      </div>
+      }
     </div>
   )
 }
