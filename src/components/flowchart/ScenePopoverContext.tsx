@@ -86,7 +86,7 @@ export const ScenePopoverProvider = ({ children }: ProviderProps) => {
 		<ScenePopoverActionsContext.Provider value={actionsValue}>
 			{children}
 			{createPortal(
-				<AnimatePresence>
+				<AnimatePresence mode="wait">
 					{currentNode && (
 						<div
 							className="scene-popover-container"
@@ -95,10 +95,11 @@ export const ScenePopoverProvider = ({ children }: ProviderProps) => {
 							id="scene-popover"
 						>
 							<m.div
+								key={currentNode.id}
 								className="scene-popover"
-								initial={{ opacity: 0, y: -4 }}
+								initial={{ opacity: 0, y: 0 }}
 								animate={{ opacity: 1, y: 0 }}
-								exit={{ opacity: 0, y: 4 }}
+								exit={{ opacity: 0, y: 6 }}
 								transition={{ type: "tween", duration: 0.15 }}
 							>
 								<ScenePopover node={currentNode} />
