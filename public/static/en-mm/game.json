@@ -1,263 +1,481 @@
 {
   "scripts-dir": "./scenes",
-  "choices": [
-    "1. There's only a few minutes until homeroom. I have to head there right away.",
-    "2. …… I'm curious, so I'll go take a look.",
-    "1. Eat lunch in class.",
-    "2. Go eat in the cafeteria.",
-    "3. Go out into the hallway to think about it.",
-    "1. Go out into the hallway to think about it.",
-    "2. Go eat in the cafeteria.",
-    "3. Eat lunch in class.",
-    "1. Get a hold of myself and head back to the mansion.",
-    "2. Stay in school for a little longer.",
-    "1. About my little sister Akiha.",
-    "2. About the cheerful girl.",
-    "1. About my little sister Akiha.",
-    "2. About the cheerful girl.",
-    "3. About the girl by the window.",
-    "1. Go to the sitting room and talk with Akiha.",
-    "2. Stay in my own room.",
-    "3. Go watch TV in Kohaku-san's room.",
-    "1. Go check it out.",
-    "2. Go to sleep.",
-    "1. …… Return to the mansion.",
-    "2. …… Still wait.",
-    "1. …… Still wait.",
-    "2. …… Return to the mansion.",
-    "1. …… Still wait.",
-    "2. …… Return to the mansion.",
-    "1. Rush to the same alley as last night.",
-    "2. …… Wait here in the park.",
-    "3. Go to Arcueid's room.",
-    "1. Kohaku-san is in the way.",
-    "2. It's like Kohaku-san says.",
-    "1. East wing, first floor.",
-    "2. West wing, first floor.",
-    "3. East wing, second floor.",
-    "4. West wing, second floor.",
-    "1. Take off my glasses and get ready to kill.",
-    "2. First, I have to get us away from Akiha's room.",
-    "1. Even if it's useless, I'll look for Arcueid.",
-    "2. Accept it and go back to the mansion.",
-    "3. If this is how things are, I'll search for Roa myself.",
-    "1. No, I have to turn Kohaku-san away.",
-    "2. …… I'll just have her leave the food in here.",
-    "1. …… I can't let her see me like this.",
-    "2. …… But still, I want to hear her voice.",
-    "1. Escape forward.",
-    "2. Escape backwards.",
-    "1. …… Take off my glasses.",
-    "2. …… Don't take off my glasses.",
-    "1. I like Senpai's natural look.",
-    "2. Senpai isn't Senpai without her glasses!",
-    "1. Pursue him right now.",
-    "2. Take a breath, calm down, and then pursue him.",
-    "1. …… Stop.",
-    "2. …… I won't let his words trick me.",
-    "1. …… Chase after Akiha.",
-    "2. …… I can't do it.",
-    "1. …… Keep my promise.",
-    "2. …… I can't do that.",
-    "1. …… Give Akiha back this life.",
-    "2. …… I can't do that.",
-    "1. I will keep my promise.",
-    "2. I will never forget Arcueid.",
-    "1. Obey Arcueid.",
-    "2. Don't obey Arcueid.",
-    "1. Unlock the door.",
-    "2. …… Why did I lock the door in the first place?",
-    "1. Call out Akiha's name.",
-    "2. Call out Kohaku's name.",
-    "1. Go see Kohaku-san.",
-    "2. Investigate Makihisa's room.",
-    "1. …… Go look outside.",
-    "2. Just go back to my room.",
-    "1. ----Kill her now.",
-    "2. ----Pull back for now.",
-    "1. …… Kill her before she notices me.",
-    "2. …… Wait until she walks by and attack her from behind.",
-    "1. Greet Akiha.",
-    "2. Greet Kohaku-san.",
-    "3. Greet both of them.",
-    "1. In the classroom.",
-    "2. Go to the cafeteria.",
-    "1. In the classroom.",
-    "2. Go to the cafeteria.",
-    "3. Go to the tea ceremony room.",
-    "1. This is just a bad dream.",
-    "2. This is, without a doubt, reality wrought by my own hands.",
-    "1. Greet Akiha.",
-    "2. Greet Kohaku-san.",
-    "3. Greet both of them.",
-    "1. Greet Akiha.",
-    "2. Greet Kohaku-san.",
-    "3. Greet both of them.",
-    "1. Ask about Yumizuka Satsuki.",
-    "2. …… Just sit silently.",
-    "1. Ciel-senpai is right.",
-    "2. …… No, I really don't feel well.",
-    "1. Go see Hisui.",
-    "2. Go help Kohaku-san.",
-    "3. Stay in my room.",
-    "1. Go and look.",
-    "2. Don't go and look.",
-    "1. Talk about Akiha.",
-    "2. Talk about Kohaku-san.",
-    "3. Talk about the mansion.",
-    "1. …… I'll cooperate.",
-    "2. No, I won't cooperate.",
-    "3. Escape somehow.",
-    "1. I should be escaping after all.",
-    "2. …… Still, I can't leave her alone.",
-    "1. …… Fine, but just for a little bit.",
-    "2. …… No. I have a bad feeling about it.",
-    "1. I think I'll go back to the mansion.",
-    "2. I think I'll go back to the hotel.",
-    "1. ---I should go check out what's happening outside.",
-    "2. I'll stay inside the room for now and keep watch.",
-    "1. Go search for Yumizuka.",
-    "2. Search around the school.",
-    "3. Search around the city.",
-    "1. Go look for Yumizuka.",
-    "2. I can't do something that dangerous.",
-    "1. I like her.",
-    "2. I hate her.",
-    "3. I can't answer.",
-    "1. I'd like to refuse, but---",
-    "2. No, there's no way I could take on a monster like that.",
-    "1. Dash towards Nrvnqsr.",
-    "2. …… No, it's still too early.",
-    "1. I'd like to refuse, but---",
-    "2. No, there's no way I could take on a monster like that.",
-    "1. Dash towards Nrvnqsr.",
-    "2. …… It's still too early.",
-    "1. I'll bear with it for now and wait for my chance.",
-    "2. I have to destroy the main body.",
-    "1. No, I really don't feel like it.",
-    "2. Of course I agree.",
-    "1. No, I really don't feel like it.",
-    "2. Of course I agree.",
-    "1. Ask her why she transferred to this school.",
-    "2. …… I should introduce Arihiko.",
-    "3. Was she pretending to be naive until just now?",
-    "1. Go and help Kohaku-san.",
-    "2. Go and help Hisui.",
-    "1. I can't explain the circumstances, so I'll at least apologize.",
-    "2. I can't explain the circumstances, so I'll somehow lie about it.",
-    "3. No, I should tell the truth.",
-    "1. …… Go into the city and look for her.",
-    "2. Space out in the classroom.",
-    "3. Just return to the mansion and rest.",
-    "1. It might be Arcueid.",
-    "2. It might be Ciel-Senpai.",
-    "3. It might be Akiha.",
-    "1. It might be Arcueid.",
-    "2. It might be Ciel-Senpai.",
-    "3. It might be Akiha.",
-    "4. It might be Hisui.",
-    "5. It might be Kohaku-san.",
-    "1. I will apologize.",
-    "2. Try to deceive her.",
-    "3. Tell the truth.",
-    "1. …… No, that had to have been someone else.",
-    "2. Ask about last night.",
-    "1. Alright, I'll eat.",
-    "2. Alright, I won't eat.",
-    "1. No. I refuse to do something so embarrassing.",
-    "2. I don't care. I'll nod.",
-    "1. Ask her why she transferred to this school.",
-    "2. …… I should introduce Arihiko.",
-    "3. Was she pretending to be naive until just now?",
-    "1. Go home alone.",
-    "2. Go to Akiha's classroom.",
-    "1. Go to the sitting room.",
-    "2. Go to the detached building.",
-    "3. Stay here until dinnertime.",
-    "1. Go to the detached building.",
-    "2. Just go to sleep.",
-    "1. Go see Hisui.",
-    "2. Go help Kohaku-san.",
-    "3. Go to Akiha's room.",
-    "1. I'll go into the hallway and talk to her.",
-    "2. No, it probably doesn't concern me so I'll just watch from here.",
-    "3. An opening! I'll surprise her from behind!",
-    "1. Search for Arcueid aimlessly.",
-    "2. Return to the mansion.",
-    "1. Yeah, I'll go with Arihiko to the cafeteria.",
-    "2. No, even if she hates me, I'll go see Senpai.",
-    "1. Go back to the mansion.",
-    "2. Go to the tea ceremony room.",
-    "3. Go out into the city.",
-    "1. I can't leave Arcueid alone.",
-    "2. Senpai is dear to me.",
-    "1. Calm down a little, then head to the sitting room.",
-    "2. I'm fine, so I'll head to the sitting room.",
-    "3. I should get a little more rest.",
-    "1. Akiha's current uniform suits her better.",
-    "2. Our school's uniform would suit her better.",
-    "1. Go and help Hisui.",
-    "2. Go and help Kohaku-san.",
-    "1. Talk with her about it.",
-    "2. Don't talk with her about it.",
-    "1. Go to my old man's room.",
-    "2. Stay in my room.",
-    "1. Go to the nighttime city.",
-    "2. Don't sleep and wait until morning.",
-    "1. I should smooth things over with a cheerful greeting.",
-    "2. I won't do something stupid, so just greet her normally.",
-    "3. No, no. All I can do now is apologize.",
-    "1. Go to the courtyard now.",
-    "2. Pray she doesn't do anything until classes are over.",
-    "3. I don't care. I'll ignore her.",
-    "1. Still, I'll tell Hisui the truth.",
-    "2. No, I can't let anyone know.",
-    "1. No, let's go to the sitting room.",
-    "2. More than that, I should go to school.",
-    "1. Say it bluntly.",
-    "2. Say it calmly.",
-    "1. Still, I can at least say good morning to Akiha.",
-    "2. …… I can't. Let's go back to my room.",
-    "1. Go to Akiha's classroom.",
-    "2. No, I don't need to go and see her.",
-    "1. Go to Akiha's classroom.",
-    "2. No, I don't need to go and see her.",
-    "1. Talk to Ciel about last night.",
-    "2. …… That would just be a waste of my time.",
-    "1. Get Kohaku-san to make something.",
-    "2. Ask Hisui to make something.",
-    "1. …… Just this isn't enough at all.",
-    "2. …… I can move again, so I should just thank her.",
-    "1. …… Do as Akiha says.",
-    "2. No, I have to push myself to see Arcueid.",
-    "1. …… Go and determine my own fate.",
-    "2. No, I'll stay in the mansion.",
-    "1. …… It can't be helped. I'll go with Arcueid.",
-    "2. …… It can be helped. I should go to school.",
-    "1. Well, it's because you're selfish, right?",
-    "2. Well, it's because you hate me, right?",
-    "3. Well, it's because you're a vampire, right?",
-    "1. Go for the usual, take her to the movie theater.",
-    "2. She'll probably like somewhere such as a back alley, right?",
-    "3. …… I don't really know, so let's go to the park for now.",
-    "1. Alright, I'll tell her about last night.",
-    "2. Then, let's hear the details about Arcueid's \"enemy\".",
-    "3. Well, I have to question her about her hobbies, history, and her three sizes!",
-    "1. Go to Arcueid's apartment.",
-    "2. Look in the commercial district.",
-    "3. …… The school, perhaps?",
-    "1. I can't do something she doesn't want.",
-    "2. I just… want her, that's all.",
-    "1. Wait here.",
-    "2. Go to the classroom.",
-    "3. Go behind the school.",
-    "1. Space out here in the classroom.",
-    "2. …… Go eat some lunch.",
-    "1. I guess so.",
-    "2. …… No, it does matter.",
-    "1. …… I have to live.",
-    "2. …… I can't do it."
-  ],
+  "choices": {
+    "f20": [
+      "1. There's only a few minutes until homeroom. I have to head there right away.",
+      "2. …… I'm curious, so I'll go take a look."
+    ],
+    "f23": [
+      "1. Eat lunch in class.",
+      "2. Go eat in the cafeteria.",
+      "3. Go out into the hallway to think about it."
+    ],
+    "f24": [
+      "1. Go out into the hallway to think about it.",
+      "2. Go eat in the cafeteria.",
+      "3. Eat lunch in class."
+    ],
+    "f31": [
+      "1. Get a hold of myself and head back to the mansion.",
+      "2. Stay in school for a little longer."
+    ],
+    "f37": [
+      "1. About my little sister Akiha.",
+      "2. About the cheerful girl."
+    ],
+    "f201": [
+      "1. About my little sister Akiha.",
+      "2. About the cheerful girl.",
+      "3. About the girl by the window."
+    ],
+    "f42": [
+      "1. Go to the sitting room and talk with Akiha.",
+      "2. Stay in my own room.",
+      "3. Go watch TV in Kohaku-san's room."
+    ],
+    "f46": [
+      "1. Go check it out.",
+      "2. Go to sleep."
+    ],
+    "f183": [
+      "1. …… Return to the mansion.",
+      "2. …… Still wait."
+    ],
+    "f184": [
+      "1. …… Still wait.",
+      "2. …… Return to the mansion."
+    ],
+    "f185": [
+      "1. …… Still wait.",
+      "2. …… Return to the mansion."
+    ],
+    "f189": [
+      "1. Rush to the same alley as last night.",
+      "2. …… Wait here in the park.",
+      "3. Go to Arcueid's room."
+    ],
+    "f284": [
+      "1. Kohaku-san is in the way.",
+      "2. It's like Kohaku-san says."
+    ],
+    "f365": [
+      "1. East wing, first floor.",
+      "2. West wing, first floor.",
+      "3. East wing, second floor.",
+      "4. West wing, second floor."
+    ],
+    "f370": [
+      "1. Take off my glasses and get ready to kill.",
+      "2. First, I have to get us away from Akiha's room."
+    ],
+    "f194": [
+      "1. Even if it's useless, I'll look for Arcueid.",
+      "2. Accept it and go back to the mansion.",
+      "3. If this is how things are, I'll search for Roa myself."
+    ],
+    "f292": [
+      "1. No, I have to turn Kohaku-san away.",
+      "2. …… I'll just have her leave the food in here."
+    ],
+    "f295": [
+      "1. …… I can't let her see me like this.",
+      "2. …… But still, I want to hear her voice."
+    ],
+    "f297": [
+      "1. Escape forward.",
+      "2. Escape backwards."
+    ],
+    "f299": [
+      "1. …… Take off my glasses.",
+      "2. …… Don't take off my glasses."
+    ],
+    "f302": [
+      "1. I like Senpai's natural look.",
+      "2. Senpai isn't Senpai without her glasses!"
+    ],
+    "f375": [
+      "1. Pursue him right now.",
+      "2. Take a breath, calm down, and then pursue him."
+    ],
+    "f378": [
+      "1. …… Stop.",
+      "2. …… I won't let his words trick me."
+    ],
+    "f380": [
+      "1. …… Chase after Akiha.",
+      "2. …… I can't do it."
+    ],
+    "f381": [
+      "1. …… Keep my promise.",
+      "2. …… I can't do that."
+    ],
+    "f383": [
+      "1. …… Give Akiha back this life.",
+      "2. …… I can't do that."
+    ],
+    "f503": [
+      "1. I will keep my promise.",
+      "2. I will never forget Arcueid."
+    ],
+    "f307": [
+      "1. Obey Arcueid.",
+      "2. Don't obey Arcueid."
+    ],
+    "f405": [
+      "1. Unlock the door.",
+      "2. …… Why did I lock the door in the first place?"
+    ],
+    "f411": [
+      "1. Call out Akiha's name.",
+      "2. Call out Kohaku's name."
+    ],
+    "f416": [
+      "1. Go see Kohaku-san.",
+      "2. Investigate Makihisa's room."
+    ],
+    "f419": [
+      "1. …… Go look outside.",
+      "2. Just go back to my room."
+    ],
+    "f425": [
+      "1. ----Kill her now.",
+      "2. ----Pull back for now."
+    ],
+    "f427": [
+      "1. …… Kill her before she notices me.",
+      "2. …… Wait until she walks by and attack her from behind."
+    ],
+    "f51": [
+      "1. Greet Akiha.",
+      "2. Greet Kohaku-san.",
+      "3. Greet both of them."
+    ],
+    "f58": [
+      "1. In the classroom.",
+      "2. Go to the cafeteria."
+    ],
+    "f59": [
+      "1. In the classroom.",
+      "2. Go to the cafeteria.",
+      "3. Go to the tea ceremony room."
+    ],
+    "f65": [
+      "1. This is just a bad dream.",
+      "2. This is, without a doubt, reality wrought by my own hands."
+    ],
+    "f204": [
+      "1. Greet Akiha.",
+      "2. Greet Kohaku-san.",
+      "3. Greet both of them."
+    ],
+    "f205": [
+      "1. Greet Akiha.",
+      "2. Greet Kohaku-san.",
+      "3. Greet both of them."
+    ],
+    "f206": [
+      "1. Ask about Yumizuka Satsuki.",
+      "2. …… Just sit silently."
+    ],
+    "f210": [
+      "1. Ciel-senpai is right.",
+      "2. …… No, I really don't feel well."
+    ],
+    "f212": [
+      "1. Go see Hisui.",
+      "2. Go help Kohaku-san.",
+      "3. Stay in my room."
+    ],
+    "f211": [
+      "1. Go and look.",
+      "2. Don't go and look."
+    ],
+    "f69": [
+      "1. Talk about Akiha.",
+      "2. Talk about Kohaku-san.",
+      "3. Talk about the mansion."
+    ],
+    "f75": [
+      "1. …… I'll cooperate.",
+      "2. No, I won't cooperate.",
+      "3. Escape somehow."
+    ],
+    "f80": [
+      "1. I should be escaping after all.",
+      "2. …… Still, I can't leave her alone."
+    ],
+    "f81": [
+      "1. …… Fine, but just for a little bit.",
+      "2. …… No. I have a bad feeling about it."
+    ],
+    "f84": [
+      "1. I think I'll go back to the mansion.",
+      "2. I think I'll go back to the hotel."
+    ],
+    "f88": [
+      "1. ---I should go check out what's happening outside.",
+      "2. I'll stay inside the room for now and keep watch."
+    ],
+    "f235": [
+      "1. Go search for Yumizuka.",
+      "2. Search around the school.",
+      "3. Search around the city."
+    ],
+    "f240": [
+      "1. Go look for Yumizuka.",
+      "2. I can't do something that dangerous."
+    ],
+    "f242": [
+      "1. I like her.",
+      "2. I hate her.",
+      "3. I can't answer."
+    ],
+    "f94": [
+      "1. I'd like to refuse, but---",
+      "2. No, there's no way I could take on a monster like that."
+    ],
+    "f97": [
+      "1. Dash towards Nrvnqsr.",
+      "2. …… No, it's still too early."
+    ],
+    "f98": [
+      "1. I'd like to refuse, but---",
+      "2. No, there's no way I could take on a monster like that."
+    ],
+    "f99": [
+      "1. Dash towards Nrvnqsr.",
+      "2. …… It's still too early."
+    ],
+    "f101": [
+      "1. I'll bear with it for now and wait for my chance.",
+      "2. I have to destroy the main body."
+    ],
+    "f305": [
+      "1. No, I really don't feel like it.",
+      "2. Of course I agree."
+    ],
+    "f306": [
+      "1. No, I really don't feel like it.",
+      "2. Of course I agree."
+    ],
+    "f303": [
+      "1. Ask her why she transferred to this school.",
+      "2. …… I should introduce Arihiko.",
+      "3. Was she pretending to be naive until just now?"
+    ],
+    "f317": [
+      "1. Go and help Kohaku-san.",
+      "2. Go and help Hisui."
+    ],
+    "f108": [
+      "1. I can't explain the circumstances, so I'll at least apologize.",
+      "2. I can't explain the circumstances, so I'll somehow lie about it.",
+      "3. No, I should tell the truth."
+    ],
+    "f112": [
+      "1. …… Go into the city and look for her.",
+      "2. Space out in the classroom.",
+      "3. Just return to the mansion and rest."
+    ],
+    "f116": [
+      "1. It might be Arcueid.",
+      "2. It might be Ciel-Senpai.",
+      "3. It might be Akiha."
+    ],
+    "f117": [
+      "1. It might be Arcueid.",
+      "2. It might be Ciel-Senpai.",
+      "3. It might be Akiha.",
+      "4. It might be Hisui.",
+      "5. It might be Kohaku-san."
+    ],
+    "f200": [
+      "1. I will apologize.",
+      "2. Try to deceive her.",
+      "3. Tell the truth."
+    ],
+    "f222": [
+      "1. …… No, that had to have been someone else.",
+      "2. Ask about last night."
+    ],
+    "f225": [
+      "1. Alright, I'll eat.",
+      "2. Alright, I won't eat."
+    ],
+    "f230": [
+      "1. No. I refuse to do something so embarrassing.",
+      "2. I don't care. I'll nod."
+    ],
+    "f325": [
+      "1. Ask her why she transferred to this school.",
+      "2. …… I should introduce Arihiko.",
+      "3. Was she pretending to be naive until just now?"
+    ],
+    "f329": [
+      "1. Go home alone.",
+      "2. Go to Akiha's classroom."
+    ],
+    "f334": [
+      "1. Go to the sitting room.",
+      "2. Go to the detached building.",
+      "3. Stay here until dinnertime."
+    ],
+    "f338": [
+      "1. Go to the detached building.",
+      "2. Just go to sleep."
+    ],
+    "f386": [
+      "1. Go see Hisui.",
+      "2. Go help Kohaku-san.",
+      "3. Go to Akiha's room."
+    ],
+    "f129": [
+      "1. I'll go into the hallway and talk to her.",
+      "2. No, it probably doesn't concern me so I'll just watch from here.",
+      "3. An opening! I'll surprise her from behind!"
+    ],
+    "f135": [
+      "1. Search for Arcueid aimlessly.",
+      "2. Return to the mansion."
+    ],
+    "f244": [
+      "1. Yeah, I'll go with Arihiko to the cafeteria.",
+      "2. No, even if she hates me, I'll go see Senpai."
+    ],
+    "f249": [
+      "1. Go back to the mansion.",
+      "2. Go to the tea ceremony room.",
+      "3. Go out into the city."
+    ],
+    "f256": [
+      "1. I can't leave Arcueid alone.",
+      "2. Senpai is dear to me."
+    ],
+    "f343": [
+      "1. Calm down a little, then head to the sitting room.",
+      "2. I'm fine, so I'll head to the sitting room.",
+      "3. I should get a little more rest."
+    ],
+    "f347": [
+      "1. Akiha's current uniform suits her better.",
+      "2. Our school's uniform would suit her better."
+    ],
+    "f350": [
+      "1. Go and help Hisui.",
+      "2. Go and help Kohaku-san."
+    ],
+    "f391": [
+      "1. Talk with her about it.",
+      "2. Don't talk with her about it."
+    ],
+    "f394": [
+      "1. Go to my old man's room.",
+      "2. Stay in my room."
+    ],
+    "f395": [
+      "1. Go to the nighttime city.",
+      "2. Don't sleep and wait until morning."
+    ],
+    "f143": [
+      "1. I should smooth things over with a cheerful greeting.",
+      "2. I won't do something stupid, so just greet her normally.",
+      "3. No, no. All I can do now is apologize."
+    ],
+    "f149": [
+      "1. Go to the courtyard now.",
+      "2. Pray she doesn't do anything until classes are over.",
+      "3. I don't care. I'll ignore her."
+    ],
+    "f153": [
+      "1. Still, I'll tell Hisui the truth.",
+      "2. No, I can't let anyone know."
+    ],
+    "f260": [
+      "1. No, let's go to the sitting room.",
+      "2. More than that, I should go to school."
+    ],
+    "f267": [
+      "1. Say it bluntly.",
+      "2. Say it calmly."
+    ],
+    "f353": [
+      "1. Still, I can at least say good morning to Akiha.",
+      "2. …… I can't. Let's go back to my room."
+    ],
+    "f354": [
+      "1. Go to Akiha's classroom.",
+      "2. No, I don't need to go and see her."
+    ],
+    "f355": [
+      "1. Go to Akiha's classroom.",
+      "2. No, I don't need to go and see her."
+    ],
+    "f358": [
+      "1. Talk to Ciel about last night.",
+      "2. …… That would just be a waste of my time."
+    ],
+    "f399": [
+      "1. Get Kohaku-san to make something.",
+      "2. Ask Hisui to make something."
+    ],
+    "f402": [
+      "1. …… Just this isn't enough at all.",
+      "2. …… I can move again, so I should just thank her."
+    ],
+    "f159": [
+      "1. …… Do as Akiha says.",
+      "2. No, I have to push myself to see Arcueid."
+    ],
+    "f361": [
+      "1. …… Go and determine my own fate.",
+      "2. No, I'll stay in the mansion."
+    ],
+    "f162": [
+      "1. …… It can't be helped. I'll go with Arcueid.",
+      "2. …… It can be helped. I should go to school."
+    ],
+    "f163": [
+      "1. Well, it's because you're selfish, right?",
+      "2. Well, it's because you hate me, right?",
+      "3. Well, it's because you're a vampire, right?"
+    ],
+    "f168": [
+      "1. Go for the usual, take her to the movie theater.",
+      "2. She'll probably like somewhere such as a back alley, right?",
+      "3. …… I don't really know, so let's go to the park for now."
+    ],
+    "f172": [
+      "1. Alright, I'll tell her about last night.",
+      "2. Then, let's hear the details about Arcueid's \"enemy\".",
+      "3. Well, I have to question her about her hobbies, history, and her three sizes!"
+    ],
+    "f178": [
+      "1. Go to Arcueid's apartment.",
+      "2. Look in the commercial district.",
+      "3. …… The school, perhaps?"
+    ],
+    "f180": [
+      "1. I can't do something she doesn't want.",
+      "2. I just… want her, that's all."
+    ],
+    "f273": [
+      "1. Wait here.",
+      "2. Go to the classroom.",
+      "3. Go behind the school."
+    ],
+    "f277": [
+      "1. Space out here in the classroom.",
+      "2. …… Go eat some lunch."
+    ],
+    "f279": [
+      "1. I guess so.",
+      "2. …… No, it does matter."
+    ],
+    "f362": [
+      "1. …… I have to live.",
+      "2. …… I can't do it."
+    ]
+  },
   "images": {
     "words": {
       "fin": "#ffffff$c`[center][noline][color=black][font=serif]Fin`",

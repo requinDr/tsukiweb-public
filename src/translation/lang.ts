@@ -1,4 +1,4 @@
-import { RouteName, RouteDayName } from "../types"
+import { RouteName, RouteDayName, LabelName } from "../types"
 import defaultStrings from "../assets/lang/default.json"
 import { APP_VERSION, SCENE_ATTRS } from "../utils/constants"
 import { settings } from "../utils/settings"
@@ -7,6 +7,7 @@ import { ValueStorage } from "@tsukiweb-common/utils/storage"
 import { fetchJson, deepAssign, insertDirectory } from "@tsukiweb-common/utils/utils"
 import { ImageRedirect, LangDesc, TextImage, TranslationId, UpdateDateFormat } from "@tsukiweb-common/utils/lang"
 import { langSelection } from "./langSelection"
+import { PartialRecord } from "@tsukiweb-common/types"
 
 //##############################################################################
 //#                                  PRIVATE                                   #
@@ -32,7 +33,7 @@ type StringsType = typeof defaultStrings & {
     "redirected-images": Record<string, string|ImageRedirect<string>>,
     "words": Record<string, string>
   },
-  choices: string[] | Record<string, string>,
+  choices: PartialRecord<LabelName, string[]>,
   scenario: {
     days: string[],
     routes: Record<RouteName, Record<RouteDayName, string>>,

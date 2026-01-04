@@ -21,19 +21,21 @@ export function extractChoicesFromLogic(logicContent, labelOrder) {
     }
 
     if (currentLabel && line.includes('select')) {
+      if (Object.hasOwn(choicesByLabel, currentLabel))
+        throw Error(`Multiple 'select' in label ${currentLabel}`)
       choicesByLabel[currentLabel] =
         [...line.matchAll(choiceRegex)].map(m => m[1].trim())
     }
   }
 
-  return labelOrder.flatMap(label => choicesByLabel[label] || [])
+  return choicesByLabel
 }
 
-export function replaceChoicesWithIndices(logicContent) {
-  const choiceRegex = /`([^`]+)`([\s\n]*,[\s\n]*\*\w+)/g
+export function removeChoiceTexts(logicContent) {
+  const choiceRegex = /`([^`]+)`([\s\n]*,[\s\n]*)(\*\w+)/g
   let currentIndex = 0
-  return logicContent.replace(choiceRegex, (match, choiceText, suffix) => {
-    const replacement = `\`${currentIndex}\`${suffix}`
+  return logicContent.replace(choiceRegex, (match, choiceText, separator, nextLabel) => {
+    const replacement = nextLabel
     currentIndex++
     return replacement
   })

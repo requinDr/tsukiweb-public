@@ -37,42 +37,21 @@ type SelectionCallback = (choice: Choice)=>void
 //#region                       COMMAND HANDLERS
 //##############################################################################
 
-function getChoiceText(trimmedText: string): string {
-	const choiceIndex = parseInt(trimmedText)
-	if (!isNaN(choiceIndex) && choiceIndex >= 0 && choiceIndex < strings.choices.length) {
-		const translatedChoice = strings.choices[choiceIndex]
-		if (translatedChoice !== undefined) {
-			return translatedChoice
-		}
-	}
-	return trimmedText
-}
-
-// <"text"|`text` , *label> (optional whitespace around ',')
-const choiceRegexp = /(?<text>"[^"]*"|`[^`]*`)\s*,\s*\*(?<label>\w+)/gm
 
 function processSelect(setChoices: (choices: Choice[])=>void,
 											 onSelection: RefObject<SelectionCallback|undefined>,
 											 arg: string, _cmd: string, script: ScriptPlayer,
 											 onFinish: VoidFunction) {
-	const choices: Choice[] = []
-	let match
-	while ((match = choiceRegexp.exec(arg)) != null) {
-		const {text, label} = match.groups ?? {}
-		if (!text || !label) {
-			console.error(`Could not parse choices in "select ${arg}"`)
-			continue
+	const currentLabel = script.currentLabel.replace('skip', 'f') as LabelName
+	arg = arg.replaceAll(/`[^`]`,/g, '') // remove choice index (temporary fix before logic.txt is updated on server)
+	const labels = arg.split(',') as LabelName[]
+	const choices: Choice[] = labels.map((label, index) => {
+		return {
+			index,
+			str: strings.choices[currentLabel]![index],
+			label
 		}
-		// remove ` or " at beginning and end of text regexp label, trim text
-		const trimmedText = text.slice(1, -1).trim()
-		const choiceText = getChoiceText(trimmedText)
-		
-		choices.push({
-			index: choices.length,
-			str: preprocessText(choiceText), 
-			label: label.trim() as LabelName
-		})
-	}
+	})
 
 	if (choices.length == 0)
 		console.error(`canot parse choices ${arg}`)

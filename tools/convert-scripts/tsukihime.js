@@ -9,7 +9,7 @@ import { parseScript } from '../../tsukiweb-common/tools/convert-scripts/parsers
 import { CommandToken, ConditionToken, ErrorToken, LabelToken, ReturnToken, TextToken, Token } from '../../tsukiweb-common/tools/convert-scripts/parsers/utils.js'
 import { generateScenes, writeScenes } from './utils/nscriptr_convert.js';
 import { logError, logProgress } from '../../tsukiweb-common/tools/utils/logging.js';
-import { extractChoicesFromLogic, extractLabelOrder, replaceChoicesWithIndices, updateGameJsonWithChoices } from './utils/choices_extractor.js';
+import { extractChoicesFromLogic, extractLabelOrder, removeChoiceTexts, updateGameJsonWithChoices } from './utils/choices_extractor.js';
 import { fixContexts, getScenes } from './utils/scenes.js';
 
 
@@ -604,7 +604,7 @@ export function main() {
 		}
 	
 		// Phase 3: Write central logic file
-		const modifiedContent = replaceChoicesWithIndices(referenceLogic)
+		const modifiedContent = removeChoiceTexts(referenceLogic)
 		const centralLogicPath = path.join(outputPathPrefix, LOGIC_FILE + '.txt')
 		const dir = path.dirname(centralLogicPath)
 		if (!fs.existsSync(dir)) {

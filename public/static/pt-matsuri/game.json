@@ -1,263 +1,481 @@
 {
   "scripts-dir": "./scenes",
-  "choices": [
-    "1. Faltam apenas alguns minutos para a aula começar. Preciso ir para a sala imediatamente.",
-    "2. …… Eu estou curioso, por isso vou dar uma olhada.",
-    "1. Almoçar na sala de aula.",
-    "2. Almoçar no refeitório.",
-    "3. Ir até o corredor para pensar sobre o assunto.",
-    "1. Ir até o corredor para pensar sobre o assunto.",
-    "2. Almoçar no refeitório.",
-    "3. Almoçar na sala de aula.",
-    "1. Eu vou me recompor e voltar para a mansão.",
-    "2. Eu vou ficar na escola mais um pouco.",
-    "1. A minha irmã mais nova, a Akiha.",
-    "2. Aquela garota que estava sempre animada.",
-    "1. Sobre a minha irmã mais nova, a Akiha.",
-    "2. Sobre aquela garota que sempre estava animada.",
-    "3. Sobre aquela garota que sempre ficava na janela.",
-    "1. Vou para a sala de estar conversar com a Akiha.",
-    "2. Vou ficar no meu quarto.",
-    "3. Vou para o quarto da Kohaku-san assistir TV.",
-    "1. Vou lá dar uma olhada.",
-    "2. Vou dormir.",
-    "1. …… Voltar para a mansão.",
-    "2. …… Continuar esperando.",
-    "1. …… Continuar esperando.",
-    "2. …… Voltar para a mansão.",
-    "1. …… Continuar esperando.",
-    "2. …… Voltar para a mansão.",
-    "1. Vou correndo para o mesmo beco de ontem à noite.",
-    "2. …… Vou esperar aqui no parque.",
-    "3. Vou até o apartamento da Arcueid.",
-    "1. A Kohaku-san está no caminho.",
-    "2. É como a Kohaku-san diz.",
-    "1. Ala leste, primeiro andar.",
-    "2. Ala oeste, primeiro andar.",
-    "3. Ala leste, segundo andar.",
-    "4. Ala oeste, segundo andar.",
-    "1. Tiro os óculos e me preparo para matar.",
-    "2. Primeiro, precisamos nos afastar do quarto da Akiha.",
-    "1. Mesmo que seja inútil, vou procurar pela Arcueid.",
-    "2. Aceitar os fatos e voltar para a mansão.",
-    "3. Se é assim que vai ser, eu mesmo vou procurar pelo Roa.",
-    "1. Não, tenho que mandar a Kohaku-san sair daqui.",
-    "2. …… Só vou deixar ela trazer a comida aqui.",
-    "1. …… Não posso deixar que ela me veja desse jeito.",
-    "2. …… Mas ainda assim, quero ouvir a voz dela.",
-    "1. Fugir para a frente.",
-    "2. Fugir para trás.",
-    "1. …… Tirar os óculos.",
-    "2. …… Não vou tirar os óculos.",
-    "1. Eu gosto da aparência natural da Senpai.",
-    "2. A Senpai não é a Senpai sem os óculos!",
-    "1. Persegui-lo agora mesmo.",
-    "2. Tomar um fôlego, me acalmar e só depois persegui-lo.",
-    "1. …… Paro.",
-    "2. …… Não vou deixar suas palavras me enganarem.",
-    "1. …… Ir atrás da Akiha.",
-    "2. …… Eu não posso fazer isso.",
-    "1. …… Manter minha promessa.",
-    "2. …… Eu não posso fazer isso.",
-    "1. …… Devolver a vida que a Akiha me deu.",
-    "2. …… Eu não posso fazer isso.",
-    "1. Eu vou manter a minha promessa.",
-    "2. Eu nunca vou esquecer a Arcueid.",
-    "1. Obedecer a Arcueid.",
-    "2. Não vou obedecer a Arcueid.",
-    "1. Destrancar a porta.",
-    "2. …… Por que foi que eu tranquei a porta mesmo?",
-    "1. Gritar o nome da Akiha.",
-    "2. Gritar o nome da Kohaku-san.",
-    "1. Vou conversar com a Kohaku-san.",
-    "2. Vou investigar o quarto do Makihisa.",
-    "1. …… Dar uma olhada lá fora.",
-    "2. Voltar para o meu quarto.",
-    "1. ----Matá-la agora.",
-    "2. ----Recuar por enquanto.",
-    "1. …… Matá-la antes que ela perceba a minha presença.",
-    "2. …… Esperar ela passar e atacá-la por trás.",
-    "1. Cumprimentar a Akiha.",
-    "2. Cumprimentar a Kohaku-san.",
-    "3. Cumprimentar as duas.",
-    "1. Na sala de aula.",
-    "2. No refeitório.",
-    "1. Na sala de aula.",
-    "2. No refeitório.",
-    "3. Na sala do clube de cerimônia de chá.",
-    "1. Isso é só um pesadelo.",
-    "2. Isso é, sem dúvida alguma, a realidade forjada pelas minhas próprias mãos.",
-    "1. Cumprimentar a Akiha.",
-    "2. Cumprimentar a Kohaku-san.",
-    "3. Cumprimentar as duas.",
-    "1. Cumprimentar a Akiha.",
-    "2. Cumprimentar a Kohaku-san.",
-    "3. Cumprimentar as duas.",
-    "1. Vou perguntar sobre a Yumizuka Satsuki.",
-    "2. …… Vou me sentar em silêncio.",
-    "1. A Ciel-senpai está certa.",
-    "2. …… Não, eu realmente não estou me sentindo bem.",
-    "1. Ir atrás da Hisui.",
-    "2. Ajudar a Kohaku-san.",
-    "3. Ficar no meu quarto.",
-    "1. Vou lá olhar.",
-    "2. Não vou lá olhar.",
-    "1. Conversar sobre a Akiha.",
-    "2. Conversar sobre a Kohaku-san.",
-    "3. Conversar sobre a mansão.",
-    "1. …… Vou cooperar.",
-    "2. Não vou cooperar.",
-    "3. Vou escapar de algum jeito.",
-    "1. Realmente devo fugir daqui.",
-    "2. …… Não posso deixar ela sozinha.",
-    "1. …… Tudo bem, mas me devolve logo.",
-    "2. …… Não. Eu tenho um mau pressentimento sobre isso.",
-    "1. Acho que vou voltar para a mansão.",
-    "2. Acho que vou voltar para o hotel.",
-    "1. ---Eu vou verificar o que está acontecendo lá fora.",
-    "2. Eu vou continuar dentro do quarto por enquanto.",
-    "1. Vou procurar pela Yumizuka.",
-    "2. Vou procurar pela escola.",
-    "3. Vou procurar pela cidade.",
-    "1. Vou procurar pela Yumizuka.",
-    "2. Não posso fazer algo tão perigoso assim.",
-    "1. Eu gosto dela.",
-    "2. Eu odeio ela.",
-    "3. Eu não posso responder.",
-    "1. Eu gostaria de recusar, mas---",
-    "2. Não, é impossível eu enfrentar um monstro como aquele.",
-    "1. Correr na direção do Nrvnqsr.",
-    "2. …… Não, ainda é muito cedo.",
-    "1. Eu gostaria de recusar, mas---",
-    "2. Não, é impossível eu enfrentar um monstro como aquele.",
-    "1. Correr na direção do Nrvnqsr.",
-    "2. …… Ainda é muito cedo.",
-    "1. Eu vou suportar essa situação e esperar por uma chance.",
-    "2. Eu tenho que destruir o corpo principal.",
-    "1. Não, eu não estou muito no clima.",
-    "2. Mas é claro que eu concordo.",
-    "1. Não, eu não estou muito no clima.",
-    "2. Mas é claro que eu concordo.",
-    "1. Vou perguntar por que ela se transferiu para esta escola.",
-    "2. …… Eu deveria apresentar o Arihiko.",
-    "3. Será que ela estava fingindo essa ingenuidade até agora?",
-    "1. Vou ajudar a Kohaku-san.",
-    "2. Vou ajudar a Hisui.",
-    "1. Eu não posso explicar as circunstâncias, então vou apenas pedir desculpas.",
-    "2. Eu não posso explicar as circunstâncias, então vou inventar uma mentira.",
-    "3. Não, eu tenho que contar a verdade.",
-    "1. …… Vou para a cidade procurar por ela.",
-    "2. Vou ficar de bobeira na sala de aula.",
-    "3. Vou voltar para a mansão e descansar.",
-    "1. Só pode ser a Arcueid.",
-    "2. Só pode ser a Ciel-Senpai.",
-    "3. Só pode ser a Akiha.",
-    "1. Só pode ser a Arcueid.",
-    "2. Só pode ser a Ciel-Senpai.",
-    "3. Só pode ser a Akiha.",
-    "4. Só pode ser a Hisui.",
-    "5. Só pode ser a Kohaku-san.",
-    "1. Eu vou pedir desculpas.",
-    "2. Eu vou tentar enganá-la.",
-    "3. Eu vou dizer a verdade.",
-    "1. …… Não, só pode ter sido outra pessoa.",
-    "2. Vou perguntar sobre ontem à noite.",
-    "1. Eu vou comer.",
-    "2. Eu não vou comer.",
-    "1. Não. Eu me recuso a fazer algo tão embaraçoso.",
-    "2. Eu não importo. Vou aceitar.",
-    "1. Vou perguntar por que ela se transferiu para esta escola.",
-    "2. …… Eu deveria apresentar o Arihiko.",
-    "3. Será que ela estava fingindo essa ingenuidade até agora?",
-    "1. Vou para casa sozinho.",
-    "2. Vou até a sala da Akiha.",
-    "1. Vou para a sala de estar.",
-    "2. Vou para a edícula.",
-    "3. Vou ficar aqui até a hora do jantar.",
-    "1. Vou até a edícula.",
-    "2. Vou dormir.",
-    "1. Ir atrás da Hisui.",
-    "2. Ajudar a Kohaku-san.",
-    "3. Ir até o quarto da Akiha.",
-    "1. Eu vou até o corredor para conversar com ela.",
-    "2. Não, provavelmente não é da minha conta. Vou ficar só observando daqui.",
-    "3. Uma abertura! Eu vou surpreendê-la por trás!",
-    "1. Eu vou procurar pela Arcueid sem rumo certo.",
-    "2. Eu vou voltar para a mansão.",
-    "1. Eu vou para o refeitório com o Arihiko.",
-    "2. Não, mesmo que ela esteja me odiando, eu vou atrás da Senpai.",
-    "1. Vou voltar para a mansão.",
-    "2. Vou até a sala de cerimônia de chá.",
-    "3. Vou para a cidade.",
-    "1. Eu não posso abandonar a Arcueid.",
-    "2. A Senpai é muito querida para mim.",
-    "1. Vou me acalmar um pouco e depois vou para a sala de estar.",
-    "2. Eu estou bem, por isso vou para a sala de estar.",
-    "3. Eu deveria deveria descansar mais um pouco.",
-    "1. O uniforme atual da Akiha fica melhor nela.",
-    "2. O uniforme da nossa escola ficaria melhor nela.",
-    "1. Vou ajudar a Hisui.",
-    "2. Vou ajudar a Kohaku-san.",
-    "1. Vou conversar com ela sobre o assunto.",
-    "2. Não vou conversar com ela sobre o assunto.",
-    "1. Vou até o quarto do meu pai.",
-    "2. Vou ficar no meu quarto.",
-    "1. Vou vagar pela cidade durante a noite.",
-    "2. Não vou dormir e vou esperar amanhecer.",
-    "1. Preciso amenizar a situação cumprimentando-a alegremente.",
-    "2. Não vou fazer nada estúpido, vou cumprimentá-la normalmente.",
-    "3. Não. A única coisa que posso fazer agora é pedir desculpas.",
-    "1. Vou até o pátio agora mesmo.",
-    "2. Vou rezar para que ela não faça nada até as aulas terminarem.",
-    "3. Eu não me importo. Vou ignorá-la.",
-    "1. Mesmo assim, vou contar a verdade para a Hisui.",
-    "2. Não, eu não posso deixar ninguém ficar sabendo.",
-    "1. Eu vou para a sala de estar.",
-    "2. Eu deveria ir para a escola.",
-    "1. Vou direto ao ponto.",
-    "2. Vou ser sutil.",
-    "1. Pelo menos vou dizer bom dia para a Akiha.",
-    "2. …… Não consigo. Vou voltar para o meu quarto.",
-    "1. Vou até a sala da Akiha.",
-    "2. Não, eu não preciso fazer isso.",
-    "1. Vou até a sala da Akiha.",
-    "2. Não, eu não preciso fazer isso.",
-    "1. Vou conversar com a Ciel sobre a noite passada.",
-    "2. …… Isso seria uma perda de tempo.",
-    "1. Vou pedir a Kohaku-san para preparar alguma coisa.",
-    "2. Vou pedir a Hisui para preparar alguma coisa.",
-    "1. …… Só isso não foi o suficiente.",
-    "2. …… Eu posso me mexer de novo, eu deveria apenas agradecê-la.",
-    "1. …… Vou fazer o que a Akiha está pedindo.",
-    "2. Não, preciso me esforçar para me encontrar com a Arcueid.",
-    "1. …… Vou lá para determinar meu próprio destino.",
-    "2. Não, vou ficar na mansão.",
-    "1. …… Eu não tenho escolha. Vou com a Arcueid.",
-    "2. …… Eu tenho escolha. Eu tenho que ir para a escola.",
-    "1. Bem, é porque você é egoísta, né?",
-    "2. Bem, é porque você me odeia, né?",
-    "3. Bem, é porque você é uma vampira, né?",
-    "1. Vamos fazer algo normal, vou levá-la ao cinema.",
-    "2. Ela deve gostar de lugares tipo um beco isolado, né?",
-    "3. …… Não faço ideia, por enquanto vamos para o parque.",
-    "1. Ah é, vou contar a ela sobre ontem à noite.",
-    "2. Hum, quero ouvir os detalhes sobre o \"inimigo\" da Arcueid.",
-    "3. Preciso perguntar sobre seus passatempos, história e suas três medidas!",
-    "1. Vou até o apartamento da Arcueid.",
-    "2. Vou procurar no distrito comercial.",
-    "3. …… Devo procurar na escola?",
-    "1. Eu não posso fazer algo contra a vontade dela.",
-    "2. Eu só… desejo ela, só isso.",
-    "1. Vou esperar aqui.",
-    "2. Vou esperar na minha sala de aula.",
-    "3. Vou para a parte de trás da escola.",
-    "1. Vou ficar de bobeira aqui dentro da sala.",
-    "2. …… Vou almoçar.",
-    "1. Não posso falar sobre isso agora.",
-    "2. …… Não, isso é importante demais.",
-    "1. …… Eu tenho que viver",
-    "2. …… Eu não posso fazer isso."
-  ],
+  "choices": {
+    "f20": [
+      "1. Faltam apenas alguns minutos para a aula começar. Preciso ir para a sala imediatamente.",
+      "2. …… Eu estou curioso, por isso vou dar uma olhada."
+    ],
+    "f23": [
+      "1. Almoçar na sala de aula.",
+      "2. Almoçar no refeitório.",
+      "3. Ir até o corredor para pensar sobre o assunto."
+    ],
+    "f24": [
+      "1. Ir até o corredor para pensar sobre o assunto.",
+      "2. Almoçar no refeitório.",
+      "3. Almoçar na sala de aula."
+    ],
+    "f31": [
+      "1. Eu vou me recompor e voltar para a mansão.",
+      "2. Eu vou ficar na escola mais um pouco."
+    ],
+    "f37": [
+      "1. A minha irmã mais nova, a Akiha.",
+      "2. Aquela garota que estava sempre animada."
+    ],
+    "f201": [
+      "1. Sobre a minha irmã mais nova, a Akiha.",
+      "2. Sobre aquela garota que sempre estava animada.",
+      "3. Sobre aquela garota que sempre ficava na janela."
+    ],
+    "f42": [
+      "1. Vou para a sala de estar conversar com a Akiha.",
+      "2. Vou ficar no meu quarto.",
+      "3. Vou para o quarto da Kohaku-san assistir TV."
+    ],
+    "f46": [
+      "1. Vou lá dar uma olhada.",
+      "2. Vou dormir."
+    ],
+    "f183": [
+      "1. …… Voltar para a mansão.",
+      "2. …… Continuar esperando."
+    ],
+    "f184": [
+      "1. …… Continuar esperando.",
+      "2. …… Voltar para a mansão."
+    ],
+    "f185": [
+      "1. …… Continuar esperando.",
+      "2. …… Voltar para a mansão."
+    ],
+    "f189": [
+      "1. Vou correndo para o mesmo beco de ontem à noite.",
+      "2. …… Vou esperar aqui no parque.",
+      "3. Vou até o apartamento da Arcueid."
+    ],
+    "f284": [
+      "1. A Kohaku-san está no caminho.",
+      "2. É como a Kohaku-san diz."
+    ],
+    "f365": [
+      "1. Ala leste, primeiro andar.",
+      "2. Ala oeste, primeiro andar.",
+      "3. Ala leste, segundo andar.",
+      "4. Ala oeste, segundo andar."
+    ],
+    "f370": [
+      "1. Tiro os óculos e me preparo para matar.",
+      "2. Primeiro, precisamos nos afastar do quarto da Akiha."
+    ],
+    "f194": [
+      "1. Mesmo que seja inútil, vou procurar pela Arcueid.",
+      "2. Aceitar os fatos e voltar para a mansão.",
+      "3. Se é assim que vai ser, eu mesmo vou procurar pelo Roa."
+    ],
+    "f292": [
+      "1. Não, tenho que mandar a Kohaku-san sair daqui.",
+      "2. …… Só vou deixar ela trazer a comida aqui."
+    ],
+    "f295": [
+      "1. …… Não posso deixar que ela me veja desse jeito.",
+      "2. …… Mas ainda assim, quero ouvir a voz dela."
+    ],
+    "f297": [
+      "1. Fugir para a frente.",
+      "2. Fugir para trás."
+    ],
+    "f299": [
+      "1. …… Tirar os óculos.",
+      "2. …… Não vou tirar os óculos."
+    ],
+    "f302": [
+      "1. Eu gosto da aparência natural da Senpai.",
+      "2. A Senpai não é a Senpai sem os óculos!"
+    ],
+    "f375": [
+      "1. Persegui-lo agora mesmo.",
+      "2. Tomar um fôlego, me acalmar e só depois persegui-lo."
+    ],
+    "f378": [
+      "1. …… Paro.",
+      "2. …… Não vou deixar suas palavras me enganarem."
+    ],
+    "f380": [
+      "1. …… Ir atrás da Akiha.",
+      "2. …… Eu não posso fazer isso."
+    ],
+    "f381": [
+      "1. …… Manter minha promessa.",
+      "2. …… Eu não posso fazer isso."
+    ],
+    "f383": [
+      "1. …… Devolver a vida que a Akiha me deu.",
+      "2. …… Eu não posso fazer isso."
+    ],
+    "f503": [
+      "1. Eu vou manter a minha promessa.",
+      "2. Eu nunca vou esquecer a Arcueid."
+    ],
+    "f307": [
+      "1. Obedecer a Arcueid.",
+      "2. Não vou obedecer a Arcueid."
+    ],
+    "f405": [
+      "1. Destrancar a porta.",
+      "2. …… Por que foi que eu tranquei a porta mesmo?"
+    ],
+    "f411": [
+      "1. Gritar o nome da Akiha.",
+      "2. Gritar o nome da Kohaku-san."
+    ],
+    "f416": [
+      "1. Vou conversar com a Kohaku-san.",
+      "2. Vou investigar o quarto do Makihisa."
+    ],
+    "f419": [
+      "1. …… Dar uma olhada lá fora.",
+      "2. Voltar para o meu quarto."
+    ],
+    "f425": [
+      "1. ----Matá-la agora.",
+      "2. ----Recuar por enquanto."
+    ],
+    "f427": [
+      "1. …… Matá-la antes que ela perceba a minha presença.",
+      "2. …… Esperar ela passar e atacá-la por trás."
+    ],
+    "f51": [
+      "1. Cumprimentar a Akiha.",
+      "2. Cumprimentar a Kohaku-san.",
+      "3. Cumprimentar as duas."
+    ],
+    "f58": [
+      "1. Na sala de aula.",
+      "2. No refeitório."
+    ],
+    "f59": [
+      "1. Na sala de aula.",
+      "2. No refeitório.",
+      "3. Na sala do clube de cerimônia de chá."
+    ],
+    "f65": [
+      "1. Isso é só um pesadelo.",
+      "2. Isso é, sem dúvida alguma, a realidade forjada pelas minhas próprias mãos."
+    ],
+    "f204": [
+      "1. Cumprimentar a Akiha.",
+      "2. Cumprimentar a Kohaku-san.",
+      "3. Cumprimentar as duas."
+    ],
+    "f205": [
+      "1. Cumprimentar a Akiha.",
+      "2. Cumprimentar a Kohaku-san.",
+      "3. Cumprimentar as duas."
+    ],
+    "f206": [
+      "1. Vou perguntar sobre a Yumizuka Satsuki.",
+      "2. …… Vou me sentar em silêncio."
+    ],
+    "f210": [
+      "1. A Ciel-senpai está certa.",
+      "2. …… Não, eu realmente não estou me sentindo bem."
+    ],
+    "f212": [
+      "1. Ir atrás da Hisui.",
+      "2. Ajudar a Kohaku-san.",
+      "3. Ficar no meu quarto."
+    ],
+    "f211": [
+      "1. Vou lá olhar.",
+      "2. Não vou lá olhar."
+    ],
+    "f69": [
+      "1. Conversar sobre a Akiha.",
+      "2. Conversar sobre a Kohaku-san.",
+      "3. Conversar sobre a mansão."
+    ],
+    "f75": [
+      "1. …… Vou cooperar.",
+      "2. Não vou cooperar.",
+      "3. Vou escapar de algum jeito."
+    ],
+    "f80": [
+      "1. Realmente devo fugir daqui.",
+      "2. …… Não posso deixar ela sozinha."
+    ],
+    "f81": [
+      "1. …… Tudo bem, mas me devolve logo.",
+      "2. …… Não. Eu tenho um mau pressentimento sobre isso."
+    ],
+    "f84": [
+      "1. Acho que vou voltar para a mansão.",
+      "2. Acho que vou voltar para o hotel."
+    ],
+    "f88": [
+      "1. ---Eu vou verificar o que está acontecendo lá fora.",
+      "2. Eu vou continuar dentro do quarto por enquanto."
+    ],
+    "f235": [
+      "1. Vou procurar pela Yumizuka.",
+      "2. Vou procurar pela escola.",
+      "3. Vou procurar pela cidade."
+    ],
+    "f240": [
+      "1. Vou procurar pela Yumizuka.",
+      "2. Não posso fazer algo tão perigoso assim."
+    ],
+    "f242": [
+      "1. Eu gosto dela.",
+      "2. Eu odeio ela.",
+      "3. Eu não posso responder."
+    ],
+    "f94": [
+      "1. Eu gostaria de recusar, mas---",
+      "2. Não, é impossível eu enfrentar um monstro como aquele."
+    ],
+    "f97": [
+      "1. Correr na direção do Nrvnqsr.",
+      "2. …… Não, ainda é muito cedo."
+    ],
+    "f98": [
+      "1. Eu gostaria de recusar, mas---",
+      "2. Não, é impossível eu enfrentar um monstro como aquele."
+    ],
+    "f99": [
+      "1. Correr na direção do Nrvnqsr.",
+      "2. …… Ainda é muito cedo."
+    ],
+    "f101": [
+      "1. Eu vou suportar essa situação e esperar por uma chance.",
+      "2. Eu tenho que destruir o corpo principal."
+    ],
+    "f305": [
+      "1. Não, eu não estou muito no clima.",
+      "2. Mas é claro que eu concordo."
+    ],
+    "f306": [
+      "1. Não, eu não estou muito no clima.",
+      "2. Mas é claro que eu concordo."
+    ],
+    "f303": [
+      "1. Vou perguntar por que ela se transferiu para esta escola.",
+      "2. …… Eu deveria apresentar o Arihiko.",
+      "3. Será que ela estava fingindo essa ingenuidade até agora?"
+    ],
+    "f317": [
+      "1. Vou ajudar a Kohaku-san.",
+      "2. Vou ajudar a Hisui."
+    ],
+    "f108": [
+      "1. Eu não posso explicar as circunstâncias, então vou apenas pedir desculpas.",
+      "2. Eu não posso explicar as circunstâncias, então vou inventar uma mentira.",
+      "3. Não, eu tenho que contar a verdade."
+    ],
+    "f112": [
+      "1. …… Vou para a cidade procurar por ela.",
+      "2. Vou ficar de bobeira na sala de aula.",
+      "3. Vou voltar para a mansão e descansar."
+    ],
+    "f116": [
+      "1. Só pode ser a Arcueid.",
+      "2. Só pode ser a Ciel-Senpai.",
+      "3. Só pode ser a Akiha."
+    ],
+    "f117": [
+      "1. Só pode ser a Arcueid.",
+      "2. Só pode ser a Ciel-Senpai.",
+      "3. Só pode ser a Akiha.",
+      "4. Só pode ser a Hisui.",
+      "5. Só pode ser a Kohaku-san."
+    ],
+    "f200": [
+      "1. Eu vou pedir desculpas.",
+      "2. Eu vou tentar enganá-la.",
+      "3. Eu vou dizer a verdade."
+    ],
+    "f222": [
+      "1. …… Não, só pode ter sido outra pessoa.",
+      "2. Vou perguntar sobre ontem à noite."
+    ],
+    "f225": [
+      "1. Eu vou comer.",
+      "2. Eu não vou comer."
+    ],
+    "f230": [
+      "1. Não. Eu me recuso a fazer algo tão embaraçoso.",
+      "2. Eu não importo. Vou aceitar."
+    ],
+    "f325": [
+      "1. Vou perguntar por que ela se transferiu para esta escola.",
+      "2. …… Eu deveria apresentar o Arihiko.",
+      "3. Será que ela estava fingindo essa ingenuidade até agora?"
+    ],
+    "f329": [
+      "1. Vou para casa sozinho.",
+      "2. Vou até a sala da Akiha."
+    ],
+    "f334": [
+      "1. Vou para a sala de estar.",
+      "2. Vou para a edícula.",
+      "3. Vou ficar aqui até a hora do jantar."
+    ],
+    "f338": [
+      "1. Vou até a edícula.",
+      "2. Vou dormir."
+    ],
+    "f386": [
+      "1. Ir atrás da Hisui.",
+      "2. Ajudar a Kohaku-san.",
+      "3. Ir até o quarto da Akiha."
+    ],
+    "f129": [
+      "1. Eu vou até o corredor para conversar com ela.",
+      "2. Não, provavelmente não é da minha conta. Vou ficar só observando daqui.",
+      "3. Uma abertura! Eu vou surpreendê-la por trás!"
+    ],
+    "f135": [
+      "1. Eu vou procurar pela Arcueid sem rumo certo.",
+      "2. Eu vou voltar para a mansão."
+    ],
+    "f244": [
+      "1. Eu vou para o refeitório com o Arihiko.",
+      "2. Não, mesmo que ela esteja me odiando, eu vou atrás da Senpai."
+    ],
+    "f249": [
+      "1. Vou voltar para a mansão.",
+      "2. Vou até a sala de cerimônia de chá.",
+      "3. Vou para a cidade."
+    ],
+    "f256": [
+      "1. Eu não posso abandonar a Arcueid.",
+      "2. A Senpai é muito querida para mim."
+    ],
+    "f343": [
+      "1. Vou me acalmar um pouco e depois vou para a sala de estar.",
+      "2. Eu estou bem, por isso vou para a sala de estar.",
+      "3. Eu deveria deveria descansar mais um pouco."
+    ],
+    "f347": [
+      "1. O uniforme atual da Akiha fica melhor nela.",
+      "2. O uniforme da nossa escola ficaria melhor nela."
+    ],
+    "f350": [
+      "1. Vou ajudar a Hisui.",
+      "2. Vou ajudar a Kohaku-san."
+    ],
+    "f391": [
+      "1. Vou conversar com ela sobre o assunto.",
+      "2. Não vou conversar com ela sobre o assunto."
+    ],
+    "f394": [
+      "1. Vou até o quarto do meu pai.",
+      "2. Vou ficar no meu quarto."
+    ],
+    "f395": [
+      "1. Vou vagar pela cidade durante a noite.",
+      "2. Não vou dormir e vou esperar amanhecer."
+    ],
+    "f143": [
+      "1. Preciso amenizar a situação cumprimentando-a alegremente.",
+      "2. Não vou fazer nada estúpido, vou cumprimentá-la normalmente.",
+      "3. Não. A única coisa que posso fazer agora é pedir desculpas."
+    ],
+    "f149": [
+      "1. Vou até o pátio agora mesmo.",
+      "2. Vou rezar para que ela não faça nada até as aulas terminarem.",
+      "3. Eu não me importo. Vou ignorá-la."
+    ],
+    "f153": [
+      "1. Mesmo assim, vou contar a verdade para a Hisui.",
+      "2. Não, eu não posso deixar ninguém ficar sabendo."
+    ],
+    "f260": [
+      "1. Eu vou para a sala de estar.",
+      "2. Eu deveria ir para a escola."
+    ],
+    "f267": [
+      "1. Vou direto ao ponto.",
+      "2. Vou ser sutil."
+    ],
+    "f353": [
+      "1. Pelo menos vou dizer bom dia para a Akiha.",
+      "2. …… Não consigo. Vou voltar para o meu quarto."
+    ],
+    "f354": [
+      "1. Vou até a sala da Akiha.",
+      "2. Não, eu não preciso fazer isso."
+    ],
+    "f355": [
+      "1. Vou até a sala da Akiha.",
+      "2. Não, eu não preciso fazer isso."
+    ],
+    "f358": [
+      "1. Vou conversar com a Ciel sobre a noite passada.",
+      "2. …… Isso seria uma perda de tempo."
+    ],
+    "f399": [
+      "1. Vou pedir a Kohaku-san para preparar alguma coisa.",
+      "2. Vou pedir a Hisui para preparar alguma coisa."
+    ],
+    "f402": [
+      "1. …… Só isso não foi o suficiente.",
+      "2. …… Eu posso me mexer de novo, eu deveria apenas agradecê-la."
+    ],
+    "f159": [
+      "1. …… Vou fazer o que a Akiha está pedindo.",
+      "2. Não, preciso me esforçar para me encontrar com a Arcueid."
+    ],
+    "f361": [
+      "1. …… Vou lá para determinar meu próprio destino.",
+      "2. Não, vou ficar na mansão."
+    ],
+    "f162": [
+      "1. …… Eu não tenho escolha. Vou com a Arcueid.",
+      "2. …… Eu tenho escolha. Eu tenho que ir para a escola."
+    ],
+    "f163": [
+      "1. Bem, é porque você é egoísta, né?",
+      "2. Bem, é porque você me odeia, né?",
+      "3. Bem, é porque você é uma vampira, né?"
+    ],
+    "f168": [
+      "1. Vamos fazer algo normal, vou levá-la ao cinema.",
+      "2. Ela deve gostar de lugares tipo um beco isolado, né?",
+      "3. …… Não faço ideia, por enquanto vamos para o parque."
+    ],
+    "f172": [
+      "1. Ah é, vou contar a ela sobre ontem à noite.",
+      "2. Hum, quero ouvir os detalhes sobre o \"inimigo\" da Arcueid.",
+      "3. Preciso perguntar sobre seus passatempos, história e suas três medidas!"
+    ],
+    "f178": [
+      "1. Vou até o apartamento da Arcueid.",
+      "2. Vou procurar no distrito comercial.",
+      "3. …… Devo procurar na escola?"
+    ],
+    "f180": [
+      "1. Eu não posso fazer algo contra a vontade dela.",
+      "2. Eu só… desejo ela, só isso."
+    ],
+    "f273": [
+      "1. Vou esperar aqui.",
+      "2. Vou esperar na minha sala de aula.",
+      "3. Vou para a parte de trás da escola."
+    ],
+    "f277": [
+      "1. Vou ficar de bobeira aqui dentro da sala.",
+      "2. …… Vou almoçar."
+    ],
+    "f279": [
+      "1. Não posso falar sobre isso agora.",
+      "2. …… Não, isso é importante demais."
+    ],
+    "f362": [
+      "1. …… Eu tenho que viver",
+      "2. …… Eu não posso fazer isso."
+    ]
+  },
   "images": {
     "words": {
       "fin": "#ffffff$c`[center][noline][color=black][font=serif]Fim`",
