@@ -3,7 +3,6 @@ import { Choice, LabelName } from "../types"
 import history from "../script/history"
 import { Bbcode } from "@tsukiweb-common/utils/Bbcode"
 import { ScriptPlayer } from "script/ScriptPlayer"
-import { preprocessText } from "@tsukiweb-common/utils/utils"
 import { strings } from "../translation/lang"
 import { Button } from "@tsukiweb-common/ui-core"
 import { audio } from "utils/audio"
@@ -43,7 +42,6 @@ function processSelect(setChoices: (choices: Choice[])=>void,
 											 arg: string, _cmd: string, script: ScriptPlayer,
 											 onFinish: VoidFunction) {
 	const currentLabel = script.currentLabel.replace('skip', 'f') as LabelName
-	arg = arg.replaceAll(/`[^`]`,/g, '') // remove choice index (temporary fix before logic.txt is updated on server)
 	const labels = arg.split(',') as LabelName[]
 	const choices: Choice[] = labels.map((label, index) => {
 		return {

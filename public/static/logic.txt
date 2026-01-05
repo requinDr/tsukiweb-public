@@ -1,7 +1,7 @@
 *f20
 goto *s20
 *skip20
-select `0`,*f21,`1`,*f22
+select *f21,*f22
 *f21
 goto *s21
 *skip21
@@ -16,11 +16,11 @@ goto *f23
 if (%regard_aki==1) goto *f24
 goto *s23
 *skip23
-select `2`,*f25,`3`,*f26,`4`,*f27
+select *f25,*f26,*f27
 *f24
 goto *s24
 *skip24
-select `5`,*f28,`6`,*f29,`7`,*f30
+select *f28,*f29,*f30
 *f25
 goto *s25
 *skip25
@@ -51,7 +51,7 @@ goto *f31
 *f31
 goto *s31
 *skip31
-select `8`,*f32,`9`,*f33
+select *f32,*f33
 *f32
 if (%flgM>=1) goto *f35
 if (%regard_aki>=1) goto *f502
@@ -89,11 +89,11 @@ goto *f40
 *f37
 goto *s37
 *skip37
-select `10`,*f38,`11`,*f39
+select *f38,*f39
 *f201
 goto *s201
 *skip201
-select `12`,*f38,`13`,*f39,`14`,*f202
+select *f38,*f39,*f202
 *f38
 inc %regard_aki
 goto *f40
@@ -118,7 +118,7 @@ goto *f42
 *f42
 goto *s42
 *skip42
-select `15`,*f43,`16`,*f44,`17`,*f45
+select *f43,*f44,*f45
 *f43
 goto *s43
 *skip43
@@ -140,7 +140,7 @@ goto *f47
 goto *s46
 *skip46
 if (%clear_ark==0 && %clear_ciel==0) goto *f47a
-select `18`,*f47a,`19`,*f46b
+select *f47a,*f46b
 *f46b
 if (%regard_his>%regard_aki && %regard_his>%regard_koha) goto *f49
 if (%regard_koha>%regard_aki && %regard_koha>%regard_his) goto *f203
@@ -169,15 +169,15 @@ goto *f205
 *f183
 goto *s183
 *skip183
-select `20`,*f186,`21`,*f184
+select *f186,*f184
 *f184
 goto *s184
 *skip184
-select `22`,*f185,`23`,*f186
+select *f185,*f186
 *f185
 goto *s185
 *skip185
-select `24`,*f187,`25`,*f186
+select *f187,*f186
 *f186
 goto *s186
 *skip186
@@ -202,7 +202,7 @@ goto *endofplay
 *f189
 goto *s189
 *skip189
-select `26`,*f190,`27`,*f191,`28`,*f192
+select *f190,*f191,*f192
 *f190
 goto *s190
 *skip190
@@ -222,7 +222,7 @@ goto *f194
 *f284
 goto *s284
 *skip284
-select `29`,*f285,`30`,*f286
+select *f285,*f286
 *f285
 goto *s285
 *skip285
@@ -238,7 +238,7 @@ goto *f288
 *f365
 goto *s365
 *skip365
-select `31`,*f366,`32`,*f367,`33`,*f368,`34`,*f369
+select *f366,*f367,*f368,*f369
 *f366
 goto *s366
 *skip366
@@ -262,7 +262,7 @@ goto *f370
 *f370
 goto *s370
 *skip370
-select `35`,*f371,`36`,*f372
+select *f371,*f372
 *f371
 goto *s371
 *skip371
@@ -278,7 +278,7 @@ goto *f374
 *f194
 goto *s194
 *skip194
-select `37`,*f195,`38`,*f196,`39`,*f197
+select *f195,*f196,*f197
 *f195
 goto *s195
 *skip195
@@ -316,7 +316,7 @@ goto *endofplay
 *f292
 goto *s292
 *skip292
-select `40`,*f293,`41`,*f294
+select *f293,*f294
 *f293
 goto *s293
 *skip293
@@ -329,7 +329,7 @@ goto *f295
 *f295
 goto *s295
 *skip295
-select `42`,*f296,`43`,*f297
+select *f296,*f297
 *f296
 goto *s296
 *skip296
@@ -337,7 +337,7 @@ goto *f289a
 *f297
 goto *s297
 *skip297
-select `44`,*f299,`45`,*f298
+select *f299,*f298
 *f298
 goto *s298
 *skip298
@@ -350,7 +350,7 @@ goto *endofplay
 goto *s299
 *skip299
 if (%flgJ>=1) goto *f301
-select `46`,*f301,`47`,*f302
+select *f301,*f302
 *f301
 goto *s301
 *skip301
@@ -362,7 +362,7 @@ goto *endofplay
 *f302
 goto *s302
 *skip302
-select `48`,*f504,`49`,*f505
+select *f504,*f505
 *f504
 goto *s504
 *skip504
@@ -378,7 +378,7 @@ goto *f375
 *f375
 goto *s375
 *skip375
-select `50`,*f376,`51`,*f378
+select *f376,*f378
 *f376
 goto *s376
 *skip376
@@ -390,7 +390,7 @@ goto *endofplay
 *f378
 goto *s378
 *skip378
-select `52`,*f380,`53`,*f379
+select *f380,*f379
 *f379
 goto *s379
 *skip379
@@ -402,12 +402,12 @@ goto *endofplay
 *f380
 goto *s380
 *skip380
-select `54`,*f381,`55`,*f509
+select *f381,*f509
 *f381
 goto *s381
 *skip381
 if (%regard_aki<9) goto *f382
-select `56`,*f382,`57`,*f383
+select *f382,*f383
 *f509
 goto *s509
 *skip509
@@ -427,7 +427,7 @@ goto *endofplay
 *f383
 goto *s383
 *skip383
-select `58`,*f385,`59`,*f384
+select *f385,*f384
 *f384
 goto *s384
 *skip384
@@ -453,7 +453,7 @@ goto *f52
 *f503
 goto *s503
 *skip503
-select `60`,*f52a,`61`,*f53a
+select *f52a,*f53a
 *f52
 goto *s52
 *skip52
@@ -481,7 +481,7 @@ goto *endofplay
 *f307
 goto *s307
 *skip307
-select `62`,*f308,`63`,*f310
+select *f308,*f310
 *f308
 goto *s308
 *skip308
@@ -509,7 +509,7 @@ goto *f405
 *f405
 goto *s405
 *skip405
-select `64`,*f407,`65`,*f406
+select *f407,*f406
 *f406
 goto *s406
 *skip406
@@ -537,7 +537,7 @@ goto *s529
 *skip529
 goto *endofplay
 *f411
-select `66`,*f412,`67`,*f413
+select *f412,*f413
 *f412
 goto *s412
 *skip412
@@ -557,7 +557,7 @@ goto *endofplay
 *f416
 goto *s416
 *skip416
-select `68`,*f417,`69`,*f418
+select *f417,*f418
 *f417
 goto *s417
 *skip417
@@ -570,7 +570,7 @@ goto *f419
 *f419
 goto *s419
 *skip419
-select `70`,*f420,`71`,*f421
+select *f420,*f421
 *f420
 goto *s420
 *skip420
@@ -595,7 +595,7 @@ goto *f425
 *f425
 goto *s425
 *skip425
-select `72`,*f426,`73`,*f427
+select *f426,*f427
 *f426
 goto *s426
 *skip426
@@ -607,7 +607,7 @@ goto *endofplay
 *f427
 goto *s427
 *skip427
-select `74`,*f429,`75`,*f428
+select *f429,*f428
 *f428
 goto *s428
 *skip428
@@ -627,7 +627,7 @@ goto *endofplay
 *f51
 goto *s51
 *skip51
-select `76`,*f54,`77`,*f55,`78`,*f56
+select *f54,*f55,*f56
 *f54
 goto *s54
 *skip54
@@ -647,11 +647,11 @@ if (%regard_cel>=3) goto *f59
 *f58
 goto *s58
 *skip58
-select `79`,*f60,`80`,*f61
+select *f60,*f61
 *f59
 goto *s59
 *skip59
-select `81`,*f62,`82`,*f63,`83`,*f64
+select *f62,*f63,*f64
 *f60
 goto *s60
 *skip60
@@ -677,7 +677,7 @@ goto *f65
 *f65
 goto *s65
 *skip65
-select `84`,*f66,`85`,*f67
+select *f66,*f67
 *f66
 if (%regard_cel>=4) goto *f68
 goto *s66
@@ -697,11 +697,11 @@ goto *f74
 goto *s204
 *skip204
 inc %flgP
-select `86`,*f304,`87`,*f123,`88`,*f124
+select *f304,*f123,*f124
 *f205
 goto *s205
 *skip205
-select `89`,*f304,`90`,*f123,`91`,*f124
+select *f304,*f123,*f124
 *f304
 goto *s304
 *skip304
@@ -719,7 +719,7 @@ goto *f206
 *f206
 goto *s206
 *skip206
-select `92`,*f207,`93`,*f208
+select *f207,*f208
 *f207
 goto *s207
 *skip207
@@ -742,11 +742,11 @@ goto *f211
 *f210
 goto *s210
 *skip210
-select `94`,*f209a,`95`,*f212
+select *f209a,*f212
 *f212
 goto *s212
 *skip212
-select `96`,*f214,`97`,*f213,`98`,*f215
+select *f214,*f213,*f215
 *f213
 goto *s213
 *skip213
@@ -768,7 +768,7 @@ goto *f211
 *f211
 goto *s211
 *skip211
-select `99`,*f211half,`100`,*f234
+select *f211half,*f234
 *f211half
 if (%flgP>=1) goto *f217
 goto *f218
@@ -791,7 +791,7 @@ goto *endofplay
 *f69
 goto *s69
 *skip69
-select `101`,*f70,`102`,*f71,`103`,*f72
+select *f70,*f71,*f72
 *f70
 goto *s70
 *skip70
@@ -816,7 +816,7 @@ goto *f75
 *f75
 goto *s75
 *skip75
-select `104`,*f76,`105`,*f77,`106`,*f78
+select *f76,*f77,*f78
 *f76
 goto *s76
 *skip76
@@ -841,12 +841,12 @@ goto *f80
 *f80
 goto *s80
 *skip80
-select `107`,*f84,`108`,*f81
+select *f84,*f81
 *f81
 goto *s81
 *skip81
 inc %regard_ark
-select `109`,*f82,`110`,*f83
+select *f82,*f83
 *f82
 goto *s82
 *skip82
@@ -861,7 +861,7 @@ goto *s84
 *skip84
 dec %regard_ark
 if (%flg3>=1) goto *f86
-select `111`,*f86,`112`,*f87
+select *f86,*f87
 *f86
 goto *s86
 *skip86
@@ -877,7 +877,7 @@ goto *f88
 *f88
 goto *s88
 *skip88
-select `113`,*f90,`114`,*f85
+select *f90,*f85
 *f90
 if (%regard_cel>%regard_ark) goto *f91
 goto *s90
@@ -911,7 +911,7 @@ goto *f98
 *f235
 goto *s235
 *skip235
-select `115`,*f237,`116`,*f238,`117`,*f239
+select *f237,*f238,*f239
 *f236
 goto *s236
 *skip236
@@ -931,7 +931,7 @@ goto *f240
 *f240
 goto *s240
 *skip240
-select `118`,*f241,`119`,*f242
+select *f241,*f242
 *f241
 goto *s241
 *skip241
@@ -942,7 +942,7 @@ goto *s242
 inc %flgK
 goto *f242half
 *f242half
-select `120`,*f243,`121`,*f290,`122`,*f291
+select *f243,*f290,*f291
 *f243
 goto *s243
 *skip243
@@ -991,7 +991,7 @@ goto *f306
 *f94
 goto *s94
 *skip94
-select `123`,*f95,`124`,*f96
+select *f95,*f96
 *f95
 goto *s95
 *skip95
@@ -1004,15 +1004,15 @@ goto *f97
 *f97
 goto *s97
 *skip97
-select `125`,*f101,`126`,*f99
+select *f101,*f99
 *f98
 goto *s98
 *skip98
-select `127`,*f95,`128`,*f96
+select *f95,*f96
 *f99
 goto *s99
 *skip99
-select `129`,*f101,`130`,*f100
+select *f101,*f100
 *f100
 goto *s100
 *skip100
@@ -1024,7 +1024,7 @@ goto *endofplay
 *f101
 goto *s101
 *skip101
-select `131`,*f102,`132`,*f103
+select *f102,*f103
 *f102
 goto *s102
 *skip102
@@ -1049,17 +1049,17 @@ goto *f200
 *f305
 goto *s305
 *skip305
-select `133`,*f303,`134`,*f317
+select *f303,*f317
 *f306
 goto *s306
 *skip306
 if (%regard_koha>=3) goto *f317
-select `135`,*f414,`136`,*f317
+select *f414,*f317
 *f303
 goto *s303
 *skip303
 inc %flgH
-select `137`,*f326,`138`,*f327,`139`,*f328
+select *f326,*f327,*f328
 *f414
 goto *s414
 *skip414
@@ -1068,7 +1068,7 @@ goto *f386
 goto *s317
 *skip317
 if (%flgP>=1) goto *f320
-select `140`,*f318,`141`,*f319
+select *f318,*f319
 *f318
 goto *s318
 *skip318
@@ -1105,7 +1105,7 @@ goto *f416
 *f108
 goto *s108
 *skip108
-select `142`,*f109,`143`,*f110,`144`,*f111
+select *f109,*f110,*f111
 *f109
 goto *s109
 *skip109
@@ -1121,7 +1121,7 @@ goto *f112
 *f112
 goto *s112
 *skip112
-select `145`,*f113,`146`,*f114,`147`,*f115
+select *f113,*f114,*f115
 *f113
 goto *s113
 *skip113
@@ -1143,9 +1143,9 @@ goto *f116a
 goto *s116a
 *skip116a
 if (%cleared!=0) goto *f117
-select `148`,*f118,`149`,*f119,`150`,*f120
+select *f118,*f119,*f120
 *f117
-select `151`,*f118,`152`,*f119,`153`,*f120,`154`,*f121,`155`,*f122
+select *f118,*f119,*f120,*f121,*f122
 *f118
 goto *s118
 *skip118
@@ -1172,7 +1172,7 @@ goto *f127
 *f200
 goto *s200
 *skip200
-select `156`,*f219,`157`,*f220,`158`,*f221
+select *f219,*f220,*f221
 *f219
 goto *s219
 *skip219
@@ -1188,7 +1188,7 @@ goto *f222
 *f222
 goto *s222
 *skip222
-select `159`,*f223,`160`,*f224
+select *f223,*f224
 *f223
 goto *s223
 *skip223
@@ -1201,7 +1201,7 @@ goto *f225
 *f225
 goto *s225
 *skip225
-select `161`,*f226,`162`,*f227
+select *f226,*f227
 *f226
 goto *s226
 *skip226
@@ -1223,7 +1223,7 @@ goto *f233
 *f230
 goto *s230
 *skip230
-select `163`,*f231,`164`,*f232
+select *f231,*f232
 *f231
 goto *s231
 *skip231
@@ -1241,7 +1241,7 @@ goto *f116a
 *f325
 goto *s325
 *skip325
-select `165`,*f326,`166`,*f327,`167`,*f328
+select *f326,*f327,*f328
 *f326
 goto *s326
 *skip326
@@ -1258,7 +1258,7 @@ goto *f329
 *f329
 goto *s329
 *skip329
-select `168`,*f331,`169`,*f330
+select *f331,*f330
 *f330
 goto *s330
 *skip330
@@ -1282,7 +1282,7 @@ goto *f334
 *f334
 goto *s334
 *skip334
-select `170`,*f335,`171`,*f336,`172`,*f337
+select *f335,*f336,*f337
 *f335
 goto *s335
 *skip335
@@ -1300,7 +1300,7 @@ goto *f338
 *f338
 goto *s338
 *skip338
-select `173`,*f338a,`174`,*f338b
+select *f338a,*f338b
 *f338a
 if (%flgN>=1) goto *f339
 goto *f340
@@ -1327,7 +1327,7 @@ goto *f343
 *f386
 goto *s386
 *skip386
-select `175`,*f387,`176`,*f388,`177`,*f389
+select *f387,*f388,*f389
 *f387
 goto *s387
 *skip387
@@ -1365,7 +1365,7 @@ goto *f129
 *f129
 goto *s129
 *skip129
-select `178`,*f130,`179`,*f131,`180`,*f132
+select *f130,*f131,*f132
 *f130
 goto *s130
 *skip130
@@ -1391,7 +1391,7 @@ goto *f135
 if (%flgE>=1) goto *f244
 goto *s135
 *skip135
-select `181`,*f138,`182`,*f136
+select *f138,*f136
 *f136
 if (%regard_ark>=8) goto *f137
 goto *s136
@@ -1428,7 +1428,7 @@ goto *f143
 *f244
 goto *s244
 *skip244
-select `183`,*f245,`184`,*f246
+select *f245,*f246
 *f245
 goto *s245
 *skip245
@@ -1450,7 +1450,7 @@ goto *f249
 *f249
 goto *s249
 *skip249
-select `185`,*f250,`186`,*f251,`187`,*f252
+select *f250,*f251,*f252
 *f250
 goto *s250
 *skip250
@@ -1480,7 +1480,7 @@ goto *f256
 *f256
 goto *s256
 *skip256
-select `188`,*f257,`189`,*f258
+select *f257,*f258
 *f257
 goto *s257
 *skip257
@@ -1498,7 +1498,7 @@ goto *f260
 *f343
 goto *s343
 *skip343
-select `190`,*f344,`191`,*f345,`192`,*f346
+select *f344,*f345,*f346
 *f344
 goto *s344
 *skip344
@@ -1516,7 +1516,7 @@ goto *f347
 *f347
 goto *s347
 *skip347
-select `193`,*f348,`194`,*f349
+select *f348,*f349
 *f348
 goto *s348
 *skip348
@@ -1530,7 +1530,7 @@ goto *f350
 *f350
 goto *s350
 *skip350
-select `195`,*f351,`196`,*f352
+select *f351,*f352
 *f351
 goto *s351
 *skip351
@@ -1542,7 +1542,7 @@ goto *f353
 *f391
 goto *s391
 *skip391
-select `197`,*f392,`198`,*f393
+select *f392,*f393
 *f392
 goto *s392
 *skip392
@@ -1554,11 +1554,11 @@ goto *f396
 *f394
 goto *s394
 *skip394
-select `199`,*f395,`200`,*f396
+select *f395,*f396
 *f395
 goto *s395
 *skip395
-select `201`,*f397,`202`,*f398
+select *f397,*f398
 *f396
 goto *s396
 *skip396
@@ -1580,7 +1580,7 @@ if (%flg7>=1) goto *f144
 if (%flg8>=1) goto *f145
 goto *s143
 *skip143
-select `203`,*f146,`204`,*f147,`205`,*f148
+select *f146,*f147,*f148
 *f144
 goto *s144
 *skip144
@@ -1604,7 +1604,7 @@ goto *f149
 *f149
 goto *s149
 *skip149
-select `206`,*f150,`207`,*f151,`208`,*f152
+select *f150,*f151,*f152
 *f150
 goto *s150
 *skip150
@@ -1621,7 +1621,7 @@ goto *f153
 *f153
 goto *s153
 *skip153
-select `209`,*f154,`210`,*f155
+select *f154,*f155
 *f154
 goto *s154
 *skip154
@@ -1651,7 +1651,7 @@ goto *endofplay
 *f260
 goto *s260
 *skip260
-select `211`,*f261,`212`,*f262
+select *f261,*f262
 *f261
 goto *s261
 *skip261
@@ -1685,7 +1685,7 @@ goto *f267
 *f267
 goto *s267
 *skip267
-select `213`,*f268,`214`,*f269
+select *f268,*f269
 *f268
 goto *s268
 *skip268
@@ -1707,15 +1707,15 @@ goto *f273
 *f353
 goto *s353
 *skip353
-select `215`,*f354,`216`,*f355
+select *f354,*f355
 *f354
 goto *s354
 *skip354
-select `217`,*f356,`218`,*f357
+select *f356,*f357
 *f355
 goto *s355
 *skip355
-select `219`,*f356,`220`,*f357
+select *f356,*f357
 *f356
 goto *s356
 *skip356
@@ -1729,7 +1729,7 @@ goto *f358
 goto *s358
 *skip358
 if (%flgO>=1) goto *f360
-select `221`,*f358half,`222`,*f360
+select *f358half,*f360
 *f358half
 goto *f359
 *f359
@@ -1751,7 +1751,7 @@ goto *f361
 *f399
 goto *s399
 *skip399
-select `223`,*f400,`224`,*f401
+select *f400,*f401
 *f400
 goto *s400
 *skip400
@@ -1764,11 +1764,11 @@ goto *f402
 *f402
 goto *s402
 *skip402
-select `225`,*f404,`226`,*f403
+select *f404,*f403
 *f159
 goto *s159
 *skip159
-select `227`,*f160,`228`,*f161
+select *f160,*f161
 *f160
 goto *s160
 *skip160
@@ -1793,15 +1793,15 @@ goto *endofplay
 goto *s361
 *skip361
 if (%flgO>=1) goto *f364
-select `229`,*f362,`230`,*f364
+select *f362,*f364
 *f162
 goto *s162
 *skip162
-select `231`,*f163,`232`,*f167
+select *f163,*f167
 *f163
 goto *s163
 *skip163
-select `233`,*f164,`234`,*f165,`235`,*f166
+select *f164,*f165,*f166
 *f164
 goto *s164
 *skip164
@@ -1823,7 +1823,7 @@ goto *f107a
 *f168
 goto *s168
 *skip168
-select `236`,*f169,`237`,*f170,`238`,*f171
+select *f169,*f170,*f171
 *f169
 goto *s169
 *skip169
@@ -1841,7 +1841,7 @@ goto *f172
 *f172
 goto *s172
 *skip172
-select `239`,*f173,`240`,*f174,`241`,*f175
+select *f173,*f174,*f175
 *f173
 goto *s173
 *skip173
@@ -1867,7 +1867,7 @@ goto *f178
 *f178
 goto *s178
 *skip178
-select `242`,*f179,`243`,*f180,`244`,*f500
+select *f179,*f180,*f500
 *f179
 goto *s179
 *skip179
@@ -1879,7 +1879,7 @@ goto *endofplay
 *f180
 goto *s180
 *skip180
-select `245`,*f181,`246`,*f182
+select *f181,*f182
 *f500
 goto *s500
 *skip500
@@ -1900,7 +1900,7 @@ goto *f183
 *f273
 goto *s273
 *skip273
-select `247`,*f274,`248`,*f275,`249`,*f276
+select *f274,*f275,*f276
 *f274
 goto *s274
 *skip274
@@ -1916,7 +1916,7 @@ goto *f277
 *f277
 goto *s277
 *skip277
-select `250`,*f278,`251`,*f279
+select *f278,*f279
 *f278
 goto *s278
 *skip278
@@ -1924,7 +1924,7 @@ goto *f282
 *f279
 goto *s279
 *skip279
-select `252`,*f280,`253`,*f281
+select *f280,*f281
 *f280
 goto *s280
 *skip280
@@ -1949,7 +1949,7 @@ goto *f284
 *f362
 goto *s362
 *skip362
-select `254`,*f501,`255`,*f363
+select *f501,*f363
 *f501
 goto *s501
 *skip501

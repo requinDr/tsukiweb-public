@@ -3,7 +3,8 @@ import react from '@vitejs/plugin-react';
 import viteTsconfigPaths from 'vite-tsconfig-paths';
 
 // List assets files to use from local instead of fetching from remote
-const regexPatterns = globToRegex([
+const localAssets = globToRegex([
+	'logic.txt',
 	'languages.json',
 	'game.json',
 	'lang.json',
@@ -22,7 +23,7 @@ export default defineConfig({
 				target: `https://tsukidev.holofield.fr/static`,
 				changeOrigin: true,
 				bypass: (req, res, options) => {
-					if (req.url && regexPatterns.some(r => r.test(req.url!))) {
+					if (req.url && localAssets.some(r => r.test(req.url!))) {
 						// console.log(`Bypass proxy: ${req.url}`)
 						return req.url
 					}
