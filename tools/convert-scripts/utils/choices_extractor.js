@@ -9,7 +9,7 @@ export const extractLabelOrder = (content) =>
     .map(line => line.match(labelRegex)?.[1])
     .filter(Boolean)
 
-export function extractChoicesFromLogic(logicContent, labelOrder) {  
+export function extractChoicesFromLogic(logicContent) {  
   const choicesByLabel = {}
   let currentLabel = null
 
@@ -23,8 +23,10 @@ export function extractChoicesFromLogic(logicContent, labelOrder) {
     if (currentLabel && line.includes('select')) {
       if (Object.hasOwn(choicesByLabel, currentLabel))
         throw Error(`Multiple 'select' in label ${currentLabel}`)
-      choicesByLabel[currentLabel] =
-        [...line.matchAll(choiceRegex)].map(m => m[1].trim())
+      choicesByLabel[currentLabel] = [...line.matchAll(choiceRegex)].map(m =>
+        m[1].trim()
+            .replaceAll(/[-―─―—]{2,}/g, (match)=> `[line=${match.length}]`)
+      )
     }
   }
 

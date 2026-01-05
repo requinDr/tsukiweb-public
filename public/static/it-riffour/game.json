@@ -138,8 +138,8 @@
       "2. Tornarmene nella mia stanza e basta."
     ],
     "f425": [
-      "1. ----La uccido adesso.",
-      "2. ----Per ora mi ritiro."
+      "1. [line=4]La uccido adesso.",
+      "2. [line=4]Per ora mi ritiro."
     ],
     "f427": [
       "1. …… La uccido prima che si accorga di me.",
@@ -213,7 +213,7 @@
       "2. Credo che tornerò all'hotel."
     ],
     "f88": [
-      "1. ---Dovrei uscire fuori a vedere cosa sta succedendo.",
+      "1. [line=3]Dovrei uscire fuori a vedere cosa sta succedendo.",
       "2. Per ora resterò dentro a fare la guardia."
     ],
     "f235": [
@@ -231,7 +231,7 @@
       "3. Non posso rispondere."
     ],
     "f94": [
-      "1. Vorrei rifiutarmi, però---",
+      "1. Vorrei rifiutarmi, però[line=3]",
       "2. No, non c'è pericolo che io possa affrontare un mostro del genere."
     ],
     "f97": [
@@ -239,7 +239,7 @@
       "2. …… No, è ancora troppo presto."
     ],
     "f98": [
-      "1. Vorrei rifiutarmi, però---",
+      "1. Vorrei rifiutarmi, però[line=3]",
       "2. No, non c'è pericolo che io possa affrontare un mostro del genere."
     ],
     "f99": [

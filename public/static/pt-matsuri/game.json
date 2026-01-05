@@ -138,8 +138,8 @@
       "2. Voltar para o meu quarto."
     ],
     "f425": [
-      "1. ----Matá-la agora.",
-      "2. ----Recuar por enquanto."
+      "1. [line=4]Matá-la agora.",
+      "2. [line=4]Recuar por enquanto."
     ],
     "f427": [
       "1. …… Matá-la antes que ela perceba a minha presença.",
@@ -213,7 +213,7 @@
       "2. Acho que vou voltar para o hotel."
     ],
     "f88": [
-      "1. ---Eu vou verificar o que está acontecendo lá fora.",
+      "1. [line=3]Eu vou verificar o que está acontecendo lá fora.",
       "2. Eu vou continuar dentro do quarto por enquanto."
     ],
     "f235": [
@@ -231,7 +231,7 @@
       "3. Eu não posso responder."
     ],
     "f94": [
-      "1. Eu gostaria de recusar, mas---",
+      "1. Eu gostaria de recusar, mas[line=3]",
       "2. Não, é impossível eu enfrentar um monstro como aquele."
     ],
     "f97": [
@@ -239,7 +239,7 @@
       "2. …… Não, ainda é muito cedo."
     ],
     "f98": [
-      "1. Eu gostaria de recusar, mas---",
+      "1. Eu gostaria de recusar, mas[line=3]",
       "2. Não, é impossível eu enfrentar um monstro como aquele."
     ],
     "f99": [

@@ -138,8 +138,8 @@
       "2. Volver a mi habitación."
     ],
     "f425": [
-      "1. ----La mato ahora.",
-      "2. ----Me retiro por ahora."
+      "1. [line=4]La mato ahora.",
+      "2. [line=4]Me retiro por ahora."
     ],
     "f427": [
       "1. …… La mato antes de que note mi presencia.",
@@ -213,7 +213,7 @@
       "2. Creo que regresaré al hotel."
     ],
     "f88": [
-      "1. ---Debería ir a investigar qué está sucediendo afuera.",
+      "1. [line=3]Debería ir a investigar qué está sucediendo afuera.",
       "2. Me quedaré dentro de la habitación y montaré guardia."
     ],
     "f235": [
@@ -231,7 +231,7 @@
       "3. No puedo responder."
     ],
     "f94": [
-      "1. Quisiera negarme, pero---",
+      "1. Quisiera negarme, pero[line=3]",
       "2. No, de ninguna manera podría enfrentarme a un monstruo como ése."
     ],
     "f97": [
@@ -239,7 +239,7 @@
       "2. …… No, todavía es demasiado pronto."
     ],
     "f98": [
-      "1. Quisiera negarme, pero---",
+      "1. Quisiera negarme, pero[line=3]",
       "2. No, de ninguna manera podría enfrentarme a un montruo como ése."
     ],
     "f99": [
