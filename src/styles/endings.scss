@@ -71,6 +71,7 @@
 				flex: 1;
 				object-fit: cover;
 				overflow-clip-margin: unset;
+				margin-bottom: 3em;
 
 				&.placeholder {
 					border: 1px solid #004f87;
@@ -78,11 +79,13 @@
 				}
 			}
 			.ending-desc {
+				position: absolute;
+				bottom: 1.4em;
+				left: 0;
+				right: 0;
 				text-align: center;
 				line-height: 1.1;
-				margin-top: -1em;
 				margin-inline: .6em;
-				margin-bottom: 1.4em;
 				
 				.ending-name {
 					font-weight: 700;
