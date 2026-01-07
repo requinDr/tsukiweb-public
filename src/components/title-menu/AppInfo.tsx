@@ -110,16 +110,16 @@ const ModalInfo = ({show, setShow}: ModalInfoProps) => {
 					/>
 
 					<MessageContainer className="card actions">
-						<Button variant="select" onClick={copyCurrentUrl}>
+						<Button variant="select" onClick={copyCurrentUrl} nav-auto={1}>
 							<MdShare /> {strings.title.share}
 						</Button>
 
-						<Button variant="select" href={APP_INFO.TSUKI_VNDB} target="_blank" className="vndb">
+						<Button variant="select" href={APP_INFO.TSUKI_VNDB} target="_blank" className="vndb" nav-auto={1}>
 							<MdOpenInNew />	<span>VNDB</span>
 						</Button>
 
 						{canInstallPWA && 
-							<Button variant="select" onClick={installPWA}>
+							<Button variant="select" onClick={installPWA} nav-auto={1}>
 								<MdGetApp /> {strings.title.install}
 							</Button>
 						}
@@ -133,6 +133,7 @@ const ModalInfo = ({show, setShow}: ModalInfoProps) => {
 				className="close-btn"
 				audio={audio}
 				clickSound="close"
+				nav-auto={1}
 			>
 				{strings.close}
 			</Button>

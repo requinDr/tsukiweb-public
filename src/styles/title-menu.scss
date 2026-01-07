@@ -203,6 +203,7 @@
 	font-family: "Twemoji Country Flags", var(--ui-font, system-ui), Arial, sans-serif;
 }
 .translation-switch-modale {
+	padding: 0;
 	.content {
 		flex: 1;
 	}
@@ -210,24 +211,26 @@
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(min(120px, 100%), 1fr));
 		gap: 4px;
-		max-height: 200px;
+		max-height: 180px;
 		overflow-y: auto;
 		scrollbar-gutter: stable both-edges;
-		background-color: var(--menu-container);
-		padding: 8px 4px;
-		border-radius: 2px;
+		background-color: var(--message-container-background);
+		border-bottom: 1px solid var(--message-container-border);
 		white-space: nowrap;
+		padding: 1em;
+		margin-bottom: 0;
 	}
 	.language {
 		padding: .8em;
 	}
 
 	.translation-details {
-		margin-top: 1em;
 		line-height: 1.6;
-		height: 280px;
+		height: 306px;
 		overflow-y: auto;
 		scrollbar-gutter: stable both-edges;
+		padding-inline: 2em;
+		padding-top: 0.5em;
 
 		.game-credits {
 			--title-gradient: linear-gradient(180deg, #00d7ff 70%, #0024ff 100%);
@@ -260,6 +263,11 @@
 				font-size: 1em;
 			}
 		}
+	}
+
+	.close-btn {
+		margin-top: 1em;
+		margin-bottom: 2em;
 	}
 }
 
