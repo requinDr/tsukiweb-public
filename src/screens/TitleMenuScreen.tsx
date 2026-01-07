@@ -16,7 +16,6 @@ import { TitleMenuButton } from '@tsukiweb-common/ui-core'
 import { useScreenAutoNavigate, useLanguageRefresh, useKeyArrows, useEclipseUnlocked } from 'hooks'
 import classNames from "classnames"
 import { audio } from "utils/audio"
-// import christmas_hat from '@assets/icons/christmas_hat.svg'
 
 
 const TitleMenuScreen = () => {
@@ -90,7 +89,7 @@ const TitleMenuScreen = () => {
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
 					transition={{
-						delay: 0.8,
+						delay: 0.3,
 						duration: 1,
 					}}>
 					<button
@@ -101,20 +100,6 @@ const TitleMenuScreen = () => {
 						onClick={()=> settings.volume.master = -settings.volume.master}
 					>
 						{conf < 0 ? <MdOutlineVolumeOff aria-label="mute" /> : <MdOutlineVolumeUp aria-label="unmute" />}
-						{/* <img
-							src={christmas_hat}
-							alt="Christmas hat"
-							className="christmas-hat"
-							style={{
-								position: 'absolute',
-						    top: '-15px',
-						    left: '-11px',
-						    rotate: '-38deg',
-						    width: '28px',
-						    height: '28px',
-								transform: 'scaleX(-1)',
-							}}
-						/> */}
 					</button>
 				</m.div>
 
@@ -122,7 +107,7 @@ const TitleMenuScreen = () => {
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
 					transition={{
-						delay: 0.7,
+						delay: 0.15,
 						duration: 1,
 					}}>
 					<TranslationSwitch className="action-icon" nav-auto={1}/>
@@ -132,7 +117,6 @@ const TitleMenuScreen = () => {
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
 					transition={{
-						delay: 0.6,
 						duration: 1,
 					}}>
 					<AppInfo className="action-icon" nav-auto={1}/>

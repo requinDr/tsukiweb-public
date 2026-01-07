@@ -38,15 +38,13 @@
 		}
 	}
 
-	$spacing: 14px;
-	$icon-size: 36px;
 	.top-actions {
 		position: absolute;
-		top: $spacing;
-		right: $spacing;
+		top: 14px;
+		right: 14px;
 		display: flex;
 		flex-direction: row;
-		gap: calc($icon-size / 4);
+		gap: 8px;
 
 		.action-icon {
 			appearance: none;
@@ -55,10 +53,10 @@
 			align-items: center;
 			justify-content: center;
 			font-size: 1.5em;
-			width: $icon-size;
-			height: $icon-size;
-			border-radius: 4px;
-			background-color: var(--surface-light);
+			width: 44px;
+			height: 36px;
+			border-radius: 3px;
+			background-color: var(--btn-select-bg);
 
 			&.inactive {
 				filter: grayscale(1);
@@ -71,7 +69,6 @@
 	}
 
 	.menu {
-		margin-inline: 1em;
 		margin-bottom: 5vh;
 		width: min(900px, calc(100% - 2em));
 		font-size: 1.54em;
@@ -90,14 +87,13 @@
 	}
 
 	// One column
-	@media (max-width: 940px) and (min-height: 500px), (orientation: portrait) {
+	@media (max-width: 980px) and (min-height: 540px), (orientation: portrait) {
 		.top-actions {
-			right: $spacing;
 			flex-direction: column-reverse;
 		}
 	}
 	// One column, mobile portrait
-	@media (max-width: 940px), ((orientation: landscape) and (max-height: 500px)) {
+	@media (max-width: 980px), ((orientation: landscape) and (max-height: 540px)) {
 		grid-template-rows: 5fr 3fr;
 		.logo {
 			width: min(280px, 80%);
@@ -106,12 +102,12 @@
 			.menu-buttons {
 				flex-direction: column;
 				align-items: center;
-				row-gap: 14px;
+				row-gap: 16px;
 			}
 		}
 	}
 	// Two columns, mobile landscape
-	@media (max-height: 500px) and (orientation: landscape) {
+	@media (max-height: 540px) and (orientation: landscape) {
 		grid-template-columns: 1fr 1fr;
 		grid-template-rows: 1fr;
 		.logo {
@@ -129,8 +125,6 @@
 }
 
 .app-info-modale {
-	background-image: linear-gradient(45deg, #011853 60%, #033343);
-
 	.title-modal {
 		display: grid;
 		grid-template-columns: 1fr 200px;
@@ -158,9 +152,8 @@
 			.content {
 				display: flex;
 				flex-direction: column;
-				gap: 8px;
+				gap: 12px;
 				margin-top: 1em;
-				margin-inline: 8px;
 				text-wrap: pretty;
 
 				.more {
