@@ -75,7 +75,7 @@ const HistoryLayer = ({ display, history, onRewind, layers, show, divProps }: Pr
 					</Button>
 					{show?.flowchart && <>
 						<Button
-							variant="corner"
+							variant="select"
 							onClick={() => setLayer('history')}
 							active={layers.history}
 							style={{ marginLeft: '1em' }}
@@ -84,7 +84,7 @@ const HistoryLayer = ({ display, history, onRewind, layers, show, divProps }: Pr
 							{strings.menu.history}
 						</Button>
 						<Button
-							variant="corner"
+							variant="select"
 							onClick={() => setLayer('flowchart')}
 							active={layers.flowchart}
 							style={{ marginLeft: '.5em' }}

@@ -109,7 +109,7 @@ export const ConfigButtons = <V,>({currentValue, btns, disabled, updateValue}: C
 				<Button
 					key={b.label.toString()}
 					{...ACTION_PROPS}
-					variant="corner"
+					variant="select"
 					onClick={() => updateValue(b.value)}
 					className="config-btn"
 					active={currentValue === b.value}

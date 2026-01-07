@@ -2,12 +2,13 @@ import { ReactNode, useEffect, useState } from "react"
 import { ConfigButtons, ConfigItem, ResetBtn } from "./ConfigLayout"
 import { settings } from "../../utils/settings"
 import { strings } from "../../translation/lang"
-import { MdOutlineVolumeOff, MdOutlineVolumeUp, MdVolumeMute } from "react-icons/md"
+import { MdOutlineVolumeOff, MdOutlineVolumeUp } from "react-icons/md"
 import { useLanguageRefresh } from "../../hooks/useLanguageRefresh"
 import { PageSection } from "@tsukiweb-common/ui-core"
 import { deepAssign, extract, negative } from "@tsukiweb-common/utils/utils"
 import ConfigModal from "./ConfigModal"
 import { bb } from "@tsukiweb-common/utils/Bbcode"
+import { HiMinus, HiPlus } from "react-icons/hi"
 
 const ConfigAudioTab = () => {
 	useLanguageRefresh()
@@ -42,6 +43,14 @@ const ConfigAudioTab = () => {
 		'systemSE': strings.config["volume-system-se"]
 	}
 
+	const adjustVolume = (key: keyof typeof conf.volume, delta: number) => {
+		const currentVal = conf.volume[key]
+		const sign = negative(currentVal) ? -1 : 1
+		const absVal = Math.abs(currentVal)
+		const newVal = Math.max(0, Math.min(10, absVal + delta))
+		updateSubValue('volume', key, sign * newVal)
+	}
+
 	const handleReset = () => {
 		const defaultConf = deepAssign(conf, settings.getReference()!, {extend: false, clone: true})
 		setConf(defaultConf)
@@ -52,7 +61,9 @@ const ConfigAudioTab = () => {
 			{(Object.keys(volumeNames) as Array<keyof typeof volumeNames>).map(key=>
 				<ConfigItem key={key} label={volumeNames[key]}>
 					<div className="config-range">
-						<span className="icon"><MdVolumeMute /></span>
+						<button className="icon btn" onClick={() => adjustVolume(key, -1)} nav-auto={1}>
+							<HiMinus />
+						</button>
 						<input
 							type="range"
 							min={0}
@@ -63,6 +74,10 @@ const ConfigAudioTab = () => {
 								const sign = negative(conf.volume[key]) ? -1 : 1
 								updateSubValue('volume', key, sign * parseInt(e.target.value))
 							}} />
+						<button className="icon btn" onClick={() => adjustVolume(key, 1)} nav-auto={1}>
+							<HiPlus />
+						</button>
+
 						<button className="icon btn"
 							onClick={()=> updateSubValue('volume', key, -conf.volume[key])}
 							nav-auto={1}>

@@ -1,13 +1,16 @@
 import { useEffect, useState } from "react"
 import { ConfigButtons, ConfigItem, ResetBtn } from "./ConfigLayout"
 import { settings } from "../../utils/settings"
-import { FaMinus, FaPlus } from "react-icons/fa"
 import { getLocale, strings } from "../../translation/lang"
 import { useLanguageRefresh } from "../../hooks/useLanguageRefresh"
 import { PageSection } from "@tsukiweb-common/ui-core"
 import { deepAssign, extract, fullscreen } from "@tsukiweb-common/utils/utils"
 import { ViewRatio, TEXT_SPEED } from "@tsukiweb-common/constants"
 import useIsFullscreen from "@tsukiweb-common/hooks/useIsFullscreen"
+import { HiMinus, HiPlus } from "react-icons/hi"
+
+const MAX_DELAY = 3000
+const DELAY_STEP = 100
 
 const ConfigGameTab = () => {
 	useLanguageRefresh()
@@ -28,6 +31,11 @@ const ConfigGameTab = () => {
 	const numFormat = new Intl.NumberFormat(getLocale(), { maximumSignificantDigits: 3 })
 	const msToS = (ms: number)=> {
 		return numFormat.format(ms/1000)
+	}
+
+	const adjustDelay = (key: 'autoClickDelay' | 'nextPageDelay', delta: number) => {
+		const newVal = Math.max(0, Math.min(MAX_DELAY, conf[key] + delta))
+		updateValue(key, newVal)
 	}
 
 	const handleReset = () => {
@@ -82,33 +90,41 @@ const ConfigGameTab = () => {
 
 			<ConfigItem label={strings.config["auto-play-delay-text"].replace('%0',msToS(conf.autoClickDelay))}>
 				<div className="config-range">
-					<span className="icon"><FaMinus /></span>
+					<button className="icon btn" onClick={() => adjustDelay('autoClickDelay', -DELAY_STEP)} nav-auto={1}>
+						<HiMinus />
+					</button>
 					<input
 						type="range"
 						min={0}
-						max={3000}
-						step={100}
+						max={MAX_DELAY}
+						step={DELAY_STEP}
 						value={conf.autoClickDelay}
 						onChange={e => {
 							updateValue('autoClickDelay', parseInt(e.target.value))
 						}} />
-					<span className="icon"><FaPlus /></span>
+					<button className="icon btn" onClick={() => adjustDelay('autoClickDelay', DELAY_STEP)} nav-auto={1}>
+						<HiPlus />
+					</button>
 				</div>
 			</ConfigItem>
 
 			<ConfigItem label={strings.config["auto-play-delay-page"].replace('%0',msToS(conf.nextPageDelay))}>
 				<div className="config-range">
-					<span className="icon"><FaMinus /></span>
+					<button className="icon btn" onClick={() => adjustDelay('nextPageDelay', -DELAY_STEP)} nav-auto={1}>
+						<HiMinus />
+					</button>
 					<input
 						type="range"
 						min={0}
-						max={3000}
-						step={100}
+						max={MAX_DELAY}
+						step={DELAY_STEP}
 						value={conf.nextPageDelay}
 						onChange={e => {
 							updateValue('nextPageDelay', parseInt(e.target.value))
 						}} />
-					<span className="icon"><FaPlus /></span>
+					<button className="icon btn" onClick={() => adjustDelay('nextPageDelay', DELAY_STEP)} nav-auto={1}>
+						<HiPlus />
+					</button>
 				</div>
 			</ConfigItem>
 

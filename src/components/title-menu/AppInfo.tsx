@@ -110,16 +110,16 @@ const ModalInfo = ({show, setShow}: ModalInfoProps) => {
 					/>
 
 					<MessageContainer className="card actions">
-						<Button variant="corner" onClick={copyCurrentUrl}>
+						<Button variant="select" onClick={copyCurrentUrl}>
 							<MdShare /> {strings.title.share}
 						</Button>
 
-						<Button variant="corner" href={APP_INFO.TSUKI_VNDB} target="_blank" className="vndb">
+						<Button variant="select" href={APP_INFO.TSUKI_VNDB} target="_blank" className="vndb">
 							<MdOpenInNew />	<span>VNDB</span>
 						</Button>
 
 						{canInstallPWA && 
-							<Button variant="corner" onClick={installPWA}>
+							<Button variant="select" onClick={installPWA}>
 								<MdGetApp /> {strings.title.install}
 							</Button>
 						}
