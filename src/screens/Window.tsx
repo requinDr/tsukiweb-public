@@ -146,8 +146,8 @@ const Window = () => {
 			className="page window" ref={rootElmtRef}
 			initial={{opacity: 0}}
 			animate={{opacity: 1}}
-			exit={{scale: 1.5, opacity: 0}}
-			transition={{duration: 0.5}}
+			exit={{opacity: 0}}
+			transition={{duration: 0.3}}
 			onContextMenu={onContextMenu}>
 			<Fragment key={script.uid}>
 				<div className='ratio-container' onClick={()=> actionsHandler.next()}>
