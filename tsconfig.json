@@ -1,27 +1,33 @@
 {
   "compilerOptions": {
-    "target": "es2020",
+    "target": "es2022",
     "lib": ["dom", "dom.iterable", "esnext"],
     "types": ["vite/client", "node"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
+    
+    /* Bundler */
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
+    "moduleDetection": "force",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
+
+    /* Linting */
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+
     "baseUrl": "src",
     "paths": {
       "@tsukiweb-common/*": ["../tsukiweb-common/src/*"],
-      "@styles/*": ["./styles/*"],
-      "@assets/*": ["./assets/*"]
+      "@styles/*": ["styles/*"],
+      "@assets/*": ["assets/*"]
     }
   },
-  "include": ["src", "tsukiweb-common/src/hooks/useGraphicTransition.ts", "tsukiweb-common/src/graphics/GraphicsElement.tsx", "tsukiweb-common/src/graphics/GraphicsGroup.tsx", "tsukiweb-common/src/graphics/SpriteGraphics.tsx", "tsukiweb-common/src/graphics/ForegroundGraphics.tsx", "tsukiweb-common/src/graphics/BackgroundGraphics.tsx"],
+  "include": ["src"],
 }
