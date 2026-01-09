@@ -29,7 +29,7 @@
 		padding-bottom: 30vh;
 		margin-inline: auto;
 		@extend %layer-text;
-		user-select: auto;
+		user-select: text;
 		transform: translateZ(0);
 
 		.load {

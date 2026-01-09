@@ -1,4 +1,3 @@
-import { Tooltip } from "react-tooltip"
 import { SaveState, savePhaseTexts, savesManager } from "../../utils/savestates"
 import { MdDeleteOutline, MdOutlineFileDownload } from "react-icons/md"
 import { BiSolidHeart } from "react-icons/bi"
@@ -50,17 +49,18 @@ const SaveDetails = ({id, saveState, deleteSave}: SaveDetailsProps)=> {
 					</div>
 
 					<div className="actions">
-						<Tooltip id="tooltip" className="tooltip" delayShow={800} />
 						<button onClick={deleteSave.bind(null, id)}
 							onContextMenu={(e) => {e.preventDefault()}}
 							nav-auto={1}
-							data-tooltip-id="tooltip" data-tooltip-content="Delete" data-tooltip-place="top" data-tooltip-position-strategy="fixed">
+							aria-label={strings.saves.delete}
+						>
 							<MdDeleteOutline />
 						</button>
 						<button onClick={() => savesManager.exportSave(id)}
 							onContextMenu={(e) => {e.preventDefault()}}
 							nav-auto={1}
-							data-tooltip-id="tooltip" data-tooltip-content="Download" data-tooltip-place="top" data-tooltip-position-strategy="fixed">
+							aria-label={strings.saves.export}
+						>
 							<MdOutlineFileDownload />
 						</button>
 					</div>
@@ -94,9 +94,9 @@ const AffectionRow = ({ name, value, maxHearts }: { name: string, value: number,
 		<tr>
 			<td className="name">{name}</td>
 			<td className="hearts">
-				{Array(Math.min(value, maxHearts ? maxHearts : value)).fill(null).map((_, index) => (
+				{Array(Math.min(value, maxHearts ? maxHearts : value)).fill(null).map((_, index) =>
 					<BiSolidHeart key={`${name}-heart-${index}`} className="heart-icon" />
-				))}
+				)}
 			</td>
 		</tr>
 	)

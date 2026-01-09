@@ -12,12 +12,12 @@
 	--transition-time: 0.2s;
 	--transition: all var(--transition-time) ease-out;
 	--text-bg: linear-gradient(90deg,
-		rgba(0, 0, 0, 0.1) 0%,
-		rgba(0, 0, 0, 0.3) 4%,
-		rgba(0, 0, 0, 0.42) 8%,
-		rgba(0, 0, 0, 0.42) 92%,
-		rgba(0, 0, 0, 0.3) 96%,
-		rgba(0, 0, 0, 0.1) 100%);
+		rgb(0 0 0 / 0.1) 0%,
+		rgb(0 0 0 / 0.3) 4%,
+		rgb(0 0 0 / 0.42) 8%,
+		rgb(0 0 0 / 0.42) 92%,
+		rgb(0 0 0 / 0.3) 96%,
+		rgb(0 0 0 / 0.1) 100%);
 	--menu-button-bg: rgb(14 79 187);
 	--gradient-layer: linear-gradient(180deg, #001325, rgb(0 67 138 / 80%));
 	--transparent-layer: #001532bf;
@@ -30,6 +30,7 @@
 	display: flex;
 	font-family: var(--game-font), sans-serif;
 	background-color: #000;
+	isolation: isolate;
 
 	.ratio-container {
 		aspect-ratio: var(--ratio, initial);
