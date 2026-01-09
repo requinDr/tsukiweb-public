@@ -23,10 +23,9 @@ function getThumbnail(label: TsukihimeSceneName): Partial<Graphics> & {bg: Graph
 		if (attrs.osiete) {
 			return {"bg": "bg/bg_06a", "r": "tachi/cel_t20"}
 		}
-		const graph = attrs.fc?.graph
-		if (graph) {
-			return graph
-		}
+		const thumb = attrs.thumb
+		if (thumb)
+			return thumb
 	}
 	return {"bg": "#000000"}
 }

@@ -3,13 +3,13 @@ import '@styles/endings.scss'
 import { strings } from '../translation/lang'
 import { SCREEN } from '../utils/display'
 import { endings, osiete } from '../utils/endings'
-import { Tooltip } from 'react-tooltip'
 import { settings } from 'utils/settings'
 import MainEnding from 'components/endings/MainEnding'
 import Oshiete from 'components/endings/Oshiete'
 import { noBb } from '@tsukiweb-common/utils/Bbcode'
 import classNames from 'classnames'
 import { useScreenAutoNavigate, useLanguageRefresh, useEclipseUnlocked } from "hooks"
+import { ScenePopoverProvider } from "components/flowchart/ScenePopoverContext"
 
 
 const EndingsScreen = () => {
@@ -56,6 +56,7 @@ const EndingsScreen = () => {
 				<section className="badendings">
 					<h3>{strings.endings.osiete}</h3>
 					<div className='badendings-list'>
+						<ScenePopoverProvider>
 						{Object.values(osiete).map((ending, index) =>
 							<Oshiete
 								key={index}
@@ -64,10 +65,9 @@ const EndingsScreen = () => {
 								number={index + 1}
 								nav-auto={1}
 							/>
-						)}
+						)}</ScenePopoverProvider>
 					</div>
 				</section>
-				<Tooltip id="osiete" place="bottom" className="tooltip" />
 			</main>
 		</div>
 	)

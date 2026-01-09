@@ -3,16 +3,16 @@ import { autoUpdate, flip, useFloating, offset, shift } from "@floating-ui/react
 import { createPortal } from "react-dom"
 import * as m from "motion/react-m"
 import { AnimatePresence } from "motion/react"
-import { FcNode } from "utils/flowchart"
 import ScenePopover from "./ScenePopover"
+import { SCENE_ATTRS } from "utils/constants"
 
 const FLOATING_MIDDLEWARE = [flip(), shift(), offset(8)]
 
 type ScenePopoverActionsType = {
-	openPopover: (node: FcNode, element: Element) => void
+	openPopover: (nodeId: string, element: Element) => void
 	closePopover: () => void
 	closePopoverIfNode: (nodeId: string) => void
-	togglePopover: (node: FcNode, element: Element) => void
+	togglePopover: (nodeId: string, element: Element) => void
 }
 
 // Separate context for actions only (stable references, never causes re-renders)
@@ -31,7 +31,7 @@ type ProviderProps = {
 }
 
 export const ScenePopoverProvider = ({ children }: ProviderProps) => {
-	const [currentNode, setCurrentNode] = useState<FcNode | null>(null)
+	const [currentNode, setCurrentNode] = useState<string | null>(null)
 	const currentNodeIdRef = useRef<string | null>(null)
 
 	const { refs, floatingStyles } = useFloating({
@@ -48,10 +48,10 @@ export const ScenePopoverProvider = ({ children }: ProviderProps) => {
 		middleware: FLOATING_MIDDLEWARE
 	})
 
-	const openPopover = useCallback((node: FcNode, element: Element) => {
+	const openPopover = useCallback((nodeId: string, element: Element) => {
 		refs.setReference(element)
-		currentNodeIdRef.current = node.id
-		setCurrentNode(node)
+		currentNodeIdRef.current = nodeId
+		setCurrentNode(nodeId)
 	}, [refs])
 
 	const closePopover = useCallback(() => {
@@ -67,11 +67,11 @@ export const ScenePopoverProvider = ({ children }: ProviderProps) => {
 		}
 	}, [])
 
-	const togglePopover = useCallback((node: FcNode, element: Element) => {
-		if (currentNodeIdRef.current === node.id) {
+	const togglePopover = useCallback((nodeId: string, element: Element) => {
+		if (currentNodeIdRef.current === nodeId) {
 			closePopover()
 		} else {
-			openPopover(node, element)
+			openPopover(nodeId, element)
 		}
 	}, [openPopover, closePopover])
 
@@ -95,14 +95,18 @@ export const ScenePopoverProvider = ({ children }: ProviderProps) => {
 							id="scene-popover"
 						>
 							<m.div
-								key={currentNode.id}
+								key={currentNode}
 								className="scene-popover"
 								initial={{ opacity: 0, y: 0 }}
 								animate={{ opacity: 1, y: 0 }}
 								exit={{ opacity: 0, y: 6 }}
 								transition={{ type: "tween", duration: 0.15 }}
 							>
-								<ScenePopover node={currentNode} />
+								<ScenePopover
+									nodeId={currentNode}
+									displayName={currentNode}
+									graphics={SCENE_ATTRS.scenes[currentNode as keyof typeof SCENE_ATTRS.scenes]?.thumb}
+								/>
 							</m.div>
 						</div>
 					)}
@@ -129,7 +133,7 @@ const HOVER_DELAY_CLOSE = 50
  * Returns stable props to spread on the reference element.
  * Does NOT cause re-renders when popover state changes.
  */
-export const useScenePopoverTrigger = (node: FcNode) => {
+export const useScenePopoverTrigger = (nodeId: string) => {
 	const { openPopover, closePopoverIfNode, togglePopover } = useScenePopover()
 	const hoverTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 	const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
@@ -151,37 +155,37 @@ export const useScenePopoverTrigger = (node: FcNode) => {
 		clearTimeouts()
 		hoverTimeoutRef.current = setTimeout(() => {
 			if (elementRef.current) {
-				openPopover(node, elementRef.current)
+				openPopover(nodeId, elementRef.current)
 			}
 		}, HOVER_DELAY_OPEN)
-	}, [node, openPopover, clearTimeouts])
+	}, [nodeId, openPopover, clearTimeouts])
 
 	const handleMouseLeave = useCallback(() => {
 		clearTimeouts()
 		closeTimeoutRef.current = setTimeout(() => {
-			closePopoverIfNode(node.id)
+			closePopoverIfNode(nodeId)
 		}, HOVER_DELAY_CLOSE)
-	}, [node.id, closePopoverIfNode, clearTimeouts])
+	}, [nodeId, closePopoverIfNode, clearTimeouts])
 
 	const handleFocus = useCallback((e: React.FocusEvent) => {
 		elementRef.current = e.currentTarget
 		clearTimeouts()
-		openPopover(node, e.currentTarget)
-	}, [node, openPopover, clearTimeouts])
+		openPopover(nodeId, e.currentTarget)
+	}, [nodeId, openPopover, clearTimeouts])
 
 	const handleBlur = useCallback(() => {
 		clearTimeouts()
 		closeTimeoutRef.current = setTimeout(() => {
-			closePopoverIfNode(node.id)
+			closePopoverIfNode(nodeId)
 		}, HOVER_DELAY_CLOSE)
-	}, [node.id, closePopoverIfNode, clearTimeouts])
+	}, [nodeId, closePopoverIfNode, clearTimeouts])
 
 	const handleContextMenu = useCallback((e: React.MouseEvent) => {
 		e.preventDefault()
-		togglePopover(node, e.currentTarget)
-	}, [node, togglePopover])
+		togglePopover(nodeId, e.currentTarget)
+	}, [nodeId, togglePopover])
 
-	const setRef = useCallback((el: SVGGElement | null) => {
+	const setRef = useCallback((el: HTMLElement | SVGGElement | null) => {
 		elementRef.current = el
 	}, [])
 

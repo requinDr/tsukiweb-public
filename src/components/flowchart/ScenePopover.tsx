@@ -1,22 +1,23 @@
 import GraphicsGroup from "@tsukiweb-common/graphics/GraphicsGroup"
-import { Bbcode, closeBB } from "@tsukiweb-common/utils/Bbcode"
-import { FcNode } from "utils/flowchart"
+import { Graphics } from "@tsukiweb-common/types"
+import { Bbcode } from "@tsukiweb-common/utils/Bbcode"
 
 type PopoverProps = {
-	node: FcNode,
+	graphics?: Partial<Graphics>
+	nodeId: string
+	displayName: string
 }
-const ScenePopover = ({ node }: PopoverProps) => {
-
+const ScenePopover = ({ graphics, displayName, nodeId }: PopoverProps) => {
 	return (
 		<div className="scene-popover-content">
 			<div className="header">
-				<GraphicsGroup images={node.graph ?? {bg:"#000"}} />
+				<GraphicsGroup images={graphics ?? {bg:"#000"}} />
 			</div>
 			<div className="title">
-				<Bbcode text={node.displayName}/><br/>
+				<Bbcode text={displayName}/><br/>
 			</div>
 			<div className="id">
-				<Bbcode text={node.id}/><br/>
+				<Bbcode text={nodeId}/><br/>
 			</div>
 		</div>
 	)

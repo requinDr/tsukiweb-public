@@ -1,4 +1,4 @@
-import { Digit, FcNodeAttrs, FcSceneAttrs, UcLetter } from '@tsukiweb-common/types'
+import { Digit, FcNodeAttrs, FcSceneAttrs, Graphics, UcLetter } from '@tsukiweb-common/types'
 import sceneAttrs from '@assets/game/scene_attrs.json'
 import { RouteDayName, RouteName, TsukihimeSceneName } from '../types'
 
@@ -27,6 +27,7 @@ export const SCENE_ATTRS: {
   }) & {
     h?: true
     osiete?: true
+    thumb?: Graphics
     fc?: FcSceneAttrs
   }>
 } = JSON.parse(JSON.stringify(sceneAttrs))

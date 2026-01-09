@@ -87,4 +87,4 @@ export const osiete = Object.fromEntries(
       return [name, new Ed(name as TsukihimeSceneName) as OsieteEnding]
     }
   )
-) as PartialRecord<TsukihimeSceneName, OsieteEnding>
+) 

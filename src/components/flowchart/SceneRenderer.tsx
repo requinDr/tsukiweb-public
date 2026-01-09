@@ -22,7 +22,7 @@ type SceneProps = {
 
 const VisibleScene = memo(({ node, onClick, ...props }: SceneProps) => {
 	const { closePopover } = useScenePopover()
-	const trigger = useScenePopoverTrigger(node)
+	const trigger = useScenePopoverTrigger(node.id)
 	const disabled = node.state === FcNodeState.DISABLED
 
 	const onAction = useCallback((e: React.MouseEvent | React.KeyboardEvent) => {
@@ -35,7 +35,7 @@ const VisibleScene = memo(({ node, onClick, ...props }: SceneProps) => {
 	}, [closePopover, onClick, node.id])
 
 	const classes = classNames("fc-scene", "unlocked", {
-		"blur": node.graph?.bg && cg.shouldBlur(node.graph.bg),
+		"blur": node.thumb?.bg && cg.shouldBlur(node.thumb.bg),
 		"active": node.active,
 		"disabled": disabled
 	})

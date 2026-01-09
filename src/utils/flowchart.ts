@@ -41,7 +41,7 @@ type FcNodeAttrs = FlowchartNodeAttrs<FcNodeId> & {
 	col: number
 	align?: FcNodeId
 	cutAt?: number
-	graph?: Graphics
+	thumb?: Graphics
 }
 
 //##############################################################################
@@ -121,17 +121,17 @@ export class FcNode extends FlowchartNode<FcNodeId, TsukihimeFlowchart> {
 	column: number
 	_align: FcNodeId | FcNode | null
 	cutAt: number
-	graph?: Graphics
+	thumb?: Graphics
 	_boundRect: [number, number, number, number] | null = null
 	_state: number = -1
 	_navY: number | null
 
-	constructor(id: FcNodeId, {col, cutAt, graph, align, ...attrs}: FcNodeAttrs,
+	constructor(id: FcNodeId, {col, cutAt, align, ...attrs}: FcNodeAttrs,
 				flowchart: TsukihimeFlowchart, ) {
 		super(id, attrs, flowchart)
 		this.column = col
 		this.cutAt = cutAt ?? 0
-		this.graph = graph
+		this.thumb = SCENE_ATTRS.scenes[id as TsukihimeSceneName]?.thumb
 		this._align = align ?? null
 		this._navY = null
 	}

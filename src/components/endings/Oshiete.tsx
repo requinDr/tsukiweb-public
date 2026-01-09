@@ -3,6 +3,8 @@ import chalkboard from '@assets/icons/chalkboard.svg'
 import { noBb } from '@tsukiweb-common/utils/Bbcode'
 import { osiete } from 'utils/endings'
 import classNames from 'classnames'
+import { useScenePopover, useScenePopoverTrigger } from 'components/flowchart/ScenePopoverContext'
+import { useCallback } from 'react'
 
 type Props = React.HTMLAttributes<HTMLDivElement> & {
 	unlocked: boolean
@@ -11,11 +13,18 @@ type Props = React.HTMLAttributes<HTMLDivElement> & {
 }
 
 const Oshiete = ({unlocked, ending, number, ...props}: Props) => {
+	const { closePopover } = useScenePopover()
+	const trigger = useScenePopoverTrigger(ending?.scene)
 
-	const handlePlay = () => {
+	const onAction = useCallback((e: React.MouseEvent | React.KeyboardEvent) => {
+		if ('key' in e && (e.key !== "Enter" || e.currentTarget !== e.target)) {
+			return
+		}
+		e.stopPropagation()
+		closePopover()
 		if (unlocked && ending)
 			playScene(ending.scene, {continueScript: false })
-	}
+	}, [closePopover, unlocked, ending])
 
 	return (
 		<div
@@ -23,14 +32,10 @@ const Oshiete = ({unlocked, ending, number, ...props}: Props) => {
 			className={classNames("badending", {"seen": unlocked})}
 			tabIndex={unlocked ? 0 : -1}
 			role="button"
-			onClick={unlocked ? handlePlay : undefined}
-			onKeyDown={e => e.key === 'Enter' && handlePlay()}
+			{...(unlocked && trigger)}
+			onClick={unlocked ? onAction : undefined}
+			onKeyDown={unlocked ? onAction : undefined}
 			onContextMenu={(e) => {e.preventDefault()}}
-			data-tooltip-id="osiete"
-			data-tooltip-html={`
-				${ending?.scene}<br />
-				${ending?.name ? `${noBb(ending.name)}, Day: ${ending.day}` : ""}
-			`}
 		>
 			{unlocked && ending ?
 				<img
