@@ -1,4 +1,4 @@
-import { BrowserRouter } from "react-router";
+import { Router } from "wouter";
 import AnimatedRoutes from './AnimatedRoutes';
 import { getLocale } from "./translation/lang";
 import { ErrorBoundary } from "react-error-boundary";
@@ -26,9 +26,7 @@ function App() {
 					shouldBlur: cg.shouldBlur
 				}
 			}}>
-				<BrowserRouter
-					basename={import.meta.env.BASE_URL}
-				>
+				<Router base={import.meta.env.BASE_URL}>
 					<AppLayout>
 						<AnimatedRoutes />
 					</AppLayout>
@@ -41,7 +39,7 @@ function App() {
 						pauseOnFocusLoss={false}
 						draggable
 						theme="dark" />
-				</BrowserRouter>
+				</Router>
 			</CommonProvider>
 		</ErrorBoundary>
 	)

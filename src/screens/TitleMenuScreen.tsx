@@ -10,7 +10,7 @@ import { settings } from '../utils/settings'
 import AppInfo from '../components/title-menu/AppInfo'
 import TranslationSwitch from '../components/title-menu/TranslationSwitch'
 import { useObserved } from '@tsukiweb-common/utils/Observer'
-import { useNavigate } from "react-router"
+import { useLocation } from "wouter"
 import history from 'script/history'
 import { TitleMenuButton } from '@tsukiweb-common/ui-core'
 import { useScreenAutoNavigate, useLanguageRefresh, useKeyArrows, useEclipseUnlocked } from 'hooks'
@@ -19,7 +19,7 @@ import { audio } from "utils/audio"
 
 
 const TitleMenuScreen = () => {
-	const navigate = useNavigate()
+	const [, navigate] = useLocation()
 	useScreenAutoNavigate(SCREEN.TITLE)
 	useLanguageRefresh()
 	useKeyArrows()

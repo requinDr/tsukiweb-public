@@ -1,5 +1,5 @@
 import { useLayoutEffect } from "react"
-import { useNavigate } from "react-router"
+import { useLocation } from "wouter"
 import { observe, unobserve } from "@tsukiweb-common/utils/Observer"
 import { displayMode, SCREEN } from "utils/display"
 
@@ -10,14 +10,14 @@ import { displayMode, SCREEN } from "utils/display"
  * @param currentScreen label of the current screen this hook is used on
  */
 export function useScreenAutoNavigate(currentScreen: SCREEN) {
-	const navigate = useNavigate()
+	const [, setLocation] = useLocation()
 
 	useLayoutEffect(()=> {
 		if (displayMode.screen !== currentScreen) {
 			displayMode.screen = currentScreen
 		}
 		const handleNavigate = (screen: SCREEN) => {
-			navigate(screen, { replace: false })
+			setLocation(screen)
 		}
 		observe(displayMode, 'screen', handleNavigate, {
 			filter: (s) => s != currentScreen
@@ -26,5 +26,5 @@ export function useScreenAutoNavigate(currentScreen: SCREEN) {
 		return () => {
 			unobserve(displayMode, 'screen', handleNavigate)
 		}
-	}, [currentScreen, navigate])
+	}, [currentScreen, setLocation])
 }

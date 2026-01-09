@@ -3,7 +3,7 @@ import { PropsWithChildren, useEffect } from "react"
 import "@styles/extra.scss"
 import { strings } from "translation/lang"
 import { displayMode, SCREEN } from "utils/display"
-import { useLocation, useNavigate } from "react-router"
+import { useLocation } from "wouter"
 import { PageTitle, TitleMenuButton } from "@tsukiweb-common/ui-core"
 import { useLanguageRefresh } from "hooks/useLanguageRefresh"
 import { useEclipseUnlocked, useKeyArrows } from "hooks"
@@ -37,11 +37,10 @@ export default ExtraLayout
 
 
 const ExtraMenu = () => {
-	const navigate = useNavigate()
-	const location = useLocation()
+	const [location, navigate] = useLocation()
 	useLanguageRefresh()
 	const { eclipseUnlocked } = useEclipseUnlocked()
-	const currentPage = "/" + location.pathname.split("/")[1]
+	const currentPage = "/" + location.split("/")[1]
 
 	useKeyArrows()
 				

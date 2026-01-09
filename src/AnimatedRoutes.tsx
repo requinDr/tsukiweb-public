@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate, useLocation, Outlet } from "react-router";
+import { Switch, Route, Redirect, useLocation } from "wouter";
 import { AnimatePresence, LazyMotion, domAnimation } from 'motion/react';
 import Window from './screens/Window'
 import TitleMenuScreen from './screens/TitleMenuScreen';
@@ -19,54 +19,70 @@ import { Particles } from "@tsukiweb-common/ui-core";
 import { SCREEN } from "utils/display";
 
 const AnimatedRoutes = () => {
-	const location = useLocation()
-	const [hasSeenDisclaimer, setHasSeenDisclaimer] = useState(() => {
-		const initialPath = location.pathname
-		return initialPath !== '/' && initialPath !== '/disclaimer'
-	})
+	const [location] = useLocation()
+	const pathname = location.split('?')[0]
+	const [hasSeenDisclaimer, setHasSeenDisclaimer] = useState(() =>
+		location !== '/' && location !== '/disclaimer'
+	)
 
 	const markDisclaimerAsSeen = useCallback(() => {
 		setHasSeenDisclaimer(true)
 	}, [])
 
 	const isExtra = [SCREEN.GALLERY, SCREEN.ENDINGS, SCREEN.SCENES, SCREEN.PLUS_DISC].some(path =>
-		location.pathname.startsWith(path)
+		pathname.startsWith(path)
 	)
-	const keyPresence = isExtra ? "extra" : location.pathname
-	const showParticles = location.pathname !== "/disclaimer" && location.pathname !== "/window";
+	const keyPresence = isExtra ? "extra" : pathname
+	const showParticles = pathname !== "/disclaimer" && pathname !== "/window"
 
 	return (
 		<LazyMotion features={domAnimation} strict>
 			{showParticles && <Particles />}
 			<AnimatePresence mode="wait">
-				<Routes location={location} key={keyPresence}>
-					<Route path="/disclaimer" element={<DisclaimerScreen onAccept={markDisclaimerAsSeen} />} />
-					<Route 
-						path="/"
-						element={
-							!hasSeenDisclaimer 
-								? <Navigate to="/disclaimer" replace /> 
-								: <TitleMenuScreen />
-						} 
-					/>
-					<Route path="/title" element={<Navigate to="/" replace />} />
-					<Route path={SCREEN.LOAD} element={<LoadScreen />} />
-					<Route path={SCREEN.CONFIG} element={<ConfigScreen />} />
-
-					<Route element={<ExtraLayout><Outlet /></ExtraLayout>}>
-						<Route path={SCREEN.GALLERY} element={<GalleryScreen />} />
-						<Route path={SCREEN.ENDINGS} element={<EndingsScreen />} />
-						<Route path={SCREEN.SCENES}>
-							<Route index element={<FlowchartScreen />} />
-							<Route path=":sceneId" element={<SceneReplayScreen />} />
-						</Route>
-						<Route path={SCREEN.PLUS_DISC} element={<PlusDiscScreen />} />
+				<Switch location={pathname} key={keyPresence}>
+					<Route path="/disclaimer">
+						<DisclaimerScreen onAccept={markDisclaimerAsSeen} />
+					</Route>
+					<Route path="/">
+						{!hasSeenDisclaimer 
+							? <Redirect to="/disclaimer" replace /> 
+							: <TitleMenuScreen />
+						}
+					</Route>
+					<Route path="/title">
+						<Redirect to="/" replace />
+					</Route>
+					<Route path={SCREEN.LOAD}>
+						<LoadScreen />
+					</Route>
+					<Route path={SCREEN.CONFIG}>
+						<ConfigScreen />
 					</Route>
 
-					<Route path={SCREEN.WINDOW} element={<Window />} />
+					<Route path={SCREEN.GALLERY}>
+						<ExtraLayout><GalleryScreen /></ExtraLayout>
+					</Route>
+					<Route path={SCREEN.ENDINGS}>
+						<ExtraLayout><EndingsScreen /></ExtraLayout>
+					</Route>
+					<Route path={`${SCREEN.SCENES}/:sceneId`}>
+						<ExtraLayout><SceneReplayScreen /></ExtraLayout>
+					</Route>
+					<Route path={SCREEN.SCENES}>
+						<ExtraLayout><FlowchartScreen /></ExtraLayout>
+					</Route>
+					<Route path={SCREEN.PLUS_DISC}>
+						<ExtraLayout><PlusDiscScreen /></ExtraLayout>
+					</Route>
 
-					<Route path="*" element={<Navigate to="/disclaimer" />} />
-				</Routes>
+					<Route path={SCREEN.WINDOW}>
+						<Window />
+					</Route>
+
+					<Route>
+						<Redirect to="/disclaimer" />
+					</Route>
+				</Switch>
 			</AnimatePresence>
 		</LazyMotion>
 	)

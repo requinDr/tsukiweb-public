@@ -1,14 +1,14 @@
 import { useEffect } from 'react'
 import '@styles/title-menu.scss'
 import * as m from "motion/react-m"
-import { useNavigate } from "react-router"
+import { useLocation } from "wouter"
 import { strings } from '../translation/lang'
 import { SCREEN } from 'utils/display'
 import { bb } from '@tsukiweb-common/utils/Bbcode'
 import { useLanguageRefresh } from 'hooks'
 
 const DisclaimerScreen = ({ onAccept }: { onAccept?: () => void }) => {
-	const navigate = useNavigate()
+	const [, setLocation] = useLocation()
 	useLanguageRefresh()
 
 	useEffect(()=> {
@@ -20,7 +20,7 @@ const DisclaimerScreen = ({ onAccept }: { onAccept?: () => void }) => {
 
 	const sawDisclaimer = () => {
 		if (onAccept) onAccept()
-		navigate(SCREEN.TITLE)
+		setLocation(SCREEN.TITLE)
 	}
 
 	return (
