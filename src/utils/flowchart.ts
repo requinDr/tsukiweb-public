@@ -31,6 +31,7 @@ export type SpritesheetMetadataType = {
 		h: number
 	}
 	f: string[] // file names
+	s: number[][] // spritesheet dimensions: [nw, nh] for each spritesheet
 	i: {
 		[key: string]: number[] // [top, left, file index]
 	}
@@ -239,9 +240,10 @@ export class FcNode extends FlowchartNode<FcNodeId, TsukihimeFlowchart> {
 			debugger;
 		const [top, left, fileIndex] = metadatas.i[this.id]
 		const { w: width, h: height } = metadatas.d
+		const [nw, nh] = metadatas.s[fileIndex]
 		return {
 			file: spriteSheetImgPath(metadatas.f[fileIndex]),
-			left, top, width, height,
+			left, top, width, height, nw, nh,
 		}
 	}
 	get boundingRect(): [number, number, number, number] {

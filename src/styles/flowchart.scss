@@ -19,54 +19,37 @@
 		vector-effect: non-scaling-stroke;
 	}
 	.fc-scene {
+		stroke: var(--active-connection);
+		stroke-width: 0.6;
+		stroke-linejoin: round;
+		fill: none;
 		&.disabled {
 			filter: brightness(0.5) grayscale(1);
 			pointer-events: none;
 		}
 		&.blur {
-			.fc-scene-content {
-				filter: blur(3px);
+			filter: blur(3px);
+			transition: filter .2s linear;
+			transition-delay: .5s;
 
-				&:hover, &:focus-visible {
-					filter: blur(0);
-				}
+			&:hover, &:focus-visible {
+				filter: blur(0);
 			}
 		}
 		&.unlocked {
-			.fc-scene-content {
-				transition: scale 0.2s ease-in-out;
-				cursor: pointer;
-				transform: translateZ(0); 
-				&:hover, &:focus-visible, &:focus {
-					scale: 1.14;
-					use {
-						filter:
-							drop-shadow(0 0 1px var(--active-connection))
-							drop-shadow(0 0 1px var(--active-connection))
-							drop-shadow(0 0 1px var(--active-connection))
-							drop-shadow(0 0 2px var(--active-connection));
-					}
-				}
+			outline: none;
+			cursor: pointer;
+			rect {
+				transition: filter .1s linear;
 			}
-		}
-		.fc-scene-content {
-			width: 100%;
-			height: 100%;
-
 			&:hover, &:focus-visible, &:focus {
-				outline: none;
-			}
-			use {
-				transition : filter 0.2s linear;
-			}
-		}
-
-		img {
-			opacity: 0;
-			transition: opacity .2s;
-
-			&.loaded {
-				opacity: 1;
+				rect {
+					filter:
+						drop-shadow(0 0 1px var(--active-connection))
+						drop-shadow(0 0 1px var(--active-connection))
+						drop-shadow(0 0 1px var(--active-connection))
+						drop-shadow(0 0 2px var(--active-connection));
+				}
 			}
 		}
 	}
@@ -88,7 +71,6 @@
 	}
 }
 
-#fc-scene-outline,
 #fc-scene-hidden rect:last-of-type {
 	stroke-width: 0.6;
 	stroke-linejoin: round;
@@ -99,12 +81,11 @@
 	stroke: rgb(115 115 115);
 }
 
-#fc-scene-outline {
-	stroke: var(--active-connection);
-}
-
-#fc-scene-background {
-	fill: rgb(67 67 67);
+.fc-scene-box {
+  fill: rgb(1, 43, 82);
+  stroke: var(--active-connection);
+  stroke-width: 0.6;
+  paint-order: stroke;
 }
 
 .scene-popover-container {

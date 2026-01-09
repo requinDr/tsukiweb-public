@@ -22,8 +22,12 @@ const SVG_DEFS = (
 		<clipPath id="fc-scene-clip">
 			<rect {...SCENE_RECT_ATTRS} rx={SCENE_HEIGHT/14} />
 		</clipPath>
-		<rect id="fc-scene-outline" {...SCENE_RECT_ATTRS} rx={SCENE_HEIGHT/14} />
-		<rect id="fc-scene-background" {...SCENE_RECT_ATTRS} />
+		<rect 
+			id="fc-scene-box" 
+			{...SCENE_RECT_ATTRS} 
+			rx={SCENE_HEIGHT/14} 
+			className="fc-scene-box"
+		/>
 		<symbol id="fc-scene-hidden" overflow="visible">
 			<rect {...SCENE_RECT_ATTRS} rx={SCENE_HEIGHT/10} fill="url(#hidden-scene-gradient)" />
 			<path d={`M${-SCENE_WIDTH/2},${-SCENE_HEIGHT/2} L${SCENE_WIDTH/2},${SCENE_HEIGHT/2} M${-SCENE_WIDTH/2},${SCENE_HEIGHT/2} L${SCENE_WIDTH/2},${-SCENE_HEIGHT/2}`} stroke="black" strokeWidth={0.4} />

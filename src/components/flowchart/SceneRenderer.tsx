@@ -41,19 +41,29 @@ const VisibleScene = memo(({ node, onClick, ...props }: SceneProps) => {
 	})
 
 	return (
-		<g className={classes} id={`fc-scene-${node.id}`}
-			transform={`translate(${node.centerX},${node.centerY})`}>
-			<g
-				className='fc-scene-content'
-				{...props}
+		<g 
+			id={`fc-scene-${node.id}`} 
+			className={classes}
+			transform={`translate(${node.centerX},${node.centerY})`}
+			clipPath="url(#fc-scene-clip)"
+			{...props}
+		>
+			<SceneImage node={node} />
+
+			<rect
+				x={-node.width / 2}
+				y={-node.height / 2}
+				width={node.width}
+				height={node.height}
+				fill="transparent"
+				pointerEvents="all"
+				style={{ cursor: disabled ? 'default' : 'pointer', outline: 'none' }}
+				
 				{...(!disabled && trigger)}
 				onClick={!disabled ? onAction : undefined}
 				onKeyDown={!disabled ? onAction : undefined}
 				tabIndex={disabled ? -1 : 0}
-				clipPath="url(#fc-scene-clip)"
-			>
-				<SceneImage node={node} />
-			</g>
+			/>
 		</g>
 	)
 })
