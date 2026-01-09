@@ -15,12 +15,15 @@
 		overflow: visible;
 		direction: ltr;
 		transform: translateZ(0);
-		shape-rendering: optimizeSpeed;
 		vector-effect: non-scaling-stroke;
+
+		@media (pointer: coarse) {
+			shape-rendering: optimizeSpeed;
+		}
 	}
 	.fc-scene {
 		stroke: var(--active-connection);
-		stroke-width: 0.6;
+		stroke-width: 1.2;
 		stroke-linejoin: round;
 		fill: none;
 		&.disabled {
@@ -36,7 +39,10 @@
 				filter: blur(0);
 			}
 		}
-		&.unlocked {
+		&.disabled.blur {
+			filter: brightness(0.5) grayscale(1) blur(3px);
+		}
+		&.unlocked:not(.disabled) {
 			outline: none;
 			cursor: pointer;
 			rect {
@@ -82,10 +88,10 @@
 }
 
 .fc-scene-box {
-  fill: rgb(1, 43, 82);
-  stroke: var(--active-connection);
-  stroke-width: 0.6;
-  paint-order: stroke;
+	fill: rgb(1, 43, 82);
+	stroke: var(--active-connection);
+	stroke-width: 0.6;
+	paint-order: stroke;
 }
 
 .scene-popover-container {
