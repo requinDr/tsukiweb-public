@@ -18,7 +18,7 @@ const UnseenScene = ({ node, ...props }: { node: FcNode }) => (
 type SceneProps = {
 	node: FcNode,
 	onClick?: (id: TsukihimeSceneName) => void
-} & Omit<SVGProps<SVGGElement>, 'onClick'> & NavigationProps
+} & Omit<SVGProps<SVGRectElement>, 'onClick'> & NavigationProps
 
 const VisibleScene = memo(({ node, onClick, ...props }: SceneProps) => {
 	const { closePopover } = useScenePopover()
@@ -46,7 +46,6 @@ const VisibleScene = memo(({ node, onClick, ...props }: SceneProps) => {
 			className={classes}
 			transform={`translate(${node.centerX},${node.centerY})`}
 			clipPath="url(#fc-scene-clip)"
-			{...props}
 		>
 			<SceneImage node={node} />
 
@@ -63,6 +62,7 @@ const VisibleScene = memo(({ node, onClick, ...props }: SceneProps) => {
 				onClick={!disabled ? onAction : undefined}
 				onKeyDown={!disabled ? onAction : undefined}
 				tabIndex={disabled ? -1 : 0}
+				{...props}
 			/>
 		</g>
 	)

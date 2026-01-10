@@ -12,7 +12,6 @@
 		flex-direction: column;
 	}
 	.flowchart {
-		overflow: visible;
 		direction: ltr;
 		transform: translateZ(0);
 		vector-effect: non-scaling-stroke;
@@ -47,9 +46,7 @@
 			cursor: pointer;
 			rect {
 				transition: filter .1s linear;
-			}
-			&:hover, &:focus-visible, &:focus {
-				rect {
+				&:hover, &:focus-visible, &:focus {
 					filter:
 						drop-shadow(0 0 1px var(--active-connection))
 						drop-shadow(0 0 1px var(--active-connection))

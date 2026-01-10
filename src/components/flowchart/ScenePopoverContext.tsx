@@ -1,12 +1,11 @@
 import { createContext, useContext, useState, useCallback, useRef, ReactNode, useMemo } from "react"
-import { autoUpdate, flip, useFloating, offset, shift } from "@floating-ui/react"
+import { autoUpdate, flip, useFloating, offset } from "@floating-ui/react"
 import { createPortal } from "react-dom"
 import * as m from "motion/react-m"
 import { AnimatePresence } from "motion/react"
 import { FcNode } from "utils/flowchart"
 import ScenePopover from "./ScenePopover"
 
-const FLOATING_MIDDLEWARE = [flip(), shift(), offset(8)]
 
 type ScenePopoverActionsType = {
 	openPopover: (node: FcNode, element: Element) => void
@@ -26,25 +25,27 @@ const getRootElement = () => {
 	return rootElement!
 }
 
+const FLOATING_MIDDLEWARE = [flip(), offset(8)]
+
 type ProviderProps = {
 	children: ReactNode
 }
-
 export const ScenePopoverProvider = ({ children }: ProviderProps) => {
 	const [currentNode, setCurrentNode] = useState<FcNode | null>(null)
 	const currentNodeIdRef = useRef<string | null>(null)
 
 	const { refs, floatingStyles } = useFloating({
+		strategy: "absolute",
 		placement: "right",
+		open: currentNode !== null,
 		whileElementsMounted: (reference, floating, update) => 
 			autoUpdate(reference, floating, update, {
 				animationFrame: false,
-				ancestorScroll: false,
+				ancestorScroll: true,
 				ancestorResize: false,
 				elementResize: false,
 				layoutShift: false,
 			}),
-		open: currentNode !== null,
 		middleware: FLOATING_MIDDLEWARE
 	})
 
@@ -92,7 +93,6 @@ export const ScenePopoverProvider = ({ children }: ProviderProps) => {
 							className="scene-popover-container"
 							ref={refs.setFloating}
 							style={floatingStyles}
-							id="scene-popover"
 						>
 							<m.div
 								key={currentNode.id}
@@ -150,17 +150,13 @@ export const useScenePopoverTrigger = (node: FcNode) => {
 		elementRef.current = e.currentTarget
 		clearTimeouts()
 		hoverTimeoutRef.current = setTimeout(() => {
-			if (elementRef.current) {
-				openPopover(node, elementRef.current)
-			}
+			if (elementRef.current) openPopover(node, elementRef.current)
 		}, HOVER_DELAY_OPEN)
 	}, [node, openPopover, clearTimeouts])
 
 	const handleMouseLeave = useCallback(() => {
-		clearTimeouts()
-		closeTimeoutRef.current = setTimeout(() => {
-			closePopoverIfNode(node.id)
-		}, HOVER_DELAY_CLOSE)
+		if (hoverTimeoutRef.current) clearTimeout(hoverTimeoutRef.current)
+		closePopoverIfNode(node.id)
 	}, [node.id, closePopoverIfNode, clearTimeouts])
 
 	const handleFocus = useCallback((e: React.FocusEvent) => {
