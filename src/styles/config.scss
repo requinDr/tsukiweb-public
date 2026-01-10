@@ -68,10 +68,10 @@
 		align-items: center;
 		padding-block: .6em;
 		min-height: 60px;
-		
-		// and next sibling is not .sub
-		&:not(:nth-last-child(2), :has(+ .sub)) {
-			border-bottom: 1px solid var(--separator);
+		border-bottom: 1px solid var(--separator);
+
+		&:nth-last-child(2) {
+			border-bottom: 0;
 		}
 
 		.config-name {

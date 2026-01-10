@@ -74,18 +74,6 @@ const ConfigAdvancedTab = () => {
 
 	return (
 		<PageSection>
-			<ConfigItem label={strings.config.language}>
-				<div className="config-btns">
-					<Button
-						nav-auto={1}
-						className="config-btn flag"
-						onClick={()=>setShowLanguage(true)}>
-						{languages?.[settings.language]?.["display-name"]}... +{Object.keys(languages).length - 1}
-					</Button>
-				</div>
-			</ConfigItem>
-			<ModalLanguageSelection show={showLanguage} setShow={setShowLanguage} />
-
 			<div className="sub">
 				<div className="title">{strings.config["adult-title"]}</div>
 				<ConfigItem
@@ -142,6 +130,17 @@ const ConfigAdvancedTab = () => {
 				</ConfigItem>
 			</div>
 
+			<ConfigItem label={strings.config.language}>
+				<div className="config-btns">
+					<Button
+						nav-auto={1}
+						className="config-btn flag"
+						onClick={()=>setShowLanguage(true)}>
+						{languages?.[settings.language]?.["display-name"]}... +{Object.keys(languages).length - 1}
+					</Button>
+				</div>
+			</ConfigItem>
+
 			<ConfigItem
 				label={strings.config["show-locked-content"]}
 				helpAction={()=>setModal({show: true, content:
@@ -186,6 +185,7 @@ const ConfigAdvancedTab = () => {
 			<ResetBtn onClick={handleReset} />
 
 			<ConfigModal modal={modal} setModal={setModal} />
+			<ModalLanguageSelection show={showLanguage} setShow={setShowLanguage} />
 		</PageSection>
 	)
 }
