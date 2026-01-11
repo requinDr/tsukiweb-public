@@ -170,7 +170,7 @@ const FlowchartTab = ({ history, onSceneSelect }: FlowchartTabProps) => {
 	}, [history, onSceneSelect])
 
 	return (
-		<div id="flowchart" className="scroll-container">
+		<div id="flowchart-progress" className="scroll-container">
 			<div className="flowchart-container">
 				<Flowchart
 					history={history}
