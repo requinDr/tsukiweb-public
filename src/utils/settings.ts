@@ -1,10 +1,12 @@
-import { NoMethods, PartialJSON } from "@tsukiweb-common/types"
+import { JSONObject, NoMethods, PartialJSON } from "@tsukiweb-common/types"
 import { Settings as SettingsBase } from "@tsukiweb-common/utils/settings"
 import { textFileUserDownload, requestJSONs, twoDigits } from "@tsukiweb-common/utils/utils"
 import { savesManager, SaveState } from "./savestates"
 import { APP_VERSION, FULLSAVE_EXT } from "./constants"
 import { toast } from "react-toastify"
 import { TrackSourceId } from "translation/lang"
+
+const restoreSymbol = Symbol("restore")
 
 class Settings extends SettingsBase {
   
@@ -20,6 +22,29 @@ class Settings extends SettingsBase {
     diff.language = this.language // force language to be stored
     return diff
   }
+  
+  /**
+   * Allow {@link importGameData} to use the `restore` method
+   */
+  [restoreSymbol](obj: JSONObject) {
+    this.restore(obj)
+  }
+  protected override restore(diff: JSONObject | PartialJSON): void {
+    // change replaced scenes in completed scenes list
+    const completedScenes = ((diff as Partial<Settings>).completedScenes ?? [])
+    const redirectedScenes = {s23: null, s24: null, s47: 's46'}
+    for (const [label, replace] of Object.entries(redirectedScenes)) {
+      const i = completedScenes.indexOf(label)
+      if (i >= 0) {
+        completedScenes.splice(i, 1)
+        if (replace)
+          completedScenes.push(replace)
+      }
+    }
+
+    super.restore(diff)
+  }
+  
   constructor() {
     super("settings", false)
   }
@@ -75,8 +100,8 @@ export const importGameData = async (accept = `.${FULLSAVE_EXT}`) => {
     if (!json)
       return
     if (!json.version)
-      json.version = "0.3.6"
-    settings.fromDiff(json.settings)
+      json.version = "0.3.6" // last version without a 'version' attribute
+    settings[restoreSymbol](json.settings)
     if (json.saveStates != undefined) {
       savesManager.clear()
       savesManager.add(...json.saveStates)

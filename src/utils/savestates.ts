@@ -43,12 +43,13 @@ class SavesManager extends SavesManagerBase<SaveState> {
   protected override import(saves: [number, SaveState][]|{version:string, saveStates:SaveState[]}) {
     if (Array.isArray(saves)) { // < v0.4.0
       saves = {
-        version: APP_VERSION,
+        version: '0.3.6',
         saveStates: saves.map(([id, save])=>
           (id != save.date) ? {id, ...save} : save)
       }
     }
     //if (versionsCompare(json.version, "1.0.0") < 0) // uncomment if necessary to convert savestates
+    saves.version = APP_VERSION
     return super.import(saves)
   }
 
@@ -69,7 +70,6 @@ class SavesManager extends SavesManagerBase<SaveState> {
 }
 
 export const savesManager = new SavesManager("savestates")
-
 
 //#endregion ###################################################################
 //#region                          SAVE & LOAD
@@ -130,6 +130,16 @@ export function savePhaseTexts(saveState: SaveState): string[] {
 	return ["", ""]
 }
 
+async function updateSave(ss: SaveState): Promise<SaveState> {
+  const version = ss.version ?? '0.3.6' // last version without a 'version' attribute
+  if (versionsCompare(ss.version, "0.4.0") < 0) {
+    ss = await v0_4_0_updateSave(ss)
+  }
+  if (versionsCompare(ss.version, "0.5.0") < 0) {
+    ss = await v0_5_0_updateSave(ss)
+  }
+  return ss
+}
 
 //#endregion ###################################################################
 //#region                         < v0.4.0 UPDATE
@@ -145,6 +155,7 @@ function regard_update(regard: OldRegard): Regard {
     his : regard.hisui  ?? 0,
   }
 }
+
 function phase_update(phase: Record<string, string|number>|undefined) {
   let route, routeDay, day
   if (phase) {
@@ -167,47 +178,92 @@ function phase_update(phase: Record<string, string|number>|undefined) {
     day     : day      as RouteDayName<'others'> | number
   }
 }
-async function updateSave(ss: SaveState): Promise<SaveState> {
-  if (ss.version && versionsCompare(ss.version, "0.4.0") >= 0)
-    return ss
-  else { // < v0.4.0
-    if (!Object.hasOwn(ss, 'context')) { // Fix errors with previous saves
-      return {                           // getting updated without the change
-        ...ss,                           // of version number. Added 2025-09-08
-        version: "0.4.0"
-      }
-    }
-    const {context, progress, page, graphics} = ss as any
-    const pageNum = isScene(context.label) ?
-      getPageAtLine(await fetchBlockLines(context.label), context.index)
-      : 0
-    return {
-      scenes: [{
-        label: context.label,
-        flags: progress.flags ?? [],
-        regard: regard_update(progress.regard ?? {})
-      }],
-      pages: [{
-        label: context.label,
-        page: pageNum,
-        text: page.text ?? "",
-        textPrefix: page.textPrefix ?? "",
-        textBox: page.textBox ?? "nvl",
-        audio: context.audio ?? {},
-        graphics: context.graphics ?? {},
-        phase: phase_update(context.phase),
-        ...(page.contentType == "text" ? { type: "text" }
-          : page.contentType == "skip" ? { type: "skip" }
-          : page.contentType == "phase" ? { type: "phase" }
-          : { type: "choice",
-            choices: page.choices,
-            selected: page.selected
-          }
-        )
-      }],
-      graphics: graphics,
-      date: ss.date,
-      version: APP_VERSION
+
+async function v0_4_0_updateSave(ss: SaveState): Promise<SaveState> {
+  if (!Object.hasOwn(ss, 'context')) { // Fix errors with previous saves
+    return {                           // getting updated without the change
+      ...ss,                           // of version number. Added 2025-09-08
+      version: "0.4.0"
     }
   }
+  const {context, progress, page, graphics} = ss as any
+  const pageNum = isScene(context.label) ?
+    getPageAtLine(await fetchBlockLines(context.label), context.index)
+    : 0
+  return {
+    scenes: [{
+      label: context.label,
+      flags: progress.flags ?? [],
+      regard: regard_update(progress.regard ?? {})
+    }],
+    pages: [{
+      label: context.label,
+      page: pageNum,
+      text: page.text ?? "",
+      textPrefix: page.textPrefix ?? "",
+      textBox: page.textBox ?? "nvl",
+      audio: context.audio ?? {},
+      graphics: context.graphics ?? {},
+      phase: phase_update(context.phase),
+      ...(page.contentType == "text" ? { type: "text" }
+        : page.contentType == "skip" ? { type: "skip" }
+        : page.contentType == "phase" ? { type: "phase" }
+        : { type: "choice",
+          choices: page.choices,
+          selected: page.selected
+        }
+      )
+    }],
+    graphics: graphics,
+    date: ss.date,
+    version: APP_VERSION
+  }
+}
+//#endregion ###################################################################
+//#region                         < v0.5.0 UPDATE
+//##############################################################################
+
+async function v0_5_0_updateSave(ss: SaveState): Promise<SaveState> {
+  const { pages, scenes } = ss
+
+  ss.version = "0.5.0"
+  let s, i
+  
+  if ((i = scenes.findIndex(s=>s.label == 's23')) >= 0)
+    (i == 0)? scenes[i]!.label = 's22' : scenes.splice(i, 1)
+  if ((i = scenes.findIndex(s=>s.label == 's24')) >= 0)
+    (i == 0)? scenes[i]!.label = 's23' : scenes.splice(i, 1)
+  if (s = scenes.find(s=>s.label == 's47')) s.label = 's46'
+  if (s = scenes.find(s=>s.label == 's37')) s.label = 's201'
+
+  for (const [j, p] of pages.entries()) {
+    switch (p.label) {
+      case 's23' : case 's24' : // merged at the end of s22 and s21
+        const prevLabel = p.label == 's23' ? 's22' : 's21'
+        // if possible, calculate correct page number using last page of previous scene
+        i = j-1
+        while (i >= 0 && pages[i].label == p.label)
+          i--
+        if (pages[i].label == prevLabel)
+          p.page = (pages[i].page ?? 0) + (j-i)
+        // otherwise, use english version page count
+        else
+          p.page = prevLabel == 's22' ? 35 : 36
+        p.label = prevLabel
+        break
+      case 's37' : p.label = 's201'; break
+      case 's47' : p.label = 's46'; break
+      case 'f117' : p.label = 'skip116a'; break
+      case 'skip23' : p.label = 'skip22'; break
+      case 'skip24' : p.label = 'skip21'; break
+      case 'skip37' : p.label = 'skip201'; break
+    }
+  }
+  
+  // if s40 not finished yet, and coming from s201, decrement %regard_aki
+  if (pages?.at(-1)?.label == 's40' && scenes.find(s=>s.label == 's201')
+      && scenes.at(-1)!.regard!.aki)
+    scenes.at(-1)!.regard!.aki!-- // "inc %regard_aki" moved from f38 to skip40
+  
+  return ss
 }
