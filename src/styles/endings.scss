@@ -155,9 +155,13 @@
 				cursor: pointer;
 			}
 		}
+	}
 
-		#osiete {
-			z-index: 1;
+	#osiete {
+		z-index: 1;
+		span::before {
+			content: '#';
+			opacity: 0.5;
 		}
 	}
 
