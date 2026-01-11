@@ -22,7 +22,7 @@ export function extractChoicesFromLogic(logicContent) {
 
     if (currentLabel && line.includes('select')) {
       if (Object.hasOwn(choicesByLabel, currentLabel))
-        throw Error(`Multiple 'select' in label ${currentLabel}`)
+        throw Error(`Unexpected multiple 'select' in label ${currentLabel}`)
       choicesByLabel[currentLabel] = [...line.matchAll(choiceRegex)].map(m =>
         m[1].trim()
             .replaceAll(/[-―─―—]{2,}/g, (match)=> `[line=${match.length}]`)

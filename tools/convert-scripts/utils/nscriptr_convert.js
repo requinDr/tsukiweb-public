@@ -98,28 +98,18 @@ function dwaveFileConvert(num, file) {
 
 /**
  * @param {Token} token
- * @param {Token[]} tokens
+ * @param {Readonly<Token[]>} tokens
  * @param {number} index
  * @param {string[]} clickChars
  */
-function genericFixes(token, tokens, index, clickChars) {
+function genericTokenFixes(clickChars, token) {
     if (token instanceof TextToken) {
-        for (const c of clickChars) {
+        for (const c of clickChars)
             token.text = token.text.replaceAll(c, c + '@')
-        }
         
         token.text = token.text
                 .replaceAll(/@{2,}/g, '@')// remove dup. '@' if too much added by clickChars
                 .replaceAll(/[-―─―—]{2,}/g, (match)=> `[line=${match.length}]`)
-        if (token.text.endsWith('@') && index < tokens.length - 1) {
-            // remove '@' if right before '\'
-            const nextToken = tokens[index+1]
-            if (nextToken instanceof CommandToken && nextToken.cmd == '\\')
-                token.text = token.text.substring(0, token.text.length-1)
-        }
-        
-    } else if (token instanceof ConditionToken) {
-        genericFixes(token.command, tokens, index, clickChars)
     } else if (token instanceof CommandToken) {
         switch (token.cmd) {
             case 'bg' : case 'cl' : case 'ld' :
@@ -129,11 +119,12 @@ function genericFixes(token, tokens, index, clickChars) {
                 token.cmd = 'wait'
                 break
             case 'select' :
-                token.args.forEach((arg, i, args)=> {
-                    if (/^".*"$/.test(arg)) { // replace " with `
-                        arg = arg.substring(1, arg.length-1)
-                        args[i] = `\`${arg}\``
-                    }
+                token.args = token.args.map(arg=> {
+                    arg = arg.trim()
+                    if (['"', '`', "'"].includes(arg.charAt(0)))
+                        arg = `\`${arg.substring(1, arg.length-1).trim()}\``
+                    arg = arg.replaceAll(/[-―─―—]{2,}/g, (m)=> `[line=${m.length}]`)
+                    return arg
                 })
                 break
             case 'mov' :
@@ -174,73 +165,163 @@ function genericFixes(token, tokens, index, clickChars) {
     }
 }
 
+function genericBlocFixes(tokens) {
+    // Remove '@' right before '\'
+    for (const [t, i] of tokens.entries()) {
+        if (t instanceof CommandToken && t.cmd == '\\') {
+            const prevToken = i > 0 ? tokens[i-1] : null
+            if (prevToken instanceof TextToken && prevToken.endsWith('@'))
+                prevToken.text = prevToken.text.substring(0, prevToken.text.length-1)
+        }
+    }
+}
+
 
 //#endregion ###################################################################
 //#region                          CONVERSION
 //##############################################################################
 
 /**
- * Generate scene contents from tokens
+ * 
  * @param {Token[]} tokens
- * @param {(label:string)=>string|null} getFile
- * @param {(files:Map<string, Token[]>)=>void} fixes
- * @returns {Map<string, string>} Map of file names to their content
+ * @param {Array<(token: Token)=>void|boolean|string>} tokenFixes
  */
-function generateScenes(tokens, getFile, fixes) {
-    // 1. search for specific setup commands
-    // 1.1. clickstr
-    let clickChars = tokens.find(
+function fixTokens(tokens, tokenFixes = [], clickChars = undefined) {
+    // search clickstr command, will append '@' after each char in clickstr arg.
+    clickChars = clickChars ?? tokens.find(
         t=> t instanceof CommandToken && t.cmd == "clickstr"
-    )?.args[0].replace(/^["`]/, '').replace(/["`]$/, '').split('') ?? ''
+    )?.args[0].replace(/^["`]/, '').replace(/["`]$/, '').split('') ?? []
+
+    tokenFixes.unshift(genericTokenFixes.bind(undefined, clickChars))
     
-    //----------
-    /** @type {Map<string, Token[]>} */
-    const files = new Map()
-    let file = null
-    let fileTokens = []
+    for (let i=0; i < tokens.length; i++) {
+        let token = tokens[i]
+        if (typeof token == 'string') {
+            tokens.splice(i, 1, ...parseScript(token, i > 0 ? tokens[i-1].index : 0))
+            i--
+        } else if (token instanceof ErrorToken) {
+            tokens.splice(i, 1)
+            i--
+        } else {
+            for (const fix of tokenFixes) {
+                let fixResult = fix(token)
+                if (fixResult != undefined && fixResult != true) {
+                    if (fixResult == false)
+                        tokens.splice(i, 1)
+                    else
+                        tokens.splice(i, 1, ...parseScript(s, token.index))
+                    i--
+                    break // restart fixing this token
+                }
+            }
+            // if previous fixes did not replace token and token is 'if'
+            if (tokens[i] == token && token instanceof ConditionToken) {
+                const subTokens = [token.command]
+                // slice(1) to remove genericTokenFixes
+                fixTokens(subTokens, tokenFixes.slice(1), clickChars)
+                switch (subTokens.length) {
+                    case 0 : // empty if
+                        tokens.splice(i, 1)
+                        i--
+                        break
+                    case 1 :
+                        tokens.command = subTokens[0]
+                        break
+                    default : // multiple commands
+                        // 'skip 1' will be replaced to skip the right number
+                        // of lines before generating the files
+                        token.command = parseScript(`skip 1`, token.index)[0]
+                        tokens.splice(i+1, 0, ...subTokens)
+                        i += subTokens.length // inserted tokens already fixed
+                        break
+                }
+            }
+        }
+    }
+}
+
+/**
+ * @param {Map<string, Token[]>} blocks
+ * @param {Token[]} tokens 
+ * @param {(label: string)=>(null|{
+ *  tokenFixes?: Array<(token: Token)=>void|boolean|string>,
+ *  blockFixes?: Array<(tokens: Token[], label: string)=>void>|null
+ * })} blockProps 
+ * @param {number} start
+ * @param {number} stop
+ */
+function processBlock(blocks, tokens, blockProps, start, stop) {
+    const label = tokens[start].label
+    const props = blockProps(label)
+    if (props != null) {
+        const {tokenFixes = [], blockFixes = []} = props
+        let blockTokens = tokens.slice(start, stop)
+        fixTokens(blockTokens, tokenFixes)
+        for (const f of blockFixes) {
+            f(blockTokens, label)
+            blockTokens = blockTokens.filter(t=>t != null)
+            fixTokens(blockTokens) // only use generic fixes
+        }
+        genericBlocFixes(blockTokens)
+        blocks.set(label, blockTokens)
+    }
+}
+/**
+ * @param {Token[]} tokens 
+ * @param {(label: string)=>(null|{
+ *  tokenFixes?: Array<(token: Token)=>void|boolean|string>,
+ *  blockFixes?: Array<(tokens: Token[], label: string)=>void>|null
+ * })} blockProps 
+ * @returns {Map<string, Token[]>}
+ */
+function splitBlocks(tokens, blockProps) {
+    const blocks = new Map()
+    let blockStart = -1
     for (const [i, token] of tokens.entries()) {
         // 2. chose destination file from last label
         if (token instanceof LabelToken) {
-            file = getFile(token.label)
-            if (file) {
-                if (!files.has(file))
-                    files.set(file, [])
-                fileTokens = files.get(file)
+            if (blockStart >= 0) {
+                processBlock(blocks, tokens, blockProps, blockStart, i)
             }
-        }
-        if (file) {
-            if (token && !(token instanceof ErrorToken)) {
-                genericFixes(token, tokens, i, clickChars)
-                fileTokens.push(token)
-            }
+            blockStart = i
         }
     }
-    tokens = tokens.filter(t=>t != null)
-    fixes(files)
-    const fileContents = new Map()
-    for (let [file, tokens] of files.entries()) {
-        // 5. custom fixes, then remove null tokens if necessary
-        tokens = tokens.filter(t => t != null)
-        for (const [i, token] of tokens.entries()) {
-            // convert strings to tokens
-            if (token instanceof Token)
-                continue
-            else if (token.substring) {
-                let newTokens = parseScript(token)
-                genericFixes(newTokens)
-                lineIndex = (i > 0) ? tokens[i-1].lineIndex : 0
-                newTokens.forEach(t=> t.lineIndex = lineIndex)
-                tokens.splice(i, 1, ...newTokens)
-            } else {
-                throw Error(`Could not convert ${t} to script token`)
-            }
+    if (blockStart >= 0)
+        processBlock(blocks, tokens, blockProps, blockStart, tokens.length)
+    
+    return new Map([...blocks.entries()].sort(([_1, t1], [_2, t2])=>t1[0].index - t2[0].index))
+}
+/**
+ * Generate scene contents from blocks
+ * @param {Map<string, {file: string, tokens: Token[]}>} blocks
+ * @param {(label:string)=>null|{
+ *  name: string,
+ *  fixes?: (tokens: Token[], fileName: string)=>void
+ * }} fileProps
+ * @returns {Map<string, string>} Map of file names to their content
+ */
+function generateScenes(blocks, fileProps) {
+    const files = new Map()
+    const fileFixes = new Map()
+    blocks.entries().forEach(([label, tokens])=> {
+        const props = fileProps(label)
+        if (props) {
+            const {name, fixes} = props
+            files.set(name, [...files.get(name) ?? [], ...tokens])
+            if (fixes)
+                fileFixes.set(name, fixes)
         }
-        // 6. generic fixes after custom fixes
+    })
+    const fileContents = new Map(files.entries().map(([fileName, tokens])=> {
+        if (fileFixes.has(fileName)) {
+            fileFixes.get(fileName)(tokens, fileName)
+            fixTokens(tokens)
+            tokens = tokens.filter(t=>t != null)
+        }
         adjustSkips(tokens)
-        // 7. generate file content
-        const file_str = tokens.map(t=>t.toString().trimEnd()).join('\n')
-        fileContents.set(file, file_str)
-    }
+        const fileContent = tokens.map(t=>t.toString().trimEnd()).join('\n')
+        return [fileName, fileContent]
+    }))
     return fileContents
 }
 
@@ -254,6 +335,7 @@ function writeScenes(output_dir, fileContents) {
 }
 
 export {
+    splitBlocks,
     generateScenes,
     writeScenes
 }

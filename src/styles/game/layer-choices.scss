@@ -21,6 +21,11 @@
 		font-size: clamp(1.05em, 4.2vmin, 1.5em);
 		backdrop-filter: none;
 
+		&:disabled {
+			text-decoration-line: line-through;
+			filter: grayscale(1);
+		}
+
 		&:hover, &:focus-visible {
 			box-shadow: var(--selected-shadow);
 		}

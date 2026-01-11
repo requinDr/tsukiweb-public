@@ -8,7 +8,7 @@ import { fileURLToPath } from 'url'
 import { parseScript } from '../../tsukiweb-common/tools/convert-scripts/parsers/kagScript.js';
 import { CommandToken, LabelToken, StrReader, TextToken, Token } from '../../tsukiweb-common/tools/convert-scripts/parsers/utils.js'
 import { logError, logProgress } from '../../tsukiweb-common/tools/utils/logging.js';
-import { generateScenes, writeScenes } from './utils/nscriptr_convert.js';
+import { generateScenes, splitBlocks, writeScenes } from './utils/nscriptr_convert.js';
 
 
 const outputPathPrefix = '../../public/static/'
@@ -561,18 +561,18 @@ export function main() {
         }
 
         const txt = fs.readFileSync(fullPath, 'utf-8')
-        const tokens = parseScript(txt)
+        let tokens = parseScript(txt)
         tokens.forEach(processToken)
-        tokens.unshift(new LabelToken(0, file)) // prevent discard
-
-        const fileContents = generateScenes(tokens, ()=> file, (map)=>{
-          const tokens = map.get(file)
-          tokens[0] = null
-          if (tokens[1] instanceof CommandToken && tokens[1].cmd == '\\')
-            tokens[1] = null
+        tokens = tokens.filter(t=>t != null)
+        tokens.unshift(new LabelToken(0, file)) // prevent discard when assigning block
+        const blocks = splitBlocks(tokens, ()=> ({ blockFixes: [(tokens)=> {
+          tokens.shift() // remove added label
+          if (tokens[0] instanceof CommandToken && tokens[0].cmd == '\\')
+            tokens.shift()
           if (fixes.has(file))
             fixes.get(file)(tokens)
-        })
+        }]}))
+        const fileContents = generateScenes(blocks, ()=> ({name: file}))
         writeScenes(output_dir, fileContents)
       } catch (e) {
         logError(`Error processing ${file} in ${folder}: ${e.message}`)

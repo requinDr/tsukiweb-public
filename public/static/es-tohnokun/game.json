@@ -19,10 +19,6 @@
       "1. Me tranquilizo y voy de vuelta a la mansión.",
       "2. Me quedo un poco más de tiempo en la escuela."
     ],
-    "f37": [
-      "1. Sobre mi pequeña hermana Akiha.",
-      "2. Sobre la chica alegre."
-    ],
     "f201": [
       "1. Sobre mi pequeña hermana Akiha.",
       "2. Sobre la chica alegre.",
@@ -225,7 +221,7 @@
       "1. Voy a bucar a Yumizuka.",
       "2. No puedo hacer algo tan peligroso."
     ],
-    "f242": [
+    "f242half": [
       "1. Me gusta.",
       "2. La odio.",
       "3. No puedo responder."
@@ -277,12 +273,7 @@
       "2. Distraerme en el salón de clases.",
       "3. Regresar a la mansión y descansar."
     ],
-    "f116": [
-      "1. Podría ser Arcueid.",
-      "2. Podría ser Ciel-Senpai.",
-      "3. Podría ser Akiha."
-    ],
-    "f117": [
+    "f116a": [
       "1. Podría ser Arcueid.",
       "2. Podría ser Ciel-Senpai.",
       "3. Podría ser Akiha.",

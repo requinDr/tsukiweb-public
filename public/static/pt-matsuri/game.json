@@ -19,10 +19,6 @@
       "1. Eu vou me recompor e voltar para a mansão.",
       "2. Eu vou ficar na escola mais um pouco."
     ],
-    "f37": [
-      "1. A minha irmã mais nova, a Akiha.",
-      "2. Aquela garota que estava sempre animada."
-    ],
     "f201": [
       "1. Sobre a minha irmã mais nova, a Akiha.",
       "2. Sobre aquela garota que sempre estava animada.",
@@ -225,7 +221,7 @@
       "1. Vou procurar pela Yumizuka.",
       "2. Não posso fazer algo tão perigoso assim."
     ],
-    "f242": [
+    "f242half": [
       "1. Eu gosto dela.",
       "2. Eu odeio ela.",
       "3. Eu não posso responder."
@@ -277,12 +273,7 @@
       "2. Vou ficar de bobeira na sala de aula.",
       "3. Vou voltar para a mansão e descansar."
     ],
-    "f116": [
-      "1. Só pode ser a Arcueid.",
-      "2. Só pode ser a Ciel-Senpai.",
-      "3. Só pode ser a Akiha."
-    ],
-    "f117": [
+    "f116a": [
       "1. Só pode ser a Arcueid.",
       "2. Só pode ser a Ciel-Senpai.",
       "3. Só pode ser a Akiha.",

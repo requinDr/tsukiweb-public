@@ -25,7 +25,8 @@ export type LabelName = SceneName | FBlockName | `skip${number}${'a'|''}` |
 export type Choice = {
 	index: number
 	str: string
-	label: LabelName
+	label: LabelName,
+	disable?: boolean
 }
 
 export type SettingsType = {

@@ -8,6 +8,7 @@ import { Button } from "@tsukiweb-common/ui-core"
 import { audio } from "utils/audio"
 import * as m from "motion/react-m"
 import { Variants } from "motion/react"
+import { checkIfCondition } from "@tsukiweb-common/script/utils"
 
 const container: Variants = {
 	hidden: {},
@@ -42,20 +43,31 @@ function processSelect(setChoices: (choices: Choice[])=>void,
 											 arg: string, _cmd: string, script: ScriptPlayer,
 											 onFinish: VoidFunction) {
 	const currentLabel = script.currentLabel.replace('skip', 'f') as LabelName
-	const labels = arg.split(',') as LabelName[]
-	const choices: Choice[] = labels.map((label, index) => {
+	const labels = arg.split(',')
+	const choices: Choice[] = labels.map((item, index) => {
+		const m = item.match(/^(\([^\)]*\))?(\[[^\]]*\])?(\*\w+)$/)
+		if (!m)
+			throw Error(`Unable to parse choice entry "${item}"`)
+		const hideCondition = m[1]?.substring(1, m[1]!.length-1) // remove ()
+		const disableCondition = m[2]?.substring(1, m[2]!.length-1) // remove []
+		const label = m[3] as LabelName
+		if (!label)
+			throw Error(`missing label in ${item}`)
+		if (hideCondition && !checkIfCondition(hideCondition, script))
+			return null
+		const disable = disableCondition ?
+			!checkIfCondition(disableCondition, script)
+			: false
 		return {
 			index,
 			str: strings.choices[currentLabel]![index],
-			label
+			label,
+			disable
 		}
-	})
+	}).filter(x => x != null)
 
 	if (choices.length == 0)
 		console.error(`canot parse choices ${arg}`)
-	
-	setChoices(choices)
-	history.onChoicePrompt(choices)
 
 	onSelection.current = (choice)=> {
 		//console.debug(choice)
@@ -66,8 +78,15 @@ function processSelect(setChoices: (choices: Choice[])=>void,
 		onFinish()
 		history.onChoiceSelected(choice.index)
 	}
-	return {
-		next: ()=>{}, // prevent continuing to next instruction
+
+	if (choices.length == 1)
+		onSelection.current(choices[0])
+	else {
+		setChoices(choices)
+		history.onChoicePrompt(choices)
+		return {
+			next: ()=>{}, // prevent continuing to next instruction
+		}
 	}
 }
 
@@ -98,6 +117,7 @@ const ChoicesLayer = ({script, display, navigable}: Props) => {
 				{choices.map((choice, i) =>
 					<m.div key={choice.index} variants={item} style={{width: '100%', display: 'grid'}}>
 						<Button
+							disabled={choice.disable ?? false}
 							key={choice.index}
 							variant={null}
 							className="choice"

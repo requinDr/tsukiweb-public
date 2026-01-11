@@ -19,10 +19,6 @@
       "1. Prendo il coraggio a due mani e vado alla villa.",
       "2. Resto a scuola ancora per un po'."
     ],
-    "f37": [
-      "1. Il ricordo della mia sorellina Akiha.",
-      "2. Il ricordo di quella bambina sempre allegra."
-    ],
     "f201": [
       "1. Il ricordo della mia sorellina Akiha.",
       "2. Il ricordo di quella bambina sempre allegra.",
@@ -225,7 +221,7 @@
       "1. Vado a cercare Yumizuka.",
       "2. Non posso fare una cosa così pericolosa."
     ],
-    "f242": [
+    "f242half": [
       "1. Io la amo.",
       "2. Io la odio.",
       "3. Non posso rispondere."
@@ -277,12 +273,7 @@
       "2. Resto in classe a non pensare a nulla.",
       "3. Me ne torno alla villa a riposare."
     ],
-    "f116": [
-      "1. Potrebbe essere Arcueid.",
-      "2. Potrebbe essere la senpai Ciel.",
-      "3. Potrebbe essere Akiha."
-    ],
-    "f117": [
+    "f116a": [
       "1. Potrebbe essere Arcueid.",
       "2. Potrebbe essere la senpai Ciel.",
       "3. Potrebbe essere Akiha.",

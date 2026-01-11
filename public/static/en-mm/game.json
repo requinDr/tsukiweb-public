@@ -19,10 +19,6 @@
       "1. Get a hold of myself and head back to the mansion.",
       "2. Stay in school for a little longer."
     ],
-    "f37": [
-      "1. About my little sister Akiha.",
-      "2. About the cheerful girl."
-    ],
     "f201": [
       "1. About my little sister Akiha.",
       "2. About the cheerful girl.",
@@ -138,8 +134,8 @@
       "2. Just go back to my room."
     ],
     "f425": [
-      "1. ----Kill her now.",
-      "2. ----Pull back for now."
+      "1. [line=4]Kill her now.",
+      "2. [line=4]Pull back for now."
     ],
     "f427": [
       "1. …… Kill her before she notices me.",
@@ -213,7 +209,7 @@
       "2. I think I'll go back to the hotel."
     ],
     "f88": [
-      "1. ---I should go check out what's happening outside.",
+      "1. [line=3]I should go check out what's happening outside.",
       "2. I'll stay inside the room for now and keep watch."
     ],
     "f235": [
@@ -225,13 +221,13 @@
       "1. Go look for Yumizuka.",
       "2. I can't do something that dangerous."
     ],
-    "f242": [
+    "f242half": [
       "1. I like her.",
       "2. I hate her.",
       "3. I can't answer."
     ],
     "f94": [
-      "1. I'd like to refuse, but---",
+      "1. I'd like to refuse, but[line=3]",
       "2. No, there's no way I could take on a monster like that."
     ],
     "f97": [
@@ -239,7 +235,7 @@
       "2. …… No, it's still too early."
     ],
     "f98": [
-      "1. I'd like to refuse, but---",
+      "1. I'd like to refuse, but[line=3]",
       "2. No, there's no way I could take on a monster like that."
     ],
     "f99": [
@@ -277,12 +273,7 @@
       "2. Space out in the classroom.",
       "3. Just return to the mansion and rest."
     ],
-    "f116": [
-      "1. It might be Arcueid.",
-      "2. It might be Ciel-Senpai.",
-      "3. It might be Akiha."
-    ],
-    "f117": [
+    "f116a": [
       "1. It might be Arcueid.",
       "2. It might be Ciel-Senpai.",
       "3. It might be Akiha.",
