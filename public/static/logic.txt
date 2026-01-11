@@ -6,20 +6,12 @@ select *f21,*f22
 goto *s21
 *skip21
 inc %regard_aki
-goto *f24
+select *f28,*f29,*f30
 *f22
 goto *s22
 *skip22
 inc %regard_cel
-goto *f23
-*f23
-goto *s23
-*skip23
 select *f25,*f26,*f27
-*f24
-goto *s24
-*skip24
-select *f28,*f29,*f30
 *f25
 goto *s25
 *skip25

@@ -7,47 +7,55 @@ import { CommandToken, ConditionToken, LabelToken, TextToken, Token } from "../.
  * @param {object[]} previousContexts
  */
 function processContext(tokens, cmdToProps, propsToCmds, previousContexts) {
-    let ctx = {}
+    let ctx = new Map()
     let startContext = ctx
-    let endContext = {}
+    let endContext = null
     for (let token of tokens) {
+        let delay = false
         if (token instanceof ConditionToken)
             token = token.command
-        let delay = false
         if (token instanceof TextToken)
             delay = true
         else if (token instanceof CommandToken) {
             let props
             [props, delay] = cmdToProps(token.cmd, token.args)
             for (const [prop, value] of Object.entries(props)) {
-                if (ctx == endContext || !(Object.hasOwn(ctx, prop)))
-                    ctx[prop] = value
+                if (ctx == endContext || !ctx.has(prop))
+                    ctx.set(prop, value)
             }
         }
         if (delay && ctx == startContext) {
-            endContext = ctx = JSON.parse(JSON.stringify(ctx))
+            endContext = ctx = new Map(ctx)
         }
     }
     const missing_props = new Map()
+    const overridden_props = []
     for (const ctx of previousContexts) {
-        for (const [key, value] of Object.entries(ctx)) {
-            if (!Object.hasOwn(startContext, key)) {
-                if (!missing_props.has(key))
-                    missing_props.set(key, value)
-                else if (missing_props.get(key) != value)
-                    throw Error(`Differences in previous end contexts on property ${key})`)
+        for (const [prop, value] of Object.entries(ctx)) {
+            if (!startContext.has(prop)) {
+                if (!missing_props.has(prop))
+                    missing_props.set(prop, value)
+                else if (missing_props.get(prop) != value)
+                    throw Error(`Differences in previous end contexts on property ${prop})`)
+            } else {
+                overridden_props.push(prop)
             }
         }
     }
     const insert = propsToCmds(missing_props)
     tokens.unshift(...insert)
-    // add new properties in end context
+    // add properties in end context from previous scenes that were not changed in the scene
     for (const [prop, value] of missing_props) {
-        if (!Object.hasOwn(endContext, prop)) {
-            endContext[prop] = value
+        if (!endContext.has(prop)) {
+            endContext.set(prop, value)
         }
     }
-    return endContext
+    // remove null end context properties that were not specified in end contexts of previous scenes
+    for (const [prop, value] of endContext) {
+        if (value == null && !missing_props.has(prop) && !overridden_props.includes(prop))
+            endContext.delete(prop)
+    }
+    return Object.fromEntries(endContext.entries())
 }
 
 /**

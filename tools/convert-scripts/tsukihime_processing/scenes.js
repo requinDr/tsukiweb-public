@@ -10,7 +10,7 @@ import { CommandToken, ConditionToken, LabelToken, ReturnToken, TextToken, Token
 import { generateScenes, splitBlocks, writeScenes } from '../utils/nscriptr_convert.js';
 import { logError, logProgress } from '../../../tsukiweb-common/tools/utils/logging.js';
 import { fixContexts } from '../utils/context.js';
-import { isLogicLabel, processVarName, processCondition, isSceneLabel } from './common.js';
+import { processVarName, processCondition, isSceneLabel } from './common.js';
 
 const outputPathPrefix = '../../public/static/'
 const outputDir = 'scenes'
@@ -87,14 +87,17 @@ function processPhase(token, i, tokens) {
 	tokens[i-3] = tokens[i-2] = tokens[i-1] = null
 	// check if there is a page break between last text and phase
 	for (let j = i-4; j >= 0; j--) {
+		if (tokens[j] instanceof CommandToken) {
+			if (['\\', 'phase'].includes(tokens[j].cmd))
+				break
+		}
+
 		if (tokens[j] instanceof TextToken) {
 			const text = tokens[j].text
-			if (text.endsWith('\\')) {
+			if (text.endsWith('\\'))
 				break
-			}
-			if (text.endsWith('@')) {
+			if (text.endsWith('@'))
 				tokens[j].text = text.substring(0, text.length-1)
-			}
 			//console.log(`adding '\\' before ${tokens[i]}, after ${tokens[j]}`)
 			// Insert page break.
 			// Index is conserved by moving tokens on step, using one null
@@ -132,10 +135,6 @@ function commandFix(token) {
 				return false
 			if (COLOR_IMAGES.has(token.args[1]))
 				token.args[1] = COLOR_IMAGES.get(token.args[1])
-			break
-		case 'gosub' :
-			if (/^\*s\d\w+$/.test(token.args[0]))
-				token.cmd = 'goto'
 			break
 		case 'wave' : case 'waveloop' :
 			const m = token.args[0].match(/^"?se(?<n>\d+)"?$/)
@@ -188,6 +187,13 @@ const blockFixes = new Map(Object.entries({
  * @param {Token[]} tokens 
  */
 function sceneFixes(tokens) {
+	//remove '@' before '\\'
+	for (let i = 0; i<tokens.length; i++) {
+		if (tokens[i] instanceof CommandToken && tokens[i].cmd == '\\') {
+			if (tokens[i-1] instanceof TextToken && tokens[i-1].text.endsWith('@'))
+				tokens[i-1].text = tokens[i-1].text.substring(0, tokens[i-1].text.length-1)
+		}
+	}
 	// 1. Put '\' after last text of scenes (fix text skip before choices)
 	// and selects outside logic file. Remove '@' if present and trailing 'br'.
 	let stop = false
@@ -221,16 +227,26 @@ function sceneFixes(tokens) {
 		}
 	}
 	// 2. Reformat phase transitions
-	let index = 0
-	while ((index = tokens.findIndex((t=>{
-		if (!(t instanceof CommandToken)) return false
-		if (t.cmd != 'gosub') return false
-		if (!/^\*(left|right)_phase$/.test(t.args[0])) return false
-		return true
-	}))) >= 0) {
-		processPhase(tokens[index], index, tokens)
-		tokens = tokens.slice(index+1)
+	for (let i = 0; i< tokens.length; i++) {
+		if ( (tokens[i] instanceof CommandToken) && (tokens[i].cmd == 'gosub') &&
+			 (/^\*(left|right)_phase$/.test(tokens[i].args[0])) ) {
+			processPhase(tokens[i], i, tokens)
+		}
 	}
+}
+
+/**
+ * @param {Map<string, Token[]>} tokens 
+ */
+function interScenesFixes(blocks) {
+	// Merge s24 into s21 and s23 into s22 (3 lines just to ask where to eat)
+	blocks.get('s21').push(...blocks.get('s24'))
+	blocks.get('s22').push(...blocks.get('s23'))
+	blocks.delete('s23')
+	blocks.delete('s24')
+
+	// replace s46 with content from s47
+	blocks.set('s46', blocks.get('s47'))
 }
 
 
@@ -279,11 +295,16 @@ function cmdToProps(cmd, args) {
  * @param {Map<string, any>} props 
  */
 function propsToCmds(props) {
-	// if all sprite positions are empty...
-	if (!(['l', 'c', 'r'].some(pos=> props.get(pos) != null))) {
-		// ... and at least one position is specified...
-		if (['l', 'c', 'r'].reduce((x, pos) => x || props.delete(pos), false))
-			// ... then replace all positions with a single 'a'
+	const spritePos = ['l', 'c', 'r']
+	// If at least one sprite position is specified, but all of them are null:
+	if (spritePos.some(p=>props.has(p))
+		&& !(spritePos.some(p=> props.get(p) != null))) {
+		props = new Map(props) // clone props to avoid side-effects of modifying parameter
+		// remove all sprites ...
+		props.delete('l')
+		props.delete('c')
+		props.delete('r')
+		if (!props.has('bg')) // ... and specify empty position 'a' if no bg
 			props.set('a', null)
 	}
 	props = [...props.entries()].sort(([k1,],[k2,])=>{
@@ -393,29 +414,6 @@ function getFileProps(label) {
 }
 
 /**
- * @param {Map<string, Token[]>} files
- */
-function tsukihime_fixes(files) {
-	for (const [file, tokens] of files.entries()) {
-		tokens.splice(0, tokens.length, ...tokens.filter(token_filter.bind(null, file)))
-		const fix = fixes.get(file)
-		if (fix)
-			fix(tokens, file, files)
-		let lineIndex = 0
-		for (let i=0; i < tokens.length; i++) {
-			if (!tokens[i])
-				continue
-			if (!(tokens[i] instanceof Token)) {
-				tokens.splice(i, 1, ...parseScript(tokens[i], lineIndex))
-			} else {
-				lineIndex = tokens[i].lineIndex
-			}
-		}
-		generalFixes(file, tokens)
-	}
-}
-
-/**
  * @param {string} language 
  * @param {string} text 
  */
@@ -453,7 +451,7 @@ function processSingleScript(folder, filename, outputDir, blocksTree) {
 	const tokens = parseScript(raw_fixes(folder, txt))
 	
 	const blocks = splitBlocks(tokens, getBlockProps)
-	blocks.set('s46', blocks.get('s47'))
+	interScenesFixes(blocks)
 	fixContexts(blocksTree, blocks, cmdToProps, propsToCmds)
 	const fileContents = generateScenes(blocks, getFileProps)
 

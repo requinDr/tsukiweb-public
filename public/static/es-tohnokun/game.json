@@ -5,15 +5,15 @@
       "1. Faltan pocos minutos, tengo que dirigirme a clases inmediatamente.",
       "2. …… Soy curioso, así que iré a echar un vistazo."
     ],
-    "f23": [
-      "1. Almuerzo en el salón de clases.",
-      "2. Voy a comer en la cafetería.",
-      "3. Salgo al pasillo para pensarlo."
-    ],
-    "f24": [
+    "f21": [
       "1. Salgo al pasillo para pensarlo.",
       "2. Voy a comer en la cafetería.",
       "3. Almuerzo en el salón de clases."
+    ],
+    "f22": [
+      "1. Almuerzo en el salón de clases.",
+      "2. Voy a comer en la cafetería.",
+      "3. Salgo al pasillo para pensarlo."
     ],
     "f31": [
       "1. Me tranquilizo y voy de vuelta a la mansión.",

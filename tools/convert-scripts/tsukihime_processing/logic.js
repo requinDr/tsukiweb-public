@@ -125,13 +125,6 @@ function getBlockProps(label) {
 							t.args[0] = '*f24'
 					}]
 				}
-			case 'f23' : // if (...) goto *f24, moved to *skip21
-				return {
-					tokenFixes: [logic_tokenFixes, (t)=> {
-						if (t instanceof ConditionToken)
-							return false
-					}]
-				}
 			case 'skip46' :
 				// replaced *f47 with *f46 => remove if, condition *f46 choice on flg6 and near-side route completion
 				return  {
@@ -182,9 +175,10 @@ function getBlockProps(label) {
 						tokens.splice(tokens.findIndex(t=>t instanceof ConditionToken), 1)
 					}]
 				}
-			case 'f47' : case 'skip47' : // redirected to f46
+			case 'f23' : case 'f24'    : // scenes merged into s21 and s22
 			case 'f37' : case 'skip37' : // redirected to f201
 			case 'f38' : // only "inc regard_aki", moved to skip40
+			case 'f47' : case 'skip47' : // redirected to f46
 			case 'f300' : case 'skip300' : // empty, redirected to f301
 			case 'f415' : case 'f53' : case 'skip53': // inaccessible scenes
 				return null
@@ -206,6 +200,18 @@ function getFileProps(_label) {
 
 /** @param {Map<string, Token[]>} blocks */
 function interBlockFixes(blocks) {
+
+	// merge skip24 into skip21 and skip23 into skip22
+	const skip21 = blocks.get('skip21')
+	const skip22 = blocks.get('skip22')
+	const skip23 = blocks.get('skip23')
+	const skip24 = blocks.get('skip24')
+	skip21.pop()
+	skip21.push(...skip24.slice(1))
+	skip22.pop()
+	skip22.push(...skip23.slice(1))
+	blocks.delete('skip23')
+	blocks.delete('skip24')
 
 	// test of f289 should be moved to f287 (according to mirrormoon)
 	const skip287 = blocks.get('skip287')
@@ -339,7 +345,7 @@ function genTree(blocks) {
 			const skipLabel = `skip${scene.substring(1)}`
 			const skipNode = tree.get(skipLabel)
 			if (!skipNode)
-				throw Error(`missing skip${skipLabel} for scene ${scene}`)
+				throw Error(`missing ${skipLabel} for scene ${scene}`)
 			skipNode.parents.add(label)
 			children.add(skipLabel)
 		}

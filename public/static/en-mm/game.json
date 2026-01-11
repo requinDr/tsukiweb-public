@@ -5,15 +5,15 @@
       "1. There's only a few minutes until homeroom. I have to head there right away.",
       "2. …… I'm curious, so I'll go take a look."
     ],
-    "f23": [
-      "1. Eat lunch in class.",
-      "2. Go eat in the cafeteria.",
-      "3. Go out into the hallway to think about it."
-    ],
-    "f24": [
+    "f21": [
       "1. Go out into the hallway to think about it.",
       "2. Go eat in the cafeteria.",
       "3. Eat lunch in class."
+    ],
+    "f22": [
+      "1. Eat lunch in class.",
+      "2. Go eat in the cafeteria.",
+      "3. Go out into the hallway to think about it."
     ],
     "f31": [
       "1. Get a hold of myself and head back to the mansion.",

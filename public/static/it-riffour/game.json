@@ -5,15 +5,15 @@
       "1. Manca poco al coordinamento. Devo sbrigarmi ed entrare in classe.",
       "2. …… Sono troppo curioso, andrò a dare un'occhiata."
     ],
-    "f23": [
-      "1. Mangerò in classe.",
-      "2. Andrò alla mensa.",
-      "3. Esco in corridoio e ci penso un po' su."
-    ],
-    "f24": [
+    "f21": [
       "1. Esco in corridoio e ci penso un po' su.",
       "2. Andrò alla mensa.",
       "3. Mangerò in classe."
+    ],
+    "f22": [
+      "1. Mangerò in classe.",
+      "2. Andrò alla mensa.",
+      "3. Esco in corridoio e ci penso un po' su."
     ],
     "f31": [
       "1. Prendo il coraggio a due mani e vado alla villa.",
