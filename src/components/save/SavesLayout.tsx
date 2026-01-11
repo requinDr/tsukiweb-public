@@ -5,7 +5,7 @@ import { strings } from "../../translation/lang"
 import SaveListItem from "./SaveListItem"
 import SaveDetails from "./SaveDetails"
 import { MdAddCircleOutline, MdUploadFile, MdWarning } from "react-icons/md"
-import { modalPromptService } from "@tsukiweb-common/ui-core/components/ModalPrompt"
+import { dialog } from "@tsukiweb-common/ui-core/components/ModalPrompt"
 import classNames from "classnames"
 import { useVirtualizer } from "@tanstack/react-virtual"
 import { toast } from "react-toastify"
@@ -72,7 +72,7 @@ const SavesLayer = ({variant, back}: Props) => {
 
 	async function onSaveSelect(id: number) {
 		if (variant == "save") {
-			const confirmed = await modalPromptService.confirm({
+			const confirmed = await dialog.confirm({
 				text: strings.saves["overwrite-warning"],
 				labelYes: strings.yes,
 				labelNo: strings.no,
@@ -90,7 +90,7 @@ const SavesLayer = ({variant, back}: Props) => {
 	}
 
 	async function deleteSave(id: number) {
-		const confirmed = await modalPromptService.confirm({
+		const confirmed = await dialog.confirm({
 			text: strings.saves["delete-warning"],
 			labelYes: strings.yes,
 			labelNo: strings.no,
@@ -206,7 +206,7 @@ const ExportWarning = () => {
 
 	const exportData = async () => {
 		setModalShown(true)
-		const confirmed = await modalPromptService.confirm({
+		const confirmed = await dialog.confirm({
 			text: <>
 				{strings.saves["local-storage-warning"]}
 				<div style={{marginTop: "1em", color: "var(--text-muted)"}}>

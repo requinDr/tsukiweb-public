@@ -10,7 +10,7 @@ import ConfigModal from "./ConfigModal"
 import { Button, PageSection } from "@tsukiweb-common/ui-core"
 import { deepAssign, extract } from "@tsukiweb-common/utils/utils"
 import { bb } from "@tsukiweb-common/utils/Bbcode"
-import { modalPromptService } from "@tsukiweb-common/ui-core/components/ModalPrompt"
+import { dialog } from "@tsukiweb-common/ui-core/components/ModalPrompt"
 import { polyfillCountryFlagEmojis } from "@tsukiweb-common/utils/flagsPolyfill"
 import { imageSrc } from "translation/assets"
 import { FULLSAVE_EXT } from "utils/constants"
@@ -49,7 +49,7 @@ const ConfigAdvancedTab = () => {
 	}
 
 	const eraseData = async () => {
-		const confirmed = await modalPromptService.confirm({
+		const confirmed = await dialog.confirm({
 			text: strings.config["data-erase-warning"],
 			labelYes: strings.yes,
 			labelNo: strings.no,
@@ -59,7 +59,7 @@ const ConfigAdvancedTab = () => {
 			savesManager.clear()
 			setTimeout(async ()=> {
 				localStorage.clear()
-				await modalPromptService.alert({
+				await dialog.alert({
 					text: strings.config["data-erase-confirm"],
 					labelOk: strings.ok,
 				})
