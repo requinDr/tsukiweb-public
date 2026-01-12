@@ -18,6 +18,8 @@ import { Button, TitleMenuButton, PageSection, PageTitle } from "@tsukiweb-commo
 import { audio } from "utils/audio"
 
 
+const SAVE_ACTION_ID = 1
+
 type Props = {
 	variant: "save"|"load",
 	back: (saveLoaded: boolean)=>void,
@@ -25,52 +27,46 @@ type Props = {
 const SavesLayer = ({variant, back}: Props) => {
 	const [saves, setSaves] = useState<Array<SaveState>>([])
 	const [focusedId, setFocusedSave] = useState<number>()
+	const parentRef = useRef<HTMLDivElement>(null)
+	const focusedIdRef = useRef(focusedId)
+
+	useEffect(() => { focusedIdRef.current = focusedId }, [focusedId])
 
 	useEffect(()=> {
 		const onChange = ()=> {
 			setSaves(
 				savesManager.listSaves()
-				.filter((ss)=> variant === "load" || ss.id !== QUICK_SAVE_ID)
+				.filter(ss => variant === "load" || ss.id !== QUICK_SAVE_ID)
 				.sort(compareSaveStates))
 		}
 		savesManager.addListener(onChange)
 		onChange()
-		return savesManager.removeListener.bind(savesManager, onChange)
+		return () => savesManager.removeListener(onChange)
 	}, [variant])
-
-	const parentRef = useRef<HTMLDivElement>(null)
-
-	const rowVirtualizer = useVirtualizer({
-		count: saves.length,
-		getScrollElement: () => parentRef.current,
-		estimateSize: () => 110,
-		overscan: 5,
-	})
 
 	function createSave(name?: string) {
 		const ss = history.createSaveState()
-		if (name)
-			ss.name = name
+		if (name) ss.name = name
 		savesManager.add(ss)
 	}
 
 	async function importSaves(event: ChangeEvent|MouseEvent) {
-		console.debug("import saves from file")
 		let files = (event.target as HTMLInputElement)?.files
 			?? await requestFilesFromUser({multiple: true, accept: `.${SAVE_EXT}`})
-		if (files) {
-			if (files instanceof File)
-				files = [files]
-			try {
-				savesManager.importSaveFiles(files)
-				toast.success(strings.game["toast-load"])
-			} catch(error) {
-				toast.error(strings.game["toast-load-fail"])
-			}
+		
+		if (!files) return
+		if (files instanceof File) files = [files]
+
+		try {
+			savesManager.importSaveFiles(files)
+			toast.success(strings.game["toast-load"])
+		} catch(error) {
+			toast.error(strings.game["toast-load-fail"])
 		}
 	}
 
 	async function onSaveSelect(id: number) {
+		const save = savesManager.get(id)!
 		if (variant == "save") {
 			const confirmed = await dialog.confirm({
 				text: strings.saves["overwrite-warning"],
@@ -78,18 +74,17 @@ const SavesLayer = ({variant, back}: Props) => {
 				labelNo: strings.no,
 			})
 			if (confirmed) {
-				const ss = savesManager.get(id)!
 				savesManager.remove(id)
-				createSave(ss.name)
+				createSave(save.name)
 			}
 		} else {
-			history.loadSaveState(savesManager.get(id)!)
+			history.loadSaveState(save)
 			displayMode.screen = SCREEN.WINDOW
 			back(true)
 		}
 	}
 
-	async function deleteSave(id: number) {
+	async function handleDeleteSave(id: number) {
 		const confirmed = await dialog.confirm({
 			text: strings.saves["delete-warning"],
 			labelYes: strings.yes,
@@ -97,13 +92,29 @@ const SavesLayer = ({variant, back}: Props) => {
 		})
 		if (confirmed) {
 			savesManager.remove(id)
-			if (id == focusedId)
-				setFocusedSave(undefined)
+			if (id == focusedId) setFocusedSave(undefined)
 		}
 	}
 
+	useEffect(() => {
+		const onKeyDown = (e: KeyboardEvent) => {
+			if (e.key === "Delete" && focusedIdRef.current !== undefined) {
+				handleDeleteSave(focusedIdRef.current)
+			}
+		}
+		window.addEventListener("keydown", onKeyDown)
+		return () => window.removeEventListener("keydown", onKeyDown)
+	}, [])
+
 	const focusedSave = focusedId != undefined ? savesManager.get(focusedId) : undefined
 	const title = strings.saves[variant == "save" ? "title-save" : "title-load"]
+
+	const focusHandlers = (id?: number) => ({
+		onFocus: () => setFocusedSave(id),
+		onPointerEnter: () => setFocusedSave(id),
+		onMouseEnter: () => setFocusedSave(id),
+		onMouseLeave: () => setFocusedSave(undefined)
+	})
 
 	return (
 		<main id="saves-layout">
@@ -112,11 +123,8 @@ const SavesLayer = ({variant, back}: Props) => {
 				{variant === "save" ?
 					<Button
 						onClick={createSave.bind(null, undefined)}
-						className={classNames("create", {active: focusedId === 1})}
-						onFocus={setFocusedSave.bind(null, 1)}
-						onPointerEnter={setFocusedSave.bind(null, 1)}
-						onMouseEnter={setFocusedSave.bind(null, 1)}
-						onMouseLeave={setFocusedSave.bind(null, undefined)}
+						className={classNames("create", {active: focusedId === SAVE_ACTION_ID})}
+						{...focusHandlers(SAVE_ACTION_ID)}
 						nav-auto={1}
 					>
 						<MdAddCircleOutline /> {strings.saves.create}
@@ -124,48 +132,28 @@ const SavesLayer = ({variant, back}: Props) => {
 				:
 					<Button
 						onClick={importSaves}
-						className={classNames("import", {active: focusedId === 2})}
-						onFocus={setFocusedSave.bind(null, 2)}
-						onPointerEnter={setFocusedSave.bind(null, 2)}
-						onMouseEnter={setFocusedSave.bind(null, 2)}
-						onMouseLeave={setFocusedSave.bind(null, undefined)}
+						className={classNames("import", {active: focusedId === SAVE_ACTION_ID})}
+						{...focusHandlers(SAVE_ACTION_ID)}
 						nav-auto={1}
 					>
 						<MdUploadFile /> {strings.saves.import}
 					</Button>
 				}
 
-				<div
-					className="virtual-list"
-					style={{
-						height: `${rowVirtualizer.getTotalSize()}px`,
-					}}
-				>
-					{rowVirtualizer.getVirtualItems()
-						.map(({index, start, key}) => {
-						const ss = saves[index]
-						const saveId = ss.id ?? ss.date
-						return (
-							<SaveListItem
-								key={key}
-								saveId={saveId}
-								saveState={ss}
-								onClick={onSaveSelect.bind(null, saveId)}
-								isFocused={focusedId === saveId}
-								onFocus={setFocusedSave.bind(null, saveId)}
-								onPointerEnter={setFocusedSave.bind(null, saveId)}
-								onMouseEnter={setFocusedSave.bind(null, saveId)}
-								style={{
-									transform: `translateY(${start}px)`,
-								}}
-								nav-auto={1}
-							/>
-						)
-					})}
-				</div>
+				<SavesList
+					onSaveSelect={onSaveSelect}
+					focusedId={focusedId}
+					setFocusedSave={setFocusedSave}
+					parentRef={parentRef}
+					saves={saves}
+				/>
 			</PageSection>
 
-			<SaveDetails id={focusedId} saveState={focusedSave} deleteSave={deleteSave}/>
+			<SaveDetails
+				id={focusedId}
+				saveState={focusedSave}
+				deleteSave={handleDeleteSave}
+			/>
 			
 			<div className="save-buttons">
 				<TitleMenuButton
@@ -184,6 +172,53 @@ const SavesLayer = ({variant, back}: Props) => {
 
 export default SavesLayer
 
+
+type SavesListProps = {
+	onSaveSelect: (id: number)=>void,
+	focusedId?: number,
+	setFocusedSave: (id: number)=>void,
+	parentRef: React.RefObject<HTMLDivElement | null>,
+	saves: Array<SaveState>,
+}
+const SavesList = ({onSaveSelect, focusedId, setFocusedSave, parentRef, saves}: SavesListProps) => {
+	const rowVirtualizer = useVirtualizer({
+		count: saves.length,
+		getScrollElement: () => parentRef.current,
+		estimateSize: () => 110,
+		overscan: 5,
+	})
+
+	return (
+		<div
+			className="virtual-list"
+			style={{
+				height: `${rowVirtualizer.getTotalSize()}px`,
+			}}
+		>
+			{rowVirtualizer.getVirtualItems()
+				.map(({index, start, key}) => {
+				const ss = saves[index]
+				const saveId = ss.id ?? ss.date
+				return (
+					<SaveListItem
+						key={key}
+						saveId={saveId}
+						saveState={ss}
+						onClick={onSaveSelect.bind(null, saveId)}
+						isFocused={focusedId === saveId}
+						onFocus={setFocusedSave.bind(null, saveId)}
+						onPointerEnter={setFocusedSave.bind(null, saveId)}
+						onMouseEnter={setFocusedSave.bind(null, saveId)}
+						style={{
+							transform: `translateY(${start}px)`,
+						}}
+						nav-auto={1}
+					/>
+				)
+			})}
+		</div>
+	)
+}
 
 const ExportWarning = () => {
 	const [displayWarning, setDisplayWarning] = useState<boolean>(false)

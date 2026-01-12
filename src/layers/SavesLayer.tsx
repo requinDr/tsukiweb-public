@@ -25,7 +25,7 @@ const SavesLayer = ({mode, back}: Props) => {
       ref={rootRef}
     >
       <div className="page-content">
-        <SavesLayout variant={lastMode.current} back={back} />
+        <SavesLayout key={lastMode.current} variant={lastMode.current} back={back} />
       </div>
     </AnimatedHideActivityDiv>
   )

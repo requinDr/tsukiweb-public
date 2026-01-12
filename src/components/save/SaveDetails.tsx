@@ -8,6 +8,7 @@ import { Regard } from "script/ScriptPlayer"
 import { jsonMerge } from "@tsukiweb-common/utils/utils"
 import { isPDScene } from "script/utils"
 import { PlusDiscSceneName } from "types"
+import { Button } from "@tsukiweb-common/ui-core"
 
 type SaveDetailsProps = {
 	id?: number
@@ -49,20 +50,18 @@ const SaveDetails = ({id, saveState, deleteSave}: SaveDetailsProps)=> {
 					</div>
 
 					<div className="actions">
-						<button onClick={deleteSave.bind(null, id)}
-							onContextMenu={(e) => {e.preventDefault()}}
+						<Button onClick={deleteSave.bind(null, id)}
 							nav-auto={1}
 							aria-label={strings.saves.delete}
 						>
 							<MdDeleteOutline />
-						</button>
-						<button onClick={() => savesManager.exportSave(id)}
-							onContextMenu={(e) => {e.preventDefault()}}
+						</Button>
+						<Button onClick={() => savesManager.exportSave(id)}
 							nav-auto={1}
 							aria-label={strings.saves.export}
 						>
 							<MdOutlineFileDownload />
-						</button>
+						</Button>
 					</div>
 				</div>
 			</>}

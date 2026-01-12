@@ -34,6 +34,7 @@
 	.saves {
 		grid-area: list;
 		letter-spacing: 1px;
+		padding-top: 10px;
 		padding-bottom: 80px;
 		transform: translate3d(0, 0, 0); //huge list on GPU
 
@@ -42,9 +43,9 @@
 			width: 100%;
 		}
 		.create, .import {
-			margin-bottom: 8px;
+			margin-bottom: 6px;
 			width: 100%;
-			padding-block: 12px;
+			padding-block: 14px;
 		}
 		.save-container {
 			position: absolute;
@@ -228,14 +229,11 @@
 
 			button {
 				padding: 4px 16px;
-				opacity: 0.8;
-				display: flex;
-				align-items: center;
+				color: var(--text-muted);
 				font-size: 1.3em;
 
 				&:hover, &:focus-visible {
-					box-shadow: var(--selected-shadow);
-					opacity: 1;
+					color: var(--text-color);
 				}
 			}
 		}
