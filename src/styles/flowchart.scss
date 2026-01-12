@@ -16,6 +16,7 @@
 	--inactive-connection: #444;
 
 	.flowchart {
+		flex: none;
 		direction: ltr;
 		transform: translateZ(0);
 		vector-effect: non-scaling-stroke;
@@ -26,10 +27,11 @@
 	}
 	
 	.fc-scene {
-		stroke: var(--active-connection);
+		stroke: var(--inactive-connection);
 		stroke-width: 1.2;
 		stroke-linejoin: round;
 		fill: none;
+
 		&.disabled {
 			filter: brightness(0.5) grayscale(1);
 			pointer-events: none;
@@ -47,6 +49,7 @@
 			filter: brightness(0.5) grayscale(1) blur(3px);
 		}
 		&.unlocked:not(.disabled) {
+			stroke: var(--active-connection);
 			outline: none;
 			cursor: pointer;
 			rect {

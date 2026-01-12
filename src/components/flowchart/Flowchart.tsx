@@ -63,8 +63,8 @@ const Flowchart = ({history, onSceneClick, mode = 'viewer'}: Props)=> {
 		], [Number.MAX_VALUE, Number.MAX_VALUE, 0, 0])
 	const width = Math.max(right - left, 10*COLUMN_WIDTH) // viewbox for at least 10 columns, otherwise it's too zoomed in
 	const height = bottom - top
-	const minWidth = `${width/8}rem`
-	const minHeight = `${height/8}rem`
+	const minWidth = `${width/10}rem`
+	const minHeight = `${height/10}rem`
 	const maxWidth = `${100 * width / (2 * COLUMN_WIDTH)}%` // minimum 2 scenes visible
 	const maxHeight = `${100 * height / (4 * (SCENE_HEIGHT + DY*2))}%` // minimum 4 scenes visible
 	const activeNode = flowchart.getNode(flowchart.activeScene)

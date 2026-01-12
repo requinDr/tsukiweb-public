@@ -36,7 +36,6 @@ const VisibleScene = memo(({ node, onClick, ...props }: SceneProps) => {
 
 	const classes = classNames("fc-scene", "unlocked", {
 		"blur": node.graph?.bg && cg.shouldBlur(node.graph.bg),
-		"active": node.active,
 		"disabled": disabled
 	})
 
@@ -56,6 +55,7 @@ const VisibleScene = memo(({ node, onClick, ...props }: SceneProps) => {
 				height={node.height}
 				fill="transparent"
 				pointerEvents="all"
+				ry={1.6}
 				style={{ cursor: disabled ? 'default' : 'pointer', outline: 'none' }}
 				
 				{...(!disabled && trigger)}
