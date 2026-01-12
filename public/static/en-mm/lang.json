@@ -97,7 +97,7 @@
     "data-import": "Import",
     "data-erase": "Erase",
     "data-erase-warning": "This will delete all saves, reset all settings and progress. Are you sure?",
-    "data-erase-confirm": "All data have been deleted. If you leave this website without making any change to the settings and without starting a new game, no data will remain stored on your computer",
+    "data-erase-confirm": "All data have been deleted. If you leave this website without making any change to the settings and without starting a new game, no data will remain stored on your device",
     "controls": {
       "next": "Next",
       "history": "Show/hide History",

@@ -97,7 +97,7 @@
     "data-import": "インポート",
     "data-erase": "削除",
     "data-erase-warning": "本当にセーブを全て削除して、初期設定に戻したいですか？",
-    "data-erase-confirm": "セーブを全て削除しました。If you leave this website without making any change to the settings and without starting a new game, no data will remain stored on your computer",
+    "data-erase-confirm": "セーブを全て削除しました。If you leave this website without making any change to the settings and without starting a new game, no data will remain stored on your device",
     "controls": {
       "next": "つぎ",
       "history": "ログを表示／非表示する",

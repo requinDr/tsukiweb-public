@@ -1,6 +1,6 @@
 import classNames from "classnames"
-import { useState, useMemo, useEffect } from "react"
-import Lightbox, { SlideImage } from 'yet-another-react-lightbox'
+import { useState, useMemo, useEffect, useRef } from "react"
+import Lightbox, { ControllerRef, SlideImage } from 'yet-another-react-lightbox'
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails"
 import "yet-another-react-lightbox/styles.css"
 import Zoom from "yet-another-react-lightbox/plugins/zoom"
@@ -10,6 +10,7 @@ import useMediaQuery from "@tsukiweb-common/hooks/useMediaQuery"
 import { GalleryPlaceholderLocked, GalleryTotal } from "./GalleryComponents"
 import { imageSrc } from "translation/assets"
 import { GalleryImg } from "types"
+import { Button } from "@tsukiweb-common/ui-core"
 
 declare module "yet-another-react-lightbox" {
 	interface SlideImage {
@@ -28,6 +29,7 @@ type GalleryImageProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
 const GalleryImage = ({image, gallery = [], galleryUnlocked = [], blurred = false, showTotal, getGalleryImg, ...props}: GalleryImageProps) => {
 	const [open, setOpen] = useState(false)
 	const isSmallLandscape = useMediaQuery("(orientation: landscape) and (max-height: 480px)")
+	const lightboxRef = useRef<ControllerRef>(null)
 
 	const slides: SlideImage[] = useMemo(() =>
 		gallery.map(img => {
@@ -89,7 +91,7 @@ const GalleryImage = ({image, gallery = [], galleryUnlocked = [], blurred = fals
 			open={open}
 			index={index}
 			close={() => setOpen(false)}
-			controller={{ closeOnPullUp: true }}
+			controller={{ closeOnPullUp: true, ref: lightboxRef }}
 			plugins={[Zoom, Thumbnails]}
 			render={{
 				buttonZoom: () => null,
@@ -97,7 +99,10 @@ const GalleryImage = ({image, gallery = [], galleryUnlocked = [], blurred = fals
 				slide: ({ slide }) => (slide.src ? null : <GalleryPlaceholderLocked />),
 				slideHeader: ({slide}) => (slide.source && <div className="header">{slide.source}</div>),
 				iconError: () => <MdLock size={24} />,
-				iconClose: () => <MdClose size={24} />,
+				buttonClose: () =>
+					<Button onClick={() => lightboxRef.current?.close()} key="close">
+						<MdClose size={24} />
+					</Button>,
 			}}
 			carousel={{ finite: true, preload: 5 }}
 			zoom={{ maxZoomPixelRatio: 2 }}
