@@ -226,7 +226,9 @@ const ExportWarning = () => {
 
 	useObserver(()=> {
 		const delay = Date.now() - settings.lastFullExport.date
-		if (delay < settings.localStorageWarningDelay) {
+		if (savesManager.savesCount === 0) {
+			setDisplayWarning(false)
+		} else if (delay < settings.localStorageWarningDelay) {
 			setDisplayWarning(false)
 		} else {
 			computeSaveHash().then(hash=> {
@@ -258,12 +260,11 @@ const ExportWarning = () => {
 	}
 
 	return (
-		<button
+		<Button
 			className={classNames("warning-button", {"active": modalShown})}
 			onClick={exportData}
-			onContextMenu={(e) => {e.preventDefault()}}
 		>
-			<svg aria-hidden="true" focusable="false" className="gradient-icon" width="0" height="0">
+			<svg aria-hidden="true" focusable="false" width="0" height="0" style={{position: "absolute"}}>
 				<linearGradient id="gradient-vertical" x2="0" y2="1">
 					<stop offset="0%" stopColor="var(--color-stop-1)" />
 					<stop offset="50%" stopColor="var(--color-stop-2)" />
@@ -271,6 +272,6 @@ const ExportWarning = () => {
 				</linearGradient>
 			</svg>
 			<MdWarning className="warning-icon"/>
-		</button>
+		</Button>
 	)
 }

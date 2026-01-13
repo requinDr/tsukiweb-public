@@ -12,8 +12,6 @@
 				padding: .8rem;
 				padding-bottom: 0;
 			}
-		}
-		@media screen and (orientation: landscape) and (max-height: 680px) {
 			.page-section {
 				border: 0;
 			}
@@ -114,15 +112,15 @@
 			}
 
 			&[quick-save]::before {
+				content: "Quick Save";
 				position: absolute;
 				bottom: 0;
 				right: -4px;
-				content: "Quick Save";
 				font-size: 0.8em;
 				font-style: italic;
 				color: #dddddd;
-				padding: 0.1em 0.5em 0.1em 4em;
-				background-image: linear-gradient(45deg, transparent 20%, #3300ff);
+				padding: 0.2em 0.6em 0.2em 4em;
+				background-image: linear-gradient(45deg, transparent 20%, #006cff);
 				z-index: 1;
 			}
 
@@ -161,10 +159,7 @@
 		border-bottom: 2px solid var(--separator);
 		position: relative;
 		isolation: isolate;
-
-		&.preview-save {
-			border-left: 2px solid var(--separator);
-		}
+		border-left: 2px solid var(--separator);
 
 		.graphics-wrapper {
 			.graphics {
@@ -241,28 +236,26 @@
 		// phone landscape or phone portrait
 		@media screen and (max-width: 760px) and (orientation: portrait),
 		       screen and (max-height: 680px) and (orientation: landscape) {
-			&.info {
-				border-left: none;
-			}
+			border-left: none;
+
 			.save-details-content {
 				overflow-y: auto;
 			}
 			.graphics-wrapper {
 				position: absolute;
 				inset: 0;
-				opacity: 0.25;
 				overflow: hidden;
 			}
 			.save-details-content {
 				z-index: 1;
+				border-image: linear-gradient(hsl(202deg 94.34% 31.13% / 40%), hsl(222deg 100% 14% / 70%)) fill 1;
 			}
 		}
 
 		// phone landscape
 		@media screen and (max-height: 680px) and (orientation: landscape) {
-			&.info {
-				border-bottom: 2px solid var(--separator);
-			}
+			border-bottom: 2px solid var(--separator);
+
 			.actions {
 				padding-right: .5em;
 				padding-bottom: .5em;
@@ -271,9 +264,7 @@
 
 		// phone portrait
 		@media screen and (max-width: 760px) and (orientation: portrait) {
-			&.info {
-				border-bottom: 0;
-			}
+			border-bottom: 0;
 		}
 	}
 
@@ -304,7 +295,7 @@
 		}
 		.warning-icon {
 			font-size: 1.3em;
-			fill: url(#gradient-vertical) gray;
+			fill: url(#gradient-vertical) yellow;
 		}
 		#gradient-vertical {
 			--color-stop-1: #00c3ff;
@@ -312,7 +303,6 @@
 			--color-stop-3: #ffff1c;
 		}
 		&:hover, &:focus-visible {
-			box-shadow: var(--selected-shadow);
 			opacity: 1;
 		}
 
@@ -340,12 +330,16 @@
 
 	@media screen and (max-width: 760px) and (orientation: portrait) {
 		grid-template-areas:
-			"page-title"
-			"info"
-			"list"
-			"buttons";
-		grid-template-columns: 1fr;
-		grid-template-rows: min-content minmax(160px, 1fr) 3fr min-content;
+			"info info"
+			"list list"
+			"buttons page-title";
+		grid-template-columns: 1fr min-content;
+		grid-template-rows: minmax(160px, 2fr) 5fr min-content;
+		margin-top: calc(var(--page-padding) * -1);
+		
+		.warning-button {
+			margin-right: 0;
+		}
 	}
 
 	@media screen and (max-height: 680px) and (orientation: landscape) {
