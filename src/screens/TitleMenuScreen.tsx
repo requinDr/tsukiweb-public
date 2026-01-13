@@ -16,15 +16,13 @@ import { TitleMenuButton } from '@tsukiweb-common/ui-core'
 import { useScreenAutoNavigate, useLanguageRefresh, useKeyArrows, useEclipseUnlocked } from 'hooks'
 import classNames from "classnames"
 import { audio } from "utils/audio"
+import { useRef } from "react"
 
 
 const TitleMenuScreen = () => {
-	const [, navigate] = useLocation()
 	useScreenAutoNavigate(SCREEN.TITLE)
 	useLanguageRefresh()
 	useKeyArrows()
-	const [conf] = useObserved(settings.volume, 'master')
-	const { eclipseUnlocked } = useEclipseUnlocked()
 
 	return (
 		<m.div
@@ -37,93 +35,99 @@ const TitleMenuScreen = () => {
 					src={moon} alt="Full moon"
 					draggable={false}
 					className="moon"
-					initial={{ opacity: 0.9, transform: "translateY(-42%) scale(0.9)" }}
+					initial={{ opacity: 0.8, transform: "translateY(-42%) scale(0.94)" }}
 					animate={{ opacity: 0.5, transform: "translateY(-50%) scale(1)" }}
-					transition={{
-						delay: 0,
-						duration: 0.8,
-						ease: "easeOut",
-					}} />
+					transition={{ duration: 0.8, ease: "easeOut" }} />
 				<m.img
-					src={gameLogo} alt="Tsukihime logo"
+					src={gameLogo} alt="Game's logo in Japanese, subtitled in English"
 					draggable={false}
 					className='game-logo'
 					initial={{ opacity: 0, scale: 0.8 }}
 					animate={{ opacity: 1, scale: 1 }}
-					transition={{
-						delay: 0,
-						duration: 0.8,
-						ease: "easeOut"
-					}} />
+					transition={{ duration: 0.8, ease: "easeOut" }} />
 			</div>
 
-			<nav className="menu">
-				<div className='menu-buttons'>
-					<TitleMenuButton audio={audio} onClick={newGame} nav-auto={1}>
-						{strings.title.start}
-					</TitleMenuButton>
+			<TitleMenu />
 
-					{(savesManager.savesCount > 0 || history.pagesLength > 0) &&
-					<TitleMenuButton audio={audio} onClick={continueGame} nav-auto={1}>
-						{strings.title.resume}
-					</TitleMenuButton>
-					}
-
-					<TitleMenuButton audio={audio} onClick={() => navigate(SCREEN.LOAD)} nav-auto={1}>
-						{strings.title.load}
-					</TitleMenuButton>
-
-					<TitleMenuButton audio={audio} onClick={() => navigate(SCREEN.CONFIG)} nav-auto={1}>
-						{strings.title.config}
-					</TitleMenuButton>
-
-					<TitleMenuButton audio={audio} onClick={() => navigate(SCREEN.GALLERY)} nav-auto={1}
-						attention={eclipseUnlocked}>
-						{strings.title.extra}
-					</TitleMenuButton>
-				</div>
-			</nav>
-
-			<div className='top-actions'>
-				<m.div
-					initial={{ opacity: 0 }}
-					animate={{ opacity: 1 }}
-					transition={{
-						delay: 0.3,
-						duration: 1,
-					}}>
-					<button
-						nav-auto={1}
-						className={classNames("action-icon", { inactive: conf < 0 })}
-						onContextMenu={e => e.preventDefault()}
-						aria-label={strings.config['volume-master']}
-						onClick={()=> settings.volume.master = -settings.volume.master}
-					>
-						{conf < 0 ? <MdOutlineVolumeOff aria-label="mute" /> : <MdOutlineVolumeUp aria-label="unmute" />}
-					</button>
-				</m.div>
-
-				<m.div
-					initial={{ opacity: 0 }}
-					animate={{ opacity: 1 }}
-					transition={{
-						delay: 0.15,
-						duration: 1,
-					}}>
-					<TranslationSwitch className="action-icon" nav-auto={1}/>
-				</m.div>
-
-				<m.div
-					initial={{ opacity: 0 }}
-					animate={{ opacity: 1 }}
-					transition={{
-						duration: 1,
-					}}>
-					<AppInfo className="action-icon" nav-auto={1}/>
-				</m.div>
-			</div>
+			<TopActions />
 		</m.div>
 	)
 }
 
 export default TitleMenuScreen
+
+
+const TitleMenu = () => {
+	const [, navigate] = useLocation()
+	const { eclipseUnlocked } = useEclipseUnlocked()
+	const canResume = useRef(savesManager.savesCount > 0 || history.pagesLength > 0)
+
+	return (
+		<nav className="menu">
+			<div className='menu-buttons'>
+				<TitleMenuButton audio={audio} onClick={newGame} nav-auto={1}>
+					{strings.title.start}
+				</TitleMenuButton>
+
+				{canResume.current &&
+				<TitleMenuButton audio={audio} onClick={continueGame} nav-auto={1}>
+					{strings.title.resume}
+				</TitleMenuButton>
+				}
+
+				<TitleMenuButton audio={audio} onClick={() => navigate(SCREEN.LOAD)} nav-auto={1}>
+					{strings.title.load}
+				</TitleMenuButton>
+
+				<TitleMenuButton audio={audio} onClick={() => navigate(SCREEN.CONFIG)} nav-auto={1}>
+					{strings.title.config}
+				</TitleMenuButton>
+
+				<TitleMenuButton audio={audio} onClick={() => navigate(SCREEN.GALLERY)} nav-auto={1}
+					attention={eclipseUnlocked}>
+					{strings.title.extra}
+				</TitleMenuButton>
+			</div>
+		</nav>
+	)
+}
+
+const TopActions = () => {
+	const [conf] = useObserved(settings.volume, 'master')
+
+	return (
+		<div className='top-actions'>
+			<m.div
+				initial={{ opacity: 0 }}
+				animate={{ opacity: 1 }}
+				transition={{ duration: 1, delay: 0.3 }}>
+				<button
+					nav-auto={1}
+					className={classNames("action-icon", { inactive: conf < 0 })}
+					onContextMenu={e => e.preventDefault()}
+					aria-label={strings.config['volume-master']}
+					onClick={()=> settings.volume.master = -settings.volume.master}
+				>
+					{conf < 0
+						? <MdOutlineVolumeOff aria-label="mute" />
+						: <MdOutlineVolumeUp aria-label="unmute" />
+					}
+				</button>
+			</m.div>
+
+			<m.div
+				initial={{ opacity: 0 }}
+				animate={{ opacity: 1 }}
+				transition={{ duration: 1, delay: 0.15 }}>
+				<TranslationSwitch className="action-icon" nav-auto={1}/>
+			</m.div>
+
+			<m.div
+				initial={{ opacity: 0 }}
+				animate={{ opacity: 1 }}
+				transition={{ duration: 1 }}>
+				<AppInfo className="action-icon" nav-auto={1}/>
+			</m.div>
+		</div>
+	)
+}
