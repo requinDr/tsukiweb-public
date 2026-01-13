@@ -54,6 +54,21 @@ function redirect(token) {
 		}
 	}
 }
+/**
+ * @param {Token} token 
+ * @param {string} label 
+ * @param {string} condition 
+ * @returns {boolean}
+ */
+function addChoiceCondition(token, label, condition) {
+	if (token instanceof CommandToken && token.cmd == 'select') {
+		const i = token.args.indexOf(label)
+		if (i < 0) throw Error(`Expected choice ${label}, got ${token.args}`)
+		token.args[i] = `[${condition}]${label}`
+		return true
+	}
+	return false
+}
 
 /**
  * @param {Token} token 
@@ -116,77 +131,82 @@ function logic_tokenFixes(token) {
  * @param {string} label 
  */
 function getBlockProps(label) {
+	const tokenFixes = [logic_tokenFixes]
+	const blockFixes = []
 	if (isLogicLabel(label)) {
 		switch (label) {
 			case 'skip21' : // go to *f24 instead of passing through *f23
-				return {
-					tokenFixes: [logic_tokenFixes, (t)=> {
-						if (t instanceof CommandToken && t.cmd == 'goto')
-							t.args[0] = '*f24'
-					}]
-				}
+				tokenFixes.push((t)=> {
+					if (t instanceof CommandToken && t.cmd == 'goto')
+						t.args[0] = '*f24'
+				})
+				break
 			case 'skip46' :
 				// replaced *f47 with *f46 => remove if, condition *f46 choice on flg6 and near-side route completion
-				return  {
-					tokenFixes: [logic_tokenFixes, (t)=> {
-						if (t instanceof ConditionToken && t.command.args[0] == '*f47a') {
-							return false
-						} else if (t instanceof CommandToken && t.cmd == 'select') {
-							t.args[t.args.indexOf('*f46b')] = '[%flg6 && %cleared]*f46b'
-						}
-					}]
-				}
+				tokenFixes.push((t)=> {
+					if (t instanceof ConditionToken && t.command.args[0] == '*f47a')
+						return false
+					else
+						addChoiceCondition(t, '*f46b', "%flg6 && %cleared")
+				})
+				break
 			case 'skip116a' : // if (...) goto *f117, choices imported
-				return {
-					tokenFixes: [logic_tokenFixes, (t)=> {
-						if (t instanceof ConditionToken)
-							return false 
-					}]
-				}
+				tokenFixes.push((t)=> {
+					if (t instanceof ConditionToken)
+						return false 
+				})
+				break
 			case 'skip201' : // replaced *f37 with *f201 => condition *f202 choice on %clear_his
-				return {
-					tokenFixes: [logic_tokenFixes, (t)=> {
-						if (t instanceof CommandToken && t.cmd == 'select')
-							t.args[t.args.indexOf('*f202')] = '[%clear_hisui]*f202'
-					}]
-				}
+				tokenFixes.push((t)=> {
+					addChoiceCondition(t, '*f202', "%clear_hisui")
+				})
+				break
 			case 'skip261' : case 'skip262' : // last condition is redundant
-				return {
-					tokenFixes: [logic_tokenFixes],
-					blockFixes: [(tokens)=> {
-						const token = tokens.at(-1)
-						if (token instanceof ConditionToken) {
-							tokens.splice(tokens.length-1, 1, token.command)
-						}
-					}]
-				}
+				blockFixes.push((tokens)=> {
+					const token = tokens.at(-1)
+					if (token instanceof ConditionToken) {
+						tokens.splice(tokens.length-1, 1, token.command)
+					}
+				})
+				break
 			case 'skip40' : // add "inc %regard_aki" from bypassed f38
-				return {
-					tokenFixes: [logic_tokenFixes],
-					blockFixes: [(tokens)=> {
-						tokens.splice(1, 0, ...parseScript('inc %regard_aki'))
-					}]
-				}
+				blockFixes.push((tokens)=> {
+					tokens.splice(1, 0, ...parseScript('inc %regard_aki'))
+				})
+				break
 			case 'skip43' : case 'skip44' : case 'skip45' :
 				// remove redundant conditional branch to s46, as s47 is removed
-				return {
-					tokenFixes: [logic_tokenFixes],
-					blockFixes: [(tokens)=> {
-						tokens.splice(tokens.findIndex(t=>t instanceof ConditionToken), 1)
-					}]
-				}
+				tokenFixes.push((t)=> {
+					if (t instanceof ConditionToken)
+						return false
+				})
+				break
+			case 'skip57' : // f58 identical to f59 except an additional choice
+				// if (...) { goto *f59 } else { goto *f58 } --> goto *f59
+				// (goto *f59 replaced by content of skip59 later)
+				blockFixes.push((tokens)=> {
+					tokens.splice(1, tokens.length, ...parseScript('goto *f59'))
+				})
+				break
+			case 'skip59' :
+				// f58 replaced by identical f59, so add condition on the third choice
+				tokenFixes.push((t)=> {
+					addChoiceCondition(t, '*f64', "%regard_ciel>=3")
+				})
+				break
 			case 'f23' : case 'f24'    : // scenes merged into s21 and s22
 			case 'f37' : case 'skip37' : // redirected to f201
 			case 'f38' : // only "inc regard_aki", moved to skip40
 			case 'f47' : case 'skip47' : // redirected to f46
+			case 'f58' : case 'skip58' : // identical to f59, merged into f57
+			case 'f59' : // merged into f57
+			case 'f60' : case 'skip60' : // replaced by f62
+			case 'f61' : case 'skip61' : // replaced by f63
 			case 'f300' : case 'skip300' : // empty, redirected to f301
 			case 'f415' : case 'f53' : case 'skip53': // inaccessible scenes
 				return null
 		}
-		return {
-			tokenFixes: [logic_tokenFixes],
-			//blockFixes: []
-		}
+		return { tokenFixes, blockFixes }
 	} else {
 		return null
 	}
@@ -201,17 +221,19 @@ function getFileProps(_label) {
 /** @param {Map<string, Token[]>} blocks */
 function interBlockFixes(blocks) {
 
-	// merge skip24 into skip21 and skip23 into skip22
-	const skip21 = blocks.get('skip21')
-	const skip22 = blocks.get('skip22')
-	const skip23 = blocks.get('skip23')
-	const skip24 = blocks.get('skip24')
-	skip21.pop()
-	skip21.push(...skip24.slice(1))
-	skip22.pop()
-	skip22.push(...skip23.slice(1))
-	blocks.delete('skip23')
-	blocks.delete('skip24')
+	// merge blocks
+	const merged = {
+		'skip21' : 'skip24', // day 1, merged scene is 3 lines to ask where to eat
+		'skip22' : 'skip23', // day 1, idem
+		'skip57' : 'skip59', // day 2, idem
+	}
+	for (const [dest, src] of Object.entries(merged)) {
+		const destBlock = blocks.get(dest)
+		const srcBlock = blocks.get(src)
+		destBlock.pop() // remove 'goto *f<X>'
+		destBlock.push(...srcBlock.slice(1)) // slice(1) to remove label
+		blocks.delete(src)
+	}
 
 	// test of f289 should be moved to f287 (according to mirrormoon)
 	const skip287 = blocks.get('skip287')

@@ -618,24 +618,7 @@ goto *f57
 *f57
 goto *s57
 *skip57
-if (%regard_cel>=3) goto *f59
-goto *f58
-*f58
-goto *s58
-*skip58
-select *f60,*f61
-*f59
-goto *s59
-*skip59
-select *f62,*f63,*f64
-*f60
-goto *s60
-*skip60
-goto *f65
-*f61
-goto *s61
-*skip61
-goto *f65
+select *f62,*f63,[%regard_ciel>=3]*f64
 *f62
 goto *s62
 *skip62

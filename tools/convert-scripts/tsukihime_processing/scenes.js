@@ -239,11 +239,13 @@ function sceneFixes(tokens) {
  * @param {Map<string, Token[]>} tokens 
  */
 function interScenesFixes(blocks) {
-	// Merge s24 into s21 and s23 into s22 (3 lines just to ask where to eat)
+	// Merge s21 <- s24, s22 <- s23, s57 <- s59 (3 lines just to ask where to eat, days 1 and 2)
 	blocks.get('s21').push(...blocks.get('s24'))
 	blocks.get('s22').push(...blocks.get('s23'))
+	blocks.get('s57').push(...blocks.get('s59'))
 	blocks.delete('s23')
 	blocks.delete('s24')
+	blocks.delete('s59')
 
 	// replace s46 with content from s47
 	blocks.set('s46', blocks.get('s47'))
@@ -380,18 +382,16 @@ function getBlockProps(label) {
 	}
 	switch(label) {
 		case 's16' : case 's17' : case 's18' : case 's19' : case 's32' :
-		case 's38' : case 's50' : case 's272': case 's300': case 's309':
-		case 's311': case 's411': // empty scenes
+		case 's38' : case 's50' : case 's117': case 's272': case 's300':
+		case 's309': case 's311': case 's411': // empty scenes
 			return null
-		case 's117':
+		case 's53' : case 's415': // inaccessible scenes
 			return null
 		case 's46' : // content replaced by content of s47
 			return null
 		case 's37' : // identical to s201
 			return null
-		case 'f415': // inaccessible scene
-			return null
-		case 'f43' : // inaccessible scene
+		case 's58' : case 's60' : case 's61' : // identical to 59, 62 and 63.
 			return null
 		default :
 			return {
