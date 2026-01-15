@@ -223,6 +223,13 @@ async function v0_4_0_updateSave(ss: SaveState): Promise<SaveState> {
 //#region                         < v0.5.0 UPDATE
 //##############################################################################
 
+const mergedScenes = {
+  's23' : ['s22', 35],
+  's24' : ['s21', 36],
+  's58' : ['s57', 64],
+  's59' : ['s57', 64],
+}
+
 async function v0_5_0_updateSave(ss: SaveState): Promise<SaveState> {
   const { pages, scenes } = ss
 
@@ -235,11 +242,16 @@ async function v0_5_0_updateSave(ss: SaveState): Promise<SaveState> {
     (i == 0)? scenes[i]!.label = 's23' : scenes.splice(i, 1)
   if (s = scenes.find(s=>s.label == 's47')) s.label = 's46'
   if (s = scenes.find(s=>s.label == 's37')) s.label = 's201'
+  if ((i = scenes.findIndex(s=>s.label == 's58')) >= 0)
+    (i == 0) ? scenes[i]!.label = 's57' : scenes.splice(i, 1)
+  if ((i = scenes.findIndex(s=>s.label == 's59')) >= 0)
+    (i == 0) ? scenes[i]!.label = 's57' : scenes.splice(i, 1)
+  if (s = scenes.find(s=>s.label == 's60')) s.label = 's62'
+  if (s = scenes.find(s=>s.label == 's61')) s.label = 's63'
 
   for (const [j, p] of pages.entries()) {
-    switch (p.label) {
-      case 's23' : case 's24' : // merged at the end of s22 and s21
-        const prevLabel = p.label == 's23' ? 's22' : 's21'
+    if (p.label && Object.hasOwn(mergedScenes, p.label)) {
+      const [prevLabel, defaultPage] = mergedScenes[p.label as keyof typeof mergedScenes]
         // if possible, calculate correct page number using last page of previous scene
         i = j-1
         while (i >= 0 && pages[i].label == p.label)
@@ -248,9 +260,10 @@ async function v0_5_0_updateSave(ss: SaveState): Promise<SaveState> {
           p.page = (pages[i].page ?? 0) + (j-i)
         // otherwise, use english version page count
         else
-          p.page = prevLabel == 's22' ? 35 : 36
-        p.label = prevLabel
-        break
+          p.page = (p.page ?? 0) + (defaultPage as number)
+        p.label = prevLabel as LabelName
+    }
+    else switch (p.label) {
       case 's37' : p.label = 's201'; break
       case 's47' : p.label = 's46'; break
       case 'f117' : p.label = 'skip116a'; break

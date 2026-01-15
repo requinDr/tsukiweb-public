@@ -32,7 +32,10 @@ class Settings extends SettingsBase {
   protected override restore(diff: JSONObject | PartialJSON): void {
     // change replaced scenes in completed scenes list
     const completedScenes = ((diff as Partial<Settings>).completedScenes ?? [])
-    const redirectedScenes = {s23: null, s24: null, s47: 's46'}
+    const redirectedScenes = {
+      's23': null , 's24': null , 's47': 's46',
+      's58': 's57', 's59': 's57', 's60': 's62',
+      's61': 's63' }
     for (const [label, replace] of Object.entries(redirectedScenes)) {
       const i = completedScenes.indexOf(label)
       if (i >= 0) {
@@ -41,6 +44,12 @@ class Settings extends SettingsBase {
           completedScenes.push(replace)
       }
     }
+
+    // update censorship settings
+    let blurThumbnails: any, warnHScenes: any
+    ({ blurThumbnails, warnHScenes, ...diff } = diff)
+    if (blurThumbnails as boolean|undefined == false)
+      (diff as Partial<Settings>).censorship = 'none'
 
     super.restore(diff)
   }

@@ -72,7 +72,6 @@ goto *s35
 inc %flg6
 goto *f36
 *f36
-if (%clear_hisui!=0) goto *f201
 if (%cleared!=0) goto *f201
 goto *s36
 *skip36
