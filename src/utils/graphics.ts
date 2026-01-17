@@ -65,7 +65,9 @@ export function processImageCmd(onTransitionStart: VoidFunction|undefined,
 	}
 	if (image)
 		image = extractImage(image)
-	const to = (pos == 'a') ? {l: "", c: "", r: ""} : {[pos]: image}
+	const to = (pos == 'a' ) ? { l: "", c: "", r: "" }
+			 : (pos == 'bg') ? { l: "", c: "", r: "", bg: image }
+			 : { [pos]: image }
 	const _onFinish = ()=> {
 		if (!objectMatch(script.graphics, to)) {
 			if (pos == 'a')
