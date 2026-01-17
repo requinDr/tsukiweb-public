@@ -288,11 +288,11 @@ export function buildConnections(visibleNodes: FcNode[]): Connection[] {
 
 	for (const node of visibleNodes) {
 		for (const parent of node.parents) {
-			const isDisabled =
-				parent.state === FcNodeState.DISABLED ||
-				node.state === FcNodeState.DISABLED;
+			const isEnabled =
+				parent.state === FcNodeState.ENABLED &&
+				node.state === FcNodeState.ENABLED;
 
-			(isDisabled ? disabled : enabled).push({ from: parent, to: node })
+			(isEnabled ? enabled : disabled).push({ from: parent, to: node })
 		}
 	}
 
