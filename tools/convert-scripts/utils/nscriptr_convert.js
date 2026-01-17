@@ -185,13 +185,9 @@ function genericBlocFixes(tokens) {
  * 
  * @param {Token[]} tokens
  * @param {Array<(token: Token)=>void|boolean|string>} tokenFixes
+ * @param {string[]} clickChars
  */
-function fixTokens(tokens, tokenFixes = [], clickChars = undefined) {
-    // search clickstr command, will append '@' after each char in clickstr arg.
-    clickChars = clickChars ?? tokens.find(
-        t=> t instanceof CommandToken && t.cmd == "clickstr"
-    )?.args[0].replace(/^["`]/, '').replace(/["`]$/, '').split('') ?? []
-
+function fixTokens(tokens, tokenFixes = [], clickChars = []) {
     tokenFixes.unshift(genericTokenFixes.bind(undefined, clickChars))
     
     for (let i=0; i < tokens.length; i++) {
@@ -249,18 +245,19 @@ function fixTokens(tokens, tokenFixes = [], clickChars = undefined) {
  * })} blockProps 
  * @param {number} start
  * @param {number} stop
+ * @param {string[]} clickChars
  */
-function processBlock(blocks, tokens, blockProps, start, stop) {
+function processBlock(blocks, tokens, blockProps, start, stop, clickChars) {
     const label = tokens[start].label
     const props = blockProps(label)
     if (props != null) {
         const {tokenFixes = [], blockFixes = []} = props
         let blockTokens = tokens.slice(start, stop)
-        fixTokens(blockTokens, tokenFixes)
+        fixTokens(blockTokens, tokenFixes, clickChars)
         for (const f of blockFixes) {
             f(blockTokens, label)
             blockTokens = blockTokens.filter(t=>t != null)
-            fixTokens(blockTokens) // only use generic fixes
+            fixTokens(blockTokens) // only use generic fixes after calling block-wide fixes
         }
         genericBlocFixes(blockTokens)
         blocks.set(label, blockTokens)
@@ -277,11 +274,17 @@ function processBlock(blocks, tokens, blockProps, start, stop) {
 function splitBlocks(tokens, blockProps) {
     const blocks = new Map()
     let blockStart = -1
+
+    // search clickstr command, will append '@' after each char in clickstr arg.
+    const clickChars = tokens.find(
+        t=> t instanceof CommandToken && t.cmd == "clickstr"
+    )?.args[0].replace(/^["`]/, '').replace(/["`]$/, '').split('') ?? []
+
     for (const [i, token] of tokens.entries()) {
         // 2. chose destination file from last label
         if (token instanceof LabelToken) {
             if (blockStart >= 0) {
-                processBlock(blocks, tokens, blockProps, blockStart, i)
+                processBlock(blocks, tokens, blockProps, blockStart, i, clickChars)
             }
             blockStart = i
         }

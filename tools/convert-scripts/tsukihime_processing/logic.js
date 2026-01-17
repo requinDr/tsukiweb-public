@@ -141,6 +141,11 @@ function getBlockProps(label) {
 						t.args[0] = '*f24'
 				})
 				break
+			case 'f36' : // two 'if' pointing to f37 and f201, but f37 redirected to f201
+				tokenFixes.push((t)=> {
+					if (t instanceof ConditionToken && t.condition.includes('hisui'))
+						return false
+				})
 			case 'skip46' :
 				// replaced *f47 with *f46 => remove if, condition *f46 choice on flg6 and near-side route completion
 				tokenFixes.push((t)=> {
