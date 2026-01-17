@@ -46,10 +46,10 @@ class Settings extends SettingsBase {
     }
 
     // update censorship settings
-    let blurThumbnails: any, warnHScenes: any
-    ({ blurThumbnails, warnHScenes, ...diff } = diff)
-    if (blurThumbnails as boolean|undefined == false)
-      (diff as Partial<Settings>).censorship = 'none'
+    // let blurThumbnails: any, warnHScenes: any
+    // ({ blurThumbnails, warnHScenes, ...diff } = diff)
+    // if (blurThumbnails as boolean|undefined == false)
+    //   (diff as Partial<Settings>).censorship = 'none'
 
     super.restore(diff)
   }

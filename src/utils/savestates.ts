@@ -18,6 +18,13 @@ import { SavesManager as SavesManagerBase, SaveState as SSBase } from "@tsukiweb
 type SaveStateId = number
 export const QUICK_SAVE_ID: SaveStateId = 0
 
+const mergedScenes = {
+  's23' : ['s22', 35],
+  's24' : ['s21', 36],
+  's58' : ['s57', 64],
+  's59' : ['s57', 64],
+}
+
 type DefaultPageContext = ReturnType<typeof ScriptPlayer.defaultPageContext>
 type DefaultBlockContext = ReturnType<typeof ScriptPlayer.defaultBlockContext>
 
@@ -222,13 +229,6 @@ async function v0_4_0_updateSave(ss: SaveState): Promise<SaveState> {
 //#endregion ###################################################################
 //#region                         < v0.5.0 UPDATE
 //##############################################################################
-
-const mergedScenes = {
-  's23' : ['s22', 35],
-  's24' : ['s21', 36],
-  's58' : ['s57', 64],
-  's59' : ['s57', 64],
-}
 
 async function v0_5_0_updateSave(ss: SaveState): Promise<SaveState> {
   const { pages, scenes } = ss
