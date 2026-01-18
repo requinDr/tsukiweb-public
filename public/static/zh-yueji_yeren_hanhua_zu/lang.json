@@ -23,14 +23,14 @@
     "config": "环境设置",
     "extra": "其他",
     "about": {
-      "port": "这是Type-Moon于2000年出版的视觉小说[i]月姬[/i]的网络版。",
+      "port": "这是 Type-Moon 于2000年出版的视觉小说[i]月姬[/i]的网络版。",
       "project": "该项目位于 %0GitHub%1 上。 喜欢就加个星吧！欢迎贡献。",
       "feedback": "发送你的反馈或报告错误 %0这里%1.",
       "data": "不收集任何数据，所有内容都存储在你的浏览器中。管理你的数据%0这里%1。",
       "remake": "请购买并支持重制版 %0月姬$ - A piece of blue glass moon%1."
     },
     "install": "安装",
-    "share": "Share"
+    "share": "分享"
   },
   "extra": {
     "gallery": "画廊",
@@ -39,8 +39,8 @@
     "eclipse": "月蚀"
   },
   "config": {
-    "on": "On",
-    "off": "Off",
+    "on": "开启",
+    "off": "关闭",
     "reset": "恢复初始设置",
     "tab-game": "游戏",
     "tab-audio": "声音设置",
@@ -49,18 +49,18 @@
     "volume-master": "音量",
     "volume-track": "背景音乐",
     "volume-se": "音效",
-    "volume-title-track": "Title music volume",
-    "volume-system-se": "System SFX volume",
+    "volume-title-track": "主页音乐音量",
+    "volume-system-se": "系统特效音量",
     "track-source": "音轨来源",
     "track-sources": {
-      "original": "Original (2000)",
+      "original": "原始 (2000)",
       "everafter": "Ever After (2002)",
-      "tsukibako": "Tsuki-Bako (2003)"
+      "tsukibako": "月箱 (2003)"
     },
     "track-source-help": [
-      "[b]Original[/b]: Original soundtrack of the complete game from 2000.",
-      "[b]Ever After[/b]: Remake of the original soundtrack, published in 2002.",
-      "[b]Tsuki-Bako[/b]: Remixed soundtrack that came with a Tsukihime + PLUS-DISC + Kagetsu Tohya package in 2003."
+      "[b]原版[/b]: 2000年发售的完整版游戏背景音乐。",
+      "[b]Ever After 版[/b]: 2002年发售的游戏原声带重制版。",
+      "[b]“月箱”版[/b]: 2003年随《月箱》（收录《月姬》、《PLUS-DISC》及《歌月十夜》）发布的重混音版背景音乐。""
     ],
     "auto-mute": "切换分页时静音",
     "ratio": "纵横比",
@@ -88,9 +88,9 @@
     "language": "语言",
     "show-locked-content": "解锁内容",
     "show-locked-content-help": [
-      "显示完整的画廊，流程图，结局，月蚀…，",
-      "Also fulfills the requirement to access the Far Side.",
-      "它可以随时打开和关闭。"
+      "显示完整的画廊，流程图，结局，月蚀…",
+      "并满足开启月姬里线的要求，",
+      "它可以随时被打开和关闭。"
     ],
     "data": "存档",
     "data-export": "导出",
@@ -101,7 +101,7 @@
     "controls": {
       "next": "文字推进",
       "history": "显示/隐藏回顾前文",
-      "flowchart": "Show/hide Flowchart",
+      "flowchart": "显示/隐藏流程图",
       "back": "关闭当前页面/显示菜单",
       "bg_move": "移动背景图像",
       "auto_play": "自动模式",
@@ -130,8 +130,8 @@
     "delete-warning": "你确定要删除此存档吗？",
     "overwrite-warning": "你确定要覆盖此存档吗？",
     "quick-save": "快速存档",
-    "local-storage-warning": "Savefiles and settings are stored locally in the web browser, and might get deleted by the browser after a delay of inactivity. Regularly export your data.",
-    "local-storage-last-export": "Last full data export date: %0"
+    "local-storage-warning": "存档与设置仅存储在浏览器本地。若长时间未访问，可能会被浏览器自动清理。请务必定期导出并备份存档。",
+    "local-storage-last-export": "最后一次存档导出时间: %0"
   },
   "game": {
     "skip-viewed": "该场景曾显示过。",
@@ -156,7 +156,7 @@
     "title": "标题界面",
     "q-save": "快速存档",
     "q-load": "快速读档",
-    "copy-scene-url": "Copy scene link"
+    "copy-scene-url": "拷贝场景链接"
   },
   "history": {
     "load": "读档",
@@ -172,16 +172,17 @@
   },
   "plus_disc": {
     "desc": [
-      "PLUS-DISC is a fan disc containing a short story and bonus, originally released in 2001.",
-      "Note: You should read Tsukihime first."
+      "月姬 PLUS-DISC 是最早发布于 2001 年的外传作品，包含一部短篇故事以及特典内容。",
+      "提示：你应该先通关月姬本篇。"
     ],
-    "viewed": "Viewed",
+    "viewed": "已读",
     "gallery": "画廊",
-    "scenes": "Scenes"
+    "scenes": "场景"
   },
   "yes": "是",
   "no": "否",
   "ok": "是",
   "back": "返回",
   "close": "关闭"
+
 }
