@@ -29,6 +29,7 @@ const ACTION_PROPS = {
 	variant: "select" as const,
 	clickSound: "impact",
 	"nav-auto": 1,
+	"nav-up": '.layer-btns > :last-child',
 }
 
 type Props = {
