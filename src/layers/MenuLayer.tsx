@@ -14,6 +14,7 @@ import { Button } from "@tsukiweb-common/ui-core"
 import AnimatedHideActivityDiv from "@tsukiweb-common/ui-core/components/AnimatedHideActivityDiv"
 import { isScene } from "script/utils"
 import FixedFooterOrnaments from "components/ui/FixedFooterOrnament"
+import useEventState from "@tsukiweb-common/hooks/useEventState"
 
 const AUDIO_PROPS = {
 	audio: audio,
@@ -164,7 +165,8 @@ type ActionsButtonsProps = {
 const ActionsButtons = ({script, show, close, qSave, qLoad}: ActionsButtonsProps) => {
 	const [mute] = useObserved(settings.volume, 'master', (vol)=>vol<0)
 	const isFullscreen = useIsFullscreen()
-	const [isAutoplaying] = useObserved(script, 'autoPlay')
+	const [isAutoplaying] = useObserved(script, '_autoPlay')
+	const [isFfw] = useEventState(script, "ffwStart", "ffwStop")
 
 	const toggleVolume = () => {
 		settings.volume.master = - settings.volume.master
@@ -217,7 +219,8 @@ const ActionsButtons = ({script, show, close, qSave, qLoad}: ActionsButtonsProps
 				title={strings.menu["auto-play"]}>
 				<MdPlayArrow aria-label="triangle auto play" />
 			</Button>
-			<Button {...ACTION_PROPS} onClick={fastForward} title={strings.menu["ffw"]}>
+		<Button {...ACTION_PROPS} onClick={fastForward} className={isFfw ? "on" : ""}
+			title={strings.menu["ffw"]}>
 				<MdFastForward aria-label="fast forward" />
 			</Button>
 			<Button {...ACTION_PROPS} onClick={toggleVolume} className={mute ? "off" : ""}>
