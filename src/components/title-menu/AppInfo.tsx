@@ -5,10 +5,10 @@ import { APP_INFO, APP_VERSION } from "../../utils/constants"
 import { strings } from "../../translation/lang"
 import tsukiCover from "@assets/images/tsukihime_cover.webp"
 import { Button, MessageContainer, Modal } from "@tsukiweb-common/ui-core"
-import usePWA from "@tsukiweb-common/hooks/usePWA"
 import { bb } from "@tsukiweb-common/utils/Bbcode"
 import { SCREEN } from "utils/display"
 import { audio } from "utils/audio"
+import { usePWA } from "@tsukiweb-common/hooks"
 
 type Props = Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'onClick'|'onContextMenu'>
 

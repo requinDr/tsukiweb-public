@@ -6,8 +6,8 @@ import { useLanguageRefresh } from "../../hooks/useLanguageRefresh"
 import { PageSection } from "@tsukiweb-common/ui-core"
 import { deepAssign, extract, fullscreen } from "@tsukiweb-common/utils/utils"
 import { ViewRatio, TEXT_SPEED } from "@tsukiweb-common/constants"
-import useIsFullscreen from "@tsukiweb-common/hooks/useIsFullscreen"
 import { HiMinus, HiPlus } from "react-icons/hi"
+import { useIsFullscreen } from "@tsukiweb-common/hooks"
 
 const MAX_DELAY = 3000
 const DELAY_STEP = 100
@@ -16,7 +16,6 @@ const ConfigGameTab = () => {
 	useLanguageRefresh()
 	const [conf, setConf] = useState(extract(settings, [
 		'textSpeed', 'fixedRatio', 'autoClickDelay', 'nextPageDelay']))
-
 	const isFullscreen = useIsFullscreen()
 
 	useEffect(()=> {

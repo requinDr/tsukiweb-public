@@ -6,7 +6,6 @@ import { strings } from "../translation/lang"
 import { toast } from "react-toastify"
 import { useObserved } from "@tsukiweb-common/utils/Observer"
 import { fullscreen } from "@tsukiweb-common/utils/utils"
-import useIsFullscreen from "@tsukiweb-common/hooks/useIsFullscreen"
 import { useDOMEvent } from "@tsukiweb-common/hooks/useDOMEvent"
 import { ScriptPlayer } from "script/ScriptPlayer"
 import { audio } from "utils/audio"
@@ -14,7 +13,7 @@ import { Button } from "@tsukiweb-common/ui-core"
 import AnimatedHideActivityDiv from "@tsukiweb-common/ui-core/components/AnimatedHideActivityDiv"
 import { isScene } from "script/utils"
 import FixedFooterOrnaments from "components/ui/FixedFooterOrnament"
-import useEventState from "@tsukiweb-common/hooks/useEventState"
+import { useEventState, useIsFullscreen } from "@tsukiweb-common/hooks"
 
 const AUDIO_PROPS = {
 	audio: audio,

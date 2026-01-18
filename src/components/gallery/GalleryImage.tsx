@@ -6,11 +6,11 @@ import "yet-another-react-lightbox/styles.css"
 import Zoom from "yet-another-react-lightbox/plugins/zoom"
 import "yet-another-react-lightbox/plugins/thumbnails.css"
 import { MdClose, MdLock } from "react-icons/md"
-import useMediaQuery from "@tsukiweb-common/hooks/useMediaQuery"
 import { GalleryPlaceholderLocked, GalleryTotal } from "./GalleryComponents"
 import { imageSrc } from "translation/assets"
 import { GalleryImg } from "types"
 import { Button } from "@tsukiweb-common/ui-core"
+import { useMediaQuery } from "@tsukiweb-common/hooks"
 
 declare module "yet-another-react-lightbox" {
 	interface SlideImage {

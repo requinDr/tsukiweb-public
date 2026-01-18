@@ -10,7 +10,7 @@ import { commands as audioCommands, audio } from '../utils/audio';
 import ConfigLayer from '../layers/ConfigLayer';
 import { useSwipeGesture } from '@tsukiweb-common/input/touch';
 import { useKeyMap } from '@tsukiweb-common/input/KeyMap';
-import { useSetter as useReset } from '@tsukiweb-common/hooks/useSetter';
+import { useSetter as useReset } from '@tsukiweb-common/hooks';
 import { useDOMEvent } from '@tsukiweb-common/hooks/useDOMEvent';
 import { ScriptPlayer } from 'script/ScriptPlayer';
 import history from 'script/history';

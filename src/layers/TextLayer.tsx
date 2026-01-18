@@ -3,14 +3,13 @@ import moonIcon from '@assets/icons/icon_moon.svg'
 import pageIcon from '@assets/icons/icon_bars.svg'
 import { settings } from "../utils/settings"
 import { ScriptPlayer } from "script/ScriptPlayer"
-import useMousePointer from "@tsukiweb-common/hooks/useMousePointer"
 import { useObserved, useObserver } from "@tsukiweb-common/utils/Observer"
 import { DivProps } from "@tsukiweb-common/types"
 import { Bbcode, BBTypeWriter } from "@tsukiweb-common/utils/Bbcode"
 import { preprocessText } from "@tsukiweb-common/utils/utils"
 import classNames from "classnames"
 import { MdFastForward } from "react-icons/md"
-import useEventState from "@tsukiweb-common/hooks/useEventState"
+import { useAutoScroll, useEventState, useMousePointer } from "@tsukiweb-common/hooks"
 
 type Glyph = "moon"|"page"
 const icons: Record<Glyph, string> = {
@@ -76,6 +75,7 @@ const TextLayer = ({ script, display, isTopLayer,
   const [immediate, setImmediate] = useState<boolean>(false)
   const [isFfw] = useEventState(script, "ffwStart", "ffwStop")
   const onFinishRef = useRef<VoidFunction>(undefined)
+  const textContainerRef = useAutoScroll()
   const mouseCursorVisible = useMousePointer()
 
   const skip = useCallback(() => setImmediate(true), [])
@@ -115,7 +115,7 @@ const TextLayer = ({ script, display, isTopLayer,
 
   return (
     <div className={classList.join(' ')} {...remaining_props} id="layer-text" aria-hidden={!display}>
-      <div className="text-container">
+      <div className="text-container" ref={textContainerRef}>
         {previousLines.map((line, i) =>
           <Fragment key={i}>
             {line && <Bbcode text={line} />}
