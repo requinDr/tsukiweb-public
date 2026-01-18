@@ -57,11 +57,11 @@
 			var(--ts) var(--nts) var(--ts) var(--sc),
 			0 0 calc(var(--ts) * 2) var(--sc);
 		letter-spacing: 1px;
-		font-size: clamp(.92em, min(2.6cqw, 3.9cqh), 1.68em);
-		line-height: clamp(1.6em, 4.8cqw, 1.95em);
+		font-size: clamp(.92em, min(2.6cqw, 3.7cqh), 1.68em);
+		line-height: clamp(1.6em, 4.6cqw, 1.95em);
 	}
 
-	@media screen and (orientation: portrait) and (max-width: 640px){
+	@media screen and (orientation: portrait) and (max-width: 720px){
 		padding: 10vmin 6%;
 		background-image: linear-gradient(90deg, rgb(0 0 0 / 0.4) 0%, rgb(0 0 0 / 0.4) 100%);
 		.text-container {
