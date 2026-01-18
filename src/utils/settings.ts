@@ -56,6 +56,8 @@ class Settings extends SettingsBase {
   
   constructor() {
     super("settings", false)
+    if (this.constructor == Settings)
+      this.init()
   }
 }
 

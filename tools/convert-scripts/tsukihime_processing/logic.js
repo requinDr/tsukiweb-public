@@ -196,7 +196,7 @@ function getBlockProps(label) {
 			case 'skip59' :
 				// f58 replaced by identical f59, so add condition on the third choice
 				tokenFixes.push((t)=> {
-					addChoiceCondition(t, '*f64', "%regard_ciel>=3")
+					addChoiceCondition(t, '*f64', "%regard_cel>=3")
 				})
 				break
 			case 'f23' : case 'f24'    : // scenes merged into s21 and s22

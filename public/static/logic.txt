@@ -617,7 +617,7 @@ goto *f57
 *f57
 goto *s57
 *skip57
-select *f62,*f63,[%regard_ciel>=3]*f64
+select *f62,*f63,[%regard_cel>=3]*f64
 *f62
 goto *s62
 *skip62
