@@ -67,11 +67,11 @@ const HistoryLayer = ({ display, history, onRewind, layers, show, divProps }: Pr
 			<FixedFooter style={{ background: "var(--transparent-layer)" }}>
 				{(layers.history || layers.flowchart) && <>
 					<Button
-						variant="elevation"
+						variant="default"
 						onClick={handleClose}
 						nav-x={-2} nav-y={10000} // 10k prevents overlapping with flowchart nodes
 					>
-						{strings.close}
+						{`<<`} {strings.back}
 					</Button>
 					{show?.flowchart && <>
 						<Button
