@@ -166,7 +166,11 @@ const ActionsButtons = ({script, show, close, qSave, qLoad}: ActionsButtonsProps
 	const [mute] = useObserved(settings.volume, 'master', (vol)=>vol<0)
 	const isFullscreen = useIsFullscreen()
 	const [isAutoplaying] = useObserved(script, '_autoPlay')
-	const [isFfw] = useEventState(script, "ffwStart", "ffwStop")
+	const [isFfw, setIsFfw] = useEventState(script, "ffwStart", "ffwStop")
+	
+	useEffect(() => {
+		setIsFfw(script.fastForwarding)
+	}, [])
 
 	const toggleVolume = () => {
 		settings.volume.master = - settings.volume.master
