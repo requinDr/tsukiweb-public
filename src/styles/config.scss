@@ -152,8 +152,7 @@
 					padding: 0.2em;
 
 					.off {
-						filter: grayscale(1);
-						color: var(--color-link);
+						color: var(--off-color);
 					}
 
 					&:hover, &:focus-visible {
@@ -164,7 +163,7 @@
 		}
 
 		.erase {
-			color: #ff1e1e;
+			color: var(--off-color);
 			&:hover, &:focus-visible {
 				box-shadow: 0 0 0 1px rgb(255 0 0) inset, 0 0 90px 0 rgb(255 0 0 / 0.3) inset;
 			}

@@ -67,14 +67,12 @@
 		}
 
 		.layer-btns {
+			display: flex;
+			flex-direction: column;
+			row-gap: min(2.4vh, 1.6em);
 			button {
 				font-size: clamp(1.3em, 3.2vmin, 1.5em);
 			}
-		}
-		.layer-btns {
-			display: flex;
-			row-gap: min(2.4vh, 1.6em);
-			flex-direction: column;
 		}
 	}
 
@@ -104,6 +102,9 @@
 					0% { background-position: -100% 50%; }
 					100% { background-position: 200% 50%; }
 				}
+			}
+			&.off {
+				color: var(--off-color);
 			}
 
 			&:disabled {

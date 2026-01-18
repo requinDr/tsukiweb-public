@@ -219,8 +219,7 @@ const ActionsButtons = ({script, show, close, qSave, qLoad}: ActionsButtonsProps
 			<Button {...ACTION_PROPS} onClick={fastForward} title={strings.menu["ffw"]}>
 				<MdFastForward aria-label="fast forward" />
 			</Button>
-			<Button {...ACTION_PROPS} onClick={toggleVolume}
-				aria-label="mute/unmute">
+			<Button {...ACTION_PROPS} onClick={toggleVolume} className={mute ? "off" : ""}>
 				{mute
 					? <MdOutlineVolumeOff aria-label="volume off" />
 					: <MdOutlineVolumeUp aria-label="volume up" />
