@@ -125,6 +125,8 @@ const Window = () => {
 		const topLayer = layers.topLayer
 		if (e.deltaY < 0 && ['text', 'graphics'].includes(topLayer)) {
 			layers.history = true
+		} else if (e.deltaY > 0 && topLayer === 'text') {
+			actionsHandler.next()
 		}
 	}, window, 'wheel')
 
