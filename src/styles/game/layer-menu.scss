@@ -1,8 +1,7 @@
 %layer-menu {
-	--menu-bg: linear-gradient(226deg, rgb(7 5 75), rgb(0 150 176 / 100%));
-	--menu-backdrop: rgb(0 36 87 / 0.6);
-	--menu-border-color: #002373;
-	--surface-on-menu: rgb(1 17 27 / 80%);
+	--menu-bg: linear-gradient(-40deg, rgb(36 42 128) 26%, rgb(2 125 184));
+	--menu-bg-strips: linear-gradient(180deg, hsl(200.94deg 96% 40%), hsl(201 96% 30% / 1), hsl(200.94deg 96% 40%));
+	--menu-backdrop: rgb(3 35 81 / 55%);
 	--panel-trans-time: 0.35s;
 
 	z-index: 4;
@@ -14,25 +13,22 @@
 	will-change: opacity;
 	display: flex;
 	justify-content: flex-end;
-	background-color: var(--menu-backdrop);
-	-webkit-backdrop-filter: blur(.5px);
-	backdrop-filter: blur(.5px);
 	// when hiding, wait before starting the transition
 	overflow: hidden;
-	border-block: 12px solid var(--menu-border-color);
 	direction: ltr;
 
 	&.show {
 		pointer-events: auto;
 		opacity: 1;
 		transition-delay: 0s;
+		background: var(--menu-backdrop);
 
 		.menu-container {
 			transform: translateX(0);
 		}
 	}
 
-	$width: clamp(280px, 46vw, 340px);
+	$width: clamp(280px, 30vw, 360px);
 	.menu-container {
 		will-change: transform;
 		transform: translateX(calc($width));
@@ -41,93 +37,79 @@
 		transition: transform var(--panel-trans-time) ease-out;
 		display: flex;
 		align-items: center;
-		background-image: var(--menu-bg);
-		mask-image: linear-gradient(to right, transparent, black 4em), linear-gradient(to right, transparent, black 2em);
+		position: relative;
+		background: var(--menu-bg);
 
 		menu {
 			height: 100%;
 			flex: 1;
 			display: grid;
-			grid-template-rows: 1fr 2fr 1fr;
-			padding: 1.2em;
-			margin-left: 2.5em;
+			grid-template-rows: minmax(8px, 1fr) 2fr minmax(68px, 1fr);
 			overflow-y: auto;
+			padding-left: 2.4em;
+
+			&::before, &::after {
+				content: "";
+				position: absolute;
+				pointer-events: none;
+				z-index: -1;
+				width: 3px;
+				top: 0;
+				bottom: 0;
+				background-image: var(--menu-bg-strips);
+			}
+			&::before {
+				left: 4px;
+			}
+			&::after {
+				right: 4px;
+			}
 		}
 
-		.layer-btns, .action-btns {
-			max-width: 220px;
-
+		.layer-btns {
 			button {
 				font-size: clamp(1.3em, 3.2vmin, 1.5em);
 			}
 		}
 		.layer-btns {
 			display: flex;
-			row-gap: min(1.6vh, 1em);
+			row-gap: min(2.4vh, 1.6em);
 			flex-direction: column;
 		}
+	}
+
+	.footer {
+		position: fixed;
+		bottom: 0px;
+		background: var(--transparent-layer);
 
 		.action-btns {
-			display: grid;
-			grid-template-columns: 1fr 1fr;
+			display: flex;
 			gap: 5px;
-			align-self: end;
-			margin-top: 1em;
+		}
+		svg {
+			width: 1.4em;
+			height: 1.4em;
+		}
+		button {
+			flex: 1;
+			padding: 6px 4px;
+			letter-spacing: 1px;
 
-			.fullwidth {
-				grid-column: 1 / -1;
+			&.on {
+				background: linear-gradient(90deg, #00d2ff 40%, oklch(1.8 0.15 220.72 / 1) 60%, #00d2ff);
+				background-size: 300% 100%;
+				animation: gradientAnimation 4s linear infinite;
+				@keyframes gradientAnimation {
+					0% { background-position: -100% 50%; }
+					100% { background-position: 200% 50%; }
+				}
 			}
-			.copy-scene, .quick {
-				font-size: 1rem;
-			}
 
-			button {
-				border-radius: 2px;
-				padding: 4px;
-				color: rgb(206 223 234);
-				background-color: var(--surface-on-menu);
-				justify-content: center;
-				letter-spacing: 1px;
-
-				&.on {
-					background: linear-gradient(90deg, #00d2ff 40%, oklch(1.8 0.15 220.72 / 1) 60%, #00d2ff);
-					background-size: 300% 100%;
-					animation: gradientAnimation 4s linear infinite;
-					@keyframes gradientAnimation {
-						0% { background-position: -100% 50%; }
-						100% { background-position: 200% 50%; }
-					}
-				}
-
-				&:hover, &:focus-visible {
-					color: var(--text-color);
-					box-shadow: var(--selected-shadow);
-				}
-				&:disabled {
-					opacity: 0.5;
-					pointer-events: none;
-				}
+			&:disabled {
+				opacity: 0.5;
+				pointer-events: none;
 			}
 		}
-	}
-
-	.top-ornament, .bottom-ornament {
-		position: absolute;
-		pointer-events: none;
-		opacity: 0.5;
-		width: clamp(220px, 60vmin, 350px);
-		-webkit-mask-image: linear-gradient(to right, transparent, black 8em);
-		mask-image: linear-gradient(to right, transparent, black 8em);
-	}
-	.top-ornament {
-		top: 0;
-		right: 0;
-		z-index: 1;
-	}
-	.bottom-ornament {
-		bottom: 0;
-		left: 0;
-		z-index: 0;
-		rotate: 180deg;
 	}
 }

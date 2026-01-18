@@ -3,7 +3,7 @@ import { strings } from "../../translation/lang"
 import { phaseTexts } from "../../translation/assets"
 import { getSceneTitle } from "../../script/utils"
 import { Button } from "@tsukiweb-common/ui-core"
-import { MdReplay } from "react-icons/md"
+import { MdHistory } from "react-icons/md"
 import classNames from "classnames"
 import { Bbcode, bb } from "@tsukiweb-common/utils/Bbcode"
 import { History, PageEntry } from "script/history"
@@ -94,11 +94,11 @@ const PageElement = ({history, content, onLoad, navY=0, ...props}: Props)=> {
 			<hr page-type={content.type} />
 			{content &&
 				<Button
-					audio={audio} hoverSound={'tick'} clickSound={'glass'}
+					audio={audio} hoverSound='tick' clickSound='glass'
 					onClick={onLoad.bind(null,content)} className='load'
 					nav-scroll='none' nav-x={0} nav-y={navY}
 					onFocus={onFocus as any}>
-					<MdReplay /> {strings.history.load}
+					<MdHistory /> {strings.history.load}
 				</Button>
 			}
 			{displayContent}

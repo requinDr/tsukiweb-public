@@ -64,7 +64,7 @@ const HistoryLayer = ({ display, history, onRewind, layers, show, divProps }: Pr
 			: null
 			}
 
-			<FixedFooter>
+			<FixedFooter style={{ background: "var(--transparent-layer)" }}>
 				{(layers.history || layers.flowchart) && <>
 					<Button
 						variant="elevation"
@@ -78,7 +78,7 @@ const HistoryLayer = ({ display, history, onRewind, layers, show, divProps }: Pr
 							variant="select"
 							onClick={() => setLayer('history')}
 							active={layers.history}
-							style={{ marginLeft: '1em' }}
+							style={{ marginLeft: '1em', flex: 1 }}
 							nav-x={-1} nav-y={10000}
 						>
 							{strings.menu.history}
@@ -87,7 +87,7 @@ const HistoryLayer = ({ display, history, onRewind, layers, show, divProps }: Pr
 							variant="select"
 							onClick={() => setLayer('flowchart')}
 							active={layers.flowchart}
-							style={{ marginLeft: '.5em' }}
+							style={{ marginLeft: '.5em', flex: 1 }}
 							nav-x={0} nav-y={10000}
 						>
 							{strings.extra.scenes}

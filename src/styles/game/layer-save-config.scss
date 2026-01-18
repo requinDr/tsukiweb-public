@@ -4,7 +4,7 @@
 	pointer-events: none;
 	transition: opacity var(--transition-time) ease-out;
 	background-image: var(--gradient-layer);
-	backdrop-filter: brightness(0.6) blur(1px);
+	backdrop-filter: blur(1px);
 	display: flex;
 	
 	&.show {

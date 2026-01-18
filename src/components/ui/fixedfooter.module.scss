@@ -1,0 +1,31 @@
+.footer {
+	background: var(--transparent-layer);
+}
+
+.rightOrnament, .leftOrnament {
+	position: absolute;
+	pointer-events: none;
+	opacity: 0.8;
+	width: clamp(150px, 20vw, 250px);
+	-webkit-mask-image: linear-gradient(to right, transparent, black 8em);
+	mask-image: linear-gradient(to right, transparent, black 8em);
+	z-index: -1;
+}
+.rightOrnament {
+	bottom: 0;
+	right: 0;
+	z-index: 1;
+	rotate: 180deg;
+	transform: scale(-1, 1);
+}
+.leftOrnament {
+	bottom: 0;
+	left: 0;
+	z-index: 0;
+	rotate: 180deg;
+}
+@media (width < 400px) {
+	.leftOrnament {
+		display: none;
+	}
+}

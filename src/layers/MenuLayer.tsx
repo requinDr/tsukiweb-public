@@ -3,7 +3,6 @@ import { MdCopyAll, MdFastForward, MdFullscreen, MdFullscreenExit, MdOutlineVolu
 import { settings, viewedScene } from "../utils/settings"
 import { displayMode, InGameLayersHandler, SCREEN } from "../utils/display"
 import { strings } from "../translation/lang"
-import Ornament from "@assets/images/ornament.webp"
 import { toast } from "react-toastify"
 import { useObserved } from "@tsukiweb-common/utils/Observer"
 import { fullscreen } from "@tsukiweb-common/utils/utils"
@@ -14,6 +13,7 @@ import { audio } from "utils/audio"
 import { Button } from "@tsukiweb-common/ui-core"
 import AnimatedHideActivityDiv from "@tsukiweb-common/ui-core/components/AnimatedHideActivityDiv"
 import { isScene } from "script/utils"
+import FixedFooterOrnaments from "components/ui/FixedFooterOrnament"
 
 const AUDIO_PROPS = {
 	audio: audio,
@@ -26,8 +26,9 @@ const LAYER_PROPS = {
 }
 const ACTION_PROPS = {
 	...AUDIO_PROPS,
-	variant: null,
-	clickSound: "impact"
+	variant: "select" as const,
+	clickSound: "impact",
+	"nav-auto": 1,
 }
 
 type Props = {
@@ -52,6 +53,7 @@ type Props = {
 }
 const MenuLayer = ({display, script, show, layers, qSave, qLoad}: Props) => {
 	const menuRef = useRef<HTMLDivElement>(null)
+	const actionsRef = useRef<HTMLDivElement>(null)
 
 	useEffect(()=> {
 		if (display) {
@@ -65,7 +67,8 @@ const MenuLayer = ({display, script, show, layers, qSave, qLoad}: Props) => {
 
 	useDOMEvent((e: MouseEvent)=> {
 		//if a left click is made outside the menu, hide it
-		if (e.button === 0 && !menuRef.current?.contains(e.target as Node)) {
+		if (e.button === 0 && !menuRef.current?.contains(e.target as Node)
+			&& !actionsRef.current?.contains(e.target as Node)) {
 			layers.menu = false
 		}
 	}, window, 'mousedown')
@@ -91,8 +94,6 @@ const MenuLayer = ({display, script, show, layers, qSave, qLoad}: Props) => {
 			id="layer-menu"
 			className="layer"
 		>
-			<img src={Ornament} alt="ornament" className="bottom-ornament" />
-			<img src={Ornament} alt="ornament" className="top-ornament" />
 			<nav className="menu-container" ref={menuRef}>
 				<menu>
 					<div className="top-spacer" />
@@ -134,12 +135,13 @@ const MenuLayer = ({display, script, show, layers, qSave, qLoad}: Props) => {
 						</Button>
 						}
 					</div>
-
-					<ActionsButtons script={script} show={show}
-						close={closeMenu} qSave={qSave} qLoad={qLoad}/>
-
 				</menu>
 			</nav>
+
+			<FixedFooterOrnaments className="footer" ref={actionsRef}>
+				<ActionsButtons script={script} show={show}
+					close={closeMenu} qSave={qSave} qLoad={qLoad}/>
+			</FixedFooterOrnaments>
 		</AnimatedHideActivityDiv>
 	)
 }
@@ -201,41 +203,41 @@ const ActionsButtons = ({script, show, close, qSave, qLoad}: ActionsButtonsProps
 	return (
 		<div className="action-btns">
 			{show?.qSave &&
-			<Button {...ACTION_PROPS} onClick={qSave} className="quick"
-					nav-y={7} nav-x={0}>
+			<Button {...ACTION_PROPS} onClick={qSave} className="quick">
 				{strings.menu["q-save"]}
 			</Button>
 			}
 			{show?.qLoad &&
-			<Button {...ACTION_PROPS} onClick={qLoad} className="quick"
-					nav-y={7} nav-x={1}>
+			<Button {...ACTION_PROPS} onClick={qLoad} className="quick">
 				{strings.menu["q-load"]}
 			</Button>
 			}
 			<Button {...ACTION_PROPS} onClick={toggleAutoPlay} className={isAutoplaying ? "on" : ""}
-					aria-label="auto play" title={strings.menu["auto-play"]}
-					nav-y={8} nav-x={0}>
-				<MdPlayArrow />
+				title={strings.menu["auto-play"]}>
+				<MdPlayArrow aria-label="triangle auto play" />
 			</Button>
-			<Button {...ACTION_PROPS} onClick={fastForward}
-					aria-label="fast forward" title={strings.menu["ffw"]}
-					nav-y={8} nav-x={1}>
-				<MdFastForward />
+			<Button {...ACTION_PROPS} onClick={fastForward} title={strings.menu["ffw"]}>
+				<MdFastForward aria-label="fast forward" />
 			</Button>
 			<Button {...ACTION_PROPS} onClick={toggleVolume}
-					aria-label="mute/unmute" nav-y={9} nav-x={0}>
-				{mute ? <MdOutlineVolumeOff /> : <MdOutlineVolumeUp />}
+				aria-label="mute/unmute">
+				{mute
+					? <MdOutlineVolumeOff aria-label="volume off" />
+					: <MdOutlineVolumeUp aria-label="volume up" />
+				}
 			</Button>
-			<Button {...ACTION_PROPS} onClick={fullscreen.toggle}
-					aria-label="toggle fullscreen" nav-y={9} nav-x={1}
-					disabled={!fullscreen.isSupported}>
-				{isFullscreen ? <MdFullscreenExit /> : <MdFullscreen />}
+			{fullscreen.isSupported &&
+			<Button {...ACTION_PROPS} onClick={fullscreen.toggle}>
+				{isFullscreen
+					? <MdFullscreenExit aria-label="exit fullscreen" />
+					: <MdFullscreen aria-label="enter fullscreen" />
+				}
 			</Button>
+			}
 			{show?.copyScene &&
 			<Button {...ACTION_PROPS} onClick={copySceneToClipboard}
-					className="fullwidth copy-scene" aria-label="copy scene link"
-					nav-y={10} title={script.currentLabel ?? ""}
-					disabled={script.currentLabel?.startsWith("skip")}>
+				className="fullwidth copy-scene" title={script.currentLabel ?? ""}
+				disabled={script.currentLabel?.startsWith("skip")}>
 				{strings.menu["copy-scene-url"]}
 			</Button>
 			}
