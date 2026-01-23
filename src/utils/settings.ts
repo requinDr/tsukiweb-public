@@ -105,24 +105,31 @@ export const exportGameData = () => {
   })
 }
 
+/**
+ * Import game data from a parsed JSON object
+ */
+export const importGameDataFromJSON = async (json: Savefile) => {
+  if (!json.version)
+    json.version = "0.3.6" // last version without a 'version' attribute
+  settings[restoreSymbol](json.settings)
+  if (json.saveStates != undefined) {
+    savesManager.clear()
+    savesManager.add(...json.saveStates)
+  }
+  const timeStamp = Date.now()
+  settings.lastFullExport.date = timeStamp
+  computeSaveHash().then(hash=> {
+    if (settings.lastFullExport.date == timeStamp)
+      settings.lastFullExport.hash = hash
+  })
+}
+
 export const importGameData = async (accept = `.${FULLSAVE_EXT}`) => {
   try {
     const json = (await requestJSONs({accept}) as Savefile[])?.[0] as Savefile|undefined
     if (!json)
       return
-    if (!json.version)
-      json.version = "0.3.6" // last version without a 'version' attribute
-    settings[restoreSymbol](json.settings)
-    if (json.saveStates != undefined) {
-      savesManager.clear()
-      savesManager.add(...json.saveStates)
-    }
-    const timeStamp = Date.now()
-    settings.lastFullExport.date = timeStamp
-    computeSaveHash().then(hash=> {
-      if (settings.lastFullExport.date == timeStamp)
-        settings.lastFullExport.hash = hash
-    })
+    await importGameDataFromJSON(json)
 
     toast("Your data has been loaded", {
       toastId: "loaded-data",

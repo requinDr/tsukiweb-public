@@ -97,6 +97,8 @@
     "data-erase": "Erase",
     "data-erase-warning": "Delete all saves, settings progress. Sure?",
     "data-erase-confirm": "All clean. Close tab.",
+    "file-import-confirm": "Import data from \"%0\"? This will replace your current saves and settings.",
+    "file-import-error": "Failed to import data",
     "controls": {
       "next": "Next",
       "history": "Show/hide History",

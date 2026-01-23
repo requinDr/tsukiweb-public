@@ -1,4 +1,4 @@
-import { Fragment, useCallback, useEffect, useLayoutEffect, useReducer, useRef, useMemo } from 'react';
+import { Fragment, useCallback, useEffect, useReducer, useRef, useMemo } from 'react';
 import * as m from "motion/react-m"
 import '@styles/game.scss';
 import HistoryLayer from '../layers/HistoryLayer';

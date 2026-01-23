@@ -34,11 +34,14 @@
     "games",
     "entertainment"
   ],
+  "launch_handler": {
+    "client_mode": "focus-existing"
+  },
   "file_handlers": [
     {
-      "action": "/config?tab=Advanced",
+      "action": "/config?tab=advanced",
       "accept": {
-        "text/plain": [
+        "application/thfull+json": [
           ".thfull"
         ]
       }
@@ -46,7 +49,7 @@
     {
       "action": "/load",
       "accept": {
-        "text/plain": [
+        "application/thweb+json": [
           ".thweb"
         ]
       }
