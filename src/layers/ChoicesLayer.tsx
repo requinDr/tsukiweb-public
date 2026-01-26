@@ -15,12 +15,12 @@ const container: Variants = {
 	show: {
 		transition: {
 			staggerChildren: 0.1,
-		},
-	},
+		}
+	}
 }
 
 const item: Variants = {
-	hidden: { opacity: 0, translateY: 10 },
+	hidden: { opacity: 0, translateY: -10 },
 	show: {
 		opacity: 1,
 		translateY: 0,
@@ -28,7 +28,7 @@ const item: Variants = {
 			duration: 0.2,
 			ease: "easeOut"
 		}
-	},
+	}
 }
 
 type SelectionCallback = (choice: Choice)=>void

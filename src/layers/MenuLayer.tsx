@@ -15,18 +15,16 @@ import { isScene } from "script/utils"
 import FixedFooterOrnaments from "components/ui/FixedFooterOrnament"
 import { useEventState, useIsFullscreen } from "@tsukiweb-common/hooks"
 
-const AUDIO_PROPS = {
-	audio: audio,
-}
+
 const LAYER_PROPS = {
-	...AUDIO_PROPS,
 	variant: "underline-left" as const,
+	audio: audio,
 	hoverSound: 'tick',
 	clickSound: 'glass',
 }
 const ACTION_PROPS = {
-	...AUDIO_PROPS,
 	variant: "select" as const,
+	audio: audio,
 	clickSound: "impact",
 	"nav-auto": 1,
 	"nav-up": '.layer-btns > :last-child',

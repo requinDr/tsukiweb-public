@@ -1,4 +1,4 @@
-import { memo, useCallback, useEffect, useLayoutEffect, useRef } from 'react';
+import { memo, useCallback, useLayoutEffect, useRef } from 'react';
 import { InGameLayersHandler } from '../utils/display';
 import { History } from '../script/history';
 import { strings } from '../translation/lang';
@@ -25,23 +25,23 @@ const HistoryLayer = ({ display, history, onRewind, layers, show, divProps }: Pr
 	const handleClose = useCallback(()=> {
 		(document.activeElement as HTMLElement|null)?.blur()
 		layers.back()
-	}, [])
+	}, [layers])
 
 	const setLayer = useCallback((layer: 'history' | 'flowchart')=> {
 		layers[layer] = true
-	}, [])
+	}, [layers])
 
 	const loadPage = useCallback((index: number)=> {
 		history.onPageLoad(index)
 		handleClose()
 		onRewind()
-	}, [])
+	}, [handleClose, onRewind])
 
 	const loadScene = useCallback((label: LabelName)=> {
 		history.onSceneLoad(label)
 		handleClose()
 		onRewind()
-	}, [])
+	}, [handleClose, onRewind])
 	
 	return (
 		<div
@@ -99,7 +99,6 @@ const HistoryLayer = ({ display, history, onRewind, layers, show, divProps }: Pr
 	)
 }
 
-
 export default memo(HistoryLayer)
 
 
@@ -116,24 +115,23 @@ const HistoryTab = ({
 	const containerRef = useRef<HTMLDivElement>(null)
 	const pagesArray = Array.from(history.allPages)
 
-	useEffect(() => {
+	useLayoutEffect(() => {
 		if (containerRef.current) {
 			const { scrollHeight, clientHeight } = containerRef.current
 			containerRef.current.scrollTo({ 
 				top: scrollHeight - clientHeight - 2, //-2 for precision issues
-				behavior: 'auto' 
+				behavior: 'instant' 
 			})
 		}
 	}, [history.pagesLength])
 
-	const onScroll = useCallback((evt: React.UIEvent<HTMLDivElement>)=> {
-		const elmt = containerRef.current!
+	const onScroll = useCallback(()=> {
+		const elmt = containerRef.current
+		if (!elmt) return
 		const diff = elmt.scrollHeight - elmt.scrollTop - elmt.clientHeight
 
-		const isAtBottom = diff <= 1
-		if (isAtBottom)
-			close()
-	}, [])
+		if (diff <= 1) close()
+	}, [close])
 
 	const handlePageClick = (index: number) => {
 		onPageSelect(index)
@@ -167,7 +165,7 @@ const FlowchartTab = ({ history, onSceneSelect }: FlowchartTabProps) => {
 
 	const handleSceneSelect = useCallback((id: TsukihimeSceneName)=> {
 		onSceneSelect(id)
-	}, [history, onSceneSelect])
+	}, [onSceneSelect])
 
 	return (
 		<div id="flowchart-progress" className="scroll-container">

@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react"
+import { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import { strings } from "../translation/lang"
 import { bb, noBb } from "@tsukiweb-common/utils/Bbcode"
 import sceneAttrs from '@assets/game/scene_attrs.json'
@@ -44,32 +44,36 @@ const SkipLayer = ({script, history, layers}: Props) => {
 	useEffect(()=> {
 		const ref = script.addEventListener('beforeBlock',
 			(label, initPage)=> {
-				if (isThScene(label) && initPage == 0 && settings.enableSceneSkip && viewedScene(label)) {
+				if (isThScene(label) && initPage === 0 && settings.enableSceneSkip && viewedScene(label)) {
 					return new Promise<void>((resolve)=> {
 						setScene(label)
 						onFinish.current = resolve
 					})
 			}
 		})
-		return script.removeEventListener.bind(script, 'beforeBlock', ref) as VoidFunction
+
+		return () => {
+			script.removeEventListener('beforeBlock', ref)
+		}
 	}, [script])
 	
 	const onClick = useCallback((e: React.MouseEvent<HTMLButtonElement>)=> {
-		if (e.currentTarget.value == 'yes' && script.currentLabel) {
+		if (e.currentTarget.value === 'yes' && script.currentLabel) {
 			script.skipCurrentBlock()
 			history.onSceneSkip(script.currentLabel)
 		}
 		onFinish.current?.()
 		setScene(undefined)
-	}, [script])
+	}, [script, history])
 
-	let display = layers.text && (scene != undefined)
+	let display = layers.text && scene !== undefined
 	const sceneTitle = display ? getSceneTitle(Array.from(script.flags), scene!) : ""
-	const btnProps = {
+	const btnProps = useMemo(()=> ({
 		onClick: onClick,
 		audio: audio,
 		hoverSound:'tick'
-	}
+	}), [onClick])
+
 	// prevent navigation on skip buttons when other layer is active
 	const nav = display && (layers.topLayer == 'text')
 	
@@ -85,7 +89,7 @@ const SkipLayer = ({script, history, layers}: Props) => {
 				initial={{opacity: 0, scale: 0.9}}
 				animate={{opacity: 1, scale: 1}}
 				transition={{ ease: "easeOut", duration: 0.2 }}
-				key={sceneTitle}
+				key={scene}
 			>				
 				{sceneTitle && scene &&
 					<SceneImage scene={scene} sceneTitle={sceneTitle} />
@@ -120,7 +124,7 @@ export default SkipLayer
 
 const SceneImage = ({ scene, sceneTitle }: { scene: TsukihimeSceneName, sceneTitle: string }) => {
 	const image = getThumbnail(scene)
-	const isCGScene = scene ? cg.isInGallery(image?.bg) : false
+	const isCGScene = cg.isInGallery(image?.bg)
 
 	return (
 		<div className="scene">
