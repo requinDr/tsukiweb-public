@@ -13,7 +13,7 @@
   },
 
   "disclaimer": [
-    "このゲームは、TYPE－MOONの2000に発行されたビジュアルノベル[b]「月姫」[/b]のウェブバージョンです。",
+    "このゲームは、TYPE－MOONの2000に発行されたビジュアルノベル「月姫」のウェブバージョンです。",
     "18歳以上のみ対象の商品となっております。"
   ],
   "title": {
@@ -23,7 +23,7 @@
     "config": "設定",
     "extra": "エクストラ",
     "about": {
-      "port": "このゲームは、TYPE－MOONの2000年に発行されたビジュアルノベル[b]「月姫」[/b]のウェブバージョンです。",
+      "port": "このゲームは、TYPE－MOONの2000年に発行されたビジュアルノベル「月姫」のウェブバージョンです。",
       "project": "プロジェクトは%0GitHub%1にある。Add a star if you like it! Contributions are welcome.",
       "feedback": "Send your feedback or report a bug %0here%1.",
       "data": "全てがブラウザに保存されて、データを集められません。データを%0ここで%1管理できます。",

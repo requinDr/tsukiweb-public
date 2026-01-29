@@ -13,7 +13,7 @@
   },
 
   "disclaimer": [
-    "This is a web version of [i]Tsukihime[/i], a visual novel published on 2000 by Type-Moon.",
+    "This is a web version of Tsukihime, a visual novel published on 2000 by Type-Moon.",
     "The game contains adult content and is intended for mature audiences only."
   ],
   "title": {
@@ -23,7 +23,7 @@
     "config": "Configurazione",
     "extra": "Extra",
     "about": {
-      "port": "This is a web version of [i]Tsukihime[/i], a visual novel published on 2000 by Type-Moon.",
+      "port": "This is a web version of Tsukihime, a visual novel published on 2000 by Type-Moon.",
       "project": "The project is available on %0GitHub%1. Add a star if you like it! Contributions are welcome.",
       "feedback": "Send your feedback or report a bug %0here%1.",
       "data": "No data collected, everything is stored in your browser. Manage your data %0here%1.",

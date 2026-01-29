@@ -9,6 +9,11 @@
 		<link rel="manifest" href="/manifest.json">
 		<title>Tsukihime</title>
 
+		<script>
+			if (window.location.pathname === '/' || window.location.pathname === '/disclaimer') {
+				document.documentElement.dataset.preloading = 'disclaimer';
+			}
+		</script>
 		<style>
 			:root {
 				--ui-font: "Ubuntu";
@@ -25,7 +30,7 @@
 
 				color-scheme: light dark;
 				color: #e0e3ec;
-				background-color: #00153f;
+				background-color: #000000;
 
 				font-synthesis: none;
 				text-rendering: optimizeLegibility;
@@ -50,6 +55,9 @@
 				overflow: hidden;
 				isolation: isolate;
 				position: relative;
+			}
+			html[data-preloading='disclaimer'] #root {
+				background: black !important;
 			}
 		</style>
 	</head>

@@ -19,6 +19,7 @@ const DisclaimerScreen = ({ onAccept }: { onAccept?: () => void }) => {
 	}, [])
 
 	const sawDisclaimer = () => {
+		delete document.documentElement.dataset.preloading
 		if (onAccept) onAccept()
 		setLocation(SCREEN.TITLE)
 	}
@@ -33,6 +34,7 @@ const DisclaimerScreen = ({ onAccept }: { onAccept?: () => void }) => {
 				{strings.disclaimer.map((txt, i) =>
 					<p key={i}>{bb(txt)}</p>
 				)}
+				<div className='decorator' />
 			</div>
 		</m.div>
 	)

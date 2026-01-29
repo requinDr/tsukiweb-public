@@ -276,16 +276,36 @@
 	.box {
 		max-width: 680px;
 		text-align: center;
-		border: 1px solid var(--message-container-border);
 		padding: 2em;
 		margin: 1em;
 		user-select: none;
 		text-wrap: balance;
 
 		p {
-			font-size: clamp(1em, 3.6vmin, 1.3em);
+			font-size: clamp(1em, 3.6vmin, 1.4em);
 			line-height: 1.7em;
 			letter-spacing: 1px;
+		}
+	}
+
+	.decorator {
+		width: 100%;
+		height: 3px;
+		margin-top: 3em;
+		position: relative;
+		background-image: radial-gradient(circle at center, #000000, #0096ff 40%, transparent);
+
+		&::after {
+			--size: 22px;
+			content: "";
+			position: absolute;
+			left: 50%;
+			bottom: 50%;
+			transform: translate(-50%, 50%);
+			width: var(--size);
+			height: var(--size);
+			background-color: #fff;
+			border-radius: 50%;
 		}
 	}
 }
