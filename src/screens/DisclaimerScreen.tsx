@@ -18,6 +18,14 @@ const DisclaimerScreen = ({ onAccept }: { onAccept?: () => void }) => {
 		return ()=> clearTimeout(timeout)
 	}, [])
 
+	useEffect(()=> {
+		const onKeyDown = (e: KeyboardEvent) => {
+			if (e.key === 'Enter') sawDisclaimer()
+		}
+		window.addEventListener('keydown', onKeyDown)
+		return () => window.removeEventListener('keydown', onKeyDown)
+	}, [])
+
 	const sawDisclaimer = () => {
 		delete document.documentElement.dataset.preloading
 		if (onAccept) onAccept()
