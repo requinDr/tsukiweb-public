@@ -1,12 +1,12 @@
 {
-  "id": "tsukihime-web",
+  "id": "tsukiweb",
   "name": "Tsukihime - Blue Blue Glass Moon, Under The Crimson Air",
   "description": "Enjoy the story of Tsukihime in your browser.",
   "short_name": "Tsukihime",
   "start_url": "./",
   "scope": "./",
   "theme_color": "#062b64",
-  "background_color": "#0a2f85",
+  "background_color": "#00153f",
   "display": "standalone",
   "orientation": "any",
   "icons": [
@@ -27,7 +27,9 @@
     },
     {
       "src": "icons/icon.svg",
-      "sizes": "512x512"
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
     }
   ],
   "categories": [
@@ -53,6 +55,16 @@
           ".thweb"
         ]
       }
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Plus-Disc",
+      "url": "/plus-disc"
+    },
+    {
+      "name": "Flowchart",
+      "url": "/scenes"
     }
   ]
 }
