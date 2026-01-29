@@ -119,26 +119,18 @@ const HistoryTab = ({
 		if (containerRef.current) {
 			const { scrollHeight, clientHeight } = containerRef.current
 			containerRef.current.scrollTo({ 
-				top: scrollHeight - clientHeight - 2, //-2 for precision issues
+				top: scrollHeight - clientHeight,
 				behavior: 'instant' 
 			})
 		}
 	}, [history.pagesLength])
-
-	const onScroll = useCallback(()=> {
-		const elmt = containerRef.current
-		if (!elmt) return
-		const diff = elmt.scrollHeight - elmt.scrollTop - elmt.clientHeight
-
-		if (diff <= 1) close()
-	}, [close])
 
 	const handlePageClick = (index: number) => {
 		onPageSelect(index)
 	}
 
 	return (
-		<div id="history" className="scroll-container" ref={containerRef} onScroll={onScroll}>
+		<div id="history" className="scroll-container" ref={containerRef}>
 			<div className="text-container" style={{ minHeight: "calc(100% + 2px)"}}>
 				{pagesArray.map((page, i) =>
 					<PageElement key={i} history={history} content={page}
