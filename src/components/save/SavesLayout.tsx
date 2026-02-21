@@ -58,7 +58,7 @@ const SavesLayer = ({variant, back}: Props) => {
 		if (files instanceof File) files = [files]
 
 		try {
-			savesManager.importSaveFiles(files)
+			await savesManager.importSaveFiles(files)
 			toast.success(strings.game["toast-load"])
 		} catch(error) {
 			toast.error(strings.game["toast-load-fail"])

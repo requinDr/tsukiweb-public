@@ -60,19 +60,23 @@ class SavesManager extends SavesManagerBase<SaveState> {
     return super.import(saves)
   }
 
-  override add(...saves: (SaveState[]|[number, SaveState][])) {
-    Promise.all(saves.map(async (save)=> {
-      let id
-      if (Array.isArray(save)) {
-        [id, save] = save
-        if (id != save.date)
-          save = {id, ...save}
-      } else {
-        id = save.id ?? save.date
-      }
-      save = await updateSave(save)
-      return save
-    })).then((saves: SaveState[])=> super.add(...saves))
+  override async add(...saves: (SaveState[]|[number, SaveState][])) {
+    const resolvedSaves = await Promise.all(
+      saves.map(async (save)=> {
+        let id
+        if (Array.isArray(save)) {
+          [id, save] = save
+          if (id != save.date)
+            save = {id, ...save}
+        } else {
+          id = save.id ?? save.date
+        }
+        save = await updateSave(save)
+        return save
+      })
+    )
+    
+    return super.add(...resolvedSaves)
   }
 }
 
