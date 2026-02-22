@@ -14,7 +14,6 @@ import { dialog } from "@tsukiweb-common/ui-core/components/ModalPrompt"
 import { polyfillCountryFlagEmojis } from "@tsukiweb-common/utils/flagsPolyfill"
 import { imageSrc } from "translation/assets"
 import { FULLSAVE_EXT } from "utils/constants"
-import { warnHScene } from "utils/window-actions"
 
 let flagSupportChecked = false
 
@@ -77,6 +76,18 @@ const ConfigAdvancedTab = () => {
 			<div className="sub">
 				<div className="title">{strings.config["adult-title"]}</div>
 				<ConfigItem
+					label={strings.config["adult-warn"]}
+				>
+					<ConfigButtons
+						currentValue={conf.warnHScenes}
+						btns={[
+							{ label: strings.config.on, value: true },
+							{ label: strings.config.off, value: false },
+						]}
+						updateValue={newValue => updateValue('warnHScenes', newValue)}
+					/>
+				</ConfigItem>
+				<ConfigItem
 					label={strings.config["adult-blur"]}
 					helpAction={()=>setModal({show: true, content:
 						<>
@@ -113,19 +124,6 @@ const ConfigAdvancedTab = () => {
 							{ label: strings.config.off, value: false },
 						]}
 						updateValue={newValue => updateValue('blurThumbnails', newValue)}
-					/>
-				</ConfigItem>
-
-				<ConfigItem
-					label={strings.config["adult-warn"]}
-					helpAction={() => warnHScene()}>
-					<ConfigButtons
-						currentValue={conf.warnHScenes}
-						btns={[
-							{ label: strings.config.on, value: true },
-							{ label: strings.config.off, value: false },
-						]}
-						updateValue={newValue => updateValue('warnHScenes', newValue)}
 					/>
 				</ConfigItem>
 			</div>

@@ -77,8 +77,7 @@
     "adult-title": "Contenido para adultos",
     "adult-blur": "Desenfocar miniaturas",
     "adult-blur-help": [
-      "Aplica un efecto de desenfoque en las miniaturas de las escenas para adultos (Guardar, Cargar, Diagrama de flujo, Galería, …).",
-      "El contenido dentro del juego no se ve afectado."
+      "Aplica un efecto de desenfoque en las miniaturas de las escenas para adultos."
     ],
     "adult-warn": "Advertirme cuando ingrese a una escena H",
     "quality": "Calidad",
@@ -135,6 +134,7 @@
   },
   "game": {
     "skip-viewed": "Ya has visto esta escena.",
+    "skip-hscene": "This scene contains adult content.",
     "skip-prompt": "¿Quieres saltarla?",
     "toast-qsave": "El progreso ha sido guardado",
     "toast-qload": "Progreso restaurado",

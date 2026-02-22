@@ -77,8 +77,7 @@
     "adult-title": "エロ設定",
     "adult-blur": "Blur thumbnails",
     "adult-blur-help": [
-      "Apply a blur effect on the thumbnails of the adult scenes (Save, Load, Flowchart, Gallery, …).",
-      "In-game content is not affected."
+      "Apply a blur effect on the thumbnails of the adult scenes."
     ],
     "adult-warn": "エロシーンを読むところで注意される",
     "quality": "グラフィック品質",
@@ -135,6 +134,7 @@
   },
   "game": {
     "skip-viewed": "このシーンはもう見ました。",
+    "skip-hscene": "This scene contains adult content.",
     "skip-prompt": "スキップしますか？",
     "toast-qsave": "セーブは成功しました",
     "toast-qload": "ロードは成功しました",

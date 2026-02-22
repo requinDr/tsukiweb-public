@@ -77,8 +77,7 @@
     "adult-title": "H 씬",
     "adult-blur": "썸네일 블러",
     "adult-blur-help": [
-      "H 씬의 썸네일을 블러처리 합니다.",
-      "실제 게임에는 영향을 끼치지 않습니다."
+      "H 씬의 썸네일을 블러처리 합니다."
     ],
     "adult-warn": "H씬을 들어가기 전에 경고 메시지가 나옵니다.",
     "quality": "화질",
@@ -135,6 +134,7 @@
   },
   "game": {
     "skip-viewed": "이미 본 장면입니다.",
+    "skip-hscene": "This scene contains adult content.",
     "skip-prompt": "스킵하시겠습니까?",
     "toast-qsave": "저장을 성공하였습니다.",
     "toast-qload": "불러오기를 성공하였습니다.",

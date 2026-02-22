@@ -66,6 +66,10 @@
 	#layer-graphics {
 		z-index: 0;
 		overflow: hidden;
+
+		.blur {
+			filter: blur(80px) brightness(0.4);
+		}
 	}
 	#layer-text {
 		@extend %layer-text;

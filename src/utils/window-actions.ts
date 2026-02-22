@@ -51,14 +51,9 @@ function quickSave(history: History) {
 	})
 }
 
-export function warnHScene(label?: LabelName) {
-	if (!label || (isThScene(label) && settings.warnHScenes
-		&& SCENE_ATTRS.scenes[label]?.h)) {
-		toast(strings.game["toast-hscene-waning"], {
-			toastId: "hscene-warning",
-			autoClose: 4000
-		})
-	}
+export function isHScene(label?: LabelName): boolean {
+	if (!label) return false
+	return isThScene(label) && !!SCENE_ATTRS.scenes[label]?.h
 }
 
 export function onAutoPlayStop() {

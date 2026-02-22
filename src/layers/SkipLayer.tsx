@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import { strings } from "../translation/lang"
-import { bb, noBb } from "@tsukiweb-common/utils/Bbcode"
+import { noBb } from "@tsukiweb-common/utils/Bbcode"
 import sceneAttrs from '@assets/game/scene_attrs.json'
-import { LabelName, TsukihimeSceneName } from "types"
+import { TsukihimeSceneName } from "types"
 import { Button } from "@tsukiweb-common/ui-core"
 import { getSceneTitle, isThScene } from "script/utils"
 import * as m from "motion/react-m"
@@ -12,9 +12,11 @@ import { History } from "script/history"
 import cg from "utils/gallery"
 import { audio } from "utils/audio"
 import { InGameLayersHandler } from "utils/display"
+import { isHScene } from "utils/window-actions"
 import { Graphics } from "@tsukiweb-common/types"
 import AnimatedHideActivityDiv from "@tsukiweb-common/ui-core/components/AnimatedHideActivityDiv"
 import GraphicsGroup from "@tsukiweb-common/graphics/GraphicsGroup"
+import classNames from "classnames"
 
 function getThumbnail(label: TsukihimeSceneName): Partial<Graphics> & {bg: Graphics["bg"]} {
 	const scenes = sceneAttrs.scenes as Record<TsukihimeSceneName, any>
@@ -37,19 +39,36 @@ type Props = {
 	layers: InGameLayersHandler
 }
 
+type SkipMode = 'viewed' | 'hscene'
+
 const SkipLayer = ({script, history, layers}: Props) => {
 	const [scene, setScene] = useState<TsukihimeSceneName|undefined>(undefined)
-	const onFinish = useRef<VoidFunction>(undefined)
+	const [mode, setMode] = useState<SkipMode>('viewed')
+	const onFinish = useRef<((skipped: boolean)=>void)>(undefined)
 
 	useEffect(()=> {
 		const ref = script.addEventListener('beforeBlock',
-			(label, initPage)=> {
-				if (isThScene(label) && initPage === 0 && settings.enableSceneSkip && viewedScene(label)) {
-					return new Promise<void>((resolve)=> {
+			async (label, initPage)=> {
+				if (initPage !== 0 || !isThScene(label)) return
+
+				// Prompt to skip H scenes
+				if (settings.warnHScenes && isHScene(label)) {
+					await new Promise<boolean>((resolve)=> {
+						setMode('hscene')
 						setScene(label)
 						onFinish.current = resolve
 					})
-			}
+					return
+				}
+
+				// Prompt to skip already-viewed scenes
+				if (settings.enableSceneSkip && viewedScene(label)) {
+					await new Promise<boolean>((resolve)=> {
+						setMode('viewed')
+						setScene(label)
+						onFinish.current = resolve
+					})
+				}
 		})
 
 		return () => {
@@ -58,11 +77,12 @@ const SkipLayer = ({script, history, layers}: Props) => {
 	}, [script])
 	
 	const onClick = useCallback((e: React.MouseEvent<HTMLButtonElement>)=> {
-		if (e.currentTarget.value === 'yes' && script.currentLabel) {
+		const skipped = e.currentTarget.value === 'yes'
+		if (skipped && script.currentLabel) {
 			script.skipCurrentBlock()
 			history.onSceneSkip(script.currentLabel)
 		}
-		onFinish.current?.()
+		onFinish.current?.(skipped)
 		setScene(undefined)
 	}, [script, history])
 
@@ -76,6 +96,7 @@ const SkipLayer = ({script, history, layers}: Props) => {
 
 	// prevent navigation on skip buttons when other layer is active
 	const nav = display && (layers.topLayer == 'text')
+	const isHSceneMode = mode === 'hscene'
 	
 	return (
 		<AnimatedHideActivityDiv
@@ -85,22 +106,25 @@ const SkipLayer = ({script, history, layers}: Props) => {
 			className="layer"
 		>
 			<m.div
-				className="skip-modal"
+				className={classNames("skip-modal", {"h-scene-modal": isHSceneMode})}
 				initial={{opacity: 0, scale: 0.9}}
 				animate={{opacity: 1, scale: 1}}
 				transition={{ ease: "easeOut", duration: 0.2 }}
 				key={scene}
-			>				
-				{sceneTitle && scene &&
+			>	
+				{!isHSceneMode && sceneTitle && scene &&
 					<SceneImage scene={scene} sceneTitle={sceneTitle} />
 				}
 
 				<div className="body">
 					<div className="title">
-						{bb(strings.game["skip-viewed"])}
+						{isHSceneMode
+							? strings.game["skip-hscene"]
+							: strings.game["skip-viewed"]
+						}
 					</div>
 					<div className="desc">
-						{bb(strings.game["skip-prompt"])}
+						{strings.game["skip-prompt"]}
 					</div>
 				</div>
 

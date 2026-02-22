@@ -20,7 +20,7 @@ import ChoicesLayer from 'layers/ChoicesLayer';
 import SkipLayer from 'layers/SkipLayer';
 import { useScreenAutoNavigate } from 'hooks';
 import { isPDScene } from 'script/utils';
-import actions, { onAutoPlayStop, warnHScene } from 'utils/window-actions';
+import actions, { onAutoPlayStop } from 'utils/window-actions';
 import { settings } from 'utils/settings';
 import { useObserver } from '@tsukiweb-common/utils/Observer';
 
@@ -67,7 +67,6 @@ const Window = () => {
 			displayMode.screen = SCREEN.TITLE
 		actionsHandler.onScriptChange(script)
 		script.setCommands(audioCommands)
-		script.addEventListener('blockStart', warnHScene)
 		if (!script.continueScript) {
 			script.addEventListener('afterBlock', ()=> {
 				//console.log("scene ended, return to previous page")

@@ -8,6 +8,8 @@ import { Slide, ToastContainer } from "react-toastify";
 import { CommonProvider } from "@tsukiweb-common/context";
 import { imageSrc } from "translation/assets";
 import cg from "utils/gallery";
+import { useObserved } from "@tsukiweb-common/utils/Observer";
+import { settings } from "utils/settings";
 
 const LocaleSetter = () => {
 	document.documentElement.setAttribute('lang', getLocale())
@@ -16,6 +18,7 @@ const LocaleSetter = () => {
 }
 
 function App() {
+	useObserved(settings, 'blurThumbnails')
 	return (
 		<ErrorBoundary FallbackComponent={PageCrash}>
 			<LocaleSetter />

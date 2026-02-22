@@ -77,10 +77,9 @@
     "adult-title": "Adult content",
     "adult-blur": "Blur thumbnails",
     "adult-blur-help": [
-      "Apply a blur effect on the thumbnails of the adult scenes (Save, Load, Flowchart, Gallery, …).",
-      "In-game content is not affected."
+      "Apply a blur effect on the thumbnails of the adult scenes."
     ],
-    "adult-warn": "Warn me when I enter an H scene",
+    "adult-warn": "Ask to skip H scene",
     "quality": "Quality",
     "quality-sd": "640\u00D7480",
     "quality-hd": "1280\u00D7960",
@@ -135,6 +134,7 @@
   },
   "game": {
     "skip-viewed": "You have already seen this scene.",
+    "skip-hscene": "This scene contains adult content.",
     "skip-prompt": "Do you want to skip it?",
     "toast-qsave": "Progress has been saved",
     "toast-qload": "Progress restored",

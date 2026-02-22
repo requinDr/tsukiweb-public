@@ -77,8 +77,7 @@
     "adult-title": "成人設定",
     "adult-blur": "模糊縮圖",
     "adult-blur-help": [
-      "對成人場景的縮圖（保存，載入，流程圖，畫廊，…）套用模糊效果。",
-      "遊戲內容不受影響。"
+      "對成人場景的縮圖（保存，載入，流程圖，畫廊，…）套用模糊效果。"
     ],
     "adult-warn": "進入成人場景時警告",
     "quality": "圖形質量",
@@ -135,6 +134,7 @@
   },
   "game": {
     "skip-viewed": "該場景曾顯示過。",
+    "skip-hscene": "This scene contains adult content.",
     "skip-prompt": "要跳過嗎？",
     "toast-qsave": "進度已保存",
     "toast-qload": "恢復進度",
