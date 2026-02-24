@@ -296,7 +296,7 @@
 		background-image: radial-gradient(circle at center, #000000, #0096ff 40%, transparent);
 
 		&::after {
-			--size: 22px;
+			--size: 20px;
 			content: "";
 			position: absolute;
 			left: 50%;
@@ -306,6 +306,7 @@
 			height: var(--size);
 			background-color: #fff;
 			border-radius: 50%;
+			box-shadow: inset 0 0 6px #000;
 		}
 	}
 }
