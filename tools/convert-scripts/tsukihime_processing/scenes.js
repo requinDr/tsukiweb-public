@@ -146,10 +146,35 @@ function commandFix(token) {
 	}
 }
 
+function merge_images(token, bottom, top, replace) {
+	if ((token instanceof CommandToken) && token.cmd == 'bg') {
+		const img = token.args[0]
+		if (img.includes(bottom)) {
+			token.args[0] = img.replace(bottom, replace)
+			token.args.push('bottom')
+			return true
+		} else if (img.includes(top)) {
+			token.args[0] = img.replace(top, replace)
+			token.args.push('top')
+			return true
+		}
+	}
+	return false
+}
+
 const tokenFixes = new Map(Object.entries({
 	'openning': (token)=> {
 		if ((token instanceof TextToken) && !token.text.trimStart().startsWith('[line='))
 			token.text = '[center]' + token.text.trimStart()
+	},
+	's425' : (token)=> {
+		merge_images(token, 'koha_h06a', 'koha_h06b', 'koha_h06')
+	},
+	's289a' : (token)=> {
+		merge_images(token, 'cel_e06a', 'cel_e06b', 'cel_e06')
+	},
+	's297' : (token)=> {
+		merge_images(token, 'cel_e06a', 'cel_e06b', 'cel_e06')
 	},
 }))
 

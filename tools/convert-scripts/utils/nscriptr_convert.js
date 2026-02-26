@@ -18,14 +18,27 @@ function simplifyImage(image) {
 
 /** @param {Token[]} token */
 function formatGraphics(token) {
-    if (!isNaN(token.args[token.args.length-1]))
-        return // number as last argument => already formatted
+    
     // Extract arguments
-    let pos = 'bg', image = '', effect = ''
+    let pos, image, effect
     switch (token.cmd) {
-        case 'bg': [image, effect] = token.args; break;
-        case 'ld': [pos, image, effect] = token.args; break;
-        case 'cl': [pos, effect] = token.args; break;
+        case 'bg':
+            if (token.args.length > 2)
+                return // already formatted
+            pos = 'bg';
+            [image, effect] = token.args
+            break
+        case 'ld':
+            if (token.args.length > 3)
+                return // already formatted    
+            [pos, image, effect] = token.args
+            break
+        case 'cl':
+            if (token.args.length > 2)
+                return //already formatted
+            image = '';
+            [pos, effect] = token.args
+            break
     }
 
     // Clean and divide effect into type and duration
