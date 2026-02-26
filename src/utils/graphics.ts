@@ -3,10 +3,11 @@ import { displayMode } from "./display";
 import { settings } from "./settings";
 import cg from "./gallery";
 import { wordImage } from "translation/assets";
-import { GraphicsTransition, Quake, RocketProps, SpritePos } from "@tsukiweb-common/types";
+import { Graphics, GraphicsTransition, Quake, RocketProps, SpritePos } from "@tsukiweb-common/types";
 import { ScriptPlayer } from "script/ScriptPlayer";
+import Timer from "@tsukiweb-common/utils/timer";
 
-const POSITIONS = ["top", "center", "bottom"]
+const POSITIONS = ["top", "center", "bottom"] as const
 
 /**
  * Move background up or down
@@ -59,22 +60,23 @@ export function processImageCmd(onTransitionStart: VoidFunction|undefined,
 		default : throw Error(`unknown image command ${cmd} ${arg}`)
 	}
 	const positions = ['top', 'bottom', 'center']
+	let alignment: Graphics['bgAlign'] = undefined;
 	if (rest.length > 0 && positions.some(x=>rest.includes(x))) {
-		const alignment = rest.find(x=>positions.includes(x)) || 'center'
+		alignment = rest.find(x=>positions.includes(x)) as Graphics['bgAlign']
 		displayMode.bgMoveTime = +time || 0
-		displayMode.bgAlignment = alignment
+		displayMode.bgAlignment = alignment!
 	}
 	if (image)
 		image = extractImage(image)
 	const to = (pos == 'a' ) ? { l: "", c: "", r: "" }
-			 : (pos == 'bg') ? { l: "", c: "", r: "", bg: image }
+			 : (pos == 'bg') ? { l: "", c: "", r: "", bg: image, bgAlign: alignment }
 			 : { [pos]: image }
 	const _onFinish = ()=> {
 		if (!objectMatch(script.graphics, to)) {
 			if (pos == 'a')
 				script.graphics = {l: "", c: "", r: ""}
 			else if (pos == 'bg') {
-				script.graphics = {bg: image, l: "", c: "", r: ""}
+				script.graphics = {bg: image, l: "", c: "", r: "", bgAlign: alignment}
 			} else {
 				script.graphics[pos as SpritePos] = image
 			}
@@ -93,7 +95,17 @@ export function processImageCmd(onTransitionStart: VoidFunction|undefined,
 			onFinish: _onFinish
 		})
 		onTransitionStart?.()
-		return { next: _onFinish }
+		if (to.bgAlign && to.bg == script.graphics.bg) {
+			// Alignment transitions don't automatically call 'onFinish'.
+			// Simulate with timer as a workaround
+			const timer = new Timer(+time, _onFinish, false)
+			timer.start()
+			return {
+				next: timer.skip.bind(timer)
+			}
+		} else {
+			return { next: _onFinish }
+		}
 	} else {
 		setTransition(undefined)
 	}

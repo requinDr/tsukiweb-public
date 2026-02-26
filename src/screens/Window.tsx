@@ -33,6 +33,8 @@ const Window = () => {
 		script.addEventListener('finish', (complete)=> {
 			if (complete) displayMode.screen = SCREEN.TITLE
 		})
+		if (script.graphics.bgAlign) // restore the alignement of the background
+			displayMode.bgAlignment = script.graphics.bgAlign
 		return script
 	})
 	const [, onLayersChange] = useReducer(x=>x+1, 0)
