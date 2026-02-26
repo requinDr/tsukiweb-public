@@ -281,6 +281,10 @@
 		div.bg img.blur {
 			filter: blur(20px);
 		}
+		div.bg img {
+			object-position: top;
+			overflow-clip-margin: border-box;
+		}
 	}
 
 	.warning-button {

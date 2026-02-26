@@ -45,11 +45,23 @@ class Settings extends SettingsBase {
       }
     }
 
-    // update censorship settings
-    // let blurThumbnails: any, warnHScenes: any
-    // ({ blurThumbnails, warnHScenes, ...diff } = diff)
-    // if (blurThumbnails as boolean|undefined == false)
-    //   (diff as Partial<Settings>).censorship = 'none'
+    // update merged images in eventImages (2026-02-26)
+    const mergedImages: Record<string, string> = {
+      "event/cel_e06a": "event/cel_e06",
+      "event/cel_e06b": "event/cel_e06",
+      "event/koha_h06a": "event/koha_h06",
+      "event/koha_h06b": "event/koha_h06",
+    }
+    const eventImages = (diff as Partial<Settings>).eventImages
+    if (eventImages) {
+      for (let i = 0; i < eventImages.length; i++) {
+        if (mergedImages[eventImages[i]]) {
+          eventImages[i] = mergedImages[eventImages[i]]
+        }
+      }
+      // remove duplicates that may have been created by the merge
+      (diff as Partial<Settings>).eventImages = [...new Set(eventImages)]
+    }
 
     super.restore(diff)
   }

@@ -12,6 +12,7 @@ export enum SCREEN {
 export const displayMode: { [key: string]: any } = {
   screen: undefined,
   bgAlignment: 'center' as ('top' | 'center' | 'bottom'),
+  bgMoveTime: 0,
 }
 
 type InGameMenu = 'history' | 'flowchart' | 'save' | 'load' | 'config'

@@ -23,6 +23,7 @@ const GraphicsLayer = memo(function({
 		...props }: Props) {
 
 	const [bgAlign] = useObserved(displayMode, 'bgAlignment')
+	const [bgMoveTime] = useObserved(displayMode, 'bgMoveTime')
 	const [quake, setQuake] = useState<Quake|undefined>(undefined)
 	const [transition, setTransition] = useState<GraphicsTransition|undefined>(undefined)
 	const [monoChrome] = useObserved(script.graphics, 'monochrome')
@@ -54,6 +55,9 @@ const GraphicsLayer = memo(function({
 		const {style: _style, ..._props} = props
 		style.current = {
 			...(_style),
+			...(bgMoveTime > 0 && {
+				'--bg-move-duration': `${bgMoveTime}ms`,
+			}),
 			...(quake && {
 				'--quake-x': `${quake.x}pt`,
 				'--quake-y': `${quake.y}pt`,
@@ -62,9 +66,9 @@ const GraphicsLayer = memo(function({
 			...(monoChrome && {
 				'--monochrome-color': monoChrome
 			})
-		}
+		} as CSSProperties
 		otherProps.current = _props
-	}, [props, quake, monoChrome])
+	}, [props, bgMoveTime, quake, monoChrome])
 
 	const graphics = script.graphics
 

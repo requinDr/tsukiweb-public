@@ -61,6 +61,7 @@ export function processImageCmd(onTransitionStart: VoidFunction|undefined,
 	const positions = ['top', 'bottom', 'center']
 	if (rest.length > 0 && positions.some(x=>rest.includes(x))) {
 		const alignment = rest.find(x=>positions.includes(x)) || 'center'
+		displayMode.bgMoveTime = +time || 0
 		displayMode.bgAlignment = alignment
 	}
 	if (image)
