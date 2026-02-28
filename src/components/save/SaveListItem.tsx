@@ -6,6 +6,7 @@ import SaveSummary from "./SaveSummary"
 import { jsonMerge } from "@tsukiweb-common/utils/utils"
 import { isPDScene } from "script/utils"
 import { ComponentProps } from "react"
+import { bb } from "@tsukiweb-common/utils/Bbcode"
 
 type SaveListItemProps = ComponentProps<"button"> & {
 	saveId: number
@@ -28,22 +29,20 @@ const SaveListItem = ({saveId, saveState, isFocused, ...props}: SaveListItemProp
 			quick-save={isQuickSave ? "" : undefined}
 			{...props}
 		>
-			<GraphicsGroup
-				images={graphics}
-				resolution="thumb"
-				lazy={true}
-			/>
-
+			<div className="graphics-area">
+				<GraphicsGroup
+					images={graphics}
+					resolution="thumb"
+					lazy={true}
+				/>
+				{lastPage?.type === "choice" &&
+					<ChoicesPreview choices={(lastPage as any).choices} />
+				}
+			</div>
 			<div className="deta">
 				<time dateTime={date.toISOString()} className="date">
 					{date.toLocaleDateString(getLocale())} {date.toLocaleString(getLocale(), {hour: 'numeric', minute: '2-digit'})}
 				</time>
-				{lastPage?.type === "choice" &&
-					<span className="chip chip__choice">
-						choice
-					</span>
-				}
-
 				<div className="line">
 					<SaveSummary saveState={saveState}/>
 				</div>
@@ -60,3 +59,14 @@ const SaveListItem = ({saveId, saveState, isFocused, ...props}: SaveListItemProp
 }
 
 export default SaveListItem
+
+
+const ChoicesPreview = ({choices}: {choices: Array<{str: string}>})=> (
+	<div className="choices-preview">
+		{choices.map(({str}, i) =>
+			<div key={i} className="choice">
+				{bb(str)}
+			</div>
+		)}
+	</div>
+)

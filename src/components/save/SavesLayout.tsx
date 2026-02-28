@@ -184,7 +184,7 @@ const SavesList = ({onSaveSelect, focusedId, setFocusedSave, parentRef, saves}: 
 	const rowVirtualizer = useVirtualizer({
 		count: saves.length,
 		getScrollElement: () => parentRef.current,
-		estimateSize: () => 110,
+		estimateSize: () => 120,
 		overscan: 5,
 	})
 

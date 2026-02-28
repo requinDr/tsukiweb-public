@@ -1,8 +1,7 @@
 import { Fragment, memo } from "react"
 import { savePhaseTexts, SaveState } from "../../utils/savestates"
 import { getSceneTitle } from "../../script/utils"
-import classNames from "classnames"
-import { noBb } from "@tsukiweb-common/utils/Bbcode"
+import { bb, noBb } from "@tsukiweb-common/utils/Bbcode"
 import { PageEntry } from "script/history"
 import { TsukihimeSceneName } from "types"
 
@@ -14,13 +13,13 @@ const SaveSummary = memo(({saveState}: {saveState: SaveState})=> {
 			return <>{noBb(lastPage.text ?? "").trim()}</>
 
 		case "choice" :
-			const {choices, selected: sel} = lastPage as PageEntry<"choice">
+			const {choices} = lastPage as PageEntry<"choice">
 			return (
 				<>{choices.map(({index: i, str}) =>
 					<Fragment key={i}>
-						{i > 0 && <>, </>}
-						<span className={classNames("choice", {selected: sel == i})} key={i}>
-							{noBb(str)}
+						{i > 0 && <>/ </>}
+						<span className="choice" key={i}>
+							{bb(str)}
 						</span>
 					</Fragment>
 				)}</>

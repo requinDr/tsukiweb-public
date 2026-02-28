@@ -50,7 +50,7 @@
 			width: 100%;
 			display: flex;
 			flex-direction: row;
-			height: 109px;
+			height: 120px;
 			border-bottom: 1px solid transparent;
 			font-size: 1.1em;
 			isolation: isolate;
@@ -60,43 +60,61 @@
 			}
 
 			.deta {
-				padding: 1em;
+				padding: .8em 1em;
 				min-width: 0;
 				flex: 1;
 				overflow: hidden;
+				line-height: 1.4;
 
 				.date {
-					display: inline-flex;
-					column-gap: .6em;
-					flex-flow: wrap;
 					color: var(--text-muted);
 					white-space: nowrap;
+					letter-spacing: .5px;
 				}
-				.chip {
-					font-size: 0.8em;
-					letter-spacing: 0.5px;
-					margin-left: 0.6em;
-					padding: 2px 6px;
-					border-radius: 5px;
-					&__choice {
-						background-color: #0073ff;
-					}
-				}
-
 				.line {
 					white-space: nowrap;
 					overflow: hidden;
 					text-overflow: ellipsis;
 					max-width: 70ch;
+					margin-top: 2px;
 				}
 			}
 
-			.graphics {
-				align-self: center;
-				height: calc(100% - 8px);
-				width: auto;
-				font-size: 0.3em;
-				overflow: hidden;
+			.graphics-area {
+				position: relative;
+				margin-block: 4px;
+				.choices-preview {
+					position: absolute;
+					inset: 0;
+					display: grid;
+					gap: 2px;
+					align-self: center;
+					justify-self: center;
+					padding-block: 6px;
+					overflow: hidden;
+					max-height: 100%;
+					font-size: 0.5em;
+					letter-spacing: 0.5px;
+					width: 90%;
+					font-weight: 500;
+					color: #ffffffe8;
+
+					.choice {
+						background-color: rgb(1 14 36 / 70%);
+						border: 1px solid var(--surface-light);
+						white-space: nowrap;
+						overflow: hidden;
+						padding: 4px 6px;
+					}
+				}
+
+				.graphics {
+					align-self: center;
+					height: 100%;
+					width: auto;
+					font-size: 0.3em;
+					overflow: hidden;
+				}
 			}
 
 			&::after {
