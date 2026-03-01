@@ -5,8 +5,8 @@
 	"type": "module",
 	"dependencies": {
 		"@floating-ui/react": "^0.27.18",
-		"@tanstack/react-virtual": "^3.13.18",
-		"@types/node": "^25.3.0",
+		"@tanstack/react-virtual": "^3.13.19",
+		"@types/node": "^25.3.3",
 		"@types/react": "^19.2.14",
 		"@types/react-dom": "^19.2.3",
 		"classnames": "^2.5.1",
