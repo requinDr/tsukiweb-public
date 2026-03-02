@@ -80,9 +80,6 @@
       "對成人場景的縮圖（保存，載入，流程圖，畫廊，…）套用模糊效果。"
     ],
     "adult-warn": "進入成人場景時警告",
-    "quality": "圖形質量",
-    "quality-sd": "640\u00D7480",
-    "quality-hd": "1280\u00D7960",
     "fullscreen": "全屏",
     "language": "語言",
     "show-locked-content": "解鎖內容",

@@ -80,9 +80,6 @@
       "H 씬의 썸네일을 블러처리 합니다."
     ],
     "adult-warn": "H씬을 들어가기 전에 경고 메시지가 나옵니다.",
-    "quality": "화질",
-    "quality-sd": "640\u00D7480",
-    "quality-hd": "1280\u00D7960",
     "fullscreen": "전체화면",
     "language": "언어설정",
     "show-locked-content": "잠긴 컨텐츠 개방",

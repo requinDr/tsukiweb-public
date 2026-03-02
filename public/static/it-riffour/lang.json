@@ -79,10 +79,7 @@
     "adult-blur-help": [
       "Apply a blur effect on the thumbnails of the adult scenes."
     ],
-    "adult-warn": "Warn me when I enter an H scene",
-    "quality": "Quality",
-    "quality-sd": "640\u00D7480",
-    "quality-hd": "1280\u00D7960",
+    "adult-warn": "Ask to skip H scenes",
     "fullscreen": "Fullscreen",
     "language": "Language",
     "show-locked-content": "Reveal locked content",

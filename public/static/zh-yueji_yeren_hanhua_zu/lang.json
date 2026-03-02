@@ -80,9 +80,6 @@
       "对成人场景的缩图（存档，读档，流程图，画廊，…）套用模糊效果。"
     ],
     "adult-warn": "进入成人场景时警告",
-    "quality": "图形质量",
-    "quality-sd": "640\u00D7480",
-    "quality-hd": "1280\u00D7960",
     "fullscreen": "全屏",
     "language": "语言",
     "show-locked-content": "解锁内容",

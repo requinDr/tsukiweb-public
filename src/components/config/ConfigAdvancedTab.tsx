@@ -66,6 +66,13 @@ const ConfigAdvancedTab = () => {
 		}
 	}
 
+	const handleSetWarning = (value: boolean) => {
+		if (value) {
+			updateValue('blurThumbnails', true)
+		}
+		updateValue('warnHScenes', value)
+	}
+
 	const handleReset = () => {
 		const defaultConf = deepAssign(conf, settings.getReference()!, {extend: false, clone: true})
 		setConf(defaultConf)
@@ -84,7 +91,7 @@ const ConfigAdvancedTab = () => {
 							{ label: strings.config.on, value: true },
 							{ label: strings.config.off, value: false },
 						]}
-						updateValue={newValue => updateValue('warnHScenes', newValue)}
+						updateValue={handleSetWarning}
 					/>
 				</ConfigItem>
 				<ConfigItem
