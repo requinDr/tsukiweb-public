@@ -52,7 +52,7 @@ const ConfigAdvancedTab = () => {
 			text: strings.config["data-erase-warning"],
 			labelYes: strings.yes,
 			labelNo: strings.no,
-			color: "#931414"
+			color: "#ab0000"
 		})
 		if (confirmed) {
 			savesManager.clear()

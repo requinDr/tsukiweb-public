@@ -24,7 +24,7 @@ type Props = {
 	variant: "save"|"load",
 	back: (saveLoaded: boolean)=>void,
 }
-const SavesLayer = ({variant, back}: Props) => {
+const SavesLayout = ({variant, back}: Props) => {
 	const [saves, setSaves] = useState<Array<SaveState>>([])
 	const [focusedId, setFocusedSave] = useState<number>()
 	const parentRef = useRef<HTMLDivElement>(null)
@@ -89,6 +89,7 @@ const SavesLayer = ({variant, back}: Props) => {
 			text: strings.saves["delete-warning"],
 			labelYes: strings.yes,
 			labelNo: strings.no,
+			color: "#ab0000"
 		})
 		if (confirmed) {
 			savesManager.remove(id)
@@ -170,7 +171,7 @@ const SavesLayer = ({variant, back}: Props) => {
 	)
 }
 
-export default SavesLayer
+export default SavesLayout
 
 
 type SavesListProps = {
