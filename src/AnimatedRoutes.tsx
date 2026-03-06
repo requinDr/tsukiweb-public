@@ -21,36 +21,33 @@ import { SCREEN } from "utils/display";
 const AnimatedRoutes = () => {
 	const [location] = useLocation()
 	const pathname = location.split('?')[0]
-	const [hasSeenDisclaimer, setHasSeenDisclaimer] = useState(() =>
-		location !== '/' && location !== '/disclaimer'
-	)
+	
+	// Show disclaimer only if: first page of session was "/" AND disclaimer not yet seen this session
+	const [showDisclaimer, setShowDisclaimer] = useState(() => {
+		const entryPath = sessionStorage.getItem('tsuki_entry_path')
+		const disclaimerSeen = sessionStorage.getItem('tsuki_disclaimer_seen')
+		return entryPath === '/' && !disclaimerSeen
+	})
 
 	const markDisclaimerAsSeen = useCallback(() => {
-		setHasSeenDisclaimer(true)
+		sessionStorage.setItem('tsuki_disclaimer_seen', 'true')
+		setShowDisclaimer(false)
 	}, [])
 
 	const isExtra = [SCREEN.GALLERY, SCREEN.ENDINGS, SCREEN.SCENES, SCREEN.PLUS_DISC].some(path =>
 		pathname.startsWith(path)
 	)
 	const keyPresence = isExtra ? "extra" : pathname
-	const showParticles = pathname !== "/disclaimer" && pathname !== "/window"
+	const showParticles = pathname !== "/window"
+	const titleKey = showDisclaimer ? "title-behind-disclaimer" : "title"
 
 	return (
 		<LazyMotion features={domAnimation} strict>
 			{showParticles && <Particles />}
 			<AnimatePresence mode="wait">
 				<Switch location={pathname} key={keyPresence}>
-					<Route path="/disclaimer">
-						<DisclaimerScreen onAccept={markDisclaimerAsSeen} />
-					</Route>
 					<Route path="/">
-						{!hasSeenDisclaimer 
-							? <Redirect to="/disclaimer" replace /> 
-							: <TitleMenuScreen />
-						}
-					</Route>
-					<Route path="/title">
-						<Redirect to="/" replace />
+						<TitleMenuScreen key={titleKey} />
 					</Route>
 					<Route path={SCREEN.LOAD}>
 						<LoadScreen />
@@ -80,9 +77,12 @@ const AnimatedRoutes = () => {
 					</Route>
 
 					<Route>
-						<Redirect to="/disclaimer" />
+						<Redirect to="/" />
 					</Route>
 				</Switch>
+			</AnimatePresence>
+			<AnimatePresence>
+				{showDisclaimer && <DisclaimerScreen onAccept={markDisclaimerAsSeen} />}
 			</AnimatePresence>
 		</LazyMotion>
 	)

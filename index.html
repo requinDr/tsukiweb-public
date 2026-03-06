@@ -10,8 +10,13 @@
 		<title>Tsukihime</title>
 
 		<script>
-			if (window.location.pathname === '/' || window.location.pathname === '/disclaimer') {
-				document.documentElement.dataset.preloading = 'disclaimer';
+			if (window.location.pathname === '/') {
+				if (!sessionStorage.getItem('tsuki_entry_path')) {
+					sessionStorage.setItem('tsuki_entry_path', '/');
+					document.documentElement.dataset.preloading = 'disclaimer';
+				}
+			} else if (!sessionStorage.getItem('tsuki_entry_path')) {
+				sessionStorage.setItem('tsuki_entry_path', window.location.pathname);
 			}
 		</script>
 		<style>
