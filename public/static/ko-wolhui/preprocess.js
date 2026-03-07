@@ -1,0 +1,45 @@
+
+/**
+ * Make changes to the raw script of Tsukihime, before the conversion.
+ * @param {string} text complete script text
+ * @returns {string|null} the changed script, or null if no change was made
+ */
+function th_raw_fixes(text) {
+    return null;
+}
+
+/**
+ * list the start and end pages at which eroskips must be placed in each scenes.
+ * `eroskip {end-start}` is inserted right after the {start}th page break.
+ * If the end page is ommited (only allowed for the last entry of the scene),
+ * the end will be placed after the last page at the end of the scene.
+ * @type {Record<string,
+ *  number | [number, number] | [...[number, number][], number|[number, number]]>
+ * }
+ */
+const eroskip_pages = {
+    s118: [12], // from page 12 to the end
+    s119: [22],
+    s120: [36],
+    s121: [[18, 65]], // from page 18 to page 65,
+    s122: [38],
+    s180: [[32, 56]],
+    s182: [[4, 24]],
+    s193: [[60, 187]],
+    s289: [[52, 55]],
+    s293: [[21, 23]], // same lines as s289
+    s294: [[12, 46]],
+    s302: [[117, 125]],
+    s374: [[65, 160], [172, 214]],
+    s402: [[16, 26],  [348, 388]],
+    //s403: TBD
+    s404: [[6, 36]],
+    s409: [[118, 244]],
+    s425: [[37, 176]],
+    s504: [[19, 181]]
+}
+
+export {
+    th_raw_fixes,
+    eroskip_pages,
+}
