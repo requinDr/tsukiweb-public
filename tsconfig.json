@@ -22,11 +22,11 @@
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
 
-    "baseUrl": "src",
     "paths": {
-      "@tsukiweb-common/*": ["../tsukiweb-common/src/*"],
-      "@styles/*": ["styles/*"],
-      "@assets/*": ["assets/*"]
+      "*": ["./src/*"],
+      "@tsukiweb-common/*": ["./tsukiweb-common/src/*"],
+      "@styles/*": ["./src/styles/*"],
+      "@assets/*": ["./src/assets/*"]
     }
   },
   "include": ["src"],

@@ -31,7 +31,7 @@
 		"@types/react-modal": "^3.16.3",
 		"@vitejs/plugin-react": "^5.1.4",
 		"sharp": "^0.34.5",
-		"typescript": "^5.9.3",
+		"typescript": "^6.0.1-rc",
 		"vite": "^7.3.1"
 	}
 }
