@@ -1,7 +1,6 @@
 @use 'partials/_components';
 
 #gallery, #endings, #plus-disc {
-	font-size: 1.1rem;
 	height: 100%;
 	overflow-y: auto;
 	scrollbar-gutter: stable;
@@ -9,18 +8,6 @@
 	.tabs {
 		padding-inline: var(--page-padding);
 		margin-top: var(--page-padding);
-	}
-	@media screen and (orientation: landscape) and (max-height: 680px) {
-		main {
-			grid-template-columns: 1fr;
-			grid-template-areas:
-					"tabs"
-					"content";
-
-			& > .tabs {
-				flex-direction: row;
-			}
-		}
 	}
 
 	section {
@@ -95,6 +82,17 @@
 				filter: blur(0);
 				transition-delay: .6s;
 			}
+		}
+	}
+
+	@media screen and (orientation: landscape) and (max-height: 680px) {
+		grid-template-columns: 1fr;
+		grid-template-areas:
+			"tabs"
+			"content";
+
+		& > .tabs {
+			flex-direction: row;
 		}
 	}
 }

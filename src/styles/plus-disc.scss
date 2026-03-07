@@ -1,20 +1,17 @@
 @use '../../tsukiweb-common/src/ui-core/styles/mixins' as *;
 
 #plus-disc {
-	font-size: 1.1em;
 	overflow-y: auto;
 	scrollbar-gutter: stable;
-
+	padding: 1em;
+	padding-bottom: 60px;
 	.tabs {
 		margin-top: 2em;
 		flex-direction: row;
 	}
-	main {
-		padding: 1em;
-		padding-bottom: 60px;
-	}
+
 	.header {
-		margin-top: 2em;
+		margin-top: 1.4em;
 		display: flex;
 
 		.cover {

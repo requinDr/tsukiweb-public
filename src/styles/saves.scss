@@ -20,7 +20,6 @@
 }
 
 #saves-layout {
-	font-size: 1rem;
 	display: grid;
 	grid-template-areas:
 		"page-title page-title"
@@ -32,6 +31,7 @@
 	.saves {
 		grid-area: list;
 		letter-spacing: 1px;
+		padding-inline: 1rem;
 		padding-top: 10px;
 		padding-bottom: 80px;
 		transform: translate3d(0, 0, 0); //huge list on GPU
@@ -52,7 +52,6 @@
 			flex-direction: row;
 			height: 120px;
 			border-bottom: 1px solid transparent;
-			font-size: 1.1em;
 			isolation: isolate;
 
 			&:not(:last-of-type) {
@@ -173,7 +172,7 @@
 		scrollbar-gutter: stable;
 		display: flex;
 		flex-direction: column;
-		font-size: 1.2em;
+		font-size: 1.1em;
 		border-bottom: 2px solid var(--separator);
 		position: relative;
 		isolation: isolate;

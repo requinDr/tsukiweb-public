@@ -27,59 +27,57 @@ const PlusDiscScreen = () => {
 	const [selectedTab, setSelectedTab] = useQueryParam<"scenes" | "gallery">("tab", "scenes")
 
 	return (
-		<div className="page" id="plus-disc">
-			<main>
-				<div className="header">
-					<img
-						src={Cover}
-						alt="Plus-Disc cover"
-						className="cover"
-					/>
-					<div className='desc'>
-						<a href={APP_INFO.PLUS_DISC_VNDB} target="_blank">
-							VNDB
-						</a>
-						<p>
-							{strings.plus_disc.desc.map((line, index) => (
-								<span key={index}>
-									{line}<br />
-								</span>
-							))}
-						</p>
-					</div>
-				</div>
-				<TabsBar
-					tabs={[
-						{
-							label: strings.plus_disc.scenes,
-							value: "scenes"
-						},
-						{
-							label: strings.plus_disc.gallery,
-							value: "gallery"
-						}
-					]}
-					selected={selectedTab}
-					setSelected={setSelectedTab}
+		<main className="page" id="plus-disc">
+			<div className="header">
+				<img
+					src={Cover}
+					alt="Plus-Disc cover"
+					className="cover"
 				/>
+				<div className='desc'>
+					<a href={APP_INFO.PLUS_DISC_VNDB} target="_blank">
+						VNDB
+					</a>
+					<p>
+						{strings.plus_disc.desc.map((line, index) => (
+							<span key={index}>
+								{line}<br />
+							</span>
+						))}
+					</p>
+				</div>
+			</div>
+			<TabsBar
+				tabs={[
+					{
+						label: strings.plus_disc.scenes,
+						value: "scenes"
+					},
+					{
+						label: strings.plus_disc.gallery,
+						value: "gallery"
+					}
+				]}
+				selected={selectedTab}
+				setSelected={setSelectedTab}
+			/>
 
-					<AnimatePresence mode="popLayout">
-						<m.div
-							key={selectedTab}
-							variants={container}
-							initial="hidden"
-							animate="show"
-							exit="hidden"
-						>
-							{selectedTab === "scenes" ? (
-								<ScenesTab />
-							) : (
-								<GalleryTab />
-							)}
-						</m.div>
-					</AnimatePresence>
-			</main>
-		</div>
+			<AnimatePresence mode="popLayout">
+				<m.div
+					key={selectedTab}
+					variants={container}
+					initial="hidden"
+					animate="show"
+					exit="hidden"
+				>
+					{selectedTab === "scenes" ? (
+						<ScenesTab />
+					) : (
+						<GalleryTab />
+					)}
+				</m.div>
+			</AnimatePresence>
+		</main>
 	)
 }
 

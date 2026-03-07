@@ -68,6 +68,7 @@ const HistoryLayer = ({ display, history, onRewind, layers, show, divProps }: Pr
 				{(layers.history || layers.flowchart) && <>
 					<Button
 						variant="default"
+						className="back-button"
 						onClick={handleClose}
 						nav-x={-2} nav-y={10000} // 10k prevents overlapping with flowchart nodes
 					>

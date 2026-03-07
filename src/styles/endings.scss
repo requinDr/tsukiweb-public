@@ -2,11 +2,10 @@
 @use '../../tsukiweb-common/src/ui-core/styles/mixins' as *;
 
 #endings {
-	main {
-		padding-inline: var(--page-padding);
-	}
+	padding-inline: var(--page-padding);
+	
 	.endings-list {
-		margin-top: 1em;
+		margin-top: 1.4em;
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(min(204px, 24vmin), 1fr));
 		isolation: isolate;
@@ -113,7 +112,7 @@
 
 		h3 {
 			all: unset;
-			font-size: clamp(1.1em, 7vmin, 1.2em);
+			font-size: 1.2em;
 		}
 	}
 	.badendings-list {

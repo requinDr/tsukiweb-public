@@ -8,6 +8,7 @@
 	padding: 7cqmin;
 	overflow-x: hidden;
 	touch-action: manipulation;
+	font-size: calc(1 / 1.1 * 1rem);
 
 	&.hide {
 		pointer-events: none;
@@ -15,9 +16,9 @@
 	}
 
 	&.adv {
-		max-height: 300px;
+		max-height: 280px;
 		margin-top: auto;
-		padding-top: .8em;
+		padding-top: 1em;
 		padding-bottom: 0.5em;
 		background: unset;
 		padding-inline: 5%;
@@ -37,6 +38,10 @@
 		.text-container {
 			max-width: 1040px;
 			font-size: clamp(1em, 4.7vmin, 1.5em);
+		}
+
+		@media screen and (orientation: portrait) {
+			max-height: 300px;
 		}
 	}
 

@@ -39,8 +39,8 @@
 
 	.top-actions {
 		position: absolute;
-		top: 14px;
-		right: 14px;
+		top: 1em;
+		right: 1em;
 		display: flex;
 		flex-direction: row;
 		gap: 8px;
@@ -51,7 +51,7 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			font-size: 1.5em;
+			font-size: 1.4em;
 			width: 44px;
 			height: 36px;
 			border-radius: 3px;
@@ -70,7 +70,7 @@
 	.menu {
 		margin-bottom: 5vh;
 		width: min(900px, calc(100% - 2em));
-		font-size: 1.54em;
+		font-size: 1.4em;
 
 		.menu-buttons {
 			display: flex;
@@ -282,7 +282,7 @@
 		text-wrap: balance;
 
 		p {
-			font-size: clamp(1em, 3.6vmin, 1.4em);
+			font-size: clamp(1em, 3.6vmin, 1.3em);
 			line-height: 1.7em;
 			letter-spacing: 1px;
 		}

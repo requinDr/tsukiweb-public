@@ -24,7 +24,6 @@
 	width: inherit;
 	display: flex;
 	flex-direction: column;
-	font-size: 1rem;
 	align-self: center;
 }
 main {
@@ -44,21 +43,10 @@ main {
 /* Overlay */
 .modal {
 	.close-btn {
-		display: flex;
 		margin-inline: auto;
 		margin-top: 1em;
 		font-size: inherit;
 	}
-}
-.ReactModal__Overlay {
-	opacity: 0;
-	transition: opacity 200ms ease-in-out;
-}
-.ReactModal__Overlay--after-open {
-	opacity: 1;
-}
-.ReactModal__Overlay--before-close {
-	opacity: 0;
 }
 
 .tooltip {

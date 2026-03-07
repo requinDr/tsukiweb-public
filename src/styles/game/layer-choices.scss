@@ -18,7 +18,7 @@
 	.choice {
 		@extend %info-box;
 		padding: .4em .8em;
-		font-size: clamp(1.05em, 4.2vmin, 1.5em);
+		font-size: clamp(1em, 4.2vmin, 1.36em);
 		backdrop-filter: none;
 
 		&:disabled {

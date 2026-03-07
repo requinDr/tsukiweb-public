@@ -1,8 +1,6 @@
 @use 'partials/_components';
 
 #config-layout {
-	font-size: 1.1rem;
-
 	.back-button {
 		margin: .5rem;
 		padding: .5rem;
@@ -16,6 +14,7 @@
 		}
 		.page-section {
 			border: 0;
+			padding-inline: 1rem;
 		}
 	}
 
@@ -49,8 +48,8 @@
 		padding: 4px;
 		display: inline-flex;
 		align-items: center;
-		width: 20px;
-		height: 20px;
+		width: 24px;
+		height: 24px;
 		justify-content: center;
 		font-size: .8em;
 		margin-left: 6px;
