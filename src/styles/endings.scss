@@ -12,98 +12,30 @@
 		gap: 10px;
 		flex-grow: 0;
 
-		.ending {
-			display: flex;
-			flex-direction: column;
-			position: relative;
-			font-size: 1.1em;
-			background-color: var(--menu-container);
-			height: 260px;
-
-			@mixin ending-color($color) {
-				$color-title: color.adjust($color, $lightness: -20%);
-				
-				.ending-name {
-					background: linear-gradient(to right, $color-title, color.adjust($color-title, $lightness: 20%), $color-title);
-					-webkit-background-clip: text;
-					background-clip: text;
-					color: transparent;
-				}
-			}
+		@mixin ending-color($color) {
+			$color-title: color.adjust($color, $lightness: -20%);
 			
-			&.attention {
-				overflow: hidden;
-				&:before {
-					content: "!";
-					font-size: 2.5em;
-					position: absolute;
-					top: 32px;
-					right: 0;
-					left: 0;
-					display: grid;
-					justify-content: center;
-					color: rgb(10, 164, 171);
-					text-shadow: 0 0 6px #005aff;
-					z-index: 1;
-
-					@include hover-scale("attention", 1.2);
-				}
-
-				&.unlocked.eclipse {
-					@include ending-color(#ffffff);
-				}
+			.title {
+				background: linear-gradient(to right, $color-title, color.adjust($color-title, $lightness: 20%), $color-title);
+				-webkit-background-clip: text;
+				background-clip: text;
+				color: transparent;
 			}
+		}
 
-			&.unlocked {
-				@include active-shadow;
-				&.ark { @include ending-color(#e7e300) }
-				&.cel { @include ending-color(#00bfff) }
-				&.aki { @include ending-color(#b35a1f) }
-				&.his { @include ending-color(#e70909) }
-				&.koha { @include ending-color(#ff00ff) }
-				&.eclipse { @include ending-color(#970e0e) }
-			}
-	
-			.ending-img {
-				width: 100%;
-				mask-image: linear-gradient(180deg, black 0%, black, transparent);
-				flex: 1;
-				object-fit: cover;
-				overflow-clip-margin: unset;
-				margin-bottom: 3em;
+		.unlocked {
+			&.ark { @include ending-color(#e7e300) }
+			&.cel { @include ending-color(#00bfff) }
+			&.aki { @include ending-color(#b35a1f) }
+			&.his { @include ending-color(#e70909) }
+			&.koha { @include ending-color(#ff00ff) }
+			&.eclipse { @include ending-color(#970e0e) }
+		}
 
-				&.placeholder {
-					border: 1px solid #004f87;
-					background-color: rgb(0 0 0 / 0.4);
-				}
-			}
-			.ending-desc {
-				position: absolute;
-				bottom: 1.4em;
-				left: 0;
-				right: 0;
-				text-align: center;
-				line-height: 1.1;
-				margin-inline: .6em;
-				
-				.ending-name {
-					font-weight: 700;
-					text-wrap: pretty;
-					position: relative;
-					letter-spacing: -0.4px;
-				}
-				.ending-bottom {
-					margin-top: 0.2em;
-					font-size: .86em;
-					opacity: 0.8;
-
-					.separator {
-						user-select: none;
-						margin: 0 2px;
-						font-size: .8em;
-					}
-				}
-			}
+		.separator {
+			user-select: none;
+			margin: 0 2px;
+			font-size: .8em;
 		}
 	}
 

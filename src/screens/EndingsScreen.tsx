@@ -8,7 +8,6 @@ import { settings } from 'utils/settings'
 import MainEnding from 'components/endings/MainEnding'
 import Oshiete from 'components/endings/Oshiete'
 import { noBb } from '@tsukiweb-common/utils/Bbcode'
-import classNames from 'classnames'
 import { useScreenAutoNavigate, useLanguageRefresh, useEclipseUnlocked } from "hooks"
 
 
@@ -27,7 +26,7 @@ const EndingsScreen = () => {
 						ending={{
 							id: ending.char,
 							char: strings.characters[ending.char],
-							image: ending.image,
+							image: `event/${ending.image}`,
 							name: noBb(strings.scenario.routes[ending.char][ending.day]),
 							type: ending.type,
 							scene: ending.scene
@@ -41,13 +40,13 @@ const EndingsScreen = () => {
 					ending={{
 						id: "eclipse",
 						char: "",
-						image: eclipseUnlocked ? "" : "ao_02",
+						image: eclipseUnlocked ? "" : "event/ao_02",
 						name: strings.extra.eclipse,
 						type: "",
 						scene: "eclipse"
 					}}
 					continueScript={eclipseUnlocked} //needed to add to the completed scenes
-					className={classNames({attention: eclipseUnlocked})}
+					attention={eclipseUnlocked}
 					nav-auto={1}
 				/>
 			</section>

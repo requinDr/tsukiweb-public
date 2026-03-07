@@ -3,11 +3,12 @@
 #plus-disc {
 	overflow-y: auto;
 	scrollbar-gutter: stable;
-	padding: 1em;
+	padding: var(--page-padding);
 	padding-bottom: 60px;
 	.tabs {
 		margin-top: 2em;
 		flex-direction: row;
+		padding-inline: 0;
 	}
 
 	.header {
@@ -16,7 +17,7 @@
 
 		.cover {
 			aspect-ratio: 1;
-			width: min(100%, 200px);
+			width: min(100%, 240px);
 			display: block;
 			object-fit: contain;
 		}
@@ -41,42 +42,15 @@
 
 	.scenes-list {
 		display: grid;
-		padding-bottom: 40px;
-		gap: .1px;
+		grid-template-columns: repeat(auto-fit, minmax(min(204px, 100%), 1fr) minmax(min(204px, 100%), 1fr));
+		isolation: isolate;
+		gap: 10px;
 
-		.scene {
-			@include active-shadow;
-			display: grid;
-			grid-template-columns: 160px 1fr;
-			padding: 4px;
-			outline: none;
-			
-			&:not(:last-child) {
-				border-bottom: 1px solid var(--separator);
-			}
-
-			.scene-image {
-				width: 100%;
-				aspect-ratio: 4 / 3;
-			}
-			.scene-title {
-				font-size: 1.2em;
-				padding: 1em;
-
-				.viewed-indicator {
-					font-size: 0.8em;
-					color: var(--text-muted);
-				}
-			}
-
-			@media screen and (max-width: 440px) {
-				grid-template-columns: 1fr;
-
-				.scene-image {
-					aspect-ratio: unset;
-					height: 140px;
-				}
-			}
+		@media screen and (max-width: 440px) {
+			grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
 		}
+	}
+	.gallery-container {
+		padding-inline: 0;
 	}
 }

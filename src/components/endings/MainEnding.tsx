@@ -1,5 +1,4 @@
-import classNames from "classnames"
-import { imageSrc } from "translation/assets"
+import { SceneShortcut } from "@tsukiweb-common/ui-core"
 import { LabelName } from "types"
 import { playScene } from "utils/savestates"
 
@@ -14,47 +13,31 @@ type Props = {
 		scene: LabelName
 	},
 	continueScript?: boolean
+	attention?: boolean
 } & React.HTMLAttributes<HTMLDivElement>
 
-const MainEnding = ({unlocked, ending, continueScript = false, ...props}: Props) => {
+const MainEnding = ({unlocked, ending, continueScript = false, attention, ...props}: Props) => {
 	const {id, char, image, name, type, scene} = ending
 	const startScene = () => playScene(scene, {continueScript: continueScript, viewedOnly: !unlocked})
 
 	return (
-		<div
+		<SceneShortcut
 			{...props}
-			className={classNames("ending", id, {"unlocked": unlocked}, props.className)}
-			onClick={startScene}
-			tabIndex={unlocked ? 0 : -1}
-			role="button"
-			onKeyDown={e => e.key === "Enter" && startScene()}
-			onContextMenu={e => e.preventDefault()}
-		>
-			{unlocked && image ?
-				<img
-					className="ending-img"
-					src={imageSrc(`event/${image}`, 'src')}
-					alt={name}
-					draggable={false}
-				/>
-			:
-				<div className="ending-img placeholder" />
+			id={id}
+			unlocked={unlocked}
+			className={id}
+			images={image ? {bg: image} : {}}
+			title={unlocked ? name : "???"}
+			subtitle={unlocked && char
+				? <>{char} <span className="separator">{`\u2022`}</span> {type}</>
+	 			: (unlocked && !char)
+					? "" : "???"
 			}
-			
-			<div className="ending-desc">
-				<div className="ending-name">
-					{unlocked ? name : "???"}
-				</div>
-				
-				<div className="ending-bottom">
-					{unlocked && char ?
-					<>{char} <span className="separator">{`\u2022`}</span> {type}</>
-					: unlocked && !char ? "" :
-					"???"
-					}
-				</div>
-			</div>
-		</div>
+			onClick={startScene}
+			onKeyDown={e => e.key === "Enter" && startScene()}
+			attention={attention}
+			nav-auto={1}
+		/>
 	)
 }
 

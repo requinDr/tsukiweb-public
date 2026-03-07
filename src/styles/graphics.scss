@@ -78,6 +78,7 @@
 				width: inherit;
 				height: inherit;
 				object-fit: cover;
+				overflow-clip-margin: unset;
 				transition: object-position var(--bg-move-duration) ease-out;
 			}
 			&[bg-align="top"] img {
