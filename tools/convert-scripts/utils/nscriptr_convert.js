@@ -113,15 +113,15 @@ function dwaveFileConvert(num, file) {
  * @param {Token} token
  * @param {Readonly<Token[]>} tokens
  * @param {number} index
- * @param {string[]} clickChars
+ * @param {RegExp|null} clickRE
  */
-function genericTokenFixes(clickChars, token) {
+function genericTokenFixes(clickRE, token) {
     if (token instanceof TextToken) {
-        for (const c of clickChars)
-            token.text = token.text.replaceAll(c, c + '@')
+        if (clickRE) 
+            token.text = token.text.replaceAll(clickRE, '@')
         
         token.text = token.text
-                .replaceAll(/@{2,}/g, '@')// remove dup. '@' if too much added by clickChars
+                .replaceAll(/@{2,}/g, '@')// remove dup. '@' if any
                 .replaceAll(/[-―─―—]{2,}/g, (match)=> `[line=${match.length}]`)
     } else if (token instanceof CommandToken) {
         switch (token.cmd) {
@@ -198,10 +198,10 @@ function genericBlocFixes(tokens) {
  * 
  * @param {Token[]} tokens
  * @param {Array<(token: Token)=>void|boolean|string>} tokenFixes
- * @param {string[]} clickChars
+ * @param {RegExp|null} clickRE
  */
-function fixTokens(tokens, tokenFixes = [], clickChars = []) {
-    tokenFixes.unshift(genericTokenFixes.bind(undefined, clickChars))
+function fixTokens(tokens, tokenFixes = [], clickRE = null) {
+    tokenFixes.unshift(genericTokenFixes.bind(undefined, clickRE))
     
     for (let i=0; i < tokens.length; i++) {
         let token = tokens[i]
@@ -227,7 +227,7 @@ function fixTokens(tokens, tokenFixes = [], clickChars = []) {
             if (tokens[i] == token && token instanceof ConditionToken) {
                 const subTokens = [token.command]
                 // slice(1) to remove genericTokenFixes
-                fixTokens(subTokens, tokenFixes.slice(1), clickChars)
+                fixTokens(subTokens, tokenFixes.slice(1), clickRE)
                 switch (subTokens.length) {
                     case 0 : // empty if
                         tokens.splice(i, 1)
@@ -258,15 +258,15 @@ function fixTokens(tokens, tokenFixes = [], clickChars = []) {
  * })} blockProps 
  * @param {number} start
  * @param {number} stop
- * @param {string[]} clickChars
+ * @param {RegExp|null} clickRE
  */
-function processBlock(blocks, tokens, blockProps, start, stop, clickChars) {
+function processBlock(blocks, tokens, blockProps, start, stop, clickRE) {
     const label = tokens[start].label
     const props = blockProps(label)
     if (props != null) {
         const {tokenFixes = [], blockFixes = []} = props
         let blockTokens = tokens.slice(start, stop)
-        fixTokens(blockTokens, tokenFixes, clickChars)
+        fixTokens(blockTokens, tokenFixes, clickRE)
         for (const f of blockFixes) {
             f(blockTokens, label)
             blockTokens = blockTokens.filter(t=>t != null)
@@ -289,15 +289,23 @@ function splitBlocks(tokens, blockProps) {
     let blockStart = -1
 
     // search clickstr command, will append '@' after each char in clickstr arg.
-    const clickChars = tokens.find(
+    const clickStr = tokens.find(
         t=> t instanceof CommandToken && t.cmd == "clickstr"
-    )?.args[0].replace(/^["`]/, '').replace(/["`]$/, '').split('') ?? []
+    )?.args[0].replace(/^["`]/, '').replace(/["`]$/, '') // remove surrounding quotation marks
+              .replace(']', '\\]' ).replace('[', '\\]') // prepend \ before [ and ]
+              .replace('\\', '\\\\') // double \
+     ?? null
+    let clickRE = null
+    if (clickStr) {
+        // detect position after clickStr sequences not followed by @
+        clickRE = new RegExp(`(?<=[${clickStr}])(?![${clickStr}@])`, 'g')
+    }
 
     for (const [i, token] of tokens.entries()) {
         // 2. chose destination file from last label
         if (token instanceof LabelToken) {
             if (blockStart >= 0) {
-                processBlock(blocks, tokens, blockProps, blockStart, i, clickChars)
+                processBlock(blocks, tokens, blockProps, blockStart, i, clickRE)
             }
             blockStart = i
         }
