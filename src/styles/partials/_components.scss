@@ -2,7 +2,6 @@
 	color: #ffffffe8;
 	background-color: rgb(1 14 36 / 46%);
 	border: 1px solid var(--surface-light);
-	-webkit-backdrop-filter: blur(1em);
 	backdrop-filter: blur(1em);
 
 	@supports not (backdrop-filter: blur(1em)) {

@@ -7,8 +7,6 @@
 @use 'game/layer-choices';
 
 :root {
-	--text-color: #e7e7e7;
-	--text-muted: #bdbdbd;
 	--transition-time: 0.2s;
 	--transition: all var(--transition-time) ease-out;
 	--text-bg: linear-gradient(90deg,
