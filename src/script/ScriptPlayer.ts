@@ -70,6 +70,7 @@ const commands: CommandRecord<ScriptPlayer> = {
         // `goto *endofplay`
         return [{cmd:'goto', arg: label}]
     },
+    'eroskip': processEroSkip,
 }
 
 function processClick(arg: string, _: string, script: ScriptPlayer,
@@ -113,6 +114,14 @@ function processPhase(arg: string, _cmd: string, script: ScriptPlayer) {
         {cmd: 'click', arg: Math.max(1000, settings.nextPageDelay).toString()},
         {cmd: 'bg', arg: "#000000,crossfade,400"},
     ]
+}
+
+function processEroSkip(nb_pages: string, _cmd: string, script: ScriptPlayer) {
+    switch (settings.eroskip) {
+        case 'no' : return;
+        case 'yes' : return; // TODO skip specified number of pages
+        case 'ask' : return; // TODO ask user
+    }
 }
 
 //#endregion

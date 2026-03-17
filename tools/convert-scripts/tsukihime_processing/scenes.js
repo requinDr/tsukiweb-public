@@ -261,6 +261,32 @@ function sceneFixes(tokens) {
 }
 
 /**
+ * 
+ * @param {[[number, number]|number][]} pages 
+ * @param {*} tokens 
+ */
+function eroskip_fixes(pages, tokens) {
+	const pageIndices = []
+	for (const [i, token] of tokens.entries()) {
+		if (token instanceof CommandToken && token.cmd == '\\')
+			pageIndices.push(i)
+	}
+	for (const entry of pages.reverse()) {
+		let start, end;
+		if (typeof entry == 'number') {
+			start = entry
+			end = pageIndices.length
+		} else if (entry.length == 1) {
+			start = entry[0]
+			end = pageIndices.length
+		} else {
+			[start, end] = entry
+		}
+		tokens.splice(pageIndices[start]+1, 0, `eroskip ${end - entry - 1}`);
+	}
+}
+
+/**
  * @param {Map<string, Token[]>} tokens 
  */
 function interScenesFixes(blocks) {
@@ -379,6 +405,19 @@ const ignored_commands = [
 	'goto', 'osiete', 'return', 'select', 'selgosub', //logic-only commands
 	
 ]
+const deleted_scenes = [
+	// Empty scenes
+	's16' , 's17' , 's18' , 's19', 's32', 's38', 's50', 's117', 's272',
+	's300', 's309', 's311', 's411',
+	// Inaccessible scenes
+	's53', 's415',
+	// Content replaced by content of s47
+	's46',
+	// Identical to s201
+	's37',
+	// Identical to 59, 62 and 63.
+	's58', 's60', 's61'
+]
 
 function token_filter(token) {
 	if (token == null) return false
@@ -399,32 +438,31 @@ function token_filter(token) {
 }
 
 /**
+ * @param {Map<string, (tokens: Token[])=>void>} lang_block_fixes
+ * @param {Map<string, ([number, number]|number)[]>} eroskip_pages
  * @param {string} label 
  */
-function getBlockProps(label) {
+function getBlockProps(lang_block_fixes, eroskip_pages, label) {
 	if (!isSceneLabel(label)) {
 		return null // logic blocks handled in separate script
 	}
-	switch(label) {
-		case 's16' : case 's17' : case 's18' : case 's19' : case 's32' :
-		case 's38' : case 's50' : case 's117': case 's272': case 's300':
-		case 's309': case 's311': case 's411': // empty scenes
-			return null
-		case 's53' : case 's415': // inaccessible scenes
-			return null
-		case 's46' : // content replaced by content of s47
-			return null
-		case 's37' : // identical to s201
-			return null
-		case 's58' : case 's60' : case 's61' : // identical to 59, 62 and 63.
-			return null
-		default :
-			return {
-				tokenFixes: [ token_filter, commandFix,
-					tokenFixes.get(label) ].filter(x => x != undefined),
-				blockFixes: [ sceneFixes,
-					blockFixes.get(label) ].filter(x => x != undefined)
-			}
+	if (deleted_scenes.includes(label)) {
+		return null
+	}
+	const token_fixes = [ token_filter, commandFix ]
+	const block_fixes = [ sceneFixes ]
+	if (tokenFixes.has(label))
+		token_fixes.push(tokenFixes.get(label))
+	if (blockFixes.has(label))
+		block_fixes.push(blockFixes.get(label))
+	if (lang_block_fixes.has(label))
+		block_fixes.push(lang_block_fixes.get(label))
+	if (eroskip_pages.has(label))
+		block_fixes.push(eroskip_fixes.bind(undefined, eroskip_pages.get(label)))
+	
+	return {
+		tokenFixes: token_fixes,
+		blockFixes: block_fixes
 	}
 }
 function getFileProps(label) {
@@ -439,32 +477,12 @@ function getFileProps(label) {
 }
 
 /**
- * @param {string} language 
- * @param {string} text 
- */
-function raw_fixes(language, text) {
-	switch(language) {
-		case 'it-riffour' :
-			text = text.replaceAll(/ò(?=[a-fA-F\d]{6})/g, '#')
-			let searchText = `\` Ha HAHAHA HAHAHAHAHAHA\\`
-			let i = text.indexOf(searchText)
-			if (i < 0)
-				throw Error(`cannot find anchor of s404 to add missing playstop`)
-			i += searchText.length
-			text = text.substring(0, i) + '\nplaystop\n' + text.substring(i)
-			return text
-		default : return text
-	}
-}
-
-
-/**
  * @param {string} folder
  * @param {string} filename
  * @param {string|null} outputDir
- * @returns {string|null} Logic file content
+ * @returns {Promise<string|null>} Logic file content
  */
-function processSingleScript(folder, filename, outputDir, blocksTree) {
+async function processSingleScript(folder, filename, outputDir, blocksTree) {
 	const fullscriptPath = path.join(outputPathPrefix, folder, filename)
 
 	if (!fs.existsSync(fullscriptPath)) {
@@ -472,10 +490,26 @@ function processSingleScript(folder, filename, outputDir, blocksTree) {
 		return null
 	}
 
-	const txt = fs.readFileSync(fullscriptPath, 'utf-8')
-	const tokens = parseScript(raw_fixes(folder, txt))
+	let txt = fs.readFileSync(fullscriptPath, 'utf-8')
+	let eroskip_pages = {}
+	let block_fixes = {}
+	let preprocess_module_path = path.join(process.cwd(), outputPathPrefix, folder, 'preprocess.js')
+	if (fs.existsSync(preprocess_module_path)) {
+		preprocess_module_path = path.relative(import.meta.dirname, preprocess_module_path)
+		const lang_module = await import(preprocess_module_path.replaceAll('\\', '/'))
+		if ('th_raw_fixes' in lang_module)
+			txt = lang_module.th_raw_fixes(txt) || txt
+		if ('eroskip_pages' in lang_module)
+			eroskip_pages = lang_module.eroskip_pages
+		if ('block_fixes' in lang_module)
+			block_fixes = lang_module.block_fixes
+	}
+	const tokens = parseScript(txt)
 	
-	const blocks = splitBlocks(tokens, getBlockProps)
+	const blocks = splitBlocks(tokens, getBlockProps.bind(undefined,
+		new Map(Object.entries(block_fixes)),
+		new Map(Object.entries(eroskip_pages))
+	))
 	interScenesFixes(blocks)
 	fixContexts(blocksTree, blocks, cmdToProps, propsToCmds)
 	const fileContents = generateScenes(blocks, getFileProps)
@@ -491,7 +525,7 @@ function processSingleScript(folder, filename, outputDir, blocksTree) {
 }
 
 
-export function main() {
+export async function main() {
 
 	//1. Retrieve scenes tree
 	const treeFilePath = path.join('.', "tsukihime_logic_tree.txt")
@@ -519,7 +553,7 @@ export function main() {
 		processedCount++
 		logProgress(`Processing Tsukihime scripts: ${processedCount}/${totalScripts} (${filename})`)
 		try {
-			processSingleScript(folder, filename, outputDir, tree)
+			await processSingleScript(folder, filename, outputDir, tree)
 		} catch (e) {
 			logError(`Error processing ${filename}: ${e.message}`)
 		}
