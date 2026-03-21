@@ -1,9 +1,9 @@
 {
   "translation": {
-    "name": "月姬野人汉化组 & SHIROU神父",
-    "desc": "Simplified Chinese translation by 月姬野人汉化组(r22129) + Simplified Chinese translation by SHIROU神父, based on r22129. Version 1.6 updated on 2022-03-31.",
-    "url": "https://bbs.sumisora.net/read.php?tid=10940555",
-    "vndb": "https://vndb.org/r71804"
+    "name": "Hawkwin",
+    "desc": "Published by Hawkwin, based on https://vndb.org/r71804. Re-translates most of the texts, and reverts many changes which are made by SHIROU神父 to the original translation by 月姬野人汉化组..",
+    "url": "https://2dfan.com/downloads/42255",
+    "vndb": "https://vndb.org/r151407"
   },
   "translation-pd": {
     "name": "朱月临时汉化组",
