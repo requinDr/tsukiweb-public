@@ -1,7 +1,7 @@
 {
   "translation": {
-    "name": "Hawkwin",
-    "desc": "Published by Hawkwin, based on https://vndb.org/r71804. Re-translates most of the texts, and reverts many changes which are made by SHIROU神父 to the original translation by 月姬野人汉化组..",
+    "name": "月姬野人汉化组& Hawkwin & SHIROU神父",
+    "desc": "月姬汉化补丁最终版v0.92，发布日期：2026/3/21。由Hawkwin基于SHIROU神父个人汉化补丁v1.6(https://vndb.org/r71804) 修改制作而成，对大部分文本进行了重新校对和翻译，将SHIROU神父在月姬野人汉化组的汉化文本上进行的一些不恰当修改还原成原文，删除了SHIROU神父添加的所有括号注释",
     "url": "https://2dfan.com/downloads/42255",
     "vndb": "https://vndb.org/r151407"
   },
