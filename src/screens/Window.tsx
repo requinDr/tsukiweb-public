@@ -23,6 +23,7 @@ import { isPDScene } from 'script/utils';
 import actions, { onAutoPlayStop } from 'utils/window-actions';
 import { settings } from 'utils/settings';
 import { useObserver } from '@tsukiweb-common/utils/Observer';
+import { RatioContainer } from '@tsukiweb-common/ui-core';
 
 
 const Window = () => {
@@ -153,14 +154,14 @@ const Window = () => {
 			transition={{duration: 0.3}}
 			onContextMenu={onContextMenu}>
 			<Fragment key={script.uid}>
-				<div className='ratio-container' onClick={()=> actionsHandler.next()}>
+				<RatioContainer obj={settings} onClick={()=> actionsHandler.next()}>
 					<GraphicsLayer script={script} />
 					<TextLayer
 						script={script}
 						display={layers.text && (topLayer == 'text' || topLayer == 'menu')}
 						isTopLayer={topLayer == 'text'}
 					/>
-				</div>
+				</RatioContainer>
 
 				{script.continueScript && <>
 					<ChoicesLayer script={script} display={layers.text} navigable={topLayer == 'text'} />

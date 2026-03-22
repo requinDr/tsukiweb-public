@@ -29,27 +29,6 @@
 	font-family: var(--game-font), sans-serif;
 	background-color: #000;
 	isolation: isolate;
-
-	.ratio-container {
-		aspect-ratio: var(--ratio, initial);
-		width: var(--max-size, initial);
-		height: 100%;
-		min-width: 0;
-		margin: auto;
-		position: relative;
-		container-type: inline-size;
-
-		&::before {
-			content: "";
-			position: fixed;
-			inset: 0;
-		}
-
-		@media screen and (orientation: portrait) and (min-width: 620px) {
-			width: 100%;
-			height: var(--max-size, initial);
-		}
-	}
 	
 	.dash {
 		text-decoration: line-through;
