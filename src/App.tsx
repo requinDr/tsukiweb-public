@@ -8,11 +8,13 @@ import { Slide, ToastContainer } from "react-toastify";
 import { CommonProvider } from "@tsukiweb-common/context";
 import { imageSrc } from "translation/assets";
 import cg from "utils/gallery";
-import { useObserved } from "@tsukiweb-common/utils/Observer";
+import { useObserved, useObserver } from "@tsukiweb-common/utils/Observer";
 import { settings } from "utils/settings";
 
 const LocaleSetter = () => {
-	document.documentElement.setAttribute('lang', getLocale())
+	useObserver(() => {
+		document.documentElement.setAttribute('lang', getLocale())
+	}, settings, 'language')
 
 	return null
 }
