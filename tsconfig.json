@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "target": "es2022",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "target": "es2023",
+    "lib": ["dom", "esnext"],
     "types": ["vite/client", "node"],
     "allowJs": true,
     "skipLibCheck": true,

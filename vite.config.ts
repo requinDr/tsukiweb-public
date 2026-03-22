@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import viteTsconfigPaths from 'vite-tsconfig-paths';
 
 // List assets files to use from local instead of fetching from remote
 const localAssets = globToRegex([
@@ -15,8 +14,13 @@ const localAssets = globToRegex([
 export default defineConfig({
 	plugins: [
 		react(),
-		viteTsconfigPaths()
 	],
+	resolve: {
+		tsconfigPaths: true
+	},
+	build: {
+		chunkSizeWarningLimit: 1000,
+	},
 	server: {
 		proxy: {
 			'/static': {
