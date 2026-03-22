@@ -29,6 +29,7 @@ public/static/*/*/
 public/static/jp/fullscript_jp.txt
 public/static/jp/*.ks
 public/se
+tsukihime_logic_tree.txt
 
 tools/convert-scripts/input
 tools/convert-scripts/output

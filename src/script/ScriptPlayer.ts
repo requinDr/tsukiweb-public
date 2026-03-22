@@ -116,12 +116,14 @@ function processPhase(arg: string, _cmd: string, script: ScriptPlayer) {
     ]
 }
 
+//TODO
 function processEroSkip(nb_pages: string, _cmd: string, script: ScriptPlayer) {
-    switch (settings.eroskip) {
-        case 'no' : return;
-        case 'yes' : return; // TODO skip specified number of pages
-        case 'ask' : return; // TODO ask user
-    }
+    return
+    // switch (settings.eroskip) {
+    //     case 'no' : return;
+    //     case 'yes' : return; // TODO skip specified number of pages
+    //     case 'ask' : return; // TODO ask user
+    // }
 }
 
 //#endregion

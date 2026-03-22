@@ -547,7 +547,7 @@ export function main() {
     const input_dir = path.join(outputPathPrefix, folder)
     const output_dir = path.join(input_dir, outputDir)
     if (!fs.existsSync(output_dir)) {
-      throw new Error(`Output directory does not exist: ${output_dir}`)
+      fs.mkdirSync(output_dir, { recursive: true })
     }
     
     for (const [file, ks] of Object.entries(files)) {
