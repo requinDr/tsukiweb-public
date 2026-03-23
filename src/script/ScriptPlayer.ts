@@ -118,12 +118,17 @@ function processPhase(arg: string, _cmd: string, script: ScriptPlayer) {
 
 //TODO
 function processEroSkip(nb_pages: string, _cmd: string, script: ScriptPlayer) {
-    return
-    // switch (settings.eroskip) {
-    //     case 'no' : return;
-    //     case 'yes' : return; // TODO skip specified number of pages
-    //     case 'ask' : return; // TODO ask user
-    // }
+    let stopPage = script.currentBlock!.page + (+nb_pages)
+    switch (settings.ero_skip) {
+        case 'no' : return;
+        case 'yes' :
+            script.ffw((l, i, p)=> p == stopPage);
+            return;
+        case 'ask' :
+            const skip = prompt("skip H ?") // TODO replace with proper dialog
+            if (skip?.charAt(0).toLocaleLowerCase() == 'y')
+                script.ffw((l, i, p)=> p == stopPage)
+    }
 }
 
 //#endregion
