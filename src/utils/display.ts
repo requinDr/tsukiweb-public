@@ -10,7 +10,7 @@ export enum SCREEN {
 }
 
 export const displayMode: { [key: string]: any } = {
-  screen: undefined,
+  screen: undefined as SCREEN|undefined,
   bgAlignment: 'center' as ('top' | 'center' | 'bottom'),
   bgMoveTime: 0,
 }

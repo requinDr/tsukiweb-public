@@ -20,7 +20,7 @@ const LocaleSetter = () => {
 }
 
 function App() {
-	useObserved(settings, 'blurThumbnails')
+	useObserved(settings, 'ero_blur')
 	return (
 		<ErrorBoundary FallbackComponent={PageCrash}>
 			<LocaleSetter />

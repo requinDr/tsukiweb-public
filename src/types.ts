@@ -43,8 +43,8 @@ export type SettingsType = {
 	language: TranslationId
 	fixedRatio: ViewRatio
 	// H-related settings
-	blurThumbnails: boolean
-	warnHScenes: boolean
+	cg_blur: boolean
+	eroskip: 'no' | 'ask' | 'yes'
 	// audio settings
 	volume: {
 		master: number

@@ -23,7 +23,7 @@ const ConfigAdvancedTab = () => {
 	const [modal, setModal] = useState<{show: boolean, content: ReactNode}>({show: false, content: undefined})
 
 	const [conf, setConf] = useState(extract(settings,
-		['language', 'blurThumbnails', 'warnHScenes', 'unlockEverything']))
+		['language', 'ero_blur', 'ero_skip', 'unlockEverything']))
 
 	useEffect(()=> {
 		deepAssign(settings, conf)
@@ -68,9 +68,9 @@ const ConfigAdvancedTab = () => {
 
 	const handleSetWarning = (value: boolean) => {
 		if (value) {
-			updateValue('blurThumbnails', true)
+			updateValue('ero_blur', true)
 		}
-		updateValue('warnHScenes', value)
+		updateValue('ero_skip', value ? 'ask' : 'no')
 	}
 
 	const handleReset = () => {
@@ -86,7 +86,7 @@ const ConfigAdvancedTab = () => {
 					label={strings.config["adult-warn"]}
 				>
 					<ConfigButtons
-						currentValue={conf.warnHScenes}
+						currentValue={conf.ero_skip != 'no'}
 						btns={[
 							{ label: strings.config.on, value: true },
 							{ label: strings.config.off, value: false },
@@ -125,12 +125,12 @@ const ConfigAdvancedTab = () => {
 					})}
 				>
 					<ConfigButtons
-						currentValue={conf.blurThumbnails}
+						currentValue={conf.ero_blur}
 						btns={[
 							{ label: strings.config.on, value: true },
 							{ label: strings.config.off, value: false },
 						]}
-						updateValue={newValue => updateValue('blurThumbnails', newValue)}
+						updateValue={newValue => updateValue('ero_blur', newValue)}
 					/>
 				</ConfigItem>
 			</div>

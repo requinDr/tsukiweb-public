@@ -63,6 +63,13 @@ class Settings extends SettingsBase {
       (diff as Partial<Settings>).eventImages = [...new Set(eventImages)]
     }
 
+    if ('blurThumbnails' in diff) {
+      this.ero_blur = !!diff.blurThumbnails
+    }
+    if ('warnHScenes' in diff) {
+      this.ero_skip = diff.warnHScenes ? 'ask' : 'no';
+    }
+
     super.restore(diff)
   }
   

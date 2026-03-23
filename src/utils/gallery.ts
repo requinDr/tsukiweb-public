@@ -12,7 +12,7 @@ function isInGallery(image: string): boolean {
 }
 
 function shouldBlur(image: string): boolean {
-	return (getImg(image)?.sensitive ?? false) && settings.blurThumbnails
+	return (getImg(image)?.sensitive ?? false) && settings.ero_blur
 }
 
 function getByGroup(group: GalleryImg["group"]): string[] {
