@@ -8,7 +8,6 @@
   "theme_color": "#062b64",
   "background_color": "#00153f",
   "display": "standalone",
-  "orientation": "any",
   "icons": [
     {
       "src": "icons/icon.ico",
