@@ -40,7 +40,7 @@
   },
   "config": {
     "on": "Activado",
-    "off": "Desactivadi",
+    "off": "Desactivado",
     "reset": "Restablecer",
     "tab-game": "Juego",
     "tab-audio": "Audio",
