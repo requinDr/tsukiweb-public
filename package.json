@@ -20,7 +20,7 @@
 		"react-tooltip": "^5.30.0",
 		"sass": "^1.98.0",
 		"wouter": "^3.9.0",
-		"yet-another-react-lightbox": "^3.29.1"
+		"yet-another-react-lightbox": "^3.30.1"
 	},
 	"scripts": {
 		"start": "vite",
@@ -29,7 +29,7 @@
 	"devDependencies": {
 		"@vitejs/plugin-react": "^6.0.1",
 		"sharp": "^0.34.5",
-		"typescript": "^6.0.1-rc",
-		"vite": "^8.0.1"
+		"typescript": "^6.0.2",
+		"vite": "^8.0.3"
 	}
 }
