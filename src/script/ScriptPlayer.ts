@@ -9,6 +9,9 @@ import { getGameVariable, setGameVariable } from "utils/variables";
 import { deepAssign, TSForceType } from "@tsukiweb-common/utils/utils";
 import { CommandRecord, VarType } from "@tsukiweb-common/script/utils";
 import { History } from "./history";
+import { dialog } from "@tsukiweb-common/ui-core/components/ModalPrompt";
+import React from "react";
+import { strings } from "translation/lang";
 
 //#endregion ###################################################################
 //#region                             TYPES
@@ -107,9 +110,18 @@ function processEroSkip(nb_pages: string, _cmd: string, script: ScriptPlayer) {
             script.ffw((l, i, p)=> p == stopPage);
             return;
         case 'ask' :
-            const skip = prompt("skip H ?") // TODO replace with proper dialog
-            if (skip?.charAt(0).toLocaleLowerCase() == 'y')
-                script.ffw((l, i, p)=> p == stopPage)
+            dialog.confirm({
+                text: React.createElement(React.Fragment, null,
+                    strings.game["skip-hscene"],
+                    React.createElement("br"),
+                    strings.game["skip-prompt"]
+                ),
+                labelYes: strings.yes,
+                labelNo: strings.no,
+                color: "#a300ab"
+            }).then(confirmed => {
+                if (confirmed) script.ffw((l, i, p)=> p == stopPage)
+            })
     }
 }
 
