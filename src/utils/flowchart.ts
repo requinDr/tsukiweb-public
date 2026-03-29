@@ -25,7 +25,7 @@ export const SCENE_RECT_ATTRS = {
 	y: -SCENE_HEIGHT/2
 }
 
-export type SpritesheetMetadataType = {
+type SpritesheetMetadataType = {
 	f: string[] // file names
 	s: number[][] // spritesheet dimensions: [nw, nh] for each spritesheet
 	d: number[] // dimensions: [width, height]

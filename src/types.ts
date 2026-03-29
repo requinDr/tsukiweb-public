@@ -29,50 +29,6 @@ export type Choice = {
 	disable?: boolean
 }
 
-export type SettingsType = {
-	// scene settings
-	textSpeed: number
-	autoClickDelay: number
-	nextPageDelay: number
-	fastForwardDelay: number
-	enableSceneSkip: boolean // ask to skip scenes
-	preventUnreadSkip: boolean
-	// graphics settings
-	gameFont: string
-	uiFont: string
-	language: TranslationId
-	fixedRatio: ViewRatio
-	// H-related settings
-	cg_blur: boolean
-	eroskip: 'no' | 'ask' | 'yes'
-	// audio settings
-	volume: {
-		master: number
-		track: number
-		se: number
-		titleTrack: number
-		systemSE: number
-	}
-	trackSource: keyof LangJson["audio"]["tracks-path"]
-	autoMute: boolean
-	titleMusic: string
-
-	unlockEverything: boolean
-
-	historyLength: number, // pages stored at runtime in the history
-	savedHistoryLength: number // pages saved when creating a save state
-
-	lastFullExport: {
-		date: number,
-		hash: number
-	},
-	localStorageWarningDelay: number,
-
-	// saved progress
-	eventImages: string[]
-	completedScenes: string[]
-}
-
 export type GalleryImg = {
 	name: string,
 	group?: CharId | "pd",

@@ -4,7 +4,7 @@ import { fetchBlockLines, isScene, nextLabel } from "script/utils";
 import { settings } from "utils/settings";
 import { phaseTexts } from "translation/assets";
 import { closeBB } from "@tsukiweb-common/utils/Bbcode";
-import { Graphics, StrVarName, NumVarName, VarName, RecursivePartial } from "@tsukiweb-common/types";
+import { NumVarName, VarName } from "@tsukiweb-common/types";
 import { getGameVariable, setGameVariable } from "utils/variables";
 import { deepAssign, TSForceType } from "@tsukiweb-common/utils/utils";
 import { CommandRecord, VarType } from "@tsukiweb-common/script/utils";
@@ -13,11 +13,6 @@ import { History } from "./history";
 //#endregion ###################################################################
 //#region                             TYPES
 //##############################################################################
-
-type Audio = {
-  track: string | null
-  looped_se: string | null
-}
 
 export type Regard = {
   ark: number
@@ -31,19 +26,6 @@ export type Phase = {
     routeDay: RouteDayName
     day: number|RouteDayName<'others'>
 }
-
-export type InitContext = RecursivePartial<{
-    label: LabelName
-    page: number
-    audio: Audio
-    graphics: Graphics
-    phase: Phase
-    regard: Regard
-    flags: Iterable<string>
-    textPrefix: string
-    textBox: typeof ScriptPlayer.prototype.textBox
-    conitnueScript: boolean
-}>
 
 type PageBaseContent = {
     phase: Phase,
