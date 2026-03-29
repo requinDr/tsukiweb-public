@@ -102,13 +102,12 @@ function processPhase(arg: string, _cmd: string, script: ScriptPlayer) {
 }
 
 //TODO
-function processEroSkip(nb_pages: string, _cmd: string, script: ScriptPlayer) {
-    let stopPage = script.currentBlock!.page + (+nb_pages)
+function processEroSkip(nb_pages: string, _cmd: string, script: ScriptPlayer, onFinish: VoidFunction) {
     switch (settings.ero_skip) {
-        case 'no' : return;
+        case 'no' : return
         case 'yes' :
-            script.ffw((l, i, p)=> p == stopPage);
-            return;
+            script.skipPages(+nb_pages, false)
+            return
         case 'ask' :
             dialog.confirm({
                 text: React.createElement(React.Fragment, null,
@@ -120,8 +119,13 @@ function processEroSkip(nb_pages: string, _cmd: string, script: ScriptPlayer) {
                 labelNo: strings.no,
                 color: "#a300ab"
             }).then(confirmed => {
-                if (confirmed) script.ffw((l, i, p)=> p == stopPage)
+                if (confirmed)
+                    script.skipPages(+nb_pages, false)
+                onFinish()
             })
+            return {
+                next: ()=>{}, // prevent continuing to next instruction
+            }
     }
 }
 
