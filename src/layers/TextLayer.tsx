@@ -7,13 +7,12 @@ import { useObserved, useObserver } from "@tsukiweb-common/utils/Observer"
 import { DivProps } from "@tsukiweb-common/types"
 import { Bbcode, BBTypeWriter } from "@tsukiweb-common/utils/Bbcode"
 import { preprocessText } from "@tsukiweb-common/utils/utils"
-import classNames from "classnames"
-import { MdFastForward } from "react-icons/md"
 import { useAutoScroll, useEventState, useMousePointer } from "@tsukiweb-common/hooks"
+import { EndLineIndicator, FfwIndicator } from "@tsukiweb-common/ui-core"
 
-type Glyph = "moon"|"page"
+type Glyph = "line"|"page"
 const icons: Record<Glyph, string> = {
-  "moon": moonIcon,
+  "line": moonIcon,
   "page": pageIcon
 }
 
@@ -22,7 +21,7 @@ function onGlyph(setGlyph: (glyph: Glyph|null)=>void,
                 onFinish: VoidFunction) {
   let glyph: Glyph, delay: number
   switch (cmd) {
-    case '@' : glyph = "moon"; delay = settings.autoClickDelay; break
+    case '@' : glyph = "line"; delay = settings.autoClickDelay; break
     case '\\': glyph = "page"; delay = settings.nextPageDelay; break
     default : throw Error(`Unexpected glyph command ${cmd}.`)
   }
@@ -118,7 +117,7 @@ const TextLayer = ({ script, display, isTopLayer,
   const lastLine = lines.at(-1)
   const previousLines = lines.slice(0, -1)
   
-  const glyphNode = glyph && <EndLineIndicator glyph={glyph} hide={!isTopLayer} />
+  const glyphNode = glyph && <EndLineIndicator icon={icons[glyph]} glyph={glyph} hide={!isTopLayer} />
   const twKey = `${script.uid}-${script.currentPage}-${lines.length}`
 
   return (
@@ -152,31 +151,3 @@ const TextLayer = ({ script, display, isTopLayer,
 }
 
 export default memo(TextLayer)
-
-
-const EndLineIndicator = ({glyph, hide}: {glyph: Glyph, hide: boolean}) => (
-  <span className={classNames("cursor", {"hide": hide})} id={glyph}>
-    <img src={icons[glyph]} alt={glyph} />
-  </span>
-)
-
-const FfwIndicator = () => (
-  <div className="ffw">
-    <svg width="0" height="0" style={{ position: 'absolute' }}>
-      <defs>
-        <linearGradient id="gradient-ffw" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="var(--surface-light-active)">
-            <animate attributeName="offset" values="-1; 1" dur="0.8s" repeatCount="indefinite" />
-          </stop>
-          <stop offset="50%" stopColor="var(--surface-light)">
-            <animate attributeName="offset" values="-0.5; 1.5" dur="0.8s" repeatCount="indefinite" />
-          </stop>
-          <stop offset="100%" stopColor="var(--surface-light-active)">
-            <animate attributeName="offset" values="0; 2" dur="0.8s" repeatCount="indefinite" />
-          </stop>
-        </linearGradient>
-      </defs>
-    </svg>
-    <MdFastForward />
-  </div>
-)

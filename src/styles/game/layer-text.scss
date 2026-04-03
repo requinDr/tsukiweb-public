@@ -97,52 +97,8 @@
 			list-style-type: disclosure-closed;
 		}
 	}
-	.ffw {
-		position: absolute;
-		top: .8em;
-		right: 1.2em;
-		font-size: 1rem;
-		pointer-events: none;
 
-		svg {
-			width: 64px;
-			height: 56px;
-			fill: url(#gradient-ffw);
-			filter: drop-shadow(0 0 2px rgb(0 0 0 / 0.5));
-			animation: ffw-pulse 0.75s ease-in-out infinite alternate;
-		}
-	}
-	@keyframes ffw-pulse {
-		from {
-			transform: scale(1);
-			opacity: 0.8;
-		}
-		to {
-			transform: scale(1.1);
-			opacity: 1;
-		}
-	}
-
-	.cursor {
-		--size: clamp(0.95em, min(2.8cqw, 4cqh), 1em);
-		width: var(--size);
-		height: var(--size);
-		margin-left: 8px;
-		margin-top: clamp(0.3em, min(1.4cqw, 2cqh), 0.5em);
-		position: absolute;
-
-		&.hide {
-			opacity: 0;
-			animation-play-state: paused !important;
-		}
-
-		img {
-			width: 100%;
-			height: 100%;
-			display: block;
-		}
-	}
-	#moon {
+	#line {
 		animation: fadeIn 1s ease-out, rotate 4s ease-in-out infinite;
 		@keyframes rotate {
 			0% {
