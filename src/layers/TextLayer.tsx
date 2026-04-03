@@ -80,6 +80,14 @@ const TextLayer = ({ script, display, isTopLayer,
 
   const skip = useCallback(() => setImmediate(true), [])
 
+  useEffect(() => {
+    const resetGlyph = () => setGlyph(null)
+    script.addEventListener('pageStart', resetGlyph)
+    return () => {
+      script.removeEventListener('pageStart', resetGlyph)
+    }
+  }, [script])
+
   useEffect(()=> {
     const _onGlyph = onGlyph.bind(null, setGlyph)
     const _onText = onText.bind(null, skip, onFinishRef)
