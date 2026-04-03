@@ -23,14 +23,20 @@
 	}
 	
 	.sub {
-		margin-block: .6em;
-		background-color: hsl(290deg 90% 33% / 50%);
-		border: 1px solid #9700ff;
-		padding: 1em;
-		border-radius: 3px;
+		margin-block: .6rem;
+		background-color: hsl(0deg 0% 0% / 50%);
+		border: 1px solid var(--btn-select-bg);
+		padding: 1rem;
+		margin-inline: calc(var(--page-padding) * -1);
+		border-radius: 6px;
+		corner-shape: bevel;
 
-		.title {
+		& > .title {
 			font-weight: 600;
+			background: linear-gradient(180deg, #00a5ff 0%, #0080ab 100%);
+			background-clip: text;
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
 		}
 
 		.config {
@@ -61,21 +67,21 @@
 		}
 	}
 
-	.config {
+	.config, .key-map {
 		display: grid;
 		grid-template-columns: minmax(240px, 1fr) 2fr;
-		align-items: center;
-		padding-block: .6em;
+		gap: .4rem;
+		padding: .8rem;
 		min-height: 60px;
 		border-bottom: 1px solid var(--separator);
 
-		&:nth-last-child(2) {
+		&:last-of-type {
 			border-bottom: 0;
 		}
+	}
+	.config {
+		align-items: center;
 
-		.config-name {
-			margin-right: 8px;
-		}
 		.config-actions {
 			display: flex;
 			flex-wrap: wrap;
@@ -89,10 +95,10 @@
 			flex-wrap: wrap;
 
 			.config-btn {
-				min-width: 100px;
+				min-width: 110px;
 
 				&:has(> svg) {
-					padding-left: 0.6em;
+					padding-left: .6em;
 				}
 			}
 		}
@@ -106,15 +112,15 @@
 
 			input[type="range"] {
 				appearance: none;
-				width: min(320px, 100%);
-				height: 1.5px;
-				background: var(--surface-light);
+				width: min(340px, 100%);
+				height: 2px;
+				background: var(--menu-button-bg);
 				cursor: pointer;
 				border: 0;
 				border-radius: 8px;
 
 				&:hover {
-					background: var(--surface-light-active);
+					background: var(--btn-select-accent);
 				}
 	
 				&::-webkit-slider-thumb {
@@ -126,7 +132,7 @@
 					border: 0;
 
 					&:hover {
-						background: var(--surface-light-active);
+						background: var(--btn-select-accent);
 					}
 				}
 	
@@ -138,7 +144,7 @@
 					border: 0;
 
 					&:hover {
-						background: var(--surface-light-active);
+						background: var(--btn-select-accent);
 					}
 				}
 			}
@@ -169,22 +175,15 @@
 		}
 	}
 
-	.keyMap {
-		display: grid;
-		grid-template-columns: 1fr 2fr;
-		align-items: center;
-		padding-block: .8em;
-
-		&:not(:last-of-type) {
-			border-bottom: 1px solid var(--separator) !important;
+	.key-map {
+		.config-actions {
+			display: flex;
+			flex-direction: column;
+			gap: 4px;
 		}
-
-		.action {
-			grid-column: 1;
-		}
-		.keyItem {
-			grid-column: 2;
-			margin-block: 4px;
+		.key-item {
+			color: var(--color-link);
+			font-weight: 600;
 			.info {
 				color: var(--text-muted);
 			}
@@ -197,51 +196,41 @@
 		justify-content: flex-end;
 
 		.btn {
-			min-width: 80px;
+			min-width: 110px;
 		}
 	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 760px) {
 		section {
 			padding-inline: 0;
 		}
 		.sub {
 			padding-inline: 0;
+			margin-inline: 0;
 			.title {
-				padding-inline: 1em;
+				padding-inline: 1rem;
+			}
+		}
+		.config, .key-map {
+			padding: 1.2rem;
+			grid-template-columns: 1fr;
+			min-height: auto;
+
+			.config-actions {
+				margin-inline: 1rem;
 			}
 		}
 		.config {
-			grid-template-columns: 1fr;
-			row-gap: 0.4em;
-			padding-block: 1em;
-			padding-inline: 1em;
-			min-height: auto;
-
-			.config-name {
-				margin-bottom: .2em;
-			}
-			.config-actions {
+			.config-btns {
 				flex-direction: column;
-				flex-wrap: nowrap;
+			}
+			.config-range {
+				justify-content: center;
 			}
 		}
-
-		.keyMap {
-			grid-template-columns: 1fr;
-			row-gap: 0.4em;
-			padding-block: 1em;
-			padding-inline: 1em;
-
-			.action {
-				margin-bottom: .2em;
-				text-decoration: underline;
-				text-underline-offset: 6px;
-				text-decoration-thickness: 1px;
-			}
-			.keyItem {
-				grid-column: 1;
-			}
+		.config-reset {
+			justify-content: center;
+			margin-bottom: 2em;
 		}
 	}
 }
