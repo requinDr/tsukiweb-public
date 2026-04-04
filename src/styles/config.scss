@@ -78,10 +78,12 @@
 		&:last-of-type {
 			border-bottom: 0;
 		}
+
+		.config-name {
+			margin-top: .3em
+		}
 	}
 	.config {
-		align-items: center;
-
 		.config-actions {
 			display: flex;
 			flex-wrap: wrap;
@@ -177,6 +179,7 @@
 
 	.key-map {
 		.config-actions {
+			margin-top: .3em;
 			display: flex;
 			flex-direction: column;
 			gap: 4px;
