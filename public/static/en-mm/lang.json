@@ -42,6 +42,7 @@
     "on": "On",
     "off": "Off",
     "reset": "Reset",
+    "default": "Default",
     "tab-game": "Game",
     "tab-audio": "Audio",
     "tab-controls": "Controls",
@@ -87,6 +88,11 @@
       "Reveals the complete Gallery, Flowchart, Endings, Eclipse, …",
       "Also fulfills the requirement to access the Far Side.",
       "It can be toggled on and off at any time."
+    ],
+    "game-font": "Game text font",
+    "game-font-help": [
+      "Choose a font for the game text.",
+      "The default font is served with the project. Others are loaded from %0 by name."
     ],
     "data": "Data storage",
     "data-export": "Export",

@@ -52,6 +52,10 @@
 	.text-container {
 		margin-inline: auto;
 		max-width: 1000px;
+		font-family: var(--game-font), sans-serif;
+		letter-spacing: 1px;
+		font-size: clamp(.92em, min(2.6cqw, 3.7cqh), 1.68em);
+		line-height: clamp(1.6em, 4.6cqw, 1.95em);
 		--sc: #000;
 		--ts: clamp(0.8px, 0.15cqw, 1.1px);
 		--nts: calc(-1 * var(--ts));
@@ -61,9 +65,6 @@
 			var(--nts) var(--nts) var(--ts) var(--sc),
 			var(--ts) var(--nts) var(--ts) var(--sc),
 			0 0 calc(var(--ts) * 2) var(--sc);
-		letter-spacing: 1px;
-		font-size: clamp(.92em, min(2.6cqw, 3.7cqh), 1.68em);
-		line-height: clamp(1.6em, 4.6cqw, 1.95em);
 	}
 
 	@media screen and (orientation: portrait) and (max-width: 720px){

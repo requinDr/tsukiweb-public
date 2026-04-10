@@ -7,6 +7,7 @@ import { useLanguageRefresh } from "../../hooks/useLanguageRefresh"
 import { MdDeleteForever, MdDownload, MdFileUpload } from "react-icons/md"
 import ModalLanguageSelection from "./ModalLanguageSelection"
 import ConfigModal from "./ConfigModal"
+import FontSelector from "./FontSelector"
 import { Button, PageSection } from "@tsukiweb-common/ui-core"
 import { deepAssign, extract } from "@tsukiweb-common/utils/utils"
 import { bb } from "@tsukiweb-common/utils/Bbcode"
@@ -23,7 +24,7 @@ const ConfigAdvancedTab = () => {
 	const [modal, setModal] = useState<{show: boolean, content: ReactNode}>({show: false, content: undefined})
 
 	const [conf, setConf] = useState(extract(settings,
-		['language', 'ero_blur', 'ero_skip', 'unlockEverything']))
+		['language', 'ero_blur', 'ero_skip', 'unlockEverything', 'gameFont']))
 
 	useEffect(()=> {
 		deepAssign(settings, conf)
@@ -163,6 +164,22 @@ const ConfigAdvancedTab = () => {
 						{ label: strings.no, value: false },
 					]}
 					updateValue={newValue => updateValue('unlockEverything', newValue)}
+				/>
+			</ConfigItem>
+
+			<ConfigItem
+				label={strings.config["game-font"]}
+				helpAction={()=>setModal({show: true, content:
+					<>
+						<h2>{strings.config["game-font"]}</h2>
+						{strings.config["game-font-help"].map((txt, i) =>
+							<p key={i}>{bb(txt.replace('%0', `[url='https://fonts.google.com/']Google Fonts[/url]`))}</p>
+						)}
+					</>
+				})}>
+				<FontSelector
+					value={conf.gameFont}
+					onChange={newValue => updateValue('gameFont', newValue)}
 				/>
 			</ConfigItem>
 

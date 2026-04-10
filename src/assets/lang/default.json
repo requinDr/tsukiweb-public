@@ -41,6 +41,7 @@
     "on": "ON",
     "off": "OFF",
     "reset": "Reset",
+    "default": "Default",
     "tab-game": "Game",
     "tab-audio": "Audio",
     "tab-controls": "Controls",
@@ -86,6 +87,11 @@
       "Reveals Gallery, Flowchart, Endings, Eclipse, …",
       "Unlock Far Side.",
       "Togle on/off any time."
+    ],
+    "game-font": "Game text font",
+    "game-font-help": [
+      "Choose a font for the game text.",
+      "The default font is served with the project. Others are loaded from %0 by name."
     ],
     "data": "Data storage",
     "data-export": "Export",
