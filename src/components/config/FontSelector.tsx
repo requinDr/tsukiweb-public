@@ -75,7 +75,7 @@ const FontSelector = ({ value, onChange }: Props) => {
 
 	return (
 		<div className="font-selector">
-			<div className="font-input-wrapper">
+			<div className="config-input-wrapper">
 				<input
 					ref={inputRef}
 					name="font"
@@ -85,7 +85,7 @@ const FontSelector = ({ value, onChange }: Props) => {
 					onChange={handleInputChange}
 					onKeyDown={handleKeyDown}
 					placeholder={strings.config['default']}
-					className={`font-input ${isLoading ? 'loading' : ''}`}
+					className={`config-input ${isLoading ? 'loading' : ''}`}
 					style={{ fontFamily: value }}
 					nav-auto={1}
 					spellCheck={false}
