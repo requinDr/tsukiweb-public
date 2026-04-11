@@ -88,6 +88,11 @@
       "并满足开启月姬里线的要求，",
       "它可以随时被打开和关闭。"
     ],
+    "game-font": "Game text font",
+    "game-font-help": [
+      "The default font is served with the project.",
+      "To select a different font, input its name. It will be loaded from %0 if available, else from your device."
+    ],
     "data": "存档",
     "data-export": "导出",
     "data-import": "导入",

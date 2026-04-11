@@ -88,6 +88,11 @@
       "토오노가 루트 진행요건도 채우게 됩니다.",
       "이 옵션을 끄는 것으로 원래 진행상태로 돌아갈 수 있습니다."
     ],
+    "game-font": "Game text font",
+    "game-font-help": [
+      "The default font is served with the project.",
+      "To select a different font, input its name. It will be loaded from %0 if available, else from your device."
+    ],
     "data": "저장공관 관리",
     "data-export": "데이터 내보내기",
     "data-import": "데이터 불러오기",

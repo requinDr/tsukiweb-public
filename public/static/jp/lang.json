@@ -91,8 +91,8 @@
     ],
     "game-font": "Game text font",
     "game-font-help": [
-      "Choose a font for the game text.",
-      "The default font is served with the project. Others are loaded from %0 by name."
+      "The default font is served with the project.",
+      "To select a different font, input its name. It will be loaded from %0 if available, else from your device."
     ],
     "data": "データストレージ",
     "data-export": "エクスポート",

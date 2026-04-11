@@ -88,6 +88,11 @@
       "También cumple con el requisito para acceder al Lado Lejano.",
       "Se puede activar y desactivar en cualquier momento."
     ],
+    "game-font": "Game text font",
+    "game-font-help": [
+      "The default font is served with the project.",
+      "To select a different font, input its name. It will be loaded from %0 if available, else from your device."
+    ],
     "data": "Almacenamiento de datos",
     "data-export": "Exportar",
     "data-import": "Importar",
