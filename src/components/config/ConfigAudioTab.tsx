@@ -1,40 +1,21 @@
-import { ReactNode, useEffect, useState } from "react"
+import { ReactNode, useState } from "react"
 import { ConfigButtons, ConfigIconButton, ConfigItem, ConfigRange, ResetButton } from "./ConfigLayout"
-import { settings } from "../../utils/settings"
 import { strings } from "../../translation/lang"
 import { MdOutlineVolumeOff, MdOutlineVolumeUp } from "react-icons/md"
 import { useLanguageRefresh } from "../../hooks/useLanguageRefresh"
+import { useConfig } from "../../hooks"
 import { PageSection } from "@tsukiweb-common/ui-core"
-import { deepAssign, extract, negative } from "@tsukiweb-common/utils/utils"
+import { negative } from "@tsukiweb-common/utils/utils"
 import ConfigModal from "./ConfigModal"
 import { bb } from "@tsukiweb-common/utils/Bbcode"
 
 const ConfigAudioTab = () => {
 	useLanguageRefresh()
-	const [conf, setConf] = useState(extract(settings,
-		['volume', 'trackSource', 'autoMute']))
+	const { conf, update, reset } = useConfig(['volume', 'trackSource', 'autoMute'] as const)
 	const [modal, setModal] = useState<{show: boolean, content: ReactNode}>({show: false, content: undefined})
+	type VolumeKey = Extract<keyof typeof conf.volume, string>
 
-	useEffect(()=> {
-		deepAssign(settings, conf)
-	}, [conf])
-
-	const updateValue = <T extends keyof typeof conf>(
-		key: T,
-		value: typeof conf[T]
-	) => setConf(prev => ({ ...prev, [key]: value }))
-
-	const updateSubValue = <K extends keyof typeof conf, T extends keyof (typeof conf)[K]>(
-		key1: K,
-		key2: T,
-		value: typeof conf[K][T]
-	) => setConf(prev=> {
-		const newConf = deepAssign({}, prev)
-		newConf[key1][key2] = value
-		return newConf
-	})
-
-	const volumeNames: Partial<Record<keyof typeof conf.volume, string>> = {
+	const volumeNames: Partial<Record<VolumeKey, string>> = {
 		'master': strings.config["volume-master"],
 		'track': strings.config["volume-track"],
 		'se': strings.config["volume-se"],
@@ -42,37 +23,33 @@ const ConfigAudioTab = () => {
 		'systemSE': strings.config["volume-system-se"]
 	}
 
-	const adjustVolume = (key: keyof typeof conf.volume, delta: number) => {
-		const currentVal = conf.volume[key]
-		const sign = negative(currentVal) ? -1 : 1
-		const absVal = Math.abs(currentVal)
-		const newVal = Math.max(0, Math.min(10, absVal + delta))
-		updateSubValue('volume', key, sign * newVal)
+	const updateVol = (key: VolumeKey, val: number) => {
+		const nextVol = { ...conf.volume, [key]: val }
+		update('volume', nextVol)
 	}
 
-	const handleReset = () => {
-		const defaultConf = deepAssign(conf, settings.getReference()!, {extend: false, clone: true})
-		setConf(defaultConf)
+	const adjustVolume = (key: VolumeKey, newAbs: number) => {
+		const sign = Math.sign(conf.volume[key]) || 1
+		const clampedAbs = Math.max(0, Math.min(10, newAbs))
+
+		updateVol(key, sign * clampedAbs)
 	}
 
 	return (
 		<PageSection>
-			{(Object.keys(volumeNames) as Array<keyof typeof volumeNames>).map(key=>
+			{(Object.keys(volumeNames) as VolumeKey[]).map(key=>
 				<ConfigItem key={key} label={volumeNames[key]}>
 					<ConfigRange
 						min={0}
 						max={10}
 						step={1}
 						value={Math.abs(conf.volume[key])}
-						onDecrement={() => adjustVolume(key, -1)}
-						onIncrement={() => adjustVolume(key, 1)}
-						onChange={e => {
-							const sign = negative(conf.volume[key]) ? -1 : 1
-							updateSubValue('volume', key, sign * parseInt(e.target.value))
-						}}
+						onDecrement={() => adjustVolume(key, Math.abs(conf.volume[key]) - 1)}
+						onIncrement={() => adjustVolume(key, Math.abs(conf.volume[key]) + 1)}
+						onChange={e => adjustVolume(key, parseInt(e.target.value))}
 					>
 						<ConfigIconButton
-							onClick={()=> updateSubValue('volume', key, -conf.volume[key])}
+							onClick={()=> updateVol(key, -conf.volume[key])}
 							icon={negative(conf.volume[key])
 								? <MdOutlineVolumeOff aria-label="mute" className="off" />
 								: <MdOutlineVolumeUp aria-label="unmute" />
@@ -98,7 +75,7 @@ const ConfigAudioTab = () => {
 			>
 				<ConfigButtons
 					currentValue={conf.trackSource}
-					onChange={v => updateValue('trackSource', v)}
+					onChange={v => update('trackSource', v)}
 					btns={Object.entries(strings.config["track-sources"]).map(
 						([id, name])=> ({label: name, value: id as typeof conf.trackSource}))}
 				/>
@@ -107,7 +84,7 @@ const ConfigAudioTab = () => {
 			<ConfigItem label={strings.config['auto-mute']}>
 				<ConfigButtons
 					currentValue={conf.autoMute}
-					onChange={v => updateValue('autoMute', v)}
+					onChange={v => update('autoMute', v)}
 					btns={[
 						{ label: strings.config.on, value: true },
 						{ label: strings.config.off, value: false },
@@ -115,7 +92,7 @@ const ConfigAudioTab = () => {
 				/>
 			</ConfigItem>
 
-			<ResetButton onClick={handleReset} />
+			<ResetButton onClick={reset} />
 
 			<ConfigModal modal={modal} setModal={setModal} />
 		</PageSection>

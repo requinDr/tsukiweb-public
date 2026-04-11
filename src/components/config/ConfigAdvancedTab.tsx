@@ -1,15 +1,15 @@
-import { ReactNode, useEffect, useState } from "react"
+import { ReactNode, useState } from "react"
 import { ConfigButtons, ConfigItem, ResetButton } from "./ConfigLayout"
 import { exportGameData, importGameData, settings } from "../../utils/settings"
 import { savesManager } from "../../utils/savestates"
 import { strings, languages } from "../../translation/lang"
 import { useLanguageRefresh } from "../../hooks/useLanguageRefresh"
+import { useConfig } from "../../hooks"
 import { MdDeleteForever, MdDownload, MdFileUpload } from "react-icons/md"
 import ModalLanguageSelection from "./ModalLanguageSelection"
 import ConfigModal from "./ConfigModal"
 import FontSelector from "./FontSelector"
 import { Button, PageSection } from "@tsukiweb-common/ui-core"
-import { deepAssign, extract } from "@tsukiweb-common/utils/utils"
 import { bb } from "@tsukiweb-common/utils/Bbcode"
 import { dialog } from "@tsukiweb-common/ui-core/components/ModalPrompt"
 import { polyfillCountryFlagEmojis } from "@tsukiweb-common/utils/flagsPolyfill"
@@ -23,22 +23,13 @@ const ConfigAdvancedTab = () => {
 	const [showLanguage, setShowLanguage] = useState<boolean>(false)
 	const [modal, setModal] = useState<{show: boolean, content: ReactNode}>({show: false, content: undefined})
 
-	const [conf, setConf] = useState(extract(settings,
-		['language', 'ero_blur', 'ero_skip', 'unlockEverything', 'gameFont']))
-
-	useEffect(()=> {
-		deepAssign(settings, conf)
-	}, [conf])
+	const { conf, update, reset } = useConfig(
+		['language', 'eroBlur', 'eroSkip', 'unlockEverything', 'gameFont'] as const)
 
 	if (!flagSupportChecked) {
 		polyfillCountryFlagEmojis()
 		flagSupportChecked = true
 	}
-
-	const updateValue = <T extends keyof typeof conf>(
-		key: T,
-		value: typeof conf[T]
-	) => setConf(prev => ({ ...prev, [key]: value }))
 
 	const exportData = () => {
 		exportGameData()
@@ -69,14 +60,9 @@ const ConfigAdvancedTab = () => {
 
 	const handleSetWarning = (value: boolean) => {
 		if (value) {
-			updateValue('ero_blur', true)
+			update('eroBlur', true)
 		}
-		updateValue('ero_skip', value ? 'ask' : 'no')
-	}
-
-	const handleReset = () => {
-		const defaultConf = deepAssign(conf, settings.getReference()!, {extend: false, clone: true})
-		setConf(defaultConf)
+		update('eroSkip', value ? 'ask' : 'no')
 	}
 
 	return (
@@ -87,7 +73,7 @@ const ConfigAdvancedTab = () => {
 					label={strings.config["adult-warn"]}
 				>
 					<ConfigButtons
-						currentValue={conf.ero_skip != 'no'}
+						currentValue={conf.eroSkip != 'no'}
 						onChange={handleSetWarning}
 						btns={[
 							{ label: strings.config.on, value: true },
@@ -126,8 +112,8 @@ const ConfigAdvancedTab = () => {
 					})}
 				>
 					<ConfigButtons
-						currentValue={conf.ero_blur}
-						onChange={v => updateValue('ero_blur', v)}
+						currentValue={conf.eroBlur}
+						onChange={v => update('eroBlur', v)}
 						btns={[
 							{ label: strings.config.on, value: true },
 							{ label: strings.config.off, value: false },
@@ -159,7 +145,7 @@ const ConfigAdvancedTab = () => {
 				})}>
 				<FontSelector
 					value={conf.gameFont}
-					onChange={v => updateValue('gameFont', v)}
+					onChange={v => update('gameFont', v)}
 				/>
 			</ConfigItem>
 
@@ -175,7 +161,7 @@ const ConfigAdvancedTab = () => {
 				})}>
 				<ConfigButtons
 					currentValue={conf.unlockEverything}
-					onChange={v => updateValue('unlockEverything', v)}
+					onChange={v => update('unlockEverything', v)}
 					btns={[
 						{ label: strings.yes, value: true },
 						{ label: strings.no, value: false },
@@ -204,7 +190,7 @@ const ConfigAdvancedTab = () => {
 				</div>
 			</ConfigItem>
 
-			<ResetButton onClick={handleReset} />
+			<ResetButton onClick={reset} />
 
 			<ConfigModal modal={modal} setModal={setModal} />
 			<ModalLanguageSelection show={showLanguage} setShow={setShowLanguage} />

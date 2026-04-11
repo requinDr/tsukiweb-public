@@ -52,7 +52,7 @@ const SkipLayer = ({script, history, layers}: Props) => {
 				if (initPage !== 0 || !isThScene(label)) return
 
 				// Prompt to skip H scenes
-				if (settings.ero_skip != 'no' && isHScene(label)) {
+				if (settings.eroSkip != 'no' && isHScene(label)) {
 					await new Promise<boolean>((resolve)=> {
 						setMode('hscene')
 						setScene(label)

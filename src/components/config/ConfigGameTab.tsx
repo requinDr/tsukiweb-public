@@ -1,10 +1,9 @@
-import { useEffect, useState } from "react"
 import { ConfigButtons, ConfigItem, ConfigRange, ResetButton } from "./ConfigLayout"
-import { settings } from "../../utils/settings"
 import { getLocale, strings } from "../../translation/lang"
 import { useLanguageRefresh } from "../../hooks/useLanguageRefresh"
+import { useConfig } from "../../hooks"
 import { PageSection } from "@tsukiweb-common/ui-core"
-import { deepAssign, extract, fullscreen } from "@tsukiweb-common/utils/utils"
+import { fullscreen } from "@tsukiweb-common/utils/utils"
 import { ViewRatio, TEXT_SPEED } from "@tsukiweb-common/constants"
 import { useIsFullscreen } from "@tsukiweb-common/hooks"
 
@@ -13,32 +12,16 @@ const DELAY_STEP = 100
 
 const ConfigGameTab = () => {
 	useLanguageRefresh()
-	const [conf, setConf] = useState(extract(settings, [
-		'textSpeed', 'fixedRatio', 'autoClickDelay', 'nextPageDelay']))
+	const { conf, update, reset } = useConfig([
+		'textSpeed', 'fixedRatio', 'autoClickDelay', 'nextPageDelay'] as const)
 	const isFullscreen = useIsFullscreen()
-
-	useEffect(()=> {
-		deepAssign(settings, conf)
-	}, [conf])
-
-	const updateValue = <T extends keyof typeof conf>(
-		key: T,
-		value: typeof conf[T]
-	) => setConf(prev => ({ ...prev, [key]: value }))
 	
-	const numFormat = new Intl.NumberFormat(getLocale(), { maximumSignificantDigits: 3 })
-	const msToS = (ms: number)=> {
-		return numFormat.format(ms/1000)
-	}
+	const msToS = (ms: number)=>
+		(ms / 1000).toLocaleString(getLocale(), { maximumSignificantDigits: 3 })
 
 	const adjustDelay = (key: 'autoClickDelay' | 'nextPageDelay', delta: number) => {
 		const newVal = Math.max(0, Math.min(MAX_DELAY, conf[key] + delta))
-		updateValue(key, newVal)
-	}
-
-	const handleReset = () => {
-		const defaultConf = deepAssign(conf, settings.getReference()!, {extend: false, clone: true})
-		setConf(defaultConf)
+		update(key, newVal)
 	}
 
 	return (
@@ -46,7 +29,7 @@ const ConfigGameTab = () => {
 			<ConfigItem label={strings.config.ratio}>
 				<ConfigButtons
 					currentValue={conf.fixedRatio}
-					onChange={v => updateValue('fixedRatio', v)}
+					onChange={v => update('fixedRatio', v)}
 					btns={[
 						{ label: strings.config["ratio-auto"], value: ViewRatio.unconstrained },
 						{ label: strings.config["ratio-4-3"], value: ViewRatio.fourByThree },
@@ -58,13 +41,7 @@ const ConfigGameTab = () => {
 			<ConfigItem label={strings.config.fullscreen}>
 				<ConfigButtons
 					currentValue={isFullscreen}
-					onChange={v => {
-						if (v && !isFullscreen) {
-							fullscreen.setOn()
-						} else if (!v && isFullscreen) {
-							fullscreen.setOff()
-						}
-					}}
+					onChange={v => v ? fullscreen.setOn() : fullscreen.setOff()}
 					btns={[
 						{ label: strings.config.on, value: true },
 						{ label: strings.config.off, value: false },
@@ -76,7 +53,7 @@ const ConfigGameTab = () => {
 			<ConfigItem label={strings.config["text-speed"]}>
 				<ConfigButtons
 					currentValue={conf.textSpeed}
-					onChange={v => updateValue('textSpeed', v)}
+					onChange={v => update('textSpeed', v)}
 					btns={[
 						{ label: strings.config["text-speed-low"], value: TEXT_SPEED.slow },
 						{ label: strings.config["text-speed-med"], value: TEXT_SPEED.normal },
@@ -94,9 +71,7 @@ const ConfigGameTab = () => {
 					value={conf.autoClickDelay}
 					onDecrement={() => adjustDelay('autoClickDelay', -DELAY_STEP)}
 					onIncrement={() => adjustDelay('autoClickDelay', DELAY_STEP)}
-					onChange={e => {
-						updateValue('autoClickDelay', parseInt(e.target.value))
-					}}
+					onChange={e => update('autoClickDelay', parseInt(e.target.value))}
 				/>
 			</ConfigItem>
 
@@ -108,13 +83,11 @@ const ConfigGameTab = () => {
 					value={conf.nextPageDelay}
 					onDecrement={() => adjustDelay('nextPageDelay', -DELAY_STEP)}
 					onIncrement={() => adjustDelay('nextPageDelay', DELAY_STEP)}
-					onChange={e => {
-						updateValue('nextPageDelay', parseInt(e.target.value))
-					}}
+					onChange={e => update('nextPageDelay', parseInt(e.target.value))}
 				/>
 			</ConfigItem>
 
-			<ResetButton onClick={handleReset} />
+			<ResetButton onClick={reset} />
 		</PageSection>
 	)
 }

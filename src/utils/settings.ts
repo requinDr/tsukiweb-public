@@ -64,10 +64,10 @@ class Settings extends SettingsBase {
     }
 
     if ('blurThumbnails' in diff) {
-      this.ero_blur = !!diff.blurThumbnails
+      this.eroBlur = !!diff.blurThumbnails
     }
     if ('warnHScenes' in diff) {
-      this.ero_skip = diff.warnHScenes ? 'ask' : 'no';
+      this.eroSkip = diff.warnHScenes ? 'ask' : 'no';
     }
 
     super.restore(diff)

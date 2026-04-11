@@ -76,9 +76,9 @@
     "auto-play-delay-text": "オートモード時のメッセージ表示時間：%0s",
     "auto-play-delay-page": "オートモード時のページ切り替え時間：%0s",
     "adult-title": "エロ設定",
-    "adult-blur": "Blur thumbnails",
+    "adult-blur": "Blur images",
     "adult-blur-help": [
-      "Apply a blur effect on the thumbnails of the adult scenes."
+      "Apply a blur effect on the images of the adult scenes."
     ],
     "adult-warn": "エロシーンを読むところで注意される",
     "fullscreen": "フルスクリーン",

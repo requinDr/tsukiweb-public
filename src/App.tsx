@@ -20,7 +20,7 @@ const LocaleSetter = () => {
 }
 
 function App() {
-	useObserved(settings, 'ero_blur')
+	useObserved(settings, 'eroBlur')
 	return (
 		<ErrorBoundary FallbackComponent={PageCrash}>
 			<LocaleSetter />

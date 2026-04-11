@@ -154,9 +154,9 @@
 				display: flex;
 				font-size: 1.2em;
 				&.btn {
-					transition: .1s ease-in-out;
+					padding: .2em;
 					border-radius: 3px;
-					padding: 0.2em;
+					transition: .1s ease-in-out;
 
 					.off {
 						color: var(--off-color);
