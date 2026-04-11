@@ -7,8 +7,10 @@ import ConfigControlsTab from './ConfigControlsTab'
 import { strings } from '../../translation/lang'
 import { useLanguageRefresh } from '../../hooks/useLanguageRefresh'
 import { MdQuestionMark } from 'react-icons/md'
+import { HiMinus, HiPlus } from 'react-icons/hi'
 import { Button, TitleMenuButton, PageTabsLayout } from '@tsukiweb-common/ui-core'
 import { audio } from 'utils/audio'
+import { useButtonSounds } from '@tsukiweb-common/hooks'
 
 export enum ConfigTabs {
 	game = "game",
@@ -97,12 +99,12 @@ type ConfigButtonsEntry<V> = {
 
 interface ConfigButtonsProps<V> {
 	currentValue?: V
+	onChange: (newValue: V) => void
 	btns: ConfigButtonsEntry<V>[]
 	disabled?: boolean
-	updateValue: (newValue: V) => void
 }
 /** Display multiples options to choose from */
-export const ConfigButtons = <V,>({currentValue, btns, disabled, updateValue}: ConfigButtonsProps<V>) => {
+export const ConfigButtons = <V,>({currentValue, onChange, btns, disabled}: ConfigButtonsProps<V>) => {
 	return (
 		<div className="config-btns">
 			{btns.map(b =>
@@ -110,7 +112,7 @@ export const ConfigButtons = <V,>({currentValue, btns, disabled, updateValue}: C
 					key={b.label.toString()}
 					{...ACTION_PROPS}
 					variant="select"
-					onClick={() => updateValue(b.value)}
+					onClick={() => onChange(b.value)}
 					className="config-btn"
 					active={currentValue === b.value}
 					disabled={disabled || b.disabled}
@@ -123,7 +125,32 @@ export const ConfigButtons = <V,>({currentValue, btns, disabled, updateValue}: C
 	)
 }
 
-export const ResetBtn = ({onClick}: {onClick: ()=> void}) => (
+export const ConfigIconButton = ({icon, onClick, disabled}: {icon: JSX.Element, onClick: VoidFunction, disabled?: boolean}) => {
+	const btnSound = useButtonSounds(audio, {onClick}, {clickSound: "impact"})
+	return (
+		<button className="icon btn" {...btnSound} disabled={disabled} nav-auto={1}>
+			{icon}
+		</button>
+	)
+}
+
+type ConfigRangeProps = Omit<ComponentProps<'input'>, 'type'> & {
+	onDecrement: VoidFunction
+	onIncrement: VoidFunction
+	children?: ReactNode
+}
+export const ConfigRange = ({ onDecrement, onIncrement, children, disabled, ...props }: ConfigRangeProps) => {
+	return (
+		<div className="config-range">
+			<ConfigIconButton icon={<HiMinus />} onClick={onDecrement} disabled={disabled} />
+			<input type="range" disabled={disabled} {...props} />
+			<ConfigIconButton icon={<HiPlus />} onClick={onIncrement} disabled={disabled} />
+			{children}
+		</div>
+	)
+}
+
+export const ResetButton = ({onClick}: {onClick: ()=> void}) => (
 	<div className="config-reset">
 		<Button {...ACTION_PROPS} onClick={onClick} nav-auto={1}>
 			{strings.config.reset}

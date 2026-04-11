@@ -1,5 +1,5 @@
 import { ReactNode, useEffect, useState } from "react"
-import { ConfigButtons, ConfigItem, ResetBtn } from "./ConfigLayout"
+import { ConfigButtons, ConfigItem, ResetButton } from "./ConfigLayout"
 import { exportGameData, importGameData, settings } from "../../utils/settings"
 import { savesManager } from "../../utils/savestates"
 import { strings, languages } from "../../translation/lang"
@@ -88,11 +88,11 @@ const ConfigAdvancedTab = () => {
 				>
 					<ConfigButtons
 						currentValue={conf.ero_skip != 'no'}
+						onChange={handleSetWarning}
 						btns={[
 							{ label: strings.config.on, value: true },
 							{ label: strings.config.off, value: false },
 						]}
-						updateValue={handleSetWarning}
 					/>
 				</ConfigItem>
 				<ConfigItem
@@ -127,11 +127,11 @@ const ConfigAdvancedTab = () => {
 				>
 					<ConfigButtons
 						currentValue={conf.ero_blur}
+						onChange={v => updateValue('ero_blur', v)}
 						btns={[
 							{ label: strings.config.on, value: true },
 							{ label: strings.config.off, value: false },
 						]}
-						updateValue={newValue => updateValue('ero_blur', newValue)}
 					/>
 				</ConfigItem>
 			</div>
@@ -148,26 +148,6 @@ const ConfigAdvancedTab = () => {
 			</ConfigItem>
 
 			<ConfigItem
-				label={strings.config["show-locked-content"]}
-				helpAction={()=>setModal({show: true, content:
-					<>
-						<h2>{strings.config["show-locked-content"]}</h2>
-						{strings.config["show-locked-content-help"].map((txt, i) =>
-							<p key={i}>{bb(txt)}</p>
-						)}
-					</>
-				})}>
-				<ConfigButtons
-					currentValue={conf.unlockEverything}
-					btns={[
-						{ label: strings.yes, value: true },
-						{ label: strings.no, value: false },
-					]}
-					updateValue={newValue => updateValue('unlockEverything', newValue)}
-				/>
-			</ConfigItem>
-
-			<ConfigItem
 				label={strings.config["game-font"]}
 				helpAction={()=>setModal({show: true, content:
 					<>
@@ -179,7 +159,27 @@ const ConfigAdvancedTab = () => {
 				})}>
 				<FontSelector
 					value={conf.gameFont}
-					onChange={newValue => updateValue('gameFont', newValue)}
+					onChange={v => updateValue('gameFont', v)}
+				/>
+			</ConfigItem>
+
+			<ConfigItem
+				label={strings.config["show-locked-content"]}
+				helpAction={()=>setModal({show: true, content:
+					<>
+						<h2>{strings.config["show-locked-content"]}</h2>
+						{strings.config["show-locked-content-help"].map((txt, i) =>
+							<p key={i}>{bb(txt)}</p>
+						)}
+					</>
+				})}>
+				<ConfigButtons
+					currentValue={conf.unlockEverything}
+					onChange={v => updateValue('unlockEverything', v)}
+					btns={[
+						{ label: strings.yes, value: true },
+						{ label: strings.no, value: false },
+					]}
 				/>
 			</ConfigItem>
 
@@ -204,7 +204,7 @@ const ConfigAdvancedTab = () => {
 				</div>
 			</ConfigItem>
 
-			<ResetBtn onClick={handleReset} />
+			<ResetButton onClick={handleReset} />
 
 			<ConfigModal modal={modal} setModal={setModal} />
 			<ModalLanguageSelection show={showLanguage} setShow={setShowLanguage} />

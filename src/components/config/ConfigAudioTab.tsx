@@ -1,5 +1,5 @@
 import { ReactNode, useEffect, useState } from "react"
-import { ConfigButtons, ConfigItem, ResetBtn } from "./ConfigLayout"
+import { ConfigButtons, ConfigIconButton, ConfigItem, ConfigRange, ResetButton } from "./ConfigLayout"
 import { settings } from "../../utils/settings"
 import { strings } from "../../translation/lang"
 import { MdOutlineVolumeOff, MdOutlineVolumeUp } from "react-icons/md"
@@ -8,7 +8,6 @@ import { PageSection } from "@tsukiweb-common/ui-core"
 import { deepAssign, extract, negative } from "@tsukiweb-common/utils/utils"
 import ConfigModal from "./ConfigModal"
 import { bb } from "@tsukiweb-common/utils/Bbcode"
-import { HiMinus, HiPlus } from "react-icons/hi"
 
 const ConfigAudioTab = () => {
 	useLanguageRefresh()
@@ -60,32 +59,27 @@ const ConfigAudioTab = () => {
 		<PageSection>
 			{(Object.keys(volumeNames) as Array<keyof typeof volumeNames>).map(key=>
 				<ConfigItem key={key} label={volumeNames[key]}>
-					<div className="config-range">
-						<button className="icon btn" onClick={() => adjustVolume(key, -1)} nav-auto={1}>
-							<HiMinus />
-						</button>
-						<input
-							type="range"
-							min={0}
-							max={10}
-							step={1}
-							value={Math.abs(conf.volume[key])}
-							onChange={e => {
-								const sign = negative(conf.volume[key]) ? -1 : 1
-								updateSubValue('volume', key, sign * parseInt(e.target.value))
-							}} />
-						<button className="icon btn" onClick={() => adjustVolume(key, 1)} nav-auto={1}>
-							<HiPlus />
-						</button>
-
-						<button className="icon btn"
+					<ConfigRange
+						min={0}
+						max={10}
+						step={1}
+						value={Math.abs(conf.volume[key])}
+						onDecrement={() => adjustVolume(key, -1)}
+						onIncrement={() => adjustVolume(key, 1)}
+						onChange={e => {
+							const sign = negative(conf.volume[key]) ? -1 : 1
+							updateSubValue('volume', key, sign * parseInt(e.target.value))
+						}}
+					>
+						<ConfigIconButton
 							onClick={()=> updateSubValue('volume', key, -conf.volume[key])}
-							nav-auto={1}>
-							{negative(conf.volume[key])
+							icon={negative(conf.volume[key])
 								? <MdOutlineVolumeOff aria-label="mute" className="off" />
-								: <MdOutlineVolumeUp aria-label="unmute" />}
-						</button>
-					</div>
+								: <MdOutlineVolumeUp aria-label="unmute" />
+							}
+						>
+						</ConfigIconButton>
+					</ConfigRange>
 				</ConfigItem>
 			)}
 			
@@ -104,24 +98,24 @@ const ConfigAudioTab = () => {
 			>
 				<ConfigButtons
 					currentValue={conf.trackSource}
+					onChange={v => updateValue('trackSource', v)}
 					btns={Object.entries(strings.config["track-sources"]).map(
 						([id, name])=> ({label: name, value: id as typeof conf.trackSource}))}
-					updateValue={newValue => updateValue('trackSource', newValue)}
 				/>
 			</ConfigItem>
 
 			<ConfigItem label={strings.config['auto-mute']}>
 				<ConfigButtons
 					currentValue={conf.autoMute}
+					onChange={v => updateValue('autoMute', v)}
 					btns={[
 						{ label: strings.config.on, value: true },
 						{ label: strings.config.off, value: false },
 					]}
-					updateValue={newValue => updateValue('autoMute', newValue)}
 				/>
 			</ConfigItem>
 
-			<ResetBtn onClick={handleReset} />
+			<ResetButton onClick={handleReset} />
 
 			<ConfigModal modal={modal} setModal={setModal} />
 		</PageSection>
