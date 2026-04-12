@@ -26,28 +26,40 @@ type LayersOptions = {
    * 			   but restored when it is disabled
    */
   backgroundMenu?: 'keep' | 'hide' | 'remove'
-  onChange?: VoidFunction
 }
 
 export class InGameLayersHandler {
   private _text: boolean = true
   private _menu: boolean = false
   private _currentMenu: InGameMenu|null = null
-
   private _backgroundMenu: 'keep' | 'hide' | 'remove'
-  private _onChange: ((layers: InGameLayersHandler)=>void)|VoidFunction|undefined
 
-  constructor({backgroundMenu = 'remove', onChange}: LayersOptions = {}) {
+  private _version = 0
+  private _listeners = new Set<VoidFunction>()
+
+  constructor({backgroundMenu = 'remove'}: LayersOptions = {}) {
     this._backgroundMenu = backgroundMenu
-    this._onChange = onChange
   }
+
+  subscribe = (listener: VoidFunction) => {
+    this._listeners.add(listener)
+    return () => this._listeners.delete(listener)
+  }
+
+  getSnapshot = () => this._version
+
+  private _notify() {
+    this._version++
+    this._listeners.forEach(l => l())
+  }
+
   get text() { return this._text }
   set text(value: boolean) {
     if (value != this._text) {
       this._text = value
       this._currentMenu = null
       this._menu = false
-      this._onChange?.(this)
+      this._notify()
     }
   }
   get graphics() { return !this._text }
@@ -63,8 +75,7 @@ export class InGameLayersHandler {
     if (value != this.menu) {
       this._menu = value
       this._currentMenu = null
-      if (value == this.menu)
-        this._onChange?.(this)
+      if (value == this.menu) this._notify()
     }
   }
   get history() { return this._currentMenu == 'history' }
@@ -107,7 +118,7 @@ export class InGameLayersHandler {
         if (this.menu && this._backgroundMenu == 'remove')
           this.menu = false
         this._currentMenu = menu
-        this._onChange?.(this)
+        this._notify()
       }
     } else if (this._currentMenu == menu) {
       this.exitCurrentMenu()
@@ -116,7 +127,7 @@ export class InGameLayersHandler {
   exitCurrentMenu() {
     if (this._currentMenu){
       this._currentMenu = null
-      this._onChange?.(this)
+      this._notify()
     }
   }
   back() {

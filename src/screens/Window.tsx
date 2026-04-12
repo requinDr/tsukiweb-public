@@ -1,4 +1,4 @@
-import { Fragment, useCallback, useReducer, useRef, useMemo } from 'react';
+import { Fragment, useCallback, useRef, useMemo, useSyncExternalStore } from 'react';
 import * as m from "motion/react-m"
 import '@styles/game.scss';
 import HistoryLayer from '../layers/HistoryLayer';
@@ -36,11 +36,10 @@ const Window = () => {
 		return s
 	})
 
-	const [, onLayersChange] = useReducer(x => x + 1, 0)
 	const [layers] = useReset(()=> new InGameLayersHandler({
-		onChange: onLayersChange,
 		backgroundMenu: 'remove'
 	}))
+	useSyncExternalStore(layers.subscribe, layers.getSnapshot)
 	const [actionsHandler] = useReset(()=>
 		new actions.UserActionsHandler(script, layers, remountScript)
 	)
@@ -109,35 +108,35 @@ const Window = () => {
 					show={show}
 					onRewind={remountScript}
 				/>
-
-				<SavesLayer
-					mode={layers.save ? 'save' : layers.load ? 'load' : null}
-					onBack={load => {
-						layers.back()
-						if (load) remountScript()
-					}}
-				/>
-				
-				<ConfigLayer
-					display={layers.config}
-					onBack={handleBackConfig}
-				/>
-
-				{layers.text &&
-					<button className="menu-button"
-						onClick={()=>{ layers.menu = true }}>
-						<HiMenu />
-					</button>
-				}
-				<MenuLayer
-					display={layers.menu}
-					show={show}
-					script={script}
-					layers={layers}
-					qLoad={actionsHandler.quickLoad.bind(actionsHandler)}
-					qSave={actionsHandler.quickSave.bind(actionsHandler)}
-				/>
 			</Fragment>
+
+			<SavesLayer
+				mode={layers.save ? 'save' : layers.load ? 'load' : null}
+				onBack={load => {
+					layers.back()
+					if (load) remountScript()
+				}}
+			/>
+			
+			<ConfigLayer
+				display={layers.config}
+				onBack={handleBackConfig}
+			/>
+
+			{layers.text &&
+				<button className="menu-button"
+					onClick={()=>{ layers.menu = true }}>
+					<HiMenu />
+				</button>
+			}
+			<MenuLayer
+				display={layers.menu}
+				show={show}
+				script={script}
+				layers={layers}
+				qLoad={actionsHandler.quickLoad.bind(actionsHandler)}
+				qSave={actionsHandler.quickSave.bind(actionsHandler)}
+			/>
 		</m.div>
 	)
 }
