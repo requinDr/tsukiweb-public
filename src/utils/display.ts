@@ -13,6 +13,7 @@ export const displayMode: { [key: string]: any } = {
   screen: undefined as SCREEN|undefined,
   bgAlignment: 'center' as ('top' | 'center' | 'bottom'),
   bgMoveTime: 0,
+  replaceNavigation: false,
 }
 
 type InGameMenu = 'history' | 'flowchart' | 'save' | 'load' | 'config'

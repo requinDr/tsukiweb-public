@@ -17,7 +17,9 @@ export function useScreenAutoNavigate(currentScreen: SCREEN) {
 			displayMode.screen = currentScreen
 		}
 		const handleNavigate = (screen: SCREEN) => {
-			setLocation(screen)
+			const replace = displayMode.replaceNavigation
+			displayMode.replaceNavigation = false
+			setLocation(screen, { replace })
 		}
 		observe(displayMode, 'screen', handleNavigate, {
 			filter: (s) => s != currentScreen
