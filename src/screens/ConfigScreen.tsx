@@ -14,14 +14,14 @@ const ConfigScreen = () => {
 	useKeyArrows()
 	const [selectedTab, setSelectedTab] = useQueryParam<ConfigTabs>("tab", ConfigTabs.game)
 
-	function back() {
+	function handleBack() {
 		displayMode.screen = SCREEN.TITLE
 	}
 
 	useEffect(()=> {
 		const handleKeyDown = (event: KeyboardEvent) => {
 			if (event.key === "Escape") {
-				back()
+				handleBack()
 			}
 		}
 		window.addEventListener("keydown", handleKeyDown)
@@ -37,7 +37,7 @@ const ConfigScreen = () => {
 			animate={{opacity: 1}}
 			exit={{opacity: 0}}>
 			<ConfigLayout
-				back={back}
+				onBack={handleBack}
 				selectedTab={selectedTab}
 				setSelectedTab={setSelectedTab}
 			/>

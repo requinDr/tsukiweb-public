@@ -66,7 +66,7 @@ export function onAutoPlayStop() {
 }
 
 
-type ShowLayers = {
+export type ShowLayers = {
 	graphics: boolean,
 	history: boolean,
 	flowchart: boolean,
@@ -175,7 +175,7 @@ function swipeCallback(layers: InGameLayersHandler,
 //#region                       ACTION FUNCTIONS
 //##############################################################################
 
-class UserActionsHandler {
+export class UserActionsHandler {
 	private _script: ScriptPlayer|null
 	private _layers: InGameLayersHandler
 	private _remountScript: VoidFunction

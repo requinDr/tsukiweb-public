@@ -27,12 +27,12 @@ const tabComponents = {
 }
 
 type Props = {
-	back: ()=>void
+	onBack: ()=>void
 	selectedTab: ConfigTabs
 	setSelectedTab: (activeTab: ConfigTabs)=>void
 }
 
-const ConfigLayout = ({back, selectedTab, setSelectedTab}: Props) => {
+const ConfigLayout = ({onBack, selectedTab, setSelectedTab}: Props) => {
 	useLanguageRefresh()
 
 	const tabs: ComponentProps<typeof PageTabsLayout>["tabs"] = [
@@ -50,7 +50,7 @@ const ConfigLayout = ({back, selectedTab, setSelectedTab}: Props) => {
 			selectedTab={selectedTab}
 			setSelectedTab={setSelectedTab}
 			backButton={
-				<TitleMenuButton audio={audio} onClick={back.bind(null)} className="back-button" nav-auto={1}>
+				<TitleMenuButton audio={audio} onClick={onBack} className="back-button" nav-auto={1}>
 					{`<<`} {strings.back}
 				</TitleMenuButton>
 			}>

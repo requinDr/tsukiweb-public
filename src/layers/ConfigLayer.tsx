@@ -5,9 +5,9 @@ import { AnimatedHideActivityDiv } from "@tsukiweb-common/ui-core/components/Ani
 
 type Props = {
 	display: boolean
-	back: ()=>void
+	onBack: ()=>void
 }
-const ConfigLayer = ({display, back}: Props) => {
+const ConfigLayer = ({display, onBack}: Props) => {
 	const [activeTab, setActiveTab] = useState(ConfigTabs.game)
 	const rootRef = useRef<HTMLDivElement>(null)
 
@@ -24,7 +24,7 @@ const ConfigLayer = ({display, back}: Props) => {
 			className="layer"
 			ref={rootRef}>
 			<ConfigLayout
-				back={back}
+				onBack={onBack}
 				selectedTab={activeTab}
 				setSelectedTab={setActiveTab}
 			/>

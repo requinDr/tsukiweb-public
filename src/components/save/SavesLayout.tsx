@@ -22,9 +22,9 @@ const SAVE_ACTION_ID = 1
 
 type Props = {
 	variant: "save"|"load",
-	back: (saveLoaded: boolean)=>void,
+	onBack: (saveLoaded: boolean)=>void,
 }
-const SavesLayout = ({variant, back}: Props) => {
+const SavesLayout = ({variant, onBack}: Props) => {
 	const [saves, setSaves] = useState<Array<SaveState>>([])
 	const [focusedId, setFocusedSave] = useState<number>()
 	const parentRef = useRef<HTMLDivElement>(null)
@@ -80,7 +80,7 @@ const SavesLayout = ({variant, back}: Props) => {
 		} else {
 			history.loadSaveState(save)
 			displayMode.screen = SCREEN.WINDOW
-			back(true)
+			onBack(true)
 		}
 	}
 
@@ -159,7 +159,7 @@ const SavesLayout = ({variant, back}: Props) => {
 			<div className="save-buttons">
 				<TitleMenuButton
 					audio={audio}
-					onClick={back.bind(null, false)}
+					onClick={onBack.bind(null, false)}
 					className="back-button"
 					nav-auto={1}>
 					{`<<`} {strings.back}

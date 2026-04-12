@@ -1,4 +1,4 @@
-import { Fragment, useCallback, useEffect, useReducer, useRef, useMemo } from 'react';
+import { Fragment, useCallback, useReducer, useRef, useMemo } from 'react';
 import * as m from "motion/react-m"
 import '@styles/game.scss';
 import HistoryLayer from '../layers/HistoryLayer';
@@ -6,21 +6,17 @@ import MenuLayer from '../layers/MenuLayer';
 import SavesLayer from '../layers/SavesLayer';
 import { HiMenu } from 'react-icons/hi';
 import { InGameLayersHandler, SCREEN, displayMode } from '../utils/display';
-import { commands as audioCommands, audio } from '../utils/audio';
 import ConfigLayer from '../layers/ConfigLayer';
-import { useSwipeGesture } from '@tsukiweb-common/input/touch';
-import { useKeyMap } from '@tsukiweb-common/input/KeyMap';
 import { useSetter as useReset } from '@tsukiweb-common/hooks';
-import { useDOMEvent } from '@tsukiweb-common/hooks/useDOMEvent';
 import { ScriptPlayer } from 'script/ScriptPlayer';
 import history from 'script/history';
 import GraphicsLayer from 'layers/GraphicsLayer';
 import TextLayer from 'layers/TextLayer';
 import ChoicesLayer from 'layers/ChoicesLayer';
 import SkipLayer from 'layers/SkipLayer';
-import { useScreenAutoNavigate } from 'hooks';
+import { useGameInputs, useScreenAutoNavigate, useScriptManager } from 'hooks';
 import { isPDScene } from 'script/utils';
-import actions, { onAutoPlayStop } from 'utils/window-actions';
+import actions, { ShowLayers } from 'utils/window-actions';
 import { settings } from 'utils/settings';
 import { useObserver } from '@tsukiweb-common/utils/Observer';
 import { RatioContainer } from '@tsukiweb-common/ui-core';
@@ -28,126 +24,64 @@ import { RatioContainer } from '@tsukiweb-common/ui-core';
 
 const Window = () => {
 	useScreenAutoNavigate(SCREEN.WINDOW)
-	const rootElmtRef = useRef(null)
+	const rootRef = useRef(null)
+
 	const [script, remountScript] = useReset(()=> {
-		const script = new ScriptPlayer(history)
-		script.addEventListener('finish', (complete)=> {
+		const s = new ScriptPlayer(history)
+		s.addEventListener('finish', (complete) => {
 			if (complete) displayMode.screen = SCREEN.TITLE
 		})
-		if (script.graphics.bgAlign) // restore the alignement of the background
-			displayMode.bgAlignment = script.graphics.bgAlign
-		return script
+		if (s.graphics.bgAlign)
+			displayMode.bgAlignment = s.graphics.bgAlign
+		return s
 	})
-	const [, onLayersChange] = useReducer(x=>x+1, 0)
-	const [layers, ] = useReset(()=> new InGameLayersHandler({
+
+	const [, onLayersChange] = useReducer(x => x + 1, 0)
+	const [layers] = useReset(()=> new InGameLayersHandler({
 		onChange: onLayersChange,
 		backgroundMenu: 'remove'
 	}))
-	const [actionsHandler, ] = useReset(()=>
-		new actions.UserActionsHandler(script, layers, remountScript))
-	const topLayer = layers.topLayer
+	const [actionsHandler] = useReset(()=>
+		new actions.UserActionsHandler(script, layers, remountScript)
+	)
 
 	useObserver(remountScript, settings, 'language', { skipFirst: true })
 
-	const show = useMemo(() => {
+	const show: ShowLayers = useMemo(() => {
 		const isPd = isPDScene(script.currentLabel ?? "")
+		const canSave = script.continueScript || isPd
 		return {
 			graphics: true,
 			history: true,
 			flowchart: !isPd,
-			save: script.continueScript || isPd,
+			save: canSave,
 			load: true,
 			config: true,
 			title: true,
-			qSave: script.continueScript || isPd,
-			qLoad: script.continueScript || isPd,
+			qSave: canSave,
+			qLoad: canSave,
 			copyScene: true,
 		}
 	}, [script.currentLabel, script.continueScript])
 
-	useEffect(()=> {
-		if (history.empty)
-			displayMode.screen = SCREEN.TITLE
-		actionsHandler.onScriptChange(script)
-		script.setCommands(audioCommands)
-		if (!script.continueScript) {
-			script.addEventListener('afterBlock', ()=> {
-				//console.log("scene ended, return to previous page")
-				script.stop()
-				window.history.back()
-			})
-		}
-		script.addEventListener('autoPlayStop', onAutoPlayStop)
-		if (!script.currentBlock) {
-			//console.debug("starting script")
-			script.start()
-		}
-		const {track, looped_se} = script.audio
-		if (track && track.length > 0)
-			audio.playGameTrack(track)
-		else
-			audio.stopGameTrack()
-
-		if (looped_se && looped_se.length > 0)
-			audio.playWave(looped_se, true)
-		else
-			audio.stopWave()
-		window.script = script
-	}, [script])
-
-	useEffect(()=> {
-		if (history.empty)
-			return
-		//pause script execution when text is not the top layer
-		if (script) {
-			if (script.paused) {
-				if (topLayer == 'text')
-					script.resume()
-			} else {
-				if (topLayer != 'text')
-					script.pause()
-			}
-		}
-	}, [topLayer])
-
-//............ user inputs .............
-	const _createKeyMap = useCallback(()=> actions.createKeyMap(layers, show), [layers, show])
-	useKeyMap(_createKeyMap, (action, e, ...args)=>
-		actionsHandler.handleAction(action, e, ...args),
-		document, "keydown", { capture: false })
-
-	// useGamepad({fct: gameLoopGamepad.bind(null, actionsHandler.current!)})
-
-	useSwipeGesture(actions.swipeCallback.bind(null, layers),
-		rootElmtRef, 50)
-	
-	useDOMEvent((e: WheelEvent)=> {
-		if (e.ctrlKey)
-			return
-		const topLayer = layers.topLayer
-		if (e.deltaY < 0 && ['text', 'graphics'].includes(topLayer)) {
-			layers.history = true
-		} else if (e.deltaY > 0 && topLayer === 'text') {
-			actionsHandler.next()
-		}
-	}, window, 'wheel')
+	useScriptManager({script, history, layers, actionsHandler})
+	useGameInputs({rootRef, layers, actionsHandler, show})
 
 	const onContextMenu = (e: React.MouseEvent<HTMLElement>) => {
 		e.preventDefault()
-		const isTouchDevice = window.matchMedia("(pointer: coarse)").matches
-		if (isTouchDevice) return
-		
-		actionsHandler.back()
+		if (!window.matchMedia("(pointer: coarse)").matches)
+			actionsHandler.back()
 	}
 
 	const handleBackConfig = useCallback(() => {
 		layers.back()
 	}, [layers])
 
-//............... render ...............
+	const topLayer = layers.topLayer
+
 	return (
 		<m.div
-			className="page window" ref={rootElmtRef}
+			className="page window" ref={rootRef}
 			initial={{opacity: 0}}
 			animate={{opacity: 1}}
 			exit={{opacity: 0}}
@@ -173,18 +107,21 @@ const Window = () => {
 					history={history}
 					layers={layers}
 					show={show}
-					onRewind={remountScript} />
+					onRewind={remountScript}
+				/>
 
 				<SavesLayer
 					mode={layers.save ? 'save' : layers.load ? 'load' : null}
-					back={(load)=> {
+					onBack={load => {
 						layers.back()
 						if (load) remountScript()
-					}} />
+					}}
+				/>
 				
 				<ConfigLayer
 					display={layers.config}
-					back={handleBackConfig} />
+					onBack={handleBackConfig}
+				/>
 
 				{layers.text &&
 					<button className="menu-button"
@@ -198,7 +135,8 @@ const Window = () => {
 					script={script}
 					layers={layers}
 					qLoad={actionsHandler.quickLoad.bind(actionsHandler)}
-					qSave={actionsHandler.quickSave.bind(actionsHandler)} />
+					qSave={actionsHandler.quickSave.bind(actionsHandler)}
+				/>
 			</Fragment>
 		</m.div>
 	)

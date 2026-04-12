@@ -6,10 +6,10 @@ import AnimatedHideActivityDiv from "@tsukiweb-common/ui-core/components/Animate
 
 type Props = {
   mode: null|'save'|'load'
-  back: (saveLoaded: boolean)=>void
+  onBack: (saveLoaded: boolean)=>void
 }
 
-const SavesLayer = ({mode, back}: Props) => {
+const SavesLayer = ({mode, onBack}: Props) => {
   const rootRef = useRef<HTMLDivElement>(null)
   const lastMode = useRef<NonNullable<Props['mode']>>(mode ?? 'save')
   useLanguageRefresh()
@@ -25,7 +25,7 @@ const SavesLayer = ({mode, back}: Props) => {
       ref={rootRef}
     >
       <div className="page-content">
-        <SavesLayout key={lastMode.current} variant={lastMode.current} back={back} />
+        <SavesLayout key={lastMode.current} variant={lastMode.current} onBack={onBack} />
       </div>
     </AnimatedHideActivityDiv>
   )

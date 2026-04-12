@@ -11,7 +11,7 @@ const LoadScreen = () => {
 	useLanguageRefresh()
 	useKeyArrows()
 
-	function back(saveLoaded: boolean) {
+	function handleBack(saveLoaded: boolean) {
 		if (!saveLoaded)
 			displayMode.screen = SCREEN.TITLE
 	}
@@ -19,7 +19,7 @@ const LoadScreen = () => {
 	useEffect(()=> {
 		const handleKeyDown = (event: KeyboardEvent) => {
 			if (event.key === "Escape") {
-				back(false)
+				handleBack(false)
 			}
 		}
 		window.addEventListener("keydown", handleKeyDown)
@@ -35,7 +35,7 @@ const LoadScreen = () => {
 			animate={{opacity: 1}}
 			exit={{opacity: 0}}>
 			<div className="page-content">
-				<SavesLayout variant="load" back={back}/>
+				<SavesLayout variant="load" onBack={handleBack}/>
 			</div>
 		</m.div>
 	)
