@@ -15,8 +15,7 @@
 	bottom: 0;
 	right: 0;
 	z-index: 1;
-	rotate: 180deg;
-	transform: scale(-1, 1);
+	transform: rotate(180deg) scale(-1, 1);
 }
 .leftOrnament {
 	bottom: 0;
