@@ -3,33 +3,33 @@
 	"version": "0.6.0",
 	"private": true,
 	"type": "module",
-	"dependencies": {
-		"@floating-ui/react": "^0.27.19",
-		"@tanstack/react-virtual": "^3.13.23",
-		"@types/node": "^25.5.0",
-		"@types/react": "^19.2.14",
-		"@types/react-dom": "^19.2.3",
-		"classnames": "^2.5.1",
-		"dialog-polyfill": "^0.5.6",
-		"motion": "^12.38.0",
-		"react": "^19.2.4",
-		"react-dom": "^19.2.4",
-		"react-error-boundary": "^6.1.1",
-		"react-icons": "^5.6.0",
-		"react-toastify": "^11.0.5",
-		"react-tooltip": "^5.30.0",
-		"sass": "^1.98.0",
-		"wouter": "^3.9.0",
-		"yet-another-react-lightbox": "^3.30.1"
-	},
 	"scripts": {
 		"start": "vite",
 		"build": "tsc && vite build"
 	},
+	"dependencies": {
+		"@floating-ui/react": "^0.27.19",
+		"@tanstack/react-virtual": "^3.13.23",
+		"classnames": "^2.5.1",
+		"dialog-polyfill": "^0.5.6",
+		"motion": "^12.38.0",
+		"react": "^19.2.5",
+		"react-dom": "^19.2.5",
+		"react-error-boundary": "^6.1.1",
+		"react-icons": "^5.6.0",
+		"react-toastify": "^11.0.5",
+		"react-tooltip": "^5.30.1",
+		"sass": "^1.99.0",
+		"wouter": "^3.9.0",
+		"yet-another-react-lightbox": "^3.31.0"
+	},
 	"devDependencies": {
+		"@types/node": "^25.6.0",
+		"@types/react": "^19.2.14",
+		"@types/react-dom": "^19.2.3",
 		"@vitejs/plugin-react": "^6.0.1",
 		"sharp": "^0.34.5",
 		"typescript": "^6.0.2",
-		"vite": "^8.0.3"
+		"vite": "^8.0.8"
 	}
 }
