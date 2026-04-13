@@ -53,7 +53,6 @@ const HistoryLayer = ({ display, history, onRewind, layers, show, divProps }: Pr
 			{layers.history && history.pagesLength > 0 ?
 				<HistoryTab key={history.lastPage.page}
 					history={history}
-					close={handleClose}
 					onPageSelect={loadPage}
 				/>
 			: layers.flowchart ?
@@ -105,12 +104,10 @@ export default memo(HistoryLayer)
 
 type HistoryTabProps = {
 	history: History
-	close: () => void
 	onPageSelect: (pageIndex: number) => void
 }
 const HistoryTab = ({
 		history,
-		close,
 		onPageSelect
 	}: HistoryTabProps) => {
 	const containerRef = useRef<HTMLDivElement>(null)

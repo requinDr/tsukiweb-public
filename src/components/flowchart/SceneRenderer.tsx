@@ -35,6 +35,7 @@ const VisibleScene = memo(({ node, onClick, ...props }: SceneProps) => {
 	}, [closePopover, onClick, node.id])
 
 	const classes = classNames("fc-scene", "unlocked", {
+		"active": node.active,
 		"blur": node.graph?.bg && cg.shouldBlur(node.graph.bg),
 		"disabled": disabled
 	})
