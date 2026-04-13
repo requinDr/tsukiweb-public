@@ -83,11 +83,7 @@ export class History extends HistoryBase<ScriptPlayer, PageType,
       return
     
     if (this.pageContext == null && script.currentBlock) {
-      this.onPageStart({
-        ...script.pageContent(),
-        page: script.currentBlock.page,
-        label: script.currentBlock.label
-      } as PageContext)
+      this.onPageStart(script.pageContext()!)
     }
     super.onTextChange(script)
   }
