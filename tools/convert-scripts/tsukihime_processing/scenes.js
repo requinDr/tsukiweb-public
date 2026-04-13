@@ -266,7 +266,7 @@ function sceneFixes(tokens) {
  * @param {*} tokens 
  */
 function eroskip_fixes(pages, tokens) {
-	const pageIndices = []
+	const pageIndices = [-1] // -1 to insert eroskip at the start if necessary
 	for (const [i, token] of tokens.entries()) {
 		if (token instanceof CommandToken && token.cmd == '\\')
 			pageIndices.push(i)
@@ -282,7 +282,7 @@ function eroskip_fixes(pages, tokens) {
 		} else {
 			[start, end] = entry
 		}
-		tokens.splice(pageIndices[start]+1, 0, `eroskip ${end - entry - 1}`);
+		tokens.splice(pageIndices[start]+1, 0, `eroskip ${+end - start}`);
 	}
 }
 

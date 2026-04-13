@@ -9,6 +9,9 @@ import { getGameVariable, setGameVariable } from "utils/variables";
 import { deepAssign, TSForceType } from "@tsukiweb-common/utils/utils";
 import { CommandRecord, VarType } from "@tsukiweb-common/script/utils";
 import { History } from "./history";
+import { dialog } from "@tsukiweb-common/ui-core/components/ModalPrompt";
+import React from "react";
+import { strings } from "translation/lang";
 
 //#endregion ###################################################################
 //#region                             TYPES
@@ -99,13 +102,31 @@ function processPhase(arg: string, _cmd: string, script: ScriptPlayer) {
 }
 
 //TODO
-function processEroSkip(nb_pages: string, _cmd: string, script: ScriptPlayer) {
-    return
-    // switch (settings.eroskip) {
-    //     case 'no' : return;
-    //     case 'yes' : return; // TODO skip specified number of pages
-    //     case 'ask' : return; // TODO ask user
-    // }
+function processEroSkip(nb_pages: string, _cmd: string, script: ScriptPlayer, onFinish: VoidFunction) {
+    switch (settings.ero_skip) {
+        case 'no' : return
+        case 'yes' :
+            script.skipPages(+nb_pages, false)
+            return
+        case 'ask' :
+            dialog.confirm({
+                text: React.createElement(React.Fragment, null,
+                    strings.game["skip-hscene"],
+                    React.createElement("br"),
+                    strings.game["skip-prompt"]
+                ),
+                labelYes: strings.yes,
+                labelNo: strings.no,
+                color: "#a300ab"
+            }).then(confirmed => {
+                if (confirmed)
+                    script.skipPages(+nb_pages, false)
+                onFinish()
+            })
+            return {
+                next: ()=>{}, // prevent continuing to next instruction
+            }
+    }
 }
 
 //#endregion
