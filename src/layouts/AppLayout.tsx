@@ -1,8 +1,9 @@
 import { useEffect } from "react"
 import { settings } from "../utils/settings"
 import { useObserver } from "@tsukiweb-common/utils/Observer"
-import { loadGoogleFont } from "../utils/fonts"
+import { isFontAvailable, loadGoogleFont } from "../utils/fonts"
 import { DEFAULT_GAME_FONT } from "@tsukiweb-common/utils/settings"
+import { strings } from "translation/lang"
 
 type Props = {
 	children: React.ReactNode
@@ -17,14 +18,16 @@ const AppLayout = ({ children }: Props) => {
 		const root = document.documentElement
 		root.style.setProperty('--game-font', font)
 		if (font && font !== DEFAULT_GAME_FONT) {
-			loadGoogleFont(font)
+			if (!isFontAvailable(font, strings.disclaimer.join('')))
+				loadGoogleFont(font)
 		}
 	}, settings, "gameFont")
 
 	// Load saved font on startup
 	useEffect(() => {
 		if (settings.gameFont && settings.gameFont !== DEFAULT_GAME_FONT) {
-			loadGoogleFont(settings.gameFont)
+			if (!isFontAvailable(settings.gameFont, strings.disclaimer.join('')))
+				loadGoogleFont(settings.gameFont)
 		}
 	}, [])
 

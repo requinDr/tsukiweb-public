@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import { strings } from '../../translation/lang'
 import { Button } from '@tsukiweb-common/ui-core'
-import { loadGoogleFont } from 'utils/fonts'
+import { isFontAvailable, loadGoogleFont } from 'utils/fonts'
 import { DEFAULT_GAME_FONT } from '@tsukiweb-common/utils/settings'
 
 const POPULAR_FONTS = [
@@ -39,7 +39,12 @@ const FontSelector = ({ value, onChange }: Props) => {
 		}
 
 		setIsLoading(true)
-		const success = await loadGoogleFont(trimmed)
+		let success: boolean
+
+		if (isFontAvailable(trimmed, strings.disclaimer.join('')))
+			success = true
+		else
+			success = await loadGoogleFont(trimmed)
 		setIsLoading(false)
 		
 		if (success) {
