@@ -123,7 +123,6 @@ goto *s46
 select *f47a,[%flg6 && %cleared]*f46b
 *f46b
 if (%regard_his>%regard_aki && %regard_his>%regard_koha) goto *f49
-if (%regard_koha>%regard_aki && %regard_koha>%regard_his) goto *f203
 goto *f48
 *f47a
 goto *s47a
@@ -133,14 +132,11 @@ goto *f51
 *f48
 goto *s48
 *skip48
+if (%regard_koha>%regard_aki && %regard_koha>%regard_his) goto *f205
 goto *f204
 *f49
 goto *s49
 *skip49
-goto *f205
-*f203
-goto *s203
-*skip203
 goto *f205
 *f183
 goto *s183
@@ -424,18 +420,11 @@ goto *endofplay
 *f199
 goto *s199
 *skip199
-if (%clear_ark_true!=0) goto *f503
-goto *f199_0
-*f199_0
 goto *f52
-*f503
-goto *s503
-*skip503
-select *f52a,*f53a
 *f52
 goto *s52
 *skip52
-goto *f52a
+select *f52a,[%clear_ark_true]*f53a
 *f52a
 goto *s52a
 *skip52a
@@ -1260,8 +1249,7 @@ select *f338a,*f338b
 if (%flgN>=1) goto *f339
 goto *f340
 *f338b
-if (%flgS>=1) goto *f341
-goto *f342
+goto *f341
 *f339
 goto *s339
 *skip339
@@ -1273,11 +1261,7 @@ goto *f343
 *f341
 goto *s341
 *skip341
-inc %flgO
-goto *f343
-*f342
-goto *s342
-*skip342
+if (%flgS>=1) inc %flgO
 goto *f343
 *f386
 goto *s386

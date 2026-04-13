@@ -218,7 +218,7 @@ function fixTokens(tokens, tokenFixes = [], clickRE = null) {
                     if (fixResult == false)
                         tokens.splice(i, 1)
                     else
-                        tokens.splice(i, 1, ...parseScript(s, token.index))
+                        tokens.splice(i, 1, ...parseScript(fixResult, token.index))
                     i--
                     break // restart fixing this token
                 }

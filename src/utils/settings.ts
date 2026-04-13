@@ -33,9 +33,10 @@ class Settings extends SettingsBase {
     // change replaced scenes in completed scenes list
     const completedScenes = ((diff as Partial<Settings>).completedScenes ?? [])
     const redirectedScenes = {
-      's23': null , 's24': null , 's47': 's46',
-      's58': 's57', 's59': 's57', 's60': 's62',
-      's61': 's63' }
+      's23' : null , 's24' : null , 's47' : 's46' ,
+      's58' : 's57', 's59' : 's57', 's60' : 's62' ,
+      's61' : 's63', 's203': 's48', 's342': 's341',
+      's503': 's52', }
     for (const [label, replace] of Object.entries(redirectedScenes)) {
       const i = completedScenes.indexOf(label)
       if (i >= 0) {

@@ -38,7 +38,10 @@ const redirected_scenes = {
 	f47  : "f46" , // identical scenes right before near/far-side split
 	f37  : "f201", // identical scenes after school 1st day
 	f38	 : "f40" , // f38 only used to increase regard_aki, moved after s40
+	f203 : "f48" , // identical scenes at beginning of far side
 	f300 : "f301", // empty scene, removed
+	f342 : "f341", // identical scenes, middle of Akiha route
+	f503 : "f52" , // identical scenes at the end of Arc route.
 }
 
 function redirect(token) {
@@ -155,10 +158,28 @@ function getBlockProps(label) {
 						addChoiceCondition(t, '*f46b', "%flg6 && %cleared")
 				})
 				break
+			case 'f46b' :
+				tokenFixes.push((t)=> { // f203 redirected to identical f48, branch moved after f48
+					if (t instanceof ConditionToken && t.command.args[0] == '*f203')
+						return false
+				})
+				break
+			case 'skip48' :
+				blockFixes.push((tokens)=> {
+					tokens.splice(1, 0, ...parseScript(
+						"if %regard_koha>%regard_aki && %regard_koha>%regard_his goto *f205"
+					))
+				})
+				break
 			case 'skip116a' : // if (...) goto *f117, choices imported
 				tokenFixes.push((t)=> {
 					if (t instanceof ConditionToken)
 						return false 
+				})
+				break
+			case 'skip199' : // s503 identical to s52 => branch moved after s52
+				blockFixes.push((tokens)=> {
+					tokens.splice(1, tokens.length-1, ...parseScript("goto *f52"))
 				})
 				break
 			case 'skip201' : // replaced *f37 with *f201 => condition *f202 choice on %clear_his
@@ -199,6 +220,23 @@ function getBlockProps(label) {
 					addChoiceCondition(t, '*f64', "%regard_cel>=3")
 				})
 				break
+			case "f338b" :
+				tokenFixes.push((t)=> {
+					if (t instanceof ConditionToken)
+						return false
+				})
+				break
+			case "skip341" :
+				blockFixes.push((tokens)=> {
+					tokens.splice(1, 1, ...parseScript("if %flgS>=1 inc %flgO"))
+				})
+			case 'skip503' :
+				// f503 deleted in favor of f52
+				// add condition on the 2nd choice, skip52 later replaced by skip503
+				tokenFixes.push((t)=> {
+					addChoiceCondition(t, '*f53a', "%clear_ark_true")
+				})
+				break
 			case 'f23' : case 'f24'    : // scenes merged into s21 and s22
 			case 'f37' : case 'skip37' : // redirected to f201
 			case 'f38' : // only "inc regard_aki", moved to skip40
@@ -207,8 +245,12 @@ function getBlockProps(label) {
 			case 'f59' : // merged into f57
 			case 'f60' : case 'skip60' : // replaced by f62
 			case 'f61' : case 'skip61' : // replaced by f63
+			case 'f199_0' : // moved to skip199
 			case 'f300' : case 'skip300' : // empty, redirected to f301
+			case 'f342' : case 'skip342' :
 			case 'f415' : case 'f53' : case 'skip53': // inaccessible scenes
+			case 'f203' : case 'skip203': // redirected to f48
+			case 'f503' : // redirected to f52
 				return null
 		}
 		return { tokenFixes, blockFixes }
@@ -231,6 +273,7 @@ function interBlockFixes(blocks) {
 		'skip21' : 'skip24', // day 1, merged scene is 3 lines to ask where to eat
 		'skip22' : 'skip23', // day 1, idem
 		'skip57' : 'skip59', // day 2, idem
+		'skip52' : 'skip503', // end of arc route, identical scene, different choices
 	}
 	for (const [dest, src] of Object.entries(merged)) {
 		const destBlock = blocks.get(dest)
@@ -277,7 +320,7 @@ function interBlockFixes(blocks) {
 function inc_hisui_skip323(text) {
 	let i = text.indexOf("\n*skip323")
 	if (i < 0)
-		throw Error(`Cannot find maker "*skip323"`)
+		throw Error(`Cannot find marker "*skip323"`)
 	let j = text.indexOf('\ngoto', i)+1
 	if (text.substring(i, j).includes('%hisui_regard'))
 		return text

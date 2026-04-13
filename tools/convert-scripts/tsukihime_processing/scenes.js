@@ -416,7 +416,13 @@ const deleted_scenes = [
 	// Identical to s201
 	's37',
 	// Identical to 59, 62 and 63.
-	's58', 's60', 's61'
+	's58', 's60', 's61',
+	// identical to s48
+	's203',
+	// identical to s341
+	's342',
+	// Identical to s52
+	's503',
 ]
 
 function token_filter(token) {
