@@ -3,9 +3,8 @@ import { Bbcode } from "@tsukiweb-common/utils/Bbcode"
 import { FcNode } from "utils/flowchart"
 
 type PopoverProps = {
-	node: FcNode|undefined,
+	node: FcNode | undefined
 }
-
 const ScenePopover = ({ node }: PopoverProps) => {
 
 	return (
