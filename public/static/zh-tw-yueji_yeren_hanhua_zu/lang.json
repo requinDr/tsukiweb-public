@@ -137,6 +137,7 @@
   "game": {
     "skip-viewed": "該場景曾顯示過。",
     "skip-hscene": "This scene contains adult content.",
+    "skip-hcontent": "This passage contains adult content.",
     "skip-prompt": "要跳過嗎？",
     "toast-qsave": "進度已保存",
     "toast-qload": "恢復進度",
@@ -144,8 +145,7 @@
     "toast-save-fail": "無法保存進度",
     "toast-load-fail": "無法恢復進度",
     "toast-autoplay-stop": "自動模式停止",
-    "toast-ffw-stop": "快轉停止",
-    "toast-hscene-waning": "你將要閱讀包含成人內容的場景。"
+    "toast-ffw-stop": "快轉停止"
   },
   "menu": {
     "graphics": "顯示影像",

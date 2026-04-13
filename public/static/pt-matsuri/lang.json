@@ -137,6 +137,7 @@
   "game": {
     "skip-viewed": "Você já viu esta cena.",
     "skip-hscene": "This scene contains adult content.",
+    "skip-hcontent": "This passage contains adult content.",
     "skip-prompt": "Você quer pular?",
     "toast-qsave": "O progresso foi salvo",
     "toast-qload": "Progresso restaurado",
@@ -144,8 +145,7 @@
     "toast-save-fail": "Não foi possível salvar o progresso dessa sessão",
     "toast-load-fail": "Não foi possível restaurar o progresso dessa sessão",
     "toast-autoplay-stop": "Reprodução automática interrompida",
-    "toast-ffw-stop": "Avanço rápido parado",
-    "toast-hscene-waning": "Você está prestes a ler uma cena com conteúdo adulto."
+    "toast-ffw-stop": "Avanço rápido parado"
   },
   "menu": {
     "graphics": "Gráficos",

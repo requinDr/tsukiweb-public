@@ -79,7 +79,7 @@
     "adult-blur-help": [
       "Apply a blur effect on the images of the adult scenes."
     ],
-    "adult-warn": "Ask to skip H scenes",
+    "adult-warn": "Ask to skip H content",
     "fullscreen": "Fullscreen",
     "language": "Language",
     "show-locked-content": "Reveal locked content",
@@ -137,6 +137,7 @@
   "game": {
     "skip-viewed": "You have already seen this scene.",
     "skip-hscene": "This scene contains adult content.",
+    "skip-hcontent": "This passage contains adult content.",
     "skip-prompt": "Do you want to skip it?",
     "toast-qsave": "Progress has been saved",
     "toast-qload": "Progress restored",
@@ -144,8 +145,7 @@
     "toast-save-fail": "Could not save progress",
     "toast-load-fail": "Could not restore progress",
     "toast-autoplay-stop": "Auto-play stopped",
-    "toast-ffw-stop": "Fast-Forward stopped",
-    "toast-hscene-waning": "You are entering a scene with mature content."
+    "toast-ffw-stop": "Fast-Forward stopped"
   },
   "menu": {
     "graphics": "Graphics",

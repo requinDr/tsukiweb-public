@@ -10,8 +10,6 @@ import { toast } from "react-toastify";
 import { strings } from "translation/lang";
 import { FaSave } from "react-icons/fa";
 import { MdPlayArrow } from 'react-icons/md';
-import { isThScene } from "script/utils";
-import { SCENE_ATTRS } from "./constants";
 import directionalNavigate from "@tsukiweb-common/input/arrowNavigation";
 
 function noFocus() {
@@ -49,11 +47,6 @@ function quickSave(history: History) {
 		autoClose: 1400,
 		toastId: "qs-toast",
 	})
-}
-
-export function isHScene(label?: LabelName): boolean {
-	if (!label) return false
-	return isThScene(label) && !!SCENE_ATTRS.scenes[label]?.h
 }
 
 export function onAutoPlayStop() {

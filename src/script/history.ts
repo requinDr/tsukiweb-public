@@ -78,6 +78,20 @@ export class History extends HistoryBase<ScriptPlayer, PageType,
     this.setPage({type: 'phase'})
   }
 
+  override onTextChange(script: ScriptPlayer) {
+    if (!this.enabled || script.text.length == 0)
+      return
+    
+    if (this.pageContext == null && script.currentBlock) {
+      this.onPageStart({
+        ...script.pageContent(),
+        page: script.currentBlock.page,
+        label: script.currentBlock.label
+      } as PageContext)
+    }
+    super.onTextChange(script)
+  }
+
   onPageStart(context: PageContext): void {
     const {label} = context
     if (isScene(label) || (label.startsWith('skip') && context.page == 0))

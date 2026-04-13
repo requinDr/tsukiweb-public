@@ -12,7 +12,6 @@ import { History } from "script/history"
 import cg from "utils/gallery"
 import { audio } from "utils/audio"
 import { InGameLayersHandler } from "utils/display"
-import { isHScene } from "utils/window-actions"
 import { Graphics } from "@tsukiweb-common/types"
 import AnimatedHideActivityDiv from "@tsukiweb-common/ui-core/components/AnimatedHideActivityDiv"
 import GraphicsGroup from "@tsukiweb-common/graphics/GraphicsGroup"
@@ -51,17 +50,6 @@ const SkipLayer = ({script, history, layers}: Props) => {
 			async (label, initPage)=> {
 				if (initPage !== 0 || !isThScene(label)) return
 
-				// Prompt to skip H scenes
-				if (settings.eroSkip != 'no' && isHScene(label)) {
-					await new Promise<boolean>((resolve)=> {
-						setMode('hscene')
-						setScene(label)
-						onFinish.current = resolve
-					})
-					return
-				}
-
-				// Prompt to skip already-viewed scenes
 				if (settings.enableSceneSkip && viewedScene(label)) {
 					await new Promise<boolean>((resolve)=> {
 						setMode('viewed')
@@ -75,16 +63,30 @@ const SkipLayer = ({script, history, layers}: Props) => {
 			script.removeEventListener('beforeBlock', ref)
 		}
 	}, [script])
+
+	useEffect(()=> {
+		script.onEroSkipPrompt = (nbPages: number) => {
+			return new Promise<boolean>((resolve)=> {
+				setMode('hscene')
+				setScene(script.currentLabel as TsukihimeSceneName)
+				onFinish.current = resolve
+			})
+		}
+
+		return () => {
+			script.onEroSkipPrompt = undefined
+		}
+	}, [script])
 	
 	const onClick = useCallback((e: React.MouseEvent<HTMLButtonElement>)=> {
 		const skipped = e.currentTarget.value === 'yes'
-		if (skipped && script.currentLabel) {
+		if (skipped && mode === 'viewed' && script.currentLabel) {
 			script.skipCurrentBlock()
 			history.onSceneSkip(script.currentLabel)
 		}
 		onFinish.current?.(skipped)
 		setScene(undefined)
-	}, [script, history])
+	}, [script, history, mode])
 
 	let display = layers.text && scene !== undefined
 	const sceneTitle = display ? getSceneTitle(Array.from(script.flags), scene!) : ""
@@ -119,7 +121,7 @@ const SkipLayer = ({script, history, layers}: Props) => {
 				<div className="body">
 					<div className="title">
 						{isHSceneMode
-							? strings.game["skip-hscene"]
+							? strings.game["skip-hcontent"]
 							: strings.game["skip-viewed"]
 						}
 					</div>

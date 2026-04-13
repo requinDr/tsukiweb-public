@@ -138,6 +138,7 @@
   "game": {
     "skip-viewed": "このシーンはもう見ました。",
     "skip-hscene": "This scene contains adult content.",
+    "skip-hcontent": "This passage contains adult content.",
     "skip-prompt": "スキップしますか？",
     "toast-qsave": "セーブは成功しました",
     "toast-qload": "ロードは成功しました",
@@ -145,8 +146,7 @@
     "toast-save-fail": "セーブは失敗しました",
     "toast-load-fail": "ロードは失敗しました",
     "toast-autoplay-stop": "オートモードを停止しました",
-    "toast-ffw-stop": "早送りを停止しました",
-    "toast-hscene-waning": "エロのシーンを読むところです。"
+    "toast-ffw-stop": "早送りを停止しました"
   },
   "menu": {
     "graphics": "グラフィック",
