@@ -15,7 +15,7 @@ export function moveBg(direction: "up"|"down") {
 	let index = BG_POSITIONS.indexOf(displayMode.bgAlignment)
 	if (direction == "down" && index < 2) index++
 	else if(direction == "up" && index > 0) index--
-	
+
 	displayMode.bgAlignment = BG_POSITIONS[index]
 }
 
@@ -47,8 +47,7 @@ export function extractImage(image: string) {
 //#region                       COMMAND HANDLERS
 //##############################################################################
 
-export function processImageCmd(onTransitionStart: VoidFunction|undefined,
-						 onTransitionEnd: VoidFunction|undefined,
+export function processImageCmd(
 						 setTransition: (t: GraphicsTransition|undefined)=>void,
 						 arg: string, cmd: string, script: ScriptPlayer,
 						 onFinish: VoidFunction) {
@@ -80,7 +79,6 @@ export function processImageCmd(onTransitionStart: VoidFunction|undefined,
 				script.graphics[pos as SpritePos] = image
 			}
 			setTransition(undefined)
-			onTransitionEnd?.()
 		}
 		onFinish()
 	}
@@ -93,15 +91,12 @@ export function processImageCmd(onTransitionStart: VoidFunction|undefined,
 			duration: +time,
 			onFinish: _onFinish
 		})
-		onTransitionStart?.()
 		if (to.bgAlign && to.bg == script.graphics.bg) {
 			// Alignment transitions don't automatically call 'onFinish'.
 			// Simulate with timer as a workaround
 			const timer = new Timer(+time, _onFinish, false)
 			timer.start()
-			return {
-				next: timer.skip.bind(timer)
-			}
+			return { next: timer.skip.bind(timer) }
 		} else {
 			return { next: _onFinish }
 		}
@@ -112,8 +107,6 @@ export function processImageCmd(onTransitionStart: VoidFunction|undefined,
 
 
 export function processQuake(
-	onTransitionStart: VoidFunction|undefined,
-	onTransitionEnd: VoidFunction|undefined,
 	setQuake: (quake: Quake|undefined)=>void,
 	arg: string, cmd: string, _script: ScriptPlayer,
 	onFinish: VoidFunction) {
@@ -121,7 +114,6 @@ export function processQuake(
 	const _onFinish = ()=> {
 		setQuake(undefined)
 		onFinish()
-		onTransitionEnd?.()
 	}
 	switch(cmd) {
 		case 'quakex' :
@@ -135,7 +127,6 @@ export function processQuake(
 			break
 		default : throw Error(`Unknown quake command ${cmd} ${arg}`)
 	}
-	onTransitionStart?.()
 	return { next: _onFinish }
 }
 
@@ -164,7 +155,7 @@ export function processRocket(
 
 	const onAnimationEnd = () => {
 		if (wait) {
-			setRocket(undefined);
+			setRocket(undefined)
 			onFinish()
 		}
 	}
