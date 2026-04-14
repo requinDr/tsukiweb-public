@@ -1,6 +1,7 @@
-import { Digit, FcNodeAttrs, FcSceneAttrs, UcLetter } from '@tsukiweb-common/types'
+import { Digit, UcLetter } from '@tsukiweb-common/types'
 import sceneAttrs from '@assets/game/scene_attrs.json'
 import { RouteDayName, RouteName, TsukihimeSceneName } from '../types'
+import { FcNodeAttrs, FcSceneAttrs } from '@tsukiweb-common/flowchart'
 
 export const APP_VERSION = import.meta.env.VITE_PACKAGE_VERSION
 

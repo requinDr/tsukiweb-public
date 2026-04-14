@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { settings } from "../utils/settings"
 import { useObserver } from "@tsukiweb-common/utils/Observer"
-import { isFontAvailable, loadGoogleFont } from "../utils/fonts"
+import { isFontAvailable, loadGoogleFont } from "@tsukiweb-common/utils/fonts"
 import { DEFAULT_GAME_FONT } from "@tsukiweb-common/utils/settings"
 import { strings } from "translation/lang"
 

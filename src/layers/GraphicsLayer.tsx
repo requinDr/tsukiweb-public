@@ -1,14 +1,11 @@
 import { memo, useEffect, useRef, useState, CSSProperties, useMemo } from "react";
-import SpriteGraphics from "@tsukiweb-common/graphics/SpriteGraphics";
-import BackgroundGraphics from "@tsukiweb-common/graphics/BackgroundGraphics";
-import ForegroundGraphics from "@tsukiweb-common/graphics/ForegroundGraphics";
 import { useObserved } from "@tsukiweb-common/utils/Observer";
 import classNames from "classnames";
 import { ScriptPlayer } from "script/ScriptPlayer";
-import { DivProps, GraphicsTransition, Quake, RocketProps } from "@tsukiweb-common/types";
+import { DivProps } from "@tsukiweb-common/types";
 import { processImageCmd, processMonocro, processQuake, processRocket } from "utils/graphics";
 import { displayMode } from "utils/display";
-
+import { Quake, GraphicsTransition, Rocket, BackgroundGraphics, ForegroundGraphics, SpriteGraphics } from "@tsukiweb-common/graphics";
 
 type Props = {
 	script: ScriptPlayer
@@ -16,22 +13,21 @@ type Props = {
 	onTransitionEnd?: VoidFunction
 } & DivProps
 
-const GraphicsLayer = memo(function({
+const GraphicsLayer = ({
 		script,
 		onTransitionStart,
 		onTransitionEnd,
-		...props }: Props) {
+		...props }: Props) => {
 
 	const [bgAlign] = useObserved(displayMode, 'bgAlignment')
 	const [bgMoveTime] = useObserved(displayMode, 'bgMoveTime')
 	const [quake, setQuake] = useState<Quake|undefined>(undefined)
 	const [transition, setTransition] = useState<GraphicsTransition|undefined>(undefined)
 	const [monoChrome] = useObserved(script.graphics, 'monochrome')
-	const [rocket, setRocket] = useState<RocketProps|undefined>(undefined)
+	const [rocket, setRocket] = useState<Rocket|undefined>(undefined)
 	const style = useRef<CSSProperties>(undefined)
 	const otherProps = useRef<Omit<DivProps, 'style'>>(undefined)
-	//useTraceUpdate("[GRAPHICS]", {script, quake, transition, monoChrome})
-//......... register commands ..........
+	
 	useEffect(()=> {
 		const _processImageCmd = processImageCmd.bind(null, onTransitionStart,
 				onTransitionEnd, setTransition)
@@ -50,7 +46,6 @@ const GraphicsLayer = memo(function({
 		})
 	}, [script, onTransitionStart, onTransitionEnd])
 
-//......... compute properties .........
 	useMemo(()=> {
 		const {style: _style, ..._props} = props
 		style.current = {
@@ -101,6 +96,6 @@ const GraphicsLayer = memo(function({
 			<ForegroundGraphics image={graphics.bg} transition={transition} bgAlign={bgAlign} />
 		</div>
 	)
-})
+}
 
-export default GraphicsLayer
+export default memo(GraphicsLayer)

@@ -12,10 +12,9 @@ import { History } from "script/history"
 import cg from "utils/gallery"
 import { audio } from "utils/audio"
 import { InGameLayersHandler } from "utils/display"
-import { Graphics } from "@tsukiweb-common/types"
 import AnimatedHideActivityDiv from "@tsukiweb-common/ui-core/components/AnimatedHideActivityDiv"
-import GraphicsGroup from "@tsukiweb-common/graphics/GraphicsGroup"
 import classNames from "classnames"
+import { Graphics, GraphicsGroup } from "@tsukiweb-common/graphics"
 
 function getThumbnail(label: TsukihimeSceneName): Partial<Graphics> & {bg: Graphics["bg"]} {
 	const scenes = sceneAttrs.scenes as Record<TsukihimeSceneName, any>

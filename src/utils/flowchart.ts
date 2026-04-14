@@ -1,12 +1,12 @@
 import { getSceneTitle, getSceneTitles, isScene, isThScene } from "../script/utils"
 import { LabelName, TsukihimeSceneName } from "types"
 import { SCENE_ATTRS } from "./constants"
-import { Graphics } from "@tsukiweb-common/types"
-import { Flowchart, FlowchartNode, FlowchartNodeAttrs } from "@tsukiweb-common/utils/flowchart"
+import { Flowchart, FlowchartNode, FlowchartNodeAttrs } from "@tsukiweb-common/flowchart"
 import SpritesheetMetadata from "@assets/game/spritesheet_metadata.json"
 import { spriteSheetImgPath } from "translation/assets"
 import { settings } from "./settings"
 import { History } from "../script/history"
+import { Graphics } from "@tsukiweb-common/graphics"
 
 //##############################################################################
 //#region                       CONSTANTS & TYPES
@@ -216,7 +216,6 @@ export class FcNode extends FlowchartNode<FcNodeId, TsukihimeFlowchart> {
 					this._state = FcNodeState.UNSEEN
 				else
 					this._state = FcNodeState.UNSEEN
-					// this._state = FcNodeState.HIDDEN
 			}
 			else {
 				this._state = Math.max(FcNodeState.HIDDEN,
@@ -228,7 +227,6 @@ export class FcNode extends FlowchartNode<FcNodeId, TsukihimeFlowchart> {
 
 	get visible(): boolean {
 		return true
-		// return this.state > FcNodeState.HIDDEN
 	}
 	
 	get metadatas() {

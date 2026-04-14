@@ -3,20 +3,20 @@ import { displayMode } from "./display";
 import { settings } from "./settings";
 import cg from "./gallery";
 import { wordImage } from "translation/assets";
-import { Graphics, GraphicsTransition, Quake, RocketProps, SpritePos } from "@tsukiweb-common/types";
+import { BG_POSITIONS, Graphics, GraphicsTransition, Quake, Rocket, SpritePos } from "@tsukiweb-common/graphics";
 import { ScriptPlayer } from "script/ScriptPlayer";
 import Timer from "@tsukiweb-common/utils/timer";
 
-const POSITIONS = ["top", "center", "bottom"] as const
 
 /**
  * Move background up or down
  */
 export function moveBg(direction: "up"|"down") {
-	let index = POSITIONS.indexOf(displayMode.bgAlignment)
+	let index = BG_POSITIONS.indexOf(displayMode.bgAlignment)
 	if (direction == "down" && index < 2) index++
 	else if(direction == "up" && index > 0) index--
-	displayMode.bgAlignment = POSITIONS[index]
+	
+	displayMode.bgAlignment = BG_POSITIONS[index]
 }
 
 export function extractImage(image: string) {
@@ -59,10 +59,9 @@ export function processImageCmd(onTransitionStart: VoidFunction|undefined,
 		case 'cl' : [pos, effect, time] = arg.split(','); break;
 		default : throw Error(`unknown image command ${cmd} ${arg}`)
 	}
-	const positions = ['top', 'bottom', 'center']
 	let alignment: Graphics['bgAlign'] = undefined;
-	if (rest.length > 0 && positions.some(x=>rest.includes(x))) {
-		alignment = rest.find(x=>positions.includes(x)) as Graphics['bgAlign']
+	if (rest.length > 0 && BG_POSITIONS.some(x=>rest.includes(x))) {
+		alignment = rest.find(x=>BG_POSITIONS.includes(x as typeof BG_POSITIONS[number])) as Graphics['bgAlign']
 		displayMode.bgMoveTime = +time || 0
 		displayMode.bgAlignment = alignment!
 	}
@@ -112,11 +111,12 @@ export function processImageCmd(onTransitionStart: VoidFunction|undefined,
 }
 
 
-export function processQuake(onTransitionStart: VoidFunction|undefined,
-						onTransitionEnd: VoidFunction|undefined,
-						setQuake: (quake: Quake|undefined)=>void,
-						arg: string, cmd: string, _script: ScriptPlayer,
-						onFinish: VoidFunction) {
+export function processQuake(
+	onTransitionStart: VoidFunction|undefined,
+	onTransitionEnd: VoidFunction|undefined,
+	setQuake: (quake: Quake|undefined)=>void,
+	arg: string, cmd: string, _script: ScriptPlayer,
+	onFinish: VoidFunction) {
 	const [ampl, duration] = arg.split(',').map(x=>parseInt(x))
 	const _onFinish = ()=> {
 		setQuake(undefined)
@@ -140,7 +140,7 @@ export function processQuake(onTransitionStart: VoidFunction|undefined,
 }
 
 export function processRocket(
-	setRocket: (rocket: RocketProps | undefined) => void,
+	setRocket: (rocket: Rocket | undefined) => void,
 	arg: string,
 	cmd: string,
 	script: ScriptPlayer,
@@ -153,7 +153,7 @@ export function processRocket(
 		params[key] = value
 	}
 
-	const layer = params.layer as RocketProps['layer']
+	const layer = params.layer as Rocket['layer']
 
 	if (!['l', 'c', 'r'].includes(layer)) {
 		console.error(`Invalid layer for @rocket: ${layer}`)
@@ -169,7 +169,7 @@ export function processRocket(
 		}
 	}
 
-	const rocket: RocketProps = {
+	const rocket: Rocket = {
 		layer: layer,
 		my: parseFloat(params.my || '0'),
 		magnify: parseFloat(params.magnify || '1'),

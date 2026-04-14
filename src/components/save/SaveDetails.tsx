@@ -1,7 +1,7 @@
 import { SaveState, savePhaseTexts, savesManager } from "../../utils/savestates"
 import { MdDeleteOutline, MdOutlineFileDownload } from "react-icons/md"
 import { BiSolidHeart } from "react-icons/bi"
-import GraphicsGroup from "@tsukiweb-common/graphics/GraphicsGroup"
+import { GraphicsGroup } from "@tsukiweb-common/graphics"
 import { strings } from "translation/lang"
 import classNames from "classnames"
 import { Regard } from "script/ScriptPlayer"

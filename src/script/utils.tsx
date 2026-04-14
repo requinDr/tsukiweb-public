@@ -68,7 +68,7 @@ export function getSceneTitles(label: TsukihimeSceneName): { flg: string, titles
 }
 
 export function getSceneTitle(flags: string[], label: TsukihimeSceneName): string|undefined {
-	const attrs = strings.scenario.scenes[label] ?? SCENE_ATTRS.scenes[label]
+	//const attrs = strings.scenario.scenes[label] ?? SCENE_ATTRS.scenes[label]
 	const titles = getSceneTitles(label)
 	if (typeof titles != 'object')
 		return titles
@@ -107,7 +107,7 @@ export async function fetchScene(sceneId: string): Promise<string[]> {
 	
 	if (script == undefined)
 		throw Error(`Cannot load file ${path}`)
-	//split data on \n
+	
 	return script?.trim().split(/\r?\n/);
 }
 
@@ -170,30 +170,4 @@ export function creditsScript(insertEndOfPlay: boolean = false): string[] {
 		'bg #000000,crossfade,1500',
 		...(insertEndOfPlay ? ["goto *endofplay"] : [])
 	]
-}
-
-export function isLinePageBreak(line: string, index: number,
-		sceneLines: string[], playing: boolean = false): boolean {
-	if (playing) {
-		return line.startsWith('\\') || line.startsWith('phase ')
-	} else {
-		if (line.startsWith('\\'))
-			return true
-		else if (line.startsWith('phase'))
-			// prevents counting 2 pages for conditional phases
-			return !sceneLines[index+1].startsWith('skip')
-		else
-			return false
-	}
-}
-
-
-export function getPageAtLine(lines: string[], index: number) {
-	let p = 0
-	for (let i = 0; i < index; i++) {
-		const line = lines[i]
-		if (isLinePageBreak(line, i, lines))
-			p++
-	}
-	return p
 }

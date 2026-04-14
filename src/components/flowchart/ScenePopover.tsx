@@ -1,4 +1,4 @@
-import GraphicsGroup from "@tsukiweb-common/graphics/GraphicsGroup"
+import { GraphicsGroup } from "@tsukiweb-common/graphics"
 import { Bbcode } from "@tsukiweb-common/utils/Bbcode"
 import { FcNode } from "utils/flowchart"
 

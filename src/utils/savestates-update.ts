@@ -1,13 +1,13 @@
-import { fetchBlockLines, getPageAtLine, isScene } from "script/utils";
+import { fetchBlockLines, isScene } from "script/utils";
 import { PartialRecord } from "@tsukiweb-common/types"
 import { versionsCompare } from "@tsukiweb-common/utils/utils"
 import { Regard } from "script/ScriptPlayer"
 import { LabelName, RouteDayName, RouteName } from "types"
 import { APP_VERSION } from "./constants";
 import { SaveState } from "./savestates";
+import { getPageAtLine } from "@tsukiweb-common/script/utils";
 
 export async function updateSave(ss: SaveState): Promise<SaveState> {
-  const version = ss.version ?? '0.3.6' // last version without a 'version' attribute
   if (versionsCompare(ss.version, "0.4.0") < 0) {
     ss = await v0_4_0_updateSave(ss)
   }

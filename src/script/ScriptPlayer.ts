@@ -7,7 +7,7 @@ import { closeBB } from "@tsukiweb-common/utils/Bbcode";
 import { NumVarName, VarName } from "@tsukiweb-common/types";
 import { getGameVariable, setGameVariable } from "utils/variables";
 import { deepAssign, TSForceType } from "@tsukiweb-common/utils/utils";
-import { CommandRecord, VarType } from "@tsukiweb-common/script/utils";
+import { CommandRecord, VarType } from "@tsukiweb-common/script/types";
 import { History } from "./history";
 
 //#endregion ###################################################################

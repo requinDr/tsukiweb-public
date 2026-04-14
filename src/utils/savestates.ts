@@ -4,11 +4,12 @@ import { APP_VERSION, SAVE_EXT } from "./constants";
 import { LabelName } from "../types";
 import { SCREEN, displayMode } from "./display";
 import { ScriptPlayer } from "script/ScriptPlayer";
-import { Graphics, JSONDiff, PartialJSON } from "@tsukiweb-common/types";
+import { JSONDiff, PartialJSON } from "@tsukiweb-common/types";
 import { phaseTexts } from "translation/assets";
 import { noBb } from "@tsukiweb-common/utils/Bbcode";
 import { SavesManager as SavesManagerBase, SaveState as SSBase } from "@tsukiweb-common/script/saves"
 import { updateSave } from "./savestates-update";
+import { Graphics } from "@tsukiweb-common/graphics";
 
 //##############################################################################
 //#region                       TYPES & CONSTANTS

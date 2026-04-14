@@ -1,13 +1,9 @@
-import { ViewRatio } from "@tsukiweb-common/constants"
-import { TranslationId } from "@tsukiweb-common/utils/lang"
-import { LangJson } from "translation/lang"
-
 export type RouteName = 'aki'|'ark'|'cel'|'his'|'koha'|'others'
 export type RouteDayName<T extends RouteName=RouteName> = 
 	T extends 'others' ? 'pro'|'epi'|'end'|'fin'
 										 : `${number}${'a'|'b'}`
 
-export type CharId = RouteName//Exclude<RouteName, "others">
+export type CharId = RouteName
 
 export type TsukihimeSceneName = `s${number}${'a'|''}` |
 	"openning" | "ending" | "eclipse"

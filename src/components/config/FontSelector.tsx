@@ -1,8 +1,8 @@
 import { useState, useRef, useEffect } from 'react'
 import { strings } from '../../translation/lang'
 import { Button } from '@tsukiweb-common/ui-core'
-import { isFontAvailable, loadGoogleFont } from 'utils/fonts'
 import { DEFAULT_GAME_FONT } from '@tsukiweb-common/utils/settings'
+import { isFontAvailable, loadGoogleFont } from '@tsukiweb-common/utils/fonts'
 
 const POPULAR_FONTS = [
 	DEFAULT_GAME_FONT,
