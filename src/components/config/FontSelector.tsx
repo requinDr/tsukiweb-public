@@ -10,9 +10,8 @@ const POPULAR_FONTS = [
 	'Noto Serif',
 	'Noto Sans JP',
 	'Noto Serif JP',
-	'Sawarabi Mincho',
-	'Kosugi Maru',
-	'Playwrite IE',
+	'MS Gothic',
+	'Sazanami Gothic'
 ]
 
 type Props = {

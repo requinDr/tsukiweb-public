@@ -12,10 +12,6 @@ type Props = {
 const AppLayout = ({ children }: Props) => {
 	useObserver(font => {
 		const root = document.documentElement
-		root.style.setProperty('--ui-font', font)
-	}, settings, "uiFont")
-	useObserver(font => {
-		const root = document.documentElement
 		root.style.setProperty('--game-font', font)
 		if (font && font !== DEFAULT_GAME_FONT) {
 			if (!isFontAvailable(font, strings.disclaimer.join('')))
