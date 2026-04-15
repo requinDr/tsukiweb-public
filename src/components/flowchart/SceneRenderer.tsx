@@ -1,11 +1,12 @@
 import { SVGProps, memo, useCallback } from "react"
-import { FcNode, FcNodeState } from "utils/flowchart"
+import { FcNode } from "utils/flowchart"
 import { SceneName } from "types"
 import cg from "utils/gallery"
 import SceneImage from "./SceneImage"
 import classNames from "classnames"
 import { NavigationProps } from "@tsukiweb-common/input/arrowNavigation"
 import { useScenePopover, useScenePopoverTrigger } from "./ScenePopoverContext"
+import { FcNodeState } from "@tsukiweb-common/flowchart"
 
 
 const UnseenScene = ({ node, ...props }: { node: FcNode }) => (

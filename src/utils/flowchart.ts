@@ -1,7 +1,7 @@
 import { getSceneTitle, getSceneTitles, isScene, isThScene } from "../script/utils"
 import { LabelName, SceneName } from "types"
 import { SCENE_ATTRS } from "./constants"
-import { Flowchart, FlowchartNode, FlowchartNodeAttrs } from "@tsukiweb-common/flowchart"
+import { COLUMN_WIDTH, DY, FcNodeState, Flowchart, FlowchartNode, FlowchartNodeAttrs, SCENE_HEIGHT, SCENE_WIDTH, SpritesheetMetadataType } from "@tsukiweb-common/flowchart"
 import SpritesheetMetadata from "@assets/game/spritesheet_metadata.json"
 import { spriteSheetImgPath } from "translation/assets"
 import { settings } from "./settings"
@@ -9,30 +9,8 @@ import { History } from "../script/history"
 import { Graphics } from "@tsukiweb-common/graphics"
 
 //##############################################################################
-//#region                       CONSTANTS & TYPES
+//#region                       TYPES
 //##############################################################################
-
-export const SCENE_WIDTH = 31
-export const SCENE_HEIGHT = 22
-export const COLUMN_WIDTH = SCENE_WIDTH + 2
-export const DY = 3
-export const OVERLAP_BREAK_LENGTH = 2
-
-export const SCENE_RECT_ATTRS = {
-	width: SCENE_WIDTH,
-	height: SCENE_HEIGHT,
-	x: -SCENE_WIDTH/2,
-	y: -SCENE_HEIGHT/2
-}
-
-type SpritesheetMetadataType = {
-	f: string[] // file names
-	s: number[][] // spritesheet dimensions: [nw, nh] for each spritesheet
-	d: number[] // dimensions: [width, height]
-	i: {
-		[key: string]: number[] // [top, left, file index]
-	}
-}
 
 type FcNodeId = SceneName|string
 type FcNodeAttrs = FlowchartNodeAttrs<FcNodeId> & {
@@ -103,12 +81,6 @@ export class GameFlowchart extends Flowchart<FcNode> {
 	get activeScene(): FcNodeId {
 		return this._history?.lastScene.label ?? ""
 	}
-}
-export enum FcNodeState {
-	HIDDEN,
-	UNSEEN,
-	DISABLED,
-	ENABLED
 }
 
 //##############################################################################

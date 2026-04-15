@@ -1,6 +1,7 @@
 import { memo } from "react";
-import { DY, FcNode, FcNodeState, OVERLAP_BREAK_LENGTH } from "utils/flowchart";
+import { FcNode } from "utils/flowchart";
 import classNames from "classnames";
+import { DY, OVERLAP_BREAK_LENGTH, FcNodeState } from "@tsukiweb-common/flowchart";
 
 type ConnectionPathProps = {
 	from: FcNode
@@ -8,7 +9,7 @@ type ConnectionPathProps = {
 	mode?: 'playthrough' | 'viewer'
 }
 
-const ConnectionPath = memo(({ from, to, mode = 'viewer' }: ConnectionPathProps) => {
+const ConnectionPath = ({ from, to, mode = 'viewer' }: ConnectionPathProps) => {
 	const {centerX: x1, bottom: y1} = from
 	const {centerX: x2, top: y2} = to
 
@@ -48,6 +49,6 @@ const ConnectionPath = memo(({ from, to, mode = 'viewer' }: ConnectionPathProps)
 	const classes = classNames("fc-link", { disabled: isDisabled })
 
 	return <path id={id} className={classes} d={d} style={style} />
-})
+}
 
-export default ConnectionPath
+export default memo(ConnectionPath)

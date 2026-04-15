@@ -1,4 +1,5 @@
-import { FcNode, SCENE_WIDTH, SCENE_HEIGHT } from "utils/flowchart"
+import { SCENE_WIDTH, SCENE_HEIGHT } from "@tsukiweb-common/flowchart"
+import { FcNode } from "utils/flowchart"
 
 
 type SceneImageProps = {
