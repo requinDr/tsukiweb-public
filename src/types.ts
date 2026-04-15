@@ -1,22 +1,20 @@
-export type RouteName = 'aki'|'ark'|'cel'|'his'|'koha'|'others'
+export type CharId = 'aki'|'ark'|'cel'|'his'|'koha'
+
+export type RouteName = CharId |'others'
 export type RouteDayName<T extends RouteName=RouteName> = 
 	T extends 'others' ? 'pro'|'epi'|'end'|'fin'
 										 : `${number}${'a'|'b'}`
 
-export type CharId = RouteName
-
-export type TsukihimeSceneName = `s${number}${'a'|''}` |
+export type SceneName = `s${number}${'a'|''}` |
 	"openning" | "ending" | "eclipse"
 
 export type PlusDiscSceneName =
 	`pd_${"alliance" | "experiment" | "geccha" | "geccha2"}`
 
-export type SceneName = TsukihimeSceneName | PlusDiscSceneName
-
 export type FBlockName = `f${number}${''|'a'|'b'|'half'|'_0'}`
 
-export type LabelName = SceneName | FBlockName | `skip${number}${'a'|''}` |
-	'endofplay'
+export type LabelName = SceneName | PlusDiscSceneName | FBlockName |
+	`skip${number}${'a'|''}` | 'endofplay'
 
 export type Choice = {
 	index: number

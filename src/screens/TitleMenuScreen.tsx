@@ -1,4 +1,4 @@
-import gameLogo from "@assets/images/tsukihime-logo.webp"
+import gameLogo from "@assets/images/game-logo.webp"
 import moon from "@assets/images/moon.webp"
 import '@styles/title-menu.scss'
 import { SCREEN } from '../utils/display'

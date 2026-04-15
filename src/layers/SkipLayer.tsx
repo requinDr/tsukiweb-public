@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import { strings } from "../translation/lang"
 import { noBb } from "@tsukiweb-common/utils/Bbcode"
 import sceneAttrs from '@assets/game/scene_attrs.json'
-import { TsukihimeSceneName } from "types"
+import { SceneName } from "types"
 import { Button } from "@tsukiweb-common/ui-core"
 import { getSceneTitle, isThScene } from "script/utils"
 import * as m from "motion/react-m"
@@ -16,8 +16,8 @@ import AnimatedHideActivityDiv from "@tsukiweb-common/ui-core/components/Animate
 import classNames from "classnames"
 import { Graphics, GraphicsGroup } from "@tsukiweb-common/graphics"
 
-function getThumbnail(label: TsukihimeSceneName): Partial<Graphics> & {bg: Graphics["bg"]} {
-	const scenes = sceneAttrs.scenes as Record<TsukihimeSceneName, any>
+function getThumbnail(label: SceneName): Partial<Graphics> & {bg: Graphics["bg"]} {
+	const scenes = sceneAttrs.scenes as Record<SceneName, any>
 	const attrs = scenes[label]
 	if (attrs) {
 		if (attrs.osiete) {
@@ -40,7 +40,7 @@ type Props = {
 type SkipMode = 'viewed' | 'hscene'
 
 const SkipLayer = ({script, history, layers}: Props) => {
-	const [scene, setScene] = useState<TsukihimeSceneName|undefined>(undefined)
+	const [scene, setScene] = useState<SceneName|undefined>(undefined)
 	const [mode, setMode] = useState<SkipMode>('viewed')
 	const onFinish = useRef<((skipped: boolean)=>void)>(undefined)
 
@@ -67,7 +67,7 @@ const SkipLayer = ({script, history, layers}: Props) => {
 		script.onEroSkipPrompt = (nbPages: number) => {
 			return new Promise<boolean>((resolve)=> {
 				setMode('hscene')
-				setScene(script.currentLabel as TsukihimeSceneName)
+				setScene(script.currentLabel as SceneName)
 				onFinish.current = resolve
 			})
 		}
@@ -147,7 +147,7 @@ const SkipLayer = ({script, history, layers}: Props) => {
 export default SkipLayer
 
 
-const SceneImage = ({ scene, sceneTitle }: { scene: TsukihimeSceneName, sceneTitle: string }) => {
+const SceneImage = ({ scene, sceneTitle }: { scene: SceneName, sceneTitle: string }) => {
 	const image = getThumbnail(scene)
 	const isCGScene = cg.isInGallery(image?.bg)
 

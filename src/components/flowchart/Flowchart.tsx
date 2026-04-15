@@ -1,7 +1,7 @@
 
 import { memo } from "react"
-import { buildConnections, COLUMN_WIDTH, DY, SCENE_HEIGHT, SCENE_RECT_ATTRS, SCENE_WIDTH, TsukihimeFlowchart } from "utils/flowchart"
-import { TsukihimeSceneName } from "types"
+import { buildConnections, COLUMN_WIDTH, DY, SCENE_HEIGHT, SCENE_RECT_ATTRS, SCENE_WIDTH, GameFlowchart } from "utils/flowchart"
+import { SceneName } from "types"
 import { SceneRenderer } from "./SceneRenderer"
 import { History } from "script/history"
 import ConnectionPath from "./ConnectionPath"
@@ -48,11 +48,11 @@ const SVG_DEFS = (
 
 type Props = {
 	history?: History,
-	onSceneClick?: (id: TsukihimeSceneName) => void,
+	onSceneClick?: (id: SceneName) => void,
 	mode?: 'playthrough' | 'viewer'
 }
 const Flowchart = ({history, onSceneClick, mode = 'viewer'}: Props)=> {
-	const flowchart = new TsukihimeFlowchart(history)
+	const flowchart = new GameFlowchart(history)
 	const visibleNodes = flowchart.listNodes().filter(n=>n.visible)
 	const [left, top, right, bottom] = visibleNodes.reduce(
 		(vb, node)=> [

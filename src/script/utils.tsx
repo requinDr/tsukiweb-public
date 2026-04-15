@@ -1,4 +1,4 @@
-import { LabelName, PlusDiscSceneName, RouteName, SceneName, TsukihimeSceneName } from "../types";
+import { LabelName, PlusDiscSceneName, RouteName, SceneName } from "../types";
 import { APP_VERSION, SCENE_ATTRS } from "../utils/constants";
 import { strings } from "../translation/lang"
 import { ScriptPlayer } from "./ScriptPlayer";
@@ -12,7 +12,7 @@ export type SkipRequest =
 //#region                          LABEL INFO
 //##############################################################################
 
-export function isThScene(label: string): label is TsukihimeSceneName {
+export function isThScene(label: string): label is SceneName {
 	if (/^\*?s\d+a?$/.test(label))
 		return true
 	if (["openning", "ending", "eclipse"].includes(label))
@@ -22,11 +22,11 @@ export function isThScene(label: string): label is TsukihimeSceneName {
 export function isPDScene(label: string): label is PlusDiscSceneName {
 	return ["pd_alliance", "pd_experiment", "pd_geccha", "pd_geccha2"].includes(label)
 }
-export function isScene(label: string): label is SceneName {
+export function isScene(label: string): label is SceneName | PlusDiscSceneName {
 	return isThScene(label) || isPDScene(label)
 }
 
-export function getSceneTitles(label: TsukihimeSceneName): { flg: string, titles: [string, string] } | string | undefined {
+export function getSceneTitles(label: SceneName): { flg: string, titles: [string, string] } | string | undefined {
 	const attrs = strings.scenario.scenes[label] ?? SCENE_ATTRS.scenes[label]
 	if (!attrs)
 		return undefined
@@ -67,7 +67,7 @@ export function getSceneTitles(label: TsukihimeSceneName): { flg: string, titles
 	}
 }
 
-export function getSceneTitle(flags: string[], label: TsukihimeSceneName): string|undefined {
+export function getSceneTitle(flags: string[], label: SceneName): string|undefined {
 	//const attrs = strings.scenario.scenes[label] ?? SCENE_ATTRS.scenes[label]
 	const titles = getSceneTitles(label)
 	if (typeof titles != 'object')

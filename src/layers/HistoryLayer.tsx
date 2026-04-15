@@ -6,7 +6,7 @@ import PageElement from '../components/history/PageElement';
 import classNames from 'classnames';
 import { Button, FixedFooter } from '@tsukiweb-common/ui-core';
 import Flowchart from 'components/flowchart/Flowchart';
-import { LabelName, TsukihimeSceneName } from 'types';
+import { LabelName, SceneName } from 'types';
 
 
 type Props = {
@@ -153,7 +153,7 @@ const FlowchartTab = ({ history, onSceneSelect }: FlowchartTabProps) => {
 		}
 	}, [history])
 
-	const handleSceneSelect = useCallback((id: TsukihimeSceneName)=> {
+	const handleSceneSelect = useCallback((id: SceneName)=> {
 		onSceneSelect(id)
 	}, [onSceneSelect])
 

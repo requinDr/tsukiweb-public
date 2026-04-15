@@ -3,7 +3,7 @@ import { MdCopyAll, MdGetApp, MdInfoOutline, MdOpenInNew, MdShare } from "react-
 import { toast } from "react-toastify"
 import { APP_INFO, APP_VERSION } from "../../utils/constants"
 import { strings } from "../../translation/lang"
-import tsukiCover from "@assets/images/tsukihime_cover.webp"
+import tsukiCover from "@assets/images/game_cover.webp"
 import { Button, MessageContainer, Modal } from "@tsukiweb-common/ui-core"
 import { bb } from "@tsukiweb-common/utils/Bbcode"
 import { SCREEN } from "utils/display"
@@ -102,7 +102,7 @@ const ModalInfo = ({show, setShow}: ModalInfoProps) => {
 				<div className="sidebar">
 					<img
 						src={tsukiCover}
-						alt="Tsukihime cover with the heroines"
+						alt="Game box cover with the heroines"
 						className="tsuki-cover"
 						draggable={false}
 						width={200}
@@ -114,7 +114,7 @@ const ModalInfo = ({show, setShow}: ModalInfoProps) => {
 							<MdShare /> {strings.title.share}
 						</Button>
 
-						<Button variant="select" href={APP_INFO.TSUKI_VNDB} target="_blank" className="vndb" nav-auto={1}>
+						<Button variant="select" href={APP_INFO.GAME_VNDB} target="_blank" className="vndb" nav-auto={1}>
 							<MdOpenInNew />	<span>VNDB</span>
 						</Button>
 

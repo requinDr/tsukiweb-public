@@ -7,7 +7,7 @@ import { MdHistory } from "react-icons/md"
 import classNames from "classnames"
 import { Bbcode, bb } from "@tsukiweb-common/utils/Bbcode"
 import { History, PageEntry } from "script/history"
-import { TsukihimeSceneName } from "types"
+import { SceneName } from "types"
 import { DivProps } from "@tsukiweb-common/types"
 import { audio } from "utils/audio"
 
@@ -39,7 +39,7 @@ const ChoiceContent = ({ content }: { content: PageEntry<"choice"> }) => {
 const SkipContent = ({ history, content }: { history: History, content: PageEntry<"skip"> }) => {
 	const {label} = content as PageEntry<"skip">
 	const flags = history.sceneContext(label)?.flags as string[]
-	const sceneTitle = getSceneTitle(flags, label as TsukihimeSceneName)??""
+	const sceneTitle = getSceneTitle(flags, label as SceneName)??""
 	return (
 		<span className='skip'>
 			{bb(strings.history.skipped.replace('%0', sceneTitle))}

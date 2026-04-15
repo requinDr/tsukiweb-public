@@ -1,4 +1,4 @@
-# Port of the original Tsukihime story to React
+# Port of the original story to React
 
 Find how to start the project on your computer in [README.md](https://github.com/requinDr/tsukiweb-public/blob/main/README.md)  
 We welcome all contributions.

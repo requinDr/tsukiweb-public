@@ -1,5 +1,5 @@
 import { getSceneTitle, getSceneTitles, isScene, isThScene } from "../script/utils"
-import { LabelName, TsukihimeSceneName } from "types"
+import { LabelName, SceneName } from "types"
 import { SCENE_ATTRS } from "./constants"
 import { Flowchart, FlowchartNode, FlowchartNodeAttrs } from "@tsukiweb-common/flowchart"
 import SpritesheetMetadata from "@assets/game/spritesheet_metadata.json"
@@ -34,7 +34,7 @@ type SpritesheetMetadataType = {
 	}
 }
 
-type FcNodeId = TsukihimeSceneName|string
+type FcNodeId = SceneName|string
 type FcNodeAttrs = FlowchartNodeAttrs<FcNodeId> & {
 	col: number
 	align?: FcNodeId
@@ -46,7 +46,7 @@ type FcNodeAttrs = FlowchartNodeAttrs<FcNodeId> & {
 //#region                           FLOWCHART
 //##############################################################################
 
-export class TsukihimeFlowchart extends Flowchart<FcNode> {
+export class GameFlowchart extends Flowchart<FcNode> {
 	public metadatas: Readonly<SpritesheetMetadataType> = SpritesheetMetadata
 	private _history: History|undefined
 	constructor(history?: History) {
@@ -73,9 +73,9 @@ export class TsukihimeFlowchart extends Flowchart<FcNode> {
 	getSceneDisplayName(id: FcNodeId): string {
 		const flags = this._history?.sceneContext(id as LabelName)?.flags
 		if (flags)
-			return getSceneTitle(flags, id as TsukihimeSceneName) ?? id
+			return getSceneTitle(flags, id as SceneName) ?? id
 		else {
-			const titles = getSceneTitles(id as TsukihimeSceneName)
+			const titles = getSceneTitles(id as SceneName)
 			if (typeof titles == "object")
 				return titles.titles.join('[br/]')
 			return titles ?? id
@@ -115,7 +115,7 @@ export enum FcNodeState {
 //#region                             NODE
 //##############################################################################
 
-export class FcNode extends FlowchartNode<FcNodeId, TsukihimeFlowchart> {
+export class FcNode extends FlowchartNode<FcNodeId, GameFlowchart> {
 	column: number
 	_align: FcNodeId | FcNode | null
 	cutAt: number
@@ -125,7 +125,7 @@ export class FcNode extends FlowchartNode<FcNodeId, TsukihimeFlowchart> {
 	_navY: number | null
 
 	constructor(id: FcNodeId, {col, cutAt, graph, align, ...attrs}: FcNodeAttrs,
-				flowchart: TsukihimeFlowchart, ) {
+				flowchart: GameFlowchart) {
 		super(id, attrs, flowchart)
 		this.column = col
 		this.cutAt = cutAt ?? 0
@@ -182,7 +182,7 @@ export class FcNode extends FlowchartNode<FcNodeId, TsukihimeFlowchart> {
 		return collectSceneNodes(childrenMap.get(this) ?? [])
 	}
 
-	get flowchart(): TsukihimeFlowchart {
+	get flowchart(): GameFlowchart {
 		return super.flowchart
 	}
 	get alignedNode(): FcNode|null {

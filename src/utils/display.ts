@@ -9,9 +9,14 @@ export enum SCREEN {
   PLUS_DISC = "/plus-disc",
 }
 
-export const displayMode: { [key: string]: any } = {
-  screen: undefined as SCREEN|undefined,
-  bgAlignment: 'center' as ('top' | 'center' | 'bottom'),
+export const displayMode: {
+  screen: SCREEN
+  bgAlignment: 'top' | 'center' | 'bottom'
+  bgMoveTime: number
+  replaceNavigation: boolean
+} = {
+  screen: SCREEN.TITLE,
+  bgAlignment: 'center',
   bgMoveTime: 0,
   replaceNavigation: false,
 }

@@ -1,6 +1,6 @@
 import { SVGProps, memo, useCallback } from "react"
 import { FcNode, FcNodeState } from "utils/flowchart"
-import { TsukihimeSceneName } from "types"
+import { SceneName } from "types"
 import cg from "utils/gallery"
 import SceneImage from "./SceneImage"
 import classNames from "classnames"
@@ -17,7 +17,7 @@ const UnseenScene = ({ node, ...props }: { node: FcNode }) => (
 
 type SceneProps = {
 	node: FcNode,
-	onClick?: (id: TsukihimeSceneName) => void
+	onClick?: (id: SceneName) => void
 } & Omit<SVGProps<SVGRectElement>, 'onClick'> & NavigationProps
 
 const VisibleScene = memo(({ node, onClick, ...props }: SceneProps) => {
@@ -31,7 +31,7 @@ const VisibleScene = memo(({ node, onClick, ...props }: SceneProps) => {
 		}
 		e.stopPropagation()
 		closePopover()
-		onClick?.(node.id as TsukihimeSceneName)
+		onClick?.(node.id as SceneName)
 	}, [closePopover, onClick, node.id])
 
 	const classes = classNames("fc-scene", "unlocked", {

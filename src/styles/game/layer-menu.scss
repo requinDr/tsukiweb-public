@@ -28,7 +28,7 @@
 		}
 	}
 
-	$width: clamp(280px, 30vw, 360px);
+	$width: clamp(260px, 25vw, 360px);
 	.menu-container {
 		will-change: transform;
 		transform: translateX(calc($width));

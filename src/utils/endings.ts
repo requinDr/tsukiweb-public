@@ -1,4 +1,4 @@
-import { CharId, RouteDayName, TsukihimeSceneName } from "../types"
+import { CharId, RouteDayName, SceneName } from "../types"
 import { SCENE_ATTRS } from "./constants"
 import { strings } from "../translation/lang"
 import { settings } from "./settings"
@@ -8,13 +8,13 @@ import { viewedScene } from "./settings"
 type EndType = "normal"|"true"|"good"|"osiete"
 
 class Ed {
-  private _scene: TsukihimeSceneName
+  private _scene: SceneName
   private _char: CharId|undefined
   private _day: RouteDayName|undefined
   private _illus: string|undefined
   private _type: EndType
 
-  constructor(scene: TsukihimeSceneName, char?: CharId, day?: RouteDayName<CharId>,
+  constructor(scene: SceneName, char?: CharId, day?: RouteDayName<CharId>,
               type: EndType="osiete", illus?: string) {
     this._scene = scene
     this._type = type
@@ -39,7 +39,7 @@ class Ed {
   }
 }
 export type Ending<T extends EndType=EndType> = Readonly<{
-  scene: TsukihimeSceneName,
+  scene: SceneName,
   type: T,
   seen: boolean,
   name: string,
@@ -84,7 +84,7 @@ export const osiete = Object.fromEntries(
         case "s530": return [name, new Ed(name, "his" , "14a") as OsieteEnding] //s412
         case "s545": return [name, new Ed(name, "koha", "12a") as OsieteEnding] //s429
       }
-      return [name, new Ed(name as TsukihimeSceneName) as OsieteEnding]
+      return [name, new Ed(name as SceneName) as OsieteEnding]
     }
   )
-) as PartialRecord<TsukihimeSceneName, OsieteEnding>
+) as PartialRecord<SceneName, OsieteEnding>

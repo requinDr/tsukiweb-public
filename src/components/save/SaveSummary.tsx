@@ -3,7 +3,7 @@ import { savePhaseTexts, SaveState } from "../../utils/savestates"
 import { getSceneTitle } from "../../script/utils"
 import { bb, noBb } from "@tsukiweb-common/utils/Bbcode"
 import { PageEntry } from "script/history"
-import { TsukihimeSceneName } from "types"
+import { SceneName } from "types"
 
 const SaveSummary = memo(({saveState}: {saveState: SaveState})=> {
 	const lastPage = saveState.pages[saveState.pages.length-1]
@@ -29,7 +29,7 @@ const SaveSummary = memo(({saveState}: {saveState: SaveState})=> {
 			const flags = saveState.scenes.at(-1)?.flags ?? []
 			return (
 				<span className="scene-skip">
-					{noBb(getSceneTitle(flags, (lastPage as PageEntry<"skip">).label as TsukihimeSceneName) ?? "")}
+					{noBb(getSceneTitle(flags, (lastPage as PageEntry<"skip">).label as SceneName) ?? "")}
 				</span>
 			)
 

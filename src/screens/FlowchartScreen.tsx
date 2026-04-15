@@ -1,7 +1,7 @@
 import '@styles/flowchart.scss'
 import { SCREEN } from "../utils/display"
 import Flowchart from "components/flowchart/Flowchart"
-import { TsukihimeSceneName } from 'types'
+import { SceneName } from 'types'
 import { playScene } from 'utils/savestates'
 import { useScreenAutoNavigate } from 'hooks'
 import { useCallback } from 'react'
@@ -9,7 +9,7 @@ import { useCallback } from 'react'
 const FlowchartScreen = () => {
 	useScreenAutoNavigate(SCREEN.SCENES)
 
-	const onSceneClick = useCallback((id: TsukihimeSceneName)=> {
+	const onSceneClick = useCallback((id: SceneName)=> {
 		playScene(id, {continueScript: false, viewedOnly: true})
 	}, [])
 

@@ -1,10 +1,13 @@
-# Web port of Tsukihime
+# Web port
 The goal is to provide an accessible modern way of reading an old, beautiful story.  
+It includes QoL features such as savedata previews, an interactive flowchart, multiple languages support, and more.  
 
 ## Installation
 The Progressive Web App (PWA) can be installed from the title screen using chromium-based browsers (_e.g._, Chrome, Edge, Opera).  
 It offers a better experience in general.
 
+## Local deployment
+None of the original assets are provided with this repository.  
 To download the source code and run the game's code locally, follow one of the two methods:
 ### Node
 1) install [`node.js`](https://nodejs.org/en/download) (version `18 / 20 / 22+` is required)
