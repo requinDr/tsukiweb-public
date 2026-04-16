@@ -1,5 +1,5 @@
-import { Digit, UcLetter } from '@tsukiweb-common/types'
 import sceneAttrs from '@assets/game/scene_attrs.json'
+import { UcLetter } from '@tsukiweb-common/types'
 import { RouteDayName, RouteName, SceneName } from '../types'
 import { FcNodeAttrs, FcSceneAttrs } from '@tsukiweb-common/flowchart'
 
@@ -18,14 +18,16 @@ export const APP_INFO = {
 }
 
 export const SCENE_ATTRS: {
-  'fc-nodes'?: Record<string, FcNodeAttrs>,
-  scenes: Record<SceneName, ({
-    title: string,
-  } | {
-      r: (RouteName | { flg: UcLetter|Digit, "0": RouteName, "1": RouteName }),
+  'fc-nodes'?: Record<string, FcNodeAttrs>
+  scenes: Record<SceneName, (
+    {
+      title: string
+    } | {
+      r: (RouteName | { flg: UcLetter, "0": RouteName, "1": RouteName })
       d: RouteDayName
-      s?: (string | { flg: UcLetter|Digit, "0": string, "1": string }),
-  }) & {
+      s?: (string | { flg: UcLetter, "0": string, "1": string })
+    }
+  ) & {
     h?: true
     osiete?: true
     fc?: FcSceneAttrs

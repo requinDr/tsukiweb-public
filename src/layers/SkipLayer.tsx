@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import { strings } from "../translation/lang"
 import { noBb } from "@tsukiweb-common/utils/Bbcode"
-import sceneAttrs from '@assets/game/scene_attrs.json'
 import { SceneName } from "types"
 import { Button } from "@tsukiweb-common/ui-core"
 import { getSceneTitle, isThScene } from "script/utils"
@@ -14,21 +13,18 @@ import { audio } from "utils/audio"
 import { InGameLayersHandler } from "utils/display"
 import AnimatedHideActivityDiv from "@tsukiweb-common/ui-core/components/AnimatedHideActivityDiv"
 import classNames from "classnames"
-import { Graphics, GraphicsGroup } from "@tsukiweb-common/graphics"
+import { GraphicsGroup } from "@tsukiweb-common/graphics"
+import { SCENE_ATTRS } from "utils/constants";
+import { FcSceneAttrs } from "@tsukiweb-common/flowchart";
 
-function getThumbnail(label: SceneName): Partial<Graphics> & {bg: Graphics["bg"]} {
-	const scenes = sceneAttrs.scenes as Record<SceneName, any>
-	const attrs = scenes[label]
-	if (attrs) {
-		if (attrs.osiete) {
-			return {"bg": "bg/bg_06a", "r": "tachi/cel_t20"}
-		}
-		const graph = attrs.fc?.graph
-		if (graph) {
-			return graph
-		}
+function getSceneThumbnail(label: SceneName): FcSceneAttrs['graph'] {
+	const attrs = SCENE_ATTRS.scenes[label]
+
+	if (attrs?.osiete) {
+		return { "bg": "bg/bg_06a", "r": "tachi/cel_t20" }
 	}
-	return {"bg": "#000000"}
+
+	return attrs?.fc?.graph ?? { bg: "#000000" }
 }
 
 type Props = {
@@ -148,7 +144,7 @@ export default SkipLayer
 
 
 const SceneImage = ({ scene, sceneTitle }: { scene: SceneName, sceneTitle: string }) => {
-	const image = getThumbnail(scene)
+	const image = getSceneThumbnail(scene)
 	const isCGScene = cg.isInGallery(image?.bg)
 
 	return (

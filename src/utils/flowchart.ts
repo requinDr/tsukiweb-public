@@ -1,12 +1,11 @@
 import { getSceneTitle, getSceneTitles, isScene, isThScene } from "../script/utils"
 import { LabelName, SceneName } from "types"
 import { SCENE_ATTRS } from "./constants"
-import { COLUMN_WIDTH, DY, FcNodeState, Flowchart, FlowchartNode, FlowchartNodeAttrs, SCENE_HEIGHT, SCENE_WIDTH, SpritesheetMetadataType } from "@tsukiweb-common/flowchart"
+import { COLUMN_WIDTH, DY, FcNodeState, FcSceneAttrs, Flowchart, FlowchartNode, FlowchartNodeAttrs, SCENE_HEIGHT, SCENE_WIDTH, SpritesheetMetadataType } from "@tsukiweb-common/flowchart"
 import SpritesheetMetadata from "@assets/game/spritesheet_metadata.json"
 import { spriteSheetImgPath } from "translation/assets"
 import { settings } from "./settings"
 import { History } from "../script/history"
-import { Graphics } from "@tsukiweb-common/graphics"
 
 //##############################################################################
 //#region                       TYPES
@@ -17,7 +16,7 @@ type FcNodeAttrs = FlowchartNodeAttrs<FcNodeId> & {
 	col: number
 	align?: FcNodeId
 	cutAt?: number
-	graph?: Graphics
+	graph?: FcSceneAttrs['graph']
 }
 
 //##############################################################################
@@ -91,7 +90,7 @@ export class FcNode extends FlowchartNode<FcNodeId, GameFlowchart> {
 	column: number
 	_align: FcNodeId | FcNode | null
 	cutAt: number
-	graph?: Graphics
+	graph?: FcNodeAttrs['graph']
 	_boundRect: [number, number, number, number] | null = null
 	_state: number = -1
 	_navY: number | null
