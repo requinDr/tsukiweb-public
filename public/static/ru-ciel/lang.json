@@ -42,6 +42,7 @@
     "on": "On",
     "off": "Off",
     "reset": "Reset",
+    "default": "Default",
     "tab-game": "Game",
     "tab-audio": "Audio",
     "tab-controls": "Controls",

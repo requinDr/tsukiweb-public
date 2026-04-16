@@ -42,6 +42,7 @@
     "on": "开启",
     "off": "关闭",
     "reset": "恢复初始设置",
+    "default": "Default",
     "tab-game": "游戏",
     "tab-audio": "声音设置",
     "tab-controls": "操作设置",

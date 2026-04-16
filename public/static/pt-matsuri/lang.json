@@ -42,6 +42,7 @@
     "on": "ligado",
     "off": "Desligado",
     "reset": "Reiniciar",
+    "default": "Default",
     "tab-game": "Jogo",
     "tab-audio": "Áudio",
     "tab-controls": "Controles",

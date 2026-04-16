@@ -42,6 +42,7 @@
     "on": "Activado",
     "off": "Desactivado",
     "reset": "Restablecer",
+    "default": "Default",
     "tab-game": "Juego",
     "tab-audio": "Audio",
     "tab-controls": "Controles",

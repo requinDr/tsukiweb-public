@@ -42,6 +42,7 @@
     "on": "켜기",
     "off": "끄기",
     "reset": "모든 설정 초기화",
+    "default": "Default",
     "tab-game": "화면 설정",
     "tab-audio": "사운드 설정",
     "tab-controls": "조작법 설정",
