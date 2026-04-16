@@ -367,11 +367,7 @@ select *f380,*f379
 *f379
 goto *s379
 *skip379
-osiete *f538
-*f538
-goto *s538
-*skip538
-goto *endofplay
+osiete *f537
 *f380
 goto *s380
 *skip380
@@ -404,11 +400,7 @@ select *f385,*f384
 *f384
 goto *s384
 *skip384
-osiete *f542
-*f542
-goto *s542
-*skip542
-goto *endofplay
+osiete *f539
 *f385
 goto *s385
 *skip385

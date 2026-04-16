@@ -98,6 +98,7 @@ async function v0_4_0_updateSave(ss: SaveState): Promise<SaveState> {
     version: APP_VERSION
   }
 }
+
 //#endregion ###################################################################
 //#region                         < v0.5.0 UPDATE
 //##############################################################################
@@ -164,30 +165,54 @@ async function v0_5_0_updateSave(ss: SaveState): Promise<SaveState> {
 
 function v0_6_0_updateSave(ss: SaveState): SaveState {
   ss.version = "0.6.0"
+
   const mergedImages: Record<string, string> = {
     "event/cel_e06a": "event/cel_e06",
     "event/cel_e06b": "event/cel_e06",
     "event/koha_h06a": "event/koha_h06",
     "event/koha_h06b": "event/koha_h06",
   }
-
-  // Update graphics in pages
-  for (const page of ss.pages ?? []) {
-    if (page.graphics) {
-      for (const [key, value] of Object.entries(page.graphics)) {
-        if (value && mergedImages[value]) {
-          (page.graphics as Record<string, string>)[key] = mergedImages[value]
-        }
+	const replacedScenes: PartialRecord<LabelName, LabelName> = {
+		's203': 's48',
+		's503': 's52',
+		's342': 's341',
+		's538': 's537',
+    's542': 's539',
+	}
+  const replacedLogicLabels: PartialRecord<LabelName, LabelName> = {
+    'f203': 'f48' , 'skip203': 'skip48',
+    'f503': 'f52' , 'skip503': 'skip52',
+    'f342': 'f341', 'skip342': 'skip341',
+    'f538': 'f537', 'skip538': 'skip537',
+    'f542': 'f539', 'skip542': 'skip539',
+    'f199_0' : 'skip199',
+  }
+  const { pages, scenes } = ss
+  // Update labels in scenes history
+  for (const s of scenes ?? []) {
+    if (s.label && Object.hasOwn(replacedScenes, s.label))
+      s.label = replacedScenes[s.label]
+  }
+  for (const p of pages ?? []) {
+    // Update labels in pages history
+    if (p.label && Object.hasOwn(replacedScenes, p.label))
+      p.label = replacedScenes[p.label]
+    else if (p.label && Object.hasOwn(replacedLogicLabels, p.label))
+      p.label = replacedLogicLabels[p.label]
+    // Update graphics
+    if (p.graphics) {
+      for (const [key, value] of Object.entries(p.graphics)) {
+        if (value && mergedImages[value])
+          (p.graphics as Record<string, string>)[key] = mergedImages[value]
       }
     }
   }
 
-  // Update top-level graphics if present
+  // Update savestate thumbnail graphics
   if (ss.graphics) {
     for (const [key, value] of Object.entries(ss.graphics)) {
-      if (value && mergedImages[value]) {
+      if (value && mergedImages[value])
         (ss.graphics as Record<string, string>)[key] = mergedImages[value]
-      }
     }
   }
 

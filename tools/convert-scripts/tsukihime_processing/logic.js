@@ -42,6 +42,8 @@ const redirected_scenes = {
 	f300 : "f301", // empty scene, removed
 	f342 : "f341", // identical scenes, middle of Akiha route
 	f503 : "f52" , // identical scenes at the end of Arc route.
+	f538 : "f537", // identical osiete
+	f542 : "f539", // identical osiete
 }
 
 function redirect(token) {
@@ -119,10 +121,8 @@ function logic_tokenFixes(token) {
 						token.args[3] == '*endofplay') {
 					token.cmd = 'osiete'
 					token.args = [token.args[1]]
-					return true
-				} else {
-					return redirect(token)
 				}
+				return redirect(token)
 			default:
 				throw Error(`Unrecognized command ${token.toString()}`)
 		}
@@ -251,6 +251,8 @@ function getBlockProps(label) {
 			case 'f415' : case 'f53' : case 'skip53': // inaccessible scenes
 			case 'f203' : case 'skip203': // redirected to f48
 			case 'f503' : // redirected to f52
+			case 'f538' : case 'skip538': // redirected to f537
+			case 'f542' : case 'skip542': // redirected to f539
 				return null
 		}
 		return { tokenFixes, blockFixes }
