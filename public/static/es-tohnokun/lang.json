@@ -42,16 +42,16 @@
     "on": "Activado",
     "off": "Desactivado",
     "reset": "Restablecer",
-    "default": "Default",
+    "default": "Predeterminado",
     "tab-game": "Juego",
     "tab-audio": "Audio",
     "tab-controls": "Controles",
     "tab-advanced": "Avanzado",
     "volume-master": "Volumen general",
-    "volume-track": "Volumen de la música",
-    "volume-se": "Volumen de efectos de sonido",
-    "volume-title-track": "Volumen de la música del título",
-    "volume-system-se": "Volumen de efectos de sonido del sistema",
+    "volume-track": "Música",
+    "volume-se": "Efectos",
+    "volume-title-track": "Música del título",
+    "volume-system-se": "Efectos del sistema",
     "track-source": "Versión de la banda sonora",
     "track-sources": {
       "original": "Original (2000)",
@@ -68,7 +68,7 @@
     "ratio-auto": "Automática",
     "ratio-4-3": "4:3",
     "ratio-16-9": "16:9",
-    "text-speed": "Velocidad de visualización del texto",
+    "text-speed": "Velocidad del texto",
     "text-speed-low": "Lenta",
     "text-speed-med": "Media",
     "text-speed-high": "Rápida",
@@ -80,7 +80,7 @@
     "adult-blur-help": [
       "Aplica un efecto de desenfoque en las miniaturas de las escenas para adultos."
     ],
-    "adult-warn": "Advertirme cuando ingrese a una escena H",
+    "adult-warn": "Preguntar para omitir contenido H",
     "fullscreen": "Pantalla completa",
     "language": "Idioma",
     "show-locked-content": "Revelar contenido bloqueado",
@@ -89,10 +89,10 @@
       "También cumple con el requisito para acceder al Lado Lejano.",
       "Se puede activar y desactivar en cualquier momento."
     ],
-    "game-font": "Game text font",
+    "game-font": "Fuente de texto del juego",
     "game-font-help": [
-      "The default font is served with the project.",
-      "To select a different font, input its name. It will be loaded from %0 if available, else from your device."
+      "La fuente predeterminada se incluye con el proyecto.",
+      "Para seleccionar una fuente diferente, introduce su nombre. Se cargará desde %0 si está disponible; de lo contrario, desde tu dispositivo."
     ],
     "data": "Almacenamiento de datos",
     "data-export": "Exportar",
@@ -138,8 +138,8 @@
   "game": {
     "skip-viewed": "Ya has visto esta escena.",
     "skip-hscene": "Esta escena contiene contenido para adultos.",
-    "skip-hcontent": "This passage contains adult content.",
-    "skip-prompt": "¿Quieres saltarla?",
+    "skip-hcontent": "Este fragmento contiene contenido para adultos.",
+    "skip-prompt": "¿Quieres omitirlo?",
     "toast-qsave": "El progreso ha sido guardado",
     "toast-qload": "Progreso restaurado",
     "toast-load": "Progreso restaurado",
