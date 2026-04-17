@@ -96,10 +96,10 @@ const Window = () => {
 					/>
 				</RatioContainer>
 
-				{script.continueScript && <>
+				{script.continueScript &&
 					<ChoicesLayer script={script} display={layers.text} navigable={topLayer == 'text'} />
-					<SkipLayer script={script} history={history} layers={layers}/>
-				</>}
+				}
+				<SkipLayer script={script} history={history} layers={layers}/>
 
 				<HistoryLayer
 					display={layers.history || layers.flowchart}
