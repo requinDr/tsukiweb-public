@@ -24,9 +24,8 @@ export type Choice = {
 }
 
 export type GalleryImg = {
-	name: string,
-	group?: CharId | "pd",
-	sensitive?: boolean,
+	group: CharId | "pd",
+	h?: true,
 	altOf?: string,
 	source?: "unused" | "half-moon"
 	unlockIds?: string[]

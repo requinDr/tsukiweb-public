@@ -3,8 +3,8 @@ import { settings } from "./settings"
 import { GALLERY_IMAGES } from "./gallery-data"
 
 
-function getImg(imgName: string): GalleryImg {
-	return GALLERY_IMAGES[imgName]
+function getImg(imgName: string): GalleryImg & { name: string } {
+	return { ...GALLERY_IMAGES[imgName], name: imgName }
 }
 
 function isInGallery(image: string): boolean {
@@ -12,18 +12,18 @@ function isInGallery(image: string): boolean {
 }
 
 function shouldBlur(image: string): boolean {
-	return (getImg(image)?.sensitive ?? false) && settings.eroBlur
+	return (getImg(image)?.h ?? false) && settings.eroBlur
 }
 
 function getByGroup(group: GalleryImg["group"]): string[] {
   return Object.entries(GALLERY_IMAGES)
-    .filter(([key, img]) => img.group === group)
+    .filter(([, img]) => img.group === group)
     .map(([key]) => key);
 }
 
 function getAlts(imgName: string): string[] {
   return Object.entries(GALLERY_IMAGES)
-    .filter(([key, img]) => img.altOf === imgName)
+    .filter(([, img]) => img.altOf === imgName)
     .map(([key]) => key);
 }
 

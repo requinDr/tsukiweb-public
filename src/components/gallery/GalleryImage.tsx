@@ -24,7 +24,7 @@ type GalleryImageProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
 	galleryUnlocked?: string[]
 	blurred?: boolean
 	showTotal?: boolean
-	getGalleryImg: (name: string) => GalleryImg
+	getGalleryImg: (name: string) => GalleryImg & { name: string }
 }
 const GalleryImage = ({image, gallery = [], galleryUnlocked = [], blurred = false, showTotal, getGalleryImg, ...props}: GalleryImageProps) => {
 	const [open, setOpen] = useState(false)
@@ -33,34 +33,25 @@ const GalleryImage = ({image, gallery = [], galleryUnlocked = [], blurred = fals
 
 	const slides: SlideImage[] = useMemo(() =>
 		gallery.map(img => {
-			if (!galleryUnlocked.includes(img))
-				return { src: "" }
+			if (!galleryUnlocked.includes(img)) return { src: "" }
 
-			const g = getGalleryImg(img)
-			return {
-				src: imageSrc(img, 'src'),
-				alt: g.name,
-				source: g.source,
-			}
+			const { name: alt, source } = getGalleryImg(img)
+			return { src: imageSrc(img, 'src'), alt, source }
 		}
 	), [gallery, galleryUnlocked])
 
 	useEffect(() => {
+		if (!open) return
 		const handleKeyDown = (event: KeyboardEvent) => {
-			if (open && event.key === 'Escape') {
-				event.stopPropagation()
+			if (event.key === 'Escape') {
+				event.stopImmediatePropagation()
 				event.preventDefault()
 				setOpen(false)
 			}
 		}
 
-		if (open) {
-			document.addEventListener('keydown', handleKeyDown, true)
-		}
-
-		return () => {
-			document.removeEventListener('keydown', handleKeyDown, true)
-		}
+		window.addEventListener('keydown', handleKeyDown, true)
+		return () => window.removeEventListener('keydown', handleKeyDown, true)
 	}, [open])
 
 	const galleryImg = getGalleryImg(image)

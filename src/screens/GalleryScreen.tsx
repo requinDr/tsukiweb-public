@@ -13,6 +13,7 @@ import { useScreenAutoNavigate, useLanguageRefresh } from 'hooks'
 import { audio } from 'utils/audio'
 import { GalleryTotal } from 'components/gallery/GalleryComponents'
 import { useQueryParam } from '@tsukiweb-common/hooks'
+import { CHARS } from 'utils/constants';
 
 const container: Variants = {
 	hidden: { opacity: 0 },
@@ -50,16 +51,12 @@ const GalleryScreen = () => {
 
 	const tabImages: string[] = useMemo(() => {
 		const imagesTmp = cg.getByGroup(selectedTab)
-		if (imagesTmp == undefined) {
-			console.error(`unknown character ${selectedTab}`)
-			return []
-		}
 		
 		return imagesTmp.filter(image => !cg.getImg(image).altOf)
 	}, [selectedTab])
 
-	const tabs: ComponentProps<typeof PageTabsLayout>["tabs"] = ['ark','cel','aki','his','koha'].map(char => ({
-		label: strings.characters[char as CharId],
+	const tabs: ComponentProps<typeof PageTabsLayout>["tabs"] = CHARS.map(char => ({
+		label: strings.characters[char],
 		value: char,
 		audio: audio
 	}))
@@ -104,8 +101,8 @@ const GalleryScreen = () => {
 								<div key={image} className="placeholder" tabIndex={0} nav-auto={1}>
 									{alts.length > 1 &&
 										<GalleryTotal
-											nbTotal={alts.length}
 											nbUnlocked={shownAlts.length}
+											nbTotal={alts.length}
 										/>
 									}
 								</div>

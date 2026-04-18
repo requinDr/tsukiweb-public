@@ -1,6 +1,6 @@
 import sceneAttrs from '@assets/game/scene_attrs.json'
 import { UcLetter } from '@tsukiweb-common/types'
-import { RouteDayName, RouteName, SceneName } from '../types'
+import { CharId, RouteDayName, RouteName, SceneName } from '../types'
 import { FcNodeAttrs, FcSceneAttrs } from '@tsukiweb-common/flowchart'
 
 export const APP_VERSION = import.meta.env.VITE_PACKAGE_VERSION
@@ -16,6 +16,8 @@ export const APP_INFO = {
   GAME_VNDB: "https://vndb.org/v7",
   PLUS_DISC_VNDB: "https://vndb.org/v49"
 }
+
+export const CHARS: CharId[] = ['ark', 'cel', 'aki', 'his', 'koha']
 
 export const SCENE_ATTRS: {
   'fc-nodes'?: Record<string, FcNodeAttrs>
