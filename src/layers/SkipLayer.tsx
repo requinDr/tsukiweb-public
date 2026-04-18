@@ -17,15 +17,6 @@ import { GraphicsGroup } from "@tsukiweb-common/graphics"
 import { SCENE_ATTRS } from "utils/constants";
 import { FcSceneAttrs } from "@tsukiweb-common/flowchart";
 
-function getSceneThumbnail(label: SceneName): FcSceneAttrs['graph'] {
-	const attrs = SCENE_ATTRS.scenes[label]
-
-	if (attrs?.osiete) {
-		return { "bg": "bg/bg_06a", "r": "tachi/cel_t20" }
-	}
-
-	return attrs?.fc?.graph ?? { bg: "#000000" }
-}
 
 type Props = {
 	script: ScriptPlayer
@@ -43,7 +34,7 @@ const SkipLayer = ({script, history, layers}: Props) => {
 	useEffect(()=> {
 		const ref = script.addEventListener('beforeBlock',
 			async (label, initPage)=> {
-				if (initPage !== 0 || !isThScene(label)) return
+				if (initPage !== 0 || !isThScene(label) || !script.continueScript) return
 
 				if (settings.enableSceneSkip && viewedScene(label)) {
 					await new Promise<boolean>((resolve)=> {
@@ -83,13 +74,14 @@ const SkipLayer = ({script, history, layers}: Props) => {
 		setScene(undefined)
 	}, [script, history, mode])
 
-	let display = layers.text && scene !== undefined
-	const sceneTitle = display ? getSceneTitle(Array.from(script.flags), scene!) : ""
 	const btnProps = useMemo(()=> ({
 		onClick: onClick,
 		audio: audio,
 		hoverSound:'tick'
 	}), [onClick])
+
+	const display = layers.text && scene !== undefined
+	const sceneTitle = display ? getSceneTitle(Array.from(script.flags), scene!) : undefined
 
 	// prevent navigation on skip buttons when other layer is active
 	const nav = display && (layers.topLayer == 'text')
@@ -126,12 +118,10 @@ const SkipLayer = ({script, history, layers}: Props) => {
 				</div>
 
 				<div className="buttons">
-					<Button {...btnProps} value="yes" clickSound="glass"
-							{...(nav && {'nav-x': -1})}>
+					<Button {...btnProps} value="yes" clickSound="glass" nav-x={nav ? -1 : undefined}>
 						{strings.yes}
 					</Button>
-					<Button {...btnProps} value="no" clickSound="close"
-							{...(nav && {'nav-x': 1})}>
+					<Button {...btnProps} value="no" clickSound="close" nav-x={nav ? 1 : undefined}>
 						{strings.no}
 					</Button>
 				</div>
@@ -142,6 +132,16 @@ const SkipLayer = ({script, history, layers}: Props) => {
 
 export default SkipLayer
 
+
+function getSceneThumbnail(scene: SceneName): FcSceneAttrs['graph'] {
+	const attrs = SCENE_ATTRS.scenes[scene]
+
+	if (attrs?.osiete) {
+		return { "bg": "bg/bg_06a", "r": "tachi/cel_t20" }
+	}
+
+	return attrs?.fc?.graph ?? { bg: "#000000" }
+}
 
 const SceneImage = ({ scene, sceneTitle }: { scene: SceneName, sceneTitle: string }) => {
 	const image = getSceneThumbnail(scene)

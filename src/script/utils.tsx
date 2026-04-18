@@ -68,7 +68,6 @@ export function getSceneTitles(label: SceneName): { flg: string, titles: [string
 }
 
 export function getSceneTitle(flags: string[], label: SceneName): string|undefined {
-	//const attrs = strings.scenario.scenes[label] ?? SCENE_ATTRS.scenes[label]
 	const titles = getSceneTitles(label)
 	if (typeof titles != 'object')
 		return titles
