@@ -3,7 +3,7 @@ import { displayMode } from "./display";
 import { settings } from "./settings";
 import cg from "./gallery";
 import { wordImage } from "translation/assets";
-import { BG_POSITIONS, Graphics, GraphicsTransition, Quake, Rocket, SpritePos } from "@tsukiweb-common/graphics";
+import { BG_POSITIONS, Graphics, GraphicsTransition, Quake, Rocket, SpritePos, SPRITES_POSITIONS } from "@tsukiweb-common/graphics";
 import { ScriptPlayer } from "script/ScriptPlayer";
 import Timer from "@tsukiweb-common/utils/timer";
 
@@ -146,7 +146,7 @@ export function processRocket(
 
 	const layer = params.layer as Rocket['layer']
 
-	if (!['l', 'c', 'r'].includes(layer)) {
+	if (!SPRITES_POSITIONS.includes(layer)) {
 		console.error(`Invalid layer for @rocket: ${layer}`)
 		onFinish()
 		return

@@ -4,7 +4,7 @@ import classNames from "classnames";
 import { ScriptPlayer } from "script/ScriptPlayer";
 import { processImageCmd, processMonocro, processQuake, processRocket } from "utils/graphics";
 import { displayMode } from "utils/display";
-import { Quake, GraphicsTransition, Rocket, BackgroundGraphics, ForegroundGraphics, SpriteGraphics } from "@tsukiweb-common/graphics";
+import { Quake, GraphicsTransition, Rocket, BackgroundGraphics, ForegroundGraphics, SpriteGraphics, SPRITES_POSITIONS } from "@tsukiweb-common/graphics";
 
 type Props = {
 	script: ScriptPlayer
@@ -16,6 +16,7 @@ const GraphicsLayer = ({ script }: Props) => {
 	const [transition, setTransition] = useState<GraphicsTransition|undefined>(undefined)
 	const [monochrome] = useObserved(script.graphics, 'monochrome')
 	const [rocket, setRocket] = useState<Rocket|undefined>(undefined)
+	const [topSprite, setTopSprite] = useState<'l'|'c'|'r'|undefined>(undefined)
 	
 	useEffect(()=> {
 		const img = processImageCmd.bind(null, setTransition)
@@ -39,6 +40,19 @@ const GraphicsLayer = ({ script }: Props) => {
 		...(monochrome && { '--monochrome-color': monochrome })
 	} as CSSProperties
 
+	useEffect(()=> {
+		if (!transition)
+			return
+
+		const appearingSprite = SPRITES_POSITIONS.find(layer => {
+			const nextImage = transition.to[layer]
+			return typeof nextImage == 'string' && nextImage.length > 0
+		})
+
+		if (appearingSprite)
+			setTopSprite(appearingSprite)
+	}, [transition])
+
 	const { graphics } = script
 
 	return (
@@ -53,18 +67,21 @@ const GraphicsLayer = ({ script }: Props) => {
 				transition={transition}
 				pos='l'
 				rocket={rocket?.layer === 'l' ? rocket : undefined}
+				topLayer={topSprite === 'l'}
 			/>
 			<SpriteGraphics
 				image={graphics.c}
 				transition={transition}
 				pos='c'
 				rocket={rocket?.layer === 'c' ? rocket : undefined}
+				topLayer={topSprite === 'c'}
 			/>
 			<SpriteGraphics
 				image={graphics.r}
 				transition={transition}
 				pos='r'
 				rocket={rocket?.layer === 'r' ? rocket : undefined}
+				topLayer={topSprite === 'r'}
 			/>
 			<ForegroundGraphics image={graphics.bg} transition={transition} bgAlign={bgAlign} />
 		</div>
