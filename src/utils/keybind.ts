@@ -1,6 +1,16 @@
 import KeyMap from "@tsukiweb-common/input/KeyMap";
 
-export const inGameKeyMap = {
+interface KeyBinding {
+    key?: KeyboardEvent["key"]
+    code?: KeyboardEvent["code"]
+    repeat?: boolean
+    ctrlKey?: boolean
+    [KeyMap.editing]?: boolean
+    [KeyMap.args]?: string
+}
+type InGameKeyMap = Record<string, [KeyBinding, ...KeyBinding[]]>
+
+export const inGameKeyMap: InGameKeyMap = {
     "next":    [
         {[KeyMap.editing]: false},
         {key: "Enter"},
@@ -17,8 +27,7 @@ export const inGameKeyMap = {
         {key: "H"}],
     "flowchart": [
         {[KeyMap.editing]: false, repeat: false},
-        {key: "F", ctrlKey: false}
-    ],
+        {key: "F", ctrlKey: false}],
     "graphics": [
         {[KeyMap.editing]: false, repeat: false},
         {code: "Space"},
@@ -45,17 +54,13 @@ export const inGameKeyMap = {
         {key: "C", repeat: false, [KeyMap.editing]: false}],
 }
 
-export const menuKeyMap = {
+export const menuKeyMap: InGameKeyMap = {
     "nav": [
         {ctrlKey: false, [KeyMap.editing]: false},
         {key: "ArrowUp"   , [KeyMap.args]: "up"},
         {key: "ArrowLeft" , [KeyMap.args]: "left"},
         {key: "ArrowDown" , [KeyMap.args]: "down"},
         {key: "ArrowRight", [KeyMap.args]: "right"},
-        //{code: "KeyW"     , [KeyMap.args]: "up"},
-        //{code: "KeyA"     , [KeyMap.args]: "left"},
-        //{code: "KeyS"     , [KeyMap.args]: "down"},
-        //{code: "KeyD"     , [KeyMap.args]: "right"},
         {key: "Escape"    , repeat: false, [KeyMap.args]: "out"},
         {key: "Backspace" , repeat: false, [KeyMap.args]: "out"},
         {key: "Enter"     , repeat: false, [KeyMap.args]: "in"},

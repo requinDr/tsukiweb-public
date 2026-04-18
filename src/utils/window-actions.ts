@@ -75,11 +75,10 @@ export type ShowLayers = {
 
 function createKeyMap(layers: InGameLayersHandler, show: ShowLayers) {
 	const noMenu = ()=> layers.currentMenu == null
-	//const noMenuWindow = ()=> ['menu', null].includes(layers.currentMenu)
 	const onText = ()=> layers.topLayer == 'text'
 	return {
-		"nav":		menuKeyMap['nav'],
-		"next":  	[noMenu, ...inGameKeyMap['next']],
+		"nav":      menuKeyMap['nav'],
+		"next":     [noMenu, ...inGameKeyMap['next']],
 		"back":     inGameKeyMap['back'],
 		"history":  [()=> show.history && onText(), ...inGameKeyMap['history']],
 		"flowchart":[()=> show.flowchart && onText(), ...inGameKeyMap['flowchart']],
