@@ -28,11 +28,11 @@ const thumbConfig = {
 }
 
 const x2Config = {
-  dir: path.join(outputDir, 'images'),
   input: {
     dir: 'input_x2'
   },
   output: {
+    dir: path.join(outputDir, 'images'),
     avif: {
       quality: 60,
       alphaQuality: 70,
