@@ -10,7 +10,7 @@ import { logError } from '../../tsukiweb-common/tools/utils/logging.js'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
-const inputDir = path.join(__dirname, 'input')
+const inputDir = path.join(__dirname, 'tachi')
 const outputDir = path.join(__dirname, 'output')
 
 async function main() {
