@@ -97,7 +97,7 @@
 	}
 }
 
-.scene-popover-container {
+.popover-container {
 	z-index: 100;
 	width: min(320px, 100%);
 	pointer-events: none;
@@ -113,7 +113,7 @@
 			position: relative;
 			width: 100%;
 			height: 240px;
-			.header {
+			.background {
 				height: 100%;
 				width: 100%;
 				background-color: #000;
@@ -123,23 +123,22 @@
 				z-index: 1;
 				bottom: 0;
 				left: 0;
-				padding: 0.3em 1em;
+				padding: .3rem 1rem;
 				background-image: linear-gradient(90deg, var(--surface-dark) 70%, transparent);
 				min-width: 80px;
-				-webkit-text-stroke: 0.01em black;
+				-webkit-text-stroke: 0.01rem black;
 			}
 			.id {
 				font-weight: bold;
 				position: absolute;
 				z-index: 1;
-				top: 0;
-				right: 0;
-				padding: 0em 1em 0.2em 1.5em;
-				font-size: 0.75em;
+				top: .4rem;
+				right: .6rem;
+				font-size: .75rem;
 				text-shadow: 0 0 2px black;
 				::before {
 					content: '#';
-					opacity: 0.5;
+					opacity: .5;
 				}
 			}
 			.blur {

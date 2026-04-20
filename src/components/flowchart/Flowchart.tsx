@@ -1,12 +1,12 @@
 
 import { memo } from "react"
-import { buildConnections, GameFlowchart } from "utils/flowchart"
+import { buildConnections, FcNode, GameFlowchart } from "utils/flowchart"
 import { SceneName } from "types"
 import { SceneRenderer } from "./SceneRenderer"
 import { History } from "script/history"
 import ConnectionPath from "./ConnectionPath"
-import { ScenePopoverProvider } from "./ScenePopoverContext"
-import { COLUMN_WIDTH, DY, SCENE_HEIGHT, SVG_DEFS } from "@tsukiweb-common/flowchart"
+import { COLUMN_WIDTH, DY, PopoverProvider, SCENE_HEIGHT, SVG_DEFS } from "@tsukiweb-common/flowchart"
+import ScenePopover from "./ScenePopover";
 
 
 type Props = {
@@ -40,7 +40,7 @@ const Flowchart = ({history, onSceneClick, mode = 'viewer'}: Props)=> {
 	const connections = buildConnections(visibleNodes)
 	
 	return (
-		<ScenePopoverProvider>
+		<PopoverProvider renderContent={(item: FcNode) => <ScenePopover node={item} />}>
 			<svg viewBox={`${left} ${top} ${width} ${height}`}
 				className="flowchart"
 				style={{
@@ -65,7 +65,7 @@ const Flowchart = ({history, onSceneClick, mode = 'viewer'}: Props)=> {
 					)}
 				</g>
 			</svg>
-		</ScenePopoverProvider>
+		</PopoverProvider>
 	)
 }
 

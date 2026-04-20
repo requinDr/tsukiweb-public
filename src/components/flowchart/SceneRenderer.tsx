@@ -5,8 +5,7 @@ import cg from "utils/gallery"
 import SceneImage from "./SceneImage"
 import classNames from "classnames"
 import { NavigationProps } from "@tsukiweb-common/input/arrowNavigation"
-import { useScenePopover, useScenePopoverTrigger } from "./ScenePopoverContext"
-import { FcNodeState } from "@tsukiweb-common/flowchart"
+import { FcNodeState, usePopover, usePopoverTrigger } from "@tsukiweb-common/flowchart"
 
 
 const UnseenScene = ({ node, ...props }: { node: FcNode }) => (
@@ -22,8 +21,8 @@ type SceneProps = {
 } & Omit<SVGProps<SVGRectElement>, 'onClick'> & NavigationProps
 
 const VisibleScene = memo(({ node, onClick, ...props }: SceneProps) => {
-	const { closePopover } = useScenePopover()
-	const trigger = useScenePopoverTrigger(node)
+	const { closePopover } = usePopover()
+	const trigger = usePopoverTrigger(node)
 	const disabled = node.state === FcNodeState.DISABLED
 
 	const onAction = useCallback((e: React.MouseEvent | React.KeyboardEvent) => {
