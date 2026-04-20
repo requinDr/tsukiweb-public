@@ -39,7 +39,7 @@ const SaveListItem = ({saveId, saveState, isFocused, ...props}: SaveListItemProp
 					<ChoicesPreview choices={(lastPage as any).choices} />
 				}
 			</div>
-			<div className="deta">
+			<div className="details">
 				<time dateTime={date.toISOString()} className="date">
 					{date.toLocaleDateString(getLocale())} {date.toLocaleString(getLocale(), {hour: 'numeric', minute: '2-digit'})}
 				</time>
