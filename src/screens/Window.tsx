@@ -7,7 +7,7 @@ import SavesLayer from '../layers/SavesLayer';
 import { HiMenu } from 'react-icons/hi';
 import { InGameLayersHandler, SCREEN, displayMode } from '../utils/display';
 import ConfigLayer from '../layers/ConfigLayer';
-import { useSetter as useReset } from '@tsukiweb-common/hooks';
+import { useResettable } from '@tsukiweb-common/hooks';
 import { ScriptPlayer } from 'script/ScriptPlayer';
 import history from 'script/history';
 import GraphicsLayer from 'layers/GraphicsLayer';
@@ -26,7 +26,7 @@ const Window = () => {
 	useScreenAutoNavigate(SCREEN.WINDOW)
 	const rootRef = useRef(null)
 
-	const [script, remountScript] = useReset(()=> {
+	const [script, remountScript] = useResettable(()=> {
 		const s = new ScriptPlayer(history)
 		s.addEventListener('finish', (complete) => {
 			if (complete) displayMode.screen = SCREEN.TITLE
@@ -36,11 +36,11 @@ const Window = () => {
 		return s
 	})
 
-	const [layers] = useReset(()=> new InGameLayersHandler({
+	const [layers] = useResettable(()=> new InGameLayersHandler({
 		backgroundMenu: 'remove'
 	}))
 	useSyncExternalStore(layers.subscribe, layers.getSnapshot)
-	const [actionsHandler] = useReset(()=>
+	const [actionsHandler] = useResettable(()=>
 		new actions.UserActionsHandler(script, layers, remountScript)
 	)
 
