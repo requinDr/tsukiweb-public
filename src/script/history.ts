@@ -67,14 +67,7 @@ export class History extends HistoryBase<ScriptPlayer, PageType,
     (lastPage as PageEntry<'choice'>).selected = selection
   }
 
-  onPhase(script: ScriptPlayer) {
-    if (this.pageContext == undefined) {
-       // workaround to prevent issue with scene 414 missing '\' before phase.
-       // Fixed in pre-processing on 22/09/25. Remove when all script caches
-       // are cleared.
-      script.text = ""
-      this.onPageStart(script.pageContext()!)
-    }
+  onPhase() {
     this.setPage({type: 'phase'})
   }
 

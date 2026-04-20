@@ -79,7 +79,7 @@ function processPhase(arg: string, _cmd: string, script: ScriptPlayer) {
 	let [title, dayStr] = phaseTexts(route, routeDay, day).map(closeBB)
 
     script.phase = {route, routeDay, day}
-    script.history.onPhase(script)
+    script.history.onPhase()
 
 	let texts
 	const common = `${bg}$${vAlign}\`${hAlign}${title}`
