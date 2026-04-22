@@ -403,7 +403,6 @@
     "s537"  : {"r": "aki", "d": "12a", "s": "2" , "osiete": true},
     "s378"  : {"r": "aki", "d": "12a", "s": "2" , "fc": {"col": 9, "from": ["s375"], "graph": {"bg": "bg/bg_53b"}}},
     "s379"  : {"r": "aki", "d": "12a", "s": "3" , "fc": {"col": 9, "from": ["s378"], "graph": {"bg": "bg/ima_13"}}, "deadEnd": true},
-    "s538"  : {"r": "aki", "d": "12a", "s": "3" , "osiete": true},
     "s380"  : {"r": "aki", "d": "12a", "s": "3" , "fc": {"col": 8, "from": ["s378"], "graph": {"bg": "bg/bg_53b", "c": "tachi/hal_t03"}}},
     "s509"  : {"r": "aki", "d": "13b", "s": "1" , "fc": {"col": 9, "from": ["s380"], "graph": {"bg": "bg/bg_54a", "c": "tachi/his_t01"}}, "deadEnd": true},
     "s539"  : {"r": "aki", "d": "13b", "s": "1" , "osiete": true},
@@ -414,7 +413,6 @@
     "s385"  : {"r": "aki", "d": "13a", "fc": {"col": 8, "from": ["s383"], "graph": {"bg": "event/aki_f02"}}},
     "s541"  : {"r": "aki", "d": "13a", "osiete": true},
     "s384"  : {"r": "aki", "d": "13b", "fc": {"col": 9, "from": ["s383"], "graph": {"bg": "bg/ima_03"}}},
-    "s542"  : {"r": "aki", "d": "13b", "osiete": true},
 
     "s315"  : {"r": "his", "d": "04a", "s": "1a", "fc": {"col": 10, "from": ["s313"], "graph": {"bg": "bg/bg_40a", "c": "tachi/his_t03"}}, "//" : "day=4 inside scene"},
     "s316"  : {"r": "his", "d": "04a", "s": "1b", "fc": {"col": 11, "from": ["s313"], "graph": {"bg": "bg/bg_33d", "c": "tachi/aki_t03b"}}, "//" : "day=4 inside scene"},
