@@ -1,4 +1,4 @@
-import { LabelName, PlusDiscSceneName, RouteName, SceneName } from "../types";
+import { LabelName, PlusDiscSceneName, RouteDayName, RouteName, SceneName } from "../types";
 import { APP_VERSION, SCENE_ATTRS } from "../utils/constants";
 import { strings } from "../translation/lang"
 import { ScriptPlayer } from "./ScriptPlayer";
@@ -33,32 +33,19 @@ export function getSceneTitles(label: SceneName): { flg: string, titles: [string
 	if ("title" in attrs)
 		return attrs.title
 	else {
-		const {r, d, s} = attrs
+		const {name} = attrs
 		let flg = null
-		let routes: RouteName[]
-		if (typeof r == "object" && 'flg' in r)
-			routes = [r['0'], r['1']], flg = r.flg
+		let names: Exclude<typeof name, object>[]
+		if (typeof name == "object" && 'flg' in name)
+			names = [name['0'], name['1']], flg = name.flg
 		else
-			routes = [r]
+			names = [name]
 
-		let scenes: string[]|undefined
-		if (typeof s == "object" && 'flg' in s) {
-			if (!flg)
-				routes = [routes[0], routes[0]], flg = s.flg
-			else if (flg != s.flg)
-				throw Error(`Unexpected multiple flags for label ${label}`)
-			scenes = [s['0'], s['1']]
-		} else if (s && flg) {
-			scenes = [s, s]
-		} else if (s) {
-			scenes = [s]
-		} else {
-			scenes = undefined
-		}
-		const titles = routes.map((r, i) => {
+		let titles = names.map(name=> {
+			const [r, d, s] = name.split('-') as [RouteName, RouteDayName, string]
 			const dayName = strings.scenario.routes[r][d]
-			if (scenes)
-				return `${dayName} - ${scenes[i]}`
+			if (s)
+				return `${dayName} - ${s}`
 			else return dayName
 		})
 		if (flg)

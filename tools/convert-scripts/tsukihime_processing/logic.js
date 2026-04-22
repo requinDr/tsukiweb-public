@@ -44,6 +44,7 @@ const redirected_scenes = {
 	f503 : "f52" , // identical scenes at the end of Arc route.
 	f538 : "f537", // identical osiete
 	f542 : "f539", // identical osiete
+	f358half: "f359" // useless intermediate label
 }
 
 function redirect(token) {
@@ -226,10 +227,22 @@ function getBlockProps(label) {
 						return false
 				})
 				break
-			case "skip341" :
-				blockFixes.push((tokens)=> {
-					tokens.splice(1, 1, ...parseScript("if %flgS>=1 inc %flgO"))
+			case "skip358" :
+				// move condition for s360 as a negative for f359, add condition to flgS
+				tokenFixes.push((t)=> {
+					if (t instanceof ConditionToken)
+						return false
+					else
+						addChoiceCondition(t, '*f359', "%flgO==0 || %flgS==0")
 				})
+				break
+			case "skip361" :
+				// condition on flgO is redundant with deadend after s358 if flgO == 1
+				tokenFixes.push((t)=> {
+					if (t instanceof ConditionToken)
+						return false
+				})
+				break
 			case 'skip503' :
 				// f503 deleted in favor of f52
 				// add condition on the 2nd choice, skip52 later replaced by skip503
@@ -253,6 +266,7 @@ function getBlockProps(label) {
 			case 'f503' : // redirected to f52
 			case 'f538' : case 'skip538': // redirected to f537
 			case 'f542' : case 'skip542': // redirected to f539
+			case 'f358half' : // bypassed to f359
 				return null
 		}
 		return { tokenFixes, blockFixes }

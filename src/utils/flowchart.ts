@@ -28,8 +28,8 @@ export class GameFlowchart extends Flowchart<FcNode> {
 	constructor(history?: History) {
 		super({
 			...(SCENE_ATTRS["fc-nodes"] ?? {}),
-			...Object.entries(SCENE_ATTRS.scenes).reduce((acc, [id, { fc }]) => {
-				if (fc) acc[id] = fc // filter non-fc scenes
+			...Object.entries(SCENE_ATTRS.scenes).reduce((acc, [id, { col, ...attrs }]) => {
+				if (col != undefined) acc[id] = {col, ...attrs} // filter non-fc scenes
 				return acc
 			}, {} as Record<string, FcNodeAttrs>)
 		})
@@ -186,8 +186,15 @@ export class FcNode extends FlowchartNode<FcNodeId, GameFlowchart> {
 					this._state = FcNodeState.UNSEEN
 			}
 			else {
-				this._state = Math.max(FcNodeState.HIDDEN,
-					...this.parents.map(node => node.state))
+				const parentSceneNodes = this.parentSceneNodes
+				let maxState = Math.max(FcNodeState.HIDDEN, ...parentSceneNodes.map(n=>n.state))
+				if (maxState < FcNodeState.ENABLED) {
+					this._state = maxState
+				} else {
+					const childrenSceneNodes = this.childSceneNodes
+					maxState = Math.max(FcNodeState.UNSEEN, ...childrenSceneNodes.map(n=>n.state))
+					this._state = maxState
+				}
 			}
 		}
 		return this._state

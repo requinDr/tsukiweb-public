@@ -1,7 +1,8 @@
 import sceneAttrs from '@assets/game/scene_attrs.json'
-import { UcLetter } from '@tsukiweb-common/types'
+import { Digit, PartialRecord, UcLetter } from '@tsukiweb-common/types'
 import { CharId, RouteDayName, RouteName, SceneName } from '../types'
 import { FcNodeAttrs, FcSceneGraphAttrs } from '@tsukiweb-common/flowchart'
+import { Regard } from 'script/ScriptPlayer'
 
 export const APP_VERSION = import.meta.env.VITE_PACKAGE_VERSION
 
@@ -18,6 +19,7 @@ export const APP_INFO = {
 }
 
 export const CHARS: CharId[] = ['ark', 'cel', 'aki', 'his', 'koha']
+type SceneNameFormat = `${RouteName}-${RouteDayName}${`-${string}`}`
 
 export const SCENE_ATTRS: {
   'fc-nodes'?: Record<string, FcNodeAttrs>
@@ -25,14 +27,16 @@ export const SCENE_ATTRS: {
     {
       title: string
     } | {
-      r: (RouteName | { flg: UcLetter, "0": RouteName, "1": RouteName })
-      d: RouteDayName
-      s?: (string | { flg: UcLetter, "0": string, "1": string })
+      name: (SceneNameFormat |
+             { flg: UcLetter, "0": SceneNameFormat, "1": SceneNameFormat })
     }
   ) & {
     h?: true
     osiete?: true
-    fc?: FcNodeAttrs
     graph?: FcSceneGraphAttrs
-  }>
+  } & (FcNodeAttrs | PartialRecord<keyof FcNodeAttrs, never>)>,
+  badges: {
+    regards: Record<keyof Regard, PartialRecord<SceneName, number>>,
+    flags: PartialRecord<UcLetter|Digit, Array<SceneName>>
+  }
 } = JSON.parse(JSON.stringify(sceneAttrs))

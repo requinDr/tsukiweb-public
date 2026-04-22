@@ -1253,7 +1253,7 @@ goto *f343
 *f341
 goto *s341
 *skip341
-if (%flgS>=1) inc %flgO
+inc %flgO
 goto *f343
 *f386
 goto *s386
@@ -1659,10 +1659,7 @@ goto *f358
 *f358
 goto *s358
 *skip358
-if (%flgO>=1) goto *f360
-select *f358half,*f360
-*f358half
-goto *f359
+select [%flgO==0 || %flgS==0]*f359,*f360
 *f359
 goto *s359
 *skip359
@@ -1721,7 +1718,6 @@ goto *endofplay
 *f361
 goto *s361
 *skip361
-if (%flgO>=1) goto *f364
 select *f362,*f364
 *f162
 goto *s162
