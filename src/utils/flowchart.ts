@@ -1,7 +1,7 @@
 import { getSceneTitle, getSceneTitles, isScene, isThScene } from "../script/utils"
 import { LabelName, SceneName } from "types"
 import { SCENE_ATTRS } from "./constants"
-import { COLUMN_WIDTH, DY, FcNodeState, FcSceneAttrs, Flowchart, FlowchartNode, FlowchartNodeAttrs, SCENE_HEIGHT, SCENE_WIDTH, SpritesheetMetadataType } from "@tsukiweb-common/flowchart"
+import { COLUMN_WIDTH, DY, FcNodeState, FcSceneGraphAttrs, Flowchart, FlowchartNode, FlowchartNodeAttrs, SCENE_HEIGHT, SCENE_WIDTH, SpritesheetMetadataType } from "@tsukiweb-common/flowchart"
 import SpritesheetMetadata from "@assets/game/spritesheet_metadata.json"
 import { spriteSheetImgPath } from "translation/assets"
 import { settings } from "./settings"
@@ -16,7 +16,6 @@ type FcNodeAttrs = FlowchartNodeAttrs<FcNodeId> & {
 	col: number
 	align?: FcNodeId
 	cutAt?: number
-	graph?: FcSceneAttrs['graph']
 }
 
 //##############################################################################
@@ -90,17 +89,15 @@ export class FcNode extends FlowchartNode<FcNodeId, GameFlowchart> {
 	column: number
 	_align: FcNodeId | FcNode | null
 	cutAt: number
-	graph?: FcNodeAttrs['graph']
 	_boundRect: [number, number, number, number] | null = null
 	_state: number = -1
 	_navY: number | null
 
-	constructor(id: FcNodeId, {col, cutAt, graph, align, ...attrs}: FcNodeAttrs,
+	constructor(id: FcNodeId, {col, cutAt, align, ...attrs}: FcNodeAttrs,
 				flowchart: GameFlowchart) {
 		super(id, attrs, flowchart)
 		this.column = col
 		this.cutAt = cutAt ?? 0
-		this.graph = graph
 		this._align = align ?? null
 		this._navY = null
 	}
@@ -266,4 +263,15 @@ export function buildConnections(visibleNodes: FcNode[]): Connection[] {
 	}
 
 	return [...disabled, ...enabled] // disabled first = rendered under enabled
+}
+
+
+export function getSceneGraph(scene: SceneName): FcSceneGraphAttrs {
+  const attrs = SCENE_ATTRS.scenes[scene]
+
+  if (attrs?.osiete) {
+    return { bg: "bg/bg_06a", r: "tachi/cel_t20" }
+  }
+
+  return attrs?.graph ?? { bg: "#000000" }
 }

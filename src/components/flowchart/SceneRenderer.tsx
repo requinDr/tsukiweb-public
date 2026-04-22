@@ -1,5 +1,5 @@
 import { SVGProps, memo, useCallback } from "react"
-import { FcNode } from "utils/flowchart"
+import { FcNode, getSceneGraph } from "utils/flowchart"
 import { SceneName } from "types"
 import cg from "utils/gallery"
 import SceneImage from "./SceneImage"
@@ -24,6 +24,7 @@ const VisibleScene = memo(({ node, onClick, ...props }: SceneProps) => {
 	const { closePopover } = usePopover()
 	const trigger = usePopoverTrigger(node)
 	const disabled = node.state === FcNodeState.DISABLED
+	const graph = getSceneGraph(node.id as SceneName)
 
 	const onAction = useCallback((e: React.MouseEvent | React.KeyboardEvent) => {
 		if ('key' in e && (e.key !== "Enter" || e.currentTarget !== e.target)) {
@@ -36,7 +37,7 @@ const VisibleScene = memo(({ node, onClick, ...props }: SceneProps) => {
 
 	const classes = classNames("fc-scene", "unlocked", {
 		"active": node.active,
-		"blur": node.graph?.bg && cg.shouldBlur(node.graph.bg),
+		"blur": graph.bg && cg.shouldBlur(graph.bg),
 		"disabled": disabled
 	})
 

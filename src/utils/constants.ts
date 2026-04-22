@@ -1,7 +1,7 @@
 import sceneAttrs from '@assets/game/scene_attrs.json'
 import { UcLetter } from '@tsukiweb-common/types'
 import { CharId, RouteDayName, RouteName, SceneName } from '../types'
-import { FcNodeAttrs, FcSceneAttrs } from '@tsukiweb-common/flowchart'
+import { FcNodeAttrs, FcSceneGraphAttrs } from '@tsukiweb-common/flowchart'
 
 export const APP_VERSION = import.meta.env.VITE_PACKAGE_VERSION
 
@@ -32,6 +32,7 @@ export const SCENE_ATTRS: {
   ) & {
     h?: true
     osiete?: true
-    fc?: FcSceneAttrs
+    fc?: FcNodeAttrs
+    graph?: FcSceneGraphAttrs
   }>
 } = JSON.parse(JSON.stringify(sceneAttrs))

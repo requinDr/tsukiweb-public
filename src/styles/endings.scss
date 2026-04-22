@@ -53,7 +53,7 @@
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(46px, 1fr));
 		place-content: flex-start;
-		max-width: min(840px, 100%);
+		max-width: min(820px, 100%);
 
 		.badending {
 			filter: brightness(0.5);

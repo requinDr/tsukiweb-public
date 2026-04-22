@@ -14,8 +14,7 @@ import { InGameLayersHandler } from "utils/display"
 import AnimatedHideActivityDiv from "@tsukiweb-common/ui-core/components/AnimatedHideActivityDiv"
 import classNames from "classnames"
 import { GraphicsGroup } from "@tsukiweb-common/graphics"
-import { SCENE_ATTRS } from "utils/constants";
-import { FcSceneAttrs } from "@tsukiweb-common/flowchart";
+import { getSceneGraph } from "utils/flowchart";
 
 
 type Props = {
@@ -133,18 +132,8 @@ const SkipLayer = ({script, history, layers}: Props) => {
 export default SkipLayer
 
 
-function getSceneThumbnail(scene: SceneName): FcSceneAttrs['graph'] {
-	const attrs = SCENE_ATTRS.scenes[scene]
-
-	if (attrs?.osiete) {
-		return { "bg": "bg/bg_06a", "r": "tachi/cel_t20" }
-	}
-
-	return attrs?.fc?.graph ?? { bg: "#000000" }
-}
-
 const SceneImage = ({ scene, sceneTitle }: { scene: SceneName, sceneTitle: string }) => {
-	const image = getSceneThumbnail(scene)
+	const image = getSceneGraph(scene)
 	const isCGScene = cg.isInGallery(image?.bg)
 
 	return (
