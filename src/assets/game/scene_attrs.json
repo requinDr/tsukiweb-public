@@ -404,7 +404,6 @@
     "s537" :{"name": "aki-12a-2"  , "osiete": true, "from":["s376"]},
     "s378" :{"name": "aki-12a-2"  , "col":10, "from":["s375"], "graph":{"bg":"bg/bg_53b"}},
     "s379" :{"name": "aki-12a-3"  , "col":10, "from":["s378"], "graph":{"bg":"bg/ima_13"}, "deadEnd": true},
-    "s538" :{"name": "aki-12a-3"  , "osiete": true, "from":["s379"]},
     "s380" :{"name": "aki-12a-3"  , "col":9, "from":["s378"], "graph":{"bg":"bg/bg_53b", "c":"tachi/hal_t03"}},
     "s509" :{"name": "aki-13b-1"  , "col":10, "from":["s380"], "graph":{"bg":"bg/bg_54a", "c":"tachi/his_t01"}, "deadEnd": true},
     "s539" :{"name": "aki-13b-1"  , "osiete": true, "from":["s509"]},
@@ -415,7 +414,6 @@
     "s385" :{"name": "aki-13a"    , "col":9, "from":["s383"], "graph":{"bg":"event/aki_f02"}},
     "s541" :{"name": "aki-13a"    , "osiete": true, "from":["s385"]},
     "s384" :{"name": "aki-13b"    , "col":10, "from":["s383"], "graph":{"bg":"bg/ima_03"}},
-    "s542" :{"name": "aki-13b"    , "osiete": true, "from":["s384"]},
 
     "s315" :{"name": "his-04a-1a" , "col":11, "from":["s313"], "graph":{"bg":"bg/bg_40a", "c":"tachi/his_t03"}, "//":"day=4 inside scene"},
     "s316" :{"name": "his-04a-1b" , "col":12, "from":["s313"], "graph":{"bg":"bg/bg_33d", "c":"tachi/aki_t03b"}, "//":"day=4 inside scene"},
