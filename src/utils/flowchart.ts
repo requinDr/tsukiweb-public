@@ -253,26 +253,6 @@ export class FcNode extends FlowchartNode<FcNodeId, GameFlowchart> {
 }
 
 
-type Connection = { from: FcNode; to: FcNode }
-
-export function buildConnections(visibleNodes: FcNode[]): Connection[] {
-	const disabled: Connection[] = []
-	const enabled: Connection[] = []
-
-	for (const node of visibleNodes) {
-		for (const parent of node.parents) {
-			const isEnabled =
-				parent.state === FcNodeState.ENABLED &&
-				node.state === FcNodeState.ENABLED;
-
-			(isEnabled ? enabled : disabled).push({ from: parent, to: node })
-		}
-	}
-
-	return [...disabled, ...enabled] // disabled first = rendered under enabled
-}
-
-
 export function getSceneGraph(scene: SceneName): FcSceneGraphAttrs {
   const attrs = SCENE_ATTRS.scenes[scene]
 

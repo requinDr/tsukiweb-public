@@ -1,12 +1,12 @@
 
 import { memo } from "react"
-import { buildConnections, FcNode, GameFlowchart } from "utils/flowchart"
+import { FcNode, GameFlowchart } from "utils/flowchart"
 import { SceneName } from "types"
 import { SceneRenderer } from "./SceneRenderer"
 import { History } from "script/history"
-import ConnectionPath from "./ConnectionPath"
 import { COLUMN_WIDTH, DY, PopoverProvider, SCENE_HEIGHT, SVG_DEFS } from "@tsukiweb-common/flowchart"
 import ScenePopover from "./ScenePopover";
+import AllConnections from "./AllConnections";
 
 
 type Props = {
@@ -36,8 +36,6 @@ const Flowchart = ({history, onSceneClick, mode = 'viewer'}: Props)=> {
 		refX = activeNode.column, refY = activeNode.navY!
 	else
 		refX = refY = 0
-
-	const connections = buildConnections(visibleNodes)
 	
 	return (
 		<PopoverProvider renderContent={(item: FcNode) => <ScenePopover node={item} />}>
@@ -51,9 +49,7 @@ const Flowchart = ({history, onSceneClick, mode = 'viewer'}: Props)=> {
 				xmlns="http://www.w3.org/2000/svg">
 				{SVG_DEFS}
 				<g className="fc-connections">
-					{connections.map(c => 
-						<ConnectionPath key={`${c.from.id}-${c.to.id}`} from={c.from} to={c.to} mode={mode} />
-					)}
+					<AllConnections fcNodes={visibleNodes} mode={mode} />
 				</g>
 				<g className="fc-scenes">
 					{visibleNodes.map(node=>
