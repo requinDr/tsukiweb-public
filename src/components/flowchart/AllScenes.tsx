@@ -8,23 +8,17 @@ import { NavigationProps } from "@tsukiweb-common/input/arrowNavigation"
 import { FcNodeState, usePopover, usePopoverTrigger } from "@tsukiweb-common/flowchart"
 
 
-const UnseenScene = ({ node, ...props }: { node: FcNode }) => (
-	<use {...props} className='fc-scene' id={node.id}
-		href="#fc-scene-hidden"
-		x={node.centerX} y={node.centerY}
-		clipPath="url(#fc-scene-clip)" />
-)
-
-type SceneProps = {
-	node: FcNode,
+type VisibleSceneProps = {
+	node: FcNode
+	graph: ReturnType<typeof getSceneGraph>
+	shouldBlur: boolean
+	closePopover: () => void
 	onClick?: (id: SceneName) => void
 } & Omit<SVGProps<SVGRectElement>, 'onClick'> & NavigationProps
 
-const VisibleScene = memo(({ node, onClick, ...props }: SceneProps) => {
-	const { closePopover } = usePopover()
+export const VisibleScene = memo(({ node, graph, shouldBlur, closePopover, onClick, ...props }: VisibleSceneProps) => {
 	const trigger = usePopoverTrigger(node)
 	const disabled = node.state === FcNodeState.DISABLED
-	const graph = getSceneGraph(node.id as SceneName)
 
 	const onAction = useCallback((e: React.MouseEvent | React.KeyboardEvent) => {
 		if ('key' in e && (e.key !== "Enter" || e.currentTarget !== e.target)) {
@@ -37,7 +31,7 @@ const VisibleScene = memo(({ node, onClick, ...props }: SceneProps) => {
 
 	const classes = classNames("fc-scene", "unlocked", {
 		"active": node.active,
-		"blur": graph.bg && cg.shouldBlur(graph.bg),
+		"blur": shouldBlur,
 		"disabled": disabled
 	})
 
@@ -70,14 +64,48 @@ const VisibleScene = memo(({ node, onClick, ...props }: SceneProps) => {
 	)
 })
 
-export const SceneRenderer = ({ node, onClick, ...props }: SceneProps) => {
 
-	switch (node.state) {
-		case FcNodeState.HIDDEN:
-			return null
-		case FcNodeState.UNSEEN:
-			return <UnseenScene node={node} {...props} />
-		default:
-			return <VisibleScene node={node} onClick={onClick} {...props} />
-	}
+type SceneRendererProps = {
+	nodes: FcNode[]
+	activeNode?: FcNode
+	onClick?: (id: SceneName) => void
+} & Omit<SVGProps<SVGRectElement>, 'onClick'>
+
+export const AllScenes = ({ nodes, activeNode, onClick }: SceneRendererProps) => {
+	const { closePopover } = usePopover()
+
+	const refX = activeNode?.column ?? 0
+	const refY = activeNode?.navY ?? 0
+
+	const sceneNodes = nodes.filter(n => n.scene)
+	const unseenNodes = sceneNodes.filter(n => n.state === FcNodeState.UNSEEN)
+	const activeNodes = sceneNodes.filter(n =>
+		n.state !== FcNodeState.UNSEEN && n.state !== FcNodeState.HIDDEN)
+
+	const navProps = (node: FcNode) => node.navY != null
+		? { 'nav-scroll': 'smooth', 'nav-y': node.navY - refY, 'nav-x': node.column - refX }
+		: {}
+
+	return (
+		<>
+			{unseenNodes.map(node =>
+				<use key={node.id} className='fc-scene' id={node.id}
+					href="#fc-scene-hidden"
+					x={node.centerX} y={node.centerY}
+					clipPath="url(#fc-scene-clip)"
+					{...navProps(node)} />
+			)}
+			{activeNodes.map(node => {
+				const graph = getSceneGraph(node.id as SceneName)
+				return (
+					<VisibleScene key={node.id} node={node}
+						graph={graph}
+						shouldBlur={!!(graph.bg && cg.shouldBlur(graph.bg))}
+						closePopover={closePopover}
+						onClick={onClick}
+						{...navProps(node)} />
+				)
+			})}
+		</>
+	)
 }

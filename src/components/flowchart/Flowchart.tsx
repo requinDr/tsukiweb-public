@@ -2,7 +2,7 @@
 import { memo } from "react"
 import { FcNode, GameFlowchart } from "utils/flowchart"
 import { SceneName } from "types"
-import { SceneRenderer } from "./SceneRenderer"
+import { AllScenes } from "./AllScenes"
 import { History } from "script/history"
 import { COLUMN_WIDTH, DY, PopoverProvider, SCENE_HEIGHT, SVG_DEFS } from "@tsukiweb-common/flowchart"
 import ScenePopover from "./ScenePopover";
@@ -31,11 +31,7 @@ const Flowchart = ({history, onSceneClick, mode = 'viewer'}: Props)=> {
 	const maxWidth = `${100 * width / (2 * COLUMN_WIDTH)}%` // minimum 2 scenes visible
 	const maxHeight = `${100 * height / (4 * (SCENE_HEIGHT + DY*2))}%` // minimum 4 scenes visible
 	const activeNode = flowchart.getNode(flowchart.activeScene)
-	let refX: number, refY: number
-	if (activeNode)
-		refX = activeNode.column, refY = activeNode.navY!
-	else
-		refX = refY = 0
+
 	
 	return (
 		<PopoverProvider renderContent={(item: FcNode) => <ScenePopover node={item} />}>
@@ -52,13 +48,11 @@ const Flowchart = ({history, onSceneClick, mode = 'viewer'}: Props)=> {
 					<AllConnections fcNodes={visibleNodes} mode={mode} />
 				</g>
 				<g className="fc-scenes">
-					{visibleNodes.map(node=>
-						node.scene && <SceneRenderer key={node.id} node={node}
-							{...(node.navY != null && { 'nav-scroll': 'smooth',
-								'nav-y': node.navY - refY,
-								'nav-x': node.column - refX	})}
-							onClick={onSceneClick}/>
-					)}
+					<AllScenes
+						nodes={visibleNodes}
+						activeNode={activeNode}
+						onClick={onSceneClick} 
+					/>
 				</g>
 			</svg>
 		</PopoverProvider>
