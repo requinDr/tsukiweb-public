@@ -28,31 +28,36 @@
 	
 	.fc-scene {
 		stroke: var(--inactive-connection);
-		stroke-width: 1.2;
+		stroke-width: .8;
 		stroke-linejoin: round;
 		fill: none;
 
-		&.disabled {
-			filter: brightness(0.5) grayscale(1);
-			pointer-events: none;
+		& > rect {
+			fill: transparent;
+			outline: none;
 		}
-		&.blur {
-			filter: blur(3px);
-			transition: filter .2s linear;
-			transition-delay: .5s;
 
-			&:hover, &:focus-visible {
-				filter: blur(0);
+		&.disabled {
+			pointer-events: none;
+
+			& > image {
+				filter: brightness(0.5) grayscale(1);
 			}
-		}
-		&.disabled.blur {
-			filter: brightness(0.5) grayscale(1) blur(3px);
+
+			&.blur > image {
+				filter: brightness(0.5) grayscale(1) blur(3px);
+			}
 		}
 		&.unlocked:not(.disabled) {
 			stroke: var(--active-connection);
 			outline: none;
 			cursor: pointer;
-			rect {
+
+			&.blur > image {
+				filter: blur(3px);
+			}
+
+			& > rect {
 				transition: filter .1s linear;
 				&:hover, &:focus-visible, &:focus {
 					filter:
@@ -69,31 +74,27 @@
 		fill: none;
 		fill-opacity: 0.246809;
 		fill-rule: evenodd;
-		stroke: var(--active-connection);
-		stroke-width: 0.8px;
+		stroke-width: .8px;
 		stroke-linejoin: round;
 		stroke-opacity: 1;
 		paint-order: fill markers stroke;
 		stop-color: #000000;
-
+		
+		&.enabled {
+			stroke: var(--active-connection);
+			filter: drop-shadow(0 0 1px blue);
+		}
 		&.disabled {
 			stroke: var(--inactive-connection);
-			stroke-width: 0.6px;
+			stroke-width: .6;
 		}
 	}
 
 	#fc-scene-hidden rect:last-of-type {
 		fill: none;
-		stroke-width: 0.6;
+		stroke-width: .6;
 		stroke-linejoin: round;
 		stroke: rgb(115 115 115);
-	}
-
-	.fc-scene-box {
-		fill: rgb(1, 43, 82);
-		stroke: var(--active-connection);
-		stroke-width: 0.6;
-		paint-order: stroke;
 	}
 }
 

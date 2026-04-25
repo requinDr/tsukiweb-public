@@ -70,11 +70,11 @@ const AllConnections = ({ fcNodes, mode = 'viewer' }: Props) => {
 
 	return <>
 		{disabledD && <path className="fc-link disabled" d={disabledD} />}
-		{enabledD  && <path className="fc-link" d={enabledD}  />}
+		{enabledD  && <path className="fc-link enabled" d={enabledD}  />}
 		{dashed.map(({ id, d, disabled, style }) => (
 			<path
 				key={id} id={id}
-				className={disabled ? "fc-link disabled" : "fc-link"}
+				className={disabled ? "fc-link disabled" : "fc-link enabled"}
 				d={d}
 				style={style}
 			/>

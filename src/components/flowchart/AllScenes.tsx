@@ -50,10 +50,7 @@ export const VisibleScene = memo(({ node, graph, shouldBlur, closePopover, onCli
 				y={-node.height / 2}
 				width={node.width}
 				height={node.height}
-				fill="transparent"
-				pointerEvents="all"
 				ry={1.6}
-				style={{ cursor: disabled ? 'default' : 'pointer', outline: 'none' }}
 				
 				{...(!disabled && trigger)}
 				onClick={!disabled ? onAction : undefined}
