@@ -1,5 +1,5 @@
 import { FcNode } from "utils/flowchart"
-import { SCENE_WIDTH, SCENE_HEIGHT, COLUMN_WIDTH, DY } from "@tsukiweb-common/flowchart"
+import { COLUMN_WIDTH, DY } from "@tsukiweb-common/flowchart"
 import { SCENE_ATTRS } from "utils/constants"
 import { SceneName } from "types"
 const HEART_OFFSET = `0,2.5`
@@ -13,24 +13,24 @@ const commonProps = {
 
 export const BADGES_DEFINES = <defs>
     <linearGradient id="ark_grad" x1="0" x2="1" y1="1" y2="0">
-        <stop offset="0" stopColor="var(--color-ark-1, #817f00)" />
-        <stop offset="1" stopColor="var(--route-ark, #e7e300)" />
+        <stop offset="0" stopColor="color-mix(in oklch, var(--route-ark) 80%, white)" />
+        <stop offset="1" stopColor="color-mix(in oklch, var(--route-ark) 80%, black)" />
     </linearGradient>
     <linearGradient id="cel_grad" x1="0" x2="1" y1="1" y2="0">
-        <stop offset="0" stopColor="var(--route-cel, #064694)" />
-        <stop offset="1" stopColor="var(--color-cel-2, #07deff)" />
+        <stop offset="0" stopColor="color-mix(in oklch, var(--route-cel) 80%, white)" />
+        <stop offset="1" stopColor="color-mix(in oklch, var(--route-cel) 80%, black)" />
     </linearGradient>
     <linearGradient id="aki_grad" x1="0" x2="1" y1="1" y2="0">
-        <stop offset="0" stopColor="var(--color-aki-1, #4f2910)" />
-        <stop offset="1" stopColor="var(--route-aki, #c5651f)" />
+        <stop offset="0" stopColor="color-mix(in oklch, var(--route-aki) 80%, white)" />
+        <stop offset="1" stopColor="color-mix(in oklch, var(--route-aki) 80%, black)" />
     </linearGradient>
     <linearGradient id="his_grad" x1="0" x2="1" y1="1" y2="0">
-        <stop offset="0" stopColor="var(--color-his-1, #850505)" />
-        <stop offset="1" stopColor="var(--route-his, #e70909)" />
+        <stop offset="0" stopColor="color-mix(in oklch, var(--route-his) 80%, white)" />
+        <stop offset="1" stopColor="color-mix(in oklch, var(--route-his) 80%, black)" />
     </linearGradient>
     <linearGradient id="koha_grad" x1="0" x2="1" y1="1" y2="0">
-        <stop offset="0" stopColor="var(--color-koha-1, #990099)" />
-        <stop offset="1" stopColor="var(--route-koha, #ff00ff)" />
+        <stop offset="0" stopColor="color-mix(in oklch, var(--route-koha) 80%, white)" />
+        <stop offset="1" stopColor="color-mix(in oklch, var(--route-koha) 80%, black)" />
     </linearGradient>
     <linearGradient id="len_grad" x1="0" x2="1" y1="1" y2="0">
         <stop offset="0" stopColor="var(--color-ark-1, #242424)" />
