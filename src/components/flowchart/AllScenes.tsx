@@ -6,6 +6,7 @@ import SceneImage from "./SceneImage"
 import classNames from "classnames"
 import { NavigationProps } from "@tsukiweb-common/input/arrowNavigation"
 import { FcNodeState, usePopover, usePopoverTrigger } from "@tsukiweb-common/flowchart"
+import { SceneBadges } from "./badges"
 
 
 type VisibleSceneProps = {
@@ -35,7 +36,7 @@ export const VisibleScene = memo(({ node, graph, shouldBlur, closePopover, onCli
 		"disabled": disabled
 	})
 
-	return (
+	return <>
 		<g 
 			id={`fc-scene-${node.id}`} 
 			className={classes}
@@ -61,7 +62,8 @@ export const VisibleScene = memo(({ node, graph, shouldBlur, closePopover, onCli
 				{...props}
 			/>
 		</g>
-	)
+		<SceneBadges node={node} />
+	</>
 })
 
 
