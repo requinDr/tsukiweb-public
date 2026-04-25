@@ -1,4 +1,3 @@
-@use "sass:color";
 @use '../../tsukiweb-common/src/ui-core/styles/mixins' as *;
 
 #endings {
@@ -13,10 +12,13 @@
 		flex-grow: 0;
 
 		@mixin ending-color($color) {
-			$color-title: color.adjust($color, $lightness: -20%);
-			
 			.title {
-				background: linear-gradient(to right, $color-title, color.adjust($color-title, $lightness: 20%), $color-title);
+				background: linear-gradient(
+					90deg,
+					color-mix(in oklch, #{$color} 70%, black),
+					color-mix(in oklch, #{$color} 100%, white 10%),
+					color-mix(in oklch, #{$color} 70%, black)
+				);
 				-webkit-background-clip: text;
 				background-clip: text;
 				color: transparent;
@@ -24,12 +26,12 @@
 		}
 
 		.unlocked {
-			&.ark { @include ending-color(#e7e300) }
-			&.cel { @include ending-color(#00bfff) }
-			&.aki { @include ending-color(#b35a1f) }
-			&.his { @include ending-color(#e70909) }
-			&.koha { @include ending-color(#ff00ff) }
-			&.eclipse { @include ending-color(#970e0e) }
+			&.ark { @include ending-color(var(--route-ark)) }
+			&.cel { @include ending-color(var(--route-cel)) }
+			&.aki { @include ending-color(var(--route-aki)) }
+			&.his { @include ending-color(var(--route-his)) }
+			&.koha { @include ending-color(var(--route-koha)) }
+			&.eclipse { @include ending-color(var(--route-eclipse)) }
 		}
 
 		.separator {
