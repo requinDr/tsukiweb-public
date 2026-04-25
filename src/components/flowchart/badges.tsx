@@ -1,6 +1,7 @@
 import { FcNode } from "utils/flowchart"
 import { COLUMN_WIDTH, DY } from "@tsukiweb-common/flowchart"
 import { SCENE_ATTRS } from "utils/constants"
+import { CharId } from "types"
 
 const HEART_OFFSET = `0,2.5`
 const commonProps = {
@@ -82,18 +83,23 @@ type SceneBadgesProps = {
   node: FcNode
 }
 
-type BadgeEntry = { flag?: string; char?: string; value?: number }
+type BadgeEntry = { flag?: string } & ({ char: CharId; value: number } | {char?:never, value?:never})
 const BADGE_MAP = new Map<string, BadgeEntry>()
+function buildBadgesMap() {
 
-for (const [char, entries] of Object.entries(SCENE_ATTRS.badges.regards))
-  for (const [id, value] of Object.entries(entries))
-    BADGE_MAP.set(id, { ...BADGE_MAP.get(id), char, value: value as number })
+    for (const [char, entries] of Object.entries(SCENE_ATTRS.badges.regards))
+    for (const [id, value] of Object.entries(entries))
+        BADGE_MAP.set(id, { char: char as CharId, value: value as number })
 
-for (const [flag, ids] of Object.entries(SCENE_ATTRS.badges.flags))
-  for (const id of ids)
-    BADGE_MAP.set(id, { ...BADGE_MAP.get(id), flag })
-
-export const getNodeBadges = (id: string) => BADGE_MAP.get(id)
+    for (const [flag, ids] of Object.entries(SCENE_ATTRS.badges.flags))
+    for (const id of ids)
+        BADGE_MAP.set(id, { ...BADGE_MAP.get(id), flag })
+}
+export function getNodeBadges(nodeId: string) {
+    if (BADGE_MAP.size == 0)
+        buildBadgesMap()
+    return BADGE_MAP.get(nodeId)
+}
 
 export const SceneBadges = ({node}: SceneBadgesProps)=> {
   const badge = getNodeBadges(node.id)
