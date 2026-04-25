@@ -18,7 +18,7 @@ type SaveDetailsProps = {
 const SaveDetails = ({id, saveState, deleteSave}: SaveDetailsProps)=> {
 	const [phaseTitle, phaseDay] = saveState ? savePhaseTexts(saveState) : ["", ""]
 	const lastPage = saveState?.pages.at(-1)
-	const progress = saveState?.scenes.reduce((s1, s2)=>jsonMerge(s1, s2))
+	const progress = saveState?.scenes.reduce((s1, s2)=>jsonMerge(s2, s1))
 	const graphics = jsonMerge(saveState?.graphics ?? {},
 			lastPage?.graphics ?? {bg: "#000"})
 	const regard = progress?.regard ?? {}
