@@ -36,7 +36,8 @@ export const SCENE_ATTRS: {
     graph?: FcSceneGraphAttrs
   } & (FcNodeAttrs | PartialRecord<keyof FcNodeAttrs, never>)>,
   badges: {
-    regards: Record<keyof Regard, PartialRecord<SceneName, number>>,
+    regards: Record<keyof Regard, PartialRecord<SceneName, number>>
     flags: PartialRecord<UcLetter|Digit, Array<SceneName>>
+    conditions: Record<SceneName, string>
   }
 } = JSON.parse(JSON.stringify(sceneAttrs))

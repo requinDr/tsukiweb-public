@@ -3,7 +3,8 @@
     "b33" : {"col": 3  , "from":["s31"]},
     "a32" : {"col": 2  , "from":["s31"], "align":"s33"},
     "b36" : {"col": 0  , "from":["a32","s35","s502","s89","s34"]},
-    "b40" : {"col": 0  , "from":["s36","s201"]},
+    "b40" : {"col": 0.5, "from":["s201"]},
+    "b202": {"col": 2  , "from":["s201"]},
     "a48" : {"col": 9.5, "from":["s48"]},
     "b79" : {"col": 0  , "from":["s76","s77","s78"]},
     "a204": {"col": 9  , "from":["s204","s205"]},
@@ -49,9 +50,9 @@
     "s34"  :{"name": "ark-01a-6b" , "col":4, "from":["s33"], "graph":{"bg":"bg/bg_09b", "c":"tachi/cel_t07a"}},
     "s36"  :{"name": "ark-01a-7a" , "col":0, "from":["b36"], "graph":{"bg":"bg/bg_22b"}},
     "s201" :{"name": "ark-01a-7b" , "col":1, "from":["b36"], "graph":{"bg":"bg/bg_22b"}},
-    "s40"  :{"name": "ark-01a-8a" , "col":0, "from":["b40"], "graph":{"bg":"event/aki_e01"}},
-    "s39"  :{"name": "ark-01a-8b" , "col":1, "from":["b40"], "graph":{"bg":"event/his_e01"}},
-    "s202" :{"name": "ark-01a-8c" , "col":2, "from":["b40"], "graph":{"bg":"event/his_e02"}},
+    "s40"  :{"name": "ark-01a-8a" , "col":0, "from":["s36","b40"], "graph":{"bg":"event/aki_e01"}},
+    "s39"  :{"name": "ark-01a-8b" , "col":1, "from":["s201"], "graph":{"bg":"event/his_e01"}, "align": "s40"},
+    "s202" :{"name": "ark-01a-8c" , "col":2, "from":["b202"], "graph":{"bg":"event/his_e02"}},
     "s41"  :{"name": "ark-01a-9"  , "col":1, "from":["s39","s202"], "graph":{"bg":"bg/bg_33b", "c":"tachi/koha_t05"}},
     "s42"  :{"name": "ark-01a-10" , "col":0, "from":["s40","s41"], "graph":{"bg":"bg/bg_40c"}},
     "s43"  :{"name": "ark-01a-11a", "col":0, "from":["s42"], "graph":{"bg":"bg/bg_34b", "c":"tachi/aki_t04b"}},
@@ -522,6 +523,15 @@
       "P": ["s204"],
       "R": ["s417"],
       "S": ["s337"]
+    },
+    "conditions": {
+      "s35"  : "%flgM",
+      "s502" : "%regard_aki>=1",
+      "s34"  : "%regard_cel>=2",
+      "s201" : "%cleared",
+      "s202" : "%clear_hisui",
+      "s49"  : "%flg6 && %cleared && %regard_his>%regard_aki && %regard_his>%regard_koha",
+      "s48"  : "%flg6 && %cleared && %regard_his<=%regard_aki || %regard_his<=%regard_koha"
     }
   }
 }
