@@ -2,6 +2,7 @@ import { FcNode } from "utils/flowchart"
 import { COLUMN_WIDTH, DY } from "@tsukiweb-common/flowchart"
 import { SCENE_ATTRS } from "utils/constants"
 import { CharId } from "types"
+import { strings } from "translation/lang"
 
 const HEART_OFFSET = `0,2.5`
 
@@ -53,15 +54,15 @@ export const BADGES_DEFINES = <defs>
   )}
   <polygon id="flag-icon" points="0,-3.14 3,-1 1.85,2.53 -1.85,2.53 -3,-1" fill="#668a00" />
   <g id="sel-icon">
-    <polygon points="0,-3 3,0 0,3 -3,0" fill="lime"/>
-    <text fontFamily="var(--ui-font)" fontSize="4" stroke="none" fill="white" alignmentBaseline="central" textAnchor="middle">
+    <polygon points="0,-2.8 2.7,0 0,2.7 -2.7,0" fill="var(--active-connection)"/>
+    <text y="1.6" stroke="none" fill="white" textAnchor="middle">
     ?
     </text>
   </g>
   <g id="cond-icon">
     <polygon points="0,-3 3,0 0,3 -3,0" fill="lime"/>
-    <path d="m2.5,1.5l-2.5,2.5 -2.5,-2.5" strokeWidth="0.525mm"/>
-    <path d="m2.5,1.5l-2.5,2.5 -2.5,-2.5m2.5,2.5l0,-2" stroke="lime"/>
+    <path d="m2.5,1.5l-2.5,2.5l-2.5,-2.5" strokeWidth="0.525mm"/>
+    <path d="m2.5,1.5l-2.5,2.5l-2.5,-2.5m2.5,2.5l0,-2" stroke="lime"/>
   </g>
 </defs>
 
@@ -70,7 +71,13 @@ type SceneBadgesProps = {
   node: FcNode
 }
 
-type BadgeEntry = { flag?: string } & ({ char: CharId; value: number } | {char?:never, value?:never})
+type BadgeEntry = {
+  flag?: string,
+  condition?: string,
+  select?: string[]
+} & (
+  { char: CharId; value: number } | {char?: never, value?: never}
+)
 const BADGE_MAP = new Map<string, BadgeEntry>()
 function buildBadgesMap() {
 
@@ -81,6 +88,12 @@ function buildBadgesMap() {
   for (const [flag, ids] of Object.entries(SCENE_ATTRS.badges.flags))
   for (const id of ids)
     BADGE_MAP.set(id, { ...BADGE_MAP.get(id), flag })
+
+  for (const [id, texts] of Object.entries(strings.choices)) {
+    BADGE_MAP.set(id, { ...BADGE_MAP.get(id), select: texts})
+    if (id.includes('f'))
+      BADGE_MAP.set(id.replace('f', 's'), { ...BADGE_MAP.get(id.replace('f', 's')), select: texts})
+  }
 }
 export function getNodeBadges(nodeId: string) {
   if (BADGE_MAP.size == 0)
@@ -91,10 +104,10 @@ export function getNodeBadges(nodeId: string) {
 export const SceneBadges = ({node}: SceneBadgesProps)=> {
   const badge = getNodeBadges(node.id)
   if (!badge) return null
-  const { flag, char, value } = badge
+  const { flag, char, value, select } = badge
   
-  let regard_badge = undefined, flag_badge = undefined
-  const y = node.bottom - (node.height > 0 ? DY/2 : 0)
+  let regard_badge = undefined, flag_badge = undefined, select_badge = undefined
+  let y = node.bottom - (node.height > 0 ? DY/2 : 0)
   const dX = (node.width > 0 ? COLUMN_WIDTH - node.width : 0)
   if (char) {
     const x = node.right - dX
@@ -111,6 +124,12 @@ export const SceneBadges = ({node}: SceneBadgesProps)=> {
       </text>
     </g>
   }
+  if (select) {
+    const x = node.centerX
+    y = node.bottom + DY;
+    select_badge = <use className="badge" href="#sel-icon"
+                        transform={`translate(${x}, ${y})`}/>
+  }
   
-  return <>{regard_badge}{flag_badge}</>
+  return <>{regard_badge}{flag_badge}{select_badge}</>
 }
