@@ -4,48 +4,35 @@ import { SCENE_ATTRS } from "utils/constants"
 import { CharId } from "types"
 
 const HEART_OFFSET = `0,2.5`
-const commonProps = {
-  fill:"none",
-  stroke:"white",
-  strokeWidth:"0.15mm",
-  strokeLinecap:"round",
-  strokeLinejoin:"round"
-} as const
+
+function characterGradient(char: CharId) {
+  return <linearGradient id={`${char}_grad`} x1="0" x2="1" y1="1" y2="0">
+    <stop offset="0" stopColor={`color-mix(in oklch, var(--route-${char}) 80%, white)`} />
+    <stop offset="1" stopColor={`color-mix(in oklch, var(--route-${char}) 80%, black)`} />
+  </linearGradient>
+}
 
 export const BADGES_DEFINES = <defs>
-  <linearGradient id="ark_grad" x1="0" x2="1" y1="1" y2="0">
-    <stop offset="0" stopColor="color-mix(in oklch, var(--route-ark) 80%, white)" />
-    <stop offset="1" stopColor="color-mix(in oklch, var(--route-ark) 80%, black)" />
-  </linearGradient>
-  <linearGradient id="cel_grad" x1="0" x2="1" y1="1" y2="0">
-    <stop offset="0" stopColor="color-mix(in oklch, var(--route-cel) 80%, white)" />
-    <stop offset="1" stopColor="color-mix(in oklch, var(--route-cel) 80%, black)" />
-  </linearGradient>
-  <linearGradient id="aki_grad" x1="0" x2="1" y1="1" y2="0">
-    <stop offset="0" stopColor="color-mix(in oklch, var(--route-aki) 80%, white)" />
-    <stop offset="1" stopColor="color-mix(in oklch, var(--route-aki) 80%, black)" />
-  </linearGradient>
-  <linearGradient id="his_grad" x1="0" x2="1" y1="1" y2="0">
-    <stop offset="0" stopColor="color-mix(in oklch, var(--route-his) 80%, white)" />
-    <stop offset="1" stopColor="color-mix(in oklch, var(--route-his) 80%, black)" />
-  </linearGradient>
-  <linearGradient id="koha_grad" x1="0" x2="1" y1="1" y2="0">
-    <stop offset="0" stopColor="color-mix(in oklch, var(--route-koha) 80%, white)" />
-    <stop offset="1" stopColor="color-mix(in oklch, var(--route-koha) 80%, black)" />
-  </linearGradient>
+  {characterGradient('ark')}
+  {characterGradient('cel')}
+  {characterGradient('aki')}
+  {characterGradient('his')}
+  {characterGradient('koha')}
+  {/* TODO move to KT repository when possible
   <linearGradient id="len_grad" x1="0" x2="1" y1="1" y2="0">
-    <stop offset="0" stopColor="var(--color-ark-1, #242424)" />
-    <stop offset="1" stopColor="var(--color-ark-2, #606060)" />
+    <stop offset="0" stopColor="var(--color-len-1, #242424)" />
+    <stop offset="1" stopColor="var(--color-len-2, #606060)" />
   </linearGradient>
   <linearGradient id="akira_grad" x1="0" x2="1" y1="1" y2="0">
-    <stop offset="0" stopColor="var(--color-cel-1, #664c73)" />
-    <stop offset="1" stopColor="var(--color-cel-2, #be59f0)" />
-    <stop offset="1" stopColor="var(--color-cel-2, #ba5ce9)" />
+    <stop offset="0" stopColor="var(--color-akira-1, #664c73)" />
+    <stop offset="1" stopColor="var(--color-akira-2, #be59f0)" />
+    <stop offset="1" stopColor="var(--color-akira-2, #ba5ce9)" />
   </linearGradient>
   <linearGradient id="nana_grad" x1="0" x2="1" y1="1" y2="0">
-    <stop offset="0" stopColor="var(--color-aki-1, #1f3a65)" />
-    <stop offset="1" stopColor="var(--color-aki-2, #3564af)" />
+    <stop offset="0" stopColor="var(--color-nana-1, #1f3a65)" />
+    <stop offset="1" stopColor="var(--color-nana-2, #3564af)" />
   </linearGradient>
+  */}
   <path id="regard_+" d="m1.75,0.75l0,1.75m-0.875,-0.875l1.75,0" stroke="var(--regard-plus-color, #00ff00)" fill="none"/>
   <path id="regard_-" d="m1.75,0.85m-0.875,0.5l1.75,0" stroke="var(--regard-minus-color, #ff0000)" fill="none"/>
   {[1, 2, 3].map(n=>
@@ -73,8 +60,8 @@ export const BADGES_DEFINES = <defs>
   </g>
   <g id="cond-icon">
     <polygon points="0,-3 3,0 0,3 -3,0" fill="lime"/>
-    <path d="m 2.5,1.5 l-2.5,2.5 -2.5,-2.5" strokeWidth="0.525mm"/>
-    <path d="m 2.5,1.5 l-2.5,2.5 -2.5,-2.5 m 2.5,2.5 l 0,-2" stroke="lime"/>
+    <path d="m2.5,1.5l-2.5,2.5 -2.5,-2.5" strokeWidth="0.525mm"/>
+    <path d="m2.5,1.5l-2.5,2.5 -2.5,-2.5m2.5,2.5l0,-2" stroke="lime"/>
   </g>
 </defs>
 
@@ -107,23 +94,23 @@ export const SceneBadges = ({node}: SceneBadgesProps)=> {
   const { flag, char, value } = badge
   
   let regard_badge = undefined, flag_badge = undefined
+  const y = node.bottom - (node.height > 0 ? DY/2 : 0)
+  const dX = (node.width > 0 ? COLUMN_WIDTH - node.width : 0)
   if (char) {
-    const dx = node.right - (node.width > 0 ? COLUMN_WIDTH - node.width : 0)
-    const dy = node.bottom - (node.height > 0 ? DY/2 : 0)
-    regard_badge = <use href={`#regard_${value}`}
-              fill={`url(#${char}_grad`}
-              transform={`translate(${dx}, ${dy})`} />
+    const x = node.right - dX
+    regard_badge = <use className="badge" href={`#regard_${value}`}
+              fill={`url(#${char}_grad)`}
+              transform={`translate(${x}, ${y})`} />
   }
   if (flag) {
-    const dx = node.left + (node.width > 0 ? COLUMN_WIDTH - node.width : 0)
-    const dy = node.bottom - (node.height > 0 ? DY/2 : 0)
-    flag_badge = <g transform={`translate(${dx}, ${dy})`}>
+    const x = node.left + dX
+    flag_badge = <g className="badge" transform={`translate(${x}, ${y})`}>
       <use href="#flag-icon"/>
-      <text y="1.6" fontFamily="sans-serif" fontSize="4" stroke="none" fill="white" textAnchor="middle">
+      <text y="1.6" stroke="none" fill="white" textAnchor="middle">
         {flag}
       </text>
     </g>
   }
   
-  return <g {...commonProps}>{regard_badge}{flag_badge}</g>
+  return <>{regard_badge}{flag_badge}</>
 }
