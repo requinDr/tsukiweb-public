@@ -54,7 +54,7 @@ export const BADGES_DEFINES = <defs>
   <polygon id="flag-icon" points="0,-3.14 3,-1 1.85,2.53 -1.85,2.53 -3,-1" fill="#668a00" />
   <g id="sel-icon">
     <polygon points="0,-3 3,0 0,3 -3,0" fill="lime"/>
-    <text fontFamily="sans-serif" fontSize="4" stroke="none" fill="white" alignmentBaseline="central" textAnchor="middle">
+    <text fontFamily="var(--ui-font)" fontSize="4" stroke="none" fill="white" alignmentBaseline="central" textAnchor="middle">
     ?
     </text>
   </g>

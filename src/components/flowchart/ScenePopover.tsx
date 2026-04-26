@@ -24,7 +24,7 @@ const ScenePopover = ({ node }: PopoverProps) => {
 			</div>
 			{badges &&
 				<svg className="badges" viewBox="-4 -4 50 8" preserveAspectRatio="xMinYMid meet">
-					{badges.flag && 
+					{badges.flag &&
 						<g className="badge">
 							<use href="#flag-icon"/>
 							<text y="1.6" stroke="none" fill="white" textAnchor="middle">
@@ -33,12 +33,16 @@ const ScenePopover = ({ node }: PopoverProps) => {
 						</g>
 					}
 					{badges.char &&
-						[...Array(Math.abs(badges.value)).fill(0)].map((_, i)=> 
-						<use key={i} className="badge" href={`#regard_${Math.sign(badges.value)}`}
-							fill={`url(#${badges.char}_grad)`}
-							transform={`translate(${8*(i+(badges.flag ? 1 : 0))}, 0)`}
-							/>
-						)
+						<g className="badge" transform={`translate(${badges.flag ? 4 : -4},0)`}>
+							<image href={`./chars/${badges.char}.webp`}
+									className="badge" x={1} y={-3.5} height={7}/>
+							{[...Array(Math.abs(badges.value)).fill(0)].map((_, i)=> 
+							<use key={i} href={`#regard_${Math.sign(badges.value)}`}
+								fill={`url(#${badges.char}_grad)`}
+								transform={`translate(${11+5*i},0) scale(0.75)`}
+								/>
+							)}
+						</g>
 					}
 				</svg>
 			}
