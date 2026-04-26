@@ -74,18 +74,18 @@ type BadgeEntry = { flag?: string } & ({ char: CharId; value: number } | {char?:
 const BADGE_MAP = new Map<string, BadgeEntry>()
 function buildBadgesMap() {
 
-    for (const [char, entries] of Object.entries(SCENE_ATTRS.badges.regards))
-    for (const [id, value] of Object.entries(entries))
-        BADGE_MAP.set(id, { char: char as CharId, value: value as number })
+  for (const [char, entries] of Object.entries(SCENE_ATTRS.badges.regards))
+  for (const [id, value] of Object.entries(entries))
+    BADGE_MAP.set(id, { char: char as CharId, value: value as number })
 
-    for (const [flag, ids] of Object.entries(SCENE_ATTRS.badges.flags))
-    for (const id of ids)
-        BADGE_MAP.set(id, { ...BADGE_MAP.get(id), flag })
+  for (const [flag, ids] of Object.entries(SCENE_ATTRS.badges.flags))
+  for (const id of ids)
+    BADGE_MAP.set(id, { ...BADGE_MAP.get(id), flag })
 }
 export function getNodeBadges(nodeId: string) {
-    if (BADGE_MAP.size == 0)
-        buildBadgesMap()
-    return BADGE_MAP.get(nodeId)
+  if (BADGE_MAP.size == 0)
+    buildBadgesMap()
+  return BADGE_MAP.get(nodeId)
 }
 
 export const SceneBadges = ({node}: SceneBadgesProps)=> {
