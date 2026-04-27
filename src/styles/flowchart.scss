@@ -110,46 +110,56 @@
 	z-index: 100;
 	width: min(320px, 100%);
 	pointer-events: none;
+	isolation: isolate;
 
-	.scene-popover {
+	.scene-popover-animated {
 		width: 100%;
-		border-radius: 4px;
-		background-color: #000;
-		box-shadow: 0 1px 4px #000;
-
+		border-radius: 8px;
+		background-color: #010741;
 		.scene-popover-content {
 			position: relative;
 			width: 100%;
 			height: 240px;
 			border-radius: inherit;
 
-			.background {
-				height: 100%;
-				width: 100%;
-				background-color: #000;
+			&::before {
+				content: "";
+				position: absolute;
+				inset: 0;
 				border-radius: inherit;
+				background: linear-gradient(360deg, #000000, transparent 30%);
+				opacity: 0.5;
+				z-index: 1;
+			}
+
+			.background {
+				border-radius: inherit;
+				height: 240px;
+				width: 100%;
 				overflow: hidden;
+				mask-image: linear-gradient(#000 0%, #000, #0000);
 			}
 			.title {
 				position: absolute;
+				bottom: 1.8rem;
+				padding-inline: 1rem;
+				width: 100%;
+				font-size: 1.1em;
+				line-height: 1.2;
+				letter-spacing: -0.6px;
+				font-weight: 500;
 				z-index: 1;
-				bottom: 0;
-				left: 0;
-				padding: .3rem 1rem;
-				padding-bottom: .8rem;
-				background-image: linear-gradient(90deg, var(--surface-dark) 70%, transparent);
-				min-width: 80px;
-				-webkit-text-stroke: 0.01rem black;
-				border-bottom-left-radius: inherit;
+				font-style: normal;
+				text-shadow: 0 0px 3px black;
 			}
 			.id {
 				font-weight: bold;
 				position: absolute;
 				z-index: 1;
-				top: .4rem;
-				right: .6rem;
-				font-size: .75rem;
-				text-shadow: 0 0 2px black;
+				bottom: .6rem;
+				left: 1rem;
+				font-size: 0.8rem;
+				color: var(--text-muted);
 				::before {
 					content: '#';
 					opacity: .5;
@@ -161,14 +171,10 @@
 			.badges {
 				z-index: 2;
 				position: absolute;
-				width: 100%;
 				height: 2.5rem;
-				left: 0;
-				bottom: 0;
-				transform: translate(0, 50%);
-				
-				-webkit-filter: drop-shadow( 0 3px 3px rgb(0, 0, 0));
-  				filter: drop-shadow( 0 3px 3px rgb(0, 0, 0));
+				right: 0;
+				bottom: -1em;
+				display: flex;
 			}
 			.choices-container {
 				border-radius: inherit;
