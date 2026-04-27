@@ -34,11 +34,11 @@ const ScenePopover = ({ node }: PopoverProps) => {
 						</g>
 					}
 					{badges.char &&
-						<g className="badge" transform={`translate(${badges.flag ? -4 : 4},0)`}>
-							{[...Array(Math.abs(badges.value)).fill(0)].map((_, i) =>
-								<use key={i} href={`#regard_${Math.sign(badges.value)}`}
+						<g className="badge" transform={`translate(${badges.flag ? -7 : 4},0)`}>
+							{[...Array(Math.abs(badges.value)).fill(badges.value)].map((n, i) =>
+								<use key={i} href={`#regard_${Math.sign(n)}`}
 									fill={`url(#${badges.char}_grad)`}
-									transform={`translate(${-(Math.abs(badges.value) - i) * 5},0) scale(0.75)`}
+									transform={`translate(${-(Math.abs(n) - i) * 5 + 1.5},0) scale(0.75)`}
 								/>
 							)}
 							<image href={`./chars/${badges.char}.webp`}
