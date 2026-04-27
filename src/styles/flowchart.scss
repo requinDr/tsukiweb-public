@@ -170,6 +170,18 @@
 				-webkit-filter: drop-shadow( 0 3px 3px rgb(0, 0, 0));
   				filter: drop-shadow( 0 3px 3px rgb(0, 0, 0));
 			}
+			.choices-container {
+				border-radius: inherit;
+				.choice {
+					margin: .3em;
+					padding: .1em .3em;
+					border-radius: inherit;
+					border: 1px solid var(--surface-light);
+					background: #000A;
+					-webkit-text-stroke: 0.01rem black;
+					text-shadow: 0 0 2px black;
+				}
+			}
 		}
 	}
 }

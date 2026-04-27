@@ -1,5 +1,5 @@
 import { GraphicsGroup } from "@tsukiweb-common/graphics"
-import { bb } from "@tsukiweb-common/utils/Bbcode"
+import { bb, Bbcode } from "@tsukiweb-common/utils/Bbcode"
 import { SceneName } from "types"
 import { FcNode, getSceneGraph } from "utils/flowchart"
 import { getNodeBadges } from "./badges"
@@ -22,7 +22,7 @@ const ScenePopover = ({ node }: PopoverProps) => {
 			<div className="id">
 				{bb(node.id)}
 			</div>
-			{badges &&
+			{badges && <>
 				<svg className="badges" viewBox="-4 -4 50 8" preserveAspectRatio="xMinYMid meet">
 					{badges.flag &&
 						<g className="badge">
@@ -45,7 +45,16 @@ const ScenePopover = ({ node }: PopoverProps) => {
 						</g>
 					}
 				</svg>
-			}
+				{badges.select &&
+					<div className="choices-container">
+						{badges.select.map((choice, i) =>
+							<div key={i} className="choice">
+								<Bbcode text={choice} />
+							</div>
+						)}
+					</div>
+				}
+			</>}
 		</div>
 	)
 }
