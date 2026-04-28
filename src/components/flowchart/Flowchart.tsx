@@ -8,6 +8,7 @@ import { COLUMN_WIDTH, DY, PopoverProvider, SCENE_HEIGHT, SCENE_WIDTH, SVG_DEFS 
 import ScenePopover from "./ScenePopover";
 import AllConnections from "./AllConnections";
 import { BADGES_DEFINES } from "./badges"
+import AllBadges from "./AllBadges"
 
 
 type Props = {
@@ -39,7 +40,6 @@ const Flowchart = ({history, onSceneClick, mode = 'viewer'}: Props)=> {
 	const maxWidth = `${100 * width / (2 * COLUMN_WIDTH)}%` // minimum 2 scenes visible
 	const maxHeight = `${100 * height / (4 * (SCENE_HEIGHT + DY*2))}%` // minimum 4 scenes visible
 	const activeNode = flowchart.getNode(flowchart.activeScene)
-
 	
 	return (
 		<PopoverProvider renderContent={(item: FcNode) => <ScenePopover node={item} />}>
@@ -62,6 +62,9 @@ const Flowchart = ({history, onSceneClick, mode = 'viewer'}: Props)=> {
 						activeNode={activeNode}
 						onClick={onSceneClick} 
 					/>
+				</g>
+				<g className="fc-badges">
+					<AllBadges nodes={visibleNodes} />
 				</g>
 			</svg>
 		</PopoverProvider>

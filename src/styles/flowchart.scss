@@ -88,6 +88,10 @@
 		}
 	}
 
+	.fc-badges {
+		pointer-events: none;
+	}
+
 	#fc-scene-hidden rect:last-of-type {
 		fill: none;
 		stroke-width: .6;

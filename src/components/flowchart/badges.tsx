@@ -1,12 +1,10 @@
-import { FcNode } from "utils/flowchart"
-import { COLUMN_WIDTH, DY } from "@tsukiweb-common/flowchart"
 import { SCENE_ATTRS } from "utils/constants"
 import { CharId } from "types"
 import { strings } from "translation/lang"
 
 const HEART_OFFSET = `0,2.5`
 
-const FLAG_BACKGROUND = "#668a00"
+export const FLAG_BACKGROUND = "#668a00"
 
 function characterGradient(char: CharId) {
   return <linearGradient id={`${char}_grad`} x1="0" x2="1" y1="1" y2="0">
@@ -68,10 +66,6 @@ export const BADGES_DEFINES = <defs>
 </defs>
 
 
-type SceneBadgesProps = {
-  node: FcNode
-}
-
 type BadgeEntry = {
   flag?: string,
   condition?: string,
@@ -81,7 +75,6 @@ type BadgeEntry = {
 )
 const BADGE_MAP = new Map<string, BadgeEntry>()
 function buildBadgesMap() {
-
   for (const [char, entries] of Object.entries(SCENE_ATTRS.badges.regards))
   for (const [id, value] of Object.entries(entries))
     BADGE_MAP.set(id, { char: char as CharId, value: value as number })
@@ -106,63 +99,4 @@ export function getNodeBadges(nodeId: string) {
   if (BADGE_MAP.size == 0)
     buildBadgesMap()
   return BADGE_MAP.get(nodeId)
-}
-
-export const SceneBadges = ({node}: SceneBadgesProps)=> {
-  const badge = getNodeBadges(node.id)
-  if (!badge) return null
-  const { flag, char, value, select, condition } = badge
-  
-  const badges = []
-  let y = node.bottom - (node.height > 0 ? DY/2 : 0)
-  const dX = (node.width > 0 ? COLUMN_WIDTH - node.width : 0)
-  if (char) {
-    const x = node.right - dX
-    badges.push(<use key="rgd" className="badge" href={`#regard_${value}`}
-              fill={`url(#${char}_grad)`}
-              transform={`translate(${x}, ${y})`} />)
-  }
-  if (flag) {
-    const x = node.left + dX
-    badges.push(<g key="flg" className="badge" transform={`translate(${x}, ${y})`}>
-      <use href="#flag-icon"/>
-      <text y="1.6" stroke="none" fill="white" textAnchor="middle">
-        {flag}
-      </text>
-    </g>)
-  }
-  if (select) {
-    const x = node.centerX
-    y = node.bottom + DY
-    badges.push(<use key="sel" className="badge" href="#sel-icon"
-                     transform={`translate(${x}, ${y})`}/>)
-  }
-  if (condition) {
-    const x = node.centerX
-    y = node.top - DY
-    let icon, fill;
-    if (condition.includes('||') || condition.includes('&&')) {
-      icon = "⋯"
-      fill = "var(--active-connection)"
-    }
-    else if (condition.startsWith('%flg')) {
-      icon = condition.charAt(4)
-      fill = FLAG_BACKGROUND
-    } else if (condition.startsWith('%regard')) {
-      icon = "♥"
-      fill = `url(#${condition.match(/^%regard_(\w+)/)![1]}_grad)`
-    } else if (condition.startsWith('%clear')) {
-      icon = "★"
-      fill = "var(--active-connection)"
-    }
-
-    badges.push(<g key="if" className="badge" transform={`translate(${x}, ${y})`}>
-      <use href="#cond-icon" fill={fill}/>
-      <text y="1.6" stroke="none" fill="white" textAnchor="middle">
-        {icon}
-      </text>
-    </g>)
-  }
-  
-  return <>{badges}</>
 }

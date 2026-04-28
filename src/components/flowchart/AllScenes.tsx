@@ -1,70 +1,9 @@
-import { SVGProps, memo, useCallback } from "react"
+import { memo, SVGProps, useCallback } from "react"
 import { FcNode, getSceneGraph } from "utils/flowchart"
 import { SceneName } from "types"
 import cg from "utils/gallery"
-import SceneImage from "./SceneImage"
-import classNames from "classnames"
-import { NavigationProps } from "@tsukiweb-common/input/arrowNavigation"
-import { FcNodeState, usePopover, usePopoverTrigger } from "@tsukiweb-common/flowchart"
-import { SceneBadges } from "./badges"
-
-
-type VisibleSceneProps = {
-	node: FcNode
-	graph: ReturnType<typeof getSceneGraph>
-	shouldBlur: boolean
-	closePopover: () => void
-	onClick?: (id: SceneName) => void
-} & Omit<SVGProps<SVGRectElement>, 'onClick'> & NavigationProps
-
-export const VisibleScene = memo(({ node, graph, shouldBlur, closePopover, onClick, ...props }: VisibleSceneProps) => {
-	const trigger = usePopoverTrigger(node)
-	const disabled = node.state === FcNodeState.DISABLED
-
-	const onAction = useCallback((e: React.MouseEvent | React.KeyboardEvent) => {
-		if ('key' in e && (e.key !== "Enter" || e.currentTarget !== e.target)) {
-			return
-		}
-		e.stopPropagation()
-		closePopover()
-		onClick?.(node.id as SceneName)
-	}, [closePopover, onClick, node.id])
-
-	const classes = classNames("fc-scene", "unlocked", {
-		"active": node.active,
-		"blur": shouldBlur,
-		"disabled": disabled
-	})
-
-	const interactionProps = disabled ? { tabIndex: -1 } : {
-	  onClick: onAction,
-	  onKeyDown: onAction,
-	  tabIndex: 0,
-	  ...trigger
-	}
-
-	return <>
-		<g 
-			id={`fc-scene-${node.id}`} 
-			className={classes}
-			transform={`translate(${node.centerX},${node.centerY})`}
-		>
-			<SceneImage node={node} />
-
-			<rect
-				x={-node.width / 2}
-				y={-node.height / 2}
-				width={node.width}
-				height={node.height}
-				ry={1.6}
-				
-				{...interactionProps}
-				{...props}
-			/>
-		</g>
-		<SceneBadges node={node} />
-	</>
-})
+import { VisibleScene } from "./VisibleScene"
+import { FcNodeState, usePopover } from "@tsukiweb-common/flowchart"
 
 
 type SceneRendererProps = {
@@ -73,7 +12,7 @@ type SceneRendererProps = {
 	onClick?: (id: SceneName) => void
 } & Omit<SVGProps<SVGRectElement>, 'onClick'>
 
-export const AllScenes = ({ nodes, activeNode, onClick }: SceneRendererProps) => {
+export const AllScenes = memo(({ nodes, activeNode, onClick }: SceneRendererProps) => {
 	const { closePopover } = usePopover()
 
 	const refX = activeNode?.column ?? 0
@@ -84,9 +23,9 @@ export const AllScenes = ({ nodes, activeNode, onClick }: SceneRendererProps) =>
 	const activeNodes = sceneNodes.filter(n =>
 		n.state !== FcNodeState.UNSEEN && n.state !== FcNodeState.HIDDEN)
 
-	const navProps = (node: FcNode) => node.navY != null
+	const navProps = useCallback((node: FcNode) => node.navY != null
 		? { 'nav-scroll': 'smooth', 'nav-y': node.navY - refY, 'nav-x': node.column - refX }
-		: {}
+		: {}, [refX, refY])
 
 	return (
 		<>
@@ -110,4 +49,4 @@ export const AllScenes = ({ nodes, activeNode, onClick }: SceneRendererProps) =>
 			})}
 		</>
 	)
-}
+})
