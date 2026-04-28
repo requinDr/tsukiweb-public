@@ -9,19 +9,21 @@ type PopoverProps = {
 }
 const ScenePopover = ({ node }: PopoverProps) => {
 	const graph = node.scene ? getSceneGraph(node.id as SceneName) : null
-
 	const badges = getNodeBadges(node.id)
+	
 	return (
 		<div className="scene-popover-content">
 			<div className="background">
 				{graph && <GraphicsGroup images={graph} />}
 			</div>
-			<div className="title">
-				{node.displayName.split('[br/]')
-					.map((line, i) => <div key={i}>{noBb(line)}</div>)}
-			</div>
-			<div className="id">
-				{bb(node.id)}
+			<div className="desc">
+				<div className="title">
+					{node.displayName.split('[br/]')
+						.map((line, i) => <div key={i}>{noBb(line)}</div>)}
+				</div>
+				<div className="id">
+					{bb(node.id)}
+				</div>
 			</div>
 			{badges && <>
 				<svg className="badges" viewBox="-50 -4 56 8" preserveAspectRatio="xMaxYMid meet">

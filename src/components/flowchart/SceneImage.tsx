@@ -9,7 +9,7 @@ const SceneImage = ({ node }: SceneImageProps) => {
 	const {file, left, top, width, height, nw, nh} = node.metadatas
 
 	if (!file) {
-		return <use href="#fc-scene-box" />
+		return <use href="#fc-scene-box" clipPath="url(#fc-scene-clip)" />
 	}
 
 	const ratioX = SCENE_WIDTH / width
@@ -23,6 +23,7 @@ const SceneImage = ({ node }: SceneImageProps) => {
 			width={nw * ratioX}
 			height={nh * ratioY}
 			preserveAspectRatio="none"
+			clipPath="url(#fc-scene-clip)"
 		/>
 	)
 }

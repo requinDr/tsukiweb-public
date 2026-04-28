@@ -36,12 +36,18 @@ export const VisibleScene = memo(({ node, graph, shouldBlur, closePopover, onCli
 		"disabled": disabled
 	})
 
+	const interactionProps = disabled ? { tabIndex: -1 } : {
+	  onClick: onAction,
+	  onKeyDown: onAction,
+	  tabIndex: 0,
+	  ...trigger
+	}
+
 	return <>
 		<g 
 			id={`fc-scene-${node.id}`} 
 			className={classes}
 			transform={`translate(${node.centerX},${node.centerY})`}
-			clipPath="url(#fc-scene-clip)"
 		>
 			<SceneImage node={node} />
 
@@ -52,10 +58,7 @@ export const VisibleScene = memo(({ node, graph, shouldBlur, closePopover, onCli
 				height={node.height}
 				ry={1.6}
 				
-				{...(!disabled && trigger)}
-				onClick={!disabled ? onAction : undefined}
-				onKeyDown={!disabled ? onAction : undefined}
-				tabIndex={disabled ? -1 : 0}
+				{...interactionProps}
 				{...props}
 			/>
 		</g>
