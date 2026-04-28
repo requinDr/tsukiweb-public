@@ -1,6 +1,6 @@
 import sceneAttrs from '@assets/game/scene_attrs.json'
 import { Digit, PartialRecord, UcLetter } from '@tsukiweb-common/types'
-import { CharId, RouteDayName, RouteName, SceneName } from '../types'
+import { CharId, LabelName, RouteDayName, RouteName, SceneName } from '../types'
 import { FcNodeAttrs, FcSceneGraphAttrs } from '@tsukiweb-common/flowchart'
 import { Regard } from 'script/ScriptPlayer'
 
@@ -38,6 +38,7 @@ export const SCENE_ATTRS: {
   badges: {
     regards: Record<keyof Regard, PartialRecord<SceneName, number>>
     flags: PartialRecord<UcLetter|Digit, Array<SceneName>>
+    select: Record<SceneName, LabelName>
     conditions: Record<SceneName, string>
   }
 } = JSON.parse(JSON.stringify(sceneAttrs))

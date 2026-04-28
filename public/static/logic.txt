@@ -322,8 +322,7 @@ goto *endofplay
 *f299
 goto *s299
 *skip299
-if (%flgJ>=1) goto *f301
-select *f301,*f302
+select *f301,[%flgJ==0]*f302
 *f301
 goto *s301
 *skip301
@@ -375,8 +374,7 @@ select *f381,*f509
 *f381
 goto *s381
 *skip381
-if (%regard_aki<9) goto *f382
-select *f382,*f383
+select *f382,[%regard_aki>=9]*f383
 *f509
 goto *s509
 *skip509
@@ -481,8 +479,7 @@ goto *f409
 *f409
 goto *s409
 *skip409
-if (%clear_hisui!=0) goto *f411
-goto *f412
+select *f412,[%clear_hisui]*f413
 *f410
 goto *s410
 *skip410
@@ -491,8 +488,6 @@ osiete *f529
 goto *s529
 *skip529
 goto *endofplay
-*f411
-select *f412,*f413
 *f412
 goto *s412
 *skip412

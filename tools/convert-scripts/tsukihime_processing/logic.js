@@ -221,6 +221,13 @@ function getBlockProps(label) {
 					addChoiceCondition(t, '*f64', "%regard_cel>=3")
 				})
 				break
+			case 'skip299' : // move condition from if to select
+				tokenFixes.push((t)=> {
+					if (t instanceof ConditionToken)
+						return false
+					addChoiceCondition(t, '*f302', '%flgJ==0')
+				})
+				break
 			case "f338b" :
 				tokenFixes.push((t)=> {
 					if (t instanceof ConditionToken)
@@ -232,8 +239,7 @@ function getBlockProps(label) {
 				tokenFixes.push((t)=> {
 					if (t instanceof ConditionToken)
 						return false
-					else
-						addChoiceCondition(t, '*f359', "%flgO==0 || %flgS==0")
+					addChoiceCondition(t, '*f359', "%flgO==0 || %flgS==0")
 				})
 				break
 			case "skip361" :
@@ -241,6 +247,13 @@ function getBlockProps(label) {
 				tokenFixes.push((t)=> {
 					if (t instanceof ConditionToken)
 						return false
+				})
+				break
+			case 'skip381' : // move condition from if to select
+				tokenFixes.push((t)=> {
+					if (t instanceof ConditionToken)
+						return false
+					addChoiceCondition(t, '*f383', "%regard_aki>=9")
 				})
 				break
 			case 'skip503' :
@@ -312,6 +325,11 @@ function interBlockFixes(blocks) {
 		skip288.splice(1, 1)
 		skip288[1].args = ['*f292']
 	}
+
+	// move select from f411 to skip409
+	blocks.get('skip409').splice(1, Infinity, ...blocks.get('f411').slice(1))
+	blocks.delete('f411')
+	blocks.get('skip409').forEach(t=>addChoiceCondition(t, '*f413', '%clear_hisui'))
 
 	// add 'goto <next label>' if block ends without specifying next label
 	for (const [index, [label, tokens]] of [...blocks.entries()].entries()) {

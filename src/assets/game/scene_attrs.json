@@ -524,6 +524,11 @@
       "R": ["s417"],
       "S": ["s337"]
     },
+    "select": {
+      "s236": "f242half",
+      "s241": "f242half",
+      "s242": "f242half"
+    },
     "conditions": {
       "s35"  : "%flgM",
       "s502" : "%regard_aki>=1",

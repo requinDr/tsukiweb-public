@@ -91,12 +91,15 @@ function buildBadgesMap() {
     BADGE_MAP.set(id, { ...BADGE_MAP.get(id), flag })
 
   for (const [id, texts] of Object.entries(strings.choices)) {
-    BADGE_MAP.set(id, { ...BADGE_MAP.get(id), select: texts})
+    BADGE_MAP.set(id, { ...BADGE_MAP.get(id), select: texts })
     if (id.includes('f'))
-      BADGE_MAP.set(id.replace('f', 's'), { ...BADGE_MAP.get(id.replace('f', 's')), select: texts})
+      BADGE_MAP.set(id.replace('f', 's'), { ...BADGE_MAP.get(id.replace('f', 's')), select: texts })
+  }
+  for (const [id, srcId] of Object.entries(SCENE_ATTRS.badges.select)) {
+    BADGE_MAP.set(id, { ...BADGE_MAP.get(id), select: BADGE_MAP.get(srcId)?.select })
   }
   for (const [id, condition] of Object.entries(SCENE_ATTRS.badges.conditions)) {
-    BADGE_MAP.set(id, { ...BADGE_MAP.get(id), condition})
+    BADGE_MAP.set(id, { ...BADGE_MAP.get(id), condition })
   }
 }
 export function getNodeBadges(nodeId: string) {
