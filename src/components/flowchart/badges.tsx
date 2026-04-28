@@ -1,6 +1,7 @@
 import { SCENE_ATTRS } from "utils/constants"
 import { CharId } from "types"
 import { strings } from "translation/lang"
+import { DY } from "@tsukiweb-common/flowchart/constants"
 
 const HEART_OFFSET = `0,2.5`
 
@@ -59,10 +60,7 @@ export const BADGES_DEFINES = <defs>
     ?
     </text>
   </g>
-  <g id="cond-icon">
-    <polygon points="0,-3 3,0 0,3 -3,0"/>
-    <path d="m2.5,1.5l-2.5,2.5l-2.5,-2.5m2.5,2.5l0,-1" stroke="white" fill="none"/>
-  </g>
+  <polygon id="cond-icon" points={`0,${DY*1.5} ${-DY},${DY} ${-DY},${-DY} ${DY},${-DY} ${DY},${DY}`}/>
 </defs>
 
 

@@ -106,6 +106,10 @@
 	stroke-linejoin: round;
 	font-family: var(--ui-font);
 	font-size: 4px;
+
+	use[href="#cond-icon"] + text {
+		font-size: 125%;
+	}
 }
 
 .popover-container {
