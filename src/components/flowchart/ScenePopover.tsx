@@ -3,6 +3,8 @@ import { bb, noBb, Bbcode } from "@tsukiweb-common/utils/Bbcode"
 import { SceneName } from "types"
 import { FcNode, getSceneGraph } from "utils/flowchart"
 import { getNodeBadges } from "./badges"
+import { tokenizeCondition } from "@tsukiweb-common/script/utils"
+import { splitLast } from "@tsukiweb-common/utils/utils"
 
 type PopoverProps = {
 	node: FcNode
@@ -26,7 +28,50 @@ const ScenePopover = ({ node }: PopoverProps) => {
 				</div>
 			</div>
 			{badges && <>
+				{badges.condition &&
+					<span className="condition">
+						{tokenizeCondition(badges.condition).map(token=> {
+							if (!token.startsWith('%'))
+								return <span>{token}</span> // operator or number
+							if (token.startsWith('%regard')) {
+								const [, char] = splitLast(token, '_')
+								return <svg viewBox="0 -4 16 8">
+									
+									<image href={`./chars/${char}.webp`}
+										className="badge"
+										x={0} y={-3.5} height={7} />
+									<use href="#regard_1"
+										fill={`url(#${char}_grad)`}
+										transform="translate(4,0) scale(0.5)"/>
+								</svg>
+							}
+							else if (token.startsWith('%flg')) {
+								const flag = token.charAt(4)
+								return <svg viewBox="-5 -5 10 10">
+									<use href="#flag-icon"/>
+									<text y="1.6" stroke="none" fill="white" textAnchor="middle">
+										{flag}
+									</text>
+								</svg>
+							}
+							else switch (token) {
+								case '%cleared' :
+									// TODO display star
+									break
+								case '%clear_ark_true' :
+									// TODO display character face + star
+									break
+								case '%clear_hisui' :
+									// TODO display character face + star
+									break
+								default :
+									throw Error(`Unexpected variable ${token}`)
+							}
+						})}
+					</span>
+				}
 				<svg className="badges" viewBox="-50 -4 56 8" preserveAspectRatio="xMaxYMid meet">
+					
 					{badges.flag &&
 						<g className="badge">
 							<use href="#flag-icon"/>
