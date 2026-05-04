@@ -122,7 +122,7 @@ goto *s46
 *skip46
 select *f47a,[%flg6 && %cleared]*f46b
 *f46b
-if (%regard_his>%regard_aki && %regard_his>%regard_koha) goto *f49
+if (%regard_his>%regard_aki) goto *f49
 goto *f48
 *f47a
 goto *s47a
@@ -132,7 +132,7 @@ goto *f51
 *f48
 goto *s48
 *skip48
-if (%regard_koha>%regard_aki && %regard_koha>%regard_his) goto *f205
+if (%regard_koha>%regard_aki) goto *f205
 goto *f204
 *f49
 goto *s49
@@ -794,8 +794,7 @@ goto *f88
 goto *s84
 *skip84
 dec %regard_ark
-if (%flg3>=1) goto *f86
-select *f86,*f87
+select *f86,[%flg3==0]*f87
 *f86
 goto *s86
 *skip86
