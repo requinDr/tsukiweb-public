@@ -2,9 +2,10 @@ import { SCENE_ATTRS } from "utils/constants"
 import { CharId } from "types"
 import { strings } from "translation/lang"
 import { DY } from "@tsukiweb-common/flowchart/constants"
+import { fetchLogicBlock } from "script/utils"
 
 const HEART_OFFSET = `0,2.5`
-
+const C = DY*0.8 // unit used for condition badge
 export const FLAG_BACKGROUND = "#668a00"
 
 function characterGradient(char: CharId) {
@@ -60,14 +61,17 @@ export const BADGES_DEFINES = <defs>
     ?
     </text>
   </g>
-  <polygon id="cond-icon" points={`0,${DY*1.5} ${-DY},${DY} ${-DY},${-DY} ${DY},${-DY} ${DY},${DY}`}/>
+  <polygon id="cond-icon" points={`0,${C*1.5} ${-C},${C} ${-C},${-C} ${C},${-C} ${C},${C}`}/>
+  <path id="cond-neg" d={`m ${-C},0l${C*2},0`} stroke="#500000"/>
 </defs>
 
 
 type BadgeEntry = {
   flag?: string,
-  condition?: string,
-  select?: string[]
+  condition?: string | {condition: string, above?: string, below?: string},
+  select?: string[],
+  selectConditions?: (0|string)[]
+  choiceN?: [[string, number]]
 } & (
   { char: CharId, value: number } | {char?: never, value?: never}
 )
@@ -86,8 +90,13 @@ function buildBadgesMap() {
     if (id.includes('f'))
       BADGE_MAP.set(id.replace('f', 's'), { ...BADGE_MAP.get(id.replace('f', 's')), select: texts })
   }
-  for (const [id, srcId] of Object.entries(SCENE_ATTRS.badges.select)) {
-    BADGE_MAP.set(id, { ...BADGE_MAP.get(id), select: BADGE_MAP.get(srcId)?.select })
+  for (const [id, {copy, conditions}] of Object.entries(SCENE_ATTRS.badges.select)) {
+    if (copy) {
+      BADGE_MAP.set(id, { ...BADGE_MAP.get(id), select: BADGE_MAP.get(copy)!.select })
+    }
+    if (conditions) {
+      BADGE_MAP.get(id)!.selectConditions = conditions
+    }
   }
   for (const [id, condition] of Object.entries(SCENE_ATTRS.badges.conditions)) {
     BADGE_MAP.set(id, { ...BADGE_MAP.get(id), condition })

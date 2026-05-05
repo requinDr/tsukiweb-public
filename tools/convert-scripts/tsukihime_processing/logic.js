@@ -160,16 +160,27 @@ function getBlockProps(label) {
 				})
 				break
 			case 'f46b' :
-				tokenFixes.push((t)=> { // f203 redirected to identical f48, branch moved after f48
+				tokenFixes.push((t)=> {
+					// f203 redirected to identical f48, branch moved after f48
 					if (t instanceof ConditionToken && t.command.args[0] == '*f203')
 						return false
+					// simplify condition for s205
+					if (t instanceof ConditionToken && t.command.args[0] == "*f49")
+						t.condition = "%regard_his>%regard_aki"
 				})
 				break
 			case 'skip48' :
 				blockFixes.push((tokens)=> {
 					tokens.splice(1, 0, ...parseScript(
-						"if %regard_koha>%regard_aki && %regard_koha>%regard_his goto *f205"
+						"if %regard_koha>%regard_aki goto *f205"
 					))
+				})
+				break
+			case 'skip84' :
+				tokenFixes.push((t)=> { // invert and move condition to select
+					if (t instanceof ConditionToken)
+						return false
+					addChoiceCondition(t, '*f87', "%flg3==0")
 				})
 				break
 			case 'skip116a' : // if (...) goto *f117, choices imported
@@ -226,6 +237,13 @@ function getBlockProps(label) {
 					if (t instanceof ConditionToken)
 						return false
 					addChoiceCondition(t, '*f302', '%flgJ==0')
+				})
+				break
+			case 'skip306': // invert and move condition from if to select
+				tokenFixes.push((t)=> { // invert and move condition to select
+					if (t instanceof ConditionToken)
+						return false
+					addChoiceCondition(t, '*f414', "%regard_koha<3")
 				})
 				break
 			case "f338b" :
