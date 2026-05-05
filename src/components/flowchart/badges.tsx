@@ -2,7 +2,6 @@ import { SCENE_ATTRS } from "utils/constants"
 import { CharId } from "types"
 import { strings } from "translation/lang"
 import { DY } from "@tsukiweb-common/flowchart/constants"
-import { fetchLogicBlock } from "script/utils"
 
 const HEART_OFFSET = `0,2.5`
 const C = DY*0.8 // unit used for condition badge

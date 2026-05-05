@@ -27,15 +27,16 @@ const ScenePopover = ({ node }: PopoverProps) => {
 					{bb(node.id)}
 				</div>
 			</div>
+
 			{badges && <>
-				{badges.condition &&
+				{typeof badges.condition === 'string' &&
 					<div className="condition">
 						{tokenizeCondition(badges.condition).map(token=> {
 							if (!token.startsWith('%'))
-								return <span>{token}</span> // operator or number
+								return <TokenDisplay key={token} token={token} /> // operator or number
 							if (token.startsWith('%regard')) {
 								const [, char] = splitLast(token, '_')
-								return <svg viewBox="-13 -4 13 8">
+								return <svg className="badge" viewBox="-13 -3.4 13 7">
 									<image href={`./chars/${char}.webp`}
 										className="badge"
 										x={-13} y={-3.5} height={7} />
@@ -46,7 +47,7 @@ const ScenePopover = ({ node }: PopoverProps) => {
 							}
 							else if (token.startsWith('%flg')) {
 								const flag = token.charAt(4)
-								return <svg viewBox="-5 -5 10 10">
+								return <svg className="badge" viewBox="-3.5 -3.5 7 7">
 									<use href="#flag-icon"/>
 									<text y="1.6" stroke="none" fill="white" textAnchor="middle" fontSize={4}>
 										{flag}
@@ -69,8 +70,8 @@ const ScenePopover = ({ node }: PopoverProps) => {
 						})}
 					</div>
 				}
+
 				<svg className="badges" viewBox="-50 -4 56 8" preserveAspectRatio="xMaxYMid meet">
-					
 					{badges.flag &&
 						<g className="badge">
 							<use href="#flag-icon"/>
@@ -109,3 +110,10 @@ const ScenePopover = ({ node }: PopoverProps) => {
 }
 
 export default ScenePopover
+
+
+const TokenDisplay = ({ token }: { token: string }) => {
+
+	if (token === "&&") return <span className="separator">&amp;</span>
+	return <span>{token.replace('&&', '&').replace('==', '=')}</span>
+}

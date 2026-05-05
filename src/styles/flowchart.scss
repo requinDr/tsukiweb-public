@@ -113,18 +113,19 @@
 }
 .condition {
 	position: absolute;
-	top: -40px;
+	bottom: calc(100% - 8px);
 	left: 0;
 	display: flex;
 	align-items: center;
 	gap: 0.3ch;
-	height: 50px;
+	height: 46px;
 	padding-inline: 8px;
+	padding-bottom: 8px;
+	padding-top: 6px;
 	background-color: var(--menu-container);
 	border-top-left-radius: 8px;
 	border-top-right-radius: 8px;
 	z-index: -1;
-	padding-bottom: 8px;
 
 	svg {
 		height: 100%;
@@ -133,6 +134,10 @@
 	span {
 		color: #fff;
 		font-weight: bold;
+
+		&.separator {
+			margin-inline: .5rem;
+		}
 	}
 }
 
