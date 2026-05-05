@@ -29,27 +29,26 @@ const ScenePopover = ({ node }: PopoverProps) => {
 			</div>
 			{badges && <>
 				{badges.condition &&
-					<span className="condition">
+					<div className="condition">
 						{tokenizeCondition(badges.condition).map(token=> {
 							if (!token.startsWith('%'))
 								return <span>{token}</span> // operator or number
 							if (token.startsWith('%regard')) {
 								const [, char] = splitLast(token, '_')
-								return <svg viewBox="0 -4 16 8">
-									
+								return <svg viewBox="-13 -4 13 8">
 									<image href={`./chars/${char}.webp`}
 										className="badge"
-										x={0} y={-3.5} height={7} />
+										x={-13} y={-3.5} height={7} />
 									<use href="#regard_1"
 										fill={`url(#${char}_grad)`}
-										transform="translate(4,0) scale(0.5)"/>
+										transform="translate(-3.5,0) scale(0.75)"/>
 								</svg>
 							}
 							else if (token.startsWith('%flg')) {
 								const flag = token.charAt(4)
 								return <svg viewBox="-5 -5 10 10">
 									<use href="#flag-icon"/>
-									<text y="1.6" stroke="none" fill="white" textAnchor="middle">
+									<text y="1.6" stroke="none" fill="white" textAnchor="middle" fontSize={4}>
 										{flag}
 									</text>
 								</svg>
@@ -68,7 +67,7 @@ const ScenePopover = ({ node }: PopoverProps) => {
 									throw Error(`Unexpected variable ${token}`)
 							}
 						})}
-					</span>
+					</div>
 				}
 				<svg className="badges" viewBox="-50 -4 56 8" preserveAspectRatio="xMaxYMid meet">
 					

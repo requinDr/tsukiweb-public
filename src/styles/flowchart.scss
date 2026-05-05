@@ -111,6 +111,30 @@
 		font-size: 125%;
 	}
 }
+.condition {
+	position: absolute;
+	top: -40px;
+	left: 0;
+	display: flex;
+	align-items: center;
+	gap: 0.3ch;
+	height: 50px;
+	padding-inline: 8px;
+	background-color: var(--menu-container);
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	z-index: -1;
+	padding-bottom: 8px;
+
+	svg {
+		height: 100%;
+	}
+
+	span {
+		color: #fff;
+		font-weight: bold;
+	}
+}
 
 .popover-container {
 	z-index: 100;
