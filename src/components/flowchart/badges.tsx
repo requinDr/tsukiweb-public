@@ -55,6 +55,7 @@ export const BADGES_DEFINES = <defs>
     </g>
   )}
   <polygon id="flag-icon" points="0,-3.14 3,-1 1.85,2.53 -1.85,2.53 -3,-1" fill={FLAG_BACKGROUND} />
+  <path id="flag-neg" d="m-1.85,2.53l3.35,-4.60" stroke="#500000"/>
   <g id="sel-icon">
     <polygon points="0,-2.8 2.7,0 0,2.7 -2.7,0" fill="var(--active-connection)"/>
     <text y="1.6" stroke="none" fill="white" textAnchor="middle">

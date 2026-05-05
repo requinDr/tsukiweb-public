@@ -36,6 +36,7 @@ const SceneBadges = ({node}: {node: FcNode})=> {
 		{condition && <div className="condition">
 			{tokenizeCondition(condition).map((token, i, tokens)=> {
 				if (token.length == 0) return null
+				if (token == '!') return null
 				if (!token.startsWith('%'))
 					return <TokenDisplay key={token} token={token} /> // operator or number
 				if (token.startsWith('%regard')) {
@@ -51,17 +52,13 @@ const SceneBadges = ({node}: {node: FcNode})=> {
 				}
 				else if (token.startsWith('%flg')) {
 					const flag = token.charAt(4)
-					const negative = (i < tokens.length-1 &&
-							(tokens[i+1] == '==') &&
-							(tokens[i+2] == '0'))
-					if (negative)
-						tokens[i+1] = tokens[i+2] = ''
+					const negative = (i > 0 && (tokens[i-1] == '!'))
 					return <svg className="badge" viewBox="-3.5 -3.5 7 7">
-						<use href="#flag-icon"/>
+						<use href="#flag-icon" {...(negative ? {stroke:"#500000"} : {})}/>
+						{negative && <use href="#flag-neg"/>}
 						<text y="1.6" stroke="none" fill="white" textAnchor="middle" fontSize={4}>
 							{flag}
 						</text>
-						{negative && <use href="#cond-neg"/>}
 					</svg>
 				}
 				else switch (token) {
