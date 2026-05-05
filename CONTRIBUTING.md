@@ -13,6 +13,7 @@ We welcome all contributions.
 7) The main browsers must be supported (Chromium-based browsers, Firefox, Safari) within the last 2 to 3 years updates.
 8) Every action done with a mouse should have an equivalent for touch screens.
 9) Actions shortcut can be changed to reflect common VNs shortcuts.
+10) We accept AI-assisted code (e.g., using Copilot, Cursor, etc.), but strictly reject AI-generated contributions where the submitter acts merely as a proxy. The submitter is the Sole Responsible Author for every line of code, comment, and design decision.
 
 ## Code
 - The game original assets have been separated from the repo and shouldn't be commited to it.
