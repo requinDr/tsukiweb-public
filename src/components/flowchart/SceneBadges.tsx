@@ -8,7 +8,6 @@ const REGARD_REGEX = /^%regard_(\w+)/
 type SceneBadgesProps = {
 	node: FcNode
 }
-type XY = {x: number, y: number}
 
 const SelectBadge = ({node}: {node: FcNode})=> {
 	return <use key="sel" className="badge" href="#sel-icon"
@@ -20,10 +19,10 @@ const RegardBadge = ({node, char, value}: {node: FcNode, char: CharId, value: nu
 	return <use key="rgd" className="badge" href={`#regard_${value}`}
 				fill={`url(#${char}_grad)`} transform={`translate(${node.right - dX}, ${node.bottom - dY})`} />
 }
-const FlagBadge = ({node, flag}: {node: FcNode, flag: string})=> {
+const FlagBadge = ({node, flag, above}: {node: FcNode, flag: string, above?: boolean})=> {
 	const dX = node.width > 0 ? COLUMN_WIDTH - node.width : 0
 	const dY = node.height > 0 ? DY / 2 : 0
-	return <g key="flg" className="badge" transform={`translate(${node.left + dX}, ${node.bottom - dY})`}>
+	return <g key="flg" className="badge" transform={`translate(${node.right - dX}, ${node.bottom - dY - (above ? DY * 2.2 : 0)})`}>
 		<use href="#flag-icon" />
 		<text y="1.6" stroke="none" fill="white" textAnchor="middle">
 			{flag}
@@ -107,7 +106,7 @@ export const SceneBadges = ({node}: SceneBadgesProps)=> {
 		<>
 			{char && <RegardBadge node={node} char={char} value={value!} />}
 
-			{flag && <FlagBadge node={node} flag={flag} />}
+			{flag && <FlagBadge node={node} flag={flag} above={!!char} />}
 
 			{select && <SelectBadge node={node} />}
 
