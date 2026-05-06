@@ -9,6 +9,8 @@ import ScenePopover from "./ScenePopover";
 import AllConnections from "./AllConnections";
 import { BADGES_DEFINES } from "./badges"
 import AllBadges from "./AllBadges"
+import { settings } from "utils/settings"
+import { useObserved } from "@tsukiweb-common/utils/Observer"
 
 
 type Props = {
@@ -18,6 +20,7 @@ type Props = {
 }
 const Flowchart = ({history, onSceneClick, mode = 'viewer'}: Props)=> {
 	const flowchart = new GameFlowchart(history)
+	useObserved(settings, 'flowchartBadges') // refresh flowchart when toggling badges display
 	const visibleNodes = flowchart.listNodes().filter(n=>n.visible)
 	let [left, top, right, bottom] = visibleNodes.reduce(
 		(vb, node)=> [
@@ -64,7 +67,9 @@ const Flowchart = ({history, onSceneClick, mode = 'viewer'}: Props)=> {
 					/>
 				</g>
 				<g className="fc-badges">
-					<AllBadges nodes={visibleNodes} />
+					{settings.flowchartBadges &&
+						<AllBadges nodes={visibleNodes} />
+					}
 				</g>
 			</svg>
 		</PopoverProvider>

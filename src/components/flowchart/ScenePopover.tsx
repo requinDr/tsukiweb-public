@@ -5,6 +5,7 @@ import { FcNode, getSceneGraph } from "utils/flowchart"
 import { getNodeBadges } from "./badges"
 import { tokenizeCondition } from "@tsukiweb-common/script/utils"
 import { splitLast } from "@tsukiweb-common/utils/utils"
+import { settings } from "utils/settings"
 
 type PopoverProps = {
 	node: FcNode
@@ -125,7 +126,9 @@ const ScenePopover = ({ node }: PopoverProps) => {
 	return (
 		<div className="scene-popover-content">
 			<SceneIllustration node={node} />
-			<SceneBadges node={node} />
+			{settings.flowchartBadges &&
+				<SceneBadges node={node} />
+			}
 		</div>
 	)
 }
