@@ -38,7 +38,7 @@ export const SCENE_ATTRS: {
   badges: {
     regards: Record<keyof Regard, PartialRecord<SceneName, number>>
     flags: PartialRecord<UcLetter|Digit, Array<SceneName>>
-    select: Record<SceneName, LabelName>
+    select: Record<SceneName, {copy?: LabelName, conditions: (0|string)[]}>
     conditions: Record<SceneName, string>
   }
 } = JSON.parse(JSON.stringify(sceneAttrs))

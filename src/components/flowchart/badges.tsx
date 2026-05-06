@@ -2,6 +2,7 @@ import { SCENE_ATTRS } from "utils/constants"
 import { CharId } from "types"
 import { strings } from "translation/lang"
 import { DY } from "@tsukiweb-common/flowchart/constants"
+import { endings, RouteEnding } from "utils/endings"
 
 const HEART_OFFSET = `0,2.5`
 const C = DY*0.8 // unit used for condition badge
@@ -54,8 +55,14 @@ export const BADGES_DEFINES = <defs>
       <use href="#regard_-"/>
     </g>
   )}
+  <path id="route_icon" d="M -0.54,-2.81 Q 0,-3.6 0.54,-2.81 L 1.07,-2.05
+      Q 1.27,-1.75 1.62,-1.64 L 2.51,-1.38 Q 3.42,-1.12 2.84,-0.35 L 2.28,0.38
+      Q 2.05,0.67 2.06,1.03 L 2.09,1.96 Q 2.11,2.92 1.21,2.59 L 0.34,2.28
+      Q 0,2.16 -0.34,2.28 L -1.21,2.59 Q -2.11,2.92 -2.09,1.96 L -2.06,1.03
+      Q -2.05,0.67 -2.28,0.38 L -2.84,-0.35 Q -3.42,-1.12 -2.51,-1.38 L -1.62,-1.64
+      Q -1.27,-1.75 -1.07,-2.05 Z"/>
   <polygon id="flag-icon" points="0,-3.14 3,-1 1.85,2.53 -1.85,2.53 -3,-1" fill={FLAG_BACKGROUND} />
-  <path id="flag-neg" d="m-1.85,2.53l3.35,-4.60" stroke="#500000"/>
+  <path id="flag-neg-icon" d="m-1.85,2.53 -1.15,-3.53 3,-2.14 3,2.14 -1.15,3.53zl3.35,-4.60" fill="#000" stroke="#800"/>
   <g id="sel-icon">
     <polygon points="0,-2.8 2.7,0 0,2.7 -2.7,0" fill="var(--active-connection)"/>
     <text y="1.6" stroke="none" fill="white" textAnchor="middle">
@@ -72,7 +79,8 @@ type BadgeEntry = {
   condition?: string | {condition: string, above?: string, below?: string},
   select?: string[],
   selectConditions?: (0|string)[]
-  choiceN?: [[string, number]]
+  choiceN?: [[string, number]],
+  ending?: {char: CharId, type: RouteEnding['type'] }
 } & (
   { char: CharId, value: number } | {char?: never, value?: never}
 )
@@ -101,6 +109,9 @@ function buildBadgesMap() {
   }
   for (const [id, condition] of Object.entries(SCENE_ATTRS.badges.conditions)) {
     BADGE_MAP.set(id, { ...BADGE_MAP.get(id), condition })
+  }
+  for (const {scene: id, char, type} of Object.values(endings)) {
+    BADGE_MAP.set(id, { ...BADGE_MAP.get(id), ending: {char, type}})
   }
 }
 export function getNodeBadges(nodeId: string) {

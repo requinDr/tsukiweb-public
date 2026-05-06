@@ -2,6 +2,7 @@ import { FcNode } from "utils/flowchart";
 import { FLAG_BACKGROUND, getNodeBadges } from "./badges";
 import { COLUMN_WIDTH, DY } from "@tsukiweb-common/flowchart";
 import { CharId } from "types";
+import { RouteEnding } from "utils/endings";
 
 const REGARD_REGEX = /^%regard_(\w+)/
 
@@ -28,6 +29,12 @@ const FlagBadge = ({node, flag, above}: {node: FcNode, flag: string, above?: boo
 			{flag}
 		</text>
 	</g>
+}
+const EndingBadge = ({node, char, type}: {node: FcNode, char: CharId, type: RouteEnding['type']})=> {
+	const dX = node.width > 0 ? COLUMN_WIDTH - node.width : 0
+	const dY = node.height > 0 ? DY / 2 : 0
+	return <use className="badge" href="#route_icon" fill={`url(#${char}_grad)`}
+				transform={`translate(${node.right - dX}, ${node.bottom - dY})`} />
 }
 type Condition = Exclude<Exclude<ReturnType<typeof getNodeBadges>, undefined>['condition'], undefined>
 const ConditionBadge = ({node, condition}: {node: FcNode, condition: Condition})=> {
@@ -100,7 +107,7 @@ export const SceneBadges = ({node}: SceneBadgesProps)=> {
 	const badge = getNodeBadges(node.id)
 	if (!badge) return null
 
-	let { flag, char, value, select, condition } = badge
+	let { flag, char, value, select, condition, ending } = badge
 	
 	return (
 		<>
@@ -111,6 +118,8 @@ export const SceneBadges = ({node}: SceneBadgesProps)=> {
 			{select && <SelectBadge node={node} />}
 
 			{condition && <ConditionBadge node={node} condition={condition} />}
+			
+			{ending && <EndingBadge node={node} {...ending} />}
 		</>
 	)
 }

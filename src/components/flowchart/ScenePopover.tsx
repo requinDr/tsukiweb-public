@@ -54,8 +54,7 @@ const SceneBadges = ({node}: {node: FcNode})=> {
 					const flag = token.charAt(4)
 					const negative = (i > 0 && (tokens[i-1] == '!'))
 					return <svg className="badge" viewBox="-3.5 -3.5 7 7">
-						<use href="#flag-icon" {...(negative ? {stroke:"#500000"} : {})}/>
-						{negative && <use href="#flag-neg"/>}
+						<use href={negative ? "#flag-neg-icon" : "#flag-icon"}/>
 						<text y="1.6" stroke="none" fill="white" textAnchor="middle" fontSize={4}>
 							{flag}
 						</text>
