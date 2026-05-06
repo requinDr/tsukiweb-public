@@ -11,19 +11,19 @@ type SceneBadgesProps = {
 }
 
 const SelectBadge = ({node}: {node: FcNode})=> {
-	return <use key="sel" className="badge" href="#sel-icon"
+	return <use className="badge" href="#sel-icon"
 		 transform={`translate(${node.centerX}, ${node.bottom})`} />
 }
 const RegardBadge = ({node, char, value}: {node: FcNode, char: CharId, value: number})=> {
 	const dX = node.width > 0 ? COLUMN_WIDTH - node.width : 0
 	const dY = node.height > 0 ? DY / 2 : 0
-	return <use key="rgd" className="badge" href={`#regard_${value}`}
+	return <use className="badge" href={`#regard_${value}`}
 				fill={`url(#${char}_grad)`} transform={`translate(${node.right - dX}, ${node.bottom - dY})`} />
 }
 const FlagBadge = ({node, flag, above}: {node: FcNode, flag: string, above?: boolean})=> {
 	const dX = node.width > 0 ? COLUMN_WIDTH - node.width : 0
 	const dY = node.height > 0 ? DY / 2 : 0
-	return <g key="flg" className="badge" transform={`translate(${node.right - dX}, ${node.bottom - dY - (above ? DY * 2.2 : 0)})`}>
+	return <g className="badge" transform={`translate(${node.right - dX}, ${node.bottom - dY - (above ? DY * 2.2 : 0)})`}>
 		<use href="#flag-icon" />
 		<text y="1.6" stroke="none" fill="white" textAnchor="middle">
 			{flag}
@@ -94,7 +94,7 @@ const ConditionBadge = ({node, condition}: {node: FcNode, condition: Condition})
 		icon = "⋯"
 		fill = "var(--active-connection)"
 	}
-	return <g key="if" className="badge" transform={`translate(${x},${y})`}>
+	return <g className="badge" transform={`translate(${x},${y})`}>
 		<use href="#cond-icon" fill={fill} {...(angle && {transform:`rotate(${angle})`})}/>
 		<text x={iconX} y={iconY} textAnchor="middle"
 				stroke="none" fill="white">
@@ -111,15 +111,15 @@ export const SceneBadges = ({node}: SceneBadgesProps)=> {
 	
 	return (
 		<>
-			{char && <RegardBadge node={node} char={char} value={value!} />}
+			{char && <RegardBadge key="rgd" node={node} char={char} value={value!} />}
 
-			{flag && <FlagBadge node={node} flag={flag} above={!!char} />}
+			{flag && <FlagBadge key="flg" node={node} flag={flag} above={!!char} />}
 
-			{select && <SelectBadge node={node} />}
+			{select && <SelectBadge key="sel" node={node} />}
 
-			{condition && <ConditionBadge node={node} condition={condition} />}
+			{condition && <ConditionBadge key="if" node={node} condition={condition} />}
 			
-			{ending && <EndingBadge node={node} {...ending} />}
+			{ending && <EndingBadge key="ending" node={node} {...ending} />}
 		</>
 	)
 }

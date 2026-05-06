@@ -41,7 +41,7 @@ const SceneBadges = ({node}: {node: FcNode})=> {
 					return <TokenDisplay key={token} token={token} /> // operator or number
 				if (token.startsWith('%regard')) {
 					const [, char] = splitLast(token, '_')
-					return <svg className="badge" viewBox="-13 -3.4 13 7">
+					return <svg key={i} className="badge" viewBox="-13 -3.4 13 7">
 						<image href={`./chars/${char}.webp`}
 							className="badge"
 							x={-13} y={-3.5} height={7} />
@@ -53,7 +53,7 @@ const SceneBadges = ({node}: {node: FcNode})=> {
 				else if (token.startsWith('%flg')) {
 					const flag = token.charAt(4)
 					const negative = (i > 0 && (tokens[i-1] == '!'))
-					return <svg className="badge" viewBox="-3.5 -3.5 7 7">
+					return <svg key={i} className="badge" viewBox="-3.5 -3.5 7 7">
 						<use href={negative ? "#flag-neg-icon" : "#flag-icon"}/>
 						<text y="1.6" stroke="none" fill="white" textAnchor="middle" fontSize={4}>
 							{flag}
