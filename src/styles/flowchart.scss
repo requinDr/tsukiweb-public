@@ -194,20 +194,12 @@
 
 			.condition {
 				position: absolute;
-				top: 6px;
-				left: 6px;
 				display: flex;
 				align-items: center;
-				gap: 0.3ch;
 				height: 36px;
 				padding-inline: 8px;
 				padding-block: 2px;
-				background: rgb(0 0 0 / 70%);
-				border-top-left-radius: inherit;
-				border-bottom-right-radius: inherit;
-				corner-shape: inherit;
 				z-index: 1;
-				border-bottom: 1px solid rgba(255 255 255 / 0.5);
 
 				svg {
 					height: 100%;
@@ -222,6 +214,16 @@
 					}
 				}
 			}
+			> .condition {
+				top: 6px;
+				left: 6px;
+				gap: 0.3ch;
+				background: rgb(0 0 0 / 70%);
+				border-top-left-radius: inherit;
+				border-bottom-right-radius: inherit;
+				corner-shape: inherit;
+				border-bottom: 1px solid rgba(255 255 255 / 0.5);
+			}
 			.choices-container {
 				border-radius: inherit;
 				corner-shape: inherit;
@@ -230,9 +232,16 @@
 				background: linear-gradient(180deg, var(--surface-dark), #00638f);
 				border: 1px solid rgba(255, 255, 255, 0.2);
 				.choice {
+					position: relative;
 					padding: 8px calc(1rem - 4px);
 					&:not(:last-child) {
 						border-bottom: 1px solid rgb(255 255 255 / 20%);
+					}
+					.condition {
+						bottom: -10px;
+						right: -15px;
+						padding: 0;
+						gap: 0;
 					}
 				}
 			}

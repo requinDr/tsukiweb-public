@@ -24,8 +24,7 @@ const LANGUAGES_LIST_URL = `${LANG_DIR}languages.json`
 //------------------------------------------------------------------------------
 
 type LanguagesType = Record<TranslationId, LangDesc>
-
-type StringsType = typeof defaultStrings & {
+type StringsTypeBase = {
   id: TranslationId,
   lastUpdate: UpdateDateFormat
   images: {
@@ -41,6 +40,7 @@ type StringsType = typeof defaultStrings & {
   },
   credits: (TextImage & {delay?: number})[]
 }
+type StringsType = StringsTypeBase & Omit<typeof defaultStrings, keyof StringsTypeBase>
 
 
 //______________________________private variables_______________________________
@@ -133,7 +133,7 @@ export type LangJson = Omit<typeof defaultStrings, keyof GameJson>
 //------------------------------------------------------------------------------
 
 export const languages = languagesStorage.get() || { } as LanguagesType
-export const strings = stringsStorage.get() || { ...defaultStrings, id: "" } as StringsType
+export const strings = stringsStorage.get() || { ...defaultStrings, id: "" } as any as StringsType
 
 
 //_______________________________public functions_______________________________

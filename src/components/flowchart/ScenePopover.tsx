@@ -26,6 +26,51 @@ const SceneIllustration = ({node}: {node: FcNode})=> {
 	</div>
   </>
 }
+const SceneCondition = ({condition}: {condition: string})=> {
+	return tokenizeCondition(condition).map((token, i, tokens)=> {
+		if (token.length == 0) return null
+		if (token == '!') return null
+		if (!token.startsWith('%'))
+			return <TokenDisplay key={token} token={token} /> // operator or number
+		if (token.startsWith('%regard')) {
+			const [, char] = splitLast(token, '_')
+			return <svg key={i} className="badge" viewBox="-13 -3.4 13 7">
+				<image href={`./chars/${char}.webp`}
+					className="badge"
+					x={-13} y={-3.5} height={7} />
+				<use href="#regard_heart"
+					fill={`url(#${char}_grad)`}
+					transform="translate(-3.5,0) scale(0.75)"/>
+			</svg>
+		}
+		else if (token.startsWith('%flg')) {
+			const flag = token.charAt(4)
+			const negative = (i > 0 && (tokens[i-1] == '!'))
+			return <svg key={i} className="badge" viewBox="-3.5 -3.5 7 7">
+				<use href={negative ? "#flag-neg-icon" : "#flag-icon"}/>
+				<text y="1.6" stroke="none" fill="white" textAnchor="middle" fontSize={4}>
+					{flag}
+				</text>
+			</svg>
+		}
+		else if (token.startsWith('%clear')) {
+			let char
+			switch (token) {
+			case '%cleared': char = null; break
+			case '%clear_ark': case '%clear_ark_true': char = 'ark'; break
+			case '%clear_hisui': char="his"; break
+			}
+			return <svg key={i} className="badge" viewBox={`0 -3.4 ${char ? 13 : 6} 7`}>
+				<image href={`./chars/${char}.webp`}
+					className="badge"
+					x={0} y={-3.5} height={7} />
+				<use className="badge" href="#route_icon"
+					fill={char ? `url(#ark_grad)` : '#FFF'}
+					transform={`translate(${char ? 10 : 3},0) scale(0.75)`}/>
+			</svg>
+		}
+	})
+}
 const SceneBadges = ({node}: {node: FcNode})=> {
 	const badges = getNodeBadges(node.id)
 	if (!badges) return null
@@ -34,46 +79,7 @@ const SceneBadges = ({node}: {node: FcNode})=> {
 		condition = condition.condition
 	return <>
 		{condition && <div className="condition">
-			{tokenizeCondition(condition).map((token, i, tokens)=> {
-				if (token.length == 0) return null
-				if (token == '!') return null
-				if (!token.startsWith('%'))
-					return <TokenDisplay key={token} token={token} /> // operator or number
-				if (token.startsWith('%regard')) {
-					const [, char] = splitLast(token, '_')
-					return <svg key={i} className="badge" viewBox="-13 -3.4 13 7">
-						<image href={`./chars/${char}.webp`}
-							className="badge"
-							x={-13} y={-3.5} height={7} />
-						<use href="#regard_heart"
-							fill={`url(#${char}_grad)`}
-							transform="translate(-3.5,0) scale(0.75)"/>
-					</svg>
-				}
-				else if (token.startsWith('%flg')) {
-					const flag = token.charAt(4)
-					const negative = (i > 0 && (tokens[i-1] == '!'))
-					return <svg key={i} className="badge" viewBox="-3.5 -3.5 7 7">
-						<use href={negative ? "#flag-neg-icon" : "#flag-icon"}/>
-						<text y="1.6" stroke="none" fill="white" textAnchor="middle" fontSize={4}>
-							{flag}
-						</text>
-					</svg>
-				}
-				else switch (token) {
-					case '%cleared' :
-						// TODO display star
-						break
-					case '%clear_ark_true' :
-						// TODO display character face + star
-						break
-					case '%clear_hisui' :
-						// TODO display character face + star
-						break
-					default :
-						throw Error(`Unexpected variable ${token}`)
-				}
-			})}
+			<SceneCondition condition={condition}/>
 		</div>}
 
 		<svg className="badges" viewBox="-50 -4 56 8" preserveAspectRatio="xMaxYMid meet">
@@ -102,9 +108,13 @@ const SceneBadges = ({node}: {node: FcNode})=> {
 		</svg>
 		{select &&
 			<div className="choices-container">
-				{select.map((choice, i) =>
+				{select.map(({text, condition}, i) =>
 					<div key={i} className="choice">
-						<Bbcode text={choice} />
+						<Bbcode text={text} />
+
+						{condition && <div className="condition">
+							<SceneCondition condition={condition}/>
+						</div>}
 					</div>
 				)}
 			</div>
