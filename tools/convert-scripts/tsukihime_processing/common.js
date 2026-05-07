@@ -11,7 +11,8 @@ function isSceneLabel(label) {
 function processVarName(varName) {
 	return switch_regex(varName, new Map([...Object.entries({
 		"%sceneskip"		: null, // ignore sceneskip tests
-		"%ark_normalcleared": "%clear_ark_true", // rename ark "normal" clear
+		"%ark_normalcleared": "%clear_ark",
+		"%clear_hisui"		: "%clear_his",
 		"%ark_regard"		: "%regard_ark", // rename regards
 		"%ciel_regard"		: "%regard_cel",
 		"%akiha_regard"		: "%regard_aki",

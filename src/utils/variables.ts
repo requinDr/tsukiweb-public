@@ -15,13 +15,13 @@ export function getGameVariable(script: ScriptPlayer, name: NumVarName): number 
 			return +(endings.ark_true.seen)
 		case '%clear_ark':
 			return +(endings.ark_good.seen) + +(endings.ark_true.seen)
-		case '%clear_ciel':
+		case '%clear_cel':
 			return +(endings.ciel_good.seen) + +(endings.ciel_true.seen)
-		case '%clear_akiha':
+		case '%clear_aki':
 			return +(endings.akiha_good.seen) + +(endings.akiha_true.seen)
-		case '%clear_hisui':
+		case '%clear_his':
 			return +(endings.hisui_good.seen) + +(endings.hisui_true.seen)
-		case '%clear_kohaku':
+		case '%clear_koha':
 			return +(endings.kohaku_true.seen)
 		case '%cleared':
 			return +(endings.ark_good.seen  ) + +(endings.ark_true.seen  ) +

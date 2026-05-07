@@ -147,7 +147,7 @@ function getBlockProps(label) {
 				break
 			case 'f36' : // two 'if' pointing to f37 and f201, but f37 redirected to f201
 				tokenFixes.push((t)=> {
-					if (t instanceof ConditionToken && t.condition.includes('hisui'))
+					if (t instanceof ConditionToken && t.condition.includes('his'))
 						return false
 				})
 			case 'skip46' :
@@ -196,7 +196,7 @@ function getBlockProps(label) {
 				break
 			case 'skip201' : // replaced *f37 with *f201 => condition *f202 choice on %clear_his
 				tokenFixes.push((t)=> {
-					addChoiceCondition(t, '*f202', "%clear_hisui")
+					addChoiceCondition(t, '*f202', "%clear_his")
 				})
 				break
 			case 'skip261' : case 'skip262' : // last condition is redundant
@@ -278,7 +278,7 @@ function getBlockProps(label) {
 				// f503 deleted in favor of f52
 				// add condition on the 2nd choice, skip52 later replaced by skip503
 				tokenFixes.push((t)=> {
-					addChoiceCondition(t, '*f53a', "%clear_ark_true")
+					addChoiceCondition(t, '*f53a', "%clear_ark")
 				})
 				break
 			case 'f23' : case 'f24'    : // scenes merged into s21 and s22
@@ -347,7 +347,7 @@ function interBlockFixes(blocks) {
 	// move select from f411 to skip409
 	blocks.get('skip409').splice(1, Infinity, ...blocks.get('f411').slice(1))
 	blocks.delete('f411')
-	blocks.get('skip409').forEach(t=>addChoiceCondition(t, '*f413', '%clear_hisui'))
+	blocks.get('skip409').forEach(t=>addChoiceCondition(t, '*f413', '%clear_his'))
 
 	// add 'goto <next label>' if block ends without specifying next label
 	for (const [index, [label, tokens]] of [...blocks.entries()].entries()) {

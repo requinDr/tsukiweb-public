@@ -533,7 +533,7 @@
       "s57"  : {"conditions": [0,0,"%regard_cel>=3"]},
       "s84"  : {"conditions": [0,"!%flg3"]},
       "s116a": {"conditions": [0,0,0,"%cleared","%cleared"]},
-      "s201" : {"conditions": [0,0,"%clear_hisui"]},
+      "s201" : {"conditions": [0,0,"%clear_his"]},
       "s236" : {"copy":"f242half"},
       "s241" : {"copy":"f242half"},
       "s242" : {"copy":"f242half"},
@@ -541,7 +541,7 @@
       "s306" : {"conditions": [0, "%regard_koha<3"]},
       "s358" : {"conditions": ["!%flgO || !%flgS",0]},
       "s381" : {"conditions": [0, "%regard_aki>=9"]},
-      "s409" : {"conditions": [0, "%clear_hisui"]}
+      "s409" : {"conditions": [0, "%clear_his"]}
     },
     "conditions": {
       "s34" : "%regard_cel>=2",
@@ -579,7 +579,7 @@
       "s315": "%regard_his>=%regard_koha",
       "s320": "%flgP",
       "s322": "%flgP",
-      "s324": "%regard_koha>%regard_his && %clear_hisui",
+      "s324": "%regard_koha>%regard_his && %clear_his",
       "s333": {"condition":"%flgL", "above":"s332"},
       "s339": "%flgN",
       "s410": {"condition":"%regard_his<5", "below":"s408"},

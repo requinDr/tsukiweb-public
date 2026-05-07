@@ -79,7 +79,7 @@ goto *f40
 *f201
 goto *s201
 *skip201
-select *f40,*f39,[%clear_hisui]*f202
+select *f40,*f39,[%clear_his]*f202
 *f39
 goto *s39
 *skip39
@@ -414,7 +414,7 @@ goto *f52
 *f52
 goto *s52
 *skip52
-select *f52a,[%clear_ark_true]*f53a
+select *f52a,[%clear_ark]*f53a
 *f52a
 goto *s52a
 *skip52a
@@ -479,7 +479,7 @@ goto *f409
 *f409
 goto *s409
 *skip409
-select *f412,[%clear_hisui]*f413
+select *f412,[%clear_his]*f413
 *f410
 goto *s410
 *skip410
@@ -986,8 +986,7 @@ select *f303,*f317
 *f306
 goto *s306
 *skip306
-if (%regard_koha>=3) goto *f317
-select *f414,*f317
+select [%regard_koha<3]*f414,*f317
 *f303
 goto *s303
 *skip303
@@ -1020,7 +1019,7 @@ goto *f321
 goto *s321
 *skip321
 if (%flgP!=0) goto *f322
-if (%regard_koha>%regard_his && %clear_hisui!=0) goto *f324
+if (%regard_koha>%regard_his && %clear_his!=0) goto *f324
 goto *f323
 *f322
 goto *s322

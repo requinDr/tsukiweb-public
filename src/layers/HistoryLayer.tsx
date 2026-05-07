@@ -7,6 +7,7 @@ import classNames from 'classnames';
 import { Button, FixedFooter } from '@tsukiweb-common/ui-core';
 import Flowchart from 'components/flowchart/Flowchart';
 import { LabelName, SceneName } from 'types';
+import { ProgressPanel } from 'components/atoms/ProgressPanel';
 
 
 type Props = {
@@ -159,6 +160,7 @@ const FlowchartTab = ({ history, onSceneSelect }: FlowchartTabProps) => {
 
 	return (
 		<div id="flowchart-progress" className="scroll-container">
+			<ProgressPanel script={history.script!}/>
 			<div className="flowchart-container">
 				<Flowchart
 					history={history}

@@ -4,7 +4,6 @@ import { SceneName } from "types"
 import { FcNode, getSceneGraph } from "utils/flowchart"
 import { getNodeBadges } from "./badges"
 import { tokenizeCondition } from "@tsukiweb-common/script/utils"
-import { splitLast } from "@tsukiweb-common/utils/utils"
 import { settings } from "utils/settings"
 
 type PopoverProps = {
@@ -34,14 +33,14 @@ const SceneCondition = ({condition}: {condition: string})=> {
 		if (!token.startsWith('%'))
 			return <TokenDisplay key={token} token={token} /> // operator or number
 		if (token.startsWith('%regard')) {
-			const [, char] = splitLast(token, '_')
+			const char = token.split('_')[1]
 			return <svg key={i} className="badge" viewBox="-13 -3.4 13 7">
 				<image href={`./chars/${char}.webp`}
 					className="badge"
 					x={-13} y={-3.5} height={7} />
 				<use href="#regard_heart"
 					fill={`url(#${char}_grad)`}
-					transform="translate(-3.5,0) scale(0.75)"/>
+					transform="translate(-3.5,0.5) scale(0.75)"/>
 			</svg>
 		}
 		else if (token.startsWith('%flg')) {
@@ -56,17 +55,16 @@ const SceneCondition = ({condition}: {condition: string})=> {
 		}
 		else if (token.startsWith('%clear')) {
 			let char
-			switch (token) {
-			case '%cleared': char = null; break
-			case '%clear_ark': case '%clear_ark_true': char = 'ark'; break
-			case '%clear_hisui': char="his"; break
-			}
+			if (token == '%cleared')
+				char = null;
+			else
+				char = token.split('_')[1]
 			return <svg key={i} className="badge" viewBox={`0 -3.4 ${char ? 13 : 6} 7`}>
 				<image href={`./chars/${char}.webp`}
 					className="badge"
 					x={0} y={-3.5} height={7} />
 				<use className="badge" href="#route_icon"
-					fill={char ? `url(#ark_grad)` : '#FFF'}
+					fill={char ? `url(#${char}_grad)` : '#FFF'}
 					transform={`translate(${char ? 10 : 3},0) scale(0.75)`}/>
 			</svg>
 		}
