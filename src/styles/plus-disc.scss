@@ -42,9 +42,9 @@
 
 	.scenes-list {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(min(204px, 100%), 1fr) minmax(min(204px, 100%), 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(min(208px, 100%), 1fr) minmax(min(208px, 100%), 1fr));
 		isolation: isolate;
-		gap: 10px;
+		gap: 8px;
 
 		@media screen and (max-width: 440px) {
 			grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
