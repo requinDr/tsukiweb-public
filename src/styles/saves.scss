@@ -211,58 +211,6 @@
 			flex: 1;
 		}
 
-		.affection {
-			margin-top: .5em;
-			.affection-table {
-				width: 100%;
-
-				.defs {
-					position: absolute;
-					width: 0;
-					height: 0;
-					overflow: hidden;
-				}
-				.row {
-					display: grid;
-					grid-template-columns: auto 1fr;
-					align-items: end;
-					column-gap: .5em;
-					padding-inline: .5em;
-					padding-top: .4em;
-					border-bottom: 1px solid var(--separator);
-
-					.char {
-						width: 54px;
-						display: block;
-						height: auto;
-					}
-					.hearts {
-						padding-bottom: .4em;
-						display: flex;
-						flex-wrap: wrap;
-					}
-				}
-				
-				.heart-icon {
-					width: 22px;
-					height: 22px;
-				}
-			}
-		}
-
-		.flags {
-			margin-top: .5em;
-
-			.flags-list {
-				padding: 0 .5em;
-				display: flex;
-				flex-wrap: wrap;
-				.badge {
-					width: 34px;
-				}
-			}
-		}
-
 		.actions {
 			margin-top: auto;
 			padding: 1em;
