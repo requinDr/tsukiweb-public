@@ -15,9 +15,9 @@
 			.title {
 				background: linear-gradient(
 					90deg,
-					color-mix(in oklch, #{$color} 70%, black),
-					color-mix(in oklch, #{$color} 100%, white 10%),
-					color-mix(in oklch, #{$color} 70%, black)
+					color-mix(in oklch, #{$color} 60%, black),
+					color-mix(in oklch, #{$color} 100%, white 30%),
+					color-mix(in oklch, #{$color} 60%, black)
 				);
 				-webkit-background-clip: text;
 				background-clip: text;
@@ -56,7 +56,7 @@
 	}
 
 	.badendings {
-		padding-block: 2em;
+		padding-block: 4em 2em;
 
 		h3 {
 			all: unset;
@@ -75,6 +75,7 @@
 			filter: brightness(0.5);
 			opacity: .5;
 			cursor: default;
+			pointer-events: none;
 			user-select: none;
 			@include active-shadow;
 
@@ -100,6 +101,7 @@
 				filter: grayscale(0);
 				opacity: 1;
 				cursor: pointer;
+				pointer-events: auto;
 			}
 		}
 	}

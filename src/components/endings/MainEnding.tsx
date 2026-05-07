@@ -23,15 +23,13 @@ const MainEnding = ({unlocked, ending, continueScript = false, attention, ...pro
 	return (
 		<SceneShortcut
 			{...props}
-			id={id}
 			unlocked={unlocked}
 			className={id}
 			images={image ? {bg: image} : {}}
 			title={unlocked ? name : "???"}
 			subtitle={unlocked && char
 				? <>{char} <span className="separator">{`\u2022`}</span> {type}</>
-	 			: (unlocked && !char)
-					? "" : "???"
+	 			: undefined
 			}
 			onClick={startScene}
 			onKeyDown={e => e.key === "Enter" && startScene()}
