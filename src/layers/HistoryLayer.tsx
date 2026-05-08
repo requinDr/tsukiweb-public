@@ -8,6 +8,7 @@ import { Button, FixedFooter } from '@tsukiweb-common/ui-core';
 import Flowchart from 'components/flowchart/Flowchart';
 import { LabelName, SceneName } from 'types';
 import { ProgressPanel } from 'components/atoms/ProgressPanel';
+import { playScene } from 'utils/savestates';
 
 
 type Props = {
@@ -15,12 +16,13 @@ type Props = {
 	history: History
 	onRewind: VoidFunction
 	layers: InGameLayersHandler
+	continueScript?: boolean
 	show?: Partial<{
 		flowchart: boolean
 	}>
 	divProps?: React.HTMLProps<HTMLDivElement>
 }
-const HistoryLayer = ({ display, history, onRewind, layers, show, divProps }: Props) => {
+const HistoryLayer = ({ display, history, onRewind, layers, continueScript = true, show, divProps }: Props) => {
 	const rootRef = useRef<HTMLDivElement>(null)
 
 	const handleClose = useCallback(()=> {
@@ -39,10 +41,14 @@ const HistoryLayer = ({ display, history, onRewind, layers, show, divProps }: Pr
 	}, [handleClose, onRewind])
 
 	const loadScene = useCallback((label: LabelName)=> {
-		history.onSceneLoad(label)
+		if (!continueScript) {
+			playScene(label, { continueScript: false, viewedOnly: false })
+		} else {
+			history.onSceneLoad(label)
+		}
 		handleClose()
 		onRewind()
-	}, [handleClose, onRewind])
+	}, [continueScript, handleClose, onRewind])
 	
 	return (
 		<div
@@ -60,6 +66,7 @@ const HistoryLayer = ({ display, history, onRewind, layers, show, divProps }: Pr
 				<FlowchartTab key={history.lastScene.label}
 					history={history}
 					onSceneSelect={loadScene}
+					continueScript={continueScript}
 				/>
 			: null
 			}
@@ -144,9 +151,12 @@ const HistoryTab = ({
 
 type FlowchartTabProps = {
 	history: History
+	continueScript: boolean
 	onSceneSelect: (label: LabelName)=>void
 }
-const FlowchartTab = ({ history, onSceneSelect }: FlowchartTabProps) => {
+const FlowchartTab = ({ history, continueScript, onSceneSelect }: FlowchartTabProps) => {
+	const isSceneReplay = !continueScript
+
 	useLayoutEffect(()=> {
 		const activeNode = document.querySelector(`.fc-scene.active`)
 		if (activeNode) {
@@ -160,14 +170,16 @@ const FlowchartTab = ({ history, onSceneSelect }: FlowchartTabProps) => {
 
 	return (
 		<div id="flowchart-progress" className="scroll-container">
-			<div className="progress-container">
-				<ProgressPanel script={history.script!}/>
-			</div>
+			{!isSceneReplay && (
+				<div className="progress-container">
+					<ProgressPanel script={history.script!}/>
+				</div>
+			)}
 			<div className="flowchart-container">
 				<Flowchart
-					history={history}
+					history={isSceneReplay ? undefined : history}
 					onSceneClick={handleSceneSelect}
-					mode="playthrough"
+					mode={isSceneReplay ? 'viewer' : 'playthrough'}
 				/>
 			</div>
 		</div>

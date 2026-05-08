@@ -109,6 +109,7 @@ const Window = () => {
 					display={layers.history || layers.flowchart}
 					history={history}
 					layers={layers}
+					continueScript={script.continueScript}
 					show={show}
 					onRewind={remountScript}
 				/>

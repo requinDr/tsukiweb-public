@@ -92,12 +92,14 @@
 				column-gap: 1rem;
 				padding-inline: .5rem;
 				overflow-x: auto;
-				height: 50px;
+				height: 46px;
+				--icon-size: 32px;
 
 				.hearts-list, .clear-list, .flags-list {
 					padding-bottom: .2em;
 				}
 				.hearts-list {
+					--heart-size: var(--icon-size);
 					grid-auto-columns: var(--heart-overlap);
 					grid-auto-flow: column;
 				}
@@ -106,10 +108,10 @@
 					align-items: end;
 
 					.star-icon {
-						height: 36px;
-						width: 36px;
+						height: var(--icon-size);
+						width: var(--icon-size);
 						&:not(:first-child) {
-							margin-left: -22px;
+							margin-left: -20px;
 						}
 					}
 				}
