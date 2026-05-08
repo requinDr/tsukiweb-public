@@ -77,6 +77,42 @@
 		overflow: auto;
 		will-change: scroll-position;
 		display: flex;
+		.progress-container {
+			position: absolute;
+			top: 0;
+			right: 0;
+			left: 0;
+			border-bottom: 1px solid var(--separator);
+			z-index: 1;
+			background: var(--transparent-layer);
+			.progress-panel {
+				max-width: var(--page-width);
+				margin-inline: auto;
+				display: flex;
+				column-gap: 0.5rem;
+				padding-inline: .5rem;
+				overflow-x: auto;
+				height: 56px;
+
+				.row {
+					flex: none;
+					.hearts {
+						max-width: 220px;
+					}
+				}
+				.clear-list {
+					flex: none;
+					max-width: 80px;
+					padding-bottom: 0.4em;
+					display: flex;
+					flex-wrap: wrap;
+					align-items: end;
+				}
+				.flags-list {
+					flex: none;
+				}
+			}
+		}
 		.flowchart-container {
 			flex: 1;
 			max-width: var(--page-width);

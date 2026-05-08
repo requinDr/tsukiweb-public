@@ -23,8 +23,6 @@
 }
 
 .progress-panel  {
-	margin-top: .5em;
-
 	.defs {
 		position: absolute;
 		width: 0;
@@ -36,9 +34,6 @@
 		grid-template-columns: auto 1fr;
 		align-items: end;
 		column-gap: .5em;
-		padding-inline: .5em;
-		padding-top: .4em;
-		border-bottom: 1px solid var(--separator);
 
 		.char {
 			width: 54px;

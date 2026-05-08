@@ -211,6 +211,16 @@
 			flex: 1;
 		}
 
+		.progress-panel {
+			margin-top: .5em;
+
+			.row {
+				padding-inline: .5em;
+				padding-top: .4em;
+				border-bottom: 1px solid var(--separator);
+			}
+		}
+
 		.actions {
 			margin-top: auto;
 			padding: 1em;

@@ -160,7 +160,9 @@ const FlowchartTab = ({ history, onSceneSelect }: FlowchartTabProps) => {
 
 	return (
 		<div id="flowchart-progress" className="scroll-container">
-			<ProgressPanel script={history.script!}/>
+			<div className="progress-container">
+				<ProgressPanel script={history.script!}/>
+			</div>
 			<div className="flowchart-container">
 				<Flowchart
 					history={history}
