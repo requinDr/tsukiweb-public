@@ -89,24 +89,29 @@
 				max-width: var(--page-width);
 				margin-inline: auto;
 				display: flex;
-				column-gap: 0.5rem;
+				column-gap: 1rem;
 				padding-inline: .5rem;
 				overflow-x: auto;
-				height: 56px;
+				height: 50px;
 
-				.row {
-					flex: none;
-					.hearts {
-						max-width: 220px;
-					}
+				.hearts-list, .clear-list, .flags-list {
+					padding-bottom: .2em;
+				}
+				.hearts-list {
+					grid-auto-columns: var(--heart-overlap);
+					grid-auto-flow: column;
 				}
 				.clear-list {
-					flex: none;
-					max-width: 80px;
-					padding-bottom: 0.4em;
 					display: flex;
-					flex-wrap: wrap;
 					align-items: end;
+
+					.star-icon {
+						height: 36px;
+						width: 36px;
+						&:not(:first-child) {
+							margin-left: -22px;
+						}
+					}
 				}
 				.flags-list {
 					flex: none;
