@@ -15,7 +15,7 @@ type Props = {
 	flags: Set<string>|Array<string>,
 	regard: PartialJSON<Regard>
 }
-const AffectionRow = ({ char, value, max }: {char: CharId, value: number, max: number}) => {
+const RegardRow = ({ char, value, max }: {char: CharId, value: number, max: number}) => {
 	return (
 		<div className="row">
 			<img className="char" src={`./chars/${char}.webp`}
@@ -37,29 +37,28 @@ const AffectionRow = ({ char, value, max }: {char: CharId, value: number, max: n
 		</div>
 	)
 }
+
 const FlagsList = ({ flags }: { flags: string[] }) => {
 	return (
 		<div className="flags-list">
 			{flags.map(flag =>
-				<svg key={flag} className="badge" viewBox="-4 -4 8 8" preserveAspectRatio="xMinYMid meet">
-					<g className="badge">
-						<use href="#flag-icon"/>
-						<text y="1.6" stroke="none" fill="white" textAnchor="middle">
-							{flag}
-						</text>
-					</g>
+				<svg key={flag} className="badge" viewBox="-3.5 -3.5 7 7">
+					<use href="#flag-icon"/>
+					<text y="1.6" stroke="none" fill="white" textAnchor="middle">
+						{flag}
+					</text>
 				</svg>
 			)}
 		</div>
 	)
 }
 
-const ClearList = ({ CHARS, script }: { CHARS: string[], script: ScriptPlayer }) => {
+const EndingList = ({ CHARS, script }: { CHARS: string[], script: ScriptPlayer }) => {
 	return (
-		<div className="clear-list">
+		<div className="ending-list">
 			{CHARS.filter(c=>script.readVariable(`%clear_${c}`)).map(c=>
 				<BiSolidStar
-					key={`${c}-heart-index`}
+					key={`${c}-star-index`}
 					className="star-icon"
 					style={{
 						fill: `url(#${c}_grad)`,
@@ -83,9 +82,9 @@ export const ProgressPanel = ({script, flags, regard}: Props) => {
 		<div className="progress-panel">
 			<svg width="20" height="20" className="defs">{BADGES_DEFINES}</svg>
 
-			{script && <ClearList CHARS={CHARS} script={script}/>}
+			{script && <EndingList CHARS={CHARS} script={script}/>}
 			{CHARS.filter(c=>regard![c] ?? 0 > 0).map(c=>
-				<AffectionRow key={c} char={c} value={regard![c]!} max={20}/>
+				<RegardRow key={c} char={c} value={regard![c]!} max={20}/>
 			)}
 			<FlagsList flags={Array.from(flags!)}/>
 		</div>

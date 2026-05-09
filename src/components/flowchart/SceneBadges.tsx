@@ -1,41 +1,64 @@
 import { FcNode } from "utils/flowchart";
-import { FLAG_BACKGROUND, getNodeBadges } from "./badges";
+import { FLAG_BACKGROUND } from "./badges";
 import { COLUMN_WIDTH, DY } from "@tsukiweb-common/flowchart";
 import { CharId } from "types";
 import { RouteEnding } from "utils/endings";
+import { getNodeBadges } from "utils/badges";
 
 const REGARD_REGEX = /^%regard_(\w+)/
 
-type SceneBadgesProps = {
-	node: FcNode
+const SelectBadge = ({node}: {node: FcNode})=> {
+	return (
+		<use
+			className="badge"
+			href="#sel-icon"
+			transform={`translate(${node.centerX}, ${node.bottom})`}
+		/>
+	)
 }
 
-const SelectBadge = ({node}: {node: FcNode})=> {
-	return <use className="badge" href="#sel-icon"
-		 transform={`translate(${node.centerX}, ${node.bottom})`} />
-}
 const RegardBadge = ({node, char, value}: {node: FcNode, char: CharId, value: number})=> {
 	const dX = node.width > 0 ? COLUMN_WIDTH - node.width : 0
 	const dY = node.height > 0 ? DY / 2 : 0
-	return <use className="badge" href={`#regard_${value}`}
-				fill={`url(#${char}_grad)`} transform={`translate(${node.right - dX}, ${node.bottom - dY})`} />
+
+	return (
+		<use
+			className="badge"
+			href={`#regard_${value}`}
+			fill={`url(#${char}_grad)`}
+			transform={`translate(${node.right - dX}, ${node.bottom - dY})`}
+		/>
+	)
 }
+
 const FlagBadge = ({node, flag, above}: {node: FcNode, flag: string, above?: boolean})=> {
 	const dX = node.width > 0 ? COLUMN_WIDTH - node.width : 0
 	const dY = node.height > 0 ? DY / 2 : 0
-	return <g className="badge" transform={`translate(${node.right - dX}, ${node.bottom - dY - (above ? DY * 2.2 : 0)})`}>
-		<use href="#flag-icon" />
-		<text y="1.6" stroke="none" fill="white" textAnchor="middle">
-			{flag}
-		</text>
-	</g>
+	
+	return (
+		<g className="badge" transform={`translate(${node.right - dX}, ${node.bottom - dY - (above ? DY * 2.2 : 0)})`}>
+			<use href="#flag-icon" />
+			<text y="1.6" stroke="none" fill="white" textAnchor="middle">
+				{flag}
+			</text>
+		</g>
+	)
 }
+
 const EndingBadge = ({node, char, type}: {node: FcNode, char: CharId, type: RouteEnding['type']})=> {
 	const dX = node.width > 0 ? COLUMN_WIDTH - node.width : 0
 	const dY = node.height > 0 ? DY / 2 : 0
-	return <use className="badge" href="#route_icon" fill={`url(#${char}_grad)`}
-				transform={`translate(${node.right - dX}, ${node.bottom - dY})`} />
+	
+	return (
+		<use
+			className="badge"
+			href="#route_icon"
+			fill={`url(#${char}_grad)`}
+			transform={`translate(${node.right - dX}, ${node.bottom - dY})`}
+		/>
+	)
 }
+
 type Condition = Exclude<Exclude<ReturnType<typeof getNodeBadges>, undefined>['condition'], undefined>
 const ConditionBadge = ({node, condition}: {node: FcNode, condition: Condition})=> {
 	let x, y, angle, iconX, iconY, icon, fill, negative
@@ -103,6 +126,11 @@ const ConditionBadge = ({node, condition}: {node: FcNode, condition: Condition})
 		{negative && <use href="#cond-neg"/>}
 	</g>
 }
+
+
+type SceneBadgesProps = {
+	node: FcNode
+}
 export const SceneBadges = ({node}: SceneBadgesProps)=> {
 	const badge = getNodeBadges(node.id)
 	if (!badge) return null
@@ -111,15 +139,15 @@ export const SceneBadges = ({node}: SceneBadgesProps)=> {
 	
 	return (
 		<>
-			{char && <RegardBadge key="rgd" node={node} char={char} value={value!} />}
+			{char && <RegardBadge node={node} char={char} value={value!} />}
 
-			{flag && <FlagBadge key="flg" node={node} flag={flag} above={!!char} />}
+			{flag && <FlagBadge node={node} flag={flag} above={!!char} />}
 
-			{select && <SelectBadge key="sel" node={node} />}
+			{select && <SelectBadge node={node} />}
 
-			{condition && <ConditionBadge key="if" node={node} condition={condition} />}
+			{condition && <ConditionBadge node={node} condition={condition} />}
 			
-			{ending && <EndingBadge key="ending" node={node} {...ending} />}
+			{ending && <EndingBadge node={node} {...ending} />}
 		</>
 	)
 }

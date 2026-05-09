@@ -95,7 +95,7 @@
 				height: 46px;
 				--icon-size: 32px;
 
-				.hearts-list, .clear-list, .flags-list {
+				.hearts-list, .ending-list, .flags-list {
 					padding-bottom: .2em;
 				}
 				.hearts-list {
@@ -103,7 +103,7 @@
 					grid-auto-columns: var(--heart-overlap);
 					grid-auto-flow: column;
 				}
-				.clear-list {
+				.ending-list {
 					display: flex;
 					align-items: end;
 
