@@ -5,7 +5,7 @@ import { settings } from "../utils/settings"
 import { observe } from "@tsukiweb-common/utils/Observer"
 import { ValueStorage } from "@tsukiweb-common/utils/storage"
 import { fetchJson, deepAssign, insertDirectory } from "@tsukiweb-common/utils/utils"
-import { ImageRedirect, LangDesc, TextImage, TranslationId, UpdateDateFormat } from "@tsukiweb-common/utils/lang"
+import { ImageRedirect, LangDesc, ResolutionId, TextImage, TranslationId, UpdateDateFormat } from "@tsukiweb-common/utils/lang"
 import { langSelection } from "./langSelection"
 import { PartialRecord } from "@tsukiweb-common/types"
 
@@ -25,19 +25,19 @@ const LANGUAGES_LIST_URL = `${LANG_DIR}languages.json`
 
 type LanguagesType = Record<TranslationId, LangDesc>
 type StringsTypeBase = {
-  id: TranslationId,
+  id: TranslationId
   lastUpdate: UpdateDateFormat
   images: {
-    "redirect-ids": Record<string, ImageRedirect<`${string}\$${string}`>>,
-    "redirected-images": Record<string, string|ImageRedirect<string>>,
+    "redirect-ids": Record<string, ImageRedirect<`${string}\$${string}`>>
+    "redirected-images": Record<string, string|ImageRedirect<string>>
     "words": Record<string, string>
-  },
-  choices: PartialRecord<LabelName, string[]>,
+  } & Record<ResolutionId, Record<string, string>>
+  choices: PartialRecord<LabelName, string[]>
   scenario: {
-    days: string[],
-    routes: Record<RouteName, Record<RouteDayName, string>>,
+    days: string[]
+    routes: Record<RouteName, Record<RouteDayName, string>>
     scenes: typeof SCENE_ATTRS.scenes
-  },
+  }
   credits: (TextImage & {delay?: number})[]
 }
 type StringsType = StringsTypeBase & Omit<typeof defaultStrings, keyof StringsTypeBase>
