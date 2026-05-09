@@ -97,18 +97,23 @@ async function updateLanguage(id: TranslationId, forceUpdate = false) {
   deepAssign(strings, await loadTranslation(id), {clean: true})
   stringsStorage.set(strings)
   langSelection.ready = true
-  setDefaultlanguage()
 }
 
 function setDefaultlanguage() {
   // If no locale storage for settings and savestates (=> the user has not
   // really played the game yet), then set the language to the closest one to
   // the browser languages
-  if (!localStorage.getItem('settings') && !localStorage.getItem('savestates')) {
+  if (localStorage.getItem('settings') === '{"language":"en-mm"}' &&
+  !localStorage.getItem('savestates')){
     const langEntries = Object.entries(languages)
     let index = -1
     for (let locale of navigator.languages) {
       index = langEntries.findIndex(([_, lang])=> lang.locale == locale)
+      if (index != -1)
+        break
+      
+      const baseLang = locale.split('-')[0]
+      index = langEntries.findIndex(([_, lang]) => lang.locale.split('-')[0] == baseLang)
       if (index != -1)
         break
     }
@@ -158,6 +163,7 @@ async function initTranslations() {
   } else {
     fetchAvailableLanguages() // update languages.json in the background
   }
+  setDefaultlanguage()
   
   if (!Object.hasOwn(strings, 'id') || strings.id !== settings.language) {
     await updateLanguage(settings.language)
