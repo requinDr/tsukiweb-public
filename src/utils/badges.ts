@@ -38,7 +38,7 @@ function buildBadgesMap() {
     if (conditions) {
       const entry = BADGE_MAP.get(id)!
       conditions.map((condition, i)=> {
-        if (condition) entry.select![i].condition = condition
+        if (condition && entry?.select) entry.select[i].condition = condition
       })
     }
   }

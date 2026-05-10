@@ -30,8 +30,7 @@
 		overflow: hidden;
 	}
 	.row {
-		display: grid;
-		grid-template-columns: auto 1fr;
+		display: flex;
 		align-items: end;
 
 		.char {
