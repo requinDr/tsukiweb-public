@@ -33,24 +33,16 @@
 		display: grid;
 		grid-template-columns: auto 1fr;
 		align-items: end;
-		--heart-size: 36px;
-		--heart-overlap: 14px;
 
 		.char {
 			max-width: 54px;
 			display: block;
-			height: auto;
 			max-height: 100%;
 			min-height: 0;
 		}
 		.hearts-list {
 			height: 100%;
-			display: grid;
-			grid-template-columns: repeat(auto-fill, minmax(min(var(--heart-overlap), 100%), 1fr));
-		}
-		.heart-icon {
-			height: var(--heart-size);
-			width: var(--heart-size);
+			display: flex;
 		}
 	}
 

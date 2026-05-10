@@ -1,20 +1,29 @@
 import { PartialJSON } from "@tsukiweb-common/types"
 import { BADGES_DEFINES } from "components/flowchart/badges"
-import { BiSolidHeart, BiSolidStar } from "react-icons/bi"
 import { Regard, ScriptPlayer } from "script/ScriptPlayer"
 import { strings } from "translation/lang"
 import { CharId } from "types"
 import { CHARS } from "utils/constants"
 
-type Props = {
-	script: ScriptPlayer,
-	flags?: never
-	regard?: never
-} | {
-	script?: never,
-	flags: Set<string>|Array<string>,
-	regard: PartialJSON<Regard>
+
+const EndingList = ({ CHARS, script }: { CHARS: string[], script: ScriptPlayer }) => {
+	const cleared_routes = CHARS.filter(c=>script.readVariable(`%clear_${c}`))
+	const len = cleared_routes.length
+	return (
+		<svg className="ending-list" viewBox={`-3.5 -3.5 ${7+3.5*(len-1)} 6.5`} >
+			{cleared_routes.map((c, i)=>
+				<use href="#route_icon"
+					key={`${c}-star-index`}
+					className="star-icon badge"
+					fill={`url(#${c}_grad)`}
+					stroke="rgba(255, 255, 255, 0.9)"
+					transform={`translate(${i*3.5},0)`}
+				/>
+			)}
+		</svg>
+	)
 }
+
 const RegardRow = ({ char, value, max }: {char: CharId, value: number, max: number}) => {
 	const iconParams = {
 		className:"heart-icon",
@@ -25,10 +34,10 @@ const RegardRow = ({ char, value, max }: {char: CharId, value: number, max: numb
 		<div className="row">
 			<img className="char" src={`./chars/${char}.webp`}
 				alt={strings.characters[char]} />
-			<div className="hearts-list" style={{height: "100%"}} >
-				<svg viewBox="-3.5 -3.5 14 7" style={{height: "100%"}}>
+			<div className="hearts-list">
+				<svg viewBox="-3.3 -3.3 13.5 6.3">
 					<use href="#regard_heart" {...iconParams} className="badge"/>
-					<text x="3.5" y="2" fontSize={4} fill="#fff">
+					<text x="3" y="2" fontSize={4} fill="#fff">
 						&times;{n}
 					</text>
 				</svg>
@@ -52,24 +61,15 @@ const FlagsList = ({ flags }: { flags: string[] }) => {
 	)
 }
 
-const EndingList = ({ CHARS, script }: { CHARS: string[], script: ScriptPlayer }) => {
-	const cleared_routes = CHARS.filter(c=>script.readVariable(`%clear_${c}`))
-	const len = cleared_routes.length
-	return (
-		<svg className="ending-list" viewBox={`-3.5 -3.5 ${7+3.5*(len-1)} 7`} >
-			{cleared_routes.map((c, i)=>
-				<use href="#route_icon"
-					key={`${c}-star-index`}
-					className="star-icon badge"
-					fill={`url(#${c}_grad)`}
-					stroke="rgba(255, 255, 255, 0.9)"
-					transform={`translate(${i*3.5},0)`}
-				/>
-			)}
-		</svg>
-	)
+type Props = {
+	script: ScriptPlayer,
+	flags?: never
+	regard?: never
+} | {
+	script?: never,
+	flags: Set<string>|Array<string>,
+	regard: PartialJSON<Regard>
 }
-
 export const ProgressPanel = ({script, flags, regard}: Props) => {
 
 	if (script) {
