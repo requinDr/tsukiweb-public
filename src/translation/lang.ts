@@ -78,6 +78,7 @@ async function loadTranslation(id: TranslationId): Promise<typeof strings> {
 async function fetchAvailableLanguages() {
   deepAssign(languages, await fetchJson(`${LANGUAGES_LIST_URL}?v=${APP_VERSION}`))
   languagesStorage.set(languages)
+  setDefaultlanguage()
   let id: TranslationId | undefined = settings.language
   let lastUpdate = ""
   while (id) {
@@ -103,22 +104,24 @@ function setDefaultlanguage() {
   // If no locale storage for settings and savestates (=> the user has not
   // really played the game yet), then set the language to the closest one to
   // the browser languages
-  if (localStorage.getItem('settings') === '{"language":"en-mm"}' &&
-  !localStorage.getItem('savestates')){
+  if (settings.language == "default"){
     const langEntries = Object.entries(languages)
-    let index = -1
+    let i = -1
     for (let locale of navigator.languages) {
-      index = langEntries.findIndex(([_, lang])=> lang.locale == locale)
-      if (index != -1)
-        break
-      
-      const baseLang = locale.split('-')[0]
-      index = langEntries.findIndex(([_, lang]) => lang.locale.split('-')[0] == baseLang)
-      if (index != -1)
+      i = langEntries.findIndex(([_, lang])=> lang.locale == locale)
+      if (i == -1){
+        // if country-specific locale not found, search for language
+        // without country
+        i = langEntries.findIndex(([_, lang])=>
+          lang.locale.split('-')[0] == locale.split('-')[0])
+      }
+      if (i != -1)
         break
     }
-    if (index != -1)
-      settings.language = langEntries[index][0]
+    if (i != -1)
+      settings.language = langEntries[i][0]
+    else
+      settings.language = "en-mm"
   }
 }
 
@@ -163,7 +166,6 @@ async function initTranslations() {
   } else {
     fetchAvailableLanguages() // update languages.json in the background
   }
-  setDefaultlanguage()
   
   if (!Object.hasOwn(strings, 'id') || strings.id !== settings.language) {
     await updateLanguage(settings.language)
