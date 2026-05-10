@@ -16,23 +16,22 @@ type Props = {
 	regard: PartialJSON<Regard>
 }
 const RegardRow = ({ char, value, max }: {char: CharId, value: number, max: number}) => {
+	const iconParams = {
+		className:"heart-icon",
+		fill: `url(#${char}_grad)`
+	}
+	const n = (max == 0) ? value : Math.min(value, max)
 	return (
 		<div className="row">
 			<img className="char" src={`./chars/${char}.webp`}
 				alt={strings.characters[char]} />
-			<div className="hearts-list">
-				{Array(max ? Math.min(value, max) : value)
-					.fill(null).map((_, index) =>
-					<BiSolidHeart
-						key={`${char}-heart-${index}`}
-						className="heart-icon"
-						style={{
-							fill: `url(#${char}_grad)`,
-							stroke: "rgba(255, 255, 255, 0.9)",
-							strokeWidth: 1
-						}}
-					/>
-				)}
+			<div className="hearts-list" style={{height: "100%"}} >
+				<svg viewBox="-3.5 -3.5 14 7" style={{height: "100%"}}>
+					<use href="#regard_heart" {...iconParams} className="badge"/>
+					<text x="3.5" y="2" fontSize={4} fill="#fff">
+						&times;{n}
+					</text>
+				</svg>
 			</div>
 		</div>
 	)
@@ -54,20 +53,20 @@ const FlagsList = ({ flags }: { flags: string[] }) => {
 }
 
 const EndingList = ({ CHARS, script }: { CHARS: string[], script: ScriptPlayer }) => {
+	const cleared_routes = CHARS.filter(c=>script.readVariable(`%clear_${c}`))
+	const len = cleared_routes.length
 	return (
-		<div className="ending-list">
-			{CHARS.filter(c=>script.readVariable(`%clear_${c}`)).map(c=>
-				<BiSolidStar
+		<svg className="ending-list" viewBox={`-3.5 -3.5 ${7+3.5*(len-1)} 7`} >
+			{cleared_routes.map((c, i)=>
+				<use href="#route_icon"
 					key={`${c}-star-index`}
-					className="star-icon"
-					style={{
-						fill: `url(#${c}_grad)`,
-						stroke: "rgba(255, 255, 255, 0.9)",
-						strokeWidth: 1
-					}}
+					className="star-icon badge"
+					fill={`url(#${c}_grad)`}
+					stroke="rgba(255, 255, 255, 0.9)"
+					transform={`translate(${i*3.5},0)`}
 				/>
 			)}
-		</div>
+		</svg>
 	)
 }
 

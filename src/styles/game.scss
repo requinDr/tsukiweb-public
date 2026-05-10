@@ -44,10 +44,9 @@
 			min-height: 0;
 		}
 		.hearts-list {
-			padding-bottom: .4em;
+			height: 100%;
 			display: grid;
 			grid-template-columns: repeat(auto-fill, minmax(min(var(--heart-overlap), 100%), 1fr));
-			margin-right: calc(var(--heart-size) - var(--heart-overlap));
 		}
 		.heart-icon {
 			height: var(--heart-size);

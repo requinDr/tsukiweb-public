@@ -93,27 +93,13 @@
 				padding-inline: .5rem;
 				overflow-x: auto;
 				height: 46px;
-				--icon-size: 32px;
 
 				.hearts-list, .ending-list, .flags-list {
 					padding-bottom: .2em;
 				}
-				.hearts-list {
-					--heart-size: var(--icon-size);
-					grid-auto-columns: var(--heart-overlap);
-					grid-auto-flow: column;
-				}
 				.ending-list {
 					display: flex;
 					align-items: end;
-
-					.star-icon {
-						height: var(--icon-size);
-						width: var(--icon-size);
-						&:not(:first-child) {
-							margin-left: -20px;
-						}
-					}
 				}
 				.flags-list {
 					flex: none;

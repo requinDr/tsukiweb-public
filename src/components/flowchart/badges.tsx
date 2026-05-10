@@ -1,7 +1,7 @@
 import { CharId } from "types"
 import { DY } from "@tsukiweb-common/flowchart/constants"
 
-const HEART_OFFSET = `0,2.5`
+const HEART_PATH = `m0,2.5l-2.5,-2.5a1.66,1.66,0,1,1,2.5,-2.2a1.66,1.66,0,1,1,2.5,2.2`
 const C = DY*0.8 // unit used for condition badge
 export const FLAG_BACKGROUND = "#668a00"
 
@@ -35,17 +35,17 @@ export const BADGES_DEFINES = <defs>
   */}
   <path id="regard_+" d="m1.75,0.75l0,1.75m-0.875,-0.875l1.75,0" stroke="var(--regard-plus-color, #00ff00)" fill="none"/>
   <path id="regard_-" d="m1.75,0.85m-0.875,0.5l1.75,0" stroke="var(--regard-minus-color, #ff0000)" fill="none"/>
-  <path id="regard_heart" d={`m${HEART_OFFSET}l-2.5,-2.5a1.66,1.66,0,1,1,2.5,-2.2a1.66,1.66,0,1,1,2.5,2.2`} stroke="none"/>
+  <path id="regard_heart" d={`${HEART_PATH}z`}/>
   {[1, 2, 3].map(n=>
     <g key={`regard_${n}`} id={`regard_${n}`}>
-      <path d={`m${HEART_OFFSET}l-2.5,-2.5a1.66,1.66,0,1,1,2.5,-2.2a1.66,1.66,0,1,1,2.5,2.2
+      <path d={`${HEART_PATH}
         ${"m-5,-2.2a1.66,1.66,0,1,1,2.5,-2.2a1.66,1.66,0,1,1,2.5,2.2".repeat(n-1)}`}/>
       <use href="#regard_+"/>
     </g>
   )}
   {[-4, -1].map(n=>
     <g key={`regard_${n}`} id={`regard_${n}`}>
-      <path d={`m${HEART_OFFSET}l-2.5,-2.5a1.66,1.66,0,1,1,2.5,-2.2a1.66,1.66,0,1,1,2.5,2.2
+      <path d={`${HEART_PATH}
         m-2.5,0.5l0.6,-0.5l-1.3,-1l0.7,-1.2
         ${`m-2.5,0a1.66,1.66,0,1,1,2.5,-2.2a1.66,1.66,0,1,1,2.5,2.2
         m-2.29,-0.3l-0.91,-0.7l0.7,-1.2`.repeat(-n-1)}`}/>
