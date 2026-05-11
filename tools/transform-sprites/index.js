@@ -1,22 +1,25 @@
-import path from 'path'
-import { fileURLToPath } from 'url'
 import { processImages } from '../../tsukiweb-common/tools/transform-sprites/processor.js'
 import { logError } from '../../tsukiweb-common/tools/utils/logging.js'
+import fs from 'fs/promises'
 
-// 1) Run once to create the input and output directories
-// 2) Place the jpg images in the "input" folder
-// 3) Run the script to process the images
+/**
+ * 1) Place the "tachi" folder next to this script, containing the original tachi images.
+ * 2) Run the script to process the images and generate transparent sprites
+ */
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
-
-const inputDir = path.join(__dirname, 'tachi')
-const outputDir = path.join(__dirname, 'output')
+const inputDir = './tachi'
 
 async function main() {
 	try {
 		console.log('--- Starting image transparency processing ---\n')
-		await processImages(inputDir, outputDir)
+		
+		const tempDir = inputDir + '_temp'
+		await fs.rename(inputDir, tempDir)
+
+		await processImages(tempDir, inputDir)
+
+		await fs.rm(tempDir, { recursive: true })
+
 		console.log('\n--- Image transparency processing finished ---')
 	} catch (error) {
 		logError(`An error occurred: ${error.message}`)

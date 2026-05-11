@@ -2,9 +2,11 @@ import path from 'path'
 import { processImages } from '../../tsukiweb-common/tools/convert-images/processor.js'
 import { mergeImages } from '../../tsukiweb-common/tools/convert-images/editor.js'
 
-// Put in the input folder bg, event and tachi folders.
-// Put in the input_x2 folder bg, event and tachi folders (upscaled).
-// Generate images_thumb and images directories.
+/**
+ * Put in the "input" folder: bg, event and tachi folders.
+ * Put in the "input_x2" folder: bg, event and tachi folders (upscaled).
+ * Run this script to generate "images_thumb" and "images" directories.
+ */
 
 const outputDir = "../../public/static/jp/"
 

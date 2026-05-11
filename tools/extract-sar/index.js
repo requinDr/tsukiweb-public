@@ -1,9 +1,10 @@
 import { logError } from '../../tsukiweb-common/tools/utils/logging.js'
 import { extractSar } from '../../tsukiweb-common/tools/extract-sar/extractor.js'
 
-// 1) Place arc.sar in the "tools/extract-sar" folder
-// 2) Run the script to extract the files
-
+/**
+ * 1) Place arc.sar next to this script.
+ * 2) Run the script to extract the files
+ */
 const archivePath = 'arc.sar'
 const outputDir = './'
 const extractedDirs = [

@@ -33,8 +33,7 @@ tsukihime_logic_tree.txt
 
 tools/convert-scripts/input
 tools/convert-scripts/output
-tools/transform-sprites/input
-tools/transform-sprites/output
+tools/transform-sprites/tachi
 tools/convert-images/input
 tools/convert-images/input_x2
 tools/convert-images/output

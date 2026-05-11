@@ -1,11 +1,13 @@
 import fs from 'fs'
 import { processScenes } from '../../tsukiweb-common/tools/generate-thumbnails/processor.js'
 
-// 1) Put in the input folder: bg, event and tachi folders.
-// 2) Run to to create the spritesheet
+/**
+ * 1) Put in the input folder: bg, event and tachi folders.
+ * 2) Run to create the spritesheet
+ */
 
-const SCENES_ATTR = JSON.parse(fs.readFileSync('../../src/assets/game/scene_attrs.json', 'utf8'))?.scenes
-const INPUT_SCENES = Object.entries(SCENES_ATTR).filter(
+const SCENE_ATTRS = JSON.parse(fs.readFileSync('../../src/assets/game/scene_attrs.json', 'utf8'))?.scenes
+const INPUT_SCENES = Object.entries(SCENE_ATTRS).filter(
 	([, sceneData]) => sceneData?.hasOwnProperty('col') && sceneData?.graph && !sceneData?.osiete
 )
 const INPUT_IMAGES = '../../public/static/jp/images_thumb/'
@@ -14,11 +16,13 @@ const OUTPUT_METADATA = '../../src/assets/game/'
 
 async function main() {
 	console.log('--- Starting thumbnail generation ---\n')
+
 	if (!fs.existsSync(INPUT_IMAGES)) {
 		console.error(`Input folder "${INPUT_IMAGES}" does not exist. Please create it and add images.`)
 		process.exit(1)
 	}
 	await processScenes(INPUT_SCENES, INPUT_IMAGES, OUTPUT_THUMBNAILS, OUTPUT_METADATA)
+	
 	console.log('\n--- Thumbnail generation finished ---')
 }
 
