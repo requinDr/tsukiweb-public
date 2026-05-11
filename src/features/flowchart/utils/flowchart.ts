@@ -1,0 +1,264 @@
+import { getSceneTitle, getSceneTitles, isScene, isThScene } from "../../../engine/utils"
+import { LabelName, SceneName } from "app/utils/types"
+import { SCENE_ATTRS } from "../../../app/utils/constants"
+import { COLUMN_WIDTH, DY, FcNodeState, FcSceneGraphAttrs, Flowchart, FlowchartNode, FlowchartNodeAttrs, SCENE_HEIGHT, SCENE_WIDTH, SpritesheetMetadataType } from "@tsukiweb-common/flowchart"
+import SpritesheetMetadata from "@assets/game/spritesheet_metadata.json"
+import { spriteSheetImgPath } from "translation/assets"
+import { settings } from "../../../engine/settings"
+import { History } from "../../../engine/history"
+
+//##############################################################################
+//#region                       TYPES
+//##############################################################################
+
+type FcNodeId = SceneName|string
+type FcNodeAttrs = FlowchartNodeAttrs<FcNodeId> & {
+	col: number
+	align?: FcNodeId
+	cutAt?: number
+}
+
+//##############################################################################
+//#region                           FLOWCHART
+//##############################################################################
+
+export class GameFlowchart extends Flowchart<FcNode> {
+	public metadatas: Readonly<SpritesheetMetadataType> = SpritesheetMetadata
+	private _history: History|undefined
+	constructor(history?: History) {
+		super({
+			...(SCENE_ATTRS["fc-nodes"] ?? {}),
+			...Object.entries(SCENE_ATTRS.scenes).reduce((acc, [id, { col, ...attrs }]) => {
+				if (col != undefined) acc[id] = {col, ...attrs} // filter non-fc scenes
+				return acc
+			}, {} as Record<string, FcNodeAttrs>)
+		})
+		this._history = history
+	}
+
+	protected createNode(id: string, attrs: FcNodeAttrs): FcNode {
+		return new FcNode(id, attrs, this)
+	}
+
+	isSceneEnabled(id: FcNodeId): boolean {
+		return this._history?.hasScene(id as LabelName)
+			?? this.getNode(id)?.seen
+			?? false
+	}
+
+	getSceneDisplayName(id: FcNodeId): string {
+		const flags = this._history?.sceneContext(id as LabelName)?.flags
+		if (flags)
+			return getSceneTitle(flags, id as SceneName) ?? id
+		else {
+			const titles = getSceneTitles(id as SceneName)
+			if (typeof titles == "object")
+				return titles.titles.join('[br/]')
+			return titles ?? id
+		}
+	}
+
+	hasTransition(fromId: FcNodeId, toId: FcNodeId): boolean {
+		const history = (this._history as any)?.scenes?.all()
+		if (!history || history.length < 2) return false
+
+		const fromNode = this.getNode(fromId)
+		const toNode = this.getNode(toId)
+		if (!fromNode || !toNode) return false
+
+		const fromSet = new Set(fromNode.scene ? [fromId] : fromNode.parentSceneNodes.map(n => n.id))
+		const toSet = new Set(toNode.scene ? [toId] : toNode.childSceneNodes.map(n => n.id))
+
+		return history.some((scene: { label: string }, i: number) => 
+			i < history.length - 1 && 
+			fromSet.has(scene.label) && 
+			toSet.has(history[i + 1].label)
+		)
+	}
+
+	get activeScene(): FcNodeId {
+		return this._history?.lastScene.label ?? ""
+	}
+}
+
+//##############################################################################
+//#region                             NODE
+//##############################################################################
+
+export class FcNode extends FlowchartNode<FcNodeId, GameFlowchart> {
+	column: number
+	_align: FcNodeId | FcNode | null
+	cutAt: number
+	_boundRect: [number, number, number, number] | null = null
+	_state: number = -1
+	_navY: number | null
+
+	constructor(id: FcNodeId, {col, cutAt, align, ...attrs}: FcNodeAttrs,
+				flowchart: GameFlowchart) {
+		super(id, attrs, flowchart)
+		this.column = col
+		this.cutAt = cutAt ?? 0
+		this._align = align ?? null
+		this._navY = null
+	}
+	
+	get navY() {
+		if (!this.scene || this.state < FcNodeState.ENABLED)
+			return null
+		if (this._navY != null)
+			return this._navY
+		const parentSceneNodes = this.parentSceneNodes
+		if (parentSceneNodes.length == 0)
+			return 0
+		const max: number = parentSceneNodes.reduce((max, n)=> {
+			return Math.max(max, n.navY as number)
+		}, 0)
+		this._navY = max+1
+		return this._navY
+	}
+	
+	get parentSceneNodes() {
+		const parents: this[] = new Array(...this.parents)
+		let i = 0
+		while (i < parents.length) {
+			const node = parents[i]
+			if (!node.scene)
+				parents.splice(i, 1, ...node.parents)
+			else
+				i++
+		}
+		return parents
+	}
+
+	get childSceneNodes(): FcNode[] {
+		const allNodes = this.flowchart.listNodes()
+
+		const childrenMap = new Map<FcNode, FcNode[]>()
+		for (const node of allNodes) {
+			for (const parent of node.parents) {
+				childrenMap.set(parent, [...(childrenMap.get(parent) ?? []), node])
+			}
+		}
+
+		const collectSceneNodes = (nodes: FcNode[]): FcNode[] =>
+			nodes.flatMap(node =>
+				node.scene
+					? [node]
+					: collectSceneNodes(childrenMap.get(node) ?? [])
+			)
+
+		return collectSceneNodes(childrenMap.get(this) ?? [])
+	}
+
+	get flowchart(): GameFlowchart {
+		return super.flowchart
+	}
+	get alignedNode(): FcNode|null {
+		if (this._align && !(this._align instanceof FcNode))
+			this._align = this.flowchart.getNode(this._align) as FcNode
+		return (this._align as FcNode|null) ?? null
+	}
+	get scene(): boolean {
+		return isScene(this.id)
+	}
+	get seen(): boolean {
+		if (!this.scene)
+			return false
+		if (settings.unlockEverything)
+			return true
+		return settings.completedScenes.includes(this.id)
+	}
+
+	get active(): boolean {
+		return this.flowchart.activeScene == this.id
+	}
+
+	get state(): FcNodeState {
+		if (this._state == -1) {
+			if (isThScene(this.id)) {
+				if (this.flowchart.isSceneEnabled(this.id))
+					this._state = FcNodeState.ENABLED
+				else if (this.seen)
+					this._state = FcNodeState.DISABLED
+				else if (this.parents.some(p=>p.seen))
+					this._state = FcNodeState.UNSEEN
+				else
+					this._state = FcNodeState.UNSEEN
+			}
+			else {
+				const parentSceneNodes = this.parentSceneNodes
+				let maxState = Math.max(FcNodeState.HIDDEN, ...parentSceneNodes.map(n=>n.state))
+				if (maxState < FcNodeState.ENABLED) {
+					this._state = maxState
+				} else {
+					const childrenSceneNodes = this.childSceneNodes
+					maxState = Math.max(FcNodeState.UNSEEN, ...childrenSceneNodes.map(n=>n.state))
+					this._state = maxState
+				}
+			}
+		}
+		return this._state
+	}
+
+	get visible(): boolean {
+		return true
+	}
+	
+	get metadatas() {
+		const metadatas = this.flowchart.metadatas
+		if (!Object.hasOwn(metadatas.i, this.id))
+			debugger;
+		const [top, left, fileIndex] = metadatas.i[this.id]
+		const [width, height] = metadatas.d
+		const [nw, nh] = metadatas.s[fileIndex]
+		return {
+			file: spriteSheetImgPath(metadatas.f[fileIndex]),
+			left, top, width, height, nw, nh,
+		}
+	}
+	get boundingRect(): [number, number, number, number] {
+		if (this._boundRect == null) {
+			const x = this.column * COLUMN_WIDTH
+			let top
+			if (this.alignedNode && this.alignedNode.visible)
+				top = this.alignedNode.top
+			else if (this.parents.length > 0)
+				top = Math.max(0, ...this.parents.map(node => node.bottom)) + (this.visible ? DY*2 : 0)
+			else
+				top = 0
+			if (this.scene && this.visible)
+				this._boundRect = [x - SCENE_WIDTH/2, top,
+								   SCENE_WIDTH, SCENE_HEIGHT]
+			else
+				this._boundRect = [x, top, 0, 0]
+		}
+		return this._boundRect
+	}
+	get left()  : number { return this.boundingRect[0] }
+	get top()   : number { return this.boundingRect[1] }
+	get width() : number { return this.boundingRect[2] }
+	get height(): number { return this.boundingRect[3] }
+	get right() : number { return this.left + this.width }
+	get bottom(): number { return this.top + this.height }
+	get centerX(): number { return this.left + this.width/2 }
+	get centerY(): number { return this.top + this.height/2 }
+	get displayName(): string {
+		return this.flowchart.getSceneDisplayName(this.id)
+	}
+
+	invalidate() {
+		this._boundRect = null
+		this._state = -1
+	}
+}
+
+
+export function getSceneGraph(scene: SceneName): FcSceneGraphAttrs {
+  const attrs = SCENE_ATTRS.scenes[scene]
+
+  if (attrs?.osiete) {
+    return { bg: "bg/bg_06a", r: "tachi/cel_t20" }
+  }
+
+  return attrs?.graph ?? { bg: "#000000" }
+}

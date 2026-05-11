@@ -25,8 +25,9 @@
     "paths": {
       "*": ["./src/*"],
       "@tsukiweb-common/*": ["./tsukiweb-common/src/*"],
-      "@styles/*": ["./src/styles/*"],
-      "@assets/*": ["./src/assets/*"]
+      "@assets/*": ["./src/assets/*"],
+      "@app/*": ["./src/app/*"],
+      "@features/*": ["./src/features/*"],
     }
   },
   "include": ["src"],

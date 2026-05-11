@@ -1,6 +1,6 @@
 import { splitFirst, splitLast } from "@tsukiweb-common/utils/utils"
-import { RouteDayName, RouteName } from "../types"
-import { settings } from "../utils/settings"
+import { RouteDayName, RouteName } from "../app/utils/types"
+import { settings } from "../engine/settings"
 import {TrackSourceId, strings} from "./lang"
 import { ResolutionId, TextImage } from "@tsukiweb-common/utils/lang"
 import { closeBB } from "@tsukiweb-common/utils/Bbcode"

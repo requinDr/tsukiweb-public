@@ -1,13 +1,13 @@
-import { RouteName, RouteDayName, LabelName } from "../types"
 import defaultStrings from "../assets/lang/default.json"
-import { APP_VERSION, SCENE_ATTRS } from "../utils/constants"
-import { settings } from "../utils/settings"
+import { settings } from "../engine/settings"
 import { observe } from "@tsukiweb-common/utils/Observer"
 import { ValueStorage } from "@tsukiweb-common/utils/storage"
 import { fetchJson, deepAssign, insertDirectory } from "@tsukiweb-common/utils/utils"
 import { ImageRedirect, LangDesc, ResolutionId, TextImage, TranslationId, UpdateDateFormat } from "@tsukiweb-common/utils/lang"
 import { langSelection } from "./langSelection"
 import { PartialRecord } from "@tsukiweb-common/types"
+import { APP_VERSION, SCENE_ATTRS } from "app/utils/constants";
+import { LabelName, RouteDayName, RouteName } from "app/utils/types";
 
 //##############################################################################
 //#                                  PRIVATE                                   #
