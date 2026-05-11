@@ -52,6 +52,8 @@ export const inGameKeyMap: InGameKeyMap = {
         {key: "L", repeat: false, [KeyMap.editing]: false}],
     "config":  [
         {key: "C", repeat: false, [KeyMap.editing]: false}],
+    "menu":    [
+        {key: "M", repeat: false, [KeyMap.editing]: false}],
 }
 
 export const menuKeyMap: InGameKeyMap = {

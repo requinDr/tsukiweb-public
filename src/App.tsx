@@ -10,6 +10,7 @@ import { imageSrc } from "translation/assets";
 import cg from "utils/gallery";
 import { useObserved, useObserver } from "@tsukiweb-common/utils/Observer";
 import { settings } from "utils/settings";
+import { useGamepad } from "hooks";
 
 const LocaleSetter = () => {
 	useObserver(() => {
@@ -21,6 +22,7 @@ const LocaleSetter = () => {
 
 function App() {
 	useObserved(settings, 'eroBlur')
+	useGamepad()
 	return (
 		<ErrorBoundary FallbackComponent={PageCrash}>
 			<LocaleSetter />
