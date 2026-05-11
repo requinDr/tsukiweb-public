@@ -1,7 +1,10 @@
 services:
   tsukiweb:
     build:
-        context: .
+      context: .
+      dockerfile: Dockerfile
+      args:
+        VERSION: ${VERSION:-latest}
     container_name: tsukiweb
     volumes:
       - tsukiweb_cache:/var/cache/nginx

@@ -8,7 +8,7 @@ It offers a better experience in general.
 
 ## Local deployment
 None of the original assets are provided with this repository.  
-To download the source code and run the game's code locally, follow one of the two methods:
+To download and run the game's code locally, follow one of the two methods:
 ### Node
 1) install [`node.js`](https://nodejs.org/en/download) (version `18 / 20 / 22+` is required)
 2) Get the source code: `git clone --recursive`
@@ -17,31 +17,16 @@ To download the source code and run the game's code locally, follow one of the t
 5) Open your browser at the localhost address specified in the output of the previous command
 
 ### Docker
-Alternatively, [`Docker`](https://docs.docker.com/get-started/get-docker/) can be used for local deployment from a single command:
-```
-$ docker compose up -d
-```
-
-or, if you prefer to use the CLI,
-```
-$ docker build -t tsukiweb .
-$ docker run -p 8080:80 tsukiweb
-```
-In addition, a version tag or commit hash can be specified as a build argument:
-```
-docker build --build-arg VERSION=latest -t tsukiweb
-docker build --build-arg VERSION=v0.3.0 -t tsukiweb
-docker build --build-arg VERSION=da4ea4f -t tsukiweb
-```
-In your browser, navigate to http://localhost:8080 after deploying the container.
+Alternatively, [`Docker`](https://docs.docker.com/get-started/get-docker/) can be used for local deployment.  
+See [docker/README.md](docker/README.md) for full instructions (commands must be run from the `docker/` directory).
 
 ## Contributing
 Anyone wanting to contribute can download the project and follow the roadmap, or do something else entirely.  
 You can find our [contributing guidelines here](https://github.com/requinDr/tsukiweb-public/blob/main/CONTRIBUTING.md)
 
 ## Useful links
-- [Adding a translation](https://github.com/requinDr/tsukiweb-public/wiki/Adding-a-translation)
 - [Recreating the resources](https://github.com/requinDr/tsukiweb-public/wiki/Recreating-the-resources)
+- [Adding a translation](https://github.com/requinDr/tsukiweb-public/wiki/Adding-a-translation)
 
 ## Project technologies
 - React (Vite)
