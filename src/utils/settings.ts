@@ -10,7 +10,7 @@ const restoreSymbol = Symbol("restore")
 
 class Settings extends SettingsBase {
   
-  language: string = "en-mm"
+  language: string = "default"
 
   trackSource: TrackSourceId = 'tsukibako'
   titleMusic: string = '"*8"'

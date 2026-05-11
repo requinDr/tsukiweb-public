@@ -35,7 +35,6 @@ const ModalLanguageSelection = ({show, setShow}: Props) => {
 	const selectLanguage = (id: string) => {
 		settings.language = id
 	}
-	const orderedLocales = navigator.languages
 	
 	// 1. place japanese first
 	const sortedLanguages = Object.entries(languages)
@@ -46,14 +45,14 @@ const ModalLanguageSelection = ({show, setShow}: Props) => {
 
 	// 2. then place user languages
 	let sortedLength = 1
-	for (let locale of orderedLocales) {
+	for (let locale of navigator.languages) {
 		const remainingLanguages = sortedLanguages.slice(sortedLength)
 		let i = remainingLanguages.findIndex(([_, lang])=> lang.locale == locale)
 		if (i == -1) {
 			// if country-specific locale not found, search for language
 			// without country
 			i = remainingLanguages.findIndex(([_, lang])=>
-				splitFirst(lang.locale, '-')[0] == locale)
+				splitFirst(lang.locale, '-')[0] == splitFirst(locale, '-')[0])
 		}
 		if (i != -1) {
 			i += sortedLength // because of slice(sortedLength) above
