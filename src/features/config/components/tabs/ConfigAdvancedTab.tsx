@@ -6,13 +6,12 @@ import { dialog } from "@tsukiweb-common/ui-core/components/ModalPrompt"
 import { polyfillCountryFlagEmojis } from "@tsukiweb-common/utils/flagsPolyfill"
 import { imageSrc } from "translation/assets"
 import { useConfig } from "features/config/hooks/useConfig";
-import { exportGameData, importGameData, settings } from "engine/settings";
-import { languages, strings } from "translation/lang";
+import { exportGameData, importGameData } from "engine/settings";
+import { strings } from "translation/lang";
 import { savesManager } from "engine/savestates";
 import { ConfigButtons, ConfigItem, ResetButton } from "../ConfigLayout";
 import ConfigModal from "../ConfigModal";
 import FontSelector from "../FontSelector";
-import ModalLanguageSelection from "../ModalLanguageSelection";
 import { useLanguageRefresh } from "app/hooks";
 import { FULLSAVE_EXT } from "app/utils/constants";
 
@@ -20,11 +19,10 @@ let flagSupportChecked = false
 
 const ConfigAdvancedTab = () => {
 	useLanguageRefresh()
-	const [showLanguage, setShowLanguage] = useState<boolean>(false)
 	const [modal, setModal] = useState<{show: boolean, content: ReactNode}>({show: false, content: undefined})
 
 	const { conf, update, reset } = useConfig(
-		['language', 'eroBlur', 'eroSkip', 'unlockEverything', 'gameFont', 'flowchartBadges'] as const)
+		['eroBlur', 'eroSkip', 'unlockEverything', 'gameFont', 'flowchartBadges'] as const)
 
 	if (!flagSupportChecked) {
 		polyfillCountryFlagEmojis()
@@ -122,17 +120,6 @@ const ConfigAdvancedTab = () => {
 				</ConfigItem>
 			</div>
 
-			<ConfigItem label={strings.config.language}>
-				<div className="config-btns">
-					<Button
-						nav-auto={1}
-						className="config-btn flag"
-						onClick={()=>setShowLanguage(true)}>
-						{languages?.[settings.language]?.["display-name"]}... +{Object.keys(languages).length - 1}
-					</Button>
-				</div>
-			</ConfigItem>
-
 			<ConfigItem
 				label={strings.config["game-font"]}
 				helpAction={()=>setModal({show: true, content:
@@ -206,7 +193,6 @@ const ConfigAdvancedTab = () => {
 			<ResetButton onClick={reset} />
 
 			<ConfigModal modal={modal} setModal={setModal} />
-			<ModalLanguageSelection show={showLanguage} setShow={setShowLanguage} />
 		</PageSection>
 	)
 }

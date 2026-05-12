@@ -1,19 +1,23 @@
-import { PageSection } from "@tsukiweb-common/ui-core"
+import { Button, PageSection } from "@tsukiweb-common/ui-core"
 import { fullscreen } from "@tsukiweb-common/utils/utils"
 import { ViewRatio, TEXT_SPEED } from "@tsukiweb-common/constants"
 import { useIsFullscreen } from "@tsukiweb-common/hooks"
 import { useConfig } from "features/config/hooks/useConfig";
 import { useLanguageRefresh } from "app/hooks";
-import { getLocale, strings } from "translation/lang";
+import { getLocale, languages, strings } from "translation/lang";
 import { ConfigButtons, ConfigItem, ConfigRange, ResetButton } from "../ConfigLayout";
+import ModalLanguageSelection from "../ModalLanguageSelection";
+import { useState } from "react";
+import { settings } from "engine/settings";
 
 const MAX_DELAY = 3000
 const DELAY_STEP = 100
 
 const ConfigGameTab = () => {
+	const [showLanguage, setShowLanguage] = useState<boolean>(false)
 	useLanguageRefresh()
-	const { conf, update, reset } = useConfig([
-		'textSpeed', 'fixedRatio', 'autoClickDelay', 'nextPageDelay'] as const)
+	const { conf, update, reset } = useConfig(
+		['language', 'textSpeed', 'fixedRatio', 'autoClickDelay', 'nextPageDelay'] as const)
 	const isFullscreen = useIsFullscreen()
 	
 	const msToS = (ms: number)=>
@@ -26,16 +30,14 @@ const ConfigGameTab = () => {
 
 	return (
 		<PageSection>
-			<ConfigItem label={strings.config.ratio}>
-				<ConfigButtons
-					currentValue={conf.fixedRatio}
-					onChange={v => update('fixedRatio', v)}
-					btns={[
-						{ label: strings.config["ratio-auto"], value: ViewRatio.unconstrained },
-						{ label: strings.config["ratio-4-3"], value: ViewRatio.fourByThree },
-						{ label: strings.config["ratio-16-9"], value: ViewRatio.sixteenByNine }
-					]}
-				/>
+			<ConfigItem label={strings.config.language}>
+				<Button
+					nav-auto={1}
+					className="config-btn flag"
+					onClick={()=>setShowLanguage(true)}>
+					{languages?.[settings.language]?.["display-name"]}... +{Object.keys(languages).length - 1}
+				</Button>
+				<ModalLanguageSelection show={showLanguage} setShow={setShowLanguage} />
 			</ConfigItem>
 
 			<ConfigItem label={strings.config.fullscreen}>
@@ -47,6 +49,18 @@ const ConfigGameTab = () => {
 						{ label: strings.config.off, value: false },
 					]}
 					disabled={!fullscreen.isSupported}
+				/>
+			</ConfigItem>
+
+			<ConfigItem label={strings.config.ratio}>
+				<ConfigButtons
+					currentValue={conf.fixedRatio}
+					onChange={v => update('fixedRatio', v)}
+					btns={[
+						{ label: strings.config["ratio-auto"], value: ViewRatio.unconstrained },
+						{ label: strings.config["ratio-4-3"], value: ViewRatio.fourByThree },
+						{ label: strings.config["ratio-16-9"], value: ViewRatio.sixteenByNine }
+					]}
 				/>
 			</ConfigItem>
 
