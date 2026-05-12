@@ -94,6 +94,7 @@
       "La fuente predeterminada se incluye con el proyecto.",
       "Para seleccionar una fuente diferente, introduce su nombre. Se cargará desde %0 si está disponible; de lo contrario, desde tu dispositivo."
     ],
+    "flowchart-badges": "Display badges in the flowchart",
     "data": "Almacenamiento de datos",
     "data-export": "Exportar",
     "data-import": "Importar",

@@ -4,7 +4,7 @@ import { SceneName } from "app/utils/types"
 import { FcNode, getSceneGraph } from "features/flowchart/utils/flowchart"
 import { tokenizeCondition } from "@tsukiweb-common/script/utils"
 import { settings } from "engine/settings"
-import { getNodeBadges } from "features/flowchart/utils/badges";
+import { BadgeEntry, getNodeBadges } from "features/flowchart/utils/badges";
 
 
 const RegardBadge = ({char}: {char: string}) => {
@@ -124,11 +124,10 @@ const SceneIllustration = ({node}: {node: FcNode})=> {
 	</>
 }
 
-const SceneBadges = ({node}: {node: FcNode})=> {
-	const badges = getNodeBadges(node.id)
+const SceneBadges = ({badges}: {badges: BadgeEntry})=> {
 	if (!badges) return null
 
-	let {condition, flag, char, value, select} = badges
+	let {condition, flag, char, value} = badges
 	if (typeof condition == "object")
 		condition = condition.condition
 
@@ -145,32 +144,40 @@ const SceneBadges = ({node}: {node: FcNode})=> {
 				{char && value != null && <RegardValueBadge char={char} value={value} />}
 			</div>
 		}
-
-		{select &&
-			<div className="choices-container">
-				{select.map(({text, condition}, i) =>
-					<div key={i} className="choice">
-						<Bbcode text={text} />
-
-						{condition && <div className="condition">
-							<SceneCondition condition={condition}/>
-						</div>}
-					</div>
-				)}
-			</div>
-		}
 	</>
+}
+
+const SceneChoices = ({select}: {select: BadgeEntry['select'] })=> {
+	if (!select) return null
+
+	return (
+		<div className="choices-container">
+			{select.map(({text, condition}, i) =>
+				<div key={i} className="choice">
+					{settings.flowchartBadges && condition &&
+						<div className="condition">
+							<SceneCondition condition={condition}/>
+						</div>
+					}
+					<Bbcode text={text} />
+				</div>
+			)}
+		</div>
+	)
 }
 
 type PopoverProps = {
 	node: FcNode
 }
 const ScenePopover = ({ node }: PopoverProps) => {	
+	const badges = getNodeBadges(node.id)
+
 	return (
 		<div className="scene-popover-content">
 			<SceneIllustration node={node} />
-			{settings.flowchartBadges &&
-				<SceneBadges node={node} />
+			{badges && <SceneChoices select={badges.select} />}
+			{settings.flowchartBadges && badges &&
+				<SceneBadges badges={badges} />
 			}
 		</div>
 	)

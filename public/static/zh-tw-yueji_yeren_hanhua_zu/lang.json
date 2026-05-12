@@ -94,6 +94,7 @@
       "The default font is served with the project.",
       "To select a different font, input its name. It will be loaded from %0 if available, else from your device."
     ],
+    "flowchart-badges": "Display badges in the flowchart",
     "data": "存檔",
     "data-export": "匯出",
     "data-import": "匯入",

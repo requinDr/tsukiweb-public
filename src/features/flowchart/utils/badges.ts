@@ -3,7 +3,7 @@ import { CharId } from "app/utils/types";
 import { SCENE_ATTRS } from "../../../app/utils/constants";
 import { RouteEnding, endings } from "../../endings/utils/endings";
 
-type BadgeEntry = {
+export type BadgeEntry = {
   flag?: string,
   condition?: string | {condition: string, above?: string, below?: string},
   select?: {text: string, condition?: string}[],

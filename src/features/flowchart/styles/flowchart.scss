@@ -200,7 +200,7 @@
 				height: 36px;
 				padding-inline: 8px;
 				padding-block: 2px;
-				z-index: 1;
+				gap: 0.3ch;
 
 				svg {
 					height: 100%;
@@ -216,9 +216,9 @@
 				}
 			}
 			> .condition {
+				z-index: 1;
 				top: 6px;
 				left: 6px;
-				gap: 0.3ch;
 				background: rgb(0 0 0 / 70%);
 				border-top-left-radius: inherit;
 				border-bottom-right-radius: inherit;
@@ -234,15 +234,15 @@
 				border: 1px solid rgba(255, 255, 255, 0.2);
 				.choice {
 					position: relative;
+					isolation: isolate;
 					padding: 8px calc(1rem - 4px);
 					&:not(:last-child) {
 						border-bottom: 1px solid rgb(255 255 255 / 20%);
 					}
 					.condition {
-						bottom: -10px;
-						right: -15px;
-						padding: 0;
-						gap: 0;
+						bottom: -14px;
+						right: 0;
+						z-index: -1;
 					}
 				}
 			}

@@ -24,7 +24,7 @@ const ConfigAdvancedTab = () => {
 	const [modal, setModal] = useState<{show: boolean, content: ReactNode}>({show: false, content: undefined})
 
 	const { conf, update, reset } = useConfig(
-		['language', 'eroBlur', 'eroSkip', 'unlockEverything', 'gameFont'] as const)
+		['language', 'eroBlur', 'eroSkip', 'unlockEverything', 'gameFont', 'flowchartBadges'] as const)
 
 	if (!flagSupportChecked) {
 		polyfillCountryFlagEmojis()
@@ -146,6 +146,19 @@ const ConfigAdvancedTab = () => {
 				<FontSelector
 					value={conf.gameFont}
 					onChange={v => update('gameFont', v)}
+				/>
+			</ConfigItem>
+
+			<ConfigItem
+				label={strings.config["flowchart-badges"]}
+			>
+				<ConfigButtons
+					currentValue={conf.flowchartBadges}
+					onChange={v => update('flowchartBadges', v)}
+					btns={[
+						{ label: strings.config.on, value: true },
+						{ label: strings.config.off, value: false },
+					]}
 				/>
 			</ConfigItem>
 

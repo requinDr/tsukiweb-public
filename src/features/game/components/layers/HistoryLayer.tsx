@@ -9,6 +9,7 @@ import { ProgressPanel } from '../shared/ProgressPanel';
 import { History } from 'engine/history';
 import { InGameLayersHandler } from 'app/utils/display';
 import { LabelName, SceneName } from 'app/utils/types';
+import { settings } from 'engine/settings';
 
 
 type Props = {
@@ -170,7 +171,7 @@ const FlowchartTab = ({ history, continueScript, onSceneSelect }: FlowchartTabPr
 
 	return (
 		<div id="flowchart-progress" className="scroll-container">
-			{!isSceneReplay && (
+			{!isSceneReplay && settings.flowchartBadges && (
 				<div className="progress-container">
 					<ProgressPanel script={history.script!}/>
 				</div>

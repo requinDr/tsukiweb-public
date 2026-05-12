@@ -94,6 +94,7 @@
       "The default font is served with the project.",
       "To select a different font, input its name. It will be loaded from %0 if available, else from your device."
     ],
+    "flowchart-badges": "Display badges in the flowchart",
     "data": "저장공관 관리",
     "data-export": "데이터 내보내기",
     "data-import": "데이터 불러오기",
