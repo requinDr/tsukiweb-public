@@ -12,6 +12,7 @@
 	padding-bottom: max(160px, 10vh);
 	align-items: start;
 	overflow: auto;
+	touch-action: manipulation;
 	--active-connection: #0d96e0;
 	--inactive-connection: #444;
 
@@ -19,6 +20,7 @@
 		flex: none;
 		direction: ltr;
 		transform: translateZ(0);
+		contain: paint;
 		vector-effect: non-scaling-stroke;
 
 		@media (pointer: coarse) {
@@ -80,7 +82,9 @@
 		
 		&.enabled {
 			stroke: var(--active-connection);
-			filter: drop-shadow(0 0 1px blue);
+			@media (pointer: fine) {
+				filter: drop-shadow(0 0 1px blue);
+			}
 		}
 		&.disabled {
 			stroke: var(--inactive-connection);
@@ -117,6 +121,7 @@
 	width: min(320px, 100%);
 	pointer-events: none;
 	isolation: isolate;
+	contain: layout;
 
 	.scene-popover-animated {
 		width: 100%;

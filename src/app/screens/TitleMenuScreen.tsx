@@ -43,8 +43,8 @@ const TitleMenuScreen = () => {
 					src={gameLogo} alt="Game's logo in Japanese, subtitled in English"
 					draggable={false}
 					className='game-logo'
-					initial={{ opacity: 0, scale: 0.8 }}
-					animate={{ opacity: 1, scale: 1 }}
+					initial={{ opacity: 0, transform: "scale(0.8)" }}
+					animate={{ opacity: 1, transform: "scale(1)" }}
 					transition={{ duration: 0.8, ease: "easeOut" }} />
 			</div>
 

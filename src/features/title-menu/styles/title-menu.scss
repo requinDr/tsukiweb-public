@@ -30,10 +30,12 @@
 			max-height: 100%;
 			justify-self: center;
 			filter: drop-shadow(0 0 6px white) drop-shadow(0 0 14px hsl(0deg 0% 100% / 50%));
+			will-change: transform;
 		}
 		.game-logo {
 			height: 100%;
 			width: 100%;
+			will-change: transform;
 		}
 	}
 

@@ -85,7 +85,7 @@ const SceneCondition = ({condition}: {condition: string})=> {
 		if (token.length == 0) return null
 		if (token == '!') return null
 		if (!token.startsWith('%'))
-			return <TokenDisplay key={token} token={token} /> // operator or number
+			return <TokenDisplay key={i} token={token} /> // operator or number
 		if (token.startsWith('%regard')) {
 			const char = token.split('_')[1]
 			return <RegardBadge key={i} char={char} />
@@ -114,8 +114,9 @@ const SceneIllustration = ({node}: {node: FcNode})=> {
 		</div>
 		<div className="desc">
 			<div className="title">
-			{node.displayName.split('[br/]')
-				.map((line, i) => <div key={i}>{noBb(line)}</div>)}
+			{node.displayName.split('[br/]').map((line, i) =>
+				<div key={i}>{noBb(line)}</div>)
+			}
 			</div>
 			<div className="id">
 				{bb(node.id)}
