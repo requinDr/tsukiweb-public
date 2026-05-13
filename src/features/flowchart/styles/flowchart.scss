@@ -125,43 +125,36 @@
 
 	.scene-popover-animated {
 		width: 100%;
-		border-radius: 8px;
-		corner-shape: scoop;
-		background-color: var(--surface-dark);
 		.scene-popover-content {
 			position: relative;
 			width: 100%;
 			height: 240px;
-			border-radius: inherit;
-			corner-shape: inherit;
-			border-bottom: 1px solid rgb(255 255 255 / 50%);
-			&::before {
-				content: "";
-				position: absolute;
-				inset: 0;
-				border-radius: inherit;
-				corner-shape: inherit;
-				background: linear-gradient(360deg, #000000, transparent 30%);
-				opacity: 0.5;
-				z-index: 1;
-			}
-
-			&::after {
-				content: "";
-				position: absolute;
-				inset: 5px;
-				border-radius: inherit;
-				corner-shape: inherit;
-				border: 1px solid rgba(255 255 255 / 0.5);
-			}
-
-			.background {
-				border-radius: inherit;
-				corner-shape: inherit;
-				height: 240px;
-				width: 100%;
+			$corner-shape: scoop;
+			$corner-radius: 8px;
+			.scoop {
+				border-radius: $corner-radius;
+				corner-shape: $corner-shape;
+				background:
+					linear-gradient(360deg, rgb(0 0 0 / 0.5), transparent 30%),
+					var(--surface-dark);
+				border-bottom: 1px solid rgb(255 255 255 / 50%);
 				overflow: hidden;
-				mask-image: linear-gradient(180deg, #000 0%, #000, #0000);
+
+				&::after {
+					content: "";
+					position: absolute;
+					inset: 5px;
+					border-radius: inherit;
+					corner-shape: inherit;
+					border: 1px solid rgba(255 255 255 / 0.5);
+				}
+
+				.background {
+					height: 240px;
+					width: 100%;
+					overflow: hidden;
+					mask-image: linear-gradient(180deg, #000 0%, #000, #0000);
+				}
 			}
 
 			.desc {
@@ -225,14 +218,14 @@
 				top: 6px;
 				left: 6px;
 				background: rgb(0 0 0 / 70%);
-				border-top-left-radius: inherit;
-				border-bottom-right-radius: inherit;
-				corner-shape: inherit;
+				border-top-left-radius: $corner-radius;
+				border-bottom-right-radius: $corner-radius;
+				corner-shape: $corner-shape;
 				border-bottom: 1px solid rgba(255 255 255 / 0.5);
 			}
 			.choices-container {
-				border-radius: inherit;
-				corner-shape: inherit;
+				border-radius: $corner-radius;
+				corner-shape: $corner-shape;
 				margin-top: 5px;
 				margin-inline: 4px;
 				background: linear-gradient(180deg, var(--surface-dark), #00638f);

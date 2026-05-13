@@ -25,6 +25,7 @@
 		.menus {
 			flex: 1;
 			margin-top: 1.8em;
+			margin-bottom: 1em;
 			display: flex;
 			flex-direction: column;
 			gap: 1.8em;
@@ -38,7 +39,7 @@
 			}
 		}
 		.back-button {
-			margin-block: .5em;
+			margin-bottom: .5em;
 			padding: .5rem;
 			padding-left: 0;
 		}

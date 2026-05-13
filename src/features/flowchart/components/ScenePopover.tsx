@@ -175,7 +175,9 @@ const ScenePopover = ({ node }: PopoverProps) => {
 
 	return (
 		<div className="scene-popover-content">
-			<SceneIllustration node={node} />
+			<div className="scoop">
+				<SceneIllustration node={node} />
+			</div>
 			{badges && <SceneChoices select={badges.select} />}
 			{settings.flowchartBadges && badges &&
 				<SceneBadges badges={badges} />

@@ -8,7 +8,6 @@
 		"build": "tsc && vite build"
 	},
 	"dependencies": {
-		"@floating-ui/react": "^0.27.19",
 		"@tanstack/react-virtual": "^3.13.24",
 		"classnames": "^2.5.1",
 		"dialog-polyfill": "^0.5.6",
