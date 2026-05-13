@@ -128,7 +128,7 @@ const SceneIllustration = ({node}: {node: FcNode})=> {
 const SceneBadges = ({badges}: {badges: BadgeEntry})=> {
 	if (!badges) return null
 
-	let {condition, flag, char, value} = badges
+	let {condition, flag, char, value, ending} = badges
 	if (typeof condition == "object")
 		condition = condition.condition
 
@@ -139,10 +139,11 @@ const SceneBadges = ({badges}: {badges: BadgeEntry})=> {
 			</div>
 		}
 
-		{(flag || (char && value != null)) &&
+		{(flag || (char && value != null) || ending) &&
 			<div className="badges">
 				{flag && <FlagBadge flag={flag} />}
 				{char && value != null && <RegardValueBadge char={char} value={value} />}
+				{ending && <EndingBadge char={ending.char} />}
 			</div>
 		}
 	</>
