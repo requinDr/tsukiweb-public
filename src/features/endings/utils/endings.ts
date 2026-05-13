@@ -45,7 +45,7 @@ export type Ending<T extends EndType=EndType> = Readonly<{
   name: string,
   char: CharId | (T extends "osiete" ? undefined : CharId),
   day: RouteDayName | (T extends "osiete" ? undefined : RouteDayName),
-  image : T extends "osiete" ? undefined : string
+  image: string
 }>
 export type RouteEnding = Ending<Exclude<EndType, "osiete">>
 export type OsieteEnding = Ending<"osiete">
@@ -87,4 +87,4 @@ export const osiete = Object.fromEntries(
       return [name, new Ed(name as SceneName) as OsieteEnding]
     }
   )
-) as PartialRecord<SceneName, OsieteEnding>
+) as Record<SceneName, OsieteEnding>

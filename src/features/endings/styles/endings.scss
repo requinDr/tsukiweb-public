@@ -65,11 +65,11 @@
 	}
 	.badendings-list {
 		margin-top: 1em;
-		gap: 1.4em;
+		gap: 1.2em;
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(44px, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(48px, 1fr));
 		place-content: flex-start;
-		max-width: min(780px, 100%);
+		max-width: min(1180px, 100%);
 
 		.badending {
 			filter: brightness(0.5);
@@ -103,14 +103,6 @@
 				cursor: pointer;
 				pointer-events: auto;
 			}
-		}
-	}
-
-	#osiete {
-		z-index: 1;
-		span::before {
-			content: '#';
-			opacity: 0.5;
 		}
 	}
 

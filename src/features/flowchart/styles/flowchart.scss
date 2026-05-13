@@ -173,7 +173,7 @@
 					font-weight: bold;
 					font-size: .8rem;
 					color: var(--text-muted);
-					::before {
+					&::before {
 						content: '#';
 						opacity: .5;
 					}

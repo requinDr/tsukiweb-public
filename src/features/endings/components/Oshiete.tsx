@@ -1,17 +1,19 @@
 import { playScene } from 'engine/savestates'
 import chalkboard from '@assets/icons/chalkboard.svg'
-import { noBb } from '@tsukiweb-common/utils/Bbcode'
 import { osiete } from 'features/endings/utils/endings'
 import classNames from 'classnames'
+import { usePopoverTrigger } from '@tsukiweb-common/flowchart';
+import { getSceneGraph } from 'features/flowchart/utils/flowchart';
 
-type Props = React.HTMLAttributes<HTMLDivElement> & {
+type Props = {
 	unlocked: boolean
-	ending: typeof osiete[keyof typeof osiete]
+	ending: Exclude<typeof osiete[keyof typeof osiete], undefined>
 	number: number
 }
 
-const Oshiete = ({unlocked, ending, number, ...props}: Props) => {
-
+const Oshiete = ({unlocked, ending, number}: Props) => {
+	const graph = ending.scene ? getSceneGraph(ending.scene) : null
+	const trigger = usePopoverTrigger({id: ending.scene, name: ending.name, scene: ending.scene, day: ending.day, graph})
 	const handlePlay = () => {
 		if (unlocked && ending)
 			playScene(ending.scene, {continueScript: false })
@@ -19,18 +21,14 @@ const Oshiete = ({unlocked, ending, number, ...props}: Props) => {
 
 	return (
 		<div
-			{...props}
 			className={classNames("badending", {"seen": unlocked})}
 			tabIndex={unlocked ? 0 : -1}
 			role="button"
 			onClick={unlocked ? handlePlay : undefined}
 			onKeyDown={e => e.key === 'Enter' && handlePlay()}
 			onContextMenu={(e) => {e.preventDefault()}}
-			data-tooltip-id="osiete"
-			data-tooltip-html={`
-				${ending?.scene}<br />
-				${ending?.name ? `${noBb(ending.name)}, Day: ${ending.day}` : ""}
-			`}
+			nav-auto={unlocked ? 1 : undefined}
+			{...(unlocked && trigger)}
 		>
 			{unlocked && ending ?
 				<img

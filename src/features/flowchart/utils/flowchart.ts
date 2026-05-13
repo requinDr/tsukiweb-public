@@ -256,9 +256,5 @@ export class FcNode extends FlowchartNode<FcNodeId, GameFlowchart> {
 export function getSceneGraph(scene: SceneName): FcSceneGraphAttrs {
   const attrs = SCENE_ATTRS.scenes[scene]
 
-  if (attrs?.osiete) {
-    return { bg: "bg/bg_06a", r: "tachi/cel_t20" }
-  }
-
   return attrs?.graph ?? { bg: "#000000" }
 }

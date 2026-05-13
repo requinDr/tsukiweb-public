@@ -1,15 +1,16 @@
 import styles from "@tsukiweb-common/ui-core/styles/layouts.module.scss"
 import '@features/endings/styles/endings.scss'
-import { Tooltip } from 'react-tooltip'
 import { settings } from 'engine/settings'
 import MainEnding from 'features/endings/components/MainEnding'
 import Oshiete from 'features/endings/components/Oshiete'
 import { noBb } from '@tsukiweb-common/utils/Bbcode'
 import { useEclipseUnlocked } from "features/endings/hooks/useEclipseUnlocked";
-import { endings, osiete } from "features/endings/utils/endings";
+import { endings, osiete, OsieteEnding } from "features/endings/utils/endings";
 import { strings } from "translation/lang";
 import { SCREEN } from "app/utils/display";
 import { useLanguageRefresh, useScreenAutoNavigate } from "app/hooks";
+import { PopoverProvider } from "@tsukiweb-common/flowchart";
+import EndingPopover from "features/endings/components/EndingPopover";
 
 
 const EndingsScreen = () => {
@@ -54,19 +55,20 @@ const EndingsScreen = () => {
 
 			<section className="badendings">
 				<h3>{strings.endings.osiete}</h3>
-				<div className='badendings-list'>
-					{Object.values(osiete).map((ending, index) =>
-						<Oshiete
-							key={index}
-							unlocked={settings.unlockEverything || Boolean(ending?.seen)}
-							ending={ending}
-							number={index + 1}
-							nav-auto={1}
-						/>
-					)}
-				</div>
+				<PopoverProvider renderContent={(item: OsieteEnding & {id: string}) => <EndingPopover ending={item} />}>
+					<div className='badendings-list'>
+						{Object.values(osiete).map((ending, index) =>
+							<Oshiete
+								key={index}
+								unlocked={settings.unlockEverything || Boolean(ending?.seen)}
+								ending={ending}
+								number={index + 1}
+								nav-auto={1}
+							/>
+						)}
+					</div>
+				</PopoverProvider>
 			</section>
-			<Tooltip id="osiete" place="bottom" className="tooltip" />
 		</main>
 	)
 }
