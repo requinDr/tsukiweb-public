@@ -8,9 +8,10 @@ import { MdPlayArrow } from 'react-icons/md';
 import directionalNavigate from "@tsukiweb-common/input/arrowNavigation";
 import { InGameLayersHandler } from "app/utils/display";
 import { moveBg } from "features/game/utils/graphics";
-import { inGameKeyMap, menuKeyMap } from "features/game/utils/keybind";
+import { inGameControls, menuKeyMap } from "features/game/utils/keybind";
 import { QUICK_SAVE_ID, savesManager } from "engine/savestates";
 import { settings } from "engine/settings";
+import EventActions, { EventFilter } from "@tsukiweb-common/input/eventActions";
 
 function noFocus() {
 	return document.activeElement == null
@@ -73,24 +74,28 @@ export type ShowLayers = {
 	copyScene: boolean,
 }
 
+function condition(condition: ()=>boolean, filters: EventFilter[]) {
+	return filters.map(f => ({[EventActions.IF]: condition, ...f}))
+}
+
 function createKeyMap(layers: InGameLayersHandler, show: ShowLayers) {
 	const noMenu = ()=> layers.currentMenu == null
 	const onText = ()=> layers.topLayer == 'text'
 	return {
 		"nav":      menuKeyMap['nav'],
-		"next":     [noMenu, ...inGameKeyMap['next']],
-		"back":     inGameKeyMap['back'],
-		"history":  [()=> show.history && onText(), ...inGameKeyMap['history']],
-		"flowchart":[()=> show.flowchart && onText(), ...inGameKeyMap['flowchart']],
-		"graphics": [()=> show.graphics && noMenu(), ...inGameKeyMap['graphics']],
-		"bg_move":  [noMenu, ...inGameKeyMap['bg_move']],
-		"auto_play":[onText, ...inGameKeyMap['auto_play']],
-		"page_nav":	[noMenu, ...inGameKeyMap['page_nav']],
-		"load":     [()=> show.load && noMenu(), ...inGameKeyMap['load']],
-		"save":     [()=> show.save && noMenu(), ...inGameKeyMap['save']],
-		"q_save":   [()=> show.qSave && noMenu(), ...inGameKeyMap['q_save']],
-		"q_load":   [()=> show.qLoad && noMenu(), ...inGameKeyMap['q_load']],
-		"config":   [()=> show.config && noMenu(), ...inGameKeyMap['config']],
+		"next":     condition(noMenu, inGameControls['next']),
+		"back":     inGameControls['back'],
+		"history":  condition(()=> show.history && onText(), inGameControls['history']),
+		"flowchart":condition(()=> show.flowchart && onText(), inGameControls['flowchart']),
+		"graphics": condition(()=> show.graphics && noMenu(), inGameControls['graphics']),
+		"bg_move":  condition(noMenu, inGameControls['bg_move']),
+		"auto_play":condition(onText, inGameControls['auto_play']),
+		"page_nav":	condition(noMenu, inGameControls['page_nav']),
+		"load":     condition(()=> show.load && noMenu(), inGameControls['load']),
+		"save":     condition(()=> show.save && noMenu(), inGameControls['save']),
+		"q_save":   condition(()=> show.qSave && noMenu(), inGameControls['q_save']),
+		"q_load":   condition(()=> show.qLoad && noMenu(), inGameControls['q_load']),
+		"config":   condition(()=> show.config && noMenu(), inGameControls['config']),
 	}
 }
 

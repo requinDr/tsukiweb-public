@@ -1,5 +1,5 @@
 import { useDOMEvent } from "@tsukiweb-common/hooks"
-import { useKeyMap } from "@tsukiweb-common/input/KeyMap"
+import { useEventActions } from "@tsukiweb-common/input/eventActions"
 import { useSwipeGesture } from "@tsukiweb-common/input/touch"
 import { RefObject, useCallback } from "react"
 import { InGameLayersHandler } from "app/utils/display"
@@ -16,11 +16,10 @@ export const useGameInputs = ({ rootRef, layers, actionsHandler, show }: UseGame
 		actions.createKeyMap(layers, show)
 	, [layers, show])
 
-	useKeyMap(createKeyMap, (action, e, ...args) =>
+	useEventActions(createKeyMap, (action, e, ...args) =>
 		actionsHandler.handleAction(action, e, ...args),
 		document,
-		"keydown",
-		{ capture: false }
+		{ capture: true }
 	)
 
 	useSwipeGesture(actions.swipeCallback.bind(null, layers), rootRef, 50)
