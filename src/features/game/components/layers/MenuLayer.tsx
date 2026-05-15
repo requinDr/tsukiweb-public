@@ -220,8 +220,8 @@ const ActionsButtons = ({script, show, close, qSave, qLoad}: ActionsButtonsProps
 				title={strings.menu["auto-play"]}>
 				<MdPlayArrow aria-label="triangle auto play" />
 			</Button>
-		<Button {...ACTION_PROPS} onClick={fastForward} className={isFfw ? "on" : ""}
-			title={strings.menu["ffw"]}>
+			<Button {...ACTION_PROPS} onClick={fastForward} className={isFfw ? "on" : ""}
+				title={strings.menu["ffw"]}>
 				<MdFastForward aria-label="fast forward" />
 			</Button>
 			<Button {...ACTION_PROPS} onClick={toggleVolume} className={mute ? "off" : ""}>

@@ -4,6 +4,7 @@ import history from 'engine/history';
 import { audio, commands } from "engine/audio";
 import { onAutoPlayStop, UserActionsHandler } from "features/game/utils/window-actions";
 import { InGameLayersHandler, SCREEN, displayMode } from "app/utils/display";
+import { useAutoPlayWakeLock } from "features/game/hooks/useAutoPlayWakeLock";
 
 type ScriptManager = {
 	script: ScriptPlayer
@@ -12,6 +13,8 @@ type ScriptManager = {
 	actionsHandler: UserActionsHandler
 }
 export const useScriptManager = ({script, history, layers, actionsHandler}: ScriptManager) => {
+	useAutoPlayWakeLock(script)
+
 	useEffect(()=> {
 		if (history.empty) displayMode.screen = SCREEN.TITLE
 
