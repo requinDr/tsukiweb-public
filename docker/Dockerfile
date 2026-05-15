@@ -10,7 +10,7 @@ RUN git clone --tags https://github.com/requinDr/tsukiweb-public.git /tsukiweb \
             fi \
         && git checkout $VERSION \
         && git submodule update --init --recursive
-RUN npm ci && npm run build
+RUN npm install && npm run build
 
 FROM nginx:stable-alpine AS production
 WORKDIR /usr/share/nginx/html
