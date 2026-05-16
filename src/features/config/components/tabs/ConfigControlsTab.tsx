@@ -1,18 +1,18 @@
 import { useRef } from "react"
 import { PageSection } from "@tsukiweb-common/ui-core"
-import { KeymapKeyFilter } from "@tsukiweb-common/input/KeyMap"
+import { EventFilter } from "@tsukiweb-common/input/eventActions"
 import { bb } from "@tsukiweb-common/utils/Bbcode"
-import { inGameKeyMap } from "features/game/utils/keybind"
+import { inGameControls } from "features/game/utils/keybind"
 import { strings } from "translation/lang";
 import { useLanguageRefresh } from "app/hooks";
 
-type KeyMapEntry = [string, typeof inGameKeyMap[keyof typeof inGameKeyMap]]
+type KeyMapEntry = [string, typeof inGameControls[keyof typeof inGameControls]]
 
-function convertAction([action, keys]: KeyMapEntry) : [string, KeymapKeyFilter[]] {
+function convertAction([action, keys]: KeyMapEntry) : [string, EventFilter[]] {
 	return [
 		action,
 		Array.isArray(keys) ?
-			keys.filter(x=>x.constructor != Function && Object.hasOwn(x, 'key')) as KeymapKeyFilter[]
+			keys.filter(x=>x.constructor != Function && Object.hasOwn(x, 'key')) as EventFilter[]
 		: [keys]
 	]
 }
@@ -20,8 +20,8 @@ function convertAction([action, keys]: KeyMapEntry) : [string, KeymapKeyFilter[]
 const ConfigControlsTab = () => {
 	useLanguageRefresh()
 	const controlStrings = strings.config.controls as Record<string, string>
-	const keymap = useRef<[string, KeymapKeyFilter[]][]>(
-			Object.entries(inGameKeyMap)
+	const keymap = useRef<[string, EventFilter[]][]>(
+			Object.entries(inGameControls)
 						.filter(([action, _])=> Object.hasOwn(controlStrings, action))
 						.map(convertAction))
 	return (

@@ -1,69 +1,75 @@
-import KeyMap from "@tsukiweb-common/input/KeyMap";
+import { GamepadEventGenerator, GamepadEvents } from "@tsukiweb-common/input/gamepad";
+import {EventActions, EventFilter} from "@tsukiweb-common/input/eventActions";
 
-interface KeyBinding {
-    key?: KeyboardEvent["key"]
-    code?: KeyboardEvent["code"]
-    repeat?: boolean
-    ctrlKey?: boolean
-    [KeyMap.editing]?: boolean
-    [KeyMap.args]?: string
-}
-type InGameKeyMap = Record<string, [KeyBinding, ...KeyBinding[]]>
 
-export const inGameKeyMap: InGameKeyMap = {
+export const inGameControls: Record<string, EventFilter[]> = {
     "next":    [
-        {[KeyMap.editing]: false},
-        {key: "Enter"},
-        {key: "Control", repeat: true},
-        {key: "Meta", repeat: true},
-        {key: "ArrowDown", repeat: false, ctrlKey: false}],
+        {type: 'keydown', key: "Enter"},
+        {type: 'keydown', key: "Control"    , repeat: true},
+        {type: 'keydown', key: "Meta"       , repeat: true},
+        {type: 'keydown', key: "ArrowDown"  , repeat: false, ctrlKey: false},
+        {type: GamepadEvents.BTN_PRESSED, buttonId:  0}, // A
+        {type: GamepadEvents.BTN_PRESSED, buttonId: 15}, //DPAD RIGHT
+        {type: GamepadEvents.BTN_PRESSED, buttonId: 13}],//DPAD DOWN
     "back":    [
-        {[KeyMap.editing]: false, repeat: false},
-        {key: "Escape"},
-        {key: "Backspace"}],
+        {type: 'keydown', key: "Escape"     , repeat: false},
+        {type: 'keydown', key: "Backspace"  , repeat: false},
+        {type: GamepadEvents.BTN_PRESSED, buttonId: 1}, // B
+        {type: GamepadEvents.BTN_PRESSED, buttonId: 2}, // X
+        {type: GamepadEvents.BTN_PRESSED, buttonId: 9}],// START
     "history": [
-        {[KeyMap.editing]: false, repeat: false},
-        {key: "ArrowUp", ctrlKey: false},
-        {key: "H"}],
+        {type: 'keydown', key: "ArrowUp"    , repeat: false, ctrlKey: false},
+        {type: 'keydown', key: "H"          , repeat: false},
+        {type: GamepadEvents.BTN_PRESSED, buttonId: 12}], // DPAD UP
     "flowchart": [
-        {[KeyMap.editing]: false, repeat: false},
-        {key: "F", ctrlKey: false}],
+        {type: 'keydown', key: "F"          , repeat: false, ctrlKey: false}],
     "graphics": [
-        {[KeyMap.editing]: false, repeat: false},
-        {code: "Space"},
-        {key: "Delete"}],
+        {type: 'keydown', code: "Space"     , repeat: false},
+        {type: 'keydown', key: "Delete"     , repeat: false},
+        {type: GamepadEvents.BTN_PRESSED, buttonId: 3}],
     "bg_move": [
-        {[KeyMap.editing]: false, ctrlKey: true, repeat: false},
-        {key: "ArrowUp", [KeyMap.args]: "up"},
-        {key: "ArrowDown", [KeyMap.args]: "down"}],
+        {type: 'keydown', key: "ArrowUp"    , repeat: false, ctrlKey: true, [EventActions.ARGS]: ["up"]},
+        {type: 'keydown', key: "ArrowDown"  , repeat: false, ctrlKey: true, [EventActions.ARGS]: ["down"]}],
     "auto_play":[
-        {key: "E", repeat: false, [KeyMap.editing]: false}],
+        {type: 'keydown', key: "E"          , repeat: false}],
     "page_nav":[
-        {[KeyMap.editing]: false, ctrlKey: false, },
-        {key: "PageUp", [KeyMap.args]: "prev"},
-        {key: "PageDown", [KeyMap.args]: "next"}],
+        {type: 'keydown', key: "PageUp"     , ctrlKey: false, [EventActions.ARGS]: ["prev"]},
+        {type: 'keydown', key: "PageDown"   , ctrlKey: false, [EventActions.ARGS]: ["next"]}],
     "load":    [
-        {key: "A", repeat: false, [KeyMap.editing]: false}],
+        {type: 'keydown', key: "A"          , repeat: false}],
     "save":    [
-        {key: "Z", repeat: false, [KeyMap.editing]: false}],
+        {type: 'keydown', key: "Z"          , repeat: false}],
     "q_save":  [
-        {key: "S", repeat: false, [KeyMap.editing]: false}],
+        {type: 'keydown', key: "S"          , repeat: false}],
     "q_load":  [
-        {key: "L", repeat: false, [KeyMap.editing]: false}],
+        {type: 'keydown', key: "L"          , repeat: false}],
     "config":  [
-        {key: "C", repeat: false, [KeyMap.editing]: false}],
+        {type: 'keydown', key: "C"          , repeat: false}],
 }
 
-export const menuKeyMap: InGameKeyMap = {
+export const menuKeyMap: Record<string, EventFilter[]> = {
     "nav": [
-        {ctrlKey: false, [KeyMap.editing]: false},
-        {key: "ArrowUp"   , [KeyMap.args]: "up"},
-        {key: "ArrowLeft" , [KeyMap.args]: "left"},
-        {key: "ArrowDown" , [KeyMap.args]: "down"},
-        {key: "ArrowRight", [KeyMap.args]: "right"},
-        {key: "Escape"    , repeat: false, [KeyMap.args]: "out"},
-        {key: "Backspace" , repeat: false, [KeyMap.args]: "out"},
-        {key: "Enter"     , repeat: false, [KeyMap.args]: "in"},
-        {key: "Space"     , repeat: false, [KeyMap.args]: "in"},
+        {type: 'keydown', key: "ArrowUp"   , ctrlKey: false, [EventActions.ARGS]: ["up"]},
+        {type: 'keydown', key: "ArrowLeft" , ctrlKey: false, [EventActions.ARGS]: ["left"]},
+        {type: 'keydown', key: "ArrowDown" , ctrlKey: false, [EventActions.ARGS]: ["down"]},
+        {type: 'keydown', key: "ArrowRight", ctrlKey: false, [EventActions.ARGS]: ["right"]},
+        {type: 'keydown', key: "Escape"    , repeat: false, ctrlKey: false, [EventActions.ARGS]: ["out"]},
+        {type: 'keydown', key: "Backspace" , repeat: false, ctrlKey: false, [EventActions.ARGS]: ["out"]},
+        {type: 'keydown', key: "Enter"     , repeat: false, ctrlKey: false, [EventActions.ARGS]: ["in"]},
+        {type: 'keydown', key: "Space"     , repeat: false, ctrlKey: false, [EventActions.ARGS]: ["in"]},
+        {type: GamepadEvents.BTN_PRESSED, buttonId: 12, [EventActions.ARGS]: ["up"]}, // DPAD UP
+        {type: GamepadEvents.BTN_PRESSED, buttonId: 14, [EventActions.ARGS]: ["left"]}, // DPAD LEFT
+        {type: GamepadEvents.BTN_PRESSED, buttonId: 13, [EventActions.ARGS]: ["down"]}, // DPAD DOWN
+        {type: GamepadEvents.BTN_PRESSED, buttonId: 15, [EventActions.ARGS]: ["right"]}, // DPAD RIGHT
+        {type: GamepadEvents.BTN_PRESSED, buttonId: 0, [EventActions.ARGS]: ["in"]}, // A
+        {type: GamepadEvents.BTN_PRESSED, buttonId: 1, [EventActions.ARGS]: ["out"]}, // B
+    ],
+    "click": [
+        {type: GamepadEvents.BTN_PRESSED, buttonId: 0, [EventActions.IF]: (_, e)=> e.target instanceof HTMLButtonElement}
     ]
 }
+
+GamepadEventGenerator.config({
+    btnPress: true
+})
+GamepadEventGenerator.enable()
