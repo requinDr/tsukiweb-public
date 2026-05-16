@@ -24,8 +24,8 @@
     "extra": "Extras",
     "about": {
       "port": "Esta es una versión web de Tsukihime, una novela visual publicada en el año 2000 por Type-Moon.",
-      "project": "El proyecto está disponible en %0GitHub%1. ¡Añade una estrella si te gusta! Las contribuciones son bienvenidas.",
-      "feedback": "Envía tus comentarios o reporta un error %0aquí%1.",
+      "project": "El proyecto está disponible en %0GitHub%1. ¡Dale una estrella si te gusta! Las contribuciones son bienvenidas.",
+      "feedback": "Envía tus comentarios o notifica un error %0aquí%1.",
       "data": "No se recopilan datos; toda la información se almacena localmente en tu navegador. Administra tus datos %0aquí%1.",
       "remake": "Considera comprar el remake %0Tsukihime - A piece of blue glass moon%1."
     },
@@ -61,7 +61,7 @@
     "track-source-help": [
       "[b]Original[/b]: Banda sonora original del juego completo de 2000.",
       "[b]Ever After[/b]: Remake de la banda sonora original, publicado en 2002.",
-      "[b]Tsuki-Bako[/b]: Banda sonora remixada que vino con un paquete de Tsukihime + PLUS-DISC + Kagetsu Tohya en 2003."
+      "[b]Tsuki-Bako[/b]: Banda sonora remezclada que vino con un paquete de Tsukihime + PLUS-DISC + Kagetsu Tohya en 2003."
     ],
     "auto-mute": "Silenciar al cambiar de pestaña",
     "ratio": "Relación de aspecto",
@@ -73,20 +73,20 @@
     "text-speed-med": "Media",
     "text-speed-high": "Rápida",
     "text-speed-instant": "Instantánea",
-    "auto-play-delay-text": "Retraso de la reproducción automática del texto: %0s",
-    "auto-play-delay-page": "Retraso de la reproducción automática de la página: %0s",
+    "auto-play-delay-text": "Retraso del texto en la reproducción automática: %0s",
+    "auto-play-delay-page": "Retraso de la página en la reproducción automática: %0s",
     "adult-title": "Contenido para adultos",
     "adult-blur": "Desenfocar miniaturas",
     "adult-blur-help": [
       "Aplica un efecto de desenfoque en las miniaturas de las escenas para adultos."
     ],
-    "adult-warn": "Preguntar para omitir contenido H",
+    "adult-warn": "Preguntar para omitir contenido para adultos",
     "fullscreen": "Pantalla completa",
     "language": "Idioma",
-    "show-locked-content": "Revelar contenido bloqueado",
+    "show-locked-content": "Mostrar contenido bloqueado",
     "show-locked-content-help": [
-      "Revela la Galería completa, el Diagrama de flujo, los Finales, Eclipse, …",
-      "También cumple con el requisito para acceder al Lado Lejano.",
+      "Desbloquea la Galería completa, el Diagrama de flujo, los Finales, Eclipse, etc.",
+      "También permite acceder a la ruta de la Cara Oculta de la Luna.",
       "Se puede activar y desactivar en cualquier momento."
     ],
     "game-font": "Fuente de texto del juego",
@@ -94,17 +94,17 @@
       "La fuente predeterminada se incluye con el proyecto.",
       "Para seleccionar una fuente diferente, introduce su nombre. Se cargará desde %0 si está disponible; de lo contrario, desde tu dispositivo."
     ],
-    "flowchart-badges": "Display badges in the flowchart",
+    "flowchart-badges": "Mostrar iconos en el diagrama de flujo",
     "data": "Almacenamiento de datos",
     "data-export": "Exportar",
     "data-import": "Importar",
     "data-erase": "Eliminar",
-    "data-erase-warning": "Esto eliminará todas las partidas guardadas, restablecerá todas las configuraciones y el progreso. ¿Estás seguro?",
-    "data-erase-confirm": "Todos los datos han sido eliminados. Si abandonas este sitio web sin hacer ningún cambio en la configuración y sin comenzar un nuevo juego, no se almacenará ningún dato en tu computadora",
+    "data-erase-warning": "Esto eliminará todas las partidas guardadas, restablecerá todos los ajustes y el progreso. ¿Estás seguro?",
+    "data-erase-confirm": "Todos los datos han sido eliminados. Si abandonas este sitio web sin hacer ningún cambio en los ajustes y sin comenzar un nuevo juego, no se almacenará ningún dato en tu dispositivo.",
     "controls": {
       "next": "Siguiente",
-      "history": "Mostrar / ocultar registro",
-      "flowchart": "Mostrar / ocultar diagrama de flujo",
+      "history": "Mostrar/ocultar historial",
+      "flowchart": "Mostrar/ocultar diagrama de flujo",
       "back": "Cerrar pantalla actual / Mostrar menú",
       "bg_move": "Mover imagen de fondo",
       "auto_play": "Reproducción automática",
@@ -113,15 +113,15 @@
       "save": "Abrir panel de guardado",
       "q_save": "Guardado rápido",
       "q_load": "Carga rápida",
-      "config": "Abrir panel de configuración",
-      "_hold": "[i](Sostener)"
+      "config": "Abrir panel de ajustes",
+      "_hold": "[i](Mantener)"
     }
   },
   "endings": {
     "normal": "Normal",
     "good": "Bueno",
     "true": "Verdadero",
-    "osiete": "Enséñame, Ciel-sensei"
+    "osiete": "¡Enséñame, Ciel-sensei!"
   },
   "saves": {
     "title-load": "Cargar",
@@ -134,7 +134,7 @@
     "overwrite-warning": "¿Estás seguro de que quieres sobrescribir este guardado?",
     "quick-save": "Guardado rápido",
     "local-storage-warning": "Las partidas guardadas y las configuraciones se almacenan localmente en el navegador y podrían eliminarse tras un período de inactividad. Exporta tus datos regularmente.",
-    "local-storage-last-export": "Última fecha de exportación completa de datos: %0"
+    "local-storage-last-export": "Última exportación completa de datos: %0"
   },
   "game": {
     "skip-viewed": "Ya has visto esta escena.",
@@ -151,7 +151,7 @@
   },
   "menu": {
     "graphics": "Ocultar texto",
-    "history": "Registro",
+    "history": "Historial",
     "save": "Guardar",
     "load": "Cargar",
     "config": "Ajustes",
@@ -187,5 +187,6 @@
   "no": "No",
   "ok": "Aceptar",
   "back": "Atrás",
-  "close": "Cerrar"
+  "close": "Cerrar",
+  "later": "Después"
 }
