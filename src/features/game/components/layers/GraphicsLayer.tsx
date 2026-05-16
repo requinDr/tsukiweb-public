@@ -19,7 +19,7 @@ const GraphicsLayer = ({ script }: Props) => {
 	const [topSprite, setTopSprite] = useState<'l'|'c'|'r'|undefined>(undefined)
 	
 	useEffect(()=> {
-		const img = processImageCmd.bind(null, setTransition)
+		const img = processImageCmd.bind(null, setTransition, setRocket)
 		const qk = processQuake.bind(null, setQuake)
 		
 		script.setCommands({

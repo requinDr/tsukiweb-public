@@ -49,6 +49,7 @@ export function extractImage(image: string) {
 
 export function processImageCmd(
 						 setTransition: (t: GraphicsTransition|undefined)=>void,
+						 setRocket: (rocket: undefined) => void,
 						 arg: string, cmd: string, script: ScriptPlayer,
 						 onFinish: VoidFunction) {
 	let pos = 'bg', image = '', effect = '', time = '', rest: string[] = []
@@ -66,9 +67,11 @@ export function processImageCmd(
 	}
 	if (image)
 		image = extractImage(image)
-	const to = (pos == 'a' ) ? { l: "", c: "", r: "" }
-			 : (pos == 'bg') ? { l: "", c: "", r: "", bg: image, bgAlign: alignment }
+	const change = (pos == 'a' ) ? { l: "", c: "", r: "" }
+			 : (pos == 'bg') ? { bg: image, bgAlign: alignment }
 			 : { [pos]: image }
+	const to = (pos == 'bg') ? { l: "", c: "", r: "", ...change } : change
+
 	const _onFinish = ()=> {
 		if (!objectMatch(script.graphics, to)) {
 			if (pos == 'a')
@@ -80,13 +83,14 @@ export function processImageCmd(
 			}
 			setTransition(undefined)
 		}
+		setRocket(undefined)
 		onFinish()
 	}
 
 	// get image
 	if (!objectMatch(script.graphics, to)) {
 		setTransition({
-			to,
+			to: change,
 			effect,
 			duration: +time,
 			onFinish: _onFinish
