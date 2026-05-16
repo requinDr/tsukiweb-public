@@ -252,7 +252,7 @@ const ExportWarning = () => {
 				</div>
 			</>,
 			labelYes: strings.config["data-export"],
-			labelNo: "Later"
+			labelNo: strings.later
 		})
 		if (confirmed) {
 			exportGameData()
