@@ -71,7 +71,7 @@ const RegardValueBadge = ({ char, value }: { char: string; value: number }) => {
 const TokenDisplay = ({ token }: { token: string }) => {
 	switch (token) {
 		case '&&' : return <span className="separator">&amp;</span>
-		case '||' : return <span className="separator">|</span>
+		case '||' : return <span>/</span>
 		case '>=' : return <span>&ge;</span>
 		case '<=' : return <span>&le;</span>
 		case '==' : return <span>=</span>
