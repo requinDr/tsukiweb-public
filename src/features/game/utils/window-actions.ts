@@ -99,52 +99,6 @@ function createKeyMap(layers: InGameLayersHandler, show: ShowLayers) {
 	}
 }
 
-/*
-function gameLoopGamepad(userActions: UserActionsHandler) {
-	var gamepad = navigator.getGamepads()[0]; //get the first controller.
-	if (gamepad && gamepad.connected) {
-		var buttons = gamepad.buttons;
-		for (var i in buttons) {
-			if (buttons[i].pressed == true) {
-				// toast("Gamepad button pressed " + i, {
-				// 	autoClose: 500,
-				// 	toastId: 'gp-pressed'
-				// })
-
-				switch (+i) {
-					case 0: userActions.next(); break //A
-					case 1: userActions.back(); break //B
-					case 2: userActions.toggleMenu(); break //X
-					case 3: userActions.toggleView('graphics'); break //Y
-					case 4: userActions.pageNav("prev"); break //LB
-					case 5: userActions.back(); break //RB
-					case 6: userActions.toggleView('history'); break //LT
-					case 7: userActions.pageNav("next"); break //RT
-					case 8: userActions.toggleView('config'); break //Back
-					case 9: userActions.toggleMenu(); break //Start
-					case 10: userActions.toggleView('menu'); break //LStick
-					case 11: userActions.toggleView('config'); break //RStick
-					case 12: // up
-						if (!isViewAnyOf("history")) {
-							toggleView('history')
-						}
-						break
-					case 13: // down
-						if (isViewAnyOf("history")) {
-							toggleView('history')
-						}
-						break
-					//case 14: break //left
-					case 15: next(); break // right
-					default:
-						break
-				}
-			}
-		}
-	}
-}
-*/
-
 function swipeCallback(layers: InGameLayersHandler,
 					   direction: string) {
 	if (direction == "")
