@@ -28,13 +28,13 @@ export const inGameControls: Record<string, EventFilter[]> = {
         {type: 'keydown', key: "Delete"     , repeat: false},
         {type: GamepadEvents.BTN_PRESSED, buttonId: 3}],
     "bg_move": [
-        {type: 'keydown', key: "ArrowUp"    , repeat: false, ctrlKey: true, [EventActions.ARGS]: "up"},
-        {type: 'keydown', key: "ArrowDown"  , repeat: false, ctrlKey: true, [EventActions.ARGS]: "down"}],
+        {type: 'keydown', key: "ArrowUp"    , repeat: false, ctrlKey: true, [EventActions.ARGS]: ["up"]},
+        {type: 'keydown', key: "ArrowDown"  , repeat: false, ctrlKey: true, [EventActions.ARGS]: ["down"]}],
     "auto_play":[
         {type: 'keydown', key: "E"          , repeat: false}],
     "page_nav":[
-        {type: 'keydown', key: "PageUp"     , ctrlKey: false, [EventActions.ARGS]: "prev"},
-        {type: 'keydown', key: "PageDown"   , ctrlKey: false, [EventActions.ARGS]: "next"}],
+        {type: 'keydown', key: "PageUp"     , ctrlKey: false, [EventActions.ARGS]: ["prev"]},
+        {type: 'keydown', key: "PageDown"   , ctrlKey: false, [EventActions.ARGS]: ["next"]}],
     "load":    [
         {type: 'keydown', key: "A"          , repeat: false}],
     "save":    [
