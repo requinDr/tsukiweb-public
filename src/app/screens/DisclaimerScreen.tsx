@@ -10,7 +10,7 @@ const DisclaimerScreen = ({ onAccept }: { onAccept?: () => void }) => {
 	useEffect(()=> {
 		const timeout = setTimeout(()=> {
 			dismissDisclaimer()
-		}, 6000)
+		}, 10000)
 		return ()=> clearTimeout(timeout)
 	}, [])
 

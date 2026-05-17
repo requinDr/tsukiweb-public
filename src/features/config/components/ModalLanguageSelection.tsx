@@ -99,7 +99,7 @@ const ModalLanguageSelection = ({show, setShow}: Props) => {
 					{settings.language !== "jp" && <>
 						<div className="game-credits">
 							<div className="line title">
-								Tsukihime - {strings.translation.name}
+								{strings.translation.name}
 							</div>
 							<div className="line">
 								{strings.translation.desc}
@@ -116,7 +116,7 @@ const ModalLanguageSelection = ({show, setShow}: Props) => {
 
 						<div className="game-credits pd">
 							<div className="line title">
-								Tsukihime PLUS-DISC - {strings["translation-pd"].name}
+								PLUS-DISC - {strings["translation-pd"].name}
 							</div>
 							<div className="line">
 								{strings["translation-pd"].desc}

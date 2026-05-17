@@ -4,7 +4,7 @@ import '@tsukiweb-common/styles/main.scss'
 import '../styles/App.scss'
 import '@tsukiweb-common/graphics/styles/graphics.scss'
 import ExtraLayout from "features/title-menu/components/ExtraLayout";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Particles } from "@tsukiweb-common/ui-core";
 import ConfigScreen from "app/screens/ConfigScreen";
 import DisclaimerScreen from "app/screens/DisclaimerScreen";
@@ -24,13 +24,22 @@ const AnimatedRoutes = () => {
 	
 	// Show disclaimer only if: first page of session was "/" AND disclaimer not yet seen this session
 	const [showDisclaimer, setShowDisclaimer] = useState(() => {
-		const entryPath = sessionStorage.getItem('tsuki_entry_path')
-		const disclaimerSeen = sessionStorage.getItem('tsuki_disclaimer_seen')
+		const entryPath = sessionStorage.getItem('app_entry_path')
+		const disclaimerSeen = sessionStorage.getItem('app_disclaimer_seen')
 		return entryPath === '/' && !disclaimerSeen
 	})
 
+	useEffect(() => {
+		if (showDisclaimer) {
+			document.documentElement.dataset.preloading = 'disclaimer'
+			return
+		}
+
+		delete document.documentElement.dataset.preloading
+	}, [showDisclaimer])
+
 	const markDisclaimerAsSeen = useCallback(() => {
-		sessionStorage.setItem('tsuki_disclaimer_seen', 'true')
+		sessionStorage.setItem('app_disclaimer_seen', 'true')
 		setShowDisclaimer(false)
 	}, [])
 

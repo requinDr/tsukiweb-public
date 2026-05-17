@@ -536,7 +536,7 @@ async function processSingleScript(folder, filename, outputDir, blocksTree) {
 export async function main() {
 
 	//1. Retrieve scenes tree
-	const treeFilePath = path.join('.', "tsukihime_logic_tree.txt")
+	const treeFilePath = path.join('.', "logic_tree.txt")
 	if (!fs.existsSync(treeFilePath))
 		throw Error(`Missing tree file. Extract logic first`)
 	const treeFileContent = fs.readFileSync(treeFilePath, 'utf-8')
@@ -559,14 +559,14 @@ export async function main() {
 	let processedCount = 0
 	for (const [folder, filename] of fullscripts) {
 		processedCount++
-		logProgress(`Processing Tsukihime scripts: ${processedCount}/${totalScripts} (${filename})`)
+		logProgress(`Processing fullscripts: ${processedCount}/${totalScripts} (${filename})`)
 		try {
 			await processSingleScript(folder, filename, outputDir, tree)
 		} catch (e) {
 			logError(`Error processing ${filename}: ${e.message}`)
 		}
 	}
-	logProgress(`Processing Tsukihime scripts: ${processedCount}/${totalScripts}\n`)
+	logProgress(`Processing fullscripts: ${processedCount}/${totalScripts}\n`)
 }
 
 const __filename = fileURLToPath(import.meta.url)

@@ -11,12 +11,12 @@
 
 		<script>
 			if (window.location.pathname === '/') {
-				if (!sessionStorage.getItem('tsuki_entry_path')) {
-					sessionStorage.setItem('tsuki_entry_path', '/');
+				if (!sessionStorage.getItem('app_entry_path')) {
+					sessionStorage.setItem('app_entry_path', '/');
 					document.documentElement.dataset.preloading = 'disclaimer';
 				}
-			} else if (!sessionStorage.getItem('tsuki_entry_path')) {
-				sessionStorage.setItem('tsuki_entry_path', window.location.pathname);
+			} else if (!sessionStorage.getItem('app_entry_path')) {
+				sessionStorage.setItem('app_entry_path', window.location.pathname);
 			}
 		</script>
 		<style>

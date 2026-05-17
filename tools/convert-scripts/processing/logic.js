@@ -593,7 +593,7 @@ export function main() {
 	let processedCount = 0
 	for (const [folder, filename] of fullscripts) {
 		processedCount++
-		logProgress(`Processing Tsukihime logic scripts: ${processedCount}/${totalScripts} (${filename})`)
+		logProgress(`Processing logic scripts: ${processedCount}/${totalScripts} (${filename})`)
 
 		try {
 			//1. Extract blocks tree, choice texts and logic script
@@ -614,7 +614,7 @@ export function main() {
 			logError(`Error processing ${filename}: ${e.message}`)
 		}
 	}
-	logProgress(`Processing Tsukihime logic scripts: ${processedCount}/${totalScripts}\n`)
+	logProgress(`Processing logic scripts: ${processedCount}/${totalScripts}\n`)
 
 	//4. Save logic script file and blocks tree
 	if (GEN_LOGIC) {
@@ -626,7 +626,7 @@ export function main() {
 		fs.writeFileSync(centralLogicPath, logicScript)
 	}
 	if (GEN_TREE) {
-		fs.writeFileSync(path.join('.', "tsukihime_logic_tree.txt"), blocksTree)
+		fs.writeFileSync(path.join('.', "logic_tree.txt"), blocksTree)
 	}
 }
 
