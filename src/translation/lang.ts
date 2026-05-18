@@ -3,7 +3,7 @@ import { settings } from "../engine/settings"
 import { observe } from "@tsukiweb-common/utils/Observer"
 import { ValueStorage } from "@tsukiweb-common/utils/storage"
 import { fetchJson, deepAssign, insertDirectory } from "@tsukiweb-common/utils/utils"
-import { ImageRedirect, LangDesc, ResolutionId, TextImage, TranslationId, UpdateDateFormat } from "@tsukiweb-common/utils/lang"
+import { ImageRedirect, LangDesc, LanguagesType, pickDefaultTranslation, ResolutionId, TextImage, TranslationId, UpdateDateFormat } from "@tsukiweb-common/utils/lang"
 import { langSelection } from "./langSelection"
 import { PartialRecord } from "@tsukiweb-common/types"
 import { APP_VERSION, SCENE_ATTRS } from "app/utils/constants";
@@ -19,11 +19,9 @@ import { LabelName, RouteDayName, RouteName } from "app/utils/types";
 const LANG_DIR = `${import.meta.env.BASE_URL}static/`
 const LANGUAGES_LIST_URL = `${LANG_DIR}languages.json`
 
-
 //________________________________private types_________________________________
 //------------------------------------------------------------------------------
 
-type LanguagesType = Record<TranslationId, LangDesc>
 type StringsTypeBase = {
   id: TranslationId
   lastUpdate: UpdateDateFormat
@@ -42,13 +40,11 @@ type StringsTypeBase = {
 }
 type StringsType = StringsTypeBase & Omit<typeof defaultStrings, keyof StringsTypeBase>
 
-
 //______________________________private variables_______________________________
 //------------------------------------------------------------------------------
 
 const languagesStorage = new ValueStorage<LanguagesType>("languages", false, JSON.stringify, JSON.parse)
 const stringsStorage = new ValueStorage<StringsType>("strings", true, JSON.stringify, JSON.parse)
-
 
 //______________________________private functions_______________________________
 //------------------------------------------------------------------------------
@@ -101,49 +97,20 @@ async function updateLanguage(id: TranslationId, forceUpdate = false) {
 }
 
 function setDefaultlanguage() {
-  // If no locale storage for settings and savestates (=> the user has not
-  // really played the game yet), then set the language to the closest one to
-  // the browser languages
-  if (settings.language == "default"){
-    const langEntries = Object.entries(languages)
-    let i = -1
-    for (let locale of navigator.languages) {
-      i = langEntries.findIndex(([_, lang])=> lang.locale == locale)
-      if (i == -1){
-        // if country-specific locale not found, search for language
-        // without country
-        i = langEntries.findIndex(([_, lang])=>
-          lang.locale.split('-')[0] == locale.split('-')[0])
-      }
-      if (i != -1)
-        break
-    }
-    if (i != -1)
-      settings.language = langEntries[i][0]
-    else
-      settings.language = "en-mm"
+  if (settings.language == "default") {
+    // pick the language that best matches the browser's locales, default to english
+    settings.language = pickDefaultTranslation(languages, [...navigator.languages, "en"])
   }
 }
-
 
 //##############################################################################
 //#                                   PUBLIC                                   #
 //##############################################################################
 
-//_________________________________public types_________________________________
-
 export type TrackSourceId = keyof typeof defaultStrings.audio['tracks-path']
-
-
-//_______________________________public variables_______________________________
-//------------------------------------------------------------------------------
 
 export const languages = languagesStorage.get() || { } as LanguagesType
 export const strings = stringsStorage.get() || { ...defaultStrings, id: "" } as any as StringsType
-
-
-//_______________________________public functions_______________________________
-//------------------------------------------------------------------------------
 
 export function getLocale() {
   return languages[settings.language]?.locale ?? "en-US"

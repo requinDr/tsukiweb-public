@@ -1,26 +1,13 @@
 import { Dispatch } from "react"
 import { languages, strings } from "translation/lang"
 import { settings } from "engine/settings"
-import { splitFirst } from "@tsukiweb-common/utils/utils"
 import { Button, Modal } from "@tsukiweb-common/ui-core"
-import { LangDesc } from "@tsukiweb-common/utils/lang"
+import { sortTranslations } from "@tsukiweb-common/utils/lang"
 import { polyfillCountryFlagEmojis } from "@tsukiweb-common/utils/flagsPolyfill"
 import { audio } from "engine/audio"
 import { useLanguageRefresh } from "app/hooks";
 
 let flagSupportChecked = false
-const EMOJI_REGEX = /^(\u00a9|\u00ae|[\u2000-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])+|^(\uD83C[\uDDE6-\uDDFF]\uD83C[\uDDE6-\uDDFF])/
-
-const langCompare = (lang1: [string, LangDesc], lang2: [string, LangDesc]) => {
-	let name1 = lang1[1]["display-name"]
-	let name2 = lang2[1]["display-name"]
-
-	// Remove leading emojis
-	name1 = name1.replace(EMOJI_REGEX, '').trim()
-	name2 = name2.replace(EMOJI_REGEX, '').trim()
-	
-	return name1.localeCompare(name2)
-}
 
 type Props = {
 	show: boolean
@@ -36,35 +23,8 @@ const ModalLanguageSelection = ({show, setShow}: Props) => {
 		settings.language = id
 	}
 	
-	// 1. place japanese first
-	const sortedLanguages = Object.entries(languages)
-	const japIndex = sortedLanguages.findIndex(([key]) => key === "jp")
-	if (japIndex !== -1) {
-	  sortedLanguages.unshift(sortedLanguages.splice(japIndex, 1)[0])
-	}
-
-	// 2. then place user languages
-	let sortedLength = 1
-	for (let locale of navigator.languages) {
-		const remainingLanguages = sortedLanguages.slice(sortedLength)
-		let i = remainingLanguages.findIndex(([_, lang])=> lang.locale == locale)
-		if (i == -1) {
-			// if country-specific locale not found, search for language
-			// without country
-			i = remainingLanguages.findIndex(([_, lang])=>
-				splitFirst(lang.locale, '-')[0] == splitFirst(locale, '-')[0])
-		}
-		if (i != -1) {
-			i += sortedLength // because of slice(sortedLength) above
-			const entry = sortedLanguages.splice(i, 1)[0]
-			sortedLanguages.splice(sortedLength, 0, entry)
-			sortedLength++
-		}
-	}
-
-	// 3. then order alphabetically
-	const remLangs = sortedLanguages.splice(sortedLength).sort(langCompare)
-	sortedLanguages.push(...remLangs)
+	// place japanese first, then user locales, then other in alphabetical order
+	const sortedLanguages = sortTranslations(languages, ["ja", ...navigator.languages])
 
 	return (
 		<Modal
@@ -82,7 +42,7 @@ const ModalLanguageSelection = ({show, setShow}: Props) => {
 							<Button
 								key={id}
 								variant="select"
-								onClick={()=>selectLanguage(id)}
+								onClick={selectLanguage.bind(null, id)}
 								className="language flag"
 								active={selected}
 								audio={audio}
