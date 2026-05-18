@@ -528,11 +528,11 @@
       "S": ["s337"]
     },
     "select": {
-      "s46"  : {"conditions": [0, "%flg6 && %cleared"]},
+      "s46"  : {"conditions": [0, "%flg6 && %clear_ark || %clear_cel"]},
       "s52"  : {"conditions": [0, "%clear_ark"]},
       "s57"  : {"conditions": [0,0,"%regard_cel>=3"]},
       "s84"  : {"conditions": [0,"!%flg3"]},
-      "s116a": {"conditions": [0,0,0,"%cleared","%cleared"]},
+      "s116a": {"conditions": [0,0,0,"%clear_ark || %clear_cel","%clear_ark || %clear_cel"]},
       "s201" : {"conditions": [0,0,"%clear_his"]},
       "s236" : {"copy":"f242half"},
       "s241" : {"copy":"f242half"},
@@ -561,7 +561,7 @@
       "s158": {"condition":"%flg9", "below":"s156"},
       "s177": "!%flgA",
       "s188": {"condition":"%flgB", "below":"s187"},
-      "s201": {"condition":"%cleared", "below":"b36"},
+      "s201": {"condition":"%clear_ark || %clear_cel", "below":"b36"},
       "s205": {"condition":"%regard_koha>%regard_aki", "below":"s48"},
       "s209": "%flgP",
       "s217": "%flgP",
