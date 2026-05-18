@@ -133,8 +133,6 @@ function setDefaultlanguage() {
 //_________________________________public types_________________________________
 
 export type TrackSourceId = keyof typeof defaultStrings.audio['tracks-path']
-export type GameJson = Pick<StringsType, 'scenario'|'credits'|'choices'>
-export type LangJson = Omit<typeof defaultStrings, keyof GameJson>
 
 
 //_______________________________public variables_______________________________
@@ -149,11 +147,6 @@ export const strings = stringsStorage.get() || { ...defaultStrings, id: "" } as 
 
 export function getLocale() {
   return languages[settings.language]?.locale ?? "en-US"
-}
-
-export function addLanguage(id: TranslationId, description: LangDesc) {
-  languages[id] = description
-  languagesStorage.set(languages)
 }
 
 //##############################################################################

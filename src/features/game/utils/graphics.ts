@@ -19,7 +19,7 @@ export function moveBg(direction: "up"|"down") {
 	displayMode.bgAlignment = BG_POSITIONS[index]
 }
 
-export function extractImage(image: string) {
+function extractImage(image: string) {
 	let text;
 	[image, text] = splitFirst(image, '$')
 	if (image.startsWith('"') && image.endsWith('"')) {

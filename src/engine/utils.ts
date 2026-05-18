@@ -1,12 +1,9 @@
 import { LabelName, PlusDiscSceneName, RouteDayName, RouteName, SceneName } from "../app/utils/types";
 import { APP_VERSION, SCENE_ATTRS } from "../app/utils/constants";
 import { strings } from "../translation/lang"
-import { ScriptPlayer } from "./ScriptPlayer";
 import { credits, scenesDir } from "translation/assets";
 import { waitLanguageLoad } from "translation/langSelection";
 
-export type SkipRequest =
-    (label: LabelName, script: ScriptPlayer)=>Promise<boolean>
 
 //#endregion ###################################################################
 //#region                          LABEL INFO
@@ -78,7 +75,7 @@ export function nextLabel(label: LabelName): LabelName {
 
 const LOGIC_FILE = 'logic.txt'
 
-export async function fetchScene(sceneId: string): Promise<string[]> {
+async function fetchScene(sceneId: string): Promise<string[]> {
 	await waitLanguageLoad()
 	if (/^s\d+a?$/.test(sceneId))
 		sceneId = `s${sceneId.substring(1).padStart(3, '0')}`;
@@ -99,7 +96,7 @@ export async function fetchScene(sceneId: string): Promise<string[]> {
 
 let cachedLogicScript: string | null = null
 
-export async function fetchLogicBlock(label: string) : Promise<string[]> {
+async function fetchLogicBlock(label: string) : Promise<string[]> {
 	await waitLanguageLoad()
 
 	if (!cachedLogicScript) {
@@ -142,7 +139,7 @@ export async function fetchBlockLines(label: LabelName): Promise<string[]> {
 		return fetchLogicBlock(label)
 }
 
-export function creditsScript(insertEndOfPlay: boolean = false): string[] {
+function creditsScript(insertEndOfPlay: boolean = false): string[] {
 	return [
 		'play "*10"',
 		'bg #000000,crossfade,400',

@@ -1,4 +1,4 @@
-import directionalNavigate from "@tsukiweb-common/input/arrowNavigation"
+import { directionalNavigate } from "@tsukiweb-common/input/arrowNavigation"
 import { useEventActions } from "@tsukiweb-common/input/eventActions"
 import { menuKeyMap } from "features/game/utils/keybind"
 

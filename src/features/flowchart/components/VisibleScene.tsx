@@ -14,7 +14,7 @@ type VisibleSceneProps = {
 	onClick?: (id: SceneName) => void
 } & Omit<SVGProps<SVGRectElement>, 'onClick'> & NavigationProps
 
-export const VisibleScene = ({ node, graph, shouldBlur, closePopover, onClick, ...props }: VisibleSceneProps) => {
+const VisibleScene = ({ node, graph, shouldBlur, closePopover, onClick, ...props }: VisibleSceneProps) => {
 	const trigger = usePopoverTrigger(node)
 	const disabled = node.state === FcNodeState.DISABLED
 

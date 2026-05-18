@@ -1,4 +1,4 @@
-import { NumVarName } from "@tsukiweb-common/types"
+import { NumVarName } from "@tsukiweb-common/script/types"
 import { endings } from "../features/endings/utils/endings"
 import { Regard, ScriptPlayer } from "engine/ScriptPlayer"
 
@@ -9,7 +9,7 @@ import { Regard, ScriptPlayer } from "engine/ScriptPlayer"
 export function getGameVariable(script: ScriptPlayer, name: NumVarName): number {
 	switch (name) {
 		// context variables
-		case '%flushcount' : return script.flushcount ?? 0
+		case '%flushcount': return script.flushcount ?? 0
 		// endings variables
 		case '%ark_normalcleared':
 			return +(endings.ark_true.seen)
@@ -29,7 +29,7 @@ export function getGameVariable(script: ScriptPlayer, name: NumVarName): number 
 				     +(endings.akiha_good.seen) + +(endings.akiha_true.seen) +
 				     +(endings.hisui_good.seen) + +(endings.hisui_true.seen) +
 				     +(endings.kohaku_true.seen)
-		default :
+		default:
 			if (/^%flg[1-9A-Z]$/.test(name)) {
 			  // flags
 				return script.flags.has(name.substring(4)) ? 1 : 0
@@ -67,34 +67,4 @@ export function setGameVariable(script: ScriptPlayer, name: NumVarName,
   } else {
     throw Error(`Unknown or read-only variable ${name}`)
   }
-}
-
-//#endregion ###################################################################
-//#region                           COMMANDS
-//##############################################################################
-
-function processVarCmd(arg: string, cmd: string, script: ScriptPlayer) {
-  const [name, v] = arg.split(',') as [NumVarName, string]
-  let currVal = 0
-  if (!name.startsWith('%'))
-    throw Error(`Non-number variable ${name} not supported.`)
-  currVal = getGameVariable(script, name as NumVarName)
-  if (currVal === null && cmd != 'mov')
-    throw Error(`Reading undefined variable. [${cmd} ${arg}]`)
-
-  switch (cmd) {
-    case 'mov' : setGameVariable(script, name, parseInt(v)); break
-    case 'add' : setGameVariable(script, name, currVal + parseInt(v)); break
-    case 'sub' : setGameVariable(script, name, currVal - parseInt(v)); break
-    case 'inc' : setGameVariable(script, name, currVal + 1); break
-    case 'dec' : setGameVariable(script, name, currVal - 1); break
-  }
-}
-
-export const commands = {
-  'mov': processVarCmd,
-  'add': processVarCmd,
-  'sub': processVarCmd,
-  'inc': processVarCmd,
-  'dec': processVarCmd,
 }

@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import { ScriptPlayer } from "engine/ScriptPlayer"
-import history from 'engine/history';
+import { history } from 'engine/history';
 import { audio, commands } from "engine/audio";
 import { onAutoPlayStop, UserActionsHandler } from "features/game/utils/window-actions";
 import { InGameLayersHandler, SCREEN, displayMode } from "app/utils/display";

@@ -1,4 +1,4 @@
-import history, { PageEntry, SceneEntry } from './history';
+import { history, PageEntry, SceneEntry } from './history';
 import { ScriptPlayer } from "engine/ScriptPlayer";
 import { JSONDiff, PartialJSON } from "@tsukiweb-common/types";
 import { phaseTexts } from "translation/assets";

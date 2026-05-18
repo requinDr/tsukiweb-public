@@ -4,10 +4,9 @@ import { fetchBlockLines, isScene, nextLabel } from "engine/utils";
 import { settings } from "engine/settings";
 import { phaseTexts } from "translation/assets";
 import { closeBB } from "@tsukiweb-common/utils/Bbcode";
-import { NumVarName, VarName } from "@tsukiweb-common/types";
 import { getGameVariable, setGameVariable } from "engine/variables";
 import { deepAssign, TSForceType } from "@tsukiweb-common/utils/utils";
-import { CommandRecord, VarType } from "@tsukiweb-common/script/types";
+import { CommandRecord, NumVarName, VarName, VarType } from "@tsukiweb-common/script/types";
 import { History } from "./history";
 
 //#endregion ###################################################################

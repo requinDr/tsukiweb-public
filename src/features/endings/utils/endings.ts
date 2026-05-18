@@ -38,7 +38,8 @@ class Ed {
     else return undefined
   }
 }
-export type Ending<T extends EndType=EndType> = Readonly<{
+
+type Ending<T extends EndType=EndType> = Readonly<{
   scene: SceneName,
   type: T,
   seen: boolean,

@@ -4,7 +4,7 @@ import '@features/game/styles/game.scss';
 import { HiMenu } from 'react-icons/hi';
 import { useResettable } from '@tsukiweb-common/hooks';
 import { ScriptPlayer } from 'engine/ScriptPlayer';
-import history from 'engine/history';
+import { history } from 'engine/history';
 import { isPDScene } from 'engine/utils';
 import actions, { ShowLayers } from 'features/game/utils/window-actions';
 import { settings } from 'engine/settings';

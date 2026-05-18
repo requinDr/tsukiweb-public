@@ -1,17 +1,17 @@
 import { ScriptPlayer } from "engine/ScriptPlayer";
 import { LabelName } from "app/utils/types";
-import history, { History } from '../../../engine/history';
+import { history, History } from '../../../engine/history';
 import { toast } from "react-toastify";
 import { strings } from "translation/lang";
 import { FaSave } from "react-icons/fa";
 import { MdPlayArrow } from 'react-icons/md';
-import directionalNavigate from "@tsukiweb-common/input/arrowNavigation";
+import { directionalNavigate } from "@tsukiweb-common/input/arrowNavigation";
 import { InGameLayersHandler } from "app/utils/display";
 import { moveBg } from "features/game/utils/graphics";
 import { inGameControls, menuKeyMap } from "features/game/utils/keybind";
 import { QUICK_SAVE_ID, savesManager } from "engine/savestates";
 import { settings } from "engine/settings";
-import EventActions, { EventFilter } from "@tsukiweb-common/input/eventActions";
+import { EventActions, EventFilter } from "@tsukiweb-common/input/eventActions";
 
 function noFocus() {
 	return document.activeElement == null

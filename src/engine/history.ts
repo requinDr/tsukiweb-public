@@ -128,5 +128,4 @@ export const history = new History({
   storageId:'history',
   restore: true
 })
-export default history
 window.h = history
