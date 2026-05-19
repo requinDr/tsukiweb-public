@@ -1,5 +1,5 @@
 import { GamepadEventGenerator, GamepadEvents } from "@tsukiweb-common/input/gamepad";
-import {EventActions, EventFilter} from "@tsukiweb-common/input/eventActions";
+import {EventActions as EA, EventFilter} from "@tsukiweb-common/input/eventActions";
 
 // XBOX controller button mapping
 enum Gamepad {
@@ -48,16 +48,16 @@ export const inGameControls: Record<string, EventFilter[]> = {
         {type: 'keydown', key: "Delete"     , repeat: false},
         {type: GamepadEvents.BTN_PRESSED, buttonId: Gamepad.Y}],
     "bg_move": [
-        {type: 'keydown', key: "ArrowUp"    , repeat: false, ctrlKey: true, [EventActions.ARGS]: ["up"]},
-        {type: 'keydown', key: "ArrowDown"  , repeat: false, ctrlKey: true, [EventActions.ARGS]: ["down"]}],
+        {type: 'keydown', key: "ArrowUp"    , repeat: false, ctrlKey: true, [EA.ARGS]: ["up"]},
+        {type: 'keydown', key: "ArrowDown"  , repeat: false, ctrlKey: true, [EA.ARGS]: ["down"]}],
     "auto_play":[
         {type: 'keydown', key: "E"          , repeat: false},
         {type: GamepadEvents.BTN_PRESSED, buttonId: Gamepad.LB}],
     "page_nav":[
-        {type: 'keydown', key: "PageUp"     , ctrlKey: false, [EventActions.ARGS]: ["prev"]},
-        {type: 'keydown', key: "PageDown"   , ctrlKey: false, [EventActions.ARGS]: ["next"]},
-        {type: GamepadEvents.BTN_PRESSED, buttonId: Gamepad.LT, [EventActions.ARGS]: ["prev"]},
-        {type: GamepadEvents.BTN_PRESSED, buttonId: Gamepad.RT, [EventActions.ARGS]: ["next"]}],
+        {type: 'keydown', key: "PageUp"     , ctrlKey: false, [EA.ARGS]: ["prev"]},
+        {type: 'keydown', key: "PageDown"   , ctrlKey: false, [EA.ARGS]: ["next"]},
+        {type: GamepadEvents.BTN_PRESSED, buttonId: Gamepad.LT, [EA.ARGS]: ["prev"]},
+        {type: GamepadEvents.BTN_PRESSED, buttonId: Gamepad.RT, [EA.ARGS]: ["next"]}],
     "load":    [
         {type: 'keydown', key: "A"          , repeat: false}],
     "save":    [
@@ -72,27 +72,35 @@ export const inGameControls: Record<string, EventFilter[]> = {
 
 export const menuKeyMap: Record<string, EventFilter[]> = {
     "nav": [
-        {type: 'keydown', key: "ArrowUp"   , ctrlKey: false, [EventActions.ARGS]: ["up"]},
-        {type: 'keydown', key: "ArrowLeft" , ctrlKey: false, [EventActions.ARGS]: ["left"]},
-        {type: 'keydown', key: "ArrowDown" , ctrlKey: false, [EventActions.ARGS]: ["down"]},
-        {type: 'keydown', key: "ArrowRight", ctrlKey: false, [EventActions.ARGS]: ["right"]},
-        {type: 'keydown', key: "Escape"    , repeat: false, ctrlKey: false, [EventActions.ARGS]: ["out"]},
-        {type: 'keydown', key: "Backspace" , repeat: false, ctrlKey: false, [EventActions.ARGS]: ["out"]},
-        {type: 'keydown', key: "Enter"     , repeat: false, ctrlKey: false, [EventActions.ARGS]: ["in"]},
-        {type: 'keydown', key: "Space"     , repeat: false, ctrlKey: false, [EventActions.ARGS]: ["in"]},
-        {type: GamepadEvents.BTN_PRESSED, buttonId: Gamepad.DPadUp, [EventActions.ARGS]: ["up"]},
-        {type: GamepadEvents.BTN_PRESSED, buttonId: Gamepad.DPadLeft, [EventActions.ARGS]: ["left"]},
-        {type: GamepadEvents.BTN_PRESSED, buttonId: Gamepad.DPadDown, [EventActions.ARGS]: ["down"]},
-        {type: GamepadEvents.BTN_PRESSED, buttonId: Gamepad.DPadRight, [EventActions.ARGS]: ["right"]},
-        {type: GamepadEvents.BTN_PRESSED, buttonId: Gamepad.A, [EventActions.ARGS]: ["in"]},
-        {type: GamepadEvents.BTN_PRESSED, buttonId: Gamepad.B, [EventActions.ARGS]: ["out"]},
+        {type: 'keydown', key: "ArrowUp"   , ctrlKey: false, [EA.ARGS]: ["up"]},
+        {type: 'keydown', key: "ArrowLeft" , ctrlKey: false, [EA.ARGS]: ["left"]},
+        {type: 'keydown', key: "ArrowDown" , ctrlKey: false, [EA.ARGS]: ["down"]},
+        {type: 'keydown', key: "ArrowRight", ctrlKey: false, [EA.ARGS]: ["right"]},
+        {type: 'keydown', key: "Escape"    , repeat: false, ctrlKey: false, [EA.ARGS]: ["out"]},
+        {type: 'keydown', key: "Backspace" , repeat: false, ctrlKey: false, [EA.ARGS]: ["out"]},
+        {type: 'keydown', key: "Enter"     , repeat: false, ctrlKey: false, [EA.ARGS]: ["in"]},
+        {type: 'keydown', key: "Space"     , repeat: false, ctrlKey: false, [EA.ARGS]: ["in"]},
+        {type: GamepadEvents.BTN_PRESSED, buttonId: Gamepad.DPadUp, [EA.ARGS]: ["up"]},
+        {type: GamepadEvents.BTN_PRESSED, buttonId: Gamepad.DPadLeft, [EA.ARGS]: ["left"]},
+        {type: GamepadEvents.BTN_PRESSED, buttonId: Gamepad.DPadDown, [EA.ARGS]: ["down"]},
+        {type: GamepadEvents.BTN_PRESSED, buttonId: Gamepad.DPadRight, [EA.ARGS]: ["right"]},
+        {type: GamepadEvents.BTN_PRESSED, buttonId: Gamepad.A, [EA.ARGS]: ["in"]},
+        {type: GamepadEvents.BTN_PRESSED, buttonId: Gamepad.B, [EA.ARGS]: ["out"]},
+        {type: GamepadEvents.AXIS_CHANGE, axisId: 0, [EA.IF]: (_, e)=> e.axisValue < -0.5, [EA.ARGS]: ["left"]},
+        {type: GamepadEvents.AXIS_CHANGE, axisId: 0, [EA.IF]: (_, e)=> e.axisValue >  0.5, [EA.ARGS]: ["right"]},
+        {type: GamepadEvents.AXIS_CHANGE, axisId: 1, [EA.IF]: (_, e)=> e.axisValue < -0.5, [EA.ARGS]: ["up"]},
+        {type: GamepadEvents.AXIS_CHANGE, axisId: 1, [EA.IF]: (_, e)=> e.axisValue >  0.5, [EA.ARGS]: ["down"]},
+        {type: GamepadEvents.AXIS_CHANGE, axisId: 2, [EA.IF]: (_, e)=> e.axisValue < -0.5, [EA.ARGS]: ["left"]},
+        {type: GamepadEvents.AXIS_CHANGE, axisId: 2, [EA.IF]: (_, e)=> e.axisValue >  0.5, [EA.ARGS]: ["right"]},
+        {type: GamepadEvents.AXIS_CHANGE, axisId: 3, [EA.IF]: (_, e)=> e.axisValue < -0.5, [EA.ARGS]: ["up"]},
+        {type: GamepadEvents.AXIS_CHANGE, axisId: 3, [EA.IF]: (_, e)=> e.axisValue >  0.5, [EA.ARGS]: ["down"]},
     ],
-    "click": [
-        {type: GamepadEvents.BTN_PRESSED, buttonId: Gamepad.A, [EventActions.IF]: (_, e)=> e.target instanceof HTMLButtonElement}
-    ]
 }
 
 GamepadEventGenerator.config({
-    btnPress: true
+    btnPress: true,
+    axisChange: true,
+    axesDeadZones: 0.8,
+    axesResolution: 1, // rounded to -1, 0 or 1
 })
 GamepadEventGenerator.enable()
