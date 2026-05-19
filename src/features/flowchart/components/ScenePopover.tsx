@@ -171,7 +171,7 @@ const SceneChoices = ({select}: {select: BadgeEntry['select'] })=> {
 type PopoverProps = {
 	node: FcNode
 }
-const ScenePopover = ({ node }: PopoverProps) => {	
+const ScenePopover = ({ node }: PopoverProps) => {
 	const badges = getNodeBadges(node.id)
 
 	return (

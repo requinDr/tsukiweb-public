@@ -14,8 +14,16 @@ export type BadgeEntry = {
   { char: CharId, value: number } | {char?: never, value?: never}
 )
 const BADGE_MAP = new Map<string, BadgeEntry>()
+let badgeMapLanguageKey = ""
+
+function getBadgeMapLanguageKey() {
+  return `${strings.id}:${strings.lastUpdate ?? ""}`
+}
 
 function buildBadgesMap() {
+  BADGE_MAP.clear()
+  badgeMapLanguageKey = getBadgeMapLanguageKey()
+
   for (const [char, entries] of Object.entries(SCENE_ATTRS.badges.regards))
   for (const [id, value] of Object.entries(entries))
     BADGE_MAP.set(id, { char: char as CharId, value: value as number })
@@ -30,8 +38,8 @@ function buildBadgesMap() {
     if (id.includes('f'))
       BADGE_MAP.set(id.replace('f', 's'), { ...BADGE_MAP.get(id.replace('f', 's')), select })
   }
+  
   for (const [id, {copy, conditions}] of Object.entries(SCENE_ATTRS.badges.select)) {
-
     if (copy) {
       BADGE_MAP.set(id, { ...BADGE_MAP.get(id), select: BADGE_MAP.get(copy)!.select })
     }
@@ -51,7 +59,7 @@ function buildBadgesMap() {
 }
 
 export function getNodeBadges(nodeId: string) {
-  if (BADGE_MAP.size == 0)
+  if (BADGE_MAP.size == 0 || badgeMapLanguageKey !== getBadgeMapLanguageKey())
     buildBadgesMap()
   return BADGE_MAP.get(nodeId)
 }
