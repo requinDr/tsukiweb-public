@@ -79,7 +79,10 @@ async function loadTranslation(id: TranslationId): Promise<StringsType> {
 }
 
 const OPTIONAL_TRANSLATION_PATHS = new Set([
-  "images",
+  "images.words",
+  "images.thumb",
+  "images.thumb.",
+  "images.src.",
   "audio",
 ])
 
