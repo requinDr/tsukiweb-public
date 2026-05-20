@@ -10,7 +10,7 @@ import { BadgeEntry, getNodeBadges } from "features/flowchart/utils/badges";
 const RegardBadge = ({char}: {char: string}) => {
 	return (
 		<svg className="badge" viewBox="-13 -3.4 13 7">
-			<image href={`./chars/${char}.webp`}
+			<image href={`./res/chars/${char}.webp`}
 				className="badge"
 				x={-13} y={-3.5} height={7} />
 			<use href="#regard_heart"
@@ -34,7 +34,7 @@ const FlagBadge = ({flag, negative}: {flag: string, negative?: boolean}) => {
 const EndingBadge = ({char}: {char: string | null}) => {
 	return (
 		<svg className="badge" viewBox={`0 -3.4 ${char ? 13 : 6} 7`}>
-			<image href={`./chars/${char}.webp`}
+			<image href={`./res/chars/${char}.webp`}
 				className="badge"
 				x={0} y={-3.5} height={7} />
 			<use className="badge" href="#route_icon"
@@ -50,7 +50,7 @@ const RegardValueBadge = ({ char, value }: { char: string; value: number }) => {
 	return (
 		<svg className="badge" viewBox={`${-(abs * 5 + 8)} -3.5 ${abs * 5 + 8} 7`}>
 			<image
-				href={`./chars/${char}.webp`}
+				href={`./res/chars/${char}.webp`}
 				className="badge"
 				x={-(abs * 5 + 8)}
 				y={-3.5}

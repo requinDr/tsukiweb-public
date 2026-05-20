@@ -10,7 +10,7 @@ It offers a better experience in general.
 None of the original assets are provided with this repository.  
 To download and run the game's code locally, follow one of the two methods:
 ### Node
-1) install [`node.js`](https://nodejs.org/en/download) (version `18 / 20 / 22+` is required)
+1) install [`node.js`](https://nodejs.org/en/download) (version `22.12+` is required)
 2) Get the source code: `git clone --recursive`
 3) Install project dependencies with `npm i`
 4) Start the localhost with `npm start`

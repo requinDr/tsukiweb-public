@@ -498,7 +498,7 @@
       "./wave/%"
     ],
     "waves-pd-path": [
-      "./wave-pd/%"
+      "./wave_pd/%"
     ]
   },
   "scenario": {

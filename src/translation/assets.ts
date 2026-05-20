@@ -39,7 +39,7 @@ export function scenesDir() {
 }
 
 export function spriteSheetImgPath(file: string) {
-	return assetPath(`jp/flowchart-spritesheet/${file}.${imageFormat}`)
+	return `./res/flowchart-spritesheets/${file}.${imageFormat}`
 }
 
 function audioPath(formats: string|string[], trackName: string) {

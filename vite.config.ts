@@ -1,14 +1,28 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-// List assets files to use from local instead of fetching from remote
-const localAssets = globToRegex([
-	'logic.txt',
-	'languages.json',
-	'game.json',
-	'lang.json',
-	// 'scenes/*.txt',
-])
+const serverUrl = 'https://tsukidev.holofield.fr'
+
+// List assets files to use from remote instead of fetching from local
+const remotePaths = [
+	'/res/flowchart-spritesheets',
+	'^/static/[^/]+/CD_everafter',
+	'^/static/[^/]+/CD_original',
+	'^/static/[^/]+/CD_tsukibako',
+	'^/static/[^/]+/images',
+	'^/static/[^/]+/images_thumb',
+	'^/static/[^/]+/scenes',
+	'^/static/[^/]+/wave',
+	'^/static/[^/]+/wave_pd',
+]
+const proxyRules: Record<string, any> = {}
+
+remotePaths.forEach((path) => {
+	proxyRules[path] = {
+		target: serverUrl,
+		changeOrigin: true,
+	}
+})
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -22,28 +36,6 @@ export default defineConfig({
 		chunkSizeWarningLimit: 1000,
 	},
 	server: {
-		proxy: {
-			'/static': {
-				target: `https://tsukidev.holofield.fr/static`,
-				changeOrigin: true,
-				bypass: (req, res, options) => {
-					if (req.url && localAssets.some(r => r.test(req.url!))) {
-						// console.log(`Bypass proxy: ${req.url}`)
-						return req.url
-					}
-				},
-				rewrite: (path) => path.replace(/^\/static/, '')
-			}
-		}
+		proxy: proxyRules
 	}
 })
-
-
-function globToRegex(patterns: string[]): RegExp[] {
-	return patterns.map(pattern => {
-		const escaped = pattern
-			.replace(/[.+^${}()|[\]\\]/g, '\\$&')
-			.replace(/\*/g, '.*')
-		return new RegExp(`.*/${escaped}(\\?.*)?$`)
-	})
-}

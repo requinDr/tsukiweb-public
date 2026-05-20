@@ -32,7 +32,7 @@ const RegardRow = ({ char, value, max }: {char: CharId, value: number, max: numb
 	const n = (max == 0) ? value : Math.min(value, max)
 	return (
 		<div className="row">
-			<img className="char" src={`./chars/${char}.webp`}
+			<img className="char" src={`./res/chars/${char}.webp`}
 				alt={strings.characters[char]} />
 			<div className="hearts-list">
 				<svg viewBox="-3.3 -3.3 13.5 6.3">

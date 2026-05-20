@@ -11,7 +11,7 @@ const INPUT_SCENES = Object.entries(SCENE_ATTRS).filter(
 	([, sceneData]) => sceneData?.hasOwnProperty('col') && sceneData?.graph && !sceneData?.osiete
 )
 const INPUT_IMAGES = '../../public/static/jp/images_thumb/'
-const OUTPUT_THUMBNAILS = '../../public/static/jp/flowchart-spritesheet/'
+const OUTPUT_THUMBNAILS = '../../public/res/flowchart-spritesheets/'
 const OUTPUT_METADATA = '../../src/assets/game/'
 
 async function main() {
