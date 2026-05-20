@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react';
 const serverUrl = 'https://tsukidev.holofield.fr'
 
 // List assets files to use from remote instead of fetching from local
-const remotePaths = [
+const remotePaths: string[] = [
 	'/res/flowchart-spritesheets',
 	'^/static/[^/]+/CD_everafter',
 	'^/static/[^/]+/CD_original',
@@ -16,7 +16,6 @@ const remotePaths = [
 	'^/static/[^/]+/wave_pd',
 ]
 const proxyRules: Record<string, any> = {}
-
 remotePaths.forEach((path) => {
 	proxyRules[path] = {
 		target: serverUrl,

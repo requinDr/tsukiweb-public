@@ -5,8 +5,8 @@ import { importGameDataFromJSON } from "./settings"
 
 
 export async function importGameDataFromFile(file: File): Promise<void> {
-	const confirmText = (strings.config as Record<string, any>)?.["file-import-confirm"]?.replace?.('%0', file.name) 
-		?? `Import data from "${file.name}"? This will replace your current saves and settings.`
+	const confirmText =
+		`Import data from "${file.name}"? This will replace your current saves and settings.`
 	
 	const confirmed = await dialog.confirm({
 		text: confirmText,
@@ -24,7 +24,6 @@ export async function importGameDataFromFile(file: File): Promise<void> {
 		toast.success(strings.game?.["toast-load"] ?? "Data loaded successfully")
 	} catch (error) {
 		console.error('Failed to import game data:', error)
-		const errorText = (strings.config as Record<string, any>)?.["file-import-error"] ?? "Failed to import data"
-		toast.error(errorText)
+		toast.error("Failed to import data")
 	}
 }

@@ -100,8 +100,6 @@
     "data-erase": "Erase",
     "data-erase-warning": "Delete all saves, settings progress. Sure?",
     "data-erase-confirm": "All clean. Close tab.",
-    "file-import-confirm": "Import data from \"%0\"? This will replace your current saves and settings.",
-    "file-import-error": "Failed to import data",
     "controls": {
       "next": "Next",
       "history": "Show/hide History",
@@ -213,13 +211,13 @@
     }
   },
   "audio": {
-    "tracks-path": {
+    "tracks": {
       "original": ["./jp/CD_original/track%"],
       "everafter": ["./jp/CD_everafter/track%"],
       "tsukibako": ["./jp/CD_tsukibako/track%"]
     },
-    "waves-path": ["./jp/wave/%"],
-    "waves-pd-path": ["./jp/wave_pd/%"]
+    "waves": ["./jp/wave/%"],
+    "waves-pd": ["./jp/wave_pd/%"]
   },
   "choices": [],
 

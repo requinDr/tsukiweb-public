@@ -17,7 +17,7 @@ import { LabelName, RouteDayName, RouteName } from "app/utils/types";
 //------------------------------------------------------------------------------
 
 const LANG_DIR = `${import.meta.env.BASE_URL}static/`
-const LANGUAGES_LIST_URL = `${LANG_DIR}languages.json`
+const LANG_LIST = `${LANG_DIR}languages.json`
 
 //________________________________private types_________________________________
 //------------------------------------------------------------------------------
@@ -49,30 +49,59 @@ const stringsStorage = new ValueStorage<StringsType>("strings", true, JSON.strin
 //______________________________private functions_______________________________
 //------------------------------------------------------------------------------
 
-async function loadTranslation(id: TranslationId): Promise<typeof strings> {
+async function loadTranslation(id: TranslationId): Promise<StringsType> {
   if (!Object.hasOwn(languages, id))
     id = Object.getOwnPropertyNames(languages)[0] // fall back to first option if id does not exist
 
   const {dir, fallback, 'last-update': lastUpdate} = languages[id]
   const path = dir.startsWith("./") ? LANG_DIR + dir.substring(2) : dir
-  const promise = Promise.all([
+
+  const [lang, game] = await Promise.all([
     fetchJson(`${path}/lang.json?v=${APP_VERSION}`).then(json => insertDirectory(json, dir)),
     fetchJson(`${path}/game.json?v=${APP_VERSION}`).then(json => insertDirectory(json, dir)),
   ])
-  const result = fallback ? await loadTranslation(fallback) : {} as StringsType
+
+  // Check if the translation has everything from defaultStrings
+  const merged = deepAssign(deepAssign({} as any, lang), game)
+  const needsFallback = fallback && !coversAllKeys(merged, defaultStrings)
+
+  const result = needsFallback
+    ? await loadTranslation(fallback)
+    : { ...defaultStrings } as unknown as StringsType
 
   result.id = id
   if (!Object.hasOwn(result, 'lastUpdate') || lastUpdate > result.lastUpdate)
     result.lastUpdate = lastUpdate
 
-  const [lang, game] = await promise
   deepAssign(result, lang)
   deepAssign(result, game)
   return result
 }
 
+const OPTIONAL_TRANSLATION_PATHS = new Set([
+  "images",
+  "audio",
+])
+
+function coversAllKeys(source: object, reference: object, path = ""): boolean {
+  for (const [key, refVal] of Object.entries(reference)) {
+    const fullPath = path ? `${path}.${key}` : key
+    if (OPTIONAL_TRANSLATION_PATHS.has(fullPath)) continue
+    if (!Object.hasOwn(source, key)) {
+      console.debug(`missing key: ${fullPath}`)
+      return false
+    }
+    if (refVal !== null && typeof refVal === 'object' && !Array.isArray(refVal)) {
+      const srcVal = (source as Record<string, unknown>)[key]
+      if (typeof srcVal !== 'object' || !coversAllKeys(srcVal as object, refVal, fullPath))
+        return false
+    }
+  }
+  return true
+}
+
 async function fetchAvailableLanguages() {
-  deepAssign(languages, await fetchJson(`${LANGUAGES_LIST_URL}?v=${APP_VERSION}`))
+  deepAssign(languages, await fetchJson(`${LANG_LIST}?v=${APP_VERSION}`))
   languagesStorage.set(languages)
   setDefaultlanguage()
   let id: TranslationId | undefined = settings.language
@@ -107,7 +136,7 @@ function setDefaultlanguage() {
 //#                                   PUBLIC                                   #
 //##############################################################################
 
-export type TrackSourceId = keyof typeof defaultStrings.audio['tracks-path']
+export type TrackSourceId = keyof typeof defaultStrings.audio['tracks']
 
 export const languages = languagesStorage.get() || { } as LanguagesType
 export const strings = stringsStorage.get() || { ...defaultStrings, id: "" } as any as StringsType
