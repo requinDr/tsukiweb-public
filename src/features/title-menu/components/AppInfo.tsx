@@ -50,11 +50,12 @@ const ModalInfo = ({show, setShow}: ModalInfoProps) => {
 			icon: () => <MdCopyAll />
 		})
 	}
+	const hide = () => setShow(false)
 
 	return (
 		<Modal
 			show={show}
-			onRequestClose={() => setShow(false)}
+			onRequestClose={hide}
 			className="app-info-modale"
 		>
 			<div className='title-modal'>
@@ -129,7 +130,7 @@ const ModalInfo = ({show, setShow}: ModalInfoProps) => {
 
 			<Button
 				variant="elevation"
-				onClick={()=>setShow(false)}
+				onClick={hide}
 				className="close-btn"
 				audio={audio}
 				clickSound="close"

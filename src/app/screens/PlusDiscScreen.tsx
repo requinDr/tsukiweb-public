@@ -5,7 +5,7 @@ import * as m from "motion/react-m"
 import { AnimatePresence, Variants } from 'motion/react'
 import { strings } from 'translation/lang'
 import { APP_INFO } from 'app/utils/constants'
-import { useQueryParam } from '@tsukiweb-common/hooks'
+import { useNavBackRef, useQueryParam } from '@tsukiweb-common/hooks'
 import GalleryTab from 'features/plus-disc/components/GalleryTab';
 import ScenesTab from 'features/plus-disc/components/ScenesTab';
 import { SCREEN } from 'app/utils/display';
@@ -20,6 +20,9 @@ const container: Variants = {
 		}
 	}
 }
+function back() {
+	(document.querySelector('#extra-plus-disc') as HTMLElement)?.focus()
+}
 
 const PlusDiscScreen = () => {
 	useScreenAutoNavigate(SCREEN.PLUS_DISC)
@@ -27,7 +30,7 @@ const PlusDiscScreen = () => {
 	const [selectedTab, setSelectedTab] = useQueryParam<"scenes" | "gallery">("tab", "scenes")
 
 	return (
-		<main className="page" id="plus-disc">
+		<main className="page" id="plus-disc" ref={useNavBackRef(back)}>
 			<div className="header">
 				<img
 					src={Cover}

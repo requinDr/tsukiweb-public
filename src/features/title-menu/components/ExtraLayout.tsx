@@ -6,8 +6,10 @@ import { useLocation } from "wouter"
 import { PageTitle, TitleMenuButton } from "@tsukiweb-common/ui-core"
 import { audio } from "engine/audio"
 import { useEclipseUnlocked } from "features/endings/hooks/useEclipseUnlocked";
-import { useKeyArrows, useLanguageRefresh } from "app/hooks";
+import { useLanguageRefresh } from "app/hooks";
 import { SCREEN, displayMode } from "app/utils/display";
+import { useDefaultNavBack } from "@tsukiweb-common/hooks"
+
 
 const ExtraLayout = ({ children }: PropsWithChildren) => {
 	return (
@@ -35,6 +37,9 @@ const ExtraLayout = ({ children }: PropsWithChildren) => {
 
 export default ExtraLayout
 
+function back() {
+	displayMode.screen = SCREEN.TITLE
+}
 
 const ExtraMenu = () => {
 	const [location, navigate] = useLocation()
@@ -42,11 +47,7 @@ const ExtraMenu = () => {
 	const { eclipseUnlocked } = useEclipseUnlocked()
 	const currentPage = "/" + location.split("/")[1]
 
-	useKeyArrows()
-				
-	function back() {
-		displayMode.screen = SCREEN.TITLE
-	}
+	useDefaultNavBack(back)
 
 	useEffect(()=> {
 		const handleKeyDown = (event: KeyboardEvent) => {
@@ -66,14 +67,14 @@ const ExtraMenu = () => {
 				{strings.title.extra}
 			</PageTitle>
 			<div className="menus">
-				<TitleMenuButton
+				<TitleMenuButton id="extra-gallery"
 					audio={audio}
 					onClick={()=>navigate(SCREEN.GALLERY)}
 					active={currentPage === SCREEN.GALLERY}
 					nav-auto={1}>
 					{strings.extra.gallery}
 				</TitleMenuButton>
-				<TitleMenuButton
+				<TitleMenuButton id="extra-endings"
 					audio={audio}
 					onClick={()=>navigate(SCREEN.ENDINGS)}
 					active={currentPage === SCREEN.ENDINGS}
@@ -81,14 +82,14 @@ const ExtraMenu = () => {
 					nav-auto={1}>
 					{strings.extra.endings}
 				</TitleMenuButton>
-				<TitleMenuButton
+				<TitleMenuButton id="extra-scenes"
 					audio={audio}
 					onClick={()=>navigate(SCREEN.SCENES)}
 					active={currentPage === SCREEN.SCENES}
 					nav-auto={1}>
 					{strings.extra.scenes}
 				</TitleMenuButton>
-				<TitleMenuButton
+				<TitleMenuButton id="extra-plus-disc"
 					audio={audio}
 					onClick={()=>navigate(SCREEN.PLUS_DISC)}
 					active={currentPage === SCREEN.PLUS_DISC}

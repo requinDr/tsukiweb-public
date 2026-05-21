@@ -11,6 +11,7 @@ import ConfigAudioTab from './tabs/ConfigAudioTab';
 import ConfigControlsTab from './tabs/ConfigControlsTab';
 import ConfigAdvancedTab from './tabs/ConfigAdvancedTab';
 import { useLanguageRefresh } from 'app/hooks';
+import { DivProps } from '@tsukiweb-common/types'
 
 export enum ConfigTabs {
 	game = "game",
@@ -30,9 +31,9 @@ type Props = {
 	onBack: ()=>void
 	selectedTab: ConfigTabs
 	setSelectedTab: (activeTab: ConfigTabs)=>void
-}
+} & DivProps
 
-const ConfigLayout = ({onBack, selectedTab, setSelectedTab}: Props) => {
+const ConfigLayout = ({onBack, selectedTab, setSelectedTab, ...props}: Props) => {
 	useLanguageRefresh()
 
 	const tabs: ComponentProps<typeof PageTabsLayout>["tabs"] = [
@@ -53,7 +54,7 @@ const ConfigLayout = ({onBack, selectedTab, setSelectedTab}: Props) => {
 				<TitleMenuButton audio={audio} onClick={onBack} className="back-button" nav-auto={1}>
 					{`<<`} {strings.back}
 				</TitleMenuButton>
-			}>
+			} {...props}>
 			{tabComponents[selectedTab]}
 		</PageTabsLayout>
 	)

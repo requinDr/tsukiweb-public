@@ -7,7 +7,7 @@ import { CharId } from 'app/utils/types'
 import GalleryImage from 'features/gallery/components/GalleryImage'
 import { audio } from 'engine/audio'
 import { GalleryTotal } from 'features/gallery/components/GalleryComponents'
-import { useQueryParam } from '@tsukiweb-common/hooks'
+import { useNavBackRef, useQueryParam } from '@tsukiweb-common/hooks'
 import { CHARS } from 'app/utils/constants';
 import { settings } from 'engine/settings';
 import cg from 'features/gallery/utils/gallery';
@@ -43,6 +43,9 @@ const getImgDetails = (image: string) => {
 
 	return { alts, shownAlts }
 }
+function back() {
+	(document.querySelector('#extra-gallery') as HTMLElement)?.focus()
+}
 
 const GalleryScreen = () => {
 	useScreenAutoNavigate(SCREEN.GALLERY)
@@ -76,7 +79,8 @@ const GalleryScreen = () => {
 						initial="hidden"
 						animate="show"
 						exit="hidden"
-						className="gallery-container">
+						className="gallery-container"
+						ref={useNavBackRef(back)}>
 						{tabImages?.map(image => {
 							const {alts, shownAlts} = getImgDetails(image)
 

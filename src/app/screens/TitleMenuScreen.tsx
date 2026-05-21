@@ -17,13 +17,12 @@ import AppInfo from "features/title-menu/components/AppInfo";
 import TranslationSwitch from "features/title-menu/components/TranslationSwitch";
 import { strings } from "translation/lang";
 import { SCREEN } from "app/utils/display";
-import { useKeyArrows, useLanguageRefresh, useScreenAutoNavigate } from "app/hooks";
+import { useLanguageRefresh, useScreenAutoNavigate } from "app/hooks";
 
 
 const TitleMenuScreen = () => {
 	useScreenAutoNavigate(SCREEN.TITLE)
 	useLanguageRefresh()
-	useKeyArrows()
 
 	return (
 		<m.div

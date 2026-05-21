@@ -11,7 +11,11 @@ import { SCREEN } from "app/utils/display";
 import { useLanguageRefresh, useScreenAutoNavigate } from "app/hooks";
 import { PopoverProvider } from "@tsukiweb-common/flowchart";
 import EndingPopover from "features/endings/components/EndingPopover";
+import { useNavBackRef } from "@tsukiweb-common/hooks"
 
+function back() {
+	(document.querySelector('#extra-endings') as HTMLElement)?.focus()
+}
 
 const EndingsScreen = () => {
 	useScreenAutoNavigate(SCREEN.ENDINGS)
@@ -19,7 +23,7 @@ const EndingsScreen = () => {
 	const { sawEclipse, eclipseUnlocked } = useEclipseUnlocked()
 
 	return (
-		<main className={styles.pageContent} id="endings">
+		<main className={styles.pageContent} id="endings" ref={useNavBackRef(back)}>
 			<section className="endings-list">
 				{Object.values(endings).map((ending, index) =>
 					<MainEnding
