@@ -61,7 +61,7 @@
 
 			& > rect {
 				transition: filter .1s linear;
-				&:hover, &:focus-visible, &:focus {
+				&:hover, &:focus {
 					filter:
 						drop-shadow(0 0 1px var(--active-connection))
 						drop-shadow(0 0 1px var(--active-connection));

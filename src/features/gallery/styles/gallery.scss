@@ -31,7 +31,7 @@
 			overflow: hidden;
 			position: relative;
 
-			&:hover, &:focus-visible {
+			&:hover, &:focus-visible, .keyboard-navigating &:focus {
 				img {
 					transform: scale(1.06);
 				}
@@ -44,7 +44,7 @@
 			width: 100%;
 		}
 		button, .thumb, .placeholder {
-			&:focus-visible {
+			&:focus-visible, .keyboard-navigating &:focus {
 				outline: 3px solid var(--color-link);
 			}
 		}
@@ -78,7 +78,7 @@
 			transition: .2s ease-out;
 			transition-delay: 0s;
 
-			&:hover, &:focus-visible {
+			&:hover, &:focus-visible, .keyboard-navigating &:focus {
 				filter: blur(0);
 				transition-delay: .6s;
 			}

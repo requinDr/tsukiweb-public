@@ -63,7 +63,7 @@
 				filter: grayscale(1);
 			}
 
-			&:hover, &:focus-visible {
+			&:hover, &:focus-visible, .keyboard-navigating &:focus {
 				box-shadow: var(--selected-shadow);
 			}
 		}

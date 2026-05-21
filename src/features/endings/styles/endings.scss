@@ -92,7 +92,7 @@
 				justify-content: center;
 			}
 
-			&:hover, &:focus-visible {
+			&:hover, &:focus-visible, .keyboard-navigating &:focus {
 				&::after {
 					scale: 1;
 				}

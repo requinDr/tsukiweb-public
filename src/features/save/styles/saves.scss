@@ -245,7 +245,7 @@
 				color: var(--text-muted);
 				font-size: 1.3em;
 
-				&:hover, &:focus-visible {
+				&:hover, &:focus-visible, .keyboard-navigating &:focus {
 					color: var(--text-color);
 				}
 			}
@@ -324,7 +324,7 @@
 			--color-stop-2: #77e190;
 			--color-stop-3: #ffff1c;
 		}
-		&:hover, &:focus-visible {
+		&:hover, &:focus-visible, .keyboard-navigating &:focus {
 			opacity: 1;
 		}
 
