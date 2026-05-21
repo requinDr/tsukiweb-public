@@ -19,7 +19,7 @@ export const useGameInputs = ({ rootRef, layers, actionsHandler, show }: UseGame
 	useEventActions(createKeyMap, (action, e, ...args) =>
 		actionsHandler.handleAction(action, e, ...args),
 		document,
-		{ capture: true }
+		{ capture: false }
 	)
 
 	useSwipeGesture(actions.swipeCallback.bind(null, layers), rootRef, 50)

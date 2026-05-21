@@ -82,7 +82,6 @@ function createKeyMap(layers: InGameLayersHandler, show: ShowLayers) {
 	const noMenu = ()=> layers.currentMenu == null
 	const onText = ()=> layers.topLayer == 'text'
 	return {
-		"nav":      menuKeyMap['nav'],
 		"next":     condition(noMenu, inGameControls['next']),
 		"back":     inGameControls['back'],
 		"history":  condition(()=> show.history && onText(), inGameControls['history']),
@@ -216,7 +215,6 @@ export class UserActionsHandler {
 			case "save"     : layers.save     = !layers.save; break
 			case "config"   : layers.config   = !layers.config; break
 			case "bg_move"  : moveBg(args[0]); break
-			case "nav"		: return directionalNavigate(args[0])
 			default :
 				console.error(`Unimplemented action ${action}`)
 				return false
