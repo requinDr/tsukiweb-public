@@ -1,5 +1,5 @@
-import { processImages } from '../../tsukiweb-common/tools/transform-sprites/processor.js'
-import { logError } from '../../tsukiweb-common/tools/utils/logging.js'
+import { processImages } from '../../tsukiweb-common/tools/transform-sprites/processor.ts'
+import { logger } from '../../tsukiweb-common/tools/utils/logger.ts'
 import fs from 'fs/promises'
 
 /**
@@ -11,7 +11,7 @@ const inputDir = './tachi'
 
 async function main() {
 	try {
-		console.log('--- Starting image transparency processing ---\n')
+		logger.section('Applying transparency to sprites')
 		
 		const tempDir = inputDir + '_temp'
 		await fs.rename(inputDir, tempDir)
@@ -20,9 +20,9 @@ async function main() {
 
 		await fs.rm(tempDir, { recursive: true })
 
-		console.log('\n--- Image transparency processing finished ---')
+		logger.log('Done ✓')
 	} catch (error) {
-		logError(`An error occurred: ${error.message}`)
+		logger.error(`An error occurred: ${(error as Error).message}`)
 	}
 }
 

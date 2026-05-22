@@ -1,5 +1,5 @@
-import { logError } from '../../tsukiweb-common/tools/utils/logging.js'
-import { extractSar } from '../../tsukiweb-common/tools/extract-sar/extractor.js'
+import { logger } from '../../tsukiweb-common/tools/utils/logger.ts'
+import { extractSar } from '../../tsukiweb-common/tools/extract-sar/extractor.ts'
 
 /**
  * 1) Place arc.sar next to this script.
@@ -16,11 +16,11 @@ const extractedDirs = [
 
 async function main() {
 	try {
-		console.log('--- Starting archive extraction ---\n')
+		logger.section(`Extracting files from "${archivePath}"`)
 		await extractSar(archivePath, outputDir, extractedDirs)
-		console.log('\n--- Archive extraction finished ---')
+		logger.log('Done ✓')
 	} catch (error) {
-		logError(`An error occurred: ${error.message}`)
+		logger.error(`An error occurred: ${(error as Error).message}`)
 	}
 }
 

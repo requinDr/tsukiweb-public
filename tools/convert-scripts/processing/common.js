@@ -1,4 +1,4 @@
-import {switch_regex} from "../../../tsukiweb-common/tools/utils/utils.js"
+import {switch_regex} from "../../../tsukiweb-common/tools/convert-scripts/utils.js"
 const CONDITION_REGEXP = /^(?<lhs>(%\w+|\d+))(?<op>[=!><]+)(?<rhs>(%\w+|\d+))$/
 
 function isLogicLabel(label) {
