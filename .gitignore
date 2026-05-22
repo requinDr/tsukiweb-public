@@ -37,3 +37,4 @@ tools/convert-images/input_x2
 tools/extract-sar/arc.sar
 tools/extract-sar/wave
 tools/extract-sar/image
+tools/extract-dat/nscript.dat
