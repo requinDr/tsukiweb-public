@@ -9,6 +9,7 @@ import { preprocessText } from "@tsukiweb-common/utils/utils"
 import { useAutoScroll, useEventState, useMousePointer } from "@tsukiweb-common/hooks"
 import { EndLineIndicator, FfwIndicator } from "@tsukiweb-common/ui-core"
 import { settings } from "engine/settings";
+import AdvTextFrame from "../shared/AdvTextFrame";
 
 type Glyph = "line"|"page"
 const icons: Record<Glyph, string> = {
@@ -122,6 +123,9 @@ const TextLayer = ({ script, display, isTopLayer,
 
   return (
     <div className={classList.join(' ')} {...remaining_props} id="layer-text" aria-hidden={!display}>
+      {textBox === "adv" &&
+        <AdvTextFrame />
+      }
       <div className="text-container" ref={textContainerRef}>
         {previousLines.map((line, i) =>
           <Fragment key={i}>

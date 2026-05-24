@@ -16,32 +16,41 @@
 	}
 
 	&.adv {
-		max-height: 280px;
-		margin-top: auto;
-		padding-top: 1em;
-		padding-bottom: 0.5em;
+		max-height: 260px;
+		min-height: fit-content;
+		padding: 0;
 		background: unset;
-		padding-inline: 5%;
-		justify-self: center;
-		background-image: var(--textbox-adv-bg);
+		position: absolute;
+		top: auto;
+		bottom: 0.5rem;
+		left: 0.5rem;
+		right: 0.5rem;
+		width: unset;
+		font-size: .95em;
+		isolation: isolate;
+		max-width: 1060px;
+		margin-inline: auto;
 
-		&::before {
-			content: '';
+		.adv-frame {
 			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			background-image: linear-gradient(90deg, grey, lightgrey, lightgrey, grey);
-			height: 2px;
+			inset: 0;
+			z-index: -1;
+			width: 100%;
+			height: 100%;
+			pointer-events: none;
 		}
 
 		.text-container {
-			max-width: 1040px;
+			max-width: unset;
 			font-size: clamp(1em, 4.7vmin, 1.5em);
+			padding: 1rem 1.5rem;
 		}
 
 		@media screen and (orientation: portrait) {
 			max-height: 300px;
+		}
+		@media screen and (max-height: 500px) {
+			max-height: 160px;
 		}
 	}
 
