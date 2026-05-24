@@ -76,12 +76,16 @@ export function processImageCmd(
 			if (pos == 'a')
 				script.graphics = {l: "", c: "", r: ""}
 			else if (pos == 'bg') {
+				if (alignment) {
+					displayMode.bgAlignment = alignment
+					displayMode.bgMoveTime = 0
+				} else if (script.graphics.bgAlign) {
+					displayMode.bgAlignment = "center"
+				}
 				script.graphics = {bg: image, l: "", c: "", r: "", bgAlign: alignment}
 			} else {
 				script.graphics[pos as SpritePos] = image
 			}
-			if (alignment)
-				displayMode.bgAlignment = alignment
 			setTransition(undefined)
 			setRocket(undefined)
 		}
