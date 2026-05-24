@@ -63,7 +63,6 @@ export function processImageCmd(
 	if (rest.length > 0 && BG_POSITIONS.some(x=>rest.includes(x))) {
 		alignment = rest.find(x=>BG_POSITIONS.includes(x as typeof BG_POSITIONS[number])) as Graphics['bgAlign']
 		displayMode.bgMoveTime = +time || 0
-		displayMode.bgAlignment = alignment!
 	}
 	if (image)
 		image = extractImage(image)
@@ -81,9 +80,11 @@ export function processImageCmd(
 			} else {
 				script.graphics[pos as SpritePos] = image
 			}
+			if (alignment)
+				displayMode.bgAlignment = alignment
 			setTransition(undefined)
+			setRocket(undefined)
 		}
-		setRocket(undefined)
 		onFinish()
 	}
 

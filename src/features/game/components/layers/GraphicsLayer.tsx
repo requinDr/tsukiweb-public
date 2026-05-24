@@ -83,7 +83,7 @@ const GraphicsLayer = ({ script }: Props) => {
 				rocket={rocket?.layer === 'r' ? rocket : undefined}
 				topLayer={topSprite === 'r'}
 			/>
-			<ForegroundGraphics image={graphics.bg} transition={transition} bgAlign={bgAlign} />
+			<ForegroundGraphics image={graphics.bg} transition={transition} bgAlign={transition?.to.bgAlign ?? bgAlign} />
 		</div>
 	)
 }
