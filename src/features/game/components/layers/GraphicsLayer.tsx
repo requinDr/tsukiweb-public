@@ -10,8 +10,9 @@ type Props = {
 	script: ScriptPlayer
 }
 const GraphicsLayer = ({ script }: Props) => {
-	const [bgAlign] = useObserved(displayMode, 'bgAlignment')
+	const [defaultBgAlign] = useObserved(displayMode, 'bgAlignment')
 	const [bgMoveTime] = useObserved(displayMode, 'bgMoveTime')
+	const [bgAlign, setBgAlign] = useState<string|undefined>(undefined)
 	const [quake, setQuake] = useState<Quake|undefined>(undefined)
 	const [transition, setTransition] = useState<GraphicsTransition|undefined>(undefined)
 	const [monochrome] = useObserved(script.graphics, 'monochrome')
@@ -51,6 +52,12 @@ const GraphicsLayer = ({ script }: Props) => {
 
 		if (appearingSprite)
 			setTopSprite(appearingSprite)
+
+		if (transition.to.bgAlign) {
+			setBgAlign(transition.to.bgAlign)
+		} else {
+			setBgAlign(defaultBgAlign)
+		}
 	}, [transition])
 
 	const { graphics } = script
@@ -61,7 +68,7 @@ const GraphicsLayer = ({ script }: Props) => {
 			style={style}
 			onAnimationEnd={quake?.onFinish}
 		>
-			<BackgroundGraphics image={graphics.bg} bgAlign={bgAlign} />
+			<BackgroundGraphics image={graphics.bg} bgAlign={transition?.to.bg == graphics.bg ? bgAlign : defaultBgAlign} />
 			<SpriteGraphics
 				image={graphics.l}
 				transition={transition}
@@ -83,7 +90,7 @@ const GraphicsLayer = ({ script }: Props) => {
 				rocket={rocket?.layer === 'r' ? rocket : undefined}
 				topLayer={topSprite === 'r'}
 			/>
-			<ForegroundGraphics image={graphics.bg} transition={transition} bgAlign={transition?.to.bgAlign ?? bgAlign} />
+			<ForegroundGraphics image={graphics.bg} transition={transition} bgAlign={bgAlign} />
 		</div>
 	)
 }
