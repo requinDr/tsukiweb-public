@@ -131,6 +131,7 @@ export class InGameLayersHandler {
   }
   exitCurrentMenu() {
     if (this._currentMenu){
+      (document.activeElement as HTMLElement|null)?.blur()
       this._currentMenu = null
       this._notify()
     }
@@ -139,6 +140,7 @@ export class InGameLayersHandler {
     if (this._currentMenu)
       this.exitCurrentMenu()
     else {
+      (document.activeElement as HTMLElement|null)?.blur()
       this.menu = !this.menu
     }
   }

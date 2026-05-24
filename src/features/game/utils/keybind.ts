@@ -33,10 +33,8 @@ export const inGameControls: Record<string, EventFilter[]> = {
         {type: GamepadEvents.BTN_PRESSED, buttonId: Gamepad.DPadDown},
         {type: GamepadEvents.BTN_PRESSED, buttonId: Gamepad.DPadRight}],
     "back":    [
-        {type: 'keydown', key: "Escape"     , repeat: false},
-        {type: 'keydown', key: "Backspace"  , repeat: false},
-        {type: 'contextmenu', [EA.ARGS]: "out"},
-        {type: GamepadEvents.BTN_PRESSED, buttonId: Gamepad.B},
+        // nav "out" fallbacks to "back".
+        // Duplicates bindings were removed from "back".
         {type: GamepadEvents.BTN_PRESSED, buttonId: Gamepad.Start}],
     "history": [
         {type: 'keydown', key: "ArrowUp"    , repeat: false, ctrlKey: false},
@@ -81,7 +79,7 @@ export const menuKeyMap: Record<string, EventFilter[]> = {
         {type: 'keydown', key: "Backspace" , repeat: false, ctrlKey: false, [EA.ARGS]: ["out"]},
         {type: 'keydown', key: "Enter"     , repeat: false, ctrlKey: false, [EA.ARGS]: ["in"]},
         {type: 'keydown', key: "Space"     , repeat: false, ctrlKey: false, [EA.ARGS]: ["in"]},
-        {type: 'contextmenu', [EA.ARGS]: ["out"]},
+        {type: 'contextmenu', [EA.ARGS]: ["out"], [EA.IF]: ()=>!window.matchMedia("(pointer: coarse)").matches},
         {type: GamepadEvents.BTN_PRESSED, buttonId: Gamepad.DPadUp, [EA.ARGS]: ["up"]},
         {type: GamepadEvents.BTN_PRESSED, buttonId: Gamepad.DPadLeft, [EA.ARGS]: ["left"]},
         {type: GamepadEvents.BTN_PRESSED, buttonId: Gamepad.DPadDown, [EA.ARGS]: ["down"]},

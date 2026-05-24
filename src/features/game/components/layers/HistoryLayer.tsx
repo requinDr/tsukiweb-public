@@ -27,7 +27,6 @@ const HistoryLayer = ({ display, history, onRewind, layers, continueScript = tru
 	const rootRef = useRef<HTMLDivElement>(null)
 
 	const handleClose = useCallback(()=> {
-		(document.activeElement as HTMLElement|null)?.blur()
 		layers.back()
 	}, [layers])
 

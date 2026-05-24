@@ -2,7 +2,7 @@ import { Fragment, useCallback, useRef, useMemo, useSyncExternalStore } from 're
 import * as m from "motion/react-m"
 import '@features/game/styles/game.scss';
 import { HiMenu } from 'react-icons/hi';
-import { useResettable } from '@tsukiweb-common/hooks';
+import { useDefaultNavBack, useResettable } from '@tsukiweb-common/hooks';
 import { ScriptPlayer } from 'engine/ScriptPlayer';
 import { history } from 'engine/history';
 import { isPDScene } from 'engine/utils';
@@ -26,6 +26,7 @@ import { useScreenAutoNavigate } from 'app/hooks';
 
 const Window = () => {
 	useScreenAutoNavigate(SCREEN.WINDOW)
+	useDefaultNavBack(()=>actionsHandler.back())
 	const rootRef = useRef(null)
 
 	const [script, remountScript] = useResettable(()=> {
@@ -68,12 +69,6 @@ const Window = () => {
 	useScriptManager({script, history, layers, actionsHandler})
 	useGameInputs({rootRef, layers, actionsHandler, show})
 
-	const onContextMenu = (e: React.MouseEvent<HTMLElement>) => {
-		e.preventDefault()
-		if (!window.matchMedia("(pointer: coarse)").matches)
-			actionsHandler.back()
-	}
-
 	const handleBackConfig = useCallback(() => {
 		layers.back()
 	}, [layers])
@@ -86,8 +81,7 @@ const Window = () => {
 			initial={{opacity: 0}}
 			animate={{opacity: 1}}
 			exit={{opacity: 0}}
-			transition={{duration: 0.3}}
-			onContextMenu={onContextMenu}>
+			transition={{duration: 0.3}}>
 			<Fragment key={script.uid}>
 				<RatioContainer obj={settings} onClick={()=> actionsHandler.next()}>
 					<GraphicsLayer script={script} />
