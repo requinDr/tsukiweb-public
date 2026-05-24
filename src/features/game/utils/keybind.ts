@@ -78,7 +78,7 @@ export const menuKeyMap: Record<string, EventFilter[]> = {
         {type: 'keydown', key: "Escape"    , repeat: false, ctrlKey: false, [EA.ARGS]: ["out"]},
         {type: 'keydown', key: "Backspace" , repeat: false, ctrlKey: false, [EA.ARGS]: ["out"]},
         {type: 'keydown', key: "Enter"     , repeat: false, ctrlKey: false, [EA.ARGS]: ["in"]},
-        {type: 'keydown', key: "Space"     , repeat: false, ctrlKey: false, [EA.ARGS]: ["in"]},
+        {type: 'keydown', code: "Space"    , repeat: false, ctrlKey: false, [EA.ARGS]: ["in"]},
         {type: 'contextmenu', [EA.ARGS]: ["out"], [EA.IF]: ()=>!window.matchMedia("(pointer: coarse)").matches},
         {type: GamepadEvents.BTN_PRESSED, buttonId: Gamepad.DPadUp, [EA.ARGS]: ["up"]},
         {type: GamepadEvents.BTN_PRESSED, buttonId: Gamepad.DPadLeft, [EA.ARGS]: ["left"]},
@@ -95,6 +95,9 @@ export const menuKeyMap: Record<string, EventFilter[]> = {
         {type: GamepadEvents.AXIS_CHANGE, axisId: 3, [EA.IF]: (_, e)=> e.axisValue < -0.5, [EA.ARGS]: ["up"]},
         {type: GamepadEvents.AXIS_CHANGE, axisId: 3, [EA.IF]: (_, e)=> e.axisValue >  0.5, [EA.ARGS]: ["down"]},
     ],
+    "none": [
+        {type: 'contextmenu', [EA.IF]: ()=>window.matchMedia("(pointer: coarse)").matches},
+    ]
 }
 
 GamepadEventGenerator.config({
