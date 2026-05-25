@@ -38,3 +38,6 @@ tools/extract-sar/arc.sar
 tools/extract-sar/wave
 tools/extract-sar/image
 tools/extract-dat/nscript.dat
+tools/_workspace
+tools/arc.sar
+tools/CD_*/
