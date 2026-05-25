@@ -6,7 +6,7 @@ export default {
   ARC_SAR: './arc.sar',
   PUBLIC: '../public',
 
-  CD_everafter: './CD_everafter',
-  CD_original: './CD_original',
-  CD_tsukibako: './CD_tsukibako',
+  CD_EVERAFTER: './CD_everafter',
+  CD_ORIGINAL: './CD_original',
+  CD_TSUKIBAKO: './CD_tsukibako',
 }

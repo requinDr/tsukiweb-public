@@ -7,9 +7,9 @@ export interface ToolConfig {
   WAIFU2X_CAFFE: string
   FFMPEG: string
   PUBLIC: string
-  CD_everafter: string
-  CD_original: string
-  CD_tsukibako: string
+  CD_EVERAFTER: string
+  CD_ORIGINAL: string
+  CD_TSUKIBAKO: string
 }
 
 export interface CdPaths {
@@ -47,16 +47,12 @@ const DEFAULT_CONFIG: ToolConfig = {
   WAIFU2X_CAFFE: 'waifu2x-caffe-cui.exe',
   FFMPEG: 'ffmpeg.exe',
   PUBLIC: '../public',
-  CD_everafter: './CD_everafter',
-  CD_original: './CD_original',
-  CD_tsukibako: './CD_tsukibako',
+  CD_EVERAFTER: './CD_everafter',
+  CD_ORIGINAL: './CD_original',
+  CD_TSUKIBAKO: './CD_tsukibako',
 }
 
-type PartialToolConfig = Partial<ToolConfig> & {
-  CD_EVERAFTER?: string
-  CD_ORIGINAL?: string
-  CD_TSUKIBAKO?: string
-}
+type PartialToolConfig = Partial<ToolConfig>
 
 function hasCode(error: unknown, code: string): boolean {
   return typeof error === 'object' && error !== null && 'code' in error && error.code === code
@@ -80,9 +76,6 @@ export async function loadConfig(): Promise<ToolConfig> {
   return {
     ...DEFAULT_CONFIG,
     ...userConfig,
-    CD_everafter: userConfig.CD_everafter ?? userConfig.CD_EVERAFTER ?? DEFAULT_CONFIG.CD_everafter,
-    CD_original: userConfig.CD_original ?? userConfig.CD_ORIGINAL ?? DEFAULT_CONFIG.CD_original,
-    CD_tsukibako: userConfig.CD_tsukibako ?? userConfig.CD_TSUKIBAKO ?? DEFAULT_CONFIG.CD_tsukibako,
   }
 }
 
@@ -115,15 +108,15 @@ export function buildPaths(config: ToolConfig): Paths {
     wave: path.join(publicAssets, 'static', 'jp', 'wave'),
     cds: {
       CD_everafter: {
-        input: resolveToolPath(config.CD_everafter),
+        input: resolveToolPath(config.CD_EVERAFTER),
         output: path.join(publicAssets, 'static', 'jp', 'CD_everafter'),
       },
       CD_original: {
-        input: resolveToolPath(config.CD_original),
+        input: resolveToolPath(config.CD_ORIGINAL),
         output: path.join(publicAssets, 'static', 'jp', 'CD_original'),
       },
       CD_tsukibako: {
-        input: resolveToolPath(config.CD_tsukibako),
+        input: resolveToolPath(config.CD_TSUKIBAKO),
         output: path.join(publicAssets, 'static', 'jp', 'CD_tsukibako'),
       },
     },

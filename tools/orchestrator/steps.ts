@@ -17,35 +17,21 @@ import {
   directoryHasFiles,
   displayPath,
   ensureEmptyDirInside,
-  isDirectory,
   isMediaFile,
   listFilesRecursive,
-  pathExists,
 } from '../../tsukiweb-common/tools/utils/fs-utils.ts'
-import { resolveExecutable, runCommand } from '../../tsukiweb-common/tools/utils/process-utils.ts'
-
-interface FailureState {
-  target: string
-  state: string
-}
-
-export interface CheckDetail {
-  ok: boolean
-  failure: FailureState | string
-}
-
-export interface Check {
-  ok: boolean
-  details: CheckDetail[]
-}
-
-export interface Step {
-  id: number
-  title: string
-  canRun: () => Promise<Check>
-  isDone: () => Promise<Check>
-  run: () => Promise<void>
-}
+import { resolveExecutable, runCommand, withWorkingDirectory } from '../../tsukiweb-common/tools/utils/process-utils.ts'
+import {
+  check,
+  combine,
+  directoryExistsCheck,
+  fileExistsCheck,
+  nonEmptyDirectoryCheck,
+  stateFailure,
+  type Check,
+  type CheckDetail,
+  type OrchestratorStep,
+} from '../../tsukiweb-common/tools/orchestrator/utils.ts'
 
 interface StepContext {
   config: ToolConfig
@@ -95,33 +81,6 @@ const DOWNLOAD_URLS = {
   ffmpeg: 'https://www.ffmpeg.org/download.html',
 }
 
-function check(ok: boolean, failure: FailureState | string): CheckDetail {
-  return { ok, failure }
-}
-
-function stateFailure(target: string, state: string): FailureState {
-  return { target, state }
-}
-
-function combine(details: CheckDetail[]): Check {
-  return {
-    ok: details.every(detail => detail.ok),
-    details,
-  }
-}
-
-async function directoryCheck(dirPath: string, label = displayPath(dirPath)): Promise<CheckDetail> {
-  return check(await isDirectory(dirPath), stateFailure(label, 'missing'))
-}
-
-async function nonEmptyDirectoryCheck(dirPath: string, label = displayPath(dirPath)): Promise<CheckDetail> {
-  return check(await directoryHasFiles(dirPath), stateFailure(label, 'empty'))
-}
-
-async function fileCheck(filePath: string, label = displayPath(filePath)): Promise<CheckDetail> {
-  return check(await pathExists(filePath), stateFailure(label, 'missing'))
-}
-
 async function arcSarDirsCheck(paths: Paths): Promise<Check> {
   return combine(await Promise.all(
     ARC_SAR_DIRS.map(dir => nonEmptyDirectoryCheck(path.join(paths.arcSar, dir), `_workspace/arc_sar/${dir}`))
@@ -158,16 +117,6 @@ async function prepareInputFolder(paths: Paths): Promise<void> {
 
   await copyDirectory(path.join(paths.arcSar, 'image', 'bg'), path.join(paths.input, 'bg'), paths.workspace)
   await copyDirectory(path.join(paths.arcSar, 'image', 'event'), path.join(paths.input, 'event'), paths.workspace)
-}
-
-async function withWorkingDirectory<T>(cwd: string, fn: () => T | Promise<T>): Promise<T> {
-  const previous = process.cwd()
-  process.chdir(cwd)
-  try {
-    return await fn()
-  } finally {
-    process.chdir(previous)
-  }
 }
 
 async function runScripts(paths: Paths): Promise<void> {
@@ -320,7 +269,7 @@ async function executableCheck(configValue: string, baseDir: string, downloadUrl
   return check(executable.found, `${displayName} is unavailable. Download: ${downloadUrl}`)
 }
 
-export function createSteps(context: StepContext): Step[] {
+export function createSteps(context: StepContext): OrchestratorStep[] {
   const { config, paths } = context
 
   return [
@@ -328,7 +277,7 @@ export function createSteps(context: StepContext): Step[] {
       id: 1,
       title: 'Extract arc.sar from the original game',
       canRun: async () => combine([
-        await fileCheck(paths.arcSarArchive, displayPath(paths.arcSarArchive)),
+        await fileExistsCheck(paths.arcSarArchive, displayPath(paths.arcSarArchive)),
       ]),
       isDone: async () => arcSarDirsCheck(paths),
       run: async () => extractSar(paths.arcSarArchive, paths.arcSar, ARC_SAR_DIRS),
@@ -373,12 +322,12 @@ export function createSteps(context: StepContext): Step[] {
       id: 5,
       title: 'Convert images',
       canRun: async () => combine([
-        await directoryCheck(paths.publicAssets, displayPath(paths.publicAssets)),
+        await directoryExistsCheck(paths.publicAssets, displayPath(paths.publicAssets)),
         await nonEmptyDirectoryCheck(paths.input, '_workspace/input'),
         await nonEmptyDirectoryCheck(paths.inputX2, '_workspace/input_x2'),
       ]),
       isDone: async () => combine([
-        await directoryCheck(paths.publicAssets, displayPath(paths.publicAssets)),
+        await directoryExistsCheck(paths.publicAssets, displayPath(paths.publicAssets)),
         await nonEmptyDirectoryCheck(paths.images, displayPath(paths.images)),
         await nonEmptyDirectoryCheck(paths.imagesThumb, displayPath(paths.imagesThumb)),
       ]),
@@ -388,11 +337,11 @@ export function createSteps(context: StepContext): Step[] {
       id: 6,
       title: 'Create flowchart spritesheets',
       canRun: async () => combine([
-        await directoryCheck(paths.publicAssets, displayPath(paths.publicAssets)),
+        await directoryExistsCheck(paths.publicAssets, displayPath(paths.publicAssets)),
         await nonEmptyDirectoryCheck(paths.input, '_workspace/input'),
       ]),
       isDone: async () => combine([
-        await directoryCheck(paths.publicAssets, displayPath(paths.publicAssets)),
+        await directoryExistsCheck(paths.publicAssets, displayPath(paths.publicAssets)),
         await nonEmptyDirectoryCheck(paths.flowchartSpritesheets, displayPath(paths.flowchartSpritesheets)),
       ]),
       run: async () => runSpritesheets(paths),
@@ -432,7 +381,7 @@ export function createSteps(context: StepContext): Step[] {
         ])
       },
       isDone: async () => combine(await Promise.all(
-        Object.entries(paths.cds).map(async ([name, dirs]) =>
+        Object.values(paths.cds).map(async dirs =>
           check(
             await directoryHasFiles(dirs.output),
             stateFailure(displayPath(dirs.output), 'empty'),

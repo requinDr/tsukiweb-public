@@ -1,12 +1,19 @@
-import { ensureDir } from '../tsukiweb-common/tools/utils/fs-utils.ts'
-import { createSteps, type Step } from './orchestrator/steps.ts'
+import { displayPath, ensureDir } from '../tsukiweb-common/tools/utils/fs-utils.ts'
+import type { OrchestratorStep } from '../tsukiweb-common/tools/orchestrator/utils.ts'
+import { createSteps } from './orchestrator/steps.ts'
 import { loadConfig, buildPaths, type Paths } from './orchestrator/config.ts'
-import { collectStatuses, createPrompt, printCheckDetails, printStatus } from './orchestrator/ui.ts'
+import {
+  collectStatuses,
+  createPrompt,
+  printCheckDetails,
+  statusLine,
+  type StepStatus,
+} from '../tsukiweb-common/tools/orchestrator/ui.ts'
 import { logger } from '../tsukiweb-common/tools/utils/logger.ts'
 
 interface OrchestratorContext {
   paths: Paths
-  steps: Step[]
+  steps: OrchestratorStep[]
 }
 
 async function getContext(): Promise<OrchestratorContext> {
@@ -20,7 +27,21 @@ async function getContext(): Promise<OrchestratorContext> {
   }
 }
 
-async function runStep(step: Step): Promise<void> {
+function printStatus(statuses: StepStatus[], paths: Paths): void {
+  console.log('\nAssets builder')
+  console.log('Run the steps in order, one at a time.')
+  console.log(`Workspace : ${displayPath(paths.workspace)}`)
+  console.log(`Public    : ${displayPath(paths.publicAssets)}\n`)
+
+  for (const [index, { step, canRun, done }] of statuses.entries()) {
+    console.log(`${step.id}. ${step.title}`)
+    console.log(statusLine('Runnable', canRun))
+    console.log(statusLine('Finished', done))
+    if (index < statuses.length - 1) console.log('')
+  }
+}
+
+async function runStep(step: OrchestratorStep): Promise<void> {
   const canRun = await step.canRun()
 
   if (!canRun.ok) {
@@ -50,7 +71,7 @@ async function runStep(step: Step): Promise<void> {
   printCheckDetails(done)
 }
 
-function findStep(steps: Step[], value: string): Step | undefined {
+function findStep(steps: OrchestratorStep[], value: string): OrchestratorStep | undefined {
   const stepId = Number.parseInt(value, 10)
   return steps.find(step => step.id === stepId)
 }
