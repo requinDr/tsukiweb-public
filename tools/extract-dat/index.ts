@@ -13,7 +13,6 @@ async function main() {
     logger.log('Done ✓')
   } catch (error) {
     logger.error(`Error: ${(error as Error).message}`)
-    process.exit(1)
   }
 }
 
