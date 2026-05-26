@@ -24,7 +24,6 @@ import { resolveExecutable, runCommand, withWorkingDirectory } from '../../tsuki
 import {
   check,
   combine,
-  directoryExistsCheck,
   fileExistsCheck,
   nonEmptyDirectoryCheck,
   stateFailure,
@@ -322,12 +321,10 @@ export function createSteps(context: StepContext): OrchestratorStep[] {
       id: 5,
       title: 'Convert images',
       canRun: async () => combine([
-        await directoryExistsCheck(paths.publicAssets, displayPath(paths.publicAssets)),
         await nonEmptyDirectoryCheck(paths.input, '_workspace/input'),
         await nonEmptyDirectoryCheck(paths.inputX2, '_workspace/input_x2'),
       ]),
       isDone: async () => combine([
-        await directoryExistsCheck(paths.publicAssets, displayPath(paths.publicAssets)),
         await nonEmptyDirectoryCheck(paths.images, displayPath(paths.images)),
         await nonEmptyDirectoryCheck(paths.imagesThumb, displayPath(paths.imagesThumb)),
       ]),
@@ -337,11 +334,9 @@ export function createSteps(context: StepContext): OrchestratorStep[] {
       id: 6,
       title: 'Create flowchart spritesheets',
       canRun: async () => combine([
-        await directoryExistsCheck(paths.publicAssets, displayPath(paths.publicAssets)),
-        await nonEmptyDirectoryCheck(paths.input, '_workspace/input'),
+        await nonEmptyDirectoryCheck(paths.imagesThumb, displayPath(paths.imagesThumb)),
       ]),
       isDone: async () => combine([
-        await directoryExistsCheck(paths.publicAssets, displayPath(paths.publicAssets)),
         await nonEmptyDirectoryCheck(paths.flowchartSpritesheets, displayPath(paths.flowchartSpritesheets)),
       ]),
       run: async () => runSpritesheets(paths),
