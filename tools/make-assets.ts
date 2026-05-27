@@ -10,6 +10,7 @@ import {
   type StepStatus,
 } from '../tsukiweb-common/tools/orchestrator/ui.ts'
 import { logger } from '../tsukiweb-common/tools/utils/logger.ts'
+import { formatDuration } from '../tsukiweb-common/tools/utils/utils.ts';
 
 interface OrchestratorContext {
   paths: Paths
@@ -51,23 +52,28 @@ async function runStep(step: OrchestratorStep): Promise<void> {
   }
 
   console.log(`\n--- Step ${step.id}: ${step.title} ---`)
+  const startedAt = performance.now()
+  let duration = ''
+
   try {
     logger.clear()
     await step.run()
+    duration = formatDuration(performance.now() - startedAt)
     logger.clear()
   } catch (error) {
+    duration = formatDuration(performance.now() - startedAt)
     logger.clear()
-    console.error(`\nError while running step ${step.id}:`, error)
+    console.error(`\nError while running step ${step.id} after ${duration}:`, error)
     return
   }
 
   const done = await step.isDone()
   if (done.ok) {
-    console.log(`\nStep ${step.id} completed successfully.`)
+    console.log(`\nStep ${step.id} completed successfully in ${duration}.`)
     return
   }
 
-  console.log(`\nStep ${step.id} finished, but its done condition is not valid.`)
+  console.log(`\nStep ${step.id} finished in ${duration}, but its done condition is not valid.`)
   printCheckDetails(done)
 }
 
