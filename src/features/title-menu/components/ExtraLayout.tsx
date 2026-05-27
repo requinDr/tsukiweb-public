@@ -9,7 +9,7 @@ import { useEclipseUnlocked } from "features/endings/hooks/useEclipseUnlocked";
 import { useLanguageRefresh } from "app/hooks";
 import { SCREEN, displayMode } from "app/utils/display";
 import { useDefaultNavBack } from "@tsukiweb-common/hooks"
-
+import Ornament from "@assets/images/ornament.webp"
 
 const ExtraLayout = ({ children }: PropsWithChildren) => {
 	return (
@@ -19,6 +19,8 @@ const ExtraLayout = ({ children }: PropsWithChildren) => {
 			initial={{opacity: 0}}
 			animate={{opacity: 1}}
 			exit={{opacity: 0}}>
+			<img src={Ornament} alt="ornament" className="leftOrnament" />
+			<img src={Ornament} alt="ornament" className="rightOrnament" />
 			<ExtraMenu />
 
 			<m.div

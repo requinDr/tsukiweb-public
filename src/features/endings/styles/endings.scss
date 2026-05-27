@@ -6,7 +6,7 @@
 	.endings-list {
 		margin-top: 1.4em;
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(min(208px, 25%), 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(min(210px, 25%), 1fr));
 		isolation: isolate;
 		gap: 8px;
 		flex-grow: 0;
@@ -36,16 +36,6 @@
 			&.his { @include ending-color(var(--route-his)) }
 			&.koha { @include ending-color(var(--route-koha)) }
 			&.eclipse { @include ending-color(var(--route-eclipse)) }
-
-			&::before {
-				content: "";
-				position: absolute;
-				inset: 5px;
-				z-index: 1;
-				border-radius: inherit;
-				corner-shape: inherit;
-				border: 1px solid rgba(255 255 255 / 0.5);
-			}
 		}
 
 		.separator {

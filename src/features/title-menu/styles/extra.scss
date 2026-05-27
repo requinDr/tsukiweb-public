@@ -3,10 +3,31 @@
 	grid-template-columns: 210px 1fr;
 	grid-template-areas: "extra-menu extra-content";
 	padding: 0;
-	column-gap: 1em;
+	column-gap: .5em;
+
+	.rightOrnament, .leftOrnament {
+		position: absolute;
+		pointer-events: none;
+		opacity: 0.8;
+		width: clamp(150px, 20vw, 250px);
+		-webkit-mask-image: linear-gradient(to right, transparent, black 8em);
+		mask-image: linear-gradient(to right, transparent, black 8em);
+		z-index: -1;
+	}
+	.rightOrnament {
+		top: 0;
+		right: 0;
+	}
+	.leftOrnament {
+		top: 0;
+		left: 0;
+		transform: rotate(0deg) scale(-1, 1);
+	}
 
 	.page-title {
 		padding-inline: 0;
+		font-size: 2.8em;
+		font-weight: 600;
 	}
 
 	.extra-menu {
@@ -15,6 +36,17 @@
 		padding: var(--page-padding);
 		padding-right: 0;
 		flex-direction: column;
+		position: relative;
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: -1rem;
+			right: 0;
+			z-index: -1;
+			background-image: linear-gradient(180deg, hsl(225 100% 2% / 30%), transparent);
+		}
 
 		@media (pointer: coarse) {
 			&::-webkit-scrollbar {
@@ -28,7 +60,6 @@
 			margin-bottom: 1em;
 			display: flex;
 			flex-direction: column;
-			gap: 1.8em;
 
 			.menu-item {
 				text-align: start;
@@ -36,6 +67,7 @@
 				font-weight: 500;
 				letter-spacing: 1px;
 				width: fit-content;
+				padding-block: .6em;
 			}
 		}
 		.back-button {

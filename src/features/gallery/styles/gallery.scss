@@ -1,4 +1,5 @@
 @use '../../../../tsukiweb-common/src/styles/partials/_components';
+@use '../../../../tsukiweb-common/src/ui-core/styles/mixins' as *;
 
 #gallery, #endings, #plus-disc {
 	height: 100%;
@@ -18,7 +19,7 @@
 
 	.gallery-container {
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(min(184px, 100%), 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(min(178px, 100%), 1fr));
 		gap: 8px;
 		padding-bottom: 40px;
 		padding-inline: var(--page-padding);
@@ -30,12 +31,7 @@
 		button {
 			overflow: hidden;
 			position: relative;
-
-			&:hover, &:focus-visible, .keyboard-navigating &:focus {
-				img {
-					transform: scale(1.06);
-				}
-			}
+			@include active-shadow;
 		}
 		
 		.thumb, .placeholder {
@@ -43,9 +39,9 @@
 			aspect-ratio: 4/3;
 			width: 100%;
 		}
-		button, .thumb, .placeholder {
+		.placeholder {
 			&:focus-visible, .keyboard-navigating &:focus {
-				outline: 3px solid var(--color-link);
+				outline: 1px solid var(--color-link);
 			}
 		}
 		.thumb {
@@ -66,8 +62,8 @@
 
 		.alternative {
 			position: absolute;
-			top: 0px;
-			right: 0px;
+			bottom: 0;
+			right: 0;
 			padding: 1px 8px 0 16px;
 			font-size: 0.9em;
 			background-image: linear-gradient(270deg, var(--surface-dark) 70%, transparent);
