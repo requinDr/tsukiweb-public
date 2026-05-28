@@ -1,11 +1,12 @@
 import { objectMatch, splitFirst } from "@tsukiweb-common/utils/utils";
 import { settings } from "../../../engine/settings";
-import { wordImage } from "translation/assets";
+import { imageSrc, wordImage } from "translation/assets";
 import { BG_POSITIONS, Graphics, GraphicsTransition, Quake, Rocket, SpritePos, SPRITES_POSITIONS } from "@tsukiweb-common/graphics";
 import { ScriptPlayer } from "engine/ScriptPlayer";
 import Timer from "@tsukiweb-common/utils/timer";
 import cg from "features/gallery/utils/gallery";
 import { displayMode } from "app/utils/display";
+import { isImage, preloadImage } from "@tsukiweb-common/utils/images";
 
 
 /**
@@ -42,6 +43,14 @@ function extractImage(image: string) {
 	return text ? `${image}$${text}` : image
 }
 
+function preloadGraphic(image: string) {
+	let src = splitFirst(image, '$')[0]
+	if (!src || !isImage(src))
+		return
+	if (src.startsWith('"'))
+		src = src.replaceAll('"', '')
+	return preloadImage(imageSrc(src)).catch(() => {})
+}
 
 //##############################################################################
 //#region                       COMMAND HANDLERS
@@ -66,12 +75,17 @@ export function processImageCmd(
 	}
 	if (image)
 		image = extractImage(image)
+	const duration = +time || 0
 	const change = (pos == 'a' ) ? { l: "", c: "", r: "" }
 			 : (pos == 'bg') ? { bg: image, bgAlign: alignment }
 			 : { [pos]: image }
 	const to = (pos == 'bg') ? { l: "", c: "", r: "", ...change } : change
+	let finished = false
 
 	const _onFinish = ()=> {
+		if (finished)
+			return
+		finished = true
 		if (!objectMatch(script.graphics, to)) {
 			if (pos == 'a')
 				script.graphics = {l: "", c: "", r: ""}
@@ -94,21 +108,29 @@ export function processImageCmd(
 
 	// get image
 	if (!objectMatch(script.graphics, to)) {
-		setTransition({
-			to: change,
-			effect,
-			duration: +time,
-			onFinish: _onFinish
-		})
-		if (to.bgAlign && to.bg == script.graphics.bg) {
-			// Alignment transitions don't automatically call 'onFinish'.
-			// Simulate with timer as a workaround
-			const timer = new Timer(+time, _onFinish, false)
-			timer.start()
-			return { next: timer.skip.bind(timer) }
-		} else {
-			return { next: _onFinish }
+		if (duration <= 0) {
+			_onFinish()
+			return
 		}
+		let timer: Timer|undefined
+		const startTransition = () => {
+			if (finished)
+				return
+			setTransition({
+				to: change,
+				effect,
+				duration,
+				onFinish: _onFinish
+			})
+			if (to.bgAlign && to.bg == script.graphics.bg) {
+				// Alignment transitions don't automatically call 'onFinish'.
+				// Simulate with timer as a workaround.
+				timer = new Timer(duration, _onFinish, false)
+				timer.start()
+			}
+		}
+		preloadGraphic(image)?.finally(startTransition) ?? startTransition()
+		return { next: () => timer ? timer.skip() : _onFinish() }
 	} else {
 		setTransition(undefined)
 	}
