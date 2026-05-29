@@ -264,6 +264,34 @@
 		margin-top: 1em;
 		margin-bottom: 2em;
 	}
+
+	@media screen and (orientation: landscape) and (max-height: 540px) {
+		.content {
+			display: grid;
+			grid-template-columns: auto 1fr;
+			min-height: 0;
+
+			.languages {
+				max-height: none;
+				border: 0;
+				.language {
+					justify-content: start;
+				}
+			}
+			.translation-details {
+				height: auto;
+				padding-bottom: 3em;
+			}
+		}
+		.close-btn {
+			position: absolute;
+			bottom: 1em;
+			margin: 0 auto;
+			left: 0;
+			right: 0;
+			width: fit-content;
+		}
+	}
 }
 
 

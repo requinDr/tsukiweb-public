@@ -28,8 +28,6 @@
 		.unlocked {
 			position: relative;
 			overflow: hidden;
-			border-radius: 8px;
-			corner-shape: scoop;
 			&.ark { @include ending-color(var(--route-ark)) }
 			&.cel { @include ending-color(var(--route-cel)) }
 			&.aki { @include ending-color(var(--route-aki)) }

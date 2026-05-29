@@ -250,6 +250,15 @@
 		}
 	}
 
+	@media screen and (orientation: landscape) and (max-height: 680px) {
+		.tabs {
+			flex-direction: column;
+
+			.tab {
+				width: 100%;
+			}
+		}
+	}
 	@media (max-width: 760px) {
 		section {
 			padding-inline: 0;

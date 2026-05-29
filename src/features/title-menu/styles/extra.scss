@@ -106,14 +106,16 @@
 				width: 100%;
 				min-width: 0;
 				margin: 0;
-				padding-block: 1em;
+				padding-top: .5em;
 				padding-inline: 2rem;
 				font-size: 0.8em;
 				gap: 1.8em;
 				mask-image: linear-gradient(to right, black 95%, transparent 100%);
 				flex-direction: row;
+				touch-action: pan-x;
 
 				@media (pointer: coarse) {
+					scrollbar-width: none;
 					&::-webkit-scrollbar {
 						display: none;
 					}
@@ -131,10 +133,15 @@
 
 	@media screen and (orientation: landscape) and (max-height: 600px) {
 		grid-template-columns: minmax(160px, min-content) 1fr;
+		column-gap: 0;
 		.extra-menu {
 			font-size: .8em;
 			overflow-y: auto;
-			padding-right: 0;
+			padding-left: calc(var(--page-padding) + env(safe-area-inset-left, 0));
+
+			&::before {
+				left: calc(-1rem - env(safe-area-inset-left, 0));
+			}
 		}
 	}
 }
