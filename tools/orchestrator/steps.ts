@@ -6,9 +6,9 @@ import { processImages as applySpriteTransparency } from '../../tsukiweb-common/
 import { processImages as convertImages } from '../../tsukiweb-common/tools/convert-images/processor.ts'
 import { mergeVertical } from '../../tsukiweb-common/tools/convert-images/editor.ts'
 import { buildSpritesheets } from '../../tsukiweb-common/tools/generate-thumbnails/processor.ts'
-import { main as runLogicScripts } from '../convert-scripts/processing/logic.js'
-import { main as runSceneScripts } from '../convert-scripts/processing/scenes.js'
-import { main as runPlusDiscScripts } from '../convert-scripts/plus_disc.js'
+import { main as runLogicScripts } from '../helpers/convert-scripts/processing/logic.js'
+import { main as runSceneScripts } from '../helpers/convert-scripts/processing/scenes.js'
+import { main as runPlusDiscScripts } from '../helpers/convert-scripts/plus_disc.js'
 import type { Scene } from '../../tsukiweb-common/tools/generate-thumbnails/processor.ts'
 import type { Paths, ToolConfig } from './config.ts'
 

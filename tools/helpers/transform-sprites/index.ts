@@ -1,5 +1,5 @@
-import { processImages } from '../../tsukiweb-common/tools/transform-sprites/processor.ts'
-import { logger } from '../../tsukiweb-common/tools/utils/logger.ts'
+import { processImages } from '../../../tsukiweb-common/tools/transform-sprites/processor.ts'
+import { logger } from '../../../tsukiweb-common/tools/utils/logger.ts'
 import fs from 'fs/promises'
 
 /**

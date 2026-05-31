@@ -1,5 +1,5 @@
-import { logger } from '../../tsukiweb-common/tools/utils/logger.ts'
-import { extractSar } from '../../tsukiweb-common/tools/extract-sar/extractor.ts'
+import { logger } from '../../../tsukiweb-common/tools/utils/logger.ts'
+import { extractSar } from '../../../tsukiweb-common/tools/extract-sar/extractor.ts'
 
 /**
  * 1) Place arc.sar next to this script.

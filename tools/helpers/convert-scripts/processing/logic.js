@@ -5,14 +5,14 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url'
-import { parseScript } from '../../../tsukiweb-common/tools/convert-scripts/parsers/nscriptr.js';
-import { CommandToken, ConditionToken, LabelToken, ReturnToken, TextToken, Token } from '../../../tsukiweb-common/tools/convert-scripts/parsers/utils.js'
+import { parseScript } from '../../../../tsukiweb-common/tools/convert-scripts/parsers/nscriptr.js';
+import { CommandToken, ConditionToken, LabelToken, ReturnToken, TextToken, Token } from '../../../../tsukiweb-common/tools/convert-scripts/parsers/utils.js'
 import { generateScenes, splitBlocks } from '../utils/nscriptr_convert.js';
-import { logError, logProgress } from '../../../tsukiweb-common/tools/utils/logging.js';
+import { logError, logProgress } from '../../../../tsukiweb-common/tools/utils/logging.js';
 import { updateGameJsonWithChoices } from '../utils/choices_extractor.js';
 import { isLogicLabel, processVarName, processCondition } from './common.js';
 
-const outputPathPrefix = '../../public/static/'
+const outputPathPrefix = '../../../public/static/'
 const outputDir = 'scenes'
 const fullscripts = [
 	['jp', 'fullscript_jp.txt'],

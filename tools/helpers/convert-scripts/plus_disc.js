@@ -5,13 +5,13 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url'
-import { parseScript } from '../../tsukiweb-common/tools/convert-scripts/parsers/kagScript.js';
-import { CommandToken, LabelToken, StrReader, TextToken, Token } from '../../tsukiweb-common/tools/convert-scripts/parsers/utils.js'
-import { logError, logProgress } from '../../tsukiweb-common/tools/utils/logging.js';
+import { parseScript } from '../../../tsukiweb-common/tools/convert-scripts/parsers/kagScript.js';
+import { CommandToken, LabelToken, StrReader, TextToken, Token } from '../../../tsukiweb-common/tools/convert-scripts/parsers/utils.js'
+import { logError, logProgress } from '../../../tsukiweb-common/tools/utils/logging.js';
 import { generateScenes, splitBlocks, writeScenes } from './utils/nscriptr_convert.js';
 
 
-const outputPathPrefix = '../../public/static/'
+const outputPathPrefix = '../../../public/static/'
 const outputDir = 'scenes'
 const langs = [
   'jp',

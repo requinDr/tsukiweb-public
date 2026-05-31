@@ -98,7 +98,7 @@ export function buildPaths(config: ToolConfig): Paths {
     arcSar,
     input: path.join(workspace, 'input'),
     inputX2: path.join(workspace, 'input_x2'),
-    convertScriptsTool: path.join(TOOLS_DIR, 'convert-scripts'),
+    convertScriptsTool: path.join(TOOLS_DIR, 'helpers', 'convert-scripts'),
     sceneAttrs: path.join(REPO_DIR, 'src', 'assets', 'game', 'scene_attrs.json'),
     sceneAssets: path.join(REPO_DIR, 'src', 'assets', 'game'),
     staticJp: path.join(publicAssets, 'static', 'jp'),

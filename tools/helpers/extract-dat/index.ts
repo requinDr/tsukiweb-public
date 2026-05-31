@@ -1,8 +1,8 @@
-import { logger } from '../../tsukiweb-common/tools/utils/logger.ts'
-import { extractNscript } from '../../tsukiweb-common/tools/extract-dat/extractor.ts'
+import { logger } from '../../../tsukiweb-common/tools/utils/logger.ts'
+import { extractNscript } from '../../../tsukiweb-common/tools/extract-dat/extractor.ts'
 
 const INPUT_FILE  = './nscript.dat'
-const OUTPUT_FILE = '../../public/static/jp/fullscript_jp.txt'
+const OUTPUT_FILE = '../../../public/static/jp/fullscript_jp.txt'
 
 async function main() {
   logger.section('nscript.dat extraction')

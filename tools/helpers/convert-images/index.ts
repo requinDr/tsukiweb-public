@@ -1,7 +1,7 @@
 import path from 'path'
-import { processImages } from '../../tsukiweb-common/tools/convert-images/processor.ts'
-import { mergeVertical } from '../../tsukiweb-common/tools/convert-images/editor.ts'
-import { logger } from '../../tsukiweb-common/tools/utils/logger.ts'
+import { processImages } from '../../../tsukiweb-common/tools/convert-images/processor.ts'
+import { mergeVertical } from '../../../tsukiweb-common/tools/convert-images/editor.ts'
+import { logger } from '../../../tsukiweb-common/tools/utils/logger.ts'
 
 /**
  * Put in the "input" folder: bg, event and tachi folders.
@@ -9,7 +9,7 @@ import { logger } from '../../tsukiweb-common/tools/utils/logger.ts'
  * Run this script to generate "images_thumb" and "images" directories.
  */
 
-const outputDir = "../../public/static/jp/"
+const outputDir = '../../../public/static/jp/'
 
 const thumbConfig = {
   inputDir: 'input',
