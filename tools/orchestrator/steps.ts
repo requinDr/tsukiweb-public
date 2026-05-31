@@ -81,6 +81,20 @@ async function arcSarDirsCheck(paths: Paths): Promise<Check> {
   ))
 }
 
+async function inputImageDirChecks(paths: Paths): Promise<CheckDetail[]> {
+  return Promise.all([
+    nonEmptyDirectoryCheck(path.join(paths.input, 'tachi'), '_workspace/input/tachi'),
+    nonEmptyDirectoryCheck(path.join(paths.input, 'bg'), '_workspace/input/bg'),
+    nonEmptyDirectoryCheck(path.join(paths.input, 'event'), '_workspace/input/event'),
+  ])
+}
+
+async function extractedAssetsAndInputImagesCheck(paths: Paths): Promise<Check> {
+  const extractedAssets = await arcSarDirsCheck(paths)
+  const inputImages = await inputImageDirChecks(paths)
+  return combine([...extractedAssets.details, ...inputImages])
+}
+
 async function scriptsOutputCheck(paths: Paths): Promise<Check> {
   const checks: CheckDetail[] = []
 
@@ -111,6 +125,11 @@ async function prepareInputFolder(paths: Paths): Promise<void> {
 
   await copyDirectory(path.join(paths.arcSar, 'image', 'bg'), path.join(paths.input, 'bg'), paths.workspace)
   await copyDirectory(path.join(paths.arcSar, 'image', 'event'), path.join(paths.input, 'event'), paths.workspace)
+}
+
+async function extractAssetsAndPrepareImages(paths: Paths): Promise<void> {
+  await extractSar(paths.arcSarArchive, paths.arcSar, ARC_SAR_DIRS)
+  await prepareInputFolder(paths)
 }
 
 async function runScripts(paths: Paths): Promise<void> {
@@ -269,12 +288,12 @@ export function createSteps(context: StepContext): OrchestratorStep[] {
   return [
     {
       id: 1,
-      title: 'Extract arc.sar from the original game',
+      title: 'Extract assets from arc.sar and prepare images',
       canRun: async () => combine([
         await fileExistsCheck(paths.arcSarArchive, displayPath(paths.arcSarArchive)),
       ]),
-      isDone: async () => arcSarDirsCheck(paths),
-      run: async () => extractSar(paths.arcSarArchive, paths.arcSar, ARC_SAR_DIRS),
+      isDone: async () => extractedAssetsAndInputImagesCheck(paths),
+      run: async () => extractAssetsAndPrepareImages(paths),
     },
     {
       id: 2,
@@ -285,27 +304,10 @@ export function createSteps(context: StepContext): OrchestratorStep[] {
     },
     {
       id: 3,
-      title: 'Prepare images',
-      canRun: async () => combine([
-        await nonEmptyDirectoryCheck(path.join(paths.arcSar, 'image', 'tachi'), '_workspace/arc_sar/image/tachi'),
-        await nonEmptyDirectoryCheck(path.join(paths.arcSar, 'image', 'bg'), '_workspace/arc_sar/image/bg'),
-        await nonEmptyDirectoryCheck(path.join(paths.arcSar, 'image', 'event'), '_workspace/arc_sar/image/event'),
-      ]),
-      isDone: async () => combine([
-        await nonEmptyDirectoryCheck(path.join(paths.input, 'tachi'), '_workspace/input/tachi'),
-        await nonEmptyDirectoryCheck(path.join(paths.input, 'bg'), '_workspace/input/bg'),
-        await nonEmptyDirectoryCheck(path.join(paths.input, 'event'), '_workspace/input/event'),
-      ]),
-      run: async () => prepareInputFolder(paths),
-    },
-    {
-      id: 4,
       title: 'Upscale images with waifu2x',
       canRun: async () => combine([
         await executableCheck(config.WAIFU2X_CAFFE, paths.tools),
-        await nonEmptyDirectoryCheck(path.join(paths.input, 'tachi'), '_workspace/input/tachi'),
-        await nonEmptyDirectoryCheck(path.join(paths.input, 'bg'), '_workspace/input/bg'),
-        await nonEmptyDirectoryCheck(path.join(paths.input, 'event'), '_workspace/input/event'),
+        ...(await inputImageDirChecks(paths)),
       ]),
       isDone: async () => combine([
         await nonEmptyDirectoryCheck(paths.inputX2, '_workspace/input_x2'),
@@ -313,7 +315,7 @@ export function createSteps(context: StepContext): OrchestratorStep[] {
       run: async () => runWaifu2x(context),
     },
     {
-      id: 5,
+      id: 4,
       title: 'Convert images',
       canRun: async () => combine([
         await nonEmptyDirectoryCheck(paths.input, '_workspace/input'),
@@ -326,7 +328,7 @@ export function createSteps(context: StepContext): OrchestratorStep[] {
       run: async () => runImageConversion(paths),
     },
     {
-      id: 6,
+      id: 5,
       title: 'Create flowchart spritesheets',
       canRun: async () => combine([
         await nonEmptyDirectoryCheck(paths.imagesThumb, displayPath(paths.imagesThumb)),
@@ -337,7 +339,7 @@ export function createSteps(context: StepContext): OrchestratorStep[] {
       run: async () => runSpritesheets(paths),
     },
     {
-      id: 7,
+      id: 6,
       title: 'Convert audio wave files',
       canRun: async () => combine([
         await executableCheck(config.FFMPEG, paths.tools),
@@ -349,7 +351,7 @@ export function createSteps(context: StepContext): OrchestratorStep[] {
       run: async () => runWaveConversion(context),
     },
     {
-      id: 8,
+      id: 7,
       title: 'Convert audio CDs',
       canRun: async () => {
         const executable = await executableCheck(config.FFMPEG, paths.tools)
