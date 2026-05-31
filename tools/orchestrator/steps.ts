@@ -75,11 +75,6 @@ const FFMPEG_AUDIO_ARGS = [
   '-f', 'webm',
 ]
 
-const DOWNLOAD_URLS = {
-  waifu2x: 'https://github.com/lltcggie/waifu2x-caffe/releases',
-  ffmpeg: 'https://www.ffmpeg.org/download.html',
-}
-
 async function arcSarDirsCheck(paths: Paths): Promise<Check> {
   return combine(await Promise.all(
     ARC_SAR_DIRS.map(dir => nonEmptyDirectoryCheck(path.join(paths.arcSar, dir), `_workspace/arc_sar/${dir}`))
@@ -260,12 +255,12 @@ async function runCdConversion(context: StepContext): Promise<void> {
   }
 }
 
-async function executableCheck(configValue: string, baseDir: string, downloadUrl: string): Promise<CheckDetail> {
+async function executableCheck(configValue: string, baseDir: string): Promise<CheckDetail> {
   const executable = await resolveExecutable(configValue, baseDir)
   const displayName = path.isAbsolute(executable.command)
     ? displayPath(executable.command)
     : executable.command
-  return check(executable.found, `${displayName} is unavailable. Download: ${downloadUrl}`)
+  return check(executable.found, `${displayName} is unavailable`)
 }
 
 export function createSteps(context: StepContext): OrchestratorStep[] {
@@ -307,7 +302,7 @@ export function createSteps(context: StepContext): OrchestratorStep[] {
       id: 4,
       title: 'Upscale images with waifu2x',
       canRun: async () => combine([
-        await executableCheck(config.WAIFU2X_CAFFE, paths.tools, DOWNLOAD_URLS.waifu2x),
+        await executableCheck(config.WAIFU2X_CAFFE, paths.tools),
         await nonEmptyDirectoryCheck(path.join(paths.input, 'tachi'), '_workspace/input/tachi'),
         await nonEmptyDirectoryCheck(path.join(paths.input, 'bg'), '_workspace/input/bg'),
         await nonEmptyDirectoryCheck(path.join(paths.input, 'event'), '_workspace/input/event'),
@@ -345,7 +340,7 @@ export function createSteps(context: StepContext): OrchestratorStep[] {
       id: 7,
       title: 'Convert audio wave files',
       canRun: async () => combine([
-        await executableCheck(config.FFMPEG, paths.tools, DOWNLOAD_URLS.ffmpeg),
+        await executableCheck(config.FFMPEG, paths.tools),
         await nonEmptyDirectoryCheck(path.join(paths.arcSar, 'wave'), '_workspace/arc_sar/wave'),
       ]),
       isDone: async () => combine([
@@ -357,7 +352,7 @@ export function createSteps(context: StepContext): OrchestratorStep[] {
       id: 8,
       title: 'Convert audio CDs',
       canRun: async () => {
-        const executable = await executableCheck(config.FFMPEG, paths.tools, DOWNLOAD_URLS.ffmpeg)
+        const executable = await executableCheck(config.FFMPEG, paths.tools)
         const cdChecks = await Promise.all(
           Object.values(paths.cds).map(async dirs =>
             nonEmptyDirectoryCheck(dirs.input, displayPath(dirs.input))

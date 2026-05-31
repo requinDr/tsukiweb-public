@@ -1,7 +1,7 @@
 import { displayPath, ensureDir } from '../tsukiweb-common/tools/utils/fs-utils.ts'
 import type { OrchestratorStep } from '../tsukiweb-common/tools/orchestrator/utils.ts'
 import { createSteps } from './orchestrator/steps.ts'
-import { loadConfig, buildPaths, type Paths } from './orchestrator/config.ts'
+import { loadConfig, buildPaths, type Paths, type ToolConfig } from './orchestrator/config.ts'
 import {
   collectStatuses,
   createPrompt,
@@ -9,12 +9,19 @@ import {
   statusLine,
   type StepStatus,
 } from '../tsukiweb-common/tools/orchestrator/ui.ts'
+import { printOrchestratorHeader } from '../tsukiweb-common/tools/orchestrator/header.ts'
 import { logger } from '../tsukiweb-common/tools/utils/logger.ts'
-import { formatDuration } from '../tsukiweb-common/tools/utils/utils.ts';
+import { formatDuration } from '../tsukiweb-common/tools/utils/utils.ts'
 
 interface OrchestratorContext {
+  config: ToolConfig
   paths: Paths
   steps: OrchestratorStep[]
+}
+
+const DOWNLOAD_URLS = {
+  ffmpeg: 'https://www.ffmpeg.org/download.html',
+  waifu2x: 'https://github.com/lltcggie/waifu2x-caffe/releases',
 }
 
 async function getContext(): Promise<OrchestratorContext> {
@@ -23,16 +30,29 @@ async function getContext(): Promise<OrchestratorContext> {
   await ensureDir(paths.workspace)
 
   return {
+    config,
     paths,
     steps: createSteps({ config, paths }),
   }
 }
 
-function printStatus(statuses: StepStatus[], paths: Paths): void {
-  console.log('\nAssets builder')
-  console.log('Run the steps in order, one at a time.')
-  console.log(`Workspace : ${displayPath(paths.workspace)}`)
-  console.log(`Public    : ${displayPath(paths.publicAssets)}\n`)
+async function printStatus(statuses: StepStatus[], context: OrchestratorContext): Promise<void> {
+  await printOrchestratorHeader({
+    title: 'Tsukiweb asset builder',
+    subtitle: 'Run the steps in order, one at a time.',
+    fields: [
+      { label: 'Workspace', value: displayPath(context.paths.workspace) },
+      { label: 'Final output', value: displayPath(context.paths.publicAssets) },
+    ],
+    paths: {
+      repo: context.paths.repo,
+      tools: context.paths.tools,
+    },
+    tools: [
+      { label: 'ffmpeg', configuredValue: context.config.FFMPEG, downloadUrl: DOWNLOAD_URLS.ffmpeg },
+      { label: 'waifu2x', configuredValue: context.config.WAIFU2X_CAFFE, downloadUrl: DOWNLOAD_URLS.waifu2x },
+    ],
+  })
 
   for (const [index, { step, canRun, done }] of statuses.entries()) {
     console.log(`${step.id}. ${step.title}`)
@@ -88,7 +108,7 @@ async function runInteractive(): Promise<void> {
 
   try {
     while (true) {
-      printStatus(await collectStatuses(context.steps), context.paths)
+      await printStatus(await collectStatuses(context.steps), context)
       const answer = (await prompt.question(`\nStep to run (1-${context.steps.length}), r=refresh, q=quit: `)).trim().toLowerCase()
 
       if (!answer) continue
