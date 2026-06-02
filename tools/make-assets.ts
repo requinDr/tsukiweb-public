@@ -28,6 +28,7 @@ async function getContext(): Promise<OrchestratorContext> {
   const config = await loadConfig()
   const paths = buildPaths(config)
   await ensureDir(paths.workspace)
+  await Promise.all(Object.values(paths.cds).map(dirs => ensureDir(dirs.input)))
 
   return {
     config,

@@ -7,9 +7,6 @@ export interface ToolConfig {
   WAIFU2X_CAFFE: string
   FFMPEG: string
   PUBLIC: string
-  CD_EVERAFTER: string
-  CD_ORIGINAL: string
-  CD_TSUKIBAKO: string
 }
 
 export interface CdPaths {
@@ -34,7 +31,7 @@ export interface Paths {
   imagesThumb: string
   flowchartSpritesheets: string
   wave: string
-  cds: Record<'CD_everafter' | 'CD_original' | 'CD_tsukibako', CdPaths>
+  cds: Record<CdName, CdPaths>
 }
 
 export const ORCHESTRATOR_DIR = path.dirname(fileURLToPath(import.meta.url))
@@ -47,10 +44,10 @@ const DEFAULT_CONFIG: ToolConfig = {
   WAIFU2X_CAFFE: 'waifu2x-caffe-cui.exe',
   FFMPEG: 'ffmpeg.exe',
   PUBLIC: '../public',
-  CD_EVERAFTER: './CD_everafter',
-  CD_ORIGINAL: './CD_original',
-  CD_TSUKIBAKO: './CD_tsukibako',
 }
+
+const CD_NAMES = ['CD_original', 'CD_everafter', 'CD_tsukibako'] as const
+type CdName = typeof CD_NAMES[number]
 
 type PartialToolConfig = Partial<ToolConfig>
 
@@ -88,6 +85,13 @@ export function buildPaths(config: ToolConfig): Paths {
   const publicAssets = resolveToolPath(config.PUBLIC)
   const workspace = path.join(TOOLS_DIR, '_workspace')
   const arcSar = path.join(workspace, 'arc_sar')
+  const cds = Object.fromEntries(CD_NAMES.map(name => [
+    name,
+    {
+      input: path.join(TOOLS_DIR, name),
+      output: path.join(publicAssets, 'static', 'jp', name),
+    },
+  ])) as Record<CdName, CdPaths>
 
   return {
     repo: REPO_DIR,
@@ -106,19 +110,6 @@ export function buildPaths(config: ToolConfig): Paths {
     imagesThumb: path.join(publicAssets, 'static', 'jp', 'images_thumb'),
     flowchartSpritesheets: path.join(publicAssets, 'res', 'flowchart-spritesheets'),
     wave: path.join(publicAssets, 'static', 'jp', 'wave'),
-    cds: {
-      CD_everafter: {
-        input: resolveToolPath(config.CD_EVERAFTER),
-        output: path.join(publicAssets, 'static', 'jp', 'CD_everafter'),
-      },
-      CD_original: {
-        input: resolveToolPath(config.CD_ORIGINAL),
-        output: path.join(publicAssets, 'static', 'jp', 'CD_original'),
-      },
-      CD_tsukibako: {
-        input: resolveToolPath(config.CD_TSUKIBAKO),
-        output: path.join(publicAssets, 'static', 'jp', 'CD_tsukibako'),
-      },
-    },
+    cds,
   }
 }
