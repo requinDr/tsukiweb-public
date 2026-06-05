@@ -8,6 +8,7 @@ import { langSelection } from "./langSelection"
 import { PartialRecord } from "@tsukiweb-common/types"
 import { APP_VERSION, SCENE_ATTRS } from "app/utils/constants";
 import { LabelName, RouteDayName, RouteName } from "app/utils/types";
+import { ASSETS_PATH } from "@tsukiweb-common/constants";
 
 //##############################################################################
 //#                                  PRIVATE                                   #
@@ -16,7 +17,7 @@ import { LabelName, RouteDayName, RouteName } from "app/utils/types";
 //______________________________private constants_______________________________
 //------------------------------------------------------------------------------
 
-const LANG_DIR = `${import.meta.env.BASE_URL}static/`
+const LANG_DIR = ASSETS_PATH
 const LANG_LIST = `${LANG_DIR}languages.json`
 
 //________________________________private types_________________________________

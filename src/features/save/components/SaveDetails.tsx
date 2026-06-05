@@ -52,13 +52,13 @@ const SaveDetails = ({id, saveState, deleteSave}: SaveDetailsProps)=> {
 							nav-auto={1}
 							aria-label={strings.saves.delete}
 						>
-							<MdDeleteOutline />
+							<MdDeleteOutline aria-hidden />
 						</Button>
 						<Button onClick={() => savesManager.exportSave(id)}
 							nav-auto={1}
 							aria-label={strings.saves.export}
 						>
-							<MdOutlineFileDownload />
+							<MdOutlineFileDownload aria-hidden />
 						</Button>
 					</div>
 				</div>

@@ -8,8 +8,8 @@ type Props = {
 } & ComponentProps<typeof FixedFooter>
 const FixedFooterOrnaments = ({ children, ...props }: Props) => {
 	return (<>
-		<img src={Ornament} alt="ornament" className={styles.leftOrnament} />
-		<img src={Ornament} alt="ornament" className={styles.rightOrnament} />
+		<img src={Ornament} alt="" className={styles.leftOrnament} />
+		<img src={Ornament} alt="" className={styles.rightOrnament} />
 		<FixedFooter className={styles.footer} {...props}>
 			{children}
 		</FixedFooter>

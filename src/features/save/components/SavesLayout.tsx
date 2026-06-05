@@ -128,7 +128,7 @@ const SavesLayout = ({variant, onBack}: Props) => {
 						{...focusHandlers(SAVE_ACTION_ID)}
 						nav-auto={1}
 					>
-						<MdAddCircleOutline /> {strings.saves.create}
+						<MdAddCircleOutline aria-hidden /> {strings.saves.create}
 					</Button>
 				:
 					<Button
@@ -137,7 +137,7 @@ const SavesLayout = ({variant, onBack}: Props) => {
 						{...focusHandlers(SAVE_ACTION_ID)}
 						nav-auto={1}
 					>
-						<MdUploadFile /> {strings.saves.import}
+						<MdUploadFile aria-hidden /> {strings.saves.import}
 					</Button>
 				}
 
@@ -264,6 +264,7 @@ const ExportWarning = () => {
 		<Button
 			className={classNames("warning-button", {"active": modalShown})}
 			onClick={exportData}
+			aria-label={strings.saves["local-storage-warning"]}
 		>
 			<svg aria-hidden="true" focusable="false" width="0" height="0" style={{position: "absolute"}}>
 				<linearGradient id="gradient-vertical" x2="0" y2="1">
@@ -272,7 +273,7 @@ const ExportWarning = () => {
 					<stop offset="100%" stopColor="var(--color-stop-3)" />
 				</linearGradient>
 			</svg>
-			<MdWarning className="warning-icon"/>
+			<MdWarning className="warning-icon" aria-hidden />
 		</Button>
 	)
 }

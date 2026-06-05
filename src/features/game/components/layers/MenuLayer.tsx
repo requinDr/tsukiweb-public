@@ -217,24 +217,31 @@ const ActionsButtons = ({script, show, close, qSave, qLoad}: ActionsButtonsProps
 			</Button>
 			}
 			<Button {...ACTION_PROPS} onClick={toggleAutoPlay} className={isAutoplaying ? "on" : ""}
-				title={strings.menu["auto-play"]}>
-				<MdPlayArrow aria-label="triangle auto play" />
+				title={strings.menu["auto-play"]}
+				aria-pressed={isAutoplaying}
+				aria-label={strings.menu["auto-play"]}>
+				<MdPlayArrow aria-hidden />
 			</Button>
 			<Button {...ACTION_PROPS} onClick={fastForward} className={isFfw ? "on" : ""}
-				title={strings.menu["ffw"]}>
-				<MdFastForward aria-label="fast forward" />
+				title={strings.menu["ffw"]}
+				aria-pressed={isFfw}
+				aria-label={strings.menu["ffw"]}>
+				<MdFastForward aria-hidden />
 			</Button>
-			<Button {...ACTION_PROPS} onClick={toggleVolume} className={mute ? "off" : ""}>
+			<Button {...ACTION_PROPS} onClick={toggleVolume} className={mute ? "off" : ""}
+				aria-label={mute ? "volume off" : "volume up"}>
 				{mute
-					? <MdOutlineVolumeOff aria-label="volume off" />
-					: <MdOutlineVolumeUp aria-label="volume up" />
+					? <MdOutlineVolumeOff aria-hidden />
+					: <MdOutlineVolumeUp aria-hidden />
 				}
 			</Button>
 			{fullscreen.isSupported &&
-			<Button {...ACTION_PROPS} onClick={fullscreen.toggle}>
+			<Button {...ACTION_PROPS} onClick={fullscreen.toggle}
+				aria-pressed={isFullscreen}
+				aria-label={isFullscreen ? "exit fullscreen" : "enter fullscreen"}>
 				{isFullscreen
-					? <MdFullscreenExit aria-label="exit fullscreen" />
-					: <MdFullscreen aria-label="enter fullscreen" />
+					? <MdFullscreenExit aria-hidden />
+					: <MdFullscreen aria-hidden />
 				}
 			</Button>
 			}

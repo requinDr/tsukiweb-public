@@ -3,6 +3,7 @@ import { APP_VERSION, SCENE_ATTRS } from "../app/utils/constants";
 import { strings } from "../translation/lang"
 import { credits, scenesDir } from "translation/assets";
 import { waitLanguageLoad } from "translation/langSelection";
+import { ASSETS_PATH } from "@tsukiweb-common/constants";
 
 
 //#endregion ###################################################################
@@ -100,7 +101,6 @@ async function fetchLogicBlock(label: string) : Promise<string[]> {
 	await waitLanguageLoad()
 
 	if (!cachedLogicScript) {
-		const ASSETS_PATH = `${import.meta.env.BASE_URL}static/`
 		const path = `${ASSETS_PATH}${LOGIC_FILE}?v=${APP_VERSION}`
 		cachedLogicScript = await fetch(path)
 			.then(response => response.text())

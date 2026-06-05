@@ -19,8 +19,8 @@ const ExtraLayout = ({ children }: PropsWithChildren) => {
 			initial={{opacity: 0}}
 			animate={{opacity: 1}}
 			exit={{opacity: 0}}>
-			<img src={Ornament} alt="ornament" className="leftOrnament" />
-			<img src={Ornament} alt="ornament" className="rightOrnament" />
+			<img src={Ornament} alt="" className="leftOrnament" />
+			<img src={Ornament} alt="" className="rightOrnament" />
 			<ExtraMenu />
 
 			<m.div
@@ -68,11 +68,13 @@ const ExtraMenu = () => {
 			<PageTitle>
 				{strings.title.extra}
 			</PageTitle>
-			<div className="menus">
+			<div className="menus" role="tablist">
 				<TitleMenuButton id="extra-gallery"
 					audio={audio}
 					onClick={()=>navigate(SCREEN.GALLERY)}
 					active={currentPage === SCREEN.GALLERY}
+					aria-selected={currentPage === SCREEN.GALLERY}
+					role="tab"
 					nav-auto={1}>
 					{strings.extra.gallery}
 				</TitleMenuButton>
@@ -80,7 +82,9 @@ const ExtraMenu = () => {
 					audio={audio}
 					onClick={()=>navigate(SCREEN.ENDINGS)}
 					active={currentPage === SCREEN.ENDINGS}
+					aria-selected={currentPage === SCREEN.ENDINGS}
 					attention={eclipseUnlocked}
+					role="tab"
 					nav-auto={1}>
 					{strings.extra.endings}
 				</TitleMenuButton>
@@ -88,6 +92,8 @@ const ExtraMenu = () => {
 					audio={audio}
 					onClick={()=>navigate(SCREEN.SCENES)}
 					active={currentPage === SCREEN.SCENES}
+					aria-selected={currentPage === SCREEN.SCENES}
+					role="tab"
 					nav-auto={1}>
 					{strings.extra.scenes}
 				</TitleMenuButton>
@@ -95,6 +101,8 @@ const ExtraMenu = () => {
 					audio={audio}
 					onClick={()=>navigate(SCREEN.PLUS_DISC)}
 					active={currentPage === SCREEN.PLUS_DISC}
+					aria-selected={currentPage === SCREEN.PLUS_DISC}
+					role="tab"
 					nav-auto={1}>
 					Plus-Disc
 				</TitleMenuButton>

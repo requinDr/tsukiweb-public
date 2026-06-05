@@ -13,7 +13,7 @@ const TranslationSwitch = (props?: Props) => {
         aria-label="show language selection modal"
         onContextMenu={e => e.preventDefault()}
         onClick={()=>setShow(true)}>
-        <MdTranslate />
+        <MdTranslate aria-hidden />
       </button>
       <ModalLanguageSelection show={show} setShow={setShow} />
     </>

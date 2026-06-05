@@ -62,7 +62,7 @@ function audioPath(formats: string|string[], trackName: string) {
     }) ?? formats[formats.length-1]
   }
 
-  return assetPath(`${format.replace('%', trackName)}.${import.meta.env.VITE_AUDIO_FORMAT}`)
+  return assetPath(`${format.replace('%', trackName)}.webm`)
 }
 
 export function audioTrackPath(track: string,

@@ -175,17 +175,17 @@ const ConfigAdvancedTab = () => {
 						onClick={importData.bind(null, false)}
 						onContextMenu={importData.bind(null, true)}
 						nav-auto={1}>
-						<MdFileUpload /> {strings.config["data-import"]}
+						<MdFileUpload aria-hidden /> {strings.config["data-import"]}
 					</Button>
 					<Button className="config-btn"
 						onClick={exportData}
 						nav-auto={1}>
-						<MdDownload /> {strings.config["data-export"]}
+						<MdDownload aria-hidden /> {strings.config["data-export"]}
 					</Button>
 					<Button className="config-btn erase"
 						onClick={eraseData}
 						nav-auto={1}>
-						<MdDeleteForever /> {strings.config["data-erase"]}
+						<MdDeleteForever aria-hidden /> {strings.config["data-erase"]}
 					</Button>
 				</div>
 			</ConfigItem>

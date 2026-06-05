@@ -21,7 +21,7 @@ const AppInfo = (props?: Props) => {
 				aria-label="show information modal"
 				onContextMenu={e => e.preventDefault()}
 				onClick={()=>setShow(true)}>
-				<MdInfoOutline />
+				<MdInfoOutline aria-hidden />
 			</button>
 			<ModalInfo show={show} setShow={setShow} />
 		</>
@@ -112,16 +112,16 @@ const ModalInfo = ({show, setShow}: ModalInfoProps) => {
 
 					<MessageContainer className="card actions">
 						<Button variant="select" onClick={copyCurrentUrl} nav-auto={1}>
-							<MdShare /> {strings.title.share}
+							<MdShare aria-hidden /> {strings.title.share}
 						</Button>
 
 						<Button variant="select" href={APP_INFO.GAME_VNDB} target="_blank" className="vndb" nav-auto={1}>
-							<MdOpenInNew />	<span>VNDB</span>
+							<MdOpenInNew aria-hidden />	<span>VNDB</span>
 						</Button>
 
 						{canInstallPWA && 
 							<Button variant="select" onClick={installPWA} nav-auto={1}>
-								<MdGetApp /> {strings.title.install}
+								<MdGetApp aria-hidden /> {strings.title.install}
 							</Button>
 						}
 					</MessageContainer>

@@ -116,6 +116,7 @@ export const ConfigButtons = <V,>({currentValue, onChange, btns, disabled}: Conf
 					onClick={() => onChange(b.value)}
 					className="config-btn"
 					active={currentValue === b.value}
+					aria-selected={currentValue === b.value}
 					disabled={disabled || b.disabled}
 					nav-auto={1}
 				>
@@ -129,7 +130,8 @@ export const ConfigButtons = <V,>({currentValue, onChange, btns, disabled}: Conf
 export const ConfigIconButton = ({icon, onClick, disabled}: {icon: JSX.Element, onClick: VoidFunction, disabled?: boolean}) => {
 	const btnSound = useButtonSounds(audio, {onClick}, {clickSound: "impact"})
 	return (
-		<button className="icon btn" {...btnSound} disabled={disabled} nav-auto={1}>
+		<button
+			className="icon btn" {...btnSound} disabled={disabled} nav-auto={1}>
 			{icon}
 		</button>
 	)
