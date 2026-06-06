@@ -6,11 +6,18 @@ import { processImages as applySpriteTransparency } from '../../tsukiweb-common/
 import { processImages as convertImages } from '../../tsukiweb-common/tools/convert-images/processor.ts'
 import { mergeVertical } from '../../tsukiweb-common/tools/convert-images/editor.ts'
 import { buildSpritesheets } from '../../tsukiweb-common/tools/generate-thumbnails/processor.ts'
-import { main as runLogicScripts } from '../helpers/convert-scripts/processing/logic.js'
-import { main as runSceneScripts } from '../helpers/convert-scripts/processing/scenes.js'
-import { main as runPlusDiscScripts } from '../helpers/convert-scripts/plus_disc.js'
+import { main as runLogicScripts } from '../helpers/convert-scripts/processing/logic.ts'
+import { main as runSceneScripts } from '../helpers/convert-scripts/processing/scenes.ts'
 import type { Scene } from '../../tsukiweb-common/tools/generate-thumbnails/processor.ts'
-import type { Paths, ToolConfig } from './config.ts'
+import {
+  FFMPEG_AUDIO_ARGS,
+  SCRIPT_LANGS,
+  WAIFU2X_ARGS,
+  thumbConfig,
+  x2Config,
+  type Paths,
+  type ToolConfig,
+} from './config.ts'
 
 import {
   copyDirectory,
@@ -42,37 +49,6 @@ const ARC_SAR_DIRS = [
   'image/bg',
   'image/event',
   'image/tachi',
-]
-
-const SCRIPT_LANGS = [
-  'en-mm',
-  'es-tohnokun',
-  'it-riffour',
-  'pt-matsuri',
-  'ko-wolhui',
-  'ru-ciel',
-  'zh-tw-yueji_yeren_hanhua_zu',
-  'zh-yueji_yeren_hanhua_zu',
-]
-
-const WAIFU2X_ARGS = [
-  '-m', 'noise_scale',
-  '-n', '0',
-  '-s', '2',
-  '-b', '8',
-  '-p', 'cudnn',
-  '-model_dir', 'models-cunet',
-]
-
-const FFMPEG_AUDIO_ARGS = [
-  '-c:a', 'libopus',
-  '-b:a', '96k',
-  '-vbr', 'on',
-  '-mapping_family', '0',
-  '-compression_level', '10',
-  '-application', 'audio',
-  '-map_metadata', '-1',
-  '-f', 'webm',
 ]
 
 async function arcSarDirsCheck(paths: Paths): Promise<Check> {
@@ -136,7 +112,6 @@ async function runScripts(paths: Paths): Promise<void> {
   await withWorkingDirectory(paths.convertScriptsTool, async () => {
     runLogicScripts()
     await runSceneScripts()
-    runPlusDiscScripts()
   })
 }
 
@@ -152,59 +127,32 @@ async function runWaifu2x(context: StepContext): Promise<void> {
 }
 
 async function runImageConversion(paths: Paths): Promise<void> {
-  const thumbConfig = {
-    inputDir: paths.input,
-    outputDir: paths.imagesThumb,
-    options: {
-      resize: {
-        width: 200,
-        kernel: 'lanczos3',
-      } as const,
-      avif: {
-        quality: 60,
-        alphaQuality: 50,
-        effort: 8,
-        chromaSubsampling: '4:4:4',
-      } as const,
-    },
-  }
-
-  const x2Config = {
-    inputDir: paths.inputX2,
-    outputDir: paths.images,
-    options: {
-      avif: {
-        quality: 60,
-        alphaQuality: 70,
-        effort: 8,
-        chromaSubsampling: '4:4:4',
-      } as const,
-    },
-  }
+  const thumb = thumbConfig(paths)
+  const x2 = x2Config(paths)
 
   await mergeVertical(
-    path.join(thumbConfig.inputDir, 'event', 'cel_e06a.jpg'),
-    path.join(thumbConfig.inputDir, 'event', 'cel_e06b.jpg'),
-    path.join(thumbConfig.inputDir, 'event', 'cel_e06.jpg'),
+    path.join(thumb.inputDir, 'event', 'cel_e06a.jpg'),
+    path.join(thumb.inputDir, 'event', 'cel_e06b.jpg'),
+    path.join(thumb.inputDir, 'event', 'cel_e06.jpg'),
   )
   await mergeVertical(
-    path.join(thumbConfig.inputDir, 'event', 'koha_h06a.jpg'),
-    path.join(thumbConfig.inputDir, 'event', 'koha_h06b.jpg'),
-    path.join(thumbConfig.inputDir, 'event', 'koha_h06.jpg'),
+    path.join(thumb.inputDir, 'event', 'koha_h06a.jpg'),
+    path.join(thumb.inputDir, 'event', 'koha_h06b.jpg'),
+    path.join(thumb.inputDir, 'event', 'koha_h06.jpg'),
   )
-  await convertImages(thumbConfig.inputDir, thumbConfig.outputDir, thumbConfig.options)
+  await convertImages(thumb.inputDir, thumb.outputDir, thumb.options)
 
   await mergeVertical(
-    path.join(x2Config.inputDir, 'event', 'cel_e06a.png'),
-    path.join(x2Config.inputDir, 'event', 'cel_e06b.png'),
-    path.join(x2Config.inputDir, 'event', 'cel_e06.png'),
+    path.join(x2.inputDir, 'event', 'cel_e06a.png'),
+    path.join(x2.inputDir, 'event', 'cel_e06b.png'),
+    path.join(x2.inputDir, 'event', 'cel_e06.png'),
   )
   await mergeVertical(
-    path.join(x2Config.inputDir, 'event', 'koha_h06a.png'),
-    path.join(x2Config.inputDir, 'event', 'koha_h06b.png'),
-    path.join(x2Config.inputDir, 'event', 'koha_h06.png'),
+    path.join(x2.inputDir, 'event', 'koha_h06a.png'),
+    path.join(x2.inputDir, 'event', 'koha_h06b.png'),
+    path.join(x2.inputDir, 'event', 'koha_h06.png'),
   )
-  await convertImages(x2Config.inputDir, x2Config.outputDir, x2Config.options)
+  await convertImages(x2.inputDir, x2.outputDir, x2.options)
 }
 
 async function runSpritesheets(paths: Paths): Promise<void> {
@@ -288,7 +236,7 @@ export function createSteps(context: StepContext): OrchestratorStep[] {
   return [
     {
       id: 1,
-      title: 'Extract assets from arc.sar and prepare images',
+      title: 'Extract arc.sar assets and prepare images',
       canRun: async () => combine([
         await fileExistsCheck(paths.arcSarArchive, displayPath(paths.arcSarArchive)),
       ]),

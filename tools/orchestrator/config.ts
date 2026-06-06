@@ -51,6 +51,74 @@ type CdName = typeof CD_NAMES[number]
 
 type PartialToolConfig = Partial<ToolConfig>
 
+export const SCRIPT_LANGS = [
+  'jp',
+  'en-mm',
+  'es-tohnokun',
+  'it-riffour',
+  'pt-matsuri',
+  'ko-wolhui',
+  'ru-ciel',
+  'zh-tw-yueji_yeren_hanhua_zu',
+  'zh-yueji_yeren_hanhua_zu',
+] as const
+
+export const WAIFU2X_ARGS = [
+  '-m', 'noise_scale',
+  '-n', '0',
+  '-s', '2',
+  '-b', '8',
+  '-p', 'cudnn',
+  '-model_dir', 'models-cunet',
+] as const
+
+export const FFMPEG_AUDIO_ARGS = [
+  '-c:a', 'libopus',
+  '-b:a', '96k',
+  '-vbr', 'on',
+  '-mapping_family', '0',
+  '-compression_level', '10',
+  '-application', 'audio',
+  '-map_metadata', '-1',
+  '-f', 'webm',
+] as const
+
+type ImageConversionPaths = Pick<Paths, 'input' | 'inputX2' | 'images' | 'imagesThumb'>
+
+export function thumbConfig(paths: ImageConversionPaths) {
+  return {
+    inputDir: paths.input,
+    outputDir: paths.imagesThumb,
+    options: {
+      resize: {
+        width: 200,
+        kernel: 'lanczos3',
+      } as const,
+      avif: {
+        quality: 60,
+        alphaQuality: 50,
+        effort: 8,
+        chromaSubsampling: '4:4:4',
+      } as const,
+    },
+  }
+}
+
+export function x2Config(paths: ImageConversionPaths) {
+  return {
+    inputDir: paths.inputX2,
+    outputDir: paths.images,
+    options: {
+      avif: {
+        quality: 60,
+        alphaQuality: 70,
+        effort: 8,
+        chromaSubsampling: '4:4:4',
+      } as const,
+    },
+  }
+}
+
 function hasCode(error: unknown, code: string): boolean {
   return typeof error === 'object' && error !== null && 'code' in error && error.code === code
 }
