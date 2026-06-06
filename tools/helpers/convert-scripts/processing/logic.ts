@@ -5,12 +5,13 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url'
-import { parseScript } from '../../../../tsukiweb-common/tools/convert-scripts/parsers/nscriptr.js';
-import { CommandToken, ConditionToken, LabelToken, ReturnToken, TextToken, Token } from '../../../../tsukiweb-common/tools/convert-scripts/parsers/utils.js'
-import { generateScenes, splitBlocks } from '../utils/nscriptr_convert.js';
-import { logError, logProgress } from '../../../../tsukiweb-common/tools/utils/logging.js';
-import { updateGameJsonWithChoices } from '../utils/choices_extractor.js';
-import { isLogicLabel, processVarName, processCondition } from './common.js';
+import { parseScript } from '../../../../tsukiweb-common/tools/convert-scripts/parsers/nscriptr.ts';
+import { Block, CommandToken, ConditionToken, LabelToken, ReturnToken, TextToken, Token } from '../../../../tsukiweb-common/tools/convert-scripts/parsers/utils.ts'
+import { generateScenes, splitBlocks } from '../utils/nscriptr_convert.ts';
+import { logger } from '../../../../tsukiweb-common/tools/utils/logger.ts';
+import { updateGameJsonWithChoices } from '../utils/choices_extractor.ts';
+import { isLogicLabel, processVarName } from './common.ts';
+import { processCondition } from '../../../../tsukiweb-common/tools/convert-scripts/utils.ts';
 
 const outputPathPrefix = '../../../public/static/'
 const outputDir = 'scenes'
@@ -47,12 +48,12 @@ const redirected_scenes = {
 	f358half: "f359" // useless intermediate label
 }
 
-function redirect(token) {
+function redirect(token: CommandToken) {
 	for (const [i, arg] of token.args.entries()) {
-		if (arg.startsWith('*')) {
+		if (typeof arg == 'string' && arg.startsWith('*')) {
 			let label = arg.substring(1)
-			if (Object.hasOwn(redirected_scenes, label)) {
-				label = redirected_scenes[label]
+			if (label in redirected_scenes) {
+				label = redirected_scenes[label as keyof typeof redirected_scenes]
 				if (!label)
 					return false
 				token.args[i] = `*${label}`
@@ -60,13 +61,7 @@ function redirect(token) {
 		}
 	}
 }
-/**
- * @param {Token} token 
- * @param {string} label 
- * @param {string} condition 
- * @returns {boolean}
- */
-function addChoiceCondition(token, label, condition) {
+function addChoiceCondition(token: Token, label: string, condition: string) {
 	if (token instanceof CommandToken && token.cmd == 'select') {
 		const i = token.args.indexOf(label)
 		if (i < 0) throw Error(`Expected choice ${label}, got ${token.args}`)
@@ -76,16 +71,12 @@ function addChoiceCondition(token, label, condition) {
 	return false
 }
 
-/**
- * @param {Token} token 
- * @returns {void|boolean|string}
- */
-function logic_tokenFixes(token) {
+function logic_tokenFixes(token: Token): void|boolean|string {
 	if (token instanceof ReturnToken) return false
 	if (token instanceof TextToken) return false
 	if (token instanceof LabelToken) return true
 	if (token instanceof ConditionToken) {
-		const condition = processCondition(token.condition)
+		const condition = processCondition(token.condition, processVarName)
 		if (!condition)
 			return false
 		token.condition = condition
@@ -116,7 +107,7 @@ function logic_tokenFixes(token) {
 			case 'goto':
 				return redirect(token);
 			case 'select':
-				token.args = token.args.map(x=>x.trim())
+				token.args = token.args.map(x=>(x).trim())
 				if (token.args.length == 4 &&
 						token.args[1].match(/^\*f5\d{2}$/) &&
 						token.args[3] == '*endofplay') {
@@ -131,12 +122,9 @@ function logic_tokenFixes(token) {
 	throw Error(`Unrecognized token type of ${token}`)
 }
 
-/**
- * @param {string} label 
- */
-function getBlockProps(label) {
+function getBlockProps(label: string) {
 	const tokenFixes = [logic_tokenFixes]
-	const blockFixes = []
+	const blockFixes: ((block: Block)=>void)[] = []
 	if (isLogicLabel(label)) {
 		switch (label) {
 			case 'skip21' : // go to *f24 instead of passing through *f23
@@ -153,7 +141,7 @@ function getBlockProps(label) {
 			case 'skip46' :
 				// replaced *f47 with *f46 => remove if, condition *f46 choice on flg6 and near-side route completion
 				tokenFixes.push((t)=> {
-					if (t instanceof ConditionToken && t.command.args[0] == '*f47a')
+					if (t instanceof ConditionToken && (t.command as CommandToken).args[0] == '*f47a')
 						return false
 					else
 						addChoiceCondition(t, '*f46b', "%flg6 && %cleared")
@@ -162,18 +150,16 @@ function getBlockProps(label) {
 			case 'f46b' :
 				tokenFixes.push((t)=> {
 					// f203 redirected to identical f48, branch moved after f48
-					if (t instanceof ConditionToken && t.command.args[0] == '*f203')
+					if (t instanceof ConditionToken && (t.command as CommandToken).args[0] == '*f203')
 						return false
 					// simplify condition for s205
-					if (t instanceof ConditionToken && t.command.args[0] == "*f49")
+					if (t instanceof ConditionToken && (t.command as CommandToken).args[0] == "*f49")
 						t.condition = "%regard_his>%regard_aki"
 				})
 				break
 			case 'skip48' :
-				blockFixes.push((tokens)=> {
-					tokens.splice(1, 0, ...parseScript(
-						"if %regard_koha>%regard_aki goto *f205"
-					))
+				blockFixes.push((block)=> {
+					block.insert(1, "if %regard_koha>%regard_aki goto *f205")
 				})
 				break
 			case 'skip84' :
@@ -190,8 +176,8 @@ function getBlockProps(label) {
 				})
 				break
 			case 'skip199' : // s503 identical to s52 => branch moved after s52
-				blockFixes.push((tokens)=> {
-					tokens.splice(1, tokens.length-1, ...parseScript("goto *f52"))
+				blockFixes.push((block)=> {
+					block.replace(1, block.length-1, "goto *f52")
 				})
 				break
 			case 'skip201' : // replaced *f37 with *f201 => condition *f202 choice on %clear_his
@@ -200,16 +186,16 @@ function getBlockProps(label) {
 				})
 				break
 			case 'skip261' : case 'skip262' : // last condition is redundant
-				blockFixes.push((tokens)=> {
-					const token = tokens.at(-1)
+				blockFixes.push((block)=> {
+					const token = block.at(-1)
 					if (token instanceof ConditionToken) {
-						tokens.splice(tokens.length-1, 1, token.command)
+						block.replace(-1, 1, token.command)
 					}
 				})
 				break
 			case 'skip40' : // add "inc %regard_aki" from bypassed f38
-				blockFixes.push((tokens)=> {
-					tokens.splice(1, 0, ...parseScript('inc %regard_aki'))
+				blockFixes.push((block)=> {
+					block.insert(1, 'inc %regard_aki')
 				})
 				break
 			case 'skip43' : case 'skip44' : case 'skip45' :
@@ -222,8 +208,8 @@ function getBlockProps(label) {
 			case 'skip57' : // f58 identical to f59 except an additional choice
 				// if (...) { goto *f59 } else { goto *f58 } --> goto *f59
 				// (goto *f59 replaced by content of skip59 later)
-				blockFixes.push((tokens)=> {
-					tokens.splice(1, tokens.length, ...parseScript('goto *f59'))
+				blockFixes.push((block)=> {
+					block.replace(1, block.length-1, 'goto *f59')
 				})
 				break
 			case 'skip59' :
@@ -306,14 +292,7 @@ function getBlockProps(label) {
 	}
 }
 
-function getFileProps(_label) {
-	return {
-		name: LOGIC_FILE
-	}
-}
-
-/** @param {Map<string, Token[]>} blocks */
-function interBlockFixes(blocks) {
+function interBlockFixes(blocks: Map<string, Block>) {
 
 	// merge blocks
 	const merged = {
@@ -323,53 +302,53 @@ function interBlockFixes(blocks) {
 		'skip52' : 'skip503', // end of arc route, identical scene, different choices
 	}
 	for (const [dest, src] of Object.entries(merged)) {
-		const destBlock = blocks.get(dest)
-		const srcBlock = blocks.get(src)
-		destBlock.pop() // remove 'goto *f<X>'
-		destBlock.push(...srcBlock.slice(1)) // slice(1) to remove label
+		const destBlock = blocks.get(dest)!
+		const srcBlock = blocks.get(src)!
+		srcBlock.delete(0) // remove label
+		destBlock.delete(-1) // remove 'goto *f<X>'
+		destBlock.extend(srcBlock)
 		blocks.delete(src)
 	}
 
 	// test of f289 should be moved to f287 (according to mirrormoon)
-	const skip287 = blocks.get('skip287')
-	const skip288 = blocks.get('skip288')
-	let token = skip288[1]
-	if (token instanceof ConditionToken && token.command.args == '*f292') {
-		skip287.splice(1, 0, token)
-		token.index = skip287[1].index
-		token.command.args = ['*f288'] // if (...) goto *f288
-		skip287[2].args = ['*f289'] // (else) goto *f289
+	const skip287 = blocks.get('skip287')!
+	const skip288 = blocks.get('skip288')!
+	let token = skip288.at(1)
+	if (token instanceof ConditionToken && (token.command as CommandToken).args[0] == '*f292') {
+		skip287.insert(1, token, token.lineIndex);
+		(token.command as CommandToken).args = ['*f288']; // if (...) goto *f288
+		(skip287.at(2) as CommandToken).args = ['*f289'] // (else) goto *f289
 
-		skip288.splice(1, 1)
-		skip288[1].args = ['*f292']
+		skip288.delete(1);
+		(skip288.at(1) as CommandToken).args = ['*f292']
 	}
 
 	// move select from f411 to skip409
-	blocks.get('skip409').splice(1, Infinity, ...blocks.get('f411').slice(1))
+	blocks.get('skip409')!.replace(1, Infinity, blocks.get('f411')!.slice(1))
 	blocks.delete('f411')
-	blocks.get('skip409').forEach(t=>addChoiceCondition(t, '*f413', '%clear_his'))
+	blocks.get('skip409')!.forEach(t=>addChoiceCondition(t, '*f413', '%clear_his'))
 
 	// add 'goto <next label>' if block ends without specifying next label
-	for (const [index, [label, tokens]] of [...blocks.entries()].entries()) {
-		const lastToken = tokens.at(-1)
+	for (const [index, [label, block]] of [...blocks.entries()].entries()) {
+		const lastToken = block.at(-1)
 		if (!(lastToken instanceof CommandToken) ||
 			!(['goto', 'select', 'osiete'].includes(lastToken.cmd))){
 			const nextLabel = [...blocks.keys()][index+1]
-			tokens.push(...parseScript(`goto *${nextLabel}`))
+			block.insert(block.length, `goto *${nextLabel}`)
 		}
 	}
 
 	//move choices from f117 to f116a, add conditions to added choices
 	const skip116a = blocks.get('skip116a')
 	const f117 = blocks.get('f117')
-	token = skip116a.find(t => t instanceof CommandToken && t.cmd == 'select')
-	token.args = f117.find(t => t instanceof CommandToken && t.cmd == 'select').args
-	token.args[token.args.indexOf('*f121')] = '[%cleared]*f121'
-	token.args[token.args.indexOf('*f122')] = '[%cleared]*f122'
+	token = skip116a!.find(t => t instanceof CommandToken && t.cmd == 'select')!;
+	(token as CommandToken).args = (f117!.find(t => t instanceof CommandToken && t.cmd == 'select') as CommandToken).args;
+	(token as CommandToken).args[(token as CommandToken).args.indexOf('*f121')] = '[%cleared]*f121';
+	(token as CommandToken).args[(token as CommandToken).args.indexOf('*f122')] = '[%cleared]*f122'
 	blocks.delete('f117')
 }
 
-function inc_hisui_skip323(text) {
+function inc_hisui_skip323(text: string) {
 	let i = text.indexOf("\n*skip323")
 	if (i < 0)
 		throw Error(`Cannot find marker "*skip323"`)
@@ -379,11 +358,7 @@ function inc_hisui_skip323(text) {
 	return text.substring(0, j) + 'inc %hisui_regard\n' + text.substring(j)
 }
 
-/**
- * @param {string} language 
- * @param {string} text 
- */
-function raw_fixes(language, text) {
+function raw_fixes(language: string, text: string) {
 	let i, j, k, next
 	switch(language) {
 		case 'ko-wolhui' :
@@ -420,29 +395,28 @@ function raw_fixes(language, text) {
 
 const destinationRegex = /^((\[[^\]]+\])|(\([^\]]+\)))?\*(?<target>\w+)$/ // [...]*X | (...)*X | *X
 
-function extractDestinations(token) {
+function extractDestinations(token: Token) {
 	if (token instanceof ConditionToken)
 		token = token.command
 	if (!(token instanceof CommandToken))
 		return []
-	return token.args.map(a=> {
-		return a.match(destinationRegex)?.groups.target ?? null
+	return token.args.map((a: string)=> {
+		return a.match(destinationRegex)?.groups!.target ?? null
 	}).filter(a=>a != null)
 }
 
-/** @param {Map<string, Token[]>} blocks */
-function genTree(blocks) {
+function genTree(blocks: Map<string, Block>) {
 	//1. extract block children links
-	const tree = new Map(Array.from(blocks.entries()).map(([label, tokens], i)=> {
-		const children = tokens.flatMap(extractDestinations)
+	const tree = new Map(Array.from(blocks.entries()).map(([label, block], i)=> {
+		const children = block.tokens.flatMap(extractDestinations)
 		const scene = children.find(lbl=>!isLogicLabel(lbl) && lbl != 'endofplay')
 		const others = [...new Set(children.filter(lbl=>lbl != scene && lbl != 'endofplay')).values()]
-		return [label, {scene, children: new Set(others), parents: new Set(), index: -1}]
+		return [label, {scene, children: new Set(others), parents: new Set<string>(), index: -1}]
 	}))
 	//2. add link to parent
 	for (const [label, {children}] of tree.entries()) {
 		for (const child of children)
-			tree.get(child).parents.add(label)
+			tree.get(child)!.parents.add(label)
 	}
 	//3. move links before scenes to parent nodes, link to skip nodes
 	for (const [label, {scene, children, parents}] of tree.entries()) {
@@ -451,13 +425,13 @@ function genTree(blocks) {
 				if (parents.size == 0)
 					throw Error(`link before scene ${scene}, but no parent`)
 				for (const parent of parents) {
-					const parentNode = tree.get(parent)
+					const parentNode = tree.get(parent)!
 					for (const child of children)
 						parentNode.children.add(child)
 					// link from parent to scene is kept
 				}
 				for (const child of children) {
-					const childNode = tree.get(child)
+					const childNode = tree.get(child)!
 					for (const parent of parents)
 						childNode.parents.add(parent)
 					childNode.parents.delete(label) // delete link from scene to child (might be restored in skip)
@@ -476,34 +450,34 @@ function genTree(blocks) {
 	for (const [label, {scene, parents, children}] of tree.entries()) {
 		if (!scene) {
 			for (const child of children) {
-				const childNode = tree.get(child)
+				const childNode = tree.get(child)!
 				for (const parent of parents)
 					childNode.parents.add(parent)
 			}
 			for (const parent of parents) {
-				const parentNode = tree.get(parent)
+				const parentNode = tree.get(parent)!
 				for (const child of children)
 					parentNode.children.add(child)
 			}
 			for (const parent of parents)
-				tree.get(parent).children.delete(label)
+				tree.get(parent)!.children.delete(label)
 			for (const child of children)
-				tree.get(child).parents.delete(label)
+				tree.get(child)!.parents.delete(label)
 		}
 	}
 	tree.set('openning', {scene: 'openning', children: new Set(['f20']), parents: new Set(), index: 0})
-	tree.get('f20').parents.add('openning')
+	tree.get('f20')!.parents.add('openning')
 
 	//5. determine order index, easier for creating contexts when parsing scenes
 	const queue = [tree.get('openning')]
 	while (queue.length > 0) {
-		const currentNode = queue.shift()
+		const currentNode = queue.shift()!
 		for (const child of currentNode.children) {
-			const node = tree.get(child)
+			const node = tree.get(child)!
 			if (node.index >= 0) continue
 			let index = -1
 			for (const parent of node.parents) {
-				const parentNode = tree.get(parent)
+				const parentNode = tree.get(parent)!
 				if (parentNode.index < 0) {
 					index = -1
 					break
@@ -523,16 +497,15 @@ function genTree(blocks) {
 
 	return sceneNodes.map(({scene, parents, children, index})=> {
 		if (index < 0) throw Error(`node of ${scene} was not assigned an index`)
-		parents = Array.from(parents.values(), l=>tree.get(l).scene).sort().join(',')
-		children = Array.from(children.values(), l=>tree.get(l).scene).sort().join(',')
-		return `${scene}:${parents}|${children}`
+		const pStr = Array.from(parents.values(), l=>tree.get(l)!.scene).sort().join(',')
+		const cStr = Array.from(children.values(), l=>tree.get(l)!.scene).sort().join(',')
+		return `${scene}:${pStr}|${cStr}`
 	}).join('\n')
 }
 
-/** @param {Map<string, Token[]>} blocks */
-function extractChoices(blocks) {
-	return Object.fromEntries(Array.from(blocks.entries(), ([label, tokens])=> {
-		const selects = tokens.filter(t => t instanceof CommandToken && t.cmd == 'select');
+function extractChoices(blocks: Map<string, Block>) {
+	return Object.fromEntries(Array.from(blocks.entries(), ([label, block])=> {
+		const selects = block.filter(t => t instanceof CommandToken && t.cmd == 'select') as CommandToken[]
 		if (selects.length == 0)
 			return null
 		if (selects.length > 1)
@@ -541,7 +514,7 @@ function extractChoices(blocks) {
 		const args = select.args
 
 		// Labels may also contain disable or hide conditions
-		const isText = (a)=> !['*', '(', '['].includes(a.charAt(0))
+		const isText = (a: string)=> !['*', '(', '['].includes(a.charAt(0))
 
 		const texts = args.filter(isText).map(txt => {
 			const startChar = txt.charAt(0)
@@ -561,16 +534,15 @@ function extractChoices(blocks) {
 //##############################################################################
 
 /**
- * @param {string} folder
- * @param {string} filename
- * @returns {[string, Record<string, string[]>, string]} blocks tree, choice texts, logic script
+ * @returns blocks tree, choice texts, logic script
  */
-function processSingleScript(folder, filename) {
+function processSingleScript(folder: string, filename: string): [string, Record<string, string[]>, string] {
 	const fullscriptPath = path.join(outputPathPrefix, folder, filename)
 
 	if (!fs.existsSync(fullscriptPath)) {
-		logError(`Input file not found: ${fullscriptPath}`)
-		return null
+		const errMsg = `Input file not found: ${fullscriptPath}`
+		logger.error(errMsg)
+		throw Error(errMsg)
 	}
 
 	const txt = fs.readFileSync(fullscriptPath, 'utf-8')
@@ -580,9 +552,9 @@ function processSingleScript(folder, filename) {
 	interBlockFixes(blocks)
 	const tree = genTree(blocks)
 	const choices = extractChoices(blocks)
-	const fileContents = generateScenes(blocks, getFileProps)
+	const fileContents = generateScenes(blocks, ()=>LOGIC_FILE)
 
-	return [tree, choices, fileContents.get(LOGIC_FILE)]
+	return [tree, choices, fileContents.get(LOGIC_FILE)!]
 }
 
 export function main() {
@@ -593,11 +565,11 @@ export function main() {
 	let processedCount = 0
 	for (const [folder, filename] of fullscripts) {
 		processedCount++
-		logProgress(`Processing logic scripts: ${processedCount}/${totalScripts} (${filename})`)
+		logger.progress(`Processing logic scripts: ${processedCount}/${totalScripts} (${filename})`)
 
 		try {
 			//1. Extract blocks tree, choice texts and logic script
-			const [tree, choices, logicContent] = processSingleScript(folder, filename, outputDir)
+			const [tree, choices, logicContent] = processSingleScript(folder, filename)
 
 			//2. Compare blocks tree and logic script with previous languages
 			if (blocksTree == null && logicScript == null)
@@ -611,10 +583,10 @@ export function main() {
 				updateGameJsonWithChoices(gameJsonPath, choices)
 			}
 		} catch (e) {
-			logError(`Error processing ${filename}: ${e.message}`)
+			logger.error(`Error processing ${filename}: ${(e as Error).message}`)
 		}
 	}
-	logProgress(`Processing logic scripts: ${processedCount}/${totalScripts}\n`)
+	logger.progress(`Processing logic scripts: ${processedCount}/${totalScripts}\n`)
 
 	//4. Save logic script file and blocks tree
 	if (GEN_LOGIC) {
@@ -623,10 +595,10 @@ export function main() {
 		if (!fs.existsSync(dir)) {
 			fs.mkdirSync(dir, { recursive: true })
 		}
-		fs.writeFileSync(centralLogicPath, logicScript)
+		fs.writeFileSync(centralLogicPath, logicScript!)
 	}
 	if (GEN_TREE) {
-		fs.writeFileSync(path.join('.', "logic_tree.txt"), blocksTree)
+		fs.writeFileSync(path.join('.', "logic_tree.txt"), blocksTree!)
 	}
 }
 

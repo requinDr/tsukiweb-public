@@ -5,12 +5,13 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url'
-import { parseScript } from '../../../../tsukiweb-common/tools/convert-scripts/parsers/nscriptr.js';
-import { CommandToken, ConditionToken, LabelToken, ReturnToken, TextToken, Token } from '../../../../tsukiweb-common/tools/convert-scripts/parsers/utils.js'
-import { generateScenes, splitBlocks, writeScenes } from '../utils/nscriptr_convert.js';
-import { logError, logProgress } from '../../../../tsukiweb-common/tools/utils/logging.js';
-import { fixContexts } from '../utils/context.js';
-import { processVarName, processCondition, isSceneLabel } from './common.js';
+import { parseScript } from '../../../../tsukiweb-common/tools/convert-scripts/parsers/nscriptr.ts';
+import { Block, CommandToken, ConditionToken, LabelToken, ReturnToken, TextToken, Token } from '../../../../tsukiweb-common/tools/convert-scripts/parsers/utils.ts'
+import { generateScenes, splitBlocks, writeScenes } from '../utils/nscriptr_convert.ts';
+import { logger } from '../../../../tsukiweb-common/tools/utils/logger.ts';
+import { fixContexts } from '../utils/context.ts';
+import { processVarName, isSceneLabel } from './common.ts';
+import { processCondition } from '../../../../tsukiweb-common/tools/convert-scripts/utils.ts';
 
 const outputPathPrefix = '../../../public/static/'
 const outputDir = 'scenes'
@@ -34,25 +35,20 @@ const fullscripts = [
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 const routePhaseRE = /word\/p(?<route>[a-z]+)_(?<rDay>\d+[ab])/
-const parseTitleA = (val)=> val.match(routePhaseRE)?.groups ?? {}
+const parseTitleA = (val: string)=> val.match(routePhaseRE)?.groups ?? {}
 const dayPhaseRE = /word\/day_(?<day>\d+)/
 const rawScenePhaseRE = /word\/(?<scene>\w+)/
-const parseTitleB = (val)=> val.match(dayPhaseRE)?.groups ??
+const parseTitleB = (val: string)=> val.match(dayPhaseRE)?.groups ??
 	val.match(rawScenePhaseRE)?.groups ?? {}
 
-/**
- * @param {CommandToken} token 
- * @param {number} i 
- * @param {Token[]} tokens 
- */
-function processPhase(token, i, tokens) {
+function processPhase(token: CommandToken, i: number, block: Block) {
 	token.cmd = 'phase'
 	let side = token.args[0].charAt(1) // 'l' or 'r'
 	if (!['l', 'r'].includes(side))
 		throw Error(`cannot determine side of phase ${token}`)
 	/** @type {Record<string, string>} */
 	const args = Object.fromEntries(
-		tokens.slice(i-3, i).map(t=> {
+		block.slice(i-3, i).map(t=> {
 			if (!(t instanceof CommandToken && t.cmd == 'mov'))
 				throw Error(`Expected 3 'mov' before ${token}`)
 			return t.args
@@ -68,11 +64,11 @@ function processPhase(token, i, tokens) {
 			day = '0'
 		else
 			day = scene
+	} else {
+		day = (+day).toString()
 	}
 	if (day.includes(','))
 		throw Error(`Unexpected ',' in phase day`)
-	if (!Number.isNaN(+day))
-		day = +day
 	if (titleA.startsWith('#'))
 		token.args = [bg,side,"others",day,0]
 	else {
@@ -84,29 +80,21 @@ function processPhase(token, i, tokens) {
 			throw Error(`Unexpected ',' in phase route and route day`)
 		token.args = [bg,side,route,rDay,day]
 	}
-	tokens[i-3] = tokens[i-2] = tokens[i-1] = null
-	// check if there is a page break between last text and phase
+	block.delete(i-3, 3) // delete 
+	// Ensure there is a page break between last text and phase
 	for (let j = i-4; j >= 0; j--) {
-		if (tokens[j] instanceof CommandToken) {
-			if (['\\', 'phase'].includes(tokens[j].cmd))
+		const t = block.at(j)
+		if (t instanceof CommandToken) {
+			if (['\\', 'phase'].includes(t.cmd))
 				break
-		}
-
-		if (tokens[j] instanceof TextToken) {
-			const text = tokens[j].text
+		} else if (t instanceof TextToken) {
+			const text = t.text
 			if (text.endsWith('\\'))
 				break
 			if (text.endsWith('@'))
-				tokens[j].text = text.substring(0, text.length-1)
+				t.text = text.substring(0, text.length-1)
 			//console.log(`adding '\\' before ${tokens[i]}, after ${tokens[j]}`)
-			// Insert page break.
-			// Index is conserved by moving tokens on step, using one null
-			// token before phase as a room to move tokens to
-			tokens.splice(j+1, (i - (j+1)),
-				new CommandToken(tokens[j].lineIndex, '\\'),
-				...tokens.slice(j+1, i-1))
-			break
-		} else if (tokens[j] instanceof CommandToken && tokens[j].cmd == '\\') {
+			block.insert(j+1, new CommandToken(t.lineIndex, '\\'))
 			break
 		}
 	}
@@ -121,32 +109,32 @@ const COLOR_IMAGES = new Map(Object.entries({
 	'"bg/ima_11b"': '#9c0120',
 }))
 
-function commandFix(token) {
+function commandFix(token: Token) {
 	if (!(token instanceof CommandToken))
 		return
 	switch (token.cmd) {
 		case 'bg' :
 			if (COLOR_IMAGES.has(token.args[0]))
-				token.args[0] = COLOR_IMAGES.get(token.args[0])
+				token.args[0] = COLOR_IMAGES.get(token.args[0])!
 			break
 		case 'mov' :
-			token.args[0] = processVarName(token.args[0])
+			token.args[0] = processVarName(token.args[0])!
 			if (!token.args[0])
 				return false
 			if (COLOR_IMAGES.has(token.args[1]))
-				token.args[1] = COLOR_IMAGES.get(token.args[1])
+				token.args[1] = COLOR_IMAGES.get(token.args[1])!
 			break
 		case 'wave' : case 'waveloop' :
 			const m = token.args[0].match(/^"?se(?<n>\d+)"?$/)
 			if (m) {
 				// se0 -> se_01
-				token.args[0] = `se_${String(+m.groups.n + 1).padStart(2, '0')}`
+				token.args[0] = `se_${String(+m.groups!.n + 1).padStart(2, '0')}`
 			}
 			break
 	}
 }
 
-function merge_images(token, bottom, top, replace) {
+function merge_images(token: Token, bottom: string, top: string, replace: string) {
 	if ((token instanceof CommandToken) && token.cmd == 'bg') {
 		const img = token.args[0]
 		if (img.includes(bottom)) {
@@ -163,17 +151,17 @@ function merge_images(token, bottom, top, replace) {
 }
 
 const tokenFixes = new Map(Object.entries({
-	'openning': (token)=> {
+	'openning': (token: Token)=> {
 		if ((token instanceof TextToken) && !token.text.trimStart().startsWith('[line='))
 			token.text = '[center]' + token.text.trimStart()
 	},
-	's425' : (token)=> {
+	's425' : (token: Token)=> {
 		merge_images(token, 'koha_h06a', 'koha_h06b', 'koha_h06')
 	},
-	's289a' : (token)=> {
+	's289a' : (token: Token)=> {
 		merge_images(token, 'cel_e06a', 'cel_e06b', 'cel_e06')
 	},
-	's297' : (token)=> {
+	's297' : (token: Token)=> {
 		merge_images(token, 'cel_e06a', 'cel_e06b', 'cel_e06')
 	},
 }))
@@ -182,58 +170,51 @@ const tokenFixes = new Map(Object.entries({
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 const blockFixes = new Map(Object.entries({
-	's121': (tokens)=> {
+	's121': (block: Block)=> {
 		// if %flgE>=1 skip 5 --> ... skip 7, otherwise first skip lands on second one
-		const i = tokens.findIndex(t=> t instanceof ConditionToken && t.condition.match(/%flgE\s*>=\s*1/))
-		tokens[i].command.args = [7]
+		const t = block.find(t=> t instanceof ConditionToken && /%flgE\s*>=\s*1/.test(t.condition));
+		((t as ConditionToken).command as CommandToken).args = ['7']
 	},
-	's228' : (tokens) => {
-		const i = tokens.findLastIndex(t => t instanceof CommandToken && t.cmd == 'bg')
-		tokens.splice(i+1, 0, 'playstop')
+	's228' : (block: Block) => {
+		const i = block.findLastIndex(t => t instanceof CommandToken && t.cmd == 'bg')
+		block.insert(i+1, 'playstop')
 	},
-	's333' : (tokens) => {
-		const i = tokens.findLastIndex(t => t instanceof CommandToken && t.cmd == 'bg')
-		tokens.splice(i+1, 0, 'playstop')
+	's333' : (block: Block) => {
+		const i = block.findLastIndex(t => t instanceof CommandToken && t.cmd == 'bg')
+		block.insert(i+1, 'playstop')
 	},
-	's140' : (tokens) => {
-		let i = tokens.findLastIndex(t => t instanceof CommandToken && t.cmd == 'cl' && t.args[0] == 'c')
-		i += tokens.slice(i).findIndex(t => t instanceof CommandToken && t.cmd == '\\')
-		tokens.splice(i+1, 0, 'playstop');
+	's140' : (block: Block) => {
+		let i = block.findLastIndex(t => t instanceof CommandToken && t.cmd == 'cl' && t.args[0] == 'c')
+		i += block.slice(i).findIndex(t => t instanceof CommandToken && t.cmd == '\\')
+		block.insert(i+1, 'playstop');
 	},
-	's178' : (tokens) => {
-		tokens.unshift('play "*1"')
+	's178' : (block: Block) => {
+		block.insert(0, 'play "*1"')
 	},
-	's404': (tokens) => {
-		tokens.findLastIndex(t => t instanceof CommandToken && t.cmd)
-	}
 }))
 
-/**
- * @param {Token[]} tokens 
- */
-function sceneFixes(tokens) {
+function sceneFixes(block: Block) {
 	//remove '@' before '\\'
-	for (let i = 0; i<tokens.length; i++) {
-		if (tokens[i] instanceof CommandToken && tokens[i].cmd == '\\') {
-			if (tokens[i-1] instanceof TextToken && tokens[i-1].text.endsWith('@'))
-				tokens[i-1].text = tokens[i-1].text.substring(0, tokens[i-1].text.length-1)
+	for (const [token, i] of block) {
+		if (token instanceof CommandToken && token.cmd == '\\') {
+			const prev = block.at(i-1)
+			if (prev instanceof TextToken && prev.text.endsWith('@'))
+				prev.text = prev.text.substring(0, prev.text.length-1)
 		}
 	}
 	// 1. Put '\' after last text of scenes (fix text skip before choices)
 	// and selects outside logic file. Remove '@' if present and trailing 'br'.
 	let stop = false
-	for (let i = tokens.length-1; i>= 0 && !stop; i--) {
-		const token = tokens[i]
+	for (let i = block.length-1; i>= 0 && !stop; i--) {
+		const token = block.at(i)
 		if (token instanceof CommandToken) {
 			switch (token.cmd) {
 				case 'br':
-					tokens[i] = null; // remove line breaks after last text
+					block.delete(i) // remove line breaks after last text
 					break
-				case 'ld': case 'bg': case 'cl':
-					stop = true;
-					break
+				case 'ld'  : case 'bg': case 'cl':
 				case 'wait': case '!w':
-					stop = true;
+					stop = true
 					break
 				case '\\' : case '@' :
 					token.cmd = '\\' // convert '@' to '\\'
@@ -241,33 +222,31 @@ function sceneFixes(tokens) {
 					break
 				case 'select' :
 					// console.log(`removing 'select' command line in ${file}`)
-					tokens[i] = null // no 'select' in scenes
+					block.delete(i) // no 'select' in scenes
 					break
 			}
+			if (stop)
+				break
 		} else if (token instanceof TextToken) {
 			if (token.text.endsWith('@'))
 				token.text = token.text.substring(0, token.text.length-1)
-			tokens.splice(i+1, 0, new CommandToken(token.lineIndex, '\\'))
-			stop = true
+			block.insert(i+1, new CommandToken(token.lineIndex, '\\'))
+			break
 		}
+
 	}
 	// 2. Reformat phase transitions
-	for (let i = 0; i< tokens.length; i++) {
-		if ( (tokens[i] instanceof CommandToken) && (tokens[i].cmd == 'gosub') &&
-			 (/^\*(left|right)_phase$/.test(tokens[i].args[0])) ) {
-			processPhase(tokens[i], i, tokens)
+	for (const [token, i] of block) {
+		if ( (token instanceof CommandToken) && (token.cmd == 'gosub') &&
+			 (/^\*(left|right)_phase$/.test(token.args[0])) ) {
+			processPhase(token as CommandToken, i, block)
 		}
 	}
 }
 
-/**
- * 
- * @param {[[number, number]|number][]} pages 
- * @param {*} tokens 
- */
-function eroskip_fixes(pages, tokens) {
+function eroskip_fixes(pages: ([number, number]|[number]|number)[], block: Block) {
 	const pageIndices = [-1] // -1 to insert eroskip at the start if necessary
-	for (const [i, token] of tokens.entries()) {
+	for (const [token, i] of block) {
 		if (token instanceof CommandToken && token.cmd == '\\')
 			pageIndices.push(i)
 	}
@@ -282,24 +261,22 @@ function eroskip_fixes(pages, tokens) {
 		} else {
 			[start, end] = entry
 		}
-		tokens.splice(pageIndices[start]+1, 0, `eroskip ${+end - start}`);
+		block.insert(pageIndices[start]+1, `eroskip ${+end - start}`);
 	}
 }
 
-/**
- * @param {Map<string, Token[]>} tokens 
- */
-function interScenesFixes(blocks) {
+function interScenesFixes(blocks: Map<string, Block>) {
 	// Merge s21 <- s24, s22 <- s23, s57 <- s59 (3 lines just to ask where to eat, days 1 and 2)
-	blocks.get('s21').push(...blocks.get('s24'))
-	blocks.get('s22').push(...blocks.get('s23'))
-	blocks.get('s57').push(...blocks.get('s59'))
+	blocks.get('s21')!.extend(blocks.get('s24')!)
+	blocks.get('s22')!.extend(blocks.get('s23')!)
+	blocks.get('s57')!.extend(blocks.get('s59')!)
 	blocks.delete('s23')
 	blocks.delete('s24')
 	blocks.delete('s59')
 
 	// replace s46 with content from s47
-	blocks.set('s46', blocks.get('s47'))
+	blocks.set('s46', blocks.get('s47')!)
+	blocks.delete('s47')
 }
 
 
@@ -309,26 +286,22 @@ function interScenesFixes(blocks) {
 
 const PROP_CMDS = ['monocro', 'bg', 'a', 'l', 'c', 'r', 'track', 'waveloop']
 
-/**
- * @param {string} cmd 
- * @param {any[]} args 
- */
-function cmdToProps(cmd, args) {
+function cmdToProps(cmd: string, args: string[]): [object, boolean] {
 	switch (cmd) {
 		case 'bg' : {
 			const [img, , time] = args
-			return [{'bg': img, 'l': null, 'c': null, 'r': null}, time > 0]
+			return [{'bg': img, 'l': null, 'c': null, 'r': null}, +time > 0]
 		}
 		case 'ld' : {
 			const [pos, img, , time] = args
-			return [{[pos]: img}, time > 0]
+			return [{[pos]: img}, +time > 0]
 		}
 		case 'cl' : {
 			const [pos, , time] = args
 			if (pos == 'a')
-				return [{'l': null, 'c': null, 'r': null}, time > 0]
+				return [{'l': null, 'c': null, 'r': null}, +time > 0]
 			else
-				return [{[pos]: null}]
+				return [{[pos]: null}, +time > 0]
 		}
 		case 'play': return [{'track': args[0]}, false]
 		case 'playstop' : return [{'track': null}, false]
@@ -344,10 +317,7 @@ function cmdToProps(cmd, args) {
 	}
 }
 
-/**
- * @param {Map<string, any>} props 
- */
-function propsToCmds(props) {
+function propsToCmds(props: Map<string, any>) {
 	const spritePos = ['l', 'c', 'r']
 	// If at least one sprite position is specified, but all of them are null:
 	if (spritePos.some(p=>props.has(p))
@@ -360,10 +330,10 @@ function propsToCmds(props) {
 		if (!props.has('bg')) // ... and specify empty position 'a' if no bg
 			props.set('a', null)
 	}
-	props = [...props.entries()].sort(([k1,],[k2,])=>{
+	const propsArray = [...props.entries()].sort(([k1,],[k2,])=>{
 		return PROP_CMDS.indexOf(k1) - PROP_CMDS.indexOf(k2)
 	})
-	const insertCmds = props.map(([key, value])=> {
+	const insertCmds = propsArray.map(([key, value])=> {
 		switch(key) {
 			case 'bg' : return `bg ${value || '#000000'},notrans,0`
 			case 'a' : case 'l' : case 'c' : case 'r' :
@@ -375,10 +345,8 @@ function propsToCmds(props) {
 			case 'monocro' : return `monocro ${value || 'off'}`
 		}
 	})
-	const insertText = insertCmds.join('\n')
-	const inserts = parseScript(insertText, 0)
 	
-	return inserts
+	return insertCmds.filter(cmd=>cmd) as string[]
 }
 
 //#endregion ###################################################################
@@ -427,13 +395,13 @@ const deleted_scenes = [
 	's538', 's542'
 ]
 
-function token_filter(token) {
+function token_filter(token: Token) {
 	if (token == null) return false
 	if (token instanceof ReturnToken) return false
 	if (token instanceof TextToken  ) return true
 	if (token instanceof LabelToken) return false
 	if (token instanceof ConditionToken) {
-		token.condition = processCondition(token.condition)
+		token.condition = processCondition(token.condition, processVarName)!
 		if (!token.condition) return false
 		return true
 	}
@@ -445,56 +413,51 @@ function token_filter(token) {
 	throw Error(`Unrecognized token type of ${token}`)
 }
 
-/**
- * @param {Map<string, (tokens: Token[])=>void>} lang_block_fixes
- * @param {Map<string, ([number, number]|number)[]>} eroskip_pages
- * @param {string} label 
- */
-function getBlockProps(lang_block_fixes, eroskip_pages, label) {
+function getBlockProps(
+		lang_block_fixes: Map<string, (block: Block)=>void>,
+		eroskip_pages: Map<string, ([number, number]|[number]|number)[]>,
+		label: string) {
 	if (!isSceneLabel(label)) {
 		return null // logic blocks handled in separate script
 	}
 	if (deleted_scenes.includes(label)) {
 		return null
 	}
-	const token_fixes = [ token_filter, commandFix ]
-	const block_fixes = [ sceneFixes ]
+	const token_fixes = [ token_filter, commandFix ] as Array<(t: Token)=>void|boolean>
+	const block_fixes = [ sceneFixes ] as Array<(block: Block)=>void>
 	if (tokenFixes.has(label))
-		token_fixes.push(tokenFixes.get(label))
+		token_fixes.push(tokenFixes.get(label)!)
 	if (blockFixes.has(label))
-		block_fixes.push(blockFixes.get(label))
+		block_fixes.push(blockFixes.get(label)!)
 	if (lang_block_fixes.has(label))
-		block_fixes.push(lang_block_fixes.get(label))
+		block_fixes.push(lang_block_fixes.get(label)!)
 	if (eroskip_pages.has(label))
-		block_fixes.push(eroskip_fixes.bind(undefined, eroskip_pages.get(label)))
+		block_fixes.push(eroskip_fixes.bind(undefined, eroskip_pages.get(label)!))
 	
 	return {
 		tokenFixes: token_fixes,
 		blockFixes: block_fixes
 	}
 }
-function getFileProps(label) {
+function getFileName(label: string) {
 	if (['eclipse', 'openning'].includes(label))
-		return { name: label }
+		return label
 	if (label == 's47')
-		label = 's46' // use content from s47 for s46, the last page is better
+		label = 's046' // use content from s47 for s46, the last page is better
 	if (/^s\d\w+?$/.test(label))
-		return { name: `s${label.substring(1).padStart(3, '0')}` }
+		return `s${label.substring(1).padStart(3, '0')}`
 	
 	throw Error(`Unexpected label ${label}`)
 }
 
-/**
- * @param {string} folder
- * @param {string} filename
- * @param {string|null} outputDir
- * @returns {Promise<string|null>} Logic file content
- */
-async function processSingleScript(folder, filename, outputDir, blocksTree) {
+
+async function processSingleScript(folder: string, filename: string,
+		outputDir: string|null,
+		blocksTree: Map<string, {parents: string[], children: string[], endContext: object|null}>) {
 	const fullscriptPath = path.join(outputPathPrefix, folder, filename)
 
 	if (!fs.existsSync(fullscriptPath)) {
-		logError(`Input file not found: ${fullscriptPath}`)
+		logger.error(`Input file not found: ${fullscriptPath}`)
 		return null
 	}
 
@@ -520,7 +483,7 @@ async function processSingleScript(folder, filename, outputDir, blocksTree) {
 	))
 	interScenesFixes(blocks)
 	fixContexts(blocksTree, blocks, cmdToProps, propsToCmds)
-	const fileContents = generateScenes(blocks, getFileProps)
+	const fileContents = generateScenes(blocks, getFileName)
 
 	const outputPath = outputDir
 		? path.join(outputPathPrefix, folder, outputDir)
@@ -547,11 +510,11 @@ export async function main() {
 		const match = line.trim().match(/^(\w+):([^|]*)\|(.*)$/)
 		if (!match)
 			throw Error(`unable to parse line ${line} from tree file`)
-		return [ match[1], {
-			parents: match[2].split(',').filter(x=>x),
-			children: match[3].split(',').filter(x=>x),
-			endContext: null }
-		]
+		return [ match[1] as string, {
+			parents: match[2].split(',').filter(x=>x) as string[],
+			children: match[3].split(',').filter(x=>x) as string[],
+			endContext: null as null|object}
+		] as const
 	}).filter(x=>x != null))
 
 	//2. Extract scenes, fix start contexts
@@ -559,14 +522,14 @@ export async function main() {
 	let processedCount = 0
 	for (const [folder, filename] of fullscripts) {
 		processedCount++
-		logProgress(`Processing fullscripts: ${processedCount}/${totalScripts} (${filename})`)
+		logger.progress(`Processing fullscripts: ${processedCount}/${totalScripts} (${filename})`)
 		try {
 			await processSingleScript(folder, filename, outputDir, tree)
 		} catch (e) {
-			logError(`Error processing ${filename}: ${e.message}`)
+			logger.error(`Error processing ${filename}: ${(e as Error).message}`)
 		}
 	}
-	logProgress(`Processing fullscripts: ${processedCount}/${totalScripts}\n`)
+	logger.progress(`Processing fullscripts: ${processedCount}/${totalScripts}\n`)
 }
 
 const __filename = fileURLToPath(import.meta.url)

@@ -1,16 +1,13 @@
-import { CommandToken, ConditionToken, LabelToken, TextToken, Token } from "../../../../tsukiweb-common/tools/convert-scripts/parsers/utils.js";
+import { Block, CommandToken, ConditionToken, LabelToken, TextToken, Token } from "../../../../tsukiweb-common/tools/convert-scripts/parsers/utils.ts";
 
-/**
- * @param {Token[]} tokens
- * @param {(cmd:string, args:Array)=>[object, boolean]} cmdToProps
- * @param {(props:Map<string,any>)=>string[]} propsToCmds
- * @param {object[]} previousContexts
- */
-function processContext(tokens, cmdToProps, propsToCmds, previousContexts) {
+function processContext(block: Block,
+        cmdToProps: (cmd:string, args:string[])=>[object, boolean],
+        propsToCmds: (props:Map<string,any>)=>string[],
+        previousContexts: object[]) {
     let ctx = new Map()
     let startContext = ctx
     let endContext = null
-    for (let token of tokens) {
+    for (let [token, i] of block) {
         let delay = false
         if (token instanceof ConditionToken)
             token = token.command
@@ -43,38 +40,37 @@ function processContext(tokens, cmdToProps, propsToCmds, previousContexts) {
         }
     }
     const insert = propsToCmds(missing_props)
-    tokens.unshift(...insert)
+    block.insert(0, insert.join('\n'))
     // add properties in end context from previous scenes that were not changed in the scene
     for (const [prop, value] of missing_props) {
-        if (!endContext.has(prop)) {
-            endContext.set(prop, value)
+        if (!endContext!.has(prop)) {
+            endContext!.set(prop, value)
         }
     }
     // remove null end context properties that were not specified in end contexts of previous scenes
-    for (const [prop, value] of endContext) {
+    for (const [prop, value] of endContext!) {
         if (value == null && !missing_props.has(prop) && !overridden_props.includes(prop))
-            endContext.delete(prop)
+            endContext!.delete(prop)
     }
-    return Object.fromEntries(endContext.entries())
+    return Object.fromEntries(endContext!.entries())
 }
 
-/**
- * @param {Map<string, {parents: string[], children: string[], endContext: object}>} blocksTree
- * @param {Map<string, Token[]>} blocks
- * @param {(cmd:string, args:Array)=>[object, boolean]} cmdToProps
- * @param {(props:Map<string,any>)=>string[]} propsToCmds
- */
-function fixContexts(blocksTree, blocks, cmdToProps, propsToCmds) {
+
+function fixContexts(
+        blocksTree: Map<string, {parents: string[], children: string[], endContext: object|null}>,
+        blocks: Map<string, Block>,
+        cmdToProps: (cmd:string, args:Array<string>)=>[object, boolean],
+        propsToCmds: (props:Map<string,any>)=>string[]) {
     for (const [label, {parents}] of blocksTree) { // nodes are already ordered correctly
-        const tokens = blocks.get(label)
-        if (!tokens)
+        const block = blocks.get(label)
+        if (!block)
             throw Error(`Error: no block named ${label}`)
-        const parentContexts = parents.map(p=>blocksTree.get(p).endContext)
+        const parentContexts = parents.map(p=>blocksTree.get(p)!.endContext!)
         if (parentContexts.some((c=>c == null)))
             throw Error(`Incomplete previous contexts of ${label}`)
         try {
-            const endContext = processContext(tokens, cmdToProps, propsToCmds, parentContexts)
-            blocksTree.get(label).endContext = endContext
+            const endContext = processContext(block, cmdToProps, propsToCmds, parentContexts)
+            blocksTree.get(label)!.endContext = endContext
         } catch (e) {
             console.error(`error while fixing contexts of ${label}`)
         }

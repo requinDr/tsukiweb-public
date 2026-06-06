@@ -1,6 +1,6 @@
-import { main as runTH } from './processing/scenes.js';
-import { main as runTsLogic } from './processing/logic.js';
-import { main as runPlusDisc } from './plus_disc.js';
+import { main as runTH } from './processing/scenes.ts';
+import { main as runTsLogic } from './processing/logic.ts';
+import { main as runPlusDisc } from './plus_disc.ts';
 
 async function main() {
     try {
