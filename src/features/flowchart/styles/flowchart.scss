@@ -23,7 +23,6 @@
 		transform: translateZ(0);
 		contain: paint;
 		touch-action: pan-x pan-y;
-		will-change: min-width, min-height, max-width, max-height;
 		vector-effect: non-scaling-stroke;
 
 		@media (pointer: coarse) {

@@ -42,7 +42,7 @@ const useFlowchartPinchZoom = (
 	size: FlowchartSize
 ) => {
 	const sizeRef = useRef(size)
-	const targetRef = useRef<EventTarget | null>(null)
+	const targetRef = useRef<SVGElement | null>(null)
 
 	useLayoutEffect(() => {
 		const svg = svgRef.current
@@ -54,7 +54,7 @@ const useFlowchartPinchZoom = (
 		targetRef,
 		minZoom: MIN_TOUCH_ZOOM,
 		maxZoom: MAX_TOUCH_ZOOM,
-		onZoom: (zoom) => {
+		onZoomCommit: (zoom) => {
 			if (svgRef.current)
 				applyFlowchartZoom(svgRef.current, sizeRef.current, zoom)
 		},
