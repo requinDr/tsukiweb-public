@@ -12,7 +12,8 @@
 	padding-bottom: max(160px, 10vh);
 	align-items: start;
 	overflow: auto;
-	touch-action: manipulation;
+	overscroll-behavior: contain;
+	touch-action: pan-x pan-y;
 	--active-connection: #0d96e0;
 	--inactive-connection: #444;
 
@@ -21,6 +22,8 @@
 		direction: ltr;
 		transform: translateZ(0);
 		contain: paint;
+		touch-action: pan-x pan-y;
+		will-change: min-width, min-height, max-width, max-height;
 		vector-effect: non-scaling-stroke;
 
 		@media (pointer: coarse) {

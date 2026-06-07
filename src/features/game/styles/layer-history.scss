@@ -75,6 +75,8 @@
 
 	#flowchart-progress {
 		overflow: auto;
+		overscroll-behavior: contain;
+		touch-action: pan-x pan-y;
 		will-change: scroll-position;
 		display: flex;
 		.progress-container {
