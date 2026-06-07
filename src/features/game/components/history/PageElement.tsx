@@ -90,19 +90,21 @@ const PageElement = ({history, content, onLoad, navY=0, ...props}: Props)=> {
 	}, [])
 
 	return (
-		<div {...props}>
+		<>
 			<hr page-type={content.type} />
-			{content &&
-				<Button
-					audio={audio} hoverSound='tick' clickSound='glass'
-					onClick={onLoad.bind(null,content)} className='load'
-					nav-scroll='none' nav-x={0} nav-y={navY}
-					onFocus={onFocus as any}>
-					<MdHistory /> {strings.history.load}
-				</Button>
-			}
-			{displayContent}
-		</div>
+			<div {...props} className="history-page">
+				{content &&
+					<Button
+						audio={audio} hoverSound='tick' clickSound='glass'
+						onClick={onLoad.bind(null,content)} className='load'
+						nav-scroll='none' nav-x={0} nav-y={navY}
+						onFocus={onFocus as any}>
+						<MdHistory aria-hidden /> {strings.history.load}
+					</Button>
+				}
+				{displayContent}
+			</div>
+		</>
 	)
 }
 
