@@ -3,14 +3,14 @@ import fs from 'fs';
 const labelRegex = /^\*(f\d+)\s*$/ // Matches lines like "*f123"
 const choiceRegex = /`([^`]+)`/g
 
-export const extractLabelOrder = (content) =>
+export const extractLabelOrder = (content: string) =>
   content
     .split('\n')
     .map(line => line.match(labelRegex)?.[1])
     .filter(Boolean)
 
-export function extractChoicesFromLogic(logicContent) {  
-  const choicesByLabel = {}
+export function extractChoicesFromLogic(logicContent: string) {  
+  const choicesByLabel: Record<string, string[]> = {}
   let currentLabel = null
 
   for (const line of logicContent.split('\n')) {
@@ -33,7 +33,7 @@ export function extractChoicesFromLogic(logicContent) {
   return choicesByLabel
 }
 
-export function removeChoiceTexts(logicContent) {
+export function removeChoiceTexts(logicContent: string) {
   const choiceRegex = /`([^`]+)`([\s\n]*,[\s\n]*)(\*\w+)/g
   let currentIndex = 0
   return logicContent.replace(choiceRegex, (match, choiceText, separator, nextLabel) => {
@@ -43,7 +43,7 @@ export function removeChoiceTexts(logicContent) {
   })
 }
 
-export function updateGameJsonWithChoices(gameJsonPath, choices) {
+export function updateGameJsonWithChoices(gameJsonPath: string, choices: Record<string, string[]>) {
   if (!fs.existsSync(gameJsonPath)) {
     console.warn(`game.json not found at ${gameJsonPath}`)
     return
@@ -53,7 +53,7 @@ export function updateGameJsonWithChoices(gameJsonPath, choices) {
     const gameJson = JSON.parse(fs.readFileSync(gameJsonPath, 'utf-8'))
     gameJson.choices = choices
     fs.writeFileSync(gameJsonPath, JSON.stringify(gameJson, null, 2) + '\n')
-  } catch (error) {
-    console.error(`Error updating game.json at ${gameJsonPath}:`, error.message)
+  } catch (e) {
+    console.error(`Error updating game.json at ${gameJsonPath}:`, (e as Error).message)
   }
 }

@@ -277,6 +277,7 @@ function interScenesFixes(blocks: Map<string, Block>) {
 	// replace s46 with content from s47
 	blocks.set('s46', blocks.get('s47')!)
 	blocks.delete('s47')
+	blocks.get('s46')!.name = 's46'
 }
 
 
@@ -379,7 +380,7 @@ const deleted_scenes = [
 	's300', 's309', 's311', 's411',
 	// Inaccessible scenes
 	's53', 's415',
-	// Content replaced by content of s47
+	// Content replaced by s47
 	's46',
 	// Identical to s201
 	's37',
@@ -442,8 +443,6 @@ function getBlockProps(
 function getFileName(label: string) {
 	if (['eclipse', 'openning'].includes(label))
 		return label
-	if (label == 's47')
-		label = 's046' // use content from s47 for s46, the last page is better
 	if (/^s\d\w+?$/.test(label))
 		return `s${label.substring(1).padStart(3, '0')}`
 	
