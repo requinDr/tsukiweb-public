@@ -1,5 +1,5 @@
 import { GraphicsGroup } from "@tsukiweb-common/graphics"
-import { bb, noBb, Bbcode } from "@tsukiweb-common/utils/Bbcode"
+import { noBb, Bbcode } from "@tsukiweb-common/utils/Bbcode"
 import { SceneName } from "app/utils/types"
 import { FcNode, getSceneGraph } from "features/flowchart/utils/flowchart"
 import { tokenizeCondition } from "@tsukiweb-common/script/utils"
@@ -119,7 +119,7 @@ const SceneIllustration = ({node}: {node: FcNode})=> {
 			}
 			</div>
 			<div className="id">
-				{bb(node.id)}
+				{node.id.replace("openning", "opening")}
 			</div>
 		</div>
 	</>
