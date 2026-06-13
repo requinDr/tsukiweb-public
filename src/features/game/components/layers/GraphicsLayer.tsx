@@ -68,29 +68,36 @@ const GraphicsLayer = ({ script }: Props) => {
 			style={style}
 			onAnimationEnd={quake?.onFinish}
 		>
-			<BackgroundGraphics image={graphics.bg} bgAlign={transition?.to.bg == graphics.bg ? bgAlign : defaultBgAlign} />
+			<BackgroundGraphics
+				image={useObserved(graphics, 'bg')[0]}
+				bgAlign={transition?.to.bg == graphics.bg ? bgAlign : defaultBgAlign}
+			/>
 			<SpriteGraphics
-				image={graphics.l}
+				image={useObserved(graphics, 'l')[0]}
 				transition={transition}
 				pos='l'
 				rocket={rocket?.layer === 'l' ? rocket : undefined}
 				topLayer={topSprite === 'l'}
 			/>
 			<SpriteGraphics
-				image={graphics.c}
+				image={useObserved(graphics, 'c')[0]}
 				transition={transition}
 				pos='c'
 				rocket={rocket?.layer === 'c' ? rocket : undefined}
 				topLayer={topSprite === 'c'}
 			/>
 			<SpriteGraphics
-				image={graphics.r}
+				image={useObserved(graphics, 'r')[0]}
 				transition={transition}
 				pos='r'
 				rocket={rocket?.layer === 'r' ? rocket : undefined}
 				topLayer={topSprite === 'r'}
 			/>
-			<ForegroundGraphics image={graphics.bg} transition={transition} bgAlign={bgAlign} />
+			<ForegroundGraphics
+				image={graphics.bg}
+				transition={transition}
+				bgAlign={bgAlign}
+			/>
 		</div>
 	)
 }

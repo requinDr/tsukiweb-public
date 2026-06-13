@@ -176,7 +176,7 @@ function genericBlocFixes(block: Block) {
                 continue // previous line is not text
             if (/^[\s　".…『「\[-―─―—]/.test(t.text))
                 continue // appropriate paragraph start
-            if (/[@".,:;?!」。！？、，…\]-―─―—』]$/.test(prev.text))
+            if (/[@".,:;?!」。！？、，,…\]-―─―—』]$/.test(prev.text))
                 continue // appropriate paragraph end in previous line
             prev.text += t.text
             block.delete(i)
