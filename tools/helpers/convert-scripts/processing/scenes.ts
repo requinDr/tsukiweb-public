@@ -191,6 +191,26 @@ const blockFixes = new Map(Object.entries({
 	's178' : (block: Block) => {
 		block.insert(0, 'play "*1"')
 	},
+	's532' : (block: Block) => {
+		// insert delays between instant neko ark transitions
+		for (const [t, i] of block) {
+			if (t instanceof CommandToken && t.cmd == 'ld' && t.args[2] =='notrans') {
+				const next = block.at(i+1)
+				if (next instanceof CommandToken && next.cmd == 'ld' && next.args[2] == 'notrans')
+					block.insert(i+1, "wait 100")
+			}
+		}
+	},
+	's535' : (block: Block) => {
+		// insert delays between instant neko ark transitions
+		for (const [t, i] of block) {
+			if (t instanceof CommandToken && t.cmd == 'ld' && t.args[2] =='notrans') {
+				const next = block.at(i+1)
+				if (next instanceof CommandToken && next.cmd == 'ld' && next.args[2] == 'notrans')
+					block.insert(i+1, "wait 100")
+			}
+		}
+	}
 }))
 
 function sceneFixes(block: Block) {

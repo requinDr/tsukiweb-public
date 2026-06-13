@@ -164,6 +164,37 @@ function genericTokenFixes(clickRE: RegExp|null, token: Token) {
     }
 }
 
+function insertNoTransDelay(t: CommandToken<'bg'|'ld'>, i: number, b: Block) {
+    let j: number
+    for (j = i-1; j >= 0; j--) {
+        const prev = b.at(j)
+        if (prev instanceof CommandToken) {
+            if (['bg', 'ld', 'cl'].includes(prev.cmd)) {
+                if (prev.args.at(-2) == 'notrans')
+                    break // might need to add a delay
+                else
+                    return // already a delay
+            }
+            else if (['wait', '!w', 'phase'].includes(prev.cmd))
+                return // already a delay, no need to insert one
+        } else
+            return // no need to add a delay if not preceded by a command
+    }
+    if (j < 0)
+        return // no other token before
+    const prev = b.at(j) as CommandToken<'bg'|'ld'|'cl'>
+    switch (t.cmd) {
+        case 'bg' :
+            if (['ld', 'bg'].includes(prev.cmd))
+                b.insert(i, "wait 100")
+            break
+        case 'ld' :
+            if (prev.cmd == 'ld' && prev.args[0] == t.args[0])
+                b.insert(i, "wait 100")
+            break
+    }
+}
+
 function genericBlocFixes(block: Block) {
     // Remove '@' right before '\'
     for (const [t, i] of block) {
@@ -180,10 +211,26 @@ function genericBlocFixes(block: Block) {
                 continue // appropriate paragraph end in previous line
             prev.text += t.text
             block.delete(i)
-        } else if (t instanceof CommandToken && t.cmd == '\\') {
-            const prevToken = i > 0 ? block.at(i-1) : null
-            if (prevToken instanceof TextToken && prevToken.text.endsWith('@'))
-                prevToken.text = prevToken.text.substring(0, prevToken.text.length-1)
+        } else if (t instanceof CommandToken) {
+            switch (t.cmd) {
+                case '\\':
+                    if (i > 0) {
+                        const prevToken = block.at(i-1)
+                        if (prevToken instanceof TextToken && prevToken.text.endsWith('@'))
+                            prevToken.text = prevToken.text.substring(0, prevToken.text.length-1)
+                        }
+                    break
+                case 'bg':
+                    // insert delay between two instant background transitions
+                    if (t.args[1] == 'notrans')
+                        insertNoTransDelay(t, i, block)
+                    break
+                case 'ld':
+                    // insert delay between two instant sprite transitions at one position
+                    if (t.args[2] == 'notrans')
+                        insertNoTransDelay(t, i, block)
+                    break
+            }
         }
     }
 }
