@@ -40,7 +40,7 @@ const ModalInfo = ({show, setShow}: ModalInfoProps) => {
 	
 	const copyCurrentUrl = () => {
 		navigator.clipboard.writeText(window.location.origin)
-		toast("Page URL copied to clipboard", {
+		toast(strings.title.copied, {
 			toastId: "copy-url",
 			type: "info",
 			autoClose: 2000,

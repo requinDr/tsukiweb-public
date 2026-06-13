@@ -30,7 +30,8 @@
       "remake": "%0月姫 -A piece of blue glass moon-%1を買って応援してください。"
     },
     "install": "Install",
-    "share": "Share"
+    "share": "Share",
+    "copied": "Copied to clipboard"
   },
   "extra": {
     "gallery": "ギャラリー",

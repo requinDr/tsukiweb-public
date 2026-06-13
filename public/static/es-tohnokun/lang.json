@@ -30,7 +30,8 @@
       "remake": "Considera comprar el remake %0Tsukihime - A piece of blue glass moon%1."
     },
     "install": "Instalar",
-    "share": "Compartir"
+    "share": "Compartir",
+    "copied": "Copied to clipboard"
   },
   "extra": {
     "gallery": "Galería",
@@ -160,7 +161,7 @@
     "title": "Título",
     "q-save": "Guardado rápido",
     "q-load": "Carga rápida",
-    "copy-scene-url": "Copiar enlace de la escena"
+    "copy-scene-url": "Compartir escena"
   },
   "history": {
     "load": "Cargar",

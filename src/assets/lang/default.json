@@ -29,7 +29,8 @@
       "remake": "Consider buying the remake %0Tsukihime - A piece of blue glass moon%1."
     },
     "install": "Install",
-    "share": "Share"
+    "share": "Share",
+    "copied": "Copied to clipboard"
   },
   "extra": {
     "gallery": "Gallery",
