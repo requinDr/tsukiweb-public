@@ -167,7 +167,20 @@ function genericTokenFixes(clickRE: RegExp|null, token: Token) {
 function genericBlocFixes(block: Block) {
     // Remove '@' right before '\'
     for (const [t, i] of block) {
-        if (t instanceof CommandToken && t.cmd == '\\') {
+        if (t instanceof TextToken) {
+            // merge adjacent text lines
+            if (i == 0)
+                continue // no previous line
+            const prev = block.at(i-1)
+            if (!(prev instanceof TextToken))
+                continue // previous line is not text
+            if (/^[\s　".…『「\[-―─―—]/.test(t.text))
+                continue // appropriate paragraph start
+            if (/[@".,:;?!」。！？、，…\]-―─―—』]$/.test(prev.text))
+                continue // appropriate paragraph end in previous line
+            prev.text += t.text
+            block.delete(i)
+        } else if (t instanceof CommandToken && t.cmd == '\\') {
             const prevToken = i > 0 ? block.at(i-1) : null
             if (prevToken instanceof TextToken && prevToken.text.endsWith('@'))
                 prevToken.text = prevToken.text.substring(0, prevToken.text.length-1)

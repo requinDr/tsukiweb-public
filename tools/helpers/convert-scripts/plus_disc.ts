@@ -98,7 +98,7 @@ const fixes = new Map<string, (t: Block)=>void>(Object.entries({
 function normalizePdScriptInput(txt: string) {
   // remove spaces on command lines
   return txt.replace(
-    /^[ \t]+(?=@\w|\[(?:l|r|lr)\](?:\[(?:l|r|lr)\])*\s*$)/gm,
+    /^[ \t]+(?=@\w|\[[lr]+\]*\s*$)/gm,
     '',
   )
 }
