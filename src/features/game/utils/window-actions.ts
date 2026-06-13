@@ -5,10 +5,9 @@ import { toast } from "react-toastify";
 import { strings } from "translation/lang";
 import { FaSave } from "react-icons/fa";
 import { MdPlayArrow } from 'react-icons/md';
-import { directionalNavigate } from "@tsukiweb-common/input/arrowNavigation";
 import { InGameLayersHandler } from "app/utils/display";
 import { moveBg } from "features/game/utils/graphics";
-import { inGameControls, menuKeyMap } from "features/game/utils/keybind";
+import { inGameControls } from "features/game/utils/keybind";
 import { QUICK_SAVE_ID, savesManager } from "engine/savestates";
 import { settings } from "engine/settings";
 import { EventActions, EventFilter } from "@tsukiweb-common/input/eventActions";
@@ -104,12 +103,17 @@ function swipeCallback(layers: InGameLayersHandler,
 		return
 	switch (layers.topLayer) {
 		case 'text':
-		case 'graphics':
-			// TODO in graphics mode, move background instead of opening views ?
 			switch(direction) {
-				case "up" : layers.graphics = true; return true;
-				case "left" : layers.menu = true; return true;
-				case "down" : layers.history = true; return true;
+				case "up": layers.graphics = true; return true;
+				case "left": layers.menu = true; return true;
+				case "down": layers.history = true; return true;
+			}
+			break
+		case 'graphics':
+			switch(direction) {
+				case "up": moveBg("down"); return true;
+				case "down": moveBg("up"); return true;
+				case "left": layers.menu = true; return true;
 			}
 			break
 		case 'menu':
