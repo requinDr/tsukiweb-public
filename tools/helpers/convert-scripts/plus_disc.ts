@@ -95,6 +95,14 @@ const fixes = new Map<string, (t: Block)=>void>(Object.entries({
   },
 }))
 
+function normalizePdScriptInput(txt: string) {
+  // remove spaces on command lines
+  return txt.replace(
+    /^[ \t]+(?=@\w|\[(?:l|r|lr)\](?:\[(?:l|r|lr)\])*\s*$)/gm,
+    '',
+  )
+}
+
 //#endregion ###################################################################
 //#region                        GRAPHICS FIXES
 //##############################################################################
@@ -512,7 +520,7 @@ export function main() {
           continue
         }
 
-        const txt = fs.readFileSync(fullPath, 'utf-8')
+        const txt = normalizePdScriptInput(fs.readFileSync(fullPath, 'utf-8'))
         let block = new Block(file, parseScript(txt))
         block.forEach(processToken)
         fixBlock(block, { blockFixes: [(block: Block)=> {
