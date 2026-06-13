@@ -17,7 +17,7 @@ const ConfigGameTab = () => {
 	const [showLanguage, setShowLanguage] = useState<boolean>(false)
 	useLanguageRefresh()
 	const { conf, update, reset } = useConfig(
-		['language', 'textSpeed', 'fixedRatio', 'autoClickDelay', 'nextPageDelay'] as const)
+		['textSpeed', 'fixedRatio', 'autoClickDelay', 'nextPageDelay'] as const)
 	const isFullscreen = useIsFullscreen()
 	
 	const msToS = (ms: number)=>

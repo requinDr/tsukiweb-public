@@ -62,11 +62,11 @@
 		margin-inline: auto;
 		max-width: 1000px;
 		font-family: var(--game-font), sans-serif;
-		letter-spacing: 1px;
-		font-size: clamp(.92em, min(2.6cqw, 3.7cqh), 1.68em);
+		font-size: clamp(.92em, min(2.6cqw, 3.8cqh), 1.68em);
 		line-height: 1.92;
+		letter-spacing: 1px;
 		--sc: #000;
-		--ts: clamp(0.8px, 0.15cqw, 1.1px);
+		--ts: clamp(.8px, .045em, 1.1px);
 		--nts: calc(-1 * var(--ts));
 		text-shadow:
 			var(--ts) var(--ts) var(--ts) var(--sc),
