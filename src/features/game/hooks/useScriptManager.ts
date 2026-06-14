@@ -12,6 +12,13 @@ type ScriptManager = {
 	layers: InGameLayersHandler
 	actionsHandler: UserActionsHandler
 }
+
+const replayReturns = new WeakSet<ScriptPlayer>()
+
+type ReplayNavigationState = {
+	replayReturnTo?: SCREEN
+}
+
 export const useScriptManager = ({script, history, layers, actionsHandler}: ScriptManager) => {
 	useAutoPlayWakeLock(script)
 
@@ -21,11 +28,22 @@ export const useScriptManager = ({script, history, layers, actionsHandler}: Scri
 		actionsHandler.onScriptChange(script)
 		script.setCommands(commands)
 
+		const handleReplayEnd = () => {
+			if (replayReturns.has(script))
+				return
+			replayReturns.add(script)
+			script.stop()
+			const returnScreen = (window.history.state as ReplayNavigationState|null)?.replayReturnTo
+			if (returnScreen) {
+				displayMode.replaceNavigation = true
+				displayMode.screen = returnScreen
+				return
+			}
+			window.history.back()
+		}
+
 		if (!script.continueScript) {
-			script.addEventListener('afterBlock', ()=> {
-				script.stop()
-				window.history.back()
-			})
+			script.addEventListener('afterBlock', handleReplayEnd)
 		}
 
 		script.addEventListener('autoPlayStop', onAutoPlayStop)
@@ -36,6 +54,11 @@ export const useScriptManager = ({script, history, layers, actionsHandler}: Scri
 		looped_se && looped_se.length > 0 ? audio.playWave(looped_se, true) : audio.stopWave()
 		
 		window.script = script
+
+		return () => {
+			script.removeEventListener('afterBlock', handleReplayEnd)
+			script.removeEventListener('autoPlayStop', onAutoPlayStop)
+		}
 	}, [script])
 	
 	useEffect(()=> {

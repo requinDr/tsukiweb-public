@@ -14,11 +14,13 @@ export const displayMode: {
   bgAlignment: 'top' | 'center' | 'bottom'
   bgMoveTime: number
   replaceNavigation: boolean
+  navigationState?: unknown
 } = {
   screen: SCREEN.TITLE,
   bgAlignment: 'center',
   bgMoveTime: 0,
   replaceNavigation: false,
+  navigationState: undefined,
 }
 
 type InGameMenu = 'history' | 'flowchart' | 'save' | 'load' | 'config'
