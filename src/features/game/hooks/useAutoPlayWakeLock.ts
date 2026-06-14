@@ -11,7 +11,7 @@ export function useAutoPlayWakeLock(script: ScriptPlayer): void {
 
 	useEffect(() => {
 		setIsAutoPlaying(script.autoPlay)
-	}, [script])
+	}, [script, setIsAutoPlaying])
 
 	useWakeLock(isAutoPlaying)
 }

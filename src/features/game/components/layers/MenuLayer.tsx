@@ -167,7 +167,7 @@ const ActionsButtons = ({script, show, close, qSave, qLoad}: ActionsButtonsProps
 	
 	useEffect(() => {
 		setIsFfw(script.fastForwarding)
-	}, [])
+	}, [script.fastForwarding, setIsFfw])
 
 	const toggleVolume = () => {
 		settings.volume.master = - settings.volume.master

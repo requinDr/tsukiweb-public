@@ -10,15 +10,11 @@ const SceneReplayScreen = () => {
 	const {sceneId} = useParams<{ sceneId: string }>()
 
 	useEffect(() => {
-		startSceneReplay()
-	}, [sceneId])
-
-	const startSceneReplay = () => {
 		const sceneIdTmp = sceneId as LabelName
 		displayMode.replaceNavigation = true
 		displayMode.navigationState = { replayReturnTo: SCREEN.SCENES }
 		playScene(sceneIdTmp, { continueScript: false, viewedOnly: false })
-	}
+	}, [sceneId])
 
 	return null
 }

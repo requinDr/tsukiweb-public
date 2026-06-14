@@ -64,7 +64,7 @@ const useFlowchartPinchZoom = (
 		sizeRef.current = size
 		if (svgRef.current)
 			applyFlowchartZoom(svgRef.current, size, zoomRef.current)
-	}, [size.minWidthRem, size.minHeightRem, size.maxWidthPct, size.maxHeightPct, svgRef])
+	}, [size, zoomRef, svgRef])
 }
 
 const Flowchart = ({history, onSceneClick, mode = 'viewer'}: Props)=> {

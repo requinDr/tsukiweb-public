@@ -38,7 +38,7 @@ const GalleryImage = ({image, gallery = [], galleryUnlocked = [], blurred = fals
 			const { name: alt, source } = getGalleryImg(img)
 			return { src: imageSrc(img, 'src'), alt, source }
 		}
-	), [gallery, galleryUnlocked])
+	), [gallery, galleryUnlocked, getGalleryImg])
 
 	const galleryImg = getGalleryImg(image)
 	const index = slides.findIndex(slide => slide.alt === galleryImg.name) !== -1

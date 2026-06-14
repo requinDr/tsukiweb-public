@@ -38,7 +38,7 @@ const HistoryLayer = ({ display, history, onRewind, layers, continueScript = tru
 		history.onPageLoad(index)
 		handleClose()
 		onRewind()
-	}, [handleClose, onRewind])
+	}, [handleClose, history, onRewind])
 
 	const loadScene = useCallback((label: LabelName)=> {
 		if (!continueScript) {
@@ -48,7 +48,7 @@ const HistoryLayer = ({ display, history, onRewind, layers, continueScript = tru
 		}
 		handleClose()
 		onRewind()
-	}, [continueScript, handleClose, onRewind])
+	}, [continueScript, handleClose, history, onRewind])
 	
 	return (
 		<div

@@ -58,7 +58,7 @@ const GraphicsLayer = ({ script }: Props) => {
 		} else {
 			setBgAlign(defaultBgAlign)
 		}
-	}, [transition])
+	}, [transition, defaultBgAlign])
 
 	const { graphics } = script
 

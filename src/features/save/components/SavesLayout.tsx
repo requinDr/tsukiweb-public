@@ -1,4 +1,4 @@
-import { ChangeEvent, MouseEvent, useEffect, useRef, useState } from "react"
+import { ChangeEvent, MouseEvent, useCallback, useEffect, useRef, useState } from "react"
 import SaveListItem from "./SaveListItem"
 import SaveDetails from "./SaveDetails"
 import { MdAddCircleOutline, MdUploadFile, MdWarning } from "react-icons/md"
@@ -84,7 +84,7 @@ const SavesLayout = ({variant, onBack}: Props) => {
 		}
 	}
 
-	async function handleDeleteSave(id: number) {
+	const handleDeleteSave = useCallback(async (id: number) => {
 		const confirmed = await dialog.confirm({
 			text: strings.saves["delete-warning"],
 			labelYes: strings.yes,
@@ -95,7 +95,7 @@ const SavesLayout = ({variant, onBack}: Props) => {
 			savesManager.remove(id)
 			if (id == focusedId) setFocusedSave(undefined)
 		}
-	}
+	}, [focusedId])
 
 	useEffect(() => {
 		const onKeyDown = (e: KeyboardEvent) => {
@@ -105,7 +105,7 @@ const SavesLayout = ({variant, onBack}: Props) => {
 		}
 		window.addEventListener("keydown", onKeyDown)
 		return () => window.removeEventListener("keydown", onKeyDown)
-	}, [])
+	}, [handleDeleteSave])
 
 	const focusedSave = focusedId != undefined ? savesManager.get(focusedId) : undefined
 	const title = strings.saves[variant == "save" ? "title-save" : "title-load"]
