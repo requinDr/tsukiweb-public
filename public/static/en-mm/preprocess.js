@@ -13,10 +13,14 @@ function th_raw_fixes(text) {
  * do here than on the raw text. The chages are performed after
  * all automatic fixes. Commands can be inserted as text, they will be
  * converted to tokens afterwards.
- * @type {Record<string, (tokens: Block)=>void>}
+ * @type {Record<string, (block: Block)=>void>}
  */
 const block_fixes = {
-    //scene: (tokens)=> { //token changes.}
+    "s409": (block)=> {
+        block.replaceText(
+            "Her perfect breasts shake and sweat peals down her body",
+            "Her small breasts shake, sending sweat flying")
+    }
 }
 
 /**
