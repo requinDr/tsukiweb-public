@@ -38,10 +38,12 @@ export const AllScenes = memo(({ nodes, activeNode, onClick }: SceneRendererProp
 			)}
 			{activeNodes.map(node => {
 				const graph = getSceneGraph(node.id as SceneName)
+				const inProgress = node.active && !node.seen
 				return (
 					<VisibleScene key={node.id} node={node}
 						graph={graph}
-						shouldBlur={!!(graph.bg && cg.shouldBlur(graph.bg))}
+						shouldBlur={inProgress || !!(graph.bg && cg.shouldBlur(graph.bg))}
+						popover={!inProgress}
 						closePopover={closePopover}
 						onClick={onClick}
 						{...navProps(node)} />

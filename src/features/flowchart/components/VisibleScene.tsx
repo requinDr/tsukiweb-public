@@ -10,11 +10,12 @@ type VisibleSceneProps = {
 	node: FcNode
 	graph: ReturnType<typeof getSceneGraph>
 	shouldBlur: boolean
+	popover: boolean
 	closePopover: () => void
 	onClick?: (id: SceneName) => void
 } & Omit<SVGProps<SVGRectElement>, 'onClick'> & NavigationProps
 
-const VisibleScene = ({ node, graph, shouldBlur, closePopover, onClick, ...props }: VisibleSceneProps) => {
+const VisibleScene = ({ node, graph, shouldBlur, popover, closePopover, onClick, ...props }: VisibleSceneProps) => {
 	const trigger = usePopoverTrigger(node)
 	const disabled = node.state === FcNodeState.DISABLED
 
@@ -37,7 +38,7 @@ const VisibleScene = ({ node, graph, shouldBlur, closePopover, onClick, ...props
 	  onClick: onAction,
 	  onKeyDown: onAction,
 	  tabIndex: 0,
-	  ...trigger
+	  ...(popover ? trigger : {})
 	}
 
 	return (
@@ -90,4 +91,3 @@ const SceneImage = ({ node }: SceneImageProps) => {
 		/>
 	)
 }
-
