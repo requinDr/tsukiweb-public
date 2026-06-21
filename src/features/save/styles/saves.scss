@@ -365,7 +365,7 @@
 	}
 
 	@media screen and (max-height: 680px) and (orientation: landscape) {
-		grid-template-columns: 2fr 5fr;
+		grid-template-columns: 264px 1fr;
 		grid-template-areas:
 			"page-title list"
 			"info list"

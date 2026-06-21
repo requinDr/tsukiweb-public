@@ -197,9 +197,6 @@
 				position: absolute;
 				display: flex;
 				align-items: center;
-				height: 36px;
-				padding-inline: 8px;
-				padding-block: 2px;
 				gap: 0.3ch;
 
 				svg {
@@ -208,7 +205,7 @@
 
 				span {
 					color: #fff;
-					font-weight: bold;
+					font-weight: 500;
 
 					&.separator {
 						margin-inline: .5rem;
@@ -216,14 +213,47 @@
 				}
 			}
 			> .condition {
+				--border: rgb(255 255 255 / 1);
 				z-index: 1;
-				top: 6px;
-				left: 6px;
-				background: rgb(0 0 0 / 70%);
-				border-top-left-radius: $corner-radius;
-				border-bottom-right-radius: $corner-radius;
-				corner-shape: $corner-shape;
-				border-bottom: 1px solid rgba(255 255 255 / 0.5);
+				bottom: calc(100% - 6px);
+				left: 4px;
+				right: 4px;
+				height: 34px;
+				min-width: 80px;
+				padding-top: 4px;
+				padding-inline: 12px;
+				background-color: #000;
+				border-radius: $corner-radius;
+				corner-shape: scoop;
+				border-bottom: 2px solid var(--border);
+				justify-content: center;
+				justify-self: center;
+				&::before,
+				&::after {
+					content: "";
+					position: absolute;
+					left: 50%;
+					width: 0;
+					height: 0;
+					transform: translateX(-50%);
+				}
+
+				$arrowSize: 9px;
+				&::before {
+					$size: $arrowSize + 1;
+					top: 100%;
+					border-left: $size solid transparent;
+					border-right: $size solid transparent;
+					border-top: $size solid var(--border);
+				}
+
+				&::after {
+					$size: $arrowSize;
+					top: calc(100% - 1px);
+					border-left: $size solid transparent;
+					border-right: $size solid transparent;
+					border-top: $size solid #000;
+				}
 			}
 			.choices-container {
 				border-radius: $corner-radius;
@@ -243,6 +273,9 @@
 						bottom: -14px;
 						right: 0;
 						z-index: -1;
+						height: 32px;
+						padding-inline: 8px;
+						padding-block: 2px;
 					}
 				}
 			}
