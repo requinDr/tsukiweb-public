@@ -10,16 +10,31 @@ function th_raw_fixes(text) {
 
 /**
  * Make changes on blocks (both for Tsukihime and Plus-Disc) that are easier to
- * do here than on the raw text. The chages are performed after
+ * do here than on the raw text. The changes are performed after
  * all automatic fixes. Commands can be inserted as text, they will be
  * converted to tokens afterwards.
  * @type {Record<string, (block: Block)=>void>}
  */
 const block_fixes = {
     "s409": (block)=> {
+        // peals shouldn't be used here
         block.replaceText(
             "Her perfect breasts shake and sweat peals down her body",
             "Her small breasts shake, sending sweat flying")
+    },
+    "s318": (block)=> {
+        // galley is used for boat, plane... here probably used to not repeat kitchen
+        block.replaceText(
+            "They probably had a much bigger galley when there were many people living in the mansion, but with just Akiha, Hisui, Kohaku-san and I, they had this smaller kitchen prepared.",
+            "They probably had a much bigger kitchen when there were many people living in the mansion, but with just Akiha, Hisui, Kohaku-san and I, they had this smaller one prepared."
+        )
+    },
+    "s319": (block)=> {
+        // galley is used for boat, plane... here probably used to not repeat kitchen
+        block.replaceText(
+            "They probably had a much bigger galley when there were many people living in the mansion, but with just Akiha, Hisui, Kohaku-san and I, they had this smaller kitchen prepared.",
+            "They probably had a much bigger kitchen when there were many people living in the mansion, but with just Akiha, Hisui, Kohaku-san and I, they had this smaller one prepared."
+        )
     }
 }
 
