@@ -5,7 +5,7 @@ import { AudioManager } from "@tsukiweb-common/audio/AudioManager"
 import { asyncDelay } from "@tsukiweb-common/utils/timer"
 import { ScriptPlayer } from "engine/ScriptPlayer"
 import { splitFirst } from "@tsukiweb-common/utils/utils"
-import { calcGain } from "@tsukiweb-common/audio/utils"
+import { calcGain, createCommands } from "@tsukiweb-common/audio/utils"
 import { isLanguageLoaded, waitLanguageLoad } from "translation/langSelection"
 import { displayMode, SCREEN } from "app/utils/display";
 
@@ -74,12 +74,9 @@ waitLanguageLoad().then(async ()=> {
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 export const commands = {
-  'play'    : (arg: string, _: string, script: ScriptPlayer)=> {
-    script.audio.track = audio.gameTrack = arg
-  },
-  'playstop': (_a: string, _c: string, script: ScriptPlayer)=> {
-    script.audio.track = audio.gameTrack = null
-  },
+  ...createCommands(audio),
+  
+  //Plus-Disc-only custom command
   'wave_wait': (arg: string, _: string, script: ScriptPlayer,
                onFinish: VoidFunction)=> {
     script.audio.looped_se = null
@@ -90,16 +87,6 @@ export const commands = {
         next: audio.stopWave.bind(audio)
       }
     }
-  },
-  'wave'    : (arg: string, _: string, script: ScriptPlayer)=> {
-    script.audio.looped_se = null
-    audio.playWave(arg)
-  },
-  'waveloop': (arg: string, _: string, script: ScriptPlayer)=> {
-    script.audio.looped_se = audio.waveLoop = arg
-  },
-  'wavestop': (_a: string, _c: string, script: ScriptPlayer)=> {
-    script.audio.looped_se = audio.waveLoop = null
   },
 }
 

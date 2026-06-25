@@ -13,7 +13,8 @@ import FixedFooterOrnaments from "features/game/components/shared/FixedFooterOrn
 import { useEventState, useIsFullscreen } from "@tsukiweb-common/hooks"
 import { strings } from "translation/lang";
 import { settings, viewedScene } from "engine/settings";
-import { displayMode, InGameLayersHandler, SCREEN } from "app/utils/display";
+import { displayMode, SCREEN } from "app/utils/display";
+import { InGameLayersHandler } from "@tsukiweb-common/utils/InGameLayersHandler";
 
 
 const LAYER_PROPS = {

@@ -20,8 +20,9 @@ import ChoicesLayer from 'features/game/components/layers/ChoicesLayer';
 import ConfigLayer from 'features/game/components/layers/ConfigLayer';
 import HistoryLayer from 'features/game/components/layers/HistoryLayer';
 import TextLayer from 'features/game/components/layers/TextLayer';
-import { InGameLayersHandler, SCREEN, displayMode } from 'app/utils/display';
+import { SCREEN, displayMode } from 'app/utils/display';
 import { useScreenAutoNavigate } from 'app/hooks';
+import { InGameLayersHandler } from "@tsukiweb-common/utils/InGameLayersHandler";
 
 
 const Window = () => {

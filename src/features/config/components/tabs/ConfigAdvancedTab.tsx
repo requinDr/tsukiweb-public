@@ -5,8 +5,8 @@ import { bb } from "@tsukiweb-common/utils/Bbcode"
 import { dialog } from "@tsukiweb-common/ui-core/components/ModalPrompt"
 import { polyfillCountryFlagEmojis } from "@tsukiweb-common/utils/flagsPolyfill"
 import { imageSrc } from "translation/assets"
-import { useConfig } from "features/config/hooks/useConfig";
-import { exportGameData, importGameData } from "engine/settings";
+import { useConfig } from "@tsukiweb-common/hooks/useConfig";
+import { exportGameData, importGameData, settings } from "engine/settings";
 import { strings } from "translation/lang";
 import { savesManager } from "engine/savestates";
 import { ConfigButtons, ConfigItem, ResetButton } from "../ConfigLayout";
@@ -21,8 +21,8 @@ const ConfigAdvancedTab = () => {
 	useLanguageRefresh()
 	const [modal, setModal] = useState<{show: boolean, content: ReactNode}>({show: false, content: undefined})
 
-	const { conf, update, reset } = useConfig(
-		['eroBlur', 'eroSkip', 'unlockEverything', 'gameFont', 'flowchartBadges'] as const)
+	const { conf, update, reset } = useConfig(settings,
+		['eroBlur', 'eroSkip', 'unlockEverything', 'gameFont', 'flowchartBadges'])
 
 	if (!flagSupportChecked) {
 		polyfillCountryFlagEmojis()

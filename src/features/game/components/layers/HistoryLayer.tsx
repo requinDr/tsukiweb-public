@@ -7,7 +7,7 @@ import { strings } from 'translation/lang';
 import PageElement from '../history/PageElement';
 import { ProgressPanel } from '../shared/ProgressPanel';
 import { History } from 'engine/history';
-import { InGameLayersHandler } from 'app/utils/display';
+import { InGameLayersHandler } from "@tsukiweb-common/utils/InGameLayersHandler";
 import { LabelName, SceneName } from 'app/utils/types';
 import { settings } from 'engine/settings';
 

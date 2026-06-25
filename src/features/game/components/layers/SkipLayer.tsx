@@ -8,13 +8,13 @@ import { ScriptPlayer } from "engine/ScriptPlayer"
 import { settings, viewedScene } from "engine/settings"
 import { History } from "engine/history"
 import { audio } from "engine/audio"
-import { InGameLayersHandler } from "app/utils/display"
+import { InGameLayersHandler } from "@tsukiweb-common/utils/InGameLayersHandler"
 import AnimatedHideActivityDiv from "@tsukiweb-common/ui-core/components/AnimatedHideActivityDiv"
 import classNames from "classnames"
 import { GraphicsGroup } from "@tsukiweb-common/graphics"
-import { getSceneGraph } from "features/flowchart/utils/flowchart";
-import cg from "features/gallery/utils/gallery";
-import { strings } from "translation/lang";
+import { getSceneGraph } from "features/flowchart/utils/flowchart"
+import cg from "features/gallery/utils/gallery"
+import { strings } from "translation/lang"
 
 
 type Props = {

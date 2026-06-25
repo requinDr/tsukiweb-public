@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import { strings } from "translation/lang";
 import { FaSave } from "react-icons/fa";
 import { MdPlayArrow } from 'react-icons/md';
-import { InGameLayersHandler } from "app/utils/display";
+import { InGameLayersHandler } from "@tsukiweb-common/utils/InGameLayersHandler";
 import { moveBg } from "features/game/utils/graphics";
 import { inGameControls } from "features/game/utils/keybind";
 import { QUICK_SAVE_ID, savesManager } from "engine/savestates";
