@@ -22,7 +22,7 @@ const ConfigAdvancedTab = () => {
 	const [modal, setModal] = useState<{show: boolean, content: ReactNode}>({show: false, content: undefined})
 
 	const { conf, update, reset } = useConfig(settings,
-		['eroBlur', 'eroSkip', 'unlockEverything', 'gameFont', 'flowchartBadges'])
+		['eroBlur', 'eroSkip', 'unlockEverything', 'gameFont', 'flowchartBadges', 'forceAudioBuffer'])
 
 	if (!flagSupportChecked) {
 		polyfillCountryFlagEmojis()
@@ -188,6 +188,19 @@ const ConfigAdvancedTab = () => {
 						<MdDeleteForever aria-hidden /> {strings.config["data-erase"]}
 					</Button>
 				</div>
+			</ConfigItem>
+
+			<ConfigItem
+				label={"Force the use of Web Audio API for tracks"}
+			>
+				<ConfigButtons
+					currentValue={conf.forceAudioBuffer}
+					onChange={v => update('forceAudioBuffer', v)}
+					btns={[
+						{ label: strings.config.on, value: true },
+						{ label: strings.config.off, value: false },
+					]}
+				/>
 			</ConfigItem>
 
 			<ResetButton onClick={reset} />
