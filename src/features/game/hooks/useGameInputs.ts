@@ -2,7 +2,7 @@ import { useDOMEvent } from "@tsukiweb-common/hooks"
 import { useEventActions } from "@tsukiweb-common/input/eventActions"
 import { useSwipeGesture } from "@tsukiweb-common/input/touch"
 import { RefObject, useCallback } from "react"
-import { InGameLayersHandler } from "app/utils/display"
+import { InGameLayersHandler } from "@tsukiweb-common/utils/InGameLayersHandler"
 import actions, { ShowLayers, UserActionsHandler } from "features/game/utils/window-actions"
 
 type UseGameInputs = {

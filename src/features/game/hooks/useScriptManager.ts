@@ -3,8 +3,9 @@ import { ScriptPlayer } from "engine/ScriptPlayer"
 import { history } from 'engine/history';
 import { audio, commands } from "engine/audio";
 import { onAutoPlayStop, UserActionsHandler } from "features/game/utils/window-actions";
-import { InGameLayersHandler, SCREEN, displayMode } from "app/utils/display";
+import { SCREEN, displayMode } from "app/utils/display";
 import { useAutoPlayWakeLock } from "features/game/hooks/useAutoPlayWakeLock";
+import { InGameLayersHandler } from "@tsukiweb-common/utils/InGameLayersHandler";
 
 type ScriptManager = {
 	script: ScriptPlayer
