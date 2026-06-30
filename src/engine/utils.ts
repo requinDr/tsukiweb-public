@@ -139,7 +139,7 @@ export async function fetchBlockLines(label: LabelName): Promise<string[]> {
 		return fetchLogicBlock(label)
 }
 
-function creditsScript(insertEndOfPlay: boolean = false): string[] {
+export function creditsScript(insertEndOfPlay: boolean = false): string[] {
 	return [
 		'play "*10"',
 		'bg #000000,crossfade,400',

@@ -1,6 +1,6 @@
 import { ScriptPlayerBase } from "@tsukiweb-common/script/ScriptPlayer"
 import { LabelName, RouteDayName, RouteName } from "app/utils/types";
-import { fetchBlockLines, isScene, nextLabel } from "engine/utils";
+import { creditsScript, fetchBlockLines, isScene, nextLabel } from "engine/utils";
 import { settings } from "engine/settings";
 import { phaseTexts } from "translation/assets";
 import { closeBB } from "@tsukiweb-common/utils/Bbcode";
@@ -8,6 +8,7 @@ import { getGameVariable, setGameVariable } from "engine/variables";
 import { deepAssign, TSForceType } from "@tsukiweb-common/utils/utils";
 import { CommandRecord, NumVarName, VarName, VarType } from "@tsukiweb-common/script/types";
 import { History } from "./history";
+import { extractInstructions } from "@tsukiweb-common/script/utils";
 
 //#endregion ###################################################################
 //#region                             TYPES
@@ -52,6 +53,7 @@ const commands: CommandRecord<ScriptPlayer> = {
         return [{cmd:'goto', arg: label}]
     },
     'eroskip': processEroSkip,
+    'gosub': processGoSub,
 }
 
 function processClick(arg: string, _: string, script: ScriptPlayer,
@@ -117,6 +119,13 @@ function processEroSkip(nb_pages: string, _cmd: string, script: ScriptPlayer, on
             }
             return
     }
+}
+
+function processGoSub(arg: string, _: string, script: ScriptPlayer, onFinish: VoidFunction) {
+    const label = arg.substring(1)
+    if (label == 'ending') // include the credits as part of the scene
+        return creditsScript(false).flatMap(extractInstructions)
+    return [{cmd: 'goto', arg}]
 }
 
 //#endregion
