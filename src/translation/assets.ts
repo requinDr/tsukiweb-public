@@ -1,4 +1,4 @@
-import { splitFirst, splitLast } from "@tsukiweb-common/utils/utils"
+import { splitFirst } from "@tsukiweb-common/utils/utils"
 import { RouteDayName, RouteName } from "../app/utils/types"
 import { settings } from "../engine/settings"
 import {TrackSourceId, strings} from "./lang"
@@ -43,25 +43,7 @@ export function spriteSheetImgPath(file: string) {
 }
 
 function audioPath(formats: string|string[], trackName: string) {
-  let format
-  if (formats.constructor == String)
-    format = formats
-  else if (formats.length == 1)
-    format = (formats as string[])[0]
-  else {
-    const audio = document.createElement('audio')
-    format = (formats as string[]).find((f)=> {
-      const [_, ext] = splitLast(f, '.')
-      switch (ext) {
-        case null : return true
-        case 'mp3' : return true // consider all browser can play mp3
-        case 'wav' : return true
-        case 'opus' : return audio.canPlayType('audio/webm; codecs="opus"') == "probably"
-        default : return true
-      }
-    }) ?? formats[formats.length-1]
-  }
-
+  const format = typeof formats == 'string' ? formats : formats[0]
   return assetPath(`${format.replace('%', trackName)}.webm`)
 }
 
