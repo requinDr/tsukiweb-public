@@ -33,7 +33,6 @@ export const AllScenes = memo(({ nodes, activeNode, onClick }: SceneRendererProp
 				<use key={node.id} className='fc-scene' id={node.id}
 					href="#fc-scene-hidden"
 					x={node.centerX} y={node.centerY}
-					clipPath="url(#fc-scene-clip)"
 					{...navProps(node)} />
 			)}
 			{activeNodes.map(node => {

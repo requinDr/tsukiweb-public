@@ -1,11 +1,12 @@
 import { FcNode } from "features/flowchart/utils/flowchart";
 import { FLAG_BACKGROUND } from "./badges";
-import { COLUMN_WIDTH, DY } from "@tsukiweb-common/flowchart";
+import { DY } from "@tsukiweb-common/flowchart";
 import { CharId } from "app/utils/types";
 import { RouteEnding } from "features/endings/utils/endings";
 import { getNodeBadges } from "features/flowchart/utils/badges";
 
 const REGARD_REGEX = /^%regard_(\w+)/
+const BADGE_RIGHT_INSET = 3
 
 const SelectBadge = ({node}: {node: FcNode})=> {
 	return (
@@ -18,7 +19,7 @@ const SelectBadge = ({node}: {node: FcNode})=> {
 }
 
 const RegardBadge = ({node, char, value}: {node: FcNode, char: CharId, value: number})=> {
-	const dX = node.width > 0 ? COLUMN_WIDTH - node.width : 0
+	const dX = node.width > 0 ? BADGE_RIGHT_INSET : 0
 	const dY = node.height > 0 ? DY / 2 : 0
 
 	return (
@@ -32,7 +33,7 @@ const RegardBadge = ({node, char, value}: {node: FcNode, char: CharId, value: nu
 }
 
 const FlagBadge = ({node, flag, above}: {node: FcNode, flag: string, above?: boolean})=> {
-	const dX = node.width > 0 ? COLUMN_WIDTH - node.width : 0
+	const dX = node.width > 0 ? BADGE_RIGHT_INSET : 0
 	const dY = node.height > 0 ? DY / 2 : 0
 	
 	return (
@@ -46,7 +47,7 @@ const FlagBadge = ({node, flag, above}: {node: FcNode, flag: string, above?: boo
 }
 
 const EndingBadge = ({node, char, type}: {node: FcNode, char: CharId, type: RouteEnding['type']})=> {
-	const dX = node.width > 0 ? COLUMN_WIDTH - node.width : 0
+	const dX = node.width > 0 ? BADGE_RIGHT_INSET : 0
 	const dY = node.height > 0 ? DY / 2 : 0
 	
 	return (

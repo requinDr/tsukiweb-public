@@ -15,7 +15,7 @@
 	overscroll-behavior: contain;
 	touch-action: pan-x pan-y;
 	--active-connection: #0d96e0;
-	--inactive-connection: #444;
+	--inactive-connection: #888;
 
 	.flowchart {
 		flex: none;
@@ -32,7 +32,8 @@
 	
 	.fc-scene {
 		stroke: var(--inactive-connection);
-		stroke-width: .8;
+		stroke: color-mix(in srgb, var(--inactive-connection) 50%, #000);
+		stroke-width: .6;
 		stroke-linejoin: round;
 		fill: none;
 
@@ -76,7 +77,7 @@
 		fill: none;
 		fill-opacity: 0.246809;
 		fill-rule: evenodd;
-		stroke-width: .8px;
+		stroke-width: .8;
 		stroke-linejoin: round;
 		stroke-opacity: 1;
 		paint-order: fill markers stroke;
@@ -96,13 +97,6 @@
 
 	.fc-badges {
 		pointer-events: none;
-	}
-
-	#fc-scene-hidden rect:last-of-type {
-		fill: none;
-		stroke-width: .6;
-		stroke-linejoin: round;
-		stroke: rgb(115 115 115);
 	}
 }
 .badge {
