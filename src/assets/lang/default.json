@@ -80,7 +80,7 @@
     "adult-blur-help": [
       "Apply a blur effect on the images of the adult scenes."
     ],
-    "adult-warn": "Ask to skip H content",
+    "adult-warn": "Prompt to skip H content",
     "fullscreen": "fullscreen",
     "language": "Language",
     "show-locked-content": "Reveal locked content",
