@@ -51,7 +51,7 @@ export const useScriptManager = ({script, history, layers, actionsHandler}: Scri
 		if (!script.currentBlock) script.start()
 		
 		const {track, looped_se} = script.audio
-		track && track.length > 0 ? audio.playGameTrack(track) : audio.stopGameTrack()
+		track && track.length > 0 ? audio.playTrack(track) : audio.stopTrack()
 		looped_se && looped_se.length > 0 ? audio.playWave(looped_se, true) : audio.stopWave()
 		
 		window.script = script
