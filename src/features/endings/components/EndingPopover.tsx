@@ -1,7 +1,7 @@
 import { GraphicsGroup } from "@tsukiweb-common/graphics"
 import { bb } from "@tsukiweb-common/utils/Bbcode"
 import { OsieteEnding } from "../utils/endings";
-import { getSceneGraph } from "features/flowchart/utils/flowchart";
+import { getSceneGraph } from "engine/utils";
 
 type PopoverProps = {
 	ending: OsieteEnding

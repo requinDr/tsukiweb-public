@@ -35,7 +35,7 @@ type StringsTypeBase = {
   scenario: {
     days: string[]
     routes: Record<RouteName, Record<RouteDayName, string>>
-    scenes: typeof SCENE_ATTRS.scenes
+    scenes: typeof SCENE_ATTRS['scene-names']
   }
   credits: (TextImage & {delay?: number})[]
 }

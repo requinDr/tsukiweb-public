@@ -65,27 +65,26 @@ export const endings = {
 }
 
 export const osiete = Object.fromEntries(
-  Object.entries(SCENE_ATTRS.scenes).filter(([_, {osiete}])=> osiete).map(
-    ([name])=> {
-      switch (name) {
-        case "s516": return [name, new Ed(name, "cel" , "09b") as OsieteEnding] //s107,
-        case "s518": return [name, new Ed(name, "ark" , "11b") as OsieteEnding] //s186,
-        case "s532": return [name, new Ed(name, "aki" , "03b") as OsieteEnding] //s234,
-        case "s523": return [name, new Ed(name, "cel" , "11b") as OsieteEnding] //s289,
-        case "s528": return [name, new Ed(name, "his" , "07b") as OsieteEnding] //s396,
-        case "s539": return [name, new Ed(name, "aki" , "13b") as OsieteEnding] //s509,
-        // case "s510": return [name, new Ed(name, "cel" , "09b") as OsieteEnding] //s510,
-        case "s521": return [name, new Ed(name, "ark" , "13b") as OsieteEnding] //s53a
-        case "s520": return [name, new Ed(name, "ark" , "13a") as OsieteEnding] //s52a
-        case "s526": return [name, new Ed(name, "cel" , "13b") as OsieteEnding] //s308
-        case "s527": return [name, new Ed(name, "cel" , "13a") as OsieteEnding] //s310
-        case "s542": return [name, new Ed(name, "aki" , "13b") as OsieteEnding] //s384
-        case "s541": return [name, new Ed(name, "aki" , "13a") as OsieteEnding] //s385
-        case "s531": return [name, new Ed(name, "his" , "14b") as OsieteEnding] //s413
-        case "s530": return [name, new Ed(name, "his" , "14a") as OsieteEnding] //s412
-        case "s545": return [name, new Ed(name, "koha", "12a") as OsieteEnding] //s429
-      }
-      return [name, new Ed(name as SceneName) as OsieteEnding]
+  SCENE_ATTRS['scene-osiete'].map(name=> {
+    switch (name) {
+      case "s516": return [name, new Ed(name, "cel" , "09b") as OsieteEnding] //s107,
+      case "s518": return [name, new Ed(name, "ark" , "11b") as OsieteEnding] //s186,
+      case "s532": return [name, new Ed(name, "aki" , "03b") as OsieteEnding] //s234,
+      case "s523": return [name, new Ed(name, "cel" , "11b") as OsieteEnding] //s289,
+      case "s528": return [name, new Ed(name, "his" , "07b") as OsieteEnding] //s396,
+      case "s539": return [name, new Ed(name, "aki" , "13b") as OsieteEnding] //s509,
+      // case "s510": return [name, new Ed(name, "cel" , "09b") as OsieteEnding] //s510,
+      case "s521": return [name, new Ed(name, "ark" , "13b") as OsieteEnding] //s53a
+      case "s520": return [name, new Ed(name, "ark" , "13a") as OsieteEnding] //s52a
+      case "s526": return [name, new Ed(name, "cel" , "13b") as OsieteEnding] //s308
+      case "s527": return [name, new Ed(name, "cel" , "13a") as OsieteEnding] //s310
+      case "s542": return [name, new Ed(name, "aki" , "13b") as OsieteEnding] //s384
+      case "s541": return [name, new Ed(name, "aki" , "13a") as OsieteEnding] //s385
+      case "s531": return [name, new Ed(name, "his" , "14b") as OsieteEnding] //s413
+      case "s530": return [name, new Ed(name, "his" , "14a") as OsieteEnding] //s412
+      case "s545": return [name, new Ed(name, "koha", "12a") as OsieteEnding] //s429
     }
+    return [name, new Ed(name as SceneName) as OsieteEnding]
+  }
   )
 ) as Record<SceneName, OsieteEnding>

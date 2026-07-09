@@ -4,6 +4,7 @@ import { strings } from "../translation/lang"
 import { credits, scenesDir } from "translation/assets";
 import { waitLanguageLoad } from "translation/langSelection";
 import { ASSETS_PATH } from "@tsukiweb-common/constants";
+import { ThumbnailsGraphics } from "@tsukiweb-common/graphics";
 
 
 //#endregion ###################################################################
@@ -24,31 +25,32 @@ export function isScene(label: string): label is SceneName | PlusDiscSceneName {
 	return isThScene(label) || isPDScene(label)
 }
 
-export function getSceneTitles(label: SceneName): { flg: string, titles: [string, string] } | string | undefined {
-	const attrs = strings.scenario.scenes[label] ?? SCENE_ATTRS.scenes[label]
-	if (!attrs)
-		return undefined
-	if ("title" in attrs)
-		return attrs.title
-	else {
-		const {name} = attrs
-		let flg = null
-		let names: Exclude<typeof name, object>[]
-		if (typeof name == "object" && 'flg' in name)
-			names = [name['0'], name['1']], flg = name.flg
-		else
-			names = [name]
+function convertSceneName(name: string): string {
+	if (name.startsWith('$')) {
+		name = name.substring(1)
+		const [r, d, s] = name.split('-') as [RouteName, RouteDayName, string]
+		const dayName = strings.scenario.routes[r][d]
+		return s ? `${dayName} - ${s}` : dayName
+	} else {
+		return name
+	}
+}
 
-		let titles = names.map(name=> {
-			const [r, d, s] = name.split('-') as [RouteName, RouteDayName, string]
-			const dayName = strings.scenario.routes[r][d]
-			if (s)
-				return `${dayName} - ${s}`
-			else return dayName
-		})
-		if (flg)
-			return {flg, titles: titles as [string, string]}
-		return titles[0]
+export function getSceneTitles(label: SceneName): { flg: string, titles: [string, string] } | string | undefined {
+	const name = strings.scenario.scenes[label] ?? SCENE_ATTRS['scene-names'][label]
+	if (!name)
+		return undefined
+	if (name.startsWith('{')) {
+		const i = name.indexOf('}')
+		if (i < 0)
+			return name
+		const flg = name.substring(1, i)
+		const titles = name.substring(i).split('|').map(convertSceneName) as [string, string]
+		if (titles.length != 2)
+			return name
+		return {flg, titles}
+	} else {
+		return convertSceneName(name)
 	}
 }
 
@@ -68,6 +70,11 @@ export function nextLabel(label: LabelName): LabelName {
 		return 's20'
 	else
 		return 'endofplay'
+}
+
+
+export function getSceneGraph(scene: SceneName): ThumbnailsGraphics {
+  return SCENE_ATTRS["scene-graphs"][scene] ?? { bg: "#000000" }
 }
 
 //#endregion ###################################################################

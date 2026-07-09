@@ -3,7 +3,7 @@ import chalkboard from '@assets/icons/chalkboard.svg'
 import { osiete } from 'features/endings/utils/endings'
 import classNames from 'classnames'
 import { usePopoverTrigger } from '@tsukiweb-common/flowchart';
-import { getSceneGraph } from 'features/flowchart/utils/flowchart';
+import { getSceneGraph } from 'engine/utils';
 
 type Props = {
 	unlocked: boolean

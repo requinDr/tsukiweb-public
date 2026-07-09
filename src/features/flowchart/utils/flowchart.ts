@@ -1,14 +1,14 @@
 import { getSceneTitle, getSceneTitles, isScene, isThScene } from "../../../engine/utils"
 import { LabelName, SceneName } from "app/utils/types"
-import { SCENE_ATTRS } from "../../../app/utils/constants"
-import { COLUMN_WIDTH, DY, FcNodeState, FcSceneGraphAttrs, Flowchart, FlowchartNode, FlowchartNodeAttrs, SCENE_HEIGHT, SCENE_WIDTH, SpritesheetMetadataType } from "@tsukiweb-common/flowchart"
+import { COLUMN_WIDTH, DY, FcNodeState, Flowchart, FlowchartNode, FlowchartNodeAttrs, SCENE_HEIGHT, SCENE_WIDTH, SpritesheetMetadataType } from "@tsukiweb-common/flowchart"
 import SpritesheetMetadata from "@assets/game/spritesheet_metadata.json"
 import { spriteSheetImgPath } from "translation/assets"
 import { settings } from "../../../engine/settings"
 import { History } from "../../../engine/history"
+import FC from "../../../assets/game/flowchart.json"
 
 //##############################################################################
-//#region                       TYPES
+//#region                       TYPES, 
 //##############################################################################
 
 type FcNodeId = SceneName|string
@@ -27,8 +27,8 @@ export class GameFlowchart extends Flowchart<FcNode> {
 	private _history: History|undefined
 	constructor(history?: History) {
 		super({
-			...(SCENE_ATTRS["fc-nodes"] ?? {}),
-			...Object.entries(SCENE_ATTRS.scenes).reduce((acc, [id, { col, ...attrs }]) => {
+			...(FC.nodes ?? {}),
+			...Object.entries(FC.scenes).reduce((acc, [id, { col, ...attrs }]) => {
 				if (col != undefined) acc[id] = {col, ...attrs} // filter non-fc scenes
 				return acc
 			}, {} as Record<string, FcNodeAttrs>)
@@ -250,11 +250,4 @@ export class FcNode extends FlowchartNode<FcNodeId, GameFlowchart> {
 		this._boundRect = null
 		this._state = -1
 	}
-}
-
-
-export function getSceneGraph(scene: SceneName): FcSceneGraphAttrs {
-  const attrs = SCENE_ATTRS.scenes[scene]
-
-  return attrs?.graph ?? { bg: "#000000" }
 }

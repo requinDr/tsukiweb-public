@@ -3,7 +3,8 @@ import { NavigationProps } from "@tsukiweb-common/input/arrowNavigation";
 import classNames from "classnames";
 import { SVGProps, useCallback } from "react";
 import { SceneName } from "app/utils/types";
-import { FcNode, getSceneGraph } from "features/flowchart/utils/flowchart"
+import { FcNode } from "features/flowchart/utils/flowchart"
+import { getSceneGraph } from "engine/utils";
 
 
 type VisibleSceneProps = {

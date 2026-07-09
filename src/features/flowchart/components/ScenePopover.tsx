@@ -1,10 +1,11 @@
 import { GraphicsGroup } from "@tsukiweb-common/graphics"
 import { noBb, Bbcode } from "@tsukiweb-common/utils/Bbcode"
 import { SceneName } from "app/utils/types"
-import { FcNode, getSceneGraph } from "features/flowchart/utils/flowchart"
+import { FcNode } from "features/flowchart/utils/flowchart"
 import { tokenizeCondition } from "@tsukiweb-common/script/utils"
 import { settings } from "engine/settings"
 import { BadgeEntry, getNodeBadges } from "features/flowchart/utils/badges";
+import { getSceneGraph } from "engine/utils";
 
 
 const RegardBadge = ({char}: {char: string}) => {

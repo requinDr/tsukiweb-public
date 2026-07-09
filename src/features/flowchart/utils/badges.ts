@@ -2,6 +2,7 @@ import { strings } from "translation/lang";
 import { CharId } from "app/utils/types";
 import { SCENE_ATTRS } from "../../../app/utils/constants";
 import { RouteEnding, endings } from "../../endings/utils/endings";
+import FC from "../../../assets/game/flowchart.json"
 
 export type BadgeEntry = {
   flag?: string,
@@ -24,11 +25,11 @@ function buildBadgesMap() {
   BADGE_MAP.clear()
   badgeMapLanguageKey = getBadgeMapLanguageKey()
 
-  for (const [char, entries] of Object.entries(SCENE_ATTRS.badges.regards))
+  for (const [char, entries] of Object.entries(FC.badges.points))
   for (const [id, value] of Object.entries(entries))
     BADGE_MAP.set(id, { char: char as CharId, value: value as number })
 
-  for (const [flag, ids] of Object.entries(SCENE_ATTRS.badges.flags))
+  for (const [flag, ids] of Object.entries(FC.badges.flags))
   for (const id of ids)
     BADGE_MAP.set(id, { ...BADGE_MAP.get(id), flag })
 
@@ -39,18 +40,18 @@ function buildBadgesMap() {
       BADGE_MAP.set(id.replace('f', 's'), { ...BADGE_MAP.get(id.replace('f', 's')), select })
   }
   
-  for (const [id, {copy, conditions}] of Object.entries(SCENE_ATTRS.badges.select)) {
-    if (copy) {
-      BADGE_MAP.set(id, { ...BADGE_MAP.get(id), select: BADGE_MAP.get(copy)!.select })
+  for (const [id, attrs] of Object.entries(FC.badges.select)) {
+    if ('copy' in attrs) {
+      BADGE_MAP.set(id, { ...BADGE_MAP.get(id), select: BADGE_MAP.get(attrs.copy)!.select })
     }
-    if (conditions) {
+    if ('conditions' in attrs) {
       const entry = BADGE_MAP.get(id)!
-      conditions.map((condition, i)=> {
-        if (condition && entry?.select) entry.select[i].condition = condition
+      attrs.conditions.map((condition, i)=> {
+        if (condition && entry?.select) entry.select[i].condition = condition as string
       })
     }
   }
-  for (const [id, condition] of Object.entries(SCENE_ATTRS.badges.conditions)) {
+  for (const [id, condition] of Object.entries(FC.badges.conditions)) {
     BADGE_MAP.set(id, { ...BADGE_MAP.get(id), condition })
   }
   for (const {scene: id, char, type} of Object.values(endings)) {
