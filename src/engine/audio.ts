@@ -7,7 +7,7 @@ import { splitFirst } from "@tsukiweb-common/utils/utils"
 import { createCommands } from "@tsukiweb-common/audio/utils"
 import { waitLanguageLoad } from "translation/langSelection"
 import { displayMode, SCREEN } from "app/utils/display";
-import { GameAudioManager } from "./GameAudioManager";
+import { GameAudioManager } from "@tsukiweb-common/audio/AudioManager";
 
 function getUrl(id: string): string {
   if (id.startsWith('"') && id.endsWith('"'))
@@ -27,7 +27,7 @@ function getUrl(id: string): string {
   return audioSePath(id)
 }
 
-export const audio = new GameAudioManager(getUrl)
+export const audio = new GameAudioManager(settings, getUrl)
 
 //__________________________________observers___________________________________
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
