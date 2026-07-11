@@ -7,7 +7,6 @@
 	}
 	.page-content {
 		@media screen and (orientation: landscape) and (max-height: 680px) {
-			--page-padding: 0;
 			.page-title {
 				padding: .8rem;
 				padding-bottom: 0;
@@ -31,7 +30,6 @@
 	.saves {
 		grid-area: list;
 		letter-spacing: 1px;
-		padding-inline: 1rem;
 		padding-top: 10px;
 		padding-bottom: 80px;
 		transform: translate3d(0, 0, 0); //huge list on GPU
@@ -51,16 +49,15 @@
 			display: flex;
 			flex-direction: row;
 			height: 120px;
-			border-bottom: 1px solid transparent;
+			border-bottom: 1px solid var(--separator);
 			isolation: isolate;
 
-			&:not(:last-of-type) {
-				border-color: var(--separator);
+			&:last-of-type {
+				border-color: transparent;
 			}
 
 			.details {
 				padding: .8em 1em;
-				min-width: 0;
 				flex: 1;
 				overflow: hidden;
 				line-height: 1.4;
@@ -82,6 +79,9 @@
 			.graphics-area {
 				position: relative;
 				margin-block: 4px;
+				.graphics {
+					font-size: 0.3em;
+				}
 				.choices-preview {
 					position: absolute;
 					inset: 0;
@@ -105,14 +105,6 @@
 						overflow: hidden;
 						padding: 4px 6px;
 					}
-				}
-
-				.graphics {
-					align-self: center;
-					height: 100%;
-					width: auto;
-					font-size: 0.3em;
-					overflow: hidden;
 				}
 			}
 
