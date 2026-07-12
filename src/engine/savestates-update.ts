@@ -1,8 +1,7 @@
 import { fetchBlockLines, isScene } from "engine/utils";
 import { PartialRecord } from "@tsukiweb-common/types"
 import { versionsCompare } from "@tsukiweb-common/utils/utils"
-import { Regard } from "engine/ScriptPlayer"
-import { LabelName, RouteDayName, RouteName } from "app/utils/types"
+import { CharId, LabelName, RouteDayName, RouteName } from "app/utils/types"
 import { APP_VERSION } from "../app/utils/constants";
 import { SaveState } from "./savestates";
 import { getPageAtLine } from "@tsukiweb-common/script/utils";
@@ -17,6 +16,9 @@ export async function updateSave(ss: SaveState): Promise<SaveState> {
   if (versionsCompare(ss.version, "0.6.0") < 0) {
     ss = v0_6_0_updateSave(ss)
   }
+  if (versionsCompare(ss.version, "0.8.0") < 0) {
+    ss = v0_8_0_updateSave(ss);
+  }
   return ss
 }
 
@@ -25,7 +27,7 @@ export async function updateSave(ss: SaveState): Promise<SaveState> {
 //##############################################################################
 
 type OldRegard = PartialRecord<'ark'|'ciel'|'akiha'|'kohaku'|'hisui', number>
-function regard_update(regard: OldRegard): Regard {
+function regard_update(regard: OldRegard): Record<CharId, number> {
   return {
     ark : regard.ark    ?? 0,
     cel : regard.ciel   ?? 0,
@@ -96,7 +98,7 @@ async function v0_4_0_updateSave(ss: SaveState): Promise<SaveState> {
     graphics: graphics,
     date: ss.date,
     version: APP_VERSION
-  }
+  } as any as SaveState
 }
 
 //#endregion ###################################################################
@@ -104,7 +106,7 @@ async function v0_4_0_updateSave(ss: SaveState): Promise<SaveState> {
 //##############################################################################
 
 async function v0_5_0_updateSave(ss: SaveState): Promise<SaveState> {
-  const { pages, scenes } = ss
+  const { pages, scenes } = ss as {pages: Array<any>, scenes: Array<any>}
 
   ss.version = "0.5.0"
 	const mergedScenes = {
@@ -216,5 +218,22 @@ function v0_6_0_updateSave(ss: SaveState): SaveState {
     }
   }
 
+  return ss
+}
+
+//#endregion ###################################################################
+//#region                         < v0.8.0 UPDATE
+//##############################################################################
+
+function v0_8_0_updateSave(ss: SaveState): SaveState {
+  ss.version = "0.8.0"
+  
+  // rename 'regard' to 'points'
+  for (const scene of ss.scenes) {
+    if ('regard' in scene) {
+      scene.points = scene.regard as PartialRecord<CharId, number>
+      delete scene.regard
+    }
+  }
   return ss
 }
