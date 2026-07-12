@@ -574,15 +574,9 @@
       }
     },
     "scenes": {
-      "openning": {
-        "title": "[b][i]Prólogo - Glass Moon"
-      },
-      "eclipse": {
-        "title": "[b][i]Epílogo"
-      },
-      "ending": {
-        "title": "[b][i]Creditos"
-      }
+      "openning": "[b][i]Prólogo - Glass Moon",
+      "eclipse": "[b][i]Epílogo",
+      "ending": "[b][i]Creditos"
     },
     "dead-end": "Dead end",
     "osiete": "Ciel's lesson"

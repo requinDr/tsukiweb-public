@@ -37,9 +37,13 @@ function convertSceneName(name: string): string {
 }
 
 export function getSceneTitles(label: SceneName): { flg: string, titles: [string, string] } | string | undefined {
-	const name = strings.scenario.scenes[label] ?? SCENE_ATTRS['scene-names'][label]
+	let name = strings.scenario.scenes[label] ?? SCENE_ATTRS['scene-names'][label]
 	if (!name)
 		return undefined
+	if (typeof name != "string") { // temporary workaround if client strings are not updated with v0.8.0.
+		if ('title' in name)
+			name = (name as {title: string}).title
+	}
 	if (name.startsWith('{')) {
 		const i = name.indexOf('}')
 		if (i < 0)

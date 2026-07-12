@@ -20,7 +20,7 @@ const SaveDetails = ({id, saveState, deleteSave}: SaveDetailsProps)=> {
 	const progress = saveState?.scenes.reduce((s1, s2)=>jsonMerge(s2, s1))
 	const graphics = jsonMerge(saveState?.graphics ?? {},
 			lastPage?.graphics ?? {bg: "#000"})
-	const regard = progress?.regard ?? {}
+	const regard = progress?.points ?? {}
 	const flags = progress?.flags ?? []
 
 	const isPd = lastPage?.label && isPDScene(lastPage.label)

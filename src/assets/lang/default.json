@@ -279,9 +279,9 @@
     },
 
     "scenes": {
-      "openning": {"title": "[b][i]Prologue - Glass Moon"},
-      "eclipse": {"title": "[b][i]Epilogue"},
-      "ending": {"title": "[b][i]Credits"}
+      "openning": "[b][i]Prologue - Glass Moon",
+      "eclipse": "[b][i]Epilogue",
+      "ending": "[b][i]Credits"
     },
 
     "dead-end": "Dead end",

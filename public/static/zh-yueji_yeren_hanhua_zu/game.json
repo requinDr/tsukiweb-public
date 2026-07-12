@@ -563,15 +563,9 @@
       }
     },
     "scenes": {
-      "openning": {
-        "title": "[b][i]序幕 - 玻璃月亮"
-      },
-      "eclipse": {
-        "title": "[b][i]后记"
-      },
-      "ending": {
-        "title": "[b][i]制作人员名单"
-      }
+      "openning": "[b][i]序幕 - 玻璃月亮",
+      "eclipse": "[b][i]后记",
+      "ending": "[b][i]制作人员名单"
     },
     "dead-end": "Dead end",
     "osiete": "知得留老师的授课"

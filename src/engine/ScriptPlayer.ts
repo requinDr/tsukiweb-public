@@ -1,5 +1,5 @@
 import { ScriptPlayerBase } from "@tsukiweb-common/script/ScriptPlayer"
-import { LabelName, RouteDayName, RouteName } from "app/utils/types";
+import { CharId, LabelName, RouteDayName, RouteName } from "app/utils/types";
 import { creditsScript, fetchBlockLines, isScene, nextLabel } from "engine/utils";
 import { settings } from "engine/settings";
 import { phaseTexts } from "translation/assets";
@@ -14,13 +14,6 @@ import { extractInstructions } from "@tsukiweb-common/script/utils";
 //#region                             TYPES
 //##############################################################################
 
-export type Regard = {
-  ark: number
-  cel: number // previous name ciel can be loaded from saves
-  aki: number // previous name akiha can be loaded from saves
-  koha: number // previous name kohaku can be loaded from saves
-  his: number // previous name hisui can be loaded from saves
-}
 export type Phase = {
     route: RouteName
     routeDay: RouteDayName
@@ -30,10 +23,6 @@ export type Phase = {
 type PageBaseContent = {
     phase: Phase,
     textBox: 'nvl'|'adv'
-}
-
-type BlockContent = {
-    regard: Regard
 }
 
 //#endregion ###################################################################
@@ -131,8 +120,8 @@ function processGoSub(arg: string, _: string, script: ScriptPlayer, onFinish: Vo
 //#endregion
 //##############################################################################
 
-export class ScriptPlayer extends ScriptPlayerBase<LabelName, PageBaseContent,
-                                                   BlockContent, History> {
+export class ScriptPlayer extends ScriptPlayerBase<LabelName, CharId, PageBaseContent,
+                                                   {}, History> {
 
 //#endregion ###################################################################
 //#region                         ATTRS & PROPS
@@ -141,7 +130,6 @@ export class ScriptPlayer extends ScriptPlayerBase<LabelName, PageBaseContent,
 //_____________________________private attributes_______________________________
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    private _regard: Regard = { ark: 0, cel: 0, aki: 0, his: 0, koha: 0 }
     private _textBox: 'adv'|'nvl' = 'nvl'
     private _phase: Phase = { route: "others", routeDay: "pro", day: 0 }
 
@@ -150,11 +138,6 @@ export class ScriptPlayer extends ScriptPlayerBase<LabelName, PageBaseContent,
     flushcount: number = 0 //used in for loops in the script
     
     onEroSkipPrompt?: (nbPages: number) => Promise<boolean>
-
-    get regard(): Regard { return this._regard }
-    set regard(value: Partial<Regard>) {
-        deepAssign(this._regard, value)
-    }
 
     get phase(): Phase { return this._phase }
     set phase(value: Phase) {
@@ -175,7 +158,6 @@ export class ScriptPlayer extends ScriptPlayerBase<LabelName, PageBaseContent,
         } : history.getPageContext()
         
         super(history, initContext)
-        deepAssign(this._regard, initContext.regard ?? {})
         deepAssign(this._phase, initContext.phase ?? {})
         this._textBox = initContext.textBox ?? "nvl"
         this.setCommands(commands)
@@ -208,9 +190,7 @@ export class ScriptPlayer extends ScriptPlayerBase<LabelName, PageBaseContent,
         return { phase: this.phase, textBox: this.textBox }
     }
     
-    override blockContent() {
-        return { regard: {...this.regard} }
-    }
+    override blockContent() { return {} }
 
     static override defaultPageContext() {
         return {
@@ -223,7 +203,7 @@ export class ScriptPlayer extends ScriptPlayerBase<LabelName, PageBaseContent,
     static override defaultBlockContext() {
         return {
             ...ScriptPlayerBase.defaultBlockContext(),
-            regard: { ark: 0, cel: 0, aki: 0, his: 0, koha: 0 },
+            points: { ark: 0, cel: 0, aki: 0, his: 0, koha: 0 },
         }
     }
 

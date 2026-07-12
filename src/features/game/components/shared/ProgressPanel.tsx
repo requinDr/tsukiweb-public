@@ -1,6 +1,5 @@
-import { PartialJSON } from "@tsukiweb-common/types"
 import { BADGES_DEFINES } from "features/flowchart/components/badges"
-import { Regard, ScriptPlayer } from "engine/ScriptPlayer"
+import { ScriptPlayer } from "engine/ScriptPlayer"
 import { strings } from "translation/lang"
 import { CHARS } from "app/utils/constants";
 import { CharId } from "app/utils/types";
@@ -68,13 +67,13 @@ type Props = {
 } | {
 	script?: never,
 	flags: Set<string>|Array<string>,
-	regard: PartialJSON<Regard>
+	regard: Partial<Record<CharId, number>>
 }
 export const ProgressPanel = ({script, flags, regard}: Props) => {
 
 	if (script) {
 		flags = script.flags
-		regard = script.regard
+		regard = Object.fromEntries(script.points.entries())
 	}
 
 	return (

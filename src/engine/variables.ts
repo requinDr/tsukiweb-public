@@ -1,6 +1,7 @@
 import { NumVarName } from "@tsukiweb-common/script/types"
 import { endings } from "../features/endings/utils/endings"
-import { Regard, ScriptPlayer } from "engine/ScriptPlayer"
+import { ScriptPlayer } from "engine/ScriptPlayer"
+import { CharId } from "app/utils/types";
 
 //#endregion ###################################################################
 //#region                         GET VARIABLES
@@ -34,9 +35,9 @@ export function getGameVariable(script: ScriptPlayer, name: NumVarName): number 
 			  // flags
 				return script.flags.has(name.substring(4)) ? 1 : 0
       } else if (/regard_\w+/.test(name)) {
-		    // regard
+		// regard
         const char = name.substring(name.indexOf('_')+1)
-        return script.regard[char as keyof ScriptPlayer["regard"]]
+        return script.getPoints(char as CharId)
       } else if (/^%clear_[a-z]+_[a-z]+$/.test(name)) {
 			  // endings
 				const ending = name.substring(name.indexOf('_')+1) as keyof typeof endings
@@ -62,8 +63,8 @@ export function setGameVariable(script: ScriptPlayer, name: NumVarName,
       script.flags.delete(name.substring(4))
   } else if (/regard_\w+/.test(name)) {
     // regard
-    const char = name.substring(name.indexOf('_')+1)
-    script.regard[char as keyof Regard] = value
+    const char = name.substring(name.indexOf('_')+1) as CharId
+    script.setPoints(char, value)
   } else {
     throw Error(`Unknown or read-only variable ${name}`)
   }
