@@ -877,7 +877,8 @@
     "s428" :{"bg":"bg/bg_06b", "monochrome":"#0f00f0"},
     "s544" :{"bg":"bg/bg_06b", "l":"tachi/ark_t30", "r":"tachi/cel_t20"},
     "s429" :{"bg":"event/koha_f01"},
-    "s545" :{"bg":"bg/bg_06b", "c":"tachi/cel_t20"}
+    "s545" :{"bg":"bg/bg_06b", "c":"tachi/cel_t20"},
+    "eclipse":{"bg": "event/ao_02"}
   },
   "scene-deadEnds": [
     "s86", "s85", "s92", "s100", "s158", "s500", "s188", "s186", "s107a",

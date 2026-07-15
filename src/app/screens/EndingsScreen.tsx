@@ -12,6 +12,7 @@ import { useLanguageRefresh, useScreenAutoNavigate } from "app/hooks";
 import { PopoverProvider } from "@tsukiweb-common/flowchart";
 import EndingPopover from "features/endings/components/EndingPopover";
 import { useNavBackRef } from "@tsukiweb-common/hooks"
+import { getSceneGraph } from "engine/utils"
 
 function back() {
 	(document.querySelector('#extra-endings') as HTMLElement)?.focus()
@@ -32,7 +33,7 @@ const EndingsScreen = () => {
 						ending={{
 							id: ending.char,
 							char: strings.characters[ending.char],
-							image: `event/${ending.image}`,
+							images: getSceneGraph(ending.scene),
 							name: noBb(strings.scenario.routes[ending.char][ending.day]),
 							type: ending.type,
 							scene: ending.scene
@@ -46,7 +47,7 @@ const EndingsScreen = () => {
 					ending={{
 						id: "eclipse",
 						char: "",
-						image: eclipseUnlocked ? "" : "event/ao_02",
+						images: eclipseUnlocked ? {} : getSceneGraph("eclipse"),
 						name: strings.extra.eclipse,
 						type: "",
 						scene: "eclipse"

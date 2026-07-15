@@ -7,7 +7,7 @@ type Props = {
 	ending: {
 		id: string
 		char: string
-		image?: string
+		images: Parameters<typeof SceneShortcut>[0]['images']
 		name: string
 		type: string
 		scene: LabelName
@@ -17,7 +17,7 @@ type Props = {
 } & React.HTMLAttributes<HTMLDivElement>
 
 const MainEnding = ({unlocked, ending, continueScript = false, attention, ...props}: Props) => {
-	const {id, char, image, name, type, scene} = ending
+	const {id, char, images, name, type, scene} = ending
 	const startScene = () => playScene(scene, {continueScript: continueScript, viewedOnly: !unlocked})
 
 	return (
@@ -25,7 +25,7 @@ const MainEnding = ({unlocked, ending, continueScript = false, attention, ...pro
 			{...props}
 			unlocked={unlocked}
 			className={id}
-			images={image ? {bg: image} : {}}
+			images={images}
 			title={unlocked ? name : "???"}
 			subtitle={unlocked && char
 				? <>{char} <span className="separator">{`\u2022`}</span> {type}</>

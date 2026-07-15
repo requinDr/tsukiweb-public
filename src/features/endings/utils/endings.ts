@@ -2,7 +2,6 @@ import { CharId, RouteDayName, SceneName } from "../../../app/utils/types"
 import { SCENE_ATTRS } from "../../../app/utils/constants"
 import { strings } from "../../../translation/lang"
 import { settings } from "../../../engine/settings"
-import { PartialRecord } from "@tsukiweb-common/types"
 import { viewedScene } from "../../../engine/settings"
 
 type EndType = "normal"|"true"|"good"|"osiete"
@@ -11,23 +10,20 @@ class Ed {
   private _scene: SceneName
   private _char: CharId|undefined
   private _day: RouteDayName|undefined
-  private _illus: string|undefined
   private _type: EndType
 
   constructor(scene: SceneName, char?: CharId, day?: RouteDayName<CharId>,
-              type: EndType="osiete", illus?: string) {
+              type: EndType="osiete") {
     this._scene = scene
     this._type = type
     this._char = char
     this._day = day
-    this._illus = illus
   }
 
   get scene() { return this._scene }
   get type() { return this._type }
   get char() { return this._char }
   get day() { return this._day }
-  get image() { return this._illus }
 
   get seen() {
     return viewedScene(this._scene) || settings.unlockEverything
@@ -46,22 +42,21 @@ type Ending<T extends EndType=EndType> = Readonly<{
   name: string,
   char: CharId | (T extends "osiete" ? undefined : CharId),
   day: RouteDayName | (T extends "osiete" ? undefined : RouteDayName),
-  image: string
 }>
 export type RouteEnding = Ending<Exclude<EndType, "osiete">>
 export type OsieteEnding = Ending<"osiete">
 
 
 export const endings = {
-  ark_good    : new Ed("s53a", "ark" , "13b", "good"  , "ark_f03" ) as RouteEnding,
-  ark_true    : new Ed("s52a", "ark" , "13a", "true"  , "ark_f02" ) as RouteEnding,
-  ciel_good   : new Ed("s308", "cel" , "13b", "good"  , "cel_e07a") as RouteEnding,
-  ciel_true   : new Ed("s310", "cel" , "13a", "true"  , "cel_f02" ) as RouteEnding,
-  akiha_good  : new Ed("s384", "aki" , "13b", "normal", "aki_f01" ) as RouteEnding,
-  akiha_true  : new Ed("s385", "aki" , "13a", "true"  , "aki_f02" ) as RouteEnding,
-  hisui_good  : new Ed("s413", "his" , "14b", "good"  , "his_f02" ) as RouteEnding,
-  hisui_true  : new Ed("s412", "his" , "14a", "true"  , "his_f03" ) as RouteEnding,
-  kohaku_true : new Ed("s429", "koha", "12a", "true"  , "koha_f01") as RouteEnding,
+  ark_good    : new Ed("s53a", "ark" , "13b", "good") as RouteEnding,
+  ark_true    : new Ed("s52a", "ark" , "13a", "true") as RouteEnding,
+  ciel_good   : new Ed("s308", "cel" , "13b", "good") as RouteEnding,
+  ciel_true   : new Ed("s310", "cel" , "13a", "true") as RouteEnding,
+  akiha_good  : new Ed("s384", "aki" , "13b", "normal") as RouteEnding,
+  akiha_true  : new Ed("s385", "aki" , "13a", "true") as RouteEnding,
+  hisui_good  : new Ed("s413", "his" , "14b", "good") as RouteEnding,
+  hisui_true  : new Ed("s412", "his" , "14a", "true") as RouteEnding,
+  kohaku_true : new Ed("s429", "koha", "12a", "true") as RouteEnding,
 }
 
 export const osiete = Object.fromEntries(
