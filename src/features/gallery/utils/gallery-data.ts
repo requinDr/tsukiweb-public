@@ -1,6 +1,6 @@
-import { GalleryImg } from "app/utils/types";
+import type { GalleryImg } from "app/utils/types"
 
-export const GALLERY_IMAGES: Record<string, GalleryImg> = {
+export const GALLERY_IMAGES: Readonly<Record<string, GalleryImg>> = {
 	"event/ark_e01" : { group: "ark" },
 	"event/ark_e02" : { group: "ark" },
 	"event/ark_e03" : { group: "ark" },
@@ -43,7 +43,7 @@ export const GALLERY_IMAGES: Record<string, GalleryImg> = {
 	"event/cel_e05a": { group: "cel" },
 	"event/cel_e05b": { group: "cel", altOf: "event/cel_e05a" },
 	"event/cel_e09" : { group: "cel" },
-	"event/cel_e06": { group: "cel" },
+	"event/cel_e06" : { group: "cel" },
 	"event/cel_e07a": { group: "cel" },
 	"event/cel_e07b": { group: "cel", altOf: "event/cel_e07a", unlockIds: ["event/cel_e07c"] },
 	"event/cel_e07c": { group: "cel", altOf: "event/cel_e07a", source: "unused" },
@@ -117,11 +117,11 @@ export const GALLERY_IMAGES: Record<string, GalleryImg> = {
 	"event/his_e02" : { group: "his", altOf: "event/his_e02b" },
 	"event/his_e02b": { group: "his", unlockIds: ["event/his_e02b2"] },
 	"event/his_e02b2":{ group: "his", altOf: "event/his_e02b", source: "unused" },
-	"event/his_e08" : { group: "his" },  
+	"event/his_e08" : { group: "his" },
 	"event/his_e03" : { group: "his" },
 	"event/his_e04" : { group: "his", unlockIds: ["half-moon/his01"] },
 	"event/his_e05" : { group: "his" },
-	"event/his_e09" : { group: "his" },  
+	"event/his_e09" : { group: "his" },
 	"event/his_e06" : { group: "his" },
 	"event/his_e07a": { group: "his" },
 	"event/his_e07b": { group: "his", altOf: "event/his_e07a" },

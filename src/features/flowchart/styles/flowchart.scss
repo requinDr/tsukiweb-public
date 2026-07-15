@@ -63,11 +63,9 @@
 			}
 
 			& > rect {
-				transition: filter .1s linear;
+				transition: stroke-width .1s linear;
 				&:hover, &:focus {
-					filter:
-						drop-shadow(0 0 1px var(--active-connection))
-						drop-shadow(0 0 1px var(--active-connection));
+					stroke-width: 1.5;
 				}
 			}
 		}
