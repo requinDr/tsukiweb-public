@@ -1,6 +1,6 @@
 import { BADGES_DEFINES } from "features/flowchart/components/badges"
 import { ScriptPlayer } from "engine/ScriptPlayer"
-import { strings } from "translation/lang"
+import { useStrings } from "translation/lang"
 import { CHARS } from "app/utils/constants";
 import { CharId } from "app/utils/types";
 
@@ -24,6 +24,7 @@ const EndingList = ({ CHARS, script }: { CHARS: string[], script: ScriptPlayer }
 }
 
 const RegardRow = ({ char, value, max }: {char: CharId, value: number, max: number}) => {
+	const strings = useStrings()
 	const iconParams = {
 		className:"heart-icon",
 		fill: `url(#${char}_grad)`

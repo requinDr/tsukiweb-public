@@ -3,8 +3,7 @@ import { PageSection } from "@tsukiweb-common/ui-core"
 import { EventFilter } from "@tsukiweb-common/input/eventActions"
 import { bb } from "@tsukiweb-common/utils/Bbcode"
 import { inGameControls } from "features/game/utils/keybind"
-import { strings } from "translation/lang";
-import { useLanguageRefresh } from "app/hooks";
+import { useStrings } from "translation/lang";
 
 type KeyMapEntry = [string, typeof inGameControls[keyof typeof inGameControls]]
 
@@ -18,7 +17,7 @@ function convertAction([action, keys]: KeyMapEntry) : [string, EventFilter[]] {
 }
 
 const ConfigControlsTab = () => {
-	useLanguageRefresh()
+	const strings = useStrings()
 	const controlStrings = strings.config.controls as Record<string, string>
 	const keymap = useRef<[string, EventFilter[]][]>(
 			Object.entries(inGameControls)

@@ -13,7 +13,7 @@ import AnimatedHideActivityDiv from "@tsukiweb-common/ui-core/components/Animate
 import classNames from "classnames"
 import { GraphicsGroup } from "@tsukiweb-common/graphics"
 import cg from "features/gallery/utils/gallery"
-import { strings } from "translation/lang"
+import { useStrings } from "translation/lang"
 
 
 type Props = {
@@ -25,6 +25,7 @@ type Props = {
 type SkipMode = 'viewed' | 'hscene'
 
 const SkipLayer = ({script, history, layers}: Props) => {
+	const strings = useStrings()
 	const [scene, setScene] = useState<SceneName|undefined>(undefined)
 	const [mode, setMode] = useState<SkipMode>('viewed')
 	const onFinish = useRef<((skipped: boolean)=>void)>(undefined)

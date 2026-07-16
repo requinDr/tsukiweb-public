@@ -1,7 +1,6 @@
 import { useRef } from "react"
 import AnimatedHideActivityDiv from "@tsukiweb-common/ui-core/components/AnimatedHideActivityDiv";
 import SavesLayout from "features/save/components/SavesLayout";
-import { useLanguageRefresh } from "app/hooks";
 
 
 type Props = {
@@ -12,7 +11,6 @@ type Props = {
 const SavesLayer = ({mode, onBack}: Props) => {
   const rootRef = useRef<HTMLDivElement>(null)
   const lastMode = useRef<NonNullable<Props['mode']>>(mode ?? 'save')
-  useLanguageRefresh()
   if (mode != null)
     lastMode.current = mode
   

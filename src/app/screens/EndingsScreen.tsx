@@ -6,9 +6,9 @@ import Oshiete from 'features/endings/components/Oshiete'
 import { noBb } from '@tsukiweb-common/utils/Bbcode'
 import { useEclipseUnlocked } from "features/endings/hooks/useEclipseUnlocked";
 import { endings, osiete, OsieteEnding } from "features/endings/utils/endings";
-import { strings } from "translation/lang";
+import { useStrings } from "translation/lang";
 import { SCREEN } from "app/utils/display";
-import { useLanguageRefresh, useScreenAutoNavigate } from "app/hooks";
+import { useScreenAutoNavigate } from "app/hooks";
 import { PopoverProvider } from "@tsukiweb-common/flowchart";
 import EndingPopover from "features/endings/components/EndingPopover";
 import { useNavBackRef } from "@tsukiweb-common/hooks"
@@ -20,7 +20,7 @@ function back() {
 
 const EndingsScreen = () => {
 	useScreenAutoNavigate(SCREEN.ENDINGS)
-	useLanguageRefresh()
+	const strings = useStrings()
 	const { sawEclipse, eclipseUnlocked } = useEclipseUnlocked()
 
 	return (

@@ -12,6 +12,7 @@ import { BADGES_DEFINES } from "./badges"
 import AllBadges from "./AllBadges"
 import { settings } from "engine/settings"
 import { useObserved } from "@tsukiweb-common/utils/Observer"
+import { useStrings } from "translation/lang"
 
 
 type Props = {
@@ -68,6 +69,7 @@ const useFlowchartPinchZoom = (
 }
 
 const Flowchart = ({history, onSceneClick, mode = 'viewer'}: Props)=> {
+	useStrings()
 	const flowchart = new GameFlowchart(history)
 	const svgRef = useRef<SVGSVGElement>(null)
 	useObserved(settings, 'flowchartBadges') // refresh flowchart when toggling badges display

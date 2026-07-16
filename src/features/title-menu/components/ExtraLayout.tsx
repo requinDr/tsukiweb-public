@@ -1,12 +1,11 @@
 import * as m from "motion/react-m"
 import { PropsWithChildren, useEffect } from "react"
 import "../styles/extra.scss"
-import { strings } from "translation/lang"
+import { useStrings } from "translation/lang"
 import { useLocation } from "wouter"
 import { PageTitle, TitleMenuButton } from "@tsukiweb-common/ui-core"
 import { audio } from "engine/audio"
 import { useEclipseUnlocked } from "features/endings/hooks/useEclipseUnlocked";
-import { useLanguageRefresh } from "app/hooks";
 import { SCREEN, displayMode } from "app/utils/display";
 import { useDefaultNavBack } from "@tsukiweb-common/hooks"
 import Ornament from "@assets/images/ornament.webp"
@@ -44,8 +43,8 @@ function back() {
 }
 
 const ExtraMenu = () => {
+	const strings = useStrings()
 	const [location, navigate] = useLocation()
-	useLanguageRefresh()
 	const { eclipseUnlocked } = useEclipseUnlocked()
 	const currentPage = "/" + location.split("/")[1]
 

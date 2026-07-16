@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { Button, FixedFooter } from '@tsukiweb-common/ui-core';
 import Flowchart from 'features/flowchart/components/Flowchart';
 import { playScene } from 'engine/savestates';
-import { strings } from 'translation/lang';
+import { useStrings } from 'translation/lang';
 import PageElement from '../history/PageElement';
 import { ProgressPanel } from '../shared/ProgressPanel';
 import { History } from 'engine/history';
@@ -24,6 +24,7 @@ type Props = {
 	divProps?: React.HTMLProps<HTMLDivElement>
 }
 const HistoryLayer = ({ display, history, onRewind, layers, continueScript = true, show, divProps }: Props) => {
+	const strings = useStrings()
 	const rootRef = useRef<HTMLDivElement>(null)
 
 	const handleClose = useCallback(()=> {

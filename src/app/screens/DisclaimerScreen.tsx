@@ -1,11 +1,10 @@
 import { useEffect } from 'react'
 import '@features/title-menu/styles/title-menu.scss'
 import * as m from "motion/react-m"
-import { strings } from 'translation/lang';
-import { useLanguageRefresh } from 'app/hooks';
+import { useStrings } from 'translation/lang';
 
 const DisclaimerScreen = ({ onAccept }: { onAccept?: () => void }) => {
-	useLanguageRefresh()
+	const strings = useStrings()
 
 	useEffect(()=> {
 		const timeout = setTimeout(()=> {

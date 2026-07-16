@@ -1,5 +1,5 @@
 import { Dispatch, ReactNode } from "react"
-import { strings } from "translation/lang"
+import { useStrings } from "translation/lang"
 import { Button, Modal } from "@tsukiweb-common/ui-core"
 import { audio } from "engine/audio"
 
@@ -8,6 +8,7 @@ type Props = {
 	setModal: Dispatch<{show: boolean, content: ReactNode}>
 }
 const ConfigModal = ({modal, setModal}: Props) => {
+	const strings = useStrings()
 	const close = () => setModal({show: false, content: modal.content})
 
 	return (

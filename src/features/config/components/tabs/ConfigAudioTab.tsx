@@ -4,14 +4,13 @@ import { PageSection } from "@tsukiweb-common/ui-core"
 import { negative } from "@tsukiweb-common/utils/utils"
 import { bb } from "@tsukiweb-common/utils/Bbcode"
 import { useConfig } from "@tsukiweb-common/hooks/useConfig";
-import { useLanguageRefresh } from "app/hooks";
-import { strings } from "translation/lang";
+import { useStrings } from "translation/lang";
 import { ConfigButtons, ConfigIconButton, ConfigItem, ConfigRange, ResetButton } from "../ConfigLayout";
 import ConfigModal from "../ConfigModal";
 import { settings } from "engine/settings";
 
 const ConfigAudioTab = () => {
-	useLanguageRefresh()
+	const strings = useStrings()
 	const { conf, update, reset } = useConfig(settings, ['volume', 'trackSource', 'autoMute'])
 	const [modal, setModal] = useState<{show: boolean, content: ReactNode}>({show: false, content: undefined})
 	type VolumeKey = Extract<keyof typeof conf.volume, string>

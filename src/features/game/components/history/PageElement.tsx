@@ -9,7 +9,7 @@ import { DivProps } from "@tsukiweb-common/types"
 import { audio } from "engine/audio"
 import { getSceneTitle } from "engine/utils";
 import { phaseTexts } from "translation/assets";
-import { strings } from "translation/lang";
+import { useStrings } from "translation/lang";
 
 
 const TextContent = ({ text }: { text: string }) => {
@@ -37,6 +37,7 @@ const ChoiceContent = ({ content }: { content: PageEntry<"choice"> }) => {
 }
 
 const SkipContent = ({ history, content }: { history: History, content: PageEntry<"skip"> }) => {
+	const strings = useStrings()
 	const {label} = content as PageEntry<"skip">
 	const flags = history.sceneContext(label)?.flags as string[]
 	const sceneTitle = getSceneTitle(flags, label as SceneName)??""
@@ -65,7 +66,8 @@ type Props = {
 	navY?: number
 } & Omit<DivProps, 'onLoad'|'content'>
 
-const PageElement = ({history, content, onLoad, navY=0, ...props}: Props)=> {	
+const PageElement = ({history, content, onLoad, navY=0, ...props}: Props)=> {
+	const strings = useStrings()
 	let displayContent: ReactNode
 
 	switch(content.type) {

@@ -1,11 +1,10 @@
 import { Dispatch } from "react"
-import { languages, strings } from "translation/lang"
+import { languages, useStrings } from "translation/lang"
 import { settings } from "engine/settings"
 import { Button, Modal } from "@tsukiweb-common/ui-core"
 import { sortTranslations } from "@tsukiweb-common/utils/lang"
 import { polyfillCountryFlagEmojis } from "@tsukiweb-common/utils/flagsPolyfill"
 import { audio } from "engine/audio"
-import { useLanguageRefresh } from "app/hooks";
 
 let flagSupportChecked = false
 
@@ -14,7 +13,7 @@ type Props = {
 	setShow: Dispatch<boolean>
 }
 const ModalLanguageSelection = ({show, setShow}: Props) => {
-	useLanguageRefresh()
+	const strings = useStrings()
 	if (!flagSupportChecked) {
 		polyfillCountryFlagEmojis()
 		flagSupportChecked = true

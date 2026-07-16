@@ -1,6 +1,6 @@
 import { ComponentProps, JSX, ReactNode } from 'react'
 import '../styles/config.scss'
-import { strings } from '../../../translation/lang'
+import { useStrings } from '../../../translation/lang'
 import { MdQuestionMark } from 'react-icons/md'
 import { HiMinus, HiPlus } from 'react-icons/hi'
 import { Button, TitleMenuButton, PageTabsLayout } from '@tsukiweb-common/ui-core'
@@ -10,7 +10,6 @@ import ConfigGameTab from './tabs/ConfigGameTab';
 import ConfigAudioTab from './tabs/ConfigAudioTab';
 import ConfigControlsTab from './tabs/ConfigControlsTab';
 import ConfigAdvancedTab from './tabs/ConfigAdvancedTab';
-import { useLanguageRefresh } from 'app/hooks';
 import { DivProps } from '@tsukiweb-common/types'
 
 export enum ConfigTabs {
@@ -34,7 +33,7 @@ type Props = {
 } & DivProps
 
 const ConfigLayout = ({onBack, selectedTab, setSelectedTab, ...props}: Props) => {
-	useLanguageRefresh()
+	const strings = useStrings()
 
 	const tabs: ComponentProps<typeof PageTabsLayout>["tabs"] = [
 		{label: strings.config['tab-game'], value: ConfigTabs.game, audio: audio},
@@ -153,10 +152,13 @@ export const ConfigRange = ({ onDecrement, onIncrement, children, disabled, ...p
 	)
 }
 
-export const ResetButton = ({onClick}: {onClick: ()=> void}) => (
-	<div className="config-reset">
-		<Button {...ACTION_PROPS} onClick={onClick} nav-auto={1}>
-			{strings.config.reset}
-		</Button>
-	</div>
-)
+export const ResetButton = ({onClick}: {onClick: ()=> void}) => {
+	const strings = useStrings()
+	return (
+		<div className="config-reset">
+			<Button {...ACTION_PROPS} onClick={onClick} nav-auto={1}>
+				{strings.config.reset}
+			</Button>
+		</div>
+	)
+}

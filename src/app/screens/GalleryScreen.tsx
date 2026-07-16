@@ -11,9 +11,9 @@ import { useNavBackRef, useQueryParam } from '@tsukiweb-common/hooks'
 import { CHARS } from 'app/utils/constants';
 import { settings } from 'engine/settings';
 import cg from 'features/gallery/utils/gallery';
-import { strings } from 'translation/lang';
+import { useStrings } from 'translation/lang';
 import { SCREEN } from 'app/utils/display';
-import { useLanguageRefresh, useScreenAutoNavigate } from 'app/hooks';
+import { useScreenAutoNavigate } from 'app/hooks';
 
 const container: Variants = {
 	hidden: { opacity: 0 },
@@ -49,7 +49,7 @@ function back() {
 
 const GalleryScreen = () => {
 	useScreenAutoNavigate(SCREEN.GALLERY)
-	useLanguageRefresh()
+	const strings = useStrings()
 	const [selectedTab, setSelectedTab] = useQueryParam<CharId>("tab", "ark")
 
 	const tabImages: string[] = useMemo(() => {

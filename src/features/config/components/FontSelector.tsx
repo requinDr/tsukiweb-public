@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
-import { strings } from '../../../translation/lang'
+import { useStrings } from '../../../translation/lang'
 import { Button } from '@tsukiweb-common/ui-core'
 import { DEFAULT_GAME_FONT } from '@tsukiweb-common/utils/settings'
 import { isFontAvailable, loadGoogleFont } from '@tsukiweb-common/utils/fonts'
@@ -19,6 +19,7 @@ type Props = {
 	onChange: (font: string) => void
 }
 const FontSelector = ({ value, onChange }: Props) => {
+	const strings = useStrings()
 	const [inputValue, setInputValue] = useState(value)
 	const [isLoading, setIsLoading] = useState(false)
 	const inputRef = useRef<HTMLInputElement>(null)

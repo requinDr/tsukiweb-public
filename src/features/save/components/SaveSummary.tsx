@@ -4,11 +4,13 @@ import { PageEntry } from "engine/history"
 import { SceneName } from "app/utils/types"
 import { SaveState, savePhaseTexts } from "engine/savestates";
 import { getSceneTitle } from "engine/utils";
+import { useStrings } from "translation/lang";
 
 type Props = {
 	saveState: SaveState
 }
 const SaveSummary = ({saveState}: Props) => {
+	useStrings()
 	const lastPage = saveState.pages.at(-1)
 	if (!lastPage) return null
 

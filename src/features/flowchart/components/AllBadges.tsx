@@ -2,14 +2,14 @@ import { FcNode } from "features/flowchart/utils/flowchart"
 import { FcNodeState } from "@tsukiweb-common/flowchart"
 import { SceneBadges } from "./SceneBadges"
 import { isLanguageLoaded } from "translation/langSelection"
-import { useLanguageRefresh } from "app/hooks";
+import { useStrings } from "translation/lang";
 
 type Props = {
 	nodes: FcNode[]
 }
 
 const AllBadges = ({ nodes }: Props) => {
-	useLanguageRefresh()
+	useStrings()
 	if (!isLanguageLoaded())
 		return null
 	const activeNodes = nodes.filter(n =>

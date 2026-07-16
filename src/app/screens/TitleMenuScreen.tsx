@@ -15,14 +15,13 @@ import { continueGame, newGame, savesManager } from "engine/savestates";
 import { settings } from "engine/settings";
 import AppInfo from "features/title-menu/components/AppInfo";
 import TranslationSwitch from "features/title-menu/components/TranslationSwitch";
-import { strings } from "translation/lang";
+import { useStrings } from "translation/lang";
 import { SCREEN } from "app/utils/display";
-import { useLanguageRefresh, useScreenAutoNavigate } from "app/hooks";
+import { useScreenAutoNavigate } from "app/hooks";
 
 
 const TitleMenuScreen = () => {
 	useScreenAutoNavigate(SCREEN.TITLE)
-	useLanguageRefresh()
 
 	return (
 		<m.div
@@ -58,6 +57,7 @@ export default TitleMenuScreen
 
 
 const TitleMenu = () => {
+	const strings = useStrings()
 	const [, navigate] = useLocation()
 	const { eclipseUnlocked } = useEclipseUnlocked()
 	const canResume = useRef(savesManager.savesCount > 0 || history.pagesLength > 0)
@@ -93,6 +93,7 @@ const TitleMenu = () => {
 }
 
 const TopActions = () => {
+	const strings = useStrings()
 	const [conf] = useObserved(settings.volume, 'master')
 
 	return (

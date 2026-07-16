@@ -1,10 +1,11 @@
 import { PlusDiscSceneName } from "app/utils/types"
 import { playScene } from "engine/savestates"
 import { viewedScene } from "engine/settings"
-import { strings } from "translation/lang"
+import { useStrings } from "translation/lang"
 import { SceneShortcut } from "@tsukiweb-common/ui-core"
 
 const ScenesTab = () => {
+	const strings = useStrings()
 
 	const play = (id: PlusDiscSceneName)=> {
 		playScene(id, {viewedOnly: false, continueScript: true})

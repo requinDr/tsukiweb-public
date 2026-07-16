@@ -1,6 +1,6 @@
 import defaultStrings from "../assets/lang/default.json"
 import { settings } from "../engine/settings"
-import { observe } from "@tsukiweb-common/utils/Observer"
+import { observe, unobserve } from "@tsukiweb-common/utils/Observer"
 import { ValueStorage } from "@tsukiweb-common/utils/storage"
 import { fetchJson, deepAssign, insertDirectory } from "@tsukiweb-common/utils/utils"
 import { ImageRedirect, LangDesc, LanguagesType, pickDefaultTranslation, ResolutionId, TextImage, TranslationId, UpdateDateFormat } from "@tsukiweb-common/utils/lang"
@@ -9,6 +9,7 @@ import { PartialRecord } from "@tsukiweb-common/types"
 import { APP_VERSION, SCENE_ATTRS } from "app/utils/constants";
 import { LabelName, RouteDayName, RouteName } from "app/utils/types";
 import { ASSETS_PATH } from "@tsukiweb-common/constants";
+import { createContext, createElement, PropsWithChildren, useContext, useSyncExternalStore } from "react"
 
 //##############################################################################
 //#                                  PRIVATE                                   #
@@ -144,6 +145,32 @@ export type TrackSourceId = keyof typeof defaultStrings.audio['tracks']
 
 export const languages = languagesStorage.get() || { } as LanguagesType
 export const strings = stringsStorage.get() || { ...defaultStrings, id: "" } as any as StringsType
+const StringsContext = createContext<string|null|undefined>(undefined)
+
+function subscribeStrings(onStoreChange: VoidFunction) {
+  observe(strings, 'id', onStoreChange)
+  observe(langSelection, 'ready', onStoreChange)
+
+  return () => {
+    unobserve(strings, 'id', onStoreChange)
+    unobserve(langSelection, 'ready', onStoreChange)
+  }
+}
+
+function getStringsSnapshot() {
+  return langSelection.ready ? strings.id : null
+}
+
+export function StringsProvider({children}: PropsWithChildren) {
+  const version = useSyncExternalStore(subscribeStrings, getStringsSnapshot)
+  return createElement(StringsContext.Provider, {value: version}, children)
+}
+
+export function useStrings() {
+  if (useContext(StringsContext) === undefined)
+    throw new Error("useStrings must be used within StringsProvider")
+  return strings
+}
 
 export function getLocale() {
   return languages[settings.language]?.locale ?? "en-US"

@@ -1,7 +1,7 @@
 import * as m from "motion/react-m"
 import '@features/save/styles/saves.scss'
 import SavesLayout from "features/save/components/SavesLayout";
-import { useLanguageRefresh, useScreenAutoNavigate } from "app/hooks";
+import { useScreenAutoNavigate } from "app/hooks";
 import { SCREEN, displayMode } from "app/utils/display";
 import { useDefaultNavBack } from "@tsukiweb-common/hooks";
 
@@ -13,7 +13,6 @@ function handleBack(saveLoaded: boolean) {
 const LoadScreen = () => {
 	useScreenAutoNavigate(SCREEN.LOAD)
 	useDefaultNavBack(handleBack.bind(null, false))
-	useLanguageRefresh()
 	
 	return (
 		<m.div

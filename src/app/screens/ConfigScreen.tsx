@@ -2,7 +2,7 @@ import '@features/config/styles/config.scss'
 import * as m from "motion/react-m"
 import { useDefaultNavBack, useQueryParam } from '@tsukiweb-common/hooks'
 import ConfigLayout, { ConfigTabs } from 'features/config/components/ConfigLayout';
-import { useLanguageRefresh, useScreenAutoNavigate } from 'app/hooks';
+import { useScreenAutoNavigate } from 'app/hooks';
 import { SCREEN, displayMode } from 'app/utils/display';
 
 function handleBack() {
@@ -12,7 +12,6 @@ function handleBack() {
 const ConfigScreen = () => {
 	useScreenAutoNavigate(SCREEN.CONFIG)
 	useDefaultNavBack(handleBack)
-	useLanguageRefresh()
 	const [selectedTab, setSelectedTab] = useQueryParam<ConfigTabs>("tab", ConfigTabs.game)
 
 	return (

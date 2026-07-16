@@ -13,7 +13,7 @@ import { useObserver } from "@tsukiweb-common/utils/Observer"
 import { Button, TitleMenuButton, PageSection, PageTitle } from "@tsukiweb-common/ui-core"
 import { audio } from "engine/audio"
 import { QUICK_SAVE_ID, SaveState, compareSaveStates, savesManager } from "engine/savestates";
-import { strings } from "translation/lang";
+import { useStrings } from "translation/lang";
 import { SAVE_EXT } from "app/utils/constants";
 import { SCREEN, displayMode } from "app/utils/display";
 
@@ -25,6 +25,7 @@ type Props = {
 	onBack: (saveLoaded: boolean)=>void,
 }
 const SavesLayout = ({variant, onBack}: Props) => {
+	const strings = useStrings()
 	const [saves, setSaves] = useState<Array<SaveState>>([])
 	const [focusedId, setFocusedSave] = useState<number>()
 	const parentRef = useRef<HTMLDivElement>(null)
@@ -222,6 +223,7 @@ const SavesList = ({onSaveSelect, focusedId, setFocusedSave, parentRef, saves}: 
 }
 
 const ExportWarning = () => {
+	const strings = useStrings()
 	const [displayWarning, setDisplayWarning] = useState<boolean>(false)
 	const [modalShown, setModalShown] = useState<boolean>(false)
 

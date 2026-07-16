@@ -11,7 +11,7 @@ import AnimatedHideActivityDiv from "@tsukiweb-common/ui-core/components/Animate
 import { isScene } from "engine/utils"
 import FixedFooterOrnaments from "features/game/components/shared/FixedFooterOrnament"
 import { useEventState, useIsFullscreen } from "@tsukiweb-common/hooks"
-import { strings } from "translation/lang";
+import { useStrings } from "translation/lang";
 import { settings, viewedScene } from "engine/settings";
 import { displayMode, SCREEN } from "app/utils/display";
 import { InGameLayersHandler } from "@tsukiweb-common/utils/InGameLayersHandler";
@@ -52,6 +52,7 @@ type Props = {
 	qLoad: VoidFunction
 }
 const MenuLayer = ({display, script, show, layers, qSave, qLoad}: Props) => {
+	const strings = useStrings()
 	const menuRef = useRef<HTMLDivElement>(null)
 	const actionsRef = useRef<HTMLDivElement>(null)
 
@@ -161,6 +162,7 @@ type ActionsButtonsProps = {
 	qLoad: VoidFunction
 }
 const ActionsButtons = ({script, show, close, qSave, qLoad}: ActionsButtonsProps) => {
+	const strings = useStrings()
 	const [mute] = useObserved(settings.volume, 'master', (vol)=>vol<0)
 	const isFullscreen = useIsFullscreen()
 	const [isAutoplaying] = useObserved(script, '_autoPlay')

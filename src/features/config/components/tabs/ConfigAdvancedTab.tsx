@@ -7,18 +7,17 @@ import { polyfillCountryFlagEmojis } from "@tsukiweb-common/utils/flagsPolyfill"
 import { imageSrc } from "translation/assets"
 import { useConfig } from "@tsukiweb-common/hooks/useConfig";
 import { exportGameData, importGameData, settings } from "engine/settings";
-import { strings } from "translation/lang";
+import { useStrings } from "translation/lang";
 import { savesManager } from "engine/savestates";
 import { ConfigButtons, ConfigItem, ResetButton } from "../ConfigLayout";
 import ConfigModal from "../ConfigModal";
 import FontSelector from "../FontSelector";
-import { useLanguageRefresh } from "app/hooks";
 import { FULLSAVE_EXT } from "app/utils/constants";
 
 let flagSupportChecked = false
 
 const ConfigAdvancedTab = () => {
-	useLanguageRefresh()
+	const strings = useStrings()
 	const [modal, setModal] = useState<{show: boolean, content: ReactNode}>({show: false, content: undefined})
 
 	const { conf, update, reset } = useConfig(settings,

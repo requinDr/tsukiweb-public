@@ -5,6 +5,7 @@ import { mountDialogManager } from '@tsukiweb-common/ui-core/components/ModalPro
 import { initFileHandling, registerFileHandler } from '@tsukiweb-common/utils/pwa-file-handlers'
 import { importGameDataFromFile } from 'engine/pwa-file-handler';
 import { FULLSAVE_EXT } from './utils/constants';
+import { StringsProvider } from 'translation/lang'
 
 mountDialogManager()
 
@@ -14,6 +15,8 @@ initFileHandling()
 
 createRoot(document.getElementById('root') as HTMLElement).render(
   <StrictMode>
-    <App />
+    <StringsProvider>
+      <App />
+    </StringsProvider>
   </StrictMode>
 )

@@ -3,8 +3,7 @@ import { fullscreen } from "@tsukiweb-common/utils/utils"
 import { ViewRatio, TEXT_SPEED } from "@tsukiweb-common/constants"
 import { useIsFullscreen } from "@tsukiweb-common/hooks"
 import { useConfig } from "@tsukiweb-common/hooks/useConfig";
-import { useLanguageRefresh } from "app/hooks";
-import { getLocale, languages, strings } from "translation/lang";
+import { getLocale, languages, useStrings } from "translation/lang";
 import { ConfigButtons, ConfigItem, ConfigRange, ResetButton } from "../ConfigLayout";
 import ModalLanguageSelection from "../ModalLanguageSelection";
 import { useState } from "react";
@@ -15,7 +14,7 @@ const DELAY_STEP = 100
 
 const ConfigGameTab = () => {
 	const [showLanguage, setShowLanguage] = useState<boolean>(false)
-	useLanguageRefresh()
+	const strings = useStrings()
 	const { conf, update, reset } = useConfig(settings,
 		['textSpeed', 'fixedRatio', 'autoClickDelay', 'nextPageDelay'])
 	const isFullscreen = useIsFullscreen()
