@@ -5,7 +5,7 @@ import { asyncDelay } from "@tsukiweb-common/utils/timer"
 import { ScriptPlayer } from "engine/ScriptPlayer"
 import { splitFirst } from "@tsukiweb-common/utils/utils"
 import { createCommands } from "@tsukiweb-common/audio/utils"
-import { waitLanguageLoad } from "translation/langSelection"
+import { waitLanguageLoad } from "translation/lang"
 import { displayMode, SCREEN } from "app/utils/display";
 import { GameAudioManager } from "@tsukiweb-common/audio/AudioManager";
 

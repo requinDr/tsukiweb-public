@@ -2,7 +2,7 @@ import { splitFirst } from "@tsukiweb-common/utils/utils"
 import { RouteDayName, RouteName } from "../app/utils/types"
 import { settings } from "../engine/settings"
 import {TrackSourceId, strings} from "./lang"
-import { ResolutionId, TextImage } from "@tsukiweb-common/utils/lang"
+import { ResolutionId, TextImage } from "@tsukiweb-common/translation/lang"
 import { closeBB } from "@tsukiweb-common/utils/Bbcode"
 import { assetPath, imageFormat } from "@tsukiweb-common/utils/images"
 

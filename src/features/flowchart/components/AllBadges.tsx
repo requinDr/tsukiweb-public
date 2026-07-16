@@ -1,8 +1,7 @@
 import { FcNode } from "features/flowchart/utils/flowchart"
 import { FcNodeState } from "@tsukiweb-common/flowchart"
 import { SceneBadges } from "./SceneBadges"
-import { isLanguageLoaded } from "translation/langSelection"
-import { useStrings } from "translation/lang";
+import { isLanguageLoaded, useStrings } from "translation/lang";
 
 type Props = {
 	nodes: FcNode[]
