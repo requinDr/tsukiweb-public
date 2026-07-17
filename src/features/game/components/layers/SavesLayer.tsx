@@ -1,5 +1,5 @@
 import { useRef } from "react"
-import AnimatedHideActivityDiv from "@tsukiweb-common/ui-core/components/AnimatedHideActivityDiv";
+import AnimatedHideActivityDiv from "@tsukiweb/common/ui-core/components/AnimatedHideActivityDiv";
 import SavesLayout from "features/save/components/SavesLayout";
 
 

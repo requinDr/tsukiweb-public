@@ -1,6 +1,6 @@
 import { getSceneTitle, getSceneTitles, isScene, isThScene } from "../../../engine/utils"
 import { LabelName, SceneName } from "app/utils/types"
-import { COLUMN_WIDTH, DY, FcNodeState, Flowchart, FlowchartNode, FlowchartNodeAttrs, SCENE_HEIGHT, SCENE_WIDTH, SpritesheetMetadataType } from "@tsukiweb-common/flowchart"
+import { COLUMN_WIDTH, DY, FcNodeState, Flowchart, FlowchartNode, FlowchartNodeAttrs, SCENE_HEIGHT, SCENE_WIDTH, SpritesheetMetadataType } from "@tsukiweb/common/flowchart"
 import SpritesheetMetadata from "@assets/game/spritesheet_metadata.json"
 import { spriteSheetImgPath } from "translation/assets"
 import { settings } from "../../../engine/settings"

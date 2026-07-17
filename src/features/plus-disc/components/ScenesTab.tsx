@@ -2,7 +2,7 @@ import { PlusDiscSceneName } from "app/utils/types"
 import { playScene } from "engine/savestates"
 import { viewedScene } from "engine/settings"
 import { useStrings } from "translation/lang"
-import { SceneShortcut } from "@tsukiweb-common/ui-core"
+import { SceneShortcut } from "@tsukiweb/common/ui-core"
 
 const ScenesTab = () => {
 	const strings = useStrings()

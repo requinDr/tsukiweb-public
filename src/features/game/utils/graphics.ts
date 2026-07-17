@@ -1,12 +1,12 @@
-import { objectMatch, splitFirst } from "@tsukiweb-common/utils/utils";
+import { objectMatch, splitFirst } from "@tsukiweb/common/utils/utils";
 import { settings } from "../../../engine/settings";
 import { imageSrc, wordImage } from "translation/assets";
-import { BG_POSITIONS, Graphics, GraphicsTransition, Quake, Rocket, SpritePos, SPRITES_POSITIONS } from "@tsukiweb-common/graphics";
+import { BG_POSITIONS, Graphics, GraphicsTransition, Quake, Rocket, SpritePos, SPRITES_POSITIONS } from "@tsukiweb/common/graphics";
 import { ScriptPlayer } from "engine/ScriptPlayer";
-import Timer from "@tsukiweb-common/utils/timer";
+import Timer from "@tsukiweb/common/utils/timer";
 import cg from "features/gallery/utils/gallery";
 import { displayMode } from "app/utils/display";
-import { isImage, preloadImage } from "@tsukiweb-common/utils/images";
+import { isImage, preloadImage } from "@tsukiweb/common/utils/images";
 
 
 /**

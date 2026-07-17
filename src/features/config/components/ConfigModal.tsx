@@ -1,6 +1,6 @@
 import { Dispatch, ReactNode } from "react"
 import { useStrings } from "translation/lang"
-import { Button, Modal } from "@tsukiweb-common/ui-core"
+import { Button, Modal } from "@tsukiweb/common/ui-core"
 import { audio } from "engine/audio"
 
 type Props = {

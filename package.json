@@ -5,12 +5,14 @@
 	"type": "module",
 	"scripts": {
 		"start": "vite",
-		"build": "tsc && vite build"
+		"common:check": "tsc -p tsukiweb-common/tsconfig.json",
+		"common:update": "git submodule update --remote --merge tsukiweb-common && npm install",
+		"build": "npm run common:check && tsc && vite build"
 	},
 	"dependencies": {
+		"@tsukiweb/common": "file:./tsukiweb-common",
 		"@tanstack/react-virtual": "^3.14.6",
 		"classnames": "^2.5.1",
-		"dialog-polyfill": "^0.5.6",
 		"motion": "^12.42.2",
 		"react": "^19.2.7",
 		"react-dom": "^19.2.7",
@@ -26,7 +28,6 @@
 		"@types/react": "^19.2.17",
 		"@types/react-dom": "^19.2.3",
 		"@vitejs/plugin-react": "^6.0.3",
-		"sharp": "^0.34.5",
 		"typescript": "^7.0.2",
 		"vite": "^8.1.4"
 	}

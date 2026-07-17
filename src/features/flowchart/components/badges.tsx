@@ -1,4 +1,4 @@
-import { DY } from "@tsukiweb-common/flowchart/constants"
+import { DY } from "@tsukiweb/common/flowchart/constants"
 import { CharId } from "app/utils/types";
 
 const HEART_PATH = `m0,2.5l-2.5,-2.5a1.66,1.66,0,1,1,2.5,-2.2a1.66,1.66,0,1,1,2.5,2.2`

@@ -1,9 +1,9 @@
 import { memo, useEffect, useState, CSSProperties } from "react";
-import { useObserved } from "@tsukiweb-common/utils/Observer";
+import { useObserved } from "@tsukiweb/common/utils/Observer";
 import classNames from "classnames";
 import { ScriptPlayer } from "engine/ScriptPlayer";
 import { processImageCmd, processMonocro, processQuake, processRocket } from "features/game/utils/graphics";
-import { Quake, GraphicsTransition, Rocket, BackgroundGraphics, ForegroundGraphics, SpriteGraphics, SPRITES_POSITIONS } from "@tsukiweb-common/graphics";
+import { Quake, GraphicsTransition, Rocket, BackgroundGraphics, ForegroundGraphics, SpriteGraphics, SPRITES_POSITIONS } from "@tsukiweb/common/graphics";
 import { displayMode } from "app/utils/display";
 
 type Props = {

@@ -1,11 +1,11 @@
 import { Switch, Route, Redirect, useLocation } from "wouter";
 import { AnimatePresence, LazyMotion, domAnimation } from 'motion/react';
-import '@tsukiweb-common/styles/main.scss'
+import '@tsukiweb/common/styles/main.scss'
 import '../styles/App.scss'
-import '@tsukiweb-common/graphics/styles/graphics.scss'
+import '@tsukiweb/common/graphics/styles/graphics.scss'
 import ExtraLayout from "features/title-menu/components/ExtraLayout";
 import { useCallback, useEffect, useState } from "react";
-import { Particles } from "@tsukiweb-common/ui-core";
+import { Particles } from "@tsukiweb/common/ui-core";
 import ConfigScreen from "app/screens/ConfigScreen";
 import DisclaimerScreen from "app/screens/DisclaimerScreen";
 import EndingsScreen from "app/screens/EndingsScreen";

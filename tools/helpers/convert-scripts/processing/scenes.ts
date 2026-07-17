@@ -5,13 +5,13 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url'
-import { parseScript } from '../../../../tsukiweb-common/tools/convert-scripts/parsers/nscriptr.ts';
-import { Block, CommandToken, ConditionToken, LabelToken, ReturnToken, TextToken, Token } from '../../../../tsukiweb-common/tools/convert-scripts/parsers/utils.ts'
+import { parseScript } from '@tsukiweb/common/tools/convert-scripts/parsers/nscriptr.ts';
+import { Block, CommandToken, ConditionToken, LabelToken, ReturnToken, TextToken, Token } from '@tsukiweb/common/tools/convert-scripts/parsers/utils.ts'
 import { generateScenes, splitBlocks, writeScenes } from '../utils/nscriptr_convert.ts';
-import { logger } from '../../../../tsukiweb-common/tools/utils/logger.ts';
+import { logger } from '@tsukiweb/common/tools/utils/logger.ts';
 import { fixContexts } from '../utils/context.ts';
 import { processVarName, isSceneLabel } from './common.ts';
-import { processCondition } from '../../../../tsukiweb-common/tools/convert-scripts/utils.ts';
+import { processCondition } from '@tsukiweb/common/tools/convert-scripts/utils.ts';
 
 const outputPathPrefix = '../../../public/static/'
 const outputDir = 'scenes'

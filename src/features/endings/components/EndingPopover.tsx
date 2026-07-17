@@ -1,5 +1,5 @@
-import { GraphicsGroup } from "@tsukiweb-common/graphics"
-import { bb } from "@tsukiweb-common/utils/Bbcode"
+import { GraphicsGroup } from "@tsukiweb/common/graphics"
+import { bb } from "@tsukiweb/common/utils/Bbcode"
 import { OsieteEnding } from "../utils/endings";
 import { getSceneGraph } from "engine/utils";
 

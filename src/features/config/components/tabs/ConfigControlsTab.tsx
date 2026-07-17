@@ -1,7 +1,7 @@
 import { useRef } from "react"
-import { PageSection } from "@tsukiweb-common/ui-core"
-import { EventFilter } from "@tsukiweb-common/input/eventActions"
-import { bb } from "@tsukiweb-common/utils/Bbcode"
+import { PageSection } from "@tsukiweb/common/ui-core"
+import { EventFilter } from "@tsukiweb/common/input/eventActions"
+import { bb } from "@tsukiweb/common/utils/Bbcode"
 import { inGameControls } from "features/game/utils/keybind"
 import { useStrings } from "translation/lang";
 

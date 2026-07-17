@@ -1,14 +1,14 @@
-import { ScriptPlayerBase } from "@tsukiweb-common/script/ScriptPlayer"
+import { ScriptPlayerBase } from "@tsukiweb/common/script/ScriptPlayer"
 import { CharId, LabelName, RouteDayName, RouteName } from "app/utils/types";
 import { creditsScript, fetchBlockLines, isScene, nextLabel } from "engine/utils";
 import { settings } from "engine/settings";
 import { phaseTexts } from "translation/assets";
-import { closeBB } from "@tsukiweb-common/utils/Bbcode";
+import { closeBB } from "@tsukiweb/common/utils/Bbcode";
 import { getGameVariable, setGameVariable } from "engine/variables";
-import { deepAssign, TSForceType } from "@tsukiweb-common/utils/utils";
-import { CommandRecord, NumVarName, VarName, VarType } from "@tsukiweb-common/script/types";
+import { deepAssign, TSForceType } from "@tsukiweb/common/utils/utils";
+import { CommandRecord, NumVarName, VarName, VarType } from "@tsukiweb/common/script/types";
 import { History } from "./history";
-import { extractInstructions } from "@tsukiweb-common/script/utils";
+import { extractInstructions } from "@tsukiweb/common/script/utils";
 
 //#endregion ###################################################################
 //#region                             TYPES

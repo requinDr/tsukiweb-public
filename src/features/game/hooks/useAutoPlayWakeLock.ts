@@ -1,6 +1,6 @@
 import { useEffect } from "react"
-import { useEventState } from "@tsukiweb-common/hooks"
-import { useWakeLock } from "@tsukiweb-common/hooks"
+import { useEventState } from "@tsukiweb/common/hooks"
+import { useWakeLock } from "@tsukiweb/common/hooks"
 import { ScriptPlayer } from "engine/ScriptPlayer"
 
 /**

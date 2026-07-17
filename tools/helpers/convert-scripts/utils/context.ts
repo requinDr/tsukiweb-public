@@ -1,4 +1,4 @@
-import { Block, CommandToken, ConditionToken, LabelToken, TextToken, Token } from "../../../../tsukiweb-common/tools/convert-scripts/parsers/utils.ts";
+import { Block, CommandToken, ConditionToken, LabelToken, TextToken, Token } from "@tsukiweb/common/tools/convert-scripts/parsers/utils.ts";
 
 function processContext(block: Block,
         cmdToProps: (cmd:string, args:string[])=>[object, boolean],

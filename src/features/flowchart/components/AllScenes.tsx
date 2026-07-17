@@ -2,7 +2,7 @@ import { memo, SVGProps, useCallback } from "react"
 import { FcNode } from "features/flowchart/utils/flowchart"
 import { SceneName } from "app/utils/types"
 import VisibleScene from "./VisibleScene"
-import { FcNodeState, usePopover } from "@tsukiweb-common/flowchart"
+import { FcNodeState, usePopover } from "@tsukiweb/common/flowchart"
 import cg from "features/gallery/utils/gallery";
 import { getSceneGraph } from "engine/utils";
 

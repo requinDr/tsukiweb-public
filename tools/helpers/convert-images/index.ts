@@ -1,7 +1,7 @@
 import path from 'path'
-import { processImages } from '../../../tsukiweb-common/tools/convert-images/processor.ts'
-import { mergeVertical } from '../../../tsukiweb-common/tools/convert-images/editor.ts'
-import { logger } from '../../../tsukiweb-common/tools/utils/logger.ts'
+import { processImages } from '@tsukiweb/common/tools/convert-images/processor.ts'
+import { mergeVertical } from '@tsukiweb/common/tools/convert-images/editor.ts'
+import { logger } from '@tsukiweb/common/tools/utils/logger.ts'
 
 /**
  * Put in the "input" folder: bg, event and tachi folders.

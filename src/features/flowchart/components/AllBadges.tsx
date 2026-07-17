@@ -1,5 +1,5 @@
 import { FcNode } from "features/flowchart/utils/flowchart"
-import { FcNodeState } from "@tsukiweb-common/flowchart"
+import { FcNodeState } from "@tsukiweb/common/flowchart"
 import { SceneBadges } from "./SceneBadges"
 import { isLanguageLoaded, useStrings } from "translation/lang";
 

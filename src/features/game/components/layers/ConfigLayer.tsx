@@ -1,5 +1,5 @@
 import { memo, useEffect, useRef, useState } from "react"
-import AnimatedHideActivityDiv from "@tsukiweb-common/ui-core/components/AnimatedHideActivityDiv"
+import AnimatedHideActivityDiv from "@tsukiweb/common/ui-core/components/AnimatedHideActivityDiv"
 import ConfigLayout, { ConfigTabs } from "features/config/components/ConfigLayout";
 
 

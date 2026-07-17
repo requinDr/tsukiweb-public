@@ -1,6 +1,6 @@
 import fs from 'fs'
-import { buildSpritesheets, type Scene } from '../../../tsukiweb-common/tools/generate-thumbnails/processor.ts'
-import { logger } from '../../../tsukiweb-common/tools/utils/logger.ts'
+import { buildSpritesheets, type Scene } from '@tsukiweb/common/tools/generate-thumbnails/processor.ts'
+import { logger } from '@tsukiweb/common/tools/utils/logger.ts'
 
 
 /**

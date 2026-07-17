@@ -2,8 +2,8 @@ import { LabelName, PlusDiscSceneName, RouteDayName, RouteName, SceneName } from
 import { APP_VERSION, SCENE_ATTRS } from "../app/utils/constants";
 import { strings, waitLanguageLoad } from "../translation/lang"
 import { credits, scenesDir } from "translation/assets";
-import { ASSETS_PATH } from "@tsukiweb-common/constants";
-import { ThumbnailsGraphics } from "@tsukiweb-common/graphics";
+import { ASSETS_PATH } from "@tsukiweb/common/constants";
+import { ThumbnailsGraphics } from "@tsukiweb/common/graphics";
 
 
 //#endregion ###################################################################

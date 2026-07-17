@@ -1,11 +1,11 @@
 import { ReactNode, useState } from "react"
 import { MdDeleteForever, MdDownload, MdFileUpload } from "react-icons/md"
-import { Button, PageSection } from "@tsukiweb-common/ui-core"
-import { bb } from "@tsukiweb-common/utils/Bbcode"
-import { dialog } from "@tsukiweb-common/ui-core/components/ModalPrompt"
-import { polyfillCountryFlagEmojis } from "@tsukiweb-common/utils/flagsPolyfill"
+import { Button, PageSection } from "@tsukiweb/common/ui-core"
+import { bb } from "@tsukiweb/common/utils/Bbcode"
+import { dialog } from "@tsukiweb/common/ui-core/components/ModalPrompt"
+import { polyfillCountryFlagEmojis } from "@tsukiweb/common/utils/flagsPolyfill"
 import { imageSrc } from "translation/assets"
-import { useConfig } from "@tsukiweb-common/hooks/useConfig";
+import { useConfig } from "@tsukiweb/common/hooks/useConfig";
 import { exportGameData, importGameData, settings } from "engine/settings";
 import { useStrings } from "translation/lang";
 import { savesManager } from "engine/savestates";

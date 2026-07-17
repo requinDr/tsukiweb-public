@@ -1,5 +1,5 @@
-import { displayPath, ensureDir } from '../tsukiweb-common/tools/utils/fs-utils.ts'
-import type { OrchestratorStep } from '../tsukiweb-common/tools/orchestrator/utils.ts'
+import { displayPath, ensureDir } from '@tsukiweb/common/tools/utils/fs-utils.ts'
+import type { OrchestratorStep } from '@tsukiweb/common/tools/orchestrator/utils.ts'
 import { createSteps } from './orchestrator/steps.ts'
 import { loadConfig, buildPaths, type Paths, type ToolConfig } from './orchestrator/config.ts'
 import {
@@ -8,10 +8,10 @@ import {
   printCheckDetails,
   statusLine,
   type StepStatus,
-} from '../tsukiweb-common/tools/orchestrator/ui.ts'
-import { printOrchestratorHeader } from '../tsukiweb-common/tools/orchestrator/header.ts'
-import { logger } from '../tsukiweb-common/tools/utils/logger.ts'
-import { formatDuration } from '../tsukiweb-common/tools/utils/utils.ts'
+} from '@tsukiweb/common/tools/orchestrator/ui.ts'
+import { printOrchestratorHeader } from '@tsukiweb/common/tools/orchestrator/header.ts'
+import { logger } from '@tsukiweb/common/tools/utils/logger.ts'
+import { formatDuration } from '@tsukiweb/common/tools/utils/utils.ts'
 
 interface OrchestratorContext {
   config: ToolConfig

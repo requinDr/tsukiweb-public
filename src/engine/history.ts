@@ -5,8 +5,8 @@ import { SaveState } from "./savestates"
 import { isScene } from "./utils"
 import { ScriptPlayer } from "engine/ScriptPlayer"
 import { settings } from "./settings"
-import { jsonDiff } from "@tsukiweb-common/utils/utils"
-import { HistoryBase } from "@tsukiweb-common/script/history"
+import { jsonDiff } from "@tsukiweb/common/utils/utils"
+import { HistoryBase } from "@tsukiweb/common/script/history"
 
 //##############################################################################
 //#region                             TYPES

@@ -1,9 +1,9 @@
 import fs from 'fs/promises'
 import path from 'path'
 
-import { extractXp3 } from '../../tsukiweb-common/tools/extract-xp3/extractor.ts'
-import { mergeVertical } from '../../tsukiweb-common/tools/convert-images/editor.ts'
-import { processImages as convertImages } from '../../tsukiweb-common/tools/convert-images/processor.ts'
+import { extractXp3 } from '@tsukiweb/common/tools/extract-xp3/extractor.ts'
+import { mergeVertical } from '@tsukiweb/common/tools/convert-images/editor.ts'
+import { processImages as convertImages } from '@tsukiweb/common/tools/convert-images/processor.ts'
 import { main as runPlusDiscScripts } from '../helpers/convert-scripts/plus_disc.ts'
 import type { Paths, ToolConfig } from './config-pd.ts'
 import {
@@ -19,9 +19,9 @@ import {
   ensureEmptyDirInside,
   isMediaFile,
   listFilesRecursive,
-} from '../../tsukiweb-common/tools/utils/fs-utils.ts'
-import { logger } from '../../tsukiweb-common/tools/utils/logger.ts'
-import { resolveExecutable, runCommand, withWorkingDirectory } from '../../tsukiweb-common/tools/utils/process-utils.ts'
+} from '@tsukiweb/common/tools/utils/fs-utils.ts'
+import { logger } from '@tsukiweb/common/tools/utils/logger.ts'
+import { resolveExecutable, runCommand, withWorkingDirectory } from '@tsukiweb/common/tools/utils/process-utils.ts'
 import {
   check,
   combine,
@@ -31,7 +31,7 @@ import {
   type Check,
   type CheckDetail,
   type OrchestratorStep,
-} from '../../tsukiweb-common/tools/orchestrator/utils.ts'
+} from '@tsukiweb/common/tools/orchestrator/utils.ts'
 
 interface StepContext {
   config: ToolConfig

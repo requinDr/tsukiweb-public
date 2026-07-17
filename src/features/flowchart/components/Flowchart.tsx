@@ -4,14 +4,14 @@ import { FcNode, GameFlowchart } from "features/flowchart/utils/flowchart"
 import { SceneName } from "app/utils/types"
 import { AllScenes } from "./AllScenes"
 import { History } from "engine/history"
-import { COLUMN_WIDTH, DY, PopoverProvider, SCENE_HEIGHT, SCENE_WIDTH, SVG_DEFS } from "@tsukiweb-common/flowchart"
-import { usePinchPanZoom } from "@tsukiweb-common/hooks"
+import { COLUMN_WIDTH, DY, PopoverProvider, SCENE_HEIGHT, SCENE_WIDTH, SVG_DEFS } from "@tsukiweb/common/flowchart"
+import { usePinchPanZoom } from "@tsukiweb/common/hooks"
 import ScenePopover from "./ScenePopover";
 import AllConnections from "./AllConnections";
 import { BADGES_DEFINES } from "./badges"
 import AllBadges from "./AllBadges"
 import { settings } from "engine/settings"
-import { useObserved } from "@tsukiweb-common/utils/Observer"
+import { useObserved } from "@tsukiweb/common/utils/Observer"
 import { useStrings } from "translation/lang"
 
 

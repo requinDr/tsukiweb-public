@@ -1,6 +1,6 @@
 import sceneAttrs from '@assets/game/scene_attrs.json'
-import { PartialRecord } from '@tsukiweb-common/types'
-import { ThumbnailsGraphics } from '@tsukiweb-common/graphics'
+import { PartialRecord } from '@tsukiweb/common/types'
+import { ThumbnailsGraphics } from '@tsukiweb/common/graphics'
 import { CharId, SceneName } from './types';
 
 export const APP_VERSION = import.meta.env.VITE_PACKAGE_VERSION

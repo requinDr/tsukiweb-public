@@ -1,11 +1,11 @@
 import defaultStrings from "../assets/lang/default.json"
 import { settings } from "../engine/settings"
-import { ImageRedirect, ResolutionId, TextImage } from "@tsukiweb-common/translation/lang"
-import { PartialRecord } from "@tsukiweb-common/types"
+import { ImageRedirect, ResolutionId, TextImage } from "@tsukiweb/common/translation/lang"
+import { PartialRecord } from "@tsukiweb/common/types"
 import { APP_VERSION, SCENE_ATTRS } from "app/utils/constants";
 import { LabelName, RouteDayName, RouteName } from "app/utils/types";
-import { ASSETS_PATH } from "@tsukiweb-common/constants";
-import { createTranslationStore } from "@tsukiweb-common/translation/langStore"
+import { ASSETS_PATH } from "@tsukiweb/common/constants";
+import { createTranslationStore } from "@tsukiweb/common/translation/langStore"
 
 //________________________________private types_________________________________
 //------------------------------------------------------------------------------
@@ -48,6 +48,7 @@ export const {
     "images.thumb",
     "audio",
   ],
+  storagePrefix: "th_"
 })
 
 window.strings = strings

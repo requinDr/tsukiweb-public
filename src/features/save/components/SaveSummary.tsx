@@ -1,5 +1,5 @@
 import { Fragment, memo } from "react"
-import { noBb } from "@tsukiweb-common/utils/Bbcode"
+import { noBb } from "@tsukiweb/common/utils/Bbcode"
 import { PageEntry } from "engine/history"
 import { SceneName } from "app/utils/types"
 import { SaveState, savePhaseTexts } from "engine/savestates";

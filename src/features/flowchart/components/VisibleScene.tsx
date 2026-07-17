@@ -1,5 +1,5 @@
-import { SCENE_WIDTH, SCENE_HEIGHT, FcNodeState, usePopoverTrigger } from "@tsukiweb-common/flowchart"
-import { NavigationProps } from "@tsukiweb-common/input/arrowNavigation";
+import { SCENE_WIDTH, SCENE_HEIGHT, FcNodeState, usePopoverTrigger } from "@tsukiweb/common/flowchart"
+import { NavigationProps } from "@tsukiweb/common/input/arrowNavigation";
 import classNames from "classnames";
 import { SVGProps, useCallback } from "react";
 import { SceneName } from "app/utils/types";

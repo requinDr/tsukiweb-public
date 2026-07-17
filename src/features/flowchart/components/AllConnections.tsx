@@ -1,6 +1,6 @@
 import { useMemo, memo } from "react"
 import { FcNode } from "features/flowchart/utils/flowchart"
-import { DY, FcNodeState, OVERLAP_BREAK_LENGTH } from "@tsukiweb-common/flowchart"
+import { DY, FcNodeState, OVERLAP_BREAK_LENGTH } from "@tsukiweb/common/flowchart"
 
 type Props = {
 	fcNodes: FcNode[]

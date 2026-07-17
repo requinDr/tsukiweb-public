@@ -1,4 +1,4 @@
-import {switch_regex, processCondition as _processCondition} from "../../../../tsukiweb-common/tools/convert-scripts/utils.ts"
+import {switch_regex, processCondition as _processCondition} from "@tsukiweb/common/tools/convert-scripts/utils.ts"
 const CONDITION_REGEXP = /^(?<lhs>(%\w+|\d+))(?<op>[=!><]+)(?<rhs>(%\w+|\d+))$/
 
 function isLogicLabel(label: string) {

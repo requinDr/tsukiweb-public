@@ -11,7 +11,7 @@ const remotePaths: string[] = [
 	'^/static/[^/]+/CD_tsukibako',
 	'^/static/[^/]+/images',
 	'^/static/[^/]+/images_thumb',
-	'^/static/[^/]+/scenes',
+	// '^/static/[^/]+/scenes',
 	'^/static/[^/]+/wave',
 	'^/static/[^/]+/wave_pd',
 ]

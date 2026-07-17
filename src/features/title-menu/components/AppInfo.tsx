@@ -2,10 +2,10 @@ import { Dispatch, useState } from "react"
 import { MdCopyAll, MdGetApp, MdInfoOutline, MdOpenInNew, MdShare } from "react-icons/md"
 import { toast } from "react-toastify"
 import tsukiCover from "@assets/images/game_cover.webp"
-import { Button, MessageContainer, Modal } from "@tsukiweb-common/ui-core"
-import { bb } from "@tsukiweb-common/utils/Bbcode"
+import { Button, MessageContainer, Modal } from "@tsukiweb/common/ui-core"
+import { bb } from "@tsukiweb/common/utils/Bbcode"
 import { audio } from "engine/audio"
-import { usePWA } from "@tsukiweb-common/hooks"
+import { usePWA } from "@tsukiweb/common/hooks"
 import { useStrings } from "translation/lang";
 import { APP_INFO, APP_VERSION } from "app/utils/constants";
 import { SCREEN } from "app/utils/display";

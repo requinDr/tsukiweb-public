@@ -1,11 +1,11 @@
 import '@features/plus-disc/styles/plus-disc.scss'
 import Cover from "@assets/images/plus-disc_cover.webp"
-import { TabsBar } from '@tsukiweb-common/ui-core'
+import { TabsBar } from '@tsukiweb/common/ui-core'
 import * as m from "motion/react-m"
 import { AnimatePresence, Variants } from 'motion/react'
 import { useStrings } from 'translation/lang'
 import { APP_INFO } from 'app/utils/constants'
-import { useNavBackRef, useQueryParam } from '@tsukiweb-common/hooks'
+import { useNavBackRef, useQueryParam } from '@tsukiweb/common/hooks'
 import GalleryTab from 'features/plus-disc/components/GalleryTab';
 import ScenesTab from 'features/plus-disc/components/ScenesTab';
 import { SCREEN } from 'app/utils/display';

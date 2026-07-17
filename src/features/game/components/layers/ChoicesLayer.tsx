@@ -1,11 +1,11 @@
 import { memo, RefObject, useEffect, useRef, useState } from "react"
-import { Bbcode } from "@tsukiweb-common/utils/Bbcode"
+import { Bbcode } from "@tsukiweb/common/utils/Bbcode"
 import { ScriptPlayer } from "engine/ScriptPlayer"
-import { Button } from "@tsukiweb-common/ui-core"
+import { Button } from "@tsukiweb/common/ui-core"
 import { audio } from "engine/audio"
 import * as m from "motion/react-m"
 import { Variants } from "motion/react"
-import { checkIfCondition } from "@tsukiweb-common/script/utils"
+import { checkIfCondition } from "@tsukiweb/common/script/utils"
 import { Choice, LabelName } from "app/utils/types";
 import { strings } from "translation/lang";
 import { history } from "engine/history"

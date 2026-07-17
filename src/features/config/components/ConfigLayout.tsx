@@ -3,14 +3,14 @@ import '../styles/config.scss'
 import { useStrings } from '../../../translation/lang'
 import { MdQuestionMark } from 'react-icons/md'
 import { HiMinus, HiPlus } from 'react-icons/hi'
-import { Button, TitleMenuButton, PageTabsLayout } from '@tsukiweb-common/ui-core'
+import { Button, TitleMenuButton, PageTabsLayout } from '@tsukiweb/common/ui-core'
 import { audio } from 'engine/audio'
-import { useButtonSounds } from '@tsukiweb-common/hooks'
+import { useButtonSounds } from '@tsukiweb/common/hooks'
 import ConfigGameTab from './tabs/ConfigGameTab';
 import ConfigAudioTab from './tabs/ConfigAudioTab';
 import ConfigControlsTab from './tabs/ConfigControlsTab';
 import ConfigAdvancedTab from './tabs/ConfigAdvancedTab';
-import { DivProps } from '@tsukiweb-common/types'
+import { DivProps } from '@tsukiweb/common/types'
 
 export enum ConfigTabs {
 	game = "game",

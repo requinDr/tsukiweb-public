@@ -1,4 +1,4 @@
-import { SceneShortcut } from "@tsukiweb-common/ui-core"
+import { SceneShortcut } from "@tsukiweb/common/ui-core"
 import { LabelName } from "app/utils/types"
 import { playScene } from "engine/savestates"
 

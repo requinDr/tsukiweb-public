@@ -1,4 +1,4 @@
-import { dialog } from "@tsukiweb-common/ui-core/components/ModalPrompt"
+import { dialog } from "@tsukiweb/common/ui-core/components/ModalPrompt"
 import { strings } from "../translation/lang"
 import { toast } from "react-toastify"
 import { importGameDataFromJSON } from "./settings"

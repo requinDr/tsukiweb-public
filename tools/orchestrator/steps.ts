@@ -1,14 +1,14 @@
 import fs from 'fs/promises'
 import path from 'path'
 
-import { extractSar } from '../../tsukiweb-common/tools/extract-sar/extractor.ts'
-import { processImages as applySpriteTransparency } from '../../tsukiweb-common/tools/transform-sprites/processor.ts'
-import { processImages as convertImages } from '../../tsukiweb-common/tools/convert-images/processor.ts'
-import { mergeVertical } from '../../tsukiweb-common/tools/convert-images/editor.ts'
-import { buildSpritesheets } from '../../tsukiweb-common/tools/generate-thumbnails/processor.ts'
+import { extractSar } from '@tsukiweb/common/tools/extract-sar/extractor.ts'
+import { processImages as applySpriteTransparency } from '@tsukiweb/common/tools/transform-sprites/processor.ts'
+import { processImages as convertImages } from '@tsukiweb/common/tools/convert-images/processor.ts'
+import { mergeVertical } from '@tsukiweb/common/tools/convert-images/editor.ts'
+import { buildSpritesheets } from '@tsukiweb/common/tools/generate-thumbnails/processor.ts'
 import { main as runLogicScripts } from '../helpers/convert-scripts/processing/logic.ts'
 import { main as runSceneScripts } from '../helpers/convert-scripts/processing/scenes.ts'
-import type { Scene } from '../../tsukiweb-common/tools/generate-thumbnails/processor.ts'
+import type { Scene } from '@tsukiweb/common/tools/generate-thumbnails/processor.ts'
 import {
   FFMPEG_AUDIO_ARGS,
   SCRIPT_LANGS,
@@ -26,8 +26,8 @@ import {
   ensureEmptyDirInside,
   isMediaFile,
   listFilesRecursive,
-} from '../../tsukiweb-common/tools/utils/fs-utils.ts'
-import { resolveExecutable, runCommand, withWorkingDirectory } from '../../tsukiweb-common/tools/utils/process-utils.ts'
+} from '@tsukiweb/common/tools/utils/fs-utils.ts'
+import { resolveExecutable, runCommand, withWorkingDirectory } from '@tsukiweb/common/tools/utils/process-utils.ts'
 import {
   check,
   combine,
@@ -37,7 +37,7 @@ import {
   type Check,
   type CheckDetail,
   type OrchestratorStep,
-} from '../../tsukiweb-common/tools/orchestrator/utils.ts'
+} from '@tsukiweb/common/tools/orchestrator/utils.ts'
 
 interface StepContext {
   config: ToolConfig

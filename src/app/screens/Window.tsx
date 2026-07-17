@@ -2,14 +2,14 @@ import { Fragment, useCallback, useRef, useMemo, useSyncExternalStore } from 're
 import * as m from "motion/react-m"
 import '@features/game/styles/game.scss';
 import { HiMenu } from 'react-icons/hi';
-import { useDefaultNavBack, useResettable } from '@tsukiweb-common/hooks';
+import { useDefaultNavBack, useResettable } from '@tsukiweb/common/hooks';
 import { ScriptPlayer } from 'engine/ScriptPlayer';
 import { history } from 'engine/history';
 import { isPDScene } from 'engine/utils';
 import actions, { ShowLayers } from 'features/game/utils/window-actions';
 import { settings } from 'engine/settings';
-import { useObserver } from '@tsukiweb-common/utils/Observer';
-import { RatioContainer } from '@tsukiweb-common/ui-core';
+import { useObserver } from '@tsukiweb/common/utils/Observer';
+import { RatioContainer } from '@tsukiweb/common/ui-core';
 import MenuLayer from 'features/game/components/layers/MenuLayer';
 import SavesLayer from 'features/game/components/layers/SavesLayer';
 import SkipLayer from 'features/game/components/layers/SkipLayer';
@@ -22,7 +22,7 @@ import HistoryLayer from 'features/game/components/layers/HistoryLayer';
 import TextLayer from 'features/game/components/layers/TextLayer';
 import { SCREEN, displayMode } from 'app/utils/display';
 import { useScreenAutoNavigate } from 'app/hooks';
-import { InGameLayersHandler } from "@tsukiweb-common/utils/InGameLayersHandler";
+import { InGameLayersHandler } from "@tsukiweb/common/utils/InGameLayersHandler";
 
 
 const Window = () => {

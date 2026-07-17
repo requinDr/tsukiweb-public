@@ -1,5 +1,5 @@
-import { GamepadEventGenerator, GamepadEvents } from "@tsukiweb-common/input/gamepad";
-import {EventActions as EA, EventFilter} from "@tsukiweb-common/input/eventActions";
+import { GamepadEventGenerator, GamepadEvents } from "@tsukiweb/common/input/gamepad";
+import {EventActions as EA, EventFilter} from "@tsukiweb/common/input/eventActions";
 
 // XBOX controller button mapping
 enum Gamepad {

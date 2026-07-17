@@ -1,5 +1,5 @@
-@use '../../../../tsukiweb-common/src/styles/partials/_components';
-@use '../../../../tsukiweb-common/src/ui-core/styles/mixins' as *;
+@use '@tsukiweb/common/styles/partials/_components.scss';
+@use '@tsukiweb/common/ui-core/styles/_mixins.scss' as *;
 
 #gallery, #endings, #plus-disc {
 	height: 100%;

@@ -1,6 +1,6 @@
 import { FcNode } from "features/flowchart/utils/flowchart";
 import { FLAG_BACKGROUND } from "./badges";
-import { DY } from "@tsukiweb-common/flowchart";
+import { DY } from "@tsukiweb/common/flowchart";
 import { CharId } from "app/utils/types";
 import { RouteEnding } from "features/endings/utils/endings";
 import { getNodeBadges } from "features/flowchart/utils/badges";

@@ -2,7 +2,7 @@ import { playScene } from 'engine/savestates'
 import chalkboard from '@assets/icons/chalkboard.svg'
 import { osiete } from 'features/endings/utils/endings'
 import classNames from 'classnames'
-import { usePopoverTrigger } from '@tsukiweb-common/flowchart';
+import { usePopoverTrigger } from '@tsukiweb/common/flowchart';
 import { getSceneGraph } from 'engine/utils';
 
 type Props = {

@@ -1,10 +1,10 @@
 import { useEffect } from "react"
 import { settings } from "../../engine/settings"
-import { useObserver } from "@tsukiweb-common/utils/Observer"
-import { isFontAvailable, loadGoogleFont } from "@tsukiweb-common/utils/fonts"
-import { DEFAULT_GAME_FONT } from "@tsukiweb-common/utils/settings"
+import { useObserver } from "@tsukiweb/common/utils/Observer"
+import { isFontAvailable, loadGoogleFont } from "@tsukiweb/common/utils/fonts"
+import { DEFAULT_GAME_FONT } from "@tsukiweb/common/utils/settings"
 import { strings } from "translation/lang"
-import { useArrowNavigation } from "@tsukiweb-common/hooks"
+import { useArrowNavigation } from "@tsukiweb/common/hooks"
 import { menuKeyMap } from "features/game/utils/keybind"
 
 type Props = {

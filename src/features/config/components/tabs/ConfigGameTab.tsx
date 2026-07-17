@@ -1,8 +1,8 @@
-import { Button, PageSection } from "@tsukiweb-common/ui-core"
-import { fullscreen } from "@tsukiweb-common/utils/utils"
-import { ViewRatio, TEXT_SPEED } from "@tsukiweb-common/constants"
-import { useIsFullscreen } from "@tsukiweb-common/hooks"
-import { useConfig } from "@tsukiweb-common/hooks/useConfig";
+import { Button, PageSection } from "@tsukiweb/common/ui-core"
+import { fullscreen } from "@tsukiweb/common/utils/utils"
+import { ViewRatio, TEXT_SPEED } from "@tsukiweb/common/constants"
+import { useIsFullscreen } from "@tsukiweb/common/hooks"
+import { useConfig } from "@tsukiweb/common/hooks/useConfig";
 import { getLocale, languages, useStrings } from "translation/lang";
 import { ConfigButtons, ConfigItem, ConfigRange, ResetButton } from "../ConfigLayout";
 import ModalLanguageSelection from "../ModalLanguageSelection";

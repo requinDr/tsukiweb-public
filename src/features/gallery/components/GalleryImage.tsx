@@ -9,8 +9,8 @@ import { MdClose, MdLock } from "react-icons/md"
 import { GalleryPlaceholderLocked, GalleryTotal } from "./GalleryComponents"
 import { imageSrc } from "translation/assets"
 import { GalleryImg } from "app/utils/types"
-import { Button } from "@tsukiweb-common/ui-core"
-import { useMediaQuery, useNavBackRef } from "@tsukiweb-common/hooks"
+import { Button } from "@tsukiweb/common/ui-core"
+import { useMediaQuery, useNavBackRef } from "@tsukiweb/common/hooks"
 
 declare module "yet-another-react-lightbox" {
 	interface SlideImage {

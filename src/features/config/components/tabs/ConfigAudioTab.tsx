@@ -1,9 +1,9 @@
 import { ReactNode, useState } from "react"
 import { MdOutlineVolumeOff, MdOutlineVolumeUp } from "react-icons/md"
-import { PageSection } from "@tsukiweb-common/ui-core"
-import { negative } from "@tsukiweb-common/utils/utils"
-import { bb } from "@tsukiweb-common/utils/Bbcode"
-import { useConfig } from "@tsukiweb-common/hooks/useConfig";
+import { PageSection } from "@tsukiweb/common/ui-core"
+import { negative } from "@tsukiweb/common/utils/utils"
+import { bb } from "@tsukiweb/common/utils/Bbcode"
+import { useConfig } from "@tsukiweb/common/hooks/useConfig";
 import { useStrings } from "translation/lang";
 import { ConfigButtons, ConfigIconButton, ConfigItem, ConfigRange, ResetButton } from "../ConfigLayout";
 import ConfigModal from "../ConfigModal";

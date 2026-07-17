@@ -1,9 +1,9 @@
 import { Dispatch } from "react"
 import { languages, useStrings } from "translation/lang"
 import { settings } from "engine/settings"
-import { Button, Modal } from "@tsukiweb-common/ui-core"
-import { sortTranslations } from "@tsukiweb-common/translation/lang"
-import { polyfillCountryFlagEmojis } from "@tsukiweb-common/utils/flagsPolyfill"
+import { Button, Modal } from "@tsukiweb/common/ui-core"
+import { sortTranslations } from "@tsukiweb/common/translation/lang"
+import { polyfillCountryFlagEmojis } from "@tsukiweb/common/utils/flagsPolyfill"
 import { audio } from "engine/audio"
 
 let flagSupportChecked = false

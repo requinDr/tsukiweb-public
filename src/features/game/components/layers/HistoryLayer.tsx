@@ -1,13 +1,13 @@
 import { memo, useCallback, useLayoutEffect, useRef } from 'react';
 import classNames from 'classnames';
-import { Button, FixedFooter } from '@tsukiweb-common/ui-core';
+import { Button, FixedFooter } from '@tsukiweb/common/ui-core';
 import Flowchart from 'features/flowchart/components/Flowchart';
 import { playScene } from 'engine/savestates';
 import { useStrings } from 'translation/lang';
 import PageElement from '../history/PageElement';
 import { ProgressPanel } from '../shared/ProgressPanel';
 import { History } from 'engine/history';
-import { InGameLayersHandler } from "@tsukiweb-common/utils/InGameLayersHandler";
+import { InGameLayersHandler } from "@tsukiweb/common/utils/InGameLayersHandler";
 import { LabelName, SceneName } from 'app/utils/types';
 import { settings } from 'engine/settings';
 

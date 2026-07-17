@@ -1,20 +1,20 @@
 import { useEffect, useRef } from "react"
 import { MdCopyAll, MdFastForward, MdFullscreen, MdFullscreenExit, MdOutlineVolumeOff, MdOutlineVolumeUp, MdPlayArrow } from "react-icons/md"
 import { toast } from "react-toastify"
-import { useObserved } from "@tsukiweb-common/utils/Observer"
-import { fullscreen } from "@tsukiweb-common/utils/utils"
-import { useDOMEvent } from "@tsukiweb-common/hooks/useDOMEvent"
+import { useObserved } from "@tsukiweb/common/utils/Observer"
+import { fullscreen } from "@tsukiweb/common/utils/utils"
+import { useDOMEvent } from "@tsukiweb/common/hooks/useDOMEvent"
 import { ScriptPlayer } from "engine/ScriptPlayer"
 import { audio } from "engine/audio"
-import { Button } from "@tsukiweb-common/ui-core"
-import AnimatedHideActivityDiv from "@tsukiweb-common/ui-core/components/AnimatedHideActivityDiv"
+import { Button } from "@tsukiweb/common/ui-core"
+import AnimatedHideActivityDiv from "@tsukiweb/common/ui-core/components/AnimatedHideActivityDiv"
 import { isScene } from "engine/utils"
 import FixedFooterOrnaments from "features/game/components/shared/FixedFooterOrnament"
-import { useEventState, useIsFullscreen } from "@tsukiweb-common/hooks"
+import { useEventState, useIsFullscreen } from "@tsukiweb/common/hooks"
 import { useStrings } from "translation/lang";
 import { settings, viewedScene } from "engine/settings";
 import { displayMode, SCREEN } from "app/utils/display";
-import { InGameLayersHandler } from "@tsukiweb-common/utils/InGameLayersHandler";
+import { InGameLayersHandler } from "@tsukiweb/common/utils/InGameLayersHandler";
 
 
 const LAYER_PROPS = {

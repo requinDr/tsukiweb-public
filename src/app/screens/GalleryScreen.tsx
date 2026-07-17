@@ -2,12 +2,12 @@ import { ComponentProps, useMemo } from 'react'
 import '@features/gallery/styles/gallery.scss'
 import * as m from "motion/react-m"
 import { AnimatePresence, Variants } from 'motion/react'
-import { PageTabsLayout } from '@tsukiweb-common/ui-core'
+import { PageTabsLayout } from '@tsukiweb/common/ui-core'
 import { CharId } from 'app/utils/types'
 import GalleryImage from 'features/gallery/components/GalleryImage'
 import { audio } from 'engine/audio'
 import { GalleryTotal } from 'features/gallery/components/GalleryComponents'
-import { useNavBackRef, useQueryParam } from '@tsukiweb-common/hooks'
+import { useNavBackRef, useQueryParam } from '@tsukiweb/common/hooks'
 import { CHARS } from 'app/utils/constants';
 import { settings } from 'engine/settings';
 import cg from 'features/gallery/utils/gallery';

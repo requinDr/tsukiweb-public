@@ -2,12 +2,12 @@ import { useEffect, useState, memo, Fragment, useRef, RefObject, useCallback } f
 import moonIcon from '@assets/icons/icon_moon.svg'
 import pageIcon from '@assets/icons/icon_bars.svg'
 import { ScriptPlayer } from "engine/ScriptPlayer"
-import { useObserved, useObserver } from "@tsukiweb-common/utils/Observer"
-import { DivProps } from "@tsukiweb-common/types"
-import { Bbcode, BBTypeWriter } from "@tsukiweb-common/utils/Bbcode"
-import { preprocessText } from "@tsukiweb-common/utils/utils"
-import { useAutoScroll, useEventState, useMousePointer } from "@tsukiweb-common/hooks"
-import { EndLineIndicator, FfwIndicator } from "@tsukiweb-common/ui-core"
+import { useObserved, useObserver } from "@tsukiweb/common/utils/Observer"
+import { DivProps } from "@tsukiweb/common/types"
+import { Bbcode, BBTypeWriter } from "@tsukiweb/common/utils/Bbcode"
+import { preprocessText } from "@tsukiweb/common/utils/utils"
+import { useAutoScroll, useEventState, useMousePointer } from "@tsukiweb/common/hooks"
+import { EndLineIndicator, FfwIndicator } from "@tsukiweb/common/ui-core"
 import { settings } from "engine/settings";
 import AdvTextFrame from "../shared/AdvTextFrame";
 

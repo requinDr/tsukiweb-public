@@ -1,5 +1,5 @@
-import { logger } from '../../../tsukiweb-common/tools/utils/logger.ts'
-import { extractXp3 } from '../../../tsukiweb-common/tools/extract-xp3/extractor.ts'
+import { logger } from '@tsukiweb/common/tools/utils/logger.ts'
+import { extractXp3 } from '@tsukiweb/common/tools/extract-xp3/extractor.ts'
 
 /**
  * 1) Place data.xp3 next to this script.

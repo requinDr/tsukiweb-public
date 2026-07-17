@@ -3,7 +3,7 @@ import '@features/save/styles/saves.scss'
 import SavesLayout from "features/save/components/SavesLayout";
 import { useScreenAutoNavigate } from "app/hooks";
 import { SCREEN, displayMode } from "app/utils/display";
-import { useDefaultNavBack } from "@tsukiweb-common/hooks";
+import { useDefaultNavBack } from "@tsukiweb/common/hooks";
 
 function handleBack(saveLoaded: boolean) {
 	if (!saveLoaded)

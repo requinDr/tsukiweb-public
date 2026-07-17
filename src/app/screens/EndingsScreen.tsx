@@ -1,17 +1,17 @@
-import styles from "@tsukiweb-common/ui-core/styles/layouts.module.scss"
+import styles from "@tsukiweb/common/ui-core/styles/layouts.module.scss"
 import '@features/endings/styles/endings.scss'
 import { settings } from 'engine/settings'
 import MainEnding from 'features/endings/components/MainEnding'
 import Oshiete from 'features/endings/components/Oshiete'
-import { noBb } from '@tsukiweb-common/utils/Bbcode'
+import { noBb } from '@tsukiweb/common/utils/Bbcode'
 import { useEclipseUnlocked } from "features/endings/hooks/useEclipseUnlocked";
 import { endings, osiete, OsieteEnding } from "features/endings/utils/endings";
 import { useStrings } from "translation/lang";
 import { SCREEN } from "app/utils/display";
 import { useScreenAutoNavigate } from "app/hooks";
-import { PopoverProvider } from "@tsukiweb-common/flowchart";
+import { PopoverProvider } from "@tsukiweb/common/flowchart";
 import EndingPopover from "features/endings/components/EndingPopover";
-import { useNavBackRef } from "@tsukiweb-common/hooks"
+import { useNavBackRef } from "@tsukiweb/common/hooks"
 import { getSceneGraph } from "engine/utils"
 
 function back() {

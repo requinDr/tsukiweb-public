@@ -5,9 +5,9 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url'
-import { parseScript } from '../../../tsukiweb-common/tools/convert-scripts/parsers/kagScript.ts';
-import { Block, CommandToken, KagCommandToken, LabelToken, StrReader, TextToken, Token } from '../../../tsukiweb-common/tools/convert-scripts/parsers/utils.ts'
-import { logger } from '../../../tsukiweb-common/tools/utils/logger.ts';
+import { parseScript } from '@tsukiweb/common/tools/convert-scripts/parsers/kagScript.ts';
+import { Block, CommandToken, KagCommandToken, LabelToken, StrReader, TextToken, Token } from '@tsukiweb/common/tools/convert-scripts/parsers/utils.ts'
+import { logger } from '@tsukiweb/common/tools/utils/logger.ts';
 import { fixBlock, generateScenes, writeScenes } from './utils/nscriptr_convert.ts';
 
 

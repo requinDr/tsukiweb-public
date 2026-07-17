@@ -1,6 +1,6 @@
 import { ComponentProps } from 'react';
 import styles from './fixedfooter.module.scss';
-import { FixedFooter } from '@tsukiweb-common/ui-core';
+import { FixedFooter } from '@tsukiweb/common/ui-core';
 import Ornament from "@assets/images/ornament.webp"
 
 type Props = {

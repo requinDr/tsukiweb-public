@@ -1,12 +1,12 @@
 import { SaveState, savePhaseTexts, savesManager } from "../../../engine/savestates"
 import { MdDeleteOutline, MdOutlineFileDownload } from "react-icons/md"
-import { GraphicsGroup } from "@tsukiweb-common/graphics"
+import { GraphicsGroup } from "@tsukiweb/common/graphics"
 import { useStrings } from "translation/lang"
 import classNames from "classnames"
-import { jsonMerge } from "@tsukiweb-common/utils/utils"
+import { jsonMerge } from "@tsukiweb/common/utils/utils"
 import { isPDScene } from "engine/utils"
 import { PlusDiscSceneName } from "app/utils/types"
-import { Button } from "@tsukiweb-common/ui-core"
+import { Button } from "@tsukiweb/common/ui-core"
 import { ProgressPanel } from "features/game/components/shared/ProgressPanel";
 
 type SaveDetailsProps = {

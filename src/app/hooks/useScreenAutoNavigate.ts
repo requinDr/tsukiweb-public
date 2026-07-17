@@ -1,6 +1,6 @@
 import { useLayoutEffect } from "react"
 import { useLocation } from "wouter"
-import { observe, unobserve } from "@tsukiweb-common/utils/Observer"
+import { observe, unobserve } from "@tsukiweb/common/utils/Observer"
 import { displayMode, SCREEN } from "app/utils/display"
 
 /**
