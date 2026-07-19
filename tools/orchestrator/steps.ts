@@ -156,13 +156,15 @@ async function runImageConversion(paths: Paths): Promise<void> {
 }
 
 async function runSpritesheets(paths: Paths): Promise<void> {
-  const sceneAttrs = JSON.parse(await fs.readFile(paths.sceneAttrs, 'utf8'))?.scenes ?? {}
-  const scenes = Object.entries(sceneAttrs).filter(
-    (entry): entry is [string, Scene] => {
-      const [, sceneData] = entry as [string, any]
-      return Object.hasOwn(sceneData, 'col') && sceneData?.graph && !sceneData?.osiete
-    }
-  )
+  const sceneAttrs = JSON.parse(await fs.readFile(paths.sceneAttrs, 'utf8'))
+  const flowchart = JSON.parse(await fs.readFile(path.join(paths.sceneAssets, 'flowchart.json'), 'utf8'))
+  const scenes = Object.keys(flowchart.scenes ?? {})
+    .filter(name => sceneAttrs['scene-graphs']?.[name])
+    .map(name => [name, { graph: sceneAttrs['scene-graphs'][name] }] as [string, Scene])
+
+  if (!scenes.length) {
+    throw new Error('No flowchart scenes with graphics found; spritesheet metadata was not changed.')
+  }
 
   await buildSpritesheets(scenes, paths.imagesThumb, paths.flowchartSpritesheets, paths.sceneAssets)
 }
