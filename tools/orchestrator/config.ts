@@ -73,6 +73,8 @@ export const WAIFU2X_ARGS = [
 ] as const
 
 export const FFMPEG_AUDIO_ARGS = [
+  '-hide_banner',
+  '-loglevel', 'error',
   '-c:a', 'libopus',
   '-b:a', '96k',
   '-vbr', 'on',

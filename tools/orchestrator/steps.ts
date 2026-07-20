@@ -238,7 +238,7 @@ export function createSteps(context: StepContext): OrchestratorStep[] {
   return [
     {
       id: 1,
-      title: 'Extract arc.sar assets and prepare images',
+      title: 'Extract arc.sar and prepare images',
       canRun: async () => combine([
         await fileExistsCheck(paths.arcSarArchive, displayPath(paths.arcSarArchive)),
       ]),
@@ -279,7 +279,7 @@ export function createSteps(context: StepContext): OrchestratorStep[] {
     },
     {
       id: 5,
-      title: 'Create flowchart spritesheets',
+      title: 'Create spritesheets',
       canRun: async () => combine([
         await nonEmptyDirectoryCheck(paths.imagesThumb, displayPath(paths.imagesThumb)),
       ]),
@@ -290,7 +290,7 @@ export function createSteps(context: StepContext): OrchestratorStep[] {
     },
     {
       id: 6,
-      title: 'Convert audio wave files',
+      title: 'Convert wave files',
       canRun: async () => combine([
         await executableCheck(config.FFMPEG, paths.tools),
         await nonEmptyDirectoryCheck(path.join(paths.arcSar, 'wave'), '_workspace/arc_sar/wave'),

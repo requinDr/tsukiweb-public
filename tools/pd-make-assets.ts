@@ -1,12 +1,11 @@
 import { displayPath, ensureDir } from '@tsukiweb/common/tools/utils/fs-utils.ts'
-import type { OrchestratorStep } from '@tsukiweb/common/tools/orchestrator/utils.ts'
-import { createSteps } from './orchestrator/steps-pd.ts'
-import { loadConfig, buildPaths, type Paths, type ToolConfig } from './orchestrator/config-pd.ts'
+import type { Check, OrchestratorStep } from '@tsukiweb/common/tools/orchestrator/utils.ts'
+import { createSteps } from './orchestrator/pd-steps.ts'
+import { loadConfig, buildPaths, type Paths, type ToolConfig } from './orchestrator/pd-config.ts'
 import {
   collectStatuses,
   createPrompt,
   printCheckDetails,
-  statusLine,
   type StepStatus,
 } from '@tsukiweb/common/tools/orchestrator/ui.ts'
 import { printOrchestratorHeader } from '@tsukiweb/common/tools/orchestrator/header.ts'
@@ -22,6 +21,12 @@ interface OrchestratorContext {
 const DOWNLOAD_URLS = {
   ffmpeg: 'https://www.ffmpeg.org/download.html',
   waifu2x: 'https://github.com/lltcggie/waifu2x-caffe/releases',
+}
+
+function firstFailure(check: Check): string {
+  const failure = check.details.find(detail => !detail.ok)?.failure
+  if (!failure) return ''
+  return typeof failure === 'string' ? failure : `${failure.target} is ${failure.state}`
 }
 
 async function getContext(): Promise<OrchestratorContext> {
@@ -54,11 +59,27 @@ async function printStatus(statuses: StepStatus[], context: OrchestratorContext)
     ],
   })
 
-  for (const [index, { step, canRun, done }] of statuses.entries()) {
-    console.log(`${step.id}. ${step.title}`)
-    console.log(statusLine('Runnable', canRun))
-    console.log(statusLine('Finished', done))
-    if (index < statuses.length - 1) console.log('')
+  const headings = ['Steps', 'Runnable', 'Finished', 'Details']
+  const rows = statuses.map(({ step, canRun, done }) => [
+    `${step.id}. ${step.title}`,
+    canRun.ok ? 'Yes' : 'No',
+    done.ok ? 'Yes' : 'No',
+    firstFailure(canRun.ok ? done : canRun),
+  ])
+  const widths = headings.map((heading, index) =>
+    Math.max(heading.length, ...rows.map(row => row[index].length))
+  )
+
+  console.log(headings.map((heading, index) =>
+    `\x1b[4m${heading}\x1b[0m${' '.repeat(widths[index] - heading.length)}`
+  ).join('  '))
+  for (const row of rows) {
+    console.log(row.map((value, index) => {
+      const padded = value.padEnd(widths[index])
+      return index === 1 || index === 2
+        ? `\x1b[${value === 'Yes' ? 32 : 31}m${padded}\x1b[0m`
+        : padded
+    }).join('  ').trimEnd())
   }
 }
 

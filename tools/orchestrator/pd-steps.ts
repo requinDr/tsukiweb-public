@@ -5,7 +5,7 @@ import { extractXp3 } from '@tsukiweb/common/tools/extract-xp3/extractor.ts'
 import { mergeVertical } from '@tsukiweb/common/tools/convert-images/editor.ts'
 import { processImages as convertImages } from '@tsukiweb/common/tools/convert-images/processor.ts'
 import { main as runPlusDiscScripts } from '../helpers/convert-scripts/plus_disc.ts'
-import type { Paths, ToolConfig } from './config-pd.ts'
+import type { Paths, ToolConfig } from './pd-config.ts'
 import {
   FFMPEG_AUDIO_ARGS,
   SCRIPT_LANGS,
@@ -241,7 +241,7 @@ export function createSteps(context: StepContext): OrchestratorStep[] {
   return [
     {
       id: 1,
-      title: 'Extract data.xp3 assets',
+      title: 'Extract data.xp3',
       canRun: async () => combine([
         await fileExistsCheck(paths.archive, displayPath(paths.archive)),
         await executableCheck(config.FFMPEG, paths.tools),
