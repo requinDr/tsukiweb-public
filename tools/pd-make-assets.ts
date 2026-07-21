@@ -92,7 +92,7 @@ async function runStep(step: OrchestratorStep): Promise<void> {
     return
   }
 
-  console.log(`\n--- Step ${step.id}: ${step.title} ---`)
+  console.log(`\n\x1b[4mStep ${step.id}: ${step.title}\x1b[0m`)
   const startedAt = performance.now()
   let duration = ''
 

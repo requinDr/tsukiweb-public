@@ -98,9 +98,9 @@ export function thumbConfig(paths: ImageConversionPaths) {
       } as const,
       avif: {
         quality: 60,
-        alphaQuality: 50,
-        effort: 8,
+        effort: 4,
         chromaSubsampling: '4:4:4',
+        tune: 'iq'
       } as const,
     },
   }
@@ -113,9 +113,9 @@ export function x2Config(paths: ImageConversionPaths) {
     options: {
       avif: {
         quality: 60,
-        alphaQuality: 70,
-        effort: 8,
+        effort: 4,
         chromaSubsampling: '4:4:4',
+        tune: 'iq'
       } as const,
     },
   }
