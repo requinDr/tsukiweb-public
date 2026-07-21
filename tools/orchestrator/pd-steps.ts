@@ -149,6 +149,11 @@ async function extractAssets(context: StepContext): Promise<void> {
     await existingAssetNames(paths.imagesTachi),
     normalizeTachiName,
   )
+  await mergeVertical(
+    path.join(paths.inputBg, 'scroll19b.jpg'),
+    path.join(paths.inputBg, 'scroll19a.jpg'),
+    path.join(paths.inputBg, 'scroll19.jpg'),
+  )
 
   const ffmpeg = await resolveExecutable(config.FFMPEG, paths.tools)
   await convertAudioTree(ffmpeg, path.join(paths.extracted, 'sound'), paths.wavePd)
@@ -163,31 +168,36 @@ async function processScripts(paths: Paths): Promise<void> {
 async function upscaleImages(context: StepContext): Promise<void> {
   const { config, paths } = context
   const executable = await resolveExecutable(config.WAIFU2X_CAFFE, paths.tools)
+  const total = (await listFilesRecursive(paths.input)).length
+  const updateProgress = async () => {
+    const processed = (await listFilesRecursive(paths.inputX2)).length
+    logger.progress(`Upscaling images: ${Math.min(processed, total)}/${total}`)
+  }
 
-  await runCommand(executable.command, [
+  const args = [
     '-i', paths.input,
     '-o', paths.inputX2,
     ...WAIFU2X_ARGS,
-  ], { cwd: executable.cwd })
+  ]
+
+  await updateProgress()
+  const timer = setInterval(() => void updateProgress(), 1000)
+  try {
+    await runCommand(executable.command, args, { cwd: executable.cwd, stdout: 'ignore' })
+  } finally {
+    clearInterval(timer)
+  }
+  await updateProgress()
+  logger.done()
 }
 
 async function runImageConversion(paths: Paths): Promise<void> {
   const thumb = thumbConfig(paths)
   const x2 = x2Config(paths)
 
-  await mergeVertical(
-    path.join(thumb.inputDir, 'bg', 'scroll19b.jpg'),
-    path.join(thumb.inputDir, 'bg', 'scroll19a.jpg'),
-    path.join(thumb.inputDir, 'bg', 'scroll19.jpg'),
-  )
   await convertImages(thumb.inputDir, thumb.outputDir, thumb.options)
-
-  await mergeVertical(
-    path.join(x2.inputDir, 'bg', 'scroll19b.png'),
-    path.join(x2.inputDir, 'bg', 'scroll19a.png'),
-    path.join(x2.inputDir, 'bg', 'scroll19.png'),
-  )
   await convertImages(x2.inputDir, x2.outputDir, x2.options)
+  logger.done()
 }
 
 async function convertedImagesConfigCheck(inputDir: string, outputDir: string): Promise<CheckDetail[]> {
@@ -249,6 +259,7 @@ export function createSteps(context: StepContext): OrchestratorStep[] {
       isDone: async () => combine([
         await nonEmptyDirectoryCheck(paths.inputBg, '_workspace_pd/input/bg'),
         await nonEmptyDirectoryCheck(paths.inputTachi, '_workspace_pd/input/tachi'),
+        await fileExistsCheck(path.join(paths.inputBg, 'scroll19.jpg'), '_workspace_pd/input/bg/scroll19.jpg'),
         await nonEmptyDirectoryCheck(paths.wavePd, displayPath(paths.wavePd)),
       ]),
       run: async () => extractAssets(context),

@@ -30,6 +30,7 @@ import {
   pathExists,
 } from '@tsukiweb/common/tools/utils/fs-utils.ts'
 import { resolveExecutable, runCommand, withWorkingDirectory } from '@tsukiweb/common/tools/utils/process-utils.ts'
+import { logger } from '@tsukiweb/common/tools/utils/logger.ts'
 import {
   check,
   combine,
@@ -70,7 +71,12 @@ async function inputImageDirChecks(paths: Paths): Promise<CheckDetail[]> {
 async function extractedAssetsAndInputImagesCheck(paths: Paths): Promise<Check> {
   const extractedAssets = await arcSarDirsCheck(paths)
   const inputImages = await inputImageDirChecks(paths)
-  return combine([...extractedAssets.details, ...inputImages])
+  return combine([
+    ...extractedAssets.details,
+    ...inputImages,
+    await fileExistsCheck(path.join(paths.input, 'event', 'cel_e06.jpg'), '_workspace/input/event/cel_e06.jpg'),
+    await fileExistsCheck(path.join(paths.input, 'event', 'koha_h06.jpg'), '_workspace/input/event/koha_h06.jpg'),
+  ])
 }
 
 async function scriptsOutputCheck(paths: Paths): Promise<Check> {
@@ -112,6 +118,16 @@ async function extractAssetsAndPrepareImages(paths: Paths): Promise<void> {
     await extractNscript(nscript, path.join(paths.staticJp, 'fullscript_jp.txt'))
   }
   await prepareInputFolder(paths)
+  await mergeVertical(
+    path.join(paths.input, 'event', 'cel_e06a.jpg'),
+    path.join(paths.input, 'event', 'cel_e06b.jpg'),
+    path.join(paths.input, 'event', 'cel_e06.jpg'),
+  )
+  await mergeVertical(
+    path.join(paths.input, 'event', 'koha_h06a.jpg'),
+    path.join(paths.input, 'event', 'koha_h06b.jpg'),
+    path.join(paths.input, 'event', 'koha_h06.jpg'),
+  )
 }
 
 async function runScripts(paths: Paths): Promise<void> {
@@ -123,42 +139,35 @@ async function runScripts(paths: Paths): Promise<void> {
 
 async function runWaifu2x(context: StepContext): Promise<void> {
   const executable = await resolveExecutable(context.config.WAIFU2X_CAFFE, context.paths.tools)
+  const total = (await listFilesRecursive(context.paths.input)).length
+  const updateProgress = async () => {
+    const processed = (await listFilesRecursive(context.paths.inputX2)).length
+    logger.progress(`Upscaling images: ${Math.min(processed, total)}/${total}`)
+  }
   const args = [
     '-i', context.paths.input,
     '-o', context.paths.inputX2,
     ...WAIFU2X_ARGS,
   ]
 
-  await runCommand(executable.command, args, { cwd: executable.cwd })
+  await updateProgress()
+  const timer = setInterval(() => void updateProgress(), 1000)
+  try {
+    await runCommand(executable.command, args, { cwd: executable.cwd, stdout: 'ignore' })
+  } finally {
+    clearInterval(timer)
+  }
+  await updateProgress()
+  logger.done()
 }
 
 async function runImageConversion(paths: Paths): Promise<void> {
   const thumb = thumbConfig(paths)
   const x2 = x2Config(paths)
 
-  await mergeVertical(
-    path.join(thumb.inputDir, 'event', 'cel_e06a.jpg'),
-    path.join(thumb.inputDir, 'event', 'cel_e06b.jpg'),
-    path.join(thumb.inputDir, 'event', 'cel_e06.jpg'),
-  )
-  await mergeVertical(
-    path.join(thumb.inputDir, 'event', 'koha_h06a.jpg'),
-    path.join(thumb.inputDir, 'event', 'koha_h06b.jpg'),
-    path.join(thumb.inputDir, 'event', 'koha_h06.jpg'),
-  )
   await convertImages(thumb.inputDir, thumb.outputDir, thumb.options)
-
-  await mergeVertical(
-    path.join(x2.inputDir, 'event', 'cel_e06a.png'),
-    path.join(x2.inputDir, 'event', 'cel_e06b.png'),
-    path.join(x2.inputDir, 'event', 'cel_e06.png'),
-  )
-  await mergeVertical(
-    path.join(x2.inputDir, 'event', 'koha_h06a.png'),
-    path.join(x2.inputDir, 'event', 'koha_h06b.png'),
-    path.join(x2.inputDir, 'event', 'koha_h06.png'),
-  )
   await convertImages(x2.inputDir, x2.outputDir, x2.options)
+  logger.done()
 }
 
 async function runSpritesheets(paths: Paths): Promise<void> {

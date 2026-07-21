@@ -40,6 +40,7 @@ tools/helpers/extract-sar/image
 tools/helpers/extract-dat/nscript.dat
 tools/helpers/extract-xp3/data.xp3
 tools/_workspace
+tools/_workspace_pd
 tools/arc.sar
 tools/data.xp3
 tools/CD_*/

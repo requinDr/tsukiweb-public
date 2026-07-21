@@ -10,8 +10,8 @@
 		"build": "npm run common:check && tsc && vite build"
 	},
 	"dependencies": {
-		"@tsukiweb/common": "file:./tsukiweb-common",
 		"@tanstack/react-virtual": "^3.14.6",
+		"@tsukiweb/common": "file:./tsukiweb-common",
 		"classnames": "^2.5.1",
 		"motion": "^12.42.2",
 		"react": "^19.2.7",
@@ -29,6 +29,6 @@
 		"@types/react-dom": "^19.2.3",
 		"@vitejs/plugin-react": "^6.0.3",
 		"typescript": "^7.0.2",
-		"vite": "^8.1.4"
+		"vite": "^8.1.5"
 	}
 }
