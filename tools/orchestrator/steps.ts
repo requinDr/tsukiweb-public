@@ -2,6 +2,7 @@ import fs from 'fs/promises'
 import path from 'path'
 
 import { extractSar } from '@tsukiweb/common/tools/extract-sar/extractor.ts'
+import { extractNscript } from '@tsukiweb/common/tools/extract-dat/extractor.ts'
 import { processImages as applySpriteTransparency } from '@tsukiweb/common/tools/transform-sprites/processor.ts'
 import { processImages as convertImages } from '@tsukiweb/common/tools/convert-images/processor.ts'
 import { mergeVertical } from '@tsukiweb/common/tools/convert-images/editor.ts'
@@ -26,6 +27,7 @@ import {
   ensureEmptyDirInside,
   isMediaFile,
   listFilesRecursive,
+  pathExists,
 } from '@tsukiweb/common/tools/utils/fs-utils.ts'
 import { resolveExecutable, runCommand, withWorkingDirectory } from '@tsukiweb/common/tools/utils/process-utils.ts'
 import {
@@ -105,6 +107,10 @@ async function prepareInputFolder(paths: Paths): Promise<void> {
 
 async function extractAssetsAndPrepareImages(paths: Paths): Promise<void> {
   await extractSar(paths.arcSarArchive, paths.arcSar, ARC_SAR_DIRS)
+  const nscript = path.join(paths.tools, 'nscript.dat')
+  if (await pathExists(nscript)) {
+    await extractNscript(nscript, path.join(paths.staticJp, 'fullscript_jp.txt'))
+  }
   await prepareInputFolder(paths)
 }
 
@@ -238,7 +244,7 @@ export function createSteps(context: StepContext): OrchestratorStep[] {
   return [
     {
       id: 1,
-      title: 'Extract arc.sar and prepare images',
+      title: 'Extract arc.sar/nscript.dat and prepare images',
       canRun: async () => combine([
         await fileExistsCheck(paths.arcSarArchive, displayPath(paths.arcSarArchive)),
       ]),
