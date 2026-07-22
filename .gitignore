@@ -31,14 +31,9 @@ public/static/jp/*.ks
 public/res/flowchart-spritesheets
 logic_tree.txt
 
-tools/helpers/transform-sprites/tachi
-tools/helpers/convert-images/input
-tools/helpers/convert-images/input_x2
-tools/helpers/extract-sar/arc.sar
-tools/helpers/extract-sar/wave
-tools/helpers/extract-sar/image
-tools/helpers/extract-dat/nscript.dat
-tools/helpers/extract-xp3/data.xp3
+tools/helpers/extract/*
+!tools/helpers/extract/index.ts
+
 tools/_workspace
 tools/_workspace_pd
 tools/arc.sar

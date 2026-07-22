@@ -181,7 +181,7 @@ async function runSpritesheets(paths: Paths): Promise<void> {
     throw new Error('No flowchart scenes with graphics found; spritesheet metadata was not changed.')
   }
 
-  await buildSpritesheets(scenes, paths.imagesThumb, paths.flowchartSpritesheets, paths.sceneAssets)
+  await buildSpritesheets(scenes, paths.input, paths.flowchartSpritesheets, paths.sceneAssets)
 }
 
 async function convertAudioTree(
@@ -296,7 +296,7 @@ export function createSteps(context: StepContext): OrchestratorStep[] {
       id: 5,
       title: 'Create spritesheets',
       canRun: async () => combine([
-        await nonEmptyDirectoryCheck(paths.imagesThumb, displayPath(paths.imagesThumb)),
+        await nonEmptyDirectoryCheck(paths.input, '_workspace/input'),
       ]),
       isDone: async () => combine([
         await nonEmptyDirectoryCheck(paths.flowchartSpritesheets, displayPath(paths.flowchartSpritesheets)),
