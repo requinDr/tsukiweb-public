@@ -8,7 +8,7 @@
 	},
 	"scripts": {
 		"start": "vite",
-		"local": "vite --mode local-assets",
+		"proxy": "vite --mode proxy",
 		"assets": "node tools/make-assets.ts",
 		"assets:pd": "node tools/pd-make-assets.ts",
 		"common:check": "tsc -p tsukiweb-common/tsconfig.json",

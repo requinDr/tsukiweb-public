@@ -11,7 +11,7 @@ const remotePaths: string[] = [
 	'^/static/[^/]+/CD_tsukibako',
 	'^/static/[^/]+/images',
 	'^/static/[^/]+/images_thumb',
-	// '^/static/[^/]+/scenes',
+	'^/static/[^/]+/scenes',
 	'^/static/[^/]+/wave',
 	'^/static/[^/]+/wave_pd',
 ]
@@ -35,6 +35,6 @@ export default defineConfig(({ mode }) => ({
 		chunkSizeWarningLimit: 1000,
 	},
 	server: {
-		proxy: mode === 'local-assets' ? {} : proxyRules
+		proxy: mode === 'proxy' ? proxyRules : {}
 	}
 }))
