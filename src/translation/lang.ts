@@ -46,6 +46,7 @@ export const {
   optionalPaths: [
     "images.words",
     "images.thumb",
+    "images.src",
     "audio",
   ],
   storagePrefix: "th_"

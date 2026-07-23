@@ -3,8 +3,14 @@
 	"version": "0.7.1",
 	"private": true,
 	"type": "module",
+	"engines": {
+		"node": ">=22.18"
+	},
 	"scripts": {
 		"start": "vite",
+		"local": "vite --mode local-assets",
+		"assets": "node tools/make-assets.ts",
+		"assets:pd": "node tools/pd-make-assets.ts",
 		"common:check": "tsc -p tsukiweb-common/tsconfig.json",
 		"common:update": "git submodule update --remote --merge tsukiweb-common && npm install",
 		"build": "npm run common:check && tsc && vite build"

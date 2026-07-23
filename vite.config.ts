@@ -24,7 +24,7 @@ remotePaths.forEach((path) => {
 })
 
 // https://vitejs.dev/config/
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
 	plugins: [
 		react(),
 	],
@@ -35,6 +35,6 @@ export default defineConfig({
 		chunkSizeWarningLimit: 1000,
 	},
 	server: {
-		proxy: proxyRules
+		proxy: mode === 'local-assets' ? {} : proxyRules
 	}
-})
+}))

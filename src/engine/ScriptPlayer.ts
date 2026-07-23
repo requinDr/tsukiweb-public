@@ -91,9 +91,6 @@ function processPhase(arg: string, _cmd: string, script: ScriptPlayer) {
 function processEroSkip(nb_pages: string, _cmd: string, script: ScriptPlayer, onFinish: VoidFunction) {
     switch (settings.eroSkip) {
         case 'no' : return
-        case 'yes' :
-            script.skipPages(+nb_pages, false)
-            return
         case 'ask' :
             if (script.onEroSkipPrompt) {
                 script.onEroSkipPrompt(+nb_pages).then(confirmed => {
