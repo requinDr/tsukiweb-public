@@ -35,8 +35,8 @@ tools/helpers/extract/*
 !tools/helpers/extract/index.ts
 
 tools/_workspace
-tools/_workspace_pd
-tools/arc.sar
-tools/data.xp3
 tools/CD_*/
+tools/arc.sar
 tools/nscript.dat
+tools/_workspace_pd
+tools/data.xp3
