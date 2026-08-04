@@ -1,7 +1,7 @@
 import { displayPath, ensureDir } from '@tsukiweb/common/tools/utils/fs-utils.ts'
 import type { Check, OrchestratorStep } from '@tsukiweb/common/tools/orchestrator/utils.ts'
 import { createSteps } from './orchestrator/steps.ts'
-import { loadConfig, buildPaths, type Paths, type ToolConfig } from './orchestrator/config.ts'
+import { loadConfig, buildPaths, REPO_DIR, type Paths, type ToolConfig } from './orchestrator/config.ts'
 import {
   collectStatuses,
   createPrompt,
@@ -51,7 +51,7 @@ async function printStatus(statuses: StepStatus[], context: OrchestratorContext)
       { label: 'Final output', value: displayPath(context.paths.publicAssets) },
     ],
     paths: {
-      repo: context.paths.repo,
+      repo: REPO_DIR,
       tools: context.paths.tools,
     },
     tools: [

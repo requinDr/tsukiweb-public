@@ -37,6 +37,7 @@ tools/helpers/extract/*
 tools/_workspace
 tools/CD_*/
 tools/arc.sar
+tools/arc.nsa
 tools/nscript.dat
 tools/_workspace_pd
 tools/data.xp3

@@ -51,6 +51,9 @@ const XP3_DIRS = [
   'sound',
 ]
 
+const nonEmptyDirCheck = (directory: string) => nonEmptyDirectoryCheck(directory, displayPath(directory))
+const fileCheck = (file: string) => fileExistsCheck(file, displayPath(file))
+
 async function existingAssetNames(dirPath: string): Promise<Set<string>> {
   const files = await listFilesRecursive(dirPath)
   return new Set(files.map(file => path.parse(file).name.toLowerCase()))
@@ -132,35 +135,36 @@ async function convertAudioTree(
 
 async function extractAssets(context: StepContext): Promise<void> {
   const { config, paths } = context
+  const archiveDir = path.join(paths.workspace, path.basename(paths.dataArchive))
 
-  await ensureEmptyDirInside(paths.workspace, paths.extracted)
-  await ensureEmptyDirInside(paths.workspace, paths.input)
+  await ensureEmptyDirInside(paths.workspace, archiveDir)
+  await ensureEmptyDirInside(paths.workspace, paths.img)
 
-  await extractXp3(paths.archive, paths.extracted, XP3_DIRS)
+  await extractXp3(paths.dataArchive, archiveDir, XP3_DIRS)
   await copyNewAssets(
-    path.join(paths.extracted, 'bgimage'),
-    paths.inputBg,
-    await existingAssetNames(paths.imagesBg),
+    path.join(archiveDir, 'bgimage'),
+    path.join(paths.img, 'bg'),
+    await existingAssetNames(path.join(paths.images, 'bg')),
     normalizeBgName,
   )
   await copyNewAssets(
-    path.join(paths.extracted, 'fgimage'),
-    paths.inputTachi,
-    await existingAssetNames(paths.imagesTachi),
+    path.join(archiveDir, 'fgimage'),
+    path.join(paths.img, 'tachi'),
+    await existingAssetNames(path.join(paths.images, 'tachi')),
     normalizeTachiName,
   )
   await mergeVertical(
-    path.join(paths.inputBg, 'scroll19b.jpg'),
-    path.join(paths.inputBg, 'scroll19a.jpg'),
-    path.join(paths.inputBg, 'scroll19.jpg'),
+    path.join(archiveDir, 'bgimage', 'スクロール19b.jpg'),
+    path.join(archiveDir, 'bgimage', 'スクロール19a.jpg'),
+    path.join(paths.img, 'bg', 'scroll19.jpg'),
   )
 
   const ffmpeg = await resolveExecutable(config.FFMPEG, paths.tools)
-  await convertAudioTree(ffmpeg, path.join(paths.extracted, 'sound'), paths.wavePd)
+  await convertAudioTree(ffmpeg, path.join(archiveDir, 'sound'), paths.wave)
 }
 
 async function processScripts(paths: Paths): Promise<void> {
-  await withWorkingDirectory(paths.convertScriptsTool, () => {
+  await withWorkingDirectory(path.join(paths.tools, 'helpers', 'convert-scripts'), () => {
     runPlusDiscScripts()
   })
 }
@@ -168,15 +172,15 @@ async function processScripts(paths: Paths): Promise<void> {
 async function upscaleImages(context: StepContext): Promise<void> {
   const { config, paths } = context
   const executable = await resolveExecutable(config.WAIFU2X_CAFFE, paths.tools)
-  const total = (await listFilesRecursive(paths.input)).length
+  const total = (await listFilesRecursive(paths.img)).length
   const updateProgress = async () => {
-    const processed = (await listFilesRecursive(paths.inputX2)).length
+    const processed = (await listFilesRecursive(paths.imgX2)).length
     logger.progress(`Upscaling images: ${Math.min(processed, total)}/${total}`)
   }
 
   const args = [
-    '-i', paths.input,
-    '-o', paths.inputX2,
+    '-i', paths.img,
+    '-o', paths.imgX2,
     ...WAIFU2X_ARGS,
   ]
 
@@ -253,14 +257,13 @@ export function createSteps(context: StepContext): OrchestratorStep[] {
       id: 1,
       title: 'Extract data.xp3',
       canRun: async () => combine([
-        await fileExistsCheck(paths.archive, displayPath(paths.archive)),
+        await fileCheck(paths.dataArchive),
         await executableCheck(config.FFMPEG, paths.tools),
       ]),
       isDone: async () => combine([
-        await nonEmptyDirectoryCheck(paths.inputBg, '_workspace_pd/input/bg'),
-        await nonEmptyDirectoryCheck(paths.inputTachi, '_workspace_pd/input/tachi'),
-        await fileExistsCheck(path.join(paths.inputBg, 'scroll19.jpg'), '_workspace_pd/input/bg/scroll19.jpg'),
-        await nonEmptyDirectoryCheck(paths.wavePd, displayPath(paths.wavePd)),
+        await nonEmptyDirCheck(paths.img),
+        await fileCheck(path.join(paths.img, 'bg', 'scroll19.jpg')),
+        await nonEmptyDirCheck(paths.wave),
       ]),
       run: async () => extractAssets(context),
     },
@@ -276,12 +279,10 @@ export function createSteps(context: StepContext): OrchestratorStep[] {
       title: 'Upscale images with waifu2x',
       canRun: async () => combine([
         await executableCheck(config.WAIFU2X_CAFFE, paths.tools),
-        await nonEmptyDirectoryCheck(paths.inputBg, '_workspace_pd/input/bg'),
-        await nonEmptyDirectoryCheck(paths.inputTachi, '_workspace_pd/input/tachi'),
+        await nonEmptyDirCheck(paths.img),
       ]),
       isDone: async () => combine([
-        await nonEmptyDirectoryCheck(paths.inputX2Bg, '_workspace_pd/input_x2/bg'),
-        await nonEmptyDirectoryCheck(paths.inputX2Tachi, '_workspace_pd/input_x2/tachi'),
+        await nonEmptyDirCheck(paths.imgX2),
       ]),
       run: async () => upscaleImages(context),
     },
@@ -289,10 +290,8 @@ export function createSteps(context: StepContext): OrchestratorStep[] {
       id: 4,
       title: 'Convert images',
       canRun: async () => combine([
-        await nonEmptyDirectoryCheck(paths.inputBg, '_workspace_pd/input/bg'),
-        await nonEmptyDirectoryCheck(paths.inputTachi, '_workspace_pd/input/tachi'),
-        await nonEmptyDirectoryCheck(paths.inputX2Bg, '_workspace_pd/input_x2/bg'),
-        await nonEmptyDirectoryCheck(paths.inputX2Tachi, '_workspace_pd/input_x2/tachi'),
+        await nonEmptyDirCheck(paths.img),
+        await nonEmptyDirCheck(paths.imgX2),
       ]),
       isDone: async () => convertedImagesCheck(paths),
       run: async () => runImageConversion(paths),

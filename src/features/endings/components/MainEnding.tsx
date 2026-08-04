@@ -6,10 +6,10 @@ type Props = {
 	unlocked: boolean
 	ending: {
 		id: string
-		char: string
+		char?: string
 		images: Parameters<typeof SceneShortcut>[0]['images']
 		name: string
-		type: string
+		type?: string
 		scene: LabelName
 	},
 	continueScript?: boolean

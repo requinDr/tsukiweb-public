@@ -2,17 +2,18 @@ import fs from 'node:fs/promises'
 import path from 'node:path'
 
 import { extractNscript } from '@tsukiweb/common/tools/extract-dat/extractor.ts'
+import { extractNsa } from '@tsukiweb/common/tools/extract-nsa/extractor.ts'
 import { extractSar } from '@tsukiweb/common/tools/extract-sar/extractor.ts'
 import { extractXp3 } from '@tsukiweb/common/tools/extract-xp3/extractor.ts'
 import { processImages } from '@tsukiweb/common/tools/transform-sprites/processor.ts'
 import { logger } from '@tsukiweb/common/tools/utils/logger.ts'
 
-type InputKind = 'dat' | 'xp3' | 'sar' | 'tachi'
+type InputKind = 'dat' | 'nsa' | 'xp3' | 'sar' | 'tachi'
 
 function inputKind(name: string, isDirectory: boolean): InputKind | undefined {
   if (isDirectory) return name.toLowerCase() === 'tachi' ? 'tachi' : undefined
   const extension = path.extname(name).slice(1).toLowerCase()
-  return ['dat', 'xp3', 'sar'].includes(extension) ? extension as InputKind : undefined
+  return ['dat', 'nsa', 'xp3', 'sar'].includes(extension) ? extension as InputKind : undefined
 }
 
 async function processTachi(inputDir: string): Promise<void> {
@@ -41,7 +42,7 @@ async function main(): Promise<void> {
     .filter((input): input is { name: string, kind: InputKind } => input.kind !== undefined)
 
   if (!inputs.length) {
-    logger.log('Nothing to process (.dat, .xp3, .sar or tachi).')
+    logger.log('Nothing to process (.dat, .nsa, .xp3, .sar or tachi).')
     return
   }
 
@@ -49,6 +50,8 @@ async function main(): Promise<void> {
     logger.section(`Processing ${input.name}`)
     if (input.kind === 'dat') {
       await extractNscript(input.name, `${path.parse(input.name).name}.txt`)
+    } else if (input.kind === 'nsa') {
+      await extractNsa(input.name, '.')
     } else if (input.kind === 'xp3') {
       await extractXp3(input.name, '.')
     } else if (input.kind === 'sar') {

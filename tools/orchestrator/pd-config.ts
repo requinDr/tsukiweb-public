@@ -9,24 +9,15 @@ export interface ToolConfig {
 }
 
 export interface Paths {
-  repo: string
   tools: string
   publicAssets: string
   workspace: string
-  archive: string
-  extracted: string
-  input: string
-  inputX2: string
-  inputBg: string
-  inputTachi: string
-  inputX2Bg: string
-  inputX2Tachi: string
-  convertScriptsTool: string
+  dataArchive: string
+  img: string
+  imgX2: string
   images: string
   imagesThumb: string
-  imagesBg: string
-  imagesTachi: string
-  wavePd: string
+  wave: string
 }
 
 export const ORCHESTRATOR_DIR = path.dirname(fileURLToPath(import.meta.url))
@@ -75,28 +66,21 @@ export function resolveToolPath(value: string): string {
 export function buildPaths(config: ToolConfig): Paths {
   const publicAssets = resolveToolPath(config.PUBLIC)
   const workspace = path.join(TOOLS_DIR, '_workspace_pd')
-  const input = path.join(workspace, 'input')
-  const inputX2 = path.join(workspace, 'input_x2')
+  const img = path.join(workspace, 'img')
+  const imgX2 = path.join(workspace, 'img_x2')
   const images = path.join(publicAssets, 'static', 'jp', 'images')
 
   return {
-    repo: REPO_DIR,
     tools: TOOLS_DIR,
     publicAssets,
     workspace,
-    archive: path.join(TOOLS_DIR, 'helpers', 'extract-xp3', 'data.xp3'),
-    extracted: path.join(workspace, 'extracted'),
-    input,
-    inputX2,
-    inputBg: path.join(input, 'bg'),
-    inputTachi: path.join(input, 'tachi'),
-    inputX2Bg: path.join(inputX2, 'bg'),
-    inputX2Tachi: path.join(inputX2, 'tachi'),
-    convertScriptsTool: path.join(TOOLS_DIR, 'helpers', 'convert-scripts'),
+    dataArchive: path.join(TOOLS_DIR, 'data.xp3'),
+    img,
+    imgX2,
+
+    //output
     images,
     imagesThumb: path.join(publicAssets, 'static', 'jp', 'images_thumb'),
-    imagesBg: path.join(images, 'bg'),
-    imagesTachi: path.join(images, 'tachi'),
-    wavePd: path.join(publicAssets, 'static', 'jp', 'wave_pd'),
+    wave: path.join(publicAssets, 'static', 'jp', 'wave_pd'),
   }
 }

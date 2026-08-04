@@ -46,10 +46,8 @@ const EndingsScreen = () => {
 					unlocked={sawEclipse || eclipseUnlocked}
 					ending={{
 						id: "eclipse",
-						char: "",
 						images: eclipseUnlocked ? {} : getSceneGraph("eclipse"),
 						name: strings.extra.eclipse,
-						type: "",
 						scene: "eclipse"
 					}}
 					continueScript={eclipseUnlocked} //needed to add to the completed scenes
