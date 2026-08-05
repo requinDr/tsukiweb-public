@@ -178,7 +178,7 @@ const ActionsButtons = ({script, show, close, qSave, qLoad}: ActionsButtonsProps
 	const fastForward = ()=> {
 		let currLabel = script.currentLabel
 		if (currLabel)
-			script.ffw((_line, _index, _page, _lines, label)=>{
+			script.ffw((_l, _li, _pi, _pages, label)=>{
 				if (label == currLabel)
 					return false
 				if (isScene(label) && settings.enableSceneSkip && viewedScene(label))

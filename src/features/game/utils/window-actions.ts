@@ -179,7 +179,7 @@ export class UserActionsHandler {
 		if (!this._layers.currentMenu) { // move to next page only if no menu is active
 			this._layers.text = true
 			const {currentLabel, currentPage} = this._script
-			this._script.ffw((_l, _i, page, _lines, label: LabelName)=> {
+			this._script.ffw((_l, _li, page, _pages, label: LabelName)=> {
 				return page != currentPage || label != currentLabel
 			}, settings.fastForwardDelay)
 		}
