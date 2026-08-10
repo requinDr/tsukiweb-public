@@ -1,6 +1,6 @@
 import { ScriptPlayerBase } from "@tsukiweb/common/script/ScriptPlayer"
 import { CharId, LabelName, RouteDayName, RouteName } from "app/utils/types";
-import { creditsScript, fetchBlockLines, isScene, nextLabel } from "engine/utils";
+import { isScene } from "engine/utils";
 import { settings } from "engine/settings";
 import { imageSrc, phaseTexts } from "translation/assets";
 import { closeBB } from "@tsukiweb/common/utils/Bbcode";
@@ -10,6 +10,7 @@ import { CommandRecord, NumVarName, VarName, VarType } from "@tsukiweb/common/sc
 import { History } from "./history";
 import { extractInstructions } from "@tsukiweb/common/script/utils";
 import { preloadImage } from "@tsukiweb/common/utils/images";
+import { creditsScript, fetchBlockLines } from "./script-loader";
 
 //#endregion ###################################################################
 //#region                             TYPES
@@ -218,10 +219,11 @@ export class ScriptPlayer extends ScriptPlayerBase<LabelName, CharId, PageBaseCo
     }
     
     protected override nextLabel(label: LabelName): LabelName | null {
-        const result = nextLabel(label)
-        if (result == "endofplay")
-            return null
-        return result
+        if (/^s\d+a?$/.test(label))
+            return `skip${label.substring(1)}` as LabelName
+        if (label == "openning")
+            return "s20"
+        return null
     }
     protected override preloadAssets(assets: Set<string>): void {
         for (const asset of assets) {
