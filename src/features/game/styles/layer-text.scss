@@ -5,7 +5,7 @@
 	transition: opacity var(--transition-time) ease-out;
 	user-select: none;
 	background-image: var(--text-bg);
-	padding: 7cqmin;
+	padding: 8cqmin 6cqmin;
 	overflow-x: hidden;
 	touch-action: manipulation;
 	font-size: calc(1 / 1.1 * 1rem);
@@ -60,9 +60,9 @@
 
 	.text-container {
 		margin-inline: auto;
-		max-width: 1000px;
+		max-width: 70ch;
 		font-family: var(--game-font), sans-serif;
-		font-size: clamp(.92em, min(2.6cqw, 3.8cqh), 1.68em);
+		font-size: clamp(1em, min(2.4cqw, 3.8cqh), 1.9em);
 		line-height: 1.94;
 		letter-spacing: 1px;
 		--sc: #000;
@@ -78,7 +78,7 @@
 
 	@media screen and (orientation: portrait) and (max-width: 720px){
 		--text-bg: var(--text-bg-portrait);
-		padding: 10cqmin 6cqmin;
+		padding-block: 12cqmin;
 		.text-container {
 			font-size: min(2.15cqh, 1.5em);
 			line-height: 1.8;
@@ -86,7 +86,7 @@
 	}
 	@media screen and (orientation: landscape) and (max-height: 500px){
 		.text-container {
-			max-width: 700px;
+			max-width: 80ch;
 		}
 	}
 

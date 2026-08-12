@@ -44,7 +44,7 @@
 			height: 100%;
 			flex: 1;
 			display: grid;
-			grid-template-rows: minmax(8px, 1fr) 2fr minmax(68px, 1fr);
+			grid-template-rows: minmax(1em, 1fr) 2fr minmax(68px, 1fr);
 			overflow-y: auto;
 			padding-left: 2.2em;
 
@@ -69,7 +69,7 @@
 		.layer-btns {
 			display: flex;
 			flex-direction: column;
-			row-gap: min(2.4vh, 1.6em);
+			row-gap: min(4vh, 1.6em);
 			button {
 				font-size: clamp(1.2em, 3.2vmin, 1.4em);
 			}
