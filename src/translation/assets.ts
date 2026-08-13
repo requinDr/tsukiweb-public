@@ -4,6 +4,7 @@ import { settings } from "../engine/settings"
 import {TrackSourceId, strings} from "./lang"
 import { ResolutionId, TextImage } from "@tsukiweb/common/translation/lang"
 import { closeBB } from "@tsukiweb/common/utils/Bbcode"
+import { AssetsCache } from "@tsukiweb/common/utils/AssetsCache"
 import { assetPath, imageFormat } from "@tsukiweb/common/utils/images"
 
 //##############################################################################
@@ -139,3 +140,8 @@ export function phaseTexts(route: RouteName, routeDay: RouteDayName, day: number
 
   return [titleString, dayString]
 }
+
+export const assets = new AssetsCache<{
+  'audio': Record<string, AudioBuffer>
+  'graph': Record<string, string>
+}>()

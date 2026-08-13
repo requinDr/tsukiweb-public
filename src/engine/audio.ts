@@ -1,13 +1,13 @@
-import { audioSePath, audioTrackPath } from "../translation/assets"
+import { assets, audioSePath, audioTrackPath } from "../translation/assets"
 import { settings } from "./settings"
 import { observe } from "@tsukiweb/common/utils/Observer"
 import { asyncDelay } from "@tsukiweb/common/utils/timer"
-import { ScriptPlayer } from "engine/ScriptPlayer"
 import { splitFirst } from "@tsukiweb/common/utils/utils"
 import { createCommands } from "@tsukiweb/common/audio/utils"
+import { GameAudioManager } from "@tsukiweb/common/audio/AudioManager"
+import { ScriptPlayer } from "engine/ScriptPlayer"
 import { waitLanguageLoad } from "translation/lang"
-import { displayMode, SCREEN } from "app/utils/display";
-import { GameAudioManager } from "@tsukiweb/common/audio/AudioManager";
+import { displayMode, SCREEN } from "app/utils/display"
 
 function getUrl(id: string): string {
   if (id.startsWith('"') && id.endsWith('"'))
@@ -27,13 +27,45 @@ function getUrl(id: string): string {
   return audioSePath(id)
 }
 
-export const audio = new GameAudioManager(settings, getUrl)
+async function createAudioBuffer(url: string) {
+  const result = await fetch(url)
+  if (!result.ok)
+    throw Error(`audio file ${url} not found: ${result.statusText}`)
+  const data = await result.arrayBuffer()
+  const buffer = await audio.context.decodeAudioData(data)
+  return buffer
+}
+
+export const audio = new GameAudioManager(settings, assets, "audio")
+assets.setProvider("audio", (id)=> {
+  if (id.startsWith('"') && id.endsWith('"'))
+    id = id.substring(1, id.length-1)
+  let audioUrl
+  if (id.startsWith('*')) {
+    const trackName = parseInt(id.substring(1)).toString().padStart(2, '0')
+    audioUrl = audioTrackPath(trackName)
+  } else if (id.startsWith('se_')) {
+    audioUrl = audioSePath(id)
+  } else if (id.startsWith('pd/se_')) {
+    audioUrl = audioSePath(id.substring(3), true)
+  } else {
+    return undefined
+  }
+  return {
+    url: audioUrl,
+    value: createAudioBuffer(audioUrl)
+  }
+})
 
 //__________________________________observers___________________________________
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 // update track source
-observe(settings, 'trackSource', audio.clearBuffers.bind(audio, true))
+observe(settings, 'trackSource', ()=> {
+  assets.clear()
+  if (audio.track)
+    audio.playTrack(audio.track, true);
+})
 
 observe(displayMode, 'screen', (screen)=> {
   const inGame = (screen == SCREEN.WINDOW)

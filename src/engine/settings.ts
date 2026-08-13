@@ -4,7 +4,7 @@ import { textFileUserDownload, requestJSONs, twoDigits } from "@tsukiweb/common/
 import { savesManager, SaveState } from "./savestates"
 import { toast } from "react-toastify"
 import { TrackSourceId } from "translation/lang"
-import { APP_VERSION, FULLSAVE_EXT } from "app/utils/constants";
+import { APP_VERSION, FULLSAVE_EXT } from "app/utils/constants"
 
 const restoreSymbol = Symbol("restore")
 

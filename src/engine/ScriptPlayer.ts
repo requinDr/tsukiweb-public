@@ -1,16 +1,15 @@
 import { ScriptPlayerBase } from "@tsukiweb/common/script/ScriptPlayer"
-import { CharId, LabelName, RouteDayName, RouteName } from "app/utils/types";
-import { isScene } from "engine/utils";
-import { settings } from "engine/settings";
-import { imageSrc, phaseTexts } from "translation/assets";
-import { closeBB } from "@tsukiweb/common/utils/Bbcode";
-import { getGameVariable, setGameVariable } from "engine/variables";
-import { deepAssign, TSForceType } from "@tsukiweb/common/utils/utils";
-import { CommandRecord, NumVarName, VarName, VarType } from "@tsukiweb/common/script/types";
-import { History } from "./history";
-import { extractInstructions } from "@tsukiweb/common/script/utils";
-import { preloadImage } from "@tsukiweb/common/utils/images";
-import { creditsScript, fetchBlockLines } from "./script-loader";
+import { CharId, LabelName, RouteDayName, RouteName } from "app/utils/types"
+import { isScene } from "engine/utils"
+import { settings } from "engine/settings"
+import { assets, imageSrc, phaseTexts } from "translation/assets"
+import { closeBB } from "@tsukiweb/common/utils/Bbcode"
+import { getGameVariable, setGameVariable } from "engine/variables"
+import { deepAssign, TSForceType } from "@tsukiweb/common/utils/utils"
+import { CommandRecord, NumVarName, VarName, VarType } from "@tsukiweb/common/script/types"
+import { History } from "./history"
+import { extractInstructions } from "@tsukiweb/common/script/utils"
+import { creditsScript, fetchBlockLines } from "./script-loader"
 
 //#endregion ###################################################################
 //#region                             TYPES
@@ -225,10 +224,9 @@ export class ScriptPlayer extends ScriptPlayerBase<LabelName, CharId, PageBaseCo
             return "s20"
         return null
     }
-    protected override preloadAssets(assets: Set<string>): void {
-        for (const asset of assets) {
-            if (asset.startsWith("bg/") || asset.startsWith("tachi/") || asset.startsWith("evt/"))
-                preloadImage(imageSrc(asset))
+    protected override preloadAssets(list: Set<string>): void {
+        for (const asset of list) {
+            assets.get(undefined, asset)
         }
     }
 
