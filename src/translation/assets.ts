@@ -142,6 +142,6 @@ export function phaseTexts(route: RouteName, routeDay: RouteDayName, day: number
 }
 
 export const assets = new AssetsCache<{
-  'audio': AudioBuffer
+  'audio': AudioBuffer|undefined
   'graph': string
 }>()

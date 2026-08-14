@@ -44,6 +44,11 @@ assets.setProvider("audio", (id)=> {
   if (id.startsWith('*')) {
     const trackName = parseInt(id.substring(1)).toString().padStart(2, '0')
     audioUrl = audioTrackPath(trackName)
+    if (audio.streamingEnabled) {
+      // no need to preload streamed music.
+      // Additionally, musics should not be loaded if game is muted.
+      return { url: audioUrl, value: undefined }
+    }
   } else if (id.startsWith('se_')) {
     audioUrl = audioSePath(id)
   } else if (id.startsWith('pd/se_')) {
