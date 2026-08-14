@@ -27,7 +27,6 @@ import {
   ensureEmptyDirInside,
   isMediaFile,
   listFilesRecursive,
-  pathExists,
 } from '@tsukiweb/common/tools/utils/fs-utils.ts'
 import { resolveExecutable, runCommand, withWorkingDirectory } from '@tsukiweb/common/tools/utils/process-utils.ts'
 import { logger } from '@tsukiweb/common/tools/utils/logger.ts'
@@ -114,9 +113,7 @@ async function prepareImgFolder(paths: Paths): Promise<void> {
 async function extractAssetsAndPrepareImages(paths: Paths): Promise<void> {
   await extractSar(paths.arcArchive, arcDir(paths), ARC_DIRS)
   const nscript = path.join(paths.tools, 'nscript.dat')
-  if (await pathExists(nscript)) {
-    await extractNscript(nscript, path.join(paths.staticJp, 'sources', 'fullscript_jp.txt'))
-  }
+  await extractNscript(nscript, path.join(paths.staticJp, 'sources', 'fullscript_jp.txt'))
   await prepareImgFolder(paths)
   await mergeVertical(
     path.join(paths.img, 'event', 'cel_e06a.jpg'),
@@ -204,7 +201,7 @@ async function convertAudioTree(
     outputPaths.add(outputPath)
 
     await fs.mkdir(path.dirname(outputPath), { recursive: true })
-    console.log(`Converting audio: ${i + 1}/${files.length} ${relativePath}`)
+    logger.log(`Converting audio: ${i + 1}/${files.length} ${relativePath}`)
     await runCommand(ffmpeg.command, [
       '-y',
       '-i', inputPath,
@@ -234,7 +231,7 @@ async function runCdConversion(context: StepContext): Promise<void> {
 
   for (const [name, dirs] of Object.entries(context.paths.cds)) {
     if (!(await directoryHasFiles(dirs.input))) continue
-    console.log(`\n${name}`)
+    logger.section(name)
     await convertAudioTree(ffmpeg, dirs.input, dirs.output, cdTrackOutputName)
   }
 }
@@ -256,6 +253,7 @@ export function createSteps(context: StepContext): OrchestratorStep[] {
       title: 'Extract arc.sar/nscript.dat and prepare images',
       canRun: async () => combine([
         await fileCheck(paths.arcArchive),
+        await fileCheck(path.join(paths.tools, 'nscript.dat')),
       ]),
       isDone: async () => extractedAssetsAndImagesCheck(paths),
       run: async () => extractAssetsAndPrepareImages(paths),

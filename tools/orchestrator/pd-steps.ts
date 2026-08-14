@@ -123,7 +123,7 @@ async function convertAudioTree(
     outputPaths.add(outputPath)
 
     await fs.mkdir(path.dirname(outputPath), { recursive: true })
-    console.log(`Converting PD audio: ${i + 1}/${files.length} ${relativePath}`)
+    logger.log(`Converting PD audio: ${i + 1}/${files.length} ${relativePath}`)
     await runCommand(ffmpeg.command, [
       '-y',
       '-i', inputPath,

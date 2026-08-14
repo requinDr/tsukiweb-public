@@ -583,7 +583,7 @@ export function main() {
 				updateGameJsonWithChoices(gameJsonPath, choices)
 			}
 		} catch (e) {
-			logger.error(`Error processing ${filename}: ${(e as Error).message}`)
+			throw Error(`Error processing ${filename}: ${(e as Error).message}`, { cause: e })
 		}
 	}
 	logger.progress(`Processing logic scripts: ${processedCount}/${totalScripts}\n`)

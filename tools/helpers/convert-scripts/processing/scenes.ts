@@ -4,7 +4,7 @@
  */
 import fs from 'fs';
 import path from 'path';
-import { fileURLToPath } from 'url'
+import { fileURLToPath, pathToFileURL } from 'url'
 import { parseScript } from '@tsukiweb/common/tools/convert-scripts/parsers/nscriptr.ts';
 import { Block, CommandToken, ConditionToken, LabelToken, ReturnToken, TextToken, Token } from '@tsukiweb/common/tools/convert-scripts/parsers/utils.ts'
 import { generateScenes, splitBlocks, writeScenes } from '../utils/nscriptr_convert.ts';
@@ -485,8 +485,7 @@ async function processSingleScript(folder: string, filename: string,
 	let block_fixes = {}
 	let preprocess_module_path = path.join(process.cwd(), outputPathPrefix, folder, 'preprocess.js')
 	if (fs.existsSync(preprocess_module_path)) {
-		preprocess_module_path = path.relative(import.meta.dirname, preprocess_module_path)
-		const lang_module = await import(preprocess_module_path.replaceAll('\\', '/'))
+		const lang_module = await import(pathToFileURL(preprocess_module_path).href)
 		if ('th_raw_fixes' in lang_module)
 			txt = lang_module.th_raw_fixes(txt) || txt
 		if ('eroskip_pages' in lang_module)
@@ -545,7 +544,7 @@ export async function main() {
 		try {
 			await processSingleScript(folder, filename, outputDir, tree)
 		} catch (e) {
-			logger.error(`Error processing ${filename}: ${(e as Error).message}`)
+			throw Error(`Error processing ${filename}: ${(e as Error).message}`, { cause: e })
 		}
 	}
 	logger.progress(`Processing fullscripts: ${processedCount}/${totalScripts}\n`)

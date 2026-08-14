@@ -9,8 +9,7 @@
 	"scripts": {
 		"start": "vite",
 		"proxy": "vite --mode proxy",
-		"assets": "node tools/make-assets.ts",
-		"assets:pd": "node tools/pd-make-assets.ts",
+		"setup": "vite --mode setup --open /setup.html",
 		"common:check": "tsc -p tsukiweb-common/tsconfig.json",
 		"common:update": "git submodule update --remote --merge tsukiweb-common && npm install",
 		"build": "npm run common:check && tsc && vite build"

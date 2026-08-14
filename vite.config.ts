@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { glob, rm } from 'node:fs/promises';
+import { setupPlugin } from './tools/setup-plugin.ts';
 
 const serverUrl = 'https://tsukidev.holofield.fr'
 
@@ -28,6 +29,7 @@ remotePaths.forEach((path) => {
 export default defineConfig(({ mode }) => ({
 	plugins: [
 		react(),
+		...(mode === 'setup' ? [setupPlugin()] : []),
 		{
 			name: 'exclude-sources-from-build',
 			apply: 'build',
@@ -45,6 +47,7 @@ export default defineConfig(({ mode }) => ({
 		chunkSizeWarningLimit: 1000,
 	},
 	server: {
+		host: mode === 'setup' ? '127.0.0.1' : undefined,
 		proxy: mode === 'proxy' ? proxyRules : {}
 	}
 }))

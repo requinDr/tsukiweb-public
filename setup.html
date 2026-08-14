@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/webp" href="/icons/icon_32.webp" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+		<meta name="theme-color" content="#03033b" />
+		<title>Tsukiweb asset setup</title>
+		<style>
+			:root {
+				--ui-font: "Ubuntu";
+				--game-font: "Ubuntu";
+			}
+			* {
+				box-sizing: border-box;
+				-webkit-tap-highlight-color: transparent;
+			}
+			html {
+				font-family: var(--ui-font, system-ui), Arial, sans-serif;
+				font-size: 1.1rem;
+				line-height: 1.5;
+				color: #e0e3ec;
+				background-color: #000;
+				font-synthesis: none;
+				text-rendering: optimizeLegibility;
+				-webkit-font-smoothing: antialiased;
+			}
+			body {
+				margin: 0;
+				display: flex;
+			}
+			#root {
+				background: #04090f;
+				height: 100vh;
+				height: 100svh;
+				width: 100vw;
+				display: flex;
+				overflow: hidden;
+				isolation: isolate;
+				position: relative;
+			}
+		</style>
+	</head>
+	<body>
+		<noscript>You need to enable JavaScript to use the asset setup.</noscript>
+		<div id="root"></div>
+		<script type="module" src="/src/setup/main.tsx"></script>
+	</body>
+</html>
