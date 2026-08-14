@@ -226,7 +226,7 @@ export class ScriptPlayer extends ScriptPlayerBase<LabelName, CharId, PageBaseCo
     }
     protected override preloadAssets(list: Set<string>): void {
         for (const asset of list) {
-            assets.get(undefined, asset)
+            assets.load(undefined, asset)
         }
     }
 
