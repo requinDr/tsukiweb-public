@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import { glob, rm } from 'node:fs/promises';
 
 const serverUrl = 'https://tsukidev.holofield.fr'
 
@@ -27,6 +28,15 @@ remotePaths.forEach((path) => {
 export default defineConfig(({ mode }) => ({
 	plugins: [
 		react(),
+		{
+			name: 'exclude-sources-from-build',
+			apply: 'build',
+			async closeBundle() {
+				for await (const sources of glob('dist/static/*/sources')) {
+					await rm(sources, { recursive: true, force: true })
+				}
+			},
+		},
 	],
 	resolve: {
 		tsconfigPaths: true

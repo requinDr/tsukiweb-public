@@ -115,7 +115,7 @@ async function extractAssetsAndPrepareImages(paths: Paths): Promise<void> {
   await extractSar(paths.arcArchive, arcDir(paths), ARC_DIRS)
   const nscript = path.join(paths.tools, 'nscript.dat')
   if (await pathExists(nscript)) {
-    await extractNscript(nscript, path.join(paths.staticJp, 'fullscript_jp.txt'))
+    await extractNscript(nscript, path.join(paths.staticJp, 'sources', 'fullscript_jp.txt'))
   }
   await prepareImgFolder(paths)
   await mergeVertical(

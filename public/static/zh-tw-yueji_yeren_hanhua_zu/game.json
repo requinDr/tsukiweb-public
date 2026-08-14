@@ -463,11 +463,7 @@
       "２、……我，做不到。"
     ]
   },
-  "images": {
-    "src": {
-      "tachi/osiete": "./images/%0"
-    }
-  },
+  "images": {},
   "scenario": {
     "days": [
       "[i]1[sup]st[/sup] day|October 21 (Thur.)",

@@ -504,8 +504,8 @@ export function main() {
   let processedCount = 0
 
   for (const folder of langs) {
-    const input_dir = path.join(outputPathPrefix, folder)
-    const output_dir = path.join(input_dir, outputDir)
+    const input_dir = path.join(outputPathPrefix, folder, 'sources')
+    const output_dir = path.join(outputPathPrefix, folder, outputDir)
     if (!fs.existsSync(output_dir)) {
       fs.mkdirSync(output_dir, { recursive: true })
     }

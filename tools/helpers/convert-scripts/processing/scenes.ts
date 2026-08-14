@@ -473,7 +473,7 @@ function getFileName(label: string) {
 async function processSingleScript(folder: string, filename: string,
 		outputDir: string|null,
 		blocksTree: Map<string, {parents: string[], children: string[], endContext: object|null}>) {
-	const fullscriptPath = path.join(outputPathPrefix, folder, filename)
+	const fullscriptPath = path.join(outputPathPrefix, folder, 'sources', filename)
 
 	if (!fs.existsSync(fullscriptPath)) {
 		logger.error(`Input file not found: ${fullscriptPath}`)

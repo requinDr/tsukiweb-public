@@ -25,9 +25,8 @@ release
 
 public/.htaccess
 public/static/*/*/
-!public/static/**/*.json
-public/static/jp/fullscript_jp.txt
-public/static/jp/*.ks
+!public/static/**/sources
+public/static/jp/sources
 public/res/flowchart-spritesheets
 logic_tree.txt
 

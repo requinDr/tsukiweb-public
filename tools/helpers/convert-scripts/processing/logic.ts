@@ -537,7 +537,7 @@ function extractChoices(blocks: Map<string, Block>) {
  * @returns blocks tree, choice texts, logic script
  */
 function processSingleScript(folder: string, filename: string): [string, Record<string, string[]>, string] {
-	const fullscriptPath = path.join(outputPathPrefix, folder, filename)
+	const fullscriptPath = path.join(outputPathPrefix, folder, 'sources', filename)
 
 	if (!fs.existsSync(fullscriptPath)) {
 		const errMsg = `Input file not found: ${fullscriptPath}`
