@@ -226,7 +226,6 @@ export class ScriptPlayer extends ScriptPlayerBase<LabelName, CharId, PageBaseCo
     }
     protected override preloadAssets(list: Set<string>): void {
         for (const asset of list) {
-            if (asset.startsWith('word/')) continue
             assets.load(undefined, asset)
         }
     }

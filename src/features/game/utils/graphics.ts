@@ -55,17 +55,20 @@ async function preloadGraphic(image: string) {
 }
 
 assets.setProvider('graph', (id: string)=> {
-  if (id.startsWith('"') && id.endsWith('"'))
-    id = id.substring(1, id.length-1)
-  if (/^(bg|tachi|event)\//.test(id)) {
-    const url = imageSrc(id)
-    return {
-      url: url,
-      // store a promise completed when the image is loaded even if value is duplicate of url
-      value: fetch(url).then(_=>url) 
-    }
-  }
-  return undefined
+	if (id.startsWith('"') && id.endsWith('"'))
+		id = id.substring(1, id.length-1)
+	const match = id.match(/^(word|bg|tachi|event)\/(.*)/)
+	if (match) {
+		if (match[1] == 'word')
+			return null
+		const url = imageSrc(id)
+		return {
+			url: url,
+			// store a promise completed when the image is loaded even if value is duplicate of url
+			value: fetch(url).then(_=>url) 
+		}
+	}
+	return undefined
 })
 
 //##############################################################################

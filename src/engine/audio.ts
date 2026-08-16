@@ -51,7 +51,7 @@ assets.setProvider("audio", (id)=> {
     }
   } else if (id.startsWith('se_')) {
     audioUrl = audioSePath(id)
-  } else if (id.startsWith('pd/se_')) {
+  } else if (id.startsWith('pd/se')) {
     audioUrl = audioSePath(id.substring(3), true)
   } else {
     return undefined

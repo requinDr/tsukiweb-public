@@ -5,9 +5,11 @@ import { useStrings } from "translation/lang"
 import classNames from "classnames"
 import { jsonMerge } from "@tsukiweb/common/utils/utils"
 import { isPDScene } from "engine/utils"
-import { PlusDiscSceneName } from "app/utils/types"
+import { CharId, PlusDiscSceneName } from "app/utils/types"
 import { Button } from "@tsukiweb/common/ui-core"
 import { ProgressPanel } from "features/game/components/shared/ProgressPanel";
+import { settings } from "engine/settings";
+import { PartialRecord } from "@tsukiweb/common/types";
 
 type SaveDetailsProps = {
 	id?: number
@@ -21,8 +23,15 @@ const SaveDetails = ({id, saveState, deleteSave}: SaveDetailsProps)=> {
 	const progress = saveState?.scenes.reduce((s1, s2)=>jsonMerge(s2, s1))
 	const graphics = jsonMerge(saveState?.graphics ?? {},
 			lastPage?.graphics ?? {bg: "#000"})
-	const regard = progress?.points ?? {}
-	const flags = progress?.flags ?? []
+	let regard: PartialRecord<CharId, number>
+	let flags: Array<string>
+	if (settings.flowchartBadges) {
+		regard = progress?.points ?? {}
+		flags = progress?.flags ?? []
+	} else {
+		regard = {}
+		flags = []
+	}
 
 	const isPd = lastPage?.label && isPDScene(lastPage.label)
 
