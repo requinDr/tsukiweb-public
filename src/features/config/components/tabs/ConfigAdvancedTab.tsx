@@ -136,7 +136,7 @@ const ConfigAdvancedTab = () => {
 			</ConfigItem>
 
 			<ConfigItem
-				label={strings.config["flowchart-badges"]}
+				label={strings.config["display-badges"]}
 			>
 				<ConfigButtons
 					currentValue={conf.flowchartBadges}
