@@ -39,7 +39,7 @@
 
 		& > rect {
 			fill: transparent;
-			outline: none;
+			outline-color: transparent;
 		}
 
 		&.disabled {
@@ -55,7 +55,7 @@
 		}
 		&.unlocked:not(.disabled) {
 			stroke: var(--active-connection);
-			outline: none;
+			outline-color: transparent;
 			cursor: pointer;
 
 			&.blur > image {

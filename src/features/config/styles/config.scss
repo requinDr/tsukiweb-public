@@ -221,7 +221,7 @@
 			}
 
 			&:focus {
-				outline: none;
+				outline-color: transparent;
 				border-color: var(--color-link);
 				box-shadow: 0 0 0 2px rgba(0, 165, 255, 0.2);
 			}
