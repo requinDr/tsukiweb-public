@@ -465,8 +465,8 @@
   },
   "images": {
     "words": {
-      "fin": "#ffffff$c`[center][noline][color=black][font=serif]Fine`",
       "end": "#ffffff$b`[right][noline][color=black][font=serif]END`",
+      "fin": "#ffffff$c`[center][noline][color=black][font=serif]Fine`",
       "pd_fin": "#000000$b`[right][noline][font=serif]Fine`",
       "pd_genshi": "#000000$b`[right][noline][font=serif][u]Storia Breve/Alleanza di Occhi Mistici`",
       "pd_tea": "#000000$t`[left][noline][noline][font=serif][u]Tè di Luna`",

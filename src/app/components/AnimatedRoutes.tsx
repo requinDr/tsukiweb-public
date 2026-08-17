@@ -5,7 +5,6 @@ import '../styles/App.scss'
 import '@tsukiweb/common/graphics/styles/graphics.scss'
 import ExtraLayout from "features/title-menu/components/ExtraLayout";
 import { useCallback, useEffect, useState } from "react";
-import { Particles } from "@tsukiweb/common/ui-core";
 import ConfigScreen from "app/screens/ConfigScreen";
 import DisclaimerScreen from "app/screens/DisclaimerScreen";
 import EndingsScreen from "app/screens/EndingsScreen";
@@ -17,6 +16,7 @@ import SceneReplayScreen from "app/screens/SceneReplayScreen";
 import TitleMenuScreen from "app/screens/TitleMenuScreen";
 import Window from "app/screens/Window";
 import { SCREEN } from "app/utils/display";
+import Particles from "./Particles";
 
 const AnimatedRoutes = () => {
 	const [location] = useLocation()

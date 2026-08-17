@@ -465,8 +465,8 @@
   },
   "images": {
     "words": {
-      "fin": "#ffffff$c`[center][noline][color=black][font=serif]Fin`",
       "end": "#ffffff$b`[right][noline][color=black][font=serif]END`",
+      "fin": "#ffffff$c`[center][noline][color=black][font=serif]Fin`",
       "pd_fin": "#000000$b`[right][noline][font=serif]Fin`",
       "pd_genshi": "#000000$b`[right][noline][font=serif][u]한화/환시 동맹`",
       "pd_tea": "#000000$t`[left][noline][noline][font=serif][u]월차`",

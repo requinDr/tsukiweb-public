@@ -465,8 +465,8 @@
   },
   "images": {
     "words": {
-      "fin": "#ffffff$c`[center][noline][color=black][font=serif]Fim`",
       "end": "#ffffff$b`[right][noline][color=black][font=serif]END`",
+      "fin": "#ffffff$c`[center][noline][color=black][font=serif]Fim`",
       "pd_fin": "#000000$b`[right][noline][font=serif]Fim`",
       "pd_genshi": "#000000$b`[right][noline][font=serif][u]História Curta/Aliança de Olhos Ilusórios`",
       "pd_tea": "#000000$t`[left][noline][noline][font=serif][u]Chá da Lua`",

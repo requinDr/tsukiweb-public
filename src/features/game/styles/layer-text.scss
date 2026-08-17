@@ -30,15 +30,8 @@
 		isolation: isolate;
 		max-width: 1060px;
 		margin-inline: auto;
-
-		.adv-frame {
-			position: absolute;
-			inset: 0;
-			z-index: -1;
-			width: 100%;
-			height: 100%;
-			pointer-events: none;
-		}
+		--linear-bottom: rgb(1 109 188);
+		--linear-top: rgb(0 49 90);
 
 		.text-container {
 			max-width: unset;
