@@ -287,6 +287,7 @@
 
 	.graphics {
 		aspect-ratio: 4/3;
+		overflow: hidden;
 
 		div.bg img.blur {
 			filter: blur(20px);

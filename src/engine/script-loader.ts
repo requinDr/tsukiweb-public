@@ -54,6 +54,8 @@ async function fetchLogicBlock(label: string) : Promise<string[]> {
 export async function fetchBlockLines(label: LabelName): Promise<string[]> {
 	if (isScene(label))
 		return fetchScene(label)
+	else if (label == "endofplay")
+		return ["skip 0"]
 	else
 		return fetchLogicBlock(label)
 }
