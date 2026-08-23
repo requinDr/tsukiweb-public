@@ -28,19 +28,19 @@ const PageCrash = ({ error }: Props) => {
 	return (
 		<div id="page-crash" className="page">
 			<div className="page-content">
-				<h1>An error has occured <span style={{ whiteSpace: 'nowrap' }}>:(</span></h1>
-				<p>
+				<h1>An error has occured</h1>
+				<p className="desc">
 					If this is the first time you've launched this application on this browser,
 					you may need to update it or try using another one.
 				</p>
-				<details className="code">
-					<summary>
-						{error?.message} <i className="ver">—v{APP_VERSION}</i>
-					</summary>
+				<div className="code">
+					<div className="summary">
+						{error?.message}<div className="ver">v{APP_VERSION}</div>
+					</div>
 					<p>
 						{error?.stack}
 					</p>
-				</details>
+				</div>
 				<a href={import.meta.env.BASE_URL}>
 					Go back to the home page
 				</a>

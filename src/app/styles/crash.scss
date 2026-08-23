@@ -1,5 +1,5 @@
 #page-crash {
-	overflow: clip;
+	overflow-y: auto;
 	user-select: text;
 	
 	.page-content {
@@ -17,14 +17,13 @@
 		font-weight: 700;
 		text-wrap: balance;
 	}
-
-	.page-content > p {
+	.desc {
 		text-wrap: balance;
 	}
-	.ver {
-		font-size: .8em;
-		float: right;
+	h1, .desc {
+		margin-inline: 1em;
 	}
+
 	.code {
 		font-family: monospace;
 		background-color: var(--menu-container);
@@ -32,27 +31,36 @@
 		width: 100%;
 		margin-block: 2em;
 		border-radius: 2px;
-	}
+		display: flex;
+		flex-direction: column;
 
-	details {
-		summary {
-			padding: 1.4em 2em;
+		.summary {
+			background-color: #000;
 			color: var(--color-link);
-			&:hover {
-				cursor: pointer;
-				background-color: var(--menu-container);
+			padding: .8rem 1.5rem;
+			position: relative;
+
+			.ver {
+				font-size: 0.8em;
+				color: #fff;
+				position: absolute;
+				top: -16px;
+				text-align: center;
+				left: 50%;
+				transform: translateX(-50%);
+				background-color: inherit;
+				padding-inline: 2rem;
+				border-radius: 2px 2px 0 0;
 			}
 		}
 		p {
 			text-align: left;
-			max-height: 300px;
+			max-height: 280px;
 			overflow-y: auto;
 			margin: 0;
-			padding-inline: 1.4em 2em;
-			padding-bottom: 1em;
-			padding-top: .5em;
+			padding: .5rem 1.5rem;
 			border-top: 1px solid var(--separator);
-			font-size: 0.8em;
+			font-size: .8rem;
 			line-height: 1.8;
 		}
 	}

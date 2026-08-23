@@ -6,6 +6,8 @@ import { initFileHandling, registerFileHandler } from '@tsukiweb/common/utils/pw
 import { importGameDataFromFile } from 'engine/pwa-file-handler';
 import { FULLSAVE_EXT } from './utils/constants';
 import { StringsProvider } from 'translation/lang'
+import { ErrorBoundary } from 'react-error-boundary';
+import PageCrash from './screens/CrashScreen';
 
 mountDialogManager()
 
@@ -15,8 +17,10 @@ initFileHandling()
 
 createRoot(document.getElementById('root') as HTMLElement).render(
   <StrictMode>
-    <StringsProvider>
-      <App />
-    </StringsProvider>
+    <ErrorBoundary FallbackComponent={PageCrash}>
+      <StringsProvider>
+        <App />
+      </StringsProvider>
+    </ErrorBoundary>
   </StrictMode>
 )
