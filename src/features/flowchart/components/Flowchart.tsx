@@ -54,7 +54,7 @@ const Flowchart = ({history, onSceneClick, mode = 'viewer'}: Props)=> {
 	usePanZoom(svgRef, {
 		maxScale: 3,
 		minScale: 0.45,
-		minVisible: 96,
+		minVisible: '50%',
 		stageRef,
 		viewportSelector: '.scroll-container',
 	})
