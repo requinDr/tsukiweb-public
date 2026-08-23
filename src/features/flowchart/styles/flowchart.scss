@@ -6,21 +6,43 @@
 	}
 }
 
+@media (pointer: coarse) {
+	.flowchart-container,
+	#flowchart-progress {
+		scrollbar-gutter: auto;
+		scrollbar-width: none;
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
+	}
+}
+
 .flowchart-container {
+	container-type: inline-size;
 	isolation: isolate;
 	padding-top: 4em;
 	padding-bottom: max(160px, 10vh);
-	align-items: start;
+	align-items: flex-start;
 	overflow: auto;
+	overflow-anchor: none;
 	overscroll-behavior: contain;
 	touch-action: pan-x pan-y;
 	--active-connection: #0d96e0;
 	--inactive-connection: #888;
 
+	.panzoom-stage {
+		box-sizing: content-box;
+		flex: none;
+		height: max-content;
+		touch-action: pan-x pan-y;
+		width: max-content;
+	}
+
 	.flowchart {
+		display: block;
 		flex: none;
 		direction: ltr;
-		transform: translateZ(0);
 		contain: paint;
 		touch-action: pan-x pan-y;
 		vector-effect: non-scaling-stroke;
@@ -39,7 +61,7 @@
 
 		& > rect {
 			fill: transparent;
-			outline-color: transparent;
+			outline: none;
 		}
 
 		&.disabled {

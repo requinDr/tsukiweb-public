@@ -17,6 +17,10 @@
 		opacity: 1;
 	}
 
+	footer {
+		background: var(--transparent-layer);
+	}
+
 	.scroll-container {
 		overflow-y: scroll;
 		scrollbar-gutter: stable both-edges;

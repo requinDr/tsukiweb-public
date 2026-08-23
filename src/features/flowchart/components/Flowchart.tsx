@@ -1,11 +1,11 @@
 
-import { memo, useLayoutEffect, useRef } from "react"
+import { memo, useRef } from "react"
 import { FcNode, GameFlowchart } from "features/flowchart/utils/flowchart"
 import { SceneName } from "app/utils/types"
 import { AllScenes } from "./AllScenes"
 import { History } from "engine/history"
 import { COLUMN_WIDTH, DY, PopoverProvider, SCENE_HEIGHT, SCENE_WIDTH, SVG_DEFS } from "@tsukiweb/common/flowchart"
-import { usePinchPanZoom } from "@tsukiweb/common/hooks"
+import { usePanZoom } from "@tsukiweb/common/hooks"
 import ScenePopover from "./ScenePopover";
 import AllConnections from "./AllConnections";
 import { BADGES_DEFINES } from "./badges"
@@ -21,57 +21,11 @@ type Props = {
 	mode?: 'playthrough' | 'viewer'
 }
 
-type FlowchartSize = {
-	minWidthRem: number
-	minHeightRem: number
-	maxWidthPct: number
-	maxHeightPct: number
-}
-
-const MIN_TOUCH_ZOOM = 0.45
-const MAX_TOUCH_ZOOM = 3
-
-const applyFlowchartZoom = (svg: SVGSVGElement, size: FlowchartSize, zoom: number) => {
-	svg.style.minWidth = `${size.minWidthRem * zoom}rem`
-	svg.style.maxWidth = `${size.maxWidthPct * zoom}%`
-	svg.style.minHeight = `${size.minHeightRem * zoom}rem`
-	svg.style.maxHeight = `${size.maxHeightPct * zoom}%`
-}
-
-const useFlowchartPinchZoom = (
-	svgRef: React.RefObject<SVGSVGElement | null>,
-	size: FlowchartSize
-) => {
-	const sizeRef = useRef(size)
-	const targetRef = useRef<SVGElement | null>(null)
-
-	useLayoutEffect(() => {
-		const svg = svgRef.current
-		targetRef.current = svg?.closest('.flowchart-container') ?? svg ?? null
-	}, [svgRef])
-
-	const zoomRef = usePinchPanZoom({
-		contentRef: svgRef,
-		targetRef,
-		minZoom: MIN_TOUCH_ZOOM,
-		maxZoom: MAX_TOUCH_ZOOM,
-		onZoomCommit: (zoom) => {
-			if (svgRef.current)
-				applyFlowchartZoom(svgRef.current, sizeRef.current, zoom)
-		},
-	})
-
-	useLayoutEffect(() => {
-		sizeRef.current = size
-		if (svgRef.current)
-			applyFlowchartZoom(svgRef.current, size, zoomRef.current)
-	}, [size, zoomRef, svgRef])
-}
-
 const Flowchart = ({history, onSceneClick, mode = 'viewer'}: Props)=> {
 	useStrings()
 	const flowchart = new GameFlowchart(history)
 	const svgRef = useRef<SVGSVGElement>(null)
+	const stageRef = useRef<HTMLDivElement>(null)
 	useObserved(settings, 'flowchartBadges') // refresh flowchart when toggling badges display
 	const visibleNodes = flowchart.listNodes().filter(n=>n.visible)
 	let [left, top, right, bottom] = visibleNodes.reduce(
@@ -97,37 +51,45 @@ const Flowchart = ({history, onSceneClick, mode = 'viewer'}: Props)=> {
 		maxHeightPct: 100 * height / (4 * (SCENE_HEIGHT + DY*2)), // minimum 4 scenes visible
 	}
 	const activeNode = flowchart.getNode(flowchart.activeScene)
-	useFlowchartPinchZoom(svgRef, size)
+	usePanZoom(svgRef, {
+		maxScale: 3,
+		minScale: 0.45,
+		minVisible: 96,
+		stageRef,
+		viewportSelector: '.scroll-container',
+	})
 	
 	return (
 		<PopoverProvider renderContent={(item: FcNode) => <ScenePopover node={item} />}>
-			<svg viewBox={`${left} ${top} ${width} ${height}`}
-				ref={svgRef}
-				className="flowchart"
-				style={{
-					minWidth: `${size.minWidthRem}rem`, maxWidth: `${size.maxWidthPct}%`,
-					minHeight: `${size.minHeightRem}rem`, maxHeight: `${size.maxHeightPct}%`,
-				}}
-				version="1.1"
-				xmlns="http://www.w3.org/2000/svg">
-				{SVG_DEFS}
-				{BADGES_DEFINES}
-				<g className="fc-connections">
-					<AllConnections fcNodes={visibleNodes} mode={mode} />
-				</g>
-				<g className="fc-scenes">
-					<AllScenes
-						nodes={visibleNodes}
-						activeNode={activeNode}
-						onClick={onSceneClick} 
-					/>
-				</g>
-				<g className="fc-badges">
-					{settings.flowchartBadges &&
-						<AllBadges nodes={visibleNodes} />
-					}
-				</g>
-			</svg>
+			<div className="panzoom-stage" ref={stageRef}>
+				<svg viewBox={`${left} ${top} ${width} ${height}`}
+					ref={svgRef}
+					className="flowchart"
+					style={{
+						minWidth: `max(${size.minWidthRem}rem, 100cqi)`, maxWidth: `${size.maxWidthPct}%`,
+						minHeight: `${size.minHeightRem}rem`, maxHeight: `${size.maxHeightPct}%`,
+					}}
+					version="1.1"
+					xmlns="http://www.w3.org/2000/svg">
+					{SVG_DEFS}
+					{BADGES_DEFINES}
+					<g className="fc-connections">
+						<AllConnections fcNodes={visibleNodes} mode={mode} />
+					</g>
+					<g className="fc-scenes">
+						<AllScenes
+							nodes={visibleNodes}
+							activeNode={activeNode}
+							onClick={onSceneClick}
+						/>
+					</g>
+					<g className="fc-badges">
+						{settings.flowchartBadges &&
+							<AllBadges nodes={visibleNodes} />
+						}
+					</g>
+				</svg>
+			</div>
 		</PopoverProvider>
 	)
 }

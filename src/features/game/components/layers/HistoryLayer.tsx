@@ -72,7 +72,7 @@ const HistoryLayer = ({ display, history, onRewind, layers, continueScript = tru
 			: null
 			}
 
-			<FixedFooter style={{ background: "var(--transparent-layer)" }}>
+			<FixedFooter>
 				{(layers.history || layers.flowchart) && <>
 					<Button
 						variant="default"
