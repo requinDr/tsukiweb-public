@@ -65,6 +65,8 @@ class SavesManager extends SavesManagerBase<SaveState> {
           id = save.id ?? save.date
         }
         save = await updateSave(save)
+        if (!Object.hasOwn(save, 'pages'))
+          throw Error(`Ill-formed save`)
         return save
       })
     )
