@@ -1,9 +1,13 @@
-import { Fragment } from "react"
+import { Fragment, ReactComponentElement, ReactElement } from "react"
 import { PageSection } from "@tsukiweb/common/ui-core"
 import { bb } from "@tsukiweb/common/utils/Bbcode"
-import { Gamepad, inGameControls, inGameGestures } from "features/game/utils/keybind"
-import { MdSportsEsports, MdSwipeDown, MdSwipeLeft, MdSwipeRight, MdSwipeUp } from "react-icons/md";
+import { Gamepad, inGameControls, inGameGestures, menuKeyMap } from "features/game/utils/keybind"
+import { MdBackspace, MdSportsEsports, MdSwipeDown, MdSwipeLeft, MdSwipeRight, MdSwipeUp, MdTouchApp } from "react-icons/md";
+import { PiMouseLeftClickFill, PiMouseRightClickFill } from "react-icons/pi";
+import { ScrollUp } from "@tsukiweb/common/icons/scroll_up"
 import { useStrings } from "translation/lang";
+import { EventActions } from "@tsukiweb/common/input/eventActions";
+import { GamepadEvents } from "@tsukiweb/common/input/gamepad";
 
 
 const ConfigControlsTab = () => {
@@ -23,6 +27,9 @@ const ConfigControlsTab = () => {
 					</div>
 
 					<div className="config-actions">
+						<MouseControls
+							action={action}
+						/>
 						<KeyboardControls
 							action={action}
 							controlStrings={controlStrings}
@@ -50,17 +57,23 @@ type ControlProps = {
 	controlStrings: Record<string, string>
 }
 
-const keyLabels: Record<string, string> = {
+const keyLabels: Record<string, string|ReactElement> = {
 	ArrowUp: '↑',
 	ArrowDown: '↓',
 	PageUp: '⇞',
-	PageDown: '⇟',
+	PageDown: '⇟',/*  */
 	Control: 'Ctrl',
 	Meta: '⌘',
+	Space: ' ␣ ',
+	Enter: ' ⮠  ',
+	Backspace: <MdBackspace/>,
 }
 const KeyboardControls = ({ action, controlStrings }: ControlProps) => {
 	const keys = (inGameControls[action] ?? [])
 		.filter(({ key, code }) => key || code)
+	if (action == 'menu')
+		keys.push(...menuKeyMap['nav'].filter(({ type, [EventActions.ARGS]: args })=>
+			type == 'keydown' && args[0] == "out"))
 
 	return (
 		<>
@@ -109,7 +122,11 @@ const gamepadLabels: Record<number, string> = {
 const GamepadControls = ({ action }: Pick<ControlProps, 'action'>) => {
 	const sourceAction = action === 'menu' ? 'back' : action
 	const buttons = (inGameControls[sourceAction] ?? [])
-		.flatMap(({ buttonId }) => buttonId == undefined ? [] : [buttonId])
+		.flatMap(({ buttonId }) => buttonId == undefined ? [] : buttonId)
+	if (sourceAction == 'back')
+		buttons.push(...menuKeyMap['nav'].flatMap(
+			({ type, buttonId, [EventActions.ARGS]: args })=>
+				type == GamepadEvents.BTN_PRESSED && args[0] == "out" ? buttonId : []))
 
 	return (
 		<>
@@ -124,6 +141,27 @@ const GamepadControls = ({ action }: Pick<ControlProps, 'action'>) => {
 		</>
 	)
 }
+const MouseControls = ({ action }: Pick<ControlProps, 'action'>)=> {
+	switch (action) {
+		case "next":
+			return <span className="shortcut mouse">
+				<kbd className="key">
+					<PiMouseLeftClickFill aria-label="Left click"/>
+				</kbd>
+			</span>
+		case "history":
+			return <span className="shortcut mouse">
+				<kbd className="key"><ScrollUp aria-label="Scroll up"/></kbd>
+			</span>
+		case "back":
+		case "menu":
+			return <span className="shortcut mouse">
+				<kbd className="key">
+					<PiMouseRightClickFill aria-label="Right click"/>
+				</kbd>
+			</span>
+	}
+}
 
 
 const directionArrows = {
@@ -137,6 +175,11 @@ const GestureControls = ({ action, controlStrings }: ControlProps) => {
 
 	return (
 		<>
+			{action == "next" && <span className="shortcut gesture">
+				<kbd className="key">
+					<MdTouchApp aria-label="Tap"/>	
+				</kbd>	
+			</span>}
 			{gestures.map(gesture => {
 				const layers = gesture.layers
 					.map(layer => controlStrings[`_layer-${layer}`])

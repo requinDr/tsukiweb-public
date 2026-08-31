@@ -196,9 +196,14 @@
 		}
 		.gamepad .key {
 			background-color: #114927;
+			box-shadow: none;
 		}
 		.gesture .key {
 			background-color: #000;
+			box-shadow: none;
+		}
+		.mouse .key {
+			background-color: hsl(288, 32%, 48%);
 			box-shadow: none;
 		}
 		.key {
