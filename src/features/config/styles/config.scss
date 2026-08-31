@@ -182,30 +182,46 @@
 		.config-actions {
 			display: flex;
 			flex-wrap: wrap;
-			gap: 6px;
+			column-gap: 12px;
+			row-gap: 6px;
 			align-self: center;
+			align-items: center;
+		}
+		.shortcut {
+			display: flex;
+			align-items: center;
+			gap: 6px;
+			background: rgb(0 0 0 / 40%);
+			border-radius: 3px;
+		}
+		.gesture .key {
+			background-color: #000;
+			box-shadow: none;
 		}
 		.key {
 			padding: 6px 12px;
-			font-size: .85em;
+			font-size: .95em;
 			height: 36px;
+			min-width: 36px;
 			letter-spacing: 0.5px;
-			background-color: #00021a;
+			background-color: #123380;
 			box-shadow: inset 0 -2px 0 #041743, inset 0px 1px 1px -1px #00030d, 0px 1px 1px 0px #000f27;
 			border-radius: 3px;
 			text-transform: uppercase;
 			white-space: nowrap;
 			display: flex;
 			align-items: center;
+			justify-content: center;
 			gap: 6px;
 			svg {
 				font-size: 1.4em;
 			}
-
-			.info {
-				color: var(--text-muted);
-				text-transform: none;
-			}
+		}
+		.info {
+			color: var(--text-muted);
+			text-transform: none;
+			font-size: .9em;
+			padding-right: 6px;
 		}
 	}
 
