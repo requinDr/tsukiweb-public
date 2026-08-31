@@ -1,8 +1,8 @@
 import { Fragment } from "react"
 import { PageSection } from "@tsukiweb/common/ui-core"
 import { bb } from "@tsukiweb/common/utils/Bbcode"
-import { inGameControls, inGameGestures } from "features/game/utils/keybind"
-import { MdSwipeDown, MdSwipeLeft, MdSwipeRight, MdSwipeUp } from "react-icons/md";
+import { Gamepad, inGameControls, inGameGestures } from "features/game/utils/keybind"
+import { MdSportsEsports, MdSwipeDown, MdSwipeLeft, MdSwipeRight, MdSwipeUp } from "react-icons/md";
 import { useStrings } from "translation/lang";
 
 
@@ -27,6 +27,8 @@ const ConfigControlsTab = () => {
 							action={action}
 							controlStrings={controlStrings}
 						/>
+
+						<GamepadControls action={action} />
 
 						<GestureControls
 							action={action}
@@ -93,6 +95,32 @@ const KeyboardControls = ({ action, controlStrings }: ControlProps) => {
 					</span>
 				)
 			})}
+		</>
+	)
+}
+
+
+const gamepadLabels: Record<number, string> = {
+	[Gamepad.DPadUp]: '↑',
+	[Gamepad.DPadRight]: '→',
+	[Gamepad.DPadDown]: '↓',
+	[Gamepad.DPadLeft]: '←',
+}
+const GamepadControls = ({ action }: Pick<ControlProps, 'action'>) => {
+	const sourceAction = action === 'menu' ? 'back' : action
+	const buttons = (inGameControls[sourceAction] ?? [])
+		.flatMap(({ buttonId }) => buttonId == undefined ? [] : [buttonId])
+
+	return (
+		<>
+			{buttons.map(buttonId =>
+				<span key={buttonId} className="shortcut gamepad">
+					<kbd className="key">
+						<MdSportsEsports aria-label="Gamepad" />
+						{gamepadLabels[buttonId] ?? Gamepad[buttonId]}
+					</kbd>
+				</span>
+			)}
 		</>
 	)
 }

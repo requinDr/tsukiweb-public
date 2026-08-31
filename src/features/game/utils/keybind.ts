@@ -2,7 +2,7 @@ import { GamepadEventGenerator, GamepadEvents } from "@tsukiweb/common/input/gam
 import {EventActions as EA, EventFilter} from "@tsukiweb/common/input/eventActions";
 
 // XBOX controller button mapping
-enum Gamepad {
+export enum Gamepad {
     A = 0,
     B = 1,
     X = 2,
@@ -39,8 +39,7 @@ export const inGameControls: Record<string, EventFilter[]> = {
         {type: 'keydown', key: "Meta"       , repeat: true},
         {type: 'keydown', key: "ArrowDown"  , repeat: false, ctrlKey: false},
         {type: GamepadEvents.BTN_PRESSED, buttonId: Gamepad.A},
-        {type: GamepadEvents.BTN_PRESSED, buttonId: Gamepad.DPadDown},
-        {type: GamepadEvents.BTN_PRESSED, buttonId: Gamepad.DPadRight}],
+        {type: GamepadEvents.BTN_PRESSED, buttonId: Gamepad.DPadDown}],
     "back":    [
         // nav "out" fallbacks to "back".
         // Duplicates bindings were removed from "back".
