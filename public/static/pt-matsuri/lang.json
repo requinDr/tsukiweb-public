@@ -128,7 +128,8 @@
     "title-load": "Carregar",
     "title-save": "Salvar",
     "create": "Criar",
-    "import": "Importar",
+    "empty": "Nenhum dado salvo encontrado.",
+    "import": "Importar um arquivo de salvamento?",
     "export": "Exportar",
     "delete": "Excluir",
     "delete-warning": "Tem certeza que deseja excluir esta sessão?",
@@ -139,16 +140,14 @@
   },
   "game": {
     "skip-viewed": "Você já viu esta cena.",
-    "skip-hscene": "This scene contains adult content.",
     "skip-hcontent": "This passage contains adult content.",
     "skip-prompt": "Você quer pular?",
     "toast-qsave": "O progresso foi salvo",
     "toast-qload": "Progresso restaurado",
-    "toast-load": "Progresso restaurado",
-    "toast-save-fail": "Não foi possível salvar o progresso dessa sessão",
+    "toast-load-success": "Progresso restaurado",
     "toast-load-fail": "Não foi possível restaurar o progresso dessa sessão",
-    "toast-autoplay-stop": "Reprodução automática interrompida",
-    "toast-ffw-stop": "Avanço rápido parado"
+    "toast-save-fail": "Não foi possível salvar o progresso dessa sessão",
+    "toast-autoplay-stop": "Reprodução automática interrompida"
   },
   "menu": {
     "graphics": "Gráficos",

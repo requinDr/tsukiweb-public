@@ -10,8 +10,8 @@ export async function importGameDataFromFile(file: File): Promise<void> {
 	
 	const confirmed = await dialog.confirm({
 		text: confirmText,
-		labelYes: strings.config["data-import"] ?? "Import",
-		labelNo: strings.no ?? "Cancel",
+		labelYes: strings?.config?.["data-import"] ?? "Import",
+		labelNo: strings?.no ?? "Cancel",
 	})
 
 	if (!confirmed) return
@@ -21,9 +21,9 @@ export async function importGameDataFromFile(file: File): Promise<void> {
 		const json = JSON.parse(text)
 		await importGameDataFromJSON(json)
 		
-		toast.success(strings.game?.["toast-load"] ?? "Data loaded successfully")
+		toast.success(strings?.game?.["toast-load-success"] ?? "Data loaded successfully")
 	} catch (error) {
 		console.error('Failed to import game data:', error)
-		toast.error("Failed to import data")
+		toast.error(strings?.game?.["toast-load-fail"] ?? "Failed to import data")
 	}
 }

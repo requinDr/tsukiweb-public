@@ -128,7 +128,8 @@
     "title-load": "ロード",
     "title-save": "セーブ",
     "create": "New save",
-    "import": "Import save file",
+    "empty": "No save data found.",
+    "import": "Import a save file?",
     "export": "エクスポート",
     "delete": "削除",
     "delete-warning": "このセーブを本当に削除したいですか？",
@@ -139,16 +140,14 @@
   },
   "game": {
     "skip-viewed": "このシーンはもう見ました。",
-    "skip-hscene": "This scene contains adult content.",
     "skip-hcontent": "This passage contains adult content.",
     "skip-prompt": "スキップしますか？",
     "toast-qsave": "セーブは成功しました",
     "toast-qload": "ロードは成功しました",
-    "toast-load": "ロードは成功しました",
-    "toast-save-fail": "セーブは失敗しました",
+    "toast-load-success": "ロードは成功しました",
     "toast-load-fail": "ロードは失敗しました",
-    "toast-autoplay-stop": "オートモードを停止しました",
-    "toast-ffw-stop": "早送りを停止しました"
+    "toast-save-fail": "セーブは失敗しました",
+    "toast-autoplay-stop": "オートモードを停止しました"
   },
   "menu": {
     "graphics": "グラフィック",

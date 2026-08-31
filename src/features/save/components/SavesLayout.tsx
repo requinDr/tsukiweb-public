@@ -1,20 +1,17 @@
-import { ChangeEvent, MouseEvent, useCallback, useEffect, useRef, useState } from "react"
+import { useCallback, useEffect, useRef, useState } from "react"
 import SaveListItem from "./SaveListItem"
 import SaveDetails from "./SaveDetails"
-import { MdAddCircleOutline, MdUploadFile, MdWarning } from "react-icons/md"
+import { MdAddCircleOutline, MdWarning } from "react-icons/md"
 import { dialog } from "@tsukiweb/common/ui-core/components/ModalPrompt"
 import classNames from "classnames"
 import { useVirtualizer } from "@tanstack/react-virtual"
-import { toast } from "react-toastify"
 import { history } from "engine/history"
-import { requestFilesFromUser } from "@tsukiweb/common/utils/utils"
 import { computeSaveHash, exportGameData, settings } from "engine/settings"
 import { useObserver } from "@tsukiweb/common/utils/Observer"
 import { Button, TitleMenuButton, PageSection, PageTitle } from "@tsukiweb/common/ui-core"
 import { audio } from "engine/audio"
 import { QUICK_SAVE_ID, SaveState, compareSaveStates, savesManager } from "engine/savestates";
 import { useStrings } from "translation/lang";
-import { SAVE_EXT } from "app/utils/constants";
 import { SCREEN, displayMode } from "app/utils/display";
 
 
@@ -49,21 +46,6 @@ const SavesLayout = ({variant, onBack}: Props) => {
 		const ss = history.createSaveState()
 		if (name) ss.name = name
 		savesManager.add(ss)
-	}
-
-	async function importSaves(event: ChangeEvent|MouseEvent) {
-		let files = (event.target as HTMLInputElement)?.files
-			?? await requestFilesFromUser({multiple: true, accept: `.${SAVE_EXT}`})
-		
-		if (!files) return
-		if (files instanceof File) files = [files]
-
-		try {
-			await savesManager.importSaveFiles(files)
-			toast.success(strings.game["toast-load"])
-		} catch(error) {
-			toast.error(strings.game["toast-load-fail"])
-		}
 	}
 
 	async function onSaveSelect(id: number) {
@@ -122,7 +104,7 @@ const SavesLayout = ({variant, onBack}: Props) => {
 		<main id="saves-layout">
 			<PageTitle>{title}</PageTitle>
 			<PageSection className="saves" ref={parentRef}>
-				{variant === "save" ?
+				{variant === "save" &&
 					<Button
 						onClick={createSave.bind(null, undefined)}
 						className={classNames("create", {active: focusedId === SAVE_ACTION_ID})}
@@ -130,15 +112,6 @@ const SavesLayout = ({variant, onBack}: Props) => {
 						nav-auto={1}
 					>
 						<MdAddCircleOutline aria-hidden /> {strings.saves.create}
-					</Button>
-				:
-					<Button
-						onClick={importSaves}
-						className={classNames("import", {active: focusedId === SAVE_ACTION_ID})}
-						{...focusHandlers(SAVE_ACTION_ID)}
-						nav-auto={1}
-					>
-						<MdUploadFile aria-hidden /> {strings.saves.import}
 					</Button>
 				}
 

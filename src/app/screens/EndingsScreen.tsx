@@ -35,7 +35,7 @@ const EndingsScreen = () => {
 							char: strings.characters[ending.char],
 							images: getSceneGraph(ending.scene),
 							name: noBb(strings.scenario.routes[ending.char][ending.day]),
-							type: ending.type,
+							type: strings.endings[ending.type],
 							scene: ending.scene
 						}}
 						nav-auto={1}

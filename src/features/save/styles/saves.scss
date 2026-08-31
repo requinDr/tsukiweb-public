@@ -165,10 +165,10 @@
 		display: flex;
 		flex-direction: column;
 		font-size: 1.1em;
-		border-bottom: 2px solid var(--separator);
+		border-block: 2px solid var(--separator);
+		border-left: 2px solid var(--separator);
 		position: relative;
 		isolation: isolate;
-		border-left: 2px solid var(--separator);
 
 		.graphics-wrapper {
 			position: relative;
@@ -264,8 +264,6 @@
 
 		// phone landscape
 		@media screen and (max-height: 680px) and (orientation: landscape) {
-			border-bottom: 2px solid var(--separator);
-
 			.actions {
 				padding-right: .5em;
 				padding-bottom: .5em;

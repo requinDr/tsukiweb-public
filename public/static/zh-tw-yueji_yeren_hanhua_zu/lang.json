@@ -128,7 +128,8 @@
     "title-load": "尋找書籤",
     "title-save": "貼上書籤",
     "create": "新存檔",
-    "import": "匯入存檔",
+    "empty": "找不到存檔資料。",
+    "import": "匯入存檔檔案？",
     "export": "匯出",
     "delete": "刪除",
     "delete-warning": "你確定要刪除此存檔嗎？",
@@ -139,16 +140,14 @@
   },
   "game": {
     "skip-viewed": "該場景曾顯示過。",
-    "skip-hscene": "This scene contains adult content.",
     "skip-hcontent": "This passage contains adult content.",
     "skip-prompt": "要跳過嗎？",
     "toast-qsave": "進度已保存",
     "toast-qload": "恢復進度",
-    "toast-load": "恢復進度",
-    "toast-save-fail": "無法保存進度",
+    "toast-load-success": "恢復進度",
     "toast-load-fail": "無法恢復進度",
-    "toast-autoplay-stop": "自動模式停止",
-    "toast-ffw-stop": "快轉停止"
+    "toast-save-fail": "無法保存進度",
+    "toast-autoplay-stop": "自動模式停止"
   },
   "menu": {
     "graphics": "顯示影像",

@@ -128,7 +128,8 @@
     "title-load": "Cargar",
     "title-save": "Guardar",
     "create": "Nuevo guardado",
-    "import": "Importar",
+    "empty": "No se encontraron partidas guardadas.",
+    "import": "¿Importar un archivo de guardado?",
     "export": "Exportar",
     "delete": "Eliminar",
     "delete-warning": "¿Estás seguro de que quieres eliminar este guardado?",
@@ -139,16 +140,14 @@
   },
   "game": {
     "skip-viewed": "Ya has visto esta escena.",
-    "skip-hscene": "Esta escena contiene contenido para adultos.",
     "skip-hcontent": "Este fragmento contiene contenido para adultos.",
     "skip-prompt": "¿Quieres omitirlo?",
     "toast-qsave": "El progreso ha sido guardado",
     "toast-qload": "Progreso restaurado",
-    "toast-load": "Progreso restaurado",
-    "toast-save-fail": "No se pudo guardar el progreso",
+    "toast-load-success": "Progreso restaurado",
     "toast-load-fail": "No se pudo restaurar el progreso",
-    "toast-autoplay-stop": "Reproducción automática detenida",
-    "toast-ffw-stop": "Avance rápido detenido"
+    "toast-save-fail": "No se pudo guardar el progreso",
+    "toast-autoplay-stop": "Reproducción automática detenida"
   },
   "menu": {
     "graphics": "Ocultar texto",

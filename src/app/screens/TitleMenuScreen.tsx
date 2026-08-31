@@ -7,17 +7,19 @@ import { useObserved } from '@tsukiweb/common/utils/Observer'
 import { useLocation } from "wouter"
 import { history } from 'engine/history'
 import { TitleMenuButton } from '@tsukiweb/common/ui-core'
+import { dialog } from '@tsukiweb/common/ui-core/components/ModalPrompt'
 import classNames from "classnames"
 import { audio } from "engine/audio"
 import { useRef } from "react"
 import { useEclipseUnlocked } from "features/endings/hooks/useEclipseUnlocked";
 import { continueGame, newGame, savesManager } from "engine/savestates";
-import { settings } from "engine/settings";
+import { importGameData, settings } from "engine/settings";
 import AppInfo from "features/title-menu/components/AppInfo";
 import TranslationSwitch from "features/title-menu/components/TranslationSwitch";
 import { useStrings } from "translation/lang";
 import { SCREEN } from "app/utils/display";
 import { useScreenAutoNavigate } from "app/hooks";
+import { FULLSAVE_EXT, SAVE_EXT } from "app/utils/constants";
 
 
 const TitleMenuScreen = () => {
@@ -62,6 +64,19 @@ const TitleMenu = () => {
 	const { eclipseUnlocked } = useEclipseUnlocked()
 	const canResume = useRef(savesManager.savesCount > 0 || history.pagesLength > 0)
 
+	const openLoad = async () => {
+		if (savesManager.savesCount === 0) {
+			const confirmed = await dialog.confirm({
+				text: <>{strings.saves.empty}<br />{strings.saves.import}</>,
+				labelYes: strings.yes,
+				labelNo: strings.no,
+			})
+			if (!confirmed || !await importGameData(`.${FULLSAVE_EXT},.${SAVE_EXT}`))
+				return
+		}
+		navigate(SCREEN.LOAD)
+	}
+
 	return (
 		<nav className="menu">
 			<div className='menu-buttons'>
@@ -75,7 +90,7 @@ const TitleMenu = () => {
 				</TitleMenuButton>
 				}
 
-				<TitleMenuButton audio={audio} onClick={() => navigate(SCREEN.LOAD)} nav-auto={1}>
+				<TitleMenuButton audio={audio} onClick={openLoad} nav-auto={1}>
 					{strings.title.load}
 				</TitleMenuButton>
 

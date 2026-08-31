@@ -128,7 +128,8 @@
     "title-load": "寻找浮签",
     "title-save": "贴上浮签",
     "create": "新存档",
-    "import": "导入存档",
+    "empty": "未找到存档数据。",
+    "import": "导入存档文件？",
     "export": "导出",
     "delete": "删除",
     "delete-warning": "你确定要删除此存档吗？",
@@ -139,16 +140,14 @@
   },
   "game": {
     "skip-viewed": "该场景曾显示过。",
-    "skip-hscene": "This scene contains adult content.",
     "skip-hcontent": "This passage contains adult content.",
     "skip-prompt": "要跳过吗？",
     "toast-qsave": "进度已保存",
     "toast-qload": "恢复进度",
-    "toast-load": "恢复进度",
-    "toast-save-fail": "无法保存进度",
+    "toast-load-success": "恢复进度",
     "toast-load-fail": "无法恢复进度",
-    "toast-autoplay-stop": "自动模式停止",
-    "toast-ffw-stop": "快进停止"
+    "toast-save-fail": "无法保存进度",
+    "toast-autoplay-stop": "自动模式停止"
   },
   "menu": {
     "graphics": "显示图像",

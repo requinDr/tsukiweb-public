@@ -128,7 +128,8 @@
     "title-load": "Load",
     "title-save": "Save",
     "create": "New save",
-    "import": "Import save file",
+    "empty": "No save data found.",
+    "import": "Import a save file?",
     "export": "Export",
     "delete": "Delete",
     "delete-warning": "Are you sure you want to delete this save?",
@@ -139,16 +140,14 @@
   },
   "game": {
     "skip-viewed": "You have already seen this scene.",
-    "skip-hscene": "This scene contains adult content.",
     "skip-hcontent": "This passage contains adult content.",
     "skip-prompt": "Do you want to skip it?",
     "toast-qsave": "Progress has been saved",
     "toast-qload": "Progress restored",
-    "toast-load": "Progress restored",
-    "toast-save-fail": "Could not save progress",
-    "toast-load-fail": "Could not restore progress",
-    "toast-autoplay-stop": "Auto-play stopped",
-    "toast-ffw-stop": "Fast-Forward stopped"
+    "toast-load-success": "Your data has been loaded",
+    "toast-load-fail": "Failed to load data",
+    "toast-save-fail": "Failed to save data",
+    "toast-autoplay-stop": "Auto-play stopped"
   },
   "menu": {
     "graphics": "Graphics",

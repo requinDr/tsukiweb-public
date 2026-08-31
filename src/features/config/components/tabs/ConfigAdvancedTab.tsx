@@ -12,7 +12,7 @@ import { savesManager } from "engine/savestates";
 import { ConfigButtons, ConfigItem, ResetButton } from "../ConfigLayout";
 import ConfigModal from "../ConfigModal";
 import FontSelector from "../FontSelector";
-import { FULLSAVE_EXT } from "app/utils/constants";
+import { FULLSAVE_EXT, SAVE_EXT } from "app/utils/constants";
 
 let flagSupportChecked = false
 
@@ -32,8 +32,8 @@ const ConfigAdvancedTab = () => {
 		exportGameData()
 	}
 
-	const importData = (allExtensions=false) => {
-		importGameData(allExtensions ? '*' : `.${FULLSAVE_EXT}`)
+	const importData = () => {
+		importGameData(`.${FULLSAVE_EXT},.${SAVE_EXT}`)
 	}
 
 	const eraseData = async () => {
@@ -171,8 +171,8 @@ const ConfigAdvancedTab = () => {
 			<ConfigItem label={strings.config.data}>
 				<div className="config-btns">
 					<Button className="config-btn"
-						onClick={importData.bind(null, false)}
-						onContextMenu={importData.bind(null, true)}
+						onClick={importData}
+						title={`.${FULLSAVE_EXT}, .${SAVE_EXT}`}
 						nav-auto={1}>
 						<MdFileUpload aria-hidden /> {strings.config["data-import"]}
 					</Button>

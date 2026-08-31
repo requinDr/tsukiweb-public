@@ -128,7 +128,8 @@
     "title-load": "불러오기",
     "title-save": "저장",
     "create": "새로 저장",
-    "import": "저장 데이터 불러오기",
+    "empty": "저장 데이터를 찾을 수 없습니다.",
+    "import": "저장 파일을 불러오시겠습니까?",
     "export": "저장 데이터 내보내기",
     "delete": "저장 데이터 삭제",
     "delete-warning": "이 저장 데이터를 정말로 삭제하십니까?",
@@ -139,16 +140,14 @@
   },
   "game": {
     "skip-viewed": "이미 본 장면입니다.",
-    "skip-hscene": "This scene contains adult content.",
     "skip-hcontent": "This passage contains adult content.",
     "skip-prompt": "스킵하시겠습니까?",
     "toast-qsave": "저장을 성공하였습니다.",
     "toast-qload": "불러오기를 성공하였습니다.",
-    "toast-load": "불러오기를 성공하였습니다.",
-    "toast-save-fail": "저장을 실패하였습니다.",
+    "toast-load-success": "불러오기를 성공하였습니다.",
     "toast-load-fail": "불러오기를 실패하였습니다.",
-    "toast-autoplay-stop": "오토플레이를 중지합니다.",
-    "toast-ffw-stop": "빨리 감기를 중지합니다."
+    "toast-save-fail": "저장을 실패하였습니다.",
+    "toast-autoplay-stop": "오토플레이를 중지합니다."
   },
   "menu": {
     "graphics": "텍스트 창 비표시",

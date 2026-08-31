@@ -3,7 +3,7 @@ import { Settings as SettingsBase } from "@tsukiweb/common/utils/settings"
 import { textFileUserDownload, requestJSONs, twoDigits } from "@tsukiweb/common/utils/utils"
 import { savesManager, SaveState } from "./savestates"
 import { toast } from "react-toastify"
-import { TrackSourceId } from "translation/lang"
+import { strings, TrackSourceId } from "translation/lang"
 import { APP_VERSION, FULLSAVE_EXT } from "app/utils/constants"
 
 const restoreSymbol = Symbol("restore")
@@ -129,13 +129,17 @@ export const exportGameData = () => {
 /**
  * Import game data from a parsed JSON object
  */
-export const importGameDataFromJSON = async (json: Savefile) => {
+export const importGameDataFromJSON = async (json: Savefile | SaveState) => {
+  if (!('settings' in json)) {
+    await savesManager.importSaveFile(JSON.stringify(json))
+    return
+  }
   if (!json.version)
     json.version = "0.3.6" // last version without a 'version' attribute
   settings[restoreSymbol](json.settings)
   if (json.saveStates != undefined) {
     savesManager.clear()
-    savesManager.add(...json.saveStates)
+    await savesManager.add(...json.saveStates)
   }
   const timeStamp = Date.now()
   settings.lastFullExport.date = timeStamp
@@ -145,23 +149,25 @@ export const importGameDataFromJSON = async (json: Savefile) => {
   })
 }
 
-export const importGameData = async (accept = `.${FULLSAVE_EXT}`) => {
+export const importGameData = async (accept = `.${FULLSAVE_EXT}`): Promise<boolean> => {
   try {
-    const json = (await requestJSONs({accept}) as Savefile[])?.[0] as Savefile|undefined
+    const json = (await requestJSONs({accept}) as (Savefile | SaveState)[])?.[0]
     if (!json)
-      return
+      return false
     await importGameDataFromJSON(json)
 
-    toast("Your data has been loaded", {
+    toast(strings.game["toast-load-success"], {
       toastId: "loaded-data",
       type: "success",
     })
+    return true
   } catch (e) {
     console.error(e)
-    toast("Failed to load data", {
+    toast(strings.game["toast-load-fail"], {
       toastId: "failed-data",
       type: "error",
     })
+    return false
   }
 }
 
