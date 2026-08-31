@@ -16,13 +16,13 @@ export const useGameInputs = ({ rootRef, layers, actionsHandler, show }: UseGame
 		actions.createKeyMap(layers, show)
 	, [layers, show])
 
-	useEventActions(createKeyMap, (action, e, ...args) =>
-		actionsHandler.handleAction(action, e, ...args),
+	useEventActions(createKeyMap, (action, _e, ...args) =>
+		actionsHandler.handleAction(action, ...args),
 		document,
 		{ capture: false }
 	)
 
-	useSwipeGesture(actions.swipeCallback.bind(null, layers), rootRef, 50)
+	useSwipeGesture(actions.swipeCallback.bind(null, layers, actionsHandler), rootRef, 50)
 
 	useDOMEvent((e: WheelEvent)=> {
 		if (e.ctrlKey)

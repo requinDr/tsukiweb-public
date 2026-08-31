@@ -7,7 +7,7 @@ import { FaSave } from "react-icons/fa";
 import { MdPlayArrow } from 'react-icons/md';
 import { InGameLayersHandler } from "@tsukiweb/common/utils/InGameLayersHandler";
 import { moveBg } from "features/game/utils/graphics";
-import { inGameControls } from "features/game/utils/keybind";
+import { inGameControls, inGameGestures } from "features/game/utils/keybind";
 import { QUICK_SAVE_ID, savesManager } from "engine/savestates";
 import { settings } from "engine/settings";
 import { EventActions, EventFilter } from "@tsukiweb/common/input/eventActions";
@@ -97,32 +97,14 @@ function createKeyMap(layers: InGameLayersHandler, show: ShowLayers) {
 	}
 }
 
-function swipeCallback(layers: InGameLayersHandler,
+function swipeCallback(layers: InGameLayersHandler, actionsHandler: UserActionsHandler,
 					   direction: string) {
-	if (direction == "")
+	const gesture = inGameGestures.find(gesture =>
+		gesture.direction === direction && gesture.layers.some(layer => layer === layers.topLayer))
+	if (!gesture)
 		return
-	switch (layers.topLayer) {
-		case 'text':
-			switch(direction) {
-				case "up": layers.graphics = true; return true;
-				case "left": layers.menu = true; return true;
-				case "down": layers.history = true; return true;
-			}
-			break
-		case 'graphics':
-			switch(direction) {
-				case "up": moveBg("down"); return true;
-				case "down": moveBg("up"); return true;
-				case "left": layers.menu = true; return true;
-			}
-			break
-		case 'menu':
-			if (direction == "right") {
-				layers.menu = false
-				return true
-			}
-			break
-	}
+	actionsHandler.handleAction(gesture.action, ...('args' in gesture ? gesture.args : []))
+	return true
 }
 
 //#endregion ###################################################################
@@ -198,7 +180,7 @@ export class UserActionsHandler {
 		if (this._script?.continueScript)
 			quickLoad(this._script.history, this._remountScript)
 	}
-	handleAction(action: string, e: KeyboardEvent, ...args: any) {
+	handleAction(action: string, ...args: any) {
 		if (!this._script)
 			return
 		const layers = this._layers
@@ -211,7 +193,7 @@ export class UserActionsHandler {
 			case "page_nav" : this.pageNav(args[0]); break
 			case "q_save"   : this.quickSave(); break
 			case "q_load"   : this.quickLoad(); break
-			case "menu"		: console.log('menu'); layers.menu = !layers.menu; break
+			case "menu"		: layers.menu = !layers.menu; break
 			case "history"  : layers.history  = !layers.history; break
 			case "flowchart": layers.flowchart= !layers.flowchart; break
 			case "graphics" : layers.graphics = !layers.graphics; break

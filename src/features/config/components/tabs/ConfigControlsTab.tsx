@@ -1,56 +1,57 @@
-import { useRef } from "react"
 import { PageSection } from "@tsukiweb/common/ui-core"
-import { EventFilter } from "@tsukiweb/common/input/eventActions"
 import { bb } from "@tsukiweb/common/utils/Bbcode"
-import { inGameControls } from "features/game/utils/keybind"
+import { inGameControls, inGameGestures } from "features/game/utils/keybind"
+import { MdSwipeDown, MdSwipeLeft, MdSwipeRight, MdSwipeUp } from "react-icons/md";
 import { useStrings } from "translation/lang";
 
-type KeyMapEntry = [string, typeof inGameControls[keyof typeof inGameControls]]
-
-function convertAction([action, keys]: KeyMapEntry) : [string, EventFilter[]] {
-	return [
-		action,
-		Array.isArray(keys) ?
-			keys.filter(x=>x.constructor != Function && Object.hasOwn(x, 'key')) as EventFilter[]
-		: [keys]
-	]
-}
+const directionArrows = {up: <MdSwipeUp />, right: <MdSwipeLeft />, down: <MdSwipeDown />, left: <MdSwipeRight />}
 
 const ConfigControlsTab = () => {
 	const strings = useStrings()
 	const controlStrings = strings.config.controls as Record<string, string>
-	const keymap = useRef<[string, EventFilter[]][]>(
-			Object.entries(inGameControls)
-						.filter(([action, _])=> Object.hasOwn(controlStrings, action))
-						.map(convertAction))
+	const actions = [...new Set([
+		...Object.keys(inGameControls),
+		...inGameGestures.map(gesture => gesture.action),
+	])].filter(action => Object.hasOwn(controlStrings, action))
 	return (
 		<PageSection>
-			{keymap.current.map(([action, keys], i)=> 
-				<div key={i} className="key-map">
+			{actions.map(action => {
+				const keys = (inGameControls[action] ?? [])
+					.filter(({key, code}) => key || code)
+				const gestures = inGameGestures.filter(gesture => gesture.action === action)
+				return <div key={action} className="key-map">
 					<div className="config-name">
 						{bb(controlStrings[action])}
 					</div>
 
 					<div className="config-actions">
 						{keys.map(({code, key, ctrlKey, altKey, shiftKey, repeat})=>
-							<kbd key={`${code || key}`} className="key-item">
+							<kbd key={`${code || key}`} className="key">
 								{ctrlKey ? "Ctrl + " : ""}
 								{altKey ? "Alt + " : ""}
 								{shiftKey ? "Shift + " : ""}
 								{code || key}
 								{repeat != undefined && (
 									repeat && <>
-										&nbsp;
 										<span className="info">
-											{bb(controlStrings["_hold"])}
+											{controlStrings["_hold"]}
 										</span>
 									</>
 								)}
 							</kbd>
 						)}
+						{gestures.map(gesture => {
+							const layers = gesture.layers
+								.map(layer => controlStrings[`_layer-${layer}`])
+								.join(' / ')
+							return <kbd key={`${gesture.direction}-${layers}`} className="key">
+								{directionArrows[gesture.direction]}
+								<span className="info">({layers})</span>
+							</kbd>
+						})}
 					</div>
 				</div>
-			)}
+			})}
 		</PageSection>
 	)
 }

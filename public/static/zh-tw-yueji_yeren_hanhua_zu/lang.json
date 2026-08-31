@@ -104,18 +104,22 @@
     "data-erase-confirm": "刪除了所有的存檔。 如果你在未對設定進行任何更改且未開始新遊戲的情況下離開本網站，則你的電腦上不會保留任何資料",
     "controls": {
       "next": "文字推進",
-      "history": "顯示/隱藏履歷",
-      "flowchart": "Show/hide Flowchart",
-      "back": "關閉當前頁面/顯示選單",
+      "graphics": "Show / hide text",
+      "menu": "Show / Hide menu",
       "bg_move": "移動背景影像",
       "auto_play": "自動模式",
       "page_nav": "下一頁/上一頁",
+      "history": "顯示/隱藏履歷",
+      "flowchart": "Open Flowchart",
       "load": "開啟載入頁面",
       "save": "開啟保存頁面",
       "q_save": "快速保存",
       "q_load": "快速載入",
       "config": "開啟設定頁面",
-      "_hold": "[i](按住)"
+      "_hold": "按住",
+      "_layer-text": "when text is displayed",
+      "_layer-graphics": "in graphics mode",
+      "_layer-menu": "when menu is opened"
     }
   },
   "endings": {

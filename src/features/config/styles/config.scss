@@ -180,16 +180,31 @@
 
 	.key-map {
 		.config-actions {
-			margin-top: .3em;
 			display: flex;
-			flex-direction: column;
-			gap: 4px;
+			flex-wrap: wrap;
+			gap: 6px;
+			align-self: center;
 		}
-		.key-item {
-			color: var(--color-link);
-			font-weight: 600;
+		.key {
+			padding: 6px 12px;
+			font-size: .85em;
+			height: 36px;
+			letter-spacing: 0.5px;
+			background-color: #00021a;
+			box-shadow: inset 0 -2px 0 #041743, inset 0px 1px 1px -1px #00030d, 0px 1px 1px 0px #000f27;
+			border-radius: 3px;
+			text-transform: uppercase;
+			white-space: nowrap;
+			display: flex;
+			align-items: center;
+			gap: 6px;
+			svg {
+				font-size: 1.4em;
+			}
+
 			.info {
 				color: var(--text-muted);
+				text-transform: none;
 			}
 		}
 	}

@@ -103,18 +103,22 @@
     "data-erase-confirm": "All clean. Close tab.",
     "controls": {
       "next": "Next",
-      "history": "Show/hide History",
-      "flowchart": "Show/hide Flowchart",
-      "back": "Close current view / Display menu",
+      "graphics": "Show / hide text",
+      "menu": "Show / Hide menu",
       "bg_move": "Move background image",
       "auto_play": "Auto-play",
       "page_nav": "Navigate to next / previous page",
+      "history": "Open History",
+      "flowchart": "Open Flowchart",
       "load": "Open load panel",
       "save": "Open save panel",
       "q_save": "Quick-save",
       "q_load": "Quick-load",
       "config": "Open config panel",
-      "_hold": "[i](Hold)"
+      "_hold": "hold",
+      "_layer-text": "when text is displayed",
+      "_layer-graphics": "in graphics mode",
+      "_layer-menu": "when menu is opened"
     }
   },
   "endings": {

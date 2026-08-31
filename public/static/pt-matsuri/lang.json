@@ -104,18 +104,22 @@
     "data-erase-confirm": "Todos os dados foram excluídos. Se você sair deste site sem fazer nenhuma alteração nas configurações e sem iniciar um novo jogo, nenhum dado permanecerá armazenado no seu computador",
     "controls": {
       "next": "Próximo",
-      "history": "Mostrar/ocultar histórico",
-      "flowchart": "Show/hide Flowchart",
-      "back": "Fechar tela atual/Menu de exibição",
+      "graphics": "Show / hide text",
+      "menu": "Show / Hide menu",
       "bg_move": "Mover imagem de fundo",
       "auto_play": "Reprodução automática",
       "page_nav": "Navegar para a página seguinte/anterior",
+      "history": "Abrir histórico",
+      "flowchart": "Abrir Flowchart",
       "load": "Abrir painel de carregamento",
       "save": "Abrir painel de salvamento",
       "q_save": "Salvar progresso rápidamente",
       "q_load": "Carregamento rápido",
       "config": "Abrir painel de configuração",
-      "_hold": "[i](Segure)"
+      "_hold": "segure",
+      "_layer-text": "when text is displayed",
+      "_layer-graphics": "in graphics mode",
+      "_layer-menu": "when menu is opened"
     }
   },
   "endings": {

@@ -104,18 +104,22 @@
     "data-erase-confirm": "모든 저장 데이터가 삭제되었습니다. 설정을 변경하지 않고, 새 게임을 시작하지 않고 이 웹사이트를 떠나시면 컴퓨터에 남은 데이터는 없습니다.",
     "controls": {
       "next": "다음으로",
-      "history": "백로그",
-      "flowchart": "Show/hide Flowchart",
-      "back": "현재 창 닫기 / 메뉴 표시",
+      "graphics": "Show / hide text",
+      "menu": "Show / Hide menu",
       "bg_move": "배경그림 위치 조정",
       "auto_play": "오토플레이",
       "page_nav": "전 페이지로 넘어가기 / 다음 페이지로 넘어가기",
+      "history": "백로그",
+      "flowchart": "Show/hide Flowchart",
       "load": "불러오기 메뉴 열기",
       "save": "저장 메뉴 열기",
       "q_save": "빠른 저장",
       "q_load": "빠른 불러오기",
       "config": "설정 메뉴 열기",
-      "_hold": "[i](Hold)"
+      "_hold": "hold",
+      "_layer-text": "when text is displayed",
+      "_layer-graphics": "in graphics mode",
+      "_layer-menu": "when menu is opened"
     }
   },
   "endings": {

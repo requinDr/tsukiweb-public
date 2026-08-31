@@ -104,18 +104,22 @@
     "data-erase-confirm": "删除了所有的存档。 如果你在未对设置进行任何更改且未开始新游戏的情况下离开本网站，则你的电脑上不会保留任何数据",
     "controls": {
       "next": "文字推进",
-      "history": "显示/隐藏回顾前文",
-      "flowchart": "显示/隐藏流程图",
-      "back": "关闭当前页面/显示菜单",
+      "graphics": "Show / hide text",
+      "menu": "Show / Hide menu",
       "bg_move": "移动背景图像",
       "auto_play": "自动模式",
       "page_nav": "下一页/上一页",
+      "history": "显示/隐藏回顾前文",
+      "flowchart": "显示/隐藏流程图",
       "load": "打开读档页面",
       "save": "打开存档页面",
       "q_save": "快速存档",
       "q_load": "快速读档",
       "config": "打开环境设置页面",
-      "_hold": "[i](按住)"
+      "_hold": "按住",
+      "_layer-text": "when text is displayed",
+      "_layer-graphics": "in graphics mode",
+      "_layer-menu": "when menu is opened"
     }
   },
   "endings": {

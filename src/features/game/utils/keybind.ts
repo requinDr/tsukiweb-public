@@ -22,6 +22,15 @@ enum Gamepad {
     Home = 16
 }
 
+export const inGameGestures = [
+    {layers: ['text'], direction: 'up', action: 'graphics'},
+    {layers: ['text'], direction: 'left', action: 'menu'},
+    {layers: ['text'], direction: 'down', action: 'history'},
+    {layers: ['graphics'], direction: 'up', action: 'bg_move', args: ['down']},
+    {layers: ['graphics'], direction: 'down', action: 'bg_move', args: ['up']},
+    {layers: ['menu'], direction: 'right', action: 'menu'},
+] as const
+
 //TODO: fast forward (RB)
 export const inGameControls: Record<string, EventFilter[]> = {
     "next":    [
