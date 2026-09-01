@@ -4,7 +4,6 @@
 	padding-inline: var(--page-padding);
 	
 	.endings-list {
-		margin-top: 1.4em;
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(min(210px, 25%), 1fr));
 		isolation: isolate;

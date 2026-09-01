@@ -26,8 +26,6 @@
 
 	.page-title {
 		padding-inline: 0;
-		font-size: 2.8em;
-		font-weight: 600;
 	}
 
 	.extra-menu {
@@ -62,17 +60,15 @@
 			flex-direction: column;
 
 			.menu-item {
-				text-align: start;
 				font-size: 1.5em;
 				font-weight: 500;
 				letter-spacing: 1px;
 				width: fit-content;
-				padding-block: .6em;
+				margin-block: .6em;
 			}
 		}
 		.back-button {
-			margin-bottom: .5em;
-			padding: .5rem;
+			margin-bottom: 1rem;
 			padding-left: 0;
 		}
 	}

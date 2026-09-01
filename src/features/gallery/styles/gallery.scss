@@ -5,11 +5,7 @@
 	height: 100%;
 	overflow-y: auto;
 	scrollbar-gutter: stable;
-
-	.tabs {
-		padding-inline: var(--page-padding);
-		margin-top: var(--page-padding);
-	}
+	padding-top: 2rem;
 
 	section {
 		position: relative;

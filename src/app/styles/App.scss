@@ -21,10 +21,9 @@
 	display: flex;
 }
 .page-content {
-	--page-padding: clamp(.8rem, 1.6vmin, 1rem);
+	--page-padding: 1rem;
 	max-width: var(--page-width);
 	margin-inline: auto;
-	padding-block: var(--page-padding);
 	height: inherit;
 	width: inherit;
 	display: flex;

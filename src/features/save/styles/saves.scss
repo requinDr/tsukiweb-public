@@ -7,10 +7,6 @@
 	}
 	.page-content {
 		@media screen and (orientation: landscape) and (max-height: 680px) {
-			.page-title {
-				padding: .8rem;
-				padding-bottom: 0;
-			}
 			.page-section {
 				border: 0;
 			}
@@ -26,6 +22,10 @@
 		"buttons buttons";
 	grid-template-columns: 3fr minmax(280px, 1fr);
 	grid-template-rows: min-content 1fr min-content;
+
+	.page-title {
+		margin-top: var(--page-padding);
+	}
 
 	.saves {
 		grid-area: list;
@@ -277,11 +277,10 @@
 		}
 	}
 
-	.save-buttons {
+	.actions-buttons {
 		grid-area: buttons;
-		display: flex;
-		align-items: center;
 		padding-bottom: var(--safe-area-max-inset-bottom);
+		margin-bottom: 1rem;
 	}
 
 	.graphics {
@@ -351,6 +350,9 @@
 		grid-template-rows: minmax(160px, 2fr) 5fr min-content;
 		margin-top: calc(var(--page-padding) * -1);
 		
+		.page-title {
+			margin-top: 0;
+		}
 		.warning-button {
 			margin-right: 0;
 		}
@@ -362,5 +364,9 @@
 			"page-title list"
 			"info list"
 			"buttons list";
+
+		.page-title {
+			margin-top: 0;
+		}
 	}
 }

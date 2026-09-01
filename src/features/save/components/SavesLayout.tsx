@@ -130,7 +130,7 @@ const SavesLayout = ({variant, onBack}: Props) => {
 				deleteSave={handleDeleteSave}
 			/>
 			
-			<div className="save-buttons">
+			<div className="actions-buttons">
 				<TitleMenuButton
 					audio={audio}
 					onClick={onBack.bind(null, false)}

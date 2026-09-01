@@ -1,26 +1,27 @@
 @use '@tsukiweb/common/styles/partials/_components.scss';
 
 #config-layout {
+	.page-title, .tabs {
+		margin-top: var(--page-padding);
+	}
 	.back-button {
-		margin: .5rem;
-		padding: .5rem;
-		padding-bottom: calc(.5rem + var(--safe-area-max-inset-bottom));
+		margin: 1rem;
+		margin-bottom: calc(1rem + var(--safe-area-max-inset-bottom));
 	}
 
 	@media screen and (orientation: landscape) and (max-height: 680px) {
-		--page-padding: 0;
-		.page-title {
-			padding: .8rem;
-			padding-bottom: 0;
-		}
 		.page-section {
 			border: 0;
 			padding-inline: 1rem;
 		}
+		.page-title, .tabs {
+			margin-top: 0;
+		}
 	}
-
-	.tabs {
-		padding-inline: var(--page-padding);
+	@media screen and (max-width: 760px) and (orientation: portrait) {
+		.page-title {
+			margin-top: 0;
+		}
 	}
 	
 	.sub {
