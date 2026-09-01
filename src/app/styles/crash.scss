@@ -2,10 +2,16 @@
 	overflow-y: auto;
 	user-select: text;
 	
-	.page-content {
+	.crash-content {
+		--page-padding: 1rem;
 		height: unset;
+		width: 100%;
 		text-align: center;
 		max-width: 800px;
+		margin-inline: auto;
+		display: flex;
+		flex-direction: column;
+		align-self: center;
 		align-items: center;
 	}
 

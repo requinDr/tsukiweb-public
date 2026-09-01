@@ -1,7 +1,7 @@
 import { Router } from "wouter";
 import AnimatedRoutes from '../../app/components/AnimatedRoutes';
 import { getLocale } from "../../translation/lang";
-import AppLayout from "app/components/AppLayout";
+import AppEffects from "app/components/AppEffects";
 import { Slide, ToastContainer } from "react-toastify";
 import { CommonProvider } from "@tsukiweb/common/context";
 import { imageSrc } from "translation/assets";
@@ -30,9 +30,9 @@ function App() {
 				}
 			}}>
 				<Router base={import.meta.env.BASE_URL}>
-					<AppLayout>
+					<AppEffects>
 						<AnimatedRoutes />
-					</AppLayout>
+					</AppEffects>
 
 					<ToastContainer
 						transition={Slide}

@@ -9,7 +9,7 @@ import { useConfig } from "@tsukiweb/common/hooks/useConfig";
 import { exportGameData, importGameData, settings } from "engine/settings";
 import { useStrings } from "translation/lang";
 import { savesManager } from "engine/savestates";
-import { ConfigButtons, ConfigItem, ResetButton } from "../ConfigLayout";
+import { ConfigButtons, ConfigItem, ResetButton } from "../ConfigControls";
 import ConfigModal from "../ConfigModal";
 import FontSelector from "../FontSelector";
 import { FULLSAVE_EXT, SAVE_EXT } from "app/utils/constants";

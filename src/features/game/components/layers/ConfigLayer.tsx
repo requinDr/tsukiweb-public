@@ -1,6 +1,6 @@
 import { memo, useEffect, useRef, useState } from "react"
 import AnimatedHideActivityDiv from "@tsukiweb/common/ui-core/components/AnimatedHideActivityDiv"
-import ConfigLayout, { ConfigTabs } from "features/config/components/ConfigLayout";
+import ConfigView, { ConfigTabs } from "features/config/components/ConfigView";
 
 
 type Props = {
@@ -23,7 +23,7 @@ const ConfigLayer = ({display, onBack}: Props) => {
 			id="layer-config"
 			className="layer"
 			ref={rootRef}>
-			<ConfigLayout
+			<ConfigView
 				onBack={onBack}
 				selectedTab={activeTab}
 				setSelectedTab={setActiveTab}

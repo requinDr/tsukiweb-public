@@ -4,7 +4,7 @@ import { ViewRatio, TEXT_SPEED } from "@tsukiweb/common/constants"
 import { useIsFullscreen } from "@tsukiweb/common/hooks"
 import { useConfig } from "@tsukiweb/common/hooks/useConfig";
 import { getLocale, languages, useStrings } from "translation/lang";
-import { ConfigButtons, ConfigItem, ConfigRange, ResetButton } from "../ConfigLayout";
+import { ConfigButtons, ConfigItem, ConfigRange, ResetButton } from "../ConfigControls";
 import ModalLanguageSelection from "../ModalLanguageSelection";
 import { useState } from "react";
 import { settings } from "engine/settings";

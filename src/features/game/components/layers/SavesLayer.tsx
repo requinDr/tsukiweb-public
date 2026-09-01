@@ -1,6 +1,6 @@
 import { useRef } from "react"
 import AnimatedHideActivityDiv from "@tsukiweb/common/ui-core/components/AnimatedHideActivityDiv";
-import SavesLayout from "features/save/components/SavesLayout";
+import SavesView from "features/save/components/SavesView";
 
 
 type Props = {
@@ -22,9 +22,7 @@ const SavesLayer = ({mode, onBack}: Props) => {
       className="layer"
       ref={rootRef}
     >
-      <div className="page-content">
-        <SavesLayout key={lastMode.current} variant={lastMode.current} onBack={onBack} />
-      </div>
+		<SavesView key={lastMode.current} variant={lastMode.current} onBack={onBack} />
     </AnimatedHideActivityDiv>
   )
 }

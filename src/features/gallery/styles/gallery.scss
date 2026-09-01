@@ -6,6 +6,9 @@
 	overflow-y: auto;
 	scrollbar-gutter: stable;
 	padding-top: 2rem;
+	display: flex;
+	flex-direction: column;
+	min-height: 0;
 
 	section {
 		position: relative;
@@ -81,16 +84,6 @@
 		}
 	}
 
-	@media screen and (orientation: landscape) and (max-height: 680px) {
-		grid-template-columns: 1fr;
-		grid-template-areas:
-			"tabs"
-			"content";
-
-		& > .tabs {
-			flex-direction: row;
-		}
-	}
 }
 
 .yarl {

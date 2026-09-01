@@ -19,6 +19,12 @@
 
 	footer {
 		background: var(--transparent-layer);
+
+		.back-button {
+			font-size: 1.1rem;
+			font-weight: 700;
+			letter-spacing: 1px;
+		}
 	}
 
 	.scroll-container {

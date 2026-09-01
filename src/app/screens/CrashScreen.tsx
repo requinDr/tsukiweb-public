@@ -15,7 +15,7 @@ const PageCrash = ({ error }: Props) => {
 	if (!(error instanceof Error)) {
 		return (
 			<div id="page-crash" className="page">
-				<div className="page-content">
+				<div className="crash-content">
 					<h1>{getErrorMessage(error)}</h1>
 					<a href={import.meta.env.BASE_URL}>
 						Go back to the home page
@@ -27,7 +27,7 @@ const PageCrash = ({ error }: Props) => {
 
 	return (
 		<div id="page-crash" className="page">
-			<div className="page-content">
+			<div className="crash-content">
 				<h1>An error has occured</h1>
 				<p className="desc">
 					If this is the first time you've launched this application on this browser,

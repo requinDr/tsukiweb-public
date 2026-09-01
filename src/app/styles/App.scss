@@ -20,30 +20,6 @@
 	position: relative;
 	display: flex;
 }
-.page-content {
-	--page-padding: 1rem;
-	max-width: var(--page-width);
-	margin-inline: auto;
-	height: inherit;
-	width: inherit;
-	display: flex;
-	flex-direction: column;
-	align-self: center;
-}
-main {
-	display: flex;
-	flex-direction: column;
-	flex-grow: 1;
-	min-height: 0;
-}
-
-.back-button {
-	width: fit-content;
-	font-size: 1.1rem;
-	font-weight: 700;
-	letter-spacing: 1px;
-}
-
 /* Overlay */
 .modal {
 	.close-btn {

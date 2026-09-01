@@ -1,20 +1,25 @@
 import * as m from "motion/react-m"
 import { PropsWithChildren, useEffect } from "react"
-import "../styles/extra.scss"
+import "../../features/title-menu/styles/extra.scss"
 import { useStrings } from "translation/lang"
 import { useLocation } from "wouter"
 import { PageTitle, TitleMenuButton } from "@tsukiweb/common/ui-core"
 import { audio } from "engine/audio"
 import { useEclipseUnlocked } from "features/endings/hooks/useEclipseUnlocked";
 import { SCREEN, displayMode } from "app/utils/display";
-import { useDefaultNavBack } from "@tsukiweb/common/hooks"
+import { useDefaultNavBack, useNavBackRef } from "@tsukiweb/common/hooks"
 import Ornament from "@assets/images/ornament.webp"
+import PageBackButton from "app/components/PageBackButton"
 
-const ExtraLayout = ({ children }: PropsWithChildren) => {
+const ExtraShell = ({ children }: PropsWithChildren) => {
+	const focusCurrentMenuItem = () => {
+		const currentPage = "/" + window.location.pathname.split("/")[1]
+		document.querySelector<HTMLElement>(`#extra-${currentPage.slice(1)}`)?.focus()
+	}
+
 	return (
 		<m.div
 			id="extra"
-			className="page-content"
 			initial={{opacity: 0}}
 			animate={{opacity: 1}}
 			exit={{opacity: 0}}>
@@ -22,21 +27,22 @@ const ExtraLayout = ({ children }: PropsWithChildren) => {
 			<img src={Ornament} alt="" className="rightOrnament" />
 			<ExtraMenu />
 
-			<m.div
+			<m.main
 				className="extra-content"
+				ref={useNavBackRef(focusCurrentMenuItem)}
 				initial={{y: -10, opacity: 0.4}}
 				animate={{y: 0, opacity: 1}}
 				exit={{y: 20, opacity: 0}}
 				transition={{duration: 0.2}}
-				key={location.pathname}
+				key={window.location.pathname}
 			>
 				{children}
-			</m.div>
+			</m.main>
 		</m.div>
 	)
 }
 
-export default ExtraLayout
+export default ExtraShell
 
 function back() {
 	displayMode.screen = SCREEN.TITLE
@@ -106,13 +112,9 @@ const ExtraMenu = () => {
 					Plus-Disc
 				</TitleMenuButton>
 			</div>
-			<TitleMenuButton
-				audio={audio}
-				onClick={()=>navigate(SCREEN.TITLE)}
-				className="back-button"
-				nav-auto={1}>
-				{`<<`} {strings.back}
-			</TitleMenuButton>
+			<div className="back-action">
+				<PageBackButton onClick={()=>navigate(SCREEN.TITLE)} />
+			</div>
 		</div>
 	)
 }

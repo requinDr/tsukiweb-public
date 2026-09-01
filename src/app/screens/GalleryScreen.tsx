@@ -1,13 +1,13 @@
-import { ComponentProps, useMemo } from 'react'
+import { useEffect, useMemo, useRef } from 'react'
 import '@features/gallery/styles/gallery.scss'
 import * as m from "motion/react-m"
 import { AnimatePresence, Variants } from 'motion/react'
-import { PageTabsLayout } from '@tsukiweb/common/ui-core'
+import { TabsBar } from '@tsukiweb/common/ui-core'
 import { CharId } from 'app/utils/types'
 import GalleryImage from 'features/gallery/components/GalleryImage'
 import { audio } from 'engine/audio'
 import { GalleryTotal } from 'features/gallery/components/GalleryComponents'
-import { useNavBackRef, useQueryParam } from '@tsukiweb/common/hooks'
+import { useQueryParam } from '@tsukiweb/common/hooks'
 import { CHARS } from 'app/utils/constants';
 import { settings } from 'engine/settings';
 import cg from 'features/gallery/utils/gallery';
@@ -43,14 +43,11 @@ const getImgDetails = (image: string) => {
 
 	return { alts, shownAlts }
 }
-function back() {
-	(document.querySelector('#extra-gallery') as HTMLElement)?.focus()
-}
-
 const GalleryScreen = () => {
 	useScreenAutoNavigate(SCREEN.GALLERY)
 	const strings = useStrings()
 	const [selectedTab, setSelectedTab] = useQueryParam<CharId>("tab", "ark")
+	const rootRef = useRef<HTMLDivElement>(null)
 
 	const tabImages: string[] = useMemo(() => {
 		const imagesTmp = cg.getByGroup(selectedTab)
@@ -58,19 +55,19 @@ const GalleryScreen = () => {
 		return imagesTmp.filter(image => !cg.getImg(image).altOf)
 	}, [selectedTab])
 
-	const tabs: ComponentProps<typeof PageTabsLayout>["tabs"] = CHARS.map(char => ({
+	const tabs = CHARS.map(char => ({
 		label: strings.characters[char as CharId],
 		value: char,
 		audio: audio
 	}))
 
+	useEffect(() => {
+		requestAnimationFrame(() => rootRef.current?.scrollTo({ top: 0, behavior: "instant" }))
+	}, [selectedTab])
+
 	return (
-		<PageTabsLayout
-			id="gallery"
-			tabs={tabs}
-			selectedTab={selectedTab}
-			setSelectedTab={setSelectedTab}
-		>
+		<div id="gallery" ref={rootRef}>
+			<TabsBar tabs={tabs} selected={selectedTab} setSelected={setSelectedTab} />
 			<section>
 				<AnimatePresence mode="popLayout">
 					<m.div
@@ -79,8 +76,7 @@ const GalleryScreen = () => {
 						initial="hidden"
 						animate="show"
 						exit="hidden"
-						className="gallery-container"
-						ref={useNavBackRef(back)}>
+						className="gallery-container">
 						{tabImages?.map(image => {
 							const {alts, shownAlts} = getImgDetails(image)
 
@@ -115,7 +111,7 @@ const GalleryScreen = () => {
 					</m.div>
 				</AnimatePresence>
 			</section>
-		</PageTabsLayout>
+		</div>
 	)
 }
 

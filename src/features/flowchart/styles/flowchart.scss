@@ -1,4 +1,8 @@
 #flowchart {
+	height: 100%;
+	width: 100%;
+	min-height: 0;
+	display: flex;
 	mask-image: linear-gradient(90deg, transparent 0%, black calc(var(--page-padding) / 2));
 
 	.flowchart-container {
@@ -19,6 +23,11 @@
 }
 
 .flowchart-container {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	width: 100%;
+	min-height: 0;
 	container-type: inline-size;
 	isolation: isolate;
 	padding-top: 4em;

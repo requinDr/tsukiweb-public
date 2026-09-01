@@ -1,34 +1,14 @@
 @use '@tsukiweb/common/styles/partials/_components.scss';
-
-#saves, #layer-save {
-	.back-button {
-		margin: .5rem;
-		padding: .5rem;
-	}
-	.page-content {
-		@media screen and (orientation: landscape) and (max-height: 680px) {
-			.page-section {
-				border: 0;
-			}
-		}
-	}
-}
+@use '@tsukiweb/common/ui-core/styles/_mixins.scss' as *;
 
 #saves-layout {
-	display: grid;
-	grid-template-areas:
-		"page-title page-title"
-		"list info"
-		"buttons buttons";
-	grid-template-columns: 3fr minmax(280px, 1fr);
-	grid-template-rows: min-content 1fr min-content;
-
-	.page-title {
-		margin-top: var(--page-padding);
+	@include mobile-landscape {
+		.page-section {
+			border: 0;
+		}
 	}
 
 	.saves {
-		grid-area: list;
 		letter-spacing: 1px;
 		padding-top: 10px;
 		padding-bottom: 80px;
@@ -160,7 +140,6 @@
 	}
 
 	.info {
-		grid-area: info;
 		overflow-y: auto;
 		scrollbar-gutter: stable;
 		display: flex;
@@ -277,12 +256,6 @@
 		}
 	}
 
-	.actions-buttons {
-		grid-area: buttons;
-		padding-bottom: var(--safe-area-max-inset-bottom);
-		margin-bottom: 1rem;
-	}
-
 	.graphics {
 		aspect-ratio: 4/3;
 		overflow: hidden;
@@ -342,31 +315,8 @@
 	}
 
 	@media screen and (max-width: 760px) and (orientation: portrait) {
-		grid-template-areas:
-			"info info"
-			"list list"
-			"buttons page-title";
-		grid-template-columns: 1fr min-content;
-		grid-template-rows: minmax(160px, 2fr) 5fr min-content;
-		margin-top: calc(var(--page-padding) * -1);
-		
-		.page-title {
-			margin-top: 0;
-		}
 		.warning-button {
 			margin-right: 0;
-		}
-	}
-
-	@media screen and (max-height: 680px) and (orientation: landscape) {
-		grid-template-columns: 264px 1fr;
-		grid-template-areas:
-			"page-title list"
-			"info list"
-			"buttons list";
-
-		.page-title {
-			margin-top: 0;
 		}
 	}
 }

@@ -1,4 +1,3 @@
-import styles from "@tsukiweb/common/ui-core/styles/layouts.module.scss"
 import '@features/endings/styles/endings.scss'
 import { settings } from 'engine/settings'
 import MainEnding from 'features/endings/components/MainEnding'
@@ -11,12 +10,7 @@ import { SCREEN } from "app/utils/display";
 import { useScreenAutoNavigate } from "app/hooks";
 import { PopoverProvider } from "@tsukiweb/common/flowchart";
 import EndingPopover from "features/endings/components/EndingPopover";
-import { useNavBackRef } from "@tsukiweb/common/hooks"
 import { getSceneGraph } from "engine/utils"
-
-function back() {
-	(document.querySelector('#extra-endings') as HTMLElement)?.focus()
-}
 
 const EndingsScreen = () => {
 	useScreenAutoNavigate(SCREEN.ENDINGS)
@@ -24,7 +18,7 @@ const EndingsScreen = () => {
 	const { sawEclipse, eclipseUnlocked } = useEclipseUnlocked()
 
 	return (
-		<main className={styles.pageContent} id="endings" ref={useNavBackRef(back)}>
+		<div id="endings">
 			<section className="endings-list">
 				{Object.values(endings).map((ending, index) =>
 					<MainEnding

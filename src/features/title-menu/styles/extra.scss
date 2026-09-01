@@ -1,4 +1,7 @@
+@use '@tsukiweb/common/ui-core/styles/_mixins.scss' as *;
+
 #extra {
+	@include page-container;
 	display: grid;
 	grid-template-columns: 210px 1fr;
 	grid-template-areas: "extra-menu extra-content";
@@ -67,9 +70,9 @@
 				margin-block: .6em;
 			}
 		}
-		.back-button {
-			margin-bottom: 1rem;
-			padding-left: 0;
+		.back-action {
+			margin-left: -.5rem;
+			margin-bottom: .5rem;
 		}
 	}
 
@@ -122,8 +125,9 @@
 					white-space: nowrap;
 				}
 			}
-			.back-button {
-				padding-left: 2rem;
+			.back-action {
+				margin-left: 0;
+				padding-left: 1.5rem;
 			}
 		}
 	}
@@ -138,6 +142,9 @@
 
 			&::before {
 				left: calc(-1rem - env(safe-area-inset-left, 0));
+			}
+			.menus {
+				margin-top: 0;
 			}
 		}
 	}

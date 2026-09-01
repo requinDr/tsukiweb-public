@@ -3,7 +3,7 @@ import { AnimatePresence, LazyMotion, domAnimation } from 'motion/react';
 import '@tsukiweb/common/styles/main.scss'
 import '../styles/App.scss'
 import '@tsukiweb/common/graphics/styles/graphics.scss'
-import ExtraLayout from "features/title-menu/components/ExtraLayout";
+import ExtraShell from "app/layouts/ExtraShell";
 import { useCallback, useEffect, useState } from "react";
 import ConfigScreen from "app/screens/ConfigScreen";
 import DisclaimerScreen from "app/screens/DisclaimerScreen";
@@ -66,19 +66,19 @@ const AnimatedRoutes = () => {
 					</Route>
 
 					<Route path={SCREEN.GALLERY}>
-						<ExtraLayout><GalleryScreen /></ExtraLayout>
+						<ExtraShell><GalleryScreen /></ExtraShell>
 					</Route>
 					<Route path={SCREEN.ENDINGS}>
-						<ExtraLayout><EndingsScreen /></ExtraLayout>
+						<ExtraShell><EndingsScreen /></ExtraShell>
 					</Route>
 					<Route path={`${SCREEN.SCENES}/:sceneId`}>
-						<ExtraLayout><SceneReplayScreen /></ExtraLayout>
+						<ExtraShell><SceneReplayScreen /></ExtraShell>
 					</Route>
 					<Route path={SCREEN.SCENES}>
-						<ExtraLayout><FlowchartScreen /></ExtraLayout>
+						<ExtraShell><FlowchartScreen /></ExtraShell>
 					</Route>
 					<Route path={SCREEN.PLUS_DISC}>
-						<ExtraLayout><PlusDiscScreen /></ExtraLayout>
+						<ExtraShell><PlusDiscScreen /></ExtraShell>
 					</Route>
 
 					<Route path={SCREEN.WINDOW}>

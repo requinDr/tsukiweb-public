@@ -11,7 +11,7 @@ type Props = {
 	children: React.ReactNode
 }
 
-const AppLayout = ({ children }: Props) => {
+const AppEffects = ({ children }: Props) => {
 	useObserver(font => {
 		const root = document.documentElement
 		root.style.setProperty('--game-font', font)
@@ -33,4 +33,4 @@ const AppLayout = ({ children }: Props) => {
 	return children
 }
 
-export default AppLayout
+export default AppEffects

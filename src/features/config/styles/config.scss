@@ -1,26 +1,11 @@
 @use '@tsukiweb/common/styles/partials/_components.scss';
+@use '@tsukiweb/common/ui-core/styles/_mixins.scss' as *;
 
 #config-layout {
-	.page-title, .tabs {
-		margin-top: var(--page-padding);
-	}
-	.back-button {
-		margin: 1rem;
-		margin-bottom: calc(1rem + var(--safe-area-max-inset-bottom));
-	}
-
-	@media screen and (orientation: landscape) and (max-height: 680px) {
+	@include mobile-landscape {
 		.page-section {
 			border: 0;
 			padding-inline: 1rem;
-		}
-		.page-title, .tabs {
-			margin-top: 0;
-		}
-	}
-	@media screen and (max-width: 760px) and (orientation: portrait) {
-		.page-title {
-			margin-top: 0;
 		}
 	}
 	
@@ -285,7 +270,7 @@
 		}
 	}
 
-	@media screen and (orientation: landscape) and (max-height: 680px) {
+	@include mobile-landscape {
 		.tabs {
 			flex-direction: column;
 

@@ -8,11 +8,11 @@ import { useVirtualizer } from "@tanstack/react-virtual"
 import { history } from "engine/history"
 import { computeSaveHash, exportGameData, settings } from "engine/settings"
 import { useObserver } from "@tsukiweb/common/utils/Observer"
-import { Button, TitleMenuButton, PageSection, PageTitle } from "@tsukiweb/common/ui-core"
-import { audio } from "engine/audio"
+import { Button, PageLayout, PageSection } from "@tsukiweb/common/ui-core"
 import { QUICK_SAVE_ID, SaveState, compareSaveStates, savesManager } from "engine/savestates";
 import { useStrings } from "translation/lang";
 import { SCREEN, displayMode } from "app/utils/display";
+import PageBackButton from "app/components/PageBackButton";
 
 
 const SAVE_ACTION_ID = 1
@@ -21,11 +21,11 @@ type Props = {
 	variant: "save"|"load",
 	onBack: (saveLoaded: boolean)=>void,
 }
-const SavesLayout = ({variant, onBack}: Props) => {
+const SavesView = ({variant, onBack}: Props) => {
 	const strings = useStrings()
 	const [saves, setSaves] = useState<Array<SaveState>>([])
 	const [focusedId, setFocusedSave] = useState<number>()
-	const parentRef = useRef<HTMLDivElement>(null)
+	const parentRef = useRef<HTMLElement>(null)
 	const focusedIdRef = useRef(focusedId)
 
 	useEffect(() => { focusedIdRef.current = focusedId }, [focusedId])
@@ -101,8 +101,25 @@ const SavesLayout = ({variant, onBack}: Props) => {
 	})
 
 	return (
-		<main id="saves-layout">
-			<PageTitle>{title}</PageTitle>
+		<PageLayout
+			id="saves-layout"
+			variant="master-detail"
+			title={title}
+			onBack={() => onBack(false)}
+			secondary={
+				<SaveDetails
+					id={focusedId}
+					saveState={focusedSave}
+					deleteSave={handleDeleteSave}
+				/>
+			}
+			actions={
+				<>
+					<PageBackButton onClick={() => onBack(false)} />
+					<ExportWarning />
+				</>
+			}
+		>
 			<PageSection className="saves" ref={parentRef}>
 				{variant === "save" &&
 					<Button
@@ -123,36 +140,18 @@ const SavesLayout = ({variant, onBack}: Props) => {
 					saves={saves}
 				/>
 			</PageSection>
-
-			<SaveDetails
-				id={focusedId}
-				saveState={focusedSave}
-				deleteSave={handleDeleteSave}
-			/>
-			
-			<div className="actions-buttons">
-				<TitleMenuButton
-					audio={audio}
-					onClick={onBack.bind(null, false)}
-					className="back-button"
-					nav-auto={1}>
-					{`<<`} {strings.back}
-				</TitleMenuButton>
-				
-				<ExportWarning />
-			</div>
-		</main>
+		</PageLayout>
 	)
 }
 
-export default SavesLayout
+export default SavesView
 
 
 type SavesListProps = {
 	onSaveSelect: (id: number)=>void,
 	focusedId?: number,
 	setFocusedSave: (id: number)=>void,
-	parentRef: React.RefObject<HTMLDivElement | null>,
+	parentRef: React.RefObject<HTMLElement | null>,
 	saves: Array<SaveState>,
 }
 const SavesList = ({onSaveSelect, focusedId, setFocusedSave, parentRef, saves}: SavesListProps) => {

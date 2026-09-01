@@ -5,7 +5,7 @@ import { negative } from "@tsukiweb/common/utils/utils"
 import { bb } from "@tsukiweb/common/utils/Bbcode"
 import { useConfig } from "@tsukiweb/common/hooks/useConfig";
 import { useStrings } from "translation/lang";
-import { ConfigButtons, ConfigIconButton, ConfigItem, ConfigRange, ResetButton } from "../ConfigLayout";
+import { ConfigButtons, ConfigIconButton, ConfigItem, ConfigRange, ResetButton } from "../ConfigControls";
 import ConfigModal from "../ConfigModal";
 import { settings } from "engine/settings";
 
