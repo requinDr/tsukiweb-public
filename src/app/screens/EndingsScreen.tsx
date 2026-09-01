@@ -66,7 +66,7 @@ const EndingsScreen = () => {
 					</div>
 				</PopoverProvider>
 			</section>
-		</main>
+		</div>
 	)
 }
 

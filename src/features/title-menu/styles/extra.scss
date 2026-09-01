@@ -28,13 +28,12 @@
 	}
 
 	.page-title {
-		padding-inline: 0;
+		margin-top: var(--page-padding);
 	}
 
 	.extra-menu {
 		grid-area: extra-menu;
 		display: flex;
-		padding: var(--page-padding);
 		padding-right: 0;
 		flex-direction: column;
 		position: relative;
@@ -59,6 +58,7 @@
 			flex: 1;
 			margin-top: 1.8em;
 			margin-bottom: 1em;
+			padding-left: calc(var(--page-padding) + env(safe-area-inset-left, 0));
 			display: flex;
 			flex-direction: column;
 
@@ -71,8 +71,8 @@
 			}
 		}
 		.back-action {
-			margin-left: -.5rem;
-			margin-bottom: .5rem;
+			padding: .5rem;
+			padding-bottom: calc(1.5rem + var(--safe-area-max-inset-bottom));
 		}
 	}
 
@@ -107,7 +107,7 @@
 				min-width: 0;
 				margin: 0;
 				padding-top: .5em;
-				padding-inline: 2rem;
+				padding-inline: var(--page-padding);
 				font-size: 0.8em;
 				gap: 1.8em;
 				mask-image: linear-gradient(to right, black 95%, transparent 100%);
@@ -127,7 +127,7 @@
 			}
 			.back-action {
 				margin-left: 0;
-				padding-left: 1.5rem;
+				padding-top: 0;
 			}
 		}
 	}
@@ -138,7 +138,6 @@
 		.extra-menu {
 			font-size: .8em;
 			overflow-y: auto;
-			padding-left: calc(var(--page-padding) + env(safe-area-inset-left, 0));
 
 			&::before {
 				left: calc(-1rem - env(safe-area-inset-left, 0));
