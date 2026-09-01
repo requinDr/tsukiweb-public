@@ -2,7 +2,7 @@ import { Fragment, ReactComponentElement, ReactElement } from "react"
 import { PageSection } from "@tsukiweb/common/ui-core"
 import { bb } from "@tsukiweb/common/utils/Bbcode"
 import { Gamepad, inGameControls, inGameGestures, menuKeyMap } from "features/game/utils/keybind"
-import { MdBackspace, MdSportsEsports, MdSwipeDown, MdSwipeLeft, MdSwipeRight, MdSwipeUp, MdTouchApp } from "react-icons/md";
+import { MdBackspace, MdKeyboardReturn, MdSpaceBar, MdSportsEsports, MdSwipeDown, MdSwipeLeft, MdSwipeRight, MdSwipeUp, MdTouchApp } from "react-icons/md";
 import { PiMouseLeftClickFill, PiMouseRightClickFill } from "react-icons/pi";
 import { ScrollUp } from "@tsukiweb/common/icons/scroll_up"
 import { useStrings } from "translation/lang";
@@ -64,8 +64,10 @@ const keyLabels: Record<string, string|ReactElement> = {
 	PageDown: '⇟',/*  */
 	Control: 'Ctrl',
 	Meta: '⌘',
-	Space: ' ␣ ',
-	Enter: ' ⮠  ',
+	Space: <MdSpaceBar style={{ marginInline: '0.3em' }} />,
+	Delete: 'Del',
+	Enter: <MdKeyboardReturn />,
+	Escape: 'Esc',
 	Backspace: <MdBackspace/>,
 }
 const KeyboardControls = ({ action, controlStrings }: ControlProps) => {
@@ -90,7 +92,7 @@ const KeyboardControls = ({ action, controlStrings }: ControlProps) => {
 				return (
 					<span
 						key={`${parts.join("+")}-${repeat}`}
-						className="shortcut"
+						className="shortcut keyboard"
 					>
 						{parts.map((part, partIndex) =>
 							<Fragment key={part}>
@@ -141,28 +143,25 @@ const GamepadControls = ({ action }: Pick<ControlProps, 'action'>) => {
 		</>
 	)
 }
-const MouseControls = ({ action }: Pick<ControlProps, 'action'>)=> {
-	switch (action) {
-		case "next":
-			return <span className="shortcut mouse">
-				<kbd className="key">
-					<PiMouseLeftClickFill aria-label="Left click"/>
-				</kbd>
-			</span>
-		case "history":
-			return <span className="shortcut mouse">
-				<kbd className="key"><ScrollUp aria-label="Scroll up"/></kbd>
-			</span>
-		case "back":
-		case "menu":
-			return <span className="shortcut mouse">
-				<kbd className="key">
-					<PiMouseRightClickFill aria-label="Right click"/>
-				</kbd>
-			</span>
-	}
-}
 
+const mouseControls = {
+	next: <PiMouseLeftClickFill aria-label="Left click" />,
+	history: <ScrollUp aria-label="Scroll up" />,
+	back: <PiMouseRightClickFill aria-label="Right click" />,
+	menu: <PiMouseRightClickFill aria-label="Right click" />,
+} as const
+
+const MouseControls = ({ action }: Pick<ControlProps, "action">) => {
+	if (!(action in mouseControls)) return null
+
+	return (
+		<span className="shortcut mouse">
+			<kbd className="key">
+				{mouseControls[action as keyof typeof mouseControls]}
+			</kbd>
+		</span>
+	)
+}
 
 const directionArrows = {
 	up: <MdSwipeUp aria-label="Swipe up" />,

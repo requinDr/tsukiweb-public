@@ -49,9 +49,7 @@ const SaveListItem = ({saveId, saveState, isFocused, ...props}: SaveListItemProp
 			</div>
 			{isPd &&
 				<span className="game-pd">
-					<div className="label">
-						plus-disc
-					</div>
+					Plus-Disc
 				</span>
 			}
 		</button>

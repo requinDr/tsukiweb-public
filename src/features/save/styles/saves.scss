@@ -112,11 +112,15 @@
 				content: "";
 				position: absolute;
 				inset: 0 -4px;
-				transition: box-shadow .2s ease-out;
+				pointer-events: none;
+				box-shadow: var(--selected-shadow);
+				opacity: 0;
+
+				transition: opacity 280ms cubic-bezier(.22, .61, .36, 1);
 			}
 
 			&.active::after {
-				box-shadow: var(--selected-shadow);
+				opacity: 1;
 				z-index: 1;
 			}
 
@@ -135,25 +139,22 @@
 
 			.game-pd {
 				position: absolute;
-				inset: 0;
-				right: -4px;
-				bottom: 1px;
-				border-image: linear-gradient(to left, #ff1ded, 1em, #ff1ded, 2em, transparent, 10em, transparent) 1;
-				border-width: 3px;
-				border-style: solid;
-				border-left-width: 0;
-				border-right-width: 0;
-
-				.label {
-					background-color: #ff1ded;
-					text-orientation: sideways;
-					writing-mode: vertical-rl;
-					text-align: center;
-					position: absolute;
-					top: -1px;
-					bottom: -1px;
-					right: 0;
-				}
+				right: 0px;
+				bottom: 4px;
+				top: 0;
+				border-right: 2px solid var(--surface-light);
+				border-bottom: 2px solid var(--surface-light);
+				color: var(--attention);
+				border-bottom-right-radius: 2px;
+				padding-inline: 5px;
+				padding-block: 3px;
+				display: flex;
+				align-items: end;
+				font-size: 0.8em;
+				text-transform: uppercase;
+				font-weight: 600;
+				letter-spacing: 0;
+				line-height: 1;
 			}
 		}
 	}
@@ -245,7 +246,7 @@
 
 		// phone landscape or phone portrait
 		@media screen and (max-width: 760px) and (orientation: portrait),
-		       screen and (max-height: 680px) and (orientation: landscape) {
+					 screen and (max-height: 680px) and (orientation: landscape) {
 			border-left: none;
 
 			.save-details-content {
