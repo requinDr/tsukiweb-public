@@ -10,6 +10,7 @@ import GalleryTab from 'features/plus-disc/components/GalleryTab';
 import ScenesTab from 'features/plus-disc/components/ScenesTab';
 import { SCREEN } from 'app/utils/display';
 import { useScreenAutoNavigate } from 'app/hooks';
+import { Fragment } from 'react';
 
 const container: Variants = {
 	hidden: { opacity: 0 },
@@ -34,15 +35,15 @@ const PlusDiscScreen = () => {
 					className="cover"
 				/>
 				<div className='desc'>
-					<a href={APP_INFO.PLUS_DISC_VNDB} target="_blank">
-						VNDB
-					</a>
 					<p>
-						{strings.plus_disc.desc.map((line, index) => (
-							<span key={index}>
+						{strings.plus_disc.desc.map((line, index) =>
+							<Fragment key={index}>
 								{line}<br />
-							</span>
-						))}
+							</Fragment>
+						)}
+						<a href={APP_INFO.PLUS_DISC_VNDB} target="_blank">
+							VNDB
+						</a>
 					</p>
 				</div>
 			</div>

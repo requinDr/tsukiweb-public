@@ -35,9 +35,8 @@ export const inGameGestures = [
 export const inGameControls: Record<string, EventFilter[]> = {
     "next":    [
         {type: 'keydown', key: "Enter"},
-        {type: 'keydown', key: "Control"    , repeat: true},
-        {type: 'keydown', key: "Meta"       , repeat: true},
         {type: 'keydown', key: "ArrowDown"  , repeat: false, ctrlKey: false},
+        {type: 'keydown', key: "Control"    , repeat: true},
         {type: GamepadEvents.BTN_PRESSED, buttonId: Gamepad.A},
         {type: GamepadEvents.BTN_PRESSED, buttonId: Gamepad.DPadDown}],
     "back":    [

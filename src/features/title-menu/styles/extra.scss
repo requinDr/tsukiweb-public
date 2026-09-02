@@ -6,7 +6,6 @@
 	grid-template-columns: 210px 1fr;
 	grid-template-areas: "extra-menu extra-content";
 	padding: 0;
-	column-gap: .5em;
 
 	.rightOrnament, .leftOrnament {
 		position: absolute;
@@ -134,7 +133,6 @@
 
 	@media screen and (orientation: landscape) and (max-height: 600px) {
 		grid-template-columns: minmax(160px, min-content) 1fr;
-		column-gap: 0;
 		.extra-menu {
 			font-size: .8em;
 			overflow-y: auto;

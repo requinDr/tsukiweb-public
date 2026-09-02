@@ -61,14 +61,14 @@ const keyLabels: Record<string, string|ReactElement> = {
 	ArrowUp: '↑',
 	ArrowDown: '↓',
 	PageUp: '⇞',
-	PageDown: '⇟',/*  */
+	PageDown: '⇟',
 	Control: 'Ctrl',
 	Meta: '⌘',
-	Space: <MdSpaceBar style={{ marginInline: '0.3em' }} />,
+	Space: <MdSpaceBar aria-label="Space" style={{ marginInline: '0.3em' }} />,
 	Delete: 'Del',
-	Enter: <MdKeyboardReturn />,
+	Enter: <MdKeyboardReturn aria-label="Enter" />,
 	Escape: 'Esc',
-	Backspace: <MdBackspace/>,
+	Backspace: <MdBackspace aria-label="Backspace" />,
 }
 const KeyboardControls = ({ action, controlStrings }: ControlProps) => {
 	const keys = (inGameControls[action] ?? [])
