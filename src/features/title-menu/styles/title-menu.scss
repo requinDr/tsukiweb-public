@@ -14,7 +14,7 @@
 		min-height: 0;
 		position: relative;
 		isolation: isolate;
-		height: min(500px, 80%);
+		height: min(510px, 80%);
 		max-width: 80%;
 
 		img {
@@ -35,7 +35,7 @@
 			height: 100%;
 			width: 100%;
 			will-change: transform;
-			padding: 1em;
+			padding-inline: 1em;
 		}
 	}
 

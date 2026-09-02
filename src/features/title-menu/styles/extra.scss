@@ -6,6 +6,7 @@
 	grid-template-columns: 210px 1fr;
 	grid-template-areas: "extra-menu extra-content";
 	padding: 0;
+	isolation: isolate;
 
 	.rightOrnament, .leftOrnament {
 		position: absolute;
@@ -72,7 +73,7 @@
 		}
 		.back-action {
 			padding: .5rem;
-			padding-bottom: calc(1.5rem + var(--safe-area-max-inset-bottom));
+			padding-bottom: 1.5rem;
 		}
 	}
 
@@ -80,6 +81,7 @@
 		grid-area: extra-content;
 		min-width: 0;
 		min-height: 0;
+		display: grid;
 	}
 
 	@media screen and (orientation: portrait) and (max-width: 979px) {
@@ -106,7 +108,6 @@
 				width: 100%;
 				min-width: 0;
 				margin: 0;
-				padding-top: .5em;
 				padding-inline: var(--page-padding);
 				font-size: 0.8em;
 				gap: 1.8em;

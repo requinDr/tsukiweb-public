@@ -76,6 +76,7 @@
 		z-index: 0;
 		overflow: hidden;
 		pointer-events: none;
+		container-type: inline-size;
 
 		.blur {
 			filter: blur(80px) brightness(0.4);

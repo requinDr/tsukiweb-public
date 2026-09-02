@@ -1,4 +1,4 @@
-import gameLogo from "@assets/images/game-logo.webp"
+import gameLogo from "@assets/images/game-logo.svg"
 import moon from "@assets/images/moon.webp"
 import '@features/title-menu/styles/title-menu.scss'
 import * as m from "motion/react-m"

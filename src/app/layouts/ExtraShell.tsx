@@ -25,7 +25,6 @@ const ExtraShell = ({ children }: PropsWithChildren) => {
 			exit={{opacity: 0}}>
 			<img src={Ornament} alt="" className="leftOrnament" />
 			<img src={Ornament} alt="" className="rightOrnament" />
-			<ExtraMenu />
 
 			<m.main
 				className="extra-content"
@@ -38,6 +37,8 @@ const ExtraShell = ({ children }: PropsWithChildren) => {
 			>
 				{children}
 			</m.main>
+
+			<ExtraMenu />
 		</m.div>
 	)
 }
