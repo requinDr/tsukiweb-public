@@ -63,7 +63,6 @@ const keyLabels: Record<string, string|ReactElement> = {
 	PageUp: '⇞',
 	PageDown: '⇟',
 	Control: 'Ctrl',
-	Meta: '⌘',
 	Space: <MdSpaceBar aria-label="Space" style={{ marginInline: '0.3em' }} />,
 	Delete: 'Del',
 	Enter: <MdKeyboardReturn aria-label="Enter" />,
