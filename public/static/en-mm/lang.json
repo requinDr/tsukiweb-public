@@ -105,7 +105,7 @@
     "controls": {
       "next": "Next",
       "graphics": "Show / hide text",
-      "menu": "Back, Show / Hide menu",
+      "back": "Back, Show / Hide menu",
       "bg_move": "Move background image",
       "auto_play": "Auto-play",
       "page_nav": "Navigate to next / previous page",

@@ -105,7 +105,7 @@
     "controls": {
       "next": "文字推進",
       "graphics": "Show / hide text",
-      "menu": "Show / Hide menu",
+      "back": "Back, Show / Hide menu",
       "bg_move": "移動背景影像",
       "auto_play": "自動模式",
       "page_nav": "下一頁/上一頁",

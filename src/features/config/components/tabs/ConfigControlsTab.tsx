@@ -72,7 +72,7 @@ const keyLabels: Record<string, string|ReactElement> = {
 const KeyboardControls = ({ action, controlStrings }: ControlProps) => {
 	const keys = (inGameControls[action] ?? [])
 		.filter(({ key, code }) => key || code)
-	if (action == 'menu')
+	if (action == 'back')
 		keys.push(...menuKeyMap['nav'].filter(({ type, [EventActions.ARGS]: args })=>
 			type == 'keydown' && args[0] == "out"))
 
@@ -121,10 +121,9 @@ const gamepadLabels: Record<number, string> = {
 	[Gamepad.DPadLeft]: '←',
 }
 const GamepadControls = ({ action }: Pick<ControlProps, 'action'>) => {
-	const sourceAction = action === 'menu' ? 'back' : action
-	const buttons = (inGameControls[sourceAction] ?? [])
+	const buttons = (inGameControls[action] ?? [])
 		.flatMap(({ buttonId }) => buttonId == undefined ? [] : buttonId)
-	if (sourceAction == 'back')
+	if (action == 'back')
 		buttons.push(...menuKeyMap['nav'].flatMap(
 			({ type, buttonId, [EventActions.ARGS]: args })=>
 				type == GamepadEvents.BTN_PRESSED && args[0] == "out" ? buttonId : []))
@@ -169,6 +168,8 @@ const directionArrows = {
 	left: <MdSwipeLeft aria-label="Swipe left" />
 }
 const GestureControls = ({ action, controlStrings }: ControlProps) => {
+	if (action == "back")
+		action = "menu"
 	const gestures = inGameGestures.filter(gesture => gesture.action === action)
 
 	return (

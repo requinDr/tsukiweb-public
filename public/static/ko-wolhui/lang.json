@@ -105,7 +105,7 @@
     "controls": {
       "next": "다음으로",
       "graphics": "Show / hide text",
-      "menu": "Show / Hide menu",
+      "back": "Back, Show / Hide menu",
       "bg_move": "배경그림 위치 조정",
       "auto_play": "오토플레이",
       "page_nav": "전 페이지로 넘어가기 / 다음 페이지로 넘어가기",
