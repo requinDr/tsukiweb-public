@@ -25,7 +25,6 @@
 		}
 
 		.unlocked {
-			position: relative;
 			overflow: hidden;
 			&.ark { @include ending-color(var(--route-ark)) }
 			&.cel { @include ending-color(var(--route-cel)) }
