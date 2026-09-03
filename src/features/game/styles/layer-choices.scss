@@ -15,6 +15,10 @@
 		gap: 1em;
 		padding: 8px;
 	}
+	.choice-motion {
+		width: 100%;
+		display: grid;
+	}
 	.choice {
 		@extend %info-box;
 		padding: .4em 1.2em;

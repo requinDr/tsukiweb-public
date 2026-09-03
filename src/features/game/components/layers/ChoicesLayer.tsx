@@ -115,12 +115,12 @@ const ChoicesLayer = ({script, display, navigable}: Props) => {
 		<div className="layer" id="layer-choices">
 			<m.div className="choices-container" variants={container} initial="hidden" animate="show">
 				{choices.map((choice, i) =>
-					<m.div key={choice.index} variants={item} style={{width: '100%', display: 'grid'}}>
+					<m.div key={choice.index} variants={item}>
 						<Button
 							disabled={choice.disable ?? false}
 							key={choice.index}
 							variant={null}
-							className="choice"
+							className="choice-motion choice"
 							onClick={() => onSelection.current?.(choice)}
 							audio={audio}
 							hoverSound="tick"

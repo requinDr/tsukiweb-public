@@ -1,3 +1,34 @@
+@use '@tsukiweb/common/ui-core/styles/_mixins.scss' as *;
+
+@mixin game-text {
+	font-family: var(--game-font), sans-serif;
+	font-size: clamp(1em, min(2.4cqw, 3.8cqh), 1.9em);
+	line-height: 1.94;
+	letter-spacing: 1px;
+	--sc: #000;
+	--ts: clamp(.8px, .045em, 1.1px);
+	--nts: calc(-1 * var(--ts));
+	text-shadow:
+		var(--ts) var(--ts) var(--ts) var(--sc),
+		var(--nts) var(--ts) var(--ts) var(--sc),
+		var(--nts) var(--nts) var(--ts) var(--sc),
+		var(--ts) var(--nts) var(--ts) var(--sc),
+		0 0 calc(var(--ts) * 2) var(--sc);
+
+	span {
+		white-space: pre-wrap;
+		overflow-wrap: break-word;
+	}
+	.dash {
+		letter-spacing: 0;
+	}
+
+	@include mobile-portrait {
+		font-size: min(2.15cqh, 1.5em);
+		line-height: 1.8;
+	}
+}
+
 %layer-text {
 	z-index: 2;
 	opacity: 1;
@@ -54,41 +85,17 @@
 	.text-container {
 		margin-inline: auto;
 		max-width: 70ch;
-		font-family: var(--game-font), sans-serif;
-		font-size: clamp(1em, min(2.4cqw, 3.8cqh), 1.9em);
-		line-height: 1.94;
-		letter-spacing: 1px;
-		--sc: #000;
-		--ts: clamp(.8px, .045em, 1.1px);
-		--nts: calc(-1 * var(--ts));
-		text-shadow:
-			var(--ts) var(--ts) var(--ts) var(--sc),
-			var(--nts) var(--ts) var(--ts) var(--sc),
-			var(--nts) var(--nts) var(--ts) var(--sc),
-			var(--ts) var(--nts) var(--ts) var(--sc),
-			0 0 calc(var(--ts) * 2) var(--sc);
+		@include game-text;
 	}
 
-	@media screen and (orientation: portrait) and (max-width: 720px){
+	@include mobile-portrait {
 		--text-bg: var(--text-bg-portrait);
 		padding-block: 12cqmin;
-		.text-container {
-			font-size: min(2.15cqh, 1.5em);
-			line-height: 1.8;
-		}
 	}
 	@media screen and (orientation: landscape) and (max-height: 500px){
 		.text-container {
 			max-width: 80ch;
 		}
-	}
-
-	span {
-		white-space: pre-wrap;
-		overflow-wrap: break-word;
-	}
-	.dash {
-		letter-spacing: 0;
 	}
 
 	.choice {

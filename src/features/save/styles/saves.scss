@@ -239,16 +239,14 @@
 			}
 		}
 
-		// phone landscape
-		@media screen and (max-height: 680px) and (orientation: landscape) {
+		@include mobile-landscape {
 			.actions {
 				padding-right: .5em;
 				padding-bottom: .5em;
 			}
 		}
 
-		// phone portrait
-		@media screen and (max-width: 760px) and (orientation: portrait) {
+		@mixin mobile-portrait {
 			border-bottom: 0;
 
 			.actions {
