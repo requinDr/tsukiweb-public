@@ -109,23 +109,21 @@
 				position: absolute;
 				bottom: 0;
 				right: -4px;
-				font-size: 0.8em;
+				font-size: .8em;
 				font-style: italic;
-				color: #dddddd;
 				padding: 0.2em 0.6em 0.2em 4em;
-				background-image: linear-gradient(45deg, transparent 20%, #006cff);
+				background-image: linear-gradient(115deg, transparent 20%, var(--surface-light));
 				z-index: 1;
 			}
 
 			.game-pd {
 				position: absolute;
-				right: 0px;
-				bottom: 4px;
+				right: -4px;
 				top: 0;
 				border-right: 2px solid var(--surface-light);
-				border-bottom: 2px solid var(--surface-light);
+				border-top: 2px solid var(--surface-light);
 				color: var(--attention);
-				border-bottom-right-radius: 2px;
+				border-top-right-radius: 2px;
 				padding-inline: 5px;
 				padding-block: 3px;
 				display: flex;
