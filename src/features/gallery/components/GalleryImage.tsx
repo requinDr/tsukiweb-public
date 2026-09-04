@@ -28,7 +28,7 @@ type GalleryImageProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
 }
 const GalleryImage = ({image, gallery = [], galleryUnlocked = [], blurred = false, showTotal, getGalleryImg, ...props}: GalleryImageProps) => {
 	const [open, setOpen] = useState(false)
-	const isSmallLandscape = useMediaQuery("(orientation: landscape) and (max-height: 480px)")
+	const isSmallLandscape = useMediaQuery("(orientation: landscape) and (max-height: 680px)")
 	const lightboxRef = useRef<ControllerRef>(null)
 
 	const slides: SlideImage[] = useMemo(() =>

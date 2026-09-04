@@ -92,7 +92,7 @@
 		--text-bg: var(--text-bg-portrait);
 		padding-block: 12cqmin;
 	}
-	@media screen and (orientation: landscape) and (max-height: 500px){
+	@include mobile-landscape {
 		.text-container {
 			max-width: 80ch;
 		}

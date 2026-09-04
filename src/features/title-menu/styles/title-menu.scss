@@ -1,3 +1,5 @@
+@use '@tsukiweb/common/ui-core/styles/_mixins.scss' as *;
+
 #title-menu {
 	position: relative;
 	display: grid;
@@ -257,7 +259,7 @@
 		margin-bottom: 2em;
 	}
 
-	@media screen and (orientation: landscape) and (max-height: 540px) {
+	@include mobile-landscape {
 		.content {
 			display: grid;
 			grid-template-columns: auto 1fr;
