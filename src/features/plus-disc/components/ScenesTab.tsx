@@ -8,7 +8,7 @@ const ScenesTab = () => {
 	const strings = useStrings()
 
 	const play = (id: PlusDiscSceneName)=> {
-		playScene(id, {viewedOnly: false, continueScript: true})
+		playScene(id, {viewedOnly: false, continueScript: false})
 	}
 
 	return (

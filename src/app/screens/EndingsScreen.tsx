@@ -44,7 +44,7 @@ const EndingsScreen = () => {
 						name: strings.extra.eclipse,
 						scene: "eclipse"
 					}}
-					continueScript={eclipseUnlocked} //needed to add to the completed scenes
+					continueScript={false}
 					attention={eclipseUnlocked}
 					nav-auto={1}
 				/>
