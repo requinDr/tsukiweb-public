@@ -66,7 +66,7 @@ const Flowchart = ({history, onSceneClick, mode = 'viewer'}: Props)=> {
 					ref={svgRef}
 					className="flowchart"
 					style={{
-						minWidth: `max(${size.minWidthRem}rem, 100cqi)`, maxWidth: `${size.maxWidthPct}%`,
+						minWidth: `max(${size.minWidthRem}rem, var(--flowchart-width))`, maxWidth: `${size.maxWidthPct}%`,
 						minHeight: `${size.minHeightRem}rem`, maxHeight: `${size.maxHeightPct}%`,
 					}}
 					version="1.1"

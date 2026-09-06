@@ -1,3 +1,9 @@
+@property --flowchart-width {
+	syntax: '<length>';
+	inherits: true;
+	initial-value: 0px;
+}
+
 #flowchart {
 	height: 100%;
 	width: 100%;
@@ -41,6 +47,7 @@
 	--inactive-connection: #888;
 
 	.panzoom-stage {
+		--flowchart-width: 100cqi; // Resolve the container width outside the zoomed SVG.
 		box-sizing: content-box;
 		flex: none;
 		height: max-content;

@@ -8,7 +8,7 @@ import { History } from "../../../engine/history"
 import FC from "../../../assets/game/flowchart.json"
 
 //##############################################################################
-//#region                       TYPES, 
+//#region                       TYPES
 //##############################################################################
 
 type FcNodeId = SceneName|string
