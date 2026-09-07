@@ -53,9 +53,9 @@
 		background: unset;
 		position: absolute;
 		top: auto;
-		bottom: 0.5rem;
-		left: 0.5rem;
-		right: 0.5rem;
+		bottom: max(0.5rem, env(safe-area-inset-bottom, 0px));
+		left: max(0.5rem, env(safe-area-inset-left, 0px));
+		right: max(0.5rem, env(safe-area-inset-right, 0px));
 		width: unset;
 		font-size: .95em;
 		isolation: isolate;
