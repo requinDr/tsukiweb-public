@@ -14,7 +14,6 @@ import { isLogicLabel, processVarName } from './common.ts';
 import { processCondition } from '@tsukiweb/common/tools/convert-scripts/utils.ts';
 
 const outputPathPrefix = '../../../public/static/'
-const outputDir = 'scenes'
 const fullscripts = [
 	['jp', 'fullscript_jp.txt'],
 	['en-mm', 'fullscript_en-mm.txt'],

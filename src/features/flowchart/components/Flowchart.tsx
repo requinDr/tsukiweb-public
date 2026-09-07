@@ -11,8 +11,6 @@ import AllConnections from "./AllConnections";
 import { BADGES_DEFINES } from "./badges"
 import AllBadges from "./AllBadges"
 import { settings } from "engine/settings"
-import { useObserved } from "@tsukiweb/common/utils/Observer"
-import { useStrings } from "translation/lang"
 
 
 type Props = {
@@ -22,11 +20,10 @@ type Props = {
 }
 
 const Flowchart = ({history, onSceneClick, mode = 'viewer'}: Props)=> {
-	useStrings()
 	const flowchart = new GameFlowchart(history)
 	const svgRef = useRef<SVGSVGElement>(null)
 	const stageRef = useRef<HTMLDivElement>(null)
-	useObserved(settings, 'flowchartBadges') // refresh flowchart when toggling badges display
+
 	const visibleNodes = flowchart.listNodes().filter(n=>n.visible)
 	let [left, top, right, bottom] = visibleNodes.reduce(
 		(vb, node)=> [

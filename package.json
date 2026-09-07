@@ -9,8 +9,6 @@
 	"scripts": {
 		"start": "vite",
 		"proxy": "vite --mode proxy",
-		"assets": "node tools/make-assets.ts",
-		"assets:pd": "node tools/pd-make-assets.ts",
 		"common:check": "tsc -p tsukiweb-common/tsconfig.json",
 		"common:update": "git submodule update --remote --merge tsukiweb-common && npm install",
 		"build": "npm run common:check && tsc && vite build"
@@ -25,14 +23,14 @@
 		"react-error-boundary": "^6.1.4",
 		"react-icons": "^5.7.0",
 		"react-toastify": "^11.1.0",
-		"sass": "^1.103.1",
-		"wouter": "^3.10.0",
+		"sass": "^1.104.0",
+		"wouter": "^3.11.0",
 		"yet-another-react-lightbox": "^3.32.2"
 	},
 	"devDependencies": {
 		"@types/node": "^26.4.1",
 		"@types/react": "^19.2.18",
-		"@types/react-dom": "^19.2.5",
+		"@types/react-dom": "^19.2.7",
 		"@vitejs/plugin-react": "^6.1.1",
 		"typescript": "^7.0.2",
 		"vite": "^8.2.2"
