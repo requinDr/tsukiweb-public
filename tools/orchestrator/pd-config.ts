@@ -66,8 +66,8 @@ export function resolveToolPath(value: string): string {
 export function buildPaths(config: ToolConfig): Paths {
   const publicAssets = resolveToolPath(config.PUBLIC)
   const workspace = path.join(TOOLS_DIR, '_workspace_pd')
-  const img = path.join(workspace, 'img')
-  const imgX2 = path.join(workspace, 'img_x2')
+  const img = path.join(workspace, 'jp', 'img')
+  const imgX2 = path.join(workspace, 'jp', 'img_x2')
   const images = path.join(publicAssets, 'static', 'jp', 'images')
 
   return {

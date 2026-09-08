@@ -14,8 +14,10 @@ import {
   FFMPEG_AUDIO_ARGS,
   SCRIPT_LANGS,
   WAIFU2X_ARGS,
+  imagePathsForLanguage,
   thumbConfig,
   x2Config,
+  type ImageConversionPaths,
   type Paths,
   type ToolConfig,
 } from './config.ts'
@@ -57,6 +59,15 @@ const ARC_DIRS = [
 const arcDir = (paths: Paths) => path.join(paths.workspace, path.basename(paths.arcArchive))
 const nonEmptyDirCheck = (directory: string) => nonEmptyDirectoryCheck(directory, displayPath(directory))
 const fileCheck = (file: string) => fileExistsCheck(file, displayPath(file))
+
+async function imageConversionPaths(paths: Paths): Promise<ImageConversionPaths[]> {
+  const images: ImageConversionPaths[] = [paths]
+  for (const lang of SCRIPT_LANGS.slice(1)) {
+    const candidate = imagePathsForLanguage(paths, lang)
+    if (await directoryHasFiles(candidate.img)) images.push(candidate)
+  }
+  return images
+}
 
 async function arcDirsCheck(paths: Paths): Promise<Check> {
   return combine(await Promise.all(
@@ -118,6 +129,21 @@ async function extractAssetsAndPrepareImages(paths: Paths): Promise<void> {
     await extractNscript(nscript, path.join(paths.staticJp, 'sources', 'fullscript_jp.txt'))
   }
   await prepareImgFolder(paths)
+  for (const lang of SCRIPT_LANGS.slice(1)) {
+    const source = path.join(paths.staticJp, '..', lang, 'sources')
+    const { img } = imagePathsForLanguage(paths, lang)
+    await ensureEmptyDirInside(paths.workspace, img)
+    if (!(await pathExists(source))) continue
+    for (const entry of await fs.readdir(source, { withFileTypes: true })) {
+      if (entry.isDirectory()) {
+        if (entry.name === 'tachi') {
+          await applySpriteTransparency(path.join(source, entry.name), path.join(img, entry.name))
+        } else {
+          await copyDirectory(path.join(source, entry.name), path.join(img, entry.name), paths.workspace)
+        }
+      }
+    }
+  }
   await mergeVertical(
     path.join(paths.img, 'event', 'cel_e06a.jpg'),
     path.join(paths.img, 'event', 'cel_e06b.jpg'),
@@ -139,34 +165,38 @@ async function runScripts(paths: Paths): Promise<void> {
 
 async function runWaifu2x(context: StepContext): Promise<void> {
   const executable = await resolveExecutable(context.config.WAIFU2X_CAFFE, context.paths.tools)
-  const total = (await listFilesRecursive(context.paths.img)).length
-  const updateProgress = async () => {
-    const processed = (await listFilesRecursive(context.paths.imgX2)).length
-    logger.progress(`Upscaling images: ${Math.min(processed, total)}/${total}`)
-  }
-  const args = [
-    '-i', context.paths.img,
-    '-o', context.paths.imgX2,
-    ...WAIFU2X_ARGS,
-  ]
+  for (const conversion of await imageConversionPaths(context.paths)) {
+    const total = (await listFilesRecursive(conversion.img)).length
+    const updateProgress = async () => {
+      const processed = (await listFilesRecursive(conversion.imgX2)).length
+      logger.progress(`Upscaling images: ${Math.min(processed, total)}/${total}`)
+    }
+    const args = [
+      '-i', conversion.img,
+      '-o', conversion.imgX2,
+      ...WAIFU2X_ARGS,
+    ]
 
-  await updateProgress()
-  const timer = setInterval(() => void updateProgress(), 1000)
-  try {
-    await runCommand(executable.command, args, { cwd: executable.cwd, stdout: 'ignore' })
-  } finally {
-    clearInterval(timer)
+    await updateProgress()
+    const timer = setInterval(() => void updateProgress(), 1000)
+    try {
+      await runCommand(executable.command, args, { cwd: executable.cwd, stdout: 'ignore' })
+    } finally {
+      clearInterval(timer)
+    }
+    await updateProgress()
   }
-  await updateProgress()
   logger.done()
 }
 
 async function runImageConversion(paths: Paths): Promise<void> {
-  const thumb = thumbConfig(paths)
-  const x2 = x2Config(paths)
+  for (const conversion of await imageConversionPaths(paths)) {
+    const thumb = thumbConfig(conversion)
+    const x2 = x2Config(conversion)
 
-  await convertImages(thumb.inputDir, thumb.outputDir, thumb.options)
-  await convertImages(x2.inputDir, x2.outputDir, x2.options)
+    await convertImages(thumb.inputDir, thumb.outputDir, thumb.options)
+    await convertImages(x2.inputDir, x2.outputDir, x2.options)
+  }
   logger.done()
 }
 
@@ -275,7 +305,9 @@ export function createSteps(context: StepContext): OrchestratorStep[] {
         ...(await imageDirChecks(paths)),
       ]),
       isDone: async () => combine([
-        await nonEmptyDirCheck(paths.imgX2),
+        ...await Promise.all(
+          (await imageConversionPaths(paths)).map(images => nonEmptyDirCheck(images.imgX2))
+        ),
       ]),
       run: async () => runWaifu2x(context),
     },
@@ -284,11 +316,17 @@ export function createSteps(context: StepContext): OrchestratorStep[] {
       title: 'Convert images',
       canRun: async () => combine([
         await nonEmptyDirCheck(paths.img),
-        await nonEmptyDirCheck(paths.imgX2),
+        ...await Promise.all(
+          (await imageConversionPaths(paths)).map(images => nonEmptyDirCheck(images.imgX2))
+        ),
       ]),
       isDone: async () => combine([
-        await nonEmptyDirCheck(paths.images),
-        await nonEmptyDirCheck(paths.imagesThumb),
+        ...await Promise.all(
+          (await imageConversionPaths(paths)).flatMap(images => [
+            nonEmptyDirCheck(images.images),
+            nonEmptyDirCheck(images.imagesThumb),
+          ])
+        ),
       ]),
       run: async () => runImageConversion(paths),
     },
