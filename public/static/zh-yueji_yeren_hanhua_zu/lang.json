@@ -167,6 +167,7 @@
     "copy-scene-url": "拷贝场景链接"
   },
   "history": {
+    "load-warning": "Rewind to this scene? Unsaved progress since this point will be lost",
     "load": "读档",
     "skipped": "跳过场景 %0."
   },

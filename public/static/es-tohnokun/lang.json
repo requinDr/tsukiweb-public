@@ -167,6 +167,7 @@
     "copy-scene-url": "Compartir escena"
   },
   "history": {
+    "load-warning": "Rewind to this scene? Unsaved progress since this point will be lost",
     "load": "Cargar",
     "skipped": "Escena %0 omitida."
   },

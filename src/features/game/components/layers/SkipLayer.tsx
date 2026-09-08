@@ -31,8 +31,13 @@ const SkipLayer = ({script, history, layers}: Props) => {
 	const onFinish = useRef<((skipped: boolean)=>void)>(undefined)
 
 	useEffect(()=> {
+		let firstBlock = true
 		const ref = script.addEventListener('beforeBlock',
 			async (label, initPage)=> {
+				if (firstBlock) {
+					firstBlock = false
+					return
+				}
 				if (initPage !== 0 || !isThScene(label) || !script.continueScript) return
 
 				if (settings.enableSceneSkip && viewedScene(label)) {

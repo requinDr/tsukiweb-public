@@ -10,6 +10,7 @@ import { History } from 'engine/history';
 import { InGameLayersHandler } from "@tsukiweb/common/utils/InGameLayersHandler";
 import { LabelName, SceneName } from 'app/utils/types';
 import { settings } from 'engine/settings';
+import { dialog } from '@tsukiweb/common/ui-core/components/ModalPrompt';
 
 
 type Props = {
@@ -158,6 +159,7 @@ type FlowchartTabProps = {
 	onSceneSelect: (label: LabelName)=>void
 }
 const FlowchartTab = ({ history, continueScript, onSceneSelect }: FlowchartTabProps) => {
+	const strings = useStrings()
 	const isSceneReplay = !continueScript
 
 	useLayoutEffect(()=> {
@@ -167,9 +169,14 @@ const FlowchartTab = ({ history, continueScript, onSceneSelect }: FlowchartTabPr
 		}
 	}, [history])
 
-	const handleSceneSelect = useCallback((id: SceneName)=> {
+	const handleSceneSelect = useCallback(async (id: SceneName)=> {
+		if (!isSceneReplay && !await dialog.confirm({
+			text: strings.history["load-warning"],
+			labelYes: strings.yes,
+			labelNo: strings.no,
+		})) return
 		onSceneSelect(id)
-	}, [onSceneSelect])
+	}, [isSceneReplay, onSceneSelect, strings])
 
 	return (
 		<div id="flowchart-progress" className="scroll-container">

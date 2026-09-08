@@ -167,6 +167,7 @@
     "copy-scene-url": "장면 공유"
   },
   "history": {
+    "load-warning": "Rewind to this scene? Unsaved progress since this point will be lost",
     "load": "불러오기",
     "skipped": "%0 장면을 건너뛰었습니다."
   },

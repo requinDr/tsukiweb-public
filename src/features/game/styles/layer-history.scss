@@ -81,6 +81,19 @@
 				}
 			}
 		}
+
+		.choice {
+			&:not(.selected) {
+				color: grey;
+			}
+			&.selected {
+				display: list-item;
+				list-style-type: disclosure-closed;
+			}
+		}
+		.skip {
+			color: grey;
+		}
 	}
 
 	#flowchart-progress {

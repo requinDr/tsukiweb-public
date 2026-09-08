@@ -98,16 +98,6 @@
 		}
 	}
 
-	.choice {
-		&:not(.selected) {
-			color: grey;
-		}
-		&.selected {
-			display: list-item;
-			list-style-type: disclosure-closed;
-		}
-	}
-
 	#line {
 		animation: fadeIn 1s ease-out, rotate 4s ease-in-out infinite;
 		@keyframes rotate {

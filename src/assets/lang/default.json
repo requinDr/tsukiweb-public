@@ -166,6 +166,7 @@
     "copy-scene-url": "Share scene"
   },
   "history": {
+    "load-warning": "Rewind to this scene? Unsaved progress since this point will be lost",
     "load": "Load",
     "skipped": "Skipped scene %0."
   },
