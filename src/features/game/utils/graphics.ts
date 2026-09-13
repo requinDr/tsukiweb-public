@@ -1,7 +1,7 @@
 import { objectMatch, splitFirst } from "@tsukiweb/common/utils/utils";
 import { settings } from "../../../engine/settings";
 import { assets, imageSrc, wordImage } from "translation/assets";
-import { BG_POSITIONS, Graphics, GraphicsTransition, Quake, Rocket, SpritePos, SPRITES_POSITIONS } from "@tsukiweb/common/graphics";
+import { BG_POSITIONS, Graphics, GraphicsTransition, Quake, Rocket, SPRITES_POSITIONS } from "@tsukiweb/common/graphics";
 import { ScriptPlayer } from "engine/ScriptPlayer";
 import Timer from "@tsukiweb/common/utils/timer";
 import cg from "features/gallery/utils/gallery";
@@ -56,7 +56,7 @@ async function preloadGraphic(image: string) {
 
 assets.setProvider('graph', (id: string)=> {
 	if (id.startsWith('"') && id.endsWith('"'))
-		id = id.substring(1, id.length-1)
+		id = id.substring(1, id.length - 1)
 	const match = id.match(/^(word|bg|tachi|event)\/(.*)/)
 	if (match) {
 		if (match[1] == 'word')
@@ -98,7 +98,7 @@ export function processImageCmd(
 	const change = (pos == 'a' ) ? { l: "", c: "", r: "" }
 			 : (pos == 'bg') ? { bg: image, bgAlign: alignment }
 			 : { [pos]: image }
-	const to = (pos == 'bg') ? { l: "", c: "", r: "", ...change } : change
+	const to = (cmd == 'bg') ? { l: "", c: "", r: "", ...change } : change
 	let finished = false
 
 	const _onFinish = ()=> {
@@ -106,19 +106,15 @@ export function processImageCmd(
 			return
 		finished = true
 		if (!objectMatch(script.graphics, to)) {
-			if (pos == 'a')
-				script.graphics = {l: "", c: "", r: ""}
-			else if (pos == 'bg') {
+			if (pos == 'bg') {
 				if (alignment) {
 					displayMode.bgAlignment = alignment
 					displayMode.bgMoveTime = 0
 				} else if (script.graphics.bgAlign) {
 					displayMode.bgAlignment = "center"
 				}
-				script.graphics = {bg: image, l: "", c: "", r: "", bgAlign: alignment}
-			} else {
-				script.graphics[pos as SpritePos] = image
 			}
+			script.graphics = to
 			setTransition(undefined)
 			setRocket(undefined)
 		}
