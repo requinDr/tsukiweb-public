@@ -12,19 +12,8 @@ import { logger } from '@tsukiweb/common/tools/utils/logger.ts';
 import { updateGameJsonWithChoices } from '../utils/choices_extractor.ts';
 import { isLogicLabel, processVarName } from './common.ts';
 import { processCondition } from '@tsukiweb/common/tools/convert-scripts/utils.ts';
+import { fullscripts, outputPathPrefix } from './fullscripts.ts';
 
-const outputPathPrefix = '../../../public/static/'
-const fullscripts = [
-	['jp', 'fullscript_jp.txt'],
-	['en-mm', 'fullscript_en-mm.txt'],
-	['es-tohnokun', 'fullscript_es-tohnokun.txt'],
-	['it-riffour', 'fullscript_it-riffour.txt'],
-	['pt-matsuri', 'fullscript_pt-matsuri.txt'],
-	['ko-wolhui', 'fullscript_ko-wolhui.txt'],
-	['ru-ciel', 'fullscript_ru-ciel.txt'],
-	['zh-tw-yueji_yeren_hanhua_zu', 'fullscript_zh-tw-yueji_yeren_hanhua_zu.txt'],
-	['zh-yueji_yeren_hanhua_zu', 'fullscript_zh-yueji_yeren_hanhua_zu.txt'],
-]
 const LOGIC_FILE = "logic"
 const GEN_CHOICES_JSON = true
 const GEN_TREE 		   = true

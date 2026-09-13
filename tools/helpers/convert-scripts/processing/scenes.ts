@@ -12,20 +12,9 @@ import { logger } from '@tsukiweb/common/tools/utils/logger.ts';
 import { fixContexts } from '../utils/context.ts';
 import { processVarName, isSceneLabel } from './common.ts';
 import { processCondition } from '@tsukiweb/common/tools/convert-scripts/utils.ts';
+import { fullscripts, outputPathPrefix } from './fullscripts.ts';
 
-const outputPathPrefix = '../../../public/static/'
 const outputDir = 'scenes'
-const fullscripts = [
-	['jp', 'fullscript_jp.txt'],
-	['en-mm', 'fullscript_en-mm.txt'],
-	['es-tohnokun', 'fullscript_es-tohnokun.txt'],
-	['it-riffour', 'fullscript_it-riffour.txt'],
-	['pt-matsuri', 'fullscript_pt-matsuri.txt'],
-	['ko-wolhui', 'fullscript_ko-wolhui.txt'],
-	['ru-ciel', 'fullscript_ru-ciel.txt'],
-	['zh-tw-yueji_yeren_hanhua_zu', 'fullscript_zh-tw-yueji_yeren_hanhua_zu.txt'],
-	['zh-yueji_yeren_hanhua_zu', 'fullscript_zh-yueji_yeren_hanhua_zu.txt'],
-]
 
 //#endregion ###################################################################
 //#region                             FIXES
@@ -483,7 +472,7 @@ async function processSingleScript(folder: string, filename: string,
 	let txt = fs.readFileSync(fullscriptPath, 'utf-8')
 	let eroskip_pages = {}
 	let block_fixes = {}
-	let preprocess_module_path = path.join(process.cwd(), outputPathPrefix, folder, 'preprocess.js')
+	let preprocess_module_path = path.join(outputPathPrefix, folder, 'preprocess.js')
 	if (fs.existsSync(preprocess_module_path)) {
 		preprocess_module_path = path.relative(import.meta.dirname, preprocess_module_path)
 		const lang_module = await import(preprocess_module_path.replaceAll('\\', '/'))
