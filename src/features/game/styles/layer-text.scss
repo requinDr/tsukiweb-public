@@ -2,7 +2,7 @@
 
 @mixin game-text {
 	font-family: var(--game-font), sans-serif;
-	font-size: clamp(1em, min(2.4cqw, 3.8cqh), 1.9em);
+	font-size: clamp(1.05em, min(2.4cqw, 3.8cqh), 1.9em);
 	line-height: 1.94;
 	letter-spacing: 1px;
 	--sc: #000;

@@ -246,8 +246,8 @@
 				--border: rgb(255 255 255 / 1);
 				z-index: 1;
 				bottom: calc(100% - 6px);
-				left: 4px;
-				right: 4px;
+				left: 50%;
+				transform: translateX(-50%);
 				height: 34px;
 				min-width: 80px;
 				padding-top: 4px;

@@ -123,7 +123,7 @@ const HistoryTab = ({
 	const containerRef = useRef<HTMLDivElement>(null)
 	const pagesArray = Array.from(history.allPages)
 	const [ratioWidth, ratioHeight] = settings.fixedRatio.split('/').map(Number)
-	const gameTextWidth = ratioWidth ? `min(100%, calc(${100 * ratioWidth / ratioHeight}vh - 12cqmin))` : undefined
+	const gameTextWidth = ratioWidth ? `min(100%, calc(${100 * ratioWidth / ratioHeight}svh - 12cqmin))` : undefined
 
 	useLayoutEffect(() => {
 		if (containerRef.current) {

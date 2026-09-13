@@ -5,7 +5,7 @@ import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails"
 import "yet-another-react-lightbox/styles.css"
 import Zoom from "yet-another-react-lightbox/plugins/zoom"
 import "yet-another-react-lightbox/plugins/thumbnails.css"
-import { MdClose, MdLock } from "react-icons/md"
+import { MdArrowBackIos, MdArrowForwardIos, MdClose, MdLock } from "react-icons/md"
 import { GalleryPlaceholderLocked, GalleryTotal } from "./GalleryComponents"
 import { imageSrc } from "translation/assets"
 import { GalleryImg } from "app/utils/types"
@@ -77,7 +77,7 @@ const GalleryImage = ({image, gallery = [], galleryUnlocked = [], blurred = fals
 			index={index}
 			close={() => setOpen(false)}
 			controller={{ closeOnPullUp: true, ref: lightboxRef }}
-			plugins={[Zoom, Thumbnails]}
+			plugins={[Zoom, gallery.length > 1 ? Thumbnails : () => {}]}
 			render={{
 				buttonZoom: () => null,
 				thumbnail: ({ slide }) => (slide.src ? null : <GalleryPlaceholderLocked />),
@@ -88,6 +88,14 @@ const GalleryImage = ({image, gallery = [], galleryUnlocked = [], blurred = fals
 					<Button onClick={() => lightboxRef.current?.close()} key="close" ref={handleLightboxRef}>
 						<MdClose size={24} />
 					</Button>,
+				buttonPrev: () => gallery.length > 1 ?
+					<Button onClick={() => lightboxRef.current?.prev()} key="prev" ref={handleLightboxRef} className="yarl__navigation_prev">
+						<MdArrowBackIos />
+					</Button> : null,
+				buttonNext: () => gallery.length > 1 ?
+					<Button onClick={() => lightboxRef.current?.next()} key="next" ref={handleLightboxRef} className="yarl__navigation_next">
+						<MdArrowForwardIos />
+					</Button> : null
 			}}
 			carousel={{ finite: true, preload: 5 }}
 			zoom={{ maxZoomPixelRatio: 2 }}
