@@ -84,11 +84,11 @@
 			pointer-events: none;
 
 			& > image {
-				filter: brightness(0.5) grayscale(1);
+				filter: url(#fc-disabled);
 			}
 
 			&.blur > image {
-				filter: brightness(0.5) grayscale(1) blur(3px);
+				filter: url(#fc-disabled-blur);
 			}
 		}
 		&.unlocked:not(.disabled) {
@@ -97,7 +97,7 @@
 			cursor: pointer;
 
 			&.blur > image {
-				filter: blur(3px);
+				filter: url(#fc-blur);
 			}
 
 			& > rect {
@@ -122,7 +122,7 @@
 		&.enabled {
 			stroke: var(--active-connection);
 			@media (pointer: fine) {
-				filter: drop-shadow(0 0 1px blue);
+				filter: var(--fc-link-filter);
 			}
 		}
 		&.disabled {

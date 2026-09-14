@@ -1,5 +1,5 @@
 
-import { memo, useRef } from "react"
+import { memo, useId, useRef } from "react"
 import { FcNode, GameFlowchart } from "features/flowchart/utils/flowchart"
 import { SceneName } from "app/utils/types"
 import { AllScenes } from "./AllScenes"
@@ -21,6 +21,7 @@ type Props = {
 
 const Flowchart = ({history, onSceneClick, mode = 'viewer'}: Props)=> {
 	const flowchart = new GameFlowchart(history)
+	const shadowId = useId()
 	const svgRef = useRef<SVGSVGElement>(null)
 	const stageRef = useRef<HTMLDivElement>(null)
 
@@ -63,6 +64,7 @@ const Flowchart = ({history, onSceneClick, mode = 'viewer'}: Props)=> {
 					ref={svgRef}
 					className="flowchart"
 					style={{
+						...{ "--fc-link-filter": `url(#${shadowId})` },
 						minWidth: `max(${size.minWidthRem}rem, var(--flowchart-width))`, maxWidth: `${size.maxWidthPct}%`,
 						minHeight: `${size.minHeightRem}rem`, maxHeight: `${size.maxHeightPct}%`,
 					}}
@@ -70,6 +72,33 @@ const Flowchart = ({history, onSceneClick, mode = 'viewer'}: Props)=> {
 					xmlns="http://www.w3.org/2000/svg">
 					{SVG_DEFS}
 					{BADGES_DEFINES}
+					<defs colorInterpolationFilters="sRGB">
+						<filter id="fc-blur" filterUnits="userSpaceOnUse"
+							x={-SCENE_WIDTH / 2 - 9} y={-SCENE_HEIGHT / 2 - 9}
+							width={SCENE_WIDTH + 18} height={SCENE_HEIGHT + 18}>
+							<feGaussianBlur stdDeviation="3" />
+						</filter>
+						{[false, true].map(blur => (
+							<filter key={String(blur)} id={blur ? "fc-disabled-blur" : "fc-disabled"}
+								filterUnits="userSpaceOnUse"
+								x={-SCENE_WIDTH / 2 - 9} y={-SCENE_HEIGHT / 2 - 9}
+								width={SCENE_WIDTH + 18} height={SCENE_HEIGHT + 18}>
+								{/* brightness(0.5) grayscale(1) */}
+								<feColorMatrix type="matrix" values="
+									0.1063 0.3576 0.0361 0 0
+									0.1063 0.3576 0.0361 0 0
+									0.1063 0.3576 0.0361 0 0
+									0 0 0 1 0" />
+								{blur && <feGaussianBlur stdDeviation="3" />}
+							</filter>
+						))}
+						{/* Paths */}
+						<filter id={shadowId} filterUnits="userSpaceOnUse"
+							x={left} y={top} width={right - left} height={height}>
+							<feDropShadow dx="0" dy="0" stdDeviation="1" floodColor="blue" />
+						</filter>
+					</defs>
+
 					<g className="fc-connections">
 						<AllConnections fcNodes={visibleNodes} mode={mode} />
 					</g>
