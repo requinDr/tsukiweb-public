@@ -31,12 +31,12 @@
     },
     "install": "Instalar",
     "share": "Compartir",
-    "copied": "Copied to clipboard"
+    "copied": "Copiado al portapapeles"
   },
   "extra": {
     "gallery": "Galería",
     "endings": "Finales",
-    "scenes": "Escenas",
+    "scenes": "Diagrama de flujo",
     "eclipse": "Eclipse"
   },
   "config": {
@@ -50,7 +50,7 @@
     "tab-advanced": "Avanzado",
     "volume-master": "Volumen general",
     "volume-track": "Música",
-    "volume-se": "Efectos",
+    "volume-se": "Efectos de sonido",
     "volume-title-track": "Música del título",
     "volume-system-se": "Efectos del sistema",
     "track-source": "Versión de la banda sonora",
@@ -60,7 +60,7 @@
       "tsukibako": "Tsuki-Bako (2003)"
     },
     "track-source-help": [
-      "[b]Original[/b]: Banda sonora original del juego completo de 2000.",
+      "[b]Original[/b]: Banda sonora original de la versión completa del juego, publicada en 2000.",
       "[b]Ever After[/b]: Remake de la banda sonora original, publicado en 2002.",
       "[b]Tsuki-Bako[/b]: Banda sonora remezclada que vino con un paquete de Tsukihime + PLUS-DISC + Kagetsu Tohya en 2003."
     ],
@@ -74,12 +74,12 @@
     "text-speed-med": "Media",
     "text-speed-high": "Rápida",
     "text-speed-instant": "Instantánea",
-    "auto-play-delay-text": "Retraso del texto en la reproducción automática: %0s",
-    "auto-play-delay-page": "Retraso de la página en la reproducción automática: %0s",
+    "auto-play-delay-text": "Retraso del texto en el modo automático: %0s",
+    "auto-play-delay-page": "Retraso de la página en el modo automático: %0s",
     "adult-title": "Contenido para adultos",
-    "adult-blur": "Desenfocar miniaturas",
+    "adult-blur": "Desenfocar imágenes",
     "adult-blur-help": [
-      "Aplica un efecto de desenfoque en las miniaturas de las escenas para adultos."
+      "Aplica un efecto de desenfoque en las imágenes de las escenas para adultos."
     ],
     "adult-warn": "Preguntar para omitir contenido para adultos",
     "fullscreen": "Pantalla completa",
@@ -90,12 +90,12 @@
       "También permite acceder a las rutas de la Cara Oculta de la Luna.",
       "Se puede activar y desactivar en cualquier momento."
     ],
-    "game-font": "Fuente de texto del juego",
+    "game-font": "Fuente del texto del juego",
     "game-font-help": [
       "La fuente predeterminada se incluye con el proyecto.",
       "Para seleccionar una fuente diferente, introduce su nombre. Se cargará desde %0 si está disponible; de lo contrario, desde tu dispositivo."
     ],
-    "display-badges": "Mostrar iconos en el diagrama de flujo",
+    "display-badges": "Mostrar puntos de afecto y variables",
     "data": "Almacenamiento de datos",
     "data-export": "Exportar",
     "data-import": "Importar",
@@ -104,10 +104,10 @@
     "data-erase-confirm": "Todos los datos han sido eliminados. Si abandonas este sitio web sin hacer ningún cambio en los ajustes y sin comenzar un nuevo juego, no se almacenará ningún dato en tu dispositivo.",
     "controls": {
       "next": "Siguiente",
-      "graphics": "Show / hide text",
-      "back": "Back, Show / Hide menu",
+      "graphics": "Mostrar / ocultar texto",
+      "back": "Atrás, mostrar / ocultar menú",
       "bg_move": "Mover imagen de fondo",
-      "auto_play": "Reproducción automática",
+      "auto_play": "Modo automático",
       "page_nav": "Navegar a la página siguiente / anterior",
       "history": "Abrir historial",
       "flowchart": "Abrir diagrama de flujo",
@@ -117,9 +117,9 @@
       "q_load": "Carga rápida",
       "config": "Abrir panel de ajustes",
       "_hold": "mantener",
-      "_layer-text": "when text is displayed",
-      "_layer-graphics": "in graphics mode",
-      "_layer-menu": "when menu is opened"
+      "_layer-text": "con texto en pantalla",
+      "_layer-graphics": "con texto oculto",
+      "_layer-menu": "con el menú abierto"
     }
   },
   "endings": {
@@ -144,14 +144,14 @@
   },
   "game": {
     "skip-viewed": "Ya has visto esta escena.",
-    "skip-hcontent": "Este fragmento contiene contenido para adultos.",
-    "skip-prompt": "¿Quieres omitirlo?",
+    "skip-hcontent": "Esta escena contiene contenido para adultos.",
+    "skip-prompt": "¿Quieres omitirla?",
     "toast-qsave": "El progreso ha sido guardado",
     "toast-qload": "Progreso restaurado",
-    "toast-load-success": "Progreso restaurado",
-    "toast-load-fail": "No se pudo restaurar el progreso",
-    "toast-save-fail": "No se pudo guardar el progreso",
-    "toast-autoplay-stop": "Reproducción automática detenida"
+    "toast-load-success": "Datos cargados correctamente",
+    "toast-load-fail": "No se pudieron cargar los datos",
+    "toast-save-fail": "No se pudieron guardar los datos",
+    "toast-autoplay-stop": "Modo automático detenido"
   },
   "menu": {
     "graphics": "Ocultar texto",
@@ -159,7 +159,7 @@
     "save": "Guardar",
     "load": "Cargar",
     "config": "Ajustes",
-    "auto-play": "Reproducción automática",
+    "auto-play": "Modo automático",
     "ffw": "Avance rápido",
     "title": "Título",
     "q-save": "Guardado rápido",
@@ -167,7 +167,7 @@
     "copy-scene-url": "Compartir escena"
   },
   "history": {
-    "load-warning": "Rewind to this scene? Unsaved progress since this point will be lost",
+    "load-warning": "¿Retroceder a esta escena? Se perderá el progreso no guardado desde este punto",
     "load": "Cargar",
     "skipped": "Escena %0 omitida."
   },
@@ -193,5 +193,5 @@
   "ok": "Aceptar",
   "back": "Atrás",
   "close": "Cerrar",
-  "later": "Después"
+  "later": "Más tarde"
 }
