@@ -579,7 +579,7 @@
       "ending": "[b][i]Creditos"
     },
     "dead-end": "Dead end",
-    "osiete": "Ciel's lesson"
+    "osiete": "¡Enséñame, Ciel-sensei!"
   },
   "credits": [
     {
@@ -647,7 +647,7 @@
         "[right][font=serif][left=8]SUBTLE",
         "[right][font=serif][left=8]Kirihara Kojima",
         "[right][font=serif][left=8]Hayashi Youko",
-        "[right][font=serif][size=80%](Titles Omitted)"
+        "[right][font=serif][size=80%](Títulos omitidos)"
       ]
     },
     {
@@ -703,7 +703,7 @@
         "",
         "[center][font=serif][left=40]TYPE-MOON",
         "[center][font=serif][left=40]mirror moon",
-        "[center][font=serif][left=40]y a todos los fans por apoyar el projecto"
+        "[center][font=serif][left=40]y a todos los fans por apoyar el proyecto"
       ],
       "delay": 4300
     },
