@@ -13,6 +13,10 @@ function th_raw_fixes(text) {
         throw Error(`cannot find anchor of s404 to add missing playstop`)
     i += searchText.length
     text = text.substring(0, i) + '\nplaystop\n' + text.substring(i)
+    
+    // fix missing '`' line 23231
+    text = text.replace('\n  A quanto pare è stato', '\n` A quanto pare è stato')
+    text
     return text
 }
 

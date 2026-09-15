@@ -2,6 +2,7 @@ import { NumVarName } from "@tsukiweb/common/script/types"
 import { endings } from "../features/endings/utils/endings"
 import { ScriptPlayer } from "engine/ScriptPlayer"
 import { CharId } from "app/utils/types";
+import { settings } from "./settings";
 
 //#endregion ###################################################################
 //#region                         GET VARIABLES
@@ -11,6 +12,8 @@ export function getGameVariable(script: ScriptPlayer, name: NumVarName): number 
 	switch (name) {
 		// context variables
 		case '%flushcount': return script.flushcount ?? 0
+		// settings variables
+		case '%smooth': return settings.smoothFlashes
 		// endings variables
 		case '%ark_normalcleared':
 			return +(endings.ark_true.seen)
@@ -32,14 +35,14 @@ export function getGameVariable(script: ScriptPlayer, name: NumVarName): number 
 				     +(endings.kohaku_true.seen)
 		default:
 			if (/^%flg[1-9A-Z]$/.test(name)) {
-			  // flags
+			  	// flags
 				return script.flags.has(name.substring(4)) ? 1 : 0
-      } else if (/regard_\w+/.test(name)) {
-		// regard
-        const char = name.substring(name.indexOf('_')+1)
-        return script.getPoints(char as CharId)
-      } else if (/^%clear_[a-z]+_[a-z]+$/.test(name)) {
-			  // endings
+			} else if (/regard_\w+/.test(name)) {
+				// regard
+				const char = name.substring(name.indexOf('_')+1)
+				return script.getPoints(char as CharId)
+			} else if (/^%clear_[a-z]+_[a-z]+$/.test(name)) {
+			  	// endings
 				const ending = name.substring(name.indexOf('_')+1) as keyof typeof endings
 				return endings[ending].seen ? 1 : 0
 			} else {

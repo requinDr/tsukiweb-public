@@ -170,7 +170,7 @@ function insertNoTransDelay(t: CommandToken<'bg'|'ld'>, i: number, b: Block) {
         const prev = b.at(j)
         if (prev instanceof CommandToken) {
             if (['bg', 'ld', 'cl'].includes(prev.cmd)) {
-                if (prev.args.at(-2) == 'notrans')
+                if (['0', '%smooth'].includes(prev.args.at(-1)!))
                     break // might need to add a delay
                 else
                     return // already a delay
@@ -185,8 +185,15 @@ function insertNoTransDelay(t: CommandToken<'bg'|'ld'>, i: number, b: Block) {
     const prev = b.at(j) as CommandToken<'bg'|'ld'|'cl'>
     switch (t.cmd) {
         case 'bg' :
-            if (['ld', 'bg'].includes(prev.cmd))
+            if (['ld', 'bg'].includes(prev.cmd)) {
+                if (prev.cmd == 'bg' && ['0', '%smooth'].includes(prev.args.at(-1)!)) {
+                    prev.args[prev.args.length-2] = 'crossfade'
+                    prev.args[prev.args.length-1] = '%smooth'
+                    t.args[t.args.length-2] = 'crossfade'
+                    t.args[t.args.length-1] = '%smooth'
+                }
                 b.insert(i, "wait 100")
+            }
             break
         case 'ld' :
             if (prev.cmd == 'ld' && prev.args[0] == t.args[0])
