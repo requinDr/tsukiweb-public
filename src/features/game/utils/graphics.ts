@@ -137,7 +137,7 @@ export function processImageCmd(
 			if (finished)
 				return
 			setTransition({
-				to: change,
+				to: to,
 				effect,
 				duration,
 				onFinish: _onFinish
