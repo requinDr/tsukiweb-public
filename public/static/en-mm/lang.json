@@ -94,7 +94,7 @@
     "smooth-flashes-low": "Low",
     "smooth-flashes-high": "High",
     "smooth-flashes-help": [
-      "Replace instant backgound changes with a fade-in transition.",
+      "Replace instant background changes with a fade-in transition.",
       "The transition lasts 0.08s (%0) or 0.15s (%1)"
     ],
     "game-font": "Game text font",
