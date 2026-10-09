@@ -48,7 +48,7 @@ export const ConfigButtons = <V,>({ currentValue, onChange, btns, disabled }: Co
 	<div className="config-btns">
 		{btns.map(button => (
 			<Button
-				key={button.label.toString()}
+				key={String(button.value)}
 				{...ACTION_PROPS}
 				variant="select"
 				onClick={() => onChange(button.value)}
