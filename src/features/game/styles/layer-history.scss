@@ -7,8 +7,6 @@
 	touch-action: manipulation;
 	transition: opacity var(--transition-time) ease-out;
 	background: var(--transparent-layer);
-	-webkit-backdrop-filter: blur(.5px);
-	backdrop-filter: blur(.5px);
 	display: grid;
 	grid-template-rows: 1fr min-content;
 

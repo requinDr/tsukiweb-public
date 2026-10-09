@@ -111,7 +111,7 @@ const SceneIllustration = ({node}: {node: FcNode})=> {
 	const graph = node.scene ? getSceneGraph(node.id as SceneName) : null
 	return <>
 		<div className="background">
-			{graph && <GraphicsGroup images={graph} />}
+			{graph && <GraphicsGroup key={node.id} images={graph} />}
 		</div>
 		<div className="desc">
 			<div className="title">
