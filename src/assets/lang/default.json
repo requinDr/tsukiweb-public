@@ -1,12 +1,12 @@
 {
   "translation": {
-    "name": "original",
+    "name": "",
     "desc": "",
     "url": "",
     "vndb": ""
   },
   "translation-pd": {
-    "name": "original",
+    "name": "",
     "desc": "",
     "url": "",
     "vndb": ""
@@ -16,197 +16,185 @@
     "Loading language…"
   ],
   "title": {
-    "start": "New Game",
-    "resume": "Continue",
-    "load": "Load",
-    "config": "Config",
-    "extra": "Extra",
+    "start": "",
+    "resume": "",
+    "load": "",
+    "config": "",
+    "extra": "",
     "about": {
-      "port": "Web port of the 2000 VN [i]Tsukihime[/i] by Type-Moon.",
-      "project": "The project is available on %0GitHub%1. Add a star if you like it! Contributions are welcome.",
-      "feedback": "Send your feedback or report a bug %0here%1.",
-      "data": "No data collected, everything is stored in your browser. Manage your data %0here%1.",
-      "remake": "Consider buying the remake %0Tsukihime - A piece of blue glass moon%1."
+      "port": "",
+      "project": "",
+      "feedback": "",
+      "data": "",
+      "remake": ""
     },
-    "install": "Install",
-    "share": "Share",
-    "copied": "Copied to clipboard"
+    "install": "",
+    "share": "",
+    "copied": ""
   },
   "extra": {
-    "gallery": "Gallery",
-    "endings": "Endings",
-    "scenes": "Flowchart",
-    "eclipse": "Eclipse"
+    "gallery": "",
+    "endings": "",
+    "scenes": "",
+    "eclipse": ""
   },
   "config": {
-    "on": "ON",
-    "off": "OFF",
-    "reset": "Reset",
-    "default": "Default",
-    "tab-game": "Game",
-    "tab-audio": "Audio",
-    "tab-controls": "Controls",
-    "tab-advanced": "Advanced",
-    "volume-master": "General",
-    "volume-track": "BGM Volume",
-    "volume-se": "SFX Volume",
-    "volume-title-track": "TITLE BGM Volume",
-    "volume-system-se": "System SFX Volume",
-    "track-source": "Music source",
+    "on": "",
+    "off": "",
+    "reset": "",
+    "default": "",
+    "tab-game": "",
+    "tab-audio": "",
+    "tab-controls": "",
+    "tab-advanced": "",
+    "volume-master": "",
+    "volume-track": "",
+    "volume-se": "",
+    "volume-title-track": "",
+    "volume-system-se": "",
+    "track-source": "",
     "track-sources": {
-      "original": "Original (2000)",
-      "everafter": "Ever After (2002)",
-      "tsukibako": "Tsuki-Bako (2003)"
+      "original": "",
+      "everafter": "test2",
+      "tsukibako": "t3"
     },
-    "track-source-help": [
-      "[b]Original[/b]: OST from 2000.",
-      "[b]Ever After[/b]: 2002 remake.",
-      "[b]Tsuki-Bako[/b]: Remixed from Tsukihime + PLUS-DISC + Kagetsu Tohya package in 2003."
-    ],
-    "auto-mute": "Mute when leaving the app",
-    "ratio": "screen ratio",
-    "ratio-auto": "Auto",
-    "ratio-4-3": "4:3",
-    "ratio-16-9": "16:9",
-    "text-speed": "text speed",
-    "text-speed-low": "low",
-    "text-speed-med": "medium",
-    "text-speed-high": "high",
-    "text-speed-instant": "instant",
-    "auto-play-delay-text": "auto-play text delay：%0s",
-    "auto-play-delay-page": "auto-play page delay：%0s",
-    "adult-title": "Adult content",
-    "adult-blur": "Blur images",
-    "adult-blur-help": [
-      "Apply a blur effect on the images of the adult scenes."
-    ],
-    "adult-warn": "Prompt to skip H content",
-    "fullscreen": "fullscreen",
-    "language": "Language",
-    "show-locked-content": "Reveal locked content",
-    "show-locked-content-help": [
-      "Reveals Gallery, Flowchart, Endings, Eclipse, …",
-      "Unlock Far Side.",
-      "Togle on/off any time."
-    ],
-    "game-font": "Game text font",
-    "game-font-help": [
-      "The default font is served with the project.",
-      "To select a different font, input its name. It will be loaded from %0 if available, else from your device."
-    ],
-    "display-badges": "Display affection points and flags",
-    "data": "Data storage",
-    "data-export": "Export",
-    "data-import": "Import",
-    "data-erase": "Erase",
-    "data-erase-warning": "Delete all saves, settings progress. Sure?",
-    "data-erase-confirm": "All clean. Close tab.",
+    "track-source-help": [""],
+    "auto-mute": "",
+    "ratio": "",
+    "ratio-auto": "",
+    "ratio-4-3": "",
+    "ratio-16-9": "",
+    "text-speed": "",
+    "text-speed-low": "",
+    "text-speed-med": "",
+    "text-speed-high": "",
+    "text-speed-instant": "",
+    "auto-play-delay-text": "",
+    "auto-play-delay-page": "",
+    "adult-title": "",
+    "adult-blur": "",
+    "adult-blur-help": [""],
+    "adult-warn": "",
+    "fullscreen": "",
+    "language": "",
+    "show-locked-content": "",
+    "show-locked-content-help": [""],
+    "smooth-flashes": "",
+    "smooth-flashes-low": "",
+    "smooth-flashes-high": "",
+    "smooth-flashes-help": [""],
+    "game-font": "",
+    "game-font-help": [""],
+    "display-badges": "",
+    "data": "",
+    "data-export": "",
+    "data-import": "",
+    "data-erase": "",
+    "data-erase-warning": "",
+    "data-erase-confirm": "",
     "controls": {
-      "next": "Next",
-      "graphics": "Show / hide text",
-      "back": "Back, Show / Hide menu",
-      "bg_move": "Move background image",
-      "auto_play": "Auto-play",
-      "page_nav": "Navigate to next / previous page",
-      "history": "Open History",
-      "flowchart": "Open Flowchart",
-      "load": "Open load panel",
-      "save": "Open save panel",
-      "q_save": "Quick-save",
-      "q_load": "Quick-load",
-      "config": "Open config panel",
-      "_hold": "hold",
-      "_layer-text": "when text is displayed",
-      "_layer-graphics": "in graphics mode",
-      "_layer-menu": "when menu is opened"
+      "next": "",
+      "graphics": "",
+      "back": "",
+      "bg_move": "",
+      "auto_play": "",
+      "page_nav": "",
+      "history": "",
+      "flowchart": "",
+      "load": "",
+      "save": "",
+      "q_save": "",
+      "q_load": "",
+      "config": "",
+      "_hold": "",
+      "_layer-text": "",
+      "_layer-graphics": "",
+      "_layer-menu": ""
     }
   },
   "endings": {
-    "normal": "Normal",
-    "good": "Good",
-    "true": "True",
-    "osiete": "Osiete"
+    "normal": "",
+    "good": "",
+    "true": "",
+    "osiete": ""
   },
   "saves": {
-    "title-load": "Load",
-    "title-save": "Save",
-    "create": "New save",
-    "empty": "No save data found.",
-    "import": "Import a save file?",
-    "export": "Export",
-    "delete": "Delete",
-    "delete-warning": "Confirm deletion?",
-    "overwrite-warning": "Confirm overwrite?",
-    "quick-save": "Quick Save",
-    "local-storage-warning": "Saves and settings stored in browser, deleted by browser after inactivity. Regularly export.",
-    "local-storage-last-export": "Last full export: %0"
+    "title-load": "",
+    "title-save": "",
+    "create": "",
+    "empty": "",
+    "import": "",
+    "export": "",
+    "delete": "",
+    "delete-warning": "",
+    "overwrite-warning": "",
+    "quick-save": "",
+    "local-storage-warning": "",
+    "local-storage-last-export": ""
   },
   "game": {
-    "skip-viewed": "You have already seen this scene.",
-    "skip-hcontent": "This passage contains adult content.",
-    "skip-prompt": "Do you want to skip it?",
-    "toast-qsave": "Progress has been saved",
-    "toast-qload": "Progress restored",
-    "toast-load-success": "Your data has been loaded",
-    "toast-load-fail": "Failed to load data",
-    "toast-save-fail": "Failed to save data",
-    "toast-autoplay-stop": "Auto-play stopped"
+    "skip-viewed": "",
+    "skip-hcontent": "",
+    "skip-prompt": "",
+    "toast-qsave": "",
+    "toast-qload": "",
+    "toast-load-success": "",
+    "toast-load-fail": "",
+    "toast-save-fail": "",
+    "toast-autoplay-stop": ""
   },
   "menu": {
-    "graphics": "Graphics",
-    "history": "History",
-    "save": "Save",
-    "load": "Load",
-    "config": "Config",
-    "auto-play": "Auto-Play",
-    "ffw": "Fast forward",
-    "title": "Title",
-    "q-save": "Q. save",
-    "q-load": "Q. load",
-    "copy-scene-url": "Share scene"
+    "graphics": "",
+    "history": "",
+    "save": "",
+    "load": "",
+    "config": "",
+    "auto-play": "",
+    "ffw": "",
+    "title": "",
+    "q-save": "",
+    "q-load": "",
+    "copy-scene-url": ""
   },
   "history": {
-    "load-warning": "Rewind to this scene? Unsaved progress since this point will be lost",
-    "load": "Load",
-    "skipped": "Skipped scene %0."
+    "load-warning": "",
+    "load": "",
+    "skipped": ""
   },
   "characters": {
-    "aki": "Akiha",
-    "ark": "Arcueid",
-    "cel": "Ciel",
-    "his": "Hisui",
-    "koha": "Kohaku",
-    "others": "Others"
+    "aki": "",
+    "ark": "",
+    "cel": "",
+    "his": "",
+    "koha": "",
+    "others": ""
   },
   "plus_disc": {
-    "desc": [
-      "PLUS-DISC is a fan disc containing a short story and bonus, originally released in 2001.",
-      "Note: You should read Tsukihime first."
-    ],
-    "viewed": "Viewed",
-    "gallery": "Gallery",
-    "scenes": "Scenes"
+    "desc": [""],
+    "viewed": "",
+    "gallery": "",
+    "scenes": "s"
   },
-  "yes": "Yes",
-  "no": "No",
-  "ok": "Ok",
-  "back": "Back",
-  "close": "Close",
-  "later": "Later",
+  "yes": "",
+  "no": "",
+  "ok": "",
+  "back": "",
+  "close": "",
+  "later": "",
 
   "scripts-dir": "./jp/scenes/",
 
   "images": {
     "words": {
-      "end": "#ffffff$b`[right][noline][color=black][font=serif]END`",
-      "fin": "#ffffff$c`[center][noline][color=black][font=serif]Fin`",
-      "pd_fin": "#000000$b`[right][noline][font=serif]Fin`",
-      "pd_genshi": "#000000$b`[right][noline][font=serif][u]Short Story/Alliance of Illusionary Eyes`",
-      "pd_tea": "#000000$t`[left][noline][noline][font=serif][u]Moon Tea`",
-      "pd_one_a": "#000000$c`[center][noline][font=serif]1st Day/1`",
-      "pd_one_b": "#000000$c`[center][noline][font=serif]1st Day/2`",
-      "pd_two": "#000000$c`[center][noline][font=serif]2nd Day`",
-      "pd_three": "#000000$c`[center][noline][font=serif]3rd Day`"
+      "end": "#fff",
+      "fin": "#fff",
+      "pd_fin": "#000",
+      "pd_genshi": "#000",
+      "pd_tea": "#000",
+      "pd_one_a": "#000",
+      "pd_one_b": "#000",
+      "pd_two": "#000",
+      "pd_three": "#000"
     },
     "thumb": {
       "": "./jp/images_thumb/%0"
@@ -228,82 +216,64 @@
 
   "scenario": {
     "days": [
-      "[i]day 1 | 21/10 (Thur.)",
-      "[i]day 2 | 22/10 (Fri.)",
-      "[i]day 3 | 23/10 (Sat.)",
-      "[i]day 4 | 24/10 (Sun.)",
-      "[i]day 5 | 25/10 (Mon.)",
-      "[i]day 6 | 26/10 (Tue.)",
-      "[i]day 7 | 27/10 (Wed.)",
-      "[i]day 8 | 28/10 (Thur.)",
-      "[i]day 9 | 29/10 (Fri.)",
-      "[i]day 10 | 30/10 (Sat.)",
-      "[i]day 11 | 01/11(Sun.)",
-      "[i]day 12 | 02/11(Mon.)",
-      "[i]day 13 | 03/11(Tue.)"
+      "1","2","3","4","5","6","7","8","9","A","B","C","D"
     ],
     
     "routes": {
       "aki": {
-        "03a": "[b]aki-03a", "03b": "[b]aki-03b", "04a": "[b]aki-04a",
-        "05a": "[b]aki-05a", "06a": "[b]aki-06a", "07a": "[b]aki-07a",
-        "08a": "[b]aki-08a", "09a": "[b]aki-09a", "10a": "[b]aki-10a",
-        "11a": "[b]aki-11a", "12a": "[b]aki-12a", "13a": "[b]aki-13a",
-        "13b": "[b]aki-13b"
+        "03a": "", "03b": "", "04a": "",
+        "05a": "", "06a": "", "07a": "",
+        "08a": "", "09a": "", "10a": "",
+        "11a": "", "12a": "", "13a": "",
+        "13b": ""
       },
       "ark": {
-        "01a": "[b]ark-01a", "02a": "[b]ark-02a", "03a": "[b]ark-03a",
-        "04a": "[b]ark-04a", "05a": "[b]ark-05a", "06a": "[b]ark-06a",
-        "07a": "[b]ark-07a", "08a": "[b]ark-08a", "09a": "[b]ark-09a",
-        "10a": "[b]ark-10a", "11a": "[b]ark-11a", "11b": "[b]ark-11b",
-        "12a": "[b]ark-12a", "13a": "[b]ark-13a", "13b": "[b]ark-13b"
+        "01a": "", "02a": "", "03a": "",
+        "04a": "", "05a": "", "06a": "",
+        "07a": "", "08a": "", "09a": "",
+        "10a": "", "11a": "", "11b": "",
+        "12a": "", "13a": "", "13b": ""
       },
       "cel": {
-        "05a": "[b]cel-05a", "06a": "[b]cel-06a", "07a": "[b]cel-07a",
-        "08a": "[b]cel-08a", "09a": "[b]cel-09a", "09b": "[b]cel-09b",
-        "10a": "[b]cel-10a", "11a": "[b]cel-11a", "11b": "[b]cel-11b",
-        "12a": "[b]cel-12a", "13a": "[b]cel-13a", "13b": "[b]cel-13b"
+        "05a": "", "06a": "", "07a": "",
+        "08a": "", "09a": "", "09b": "",
+        "10a": "", "11a": "", "11b": "",
+        "12a": "", "13a": "", "13b": ""
       },
       "his": {
-        "04a": "[b]his-04a", "05a": "[b]his-05a", "06a": "[b]his-06a",
-        "07a": "[b]his-07a", "07b": "[b]his-07b", "08a": "[b]his-08a",
-        "09a": "[b]his-09a", "10a": "[b]his-10a", "11a": "[b]his-11a",
-        "12a": "[b]his-12a", "13a": "[b]his-13a", "14a": "[b]his-14a",
-        "14b": "[b]his-14b"
+        "04a": "", "05a": "", "06a": "",
+        "07a": "", "07b": "", "08a": "",
+        "09a": "", "10a": "", "11a": "",
+        "12a": "", "13a": "", "14a": "",
+        "14b": ""
       },
       "koha": {
-        "05a": "[b]koha-05a", "06a": "[b]koha-06a", "06b": "[b]koha-06b",
-        "07a": "[b]koha-07a", "08a": "[b]koha-08a", "09a": "[b]koha-09a",
-        "10a": "[b]koha-10a", "11a": "[b]koha-11a", "12a": "[b]koha-12a"
+        "05a": "", "06a": "", "06b": "",
+        "07a": "", "08a": "", "09a": "",
+        "10a": "", "11a": "", "12a": ""
       },
       "others": {
-        "pro": "[b][i]a prologue",
-        "epi": "[i]an epilogue"
+        "pro": "", "epi": ""
       }
     },
 
     "scenes": {
-      "openning": "[b][i]Prologue - Glass Moon",
-      "eclipse": "[b][i]Epilogue",
-      "ending": "[b][i]Credits"
+      "openning": "",
+      "eclipse": "",
+      "ending": ""
     },
 
-    "dead-end": "Dead end",
-    "osiete": "Osiete"
+    "dead-end": "",
+    "osiete": ""
   },
   
   "credits": [
-    {"center": "[center][font=serif][i]Credits"},
-    {"bottom": ["",
-                "[right]Credits",
-                "[left][size=80%]Credits"]},
-    {"top": ["[left=12]Credits"]},
-    {"bottom": "[right][font=serif][noline][color=black][copy/] 2000 TYPE-MOON All right reserved.", "delay": 21500, "bg": "#ffffff"}
+    {"center": ""}
   ],
   "plus_disc_scenario": {
-    "pd_alliance": "Alliance of Illusionary Eyes",
-    "pd_geccha": "Geccha",
-    "pd_geccha2": "Geccha 2",
-    "pd_experiment": "Kinoko's Masterpiece Experimental Theater"
+    "pd_alliance": "",
+    "pd_geccha": "",
+    "pd_geccha2": "",
+    "pd_experiment": ""
   }
 }
