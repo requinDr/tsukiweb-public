@@ -48,7 +48,8 @@ const newText=old.split('\n').map(line=>{
   v=v.replace(/ +"(?=[@\\,.;!?]|$)/g,()=>{stats.quotes++;return '"';});
   v=v.replace(infinitivePattern,()=>{stats.prepositions++;return 'à ';});
   v=v.replace(auxiliaryPattern,(whole,aux,w)=>{
-    const result=participles.get(w.toLowerCase());
+    const ascii=w.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+    const result=participles.get(w.toLowerCase())||participles.get(ascii);
     if(!result)return whole;
     stats.participles++;return aux+' '+matchCase(w,result);
   });
