@@ -1,7 +1,7 @@
 {
   "translation": {
     "name": "Nero",
-    "desc": "Traduction française du jeu principal par Nero, réalisée avec un travail humain et une assistance par IA (ChatGPT), adaptée de la traduction anglaise de Tsukihime par mirror moon. PLUS-DISC reste en anglais (mirror moon).",
+    "desc": "Traduction française du jeu principal par Nero, réalisée avec un travail humain et une assistance par IA (ChatGPT), adaptée de la traduction anglaise de Tsukihime par mirror moon.",
     "url": "https://github.com/requinDr/tsukiweb-public/issues/131",
     "vndb": ""
   },
@@ -14,7 +14,7 @@
   "disclaimer": [
     "Version web du visual novel Tsukihime, publié par TYPE-MOON en 2000.",
     "Ce jeu contient des scènes réservées à un public adulte.",
-    "La traduction française Nero du jeu principal associe travail humain et assistance par IA ; elle est adaptée de la traduction anglaise de mirror moon. PLUS-DISC reste en anglais."
+    "La traduction française Nero du jeu principal associe travail humain et assistance par IA ; elle est adaptée de la traduction anglaise de mirror moon."
   ],
   "title": {
     "start": "Nouvelle partie",
