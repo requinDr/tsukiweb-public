@@ -65,10 +65,11 @@
       "[b]Tsuki-Bako[/b]: Remixed soundtrack that came with a Tsukihime + PLUS-DISC + Kagetsu Tohya package in 2003."
     ],
     "auto-mute": "Mute when leaving the app",
-    "ratio": "Display ratio",
+    "ratio": "Display",
     "ratio-auto": "Auto",
     "ratio-4-3": "4:3",
     "ratio-16-9": "16:9",
+    "ratio-vnds": "VNDS",
     "text-speed": "Text display speed",
     "text-speed-low": "Slow",
     "text-speed-med": "Medium",

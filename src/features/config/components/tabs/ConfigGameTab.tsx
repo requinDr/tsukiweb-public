@@ -58,7 +58,8 @@ const ConfigGameTab = () => {
 					btns={[
 						{ label: strings.config["ratio-auto"], value: ViewRatio.unconstrained },
 						{ label: strings.config["ratio-4-3"], value: ViewRatio.fourByThree },
-						{ label: strings.config["ratio-16-9"], value: ViewRatio.sixteenByNine }
+						{ label: strings.config["ratio-16-9"], value: ViewRatio.sixteenByNine },
+						{ label: strings.config["ratio-vnds"], value: ViewRatio.vnds }
 					]}
 				/>
 			</ConfigItem>

@@ -8,7 +8,8 @@ import { history } from 'engine/history';
 import { isPDScene } from 'engine/utils';
 import actions, { ShowLayers } from 'features/game/utils/window-actions';
 import { settings } from 'engine/settings';
-import { useObserver } from '@tsukiweb/common/utils/Observer';
+import { useObserved, useObserver } from '@tsukiweb/common/utils/Observer';
+import { ViewRatio } from '@tsukiweb/common/constants';
 import { RatioContainer } from '@tsukiweb/common/ui-core';
 import MenuLayer from 'features/game/components/layers/MenuLayer';
 import SavesLayer from 'features/game/components/layers/SavesLayer';
@@ -23,6 +24,7 @@ import TextLayer from 'features/game/components/layers/TextLayer';
 import { SCREEN, displayMode } from 'app/utils/display';
 import { useScreenAutoNavigate } from 'app/hooks';
 import { InGameLayersHandler } from "@tsukiweb/common/utils/InGameLayersHandler";
+import classNames from 'classnames';
 
 
 const Window = () => {
@@ -49,6 +51,7 @@ const Window = () => {
 	)
 
 	useObserver(remountScript, settings, 'language', { skipFirst: true })
+	const [fixedRatio] = useObserved(settings, 'fixedRatio')
 
 	const show: ShowLayers = useMemo(() => {
 		const isPd = isPDScene(script.currentLabel ?? "")
@@ -78,7 +81,8 @@ const Window = () => {
 
 	return (
 		<m.div
-			className="page window" ref={rootRef}
+			className={classNames("page", "window", {vnds: fixedRatio == ViewRatio.vnds})}
+			ref={rootRef}
 			initial={{opacity: 0}}
 			animate={{opacity: 1}}
 			exit={{opacity: 0}}

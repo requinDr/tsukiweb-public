@@ -102,6 +102,47 @@
 		@extend %layer-skip;
 	}
 
+	// VNDS display: 4:3 graphics on top, text below
+	&.vnds {
+		:has(> #layer-graphics) {
+			display: flex;
+			flex-direction: column;
+			container-type: size;
+		}
+		#layer-graphics {
+			position: relative;
+			inset: auto;
+			flex: none;
+			width: min(100cqw, calc(60cqh * 4 / 3));
+			height: auto;
+			aspect-ratio: 4 / 3;
+			margin-inline: auto;
+		}
+		#layer-text {
+			position: relative;
+			inset: auto;
+			flex: 1;
+			min-height: 0;
+			height: auto;
+			// no user scroll (the history layer shows previous text), but
+			// useAutoScroll can still smoothly scroll to the latest lines
+			overflow-y: hidden;
+			background: none;
+			padding: 4cqmin 6cqmin 10vh;
+			// fade the text out as it scrolls up under the graphics
+			-webkit-mask-image: linear-gradient(to bottom, transparent, black 4cqmin);
+			mask-image: linear-gradient(to bottom, transparent, black 4cqmin);
+
+			&.adv {
+				position: relative;
+				inset: auto;
+				max-height: none;
+				width: auto;
+				margin: .5rem;
+			}
+		}
+	}
+
 	.menu-button {
 		display: none;
 	}
