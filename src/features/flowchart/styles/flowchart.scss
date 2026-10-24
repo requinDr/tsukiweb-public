@@ -44,6 +44,7 @@
 
 		&.enabled {
 			stroke: var(--active-connection);
+			--fc-link-glow: blue;
 		}
 		&.disabled {
 			stroke: var(--inactive-connection);
