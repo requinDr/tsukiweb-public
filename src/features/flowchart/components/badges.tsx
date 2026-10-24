@@ -3,7 +3,10 @@ import { CharId } from "app/utils/types";
 
 const HEART_PATH = `m0,2.5l-2.5,-2.5a1.66,1.66,0,1,1,2.5,-2.2a1.66,1.66,0,1,1,2.5,2.2`
 const C = DY*0.8 // unit used for condition badge
-export const FLAG_BACKGROUND = "#000"
+export const FLAG_BACKGROUND = "#202020"
+export const STRIKE_COLOR = "#ff3b3b"
+export const FLAG_CONTENT = { x: 0.15, y: -0.55, scale: 0.95 }
+export const FLAG_CONTENT_TRANSFORM = `translate(${FLAG_CONTENT.x},${FLAG_CONTENT.y}) scale(${FLAG_CONTENT.scale})`
 
 export const BADGE_PATHS = {
   heart: `${HEART_PATH}z`,
@@ -22,10 +25,11 @@ export const BADGE_PATHS = {
       Q 0,2.16 -0.34,2.28 L -1.21,2.59 Q -2.11,2.92 -2.09,1.96 L -2.06,1.03
       Q -2.05,0.67 -2.28,0.38 L -2.84,-0.35 Q -3.42,-1.12 -2.51,-1.38 L -1.62,-1.64
       Q -1.27,-1.75 -1.07,-2.05 Z`,
-  flag: "M0,-3.14 3,-1 1.85,2.53 -1.85,2.53 -3,-1Z",
+  flag: "M-2.9,-3 Q0.15,-3.6 3.2,-3 V2.4 Q0.15,1.8 -2.9,2.4Z",
+  flagPole: "M-3.2,-3.2 V3.2",
+  strike: "M-3.2,-3.2 L3.2,3.2",
   select: "M0,-2.8 2.7,0 0,2.7 -2.7,0Z",
   cond: `M0,${C*1.5} ${-C},${C} ${-C},${-C} ${C},${-C} ${C},${C}Z`,
-  condNeg: `m ${-C},0l${C*2},0`,
 }
 
 function characterGradient(char: CharId) {
@@ -53,6 +57,12 @@ export const BADGES_DEFINES = <defs>
     <use href="#regard_-"/>
   </g>
   <path id="route_icon" d={BADGE_PATHS.route}/>
-  <path id="flag-icon" d={BADGE_PATHS.flag} fill={FLAG_BACKGROUND} />
-  <path id="flag-neg-icon" d="m-1.85,2.53 -1.15,-3.53 3,-2.14 3,2.14 -1.15,3.53zl3.35,-4.60" fill="#000" stroke="#800"/>
+  <g id="flag-icon">
+    <path d={BADGE_PATHS.flagPole} fill="none" stroke="white" strokeLinecap="round"/>
+    <path d={BADGE_PATHS.flag} fill={FLAG_BACKGROUND}/>
+  </g>
+  <g id="flag-neg-icon">
+    <use href="#flag-icon"/>
+    <path d={BADGE_PATHS.strike} stroke={STRIKE_COLOR} strokeWidth="1" strokeLinecap="round"/>
+  </g>
 </defs>

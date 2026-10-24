@@ -1,6 +1,6 @@
 import { DY, FcOverlayDrawer, path2D, StyleReader } from "@tsukiweb/common/flowchart"
 import { CharId } from "app/utils/types"
-import { BADGE_PATHS, FLAG_BACKGROUND } from "../components/badges"
+import { BADGE_PATHS, FLAG_BACKGROUND, FLAG_CONTENT, STRIKE_COLOR } from "../components/badges"
 import { getNodeBadges } from "./badges"
 import { FcNode } from "./flowchart"
 
@@ -22,6 +22,9 @@ type BBox = [left: number, top: number, right: number, bottom: number]
 
 const REGARD_REGEX = /^%regard_(\w+)/
 const BADGE_RIGHT_INSET = 3
+const FLAG_RIGHT_INSET = 3.5
+const FLAG_SPACING = DY * 2.6
+const SHADOW_OFFSET = 0.4
 const COND_UNIT = DY * 0.8
 const HEART_ICON = "heart"
 const HEART_ICON_SCALE = 0.68
@@ -33,7 +36,7 @@ const HEART_ICON_RAISE = 1.45
 //##############################################################################
 
 function conditionLayout(node: FcNode, condition: Condition): BadgeLayout {
-	let x, y, angle, iconX, iconY, icon, fill: BadgeFill, negative = false
+	let x, y, angle, iconX, iconY, icon, fill: BadgeFill
 	if (typeof condition == 'object') {
 		let above, below
 		({condition, above, below} = condition)
@@ -72,13 +75,16 @@ function conditionLayout(node: FcNode, condition: Condition): BadgeLayout {
 		x = node.centerX
 		y = node.top + 0.1
 	}
+	let negative = condition.startsWith('!')
+	if (negative)
+		condition = condition.substring(1)
 	if (condition.includes('||') || condition.includes('&&')) {
 		icon = "⋯"
 		fill = 'active'
+		negative = false
 	} else if (condition.startsWith('%flg')) {
 		icon = condition[4]
 		fill = 'flag'
-		negative = condition.endsWith('==0')
 	} else if (condition.startsWith('%regard')) {
 		icon = HEART_ICON
 		fill = condition.match(REGARD_REGEX)![1] as CharId
@@ -104,8 +110,10 @@ function getBadgesLayout(node: FcNode): BadgeLayout[] {
 
 	if (char)
 		layouts.push({ type: 'regard', x: cornerX, y: cornerY, char, value: value! })
-	if (flag)
-		layouts.push({ type: 'flag', x: cornerX, y: cornerY - (char ? DY * 2.2 : 0), flag })
+	if (flag) {
+		const flagX = node.right - (node.width > 0 ? FLAG_RIGHT_INSET : 0)
+		layouts.push({ type: 'flag', x: flagX, y: cornerY - (char ? FLAG_SPACING : 0), flag })
+	}
 	if (select)
 		layouts.push({ type: 'select', x: node.centerX, y: node.bottom })
 	if (condition)
@@ -141,10 +149,38 @@ function drawShape(ctx: CanvasRenderingContext2D, d: string, fill: string | Canv
 }
 
 function drawText(ctx: CanvasRenderingContext2D, text: string, x: number, y: number,
-		size: number, font: string) {
+		size: number, font: string, halo = false) {
 	ctx.font = `${size}px ${font}`
+	if (halo) {
+		ctx.strokeStyle = FLAG_BACKGROUND
+		ctx.lineWidth = 0.7
+		ctx.strokeText(text, x, y)
+	}
 	ctx.fillStyle = "white"
 	ctx.fillText(text, x, y)
+}
+
+function drawStrike(ctx: CanvasRenderingContext2D) {
+	ctx.strokeStyle = STRIKE_COLOR
+	ctx.lineWidth = 1
+	ctx.stroke(path2D(BADGE_PATHS.strike))
+}
+
+/** Pennant, with its content drawn in the flag part */
+function drawFlag(ctx: CanvasRenderingContext2D, drawContent: VoidFunction) {
+	ctx.fillStyle = "rgb(0 0 0 / 0.5)"
+	ctx.translate(SHADOW_OFFSET, SHADOW_OFFSET)
+	ctx.fill(path2D(BADGE_PATHS.flag))
+	ctx.translate(-SHADOW_OFFSET, -SHADOW_OFFSET)
+	ctx.strokeStyle = "white"
+	ctx.lineWidth = 0.6
+	ctx.stroke(path2D(BADGE_PATHS.flagPole))
+	drawShape(ctx, BADGE_PATHS.flag, FLAG_BACKGROUND)
+	ctx.save()
+	ctx.translate(FLAG_CONTENT.x, FLAG_CONTENT.y)
+	ctx.scale(FLAG_CONTENT.scale, FLAG_CONTENT.scale)
+	drawContent()
+	ctx.restore()
 }
 
 function drawBadge(ctx: CanvasRenderingContext2D, badge: BadgeLayout, style: StyleReader,
@@ -160,10 +196,11 @@ function drawBadge(ctx: CanvasRenderingContext2D, badge: BadgeLayout, style: Sty
 			ctx.stroke(path2D(badge.value > 0 ? BADGE_PATHS.regardPlus : BADGE_PATHS.regardMinus))
 			break
 		}
-		case 'flag':
-			drawShape(ctx, BADGE_PATHS.flag, FLAG_BACKGROUND)
-			drawText(ctx, badge.flag, 0, 1.6, 4, font)
+		case 'flag': {
+			const { flag } = badge
+			drawFlag(ctx, () => drawText(ctx, flag, 0, 1.6, 4, font))
 			break
+		}
 		case 'select':
 			drawShape(ctx, BADGE_PATHS.select, style.color("var(--active-connection)"))
 			drawText(ctx, "?", 0, 1.6, 4, font)
@@ -177,6 +214,8 @@ function drawBadge(ctx: CanvasRenderingContext2D, badge: BadgeLayout, style: Sty
 			ctx.rotate(badge.angle * Math.PI / 180)
 			drawShape(ctx, BADGE_PATHS.cond, fillStyle(ctx, badge.fill, style, [-c, -c, c, c * 1.5]))
 			ctx.restore()
+			if (badge.negative)
+				drawStrike(ctx)
 			if (badge.icon == HEART_ICON) {
 				ctx.save()
 				ctx.translate(badge.iconX, badge.iconY - HEART_ICON_RAISE)
@@ -185,11 +224,7 @@ function drawBadge(ctx: CanvasRenderingContext2D, badge: BadgeLayout, style: Sty
 				ctx.fill(path2D(BADGE_PATHS.heart))
 				ctx.restore()
 			} else {
-				drawText(ctx, badge.icon, badge.iconX, badge.iconY, 5, font)
-			}
-			if (badge.negative) {
-				ctx.strokeStyle = "#500000"
-				ctx.stroke(path2D(BADGE_PATHS.condNeg))
+				drawText(ctx, badge.icon, badge.iconX, badge.iconY, 5, font, badge.negative)
 			}
 			break
 		}

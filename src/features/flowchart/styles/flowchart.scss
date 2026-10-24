@@ -21,6 +21,9 @@
 	}
 }
 
+#root {
+	--badge-background: #252525;
+}
 .flowchart-container {
 	display: flex;
 	flex-direction: column;
@@ -142,6 +145,7 @@
 				right: 0;
 				bottom: -1em;
 				display: flex;
+				gap: 0.3ch;
 			}
 
 			.condition {
@@ -173,37 +177,27 @@
 				min-width: 80px;
 				padding-top: 4px;
 				padding-inline: 12px;
-				background-color: #000;
-				border-radius: $corner-radius;
-				corner-shape: scoop;
-				border-bottom: 2px solid var(--border);
 				justify-content: center;
 				justify-self: center;
 				&::before,
 				&::after {
 					content: "";
 					position: absolute;
-					left: 50%;
-					width: 0;
-					height: 0;
-					transform: translateX(-50%);
+					z-index: -1;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: calc(100% + 10px);
+					clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), 50% 100%, 0 calc(100% - 10px));
 				}
 
-				$arrowSize: 9px;
 				&::before {
-					$size: $arrowSize + 1;
-					top: 100%;
-					border-left: $size solid transparent;
-					border-right: $size solid transparent;
-					border-top: $size solid var(--border);
+					background: var(--border);
 				}
 
 				&::after {
-					$size: $arrowSize;
-					top: calc(100% - 1px);
-					border-left: $size solid transparent;
-					border-right: $size solid transparent;
-					border-top: $size solid #000;
+					height: calc(100% + 8px);
+					background: var(--badge-background);
 				}
 			}
 			.choices-container {
@@ -214,19 +208,36 @@
 				background: linear-gradient(180deg, var(--surface-dark), #00638f);
 				border: 1px solid rgba(255, 255, 255, 0.2);
 				.choice {
+					$padding: calc(1rem - 4px);
 					position: relative;
-					isolation: isolate;
-					padding: 8px calc(1rem - 4px);
+					padding: 8px $padding;
 					&:not(:last-child) {
 						border-bottom: 1px solid rgb(255 255 255 / 20%);
 					}
+					// tag pointing to the choice it unlocks, like the scene condition
 					.condition {
-						bottom: -14px;
-						right: 0;
-						z-index: -1;
-						height: 32px;
-						padding-inline: 8px;
-						padding-block: 2px;
+						isolation: isolate;
+						top: 50%;
+						right: calc(100% - #{$padding} + 2px);
+						transform: translateY(-50%);
+						height: 26px;
+						padding: 3px 12px 3px 6px;
+						filter: drop-shadow(0 1px 2px rgb(0 0 0 / 0.6));
+						&::before,
+						&::after {
+							content: "";
+							position: absolute;
+							z-index: -1;
+							inset: 0;
+							clip-path: polygon(0 0, calc(100% - 9px) 0, 100% 50%, calc(100% - 9px) 100%, 0 100%);
+						}
+						&::before {
+							background: rgb(255 255 255 / 0.8);
+						}
+						&::after {
+							inset: 1px 2px 1px 1px;
+							background: var(--badge-background);
+						}
 					}
 				}
 			}

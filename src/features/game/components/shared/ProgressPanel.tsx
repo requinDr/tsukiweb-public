@@ -1,4 +1,4 @@
-import { BADGES_DEFINES } from "features/flowchart/components/badges"
+import { BADGES_DEFINES, FLAG_CONTENT_TRANSFORM } from "features/flowchart/components/badges"
 import { ScriptPlayer } from "engine/ScriptPlayer"
 import { useStrings } from "translation/lang"
 import { CHARS } from "app/utils/constants";
@@ -50,7 +50,7 @@ const FlagsList = ({ flags }: { flags: string[] }) => {
 			{flags.map(flag =>
 				<svg key={flag} className="badge" viewBox="-3.5 -3.5 7 7">
 					<use href="#flag-icon"/>
-					<text y="1.6" stroke="none" fill="white" textAnchor="middle">
+					<text y="1.6" transform={FLAG_CONTENT_TRANSFORM} stroke="none" fill="white" textAnchor="middle">
 						{flag}
 					</text>
 				</svg>

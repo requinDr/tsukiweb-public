@@ -6,6 +6,7 @@ import { tokenizeCondition } from "@tsukiweb/common/script/utils"
 import { settings } from "engine/settings"
 import { BadgeEntry, getNodeBadges } from "features/flowchart/utils/badges";
 import { getSceneGraph } from "engine/utils";
+import { FLAG_BACKGROUND, FLAG_CONTENT_TRANSFORM } from "./badges";
 
 
 const RegardBadge = ({char}: {char: string}) => {
@@ -25,7 +26,8 @@ const FlagBadge = ({flag, negative}: {flag: string, negative?: boolean}) => {
 	return (
 		<svg className="badge" viewBox="-3.5 -3.5 7 7">
 			<use href={negative ? "#flag-neg-icon" : "#flag-icon"}/>
-			<text y="1.6" stroke="none" fill="white" textAnchor="middle">
+			<text y="1.6" transform={FLAG_CONTENT_TRANSFORM} stroke={FLAG_BACKGROUND} strokeWidth=".7"
+				paintOrder="stroke" fill="white" textAnchor="middle">
 				{flag}
 			</text>
 		</svg>
