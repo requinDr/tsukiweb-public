@@ -76,6 +76,16 @@ export class GameFlowchart extends Flowchart<FcNode> {
 		)
 	}
 
+	/**
+	 * Playthrough mode: only transitions of the history are enabled.
+	 * Viewer: links between enabled scenes are enabled.
+	 */
+	isLinkDisabled(parent: FcNode, node: FcNode, mode: 'playthrough' | 'viewer'): boolean {
+		return mode == 'playthrough'
+			? !this.hasTransition(parent.id, node.id)
+			: parent.state !== FcNodeState.ENABLED || node.state !== FcNodeState.ENABLED
+	}
+
 	get activeScene(): FcNodeId {
 		return this._history?.lastScene.label ?? ""
 	}

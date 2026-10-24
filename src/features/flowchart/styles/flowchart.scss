@@ -1,29 +1,22 @@
-@property --flowchart-width {
-	syntax: '<length>';
-	inherits: true;
-	initial-value: 0px;
-}
-
 #flowchart {
 	height: 100%;
 	width: 100%;
 	min-height: 0;
 	display: flex;
-	mask-image: linear-gradient(90deg, transparent 0%, black calc(var(--page-padding) / 2));
 
 	.flowchart-container {
 		padding-inline: calc(var(--page-padding) / 2);
-	}
-}
 
-@media (pointer: coarse) {
-	.flowchart-container,
-	#flowchart-progress {
-		scrollbar-gutter: auto;
-		scrollbar-width: none;
+		// draw on the right up to the edge of the screen when it is wider than the page (#extra, 100cqw)
+		& > .fc-viewport {
+			margin-left: calc(var(--page-padding) / -2);
+			margin-right: calc(var(--page-padding) / -2 - (100vw - 100cqw) / 2);
+			mask-image: linear-gradient(90deg, transparent 0%, black calc(var(--page-padding) / 2));
 
-		&::-webkit-scrollbar {
-			display: none;
+			// no menu on the left
+			@media screen and (orientation: portrait) and (max-width: 979px) {
+				mask-image: none;
+			}
 		}
 	}
 }
@@ -34,107 +27,38 @@
 	height: 100%;
 	width: 100%;
 	min-height: 0;
-	container-type: inline-size;
-	isolation: isolate;
-	padding-top: 4em;
-	padding-bottom: max(160px, 10vh);
-	align-items: flex-start;
-	overflow: auto;
-	overflow-anchor: none;
-	overscroll-behavior: contain;
-	touch-action: pan-x pan-y;
 	--active-connection: #0d96e0;
 	--inactive-connection: #888;
 
-	.panzoom-stage {
-		--flowchart-width: 100cqi; // Resolve the container width outside the zoomed SVG.
-		box-sizing: content-box;
-		flex: none;
-		height: max-content;
-		touch-action: pan-x pan-y;
-		width: max-content;
-	}
-
-	.flowchart {
-		display: block;
-		flex: none;
-		direction: ltr;
-		contain: paint;
-		touch-action: pan-x pan-y;
-		vector-effect: non-scaling-stroke;
-
-		@media (pointer: coarse) {
-			shape-rendering: optimizeSpeed;
-		}
-	}
-	
 	.fc-scene {
-		stroke: var(--inactive-connection);
 		stroke: color-mix(in srgb, var(--inactive-connection) 50%, #000);
 		stroke-width: .6;
-		stroke-linejoin: round;
-		fill: none;
 
-		& > rect {
-			fill: transparent;
-			outline: none;
-		}
-
-		&.disabled {
-			pointer-events: none;
-
-			& > image {
-				filter: url(#fc-disabled);
-			}
-
-			&.blur > image {
-				filter: url(#fc-disabled-blur);
-			}
-		}
 		&.unlocked:not(.disabled) {
 			stroke: var(--active-connection);
-			outline-color: transparent;
-			cursor: pointer;
-
-			&.blur > image {
-				filter: url(#fc-blur);
-			}
-
-			& > rect {
-				transition: stroke-width .1s linear;
-				&:hover, &:focus {
-					stroke-width: 1.5;
-				}
-			}
 		}
 	}
 
 	.fc-link {
-		fill: none;
-		fill-opacity: 0.246809;
-		fill-rule: evenodd;
 		stroke-width: .8;
-		stroke-linejoin: round;
-		stroke-opacity: 1;
-		paint-order: fill markers stroke;
-		stop-color: #000000;
-		
+
 		&.enabled {
 			stroke: var(--active-connection);
-			@media (pointer: fine) {
-				filter: var(--fc-link-filter);
-			}
 		}
 		&.disabled {
 			stroke: var(--inactive-connection);
 			stroke-width: .6;
 		}
 	}
-
-	.fc-badges {
-		pointer-events: none;
-	}
 }
+
+// symbols used by the popover badges
+.fc-defs {
+	position: absolute;
+	width: 0;
+	height: 0;
+}
+
 .badge {
 	stroke: white;
 	stroke-width: .6;
@@ -142,10 +66,6 @@
 	stroke-linejoin: round;
 	font-family: var(--ui-font);
 	font-size: 4px;
-
-	use[href="#cond-icon"] + text {
-		font-size: 125%;
-	}
 }
 
 .popover-container {

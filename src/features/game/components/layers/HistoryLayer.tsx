@@ -162,13 +162,6 @@ const FlowchartTab = ({ history, continueScript, onSceneSelect }: FlowchartTabPr
 	const strings = useStrings()
 	const isSceneReplay = !continueScript
 
-	useLayoutEffect(()=> {
-		const activeNode = document.querySelector(`.fc-scene.active`)
-		if (activeNode) {
-			activeNode.scrollIntoView({ behavior: "instant", block: "center" })
-		}
-	}, [history])
-
 	const handleSceneSelect = useCallback(async (id: SceneName)=> {
 		if (!isSceneReplay && !await dialog.confirm({
 			text: strings.history["load-warning"],
@@ -190,6 +183,7 @@ const FlowchartTab = ({ history, continueScript, onSceneSelect }: FlowchartTabPr
 					history={isSceneReplay ? undefined : history}
 					onSceneClick={handleSceneSelect}
 					mode={isSceneReplay ? 'viewer' : 'playthrough'}
+					currentScene={history.lastScene?.label}
 				/>
 			</div>
 		</div>

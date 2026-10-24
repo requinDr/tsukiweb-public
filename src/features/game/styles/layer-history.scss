@@ -95,10 +95,7 @@
 	}
 
 	#flowchart-progress {
-		overflow: auto;
-		overscroll-behavior: contain;
-		touch-action: pan-x pan-y;
-		will-change: scroll-position;
+		overflow: clip;
 		display: flex;
 		.progress-container {
 			position: absolute;
@@ -129,7 +126,13 @@
 			max-width: var(--page-width);
 			margin-inline: auto;
 			padding-inline: 1em;
-			overflow: unset;
+			overflow: visible;
+
+			// span the whole screen, not only the page width
+			& > .fc-viewport {
+				width: 100vw;
+				margin-inline: calc(50% - 50vw);
+			}
 		}
 	}
 

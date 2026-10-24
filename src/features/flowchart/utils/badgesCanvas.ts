@@ -1,0 +1,212 @@
+import { DY, FcOverlayDrawer, path2D, StyleReader } from "@tsukiweb/common/flowchart"
+import { CharId } from "app/utils/types"
+import { BADGE_PATHS, FLAG_BACKGROUND } from "../components/badges"
+import { getNodeBadges } from "./badges"
+import { FcNode } from "./flowchart"
+
+
+type BadgeFill = 'active' | 'flag' | CharId
+
+type BadgeLayout = { x: number, y: number } & (
+	| { type: 'regard', char: CharId, value: number }
+	| { type: 'flag', flag: string }
+	| { type: 'select' }
+	| { type: 'ending', char: CharId }
+	| { type: 'condition', angle: number, iconX: number, iconY: number,
+		icon: string, fill: BadgeFill, negative: boolean }
+)
+
+type Condition = NonNullable<NonNullable<ReturnType<typeof getNodeBadges>>['condition']>
+
+type BBox = [left: number, top: number, right: number, bottom: number]
+
+const REGARD_REGEX = /^%regard_(\w+)/
+const BADGE_RIGHT_INSET = 3
+const COND_UNIT = DY * 0.8
+const HEART_ICON = "heart"
+const HEART_ICON_SCALE = 0.68
+const HEART_ICON_RAISE = 1.45
+
+
+//##############################################################################
+//#region                           LAYOUT
+//##############################################################################
+
+function conditionLayout(node: FcNode, condition: Condition): BadgeLayout {
+	let x, y, angle, iconX, iconY, icon, fill: BadgeFill, negative = false
+	if (typeof condition == 'object') {
+		let above, below
+		({condition, above, below} = condition)
+		if (above) {
+			const anchorNode = node.flowchart.getNode(above)
+			x = anchorNode!.centerX
+			y = anchorNode!.top - DY
+		} else if (below) {
+			const anchorNode = node.flowchart.getNode(below)
+			x = anchorNode!.centerX
+			y = anchorNode!.bottom + DY
+		} else {
+			x = node.centerX
+			y = node.top - DY
+		}
+		if (x < node.centerX) {
+			angle = -90
+			iconX = DY*0.1
+			iconY = DY*0.6
+			x += DY+0.1
+		} else if (x > node.centerX) {
+			angle = 90
+			iconX = -DY*0.1
+			iconY = DY*0.6
+			x -= DY+0.1
+		} else {
+			angle = 0
+			iconX = 0
+			iconY = DY*0.7
+			y += DY+0.1
+		}
+	} else {
+		angle = 0
+		iconX = 0
+		iconY = DY*0.7
+		x = node.centerX
+		y = node.top + 0.1
+	}
+	if (condition.includes('||') || condition.includes('&&')) {
+		icon = "⋯"
+		fill = 'active'
+	} else if (condition.startsWith('%flg')) {
+		icon = condition[4]
+		fill = 'flag'
+		negative = condition.endsWith('==0')
+	} else if (condition.startsWith('%regard')) {
+		icon = HEART_ICON
+		fill = condition.match(REGARD_REGEX)![1] as CharId
+	} else if (condition.startsWith('%clear')) {
+		icon = "★"
+		fill = 'active'
+	} else {
+		icon = "⋯"
+		fill = 'active'
+	}
+	return { type: 'condition', x, y, angle, iconX, iconY, icon, fill, negative }
+}
+
+/** Position and content of the badges of a node, in flowchart coordinates */
+function getBadgesLayout(node: FcNode): BadgeLayout[] {
+	const badge = getNodeBadges(node.id)
+	if (!badge) return []
+
+	const { flag, char, value, select, condition, ending } = badge
+	const cornerX = node.right - (node.width > 0 ? BADGE_RIGHT_INSET : 0)
+	const cornerY = node.bottom - (node.height > 0 ? DY / 2 : 0)
+	const layouts: BadgeLayout[] = []
+
+	if (char)
+		layouts.push({ type: 'regard', x: cornerX, y: cornerY, char, value: value! })
+	if (flag)
+		layouts.push({ type: 'flag', x: cornerX, y: cornerY - (char ? DY * 2.2 : 0), flag })
+	if (select)
+		layouts.push({ type: 'select', x: node.centerX, y: node.bottom })
+	if (condition)
+		layouts.push(conditionLayout(node, condition))
+	if (ending)
+		layouts.push({ type: 'ending', x: cornerX, y: cornerY, char: ending.char })
+	return layouts
+}
+
+
+//#endregion ###################################################################
+//#region                           DRAWING
+//##############################################################################
+
+function fillStyle(ctx: CanvasRenderingContext2D, fill: BadgeFill, style: StyleReader, bbox: BBox) {
+	switch (fill) {
+		case 'active': return style.color("var(--active-connection)")
+		case 'flag': return FLAG_BACKGROUND
+	}
+	const [left, top, right, bottom] = bbox
+	const gradient = ctx.createLinearGradient(left, bottom, right, top)
+	gradient.addColorStop(0, style.color(`color-mix(in oklch, var(--route-${fill}) 80%, white)`))
+	gradient.addColorStop(1, style.color(`color-mix(in oklch, var(--route-${fill}) 80%, black)`))
+	return gradient
+}
+
+function drawShape(ctx: CanvasRenderingContext2D, d: string, fill: string | CanvasGradient) {
+	ctx.fillStyle = fill
+	ctx.fill(path2D(d))
+	ctx.strokeStyle = "white"
+	ctx.lineWidth = 0.6
+	ctx.stroke(path2D(d))
+}
+
+function drawText(ctx: CanvasRenderingContext2D, text: string, x: number, y: number,
+		size: number, font: string) {
+	ctx.font = `${size}px ${font}`
+	ctx.fillStyle = "white"
+	ctx.fillText(text, x, y)
+}
+
+function drawBadge(ctx: CanvasRenderingContext2D, badge: BadgeLayout, style: StyleReader,
+		font: string) {
+	ctx.save()
+	ctx.translate(badge.x, badge.y)
+	switch (badge.type) {
+		case 'regard': {
+			const n = Math.abs(badge.value)
+			const bbox: BBox = [-2.5 - 5 * (n - 1), -3.3, 2.5, 2.5]
+			drawShape(ctx, BADGE_PATHS.regard(badge.value), fillStyle(ctx, badge.char, style, bbox))
+			ctx.strokeStyle = badge.value > 0 ? "#00ff00" : "#ff0000"
+			ctx.stroke(path2D(badge.value > 0 ? BADGE_PATHS.regardPlus : BADGE_PATHS.regardMinus))
+			break
+		}
+		case 'flag':
+			drawShape(ctx, BADGE_PATHS.flag, FLAG_BACKGROUND)
+			drawText(ctx, badge.flag, 0, 1.6, 4, font)
+			break
+		case 'select':
+			drawShape(ctx, BADGE_PATHS.select, style.color("var(--active-connection)"))
+			drawText(ctx, "?", 0, 1.6, 4, font)
+			break
+		case 'ending':
+			drawShape(ctx, BADGE_PATHS.route, fillStyle(ctx, badge.char, style, [-3, -3.5, 3, 3]))
+			break
+		case 'condition': {
+			const c = COND_UNIT
+			ctx.save()
+			ctx.rotate(badge.angle * Math.PI / 180)
+			drawShape(ctx, BADGE_PATHS.cond, fillStyle(ctx, badge.fill, style, [-c, -c, c, c * 1.5]))
+			ctx.restore()
+			if (badge.icon == HEART_ICON) {
+				ctx.save()
+				ctx.translate(badge.iconX, badge.iconY - HEART_ICON_RAISE)
+				ctx.scale(HEART_ICON_SCALE, HEART_ICON_SCALE)
+				ctx.fillStyle = "white"
+				ctx.fill(path2D(BADGE_PATHS.heart))
+				ctx.restore()
+			} else {
+				drawText(ctx, badge.icon, badge.iconX, badge.iconY, 5, font)
+			}
+			if (badge.negative) {
+				ctx.strokeStyle = "#500000"
+				ctx.stroke(path2D(BADGE_PATHS.condNeg))
+			}
+			break
+		}
+	}
+	ctx.restore()
+}
+
+export function createBadgesDrawer(nodes: FcNode[]): FcOverlayDrawer {
+	const badges = nodes.flatMap(getBadgesLayout)
+	return (ctx, view, style) => {
+		const font = style.property('--ui-font') || 'sans-serif'
+		ctx.lineCap = 'round'
+		ctx.textAlign = 'center'
+		for (const badge of badges) {
+			if (badge.x > view.left && badge.x < view.right
+					&& badge.y > view.top && badge.y < view.bottom)
+				drawBadge(ctx, badge, style, font)
+		}
+	}
+}

@@ -2,6 +2,7 @@
 
 #extra {
 	@include page-container;
+	container-type: inline-size;
 	display: grid;
 	grid-template-columns: 210px 1fr;
 	grid-template-areas: "extra-menu extra-content";
