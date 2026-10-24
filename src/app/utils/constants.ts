@@ -24,5 +24,4 @@ export const SCENE_ATTRS: {
   'scene-graphs': PartialRecord<SceneName, ThumbnailsGraphics>,
   'scene-deadEnds': Array<SceneName>,
   'scene-osiete': Array<SceneName>,
-  'scene-ero': Array<SceneName>,
 } = sceneAttrs as any
