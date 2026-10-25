@@ -6,12 +6,12 @@ import { tokenizeCondition } from "@tsukiweb/common/script/utils"
 import { settings } from "engine/settings"
 import { BadgeEntry, getNodeBadges } from "features/flowchart/utils/badges";
 import { getSceneGraph } from "engine/utils";
-import { FLAG_BACKGROUND, FLAG_CONTENT_TRANSFORM, FLAG_VIEWBOX } from "./badges";
+import { badgeViewBox, FLAG_BACKGROUND, FLAG_CONTENT_TRANSFORM } from "./badges";
 
 
 const RegardBadge = ({char}: {char: string}) => {
 	return (
-		<svg className="badge" viewBox="-13 -3.4 13 7">
+		<svg className="badge" viewBox={badgeViewBox(-13, 13)}>
 			<image href={`./res/chars/${char}.webp`}
 				className="badge"
 				x={-13} y={-3.5} height={7} />
@@ -24,7 +24,7 @@ const RegardBadge = ({char}: {char: string}) => {
 
 const FlagBadge = ({flag, negative}: {flag: string, negative?: boolean}) => {
 	return (
-		<svg className="badge" viewBox={FLAG_VIEWBOX}>
+		<svg className="badge" viewBox={badgeViewBox()}>
 			<use href={negative ? "#flag-neg-icon" : "#flag-icon"}/>
 			<text y="1.6" transform={FLAG_CONTENT_TRANSFORM} stroke={FLAG_BACKGROUND} strokeWidth=".7"
 				paintOrder="stroke" fill="white" textAnchor="middle">
@@ -36,7 +36,7 @@ const FlagBadge = ({flag, negative}: {flag: string, negative?: boolean}) => {
 
 const EndingBadge = ({char}: {char: string | null}) => {
 	return (
-		<svg className="badge" viewBox={`0 -3.4 ${char ? 13 : 6} 7`}>
+		<svg className="badge" viewBox={badgeViewBox(0, char ? 13 : 6)}>
 			<image href={`./res/chars/${char}.webp`}
 				className="badge"
 				x={0} y={-3.5} height={7} />
@@ -50,12 +50,13 @@ const EndingBadge = ({char}: {char: string | null}) => {
 const RegardValueBadge = ({ char, value }: { char: string; value: number }) => {
 	const abs = Math.abs(value)
 	const sign = Math.sign(value)
+	const left = -(abs * 5 + 8)
 	return (
-		<svg className="badge" viewBox={`${-(abs * 5 + 8)} -3.5 ${abs * 5 + 8} 7`}>
+		<svg className="badge" viewBox={badgeViewBox(left, -left)}>
 			<image
 				href={`./res/chars/${char}.webp`}
 				className="badge"
-				x={-(abs * 5 + 8)}
+				x={left}
 				y={-3.5}
 				height={7}
 			/>

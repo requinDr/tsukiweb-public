@@ -8,7 +8,9 @@ export const FLAG_BACKGROUND = "#202020"
 export const STRIKE_COLOR = "#ff3b3b"
 export const FLAG_CONTENT = { x: 0.15, y: -0.55, scale: 0.95 }
 export const FLAG_CONTENT_TRANSFORM = `translate(${FLAG_CONTENT.x},${FLAG_CONTENT.y}) scale(${FLAG_CONTENT.scale})`
-export const FLAG_VIEWBOX = "-3.5 -3.6 7 7.1"
+export const BADGE_SIZE = 7
+export const badgeViewBox = (left = -BADGE_SIZE/2, width = BADGE_SIZE) =>
+  `${left} ${-BADGE_SIZE/2} ${width} ${BADGE_SIZE}`
 
 export const BADGE_PATHS = {
   heart: `${HEART_PATH}z`,
@@ -27,7 +29,7 @@ export const BADGE_PATHS = {
       Q 0,2.16 -0.34,2.28 L -1.21,2.59 Q -2.11,2.92 -2.09,1.96 L -2.06,1.03
       Q -2.05,0.67 -2.28,0.38 L -2.84,-0.35 Q -3.42,-1.12 -2.51,-1.38 L -1.62,-1.64
       Q -1.27,-1.75 -1.07,-2.05 Z`,
-  flag: "M-2.9,-3 Q0.15,-3.6 3.2,-3 V2.4 Q0.15,1.8 -2.9,2.4Z",
+  flag: "M-2.9,-2.9 Q0.15,-3.5 3.2,-2.9 V2.4 Q0.15,1.8 -2.9,2.4Z",
   flagPole: "M-3.2,-3.2 V3.2",
   strike: "M-3.2,-3.2 L3.2,3.2",
   select: "M-4.6,0 -2,-2.5 2,-2.5 4.6,0 2,2.5 -2,2.5Z",
