@@ -5,12 +5,12 @@ import { getNodeBadges } from "./badges"
 import { FcNode } from "./flowchart"
 
 
-type BadgeFill = 'active' | 'flag' | CharId
+type BadgeFill = 'active' | 'background' | 'flag' | CharId
 
 type BadgeLayout = { x: number, y: number } & (
 	| { type: 'regard', char: CharId, value: number }
 	| { type: 'flag', flag: string }
-	| { type: 'select' }
+	| { type: 'select', link: string }
 	| { type: 'ending', char: CharId }
 	| { type: 'condition', angle: number, iconX: number, iconY: number,
 		icon: string, fill: BadgeFill, negative: boolean }
@@ -26,9 +26,13 @@ const FLAG_RIGHT_INSET = 3.5
 const FLAG_SPACING = DY * 2.6
 const SHADOW_OFFSET = 0.4
 const COND_UNIT = DY * 0.8
+const TEXT_SIZE = 4
 const HEART_ICON = "heart"
 const HEART_ICON_SCALE = 0.68
-const HEART_ICON_RAISE = 1.45
+const HEART_ICON_RAISE = 1.05
+const DOTS_ICON = "⋯"
+const DOTS_RADIUS = 0.4
+const DOTS_GAP = 1.2
 
 
 //##############################################################################
@@ -55,23 +59,23 @@ function conditionLayout(node: FcNode, condition: Condition): BadgeLayout {
 		if (x < node.centerX) {
 			angle = -90
 			iconX = DY*0.1
-			iconY = DY*0.6
+			iconY = DY*0.48
 			x += DY+0.1
 		} else if (x > node.centerX) {
 			angle = 90
 			iconX = -DY*0.1
-			iconY = DY*0.6
+			iconY = DY*0.48
 			x -= DY+0.1
 		} else {
 			angle = 0
 			iconX = 0
-			iconY = DY*0.7
+			iconY = DY*0.56
 			y += DY+0.1
 		}
 	} else {
 		angle = 0
 		iconX = 0
-		iconY = DY*0.7
+		iconY = DY*0.56
 		x = node.centerX
 		y = node.top + 0.1
 	}
@@ -79,8 +83,8 @@ function conditionLayout(node: FcNode, condition: Condition): BadgeLayout {
 	if (negative)
 		condition = condition.substring(1)
 	if (condition.includes('||') || condition.includes('&&')) {
-		icon = "⋯"
-		fill = 'active'
+		icon = DOTS_ICON
+		fill = 'background'
 		negative = false
 	} else if (condition.startsWith('%flg')) {
 		icon = condition[4]
@@ -92,14 +96,14 @@ function conditionLayout(node: FcNode, condition: Condition): BadgeLayout {
 		icon = "★"
 		fill = 'active'
 	} else {
-		icon = "⋯"
-		fill = 'active'
+		icon = DOTS_ICON
+		fill = 'background'
 	}
 	return { type: 'condition', x, y, angle, iconX, iconY, icon, fill, negative }
 }
 
 /** Position and content of the badges of a node, in flowchart coordinates */
-function getBadgesLayout(node: FcNode): BadgeLayout[] {
+function getBadgesLayout(node: FcNode, isLinkEnabled: (node: FcNode) => boolean): BadgeLayout[] {
 	const badge = getNodeBadges(node.id)
 	if (!badge) return []
 
@@ -115,7 +119,9 @@ function getBadgesLayout(node: FcNode): BadgeLayout[] {
 		layouts.push({ type: 'flag', x: flagX, y: cornerY - (char ? FLAG_SPACING : 0), flag })
 	}
 	if (select)
-		layouts.push({ type: 'select', x: node.centerX, y: node.bottom })
+		layouts.push({ type: 'select', x: node.centerX, y: node.bottom, link: isLinkEnabled(node)
+			? `fc-link enabled${node.group ? ` group-${node.group}` : ''}`
+			: "fc-link disabled" })
 	if (condition)
 		layouts.push(conditionLayout(node, condition))
 	if (ending)
@@ -131,6 +137,7 @@ function getBadgesLayout(node: FcNode): BadgeLayout[] {
 function fillStyle(ctx: CanvasRenderingContext2D, fill: BadgeFill, style: StyleReader, bbox: BBox) {
 	switch (fill) {
 		case 'active': return style.color("var(--active-connection)")
+		case 'background': return style.color("var(--badge-background)")
 		case 'flag': return FLAG_BACKGROUND
 	}
 	const [left, top, right, bottom] = bbox
@@ -149,14 +156,14 @@ function drawShape(ctx: CanvasRenderingContext2D, d: string, fill: string | Canv
 }
 
 function drawText(ctx: CanvasRenderingContext2D, text: string, x: number, y: number,
-		size: number, font: string, halo = false) {
-	ctx.font = `${size}px ${font}`
+		font: string, color = "white", halo = false) {
+	ctx.font = `${TEXT_SIZE}px ${font}`
 	if (halo) {
 		ctx.strokeStyle = FLAG_BACKGROUND
 		ctx.lineWidth = 0.7
 		ctx.strokeText(text, x, y)
 	}
-	ctx.fillStyle = "white"
+	ctx.fillStyle = color
 	ctx.fillText(text, x, y)
 }
 
@@ -198,12 +205,13 @@ function drawBadge(ctx: CanvasRenderingContext2D, badge: BadgeLayout, style: Sty
 		}
 		case 'flag': {
 			const { flag } = badge
-			drawFlag(ctx, () => drawText(ctx, flag, 0, 1.6, 4, font))
+			drawFlag(ctx, () => drawText(ctx, flag, 0, 1.6, font))
 			break
 		}
 		case 'select':
-			drawShape(ctx, BADGE_PATHS.select, style.color("var(--active-connection)"))
-			drawText(ctx, "?", 0, 1.6, 4, font)
+			ctx.fillStyle = style.stroke(badge.link).color
+			ctx.fill(path2D(BADGE_PATHS.select))
+			drawText(ctx, "?", 0, 1.45, font)
 			break
 		case 'ending':
 			drawShape(ctx, BADGE_PATHS.route, fillStyle(ctx, badge.char, style, [-3, -3.5, 3, 3]))
@@ -223,8 +231,16 @@ function drawBadge(ctx: CanvasRenderingContext2D, badge: BadgeLayout, style: Sty
 				ctx.fillStyle = "white"
 				ctx.fill(path2D(BADGE_PATHS.heart))
 				ctx.restore()
+			} else if (badge.icon == DOTS_ICON) {
+				ctx.fillStyle = "white"
+				ctx.beginPath()
+				for (const x of [-DOTS_GAP, 0, DOTS_GAP]) {
+					ctx.moveTo(x + DOTS_RADIUS, 0)
+					ctx.arc(x, 0, DOTS_RADIUS, 0, 2 * Math.PI)
+				}
+				ctx.fill()
 			} else {
-				drawText(ctx, badge.icon, badge.iconX, badge.iconY, 5, font, badge.negative)
+				drawText(ctx, badge.icon, badge.iconX, badge.iconY, font, "white", badge.negative)
 			}
 			break
 		}
@@ -232,8 +248,10 @@ function drawBadge(ctx: CanvasRenderingContext2D, badge: BadgeLayout, style: Sty
 	ctx.restore()
 }
 
-export function createBadgesDrawer(nodes: FcNode[]): FcOverlayDrawer {
-	const badges = nodes.flatMap(getBadgesLayout)
+/** @param isLinkEnabled whether the links below `node` are drawn as enabled */
+export function createBadgesDrawer(nodes: FcNode[],
+		isLinkEnabled: (node: FcNode) => boolean): FcOverlayDrawer {
+	const badges = nodes.flatMap(node => getBadgesLayout(node, isLinkEnabled))
 	return (ctx, view, style) => {
 		const font = style.property('--ui-font') || 'sans-serif'
 		ctx.lineCap = 'round'

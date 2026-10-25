@@ -55,9 +55,11 @@ const Flowchart = ({history, onSceneClick, mode = 'viewer', currentScene}: Props
 
 	const languageKey = isLanguageLoaded() ? `${strings.id}:${strings.lastUpdate ?? ""}` : ""
 	const drawBadges = useMemo(() => settings.flowchartBadges && languageKey
-		? createBadgesDrawer(items.filter(item => item.kind != 'hidden').map(item => item.node))
+		? createBadgesDrawer(items.filter(item => item.kind != 'hidden').map(item => item.node),
+			node => nodes.some(child => child.parents.includes(node)
+				&& !flowchart.isLinkDisabled(node, child, mode)))
 		: undefined,
-	[items, languageKey])
+	[items, languageKey, mode])
 
 	const onSelect = useCallback((node: FcNode) =>
 		onSceneClick?.(node.id as SceneName), [onSceneClick])
