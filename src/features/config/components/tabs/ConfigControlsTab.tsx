@@ -4,7 +4,7 @@ import { bb } from "@tsukiweb/common/utils/Bbcode"
 import { Gamepad, inGameControls, inGameGestures, menuKeyMap } from "features/game/utils/keybind"
 import { MdBackspace, MdKeyboardReturn, MdSpaceBar, MdSportsEsports, MdSwipeDown, MdSwipeLeft, MdSwipeRight, MdSwipeUp, MdTouchApp } from "react-icons/md";
 import { PiMouseLeftClickFill, PiMouseRightClickFill } from "react-icons/pi";
-import { ScrollUp } from "@tsukiweb/common/icons/scroll_up"
+import { ScrollUp } from "@tsukiweb/common/icons/ScrollUp"
 import { useStrings } from "translation/lang";
 import { EventActions } from "@tsukiweb/common/input/eventActions";
 import { GamepadEvents } from "@tsukiweb/common/input/gamepad";
