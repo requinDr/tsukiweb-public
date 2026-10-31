@@ -32,3 +32,29 @@
 .Toastify__progress-bar--wrp {
 	height: 3px;
 }
+
+html:not([data-preloading="disclaimer"]) #root::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	z-index: -1;
+	pointer-events: none;
+	background-image:
+		radial-gradient(1.2px 1.2px at 12% 18%, #fff 50%, transparent 52%),
+		radial-gradient(1px 1px at 34% 72%, hsl(198 100% 85%) 50%, transparent 52%),
+		radial-gradient(1.6px 1.6px at 58% 30%, #fff 50%, transparent 52%),
+		radial-gradient(1px 1px at 76% 84%, hsl(198 100% 85%) 50%, transparent 52%),
+		radial-gradient(1.3px 1.3px at 90% 12%, #fff 50%, transparent 52%),
+		radial-gradient(1px 1px at 22% 46%, hsl(210 100% 90%) 50%, transparent 52%),
+		radial-gradient(1.4px 1.4px at 68% 60%, #fff 50%, transparent 52%);
+	background-size: 310px 290px, 370px 410px, 260px 330px, 430px 350px, 470px 520px, 230px 270px, 390px 310px;
+	opacity: .8;
+	animation: starfield-twinkle 7s ease-in-out infinite alternate;
+}
+@keyframes starfield-twinkle {
+	from { opacity: .5; }
+	to { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+	html #root::before { animation: none; }
+}

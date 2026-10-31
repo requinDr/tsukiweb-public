@@ -17,7 +17,7 @@
 	}
 
 	.gallery-container {
-		--preferred-width: 178px;
+		--preferred-width: 180px;
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(min(var(--preferred-width), 100%), 1fr));
 		gap: 8px;

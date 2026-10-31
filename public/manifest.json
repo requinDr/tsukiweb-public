@@ -14,11 +14,6 @@
       "sizes": "32x32 48x48 72x72 96x96 128x128"
     },
     {
-      "src": "icons/icon_256.png",
-      "sizes": "256x256",
-      "type": "image/png"
-    },
-    {
       "src": "icons/icon_256_maskable.png",
       "sizes": "256x256",
       "type": "image/png",

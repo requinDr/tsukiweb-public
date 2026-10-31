@@ -32,6 +32,13 @@ const TitleMenuScreen = () => {
 			animate={{opacity: 1}}
 			exit={{opacity: 0}}>
 			<div className="logo">
+				<m.div
+					aria-hidden
+					className="moon-backdrop"
+					style={{ maskImage: `url(${moon})` }}
+					initial={{ transform: "translateY(-42%) scale(0.94)" }}
+					animate={{ transform: "translateY(-50%) scale(1)" }}
+					transition={{ duration: 0.8, ease: "easeOut" }} />
 				<m.img
 					src={moon} alt="Full moon"
 					draggable={false}

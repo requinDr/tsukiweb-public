@@ -43,7 +43,8 @@
 				line-height: 1.4;
 
 				.date {
-					color: var(--text-muted);
+					color: var(--theme-cyan-soft);
+					font-variant-numeric: tabular-nums;
 					white-space: nowrap;
 					letter-spacing: .5px;
 				}
@@ -143,6 +144,7 @@
 		display: flex;
 		flex-direction: column;
 		font-size: 1.1em;
+		background: linear-gradient(180deg, hsl(222 90% 8% / 60%), hsl(222 90% 6% / 20%));
 		border-block: 2px solid var(--separator);
 		border-left: 2px solid var(--separator);
 		position: relative;

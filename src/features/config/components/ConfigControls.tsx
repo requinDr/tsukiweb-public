@@ -1,6 +1,6 @@
 import { Button } from "@tsukiweb/common/ui-core"
 import { useButtonSounds } from "@tsukiweb/common/hooks"
-import { ComponentProps, JSX, ReactNode } from "react"
+import { ComponentProps, CSSProperties, InputHTMLAttributes, JSX, ReactNode } from "react"
 import { HiMinus, HiPlus } from "react-icons/hi"
 import { MdQuestionMark } from "react-icons/md"
 import { audio } from "engine/audio"
@@ -79,10 +79,15 @@ type ConfigRangeProps = Omit<ComponentProps<"input">, "type"> & {
 	children?: ReactNode
 }
 
+const rangeFill = ({ value, min = 0, max = 100 }: InputHTMLAttributes<HTMLInputElement>) => {
+	const [v, lo, hi] = [Number(value), Number(min), Number(max)]
+	return hi > lo ? `${Math.min(100, Math.max(0, (v - lo) / (hi - lo) * 100))}%` : "0%"
+}
+
 export const ConfigRange = ({ onDecrement, onIncrement, children, disabled, ...props }: ConfigRangeProps) => (
 	<div className="config-range">
 		<ConfigIconButton icon={<HiMinus />} onClick={onDecrement} disabled={disabled} />
-		<input type="range" disabled={disabled} {...props} />
+		<input type="range" disabled={disabled} {...props} style={{...props.style, "--fill": rangeFill(props)} as CSSProperties} />
 		<ConfigIconButton icon={<HiPlus />} onClick={onIncrement} disabled={disabled} />
 		{children}
 	</div>

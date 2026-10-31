@@ -24,6 +24,19 @@
 			z-index: 1;
 		}
 
+		.moon-backdrop {
+			position: absolute;
+			top: 50%;
+			left: 0;
+			width: 100%;
+			max-height: 100%;
+			aspect-ratio: 1;
+			background: oklch(0.3 0.15 262);
+			mask-size: contain;
+			mask-repeat: no-repeat;
+			mask-position: center;
+			will-change: transform;
+		}
 		.moon {
 			position: absolute;
 			inset: 0;
