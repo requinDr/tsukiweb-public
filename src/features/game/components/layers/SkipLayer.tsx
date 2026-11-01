@@ -36,7 +36,8 @@ const SkipLayer = ({script, history, layers}: Props) => {
 			async (label, initPage)=> {
 				if (firstBlock) {
 					firstBlock = false
-					return
+					if (history.pagesLength > 0)
+						return
 				}
 				if (initPage !== 0 || !isThScene(label) || !script.continueScript) return
 
