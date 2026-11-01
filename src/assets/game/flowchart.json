@@ -546,7 +546,7 @@
       "s324": "%regard_koha>%regard_his && %clear_his",
       "s333": {"condition":"%flgL", "above":"s332"},
       "s339": "%flgN",
-      "s410": {"condition":"%regard_his<5", "below":"s408"},
+      "s409": "%regard_his>=5",
       "s423": "%flgR",
       "s502": "%regard_aki>=1"
     }
