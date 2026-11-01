@@ -1,76 +1,14 @@
 import { GraphicsGroup } from "@tsukiweb/common/graphics"
 import { noBb, Bbcode } from "@tsukiweb/common/utils/Bbcode"
-import { SceneName } from "app/utils/types"
+import { CharId, SceneName } from "app/utils/types"
 import { FcNode } from "features/flowchart/utils/flowchart"
 import { tokenizeCondition } from "@tsukiweb/common/script/utils"
 import { settings } from "engine/settings"
 import { BadgeEntry, getNodeBadges } from "features/flowchart/utils/badges";
 import { getSceneGraph } from "engine/utils";
-import { badgeViewBox, FLAG_BACKGROUND, FLAG_CONTENT_TRANSFORM } from "./badges";
+import { FlagBadge } from "@tsukiweb/common/icons/badges";
+import { CharPointBadge, RouteBadge } from "./badges";
 
-
-const RegardBadge = ({char}: {char: string}) => {
-	return (
-		<svg className="badge" viewBox={badgeViewBox(-13, 13)}>
-			<image href={`./res/chars/${char}.webp`}
-				className="badge"
-				x={-13} y={-3.5} height={7} />
-			<use href="#regard_heart"
-				fill={`url(#${char}_grad)`}
-				transform="translate(-3.5,0.5) scale(0.75)"/>
-		</svg>
-	)
-}
-
-const FlagBadge = ({flag, negative}: {flag: string, negative?: boolean}) => {
-	return (
-		<svg className="badge" viewBox={badgeViewBox()}>
-			<use href={negative ? "#flag-neg-icon" : "#flag-icon"}/>
-			<text y="1.6" transform={FLAG_CONTENT_TRANSFORM} stroke={FLAG_BACKGROUND} strokeWidth=".7"
-				paintOrder="stroke" fill="white" textAnchor="middle">
-				{flag}
-			</text>
-		</svg>
-	)
-}
-
-const EndingBadge = ({char}: {char: string | null}) => {
-	return (
-		<svg className="badge" viewBox={badgeViewBox(0, char ? 13 : 6)}>
-			<image href={`./res/chars/${char}.webp`}
-				className="badge"
-				x={0} y={-3.5} height={7} />
-			<use className="badge" href="#route_icon"
-				fill={char ? `url(#${char}_grad)` : '#FFF'}
-				transform={`translate(${char ? 10 : 3},0) scale(0.75)`}/>
-		</svg>
-	)
-}
-
-const RegardValueBadge = ({ char, value }: { char: string; value: number }) => {
-	const abs = Math.abs(value)
-	const sign = Math.sign(value)
-	const left = -(abs * 5 + 8)
-	return (
-		<svg className="badge" viewBox={badgeViewBox(left, -left)}>
-			<image
-				href={`./res/chars/${char}.webp`}
-				className="badge"
-				x={left}
-				y={-3.5}
-				height={7}
-			/>
-			{[...Array(abs)].map((_, i) => (
-				<use
-					key={i}
-					href={`#regard_${sign}`}
-					fill={`url(#${char}_grad)`}
-					transform={`translate(${-(abs - i) * 5 + 1.5},0) scale(0.75)`}
-				/>
-			))}
-		</svg>
-	)
-}
 
 const TokenDisplay = ({ token }: { token: string }) => {
 	switch (token) {
@@ -92,12 +30,12 @@ const SceneCondition = ({condition}: {condition: string})=> {
 			return <TokenDisplay key={i} token={token} /> // operator or number
 		if (token.startsWith('%regard')) {
 			const char = token.split('_')[1]
-			return <RegardBadge key={i} char={char} />
+			return <CharPointBadge key={i} char={char as CharId} />
 		}
 		else if (token.startsWith('%flg')) {
 			const flag = token.charAt(4)
 			const negative = (i > 0 && (tokens[i-1] == '!'))
-			return <FlagBadge key={i} flag={flag} negative={negative} />
+			return <FlagBadge key={i} icon={flag} negative={negative} />
 		}
 		else if (token.startsWith('%clear')) {
 			let char: string | null
@@ -105,7 +43,7 @@ const SceneCondition = ({condition}: {condition: string})=> {
 				char = null;
 			else
 				char = token.split('_')[1]
-			return <EndingBadge key={i} char={char} />
+			return <RouteBadge key={i} char={char as CharId | null} />
 		}
 	})
 }
@@ -145,9 +83,9 @@ const SceneBadges = ({badges}: {badges: BadgeEntry})=> {
 
 		{(flag || (char && value != null) || ending) &&
 			<div className="badges">
-				{flag && <FlagBadge flag={flag} />}
-				{char && value != null && <RegardValueBadge char={char} value={value} />}
-				{ending && <EndingBadge char={ending.char} />}
+				{flag && <FlagBadge icon={flag} />}
+				{char && value != null && <CharPointBadge char={char} value={value} />}
+				{ending && <RouteBadge char={ending.char} />}
 			</div>
 		}
 	</>

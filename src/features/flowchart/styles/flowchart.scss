@@ -63,15 +63,6 @@
 	height: 0;
 }
 
-.badge {
-	stroke: white;
-	stroke-width: .6;
-	stroke-linecap: round;
-	stroke-linejoin: round;
-	font-family: var(--ui-font);
-	font-size: 4px;
-}
-
 .popover-container {
 	z-index: 100;
 	width: min(320px, 100%);
@@ -146,6 +137,9 @@
 				bottom: -1em;
 				display: flex;
 				gap: 0.3ch;
+				.badge {
+					font-size: 2.5rem;
+				}
 			}
 
 			.condition {

@@ -187,14 +187,17 @@
 			display: grid;
 
 			.row {
-				height: 52px;
+				height: 56px;
 				display: flex;
 				padding-inline: .5em;
-				padding-top: .4em;
+				padding-top: .3em;
 				border-bottom: 1px solid var(--separator);
 			}
-			.hearts-list {
-				padding-block: .4em .2em;
+			.row {
+				padding-bottom: .15em;
+				.count {
+					font-size: 1.4em;
+				}
 			}
 			.flags-list {
 				grid-column: 1 / -1;
