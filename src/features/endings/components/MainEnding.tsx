@@ -25,7 +25,7 @@ const MainEnding = ({unlocked, ending, continueScript = false, attention, ...pro
 			{...props}
 			unlocked={unlocked}
 			className={id}
-			images={images}
+			images={unlocked ? images : undefined}
 			title={unlocked ? name : "???"}
 			subtitle={unlocked && char
 				? <>{char} <span className="separator">{`\u2022`}</span> {type}</>
