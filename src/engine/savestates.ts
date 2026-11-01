@@ -81,9 +81,21 @@ export const savesManager = new SavesManager("savestates")
 //#region                          SAVE & LOAD
 //##############################################################################
 
+let newGameStarted = false
+
 export function newGame() {
   history.loadSaveState({scenes: [{label: 'openning'}], pages: []})
+  newGameStarted = true
   displayMode.screen = SCREEN.WINDOW
+}
+
+/**
+ * Returns true if the game was started from {@link newGame}, then resets the flag
+ */
+export function consumeNewGame() {
+  const value = newGameStarted
+  newGameStarted = false
+  return value
 }
 
 export async function continueGame() {
