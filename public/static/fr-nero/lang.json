@@ -1,0 +1,204 @@
+{
+  "translation": {
+    "name": "Nero",
+    "desc": "Traduction française du jeu principal par Nero, réalisée avec un travail humain et une assistance par IA (ChatGPT), adaptée de la traduction anglaise de Tsukihime par mirror moon.",
+    "url": "https://github.com/requinDr/tsukiweb-public/issues/131",
+    "vndb": ""
+  },
+  "translation-pd": {
+    "name": "mirror moon",
+    "desc": "Traduction anglaise de PLUS-DISC par mirror moon (2007). PLUS-DISC n’a pas été traduit par Nero.",
+    "url": "http://mirrormoon.org/projects/complete/tsukihime/tsukihime-plusdisc/",
+    "vndb": "https://vndb.org/r345"
+  },
+  "disclaimer": [
+    "Version web du visual novel Tsukihime, publié par TYPE-MOON en 2000.",
+    "Ce jeu contient des scènes réservées à un public adulte.",
+    "La traduction française Nero du jeu principal associe travail humain et assistance par IA ; elle est adaptée de la traduction anglaise de mirror moon."
+  ],
+  "title": {
+    "start": "Nouvelle partie",
+    "resume": "Continuer",
+    "load": "Charger",
+    "config": "Paramètres",
+    "extra": "Extras",
+    "about": {
+      "port": "Il s’agit d’une version web de Tsukihime, un visual novel publié par TYPE-MOON en 2000.",
+      "project": "Le projet est disponible sur %0GitHub%1. Vous pouvez y contribuer.",
+      "feedback": "Envoyez un commentaire ou signalez un bug %0ici%1.",
+      "data": "Aucune donnée collectée : tout est stocké dans votre navigateur. Gérez vos données %0ici%1.",
+      "remake": "Vous pouvez également acheter le remake %0Tsukihime - A piece of blue glass moon%1."
+    },
+    "install": "Installer",
+    "share": "Partager",
+    "copied": "Copié dans le presse-papiers"
+  },
+  "extra": {
+    "gallery": "Galerie",
+    "endings": "Fins",
+    "scenes": "Organigramme",
+    "eclipse": "Éclipse"
+  },
+  "config": {
+    "on": "Activé",
+    "off": "Désactivé",
+    "reset": "Réinitialiser",
+    "default": "Par défaut",
+    "tab-game": "Jeu",
+    "tab-audio": "Audio",
+    "tab-controls": "Commandes",
+    "tab-advanced": "Avancé",
+    "volume-master": "Volume général",
+    "volume-track": "Volume de la musique",
+    "volume-se": "Volume des effets sonores",
+    "volume-title-track": "Volume de la musique du titre",
+    "volume-system-se": "Volume des effets système",
+    "track-source": "Source des musiques",
+    "track-sources": {
+      "original": "Original (2000)",
+      "everafter": "Ever After (2002)",
+      "tsukibako": "Tsuki-Bako (2003)"
+    },
+    "track-source-help": [
+      "[b]Original[/b] : bande-son originale du jeu complet de 2000.",
+      "[b]Ever After[/b] : nouvel arrangement de la bande-son originale, publié en 2002.",
+      "[b]Tsuki-Bako[/b] : bande-son remixée du coffret Tsukihime + PLUS-DISC + Kagetsu Tohya de 2003."
+    ],
+    "auto-mute": "Couper le son quand on quitte l’application",
+    "ratio": "Format d’affichage",
+    "ratio-auto": "Automatique",
+    "ratio-4-3": "4:3",
+    "ratio-16-9": "16:9",
+    "text-speed": "Vitesse du texte",
+    "text-speed-low": "Lente",
+    "text-speed-med": "Moyenne",
+    "text-speed-high": "Rapide",
+    "text-speed-instant": "Instantanée",
+    "auto-play-delay-text": "Délai de lecture automatique du texte : %0 s",
+    "auto-play-delay-page": "Délai entre les pages : %0 s",
+    "adult-title": "Contenu pour adultes",
+    "adult-blur": "Flouter les images",
+    "adult-blur-help": [
+      "Flouter les images des scènes pour adultes."
+    ],
+    "adult-warn": "Proposer de passer les scènes pour adultes",
+    "fullscreen": "Plein écran",
+    "language": "Langue",
+    "show-locked-content": "Afficher le contenu verrouillé",
+    "show-locked-content-help": [
+      "Affiche la galerie, l’organigramme, les fins, Éclipse, etc.",
+      "Ce réglage permet également l’accès aux routes de la Face cachée.",
+      "Vous pouvez l’activer ou le désactiver à tout moment."
+    ],
+    "smooth-flashes": "Réduire les flashs d’arrière-plan",
+    "smooth-flashes-low": "Faible",
+    "smooth-flashes-high": "Élevée",
+    "smooth-flashes-help": [
+      "Remplace les changements instantanés d’arrière-plan par un fondu.",
+      "La transition dure 0,08 s (%0) ou 0,15 s (%1)."
+    ],
+    "game-font": "Police des dialogues",
+    "game-font-help": [
+      "La police par défaut est fournie avec le projet.",
+      "Pour choisir une autre police, saisissez son nom. Elle sera chargée depuis %0 si elle y est disponible, sinon depuis votre appareil."
+    ],
+    "display-badges": "Afficher les points d’affection et les drapeaux",
+    "data": "Données enregistrées",
+    "data-export": "Exporter",
+    "data-import": "Importer",
+    "data-erase": "Effacer",
+    "data-erase-warning": "Cela supprimera les sauvegardes, les réglages et la progression. Continuer ?",
+    "data-erase-confirm": "Toutes les données ont été supprimées.",
+    "controls": {
+      "next": "Suite",
+      "graphics": "Afficher / masquer le texte",
+      "back": "Retour / Menu",
+      "bg_move": "Déplacer le fond",
+      "auto_play": "Lecture automatique",
+      "page_nav": "Page précédente / suivante",
+      "history": "Historique",
+      "flowchart": "Organigramme",
+      "load": "Charger",
+      "save": "Sauvegarder",
+      "q_save": "Sauvegarde rapide",
+      "q_load": "Chargement rapide",
+      "config": "Paramètres",
+      "_hold": "maintenir",
+      "_layer-text": "when text is displayed",
+      "_layer-graphics": "in graphics mode",
+      "_layer-menu": "when menu is opened"
+    }
+  },
+  "endings": {
+    "normal": "Normale",
+    "good": "Bonne",
+    "true": "Véritable",
+    "osiete": "Apprenez-moi, Ciel-sensei !"
+  },
+  "saves": {
+    "title-load": "Charger",
+    "title-save": "Sauvegarder",
+    "create": "Nouvelle sauvegarde",
+    "empty": "Aucune sauvegarde.",
+    "import": "Importer une sauvegarde ?",
+    "export": "Exporter",
+    "delete": "Supprimer",
+    "delete-warning": "Supprimer cette sauvegarde ?",
+    "overwrite-warning": "Écraser cette sauvegarde ?",
+    "quick-save": "Sauvegarde rapide",
+    "local-storage-warning": "Les sauvegardes et réglages sont stockés dans ce navigateur. Pensez à exporter régulièrement vos données.",
+    "local-storage-last-export": "Dernier export complet : %0"
+  },
+  "game": {
+    "skip-viewed": "Vous avez déjà vu cette scène.",
+    "skip-hcontent": "Ce passage contient du contenu pour adultes.",
+    "skip-prompt": "Voulez-vous le passer ?",
+    "toast-qsave": "Progression sauvegardée",
+    "toast-qload": "Progression restaurée",
+    "toast-load-success": "Données chargées",
+    "toast-load-fail": "Chargement impossible",
+    "toast-save-fail": "Sauvegarde impossible",
+    "toast-autoplay-stop": "Lecture automatique arrêtée"
+  },
+  "menu": {
+    "graphics": "Images",
+    "history": "Historique",
+    "save": "Sauvegarder",
+    "load": "Charger",
+    "config": "Paramètres",
+    "auto-play": "Lecture auto",
+    "ffw": "Avance rapide",
+    "title": "Titre",
+    "q-save": "Sauv. rapide",
+    "q-load": "Charg. rapide",
+    "copy-scene-url": "Partager la scène"
+  },
+  "history": {
+    "load-warning": "Revenir à cette scène ? Toute progression non sauvegardée sera perdue.",
+    "load": "Charger",
+    "skipped": "Scène %0 passée."
+  },
+  "characters": {
+    "aki": "Akiha",
+    "ark": "Arcueid",
+    "cel": "Ciel",
+    "his": "Hisui",
+    "koha": "Kohaku",
+    "others": "Others"
+  },
+  "plus_disc": {
+    "desc": [
+      "PLUS-DISC est un disque bonus sorti en 2001, contenant une courte histoire et des suppléments.",
+      "Remarque : il est conseillé de lire Tsukihime avant PLUS-DISC."
+    ],
+    "viewed": "Vu",
+    "gallery": "Galerie",
+    "scenes": "Scènes"
+  },
+  "yes": "Oui",
+  "no": "Non",
+  "ok": "OK",
+  "back": "Retour",
+  "close": "Fermer",
+  "later": "Plus tard"
+}
