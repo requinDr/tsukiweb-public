@@ -35,7 +35,7 @@ const TitleMenuScreen = () => {
 				<m.div
 					aria-hidden
 					className="moon-backdrop"
-					style={{ maskImage: `url(${moon})` }}
+					style={{ maskImage: `url(${moon})`, WebkitMaskImage: `url(${moon})` }}
 					initial={{ transform: "translateY(-42%) scale(0.94)" }}
 					animate={{ transform: "translateY(-50%) scale(1)" }}
 					transition={{ duration: 0.8, ease: "easeOut" }} />

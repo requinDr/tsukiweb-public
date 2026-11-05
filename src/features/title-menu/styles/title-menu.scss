@@ -28,12 +28,17 @@
 			position: absolute;
 			top: 50%;
 			left: 0;
+			right: 0;
+			margin-inline: auto;
 			width: 100%;
 			max-height: 100%;
 			aspect-ratio: 1;
 			background: oklch(0.3 0.15 262);
+			-webkit-mask-size: contain;
 			mask-size: contain;
+			-webkit-mask-repeat: no-repeat;
 			mask-repeat: no-repeat;
+			-webkit-mask-position: center;
 			mask-position: center;
 			will-change: transform;
 		}

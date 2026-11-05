@@ -10,6 +10,8 @@ import { Button } from "@tsukiweb/common/ui-core"
 import { ProgressPanel } from "features/game/components/shared/ProgressPanel";
 import { settings } from "engine/settings";
 import { PartialRecord } from "@tsukiweb/common/types";
+import { useEventActions } from "@tsukiweb/common/input/eventActions";
+import { savesKeyMap } from "features/game/utils/keybind";
 
 type SaveDetailsProps = {
 	id?: number
@@ -34,6 +36,15 @@ const SaveDetails = ({id, saveState, deleteSave}: SaveDetailsProps)=> {
 	}
 
 	const isPd = lastPage?.label && isPDScene(lastPage.label)
+
+	useEventActions(savesKeyMap, (action: string)=> {
+		if (action == "delete" && id != undefined) {
+			deleteSave(id)
+			return true
+		}
+		return false
+	}, document, {capture: true}, id != undefined,
+	[id])
 
 	return (
 		<section className={classNames("info", { "preview-save": saveState !== undefined })}>		

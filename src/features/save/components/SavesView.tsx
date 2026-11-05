@@ -186,7 +186,7 @@ const SavesList = ({onSaveSelect, focusedId, setFocusedSave, parentRef, saves}: 
 						style={{
 							transform: `translateY(${start}px)`,
 						}}
-						nav-auto={1}
+						nav-y={index}
 					/>
 				)
 			})}

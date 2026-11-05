@@ -106,6 +106,14 @@ export const menuKeyMap: Record<string, EventFilter[]> = {
         {type: 'contextmenu', [EA.IF]: ()=>window.matchMedia("(pointer: coarse)").matches},
     ]
 }
+export const savesKeyMap: Record<string, EventFilter[]> = {
+    "delete": [
+        {type: GamepadEvents.BTN_PRESSED, buttonId: Gamepad.X},
+        {type: 'keydown', key: "Delete", repeat: false},
+        {type: 'keydown', key: "Backspace", repeat: false},
+    ],
+    // all other actions (navigation, back, select) handled by navigation
+}
 
 GamepadEventGenerator.config({
     btnPress: true,
