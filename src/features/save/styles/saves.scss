@@ -204,6 +204,14 @@
 				margin-top: .5em;
 				padding: 0 .5em;
 			}
+
+			@include mobile-portrait {
+				grid-template-columns: repeat(auto-fill, minmax(5.5em, max-content));
+
+				.row {
+					border-bottom: none;
+				}
+			}
 		}
 
 		.actions {
