@@ -1,5 +1,5 @@
 import { FlagBadge } from "@tsukiweb/common/icons/badges"
-import { BADGES_DEFINES, CharPointBadge, RouteBadge } from "features/flowchart/components/badges"
+import { CharPointBadge, RouteBadge } from "features/flowchart/components/badges"
 import { ScriptPlayer } from "engine/ScriptPlayer"
 import { useStrings } from "translation/lang"
 import { CHARS } from "app/utils/constants";
@@ -52,8 +52,6 @@ export const ProgressPanel = ({script, flags, regard}: Props) => {
 
 	return (
 		<div className="progress-panel">
-			<svg width="20" height="20" className="defs">{BADGES_DEFINES}</svg>
-
 			{script && <EndingList CHARS={CHARS} script={script}/>}
 			{CHARS.filter((c: CharId)=>regard![c] ?? 0 > 0).map((c: CharId)=>
 				<RegardRow key={c} char={c} value={regard![c]!} max={20}/>

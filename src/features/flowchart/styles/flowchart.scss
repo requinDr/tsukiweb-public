@@ -56,13 +56,6 @@
 	}
 }
 
-// symbols used by the popover badges
-.fc-defs {
-	position: absolute;
-	width: 0;
-	height: 0;
-}
-
 .popover-container {
 	z-index: 100;
 	width: min(320px, 100%);

@@ -4,7 +4,6 @@ import { LabelName, SceneName } from "app/utils/types"
 import { History } from "engine/history"
 import { computeLinks, FcCanvasItem, FcNodeState, FlowchartCanvas, flowchartBounds } from "@tsukiweb/common/flowchart"
 import ScenePopover from "./ScenePopover"
-import { BADGES_DEFINES } from "./badges"
 import { createBadgesDrawer } from "../utils/badgesCanvas"
 import { settings } from "engine/settings"
 import { getSceneGraph } from "engine/utils"
@@ -46,7 +45,7 @@ function buildItems(nodes: FcNode[], currentNode?: FcNode): FcCanvasItem<FcNode>
 const Flowchart = ({history, onSceneClick, mode = 'viewer', currentScene}: Props) => {
 	const strings = useStrings()
 	const flowchart = useMemo(() => new GameFlowchart(history), [history])
-	const nodes = useMemo(() => flowchart.listNodes().filter(n => n.visible), [flowchart])
+	const nodes = useMemo(() => flowchart.listNodes(), [flowchart])
 	const currentNode = flowchart.getNode(currentScene ?? flowchart.activeScene)
 	const items = useMemo(() => buildItems(nodes, currentNode), [nodes])
 	const bounds = useMemo(() => flowchartBounds(nodes), [nodes])
@@ -56,16 +55,14 @@ const Flowchart = ({history, onSceneClick, mode = 'viewer', currentScene}: Props
 	const languageKey = isLanguageLoaded() ? `${strings.id}:${strings.lastUpdate ?? ""}` : ""
 	const drawBadges = useMemo(() => settings.flowchartBadges && languageKey
 		? createBadgesDrawer(items.filter(item => item.kind != 'hidden').map(item => item.node),
-			node => nodes.some(child => child.parents.includes(node)
-				&& !flowchart.isLinkDisabled(node, child, mode)))
+			node => node.children.some(child => !flowchart.isLinkDisabled(node, child, mode)))
 		: undefined,
 	[items, languageKey, mode])
 
 	const onSelect = useCallback((node: FcNode) =>
 		onSceneClick?.(node.id as SceneName), [onSceneClick])
 
-	return <>
-		<svg className="fc-defs">{BADGES_DEFINES}</svg>
+	return (
 		<FlowchartCanvas
 			items={items}
 			links={links}
@@ -75,7 +72,7 @@ const Flowchart = ({history, onSceneClick, mode = 'viewer', currentScene}: Props
 			renderPopover={node => <ScenePopover node={node} />}
 			drawOverlay={drawBadges}
 		/>
-	</>
+	)
 }
 
 export default memo(Flowchart)

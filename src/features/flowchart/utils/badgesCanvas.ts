@@ -46,51 +46,29 @@ const headSrc = (char: CharId) => `./res/chars/${char}.webp`
 //##############################################################################
 
 function conditionLayout(node: FcNode, condition: Condition): BadgeLayout {
-	let x, y, angle, iconX, iconY, icon, fill: BadgeFill
+	let x = node.centerX, y = node.top + 0.1
+	let angle = 0, iconX = 0, iconY = DY*0.56
 	if (typeof condition == 'object') {
-		let above, below
-		({condition, above, below} = condition)
-		if (above) {
-			const anchorNode = node.flowchart.getNode(above)
-			x = anchorNode!.centerX
-			y = anchorNode!.top - DY
-		} else if (below) {
-			const anchorNode = node.flowchart.getNode(below)
-			x = anchorNode!.centerX
-			y = anchorNode!.bottom + DY
-		} else {
-			x = node.centerX
-			y = node.top - DY
-		}
-		if (x < node.centerX) {
-			angle = -90
-			iconX = DY*0.1
+		const { above, below } = condition
+		const anchorNode = node.flowchart.getNode(above || below || node.id)!
+		x = anchorNode.centerX
+		y = above || !below ? anchorNode.top - DY : anchorNode.bottom + DY
+		const side = Math.sign(x - node.centerX)
+		if (side != 0) {
+			angle = side * 90
+			iconX = -side * DY*0.1
 			iconY = DY*0.48
-			x += DY+0.1
-		} else if (x > node.centerX) {
-			angle = 90
-			iconX = -DY*0.1
-			iconY = DY*0.48
-			x -= DY+0.1
+			x -= side * (DY+0.1)
 		} else {
-			angle = 0
-			iconX = 0
-			iconY = DY*0.56
 			y += DY+0.1
 		}
-	} else {
-		angle = 0
-		iconX = 0
-		iconY = DY*0.56
-		x = node.centerX
-		y = node.top + 0.1
+		condition = condition.condition
 	}
 	let negative = condition.startsWith('!')
 	if (negative)
 		condition = condition.substring(1)
+	let icon = DOTS_ICON, fill: BadgeFill = 'background'
 	if (condition.includes('||') || condition.includes('&&')) {
-		icon = DOTS_ICON
-		fill = 'background'
 		negative = false
 	} else if (condition.startsWith('%flg')) {
 		icon = condition[4]
@@ -101,9 +79,6 @@ function conditionLayout(node: FcNode, condition: Condition): BadgeLayout {
 	} else if (condition.startsWith('%clear')) {
 		icon = "★"
 		fill = 'active'
-	} else {
-		icon = DOTS_ICON
-		fill = 'background'
 	}
 	return { type: 'condition', x, y, angle, iconX, iconY, icon, fill, negative }
 }
