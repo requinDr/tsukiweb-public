@@ -45,7 +45,7 @@
     "last-update": "2026-09-13",
     "fallback": "en-mm"
   },
-   "zh-yueji_yeren_hanhua_zu": {
+  "zh-yueji_yeren_hanhua_zu": {
     "locale": "zh-CN",
     "display-name": "🇨🇳 简体中文",
     "authors": "Hawkwin",
@@ -67,6 +67,14 @@
     "authors": "Wolhui",
     "dir": "./ko-wolhui",
     "last-update": "2026-09-13",
+    "fallback": "en-mm"
+  },
+  "fr-nero": {
+    "locale": "fr-FR",
+    "display-name": "🇫🇷 Français",
+    "authors": "Nero",
+    "dir": "./fr-nero",
+    "last-update": "2026-10-09",
     "fallback": "en-mm"
   }
 }
