@@ -34,7 +34,7 @@ const ConfigGameTab = () => {
 					nav-auto={1}
 					className="config-btn flag"
 					onClick={()=>setShowLanguage(true)}>
-					{languages?.[settings.language]?.["display-name"]}... +{Object.keys(languages).length - 1}
+					{languages?.[settings.language]?.["display-name"]} +{Object.keys(languages).length - 1}
 				</Button>
 				<ModalLanguageSelection show={showLanguage} setShow={setShowLanguage} />
 			</ConfigItem>

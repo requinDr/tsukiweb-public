@@ -191,7 +191,6 @@
 				display: flex;
 				padding-inline: .5em;
 				padding-top: .3em;
-				border-bottom: 1px solid var(--separator);
 			}
 			.row {
 				padding-bottom: .15em;
@@ -207,10 +206,6 @@
 
 			@include mobile-portrait {
 				grid-template-columns: repeat(auto-fill, minmax(5.5em, max-content));
-
-				.row {
-					border-bottom: none;
-				}
 			}
 		}
 
