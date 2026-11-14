@@ -63,30 +63,6 @@
 				.graphics {
 					font-size: 0.3em;
 				}
-				.choices-preview {
-					position: absolute;
-					inset: 0;
-					display: grid;
-					gap: 2px;
-					align-self: center;
-					justify-self: center;
-					padding-block: 6px;
-					overflow: hidden;
-					max-height: 100%;
-					font-size: 0.5em;
-					letter-spacing: 0.5px;
-					width: 90%;
-					font-weight: 500;
-					color: #ffffffe8;
-
-					.choice {
-						background-color: rgb(1 14 36 / 70%);
-						border: 1px solid var(--surface-light);
-						white-space: nowrap;
-						overflow: hidden;
-						padding: 4px 6px;
-					}
-				}
 			}
 
 			&::after {

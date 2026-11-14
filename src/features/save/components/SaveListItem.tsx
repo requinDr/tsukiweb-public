@@ -4,7 +4,7 @@ import SaveSummary from "./SaveSummary"
 import { jsonMerge } from "@tsukiweb/common/utils/utils"
 import { isPDScene } from "engine/utils"
 import { ComponentProps } from "react"
-import { bb } from "@tsukiweb/common/utils/Bbcode"
+import { ChoicesPreview } from "@tsukiweb/common/choices"
 import { QUICK_SAVE_ID, SaveState } from "engine/savestates";
 import { getLocale } from "translation/lang";
 
@@ -57,14 +57,3 @@ const SaveListItem = ({saveId, saveState, isFocused, ...props}: SaveListItemProp
 }
 
 export default SaveListItem
-
-
-const ChoicesPreview = ({choices}: {choices: Array<{str: string}>})=> (
-	<div className="choices-preview">
-		{choices.map(({str}, i) =>
-			<div key={i} className="choice">
-				{bb(str)}
-			</div>
-		)}
-	</div>
-)
