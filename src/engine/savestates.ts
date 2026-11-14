@@ -112,17 +112,22 @@ export async function continueGame() {
 /**
  * Play the specified scene
  * @param scene scene to play
- * @param continueScript if true, the script will continue to the next scene. Default is true.
+ * @param extra if true, the game will not take place in the base game and won't have access to the flowchart
+ * @param singleScene if true, the script will only play the selected scene/block, and save will be disabled
  * @param viewedOnly if true, the scene will only be played if it has been viewed by the player. Default is true.
  */
 export function playScene(scene: LabelName,
-  { continueScript = true, viewedOnly = true }) {
+  { singleScene = false, extra = false, viewedOnly = true }) {
   if (viewedOnly && !viewedScene(scene) && !settings.unlockEverything) {
     console.warn(`Can't play "${scene}" because it has not been viewed yet.`)
     return
   }
   history.clear()
-  const obj = continueScript ? {label: scene} : {label: scene, continueScript}
+  const obj = {
+    label: scene,
+    ...(singleScene ? {singleScene: true} : {}),
+    ...(extra ? {extra: true} : {})
+  }
   history.loadSaveState({scenes: [obj], pages: []})
   displayMode.screen = SCREEN.WINDOW
 }

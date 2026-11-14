@@ -52,11 +52,11 @@ const Window = () => {
 
 	const show: ShowLayers = useMemo(() => {
 		const isPd = isPDScene(script.currentLabel ?? "")
-		const canSave = script.continueScript || isPd
+		const canSave = !script.singleScene
 		return {
 			graphics: true,
 			history: true,
-			flowchart: !isPd,
+			flowchart: !script.extra && !isPd,
 			save: canSave,
 			load: true,
 			config: true,
@@ -65,7 +65,7 @@ const Window = () => {
 			qLoad: canSave,
 			copyScene: true,
 		}
-	}, [script.currentLabel, script.continueScript])
+	}, [script.currentLabel, script.extra, script.singleScene])
 
 	useScriptManager({script, history, layers, actionsHandler})
 	useGameInputs({rootRef, layers, actionsHandler, show})
@@ -93,7 +93,7 @@ const Window = () => {
 					/>
 				</RatioContainer>
 
-				{script.continueScript &&
+				{!script.singleScene &&
 					<ChoicesLayer
 						script={script}
 						display={layers.text && (topLayer == 'text' || topLayer == 'menu')}
@@ -106,7 +106,7 @@ const Window = () => {
 					display={layers.history || layers.flowchart}
 					history={history}
 					layers={layers}
-					continueScript={script.continueScript}
+					singleScene={script.singleScene}
 					show={show}
 					onRewind={remountScript}
 				/>

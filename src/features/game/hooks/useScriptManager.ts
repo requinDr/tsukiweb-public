@@ -43,7 +43,7 @@ export const useScriptManager = ({script, history, layers, actionsHandler}: Scri
 			window.history.back()
 		}
 
-		if (!script.continueScript) {
+		if (script.singleScene || script.extra) {
 			script.addEventListener('afterBlock', handleReplayEnd)
 		}
 

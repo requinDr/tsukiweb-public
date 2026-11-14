@@ -10,7 +10,7 @@ const FlowchartScreen = () => {
 	useScreenAutoNavigate(SCREEN.SCENES)
 
 	const onSceneClick = useCallback((id: SceneName)=> {
-		playScene(id, {continueScript: false, viewedOnly: true})
+		playScene(id, {singleScene: true})
 	}, [])
 
 	return (

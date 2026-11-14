@@ -16,7 +16,7 @@ const Oshiete = ({unlocked, ending, number}: Props) => {
 	const trigger = usePopoverTrigger({id: ending.scene, name: ending.name, scene: ending.scene, day: ending.day, graph})
 	const handlePlay = () => {
 		if (unlocked && ending)
-			playScene(ending.scene, {continueScript: false })
+			playScene(ending.scene, { singleScene: true })
 	}
 
 	return (

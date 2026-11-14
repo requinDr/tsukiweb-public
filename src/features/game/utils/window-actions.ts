@@ -173,11 +173,11 @@ export class UserActionsHandler {
 		}
 	}
 	quickSave() {
-		if (this._script?.continueScript)
+		if (this._script && !this._script.singleScene)
 			quickSave(this._script.history)
 	}
 	quickLoad() {
-		if (this._script?.continueScript)
+		if (this._script && !this._script.singleScene)
 			quickLoad(this._script.history, this._remountScript)
 	}
 	handleAction(action: string, ...args: any) {

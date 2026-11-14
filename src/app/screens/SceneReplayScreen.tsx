@@ -13,7 +13,7 @@ const SceneReplayScreen = () => {
 		const sceneIdTmp = sceneId as LabelName
 		displayMode.replaceNavigation = true
 		displayMode.navigationState = { replayReturnTo: SCREEN.SCENES }
-		playScene(sceneIdTmp, { continueScript: false, viewedOnly: false })
+		playScene(sceneIdTmp, { singleScene: true, viewedOnly: false })
 	}, [sceneId])
 
 	return null

@@ -40,7 +40,7 @@ const SkipLayer = ({script, history, layers}: Props) => {
 					if (!consumeNewGame())
 						return
 				}
-				if (initPage !== 0 || !isThScene(label) || !script.continueScript) return
+				if (initPage !== 0 || !isThScene(label) || script.singleScene || script.extra) return
 
 				if (settings.enableSceneSkip && viewedScene(label)) {
 					await new Promise<boolean>((resolve)=> {
