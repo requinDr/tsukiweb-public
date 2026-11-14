@@ -44,20 +44,20 @@ function buildItems(nodes: FcNode[], currentNode?: FcNode): FcCanvasItem<FcNode>
 
 const Flowchart = ({history, onSceneClick, mode = 'viewer', currentScene}: Props) => {
 	const strings = useStrings()
-	const flowchart = useMemo(() => new GameFlowchart(history), [history])
+	const flowchart = useMemo(() => new GameFlowchart(history, mode), [history, mode])
 	const nodes = useMemo(() => flowchart.listNodes(), [flowchart])
 	const currentNode = flowchart.getNode(currentScene ?? flowchart.activeScene)
 	const items = useMemo(() => buildItems(nodes, currentNode), [nodes])
 	const bounds = useMemo(() => flowchartBounds(nodes), [nodes])
 	const links = useMemo(() => computeLinks(nodes, (parent, node) =>
-		flowchart.isLinkDisabled(parent, node, mode)), [nodes, mode])
+		flowchart.isLinkDisabled(parent, node)), [nodes, flowchart])
 
 	const languageKey = isLanguageLoaded() ? `${strings.id}:${strings.lastUpdate ?? ""}` : ""
 	const drawBadges = useMemo(() => settings.flowchartBadges && languageKey
-		? createBadgesDrawer(items.filter(item => item.kind != 'hidden').map(item => item.node),
-			node => node.children.some(child => !flowchart.isLinkDisabled(node, child, mode)))
+		? createBadgesDrawer(flowchart,
+			items.filter(item => item.kind != 'hidden').map(item => item.node))
 		: undefined,
-	[items, languageKey, mode])
+	[items, languageKey, flowchart])
 
 	const onSelect = useCallback((node: FcNode) =>
 		onSceneClick?.(node.id as SceneName), [onSceneClick])
@@ -69,7 +69,7 @@ const Flowchart = ({history, onSceneClick, mode = 'viewer', currentScene}: Props
 			bounds={bounds}
 			center={currentNode?.scene ? currentNode : undefined}
 			onSelect={onSelect}
-			renderPopover={node => <ScenePopover node={node} />}
+			renderPopover={node => <ScenePopover flowchart={flowchart} node={node} />}
 			drawOverlay={drawBadges}
 		/>
 	)

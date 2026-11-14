@@ -1,7 +1,8 @@
 import { GraphicsGroup } from "@tsukiweb/common/graphics"
 import { noBb, Bbcode } from "@tsukiweb/common/utils/Bbcode"
 import { CharId, SceneName } from "app/utils/types"
-import { FcNode } from "features/flowchart/utils/flowchart"
+import classNames from "classnames"
+import { FcNode, GameFlowchart } from "features/flowchart/utils/flowchart"
 import { tokenizeCondition } from "@tsukiweb/common/script/utils"
 import { settings } from "engine/settings"
 import { BadgeEntry, getNodeBadges } from "features/flowchart/utils/badges";
@@ -91,13 +92,13 @@ const SceneBadges = ({badges}: {badges: BadgeEntry})=> {
 	</>
 }
 
-const SceneChoices = ({select}: {select: BadgeEntry['select'] })=> {
+const SceneChoices = ({select, choice = -1}: {select: BadgeEntry['select'], choice: number })=> {
 	if (!select) return null
 
 	return (
 		<div className="choices-container">
 			{select.map(({text, condition}, i) =>
-				<div key={i} className="choice">
+				<div key={i} className={classNames("choice", {selected: i == choice})} >
 					{settings.flowchartBadges && condition &&
 						<div className="condition">
 							<SceneCondition condition={condition}/>
@@ -112,8 +113,9 @@ const SceneChoices = ({select}: {select: BadgeEntry['select'] })=> {
 
 type PopoverProps = {
 	node: FcNode
+	flowchart: GameFlowchart
 }
-const ScenePopover = ({ node }: PopoverProps) => {
+const ScenePopover = ({ node, flowchart }: PopoverProps) => {
 	const badges = getNodeBadges(node.id)
 
 	return (
@@ -121,7 +123,7 @@ const ScenePopover = ({ node }: PopoverProps) => {
 			<div className="scoop">
 				<SceneIllustration node={node} />
 			</div>
-			{badges && <SceneChoices select={badges.select} />}
+			{badges && <SceneChoices select={badges.select} choice={flowchart.getHistoryScene(node.id)?.choice ?? -1}/>}
 			{settings.flowchartBadges && badges &&
 				<SceneBadges badges={badges} />
 			}

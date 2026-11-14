@@ -25,13 +25,15 @@ type FcNodeAttrs = FlowchartNodeAttrs<FcNodeId> & {
 export class GameFlowchart extends Flowchart<FcNode> {
 	public metadatas: Readonly<SpritesheetMetadataType> = SpritesheetMetadata
 	private _history: History|undefined
-	constructor(history?: History) {
+	private _mode: 'playthrough' | 'viewer'
+	constructor(history?: History, mode: 'playthrough' | 'viewer' = 'viewer') {
 		super({
 			...(FC.nodes ?? {}),
 			...Object.fromEntries(Object.entries(FC.scenes)
 				.filter(([, { col }]) => col != undefined)) // filter non-fc scenes
 		})
 		this._history = history
+		this._mode = mode
 	}
 
 	protected createNode(id: string, attrs: FcNodeAttrs): FcNode {
@@ -78,10 +80,18 @@ export class GameFlowchart extends Flowchart<FcNode> {
 	 * Playthrough mode: only transitions of the history are enabled.
 	 * Viewer: links between enabled scenes are enabled.
 	 */
-	isLinkDisabled(parent: FcNode, node: FcNode, mode: 'playthrough' | 'viewer'): boolean {
-		return mode == 'playthrough'
+	isLinkDisabled(parent: FcNode, node: FcNode): boolean {
+		return this.mode == 'playthrough'
 			? !this.hasTransition(parent.id, node.id)
 			: parent.state !== FcNodeState.ENABLED || node.state !== FcNodeState.ENABLED
+	}
+
+	get mode() {
+		return this._mode
+	}
+
+	getHistoryScene(id: FcNodeId) {
+		return this._history?.sceneContext(id.replace(/^f/, 's') as LabelName)
 	}
 
 	get activeScene(): FcNodeId {

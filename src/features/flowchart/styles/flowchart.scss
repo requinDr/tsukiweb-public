@@ -1,3 +1,5 @@
+@use '@tsukiweb/common/choices/styles/_highlight.scss' as *;
+
 #flowchart {
 	height: 100%;
 	width: 100%;
@@ -195,6 +197,21 @@
 				background: linear-gradient(180deg, var(--surface-dark), #00638f);
 				border: 1px solid rgba(255, 255, 255, 0.2);
 				.choice {
+					&.selected {
+						isolation: isolate;
+
+						&::before {
+							content: "";
+							position: absolute;
+							z-index: -1;
+							top: 0;
+							left: 0;
+							height: 100%;
+							opacity: .5;
+							pointer-events: none;
+							@include choice-highlight;
+						}
+					}
 					$padding: calc(1rem - 4px);
 					position: relative;
 					padding: 8px $padding;

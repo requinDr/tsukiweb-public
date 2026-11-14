@@ -65,6 +65,7 @@ export class History extends HistoryBase<ScriptPlayer, PageType,
       throw Error("current page is not of type 'choice'")
     }
     (lastPage as PageEntry<'choice'>).selected = selection
+    super.onChoice(selection)
   }
 
   onPhase() {
