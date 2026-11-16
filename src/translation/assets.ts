@@ -6,6 +6,7 @@ import { ResolutionId, TextImage } from "@tsukiweb/common/translation/lang"
 import { closeBB } from "@tsukiweb/common/utils/Bbcode"
 import { AssetsCache } from "@tsukiweb/common/utils/AssetsCache"
 import { assetPath, imageFormat } from "@tsukiweb/common/utils/images"
+import { APP_VERSION } from "../app/utils/constants"
 
 //##############################################################################
 //#                                  PRIVATE                                   #
@@ -40,7 +41,7 @@ export function scenesDir() {
 }
 
 export function spriteSheetImgPath(file: string) {
-	return `./res/flowchart-spritesheets/${file}.${imageFormat}`
+	return `./res/flowchart-spritesheets/${file}.${imageFormat}?v=${APP_VERSION}`
 }
 
 function audioPath(formats: string|string[], trackName: string) {

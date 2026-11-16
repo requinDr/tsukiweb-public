@@ -11,13 +11,13 @@
 		"proxy": "vite --mode proxy",
 		"common:check": "tsc -p tsukiweb-common/tsconfig.json",
 		"common:update": "git submodule update --remote --merge tsukiweb-common && npm install",
-		"build": "npm run common:check && tsc && vite build"
+		"build": "tsc -p tsukiweb-common/tsconfig.json && tsc && vite build"
 	},
 	"dependencies": {
 		"@tanstack/react-virtual": "^3.14.26",
 		"@tsukiweb/common": "file:tsukiweb-common",
 		"classnames": "^2.5.1",
-		"motion": "^13.5.1",
+		"motion": "^14.14.0",
 		"react": "^19.3.1",
 		"react-dom": "^19.3.1",
 		"react-error-boundary": "^6.1.6",
