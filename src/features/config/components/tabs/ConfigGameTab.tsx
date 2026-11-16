@@ -1,13 +1,14 @@
 import { Button, PageSection } from "@tsukiweb/common/ui-core"
 import { fullscreen } from "@tsukiweb/common/utils/utils"
-import { ViewRatio, TEXT_SPEED } from "@tsukiweb/common/constants"
+import { ViewRatio, TEXT_SPEEDS } from "@tsukiweb/common/constants"
 import { useIsFullscreen } from "@tsukiweb/common/hooks"
 import { useConfig } from "@tsukiweb/common/hooks/useConfig";
-import { getLocale, languages, useStrings } from "translation/lang";
+import { getLocale, languages, strings, useStrings } from "translation/lang";
 import { ConfigButtons, ConfigItem, ConfigRange, ResetButton } from "../ConfigControls";
 import ModalLanguageSelection from "../ModalLanguageSelection";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { settings } from "engine/settings";
+import { BBTypeWriter } from "@tsukiweb/common/utils/Bbcode";
 
 const MAX_DELAY = 3000
 const DELAY_STEP = 100
@@ -26,6 +27,23 @@ const ConfigGameTab = () => {
 		const newVal = Math.max(0, Math.min(MAX_DELAY, conf[key] + delta))
 		update(key, newVal)
 	}
+	const adjustTextSpeed = (delta: number)=> {
+		const i = textSpeedIndex + delta
+		update("textSpeed", TEXT_SPEEDS[i])
+	}
+	const textSpeedIndex = useMemo(()=>{
+		let i = TEXT_SPEEDS.indexOf(conf.textSpeed)
+		if (i >= 0)
+			return i
+		let minDelta = Math.abs(TEXT_SPEEDS[0]-conf.textSpeed)
+		let bestI = 0
+		for (let i=1; i < TEXT_SPEEDS.length; i++) {
+			const delta = Math.abs(TEXT_SPEEDS[i] - conf.textSpeed)
+			if (delta < minDelta)
+				bestI = i;
+		}
+		return bestI;
+	}, [conf.textSpeed])
 
 	return (
 		<PageSection>
@@ -63,18 +81,20 @@ const ConfigGameTab = () => {
 				/>
 			</ConfigItem>
 
-			<ConfigItem label={strings.config["text-speed"]}>
-				<ConfigButtons
-					currentValue={conf.textSpeed}
-					onChange={v => update('textSpeed', v)}
-					btns={[
-						{ label: strings.config["text-speed-low"], value: TEXT_SPEED.slow },
-						{ label: strings.config["text-speed-med"], value: TEXT_SPEED.normal },
-						{ label: strings.config["text-speed-high"], value: TEXT_SPEED.fast },
-						{ label: strings.config["text-speed-instant"], value: TEXT_SPEED.instant }
-					]}
+			<ConfigItem label={strings.config["text-speed"].replace('%0',conf.textSpeed.toString())}>
+				<ConfigRange
+					min={0}
+					max={TEXT_SPEEDS.length-1}
+					step={1}
+					value={textSpeedIndex}
+					onDecrement={() => adjustTextSpeed(-1)}
+					onIncrement={() => adjustTextSpeed(+1)}
+					onChange={e => update('textSpeed', TEXT_SPEEDS[parseInt(e.target.value)])}
 				/>
 			</ConfigItem>
+			<span>&nbsp;
+				<BBTypeWriter key={conf.textSpeed} text={strings.config["text-speed-test"]} charDelay={conf.textSpeed}/>
+			</span>
 
 			<ConfigItem label={strings.config["auto-play-delay-text"].replace('%0',msToS(conf.autoClickDelay))}>
 				<ConfigRange
