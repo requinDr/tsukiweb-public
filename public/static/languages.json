@@ -8,7 +8,6 @@
   "en-mm": {
     "locale": "en-US",
     "display-name": "🇬🇧 English",
-    "authors": "mirror moon",
     "dir": "./en-mm",
     "fallback": "jp",
     "last-update": "2026-11-17"
@@ -16,7 +15,6 @@
   "it-riffour": {
     "locale": "it-IT",
     "display-name": "🇮🇹 Italiano",
-    "authors": "Riffour",
     "dir": "./it-riffour",
     "last-update": "2026-11-17",
     "fallback": "en-mm"
@@ -24,7 +22,6 @@
   "pt-matsuri": {
     "locale": "pt-BR",
     "display-name": "🇧🇷 Português",
-    "authors": "Matsuri Fansub",
     "dir": "./pt-matsuri",
     "last-update": "2026-11-17",
     "fallback": "en-mm"
@@ -32,7 +29,6 @@
   "es-tohnokun": {
     "locale": "es-ES",
     "display-name": "🇪🇸 Español",
-    "authors": "Tohno-kuN",
     "dir": "./es-tohnokun",
     "last-update": "2026-11-17",
     "fallback": "en-mm"
@@ -40,7 +36,6 @@
   "ru-ciel": {
     "locale": "ru-RU",
     "display-name": "🇷🇺 Русский",
-    "authors": "Ciel-senpai",
     "dir": "./ru-ciel",
     "last-update": "2026-11-17",
     "fallback": "en-mm"
@@ -48,7 +43,6 @@
    "zh-yueji_yeren_hanhua_zu": {
     "locale": "zh-CN",
     "display-name": "🇨🇳 简体中文",
-    "authors": "Hawkwin",
     "dir": "./zh-yueji_yeren_hanhua_zu",
     "last-update": "2026-11-17",
     "fallback": "jp"
@@ -56,7 +50,6 @@
   "zh-tw-yueji_yeren_hanhua_zu": {
     "locale": "zh-TW",
     "display-name": "🇨🇳 繁體中文",
-    "authors": "月姬野人汉化组 & SHIROU神父",
     "dir": "./zh-tw-yueji_yeren_hanhua_zu",
     "last-update": "2026-11-17",
     "fallback": "jp"
@@ -64,7 +57,6 @@
   "ko-wolhui": {
     "locale": "ko-KR",
     "display-name": "🇰🇷 한국어",
-    "authors": "Wolhui",
     "dir": "./ko-wolhui",
     "last-update": "2026-11-17",
     "fallback": "en-mm"
