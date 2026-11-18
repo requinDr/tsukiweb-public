@@ -79,7 +79,6 @@ assets.setProvider('graph', (id: string)=> {
 
 export function processImageCmd(
 						 setTransition: (t: GraphicsTransition|undefined)=>void,
-						 setRocket: (rocket: undefined) => void,
 						 arg: string, cmd: string, script: ScriptPlayer,
 						 onFinish: VoidFunction) {
 	let pos = 'bg', image = '', effect = '',
@@ -121,7 +120,6 @@ export function processImageCmd(
 			}
 			script.graphics = to
 			setTransition(undefined)
-			setRocket(undefined)
 		}
 		onFinish()
 	}
@@ -184,46 +182,37 @@ export function processQuake(
 export function processRocket(
 	setRocket: (rocket: Rocket | undefined) => void,
 	arg: string,
-	cmd: string,
+	_cmd: string,
 	script: ScriptPlayer,
 	onFinish: VoidFunction
 ) {
-	const params: Record<string, string> = {}
-	const parts = arg.split(' ')
-	for (const part of parts) {
-		const [key, value] = part.split('=')
-		params[key] = value
-	}
-
+	const params = Object.fromEntries(arg.split(' ').map(part => part.split('=')))
 	const layer = params.layer as Rocket['layer']
 
 	if (!SPRITES_POSITIONS.includes(layer)) {
 		console.error(`Invalid layer for @rocket: ${layer}`)
-		onFinish()
 		return
 	}
-	const wait = (!Object.hasOwn(params, "wait") || params.wait == "true")
-
-	const onAnimationEnd = () => {
-		if (wait) {
-			setRocket(undefined)
-			onFinish()
-		}
+	const wait = params.wait != "false"
+	let finished = false
+	const finish = () => {
+		if (finished || !wait)
+			return
+		finished = true
+		onFinish()
 	}
 
-	const rocket: Rocket = {
-		layer: layer,
+	setRocket({
+		layer,
+		image: script.graphics[layer],
 		my: parseFloat(params.my || '0'),
 		magnify: parseFloat(params.magnify || '1'),
 		time: parseInt(params.time || '0'),
-		accel: parseInt(params.accel || '1'),
 		opacity: parseInt(params.opacity || '255'),
-		onAnimationEnd
-	}
-
-	setRocket(rocket)
+		onAnimationEnd: finish,
+	})
 	if (wait)
-		return { next: onAnimationEnd }
+		return { next: finish }
 }
 
 export function processMonocro(color: string, _: string, script: ScriptPlayer) {

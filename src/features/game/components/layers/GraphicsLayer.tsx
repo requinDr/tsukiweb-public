@@ -20,7 +20,7 @@ const GraphicsLayer = ({ script }: Props) => {
 	const [topSprite, setTopSprite] = useState<'l'|'c'|'r'|undefined>(undefined)
 	
 	useEffect(()=> {
-		const img = processImageCmd.bind(null, setTransition, setRocket)
+		const img = processImageCmd.bind(null, setTransition)
 		const qk = processQuake.bind(null, setQuake)
 		
 		script.setCommands({
@@ -61,6 +61,17 @@ const GraphicsLayer = ({ script }: Props) => {
 	}, [transition, defaultBgAlign])
 
 	const { graphics } = script
+	const [bg] = useObserved(graphics, 'bg')
+	const sprites = {
+		l: useObserved(graphics, 'l')[0],
+		c: useObserved(graphics, 'c')[0],
+		r: useObserved(graphics, 'r')[0],
+	}
+
+	useEffect(()=> {
+		if (rocket && sprites[rocket.layer] != rocket.image)
+			setRocket(undefined)
+	}, [rocket, sprites.l, sprites.c, sprites.r])
 
 	return (
 		<div id="layer-graphics"
@@ -69,25 +80,25 @@ const GraphicsLayer = ({ script }: Props) => {
 			onAnimationEnd={quake?.onFinish}
 		>
 			<BackgroundGraphics
-				image={useObserved(graphics, 'bg')[0]}
+				image={bg}
 				bgAlign={transition?.to.bg == graphics.bg ? bgAlign : defaultBgAlign}
 			/>
 			<SpriteGraphics
-				image={useObserved(graphics, 'l')[0]}
+				image={sprites.l}
 				transition={transition}
 				pos='l'
 				rocket={rocket?.layer === 'l' ? rocket : undefined}
 				topLayer={topSprite === 'l'}
 			/>
 			<SpriteGraphics
-				image={useObserved(graphics, 'c')[0]}
+				image={sprites.c}
 				transition={transition}
 				pos='c'
 				rocket={rocket?.layer === 'c' ? rocket : undefined}
 				topLayer={topSprite === 'c'}
 			/>
 			<SpriteGraphics
-				image={useObserved(graphics, 'r')[0]}
+				image={sprites.r}
 				transition={transition}
 				pos='r'
 				rocket={rocket?.layer === 'r' ? rocket : undefined}
