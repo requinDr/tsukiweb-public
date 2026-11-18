@@ -76,13 +76,17 @@
 			background-image: linear-gradient(270deg, var(--surface-dark) 70%, transparent);
 		}
 
-		.blur {
-			filter: blur(22px);
-			transition: .2s ease-out;
-			transition-delay: 0s;
-
-			&:hover, &:focus-visible, .keyboard-navigating &:focus {
-				filter: blur(0);
+		button:has(> .thumb.blur) {
+			&::before {
+				content: "";
+				position: absolute;
+				inset: 0;
+				backdrop-filter: blur(22px);
+				pointer-events: none;
+				transition: opacity .2s ease-out;
+			}
+			&:hover::before, &:focus-visible::before, .keyboard-navigating &:focus::before {
+				opacity: 0;
 				transition-delay: .6s;
 			}
 		}
