@@ -143,9 +143,7 @@
 	.title-modal {
 		display: grid;
 		grid-template-columns: 1fr 200px;
-		align-content: start;
 		gap: 4em;
-		flex-grow: 1;
 
 		.card {
 			width: 100%;
@@ -273,8 +271,7 @@
 	}
 
 	.close-btn {
-		margin-top: 1em;
-		margin-bottom: 2em;
+		margin: 0;
 	}
 
 	@include mobile-landscape {
@@ -296,12 +293,8 @@
 			}
 		}
 		.close-btn {
-			position: absolute;
-			bottom: 1em;
-			margin: 0 auto;
-			left: 0;
-			right: 0;
-			width: fit-content;
+			position: sticky;
+			bottom: 0;
 		}
 	}
 }

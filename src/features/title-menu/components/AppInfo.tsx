@@ -130,7 +130,6 @@ const ModalInfo = ({show, setShow}: ModalInfoProps) => {
 			</div>
 
 			<Button
-				variant="elevation"
 				onClick={hide}
 				className="close-btn"
 				audio={audio}

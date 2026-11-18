@@ -23,10 +23,17 @@
 }
 /* Overlay */
 .modal {
+	&:has(> .close-btn) {
+		padding-bottom: 0;
+	}
 	.close-btn {
-		margin-inline: auto;
-		margin-top: 1em;
-		font-size: inherit;
+		flex: none;
+		align-self: stretch;
+		margin: calc(1.6em / 1.1) calc(-2.4em / 1.1) 0;
+		padding: 1rem;
+		font-size: 1.1em;
+		border-top: 1px solid var(--separator);
+		border-radius: 0;
 	}
 }
 

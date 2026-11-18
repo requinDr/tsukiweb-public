@@ -348,11 +348,12 @@
 
 .config-modal {
 	.modal-content {
-		flex: auto;
-
 		h2 {
 			margin-top: 0;
 			font-size: 1.4em;
+			font-weight: 600;
+			letter-spacing: .5px;
+			color: var(--color-link);
 		}
 	}
 

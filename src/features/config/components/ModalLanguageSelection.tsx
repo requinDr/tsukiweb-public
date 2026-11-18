@@ -94,7 +94,6 @@ const ModalLanguageSelection = ({show, setShow}: Props) => {
 			</div>
 
 			<Button
-				variant="elevation"
 				onClick={()=>setShow(false)}
 				className="close-btn"
 				audio={audio}
