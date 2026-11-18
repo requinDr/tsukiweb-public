@@ -2,10 +2,11 @@
 
 #endings {
 	padding-inline: var(--page-padding);
+	padding-right: calc(var(--page-padding) + var(--extra-bleed));
 	
 	.endings-list {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(min(210px, 25%), 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(min(216px, 25%), 1fr));
 		isolation: isolate;
 		gap: 8px;
 		flex-grow: 0;

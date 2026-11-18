@@ -5,6 +5,7 @@
 	width: 100%;
 	min-height: 0;
 	display: flex;
+	padding-right: var(--extra-bleed);
 
 	.flowchart-container {
 		padding-inline: calc(var(--page-padding) / 2);
@@ -12,7 +13,7 @@
 		// draw on the right up to the edge of the screen when it is wider than the page (#extra, 100cqw)
 		& > .fc-viewport {
 			margin-left: calc(var(--page-padding) / -2);
-			margin-right: calc(var(--page-padding) / -2 - (100vw - 100cqw) / 2);
+			margin-right: calc(var(--page-padding) / -2 - var(--extra-bleed));
 			mask-image: linear-gradient(90deg, transparent 0%, black calc(var(--page-padding) / 2));
 
 			// no menu on the left

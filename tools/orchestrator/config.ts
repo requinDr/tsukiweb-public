@@ -46,17 +46,7 @@ type CdName = typeof CD_NAMES[number]
 
 type PartialToolConfig = Partial<ToolConfig>
 
-export const SCRIPT_LANGS = [
-  'jp',
-  'en-mm',
-  'es-tohnokun',
-  'it-riffour',
-  'pt-matsuri',
-  'ko-wolhui',
-  'ru-ciel',
-  'zh-tw-yueji_yeren_hanhua_zu',
-  'zh-yueji_yeren_hanhua_zu',
-] as const
+export const BASE_LANG = 'jp'
 
 export const WAIFU2X_ARGS = [
   '-m', 'noise_scale',
@@ -84,7 +74,7 @@ export type ImageConversionPaths = Pick<Paths, 'img' | 'imgX2' | 'images' | 'ima
 
 export function imagePathsForLanguage(
   paths: Paths,
-  lang: typeof SCRIPT_LANGS[number],
+  lang: string,
 ): ImageConversionPaths {
   const staticLang = path.join(paths.staticJp, '..', lang)
 
@@ -169,8 +159,8 @@ export function buildPaths(config: ToolConfig): Paths {
     publicAssets,
     workspace,
     arcArchive: path.join(TOOLS_DIR, 'arc.sar'),
-    img: path.join(workspace, SCRIPT_LANGS[0], 'img'),
-    imgX2: path.join(workspace, SCRIPT_LANGS[0], 'img_x2'),
+    img: path.join(workspace, BASE_LANG, 'img'),
+    imgX2: path.join(workspace, BASE_LANG, 'img_x2'),
     sceneAttrs: path.join(REPO_DIR, 'src', 'assets', 'game', 'scene_attrs.json'),
     sceneAssets: path.join(REPO_DIR, 'src', 'assets', 'game'),
 

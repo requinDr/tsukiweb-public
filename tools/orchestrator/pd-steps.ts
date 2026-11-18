@@ -8,7 +8,7 @@ import { main as runPlusDiscScripts } from '../helpers/convert-scripts/plus_disc
 import type { Paths, ToolConfig } from './pd-config.ts'
 import {
   FFMPEG_AUDIO_ARGS,
-  SCRIPT_LANGS,
+  BASE_LANG,
   WAIFU2X_ARGS,
   thumbConfig,
   x2Config,
@@ -26,6 +26,7 @@ import {
   check,
   combine,
   fileExistsCheck,
+  listScriptLangs,
   nonEmptyDirectoryCheck,
   stateFailure,
   type Check,
@@ -231,7 +232,7 @@ async function convertedImagesCheck(paths: Paths): Promise<Check> {
 async function scriptsOutputCheck(paths: Paths): Promise<Check> {
   const checks: CheckDetail[] = []
 
-  for (const lang of SCRIPT_LANGS) {
+  for (const lang of await listScriptLangs(path.join(paths.publicAssets, 'static'), BASE_LANG)) {
     for (const scene of PD_SCENES) {
       const scenePath = path.join(paths.publicAssets, 'static', lang, 'scenes', `${scene}.txt`)
       checks.push(await fileExistsCheck(scenePath, displayPath(scenePath)))

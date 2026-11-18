@@ -1,5 +1,11 @@
 @use '@tsukiweb/common/ui-core/styles/_mixins.scss' as *;
 
+@property --extra-bleed {
+	syntax: '<length>';
+	inherits: true;
+	initial-value: 0px;
+}
+
 #extra {
 	@include page-container;
 	container-type: inline-size;
@@ -116,7 +122,9 @@
 	}
 
 	.extra-content {
+		--extra-bleed: max(0px, (100vw - 100cqw) / 2);
 		grid-area: extra-content;
+		margin-right: calc(-1 * var(--extra-bleed));
 		min-width: 0;
 		min-height: 0;
 		display: grid;

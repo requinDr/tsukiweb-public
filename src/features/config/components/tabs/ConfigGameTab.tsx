@@ -91,10 +91,13 @@ const ConfigGameTab = () => {
 					onIncrement={() => adjustTextSpeed(+1)}
 					onChange={e => update('textSpeed', TEXT_SPEEDS[parseInt(e.target.value)])}
 				/>
+				<div className="text-speed-preview">
+					<span className="placeholder" aria-hidden>{strings.config["text-speed-test"]}</span>
+					<span>
+						<BBTypeWriter key={conf.textSpeed} text={strings.config["text-speed-test"]} charDelay={conf.textSpeed}/>
+					</span>
+				</div>
 			</ConfigItem>
-			<span>&nbsp;
-				<BBTypeWriter key={conf.textSpeed} text={strings.config["text-speed-test"]} charDelay={conf.textSpeed}/>
-			</span>
 
 			<ConfigItem label={strings.config["auto-play-delay-text"].replace('%0',msToS(conf.autoClickDelay))}>
 				<ConfigRange
