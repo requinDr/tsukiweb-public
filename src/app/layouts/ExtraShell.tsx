@@ -3,7 +3,7 @@ import { PropsWithChildren, useEffect } from "react"
 import "../../features/title-menu/styles/extra.scss"
 import { useStrings } from "translation/lang"
 import { useLocation } from "wouter"
-import { PageTitle, TitleMenuButton } from "@tsukiweb/common/ui-core"
+import { PageSwitcher, PageTitle, TitleMenuButton } from "@tsukiweb/common/ui-core"
 import { audio } from "engine/audio"
 import { useEclipseUnlocked } from "features/endings/hooks/useEclipseUnlocked";
 import { SCREEN, displayMode } from "app/utils/display";
@@ -45,6 +45,13 @@ const ExtraShell = ({ children }: PropsWithChildren) => {
 
 export default ExtraShell
 
+type ExtraPage = {
+	screen: SCREEN
+	id: string
+	label: string
+	attention?: boolean
+}
+
 function back() {
 	displayMode.screen = SCREEN.TITLE
 }
@@ -69,50 +76,36 @@ const ExtraMenu = () => {
 		}
 	}, [])
 
+	const pages: ExtraPage[] = [
+		{ screen: SCREEN.GALLERY, id: "extra-gallery", label: strings.extra.gallery },
+		{ screen: SCREEN.ENDINGS, id: "extra-endings", label: strings.extra.endings, attention: eclipseUnlocked },
+		{ screen: SCREEN.SCENES, id: "extra-scenes", label: strings.extra.scenes },
+		{ screen: SCREEN.PLUS_DISC, id: "extra-plus-disc", label: "Plus-Disc" },
+	]
+
 	return (
 		<div className="extra-menu">
 			<PageTitle>
 				{strings.title.extra}
 			</PageTitle>
 			<div className="menus" role="tablist">
-				<TitleMenuButton id="extra-gallery"
-					audio={audio}
-					onClick={()=>navigate(SCREEN.GALLERY)}
-					active={currentPage === SCREEN.GALLERY}
-					aria-selected={currentPage === SCREEN.GALLERY}
-					role="tab"
-					nav-auto={1}>
-					{strings.extra.gallery}
-				</TitleMenuButton>
-				<TitleMenuButton id="extra-endings"
-					audio={audio}
-					onClick={()=>navigate(SCREEN.ENDINGS)}
-					active={currentPage === SCREEN.ENDINGS}
-					aria-selected={currentPage === SCREEN.ENDINGS}
-					attention={eclipseUnlocked}
-					role="tab"
-					nav-auto={1}>
-					{strings.extra.endings}
-				</TitleMenuButton>
-				<TitleMenuButton id="extra-scenes"
-					audio={audio}
-					onClick={()=>navigate(SCREEN.SCENES)}
-					active={currentPage === SCREEN.SCENES}
-					aria-selected={currentPage === SCREEN.SCENES}
-					role="tab"
-					nav-auto={1}>
-					{strings.extra.scenes}
-				</TitleMenuButton>
-				<TitleMenuButton id="extra-plus-disc"
-					audio={audio}
-					onClick={()=>navigate(SCREEN.PLUS_DISC)}
-					active={currentPage === SCREEN.PLUS_DISC}
-					aria-selected={currentPage === SCREEN.PLUS_DISC}
-					role="tab"
-					nav-auto={1}>
-					Plus-Disc
-				</TitleMenuButton>
+				{pages.map(({ screen, id, label, attention }) =>
+					<TitleMenuButton key={id} id={id}
+						audio={audio}
+						onClick={()=>navigate(screen)}
+						active={currentPage === screen}
+						aria-selected={currentPage === screen}
+						attention={attention}
+						role="tab"
+						nav-auto={1}>
+						{label}
+					</TitleMenuButton>
+				)}
 			</div>
+			<PageSwitcher className="extra-switcher" audio={audio}
+				pages={pages.map(({ screen, label, attention }) => ({ value: screen, label, attention }))}
+				selected={currentPage}
+				onSelect={navigate} />
 			<div className="back-action">
 				<PageBackButton onClick={()=>navigate(SCREEN.TITLE)} />
 			</div>
