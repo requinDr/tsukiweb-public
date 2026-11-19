@@ -87,6 +87,13 @@
       "또한 토오노 가문 루트로 진행하기 위한 조건도 충족합니다.",
       "이 옵션은 언제든지 켜고 끌 수 있습니다."
     ],
+    "smooth-flashes": "Reduce background flashes",
+    "smooth-flashes-low": "Low",
+    "smooth-flashes-high": "High",
+    "smooth-flashes-help": [
+      "Replace instant backgound changes with a fade-in transition.",
+      "The transition lasts 0.08s (%0) or 0.15s (%1)"
+    ],
     "game-font": "게임 텍스트 폰트",
     "game-font-help": [
       "기본 폰트는 프로젝트에 포함되어 있습니다.",

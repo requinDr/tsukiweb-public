@@ -87,6 +87,13 @@
       "También permite acceder a las rutas de la Cara Oculta de la Luna.",
       "Se puede activar y desactivar en cualquier momento."
     ],
+    "smooth-flashes": "Reduce background flashes",
+    "smooth-flashes-low": "Low",
+    "smooth-flashes-high": "High",
+    "smooth-flashes-help": [
+      "Replace instant backgound changes with a fade-in transition.",
+      "The transition lasts 0.08s (%0) or 0.15s (%1)"
+    ],
     "game-font": "Fuente del texto del juego",
     "game-font-help": [
       "La fuente predeterminada se incluye con el proyecto.",
