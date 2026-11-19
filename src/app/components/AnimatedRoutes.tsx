@@ -47,12 +47,12 @@ const AnimatedRoutes = () => {
 		pathname.startsWith(path)
 	)
 	const keyPresence = isExtra ? "extra" : pathname
-	const showParticles = pathname !== "/window"
+	const showBackdrop = pathname !== SCREEN.WINDOW
 	const titleKey = showDisclaimer ? "title-behind-disclaimer" : "title"
 
 	return (
 		<LazyMotion features={domAnimation} strict>
-			{showParticles && <Particles />}
+			<Particles active={showBackdrop && !showDisclaimer} />
 			<AnimatePresence mode="wait">
 				<Switch location={pathname} key={keyPresence}>
 					<Route path="/">

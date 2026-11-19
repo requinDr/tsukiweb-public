@@ -12,18 +12,23 @@ interface Particle {
 	baseSize: number; life: number; vLife: number;
 }
 
+interface Props {
+	active: boolean
+}
+
 /**
  * Interactive particles that react to the mouse
  */
-const Particles = () => {
+const Particles = ({ active }: Props) => {
 	const canvasRef = useRef<HTMLCanvasElement>(null)
 	const pointer = useRef({ x: -1000, y: -1000 })
 	const particles = useRef<Particle[]>([])
 	const dimensions = useRef({ width: 0, height: 0 })
-	const raf = useRef<number>(0)
+	const setActiveRef = useRef<(active: boolean)=>void>(null)
 
 	useEffect(() => {
 		if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return
+		let raf = 0
 
 		const canvas = canvasRef.current
 		if (!canvas) return
@@ -99,19 +104,38 @@ const Particles = () => {
 			}
 
 			ctx.globalAlpha = 1
-			raf.current = requestAnimationFrame(draw)
+			raf = requestAnimationFrame(draw)
 		}
 
-		raf.current = requestAnimationFrame(draw)
+		const start = () => {
+			if (!raf) raf = requestAnimationFrame(draw)
+		}
+
+		const stop = () => {
+			if (raf) cancelAnimationFrame(raf)
+			raf = 0
+		}
+
+		const setActive = (value: boolean) => value ? start() : stop()
+		setActiveRef.current = setActive
 
 		return () => {
-			cancelAnimationFrame(raf.current)
+			stop()
+			if (setActiveRef.current === setActive) setActiveRef.current = null
 			window.removeEventListener("resize", resize)
 			window.removeEventListener("pointermove", onPointerMove)
 		}
 	}, [])
 
-	return <canvas ref={canvasRef} className={styles.particles} />
+	useEffect(() => {
+		setActiveRef.current?.(active)
+	}, [active])
+
+	return (
+		<div className={styles.particles} data-active={active} aria-hidden>
+			<canvas ref={canvasRef} />
+		</div>
+	)
 }
 
 export default memo(Particles)
