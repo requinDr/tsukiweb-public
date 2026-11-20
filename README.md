@@ -7,7 +7,7 @@ The Progressive Web App (PWA) can be installed from the title screen.
 It offers a better experience in general.
 
 ## Local deployment
-None of the original assets are provided with this repository. See [Recreating the resources](https://github.com/requinDr/tsukiweb-public/wiki/Recreating-the-resources) for a fully offline experience.  
+None of the original assets are provided with this repository. See [Recreating the resources](https://github.com/loicfrance/tsukiweb-kt/wiki/Recreating-the-resources) for a fully offline experience.  
 To download and run the game's code locally, follow one of the two methods:
 ### Node
 1) Install [Node.js](https://nodejs.org/en/download) `v22.18+`
@@ -22,10 +22,10 @@ See [docker/README.md](docker/README.md) for full instructions (commands must be
 
 ## Contributing
 Anyone wanting to contribute can download the project and follow the roadmap, or do something else entirely.  
-You can find our [contributing guidelines here](https://github.com/requinDr/tsukiweb-public/blob/main/CONTRIBUTING.md)
+You can find our [contributing guidelines here](https://github.com/loicfrance/tsukiweb-kt/blob/main/CONTRIBUTING.md)
 
 ## Useful links
-- [Adding a translation](https://github.com/requinDr/tsukiweb-public/wiki/Adding-a-translation)
+- [Adding a translation](https://github.com/loicfrance/tsukiweb-kt/wiki/Adding-a-translation)
 
 ## Project technologies
 - React (Vite)
