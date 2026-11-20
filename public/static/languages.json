@@ -60,5 +60,12 @@
     "dir": "./ko-wolhui",
     "last-update": "2026-11-17",
     "fallback": "en-mm"
+  },
+  "vi-lacia": {
+    "locale": "vi-VN",
+    "display-name": "🇻🇳 Tiếng Việt",
+    "dir": "./vi-lacia",
+    "last-update": "2026-11-20",
+    "fallback": "en-mm"
   }
 }

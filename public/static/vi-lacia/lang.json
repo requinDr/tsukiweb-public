@@ -1,0 +1,201 @@
+{
+  "translation": {
+    "name": "Lacia1803",
+    "desc": "Bản Việt hóa Tsukihime (2000) dịch trực tiếp 1:1 từ nguyên tác tiếng Nhật bởi Lacia1803 (biên dịch thủ công có hỗ trợ AI, thống nhất bộ thuật ngữ Nasuverse và hệ thống xưng hô toàn game).",
+    "url": "https://github.com/requinDr/tsukiweb-public/issues/135",
+    "vndb": ""
+  },
+  "translation-pd": {
+    "name": "Lacia1803",
+    "desc": "Bản dịch tiếng Việt trực tiếp từ nguyên tác tiếng Nhật bởi Lacia1803 (với sự hỗ trợ của AI theo bộ thuật ngữ và ma trận xưng hô thống nhất).",
+    "url": "https://github.com/requinDr/tsukiweb-public/issues/135",
+    "vndb": ""
+  },
+
+  "disclaimer": [
+    "Đây là phiên bản web của Tsukihime, visual novel được TYPE-MOON phát hành vào năm 2000.",
+    "Trò chơi có chứa nội dung người lớn và chỉ dành cho người chơi trưởng thành."
+  ],
+  "title": {
+    "start": "Chơi mới",
+    "resume": "Tiếp tục",
+    "load": "Tải tiến trình",
+    "config": "Cài đặt",
+    "extra": "Bổ sung",
+    "about": {
+      "port": "Đây là phiên bản web của Tsukihime, visual novel được TYPE-MOON phát hành vào năm 2000.",
+      "project": "Mã nguồn dự án có tại %0GitHub%1. Hãy tặng một ngôi sao nếu bạn yêu thích! Mọi đóng góp đều được hoan nghênh.",
+      "feedback": "Gửi góp ý hoặc báo lỗi tại %0đây%1.",
+      "data": "Không thu thập dữ liệu, mọi thứ được lưu trên trình duyệt của bạn. Quản lý dữ liệu tại %0đây%1.",
+      "remake": "Hãy ủng hộ tác giả bằng cách mua bản làm lại %0Tsukihime - A piece of blue glass moon%1."
+    },
+    "install": "Cài đặt",
+    "share": "Chia sẻ",
+    "copied": "Đã sao chép vào bảng nhớ tạm"
+  },
+  "extra": {
+    "gallery": "Thư viện ảnh",
+    "endings": "Kết thúc",
+    "scenes": "Sơ đồ nhánh",
+    "eclipse": "Vĩ thanh (Eclipse)"
+  },
+  "config": {
+    "on": "Bật",
+    "off": "Tắt",
+    "reset": "Đặt lại",
+    "default": "Mặc định",
+    "tab-game": "Trò chơi",
+    "tab-audio": "Âm thanh",
+    "tab-controls": "Điều khiển",
+    "tab-advanced": "Nâng cao",
+    "volume-master": "Âm lượng tổng",
+    "volume-track": "Âm lượng nhạc nền",
+    "volume-se": "Âm lượng hiệu ứng",
+    "volume-title-track": "Âm lượng nhạc màn hình chính",
+    "volume-system-se": "Âm lượng hiệu ứng hệ thống",
+    "track-source": "Nguồn nhạc nền",
+    "track-sources": {
+      "original": "Bản gốc (2000)",
+      "everafter": "Ever After (2002)",
+      "tsukibako": "Tsuki-Bako (2003)"
+    },
+    "track-source-help": [
+      "[b]Bản gốc[/b]: Nhạc nền gốc của phiên bản hoàn chỉnh phát hành năm 2000.",
+      "[b]Ever After[/b]: Nhạc nền làm lại, phát hành năm 2002.",
+      "[b]Tsuki-Bako[/b]: Nhạc nền phối lại đi kèm bộ đĩa Tsukihime + PLUS-DISC + Kagetsu Tohya năm 2003."
+    ],
+    "auto-mute": "Tắt tiếng khi rời khỏi ứng dụng",
+    "ratio": "Tỉ lệ hiển thị",
+    "ratio-auto": "Tự động",
+    "ratio-4-3": "4:3",
+    "ratio-16-9": "16:9",
+    "text-speed": "Độ trễ hiện chữ: %0ms",
+    "text-speed-test": "Bất chợt, tôi tỉnh giấc.",
+    "auto-play-delay-text": "Độ trễ tự động đọc: %0 giây",
+    "auto-play-delay-page": "Độ trễ tự động chuyển trang: %0 giây",
+    "adult-title": "Nội dung người lớn",
+    "adult-blur": "Làm mờ hình ảnh",
+    "adult-blur-help": [
+      "Áp dụng hiệu ứng làm mờ lên hình ảnh trong các phân cảnh người lớn."
+    ],
+    "adult-warn": "Hỏi bỏ qua phân cảnh 18+",
+    "fullscreen": "Toàn màn hình",
+    "language": "Ngôn ngữ",
+    "show-locked-content": "Mở khóa toàn bộ nội dung",
+    "show-locked-content-help": [
+      "Mở khóa toàn bộ Thư viện ảnh, Sơ đồ nhánh, Kết thúc, Vĩ thanh (Eclipse)…",
+      "Đồng thời đáp ứng điều kiện mở tuyến Far Side.",
+      "Có thể bật hoặc tắt bất cứ lúc nào."
+    ],
+    "smooth-flashes": "Giảm nháy sáng màn hình",
+    "smooth-flashes-low": "Thấp",
+    "smooth-flashes-high": "Cao",
+    "smooth-flashes-help": [
+      "Thay đổi cảnh nền đột ngột bằng hiệu ứng chuyển mờ dần.",
+      "Hiệu ứng kéo dài 0,08 giây (%0) hoặc 0,15 giây (%1)."
+    ],
+    "game-font": "Phông chữ hội thoại",
+    "game-font-help": [
+      "Phông chữ mặc định được tích hợp sẵn trong dự án.",
+      "Để chọn phông khác, hãy nhập tên phông. Hệ thống sẽ tải từ %0 nếu có, hoặc dùng phông có sẵn trên thiết bị của bạn."
+    ],
+    "display-badges": "Hiển thị điểm thiện cảm và cờ nhánh",
+    "data": "Lưu trữ dữ liệu",
+    "data-export": "Xuất dữ liệu",
+    "data-import": "Nhập dữ liệu",
+    "data-erase": "Xóa dữ liệu",
+    "data-erase-warning": "Thao tác này sẽ xóa toàn bộ tệp lưu, đặt lại mọi cài đặt và tiến trình. Bạn có chắc chắn không?",
+    "data-erase-confirm": "Toàn bộ dữ liệu đã được xóa. Nếu bạn rời trang web này mà không thay đổi cài đặt hay bắt đầu chơi mới, sẽ không còn dữ liệu nào được lưu trên thiết bị.",
+    "controls": {
+      "next": "Tiếp tục",
+      "graphics": "Hiện / ẩn hộp thoại",
+      "back": "Quay lại, Hiện / Ẩn menu",
+      "bg_move": "Di chuyển hình nền",
+      "auto_play": "Tự động đọc",
+      "page_nav": "Chuyển sang trang sau / trước",
+      "history": "Mở Nhật ký thoại",
+      "flowchart": "Mở Sơ đồ nhánh",
+      "load": "Mở bảng Tải tiến trình",
+      "save": "Mở bảng Lưu tiến trình",
+      "q_save": "Lưu nhanh",
+      "q_load": "Tải nhanh",
+      "config": "Mở bảng Cài đặt",
+      "_hold": "giữ",
+      "_layer-text": "khi đang hiện chữ",
+      "_layer-graphics": "khi đang ẩn chữ",
+      "_layer-menu": "khi đang mở menu"
+    }
+  },
+  "endings": {
+    "normal": "Normal",
+    "good": "Good",
+    "true": "True",
+    "osiete": "Chỉ dạy em đi, Ciel-sensei!"
+  },
+  "saves": {
+    "title-load": "Tải tiến trình",
+    "title-save": "Lưu tiến trình",
+    "create": "Tạo tệp lưu mới",
+    "empty": "Chưa có dữ liệu lưu nào.",
+    "import": "Nhập tệp lưu?",
+    "export": "Xuất",
+    "delete": "Xóa",
+    "delete-warning": "Bạn có chắc muốn xóa tệp lưu này không?",
+    "overwrite-warning": "Bạn có chắc muốn ghi đè lên tệp lưu này không?",
+    "quick-save": "Lưu nhanh",
+    "local-storage-warning": "Tệp lưu và cài đặt được lưu cục bộ trong trình duyệt, và có thể bị trình duyệt xóa nếu không truy cập trong thời gian dài. Hãy xuất dữ liệu định kỳ.",
+    "local-storage-last-export": "Lần xuất toàn bộ dữ liệu gần nhất: %0"
+  },
+  "game": {
+    "skip-viewed": "Cảnh này bạn đã xem qua một lần rồi.",
+    "skip-hcontent": "Phân đoạn này có chứa nội dung người lớn.",
+    "skip-prompt": "Bạn có muốn bỏ qua không?",
+    "toast-qsave": "Đã lưu tiến trình",
+    "toast-qload": "Đã khôi phục tiến trình",
+    "toast-load-success": "Đã tải dữ liệu thành công",
+    "toast-load-fail": "Tải dữ liệu thất bại",
+    "toast-save-fail": "Lưu dữ liệu thất bại",
+    "toast-autoplay-stop": "Đã dừng tự động đọc"
+  },
+  "menu": {
+    "graphics": "Chỉ xem hình",
+    "history": "Nhật ký",
+    "save": "Lưu",
+    "load": "Tải",
+    "config": "Cài đặt",
+    "auto-play": "Tự động",
+    "ffw": "Tua nhanh",
+    "title": "Màn hình chính",
+    "q-save": "Lưu nhanh",
+    "q-load": "Tải nhanh",
+    "copy-scene-url": "Chia sẻ cảnh"
+  },
+  "history": {
+    "load-warning": "Quay lại cảnh này? Tiến trình chưa lưu từ điểm này trở đi sẽ bị mất.",
+    "load": "Quay lại",
+    "skipped": "Đã bỏ qua cảnh %0."
+  },
+  "characters": {
+    "aki": "Akiha",
+    "ark": "Arcueid",
+    "cel": "Ciel",
+    "his": "Hisui",
+    "koha": "Kohaku",
+    "others": "Khác"
+  },
+  "plus_disc": {
+    "desc": [
+      "PLUS-DISC là đĩa mở rộng gồm một ngoại truyện ngắn và phần thưởng thêm, phát hành lần đầu năm 2001.",
+      "Lưu ý: Bạn nên hoàn thành Tsukihime trước khi đọc phần này."
+    ],
+    "viewed": "Đã xem",
+    "gallery": "Thư viện ảnh",
+    "scenes": "Phân cảnh"
+  },
+  "yes": "Có",
+  "no": "Không",
+  "ok": "Đồng ý",
+  "back": "Quay lại",
+  "close": "Đóng",
+  "later": "Để sau"
+}
