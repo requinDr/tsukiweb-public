@@ -1,10 +1,11 @@
 import { Dispatch } from "react"
 import { languages, useStrings } from "translation/lang"
 import { settings } from "engine/settings"
-import { Button, Modal } from "@tsukiweb/common/ui-core"
+import { Button, ExternalLink, Modal } from "@tsukiweb/common/ui-core"
 import { sortTranslations } from "@tsukiweb/common/translation/lang"
 import { polyfillCountryFlagEmojis } from "@tsukiweb/common/utils/flagsPolyfill"
 import { audio } from "engine/audio"
+import { bb } from "@tsukiweb/common/utils/Bbcode";
 
 let flagSupportChecked = false
 
@@ -61,15 +62,15 @@ const ModalLanguageSelection = ({show, setShow}: Props) => {
 								{strings.translation.name}
 							</div>
 							<div className="line">
-								{strings.translation.desc}
+								{bb(strings.translation.desc)}
 							</div>
 							<div className="links">
-								<a href={strings.translation.url} target="_blank">
+								<ExternalLink href={strings.translation.url}>
 									website
-								</a>
-								<a href={strings.translation.vndb} target="_blank">
+								</ExternalLink>
+								<ExternalLink href={strings.translation.vndb}>
 									VNDB
-								</a>
+								</ExternalLink>
 							</div>
 						</div>
 
@@ -78,15 +79,15 @@ const ModalLanguageSelection = ({show, setShow}: Props) => {
 								PLUS-DISC - {strings["translation-pd"].name}
 							</div>
 							<div className="line">
-								{strings["translation-pd"].desc}
+								{bb(strings["translation-pd"].desc)}
 							</div>
 							<div className="links">
-								<a href={strings["translation-pd"].url} target="_blank">
+								<ExternalLink href={strings["translation-pd"].url}>
 									website
-								</a>
-								<a href={strings["translation-pd"].vndb} target="_blank">
+								</ExternalLink>
+								<ExternalLink href={strings["translation-pd"].vndb}>
 									VNDB
-								</a>
+								</ExternalLink>
 							</div>
 						</div>
 					</>}
