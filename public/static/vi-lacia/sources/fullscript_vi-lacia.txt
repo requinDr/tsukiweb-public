@@ -2328,7 +2328,7 @@ br
 ` Nhìn lại thì chất dịch đen ngòm đã nuốt chửng đến tận miệng cô.\
 
 
-`「Nhưng con 『Rắn』 kia cũng thật thảm hại. Một kẻ từng là linh mục Giáo hội trước khi thành Hấp huyết quỷ, vậy mà chỉ vì bị một tử thần như ngươi nhắm vào mà chẳng thể sống sót.@
+`「Nhưng con 『Rắn』 kia cũng thật thảm hại. Một kẻ từng là linh mục Giáo hội trước khi trở thành Huyết Tộc, vậy mà chỉ vì bị một tử thần như ngươi nhắm vào mà chẳng thể sống sót.@
 ` Nếu tên đó còn sống, khối hỗn mang trong cơ thể ta lúc này ắt hẳn đã định hình được quy luật. ……Sở hữu tài nghệ ma đạo xuất chúng dường ấy mà chưa kịp phô diễn đã bị tiêu diệt, hẳn là uất hận lắm thay.」\
 
 ; 右<夜>=ネロ:通常、口元にやり（半身が無い）<クロスフェード(速)>
@@ -2340,7 +2340,7 @@ br
 ` Giờ đây, thứ đang ngã gục đằng kia không còn là cơ thể của người con gái tên Arcueid, mà chỉ là một khối bùn vô hình vô dạng.\
 
 `「―――Cứ thế này mà trở thành một phần của ta đi, Arcueid Brunestud.@
-` Nuốt chửng ý thức tầm cỡ như ngươi hẳn sẽ tốn không ít công sức, nhưng có sao, một khi xong xuôi ta sẽ trở thành Hấp huyết quỷ tối cao. Chút đau đớn này chẳng qua là tiệc mừng ngày ta tái sinh mà thôi.@
+` Nuốt chửng ý thức tầm cỡ như ngươi hẳn sẽ tốn không ít công sức, nhưng có sao, một khi xong xuôi ta sẽ trở thành Huyết Tộc tối cao. Chút đau đớn này chẳng qua là tiệc mừng ngày ta tái sinh mà thôi.@
 ` Đến lúc đó――― lũ sát thủ đáng nguyền rủa của Cơ Quan Mai Táng cũng chẳng đáng để bận tâm. Cái Giáo hội mục nát kia, bất cứ kẻ nào liên quan ta cũng sẽ tận diệt cho bằng sạch.」\
 ; 中央を消去<クロスフェード(速)>
 cl c,%type_crossfade_fst
@@ -3244,7 +3244,7 @@ br
 ` Đến tầm này, chỉ cần một cú chồm tới là con dao có thể xé toạc thân xác gã.@
 br
 `「―――Không, tuyệt đối không―――!@
-` Tên ta là Nero, là Hỗn Độn được xưng tụng bất tử giữa đám Huyết tộc ngọ nguậy không hề mục rữa! Kẻ như ta sao có thể để lộ bộ dạng thảm hại nhường này, tuyệt đối không thể nào……!」@
+` Tên ta là Nero, là Hỗn Độn được xưng tụng bất tử giữa đám Huyết Tộc ngọ nguậy không hề mục rữa! Kẻ như ta sao có thể để lộ bộ dạng thảm hại nhường này, tuyệt đối không thể nào……!」@
 ; 中央を消去<クロスフェード(中)>
 cl c,%type_crossfade_mid
 
@@ -6518,7 +6518,7 @@ bg "image\bg\bg_24a.jpg",%type_lcartain_fst
 
 `「―――Mà, cũng đúng thôi.」@
 ` Chắc tôi sẽ chẳng còn gặp lại cô ấy nữa.@
-` Xét cho cùng mục đích của cô ấy là tiêu diệt hấp huyết quỷ, giờ Nero đã biến mất thì làm gì còn lý do để ở lại thành phố này nữa.@
+` Xét cho cùng mục đích của cô ấy là tiêu diệt ma cà rồng, giờ Nero đã biến mất thì làm gì còn lý do để ở lại thành phố này nữa.@
 br
 `―――Trong lòng tôi, vẫn còn chút gì đó vương vấn.@
 br
@@ -15155,21 +15155,21 @@ ld c,":a;image\tachi\ark_t07.jpg",%type_crossfade_fst
 ; 中央<夜>=アルクェイド:楽04（腕組、ちょっと不機嫌そう）<クロスフェード(速)>
 ld c,":a;image\tachi\ark_t03.jpg",%type_crossfade_fst
 
-`「Làm gì có chuyện đó. Đó đâu phải do tôi, mà là do một Hấp huyết quỷ khác gây ra đấy.」@
+`「Làm gì có chuyện đó. Đó đâu phải do tôi, mà là do kẻ khác thuộc Huyết Tộc gây ra đấy.」@
 ` Trút bỏ hết vẻ căng thẳng chỉ trong chớp mắt, Arcueid đáp lại ngay tắp lự với vẻ ngán ngẩm.@
 ` Nhưng tôi thì làm sao chấp nhận nổi chuyện đó.\
 
-`「Thế là sao chứ. Cô bảo do Hấp huyết quỷ khác gây ra, chẳng lẽ ma cà rồng cứ hết tên này đến tên khác nối đuôi nhau xuất hiện hay sao.」@
+`「Thế là sao chứ. Cô bảo do Huyết Tộc khác gây ra, chẳng lẽ ma cà rồng cứ hết tên này đến tên khác nối đuôi nhau xuất hiện hay sao.」@
 ; 中央<夜>=アルクェイド:楽04（腕組、ちょっと不機嫌そう）<クロスフェード(速)>
 ld c,":a;image\tachi\ark_t01b.jpg",%type_crossfade_fst
 
-`「Làm gì có. Vụ án giết người hàng loạt kia ngay từ đầu đã là do một Hấp huyết quỷ duy nhất gây ra rồi. Chẳng có tên Hấp huyết quỷ mới nào tìm tới đâu, mà ngay cả Nero cũng hoàn toàn không liên quan gì đến vụ án đó cả.」@
+`「Làm gì có. Vụ án giết người hàng loạt kia ngay từ đầu đã là do một Huyết Tộc duy nhất gây ra rồi. Chẳng có Huyết Tộc mới nào tìm tới đâu, mà ngay cả Nero cũng hoàn toàn không liên quan gì đến vụ án đó cả.」@
 br
 `――――Hả?@
 ` Ngay cả Nero, cũng không liên quan sao……?@
 br
 `「Cái――――cô nói thế là có ý gì?」@
-`「Thì đúng như những gì tôi vừa nói thôi. ……Thiệt tình, Shiki trông có vẻ sắc sảo đấy mà đôi chỗ lại ngô nghê ghê. Nghe này, đúng là Nero là một Hấp huyết quỷ, nhưng gã đó có hút máu người bao giờ đâu?」\
+`「Thì đúng như những gì tôi vừa nói thôi. ……Thiệt tình, Shiki trông có vẻ sắc sảo đấy mà đôi chỗ lại ngô nghê ghê. Nghe này, đúng là Nero thuộc Huyết Tộc, nhưng gã đó có hút máu người bao giờ đâu?」\
 ; 中央を消去<クロスフェード(速)>
 cl c,%type_crossfade_fst
 
@@ -15190,7 +15190,7 @@ br
 ; 中央<夜>=アルクェイド:楽04（腕組、ちょっと不機嫌そう）<クロスフェード(速)>
 ld c,":a;image\tachi\ark_t03.jpg",%type_crossfade_fst
 
-`「Thì đã bảo rồi, vụ án đó là do một Hấp huyết quỷ khác chứ không phải Nero gây ra. Nói chính xác thì, vì có kẻ đó nên tôi mới tới thành phố này, còn Nero thì bám đuôi tôi mà tới. Mối liên hệ là thế đấy.」@
+`「Thì đã bảo rồi, vụ án đó là do một Huyết Tộc khác chứ không phải Nero gây ra. Nói chính xác thì, vì có kẻ đó nên tôi mới tới thành phố này, còn Nero thì bám đuôi tôi mà tới. Mối liên hệ là thế đấy.」@
 `「―――Cái. V-Vậy kẻ thù mà cô đang truy đuổi không phải là Nero sao!?」\
 
 ; 中央<夜>=アルクェイド:楽04（腕組、ちょっと不機嫌そう）<クロスフェード(速)>
@@ -16462,7 +16462,7 @@ play "*2"
 ; 中央<夜>=アルクェイド:特殊立ち絵（後ろ姿）<クロスフェード(速)>
 ld c,":a;image\tachi\ark_t03.jpg",%type_crossfade_fst
 
-`「Vậy à. Tính ra tôi chưa từng giải thích cặn kẽ về ma cà rồng cho Shiki nghe nhỉ. Nero là Hấp huyết quỷ quá đỗi dị biệt ngay cả trong giới ma cà rồng, nên lúc trước tôi thấy chẳng cần phải giải thích.」@
+`「Vậy à. Tính ra tôi chưa từng giải thích cặn kẽ về ma cà rồng cho Shiki nghe nhỉ. Nero là Huyết Tộc quá đỗi dị biệt ngay cả trong giới ma cà rồng, nên lúc trước tôi thấy chẳng cần phải giải thích.」@
 `「……? Ma cà rồng bình thường là sao chứ.」\
 
 ; 中央<夜>=アルクェイド:特殊立ち絵（後ろ姿）<クロスフェード(速)>
@@ -16494,7 +16494,7 @@ ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
 `「―――Chẳng hiểu nổi. Sao ma cà rồng lại làm cái trò đó chứ.@
 ` Kẻ mình giết―――kẻ mình đã ra tay sát hại, lại dựng dậy rồi sai bảo như con ở, đúng là gu bệnh hoạn quá thể.」\
 
-`「Đúng thế. Tôi thừa nhận ma cà rồng có gu tệ hại thật. Nhưng chuyện đó chỉ đúng với đám Tử Đồ thôi. Kẻ vốn sinh ra đã là Hấp huyết quỷ thì hiếm khi làm trò như thế lắm.」@
+`「Đúng thế. Tôi thừa nhận ma cà rồng có gu tệ hại thật. Nhưng chuyện đó chỉ đúng với đám Tử Đồ thôi. Kẻ vốn sinh ra đã là Huyết Tộc thì hiếm khi làm trò như thế lắm.」@
 `「――――?」@
 ` Kẻ vốn sinh ra đã là ma cà rồng……?\
 
@@ -16552,7 +16552,7 @@ ld c,":a;image\tachi\ark_t03.jpg",%type_crossfade_fst
 ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
 
 ` Tỉ lệ trở thành Ghoul chỉ khoảng một trên một trăm, nên đâu phải ai cũng có thể 『trụ lại』 được.@
-` ……Mà, cũng có những người bẩm sinh đã đủ tư cách để bước thẳng lên bậc cao hơn, họ sẽ lập tức trở thành một Hấp huyết quỷ mới, nhưng chuyện đó hiếm vô cùng nên không tính đến nhé.\
+` ……Mà, cũng có những người bẩm sinh đã đủ tư cách để bước thẳng lên bậc cao hơn, họ sẽ lập tức trở thành một giống Huyết Tộc mới, nhưng chuyện đó hiếm vô cùng nên không tính đến nhé.\
 
 `「Rồi những kẻ đã thành Ghoul sẽ ăn thịt những cái xác khác để bù đắp cho cơ thể đã mục rữa suốt mấy năm làm tử thi.@
 ` Sau khi phục hồi lại thể xác thối rữa, chúng mới có thể gia nhập hàng ngũ thây ma…… tức Living Dead đấy.」@
@@ -16560,7 +16560,7 @@ ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
 ; 中央<夜>=アルクェイド:特殊立ち絵（後ろ姿）<クロスフェード(速)>
 ld c,":a;image\tachi\ark_t02.jpg",%type_crossfade_fst
 
-`「Đâu có. 『Tử Giả』 chỉ là con rối thôi. Living Dead yếu hơn Tử Giả rất nhiều, nhưng chúng là một Hấp huyết quỷ thực thụ, cử động bằng ý chí và linh hồn của chính mình. Đẳng cấp khác hẳn so với lũ xác rối như 『Tử Giả』 đấy.」\
+`「Đâu có. 『Tử Giả』 chỉ là con rối thôi. Living Dead yếu hơn Tử Giả rất nhiều, nhưng chúng là Huyết Tộc thực thụ, cử động bằng ý chí và linh hồn của chính mình. Đẳng cấp khác hẳn so với lũ xác rối như 『Tử Giả』 đấy.」\
 
 ; 中央<夜>=アルクェイド:特殊立ち絵（後ろ姿）<クロスフェード(速)>
 ld c,":a;image\tachi\ark_t01b.jpg",%type_crossfade_fst
@@ -16587,7 +16587,7 @@ ld c,":a;image\tachi\ark_t03.jpg",%type_crossfade_fst
 ; 中央<夜>=アルクェイド:特殊立ち絵（後ろ姿）<クロスフェード(速)>
 ld c,":a;image\tachi\ark_t01b.jpg",%type_crossfade_fst
 
-`「Gọi là con rối thì đúng hơn là binh lính đấy. Bỏ qua quá trình mà người bị hút máu bình thường sẽ tự mình hồi sinh thành Hấp huyết quỷ, kẻ bị giật dây hoàn toàn như một phân thân của Tử Đồ mới được gọi là Tử Giả.\
+`「Gọi là con rối thì đúng hơn là binh lính đấy. Bỏ qua quá trình mà người bị hút máu bình thường sẽ tự mình hồi sinh thành Huyết Tộc, kẻ bị giật dây hoàn toàn như một phân thân của Tử Đồ mới được gọi là Tử Giả.\
 
 `「Tử Giả luôn gắn kết với Tử Đồ gốc tạo ra chúng.@
 ` Ngay cả Tử Giả cũng cần năng lượng để duy trì sự sống nên mới săn người rồi nuốt thịt. Nhưng hơn một nửa số đó lại chảy về cho Tử Đồ gốc.@
@@ -16699,7 +16699,7 @@ ld c,":a;image\tachi\ark_t01b.jpg",%type_crossfade_fst
 ` Thành ra, bình thường thì chẳng bao giờ xảy ra trường hợp như ở thành phố này đâu.\
 
 `「Shiki không biết thôi, chứ loài người rất mạnh mẽ. Các người đã thiết lập sẵn phương thức tự vệ hoàn chỉnh trước những giống loài vượt trội hơn mình.@
-` Nếu nó vận hành đúng đắn, thì đã chẳng có chuyện suốt tám năm qua nơi này biến thành hang ổ của Hấp huyết quỷ rồi.」@
+` Nếu nó vận hành đúng đắn, thì đã chẳng có chuyện suốt tám năm qua nơi này biến thành hang ổ của Huyết Tộc rồi.」@
 `「Phương thức…… tự vệ?」\
 
 `「Phải. Lũ ma cà rồng giấu xác và không dám làm rùm beng đâu phải vì không muốn con người biết đến sự tồn tại của mình.@
@@ -16770,7 +16770,7 @@ ld c,":a;image\tachi\ark_t01b.jpg",%type_crossfade_fst
 ` Chỉ đối phó với một tên Tử Giả thôi mà cô ta đã chật vật đến thế, vậy mà sao nói năng nhẹ tênh thế này.\
 
 `「Giai Cấp Năm là gì tôi không rõ lắm. Chẳng lẽ tên đó còn mạnh hơn Nero sao?」@
-`「Làm gì có chuyện đó. Nero ở một đẳng cấp khác rồi. Tên đó là Hấp huyết quỷ thuần khiết bậc nhất, ngay cả lúc bình thường tôi còn chẳng tiêu diệt nổi cơ mà.@
+`「Làm gì có chuyện đó. Nero ở một đẳng cấp khác rồi. Tên đó là Huyết Tộc thuần khiết bậc nhất, ngay cả lúc bình thường tôi còn chẳng tiêu diệt nổi cơ mà.@
 ` So với tên đó thì kẻ địch của tôi kém xa một bậc.」@
 `「――――Phù. Ra vậy, thế thì cô sẽ không bị hạ đâu nhỉ.」@
 ` Có lẽ vì an tâm, tôi thở hắt ra một hơi thật dài.\
@@ -19069,7 +19069,7 @@ ld c,":a;image\tachi\ark_t02.jpg",%type_crossfade_fst
 
 ; 中央<夜>=アルクェイド:楽04（腕組、ちょっと不機嫌そう）<クロスフェード(速)>
 ld c,":a;image\tachi\ark_t06.jpg",%type_crossfade_fst
-`「Mọi thứ trên thế giới này đều từ vòng xoáy ấy tuôn chảy ra, phân nhánh biến đổi, rồi duy trì hình thái như hiện tại. Cả tôi lẫn Shiki, cả Huyết tộc lẫn con người, khởi thủy đều bắt đầu từ nơi đó.@
+`「Mọi thứ trên thế giới này đều từ vòng xoáy ấy tuôn chảy ra, phân nhánh biến đổi, rồi duy trì hình thái như hiện tại. Cả tôi lẫn Shiki, cả Huyết Tộc lẫn con người, khởi thủy đều bắt đầu từ nơi đó.@
 ` ……Dẫu giờ đây đã phân hóa quá phức tạp và xa xôi, không thể nào quay ngược về điểm khởi đầu là nguyên nhân ấy được nữa, nhưng tóm lại cậu vẫn hiểu là có một con số Một như thế đúng không?@
 ` Thế nhưng, dẫu có biến đổi thành hình thái xa rời gốc rễ đến đâu, một khi đã là tồn tại phân nhánh từ nơi ấy, thì dẫu chỉ như một sợi tơ mong manh, mối liên kết vẫn luôn thông suốt.」\
 
@@ -22241,11 +22241,11 @@ br
 ld c,":a;image\tachi\ark_t01b.jpg",%type_crossfade_fst
 
 `「Vẫn gọi thế đấy. Shiki mà nhịn ăn một ngày thì cũng chịu không nổi đúng không?@
-` Với Huyết tộc Chân Tổ――tức là trường hợp của tôi, máu chính là món ăn thượng hạng nhất để thỏa mãn dục vọng đó.@
+` Với Huyết Tộc Chân Tổ――tức là trường hợp của tôi, máu chính là món ăn thượng hạng nhất để thỏa mãn dục vọng đó.@
 ` Thế nên nếu chỉ là 『hoạt động』 và 『thỏa mãn dục vọng』, thì mấy thứ đồ ăn này vẫn có thể tạm dùng thay thế được.」@
 ; 中央<昼>=アルクェイド:楽01（基本的楽）<クロスフェード(速)>
 ld c,":a;image\tachi\ark_t06.jpg",%type_crossfade_fst
-`「Còn với Tử Đồ―― những ma cà rồng vốn từ con người biến thành Huyết tộc lại là chuyện khác. Chúng bắt buộc phải có máu của kẻ khác để duy trì sự tồn tại của bản thân.」\
+`「Còn với Tử Đồ―― những ma cà rồng vốn từ con người biến thành Huyết Tộc lại là chuyện khác. Chúng bắt buộc phải có máu của kẻ khác để duy trì sự tồn tại của bản thân.」\
 
 `「……? Ờ thì, tức là với cô, máu là thứ thích hợp nhất để giải quyết cơn đói chứ gì.@
 ` ……Nhưng Arcueid này, cô bảo ghét hút máu mà nhỉ.@
@@ -22265,7 +22265,7 @@ ld c,":a;image\tachi\ark_t17.jpg",%type_crossfade_fst
 ; 中央<昼>=アルクェイド:楽01（基本的楽）<クロスフェード(速)>
 ld c,":a;image\tachi\ark_t10.jpg",%type_crossfade_fst
 
-`「Tôi đã nói mình chỉ là kẻ nửa mùa trong Huyết tộc rồi mà. Tôi không biết vị của máu. Thứ đó như thế nào, tôi vẫn chưa biết đâu.@
+`「Tôi đã nói mình chỉ là kẻ nửa mùa trong Huyết Tộc rồi mà. Tôi không biết vị của máu. Thứ đó như thế nào, tôi vẫn chưa biết đâu.@
 ` Chỉ có một điều tôi biết chắc――rằng việc hút máu cũng đồng nghĩa với việc không còn coi đối phương là con người nữa.」@
 ` Arcueid lảng mắt đi, thậm chí chẳng thèm nhìn về phía tôi.\
 
@@ -22404,7 +22404,7 @@ ld c,":a;image\tachi\ark_t03.jpg",%type_crossfade_fst
 ld c,":a;image\tachi\ark_t06.jpg",%type_crossfade_fst
 
 `「Shiki à, ma cà rồng có thiên địch đấy. Thậm chí cán cân quyền lực bây giờ bên đó còn xếp trên, một tập đoàn chẳng khác nào sát thủ vậy.@
-` ……Các loài siêu việt khác cũng thế thôi, nhưng riêng Huyết tộc mà để lộ sự tồn tại thì sẽ là đòn chí mạng.@
+` ……Các loài siêu việt khác cũng thế thôi, nhưng riêng Huyết Tộc mà để lộ sự tồn tại thì sẽ là đòn chí mạng.@
 ` Cho dù có thống trị cả một ngôi làng hẻo lánh trên núi cách biệt với văn minh để xây dựng vương quốc bí mật, chỉ cần nạn nhân tăng lên là 『bọn họ』 sẽ đánh hơi ra ngay.\
 
 `「Lũ ma cà rồng lén lút bóc lột con người chẳng vì điều gì khác ngoài việc tự bảo toàn lấy thân đâu.@
@@ -22444,7 +22444,7 @@ ld c,":a;image\tachi\ark_t07.jpg",%type_crossfade_fst
 ` Tự dưng mọi chuyện lại rối rắm hẳn lên.@
 ` Arcueid bị chính đồng loại ma cà rồng nhắm tới, lại còn bị cả cái đám thù địch ma cà rồng săn đuổi nữa.@
 `「……Gì thế này. Thế chẳng phải cô hoàn toàn đơn độc sao.」@
-`「Ừ, Huyết tộc vốn dĩ là thế mà.@
+`「Ừ, Huyết Tộc vốn dĩ là thế mà.@
 ` Hồi ở chỗ Nero tôi đã bảo rồi còn gì, ma cà rồng dù là đồng tộc nhưng bản chất khác xa nhau lắm, rốt cuộc thì vẫn chỉ có một thân một mình thôi.」@
 ; 中央を消去<クロスフェード(中)>
 cl c,%type_crossfade_fst
@@ -23399,7 +23399,7 @@ ld c,":a;image\tachi\ark_t02.jpg",%type_crossfade_fst
 ` Nhưng mà thôi, chuyện che giấu dấu vết để tự bảo vệ bản thân thì cậu nói đúng rồi đấy.」\
 
 `「Shiki này, ma cà rồng cũng có thiên địch đấy. Hơn nữa giờ đây cán cân sức mạnh còn nghiêng hẳn về phía họ, một tập đoàn chẳng khác nào những kẻ sát thủ chuyên nghiệp.@
-` ……Các loài siêu việt khác cũng vậy, nhưng đặc biệt với Hấp huyết quỷ thì việc để lộ tung tích sẽ phải trả giá bằng tính mạng.@
+` ……Các loài siêu việt khác cũng vậy, nhưng đặc biệt với Huyết Tộc thì việc để lộ tung tích sẽ phải trả giá bằng tính mạng.@
 ` Cho dù có thống trị cả một ngôi làng nhỏ hẻo lánh trên núi tách biệt hẳn với xã hội văn minh để lập nên một vương quốc bí mật đi chăng nữa, hễ số lượng nạn nhân tăng lên là chắc chắn bọn họ sẽ đánh hơi tìm ra.\
 
 `「Lũ ma cà rồng lén lút bóc lột con người chẳng vì mục đích nào khác ngoài tự bảo tồn bản thân cả. Chúng không bận tâm tai tiếng ngoài xã hội, mà chỉ sợ bị thiên địch đánh hơi thấy nên mới kín đáo phi tang xác chết mà thôi.」@
@@ -24618,7 +24618,7 @@ ld c,":a;image\tachi\ark_t22.jpg",%type_crossfade_fst
 
 `「―――Đêm nay dừng ở đây thôi. Đám Tử Giả đã bị giết sạch rồi, có đi loanh quanh thêm nữa cũng vô ích.」@
 `「……Chuyện đó thì được, nhưng còn đống xác chết này tính sao đây. Bị người ta nhìn thấy là to chuyện đấy.」@
-`「Không cần phải lo đâu. Xác của những kẻ một khi đã biến thành Hấp huyết quỷ sẽ không lưu lại. Những kẻ đã chối bỏ việc trở về với lòng đất, một khi bị tiêu diệt sẽ hóa thành tro tàn mà tan vào không trung thôi. Để một lúc nữa là chúng sẽ tự phân rã về tro bụi hết.」\
+`「Không cần phải lo đâu. Xác của những kẻ một khi đã biến thành Huyết Tộc sẽ không lưu lại. Những kẻ đã chối bỏ việc trở về với lòng đất, một khi bị tiêu diệt sẽ hóa thành tro tàn mà tan vào không trung thôi. Để một lúc nữa là chúng sẽ tự phân rã về tro bụi hết.」\
 ; 中央を消去<左シャッター(遅)>
 cl c,%type_lshutter_mid
 
@@ -24895,7 +24895,7 @@ ld c,":a;image\tachi\ark_t22.jpg",%type_crossfade_fst
 
 `「―――Đêm nay dừng ở đây thôi. Đám Tử Giả đã bị giết sạch rồi, đi lòng vòng thêm nữa cũng vô ích.」@
 `「……Thế cũng được, nhưng đống xác chết này tính sao đây. Bị người ta thấy là to chuyện đấy.」@
-`「Không cần lo đâu. Xác của những kẻ đã trở thành Hấp huyết quỷ sẽ không lưu lại. Chối bỏ việc trở về với lòng đất, một khi tiêu biến chúng chỉ hóa thành tro tàn rồi tan vào không trung thôi. Để một lúc nữa là chúng sẽ tự phân rã về tro bụi hết.」\
+`「Không cần lo đâu. Xác của những kẻ đã trở thành Huyết Tộc sẽ không lưu lại. Chối bỏ việc trở về với lòng đất, một khi tiêu biến chúng chỉ hóa thành tro tàn rồi tan vào không trung thôi. Để một lúc nữa là chúng sẽ tự phân rã về tro bụi hết.」\
 ; 中央を消去<左シャッター(遅)>
 cl c,%type_lshutter_mid
 
@@ -26104,7 +26104,7 @@ br
 ` Dù nhìn thế nào, bóng hình đó đích thị là Ciel Senpai.@
 ` Senpai chẳng buồn nhìn xuống tôi dưới chân, chỉ trừng trừng mắt gườm Arcueid đang khuỵu gối đằng xa.\
 
-`「Dù có đi khắp nơi tiêu diệt đồng loại ma cà rồng, thì sự thật cô là Hấp huyết quỷ cũng chẳng hề đổi thay.@
+`「Dù có đi khắp nơi tiêu diệt đồng loại ma cà rồng, thì sự thật cô thuộc Huyết Tộc cũng chẳng hề đổi thay.@
 ` ……Tôi không rõ cô lôi kéo cậu ấy vào chuyện này với ý đồ gì, nhưng chẳng lẽ bản thân cô chưa từng nghĩ rồi sẽ có ngày dẫn đến kết cục này sao?」@
 br
 ` Giọng của Senpai hoàn toàn khác với ngày thường.@
@@ -26562,19 +26562,19 @@ br
 
 `「Nhưng những kẻ sinh ra đã là ma cà rồng thì lại khác.@
 ` ……Tử Đồ dẫu có là ma cà rồng thì ban đầu cũng là con người như chúng ta. Vẫn có thể tạm coi chúng là con người được.@
-` Nhưng một kẻ bẩm sinh đã là Hấp huyết quỷ, liệu có thể gọi là con người được không?」@
+` Nhưng một kẻ ngay từ khi chào đời đã là Huyết Tộc, liệu có thể gọi là con người được không?」@
 `「Ch―――chị đang nói cái gì vậy hả Senpai. Thứ em đang hỏi là chuyện về Arcueid cơ mà.」\
 
 `「Thì chị đang nói về cô ấy đấy thôi.@
 ` Đừng bảo là em chưa từng nghĩ tới chuyện này.@
 ` Nếu Tử Đồ bị ma cà rồng biến đổi thành ma cà rồng.@
 ` Thì cội nguồn, gốc rễ của chúng phải là 『tồn tại bẩm sinh đã là ma cà rồng』.@
-` Giống Hấp huyết quỷ vốn không cùng nhánh cây phả hệ sinh mệnh với chúng ta này được gọi là Chân Tổ.@
+` Giống loài Huyết Tộc vốn không cùng nhánh cây phả hệ sinh mệnh với chúng ta này được gọi là Chân Tổ.@
 ` Chẳng cần đến máu người, sở hữu năng lực siêu việt ngang hàng, không, thậm chí còn vượt trội hơn cả Tử Đồ.@
 ` Cô ấy chính là vương tộc của thị tộc Chân Tổ đó. ……Dù họ không có giai cấp nên gọi là vương tộc thì cũng không đúng lắm.」\
 
 `「―――Thế thì đã sao chứ hả Senpai. Chuyện đó―――chẳng liên quan gì đến em hết……!」@
-`「Có chứ. Vì Hấp huyết quỷ mang tên Chân Tổ ấy mang xung động hút máu với nghiệp chướng sâu nặng hơn đám đầy tớ Tử Đồ nhiều.」@
+`「Có chứ. Vì Huyết Tộc mang tên Chân Tổ ấy có xung động hút máu với nghiệp chướng sâu nặng hơn đám đầy tớ Tử Đồ nhiều.」@
 ` Trong đôi mắt Senpai không hề có chút cảm xúc nào.@
 ` Nơi đó, như một tấm gương, chỉ phản chiếu khuôn mặt đang dao động dữ dội của tôi.\
 
@@ -44005,7 +44005,7 @@ ld c,":a;image\tachi\ark_t02.jpg",%type_crossfade_fst
 ` Nhưng mà, bảo là phi tang dấu vết để tự bảo vệ bản thân thì cũng đúng.」\
 
 `「Shiki, ma cà rồng có thiên địch đấy. Lại còn là một tập đoàn tựa như sát thủ, mà giờ cán cân sức mạnh bên đó còn nhỉnh hơn nữa kìa.@
-` ……Các loài siêu việt khác cũng vậy, nhưng riêng Hấp huyết quỷ thì việc để lộ tung tích sẽ dẫn đến mất mạng.@
+` ……Các loài siêu việt khác cũng vậy, nhưng riêng Huyết Tộc thì việc để lộ tung tích sẽ dẫn đến mất mạng.@
 ` Dù có thống trị một ngôi làng miền núi biệt lập với xã hội văn minh để dựng nên vương quốc bí mật, hễ số nạn nhân tăng lên là chúng sẽ đánh hơi ra ngay.@
 ` Lũ ma cà rồng bí mật bóc lột con người chẳng vì điều gì khác, chỉ cốt để tự bảo vệ mình thôi. Chúng không sợ miệng lưỡi thế gian, mà sợ bị thiên địch đánh hơi thấy nên mới tự động phi tang xác chết.」\
 
@@ -44310,7 +44310,7 @@ ld c,":a;image\tachi\ark_t08.jpg",%type_crossfade_fst
 ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
 
 
-`「Ừ. Tên sát nhân cuồng sát mà Shiki nói không phải tôi đâu. Vụ đó không phải do tôi, mà là tác phẩm của một Hấp huyết quỷ khác.」@
+`「Ừ. Tên sát nhân cuồng sát mà Shiki nói không phải tôi đâu. Vụ đó không phải do tôi, mà là tác phẩm của một kẻ khác thuộc Huyết Tộc.」@
 `「――――――――」@
 ` Cảm giác bức bối đè nặng trong lòng tôi tan biến sạch trơn.@
 ` Ra vậy―――Arcueid thực sự không làm những chuyện như thế.@
@@ -44319,7 +44319,7 @@ br
 br
 ` Thế thì an tâm rồi…… mà khoan, chuyện đó có gì sai sai.\
 
-`「Chờ chút đã Arcueid. Cô bảo là do Hấp huyết quỷ khác làm, nhưng ma cà rồng cứ xuất hiện hết kẻ này đến kẻ khác như thế chẳng phải kỳ quặc lắm sao?」@
+`「Chờ chút đã Arcueid. Cô bảo là do Huyết Tộc khác làm, nhưng ma cà rồng cứ xuất hiện hết kẻ này đến kẻ khác như thế chẳng phải kỳ quặc lắm sao?」@
 
 
 ; 中央<夜>=アルクェイド:不満（不満そう）<クロスフェード(速)>
@@ -44336,15 +44336,15 @@ ld c,":a;image\tachi\ark_t11.jpg",%type_crossfade_fst
 ld c,":a;image\tachi\ark_t02.jpg",%type_crossfade_fst
 
 
-`「Nghe này. Vụ án giết người hàng loạt mà Shiki nói ấy, ngay từ đầu đã là do một Hấp huyết quỷ duy nhất gây ra rồi.@
-` Chẳng có Hấp huyết quỷ mới nào tới đây cả, và Nero cũng hoàn toàn không dính dáng gì đến vụ án đó đâu.」@
+`「Nghe này. Vụ án giết người hàng loạt mà Shiki nói ấy, ngay từ đầu đã là do một Huyết Tộc duy nhất gây ra rồi.@
+` Chẳng có Huyết Tộc mới nào tới đây cả, và Nero cũng hoàn toàn không dính dáng gì đến vụ án đó đâu.」@
 br
 `――――Hả?@
 ` Đến cả Nero…… cũng không liên quan sao……?@
 br
 `「Cái―――Ý cô là sao chứ?」@
 `「Đúng như những gì tôi nói đấy. ……Trời đất, Shiki nhìn thì sắc sảo mà sao có chỗ lơ ngơ thế nhỉ.@
-` Nhớ lại đi Shiki. Đúng là Nero là Hấp huyết quỷ, nhưng tên đó có hút máu người không?」\
+` Nhớ lại đi Shiki. Đúng là Nero thuộc Huyết Tộc, nhưng tên đó có hút máu người không?」\
 
 `「Có hút không á, tên đó nhai ngấu nghiến con người từ đầu xuống cơ mà―――khoan, ơ.」\
 
@@ -44363,7 +44363,7 @@ br
 ld c,":a;image\tachi\ark_t01b.jpg",%type_crossfade_fst
 
 
-`「Thì tôi đã bảo rồi, vụ đó là do một Hấp huyết quỷ khác ngoài Nero gây ra. Nói chính xác thì vì có kẻ đó nên tôi mới tới thành phố này, còn Nero đuổi theo tôi nên mới tới đây, mối tương quan đại khái là vậy.」@
+`「Thì tôi đã bảo rồi, vụ đó là do một Huyết Tộc khác ngoài Nero gây ra. Nói chính xác thì vì có kẻ đó nên tôi mới tới thành phố này, còn Nero đuổi theo tôi nên mới tới đây, mối tương quan đại khái là vậy.」@
 `「―――Cái. Th-Thế kẻ thù mà cô đang săn lùng không phải là Nero sao……!?」\
 
 `「Đúng thế. Ngay từ đầu tôi đâu có bảo mục tiêu của mình là Nero? Với Nero thì mục tiêu là tôi thật, nhưng mục tiêu của tôi không phải Nero, mà chỉ là ma cà rồng đang bị gọi là 『kẻ sát nhân hàng loạt』 ở thành phố này thôi.」@
@@ -45335,7 +45335,7 @@ ld c,":a;image\tachi\ark_t01b.jpg",%type_crossfade_fst
 ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
 
 
-`「Ra vậy. Tôi chưa giải thích đàng hoàng về ma cà rồng cho Shiki nghe bao giờ nhỉ. Nero là một Hấp huyết quỷ quá đỗi dị biệt trong giới ma cà rồng, nên lúc đó tôi thấy không cần giải thích.」@
+`「Ra vậy. Tôi chưa giải thích đàng hoàng về ma cà rồng cho Shiki nghe bao giờ nhỉ. Nero là một Huyết Tộc quá đỗi dị biệt trong giới ma cà rồng, nên lúc đó tôi thấy không cần giải thích.」@
 `「……? Ma cà rồng đàng hoàng là thế nào cơ chứ?」\
 
 `「Thì là loại ma cà rồng đúng như các cậu vẫn thường tưởng tượng ấy. Bất lão bất tử, hút máu người, biến kẻ bị hút thành ma cà rồng để sai khiến, rồi tiêu vong trước ánh sáng mặt trời ―― một ma cà rồng hết sức bình thường.@
@@ -45377,7 +45377,7 @@ ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
 ld c,":a;image\tachi\ark_t02.jpg",%type_crossfade_fst
 
 
-`「Cũng đúng. Tôi thừa nhận ma cà rồng có sở thích quái đản. Nhưng điều đó chỉ đúng với Tử Đồ thôi. Những kẻ sinh ra đã là Hấp huyết quỷ thì chẳng mấy khi làm vậy đâu.」@
+`「Cũng đúng. Tôi thừa nhận ma cà rồng có sở thích quái đản. Nhưng điều đó chỉ đúng với Tử Đồ thôi. Những kẻ sinh ra đã là Huyết Tộc thì chẳng mấy khi làm vậy đâu.」@
 br
 `「――――?」@
 ` Ngay từ đầu……đã là ma cà rồng ư……?@
@@ -45432,7 +45432,7 @@ br
 ld c,":a;image\tachi\ark_t02.jpg",%type_crossfade_fst
 
 
-`「Nói là con rối thì đúng hơn là binh lính. Bọn chúng bỏ qua tiến trình con người bị hút máu tự hồi sinh thành Hấp huyết quỷ, mà bị thao túng hoàn toàn như phân thân của Tử Đồ. Kẻ Chết luôn kết nối với Tử Đồ tạo ra nó.@
+`「Nói là con rối thì đúng hơn là binh lính. Bọn chúng bỏ qua tiến trình con người bị hút máu tự hồi sinh thành Huyết Tộc, mà bị thao túng hoàn toàn như phân thân của Tử Đồ. Kẻ Chết luôn kết nối với Tử Đồ tạo ra nó.@
 ` Kẻ Chết cũng cần năng lượng để duy trì sự tồn tại nên mới tấn công con người rồi ngấu nghiến máu thịt. Nhưng quá nửa số đó lại chảy về cho Tử Đồ cội nguồn.@
 ` Nói nôm na thì giống ong thợ nuôi ong chúa vậy. Tử Đồ điều khiển Kẻ Chết chỉ việc nằm ngủ trong quan tài của mình mà vẫn tích trữ được sức mạnh.」\
 
@@ -45560,7 +45560,7 @@ br
 `「……Arcueid. Này, tôi hỏi cô một câu nhé. Tên 『kẻ địch』 mà cô nói đó có mạnh không?」@
 `「Chắc chắn vượt trội hơn hẳn tên Tử Giả ban nãy rồi. Lần này tôi chưa giáp mặt nên chưa rõ, nhưng đã ẩn nấp suốt tám năm thì khéo lên tầm Giai cấp Năm rồi cũng nên.」@
 `「……Giai cấp Năm thì tôi chịu. Cơ mà tên đó mạnh hơn Nero à?」@
-`「Làm sao bằng được. Nero ở một đẳng cấp khác rồi. Ngay cả lúc tôi bình thường cũng chẳng thể triệt hạ nổi một Hấp huyết quỷ có độ thuần khiết cao nhất như tên đó. So với Nero thì kẻ địch của tôi còn kém xa vài bậc.」\
+`「Làm sao bằng được. Nero ở một đẳng cấp khác rồi. Ngay cả lúc tôi bình thường cũng chẳng thể triệt hạ nổi một Huyết Tộc có độ thuần khiết cao nhất như tên đó. So với Nero thì kẻ địch của tôi còn kém xa vài bậc.」\
 
 `「――――Thế à. Vậy thì――cô sẽ không bị hạ đâu nhỉ.」@
 ` Có lẽ vì nhẹ nhõm, tôi thở phào một hơi dài.@
@@ -45900,12 +45900,12 @@ bg "image\bg\cmo_10.jpg",%type_crossfade_slw
 
 ` 「Để xem nào, cứ bảo là độ trăm năm nữa sẽ có một tên Tử Đồ mới nổi lên. Dây dưa với nó chỉ tổ vô nghĩa nên cứ mặc xác nó đi, truyền miệng thế là được.」\
 
-` 「Không, đâu cần phải chờ tới trăm năm. Tôi sẽ sớm leo lên đỉnh cao ở bên đó thôi. Tấm thân này sẽ trở thành Hấp huyết quỷ ưu việt nhất, mười năm là quá đủ rồi.」\
+` 「Không, đâu cần phải chờ tới trăm năm. Tôi sẽ sớm leo lên đỉnh cao ở bên đó thôi. Tấm thân này sẽ trở thành Huyết Tộc ưu việt nhất, mười năm là quá đủ rồi.」\
 
 ` 「Nói hão. Dù có là cậu đi nữa, nếu phải bắt đầu lại từ một Tử Giả thì cũng mất cả trăm năm. Sự tàn khốc ở thế giới của lũ đó đâu phải thứ bên ta so bì được.」\
 
 ` 「Nếu đi theo con đường thông thường thì đúng là vậy.@
-` Nhưng nếu ngay từ đầu đã trở thành Hấp huyết quỷ mạnh nhất, quy luật thế giới của chúng sẽ chẳng còn giá trị gì nữa.」\
+` Nhưng nếu ngay từ đầu đã trở thành Huyết Tộc mạnh nhất, quy luật thế giới của chúng sẽ chẳng còn giá trị gì nữa.」\
 
 ` 「……Chẳng hiểu nổi. Ý cậu là sao?」\
 
@@ -47048,9 +47048,9 @@ ld c,":a;image\tachi\cel_t12.jpg",%type_crossfade_fst
 ; 中央<昼>=シエル:睨み02（まじめな顔）<クロスフェード(速)>
 ld c,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
 
-`「Thế này nhé, Hấp huyết quỷ dẫu có bị thương thì hầu hết cũng sẽ tự lành lại.@
-` Những tác nhân bên ngoài thông thường…… tức là hung khí chẳng hạn. Bằng thứ đó thì không thể tạo ra sức tàn phá vượt qua tốc độ phục hồi của Hấp huyết quỷ được.@
-` Để tiêu diệt Hấp huyết quỷ, cần phải có tác nhân bên ngoài với quy mô vượt qua tốc độ phục hồi, hoặc vô hiệu hóa bản thân tốc độ phục hồi ấy.@
+`「Thế này nhé, Huyết Tộc dẫu có bị thương thì hầu hết cũng sẽ tự lành lại.@
+` Những tác nhân bên ngoài thông thường…… tức là hung khí chẳng hạn. Bằng thứ đó thì không thể tạo ra sức tàn phá vượt qua tốc độ phục hồi của Huyết Tộc được.@
+` Để tiêu diệt Huyết Tộc, cần phải có tác nhân bên ngoài với quy mô vượt qua tốc độ phục hồi, hoặc vô hiệu hóa bản thân tốc độ phục hồi ấy.@
 
 `「Lời nguyền phục hồi này của chúng―――không phải là chữa lành vết thương, mà là sự đảo ngược thời gian nhằm đưa phần hư hại trở về nguyên trạng. Loại thần bí có thể vô hiệu hóa lời nguyền này được gọi là Khái Niệm Vũ Trang.」\
 
@@ -47058,7 +47058,7 @@ ld c,":a;image\tachi\cel_t01a.jpg",%type_crossfade_fst
 ` Senpai hào hứng nói những điều tôi chẳng tài nào hiểu nổi.\
 
 `「Tóm lại thì đó là vũ khí ma pháp.@
-` Bọn chị vốn dựa vào lai lịch thời ma cà rồng còn là con người để giải trừ nguyền rủa nên không mấy khi dùng đến, nhưng khi xử lý Hấp huyết quỷ không phải con người ngay từ đầu thì sẽ phải dùng tới, nói cách khác là con bài tẩy.@
+` Bọn chị vốn dựa vào lai lịch thời ma cà rồng còn là con người để giải trừ nguyền rủa nên không mấy khi dùng đến, nhưng khi xử lý Huyết Tộc vốn không phải con người ngay từ đầu thì sẽ phải dùng tới, nói cách khác là con bài tẩy.@
 ` Con dao của Tohno-kun là vũ khí chống ma cà rồng mà cô ta mang tới đúng không?」@
 `「A―――hả?」\
 
@@ -47094,7 +47094,7 @@ ld c,":a;image\tachi\cel_t07a.jpg",%type_crossfade_fst
 
 `「Tohno-kun đã biết ma cà rồng được chia thành Chân Tổ và Tử Đồ rồi đúng không.@
 ` Vậy thì câu chuyện sẽ đơn giản hơn.@
-` 『Kẻ thù』 mà cô ấy đang săn đuổi là Hấp huyết quỷ thuộc phân loại Tử Đồ. Tục xưng là 『Rắn』. Một ma cà rồng đặc biệt bị chính các Tử Đồ xem là kẻ dị loại.」\
+` 『Kẻ thù』 mà cô ấy đang săn đuổi là Huyết Tộc thuộc phân loại Tử Đồ. Tục xưng là 『Rắn』. Một ma cà rồng đặc biệt bị chính các Tử Đồ xem là kẻ dị loại.」\
 
 `「……Con ma cà rồng này không phải cá thể mạnh như 『Hỗn Độn』 mà Tohno-kun đã tiêu diệt.@
 ` Nhưng theo một nghĩa nào đó, kẻ đó lại khó tiêu diệt hơn cả 『Hỗn Độn』. Dù sao thì, chết đi rồi kẻ đó vẫn có thể sống lại.」@
@@ -47143,7 +47143,7 @@ ld c,":a;image\tachi\cel_t07a.jpg",%type_crossfade_fst
 `「……Cứ theo như lời Senpai thì tên đó hoàn toàn không thể chết còn gì. Dù chẳng phải bất tử bất diệt, nhưng thế này còn tệ hại hơn nhiều.@
 ` Giết rồi lại sinh ra thành một con người khác, thế thì có khác gì sống vĩnh hằng đâu chứ.」@
 `「Vâng, đúng là như vậy.@
-` 『Rắn』 trở thành Tử Đồ, gia nhập Huyết tộc là từ khoảng tám trăm năm trước.@
+` 『Rắn』 trở thành Tử Đồ, gia nhập Huyết Tộc là từ khoảng tám trăm năm trước.@
 ` Từ đó cho tới tận nay, 『Rắn』 đã chuyển sinh mười bảy lần. Toàn bộ những lần đó đều bị Arcueid Brunestud giết chết.」\
 
 `「Arcueid á……?」@
@@ -47261,8 +47261,8 @@ play "*9"
 `「―――Không đâu. Cô ta chẳng hề bận tâm đến thị trấn này, việc săn đuổi 『Rắn』 hoàn toàn là vấn đề cá nhân.」\
 
 `「Tohno-kun. Tử Đồ vốn ban đầu đều là con người.@
-` Có hai cách để họ biến thành Hấp huyết quỷ.@
-` Hoặc là bị hút máu bởi thứ phi nhân loại vốn sinh ra đã là Hấp huyết quỷ được gọi là Chân Tổ,
+` Có hai cách để họ biến thành Huyết Tộc.@
+` Hoặc là bị hút máu bởi thứ phi nhân loại vốn sinh ra đã là Huyết Tộc được gọi là Chân Tổ,
 ` hoặc là tu luyện ma thuật đến đỉnh cao để biến thể xác mình thành động cơ vĩnh cửu.@
 ` 『Rắn』 đã bị Chân Tổ hút máu mà biến thành Tử Đồ. Em hiểu rồi chứ. 『Rắn』 chính là nạn nhân của Chân Tổ ―― giống loài siêu việt thậm chí còn chẳng phải con người.」@
 br
@@ -47280,7 +47280,7 @@ wave se0
 ld c,":a;image\tachi\cel_t07a.jpg",%type_crossfade_fst
 
 `「……Chân Tổ vốn là những thực thể cách biệt quá xa so với chúng ta.@
-` Đúng là Tử Đồ sở hữu năng lực to lớn của Hấp huyết quỷ, nhưng rốt cuộc những thứ đó cũng chỉ là 『phần nối dài của con người』.@
+` Đúng là Tử Đồ sở hữu năng lực to lớn của Huyết Tộc, nhưng rốt cuộc những thứ đó cũng chỉ là 『phần nối dài của con người』.@
 ` Nhờ có được tuổi thọ dài lâu, Tử Đồ mới không ngừng nâng cao năng lực bản thân, để rồi đạt tới thứ 『siêu』 năng lực như vậy.@
 ` Nói cách khác, chỉ cần có đủ thời gian sống thì ai cũng có thể đạt tới năng lực cỡ ma cà rồng.」\
 
@@ -47407,7 +47407,7 @@ ld c,":a;image\tachi\cel_t07a.jpg",%type_crossfade_fst
 `「……………Tất nhiên là cô ấy sẽ để em về rồi, chứ sao nữa.@
 ` Bởi vì―――cô ấy làm gì có lý do để hại em cơ chứ.」\
 
-`「Cô ta là ma cà rồng. Lại còn không phải loại Hấp huyết quỷ cần máu kẻ khác để sinh tồn như lũ Tử Đồ.@
+`「Cô ta là ma cà rồng. Lại còn không phải loại Huyết Tộc cần máu kẻ khác để sinh tồn như lũ Tử Đồ.@
 ` Em nghe cho rõ đây Tohno-kun. Nếu Chân Tổ không hút máu con người, thì ngay từ đầu đã chẳng có thứ gọi là ma cà rồng tồn tại.@
 ` Bọn họ―――dù không cần máu người vẫn sống tốt, nhưng chỉ vì xung động muốn hút mà ra tay với con người, rồi biến con người thành những thứ thoát ly nhân loại.@
 ` Chị không thể để một người bình thường như em đi bên cạnh thứ như thế được.」@
@@ -49175,7 +49175,7 @@ br
 `「Chuyện đó――――」\
 
 `「Không sao đâu. Chị là quái vật mà.@
-` Dù không phải Hấp huyết quỷ, nhưng chị cũng chẳng còn cơ thể bình thường của con người nữa rồi.」@
+` Dù không phải Huyết Tộc, nhưng chị cũng chẳng còn cơ thể bình thường của con người nữa rồi.」@
 ` Senpai vẫn cúi gằm mặt mà thốt ra những lời như vậy.\
 
 `「……Chị đang…… nói cái gì thế hả Senpai. Cơ thể con người cái gì chứ, chẳng phải chị vốn đã rất đỗi bình thường rồi sao……!」@
@@ -51626,7 +51626,7 @@ waveloop se1
 ; 中央<夜>=ロア（ダークシキ）:通常<クロスフェード(速)>
 ld c,":a;image\tachi\roa_t05a.jpg",%type_crossfade_fst
 
-`「……Không, không phải vậy. Đúng là ta là Hấp huyết quỷ được mệnh danh là Con rắn Akasha chuyển sinh.@
+`「……Không, không phải vậy. Đúng là ta là Huyết Tộc được mệnh danh là Con rắn Akasha chuyển sinh.@
 ` Nhưng mà này, đối với ngươi thì ta đâu phải là rắn, mà lẽ ra phải là SHIKI mới đúng chứ?@
 ; 中央<夜>=ロア（ダークシキ）:通常<クロスフェード(速)>
 ld c,":a;image\tachi\roa_t04a.jpg",%type_crossfade_fst
@@ -51852,7 +51852,7 @@ br
 
 ; 中央<夜>=ロア（ダークシキ）:通常<クロスフェード(速)>
 ld c,":a;image\tachi\roa_t05a.jpg",%type_crossfade_fst
-`「……Không, nhầm rồi. Đúng là ta mang danh Hấp huyết quỷ, con Rắn luân hồi của Akasha. Nhưng này, với ngươi thì ta đâu phải là Rắn, mà phải là SHIKI mới đúng chứ?@
+`「……Không, nhầm rồi. Đúng là ta mang danh Huyết Tộc, con Rắn luân hồi của Akasha. Nhưng này, với ngươi thì ta đâu phải là Rắn, mà phải là SHIKI mới đúng chứ?@
 ; 中央<夜>=ロア（ダークシキ）:通常<クロスフェード(速)>
 ld c,":a;image\tachi\roa_t04a.jpg",%type_crossfade_fst
 `―――Chậc, mày đúng là đồ vô tình vô nghĩa. Thế này chẳng hóa ra biến kẻ tơ tưởng suốt tám năm qua như tao thành thằng hề sao.@
@@ -51958,7 +51958,7 @@ ld c,":a;image\tachi\roa_t01a.jpg",%type_crossfade_fst
 ; 中央<夜>=ロア（ダークシキ）:通常<クロスフェード(速)>
 ld c,":a;image\tachi\roa_t05a.jpg",%type_crossfade_fst
 `「……Mà, cứ coi như là thế đi.@
-` Shiki, chắc ngươi đã nghe Ciel kể về ta rồi chứ. Về một linh hồn luân hồi. Về Hấp huyết quỷ sẽ ấp nở thành một con người mới sau khi chết đi.」\
+` Shiki, chắc ngươi đã nghe Ciel kể về ta rồi chứ. Về một linh hồn luân hồi. Về Huyết Tộc sẽ ấp nở thành một con người mới sau khi chết đi.」\
 ` Đôi mắt tên đó híp lại.@
 ` Bầu không khí toát ra từ tên đó dần thay đổi so với ban nãy.@
 ` Cực kỳ tĩnh lặng, hoàn toàn không còn chút nhân tính nào.\
@@ -52268,9 +52268,9 @@ br
 ld c,":a;image\tachi\roa_t05a.jpg",%type_crossfade_fst
 
 `「Nghe này thiếu niên, để ta chỉ dạy cho ngươi một điều.@
-` Dù Hấp huyết quỷ có sở hữu khả năng trị thương gần như vô hạn đến đâu, thì đó cũng chỉ là khi còn sống mà thôi.@
-` Hấp huyết quỷ chỉ bất tử khi vẫn còn thoi thóp chút hơi tàn thôi. Một khi đã chết hẳn thì cơ chế hồi phục đó cũng dừng lại.@
-` Hấp huyết quỷ chỉ khó chết chứ tuyệt đối không phải bất tử―――」\
+` Dù Huyết Tộc có sở hữu khả năng trị thương gần như vô hạn đến đâu, thì đó cũng chỉ là khi còn sống mà thôi.@
+` Huyết Tộc chỉ bất tử khi vẫn còn thoi thóp chút hơi tàn thôi. Một khi đã chết hẳn thì cơ chế hồi phục đó cũng dừng lại.@
+` Huyết Tộc chỉ khó chết chứ tuyệt đối không phải bất tử―――」\
 
 ` Kèm theo một tiếng phập trầm đục.@
 ` Từ lồng ngực Senpai, một thanh kiếm đen trồi ra.@
@@ -52443,7 +52443,7 @@ br
 ld c,":a;image\tachi\roa_t04a.jpg",%type_lshutter_fst
 
 
-`「―――Không ngờ đấy. Ngang ngửa được với một Hấp huyết quỷ như tao sao.@
+`「―――Không ngờ đấy. Ngang ngửa được với một Huyết Tộc như tao sao.@
 ` ……Đôi mắt đó của mày, xét theo nghĩa nào đó, có lẽ là thứ nghiệp chướng còn xứng với 『ta』 hơn cả 『tao』 lúc này.」@
 `「――――」@
 `「Không nhận ra thì thôi vậy. Dù sao đây cũng là câu chuyện nhạt nhẽo chẳng đáng kể ra.」@
@@ -52459,7 +52459,7 @@ ld c,":a;image\tachi\roa_t05a.jpg",%type_crossfade_fst
 ` Đó là phép màu mà Roa hằng mơ tới.@
 ` Ta từng coi luân hồi chuyển kiếp chính là sự vĩnh hằng.@
 ` Nhưng mà, thứ đó cũng chẳng khác gì việc duy trì một dòng máu kéo dài bất tận.@
-` Nếu có thứ sức mạnh tối hậu mà hậu duệ của kẻ mang tên Roa sau khi đón nhận cái chết đạt được―――thì đó không phải là đoạt lấy sinh mạng kẻ khác với tư cách một Hấp huyết quỷ.@
+` Nếu có thứ sức mạnh tối hậu mà hậu duệ của kẻ mang tên Roa sau khi đón nhận cái chết đạt được―――thì đó không phải là đoạt lấy sinh mạng kẻ khác với tư cách Huyết Tộc.@
 ` ……Thiếu niên. Năng lực thấu thị cái chết như của ngươi, phải chăng mới là hồi kết xứng đáng cho kẻ dám thách thức cái chết như ta sao.」\
 
 br
@@ -56614,7 +56614,7 @@ bg "image\bg\bg_02a.jpg",%type_crossfade_fst
 ` Đó không hẳn là thể xác kiệt cùng, mà đúng hơn là tâm trí đã rệu rã.@
 ` Cơn đau đầu không dứt.@
 ` Roa, kẻ được bảo là đang ở bên trong tôi.@
-` ……Và cả cô công chúa huyết tộc trắng muốt vẫn cười như điên dại.\
+` ……Và cả cô công chúa ma cà rồng trắng muốt vẫn cười như điên dại.\
 
 `「――――Ặc.」@
 ` Dịch vị trào ngược lên.@
@@ -59374,7 +59374,7 @@ br
 ` Lạnh tanh.@
 ` Tựa như đang cười, cô ấy nói.\
 
-`「Thi thể cô bé được đưa về Giáo hội, rồi được lưu trữ như một mẫu vật thi thể chuyển hóa từ Hấp huyết quỷ trở lại thành người.@
+`「Thi thể cô bé được đưa về Giáo hội, rồi được lưu trữ như một mẫu vật thi thể chuyển hóa từ Huyết Tộc trở lại thành người.@
 ` ……Nhưng chẳng hiểu do duyên cớ gì, thân xác của đứa trẻ ấy lại vô cùng đặc biệt, sở hữu khả năng hồi sinh vượt xa người thường.@
 ` Ba năm sau, vào một ngày nọ, đáng lẽ không nên tỉnh lại, vậy mà con bé lại thức giấc từ cõi chết.@
 ` ……Nực cười thật nhỉ, rõ ràng chỉ là một cái xác rỗng bị linh hồn Roa rũ bỏ, thế mà lại sống lại được cơ đấy.\
@@ -62450,7 +62450,7 @@ br
 
 ; 中央<夜>=シエル:睨み02（まじめな顔・完全武装）<クロスフェード(速)>
 ld c,":a;image\tachi\cel_t14.jpg",%type_crossfade_fst
-`「……Bản thân vết thương thì đã lành rồi. Vì đang là ban đêm, cơ thể em đã nghiêng về phía Hấp huyết quỷ hơn.@
+`「……Bản thân vết thương thì đã lành rồi. Vì đang là ban đêm, cơ thể em đã nghiêng về phía Huyết Tộc hơn.@
 ` À thì, cũng nhờ vậy mà chị không phải giết Tohno-kun, khéo chúng ta cũng nên cảm ơn Roa một chút nhỉ.」@
 ` ……Có lẽ để làm dịu bầu không khí, Senpai buông một câu đùa thật khó đáp lại.\
 
@@ -62470,7 +62470,7 @@ ld c,":a;image\tachi\cel_t07c.jpg",%type_crossfade_fst
 
 ; 中央<夜>=シエル:睨み02（まじめな顔・完全武装）<クロスフェード(速)>
 ld c,":a;image\tachi\cel_t15.jpg",%type_crossfade_fst
-`「―――Vâng. Dẫu vậy nếu không thể chữa trị, Tohno-kun sẽ bị đối xử như một Hấp huyết quỷ.@
+`「―――Vâng. Dẫu vậy nếu không thể chữa trị, Tohno-kun sẽ bị xử lý như một kẻ thuộc Huyết Tộc.@
 ` ……Chị không muốn em phải nếm trải điều còn đau đớn hơn cả cái chết.@
 ` Thế nên chị thà rằng―――」\
 
@@ -62486,7 +62486,7 @@ ld c,":a;image\tachi\cel_t07c.jpg",%type_crossfade_fst
 ; 中央<夜>=シエル:睨み02（まじめな顔・完全武装）<クロスフェード(速)>
 ld c,":a;image\tachi\cel_t14.jpg",%type_crossfade_fst
 
-`「Không, đêm nay chị sẽ trị liệu cho Tohno-kun. Roa là Hấp huyết quỷ, trời sáng thì hoạt động cũng sẽ lắng xuống.@
+`「Không, đêm nay chị sẽ trị liệu cho Tohno-kun. Roa là Huyết Tộc, trời sáng thì hoạt động cũng sẽ lắng xuống.@
 ` ……Nếu chỉ đơn thuần đến Tòa Thánh thì dễ thôi, nhưng vấn đề của Tohno-kun lại thuộc về mặt tối. Cũng giống như chị trước đây, chuyện này vốn dĩ không được phép tồn tại, nên em phải đặt chân vào phần ngầm của Giáo hội.@
 ` Dù vậy, muốn trực tiếp đưa Tohno-kun tới đó thì bắt buộc phải xin vài thứ giấy phép. Ngay cả để thực hiện Nghi thức Rửa tội tối thiểu, thành phố này cũng chẳng có thánh đường nào cử hành được bí tích.@
 ` Ở đất nước này chỉ có duy nhất một thánh đường thực hiện được Nghi thức Rửa tội thuộc phái của bọn chị, nên trước mắt em phải đến thánh đường đó một chuyến đã.」\
@@ -65140,7 +65140,7 @@ br
 ` Nhưng biết phải làm sao đây.@
 ` Giống loài mang tên con người không có sức mạnh để sống suốt ngàn năm.@
 ` Dù là thể xác hay tinh thần, bản thể con người không thể chịu nổi sự bào mòn đó.@
-` Cho dù hóa thành Hấp huyết quỷ để nắm lấy nhục thể bất tử, duy chỉ sự lão hóa của tinh thần là không tài nào ngăn lại được.\
+` Cho dù hóa thành Huyết Tộc để nắm lấy nhục thể bất tử, duy chỉ sự lão hóa của tinh thần là không tài nào ngăn lại được.\
 
 ` Ngăn chặn lão hóa thì có thể. Nhưng đó là sự ngưng đọng. Một tinh thần ngưng đọng thì chẳng có chút giá trị nào.@
 ` Ta phải tiếp tục tồn tại trong khi vẫn giữ trọn độ thuần khiết của bản thân này.@
@@ -65541,7 +65541,7 @@ br
 ` Roa vì quá căm hận mà chuyển sinh hết lần này đến lần khác, và mỗi lần như thế đều chờ đợi Arcueid đuổi theo.\
 
 ` Vì mục đích đó, gã đã làm bất cứ điều gì.@
-` Lừa gạt Arcueid, lừa gạt một Arcueid thậm chí còn không biết mình là Hấp huyết quỷ, rồi để cô hút máu của mình.@
+` Lừa gạt Arcueid, lừa gạt một Arcueid thậm chí còn không biết bản thân thuộc Huyết Tộc, rồi để cô hút máu của mình.@
 br
 ` Trở thành Tử Đồ của Arcueid, gã dùng chính sức mạnh của cô để tàn sát sạch sẽ những Chân Tổ còn đang thoi thóp sống sót, rồi lặng lẽ chờ đợi Arcueid.\
 
@@ -66105,7 +66105,7 @@ cl c,%type_lshutter_mid
 ` Nhưng bảo tôi cùng Ciel hợp sức tấn công Arcueid thì chuyện như vậy, tôi cũng chẳng muốn nghĩ tới.\
 
 `「Khoan đã, Senpai……! Arcueid chẳng làm gì cả. Cô ấy không phải loại ma cà rồng xấu xa gì đâu, nên thôi――――」@
-`「……Tohno-kun. Với Hấp huyết quỷ thì thiện hay ác chẳng liên quan gì cả. Ngay từ lúc len lỏi làm vấy bẩn xã hội loài người, chúng đã là những tồn tại cần phải bị loại trừ.@
+`「……Tohno-kun. Với Huyết Tộc thì thiện hay ác chẳng liên quan gì cả. Ngay từ lúc len lỏi làm vấy bẩn xã hội loài người, chúng đã là những tồn tại cần phải bị loại trừ.@
 ` Hơn nữa, giờ đã quá muộn rồi. Cô ta thật sự định giết chúng ta đấy.」@
 `「Không――――――」@
 ` Trước cả khi tôi kịp nói không có chuyện đó đâu.@
@@ -66121,7 +66121,7 @@ cl c,%type_crossfade_fst
 
 ld c,":a;image\tachi\cel_t06b.jpg",%type_crossfade_fst
 
-`「Già mồm. Đối với kẻ trúng Hắc Kiện đủ giết một Hấp huyết quỷ thông thường đến sáu lần mà không hề xây xước, bất kỳ thủ đoạn nào cũng là công bằng. Bị một con quái vật như ngươi phán xét nhân cách thật khó chịu làm sao.」\
+`「Già mồm. Đối với kẻ trúng Hắc Kiện đủ giết một Huyết Tộc thông thường đến sáu lần mà không hề xây xước, bất kỳ thủ đoạn nào cũng là công bằng. Bị một con quái vật như ngươi phán xét nhân cách thật khó chịu làm sao.」\
 
 cl c,%type_crossfade_fst
 
@@ -66421,10 +66421,10 @@ ld r,":a;image\tachi\cel_t06b.jpg",%type_crossfade_fst
 ` Với máu của cô, chỉ một lượng nhỏ thôi cũng đủ phá hủy cơ thể con người rồi còn gì!?」@
 ld l,":a;image\tachi\ark_t06.jpg",%type_crossfade_fst
 
-`「Thất lễ thật đấy, tôi đâu có vụng về đến mức đó. Vả lại cơ thể Shiki đã bị Roa xâm thực và sắp trở thành Hấp huyết quỷ từ lâu rồi. Trong trường hợp này, tôi nghĩ máu của tôi sẽ mang lại tác dụng tích cực đấy chứ.\
+`「Thất lễ thật đấy, tôi đâu có vụng về đến mức đó. Vả lại cơ thể Shiki đã bị Roa xâm thực và sắp trở thành Huyết Tộc từ lâu rồi. Trong trường hợp này, tôi nghĩ máu của tôi sẽ mang lại tác dụng tích cực đấy chứ.\
 
 `「……Với lại, Shiki có chịu nghe lời tôi đâu. Chỉ với một giọt máu cỏn con, cùng lắm cũng chỉ khiến cậu ấy phải tiêu tốn rất nhiều tâm lực để cự tuyệt lời tôi mà thôi.@
-` Chưa kể tôi chưa từng hút máu Shiki, nên cơ thể Shiki vẫn thuộc về cậu ấy. Cô thừa biết rồi đấy, Hấp huyết quỷ chỉ biến mục tiêu thành vật sở hữu khi dung nạp máu của đối phương thôi.」@
+` Chưa kể tôi chưa từng hút máu Shiki, nên cơ thể Shiki vẫn thuộc về cậu ấy. Cô thừa biết rồi đấy, Huyết Tộc chỉ biến mục tiêu thành vật sở hữu khi dung nạp máu của đối phương thôi.」@
 ld r,":a;image\tachi\cel_t10b.jpg",%type_crossfade_fst
 
 `「D-Dù vậy thì việc cô ép Tohno-kun uống máu vẫn là sự thật……! Làm ra chuyện như thế, rốt cuộc cô đang nghĩ cái gì vậy chứ……!」\
@@ -67697,7 +67697,7 @@ ld c,":a;image\tachi\cel_t10b.jpg",%type_crossfade_fst
 
 ; 中央<夜>=シエル:睨み01（睨んでます・完全武装）<クロスフェード(速)>
 ld c,":a;image\tachi\cel_t01b.jpg",%type_crossfade_fst
-`「Đừng coi thường chị chứ. Dù trông thế này nhưng chị đã thanh trừng hàng chục Hấp huyết quỷ rồi đấy. Riêng việc đối phó với Hấp huyết quỷ thì chẳng ai qua mặt được bọn chị đâu.」@
+`「Đừng coi thường chị chứ. Dù trông thế này nhưng chị đã thanh trừng hàng chục Huyết Tộc rồi đấy. Riêng việc đối phó với Huyết Tộc thì chẳng ai qua mặt được bọn chị đâu.」@
 ` Ciel còn làm điệu bộ giơ nắm tay vẻ đầy tự tin.@
 br
 ` ……Nhưng.@
@@ -88044,7 +88044,7 @@ ld c,":a;image\tachi\cel_t07c.jpg",%type_crossfade_fst
 `「……Kìa. Senpai từng giao chiến với tên ma cà rồng đó vài lần rồi đúng không?」@
 `「Cho tới giờ là hai lần. Lần đầu thì để trốn thoát, còn lần thứ hai thì coi như bất phân thắng bại.」@
 `「Đúng chứ? Thế thì Senpai đã thấy mặt tên ma cà rồng đó rồi còn gì. Nếu vậy thì ngay từ đầu chị phải biết em không phải là ma cà rồng chứ?」@
-`「……Không. Đáng tiếc là điều đó không thể dùng làm chứng cứ xác thực được. Trong số các Hấp huyết quỷ có kẻ tự do biến đổi vóc dáng cơ thể, nên không thể chỉ dựa vào vẻ bề ngoài mà nhận diện được.」@
+`「……Không. Đáng tiếc là điều đó không thể dùng làm chứng cứ xác thực được. Trong giới Huyết Tộc có kẻ tự do biến đổi vóc dáng cơ thể, nên không thể chỉ dựa vào vẻ bề ngoài mà nhận diện được.」@
 `「……Vậy à. Đúng là rắc rối thật đấy.」\
 
 `「Nhưng giờ thì rõ ràng rồi. Dù phải đi một vòng quanh co, thì kẻ giết người bừa bãi đó chính là tên ma cà rồng kia đúng không?」@
@@ -88075,7 +88075,7 @@ ld c,":a;image\tachi\cel_t07c.jpg",%type_crossfade_fst
 
 `「Hả……? Ý niệm tâm linh là cái gì cơ?」@
 `「Cũng có người gọi đó là―――phạm vi chức năng não bộ được định hình từ lúc con người còn là bào thai. Những 『năng lực giả』 như Tohno-kun vốn đang sử dụng những cơ quan não bộ mà người bình thường không hề thức tỉnh.@
-` Yumizuka Satsuki cũng vậy. Có lẽ em ấy bẩm sinh đã 『thích hợp』 rồi. Thế nên em ấy mới không chịu sự chi phối từ ma cà rồng chủ thể, mà có thể hoạt động như một Huyết tộc độc lập.」@
+` Yumizuka Satsuki cũng vậy. Có lẽ em ấy bẩm sinh đã 『thích hợp』 rồi. Thế nên em ấy mới không chịu sự chi phối từ ma cà rồng chủ thể, mà có thể hoạt động như một Huyết Tộc độc lập.」@
 br
 ` Tôi chẳng thể hiểu nổi lời giải thích của Senpai.@
 ` Chỉ là, có một điều khiến tôi vướng bận trong lòng.\
@@ -88151,7 +88151,7 @@ ld c,":a;image\tachi\cel_t07c.jpg",%type_crossfade_fst
 ` Nếu em không ngần ngại mà ra tay giết chị, chị buộc lòng phải thừa nhận Tohno-kun chính là ma cà rồng. ……Thế nhưng, quả thật Tohno-kun không phải như vậy.」\
 
 `「―――Không phải. Vừa rồi chỉ là, cái đó―――」@
-`「Tohno-kun à. Toàn bộ huyết tộc nhà Tohno đều bị pha lẫn dòng máu của 『kẻ không phải con người』. Dù nghe nói cũng có những người hoàn toàn vô hại, nhưng mỗi đời họa hoằn lắm mới xuất hiện một người như thế.@
+`「Tohno-kun à. Toàn bộ dòng tộc nhà Tohno đều bị pha lẫn dòng máu của 『kẻ không phải con người』. Dù nghe nói cũng có những người hoàn toàn vô hại, nhưng mỗi đời họa hoằn lắm mới xuất hiện một người như thế.@
 ` Lần giở lại quá khứ, trong dòng máu Tohno cũng chẳng thiếu kẻ hút máu người.@
 ` Nhưng Tohno-kun không hề có ý định hút máu người, cũng chẳng có nhu cầu đó. Vậy thì―――」@
 `「Chuyện đó―――sao Senpai hiểu được chứ.」@
@@ -91354,7 +91354,7 @@ ld c,":a;image\tachi\aki_t01c.jpg",%type_crossfade_fst
 ld c,":a;image\tachi\aki_t12c.jpg",%type_crossfade_fst
 
 `「Vâng. Máu của Nii-san chỉ sôi sục trước những kẻ 『lạc loài』 như em và SHIKI mà thôi.@
-` Nhưng cũng chính vì thế, đối với những huyết tộc cổ xưa như bọn em, anh chẳng khác nào một tử thần.@
+` Nhưng cũng chính vì thế, đối với những dòng tộc cổ xưa như bọn em, anh chẳng khác nào một tử thần.@
 ` ……Dù người nhà Nanaya đã từ bỏ việc diệt ma từ nhiều đời trước, thì sự tồn tại của huyết thống Nanaya thôi cũng đủ là một mối đe dọa rồi.」\
 
 `「…………………」@
@@ -109601,13 +109601,13 @@ br
 ld c,":a;image\tachi\his_t01.jpg",%type_crossfade_fst
 
 `「……Em cũng không rõ ngọn ngành. Chỉ là theo lời Akiha-sama, Shiki-sama cũng giống như em và Nee-san, thuộc về dòng dõi đối nghịch với những 『hỗn huyết』 như nhà Tohno.@
-` ……Chúng em chỉ có năng lực tương cảm với đối phương thông qua việc trao đổi thể dịch, nhưng huyết tộc Nanaya lại sở hữu năng lực mang tính công kích, dùng để 『đẩy lùi ma tính』.」\
+` ……Chúng em chỉ có năng lực tương cảm với đối phương thông qua việc trao đổi thể dịch, nhưng dòng tộc Nanaya lại sở hữu năng lực mang tính công kích, dùng để 『đẩy lùi ma tính』.」\
 
 ` ……Ra là vậy.@
 ` Đúng thật, đôi mắt của tôi không phải sức mạnh để cứu sống ai đó như Hisui, mà là sức mạnh để giết chết một kẻ nào đó.\
 
 `「……Vậy à. Nhưng nếu thế, tại sao ông già lại nhận tôi làm con nuôi chứ? Nhận kẻ thù của mình làm con nuôi, chẳng phải kỳ quặc lắm sao.」@
-`「……Shiki-sama là người thừa kế của một huyết tộc đặc biệt, ngay cả trong số các gia tộc thoái ma Nanaya.@
+`「……Shiki-sama là người thừa kế của một dòng tộc đặc biệt, ngay cả trong số các gia tộc thoái ma Nanaya.@
 ` Asagami, Fujou, Ryougi, Nanaya.@
 ` Bốn dòng họ này vốn được xem là thiên địch đối với những kẻ mang dòng máu 『hỗn huyết』.@
 ` Em nghĩ rằng Makihisa-sama nhận nuôi Shiki-sama nhằm thu nạp một trong số đó vào nhà Tohno, để dùng làm một thứ sức mạnh răn đe nào đó.」@
@@ -111234,7 +111234,7 @@ br
 `「A―――――」@
 ` SHIKI trợn trừng đôi mắt vằn đỏ về phía tôi.@
 ` Dù nửa khuôn mặt đã biến mất, gã vẫn không chết.@
-` Năng lực của huyết tộc Tohno――― thứ của SHIKI dường như là 『bất tử』.@
+` Năng lực của dòng tộc Tohno――― thứ của SHIKI dường như là 『bất tử』.@
 ` Nói cách khác, tên đó khó chết và dễ sống sót hơn những sinh mệnh khác.@
 `「Hah.」@
 ` Thật nực cười.@
@@ -135968,7 +135968,7 @@ br
 `「……Kẻ đó, là Roa sao?」\
 
 `「Phải. Cho tới tận lúc đó, tôi chưa từng biết đến thứ gọi là xung động hút máu. Những Chân Tổ khác dường như cũng tin rằng chỉ riêng tôi là không có nó.@
-` Nhưng chỉ là nó phát tác muộn hơn thôi. Cho tới tận lúc đó―――tôi thậm chí còn không biết bản thân mình là một Hấp huyết quỷ.@
+` Nhưng chỉ là nó phát tác muộn hơn thôi. Cho tới tận lúc đó―――tôi thậm chí còn không biết bản thân mình thuộc Huyết Tộc.@
 ` Thế nên―――tôi cũng chẳng hề hay biết rằng chuyện đó là sai trái.」@
 ` ……Ra là vậy.@
 ` Chẳng được dạy bất cứ điều gì thừa thãi, cô ấy thậm chí còn không được biết rằng bản thân cũng cùng một giống loài với những kẻ mình đi khắp nơi lùng giết.\
@@ -146945,7 +146945,7 @@ ld c,":a;image\tachi\ark_t11.jpg",%type_crossfade_fst
 ` Tôi rút lại lời vừa nghĩ.@
 ` Xem ra Arcueid không phải bực vì tôi bỏ bê nhiệm vụ canh gác, mà đơn giản chỉ là không vừa ý chuyện tôi ngủ ngon lành mà thôi.\
 
-`「Cơ thể vừa cử động lại được đôi chút, mở mắt ra đã thấy Shiki ngủ ngon lành đến là hạnh phúc. Cậu mất cảnh giác tới mức làm tôi thực sự bất an tự hỏi không biết mình có thiếu uy nghiêm của một Hấp huyết quỷ hay không đấy.」@
+`「Cơ thể vừa cử động lại được đôi chút, mở mắt ra đã thấy Shiki ngủ ngon lành đến là hạnh phúc. Cậu mất cảnh giác tới mức làm tôi thực sự bất an tự hỏi không biết mình có thiếu uy nghiêm của một Huyết Tộc hay không đấy.」@
 br
 `「…………」@
 ` Mà, uy nghiêm thì tôi nghĩ cô cũng chẳng có mấy đâu.\
@@ -147059,7 +147059,7 @@ ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
 ` Arcueid ngoan ngoãn khẽ gật đầu.\
 
 `「Tóm lại là nhé, tên ma cà rồng trong thành phố này là loại ma cà rồng kiểu cũ. Bản thân gã ngự trị như một vị thành chủ, rồi thả đám xác sống dưới trướng vào thành phố để từng chút một mở rộng thế lực.@
-` Hút máu người, rồi biến kẻ bị hút máu thành ma cà rồng giống hệt mình, đó là Hấp huyết quỷ phổ biến nhất.\
+` Hút máu người, rồi biến kẻ bị hút máu thành ma cà rồng giống hệt mình, đó là loài Huyết Tộc phổ biến nhất.\
 ` Hiện giờ số lượng đám xác sống đóng vai trò phân thân của gã còn ít nên năng lực chưa có gì đáng kể, nhưng số người hy sinh càng tăng thêm bao nhiêu thì sức mạnh của bản thể ma cà rồng sẽ càng lớn mạnh thêm bấy nhiêu.@
 ` Lẽ ra chỉ cần đánh bại bản thể trước khi chuyện đó xảy ra là xong, nhưng tôi vẫn chưa tìm ra nơi ẩn náu của kẻ địch.@
 ` Lần này chẳng biết gã ẩn mình khéo léo đến mức nào mà tôi thậm chí còn chẳng cảm nhận được chút khí tức nào của gã.」\
@@ -147160,13 +147160,13 @@ ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
 ; 中央<夜>=アルクェイド:睨み02（疑っている感じ）<クロスフェード(速)>
 ld c,":a;image\tachi\ark_t02.jpg",%type_crossfade_fst
 
-` Tử Đồ―――tức những Hấp huyết quỷ trở thành ma cà rồng thứ cấp, chỉ sở hữu sự bất lão bất tử không hoàn chỉnh mà thôi.@
+` Tử Đồ―――tức những Huyết Tộc trở thành ma cà rồng thứ cấp, chỉ sở hữu sự bất lão bất tử không hoàn chỉnh mà thôi.@
 ` Đúng là chúng đã trở nên bất lão nên sẽ không chết vì tuổi thọ. Nhưng nếu không liên tục bổ sung phần năng lượng tương ứng thì chúng sẽ tan biến mất. Bất kỳ sinh vật nào chẳng phải cũng đều không thể hoạt động nếu không hấp thụ dinh dưỡng sao? Chuyện này cũng giống hệt như vậy.@
-` Chỉ khác ở chỗ, Hấp huyết quỷ chỉ cần tiếp tục hấp thụ dinh dưỡng thì sẽ không có giới hạn tuổi thọ mà thôi.」\
+` Chỉ khác ở chỗ, Huyết Tộc chỉ cần tiếp tục hấp thụ dinh dưỡng thì sẽ không có giới hạn tuổi thọ mà thôi.」\
 
 `「Ma cà rồng thuộc hàng Tử Đồ phải hút máu vì điều đó cần thiết cho sự sinh tồn của chúng.@
 ` Vốn xuất thân là con người, nên việc mang thân xác bất lão bất tử là điều quá khiên cưỡng.@
-` Các gen cấu thành thân xác chúng từ lúc chuyển sang vật chứa khác…… tức khi thành Hấp huyết quỷ, sẽ thoái hóa cực nhanh.@
+` Các gen cấu thành thân xác chúng từ lúc chuyển sang vật chứa khác…… tức khi trở thành Huyết Tộc, sẽ thoái hóa cực nhanh.@
 ` Để bù đắp, chúng phải hút máu người khác và hấp thụ thông tin di truyền nhằm cố định thân xác mình. Với ma cà rồng, hút máu không phải ăn uống, mà là hành vi tối thiểu để duy trì sự tồn tại.」\
 
 `「…………」@
@@ -147174,7 +147174,7 @@ ld c,":a;image\tachi\ark_t02.jpg",%type_crossfade_fst
 ` Mặc cho đầu óc tôi còn chưa theo kịp để tiêu hóa hết, Arcueid vẫn chẳng mảy may bận tâm mà tiếp tục câu chuyện.\
 
 `「Rồi, tiếp theo nhé.@
-` Chuyện chỉ cần trừng mắt nhìn đã khiến đối phương tê liệt chính là một dạng Ma Nhãn đấy. Đôi mắt vốn là mạch ma thuật tiêu biểu sánh ngang với ngôn từ, nên có rất nhiều Hấp huyết quỷ sở hữu Ma Nhãn.@
+` Chuyện chỉ cần trừng mắt nhìn đã khiến đối phương tê liệt chính là một dạng Ma Nhãn đấy. Đôi mắt vốn là mạch ma thuật tiêu biểu sánh ngang với ngôn từ, nên có rất nhiều Huyết Tộc sở hữu Ma Nhãn.@
 ` Thứ mà chúng tôi sở hữu phần lớn là Ma Nhãn Mị Hoặc.@
 ` Không phải chúng tôi mị hoặc đối phương khi nhìn họ, mà là mị hoặc những kẻ trót nhìn vào mắt chúng tôi. Ma Nhãn của một ma cà rồng hùng mạnh có thể thông qua nhãn cầu mà dội thẳng ý chí của mình vào não bộ đối phương để khống chế hoàn toàn suy nghĩ, nhưng Ma Nhãn của Tử Đồ thì không có được sức mạnh đến mức ấy đâu.」\
 
@@ -148069,7 +148069,7 @@ ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
 ` Arcueid ngoan ngoãn gật đầu đồng ý.\
 
 `「Nói tóm lại, con ma cà rồng ở thành phố này thuộc loại cổ điển. Bản thân nó ngự trị như một lãnh chúa, rồi thả lũ người chết đã biến thành thuộc hạ vào thành phố để từng bước bành trướng thế lực.@
-` Hút máu người, rồi biến kẻ bị hút máu thành ma cà rồng giống hệt mình, đó là loại Hấp huyết quỷ điển hình.\
+` Hút máu người, rồi biến kẻ bị hút máu thành ma cà rồng giống hệt mình, đó là loài Huyết Tộc điển hình.\
 ` Hiện tại số lượng phân thân là lũ người chết vẫn còn ít nên năng lực chưa có gì đáng ngại, nhưng nạn nhân càng tăng lên bao nhiêu thì bản thể ma cà rồng sẽ càng mạnh bấy nhiêu.@
 ` Chỉ cần tiêu diệt bản thể trước khi điều đó xảy ra là xong, thế nhưng tôi vẫn chưa tìm ra sào huyệt của kẻ thù.@
 ` Lần này chắc do nó ẩn nấp quá khôn khéo, nên đến cả một chút khí tức của nó tôi cũng không cảm nhận được.」\
@@ -148170,13 +148170,13 @@ ld c,":a;image\tachi\ark_t01a.jpg",%type_crossfade_fst
 ; 中央<夜>=アルクェイド:睨み02（疑っている感じ）<クロスフェード(速)>
 ld c,":a;image\tachi\ark_t02.jpg",%type_crossfade_fst
 
-` Tử Đồ―――loài Hấp huyết quỷ thứ cấp bị biến thành ma cà rồng, chỉ là dạng bất lão bất tử không hoàn chỉnh.@
+` Tử Đồ―――loài Huyết Tộc thứ cấp trở thành ma cà rồng, chỉ là dạng bất lão bất tử không hoàn chỉnh.@
 ` Đúng là vì không già đi nên chúng không chết vì tuổi thọ. Nhưng nếu không liên tục bổ sung năng lượng tương ứng, chúng sẽ tiêu biến. Sinh vật nào chẳng cần dinh dưỡng mới hoạt động được chứ? Cũng y hệt thế thôi.@
-` Chỉ có điều với Hấp huyết quỷ, miễn là còn tiếp tục nạp dinh dưỡng thì chúng sẽ không có giới hạn tuổi thọ.」\
+` Chỉ có điều với Huyết Tộc, miễn là còn tiếp tục nạp dinh dưỡng thì chúng sẽ không có giới hạn tuổi thọ.」\
 
 `「Ma cà rồng thuộc dạng Tử Đồ ấy, chúng hút máu vì đó là điều kiện cần để sinh tồn.@
 ` Chúng vốn là con người, nên việc sở hữu thể xác bất lão bất tử là điều quá khiên cưỡng.@
-` Bộ gen cấu tạo nên thể xác chúng, kể từ khoảnh khắc bước vào một vật chứa khác…… trở thành Hấp huyết quỷ, sẽ bắt đầu thoái hóa với tốc độ khủng khiếp.@
+` Bộ gen cấu tạo nên thể xác chúng, kể từ khoảnh khắc bước vào một vật chứa khác…… trở thành Huyết Tộc, sẽ bắt đầu thoái hóa với tốc độ khủng khiếp.@
 ` Thế nên để bù đắp, chúng phải hút máu kẻ khác, hấp thụ thông tin di truyền đó để cố định lại thể xác của mình. Với ma cà rồng, hút máu không phải là ăn uống, mà là hành vi tối thiểu để duy trì sự tồn tại đấy.」\
 
 `「…………」@
@@ -148184,7 +148184,7 @@ ld c,":a;image\tachi\ark_t02.jpg",%type_crossfade_fst
 ` Tôi còn chưa kịp tiêu hóa hết mớ kiến thức này, thế mà Arcueid vẫn cứ thao thao bất tuyệt chẳng thèm bận tâm.\
 
 `「Rồi, tiếp nhé.@
-` Chuyện chỉ liếc nhìn là làm đối phương bất động, đó là một loại Ma Nhãn đấy. Mắt cũng là một mạch ma thuật tiêu biểu ngang hàng với lời nói, nên nhiều Hấp huyết quỷ sở hữu Ma Nhãn lắm.@
+` Chuyện chỉ liếc nhìn là làm đối phương bất động, đó là một loại Ma Nhãn đấy. Mắt cũng là một mạch ma thuật tiêu biểu ngang hàng với lời nói, nên nhiều Huyết Tộc sở hữu Ma Nhãn lắm.@
 ` Thứ bọn tôi sở hữu đa phần là Ma Nhãn Mị Hoặc.@
 ` Không phải bọn tôi mê hoặc kẻ mình nhìn vào, mà là kẻ nào lỡ nhìn vào mắt bọn tôi sẽ bị mê hoặc. Ma Nhãn của ma cà rồng hùng mạnh có thể từ nhãn cầu giáng thẳng ý chí của mình vào não bộ đối phương, thao túng hoàn toàn suy nghĩ của họ, nhưng Ma Nhãn của Tử Đồ thì không đủ sức làm tới mức đó đâu.」\
 
@@ -148635,7 +148635,7 @@ br
 ` Sợ hút máu á?@
 br
 `「Nói dối đúng không? Sợ hút máu là thế nào―――Cô là ma cà rồng cơ mà, tại sao chứ?」@
-`「……Chắc là do tôi nhát gan đấy. Thế nên mãi đến giờ, với tư cách một Hấp huyết quỷ tôi vẫn chỉ là kẻ nửa mùa thôi.」@
+`「……Chắc là do tôi nhát gan đấy. Thế nên mãi đến giờ, với tư cách một Huyết Tộc tôi vẫn chỉ là kẻ nửa mùa thôi.」@
 ` Vừa ngước nhìn bầu trời đêm qua khung cửa sổ, Arcueid vừa lẩm bẩm than thở.@
 ; 中央を消去<クロスフェード(中)>
 cl c,%type_crossfade_mid
@@ -150431,7 +150431,7 @@ ld c,":a;image\tachi\nero_t02a.jpg",%type_crossfade_fst
 ; 中央<夜>=アルクェイド:特殊立ち絵（顔を隠して睨んでいる）<左シャッター(速)>
 ld c,":a;image\tachi\ark_t18.jpg",%type_lshutter_fst
 
-`「―――Không thể tin nổi. Một Hấp huyết quỷ được mệnh danh là Hỗn Độn lại đi tham gia vào cái trò chơi vớ vẩn này. Cứ như một cơn ác mộng tồi tệ vậy, Nero Chaos.」@
+`「―――Không thể tin nổi. Một Huyết Tộc được mệnh danh là Hỗn Độn lại đi tham gia vào cái trò chơi vớ vẩn này. Cứ như một cơn ác mộng tồi tệ vậy, Nero Chaos.」@
 ; 中央を消去<クロスフェード(速)>
 cl c,%type_crossfade_fst
 
@@ -151353,7 +151353,7 @@ br
 `「Làm chó giữ nhà cho ngươi thì thứ đó có vẻ kém cỏi quá nhỉ.」@
 ` ……Tiếng đàn ông.@
 br
-`「―――Không thể tin nổi. Một Hấp huyết quỷ được mệnh danh là Hỗn Độn, lại đi tham gia vào trò chơi vớ vẩn thế này. Cứ như một cơn ác mộng tồi tệ vậy, Nero Chaos.」@
+`「―――Không thể tin nổi. Một Huyết Tộc được mệnh danh là Hỗn Độn, lại đi tham gia vào trò chơi vớ vẩn thế này. Cứ như một cơn ác mộng tồi tệ vậy, Nero Chaos.」@
 ` ……Giọng của Arcueid.\
 
 `「Đồng cảm đấy. Ta cũng chẳng bao giờ mơ tới việc mình bị biến thành kẻ chấp hành trong một nghi lễ liều lĩnh như săn lùng kẻ sống sót của Chân Tổ.@
@@ -153363,7 +153363,7 @@ cl c,%type_crossfade_fst
 
 ; 右<夜>=ネロ:通常<クロスフェード(速)>
 ld c,":a;image\tachi\nero_t02a.jpg",%type_crossfade_fst
-`「Đương nhiên. Tư tưởng của tên đó khác xa bọn ta. Gã là một Hấp huyết quỷ không mang ý nghĩa của một Hấp huyết quỷ. Thế nên phần lớn Tử Đồ đều không thừa nhận thứ đó là đồng loại.」\
+`「Đương nhiên. Tư tưởng của tên đó khác xa bọn ta. Gã là một Huyết Tộc không mang ý nghĩa của Huyết Tộc. Thế nên phần lớn Tử Đồ đều không thừa nhận thứ đó là đồng loại.」\
 
 ; 右<夜>=ネロ:通常<クロスフェード(速)>
 ld c,":a;image\tachi\nero_t02c.jpg",%type_crossfade_fst
@@ -153375,7 +153375,7 @@ cl c,%type_crossfade_fst
 ; 左<夜>=アルクェイド:睨み03（02のさらにキツイ感じ）<クロスフェード(速)>
 ld c,":a;image\tachi\ark_t07.jpg",%type_crossfade_fst
 
-`「……Ra vậy. Nghĩ lại thì ngươi cũng như 『Rắn』, phong vị khác hẳn các Hấp huyết quỷ khác. Đều là dị đoan với nhau, khéo lại hợp ý nhau ấy chứ.」\
+`「……Ra vậy. Nghĩ lại thì ngươi cũng như 『Rắn』, phong vị khác hẳn các Huyết Tộc khác. Đều là dị đoan với nhau, khéo lại hợp ý nhau ấy chứ.」\
 
 ; 中央を消去<クロスフェード(速)>
 cl c,%type_crossfade_fst
