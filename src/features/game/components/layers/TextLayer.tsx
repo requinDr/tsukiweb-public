@@ -4,7 +4,7 @@ import pageIcon from '@assets/icons/icon_bars.svg'
 import { ScriptPlayer } from "engine/ScriptPlayer"
 import { useObserved, useObserver } from "@tsukiweb/common/utils/Observer"
 import { DivProps } from "@tsukiweb/common/types"
-import { Bbcode, BBTypeWriter } from "@tsukiweb/common/utils/Bbcode"
+import { BBTypeWriter } from "@tsukiweb/common/utils/Bbcode"
 import { preprocessText } from "@tsukiweb/common/utils/utils"
 import { useAutoScroll, useEventState, useMousePointer } from "@tsukiweb/common/hooks"
 import { AdvTextFrame, EndLineIndicator, FfwIndicator } from "@tsukiweb/common/ui-core"
@@ -118,11 +118,8 @@ const TextLayer = ({ script, display, isTopLayer,
   if (className)
     classList.push(className)
 
-  const lastLine = lines.at(-1)
-  const previousLines = lines.slice(0, -1)
-  
   const glyphNode = glyph && <EndLineIndicator icon={icons[glyph]} glyph={glyph} hide={!isTopLayer} />
-  const twKey = `${script.uid}-${script.currentPage}-${lines.length}`
+  const pageKey = `${script.uid}-${script.currentPage}`
 
   return (
     <div className={classList.join(' ')} {...remaining_props} id="layer-text" aria-hidden={!display}>
@@ -130,23 +127,24 @@ const TextLayer = ({ script, display, isTopLayer,
         <AdvTextFrame />
       }
       <div className="text-container" ref={textContainerRef}>
-        {previousLines.map((line, i) =>
-          <Fragment key={i}>
-            {line && <Bbcode text={line} />}
-            <br/>
-          </Fragment>
-        )}
-
-        {lastLine ?
-          <BBTypeWriter key={twKey}
-            charDelay={immediate ? 0 : charDelay}
-            paused={!display}
-            text={lastLine}
-            hideTag="hide"
-            onFinish={onTypeWriterFinish}
-            rootSuffix={glyphNode}/>
-        : glyphNode
-        }
+        {lines.map((line, i) => {
+          const isLast = i == lines.length - 1
+          return (
+            <Fragment key={`${pageKey}-${i}`}>
+              {line ?
+                <BBTypeWriter
+                  charDelay={isLast && !immediate ? charDelay : 0}
+                  paused={!display}
+                  text={line}
+                  onFinish={isLast ? onTypeWriterFinish : undefined}
+                  rootSuffix={isLast ? glyphNode : undefined}/>
+              : isLast && glyphNode
+              }
+              {!isLast && <br/>}
+            </Fragment>
+          )
+        })}
+        {lines.length == 0 && glyphNode}
       </div>
 
       {isFfw && <FfwIndicator />}
