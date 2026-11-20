@@ -23,6 +23,7 @@ const langs = [
   'ru-ciel',
   'zh-tw-yueji_yeren_hanhua_zu',
   'zh-yueji_yeren_hanhua_zu',
+  'vi-lacia',
 ]
 const files = {
   'pd_alliance'  : '幻視同盟.ks',
