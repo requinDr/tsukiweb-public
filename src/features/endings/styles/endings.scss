@@ -93,7 +93,7 @@
 		}
 	}
 
-	@media (max-width: 900px), (max-width: 1200px) and (max-height: 600px) {
+	@include mobile {
 		.endings-list {
 			grid-template-columns: repeat(auto-fill, minmax(min(140px, 34%), 1fr));
 			.ending {

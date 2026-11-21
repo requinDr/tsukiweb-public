@@ -1,6 +1,5 @@
 import { DivProps } from "@tsukiweb/common/types"
 import { PageLayout, TabsBar } from "@tsukiweb/common/ui-core"
-import PageBackButton from "app/components/PageBackButton"
 import { audio } from "engine/audio"
 import { useStrings } from "translation/lang"
 import "../styles/config.scss"
@@ -47,8 +46,8 @@ const ConfigView = ({ onBack, selectedTab, setSelectedTab, ...props }: Props) =>
 			navigation={
 				<TabsBar tabs={tabs} selected={selectedTab} setSelected={selected => setSelectedTab(selected)} />
 			}
-			actions={<PageBackButton onClick={onBack} />}
 			onBack={onBack}
+			audio={audio}
 		>
 			{tabComponents[selectedTab]}
 		</PageLayout>

@@ -1,6 +1,6 @@
 import { Router } from "wouter";
 import AnimatedRoutes from '../../app/components/AnimatedRoutes';
-import { getLocale } from "../../translation/lang";
+import { getLocale, useStrings } from "../../translation/lang";
 import AppEffects from "app/components/AppEffects";
 import { Slide, ToastContainer } from "react-toastify";
 import { CommonProvider } from "@tsukiweb/common/context";
@@ -20,6 +20,7 @@ const LocaleSetter = () => {
 
 function App() {
 	useObserved(settings, 'eroBlur')
+	const strings = useStrings()
 	return (
 		<>
 			<svg viewBox="0 0 0 0" style={{position:"absolute", height:0, width:0}}>{BADGES_DEFINES}</svg>
@@ -30,7 +31,12 @@ function App() {
 				cg: {
 					shouldBlur: cg.shouldBlur,
 					shouldFrame: cg.isInGallery,
-				}
+				},
+				hints: {
+					back: strings.back,
+					confirm: strings["hint-confirm"],
+					navigate: strings["hint-navigate"],
+				},
 			}}>
 				<Router base={import.meta.env.BASE_URL}>
 					<AppEffects>

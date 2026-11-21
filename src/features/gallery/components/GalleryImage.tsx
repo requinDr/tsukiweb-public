@@ -9,7 +9,7 @@ import { MdArrowBackIos, MdArrowForwardIos, MdClose, MdLock } from "react-icons/
 import { GalleryPlaceholderLocked, GalleryTotal } from "./GalleryComponents"
 import { imageSrc } from "translation/assets"
 import { GalleryImg } from "app/utils/types"
-import { Button } from "@tsukiweb/common/ui-core"
+import { Button, MOBILE_LANDSCAPE_QUERY } from "@tsukiweb/common/ui-core"
 import { useMediaQuery, useNavBackRef } from "@tsukiweb/common/hooks"
 
 declare module "yet-another-react-lightbox" {
@@ -28,7 +28,7 @@ type GalleryImageProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
 }
 const GalleryImage = ({image, gallery = [], galleryUnlocked = [], blurred = false, showTotal, getGalleryImg, ...props}: GalleryImageProps) => {
 	const [open, setOpen] = useState(false)
-	const isSmallLandscape = useMediaQuery("(orientation: landscape) and (max-height: 680px)")
+	const isSmallLandscape = useMediaQuery(MOBILE_LANDSCAPE_QUERY)
 	const lightboxRef = useRef<ControllerRef>(null)
 
 	const slides: SlideImage[] = useMemo(() =>

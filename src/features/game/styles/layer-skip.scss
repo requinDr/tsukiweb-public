@@ -1,4 +1,5 @@
 @use '@tsukiweb/common/styles/partials/_components.scss';
+@use '@tsukiweb/common/ui-core/styles/_mixins.scss' as *;
 
 %layer-skip {
 	z-index: 2;
@@ -86,7 +87,7 @@
 		}
 	}
 
-	@media screen and (orientation: portrait) and (max-width: 720px){
+	@include mobile-portrait {
 		--text-bg: var(--text-bg-portrait);
 	}
 }

@@ -1,6 +1,7 @@
 import { memo, useCallback, useLayoutEffect, useRef } from 'react';
 import classNames from 'classnames';
-import { Button, FixedFooter } from '@tsukiweb/common/ui-core';
+import { Button, HintsBar } from '@tsukiweb/common/ui-core';
+import { audio } from 'engine/audio';
 import Flowchart from 'features/flowchart/components/Flowchart';
 import { playScene } from 'engine/savestates';
 import { useStrings } from 'translation/lang';
@@ -73,38 +74,28 @@ const HistoryLayer = ({ display, history, onRewind, layers, singleScene = false,
 			: null
 			}
 
-			<FixedFooter>
-				{(layers.history || layers.flowchart) && <>
-					<Button
-						variant="default"
-						className="back-button"
-						onClick={handleClose}
-						nav-x={-2} nav-y={10000} // 10k prevents overlapping with flowchart nodes
-					>
-						{`<<`} {strings.back}
-					</Button>
+			{(layers.history || layers.flowchart) &&
+				<HintsBar className="history-footer" audio={audio} onBack={handleClose}>
 					{show?.flowchart && <>
 						<Button
-							variant="select"
+							variant={null}
+							className={classNames("history-tab", { active: layers.history })}
 							onClick={() => setLayer('history')}
-							active={layers.history}
-							style={{ marginLeft: '1em', flex: 1 }}
 							nav-x={-1} nav-y={10000}
 						>
 							{strings.menu.history}
 						</Button>
 						<Button
-							variant="select"
+							variant={null}
+							className={classNames("history-tab", { active: layers.flowchart })}
 							onClick={() => setLayer('flowchart')}
-							active={layers.flowchart}
-							style={{ marginLeft: '.5em', flex: 1 }}
 							nav-x={0} nav-y={10000}
 						>
 							{strings.extra.scenes}
 						</Button>
 					</>}
-				</>}
-			</FixedFooter>
+				</HintsBar>
+			}
 		</div>
 	)
 }
@@ -183,6 +174,7 @@ const FlowchartTab = ({ history, sceneReplay, onSceneSelect }: FlowchartTabProps
 					onSceneClick={handleSceneSelect}
 					mode={sceneReplay ? 'viewer' : 'playthrough'}
 					currentScene={history.lastScene?.label}
+					topInset={!sceneReplay && settings.flowchartBadges ? 44 : 0}
 				/>
 			</div>
 		</div>

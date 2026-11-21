@@ -203,9 +203,7 @@
 			}
 		}
 
-		// phone landscape or phone portrait
-		@media screen and (max-width: 760px) and (orientation: portrait),
-					 screen and (max-height: 680px) and (orientation: landscape) {
+		@include mobile {
 			border-left: none;
 
 			.save-details-content {
@@ -296,7 +294,7 @@
 		}
 	}
 
-	@media screen and (max-width: 760px) and (orientation: portrait) {
+	@include mobile-portrait {
 		.warning-button {
 			margin-right: 0;
 		}

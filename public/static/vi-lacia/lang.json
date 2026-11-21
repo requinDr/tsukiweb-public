@@ -197,5 +197,7 @@
   "ok": "Đồng ý",
   "back": "Quay lại",
   "close": "Đóng",
+  "hint-confirm": "Confirm",
+  "hint-navigate": "Navigate",
   "later": "Để sau"
 }

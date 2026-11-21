@@ -177,6 +177,8 @@
   "ok": "",
   "back": "",
   "close": "",
+  "hint-confirm": "",
+  "hint-navigate": "",
   "later": "",
 
   "scripts-dir": "./jp/scenes/",

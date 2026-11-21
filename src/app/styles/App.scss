@@ -27,9 +27,13 @@
 		padding-bottom: 0;
 	}
 	.close-btn {
+		position: sticky;
+		bottom: 0;
+		z-index: 1;
 		flex: none;
 		align-self: stretch;
 		margin: calc(1.6em / 1.1) calc(-2.4em / 1.1) 0;
+		background-color: var(--modal-bg, var(--surface-dark));
 		padding: 1rem;
 		font-size: 1.1em;
 		border-top: 1px solid var(--separator);

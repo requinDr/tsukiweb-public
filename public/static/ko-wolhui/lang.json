@@ -197,5 +197,7 @@
   "ok": "확인",
   "back": "뒤로",
   "close": "닫기",
+  "hint-confirm": "Confirm",
+  "hint-navigate": "Navigate",
   "later": "나중에"
 }

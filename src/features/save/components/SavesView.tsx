@@ -11,8 +11,8 @@ import { useObserver } from "@tsukiweb/common/utils/Observer"
 import { Button, PageLayout, PageSection } from "@tsukiweb/common/ui-core"
 import { QUICK_SAVE_ID, SaveState, compareSaveStates, savesManager } from "engine/savestates";
 import { useStrings } from "translation/lang";
+import { audio } from "engine/audio";
 import { SCREEN, displayMode } from "app/utils/display";
-import PageBackButton from "app/components/PageBackButton";
 
 
 const SAVE_ACTION_ID = 1
@@ -113,12 +113,8 @@ const SavesView = ({variant, onBack}: Props) => {
 					deleteSave={handleDeleteSave}
 				/>
 			}
-			actions={
-				<>
-					<PageBackButton onClick={() => onBack(false)} />
-					<ExportWarning />
-				</>
-			}
+			actions={<ExportWarning />}
+			audio={audio}
 		>
 			<PageSection className="saves" ref={parentRef}>
 				{variant === "save" &&

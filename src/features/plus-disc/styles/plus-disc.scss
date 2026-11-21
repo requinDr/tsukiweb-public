@@ -27,7 +27,7 @@
 			padding: 1em;
 		}
 
-		@media screen and (max-width: 440px) {
+		@include mobile-portrait {
 			flex-direction: column;
 			padding: 1em;
 			align-items: center;
@@ -47,10 +47,6 @@
 		grid-template-columns: repeat(auto-fit, minmax(min(208px, 100%), 1fr) minmax(min(208px, 100%), 1fr));
 		isolation: isolate;
 		gap: 8px;
-
-		@media screen and (max-width: 440px) {
-			grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
-		}
 	}
 	.gallery-container {
 		padding-inline: 0;

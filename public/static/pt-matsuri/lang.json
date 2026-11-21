@@ -197,5 +197,7 @@
   "ok": "Ok",
   "back": "Voltar",
   "close": "Fechar",
+  "hint-confirm": "Confirm",
+  "hint-navigate": "Navigate",
   "later": "Later"
 }

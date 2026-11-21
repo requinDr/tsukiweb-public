@@ -197,5 +197,7 @@
   "ok": "是",
   "back": "返回",
   "close": "關閉",
+  "hint-confirm": "Confirm",
+  "hint-navigate": "Navigate",
   "later": "Later"
 }

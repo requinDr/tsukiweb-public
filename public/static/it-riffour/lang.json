@@ -198,5 +198,7 @@
   "ok": "Ok",
   "back": "Back",
   "close": "Close",
+  "hint-confirm": "Confirm",
+  "hint-navigate": "Navigate",
   "later": "Later"
 }
