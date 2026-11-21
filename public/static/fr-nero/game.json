@@ -1,0 +1,854 @@
+{
+  "scripts-dir": "./scenes",
+  "choices": {
+    "f20": [
+      "1. Il ne reste que quelques minutes avant l'appel. Je dois rejoindre ma classe.",
+      "2. … Ça m'intrigue, alors je vais jeter un œil."
+    ],
+    "f21": [
+      "1. Aller réfléchir dans le couloir.",
+      "2. Aller manger à la cafétéria.",
+      "3. Déjeuner dans la salle de classe."
+    ],
+    "f22": [
+      "1. Déjeuner dans la salle de classe.",
+      "2. Aller manger à la cafétéria.",
+      "3. Aller réfléchir dans le couloir."
+    ],
+    "f31": [
+      "1. Me ressaisir et rentrer au manoir.",
+      "2. Rester un peu plus longtemps à l’école."
+    ],
+    "f201": [
+      "1. À propos de ma petite sœur Akiha.",
+      "2. À propos de la fille enjouée.",
+      "3. À propos de la fille près de la fenêtre."
+    ],
+    "f42": [
+      "1. Aller au salon pour parler avec Akiha.",
+      "2. Rester dans ma chambre.",
+      "3. Aller regarder la télé dans la chambre de Kohaku-san."
+    ],
+    "f46": [
+      "1. Aller voir ce qui se passe.",
+      "2. Aller dormir."
+    ],
+    "f183": [
+      "1. … Retourner au manoir.",
+      "2. … Attendre encore."
+    ],
+    "f184": [
+      "1. … Attendre encore.",
+      "2. … Retourner au manoir."
+    ],
+    "f185": [
+      "1. … Attendre encore.",
+      "2. … Retourner au manoir."
+    ],
+    "f189": [
+      "1. Me précipiter dans la même ruelle qu'hier soir.",
+      "2. … Attendre ici, dans le parc.",
+      "3. Aller à la chambre d'Arcueid."
+    ],
+    "f284": [
+      "1. Kohaku-san me gêne.",
+      "2. Kohaku-san a raison."
+    ],
+    "f365": [
+      "1. Aile est, rez-de-chaussée.",
+      "2. Aile ouest, rez-de-chaussée.",
+      "3. Aile est, premier étage.",
+      "4. Aile ouest, premier étage."
+    ],
+    "f370": [
+      "1. Retirer mes lunettes et me préparer à tuer.",
+      "2. D'abord, nous éloigner de la chambre d'Akiha."
+    ],
+    "f194": [
+      "1. Même si ça ne sert à rien, je chercherai Arcueid.",
+      "2. Accepter la situation et rentrer au manoir.",
+      "3. Puisqu'on en est là, je chercherai Roa moi-même."
+    ],
+    "f292": [
+      "1. Non, je dois faire repartir Kohaku-san.",
+      "2. … Lui demander de laisser la nourriture ici."
+    ],
+    "f295": [
+      "1. … Je ne peux pas la laisser me voir ainsi.",
+      "2. … Mais je veux quand même entendre sa voix."
+    ],
+    "f297": [
+      "1. Fuir vers l'avant.",
+      "2. Fuir vers l'arrière."
+    ],
+    "f299": [
+      "1. … Retirer mes lunettes.",
+      "2. … Garder mes lunettes."
+    ],
+    "f302": [
+      "1. Je préfère Senpai au naturel.",
+      "2. Sans ses lunettes, Senpai n'est plus Senpai !"
+    ],
+    "f375": [
+      "1. Me lancer immédiatement à sa poursuite.",
+      "2. Reprendre mon souffle, me calmer, puis le poursuivre."
+    ],
+    "f378": [
+      "1. … M'arrêter.",
+      "2. … Ne pas me laisser piéger par ses paroles."
+    ],
+    "f380": [
+      "1. … Courir après Akiha.",
+      "2. … Je ne peux pas le faire."
+    ],
+    "f381": [
+      "1. … Tenir ma promesse.",
+      "2. … Je ne peux pas faire ça."
+    ],
+    "f383": [
+      "1. … Rendre cette vie à Akiha.",
+      "2. … Je ne peux pas faire ça."
+    ],
+    "f52": [
+      "1. Je tiendrai ma promesse.",
+      "2. Je n'oublierai jamais Arcueid."
+    ],
+    "f307": [
+      "1. Obéir à Arcueid.",
+      "2. Désobéir à Arcueid."
+    ],
+    "f405": [
+      "1. Déverrouiller la porte.",
+      "2. … Pourquoi ai-je verrouillé la porte, déjà ?"
+    ],
+    "f409": [
+      "1. Appeler Akiha.",
+      "2. Appeler Kohaku."
+    ],
+    "f416": [
+      "1. Aller voir Kohaku-san.",
+      "2. Fouiller la chambre de Makihisa."
+    ],
+    "f419": [
+      "1. … Aller voir dehors.",
+      "2. Retourner simplement dans ma chambre."
+    ],
+    "f425": [
+      "1. [line=4]La tuer maintenant.",
+      "2. [line=4]Reculer pour l'instant."
+    ],
+    "f427": [
+      "1. … La tuer avant qu'elle me remarque.",
+      "2. … Attendre qu'elle passe et l'attaquer par-derrière."
+    ],
+    "f51": [
+      "1. Saluer Akiha.",
+      "2. Saluer Kohaku-san.",
+      "3. Les saluer toutes les deux."
+    ],
+    "f57": [
+      "1. Dans la salle de classe.",
+      "2. Aller à la cafétéria.",
+      "3. Aller à la salle de cérémonie du thé."
+    ],
+    "f65": [
+      "1. Ce n'est qu'un mauvais rêve.",
+      "2. C'est sans aucun doute une réalité créée de mes propres mains."
+    ],
+    "f204": [
+      "1. Saluer Akiha.",
+      "2. Saluer Kohaku-san.",
+      "3. Les saluer toutes les deux."
+    ],
+    "f205": [
+      "1. Saluer Akiha.",
+      "2. Saluer Kohaku-san.",
+      "3. Les saluer toutes les deux."
+    ],
+    "f206": [
+      "1. Poser des questions sur Yumizuka Satsuki.",
+      "2. … Rester assis sans rien dire."
+    ],
+    "f210": [
+      "1. Ciel-senpai a raison.",
+      "2. … Non, je ne me sens vraiment pas bien."
+    ],
+    "f212": [
+      "1. Aller voir Hisui.",
+      "2. Aller aider Kohaku-san.",
+      "3. Rester dans ma chambre."
+    ],
+    "f211": [
+      "1. Aller voir.",
+      "2. Ne pas aller voir."
+    ],
+    "f69": [
+      "1. Parler d'Akiha.",
+      "2. Parler de Kohaku-san.",
+      "3. Parler du manoir."
+    ],
+    "f75": [
+      "1. … Je vais coopérer.",
+      "2. Non, je ne coopérerai pas.",
+      "3. M'échapper d'une manière ou d'une autre."
+    ],
+    "f80": [
+      "1. Je devrais quand même m'enfuir.",
+      "2. … Malgré tout, je ne peux pas l'abandonner."
+    ],
+    "f81": [
+      "1. … D'accord, mais juste un petit moment.",
+      "2. … Non. J'ai un mauvais pressentiment."
+    ],
+    "f84": [
+      "1. Je crois que je vais retourner au manoir.",
+      "2. Je crois que je vais retourner à l’hôtel."
+    ],
+    "f88": [
+      "1. [line=3]Je devrais aller voir ce qui se passe dehors.",
+      "2. Rester dans la chambre et surveiller pour le moment."
+    ],
+    "f235": [
+      "1. Aller chercher Yumizuka.",
+      "2. Chercher du côté de l'école.",
+      "3. Chercher en ville."
+    ],
+    "f240": [
+      "1. Aller chercher Yumizuka.",
+      "2. Je ne peux pas prendre un tel risque."
+    ],
+    "f242half": [
+      "1. Je l'aime bien.",
+      "2. Je la déteste.",
+      "3. Je ne peux pas répondre."
+    ],
+    "f94": [
+      "1. J'aimerais refuser, mais[line=3]",
+      "2. Non, impossible d'affronter un monstre pareil."
+    ],
+    "f97": [
+      "1. Foncer vers Nrvnqsr.",
+      "2. … Non, il est encore trop tôt."
+    ],
+    "f98": [
+      "1. J'aimerais refuser, mais[line=3]",
+      "2. Non, impossible d'affronter un monstre pareil."
+    ],
+    "f99": [
+      "1. Foncer vers Nrvnqsr.",
+      "2. … Il est encore trop tôt."
+    ],
+    "f101": [
+      "1. Supporter ça pour l'instant et attendre une occasion.",
+      "2. Je dois détruire le corps principal."
+    ],
+    "f305": [
+      "1. Non, je n'en ai vraiment pas envie.",
+      "2. Bien sûr que j'accepte."
+    ],
+    "f306": [
+      "1. Non, je n'en ai vraiment pas envie.",
+      "2. Bien sûr que j'accepte."
+    ],
+    "f303": [
+      "1. Lui demander pourquoi elle a été transférée dans cette école.",
+      "2. … Je devrais lui présenter Arihiko.",
+      "3. Jouait-elle les innocentes jusqu'à maintenant ?"
+    ],
+    "f317": [
+      "1. Aller aider Kohaku-san.",
+      "2. Aller aider Hisui."
+    ],
+    "f108": [
+      "1. Je ne peux pas expliquer la situation, alors je vais au moins m'excuser.",
+      "2. Je ne peux pas expliquer la situation, alors je vais inventer un mensonge.",
+      "3. Non, je devrais dire la vérité."
+    ],
+    "f112": [
+      "1. … Aller la chercher en ville.",
+      "2. Rêvasser dans la salle de classe.",
+      "3. Retourner au manoir et me reposer."
+    ],
+    "f116a": [
+      "1. C'est peut-être Arcueid.",
+      "2. C'est peut-être Ciel-senpai.",
+      "3. C'est peut-être Akiha.",
+      "4. C'est peut-être Hisui.",
+      "5. C'est peut-être Kohaku-san."
+    ],
+    "f200": [
+      "1. Je vais m'excuser.",
+      "2. Essayer de la tromper.",
+      "3. Dire la vérité."
+    ],
+    "f222": [
+      "1. … Non, c'était forcément quelqu'un d'autre.",
+      "2. Poser des questions sur hier soir."
+    ],
+    "f225": [
+      "1. D'accord, je vais manger.",
+      "2. D'accord, je ne vais pas manger."
+    ],
+    "f230": [
+      "1. Non. Je refuse de faire quelque chose d'aussi gênant.",
+      "2. Peu importe. Je vais acquiescer."
+    ],
+    "f325": [
+      "1. Lui demander pourquoi elle a été transférée dans cette école.",
+      "2. … Je devrais lui présenter Arihiko.",
+      "3. Jouait-elle les innocentes jusqu'à maintenant ?"
+    ],
+    "f329": [
+      "1. Rentrer seul.",
+      "2. Aller dans la salle de classe d'Akiha."
+    ],
+    "f334": [
+      "1. Aller au salon.",
+      "2. Aller au bâtiment annexe.",
+      "3. Rester ici jusqu'à l'heure du dîner."
+    ],
+    "f338": [
+      "1. Aller au bâtiment annexe.",
+      "2. Aller simplement dormir."
+    ],
+    "f386": [
+      "1. Aller voir Hisui.",
+      "2. Aller aider Kohaku-san.",
+      "3. Aller dans la chambre d'Akiha."
+    ],
+    "f129": [
+      "1. Aller lui parler dans le couloir.",
+      "2. Non, ça ne me regarde sans doute pas. Je vais observer d'ici.",
+      "3. Une ouverture ! Je vais la surprendre par-derrière !"
+    ],
+    "f135": [
+      "1. Chercher Arcueid sans but précis.",
+      "2. Retourner au manoir."
+    ],
+    "f244": [
+      "1. Oui, aller à la cafétéria avec Arihiko.",
+      "2. Non, même si elle me déteste, je vais voir Senpai."
+    ],
+    "f249": [
+      "1. Retourner au manoir.",
+      "2. Aller à la salle de cérémonie du thé.",
+      "3. Sortir en ville."
+    ],
+    "f256": [
+      "1. Je ne peux pas laisser Arcueid seule.",
+      "2. Senpai m'est chère."
+    ],
+    "f343": [
+      "1. Me calmer un peu, puis aller au salon.",
+      "2. Je vais bien, alors j'irai au salon.",
+      "3. Je devrais me reposer encore un peu."
+    ],
+    "f347": [
+      "1. L'uniforme actuel d'Akiha lui va mieux.",
+      "2. L'uniforme de notre école lui irait mieux."
+    ],
+    "f350": [
+      "1. Aller aider Hisui.",
+      "2. Aller aider Kohaku-san."
+    ],
+    "f391": [
+      "1. En parler avec elle.",
+      "2. Ne pas en parler avec elle."
+    ],
+    "f394": [
+      "1. Aller dans la chambre de mon père.",
+      "2. Rester dans ma chambre."
+    ],
+    "f395": [
+      "1. Aller en ville pendant la nuit.",
+      "2. Ne pas dormir et attendre le matin."
+    ],
+    "f143": [
+      "1. Arranger les choses avec un salut enjoué.",
+      "2. Ne rien faire de stupide et la saluer normalement.",
+      "3. Non, non. Je ne peux plus que m'excuser."
+    ],
+    "f149": [
+      "1. Aller tout de suite dans la cour.",
+      "2. Prier pour qu'elle ne fasse rien avant la fin des cours.",
+      "3. Tant pis. Je vais l'ignorer."
+    ],
+    "f153": [
+      "1. Lui dire quand même la vérité, à Hisui.",
+      "2. Non, personne ne doit savoir."
+    ],
+    "f260": [
+      "1. Non, allons au salon.",
+      "2. Plus important encore, je devrais aller à l’école."
+    ],
+    "f267": [
+      "1. Le dire franchement.",
+      "2. Le dire calmement."
+    ],
+    "f353": [
+      "1. Au moins, je peux souhaiter le bonjour à Akiha.",
+      "2. … Je ne peux pas. Retournons dans ma chambre."
+    ],
+    "f354": [
+      "1. Aller dans la classe d'Akiha.",
+      "2. Non, je n'ai pas besoin d'aller la voir."
+    ],
+    "f355": [
+      "1. Aller dans la classe d'Akiha.",
+      "2. Non, je n'ai pas besoin d'aller la voir."
+    ],
+    "f358": [
+      "1. Parler de la nuit dernière avec Ciel.",
+      "2. … Ce serait une perte de temps."
+    ],
+    "f399": [
+      "1. Demander à Kohaku-san de préparer quelque chose.",
+      "2. Demander à Hisui de préparer quelque chose."
+    ],
+    "f402": [
+      "1. … Ça ne me suffit vraiment pas.",
+      "2. … Je peux bouger de nouveau, alors je devrais la remercier."
+    ],
+    "f159": [
+      "1. … Faire ce que dit Akiha.",
+      "2. Non, je dois me forcer à voir Arcueid."
+    ],
+    "f361": [
+      "1. … Aller décider de mon destin.",
+      "2. Non, je vais rester au manoir."
+    ],
+    "f162": [
+      "1. … Tant pis. Je vais accompagner Arcueid.",
+      "2. … Mais je peux l'éviter. Je devrais aller à l’école."
+    ],
+    "f163": [
+      "1. Eh bien, c'est parce que tu es égoïste, non ?",
+      "2. Eh bien, c'est parce que tu me détestes, non ?",
+      "3. Eh bien, c'est parce que tu es une vampire, non ?"
+    ],
+    "f168": [
+      "1. Faire comme d'habitude : l'emmener au cinéma.",
+      "2. Elle aimerait probablement une ruelle sombre, non ?",
+      "3. … Je ne sais pas trop, alors allons au parc pour l'instant."
+    ],
+    "f172": [
+      "1. D'accord, je lui raconterai hier soir.",
+      "2. Alors, demandons des précisions sur l'\" ennemi \" d'Arcueid.",
+      "3. Il faut bien l'interroger sur ses goûts, son passé et ses mensurations !"
+    ],
+    "f178": [
+      "1. Aller à l'appartement d'Arcueid.",
+      "2. Chercher dans le quartier commerçant.",
+      "3. … L'école, peut-être ?"
+    ],
+    "f180": [
+      "1. Je ne peux pas faire ce qu'elle ne veut pas.",
+      "2. Je veux juste… qu'elle soit à moi."
+    ],
+    "f273": [
+      "1. Attendre ici.",
+      "2. Aller dans la salle de classe.",
+      "3. Aller derrière l'école."
+    ],
+    "f277": [
+      "1. Rêvasser ici, en classe.",
+      "2. … Aller déjeuner."
+    ],
+    "f279": [
+      "1. Je suppose que oui.",
+      "2. … Non, ça compte."
+    ],
+    "f362": [
+      "1. … Je dois vivre.",
+      "2. … Je ne peux pas le faire."
+    ]
+  },
+  "images": {
+    "words": {
+      "end": "#ffffff$b`[right][noline][color=black][font=serif]END`",
+      "fin": "#ffffff$c`[center][noline][color=black][font=serif]Fin`",
+      "pd_fin": "#000000$b`[right][noline][font=serif]Fin`",
+      "pd_genshi": "#000000$b`[right][noline][font=serif][u]Short Story/Alliance of Illusionary Eyes`",
+      "pd_tea": "#000000$t`[left][noline][noline][font=serif][u]Moon Tea`",
+      "pd_one_a": "#000000$c`[center][noline][font=serif]First Day/1`",
+      "pd_one_b": "#000000$c`[center][noline][font=serif]First Day/2`",
+      "pd_two": "#000000$c`[center][noline][font=serif]Second Day`",
+      "pd_three": "#000000$c`[center][noline][font=serif]Third Day`"
+    },
+    "src": {
+      "tachi/osiete": "./images/%0"
+    }
+  },
+  "scenario": {
+    "days": [
+      "[i]1[sup]er[/sup] jour | 21 octobre (jeu.)",
+      "[i]2[sup]e[/sup] jour | 22 octobre (ven.)",
+      "[i]3[sup]e[/sup] jour | 23 octobre (sam.)",
+      "[i]4[sup]e[/sup] jour | 24 octobre (dim.)",
+      "[i]5[sup]e[/sup] jour | 25 octobre (lun.)",
+      "[i]6[sup]e[/sup] jour | 26 octobre (mar.)",
+      "[i]7[sup]e[/sup] jour | 27 octobre (mer.)",
+      "[i]8[sup]e[/sup] jour | 28 octobre (jeu.)",
+      "[i]9[sup]e[/sup] jour | 29 octobre (ven.)",
+      "[i]10[sup]e[/sup] jour | 30 octobre (sam.)",
+      "[i]11[sup]e[/sup] jour | 31 octobre (dim.)",
+      "[i]12[sup]e[/sup] jour | 1 novembre (lun.)",
+      "[i]13[sup]e[/sup] jour | 2 novembre (mar.)"
+    ],
+    "routes": {
+      "aki": {
+        "03a": "[b][i]3 / Inversion Impulse III",
+        "03b": "[b][i]3 / Dark Kiss Mark",
+        "04a": "[b][i]4 / Dark Scar I",
+        "05a": "[b][i]5 / Quiet Dream",
+        "06a": "[b][i]6 / Deep Dream",
+        "07a": "[b][i]7 / Dark Scar II",
+        "08a": "[b][i]8 / Afternoon Dream",
+        "09a": "[b][i]9 / Bloodsucking Demon",
+        "10a": "[b][i]10 / Sweltering Night",
+        "11a": "[b][i]11 / Telescope",
+        "12a": "[b][i]12 / A Finale",
+        "13a": "[b][i]Warm Afternoon Nap",
+        "13b": "[b][i]Distant Reed Warbler"
+      },
+      "ark": {
+        "01a": "[b][i]1 / Reactionary Impulse I",
+        "02a": "[b][i]2 / Reactionary Impulse II",
+        "03a": "[b][i]3 / The Black Beast I",
+        "04a": "[b][i]4 / The Black Beast II",
+        "05a": "[b][i]5 / Blue Scar of Sin",
+        "06a": "[b][i]6 / Eyes of Death Perception I",
+        "07a": "[b][i]7 / Eyes of Death Perception II",
+        "08a": "[b][i]8 / Death.",
+        "09a": "[b][i]9 / Vermillion Crimson Moon I",
+        "10a": "[b][i]10 / Vermillion Crimson Moon II",
+        "11a": "[b][i]11 / Savage Night",
+        "11b": "[b][i]Cream",
+        "12a": "[b][i]12 / The World of the Moon",
+        "13a": "[b][i]Tsukihime",
+        "13b": "[b][i]Moon at Dawn"
+      },
+      "cel": {
+        "05a": "[b][i]5 / Red Residue",
+        "06a": "[b][i]6 / Bow in the Sky I",
+        "07a": "[b][i]7 / Bow in the Sky II",
+        "08a": "[b][i]8 / (Death).",
+        "09a": "[b][i]9 / Cast-off Cicada shell",
+        "09b": "[b][i]9 / DNM",
+        "10a": "[b][i]10 / Red Residue II",
+        "11a": "[b][i]11 / Mirage",
+        "11b": "[b][i]11 / Insomnia",
+        "12a": "[b][i]12 / Endless Stone",
+        "13a": "[b][i]Daylight Blue",
+        "13b": "[b][i]Sun"
+      },
+      "his": {
+        "04a": "[b][i]4 / Cradle Garden",
+        "05a": "[b][i]5 / Killer I",
+        "06a": "[b][i]6 / Killer II",
+        "07a": "[b][i]7 / Transparent Scratch",
+        "07b": "[b][i]7 / Shikiller",
+        "08a": "[b][i]8 / “Death”.",
+        "09a": "[b][i]9 / Burning Body I",
+        "10a": "[b][i]10 / Burning Body II",
+        "11a": "[b][i]11 / Burning Body III",
+        "12a": "[b][i]12 / Daydream",
+        "13a": "[b][i]13 / Golden Cocoon",
+        "14a": "[b][i]Midday Moon",
+        "14b": "[b][i]Dreams of Sunshine"
+      },
+      "koha": {
+        "05a": "[b][i]5 / Cain I",
+        "06a": "[b][i]6 / Cain II",
+        "06b": "[b][i]6 / Future Vision, Future Death",
+        "07a": "[b][i]7 / Evil at Every Corner I",
+        "08a": "[b][i]8 / Evil at Every Corner II",
+        "09a": "[b][i]9 / Origami",
+        "10a": "[b][i]10 / Locks of Hair",
+        "11a": "[b][i]11 / Nanaya",
+        "12a": "[b][i]DREAMS OF SUNSHINE"
+      },
+      "others": {
+        "pro": "[b][i]a prologue",
+        "epi": "[i]an epilogue"
+      }
+    },
+    "scenes": {
+      "openning": "[b][i]Prologue - Glass Moon",
+      "eclipse": "[b][i]Epilogue",
+      "ending": "[b][i]Credits"
+    },
+    "dead-end": "Dead end",
+    "osiete": "Ciel's lesson"
+  },
+  "credits": [
+    {
+      "center": [
+        "[center][font=serif]Planning / [left=15]Takeuchi Takashi",
+        "[center][font=serif][hide]Planning / [/][left=15]Nasu Kinoko"
+      ]
+    },
+    {
+      "center": [
+        "",
+        "[right][font=serif]Creator / Scenario Writer / Scenario Programmer /",
+        "[right][font=serif]Nasu Kinoko"
+      ]
+    },
+    {
+      "bottom": [
+        "[right][font=serif]Scenario Programming Assistant/[hide]OKSG",
+        "[right][font=serif]OKSG"
+      ]
+    },
+    {
+      "center": [
+        "",
+        "[right][font=serif]Character Design / Original Artist / CG /",
+        "[right][font=serif]Takeuchi Takashi"
+      ]
+    },
+    {
+      "bottom": [
+        "[right][font=serif]CG Assistant / [hide]Fumicchi",
+        "[right][font=serif]Fumicchi"
+      ]
+    },
+    {
+      "center": [
+        "[center][font=serif]Background / [left=15]",
+        "[center][font=serif][hide]Background / [/][left=15]Kuki Mamoru",
+        "[center][font=serif][hide]Background / [/][left=15]Takeuchi Takashi"
+      ]
+    },
+    {
+      "top": [
+        "[left][font=serif]Programming / Scenery /",
+        "[center][font=serif]Seibei"
+      ]
+    },
+    {
+      "top": [
+        "[left][font=serif]Composer / Arranger / Sound Effects",
+        "[center][font=serif]KEITA HAGA"
+      ]
+    },
+    {
+      "bottom": [
+        "[right][font=serif]Special Thanks / [left=8/]",
+        "[right][font=serif][left=8]Takahashi Naoki",
+        "[right][font=serif][left=8]B46"
+      ]
+    },
+    {
+      "bottom": [
+        "[right][font=serif]Special Thanks / [left=8/]",
+        "[right][font=serif][left=8]OKSG",
+        "[right][font=serif][left=8]SUBTLE",
+        "[right][font=serif][left=8]Kirihara Kojima",
+        "[right][font=serif][left=8]Hayashi Youko",
+        "[right][font=serif][size=80%](Titles Omitted)"
+      ]
+    },
+    {
+      "bottom": [
+        "[right][font=serif]Playtesters /[left=3/][left=12]Uetsugi Hiroyoshi",
+        "[right][font=serif][left=12]EDF Sakata",
+        "[right][font=serif][left=12]K-1",
+        "[right][font=serif][left=12]Shiten",
+        "[right][font=serif][left=12]Derocchi",
+        "[right][font=serif][left=12]NOCKy"
+      ]
+    },
+    {
+      "bottom": [
+        "[right][font=serif]Playtesters /[left=3/][left=12]B46",
+        "[right][font=serif][left=12]Mikage",
+        "[right][font=serif][left=12]Yamaguchi Tarou",
+        "[right][font=serif][left=12]Yamazaki Seiji",
+        "",
+        ""
+      ]
+    },
+    {
+      "bottom": [
+        "[right][font=serif]Playtesters /[left=15]",
+        "[right][font=serif]ALL TYPE-MOON STAFF",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "center": "[center][font=serif]Game Director /[left=3/]Nasu Kinoko"
+    },
+    {
+      "center": "[center][font=serif]Production Director /[left=3/]Takeuchi Takashi"
+    },
+    {
+      "center": "[center][font=serif][left=5/]Produced by /[left=3/]TYPE-MOON"
+    },
+    {
+      "center": "[center][font=serif][left=5/]English version /[left=3/]mirror moon",
+      "delay": 4300
+    },
+    {
+      "center": [
+        "[left][font=serif]Programming /[left=1/]chendo",
+        ""
+      ],
+      "delay": 4300
+    },
+    {
+      "center": [
+        "",
+        "",
+        "",
+        "[center][font=serif][left=12]Translation /[/][left=8]AstCd2",
+        "[center][font=serif][left=12/][left=8]Ryuusoul",
+        "[center][font=serif][left=12/][left=8]TakaJun",
+        "[center][font=serif][left=12/][left=8]tjm"
+      ],
+      "delay": 4300
+    },
+    {
+      "bottom": [
+        "[right][font=serif]Additional Translation /[left=12]",
+        "[right][font=serif][left=8]chendo",
+        "[right][font=serif][left=8]Connor",
+        "[right][font=serif][left=8]Sheep Mafia"
+      ],
+      "delay": 4300
+    },
+    {
+      "center": [
+        "",
+        "[center][font=serif][left=10]Editing /[/][left=8]Ryuusoul",
+        "[center][font=serif][left=10/][left=8]TakaJun"
+      ],
+      "delay": 4300
+    },
+    {
+      "center": [
+        "",
+        "",
+        "[center][font=serif][left=10]Proofing /[/][left=8]Fuyutski",
+        "[center][font=serif][left=10/][left=8]Kuritsuchanrin",
+        "[center][font=serif][left=10/][left=8]LrdDimwit"
+      ],
+      "delay": 4300
+    },
+    {
+      "bottom": [
+        "[right][font=serif]Additional Proofing /[/][left=13]",
+        "[right][font=serif][left=10]Byrnedhead",
+        "[right][font=serif][left=10]Einherjar",
+        "[right][font=serif][left=10]EVILONE",
+        "[right][font=serif][left=10]OrganGrinder",
+        "[right][font=serif][left=10]Sheep Mafia",
+        "[right][font=serif][left=10]tjm"
+      ],
+      "delay": 4300
+    },
+    {
+      "center": [
+        "[center][font=serif][left=12]Image Editing /[/][left=8]Nichigo[/][left=12/]",
+        "[center][font=serif][left=12/][left=8]puKKa[/][left=12/]"
+      ],
+      "delay": 4300
+    },
+    {
+      "center": [
+        "",
+        "[center][font=serif][left=20]Non-Ero Editing /",
+        "[center][font=serif][left=10/][left=10]Message"
+      ],
+      "delay": 4300
+    },
+    {
+      "center": [
+        "",
+        "",
+        "[center][font=serif][left=25]Non-Ero Image Editing /",
+        "[center][font=serif][left=15/][left=10]DarkJedi2"
+      ],
+      "delay": 4300
+    },
+    {
+      "center": [
+        "",
+        "",
+        "[center][font=serif][left=12]Non-Ero Proofing /[/][left=8]cyanoacry[/][left=12/]",
+        "[center][font=serif][left=12/][left=8]DarkJedi2[/][left=12/]",
+        "[center][font=serif][left=12/][left=8]sebasdoes[/][left=12/]",
+        "[center][font=serif][left=12/][left=8]TareJay[/][left=12/]"
+      ],
+      "delay": 4300
+    },
+    {
+      "center": [
+        "",
+        "[center][font=serif][left=18]Beta Project Management /[/][left=8]chendo",
+        "[center][font=serif][left=18/][left=8]Message",
+        "[center][font=serif][left=18/][left=8]Ryuusoul"
+      ],
+      "delay": 4300
+    },
+    {
+      "top": [
+        "[center][font=serif][left=12]Beta testing /[/][size=80%][left=12]Arturias[/][left=12]Message",
+        "[center][font=serif][left=12/][size=80%][left=12]Choco[/][left=12]Misuzu",
+        "[center][font=serif][left=12/][size=80%][left=12]Connor[/][left=12]MJPByron",
+        "[center][font=serif][left=12/][size=80%][left=12]cyanoacry[/][left=12]NegativeZero",
+        "[center][font=serif][left=12/][size=80%][left=12]DarkJedi2[/][left=12]Omega",
+        "[center][font=serif][left=12/][size=80%][left=12]Drakenavarone[/][left=12]Radical R",
+        "[center][font=serif][left=12/][size=80%][left=12]DrmChsr0[/][left=12]RhoSangJin",
+        "[center][font=serif][left=12/][size=80%][left=12]enthrop[/][left=12]RoyalKnight",
+        "[center][font=serif][left=12/][size=80%][left=12]Gaudeamus[/][left=12]Ryuusoul",
+        "[center][font=serif][left=12/][size=80%][left=12]Heretic Kazuma[/][left=12]sebasdoes",
+        "[center][font=serif][left=12/][size=80%][left=12]koko775[/][left=12]TareJay",
+        "[center][font=serif][left=12/][size=80%][left=12]litghost[/][left=12]TakaJun",
+        "[center][font=serif][left=12/][size=80%][left=12]MHOOO[/][left=12]Velocity7"
+      ],
+      "delay": 8600
+    },
+    {
+      "center": "[center][font=serif]Release Engineering /[left=3/]Message",
+      "delay": 4300
+    },
+    {
+      "top": [
+        "[left][font=serif]Special Thanks /",
+        "",
+        "[center][font=serif][left=40]insani",
+        "[center][font=serif][left=40]Ogapee",
+        "[center][font=serif][left=5/][left=35]for their great work on ONScripter",
+        "",
+        "[center][font=serif][left=40]TheXev",
+        "[center][font=serif][left=5/][left=35]for his preliminary programming groundwork",
+        "",
+        "[center][font=serif][left=40]Kawatori Shinji",
+        "[center][font=serif][left=5/][left=35]for testing the release candidates",
+        "",
+        "[center][font=serif][left=40]Shirakani and the whole alpha test crew"
+      ],
+      "delay": 4300
+    },
+    {
+      "center": "[center][font=serif]Thanks for playing",
+      "delay": 4300
+    },
+    {
+      "bottom": "[right][font=serif][noline][color=black][copy/] 2000 TYPE-MOON All right reserved.",
+      "delay": 21500,
+      "bg": "#ffffff"
+    }
+  ],
+  "plus_disc_scenario": {
+    "pd_alliance": "Alliance of Illusionary Eyes",
+    "pd_geccha": "Geccha",
+    "pd_geccha2": "Geccha 2",
+    "pd_experiment": "Kinoko's Masterpiece Experimental Theater"
+  }
+}
