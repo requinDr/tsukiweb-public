@@ -8,10 +8,6 @@
 		}
 	}
 
-	@include mobile-portrait {
-		grid-template-rows: min-content 1fr min-content;
-	}
-
 	.saves {
 		letter-spacing: 1px;
 		padding-top: 10px;
@@ -306,7 +302,7 @@
 				align-items: center;
 				gap: .5rem;
 				border-image: none;
-				padding: .25rem .5rem;
+				padding: .25rem var(--page-padding);
 			}
 			.progress-panel {
 				flex: 1;
@@ -357,8 +353,13 @@
 		aspect-ratio: 4/3;
 		overflow: hidden;
 
-		div.bg img.blur {
-			filter: blur(20px);
+		&:has(img.blur)::before {
+			content: "";
+			position: absolute;
+			inset: 0;
+			z-index: 10;
+			backdrop-filter: blur(20px);
+			pointer-events: none;
 		}
 		div.bg img {
 			object-position: top;
