@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react"
+import { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import SaveListItem from "./SaveListItem"
 import SaveDetails from "./SaveDetails"
 import { MdAddCircleOutline, MdWarning } from "react-icons/md"
@@ -10,7 +10,7 @@ import { computeSaveHash, exportGameData, settings } from "engine/settings"
 import { useObserver } from "@tsukiweb/common/utils/Observer"
 import { Button, PageLayout, PageSection } from "@tsukiweb/common/ui-core"
 import { QUICK_SAVE_ID, SaveState, compareSaveStates, savesManager } from "engine/savestates";
-import { useStrings } from "translation/lang";
+import { getLocale, useStrings } from "translation/lang";
 import { audio } from "engine/audio";
 import { SCREEN, displayMode } from "app/utils/display";
 
@@ -150,11 +150,48 @@ type SavesListProps = {
 	parentRef: React.RefObject<HTMLElement | null>,
 	saves: Array<SaveState>,
 }
+type ListEntry =
+	| { type: "day", label: string }
+	| { type: "save", save: SaveState, navIndex: number }
+
+function dayLabel(date: Date, locale: string) {
+	const today = new Date()
+	const days = Math.round((new Date(today.toDateString()).getTime() - new Date(date.toDateString()).getTime()) / 86400000)
+	if (days == 0 || days == 1) {
+		const label = new Intl.RelativeTimeFormat(locale, {numeric: "auto"}).format(-days, "day")
+		return label.charAt(0).toLocaleUpperCase(locale) + label.slice(1)
+	}
+	return date.toLocaleDateString(locale, {
+		day: "numeric",
+		month: "long",
+		...(date.getFullYear() != today.getFullYear() && {year: "numeric"}),
+	})
+}
+
+function groupByDay(saves: SaveState[], locale: string): ListEntry[] {
+	const entries: ListEntry[] = []
+	let lastDay: string | undefined
+	saves.forEach((save, navIndex) => {
+		if (save.id !== QUICK_SAVE_ID) {
+			const date = new Date(save.date as number)
+			const day = date.toDateString()
+			if (day != lastDay) {
+				entries.push({type: "day", label: dayLabel(date, locale)})
+				lastDay = day
+			}
+		}
+		entries.push({type: "save", save, navIndex})
+	})
+	return entries
+}
+
 const SavesList = ({onSaveSelect, focusedId, setFocusedSave, parentRef, saves}: SavesListProps) => {
+	const locale = getLocale()
+	const entries = useMemo(() => groupByDay(saves, locale), [saves, locale])
 	const rowVirtualizer = useVirtualizer({
-		count: saves.length,
+		count: entries.length,
 		getScrollElement: () => parentRef.current,
-		estimateSize: () => 120,
+		estimateSize: (i) => (entries[i].type == "day" ? 2 : 7) * parseFloat(getComputedStyle(document.documentElement).fontSize),
 		overscan: 5,
 	})
 
@@ -167,11 +204,28 @@ const SavesList = ({onSaveSelect, focusedId, setFocusedSave, parentRef, saves}: 
 		>
 			{rowVirtualizer.getVirtualItems()
 				.map(({index, start, key}) => {
-				const ss = saves[index]
+				const entry = entries[index]
+				const style = { transform: `translateY(${start}px)` }
+				if (entry.type == "day") {
+					return (
+						<h3
+							key={key}
+							ref={rowVirtualizer.measureElement}
+							data-index={index}
+							className={classNames("saves-day", {first: index == 0})}
+							style={style}
+						>
+							{entry.label}
+						</h3>
+					)
+				}
+				const ss = entry.save
 				const saveId = ss.id ?? ss.date
 				return (
 					<SaveListItem
 						key={key}
+						ref={rowVirtualizer.measureElement}
+						data-index={index}
 						saveId={saveId}
 						saveState={ss}
 						onClick={onSaveSelect.bind(null, saveId)}
@@ -179,10 +233,8 @@ const SavesList = ({onSaveSelect, focusedId, setFocusedSave, parentRef, saves}: 
 						onFocus={setFocusedSave.bind(null, saveId)}
 						onPointerEnter={setFocusedSave.bind(null, saveId)}
 						onMouseEnter={setFocusedSave.bind(null, saveId)}
-						style={{
-							transform: `translateY(${start}px)`,
-						}}
-						nav-y={index}
+						style={style}
+						nav-y={entry.navIndex}
 					/>
 				)
 			})}
