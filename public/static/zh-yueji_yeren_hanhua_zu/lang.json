@@ -1,13 +1,13 @@
 {
   "translation": {
-    "name": "月姬野人汉化组& Hawkwin & SHIROU神父",
-    "desc": "月姬汉化补丁最终版v0.97，发布日期：2026/4/19。由Hawkwin基于SHIROU神父个人汉化补丁v1.6(https://vndb.org/r71804) 修改制作而成，对大部分文本进行了重新校对和翻译，将SHIROU神父在月姬野人汉化组的汉化文本上进行的一些不恰当修改还原成原文，删除了SHIROU神父添加的所有括号注释",
+    "name": "月姬野人汉化组 & Hawkwin & SHIROU神父 & Berunkasuteru",
+    "desc": "《月姬》简体中文校订版 V0.99，发布日期：2026/11/22。以 Hawkwin 的汉化补丁最终版 v0.97（2026/4/19）为底本，保留原译骨架，对照日文原文全文校订。校订规范与关键取舍由人工确定，借助脚本与 LLM 查错、提供润色建议和交叉复核，并经人工抽查。Hawkwin 在 SHIROU神父个人汉化补丁 v1.6（https://vndb.org/r71804）的基础上重新校对和翻译了大部分文本，恢复了部分月姬野人汉化组的原有译文，并删除了 SHIROU神父添加的括号注释。 [url='https://github.com/requinDr/tsukiweb-public/issues/142']报错反馈[/url]",
     "url": "https://2dfan.com/downloads/42255",
     "vndb": "https://vndb.org/r151407"
   },
   "translation-pd": {
-    "name": "朱月临时汉化组",
-    "desc": "月姬PLUS+DISC完整汉化V1.1版，发布日期：2012/8/19，【朱月临时汉化组】，翻译：零色ノ夢, soulshooter，程序：仌⊙魔，校对：Nero·Chaos，润色：迷失花园之窗，组织者：酒池墨林",
+    "name": "朱月临时汉化组 & Berunkasuteru",
+    "desc": "月姬PLUS+DISC完整汉化V1.1版，发布日期：2012/8/19，【朱月临时汉化组】，翻译：零色ノ夢, soulshooter，程序：仌⊙魔，校对：Nero·Chaos，润色：迷失花园之窗，组织者：酒池墨林。V0.99 由 Berunkasuteru 对照日文原文校订四份 PLUS-DISC 脚本。 [url='https://github.com/requinDr/tsukiweb-public/issues/142']报错反馈[/url]",
     "url": "http://bbs.sumisora.org/read.php?tid=11033776&page=1&toread=1",
     "vndb": "https://vndb.org/r22655"
   },
@@ -27,11 +27,11 @@
       "project": "该项目位于 %0GitHub%1 上。 喜欢就加个星吧！欢迎贡献。",
       "feedback": "发送你的反馈或报告错误 %0这里%1.",
       "data": "不收集任何数据，所有内容都存储在你的浏览器中。管理你的数据%0这里%1。",
-      "remake": "请购买并支持重制版 %0月姬$ - A piece of blue glass moon%1."
+      "remake": "请购买并支持重制版 %0月姬 - A piece of blue glass moon%1。"
     },
     "install": "安装",
     "share": "分享",
-    "copied": "Copied to clipboard"
+    "copied": "已拷贝到剪贴板"
   },
   "extra": {
     "gallery": "画廊",
@@ -43,7 +43,7 @@
     "on": "开启",
     "off": "关闭",
     "reset": "恢复初始设置",
-    "default": "Default",
+    "default": "默认",
     "tab-game": "游戏",
     "tab-audio": "声音设置",
     "tab-controls": "操作设置",
@@ -87,29 +87,29 @@
       "并满足开启月姬里线的要求，",
       "它可以随时被打开和关闭。"
     ],
-    "smooth-flashes": "Reduce background flashes",
-    "smooth-flashes-low": "Low",
-    "smooth-flashes-high": "High",
+    "smooth-flashes": "减少背景闪烁",
+    "smooth-flashes-low": "低",
+    "smooth-flashes-high": "高",
     "smooth-flashes-help": [
-      "Replace instant background changes with a fade-in transition.",
-      "The transition lasts 0.08s (%0) or 0.15s (%1)"
+      "以淡入效果取代背景瞬间切换。",
+      "淡入时间为 0.08 秒（%0）或 0.15 秒（%1）。"
     ],
-    "game-font": "Game text font",
+    "game-font": "游戏文字字体",
     "game-font-help": [
-      "The default font is served with the project.",
-      "To select a different font, input its name. It will be loaded from %0 if available, else from your device."
+      "项目自带默认字体。",
+      "如需使用其他字体，请输入字体名称。若 %0 提供该字体，则从那里加载。否则将使用设备上的字体。"
     ],
-    "display-badges": "Display affection points and flags",
+    "display-badges": "显示好感度和标记",
     "data": "存档",
     "data-export": "导出",
     "data-import": "导入",
     "data-erase": "删除",
-    "data-erase-warning": "你真的要删除所有存档并恢复初始认设置吗？",
+    "data-erase-warning": "你真的要删除所有存档并恢复初始设置吗？",
     "data-erase-confirm": "删除了所有的存档。 如果你在未对设置进行任何更改且未开始新游戏的情况下离开本网站，则你的电脑上不会保留任何数据",
     "controls": {
       "next": "文字推进",
-      "graphics": "Show / hide text",
-      "back": "Back, Show / Hide menu",
+      "graphics": "显示/隐藏文字",
+      "back": "返回，显示/隐藏菜单",
       "bg_move": "移动背景图像",
       "auto_play": "自动模式",
       "page_nav": "下一页/上一页",
@@ -121,9 +121,9 @@
       "q_load": "快速读档",
       "config": "打开环境设置页面",
       "_hold": "按住",
-      "_layer-text": "when text is displayed",
-      "_layer-graphics": "in graphics mode",
-      "_layer-menu": "when menu is opened"
+      "_layer-text": "显示文字时",
+      "_layer-graphics": "图像模式下",
+      "_layer-menu": "打开菜单时"
     }
   },
   "endings": {
@@ -148,7 +148,7 @@
   },
   "game": {
     "skip-viewed": "该场景曾显示过。",
-    "skip-hcontent": "This passage contains adult content.",
+    "skip-hcontent": "本段包含成人内容。",
     "skip-prompt": "要跳过吗？",
     "toast-qsave": "进度已保存",
     "toast-qload": "恢复进度",
@@ -171,7 +171,7 @@
     "copy-scene-url": "拷贝场景链接"
   },
   "history": {
-    "load-warning": "Rewind to this scene? Unsaved progress since this point will be lost",
+    "load-warning": "要回到这个场景吗？此处之后未保存的进度将丢失。",
     "load": "读档",
     "skipped": "跳过场景 %0."
   },
@@ -197,7 +197,7 @@
   "ok": "是",
   "back": "返回",
   "close": "关闭",
-  "hint-confirm": "Confirm",
-  "hint-navigate": "Navigate",
-  "later": "Later"
+  "hint-confirm": "确认",
+  "hint-navigate": "导航",
+  "later": "稍后"
 }
