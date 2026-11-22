@@ -1,3 +1,12 @@
+function inc_hisui_skip323(text) {
+    let i = text.indexOf("\n*skip323")
+    if (i < 0)
+        throw Error(`Cannot find marker "*skip323"`)
+    let j = text.indexOf('\ngoto', i)+1
+    if (text.substring(i, j).includes('%hisui_regard'))
+        return text
+    return text.substring(0, j) + 'inc %hisui_regard\n' + text.substring(j)
+}
 
 /**
  * Make changes to the raw script of Tsukihime, before the conversion.
@@ -5,7 +14,16 @@
  * @returns {string|null} the changed script, or null if no change was made
  */
 function th_raw_fixes(text) {
-    return null;
+    // translation replaced "goto *endofplay" in *skip510 with osiete f516
+    let i = text.indexOf('\n*skip510')
+    if (i < 0)
+        throw Error(`Cannot find marker "*skip510"`)
+    i = text.indexOf('\n', i+1)+1
+    const j = text.indexOf('\n*', i)
+    text = text.substring(0, i) + 'goto *endofplay' + text.substring(j)
+    // forgot "inc %regard_his" in skip323
+    text = inc_hisui_skip323(text)
+    return text
 }
 
 /**

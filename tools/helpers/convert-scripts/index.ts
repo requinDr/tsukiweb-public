@@ -2,13 +2,13 @@ import { main as runTH } from './processing/scenes.ts';
 import { main as runTsLogic } from './processing/logic.ts';
 import { main as runPlusDisc } from './plus_disc.ts';
 
-async function main() {
+function main() {
     try {
         console.log('--- Starting scenes generation ---\n')
         
         runTsLogic()
 
-        await runTH()
+        runTH()
 
         runPlusDisc()
 

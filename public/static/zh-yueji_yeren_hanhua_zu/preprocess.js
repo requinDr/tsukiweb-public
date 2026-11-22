@@ -1,3 +1,12 @@
+function inc_hisui_skip323(text) {
+    let i = text.indexOf("\n*skip323")
+    if (i < 0)
+        throw Error(`Cannot find marker "*skip323"`)
+    let j = text.indexOf('\ngoto', i)+1
+    if (text.substring(i, j).includes('%hisui_regard'))
+        return text
+    return text.substring(0, j) + 'inc %hisui_regard\n' + text.substring(j)
+}
 
 /**
  * Make changes to the raw script of Tsukihime, before the conversion.
@@ -5,7 +14,18 @@
  * @returns {string|null} the changed script, or null if no change was made
  */
 function th_raw_fixes(text) {
-    return null;
+    // changed the order of logic blocs
+    let i = text.indexOf('\n*f502')
+    const j = text.indexOf('\n*f', i+10)
+    let k = text.indexOf('\n*f33')
+    if (k < i)
+        text = text.substring(0, k) + text.substring(i, j) + text.substring(k, i) + text.substring(j)
+    i = text.indexOf('\n*f183')
+    k = text.indexOf('\n*f51')
+    if (k < i)
+        text = text.substring(0, k) + text.substring(i) + text.substring(k, i) + '\n'
+    text = inc_hisui_skip323(text)
+    return text
 }
 
 /**

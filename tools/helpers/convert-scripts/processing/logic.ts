@@ -12,7 +12,7 @@ import { logger } from '@tsukiweb/common/tools/utils/logger.ts';
 import { updateGameJsonWithChoices } from '../utils/choices_extractor.ts';
 import { isLogicLabel, processVarName } from './common.ts';
 import { processCondition } from '@tsukiweb/common/tools/convert-scripts/utils.ts';
-import { fullscripts, outputPathPrefix } from './fullscripts.ts';
+import { fullscripts, loadLangPreprocess, outputPathPrefix } from './fullscripts.ts';
 
 const LOGIC_FILE = "logic"
 const GEN_CHOICES_JSON = true
@@ -336,47 +336,6 @@ function interBlockFixes(blocks: Map<string, Block>) {
 	blocks.delete('f117')
 }
 
-function inc_hisui_skip323(text: string) {
-	let i = text.indexOf("\n*skip323")
-	if (i < 0)
-		throw Error(`Cannot find marker "*skip323"`)
-	let j = text.indexOf('\ngoto', i)+1
-	if (text.substring(i, j).includes('%hisui_regard'))
-		return text
-	return text.substring(0, j) + 'inc %hisui_regard\n' + text.substring(j)
-}
-
-function raw_fixes(language: string, text: string) {
-	let i, j, k, next
-	switch(language) {
-		case 'ko-wolhui' :
-			// korean translation replaced "goto *endofplay" in *skip510 with osiete f516
-			i = text.indexOf('\n*skip510')
-			if (i < 0)
-				throw Error(`Cannot find maker "*skip510"`)
-			i = text.indexOf('\n', i+1)+1
-			j = text.indexOf('\n*', i)
-			text = text.substring(0, i) + 'goto *endofplay' + text.substring(j)
-			// forgot "inc %regard_his" in skip323
-			text = inc_hisui_skip323(text)
-			return text
-		case 'zh-yueji_yeren_hanhua_zu' : case 'zh-tw-yueji_yeren_hanhua_zu' :
-			// changed the order of logic blocs
-			i = text.indexOf('\n*f502')
-			j = text.indexOf('\n*f', i+10)
-			k = text.indexOf('\n*f33')
-			if (k < i)
-				text = text.substring(0, k) + text.substring(i, j) + text.substring(k, i) + text.substring(j)
-			i = text.indexOf('\n*f183')
-			k = text.indexOf('\n*f51')
-			if (k < i)
-				text = text.substring(0, k) + text.substring(i) + text.substring(k, i) + '\n'
-			text = inc_hisui_skip323(text)
-			return text
-		default : return text // no language-specific fix for logic
-	}
-}
-
 //#endregion ###################################################################
 //#region                       SIDE GENERATIONS
 //##############################################################################
@@ -533,8 +492,9 @@ function processSingleScript(folder: string, filename: string): [string, Record<
 		throw Error(errMsg)
 	}
 
-	const txt = fs.readFileSync(fullscriptPath, 'utf-8')
-	const tokens = parseScript(raw_fixes(folder, txt))
+	let txt = fs.readFileSync(fullscriptPath, 'utf-8')
+	txt = loadLangPreprocess(folder).th_raw_fixes?.(txt) || txt
+	const tokens = parseScript(txt)
 	
 	const blocks = splitBlocks(tokens, getBlockProps)
 	interBlockFixes(blocks)
