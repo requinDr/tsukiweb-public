@@ -122,6 +122,10 @@
 				overflow: hidden;
 				text-overflow: ellipsis;
 				margin-top: .15em;
+
+				.dash {
+					letter-spacing: 0;
+				}
 			}
 
 			.date {

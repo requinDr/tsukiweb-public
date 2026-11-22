@@ -144,12 +144,10 @@ export function compareSaveStates(ss1: SaveState, ss2: SaveState) {
  * Compute the text to be displayed for saves created during phase transitions
  */
 export function savePhaseTexts(saveState: SaveState): string[] {
-	const { route, routeDay, day } = saveState.pages.at(-1)?.phase ?? {}
-
-	if (route !== undefined && routeDay !== undefined && day !== undefined) {
-		return phaseTexts(route, routeDay, day)?.map(noBb)
+	const { route, routeDay, day } = {
+		...ScriptPlayer.defaultPageContext().phase,
+		...saveState.pages.at(-1)?.phase,
 	}
-
-	return ["", ""]
+	return phaseTexts(route, routeDay, day).map(noBb)
 }
 

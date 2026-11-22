@@ -1,5 +1,5 @@
 import { Fragment, memo } from "react"
-import { noBb } from "@tsukiweb/common/utils/Bbcode"
+import { noBb, textWithDashes } from "@tsukiweb/common/utils/Bbcode"
 import { PageEntry } from "engine/history"
 import { SceneName } from "app/utils/types"
 import { SaveState, savePhaseTexts } from "engine/savestates";
@@ -16,14 +16,14 @@ const SaveSummary = ({saveState}: Props) => {
 
 	switch (lastPage.type ?? "text") {
 		case "text":
-			return noBb(lastPage.text ?? "").trim()
+			return textWithDashes(noBb(lastPage.text ?? "").trim())
 
 		case "choice":
 			const {choices} = lastPage as PageEntry<"choice">
 			return choices.map(({index: i, str}) =>
 				<Fragment key={i}>
 					{i > 0 && <>/ </>}
-					{noBb(str)}
+					{textWithDashes(noBb(str))}
 				</Fragment>
 			)
 
