@@ -139,47 +139,30 @@
 		display: grid;
 	}
 
+	.extra-switcher {
+		display: none;
+	}
+
 	@include mobile-portrait {
-		grid-template-columns: 1fr;
+		grid-template-columns: minmax(0, 1fr);
 		grid-template-rows: 1fr min-content;
 		grid-template-areas:
 			"extra-content"
-			"extra-menu";
+			"extra-footer";
 
-		.extra-header, .extra-footer {
+		.extra-header, .extra-menu {
 			display: none;
 		}
 
-		.extra-menu {
-			display: grid;
-			grid-template-columns: auto 1fr;
-			column-gap: .5rem;
-			align-items: center;
-			padding: .3rem var(--page-padding) calc(.3rem + var(--safe-area-max-inset-bottom));
-			background-image: linear-gradient(180deg, #001325, rgb(0 67 138));
-			border-top: 1px solid var(--separator);
+		.extra-footer > :has(> .extra-switcher) {
+			flex: 1;
 			min-width: 0;
-
-			&::before {
-				display: none;
-			}
-			.menus {
-				display: none;
-			}
-			.back-action {
-				display: flex;
-				grid-area: 1 / 1;
-				padding: 0;
-			}
-			.extra-switcher {
-				display: flex;
-			}
+			height: auto;
 		}
-	}
-
-	.extra-switcher {
-		display: none;
-		grid-area: 1 / 2;
+		.extra-switcher {
+			display: flex;
+			flex: 1;
+		}
 	}
 
 	@include mobile-landscape {

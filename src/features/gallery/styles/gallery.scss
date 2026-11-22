@@ -8,6 +8,7 @@
 #gallery, #endings, #plus-disc {
 	height: 100%;
 	overflow-y: auto;
+	clip-path: inset(0);
 	scrollbar-gutter: stable;
 	padding-top: .5rem;
 	display: flex;

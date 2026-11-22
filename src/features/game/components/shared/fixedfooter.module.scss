@@ -1,5 +1,26 @@
+@use '@tsukiweb/common/ui-core/styles/_mixins.scss' as *;
+
 .footer {
-	background: var(--transparent-layer);
+	min-height: 60px;
+	width: 100%;
+	background: var(--surface-dark);
+	border-top: 2px solid var(--separator);
+	padding: 0.2em 1em 0 1em;
+	padding-bottom: var(--safe-area-max-inset-bottom);
+	display: flex;
+	place-self: end;
+	z-index: 10;
+	position: relative;
+	isolation: isolate;
+
+	@include mobile-landscape {
+		min-height: 50px;
+		font-size: .9em;
+	}
+}
+.footerContent {
+	width: var(--page-width);
+	margin: 2px auto;
 }
 
 .rightOrnament, .leftOrnament {
