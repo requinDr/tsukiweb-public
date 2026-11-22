@@ -23,9 +23,9 @@
 		"react-error-boundary": "^6.1.6",
 		"react-icons": "^5.7.0",
 		"react-toastify": "^11.2.0",
-		"sass": "^1.108.1",
+		"sass": "^1.108.2",
 		"wouter": "^3.13.0",
-		"yet-another-react-lightbox": "^3.33.0"
+		"yet-another-react-lightbox": "^3.33.1"
 	},
 	"devDependencies": {
 		"@types/node": "^26.6.6",
@@ -33,6 +33,6 @@
 		"@types/react-dom": "^19.3.0",
 		"@vitejs/plugin-react": "^6.3.0",
 		"typescript": "^7.0.2",
-		"vite": "^8.3.7"
+		"vite": "^8.3.8"
 	}
 }

@@ -10,7 +10,7 @@ import { useStrings } from "translation/lang";
 import { APP_INFO, APP_VERSION } from "app/utils/constants";
 import { SCREEN } from "app/utils/display";
 
-type Props = Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'onClick'|'onContextMenu'>
+type Props = Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'onClick'>
 
 const AppInfo = (props?: Props) => {
 	const [show, setShow] = useState<boolean>(false)
@@ -19,7 +19,6 @@ const AppInfo = (props?: Props) => {
 			<button
 				{...props}
 				aria-label="show information modal"
-				onContextMenu={e => e.preventDefault()}
 				onClick={()=>setShow(true)}>
 				<MdInfoOutline aria-hidden />
 			</button>

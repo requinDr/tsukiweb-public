@@ -127,7 +127,6 @@ const TopActions = () => {
 				<button
 					nav-auto={1}
 					className={classNames("action-icon", { inactive: conf < 0 })}
-					onContextMenu={e => e.preventDefault()}
 					aria-label={strings.config['volume-master']}
 					onClick={()=> settings.volume.master = -settings.volume.master}
 				>

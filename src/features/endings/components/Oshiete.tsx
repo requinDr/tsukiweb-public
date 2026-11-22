@@ -26,7 +26,6 @@ const Oshiete = ({unlocked, ending, number}: Props) => {
 			role="button"
 			onClick={unlocked ? handlePlay : undefined}
 			onKeyDown={e => e.key === 'Enter' && handlePlay()}
-			onContextMenu={(e) => {e.preventDefault()}}
 			nav-auto={unlocked ? 1 : undefined}
 			{...(unlocked && trigger)}
 		>
