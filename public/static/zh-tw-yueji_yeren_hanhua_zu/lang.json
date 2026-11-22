@@ -1,13 +1,13 @@
 {
   "translation": {
-    "name": "月姬野人汉化组& Hawkwin & SHIROU神父",
-    "desc": "月姬汉化补丁最终版v0.97，发布日期：2026/4/19。由Hawkwin基于SHIROU神父个人汉化补丁v1.6(https://vndb.org/r71804) 修改制作而成，对大部分文本进行了重新校对和翻译，将SHIROU神父在月姬野人汉化组的汉化文本上进行的一些不恰当修改还原成原文，删除了SHIROU神父添加的所有括号注释. Converted to Traditional Chinese with OpenCC.",
-    "url": "https://bbs.sumisora.net/read.php?tid=10940555",
-    "vndb": "https://vndb.org/r71804"
+    "name": "月姬野人漢化組 & Hawkwin & SHIROU神父 & Berunkasuteru",
+    "desc": "《月姬》繁體中文校訂版 V0.99，釋出日期：2026/11/22。以 Hawkwin 的漢化補丁最終版 v0.97（2026/4/19）為底本，保留原譯骨架，對照日文原文全文校訂。校訂規範與關鍵取捨由人工確定，藉助腳本與 LLM 查錯、提供潤色建議和交叉複核，並經人工抽查。Hawkwin 在 SHIROU神父個人漢化補丁 v1.6（https://vndb.org/r71804）的基礎上重新校對和翻譯了大部分文字，恢復了部分月姬野人漢化組的原有譯文，並刪除了 SHIROU神父新增的括號註釋。本繁體版由簡體版以 OpenCC 轉換，並依官方重製版繁體中文用詞校正。 [url='https://github.com/requinDr/tsukiweb-public/issues/142']錯誤回報[/url]",
+    "url": "https://2dfan.com/downloads/42255",
+    "vndb": "https://vndb.org/r151407"
   },
   "translation-pd": {
-    "name": "朱月临时汉化组",
-    "desc": "月姬PLUS+DISC完整汉化V1.1版，发布日期：2012/8/19，【朱月临时汉化组】，翻译：零色ノ夢, soulshooter，程序：仌⊙魔，校对：Nero·Chaos，润色：迷失花园之窗，组织者：酒池墨林. Converted to Traditional Chinese with OpenCC.",
+    "name": "朱月臨時漢化組 & Berunkasuteru",
+    "desc": "月姬PLUS+DISC完整漢化V1.1版，釋出日期：2012/8/19，【朱月臨時漢化組】，翻譯：零色ノ夢, soulshooter，程式：仌⊙魔，校對：Nero·Chaos，潤色：迷失花園之窗，組織者：酒池墨林。V0.99 由 Berunkasuteru 對照日文原文校訂四份 PLUS-DISC 腳本。本繁體版由簡體版以 OpenCC 轉換，並依官方重製版繁體中文用詞校正。 [url='https://github.com/requinDr/tsukiweb-public/issues/142']錯誤回報[/url]",
     "url": "http://bbs.sumisora.org/read.php?tid=11033776&page=1&toread=1",
     "vndb": "https://vndb.org/r22655"
   },
@@ -17,21 +17,21 @@
     "該遊戲包含成人內容，僅適合成熟觀眾。"
   ],
   "title": {
-    "start": "從頭閱讀",
-    "resume": "接續閱讀",
-    "load": "尋找書籤",
-    "config": "設定",
+    "start": "從頭開始閱讀",
+    "resume": "繼續閱讀",
+    "load": "尋找浮簽",
+    "config": "環境設定",
     "extra": "其他",
     "about": {
-      "port": "這是Type-Moon於2000年出版的視覺小說月姬的網路版。",
+      "port": "這是 Type-Moon 於2000年出版的視覺小說月姬的網路版。",
       "project": "該專案位於 %0GitHub%1 上。 喜歡就加個星吧！歡迎貢獻。",
-      "feedback": "發送你的反饋或報告錯誤 %0這裡%1.",
+      "feedback": "請在%0這裡%1提供意見或回報錯誤。",
       "data": "不收集任何資料，所有內容都儲存在你的瀏覽器中。管理你的資料%0這裡%1。",
-      "remake": "請購買並支援重製版 %0月姬$ - A piece of blue glass moon%1."
+      "remake": "請購買並支持重製版 %0月姬 - A piece of blue glass moon%1。"
     },
     "install": "安裝",
     "share": "分享",
-    "copied": "Copied to clipboard"
+    "copied": "已複製到剪貼簿"
   },
   "extra": {
     "gallery": "畫廊",
@@ -40,19 +40,19 @@
     "eclipse": "月蝕"
   },
   "config": {
-    "on": "On",
-    "off": "Off",
+    "on": "開啟",
+    "off": "關閉",
     "reset": "恢復初始設定",
-    "default": "Default",
+    "default": "預設",
     "tab-game": "遊戲",
-    "tab-audio": "聲音",
+    "tab-audio": "聲音設定",
     "tab-controls": "操作設定",
     "tab-advanced": "進階設定",
     "volume-master": "音量",
-    "volume-track": "BGM音量",
-    "volume-se": "效果音",
-    "volume-title-track": "主页音乐音量",
-    "volume-system-se": "系统特效音量",
+    "volume-track": "背景音樂",
+    "volume-se": "音效",
+    "volume-title-track": "主頁音樂音量",
+    "volume-system-se": "系統特效音量",
     "track-source": "音軌來源",
     "track-sources": {
       "original": "原始 (2000)",
@@ -60,9 +60,9 @@
       "tsukibako": "月箱 (2003)"
     },
     "track-source-help": [
-      "[b]原版[/b]: 2000年发售的完整版游戏背景音乐。",
-      "[b]Ever After 版[/b]: 2002年发售的游戏原声带重制版。",
-      "[b]“月箱”版[/b]: 2003年随《月箱》（收录《月姬》、《PLUS-DISC》及《歌月十夜》）发布的重混音版背景音乐。"
+      "[b]原版[/b]: 2000年發售的完整版遊戲背景音樂。",
+      "[b]Ever After 版[/b]: 2002年發售的遊戲原聲帶重製版。",
+      "[b]“月箱”版[/b]: 2003年隨《月箱》（收錄《月姬》、《PLUS-DISC》及《歌月十夜》）釋出的重混音版背景音樂。"
     ],
     "auto-mute": "切換分頁時靜音",
     "ratio": "縱橫比",
@@ -76,54 +76,54 @@
     "adult-title": "成人設定",
     "adult-blur": "模糊縮圖",
     "adult-blur-help": [
-      "對成人場景的縮圖（保存，載入，流程圖，畫廊，…）套用模糊效果。"
+      "對成人場景的縮圖（存檔，讀檔，流程圖，畫廊，…）套用模糊效果。"
     ],
     "adult-warn": "進入成人場景時警告",
-    "fullscreen": "全屏",
+    "fullscreen": "全螢幕",
     "language": "語言",
     "show-locked-content": "解鎖內容",
     "show-locked-content-help": [
-      "顯示完整的畫廊，流程圖，結局，月蝕…，",
-      "并满足开启月姬里线的要求，",
-      "它可以隨時打開和關閉。"
+      "顯示完整的畫廊，流程圖，結局，月蝕…",
+      "並滿足開啟月姬裡線的要求，",
+      "它可以隨時被開啟和關閉。"
     ],
-    "smooth-flashes": "Reduce background flashes",
-    "smooth-flashes-low": "Low",
-    "smooth-flashes-high": "High",
+    "smooth-flashes": "減少背景閃爍",
+    "smooth-flashes-low": "低",
+    "smooth-flashes-high": "高",
     "smooth-flashes-help": [
-      "Replace instant background changes with a fade-in transition.",
-      "The transition lasts 0.08s (%0) or 0.15s (%1)"
+      "以淡入效果取代背景瞬間切換。",
+      "淡入時間為 0.08 秒（%0）或 0.15 秒（%1）。"
     ],
-    "game-font": "Game text font",
+    "game-font": "遊戲文字字型",
     "game-font-help": [
-      "The default font is served with the project.",
-      "To select a different font, input its name. It will be loaded from %0 if available, else from your device."
+      "專案自帶預設字型。",
+      "如需使用其他字型，請輸入字型名稱。若 %0 提供該字型，則從那裡載入。否則將使用裝置上的字型。"
     ],
-    "display-badges": "Display affection points and flags",
+    "display-badges": "顯示好感度和標記",
     "data": "存檔",
     "data-export": "匯出",
     "data-import": "匯入",
     "data-erase": "刪除",
-    "data-erase-warning": "你真的要刪除所有存檔並恢復為初始設定嗎？",
+    "data-erase-warning": "你真的要刪除所有存檔並恢復初始設定嗎？",
     "data-erase-confirm": "刪除了所有的存檔。 如果你在未對設定進行任何更改且未開始新遊戲的情況下離開本網站，則你的電腦上不會保留任何資料",
     "controls": {
       "next": "文字推進",
-      "graphics": "Show / hide text",
-      "back": "Back, Show / Hide menu",
+      "graphics": "顯示/隱藏文字",
+      "back": "返回，顯示/隱藏選單",
       "bg_move": "移動背景影像",
       "auto_play": "自動模式",
       "page_nav": "下一頁/上一頁",
-      "history": "顯示/隱藏履歷",
-      "flowchart": "Open Flowchart",
-      "load": "開啟載入頁面",
-      "save": "開啟保存頁面",
-      "q_save": "快速保存",
-      "q_load": "快速載入",
-      "config": "開啟設定頁面",
+      "history": "顯示/隱藏回顧前文",
+      "flowchart": "顯示/隱藏流程圖",
+      "load": "開啟讀檔頁面",
+      "save": "開啟存檔頁面",
+      "q_save": "快速存檔",
+      "q_load": "快速讀檔",
+      "config": "開啟環境設定頁面",
       "_hold": "按住",
-      "_layer-text": "when text is displayed",
-      "_layer-graphics": "in graphics mode",
-      "_layer-menu": "when menu is opened"
+      "_layer-text": "顯示文字時",
+      "_layer-graphics": "影像模式下",
+      "_layer-menu": "開啟選單時"
     }
   },
   "endings": {
@@ -133,47 +133,47 @@
     "osiete": "教教我吧！知得留老師！"
   },
   "saves": {
-    "title-load": "尋找書籤",
-    "title-save": "貼上書籤",
+    "title-load": "尋找浮簽",
+    "title-save": "貼上浮簽",
     "create": "新存檔",
-    "empty": "找不到存檔資料。",
+    "empty": "未找到存檔資料。",
     "import": "匯入存檔檔案？",
     "export": "匯出",
     "delete": "刪除",
     "delete-warning": "你確定要刪除此存檔嗎？",
     "overwrite-warning": "你確定要覆蓋此存檔嗎？",
-    "quick-save": "快速保存",
-    "local-storage-warning": "存档与设置仅存储在浏览器本地。若长时间未访问，可能会被浏览器自动清理。请务必定期导出并备份存档。",
-    "local-storage-last-export": "最后一次存档导出时间: %0"
+    "quick-save": "快速存檔",
+    "local-storage-warning": "存檔與設定僅儲存在瀏覽器本地。若長時間未訪問，可能會被瀏覽器自動清理。請務必定期匯出並備份存檔。",
+    "local-storage-last-export": "最後一次存檔匯出時間: %0"
   },
   "game": {
     "skip-viewed": "該場景曾顯示過。",
-    "skip-hcontent": "This passage contains adult content.",
+    "skip-hcontent": "本段包含成人內容。",
     "skip-prompt": "要跳過嗎？",
-    "toast-qsave": "進度已保存",
+    "toast-qsave": "進度已儲存",
     "toast-qload": "恢復進度",
     "toast-load-success": "恢復進度",
     "toast-load-fail": "無法恢復進度",
-    "toast-save-fail": "無法保存進度",
+    "toast-save-fail": "無法儲存進度",
     "toast-autoplay-stop": "自動模式停止"
   },
   "menu": {
     "graphics": "顯示影像",
-    "history": "履歷",
-    "save": "貼上書籤",
-    "load": "尋找書籤",
-    "config": "設定",
+    "history": "回顧前文",
+    "save": "貼上浮簽",
+    "load": "尋找浮簽",
+    "config": "環境設定",
     "auto-play": "自動模式",
-    "ffw": "快轉",
-    "title": "標題畫面",
-    "q-save": "快速保存",
-    "q-load": "快速載入",
-    "copy-scene-url": "拷贝场景链接"
+    "ffw": "快進",
+    "title": "標題介面",
+    "q-save": "快速存檔",
+    "q-load": "快速讀檔",
+    "copy-scene-url": "複製場景連結"
   },
   "history": {
-    "load-warning": "Rewind to this scene? Unsaved progress since this point will be lost",
-    "load": "載入",
-    "skipped": "跳過場景 %0."
+    "load-warning": "要回到這個場景嗎？此處之後未儲存的進度將丟失。",
+    "load": "讀檔",
+    "skipped": "跳過場景 %0。"
   },
   "characters": {
     "aki": "秋葉",
@@ -185,19 +185,19 @@
   },
   "plus_disc": {
     "desc": [
-      "月姬 PLUS-DISC 是最早发布于 2001 年的外传作品，包含一部短篇故事以及特典内容。",
-      "提示：你应该先通关月姬本篇。"
+      "月姬 PLUS-DISC 是最早釋出於 2001 年的外傳作品，包含一部短篇故事以及特典內容。",
+      "提示：你應該先通關月姬本篇。"
     ],
-    "viewed": "Viewed",
+    "viewed": "已讀",
     "gallery": "畫廊",
-    "scenes": "Scenes"
+    "scenes": "場景"
   },
   "yes": "是",
   "no": "否",
-  "ok": "是",
+  "ok": "確定",
   "back": "返回",
   "close": "關閉",
-  "hint-confirm": "Confirm",
-  "hint-navigate": "Navigate",
-  "later": "Later"
+  "hint-confirm": "確認",
+  "hint-navigate": "導覽",
+  "later": "稍後"
 }
