@@ -78,7 +78,7 @@
 		grid-template-columns: minmax(240px, 1fr) 2fr;
 		gap: .4rem;
 		padding: .8rem;
-		min-height: 66px;
+		min-height: calc(3.7rem + 1px);
 		border-bottom: 1px dashed var(--separator);
 
 		&:last-of-type {
@@ -121,7 +121,7 @@
 			display: flex;
 			gap: .4em;
 			align-items: center;
-			min-height: 36px; // buttons height
+			min-height: 2.1rem;
 
 			input[type="range"] {
 				appearance: none;
@@ -218,7 +218,7 @@
 		.key {
 			padding: 6px 12px;
 			font-size: .95em;
-			height: 36px;
+			height: calc(2.1rem - 2px);
 			min-width: 36px;
 			letter-spacing: .5px;
 			border-radius: inherit;
@@ -258,7 +258,7 @@
 			border-radius: 0;
 			background: rgba(0 0 0 / .4);
 			color: var(--text-color);
-			height: 36px;
+			height: 2.1rem;
 			transition: border-color 0.2s, box-shadow 0.2s;
 
 			&::-webkit-calendar-picker-indicator {

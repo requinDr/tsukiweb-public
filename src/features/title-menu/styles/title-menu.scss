@@ -218,9 +218,9 @@
 	}
 	.languages {
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(min(120px, 100%), 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(min(8rem, 100%), 1fr));
 		gap: 4px;
-		max-height: 180px;
+		max-height: 11.25rem;
 		overflow-y: auto;
 		scrollbar-gutter: stable both-edges;
 		background-color: var(--message-container-background);
@@ -235,7 +235,7 @@
 
 	.translation-details {
 		line-height: 1.6;
-		height: 306px;
+		height: 19.125rem;
 		overflow-y: auto;
 		scrollbar-gutter: stable both-edges;
 		padding-inline: 2em;
@@ -260,9 +260,6 @@
 			display: flex;
 			flex-wrap: wrap;
 			column-gap: 1em;
-		}
-		.author {
-			font-weight: 600;
 		}
 
 		.pd {

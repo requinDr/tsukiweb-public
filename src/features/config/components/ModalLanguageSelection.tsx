@@ -45,6 +45,7 @@ const ModalLanguageSelection = ({show, setShow}: Props) => {
 								onClick={selectLanguage.bind(null, id)}
 								className="language flag"
 								active={selected}
+								data-autofocus={selected || undefined}
 								audio={audio}
 								clickSound="glass"
 								nav-auto={1}

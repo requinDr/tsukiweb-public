@@ -193,9 +193,7 @@
 			gap: 4px;
 
 			button {
-				padding: 4px 16px;
 				color: var(--text-muted);
-				font-size: 1.3em;
 
 				&:hover, &:focus-visible, .keyboard-navigating &:focus {
 					color: var(--text-color);
@@ -254,7 +252,6 @@
 		display: inline-flex;
 		padding: 0.4em;
 		margin-left: auto;
-		margin-right: 1em;
 		transform-origin: center;
 		&:not(.active) {
 			animation: periodic-shake 10s infinite;
@@ -291,12 +288,6 @@
 			48% {
 				transform: rotate(0deg) scale(1);
 			}
-		}
-	}
-
-	@include mobile-portrait {
-		.warning-button {
-			margin-right: 0;
 		}
 	}
 }
