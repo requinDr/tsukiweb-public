@@ -706,6 +706,26 @@ if %akiha_regard>=1 goto *f502
 ;gosub *s32
 goto *f36
 
+;-BLOCK-502---------------------------------------------------------------------
+*f502
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1502==1 skip 4
+gosub *s502
+mov %1502,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip502,
+		 "　２、不跳過", *s502
+skip 3
+*skip502
+return
+;gosub *s502
+inc %flg6
+goto *f36
+
 ;-BLOCK--33---------------------------------------------------------------------
 *f33
 gosub *regard_update
@@ -745,26 +765,6 @@ return
 ;gosub *s34
 inc %ciel_regard
 goto *f36
-;-BLOCK-502---------------------------------------------------------------------
-*f502
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1502==1 skip 4
-gosub *s502
-mov %1502,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip502,
-		 "　２、不跳過", *s502
-skip 3
-*skip502
-return
-;gosub *s502
-inc %flg6
-goto *f36
-
 ;-BLOCK--89---------------------------------------------------------------------
 *f89
 gosub *regard_update
@@ -1158,6 +1158,2397 @@ skip 3
 return
 ;gosub *s203
 goto *f205
+
+;-------------------------------------------------------------------------------
+;	スクリプトブロック終了
+;-------------------------------------------------------------------------------
+
+;10.txt
+;-------------------------------------------------------------------------------
+;	スクリプトブロック開始
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+;	アルクェイドルート
+;-------------------------------------------------------------------------------
+
+;-BLOCK-183---------------------------------------------------------------------
+*f183
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1183==1 skip 4
+gosub *s183
+mov %1183,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip183,
+		 "　２、不跳過", *s183
+skip 3
+*skip183
+return
+;gosub *s183
+select	"　１、……回家吧。", *f186,
+		"　２、……再等一會兒。", *f184
+
+;-BLOCK-184---------------------------------------------------------------------
+*f184
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1184==1 skip 4
+gosub *s184
+mov %1184,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip184,
+		 "　２、不跳過", *s184
+skip 3
+*skip184
+return
+;gosub *s184
+select	"　１、……再等一會兒。", *f185,
+		"　２、……回家吧。", *f186
+
+;-BLOCK-185---------------------------------------------------------------------
+*f185
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1185==1 skip 4
+gosub *s185
+mov %1185,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip185,
+		 "　２、不跳過", *s185
+skip 3
+*skip185
+return
+;gosub *s185
+select	"　１、……再等一會兒。", *f187,
+		"　２、……回家吧。", *f186
+
+;-BLOCK-186---------------------------------------------------------------------
+*f186
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1186==1 skip 4
+gosub *s186
+mov %1186,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip186,
+		 "　２、不跳過", *s186
+skip 3
+*skip186
+return
+;gosub *s186
+;end
+是否接受「知得留老師的授課」？
+select	"　１、是。",*f518,
+		"　２、否。",*endofplay
+
+;-BLOCK-518---------------------------------------------------------------------
+*f518
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1518==1 skip 4
+gosub *s518
+mov %1518,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip518,
+		 "　２、不跳過", *s518
+skip 3
+*skip518
+return
+;gosub *s518
+;end
+goto *endofplay
+
+;-BLOCK-187---------------------------------------------------------------------
+*f187
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1187==1 skip 4
+gosub *s187
+mov %1187,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip187,
+		 "　２、不跳過", *s187
+skip 3
+*skip187
+return
+;gosub *s187
+if %flgB>=1 goto *f188
+goto *f189
+
+;-BLOCK-188---------------------------------------------------------------------
+*f188
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1188==1 skip 4
+gosub *s188
+mov %1188,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip188,
+		 "　２、不跳過", *s188
+skip 3
+*skip188
+return
+;gosub *s188
+;end
+是否接受「知得留老師的授課」？
+select	"　１、是。",*f519,
+		"　２、否。",*endofplay
+
+;-BLOCK-519---------------------------------------------------------------------
+*f519
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1519==1 skip 4
+gosub *s519
+mov %1519,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip519,
+		 "　２、不跳過", *s519
+skip 3
+*skip519
+return
+;gosub *s519
+;end
+goto *endofplay
+
+;-BLOCK-189---------------------------------------------------------------------
+*f189
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1189==1 skip 4
+gosub *s189
+mov %1189,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip189,
+		 "　２、不跳過", *s189
+skip 3
+*skip189
+return
+;gosub *s189
+select	"　１、趕緊去昨晚那個小巷。", *f190,
+		"　２、……就這樣留在公園這裡。", *f191,
+		"　３、去愛爾奎特的房間看看。", *f192
+
+;-BLOCK-190---------------------------------------------------------------------
+*f190
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1190==1 skip 4
+gosub *s190
+mov %1190,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip190,
+		 "　２、不跳過", *s190
+skip 3
+*skip190
+return
+;gosub *s190
+goto *f193
+
+;-BLOCK-191---------------------------------------------------------------------
+*f191
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1191==1 skip 4
+gosub *s191
+mov %1191,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip191,
+		 "　２、不跳過", *s191
+skip 3
+*skip191
+return
+;gosub *s191
+add %ark_regard,2
+goto *f193
+
+;-BLOCK-192---------------------------------------------------------------------
+*f192
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1192==1 skip 4
+gosub *s192
+mov %1192,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip192,
+		 "　２、不跳過", *s192
+skip 3
+*skip192
+return
+;gosub *s192
+
+;-BLOCK-193---------------------------------------------------------------------
+*f193
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1193==1 skip 4
+gosub *s193
+mov %1193,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip193,
+		 "　２、不跳過", *s193
+skip 3
+*skip193
+return
+;gosub *s193
+goto *f194
+
+
+;-------------------------------------------------------------------------------
+;	シエルルート
+;-------------------------------------------------------------------------------
+
+;-BLOCK-284---------------------------------------------------------------------
+*f284
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1284==1 skip 4
+gosub *s284
+mov %1284,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip284,
+		 "　２、不跳過", *s284
+skip 3
+*skip284
+return
+;gosub *s284
+select	"　１、琥珀別煩我。", *f285,
+		"　２、琥珀說的有道理。", *f286
+
+;-BLOCK-285---------------------------------------------------------------------
+*f285
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1285==1 skip 4
+gosub *s285
+mov %1285,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip285,
+		 "　２、不跳過", *s285
+skip 3
+*skip285
+return
+;gosub *s285
+goto *f287
+
+;-BLOCK-286---------------------------------------------------------------------
+*f286
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1286==1 skip 4
+gosub *s286
+mov %1286,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip286,
+		 "　２、不跳過", *s286
+skip 3
+*skip286
+return
+;gosub *s286
+goto *f287
+
+;-BLOCK-287---------------------------------------------------------------------
+*f287
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1287==1 skip 4
+gosub *s287
+mov %1287,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip287,
+		 "　２、不跳過", *s287
+skip 3
+*skip287
+return
+;gosub *s287
+goto *f288
+
+;-------------------------------------------------------------------------------
+;	秋葉ルート
+;-------------------------------------------------------------------------------
+
+;-BLOCK-365---------------------------------------------------------------------
+*f365
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1365==1 skip 4
+gosub *s365
+mov %1365,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip365,
+		 "　２、不跳過", *s365
+skip 3
+*skip365
+return
+;gosub *s365
+select	"　１、東館的一樓。", *f366,
+		"　２、西館的一樓。", *f367,
+		"　３、東館的二樓。", *f368,
+		"　４、西館的二樓。", *f369
+
+;-BLOCK-366---------------------------------------------------------------------
+*f366
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1366==1 skip 4
+gosub *s366
+mov %1366,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip366,
+		 "　２、不跳過", *s366
+skip 3
+*skip366
+return
+;gosub *s366
+dec %akiha_regard
+goto *f370
+
+;-BLOCK-367---------------------------------------------------------------------
+*f367
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1367==1 skip 4
+gosub *s367
+mov %1367,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip367,
+		 "　２、不跳過", *s367
+skip 3
+*skip367
+return
+;gosub *s367
+dec %akiha_regard
+goto *f370
+
+;-BLOCK-368---------------------------------------------------------------------
+*f368
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1368==1 skip 4
+gosub *s368
+mov %1368,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip368,
+		 "　２、不跳過", *s368
+skip 3
+*skip368
+return
+;gosub *s368
+inc %akiha_regard
+goto *f370
+
+;-BLOCK-369---------------------------------------------------------------------
+*f369
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1369==1 skip 4
+gosub *s369
+mov %1369,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip369,
+		 "　２、不跳過", *s369
+skip 3
+*skip369
+return
+;gosub *s369
+dec %akiha_regard
+goto *f370
+
+;-BLOCK-370---------------------------------------------------------------------
+*f370
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1370==1 skip 4
+gosub *s370
+mov %1370,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip370,
+		 "　２、不跳過", *s370
+skip 3
+*skip370
+return
+;gosub *s370
+select	"　１、取下眼鏡，殺了他。", *f371,
+		"　２、首先應該離開秋葉的房間。", *f372
+
+;-BLOCK-371---------------------------------------------------------------------
+*f371
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1371==1 skip 4
+gosub *s371
+mov %1371,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip371,
+		 "　２、不跳過", *s371
+skip 3
+*skip371
+return
+;gosub *s371
+goto *f373
+
+;-BLOCK-372---------------------------------------------------------------------
+*f372
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1372==1 skip 4
+gosub *s372
+mov %1372,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip372,
+		 "　２、不跳過", *s372
+skip 3
+*skip372
+return
+;gosub *s372
+goto *f373
+
+;-BLOCK-373---------------------------------------------------------------------
+*f373
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1373==1 skip 4
+gosub *s373
+mov %1373,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip373,
+		 "　２、不跳過", *s373
+skip 3
+*skip373
+return
+;gosub *s373
+goto *f374
+
+;-------------------------------------------------------------------------------
+;	翡翠ルート
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+;	琥珀ルート
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+;	スクリプトブロック終了
+;-------------------------------------------------------------------------------
+
+;11.txt
+;-------------------------------------------------------------------------------
+;	スクリプトブロック開始
+;-------------------------------------------------------------------------------
+
+
+;-------------------------------------------------------------------------------
+;	アルクェイドルート
+;-------------------------------------------------------------------------------
+
+;-BLOCK-194---------------------------------------------------------------------
+*f194
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1194==1 skip 4
+gosub *s194
+mov %1194,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip194,
+		 "　２、不跳過", *s194
+skip 3
+*skip194
+return
+;gosub *s194
+select	"　１、徒勞地尋找愛爾奎特。", *f195,
+		"　２、老老實實地回家。", *f196,
+		"　３、既然這樣，只能自己去找出羅亞了。", *f197
+
+;-BLOCK-195---------------------------------------------------------------------
+*f195
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1195==1 skip 4
+gosub *s195
+mov %1195,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip195,
+		 "　２、不跳過", *s195
+skip 3
+*skip195
+return
+;gosub *s195
+inc %ark_regard
+goto *f198
+
+;-BLOCK-196---------------------------------------------------------------------
+*f196
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1196==1 skip 4
+gosub *s196
+mov %1196,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip196,
+		 "　２、不跳過", *s196
+skip 3
+*skip196
+return
+;gosub *s196
+goto *f198
+
+;-BLOCK-197---------------------------------------------------------------------
+*f197
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1197==1 skip 4
+gosub *s197
+mov %1197,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip197,
+		 "　２、不跳過", *s197
+skip 3
+*skip197
+return
+;gosub *s197
+goto *f198
+
+;-BLOCK-198---------------------------------------------------------------------
+*f198
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1198==1 skip 4
+gosub *s198
+mov %1198,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip198,
+		 "　２、不跳過", *s198
+skip 3
+*skip198
+return
+;gosub *s198
+goto *f199
+
+
+;-------------------------------------------------------------------------------
+;	シエルルート
+;-------------------------------------------------------------------------------
+
+;-BLOCK-288---------------------------------------------------------------------
+*f288
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1288==1 skip 4
+gosub *s288
+mov %1288,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip288,
+		 "　２、不跳過", *s288
+skip 3
+*skip288
+return
+;gosub *s288
+if %ciel_regard>=11 goto *f292
+goto *f289
+
+;-BLOCK-289---------------------------------------------------------------------
+*f289
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1289==1 skip 4
+gosub *s289
+mov %1289,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip289,
+		 "　２、不跳過", *s289
+skip 3
+*skip289
+return
+;gosub *s289
+goto *f289a
+
+;-BLOCK-289a--------------------------------------------------------------------
+*f289a
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1789==1 skip 4
+gosub *s289a
+mov %1789,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip289a,
+		 "　２、不跳過", *s289a
+skip 3
+*skip289a
+return
+;gosub *s289a
+;end
+是否接受「知得留老師的授課」？
+select	"　１、是。",*f523,
+		"　２、否。",*endofplay
+
+;-BLOCK-523---------------------------------------------------------------------
+*f523
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1523==1 skip 4
+gosub *s523
+mov %1523,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip523,
+		 "　２、不跳過", *s523
+skip 3
+*skip523
+return
+;gosub *s523
+;end
+goto *endofplay
+
+;-BLOCK-290---------------------------------------------------------------------
+
+;-BLOCK-291---------------------------------------------------------------------
+
+;-BLOCK-292---------------------------------------------------------------------
+*f292
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1292==1 skip 4
+gosub *s292
+mov %1292,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip292,
+		 "　２、不跳過", *s292
+skip 3
+*skip292
+return
+;gosub *s292
+select	"　１、不行，不立即阻止琥珀的話", *f293,
+		"　２、……僅僅讓她把食物放在這裡。", *f294
+
+;-BLOCK-293---------------------------------------------------------------------
+*f293
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1293==1 skip 4
+gosub *s293
+mov %1293,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip293,
+		 "　２、不跳過", *s293
+skip 3
+*skip293
+return
+;gosub *s293
+goto *f295
+
+;-BLOCK-294---------------------------------------------------------------------
+*f294
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1294==1 skip 4
+gosub *s294
+mov %1294,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip294,
+		 "　２、不跳過", *s294
+skip 3
+*skip294
+return
+;gosub *s294
+inc %flgJ
+goto *f295
+
+;-BLOCK-295---------------------------------------------------------------------
+*f295
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1295==1 skip 4
+gosub *s295
+mov %1295,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip295,
+		 "　２、不跳過", *s295
+skip 3
+*skip295
+return
+;gosub *s295
+select	"　１、……不能被她看見，這樣的自己。", *f296,
+		"　２、……就算是這樣，我都想聽聽她的聲音。", *f297
+
+;-BLOCK-296---------------------------------------------------------------------
+*f296
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1296==1 skip 4
+gosub *s296
+mov %1296,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip296,
+		 "　２、不跳過", *s296
+skip 3
+*skip296
+return
+;gosub *s296
+goto *f289a
+
+;-BLOCK-297---------------------------------------------------------------------
+*f297
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1297==1 skip 4
+gosub *s297
+mov %1297,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip297,
+		 "　２、不跳過", *s297
+skip 3
+*skip297
+return
+;gosub *s297
+select	"　１、向前跳開。", *f299,
+		"　２、向後跳開。", *f298
+
+;-BLOCK-298---------------------------------------------------------------------
+*f298
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1298==1 skip 4
+gosub *s298
+mov %1298,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip298,
+		 "　２、不跳過", *s298
+skip 3
+*skip298
+return
+;gosub *s298
+;end
+是否接受「知得留老師的授課」？
+select	"　１、是。",*f524,
+		"　２、否。",*endofplay
+
+;-BLOCK-524---------------------------------------------------------------------
+*f524
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1524==1 skip 4
+gosub *s524
+mov %1524,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip524,
+		 "　２、不跳過", *s524
+skip 3
+*skip524
+return
+;gosub *s524
+;end
+goto *endofplay
+
+;-BLOCK-299---------------------------------------------------------------------
+*f299
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1299==1 skip 4
+gosub *s299
+mov %1299,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip299,
+		 "　２、不跳過", *s299
+skip 3
+*skip299
+return
+;gosub *s299
+if %flgJ>=1 goto *f300
+select	"　１、……取下眼鏡。", *f301,
+		"　２、……不取下眼鏡。", *f302
+
+;-BLOCK-300---------------------------------------------------------------------
+*f300
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1300==1 skip 4
+gosub *s300
+mov %1300,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip300,
+		 "　２、不跳過", *s300
+skip 3
+*skip300
+return
+;gosub *s300
+goto *f301
+
+;-BLOCK-301---------------------------------------------------------------------
+*f301
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1301==1 skip 4
+gosub *s301
+mov %1301,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip301,
+		 "　２、不跳過", *s301
+skip 3
+*skip301
+return
+;gosub *s301
+;end
+是否接受「知得留老師的授課」？
+select	"　１、是。",*f525,
+		"　２、否。",*endofplay
+
+;-BLOCK-525---------------------------------------------------------------------
+*f525
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1525==1 skip 4
+gosub *s525
+mov %1525,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip525,
+		 "　２、不跳過", *s525
+skip 3
+*skip525
+return
+;gosub *s525
+;end
+goto *endofplay
+
+;-BLOCK-302---------------------------------------------------------------------
+*f302
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1302==1 skip 4
+gosub *s302
+mov %1302,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip302,
+		 "　２、不跳過", *s302
+skip 3
+*skip302
+return
+;gosub *s302
+select	"　１、喜歡素顏的學姐。", *f504,
+		"　２、沒有眼鏡的學姐簡直就不是學姐！", *f505
+
+
+;-BLOCK-504---------------------------------------------------------------------
+*f504
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1504==1 skip 4
+gosub *s504
+mov %1504,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip504,
+		 "　２、不跳過", *s504
+skip 3
+*skip504
+return
+;gosub *s504
+goto *f307
+
+;-BLOCK-505---------------------------------------------------------------------
+*f505
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1505==1 skip 4
+gosub *s505
+mov %1505,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip505,
+		 "　２、不跳過", *s505
+skip 3
+*skip505
+return
+;gosub *s505
+goto *f307
+
+;-------------------------------------------------------------------------------
+;	秋葉ルート
+;-------------------------------------------------------------------------------
+
+;-BLOCK-374---------------------------------------------------------------------
+*f374
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1374==1 skip 4
+gosub *s374
+mov %1374,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip374,
+		 "　２、不跳過", *s374
+skip 3
+*skip374
+return
+;gosub *s374
+goto *f375
+
+;-BLOCK-375---------------------------------------------------------------------
+*f375
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1375==1 skip 4
+gosub *s375
+mov %1375,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip375,
+		 "　２、不跳過", *s375
+skip 3
+*skip375
+return
+;gosub *s375
+select	"　１、立刻，跑著追上去。", *f376,
+		"　２、先喘口氣，冷靜下來再追。", *f378
+
+;-BLOCK-376---------------------------------------------------------------------
+*f376
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1376==1 skip 4
+gosub *s376
+mov %1376,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip376,
+		 "　２、不跳過", *s376
+skip 3
+*skip376
+return
+;gosub *s376
+;end
+是否接受「知得留老師的授課」？
+select	"　１、是。",*f537,
+		"　２、否。",*endofplay
+
+;-BLOCK-537---------------------------------------------------------------------
+*f537
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1537==1 skip 4
+gosub *s537
+mov %1537,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip537,
+		 "　２、不跳過", *s537
+skip 3
+*skip537
+return
+;gosub *s537
+;end
+goto *endofplay
+
+;-BLOCK-378---------------------------------------------------------------------
+*f378
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1378==1 skip 4
+gosub *s378
+mov %1378,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip378,
+		 "　２、不跳過", *s378
+skip 3
+*skip378
+return
+;gosub *s378
+select	"　１、……停下腳步。", *f380,
+		"　２、……不能再被那傢伙的話迷惑了。", *f379
+
+;-BLOCK-379---------------------------------------------------------------------
+*f379
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1379==1 skip 4
+gosub *s379
+mov %1379,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip379,
+		 "　２、不跳過", *s379
+skip 3
+*skip379
+return
+;gosub *s379
+;end
+是否接受「知得留老師的授課」？
+select	"　１、是。",*f538,
+		"　２、否。",*endofplay
+
+;-BLOCK-538---------------------------------------------------------------------
+*f538
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1538==1 skip 4
+gosub *s538
+mov %1538,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip538,
+		 "　２、不跳過", *s538
+skip 3
+*skip538
+return
+;gosub *s538
+;end
+goto *endofplay
+
+;-BLOCK-380---------------------------------------------------------------------
+*f380
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1380==1 skip 4
+gosub *s380
+mov %1380,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip380,
+		 "　２、不跳過", *s380
+skip 3
+*skip380
+return
+;gosub *s380
+select	"　１、……去追秋葉。", *f381,
+		"　２、……我，做不到。", *f509
+
+;-BLOCK-381---------------------------------------------------------------------
+*f381
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1381==1 skip 4
+gosub *s381
+mov %1381,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip381,
+		 "　２、不跳過", *s381
+skip 3
+*skip381
+return
+;gosub *s381
+if %akiha_regard<9 goto *f382
+select	"　１、…………遵守，約定。", *f382,
+		"　２、…………只有這件事，我做不到。", *f383
+
+;-BLOCK-509---------------------------------------------------------------------
+*f509
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1509==1 skip 4
+gosub *s509
+mov %1509,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip509,
+		 "　２、不跳過", *s509
+skip 3
+*skip509
+return
+;gosub *s509
+;end
+是否接受「知得留老師的授課」？
+select	"　１、是。",*f539,
+		"　２、否。",*endofplay
+
+;-BLOCK-539---------------------------------------------------------------------
+*f539
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1539==1 skip 4
+gosub *s539
+mov %1539,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip539,
+		 "　２、不跳過", *s539
+skip 3
+*skip539
+return
+;gosub *s539
+;end
+goto *endofplay
+
+;-BLOCK-382---------------------------------------------------------------------
+*f382
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1382==1 skip 4
+gosub *s382
+mov %1382,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip382,
+		 "　２、不跳過", *s382
+skip 3
+*skip382
+return
+;gosub *s382
+;end
+是否接受「知得留老師的授課」？
+select	"　１、是。",*f540,
+		"　２、否。",*endofplay
+
+;-BLOCK-540---------------------------------------------------------------------
+*f540
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1540==1 skip 4
+gosub *s540
+mov %1540,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip540,
+		 "　２、不跳過", *s540
+skip 3
+*skip540
+return
+;gosub *s540
+;end
+goto *endofplay
+
+;-BLOCK-383---------------------------------------------------------------------
+*f383
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1383==1 skip 4
+gosub *s383
+mov %1383,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip383,
+		 "　２、不跳過", *s383
+skip 3
+*skip383
+return
+;gosub *s383
+select	"　１、……把這條命，還給秋葉。", *f385,
+		"　２、……這種事，我做不到。", *f384
+
+;-BLOCK-384---------------------------------------------------------------------
+*f384
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1384==1 skip 4
+gosub *s384
+mov %1384,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip384,
+		 "　２、不跳過", *s384
+skip 3
+*skip384
+return
+;gosub *s384
+;end
+inc %clear_akiha
+inc %cleared
+inc %clear_akiha_good
+是否接受「知得留老師的授課」？
+select	"　１、是。",*f542,
+		"　２、否。",*endofplay
+
+;-BLOCK-542---------------------------------------------------------------------
+*f542
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1542==1 skip 4
+gosub *s542
+mov %1542,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip542,
+		 "　２、不跳過", *s542
+skip 3
+*skip542
+return
+;gosub *s542
+;end
+goto *endofplay
+
+;-BLOCK-385---------------------------------------------------------------------
+*f385
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1385==1 skip 4
+gosub *s385
+mov %1385,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip385,
+		 "　２、不跳過", *s385
+skip 3
+*skip385
+return
+;gosub *s385
+;end
+inc %clear_akiha
+inc %cleared
+inc %clear_akiha_true
+是否接受「知得留老師的授課」？
+select	"　１、是。",*f541,
+		"　２、否。",*endofplay
+
+;-BLOCK-541---------------------------------------------------------------------
+*f541
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1541==1 skip 4
+gosub *s541
+mov %1541,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip541,
+		 "　２、不跳過", *s541
+skip 3
+*skip541
+return
+;gosub *s541
+;end
+goto *endofplay
+
+;-------------------------------------------------------------------------------
+;	翡翠ルート
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+;	琥珀ルート
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+;	スクリプトブロック終了
+;-------------------------------------------------------------------------------
+
+;12.txt
+;-------------------------------------------------------------------------------
+;	スクリプトブロック開始
+;-------------------------------------------------------------------------------
+
+
+;-------------------------------------------------------------------------------
+;	アルクェイドルート
+;-------------------------------------------------------------------------------
+
+;-BLOCK-199---------------------------------------------------------------------
+*f199
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1199==1 skip 4
+gosub *s199
+mov %1199,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip199,
+		 "　２、不跳過", *s199
+skip 3
+*skip199
+return
+;gosub *s199
+if %ark_normalcleared!=0 goto *f503
+
+*f199_0
+gosub *regard_update
+;if %ark_regard>=16 goto *f53
+goto *f52
+
+;-BLOCK-503---------------------------------------------------------------------
+*f503
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1503==1 skip 4
+gosub *s503
+mov %1503,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip503,
+		 "　２、不跳過", *s503
+skip 3
+*skip503
+return
+;gosub *s503
+select	"　１、堅守約定。", *f52a,
+		"　２、不能忘了愛爾奎特。", *f53a
+
+;-BLOCK--52---------------------------------------------------------------------
+*f52
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1052==1 skip 4
+gosub *s52
+mov %1052,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip52,
+		 "　２、不跳過", *s52
+skip 3
+*skip52
+return
+;gosub *s52
+goto *f52a
+
+;-BLOCK--52a--------------------------------------------------------------------
+*f52a
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1552==1 skip 4
+gosub *s52a
+mov %1552,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip52a,
+		 "　２、不跳過", *s52a
+skip 3
+*skip52a
+return
+;gosub *s52a
+;end
+inc %ark_normalcleared
+inc %clear_ark
+inc %cleared
+inc %clear_ark_true
+是否接受「知得留老師的授課」？
+select	"　１、是。",*f520,
+		"　２、否。",*endofplay
+
+;-BLOCK-520---------------------------------------------------------------------
+*f520
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1520==1 skip 4
+gosub *s520
+mov %1520,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip520,
+		 "　２、不跳過", *s520
+skip 3
+*skip520
+return
+;gosub *s520
+;end
+goto *endofplay
+
+
+;-BLOCK--53---------------------------------------------------------------------
+*f53
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1053==1 skip 4
+gosub *s53
+mov %1053,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip53,
+		 "　２、不跳過", *s53
+skip 3
+*skip53
+return
+;gosub *s53
+goto *f53a
+
+;-BLOCK--53a--------------------------------------------------------------------
+*f53a
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1553==1 skip 4
+gosub *s53a
+mov %1553,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip53a,
+		 "　２、不跳過", *s53a
+skip 3
+*skip53a
+return
+;gosub *s53a
+;end
+inc %clear_ark
+inc %cleared
+inc %clear_ark_good
+是否接受「知得留老師的授課」？
+select	"　１、是。",*f521,
+		"　２、否。",*endofplay
+
+;-BLOCK-521---------------------------------------------------------------------
+*f521
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1521==1 skip 4
+gosub *s521
+mov %1521,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip521,
+		 "　２、不跳過", *s521
+skip 3
+*skip521
+return
+;gosub *s521
+;end
+goto *endofplay
+
+
+;-------------------------------------------------------------------------------
+;	シエルルート
+;-------------------------------------------------------------------------------
+
+;-BLOCK-304---------------------------------------------------------------------
+
+;-BLOCK-305---------------------------------------------------------------------
+
+;-BLOCK-306---------------------------------------------------------------------
+
+;-BLOCK-303---------------------------------------------------------------------
+
+;-BLOCK-307---------------------------------------------------------------------
+*f307
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1307==1 skip 4
+gosub *s307
+mov %1307,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip307,
+		 "　２、不跳過", *s307
+skip 3
+*skip307
+return
+;gosub *s307
+select	"　１、順從愛爾奎特。", *f308,
+		"　２、不順從愛爾奎特。", *f310
+;goto *f310
+
+;-BLOCK-308---------------------------------------------------------------------
+*f308
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1308==1 skip 4
+gosub *s308
+mov %1308,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip308,
+		 "　２、不跳過", *s308
+skip 3
+*skip308
+return
+;gosub *s308
+;end
+inc %clear_ciel
+inc %cleared
+inc %clear_ciel_good
+是否接受「知得留老師的授課」？
+select	"　１、是。",*f526,
+		"　２、否。",*endofplay
+
+;-BLOCK-526---------------------------------------------------------------------
+*f526
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1526==1 skip 4
+gosub *s526
+mov %1526,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip526,
+		 "　２、不跳過", *s526
+skip 3
+*skip526
+return
+;gosub *s526
+;end
+goto *endofplay
+
+;-BLOCK-309---------------------------------------------------------------------
+
+;-BLOCK-310---------------------------------------------------------------------
+*f310
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1310==1 skip 4
+gosub *s310
+mov %1310,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip310,
+		 "　２、不跳過", *s310
+skip 3
+*skip310
+return
+;gosub *s310
+;end
+inc %clear_ciel
+inc %cleared
+inc %clear_ciel_true
+是否接受「知得留老師的授課」？
+select	"　１、是。",*f527,
+		"　２、否。",*endofplay
+
+;-BLOCK-527---------------------------------------------------------------------
+*f527
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1527==1 skip 4
+gosub *s527
+mov %1527,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip527,
+		 "　２、不跳過", *s527
+skip 3
+*skip527
+return
+;gosub *s527
+;end
+goto *endofplay
+
+;-BLOCK-311---------------------------------------------------------------------
+
+;-BLOCK-204---------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+;	秋葉ルート
+;-------------------------------------------------------------------------------
+
+;-------------------------------------------------------------------------------
+;	翡翠ルート
+;-------------------------------------------------------------------------------
+
+;-BLOCK-403---------------------------------------------------------------------
+*f403
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1403==1 skip 4
+gosub *s403
+mov %1403,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip403,
+		 "　２、不跳過", *s403
+skip 3
+*skip403
+return
+;gosub *s403
+goto *f405
+
+;-BLOCK-404---------------------------------------------------------------------
+*f404
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1404==1 skip 4
+gosub *s404
+mov %1404,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip404,
+		 "　２、不跳過", *s404
+skip 3
+*skip404
+return
+;gosub *s404
+goto *f405
+
+;-BLOCK-405---------------------------------------------------------------------
+*f405
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1405==1 skip 4
+gosub *s405
+mov %1405,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip405,
+		 "　２、不跳過", *s405
+skip 3
+*skip405
+return
+;gosub *s405
+select	"　１、打開門鎖。", *f407,
+		"　２、……我為什麼會把門鎖上呢？", *f406
+;-BLOCK-406---------------------------------------------------------------------
+*f406
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1406==1 skip 4
+gosub *s406
+mov %1406,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip406,
+		 "　２、不跳過", *s406
+skip 3
+*skip406
+return
+;gosub *s406
+goto *f408
+
+;-BLOCK-407---------------------------------------------------------------------
+*f407
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1407==1 skip 4
+gosub *s407
+mov %1407,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip407,
+		 "　２、不跳過", *s407
+skip 3
+*skip407
+return
+;gosub *s407
+goto *f408
+
+;-BLOCK-408---------------------------------------------------------------------
+*f408
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1408==1 skip 4
+gosub *s408
+mov %1408,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip408,
+		 "　２、不跳過", *s408
+skip 3
+*skip408
+return
+;gosub *s408
+if %hisui_regard<5 goto *f410
+goto *f409
+
+;-BLOCK-409---------------------------------------------------------------------
+*f409
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1409==1 skip 4
+gosub *s409
+mov %1409,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip409,
+		 "　２、不跳過", *s409
+skip 3
+*skip409
+return
+;gosub *s409
+if %clear_hisui!=0 goto *f411
+goto *f412
+
+
+;-BLOCK-410---------------------------------------------------------------------
+*f410
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1410==1 skip 4
+gosub *s410
+mov %1410,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip410,
+		 "　２、不跳過", *s410
+skip 3
+*skip410
+return
+;gosub *s410
+;end
+是否接受「知得留老師的授課」？
+select	"　１、是。",*f529,
+		"　２、否。",*endofplay
+
+;-BLOCK-529---------------------------------------------------------------------
+*f529
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1529==1 skip 4
+gosub *s529
+mov %1529,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip529,
+		 "　２、不跳過", *s529
+skip 3
+*skip529
+return
+;gosub *s529
+;end
+goto *endofplay
+
+;-BLOCK-411---------------------------------------------------------------------
+*f411
+gosub *regard_update
+;gosub *s411
+br
+select	"　１、呼喊秋葉的名字。", *f412,
+		"　２、呼喊琥珀的名字。", *f413
+
+
+;-BLOCK-412---------------------------------------------------------------------
+*f412
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1412==1 skip 4
+gosub *s412
+mov %1412,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip412,
+		 "　２、不跳過", *s412
+skip 3
+*skip412
+return
+;gosub *s412
+;end
+inc %clear_hisui
+inc %cleared
+inc %clear_hisui_true
+是否接受「知得留老師的授課」？
+select	"　１、是。",*f530,
+		"　２、否。",*endofplay
+
+;-BLOCK-530---------------------------------------------------------------------
+*f530
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1530==1 skip 4
+gosub *s530
+mov %1530,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip530,
+		 "　２、不跳過", *s530
+skip 3
+*skip530
+return
+;gosub *s530
+;end
+goto *endofplay
+
+;-BLOCK-413---------------------------------------------------------------------
+*f413
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1413==1 skip 4
+gosub *s413
+mov %1413,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip413,
+		 "　２、不跳過", *s413
+skip 3
+*skip413
+return
+;gosub *s413
+;end
+inc %clear_hisui
+inc %cleared
+inc %clear_hisui_good
+是否接受「知得留老師的授課」？
+select	"　１、是。",*f531,
+		"　２、否。",*endofplay
+
+;-BLOCK-531---------------------------------------------------------------------
+*f531
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1531==1 skip 4
+gosub *s531
+mov %1531,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip531,
+		 "　２、不跳過", *s531
+skip 3
+*skip531
+return
+;gosub *s531
+;end
+goto *endofplay
+
+;-------------------------------------------------------------------------------
+;	琥珀ルート
+;-------------------------------------------------------------------------------
+
+;-BLOCK-416---------------------------------------------------------------------
+*f416
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1416==1 skip 4
+gosub *s416
+mov %1416,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip416,
+		 "　２、不跳過", *s416
+skip 3
+*skip416
+return
+;gosub *s416
+select	"　１、去會見琥珀。", *f417,
+		"　２、去槙久的房間調查看看。", *f418
+
+;-BLOCK-417---------------------------------------------------------------------
+*f417
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1417==1 skip 4
+gosub *s417
+mov %1417,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip417,
+		 "　２、不跳過", *s417
+skip 3
+*skip417
+return
+;gosub *s417
+inc %flgR
+goto *f419
+
+;-BLOCK-418---------------------------------------------------------------------
+*f418
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1418==1 skip 4
+gosub *s418
+mov %1418,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip418,
+		 "　２、不跳過", *s418
+skip 3
+*skip418
+return
+;gosub *s418
+goto *f419
+
+;-BLOCK-419---------------------------------------------------------------------
+*f419
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1419==1 skip 4
+gosub *s419
+mov %1419,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip419,
+		 "　２、不跳過", *s419
+skip 3
+*skip419
+return
+;gosub *s419
+select	"　１、……試著外出。", *f420,
+		"　２、乖乖回房間。", *f421
+
+;-BLOCK-420---------------------------------------------------------------------
+*f420
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1420==1 skip 4
+gosub *s420
+mov %1420,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip420,
+		 "　２、不跳過", *s420
+skip 3
+*skip420
+return
+;gosub *s420
+goto *f422
+
+;-BLOCK-421---------------------------------------------------------------------
+*f421
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1421==1 skip 4
+gosub *s421
+mov %1421,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip421,
+		 "　２、不跳過", *s421
+skip 3
+*skip421
+return
+;gosub *s421
+goto *f422
+
+;-BLOCK-422---------------------------------------------------------------------
+*f422
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1422==1 skip 4
+gosub *s422
+mov %1422,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip422,
+		 "　２、不跳過", *s422
+skip 3
+*skip422
+return
+;gosub *s422
+if %flgR>=1 goto *f423
+goto *f424
+
+;-BLOCK-423---------------------------------------------------------------------
+*f423
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1423==1 skip 4
+gosub *s423
+mov %1423,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip423,
+		 "　２、不跳過", *s423
+skip 3
+*skip423
+return
+;gosub *s423
+goto *f425
+
+;-BLOCK-424---------------------------------------------------------------------
+*f424
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1424==1 skip 4
+gosub *s424
+mov %1424,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip424,
+		 "　２、不跳過", *s424
+skip 3
+*skip424
+return
+;gosub *s424
+goto *f425
+
+;-BLOCK-425---------------------------------------------------------------------
+*f425
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1425==1 skip 4
+gosub *s425
+mov %1425,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip425,
+		 "　２、不跳過", *s425
+skip 3
+*skip425
+return
+;gosub *s425
+select	"　１、――――在這裡解決掉。", *f426,
+		"　２、――――暫且撤退。", *f427
+
+;-BLOCK-426---------------------------------------------------------------------
+*f426
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1426==1 skip 4
+gosub *s426
+mov %1426,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip426,
+		 "　２、不跳過", *s426
+skip 3
+*skip426
+return
+;gosub *s426
+;end
+是否接受「知得留老師的授課」？
+select	"　１、是。",*f543,
+		"　２、否。",*endofplay
+
+;-BLOCK-543---------------------------------------------------------------------
+*f543
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1543==1 skip 4
+gosub *s543
+mov %1543,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip543,
+		 "　２、不跳過", *s543
+skip 3
+*skip543
+return
+;gosub *s543
+;end
+goto *endofplay
+
+;-BLOCK-427---------------------------------------------------------------------
+*f427
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1427==1 skip 4
+gosub *s427
+mov %1427,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip427,
+		 "　２、不跳過", *s427
+skip 3
+*skip427
+return
+;gosub *s427
+select	"　１、……在被注意到之前解決掉。", *f429,
+		"　２、……等她通過後從背後襲擊。", *f428
+
+;-BLOCK-428---------------------------------------------------------------------
+*f428
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1428==1 skip 4
+gosub *s428
+mov %1428,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip428,
+		 "　２、不跳過", *s428
+skip 3
+*skip428
+return
+;gosub *s428
+;end
+是否接受「知得留老師的授課」？
+select	"　１、是。",*f544,
+		"　２、否。",*endofplay
+
+;-BLOCK-544---------------------------------------------------------------------
+*f544
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1544==1 skip 4
+gosub *s544
+mov %1544,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip544,
+		 "　２、不跳過", *s544
+skip 3
+*skip544
+return
+;gosub *s544
+;end
+goto *endofplay
+
+;-BLOCK-429---------------------------------------------------------------------
+*f429
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1429==1 skip 4
+gosub *s429
+mov %1429,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip429,
+		 "　２、不跳過", *s429
+skip 3
+*skip429
+return
+;gosub *s429
+;end
+inc %clear_kohaku
+inc %cleared
+inc %clear_kohaku_true
+是否接受「知得留老師的授課」？
+select	"　１、是。",*f545,
+		"　２、否。",*endofplay
+
+;-BLOCK-545---------------------------------------------------------------------
+*f545
+gosub *regard_update
+!sd
+if %sceneskip==1 && %1545==1 skip 4
+gosub *s545
+mov %1545,1
+skip 9
+該場景曾顯示過。
+跳過嗎？
+br
+selgosub "　１、跳過", *skip545,
+		 "　２、不跳過", *s545
+skip 3
+*skip545
+return
+;gosub *s545
+;end
+goto *endofplay
 
 ;-------------------------------------------------------------------------------
 ;	スクリプトブロック終了
@@ -7501,2397 +9892,6 @@ goto *endofplay
 ;-------------------------------------------------------------------------------
 ;	琥珀ルート
 ;-------------------------------------------------------------------------------
-
-;-------------------------------------------------------------------------------
-;	スクリプトブロック終了
-;-------------------------------------------------------------------------------
-
-;10.txt
-;-------------------------------------------------------------------------------
-;	スクリプトブロック開始
-;-------------------------------------------------------------------------------
-
-;-------------------------------------------------------------------------------
-;	アルクェイドルート
-;-------------------------------------------------------------------------------
-
-;-BLOCK-183---------------------------------------------------------------------
-*f183
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1183==1 skip 4
-gosub *s183
-mov %1183,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip183,
-		 "　２、不跳過", *s183
-skip 3
-*skip183
-return
-;gosub *s183
-select	"　１、……回家吧。", *f186,
-		"　２、……再等一會兒。", *f184
-
-;-BLOCK-184---------------------------------------------------------------------
-*f184
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1184==1 skip 4
-gosub *s184
-mov %1184,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip184,
-		 "　２、不跳過", *s184
-skip 3
-*skip184
-return
-;gosub *s184
-select	"　１、……再等一會兒。", *f185,
-		"　２、……回家吧。", *f186
-
-;-BLOCK-185---------------------------------------------------------------------
-*f185
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1185==1 skip 4
-gosub *s185
-mov %1185,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip185,
-		 "　２、不跳過", *s185
-skip 3
-*skip185
-return
-;gosub *s185
-select	"　１、……再等一會兒。", *f187,
-		"　２、……回家吧。", *f186
-
-;-BLOCK-186---------------------------------------------------------------------
-*f186
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1186==1 skip 4
-gosub *s186
-mov %1186,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip186,
-		 "　２、不跳過", *s186
-skip 3
-*skip186
-return
-;gosub *s186
-;end
-是否接受「知得留老師的授課」？
-select	"　１、是。",*f518,
-		"　２、否。",*endofplay
-
-;-BLOCK-518---------------------------------------------------------------------
-*f518
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1518==1 skip 4
-gosub *s518
-mov %1518,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip518,
-		 "　２、不跳過", *s518
-skip 3
-*skip518
-return
-;gosub *s518
-;end
-goto *endofplay
-
-;-BLOCK-187---------------------------------------------------------------------
-*f187
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1187==1 skip 4
-gosub *s187
-mov %1187,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip187,
-		 "　２、不跳過", *s187
-skip 3
-*skip187
-return
-;gosub *s187
-if %flgB>=1 goto *f188
-goto *f189
-
-;-BLOCK-188---------------------------------------------------------------------
-*f188
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1188==1 skip 4
-gosub *s188
-mov %1188,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip188,
-		 "　２、不跳過", *s188
-skip 3
-*skip188
-return
-;gosub *s188
-;end
-是否接受「知得留老師的授課」？
-select	"　１、是。",*f519,
-		"　２、否。",*endofplay
-
-;-BLOCK-519---------------------------------------------------------------------
-*f519
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1519==1 skip 4
-gosub *s519
-mov %1519,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip519,
-		 "　２、不跳過", *s519
-skip 3
-*skip519
-return
-;gosub *s519
-;end
-goto *endofplay
-
-;-BLOCK-189---------------------------------------------------------------------
-*f189
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1189==1 skip 4
-gosub *s189
-mov %1189,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip189,
-		 "　２、不跳過", *s189
-skip 3
-*skip189
-return
-;gosub *s189
-select	"　１、趕緊去昨晚那個小巷。", *f190,
-		"　２、……就這樣留在公園這裡。", *f191,
-		"　３、去愛爾奎特的房間看看。", *f192
-
-;-BLOCK-190---------------------------------------------------------------------
-*f190
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1190==1 skip 4
-gosub *s190
-mov %1190,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip190,
-		 "　２、不跳過", *s190
-skip 3
-*skip190
-return
-;gosub *s190
-goto *f193
-
-;-BLOCK-191---------------------------------------------------------------------
-*f191
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1191==1 skip 4
-gosub *s191
-mov %1191,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip191,
-		 "　２、不跳過", *s191
-skip 3
-*skip191
-return
-;gosub *s191
-add %ark_regard,2
-goto *f193
-
-;-BLOCK-192---------------------------------------------------------------------
-*f192
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1192==1 skip 4
-gosub *s192
-mov %1192,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip192,
-		 "　２、不跳過", *s192
-skip 3
-*skip192
-return
-;gosub *s192
-
-;-BLOCK-193---------------------------------------------------------------------
-*f193
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1193==1 skip 4
-gosub *s193
-mov %1193,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip193,
-		 "　２、不跳過", *s193
-skip 3
-*skip193
-return
-;gosub *s193
-goto *f194
-
-
-;-------------------------------------------------------------------------------
-;	シエルルート
-;-------------------------------------------------------------------------------
-
-;-BLOCK-284---------------------------------------------------------------------
-*f284
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1284==1 skip 4
-gosub *s284
-mov %1284,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip284,
-		 "　２、不跳過", *s284
-skip 3
-*skip284
-return
-;gosub *s284
-select	"　１、琥珀別煩我。", *f285,
-		"　２、琥珀說的有道理。", *f286
-
-;-BLOCK-285---------------------------------------------------------------------
-*f285
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1285==1 skip 4
-gosub *s285
-mov %1285,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip285,
-		 "　２、不跳過", *s285
-skip 3
-*skip285
-return
-;gosub *s285
-goto *f287
-
-;-BLOCK-286---------------------------------------------------------------------
-*f286
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1286==1 skip 4
-gosub *s286
-mov %1286,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip286,
-		 "　２、不跳過", *s286
-skip 3
-*skip286
-return
-;gosub *s286
-goto *f287
-
-;-BLOCK-287---------------------------------------------------------------------
-*f287
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1287==1 skip 4
-gosub *s287
-mov %1287,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip287,
-		 "　２、不跳過", *s287
-skip 3
-*skip287
-return
-;gosub *s287
-goto *f288
-
-;-------------------------------------------------------------------------------
-;	秋葉ルート
-;-------------------------------------------------------------------------------
-
-;-BLOCK-365---------------------------------------------------------------------
-*f365
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1365==1 skip 4
-gosub *s365
-mov %1365,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip365,
-		 "　２、不跳過", *s365
-skip 3
-*skip365
-return
-;gosub *s365
-select	"　１、東館的一樓。", *f366,
-		"　２、西館的一樓。", *f367,
-		"　３、東館的二樓。", *f368,
-		"　４、西館的二樓。", *f369
-
-;-BLOCK-366---------------------------------------------------------------------
-*f366
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1366==1 skip 4
-gosub *s366
-mov %1366,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip366,
-		 "　２、不跳過", *s366
-skip 3
-*skip366
-return
-;gosub *s366
-dec %akiha_regard
-goto *f370
-
-;-BLOCK-367---------------------------------------------------------------------
-*f367
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1367==1 skip 4
-gosub *s367
-mov %1367,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip367,
-		 "　２、不跳過", *s367
-skip 3
-*skip367
-return
-;gosub *s367
-dec %akiha_regard
-goto *f370
-
-;-BLOCK-368---------------------------------------------------------------------
-*f368
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1368==1 skip 4
-gosub *s368
-mov %1368,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip368,
-		 "　２、不跳過", *s368
-skip 3
-*skip368
-return
-;gosub *s368
-inc %akiha_regard
-goto *f370
-
-;-BLOCK-369---------------------------------------------------------------------
-*f369
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1369==1 skip 4
-gosub *s369
-mov %1369,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip369,
-		 "　２、不跳過", *s369
-skip 3
-*skip369
-return
-;gosub *s369
-dec %akiha_regard
-goto *f370
-
-;-BLOCK-370---------------------------------------------------------------------
-*f370
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1370==1 skip 4
-gosub *s370
-mov %1370,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip370,
-		 "　２、不跳過", *s370
-skip 3
-*skip370
-return
-;gosub *s370
-select	"　１、取下眼鏡，殺了他。", *f371,
-		"　２、首先應該離開秋葉的房間。", *f372
-
-;-BLOCK-371---------------------------------------------------------------------
-*f371
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1371==1 skip 4
-gosub *s371
-mov %1371,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip371,
-		 "　２、不跳過", *s371
-skip 3
-*skip371
-return
-;gosub *s371
-goto *f373
-
-;-BLOCK-372---------------------------------------------------------------------
-*f372
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1372==1 skip 4
-gosub *s372
-mov %1372,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip372,
-		 "　２、不跳過", *s372
-skip 3
-*skip372
-return
-;gosub *s372
-goto *f373
-
-;-BLOCK-373---------------------------------------------------------------------
-*f373
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1373==1 skip 4
-gosub *s373
-mov %1373,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip373,
-		 "　２、不跳過", *s373
-skip 3
-*skip373
-return
-;gosub *s373
-goto *f374
-
-;-------------------------------------------------------------------------------
-;	翡翠ルート
-;-------------------------------------------------------------------------------
-
-;-------------------------------------------------------------------------------
-;	琥珀ルート
-;-------------------------------------------------------------------------------
-
-;-------------------------------------------------------------------------------
-;	スクリプトブロック終了
-;-------------------------------------------------------------------------------
-
-;11.txt
-;-------------------------------------------------------------------------------
-;	スクリプトブロック開始
-;-------------------------------------------------------------------------------
-
-
-;-------------------------------------------------------------------------------
-;	アルクェイドルート
-;-------------------------------------------------------------------------------
-
-;-BLOCK-194---------------------------------------------------------------------
-*f194
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1194==1 skip 4
-gosub *s194
-mov %1194,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip194,
-		 "　２、不跳過", *s194
-skip 3
-*skip194
-return
-;gosub *s194
-select	"　１、徒勞地尋找愛爾奎特。", *f195,
-		"　２、老老實實地回家。", *f196,
-		"　３、既然這樣，只能自己去找出羅亞了。", *f197
-
-;-BLOCK-195---------------------------------------------------------------------
-*f195
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1195==1 skip 4
-gosub *s195
-mov %1195,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip195,
-		 "　２、不跳過", *s195
-skip 3
-*skip195
-return
-;gosub *s195
-inc %ark_regard
-goto *f198
-
-;-BLOCK-196---------------------------------------------------------------------
-*f196
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1196==1 skip 4
-gosub *s196
-mov %1196,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip196,
-		 "　２、不跳過", *s196
-skip 3
-*skip196
-return
-;gosub *s196
-goto *f198
-
-;-BLOCK-197---------------------------------------------------------------------
-*f197
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1197==1 skip 4
-gosub *s197
-mov %1197,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip197,
-		 "　２、不跳過", *s197
-skip 3
-*skip197
-return
-;gosub *s197
-goto *f198
-
-;-BLOCK-198---------------------------------------------------------------------
-*f198
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1198==1 skip 4
-gosub *s198
-mov %1198,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip198,
-		 "　２、不跳過", *s198
-skip 3
-*skip198
-return
-;gosub *s198
-goto *f199
-
-
-;-------------------------------------------------------------------------------
-;	シエルルート
-;-------------------------------------------------------------------------------
-
-;-BLOCK-288---------------------------------------------------------------------
-*f288
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1288==1 skip 4
-gosub *s288
-mov %1288,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip288,
-		 "　２、不跳過", *s288
-skip 3
-*skip288
-return
-;gosub *s288
-if %ciel_regard>=11 goto *f292
-goto *f289
-
-;-BLOCK-289---------------------------------------------------------------------
-*f289
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1289==1 skip 4
-gosub *s289
-mov %1289,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip289,
-		 "　２、不跳過", *s289
-skip 3
-*skip289
-return
-;gosub *s289
-goto *f289a
-
-;-BLOCK-289a--------------------------------------------------------------------
-*f289a
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1789==1 skip 4
-gosub *s289a
-mov %1789,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip289a,
-		 "　２、不跳過", *s289a
-skip 3
-*skip289a
-return
-;gosub *s289a
-;end
-是否接受「知得留老師的授課」？
-select	"　１、是。",*f523,
-		"　２、否。",*endofplay
-
-;-BLOCK-523---------------------------------------------------------------------
-*f523
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1523==1 skip 4
-gosub *s523
-mov %1523,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip523,
-		 "　２、不跳過", *s523
-skip 3
-*skip523
-return
-;gosub *s523
-;end
-goto *endofplay
-
-;-BLOCK-290---------------------------------------------------------------------
-
-;-BLOCK-291---------------------------------------------------------------------
-
-;-BLOCK-292---------------------------------------------------------------------
-*f292
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1292==1 skip 4
-gosub *s292
-mov %1292,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip292,
-		 "　２、不跳過", *s292
-skip 3
-*skip292
-return
-;gosub *s292
-select	"　１、不行，不立即阻止琥珀的話", *f293,
-		"　２、……僅僅讓她把食物放在這裡。", *f294
-
-;-BLOCK-293---------------------------------------------------------------------
-*f293
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1293==1 skip 4
-gosub *s293
-mov %1293,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip293,
-		 "　２、不跳過", *s293
-skip 3
-*skip293
-return
-;gosub *s293
-goto *f295
-
-;-BLOCK-294---------------------------------------------------------------------
-*f294
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1294==1 skip 4
-gosub *s294
-mov %1294,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip294,
-		 "　２、不跳過", *s294
-skip 3
-*skip294
-return
-;gosub *s294
-inc %flgJ
-goto *f295
-
-;-BLOCK-295---------------------------------------------------------------------
-*f295
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1295==1 skip 4
-gosub *s295
-mov %1295,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip295,
-		 "　２、不跳過", *s295
-skip 3
-*skip295
-return
-;gosub *s295
-select	"　１、……不能被她看見，這樣的自己。", *f296,
-		"　２、……就算是這樣，我都想聽聽她的聲音。", *f297
-
-;-BLOCK-296---------------------------------------------------------------------
-*f296
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1296==1 skip 4
-gosub *s296
-mov %1296,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip296,
-		 "　２、不跳過", *s296
-skip 3
-*skip296
-return
-;gosub *s296
-goto *f289a
-
-;-BLOCK-297---------------------------------------------------------------------
-*f297
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1297==1 skip 4
-gosub *s297
-mov %1297,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip297,
-		 "　２、不跳過", *s297
-skip 3
-*skip297
-return
-;gosub *s297
-select	"　１、向前跳開。", *f299,
-		"　２、向後跳開。", *f298
-
-;-BLOCK-298---------------------------------------------------------------------
-*f298
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1298==1 skip 4
-gosub *s298
-mov %1298,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip298,
-		 "　２、不跳過", *s298
-skip 3
-*skip298
-return
-;gosub *s298
-;end
-是否接受「知得留老師的授課」？
-select	"　１、是。",*f524,
-		"　２、否。",*endofplay
-
-;-BLOCK-524---------------------------------------------------------------------
-*f524
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1524==1 skip 4
-gosub *s524
-mov %1524,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip524,
-		 "　２、不跳過", *s524
-skip 3
-*skip524
-return
-;gosub *s524
-;end
-goto *endofplay
-
-;-BLOCK-299---------------------------------------------------------------------
-*f299
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1299==1 skip 4
-gosub *s299
-mov %1299,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip299,
-		 "　２、不跳過", *s299
-skip 3
-*skip299
-return
-;gosub *s299
-if %flgJ>=1 goto *f300
-select	"　１、……取下眼鏡。", *f301,
-		"　２、……不取下眼鏡。", *f302
-
-;-BLOCK-300---------------------------------------------------------------------
-*f300
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1300==1 skip 4
-gosub *s300
-mov %1300,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip300,
-		 "　２、不跳過", *s300
-skip 3
-*skip300
-return
-;gosub *s300
-goto *f301
-
-;-BLOCK-301---------------------------------------------------------------------
-*f301
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1301==1 skip 4
-gosub *s301
-mov %1301,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip301,
-		 "　２、不跳過", *s301
-skip 3
-*skip301
-return
-;gosub *s301
-;end
-是否接受「知得留老師的授課」？
-select	"　１、是。",*f525,
-		"　２、否。",*endofplay
-
-;-BLOCK-525---------------------------------------------------------------------
-*f525
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1525==1 skip 4
-gosub *s525
-mov %1525,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip525,
-		 "　２、不跳過", *s525
-skip 3
-*skip525
-return
-;gosub *s525
-;end
-goto *endofplay
-
-;-BLOCK-302---------------------------------------------------------------------
-*f302
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1302==1 skip 4
-gosub *s302
-mov %1302,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip302,
-		 "　２、不跳過", *s302
-skip 3
-*skip302
-return
-;gosub *s302
-select	"　１、喜歡素顏的學姐。", *f504,
-		"　２、沒有眼鏡的學姐簡直就不是學姐！", *f505
-
-
-;-BLOCK-504---------------------------------------------------------------------
-*f504
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1504==1 skip 4
-gosub *s504
-mov %1504,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip504,
-		 "　２、不跳過", *s504
-skip 3
-*skip504
-return
-;gosub *s504
-goto *f307
-
-;-BLOCK-505---------------------------------------------------------------------
-*f505
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1505==1 skip 4
-gosub *s505
-mov %1505,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip505,
-		 "　２、不跳過", *s505
-skip 3
-*skip505
-return
-;gosub *s505
-goto *f307
-
-;-------------------------------------------------------------------------------
-;	秋葉ルート
-;-------------------------------------------------------------------------------
-
-;-BLOCK-374---------------------------------------------------------------------
-*f374
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1374==1 skip 4
-gosub *s374
-mov %1374,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip374,
-		 "　２、不跳過", *s374
-skip 3
-*skip374
-return
-;gosub *s374
-goto *f375
-
-;-BLOCK-375---------------------------------------------------------------------
-*f375
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1375==1 skip 4
-gosub *s375
-mov %1375,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip375,
-		 "　２、不跳過", *s375
-skip 3
-*skip375
-return
-;gosub *s375
-select	"　１、立刻，跑著追上去。", *f376,
-		"　２、先喘口氣，冷靜下來再追。", *f378
-
-;-BLOCK-376---------------------------------------------------------------------
-*f376
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1376==1 skip 4
-gosub *s376
-mov %1376,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip376,
-		 "　２、不跳過", *s376
-skip 3
-*skip376
-return
-;gosub *s376
-;end
-是否接受「知得留老師的授課」？
-select	"　１、是。",*f537,
-		"　２、否。",*endofplay
-
-;-BLOCK-537---------------------------------------------------------------------
-*f537
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1537==1 skip 4
-gosub *s537
-mov %1537,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip537,
-		 "　２、不跳過", *s537
-skip 3
-*skip537
-return
-;gosub *s537
-;end
-goto *endofplay
-
-;-BLOCK-378---------------------------------------------------------------------
-*f378
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1378==1 skip 4
-gosub *s378
-mov %1378,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip378,
-		 "　２、不跳過", *s378
-skip 3
-*skip378
-return
-;gosub *s378
-select	"　１、……停下腳步。", *f380,
-		"　２、……不能再被那傢伙的話迷惑了。", *f379
-
-;-BLOCK-379---------------------------------------------------------------------
-*f379
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1379==1 skip 4
-gosub *s379
-mov %1379,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip379,
-		 "　２、不跳過", *s379
-skip 3
-*skip379
-return
-;gosub *s379
-;end
-是否接受「知得留老師的授課」？
-select	"　１、是。",*f538,
-		"　２、否。",*endofplay
-
-;-BLOCK-538---------------------------------------------------------------------
-*f538
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1538==1 skip 4
-gosub *s538
-mov %1538,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip538,
-		 "　２、不跳過", *s538
-skip 3
-*skip538
-return
-;gosub *s538
-;end
-goto *endofplay
-
-;-BLOCK-380---------------------------------------------------------------------
-*f380
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1380==1 skip 4
-gosub *s380
-mov %1380,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip380,
-		 "　２、不跳過", *s380
-skip 3
-*skip380
-return
-;gosub *s380
-select	"　１、……去追秋葉。", *f381,
-		"　２、……我，做不到。", *f509
-
-;-BLOCK-381---------------------------------------------------------------------
-*f381
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1381==1 skip 4
-gosub *s381
-mov %1381,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip381,
-		 "　２、不跳過", *s381
-skip 3
-*skip381
-return
-;gosub *s381
-if %akiha_regard<9 goto *f382
-select	"　１、…………遵守，約定。", *f382,
-		"　２、…………只有這件事，我做不到。", *f383
-
-;-BLOCK-509---------------------------------------------------------------------
-*f509
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1509==1 skip 4
-gosub *s509
-mov %1509,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip509,
-		 "　２、不跳過", *s509
-skip 3
-*skip509
-return
-;gosub *s509
-;end
-是否接受「知得留老師的授課」？
-select	"　１、是。",*f539,
-		"　２、否。",*endofplay
-
-;-BLOCK-539---------------------------------------------------------------------
-*f539
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1539==1 skip 4
-gosub *s539
-mov %1539,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip539,
-		 "　２、不跳過", *s539
-skip 3
-*skip539
-return
-;gosub *s539
-;end
-goto *endofplay
-
-;-BLOCK-382---------------------------------------------------------------------
-*f382
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1382==1 skip 4
-gosub *s382
-mov %1382,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip382,
-		 "　２、不跳過", *s382
-skip 3
-*skip382
-return
-;gosub *s382
-;end
-是否接受「知得留老師的授課」？
-select	"　１、是。",*f540,
-		"　２、否。",*endofplay
-
-;-BLOCK-540---------------------------------------------------------------------
-*f540
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1540==1 skip 4
-gosub *s540
-mov %1540,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip540,
-		 "　２、不跳過", *s540
-skip 3
-*skip540
-return
-;gosub *s540
-;end
-goto *endofplay
-
-;-BLOCK-383---------------------------------------------------------------------
-*f383
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1383==1 skip 4
-gosub *s383
-mov %1383,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip383,
-		 "　２、不跳過", *s383
-skip 3
-*skip383
-return
-;gosub *s383
-select	"　１、……把這條命，還給秋葉。", *f385,
-		"　２、……這種事，我做不到。", *f384
-
-;-BLOCK-384---------------------------------------------------------------------
-*f384
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1384==1 skip 4
-gosub *s384
-mov %1384,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip384,
-		 "　２、不跳過", *s384
-skip 3
-*skip384
-return
-;gosub *s384
-;end
-inc %clear_akiha
-inc %cleared
-inc %clear_akiha_good
-是否接受「知得留老師的授課」？
-select	"　１、是。",*f542,
-		"　２、否。",*endofplay
-
-;-BLOCK-542---------------------------------------------------------------------
-*f542
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1542==1 skip 4
-gosub *s542
-mov %1542,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip542,
-		 "　２、不跳過", *s542
-skip 3
-*skip542
-return
-;gosub *s542
-;end
-goto *endofplay
-
-;-BLOCK-385---------------------------------------------------------------------
-*f385
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1385==1 skip 4
-gosub *s385
-mov %1385,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip385,
-		 "　２、不跳過", *s385
-skip 3
-*skip385
-return
-;gosub *s385
-;end
-inc %clear_akiha
-inc %cleared
-inc %clear_akiha_true
-是否接受「知得留老師的授課」？
-select	"　１、是。",*f541,
-		"　２、否。",*endofplay
-
-;-BLOCK-541---------------------------------------------------------------------
-*f541
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1541==1 skip 4
-gosub *s541
-mov %1541,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip541,
-		 "　２、不跳過", *s541
-skip 3
-*skip541
-return
-;gosub *s541
-;end
-goto *endofplay
-
-;-------------------------------------------------------------------------------
-;	翡翠ルート
-;-------------------------------------------------------------------------------
-
-;-------------------------------------------------------------------------------
-;	琥珀ルート
-;-------------------------------------------------------------------------------
-
-;-------------------------------------------------------------------------------
-;	スクリプトブロック終了
-;-------------------------------------------------------------------------------
-
-;12.txt
-;-------------------------------------------------------------------------------
-;	スクリプトブロック開始
-;-------------------------------------------------------------------------------
-
-
-;-------------------------------------------------------------------------------
-;	アルクェイドルート
-;-------------------------------------------------------------------------------
-
-;-BLOCK-199---------------------------------------------------------------------
-*f199
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1199==1 skip 4
-gosub *s199
-mov %1199,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip199,
-		 "　２、不跳過", *s199
-skip 3
-*skip199
-return
-;gosub *s199
-if %ark_normalcleared!=0 goto *f503
-
-*f199_0
-gosub *regard_update
-;if %ark_regard>=16 goto *f53
-goto *f52
-
-;-BLOCK-503---------------------------------------------------------------------
-*f503
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1503==1 skip 4
-gosub *s503
-mov %1503,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip503,
-		 "　２、不跳過", *s503
-skip 3
-*skip503
-return
-;gosub *s503
-select	"　１、堅守約定。", *f52a,
-		"　２、不能忘了愛爾奎特。", *f53a
-
-;-BLOCK--52---------------------------------------------------------------------
-*f52
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1052==1 skip 4
-gosub *s52
-mov %1052,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip52,
-		 "　２、不跳過", *s52
-skip 3
-*skip52
-return
-;gosub *s52
-goto *f52a
-
-;-BLOCK--52a--------------------------------------------------------------------
-*f52a
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1552==1 skip 4
-gosub *s52a
-mov %1552,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip52a,
-		 "　２、不跳過", *s52a
-skip 3
-*skip52a
-return
-;gosub *s52a
-;end
-inc %ark_normalcleared
-inc %clear_ark
-inc %cleared
-inc %clear_ark_true
-是否接受「知得留老師的授課」？
-select	"　１、是。",*f520,
-		"　２、否。",*endofplay
-
-;-BLOCK-520---------------------------------------------------------------------
-*f520
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1520==1 skip 4
-gosub *s520
-mov %1520,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip520,
-		 "　２、不跳過", *s520
-skip 3
-*skip520
-return
-;gosub *s520
-;end
-goto *endofplay
-
-
-;-BLOCK--53---------------------------------------------------------------------
-*f53
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1053==1 skip 4
-gosub *s53
-mov %1053,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip53,
-		 "　２、不跳過", *s53
-skip 3
-*skip53
-return
-;gosub *s53
-goto *f53a
-
-;-BLOCK--53a--------------------------------------------------------------------
-*f53a
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1553==1 skip 4
-gosub *s53a
-mov %1553,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip53a,
-		 "　２、不跳過", *s53a
-skip 3
-*skip53a
-return
-;gosub *s53a
-;end
-inc %clear_ark
-inc %cleared
-inc %clear_ark_good
-是否接受「知得留老師的授課」？
-select	"　１、是。",*f521,
-		"　２、否。",*endofplay
-
-;-BLOCK-521---------------------------------------------------------------------
-*f521
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1521==1 skip 4
-gosub *s521
-mov %1521,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip521,
-		 "　２、不跳過", *s521
-skip 3
-*skip521
-return
-;gosub *s521
-;end
-goto *endofplay
-
-
-;-------------------------------------------------------------------------------
-;	シエルルート
-;-------------------------------------------------------------------------------
-
-;-BLOCK-304---------------------------------------------------------------------
-
-;-BLOCK-305---------------------------------------------------------------------
-
-;-BLOCK-306---------------------------------------------------------------------
-
-;-BLOCK-303---------------------------------------------------------------------
-
-;-BLOCK-307---------------------------------------------------------------------
-*f307
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1307==1 skip 4
-gosub *s307
-mov %1307,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip307,
-		 "　２、不跳過", *s307
-skip 3
-*skip307
-return
-;gosub *s307
-select	"　１、順從愛爾奎特。", *f308,
-		"　２、不順從愛爾奎特。", *f310
-;goto *f310
-
-;-BLOCK-308---------------------------------------------------------------------
-*f308
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1308==1 skip 4
-gosub *s308
-mov %1308,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip308,
-		 "　２、不跳過", *s308
-skip 3
-*skip308
-return
-;gosub *s308
-;end
-inc %clear_ciel
-inc %cleared
-inc %clear_ciel_good
-是否接受「知得留老師的授課」？
-select	"　１、是。",*f526,
-		"　２、否。",*endofplay
-
-;-BLOCK-526---------------------------------------------------------------------
-*f526
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1526==1 skip 4
-gosub *s526
-mov %1526,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip526,
-		 "　２、不跳過", *s526
-skip 3
-*skip526
-return
-;gosub *s526
-;end
-goto *endofplay
-
-;-BLOCK-309---------------------------------------------------------------------
-
-;-BLOCK-310---------------------------------------------------------------------
-*f310
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1310==1 skip 4
-gosub *s310
-mov %1310,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip310,
-		 "　２、不跳過", *s310
-skip 3
-*skip310
-return
-;gosub *s310
-;end
-inc %clear_ciel
-inc %cleared
-inc %clear_ciel_true
-是否接受「知得留老師的授課」？
-select	"　１、是。",*f527,
-		"　２、否。",*endofplay
-
-;-BLOCK-527---------------------------------------------------------------------
-*f527
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1527==1 skip 4
-gosub *s527
-mov %1527,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip527,
-		 "　２、不跳過", *s527
-skip 3
-*skip527
-return
-;gosub *s527
-;end
-goto *endofplay
-
-;-BLOCK-311---------------------------------------------------------------------
-
-;-BLOCK-204---------------------------------------------------------------------
-
-;-------------------------------------------------------------------------------
-;	秋葉ルート
-;-------------------------------------------------------------------------------
-
-;-------------------------------------------------------------------------------
-;	翡翠ルート
-;-------------------------------------------------------------------------------
-
-;-BLOCK-403---------------------------------------------------------------------
-*f403
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1403==1 skip 4
-gosub *s403
-mov %1403,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip403,
-		 "　２、不跳過", *s403
-skip 3
-*skip403
-return
-;gosub *s403
-goto *f405
-
-;-BLOCK-404---------------------------------------------------------------------
-*f404
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1404==1 skip 4
-gosub *s404
-mov %1404,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip404,
-		 "　２、不跳過", *s404
-skip 3
-*skip404
-return
-;gosub *s404
-goto *f405
-
-;-BLOCK-405---------------------------------------------------------------------
-*f405
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1405==1 skip 4
-gosub *s405
-mov %1405,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip405,
-		 "　２、不跳過", *s405
-skip 3
-*skip405
-return
-;gosub *s405
-select	"　１、打開門鎖。", *f407,
-		"　２、……我為什麼會把門鎖上呢？", *f406
-;-BLOCK-406---------------------------------------------------------------------
-*f406
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1406==1 skip 4
-gosub *s406
-mov %1406,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip406,
-		 "　２、不跳過", *s406
-skip 3
-*skip406
-return
-;gosub *s406
-goto *f408
-
-;-BLOCK-407---------------------------------------------------------------------
-*f407
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1407==1 skip 4
-gosub *s407
-mov %1407,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip407,
-		 "　２、不跳過", *s407
-skip 3
-*skip407
-return
-;gosub *s407
-goto *f408
-
-;-BLOCK-408---------------------------------------------------------------------
-*f408
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1408==1 skip 4
-gosub *s408
-mov %1408,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip408,
-		 "　２、不跳過", *s408
-skip 3
-*skip408
-return
-;gosub *s408
-if %hisui_regard<5 goto *f410
-goto *f409
-
-;-BLOCK-409---------------------------------------------------------------------
-*f409
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1409==1 skip 4
-gosub *s409
-mov %1409,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip409,
-		 "　２、不跳過", *s409
-skip 3
-*skip409
-return
-;gosub *s409
-if %clear_hisui!=0 goto *f411
-goto *f412
-
-
-;-BLOCK-410---------------------------------------------------------------------
-*f410
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1410==1 skip 4
-gosub *s410
-mov %1410,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip410,
-		 "　２、不跳過", *s410
-skip 3
-*skip410
-return
-;gosub *s410
-;end
-是否接受「知得留老師的授課」？
-select	"　１、是。",*f529,
-		"　２、否。",*endofplay
-
-;-BLOCK-529---------------------------------------------------------------------
-*f529
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1529==1 skip 4
-gosub *s529
-mov %1529,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip529,
-		 "　２、不跳過", *s529
-skip 3
-*skip529
-return
-;gosub *s529
-;end
-goto *endofplay
-
-;-BLOCK-411---------------------------------------------------------------------
-*f411
-gosub *regard_update
-;gosub *s411
-br
-select	"　１、呼喊秋葉的名字。", *f412,
-		"　２、呼喊琥珀的名字。", *f413
-
-
-;-BLOCK-412---------------------------------------------------------------------
-*f412
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1412==1 skip 4
-gosub *s412
-mov %1412,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip412,
-		 "　２、不跳過", *s412
-skip 3
-*skip412
-return
-;gosub *s412
-;end
-inc %clear_hisui
-inc %cleared
-inc %clear_hisui_true
-是否接受「知得留老師的授課」？
-select	"　１、是。",*f530,
-		"　２、否。",*endofplay
-
-;-BLOCK-530---------------------------------------------------------------------
-*f530
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1530==1 skip 4
-gosub *s530
-mov %1530,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip530,
-		 "　２、不跳過", *s530
-skip 3
-*skip530
-return
-;gosub *s530
-;end
-goto *endofplay
-
-;-BLOCK-413---------------------------------------------------------------------
-*f413
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1413==1 skip 4
-gosub *s413
-mov %1413,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip413,
-		 "　２、不跳過", *s413
-skip 3
-*skip413
-return
-;gosub *s413
-;end
-inc %clear_hisui
-inc %cleared
-inc %clear_hisui_good
-是否接受「知得留老師的授課」？
-select	"　１、是。",*f531,
-		"　２、否。",*endofplay
-
-;-BLOCK-531---------------------------------------------------------------------
-*f531
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1531==1 skip 4
-gosub *s531
-mov %1531,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip531,
-		 "　２、不跳過", *s531
-skip 3
-*skip531
-return
-;gosub *s531
-;end
-goto *endofplay
-
-;-------------------------------------------------------------------------------
-;	琥珀ルート
-;-------------------------------------------------------------------------------
-
-;-BLOCK-416---------------------------------------------------------------------
-*f416
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1416==1 skip 4
-gosub *s416
-mov %1416,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip416,
-		 "　２、不跳過", *s416
-skip 3
-*skip416
-return
-;gosub *s416
-select	"　１、去會見琥珀。", *f417,
-		"　２、去槙久的房間調查看看。", *f418
-
-;-BLOCK-417---------------------------------------------------------------------
-*f417
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1417==1 skip 4
-gosub *s417
-mov %1417,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip417,
-		 "　２、不跳過", *s417
-skip 3
-*skip417
-return
-;gosub *s417
-inc %flgR
-goto *f419
-
-;-BLOCK-418---------------------------------------------------------------------
-*f418
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1418==1 skip 4
-gosub *s418
-mov %1418,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip418,
-		 "　２、不跳過", *s418
-skip 3
-*skip418
-return
-;gosub *s418
-goto *f419
-
-;-BLOCK-419---------------------------------------------------------------------
-*f419
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1419==1 skip 4
-gosub *s419
-mov %1419,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip419,
-		 "　２、不跳過", *s419
-skip 3
-*skip419
-return
-;gosub *s419
-select	"　１、……試著外出。", *f420,
-		"　２、乖乖回房間。", *f421
-
-;-BLOCK-420---------------------------------------------------------------------
-*f420
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1420==1 skip 4
-gosub *s420
-mov %1420,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip420,
-		 "　２、不跳過", *s420
-skip 3
-*skip420
-return
-;gosub *s420
-goto *f422
-
-;-BLOCK-421---------------------------------------------------------------------
-*f421
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1421==1 skip 4
-gosub *s421
-mov %1421,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip421,
-		 "　２、不跳過", *s421
-skip 3
-*skip421
-return
-;gosub *s421
-goto *f422
-
-;-BLOCK-422---------------------------------------------------------------------
-*f422
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1422==1 skip 4
-gosub *s422
-mov %1422,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip422,
-		 "　２、不跳過", *s422
-skip 3
-*skip422
-return
-;gosub *s422
-if %flgR>=1 goto *f423
-goto *f424
-
-;-BLOCK-423---------------------------------------------------------------------
-*f423
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1423==1 skip 4
-gosub *s423
-mov %1423,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip423,
-		 "　２、不跳過", *s423
-skip 3
-*skip423
-return
-;gosub *s423
-goto *f425
-
-;-BLOCK-424---------------------------------------------------------------------
-*f424
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1424==1 skip 4
-gosub *s424
-mov %1424,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip424,
-		 "　２、不跳過", *s424
-skip 3
-*skip424
-return
-;gosub *s424
-goto *f425
-
-;-BLOCK-425---------------------------------------------------------------------
-*f425
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1425==1 skip 4
-gosub *s425
-mov %1425,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip425,
-		 "　２、不跳過", *s425
-skip 3
-*skip425
-return
-;gosub *s425
-select	"　１、――――在這裡解決掉。", *f426,
-		"　２、――――暫且撤退。", *f427
-
-;-BLOCK-426---------------------------------------------------------------------
-*f426
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1426==1 skip 4
-gosub *s426
-mov %1426,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip426,
-		 "　２、不跳過", *s426
-skip 3
-*skip426
-return
-;gosub *s426
-;end
-是否接受「知得留老師的授課」？
-select	"　１、是。",*f543,
-		"　２、否。",*endofplay
-
-;-BLOCK-543---------------------------------------------------------------------
-*f543
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1543==1 skip 4
-gosub *s543
-mov %1543,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip543,
-		 "　２、不跳過", *s543
-skip 3
-*skip543
-return
-;gosub *s543
-;end
-goto *endofplay
-
-;-BLOCK-427---------------------------------------------------------------------
-*f427
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1427==1 skip 4
-gosub *s427
-mov %1427,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip427,
-		 "　２、不跳過", *s427
-skip 3
-*skip427
-return
-;gosub *s427
-select	"　１、……在被注意到之前解決掉。", *f429,
-		"　２、……等她通過後從背後襲擊。", *f428
-
-;-BLOCK-428---------------------------------------------------------------------
-*f428
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1428==1 skip 4
-gosub *s428
-mov %1428,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip428,
-		 "　２、不跳過", *s428
-skip 3
-*skip428
-return
-;gosub *s428
-;end
-是否接受「知得留老師的授課」？
-select	"　１、是。",*f544,
-		"　２、否。",*endofplay
-
-;-BLOCK-544---------------------------------------------------------------------
-*f544
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1544==1 skip 4
-gosub *s544
-mov %1544,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip544,
-		 "　２、不跳過", *s544
-skip 3
-*skip544
-return
-;gosub *s544
-;end
-goto *endofplay
-
-;-BLOCK-429---------------------------------------------------------------------
-*f429
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1429==1 skip 4
-gosub *s429
-mov %1429,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip429,
-		 "　２、不跳過", *s429
-skip 3
-*skip429
-return
-;gosub *s429
-;end
-inc %clear_kohaku
-inc %cleared
-inc %clear_kohaku_true
-是否接受「知得留老師的授課」？
-select	"　１、是。",*f545,
-		"　２、否。",*endofplay
-
-;-BLOCK-545---------------------------------------------------------------------
-*f545
-gosub *regard_update
-!sd
-if %sceneskip==1 && %1545==1 skip 4
-gosub *s545
-mov %1545,1
-skip 9
-該場景曾顯示過。
-跳過嗎？
-br
-selgosub "　１、跳過", *skip545,
-		 "　２、不跳過", *s545
-skip 3
-*skip545
-return
-;gosub *s545
-;end
-goto *endofplay
 
 ;-------------------------------------------------------------------------------
 ;	スクリプトブロック終了
