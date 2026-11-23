@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import SaveListItem from "./SaveListItem"
+import { cachedFormat } from "@tsukiweb/common/utils/intl"
 import SaveDetails from "./SaveDetails"
 import { MdAddCircleOutline, MdWarning } from "react-icons/md"
 import { dialog } from "@tsukiweb/common/ui-core/components/ModalPrompt"
@@ -154,18 +155,22 @@ type ListEntry =
 	| { type: "day", label: string }
 	| { type: "save", save: SaveState, navIndex: number }
 
+const relativeDayFormat = cachedFormat(locale =>
+	new Intl.RelativeTimeFormat(locale, {numeric: "auto"}))
+const dayFormat = cachedFormat(locale =>
+	new Intl.DateTimeFormat(locale, {day: "numeric", month: "long"}))
+const dayYearFormat = cachedFormat(locale =>
+	new Intl.DateTimeFormat(locale, {day: "numeric", month: "long", year: "numeric"}))
+
 function dayLabel(date: Date, locale: string) {
 	const today = new Date()
 	const days = Math.round((new Date(today.toDateString()).getTime() - new Date(date.toDateString()).getTime()) / 86400000)
 	if (days == 0 || days == 1) {
-		const label = new Intl.RelativeTimeFormat(locale, {numeric: "auto"}).format(-days, "day")
+		const label = relativeDayFormat(locale).format(-days, "day")
 		return label.charAt(0).toLocaleUpperCase(locale) + label.slice(1)
 	}
-	return date.toLocaleDateString(locale, {
-		day: "numeric",
-		month: "long",
-		...(date.getFullYear() != today.getFullYear() && {year: "numeric"}),
-	})
+	const format = date.getFullYear() != today.getFullYear() ? dayYearFormat : dayFormat
+	return format(locale).format(date)
 }
 
 function groupByDay(saves: SaveState[], locale: string): ListEntry[] {

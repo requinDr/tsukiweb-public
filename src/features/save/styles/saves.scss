@@ -306,7 +306,8 @@
 				flex-direction: row;
 				align-items: center;
 				gap: .5rem;
-				border-image: none;
+				// longhand: the CSS minifier turns `border-image: none` into an empty, ignored value
+				border-image-source: none;
 				padding: .25rem var(--page-padding);
 			}
 			.progress-panel {

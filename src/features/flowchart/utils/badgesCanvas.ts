@@ -125,12 +125,22 @@ function fillStyle(ctx: CanvasRenderingContext2D, fill: BadgeFill, style: StyleR
 		case 'background': return style.color("var(--badge-background)")
 		case 'flag': return style.color(FLAG_BACKGROUND)
 	}
-	const [left, top, right, bottom] = bbox
-	const gradient = ctx.createLinearGradient(left, bottom, right, top)
-	gradient.addColorStop(0, style.color(`color-mix(in oklch, var(--route-${fill}) 80%, white)`))
-	gradient.addColorStop(1, style.color(`color-mix(in oklch, var(--route-${fill}) 80%, black)`))
+
+	let cache = gradientCache.get(style)
+	if (!cache)
+		gradientCache.set(style, cache = new Map())
+	const key = `${fill}|${bbox.join()}`
+	let gradient = cache.get(key)
+	if (!gradient) {
+		const [left, top, right, bottom] = bbox
+		gradient = ctx.createLinearGradient(left, bottom, right, top)
+		gradient.addColorStop(0, style.color(`color-mix(in oklch, var(--route-${fill}) 80%, white)`))
+		gradient.addColorStop(1, style.color(`color-mix(in oklch, var(--route-${fill}) 80%, black)`))
+		cache.set(key, gradient)
+	}
 	return gradient
 }
+const gradientCache = new WeakMap<StyleReader, Map<string, CanvasGradient>>()
 
 function drawShape(ctx: CanvasRenderingContext2D, d: string, fill: string | CanvasGradient) {
 	ctx.fillStyle = fill
