@@ -43,10 +43,12 @@
 	}
 
 	.scenes-list {
+		--gap: 8px;
+		--min-column: min(208px, (100% - var(--gap)) / 2);
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(min(208px, 100%), 1fr) minmax(min(208px, 100%), 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(var(--min-column), 1fr) minmax(var(--min-column), 1fr));
 		isolation: isolate;
-		gap: 8px;
+		gap: var(--gap);
 	}
 	.gallery-container {
 		padding-inline: 0;
