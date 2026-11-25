@@ -10,6 +10,8 @@ import { buildSpritesheets } from '@tsukiweb/common/tools/generate-thumbnails/pr
 import { main as runLogicScripts } from '../helpers/convert-scripts/processing/logic.ts'
 import { main as runSceneScripts } from '../helpers/convert-scripts/processing/scenes.ts'
 import type { Scene } from '@tsukiweb/common/tools/generate-thumbnails/processor.ts'
+import { convertAudioTree } from '@tsukiweb/common/tools/convert-audio/converter.ts'
+import { upscaleImages } from '@tsukiweb/common/tools/upscale-images/waifu2x.ts'
 import {
   FFMPEG_AUDIO_ARGS,
   WAIFU2X_ARGS,
@@ -17,9 +19,10 @@ import {
   imagePathsForLanguage,
   thumbConfig,
   x2Config,
+  type CdPaths,
   type ImageConversionPaths,
   type Paths,
-  type ToolConfig,
+  type Tools,
 } from './config.ts'
 
 import {
@@ -27,26 +30,23 @@ import {
   directoryHasFiles,
   displayPath,
   ensureEmptyDirInside,
-  isMediaFile,
   listFilesRecursive,
   pathExists,
 } from '@tsukiweb/common/tools/utils/fs-utils.ts'
-import { resolveExecutable, runCommand, withWorkingDirectory } from '@tsukiweb/common/tools/utils/process-utils.ts'
-import { logger } from '@tsukiweb/common/tools/utils/logger.ts'
+import { withWorkingDirectory } from '@tsukiweb/common/tools/utils/process-utils.ts'
 import {
   check,
   combine,
   fileExistsCheck,
   listScriptLangs as listLangsIn,
   nonEmptyDirectoryCheck,
-  stateFailure,
   type Check,
   type CheckDetail,
   type OrchestratorStep,
 } from '@tsukiweb/common/tools/orchestrator/utils.ts'
 
 interface StepContext {
-  config: ToolConfig
+  tools: Tools
   paths: Paths
 }
 
@@ -69,6 +69,18 @@ async function imageConversionPaths(paths: Paths): Promise<ImageConversionPaths[
     if (await directoryHasFiles(candidate.img)) images.push(candidate)
   }
   return images
+}
+
+async function imgX2Checks(paths: Paths): Promise<CheckDetail[]> {
+  return Promise.all(
+    (await imageConversionPaths(paths)).map(images => nonEmptyDirCheck(images.imgX2))
+  )
+}
+
+async function cdsWithInput(paths: Paths): Promise<CdPaths[]> {
+  const cds = Object.values(paths.cds)
+  const hasInput = await Promise.all(cds.map(dirs => directoryHasFiles(dirs.input)))
+  return cds.filter((_, index) => hasInput[index])
 }
 
 async function arcDirsCheck(paths: Paths): Promise<Check> {
@@ -126,9 +138,8 @@ async function prepareImgFolder(paths: Paths): Promise<void> {
 
 async function extractAssetsAndPrepareImages(paths: Paths): Promise<void> {
   await extractSar(paths.arcArchive, arcDir(paths), ARC_DIRS)
-  const nscript = path.join(paths.tools, 'nscript.dat')
-  if (await pathExists(nscript)) {
-    await extractNscript(nscript, path.join(paths.staticJp, 'sources', 'fullscript_jp.txt'))
+  if (await pathExists(paths.nscript)) {
+    await extractNscript(paths.nscript, path.join(paths.staticJp, 'sources', 'fullscript_jp.txt'))
   }
   await prepareImgFolder(paths)
   for (const lang of (await listScriptLangs(paths)).slice(1)) {
@@ -166,29 +177,10 @@ async function runScripts(paths: Paths): Promise<void> {
 }
 
 async function runWaifu2x(context: StepContext): Promise<void> {
-  const executable = await resolveExecutable(context.config.WAIFU2X_CAFFE, context.paths.tools)
+  const waifu2x = await context.tools.waifu2x.executable()
   for (const conversion of await imageConversionPaths(context.paths)) {
-    const total = (await listFilesRecursive(conversion.img)).length
-    const updateProgress = async () => {
-      const processed = (await listFilesRecursive(conversion.imgX2)).length
-      logger.progress(`Upscaling images: ${Math.min(processed, total)}/${total}`)
-    }
-    const args = [
-      '-i', conversion.img,
-      '-o', conversion.imgX2,
-      ...WAIFU2X_ARGS,
-    ]
-
-    await updateProgress()
-    const timer = setInterval(() => void updateProgress(), 1000)
-    try {
-      await runCommand(executable.command, args, { cwd: executable.cwd, stdout: 'ignore' })
-    } finally {
-      clearInterval(timer)
-    }
-    await updateProgress()
+    await upscaleImages(waifu2x, WAIFU2X_ARGS, conversion.img, conversion.imgX2)
   }
-  logger.done()
 }
 
 async function runImageConversion(paths: Paths): Promise<void> {
@@ -199,7 +191,6 @@ async function runImageConversion(paths: Paths): Promise<void> {
     await convertImages(thumb.inputDir, thumb.outputDir, thumb.options)
     await convertImages(x2.inputDir, x2.outputDir, x2.options)
   }
-  logger.done()
 }
 
 async function runSpritesheets(paths: Paths): Promise<void> {
@@ -216,36 +207,6 @@ async function runSpritesheets(paths: Paths): Promise<void> {
   await buildSpritesheets(scenes, paths.img, paths.flowchartSpritesheets, paths.sceneAssets)
 }
 
-async function convertAudioTree(
-  ffmpeg: Awaited<ReturnType<typeof resolveExecutable>>,
-  inputDir: string,
-  outputDir: string,
-  outputName: (relativePath: string) => string = relativePath => `${path.parse(relativePath).name}.webm`,
-): Promise<void> {
-  const files = (await listFilesRecursive(inputDir)).filter(isMediaFile)
-  const outputPaths = new Set<string>()
-
-  for (let i = 0; i < files.length; i++) {
-    const relativePath = files[i]
-    const inputPath = path.join(inputDir, relativePath)
-    const outputPath = path.join(outputDir, path.dirname(relativePath), outputName(relativePath))
-
-    if (outputPaths.has(outputPath)) {
-      throw new Error(`Duplicate output audio file "${displayPath(outputPath)}".`)
-    }
-    outputPaths.add(outputPath)
-
-    await fs.mkdir(path.dirname(outputPath), { recursive: true })
-    console.log(`Converting audio: ${i + 1}/${files.length} ${relativePath}`)
-    await runCommand(ffmpeg.command, [
-      '-y',
-      '-i', inputPath,
-      ...FFMPEG_AUDIO_ARGS,
-      outputPath,
-    ], { cwd: ffmpeg.cwd })
-  }
-}
-
 function cdTrackOutputName(relativePath: string): string {
   const filename = path.parse(relativePath).name
   const track = filename.match(/\d+/)?.[0]
@@ -256,31 +217,15 @@ function cdTrackOutputName(relativePath: string): string {
   return `track${track.padStart(2, '0')}.webm`
 }
 
-async function runWaveConversion(context: StepContext): Promise<void> {
-  const ffmpeg = await resolveExecutable(context.config.FFMPEG, context.paths.tools)
-  await convertAudioTree(ffmpeg, path.join(arcDir(context.paths), 'wave'), context.paths.wave)
-}
-
 async function runCdConversion(context: StepContext): Promise<void> {
-  const ffmpeg = await resolveExecutable(context.config.FFMPEG, context.paths.tools)
-
-  for (const [name, dirs] of Object.entries(context.paths.cds)) {
-    if (!(await directoryHasFiles(dirs.input))) continue
-    console.log(`\n${name}`)
-    await convertAudioTree(ffmpeg, dirs.input, dirs.output, cdTrackOutputName)
+  const ffmpeg = await context.tools.ffmpeg.executable()
+  for (const dirs of await cdsWithInput(context.paths)) {
+    await convertAudioTree(ffmpeg, FFMPEG_AUDIO_ARGS, dirs.input, dirs.output, cdTrackOutputName)
   }
 }
 
-async function executableCheck(configValue: string, baseDir: string): Promise<CheckDetail> {
-  const executable = await resolveExecutable(configValue, baseDir)
-  const displayName = path.isAbsolute(executable.command)
-    ? displayPath(executable.command)
-    : executable.command
-  return check(executable.found, `${displayName} is unavailable`)
-}
-
 export function createSteps(context: StepContext): OrchestratorStep[] {
-  const { config, paths } = context
+  const { tools, paths } = context
 
   return [
     {
@@ -295,6 +240,7 @@ export function createSteps(context: StepContext): OrchestratorStep[] {
     {
       id: 2,
       title: 'Process fullscripts',
+      dependsOn: [1],
       canRun: async () => combine([]),
       isDone: async () => scriptsOutputCheck(paths),
       run: async () => runScripts(paths),
@@ -302,39 +248,34 @@ export function createSteps(context: StepContext): OrchestratorStep[] {
     {
       id: 3,
       title: 'Upscale images with waifu2x',
+      dependsOn: [1],
       canRun: async () => combine([
-        await executableCheck(config.WAIFU2X_CAFFE, paths.tools),
+        await tools.waifu2x.check(),
         ...(await imageDirChecks(paths)),
       ]),
-      isDone: async () => combine([
-        ...await Promise.all(
-          (await imageConversionPaths(paths)).map(images => nonEmptyDirCheck(images.imgX2))
-        ),
-      ]),
+      isDone: async () => combine(await imgX2Checks(paths)),
       run: async () => runWaifu2x(context),
     },
     {
       id: 4,
       title: 'Convert images',
+      dependsOn: [3],
       canRun: async () => combine([
         await nonEmptyDirCheck(paths.img),
-        ...await Promise.all(
-          (await imageConversionPaths(paths)).map(images => nonEmptyDirCheck(images.imgX2))
-        ),
+        ...(await imgX2Checks(paths)),
       ]),
-      isDone: async () => combine([
-        ...await Promise.all(
-          (await imageConversionPaths(paths)).flatMap(images => [
-            nonEmptyDirCheck(images.images),
-            nonEmptyDirCheck(images.imagesThumb),
-          ])
-        ),
-      ]),
+      isDone: async () => combine(await Promise.all(
+        (await imageConversionPaths(paths)).flatMap(images => [
+          nonEmptyDirCheck(images.images),
+          nonEmptyDirCheck(images.imagesThumb),
+        ])
+      )),
       run: async () => runImageConversion(paths),
     },
     {
       id: 5,
       title: 'Create spritesheets',
+      dependsOn: [1, 2],
       canRun: async () => combine([
         await nonEmptyDirCheck(paths.img),
       ]),
@@ -346,45 +287,37 @@ export function createSteps(context: StepContext): OrchestratorStep[] {
     {
       id: 6,
       title: 'Convert wave files',
+      dependsOn: [1],
       canRun: async () => combine([
-        await executableCheck(config.FFMPEG, paths.tools),
+        await tools.ffmpeg.check(),
         await nonEmptyDirCheck(path.join(arcDir(paths), 'wave')),
       ]),
       isDone: async () => combine([
         await nonEmptyDirCheck(paths.wave),
       ]),
-      run: async () => runWaveConversion(context),
+      run: async () => convertAudioTree(
+        await tools.ffmpeg.executable(),
+        FFMPEG_AUDIO_ARGS,
+        path.join(arcDir(paths), 'wave'),
+        paths.wave,
+      ),
     },
     {
       id: 7,
       title: 'Convert audio CDs',
-      canRun: async () => {
-        const executable = await executableCheck(config.FFMPEG, paths.tools)
-        const cdChecks = await Promise.all(
-          Object.values(paths.cds).map(async dirs =>
-            nonEmptyDirCheck(dirs.input)
-          )
-        )
-
-        return combine([
-          executable,
-          check(
-            cdChecks.some(item => item.ok),
-            `${cdChecks.map(item => {
-              if (typeof item.failure === 'object') return item.failure.target
-              return item.failure
-            }).join(', ')} are all empty`,
-          ),
-        ])
+      canRun: async () => combine([
+        await tools.ffmpeg.check(),
+        check(
+          (await cdsWithInput(paths)).length > 0,
+          `${Object.values(paths.cds).map(dirs => displayPath(dirs.input)).join(', ')} are all empty`,
+        ),
+      ]),
+      isDone: async () => {
+        const cds = await cdsWithInput(paths)
+        return combine(cds.length
+          ? await Promise.all(cds.map(dirs => nonEmptyDirCheck(dirs.output)))
+          : [check(false, 'no CD files')])
       },
-      isDone: async () => combine(await Promise.all(
-        Object.values(paths.cds).map(async dirs =>
-          check(
-            await directoryHasFiles(dirs.output),
-            stateFailure(displayPath(dirs.output), 'empty'),
-          )
-        )
-      )),
       run: async () => runCdConversion(context),
     },
   ]

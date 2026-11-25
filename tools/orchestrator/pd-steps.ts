@@ -5,23 +5,25 @@ import { extractXp3 } from '@tsukiweb/common/tools/extract-xp3/extractor.ts'
 import { mergeVertical } from '@tsukiweb/common/tools/convert-images/editor.ts'
 import { processImages as convertImages } from '@tsukiweb/common/tools/convert-images/processor.ts'
 import { main as runPlusDiscScripts } from '../helpers/convert-scripts/plus_disc.ts'
-import type { Paths, ToolConfig } from './pd-config.ts'
+import type { Paths } from './pd-config.ts'
 import {
   FFMPEG_AUDIO_ARGS,
   BASE_LANG,
   WAIFU2X_ARGS,
   thumbConfig,
   x2Config,
+  type Tools,
 } from './config.ts'
+import { convertAudioTree } from '@tsukiweb/common/tools/convert-audio/converter.ts'
+import { upscaleImages } from '@tsukiweb/common/tools/upscale-images/waifu2x.ts'
 
 import {
   displayPath,
   ensureEmptyDirInside,
-  isMediaFile,
   listFilesRecursive,
 } from '@tsukiweb/common/tools/utils/fs-utils.ts'
 import { logger } from '@tsukiweb/common/tools/utils/logger.ts'
-import { resolveExecutable, runCommand, withWorkingDirectory } from '@tsukiweb/common/tools/utils/process-utils.ts'
+import { withWorkingDirectory } from '@tsukiweb/common/tools/utils/process-utils.ts'
 import {
   check,
   combine,
@@ -35,7 +37,7 @@ import {
 } from '@tsukiweb/common/tools/orchestrator/utils.ts'
 
 interface StepContext {
-  config: ToolConfig
+  tools: Tools
   paths: Paths
 }
 
@@ -105,37 +107,8 @@ async function copyNewAssets(
   logger.log(`Copied ${copied} new asset(s), skipped ${skipped} existing asset(s).`)
 }
 
-async function convertAudioTree(
-  ffmpeg: Awaited<ReturnType<typeof resolveExecutable>>,
-  inputDir: string,
-  outputDir: string,
-): Promise<void> {
-  const files = (await listFilesRecursive(inputDir)).filter(isMediaFile)
-  const outputPaths = new Set<string>()
-
-  for (let i = 0; i < files.length; i++) {
-    const relativePath = files[i]
-    const inputPath = path.join(inputDir, relativePath)
-    const outputPath = path.join(outputDir, path.dirname(relativePath), `${path.parse(relativePath).name}.webm`)
-
-    if (outputPaths.has(outputPath)) {
-      throw new Error(`Duplicate output audio file "${displayPath(outputPath)}".`)
-    }
-    outputPaths.add(outputPath)
-
-    await fs.mkdir(path.dirname(outputPath), { recursive: true })
-    console.log(`Converting PD audio: ${i + 1}/${files.length} ${relativePath}`)
-    await runCommand(ffmpeg.command, [
-      '-y',
-      '-i', inputPath,
-      ...FFMPEG_AUDIO_ARGS,
-      outputPath,
-    ], { cwd: ffmpeg.cwd })
-  }
-}
-
 async function extractAssets(context: StepContext): Promise<void> {
-  const { config, paths } = context
+  const { tools, paths } = context
   const archiveDir = path.join(paths.workspace, path.basename(paths.dataArchive))
 
   await ensureEmptyDirInside(paths.workspace, archiveDir)
@@ -160,8 +133,8 @@ async function extractAssets(context: StepContext): Promise<void> {
     path.join(paths.img, 'bg', 'scroll19.jpg'),
   )
 
-  const ffmpeg = await resolveExecutable(config.FFMPEG, paths.tools)
-  await convertAudioTree(ffmpeg, path.join(archiveDir, 'sound'), paths.wave)
+  const ffmpeg = await tools.ffmpeg.executable()
+  await convertAudioTree(ffmpeg, FFMPEG_AUDIO_ARGS, path.join(archiveDir, 'sound'), paths.wave)
 }
 
 async function processScripts(paths: Paths): Promise<void> {
@@ -170,39 +143,12 @@ async function processScripts(paths: Paths): Promise<void> {
   })
 }
 
-async function upscaleImages(context: StepContext): Promise<void> {
-  const { config, paths } = context
-  const executable = await resolveExecutable(config.WAIFU2X_CAFFE, paths.tools)
-  const total = (await listFilesRecursive(paths.img)).length
-  const updateProgress = async () => {
-    const processed = (await listFilesRecursive(paths.imgX2)).length
-    logger.progress(`Upscaling images: ${Math.min(processed, total)}/${total}`)
-  }
-
-  const args = [
-    '-i', paths.img,
-    '-o', paths.imgX2,
-    ...WAIFU2X_ARGS,
-  ]
-
-  await updateProgress()
-  const timer = setInterval(() => void updateProgress(), 1000)
-  try {
-    await runCommand(executable.command, args, { cwd: executable.cwd, stdout: 'ignore' })
-  } finally {
-    clearInterval(timer)
-  }
-  await updateProgress()
-  logger.done()
-}
-
 async function runImageConversion(paths: Paths): Promise<void> {
   const thumb = thumbConfig(paths)
   const x2 = x2Config(paths)
 
   await convertImages(thumb.inputDir, thumb.outputDir, thumb.options)
   await convertImages(x2.inputDir, x2.outputDir, x2.options)
-  logger.done()
 }
 
 async function convertedImagesConfigCheck(inputDir: string, outputDir: string): Promise<CheckDetail[]> {
@@ -242,16 +188,8 @@ async function scriptsOutputCheck(paths: Paths): Promise<Check> {
   return combine(checks)
 }
 
-async function executableCheck(configValue: string, baseDir: string): Promise<CheckDetail> {
-  const executable = await resolveExecutable(configValue, baseDir)
-  const displayName = path.isAbsolute(executable.command)
-    ? displayPath(executable.command)
-    : executable.command
-  return check(executable.found, `${displayName} is unavailable`)
-}
-
 export function createSteps(context: StepContext): OrchestratorStep[] {
-  const { config, paths } = context
+  const { tools, paths } = context
 
   return [
     {
@@ -259,7 +197,7 @@ export function createSteps(context: StepContext): OrchestratorStep[] {
       title: 'Extract data.xp3',
       canRun: async () => combine([
         await fileCheck(paths.dataArchive),
-        await executableCheck(config.FFMPEG, paths.tools),
+        await tools.ffmpeg.check(),
       ]),
       isDone: async () => combine([
         await nonEmptyDirCheck(paths.img),
@@ -278,18 +216,20 @@ export function createSteps(context: StepContext): OrchestratorStep[] {
     {
       id: 3,
       title: 'Upscale images with waifu2x',
+      dependsOn: [1],
       canRun: async () => combine([
-        await executableCheck(config.WAIFU2X_CAFFE, paths.tools),
+        await tools.waifu2x.check(),
         await nonEmptyDirCheck(paths.img),
       ]),
       isDone: async () => combine([
         await nonEmptyDirCheck(paths.imgX2),
       ]),
-      run: async () => upscaleImages(context),
+      run: async () => upscaleImages(await tools.waifu2x.executable(), WAIFU2X_ARGS, paths.img, paths.imgX2),
     },
     {
       id: 4,
       title: 'Convert images',
+      dependsOn: [3],
       canRun: async () => combine([
         await nonEmptyDirCheck(paths.img),
         await nonEmptyDirCheck(paths.imgX2),

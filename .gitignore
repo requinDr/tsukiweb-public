@@ -34,7 +34,9 @@ tools/helpers/extract/*
 !tools/helpers/extract/index.ts
 
 tools/_workspace
-tools/CD_*/
+tools/CD_*/*
+!tools/CD_*/.gitkeep
+tools/_bin
 tools/arc.sar
 tools/arc.nsa
 tools/nscript.dat

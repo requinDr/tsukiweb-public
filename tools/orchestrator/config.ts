@@ -1,12 +1,7 @@
 import path from 'path'
-import fs from 'fs/promises'
-import { fileURLToPath, pathToFileURL } from 'url'
-
-export interface ToolConfig {
-  WAIFU2X_CAFFE: string
-  FFMPEG: string
-  PUBLIC: string
-}
+import { fileURLToPath } from 'url'
+import { positionalArgs } from '@tsukiweb/common/tools/orchestrator/runner.ts'
+import { ExternalTool, FFMPEG, WAIFU2X } from '@tsukiweb/common/tools/orchestrator/external-tools.ts'
 
 export interface CdPaths {
   input: string
@@ -18,6 +13,7 @@ export interface Paths {
   publicAssets: string
   workspace: string
   arcArchive: string
+  nscript: string
   img: string
   imgX2: string
   sceneAttrs: string
@@ -30,31 +26,22 @@ export interface Paths {
   cds: Record<CdName, CdPaths>
 }
 
-export const ORCHESTRATOR_DIR = path.dirname(fileURLToPath(import.meta.url))
-export const TOOLS_DIR = path.resolve(ORCHESTRATOR_DIR, '..')
-export const REPO_DIR = path.resolve(TOOLS_DIR, '..')
-export const CONFIG_PATH = path.join(TOOLS_DIR, 'my-config.ts')
-
-const DEFAULT_CONFIG: ToolConfig = {
-  WAIFU2X_CAFFE: 'waifu2x-caffe-cui.exe',
-  FFMPEG: 'ffmpeg.exe',
-  PUBLIC: '../public',
-}
+export const TOOLS_DIR = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
+const REPO_DIR = path.resolve(TOOLS_DIR, '..')
+const BIN_DIR = path.join(TOOLS_DIR, '_bin')
+export const PUBLIC_DIR = path.join(REPO_DIR, 'public')
 
 const CD_NAMES = ['CD_original', 'CD_everafter', 'CD_tsukibako'] as const
 type CdName = typeof CD_NAMES[number]
 
-type PartialToolConfig = Partial<ToolConfig>
-
 export const BASE_LANG = 'jp'
 
 export const WAIFU2X_ARGS = [
-  '-m', 'noise_scale',
   '-n', '0',
   '-s', '2',
-  '-b', '8',
-  '-p', 'cudnn',
-  '-model_dir', 'models-cunet',
+  '-m', 'models-cunet',
+  '-t', '200',
+  '-f', 'png',
 ] as const
 
 export const FFMPEG_AUDIO_ARGS = [
@@ -120,62 +107,47 @@ export function x2Config(paths: ImageConversionPaths) {
   }
 }
 
-function hasCode(error: unknown, code: string): boolean {
-  return typeof error === 'object' && error !== null && 'code' in error && error.code === code
+export function gameDir(): string {
+  return path.resolve(positionalArgs().join(' ') || TOOLS_DIR)
 }
 
-export async function loadConfig(): Promise<ToolConfig> {
-  let userConfig: PartialToolConfig = {}
-
-  try {
-    const stat = await fs.stat(CONFIG_PATH)
-    const configUrl = pathToFileURL(CONFIG_PATH)
-    configUrl.searchParams.set('mtime', String(stat.mtimeMs))
-    const module = await import(configUrl.href)
-    userConfig = { ...module, ...(module.default ?? {}) } as PartialToolConfig
-  } catch (error) {
-    if (!hasCode(error, 'ENOENT')) {
-      throw error
-    }
-  }
-
-  return {
-    ...DEFAULT_CONFIG,
-    ...userConfig,
-  }
-}
-
-export function resolveToolPath(value: string): string {
-  if (path.isAbsolute(value)) return path.normalize(value)
-  return path.resolve(TOOLS_DIR, value)
-}
-
-export function buildPaths(config: ToolConfig): Paths {
-  const publicAssets = resolveToolPath(config.PUBLIC)
+export function buildPaths(): Paths {
   const workspace = path.join(TOOLS_DIR, '_workspace')
+  const game = gameDir()
+  const staticJp = path.join(PUBLIC_DIR, 'static', BASE_LANG)
 
   return {
     tools: TOOLS_DIR,
-    publicAssets,
+    publicAssets: PUBLIC_DIR,
     workspace,
-    arcArchive: path.join(TOOLS_DIR, 'arc.sar'),
+    arcArchive: path.join(game, 'arc.sar'),
+    nscript: path.join(game, 'nscript.dat'),
     img: path.join(workspace, BASE_LANG, 'img'),
     imgX2: path.join(workspace, BASE_LANG, 'img_x2'),
     sceneAttrs: path.join(REPO_DIR, 'src', 'assets', 'game', 'scene_attrs.json'),
     sceneAssets: path.join(REPO_DIR, 'src', 'assets', 'game'),
 
     //output
-    staticJp: path.join(publicAssets, 'static', 'jp'),
-    images: path.join(publicAssets, 'static', 'jp', 'images'),
-    imagesThumb: path.join(publicAssets, 'static', 'jp', 'images_thumb'),
-    flowchartSpritesheets: path.join(publicAssets, 'res', 'flowchart-spritesheets'),
-    wave: path.join(publicAssets, 'static', 'jp', 'wave'),
+    staticJp,
+    images: path.join(staticJp, 'images'),
+    imagesThumb: path.join(staticJp, 'images_thumb'),
+    flowchartSpritesheets: path.join(PUBLIC_DIR, 'res', 'flowchart-spritesheets'),
+    wave: path.join(staticJp, 'wave'),
     cds: Object.fromEntries(CD_NAMES.map(name => [
       name,
       {
         input: path.join(TOOLS_DIR, name),
-        output: path.join(publicAssets, 'static', 'jp', name),
+        output: path.join(staticJp, name),
       },
     ])) as Record<CdName, CdPaths>,
+  }
+}
+
+export type Tools = ReturnType<typeof createTools>
+
+export function createTools() {
+  return {
+    waifu2x: new ExternalTool(WAIFU2X, BIN_DIR),
+    ffmpeg: new ExternalTool(FFMPEG, BIN_DIR),
   }
 }
